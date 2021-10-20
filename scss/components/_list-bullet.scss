@@ -1,0 +1,16 @@
+@use "../element";
+@use "../color";
+@use "../selector";
+
+
+@mixin styles {
+  $prefix: selector.class("list-bullet");
+  #{ $prefix } {
+    @include element.styles-unordered-list();
+    li {
+      &::marker {
+        color: color.get("bullet");
+      }
+    }
+  }
+}

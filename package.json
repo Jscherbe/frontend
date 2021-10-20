@@ -1,0 +1,32 @@
+{
+  "name": "@ulu/frontend",
+  "version": "1.0.0",
+  "description": "Frontend themeing library with commonly used tools and sass modules",
+  "browser": "js/index.js",
+  "scripts": {
+    "serve": "webpack serve --mode development --progress --stats minimal",
+    "build": "webpack build --mode production --progress --stats minimal",
+    "watch" : "webpack watch --mode production --stats minimal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jscherbe/frontend.git"
+  },
+  "keywords": [
+    "SCSS",
+    "javascript",
+    "framework",
+    "mixin"
+  ],
+  "author": "Joe Scherben",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jscherbe/frontend/issues"
+  },
+  "homepage": "https://github.com/Jscherbe/frontend#readme",
+  "devDependencies": {
+    "@ulu/node-logger": "^1.0.0",
+    "@ulu/webpack-mixin": "^1.0.1",
+    "sassdoc": "^2.7.3"
+  }
+}

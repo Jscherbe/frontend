@@ -1,0 +1,36 @@
+@use "../units";
+@use "../utils";
+@use "../selector";
+
+$sides: ("top", "bottom", "left", "right") !default;
+
+@mixin styles {
+  @include utils.file-header('helpers', 'leading');
+  @include create-property-classes("margin", selector.class("margin"));
+  @include create-property-classes("padding", selector.class("padding"));
+}
+
+/// Creates the unit classes with all variations (from unit presets)
+@mixin create-property-classes($property, $prefix) {
+  // On all sides
+  #{ $prefix } {
+    #{ $property } : units.get(1);
+  }
+  @each $name, $value in units.$presets {
+    #{ $prefix }-#{ $name } {
+      #{ $property }: units.get($name);
+    }
+  }
+  // Individual sides
+  @each $side in $sides {
+    $full-prop: #{ $property }-#{ $side };
+    #{ $prefix }-#{ $side } {
+      #{ $full-prop }: units.get(1);
+    }
+    @each $name, $value in units.$presets {
+      #{ $prefix }-#{ $side }-#{ $name } {
+        #{ $full-prop }: units.get($name);
+      }
+    }
+  }
+}

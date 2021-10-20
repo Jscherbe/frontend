@@ -1,0 +1,59 @@
+////
+/// @group units
+////
+@use "sass:meta";
+@use "utils";
+
+/// Base unit of measurent, can be modified to change scale
+/// @type Number
+
+$base: 1rem;
+
+/// The base value for a unit (common padding/margin)
+/// @type Map
+
+$presets: (
+  "small-x" : $base * 0.5,
+  "small" : $base * 0.75,
+  "large" : $base * 2,
+  "large-x" : $base * 3,
+  "large-xx" : $base * 4
+) !default;
+
+/// Change the base unit of measurement
+/// @param {Number} $value The value for the base unit
+/// @example scss
+///   @include units.set-base(1.45rem);
+
+@mixin set-base($value) {
+  $base: $value !global;
+}
+
+/// Update the units preset map
+/// @param {Map} $changes A map to merge into the color palette
+/// @example scss Setting the error and type color
+///   @include units.set((
+///     "margin" : 2.5em
+///   ));
+
+@mixin set($changes) {
+  $presets: map.merge($presets, $changes) !global;
+}
+
+/// Get a unit by name (preset) or number (multiplier of base)
+/// @param {Number|String} $value if a number is passed it is used as a multiplier of the base, if a string is passed it is used to lookup a value from unit presets @see $presets
+/// @return {Number}
+
+@function get($value: 1) {
+  @if (meta.type-of($value) == string) {
+    @return get-preset($value);
+  }
+  @return $base * $value;
+}
+/// Get a unit by name (preset) or number (multiplier of base)
+/// @param {Number|String} $name Name to lookup from unit presets @see $presets
+/// @return {Number}
+
+@function get-preset($name) {
+  @return utils.require-map-get($presets, $name, 'unit');
+}

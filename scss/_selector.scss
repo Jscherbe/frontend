@@ -1,0 +1,28 @@
+////
+/// @group selector
+////
+
+@use "sass:map";
+
+$prefix: "" !default; 
+
+/// Class selector overrides
+/// @type Map
+
+$class-overrides: () !default;
+
+/// Set the class selector overrides
+/// @param {Map} $changes Changes to merge
+
+@mixin set-class-overrides($changes) {
+  $class-overrides: map.merge($class-overrides, $changes) !global;
+}
+
+/// Used to allow global prefixing of classes, and also the ability to 
+/// Change a class used in the system (ie. like a component for example)
+/// @param {String} $class The classname to set
+
+@function class($class) {
+  $override: map.get($class-overrides, $class);
+  @return ".#{ $prefix }#{ if($override, $override, $class) }";
+}

@@ -1,0 +1,206 @@
+////
+/// @group element
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "color";
+@use "utils";
+
+/// Backdrop blur amount used on elements/components
+/// @type Number
+
+$backdrop-blur: 4px !default;     
+
+/// Backdrop blur amount used on elements/components
+/// @type Number
+
+$backdrop-color: rgba(73, 73, 73, 0.459) !default;     
+
+/// Box-shadow definition for elements that are on top of page 
+/// @type Number
+
+$box-shadow: 0 1px 5px color.get('box-shadow') !default;
+
+/// Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
+
+$box-shadow--raised: 0 1px 12px color.get('box-shadow') !default;
+
+/// Box-shadow definition for elements that are above the page (fixed items, etc)
+
+$box-shadow--above: 0 1px 20px color.get('box-shadow') !default;
+
+/// Common element border radius
+
+$border-radius: 6px !default;
+
+/// Common element border radius (small)
+
+$border-radius--small: 3px !default;
+
+/// Common element border radius (large)
+
+$border-radius--large: 5% !default;
+
+$rule--size: 1px !default;
+$rule--style: solid !default;
+
+/// Border definition for elements that use a rule (divider), 
+/// to change color set it in color module's palette
+
+$rule: $rule--size $rule--style color.get('rule') !default;
+
+/// Border definition for elements that use a light weight rule (divider), 
+/// to change color set it in color module's palette
+
+$rule-light: $rule--size $rule--style color.get('rule-light') !default;
+
+$rule-styles: (
+  "default" : $rule,
+  "light" : $rule-light,
+) !default;
+
+$rule-margins: (
+  "smallest" : 0.5rem,
+  "small" : 1rem,
+  "medium" : 2rem,
+  "large" : 3rem
+) !default;
+
+$text-shadow: 0 1px 4px rgba(0,0,0,0.3) !default;
+
+@mixin set-rule-styles($changes) {
+  $rule-styles: map.merge($rule-styles, $changes) !global;
+}
+@mixin set-rule-margins($changes) {
+  $rule-margins: map.merge($rule-margins, $changes) !global;
+}
+@function get-rule-style($name: "default") {
+  @return utils.require-map-get($rule-styles, $name, "element [rule style]");
+}
+@function get-rule-margin($name) {
+  @return utils.require-map-get($rule-margins, $name, "element [rule style]");
+}
+@mixin rule(
+  $style-name: null, 
+  $margin-name: null
+) {
+  @include rule-style($style-name);
+  @include rule-margin($margin-name);
+}
+@mixin rule-style($name: null) {
+  $style: if($name, get-rule-style($name), $rule);
+  border-bottom: $style;
+}
+@mixin rule-margin($name:  null) {
+  $margin: if($name, get-rule-margin($name), $margin);
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+
+/// Common element margin (small)
+
+$margin-small: 0.65em !default;
+
+/// Common element margin
+
+$margin: 1em !default;
+
+/// Common element margin (large)
+
+$margin-large: 2em !default;
+
+/// Ordered list type (level 1)
+
+$ol-list-style-type: decimal !default;
+
+/// Ordered list type (level 2)
+
+$ol-list-style-type--2: lower-alpha !default;
+
+/// Ordered list type (level 3)
+
+$ol-list-style-type--3: lower-roman !default;
+
+$ul-list-style-type: disc !default;
+$ul-list-style-type--2: circle !default;
+$ul-list-style-type--3: square !default;
+
+/// Whether links use underline
+/// Remember that removing underline will create an accessiblity issue (not relying on color)
+$link-text-decoration-default: none !default; 
+$link-text-decoration: underline !default; 
+$link-text-decoration-style: dotted !default; 
+$link-text-decoration-color: initial !default; 
+$link-text-decoration-style-hover: solid !default; 
+$link-text-decoration-color-hover: $link-text-decoration-color !default; 
+$link-text-decoration-thickness: 0.1em !default;
+
+/// Print link styles
+/// @param {Boolean} $visited Include visited style
+/// @param {Boolean} $active Include active style
+
+@mixin link($visited: false, $active: false) {
+  color: color.get("link");
+  text-decoration: $link-text-decoration;
+  text-decoration-style: $link-text-decoration-style;
+  text-decoration-color: $link-text-decoration-color;
+  text-decoration-thickness: $link-text-decoration-thickness;
+  &:hover {
+    color: color.get("link:hover");
+    text-decoration-style: $link-text-decoration-style-hover;
+    text-decoration-color: $link-text-decoration-color-hover;
+  }
+  @if ($visited) {
+    &:visited {
+      color: color.get("link:visited");
+    }
+  }
+  @if ($active) {
+    &:active {
+      color: color.get("link:active");
+    }
+  }
+}
+
+@mixin link-defaults() {
+  color: color.get("link");
+  text-decoration: $link-text-decoration-default;
+}
+
+@mixin styles-ordered-list() {
+  margin-bottom: $margin;
+  list-style: $ol-list-style-type outside;
+  li {
+    margin-bottom: $margin-small;
+    margin-left: 1em;
+  }
+  ol {
+    margin: $margin-small 0 0 $margin-small;
+    list-style: $ol-list-style-type--2;
+    ol { 
+      list-style-type: $ol-list-style-type--3;
+    }
+  }
+}
+
+@mixin styles-unordered-list($bullet-color: false) {
+  list-style: $ul-list-style-type outside;
+  > li {
+    margin-left: 1.5em;
+    margin-bottom: $margin-small;
+    @if $bullet-color {
+      &::marker {
+        color: color.get($bullet-color)
+      }
+    }
+  }
+
+  ul {
+    list-style-type: $ul-list-style-type--2;
+  }
+   ul ul {
+    list-style-type: $ul-list-style-type--3;
+  }
+}

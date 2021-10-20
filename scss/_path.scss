@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "sass:string";
+@use "utils";
+
+$alias-marker:   "@" !default;
+/// Note alias could be used for directory or file so omit trailing slash for directories
+$aliases: (
+  "@Images" : "../images",
+  "@Logo" : "../images/logo.png"
+) !default;
+
+@mixin set-aliases($changes) {
+  $aliases: map.merge($aliases, $changes) !global;
+}
+@function get-alias($name) {
+  @return utils.require-map-get($aliases, $name, '[path alias]');
+}
+// Resolves to alias or passes back unchanged for now
+@function resolve($path) {
+  $is-alias: string.index($path, $alias-marker) == 1;
+  $dir-index: string.index($path, "/");
+  $resolved-path: $path;
+  @if $is-alias {
+    // Extract alias
+    @if $dir-index {
+      $alias: string.slice($path, 1, $dir-index - 1);
+      @return "#{ get-alias($alias) }#{ string.slice($path, $dir-index) }";
+    // Must just be only an alias
+    } @else {
+      @return "#{ get-alias($path) }";
+    }
+  } @else {
+    @return $path;
+  }
+}

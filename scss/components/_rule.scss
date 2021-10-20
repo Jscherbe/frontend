@@ -1,0 +1,50 @@
+////
+/// @group component
+////
+
+@use "../element";
+@use "../color";
+@use "../selector";
+
+$short-width: 2.75rem !default;
+$short-border-width: 4px !default;
+// $short-border-color: black !default;
+
+@mixin set-short-width($width) {
+  $short-width: $width !global;
+}
+@mixin set-short-border-width($width) {
+  $short-border-width: $width !global;
+}
+// @mixin set-border-color($color) {
+//   $short-border-color: $color !global;
+// }
+
+@mixin styles {
+
+  $class: selector.class("rule");
+  
+  #{ $class } {
+    @include element.rule();
+  }
+  // Output user's styles presets
+  @each $name, $value in element.$rule-styles {
+    #{ $class }--#{ $name } {
+      @include element.rule-style($name);
+    }
+  }
+  // Output user's margin presets
+  @each $name, $value in element.$rule-margins {
+    #{ $class }--margin-#{ $name } {
+      @include element.rule-margin($name);
+    }
+  }
+
+  // Meant to be user by tself without content
+  #{ $class }--short {
+    width: $short-width;
+    max-width: 100%;
+    border-bottom-width: $short-border-width;
+    // display: inline-block;
+  }
+}

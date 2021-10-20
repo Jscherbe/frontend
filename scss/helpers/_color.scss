@@ -1,0 +1,54 @@
+////
+/// @group base
+////
+
+@use "sass:map";
+@use "../utils";
+@use "../selector";
+@use "../color";
+
+/// Which color classes from pallete be printed as utiltities
+$classes: (
+  "black" : true,
+  "white" : true,
+  "type": true
+) !default;
+
+@mixin set-classes($changes) {
+  $classes: map.merge($classes, $changes) !global;
+}
+
+/// Prints color styles 
+/// - in base so they can be overridden
+/// @name base-color-styles
+/// @example scss
+///  @include ulu.base-color-styles();
+/// @example raw Example of a color-context
+///  <div class="color-context-dark" style="padding: 1rem">
+////   Some text in dark context
+//// </div>
+
+
+
+@mixin styles {
+  
+  @include utils.file-header('helpers', 'color');
+
+  $prefix: selector.class("color");
+  $prefix-contexts: selector.class("color-context");
+
+  @each $name, $context in color.$contexts {
+    @if (map.get($context, "helper-class")) {
+      #{ $prefix-contexts }-#{ $name } {
+        @include color.context-styles($name);
+      }
+    }
+  }
+  @each $name, $output in $classes {
+    @if ($output) {
+      #{ $prefix }-#{ $name } {
+        color: color.get($name);
+      }
+    }
+  }
+}

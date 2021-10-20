@@ -1,0 +1,180 @@
+////
+/// @group layout
+////
+
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@use "utils";
+@use "calculate";
+@use "breakpoint";
+
+$max-width: 90rem !default;
+$margin: 2rem !default;
+
+$z-index-sticky: 100 !default;
+$z-index-above: 500 !default;
+$z-index-fixed: 1000 !default;
+
+$responsive-amount: 3vw !default;
+
+$containers: (
+  "container" : (
+    "width" : 100%,
+    "max-width" : $max-width,
+    "padding" : ($margin $margin),
+    "breakpoints" : null,
+    "responsive" : false,
+    "responsive-amount" : $responsive-amount
+  )
+) !default;
+
+@mixin set-containers($changes) {
+  $containers: map.merge($containers, $changes) !global;
+}
+
+@function get-container($name, $breakpoint: false) {
+  $container: utils.require-map-get($containers, $name, "Layout [get-container]");
+  $breakpoints: map.get($container, "breakpoints");
+  @if ($breakpoint) {
+    @return utils.require-map-get($breakpoints, $breakpoint, "[container breakpoint]");
+  } @else {
+    @return $container;
+  }
+}
+/// Returns padding to another property including breakpoints
+/// ie. { top: $containers-padding; }
+@mixin match-container-padding($property, $name, $sides: true) {
+  $container: get-container($name);
+  $breakpoints: map.get($container, "breakpoints");
+  #{ $property }: get-container-padding($name, $sides);
+  @if $breakpoints {
+    @each $breakpoint, $props in $breakpoints {
+      $direction: map.get($props, "direction");
+      @include breakpoint.from($name, $direction) {
+        #{ $property }: get-container-padding($name, $sides, $breakpoint);
+      }
+    }
+  }
+}
+@function get-container-padding($name, $sides: true, $specific-breakpoint: false) {
+  $container: get-container($name, $specific-breakpoint);
+  $padding: map.get($container, "padding");
+  $is-list: meta.type-of($padding) == "list"; // Else number
+  @if (not $is-list) {
+    @return $padding;
+  } @else {
+    @return list.nth($padding, if($sides, 2, 1));
+  }
+}
+// LEFT OFF ON CONDITIONS
+@mixin container-padding($name, $sides: true, $ends: true, $specific-breakpoint: false) {
+  $container: get-container($name, $specific-breakpoint);
+  $responsive: map.get($container, "responsive");
+  $x: get-container-padding-x($name, $specific-breakpoint);
+  $y: get-container-padding-y($name, $specific-breakpoint);
+  $resp-amount: if(meta.type-of($responsive) == number, $responsive, $responsive-amount);
+  
+  @if $responsive {
+    @if $sides {
+      @include calculate.responsive-property("padding-left", $x, $resp-amount);
+      @include calculate.responsive-property("padding-right", $x, $resp-amount);
+    }
+    @if $ends {
+      @include calculate.responsive-property("padding-top", $y, $resp-amount);
+      @include calculate.responsive-property("padding-bottom", $y, $resp-amount);
+    }
+  } @else {
+    @if $sides {
+      padding-left: $x;
+      padding-right: $x;
+    }
+    @if $ends {
+      padding-top: $y;
+      padding-bottom: $y;
+    }
+  }
+}
+@function get-container-padding-x($name, $specific-breakpoint: false) {
+  @return get-container-padding($name, true, $specific-breakpoint);
+}
+@function get-container-padding-y($name, $specific-breakpoint: false) {
+  @return get-container-padding($name, false, $specific-breakpoint);
+}
+@mixin container-styles($name: "container", $specific-breakpoint: false) {
+  $container: get-container($name,  $specific-breakpoint);
+  $breakpoints: map.get($container, "breakpoints");
+  
+  $width: map.get($container, "width");
+  // @debug $specific-breakpoint;
+  // @if $specific-breakpoint {
+  //   @debug $container;
+  // }
+  @if ($width == null) {
+    $width: 100%;
+  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: $width;
+  max-width: map.get($container, "max-width");
+  @include container-padding($name, $specific-breakpoint: $specific-breakpoint);
+
+  // Recursive print other breakpoints
+  @if $breakpoints and not $specific-breakpoint {
+    @each $breakpoint, $props in $breakpoints {
+      $direction: map.get($props, "direction");
+      .test-outside {
+        content: #{$name}, #{$breakpoint}, #{$direction};
+      }
+      @include breakpoint.from($breakpoint, $direction) {
+        @include container-styles($name, $breakpoint);
+      }
+    }
+  }
+}
+// Flexbox stuff
+// Site padding margins
+
+/// Prints clearfix styles
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    flex-basis: 0; // Flexbox, clear fix for pseudo elements in Safari
+    order: 1;
+  }
+  &:after { 
+    clear: both; 
+  }
+  *zoom: 1;
+}
+
+/// Hide text for assistive devices
+/// @param {Boolean} $hidden Defaults to true, pass false to override the hidden css (ie. on focus)
+/// @example scss
+///   @include ulu.layout-hidden-visually()
+///   // Reset styling
+///   @include ulu.layout-hidden-visually(false)
+
+@mixin hidden-visually($hidden: true) {
+  @if $hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  } @else {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
+  }
+}
