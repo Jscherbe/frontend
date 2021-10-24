@@ -1,17 +1,15 @@
 // This is just the test of the mixin
 const path = require("path");
 const { mixin, merge } = require("@ulu/webpack-mixin");
-const { docsPlugin } = require("./webpack.docs.js");
+const { webpackPlugin: docsPlugin } = require("./build/docs.js");
 
 module.exports = (env, argv) => {
-  const base = mixin(env, argv, {
-    relativeEntryDir: ""
+  const base = mixin(env, argv, { relativeEntryDir: "build/" });
+  const config = merge(base, {
+    entry: {
+      "ulu-frontend.min" : path.resolve(__dirname, "build/dist.js"),
+    },
+    plugins: [ docsPlugin ]
   });
-  const overrides = {
-    entry: path.resolve(__dirname, "docs.js"),
-    plugins: [
-      docsPlugin
-    ]
-  };
-  return merge(base, overrides);
+  return config;
 };

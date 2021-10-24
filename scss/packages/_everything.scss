@@ -2,9 +2,6 @@
 /// - Note: Not configurable as far as output of styles (use minimal)
 
 @forward "../";
-@forward "../base" as base-*;
-@forward "../component" as component-*;
-@forward "../helpers" as helper-*;
 
 @use "../base";
 @use "../components";
