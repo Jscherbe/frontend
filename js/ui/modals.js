@@ -7,7 +7,7 @@
 // interface in the future we don't need to change/update markup.
 import MicroModal from 'micromodal';
 import Resizer from './resizer.js';
-import { createElementFromHtml } from './utils/dom.js';
+import { createElementFromHtml } from '../utils/dom.js';
 
 const classes = {
   open: 'site-modal--open',

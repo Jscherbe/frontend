@@ -1,4 +1,4 @@
-import ElementWaypoint from "../element-waypoint";
+import ElementWaypoint from "../waypoints/element-waypoint.js";
 
 export default function init(config) { 
   const defaults = {

@@ -8,7 +8,7 @@
 
 // Reference:       - http://jsfiddle.net/3jMQD/614/
 
-import { logError } from "./logger.js";
+import { logError } from "../utils/logger.js";
 
 export default class ElementResizer {
   static defaults = {
@@ -26,7 +26,6 @@ export default class ElementResizer {
    * @param {Boolean} options.fromLeft The script should assume the handle is on the left side of the element
    */
   constructor(container, control, options) {
-    super();
     if (!control || !container) {
       logError(this, "Missing required elements 'control' or 'container'");
     }

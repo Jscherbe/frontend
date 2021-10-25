@@ -7,8 +7,8 @@
 // Description:     Drupal programmatic modal insertion script (interface = jquery prototype)
 // Changes:         1.0.2 - Added ability to pass class to container
 
-import { setupModal, show } from "../lib/modals.js";
-import { dispatch } from "../events.js";
+import { setupModal, show } from "../ui/modals.js";
+import { dispatch } from "../events/index.js";
 
 const $ = window.jQuery;
 const containerId = 'programmatic-modal';

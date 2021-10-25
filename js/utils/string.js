@@ -1,30 +1,3 @@
-// Version:         1.0.0 
-
-/**
- *   Will return an object with the separation details
- *   @param  {[type]} string [description]
- *   @return {object}        keys: value, original, unit
- */
- export function separateCssUnit(original) {
-  const pattern = /(px|vw|vh|%|em|rem)/i;
-  return {
-    original,
-    value:  original.replace(pattern, ""),
-    unit:   original.match(pattern)[0]
-  };
-}
-
-
-/**
- * Removes HTML tags from string
- * - Note you can use document.createElement and grab textContent (but this could execute code in browser)
- * - The method below will just use regex without creating Nodes
- * @param {String} html HTML string to find/replace
- */
-export function stripTags(html) {
-  return html.replace(regex.htmlTag, "");
-}
-
 /**
  *   Will return an object with the separation details
  *   @param  {[type]} string [description]

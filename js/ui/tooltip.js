@@ -7,7 +7,7 @@
 // Description:     Adds a single tooltip div to bottom of document to be used to 
 //                  show text/simple markup of mouse hover or focus
 
-import { logError } from "./logger.js";
+import { logError } from "../utils/logger.js";
 import { createPopper } from '@popperjs/core';
 
 const ATTR_DESC = "aria-describedby";
@@ -44,7 +44,6 @@ export default class Tooltip {
     classes: []
   }
   constructor(context, markup, config) {
-    super();
     if (!context) {
       logError(this, 'Missing context element');
     }

@@ -1,0 +1,7939 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>@ulu/frontend 1.0.0 | Documentation</title>
+	<meta name='description' content='Frontend themeing library with commonly used tools and sass modules'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+	<link href='assets/styles.min.css' rel='stylesheet' />
+</head>
+
+<body class='documentation'>
+<div class='px2'>
+	<div class='clearfix md-flex lg-flex flex-stretch mxn2'>
+		<div class='documentation-sidebar relative top-0 bottom-0 right-0 px2 py2 col-3 md-show'>
+			<div class='font-smaller fixed col-3 top-0 bottom-0 left-0 overflow-auto fill-light dark-link'>
+				<div class='px2'>
+					<h3 class='mb0 no-anchor'><code>@ulu/frontend</code></h3>
+					<div class='mb1'><code>1.0.0</code></div>
+					<input placeholder='Filter' id='filter-input' class='col12 block input' type='text' />
+					<div id="toc">
+						
+						
+						
+						<a
+								href='#createoptions'
+								class="regular block">
+							<code>createOptions</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#popperpositioning'
+								class="regular block">
+							<code>popperPositioning</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#init'
+								class="regular block">
+							<code>init</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#init'
+								class="regular block">
+							<code>init</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#init'
+								class="regular block">
+							<code>init</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#init'
+								class="regular block">
+							<code>init</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#settrapfocus'
+								class="regular block">
+							<code>setTrapFocus</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setescapeclose'
+								class="regular block">
+							<code>setEscapeClose</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#events'
+								class="regular block">
+							<code>events</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#dispatch'
+								class="regular block">
+							<code>dispatch</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#getname'
+								class="regular block">
+							<code>getName</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#addeventlistener'
+								class="regular block">
+							<code>addEventListener</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#cssbreakpoints'
+								class="regular block toggle-sibling">
+							<code>CssBreakpoints</code>
+							<span class='icon'>▾</span>
+						</a>
+						
+						
+						<div class='toggle-target'>
+							
+							
+							
+							<a
+									href='#cssbreakpointsgetbreakpoint'
+									class='button-indent regular block'>
+								<code>#getBreakpoint</code>
+							</a>
+							
+							<a
+									href='#cssbreakpointsupdate'
+									class='button-indent regular block'>
+								<code>#update</code>
+							</a>
+							
+							<a
+									href='#cssbreakpointsat'
+									class='button-indent regular block'>
+								<code>#at</code>
+							</a>
+							
+							
+							
+							
+						</div>
+						
+						
+						
+						
+						<a
+								href='#breakpointdirection'
+								class="regular block toggle-sibling">
+							<code>BreakpointDirection</code>
+							<span class='icon'>▾</span>
+						</a>
+						
+						
+						<div class='toggle-target'>
+							
+							
+							
+							<a
+									href='#breakpointdirectionchange'
+									class='button-indent regular block'>
+								<code>#change</code>
+							</a>
+							
+							<a
+									href='#breakpointdirection_call'
+									class='button-indent regular block'>
+								<code>#_call</code>
+							</a>
+							
+							<a
+									href='#breakpointdirectiongethandlers'
+									class='button-indent regular block'>
+								<code>#getHandlers</code>
+							</a>
+							
+							<a
+									href='#breakpointdirectionadd'
+									class='button-indent regular block'>
+								<code>#add</code>
+							</a>
+							
+							<a
+									href='#breakpointdirectionremove'
+									class='button-indent regular block'>
+								<code>#remove</code>
+							</a>
+							
+							
+							
+							
+						</div>
+						
+						
+						
+						
+						<a
+								href='#breakpoint'
+								class="regular block toggle-sibling">
+							<code>Breakpoint</code>
+							<span class='icon'>▾</span>
+						</a>
+						
+						
+						<div class='toggle-target'>
+							
+							
+							
+							<a
+									href='#breakpoint_setdirection'
+									class='button-indent regular block'>
+								<code>#_setDirection</code>
+							</a>
+							
+							<a
+									href='#breakpointmax'
+									class='button-indent regular block'>
+								<code>#max</code>
+							</a>
+							
+							<a
+									href='#breakpointmin'
+									class='button-indent regular block'>
+								<code>#min</code>
+							</a>
+							
+							<a
+									href='#breakpointonly'
+									class='button-indent regular block'>
+								<code>#only</code>
+							</a>
+							
+							<a
+									href='#breakpointremove'
+									class='button-indent regular block'>
+								<code>#remove</code>
+							</a>
+							
+							
+							
+							
+						</div>
+						
+						
+						
+						
+						<a
+								href='#setup'
+								class="regular block">
+							<code>setup</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setpositionclasses'
+								class="regular block">
+							<code>setPositionClasses</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#nodedatamanager'
+								class="regular block toggle-sibling">
+							<code>NodeDataManager</code>
+							<span class='icon'>▾</span>
+						</a>
+						
+						
+						<div class='toggle-target'>
+							
+							
+							
+							<a
+									href='#nodedatamanagerget'
+									class='button-indent regular block'>
+								<code>#get</code>
+							</a>
+							
+							<a
+									href='#nodedatamanagerset'
+									class='button-indent regular block'>
+								<code>#set</code>
+							</a>
+							
+							<a
+									href='#nodedatamanagerfind'
+									class='button-indent regular block'>
+								<code>#find</code>
+							</a>
+							
+							<a
+									href='#nodedatamanagerdestroy'
+									class='button-indent regular block'>
+								<code>#destroy</code>
+							</a>
+							
+							
+							
+							
+						</div>
+						
+						
+						
+						
+						<a
+								href='#nodedatastore'
+								class="regular block">
+							<code>NodeDataStore</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#onproxyclick'
+								class="regular block">
+							<code>onProxyClick</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#'
+								class="regular block">
+							<code></code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setupmodal'
+								class="regular block">
+							<code>setupModal</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#show'
+								class="regular block">
+							<code>show</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#close'
+								class="regular block">
+							<code>close</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#newmodal'
+								class="regular block">
+							<code>newModal</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setmodalid'
+								class="regular block">
+							<code>setModalId</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#newcontainer'
+								class="regular block">
+							<code>newContainer</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#cachetrigger'
+								class="regular block">
+							<code>cacheTrigger</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#constructor'
+								class="regular block">
+							<code>constructor</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#handleresize'
+								class="regular block">
+							<code>handleResize</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#previous'
+								class="regular block">
+							<code>previous</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#next'
+								class="regular block">
+							<code>next</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#ensuretranstionends'
+								class="regular block">
+							<code>ensureTranstionEnds</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#translateto'
+								class="regular block">
+							<code>translateTo</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setvisibility'
+								class="regular block">
+							<code>setVisibility</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#fadeslide'
+								class="regular block">
+							<code>fadeSlide</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#slidetransition'
+								class="regular block">
+							<code>slideTransition</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#fadetransition'
+								class="regular block">
+							<code>fadeTransition</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#notransition'
+								class="regular block">
+							<code>noTransition</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#removearrayelement'
+								class="regular block">
+							<code>removeArrayElement</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#offsetfindindexof'
+								class="regular block">
+							<code>offsetFindIndexOf</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#getdirectdescandants'
+								class="regular block">
+							<code>getDirectDescandants</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#isoverflowny'
+								class="regular block">
+							<code>isOverflownY</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#isoverflown'
+								class="regular block">
+							<code>isOverflown</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#getscrollparent'
+								class="regular block">
+							<code>getScrollParent</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#documentheight'
+								class="regular block">
+							<code>documentHeight</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#windowheight'
+								class="regular block">
+							<code>windowHeight</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#windowwidth'
+								class="regular block">
+							<code>windowWidth</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#browserwithpositionsticky'
+								class="regular block">
+							<code>browserWithPositionSticky</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#createelementfromhtml'
+								class="regular block">
+							<code>createElementFromHtml</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#composeelement'
+								class="regular block">
+							<code>composeElement</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#config'
+								class="regular block">
+							<code>config</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#set'
+								class="regular block">
+							<code>set</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#log'
+								class="regular block">
+							<code>log</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#logwarning'
+								class="regular block">
+							<code>logWarning</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#logerror'
+								class="regular block">
+							<code>logError</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#hasrequiredprops'
+								class="regular block">
+							<code>hasRequiredProps</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#object'
+								class="regular block">
+							<code>object</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#debounce'
+								class="regular block">
+							<code>debounce</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#debounceanimationframe'
+								class="regular block">
+							<code>debounceAnimationFrame</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#patterns'
+								class="regular block">
+							<code>patterns</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#separatecssunit'
+								class="regular block">
+							<code>separateCssUnit</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#striptags'
+								class="regular block">
+							<code>stripTags</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#trimdoublespaces'
+								class="regular block">
+							<code>trimDoubleSpaces</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#trimlinebreaks'
+								class="regular block">
+							<code>trimLineBreaks</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#trimwhitespace'
+								class="regular block">
+							<code>trimWhitespace</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#truncate'
+								class="regular block">
+							<code>truncate</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#urlize'
+								class="regular block">
+							<code>urlize</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#prettydate'
+								class="regular block">
+							<code>prettyDate</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#randomstring'
+								class="regular block">
+							<code>randomString</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#elementwaypoint'
+								class="regular block toggle-sibling">
+							<code>ElementWaypoint</code>
+							<span class='icon'>▾</span>
+						</a>
+						
+						
+						<div class='toggle-target'>
+							
+							
+							
+							<a
+									href='#elementwaypointdestroy'
+									class='button-indent regular block'>
+								<code>#destroy</code>
+							</a>
+							
+							
+							
+							
+						</div>
+						
+						
+						
+						
+						<a
+								href='#elementwaypoint'
+								class="regular block toggle-sibling">
+							<code>ElementWaypoint</code>
+							<span class='icon'>▾</span>
+						</a>
+						
+						
+						<div class='toggle-target'>
+							
+							
+							
+							<a
+									href='#elementwaypointdestroy'
+									class='button-indent regular block'>
+								<code>#destroy</code>
+							</a>
+							
+							
+							
+							
+						</div>
+						
+						
+					</div>
+					<div class='mt1 h6 quiet'>
+						<a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class='sm-col-12 md-col-9 lg-col-9 flex flex-column'>
+			<div class='flex-auto full-width'>
+				
+				
+				<section id='createoptions'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#createoptions'>
+			<code>
+				createOptions
+				<span class='gray'>(options)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Creates a new set of options, pass modifiers array seperately</p>
+<ul>
+<li>Used to reduce complexity of mergining array's of reference object</li>
+<li>Instead this function (factory) will create a new object for each modifiers
+so there is no possible issues upstream with duplicated references (ie. eventListeners)</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>options</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Popper options
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='popperpositioning'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#popperpositioning'>
+			<code>
+				popperPositioning
+				<span class='gray'>(cc, options, userOptions)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Creates a popup position mechanism for a collapsible set</p>
+<ul>
+<li>Note: if you are adding additional collapsibles to the page you
+will need to select them and pass their collaspible elements set to the
+init method provided in this functions return.</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>cc</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Collapsibles Instance
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>options</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>userOptions</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Options object
+</td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>userOptions.arrowEnabled</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+    
+  </td>
+  <td class='col-8'>Enable arrow (creates arrow element automatically)
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>userOptions.arrowSize</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+    
+  </td>
+  <td class='col-8'>Options object
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>userOptions.arrowClasses</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+    
+  </td>
+  <td class='col-8'>Classes to be added to the arrow for styling
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>userOptions.placementDataKey</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+    
+  </td>
+  <td class='col-8'>Data attribute to be selected without "data-", defualts to 'dropdown-placement'
+</td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+	:
+	<span class='force-inline'>Interface to init new instances added to page, possibly more in the future
+</span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='init'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#init'>
+			<code>
+				init
+				<span class='gray'>(elements)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Initialize a single popper/CC instance</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>elements</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Collapsible elements object
+</td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>elements.toggle</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>elements.content</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>elements.container</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='init'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#init'>
+			<code>
+				init
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Minimal user interface is returned</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='init'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#init'>
+			<code>
+				init
+				<span class='gray'>(selector, classes)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Sets up document for grid position classes</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>selector</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+				= <code>&quot;[data-grid]&quot;</code>
+			</td>
+			<td class='col-6'>The selector for the parent element
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>classes</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Classes (optional) @see setPositionClasses
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='init'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#init'>
+			<code>
+				init
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Intialize all modals on the page</p>
+<ul>
+<li>can be used after AJAX adds content</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='settrapfocus'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#settrapfocus'>
+			<code>
+				setTrapFocus
+				<span class='gray'>(elements, state)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Attaches temporary ally handler for disabling
+focus outside of the collapsible instance</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>elements</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>state</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setescapeclose'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setescapeclose'>
+			<code>
+				setEscapeClose
+				<span class='gray'>(elements, state)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Attaches temporary handler for the escape key
+while the collapsible is open. Removing it when
+it closes.</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>elements</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>state</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='events'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#events'>
+			<code>
+				events
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Event object - called on dispatch</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='dispatch'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#dispatch'>
+			<code>
+				dispatch
+				<span class='gray'>(type, context)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Triggers one of our custom events</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>type</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>Type of event to dispatch
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>context</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Element to trigger the event from
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb1 mt3'>Examples</h4>
+	
+	
+	<pre class='p1 overflow-auto round fill-light'><code><span class="hljs-keyword">if</span> (updatedMarkup) {
+    dispatch(<span class="hljs-string">&quot;pageModified&quot;</span>, modalElement);
+  }</code></pre>
+	
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='getname'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#getname'>
+			<code>
+				getName
+				<span class='gray'>(type)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Handles the actual event names being used (future could namespace)</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>type</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>Type of event to get the actual event name for
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='addeventlistener'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#addeventlistener'>
+			<code>
+				addEventListener
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Resize Handler to update breakpoints for all instances (Called after resize finished)</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='cssbreakpoints'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#cssbreakpoints'>
+			<code>
+				CssBreakpoints
+				<span class='gray'>(config)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Class that provides method for retrieving and acting on breakpoints passed
+from CSS (using element psuedo content prop)</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>config</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Configruation object
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb2 mt3'>Instance Members</h4>
+	<div class="section-indent">
+  
+    <section id='cssbreakpointsgetbreakpoint'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#cssbreakpointsgetbreakpoint'>
+			<code>
+				getBreakpoint
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Get breakpoint from element (design note: user could override prototype)</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='cssbreakpointsupdate'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#cssbreakpointsupdate'>
+			<code>
+				update
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Updates the active breakpoint by checking the element and executes handlers on change</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='cssbreakpointsat'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#cssbreakpointsat'>
+			<code>
+				at
+				<span class='gray'>(name)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Get a breakpoint by key</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>name</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>The name of the breakpoint to get
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+</div>
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='breakpointdirection'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointdirection'>
+			<code>
+				BreakpointDirection
+				<span class='gray'>(direction, breakpoint)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Used to handle a breakpoints direction's handler and state</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>direction</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>breakpoint</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb2 mt3'>Instance Members</h4>
+	<div class="section-indent">
+  
+    <section id='breakpointdirectionchange'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointdirectionchange'>
+			<code>
+				change
+				<span class='gray'>(to)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Change the state of the direction</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>to</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointdirection_call'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointdirection_call'>
+			<code>
+				_call
+				<span class='gray'>(forActive)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Calls all functions in handlers or</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>forActive</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointdirectiongethandlers'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointdirectiongethandlers'>
+			<code>
+				getHandlers
+				<span class='gray'>(handler)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns handlers in normalized object format on/off</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointdirectionadd'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointdirectionadd'>
+			<code>
+				add
+				<span class='gray'>(handler)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Adds a handler for the direction, optionally use object to add off state handler</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)
+				
+			</td>
+			<td class='col-6'>Function to be executed when direction is active, read object description for on/off
+</td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>handler.on</td>
+  <td class="col-2 quiet">
+    (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)
+    
+  </td>
+  <td class='col-8'>Function to be executed when direction is active
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>handler.off</td>
+  <td class="col-2 quiet">
+    (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)
+    
+  </td>
+  <td class='col-8'>Function to be executed when direction was active and is now changed to inactive
+</td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointdirectionremove'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointdirectionremove'>
+			<code>
+				remove
+				<span class='gray'>(handler)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Removes a handler</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+</div>
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='breakpoint'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpoint'>
+			<code>
+				Breakpoint
+				<span class='gray'>(name, manager)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Single breakpoint management</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>name</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>manager</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb2 mt3'>Instance Members</h4>
+	<div class="section-indent">
+  
+    <section id='breakpoint_setdirection'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpoint_setdirection'>
+			<code>
+				_setDirection
+				<span class='gray'>(direction, active)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Private method used inrternally for managing direction activation</p>
+<ul>
+<li>Each direction manages it's own state and handlers</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>direction</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>The directional key
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>active</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+				
+			</td>
+			<td class='col-6'>State of that direction to set
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointmax'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointmax'>
+			<code>
+				max
+				<span class='gray'>(handler)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Attach handler to be executed from the breakpoint and to all breakpoints below.</p>
+<ul>
+<li>If the browser resizes from a breakpoint below this breakpoint,
+and above the breakpoint name specified, this handler will fire</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Handler to be executed
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointmin'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointmin'>
+			<code>
+				min
+				<span class='gray'>(handler)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Attach handler to be executed from the breakpoint and to all breakpoints below.</p>
+<ul>
+<li>If the browser resizes from a breakpoint above this breakpoint,
+and below the breakpoint name specified, this handler will fire</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Handler to be executed
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointonly'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointonly'>
+			<code>
+				only
+				<span class='gray'>(handler)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Attach a handler to fire when the breakpoint is within the key</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Handler to be executed
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='breakpointremove'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#breakpointremove'>
+			<code>
+				remove
+				<span class='gray'>(handler, direction)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Remove handler</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>handler</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Handler to be removed, extended on/off object style can be used
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>direction</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>Remove handler only from specified direction, else search all directions
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+</div>
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setup'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setup'>
+			<code>
+				setup
+				<span class='gray'>(selector, classes)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Goes through document and finds elements that need to have positioning classes</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>selector</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>The selector for the parent element
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>classes</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Classes (optional) @see setPositionClasses
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setpositionclasses'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setpositionclasses'>
+			<code>
+				setPositionClasses
+				<span class='gray'>(parent, classes)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Sets up the positonal classes that would come from the equal
+height module. Needs to be rerun by user when layout changes
+or new instances are added to the screen</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>parent</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>The grid parent &#x3C;data-grid="">
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>classes</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+				= <code>{columnFirst:&#39;position--column-first&#39;,columnLast:&#39;position--column-last&#39;,rowFirst:&#39;position--row-first&#39;,rowLast:&#39;position--row-last&#39;}</code>
+			</td>
+			<td class='col-6'>Override the default equal heights classes
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='nodedatamanager'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#nodedatamanager'>
+			<code>
+				NodeDataManager
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Class that provides a method to store data based on node/element</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb2 mt3'>Instance Members</h4>
+	<div class="section-indent">
+  
+    <section id='nodedatamanagerget'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#nodedatamanagerget'>
+			<code>
+				get
+				<span class='gray'>(node, key)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Get data for an element/node</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>node</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Html Node/Element to get data for
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>key</code></td>
+			<td class='col-3 quiet'>
+				(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>)
+				
+				= <code>false</code>
+			</td>
+			<td class='col-6'>If key is passed, return that key's data for the element, if falsey return elements complete dataset
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='nodedatamanagerset'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#nodedatamanagerset'>
+			<code>
+				set
+				<span class='gray'>(node, key, value)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Bind data to a specific Node/Element</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>node</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Html Node/Element to get data for
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>key</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>Key to save the data under
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>value</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'>Value to save
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='nodedatamanagerfind'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#nodedatamanagerfind'>
+			<code>
+				find
+				<span class='gray'>(node)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Return an elements store object</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>node</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+    <section id='nodedatamanagerdestroy'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#nodedatamanagerdestroy'>
+			<code>
+				destroy
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Destroy all references to data and nodes/elements</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+</div>
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='nodedatastore'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#nodedatastore'>
+			<code>
+				NodeDataStore
+				<span class='gray'>(node, data)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Child class that provides a store for one specific node/element</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>node</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>data</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='onproxyclick'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#onproxyclick'>
+			<code>
+				onProxyClick
+				<span class='gray'>($0)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Click handler on everything on container</p>
+<ul>
+<li>Determines if click was something that should be ignored (link, etc)</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>$0</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>$0.target</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id=''class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#'>
+			<code>
+				
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Preliminary Notes:
+Considerations for Accessiblity:</p>
+<ul>
+<li><a href="https://webaim.org/standards/wcag/checklist">https://webaim.org/standards/wcag/checklist</a></li>
+<li><a href="https://www.w3.org/TR/WCAG21/#on-focus">https://www.w3.org/TR/WCAG21/#on-focus</a></li>
+<li><a href="https://a11y-style-guide.com/style-guide/section-cards.html">https://a11y-style-guide.com/style-guide/section-cards.html</a></li>
+<li>Reduced Motion</li>
+<li>Percievable (interactive)</li>
+<li>Final Descision
+<ul>
+<li>Use a buttons</li>
+<li>Why?
+<ul>
+<li>Can't use whole card surface as click
+<ul>
+<li>Selections</li>
+<li>Other interactions</li>
+<li>How to make that make sense to SR</li>
+<li>Keyboard focuses and then clicks</li>
+<li>Accidental flipping on zoom</li>
+</ul>
+</li>
+<li>Can't use hover</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>BRAINSTORM START:
+<ul>
+<li>Don't use hover or focus (motor control issues)
+<ul>
+<li>Needs to use click</li>
+</ul>
+</li>
+<li>Run through screenreader expierence
+<ul>
+<li>Hits button (reads title, click to reveal)</li>
+<li>Focuses the content button (reads content, backside, click to unreveal)</li>
+<li>NO BUTTONS CAN"T HAVE CONTENT, BUTTONS NEED TO STATE THEIR INTENT</li>
+</ul>
+</li>
+<li>Try Again, Run through screenreader expierence
+<ul>
+<li>Screen reader encounters flipcard</li>
+<li>Headline is read</li>
+<li>Button is read (reveal description)</li>
+<li>Button is clicked</li>
+<li>Content is shown and focused</li>
+<li>Button to flip back</li>
+</ul>
+</li>
+<li>For Keybaord users
+<ul>
+<li>The accessible buttons can be used or a click handler can be attached to the
+flipcard and given</li>
+</ul>
+</li>
+<li>Why not always show the content to screenreaders?
+<ul>
+<li>How to hide controls from them? (controls can't be hidden)</li>
+<li>How to not have events interfere click</li>
+<li>Maybe use a single control and make it say "jumpto definition"
+<ul>
+<li>Kind of lame</li>
+</ul>
+</li>
+<li>What about going back to focus and then attaching a click handler?
+<ul>
+<li>Visual users will see the content on keyboard or mouse or touch</li>
+<li>We can reduce the motion with query</li>
+<li>Note: WCAG AAA - 1.4.13 Content on Hover or Focus
+<ul>
+<li>Need to bind escape</li>
+</ul>
+</li>
+<li>Mouse users and touch will need to click</li>
+<li>How does it focus and work on a screenreader?</li>
+</ul>
+</li>
+<li>Cannot use FOCUS!
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html">https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html</a></li>
+<li>What if the user was zoomed? They may never see the title/front</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>I think it MUST use buttons or a button to flip
+<ul>
+<li>Because users need to be able to scroll, interact and select text in a back</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb1 mt3'>Examples</h4>
+	
+	
+	<pre class='p1 overflow-auto round fill-light'><code>html
+       &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">&quot;flipcard&quot;</span>&gt;
+         <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flipcard__front&quot;</span>&gt;</span>
+           Term Name
+           <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flipcard__toggle&quot;</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hidden-visually&quot;</span>&gt;</span>Show Definition<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></span>
+         <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flipcard__back&quot;</span>&gt;</span>
+           Some definiton example lorem ipsum et depsi anu olor.
+           <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;flipcard__toggle&quot;</span>&gt;</span>
+             <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hidden-visually&quot;</span>&gt;</span>Hide Definition<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+           <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+       &lt;/div&gt;</code></pre>
+	
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setupmodal'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setupmodal'>
+			<code>
+				setupModal
+				<span class='gray'>(modal, settings)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Function to setup each modal</p>
+<ul>
+<li>Creates structure</li>
+<li>Gets settings from elements data attrite</li>
+<li>Moves it to the end of the document</li>
+<li>Adds resizer if position (left || right)</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>modal</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Modal element ie. 
+<code>[data-site-modal]</code>
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>settings</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Custom settings object to merge, same interface as 
+<code>[data-site-modal]</code>
+ settings
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='show'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#show'>
+			<code>
+				show
+				<span class='gray'>(id, config)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Open a modal</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>id</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>The id of the modal to open
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>config</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='close'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#close'>
+			<code>
+				close
+				<span class='gray'>(id)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Close a modal</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>id</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>The id of the modal to open
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='newmodal'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#newmodal'>
+			<code>
+				newModal
+				<span class='gray'>(args)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Sets up a new ajax triggered modal and opens it</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>args</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>Arguments provided from Drupal (JSON format)
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setmodalid'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setmodalid'>
+			<code>
+				setModalId
+				<span class='gray'>(element, id)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Sets and returns the modal's id</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>element</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>id</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='newcontainer'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#newcontainer'>
+			<code>
+				newContainer
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Once we remove the placeholder containers id (above)
+we create another programmatic placeholder container
+for the next programmitic container</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='cachetrigger'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#cachetrigger'>
+			<code>
+				cacheTrigger
+				<span class='gray'>(event)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Document click handler, will cache the trigger that caused the modal to open</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>event</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='constructor'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#constructor'>
+			<code>
+				constructor
+				<span class='gray'>(container, control, options)</span>
+			</code>
+		</a>
+	</h3>
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>container</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Container to be resize
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>control</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Resize handle element
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>options</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Defualt can be changed on class
+</td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>options.debug</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+    
+  </td>
+  <td class='col-8'>Enable non-essential debugging logs
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>options.overrideMaxWidth</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+    
+  </td>
+  <td class='col-8'>When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>options.fromLeft</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+    
+  </td>
+  <td class='col-8'>The script should assume the handle is on the left side of the element
+</td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='handleresize'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#handleresize'>
+			<code>
+				handleResize
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Sliding mechanism needs translate updated on resize</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='previous'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#previous'>
+			<code>
+				previous
+				<span class='gray'>(event)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Goto to the previous slide</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>event</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='next'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#next'>
+			<code>
+				next
+				<span class='gray'>(event)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Goto to the next slide</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>event</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='ensuretranstionends'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#ensuretranstionends'>
+			<code>
+				ensureTranstionEnds
+				<span class='gray'>(element, duration, beginTransition)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Makes sure that no matter what the callback is called if transition event
+doesn't start or fails to finish/cancel</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>element</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>duration</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+				
+			</td>
+			<td class='col-6'>Duration to wait for complete
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>beginTransition</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Css changes to begin/start transtion
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='translateto'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#translateto'>
+			<code>
+				translateTo
+				<span class='gray'>(x, duration)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Translate the track to X</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>x</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>duration</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setvisibility'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setvisibility'>
+			<code>
+				setVisibility
+				<span class='gray'>(activeSlide, showAll)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Show's a specifc slide and hides others, except when passing true to show all
+then all slides will visible</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>activeSlide</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>showAll</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='fadeslide'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#fadeslide'>
+			<code>
+				fadeSlide
+				<span class='gray'>(slide, visible)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Perform a fade on a single slide</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>slide</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>visible</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='slidetransition'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#slidetransition'>
+			<code>
+				slideTransition
+				<span class='gray'>($0)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Handler for the entire slide transtion</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>$0</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>$0.slide</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>$0.index</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>$0.old</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>$0.oldIndex</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='fadetransition'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#fadetransition'>
+			<code>
+				fadeTransition
+				<span class='gray'>($0)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Handler for the entire fade transtion</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>$0</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>$0.slide</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>$0.old</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='notransition'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#notransition'>
+			<code>
+				noTransition
+				<span class='gray'>($0)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Handler for the entire NO transtion</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>$0</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>$0.slide</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>$0.old</td>
+  <td class="col-2 quiet">
+    any
+    
+  </td>
+  <td class='col-8'></td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='removearrayelement'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#removearrayelement'>
+			<code>
+				removeArrayElement
+				<span class='gray'>(array, element)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Removes an array element (modifies array)</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>array</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+				
+			</td>
+			<td class='col-6'>Array to remove element from
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>element</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Element">Element</a>
+				
+			</td>
+			<td class='col-6'>Array element to remove
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='offsetfindindexof'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#offsetfindindexof'>
+			<code>
+				offsetFindIndexOf
+				<span class='gray'>(array, start, callback)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Searches array for first item matching test, beginning at a start index but searching the entire array</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>array</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+				
+			</td>
+			<td class='col-6'>Array to search
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>start</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+				
+				= <code>0</code>
+			</td>
+			<td class='col-6'>The index in the array to start the search from
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>callback</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>A test function that is passed array item and index
+<ul>
+<li>Credit: (James Waddington) <a href="https://stackoverflow.com/questions/28430348/how-to-loop-through-arrays-starting-at-different-index-while-still-looping-throu">https://stackoverflow.com/questions/28430348/how-to-loop-through-arrays-starting-at-different-index-while-still-looping-throu</a></li>
+</ul>
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='getdirectdescandants'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#getdirectdescandants'>
+			<code>
+				getDirectDescandants
+				<span class='gray'>(element, selector)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns an array of direct descendants</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>element</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>selector</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='isoverflowny'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#isoverflowny'>
+			<code>
+				isOverflownY
+				<span class='gray'>(element)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Checks if element is overflown vertically</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>element</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='isoverflown'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#isoverflown'>
+			<code>
+				isOverflown
+				<span class='gray'>(element)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Checks if element is overflown both vertically and horizontally</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>element</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='getscrollparent'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#getscrollparent'>
+			<code>
+				getScrollParent
+				<span class='gray'>(node)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>For a given element return the first parent that has scrollable overflow</p>
+<ul>
+<li>Helpful for debugging position sticky</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>node</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>Node to start search for first scrollable parent
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+	<h4 class='caps quiet mb1 mt3'>Examples</h4>
+	
+	
+	<pre class='p1 overflow-auto round fill-light'><code><span class="hljs-keyword">const</span> $navcontent = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;.nav__content&#x27;</span>);
+  <span class="hljs-keyword">if</span> ($navcontent) {
+    <span class="hljs-built_in">console</span>.log(getScrollParent($navcontent));
+  }</code></pre>
+	
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='documentheight'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#documentheight'>
+			<code>
+				documentHeight
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns reliable document height</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='windowheight'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#windowheight'>
+			<code>
+				windowHeight
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns reliable window height</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='windowwidth'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#windowwidth'>
+			<code>
+				windowWidth
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns reliable window width</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='browserwithpositionsticky'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#browserwithpositionsticky'>
+			<code>
+				browserWithPositionSticky
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Check browser support for position: sticky</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/60214332/dynamically-detect-if-positionsticky-is-supported-by-the-browser">https://stackoverflow.com/questions/60214332/dynamically-detect-if-positionsticky-is-supported-by-the-browser</a></li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='createelementfromhtml'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#createelementfromhtml'>
+			<code>
+				createElementFromHtml
+				<span class='gray'>(markup)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns Node List from HTML markup string</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>markup</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>HTML markup to create into an element
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='composeelement'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#composeelement'>
+			<code>
+				composeElement
+				<span class='gray'>(config)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Creates a new element with attributes and children</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>config</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Configuration object
+</td>
+		</tr>
+		
+		
+		<tr>
+  <td class='col-2 strong'>config.tag</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+    
+  </td>
+  <td class='col-8'>Node type (ie 'div')
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>config.attributes</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    
+  </td>
+  <td class='col-8'>Attributes to add to the new element
+</td>
+</tr>
+
+
+		
+		<tr>
+  <td class='col-2 strong'>config.children</td>
+  <td class="col-2 quiet">
+    <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+    
+  </td>
+  <td class='col-8'>Array of children to append into the new element
+</td>
+</tr>
+
+
+		
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='config'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#config'>
+			<code>
+				config
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Configuration Object</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='set'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#set'>
+			<code>
+				set
+				<span class='gray'>(changes)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Changes to make to configuration</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>changes</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='log'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#log'>
+			<code>
+				log
+				<span class='gray'>(context, messages)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Proxy Console.log</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>context</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Class instance (optional), will rely on classes (debug) property for output
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>messages</code></td>
+			<td class='col-3 quiet'>
+				...any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='logwarning'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#logwarning'>
+			<code>
+				logWarning
+				<span class='gray'>(context, messages)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Proxy Console.warn</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>context</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Class instance (optional), will rely on classes (debug) property for output
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>messages</code></td>
+			<td class='col-3 quiet'>
+				...any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='logerror'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#logerror'>
+			<code>
+				logError
+				<span class='gray'>(context, messages)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Proxy Console.error</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>context</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Class instance (optional), will rely on classes (debug) property for output
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>messages</code></td>
+			<td class='col-3 quiet'>
+				...any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='hasrequiredprops'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#hasrequiredprops'>
+			<code>
+				hasRequiredProps
+				<span class='gray'>(required)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Checks object has required properties</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>required</code></td>
+			<td class='col-3 quiet'>
+				array.string
+				
+			</td>
+			<td class='col-6'>Array of properties to check for
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></code>
+	:
+	<span class='force-inline'>Function for user to use to test for props passed on objects
+</span>
+	
+	
+	
+
+	
+
+	
+	<h4 class='caps quiet mb1 mt3'>Examples</h4>
+	
+	
+	<pre class='p1 overflow-auto round fill-light'><code><span class="hljs-keyword">const</span> testProps = hasRequiredProps([<span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;date&quot;</span>]);
+    <span class="hljs-keyword">if</span> (testProps(userConfiguration)) {
+      <span class="hljs-comment">// Stuff</span>
+    }</code></pre>
+	
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='object'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#object'>
+			<code>
+				object
+				<span class='gray'>(testObject)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Function used for testing on user end</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>testObject</code></td>
+			<td class='col-3 quiet'>
+				<a href="#object">object</a>
+				
+			</td>
+			<td class='col-6'>Object to test on
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='debounce'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#debounce'>
+			<code>
+				debounce
+				<span class='gray'>(callback, wait, immediate, valueThis)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Returns a function, that, as long as it continues to be invoked, will not be triggered</p>
+
+	
+
+	
+	
+	
+	<p>Author: David Walsh  
+  - https://davidwalsh.name/javascript-debounce-function</p>
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>callback</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Function to invoke
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>wait</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>
+				
+			</td>
+			<td class='col-6'>Amount of time after (milliseconds)
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>immediate</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a>
+				
+			</td>
+			<td class='col-6'>trigger the function on the leading edge, instead of the trailing.
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>valueThis</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Context for function
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='debounceanimationframe'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#debounceanimationframe'>
+			<code>
+				debounceAnimationFrame
+				<span class='gray'>(callback, context)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Debounces function using requestAnimationFrame()</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>callback</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+				
+			</td>
+			<td class='col-6'>Function to invoke, cancelled if called faster than RAF
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>context</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+				= <code>null</code>
+			</td>
+			<td class='col-6'>Optional context to bind to callback
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='patterns'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#patterns'>
+			<code>
+				patterns
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Common Regular Expression Patterns</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='separatecssunit'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#separatecssunit'>
+			<code>
+				separateCssUnit
+				<span class='gray'>(original, string)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Will return an object with the separation details</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>original</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>string</code></td>
+			<td class='col-3 quiet'>
+				[type]
+				
+			</td>
+			<td class='col-6'>[description]
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="#object">object</a></code>
+	:
+	<span class='force-inline'>keys: value, original, unit
+</span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='striptags'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#striptags'>
+			<code>
+				stripTags
+				<span class='gray'>(html)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Removes HTML tags from string</p>
+<ul>
+<li>Note you can use document.createElement and grab textContent (but this could execute code in browser)</li>
+<li>The method below will just use regex without creating Nodes</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>html</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>HTML string to find/replace
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='trimdoublespaces'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#trimdoublespaces'>
+			<code>
+				trimDoubleSpaces
+				<span class='gray'>(string)</span>
+			</code>
+		</a>
+	</h3>
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>string</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>String to trim
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='trimlinebreaks'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#trimlinebreaks'>
+			<code>
+				trimLineBreaks
+				<span class='gray'>(string)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Remove line breaks</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>string</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>String to trim
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='trimwhitespace'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#trimwhitespace'>
+			<code>
+				trimWhitespace
+				<span class='gray'>(string)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Designed originally to flatten style definitions</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>string</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>String to trim
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='truncate'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#truncate'>
+			<code>
+				truncate
+				<span class='gray'>(string, max, overflowChar)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Truncates string with ellipsis if over the max, note use framework function
+if you need to know the effects of the truncate process (returns an object
+with info instead) this function only modifies the string</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>string</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+				
+			</td>
+			<td class='col-6'>String to possibly truncate
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>max</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+				
+			</td>
+			<td class='col-6'>How many characters max?
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>overflowChar</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+				= <code>&#39;…&#39;</code>
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+	:
+	<span class='force-inline'></span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='urlize'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#urlize'>
+			<code>
+				urlize
+				<span class='gray'>(string)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Replaces non safe characters with "-"</p>
+<ul>
+<li>Does not escape characters</li>
+<li>Used for id's and classnames or things that can't  have anything but normal a-z 0-9</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>string</code></td>
+			<td class='col-3 quiet'>
+				any
+				
+			</td>
+			<td class='col-6'></td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='prettydate'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#prettydate'>
+			<code>
+				prettyDate
+				<span class='gray'>(str)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Converts date to abbreviated month date ie "Mar 7, 2018"</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>str</code></td>
+			<td class='col-3 quiet'>
+				(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>)
+				
+			</td>
+			<td class='col-6'>Date or date string (passed through date constructor)
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></code>
+	:
+	<span class='force-inline'>Pretty date string
+</span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='randomstring'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#randomstring'>
+			<code>
+				randomString
+				<span class='gray'>(length, allowed)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Generates a random string of defined length based on
+a string of allowed characters.</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>length</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+				
+				= <code>10</code>
+			</td>
+			<td class='col-6'>How many random characters will be in the returned string. Defaults to 10
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>allowed</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+				
+				= <code>&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&#39;</code>
+			</td>
+			<td class='col-6'>Which characters can be used when creating the random string. Defaults to A-Z,a-z,0-9
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+	
+	<h4 class='caps quiet mb1 mt3'>Returns</h4>
+	<code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+	:
+	<span class='force-inline'>A string of random characters
+</span>
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='elementwaypoint'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#elementwaypoint'>
+			<code>
+				ElementWaypoint
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb2 mt3'>Instance Members</h4>
+	<div class="section-indent">
+  
+    <section id='elementwaypointdestroy'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#elementwaypointdestroy'>
+			<code>
+				destroy
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Destroys the waypoints</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+</div>
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='elementwaypoint'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#elementwaypoint'>
+			<code>
+				ElementWaypoint
+				<span class='gray'>(options)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Reusable waypoint class that adds two waypoints in order to call user
+handler when the element is in view or out of view.</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>options</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Options to merge with defaults
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	<h4 class='caps quiet mb2 mt3'>Instance Members</h4>
+	<div class="section-indent">
+  
+    <section id='elementwaypointdestroy'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#elementwaypointdestroy'>
+			<code>
+				destroy
+				<span class='gray'>()</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Destroys the waypoints</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+  
+</div>
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
+<script src='assets/scripts.min.js'></script>
+</body>
+</html>

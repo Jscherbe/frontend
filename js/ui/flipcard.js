@@ -6,8 +6,8 @@
 
 // Changes                    1.0.1 | Added allow selection
 
-import { log, logError } from "./logger.js";
-import { trimWhitespace } from "./utils";
+import { log, logError } from "../utils/logger.js";
+import { trimWhitespace } from "../utils/string.js";
 const debugMode = false; // Global dev debug
 
 export class Flipcard {
@@ -21,7 +21,6 @@ export class Flipcard {
     },
   }
   constructor(container, front, back, config, debug = false) {
-    super();
     if (!container, !front, !back) {
       logError(this, 'Missing an element (container, front, back)');
     }

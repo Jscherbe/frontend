@@ -19,8 +19,8 @@
 //                               * Will Change use
 
 import maintain from 'ally.js/maintain/_maintain';
-import { log, logError, logWarning } from "./logger.js";
-import { debounce, trimWhitespace } from "./utils";
+import { log, logError, logWarning } from "../utils/logger.js";
+import { debounce, trimWhitespace } from "../utils/string.js";
 const debugMode = false; // Global dev debug
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const eventOnce = { once: true };
@@ -47,7 +47,6 @@ export class Slider {
     // transition: true
   }
   constructor(container, title, trackContainer, track, slides, config, debug = false) {
-    super();
     const options = Object.assign({}, Slider.defaults, config);
     this.debug = debugMode || debug;
     this.options = options;

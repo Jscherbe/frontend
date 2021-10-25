@@ -2,7 +2,7 @@
  * @todo This file is untested since conversion to module
  */
 
-import ElementWaypoint from "../lib/element-waypoint.js";
+import ElementWaypoint from "../waypoints/element-waypoint.js";
 
 export default function init(anchors, caret, options) {
   const defaults = {

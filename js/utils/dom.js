@@ -49,15 +49,6 @@ export function getScrollParent(node) {
 }
 
 /**
- *   Checks if element is overflown both vertically and horizontally
- *   @param  {Node}  element
- *   @return {Boolean}
- */
-export function isOverflown(element) {
-  return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-}
-
-/**
  *   Returns reliable document height
  *   @return {number}
  */

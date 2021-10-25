@@ -1,11 +1,13 @@
+Example of anchor menu setup
+
+```js
 /**
  * @todo This needs to be converted for reuse!
  */
 
 // Creates anchor menu and attaches waypoints
-import ElementWaypoint from "../lib/element-waypoint.js";
-import Tooltip from "../lib/tooltip.js";
-
+import ElementWaypoint from "../waypoints/element-waypoint.js";
+import Tooltip from "../ui/tooltip.js";
 
 window.addEventListener("load", init);
 
@@ -101,6 +103,4 @@ function destroy() {
   }
 }
 
-
-
-
+```
