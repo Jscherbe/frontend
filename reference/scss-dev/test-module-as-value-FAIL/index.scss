@@ -1,0 +1,4 @@
+@use "m1";
+@use "m2";
+
+@include m1.styles(m2);

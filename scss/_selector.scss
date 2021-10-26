@@ -3,6 +3,7 @@
 ////
 
 @use "sass:map";
+@use "utils";
 
 /// Module Settings
 /// - This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. 

@@ -1,4 +1,11 @@
-/// Main entry for using the library as a module and rendering styles within your own structure
+/// Main entry for library as single module use
+/// - All modules get namespaced
+/// @example scss - Example of color modules
+///   // Namespaced
+///   ulu.color-get();
+///   // Versus
+///   color.get();
+///
 
 @forward "path" as path-*;
 @forward "color" as color-*;
@@ -12,7 +19,6 @@
 @forward "utility" as utility-*;
 @forward "layout" as layout-*;
 @forward "grid" as grid-*;
-
 @forward "base" as base-*;
 @forward "components" as component-*;
 @forward "helpers" as helper-*;

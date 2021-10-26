@@ -124,8 +124,8 @@ $config: (
     border: 0;
     box-sizing: content-box;
     overflow: visible;
-    margin: element.$margin 0;
-    border-bottom: element.$rule;
+    margin: element.get("margin") 0;
+    border-bottom: element.get-rule-style();
   }
   iframe {
     border: 0;

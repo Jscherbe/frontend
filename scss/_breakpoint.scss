@@ -129,7 +129,7 @@ $sizes: (
 @mixin embed-for-scripts() {
   &:before {
     display: none;
-    content: $null-name;
+    content: get("null-name");
     @each $size, $breakpoint in $sizes {
       @include min($size) {
         content: $size;

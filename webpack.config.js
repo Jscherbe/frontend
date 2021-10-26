@@ -29,6 +29,6 @@ module.exports = (env, argv) => {
     }
   };
   const finalConfig = merge(config, serverConfig);
-  console.log(finalConfig);
+  // console.log(finalConfig);
   return finalConfig;
 };

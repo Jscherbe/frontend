@@ -1,0 +1,6 @@
+@use "m1";
+@use "m2";
+
+@use "sass:meta";
+
+@include m1.styles(meta.get-function("get", false, "m2"));

@@ -11,6 +11,15 @@
 @use "typography";
 @use "utils";
 
+// Used for function fallback
+$-element-get: meta.get-function("get", false, "element");
+$-fallbacks: (
+  "box-shadow" : $-element-get
+);
+
+/// Module Settings
+/// @type Map
+
 $config: (
   "padding":                 (0.75em 1.5em),
   "background-color":        color.tint(black, 30%),
@@ -24,7 +33,7 @@ $config: (
   "font-size":               "base",
   "color":                   white,
   "color--hover":            white,
-  "box-shadow":              element.$box-shadow,
+  "box-shadow":              true,
   "border-radius":           2rem,
   "border-width":            0,
   "border-color":            transparent,
@@ -35,6 +44,9 @@ $config: (
   "icon-font-size":          1.38rem,
   "icon-border-radius":      50%
 ) !default;
+
+/// Button sizes
+/// @type Map
 
 $sizes: (
   "small" : (
@@ -49,6 +61,9 @@ $sizes: (
     "icon-size" : 3.5rem
   )
 ) !default;
+
+/// Button styles
+/// @type Map
 
 $styles: (
   "transparent" : (
@@ -73,11 +88,24 @@ $styles: (
   ),
 ) !default;
 
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+
 @function get($name) {
-  @return utils.require-map-get($config, $name, "button");
+  $value: utils.require-map-get($config, $name, "button");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 @mixin set-styles($changes) {

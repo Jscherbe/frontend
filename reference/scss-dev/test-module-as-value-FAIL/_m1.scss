@@ -1,0 +1,6 @@
+@mixin styles($from) {
+  body {
+    color: red;
+    color: $from.get();
+  }
+}

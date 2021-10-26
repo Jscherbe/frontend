@@ -120,9 +120,14 @@ $config: (
   hyphens: auto;
 }
 
-// Creates a size map
+/// Creates a size map 
+/// - This is just an accelerator for creating a size map
+/// - You can pass your own size maps using set-sizes()
+/// @param {Number} $font-size Font size
+/// @param {Number} $line-height Line height
+/// @param {Boolean} $is-headline Is a headline
 
-@function _new-size($font-size, $line-height: true, $is-headline: false) {
+@function new-size($font-size, $line-height: true, $is-headline: false) {
   @return (
     "font-size": $font-size,
     "font-weight" : if($is-headline, get("font-weight-headline"), null), 
@@ -147,19 +152,19 @@ $config: (
 /// @todo Add headlines
 
 $sizes: (
-  "small-x" :       _new-size(scale(-2)),
-  "small" :         _new-size(scale(-1)),
-  "base" :          _new-size(scale(0)),
-  "large" :         _new-size(scale(1),   scale-line-height(1)),
-  "large-x" :       _new-size(scale(2),   scale-line-height(2)),
-  "large-xx" :      _new-size(scale(3),   scale-line-height(3)),
-  "large-xxx" :     _new-size(scale(4),   scale-line-height(4)),
-  "h1" :            _new-size(scale(6),   scale-line-height(6),   true),
-  "h2" :            _new-size(scale(5),   scale-line-height(5),   true),
-  "h3" :            _new-size(scale(4),   scale-line-height(4),   true),
-  "h4" :            _new-size(scale(3),   scale-line-height(3),   true),
-  "h5" :            _new-size(scale(2),   scale-line-height(2),   true),
-  "h6" :            _new-size(scale(1),   scale-line-height(1),   true)
+  "small-x" :       new-size(scale(-2)),
+  "small" :         new-size(scale(-1)),
+  "base" :          new-size(scale(0)),
+  "large" :         new-size(scale(1),   scale-line-height(1)),
+  "large-x" :       new-size(scale(2),   scale-line-height(2)),
+  "large-xx" :      new-size(scale(3),   scale-line-height(3)),
+  "large-xxx" :     new-size(scale(4),   scale-line-height(4)),
+  "h1" :            new-size(scale(6),   scale-line-height(6),   true),
+  "h2" :            new-size(scale(5),   scale-line-height(5),   true),
+  "h3" :            new-size(scale(4),   scale-line-height(4),   true),
+  "h4" :            new-size(scale(3),   scale-line-height(3),   true),
+  "h5" :            new-size(scale(2),   scale-line-height(2),   true),
+  "h6" :            new-size(scale(1),   scale-line-height(1),   true)
 ) !default;
 
 /// Update the typography presets map
@@ -311,4 +316,3 @@ $sizes: (
     }
   }
 }
-

@@ -1,0 +1,8 @@
+@use "sass:meta";
+
+@mixin styles($fn) {
+  body {
+    color: red;
+    color: meta.call($fn);
+  }
+}

@@ -5,7 +5,6 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:meta";
-@use "sass:map";
 @use "utils";
 @use "calculate";
 @use "breakpoint";
@@ -96,7 +95,7 @@ $containers: (
   $responsive: map.get($container, "responsive");
   $x: get-container-padding-x($name, $specific-breakpoint);
   $y: get-container-padding-y($name, $specific-breakpoint);
-  $resp-amount: if(meta.type-of($responsive) == number, $responsive, $responsive-amount);
+  $resp-amount: if(meta.type-of($responsive) == number, $responsive, calculate.get("responsive-change"));
   
   @if $responsive {
     @if $sides {

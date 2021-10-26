@@ -31,7 +31,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, 'typography [option]');
+  @return require-map-get($config, $name, 'utils');
 }
 
 /// Get a required value from a map, throw an error if not found
@@ -140,4 +140,22 @@ $config: (
   } @else {
     @return map.merge($original, $changes);
   }
+}
+
+/// Helps in providing a dynamic fallback for modules whose defaults should come from another
+/// @param {String} $prop Property trying to get fallback for
+/// @param {*} $value The value that may need the fallback
+/// @param {Map} $functions Map of functions (use meta.get-function to add functions to map). These names will be used in the $lookup 
+/// @param {Map} $lookup Map of properties to function names
+/// @return {*} The user's original value, or if the value is true get the default value from the provided function
+
+@function function-fallback($prop, $value, $functions, $lookup) {
+  // If there was already a value return it else resolve through passed function
+  @if ($value == true)  {
+    $fn: map.get($functions, map.get($lookup, $prop));
+    @if ($fn) {
+      @return meta.call($fn, $prop);
+    } 
+  }
+  @return $value;
 }
