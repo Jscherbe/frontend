@@ -6,34 +6,24 @@
 @use "sass:meta";
 @use "utils";
 
-/// The defualt black value, can be tinted and other users of the color
-/// @type Color
-
-$black: black !default;
-
-/// The defualt black value, can be tinted and other users of the color
-/// @type Color
-
-$white: white !default;
-
 /// The color palette map, can be extended or modified with set() and accessed with get()
 /// @type map  
 
 $palette: (
-  "black" : $black,
-  "white" : $white,
-  "type": $black,
-  "focus" : blue,
-  "error": red,
-  "accent" : orange,
-  "box-shadow" : rgba(0, 0, 0, 0.349),
-  "rule" : gray,
-  "rule-light" : lightgray,
-  "link" : blue,
-  "link:hover" : darkblue,
-  "link:active" : darkblue,
-  "link:visited" : purple,
-  "bullet" : inherit
+  "black":        black,
+  "white":        white,
+  "type":         black,
+  "focus":        blue,
+  "error":        red,
+  "accent":       orange,
+  "box-shadow":   rgba(0, 0, 0, 0.349),
+  "rule":         gray,
+  "rule-light":   lightgray,
+  "link":         blue,
+  "link:hover":   darkblue,
+  "link:active":  darkblue,
+  "link:visited": purple,
+  "bullet":       inherit
 ) !default;
 
 /// Pairs of background-color and color definitions
@@ -54,8 +44,6 @@ $contexts: (
     "base-class" : true
   ),
 );
-
-
 
 /// Used to override or extend the color palette
 /// @param {Map} $changes A map to merge into the color palette
@@ -144,7 +132,7 @@ $contexts: (
 /// @link https://css-tricks.com/snippets/sass/tint-shade-functions/ Modified from source (CSS Tricks, Kitty Giraudel)
 
 @function tint($color, $percentage) {
-  @return mix($white, get($color), $percentage);
+  @return mix(get("white"), get($color), $percentage);
 }
 
 /// Darken a color with the default black by a percentage
@@ -155,5 +143,5 @@ $contexts: (
 /// @link https://css-tricks.com/snippets/sass/tint-shade-functions/ Modified from source (CSS Tricks, Kitty Giraudel)
 
 @function shade($color, $percentage) {
-  @return mix($black, get($color), $percentage);
+  @return mix(get("black"), get($color), $percentage);
 }

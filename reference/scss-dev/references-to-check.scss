@@ -1,0 +1,13 @@
+// element
+$backdrop-blur: 4px !default;   
+$backdrop-color: rgba(73, 73, 73, 0.459) !default;   
+$box-shadow: 0 1px 5px color.get('box-shadow') !default;
+$box-shadow--raised: 0 1px 12px color.get('box-shadow') !default;
+$box-shadow--above: 0 1px 20px color.get('box-shadow') !default;
+$border-radius: 6px !default;
+$border-radius--small: 3px !default;
+$border-radius--large: 5% !default;
+$rule--size: 1px !default;
+$rule--style: solid !default;
+$rule: $rule--size $rule--style color.get('rule') !default;
+$rule-light: $rule--size $rule--style color.get('rule-light') !default;

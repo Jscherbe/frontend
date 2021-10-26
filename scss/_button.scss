@@ -11,31 +11,29 @@
 @use "typography";
 @use "utils";
 
-$-module-name: "button";
-
 $config: (
-  "padding" : (0.75em 1.5em),
-  "background-color" : color.tint(black, 30%),
-  "background-color--hover" : black,
-  "font-family" : inherit,
-  "font-weight" : bold,
-  "line-height" : 1.1,
-  "letter-spacing" : 0.02em,
-  "text-transform" : uppercase,
-  "text-shadow" : none,
-  "font-size" : "base",
-  "color" : white,
-  "color--hover" : white,
-  "box-shadow" : element.$box-shadow,
-  "border-radius" : 2rem,
-  "border-width" : 0,
-  "border-color" : transparent,
-  "border-color--hover" : transparent,
-  "margin" : (0.45em 0.5em 0.45em 0),
-  "min-width" : 9rem,
-  "icon-size" : 2.5rem,
-  "icon-font-size" : 1.38rem,
-  "icon-border-radius" : 50%
+  "padding":                 (0.75em 1.5em),
+  "background-color":        color.tint(black, 30%),
+  "background-color--hover": black,
+  "font-family":             inherit,
+  "font-weight":             bold,
+  "line-height":             1.1,
+  "letter-spacing":          0.02em,
+  "text-transform":          uppercase,
+  "text-shadow":             none,
+  "font-size":               "base",
+  "color":                   white,
+  "color--hover":            white,
+  "box-shadow":              element.$box-shadow,
+  "border-radius":           2rem,
+  "border-width":            0,
+  "border-color":            transparent,
+  "border-color--hover":     transparent,
+  "margin":                  (0.45em 0.5em 0.45em 0),
+  "min-width":               9rem,
+  "icon-size":               2.5rem,
+  "icon-font-size":          1.38rem,
+  "icon-border-radius":      50%
 ) !default;
 
 $sizes: (
@@ -79,7 +77,7 @@ $styles: (
   $config: map.merge($config, $changes) !global;
 }
 @function get($name) {
-  @return utils.require-map-get($config, $name, $-module-name);
+  @return utils.require-map-get($config, $name, "button");
 }
 
 @mixin set-styles($changes) {

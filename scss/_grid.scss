@@ -2,15 +2,6 @@
 /// @group grid
 ////
 
-@use "sass:map";
-@use "sass:math";
-
-@use "breakpoint";
-@use "color";
-@use "element";
-@use "layout";
-@use "utils";
-
 /// HTML Attribute to use for selecting
 /// @example markup
 ///     <!-- This grid does not use columns to ovoid repeating prefixes like: -->
@@ -24,88 +15,84 @@
 ///       <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
 ///       </div>
 ///     </div>
-/// @type String
 
-$attribute: "data-grid" !default;
+@use "sass:map";
+@use "sass:math";
 
-/// Number of columns (default grid)
-/// @type String
+@use "breakpoint";
+@use "color";
+@use "element";
+@use "layout";
+@use "utils";
 
-$columns: 12 !default;
+/// Module Settings
+/// @type Map
+/// @prop {String} $config.default-breakpoint This is the starting point for the grid
+/// @prop {Number} $config.columns Default for grid mixin
+/// @prop {String} $config.attribute Default attribute to use for grid mixin
+/// @prop {Number} $config.gutter Default gutter for grid mixin
+/// @prop {Map} $config.extra-breakpoints Default extra breakpoints for grid mixin
+/// @prop {MaStringp} $config.position-class--column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+/// @prop {String} $config.position-class--column-last See definition above
+/// @prop {String} $config.position-class--row-first See definition above
+/// @prop {String} $config.position-class--row-last See definition above
 
-/// Breakpoint name for the grid (default grid)
-/// - The grid uses upward (min) breakpoints only
-/// - This is the starting point for the grid
-/// @type String
-
-$breakpoint: breakpoint.$default !default;
-
-
-$extra-breakpoints--default: (
-  "medium" : (
-    "breakpoint" : "medium",
-    "gutter" : 15px
+$config: (
+  "default-breakpoint" : breakpoint.get("default"),
+  "columns" : 12,
+  "attribute" : "data-grid",
+  "gutter": 14px,
+  "extra-breakpoints" : (
+    "medium" : (
+      "breakpoint" : "medium",
+      "gutter" : 15px
+    ),
+    "large" : (
+      "breakpoint" : "large",
+      "gutter" : 20px
+    )
   ),
-  "large" : (
-    "breakpoint" : "large",
-    "gutter" : 20px
-  )
-);
-/// Breakpoint name for the grid (default grid)
-/// - The grid uses upward (min) breakpoints only
-/// - This is the starting point for the grid
-/// @type String
+  "position-class--column-first" : "position--column-first",
+  "position-class--column-last" : "position--column-last",
+  "position-class--row-first" : "position--row-first",
+  "position-class--row-last" : "position--row-last"
+) !default;
 
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
 
-$extra-breakpoints: if(breakpoint.exists("large"), $extra-breakpoints--default, false) !default;
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
 
-/// Grid's gutter (default grid)
-/// @type String
-
-$gutter: 14px !default;
-
-
-/// Include rule styling (requires javascript plugin)
-/// @type Boolean
-
-$include-rules: false !default;
-
-/// Rule size
-/// @type Number
-
-$rule-size: element.$rule--size !default;
-
-/// Rule color
-/// @type Number
-
-$rule-color: color.get("rule") !default;
-
-/// These are set by the script (for the rules)
-$position-class--column-first: "position--column-first";
-$position-class--column-last: "position--column-last";
-$position-class--row-first: "position--row-first";
-$position-class--row-last: "position--row-last";
+@function get($name) {
+  @return utils.require-map-get($config, $name, "grid");
+}
 
 /// Creates grid css (variation of original data-grid)
+/// @param {Number} $columns Columns in grid
+/// @param {Number} $breakpoint Breakpoint key for starting the grid
+/// @param {Map} $extra-breakpoints Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)
+/// @param {Number} $gutter Size in pixels for the gutters
+/// @param {Boolean} $include-rules Print styles for including rules
+/// @param {Number} $rule-size Size of the rule (border/seperator)
+/// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
+/// @param {String} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+
 @mixin create(
-  $columns: $columns,
-  $breakpoint: $breakpoint,
-  // List of breakpoints in accending order smallest to largest
-  // - Note smaller than grid's breakpoint
-  // - Optionally breakpoints can specify another gutter 
-  // (
-  //  "large": ("breakpoint" : "large", "gutter" : 35px )
-  // )
-  $extra-breakpoints: $extra-breakpoints,
-  // (
-  // "name": ("size" : 4px, "color" : "color name" || color
-  // )
+  $columns: 12,
+  $breakpoint: get("default-breakpoint"),
+  $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
+  $gutter: get("gutter"),
+  $include-rules: false,
+  $rule-size: 1px,
+  $rule-color: color.get("rule"),
   $extra-rule-styles: null,
-  $gutter: $gutter,
-  $include-rules: $include-rules,
-  $rule-size: $rule-size,
-  $rule-color: $rule-color,
-  $attribute: $attribute
+  $attribute: get("attribute")
 ) {
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
@@ -154,7 +141,7 @@ $position-class--row-last: "position--row-last";
           left: 0;
           right: 0;
           height: $rule-size;
-          background: $rule-color;
+          background: color.get($rule-color);
         }
       }
     }
@@ -172,7 +159,7 @@ $position-class--row-last: "position--row-last";
           top: 0;
           bottom: 0;
           width: $rule-size;
-          background: $rule-color;
+          background: color.get($rule-color);
         }
       }
     }

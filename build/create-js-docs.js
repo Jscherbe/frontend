@@ -44,7 +44,6 @@ module.exports = async function createJsDocs(options) {
         }
         streamArray(docs).pipe(vfs.dest(options.outputPathHtml));
         logger.log('Built HTML for ' + options.title);
-        logger.log('Creating global docs index');
       });
   }
 };

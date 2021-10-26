@@ -1,0 +1,28 @@
+////
+/// @group GROUPNAME
+////
+
+@use "sass:map";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.example Example config property
+
+$config: (
+  
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, 'typography [option]');
+}

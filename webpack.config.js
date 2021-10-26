@@ -7,10 +7,28 @@ module.exports = (env, argv) => {
   if (env.docs) {
     plugins.push(docsPlugin);
   }
-  return merge(mixin(env, argv), {
+  const config = merge(mixin(env, argv), {
     entry: {
       "ulu-frontend.min" : resolve(__dirname, "index.js"),
     },
     plugins
   });
+
+  // Not proxying just serving the docs folder
+  delete config.devServer.proxy;
+  const serverConfig = {
+    devServer: {
+      watchFiles: [
+        // "scss/**/*.scss",
+        // "**/*.js",
+      ],
+      static: {
+        directory: resolve(__dirname, "docs/"),
+        watch: false
+      }
+    }
+  };
+  const finalConfig = merge(config, serverConfig);
+  console.log(finalConfig);
+  return finalConfig;
 };

@@ -3,6 +3,30 @@
 ////
 
 @use "sass:math";
+@use "sass:map";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.responsive-change Default responsive amount to modify items using responsive-property mixin
+
+$config: (
+  "responsive-change": 0.5vw
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "calculate");
+}
 
 /// Calculate the size of something at a given scale (percentage/exponential)
 /// @param {Number} $base The number the scale starts at
@@ -24,14 +48,16 @@
   @return math.div($pixels, $base) + 1em;
 }
 
-/// Default responsive amount to modify items using responsive-property mixin
-$responsive-change: 0.5vw !default;
-
 /// Provides user with a fallback for a calc that's just an enhancement
 /// @param {String} $property The CSS property to set
 /// @param {*} $value The value to set on the property
-/// @param {Css} $responsive-unit The amount to change (vw or vh units) (combined with unit past)
-@mixin responsive-property($property, $value, $responsive-unit: $responsive-change) {
+/// @param {Css} $responsive-change The amount to change (vw or vh units) (combined with unit past)
+
+@mixin responsive-property(
+  $property, 
+  $value, 
+  $responsive-change: get("responsive-change")
+) {
   #{ $property } : $value;
-  #{ $property } : calc(#{ $value } + #{ $responsive-unit });
+  #{ $property } : calc(#{ $value } + #{ $responsive-change });
 }
