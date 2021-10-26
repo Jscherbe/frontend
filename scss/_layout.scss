@@ -5,27 +5,50 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:meta";
+@use "sass:map";
 @use "utils";
 @use "calculate";
 @use "breakpoint";
 
-$max-width: 90rem !default;
-$margin: 2rem !default;
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.max-width Common max-width for site
+/// @prop {Number} $config.margin Common margin for site
+/// @prop {Number} $config.z-index-fixed Common z-index, above everything
+/// @prop {Number} $config.z-index-sticky Common z-index for sticky or stuck items
+/// @prop {Number} $config.z-index-above Common z-index, below sticky
 
-$z-index-sticky: 100 !default;
-$z-index-above: 500 !default;
-$z-index-fixed: 1000 !default;
+$config: (
+  "max-width":         90rem,
+  "margin":            2rem,
+  "z-index-sticky":    100,
+  "z-index-above":     500,
+  "z-index-fixed":     1000
+) !default;
 
-$responsive-amount: 3vw !default;
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "layout");
+}
 
 $containers: (
   "container" : (
     "width" : 100%,
-    "max-width" : $max-width,
-    "padding" : ($margin $margin),
+    "max-width" : get("max-width"),
+    "padding" : (get("margin") get("margin")),
     "breakpoints" : null,
     "responsive" : false,
-    "responsive-amount" : $responsive-amount
+    "responsive-amount" : 3vw
   )
 ) !default;
 
@@ -67,7 +90,7 @@ $containers: (
     @return list.nth($padding, if($sides, 2, 1));
   }
 }
-// LEFT OFF ON CONDITIONS
+
 @mixin container-padding($name, $sides: true, $ends: true, $specific-breakpoint: false) {
   $container: get-container($name, $specific-breakpoint);
   $responsive: map.get($container, "responsive");
@@ -124,17 +147,12 @@ $containers: (
   @if $breakpoints and not $specific-breakpoint {
     @each $breakpoint, $props in $breakpoints {
       $direction: map.get($props, "direction");
-      .test-outside {
-        content: #{$name}, #{$breakpoint}, #{$direction};
-      }
       @include breakpoint.from($breakpoint, $direction) {
         @include container-styles($name, $breakpoint);
       }
     }
   }
 }
-// Flexbox stuff
-// Site padding margins
 
 /// Prints clearfix styles
 
@@ -150,31 +168,4 @@ $containers: (
     clear: both; 
   }
   *zoom: 1;
-}
-
-/// Hide text for assistive devices
-/// @param {Boolean} $hidden Defaults to true, pass false to override the hidden css (ie. on focus)
-/// @example scss
-///   @include ulu.layout-hidden-visually()
-///   // Reset styling
-///   @include ulu.layout-hidden-visually(false)
-
-@mixin hidden-visually($hidden: true) {
-  @if $hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  } @else {
-    clip: auto;
-    clip-path: none;
-    height: auto;
-    overflow: visible;
-    position: static;
-    white-space: normal;
-    width: auto;
-  }
 }

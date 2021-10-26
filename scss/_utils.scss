@@ -2,17 +2,37 @@
 /// @group utils
 ////
 
-/// Debugs include map print outs
-$debug-maps: true !default;
-
-/// Remove comments if you'd like
-/// @type Boolean 
-$file-header-comments: true !default;
-
 @use "sass:map";
 @use "sass:meta";
 @use "sass:math";
 @use "sass:list";
+
+/// Module Settings
+/// @type Map
+/// @prop {Boolean} $config.debug-maps Debugs include map print outs
+/// @prop {Boolean} $config.file-header-comments Remove comment headers if you'd like
+
+$config: (
+  "debug-maps": true,
+  "file-header-comments": true
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, 'typography [option]');
+}
 
 /// Get a required value from a map, throw an error if not found
 /// @param {Map} $map The map to get the value from
@@ -25,7 +45,7 @@ $file-header-comments: true !default;
   @if ($value != null) {
     @return $value;
   } @else {
-    @if ($debug-maps) {
+    @if (get("debug-maps")) {
       @debug $map;
     }
     @error 'ULU: Unable to find  "#{ $key }" in #{ $context } map.';
@@ -68,7 +88,7 @@ $file-header-comments: true !default;
 /// @param {List} $name The name of the specific area/file (optional)
 
 @mixin file-header($context, $name: "") {
-  @if ($file-header-comments) {
+  @if ("file-header-comments") {
 /* 
 =============================================================================
 #{ $context }:#{ $name }

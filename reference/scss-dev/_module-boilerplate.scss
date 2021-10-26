@@ -14,6 +14,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
 ///   @include module-name.set(( "property" : value ));
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -21,6 +22,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
 ///   @include module-name.get("property");
 
 @function get($name) {

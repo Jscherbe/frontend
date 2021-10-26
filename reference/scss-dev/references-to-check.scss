@@ -11,3 +11,11 @@ $rule--size: 1px !default;
 $rule--style: solid !default;
 $rule: $rule--size $rule--style color.get('rule') !default;
 $rule-light: $rule--size $rule--style color.get('rule-light') !default;
+
+// Layout
+$max-width: 90rem !default;
+$margin: 2rem !default;
+$z-index-sticky: 100 !default;
+$z-index-above: 500 !default;
+$z-index-fixed: 1000 !default;
+$responsive-amount: 3vw !default;

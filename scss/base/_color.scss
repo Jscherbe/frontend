@@ -2,33 +2,12 @@
 /// @group base
 ////
 
-@use "sass:map";
 @use "../utils";
-@use "../selector";
 @use "../color";
 
-/// Prints color styles 
-/// - in base so they can be overriddenn
-/// @name base-color-styles
-/// @example scss
-///  @include ulu.base-color-styles();
-/// @example raw Example of a color-context
-///  <div class="color-context-dark" style="padding: 1rem">
-////   Some text in dark context
-//// </div>
+/// Prints color-context styles as base classes (top of stylesheet)
 
 @mixin styles {
-  
   @include utils.file-header('base', 'color');
-
-  $prefix: selector.class("color");
-  $prefix-contexts: selector.class("color-context");
-
-  @each $name, $context in color.$contexts {
-    @if (map.get($context, "base-class")) {
-      #{ $prefix-contexts }-#{$name} {
-        @include color.context-styles($name);
-      }
-    }
-  }
+  @include color.all-context-styles("base-class");
 }

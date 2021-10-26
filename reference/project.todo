@@ -1,5 +1,10 @@
 Todos:
   Short Term:
+    ☐ Path Resolve Aliases
+      * Either change the marker (not to conflict with npm organizations)
+      * Or just see if there is an alias versus assuming "@" = alias
+      * Could they conflict
+      * Resolved before passing to css-loader (so paths would be in place by then)
     ☐ Removing variables for config map (left off on `_layout.scss`)
     ☐ Scss, need to decide if map keys should use "--" for modifiers
       ☐ It's nice but it's also a little confusing maybe

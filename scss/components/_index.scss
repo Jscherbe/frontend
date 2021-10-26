@@ -14,9 +14,7 @@
 @use "list-lines";
 @use "list-bullet";
 
-/// Used to check against user's includes
-/// @access private
-/// @type List
+// Used to check against user's includes
 
 $-all-includes: (
   "links" : true,

@@ -17,9 +17,7 @@
 @use "keyframes";
 @use "layout";
 
-/// Used to check against user's includes
-/// @access private
-/// @type List
+// Used to check against user's includes
 
 $-all-includes: (
   "normalize" : true, 

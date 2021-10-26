@@ -1,7 +1,12 @@
+////
+/// @group components
+////
+
 @use "../element";
 @use "../color";
 @use "../typography";
 
+/// Output styles
 
 @mixin styles {
   $border: element.get-rule-style("light") !default;

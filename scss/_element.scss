@@ -220,3 +220,30 @@ $rule-margins: (
     list-style-type: get("ul-list-style-type--3");
   }
 }
+
+/// Hide text for assistive devices
+/// @param {Boolean} $hidden Defaults to true, pass false to override the hidden css (ie. on focus)
+/// @example scss
+///   @include ulu.layout-hidden-visually()
+///   // Reset styling
+///   @include ulu.layout-hidden-visually(false)
+
+@mixin hidden-visually($hidden: true) {
+  @if $hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  } @else {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
+  }
+}

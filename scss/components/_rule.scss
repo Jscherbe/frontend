@@ -1,24 +1,41 @@
 ////
-/// @group component
+/// @group components
 ////
 
+@use "sass:map";
 @use "../element";
 @use "../color";
 @use "../selector";
 
-$short-width: 2.75rem !default;
-$short-border-width: 4px !default;
-// $short-border-color: black !default;
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.short-width Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output
+/// @prop {Number} $config.short-border-width Short rule width of border
 
-@mixin set-short-width($width) {
-  $short-width: $width !global;
+$config: (
+  "short-width" : 2.75rem,
+  "short-border-width" : 4px
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
 }
-@mixin set-short-border-width($width) {
-  $short-border-width: $width !global;
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, 'typography [option]');
 }
-// @mixin set-border-color($color) {
-//   $short-border-color: $color !global;
-// }
+
+/// Output styles
 
 @mixin styles {
 
@@ -41,10 +58,12 @@ $short-border-width: 4px !default;
   }
 
   // Meant to be user by tself without content
-  #{ $class }--short {
-    width: $short-width;
-    max-width: 100%;
-    border-bottom-width: $short-border-width;
-    // display: inline-block;
+  $short-width: get("short-width");
+  @if ($short-width) {
+    #{ $class }--short {
+      width: $short-width;
+      max-width: 100%;
+      border-bottom-width: get("short-border-width");
+    }
   }
 }

@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "sass:meta";
 @use "utils";
+@use "selector";
 
 /// The color palette map, can be extended or modified with set() and accessed with get()
 /// @type map  
@@ -45,6 +46,13 @@ $contexts: (
   ),
 );
 
+/// Palette entries that are output as classes when using all-color-class-styles
+$color-classes: (
+  "black" : true,
+  "white" : true,
+  "type": true
+) !default;
+
 /// Used to override or extend the color palette
 /// @param {Map} $changes A map to merge into the color palette
 /// @example scss Setting the error and type color
@@ -67,6 +75,13 @@ $contexts: (
     @return $name;
   }
   @return utils.require-map-get($palette, $name, 'color');
+}
+
+/// Set ouput classes for all-color-class-styles
+/// @param {Map} $changes Map of changes (you can disable defaults this way)
+
+@mixin set-color-classes($changes) {
+  $color-classes: map.merge($color-classes, $changes) !global;
 }
 
 @function exists($name) {
@@ -144,4 +159,39 @@ $contexts: (
 
 @function shade($color, $percentage) {
   @return mix(get("black"), get($color), $percentage);
+}
+
+/// Prints all context styles 
+/// @param {String} $with-prop Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)
+/// @example scss
+///  @include ulu.all-context-styles();
+/// @example raw Example of a color-context
+///  <div class="color-context-dark" style="padding: 1rem">
+////   Some text in dark context
+//// </div>
+@mixin all-context-styles($with-prop: null) {
+  $prefix: selector.class("color-context");
+  @each $name, $context in $contexts {
+    @if (not $with-prop or map.get($context, $with-prop)) {
+      #{ $prefix }-#{ $name } {
+        @include context-styles($name);
+      }
+    }
+  }
+}
+
+/// Outputs all color classes
+/// @example scss
+///  @include ulu.all-color-class-styles();
+/// @example raw Example of a color-context
+///  <span class="color-name">Some text</span>
+@mixin all-color-class-styles() {
+  $prefix: selector.class("color");
+  @each $name, $output in $color-classes {
+    @if ($output) {
+      #{ $prefix }-#{ $name } {
+        color: get($name);
+      }
+    }
+  }
 }

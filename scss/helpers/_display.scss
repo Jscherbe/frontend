@@ -7,6 +7,7 @@
 @use "../utils";
 @use "../utility";
 @use "../layout";
+@use "../element";
 @use "../breakpoint";
 @use "../selector";
 
@@ -22,12 +23,12 @@
   $hiddenVisuallyPrefix: selector.class("hidden-visually");
 
   #{ $hiddenVisuallyPrefix } {
-    @include layout.hidden-visually();
+    @include element.hidden-visually();
   }
   #{ $hiddenVisuallyPrefix }--focusable {
     &:active,
     &:focus {
-      @include layout.hidden-visually(false);
+      @include element.hidden-visually(false);
     }
   }
   // Consider removing

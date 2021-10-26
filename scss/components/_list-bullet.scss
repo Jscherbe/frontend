@@ -1,7 +1,12 @@
+////
+/// @group components
+////
+
 @use "../element";
 @use "../color";
 @use "../selector";
 
+/// Output styles
 
 @mixin styles {
   $prefix: selector.class("list-bullet");

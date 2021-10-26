@@ -1,7 +1,7 @@
 {
   "name": "@ulu/frontend",
   "version": "1.0.0",
-  "description": "Frontend themeing library with commonly used tools and sass modules",
+  "description": "Frontend themeing library. No opinion, modular Sass library that can be used as a framework base, only works in Sass > 1.23. This is a slight refactor of the orginal @ulu/sass that will now include all frontend related assets (SCSS, JS, etc)",
   "browser": "js/index.js",
   "scripts": {
     "serve": "webpack serve --mode development --progress --stats minimal --env docs",
