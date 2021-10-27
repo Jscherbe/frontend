@@ -25,10 +25,12 @@
 
 ### Rules
 
+- Leverage default parameters in mixin and functions over config defaults that rely on other module's configuration
+  - Testing shows that these are evaluated when the function is called, which makes sense because if not these may have all the same references (thinking JS has the parameter scope and is evaluated on call)
 - No changing vars (aka with)
 - No extending (not supported, only within the same module for convenience)
 - No relying on use of @use > with to configure, it's too complicated for user (and me). 
-  - Use mixins to set vars (kind of a pain but we should probably rely more on maps so there isn't so much repetition)
+  - Use mixin to set vars (kind of a pain but we should probably rely more on maps so there isn't so much repetition)
 - Kabab case will be used for everything, @see "Module Prefixes" below, works better with kabab case
 - Modules use simple variable, mixins and function names relative to their module
 - Forwards will make namespacing in the overall ulu packaged module

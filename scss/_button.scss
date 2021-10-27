@@ -50,15 +50,15 @@ $config: (
 
 $sizes: (
   "small" : (
-    "padding": (0.35em 1.5em),
-    "min-width" : 0,
-    "icon-size" : 2rem,
-    "icon-font-size" : 1rem
+    "padding":        (0.35em 1.5em),
+    "min-width":      0,
+    "icon-size":      2rem,
+    "icon-font-size": 1rem
   ),
   "large" : (
-    "padding" : (1em 2em),
-    "min-width" : 11rem,
-    "icon-size" : 3.5rem
+    "padding":   (1em 2em),
+    "min-width": 11rem,
+    "icon-size": 3.5rem
   )
 ) !default;
 

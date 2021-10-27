@@ -26,7 +26,6 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} $config.default-breakpoint This is the starting point for the grid
 /// @prop {Number} $config.columns Default for grid mixin
 /// @prop {String} $config.attribute Default attribute to use for grid mixin
 /// @prop {Number} $config.gutter Default gutter for grid mixin
@@ -37,10 +36,9 @@
 /// @prop {String} $config.position-class-row-last See definition above
 
 $config: (
-  "default-breakpoint" : breakpoint.get("default"),
-  "columns" : 12,
-  "attribute" : "data-grid",
-  "gutter": 14px,
+  "columns":            12,
+  "attribute":          "data-grid",
+  "gutter":             14px,
   "extra-breakpoints" : (
     "medium" : (
       "breakpoint" : "medium",
@@ -51,10 +49,10 @@ $config: (
       "gutter" : 20px
     )
   ),
-  "position-class-column-first" : "position-column-first",
-  "position-class-column-last" : "position-column-last",
-  "position-class-row-first" : "position-row-first",
-  "position-class-row-last" : "position-row-last"
+  "position-class-column-first": "position-column-first",
+  "position-class-column-last":  "position-column-last",
+  "position-class-row-first":    "position-row-first",
+  "position-class-row-last":     "position-row-last"
 ) !default;
 
 /// Change modules $config
@@ -84,7 +82,7 @@ $config: (
 
 @mixin create(
   $columns: 12,
-  $breakpoint: get("default-breakpoint"),
+  $breakpoint: breakpoint.get("default"),
   $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
   $gutter: get("gutter"),
   $include-rules: false,
