@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "webpack serve --mode development --progress --stats minimal --env docs",
     "build": "webpack build --mode production --progress --stats minimal --env docs",
+    "build-test": "webpack build --mode development --progress --stats minimal",
     "build-no-docs": "webpack build --mode production --progress --stats minimal",
     "watch": "webpack watch --mode production --stats minimal --env docs"
   },
@@ -28,9 +29,11 @@
   "devDependencies": {
     "@ulu/node-logger": "^1.0.0",
     "@ulu/webpack-mixin": "^1.0.1",
+    "core-js": "3.19",
     "documentation": "^13.2.5",
     "documentation-theme-light": "^1.1.1",
     "markdown-toc": "^1.2.0",
+    "regenerator-runtime": "^0.13.9",
     "sassdoc": "^2.7.3",
     "stream-array": "^1.1.2",
     "vinyl-fs": "^3.0.3"

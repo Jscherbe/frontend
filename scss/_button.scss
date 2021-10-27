@@ -23,7 +23,7 @@ $-fallbacks: (
 $config: (
   "padding":                 (0.75em 1.5em),
   "background-color":        color.tint(black, 30%),
-  "background-color--hover": black,
+  "background-color-hover": black,
   "font-family":             inherit,
   "font-weight":             bold,
   "line-height":             1.1,
@@ -32,12 +32,12 @@ $config: (
   "text-shadow":             none,
   "font-size":               "base",
   "color":                   white,
-  "color--hover":            white,
+  "color-hover":            white,
   "box-shadow":              true,
   "border-radius":           2rem,
   "border-width":            0,
   "border-color":            transparent,
-  "border-color--hover":     transparent,
+  "border-color-hover":     transparent,
   "margin":                  (0.45em 0.5em 0.45em 0),
   "min-width":               9rem,
   "icon-size":               2.5rem,
@@ -104,7 +104,7 @@ $styles: (
 
 
 @function get($name) {
-  $value: utils.require-map-get($config, $name, "button");
+  $value: utils.require-map-get($config, $name, "button [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
@@ -164,9 +164,9 @@ $styles: (
     margin-right: 0;
   }
   &:hover {
-    color: get("color--hover");
-    background-color: get("background-color--hover");
-    border-color: get("border-color--hover");
+    color: get("color-hover");
+    background-color: get("background-color-hover");
+    border-color: get("border-color-hover");
   }
 }
 

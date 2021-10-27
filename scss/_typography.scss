@@ -65,7 +65,7 @@ $config: (
 ///   @include typography.set-options(( "font-size" : 14px ));
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, 'typography [option]');
+  @return utils.require-map-get($config, $name, 'typography [config]');
 }
 
 /// Get scale of the base font-size

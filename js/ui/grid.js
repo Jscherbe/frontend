@@ -23,14 +23,17 @@ export function setup(selector, classes) {
  *   Sets up the positonal classes that would come from the equal
  *   height module. Needs to be rerun by user when layout changes
  *   or new instances are added to the screen
+ *   - Used for gutter crops
+ *   - Used for rule placement
+ *   - **Devs** Remember that default classes should match sass defaults
  *   @param {Node} parent  The grid parent <data-grid="">
  *   @param {Object} classes Override the default equal heights classes
  */
 export function setPositionClasses(parent, classes = { 
-  columnFirst: 'position--column-first', 
-  columnLast: 'position--column-last', 
-  rowFirst: 'position--row-first', 
-  rowLast: 'position--row-last' 
+  columnFirst: 'position-column-first', 
+  columnLast: 'position-column-last', 
+  rowFirst: 'position-row-first', 
+  rowLast: 'position-row-last' 
 }) {  
   const children = [...parent.children];
   const rows = [];

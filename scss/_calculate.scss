@@ -26,7 +26,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "calculate");
+  @return utils.require-map-get($config, $name, "calculate [config]");
 }
 
 /// Calculate the size of something at a given scale (percentage/exponential)

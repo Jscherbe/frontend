@@ -292,28 +292,6 @@
 						
 						
 						<a
-								href='#setup'
-								class="regular block">
-							<code>setup</code>
-							
-						</a>
-						
-						
-						
-						
-						
-						<a
-								href='#setpositionclasses'
-								class="regular block">
-							<code>setPositionClasses</code>
-							
-						</a>
-						
-						
-						
-						
-						
-						<a
 								href='#nodedatamanager'
 								class="regular block toggle-sibling">
 							<code>NodeDataManager</code>
@@ -383,6 +361,28 @@
 								href='#'
 								class="regular block">
 							<code></code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setup'
+								class="regular block">
+							<code>setup</code>
+							
+						</a>
+						
+						
+						
+						
+						
+						<a
+								href='#setpositionclasses'
+								class="regular block">
+							<code>setPositionClasses</code>
 							
 						</a>
 						
@@ -3057,169 +3057,6 @@ and below the breakpoint name specified, this handler will fire</li>
 				
 				
 				
-				<section id='setup'class='mt2 mb2 px3 py1 keyline-top'>
-
-	<div class='right py2'>
-		
-		
-	</div>
-
-	<h3 class='regular'>
-		<a class='black' href='#setup'>
-			<code>
-				setup
-				<span class='gray'>(selector, classes)</span>
-			</code>
-		</a>
-	</h3>
-
-	<p>Goes through document and finds elements that need to have positioning classes</p>
-
-	
-
-	
-	
-	
-	
-	
-	
-
-	
-	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
-		<thead class='fill-light'>
-		<th class='col-3 small caps quiet'>parameter</th>
-		<th class='col-3 small caps quiet'>type</th>
-		<th class='col-6 small caps quiet'>description</th>
-		</thead>
-		
-		<tr>
-			<td class='col-3 strong'><code>selector</code></td>
-			<td class='col-3 quiet'>
-				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
-				
-			</td>
-			<td class='col-6'>The selector for the parent element
-</td>
-		</tr>
-		
-		
-		<tr>
-			<td class='col-3 strong'><code>classes</code></td>
-			<td class='col-3 quiet'>
-				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-				
-			</td>
-			<td class='col-6'>Classes (optional) @see setPositionClasses
-</td>
-		</tr>
-		
-		
-	</table>
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-</section>
-
-				
-				
-				
-				<section id='setpositionclasses'class='mt2 mb2 px3 py1 keyline-top'>
-
-	<div class='right py2'>
-		
-		
-	</div>
-
-	<h3 class='regular'>
-		<a class='black' href='#setpositionclasses'>
-			<code>
-				setPositionClasses
-				<span class='gray'>(parent, classes)</span>
-			</code>
-		</a>
-	</h3>
-
-	<p>Sets up the positonal classes that would come from the equal
-height module. Needs to be rerun by user when layout changes
-or new instances are added to the screen</p>
-
-	
-
-	
-	
-	
-	
-	
-	
-
-	
-	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
-		<thead class='fill-light'>
-		<th class='col-3 small caps quiet'>parameter</th>
-		<th class='col-3 small caps quiet'>type</th>
-		<th class='col-6 small caps quiet'>description</th>
-		</thead>
-		
-		<tr>
-			<td class='col-3 strong'><code>parent</code></td>
-			<td class='col-3 quiet'>
-				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
-				
-			</td>
-			<td class='col-6'>The grid parent &#x3C;data-grid="">
-</td>
-		</tr>
-		
-		
-		<tr>
-			<td class='col-3 strong'><code>classes</code></td>
-			<td class='col-3 quiet'>
-				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-				
-				= <code>{columnFirst:&#39;position--column-first&#39;,columnLast:&#39;position--column-last&#39;,rowFirst:&#39;position--row-first&#39;,rowLast:&#39;position--row-last&#39;}</code>
-			</td>
-			<td class='col-6'>Override the default equal heights classes
-</td>
-		</tr>
-		
-		
-	</table>
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-</section>
-
-				
-				
-				
 				<section id='nodedatamanager'class='mt2 mb2 px3 py1 keyline-top'>
 
 	<div class='right py2'>
@@ -3867,6 +3704,174 @@ flipcard and given</li>
          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
        &lt;/div&gt;</code></pre>
 	
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setup'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setup'>
+			<code>
+				setup
+				<span class='gray'>(selector, classes)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Goes through document and finds elements that need to have positioning classes</p>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>selector</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>
+				
+			</td>
+			<td class='col-6'>The selector for the parent element
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>classes</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+			</td>
+			<td class='col-6'>Classes (optional) @see setPositionClasses
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+</section>
+
+				
+				
+				
+				<section id='setpositionclasses'class='mt2 mb2 px3 py1 keyline-top'>
+
+	<div class='right py2'>
+		
+		
+	</div>
+
+	<h3 class='regular'>
+		<a class='black' href='#setpositionclasses'>
+			<code>
+				setPositionClasses
+				<span class='gray'>(parent, classes)</span>
+			</code>
+		</a>
+	</h3>
+
+	<p>Sets up the positonal classes that would come from the equal
+height module. Needs to be rerun by user when layout changes
+or new instances are added to the screen</p>
+<ul>
+<li>Used for gutter crops</li>
+<li>Used for rule placement</li>
+<li><strong>Devs</strong> Remember that default classes should match sass defaults</li>
+</ul>
+
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	<table class='table-light mt3 rounded keyline-all keyline-light overflow-hidden bg-cloudy-light'>
+		<thead class='fill-light'>
+		<th class='col-3 small caps quiet'>parameter</th>
+		<th class='col-3 small caps quiet'>type</th>
+		<th class='col-6 small caps quiet'>description</th>
+		</thead>
+		
+		<tr>
+			<td class='col-3 strong'><code>parent</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/API/Node/nextSibling">Node</a>
+				
+			</td>
+			<td class='col-6'>The grid parent &#x3C;data-grid="">
+</td>
+		</tr>
+		
+		
+		<tr>
+			<td class='col-3 strong'><code>classes</code></td>
+			<td class='col-3 quiet'>
+				<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+				
+				= <code>{columnFirst:&#39;position-column-first&#39;,columnLast:&#39;position-column-last&#39;,rowFirst:&#39;position-row-first&#39;,rowLast:&#39;position-row-last&#39;}</code>
+			</td>
+			<td class='col-6'>Override the default equal heights classes
+</td>
+		</tr>
+		
+		
+	</table>
+	
+
+	
+
+	
+
+	
+
 	
 
 	

@@ -37,7 +37,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "layout");
+  @return utils.require-map-get($config, $name, "layout [config]");
 }
 
 $containers: (

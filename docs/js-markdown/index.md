@@ -56,23 +56,23 @@
     + [Parameters](#parameters-20)
   * [remove](#remove-1)
     + [Parameters](#parameters-21)
-- [setup](#setup)
-  * [Parameters](#parameters-22)
-- [setPositionClasses](#setpositionclasses)
-  * [Parameters](#parameters-23)
 - [NodeDataManager](#nodedatamanager)
   * [get](#get)
-    + [Parameters](#parameters-24)
+    + [Parameters](#parameters-22)
   * [set](#set)
-    + [Parameters](#parameters-25)
+    + [Parameters](#parameters-23)
   * [find](#find)
-    + [Parameters](#parameters-26)
+    + [Parameters](#parameters-24)
   * [destroy](#destroy)
 - [NodeDataStore](#nodedatastore)
-  * [Parameters](#parameters-27)
+  * [Parameters](#parameters-25)
 - [onProxyClick](#onproxyclick)
-  * [Parameters](#parameters-28)
+  * [Parameters](#parameters-26)
   * [Examples](#examples-1)
+- [setup](#setup)
+  * [Parameters](#parameters-27)
+- [setPositionClasses](#setpositionclasses)
+  * [Parameters](#parameters-28)
 - [setupModal](#setupmodal)
   * [Parameters](#parameters-29)
 - [show](#show)
@@ -431,26 +431,6 @@ Remove handler
 *   `handler` **[Function][6]** Handler to be removed, extended on/off object style can be used
 *   `direction` **[String][4]** Remove handler only from specified direction, else search all directions
 
-## setup
-
-Goes through document and finds elements that need to have positioning classes
-
-### Parameters
-
-*   `selector` **[String][4]** The selector for the parent element
-*   `classes` **[Object][1]** Classes (optional) @see setPositionClasses
-
-## setPositionClasses
-
-Sets up the positonal classes that would come from the equal
-height module. Needs to be rerun by user when layout changes
-or new instances are added to the screen
-
-### Parameters
-
-*   `parent` **[Node][5]** The grid parent \<data-grid="">
-*   `classes` **[Object][1]** Override the default equal heights classes (optional, default `{columnFirst:'position--column-first',columnLast:'position--column-last',rowFirst:'position--row-first',rowLast:'position--row-last'}`)
-
 ## NodeDataManager
 
 Class that provides a method to store data based on node/element
@@ -581,6 +561,30 @@ html
          </div>
        </div>
 ```
+
+## setup
+
+Goes through document and finds elements that need to have positioning classes
+
+### Parameters
+
+*   `selector` **[String][4]** The selector for the parent element
+*   `classes` **[Object][1]** Classes (optional) @see setPositionClasses
+
+## setPositionClasses
+
+Sets up the positonal classes that would come from the equal
+height module. Needs to be rerun by user when layout changes
+or new instances are added to the screen
+
+*   Used for gutter crops
+*   Used for rule placement
+*   **Devs** Remember that default classes should match sass defaults
+
+### Parameters
+
+*   `parent` **[Node][5]** The grid parent \<data-grid="">
+*   `classes` **[Object][1]** Override the default equal heights classes (optional, default `{columnFirst:'position-column-first',columnLast:'position-column-last',rowFirst:'position-row-first',rowLast:'position-row-last'}`)
 
 ## setupModal
 

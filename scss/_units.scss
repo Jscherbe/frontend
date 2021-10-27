@@ -41,7 +41,7 @@ $config: (
 
 @function get($value: 1) {
   @if (meta.type-of($value) == string) {
-    @return utils.require-map-get($config, $name, 'unit');
+    @return utils.require-map-get($config, $value, 'unit [config]');
   }
   @return get("default") * $value;
 }

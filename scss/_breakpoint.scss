@@ -32,7 +32,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, 'breakpoint');
+  @return utils.require-map-get($config, $name, 'breakpoint [config]');
 }
 
 

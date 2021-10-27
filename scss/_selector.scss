@@ -32,7 +32,7 @@ $-class-overrides: ();
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, 'typography [option]');
+  @return utils.require-map-get($config, $name, "selector [config]");
 }
 
 /// Set the class selector overrides

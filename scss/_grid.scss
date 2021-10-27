@@ -18,7 +18,6 @@
 
 @use "sass:map";
 @use "sass:math";
-
 @use "breakpoint";
 @use "color";
 @use "element";
@@ -32,10 +31,10 @@
 /// @prop {String} $config.attribute Default attribute to use for grid mixin
 /// @prop {Number} $config.gutter Default gutter for grid mixin
 /// @prop {Map} $config.extra-breakpoints Default extra breakpoints for grid mixin
-/// @prop {MaStringp} $config.position-class--column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
-/// @prop {String} $config.position-class--column-last See definition above
-/// @prop {String} $config.position-class--row-first See definition above
-/// @prop {String} $config.position-class--row-last See definition above
+/// @prop {MaStringp} $config.position-class-column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+/// @prop {String} $config.position-class-column-last See definition above
+/// @prop {String} $config.position-class-row-first See definition above
+/// @prop {String} $config.position-class-row-last See definition above
 
 $config: (
   "default-breakpoint" : breakpoint.get("default"),
@@ -52,10 +51,10 @@ $config: (
       "gutter" : 20px
     )
   ),
-  "position-class--column-first" : "position--column-first",
-  "position-class--column-last" : "position--column-last",
-  "position-class--row-first" : "position--row-first",
-  "position-class--row-last" : "position--row-last"
+  "position-class-column-first" : "position-column-first",
+  "position-class-column-last" : "position-column-last",
+  "position-class-row-first" : "position-row-first",
+  "position-class-row-last" : "position-row-last"
 ) !default;
 
 /// Change modules $config
@@ -70,7 +69,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "grid");
+  @return utils.require-map-get($config, $name, "grid [config]");
 }
 
 /// Creates grid css (variation of original data-grid)
@@ -99,6 +98,11 @@ $config: (
   $select-item: '[#{ $attribute-item }]';
   $select-rule-col: ":before";
   $select-rule-row: ":after";
+  // These through off syntax highlighting when inside interpolation
+  $position-class-column-first: get("position-class-column-first");
+  $position-class-column-last: get("position-class-column-last");
+  $position-class-row-first: get("position-class-row-first");
+  $position-class-row-last: get("position-class-row-last");
 
   #{ $select-grid } {
     @include layout.clearfix(); // For legacy browsers
@@ -117,14 +121,14 @@ $config: (
     }
     &#{'[#{ $attribute }*="gutters-row: top"]'} { 
       > #{ $select-item } {
-        &.#{ $position-class--row-last } {
+        &.#{ $position-class-row-last } {
           padding-bottom: 0;
         }
       }
     }
     &#{'[#{ $attribute }*="gutters-row: bottom"]'} { 
       > #{ $select-item } {
-        &.#{ $position-class--row-first } {
+        &.#{ $position-class-row-first } {
           padding-top: 0;
         }
       }
@@ -170,7 +174,7 @@ $config: (
       $attribute: $attribute, 
       $select-item: $select-item, 
       $select-rule-col: $select-rule-col, 
-      $end-class: $position-class--column-first
+      $end-class: $position-class-column-first
     );
     @include -create-rule-col-position(
       $position: "right", 
@@ -178,7 +182,7 @@ $config: (
       $attribute: $attribute, 
       $select-item: $select-item, 
       $select-rule-col: $select-rule-col, 
-      $end-class: $position-class--column-last
+      $end-class: $position-class-column-last
     );
     // Override first or last column removing the rule using matching specificity
     &#{'[#{ $attribute }*="rules-column:"][#{ $attribute }*="rules-column-ends: true"]'} {
@@ -220,7 +224,7 @@ $config: (
           bottom: math.floor(math.div($rule-size, 2)) * -1;
         }
         // For removing the rule per row (via equal heights for now)
-        &.#{ $position-class--row-last } {
+        &.#{ $position-class-row-last } {
           &#{ $select-rule-row } {
             content: none;
           }

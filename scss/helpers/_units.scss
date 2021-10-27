@@ -30,7 +30,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, 'typography [option]');
+  @return utils.require-map-get($config, $name, "units [config]");
 }
 
 /// Prints all unit helper classes
@@ -48,7 +48,7 @@ $config: (
   #{ $prefix } {
     #{ $property } : units.get(1);
   }
-  @each $name, $value in units.$presets {
+  @each $name, $value in units.$config {
     #{ $prefix }-#{ $name } {
       #{ $property }: units.get($name);
     }
@@ -59,7 +59,7 @@ $config: (
     #{ $prefix }-#{ $side } {
       #{ $full-prop }: units.get(1);
     }
-    @each $name, $value in units.$presets {
+    @each $name, $value in units.$config {
       #{ $prefix }-#{ $side }-#{ $name } {
         #{ $full-prop }: units.get($name);
       }

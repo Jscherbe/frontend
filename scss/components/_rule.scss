@@ -3,6 +3,7 @@
 ////
 
 @use "sass:map";
+@use "../utils";
 @use "../element";
 @use "../color";
 @use "../selector";
@@ -32,7 +33,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, 'typography [option]');
+  @return utils.require-map-get($config, $name, "rule [config]");
 }
 
 /// Output styles

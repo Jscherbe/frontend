@@ -35,6 +35,7 @@ $config: (
 }
 
 /// Get a required value from a map, throw an error if not found
+/// - Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)
 /// @param {Map} $map The map to get the value from
 /// @param {String} $key The key in the map to get value from
 /// @param {String} $context The context of using this function for debugging help
@@ -145,14 +146,13 @@ $config: (
 /// Helps in providing a dynamic fallback for modules whose defaults should come from another
 /// @param {String} $prop Property trying to get fallback for
 /// @param {*} $value The value that may need the fallback
-/// @param {Map} $functions Map of functions (use meta.get-function to add functions to map). These names will be used in the $lookup 
-/// @param {Map} $lookup Map of properties to function names
+/// @param {Map} $lookup Map of properties to functions (use sass:meta > meta.get-function to populate)
 /// @return {*} The user's original value, or if the value is true get the default value from the provided function
 
-@function function-fallback($prop, $value, $functions, $lookup) {
+@function function-fallback($prop, $value, $lookup) {
   // If there was already a value return it else resolve through passed function
   @if ($value == true)  {
-    $fn: map.get($functions, map.get($lookup, $prop));
+    $fn: map.get($lookup, $prop);
     @if ($fn) {
       @return meta.call($fn, $prop);
     } 
