@@ -2,8 +2,10 @@ const { resolve } = require("path");
 const sassdoc = require('sassdoc');
 const logger = require("@ulu/node-logger")({ title: "\nDocs Plugin" });
 const createJsDocs = require("./create-js-docs.js");
+const createDocsSite = require("./create-docs-site.js");
 const baseDir = process.cwd();
 const outputDir = resolve(baseDir, "docs/");
+
 
 exports.webpackPlugin = {
   apply(compiler) {
@@ -20,16 +22,17 @@ exports.webpackPlugin = {
       // contextDependencies.add(resolve(baseDir, "scss/"));
       // contextDependencies.add(resolve(baseDir, "js/"));
       return Promise.all([
-        sassdoc("./scss", {
-          dest: resolve(outputDir, "scss")
-        }),
-        createJsDocs({
-          sources: resolve(baseDir, "js/"),
-          outputPathHtml: resolve(outputDir, "js/"),
-          outputPathMarkdown: resolve(outputDir, "js-markdown/index.md"),
-          title: "Javascript Documentation",
-          descriptions: "JSDocs for @ulu/frontend library"
-        })
+        createDocsSite()
+        // sassdoc("./scss", {
+        //   dest: resolve(outputDir, "scss")
+        // }),
+        // createJsDocs({
+        //   sources: resolve(baseDir, "js/"),
+        //   outputPathHtml: resolve(outputDir, "js/"),
+        //   outputPathMarkdown: resolve(outputDir, "js-markdown/index.md"),
+        //   title: "Javascript Documentation",
+        //   descriptions: "JSDocs for @ulu/frontend library"
+        // })
       ]);
     });
   }

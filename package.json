@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Frontend themeing library. No opinion, modular Sass library that can be used as a framework base, only works in Sass > 1.23. This is a slight refactor of the orginal @ulu/sass that will now include all frontend related assets (SCSS, JS, etc)",
   "browser": "js/index.js",
   "scripts": {
@@ -32,10 +32,15 @@
     "core-js": "3.19",
     "documentation": "^13.2.5",
     "documentation-theme-light": "^1.1.1",
+    "fs-extra": "^2.1.2",
+    "glob": "^7.2.0",
+    "gray-matter": "^2.1.1",
     "markdown-toc": "^1.2.0",
+    "marked": "^0.6.3",
     "regenerator-runtime": "^0.13.9",
     "sassdoc": "^2.7.3",
     "stream-array": "^1.1.2",
+    "twig": "^1.15.4",
     "vinyl-fs": "^3.0.3"
   }
 }
