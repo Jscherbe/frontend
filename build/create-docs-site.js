@@ -1,5 +1,5 @@
 const path = require("path");
-const SiteGenerator = require("./site-generator.js");
+const { SiteGenerator } = require("./generator/index.js");
 
 module.exports = async function createDocsSite() {
   const site = new SiteGenerator({

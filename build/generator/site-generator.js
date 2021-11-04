@@ -1,3 +1,11 @@
+
+/**
+ * @todo
+ * - Make data structucre not connected to output structure
+ *   - How?
+ *     - Maybe there is some schema/model in between that show's how data maps to literal output/pages
+ *     - Maybe it's created via fields in the nodes
+ */
 const fs = require("fs-extra");
 const path = require("path");
 const glob = require("glob");
@@ -39,13 +47,11 @@ class SiteGenerator {
   }
   logVerbose(...msgs) {
     if (this.options.verbose) {
-      this.logger.log(...msgs)
+      this.logger.log(...msgs);
     }
   }
   loadTemplateFile(template) {
-    const compiler = templateCompilers.find(({ test }) => {
-      return template.file.match(test)
-    });
+    const compiler = templateCompilers.find(({ test }) => template.file.match(test));
     const { context, templatesDir } = this.options;
     const filepath = path.resolve(context, templatesDir, template.file);
     if (compiler) {
