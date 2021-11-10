@@ -1,0 +1,23 @@
+{
+  "children": {
+    "api": {
+      "children": {},
+      "nodes": {
+        "index": {
+          "path": "/Users/joe/Projects/Personal/github/frontend/docs-generator/pages/api/index.md",
+          "context": "/Users/joe/Projects/Personal/github/frontend/docs-generator/pages",
+          "file": "api/index.md"
+        }
+      },
+      "root": "[Circular ~]"
+    }
+  },
+  "nodes": {
+    "index": {
+      "path": "/Users/joe/Projects/Personal/github/frontend/docs-generator/pages/index.md",
+      "context": "/Users/joe/Projects/Personal/github/frontend/docs-generator/pages",
+      "file": "index.md"
+    }
+  },
+  "root": null
+}

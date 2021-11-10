@@ -1,0 +1,58 @@
+/pages/ --> ContentParser --> Tree for bundler --> 
+
+
+
+/pages/ --> ContentParser --> Tree for bundler --> 
+
+About Tree:
+  - Should include html (output)
+  - Should include file sources (locally that should be bundled)
+   # Idea: Keep in mind that it could be useful to allow outside sources to be collected
+  - Should include the raw content? (I would say no, maybe there is a callback for users/debugging)
+  - Should includes static HTML (not parsed by bundler?)
+   # That's the snag is that the bundler shouldn't grab sources? Or should it (all unified)
+   # - If that's the case the bundler needs to know the context to match sources from per element of the tree
+  
+Vocabulary:
+  bundler: 
+    - The thing that pulls html sources together
+    - The thing that parses HTML
+    - Where do page layouts go? 
+
+Tasks:
+  - Get All Data
+    - Pages
+      - By Globbing files in directories
+        - Parse Pages Content
+    - Data
+  - Gathering/Linking
+    * What if the the templating is all done seperate from page bundling
+  - Templating
+  - Output Pages and Files
+    - Linked Together in the output directory (optimized)
+
+
+Content:
+  index.md
+  api/
+    index.js
+  guides/
+    index.md
+    guide-1/
+      image.jpg
+      index.md
+
+
+Content:
+  index.md
+  api/
+    index.md
+    index.js
+  guides/
+    index.md
+    guide-1/
+      image.jpg
+      index.md
+    
+
+

@@ -1,5 +1,5 @@
 {
-  "data": [
+  "base": [
     {
       "description": "Prints color-context styles as base classes (top of stylesheet)\n",
       "commentRange": {
@@ -2510,7 +2510,9 @@
         "path": "base/_typography.scss",
         "name": "_typography.scss"
       }
-    },
+    }
+  ],
+  "breakpoint": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -3120,7 +3122,9 @@
         "path": "_breakpoint.scss",
         "name": "_breakpoint.scss"
       }
-    },
+    }
+  ],
+  "button": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -3312,7 +3316,9 @@
         "path": "_button.scss",
         "name": "_button.scss"
       }
-    },
+    }
+  ],
+  "calculate": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -3591,7 +3597,9 @@
         "path": "_calculate.scss",
         "name": "_calculate.scss"
       }
-    },
+    }
+  ],
+  "color": [
     {
       "description": "The color palette map, can be extended or modified with set() and accessed with get()\n",
       "commentRange": {
@@ -4447,7 +4455,9 @@
         "path": "_color.scss",
         "name": "_color.scss"
       }
-    },
+    }
+  ],
+  "components": [
     {
       "description": "Prints button component styles\n",
       "commentRange": {
@@ -4866,7 +4876,9 @@
         "path": "components/_rule.scss",
         "name": "_rule.scss"
       }
-    },
+    }
+  ],
+  "element": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -5734,7 +5746,9 @@
         "path": "_element.scss",
         "name": "_element.scss"
       }
-    },
+    }
+  ],
+  "grid": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -5996,7 +6010,9 @@
         "path": "_grid.scss",
         "name": "_grid.scss"
       }
-    },
+    }
+  ],
+  "helpers": [
     {
       "description": "Prints color-context and color-[name] styles as helper classes (bottom of stylesheet)\n",
       "commentRange": {
@@ -6550,7 +6566,9 @@
         "path": "helpers/_utilities.scss",
         "name": "_utilities.scss"
       }
-    },
+    }
+  ],
+  "layout": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -6743,7 +6761,9 @@
         "path": "_layout.scss",
         "name": "_layout.scss"
       }
-    },
+    }
+  ],
+  "path": [
     {
       "description": "Aliases \n",
       "commentRange": {
@@ -6955,7 +6975,9 @@
         "path": "_path.scss",
         "name": "_path.scss"
       }
-    },
+    }
+  ],
+  "selector": [
     {
       "description": "Module Settings\n- This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. \n",
       "commentRange": {
@@ -7318,7 +7340,9 @@
           }
         }
       ]
-    },
+    }
+  ],
+  "typography": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -8520,7 +8544,9 @@
         "path": "_typography.scss",
         "name": "_typography.scss"
       }
-    },
+    }
+  ],
+  "units": [
     {
       "description": "Module Settings\n",
       "commentRange": {
@@ -8665,7 +8691,9 @@
         "path": "_units.scss",
         "name": "_units.scss"
       }
-    },
+    }
+  ],
+  "utility": [
     {
       "description": "Strips the unit from the number\n",
       "commentRange": {
@@ -8722,7 +8750,9 @@
           }
         }
       ]
-    },
+    }
+  ],
+  "utils": [
     {
       "description": "Module Settings\n",
       "commentRange": {
