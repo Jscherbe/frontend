@@ -12,6 +12,10 @@ $config: (
   
 ) !default;
 
+.test {
+
+}
+
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 /// @example scss - General example, replace module-name with module's name

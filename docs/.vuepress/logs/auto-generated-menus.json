@@ -1,0 +1,26 @@
+{
+  "nav": [],
+  "sidebar": [
+    {
+      "title": "Api",
+      "children": [
+        "api/index",
+        "api/sass"
+      ]
+    },
+    {
+      "title": "Config",
+      "children": [
+        "config/index"
+      ]
+    },
+    {
+      "title": "Guide",
+      "children": [
+        "guide/index",
+        "guide/using-vue"
+      ]
+    },
+    "index"
+  ]
+}

@@ -4,9 +4,11 @@
   "description": "Frontend themeing library. No opinion, modular Sass library that can be used as a framework base, only works in Sass > 1.23. This is a slight refactor of the orginal @ulu/sass that will now include all frontend related assets (SCSS, JS, etc)",
   "browser": "js/index.js",
   "scripts": {
+    "docs:dev": "vuepress dev docs --no-clear-screen",
+    "docs:build": "vuepress build docs",
     "serve": "webpack serve --mode development --progress --stats minimal --env docs",
     "build": "webpack build --mode production --progress --stats minimal --env docs",
-    "build-docs": "node ./docs-generator/build.js"
+    "build-docs": "node --inspect-brk ./docs-generator/build.js"
   },
   "repository": {
     "type": "git",
@@ -18,24 +20,20 @@
     "framework",
     "mixin"
   ],
-  "author": "Joe Scherben",
+  "authors": {
+    "name": "Joe Scherben",
+    "email": "jscherbe@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Jscherbe/frontend/issues"
   },
   "homepage": "https://github.com/Jscherbe/frontend#readme",
   "devDependencies": {
-    "@ulu/node-logger": "^1.0.0",
-    "@ulu/webpack-mixin": "^1.0.1",
-    "core-js": "3.19",
     "documentation": "^13.2.5",
     "documentation-theme-light": "^1.1.1",
-    "fs-extra": "^2.1.2",
-    "gray-matter": "^4.0.3",
-    "json-stringify-safe": "^5.0.1",
-    "marked": "^0.6.3",
-    "regenerator-runtime": "^0.13.9",
     "sassdoc": "^2.7.3",
-    "stream-array": "^1.1.2"
+    "vuepress": "^1.5.3",
+    "vuepress-bar": "^0.4.4"
   }
 }
