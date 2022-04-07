@@ -52,6 +52,7 @@ function createPages(data, options) {
   return groups.map(name => {
     const items = data.filter(item => item.group.includes(name));
     return {
+      title: name,
       path: options.pagePath(name, items),
       frontmatter: {
         layout: options.layout,

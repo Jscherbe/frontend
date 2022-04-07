@@ -5,6 +5,7 @@
   "browser": "js/index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs --no-clear-screen",
+    "docs:dev:debug": "vuepress dev docs --no-clear-screen --debug",
     "docs:build": "vuepress build docs",
     "serve": "webpack serve --mode development --progress --stats minimal --env docs",
     "build": "webpack build --mode production --progress --stats minimal --env docs",

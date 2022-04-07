@@ -2,6 +2,7 @@ const path = require('path');
 const { dataToFile } = require("./utils/node");
 const { description } = require('../../package');
 const sassdocPlugin = require("./plugins/sassdoc");
+// const sidebarPagesPlugin = require("./plugins/sidebar-pages");
 // const menus = require("vuepress-bar")();
 // dataToFile(menus, path.resolve(__dirname, "logs/auto-generated-menus.json"));
 
