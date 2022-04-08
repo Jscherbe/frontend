@@ -2,7 +2,7 @@ const path = require('path');
 const { dataToFile } = require("./utils/node");
 const { description } = require('../../package');
 const sassdocPlugin = require("./plugins/sassdoc");
-// const sidebarPagesPlugin = require("./plugins/sidebar-pages");
+const sidebarAutoPagesPlugin = require("./plugins/sidebar-auto-pages/index.js");
 // const menus = require("vuepress-bar")();
 // dataToFile(menus, path.resolve(__dirname, "logs/auto-generated-menus.json"));
 
@@ -33,6 +33,9 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+    sidebarAutoPages: {
+      hello: "world"
+    },
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -71,10 +74,11 @@ module.exports = {
     // '@vuepress/plugin-back-to-top',
     // '@vuepress/plugin-medium-zoom',
     // @todo Look at plugin options I think you don't initialize like this
-    [sassdocPlugin, {
-      dir: path.resolve(__dirname, "../../scss/"),
-      debug: true,
-      debugToFile: path.resolve(__dirname, "logs/sassdoc.json")
-    }]
+    // [sassdocPlugin, {
+    //   dir: path.resolve(__dirname, "../../scss/"),
+    //   debug: true,
+    //   debugToFile: path.resolve(__dirname, "logs/sassdoc.json")
+    // }],
+    sidebarAutoPagesPlugin
   ]
 }

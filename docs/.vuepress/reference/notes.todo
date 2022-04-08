@@ -1,3 +1,9 @@
 Could Be Useful:
   * https://medium.com/@z3by/build-a-better-search-in-vuepress-568680b6b8d4
   * https://techformist.com/automatic-dynamic-sidebar-vuepress/
+
+Todo:
+  ☐ Revise custom theme layout to make sidebar account for nesting
+    1. Group pages by segement
+    2. Find the root section (base/landing page)
+    3. Output into groups per base segment recursively adding chicken

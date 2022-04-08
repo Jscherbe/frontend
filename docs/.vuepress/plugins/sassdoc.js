@@ -13,14 +13,13 @@ const defaults = {
   alterPage: (group, items) => ({})
 };
 
-module.exports = (opts, ctx) => {
+module.exports = opts => {
   const options = Object.assign({}, defaults, opts);
   return {
-    name: 'sassdoc-generator',
+    name: '@ulu/vuepress-plugin-sassdoc',
     themeConfig: {
       sidebar: 'auto',
     },
-    
     async additionalPages() {
       try {
         const data = await sassdoc.parse(options.dir, options.sassdocOptions);
