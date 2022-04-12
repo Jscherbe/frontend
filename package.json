@@ -9,7 +9,8 @@
     "docs:build": "vuepress build docs",
     "serve": "webpack serve --mode development --progress --stats minimal --env docs",
     "build": "webpack build --mode production --progress --stats minimal --env docs",
-    "build-docs": "node --inspect-brk ./docs-generator/build.js"
+    "build-docs": "node --inspect-brk ./docs-generator/build.js",
+    "sassdoc": "node --inspect-brk script-sassdoc.js"
   },
   "repository": {
     "type": "git",

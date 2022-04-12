@@ -1,30 +1,52 @@
+const defaults = {
+  createSidebar: true,
+  createNav: true,
+  sidebarGroupDefualts: {
+    collapsable: false,
+    initialOpenGroupIndex: -1
+  },
+  /**
+   * If true it should show the whole tree else show by section (landing page)
+   */
+  sidebarAllSections: false,
+  /**
+   * Callback function to modify an initial group (ie. change title, etc)(incudes extra page variable in group to get info from)
+   */
+  modify: null,
+  /**
+   * Default sorting for children
+   * - Sort by weight/order and if equal (ie. 0) fallback to alphbetical
+   * - Or if order/weight not present = 0 fallback to alphabetical
+   */
+  sort(a, b) {
+    const getWeight = p => p.frontmatter.weight || p.frontmatter.order || 0;
+    const getTitle = p => '' + p.title; // Force string
+    return  getWeight(a) - getWeight(b) || getTitle(a).localeCompare(getTitle(b));
+  }
+};
 /**
  * Adds config for sidebar based on page's paths, grouping by section
  * - Options can be passed in user's themeConfig.sidebarAutoPages
+ * @todo Make this work for the nav option also
  */
-export default ({
-  siteData, // site metadata
-  isServer // is this enhancement applied in server-rendering or client
-}) => {
-  if (!siteData.themeConfig) {
-    siteData.themeConfig = {};
+export default ({ siteData }) => {
+  const { themeConfig } = siteData;
+  const options = Object.assign({}, defaults, themeConfig.sidebarAutoPages);
+  const { sidebar, nav } = createMenus(siteData.pages, options);
+  if (options.createNav) {
+    themeConfig.nav = nav;
   }
-  siteData.themeConfig.sidebar = createSidebar(siteData.pages, themeConfig.sidebarAutoPages || {});
+  if (options.createSidebar) {
+    themeConfig.sidebar = sidebar;
+  }
 }
 
 /**
  * Creates a sidebar config based on page path structure
  */
-function createSidebar(pages, opts) {
-  const defaults = {
-    sort,
-    collapsable: false,
-    initialOpenGroupIndex: -1,
-    allSections: false, // If true it should show the whole tree else show by section (landing page)
-    modify: null, // Callback function to modify an initial group (ie. change title, etc)(incudes extra page variable in group to get info from)
-    modifyForChildren: null, // Modify a group that has children (comes after modify)
-  };
-  const options = Object.assign({}, defaults, opts);
+function createMenus(pages, options) {
+  let sidebar = false;
+  let nav = false;
   // Get page path information
   const items = pages.map(page => {
     const segments = page.regularPath.split("/").filter(i => i !== "");
@@ -37,7 +59,9 @@ function createSidebar(pages, opts) {
       let group = current?.children?.find(g => g.segment === segment);
       if (!group) {
         if (!current.children) {
-          prepForChildren(current, options)
+          Object.assign(current, options.sidebarGroupDefualts);
+          current.children = [];
+          current.type = "group";
         }
         group = newGroup(item, segment, options)
         current.children.push(group);
@@ -49,31 +73,27 @@ function createSidebar(pages, opts) {
 
   sortChildren(all, options);
   removeLocalProps(all);
-  
   // No sidebar because there are no pages? (not sure if this can happen)
   if (!all.children) {
-    return false; 
-  // Full menu of all sections
-  } else if (options.allSections) {
-    return all.children;
-  // Breakup up into sidebar's section api (object by section path)
+    return { nav, sidebar };
+  }
+  
+  // Make sidebar
+  if (options.sidebarAllSections) {
+    // Full menu of all sections
+    sidebar = all.children;
   } else {
-    return all.children.reduce((sections, group) => {
+    // Breakup up into sidebar's section api (object by section path)
+    sidebar = all.children.reduce((sections, group) => {
       sections[group.path] = [group];
       return sections;
     }, {});
   }
+  // Create nav from top level groups
+  nav = all.children.map(({ path: link, title: text }) => ({ link, text }));
+
+  return { sidebar, nav };
 } 
-/**
- * Default sorting for children
- * - Sort by weight/order and if equal (ie. 0) fallback to alphbetical
- * - Or if order/weight not present = 0 fallback to alphabetical
- */
-function sort(a, b) {
-  const getWeight = p => p.frontmatter.weight || p.frontmatter.order || 0;
-  const getTitle = p => '' + p.title; // Force string
-  return  getWeight(a) - getWeight(b) || getTitle(a).localeCompare(getTitle(b));
-}
 /**
  * Go through all groups and their children and apply sorting 
  */
@@ -99,18 +119,6 @@ function newGroup(item, segment, options) {
     options.modify(group);
   }
   return group;
-}
-/**
- * Sets properties on pre-existing group to prepare to add children (nested groups)
- */
-function prepForChildren(group, options) {
-  group.children = [];
-  group.collapsable = options.collapsable;
-  group.type = "group";
-  group.initialOpenGroupIndex = options.initialOpenGroupIndex;
-  if (options.modifyForChildren) {
-    options.modifyForChildren(group);
-  }
 }
 /**
  * Remove the extra properties in groups used by this module (page, segment)
