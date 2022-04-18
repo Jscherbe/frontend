@@ -1,0 +1,351 @@
+
+# Base
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.links-state-styling|`Number`|Just color/defaults vs hover/visited/active
+
+    
+
+::: details More Info
+
+- **File:** base/_elements.scss
+- **Lines:** 19-21
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints color-context styles as base classes (top of stylesheet)
+    
+    
+
+::: details More Info
+
+- **File:** base/_color.scss
+- **Lines:** 10-13
+
+
+:::
+
+  
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.set(( "property" : value ));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** base/_elements.scss
+- **Lines:** 27-29
+
+
+:::
+
+  
+
+
+
+
+### base-elements-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints elements base styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.base-elements-styles();
+```
+  
+
+::: details More Info
+
+- **File:** base/_elements.scss
+- **Lines:** 45-180
+
+
+:::
+
+  
+
+
+
+
+### base-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints all Base styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.base-styles();
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$includes|`List`|A list of changes to this module's includes
+
+    
+
+::: details More Info
+
+- **File:** base/_index.scss
+- **Lines:** 37-61
+
+
+:::
+
+  
+
+
+
+
+### base-keyframes-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints CSS keyframes
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.base-keyframes-styles();
+```
+  
+
+::: details More Info
+
+- **File:** base/_keyframes.scss
+- **Lines:** 12-74
+
+
+:::
+
+  
+
+
+
+
+### base-normalize-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints the normalize stylesheet. We are using modern-normalize 1.1.0
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.base-normalize-styles();
+```
+  
+
+#### Related Links
+
+- [Modern Normalize (NPM)](https://www.npmjs.com/package/modern-normalize)
+
+  
+
+::: details More Info
+
+- **File:** base/_normalize.scss
+- **Lines:** 15-316
+
+
+:::
+
+  
+
+
+
+
+### base-typography-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints elements base styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.base-typography-styles();
+```
+  
+
+Example of type size as base unprefixed
+
+
+<SassdocPreview uid="base--mixin--base-typography-styles" :exampleIndex="1"  />
+
+  
+
+``` html
+<span class="h1">A</span>
+<span class="h2">A</span>
+<span class="h3">A</span>
+<span class="h4">A</span>
+<span class="h5">A</span>
+<span class="h6">A</span>
+```
+  
+
+::: details More Info
+
+- **File:** base/_typography.scss
+- **Lines:** 22-42
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.get("property");
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+
+    
+
+::: details More Info
+
+- **File:** base/_elements.scss
+- **Lines:** 36-38
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

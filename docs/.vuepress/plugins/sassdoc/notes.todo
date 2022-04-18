@@ -1,0 +1,78 @@
+Todos:
+  ☐ Chose to keep data in the page's script but reduced to only what the 'template' needs
+    * Serializing things like markup to pass as props with components used in markdown
+      will work but will almost double the code/data size in order to allow it on an HTML attribute
+      and there are issues with how markdown filter will handle things like that
+    ✘ Instead it's set up to just include an object in the page's static options $options.sassdocGroup @cancelled
+      * Which holds only a limited amount of information about each item (only what is needed)
+      * Templates are passed ref string to embed in inline components to access the items data if needed
+      * Alternatives to this were just adding the UID but would then require adding global vue property
+        like $sassdocPLuginGetItem(uid). (still considering this)
+      * Going to use provide/inject
+  ☐ Why not build markdown files to a temporary directory like vuepress ie .temp
+    * Pros - See whats generated, reuse some other way, modify if you had to, handle large volumes of pages
+    * Cons - Read/write for the plugin and vuepress, Writing to the disk must be completed before hook to add pages can be set, writing data that won't ever be needed as it's just converted.
+    * This could probably be reconsidered
+  ☐ How to handle data that we need in browser
+    ✘ Why don't we template everything in a Vue comonent? @cancelled
+      * Data/markup footprint is smaller this way but...
+      * Lose the ability to have vuepress markdown features
+        * Reading the source and applying they're plugins/libraries to match seems like an anti-pattern
+          as it's not documented. So it could change but we know the markdown syntax and it's connection
+          to theme/core components won't change. While the underlying component architecture could. Which
+          would result in having to update this to always match
+    ✘ Include the group data as-is (like it is currently) @cancelled
+      * Pros - Very easy to print out mapped properties to the data within the group from item templates
+      * Cons - Bringing extra redundant data that will never be needed (things alrady rendered in markdown)
+    ✔ Alternatives @done
+      * Allow template system to push dynamic data into the pages <script> component
+      * ie. renderTemplate(template, data, markup) return { markup, scriptData}
+      * then scriptData is given to script template to be inserted in the base of the MD page
+
+
+  ☐ Setup templates for everything
+    ☐ Should the templates be passed child content or responsible for generating content
+      * Option A -- page( sectionTemplate( itemsTemplate( ItemTemplate() ) ) ), { data })
+        * Allows user to modify just a part of the template
+        * Forces a strict API (unfavorable)
+          * To counter this (make it behave like option B too) we could
+            * Have main template function that can be overridden to work like option B
+            * In the main template implement the template nesting (user can override)
+      * Option B -- page({ data }) returns everything, plugin supplies it's own template logic internally
+        * User has to override the whole template or override and borrow logic from plugins inner templates
+
+    ☐ Feel like the correct route with templating is MD (md/string vs dynamic Vue component)
+      * Why? So that we can take advantage of components and features from the markdown templates
+      * This seems like what Vuepress documents the most, and I feel like I realized slowly that they
+      *  become Vue templates anyways. So instead make atomic components for more complicated displays
+      *  and rely on the output into the page (ie. content) to be markdown, HTML and Vue.
+      * Allow the user to modify the markdown templates. Just make them functions that should return strings
+      *  call these recursively through the group (ie. page > group > section[type] > item[type] > annotation[key])
+      *  this way the user can change any level of the template without worrying about how to assemble the content
+      *  (inner templates), or they can swap out the page template and arrange themselves, since it all breaks 
+      *  down to one string of content.
+      ☐ What about duplication of code, which is one of the considerations?
+        * If we render actual content from the group object then passing it in as data of the page's markdown
+        *  component, then we will end up with duplicate content (exiting in data form and as string comp.)
+        * So maybe it needs to be more based on the item level so that the item can exist in the content string (ie. 
+        *  headline, text description) and then break off to the vue component to use the data from the parent.
+        * Am I doing this just becuase I can set the data in the page? What component in the documentation would 
+        *  benefit from this? Other than things like the live examples which could maybe be handled in other ways
+
+  ✘ See about how to reload the dev server when the sassdocs directory has changed @cancelled
+    * Also see about how to do this maybe for vue templates in the plugin for development
+Remember:
+  ☐ Vuepress markdown pages are vue components
+Templating item definitions:
+  ☐ Using markdown
+    * Easy, use vuepress markdown api and create simple markup/content
+  ☐ Using vue component
+    * Browser is doing extra work and doesn't really need to (ie. no reactive stuff)
+    * Could use this as the means to introduce live sassdoc examples
+      * Use the view component to load an iframe dynamically
+      * Populate the iframe with the demo
+      * User specifies a page to use as the iframe
+        * So they can link up scripts, styles, etc
+        * Component just creates these on the fly
+        * Can you use iframes this way? (I think so, you can append elements, etc if it's on the same domain (believe this is the case)
+        )

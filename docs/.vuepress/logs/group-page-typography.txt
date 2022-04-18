@@ -1,0 +1,854 @@
+
+# Typography
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.font-size|`Number`|Default font size (use pixels, converted, is used for rem base)
+|$config.font-family|`Number`|Default font family
+|$config.font-family-monospace|`Number`|Base font-family for monospace
+|$config.line-height|`Number`|Default line height
+|$config.line-height-dense|`Number`|Default dense line height
+|$config.size-ratio|`Number`|Font size scale when using preset sizes, ratio mixin)
+|$config.size-line-height-ratio|`Number`|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desrireable
+|$config.responsive-change|`Number`|Amount to scale typography by browser's width (use viewport units)
+|$config.margin|`Number`|Default margin for typography (like paragraphs)
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 29-53
+
+
+:::
+
+  
+
+
+
+
+### $sizes <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Default size presets
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$size.name|`Number`|Name of size
+|$size.name.font-size|`Number`|Font size in rems or pixels
+|$size.name.line-height|`Number`|Line height (unitless)
+|$size.name.responsive|`Number`|Apply responsive sizes
+|$size.name.base-class|`Boolean`|This style should be included in the base (top can be overriden)
+|$size.name.helper-class|`Boolean`|This style should be included in the helpers (overrides)
+
+    
+
+#### Todos
+
+- Add adaptive and use a map of breakpoints and whether it's up or down
+- Add headlines
+    
+
+#### Todos
+
+- Add adaptive and use a map of breakpoints and whether it's up or down
+- Add headlines
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 154-168
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+  @include typography.set-options(( "font-size" : 14px ));
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 59-61
+
+
+:::
+
+  
+
+
+
+
+### word-break() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Break word stradegy
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$force|`Boolean`|Force words to break (will have unusual breaks)
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 117-121
+
+
+:::
+
+  
+
+
+
+
+### set-sizes() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Update the typography presets map
+    
+    
+
+#### Examples
+
+Setting the error and type color
+
+``` scss
+@include typography.set((
+  "small" : 0.8rem
+));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|A map to merge into the color palette
+|$deep|`Map`|Use deep merge
+|$overwrite|`Map`|Overwrite the presets completly (cannot be used with deep)
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 179-181
+
+
+:::
+
+  
+
+
+
+
+### font-size-responsive() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print's the responsive type formula
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$font-size|`String`|Name to retrieve from sizes map or a unique size map that follows the API
+|$changes|`Map`|Modifications to be merged into size before using
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 271-276
+
+
+:::
+
+  
+
+
+
+
+### size() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print a typography size (font-size, line-height)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$nameOrMap|`String`|Name to retrieve from sizes map or a unique size map that follows the API
+|$changes|`Map`|Modifications to be merged into size before using
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 282-318
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+  @include typography.set-options(( "font-size" : 14px ));
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 67-69
+
+
+:::
+
+  
+
+
+
+
+### scale() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get scale of the base font-size
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$step|`Number`|Current size in the scale you want to calculate
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`Number`|Scaled value
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 75-77
+
+
+:::
+
+  
+
+
+
+
+### scale-line-height() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get scale of the line-height
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$step|`Number`|Current size in the scale you want to calculate
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`Number`|Scaled value
+
+    
+
+#### Todos
+
+- Setup breakpoints
+    
+
+#### Todos
+
+- Setup breakpoints
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 84-86
+
+
+:::
+
+  
+
+
+
+
+### rem() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Convert pixel value to rem value based on typography $font-size
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$pixels|`Number`|Pixel value to convert from
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`Number`|Rem value
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 92-98
+
+
+:::
+
+  
+
+
+
+
+### em() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Changes pixels to em
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$value|`Number`|Pixel value to convert from
+|$base|`Number`|Conversion base (defaults to font-size)
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`Number`|Rem value
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 105-112
+
+
+:::
+
+  
+
+
+
+
+### new-size() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Creates a size map 
+- This is just an accelerator for creating a size map
+- You can pass your own size maps using set-sizes()
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$font-size|`Number`|Font size
+|$line-height|`Number`|Line height
+|$is-headline|`Boolean`|Is a headline
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 130-141
+
+
+:::
+
+  
+
+
+
+
+### get-size() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a size's map
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`String`|Name of size
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Map`
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 187-189
+
+
+:::
+
+  
+
+
+
+
+### font-size() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Print a font-size for a given size
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$value|`String`|Size name
+
+    
+
+#### Todos
+
+- Remove doesn't work for breakpoints or responsive
+    
+
+#### Todos
+
+- Remove doesn't work for breakpoints or responsive
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 195-199
+
+
+:::
+
+  
+
+
+
+
+### unitless-line-height() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Forces conversion to unitless line-height
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$line-height|`Number`|Line height size in px, em, or rem
+|$font-size|`Number`|Font size in px, em, or rem
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 205-219
+
+
+:::
+
+  
+
+
+
+
+### get-size-converted-value() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Print a value from the size and convert it (to appropriate unit for framework)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$size|`Map`|Size's map
+|$props|`String`|The property to get
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 224-250
+
+
+:::
+
+  
+
+
+
+
+### get-size-value() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a sizes property value that doesn't need conversion 
+- Reason: Will map to default if user set's size prop to true
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$size|`Map`|Size's map
+|$props|`String`|The property to get
+
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+::: details More Info
+
+- **File:** _typography.scss
+- **Lines:** 258-265
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

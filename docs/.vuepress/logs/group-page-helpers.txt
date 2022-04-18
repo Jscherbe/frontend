@@ -1,0 +1,389 @@
+
+# Helpers
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.sides|`Number`|Sides to print for helper classes (ie. reduce output of uneeded sides)
+
+    
+
+::: details More Info
+
+- **File:** helpers/_units.scss
+- **Lines:** 15-17
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints color-context and color-[name] styles as helper classes (bottom of stylesheet)
+    
+    
+
+::: details More Info
+
+- **File:** helpers/_color.scss
+- **Lines:** 10-14
+
+
+:::
+
+  
+
+
+
+
+### helper-display-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print utilities helper styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.helper-display-styles();
+```
+  
+
+::: details More Info
+
+- **File:** helpers/_display.scss
+- **Lines:** 19-65
+
+
+:::
+
+  
+
+
+
+
+### helper-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints all Helper styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.helper-styles();
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$includes|`List`|AA list of changes to this module's includes
+
+    
+
+::: details More Info
+
+- **File:** helpers/_index.scss
+- **Lines:** 38-62
+
+
+:::
+
+  
+
+
+
+
+### helper-print-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Printed Media Styles 
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.helper-print-styles();
+```
+  
+
+::: details More Info
+
+- **File:** helpers/_print.scss
+- **Lines:** 10-59
+
+
+:::
+
+  
+
+
+
+
+### helper-typography-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints Typography Helper styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.helper-typography-styles();
+```
+  
+
+Example of type size as helper prefixed
+
+
+<SassdocPreview uid="helpers--mixin--helper-typography-styles" :exampleIndex="1"  />
+
+  
+
+``` html
+<span class="type-large-xxx">A</span>
+<span class="type-large-xx">A</span>
+<span class="type-large-x">A</span>
+<span class="type-large">A</span>
+<span class="type-base">A</span>
+<span class="type-small">A</span>
+<span class="type-small-x">A</span>
+```
+  
+
+::: details More Info
+
+- **File:** helpers/_typography.scss
+- **Lines:** 23-73
+
+
+:::
+
+  
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.set(( "property" : value ));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** helpers/_units.scss
+- **Lines:** 23-25
+
+
+:::
+
+  
+
+
+
+
+### styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints all unit helper classes
+    
+    
+
+::: details More Info
+
+- **File:** helpers/_units.scss
+- **Lines:** 38-42
+
+
+:::
+
+  
+
+
+
+
+### create-property-classes() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Creates the unit classes with all variations (from unit presets)
+- This can be used by itself if not outputing .styles() or if you wanted to change the default prefixes
+    
+    
+
+::: details More Info
+
+- **File:** helpers/_units.scss
+- **Lines:** 46-68
+
+
+:::
+
+  
+
+
+
+
+### helper-utilities-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print utilities helper styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.helper-utilities-styles();
+```
+  
+
+::: details More Info
+
+- **File:** helpers/_utilities.scss
+- **Lines:** 14-82
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.get("property");
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+
+    
+
+::: details More Info
+
+- **File:** helpers/_units.scss
+- **Lines:** 32-34
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

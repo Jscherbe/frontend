@@ -1,0 +1,348 @@
+
+# Breakpoint
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.base|`Number`|Assumed pixel base, can change based on users font settings so this is just o get us in the ballpark). Note this is not the base font size but the user agent's or user's browser preferernce. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)
+|$config.gap|`Number`|The amount to offset min from max media queries incase you are using both (ie prevent overlap)
+|$config.null-name|`String`|The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property
+|$config.default|`String`|the name of the breakpont that is considered the major change (ie desktop to mobile) used by other modules/components
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 16-21
+
+
+:::
+
+  
+
+
+
+
+### $sizes <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+The default breakpoint sizes (targets are not precise, using em's)
+    
+    
+
+- **type:** `Map`
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 42-46
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 26-28
+
+
+:::
+
+  
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Update the breakpoint sizes map
+    
+    
+
+#### Examples
+
+Changing the medium breakpoint and adding jumbo
+
+``` scss
+@include breakpoints.set((
+  "medium" : 50em,
+  "jumbo" : 100em
+));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|A map to merge into the breakpoints map
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 56-58
+
+
+:::
+
+  
+
+
+
+
+### min() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Create a media query that matches the min-width for a given size
+    
+    
+
+#### Examples
+
+
+``` scss
+@include breakpoints.min("small") {
+  // Your styles
+}
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$size|`Number`|The name of the breakpoint bsize
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 72-78
+
+
+:::
+
+  
+
+
+
+
+### max() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Create a media query that matches the max-width for a given size
+    
+    
+
+#### Examples
+
+
+``` scss
+@include breakpoints.max("medium") {
+  // Your styles
+}
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$size|`Number`|The name of the breakpoint size
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 87-93
+
+
+:::
+
+  
+
+
+
+
+### min-max() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Create a media query that matches the min-width and max-width sizes
+    
+    
+
+#### Examples
+
+
+``` scss
+@include breakpoints.min-max("small", "medium") {
+  // Your styles
+}
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$size|`Number`|The name of the breakpoint size
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 102-109
+
+
+:::
+
+  
+
+
+
+
+### embed-for-scripts() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Attaches breakpoints to an element psuedo content for access via script
+Use with ulu/js/breakpoints. Breakpoints always min-width (upwards)
+    
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 129-139
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+  @include module-name.get("property");
+
+    
+
+::: details More Info
+
+- **File:** _breakpoint.scss
+- **Lines:** 34-36
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

@@ -1,0 +1,160 @@
+
+# Units
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type
+|:--|:--
+|$config.small-x|`Number`
+|$config.small|`Number`
+|$config.default|`Number`
+|$config.large|`Number`
+|$config.large-x|`Number`
+|$config.large-xx|`Number`
+
+    
+
+::: details More Info
+
+- **File:** _units.scss
+- **Lines:** 18-25
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Update the units preset map
+    
+    
+
+#### Examples
+
+Setting the error and type color
+
+``` scss
+@include units.set((
+  "margin" : 2.5em
+));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|A map to merge into the color palette
+
+    
+
+::: details More Info
+
+- **File:** _units.scss
+- **Lines:** 34-36
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a unit by name (preset) or number (multiplier of base)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$value|`Number|String`|if a number is passed it is used as a multiplier of the base, if a string is passed it is used to lookup a value from unit presets @see $config
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Number`
+
+    
+
+::: details More Info
+
+- **File:** _units.scss
+- **Lines:** 42-47
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

@@ -1,0 +1,184 @@
+
+# Layout
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.max-width|`Number`|Common max-width for site
+|$config.margin|`Number`|Common margin for site
+|$config.z-index-fixed|`Number`|Common z-index, above everything
+|$config.z-index-sticky|`Number`|Common z-index for sticky or stuck items
+|$config.z-index-above|`Number`|Common z-index, below sticky
+
+    
+
+::: details More Info
+
+- **File:** _layout.scss
+- **Lines:** 20-26
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));
+
+    
+
+::: details More Info
+
+- **File:** _layout.scss
+- **Lines:** 31-33
+
+
+:::
+
+  
+
+
+
+
+### match-container-padding() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Returns padding to another property including breakpoints
+ie. { top: $containers-padding; }
+    
+    
+
+::: details More Info
+
+- **File:** _layout.scss
+- **Lines:** 69-81
+
+
+:::
+
+  
+
+
+
+
+### clearfix() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints clearfix styles
+    
+    
+
+::: details More Info
+
+- **File:** _layout.scss
+- **Lines:** 158-170
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+  @include module-name.get("property");
+
+    
+
+::: details More Info
+
+- **File:** _layout.scss
+- **Lines:** 39-41
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

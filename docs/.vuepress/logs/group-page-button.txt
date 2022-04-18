@@ -1,0 +1,192 @@
+
+# Button
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+::: details More Info
+
+- **File:** _button.scss
+- **Lines:** 23-46
+
+
+:::
+
+  
+
+
+
+
+### $sizes <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Button sizes
+    
+    
+
+- **type:** `Map`
+    
+
+::: details More Info
+
+- **File:** _button.scss
+- **Lines:** 51-63
+
+
+:::
+
+  
+
+
+
+
+### $styles <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Button styles
+    
+    
+
+- **type:** `Map`
+    
+
+::: details More Info
+
+- **File:** _button.scss
+- **Lines:** 68-89
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.set(( "property" : value ));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _button.scss
+- **Lines:** 96-98
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.get("property");
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+
+    
+
+::: details More Info
+
+- **File:** _button.scss
+- **Lines:** 105-109
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

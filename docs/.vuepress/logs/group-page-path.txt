@@ -1,0 +1,164 @@
+
+# Path
+
+
+
+## Variables
+
+
+
+
+
+
+### $aliases <badge text="variable" type="tip" vertical="top" /><badge text="Map
+- Important: alias could be used for directory or file so omit trailing slash for directories
+- All aliases must start with "#"" type="warn" vertical="top" /> 
+
+  
+
+Aliases 
+    
+    
+
+- **type:** `Map
+- Important: alias could be used for directory or file so omit trailing slash for directories
+- All aliases must start with "#"`
+    
+
+::: details More Info
+
+- **File:** _path.scss
+- **Lines:** 14-16
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set-aliases() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Set aliases or change defaults
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _path.scss
+- **Lines:** 21-23
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get-alias() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get an aliase's path
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$Name|`String`|Name of alias
+
+    
+
+::: details More Info
+
+- **File:** _path.scss
+- **Lines:** 28-30
+
+
+:::
+
+  
+
+
+
+
+### resolve() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Resolves a Path 
+- Checks if path is an alias if so rewrite's it
+- Future could include rewrites for easier updating or rearranging of legacy things
+- Aliases work by starting with "#", Since it's an illegal uri character, needs to be escaped if used as literal, we felt that it was the safest way to mix aliases in with real URLs (so that a dev of a module using path.resolve can always pass paths through (user input unknown if alias)
+    
+    
+
+#### Examples
+
+
+``` scss
+.img {
+  background-image: url(path.resolve("#Images/branding/logo"));
+}
+```
+  
+
+::: details More Info
+
+- **File:** _path.scss
+- **Lines:** 42-58
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

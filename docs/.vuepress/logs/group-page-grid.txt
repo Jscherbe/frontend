@@ -1,0 +1,181 @@
+
+# Grid
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.columns|`Number`|Default for grid mixin
+|$config.attribute|`String`|Default attribute to use for grid mixin
+|$config.gutter|`Number`|Default gutter for grid mixin
+|$config.extra-breakpoints|`Map`|Default extra breakpoints for grid mixin
+|$config.position-class-column-first|`MaStringp`|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+|$config.position-class-column-last|`String`|See definition above
+|$config.position-class-row-first|`String`|See definition above
+|$config.position-class-row-last|`String`|See definition above
+
+    
+
+::: details More Info
+
+- **File:** _grid.scss
+- **Lines:** 38-56
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));
+
+    
+
+::: details More Info
+
+- **File:** _grid.scss
+- **Lines:** 61-63
+
+
+:::
+
+  
+
+
+
+
+### create() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Creates grid css (variation of original data-grid)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$columns|`Number`|Columns in grid
+|$breakpoint|`Number`|Breakpoint key for starting the grid
+|$extra-breakpoints|`Map`|Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)
+|$gutter|`Number`|Size in pixels for the gutters
+|$include-rules|`Boolean`|Print styles for including rules
+|$rule-size|`Number`|Size of the rule (border/seperator)
+|$extra-rule-styles|`Map`|Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
+|$attribute|`String`|Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+
+    
+
+::: details More Info
+
+- **File:** _grid.scss
+- **Lines:** 83-407
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+  @include module-name.get("property");
+
+    
+
+::: details More Info
+
+- **File:** _grid.scss
+- **Lines:** 69-71
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

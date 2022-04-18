@@ -1,0 +1,232 @@
+
+# Demo_test-sassdoc
+
+
+
+## Mixins
+
+
+
+
+
+
+### before-sample() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Mixins can optionally accept a @content block,
+passed in brackets. This example creates
+a generated element `:before` the element it is used on.
+    
+    
+
+#### Examples
+
+
+``` scss
+.item {
+  @include samples.before-sample('Test One: ') {
+    color: red;
+  }
+}
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$content|`String`|A value for the `content` property
+|$list…|`arglist`|Sass also allows arglists!
+|@content|`content block`|Any other styles that should be applied to the <code>::before</code> element
+
+    
+
+#### Mixin Output
+
+A <code>::before</code> pseudo-element,
+  with the <code>content</code> property established,
+  and any passed-in styled applied.
+
+    
+
+::: details More Info
+
+- **File:** _test-sassdocs.scss
+- **Lines:** 105-110
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### herman-sample() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+This is a sample function.
+You can actually put much more text in here,
+and include markdown.
+Lorem markdownum rapite neque loquentis pro inque; nullaque [triones
+promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas
+mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi
+cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi
+recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae
+ferrove finis longave, pignus duros nubifer!
+
+- Tenuatus percussae tanta iudice Hippolytus miseram inmunis
+- Ture Iovis holus est et vere
+- Domus cum quid meae erras
+- Quam apta fata puppis ergo solis praeteriti
+
+    
+    
+
+#### Examples
+
+describe examples if you want...
+
+``` scss
+.example::before {
+  content: samples.herman-sample(1, 2);
+}
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$one|`number`|The first parameter is required, because no default is given
+|$two|`number`|Our second parameter defaults to the value of our first one
+|$three|`string`|Looks like this one takes a string instead
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`list`|All three of the arguments in order
+
+    
+
+#### Todos
+
+- Create more samples like this one
+- Add more todo items
+    
+
+#### Related Links
+
+- [OddBird Home Page](https://www.oddbird.net)
+
+  
+
+#### Since
+
+- `1.0.0` - Adding samples files to the documentation.
+
+    
+
+#### Todos
+
+- Create more samples like this one
+- Add more todo items
+    
+
+::: details More Info
+
+- **File:** _test-sassdocs.scss
+- **Lines:** 36-42
+- **Author:** [Miriam Suzanne](https://www.oddbird.net/authors/miriam/)
+
+:::
+
+  
+
+
+
+
+### sample-alias() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+This is a sample function alias.
+    
+    
+
+::: warning Deprecated
+I don't think this alias is useful anymore
+:::
+    
+
+::: details More Info
+
+- **File:** _test-sassdocs.scss
+- **Lines:** 50-52
+
+
+:::
+
+  
+
+
+
+
+### sample-alias-two() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+This is a sample function alias.
+    
+    
+
+::: warning Deprecated
+Doesn't seem to work without a message
+:::
+    
+
+::: details More Info
+
+- **File:** _test-sassdocs.scss
+- **Lines:** 60-62
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

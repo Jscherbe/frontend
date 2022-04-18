@@ -1,0 +1,225 @@
+
+# Selector
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+- This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. 
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.prefix|`String`|Global prefix for selectors (would be used for classname prefix for example)
+
+    
+
+#### Todos
+
+- See about documenting when a component doesn't run through the selecotr module to get it's base classname
+    
+
+#### Todos
+
+- See about documenting when a component doesn't run through the selecotr module to get it's base classname
+    
+
+::: details More Info
+
+- **File:** _selector.scss
+- **Lines:** 14-16
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.set(( "property" : value ));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _selector.scss
+- **Lines:** 25-27
+
+
+:::
+
+  
+
+
+
+
+### set-class-overrides() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Set the class selector overrides
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Changes to merge
+
+    
+
+::: details More Info
+
+- **File:** _selector.scss
+- **Lines:** 41-43
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.get("property");
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+
+    
+
+::: details More Info
+
+- **File:** _selector.scss
+- **Lines:** 34-36
+
+
+:::
+
+  
+
+
+
+
+### class() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Used to allow global prefixing of classes, and also the ability to 
+Change a class used in the system (ie. like a component for example)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$class|`String`|The classname to set
+
+    
+
+::: details More Info
+
+- **File:** _selector.scss
+- **Lines:** 49-52
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

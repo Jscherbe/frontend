@@ -3,7 +3,8 @@ const defaults = {
   createNav: true,
   sidebarGroupDefualts: {
     collapsable: false,
-    initialOpenGroupIndex: -1
+    initialOpenGroupIndex: -1,
+    sidebarDepth: 2
   },
   /**
    * If true it should show the whole tree else show by section (landing page)

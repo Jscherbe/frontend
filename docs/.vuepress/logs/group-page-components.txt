@@ -1,0 +1,326 @@
+
+# Components
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.short-width|`Number`|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output
+|$config.short-border-width|`Number`|Short rule width of border
+
+    
+
+::: details More Info
+
+- **File:** components/_rule.scss
+- **Lines:** 16-19
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### component-button-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints button component styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.component-button-styles();
+```
+  
+
+
+
+<SassdocPreview uid="components--mixin--component-button-styles" :exampleIndex="1"  />
+
+  
+
+``` html
+<a class="button" href="#">Button Default</a>
+```
+  
+
+::: details More Info
+
+- **File:** components/_button.scss
+- **Lines:** 18-64
+
+
+:::
+
+  
+
+
+
+
+### component-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints all Components styles
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.component-styles();
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$includes|`List`|A list of changes to module includes
+
+    
+
+::: details More Info
+
+- **File:** components/_index.scss
+- **Lines:** 33-54
+
+
+:::
+
+  
+
+
+
+
+### component-links-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Link compontent styles (.link)
+- Contextual link styling
+- Styles all links within as normal text hyperlinks (hover, visited)
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.component-links-styles();
+```
+  
+
+::: details More Info
+
+- **File:** components/_links.scss
+- **Lines:** 15-27
+
+
+:::
+
+  
+
+
+
+
+### styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Output styles
+    
+    
+
+::: details More Info
+
+- **File:** components/_list-bullet.scss
+- **Lines:** 11-21
+
+
+:::
+
+  
+
+
+
+
+### styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Output styles
+    
+    
+
+::: details More Info
+
+- **File:** components/_list-lines.scss
+- **Lines:** 11-35
+
+
+:::
+
+  
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.set(( "property" : value ));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** components/_rule.scss
+- **Lines:** 26-28
+
+
+:::
+
+  
+
+
+
+
+### styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Output styles
+    
+    
+
+::: details More Info
+
+- **File:** components/_rule.scss
+- **Lines:** 41-70
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.get("property");
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+
+    
+
+::: details More Info
+
+- **File:** components/_rule.scss
+- **Lines:** 35-37
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

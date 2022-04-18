@@ -1,42 +1,63 @@
-const fs = require('fs');
 const path = require("path");
-const sassdoc = require('sassdoc');
-const prepData = require('./prep-data.js');
+const sassdoc = require("sassdoc");
+const { simplifyData } = require("./utils.js");
 const defaults = require("./defaults.js");
+const { dataToFile } = require("./utils.js");
+const template = require("./template.js");
+const PLUGIN_NAME = "@ulu/vuepress-plugin-sassdoc";
 
 module.exports = opts => {
   let groups;
   const options = Object.assign({}, defaults, opts);
   return {
-    name: '@ulu/vuepress-plugin-sassdoc',
+    name: PLUGIN_NAME,
     enhanceAppFiles: path.resolve(__dirname, "enhanceAppFiles.js"),
+    clientDynamicModules() {
+      return {
+        name: 'sassdoc-options.js',
+        content: `
+          export const previewMeta = \`${ options.previewMeta }\`;
+          export const previewStyles = \`${ options.previewStyles }\`;
+          export const previewBodyScripts = \`${ options.previewBodyScripts }\`;
+        `
+      }
+    },
     async additionalPages() {
       try {
         const data = await sassdoc.parse(options.dir, options.sassdocOptions);
+
         if (!data) {
-          throw "Unable to get sasdoc data!";
+          throw "Unable to parse sasdoc data!";
         }
-        groups = prepData(data);
-        if (options.debugToFile) {
-          fs.writeFileSync(options.debugToFile, JSON.stringify(data, null, 2));
+        if (options.debugToDir) {
+          dataToFile(path.join(options.debugToDir, "sassdoc-data-raw.json"), data);
         }
-        // For each group create a page, add items as page field  
-        // to be accessed in group template for display
-        return Object.keys(groups).map(name => ({
-          path: `${ options.pathBase }${ name }/`,
-          content: options.pageTemplate({
-            name, 
-            group: groups[name], 
-            groups,
-            options
-          }),
-          frontmatter: {
-            sassdocGroupName: name,
-            title: options.getPageTitle(name)
-          },
-        })).sort(options.sort);
+
+        groups = simplifyData(data, options);
+
+        if (options.debugToDir) {
+          dataToFile(path.join(options.debugToDir, "sassdoc-data.json"), data);
+        }
+
+        const pages = Object.entries(groups).map(([groupName, group]) => { 
+          const title = options.getPageTitle(groupName);
+          return {
+            path: `${ options.pathBase }${ groupName }/`,
+            content: template({ groupName, title, group, groups, options }),
+            frontmatter: { title, sassdocGroupName: groupName }
+          };
+        });
+
+        pages.sort(options.sort);
+
+        if (options.onReady) {
+          await options.onReady({ pages, groups, options });
+        }
+
+        return pages;
+
       } catch(error) {
-        console.error('Error in vuepress sassdoc plugin! (options used)', options, error);
+        console.error(`Error in ${ PLUGIN_NAME }! (options used)`, error);
       }
     }
   }

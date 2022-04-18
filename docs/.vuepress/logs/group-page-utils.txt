@@ -1,0 +1,470 @@
+
+# Utils
+
+
+
+## Variables
+
+
+
+
+
+
+### $test <badge text="variable" type="tip" vertical="top" /><badge text="Boolean" type="warn" vertical="top" /> 
+
+  
+
+Test
+    
+    
+
+- **type:** `Boolean`
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 12-12
+
+
+:::
+
+  
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.debug-maps|`Boolean`|Debugs include map print outs
+|$config.file-header-comments|`Boolean`|Remove comment headers if you'd like
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 19-22
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.set(( "property" : value ));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 28-30
+
+
+:::
+
+  
+
+
+
+
+### require-list-has() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Ensure a value is present in the list, throw an error if not found
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$list|`List`|The map to get the value from
+|$value|`String`|The value to search for in the list
+|$context|`String`|The context of using this function for debugging help
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 65-70
+
+
+:::
+
+  
+
+
+
+
+### require-list-contains() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Require that the list only is only made up of allowed items
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$allowed|`List`|The list of allowed items
+|$list|`String`|The list to test allowed against
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 76-80
+
+
+:::
+
+  
+
+
+
+
+### file-header() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Returns true if we should include something (used for output checking)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$context|`List`|The root area of the framework this file comes from
+|$name|`List`|The name of the specific area/file (optional)
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 95-103
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Examples
+
+General example, replace module-name with module's name
+
+``` scss
+@include module-name.get("property");
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 37-39
+
+
+:::
+
+  
+
+
+
+
+### require-map-get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a required value from a map, throw an error if not found
+- Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$map|`Map`|The map to get the value from
+|$key|`String`|The key in the map to get value from
+|$context|`String`|The context of using this function for debugging help
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`*`|The value from the map
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 48-58
+
+
+:::
+
+  
+
+
+
+
+### included() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Returns true if we should include something (map of booleans)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`String`|Name of item to see if it's included
+|$includes|`Map`|Map of includes
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 86-89
+
+
+:::
+
+  
+
+
+
+
+### if-type() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$type|`String`|type of value it should be
+|$value|`String`|the value to provide if it is that type
+|$fallback|`String`|the fallback value
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 110-116
+
+
+:::
+
+  
+
+
+
+
+### number-info() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$number|`String`|Number to get meta info for
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`Map`|With properties (unit, value)
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 122-136
+
+
+:::
+
+  
+
+
+
+
+### map-merge-or-overwrite() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Repeatable pattern in core
+    
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 140-148
+
+
+:::
+
+  
+
+
+
+
+### function-fallback() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Helps in providing a dynamic fallback for modules whose defaults should come from another
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$prop|`String`|Property trying to get fallback for
+|$value|`*`|The value that may need the fallback
+|$lookup|`Map`|Map of properties to functions (use sass:meta > meta.get-function to populate)
+
+    
+
+#### Returns
+
+
+|Type|Description
+|:--|:--
+|`*`|The user's original value, or if the value is true get the default value from the provided function
+
+    
+
+::: details More Info
+
+- **File:** _utils.scss
+- **Lines:** 156-165
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

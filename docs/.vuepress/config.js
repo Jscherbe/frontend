@@ -39,14 +39,14 @@ module.exports = {
     lastUpdated: false,
     sidebarAutoPages: {
       createSidebar: true,
-      createNav: false,
-      sidebarAllSections: true
+      createNav: true,
+      sidebarAllSections: false
     }
   },
   extraWatchFiles: [
-    '../../js/**/*.js',
-    '../../scss/**/*.scss',
-    'plugins/**/*.js'
+    '../js/**/*.js',
+    '../scss/**/*.scss',
+    '.vuepress/plugins/**/*.js'
   ],
 
   /**
@@ -56,7 +56,16 @@ module.exports = {
     [sassdocPlugin, {
       dir: path.resolve(__dirname, "../../scss/"),
       debug: true,
-      debugToFile: path.resolve(__dirname, "logs/sassdoc.json")
+      debugToDir: path.resolve(__dirname, "logs/"),
+      previewMeta: `
+        <title>Sassdoc Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/ulu-frontend.min.css">
+      `,
+      previewBodyScripts: `
+        <script src="/ulu-frontend.min.js"></script>
+      `
     }],
     sidebarAutoPagesPlugin
   ]

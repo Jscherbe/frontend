@@ -1,0 +1,573 @@
+
+# Color
+
+
+
+## Variables
+
+
+
+
+
+
+### $palette <badge text="variable" type="tip" vertical="top" /><badge text="map" type="warn" vertical="top" /> 
+
+  
+
+The color palette map, can be extended or modified with set() and accessed with get()
+    
+    
+
+- **type:** `map`
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 13-28
+
+
+:::
+
+  
+
+
+
+
+### $contexts <badge text="variable" type="tip" vertical="top" /><badge text="map" type="warn" vertical="top" /> 
+
+  
+
+Pairs of background-color and color definitions
+    
+    
+
+- **type:** `map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$contexts.name.background-color|`Number|String`|Color value or name of color in $palette
+|$contexts.name.color|`Number|String`|Color value or name of color in $palette
+|$contexts.name.base-class|`Boolean`|Print this value in the base module as a class (if base prints)
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 36-47
+
+
+:::
+
+  
+
+
+
+
+### $color-classes <badge text="variable" type="tip" vertical="top" /> 
+
+  
+
+Palette entries that are output as classes when using all-color-class-styles
+    
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 50-54
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Used to override or extend the color palette
+    
+    
+
+#### Examples
+
+Setting the error and type color
+
+``` scss
+@include color.set((
+  "type" : #444,
+  "error" : orange,
+));
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|A map to merge into the color palette
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 64-66
+
+
+:::
+
+  
+
+
+
+
+### set-color-classes() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Set ouput classes for all-color-class-styles
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes (you can disable defaults this way)
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 83-85
+
+
+:::
+
+  
+
+
+
+
+### set-contexts() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Set color contexts
+    
+    
+
+#### Examples
+
+Overwriting contexts
+
+``` scss
+@include color.set-contexts((
+  "dark" : (
+    "background-color" : red,
+    "color" : white,
+  )
+), false, true);
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|A map to merge
+|$deep|`Map`|Use deep merge
+|$overwrite|`Map`|Overwrite the completly (cannot be used with deep)
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 104-106
+
+
+:::
+
+  
+
+
+
+
+### context-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints contexts styles
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`String`|Name of context
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 134-140
+
+
+:::
+
+  
+
+
+
+
+### all-context-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Prints all context styles 
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.all-context-styles();
+```
+  
+
+Example of a color-context
+
+
+<SassdocPreview uid="color--mixin--all-context-styles" :exampleIndex="1"  />
+
+  
+
+``` html
+ <div class="color-context-dark" style="padding: 1rem">
+  Some text in dark context
+</div>
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$with-prop|`String`|Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 172-181
+
+
+:::
+
+  
+
+
+
+
+### all-color-class-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Outputs all color classes
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.all-color-class-styles();
+```
+  
+
+Example of a color-context
+
+
+<SassdocPreview uid="color--mixin--all-color-class-styles" :exampleIndex="1"  />
+
+  
+
+``` html
+<span class="color-name">Some text</span>
+```
+  
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 188-197
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a color from the palette by name
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`String`|Name of color to get
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Color`
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 72-78
+
+
+:::
+
+  
+
+
+
+
+### get-context() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a context by name
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`String`|Name of context
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Map`
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 112-114
+
+
+:::
+
+  
+
+
+
+
+### get-context-value() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a context's value'
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`String`|Name of context
+|$prop|`String`|The property to get
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Color`
+
+    
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 121-129
+
+
+:::
+
+  
+
+
+
+
+### tint() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Lighten a color using the default white by a percentage
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$color|`Color, String`|Color/palette color name to apply to tint
+|$percentage|`Number`|Percentage
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Color`
+
+    
+
+#### Related Links
+
+- [Modified from source (CSS Tricks, Kitty Giraudel)](https://css-tricks.com/snippets/sass/tint-shade-functions/)
+
+  
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 149-151
+- **Author:** 
+
+:::
+
+  
+
+
+
+
+### shade() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Darken a color with the default black by a percentage
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$color|`Color, String`|Color/palette color name to shade
+|$percentage|`Number`|Percentage to shade
+
+    
+
+#### Returns
+
+
+|Type
+|:--
+|`Color`
+
+    
+
+#### Related Links
+
+- [Modified from source (CSS Tricks, Kitty Giraudel)](https://css-tricks.com/snippets/sass/tint-shade-functions/)
+
+  
+
+::: details More Info
+
+- **File:** _color.scss
+- **Lines:** 160-162
+- **Author:** Kitty Giraudel
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  

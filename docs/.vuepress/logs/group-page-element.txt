@@ -1,0 +1,511 @@
+
+# Element
+
+
+
+## Variables
+
+
+
+
+
+
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Module Settings
+    
+    
+
+- **type:** `Map`
+    
+
+#### Map Properties
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$config.backdrop-blur|`Number`|Backdrop blur amount used on elements/components
+|$config.backdrop-color|`Color`|Backdrop color (modal overlays, etc)
+|$config.box-shadow|`List`|Box-shadow definition for elements that are on top of page
+|$config.box-shadow-raised|`List`|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
+|$config.box-shadow-above|`List`|Box-shadow definition for elements that are above the page (fixed items, etc)
+|$config.border-radius|`Number`|Common element border radius
+|$config.border-radius-small|`Number`|Common element border radius (small)
+|$config.border-radius-large|`Number`|Common element border radius (large)
+|$config.text-shadow|`List`|Common text shadow
+|$config.margin-small|`Number`|Common element margin (small) (default for lists)
+|$config.margin|`Number`|Common element margin
+|$config.margin-large|`Number`|Common element margin (large)
+|$config.ol-list-style-type|`String`|Ordered list type (level 1)
+|$config.ol-list-style-type-2|`String`|Ordered list type (level 2)
+|$config.ol-list-style-type-3|`String`|Ordered list type (level 3)
+|$config.ul-list-style-type|`String`|
+|$config.ul-list-style-type-2|`String`|
+|$config.ul-list-style-type-3|`String`|
+|$config.link-text-decoration-default|`String`|Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)
+|$config.link-text-decoration|`String`|
+|$config.link-text-decoration-style|`String`|
+|$config.link-text-decoration-color|`Color`|
+|$config.link-text-decoration-style-hover|`String`|
+|$config.link-text-decoration-color-hover|`Color`|
+|$config.link-text-decoration-thickness|`Number`|
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 38-64
+
+
+:::
+
+  
+
+
+
+
+### $rule-styles <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Rule style map, redifine defaults or add to
+    
+    
+
+- **type:** `Map`
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 69-72
+
+
+:::
+
+  
+
+
+
+
+### $rule-margins <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
+
+  
+
+Common rule margins (space between rule and type)
+    
+    
+
+- **type:** `Map`
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 77-82
+
+
+:::
+
+  
+
+  
+
+## Mixins
+
+
+
+
+
+
+### set() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Change modules $config
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 87-89
+
+
+:::
+
+  
+
+
+
+
+### set-rule-styles() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Sets rule styles
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 102-104
+
+
+:::
+
+  
+
+
+
+
+### set-rule-margins() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Sets rule margins
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 109-111
+
+
+:::
+
+  
+
+
+
+
+### rule() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Get full rule CSS (style and margin)
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 130-136
+
+
+:::
+
+  
+
+
+
+
+### link() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print link styles
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$visited|`Boolean`|Include visited style
+|$active|`Boolean`|Include active style
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 150-171
+
+
+:::
+
+  
+
+
+
+
+### link-defaults() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print the defautl link styling (no hover and focus styles)
+    
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 175-178
+
+
+:::
+
+  
+
+
+
+
+### styles-ordered-list() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print the ordered list items styling
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$bullet-color|`Boolean`|Optional bullet color (defaults to palette 'bullet')
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 183-202
+
+
+:::
+
+  
+
+
+
+
+### styles-unordered-list() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Print the unordered list items styling
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$bullet-color|`Boolean`|Optional bullet color
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 207-222
+
+
+:::
+
+  
+
+
+
+
+### hidden-visually() <badge text="mixin" type="tip" vertical="top" /> 
+
+  
+
+Hide text for assistive devices
+    
+    
+
+#### Examples
+
+
+``` scss
+@include ulu.layout-hidden-visually()
+// Reset styling
+@include ulu.layout-hidden-visually(false)
+```
+  
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$hidden|`Boolean`|Defaults to true, pass false to override the hidden css (ie. on focus)
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 231-249
+
+
+:::
+
+  
+
+  
+
+## Functions
+
+
+
+
+
+
+### get() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a config option
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$name|`Map`|Name of property
+  @include module-name.get("property");
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 95-97
+
+
+:::
+
+  
+
+
+
+
+### get-rule-style() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Get a rule style
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 116-118
+
+
+:::
+
+  
+
+
+
+
+### get-rule-margin() <badge text="function" type="tip" vertical="top" /> 
+
+  
+
+Sets rule margin
+    
+    
+
+#### Parameters
+
+
+|Name|Type|Description
+|:--|:--|:--
+|$changes|`Map`|Map of changes
+
+    
+
+::: details More Info
+
+- **File:** _element.scss
+- **Lines:** 123-125
+
+
+:::
+
+  
+
+  
+
+
+<script>
+console.log(undefined);
+const sassdocGroup = undefined;
+export default {
+  sassdocGroup,
+  provide: {
+    getSassdocItem(uid) {
+      return sassdocGroup.find(item => item._uid === uid);
+    },
+    getSassdocGroup() {
+      return sassdocGroup;
+    }
+  }
+}
+</script> 
+  
+
+  
