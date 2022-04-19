@@ -5,6 +5,5 @@ module.exports = ({ sectionName }, markup) => {
 ## ${ titleCase(sectionName) }
 
 ${ markup }
-
   `;
 }

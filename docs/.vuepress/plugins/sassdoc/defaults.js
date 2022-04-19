@@ -1,4 +1,4 @@
-const { titleCase, itemsByType } = require("./utils.js");
+const { titleCase, itemsByType, getGroupName } = require("./utils.js");
 
 module.exports = {
   /**
@@ -24,17 +24,27 @@ module.exports = {
    */
   sassdocOptions: { verbose: true },
   /**
+   * Can be used to disable the required markdown plugins that this plugin uses
+   * - Incase you have already installed theme, etc
+   */
+  addMarkdownAttrSupport: true,
+  /**
    * What access types are printed
    */
   access: ["public"],
   /**
    * Controls order and which annotations are printed
+   * - Could also be used for custom annotation (need to check on how user passed these to sassdoc)
+   * - Would need to create a matching template name 
+   * - Use a custom template by passing a template in the annotationTemplates with the same key/name
+   * - Items starting with "_" custom (non-annotation) templates ie. "_meta", user can insert content this way
    */
   annotations: [
     "name",
     "description",
     "deprecated",
-    "type", 
+    "_meta",
+    "_preview",
     "property",
     "example",
     "parameter",
@@ -47,6 +57,7 @@ module.exports = {
   ],
   /**
    * Should return an object where the keys are the section's title and the values are teh items to display in that section
+   * - See 'itemPath' option if you change from the structure of a page to something different
    * @param {Object} group The group's items, to divide into sections
    */
   pageSections(group) {
@@ -58,18 +69,29 @@ module.exports = {
     };
   },
   /**
+   * Should return the path to the documented item
+   * - This is available incase the page sections are custom, in which case you should modify the path based on your structure
+   */
+  itemPath(item, data, options) {
+    const { _hash } = item;
+    return `${ options.pathBase }${ getGroupName(item) }/#${ _hash }`;
+  },
+  /**
    * Determines how the file paths (to group or item is displayed)
    * @param {String} itemPath The items relative path from the directory sassdoc parsed
    */
-  displayItemPath(itemPath) {
+  displayFilePath(itemPath) {
     return itemPath;
   },
+  
   /**
    * Provide custom markdown templates for things like the page, item, etc
    */
   templates: {},
   /**
    * Provide custom markdown templates for the annotations of a documented item
+   * - The item's object (all annotations) can be found in the object passed to teh template as data.item
+   * - Example Template: `({ item, options }) => item.name`
    */
   annotationTemplates: {},
   /**
@@ -78,11 +100,15 @@ module.exports = {
    */
   getPageTitle: titleCase,
   /**
-   * Enable iframe previews of item's (ie. mixin) that have examples of the "html" type
+   * Enable iframe previews of item's (ie. mixin) that have examples of the "html" type (default see previewExampleTypes to set custom types (ie. such as "html"))
    * - Used in order to see the markup in action (ie. applied to stylesheet)
    * - See 'previewMeta'
    */
   previewEnabled: true,
+  /**
+   * Array of types that should display using the preview of and example "type" 
+   */
+  previewTypes: ["html"],
   /**
    * Styles applied to the iframe element
    */

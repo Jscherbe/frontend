@@ -4,7 +4,7 @@
 
 <script>
   import { previewStyles, previewMeta, previewScripts } from '@dynamic/sassdoc-options';
-  
+  console.log(previewStyles);
   export default {
     name: 'SassdocPreview',
     inject: ["getSassdocItem"],

@@ -8,11 +8,10 @@
 
 
 
-
-
 ### $aliases <badge text="variable" type="tip" vertical="top" /><badge text="Map
 - Important: alias could be used for directory or file so omit trailing slash for directories
-- All aliases must start with "#"" type="warn" vertical="top" /> 
+- All aliases must start with "#"" type="warn" vertical="top" />  {#variable-aliases} 
+
 
   
 
@@ -20,21 +19,17 @@ Aliases
     
     
 
-- **type:** `Map
-- Important: alias could be used for directory or file so omit trailing slash for directories
-- All aliases must start with "#"`
-    
-
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _path.scss
-- **Lines:** 14-16
+- **Group:** path
+- **Type:** variable
+- **Lines (comment range):** 9-12
+- **Lines (code):** 14-16
 
 
-:::
-
+</SassdocDetails>
   
-
   
 
 ## Mixins
@@ -42,9 +37,8 @@ Aliases
 
 
 
+### set-aliases() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-aliases} 
 
-
-### set-aliases() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -52,25 +46,26 @@ Set aliases or change defaults
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _path.scss
+- **Group:** path
+- **Type:** mixin
+- **Lines (comment range):** 18-19
+- **Lines (code):** 21-23
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
-
-::: details More Info
-
-- **File:** _path.scss
-- **Lines:** 21-23
-
-
-:::
-
-  
-
   
 
 ## Functions
@@ -78,9 +73,8 @@ Set aliases or change defaults
 
 
 
+### get-alias() <badge text="function" type="tip" vertical="top" />  {#function-get-alias} 
 
-
-### get-alias() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -88,29 +82,30 @@ Get an aliase's path
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _path.scss
+- **Group:** path
+- **Type:** function
+- **Lines (comment range):** 25-26
+- **Lines (code):** 28-30
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$Name|`String`|Name of alias
+|Name|Type|Description|
+|:--|:--|:--|
+|$Name|`String`|Name of alias|
 
     
 
-::: details More Info
 
-- **File:** _path.scss
-- **Lines:** 28-30
+### resolve() <badge text="function" type="tip" vertical="top" />  {#function-resolve} 
 
-
-:::
-
-  
-
-
-
-
-### resolve() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -121,7 +116,21 @@ Resolves a Path
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _path.scss
+- **Group:** path
+- **Type:** function
+- **Lines (comment range):** 32-40
+- **Lines (code):** 42-58
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
@@ -130,23 +139,12 @@ Resolves a Path
 }
 ```
   
-
-::: details More Info
-
-- **File:** _path.scss
-- **Lines:** 42-58
-
-
-:::
-
+      
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"path-variable-aliases","_hash":"variable-aliases","_path":"/sass/path/#variable-aliases","_previews":[]},{"_uid":"path-mixin-set-aliases","_hash":"mixin-set-aliases","_path":"/sass/path/#mixin-set-aliases","_previews":[]},{"_uid":"path-function-get-alias","_hash":"function-get-alias","_path":"/sass/path/#function-get-alias","_previews":[]},{"_uid":"path-function-resolve","_hash":"function-resolve","_path":"/sass/path/#function-resolve","_previews":[null]}]);
+const sassdocGroup = [{"_uid":"path-variable-aliases","_hash":"variable-aliases","_path":"/sass/path/#variable-aliases","_previews":[]},{"_uid":"path-mixin-set-aliases","_hash":"mixin-set-aliases","_path":"/sass/path/#mixin-set-aliases","_previews":[]},{"_uid":"path-function-get-alias","_hash":"function-get-alias","_path":"/sass/path/#function-get-alias","_previews":[]},{"_uid":"path-function-resolve","_hash":"function-resolve","_path":"/sass/path/#function-resolve","_previews":[null]}];
 export default {
   sassdocGroup,
   provide: {
@@ -160,5 +158,4 @@ export default {
 }
 </script> 
   
-
   

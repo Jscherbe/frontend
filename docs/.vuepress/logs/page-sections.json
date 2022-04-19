@@ -25,7 +25,9 @@
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--variable--test"
+      "_uid": "utils-variable-test",
+      "_hash": "variable-test",
+      "_path": "/sass/utils/#variable-test"
     },
     {
       "description": "Module Settings\n",
@@ -64,7 +66,9 @@
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--variable--config"
+      "_uid": "utils-variable-config",
+      "_hash": "variable-config-12",
+      "_path": "/sass/utils/#variable-config-12"
     }
   ],
   "mixins": [
@@ -106,20 +110,22 @@
           "type": "variable",
           "name": "config",
           "autofill": true,
-          "item": "base--variable--config"
+          "item": "base-variable-config-39"
         },
         {
           "type": "variable",
           "name": "config",
           "autofill": true,
-          "item": "base--variable--config"
+          "item": "base-variable-config-40"
         }
       ],
       "file": {
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--mixin--set"
+      "_uid": "utils-mixin-set",
+      "_hash": "mixin-set-14",
+      "_path": "/sass/utils/#mixin-set-14"
     },
     {
       "description": "Ensure a value is present in the list, throw an error if not found\n",
@@ -166,9 +172,11 @@
         "name": "_utils.scss"
       },
       "usedBy": [
-        "utils--mixin--require-list-contains"
+        "utils-mixin-require-list-contains-1"
       ],
-      "_uid": "utils--mixin--require-list-has"
+      "_uid": "utils-mixin-require-list-has",
+      "_hash": "mixin-require-list-has",
+      "_path": "/sass/utils/#mixin-require-list-has"
     },
     {
       "description": "Require that the list only is only made up of allowed items\n",
@@ -206,14 +214,16 @@
           "type": "mixin",
           "name": "require-list-has",
           "autofill": true,
-          "item": "utils--mixin--require-list-has"
+          "item": "utils-mixin-require-list-has-1"
         }
       ],
       "file": {
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--mixin--require-list-contains"
+      "_uid": "utils-mixin-require-list-contains",
+      "_hash": "mixin-require-list-contains",
+      "_path": "/sass/utils/#mixin-require-list-contains"
     },
     {
       "description": "Returns true if we should include something (used for output checking)\n",
@@ -251,7 +261,9 @@
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--mixin--file-header"
+      "_uid": "utils-mixin-file-header",
+      "_hash": "mixin-file-header",
+      "_path": "/sass/utils/#mixin-file-header"
     }
   ],
   "functions": [
@@ -293,20 +305,22 @@
           "type": "function",
           "name": "require-map-get",
           "autofill": true,
-          "item": "utils--function--require-map-get"
+          "item": "utils-function-require-map-get-27"
         },
         {
           "type": "variable",
           "name": "config",
           "autofill": true,
-          "item": "base--variable--config"
+          "item": "base-variable-config-41"
         }
       ],
       "file": {
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--function--get"
+      "_uid": "utils-function-get",
+      "_hash": "function-get-13",
+      "_path": "/sass/utils/#function-get-13"
     },
     {
       "description": "Get a required value from a map, throw an error if not found\n- Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)\n",
@@ -353,13 +367,13 @@
           "type": "function",
           "name": "get",
           "autofill": true,
-          "item": "base--function--get"
+          "item": "base-function-get-132"
         },
         {
           "type": "function",
           "name": "get",
           "autofill": true,
-          "item": "base--function--get"
+          "item": "base-function-get-133"
         }
       ],
       "throw": [
@@ -370,33 +384,35 @@
         "name": "_utils.scss"
       },
       "usedBy": [
-        "base--function--get",
-        "breakpoint--function--get",
-        "breakpoint--mixin--min",
-        "breakpoint--mixin--max",
-        "breakpoint--mixin--min-max",
-        "breakpoint--mixin--min-max",
-        "button--function--get",
-        "calculate--function--get",
-        "color--function--get",
-        "color--function--get-context",
-        "components--function--get",
-        "element--function--get",
-        "element--function--get-rule-style",
-        "element--function--get-rule-margin",
-        "grid--function--get",
-        "grid--mixin--create",
-        "grid--mixin--create",
-        "helpers--function--get",
-        "layout--function--get",
-        "path--function--get-alias",
-        "selector--function--get",
-        "typography--function--get",
-        "typography--function--get-size",
-        "units--function--get",
-        "utils--function--get"
+        "base-function-get-131",
+        "breakpoint-function-get-2",
+        "breakpoint-mixin-min-3",
+        "breakpoint-mixin-max-3",
+        "breakpoint-mixin-min-max-4",
+        "breakpoint-mixin-min-max-5",
+        "button-function-get-2",
+        "calculate-function-get-2",
+        "color-function-get-2",
+        "color-function-get-context-4",
+        "components-function-get-2",
+        "element-function-get-2",
+        "element-function-get-rule-style-4",
+        "element-function-get-rule-margin-2",
+        "grid-function-get-2",
+        "grid-mixin-create-10",
+        "grid-mixin-create-11",
+        "helpers-function-get-2",
+        "layout-function-get-2",
+        "path-function-get-alias-4",
+        "selector-function-get-2",
+        "typography-function-get-2",
+        "typography-function-get-size-4",
+        "units-function-get-2",
+        "utils-function-get-2"
       ],
-      "_uid": "utils--function--require-map-get"
+      "_uid": "utils-function-require-map-get",
+      "_hash": "function-require-map-get",
+      "_path": "/sass/utils/#function-require-map-get"
     },
     {
       "description": "Returns true if we should include something (map of booleans)\n",
@@ -434,14 +450,16 @@
           "type": "function",
           "name": "get",
           "autofill": true,
-          "item": "base--function--get"
+          "item": "base-function-get-134"
         }
       ],
       "file": {
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--function--included"
+      "_uid": "utils-function-included",
+      "_hash": "function-included",
+      "_path": "/sass/utils/#function-included"
     },
     {
       "description": "",
@@ -484,7 +502,9 @@
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--function--if-type"
+      "_uid": "utils-function-if-type",
+      "_hash": "function-if-type",
+      "_path": "/sass/utils/#function-if-type"
     },
     {
       "description": "",
@@ -521,7 +541,9 @@
         "path": "_utils.scss",
         "name": "_utils.scss"
       },
-      "_uid": "utils--function--number-info"
+      "_uid": "utils-function-number-info",
+      "_hash": "function-number-info",
+      "_path": "/sass/utils/#function-number-info"
     },
     {
       "description": "Repeatable pattern in core\n",
@@ -548,10 +570,12 @@
         "name": "_utils.scss"
       },
       "usedBy": [
-        "color--mixin--set-contexts",
-        "typography--mixin--set-sizes"
+        "color-mixin-set-contexts-3",
+        "typography-mixin-set-sizes-3"
       ],
-      "_uid": "utils--function--map-merge-or-overwrite"
+      "_uid": "utils-function-map-merge-or-overwrite",
+      "_hash": "function-map-merge-or-overwrite",
+      "_path": "/sass/utils/#function-map-merge-or-overwrite"
     },
     {
       "description": "Helps in providing a dynamic fallback for modules whose defaults should come from another\n",
@@ -598,7 +622,7 @@
           "type": "function",
           "name": "get",
           "autofill": true,
-          "item": "base--function--get"
+          "item": "base-function-get-135"
         }
       ],
       "file": {
@@ -606,9 +630,11 @@
         "name": "_utils.scss"
       },
       "usedBy": [
-        "button--function--get"
+        "button-function-get-3"
       ],
-      "_uid": "utils--function--function-fallback"
+      "_uid": "utils-function-function-fallback",
+      "_hash": "function-function-fallback",
+      "_path": "/sass/utils/#function-function-fallback"
     }
   ],
   "placeholders": []

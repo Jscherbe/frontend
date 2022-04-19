@@ -23,7 +23,9 @@
       "path": "base/_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "base--mixin--styles"
+    "_uid": "base-mixin-styles",
+    "_hash": "mixin-styles",
+    "_path": "/sass/base/#mixin-styles"
   },
   {
     "description": "Module Settings\n",
@@ -58,49 +60,51 @@
       "name": "_elements.scss"
     },
     "usedBy": [
-      "base--mixin--set",
-      "base--mixin--set",
-      "base--function--get",
-      "breakpoint--mixin--set",
-      "breakpoint--mixin--set",
-      "breakpoint--function--get",
-      "button--mixin--set",
-      "button--mixin--set",
-      "button--function--get",
-      "calculate--mixin--set",
-      "calculate--mixin--set",
-      "calculate--function--get",
-      "components--mixin--set",
-      "components--mixin--set",
-      "components--function--get",
-      "element--mixin--set",
-      "element--mixin--set",
-      "element--function--get",
-      "grid--mixin--set",
-      "grid--mixin--set",
-      "grid--function--get",
-      "helpers--mixin--set",
-      "helpers--mixin--set",
-      "helpers--function--get",
-      "helpers--mixin--create-property-classes",
-      "helpers--mixin--create-property-classes",
-      "layout--mixin--set",
-      "layout--mixin--set",
-      "layout--function--get",
-      "selector--mixin--set",
-      "selector--mixin--set",
-      "selector--function--get",
-      "typography--mixin--set",
-      "typography--mixin--set",
-      "typography--function--get",
-      "units--mixin--set",
-      "units--mixin--set",
-      "units--function--get",
-      "utils--mixin--set",
-      "utils--mixin--set",
-      "utils--function--get"
+      "base-mixin-set-1",
+      "base-mixin-set-2",
+      "base-function-get-1",
+      "breakpoint-mixin-set-2",
+      "breakpoint-mixin-set-3",
+      "breakpoint-function-get-1",
+      "button-mixin-set-1",
+      "button-mixin-set-2",
+      "button-function-get-1",
+      "calculate-mixin-set-1",
+      "calculate-mixin-set-2",
+      "calculate-function-get-1",
+      "components-mixin-set-1",
+      "components-mixin-set-2",
+      "components-function-get-1",
+      "element-mixin-set-1",
+      "element-mixin-set-2",
+      "element-function-get-1",
+      "grid-mixin-set-1",
+      "grid-mixin-set-2",
+      "grid-function-get-1",
+      "helpers-mixin-set-1",
+      "helpers-mixin-set-2",
+      "helpers-function-get-1",
+      "helpers-mixin-create-property-classes-1",
+      "helpers-mixin-create-property-classes-2",
+      "layout-mixin-set-1",
+      "layout-mixin-set-2",
+      "layout-function-get-1",
+      "selector-mixin-set-1",
+      "selector-mixin-set-2",
+      "selector-function-get-1",
+      "typography-mixin-set-1",
+      "typography-mixin-set-2",
+      "typography-function-get-1",
+      "units-mixin-set-1",
+      "units-mixin-set-2",
+      "units-function-get-1",
+      "utils-mixin-set-1",
+      "utils-mixin-set-2",
+      "utils-function-get-1"
     ],
-    "_uid": "base--variable--config"
+    "_uid": "base-variable-config",
+    "_hash": "variable-config",
+    "_path": "/sass/base/#variable-config"
   },
   {
     "description": "Change modules $config\n",
@@ -140,20 +144,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-1"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-2"
       }
     ],
     "file": {
       "path": "base/_elements.scss",
       "name": "_elements.scss"
     },
-    "_uid": "base--mixin--set"
+    "_uid": "base-mixin-set",
+    "_hash": "mixin-set",
+    "_path": "/sass/base/#mixin-set"
   },
   {
     "description": "Get a config option\n",
@@ -193,13 +199,13 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-3"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-3"
       }
     ],
     "file": {
@@ -207,141 +213,143 @@
       "name": "_elements.scss"
     },
     "usedBy": [
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-elements-styles",
-      "base--mixin--base-styles",
-      "base--mixin--base-styles",
-      "base--mixin--base-styles",
-      "base--mixin--base-styles",
-      "base--mixin--base-styles",
-      "base--mixin--base-styles",
-      "base--mixin--base-typography-styles",
-      "base--mixin--base-typography-styles",
-      "breakpoint--mixin--max",
-      "breakpoint--mixin--min-max",
-      "breakpoint--mixin--embed-for-scripts",
-      "color--function--get-context-value",
-      "color--function--get-context-value",
-      "color--mixin--context-styles",
-      "color--mixin--context-styles",
-      "color--function--tint",
-      "color--function--tint",
-      "color--function--shade",
-      "color--function--shade",
-      "color--mixin--all-context-styles",
-      "color--mixin--all-color-class-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-styles",
-      "components--mixin--component-styles",
-      "components--mixin--component-styles",
-      "components--mixin--component-styles",
-      "components--mixin--component-styles",
-      "components--mixin--styles",
-      "components--mixin--styles",
-      "components--mixin--styles",
-      "components--mixin--styles",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link",
-      "element--mixin--link-defaults",
-      "element--mixin--link-defaults",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-ordered-list",
-      "element--mixin--styles-unordered-list",
-      "element--mixin--styles-unordered-list",
-      "element--mixin--styles-unordered-list",
-      "element--mixin--styles-unordered-list",
-      "element--mixin--styles-unordered-list",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "helpers--mixin--helper-styles",
-      "helpers--mixin--helper-styles",
-      "helpers--mixin--helper-styles",
-      "helpers--mixin--helper-styles",
-      "helpers--mixin--helper-styles",
-      "helpers--mixin--helper-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--create-property-classes",
-      "helpers--mixin--create-property-classes",
-      "helpers--mixin--create-property-classes",
-      "helpers--mixin--create-property-classes",
-      "helpers--mixin--create-property-classes",
-      "layout--mixin--match-container-padding",
-      "layout--mixin--match-container-padding",
-      "selector--function--class",
-      "selector--function--class",
-      "typography--function--scale",
-      "typography--function--scale",
-      "typography--function--scale",
-      "typography--function--scale-line-height",
-      "typography--function--scale-line-height",
-      "typography--function--scale-line-height",
-      "typography--function--rem",
-      "typography--function--em",
-      "typography--function--new-size",
-      "typography--function--font-size",
-      "typography--function--get-size-converted-value",
-      "typography--function--get-size-converted-value",
-      "typography--function--get-size-converted-value",
-      "typography--function--get-size-value",
-      "typography--function--get-size-value",
-      "typography--mixin--font-size-responsive",
-      "typography--mixin--size",
-      "typography--mixin--size",
-      "typography--mixin--size",
-      "typography--mixin--size",
-      "typography--mixin--size",
-      "utils--function--require-map-get",
-      "utils--function--require-map-get",
-      "utils--function--included",
-      "utils--function--function-fallback"
+      "base-mixin-base-elements-styles-1",
+      "base-mixin-base-elements-styles-2",
+      "base-mixin-base-elements-styles-3",
+      "base-mixin-base-elements-styles-4",
+      "base-mixin-base-elements-styles-5",
+      "base-mixin-base-elements-styles-6",
+      "base-mixin-base-elements-styles-7",
+      "base-mixin-base-elements-styles-8",
+      "base-mixin-base-styles-1",
+      "base-mixin-base-styles-2",
+      "base-mixin-base-styles-3",
+      "base-mixin-base-styles-4",
+      "base-mixin-base-styles-5",
+      "base-mixin-base-styles-6",
+      "base-mixin-base-typography-styles-1",
+      "base-mixin-base-typography-styles-2",
+      "breakpoint-mixin-max-1",
+      "breakpoint-mixin-min-max-1",
+      "breakpoint-mixin-embed-for-scripts-1",
+      "color-function-get-context-value-1",
+      "color-function-get-context-value-2",
+      "color-mixin-context-styles-1",
+      "color-mixin-context-styles-2",
+      "color-function-tint-1",
+      "color-function-tint-2",
+      "color-function-shade-1",
+      "color-function-shade-2",
+      "color-mixin-all-context-styles-1",
+      "color-mixin-all-color-class-styles-1",
+      "components-mixin-component-button-styles-1",
+      "components-mixin-component-button-styles-2",
+      "components-mixin-component-button-styles-3",
+      "components-mixin-component-button-styles-4",
+      "components-mixin-component-button-styles-5",
+      "components-mixin-component-button-styles-6",
+      "components-mixin-component-styles-1",
+      "components-mixin-component-styles-2",
+      "components-mixin-component-styles-3",
+      "components-mixin-component-styles-4",
+      "components-mixin-component-styles-5",
+      "components-mixin-styles-3",
+      "components-mixin-styles-4",
+      "components-mixin-styles-5",
+      "components-mixin-styles-6",
+      "element-mixin-link-1",
+      "element-mixin-link-2",
+      "element-mixin-link-3",
+      "element-mixin-link-4",
+      "element-mixin-link-5",
+      "element-mixin-link-6",
+      "element-mixin-link-7",
+      "element-mixin-link-8",
+      "element-mixin-link-9",
+      "element-mixin-link-10",
+      "element-mixin-link-defaults-1",
+      "element-mixin-link-defaults-2",
+      "element-mixin-styles-ordered-list-1",
+      "element-mixin-styles-ordered-list-2",
+      "element-mixin-styles-ordered-list-3",
+      "element-mixin-styles-ordered-list-4",
+      "element-mixin-styles-ordered-list-5",
+      "element-mixin-styles-ordered-list-6",
+      "element-mixin-styles-ordered-list-7",
+      "element-mixin-styles-ordered-list-8",
+      "element-mixin-styles-unordered-list-1",
+      "element-mixin-styles-unordered-list-2",
+      "element-mixin-styles-unordered-list-3",
+      "element-mixin-styles-unordered-list-4",
+      "element-mixin-styles-unordered-list-5",
+      "grid-mixin-create-1",
+      "grid-mixin-create-2",
+      "grid-mixin-create-3",
+      "grid-mixin-create-4",
+      "grid-mixin-create-5",
+      "grid-mixin-create-6",
+      "grid-mixin-create-7",
+      "grid-mixin-create-8",
+      "grid-mixin-create-9",
+      "helpers-mixin-helper-styles-1",
+      "helpers-mixin-helper-styles-2",
+      "helpers-mixin-helper-styles-3",
+      "helpers-mixin-helper-styles-4",
+      "helpers-mixin-helper-styles-5",
+      "helpers-mixin-helper-styles-6",
+      "helpers-mixin-helper-typography-styles-1",
+      "helpers-mixin-helper-typography-styles-2",
+      "helpers-mixin-helper-typography-styles-3",
+      "helpers-mixin-helper-typography-styles-4",
+      "helpers-mixin-helper-typography-styles-5",
+      "helpers-mixin-helper-typography-styles-6",
+      "helpers-mixin-helper-typography-styles-7",
+      "helpers-mixin-helper-typography-styles-8",
+      "helpers-mixin-helper-typography-styles-9",
+      "helpers-mixin-helper-typography-styles-10",
+      "helpers-mixin-helper-typography-styles-11",
+      "helpers-mixin-helper-typography-styles-12",
+      "helpers-mixin-helper-typography-styles-13",
+      "helpers-mixin-helper-typography-styles-14",
+      "helpers-mixin-helper-typography-styles-15",
+      "helpers-mixin-create-property-classes-3",
+      "helpers-mixin-create-property-classes-4",
+      "helpers-mixin-create-property-classes-5",
+      "helpers-mixin-create-property-classes-6",
+      "helpers-mixin-create-property-classes-7",
+      "layout-mixin-match-container-padding-1",
+      "layout-mixin-match-container-padding-2",
+      "selector-function-class-1",
+      "selector-function-class-2",
+      "typography-function-scale-1",
+      "typography-function-scale-2",
+      "typography-function-scale-3",
+      "typography-function-scale-line-height-1",
+      "typography-function-scale-line-height-2",
+      "typography-function-scale-line-height-3",
+      "typography-function-rem-1",
+      "typography-function-em-1",
+      "typography-function-new-size-1",
+      "typography-function-font-size-1",
+      "typography-function-get-size-converted-value-1",
+      "typography-function-get-size-converted-value-2",
+      "typography-function-get-size-converted-value-3",
+      "typography-function-get-size-value-1",
+      "typography-function-get-size-value-2",
+      "typography-mixin-font-size-responsive-1",
+      "typography-mixin-size-1",
+      "typography-mixin-size-2",
+      "typography-mixin-size-3",
+      "typography-mixin-size-4",
+      "typography-mixin-size-5",
+      "utils-function-require-map-get-1",
+      "utils-function-require-map-get-2",
+      "utils-function-included-1",
+      "utils-function-function-fallback-1"
     ],
-    "_uid": "base--function--get"
+    "_uid": "base-function-get",
+    "_hash": "function-get",
+    "_path": "/sass/base/#function-get"
   },
   {
     "description": "Prints elements base styles\n",
@@ -373,62 +381,64 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-2"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-3"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-4"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-5"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-6"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-7"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-8"
       },
       {
         "type": "function",
         "name": "get-rule-style",
         "autofill": true,
-        "item": "element--function--get-rule-style"
+        "item": "element-function-get-rule-style-1"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-9"
       }
     ],
     "file": {
       "path": "base/_elements.scss",
       "name": "_elements.scss"
     },
-    "_uid": "base--mixin--base-elements-styles"
+    "_uid": "base-mixin-base-elements-styles",
+    "_hash": "mixin-base-elements-styles",
+    "_path": "/sass/base/#mixin-base-elements-styles"
   },
   {
     "description": "Prints all Base styles\n",
@@ -467,44 +477,46 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-10"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-11"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-12"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-13"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-14"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-15"
       }
     ],
     "file": {
       "path": "base/_index.scss",
       "name": "_index.scss"
     },
-    "_uid": "base--mixin--base-styles"
+    "_uid": "base-mixin-base-styles",
+    "_hash": "mixin-base-styles",
+    "_path": "/sass/base/#mixin-base-styles"
   },
   {
     "description": "Prints CSS keyframes\n",
@@ -536,26 +548,28 @@
         "type": "function",
         "name": "scale",
         "autofill": true,
-        "item": "typography--function--scale"
+        "item": "typography-function-scale-4"
       },
       {
         "type": "function",
         "name": "scale",
         "autofill": true,
-        "item": "typography--function--scale"
+        "item": "typography-function-scale-5"
       },
       {
         "type": "function",
         "name": "scale",
         "autofill": true,
-        "item": "typography--function--scale"
+        "item": "typography-function-scale-6"
       }
     ],
     "file": {
       "path": "base/_keyframes.scss",
       "name": "_keyframes.scss"
     },
-    "_uid": "base--mixin--base-keyframes-styles"
+    "_uid": "base-mixin-base-keyframes-styles",
+    "_hash": "mixin-base-keyframes-styles",
+    "_path": "/sass/base/#mixin-base-keyframes-styles"
   },
   {
     "description": "Prints the normalize stylesheet. We are using modern-normalize 1.1.0\n",
@@ -593,7 +607,9 @@
       "path": "base/_normalize.scss",
       "name": "_normalize.scss"
     },
-    "_uid": "base--mixin--base-normalize-styles"
+    "_uid": "base-mixin-base-normalize-styles",
+    "_hash": "mixin-base-normalize-styles",
+    "_path": "/sass/base/#mixin-base-normalize-styles"
   },
   {
     "description": "Prints elements base styles\n",
@@ -630,32 +646,34 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-3"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-16"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-17"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-1"
       }
     ],
     "file": {
       "path": "base/_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "base--mixin--base-typography-styles"
+    "_uid": "base-mixin-base-typography-styles",
+    "_hash": "mixin-base-typography-styles",
+    "_path": "/sass/base/#mixin-base-typography-styles"
   },
   {
     "description": "Module Settings\n",
@@ -704,7 +722,9 @@
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--variable--config"
+    "_uid": "breakpoint-variable-config",
+    "_hash": "variable-config-1",
+    "_path": "/sass/breakpoint/#variable-config-1"
   },
   {
     "description": "Change modules $config\n",
@@ -737,20 +757,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-4"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-5"
       }
     ],
     "file": {
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--mixin--set"
+    "_uid": "breakpoint-mixin-set",
+    "_hash": "mixin-set-1",
+    "_path": "/sass/breakpoint/#mixin-set-1"
   },
   {
     "description": "Get a config option\n",
@@ -783,20 +805,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-4"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-6"
       }
     ],
     "file": {
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--function--get"
+    "_uid": "breakpoint-function-get",
+    "_hash": "function-get-1",
+    "_path": "/sass/breakpoint/#function-get-1"
   },
   {
     "description": "The default breakpoint sizes (targets are not precise, using em's)\n",
@@ -824,24 +848,26 @@
       "name": "_breakpoint.scss"
     },
     "usedBy": [
-      "base--mixin--base-typography-styles",
-      "breakpoint--mixin--set",
-      "breakpoint--mixin--set",
-      "breakpoint--mixin--min",
-      "breakpoint--mixin--max",
-      "breakpoint--mixin--min-max",
-      "breakpoint--mixin--min-max",
-      "breakpoint--mixin--embed-for-scripts",
-      "calculate--function--ratio-scale-size",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-button-styles",
-      "helpers--mixin--helper-display-styles",
-      "helpers--mixin--helper-typography-styles",
-      "typography--mixin--set-sizes",
-      "typography--mixin--set-sizes",
-      "typography--function--get-size"
+      "base-mixin-base-typography-styles-3",
+      "breakpoint-mixin-set-4",
+      "breakpoint-mixin-set-5",
+      "breakpoint-mixin-min-1",
+      "breakpoint-mixin-max-2",
+      "breakpoint-mixin-min-max-2",
+      "breakpoint-mixin-min-max-3",
+      "breakpoint-mixin-embed-for-scripts-2",
+      "calculate-function-ratio-scale-size-1",
+      "components-mixin-component-button-styles-7",
+      "components-mixin-component-button-styles-8",
+      "helpers-mixin-helper-display-styles-1",
+      "helpers-mixin-helper-typography-styles-16",
+      "typography-mixin-set-sizes-1",
+      "typography-mixin-set-sizes-2",
+      "typography-function-get-size-1"
     ],
-    "_uid": "breakpoint--variable--sizes"
+    "_uid": "breakpoint-variable-sizes",
+    "_hash": "variable-sizes",
+    "_path": "/sass/breakpoint/#variable-sizes"
   },
   {
     "description": "Update the breakpoint sizes map\n",
@@ -881,20 +907,22 @@
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-2"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-3"
       }
     ],
     "file": {
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--mixin--set"
+    "_uid": "breakpoint-mixin-set-1",
+    "_hash": "mixin-set-2",
+    "_path": "/sass/breakpoint/#mixin-set-2"
   },
   {
     "description": "Create a media query that matches the min-width for a given size\n",
@@ -934,13 +962,13 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-5"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-4"
       }
     ],
     "file": {
@@ -948,9 +976,11 @@
       "name": "_breakpoint.scss"
     },
     "usedBy": [
-      "breakpoint--mixin--embed-for-scripts"
+      "breakpoint-mixin-embed-for-scripts-3"
     ],
-    "_uid": "breakpoint--mixin--min"
+    "_uid": "breakpoint-mixin-min",
+    "_hash": "mixin-min",
+    "_path": "/sass/breakpoint/#mixin-min"
   },
   {
     "description": "Create a media query that matches the max-width for a given size\n",
@@ -990,26 +1020,28 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-6"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-18"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-5"
       }
     ],
     "file": {
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--mixin--max"
+    "_uid": "breakpoint-mixin-max",
+    "_hash": "mixin-max",
+    "_path": "/sass/breakpoint/#mixin-max"
   },
   {
     "description": "Create a media query that matches the min-width and max-width sizes\n",
@@ -1049,38 +1081,40 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-7"
       },
       {
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-8"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-19"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-6"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-7"
       }
     ],
     "file": {
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--mixin--min-max"
+    "_uid": "breakpoint-mixin-min-max",
+    "_hash": "mixin-min-max",
+    "_path": "/sass/breakpoint/#mixin-min-max"
   },
   {
     "description": "Attaches breakpoints to an element psuedo content for access via script\nUse with ulu/js/breakpoints. Breakpoints always min-width (upwards)\n",
@@ -1106,26 +1140,28 @@
         "type": "mixin",
         "name": "min",
         "autofill": true,
-        "item": "breakpoint--mixin--min"
+        "item": "breakpoint-mixin-min-2"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-20"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-8"
       }
     ],
     "file": {
       "path": "_breakpoint.scss",
       "name": "_breakpoint.scss"
     },
-    "_uid": "breakpoint--mixin--embed-for-scripts"
+    "_uid": "breakpoint-mixin-embed-for-scripts",
+    "_hash": "mixin-embed-for-scripts",
+    "_path": "/sass/breakpoint/#mixin-embed-for-scripts"
   },
   {
     "description": "Module Settings\n",
@@ -1152,7 +1188,9 @@
       "path": "_button.scss",
       "name": "_button.scss"
     },
-    "_uid": "button--variable--config"
+    "_uid": "button-variable-config",
+    "_hash": "variable-config-2",
+    "_path": "/sass/button/#variable-config-2"
   },
   {
     "description": "Button sizes\n",
@@ -1179,7 +1217,9 @@
       "path": "_button.scss",
       "name": "_button.scss"
     },
-    "_uid": "button--variable--sizes"
+    "_uid": "button-variable-sizes",
+    "_hash": "variable-sizes-1",
+    "_path": "/sass/button/#variable-sizes-1"
   },
   {
     "description": "Button styles\n",
@@ -1207,9 +1247,11 @@
       "name": "_button.scss"
     },
     "usedBy": [
-      "components--mixin--component-button-styles"
+      "components-mixin-component-button-styles-9"
     ],
-    "_uid": "button--variable--styles"
+    "_uid": "button-variable-styles",
+    "_hash": "variable-styles",
+    "_path": "/sass/button/#variable-styles"
   },
   {
     "description": "Change modules $config\n",
@@ -1249,20 +1291,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-7"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-8"
       }
     ],
     "file": {
       "path": "_button.scss",
       "name": "_button.scss"
     },
-    "_uid": "button--mixin--set"
+    "_uid": "button-mixin-set",
+    "_hash": "mixin-set-3",
+    "_path": "/sass/button/#mixin-set-3"
   },
   {
     "description": "Get a config option\n",
@@ -1302,26 +1346,28 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-9"
       },
       {
         "type": "function",
         "name": "function-fallback",
         "autofill": true,
-        "item": "utils--function--function-fallback"
+        "item": "utils-function-function-fallback-2"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-9"
       }
     ],
     "file": {
       "path": "_button.scss",
       "name": "_button.scss"
     },
-    "_uid": "button--function--get"
+    "_uid": "button-function-get",
+    "_hash": "function-get-2",
+    "_path": "/sass/button/#function-get-2"
   },
   {
     "description": "Module Settings\n",
@@ -1355,7 +1401,9 @@
       "path": "_calculate.scss",
       "name": "_calculate.scss"
     },
-    "_uid": "calculate--variable--config"
+    "_uid": "calculate-variable-config",
+    "_hash": "variable-config-3",
+    "_path": "/sass/calculate/#variable-config-3"
   },
   {
     "description": "Change modules $config\n",
@@ -1388,20 +1436,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-10"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-11"
       }
     ],
     "file": {
       "path": "_calculate.scss",
       "name": "_calculate.scss"
     },
-    "_uid": "calculate--mixin--set"
+    "_uid": "calculate-mixin-set",
+    "_hash": "mixin-set-4",
+    "_path": "/sass/calculate/#mixin-set-4"
   },
   {
     "description": "Get a config option\n",
@@ -1434,20 +1484,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-10"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-12"
       }
     ],
     "file": {
       "path": "_calculate.scss",
       "name": "_calculate.scss"
     },
-    "_uid": "calculate--function--get"
+    "_uid": "calculate-function-get",
+    "_hash": "function-get-3",
+    "_path": "/sass/calculate/#function-get-3"
   },
   {
     "description": "Calculate the size of something at a given scale (percentage/exponential)\n",
@@ -1498,7 +1550,7 @@
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-9"
       }
     ],
     "file": {
@@ -1506,10 +1558,12 @@
       "name": "_calculate.scss"
     },
     "usedBy": [
-      "typography--function--scale",
-      "typography--function--scale-line-height"
+      "typography-function-scale-7",
+      "typography-function-scale-line-height-4"
     ],
-    "_uid": "calculate--function--ratio-scale-size"
+    "_uid": "calculate-function-ratio-scale-size",
+    "_hash": "function-ratio-scale-size",
+    "_path": "/sass/calculate/#function-ratio-scale-size"
   },
   {
     "description": "Convert from pixel to em\n",
@@ -1551,7 +1605,9 @@
       "path": "_calculate.scss",
       "name": "_calculate.scss"
     },
-    "_uid": "calculate--function--pixel-to-em"
+    "_uid": "calculate-function-pixel-to-em",
+    "_hash": "function-pixel-to-em",
+    "_path": "/sass/calculate/#function-pixel-to-em"
   },
   {
     "description": "Provides user with a fallback for a calc that's just an enhancement\n",
@@ -1594,7 +1650,9 @@
       "path": "_calculate.scss",
       "name": "_calculate.scss"
     },
-    "_uid": "calculate--mixin--responsive-property"
+    "_uid": "calculate-mixin-responsive-property",
+    "_hash": "mixin-responsive-property",
+    "_path": "/sass/calculate/#mixin-responsive-property"
   },
   {
     "description": "The color palette map, can be extended or modified with set() and accessed with get()\n",
@@ -1622,11 +1680,13 @@
       "name": "_color.scss"
     },
     "usedBy": [
-      "color--mixin--set",
-      "color--mixin--set",
-      "color--function--get"
+      "color-mixin-set-1",
+      "color-mixin-set-2",
+      "color-function-get-1"
     ],
-    "_uid": "color--variable--palette"
+    "_uid": "color-variable-palette",
+    "_hash": "variable-palette",
+    "_path": "/sass/color/#variable-palette"
   },
   {
     "description": "Pairs of background-color and color definitions\n",
@@ -1671,12 +1731,14 @@
       "name": "_color.scss"
     },
     "usedBy": [
-      "color--mixin--set-contexts",
-      "color--mixin--set-contexts",
-      "color--function--get-context",
-      "color--mixin--all-context-styles"
+      "color-mixin-set-contexts-1",
+      "color-mixin-set-contexts-2",
+      "color-function-get-context-1",
+      "color-mixin-all-context-styles-2"
     ],
-    "_uid": "color--variable--contexts"
+    "_uid": "color-variable-contexts",
+    "_hash": "variable-contexts",
+    "_path": "/sass/color/#variable-contexts"
   },
   {
     "description": "Palette entries that are output as classes when using all-color-class-styles\n",
@@ -1703,11 +1765,13 @@
       "name": "_color.scss"
     },
     "usedBy": [
-      "color--mixin--set-color-classes",
-      "color--mixin--set-color-classes",
-      "color--mixin--all-color-class-styles"
+      "color-mixin-set-color-classes-1",
+      "color-mixin-set-color-classes-2",
+      "color-mixin-all-color-class-styles-2"
     ],
-    "_uid": "color--variable--color-classes"
+    "_uid": "color-variable-color-classes",
+    "_hash": "variable-color-classes",
+    "_path": "/sass/color/#variable-color-classes"
   },
   {
     "description": "Used to override or extend the color palette\n",
@@ -1747,20 +1811,22 @@
         "type": "variable",
         "name": "palette",
         "autofill": true,
-        "item": "color--variable--palette"
+        "item": "color-variable-palette-1"
       },
       {
         "type": "variable",
         "name": "palette",
         "autofill": true,
-        "item": "color--variable--palette"
+        "item": "color-variable-palette-2"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--mixin--set"
+    "_uid": "color-mixin-set",
+    "_hash": "mixin-set-5",
+    "_path": "/sass/color/#mixin-set-5"
   },
   {
     "description": "Get a color from the palette by name\n",
@@ -1796,20 +1862,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-11"
       },
       {
         "type": "variable",
         "name": "palette",
         "autofill": true,
-        "item": "color--variable--palette"
+        "item": "color-variable-palette-3"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--function--get"
+    "_uid": "color-function-get",
+    "_hash": "function-get-4",
+    "_path": "/sass/color/#function-get-4"
   },
   {
     "description": "Set ouput classes for all-color-class-styles\n",
@@ -1842,20 +1910,22 @@
         "type": "variable",
         "name": "color-classes",
         "autofill": true,
-        "item": "color--variable--color-classes"
+        "item": "color-variable-color-classes-1"
       },
       {
         "type": "variable",
         "name": "color-classes",
         "autofill": true,
-        "item": "color--variable--color-classes"
+        "item": "color-variable-color-classes-2"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--mixin--set-color-classes"
+    "_uid": "color-mixin-set-color-classes",
+    "_hash": "mixin-set-color-classes",
+    "_path": "/sass/color/#mixin-set-color-classes"
   },
   {
     "description": "Set color contexts\n",
@@ -1905,26 +1975,28 @@
         "type": "function",
         "name": "map-merge-or-overwrite",
         "autofill": true,
-        "item": "utils--function--map-merge-or-overwrite"
+        "item": "utils-function-map-merge-or-overwrite-1"
       },
       {
         "type": "variable",
         "name": "contexts",
         "autofill": true,
-        "item": "color--variable--contexts"
+        "item": "color-variable-contexts-1"
       },
       {
         "type": "variable",
         "name": "contexts",
         "autofill": true,
-        "item": "color--variable--contexts"
+        "item": "color-variable-contexts-2"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--mixin--set-contexts"
+    "_uid": "color-mixin-set-contexts",
+    "_hash": "mixin-set-contexts",
+    "_path": "/sass/color/#mixin-set-contexts"
   },
   {
     "description": "Get a context by name\n",
@@ -1960,13 +2032,13 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-12"
       },
       {
         "type": "variable",
         "name": "contexts",
         "autofill": true,
-        "item": "color--variable--contexts"
+        "item": "color-variable-contexts-3"
       }
     ],
     "file": {
@@ -1974,10 +2046,12 @@
       "name": "_color.scss"
     },
     "usedBy": [
-      "color--function--get-context-value",
-      "color--mixin--context-styles"
+      "color-function-get-context-value-3",
+      "color-mixin-context-styles-3"
     ],
-    "_uid": "color--function--get-context"
+    "_uid": "color-function-get-context",
+    "_hash": "function-get-context",
+    "_path": "/sass/color/#function-get-context"
   },
   {
     "description": "Get a context's value'\n",
@@ -2018,19 +2092,19 @@
         "type": "function",
         "name": "get-context",
         "autofill": true,
-        "item": "color--function--get-context"
+        "item": "color-function-get-context-2"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-21"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-22"
       }
     ],
     "file": {
@@ -2038,10 +2112,12 @@
       "name": "_color.scss"
     },
     "usedBy": [
-      "color--mixin--context-styles",
-      "color--mixin--context-styles"
+      "color-mixin-context-styles-4",
+      "color-mixin-context-styles-5"
     ],
-    "_uid": "color--function--get-context-value"
+    "_uid": "color-function-get-context-value",
+    "_hash": "function-get-context-value",
+    "_path": "/sass/color/#function-get-context-value"
   },
   {
     "description": "Prints contexts styles\n",
@@ -2074,31 +2150,31 @@
         "type": "function",
         "name": "get-context",
         "autofill": true,
-        "item": "color--function--get-context"
+        "item": "color-function-get-context-3"
       },
       {
         "type": "function",
         "name": "get-context-value",
         "autofill": true,
-        "item": "color--function--get-context-value"
+        "item": "color-function-get-context-value-4"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-23"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-24"
       },
       {
         "type": "function",
         "name": "get-context-value",
         "autofill": true,
-        "item": "color--function--get-context-value"
+        "item": "color-function-get-context-value-5"
       }
     ],
     "file": {
@@ -2106,9 +2182,11 @@
       "name": "_color.scss"
     },
     "usedBy": [
-      "color--mixin--all-context-styles"
+      "color-mixin-all-context-styles-3"
     ],
-    "_uid": "color--mixin--context-styles"
+    "_uid": "color-mixin-context-styles",
+    "_hash": "mixin-context-styles",
+    "_path": "/sass/color/#mixin-context-styles"
   },
   {
     "description": "Lighten a color using the default white by a percentage\n",
@@ -2158,20 +2236,22 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-25"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-26"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--function--tint"
+    "_uid": "color-function-tint",
+    "_hash": "function-tint",
+    "_path": "/sass/color/#function-tint"
   },
   {
     "description": "Darken a color with the default black by a percentage\n",
@@ -2221,20 +2301,22 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-27"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-28"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--function--shade"
+    "_uid": "color-function-shade",
+    "_hash": "function-shade",
+    "_path": "/sass/color/#function-shade"
   },
   {
     "description": "Prints all context styles \n",
@@ -2278,32 +2360,34 @@
         "type": "mixin",
         "name": "context-styles",
         "autofill": true,
-        "item": "color--mixin--context-styles"
+        "item": "color-mixin-context-styles-6"
       },
       {
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-4"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-29"
       },
       {
         "type": "variable",
         "name": "contexts",
         "autofill": true,
-        "item": "color--variable--contexts"
+        "item": "color-variable-contexts-4"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--mixin--all-context-styles"
+    "_uid": "color-mixin-all-context-styles",
+    "_hash": "mixin-all-context-styles",
+    "_path": "/sass/color/#mixin-all-context-styles"
   },
   {
     "description": "Outputs all color classes\n",
@@ -2340,26 +2424,28 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-5"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-30"
       },
       {
         "type": "variable",
         "name": "color-classes",
         "autofill": true,
-        "item": "color--variable--color-classes"
+        "item": "color-variable-color-classes-3"
       }
     ],
     "file": {
       "path": "_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "color--mixin--all-color-class-styles"
+    "_uid": "color-mixin-all-color-class-styles",
+    "_hash": "mixin-all-color-class-styles",
+    "_path": "/sass/color/#mixin-all-color-class-styles"
   },
   {
     "description": "Prints button component styles\n",
@@ -2395,68 +2481,70 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-6"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-31"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-32"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-33"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-34"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-35"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-36"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-10"
       },
       {
         "type": "variable",
         "name": "styles",
         "autofill": true,
-        "item": "button--variable--styles"
+        "item": "button-variable-styles-1"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-11"
       }
     ],
     "file": {
       "path": "components/_button.scss",
       "name": "_button.scss"
     },
-    "_uid": "components--mixin--component-button-styles"
+    "_uid": "components-mixin-component-button-styles",
+    "_hash": "mixin-component-button-styles",
+    "_path": "/sass/components/#mixin-component-button-styles"
   },
   {
     "description": "Prints all Components styles\n",
@@ -2495,38 +2583,40 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-37"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-38"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-39"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-40"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-41"
       }
     ],
     "file": {
       "path": "components/_index.scss",
       "name": "_index.scss"
     },
-    "_uid": "components--mixin--component-styles"
+    "_uid": "components-mixin-component-styles",
+    "_hash": "mixin-component-styles",
+    "_path": "/sass/components/#mixin-component-styles"
   },
   {
     "description": "Link compontent styles (.link)\n- Contextual link styling\n- Styles all links within as normal text hyperlinks (hover, visited)\n",
@@ -2558,14 +2648,16 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-7"
       }
     ],
     "file": {
       "path": "components/_links.scss",
       "name": "_links.scss"
     },
-    "_uid": "components--mixin--component-links-styles"
+    "_uid": "components-mixin-component-links-styles",
+    "_hash": "mixin-component-links-styles",
+    "_path": "/sass/components/#mixin-component-links-styles"
   },
   {
     "description": "Output styles\n",
@@ -2591,20 +2683,22 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-8"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-42"
       }
     ],
     "file": {
       "path": "components/_list-bullet.scss",
       "name": "_list-bullet.scss"
     },
-    "_uid": "components--mixin--styles"
+    "_uid": "components-mixin-styles",
+    "_hash": "mixin-styles-1",
+    "_path": "/sass/components/#mixin-styles-1"
   },
   {
     "description": "Output styles\n",
@@ -2630,20 +2724,22 @@
         "type": "function",
         "name": "get-rule-style",
         "autofill": true,
-        "item": "element--function--get-rule-style"
+        "item": "element-function-get-rule-style-2"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-43"
       }
     ],
     "file": {
       "path": "components/_list-lines.scss",
       "name": "_list-lines.scss"
     },
-    "_uid": "components--mixin--styles"
+    "_uid": "components-mixin-styles-1",
+    "_hash": "mixin-styles-2",
+    "_path": "/sass/components/#mixin-styles-2"
   },
   {
     "description": "Module Settings\n",
@@ -2682,7 +2778,9 @@
       "path": "components/_rule.scss",
       "name": "_rule.scss"
     },
-    "_uid": "components--variable--config"
+    "_uid": "components-variable-config",
+    "_hash": "variable-config-4",
+    "_path": "/sass/components/#variable-config-4"
   },
   {
     "description": "Change modules $config\n",
@@ -2722,20 +2820,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-13"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-14"
       }
     ],
     "file": {
       "path": "components/_rule.scss",
       "name": "_rule.scss"
     },
-    "_uid": "components--mixin--set"
+    "_uid": "components-mixin-set",
+    "_hash": "mixin-set-6",
+    "_path": "/sass/components/#mixin-set-6"
   },
   {
     "description": "Get a config option\n",
@@ -2775,20 +2875,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-13"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-15"
       }
     ],
     "file": {
       "path": "components/_rule.scss",
       "name": "_rule.scss"
     },
-    "_uid": "components--function--get"
+    "_uid": "components-function-get",
+    "_hash": "function-get-5",
+    "_path": "/sass/components/#function-get-5"
   },
   {
     "description": "Output styles\n",
@@ -2814,38 +2916,40 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-9"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-44"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-45"
       },
       {
         "type": "variable",
         "name": "rule-styles",
         "autofill": true,
-        "item": "element--variable--rule-styles"
+        "item": "element-variable-rule-styles-1"
       },
       {
         "type": "variable",
         "name": "rule-margins",
         "autofill": true,
-        "item": "element--variable--rule-margins"
+        "item": "element-variable-rule-margins-1"
       }
     ],
     "file": {
       "path": "components/_rule.scss",
       "name": "_rule.scss"
     },
-    "_uid": "components--mixin--styles"
+    "_uid": "components-mixin-styles-2",
+    "_hash": "mixin-styles-3",
+    "_path": "/sass/components/#mixin-styles-3"
   },
   {
     "description": "",
@@ -2870,7 +2974,9 @@
       "path": "_test-sassdocs.scss",
       "name": "_test-sassdocs.scss"
     },
-    "_uid": "demo_test-sassdoc--css--/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see"
+    "_uid": "demo_test-sassdoc-css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see",
+    "_hash": "css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see",
+    "_path": "/sass/demo_test-sassdoc/#css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see"
   },
   {
     "description": "This is a sample function.\nYou can actually put much more text in here,\nand include markdown.\nLorem markdownum rapite neque loquentis pro inque; nullaque [triones\npromisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\nmixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\ncornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\nrecalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\nferrove finis longave, pignus duros nubifer!\n\n- Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n- Ture Iovis holus est et vere\n- Domus cum quid meae erras\n- Quam apta fata puppis ergo solis praeteriti\n\n",
@@ -2967,10 +3073,12 @@
       "sample-alias-two"
     ],
     "usedBy": [
-      "demo_test-sassdoc--function--sample-alias",
-      "demo_test-sassdoc--function--sample-alias-two"
+      "demo_test-sassdoc-function-sample-alias-1",
+      "demo_test-sassdoc-function-sample-alias-two-1"
     ],
-    "_uid": "demo_test-sassdoc--function--herman-sample"
+    "_uid": "demo_test-sassdoc-function-herman-sample",
+    "_hash": "function-herman-sample",
+    "_path": "/sass/demo_test-sassdoc/#function-herman-sample"
   },
   {
     "description": "This is a sample function alias.\n",
@@ -2998,14 +3106,16 @@
         "type": "function",
         "name": "herman-sample",
         "autofill": true,
-        "item": "demo_test-sassdoc--function--herman-sample"
+        "item": "demo_test-sassdoc-function-herman-sample-1"
       }
     ],
     "file": {
       "path": "_test-sassdocs.scss",
       "name": "_test-sassdocs.scss"
     },
-    "_uid": "demo_test-sassdoc--function--sample-alias"
+    "_uid": "demo_test-sassdoc-function-sample-alias",
+    "_hash": "function-sample-alias",
+    "_path": "/sass/demo_test-sassdoc/#function-sample-alias"
   },
   {
     "description": "This is a sample function alias.\n",
@@ -3033,14 +3143,16 @@
         "type": "function",
         "name": "herman-sample",
         "autofill": true,
-        "item": "demo_test-sassdoc--function--herman-sample"
+        "item": "demo_test-sassdoc-function-herman-sample-2"
       }
     ],
     "file": {
       "path": "_test-sassdocs.scss",
       "name": "_test-sassdocs.scss"
     },
-    "_uid": "demo_test-sassdoc--function--sample-alias-two"
+    "_uid": "demo_test-sassdoc-function-sample-alias-two",
+    "_hash": "function-sample-alias-two",
+    "_path": "/sass/demo_test-sassdoc/#function-sample-alias-two"
   },
   {
     "description": "Extra Commentary\n================\nHerman allows you to write \"prose\" markdown blocks,\nto help introduce groups,\nor add narrative flow between documented items.\n\nNote that while SassDoc allows annotation comments\nto be separated from the documented code by newlines,\nHerman considers documentation to be free-floating \"prose\" if\nit is separated from documented code by one or more newlines.\n\nProse blocks can also include examples, and other annotations.\n",
@@ -3077,7 +3189,9 @@
       "path": "_test-sassdocs.scss",
       "name": "_test-sassdocs.scss"
     },
-    "_uid": "demo_test-sassdoc--css--// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param"
+    "_uid": "demo_test-sassdoc-css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param",
+    "_hash": "css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param",
+    "_path": "/sass/demo_test-sassdoc/#css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param"
   },
   {
     "description": "Mixins can optionally accept a @content block,\npassed in brackets. This example creates\na generated element `:before` the element it is used on.\n",
@@ -3123,7 +3237,9 @@
       "path": "_test-sassdocs.scss",
       "name": "_test-sassdocs.scss"
     },
-    "_uid": "demo_test-sassdoc--mixin--before-sample"
+    "_uid": "demo_test-sassdoc-mixin-before-sample",
+    "_hash": "mixin-before-sample",
+    "_path": "/sass/demo_test-sassdoc/#mixin-before-sample"
   },
   {
     "description": "Module Settings\n",
@@ -3268,7 +3384,9 @@
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--variable--config"
+    "_uid": "element-variable-config",
+    "_hash": "variable-config-5",
+    "_path": "/sass/element/#variable-config-5"
   },
   {
     "description": "Rule style map, redifine defaults or add to\n",
@@ -3296,12 +3414,14 @@
       "name": "_element.scss"
     },
     "usedBy": [
-      "components--mixin--styles",
-      "element--mixin--set-rule-styles",
-      "element--mixin--set-rule-styles",
-      "element--function--get-rule-style"
+      "components-mixin-styles-7",
+      "element-mixin-set-rule-styles-1",
+      "element-mixin-set-rule-styles-2",
+      "element-function-get-rule-style-3"
     ],
-    "_uid": "element--variable--rule-styles"
+    "_uid": "element-variable-rule-styles",
+    "_hash": "variable-rule-styles",
+    "_path": "/sass/element/#variable-rule-styles"
   },
   {
     "description": "Common rule margins (space between rule and type)\n",
@@ -3329,12 +3449,14 @@
       "name": "_element.scss"
     },
     "usedBy": [
-      "components--mixin--styles",
-      "element--mixin--set-rule-margins",
-      "element--mixin--set-rule-margins",
-      "element--function--get-rule-margin"
+      "components-mixin-styles-8",
+      "element-mixin-set-rule-margins-1",
+      "element-mixin-set-rule-margins-2",
+      "element-function-get-rule-margin-1"
     ],
-    "_uid": "element--variable--rule-margins"
+    "_uid": "element-variable-rule-margins",
+    "_hash": "variable-rule-margins",
+    "_path": "/sass/element/#variable-rule-margins"
   },
   {
     "description": "Change modules $config\n",
@@ -3367,20 +3489,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-16"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-17"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--set"
+    "_uid": "element-mixin-set",
+    "_hash": "mixin-set-7",
+    "_path": "/sass/element/#mixin-set-7"
   },
   {
     "description": "Get a config option\n",
@@ -3413,20 +3537,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-14"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-18"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--function--get"
+    "_uid": "element-function-get",
+    "_hash": "function-get-6",
+    "_path": "/sass/element/#function-get-6"
   },
   {
     "description": "Sets rule styles\n",
@@ -3459,20 +3585,22 @@
         "type": "variable",
         "name": "rule-styles",
         "autofill": true,
-        "item": "element--variable--rule-styles"
+        "item": "element-variable-rule-styles-2"
       },
       {
         "type": "variable",
         "name": "rule-styles",
         "autofill": true,
-        "item": "element--variable--rule-styles"
+        "item": "element-variable-rule-styles-3"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--set-rule-styles"
+    "_uid": "element-mixin-set-rule-styles",
+    "_hash": "mixin-set-rule-styles",
+    "_path": "/sass/element/#mixin-set-rule-styles"
   },
   {
     "description": "Sets rule margins\n",
@@ -3505,20 +3633,22 @@
         "type": "variable",
         "name": "rule-margins",
         "autofill": true,
-        "item": "element--variable--rule-margins"
+        "item": "element-variable-rule-margins-2"
       },
       {
         "type": "variable",
         "name": "rule-margins",
         "autofill": true,
-        "item": "element--variable--rule-margins"
+        "item": "element-variable-rule-margins-3"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--set-rule-margins"
+    "_uid": "element-mixin-set-rule-margins",
+    "_hash": "mixin-set-rule-margins",
+    "_path": "/sass/element/#mixin-set-rule-margins"
   },
   {
     "description": "Get a rule style\n",
@@ -3551,13 +3681,13 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-15"
       },
       {
         "type": "variable",
         "name": "rule-styles",
         "autofill": true,
-        "item": "element--variable--rule-styles"
+        "item": "element-variable-rule-styles-4"
       }
     ],
     "file": {
@@ -3565,10 +3695,12 @@
       "name": "_element.scss"
     },
     "usedBy": [
-      "base--mixin--base-elements-styles",
-      "components--mixin--styles"
+      "base-mixin-base-elements-styles-9",
+      "components-mixin-styles-9"
     ],
-    "_uid": "element--function--get-rule-style"
+    "_uid": "element-function-get-rule-style",
+    "_hash": "function-get-rule-style",
+    "_path": "/sass/element/#function-get-rule-style"
   },
   {
     "description": "Sets rule margin\n",
@@ -3601,20 +3733,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-16"
       },
       {
         "type": "variable",
         "name": "rule-margins",
         "autofill": true,
-        "item": "element--variable--rule-margins"
+        "item": "element-variable-rule-margins-4"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--function--get-rule-margin"
+    "_uid": "element-function-get-rule-margin",
+    "_hash": "function-get-rule-margin",
+    "_path": "/sass/element/#function-get-rule-margin"
   },
   {
     "description": "Get full rule CSS (style and margin)\n",
@@ -3647,7 +3781,9 @@
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--rule"
+    "_uid": "element-mixin-rule",
+    "_hash": "mixin-rule",
+    "_path": "/sass/element/#mixin-rule"
   },
   {
     "description": "Print link styles\n",
@@ -3685,68 +3821,70 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-46"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-47"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-48"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-49"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-50"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-51"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-52"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-53"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-54"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-55"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--link"
+    "_uid": "element-mixin-link",
+    "_hash": "mixin-link",
+    "_path": "/sass/element/#mixin-link"
   },
   {
     "description": "Print the defautl link styling (no hover and focus styles)\n",
@@ -3772,20 +3910,22 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-56"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-57"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--link-defaults"
+    "_uid": "element-mixin-link-defaults",
+    "_hash": "mixin-link-defaults",
+    "_path": "/sass/element/#mixin-link-defaults"
   },
   {
     "description": "Print the ordered list items styling\n",
@@ -3818,56 +3958,58 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-58"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-59"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-60"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-61"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-62"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-63"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-64"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-65"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--styles-ordered-list"
+    "_uid": "element-mixin-styles-ordered-list",
+    "_hash": "mixin-styles-ordered-list",
+    "_path": "/sass/element/#mixin-styles-ordered-list"
   },
   {
     "description": "Print the unordered list items styling\n",
@@ -3900,38 +4042,40 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-66"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-67"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-68"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-69"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-70"
       }
     ],
     "file": {
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--styles-unordered-list"
+    "_uid": "element-mixin-styles-unordered-list",
+    "_hash": "mixin-styles-unordered-list",
+    "_path": "/sass/element/#mixin-styles-unordered-list"
   },
   {
     "description": "Hide text for assistive devices\n",
@@ -3970,7 +4114,9 @@
       "path": "_element.scss",
       "name": "_element.scss"
     },
-    "_uid": "element--mixin--hidden-visually"
+    "_uid": "element-mixin-hidden-visually",
+    "_hash": "mixin-hidden-visually",
+    "_path": "/sass/element/#mixin-hidden-visually"
   },
   {
     "description": "Module Settings\n",
@@ -4039,7 +4185,9 @@
       "path": "_grid.scss",
       "name": "_grid.scss"
     },
-    "_uid": "grid--variable--config"
+    "_uid": "grid-variable-config",
+    "_hash": "variable-config-6",
+    "_path": "/sass/grid/#variable-config-6"
   },
   {
     "description": "Change modules $config\n",
@@ -4072,20 +4220,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-19"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-20"
       }
     ],
     "file": {
       "path": "_grid.scss",
       "name": "_grid.scss"
     },
-    "_uid": "grid--mixin--set"
+    "_uid": "grid-mixin-set",
+    "_hash": "mixin-set-8",
+    "_path": "/sass/grid/#mixin-set-8"
   },
   {
     "description": "Get a config option\n",
@@ -4118,20 +4268,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-17"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-21"
       }
     ],
     "file": {
       "path": "_grid.scss",
       "name": "_grid.scss"
     },
-    "_uid": "grid--function--get"
+    "_uid": "grid-function-get",
+    "_hash": "function-get-7",
+    "_path": "/sass/grid/#function-get-7"
   },
   {
     "description": "Creates grid css (variation of original data-grid)\n",
@@ -4199,74 +4351,76 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-71"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-72"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-73"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-74"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-75"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-76"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-77"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-78"
       },
       {
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-18"
       },
       {
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-19"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-79"
       }
     ],
     "file": {
       "path": "_grid.scss",
       "name": "_grid.scss"
     },
-    "_uid": "grid--mixin--create"
+    "_uid": "grid-mixin-create",
+    "_hash": "mixin-create",
+    "_path": "/sass/grid/#mixin-create"
   },
   {
     "description": "Prints color-context and color-[name] styles as helper classes (bottom of stylesheet)\n",
@@ -4292,7 +4446,9 @@
       "path": "helpers/_color.scss",
       "name": "_color.scss"
     },
-    "_uid": "helpers--mixin--styles"
+    "_uid": "helpers-mixin-styles",
+    "_hash": "mixin-styles-4",
+    "_path": "/sass/helpers/#mixin-styles-4"
   },
   {
     "description": "Print utilities helper styles\n",
@@ -4324,20 +4480,22 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-10"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-12"
       }
     ],
     "file": {
       "path": "helpers/_display.scss",
       "name": "_display.scss"
     },
-    "_uid": "helpers--mixin--helper-display-styles"
+    "_uid": "helpers-mixin-helper-display-styles",
+    "_hash": "mixin-helper-display-styles",
+    "_path": "/sass/helpers/#mixin-helper-display-styles"
   },
   {
     "description": "Prints all Helper styles\n",
@@ -4376,44 +4534,46 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-80"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-81"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-82"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-83"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-84"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-85"
       }
     ],
     "file": {
       "path": "helpers/_index.scss",
       "name": "_index.scss"
     },
-    "_uid": "helpers--mixin--helper-styles"
+    "_uid": "helpers-mixin-helper-styles",
+    "_hash": "mixin-helper-styles",
+    "_path": "/sass/helpers/#mixin-helper-styles"
   },
   {
     "description": "Printed Media Styles \n",
@@ -4445,7 +4605,9 @@
       "path": "helpers/_print.scss",
       "name": "_print.scss"
     },
-    "_uid": "helpers--mixin--helper-print-styles"
+    "_uid": "helpers-mixin-helper-print-styles",
+    "_hash": "mixin-helper-print-styles",
+    "_path": "/sass/helpers/#mixin-helper-print-styles"
   },
   {
     "description": "Prints Typography Helper styles\n",
@@ -4482,122 +4644,124 @@
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-11"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-86"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-87"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-88"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-89"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-90"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-91"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-92"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-93"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-94"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-95"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-96"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-97"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-98"
       },
       {
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-12"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-99"
       },
       {
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-13"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-100"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-13"
       }
     ],
     "file": {
       "path": "helpers/_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "helpers--mixin--helper-typography-styles"
+    "_uid": "helpers-mixin-helper-typography-styles",
+    "_hash": "mixin-helper-typography-styles",
+    "_path": "/sass/helpers/#mixin-helper-typography-styles"
   },
   {
     "description": "Module Settings\n",
@@ -4631,7 +4795,9 @@
       "path": "helpers/_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "helpers--variable--config"
+    "_uid": "helpers-variable-config",
+    "_hash": "variable-config-7",
+    "_path": "/sass/helpers/#variable-config-7"
   },
   {
     "description": "Change modules $config\n",
@@ -4671,20 +4837,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-22"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-23"
       }
     ],
     "file": {
       "path": "helpers/_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "helpers--mixin--set"
+    "_uid": "helpers-mixin-set",
+    "_hash": "mixin-set-9",
+    "_path": "/sass/helpers/#mixin-set-9"
   },
   {
     "description": "Get a config option\n",
@@ -4724,20 +4892,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-20"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-24"
       }
     ],
     "file": {
       "path": "helpers/_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "helpers--function--get"
+    "_uid": "helpers-function-get",
+    "_hash": "function-get-8",
+    "_path": "/sass/helpers/#function-get-8"
   },
   {
     "description": "Prints all unit helper classes\n",
@@ -4763,32 +4933,34 @@
         "type": "mixin",
         "name": "create-property-classes",
         "autofill": true,
-        "item": "helpers--mixin--create-property-classes"
+        "item": "helpers-mixin-create-property-classes-8"
       },
       {
         "type": "mixin",
         "name": "create-property-classes",
         "autofill": true,
-        "item": "helpers--mixin--create-property-classes"
+        "item": "helpers-mixin-create-property-classes-9"
       },
       {
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-14"
       },
       {
         "type": "function",
         "name": "class",
         "autofill": true,
-        "item": "selector--function--class"
+        "item": "selector-function-class-15"
       }
     ],
     "file": {
       "path": "helpers/_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "helpers--mixin--styles"
+    "_uid": "helpers-mixin-styles-1",
+    "_hash": "mixin-styles-5",
+    "_path": "/sass/helpers/#mixin-styles-5"
   },
   {
     "description": "Creates the unit classes with all variations (from unit presets)\n- This can be used by itself if not outputing .styles() or if you wanted to change the default prefixes\n",
@@ -4814,43 +4986,43 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-101"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-102"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-103"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-104"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-105"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-25"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-26"
       }
     ],
     "file": {
@@ -4858,10 +5030,12 @@
       "name": "_units.scss"
     },
     "usedBy": [
-      "helpers--mixin--styles",
-      "helpers--mixin--styles"
+      "helpers-mixin-styles-2",
+      "helpers-mixin-styles-3"
     ],
-    "_uid": "helpers--mixin--create-property-classes"
+    "_uid": "helpers-mixin-create-property-classes",
+    "_hash": "mixin-create-property-classes",
+    "_path": "/sass/helpers/#mixin-create-property-classes"
   },
   {
     "description": "Print utilities helper styles\n",
@@ -4893,7 +5067,9 @@
       "path": "helpers/_utilities.scss",
       "name": "_utilities.scss"
     },
-    "_uid": "helpers--mixin--helper-utilities-styles"
+    "_uid": "helpers-mixin-helper-utilities-styles",
+    "_hash": "mixin-helper-utilities-styles",
+    "_path": "/sass/helpers/#mixin-helper-utilities-styles"
   },
   {
     "description": "Module Settings\n",
@@ -4947,7 +5123,9 @@
       "path": "_layout.scss",
       "name": "_layout.scss"
     },
-    "_uid": "layout--variable--config"
+    "_uid": "layout-variable-config",
+    "_hash": "variable-config-8",
+    "_path": "/sass/layout/#variable-config-8"
   },
   {
     "description": "Change modules $config\n",
@@ -4980,20 +5158,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-27"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-28"
       }
     ],
     "file": {
       "path": "_layout.scss",
       "name": "_layout.scss"
     },
-    "_uid": "layout--mixin--set"
+    "_uid": "layout-mixin-set",
+    "_hash": "mixin-set-10",
+    "_path": "/sass/layout/#mixin-set-10"
   },
   {
     "description": "Get a config option\n",
@@ -5026,20 +5206,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-21"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-29"
       }
     ],
     "file": {
       "path": "_layout.scss",
       "name": "_layout.scss"
     },
-    "_uid": "layout--function--get"
+    "_uid": "layout-function-get",
+    "_hash": "function-get-9",
+    "_path": "/sass/layout/#function-get-9"
   },
   {
     "description": "Returns padding to another property including breakpoints\nie. { top: $containers-padding; }\n",
@@ -5065,20 +5247,22 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-106"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-107"
       }
     ],
     "file": {
       "path": "_layout.scss",
       "name": "_layout.scss"
     },
-    "_uid": "layout--mixin--match-container-padding"
+    "_uid": "layout-mixin-match-container-padding",
+    "_hash": "mixin-match-container-padding",
+    "_path": "/sass/layout/#mixin-match-container-padding"
   },
   {
     "description": "Prints clearfix styles\n",
@@ -5103,7 +5287,9 @@
       "path": "_layout.scss",
       "name": "_layout.scss"
     },
-    "_uid": "layout--mixin--clearfix"
+    "_uid": "layout-mixin-clearfix",
+    "_hash": "mixin-clearfix",
+    "_path": "/sass/layout/#mixin-clearfix"
   },
   {
     "description": "Aliases \n",
@@ -5131,11 +5317,13 @@
       "name": "_path.scss"
     },
     "usedBy": [
-      "path--mixin--set-aliases",
-      "path--mixin--set-aliases",
-      "path--function--get-alias"
+      "path-mixin-set-aliases-1",
+      "path-mixin-set-aliases-2",
+      "path-function-get-alias-1"
     ],
-    "_uid": "path--variable--aliases"
+    "_uid": "path-variable-aliases",
+    "_hash": "variable-aliases",
+    "_path": "/sass/path/#variable-aliases"
   },
   {
     "description": "Set aliases or change defaults\n",
@@ -5168,20 +5356,22 @@
         "type": "variable",
         "name": "aliases",
         "autofill": true,
-        "item": "path--variable--aliases"
+        "item": "path-variable-aliases-1"
       },
       {
         "type": "variable",
         "name": "aliases",
         "autofill": true,
-        "item": "path--variable--aliases"
+        "item": "path-variable-aliases-2"
       }
     ],
     "file": {
       "path": "_path.scss",
       "name": "_path.scss"
     },
-    "_uid": "path--mixin--set-aliases"
+    "_uid": "path-mixin-set-aliases",
+    "_hash": "mixin-set-aliases",
+    "_path": "/sass/path/#mixin-set-aliases"
   },
   {
     "description": "Get an aliase's path\n",
@@ -5214,13 +5404,13 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-22"
       },
       {
         "type": "variable",
         "name": "aliases",
         "autofill": true,
-        "item": "path--variable--aliases"
+        "item": "path-variable-aliases-3"
       }
     ],
     "file": {
@@ -5228,10 +5418,12 @@
       "name": "_path.scss"
     },
     "usedBy": [
-      "path--function--resolve",
-      "path--function--resolve"
+      "path-function-resolve-1",
+      "path-function-resolve-2"
     ],
-    "_uid": "path--function--get-alias"
+    "_uid": "path-function-get-alias",
+    "_hash": "function-get-alias",
+    "_path": "/sass/path/#function-get-alias"
   },
   {
     "description": "Resolves a Path \n- Checks if path is an alias if so rewrite's it\n- Future could include rewrites for easier updating or rearranging of legacy things\n- Aliases work by starting with \"#\", Since it's an illegal uri character, needs to be escaped if used as literal, we felt that it was the safest way to mix aliases in with real URLs (so that a dev of a module using path.resolve can always pass paths through (user input unknown if alias)\n",
@@ -5263,20 +5455,22 @@
         "type": "function",
         "name": "get-alias",
         "autofill": true,
-        "item": "path--function--get-alias"
+        "item": "path-function-get-alias-2"
       },
       {
         "type": "function",
         "name": "get-alias",
         "autofill": true,
-        "item": "path--function--get-alias"
+        "item": "path-function-get-alias-3"
       }
     ],
     "file": {
       "path": "_path.scss",
       "name": "_path.scss"
     },
-    "_uid": "path--function--resolve"
+    "_uid": "path-function-resolve",
+    "_hash": "function-resolve",
+    "_path": "/sass/path/#function-resolve"
   },
   {
     "description": "Module Settings\n- This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. \n",
@@ -5313,7 +5507,9 @@
       "path": "_selector.scss",
       "name": "_selector.scss"
     },
-    "_uid": "selector--variable--config"
+    "_uid": "selector-variable-config",
+    "_hash": "variable-config-9",
+    "_path": "/sass/selector/#variable-config-9"
   },
   {
     "description": "Change modules $config\n",
@@ -5353,20 +5549,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-30"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-31"
       }
     ],
     "file": {
       "path": "_selector.scss",
       "name": "_selector.scss"
     },
-    "_uid": "selector--mixin--set"
+    "_uid": "selector-mixin-set",
+    "_hash": "mixin-set-11",
+    "_path": "/sass/selector/#mixin-set-11"
   },
   {
     "description": "Get a config option\n",
@@ -5406,20 +5604,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-23"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-32"
       }
     ],
     "file": {
       "path": "_selector.scss",
       "name": "_selector.scss"
     },
-    "_uid": "selector--function--get"
+    "_uid": "selector-function-get",
+    "_hash": "function-get-10",
+    "_path": "/sass/selector/#function-get-10"
   },
   {
     "description": "Set the class selector overrides\n",
@@ -5452,7 +5652,9 @@
       "path": "_selector.scss",
       "name": "_selector.scss"
     },
-    "_uid": "selector--mixin--set-class-overrides"
+    "_uid": "selector-mixin-set-class-overrides",
+    "_hash": "mixin-set-class-overrides",
+    "_path": "/sass/selector/#mixin-set-class-overrides"
   },
   {
     "description": "Used to allow global prefixing of classes, and also the ability to \nChange a class used in the system (ie. like a component for example)\n",
@@ -5485,13 +5687,13 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-108"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-109"
       }
     ],
     "file": {
@@ -5499,21 +5701,23 @@
       "name": "_selector.scss"
     },
     "usedBy": [
-      "base--mixin--base-typography-styles",
-      "color--mixin--all-context-styles",
-      "color--mixin--all-color-class-styles",
-      "components--mixin--component-button-styles",
-      "components--mixin--component-links-styles",
-      "components--mixin--styles",
-      "components--mixin--styles",
-      "helpers--mixin--helper-display-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--helper-typography-styles",
-      "helpers--mixin--styles",
-      "helpers--mixin--styles"
+      "base-mixin-base-typography-styles-4",
+      "color-mixin-all-context-styles-4",
+      "color-mixin-all-color-class-styles-3",
+      "components-mixin-component-button-styles-10",
+      "components-mixin-component-links-styles-1",
+      "components-mixin-styles-10",
+      "components-mixin-styles-11",
+      "helpers-mixin-helper-display-styles-2",
+      "helpers-mixin-helper-typography-styles-17",
+      "helpers-mixin-helper-typography-styles-18",
+      "helpers-mixin-helper-typography-styles-19",
+      "helpers-mixin-styles-4",
+      "helpers-mixin-styles-5"
     ],
-    "_uid": "selector--function--class"
+    "_uid": "selector-function-class",
+    "_hash": "function-class",
+    "_path": "/sass/selector/#function-class"
   },
   {
     "description": "Module Settings\n",
@@ -5590,7 +5794,9 @@
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--variable--config"
+    "_uid": "typography-variable-config",
+    "_hash": "variable-config-10",
+    "_path": "/sass/typography/#variable-config-10"
   },
   {
     "description": "Change modules $config\n",
@@ -5626,20 +5832,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-33"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-34"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--mixin--set"
+    "_uid": "typography-mixin-set",
+    "_hash": "mixin-set-12",
+    "_path": "/sass/typography/#mixin-set-12"
   },
   {
     "description": "Get a config option\n",
@@ -5675,20 +5883,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-24"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-35"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--function--get"
+    "_uid": "typography-function-get",
+    "_hash": "function-get-11",
+    "_path": "/sass/typography/#function-get-11"
   },
   {
     "description": "Get scale of the base font-size\n",
@@ -5728,25 +5938,25 @@
         "type": "function",
         "name": "ratio-scale-size",
         "autofill": true,
-        "item": "calculate--function--ratio-scale-size"
+        "item": "calculate-function-ratio-scale-size-2"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-110"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-111"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-112"
       }
     ],
     "file": {
@@ -5754,11 +5964,13 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "base--mixin--base-keyframes-styles",
-      "base--mixin--base-keyframes-styles",
-      "base--mixin--base-keyframes-styles"
+      "base-mixin-base-keyframes-styles-1",
+      "base-mixin-base-keyframes-styles-2",
+      "base-mixin-base-keyframes-styles-3"
     ],
-    "_uid": "typography--function--scale"
+    "_uid": "typography-function-scale",
+    "_hash": "function-scale",
+    "_path": "/sass/typography/#function-scale"
   },
   {
     "description": "Get scale of the line-height\n",
@@ -5798,32 +6010,34 @@
         "type": "function",
         "name": "ratio-scale-size",
         "autofill": true,
-        "item": "calculate--function--ratio-scale-size"
+        "item": "calculate-function-ratio-scale-size-3"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-113"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-114"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-115"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--function--scale-line-height"
+    "_uid": "typography-function-scale-line-height",
+    "_hash": "function-scale-line-height",
+    "_path": "/sass/typography/#function-scale-line-height"
   },
   {
     "description": "Convert pixel value to rem value based on typography $font-size\n",
@@ -5863,7 +6077,7 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-116"
       }
     ],
     "file": {
@@ -5871,12 +6085,14 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "typography--function--font-size",
-      "typography--function--unitless-line-height",
-      "typography--function--unitless-line-height",
-      "typography--function--get-size-converted-value"
+      "typography-function-font-size-2",
+      "typography-function-unitless-line-height-1",
+      "typography-function-unitless-line-height-2",
+      "typography-function-get-size-converted-value-4"
     ],
-    "_uid": "typography--function--rem"
+    "_uid": "typography-function-rem",
+    "_hash": "function-rem",
+    "_path": "/sass/typography/#function-rem"
   },
   {
     "description": "Changes pixels to em\n",
@@ -5921,14 +6137,16 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-117"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--function--em"
+    "_uid": "typography-function-em",
+    "_hash": "function-em",
+    "_path": "/sass/typography/#function-em"
   },
   {
     "description": "Break word stradegy\n",
@@ -5964,7 +6182,9 @@
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--mixin--word-break"
+    "_uid": "typography-mixin-word-break",
+    "_hash": "mixin-word-break",
+    "_path": "/sass/typography/#mixin-word-break"
   },
   {
     "description": "Creates a size map \n- This is just an accelerator for creating a size map\n- You can pass your own size maps using set-sizes()\n",
@@ -6010,14 +6230,16 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-118"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--function--new-size"
+    "_uid": "typography-function-new-size",
+    "_hash": "function-new-size",
+    "_path": "/sass/typography/#function-new-size"
   },
   {
     "description": "Default size presets\n",
@@ -6080,7 +6302,9 @@
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--variable--sizes"
+    "_uid": "typography-variable-sizes",
+    "_hash": "variable-sizes-2",
+    "_path": "/sass/typography/#variable-sizes-2"
   },
   {
     "description": "Update the typography presets map\n",
@@ -6133,26 +6357,28 @@
         "type": "function",
         "name": "map-merge-or-overwrite",
         "autofill": true,
-        "item": "utils--function--map-merge-or-overwrite"
+        "item": "utils-function-map-merge-or-overwrite-2"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-14"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-15"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--mixin--set-sizes"
+    "_uid": "typography-mixin-set-sizes",
+    "_hash": "mixin-set-sizes",
+    "_path": "/sass/typography/#mixin-set-sizes"
   },
   {
     "description": "Get a size's map\n",
@@ -6191,13 +6417,13 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-25"
       },
       {
         "type": "variable",
         "name": "sizes",
         "autofill": true,
-        "item": "breakpoint--variable--sizes"
+        "item": "breakpoint-variable-sizes-16"
       }
     ],
     "file": {
@@ -6205,10 +6431,12 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "typography--function--font-size",
-      "typography--mixin--size"
+      "typography-function-font-size-3",
+      "typography-mixin-size-6"
     ],
-    "_uid": "typography--function--get-size"
+    "_uid": "typography-function-get-size",
+    "_hash": "function-get-size",
+    "_path": "/sass/typography/#function-get-size"
   },
   {
     "description": "Print a font-size for a given size\n",
@@ -6244,26 +6472,28 @@
         "type": "function",
         "name": "get-size",
         "autofill": true,
-        "item": "typography--function--get-size"
+        "item": "typography-function-get-size-2"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-119"
       },
       {
         "type": "function",
         "name": "rem",
         "autofill": true,
-        "item": "typography--function--rem"
+        "item": "typography-function-rem-2"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--function--font-size"
+    "_uid": "typography-function-font-size",
+    "_hash": "function-font-size",
+    "_path": "/sass/typography/#function-font-size"
   },
   {
     "description": "Forces conversion to unitless line-height\n",
@@ -6304,25 +6534,25 @@
         "type": "function",
         "name": "strip-unit",
         "autofill": true,
-        "item": "utility--function--strip-unit"
+        "item": "utility-function-strip-unit-1"
       },
       {
         "type": "function",
         "name": "rem",
         "autofill": true,
-        "item": "typography--function--rem"
+        "item": "typography-function-rem-3"
       },
       {
         "type": "function",
         "name": "rem",
         "autofill": true,
-        "item": "typography--function--rem"
+        "item": "typography-function-rem-4"
       },
       {
         "type": "function",
         "name": "strip-unit",
         "autofill": true,
-        "item": "utility--function--strip-unit"
+        "item": "utility-function-strip-unit-2"
       }
     ],
     "throw": [
@@ -6333,9 +6563,11 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "typography--function--get-size-converted-value"
+      "typography-function-get-size-converted-value-5"
     ],
-    "_uid": "typography--function--unitless-line-height"
+    "_uid": "typography-function-unitless-line-height",
+    "_hash": "function-unitless-line-height",
+    "_path": "/sass/typography/#function-unitless-line-height"
   },
   {
     "description": "Print a value from the size and convert it (to appropriate unit for framework)\n",
@@ -6376,31 +6608,31 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-120"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-121"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-122"
       },
       {
         "type": "function",
         "name": "unitless-line-height",
         "autofill": true,
-        "item": "typography--function--unitless-line-height"
+        "item": "typography-function-unitless-line-height-3"
       },
       {
         "type": "function",
         "name": "rem",
         "autofill": true,
-        "item": "typography--function--rem"
+        "item": "typography-function-rem-5"
       }
     ],
     "file": {
@@ -6408,12 +6640,14 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "typography--mixin--size",
-      "typography--mixin--size",
-      "typography--mixin--size",
-      "typography--mixin--size"
+      "typography-mixin-size-7",
+      "typography-mixin-size-8",
+      "typography-mixin-size-9",
+      "typography-mixin-size-10"
     ],
-    "_uid": "typography--function--get-size-converted-value"
+    "_uid": "typography-function-get-size-converted-value",
+    "_hash": "function-get-size-converted-value",
+    "_path": "/sass/typography/#function-get-size-converted-value"
   },
   {
     "description": "Get a sizes property value that doesn't need conversion \n- Reason: Will map to default if user set's size prop to true\n",
@@ -6454,13 +6688,13 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-123"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-124"
       }
     ],
     "file": {
@@ -6468,10 +6702,12 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "typography--mixin--size",
-      "typography--mixin--size"
+      "typography-mixin-size-11",
+      "typography-mixin-size-12"
     ],
-    "_uid": "typography--function--get-size-value"
+    "_uid": "typography-function-get-size-value",
+    "_hash": "function-get-size-value",
+    "_path": "/sass/typography/#function-get-size-value"
   },
   {
     "description": "Print's the responsive type formula\n",
@@ -6512,7 +6748,7 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-125"
       }
     ],
     "file": {
@@ -6520,9 +6756,11 @@
       "name": "_typography.scss"
     },
     "usedBy": [
-      "typography--mixin--size"
+      "typography-mixin-size-13"
     ],
-    "_uid": "typography--mixin--font-size-responsive"
+    "_uid": "typography-mixin-font-size-responsive",
+    "_hash": "mixin-font-size-responsive",
+    "_path": "/sass/typography/#mixin-font-size-responsive"
   },
   {
     "description": "Print a typography size (font-size, line-height)\n",
@@ -6563,86 +6801,88 @@
         "type": "mixin",
         "name": "font-size-responsive",
         "autofill": true,
-        "item": "typography--mixin--font-size-responsive"
+        "item": "typography-mixin-font-size-responsive-2"
       },
       {
         "type": "function",
         "name": "get-size",
         "autofill": true,
-        "item": "typography--function--get-size"
+        "item": "typography-function-get-size-3"
       },
       {
         "type": "function",
         "name": "get-size-converted-value",
         "autofill": true,
-        "item": "typography--function--get-size-converted-value"
+        "item": "typography-function-get-size-converted-value-6"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-126"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-127"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-128"
       },
       {
         "type": "function",
         "name": "get-size-value",
         "autofill": true,
-        "item": "typography--function--get-size-value"
+        "item": "typography-function-get-size-value-3"
       },
       {
         "type": "function",
         "name": "get-size-value",
         "autofill": true,
-        "item": "typography--function--get-size-value"
+        "item": "typography-function-get-size-value-4"
       },
       {
         "type": "function",
         "name": "get-size-converted-value",
         "autofill": true,
-        "item": "typography--function--get-size-converted-value"
+        "item": "typography-function-get-size-converted-value-7"
       },
       {
         "type": "function",
         "name": "get-size-converted-value",
         "autofill": true,
-        "item": "typography--function--get-size-converted-value"
+        "item": "typography-function-get-size-converted-value-8"
       },
       {
         "type": "function",
         "name": "get-size-converted-value",
         "autofill": true,
-        "item": "typography--function--get-size-converted-value"
+        "item": "typography-function-get-size-converted-value-9"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-129"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-130"
       }
     ],
     "file": {
       "path": "_typography.scss",
       "name": "_typography.scss"
     },
-    "_uid": "typography--mixin--size"
+    "_uid": "typography-mixin-size",
+    "_hash": "mixin-size",
+    "_path": "/sass/typography/#mixin-size"
   },
   {
     "description": "Module Settings\n",
@@ -6696,7 +6936,9 @@
       "path": "_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "units--variable--config"
+    "_uid": "units-variable-config",
+    "_hash": "variable-config-11",
+    "_path": "/sass/units/#variable-config-11"
   },
   {
     "description": "Update the units preset map\n",
@@ -6736,20 +6978,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-36"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-37"
       }
     ],
     "file": {
       "path": "_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "units--mixin--set"
+    "_uid": "units-mixin-set",
+    "_hash": "mixin-set-13",
+    "_path": "/sass/units/#mixin-set-13"
   },
   {
     "description": "Get a unit by name (preset) or number (multiplier of base)\n",
@@ -6785,20 +7029,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-26"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-38"
       }
     ],
     "file": {
       "path": "_units.scss",
       "name": "_units.scss"
     },
-    "_uid": "units--function--get"
+    "_uid": "units-function-get",
+    "_hash": "function-get-12",
+    "_path": "/sass/units/#function-get-12"
   },
   {
     "description": "Strips the unit from the number\n",
@@ -6831,10 +7077,12 @@
       "name": "_utility.scss"
     },
     "usedBy": [
-      "typography--function--unitless-line-height",
-      "typography--function--unitless-line-height"
+      "typography-function-unitless-line-height-4",
+      "typography-function-unitless-line-height-5"
     ],
-    "_uid": "utility--function--strip-unit"
+    "_uid": "utility-function-strip-unit",
+    "_hash": "function-strip-unit",
+    "_path": "/sass/utility/#function-strip-unit"
   },
   {
     "description": "Test\n",
@@ -6861,7 +7109,9 @@
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--variable--test"
+    "_uid": "utils-variable-test",
+    "_hash": "variable-test",
+    "_path": "/sass/utils/#variable-test"
   },
   {
     "description": "Module Settings\n",
@@ -6900,7 +7150,9 @@
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--variable--config"
+    "_uid": "utils-variable-config",
+    "_hash": "variable-config-12",
+    "_path": "/sass/utils/#variable-config-12"
   },
   {
     "description": "Change modules $config\n",
@@ -6940,20 +7192,22 @@
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-39"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-40"
       }
     ],
     "file": {
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--mixin--set"
+    "_uid": "utils-mixin-set",
+    "_hash": "mixin-set-14",
+    "_path": "/sass/utils/#mixin-set-14"
   },
   {
     "description": "Get a config option\n",
@@ -6993,20 +7247,22 @@
         "type": "function",
         "name": "require-map-get",
         "autofill": true,
-        "item": "utils--function--require-map-get"
+        "item": "utils-function-require-map-get-27"
       },
       {
         "type": "variable",
         "name": "config",
         "autofill": true,
-        "item": "base--variable--config"
+        "item": "base-variable-config-41"
       }
     ],
     "file": {
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--function--get"
+    "_uid": "utils-function-get",
+    "_hash": "function-get-13",
+    "_path": "/sass/utils/#function-get-13"
   },
   {
     "description": "Get a required value from a map, throw an error if not found\n- Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)\n",
@@ -7053,13 +7309,13 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-132"
       },
       {
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-133"
       }
     ],
     "throw": [
@@ -7070,33 +7326,35 @@
       "name": "_utils.scss"
     },
     "usedBy": [
-      "base--function--get",
-      "breakpoint--function--get",
-      "breakpoint--mixin--min",
-      "breakpoint--mixin--max",
-      "breakpoint--mixin--min-max",
-      "breakpoint--mixin--min-max",
-      "button--function--get",
-      "calculate--function--get",
-      "color--function--get",
-      "color--function--get-context",
-      "components--function--get",
-      "element--function--get",
-      "element--function--get-rule-style",
-      "element--function--get-rule-margin",
-      "grid--function--get",
-      "grid--mixin--create",
-      "grid--mixin--create",
-      "helpers--function--get",
-      "layout--function--get",
-      "path--function--get-alias",
-      "selector--function--get",
-      "typography--function--get",
-      "typography--function--get-size",
-      "units--function--get",
-      "utils--function--get"
+      "base-function-get-131",
+      "breakpoint-function-get-2",
+      "breakpoint-mixin-min-3",
+      "breakpoint-mixin-max-3",
+      "breakpoint-mixin-min-max-4",
+      "breakpoint-mixin-min-max-5",
+      "button-function-get-2",
+      "calculate-function-get-2",
+      "color-function-get-2",
+      "color-function-get-context-4",
+      "components-function-get-2",
+      "element-function-get-2",
+      "element-function-get-rule-style-4",
+      "element-function-get-rule-margin-2",
+      "grid-function-get-2",
+      "grid-mixin-create-10",
+      "grid-mixin-create-11",
+      "helpers-function-get-2",
+      "layout-function-get-2",
+      "path-function-get-alias-4",
+      "selector-function-get-2",
+      "typography-function-get-2",
+      "typography-function-get-size-4",
+      "units-function-get-2",
+      "utils-function-get-2"
     ],
-    "_uid": "utils--function--require-map-get"
+    "_uid": "utils-function-require-map-get",
+    "_hash": "function-require-map-get",
+    "_path": "/sass/utils/#function-require-map-get"
   },
   {
     "description": "Ensure a value is present in the list, throw an error if not found\n",
@@ -7143,9 +7401,11 @@
       "name": "_utils.scss"
     },
     "usedBy": [
-      "utils--mixin--require-list-contains"
+      "utils-mixin-require-list-contains-1"
     ],
-    "_uid": "utils--mixin--require-list-has"
+    "_uid": "utils-mixin-require-list-has",
+    "_hash": "mixin-require-list-has",
+    "_path": "/sass/utils/#mixin-require-list-has"
   },
   {
     "description": "Require that the list only is only made up of allowed items\n",
@@ -7183,14 +7443,16 @@
         "type": "mixin",
         "name": "require-list-has",
         "autofill": true,
-        "item": "utils--mixin--require-list-has"
+        "item": "utils-mixin-require-list-has-1"
       }
     ],
     "file": {
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--mixin--require-list-contains"
+    "_uid": "utils-mixin-require-list-contains",
+    "_hash": "mixin-require-list-contains",
+    "_path": "/sass/utils/#mixin-require-list-contains"
   },
   {
     "description": "Returns true if we should include something (map of booleans)\n",
@@ -7228,14 +7490,16 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-134"
       }
     ],
     "file": {
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--function--included"
+    "_uid": "utils-function-included",
+    "_hash": "function-included",
+    "_path": "/sass/utils/#function-included"
   },
   {
     "description": "Returns true if we should include something (used for output checking)\n",
@@ -7273,7 +7537,9 @@
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--mixin--file-header"
+    "_uid": "utils-mixin-file-header",
+    "_hash": "mixin-file-header",
+    "_path": "/sass/utils/#mixin-file-header"
   },
   {
     "description": "",
@@ -7316,7 +7582,9 @@
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--function--if-type"
+    "_uid": "utils-function-if-type",
+    "_hash": "function-if-type",
+    "_path": "/sass/utils/#function-if-type"
   },
   {
     "description": "",
@@ -7353,7 +7621,9 @@
       "path": "_utils.scss",
       "name": "_utils.scss"
     },
-    "_uid": "utils--function--number-info"
+    "_uid": "utils-function-number-info",
+    "_hash": "function-number-info",
+    "_path": "/sass/utils/#function-number-info"
   },
   {
     "description": "Repeatable pattern in core\n",
@@ -7380,10 +7650,12 @@
       "name": "_utils.scss"
     },
     "usedBy": [
-      "color--mixin--set-contexts",
-      "typography--mixin--set-sizes"
+      "color-mixin-set-contexts-3",
+      "typography-mixin-set-sizes-3"
     ],
-    "_uid": "utils--function--map-merge-or-overwrite"
+    "_uid": "utils-function-map-merge-or-overwrite",
+    "_hash": "function-map-merge-or-overwrite",
+    "_path": "/sass/utils/#function-map-merge-or-overwrite"
   },
   {
     "description": "Helps in providing a dynamic fallback for modules whose defaults should come from another\n",
@@ -7430,7 +7702,7 @@
         "type": "function",
         "name": "get",
         "autofill": true,
-        "item": "base--function--get"
+        "item": "base-function-get-135"
       }
     ],
     "file": {
@@ -7438,8 +7710,10 @@
       "name": "_utils.scss"
     },
     "usedBy": [
-      "button--function--get"
+      "button-function-get-3"
     ],
-    "_uid": "utils--function--function-fallback"
+    "_uid": "utils-function-function-fallback",
+    "_hash": "function-function-fallback",
+    "_path": "/sass/utils/#function-function-fallback"
   }
 ]

@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -18,28 +17,26 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_elements.scss
+- **Group:** base
+- **Type:** variable
+- **Lines (comment range):** 15-17
+- **Lines (code):** 19-21
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$config.links-state-styling|`Number`|Just color/defaults vs hover/visited/active
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.links-state-styling|`Number`|Just color/defaults vs hover/visited/active|
 
     
-
-::: details More Info
-
-- **File:** base/_elements.scss
-- **Lines:** 19-21
-
-
-:::
-
-  
-
   
 
 ## Mixins
@@ -47,9 +44,8 @@ Module Settings
 
 
 
+### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles} 
 
-
-### styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -57,20 +53,21 @@ Prints color-context styles as base classes (top of stylesheet)
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** base/_color.scss
-- **Lines:** 10-13
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 8-8
+- **Lines (code):** 10-13
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -78,38 +75,41 @@ Change modules $config
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_elements.scss
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 23-26
+- **Lines (code):** 27-29
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-General example, replace module-name with module's name
+General example, replace module-name with module's name      
+
 
 ``` scss
 @include module-name.set(( "property" : value ));
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** base/_elements.scss
-- **Lines:** 27-29
+### base-elements-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-elements-styles} 
 
-
-:::
-
-  
-
-
-
-
-### base-elements-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -117,28 +117,32 @@ Prints elements base styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_elements.scss
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 40-43
+- **Lines (code):** 45-180
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.base-elements-styles();
 ```
   
-
-::: details More Info
-
-- **File:** base/_elements.scss
-- **Lines:** 45-180
+      
 
 
-:::
+### base-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-styles} 
 
-  
-
-
-
-
-### base-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -146,37 +150,41 @@ Prints all Base styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_index.scss
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 31-35
+- **Lines (code):** 37-61
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.base-styles();
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$includes|`List`|A list of changes to this module's includes
+|Name|Type|Description|
+|:--|:--|:--|
+|$includes|`List`|A list of changes to this module's includes|
 
     
 
-::: details More Info
 
-- **File:** base/_index.scss
-- **Lines:** 37-61
+### base-keyframes-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-keyframes-styles} 
 
-
-:::
-
-  
-
-
-
-
-### base-keyframes-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -184,28 +192,32 @@ Prints CSS keyframes
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_keyframes.scss
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 7-10
+- **Lines (code):** 12-74
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.base-keyframes-styles();
 ```
   
-
-::: details More Info
-
-- **File:** base/_keyframes.scss
-- **Lines:** 12-74
+      
 
 
-:::
+### base-normalize-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-normalize-styles} 
 
-  
-
-
-
-
-### base-normalize-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -213,13 +225,28 @@ Prints the normalize stylesheet. We are using modern-normalize 1.1.0
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_normalize.scss
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 9-13
+- **Lines (code):** 15-316
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.base-normalize-styles();
 ```
   
+      
 
 #### Related Links
 
@@ -227,20 +254,9 @@ Prints the normalize stylesheet. We are using modern-normalize 1.1.0
 
   
 
-::: details More Info
 
-- **File:** base/_normalize.scss
-- **Lines:** 15-316
+### base-typography-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-typography-styles} 
 
-
-:::
-
-  
-
-
-
-
-### base-typography-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -248,20 +264,33 @@ Prints elements base styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_typography.scss
+- **Group:** base
+- **Type:** mixin
+- **Lines (comment range):** 10-20
+- **Lines (code):** 22-42
+
+
+</SassdocDetails>
+  
+
+<SassdocPreview uid="base-mixin-base-typography-styles" :exampleIndex="1" />
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.base-typography-styles();
 ```
   
+      
 
-Example of type size as base unprefixed
+Example of type size as base unprefixed      
 
-
-<SassdocPreview uid="base--mixin--base-typography-styles" :exampleIndex="1"  />
-
-  
 
 ``` html
 <span class="h1">A</span>
@@ -272,17 +301,7 @@ Example of type size as base unprefixed
 <span class="h6">A</span>
 ```
   
-
-::: details More Info
-
-- **File:** base/_typography.scss
-- **Lines:** 22-42
-
-
-:::
-
-  
-
+      
   
 
 ## Functions
@@ -290,9 +309,8 @@ Example of type size as base unprefixed
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -300,40 +318,42 @@ Get a config option
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** base/_elements.scss
+- **Group:** base
+- **Type:** function
+- **Lines (comment range):** 31-34
+- **Lines (code):** 36-38
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-General example, replace module-name with module's name
+General example, replace module-name with module's name      
+
 
 ``` scss
 @include module-name.get("property");
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`Map`|Name of property
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`Map`|Name of property|
 
     
-
-::: details More Info
-
-- **File:** base/_elements.scss
-- **Lines:** 36-38
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"base-mixin-styles","_hash":"mixin-styles","_path":"/sass/base/#mixin-styles","_previews":[]},{"_uid":"base-variable-config","_hash":"variable-config","_path":"/sass/base/#variable-config","_previews":[]},{"_uid":"base-mixin-set","_hash":"mixin-set","_path":"/sass/base/#mixin-set","_previews":[null]},{"_uid":"base-function-get","_hash":"function-get","_path":"/sass/base/#function-get","_previews":[null]},{"_uid":"base-mixin-base-elements-styles","_hash":"mixin-base-elements-styles","_path":"/sass/base/#mixin-base-elements-styles","_previews":[null]},{"_uid":"base-mixin-base-styles","_hash":"mixin-base-styles","_path":"/sass/base/#mixin-base-styles","_previews":[null]},{"_uid":"base-mixin-base-keyframes-styles","_hash":"mixin-base-keyframes-styles","_path":"/sass/base/#mixin-base-keyframes-styles","_previews":[null]},{"_uid":"base-mixin-base-normalize-styles","_hash":"mixin-base-normalize-styles","_path":"/sass/base/#mixin-base-normalize-styles","_previews":[null]},{"_uid":"base-mixin-base-typography-styles","_hash":"mixin-base-typography-styles","_path":"/sass/base/#mixin-base-typography-styles","_previews":[null,{"type":"html","code":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>","description":"Example of type size as base unprefixed"}]}]);
+const sassdocGroup = [{"_uid":"base-mixin-styles","_hash":"mixin-styles","_path":"/sass/base/#mixin-styles","_previews":[]},{"_uid":"base-variable-config","_hash":"variable-config","_path":"/sass/base/#variable-config","_previews":[]},{"_uid":"base-mixin-set","_hash":"mixin-set","_path":"/sass/base/#mixin-set","_previews":[null]},{"_uid":"base-function-get","_hash":"function-get","_path":"/sass/base/#function-get","_previews":[null]},{"_uid":"base-mixin-base-elements-styles","_hash":"mixin-base-elements-styles","_path":"/sass/base/#mixin-base-elements-styles","_previews":[null]},{"_uid":"base-mixin-base-styles","_hash":"mixin-base-styles","_path":"/sass/base/#mixin-base-styles","_previews":[null]},{"_uid":"base-mixin-base-keyframes-styles","_hash":"mixin-base-keyframes-styles","_path":"/sass/base/#mixin-base-keyframes-styles","_previews":[null]},{"_uid":"base-mixin-base-normalize-styles","_hash":"mixin-base-normalize-styles","_path":"/sass/base/#mixin-base-normalize-styles","_previews":[null]},{"_uid":"base-mixin-base-typography-styles","_hash":"mixin-base-typography-styles","_path":"/sass/base/#mixin-base-typography-styles","_previews":[null,{"type":"html","code":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>","description":"Example of type size as base unprefixed"}]}];
 export default {
   sassdocGroup,
   provide: {
@@ -347,5 +367,4 @@ export default {
 }
 </script> 
   
-
   

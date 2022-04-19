@@ -3,6 +3,5 @@ module.exports = ({ title }, markup) => {
 # ${ title }
 
 ${ markup }
-
   `;
 }

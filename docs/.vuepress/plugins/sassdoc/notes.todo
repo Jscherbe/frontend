@@ -1,4 +1,9 @@
 Todos:
+  ☐ Remainin annotation templates
+    ☐ Setup @see template
+    ☐ Setup @require template
+    ☐ Setup @alias template
+  ☐ Need to see how to handle items with the autofill key
   ☐ Chose to keep data in the page's script but reduced to only what the 'template' needs
     * Serializing things like markup to pass as props with components used in markdown
       will work but will almost double the code/data size in order to allow it on an HTML attribute

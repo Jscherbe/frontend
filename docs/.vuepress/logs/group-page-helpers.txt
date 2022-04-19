@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-7} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -18,28 +17,26 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_units.scss
+- **Group:** helpers
+- **Type:** variable
+- **Lines (comment range):** 11-13
+- **Lines (code):** 15-17
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$config.sides|`Number`|Sides to print for helper classes (ie. reduce output of uneeded sides)
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.sides|`Number`|Sides to print for helper classes (ie. reduce output of uneeded sides)|
 
     
-
-::: details More Info
-
-- **File:** helpers/_units.scss
-- **Lines:** 15-17
-
-
-:::
-
-  
-
   
 
 ## Mixins
@@ -47,9 +44,8 @@ Module Settings
 
 
 
+### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-4} 
 
-
-### styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -57,20 +53,21 @@ Prints color-context and color-[name] styles as helper classes (bottom of styles
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** helpers/_color.scss
-- **Lines:** 10-14
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 8-8
+- **Lines (code):** 10-14
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### helper-display-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-helper-display-styles} 
 
-
-### helper-display-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -78,28 +75,32 @@ Print utilities helper styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_display.scss
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 14-17
+- **Lines (code):** 19-65
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.helper-display-styles();
 ```
   
-
-::: details More Info
-
-- **File:** helpers/_display.scss
-- **Lines:** 19-65
+      
 
 
-:::
+### helper-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-helper-styles} 
 
-  
-
-
-
-
-### helper-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -107,37 +108,41 @@ Prints all Helper styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_index.scss
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 32-36
+- **Lines (code):** 38-62
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.helper-styles();
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$includes|`List`|AA list of changes to this module's includes
+|Name|Type|Description|
+|:--|:--|:--|
+|$includes|`List`|AA list of changes to this module's includes|
 
     
 
-::: details More Info
 
-- **File:** helpers/_index.scss
-- **Lines:** 38-62
+### helper-print-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-helper-print-styles} 
 
-
-:::
-
-  
-
-
-
-
-### helper-print-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -145,28 +150,32 @@ Printed Media Styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_print.scss
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 5-8
+- **Lines (code):** 10-59
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.helper-print-styles();
 ```
   
-
-::: details More Info
-
-- **File:** helpers/_print.scss
-- **Lines:** 10-59
+      
 
 
-:::
+### helper-typography-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-helper-typography-styles} 
 
-  
-
-
-
-
-### helper-typography-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -174,20 +183,33 @@ Prints Typography Helper styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_typography.scss
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 10-21
+- **Lines (code):** 23-73
+
+
+</SassdocDetails>
+  
+
+<SassdocPreview uid="helpers-mixin-helper-typography-styles" :exampleIndex="1" />
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.helper-typography-styles();
 ```
   
+      
 
-Example of type size as helper prefixed
+Example of type size as helper prefixed      
 
-
-<SassdocPreview uid="helpers--mixin--helper-typography-styles" :exampleIndex="1"  />
-
-  
 
 ``` html
 <span class="type-large-xxx">A</span>
@@ -199,21 +221,11 @@ Example of type size as helper prefixed
 <span class="type-small-x">A</span>
 ```
   
-
-::: details More Info
-
-- **File:** helpers/_typography.scss
-- **Lines:** 23-73
+      
 
 
-:::
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-9} 
 
-  
-
-
-
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -221,38 +233,41 @@ Change modules $config
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_units.scss
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 19-22
+- **Lines (code):** 23-25
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-General example, replace module-name with module's name
+General example, replace module-name with module's name      
+
 
 ``` scss
 @include module-name.set(( "property" : value ));
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** helpers/_units.scss
-- **Lines:** 23-25
+### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-5} 
 
-
-:::
-
-  
-
-
-
-
-### styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -260,20 +275,21 @@ Prints all unit helper classes
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** helpers/_units.scss
-- **Lines:** 38-42
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 36-36
+- **Lines (code):** 38-42
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### create-property-classes() <badge text="mixin" type="tip" vertical="top" />  {#mixin-create-property-classes} 
 
-
-### create-property-classes() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -282,20 +298,21 @@ Creates the unit classes with all variations (from unit presets)
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** helpers/_units.scss
-- **Lines:** 46-68
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 44-45
+- **Lines (code):** 46-68
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### helper-utilities-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-helper-utilities-styles} 
 
-
-### helper-utilities-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -303,24 +320,28 @@ Print utilities helper styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_utilities.scss
+- **Group:** helpers
+- **Type:** mixin
+- **Lines (comment range):** 9-12
+- **Lines (code):** 14-82
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.helper-utilities-styles();
 ```
   
-
-::: details More Info
-
-- **File:** helpers/_utilities.scss
-- **Lines:** 14-82
-
-
-:::
-
-  
-
+      
   
 
 ## Functions
@@ -328,9 +349,8 @@ Print utilities helper styles
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-8} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -338,40 +358,42 @@ Get a config option
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** helpers/_units.scss
+- **Group:** helpers
+- **Type:** function
+- **Lines (comment range):** 27-30
+- **Lines (code):** 32-34
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-General example, replace module-name with module's name
+General example, replace module-name with module's name      
+
 
 ``` scss
 @include module-name.get("property");
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`Map`|Name of property
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`Map`|Name of property|
 
     
-
-::: details More Info
-
-- **File:** helpers/_units.scss
-- **Lines:** 32-34
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"helpers-mixin-styles","_hash":"mixin-styles-4","_path":"/sass/helpers/#mixin-styles-4","_previews":[]},{"_uid":"helpers-mixin-helper-display-styles","_hash":"mixin-helper-display-styles","_path":"/sass/helpers/#mixin-helper-display-styles","_previews":[null]},{"_uid":"helpers-mixin-helper-styles","_hash":"mixin-helper-styles","_path":"/sass/helpers/#mixin-helper-styles","_previews":[null]},{"_uid":"helpers-mixin-helper-print-styles","_hash":"mixin-helper-print-styles","_path":"/sass/helpers/#mixin-helper-print-styles","_previews":[null]},{"_uid":"helpers-mixin-helper-typography-styles","_hash":"mixin-helper-typography-styles","_path":"/sass/helpers/#mixin-helper-typography-styles","_previews":[null,{"type":"html","code":"<span class=\"type-large-xxx\">A</span>\n<span class=\"type-large-xx\">A</span>\n<span class=\"type-large-x\">A</span>\n<span class=\"type-large\">A</span>\n<span class=\"type-base\">A</span>\n<span class=\"type-small\">A</span>\n<span class=\"type-small-x\">A</span>","description":"Example of type size as helper prefixed"}]},{"_uid":"helpers-variable-config","_hash":"variable-config-7","_path":"/sass/helpers/#variable-config-7","_previews":[]},{"_uid":"helpers-mixin-set","_hash":"mixin-set-9","_path":"/sass/helpers/#mixin-set-9","_previews":[null]},{"_uid":"helpers-function-get","_hash":"function-get-8","_path":"/sass/helpers/#function-get-8","_previews":[null]},{"_uid":"helpers-mixin-styles-1","_hash":"mixin-styles-5","_path":"/sass/helpers/#mixin-styles-5","_previews":[]},{"_uid":"helpers-mixin-create-property-classes","_hash":"mixin-create-property-classes","_path":"/sass/helpers/#mixin-create-property-classes","_previews":[]},{"_uid":"helpers-mixin-helper-utilities-styles","_hash":"mixin-helper-utilities-styles","_path":"/sass/helpers/#mixin-helper-utilities-styles","_previews":[null]}]);
+const sassdocGroup = [{"_uid":"helpers-mixin-styles","_hash":"mixin-styles-4","_path":"/sass/helpers/#mixin-styles-4","_previews":[]},{"_uid":"helpers-mixin-helper-display-styles","_hash":"mixin-helper-display-styles","_path":"/sass/helpers/#mixin-helper-display-styles","_previews":[null]},{"_uid":"helpers-mixin-helper-styles","_hash":"mixin-helper-styles","_path":"/sass/helpers/#mixin-helper-styles","_previews":[null]},{"_uid":"helpers-mixin-helper-print-styles","_hash":"mixin-helper-print-styles","_path":"/sass/helpers/#mixin-helper-print-styles","_previews":[null]},{"_uid":"helpers-mixin-helper-typography-styles","_hash":"mixin-helper-typography-styles","_path":"/sass/helpers/#mixin-helper-typography-styles","_previews":[null,{"type":"html","code":"<span class=\"type-large-xxx\">A</span>\n<span class=\"type-large-xx\">A</span>\n<span class=\"type-large-x\">A</span>\n<span class=\"type-large\">A</span>\n<span class=\"type-base\">A</span>\n<span class=\"type-small\">A</span>\n<span class=\"type-small-x\">A</span>","description":"Example of type size as helper prefixed"}]},{"_uid":"helpers-variable-config","_hash":"variable-config-7","_path":"/sass/helpers/#variable-config-7","_previews":[]},{"_uid":"helpers-mixin-set","_hash":"mixin-set-9","_path":"/sass/helpers/#mixin-set-9","_previews":[null]},{"_uid":"helpers-function-get","_hash":"function-get-8","_path":"/sass/helpers/#function-get-8","_previews":[null]},{"_uid":"helpers-mixin-styles-1","_hash":"mixin-styles-5","_path":"/sass/helpers/#mixin-styles-5","_previews":[]},{"_uid":"helpers-mixin-create-property-classes","_hash":"mixin-create-property-classes","_path":"/sass/helpers/#mixin-create-property-classes","_previews":[]},{"_uid":"helpers-mixin-helper-utilities-styles","_hash":"mixin-helper-utilities-styles","_path":"/sass/helpers/#mixin-helper-utilities-styles","_previews":[null]}];
 export default {
   sassdocGroup,
   provide: {
@@ -385,5 +407,4 @@ export default {
 }
 </script> 
   
-
   

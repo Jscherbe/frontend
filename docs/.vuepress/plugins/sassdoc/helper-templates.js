@@ -16,7 +16,9 @@ function prefixedItemName(type, name) {
   return (types[type] || "") + name;
 }
 function propertyTableKeys(array) {
-  const keys = Object.keys(array[0]);
+  const set = new Set();
+  array.forEach(o => Object.keys(o).forEach(k => set.add(k)));
+  const keys = Array.from(set);
   const toFront = text => {
     const index = keys.findIndex(i => i === text);
     if (index !== -1) {
@@ -35,8 +37,7 @@ function propertyTable(array, options) {
     formatHeader: titleCase,
     formatCell: (key, data) => key === "type" ? `\`${ data }\`` : data
   }, options);
-  const joinRow = cols => "|" + cols.join("|");
-  
+  const joinRow = cols => `|${ cols.join("|") }|`;
   const keys = opts.keys || propertyTableKeys(array);
   const $header = [ joinRow(keys.map(opts.formatHeader)) ];
   const $divider = [ joinRow(keys.map(() => ":--")) ];

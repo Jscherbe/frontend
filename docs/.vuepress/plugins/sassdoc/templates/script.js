@@ -1,8 +1,7 @@
-module.exports = ({ data, debug }) => {
+module.exports = (_, data) => {
   return `
-
 <script>
-console.log(${ JSON.stringify(debug) });
+console.log(${ JSON.stringify(data) });
 const sassdocGroup = ${ JSON.stringify(data) };
 export default {
   sassdocGroup,

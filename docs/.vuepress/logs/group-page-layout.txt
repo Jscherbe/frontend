@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-8} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -18,32 +17,30 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** _layout.scss
+- **Group:** layout
+- **Type:** variable
+- **Lines (comment range):** 12-18
+- **Lines (code):** 20-26
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$config.max-width|`Number`|Common max-width for site
-|$config.margin|`Number`|Common margin for site
-|$config.z-index-fixed|`Number`|Common z-index, above everything
-|$config.z-index-sticky|`Number`|Common z-index for sticky or stuck items
-|$config.z-index-above|`Number`|Common z-index, below sticky
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.max-width|`Number`|Common max-width for site|
+|$config.margin|`Number`|Common margin for site|
+|$config.z-index-fixed|`Number`|Common z-index, above everything|
+|$config.z-index-sticky|`Number`|Common z-index for sticky or stuck items|
+|$config.z-index-above|`Number`|Common z-index, below sticky|
 
     
-
-::: details More Info
-
-- **File:** _layout.scss
-- **Lines:** 20-26
-
-
-:::
-
-  
-
   
 
 ## Mixins
@@ -51,9 +48,8 @@ Module Settings
 
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-10} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -61,30 +57,31 @@ Change modules $config
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _layout.scss
+- **Group:** layout
+- **Type:** mixin
+- **Lines (comment range):** 28-30
+- **Lines (code):** 31-33
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
+|Name|Type|Description|
+|:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));
+  @include module-name.set(( "property" : value ));|
 
     
 
-::: details More Info
 
-- **File:** _layout.scss
-- **Lines:** 31-33
+### match-container-padding() <badge text="mixin" type="tip" vertical="top" />  {#mixin-match-container-padding} 
 
-
-:::
-
-  
-
-
-
-
-### match-container-padding() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -93,20 +90,21 @@ ie. { top: $containers-padding; }
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _layout.scss
-- **Lines:** 69-81
+- **Group:** layout
+- **Type:** mixin
+- **Lines (comment range):** 67-68
+- **Lines (code):** 69-81
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### clearfix() <badge text="mixin" type="tip" vertical="top" />  {#mixin-clearfix} 
 
-
-### clearfix() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -114,16 +112,17 @@ Prints clearfix styles
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _layout.scss
-- **Lines:** 158-170
+- **Group:** layout
+- **Type:** mixin
+- **Lines (comment range):** 156-156
+- **Lines (code):** 158-170
 
 
-:::
-
+</SassdocDetails>
   
-
   
 
 ## Functions
@@ -131,9 +130,8 @@ Prints clearfix styles
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-9} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -141,32 +139,32 @@ Get a config option
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _layout.scss
+- **Group:** layout
+- **Type:** function
+- **Lines (comment range):** 35-37
+- **Lines (code):** 39-41
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
+|Name|Type|Description|
+|:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");
+  @include module-name.get("property");|
 
     
-
-::: details More Info
-
-- **File:** _layout.scss
-- **Lines:** 39-41
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"layout-variable-config","_hash":"variable-config-8","_path":"/sass/layout/#variable-config-8","_previews":[]},{"_uid":"layout-mixin-set","_hash":"mixin-set-10","_path":"/sass/layout/#mixin-set-10","_previews":[]},{"_uid":"layout-function-get","_hash":"function-get-9","_path":"/sass/layout/#function-get-9","_previews":[]},{"_uid":"layout-mixin-match-container-padding","_hash":"mixin-match-container-padding","_path":"/sass/layout/#mixin-match-container-padding","_previews":[]},{"_uid":"layout-mixin-clearfix","_hash":"mixin-clearfix","_path":"/sass/layout/#mixin-clearfix","_previews":[]}]);
+const sassdocGroup = [{"_uid":"layout-variable-config","_hash":"variable-config-8","_path":"/sass/layout/#variable-config-8","_previews":[]},{"_uid":"layout-mixin-set","_hash":"mixin-set-10","_path":"/sass/layout/#mixin-set-10","_previews":[]},{"_uid":"layout-function-get","_hash":"function-get-9","_path":"/sass/layout/#function-get-9","_previews":[]},{"_uid":"layout-mixin-match-container-padding","_hash":"mixin-match-container-padding","_path":"/sass/layout/#mixin-match-container-padding","_previews":[]},{"_uid":"layout-mixin-clearfix","_hash":"mixin-clearfix","_path":"/sass/layout/#mixin-clearfix","_previews":[]}];
 export default {
   sassdocGroup,
   provide: {
@@ -180,5 +178,4 @@ export default {
 }
 </script> 
   
-
   

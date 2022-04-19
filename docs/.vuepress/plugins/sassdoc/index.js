@@ -11,6 +11,21 @@ module.exports = opts => {
   const options = Object.assign({}, defaults, opts);
   return {
     name: PLUGIN_NAME,
+    chainMarkdown: config => {
+      if (options.addMarkdownAttrSupport) {
+        config
+          .plugin('anchor')
+            .tap(([options]) => {
+              // Doesnt respect attrs used for id's
+              delete options.slugify;
+              return [ options ]
+            });
+        config
+          .plugin("attrs")
+            .use(require("markdown-it-attrs"))
+            .before("markdown-it-anchor");
+      }
+    },
     enhanceAppFiles: path.resolve(__dirname, "enhanceAppFiles.js"),
     clientDynamicModules() {
       return {
@@ -40,13 +55,17 @@ module.exports = opts => {
         }
 
         const pages = Object.entries(groups).map(([groupName, group]) => { 
-          const title = options.getPageTitle(groupName);
-          return {
-            path: `${ options.pathBase }${ groupName }/`,
-            content: template({ groupName, title, group, groups, options }),
-            frontmatter: { title, sassdocGroupName: groupName }
-          };
-        });
+          try {
+            const title = options.getPageTitle(groupName);
+            return {
+              path: `${ options.pathBase }${ groupName }/`,
+              content: template({ groupName, title, group, groups, options }),
+              frontmatter: { title, sassdocGroupName: groupName }
+            };
+          } catch (error) {
+            console.error(`Error in ${ PLUGIN_NAME }! (creating page for ${ groupName })`, error);
+          }
+        }).filter(p => p);
 
         pages.sort(options.sort);
 

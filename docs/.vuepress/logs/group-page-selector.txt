@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-9} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -19,15 +18,24 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** _selector.scss
+- **Group:** selector
+- **Type:** variable
+- **Lines (comment range):** 8-12
+- **Lines (code):** 14-16
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$config.prefix|`String`|Global prefix for selectors (would be used for classname prefix for example)
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.prefix|`String`|Global prefix for selectors (would be used for classname prefix for example)|
 
     
 
@@ -40,17 +48,6 @@ Module Settings
 
 - See about documenting when a component doesn't run through the selecotr module to get it's base classname
     
-
-::: details More Info
-
-- **File:** _selector.scss
-- **Lines:** 14-16
-
-
-:::
-
-  
-
   
 
 ## Mixins
@@ -58,9 +55,8 @@ Module Settings
 
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-11} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -68,38 +64,41 @@ Change modules $config
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _selector.scss
+- **Group:** selector
+- **Type:** mixin
+- **Lines (comment range):** 21-24
+- **Lines (code):** 25-27
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-General example, replace module-name with module's name
+General example, replace module-name with module's name      
+
 
 ``` scss
 @include module-name.set(( "property" : value ));
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** _selector.scss
-- **Lines:** 25-27
+### set-class-overrides() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-class-overrides} 
 
-
-:::
-
-  
-
-
-
-
-### set-class-overrides() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -107,25 +106,26 @@ Set the class selector overrides
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _selector.scss
+- **Group:** selector
+- **Type:** mixin
+- **Lines (comment range):** 38-39
+- **Lines (code):** 41-43
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Changes to merge
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Changes to merge|
 
     
-
-::: details More Info
-
-- **File:** _selector.scss
-- **Lines:** 41-43
-
-
-:::
-
-  
-
   
 
 ## Functions
@@ -133,9 +133,8 @@ Set the class selector overrides
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-10} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -143,38 +142,41 @@ Get a config option
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _selector.scss
+- **Group:** selector
+- **Type:** function
+- **Lines (comment range):** 29-32
+- **Lines (code):** 34-36
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-General example, replace module-name with module's name
+General example, replace module-name with module's name      
+
 
 ``` scss
 @include module-name.get("property");
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`Map`|Name of property
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`Map`|Name of property|
 
     
 
-::: details More Info
 
-- **File:** _selector.scss
-- **Lines:** 34-36
+### class() <badge text="function" type="tip" vertical="top" />  {#function-class} 
 
-
-:::
-
-  
-
-
-
-
-### class() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -183,31 +185,31 @@ Change a class used in the system (ie. like a component for example)
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _selector.scss
+- **Group:** selector
+- **Type:** function
+- **Lines (comment range):** 45-47
+- **Lines (code):** 49-52
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$class|`String`|The classname to set
+|Name|Type|Description|
+|:--|:--|:--|
+|$class|`String`|The classname to set|
 
     
-
-::: details More Info
-
-- **File:** _selector.scss
-- **Lines:** 49-52
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"selector-variable-config","_hash":"variable-config-9","_path":"/sass/selector/#variable-config-9","_previews":[]},{"_uid":"selector-mixin-set","_hash":"mixin-set-11","_path":"/sass/selector/#mixin-set-11","_previews":[null]},{"_uid":"selector-function-get","_hash":"function-get-10","_path":"/sass/selector/#function-get-10","_previews":[null]},{"_uid":"selector-mixin-set-class-overrides","_hash":"mixin-set-class-overrides","_path":"/sass/selector/#mixin-set-class-overrides","_previews":[]},{"_uid":"selector-function-class","_hash":"function-class","_path":"/sass/selector/#function-class","_previews":[]}]);
+const sassdocGroup = [{"_uid":"selector-variable-config","_hash":"variable-config-9","_path":"/sass/selector/#variable-config-9","_previews":[]},{"_uid":"selector-mixin-set","_hash":"mixin-set-11","_path":"/sass/selector/#mixin-set-11","_previews":[null]},{"_uid":"selector-function-get","_hash":"function-get-10","_path":"/sass/selector/#function-get-10","_previews":[null]},{"_uid":"selector-mixin-set-class-overrides","_hash":"mixin-set-class-overrides","_path":"/sass/selector/#mixin-set-class-overrides","_previews":[]},{"_uid":"selector-function-class","_hash":"function-class","_path":"/sass/selector/#function-class","_previews":[]}];
 export default {
   sassdocGroup,
   provide: {
@@ -221,5 +223,4 @@ export default {
 }
 </script> 
   
-
   

@@ -8,9 +8,8 @@
 
 
 
+### $palette <badge text="variable" type="tip" vertical="top" /><badge text="map" type="warn" vertical="top" />  {#variable-palette} 
 
-
-### $palette <badge text="variable" type="tip" vertical="top" /><badge text="map" type="warn" vertical="top" /> 
 
   
 
@@ -18,23 +17,21 @@ The color palette map, can be extended or modified with set() and accessed with 
     
     
 
-- **type:** `map`
-    
-
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _color.scss
-- **Lines:** 13-28
+- **Group:** color
+- **Type:** variable
+- **Lines (comment range):** 10-11
+- **Lines (code):** 13-28
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### $contexts <badge text="variable" type="tip" vertical="top" /><badge text="map" type="warn" vertical="top" />  {#variable-contexts} 
 
-
-### $contexts <badge text="variable" type="tip" vertical="top" /><badge text="map" type="warn" vertical="top" /> 
 
   
 
@@ -42,34 +39,32 @@ Pairs of background-color and color definitions
     
     
 
-- **type:** `map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** variable
+- **Lines (comment range):** 30-34
+- **Lines (code):** 36-47
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$contexts.name.background-color|`Number|String`|Color value or name of color in $palette
-|$contexts.name.color|`Number|String`|Color value or name of color in $palette
-|$contexts.name.base-class|`Boolean`|Print this value in the base module as a class (if base prints)
+|Name|Type|Description|
+|:--|:--|:--|
+|$contexts.name.background-color|`Number|String`|Color value or name of color in $palette|
+|$contexts.name.color|`Number|String`|Color value or name of color in $palette|
+|$contexts.name.base-class|`Boolean`|Print this value in the base module as a class (if base prints)|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 36-47
+### $color-classes <badge text="variable" type="tip" vertical="top" />  {#variable-color-classes} 
 
-
-:::
-
-  
-
-
-
-
-### $color-classes <badge text="variable" type="tip" vertical="top" /> 
 
   
 
@@ -77,16 +72,17 @@ Palette entries that are output as classes when using all-color-class-styles
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _color.scss
-- **Lines:** 50-54
+- **Group:** color
+- **Type:** variable
+- **Lines (comment range):** 49-49
+- **Lines (code):** 50-54
 
 
-:::
-
+</SassdocDetails>
   
-
   
 
 ## Mixins
@@ -94,9 +90,8 @@ Palette entries that are output as classes when using all-color-class-styles
 
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-5} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -104,9 +99,22 @@ Used to override or extend the color palette
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** mixin
+- **Lines (comment range):** 56-62
+- **Lines (code):** 64-66
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-Setting the error and type color
+Setting the error and type color      
+
 
 ``` scss
 @include color.set((
@@ -115,30 +123,20 @@ Setting the error and type color
 ));
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|A map to merge into the color palette
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|A map to merge into the color palette|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 64-66
+### set-color-classes() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-color-classes} 
 
-
-:::
-
-  
-
-
-
-
-### set-color-classes() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -146,29 +144,30 @@ Set ouput classes for all-color-class-styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** mixin
+- **Lines (comment range):** 80-81
+- **Lines (code):** 83-85
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes (you can disable defaults this way)
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes (you can disable defaults this way)|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 83-85
+### set-contexts() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-contexts} 
 
-
-:::
-
-  
-
-
-
-
-### set-contexts() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -176,9 +175,22 @@ Set color contexts
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** mixin
+- **Lines (comment range):** 92-102
+- **Lines (code):** 104-106
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-Overwriting contexts
+Overwriting contexts      
+
 
 ``` scss
 @include color.set-contexts((
@@ -189,32 +201,22 @@ Overwriting contexts
 ), false, true);
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|A map to merge
-|$deep|`Map`|Use deep merge
-|$overwrite|`Map`|Overwrite the completly (cannot be used with deep)
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|A map to merge|
+|$deep|`Map`|Use deep merge|
+|$overwrite|`Map`|Overwrite the completly (cannot be used with deep)|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 104-106
+### context-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-context-styles} 
 
-
-:::
-
-  
-
-
-
-
-### context-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -222,29 +224,30 @@ Prints contexts styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** mixin
+- **Lines (comment range):** 131-132
+- **Lines (code):** 134-140
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`String`|Name of context
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`String`|Name of context|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 134-140
+### all-context-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-all-context-styles} 
 
-
-:::
-
-  
-
-
-
-
-### all-context-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -252,20 +255,33 @@ Prints all context styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** mixin
+- **Lines (comment range):** 164-171
+- **Lines (code):** 172-181
+
+
+</SassdocDetails>
+  
+
+<SassdocPreview uid="color-mixin-all-context-styles" :exampleIndex="1" />
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.all-context-styles();
 ```
   
+      
 
-Example of a color-context
+Example of a color-context      
 
-
-<SassdocPreview uid="color--mixin--all-context-styles" :exampleIndex="1"  />
-
-  
 
 ``` html
  <div class="color-context-dark" style="padding: 1rem">
@@ -273,30 +289,20 @@ Example of a color-context
 </div>
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$with-prop|`String`|Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)
+|Name|Type|Description|
+|:--|:--|:--|
+|$with-prop|`String`|Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 172-181
+### all-color-class-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-all-color-class-styles} 
 
-
-:::
-
-  
-
-
-
-
-### all-color-class-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -304,36 +310,39 @@ Outputs all color classes
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** mixin
+- **Lines (comment range):** 183-187
+- **Lines (code):** 188-197
+
+
+</SassdocDetails>
+  
+
+<SassdocPreview uid="color-mixin-all-color-class-styles" :exampleIndex="1" />
+
 #### Examples
+
+      
 
 
 ``` scss
 @include ulu.all-color-class-styles();
 ```
   
+      
 
-Example of a color-context
+Example of a color-context      
 
-
-<SassdocPreview uid="color--mixin--all-color-class-styles" :exampleIndex="1"  />
-
-  
 
 ``` html
 <span class="color-name">Some text</span>
 ```
   
-
-::: details More Info
-
-- **File:** _color.scss
-- **Lines:** 188-197
-
-
-:::
-
-  
-
+      
   
 
 ## Functions
@@ -341,9 +350,8 @@ Example of a color-context
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-4} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -351,38 +359,39 @@ Get a color from the palette by name
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comment range):** 68-70
+- **Lines (code):** 72-78
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`String`|Name of color to get
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`String`|Name of color to get|
 
     
 
 #### Returns
 
 
-|Type
-|:--
-|`Color`
+|Type|
+|:--|
+|`Color`|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 72-78
+### get-context() <badge text="function" type="tip" vertical="top" />  {#function-get-context} 
 
-
-:::
-
-  
-
-
-
-
-### get-context() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -390,38 +399,39 @@ Get a context by name
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comment range):** 108-110
+- **Lines (code):** 112-114
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`String`|Name of context
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`String`|Name of context|
 
     
 
 #### Returns
 
 
-|Type
-|:--
-|`Map`
+|Type|
+|:--|
+|`Map`|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 112-114
+### get-context-value() <badge text="function" type="tip" vertical="top" />  {#function-get-context-value} 
 
-
-:::
-
-  
-
-
-
-
-### get-context-value() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -429,39 +439,40 @@ Get a context's value'
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comment range):** 116-119
+- **Lines (code):** 121-129
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$name|`String`|Name of context
-|$prop|`String`|The property to get
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`String`|Name of context|
+|$prop|`String`|The property to get|
 
     
 
 #### Returns
 
 
-|Type
-|:--
-|`Color`
+|Type|
+|:--|
+|`Color`|
 
     
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 121-129
+### tint() <badge text="function" type="tip" vertical="top" />  {#function-tint} 
 
-
-:::
-
-  
-
-
-
-
-### tint() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -469,22 +480,34 @@ Lighten a color using the default white by a percentage
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comment range):** 142-147
+- **Lines (code):** 149-151
+- **Author:** 
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$color|`Color, String`|Color/palette color name to apply to tint
-|$percentage|`Number`|Percentage
+|Name|Type|Description|
+|:--|:--|:--|
+|$color|`Color, String`|Color/palette color name to apply to tint|
+|$percentage|`Number`|Percentage|
 
     
 
 #### Returns
 
 
-|Type
-|:--
-|`Color`
+|Type|
+|:--|
+|`Color`|
 
     
 
@@ -494,20 +517,9 @@ Lighten a color using the default white by a percentage
 
   
 
-::: details More Info
 
-- **File:** _color.scss
-- **Lines:** 149-151
-- **Author:** 
+### shade() <badge text="function" type="tip" vertical="top" />  {#function-shade} 
 
-:::
-
-  
-
-
-
-
-### shade() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -515,22 +527,34 @@ Darken a color with the default black by a percentage
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comment range):** 153-158
+- **Lines (code):** 160-162
+- **Author:** Kitty Giraudel
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$color|`Color, String`|Color/palette color name to shade
-|$percentage|`Number`|Percentage to shade
+|Name|Type|Description|
+|:--|:--|:--|
+|$color|`Color, String`|Color/palette color name to shade|
+|$percentage|`Number`|Percentage to shade|
 
     
 
 #### Returns
 
 
-|Type
-|:--
-|`Color`
+|Type|
+|:--|
+|`Color`|
 
     
 
@@ -539,23 +563,11 @@ Darken a color with the default black by a percentage
 - [Modified from source (CSS Tricks, Kitty Giraudel)](https://css-tricks.com/snippets/sass/tint-shade-functions/)
 
   
-
-::: details More Info
-
-- **File:** _color.scss
-- **Lines:** 160-162
-- **Author:** Kitty Giraudel
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"color-variable-palette","_hash":"variable-palette","_path":"/sass/color/#variable-palette","_previews":[]},{"_uid":"color-variable-contexts","_hash":"variable-contexts","_path":"/sass/color/#variable-contexts","_previews":[]},{"_uid":"color-variable-color-classes","_hash":"variable-color-classes","_path":"/sass/color/#variable-color-classes","_previews":[]},{"_uid":"color-mixin-set","_hash":"mixin-set-5","_path":"/sass/color/#mixin-set-5","_previews":[null]},{"_uid":"color-function-get","_hash":"function-get-4","_path":"/sass/color/#function-get-4","_previews":[]},{"_uid":"color-mixin-set-color-classes","_hash":"mixin-set-color-classes","_path":"/sass/color/#mixin-set-color-classes","_previews":[]},{"_uid":"color-mixin-set-contexts","_hash":"mixin-set-contexts","_path":"/sass/color/#mixin-set-contexts","_previews":[null]},{"_uid":"color-function-get-context","_hash":"function-get-context","_path":"/sass/color/#function-get-context","_previews":[]},{"_uid":"color-function-get-context-value","_hash":"function-get-context-value","_path":"/sass/color/#function-get-context-value","_previews":[]},{"_uid":"color-mixin-context-styles","_hash":"mixin-context-styles","_path":"/sass/color/#mixin-context-styles","_previews":[]},{"_uid":"color-function-tint","_hash":"function-tint","_path":"/sass/color/#function-tint","_previews":[]},{"_uid":"color-function-shade","_hash":"function-shade","_path":"/sass/color/#function-shade","_previews":[]},{"_uid":"color-mixin-all-context-styles","_hash":"mixin-all-context-styles","_path":"/sass/color/#mixin-all-context-styles","_previews":[null,{"type":"html","code":" <div class=\"color-context-dark\" style=\"padding: 1rem\">\n  Some text in dark context\n</div>","description":"Example of a color-context"}]},{"_uid":"color-mixin-all-color-class-styles","_hash":"mixin-all-color-class-styles","_path":"/sass/color/#mixin-all-color-class-styles","_previews":[null,{"type":"html","code":"<span class=\"color-name\">Some text</span>","description":"Example of a color-context"}]}]);
+const sassdocGroup = [{"_uid":"color-variable-palette","_hash":"variable-palette","_path":"/sass/color/#variable-palette","_previews":[]},{"_uid":"color-variable-contexts","_hash":"variable-contexts","_path":"/sass/color/#variable-contexts","_previews":[]},{"_uid":"color-variable-color-classes","_hash":"variable-color-classes","_path":"/sass/color/#variable-color-classes","_previews":[]},{"_uid":"color-mixin-set","_hash":"mixin-set-5","_path":"/sass/color/#mixin-set-5","_previews":[null]},{"_uid":"color-function-get","_hash":"function-get-4","_path":"/sass/color/#function-get-4","_previews":[]},{"_uid":"color-mixin-set-color-classes","_hash":"mixin-set-color-classes","_path":"/sass/color/#mixin-set-color-classes","_previews":[]},{"_uid":"color-mixin-set-contexts","_hash":"mixin-set-contexts","_path":"/sass/color/#mixin-set-contexts","_previews":[null]},{"_uid":"color-function-get-context","_hash":"function-get-context","_path":"/sass/color/#function-get-context","_previews":[]},{"_uid":"color-function-get-context-value","_hash":"function-get-context-value","_path":"/sass/color/#function-get-context-value","_previews":[]},{"_uid":"color-mixin-context-styles","_hash":"mixin-context-styles","_path":"/sass/color/#mixin-context-styles","_previews":[]},{"_uid":"color-function-tint","_hash":"function-tint","_path":"/sass/color/#function-tint","_previews":[]},{"_uid":"color-function-shade","_hash":"function-shade","_path":"/sass/color/#function-shade","_previews":[]},{"_uid":"color-mixin-all-context-styles","_hash":"mixin-all-context-styles","_path":"/sass/color/#mixin-all-context-styles","_previews":[null,{"type":"html","code":" <div class=\"color-context-dark\" style=\"padding: 1rem\">\n  Some text in dark context\n</div>","description":"Example of a color-context"}]},{"_uid":"color-mixin-all-color-class-styles","_hash":"mixin-all-color-class-styles","_path":"/sass/color/#mixin-all-color-class-styles","_previews":[null,{"type":"html","code":"<span class=\"color-name\">Some text</span>","description":"Example of a color-context"}]}];
 export default {
   sassdocGroup,
   provide: {
@@ -569,5 +581,4 @@ export default {
 }
 </script> 
   
-
   

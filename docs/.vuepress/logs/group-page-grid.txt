@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-6} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -18,35 +17,33 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** _grid.scss
+- **Group:** grid
+- **Type:** variable
+- **Lines (comment range):** 27-36
+- **Lines (code):** 38-56
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$config.columns|`Number`|Default for grid mixin
-|$config.attribute|`String`|Default attribute to use for grid mixin
-|$config.gutter|`Number`|Default gutter for grid mixin
-|$config.extra-breakpoints|`Map`|Default extra breakpoints for grid mixin
-|$config.position-class-column-first|`MaStringp`|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
-|$config.position-class-column-last|`String`|See definition above
-|$config.position-class-row-first|`String`|See definition above
-|$config.position-class-row-last|`String`|See definition above
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.columns|`Number`|Default for grid mixin|
+|$config.attribute|`String`|Default attribute to use for grid mixin|
+|$config.gutter|`Number`|Default gutter for grid mixin|
+|$config.extra-breakpoints|`Map`|Default extra breakpoints for grid mixin|
+|$config.position-class-column-first|`MaStringp`|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
+|$config.position-class-column-last|`String`|See definition above|
+|$config.position-class-row-first|`String`|See definition above|
+|$config.position-class-row-last|`String`|See definition above|
 
     
-
-::: details More Info
-
-- **File:** _grid.scss
-- **Lines:** 38-56
-
-
-:::
-
-  
-
   
 
 ## Mixins
@@ -54,9 +51,8 @@ Module Settings
 
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-8} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -64,30 +60,31 @@ Change modules $config
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _grid.scss
+- **Group:** grid
+- **Type:** mixin
+- **Lines (comment range):** 58-60
+- **Lines (code):** 61-63
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
+|Name|Type|Description|
+|:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));
+  @include module-name.set(( "property" : value ));|
 
     
 
-::: details More Info
 
-- **File:** _grid.scss
-- **Lines:** 61-63
+### create() <badge text="mixin" type="tip" vertical="top" />  {#mixin-create} 
 
-
-:::
-
-  
-
-
-
-
-### create() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -95,32 +92,33 @@ Creates grid css (variation of original data-grid)
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _grid.scss
+- **Group:** grid
+- **Type:** mixin
+- **Lines (comment range):** 73-81
+- **Lines (code):** 83-407
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$columns|`Number`|Columns in grid
-|$breakpoint|`Number`|Breakpoint key for starting the grid
-|$extra-breakpoints|`Map`|Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)
-|$gutter|`Number`|Size in pixels for the gutters
-|$include-rules|`Boolean`|Print styles for including rules
-|$rule-size|`Number`|Size of the rule (border/seperator)
-|$extra-rule-styles|`Map`|Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
-|$attribute|`String`|Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+|Name|Type|Description|
+|:--|:--|:--|
+|$columns|`Number`|Columns in grid|
+|$breakpoint|`Number`|Breakpoint key for starting the grid|
+|$extra-breakpoints|`Map`|Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)|
+|$gutter|`Number`|Size in pixels for the gutters|
+|$include-rules|`Boolean`|Print styles for including rules|
+|$rule-size|`Number`|Size of the rule (border/seperator)|
+|$extra-rule-styles|`Map`|Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))|
+|$attribute|`String`|Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")|
 
     
-
-::: details More Info
-
-- **File:** _grid.scss
-- **Lines:** 83-407
-
-
-:::
-
-  
-
   
 
 ## Functions
@@ -128,9 +126,8 @@ Creates grid css (variation of original data-grid)
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-7} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -138,32 +135,32 @@ Get a config option
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _grid.scss
+- **Group:** grid
+- **Type:** function
+- **Lines (comment range):** 65-67
+- **Lines (code):** 69-71
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
+|Name|Type|Description|
+|:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");
+  @include module-name.get("property");|
 
     
-
-::: details More Info
-
-- **File:** _grid.scss
-- **Lines:** 69-71
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"grid-variable-config","_hash":"variable-config-6","_path":"/sass/grid/#variable-config-6","_previews":[]},{"_uid":"grid-mixin-set","_hash":"mixin-set-8","_path":"/sass/grid/#mixin-set-8","_previews":[]},{"_uid":"grid-function-get","_hash":"function-get-7","_path":"/sass/grid/#function-get-7","_previews":[]},{"_uid":"grid-mixin-create","_hash":"mixin-create","_path":"/sass/grid/#mixin-create","_previews":[]}]);
+const sassdocGroup = [{"_uid":"grid-variable-config","_hash":"variable-config-6","_path":"/sass/grid/#variable-config-6","_previews":[]},{"_uid":"grid-mixin-set","_hash":"mixin-set-8","_path":"/sass/grid/#mixin-set-8","_previews":[]},{"_uid":"grid-function-get","_hash":"function-get-7","_path":"/sass/grid/#function-get-7","_previews":[]},{"_uid":"grid-mixin-create","_hash":"mixin-create","_path":"/sass/grid/#mixin-create","_previews":[]}];
 export default {
   sassdocGroup,
   provide: {
@@ -177,5 +174,4 @@ export default {
 }
 </script> 
   
-
   

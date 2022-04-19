@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-5} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -18,56 +17,54 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** variable
+- **Lines (comment range):** 10-36
+- **Lines (code):** 38-64
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$config.backdrop-blur|`Number`|Backdrop blur amount used on elements/components
-|$config.backdrop-color|`Color`|Backdrop color (modal overlays, etc)
-|$config.box-shadow|`List`|Box-shadow definition for elements that are on top of page
-|$config.box-shadow-raised|`List`|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
-|$config.box-shadow-above|`List`|Box-shadow definition for elements that are above the page (fixed items, etc)
-|$config.border-radius|`Number`|Common element border radius
-|$config.border-radius-small|`Number`|Common element border radius (small)
-|$config.border-radius-large|`Number`|Common element border radius (large)
-|$config.text-shadow|`List`|Common text shadow
-|$config.margin-small|`Number`|Common element margin (small) (default for lists)
-|$config.margin|`Number`|Common element margin
-|$config.margin-large|`Number`|Common element margin (large)
-|$config.ol-list-style-type|`String`|Ordered list type (level 1)
-|$config.ol-list-style-type-2|`String`|Ordered list type (level 2)
-|$config.ol-list-style-type-3|`String`|Ordered list type (level 3)
-|$config.ul-list-style-type|`String`|
-|$config.ul-list-style-type-2|`String`|
-|$config.ul-list-style-type-3|`String`|
-|$config.link-text-decoration-default|`String`|Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)
-|$config.link-text-decoration|`String`|
-|$config.link-text-decoration-style|`String`|
-|$config.link-text-decoration-color|`Color`|
-|$config.link-text-decoration-style-hover|`String`|
-|$config.link-text-decoration-color-hover|`Color`|
-|$config.link-text-decoration-thickness|`Number`|
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.backdrop-blur|`Number`|Backdrop blur amount used on elements/components|
+|$config.backdrop-color|`Color`|Backdrop color (modal overlays, etc)|
+|$config.box-shadow|`List`|Box-shadow definition for elements that are on top of page|
+|$config.box-shadow-raised|`List`|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)|
+|$config.box-shadow-above|`List`|Box-shadow definition for elements that are above the page (fixed items, etc)|
+|$config.border-radius|`Number`|Common element border radius|
+|$config.border-radius-small|`Number`|Common element border radius (small)|
+|$config.border-radius-large|`Number`|Common element border radius (large)|
+|$config.text-shadow|`List`|Common text shadow|
+|$config.margin-small|`Number`|Common element margin (small) (default for lists)|
+|$config.margin|`Number`|Common element margin|
+|$config.margin-large|`Number`|Common element margin (large)|
+|$config.ol-list-style-type|`String`|Ordered list type (level 1)|
+|$config.ol-list-style-type-2|`String`|Ordered list type (level 2)|
+|$config.ol-list-style-type-3|`String`|Ordered list type (level 3)|
+|$config.ul-list-style-type|`String`||
+|$config.ul-list-style-type-2|`String`||
+|$config.ul-list-style-type-3|`String`||
+|$config.link-text-decoration-default|`String`|Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)|
+|$config.link-text-decoration|`String`||
+|$config.link-text-decoration-style|`String`||
+|$config.link-text-decoration-color|`Color`||
+|$config.link-text-decoration-style-hover|`String`||
+|$config.link-text-decoration-color-hover|`Color`||
+|$config.link-text-decoration-thickness|`Number`||
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 38-64
+### $rule-styles <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-rule-styles} 
 
-
-:::
-
-  
-
-
-
-
-### $rule-styles <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -75,23 +72,21 @@ Rule style map, redifine defaults or add to
     
     
 
-- **type:** `Map`
-    
-
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _element.scss
-- **Lines:** 69-72
+- **Group:** element
+- **Type:** variable
+- **Lines (comment range):** 66-67
+- **Lines (code):** 69-72
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### $rule-margins <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-rule-margins} 
 
-
-### $rule-margins <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -99,19 +94,17 @@ Common rule margins (space between rule and type)
     
     
 
-- **type:** `Map`
-    
-
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _element.scss
-- **Lines:** 77-82
+- **Group:** element
+- **Type:** variable
+- **Lines (comment range):** 74-75
+- **Lines (code):** 77-82
 
 
-:::
-
+</SassdocDetails>
   
-
   
 
 ## Mixins
@@ -119,9 +112,8 @@ Common rule margins (space between rule and type)
 
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-7} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -129,30 +121,31 @@ Change modules $config
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 84-86
+- **Lines (code):** 87-89
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
+|Name|Type|Description|
+|:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));
+  @include module-name.set(( "property" : value ));|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 87-89
+### set-rule-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-rule-styles} 
 
-
-:::
-
-  
-
-
-
-
-### set-rule-styles() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -160,29 +153,30 @@ Sets rule styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 99-100
+- **Lines (code):** 102-104
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 102-104
+### set-rule-margins() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-rule-margins} 
 
-
-:::
-
-  
-
-
-
-
-### set-rule-margins() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -190,29 +184,30 @@ Sets rule margins
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 106-107
+- **Lines (code):** 109-111
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 109-111
+### rule() <badge text="mixin" type="tip" vertical="top" />  {#mixin-rule} 
 
-
-:::
-
-  
-
-
-
-
-### rule() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -220,29 +215,30 @@ Get full rule CSS (style and margin)
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 127-128
+- **Lines (code):** 130-136
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 130-136
+### link() <badge text="mixin" type="tip" vertical="top" />  {#mixin-link} 
 
-
-:::
-
-  
-
-
-
-
-### link() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -250,30 +246,31 @@ Print link styles
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 146-148
+- **Lines (code):** 150-171
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$visited|`Boolean`|Include visited style
-|$active|`Boolean`|Include active style
+|Name|Type|Description|
+|:--|:--|:--|
+|$visited|`Boolean`|Include visited style|
+|$active|`Boolean`|Include active style|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 150-171
+### link-defaults() <badge text="mixin" type="tip" vertical="top" />  {#mixin-link-defaults} 
 
-
-:::
-
-  
-
-
-
-
-### link-defaults() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -281,20 +278,21 @@ Print the defautl link styling (no hover and focus styles)
     
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _element.scss
-- **Lines:** 175-178
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 173-173
+- **Lines (code):** 175-178
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### styles-ordered-list() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-ordered-list} 
 
-
-### styles-ordered-list() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -302,29 +300,30 @@ Print the ordered list items styling
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 180-181
+- **Lines (code):** 183-202
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$bullet-color|`Boolean`|Optional bullet color (defaults to palette 'bullet')
+|Name|Type|Description|
+|:--|:--|:--|
+|$bullet-color|`Boolean`|Optional bullet color (defaults to palette 'bullet')|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 183-202
+### styles-unordered-list() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-unordered-list} 
 
-
-:::
-
-  
-
-
-
-
-### styles-unordered-list() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -332,29 +331,30 @@ Print the unordered list items styling
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 204-205
+- **Lines (code):** 207-222
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$bullet-color|`Boolean`|Optional bullet color
+|Name|Type|Description|
+|:--|:--|:--|
+|$bullet-color|`Boolean`|Optional bullet color|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 207-222
+### hidden-visually() <badge text="mixin" type="tip" vertical="top" />  {#mixin-hidden-visually} 
 
-
-:::
-
-  
-
-
-
-
-### hidden-visually() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -362,7 +362,21 @@ Hide text for assistive devices
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comment range):** 224-229
+- **Lines (code):** 231-249
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
@@ -371,26 +385,16 @@ Hide text for assistive devices
 @include ulu.layout-hidden-visually(false)
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$hidden|`Boolean`|Defaults to true, pass false to override the hidden css (ie. on focus)
+|Name|Type|Description|
+|:--|:--|:--|
+|$hidden|`Boolean`|Defaults to true, pass false to override the hidden css (ie. on focus)|
 
     
-
-::: details More Info
-
-- **File:** _element.scss
-- **Lines:** 231-249
-
-
-:::
-
-  
-
   
 
 ## Functions
@@ -398,9 +402,8 @@ Hide text for assistive devices
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-6} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -408,30 +411,31 @@ Get a config option
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** function
+- **Lines (comment range):** 91-93
+- **Lines (code):** 95-97
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
+|Name|Type|Description|
+|:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");
+  @include module-name.get("property");|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 95-97
+### get-rule-style() <badge text="function" type="tip" vertical="top" />  {#function-get-rule-style} 
 
-
-:::
-
-  
-
-
-
-
-### get-rule-style() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -439,29 +443,30 @@ Get a rule style
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** function
+- **Lines (comment range):** 113-114
+- **Lines (code):** 116-118
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
 
-::: details More Info
 
-- **File:** _element.scss
-- **Lines:** 116-118
+### get-rule-margin() <badge text="function" type="tip" vertical="top" />  {#function-get-rule-margin} 
 
-
-:::
-
-  
-
-
-
-
-### get-rule-margin() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -469,31 +474,31 @@ Sets rule margin
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _element.scss
+- **Group:** element
+- **Type:** function
+- **Lines (comment range):** 120-121
+- **Lines (code):** 123-125
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|Map of changes
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
 
     
-
-::: details More Info
-
-- **File:** _element.scss
-- **Lines:** 123-125
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"element-variable-config","_hash":"variable-config-5","_path":"/sass/element/#variable-config-5","_previews":[]},{"_uid":"element-variable-rule-styles","_hash":"variable-rule-styles","_path":"/sass/element/#variable-rule-styles","_previews":[]},{"_uid":"element-variable-rule-margins","_hash":"variable-rule-margins","_path":"/sass/element/#variable-rule-margins","_previews":[]},{"_uid":"element-mixin-set","_hash":"mixin-set-7","_path":"/sass/element/#mixin-set-7","_previews":[]},{"_uid":"element-function-get","_hash":"function-get-6","_path":"/sass/element/#function-get-6","_previews":[]},{"_uid":"element-mixin-set-rule-styles","_hash":"mixin-set-rule-styles","_path":"/sass/element/#mixin-set-rule-styles","_previews":[]},{"_uid":"element-mixin-set-rule-margins","_hash":"mixin-set-rule-margins","_path":"/sass/element/#mixin-set-rule-margins","_previews":[]},{"_uid":"element-function-get-rule-style","_hash":"function-get-rule-style","_path":"/sass/element/#function-get-rule-style","_previews":[]},{"_uid":"element-function-get-rule-margin","_hash":"function-get-rule-margin","_path":"/sass/element/#function-get-rule-margin","_previews":[]},{"_uid":"element-mixin-rule","_hash":"mixin-rule","_path":"/sass/element/#mixin-rule","_previews":[]},{"_uid":"element-mixin-link","_hash":"mixin-link","_path":"/sass/element/#mixin-link","_previews":[]},{"_uid":"element-mixin-link-defaults","_hash":"mixin-link-defaults","_path":"/sass/element/#mixin-link-defaults","_previews":[]},{"_uid":"element-mixin-styles-ordered-list","_hash":"mixin-styles-ordered-list","_path":"/sass/element/#mixin-styles-ordered-list","_previews":[]},{"_uid":"element-mixin-styles-unordered-list","_hash":"mixin-styles-unordered-list","_path":"/sass/element/#mixin-styles-unordered-list","_previews":[]},{"_uid":"element-mixin-hidden-visually","_hash":"mixin-hidden-visually","_path":"/sass/element/#mixin-hidden-visually","_previews":[null]}]);
+const sassdocGroup = [{"_uid":"element-variable-config","_hash":"variable-config-5","_path":"/sass/element/#variable-config-5","_previews":[]},{"_uid":"element-variable-rule-styles","_hash":"variable-rule-styles","_path":"/sass/element/#variable-rule-styles","_previews":[]},{"_uid":"element-variable-rule-margins","_hash":"variable-rule-margins","_path":"/sass/element/#variable-rule-margins","_previews":[]},{"_uid":"element-mixin-set","_hash":"mixin-set-7","_path":"/sass/element/#mixin-set-7","_previews":[]},{"_uid":"element-function-get","_hash":"function-get-6","_path":"/sass/element/#function-get-6","_previews":[]},{"_uid":"element-mixin-set-rule-styles","_hash":"mixin-set-rule-styles","_path":"/sass/element/#mixin-set-rule-styles","_previews":[]},{"_uid":"element-mixin-set-rule-margins","_hash":"mixin-set-rule-margins","_path":"/sass/element/#mixin-set-rule-margins","_previews":[]},{"_uid":"element-function-get-rule-style","_hash":"function-get-rule-style","_path":"/sass/element/#function-get-rule-style","_previews":[]},{"_uid":"element-function-get-rule-margin","_hash":"function-get-rule-margin","_path":"/sass/element/#function-get-rule-margin","_previews":[]},{"_uid":"element-mixin-rule","_hash":"mixin-rule","_path":"/sass/element/#mixin-rule","_previews":[]},{"_uid":"element-mixin-link","_hash":"mixin-link","_path":"/sass/element/#mixin-link","_previews":[]},{"_uid":"element-mixin-link-defaults","_hash":"mixin-link-defaults","_path":"/sass/element/#mixin-link-defaults","_previews":[]},{"_uid":"element-mixin-styles-ordered-list","_hash":"mixin-styles-ordered-list","_path":"/sass/element/#mixin-styles-ordered-list","_previews":[]},{"_uid":"element-mixin-styles-unordered-list","_hash":"mixin-styles-unordered-list","_path":"/sass/element/#mixin-styles-unordered-list","_previews":[]},{"_uid":"element-mixin-hidden-visually","_hash":"mixin-hidden-visually","_path":"/sass/element/#mixin-hidden-visually","_previews":[null]}];
 export default {
   sassdocGroup,
   provide: {
@@ -507,5 +512,4 @@ export default {
 }
 </script> 
   
-
   

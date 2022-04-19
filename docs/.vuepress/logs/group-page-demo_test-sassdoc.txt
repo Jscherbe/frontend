@@ -8,9 +8,8 @@
 
 
 
+### before-sample() <badge text="mixin" type="tip" vertical="top" />  {#mixin-before-sample} 
 
-
-### before-sample() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -20,7 +19,21 @@ a generated element `:before` the element it is used on.
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _test-sassdocs.scss
+- **Group:** demo_test-sassdoc
+- **Type:** mixin
+- **Lines (comment range):** 85-104
+- **Lines (code):** 105-110
+
+
+</SassdocDetails>
+  
+
 #### Examples
+
+      
 
 
 ``` scss
@@ -31,15 +44,16 @@ a generated element `:before` the element it is used on.
 }
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$content|`String`|A value for the `content` property
-|$list…|`arglist`|Sass also allows arglists!
-|@content|`content block`|Any other styles that should be applied to the <code>::before</code> element
+|Name|Type|Description|
+|:--|:--|:--|
+|$content|`String`|A value for the `content` property|
+|$list…|`arglist`|Sass also allows arglists!|
+|@content|`content block`|Any other styles that should be applied to the <code>::before</code> element|
 
     
 
@@ -50,17 +64,6 @@ A <code>::before</code> pseudo-element,
   and any passed-in styled applied.
 
     
-
-::: details More Info
-
-- **File:** _test-sassdocs.scss
-- **Lines:** 105-110
-
-
-:::
-
-  
-
   
 
 ## Functions
@@ -68,9 +71,8 @@ A <code>::before</code> pseudo-element,
 
 
 
+### herman-sample() <badge text="function" type="tip" vertical="top" />  {#function-herman-sample} 
 
-
-### herman-sample() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -92,9 +94,22 @@ ferrove finis longave, pignus duros nubifer!
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _test-sassdocs.scss
+- **Group:** demo_test-sassdoc
+- **Type:** function
+- **Lines (comment range):** 3-35
+- **Lines (code):** 36-42
+- **Author:** [Miriam Suzanne](https://www.oddbird.net/authors/miriam/)
+
+</SassdocDetails>
+  
+
 #### Examples
 
-describe examples if you want...
+describe examples if you want...      
+
 
 ``` scss
 .example::before {
@@ -102,24 +117,25 @@ describe examples if you want...
 }
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$one|`number`|The first parameter is required, because no default is given
-|$two|`number`|Our second parameter defaults to the value of our first one
-|$three|`string`|Looks like this one takes a string instead
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|$one|`number`|The first parameter is required, because no default is given||
+|$two|`number`|Our second parameter defaults to the value of our first one|$one|
+|$three|`string`|Looks like this one takes a string instead|'three'|
 
     
 
 #### Returns
 
 
-|Type|Description
-|:--|:--
-|`list`|All three of the arguments in order
+|Type|Description|
+|:--|:--|
+|`list`|All three of the arguments in order|
 
     
 
@@ -147,20 +163,9 @@ describe examples if you want...
 - Add more todo items
     
 
-::: details More Info
 
-- **File:** _test-sassdocs.scss
-- **Lines:** 36-42
-- **Author:** [Miriam Suzanne](https://www.oddbird.net/authors/miriam/)
+### sample-alias() <badge text="function" type="tip" vertical="top" />  {#function-sample-alias} 
 
-:::
-
-  
-
-
-
-
-### sample-alias() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -173,20 +178,21 @@ I don't think this alias is useful anymore
 :::
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _test-sassdocs.scss
-- **Lines:** 50-52
+- **Group:** demo_test-sassdoc
+- **Type:** function
+- **Lines (comment range):** 46-49
+- **Lines (code):** 50-52
 
 
-:::
-
+</SassdocDetails>
   
 
 
+### sample-alias-two() <badge text="function" type="tip" vertical="top" />  {#function-sample-alias-two} 
 
-
-### sample-alias-two() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -199,22 +205,22 @@ Doesn't seem to work without a message
 :::
     
 
-::: details More Info
+<SassdocDetails summary="Meta Information">
 
 - **File:** _test-sassdocs.scss
-- **Lines:** 60-62
+- **Group:** demo_test-sassdoc
+- **Type:** function
+- **Lines (comment range):** 56-59
+- **Lines (code):** 60-62
 
 
-:::
-
+</SassdocDetails>
   
-
   
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"demo_test-sassdoc-css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see","_hash":"css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see","_path":"/sass/demo_test-sassdoc/#css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see","_previews":[]},{"_uid":"demo_test-sassdoc-function-herman-sample","_hash":"function-herman-sample","_path":"/sass/demo_test-sassdoc/#function-herman-sample","_previews":[null]},{"_uid":"demo_test-sassdoc-function-sample-alias","_hash":"function-sample-alias","_path":"/sass/demo_test-sassdoc/#function-sample-alias","_previews":[]},{"_uid":"demo_test-sassdoc-function-sample-alias-two","_hash":"function-sample-alias-two","_path":"/sass/demo_test-sassdoc/#function-sample-alias-two","_previews":[]},{"_uid":"demo_test-sassdoc-css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param","_hash":"css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param","_path":"/sass/demo_test-sassdoc/#css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param","_previews":[null]},{"_uid":"demo_test-sassdoc-mixin-before-sample","_hash":"mixin-before-sample","_path":"/sass/demo_test-sassdoc/#mixin-before-sample","_previews":[null]}]);
+const sassdocGroup = [{"_uid":"demo_test-sassdoc-css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see","_hash":"css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see","_path":"/sass/demo_test-sassdoc/#css-/// This is a sample function.\n/// You can actually put much more text in here,\n/// and include markdown.\n/// Lorem markdownum rapite neque loquentis pro inque; nullaque [triones\n/// promisistis](http://duabuset-tandem.com/denos) quaque. Non iura oves creatas\n/// mixta gente torum Caune. Huius sacra *corpora refert celeberrima* luctus tibi\n/// cornua, nec qui [illum poteram](http://puta-elementa.com/vocequoque), et eundi\n/// recalfecit efficiens isdem superi. Alii virginibusque vultus certa socios venae\n/// ferrove finis longave, pignus duros nubifer!\n///\n/// - Tenuatus percussae tanta iudice Hippolytus miseram inmunis\n/// - Ture Iovis holus est et vere\n/// - Domus cum quid meae erras\n/// - Quam apta fata puppis ergo solis praeteriti\n///\n/// @group demo_test-sassdoc\n/// @see","_previews":[]},{"_uid":"demo_test-sassdoc-function-herman-sample","_hash":"function-herman-sample","_path":"/sass/demo_test-sassdoc/#function-herman-sample","_previews":[null]},{"_uid":"demo_test-sassdoc-function-sample-alias","_hash":"function-sample-alias","_path":"/sass/demo_test-sassdoc/#function-sample-alias","_previews":[]},{"_uid":"demo_test-sassdoc-function-sample-alias-two","_hash":"function-sample-alias-two","_path":"/sass/demo_test-sassdoc/#function-sample-alias-two","_previews":[]},{"_uid":"demo_test-sassdoc-css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param","_hash":"css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param","_path":"/sass/demo_test-sassdoc/#css-// Mixin with Content\n// ------------------\n/// Mixins can optionally accept a @content block,\n/// passed in brackets. This example creates\n/// a generated element `:before` the element it is used on.\n/// @group demo_test-sassdoc\n/// @param","_previews":[null]},{"_uid":"demo_test-sassdoc-mixin-before-sample","_hash":"mixin-before-sample","_path":"/sass/demo_test-sassdoc/#mixin-before-sample","_previews":[null]}];
 export default {
   sassdocGroup,
   provide: {
@@ -228,5 +234,4 @@ export default {
 }
 </script> 
   
-
   

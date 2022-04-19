@@ -8,9 +8,8 @@
 
 
 
+### strip-unit() <badge text="function" type="tip" vertical="top" />  {#function-strip-unit} 
 
-
-### strip-unit() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -18,28 +17,28 @@ Strips the unit from the number
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _utility.scss
+- **Group:** utility
+- **Type:** function
+- **Lines (comment range):** 7-8
+- **Lines (code):** 10-12
+
+
+</SassdocDetails>
+  
+
 #### Related Links
 
 - [Orginal source (Miriam Suzanne)](https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841)
 
   
-
-::: details More Info
-
-- **File:** _utility.scss
-- **Lines:** 10-12
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"utility-function-strip-unit","_hash":"function-strip-unit","_path":"/sass/utility/#function-strip-unit","_previews":[]}]);
+const sassdocGroup = [{"_uid":"utility-function-strip-unit","_hash":"function-strip-unit","_path":"/sass/utility/#function-strip-unit","_previews":[]}];
 export default {
   sassdocGroup,
   provide: {
@@ -53,5 +52,4 @@ export default {
 }
 </script> 
   
-
   

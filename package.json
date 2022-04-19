@@ -33,6 +33,7 @@
   "devDependencies": {
     "documentation": "^13.2.5",
     "documentation-theme-light": "^1.1.1",
+    "markdown-it-attrs": "^4.1.3",
     "sassdoc": "^2.7.3",
     "vuepress": "^1.5.3",
     "vuepress-bar": "^0.4.4"

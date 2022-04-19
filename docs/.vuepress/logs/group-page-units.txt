@@ -8,9 +8,8 @@
 
 
 
+### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-11} 
 
-
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" /> 
 
   
 
@@ -18,33 +17,31 @@ Module Settings
     
     
 
-- **type:** `Map`
-    
+<SassdocDetails summary="Meta Information">
+
+- **File:** _units.scss
+- **Group:** units
+- **Type:** variable
+- **Lines (comment range):** 9-16
+- **Lines (code):** 18-25
+
+
+</SassdocDetails>
+  
 
 #### Map Properties
 
 
-|Name|Type
-|:--|:--
-|$config.small-x|`Number`
-|$config.small|`Number`
-|$config.default|`Number`
-|$config.large|`Number`
-|$config.large-x|`Number`
-|$config.large-xx|`Number`
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.small-x|`Number`||
+|$config.small|`Number`||
+|$config.default|`Number`|Base unit of measurent|
+|$config.large|`Number`||
+|$config.large-x|`Number`||
+|$config.large-xx|`Number`||
 
     
-
-::: details More Info
-
-- **File:** _units.scss
-- **Lines:** 18-25
-
-
-:::
-
-  
-
   
 
 ## Mixins
@@ -52,9 +49,8 @@ Module Settings
 
 
 
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-13} 
 
-
-### set() <badge text="mixin" type="tip" vertical="top" /> 
 
   
 
@@ -62,9 +58,22 @@ Update the units preset map
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _units.scss
+- **Group:** units
+- **Type:** mixin
+- **Lines (comment range):** 27-32
+- **Lines (code):** 34-36
+
+
+</SassdocDetails>
+  
+
 #### Examples
 
-Setting the error and type color
+Setting the error and type color      
+
 
 ``` scss
 @include units.set((
@@ -72,26 +81,16 @@ Setting the error and type color
 ));
 ```
   
+      
 
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$changes|`Map`|A map to merge into the color palette
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|A map to merge into the color palette|
 
     
-
-::: details More Info
-
-- **File:** _units.scss
-- **Lines:** 34-36
-
-
-:::
-
-  
-
   
 
 ## Functions
@@ -99,9 +98,8 @@ Setting the error and type color
 
 
 
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get-12} 
 
-
-### get() <badge text="function" type="tip" vertical="top" /> 
 
   
 
@@ -109,40 +107,40 @@ Get a unit by name (preset) or number (multiplier of base)
     
     
 
+<SassdocDetails summary="Meta Information">
+
+- **File:** _units.scss
+- **Group:** units
+- **Type:** function
+- **Lines (comment range):** 38-40
+- **Lines (code):** 42-47
+
+
+</SassdocDetails>
+  
+
 #### Parameters
 
 
-|Name|Type|Description
-|:--|:--|:--
-|$value|`Number|String`|if a number is passed it is used as a multiplier of the base, if a string is passed it is used to lookup a value from unit presets @see $config
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|String`|if a number is passed it is used as a multiplier of the base, if a string is passed it is used to lookup a value from unit presets @see $config|
 
     
 
 #### Returns
 
 
-|Type
-|:--
-|`Number`
+|Type|
+|:--|
+|`Number`|
 
     
-
-::: details More Info
-
-- **File:** _units.scss
-- **Lines:** 42-47
-
-
-:::
-
   
-
-  
-
 
 <script>
-console.log(undefined);
-const sassdocGroup = undefined;
+console.log([{"_uid":"units-variable-config","_hash":"variable-config-11","_path":"/sass/units/#variable-config-11","_previews":[]},{"_uid":"units-mixin-set","_hash":"mixin-set-13","_path":"/sass/units/#mixin-set-13","_previews":[null]},{"_uid":"units-function-get","_hash":"function-get-12","_path":"/sass/units/#function-get-12","_previews":[]}]);
+const sassdocGroup = [{"_uid":"units-variable-config","_hash":"variable-config-11","_path":"/sass/units/#variable-config-11","_previews":[]},{"_uid":"units-mixin-set","_hash":"mixin-set-13","_path":"/sass/units/#mixin-set-13","_previews":[null]},{"_uid":"units-function-get","_hash":"function-get-12","_path":"/sass/units/#function-get-12","_previews":[]}];
 export default {
   sassdocGroup,
   provide: {
@@ -156,5 +154,4 @@ export default {
 }
 </script> 
   
-
   

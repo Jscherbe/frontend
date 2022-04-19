@@ -7,21 +7,28 @@ const fs = require("fs");
  * - Remove extra fields that won't be used (comment ranges), try and conserve space
  */
 function simplifyData(data, options) {
+  const itemPath = item => options.itemPath(item, data, options);
   const items = data.filter(item => options.access.includes(item.access));
+  const uids = [];
+  const hashes = [];
+  const getUid = item => itemId(item, uids, true);
+  const getHash = item => itemId(item, hashes, false);
   items.forEach(item => {
-    item._uid = staticReference(item);
+    item._uid = getUid(item);
+    item._hash = getHash(item);
+    item._path = itemPath(item);
     // delete item.access;
     // delete item.commentRange;
     delete item.toJSON;
   });
   items.forEach(item => {
     if (item.usedBy) {
-      item.usedBy = item.usedBy.map(staticReference);
+      item.usedBy = item.usedBy.map(getUid);
     }
     if (item.require) {
       item.require = item.require.map(required => ({
         ...required,
-        item: staticReference(required.item)
+        item: getUid(required.item)
       }));
     }
   });
@@ -36,6 +43,20 @@ function simplifyData(data, options) {
   }, {});
 
   return groups;
+
+  function itemId(item, all, withGroup, count = 0) {
+    const { type, name } = item.context;
+    const prefix = withGroup ? `${ getGroupName(item) }-` : "";
+    const suffix = count ? `-${ count }` : ""
+    const unique = `${ prefix }${ type }-${ name }${ suffix }`;
+    // Not unique
+    if (all.includes(unique)) {
+      return itemId(item, all, withGroup, ++count);
+    } else {
+      all.push(unique);
+      return unique;
+    }
+  }
 }
 function isType(type, unknown) {
   const is = typeof unknown;
@@ -46,10 +67,7 @@ function isType(type, unknown) {
 function itemsByType(items, type) {
   return items.filter(item => item.context.type === type);
 }
-function staticReference(item) {
-  const { type, name } = item.context;
-  return `${ getGroupName(item) }--${ type }--${ name }`;
-}
+
 function getGroupName(item) {
   return item.group[0];
 }
@@ -71,7 +89,13 @@ function joinMarkup(...arrays) {
   return "\n" + [].concat(...arrays).filter(i => i).join("\n");
 }
 
+function joinStyles(styles) {
+  return Object.entries(styles).map(([prop, value]) => `${ prop }: ${ value };`).join("")
+}
+
 module.exports = { 
+  getGroupName,
+  joinStyles,
   simplifyData, 
   itemsByType, 
   titleCase, 
