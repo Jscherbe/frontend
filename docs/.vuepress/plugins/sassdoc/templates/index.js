@@ -6,6 +6,7 @@ exports.defaultTemplates = {
   script:      require("./script.js")
 };
 exports.defaultAnnotationTemplates = {
+  see:         require("./annotations/see.js"),
   require:     require("./annotations/require.js"),
   example:     require("./annotations/example.js"),
   type:        require("./annotations/type.js"),

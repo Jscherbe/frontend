@@ -155,6 +155,11 @@ describe examples if you want...
 - Add more todo items
     
 
+#### See
+
+- [sample-alias()](/sass/demo_test-sassdoc/#function-sample-alias)
+  
+
 
 ### sample-alias() <badge text="function" type="tip" vertical="top" />  {#function-sample-alias} 
 

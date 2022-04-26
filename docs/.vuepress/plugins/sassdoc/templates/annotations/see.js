@@ -1,13 +1,12 @@
-const { itemLink } = require("../../helper-templates.js");
+const { list, link } = require("../../helper-templates");
 
-// UNFINISHED 
 module.exports = ({ item }) => {
   const { see } = item.data;
-  if (see) {
-    return `
+  if (!see || !see.length) return;
+  const links = see.map(item => link(item.$item));
+  return `
 #### See
 
-${ see.map(s => `- ${ itemLink(s) }`) }
-    `;
-  }
-};
+${ list(links) }
+  `;
+}

@@ -6,6 +6,9 @@ function when(condition, value) {
 function list(array, callback = i => i) {
   return array.map(item => `- ${ callback(item) }`).join("\n");
 }
+function link({ path, title }) {
+  return`[${ title }](${ path })`;
+}
 function prefixedItemName(type, name) {
   const types = {
     "variable" : "$",
@@ -75,6 +78,7 @@ ${ markup }
 module.exports = { 
   when,
   list,
+  link,
   codeBlock, 
   vuepressCodeBlock, 
   vuepressCodeGroup,

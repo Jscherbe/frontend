@@ -1,18 +1,16 @@
-// const { joinMarkup } = require("../../utils.js");
-const { list } = require("../../helper-templates");
+const { list, link } = require("../../helper-templates");
 
 module.exports = ({ item }) => {
   const { require: requires } = item.data;
   if (!requires || !requires.length) return;
   const added = [];
   const links = requires.map(req => {
-    const { path, title } = req.item.$item;
-    const link = `[${ title }](${ path })`;
-    if (added.includes(link)) {
+    const markup = link(req.item.$item);
+    if (added.includes(markup)) {
       return;
     } else {
-      added.push(link);
-      return  link;
+      added.push(markup);
+      return markup;
     }
   }).filter(l => l);
   return `

@@ -2,27 +2,24 @@ const path = require("path");
 const parse = require("./parse.js");
 const defaults = require("./defaults.js");
 const createContent = require("./create-content.js");
-const { dataToFile, groupPagePath } = require("./utils.js");
+const { dataToFile } = require("./utils.js");
 const PLUGIN_NAME = "@ulu/vuepress-plugin-sassdoc";
 
 module.exports = userOptions => {
   // let groups;
   const options = Object.assign({}, defaults, userOptions);
+  const { addMarkdownAttrSupport } = options;
   return {
     name: PLUGIN_NAME,
+    extendMarkdown: md => {
+      // console.log(md);
+    },
     chainMarkdown: config => {
-      if (options.addMarkdownAttrSupport) {
-        // config
-        //   .plugin('anchor')
-        //     .tap(([ tappedOptions ]) => {
-        //       // Doesnt respect attrs used for id's
-        //       delete tappedOptions.slugify;
-        //       return [ tappedOptions ];
-        //     });
+      if (addMarkdownAttrSupport) {
         config
           .plugin("attrs")
             .use(require("markdown-it-attrs"))
-            .before("markdown-it-anchor");
+            .before("anchors");
       }
     },
     enhanceAppFiles: path.resolve(__dirname, "enhance-app-files.js"),
@@ -56,10 +53,7 @@ module.exports = userOptions => {
           return {
             path: groupPath,
             content: createContent({ groupName, title, group, groups, options }),
-            frontmatter: { 
-              title, 
-              sassdocGroupName: groupName 
-            }
+            frontmatter: { title, sassdocGroupName: groupName }
           };
         } catch (error) {
           console.error(`Error in ${ PLUGIN_NAME }! (creating page for ${ groupName })`, error);
@@ -71,6 +65,18 @@ module.exports = userOptions => {
       }
 
       return pages;
+    },
+    extendPageData ($page) {
+      const { headers, frontmatter } = $page;
+      // Need to fix markdown-it-attrs being included in these headers
+      // ie. mixin-name {#mixin-name} 
+      // Tried to rearrange the markdown plugins (no luck)
+      // Editing manually becuase it's the only workaround I've found
+      if (frontmatter.sassdocGroupName && addMarkdownAttrSupport && headers) {
+        $page.headers.forEach(header => {
+          header.title = header.title.replace(/{#[^\n ]*}/g, "");
+        });
+      }
     }
   }
 }
