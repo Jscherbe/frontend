@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-8} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -48,8 +47,7 @@ Module Settings
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-10} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -79,9 +77,13 @@ Change modules $config
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### match-container-padding() <badge text="mixin" type="tip" vertical="top" />  {#mixin-match-container-padding} 
-
 
   
 
@@ -102,9 +104,13 @@ ie. { top: $containers-padding; }
 </SassdocDetails>
   
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### clearfix() <badge text="mixin" type="tip" vertical="top" />  {#mixin-clearfix} 
-
 
   
 
@@ -130,8 +136,7 @@ Prints clearfix styles
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-9} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -160,11 +165,17 @@ Get a config option
   @include module-name.get("property");|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"layout-variable-config","_hash":"variable-config-8","_path":"/sass/layout/#variable-config-8","_previews":[]},{"_uid":"layout-mixin-set","_hash":"mixin-set-10","_path":"/sass/layout/#mixin-set-10","_previews":[]},{"_uid":"layout-function-get","_hash":"function-get-9","_path":"/sass/layout/#function-get-9","_previews":[]},{"_uid":"layout-mixin-match-container-padding","_hash":"mixin-match-container-padding","_path":"/sass/layout/#mixin-match-container-padding","_previews":[]},{"_uid":"layout-mixin-clearfix","_hash":"mixin-clearfix","_path":"/sass/layout/#mixin-clearfix","_previews":[]}]);
-const sassdocGroup = [{"_uid":"layout-variable-config","_hash":"variable-config-8","_path":"/sass/layout/#variable-config-8","_previews":[]},{"_uid":"layout-mixin-set","_hash":"mixin-set-10","_path":"/sass/layout/#mixin-set-10","_previews":[]},{"_uid":"layout-function-get","_hash":"function-get-9","_path":"/sass/layout/#function-get-9","_previews":[]},{"_uid":"layout-mixin-match-container-padding","_hash":"mixin-match-container-padding","_path":"/sass/layout/#mixin-match-container-padding","_previews":[]},{"_uid":"layout-mixin-clearfix","_hash":"mixin-clearfix","_path":"/sass/layout/#mixin-clearfix","_previews":[]}];
+console.log([{"groupName":"layout","id":"variable-config","uid":"layout-variable-config","title":"$config","groupPath":"/sass/layout/","path":"/sass/layout/#variable-config","previews":[]},{"groupName":"layout","id":"mixin-set","uid":"layout-mixin-set","title":"set()","groupPath":"/sass/layout/","path":"/sass/layout/#mixin-set","previews":[]},{"groupName":"layout","id":"function-get","uid":"layout-function-get","title":"get()","groupPath":"/sass/layout/","path":"/sass/layout/#function-get","previews":[]},{"groupName":"layout","id":"mixin-match-container-padding","uid":"layout-mixin-match-container-padding","title":"match-container-padding()","groupPath":"/sass/layout/","path":"/sass/layout/#mixin-match-container-padding","previews":[]},{"groupName":"layout","id":"mixin-clearfix","uid":"layout-mixin-clearfix","title":"clearfix()","groupPath":"/sass/layout/","path":"/sass/layout/#mixin-clearfix","previews":[]}]);
+const sassdocGroup = [{"groupName":"layout","id":"variable-config","uid":"layout-variable-config","title":"$config","groupPath":"/sass/layout/","path":"/sass/layout/#variable-config","previews":[]},{"groupName":"layout","id":"mixin-set","uid":"layout-mixin-set","title":"set()","groupPath":"/sass/layout/","path":"/sass/layout/#mixin-set","previews":[]},{"groupName":"layout","id":"function-get","uid":"layout-function-get","title":"get()","groupPath":"/sass/layout/","path":"/sass/layout/#function-get","previews":[]},{"groupName":"layout","id":"mixin-match-container-padding","uid":"layout-mixin-match-container-padding","title":"match-container-padding()","groupPath":"/sass/layout/","path":"/sass/layout/#mixin-match-container-padding","previews":[]},{"groupName":"layout","id":"mixin-clearfix","uid":"layout-mixin-clearfix","title":"clearfix()","groupPath":"/sass/layout/","path":"/sass/layout/#mixin-clearfix","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

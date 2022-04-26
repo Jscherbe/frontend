@@ -8,10 +8,7 @@
 
 
 
-### $aliases <badge text="variable" type="tip" vertical="top" /><badge text="Map
-- Important: alias could be used for directory or file so omit trailing slash for directories
-- All aliases must start with "#"" type="warn" vertical="top" />  {#variable-aliases} 
-
+### $aliases <badge text="variable" type="tip" vertical="top" />  {#variable-aliases} 
 
   
 
@@ -39,7 +36,6 @@ Aliases
 
 ### set-aliases() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-aliases} 
 
-
   
 
 Set aliases or change defaults
@@ -66,6 +62,11 @@ Set aliases or change defaults
 |$changes|`Map`|Map of changes|
 
     
+
+#### Require
+
+- [$aliases](/sass/path/#variable-aliases)
+  
   
 
 ## Functions
@@ -74,7 +75,6 @@ Set aliases or change defaults
 
 
 ### get-alias() <badge text="function" type="tip" vertical="top" />  {#function-get-alias} 
-
 
   
 
@@ -103,9 +103,14 @@ Get an aliase's path
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [$aliases](/sass/path/#variable-aliases)
+  
+
 
 ### resolve() <badge text="function" type="tip" vertical="top" />  {#function-resolve} 
-
 
   
 
@@ -140,11 +145,16 @@ Resolves a Path
 ```
   
       
+
+#### Require
+
+- [get-alias()](/sass/path/#function-get-alias)
+  
   
 
 <script>
-console.log([{"_uid":"path-variable-aliases","_hash":"variable-aliases","_path":"/sass/path/#variable-aliases","_previews":[]},{"_uid":"path-mixin-set-aliases","_hash":"mixin-set-aliases","_path":"/sass/path/#mixin-set-aliases","_previews":[]},{"_uid":"path-function-get-alias","_hash":"function-get-alias","_path":"/sass/path/#function-get-alias","_previews":[]},{"_uid":"path-function-resolve","_hash":"function-resolve","_path":"/sass/path/#function-resolve","_previews":[null]}]);
-const sassdocGroup = [{"_uid":"path-variable-aliases","_hash":"variable-aliases","_path":"/sass/path/#variable-aliases","_previews":[]},{"_uid":"path-mixin-set-aliases","_hash":"mixin-set-aliases","_path":"/sass/path/#mixin-set-aliases","_previews":[]},{"_uid":"path-function-get-alias","_hash":"function-get-alias","_path":"/sass/path/#function-get-alias","_previews":[]},{"_uid":"path-function-resolve","_hash":"function-resolve","_path":"/sass/path/#function-resolve","_previews":[null]}];
+console.log([{"groupName":"path","id":"variable-aliases","uid":"path-variable-aliases","title":"$aliases","groupPath":"/sass/path/","path":"/sass/path/#variable-aliases","previews":[]},{"groupName":"path","id":"mixin-set-aliases","uid":"path-mixin-set-aliases","title":"set-aliases()","groupPath":"/sass/path/","path":"/sass/path/#mixin-set-aliases","previews":[]},{"groupName":"path","id":"function-get-alias","uid":"path-function-get-alias","title":"get-alias()","groupPath":"/sass/path/","path":"/sass/path/#function-get-alias","previews":[]},{"groupName":"path","id":"function-resolve","uid":"path-function-resolve","title":"resolve()","groupPath":"/sass/path/","path":"/sass/path/#function-resolve","previews":[null]}]);
+const sassdocGroup = [{"groupName":"path","id":"variable-aliases","uid":"path-variable-aliases","title":"$aliases","groupPath":"/sass/path/","path":"/sass/path/#variable-aliases","previews":[]},{"groupName":"path","id":"mixin-set-aliases","uid":"path-mixin-set-aliases","title":"set-aliases()","groupPath":"/sass/path/","path":"/sass/path/#mixin-set-aliases","previews":[]},{"groupName":"path","id":"function-get-alias","uid":"path-function-get-alias","title":"get-alias()","groupPath":"/sass/path/","path":"/sass/path/#function-get-alias","previews":[]},{"groupName":"path","id":"function-resolve","uid":"path-function-resolve","title":"resolve()","groupPath":"/sass/path/","path":"/sass/path/#function-resolve","previews":[null]}];
 export default {
   sassdocGroup,
   provide: {

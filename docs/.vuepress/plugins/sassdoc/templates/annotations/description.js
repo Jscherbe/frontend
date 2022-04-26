@@ -1,7 +1,8 @@
 module.exports = ({ item }) => {
-  if (item.description) {
+  const { description } = item.data;
+  if (description) {
     return `
-${ item.description }    
+${ description }    
     `;
   }
 }

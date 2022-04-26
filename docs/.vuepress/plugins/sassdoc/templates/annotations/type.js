@@ -1,7 +1,8 @@
 module.exports = ({ item }) => {
-  if (item.type) {
+  const { type } = item.data;
+  if (type) {
     return `
-**type:** \`${ item.type }\`
+**type:** \`${ type }\`
     `;
   }
 }

@@ -7,8 +7,8 @@ const config = {
            data;
   }
 }
-module.exports = ({ item, options }) => {
-  const { parameter, content } = item;
+module.exports = ({ item }) => {
+  const { parameter, content } = item.data;
   if (parameter) {
     const rows = [ ...parameter ];
     if (content) {
@@ -23,27 +23,6 @@ module.exports = ({ item, options }) => {
 
 ${ propertyTable(rows, config) }
 
-    `
+    `;
   }
 }
-
-
-// if (type === "variable") {
-
-  // }
-  // $codeBlocks = [
-  //   vuepressCodeBlock(`${ options.displayItemPath(item.file.path) }` , "txt", "File Location"),
-  // ];
-  // const { code, value, line } = item.context;
-
-//   const addLines = markup => `
-// // ${ line.start }
-// ${ markup }
-// // ${ line.end }
-//   `;
-  // if (code) {
-  //   $codeBlocks.push(vuepressCodeBlock(addLines(`{ ${ code } }`), "scss", "Code From File"));
-  // }
-  // if (value) {
-  //   $codeBlocks.push(vuepressCodeBlock(addLines(value), "scss", "SCSS"));
-  // }

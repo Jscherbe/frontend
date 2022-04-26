@@ -8,8 +8,7 @@
 
 
 
-### $test <badge text="variable" type="tip" vertical="top" /><badge text="Boolean" type="warn" vertical="top" />  {#variable-test} 
-
+### $test <badge text="variable" type="tip" vertical="top" />  {#variable-test} 
 
   
 
@@ -30,8 +29,7 @@ Test
   
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-12} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -67,8 +65,7 @@ Module Settings
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-14} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -108,9 +105,13 @@ General example, replace module-name with module's name
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### require-list-has() <badge text="mixin" type="tip" vertical="top" />  {#mixin-require-list-has} 
-
 
   
 
@@ -144,7 +145,6 @@ Ensure a value is present in the list, throw an error if not found
 
 ### require-list-contains() <badge text="mixin" type="tip" vertical="top" />  {#mixin-require-list-contains} 
 
-
   
 
 Require that the list only is only made up of allowed items
@@ -173,9 +173,13 @@ Require that the list only is only made up of allowed items
 
     
 
+#### Require
+
+- [require-list-has()](/sass/utils/#mixin-require-list-has)
+  
+
 
 ### file-header() <badge text="mixin" type="tip" vertical="top" />  {#mixin-file-header} 
-
 
   
 
@@ -211,8 +215,7 @@ Returns true if we should include something (used for output checking)
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-13} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -252,9 +255,14 @@ General example, replace module-name with module's name
 
     
 
+#### Require
+
+- [require-map-get()](/sass/utils/#function-require-map-get)
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### require-map-get() <badge text="function" type="tip" vertical="top" />  {#function-require-map-get} 
-
 
   
 
@@ -295,9 +303,13 @@ Get a required value from a map, throw an error if not found
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### included() <badge text="function" type="tip" vertical="top" />  {#function-included} 
-
 
   
 
@@ -327,9 +339,13 @@ Returns true if we should include something (map of booleans)
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### if-type() <badge text="function" type="tip" vertical="top" />  {#function-if-type} 
-
 
   
 
@@ -358,7 +374,6 @@ Returns true if we should include something (map of booleans)
 
 
 ### number-info() <badge text="function" type="tip" vertical="top" />  {#function-number-info} 
-
 
   
 
@@ -395,7 +410,6 @@ Returns true if we should include something (map of booleans)
 
 ### map-merge-or-overwrite() <badge text="function" type="tip" vertical="top" />  {#function-map-merge-or-overwrite} 
 
-
   
 
 Repeatable pattern in core
@@ -416,7 +430,6 @@ Repeatable pattern in core
 
 
 ### function-fallback() <badge text="function" type="tip" vertical="top" />  {#function-function-fallback} 
-
 
   
 
@@ -455,11 +468,16 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 |`*`|The user's original value, or if the value is true get the default value from the provided function|
 
     
+
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
   
 
 <script>
-console.log([{"_uid":"utils-variable-test","_hash":"variable-test","_path":"/sass/utils/#variable-test","_previews":[]},{"_uid":"utils-variable-config","_hash":"variable-config-12","_path":"/sass/utils/#variable-config-12","_previews":[]},{"_uid":"utils-mixin-set","_hash":"mixin-set-14","_path":"/sass/utils/#mixin-set-14","_previews":[null]},{"_uid":"utils-function-get","_hash":"function-get-13","_path":"/sass/utils/#function-get-13","_previews":[null]},{"_uid":"utils-function-require-map-get","_hash":"function-require-map-get","_path":"/sass/utils/#function-require-map-get","_previews":[]},{"_uid":"utils-mixin-require-list-has","_hash":"mixin-require-list-has","_path":"/sass/utils/#mixin-require-list-has","_previews":[]},{"_uid":"utils-mixin-require-list-contains","_hash":"mixin-require-list-contains","_path":"/sass/utils/#mixin-require-list-contains","_previews":[]},{"_uid":"utils-function-included","_hash":"function-included","_path":"/sass/utils/#function-included","_previews":[]},{"_uid":"utils-mixin-file-header","_hash":"mixin-file-header","_path":"/sass/utils/#mixin-file-header","_previews":[]},{"_uid":"utils-function-if-type","_hash":"function-if-type","_path":"/sass/utils/#function-if-type","_previews":[]},{"_uid":"utils-function-number-info","_hash":"function-number-info","_path":"/sass/utils/#function-number-info","_previews":[]},{"_uid":"utils-function-map-merge-or-overwrite","_hash":"function-map-merge-or-overwrite","_path":"/sass/utils/#function-map-merge-or-overwrite","_previews":[]},{"_uid":"utils-function-function-fallback","_hash":"function-function-fallback","_path":"/sass/utils/#function-function-fallback","_previews":[]}]);
-const sassdocGroup = [{"_uid":"utils-variable-test","_hash":"variable-test","_path":"/sass/utils/#variable-test","_previews":[]},{"_uid":"utils-variable-config","_hash":"variable-config-12","_path":"/sass/utils/#variable-config-12","_previews":[]},{"_uid":"utils-mixin-set","_hash":"mixin-set-14","_path":"/sass/utils/#mixin-set-14","_previews":[null]},{"_uid":"utils-function-get","_hash":"function-get-13","_path":"/sass/utils/#function-get-13","_previews":[null]},{"_uid":"utils-function-require-map-get","_hash":"function-require-map-get","_path":"/sass/utils/#function-require-map-get","_previews":[]},{"_uid":"utils-mixin-require-list-has","_hash":"mixin-require-list-has","_path":"/sass/utils/#mixin-require-list-has","_previews":[]},{"_uid":"utils-mixin-require-list-contains","_hash":"mixin-require-list-contains","_path":"/sass/utils/#mixin-require-list-contains","_previews":[]},{"_uid":"utils-function-included","_hash":"function-included","_path":"/sass/utils/#function-included","_previews":[]},{"_uid":"utils-mixin-file-header","_hash":"mixin-file-header","_path":"/sass/utils/#mixin-file-header","_previews":[]},{"_uid":"utils-function-if-type","_hash":"function-if-type","_path":"/sass/utils/#function-if-type","_previews":[]},{"_uid":"utils-function-number-info","_hash":"function-number-info","_path":"/sass/utils/#function-number-info","_previews":[]},{"_uid":"utils-function-map-merge-or-overwrite","_hash":"function-map-merge-or-overwrite","_path":"/sass/utils/#function-map-merge-or-overwrite","_previews":[]},{"_uid":"utils-function-function-fallback","_hash":"function-function-fallback","_path":"/sass/utils/#function-function-fallback","_previews":[]}];
+console.log([{"groupName":"utils","id":"variable-test","uid":"utils-variable-test","title":"$test","groupPath":"/sass/utils/","path":"/sass/utils/#variable-test","previews":[]},{"groupName":"utils","id":"variable-config","uid":"utils-variable-config","title":"$config","groupPath":"/sass/utils/","path":"/sass/utils/#variable-config","previews":[]},{"groupName":"utils","id":"mixin-set","uid":"utils-mixin-set","title":"set()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-set","previews":[null]},{"groupName":"utils","id":"function-get","uid":"utils-function-get","title":"get()","groupPath":"/sass/utils/","path":"/sass/utils/#function-get","previews":[null]},{"groupName":"utils","id":"function-require-map-get","uid":"utils-function-require-map-get","title":"require-map-get()","groupPath":"/sass/utils/","path":"/sass/utils/#function-require-map-get","previews":[]},{"groupName":"utils","id":"mixin-require-list-has","uid":"utils-mixin-require-list-has","title":"require-list-has()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-require-list-has","previews":[]},{"groupName":"utils","id":"mixin-require-list-contains","uid":"utils-mixin-require-list-contains","title":"require-list-contains()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-require-list-contains","previews":[]},{"groupName":"utils","id":"function-included","uid":"utils-function-included","title":"included()","groupPath":"/sass/utils/","path":"/sass/utils/#function-included","previews":[]},{"groupName":"utils","id":"mixin-file-header","uid":"utils-mixin-file-header","title":"file-header()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-file-header","previews":[]},{"groupName":"utils","id":"function-if-type","uid":"utils-function-if-type","title":"if-type()","groupPath":"/sass/utils/","path":"/sass/utils/#function-if-type","previews":[]},{"groupName":"utils","id":"function-number-info","uid":"utils-function-number-info","title":"number-info()","groupPath":"/sass/utils/","path":"/sass/utils/#function-number-info","previews":[]},{"groupName":"utils","id":"function-map-merge-or-overwrite","uid":"utils-function-map-merge-or-overwrite","title":"map-merge-or-overwrite()","groupPath":"/sass/utils/","path":"/sass/utils/#function-map-merge-or-overwrite","previews":[]},{"groupName":"utils","id":"function-function-fallback","uid":"utils-function-function-fallback","title":"function-fallback()","groupPath":"/sass/utils/","path":"/sass/utils/#function-function-fallback","previews":[]}]);
+const sassdocGroup = [{"groupName":"utils","id":"variable-test","uid":"utils-variable-test","title":"$test","groupPath":"/sass/utils/","path":"/sass/utils/#variable-test","previews":[]},{"groupName":"utils","id":"variable-config","uid":"utils-variable-config","title":"$config","groupPath":"/sass/utils/","path":"/sass/utils/#variable-config","previews":[]},{"groupName":"utils","id":"mixin-set","uid":"utils-mixin-set","title":"set()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-set","previews":[null]},{"groupName":"utils","id":"function-get","uid":"utils-function-get","title":"get()","groupPath":"/sass/utils/","path":"/sass/utils/#function-get","previews":[null]},{"groupName":"utils","id":"function-require-map-get","uid":"utils-function-require-map-get","title":"require-map-get()","groupPath":"/sass/utils/","path":"/sass/utils/#function-require-map-get","previews":[]},{"groupName":"utils","id":"mixin-require-list-has","uid":"utils-mixin-require-list-has","title":"require-list-has()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-require-list-has","previews":[]},{"groupName":"utils","id":"mixin-require-list-contains","uid":"utils-mixin-require-list-contains","title":"require-list-contains()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-require-list-contains","previews":[]},{"groupName":"utils","id":"function-included","uid":"utils-function-included","title":"included()","groupPath":"/sass/utils/","path":"/sass/utils/#function-included","previews":[]},{"groupName":"utils","id":"mixin-file-header","uid":"utils-mixin-file-header","title":"file-header()","groupPath":"/sass/utils/","path":"/sass/utils/#mixin-file-header","previews":[]},{"groupName":"utils","id":"function-if-type","uid":"utils-function-if-type","title":"if-type()","groupPath":"/sass/utils/","path":"/sass/utils/#function-if-type","previews":[]},{"groupName":"utils","id":"function-number-info","uid":"utils-function-number-info","title":"number-info()","groupPath":"/sass/utils/","path":"/sass/utils/#function-number-info","previews":[]},{"groupName":"utils","id":"function-map-merge-or-overwrite","uid":"utils-function-map-merge-or-overwrite","title":"map-merge-or-overwrite()","groupPath":"/sass/utils/","path":"/sass/utils/#function-map-merge-or-overwrite","previews":[]},{"groupName":"utils","id":"function-function-fallback","uid":"utils-function-function-fallback","title":"function-fallback()","groupPath":"/sass/utils/","path":"/sass/utils/#function-function-fallback","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

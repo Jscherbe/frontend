@@ -14,7 +14,7 @@
       }
     },
     mounted() {
-      console.log(this.getSassdocItem(this.uid));
+      // console.log(this.getSassdocItem(this.uid));
     }
   }
 </script>

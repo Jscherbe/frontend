@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-4} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -46,7 +45,6 @@ Module Settings
 
 
 ### component-button-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-component-button-styles} 
-
 
   
 
@@ -88,9 +86,16 @@ Prints button component styles
   
       
 
+#### Require
+
+- [class()](undefined)
+- [get()](/sass/base/#function-get)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+- [$styles](/sass/button/#variable-styles)
+  
+
 
 ### component-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-component-styles} 
-
 
   
 
@@ -130,9 +135,13 @@ Prints all Components styles
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### component-links-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-component-links-styles} 
-
 
   
 
@@ -165,9 +174,13 @@ Link compontent styles (.link)
   
       
 
+#### Require
 
-### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-1} 
+- [class()](undefined)
+  
 
+
+### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles} 
 
   
 
@@ -187,9 +200,14 @@ Output styles
 </SassdocDetails>
   
 
+#### Require
 
-### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-2} 
+- [class()](undefined)
+- [get()](/sass/base/#function-get)
+  
 
+
+### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-1} 
 
   
 
@@ -209,9 +227,14 @@ Output styles
 </SassdocDetails>
   
 
+#### Require
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-6} 
+- [get-rule-style()](undefined)
+- [get()](/sass/base/#function-get)
+  
 
+
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -251,9 +274,13 @@ General example, replace module-name with module's name
 
     
 
+#### Require
 
-### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-3} 
+- [$config](/sass/base/#variable-config)
+  
 
+
+### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-2} 
 
   
 
@@ -272,6 +299,14 @@ Output styles
 
 </SassdocDetails>
   
+
+#### Require
+
+- [class()](undefined)
+- [get()](/sass/base/#function-get)
+- [$rule-styles](undefined)
+- [$rule-margins](undefined)
+  
   
 
 ## Functions
@@ -279,8 +314,7 @@ Output styles
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-5} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -319,11 +353,17 @@ General example, replace module-name with module's name
 |$name|`Map`|Name of property|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"components-mixin-component-button-styles","_hash":"mixin-component-button-styles","_path":"/sass/components/#mixin-component-button-styles","_previews":[null,{"type":"html","code":"<a class=\"button\" href=\"#\">Button Default</a>"}]},{"_uid":"components-mixin-component-styles","_hash":"mixin-component-styles","_path":"/sass/components/#mixin-component-styles","_previews":[null]},{"_uid":"components-mixin-component-links-styles","_hash":"mixin-component-links-styles","_path":"/sass/components/#mixin-component-links-styles","_previews":[null]},{"_uid":"components-mixin-styles","_hash":"mixin-styles-1","_path":"/sass/components/#mixin-styles-1","_previews":[]},{"_uid":"components-mixin-styles-1","_hash":"mixin-styles-2","_path":"/sass/components/#mixin-styles-2","_previews":[]},{"_uid":"components-variable-config","_hash":"variable-config-4","_path":"/sass/components/#variable-config-4","_previews":[]},{"_uid":"components-mixin-set","_hash":"mixin-set-6","_path":"/sass/components/#mixin-set-6","_previews":[null]},{"_uid":"components-function-get","_hash":"function-get-5","_path":"/sass/components/#function-get-5","_previews":[null]},{"_uid":"components-mixin-styles-2","_hash":"mixin-styles-3","_path":"/sass/components/#mixin-styles-3","_previews":[]}]);
-const sassdocGroup = [{"_uid":"components-mixin-component-button-styles","_hash":"mixin-component-button-styles","_path":"/sass/components/#mixin-component-button-styles","_previews":[null,{"type":"html","code":"<a class=\"button\" href=\"#\">Button Default</a>"}]},{"_uid":"components-mixin-component-styles","_hash":"mixin-component-styles","_path":"/sass/components/#mixin-component-styles","_previews":[null]},{"_uid":"components-mixin-component-links-styles","_hash":"mixin-component-links-styles","_path":"/sass/components/#mixin-component-links-styles","_previews":[null]},{"_uid":"components-mixin-styles","_hash":"mixin-styles-1","_path":"/sass/components/#mixin-styles-1","_previews":[]},{"_uid":"components-mixin-styles-1","_hash":"mixin-styles-2","_path":"/sass/components/#mixin-styles-2","_previews":[]},{"_uid":"components-variable-config","_hash":"variable-config-4","_path":"/sass/components/#variable-config-4","_previews":[]},{"_uid":"components-mixin-set","_hash":"mixin-set-6","_path":"/sass/components/#mixin-set-6","_previews":[null]},{"_uid":"components-function-get","_hash":"function-get-5","_path":"/sass/components/#function-get-5","_previews":[null]},{"_uid":"components-mixin-styles-2","_hash":"mixin-styles-3","_path":"/sass/components/#mixin-styles-3","_previews":[]}];
+console.log([{"groupName":"components","id":"mixin-component-button-styles","uid":"components-mixin-component-button-styles","title":"component-button-styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-component-button-styles","previews":[null,{"type":"html","code":"<a class=\"button\" href=\"#\">Button Default</a>"}]},{"groupName":"components","id":"mixin-component-styles","uid":"components-mixin-component-styles","title":"component-styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-component-styles","previews":[null]},{"groupName":"components","id":"mixin-component-links-styles","uid":"components-mixin-component-links-styles","title":"component-links-styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-component-links-styles","previews":[null]},{"groupName":"components","id":"mixin-styles","uid":"components-mixin-styles","title":"styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-styles","previews":[]},{"groupName":"components","id":"mixin-styles-1","uid":"components-mixin-styles-1","title":"styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-styles-1","previews":[]},{"groupName":"components","id":"variable-config","uid":"components-variable-config","title":"$config","groupPath":"/sass/components/","path":"/sass/components/#variable-config","previews":[]},{"groupName":"components","id":"mixin-set","uid":"components-mixin-set","title":"set()","groupPath":"/sass/components/","path":"/sass/components/#mixin-set","previews":[null]},{"groupName":"components","id":"function-get","uid":"components-function-get","title":"get()","groupPath":"/sass/components/","path":"/sass/components/#function-get","previews":[null]},{"groupName":"components","id":"mixin-styles-2","uid":"components-mixin-styles-2","title":"styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-styles-2","previews":[]}]);
+const sassdocGroup = [{"groupName":"components","id":"mixin-component-button-styles","uid":"components-mixin-component-button-styles","title":"component-button-styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-component-button-styles","previews":[null,{"type":"html","code":"<a class=\"button\" href=\"#\">Button Default</a>"}]},{"groupName":"components","id":"mixin-component-styles","uid":"components-mixin-component-styles","title":"component-styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-component-styles","previews":[null]},{"groupName":"components","id":"mixin-component-links-styles","uid":"components-mixin-component-links-styles","title":"component-links-styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-component-links-styles","previews":[null]},{"groupName":"components","id":"mixin-styles","uid":"components-mixin-styles","title":"styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-styles","previews":[]},{"groupName":"components","id":"mixin-styles-1","uid":"components-mixin-styles-1","title":"styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-styles-1","previews":[]},{"groupName":"components","id":"variable-config","uid":"components-variable-config","title":"$config","groupPath":"/sass/components/","path":"/sass/components/#variable-config","previews":[]},{"groupName":"components","id":"mixin-set","uid":"components-mixin-set","title":"set()","groupPath":"/sass/components/","path":"/sass/components/#mixin-set","previews":[null]},{"groupName":"components","id":"function-get","uid":"components-function-get","title":"get()","groupPath":"/sass/components/","path":"/sass/components/#function-get","previews":[null]},{"groupName":"components","id":"mixin-styles-2","uid":"components-mixin-styles-2","title":"styles()","groupPath":"/sass/components/","path":"/sass/components/#mixin-styles-2","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

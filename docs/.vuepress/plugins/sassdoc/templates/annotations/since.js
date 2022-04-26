@@ -1,10 +1,11 @@
 const { list } = require("../../helper-templates.js");
 module.exports = ({ item }) => {
-  if (item.since) {
+  const { since } = item.data;
+  if (since) {
     return `
 #### Since
 
-${ list(item.since, s => `\`${ s.version }\` - ${ s.description }`) }
+${ list(since, s => `\`${ s.version }\` - ${ s.description }`) }
 
     `;
   }

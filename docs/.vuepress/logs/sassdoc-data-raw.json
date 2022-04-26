@@ -1,5 +1,59 @@
 [
   {
+    "description": "This item will have:\n`@group API` and `@author Kitty Giraudel`\ninherited from the poster.\n",
+    "commentRange": {
+      "start": 8,
+      "end": 10
+    },
+    "context": {
+      "type": "function",
+      "name": "dummy-function",
+      "code": "\n  // ...\n",
+      "line": {
+        "start": 11,
+        "end": 13
+      }
+    },
+    "group": [
+      "api"
+    ],
+    "author": [
+      "Kitty Giraudel"
+    ],
+    "access": "public",
+    "file": {
+      "path": "sassdoc_test_poster.scss",
+      "name": "sassdoc_test_poster.scss"
+    }
+  },
+  {
+    "description": "This item overrides the `@author` annotation\nfrom the poster; it's not merged with it.\n",
+    "commentRange": {
+      "start": 15,
+      "end": 17
+    },
+    "context": {
+      "type": "mixin",
+      "name": "dummy-mixin",
+      "code": "\n  // ...\n",
+      "line": {
+        "start": 18,
+        "end": 20
+      }
+    },
+    "author": [
+      "Fabrice Weinberg"
+    ],
+    "group": [
+      "api"
+    ],
+    "access": "public",
+    "file": {
+      "path": "sassdoc_test_poster.scss",
+      "name": "sassdoc_test_poster.scss"
+    }
+  },
+  {
     "description": "Prints color-context styles as base classes (top of stylesheet)\n",
     "commentRange": {
       "start": 8,

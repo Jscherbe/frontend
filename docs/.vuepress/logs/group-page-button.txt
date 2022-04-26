@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-2} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -30,8 +29,7 @@ Module Settings
   
 
 
-### $sizes <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-sizes-1} 
-
+### $sizes <badge text="variable" type="tip" vertical="top" />  {#variable-sizes} 
 
   
 
@@ -52,8 +50,7 @@ Button sizes
   
 
 
-### $styles <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-styles} 
-
+### $styles <badge text="variable" type="tip" vertical="top" />  {#variable-styles} 
 
   
 
@@ -79,8 +76,7 @@ Button styles
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-3} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -119,6 +115,11 @@ General example, replace module-name with module's name
 |$changes|`Map`|Map of changes|
 
     
+
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
   
 
 ## Functions
@@ -126,8 +127,7 @@ General example, replace module-name with module's name
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-2} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -166,11 +166,18 @@ General example, replace module-name with module's name
 |$name|`Map`|Name of property|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [function-fallback()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"button-variable-config","_hash":"variable-config-2","_path":"/sass/button/#variable-config-2","_previews":[]},{"_uid":"button-variable-sizes","_hash":"variable-sizes-1","_path":"/sass/button/#variable-sizes-1","_previews":[]},{"_uid":"button-variable-styles","_hash":"variable-styles","_path":"/sass/button/#variable-styles","_previews":[]},{"_uid":"button-mixin-set","_hash":"mixin-set-3","_path":"/sass/button/#mixin-set-3","_previews":[null]},{"_uid":"button-function-get","_hash":"function-get-2","_path":"/sass/button/#function-get-2","_previews":[null]}]);
-const sassdocGroup = [{"_uid":"button-variable-config","_hash":"variable-config-2","_path":"/sass/button/#variable-config-2","_previews":[]},{"_uid":"button-variable-sizes","_hash":"variable-sizes-1","_path":"/sass/button/#variable-sizes-1","_previews":[]},{"_uid":"button-variable-styles","_hash":"variable-styles","_path":"/sass/button/#variable-styles","_previews":[]},{"_uid":"button-mixin-set","_hash":"mixin-set-3","_path":"/sass/button/#mixin-set-3","_previews":[null]},{"_uid":"button-function-get","_hash":"function-get-2","_path":"/sass/button/#function-get-2","_previews":[null]}];
+console.log([{"groupName":"button","id":"variable-config","uid":"button-variable-config","title":"$config","groupPath":"/sass/button/","path":"/sass/button/#variable-config","previews":[]},{"groupName":"button","id":"variable-sizes","uid":"button-variable-sizes","title":"$sizes","groupPath":"/sass/button/","path":"/sass/button/#variable-sizes","previews":[]},{"groupName":"button","id":"variable-styles","uid":"button-variable-styles","title":"$styles","groupPath":"/sass/button/","path":"/sass/button/#variable-styles","previews":[]},{"groupName":"button","id":"mixin-set","uid":"button-mixin-set","title":"set()","groupPath":"/sass/button/","path":"/sass/button/#mixin-set","previews":[null]},{"groupName":"button","id":"function-get","uid":"button-function-get","title":"get()","groupPath":"/sass/button/","path":"/sass/button/#function-get","previews":[null]}]);
+const sassdocGroup = [{"groupName":"button","id":"variable-config","uid":"button-variable-config","title":"$config","groupPath":"/sass/button/","path":"/sass/button/#variable-config","previews":[]},{"groupName":"button","id":"variable-sizes","uid":"button-variable-sizes","title":"$sizes","groupPath":"/sass/button/","path":"/sass/button/#variable-sizes","previews":[]},{"groupName":"button","id":"variable-styles","uid":"button-variable-styles","title":"$styles","groupPath":"/sass/button/","path":"/sass/button/#variable-styles","previews":[]},{"groupName":"button","id":"mixin-set","uid":"button-mixin-set","title":"set()","groupPath":"/sass/button/","path":"/sass/button/#mixin-set","previews":[null]},{"groupName":"button","id":"function-get","uid":"button-function-get","title":"get()","groupPath":"/sass/button/","path":"/sass/button/#function-get","previews":[null]}];
 export default {
   sassdocGroup,
   provide: {

@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-5} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -63,8 +62,7 @@ Module Settings
     
 
 
-### $rule-styles <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-rule-styles} 
-
+### $rule-styles <badge text="variable" type="tip" vertical="top" />  {#variable-rule-styles} 
 
   
 
@@ -85,8 +83,7 @@ Rule style map, redifine defaults or add to
   
 
 
-### $rule-margins <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-rule-margins} 
-
+### $rule-margins <badge text="variable" type="tip" vertical="top" />  {#variable-rule-margins} 
 
   
 
@@ -112,8 +109,7 @@ Common rule margins (space between rule and type)
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-7} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -143,9 +139,13 @@ Change modules $config
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### set-rule-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-rule-styles} 
-
 
   
 
@@ -174,9 +174,13 @@ Sets rule styles
 
     
 
+#### Require
+
+- [$rule-styles](/sass/element/#variable-rule-styles)
+  
+
 
 ### set-rule-margins() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-rule-margins} 
-
 
   
 
@@ -205,9 +209,13 @@ Sets rule margins
 
     
 
+#### Require
+
+- [$rule-margins](/sass/element/#variable-rule-margins)
+  
+
 
 ### rule() <badge text="mixin" type="tip" vertical="top" />  {#mixin-rule} 
-
 
   
 
@@ -239,7 +247,6 @@ Get full rule CSS (style and margin)
 
 ### link() <badge text="mixin" type="tip" vertical="top" />  {#mixin-link} 
 
-
   
 
 Print link styles
@@ -268,9 +275,13 @@ Print link styles
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### link-defaults() <badge text="mixin" type="tip" vertical="top" />  {#mixin-link-defaults} 
-
 
   
 
@@ -290,9 +301,13 @@ Print the defautl link styling (no hover and focus styles)
 </SassdocDetails>
   
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### styles-ordered-list() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-ordered-list} 
-
 
   
 
@@ -321,9 +336,13 @@ Print the ordered list items styling
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### styles-unordered-list() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles-unordered-list} 
-
 
   
 
@@ -352,9 +371,13 @@ Print the unordered list items styling
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### hidden-visually() <badge text="mixin" type="tip" vertical="top" />  {#mixin-hidden-visually} 
-
 
   
 
@@ -402,8 +425,7 @@ Hide text for assistive devices
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-6} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -433,9 +455,14 @@ Get a config option
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### get-rule-style() <badge text="function" type="tip" vertical="top" />  {#function-get-rule-style} 
-
 
   
 
@@ -464,9 +491,14 @@ Get a rule style
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [$rule-styles](/sass/element/#variable-rule-styles)
+  
+
 
 ### get-rule-margin() <badge text="function" type="tip" vertical="top" />  {#function-get-rule-margin} 
-
 
   
 
@@ -494,11 +526,17 @@ Sets rule margin
 |$changes|`Map`|Map of changes|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$rule-margins](/sass/element/#variable-rule-margins)
+  
   
 
 <script>
-console.log([{"_uid":"element-variable-config","_hash":"variable-config-5","_path":"/sass/element/#variable-config-5","_previews":[]},{"_uid":"element-variable-rule-styles","_hash":"variable-rule-styles","_path":"/sass/element/#variable-rule-styles","_previews":[]},{"_uid":"element-variable-rule-margins","_hash":"variable-rule-margins","_path":"/sass/element/#variable-rule-margins","_previews":[]},{"_uid":"element-mixin-set","_hash":"mixin-set-7","_path":"/sass/element/#mixin-set-7","_previews":[]},{"_uid":"element-function-get","_hash":"function-get-6","_path":"/sass/element/#function-get-6","_previews":[]},{"_uid":"element-mixin-set-rule-styles","_hash":"mixin-set-rule-styles","_path":"/sass/element/#mixin-set-rule-styles","_previews":[]},{"_uid":"element-mixin-set-rule-margins","_hash":"mixin-set-rule-margins","_path":"/sass/element/#mixin-set-rule-margins","_previews":[]},{"_uid":"element-function-get-rule-style","_hash":"function-get-rule-style","_path":"/sass/element/#function-get-rule-style","_previews":[]},{"_uid":"element-function-get-rule-margin","_hash":"function-get-rule-margin","_path":"/sass/element/#function-get-rule-margin","_previews":[]},{"_uid":"element-mixin-rule","_hash":"mixin-rule","_path":"/sass/element/#mixin-rule","_previews":[]},{"_uid":"element-mixin-link","_hash":"mixin-link","_path":"/sass/element/#mixin-link","_previews":[]},{"_uid":"element-mixin-link-defaults","_hash":"mixin-link-defaults","_path":"/sass/element/#mixin-link-defaults","_previews":[]},{"_uid":"element-mixin-styles-ordered-list","_hash":"mixin-styles-ordered-list","_path":"/sass/element/#mixin-styles-ordered-list","_previews":[]},{"_uid":"element-mixin-styles-unordered-list","_hash":"mixin-styles-unordered-list","_path":"/sass/element/#mixin-styles-unordered-list","_previews":[]},{"_uid":"element-mixin-hidden-visually","_hash":"mixin-hidden-visually","_path":"/sass/element/#mixin-hidden-visually","_previews":[null]}]);
-const sassdocGroup = [{"_uid":"element-variable-config","_hash":"variable-config-5","_path":"/sass/element/#variable-config-5","_previews":[]},{"_uid":"element-variable-rule-styles","_hash":"variable-rule-styles","_path":"/sass/element/#variable-rule-styles","_previews":[]},{"_uid":"element-variable-rule-margins","_hash":"variable-rule-margins","_path":"/sass/element/#variable-rule-margins","_previews":[]},{"_uid":"element-mixin-set","_hash":"mixin-set-7","_path":"/sass/element/#mixin-set-7","_previews":[]},{"_uid":"element-function-get","_hash":"function-get-6","_path":"/sass/element/#function-get-6","_previews":[]},{"_uid":"element-mixin-set-rule-styles","_hash":"mixin-set-rule-styles","_path":"/sass/element/#mixin-set-rule-styles","_previews":[]},{"_uid":"element-mixin-set-rule-margins","_hash":"mixin-set-rule-margins","_path":"/sass/element/#mixin-set-rule-margins","_previews":[]},{"_uid":"element-function-get-rule-style","_hash":"function-get-rule-style","_path":"/sass/element/#function-get-rule-style","_previews":[]},{"_uid":"element-function-get-rule-margin","_hash":"function-get-rule-margin","_path":"/sass/element/#function-get-rule-margin","_previews":[]},{"_uid":"element-mixin-rule","_hash":"mixin-rule","_path":"/sass/element/#mixin-rule","_previews":[]},{"_uid":"element-mixin-link","_hash":"mixin-link","_path":"/sass/element/#mixin-link","_previews":[]},{"_uid":"element-mixin-link-defaults","_hash":"mixin-link-defaults","_path":"/sass/element/#mixin-link-defaults","_previews":[]},{"_uid":"element-mixin-styles-ordered-list","_hash":"mixin-styles-ordered-list","_path":"/sass/element/#mixin-styles-ordered-list","_previews":[]},{"_uid":"element-mixin-styles-unordered-list","_hash":"mixin-styles-unordered-list","_path":"/sass/element/#mixin-styles-unordered-list","_previews":[]},{"_uid":"element-mixin-hidden-visually","_hash":"mixin-hidden-visually","_path":"/sass/element/#mixin-hidden-visually","_previews":[null]}];
+console.log([{"groupName":"element","id":"variable-config","uid":"element-variable-config","title":"$config","groupPath":"/sass/element/","path":"/sass/element/#variable-config","previews":[]},{"groupName":"element","id":"variable-rule-styles","uid":"element-variable-rule-styles","title":"$rule-styles","groupPath":"/sass/element/","path":"/sass/element/#variable-rule-styles","previews":[]},{"groupName":"element","id":"variable-rule-margins","uid":"element-variable-rule-margins","title":"$rule-margins","groupPath":"/sass/element/","path":"/sass/element/#variable-rule-margins","previews":[]},{"groupName":"element","id":"mixin-set","uid":"element-mixin-set","title":"set()","groupPath":"/sass/element/","path":"/sass/element/#mixin-set","previews":[]},{"groupName":"element","id":"function-get","uid":"element-function-get","title":"get()","groupPath":"/sass/element/","path":"/sass/element/#function-get","previews":[]},{"groupName":"element","id":"mixin-set-rule-styles","uid":"element-mixin-set-rule-styles","title":"set-rule-styles()","groupPath":"/sass/element/","path":"/sass/element/#mixin-set-rule-styles","previews":[]},{"groupName":"element","id":"mixin-set-rule-margins","uid":"element-mixin-set-rule-margins","title":"set-rule-margins()","groupPath":"/sass/element/","path":"/sass/element/#mixin-set-rule-margins","previews":[]},{"groupName":"element","id":"function-get-rule-style","uid":"element-function-get-rule-style","title":"get-rule-style()","groupPath":"/sass/element/","path":"/sass/element/#function-get-rule-style","previews":[]},{"groupName":"element","id":"function-get-rule-margin","uid":"element-function-get-rule-margin","title":"get-rule-margin()","groupPath":"/sass/element/","path":"/sass/element/#function-get-rule-margin","previews":[]},{"groupName":"element","id":"mixin-rule","uid":"element-mixin-rule","title":"rule()","groupPath":"/sass/element/","path":"/sass/element/#mixin-rule","previews":[]},{"groupName":"element","id":"mixin-link","uid":"element-mixin-link","title":"link()","groupPath":"/sass/element/","path":"/sass/element/#mixin-link","previews":[]},{"groupName":"element","id":"mixin-link-defaults","uid":"element-mixin-link-defaults","title":"link-defaults()","groupPath":"/sass/element/","path":"/sass/element/#mixin-link-defaults","previews":[]},{"groupName":"element","id":"mixin-styles-ordered-list","uid":"element-mixin-styles-ordered-list","title":"styles-ordered-list()","groupPath":"/sass/element/","path":"/sass/element/#mixin-styles-ordered-list","previews":[]},{"groupName":"element","id":"mixin-styles-unordered-list","uid":"element-mixin-styles-unordered-list","title":"styles-unordered-list()","groupPath":"/sass/element/","path":"/sass/element/#mixin-styles-unordered-list","previews":[]},{"groupName":"element","id":"mixin-hidden-visually","uid":"element-mixin-hidden-visually","title":"hidden-visually()","groupPath":"/sass/element/","path":"/sass/element/#mixin-hidden-visually","previews":[null]}]);
+const sassdocGroup = [{"groupName":"element","id":"variable-config","uid":"element-variable-config","title":"$config","groupPath":"/sass/element/","path":"/sass/element/#variable-config","previews":[]},{"groupName":"element","id":"variable-rule-styles","uid":"element-variable-rule-styles","title":"$rule-styles","groupPath":"/sass/element/","path":"/sass/element/#variable-rule-styles","previews":[]},{"groupName":"element","id":"variable-rule-margins","uid":"element-variable-rule-margins","title":"$rule-margins","groupPath":"/sass/element/","path":"/sass/element/#variable-rule-margins","previews":[]},{"groupName":"element","id":"mixin-set","uid":"element-mixin-set","title":"set()","groupPath":"/sass/element/","path":"/sass/element/#mixin-set","previews":[]},{"groupName":"element","id":"function-get","uid":"element-function-get","title":"get()","groupPath":"/sass/element/","path":"/sass/element/#function-get","previews":[]},{"groupName":"element","id":"mixin-set-rule-styles","uid":"element-mixin-set-rule-styles","title":"set-rule-styles()","groupPath":"/sass/element/","path":"/sass/element/#mixin-set-rule-styles","previews":[]},{"groupName":"element","id":"mixin-set-rule-margins","uid":"element-mixin-set-rule-margins","title":"set-rule-margins()","groupPath":"/sass/element/","path":"/sass/element/#mixin-set-rule-margins","previews":[]},{"groupName":"element","id":"function-get-rule-style","uid":"element-function-get-rule-style","title":"get-rule-style()","groupPath":"/sass/element/","path":"/sass/element/#function-get-rule-style","previews":[]},{"groupName":"element","id":"function-get-rule-margin","uid":"element-function-get-rule-margin","title":"get-rule-margin()","groupPath":"/sass/element/","path":"/sass/element/#function-get-rule-margin","previews":[]},{"groupName":"element","id":"mixin-rule","uid":"element-mixin-rule","title":"rule()","groupPath":"/sass/element/","path":"/sass/element/#mixin-rule","previews":[]},{"groupName":"element","id":"mixin-link","uid":"element-mixin-link","title":"link()","groupPath":"/sass/element/","path":"/sass/element/#mixin-link","previews":[]},{"groupName":"element","id":"mixin-link-defaults","uid":"element-mixin-link-defaults","title":"link-defaults()","groupPath":"/sass/element/","path":"/sass/element/#mixin-link-defaults","previews":[]},{"groupName":"element","id":"mixin-styles-ordered-list","uid":"element-mixin-styles-ordered-list","title":"styles-ordered-list()","groupPath":"/sass/element/","path":"/sass/element/#mixin-styles-ordered-list","previews":[]},{"groupName":"element","id":"mixin-styles-unordered-list","uid":"element-mixin-styles-unordered-list","title":"styles-unordered-list()","groupPath":"/sass/element/","path":"/sass/element/#mixin-styles-unordered-list","previews":[]},{"groupName":"element","id":"mixin-hidden-visually","uid":"element-mixin-hidden-visually","title":"hidden-visually()","groupPath":"/sass/element/","path":"/sass/element/#mixin-hidden-visually","previews":[null]}];
 export default {
   sassdocGroup,
   provide: {

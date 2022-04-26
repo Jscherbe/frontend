@@ -1,0 +1,20 @@
+////
+/// This is a poster comment.
+/// It will apply annotations to all items from file.
+/// @group API
+/// @author Kitty Giraudel
+////
+
+/// This item will have:
+/// `@group API` and `@author Kitty Giraudel`
+/// inherited from the poster.
+@function dummy-function() {
+  // ...
+}
+
+/// This item overrides the `@author` annotation
+/// from the poster; it's not merged with it.
+/// @author Fabrice Weinberg
+@mixin dummy-mixin {
+  // ...
+}

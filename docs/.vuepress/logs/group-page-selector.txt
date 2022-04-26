@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-9} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -43,11 +42,6 @@ Module Settings
 
 - See about documenting when a component doesn't run through the selecotr module to get it's base classname
     
-
-#### Todos
-
-- See about documenting when a component doesn't run through the selecotr module to get it's base classname
-    
   
 
 ## Mixins
@@ -55,8 +49,7 @@ Module Settings
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-11} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -96,9 +89,13 @@ General example, replace module-name with module's name
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### set-class-overrides() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-class-overrides} 
-
 
   
 
@@ -133,8 +130,7 @@ Set the class selector overrides
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-10} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -174,9 +170,14 @@ General example, replace module-name with module's name
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### class() <badge text="function" type="tip" vertical="top" />  {#function-class} 
-
 
   
 
@@ -205,11 +206,16 @@ Change a class used in the system (ie. like a component for example)
 |$class|`String`|The classname to set|
 
     
+
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
   
 
 <script>
-console.log([{"_uid":"selector-variable-config","_hash":"variable-config-9","_path":"/sass/selector/#variable-config-9","_previews":[]},{"_uid":"selector-mixin-set","_hash":"mixin-set-11","_path":"/sass/selector/#mixin-set-11","_previews":[null]},{"_uid":"selector-function-get","_hash":"function-get-10","_path":"/sass/selector/#function-get-10","_previews":[null]},{"_uid":"selector-mixin-set-class-overrides","_hash":"mixin-set-class-overrides","_path":"/sass/selector/#mixin-set-class-overrides","_previews":[]},{"_uid":"selector-function-class","_hash":"function-class","_path":"/sass/selector/#function-class","_previews":[]}]);
-const sassdocGroup = [{"_uid":"selector-variable-config","_hash":"variable-config-9","_path":"/sass/selector/#variable-config-9","_previews":[]},{"_uid":"selector-mixin-set","_hash":"mixin-set-11","_path":"/sass/selector/#mixin-set-11","_previews":[null]},{"_uid":"selector-function-get","_hash":"function-get-10","_path":"/sass/selector/#function-get-10","_previews":[null]},{"_uid":"selector-mixin-set-class-overrides","_hash":"mixin-set-class-overrides","_path":"/sass/selector/#mixin-set-class-overrides","_previews":[]},{"_uid":"selector-function-class","_hash":"function-class","_path":"/sass/selector/#function-class","_previews":[]}];
+console.log([{"groupName":"selector","id":"variable-config","uid":"selector-variable-config","title":"$config","groupPath":"/sass/selector/","path":"/sass/selector/#variable-config","previews":[]},{"groupName":"selector","id":"mixin-set","uid":"selector-mixin-set","title":"set()","groupPath":"/sass/selector/","path":"/sass/selector/#mixin-set","previews":[null]},{"groupName":"selector","id":"function-get","uid":"selector-function-get","title":"get()","groupPath":"/sass/selector/","path":"/sass/selector/#function-get","previews":[null]},{"groupName":"selector","id":"mixin-set-class-overrides","uid":"selector-mixin-set-class-overrides","title":"set-class-overrides()","groupPath":"/sass/selector/","path":"/sass/selector/#mixin-set-class-overrides","previews":[]},{"groupName":"selector","id":"function-class","uid":"selector-function-class","title":"class()","groupPath":"/sass/selector/","path":"/sass/selector/#function-class","previews":[]}]);
+const sassdocGroup = [{"groupName":"selector","id":"variable-config","uid":"selector-variable-config","title":"$config","groupPath":"/sass/selector/","path":"/sass/selector/#variable-config","previews":[]},{"groupName":"selector","id":"mixin-set","uid":"selector-mixin-set","title":"set()","groupPath":"/sass/selector/","path":"/sass/selector/#mixin-set","previews":[null]},{"groupName":"selector","id":"function-get","uid":"selector-function-get","title":"get()","groupPath":"/sass/selector/","path":"/sass/selector/#function-get","previews":[null]},{"groupName":"selector","id":"mixin-set-class-overrides","uid":"selector-mixin-set-class-overrides","title":"set-class-overrides()","groupPath":"/sass/selector/","path":"/sass/selector/#mixin-set-class-overrides","previews":[]},{"groupName":"selector","id":"function-class","uid":"selector-function-class","title":"class()","groupPath":"/sass/selector/","path":"/sass/selector/#function-class","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

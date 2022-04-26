@@ -1,4 +1,29 @@
 Todos:
+  ☐ How to get references
+    ✘ Wrap the nested references (see, requires) @cancelled
+      * May be the easiest
+      * Need to keep these lined up anyways
+      * Con (changing object of sassdoc)
+      * IE, back to inserting information
+    ✔ make our own references { id, see, require } @done
+      * Have to do this by hand anyways
+      * Doesn't modify an item's data
+      * May want to remove this easily
+      * IE, add these to a single property that can be deleted easily
+      * IE, { id, referenceFields: { see: [], require: [] }}
+      * Like this because
+    ✘ Make a utility function that looks up an item by reference item.data === reference @cancelled
+      * Have to worry about keeping the full list and the item together
+      * Could be redundant
+  ✔ Make data adjustment @done
+    ✘ Instead of using "_" properties, consolidate into "$docs" "$vsp" object (vuepress sassdoc plugin) @cancelled
+      * VSP? I think something meaningful is better than a namespace
+      * Easier to understand, access, etc then random properties
+      * item.$docs.path || item.$docs.uid item.$docs.hash || item.$docs.pagePath (without hash to item)
+    ☐ Make the maps of the data with own objects, then attach the sassdoc data
+  ☐ Clone repo into new repo for this plugin
+  ☐ Create documentation for plugin using vuepress :)
+  ☐ Cleanup
   ☐ Remainin annotation templates
     ☐ Setup @see template
     ☐ Setup @require template

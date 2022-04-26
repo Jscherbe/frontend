@@ -1,9 +1,10 @@
 module.exports = ({ item }) => {
-  if (item.output) {
+  const { output } = item.data;
+  if (output) {
     return `
 #### Mixin Output
 
-${ item.output }
+${ output }
 
     `
   }

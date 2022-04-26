@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -46,7 +45,6 @@ Module Settings
 
 ### styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-styles} 
 
-
   
 
 Prints color-context styles as base classes (top of stylesheet)
@@ -67,7 +65,6 @@ Prints color-context styles as base classes (top of stylesheet)
 
 
 ### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
-
 
   
 
@@ -107,9 +104,13 @@ General example, replace module-name with module's name
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### base-elements-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-elements-styles} 
-
 
   
 
@@ -140,9 +141,14 @@ Prints elements base styles
   
       
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+- [get-rule-style()](undefined)
+  
+
 
 ### base-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-styles} 
-
 
   
 
@@ -182,9 +188,13 @@ Prints all Base styles
 
     
 
+#### Require
+
+- [get()](/sass/base/#function-get)
+  
+
 
 ### base-keyframes-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-keyframes-styles} 
-
 
   
 
@@ -215,9 +225,13 @@ Prints CSS keyframes
   
       
 
+#### Require
+
+- [scale()](undefined)
+  
+
 
 ### base-normalize-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-normalize-styles} 
-
 
   
 
@@ -252,11 +266,10 @@ Prints the normalize stylesheet. We are using modern-normalize 1.1.0
 
 - [Modern Normalize (NPM)](https://www.npmjs.com/package/modern-normalize)
 
-  
+    
 
 
 ### base-typography-styles() <badge text="mixin" type="tip" vertical="top" />  {#mixin-base-typography-styles} 
-
 
   
 
@@ -302,6 +315,13 @@ Example of type size as base unprefixed
 ```
   
       
+
+#### Require
+
+- [class()](undefined)
+- [get()](/sass/base/#function-get)
+- [$sizes](undefined)
+  
   
 
 ## Functions
@@ -310,7 +330,6 @@ Example of type size as base unprefixed
 
 
 ### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
-
 
   
 
@@ -349,11 +368,17 @@ General example, replace module-name with module's name
 |$name|`Map`|Name of property|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"base-mixin-styles","_hash":"mixin-styles","_path":"/sass/base/#mixin-styles","_previews":[]},{"_uid":"base-variable-config","_hash":"variable-config","_path":"/sass/base/#variable-config","_previews":[]},{"_uid":"base-mixin-set","_hash":"mixin-set","_path":"/sass/base/#mixin-set","_previews":[null]},{"_uid":"base-function-get","_hash":"function-get","_path":"/sass/base/#function-get","_previews":[null]},{"_uid":"base-mixin-base-elements-styles","_hash":"mixin-base-elements-styles","_path":"/sass/base/#mixin-base-elements-styles","_previews":[null]},{"_uid":"base-mixin-base-styles","_hash":"mixin-base-styles","_path":"/sass/base/#mixin-base-styles","_previews":[null]},{"_uid":"base-mixin-base-keyframes-styles","_hash":"mixin-base-keyframes-styles","_path":"/sass/base/#mixin-base-keyframes-styles","_previews":[null]},{"_uid":"base-mixin-base-normalize-styles","_hash":"mixin-base-normalize-styles","_path":"/sass/base/#mixin-base-normalize-styles","_previews":[null]},{"_uid":"base-mixin-base-typography-styles","_hash":"mixin-base-typography-styles","_path":"/sass/base/#mixin-base-typography-styles","_previews":[null,{"type":"html","code":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>","description":"Example of type size as base unprefixed"}]}]);
-const sassdocGroup = [{"_uid":"base-mixin-styles","_hash":"mixin-styles","_path":"/sass/base/#mixin-styles","_previews":[]},{"_uid":"base-variable-config","_hash":"variable-config","_path":"/sass/base/#variable-config","_previews":[]},{"_uid":"base-mixin-set","_hash":"mixin-set","_path":"/sass/base/#mixin-set","_previews":[null]},{"_uid":"base-function-get","_hash":"function-get","_path":"/sass/base/#function-get","_previews":[null]},{"_uid":"base-mixin-base-elements-styles","_hash":"mixin-base-elements-styles","_path":"/sass/base/#mixin-base-elements-styles","_previews":[null]},{"_uid":"base-mixin-base-styles","_hash":"mixin-base-styles","_path":"/sass/base/#mixin-base-styles","_previews":[null]},{"_uid":"base-mixin-base-keyframes-styles","_hash":"mixin-base-keyframes-styles","_path":"/sass/base/#mixin-base-keyframes-styles","_previews":[null]},{"_uid":"base-mixin-base-normalize-styles","_hash":"mixin-base-normalize-styles","_path":"/sass/base/#mixin-base-normalize-styles","_previews":[null]},{"_uid":"base-mixin-base-typography-styles","_hash":"mixin-base-typography-styles","_path":"/sass/base/#mixin-base-typography-styles","_previews":[null,{"type":"html","code":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>","description":"Example of type size as base unprefixed"}]}];
+console.log([{"groupName":"base","id":"mixin-styles","uid":"base-mixin-styles","title":"styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-styles","previews":[]},{"groupName":"base","id":"variable-config","uid":"base-variable-config","title":"$config","groupPath":"/sass/base/","path":"/sass/base/#variable-config","previews":[]},{"groupName":"base","id":"mixin-set","uid":"base-mixin-set","title":"set()","groupPath":"/sass/base/","path":"/sass/base/#mixin-set","previews":[null]},{"groupName":"base","id":"function-get","uid":"base-function-get","title":"get()","groupPath":"/sass/base/","path":"/sass/base/#function-get","previews":[null]},{"groupName":"base","id":"mixin-base-elements-styles","uid":"base-mixin-base-elements-styles","title":"base-elements-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-elements-styles","previews":[null]},{"groupName":"base","id":"mixin-base-styles","uid":"base-mixin-base-styles","title":"base-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-styles","previews":[null]},{"groupName":"base","id":"mixin-base-keyframes-styles","uid":"base-mixin-base-keyframes-styles","title":"base-keyframes-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-keyframes-styles","previews":[null]},{"groupName":"base","id":"mixin-base-normalize-styles","uid":"base-mixin-base-normalize-styles","title":"base-normalize-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-normalize-styles","previews":[null]},{"groupName":"base","id":"mixin-base-typography-styles","uid":"base-mixin-base-typography-styles","title":"base-typography-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-typography-styles","previews":[null,{"type":"html","code":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>","description":"Example of type size as base unprefixed"}]}]);
+const sassdocGroup = [{"groupName":"base","id":"mixin-styles","uid":"base-mixin-styles","title":"styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-styles","previews":[]},{"groupName":"base","id":"variable-config","uid":"base-variable-config","title":"$config","groupPath":"/sass/base/","path":"/sass/base/#variable-config","previews":[]},{"groupName":"base","id":"mixin-set","uid":"base-mixin-set","title":"set()","groupPath":"/sass/base/","path":"/sass/base/#mixin-set","previews":[null]},{"groupName":"base","id":"function-get","uid":"base-function-get","title":"get()","groupPath":"/sass/base/","path":"/sass/base/#function-get","previews":[null]},{"groupName":"base","id":"mixin-base-elements-styles","uid":"base-mixin-base-elements-styles","title":"base-elements-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-elements-styles","previews":[null]},{"groupName":"base","id":"mixin-base-styles","uid":"base-mixin-base-styles","title":"base-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-styles","previews":[null]},{"groupName":"base","id":"mixin-base-keyframes-styles","uid":"base-mixin-base-keyframes-styles","title":"base-keyframes-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-keyframes-styles","previews":[null]},{"groupName":"base","id":"mixin-base-normalize-styles","uid":"base-mixin-base-normalize-styles","title":"base-normalize-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-normalize-styles","previews":[null]},{"groupName":"base","id":"mixin-base-typography-styles","uid":"base-mixin-base-typography-styles","title":"base-typography-styles()","groupPath":"/sass/base/","path":"/sass/base/#mixin-base-typography-styles","previews":[null,{"type":"html","code":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>","description":"Example of type size as base unprefixed"}]}];
 export default {
   sassdocGroup,
   provide: {

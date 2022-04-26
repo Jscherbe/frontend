@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-6} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -51,8 +50,7 @@ Module Settings
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-8} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -82,9 +80,13 @@ Change modules $config
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### create() <badge text="mixin" type="tip" vertical="top" />  {#mixin-create} 
-
 
   
 
@@ -119,6 +121,12 @@ Creates grid css (variation of original data-grid)
 |$attribute|`String`|Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")|
 
     
+
+#### Require
+
+- [get()](/sass/base/#function-get)
+- [require-map-get()](undefined)
+  
   
 
 ## Functions
@@ -126,8 +134,7 @@ Creates grid css (variation of original data-grid)
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-7} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -156,11 +163,17 @@ Get a config option
   @include module-name.get("property");|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"grid-variable-config","_hash":"variable-config-6","_path":"/sass/grid/#variable-config-6","_previews":[]},{"_uid":"grid-mixin-set","_hash":"mixin-set-8","_path":"/sass/grid/#mixin-set-8","_previews":[]},{"_uid":"grid-function-get","_hash":"function-get-7","_path":"/sass/grid/#function-get-7","_previews":[]},{"_uid":"grid-mixin-create","_hash":"mixin-create","_path":"/sass/grid/#mixin-create","_previews":[]}]);
-const sassdocGroup = [{"_uid":"grid-variable-config","_hash":"variable-config-6","_path":"/sass/grid/#variable-config-6","_previews":[]},{"_uid":"grid-mixin-set","_hash":"mixin-set-8","_path":"/sass/grid/#mixin-set-8","_previews":[]},{"_uid":"grid-function-get","_hash":"function-get-7","_path":"/sass/grid/#function-get-7","_previews":[]},{"_uid":"grid-mixin-create","_hash":"mixin-create","_path":"/sass/grid/#mixin-create","_previews":[]}];
+console.log([{"groupName":"grid","id":"variable-config","uid":"grid-variable-config","title":"$config","groupPath":"/sass/grid/","path":"/sass/grid/#variable-config","previews":[]},{"groupName":"grid","id":"mixin-set","uid":"grid-mixin-set","title":"set()","groupPath":"/sass/grid/","path":"/sass/grid/#mixin-set","previews":[]},{"groupName":"grid","id":"function-get","uid":"grid-function-get","title":"get()","groupPath":"/sass/grid/","path":"/sass/grid/#function-get","previews":[]},{"groupName":"grid","id":"mixin-create","uid":"grid-mixin-create","title":"create()","groupPath":"/sass/grid/","path":"/sass/grid/#mixin-create","previews":[]}]);
+const sassdocGroup = [{"groupName":"grid","id":"variable-config","uid":"grid-variable-config","title":"$config","groupPath":"/sass/grid/","path":"/sass/grid/#variable-config","previews":[]},{"groupName":"grid","id":"mixin-set","uid":"grid-mixin-set","title":"set()","groupPath":"/sass/grid/","path":"/sass/grid/#mixin-set","previews":[]},{"groupName":"grid","id":"function-get","uid":"grid-function-get","title":"get()","groupPath":"/sass/grid/","path":"/sass/grid/#function-get","previews":[]},{"groupName":"grid","id":"mixin-create","uid":"grid-mixin-create","title":"create()","groupPath":"/sass/grid/","path":"/sass/grid/#mixin-create","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

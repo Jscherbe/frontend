@@ -10,7 +10,6 @@
 
 ### strip-unit() <badge text="function" type="tip" vertical="top" />  {#function-strip-unit} 
 
-
   
 
 Strips the unit from the number
@@ -33,12 +32,12 @@ Strips the unit from the number
 
 - [Orginal source (Miriam Suzanne)](https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841)
 
-  
+    
   
 
 <script>
-console.log([{"_uid":"utility-function-strip-unit","_hash":"function-strip-unit","_path":"/sass/utility/#function-strip-unit","_previews":[]}]);
-const sassdocGroup = [{"_uid":"utility-function-strip-unit","_hash":"function-strip-unit","_path":"/sass/utility/#function-strip-unit","_previews":[]}];
+console.log([{"groupName":"utility","id":"function-strip-unit","uid":"utility-function-strip-unit","title":"strip-unit()","groupPath":"/sass/utility/","path":"/sass/utility/#function-strip-unit","previews":[]}]);
+const sassdocGroup = [{"groupName":"utility","id":"function-strip-unit","uid":"utility-function-strip-unit","title":"strip-unit()","groupPath":"/sass/utility/","path":"/sass/utility/#function-strip-unit","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

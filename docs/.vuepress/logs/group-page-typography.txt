@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-10} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -51,14 +50,8 @@ Module Settings
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
-
-
-### $sizes <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-sizes-2} 
-
+### $sizes <badge text="variable" type="tip" vertical="top" />  {#variable-sizes} 
 
   
 
@@ -97,12 +90,6 @@ Default size presets
 - Add adaptive and use a map of breakpoints and whether it's up or down
 - Add headlines
     
-
-#### Todos
-
-- Add adaptive and use a map of breakpoints and whether it's up or down
-- Add headlines
-    
   
 
 ## Mixins
@@ -110,8 +97,7 @@ Default size presets
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-12} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -146,14 +132,13 @@ Change modules $config
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [$config](/sass/base/#variable-config)
+  
 
 
 ### word-break() <badge text="mixin" type="tip" vertical="top" />  {#mixin-word-break} 
-
 
   
 
@@ -187,14 +172,8 @@ Break word stradegy
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
-
 
 ### set-sizes() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-sizes} 
-
 
   
 
@@ -243,14 +222,14 @@ Setting the error and type color
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [map-merge-or-overwrite()](undefined)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
 
 
 ### font-size-responsive() <badge text="mixin" type="tip" vertical="top" />  {#mixin-font-size-responsive} 
-
 
   
 
@@ -285,14 +264,13 @@ Print's the responsive type formula
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [get()](/sass/base/#function-get)
+  
 
 
 ### size() <badge text="mixin" type="tip" vertical="top" />  {#mixin-size} 
-
 
   
 
@@ -327,10 +305,14 @@ Print a typography size (font-size, line-height)
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [font-size-responsive()](/sass/typography/#mixin-font-size-responsive)
+- [get-size()](/sass/typography/#function-get-size)
+- [get-size-converted-value()](/sass/typography/#function-get-size-converted-value)
+- [get()](/sass/base/#function-get)
+- [get-size-value()](/sass/typography/#function-get-size-value)
+  
   
 
 ## Functions
@@ -338,8 +320,7 @@ Print a typography size (font-size, line-height)
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-11} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -374,14 +355,14 @@ Get a config option
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
 
 
 ### scale() <badge text="function" type="tip" vertical="top" />  {#function-scale} 
-
 
   
 
@@ -424,14 +405,14 @@ Get scale of the base font-size
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [ratio-scale-size()](/sass/calculate/#function-ratio-scale-size)
+- [get()](/sass/base/#function-get)
+  
 
 
 ### scale-line-height() <badge text="function" type="tip" vertical="top" />  {#function-scale-line-height} 
-
 
   
 
@@ -474,14 +455,14 @@ Get scale of the line-height
 - Setup breakpoints
     
 
-#### Todos
+#### Require
 
-- Setup breakpoints
-    
+- [ratio-scale-size()](/sass/calculate/#function-ratio-scale-size)
+- [get()](/sass/base/#function-get)
+  
 
 
 ### rem() <badge text="function" type="tip" vertical="top" />  {#function-rem} 
-
 
   
 
@@ -524,14 +505,13 @@ Convert pixel value to rem value based on typography $font-size
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [get()](/sass/base/#function-get)
+  
 
 
 ### em() <badge text="function" type="tip" vertical="top" />  {#function-em} 
-
 
   
 
@@ -575,14 +555,13 @@ Changes pixels to em
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [get()](/sass/base/#function-get)
+  
 
 
 ### new-size() <badge text="function" type="tip" vertical="top" />  {#function-new-size} 
-
 
   
 
@@ -620,14 +599,13 @@ Creates a size map
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [get()](/sass/base/#function-get)
+  
 
 
 ### get-size() <badge text="function" type="tip" vertical="top" />  {#function-get-size} 
-
 
   
 
@@ -670,14 +648,14 @@ Get a size's map
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [require-map-get()](undefined)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
 
 
 ### font-size() <badge text="function" type="tip" vertical="top" />  {#function-font-size} 
-
 
   
 
@@ -711,14 +689,15 @@ Print a font-size for a given size
 - Remove doesn't work for breakpoints or responsive
     
 
-#### Todos
+#### Require
 
-- Remove doesn't work for breakpoints or responsive
-    
+- [get-size()](/sass/typography/#function-get-size)
+- [get()](/sass/base/#function-get)
+- [rem()](/sass/typography/#function-rem)
+  
 
 
 ### unitless-line-height() <badge text="function" type="tip" vertical="top" />  {#function-unitless-line-height} 
-
 
   
 
@@ -753,14 +732,14 @@ Forces conversion to unitless line-height
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [strip-unit()](undefined)
+- [rem()](/sass/typography/#function-rem)
+  
 
 
 ### get-size-converted-value() <badge text="function" type="tip" vertical="top" />  {#function-get-size-converted-value} 
-
 
   
 
@@ -795,14 +774,15 @@ Print a value from the size and convert it (to appropriate unit for framework)
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [get()](/sass/base/#function-get)
+- [unitless-line-height()](/sass/typography/#function-unitless-line-height)
+- [rem()](/sass/typography/#function-rem)
+  
 
 
 ### get-size-value() <badge text="function" type="tip" vertical="top" />  {#function-get-size-value} 
-
 
   
 
@@ -838,15 +818,15 @@ Get a sizes property value that doesn't need conversion
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
-#### Todos
+#### Require
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
+- [get()](/sass/base/#function-get)
+  
   
 
 <script>
-console.log([{"_uid":"typography-variable-config","_hash":"variable-config-10","_path":"/sass/typography/#variable-config-10","_previews":[]},{"_uid":"typography-mixin-set","_hash":"mixin-set-12","_path":"/sass/typography/#mixin-set-12","_previews":[]},{"_uid":"typography-function-get","_hash":"function-get-11","_path":"/sass/typography/#function-get-11","_previews":[]},{"_uid":"typography-function-scale","_hash":"function-scale","_path":"/sass/typography/#function-scale","_previews":[]},{"_uid":"typography-function-scale-line-height","_hash":"function-scale-line-height","_path":"/sass/typography/#function-scale-line-height","_previews":[]},{"_uid":"typography-function-rem","_hash":"function-rem","_path":"/sass/typography/#function-rem","_previews":[]},{"_uid":"typography-function-em","_hash":"function-em","_path":"/sass/typography/#function-em","_previews":[]},{"_uid":"typography-mixin-word-break","_hash":"mixin-word-break","_path":"/sass/typography/#mixin-word-break","_previews":[]},{"_uid":"typography-function-new-size","_hash":"function-new-size","_path":"/sass/typography/#function-new-size","_previews":[]},{"_uid":"typography-variable-sizes","_hash":"variable-sizes-2","_path":"/sass/typography/#variable-sizes-2","_previews":[]},{"_uid":"typography-mixin-set-sizes","_hash":"mixin-set-sizes","_path":"/sass/typography/#mixin-set-sizes","_previews":[null]},{"_uid":"typography-function-get-size","_hash":"function-get-size","_path":"/sass/typography/#function-get-size","_previews":[]},{"_uid":"typography-function-font-size","_hash":"function-font-size","_path":"/sass/typography/#function-font-size","_previews":[]},{"_uid":"typography-function-unitless-line-height","_hash":"function-unitless-line-height","_path":"/sass/typography/#function-unitless-line-height","_previews":[]},{"_uid":"typography-function-get-size-converted-value","_hash":"function-get-size-converted-value","_path":"/sass/typography/#function-get-size-converted-value","_previews":[]},{"_uid":"typography-function-get-size-value","_hash":"function-get-size-value","_path":"/sass/typography/#function-get-size-value","_previews":[]},{"_uid":"typography-mixin-font-size-responsive","_hash":"mixin-font-size-responsive","_path":"/sass/typography/#mixin-font-size-responsive","_previews":[]},{"_uid":"typography-mixin-size","_hash":"mixin-size","_path":"/sass/typography/#mixin-size","_previews":[]}]);
-const sassdocGroup = [{"_uid":"typography-variable-config","_hash":"variable-config-10","_path":"/sass/typography/#variable-config-10","_previews":[]},{"_uid":"typography-mixin-set","_hash":"mixin-set-12","_path":"/sass/typography/#mixin-set-12","_previews":[]},{"_uid":"typography-function-get","_hash":"function-get-11","_path":"/sass/typography/#function-get-11","_previews":[]},{"_uid":"typography-function-scale","_hash":"function-scale","_path":"/sass/typography/#function-scale","_previews":[]},{"_uid":"typography-function-scale-line-height","_hash":"function-scale-line-height","_path":"/sass/typography/#function-scale-line-height","_previews":[]},{"_uid":"typography-function-rem","_hash":"function-rem","_path":"/sass/typography/#function-rem","_previews":[]},{"_uid":"typography-function-em","_hash":"function-em","_path":"/sass/typography/#function-em","_previews":[]},{"_uid":"typography-mixin-word-break","_hash":"mixin-word-break","_path":"/sass/typography/#mixin-word-break","_previews":[]},{"_uid":"typography-function-new-size","_hash":"function-new-size","_path":"/sass/typography/#function-new-size","_previews":[]},{"_uid":"typography-variable-sizes","_hash":"variable-sizes-2","_path":"/sass/typography/#variable-sizes-2","_previews":[]},{"_uid":"typography-mixin-set-sizes","_hash":"mixin-set-sizes","_path":"/sass/typography/#mixin-set-sizes","_previews":[null]},{"_uid":"typography-function-get-size","_hash":"function-get-size","_path":"/sass/typography/#function-get-size","_previews":[]},{"_uid":"typography-function-font-size","_hash":"function-font-size","_path":"/sass/typography/#function-font-size","_previews":[]},{"_uid":"typography-function-unitless-line-height","_hash":"function-unitless-line-height","_path":"/sass/typography/#function-unitless-line-height","_previews":[]},{"_uid":"typography-function-get-size-converted-value","_hash":"function-get-size-converted-value","_path":"/sass/typography/#function-get-size-converted-value","_previews":[]},{"_uid":"typography-function-get-size-value","_hash":"function-get-size-value","_path":"/sass/typography/#function-get-size-value","_previews":[]},{"_uid":"typography-mixin-font-size-responsive","_hash":"mixin-font-size-responsive","_path":"/sass/typography/#mixin-font-size-responsive","_previews":[]},{"_uid":"typography-mixin-size","_hash":"mixin-size","_path":"/sass/typography/#mixin-size","_previews":[]}];
+console.log([{"groupName":"typography","id":"variable-config","uid":"typography-variable-config","title":"$config","groupPath":"/sass/typography/","path":"/sass/typography/#variable-config","previews":[]},{"groupName":"typography","id":"mixin-set","uid":"typography-mixin-set","title":"set()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-set","previews":[]},{"groupName":"typography","id":"function-get","uid":"typography-function-get","title":"get()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get","previews":[]},{"groupName":"typography","id":"function-scale","uid":"typography-function-scale","title":"scale()","groupPath":"/sass/typography/","path":"/sass/typography/#function-scale","previews":[]},{"groupName":"typography","id":"function-scale-line-height","uid":"typography-function-scale-line-height","title":"scale-line-height()","groupPath":"/sass/typography/","path":"/sass/typography/#function-scale-line-height","previews":[]},{"groupName":"typography","id":"function-rem","uid":"typography-function-rem","title":"rem()","groupPath":"/sass/typography/","path":"/sass/typography/#function-rem","previews":[]},{"groupName":"typography","id":"function-em","uid":"typography-function-em","title":"em()","groupPath":"/sass/typography/","path":"/sass/typography/#function-em","previews":[]},{"groupName":"typography","id":"mixin-word-break","uid":"typography-mixin-word-break","title":"word-break()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-word-break","previews":[]},{"groupName":"typography","id":"function-new-size","uid":"typography-function-new-size","title":"new-size()","groupPath":"/sass/typography/","path":"/sass/typography/#function-new-size","previews":[]},{"groupName":"typography","id":"variable-sizes","uid":"typography-variable-sizes","title":"$sizes","groupPath":"/sass/typography/","path":"/sass/typography/#variable-sizes","previews":[]},{"groupName":"typography","id":"mixin-set-sizes","uid":"typography-mixin-set-sizes","title":"set-sizes()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-set-sizes","previews":[null]},{"groupName":"typography","id":"function-get-size","uid":"typography-function-get-size","title":"get-size()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get-size","previews":[]},{"groupName":"typography","id":"function-font-size","uid":"typography-function-font-size","title":"font-size()","groupPath":"/sass/typography/","path":"/sass/typography/#function-font-size","previews":[]},{"groupName":"typography","id":"function-unitless-line-height","uid":"typography-function-unitless-line-height","title":"unitless-line-height()","groupPath":"/sass/typography/","path":"/sass/typography/#function-unitless-line-height","previews":[]},{"groupName":"typography","id":"function-get-size-converted-value","uid":"typography-function-get-size-converted-value","title":"get-size-converted-value()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get-size-converted-value","previews":[]},{"groupName":"typography","id":"function-get-size-value","uid":"typography-function-get-size-value","title":"get-size-value()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get-size-value","previews":[]},{"groupName":"typography","id":"mixin-font-size-responsive","uid":"typography-mixin-font-size-responsive","title":"font-size-responsive()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-font-size-responsive","previews":[]},{"groupName":"typography","id":"mixin-size","uid":"typography-mixin-size","title":"size()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-size","previews":[]}]);
+const sassdocGroup = [{"groupName":"typography","id":"variable-config","uid":"typography-variable-config","title":"$config","groupPath":"/sass/typography/","path":"/sass/typography/#variable-config","previews":[]},{"groupName":"typography","id":"mixin-set","uid":"typography-mixin-set","title":"set()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-set","previews":[]},{"groupName":"typography","id":"function-get","uid":"typography-function-get","title":"get()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get","previews":[]},{"groupName":"typography","id":"function-scale","uid":"typography-function-scale","title":"scale()","groupPath":"/sass/typography/","path":"/sass/typography/#function-scale","previews":[]},{"groupName":"typography","id":"function-scale-line-height","uid":"typography-function-scale-line-height","title":"scale-line-height()","groupPath":"/sass/typography/","path":"/sass/typography/#function-scale-line-height","previews":[]},{"groupName":"typography","id":"function-rem","uid":"typography-function-rem","title":"rem()","groupPath":"/sass/typography/","path":"/sass/typography/#function-rem","previews":[]},{"groupName":"typography","id":"function-em","uid":"typography-function-em","title":"em()","groupPath":"/sass/typography/","path":"/sass/typography/#function-em","previews":[]},{"groupName":"typography","id":"mixin-word-break","uid":"typography-mixin-word-break","title":"word-break()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-word-break","previews":[]},{"groupName":"typography","id":"function-new-size","uid":"typography-function-new-size","title":"new-size()","groupPath":"/sass/typography/","path":"/sass/typography/#function-new-size","previews":[]},{"groupName":"typography","id":"variable-sizes","uid":"typography-variable-sizes","title":"$sizes","groupPath":"/sass/typography/","path":"/sass/typography/#variable-sizes","previews":[]},{"groupName":"typography","id":"mixin-set-sizes","uid":"typography-mixin-set-sizes","title":"set-sizes()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-set-sizes","previews":[null]},{"groupName":"typography","id":"function-get-size","uid":"typography-function-get-size","title":"get-size()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get-size","previews":[]},{"groupName":"typography","id":"function-font-size","uid":"typography-function-font-size","title":"font-size()","groupPath":"/sass/typography/","path":"/sass/typography/#function-font-size","previews":[]},{"groupName":"typography","id":"function-unitless-line-height","uid":"typography-function-unitless-line-height","title":"unitless-line-height()","groupPath":"/sass/typography/","path":"/sass/typography/#function-unitless-line-height","previews":[]},{"groupName":"typography","id":"function-get-size-converted-value","uid":"typography-function-get-size-converted-value","title":"get-size-converted-value()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get-size-converted-value","previews":[]},{"groupName":"typography","id":"function-get-size-value","uid":"typography-function-get-size-value","title":"get-size-value()","groupPath":"/sass/typography/","path":"/sass/typography/#function-get-size-value","previews":[]},{"groupName":"typography","id":"mixin-font-size-responsive","uid":"typography-mixin-font-size-responsive","title":"font-size-responsive()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-font-size-responsive","previews":[]},{"groupName":"typography","id":"mixin-size","uid":"typography-mixin-size","title":"size()","groupPath":"/sass/typography/","path":"/sass/typography/#mixin-size","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

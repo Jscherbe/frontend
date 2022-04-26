@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-3} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -44,8 +43,7 @@ Module Settings
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-4} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -75,9 +73,13 @@ Change modules $config
 
     
 
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### responsive-property() <badge text="mixin" type="tip" vertical="top" />  {#mixin-responsive-property} 
-
 
   
 
@@ -114,8 +116,7 @@ Provides user with a fallback for a calc that's just an enhancement
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-3} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -145,9 +146,14 @@ Get a config option
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
+
 
 ### ratio-scale-size() <badge text="function" type="tip" vertical="top" />  {#function-ratio-scale-size} 
-
 
   
 
@@ -188,9 +194,13 @@ Calculate the size of something at a given scale (percentage/exponential)
 
     
 
+#### Require
+
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
+
 
 ### pixel-to-em() <badge text="function" type="tip" vertical="top" />  {#function-pixel-to-em} 
-
 
   
 
@@ -231,8 +241,8 @@ Convert from pixel to em
   
 
 <script>
-console.log([{"_uid":"calculate-variable-config","_hash":"variable-config-3","_path":"/sass/calculate/#variable-config-3","_previews":[]},{"_uid":"calculate-mixin-set","_hash":"mixin-set-4","_path":"/sass/calculate/#mixin-set-4","_previews":[]},{"_uid":"calculate-function-get","_hash":"function-get-3","_path":"/sass/calculate/#function-get-3","_previews":[]},{"_uid":"calculate-function-ratio-scale-size","_hash":"function-ratio-scale-size","_path":"/sass/calculate/#function-ratio-scale-size","_previews":[]},{"_uid":"calculate-function-pixel-to-em","_hash":"function-pixel-to-em","_path":"/sass/calculate/#function-pixel-to-em","_previews":[]},{"_uid":"calculate-mixin-responsive-property","_hash":"mixin-responsive-property","_path":"/sass/calculate/#mixin-responsive-property","_previews":[]}]);
-const sassdocGroup = [{"_uid":"calculate-variable-config","_hash":"variable-config-3","_path":"/sass/calculate/#variable-config-3","_previews":[]},{"_uid":"calculate-mixin-set","_hash":"mixin-set-4","_path":"/sass/calculate/#mixin-set-4","_previews":[]},{"_uid":"calculate-function-get","_hash":"function-get-3","_path":"/sass/calculate/#function-get-3","_previews":[]},{"_uid":"calculate-function-ratio-scale-size","_hash":"function-ratio-scale-size","_path":"/sass/calculate/#function-ratio-scale-size","_previews":[]},{"_uid":"calculate-function-pixel-to-em","_hash":"function-pixel-to-em","_path":"/sass/calculate/#function-pixel-to-em","_previews":[]},{"_uid":"calculate-mixin-responsive-property","_hash":"mixin-responsive-property","_path":"/sass/calculate/#mixin-responsive-property","_previews":[]}];
+console.log([{"groupName":"calculate","id":"variable-config","uid":"calculate-variable-config","title":"$config","groupPath":"/sass/calculate/","path":"/sass/calculate/#variable-config","previews":[]},{"groupName":"calculate","id":"mixin-set","uid":"calculate-mixin-set","title":"set()","groupPath":"/sass/calculate/","path":"/sass/calculate/#mixin-set","previews":[]},{"groupName":"calculate","id":"function-get","uid":"calculate-function-get","title":"get()","groupPath":"/sass/calculate/","path":"/sass/calculate/#function-get","previews":[]},{"groupName":"calculate","id":"function-ratio-scale-size","uid":"calculate-function-ratio-scale-size","title":"ratio-scale-size()","groupPath":"/sass/calculate/","path":"/sass/calculate/#function-ratio-scale-size","previews":[]},{"groupName":"calculate","id":"function-pixel-to-em","uid":"calculate-function-pixel-to-em","title":"pixel-to-em()","groupPath":"/sass/calculate/","path":"/sass/calculate/#function-pixel-to-em","previews":[]},{"groupName":"calculate","id":"mixin-responsive-property","uid":"calculate-mixin-responsive-property","title":"responsive-property()","groupPath":"/sass/calculate/","path":"/sass/calculate/#mixin-responsive-property","previews":[]}]);
+const sassdocGroup = [{"groupName":"calculate","id":"variable-config","uid":"calculate-variable-config","title":"$config","groupPath":"/sass/calculate/","path":"/sass/calculate/#variable-config","previews":[]},{"groupName":"calculate","id":"mixin-set","uid":"calculate-mixin-set","title":"set()","groupPath":"/sass/calculate/","path":"/sass/calculate/#mixin-set","previews":[]},{"groupName":"calculate","id":"function-get","uid":"calculate-function-get","title":"get()","groupPath":"/sass/calculate/","path":"/sass/calculate/#function-get","previews":[]},{"groupName":"calculate","id":"function-ratio-scale-size","uid":"calculate-function-ratio-scale-size","title":"ratio-scale-size()","groupPath":"/sass/calculate/","path":"/sass/calculate/#function-ratio-scale-size","previews":[]},{"groupName":"calculate","id":"function-pixel-to-em","uid":"calculate-function-pixel-to-em","title":"pixel-to-em()","groupPath":"/sass/calculate/","path":"/sass/calculate/#function-pixel-to-em","previews":[]},{"groupName":"calculate","id":"mixin-responsive-property","uid":"calculate-mixin-responsive-property","title":"responsive-property()","groupPath":"/sass/calculate/","path":"/sass/calculate/#mixin-responsive-property","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

@@ -1,7 +1,5 @@
-const { joinMarkup } = require("../../utils.js");
-
 module.exports = ({ item }) => {
-  if (item.deprecated) {
+  if (item.data.deprecated) {
     return `
 ::: warning Deprecated
 ${ item.deprecated }

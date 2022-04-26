@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-11} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -49,8 +48,7 @@ Module Settings
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-13} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -91,6 +89,11 @@ Setting the error and type color
 |$changes|`Map`|A map to merge into the color palette|
 
     
+
+#### Require
+
+- [$config](/sass/base/#variable-config)
+  
   
 
 ## Functions
@@ -98,8 +101,7 @@ Setting the error and type color
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-12} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -136,11 +138,17 @@ Get a unit by name (preset) or number (multiplier of base)
 |`Number`|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"units-variable-config","_hash":"variable-config-11","_path":"/sass/units/#variable-config-11","_previews":[]},{"_uid":"units-mixin-set","_hash":"mixin-set-13","_path":"/sass/units/#mixin-set-13","_previews":[null]},{"_uid":"units-function-get","_hash":"function-get-12","_path":"/sass/units/#function-get-12","_previews":[]}]);
-const sassdocGroup = [{"_uid":"units-variable-config","_hash":"variable-config-11","_path":"/sass/units/#variable-config-11","_previews":[]},{"_uid":"units-mixin-set","_hash":"mixin-set-13","_path":"/sass/units/#mixin-set-13","_previews":[null]},{"_uid":"units-function-get","_hash":"function-get-12","_path":"/sass/units/#function-get-12","_previews":[]}];
+console.log([{"groupName":"units","id":"variable-config","uid":"units-variable-config","title":"$config","groupPath":"/sass/units/","path":"/sass/units/#variable-config","previews":[]},{"groupName":"units","id":"mixin-set","uid":"units-mixin-set","title":"set()","groupPath":"/sass/units/","path":"/sass/units/#mixin-set","previews":[null]},{"groupName":"units","id":"function-get","uid":"units-function-get","title":"get()","groupPath":"/sass/units/","path":"/sass/units/#function-get","previews":[]}]);
+const sassdocGroup = [{"groupName":"units","id":"variable-config","uid":"units-variable-config","title":"$config","groupPath":"/sass/units/","path":"/sass/units/#variable-config","previews":[]},{"groupName":"units","id":"mixin-set","uid":"units-mixin-set","title":"set()","groupPath":"/sass/units/","path":"/sass/units/#mixin-set","previews":[null]},{"groupName":"units","id":"function-get","uid":"units-function-get","title":"get()","groupPath":"/sass/units/","path":"/sass/units/#function-get","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

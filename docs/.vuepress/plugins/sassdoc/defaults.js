@@ -1,4 +1,4 @@
-const { titleCase, itemsByType, getGroupName } = require("./utils.js");
+const { titleCase, itemsByType } = require("./utils.js");
 
 module.exports = {
   /**
@@ -28,6 +28,7 @@ module.exports = {
    * - Incase you have already installed theme, etc
    */
   addMarkdownAttrSupport: true,
+  undefinedGroupName: "None",
   /**
    * What access types are printed
    */
@@ -53,7 +54,8 @@ module.exports = {
     "throw",
     "link",
     "since",
-    "todo"
+    "todo",
+    "require"
   ],
   /**
    * Should return an object where the keys are the section's title and the values are teh items to display in that section
@@ -73,8 +75,8 @@ module.exports = {
    * - This is available incase the page sections are custom, in which case you should modify the path based on your structure
    */
   itemPath(item, data, options) {
-    const { _hash } = item;
-    return `${ options.pathBase }${ getGroupName(item) }/#${ _hash }`;
+    // const { _hash } = item;
+    // return `${ options.pathBase }${ getGroupName(item) }/#${ _hash }`;
   },
   /**
    * Determines how the file paths (to group or item is displayed)
@@ -99,6 +101,17 @@ module.exports = {
    * @param {String} name Group's name
    */
   getPageTitle: titleCase,
+  itemTitle({ 
+    name,
+    type,
+    groupName,
+    variableType 
+  }, data) {
+    const suffix = type === "function" ||  type === "mixin" ? "()" : "";
+    const prefix = type === "variable" ? "$" 
+                 : type === "placeholder" ? "%" : "";
+    return prefix + name + suffix;
+  },
   /**
    * Enable iframe previews of item's (ie. mixin) that have examples of the "html" type (default see previewExampleTypes to set custom types (ie. such as "html"))
    * - Used in order to see the markup in action (ie. applied to stylesheet)
@@ -142,5 +155,5 @@ module.exports = {
    */
   onReady(pages) {
     // Change the page
-  },
+  }
 }

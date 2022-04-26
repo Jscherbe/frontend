@@ -8,8 +8,7 @@
 
 
 
-### $config <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-config-1} 
-
+### $config <badge text="variable" type="tip" vertical="top" />  {#variable-config} 
 
   
 
@@ -42,8 +41,7 @@ Module Settings
     
 
 
-### $sizes <badge text="variable" type="tip" vertical="top" /><badge text="Map" type="warn" vertical="top" />  {#variable-sizes} 
-
+### $sizes <badge text="variable" type="tip" vertical="top" />  {#variable-sizes} 
 
   
 
@@ -69,8 +67,7 @@ The default breakpoint sizes (targets are not precise, using em's)
 
 
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-1} 
-
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set} 
 
   
 
@@ -100,9 +97,13 @@ Change modules $config
 
     
 
+#### Require
 
-### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-2} 
+- [$config](/sass/base/#variable-config)
+  
 
+
+### set() <badge text="mixin" type="tip" vertical="top" />  {#mixin-set-1} 
 
   
 
@@ -145,9 +146,13 @@ Changing the medium breakpoint and adding jumbo
 
     
 
+#### Require
+
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
+
 
 ### min() <badge text="mixin" type="tip" vertical="top" />  {#mixin-min} 
-
 
   
 
@@ -189,9 +194,14 @@ Create a media query that matches the min-width for a given size
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
+
 
 ### max() <badge text="mixin" type="tip" vertical="top" />  {#mixin-max} 
-
 
   
 
@@ -233,9 +243,15 @@ Create a media query that matches the max-width for a given size
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [get()](/sass/base/#function-get)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
+
 
 ### min-max() <badge text="mixin" type="tip" vertical="top" />  {#mixin-min-max} 
-
 
   
 
@@ -277,9 +293,15 @@ Create a media query that matches the min-width and max-width sizes
 
     
 
+#### Require
+
+- [require-map-get()](undefined)
+- [get()](/sass/base/#function-get)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
+
 
 ### embed-for-scripts() <badge text="mixin" type="tip" vertical="top" />  {#mixin-embed-for-scripts} 
-
 
   
 
@@ -299,6 +321,13 @@ Use with ulu/js/breakpoints. Breakpoints always min-width (upwards)
 
 </SassdocDetails>
   
+
+#### Require
+
+- [min()](/sass/breakpoint/#mixin-min)
+- [get()](/sass/base/#function-get)
+- [$sizes](/sass/breakpoint/#variable-sizes)
+  
   
 
 ## Functions
@@ -306,8 +335,7 @@ Use with ulu/js/breakpoints. Breakpoints always min-width (upwards)
 
 
 
-### get() <badge text="function" type="tip" vertical="top" />  {#function-get-1} 
-
+### get() <badge text="function" type="tip" vertical="top" />  {#function-get} 
 
   
 
@@ -336,11 +364,17 @@ Get a config option
   @include module-name.get("property");|
 
     
+
+#### Require
+
+- [require-map-get()](undefined)
+- [$config](/sass/base/#variable-config)
+  
   
 
 <script>
-console.log([{"_uid":"breakpoint-variable-config","_hash":"variable-config-1","_path":"/sass/breakpoint/#variable-config-1","_previews":[]},{"_uid":"breakpoint-mixin-set","_hash":"mixin-set-1","_path":"/sass/breakpoint/#mixin-set-1","_previews":[]},{"_uid":"breakpoint-function-get","_hash":"function-get-1","_path":"/sass/breakpoint/#function-get-1","_previews":[]},{"_uid":"breakpoint-variable-sizes","_hash":"variable-sizes","_path":"/sass/breakpoint/#variable-sizes","_previews":[]},{"_uid":"breakpoint-mixin-set-1","_hash":"mixin-set-2","_path":"/sass/breakpoint/#mixin-set-2","_previews":[null]},{"_uid":"breakpoint-mixin-min","_hash":"mixin-min","_path":"/sass/breakpoint/#mixin-min","_previews":[null]},{"_uid":"breakpoint-mixin-max","_hash":"mixin-max","_path":"/sass/breakpoint/#mixin-max","_previews":[null]},{"_uid":"breakpoint-mixin-min-max","_hash":"mixin-min-max","_path":"/sass/breakpoint/#mixin-min-max","_previews":[null]},{"_uid":"breakpoint-mixin-embed-for-scripts","_hash":"mixin-embed-for-scripts","_path":"/sass/breakpoint/#mixin-embed-for-scripts","_previews":[]}]);
-const sassdocGroup = [{"_uid":"breakpoint-variable-config","_hash":"variable-config-1","_path":"/sass/breakpoint/#variable-config-1","_previews":[]},{"_uid":"breakpoint-mixin-set","_hash":"mixin-set-1","_path":"/sass/breakpoint/#mixin-set-1","_previews":[]},{"_uid":"breakpoint-function-get","_hash":"function-get-1","_path":"/sass/breakpoint/#function-get-1","_previews":[]},{"_uid":"breakpoint-variable-sizes","_hash":"variable-sizes","_path":"/sass/breakpoint/#variable-sizes","_previews":[]},{"_uid":"breakpoint-mixin-set-1","_hash":"mixin-set-2","_path":"/sass/breakpoint/#mixin-set-2","_previews":[null]},{"_uid":"breakpoint-mixin-min","_hash":"mixin-min","_path":"/sass/breakpoint/#mixin-min","_previews":[null]},{"_uid":"breakpoint-mixin-max","_hash":"mixin-max","_path":"/sass/breakpoint/#mixin-max","_previews":[null]},{"_uid":"breakpoint-mixin-min-max","_hash":"mixin-min-max","_path":"/sass/breakpoint/#mixin-min-max","_previews":[null]},{"_uid":"breakpoint-mixin-embed-for-scripts","_hash":"mixin-embed-for-scripts","_path":"/sass/breakpoint/#mixin-embed-for-scripts","_previews":[]}];
+console.log([{"groupName":"breakpoint","id":"variable-config","uid":"breakpoint-variable-config","title":"$config","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#variable-config","previews":[]},{"groupName":"breakpoint","id":"mixin-set","uid":"breakpoint-mixin-set","title":"set()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-set","previews":[]},{"groupName":"breakpoint","id":"function-get","uid":"breakpoint-function-get","title":"get()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#function-get","previews":[]},{"groupName":"breakpoint","id":"variable-sizes","uid":"breakpoint-variable-sizes","title":"$sizes","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#variable-sizes","previews":[]},{"groupName":"breakpoint","id":"mixin-set-1","uid":"breakpoint-mixin-set-1","title":"set()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-set-1","previews":[null]},{"groupName":"breakpoint","id":"mixin-min","uid":"breakpoint-mixin-min","title":"min()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-min","previews":[null]},{"groupName":"breakpoint","id":"mixin-max","uid":"breakpoint-mixin-max","title":"max()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-max","previews":[null]},{"groupName":"breakpoint","id":"mixin-min-max","uid":"breakpoint-mixin-min-max","title":"min-max()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-min-max","previews":[null]},{"groupName":"breakpoint","id":"mixin-embed-for-scripts","uid":"breakpoint-mixin-embed-for-scripts","title":"embed-for-scripts()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-embed-for-scripts","previews":[]}]);
+const sassdocGroup = [{"groupName":"breakpoint","id":"variable-config","uid":"breakpoint-variable-config","title":"$config","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#variable-config","previews":[]},{"groupName":"breakpoint","id":"mixin-set","uid":"breakpoint-mixin-set","title":"set()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-set","previews":[]},{"groupName":"breakpoint","id":"function-get","uid":"breakpoint-function-get","title":"get()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#function-get","previews":[]},{"groupName":"breakpoint","id":"variable-sizes","uid":"breakpoint-variable-sizes","title":"$sizes","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#variable-sizes","previews":[]},{"groupName":"breakpoint","id":"mixin-set-1","uid":"breakpoint-mixin-set-1","title":"set()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-set-1","previews":[null]},{"groupName":"breakpoint","id":"mixin-min","uid":"breakpoint-mixin-min","title":"min()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-min","previews":[null]},{"groupName":"breakpoint","id":"mixin-max","uid":"breakpoint-mixin-max","title":"max()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-max","previews":[null]},{"groupName":"breakpoint","id":"mixin-min-max","uid":"breakpoint-mixin-min-max","title":"min-max()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-min-max","previews":[null]},{"groupName":"breakpoint","id":"mixin-embed-for-scripts","uid":"breakpoint-mixin-embed-for-scripts","title":"embed-for-scripts()","groupPath":"/sass/breakpoint/","path":"/sass/breakpoint/#mixin-embed-for-scripts","previews":[]}];
 export default {
   sassdocGroup,
   provide: {

@@ -1,10 +1,11 @@
 const { propertyTable } = require("../../helper-templates.js");
 module.exports = ({ item }) => {
-  if (item.property) {
+  const { property } = item.data
+  if (property) {
     return `
 #### Map Properties
 
-${ propertyTable(item.property) }
+${ propertyTable(property) }
 
     `;
   }
