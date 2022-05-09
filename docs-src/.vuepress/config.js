@@ -72,6 +72,6 @@ module.exports = {
       dir: path.resolve(__dirname, "../../scss/helpers/"),
       pathBase: "/helpers/",
     }],
-    // "@ulu/vuepress-plugin-auto-nav"
+    "@ulu/vuepress-plugin-auto-nav"
   ]
 }
