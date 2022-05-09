@@ -1,4 +1,7 @@
 /docs
+webpack.config.js
+babel.config.js
+.browserslistrc
 
 # From vuepress scaffolding
 # pids

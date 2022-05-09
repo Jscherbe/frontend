@@ -16,6 +16,7 @@ const sassdocDefaults = {
 
 module.exports = {
   title: '@ulu/frontend',
+  base: "/frontend/",
   description: description,
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
