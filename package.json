@@ -32,13 +32,11 @@
   },
   "homepage": "https://github.com/Jscherbe/frontend#readme",
   "devDependencies": {
+    "@ulu/vuepress-plugin-auto-nav": "^1.0.0",
+    "@ulu/vuepress-plugin-sassdoc": "^1.0.1",
     "documentation": "^13.2.5",
     "documentation-theme-light": "^1.1.1",
-    "markdown-it-attrs": "^4.1.3",
     "sass": "^1.51.0",
-    "sassdoc": "^2.7.3",
-    "strip-indent": "^3.0.0",
-    "vuepress": "^1.5.3",
-    "vuepress-bar": "^0.4.4"
+    "vuepress": "^1.5.3"
   }
 }

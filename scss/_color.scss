@@ -147,7 +147,6 @@ $color-classes: (
 /// @param {Color, String} $color Color/palette color name to apply to tint
 /// @param {Number} $percentage Percentage
 /// @return {Color}
-/// @author 
 /// @link https://css-tricks.com/snippets/sass/tint-shade-functions/ Modified from source (CSS Tricks, Kitty Giraudel)
 
 @function tint($color, $percentage) {

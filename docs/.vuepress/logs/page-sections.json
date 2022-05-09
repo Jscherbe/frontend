@@ -1,139 +1,48 @@
 {
   "body": [],
   "variables": [],
-  "mixins": [],
-  "functions": [
+  "mixins": [
     {
       "data": {
-        "description": "This is a global test aiming at testing:\n- `@access`\n- `@author`\n- `@deprecated`\n- `@example`\n- `@group`\n- `@ignore`\n- `@link`\n- `@requires`\n- `@see`\n- `@since`\n- `@todo`\n\n",
+        "description": "Print utilities helper styles\n",
         "commentRange": {
-          "start": 10,
-          "end": 60
+          "start": 9,
+          "end": 12
         },
         "context": {
-          "type": "function",
-          "name": "global-test",
-          "code": "",
+          "type": "mixin",
+          "name": "helper-utilities-styles",
+          "code": "\n\n  @include utils.file-header('helpers', 'utilities');\n  \n  // Consider removing\n  .no-scroll-y { \n    overflow-y: hidden; \n  }\n  .no-scroll-x { \n    overflow-x: hidden; \n  }\n  .full-height {\n    height: 100%;\n  }\n  .full-min-height {\n    min-height: 100%;\n  }\n  .image-fill {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n  }\n  .image-full-width img,\n  .image-full-width {\n    width: 100%;\n    height: auto;\n  }\n  .margin-auto,\n  .center {\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .margin-left-auto {\n    margin-left: auto;\n  }\n  .margin-right-auto {\n    margin-right: auto;\n  }\n  .no-margin {\n    margin: 0;\n  }\n  .no-margin-top {\n    margin-top: 0;\n  }\n  .no-margin-bottom {\n    margin-bottom: 0;\n  }\n  .no-margin-left {\n    margin-left: 0;\n  }\n  .no-margin-right {\n    margin-right: 0;\n  }\n  .no-padding {\n    padding: 0;\n  }\n  .no-padding-top {\n    padding-top: 0;\n  }\n  .no-padding-bottom {\n    padding-bottom: 0;\n  }\n  .no-padding-left {\n    padding-left: 0;\n  }\n  .no-padding-right {\n    padding-right: 0;\n  }\n",
           "line": {
-            "start": 62,
-            "end": 62
+            "start": 14,
+            "end": 82
           }
         },
-        "access": "public",
-        "author": [
-          "Pascal **Duez**",
-          "Valérian **Galliat**",
-          "Kitty **Giraudel**",
-          "Fabrice **Weinberg**"
-        ],
-        "deprecated": "This is a *deprecation* message.",
         "example": [
           {
             "type": "scss",
-            "code": "$test: function-global-test();",
-            "description": "Example description"
+            "code": "@include ulu.helper-utilities-styles();"
           }
         ],
         "group": [
-          "test-function"
+          "helpers-utilities"
         ],
-        "ignore": [],
-        "link": [
-          {
-            "url": "http://google.com",
-            "caption": "Google"
-          },
-          {
-            "url": "http://sassdoc.com",
-            "caption": ""
-          }
-        ],
-        "require": [
-          {
-            "type": "function",
-            "name": "function-specific-test",
-            "external": false,
-            "description": "This is a description with a dash."
-          },
-          {
-            "type": "mixin",
-            "name": "mixin-specific-test",
-            "external": false,
-            "description": "This is a description with no dash."
-          },
-          {
-            "type": "variable",
-            "name": "variable-specific-test",
-            "external": false
-          },
-          {
-            "type": "placeholder",
-            "name": "placeholder-specific-test",
-            "external": false,
-            "description": "This is a description and a link. http://sassdoc.com"
-          },
-          {
-            "type": "function",
-            "name": "this::is::an::external::dependancy",
-            "external": true
-          },
-          {
-            "type": "function",
-            "name": "this:is:an:external:dependancy",
-            "external": true
-          },
-          {
-            "type": "function",
-            "name": "this/is/an/external/dependancy",
-            "external": true
-          },
-          {
-            "type": "function",
-            "name": "this.is.an.external.dependancy",
-            "external": true
-          }
-        ],
-        "see": [
-          {
-            "description": "This is a test function aiming at testing:\n- `@param`\n- `@return`\n- `@throw`\n\n",
-            "context": {
-              "type": "function",
-              "name": "function-specific-test",
-              "code": "",
-              "line": {
-                "start": 77,
-                "end": 77
-              }
-            }
-          }
-        ],
-        "since": [
-          {
-            "version": "2.0.0",
-            "description": "Major refacto"
-          },
-          {
-            "version": "1.0.0",
-            "description": "Other stuff\n"
-          }
-        ],
-        "todo": [
-          "Nothing to do here.",
-          "My people need me."
-        ],
+        "access": "public",
+        "require": [],
         "file": {
-          "path": "_sassdoc.scss",
-          "name": "_sassdoc.scss"
+          "path": "_utilities.scss",
+          "name": "_utilities.scss"
         }
       },
-      "groupName": "test-function",
-      "id": "function-global-test",
-      "uid": "test-function-function-global-test",
-      "title": "global-test()",
-      "groupPath": "/sass/test-function/",
-      "path": "/sass/test-function/#function-global-test"
+      "groupName": "helpers-utilities",
+      "id": "mixin-helper-utilities-styles",
+      "uid": "helpers-utilities-mixin-helper-utilities-styles",
+      "title": "helper-utilities-styles()",
+      "groupPath": "/helpers/helpers-utilities/",
+      "path": "/helpers/helpers-utilities/#mixin-helper-utilities-styles"
     }
   ],
+  "functions": [],
   "placeholders": [],
   "CSS": []
 }
