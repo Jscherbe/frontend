@@ -8,7 +8,7 @@
 @use "selector";
 
 /// The color palette map, can be extended or modified with set() and accessed with get()
-/// @type map   
+/// @type map  
 
 $palette: (
   "black":        black,
@@ -17,6 +17,7 @@ $palette: (
   "focus":        blue,
   "error":        red,
   "accent":       orange,
+  "selected" :    green,
   "box-shadow":   rgba(0, 0, 0, 0.349),
   "rule":         gray,
   "rule-light":   lightgray,
@@ -73,8 +74,11 @@ $color-classes: (
   // Allow non lookup if the value is already a color (helps with code flow)
   @if (meta.type-of($name) == "color") {
     @return $name;
+  } @else if ($name == "inherit") {
+    @return $name;
+  } @else {
+    @return utils.require-map-get($palette, $name, 'color');
   }
-  @return utils.require-map-get($palette, $name, 'color');
 }
 
 /// Set ouput classes for all-color-class-styles
@@ -165,7 +169,7 @@ $color-classes: (
 /// @param {String} $with-prop Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)
 /// @example scss
 ///  @include ulu.all-context-styles();
-/// @example html Example of a color-context
+/// @example html {preview} Example of a color-context
 ///  <div class="color-context-dark" style="padding: 1rem">
 ////   Some text in dark context
 //// </div>
@@ -183,7 +187,7 @@ $color-classes: (
 /// Outputs all color classes
 /// @example scss
 ///  @include ulu.all-color-class-styles();
-/// @example html Example of a color-context
+/// @example html {preview} Example of a color-context
 ///  <span class="color-name">Some text</span>
 @mixin all-color-class-styles() {
   $prefix: selector.class("color");

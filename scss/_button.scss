@@ -2,6 +2,8 @@
 /// @group button
 ////
 
+/// Version:        1.0.1
+
 @use "sass:map";
 @use "sass:meta";
 @use "sass:string";
@@ -28,7 +30,7 @@ $config: (
   "font-weight":             bold,
   "line-height":             1.1,
   "letter-spacing":          0.02em,
-  "text-transform":          uppercase,
+  "text-transform":          normal,
   "text-shadow":             none,
   "font-size":               "base",
   "color":                   white,
@@ -42,7 +44,8 @@ $config: (
   "min-width":               9rem,
   "icon-size":               2.5rem,
   "icon-font-size":          1.38rem,
-  "icon-border-radius":      50%
+  "icon-border-radius":      50%,
+  "text-decoration" :        none
 ) !default;
 
 /// Button sizes
@@ -108,11 +111,11 @@ $styles: (
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-@mixin set-styles($changes) {
-  $styles: map.merge($styles, $changes) !global;
+@mixin set-styles($changes, $deep: false, $overwrite: false) {
+  $styles: utils.map-merge-or-overwrite($styles, $changes, $deep, $overwrite) !global;
 }
-@mixin set-sizes($changes) {
-  $sizes: map.merge($sizes, $changes) !global;
+@mixin set-sizes($changes, $deep: false, $overwrite: false) {
+  $sizes: utils.map-merge-or-overwrite($sizes, $changes, $deep, $overwrite) !global;
 }
 
 @mixin reset() {
@@ -158,7 +161,7 @@ $styles: (
     color: color.get(get("color"));
     border: get("border-width") solid get("border-color");
     background-color: get("background-color");
-    text-decoration: none;
+    text-decoration: get("text-decoration");
   }
   &:last-child {
     margin-right: 0;
@@ -167,6 +170,7 @@ $styles: (
     color: get("color-hover");
     background-color: get("background-color-hover");
     border-color: get("border-color-hover");
+    text-decoration: get("text-decoration");
   }
 }
 
@@ -206,11 +210,14 @@ $styles: (
     border-color: get-style-value($name, "border-color", false);
     border-width: get-style-value($name, "border-width", false);
     box-shadow: get-style-value($name, "box-shadow", false);
+    text-decoration: get-style-value($name, "text-decoration", false);
+    font-weight: get-style-value($name, "font-weight", false);
   }
   &:hover {
     background-color: get-style-value($name, "background-color", true);
     color: get-style-value($name, "color", true);
     border-color: get-style-value($name, "border-color", true);
     box-shadow: get-style-value($name, "box-shadow", true);
+    text-decoration: get-style-value($name, "text-decoration", true);
   }
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const { description } = require('../../package');
 const sassdocPlugin = require("./plugins/sassdoc");
 const sidebarAutoPagesPlugin = require("./plugins/sidebar-auto-pages");
+const sassdocPluginOptions = require("./plugins/sassdoc/test/plugin-config.js");
 // const menus = require("vuepress-bar")();
 // dataToFile(menus, path.resolve(__dirname, "logs/auto-generated-menus.json"));
 
@@ -53,20 +54,7 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    [sassdocPlugin, {
-      dir: path.resolve(__dirname, "../../scss/"),
-      debug: true,
-      debugToDir: path.resolve(__dirname, "logs/"),
-      previewMeta: `
-        <title>Sassdoc Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/ulu-frontend.min.css">
-      `,
-      previewBodyScripts: `
-        <script src="/ulu-frontend.min.js"></script>
-      `
-    }],
+    [sassdocPlugin, sassdocPluginOptions],
     sidebarAutoPagesPlugin
   ]
 }

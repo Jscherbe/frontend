@@ -2,6 +2,7 @@
 /// @group selector
 ////
 
+@use "sass:string";
 @use "sass:map";
 @use "utils";
 
@@ -17,6 +18,7 @@ $config: (
 
 // Map to store class overrides ("button" : "site-button") for example
 $-class-overrides: ();
+$-class-wildcards: ();
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
@@ -39,6 +41,14 @@ $-class-overrides: ();
 /// @param {Map} $changes Changes to merge
 
 @mixin set-class-overrides($changes) {
+  @each $key, $prop in $changes {
+    $index: string.index($key, "*");
+    @if ($index) {
+      $wild-key: string.slice($key, 1, $index - 1);
+      $-class-wildcards: map.set($-class-wildcards, $wild-key, $prop) !global;
+      $changes: map.remove($changes, $key);
+    }
+  }
   $-class-overrides: map.merge($-class-overrides, $changes) !global;
 }
 
@@ -46,7 +56,26 @@ $-class-overrides: ();
 /// Change a class used in the system (ie. like a component for example)
 /// @param {String} $class The classname to set
 
-@function class($class) {
+@function class($class, $name-only: false) {
+  // Check if it's a wildcard
+  $wildcard: get-class-wildcard($class);
   $override: map.get($-class-overrides, $class);
-  @return ".#{ get("prefix") }#{ if($override, $override, $class) }";
+  $updated: if($override, $override, if($wildcard, $wildcard, $class));
+  $name: "#{ get("prefix") }#{ $updated }";
+  @if $name-only {
+    @return $name;
+  } @else {
+    @return ".#{ $name }";
+  }
+}
+
+@function get-class-wildcard($class) {
+  $change: $class;
+  @each $key, $prop in $-class-wildcards {
+    $index: string.index($class, $key);
+    @if ($index) {
+      $change: utils.string-replace($class, $key, $prop);
+    }
+  }
+  @return $change;
 }

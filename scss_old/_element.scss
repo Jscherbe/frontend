@@ -1,0 +1,249 @@
+////
+/// @group element
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "color";
+@use "utils";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.backdrop-blur Backdrop blur amount used on elements/components
+/// @prop {Color} $config.backdrop-color Backdrop color (modal overlays, etc)
+/// @prop {List} $config.box-shadow Box-shadow definition for elements that are on top of page
+/// @prop {List} $config.box-shadow-raised Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
+/// @prop {List} $config.box-shadow-above Box-shadow definition for elements that are above the page (fixed items, etc)
+/// @prop {Number} $config.border-radius Common element border radius
+/// @prop {Number} $config.border-radius-small Common element border radius (small)
+/// @prop {Number} $config.border-radius-large Common element border radius (large)
+/// @prop {List} $config.text-shadow Common text shadow
+/// @prop {Number} $config.margin-small Common element margin (small) (default for lists)
+/// @prop {Number} $config.margin Common element margin
+/// @prop {Number} $config.margin-large Common element margin (large)
+/// @prop {String} $config.ol-list-style-type Ordered list type (level 1)
+/// @prop {String} $config.ol-list-style-type-2 Ordered list type (level 2)
+/// @prop {String} $config.ol-list-style-type-3 Ordered list type (level 3)
+/// @prop {String} $config.ul-list-style-type
+/// @prop {String} $config.ul-list-style-type-2
+/// @prop {String} $config.ul-list-style-type-3
+/// @prop {String} $config.link-text-decoration-default Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)
+/// @prop {String} $config.link-text-decoration
+/// @prop {String} $config.link-text-decoration-style
+/// @prop {Color} $config.link-text-decoration-color
+/// @prop {String} $config.link-text-decoration-style-hover
+/// @prop {Color} $config.link-text-decoration-color-hover
+/// @prop {Number} $config.link-text-decoration-thickness
+
+$config: (
+  "backdrop-blur":                    4px,
+  "backdrop-color":                   rgba(73, 73, 73, 0.459),
+  "box-shadow":                       0 1px 5px color.get('box-shadow'),
+  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
+  "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
+  "border-radius":                    6px,
+  "border-radius-small":              3px,
+  "border-radius-large":              5%,
+  "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
+  "margin-small":                     0.65em,
+  "margin":                           1em,
+  "margin-large":                     2em,
+  "ol-list-style-type":               decimal,
+  "ol-list-style-type-2":             lower-alpha,
+  "ol-list-style-type-3":             lower-roman,
+  "ul-list-style-type":               disc,
+  "ul-list-style-type-2":             circle,
+  "ul-list-style-type-3":             square,
+  "link-text-decoration-default":     none,
+  "link-text-decoration":             underline,
+  "link-text-decoration-style":       dotted,
+  "link-text-decoration-color":       initial,
+  "link-text-decoration-style-hover": solid,
+  "link-text-decoration-color-hover": false,
+  "link-text-decoration-thickness":   0.1em
+) !default;
+
+/// Rule style map, redifine defaults or add to
+/// @type Map
+
+$rule-styles: (
+  "default": 1px solid color.get("rule"),
+  "light":   1px solid color.get("rule-light"),
+) !default;
+
+/// Common rule margins (space between rule and type)
+/// @type Map
+
+$rule-margins: (
+  "smallest": 0.5rem,
+  "small":    1rem,
+  "medium":   2rem,
+  "large":    3rem
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "element [config]");
+}
+
+/// Sets rule styles
+/// @param {Map} $changes Map of changes
+
+@mixin set-rule-styles($changes) {
+  $rule-styles: map.merge($rule-styles, $changes) !global;
+}
+
+/// Sets rule margins
+/// @param {Map} $changes Map of changes
+
+@mixin set-rule-margins($changes) {
+  $rule-margins: map.merge($rule-margins, $changes) !global;
+}
+
+/// Get a rule style
+/// @param {Map} $changes Map of changes
+
+@function get-rule-style($name: "default") {
+  @return utils.require-map-get($rule-styles, $name, "element [rule style]");
+}
+
+/// Sets rule margin
+/// @param {Map} $changes Map of changes
+
+@function get-rule-margin($name) {
+  @return utils.require-map-get($rule-margins, $name, "element [rule style]");
+}
+
+/// Get full rule CSS (style and margin)
+/// @param {Map} $changes Map of changes
+
+@mixin rule(
+  $style-name: "default", 
+  $margin-name: null
+) {
+  @include rule-style($style-name);
+  @include rule-margin($margin-name);
+}
+@mixin rule-style($name: "default") {
+  border-bottom: get-rule-style($name);
+}
+@mixin rule-margin($name:  null) {
+  $margin: if($name, get-rule-margin($name), get("margin"));
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+/// Print link styles
+/// @param {Boolean} $visited Include visited style
+/// @param {Boolean} $active Include active style
+
+@mixin link($visited: false, $active: false) {
+  color: color.get("link");
+  text-decoration: get("link-text-decoration");
+  text-decoration-style: get("link-text-decoration-style");
+  text-decoration-color: get("link-text-decoration-color");
+  text-decoration-thickness: get("link-text-decoration-thickness");
+  &:hover {
+    color: color.get("link:hover");
+    text-decoration-style: get("link-text-decoration-style-hover");
+    text-decoration-color: get("link-text-decoration-color-hover");
+  }
+  @if ($visited) {
+    &:visited {
+      color: color.get("link:visited");
+    }
+  }
+  @if ($active) {
+    &:active {
+      color: color.get("link:active");
+    }
+  }
+}
+
+/// Print the defautl link styling (no hover and focus styles)
+
+@mixin link-defaults() {
+  color: color.get("link");
+  text-decoration: get("link-text-decoration-default");
+}
+
+/// Print the ordered list items styling
+/// @param {Boolean} $bullet-color Optional bullet color (defaults to palette 'bullet')
+
+@mixin styles-ordered-list($bullet-color: "bullet") {
+  margin-bottom: get("margin");
+  list-style: get("ol-list-style-type") outside;
+  li {
+    margin-bottom: get("margin-small");
+    margin-left: 1em;
+  }
+  > li {
+    &::marker {
+      color: color.get($bullet-color);
+    }
+  }
+  ol {
+    margin: get("margin-small") 0 0 get("margin-small");
+    list-style: get("ol-list-style-type-2");
+    ol { 
+      list-style-type: get("ol-list-style-type-3");
+    }
+  }
+}
+
+/// Print the unordered list items styling
+/// @param {Boolean} $bullet-color Optional bullet color
+
+@mixin styles-unordered-list($bullet-color: "bullet") {
+  list-style: get("ul-list-style-type") outside;
+  > li {
+    margin-left: 1.5em;
+    margin-bottom: get("margin-small");
+    &::marker {
+      color: color.get($bullet-color);
+    }
+  }
+  ul {
+    list-style-type: get("ul-list-style-type-2");
+  }
+   ul ul {
+    list-style-type: get("ul-list-style-type-3");
+  }
+}
+
+/// Hide text for assistive devices
+/// @param {Boolean} $hidden Defaults to true, pass false to override the hidden css (ie. on focus)
+/// @example scss
+///   @include ulu.layout-hidden-visually()
+///   // Reset styling
+///   @include ulu.layout-hidden-visually(false)
+
+@mixin hidden-visually($hidden: true) {
+  @if $hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  } @else {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    overflow: visible;
+    position: static;
+    white-space: normal;
+    width: auto;
+  }
+}

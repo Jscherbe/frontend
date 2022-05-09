@@ -45,6 +45,20 @@ $config: (
   #{ $class } {
     @include element.rule();
   }
+  #{ $class }--content-on-top {
+    position: relative;
+    > * {
+      background-color: white; // User woud need to specific per context needed or something
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      padding: 0.5em;
+      margin: 0;
+    }
+  }
+
   // Output user's styles presets
   @each $name, $value in element.$rule-styles {
     #{ $class }--#{ $name } {

@@ -1,5 +1,8 @@
-Todos:
-  ☐ How to get references
+☐ Todos:
+  ☐ Finish the throw template
+  ☐ Add version when making this a node version
+  ☐ Think about making the compiled stuff in the parse phase or in the create-content phase, instead of in the markdown
+  ✔ How to get references @done
     ✘ Wrap the nested references (see, requires) @cancelled
       * May be the easiest
       * Need to keep these lined up anyways

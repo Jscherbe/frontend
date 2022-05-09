@@ -1,6 +1,7 @@
 ////
 /// @group typography
 /// @todo Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+//// @version 1.0.2
 ////
 
 @use "sass:map";
@@ -268,10 +269,7 @@ $sizes: (
 /// @param {String} $font-size Name to retrieve from sizes map or a unique size map that follows the API
 /// @param {Map} $changes Modifications to be merged into size before using
 
-@mixin font-size-responsive($font-size, $amount: null) {
-  @if (meta.type-of($amount) != "number") {
-    $amount: get("responsive-change");
-  }
+@mixin font-size-responsive($font-size, $amount: get("responsive-change")) {
   font-size: calc(#{ $font-size } + #{ $amount });
 }
 
@@ -295,7 +293,11 @@ $sizes: (
 
   font-size: $font-size;
   @if ($responsive) {
-    @include font-size-responsive($font-size, $responsive);
+    @if (meta.type-of($responsive) == "number") {
+      @include font-size-responsive($font-size, $responsive);
+    } @else {
+      @include font-size-responsive($font-size);
+    }
   }
   @if (not $only-font-size) {
     font-weight: get-size-value($size, "font-weight");

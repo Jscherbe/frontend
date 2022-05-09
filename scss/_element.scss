@@ -34,6 +34,7 @@
 /// @prop {String} $config.link-text-decoration-style-hover
 /// @prop {Color} $config.link-text-decoration-color-hover
 /// @prop {Number} $config.link-text-decoration-thickness
+/// @prop {Number} $config.link-text-underline-offset
 
 $config: (
   "backdrop-blur":                    4px,
@@ -60,7 +61,8 @@ $config: (
   "link-text-decoration-color":       initial,
   "link-text-decoration-style-hover": solid,
   "link-text-decoration-color-hover": false,
-  "link-text-decoration-thickness":   0.1em
+  "link-text-decoration-thickness":   0.1em,
+  "link-text-underline-offset" :     auto
 ) !default;
 
 /// Rule style map, redifine defaults or add to
@@ -153,6 +155,7 @@ $rule-margins: (
   text-decoration-style: get("link-text-decoration-style");
   text-decoration-color: get("link-text-decoration-color");
   text-decoration-thickness: get("link-text-decoration-thickness");
+  text-underline-offset: get("link-text-underline-offset");
   &:hover {
     color: color.get("link:hover");
     text-decoration-style: get("link-text-decoration-style-hover");
@@ -199,6 +202,11 @@ $rule-margins: (
       list-style-type: get("ol-list-style-type-3");
     }
   }
+  ul,
+  ol {
+    margin-top: get("margin-small");
+    margin-bottom: get("margin-small");
+  }
 }
 
 /// Print the unordered list items styling
@@ -218,6 +226,11 @@ $rule-margins: (
   }
    ul ul {
     list-style-type: get("ul-list-style-type-3");
+  }
+  ul,
+  ol {
+    margin-top: get("margin-small");
+    margin-bottom: get("margin-small");
   }
 }
 

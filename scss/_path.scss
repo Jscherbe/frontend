@@ -40,7 +40,7 @@ $aliases: (
 ///
 
 @function resolve($path) {
-  $is-alias: string.index($path, "@") == 1;
+  $is-alias: string.index($path, "#") == 1;
   $dir-index: string.index($path, "/");
   $resolved-path: $path;
   @if $is-alias {

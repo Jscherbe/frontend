@@ -2,29 +2,67 @@
 /// @group components
 ////
 
+@use "sass:map";
+
 @use "../element";
 @use "../color";
 @use "../typography";
+@use "../utils";
 
-/// Output styles
+/// Module Config
 
-@mixin styles {
+$config: (
+  "border-first" : true,
+  "border-last" : true,
+  "margin-top": 0,
+  "margin-bottom": 1em,
+  "padding-between" : 1em
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "grid [config]");
+}
+
+/// Output component styles
+
+@mixin inner-styles {
   $border: element.get-rule-style("light") !default;
-  .list-lines {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: get("margin-top") 0 get("margin-bottom") 0;
+  padding: 0;
+  @if (get("border-first")) {
     border-top: $border;
-    >li {
-      border-bottom: $border;
-      padding: 1em 0;
-      >*:last-child {
-        margin-bottom: 0;
-      }
+  }
+  >li {
+    border-bottom: $border;
+    padding: get("padding-between") 0;
+    >*:last-child {
+      margin-bottom: 0;
+    }
+    @if (not get("border-last")) {
       &:last-child {
         border-bottom-width: 0;
       }
     }
+  }
+}
+
+@mixin styles {
+  
+  .list-lines {
+    @include inner-styles;
   }
   .list-lines--dense {
     >li {

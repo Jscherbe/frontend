@@ -1,0 +1,70 @@
+////
+/// @group components
+////
+
+@use "sass:map";
+@use "../utils";
+@use "../element";
+@use "../color";
+@use "../selector";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.short-width Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output
+/// @prop {Number} $config.short-border-width Short rule width of border
+
+$config: (
+  "short-width" : 2.75rem,
+  "short-border-width" : 4px
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "rule [config]");
+}
+
+/// Output styles
+
+@mixin styles {
+
+  $class: selector.class("rule");
+  
+  #{ $class } {
+    @include element.rule();
+  }
+  // Output user's styles presets
+  @each $name, $value in element.$rule-styles {
+    #{ $class }--#{ $name } {
+      @include element.rule-style($name);
+    }
+  }
+  // Output user's margin presets
+  @each $name, $value in element.$rule-margins {
+    #{ $class }--margin-#{ $name } {
+      @include element.rule-margin($name);
+    }
+  }
+
+  // Meant to be user by tself without content
+  $short-width: get("short-width");
+  @if ($short-width) {
+    #{ $class }--short {
+      width: $short-width;
+      max-width: 100%;
+      border-bottom-width: get("short-border-width");
+    }
+  }
+}

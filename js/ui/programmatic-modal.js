@@ -2,13 +2,15 @@
 // Grabs Breakpoint from CSS
 // =============================================================================
 
-// Version:         1.0.1
-
+// Version:         1.0.3
+// Changes:
+//                  1.0.2 | Updates to work with the updated modal script which has 
+//                          to attach it's own trigger handlers
 // Description:     Drupal programmatic modal insertion script (interface = jquery prototype)
 // Changes:         1.0.2 - Added ability to pass class to container
 
-import { setupModal, show } from "../ui/modals.js";
-import { dispatch } from "../events/index.js";
+import { setupModal, show, attachTriggers, triggerAttr } from "./modals.js";
+import { dispatch } from "./events.js";
 
 const $ = window.jQuery;
 const containerId = 'programmatic-modal';
@@ -57,6 +59,11 @@ function newModal(args) {
       }
     }
   });
+  // Attach handler so that it can reopen that modal
+  if (!config.removeOnClose && cachedTrigger) {
+    cachedTrigger.setAttribute(triggerAttr, id);
+    attachTriggers();
+  }
 }
 /**
  * Sets and returns the modal's id

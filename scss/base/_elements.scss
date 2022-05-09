@@ -113,6 +113,9 @@ $config: (
   strong { 
     font-weight: bold; 
   }
+  form {
+    width: 100%;
+  }
   code,
   kbd,
   samp,
@@ -147,7 +150,7 @@ $config: (
   }
   // Style ordered lists since we don't use them much in the UI components
   ol {
-    @include element.styles-ordered-list();
+    list-style: none; 
   }
   
   a {

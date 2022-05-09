@@ -2,6 +2,8 @@
 /// @group grid
 ////
 
+/// @version: 1.0.3
+
 /// HTML Attribute to use for selecting
 /// @example markup
 ///     <!-- This grid does not use columns to ovoid repeating prefixes like: -->
@@ -39,6 +41,7 @@ $config: (
   "columns":            12,
   "attribute":          "data-grid",
   "gutter":             14px,
+  "breakpoint" :        null, // Fallback to default
   "extra-breakpoints" : (
     "medium" : (
       "breakpoint" : "medium",
@@ -70,6 +73,21 @@ $config: (
   @return utils.require-map-get($config, $name, "grid [config]");
 }
 
+/// Returns gutter size for grid breakpoint map, defaults to the config's values
+/// Pass custom map to get gutter values from it
+/// @param {String} $name The name of the "grid breakpoint" (could be a different name than the actual breakpoint name it maps too)
+/// @param {Map} $custom-map Provide custom map of grid breakpoints to get the gutter from (defaults to the grid module's defaults 'extra-breakpoints')
+
+@function get-gutter($name: null, $custom-map: null) {
+  @if (not $name) {
+    @return get("gutter");
+  } @else {
+    $map: if($custom-map, $custom-map, get("extra-breakpoints"));
+    $settings: utils.require-map-get($map, $name, "grid [get-gutter]");
+    @return map.get($settings, "gutter");
+  }
+}
+
 /// Creates grid css (variation of original data-grid)
 /// @param {Number} $columns Columns in grid
 /// @param {Number} $breakpoint Breakpoint key for starting the grid
@@ -82,7 +100,7 @@ $config: (
 
 @mixin create(
   $columns: 12,
-  $breakpoint: breakpoint.get("default"),
+  $breakpoint: if(get("breakpoint"), get("breakpoint"), breakpoint.get("default")),
   $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
   $gutter: get("gutter"),
   $include-rules: false,
@@ -232,15 +250,28 @@ $config: (
     &#{'[#{ $attribute }*="rules-row-align: gutter"]'} {
       > #{ $select-item } {
         &#{ $select-rule-row } {
-          left: $gutter;
-          right: $gutter;
+          @include breakpoint.min($breakpoint) {
+            left: $gutter;
+            right: $gutter;
+          }
         }
       }
     }
-    &#{'[#{ $attribute }*="rules-row-persist: true"]'} {
+    &#{'[#{ $attribute }*="rules-row-persist: true"]'},
+    &#{'[#{ $attribute }*="rules-row-stacked-only: true"]'} {
       > #{ $select-item } {
         &#{ $select-rule-row } {
           content: '';
+        }
+      }
+    }
+    // IE for mobile/small (non grid / stacked)
+    &#{'[#{ $attribute }*="rules-row-stacked-only: true"]'} {
+      > #{ $select-item } {
+        &#{ $select-rule-row } {
+          @include breakpoint.min($breakpoint) {
+            content: none !important;
+          }
         }
       }
     }
@@ -262,6 +293,12 @@ $config: (
         padding-right: $gutter;
       }
       // Alignment options
+      &#{'[#{ $attribute }*="justify: center"]'} { 
+        justify-content: center;  
+      }
+      &#{'[#{ $attribute }*="justify: end"]'} { 
+        justify-content: flex-end;  
+      }
       &#{'[#{ $attribute }*="align: center"]'} { 
         align-items: center;  
       }

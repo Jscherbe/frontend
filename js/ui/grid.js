@@ -6,8 +6,9 @@ import { getName } from "../events/index.js";
  * @param {Object} classes Classes (optional) @see setPositionClasses
  */
 export function init(selector = "[data-grid]", classes) {
-  document.addEventListener(getName("pageModified"), setup(selector, classes));
-  setup(selector, classes)();
+  document.addEventListener(getName("pageModified"), () => setup(selector, classes));
+  document.addEventListener(getName("pageResized"), () => setup(selector, classes));
+  setup(selector, classes);
 }
 
 /**

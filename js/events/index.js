@@ -1,4 +1,4 @@
-// Description:     Custom events
+import { debounce } from "../utils/performance";
 
 /**
  * Event object - called on dispatch
@@ -6,8 +6,15 @@
 const events = {
   pageModified(context) {
     context.dispatchEvent(new Event(getName("pageModified"), { bubbles: true }));
+  },
+  pageResized(context) {
+    context.dispatchEvent(new Event(getName("pageResized"), { bubbles: true }));
   }
 }
+
+// Add global document events
+window.addEventListener('resize', debounce(() => dispatch("pageResized", document), 250));
+
 /**
  * Triggers one of our custom events
  * @param {String} type Type of event to dispatch
@@ -19,7 +26,7 @@ const events = {
  */
 export function dispatch(type, context) {
   if (events[type]) {
-    events[type].dispatch(context);
+    events[type](context);
   } else {
     console.warn(`Unable to dispatch site event: ${ type } in context:`, context);
   }

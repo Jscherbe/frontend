@@ -1,0 +1,216 @@
+////
+/// @group button
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+
+@use "color";
+@use "element";
+@use "typography";
+@use "utils";
+
+// Used for function fallback
+$-element-get: meta.get-function("get", false, "element");
+$-fallbacks: (
+  "box-shadow" : $-element-get
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "padding":                 (0.75em 1.5em),
+  "background-color":        color.tint(black, 30%),
+  "background-color-hover": black,
+  "font-family":             inherit,
+  "font-weight":             bold,
+  "line-height":             1.1,
+  "letter-spacing":          0.02em,
+  "text-transform":          uppercase,
+  "text-shadow":             none,
+  "font-size":               "base",
+  "color":                   white,
+  "color-hover":            white,
+  "box-shadow":              true,
+  "border-radius":           2rem,
+  "border-width":            0,
+  "border-color":            transparent,
+  "border-color-hover":     transparent,
+  "margin":                  (0.45em 0.5em 0.45em 0),
+  "min-width":               9rem,
+  "icon-size":               2.5rem,
+  "icon-font-size":          1.38rem,
+  "icon-border-radius":      50%
+) !default;
+
+/// Button sizes
+/// @type Map
+
+$sizes: (
+  "small" : (
+    "padding":        (0.35em 1.5em),
+    "min-width":      0,
+    "icon-size":      2rem,
+    "icon-font-size": 1rem
+  ),
+  "large" : (
+    "padding":   (1em 2em),
+    "min-width": 11rem,
+    "icon-size": 3.5rem
+  )
+) !default;
+
+/// Button styles
+/// @type Map
+
+$styles: (
+  "transparent" : (
+    "background-color" : transparent,
+    "color" : "type",
+    "border-color" : transparent,
+    "box-shadow" : none,
+    "hover" : (
+      "background-color" : "white",
+      "color" : inherit,
+      "border-color" : transparent,
+    )
+  ),
+  "outline" : (
+    "background-color" : transparent,
+    "color" : "type",
+    "border-color" : "rule",
+    "box-shadow" : none,
+    "hover" : (
+      "background-color" : "white",
+    )
+  ),
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "button [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+@mixin set-styles($changes) {
+  $styles: map.merge($styles, $changes) !global;
+}
+@mixin set-sizes($changes) {
+  $sizes: map.merge($sizes, $changes) !global;
+}
+
+@mixin reset() {
+  text-transform: none;
+  text-align: inherit;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  appearance: none; 
+  color: inherit; 
+  cursor: pointer;
+}
+@mixin default($with-reset: false) {
+  $font-size: get("font-size");
+  @if ($with-reset) {
+    @include reset();
+  }
+  display: inline-block;
+  text-transform: get("text-transform");
+  text-align: center;
+  text-shadow: get("text-shadow");
+  vertical-align: middle;
+  font-family: get("font-family");
+  font-weight: get("font-weight");
+  font-size: if(get("font-size"), typography.font-size(get("font-size")), null);
+  @if ($font-size) {
+    @include typography.size($font-size, null, true);
+  }
+  border-radius: get("border-radius");
+  background-clip: padding-box;
+  padding: get("padding");
+  line-height: get("line-height");
+  letter-spacing: get("letter-spacing");
+  box-shadow: get("box-shadow");
+  margin: get("margin");
+  min-width: get("min-width");
+  max-width: 100%; // Questionable, not sure if it's needed
+  // Should override link visted coloring
+  &,
+  &:visited {
+    color: color.get(get("color"));
+    border: get("border-width") solid get("border-color");
+    background-color: get("background-color");
+    text-decoration: none;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &:hover {
+    color: get("color-hover");
+    background-color: get("background-color-hover");
+    border-color: get("border-color-hover");
+  }
+}
+
+@mixin size($name) {
+  $size: utils.require-map-get($sizes, $name, 'button [size]');
+  $font-size: map.get($size, "font-size");
+  padding: map.get($size, "padding");
+  border-radius: map.get($size, "border-radius");
+  border-width: map.get($size, "border-width");
+  min-width: map.get($size, "min-width");
+  @if $font-size {
+    @include typography.size($font-size)
+  }
+}
+
+@function get-style-value($name, $prop, $for-hover: false) {
+  $is-color-prop: string.index($prop, "color");
+  $style: utils.require-map-get($styles, $name, 'button [color value]');
+  $hover: map.get($style, "hover");
+  $hover: if($hover, $hover, ());
+  $from: if($for-hover, $hover, $style);
+  $value: map.get($from, $prop);
+  $value: if($value, $value, map.get($style, $prop)); // Fallback to parent (if hover)
+
+  @if (meta.type-of($value) == "string" and $is-color-prop and $value != "inherit" and $value != "transparent") {
+    @return color.get($value);
+  } @else {
+    @return $value;
+  }
+}
+
+@mixin style($name) {
+  &,
+  &:visited {
+    background-color: get-style-value($name, "background-color", false);
+    color: get-style-value($name, "color", false);
+    border-color: get-style-value($name, "border-color", false);
+    border-width: get-style-value($name, "border-width", false);
+    box-shadow: get-style-value($name, "box-shadow", false);
+  }
+  &:hover {
+    background-color: get-style-value($name, "background-color", true);
+    color: get-style-value($name, "color", true);
+    border-color: get-style-value($name, "border-color", true);
+    box-shadow: get-style-value($name, "box-shadow", true);
+  }
+}

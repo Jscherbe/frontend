@@ -2,19 +2,23 @@
 // Grabs Breakpoint from CSS
 // =============================================================================
 
-// Version:         1.0.5
+// Version:         1.0.6
 
 // Description:     Pass breakpoints from CSS to stylesheet, use this to attach 
 //                  behaviors on breakpoints
 
 import { debounce } from "../utils/performance";
+import { getName } from "../events/index.js";
 import { removeArrayElement } from "../utils/array";
 import { log, logError } from "../utils/logger.js";
 
 /**
  * Resize Handler to update breakpoints for all instances (Called after resize finished)
  */
-window.addEventListener('resize', debounce(() => CssBreakpoints.instances.forEach(i => i.update()), 250));
+window.addEventListener(getName("pageResized"), () => {
+  CssBreakpoints.instances.forEach(i => i.update());
+});
+
 /**
  * Class that provides method for retrieving and acting on breakpoints passed
  * from CSS (using element psuedo content prop)

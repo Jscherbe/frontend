@@ -2,25 +2,33 @@
 // Slider
 // =============================================================================
 
-// Version:                    1.0.7
+// Version:                   1.0.10
 
-// Changes:                    1.0.4 | Remove live region annoucement (only used if auto rotate)
-//                             1.0.5 | Fix transtion event difference on windows, convert all 
-//                                     async stuff to promises and simplify
-//                             1.0.6 | Add transition class for changes during transition, 
-//                                     add will-change to the transition
+// Changes:   
+//                            1.0.10 | Fix bug when two and going in reverse
+//                            1.0.9 | Fix bug when there are only 2 slides (not sliding correctly [revesers because of switchSlide])
+//                                    this is addressed now and should slide infinitly between two slides
+//                            1.0.8 | Change API, to elements object (from individaul arguments),
+//                                    Add the ability to specify the element to append controls within
+//                            1.0.6 | Add transition class for changes during transition, 
+//                                    add will-change to the transition
+//                            1.0.5 | Fix transtion event difference on windows, convert all 
+//                                    async stuff to promises and simplify
+//                            1.0.4 | Remove live region annoucement (only used if auto rotate)
 
-// Reference:                  https://www.w3.org/WAI/tutorials/carousels/working-example/
-//                             https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html#
-//                             https://www.w3.org/TR/wai-aria-practices-1.1/examples/carousel/carousel-1.html
-//                             https://www.accessibilityoz.com/
-//                             https://www.sitepoint.com/unbearable-accessible-slideshow/
-//                             https://dev.opera.com/articles/css-will-change-property/
-//                               * Will Change use
+// Reference:                 https://www.w3.org/WAI/tutorials/carousels/working-example/
+//                            https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html#
+//                            https://www.w3.org/TR/wai-aria-practices-1.1/examples/carousel/carousel-1.html
+//                            https://www.accessibilityoz.com/
+//                            https://www.sitepoint.com/unbearable-accessible-slideshow/
+//                            https://dev.opera.com/articles/css-will-change-property/
+//                              * Will Change use
 
 import maintain from 'ally.js/maintain/_maintain';
 import { log, logError, logWarning } from "../utils/logger.js";
-import { debounce, trimWhitespace } from "../utils/string.js";
+import { hasRequiredProps } from '../utils/object.js';
+import { trimWhitespace } from "../utils/string.js";
+import { debounce } from "../utils/performance.js";
 const debugMode = false; // Global dev debug
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const eventOnce = { once: true };
@@ -33,6 +41,12 @@ addEventListener('load', () => {
   }, 250));
 });
 
+const requiredElements = [
+  "container", 
+  "trackContainer", 
+  "track", 
+  "slides"
+];
 export class Slider {
   static instances = [];
   static defaults = {
@@ -43,10 +57,12 @@ export class Slider {
     transitionFade: false,
     transitionDuration: 700,
     transitionDurationExit: 400,
-    transitionTimingFunction: "ease-in-out"
+    transitionTimingFunction: "ease-in-out",
+
     // transition: true
   }
-  constructor(container, title, trackContainer, track, slides, config, debug = false) {
+  // constructor(container, title, trackContainer, track, slides, config, debug = false) {
+  constructor(elements, config, debug = false) {
     const options = Object.assign({}, Slider.defaults, config);
     this.debug = debugMode || debug;
     this.options = options;
@@ -54,10 +70,13 @@ export class Slider {
     this.index = null;
     this.transitioning = false;
 
-    if (!container || !title || !track || !trackContainer || !slides.length) {
-      logError(this, 'Missing container, title, track, trackContainer or slides');
+    if (!hasRequiredProps(requiredElements)) {
+      logError(this, 'Missing a required Element');
     }
-    this.slides = [ ...slides ].map((element, index) => {
+    if (!elements.slides.length) {
+      logError(this, "Missing slides");
+    }
+    this.slides = [ ...elements.slides ].map((element, index) => {
       return {
         element,
         index,
@@ -65,19 +84,15 @@ export class Slider {
       }
     });
     this.elements = {
-      container,
-      trackContainer,
-      title,
-      track,
-      slides,
-      ...this.createControls(container),
-      ...this.createNav(container)
+      ...elements,
+      ...this.createControls(elements.controlContext || elements.container),
+      ...this.createNav(elements.navContext || elements.container)
     };
     // Choose the appropriate transition method
     this.transition =  options.transition ? options.transitionFade || reduceMotion 
                           ? this.fadeTransition : this.slideTransition :  this.noTransition;
     this.setup();
-    this.goto(0, null, true);
+    this.goto(0, null, "init");
     log(this, "Slider Instance Created", this);
     Slider.instances.push(this);
   }
@@ -94,20 +109,22 @@ export class Slider {
    * Goto to the previous slide
    */     
   previous(event) {
-    const { index, slides } = this;
+    const { index: lastIndex, slides } = this;
     const last = slides.length - 1;
-    const prev = index - 1;
-    this.emit("previous", [event]);
-    this.goto(prev < 0 ? last : prev);
+    const prev = lastIndex - 1;
+    const index = prev < 0 ? last : prev;
+    this.emit("previous", [event, index]);
+    this.goto(index, event, "previous");
   }
   /**
    * Goto to the next slide
    */   
   next(event) {
-    const { index, slides } = this;
-    const next = index + 1;
-    this.emit("next", [event]);
-    this.goto(next > slides.length - 1 ? 0 : next);
+    const { index: lastIndex, slides } = this;
+    const next = lastIndex + 1;
+    const index = next > slides.length - 1 ? 0 : next;
+    this.emit("next", [event, index]);
+    this.goto(index, event, "next");
   }
   /**
    *  Makes sure that no matter what the callback is called if transition event
@@ -192,8 +209,10 @@ export class Slider {
   /**
    * Handler for the entire slide transtion
    */
-  async slideTransition({slide, index, old, oldIndex }) {
-    const lastIndex = this.slides.length - 1;
+  async slideTransition({ slide, index, old, oldIndex, triggerType }) {
+    const count = this.slides.length;
+    const reverse = triggerType === "previous";
+    const lastIndex = count - 1;
     const lastToFirst = index === 0 && oldIndex === lastIndex;
     const firstToLast = index === lastIndex && oldIndex === 0;
     let switchSlide;
@@ -206,16 +225,24 @@ export class Slider {
     }
     // If first to last or last to first we switch the order of the slides so that
     // They are right next to each other at the front of the list
-    // Then perform the animation
-    // Then put them back in their natural place without transitioning
-    // so it doesn't move for the user
-    if (lastToFirst) {
-      switchSlide = old;
-    } else if (firstToLast) {
-      switchSlide = slide;
+    // Then perform the animation, Then put them back in their natural place without transitioning
+    // so it doesn't move for the user. Note count affects this differently
+    
+    if (count < 3) { 
+      if (lastToFirst && !reverse) {
+        switchSlide = old;
+      } else if (firstToLast) {
+        switchSlide = reverse ? slide : old;
+      }
+    } else {
+      if (lastToFirst) {
+        switchSlide = old;
+      } else if (firstToLast) {
+        switchSlide = slide;
+      }
     }
 
-    // Set all slides to visible during the animation
+    // Set all slides to visible during the animation 
     this.setVisibility(null, true);
 
     // Put the last item at the front of the list and reset the
@@ -228,7 +255,7 @@ export class Slider {
     await this.translateTo(slide.element.offsetLeft, duration);
     // Set the order back to normal in the end
     // Don't transtion so the slider seems like it doesn't jump/move
-    if (lastToFirst || firstToLast) {
+    if (switchSlide) {
       switchSlide.element.style.order = "0";
       await this.translateTo(slide.element.offsetLeft, 0);
     }
@@ -260,7 +287,7 @@ export class Slider {
     slide.element.style.order = "-1";
     return Promise.resolve();
   }
-  goto(index, event, isInit) {
+  goto(index, event, triggerType) {
     const { 
       slide: old, 
       index: 
@@ -268,10 +295,11 @@ export class Slider {
       slides, 
       elements
     } = this;
+    const isInit = triggerType === "init";
     const slide = slides[index];
     const activeClass = this.getClass("nav-button--active");
     const transitionClass = this.getClass("transition", true);
-    const to = { slide, index, old, oldIndex };
+    const to = { slide, index, old, oldIndex, triggerType };
 
     if (index === oldIndex) {
       logWarning(this, "Could not goto slide, still performing transition");
@@ -367,7 +395,8 @@ export class Slider {
     button.innerHTML = this.getControlContent(action);
     return button;
   }
-  createControls(container) {
+  createControls(context) {
+    console.log(context)
     const controls = document.createElement('ul');
     const previousItem = document.createElement("li");
     const nextItem = document.createElement("li");
@@ -382,7 +411,7 @@ export class Slider {
     controls.appendChild(nextItem);
     previous.addEventListener('click', this.previous.bind(this));
     next.addEventListener('click', this.next.bind(this));
-    container.appendChild(controls);
+    context.appendChild(controls);
 
     return {
       controls,

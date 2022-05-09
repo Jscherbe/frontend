@@ -9,7 +9,8 @@
     "docs:build": "vuepress build docs",
     "serve": "webpack serve --mode development --progress --stats minimal --env docs",
     "build": "webpack build --mode production --progress --stats minimal --env docs",
-    "sassdoc-test": "node --inspect-brk ./sassdoc-test.js"
+    "sassdoc-test": "node --inspect-brk ./sassdoc-test.js",
+    "sassdoc-test2": "node  ./sassdoc-test.js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,9 @@
     "documentation": "^13.2.5",
     "documentation-theme-light": "^1.1.1",
     "markdown-it-attrs": "^4.1.3",
+    "sass": "^1.51.0",
     "sassdoc": "^2.7.3",
+    "strip-indent": "^3.0.0",
     "vuepress": "^1.5.3",
     "vuepress-bar": "^0.4.4"
   }

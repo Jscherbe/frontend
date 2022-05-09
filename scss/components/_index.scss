@@ -5,14 +5,19 @@
 @forward "links" as links-*;
 @forward "button" as button-*;
 @forward "rule" as rule-*;
+@forward "list-lines" as list-lines-*;
+@forward "list-unordered" as list-unordered-*;
+@forward "list-ordered" as list-ordered-*;
 
 @use "sass:map";
+
 @use "../utils";
 @use "links";
 @use "button";
 @use "rule";
 @use "list-lines";
-@use "list-bullet";
+@use "list-unordered";
+@use "list-ordered";
 
 // Used to check against user's includes
 
@@ -21,7 +26,8 @@ $-all-includes: (
   "button" : true,
   "rule" : true,
   "list-lines" : true,
-  "list-bullet" : true
+  "list-unordered" : true,
+  "list-ordered" : true
 );
 
 /// Prints all Components styles
@@ -48,7 +54,10 @@ $-all-includes: (
   @if (map.get($-all-includes, "list-lines")) {
     @include list-lines.styles;
   }
-  @if (map.get($-all-includes, "list-bullet")) {
-    @include list-bullet.styles;
+  @if (map.get($-all-includes, "list-unordered")) {
+    @include list-unordered.styles;
+  }
+  @if (map.get($-all-includes, "list-ordered")) {
+    @include list-unordered.styles;
   }
 }

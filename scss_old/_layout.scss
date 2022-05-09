@@ -1,0 +1,170 @@
+////
+/// @group layout
+////
+
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@use "utils";
+@use "calculate";
+@use "breakpoint";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.max-width Common max-width for site
+/// @prop {Number} $config.margin Common margin for site
+/// @prop {Number} $config.z-index-fixed Common z-index, above everything
+/// @prop {Number} $config.z-index-sticky Common z-index for sticky or stuck items
+/// @prop {Number} $config.z-index-above Common z-index, below sticky
+
+$config: (
+  "max-width":         90rem,
+  "margin":            2rem,
+  "z-index-sticky":    100,
+  "z-index-above":     500,
+  "z-index-fixed":     1000
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "layout [config]");
+}
+
+$containers: (
+  "container" : (
+    "width" : 100%,
+    "max-width" : get("max-width"),
+    "padding" : (get("margin") get("margin")),
+    "breakpoints" : null,
+    "responsive" : false,
+    "responsive-amount" : 3vw
+  )
+) !default;
+
+@mixin set-containers($changes) {
+  $containers: map.merge($containers, $changes) !global;
+}
+
+@function get-container($name, $breakpoint: false) {
+  $container: utils.require-map-get($containers, $name, "Layout [get-container]");
+  $breakpoints: map.get($container, "breakpoints");
+  @if ($breakpoint) {
+    @return utils.require-map-get($breakpoints, $breakpoint, "[container breakpoint]");
+  } @else {
+    @return $container;
+  }
+}
+/// Returns padding to another property including breakpoints
+/// ie. { top: $containers-padding; }
+@mixin match-container-padding($property, $name, $sides: true) {
+  $container: get-container($name);
+  $breakpoints: map.get($container, "breakpoints");
+  #{ $property }: get-container-padding($name, $sides);
+  @if $breakpoints {
+    @each $breakpoint, $props in $breakpoints {
+      $direction: map.get($props, "direction");
+      @include breakpoint.from($name, $direction) {
+        #{ $property }: get-container-padding($name, $sides, $breakpoint);
+      }
+    }
+  }
+}
+@function get-container-padding($name, $sides: true, $specific-breakpoint: false) {
+  $container: get-container($name, $specific-breakpoint);
+  $padding: map.get($container, "padding");
+  $is-list: meta.type-of($padding) == "list"; // Else number
+  @if (not $is-list) {
+    @return $padding;
+  } @else {
+    @return list.nth($padding, if($sides, 2, 1));
+  }
+}
+
+@mixin container-padding($name, $sides: true, $ends: true, $specific-breakpoint: false) {
+  $container: get-container($name, $specific-breakpoint);
+  $responsive: map.get($container, "responsive");
+  $x: get-container-padding-x($name, $specific-breakpoint);
+  $y: get-container-padding-y($name, $specific-breakpoint);
+  $resp-amount: if(meta.type-of($responsive) == number, $responsive, calculate.get("responsive-change"));
+  
+  @if $responsive {
+    @if $sides {
+      @include calculate.responsive-property("padding-left", $x, $resp-amount);
+      @include calculate.responsive-property("padding-right", $x, $resp-amount);
+    }
+    @if $ends {
+      @include calculate.responsive-property("padding-top", $y, $resp-amount);
+      @include calculate.responsive-property("padding-bottom", $y, $resp-amount);
+    }
+  } @else {
+    @if $sides {
+      padding-left: $x;
+      padding-right: $x;
+    }
+    @if $ends {
+      padding-top: $y;
+      padding-bottom: $y;
+    }
+  }
+}
+@function get-container-padding-x($name, $specific-breakpoint: false) {
+  @return get-container-padding($name, true, $specific-breakpoint);
+}
+@function get-container-padding-y($name, $specific-breakpoint: false) {
+  @return get-container-padding($name, false, $specific-breakpoint);
+}
+@mixin container-styles($name: "container", $specific-breakpoint: false) {
+  $container: get-container($name,  $specific-breakpoint);
+  $breakpoints: map.get($container, "breakpoints");
+  
+  $width: map.get($container, "width");
+  // @debug $specific-breakpoint;
+  // @if $specific-breakpoint {
+  //   @debug $container;
+  // }
+  @if ($width == null) {
+    $width: 100%;
+  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: $width;
+  max-width: map.get($container, "max-width");
+  @include container-padding($name, $specific-breakpoint: $specific-breakpoint);
+
+  // Recursive print other breakpoints
+  @if $breakpoints and not $specific-breakpoint {
+    @each $breakpoint, $props in $breakpoints {
+      $direction: map.get($props, "direction");
+      @include breakpoint.from($breakpoint, $direction) {
+        @include container-styles($name, $breakpoint);
+      }
+    }
+  }
+}
+
+/// Prints clearfix styles
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    flex-basis: 0; // Flexbox, clear fix for pseudo elements in Safari
+    order: 1;
+  }
+  &:after { 
+    clear: both; 
+  }
+  *zoom: 1;
+}

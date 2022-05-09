@@ -2,6 +2,8 @@
 // Tabs
 // =============================================================================
 // 
+// Version:         1.0.1
+// 
 // Selected by: [data-site-tablist]
 // 
 // Possible options (passed in attribute JSON)
@@ -23,13 +25,9 @@ window.addEventListener("load", () => {
 // Initialize when page updates/changes
 document.addEventListener('pageModified', e => initWithin(e.target));
 
-// =============================================================================
-
 function initWithin(context) {
-  // console.log('context:\n', context);
   if (!context) return;
   const tablists = context.querySelectorAll('[data-site-tablist]');
-  // console.log('tablists:\n', tablists);
   tablists.forEach(init);
 }
 function openByCurrentHash({ options, ariaTablist }) {
@@ -47,6 +45,8 @@ function openByCurrentHash({ options, ariaTablist }) {
 }
 function init(element) {
   let options = {};
+  const config = {};
+  
   if (element.dataset.siteTablist) {
     try {
       options = JSON.parse(element.dataset.siteTablist);
@@ -54,13 +54,16 @@ function init(element) {
       console.error(errorHeader, "(JSON Parse for options)", element);
     }
   }
-  
+  if (options.vertical) {
+    config.allArrows = true;
+  }
+
+  // Need to render the markup before checking height
+  //  - used to wait until images had loaded
+  ready();
+
   if (options.equalHeights) {
-    // Fires callback async (images loading)
-    setHeights(element, ready);
-  } else {
-    // Intialize right away
-    ready();
+    setHeights(element);
   }
   
   function ready() {
@@ -69,7 +72,8 @@ function init(element) {
       onOpen(...args) {
         args.unshift(instance);
         handleOpen.apply(null, args);
-      }
+      },
+      ...config
     });
     instances.push(instance);
   }
@@ -79,7 +83,7 @@ function handleOpen({ options }, panel, tab) {
     window.history.replaceState(null, "", `#${ tab.id }`);
   }
 }
-function setHeights(element, callback) {
+function setHeights(element) {
   const tabs = [ ...element.children];
   const panels = tabs.map(n => document.querySelector(`[aria-labelledby="${ n.id }"]`)); 
   const parent = panels[0].parentElement;
@@ -92,19 +96,13 @@ function setHeights(element, callback) {
     });
   }
   Promise.all(imagePromises).then(() => {
-    setHeights();
-  });
-
-  function setHeights() {
     const heights = panels.map(panel => panel.offsetHeight);
     const max = Math.max(...heights);
-    // console.log('max:\n', max);
     panels.forEach(panel => panel.style.minHeight = `${ max }px`);
-    callback(); // Done waiting allow the init to continue
-  }
+  });
 }
 
-export { instances, openByCurrentHash };
+export { instances };
 
 
 

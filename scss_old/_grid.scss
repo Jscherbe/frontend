@@ -1,0 +1,521 @@
+////
+/// @group grid
+////
+
+/// HTML Attribute to use for selecting
+/// @example markup
+///     <!-- This grid does not use columns to ovoid repeating prefixes like: -->
+///     <div class="grid-columuns-12 grid-columuns-12-gutters">
+///       <div class="col-4 col-medium-6 col-offset-medium-3">
+///       </div>
+///     </div>
+///
+///     <!-- instead it styles like: -->
+///     <div data-grid="columns: 12, gutters: true">
+///       <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
+///       </div>
+///     </div>
+
+@use "sass:map";
+@use "sass:math";
+@use "breakpoint";
+@use "color";
+@use "element";
+@use "layout";
+@use "utils";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.columns Default for grid mixin
+/// @prop {String} $config.attribute Default attribute to use for grid mixin
+/// @prop {Number} $config.gutter Default gutter for grid mixin
+/// @prop {Map} $config.extra-breakpoints Default extra breakpoints for grid mixin
+/// @prop {MaStringp} $config.position-class-column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+/// @prop {String} $config.position-class-column-last See definition above
+/// @prop {String} $config.position-class-row-first See definition above
+/// @prop {String} $config.position-class-row-last See definition above
+
+$config: (
+  "columns":            12,
+  "attribute":          "data-grid",
+  "gutter":             14px,
+  "extra-breakpoints" : (
+    "medium" : (
+      "breakpoint" : "medium",
+      "gutter" : 15px
+    ),
+    "large" : (
+      "breakpoint" : "large",
+      "gutter" : 20px
+    )
+  ),
+  "position-class-column-first": "position-column-first",
+  "position-class-column-last":  "position-column-last",
+  "position-class-row-first":    "position-row-first",
+  "position-class-row-last":     "position-row-last"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "grid [config]");
+}
+
+/// Creates grid css (variation of original data-grid)
+/// @param {Number} $columns Columns in grid
+/// @param {Number} $breakpoint Breakpoint key for starting the grid
+/// @param {Map} $extra-breakpoints Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)
+/// @param {Number} $gutter Size in pixels for the gutters
+/// @param {Boolean} $include-rules Print styles for including rules
+/// @param {Number} $rule-size Size of the rule (border/seperator)
+/// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
+/// @param {String} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+
+@mixin create(
+  $columns: 12,
+  $breakpoint: breakpoint.get("default"),
+  $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
+  $gutter: get("gutter"),
+  $include-rules: false,
+  $rule-size: 1px,
+  $rule-color: color.get("rule"),
+  $extra-rule-styles: null,
+  $attribute: get("attribute")
+) {
+  $attribute-item: "#{ $attribute }-item";
+  $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
+  $select-item: '[#{ $attribute-item }]';
+  $select-rule-col: ":before";
+  $select-rule-row: ":after";
+  // These through off syntax highlighting when inside interpolation
+  $position-class-column-first: get("position-class-column-first");
+  $position-class-column-last: get("position-class-column-last");
+  $position-class-row-first: get("position-class-row-first");
+  $position-class-row-last: get("position-class-row-last");
+
+  #{ $select-grid } {
+    @include layout.clearfix(); // For legacy browsers
+
+    // Ensure empty elements still take up space in layout
+    > #{ $select-item } {
+      min-height: 1px; 
+      width: 100%;
+    }
+    // This is for value of true and also covers all options below
+    &#{'[#{ $attribute }*="gutters-row:"]'} { 
+      > #{ $select-item } {
+        padding-top:  $gutter;
+        padding-bottom: $gutter;
+      }
+    }
+    &#{'[#{ $attribute }*="gutters-row: top"]'} { 
+      > #{ $select-item } {
+        &.#{ $position-class-row-last } {
+          padding-bottom: 0;
+        }
+      }
+    }
+    &#{'[#{ $attribute }*="gutters-row: bottom"]'} { 
+      > #{ $select-item } {
+        &.#{ $position-class-row-first } {
+          padding-top: 0;
+        }
+      }
+    }
+    &#{'[#{ $attribute }*="gutters-row: fit"]'} { 
+      margin-top: -$gutter;
+      margin-bottom: -$gutter;
+    }
+    // Rules: Row
+    &#{'[#{ $attribute }*="rules-row:"]'} { 
+      > #{ $select-item } {
+        &#{ $select-rule-row } {
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: $rule-size;
+          background: color.get($rule-color);
+        }
+      }
+    }
+    // Rules: Applies to both column and row
+    &#{'[#{ $attribute }*="rules"]'} { 
+      > #{ $select-item } {
+        position: relative;
+      }
+    }
+    // Rules: Column
+    &#{'[#{ $attribute }*="rules-column:"]'} { 
+      > #{ $select-item } {
+        &#{ $select-rule-col } {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: $rule-size;
+          background: color.get($rule-color);
+        }
+      }
+    }
+    // Options for the left or right
+    @include -create-rule-col-position(
+      $position: "left", 
+      $size: $rule-size, 
+      $attribute: $attribute, 
+      $select-item: $select-item, 
+      $select-rule-col: $select-rule-col, 
+      $end-class: $position-class-column-first
+    );
+    @include -create-rule-col-position(
+      $position: "right", 
+      $size: $rule-size, 
+      $attribute: $attribute, 
+      $select-item: $select-item, 
+      $select-rule-col: $select-rule-col, 
+      $end-class: $position-class-column-last
+    );
+    // Override first or last column removing the rule using matching specificity
+    &#{'[#{ $attribute }*="rules-column:"][#{ $attribute }*="rules-column-ends: true"]'} {
+      > #{ $select-item } {
+        &#{ $select-rule-col } {
+          content: '';
+        }
+      }
+    }
+    &#{'[#{ $attribute }*="rules-column-align: gutter"]'} {
+      > #{ $select-item } {
+        &#{ $select-rule-col } {
+          top: $gutter;
+          bottom: $gutter;
+        }
+      }
+    }
+    // Options for the left or right
+    @include -create-rule-row-position(
+      $position: "top", 
+      $size: $rule-size, 
+      $attribute: $attribute, 
+      $select-item: $select-item, 
+      $select-rule-row: $select-rule-row, 
+      $between: false
+    );
+    @include -create-rule-row-position(
+      $position: "bottom", 
+      $size: $rule-size, 
+      $attribute: $attribute, 
+      $select-item: $select-item, 
+      $select-rule-row: $select-rule-row, 
+      $between: false
+    );
+
+    &#{'[#{ $attribute }*="rules-row: between"]'} {
+      > #{ $select-item } {
+        &#{ $select-rule-row } {
+          bottom: math.floor(math.div($rule-size, 2)) * -1;
+        }
+        // For removing the rule per row (via equal heights for now)
+        &.#{ $position-class-row-last } {
+          &#{ $select-rule-row } {
+            content: none;
+          }
+        }
+      }
+    }
+    &#{'[#{ $attribute }*="rules-row-align: gutter"]'} {
+      > #{ $select-item } {
+        &#{ $select-rule-row } {
+          left: $gutter;
+          right: $gutter;
+        }
+      }
+    }
+    &#{'[#{ $attribute }*="rules-row-persist: true"]'} {
+      > #{ $select-item } {
+        &#{ $select-rule-row } {
+          content: '';
+        }
+      }
+    }
+  }
+
+  @include breakpoint.min($breakpoint) {
+    // Select the attribute with matching column count
+    #{ $select-grid } {
+      // Defaults for grid an item
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch;
+      margin-left: -$gutter;
+      margin-right: -$gutter;
+
+      > #{ $select-item } {
+        float: left; // Fallback
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+      // Alignment options
+      &#{'[#{ $attribute }*="align: center"]'} { 
+        align-items: center;  
+      }
+      &#{'[#{ $attribute }*="align: end"]'} { 
+        align-items: flex-end;
+      }
+      &#{'[#{ $attribute }*="align: start"]'} { 
+        align-items: flex-start; 
+      }
+      // Alignment of the children when using stretch
+      // - There is no stetch-start (that's defualt);
+      // - There is no stetch-middle (that's covered by stretch-);
+      &#{'[#{ $attribute }*="align: stretch-"]'} { 
+        // set the child to display as a single flex item
+        > #{ $select-item } {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+      &#{'[#{ $attribute }*="align: stretch-end"]'} { 
+        > #{ $select-item } {
+          justify-content: flex-end;
+        }
+      }
+      // Other options
+      &#{'[#{ $attribute }*="gutters: false"]'} { 
+        margin-left: 0;
+        margin-right: 0;
+        > #{ $select-item } {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+      // Activate Rules
+      &#{'[#{ $attribute }*="rules-column:"]'} {
+        > #{ $select-item } {
+          &#{ $select-rule-col } {
+            content: '';
+          }
+        }
+      }
+      &#{'[#{ $attribute }*="rules-row:"]'} {
+        > #{ $select-item } {
+          &#{ $select-rule-row } {
+            content: '';
+          }
+        }
+      }
+      // Generated props for item
+      @include -create-column-widths(
+        $columns: $columns,
+        $attribute-item: $attribute-item,
+        $suffix: ''
+      );
+      @include -create-column-offsets(
+        $columns: $columns,
+        $attribute-item: $attribute-item,
+        $suffix: ''
+      );
+    }
+  }
+
+  @if $extra-breakpoints {
+    @each $name, $options in $extra-breakpoints {
+      $g: map.get($options, "gutter");
+      @include -create-extra-breakpoint(
+        $name: $name, 
+        $breakpoint: map.get($options, "breakpoint"),
+        $gutter: if($g, $g, $gutter),
+        $columns: $columns,
+        $attribute-item: $attribute-item,
+        $select-grid: $select-grid,
+        $select-item: $select-item
+      );
+    }
+  }
+  @if $extra-rule-styles {
+    @each $name, $options in $extra-rule-styles {
+      $color: utils.require-map-get($options, "color", "grid [extra rule style]");
+      $size: utils.require-map-get($options, "size", "grid [extra rule style]");
+      #{ $select-grid } {
+
+        &#{'[#{_attr}*="rules-column-style: #{ $name }"]'} {
+          > #{ $select-item } {
+            &#{ $select-rule-col } {
+              background-color: color.get($color);
+              width: $size;
+            }
+          }
+          @include -create-rule-col-position(
+            $position: "left", 
+            $size: $size, 
+            $attribute: $attribute, 
+            $select-item: $select-item, 
+            $select-rule-col: $select-rule-col, 
+            $end-class: false
+          );
+          @include -create-rule-col-position(
+            $position: "right", 
+            $size: $size, 
+            $attribute: $attribute, 
+            $select-item: $select-item, 
+            $select-rule-col: $select-rule-col, 
+            $end-class: false
+          );
+        }
+        &#{'[#{_attr}*="rules-row-style: #{ $name }"]'} {
+          > #{ $select-item } {
+            &#{ $select-rule-row } {
+              background-color: $color;
+              height: $size;
+            }
+          }
+          @include -create-rule-row-position(
+            $position: "top", 
+            $size: $size, 
+            $attribute: $attribute, 
+            $select-item: $select-item, 
+            $select-rule-row: $select-rule-row, 
+            $between: false
+          );
+          @include -create-rule-row-position(
+            $position: "bottom", 
+            $size: $size, 
+            $attribute: $attribute, 
+            $select-item: $select-item, 
+            $select-rule-row: $select-rule-row, 
+            $between: false
+          );
+          @include -create-rule-row-position(
+            $position: "bottom", 
+            $size: $size, 
+            $attribute: $attribute, 
+            $select-item: $select-item, 
+            $select-rule-row: $select-rule-row, 
+            $between: true
+          );
+        }
+      }
+    }
+  }
+}
+
+@mixin -create-extra-breakpoint(
+  $name, 
+  $breakpoint,
+  $gutter,
+  $columns,
+  $attribute-item,
+  $select-grid,
+  $select-item
+) {
+  @include breakpoint.min($breakpoint) {
+
+    #{ $select-grid } {
+      margin-left: -$gutter;
+      margin-right: -$gutter;
+
+      > #{ $select-item } {
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+
+      @include -create-column-widths(
+        $columns: $columns,
+        $attribute-item: $attribute-item,
+        $suffix: "-#{ $name }"
+      );
+      @include -create-column-offsets(
+        $columns: $columns,
+        $attribute-item: $attribute-item,
+        $suffix: "-#{ $name }"
+      );
+    }
+  }
+}
+
+@mixin -create-column-widths(
+  $columns,
+  $attribute-item,
+  $suffix: ''
+) {
+  $column-width: math.div(100%, $columns);
+
+  @for $i from 1 through $columns {
+    $width: $column-width * $i;
+    & > #{'[#{ $attribute-item }*="width#{ $suffix }: #{ $i }"]'} {
+      width: $width;
+      flex-basis: $width;
+      max-width: $width;
+    }
+  }
+}  
+
+@mixin -create-column-offsets(
+  $columns,
+  $attribute-item,
+  $suffix: ''
+) {
+  $column-width: math.div(100%, $columns);
+
+  @for $i from 1 through $columns {
+    & > #{'[#{ $attribute-item }*="offset#{ $suffix }: #{ $i }"]'} {
+      margin-left: $column-width * $i;
+    }
+  }
+  // For Zero (in case using breakpoints to remove)
+  & > #{'[#{ $attribute-item }*="offset#{ $suffix }: 0"]'} {
+    margin-left: 0;
+  }
+}
+
+@mixin -create-rule-col-position(
+  $position, 
+  $size, 
+  $attribute, 
+  $select-item, 
+  $select-rule-col, 
+  $end-class: false
+) {
+  &#{'[#{ $attribute }*="rules-column: #{ $position }"]'} {
+    > #{ $select-item } {
+      &#{ $select-rule-col } {
+        #{$position}: math.floor(math.div($size, 2)) * -1;
+      }
+      // For removing the rule per row (via equal heights for now)
+      @if $end-class {
+        &.#{ $end-class } {
+          &#{ $select-rule-col } {
+            content: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin -create-rule-row-position(
+  $position, 
+  $size, 
+  $attribute, 
+  $select-item, 
+  $select-rule-row, 
+  $between: false
+) {
+  $key: if($between, 'between', $position);
+
+  &#{'[#{ $attribute }*="rules-row: #{ $key }"]'} {
+    > #{ $select-item } {
+      &#{ $select-rule-row } {
+        content: $size;
+        #{ $position }: math.floor(math.div($size, 2)) * -1;
+      }
+    }
+  }
+}

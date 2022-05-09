@@ -3,26 +3,58 @@
 ////
 
 @use "sass:map";
+// @use "sass:selector" as sassSelector;
 @use "../typography";
 @use "../selector";
 @use "../utils";
 @use "../button";
 
+// $config: (
+//   "contextual-classes" : false
+// ) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+// @mixin set($changes) {
+//   $config: map.merge($config, $changes) !global;
+// }
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+// @function get($name) {
+//   @return utils.require-map-get($config, $name, "component-button [config]");
+// }
+
 /// Prints button component styles
 /// @name component-button-styles
 /// @example scss
 ///  @include ulu.component-button-styles();
-/// @example html
+/// @example html {preview} 
 ///  <a class="button" href="#">Button Default</a>
 
 @mixin styles {
   @include utils.file-header('component', 'button');
 
   $prefix: selector.class("button");
+  // $printContextual: get("contextual-classes");
+  // $classContextual: "#{ selector.class("button-inside") } ;
   $icon-selector: "#{ $prefix }--icon";
+  $printDescendant: "#{ $prefix }--icon";
 
   #{ $prefix } {
     @include button.default();
+  }
+  #{ $prefix }__icon {
+    &:first-child {
+      margin-right: 1em;
+    }
+    &:last-child {
+      margin-left: 1em;
+    }
   }
   
   @each $size, $values in button.$sizes {

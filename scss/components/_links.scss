@@ -24,4 +24,11 @@
       @include element.link();
     }
   }
+  $selectorSingle: selector.class("link");
+  #{ $selectorSingle } {
+    @include element.link(true, true);
+  }
+  #{ $selectorSingle }-no-visited {
+    @include element.link();
+  }
 }

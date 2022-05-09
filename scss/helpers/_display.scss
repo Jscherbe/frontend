@@ -42,6 +42,9 @@
   .display-inline {
     display: inline;
   }
+  .display-inline-all * {
+    display: inline;
+  }
   .display-inline-block {
     display: inline-block;
   }

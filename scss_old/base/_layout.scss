@@ -1,0 +1,36 @@
+////
+/// @group base
+////
+
+@use "../layout";
+@use "../selector";
+
+@mixin styles {
+  @each $name, $values in layout.$containers {
+    $class: selector.class($name);
+    #{ $class } {
+      @include layout.container-styles($name);
+    }
+  }
+  
+  .layout-flex {
+    display: flex;
+  }
+  .layout-flex-justified {
+    @extend .layout-flex;
+    justify-content: space-between;
+  }
+  .layout-flex-center {
+    @extend .layout-flex;
+    align-items: center;
+  }
+  .layout-flex-column {
+    @extend .layout-flex;
+    flex-direction: column;
+  }
+  .layout-flex-column-center {
+    @extend .layout-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

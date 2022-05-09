@@ -6,10 +6,7 @@
 @use "sass:meta";
 @use "sass:math";
 @use "sass:list";
-
-/// Test
-/// @type Boolean
-$test: true !default;
+@use "sass:string";
 
 /// Module Settings
 /// @type Map
@@ -162,4 +159,28 @@ $config: (
     } 
   }
   @return $value;
+}
+
+/// Replaces all or one occurence of a string within a string
+/// @param {String} $string String to operate on
+/// @param {String} $find String to find within string
+/// @param {String} $replace String to replace found strings
+/// @param {Boolean} $all Default true replace all matches, if false replace only first
+
+@function string-replace($string, $find, $replace, $all: true) {
+
+  $index: string.index($string, $find);
+  
+  @if ($index) {
+    $start: if($index == 1, "", string.slice($string, 1, string.length($find) - 1));
+    $end: string.slice($string, $index + string.length($find));
+    $new: $start + $replace;
+    @if ($all) {
+      @return $new + string-replace($end, $find, $replace);
+    } @else {
+      @return $new + $end;
+    }
+  } @else {
+    @return $string;
+  }
 }

@@ -1,3 +1,4 @@
+import { patterns } from "./regex.js";
 /**
  *   Will return an object with the separation details
  *   @param  {[type]} string [description]
@@ -19,7 +20,7 @@
  * @param {String} html HTML string to find/replace
  */
  export function stripTags(html) {
-  return html.replace(regex.htmlTag, "");
+  return html.replace(patterns.htmlTag, "");
 }
 
 /**
@@ -28,7 +29,7 @@
  * @returns 
  */
  export function trimDoubleSpaces(string) {
-  return string.replace(regex.multiSpace, "");
+  return string.replace(patterns.multiSpace, "");
 }
 
 /**
@@ -37,7 +38,7 @@
  * @returns {String}
  */
  export function trimLineBreaks(string) {
-  return string.replace(regex.linebreaks, "");
+  return string.replace(patterns.linebreaks, "");
 }
 
 /**
@@ -46,8 +47,8 @@
  * @returns {String}
  */
  export function trimWhitespace(string) {
-  return string.replace(regex.linebreaks, "")
-               .replace(regex.multiSpace, " ")
+  return string.replace(patterns.linebreaks, "")
+               .replace(patterns.multiSpace, " ")
                .trim();
 }
 

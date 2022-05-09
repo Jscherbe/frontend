@@ -1,0 +1,54 @@
+////
+/// @group components
+////
+
+@forward "links" as links-*;
+@forward "button" as button-*;
+@forward "rule" as rule-*;
+
+@use "sass:map";
+@use "../utils";
+@use "links";
+@use "button";
+@use "rule";
+@use "list-lines";
+@use "list-bullet";
+
+// Used to check against user's includes
+
+$-all-includes: (
+  "links" : true,
+  "button" : true,
+  "rule" : true,
+  "list-lines" : true,
+  "list-bullet" : true
+);
+
+/// Prints all Components styles
+/// @name component-styles
+/// @param {List} $includes A list of changes to module includes
+/// @example scss
+///  @include ulu.component-styles();
+
+@mixin styles($includes: null) {
+  @include utils.file-header("components");
+  @if $includes {
+    @include utils.require-list-contains($-all-includes, $includes);
+    $-all-includes: map.merge($-all-includes, $includes) !global;
+  }
+  @if (map.get($-all-includes, "links")) {
+    @include links.styles;
+  }
+  @if (map.get($-all-includes, "button")) {
+    @include button.styles;
+  }
+  @if (map.get($-all-includes, "rule")) {
+    @include rule.styles;
+  }
+  @if (map.get($-all-includes, "list-lines")) {
+    @include list-lines.styles;
+  }
+  @if (map.get($-all-includes, "list-bullet")) {
+    @include list-bullet.styles;
+  }
+}
