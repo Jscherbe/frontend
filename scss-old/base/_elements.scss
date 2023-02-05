@@ -1,0 +1,183 @@
+////
+/// @group base-elements
+////
+
+@use "sass:map";
+
+@use "../utils";
+@use "../color";
+@use "../element";
+@use "../typography";
+@use "../breakpoint";
+@use "../button";
+
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active
+
+$config: (
+  "links-state-styling" : false
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "element [config]");
+}
+
+/// Prints elements base styles
+/// @name base-elements-styles
+/// @example scss
+///  @include ulu.base-elements-styles();
+
+@mixin styles {
+
+  @include utils.file-header('base', 'elements');
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    color: color.get('type');
+    background-color: white;
+    font-family: typography.get("font-family");
+    margin: 0;
+    // Note we are using relative units here instead of setting a 
+    // pixel base like we use to on the HTML
+    // This will allow the user preference in font size
+    // Useful for accessibility
+    @include typography.size("base");
+    @include breakpoint.embed-for-scripts();
+  }
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6, 
+  ul, 
+  ol, 
+  li,
+  pre, 
+  code,
+  p { 
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    border-width: 0;
+    border-style: solid;
+    font-weight: inherit;
+  }
+  p {
+    $margin-top: typography.get("margin-top");
+    margin-top: if($margin-top, $margin-top, 0);
+    margin-bottom: typography.get("margin-bottom"); 
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  small { 
+    @include typography.size("small", ("line-height" : typography.get("line-height-dense"))); 
+  }
+  sub { 
+    bottom: -0.25em; 
+  }
+  sup { 
+    top: -0.5em; 
+  }
+  b, 
+  strong { 
+    font-weight: bold; 
+  }
+  form {
+    width: 100%;
+  }
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: typography.get("font-family-monospace");
+  }
+  hr {
+    height: 0;
+    border: 0;
+    box-sizing: content-box;
+    overflow: visible;
+    margin: element.get("margin") 0;
+    border-bottom: element.get-rule-style();
+  }
+  iframe {
+    border: 0;
+    outline: 0;
+  }
+  figure {
+    margin: 0;
+  }
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border-style: none;
+  }
+  // Not styling ordered lists because they are used in navigation and other UI components
+  ul { 
+    list-style: none; 
+  }
+  // Style ordered lists since we don't use them much in the UI components
+  ol {
+    list-style: none; 
+  }
+  
+  a {
+    @if (get("links-state-styling")) {
+      @include element.link();
+    } @else {
+      @include element.link-defaults();
+    }
+  }
+  // button,
+  // [type="button"],
+  // [type="reset"],
+  // [type="submit"] {
+  //   @include button.reset();
+  // }
+  // For accessible tabs
+  [role="tab"] {
+    cursor: pointer;
+  }
+  dt { 
+    font-weight: bold;
+  }
+  [hidden], 
+  template {
+    display: none;
+  }
+  blockquote {
+    margin: 0;
+  }
+}

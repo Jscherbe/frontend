@@ -19,6 +19,7 @@ $palette: (
   "accent":       orange,
   "selected" :    green,
   "box-shadow":   rgba(0, 0, 0, 0.349),
+  "box-shadow:hover" : rgba(0, 0, 0, 0.5),
   "rule":         gray,
   "rule-light":   lightgray,
   "link":         blue,
@@ -147,6 +148,7 @@ $color-classes: (
 /// @param {Color, String} $color Color/palette color name to apply to tint
 /// @param {Number} $percentage Percentage
 /// @return {Color}
+/// @author 
 /// @link https://css-tricks.com/snippets/sass/tint-shade-functions/ Modified from source (CSS Tricks, Kitty Giraudel)
 
 @function tint($color, $percentage) {
@@ -168,7 +170,7 @@ $color-classes: (
 /// @param {String} $with-prop Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)
 /// @example scss
 ///  @include ulu.all-context-styles();
-/// @example html {preview} Example of a color-context
+/// @example raw Example of a color-context
 ///  <div class="color-context-dark" style="padding: 1rem">
 ////   Some text in dark context
 //// </div>
@@ -186,7 +188,7 @@ $color-classes: (
 /// Outputs all color classes
 /// @example scss
 ///  @include ulu.all-color-class-styles();
-/// @example html {preview} Example of a color-context
+/// @example raw Example of a color-context
 ///  <span class="color-name">Some text</span>
 @mixin all-color-class-styles() {
   $prefix: selector.class("color");

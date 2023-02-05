@@ -1,5 +1,5 @@
 ////
-/// @group helpers-display
+/// @group display
 ////
 
 @use "sass:map";
@@ -12,7 +12,6 @@
 @use "../selector";
 
 /// Print utilities helper styles
-/// @name helper-display-styles
 /// @example scss
 ///  @include ulu.helper-display-styles();
 

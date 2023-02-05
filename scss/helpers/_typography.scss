@@ -1,5 +1,5 @@
 ////
-/// @group helpers-typography
+/// @group typography
 ////
 
 @use "sass:map";
@@ -8,10 +8,9 @@
 @use "../typography";
 
 /// Prints Typography Helper styles
-/// @name helper-typography-styles
 /// @example scss
 ///  @include ulu.helper-typography-styles();
-/// @example html {preview}  Example of type size as helper prefixed
+/// @example raw Example of type size as helper prefixed
 ///  <span class="type-large-xxx">A</span>
 ///  <span class="type-large-xx">A</span>
 ///  <span class="type-large-x">A</span>

@@ -1,5 +1,5 @@
 ////
-/// @group base-elements
+/// @group elements
 ////
 
 @use "sass:map";
@@ -38,7 +38,6 @@ $config: (
 }
 
 /// Prints elements base styles
-/// @name base-elements-styles
 /// @example scss
 ///  @include ulu.base-elements-styles();
 

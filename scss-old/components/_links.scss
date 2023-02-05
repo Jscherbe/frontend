@@ -1,0 +1,34 @@
+////
+/// @group components-links Links
+////
+
+@use "../element";
+@use "../selector";
+
+/// Link compontent styles (.link)
+/// - Contextual link styling
+/// - Styles all links within as normal text hyperlinks (hover, visited)
+/// @name component-links-styles
+/// @example scss
+///  @include ulu.component-links-styles();
+
+@mixin styles {
+  $selector: selector.class("links");
+  #{ $selector } {
+    a {
+      @include element.link(true, true);
+    }
+  }
+  #{ $selector }-no-visited {
+    a {
+      @include element.link();
+    }
+  }
+  $selectorSingle: selector.class("link");
+  #{ $selectorSingle } {
+    @include element.link(true, true);
+  }
+  #{ $selectorSingle }-no-visited {
+    @include element.link();
+  }
+}

@@ -1,11 +1,10 @@
 ////
-/// @group base-keyframes
+/// @group keyframes
 ////
 
 @use "../utils";
 
 /// Prints CSS keyframes
-/// @name base-keyframes-styles
 /// @example scss
 ///  @include ulu.base-keyframes-styles();
 

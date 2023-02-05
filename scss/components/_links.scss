@@ -1,5 +1,5 @@
 ////
-/// @group components-links Links
+/// @group links
 ////
 
 @use "../element";
@@ -8,7 +8,6 @@
 /// Link compontent styles (.link)
 /// - Contextual link styling
 /// - Styles all links within as normal text hyperlinks (hover, visited)
-/// @name component-links-styles
 /// @example scss
 ///  @include ulu.component-links-styles();
 

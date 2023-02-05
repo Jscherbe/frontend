@@ -1,5 +1,5 @@
 ////
-/// @group base-typography
+/// @group typography
 ////
 
 @use "sass:map";
@@ -8,10 +8,9 @@
 @use "../utils";
 
 /// Prints elements base styles
-/// @name base-typography-styles
 /// @example scss
 ///  @include ulu.base-typography-styles();
-/// @example html {preview}  Example of type size as base unprefixed
+/// @example raw Example of type size as base unprefixed
 ///  <span class="h1">A</span>
 ///  <span class="h2">A</span>
 ///  <span class="h3">A</span>

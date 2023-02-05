@@ -1,0 +1,74 @@
+////
+/// @group components-button Button
+////
+
+@use "sass:map";
+// @use "sass:selector" as sassSelector;
+@use "../typography";
+@use "../selector";
+@use "../utils";
+@use "../button";
+
+/// Prints button component styles
+/// @name component-button-styles
+/// @example scss
+///  @include ulu.component-button-styles();
+/// @example html {preview} 
+///  <a class="button" href="#">Button Default</a>
+
+@mixin styles {
+  @include utils.file-header('component', 'button');
+
+  $prefix: selector.class("button");
+  $icon-selector: "#{ $prefix }--icon";
+  $printDescendant: "#{ $prefix }--icon";
+
+  #{ $prefix } {
+    @include button.default();
+  }
+  #{ $prefix }__icon {
+    &:first-child {
+      margin-right: 1em;
+    }
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+  
+  @each $size, $values in button.$sizes {
+    #{ $prefix }--#{$size} {
+      @include button.size($size);
+    }
+  }
+
+  @each $style, $values in button.$styles {
+    #{ $prefix }--#{$style} {
+      @include button.style($style);
+    }
+  }
+
+  #{ $icon-selector } {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    max-width: none;
+    border-radius: button.get("icon-border-radius");
+    font-size: button.get("icon-font-size");
+    width: button.get("icon-size");
+    height: button.get("icon-size");
+    padding: 0 !important;
+  }
+
+  @each $size, $values in button.$sizes {
+    $icon-size: map.get($values, "icon-size");
+    $icon-font-size: map.get($values, "icon-font-size");
+    @if ($icon-size or $icon-font-size) {
+      #{ $prefix }--#{$size}#{ $icon-selector } {
+        width: $icon-size;
+        height: $icon-size;
+        font-size: $icon-font-size;
+      }
+    }
+  }
+}

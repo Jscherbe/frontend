@@ -1,0 +1,68 @@
+////
+/// @group helpers-units
+////
+
+@use "sass:map";
+@use "../units";
+@use "../utils";
+@use "../selector";
+
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.sides Sides to print for helper classes (ie. reduce output of uneeded sides)
+
+$config: (
+  "sides": ("top", "bottom", "left", "right")
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "units [config]");
+}
+
+/// Prints all unit helper classes
+
+@mixin styles {
+  @include utils.file-header('helpers', 'leading');
+  @include create-property-classes("margin", selector.class("margin"));
+  @include create-property-classes("padding", selector.class("padding"));
+}
+
+/// Creates the unit classes with all variations (from unit presets)
+/// - This can be used by itself if not outputing .styles() or if you wanted to change the default prefixes
+@mixin create-property-classes($property, $prefix) {
+  // On all sides
+  #{ $prefix } {
+    #{ $property } : units.get(1);
+  }
+  @each $name, $value in units.$config {
+    #{ $prefix }-#{ $name } {
+      #{ $property }: units.get($name);
+    }
+  }
+  // Individual sides
+  @each $side in get("sides") {
+    $full-prop: #{ $property }-#{ $side };
+    #{ $prefix }-#{ $side } {
+      #{ $full-prop }: units.get(1);
+    }
+    @each $name, $value in units.$config {
+      #{ $prefix }-#{ $side }-#{ $name } {
+        #{ $full-prop }: units.get($name);
+      }
+    }
+  }
+}

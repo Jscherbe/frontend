@@ -1,0 +1,73 @@
+////
+/// @group helpers-typography
+////
+
+@use "sass:map";
+@use "../utils";
+@use "../selector";
+@use "../typography";
+
+/// Prints Typography Helper styles
+/// @name helper-typography-styles
+/// @example scss
+///  @include ulu.helper-typography-styles();
+/// @example html {preview}  Example of type size as helper prefixed
+///  <span class="type-large-xxx">A</span>
+///  <span class="type-large-xx">A</span>
+///  <span class="type-large-x">A</span>
+///  <span class="type-large">A</span>
+///  <span class="type-base">A</span>
+///  <span class="type-small">A</span>
+///  <span class="type-small-x">A</span>
+
+@mixin styles {
+  
+  @include utils.file-header('helpers', 'typography');
+
+  $prefix: selector.class("type");
+
+  @each $size, $values in typography.$sizes {
+    @if (map.get($values, "helper-class")) {
+      @if (map.get($values, "helper-class-prefixed")) {
+        #{ $prefix }-#{$size} {
+          @include typography.size($size);
+        }
+      } @else {
+        .#{$size} {
+          @include typography.size($size);
+        }
+      }
+    }
+  }
+  
+  #{ $prefix }-light    { font-weight: typography.get("font-weight-light"); }
+  #{ $prefix }-normal   { font-weight: typography.get("font-weight-normal"); }
+  #{ $prefix }-semibold { font-weight: typography.get("font-weight-semibold"); }
+  #{ $prefix }-bold     { font-weight: typography.get("font-weight-bold"); }
+  
+  #{ $prefix }-italic   { font-style: italic; }
+
+  #{ $prefix }-center   { text-align: center; }
+  #{ $prefix }-left     { text-align: left; }
+  #{ $prefix }-right    { text-align: right; }
+
+  #{ $prefix }-upper    { 
+    text-transform: uppercase; 
+    letter-spacing: typography.get("letter-spacing-uppercase");
+  }
+  #{ $prefix }-lower    { text-transform: lowercase; }
+  #{ $prefix }-title    { text-transform: capitalize; }
+
+  #{ $prefix }-family { font-family: typography.get("font-family"); }
+  #{ $prefix }-family-sans { font-family: typography.get("font-family-sans"); }
+  #{ $prefix }-family-serif { font-family: typography.get("font-family-serif"); }
+  #{ $prefix }-family-mono { font-family: typography.get("font-family-monospace"); }
+
+  #{ $prefix }-word-break { @include typography.word-break(); }
+  #{ $prefix }-word-break-all { @include typography.word-break(true); }
+
+  #{ $prefix }-max-width { max-width: typography.get("max-width"); }
+  #{ $prefix }-max-width-small { max-width: typography.get("max-width-small"); }
+  #{ selector.class("line-height") }-dense { line-height: typography.get("line-height-dense"); }
+  #{ selector.class("line-height") }-spaced { line-height: typography.get("line-height-spaced"); }
+}

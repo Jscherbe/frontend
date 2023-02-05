@@ -1,0 +1,81 @@
+////
+/// @group base-layout
+////
+
+@use "sass:map";
+@use "../layout";
+@use "../selector";
+@use "../utils";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.sides Sides to print for helper classes (ie. reduce output of uneeded sides)
+
+$config: (
+  "containers" : true,
+  "container-nested-no-padding" : false,
+  "layout-flex" : true,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "base layout [config]");
+}
+
+@mixin styles {
+
+  @if (get("containers")) {
+    @each $name, $values in layout.$containers {
+      $class: selector.class($name);
+      #{ $class } {
+        @include layout.container-styles($name);
+      }
+    }
+  }
+  @if (get("container-nested-no-padding")) {
+    $prefix: selector.class("container", $name-only: true);
+    [class|="#{ $prefix }"] {
+      [class|="#{ $prefix }"] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  @if (get("layout-flex")) {
+    $prefix: selector.class("layout-flex");
+
+    #{ $prefix } {
+      display: flex;
+    }
+    #{ $prefix }-justified {
+      display: flex;
+      justify-content: space-between;
+    }
+    #{ $prefix }-center {
+      display: flex;
+      align-items: center;
+    }
+    #{ $prefix }-column {
+      display: flex;
+      flex-direction: column;
+    }
+    #{ $prefix }-column-center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

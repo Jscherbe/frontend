@@ -1,0 +1,140 @@
+////
+/// @group breakpoint
+/// Breakpoint Utility Functions
+////
+
+@use "sass:map";
+@use "calculate";
+@use "utils";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.base  Assumed pixel base, can change based on users font settings so this is just o get us in the ballpark). Note this is not the base font size but the user agent's or user's browser preferernce. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)
+/// @prop {Number} $config.gap  The amount to offset min from max media queries incase you are using both (ie prevent overlap)
+/// @prop {String} $config.null-name The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property
+/// @prop {String} $config.default the name of the breakpont that is considered the major change (ie desktop to mobile) used by other modules/components
+
+$config: (
+  "base":      16px,
+  "gap":       0.01em,
+  "null-name": "none",
+  "default" :  "small"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, 'breakpoint [config]');
+}
+
+
+/// The default breakpoint sizes (targets are not precise, using em's)
+/// @type Map
+
+$sizes: (
+  "small"  : calculate.pixel-to-em(680px, get("base")),
+  "medium" : calculate.pixel-to-em(1200px, get("base")),
+  "large"  : calculate.pixel-to-em(1500px, get("base"))
+) !default;
+
+/// Update the breakpoint sizes map
+/// @param {Map} $changes A map to merge into the breakpoints map
+/// @example scss Changing the medium breakpoint and adding jumbo
+///   @include breakpoints.set((
+///     "medium" : 50em,
+///     "jumbo" : 100em
+///   ));
+
+@mixin set($changes) {
+  $sizes: map.merge($sizes, $changes) !global;
+}
+
+@function exists($name) {
+  $size: map.get($sizes, $name);
+  @return if($size != null, true, false);
+}
+
+/// Create a media query that matches the min-width for a given size
+/// @param {Number} $size The name of the breakpoint bsize
+/// @example scss
+///   @include breakpoints.min("small") {
+///     // Your styles
+///   }
+
+@mixin min($size) {
+  // Adding the small fraction to prevent overlap
+  $min: utils.require-map-get($sizes, $size, "breakpoints"); 
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+/// Create a media query that matches the max-width for a given size
+/// @param {Number} $size The name of the breakpoint size
+/// @example scss
+///   @include breakpoints.max("medium") {
+///     // Your styles
+///   }
+
+@mixin max($size) {
+  // Adding the small fraction to prevent overlap
+  $max: utils.require-map-get($sizes, $size) - get("gap"); 
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+/// Create a media query that matches the min-width and max-width sizes
+/// @param {Number} $size The name of the breakpoint size
+/// @example scss
+///   @include breakpoints.min-max("small", "medium") {
+///     // Your styles
+///   }
+
+@mixin min-max($size-min, $size-max) {
+  // Adding the small fraction to prevent overlap
+  $min: utils.require-map-get($sizes, $size-min, "breakpoints"); 
+  $max: utils.require-map-get($sizes, $size-max, "breakpoints") - get("gap"); 
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin from($name, $direction: "min") {
+  @if ($direction == "min" or $direction == "up") {
+    @include min($name) {
+      @content;
+    }
+  } @else if ($direction == "max" or $direction == "down") {
+    @include max($name) {
+      @content;
+    }
+  } @else {
+    @error "ULU: Mixin error (breakpoint.from), incorrect argument '$direction' use either (min, max, up, down)";
+  }
+
+}
+
+/// Attaches breakpoints to an element psuedo content for access via script
+/// Use with ulu/js/breakpoints. Breakpoints always min-width (upwards)
+
+@mixin embed-for-scripts() {
+  &:before {
+    display: none;
+    content: get("null-name");
+    @each $size, $breakpoint in $sizes {
+      @include min($size) {
+        content: $size;
+      }
+    }
+  }
+}
