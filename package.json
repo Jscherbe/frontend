@@ -6,9 +6,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs-src --no-clear-screen",
     "docs:dev:debug": "vuepress dev docs-src --no-clear-screen --debug",
-    "docs:build": "vuepress build docs-src",
-    "serve": "webpack serve --mode development --progress --stats minimal --env docs",
-    "build": "webpack build --mode production --progress --stats minimal --env docs"
+    "docs:build": "vuepress build docs-src"
   },
   "repository": {
     "type": "git",
