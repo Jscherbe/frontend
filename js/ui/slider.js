@@ -396,7 +396,6 @@ export class Slider {
     return button;
   }
   createControls(context) {
-    console.log(context)
     const controls = document.createElement('ul');
     const previousItem = document.createElement("li");
     const nextItem = document.createElement("li");

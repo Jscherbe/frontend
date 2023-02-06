@@ -2,7 +2,7 @@
 /// @group grid
 ////
 
-/// @version: 1.0.3
+/// @version: 1.0.6
 
 /// HTML Attribute to use for selecting
 /// @example markup
@@ -13,8 +13,10 @@
 ///     </div>
 ///
 ///     <!-- instead it styles like: -->
-///     <div data-grid="columns: 12, gutters: true">
-///       <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
+///     <div data-grid-container>
+///       <div data-grid="columns: 12, gutters: true">
+///         <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
+///         </div>
 ///       </div>
 ///     </div>
 
@@ -40,6 +42,7 @@
 $config: (
   "columns":            12,
   "attribute":          "data-grid",
+  "attribute-container" : "data-grid-container",
   "gutter":             14px,
   "breakpoint" :        null, // Fallback to default
   "extra-breakpoints" : (
@@ -88,6 +91,15 @@ $config: (
   }
 }
 
+@function get-default-breakpoint() {
+  $breakpoint: get("breakpoint");
+  @if ($breakpoint) {
+    @return $breakpoint;
+  } @else {
+    @return breakpoint.get("default");
+  }
+}
+
 /// Creates grid css (variation of original data-grid)
 /// @param {Number} $columns Columns in grid
 /// @param {Number} $breakpoint Breakpoint key for starting the grid
@@ -96,24 +108,30 @@ $config: (
 /// @param {Boolean} $include-rules Print styles for including rules
 /// @param {Number} $rule-size Size of the rule (border/seperator)
 /// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
-/// @param {String} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+/// @param {String} $extra-gutter-scales A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`
+/// @param {Map} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
 
 @mixin create(
   $columns: 12,
-  $breakpoint: if(get("breakpoint"), get("breakpoint"), breakpoint.get("default")),
+  $breakpoint: get-default-breakpoint(),
   $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
   $gutter: get("gutter"),
   $include-rules: false,
   $rule-size: 1px,
   $rule-color: color.get("rule"),
   $extra-rule-styles: null,
-  $attribute: get("attribute")
+  $extra-gutter-scales: null,
+  $attribute: get("attribute"),
+  $include-container: true,
+  $container-attribute: get("attribute-container"),
+  $container-gutter-scales: true
 ) {
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
   $select-item: '[#{ $attribute-item }]';
   $select-rule-col: ":before";
   $select-rule-row: ":after";
+  $select-container: "[#{ $container-attribute }]";
   // These through off syntax highlighting when inside interpolation
   $position-class-column-first: get("position-class-column-first");
   $position-class-column-last: get("position-class-column-last");
@@ -134,6 +152,16 @@ $config: (
         padding-top:  $gutter;
         padding-bottom: $gutter;
       }
+      @if $extra-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+            > #{ $select-item } {
+              padding-top:  $gutter * $amount;
+              padding-bottom: $gutter * $amount;
+            }
+          }
+        }
+      }
     }
     &#{'[#{ $attribute }*="gutters-row: top"]'} { 
       > #{ $select-item } {
@@ -152,6 +180,14 @@ $config: (
     &#{'[#{ $attribute }*="gutters-row: fit"]'} { 
       margin-top: -$gutter;
       margin-bottom: -$gutter;
+      @if $extra-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+            margin-top: -($gutter * $amount);
+            margin-bottom: -($gutter * $amount);
+          }
+        }
+      }
     }
     // Rules: Row
     &#{'[#{ $attribute }*="rules-row:"]'} { 
@@ -200,19 +236,23 @@ $config: (
       $select-rule-col: $select-rule-col, 
       $end-class: $position-class-column-last
     );
-    // Override first or last column removing the rule using matching specificity
-    &#{'[#{ $attribute }*="rules-column:"][#{ $attribute }*="rules-column-ends: true"]'} {
-      > #{ $select-item } {
-        &#{ $select-rule-col } {
-          content: '';
-        }
-      }
-    }
     &#{'[#{ $attribute }*="rules-column-align: gutter"]'} {
       > #{ $select-item } {
         &#{ $select-rule-col } {
           top: $gutter;
           bottom: $gutter;
+        }
+      }
+      @if $extra-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+            > #{ $select-item } {
+              &#{ $select-rule-col } {
+                top: $gutter * $amount;
+                bottom: $gutter * $amount;
+              }
+            }
+          }
         }
       }
     }
@@ -256,6 +296,20 @@ $config: (
           }
         }
       }
+      @if $extra-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+            > #{ $select-item } {
+              &#{ $select-rule-row } {
+                @include breakpoint.min($breakpoint) {
+                  left: $gutter * $amount;
+                  right: $gutter * $amount;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     &#{'[#{ $attribute }*="rules-row-persist: true"]'},
     &#{'[#{ $attribute }*="rules-row-stacked-only: true"]'} {
@@ -278,6 +332,28 @@ $config: (
   }
 
   @include breakpoint.min($breakpoint) {
+
+    $select-gutter-false: '[#{ $attribute }*="gutters: false"]';
+    $select-gutter-false-child: '#{ $select-container }:has(>#{ $select-gutter-false })';
+
+    @if $include-container {
+      #{ $select-container } {
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+      #{ $select-gutter-false-child } {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      @if $extra-gutter-scales and $container-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          #{'#{ $select-container }:has(>[#{ $attribute }*="gutter-scale: #{ $scale }"])'} { 
+            padding-left: ($gutter * $amount);
+            padding-right: ($gutter * $amount);
+          }
+        }
+      }
+    }
     // Select the attribute with matching column count
     #{ $select-grid } {
       // Defaults for grid an item
@@ -292,6 +368,21 @@ $config: (
         padding-left: $gutter;
         padding-right: $gutter;
       }
+
+      @if $extra-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+            margin-left: -($gutter * $amount);
+            margin-right: -($gutter * $amount);
+
+            > #{ $select-item } {
+              padding-left: $gutter * $amount;
+              padding-right: $gutter * $amount;
+            }
+          }
+        }
+      }
+      
       // Alignment options
       &#{'[#{ $attribute }*="justify: center"]'} { 
         justify-content: center;  
@@ -325,7 +416,7 @@ $config: (
         }
       }
       // Other options
-      &#{'[#{ $attribute }*="gutters: false"]'} { 
+      &#{ $select-gutter-false } { 
         margin-left: 0;
         margin-right: 0;
         > #{ $select-item } {
@@ -348,6 +439,14 @@ $config: (
           }
         }
       }
+      // Override first or last column removing the rule using matching specificity
+      &#{'[#{ $attribute }*="rules-column:"][#{ $attribute }*="rules-column-ends: true"]'} {
+        > #{ $select-item } {
+          &#{ $select-rule-col } {
+            content: '';
+          }
+        }
+      }
       // Generated props for item
       @include -create-column-widths(
         $columns: $columns,
@@ -361,7 +460,6 @@ $config: (
       );
     }
   }
-
   @if $extra-breakpoints {
     @each $name, $options in $extra-breakpoints {
       $g: map.get($options, "gutter");
@@ -370,9 +468,14 @@ $config: (
         $breakpoint: map.get($options, "breakpoint"),
         $gutter: if($g, $g, $gutter),
         $columns: $columns,
+        $attribute: $attribute,
         $attribute-item: $attribute-item,
         $select-grid: $select-grid,
-        $select-item: $select-item
+        $select-item: $select-item,
+        $extra-gutter-scales: $extra-gutter-scales,
+        $include-container: $include-container,
+        $select-container: $select-container,
+        $container-gutter-scales: $container-gutter-scales
       );
     }
   }
@@ -382,7 +485,7 @@ $config: (
       $size: utils.require-map-get($options, "size", "grid [extra rule style]");
       #{ $select-grid } {
 
-        &#{'[#{_attr}*="rules-column-style: #{ $name }"]'} {
+        &#{'[#{ $attribute }*="rules-column-style: #{ $name }"]'} {
           > #{ $select-item } {
             &#{ $select-rule-col } {
               background-color: color.get($color);
@@ -406,7 +509,7 @@ $config: (
             $end-class: false
           );
         }
-        &#{'[#{_attr}*="rules-row-style: #{ $name }"]'} {
+        &#{'[#{ $attribute }*="rules-row-style: #{ $name }"]'} {
           > #{ $select-item } {
             &#{ $select-rule-row } {
               background-color: $color;
@@ -448,11 +551,31 @@ $config: (
   $breakpoint,
   $gutter,
   $columns,
+  $attribute,
   $attribute-item,
   $select-grid,
-  $select-item
+  $select-item,
+  $extra-gutter-scales,
+  $include-container,
+  $select-container,
+  $container-gutter-scales
 ) {
   @include breakpoint.min($breakpoint) {
+
+    @if $include-container {
+      #{ $select-container } {
+        padding-left: $gutter;
+        padding-right: $gutter;
+      }
+      @if $extra-gutter-scales and $container-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          #{'#{ $select-container }:has(>[#{ $attribute }*="gutter-scale: #{ $scale }"])'} { 
+            padding-left: ($gutter * $amount);
+            padding-right: ($gutter * $amount);
+          }
+        }
+      }
+    }
 
     #{ $select-grid } {
       margin-left: -$gutter;
@@ -461,6 +584,19 @@ $config: (
       > #{ $select-item } {
         padding-left: $gutter;
         padding-right: $gutter;
+      }
+      
+      @if $extra-gutter-scales {
+        @each $scale, $amount in $extra-gutter-scales {
+          &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+            margin-left: -($gutter * $amount);
+            margin-right: -($gutter * $amount);
+            > #{ $select-item } {
+              padding-left: $gutter * $amount;
+              padding-right: $gutter * $amount;
+            }
+          }
+        }
       }
 
       @include -create-column-widths(

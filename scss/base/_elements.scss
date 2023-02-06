@@ -17,7 +17,9 @@
 /// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active
 
 $config: (
-  "links-state-styling" : false
+  "link" : true,
+  "link:hover" : true,
+  "link:visited" : false
 ) !default;
 
 /// Change modules $config
@@ -38,6 +40,7 @@ $config: (
 }
 
 /// Prints elements base styles
+/// @name base-elements-styles
 /// @example scss
 ///  @include ulu.base-elements-styles();
 
@@ -153,10 +156,13 @@ $config: (
   }
   
   a {
-    @if (get("links-state-styling")) {
-      @include element.link();
-    } @else {
-      @include element.link-defaults();
+    // User can disable link styling if they want to add more specific styling
+    // and omit this in element base
+    @if (get("link")) {
+      @include element.link-defaults(
+        $hover: get("link:hover"),
+        $visited: get("link:visited"),
+      );
     }
   }
   // button,

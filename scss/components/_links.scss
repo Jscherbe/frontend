@@ -13,21 +13,22 @@
 
 @mixin styles {
   $selector: selector.class("links");
-  #{ $selector } {
-    a {
+  $selectorSingle: selector.class("link");
+  $selectorNot: "#{ $selector }--no-visited";
+  $selectorSingleNot: "#{ $selectorSingle }--no-visited";
+  // Using not to avoid duplicating css
+  // There shouldn't be to many reasons to need to override these styles
+  #{ $selector }:not(#{ $selectorNot }) a,
+  #{ $selectorSingle }:not(#{ $selectorSingleNot }) {
       @include element.link(true, true);
     }
-  }
-  #{ $selector }-no-visited {
-    a {
+  #{ $selector }--no-visited a,
+  #{ $selectorSingle }--no-visited {
       @include element.link();
     }
-  }
-  $selectorSingle: selector.class("link");
-  #{ $selectorSingle } {
-    @include element.link(true, true);
-  }
-  #{ $selectorSingle }-no-visited {
-    @include element.link();
+  // Chained to match not() specifity
+  #{ $selector }#{ $selector }--no-underline a,
+  #{ $selectorSingle }#{ $selectorSingle }--no-underline {
+    text-decoration: none;
   }
 }

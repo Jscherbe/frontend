@@ -15,7 +15,8 @@
 
 $config: (
   "short-width" : 2.75rem,
-  "short-border-width" : 4px
+  "short-border-width" : 4px,
+  "short-modifiers" : false
 ) !default;
 
 /// Change modules $config
@@ -79,6 +80,14 @@ $config: (
       width: $short-width;
       max-width: 100%;
       border-bottom-width: get("short-border-width");
+    }
+    @if get("short-modifiers") {
+      @each $mod, $opts in get("short-modifiers") {
+        #{ $class }--short {
+          width: map.get($opts, "width");
+          border-bottom-width: map.get($opts, "border-width");
+        }
+      }
     }
   }
 }

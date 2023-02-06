@@ -176,9 +176,19 @@ $rule-margins: (
 
 /// Print the defautl link styling (no hover and focus styles)
 
-@mixin link-defaults() {
+@mixin link-defaults($hover: true, $visited: false) {
   color: color.get("link");
   text-decoration: get("link-text-decoration-default");
+  @if ($hover) {
+    &:hover {
+      color: color.get("link:hover");
+    }
+  }
+  @if ($visited) {
+    &:visited {
+      color: color.get("link:visited");
+    }
+  }
 }
 
 /// Print the ordered list items styling

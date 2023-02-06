@@ -66,19 +66,42 @@ $containers: (
 }
 /// Returns padding to another property including breakpoints
 /// ie. { top: $containers-padding; }
-@mixin match-container-padding($property, $name, $sides: true) {
+@mixin match-container-padding($property, $name: "container", $sides: true) {
   $container: get-container($name);
   $breakpoints: map.get($container, "breakpoints");
   #{ $property }: get-container-padding($name, $sides);
   @if $breakpoints {
     @each $breakpoint, $props in $breakpoints {
       $direction: map.get($props, "direction");
-      @include breakpoint.from($name, $direction) {
+      @include breakpoint.from($breakpoint, $direction) {
         #{ $property }: get-container-padding($name, $sides, $breakpoint);
       }
     }
   }
 }
+
+/// For a given property for every breakpoint in a given container
+/// creates a css calc value that will match the containers side margin
+/// The margin is created via empty space when the container hits the max-width
+/// If passing inlude padding it would be the containers
+/// side (x) + the padding. This accounts for the containers max-width to give an absoute value
+@mixin match-container-margin($property, $name: "container", $include-padding: true) {
+  $container: get-container($name);
+  $breakpoints: map.get($container, "breakpoints");
+  $padding: if($include-padding, get-container-padding($name, true), 0);
+  $max: map.get($container, "max-width");
+  #{ $property }: max(((100vw - $max) / 2) + $padding, $padding);
+  @if $breakpoints {
+    @each $breakpoint, $props in $breakpoints {
+      $direction: map.get($props, "direction");
+      @include breakpoint.from($breakpoint, $direction) {
+        $pad: if($include-padding, get-container-padding($name, true, $breakpoint), 0);
+        #{ $property }: max(((100vw - $max) / 2) + $pad, $pad);
+      }
+    }
+  }
+}
+
 @function get-container-padding($name, $sides: true, $specific-breakpoint: false) {
   $container: get-container($name, $specific-breakpoint);
   $padding: map.get($container, "padding");
