@@ -61,7 +61,7 @@ $config: (
   }
   body {
     color: color.get('type');
-    background-color: white;
+    background-color: color.get("background");
     font-family: typography.get("font-family");
     margin: 0;
     // Note we are using relative units here instead of setting a 

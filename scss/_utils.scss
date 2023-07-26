@@ -43,9 +43,9 @@ $config: (
 /// @return {*} The value from the map
 
 @function require-map-get($map, $key, $context: "unknown") {
-  $value: map.get($map, $key);
-  @if ($value != null) {
-    @return $value;
+  // $value: map.get($map, $key);
+  @if (map.has-key($map, $key)) {
+    @return map.get($map, $key);
   } @else {
     @if (get("debug-maps")) {
       @debug $map;

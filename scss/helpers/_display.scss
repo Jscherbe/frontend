@@ -24,10 +24,9 @@
   #{ $hiddenVisuallyPrefix } {
     @include element.hidden-visually();
   }
-  #{ $hiddenVisuallyPrefix }--focusable {
-    &:active,
-    &:focus {
-      @include element.hidden-visually(false);
+  #{ $hiddenVisuallyPrefix }-focusable {
+    &:not(:active):not(:focus) {
+      @include element.hidden-visually();
     }
   }
   // Consider removing

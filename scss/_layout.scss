@@ -51,8 +51,8 @@ $containers: (
   )
 ) !default;
 
-@mixin set-containers($changes) {
-  $containers: map.merge($containers, $changes) !global;
+@mixin set-containers($changes, $deep: false, $overwrite: false) {
+  $containers: utils.map-merge-or-overwrite($containers, $changes, $deep, $overwrite) !global;
 }
 
 @function get-container($name, $breakpoint: false) {
@@ -190,4 +190,13 @@ $containers: (
     clear: both; 
   }
   *zoom: 1;
+}
+
+/// Removes scrollbar with CSS
+@mixin remove-scrollbar() {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
 }

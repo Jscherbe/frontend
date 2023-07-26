@@ -44,7 +44,7 @@ $config: (
   "attribute":          "data-grid",
   "attribute-container" : "data-grid-container",
   "gutter":             14px,
-  "breakpoint" :        null, // Fallback to default
+  "breakpoint" :        false, // Fallback to default
   "extra-breakpoints" : (
     "medium" : (
       "breakpoint" : "medium",

@@ -8,6 +8,7 @@
 ///
 
 @forward "path" as path-*;
+@forward "cssvar" as cssvar-*;
 @forward "color" as color-*;
 @forward "units" as units-*;
 @forward "calculate" as calculate-*;

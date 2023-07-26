@@ -4,16 +4,19 @@
 
 @use "sass:map";
 @use "sass:meta";
+@use "sass:string";
 @use "utils";
 @use "selector";
 
 /// The color palette map, can be extended or modified with set() and accessed with get()
+/// Note do not use names that start with "--" as those are reserved for custom-properties (pass through) also "inherit" is reserved.
 /// @type map  
 
 $palette: (
   "black":        black,
   "white":        white,
   "type":         black,
+  "background":   white,
   "focus":        blue,
   "error":        red,
   "accent":       orange,
@@ -69,17 +72,22 @@ $color-classes: (
 
 /// Get a color from the palette by name
 /// @param {String} $name Name of color to get
-/// @return {Color}
+/// @return {Color} Note if non-string value is passed it is sent back through, along with custom properties and keyword inherit
 
 @function get($name) {
   // Allow non lookup if the value is already a color (helps with code flow)
-  @if (meta.type-of($name) == "color") {
-    @return $name;
-  } @else if ($name == "inherit") {
-    @return $name;
-  } @else {
-    @return utils.require-map-get($palette, $name, 'color');
+  @if (meta.type-of($name) == "string") {
+    // Allow custom-properties and keyword inherit to pass through
+    @if ($name == "inherit" or string.index($name, "var(") == 1) {
+      @return $name;
+    // Else look up the color from the palette
+    } @else {
+      @return utils.require-map-get($palette, $name, 'color');
+    }
   }
+  // Allow everything other than strings to pass through
+  // - color, null, false, etc (so they can not output)
+  @return $name;
 }
 
 /// Set ouput classes for all-color-class-styles

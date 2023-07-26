@@ -1,0 +1,85 @@
+////
+/// @group cssvar
+////
+
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+@use "utils";
+@use "breakpoint";
+
+/// Module Settings
+/// @type Map
+/// @prop {String} $config.prefix Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable
+
+$config: (
+  "prefix" : ""
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "css-vars [config]");
+}
+
+/// Get a custom property name (with optional prefix)
+/// @return {String} The formatted property name (unquoted string)
+
+@function name($name, $prefix: get("prefix")) {
+  @if (string.length($prefix) > 0) {
+    @return string.unquote("--#{ $prefix }-#{ $name }");
+  } @else {
+    @return string.unquote("--#{ $name }");
+  }
+}
+
+/// Function to use a custom property within a declartion value 
+/// @return Formatted custom propety for use in property value (ie. var(...))
+
+@function use($name, $prefix: get("prefix")) {
+  @return var(name($name, $prefix));
+}
+
+/// Outputs a single custom property declaration
+/// @param {String} $name Name of property
+/// @param {*} $value The properties value
+/// @param {String} $prefix Set the prefix for the custom property (defaults to module config.prefix)
+
+@mixin declare($name, $value, $prefix: get("prefix")) {
+  #{ name($name, $prefix) } : #{ $value };
+}
+
+/// Outputs a map as custom properties
+/// - To be used in decaration (:root, etc)
+/// @param {Map} $props Properties to declare
+/// @param {String} $prefix Set the prefix for the custom property (defaults to module config.prefix)
+
+@mixin declare-all($props, $prefix: get("prefix")) {
+  @each $name, $value in $props {
+    @include declare($name, $value, $prefix);
+  }
+}
+
+@mixin declare-breakpoint(
+  $breakpoints: breakpoint.get-sizes(), 
+  $name: "breakpoint",
+  $before: breakpoint.get("null-name"),
+  $prefix: get("prefix")
+) {
+  @include declare($name, $before, $prefix);
+  @each $size, $value in $breakpoints {
+    @include breakpoint.min($size) {
+      @include declare($name, $size, $prefix);
+    }
+  }
+}

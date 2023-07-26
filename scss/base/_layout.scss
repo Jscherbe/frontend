@@ -70,6 +70,10 @@ $config: (
       display: flex;
       align-items: center;
     }
+    #{ $prefix }-end {
+      display: flex;
+      align-items: flex-end;
+    }
     #{ $prefix }-column {
       display: flex;
       flex-direction: column;

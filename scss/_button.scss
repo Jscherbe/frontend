@@ -2,7 +2,7 @@
 /// @group button
 ////
 
-/// Version:        1.0.1
+/// Version:        1.0.2
 
 @use "sass:map";
 @use "sass:meta";
@@ -27,14 +27,16 @@ $config: (
   "background-color":        color.tint(black, 30%),
   "background-color-hover": black,
   "font-family":             inherit,
+  "white-space" :            nowrap,
   "font-weight":             bold,
   "line-height":             1.1,
   "letter-spacing":          0.02em,
-  "text-transform":          normal,
+  "text-transform":          none,
   "text-shadow":             none,
   "font-size":               "base",
   "color":                   white,
   "color-hover":            white,
+  "color-active":            white,
   "box-shadow":              true,
   "border-radius":           2rem,
   "border-width":            0,
@@ -135,6 +137,7 @@ $styles: (
   @if ($with-reset) {
     @include reset();
   }
+  appearance: none; // If used with select for example
   display: inline-block;
   text-transform: get("text-transform");
   text-align: center;
@@ -142,7 +145,6 @@ $styles: (
   vertical-align: middle;
   font-family: get("font-family");
   font-weight: get("font-weight");
-  font-size: if(get("font-size"), typography.font-size(get("font-size")), null);
   @if ($font-size) {
     @include typography.size($font-size, null, true);
   }
@@ -154,6 +156,7 @@ $styles: (
   box-shadow: get("box-shadow");
   margin: get("margin");
   min-width: get("min-width");
+  white-space: get("white-space");
   max-width: 100%; // Questionable, not sure if it's needed
   // Should override link visted coloring
   &,
@@ -166,7 +169,8 @@ $styles: (
   &:last-child {
     margin-right: 0;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     color: get("color-hover");
     background-color: get("background-color-hover");
     border-color: get("border-color-hover");
@@ -213,7 +217,8 @@ $styles: (
     text-decoration: get-style-value($name, "text-decoration", false);
     font-weight: get-style-value($name, "font-weight", false);
   }
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: get-style-value($name, "background-color", true);
     color: get-style-value($name, "color", true);
     border-color: get-style-value($name, "border-color", true);

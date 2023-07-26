@@ -53,10 +53,21 @@ $sizes: (
 ///     "jumbo" : 100em
 ///   ));
 
-@mixin set($changes) {
-  $sizes: map.merge($sizes, $changes) !global;
+@mixin set-sizes($changes, $deep: false, $overwrite: false) {
+  $sizes: utils.map-merge-or-overwrite($sizes, $changes, $deep, $overwrite) !global;
 }
 
+/// Get all sizes 
+@function get-sizes() {
+  @return $sizes;
+}
+
+/// Geta a specific size
+@function get-size($size) {
+  @return utils.require-map-get($sizes, $size, "breakpoint size");
+}
+
+/// Does a specific size exist
 @function exists($name) {
   $size: map.get($sizes, $name);
   @return if($size != null, true, false);
@@ -71,7 +82,7 @@ $sizes: (
 
 @mixin min($size) {
   // Adding the small fraction to prevent overlap
-  $min: utils.require-map-get($sizes, $size, "breakpoints"); 
+  $min: get-size($size); 
   @media screen and (min-width: $min) {
     @content;
   }
@@ -86,7 +97,7 @@ $sizes: (
 
 @mixin max($size) {
   // Adding the small fraction to prevent overlap
-  $max: utils.require-map-get($sizes, $size) - get("gap"); 
+  $max: get-size($size) - get("gap"); 
   @media screen and (max-width: $max) {
     @content;
   }
@@ -101,8 +112,8 @@ $sizes: (
 
 @mixin min-max($size-min, $size-max) {
   // Adding the small fraction to prevent overlap
-  $min: utils.require-map-get($sizes, $size-min, "breakpoints"); 
-  $max: utils.require-map-get($sizes, $size-max, "breakpoints") - get("gap"); 
+  $min: get-size($size-min); 
+  $max: get-size($size-max); 
   @media screen and (min-width: $min) and (max-width: $max) {
     @content;
   }
@@ -120,7 +131,6 @@ $sizes: (
   } @else {
     @error "ULU: Mixin error (breakpoint.from), incorrect argument '$direction' use either (min, max, up, down)";
   }
-
 }
 
 /// Attaches breakpoints to an element psuedo content for access via script

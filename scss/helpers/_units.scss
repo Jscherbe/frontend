@@ -37,17 +37,23 @@ $config: (
 
 @mixin styles {
   @include utils.file-header('helpers', 'leading');
-  @include create-property-classes("margin", selector.class("margin"));
+  @include create-property-classes("margin", selector.class("margin"), true);
   @include create-property-classes("padding", selector.class("padding"));
 }
 
 /// Creates the unit classes with all variations (from unit presets)
 /// - This can be used by itself if not outputing .styles() or if you wanted to change the default prefixes
-@mixin create-property-classes($property, $prefix) {
+@mixin create-property-classes($property, $prefix, $isMargin: false) {
   // On all sides
   #{ $prefix } {
     #{ $property } : units.get(1);
   }
+  @if ($isMargin) {
+    #{ $prefix }-auto {
+      margin: auto;
+    }
+  }
+  
   @each $name, $value in units.$config {
     #{ $prefix }-#{ $name } {
       #{ $property }: units.get($name);
@@ -58,6 +64,11 @@ $config: (
     $full-prop: #{ $property }-#{ $side };
     #{ $prefix }-#{ $side } {
       #{ $full-prop }: units.get(1);
+    }
+    @if ($isMargin) {
+      #{ $prefix }-#{ $side }-auto {
+        #{ $full-prop }: auto;
+      }
     }
     @each $name, $value in units.$config {
       #{ $prefix }-#{ $side }-#{ $name } {
