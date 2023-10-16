@@ -1,6 +1,7 @@
 ////
 /// @group utils
 ////
+/// @todo Finish Documentation
 
 @use "sass:map";
 @use "sass:meta";
@@ -52,6 +53,30 @@ $config: (
     }
     @error 'ULU: Unable to find  "#{ $key }" in #{ $context } map.';
   }
+}
+
+/// Utility for providing fallbacks, the first truthy value (non false or null) will be returned
+/// @param {*} $args... Any number of arguments 
+/// @return {*} The first truthy value
+
+@function fallback($args...) {
+  @each $arg in $args {
+    @if ($arg) {
+      @return $arg;
+    }
+  }
+  @return null;
+}
+
+/// Provides fallback values from the same map
+@function map-fallback($map, $properties...) {
+  @each $prop in $properties {
+    $value: map.get($map, $prop);
+    @if ($value) {
+      @return $value;
+    }
+  }
+  @return null;
 }
 
 /// Ensure a value is present in the list, throw an error if not found

@@ -3,6 +3,6 @@
 ---
 
 
-# Javascript API
+# Javascript
 
 Lorem ipsum

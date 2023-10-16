@@ -1,6 +1,7 @@
 ////
 /// @group all
 ////
+/// @todo Finish Documentation
 
 @forward "links" as links-*;
 @forward "button" as button-*;
@@ -8,6 +9,7 @@
 @forward "list-lines" as list-lines-*;
 @forward "list-unordered" as list-unordered-*;
 @forward "list-ordered" as list-ordered-*;
+@forward "grid" as grid-*;
 
 @use "sass:map";
 
@@ -18,6 +20,7 @@
 @use "list-lines";
 @use "list-unordered";
 @use "list-ordered";
+@use "grid";
 
 // Used to check against user's includes
 
@@ -27,7 +30,8 @@ $-all-includes: (
   "rule" : true,
   "list-lines" : true,
   "list-unordered" : true,
-  "list-ordered" : true
+  "list-ordered" : true,
+  "grid": true
 );
 
 /// Prints all Components styles
@@ -59,5 +63,8 @@ $-all-includes: (
   }
   @if (map.get($-all-includes, "list-ordered")) {
     @include list-unordered.styles;
+  }
+  @if (map.get($-all-includes, "grid")) {
+    @include grid.styles;
   }
 }

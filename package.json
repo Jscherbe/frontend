@@ -1,7 +1,7 @@
 {
   "name": "@ulu/frontend",
   "version": "0.0.2",
-  "description": "Frontend themeing library. No opinion, modular Sass library that can be used as a framework base, only works in Sass > 1.23. This is a slight refactor of the orginal @ulu/sass that will now include all frontend related assets (SCSS, JS, etc)",
+  "description": "Sass theming library",
   "browser": "js/index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs-src --no-clear-screen",

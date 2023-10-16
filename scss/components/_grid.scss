@@ -1,104 +1,78 @@
 ////
 /// @group grid
 ////
+/// Layout grid that uses attributes instead of classes
+/// - See the core layout module for changing defaults
 
-/// @version: 1.0.6
+/// @version: 1.0.7
 
 /// HTML Attribute to use for selecting
 /// @example markup
-///     <!-- This grid does not use columns to ovoid repeating prefixes like: -->
-///     <div class="grid-columuns-12 grid-columuns-12-gutters">
-///       <div class="col-4 col-medium-6 col-offset-medium-3">
+///     <!-- instead it styles like: -->
+///     <div data-grid="columns: 12, gutters: true">
+///       <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
 ///       </div>
 ///     </div>
 ///
-///     <!-- instead it styles like: -->
+///     <!-- or if using container -->
 ///     <div data-grid-container>
 ///       <div data-grid="columns: 12, gutters: true">
 ///         <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
 ///         </div>
 ///       </div>
 ///     </div>
+/// 
 
 @use "sass:map";
 @use "sass:math";
-@use "breakpoint";
-@use "color";
-@use "element";
-@use "layout";
-@use "utils";
+@use "../breakpoint";
+@use "../color";
+@use "../layout";
+@use "../utils";
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.columns Default for grid mixin
-/// @prop {String} $config.attribute Default attribute to use for grid mixin
-/// @prop {Number} $config.gutter Default gutter for grid mixin
-/// @prop {Map} $config.extra-breakpoints Default extra breakpoints for grid mixin
-/// @prop {MaStringp} $config.position-class-column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
-/// @prop {String} $config.position-class-column-last See definition above
-/// @prop {String} $config.position-class-row-first See definition above
-/// @prop {String} $config.position-class-row-last See definition above
+/// @prop {String} attribute ["data-grid"] Default attribute to use for grid mixin
+/// @prop {String} attributeContainer ["data-grid-container"] Default container attribute to use for grid mixin
+/// @prop {String} position-class-column-first ["position-column-first"] Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+/// @prop {String} position-class-column-last ["position-column-last"] See definition above
+/// @prop {String} position-class-row-first ["position-row-first"] See definition above
+/// @prop {String} position-class-row-last ["position-row-last"] See definition above
 
 $config: (
-  "columns":            12,
-  "attribute":          "data-grid",
-  "attribute-container" : "data-grid-container",
-  "gutter":             14px,
-  "breakpoint" :        false, // Fallback to default
-  "extra-breakpoints" : (
-    "medium" : (
-      "breakpoint" : "medium",
-      "gutter" : 15px
-    ),
-    "large" : (
-      "breakpoint" : "large",
-      "gutter" : 20px
-    )
-  ),
+  "attribute"                  : "data-grid",
+  "attribute-container"        : "data-grid-container",
   "position-class-column-first": "position-column-first",
-  "position-class-column-last":  "position-column-last",
-  "position-class-row-first":    "position-row-first",
-  "position-class-row-last":     "position-row-last"
+  "position-class-column-last" : "position-column-last",
+  "position-class-row-first"   : "position-row-first",
+  "position-class-row-last"    : "position-row-last"
 ) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example scss
 ///   @include module-name.set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example scss
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "grid [config]");
+  @return utils.require-map-get($config, $name, "attribute-grid [config]");
 }
 
-/// Returns gutter size for grid breakpoint map, defaults to the config's values
-/// Pass custom map to get gutter values from it
-/// @param {String} $name The name of the "grid breakpoint" (could be a different name than the actual breakpoint name it maps too)
-/// @param {Map} $custom-map Provide custom map of grid breakpoints to get the gutter from (defaults to the grid module's defaults 'extra-breakpoints')
+/// Prints the default grid
+/// - User can choose not to output this and use `attribute-grid.create()` instead
 
-@function get-gutter($name: null, $custom-map: null) {
-  @if (not $name) {
-    @return get("gutter");
-  } @else {
-    $map: if($custom-map, $custom-map, get("extra-breakpoints"));
-    $settings: utils.require-map-get($map, $name, "grid [get-gutter]");
-    @return map.get($settings, "gutter");
-  }
+@mixin styles {
+  @include create();
 }
 
-@function get-default-breakpoint() {
-  $breakpoint: get("breakpoint");
-  @if ($breakpoint) {
-    @return $breakpoint;
-  } @else {
-    @return breakpoint.get("default");
-  }
-}
 
 /// Creates grid css (variation of original data-grid)
 /// @param {Number} $columns Columns in grid
@@ -110,19 +84,22 @@ $config: (
 /// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
 /// @param {String} $extra-gutter-scales A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`
 /// @param {Map} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+/// @param {Boolean} $include-container [false] Whether to include container styles, container adds matching grid gutter to left/right side of grid. can be used for edge situations where negative margins are causing overflow
+/// @param {String} $container-attribute [defaults to config] Attribute to use for selecting grid container
+/// @param {Boolean} $container-gutter-scales [true] Print container styles for all gutter scales passed (reduce output)
 
 @mixin create(
   $columns: 12,
-  $breakpoint: get-default-breakpoint(),
-  $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
-  $gutter: get("gutter"),
+  $breakpoint: layout.get-default-breakpoint(),
+  $extra-breakpoints: if(breakpoint.exists("large"), layout.get("extra-breakpoints"), false),
+  $gutter: layout.get("gutter"),
   $include-rules: false,
   $rule-size: 1px,
   $rule-color: color.get("rule"),
   $extra-rule-styles: null,
   $extra-gutter-scales: null,
   $attribute: get("attribute"),
-  $include-container: true,
+  $include-container: false,
   $container-attribute: get("attribute-container"),
   $container-gutter-scales: true
 ) {

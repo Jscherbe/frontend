@@ -1,3 +1,7 @@
+////
+/// @group index
+////
+/// @todo Finish Documentation
 /// Main entry for library as single module use
 /// - All modules get namespaced
 /// @example scss - Example of color modules
@@ -19,7 +23,6 @@
 @forward "button" as button-*;
 @forward "utility" as utility-*;
 @forward "layout" as layout-*;
-@forward "grid" as grid-*;
 @forward "base" as base-*;
 @forward "components" as component-*;
 @forward "helpers" as helper-*;

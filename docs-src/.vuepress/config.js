@@ -15,7 +15,7 @@ const sassdocDefaults = {
 };
 
 module.exports = {
-  title: '@ulu/frontend',
+  title: 'ulu',
   base: "/frontend/",
   dest: path.resolve(__dirname, "../../docs/"),
   description: description,
@@ -25,6 +25,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
   themeConfig: {
+    // logo: "/images/logo.svg",
     repo: '',
     editLinks: false,
     docsDir: '',
