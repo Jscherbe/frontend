@@ -1,7 +1,6 @@
 ////
 /// @group list-lines
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 
@@ -33,7 +32,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "list-lines [config]");
+  @return utils.require-map-get($config, $name, "grid [config]");
 }
 
 /// Output component styles

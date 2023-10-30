@@ -1,7 +1,6 @@
 ////
 /// @group layout
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 @use "../layout";
@@ -70,6 +69,19 @@ $config: (
     #{ $prefix }-center {
       display: flex;
       align-items: center;
+    }
+    #{ $prefix }-center-all {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #{ $prefix }-justify-end {
+      display: flex;
+      justify-content: flex-end;
+    }
+    #{ $prefix }-baseline {
+      display: flex;
+      align-items: baseline;
     }
     #{ $prefix }-end {
       display: flex;

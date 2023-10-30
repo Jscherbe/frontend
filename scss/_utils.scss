@@ -1,7 +1,6 @@
 ////
 /// @group utils
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 @use "sass:meta";
@@ -55,30 +54,6 @@ $config: (
   }
 }
 
-/// Utility for providing fallbacks, the first truthy value (non false or null) will be returned
-/// @param {*} $args... Any number of arguments 
-/// @return {*} The first truthy value
-
-@function fallback($args...) {
-  @each $arg in $args {
-    @if ($arg) {
-      @return $arg;
-    }
-  }
-  @return null;
-}
-
-/// Provides fallback values from the same map
-@function map-fallback($map, $properties...) {
-  @each $prop in $properties {
-    $value: map.get($map, $prop);
-    @if ($value) {
-      @return $value;
-    }
-  }
-  @return null;
-}
-
 /// Ensure a value is present in the list, throw an error if not found
 /// @param {List} $list The map to get the value from
 /// @param {String} $value The value to search for in the list
@@ -124,7 +99,7 @@ $config: (
   }
 }
 
-// Provide a default when value typpe is not correct
+// Provide a default when value type is not correct
 /// @param {String} $type type of value it should be
 /// @param {String} $value the value to provide if it is that type
 /// @param {String} $fallback the fallback value
@@ -167,6 +142,29 @@ $config: (
   } @else {
     @return map.merge($original, $changes);
   }
+}
+
+/// Utility for providing fallbacks, the first truthy value (non false or null) will be returned
+/// @return {*} The first truthy value
+
+@function fallback($args...) {
+  @each $arg in $args {
+    @if ($arg) {
+      @return $arg;
+    }
+  }
+  @return null;
+}
+
+/// Provides fallback values from the same map
+@function map-fallback($map, $properties...) {
+  @each $prop in $properties {
+    $value: map.get($map, $prop);
+    @if ($value) {
+      @return $value;
+    }
+  }
+  @return null;
 }
 
 /// Helps in providing a dynamic fallback for modules whose defaults should come from another

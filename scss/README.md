@@ -5,7 +5,7 @@
 2. Components - The area for reusable ui/layout components
 3. Helpers - The place for stylesheets that provide overriding/atomic styles (accessibility, type classes, etc)
 4. Lib - The modules that are used throughout the system and on the user's side
-5. Stylesheets - Entry points for users to print entire stylesheet
+5. Packages - Entry points for users with preset imports 
    - Note: User's will need to add a namespace like `ulu` when importing a package
 
 ### Important Goals

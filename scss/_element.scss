@@ -1,7 +1,6 @@
 ////
 /// @group element
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 @use "sass:meta";
@@ -52,6 +51,7 @@ $config: (
   "margin-small":                     0.65em,
   "margin":                           1em,
   "margin-large":                     2em,
+  "list-item-indent" :                1.5em,
   "ol-list-style-type":               decimal,
   "ol-list-style-type-2":             lower-alpha,
   "ol-list-style-type-3":             lower-roman,
@@ -201,7 +201,7 @@ $rule-margins: (
   list-style: get("ol-list-style-type") outside;
   li {
     margin-bottom: get("margin-small");
-    margin-left: 1em;
+    margin-left: get("list-item-indent");
   }
   > li {
     &::marker {
@@ -209,8 +209,8 @@ $rule-margins: (
     }
   }
   ol {
-    margin: get("margin-small") 0 0 get("margin-small");
-    list-style: get("ol-list-style-type-2");
+    // margin: get("margin-small") 0;
+    list-style-type: get("ol-list-style-type-2");
     ol { 
       list-style-type: get("ol-list-style-type-3");
     }
@@ -227,15 +227,16 @@ $rule-margins: (
 
 @mixin styles-unordered-list($bullet-color: "bullet") {
   list-style: get("ul-list-style-type") outside;
-  > li {
-    margin-left: 1.5em;
+  li {
+    margin-left: get("list-item-indent");
     margin-bottom: get("margin-small");
     &::marker {
       color: color.get($bullet-color);
     }
   }
   ul {
-    list-style-type: get("ul-list-style-type-2");
+    // margin: get("margin-small") 0;
+    list-style-type: get("ul-list-style-type-2") ;
   }
    ul ul {
     list-style-type: get("ul-list-style-type-3");

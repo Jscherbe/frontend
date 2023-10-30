@@ -1,7 +1,6 @@
 ////
 /// @group typography
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 @use "../utils";
@@ -39,11 +38,19 @@
       }
     }
   }
-  
+  #{ $prefix }-inherit { 
+    font-size: inherit; 
+    line-height: inherit;
+  }
   #{ $prefix }-light    { font-weight: typography.get("font-weight-light"); }
   #{ $prefix }-normal   { font-weight: typography.get("font-weight-normal"); }
   #{ $prefix }-semibold { font-weight: typography.get("font-weight-semibold"); }
   #{ $prefix }-bold     { font-weight: typography.get("font-weight-bold"); }
+  #{ $prefix }-truncate { 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
   
   #{ $prefix }-italic   { font-style: italic; }
 

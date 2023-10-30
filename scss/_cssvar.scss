@@ -1,7 +1,6 @@
 ////
 /// @group cssvar
 ////
-/// Provides support for custom-properties implementations
 
 @use "sass:meta";
 @use "sass:map";
@@ -11,36 +10,29 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} prefix [""] Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable
+/// @prop {String} $config.prefix Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable
 
 $config: (
   "prefix" : ""
 ) !default;
 
 /// Change modules $config
-/// @example scss Setting the prefix to 'ulu'
-///   @include cssvar.set(( "prefix" : "ulu" ));
 /// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
-/// @example scss Getting the config value for prefix
-///   $prefix: cssvar.get("prefix");
 /// @param {String} $name Name of property
-/// @return {*} Map property value
+///   @include module-name.get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "css-vars [config]");
 }
 
 /// Get a custom property name (with optional prefix)
-/// @example scss Getting a custom property name
-///   #{ cssvar.name("base-color") } { ... }
-/// @param {String} $name Name of custom property 
-/// @param {String} $prefix [$config.prefix] Override default prefix
 /// @return {String} The formatted property name (unquoted string)
 
 @function name($name, $prefix: get("prefix")) {
@@ -52,38 +44,25 @@ $config: (
 }
 
 /// Function to use a custom property within a declartion value 
-/// @example scss Print an custom property as a value
-///   .test {
-///     color: cssvar.use("base-color");
-///   }
-/// @param {String} $name Name of custom property 
-/// @param {String} $prefix [$config.prefix] Override default prefix
-/// @return {String} Formatted custom propety for use in property value (ie. var(...))
+/// @return Formatted custom propety for use in property value (ie. var(...))
 
 @function use($name, $prefix: get("prefix")) {
   @return var(name($name, $prefix));
 }
 
 /// Outputs a single custom property declaration
-/// @example scss Declare a custom property
-///   :root {
-///     @include cssvar.declare("base-color", red);
-///   }
 /// @param {String} $name Name of property
-/// @param {*} $value The properties value to declare
-/// @param {String} $prefix [$config.prefix] Override default prefix
+/// @param {*} $value The properties value
+/// @param {String} $prefix Set the prefix for the custom property (defaults to module config.prefix)
 
 @mixin declare($name, $value, $prefix: get("prefix")) {
   #{ name($name, $prefix) } : #{ $value };
 }
 
 /// Outputs a map as custom properties
-/// @example scss Declare each property in a map as a custom property
-///   :root {
-///     @include cssvar.declare($colors);
-///   }
+/// - To be used in decaration (:root, etc)
 /// @param {Map} $props Properties to declare
-/// @param {String} $prefix [$config.prefix] Override default prefix
+/// @param {String} $prefix Set the prefix for the custom property (defaults to module config.prefix)
 
 @mixin declare-all($props, $prefix: get("prefix")) {
   @each $name, $value in $props {
@@ -91,23 +70,13 @@ $config: (
   }
 }
 
-/// Declare a custom property for current breakpoint
-/// @example scss Declare each property in a map as a custom property
-///   :root {
-///     @include cssvar.declare-breakpoint();
-///   }
-/// @param {Map} $breakpoints [breakpoint.get-sizes()] Breakpoints to declare
-/// @param {String} $name ["breakpoint"] Name to use for custom property
-/// @param {Map} $initial [breakpoint.get("null-name")] The value for the custom property when not within breakpoint
-/// @param {String} $prefix [$config.prefix] Override default prefix
-
 @mixin declare-breakpoint(
   $breakpoints: breakpoint.get-sizes(), 
   $name: "breakpoint",
-  $initial: breakpoint.get("null-name"),
+  $before: breakpoint.get("null-name"),
   $prefix: get("prefix")
 ) {
-  @include declare($name, $initial, $prefix);
+  @include declare($name, $before, $prefix);
   @each $size, $value in $breakpoints {
     @include breakpoint.min($size) {
       @include declare($name, $size, $prefix);

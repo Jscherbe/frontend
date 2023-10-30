@@ -1,9 +1,8 @@
 ////
 /// @group button
 ////
-/// @todo Finish Documentation
 
-/// Version:        1.0.2
+/// Version:        1.0.3
 
 @use "sass:map";
 @use "sass:meta";
@@ -159,6 +158,7 @@ $styles: (
   min-width: get("min-width");
   white-space: get("white-space");
   max-width: 100%; // Questionable, not sure if it's needed
+  flex-shrink: 0; 
   // Should override link visted coloring
   &,
   &:visited {
@@ -187,7 +187,7 @@ $styles: (
   border-width: map.get($size, "border-width");
   min-width: map.get($size, "min-width");
   @if $font-size {
-    @include typography.size($font-size)
+    @include typography.size($font-size);
   }
 }
 
@@ -207,23 +207,35 @@ $styles: (
   }
 }
 
-@mixin style($name) {
-  &,
-  &:visited {
-    background-color: get-style-value($name, "background-color", false);
-    color: get-style-value($name, "color", false);
-    border-color: get-style-value($name, "border-color", false);
-    border-width: get-style-value($name, "border-width", false);
-    box-shadow: get-style-value($name, "box-shadow", false);
-    text-decoration: get-style-value($name, "text-decoration", false);
-    font-weight: get-style-value($name, "font-weight", false);
+@mixin style-styles($name) {
+  background-color: get-style-value($name, "background-color", false);
+  color: get-style-value($name, "color", false);
+  border-color: get-style-value($name, "border-color", false);
+  border-width: get-style-value($name, "border-width", false);
+  box-shadow: get-style-value($name, "box-shadow", false);
+  text-decoration: get-style-value($name, "text-decoration", false);
+  font-weight: get-style-value($name, "font-weight", false);
+}
+
+@mixin style-styles-hover($name) {
+  background-color: get-style-value($name, "background-color", true);
+  color: get-style-value($name, "color", true);
+  border-color: get-style-value($name, "border-color", true);
+  box-shadow: get-style-value($name, "box-shadow", true);
+  text-decoration: get-style-value($name, "text-decoration", true);
+}
+
+@mixin style($name, $no-visited: false) {
+  @if ($no-visited) {
+    @include style-styles($name);
+  } @else {
+    &,
+    &:visited {
+      @include style-styles($name);
+    }
   }
   &:hover,
   &:focus {
-    background-color: get-style-value($name, "background-color", true);
-    color: get-style-value($name, "color", true);
-    border-color: get-style-value($name, "border-color", true);
-    box-shadow: get-style-value($name, "box-shadow", true);
-    text-decoration: get-style-value($name, "text-decoration", true);
+    @include style-styles-hover($name);
   }
 }

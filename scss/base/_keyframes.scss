@@ -1,7 +1,6 @@
 ////
 /// @group keyframes
 ////
-/// @todo Finish Documentation
 
 @use "../utils";
 
@@ -69,6 +68,11 @@
     }
     to {
       transform:rotate(360deg);
+    }
+  }
+  @keyframes pulse {
+    50% {
+      opacity: 0.5;
     }
   }
 }

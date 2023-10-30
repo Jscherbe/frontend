@@ -1,7 +1,6 @@
 ////
 /// @group display
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 
@@ -53,7 +52,8 @@
   .display-inline-block {
     display: inline-block;
   }
-  .hidden {
+  .hidden,
+  .display-none {
     display: none;
   }
 

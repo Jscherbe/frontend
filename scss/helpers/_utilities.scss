@@ -1,7 +1,6 @@
 ////
 /// @group utilities
 ////
-/// @todo Finish Documentation
 
 @use "../utils";
 @use "../utility";
@@ -49,12 +48,12 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .margin-left-auto {
-    margin-left: auto;
-  }
-  .margin-right-auto {
-    margin-right: auto;
-  }
+  // .margin-left-auto {
+  //   margin-left: auto;
+  // }
+  // .margin-right-auto {
+  //   margin-right: auto;
+  // }
   .no-margin {
     margin: 0;
   }
@@ -85,4 +84,19 @@
   .no-padding-right {
     padding-right: 0;
   }
+  .align-self-start {
+    align-self: start;
+  }
+  .align-self-center {
+    align-self: center;
+  }
+  .align-self-end {
+    align-self: end;
+  }
+  .align-self-baseline {
+    align-self: baseline;
+  }
+  // .justify-self-center {
+  //   justify-self: center;
+  // }
 }

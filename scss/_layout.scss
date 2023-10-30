@@ -1,12 +1,10 @@
 ////
 /// @group layout
 ////
-/// @todo Finish Documentation
 
 @use "sass:map";
 @use "sass:list";
 @use "sass:meta";
-@use "breakpoint";
 @use "utils";
 @use "calculate";
 @use "breakpoint";
@@ -18,29 +16,13 @@
 /// @prop {Number} $config.z-index-fixed Common z-index, above everything
 /// @prop {Number} $config.z-index-sticky Common z-index for sticky or stuck items
 /// @prop {Number} $config.z-index-above Common z-index, below sticky
-/// @prop {Number} columns [12] Default for grid mixins
-/// @prop {Number} gutter [14px] Default gutter for grid mixin
-/// @prop {Boolean|String} breakpoint [false] Change the default breakpoint, if falsy will get default breakpoint from breakpoint module
-/// @prop {Map} extra-breakpoints [Medium and large breakpint configs] Default extra breakpoints for grid mixins
+
 $config: (
   "max-width":         90rem,
   "margin":            2rem,
   "z-index-sticky":    100,
   "z-index-above":     450,
-  "z-index-fixed":     1000,
-  "columns":            12,
-  "gutter":             14px,
-  "breakpoint" :        false, // Fallback to default
-  "extra-breakpoints" : (
-    "medium" : (
-      "breakpoint" : "medium",
-      "gutter" : 15px
-    ),
-    "large" : (
-      "breakpoint" : "large",
-      "gutter" : 20px
-    )
-  ),
+  "z-index-fixed":     1000
 ) !default;
 
 /// Change modules $config
@@ -216,32 +198,5 @@ $containers: (
   scrollbar-width: none; /* for Firefox */
   &::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
-  }
-}
-
-
-/// Returns gutter size for grid breakpoint map, defaults to the config's values
-/// Pass custom map to get gutter values from it
-/// @param {String} $name The name of the "grid breakpoint" (could be a different name than the actual breakpoint name it maps too)
-/// @param {Map} $custom-map Provide custom map of grid breakpoints to get the gutter from (defaults to the grid module's defaults 'extra-breakpoints')
-
-@function get-gutter($name: null, $custom-map: null) {
-  @if (not $name) {
-    @return get("gutter");
-  } @else {
-    $map: if($custom-map, $custom-map, get("extra-breakpoints"));
-    $settings: utils.require-map-get($map, $name, "grid [get-gutter]");
-    @return map.get($settings, "gutter");
-  }
-}
-
-/// @return Default breakpoint name (from this module or falling back to breakpoint module default)
-
-@function get-default-breakpoint() {
-  $breakpoint: get("breakpoint");
-  @if ($breakpoint) {
-    @return $breakpoint;
-  } @else {
-    @return breakpoint.get("default");
   }
 }
