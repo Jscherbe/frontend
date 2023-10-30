@@ -8,12 +8,12 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.small-x 
-/// @prop {Number} $config.small 
-/// @prop {Number} $config.default Base unit of measurent
-/// @prop {Number} $config.large 
-/// @prop {Number} $config.large-x 
-/// @prop {Number} $config.large-xx 
+/// @prop {Number} small-x 
+/// @prop {Number} small 
+/// @prop {Number} default Base unit of measurent
+/// @prop {Number} large 
+/// @prop {Number} large-x 
+/// @prop {Number} large-xx 
 
 $config: (
   "small-x" : 1rem * 0.5,
@@ -24,11 +24,11 @@ $config: (
   "large-xx" : 1rem * 4
 ) !default;
 
-/// Update the units preset map
+/// Update the units config
 /// @param {Map} $changes A map to merge into the color palette
 /// @example scss Setting the error and type color
 ///   @include units.set((
-///     "margin" : 2.5em
+///     "default" : 1.5em
 ///   ));
 
 @mixin set($changes) {

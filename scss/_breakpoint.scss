@@ -8,10 +8,10 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.base  Assumed pixel base, can change based on users font settings so this is just o get us in the ballpark). Note this is not the base font size but the user agent's or user's browser preferernce. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)
-/// @prop {Number} $config.gap  The amount to offset min from max media queries incase you are using both (ie prevent overlap)
-/// @prop {String} $config.null-name The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property
-/// @prop {String} $config.default the name of the breakpont that is considered the major change (ie desktop to mobile) used by other modules/components
+/// @prop {Number} base  [16px] Assumed pixel base, can change based on users font settings so this is just o get us in the ballpark). Note this is not the base font size but the user agent's or user's browser preferernce. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)
+/// @prop {Number} gap  [0.01em] The amount to offset min from max media queries incase you are using both (ie prevent overlap)
+/// @prop {String} null-name ["none"] The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property
+/// @prop {String} default ["small"] The name of the breakpont that is considered the major change (ie desktop to mobile) used by other modules/components
 
 $config: (
   "base":      16px,
@@ -21,15 +21,19 @@ $config: (
 ) !default;
 
 /// Change modules $config
+/// @example scss Change default name
+///   @include breakpoint.set(( "default" : "mini" ));
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
+/// @example scss Get default breakpoint name
+///   $default: breakpoint.get("default");
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @return {*} Property Value
 
 @function get($name) {
   @return utils.require-map-get($config, $name, 'breakpoint [config]');
@@ -37,6 +41,9 @@ $config: (
 
 
 /// The default breakpoint sizes (targets are not precise, using em's)
+/// - Map of breakpoints
+/// - Each property is the breakpoints name
+/// - Each value is that breakpoints point (set in em)
 /// @type Map
 
 $sizes: (
@@ -46,39 +53,51 @@ $sizes: (
 ) !default;
 
 /// Update the breakpoint sizes map
-/// @param {Map} $changes A map to merge into the breakpoints map
 /// @example scss Changing the medium breakpoint and adding jumbo
 ///   @include breakpoints.set((
 ///     "medium" : 50em,
 ///     "jumbo" : 100em
 ///   ));
+/// @param {Map} $changes A map to merge into the breakpoints map
+/// @param {Map} $deep [false] Deep map merge (doesn't apply here)
+/// @param {Map} $overwrite [false] Overwrite the sizes, instead of merging changes
 
 @mixin set-sizes($changes, $deep: false, $overwrite: false) {
   $sizes: utils.map-merge-or-overwrite($sizes, $changes, $deep, $overwrite) !global;
 }
 
-/// Get all sizes 
+/// Get all breakpoint sizes (ie. $sizes) 
 @function get-sizes() {
   @return $sizes;
 }
 
 /// Geta a specific size
+/// @param {String} $size The name of the size to get
+/// @return {Number} The sizes value
+ 
 @function get-size($size) {
   @return utils.require-map-get($sizes, $size, "breakpoint size");
 }
 
-/// Does a specific size exist
+/// Check if a specific size exist
+/// @param {String} $name The breakpoint size to check if exists
+/// @return {Boolean} 
+
 @function exists($name) {
   $size: map.get($sizes, $name);
   @return if($size != null, true, false);
 }
 
 /// Create a media query that matches the min-width for a given size
-/// @param {Number} $size The name of the breakpoint bsize
 /// @example scss
 ///   @include breakpoints.min("small") {
 ///     // Your styles
 ///   }
+/// @example css
+///   @media screen and (min-width: 42.5em) {
+///      // Your Styles
+///   }
+/// @param {String} $size The name of the breakpoint size
 
 @mixin min($size) {
   // Adding the small fraction to prevent overlap
@@ -89,11 +108,15 @@ $sizes: (
 }
 
 /// Create a media query that matches the max-width for a given size
-/// @param {Number} $size The name of the breakpoint size
 /// @example scss
 ///   @include breakpoints.max("medium") {
 ///     // Your styles
 ///   }
+/// @example css
+///   @media screen and (max-width: 42.4em) {
+///      // Your Styles
+///   }
+/// @param {Number} $size The name of the breakpoint size
 
 @mixin max($size) {
   // Adding the small fraction to prevent overlap
@@ -103,12 +126,17 @@ $sizes: (
   }
 }
 
-/// Create a media query that matches the min-width and max-width sizes
-/// @param {Number} $size The name of the breakpoint size
+/// Create a media query that matches between two breakpoint sizes
 /// @example scss
 ///   @include breakpoints.min-max("small", "medium") {
 ///     // Your styles
 ///   }
+/// @example css
+///   @media screen and (min-width: 42.5) and (max-width: 75em) {
+///      // Your Styles
+///   }
+/// @param {String} $size-min The name of the smallest breakpoint size
+/// @param {String} $size-max The name of the largest breakpoint size
 
 @mixin min-max($size-min, $size-max) {
   // Adding the small fraction to prevent overlap
@@ -118,6 +146,18 @@ $sizes: (
     @content;
   }
 }
+
+/// Create a media query from a specific size in either direction 
+/// - This is for mostly programmatic usage, so that a user could pass a breakpoint confiuration in either direction
+/// - This way you don't need to repeat conditions (ie if min ... else ...)
+/// @example scss
+///   $size: map.get($user-breakpoint, "size");
+///   $dir: map.get($user-breakpoint, "direction");
+///   @include breakpoints.from($size, $dir) {
+///     // Your styles
+///   }
+/// @param {String} $name The name of the breakpoint size
+/// @param {String} $direction The direction the media query should target (min|up, max|down)
 
 @mixin from($name, $direction: "min") {
   @if ($direction == "min" or $direction == "up") {
@@ -134,7 +174,8 @@ $sizes: (
 }
 
 /// Attaches breakpoints to an element psuedo content for access via script
-/// Use with ulu/js/breakpoints. Breakpoints always min-width (upwards)
+/// - Note you can also use cssvar.declare-breakpoints to get a similiar implementation with css custom-properties
+/// - Use with ulu/js/breakpoints. Breakpoints always min-width (upwards) for javascript setup
 
 @mixin embed-for-scripts() {
   &:before {

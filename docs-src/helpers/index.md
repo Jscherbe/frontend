@@ -4,4 +4,4 @@
 
 # Helpers
 
-This is the sass index ok
+Helpers are utility classes for common needs.

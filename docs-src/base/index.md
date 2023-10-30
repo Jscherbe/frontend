@@ -4,4 +4,4 @@
 
 # Base
 
-This is the sass index ok
+Base styles for top of stylesheet. General element styling, not specific.

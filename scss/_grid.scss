@@ -1,18 +1,20 @@
 ////
 /// @group grid
 ////
+/// Layout grid that uses attributes instead of classes
+/// - See the core layout module for changing defaults
 
-/// @version: 1.0.6
+/// @version: 1.0.7
 
 /// HTML Attribute to use for selecting
 /// @example markup
-///     <!-- This grid does not use columns to ovoid repeating prefixes like: -->
-///     <div class="grid-columuns-12 grid-columuns-12-gutters">
-///       <div class="col-4 col-medium-6 col-offset-medium-3">
+///     <!-- instead it styles like: -->
+///     <div data-grid="columns: 12, gutters: true">
+///       <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
 ///       </div>
 ///     </div>
 ///
-///     <!-- instead it styles like: -->
+///     <!-- or if using container -->
 ///     <div data-grid-container>
 ///       <div data-grid="columns: 12, gutters: true">
 ///         <div data-grid-item="width: 4, width-medium: 6, offset-medium: 3">
@@ -63,13 +65,16 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example scss
 ///   @include module-name.set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example scss
 ///   @include module-name.get("property");
 
 @function get($name) {
