@@ -1,2 +1,2 @@
-import "../scss/packages/everything.scss";
+import "../scss/stylesheets/full.scss";
 import "../js/index.js"
