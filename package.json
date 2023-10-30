@@ -1,12 +1,12 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Sass theming library",
   "browser": "js/index.js",
   "scripts": {
     "docs:dev": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs-src --no-clear-screen",
-    "docs:dev:debug": "vuepress dev docs-src --no-clear-screen --debug",
-    "docs:build": "vuepress build docs-src"
+    "docs:dev:debug": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress dev docs-src --no-clear-screen --debug",
+    "docs:build": "export NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs-src"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     "mixin"
   ],
   "authors": {
-    "name": "Joe Scherben",
+    "name": "Joe Scherben, Informatics",
     "email": "jscherbe@gmail.com"
   },
   "license": "MIT",
