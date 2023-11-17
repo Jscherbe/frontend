@@ -7,7 +7,7 @@
 @use "../utils";
 @use "../selector";
 
-
+ 
 /// Module Settings
 /// @type Map
 /// @prop {Number} $config.sides Sides to print for helper classes (ie. reduce output of uneeded sides)
@@ -47,11 +47,6 @@ $config: (
   // On all sides
   #{ $prefix } {
     #{ $property } : units.get(1);
-  }
-  @if ($isMargin) {
-    #{ $prefix }-auto {
-      margin: auto;
-    }
   }
   
   @each $name, $value in units.$config {

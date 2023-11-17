@@ -14,7 +14,13 @@ tagline: Modular SCSS theming library. Whose modules can be used to create style
 # footer: Joe Scherben
 ---
 
+{{ content }}
 
+<script setup>
+  import { ref } from "vue";
+  import { data } from '../sassdoc.data.js';
+  const content = ref(data.content);
+</script>
 
 
 

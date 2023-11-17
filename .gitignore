@@ -2,3 +2,7 @@
 /trash
 /logs
 /scss-TRASH
+.DS_Store
+jsconfig.json
+/docs-src/.vitepress/cache
+/logs
