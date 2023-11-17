@@ -7,6 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const dist = resolve(__dirname, "../");
 
+const subConfig = base => ({
+  dir: resolve(__dirname, "../../scss/", base),
+  pathBase: `/${ base }`,
+  dist,
+});
+
 const configs = [
   {
     dist,
@@ -22,12 +28,10 @@ const configs = [
       ]
     }
   },
-  newSubConfig("/base/"),
-  newSubConfig("/components/"),
-  newSubConfig("/helpers/"),
-  newSubConfig("/stylesheets/"),
+  subConfig("base/"),
+  subConfig("components/"),
+  subConfig("helpers/"),
 ];
-
 
 let running = false;
 
@@ -42,29 +46,23 @@ let running = false;
 async function output() {
   if (!running) {
     running = true;
-    cleanOutputDir();
-    let pending = configs.map(c => outputPages(c));
-    await Promise.all(pending);
+    configs.forEach(c => cleanOutputDir(c));
+    await Promise.all(configs.map(c => outputPages(c)));
     running = false;
   }
 }
 
-function newSubConfig(pathBase) {
-  return {
-    dir: resolve(__dirname, "../../scss/", pathBase),
-    dist,
-    pathBase
-  };
-}
+
 
 function cleanOutputDir(config) {
   const outputPath = join(config.dist, config.pathBase);
-  const dir = fs.readdirSync(outputPath);
-  dir.forEach(item => {
-    const fullpath = join(outputPath, item);
-    // Delete if directory (was created by sassdoc plugin)
-    if (fs.lstatSync(fullpath).isDirectory()) {
-      fs.removeSync(fullpath);
-    }
-  });
+  if (fs.existsSync(outputPath)) {
+    fs.readdirSync(outputPath).forEach(item => {
+      const fullpath = join(outputPath, item);
+      // Delete if directory (was created by sassdoc plugin)
+      if (fs.lstatSync(fullpath).isDirectory()) {
+        fs.removeSync(fullpath);
+      }
+    });
+  }
 }

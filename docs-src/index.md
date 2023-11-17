@@ -1,27 +1,27 @@
 ---
-home: true
-# heroImage: https://v1.vuepress.vuejs.org/hero.png
-tagline: Modular SCSS theming library. Whose modules can be used to create stylesheet or individually.
-# actionText: Quick Start →
-# actionLink: /guide/
-# features:
-# - title: Feature 1 Title
-#   details: Feature 1 Description
-# - title: Feature 2 Title
-#   details: Feature 2 Description
-# - title: Feature 3 Title
-#   details: Feature 3 Description
-# footer: Joe Scherben
+title: Welcome
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
+
+hero:
+  name: "ULU"
+  text: "Modular theming library"
+  tagline: "Versatile, Standardized Configuration, Flexible"
+  actions:
+    - theme: brand
+      text: Core Modules
+      link: /core/
+    # - theme: alt
+    #   text: API Examples
+    #   link: /api-examples
+
+features:
+  - title: No Output
+    details: This library can be used for configuration, mixins and functions without outputting anything. This is the default.
+  - title: Stylesheet 
+    details: Output complete stylesheet or pick and choose
+  - title: Components
+    details: Output only specific components
+  - title: Change Selectors
+    details: Selectors can be overridden for many components to avoid conflicts
 ---
-
-{{ content }}
-
-<script setup>
-  import { ref } from "vue";
-  import { data } from '../sassdoc.data.js';
-  const content = ref(data.content);
-</script>
-
-
-
-
