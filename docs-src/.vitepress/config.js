@@ -7,7 +7,7 @@ const pages = createTree({ source: resolve(__dirname, "../") });
 export default defineConfig({
   title: "ULU",
   description: "Modules sass theming library",
-  outDir: "../../docs/",
+  outDir: "../docs",
   themeConfig: {
     ...toDefaultTheme(pages),
   }
