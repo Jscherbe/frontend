@@ -1,3 +1,7 @@
+/**
+ * @module file-save
+ */
+
 // Description:     Simple script that is useful for testing. It will:
 //                  - Make a file 
 //                  - Create a URL to it

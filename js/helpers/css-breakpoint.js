@@ -1,8 +1,6 @@
-// =============================================================================
-// Grabs Breakpoint from CSS
-// =============================================================================
-
-// Version:         1.0.6
+/**
+ * @module css-breakpoint
+ */
 
 // Description:     Pass breakpoints from CSS to stylesheet, use this to attach 
 //                  behaviors on breakpoints

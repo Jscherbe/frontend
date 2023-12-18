@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>ui/overflow-scroller.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-css-breakpoint.CssBreakpoints.html">CssBreakpoints</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#at">at</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#getBreakpoint">getBreakpoint</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#update">update</a></li></ul></li><li><a href="module-css-breakpoint-Breakpoint.html">Breakpoint</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#_setDirection">_setDirection</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#max">max</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#min">min</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#only">only</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#remove">remove</a></li></ul></li><li><a href="module-css-breakpoint-BreakpointDirection.html">BreakpointDirection</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#_call">_call</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#add">add</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#change">change</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#getHandlers">getHandlers</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#remove">remove</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-node-data-manager.NodeDataStore.html">NodeDataStore</a></li><li><a href="module-resizer.html">resizer</a></li></ul><h3>Modules</h3><ul><li><a href="module-css-breakpoint.html">css-breakpoint</a></li><li><a href="module-events.html">events</a><ul class='methods'><li data-type='method'><a href="module-events.html#.dispatch">dispatch</a></li><li data-type='method'><a href="module-events.html#.getName">getName</a></li></ul></li><li><a href="module-file-save.html">file-save</a></li><li><a href="module-flipcard.html">flipcard</a></li><li><a href="module-grid.html">grid</a><ul class='methods'><li data-type='method'><a href="module-grid.html#.init">init</a></li><li data-type='method'><a href="module-grid.html#.setPositionClasses">setPositionClasses</a></li><li data-type='method'><a href="module-grid.html#.setup">setup</a></li></ul></li><li><a href="module-logger.html">logger</a><ul class='methods'><li data-type='method'><a href="module-logger.html#.log">log</a></li><li data-type='method'><a href="module-logger.html#.logError">logError</a></li><li data-type='method'><a href="module-logger.html#.logWarning">logWarning</a></li><li data-type='method'><a href="module-logger.html#.set">set</a></li></ul></li><li><a href="module-modals.html">modals</a><ul class='methods'><li data-type='method'><a href="module-modals.html#.close">close</a></li><li data-type='method'><a href="module-modals.html#.setupModal">setupModal</a></li><li data-type='method'><a href="module-modals.html#.show">show</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-overflow-scroller.html">overflow-scroller</a></li><li><a href="module-overflow-scroller-pager.html">overflow-scroller-pager</a></li><li><a href="module-pause-youtube-video.html">pause-youtube-video</a><ul class='methods'><li data-type='method'><a href="module-pause-youtube-video.html#.pauseVideos">pauseVideos</a></li><li data-type='method'><a href="module-pause-youtube-video.html#.prepVideos">prepVideos</a></li></ul></li><li><a href="module-programmatic-modal.html">programmatic-modal</a><ul class='methods'><li data-type='method'><a href="module-programmatic-modal.html#~cacheTrigger">cacheTrigger</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newContainer">newContainer</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newModal">newModal</a></li><li data-type='method'><a href="module-programmatic-modal.html#~setModalId">setModalId</a></li></ul></li><li><a href="module-resizer.html">resizer</a></li><li><a href="module-scrollbar-width-property.html">scrollbar-width-property</a></li><li><a href="module-slider.html">slider</a></li><li><a href="module-tabs.html">tabs</a></li><li><a href="module-tooltip.html">tooltip</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ui/overflow-scroller.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module overflow-scroller
+ */
+/**
+ * @todo - Need to have scroll handler check scroll position
+ * @todo - Determine if controls should be visible
+ * @todo - Make the amount the scroll controls move forward or backward based on amount or function
+ *         the user can use this to increment by a certain number of items
+ * @todo - Provide accessible names to buttons but don't worry about hiding these from screenreaders
+ * @todo - Document that user could use something like [https://github.com/LachlanArthur/scroll-snap-api/tree/master/src] to have it go between items
+ * 
+ */
+import { hasRequiredProps } from '@ulu/utils/object.js';
+import { logError } from "../utils/logger.js";
+const requiredElements = [
+  "track", 
+  "controls"
+];
+export class OverflowScroller {
+  static instances = [];
+  static defaults = {
+    namespace: "OverflowScroller",
+    events: {},
+    horizontal: true,
+    offsetStart: 100,
+    offsetEnd: 100,
+    amount: "auto",
+  }
+  constructor(elements, config) {
+    this.options = Object.assign({}, OverflowScroller.defaults, config);
+    if (!hasRequiredProps(requiredElements)) {
+      logError(this, 'Missing a required Element');
+    }
+    this.elements = {
+      ...elements,
+      ...this.createControls(elements.controls)
+    };
+    this.nextEnabled = true;
+    this.previousEnabled = true;
+    this.scrollHandler = (e) => this.onScroll(e);
+    this.elements.track.addEventListener("scroll", this.scrollHandler, { passive: true });
+    this.checkOverflow();
+    this.onScroll();
+  }
+  checkOverflow() {
+    const { track } = this.elements;
+    this.hasOverflow = track.scrollWidth > track.clientWidth;
+  }
+  createControls(context) {
+    const controls = document.createElement('ul');
+    const previousItem = document.createElement("li");
+    const nextItem = document.createElement("li");
+    const previous = this.createControlButton("previous");
+    const next = this.createControlButton("next");
+    const itemClass = this.getClass("controls-item");
+    nextItem.classList.add(itemClass);
+    nextItem.classList.add(itemClass + "--next");
+    previousItem.classList.add(itemClass);
+    previousItem.classList.add(itemClass + "--previous");
+    controls.classList.add(this.getClass("controls"));
+    previousItem.appendChild(previous);
+    nextItem.appendChild(next);
+    controls.appendChild(previousItem);
+    controls.appendChild(nextItem);
+    previous.addEventListener('click', this.previous.bind(this));
+    next.addEventListener('click', this.next.bind(this));
+    context.appendChild(controls);
+
+    return {
+      controls,
+      previousItem,
+      nextItem,
+      previous,
+      next
+    };
+  }
+  createControlButton(action) {
+    const button = document.createElement("button");
+    button.classList.add(this.getClass("control-button"));
+    button.classList.add(this.getClass(`control-button--${ action }`));
+    button.setAttribute("type", "button");
+    button.innerHTML = this.getControlContent(action);
+    return button;
+  }
+  getControlContent(action) {
+    return `
+      &lt;span class="hidden-visually">${ action }&lt;/span>
+      &lt;span aria-hidden="true">${ action === 'next' ? '→' : '←' }&lt;/span>
+    `;
+  }
+  onScroll(event) {
+    if (!this.hasOverflow) return;
+    this.onScrollHorizontal();
+  }
+  onScrollHorizontal() {
+    const { nextEnabled, previousEnabled } = this;
+    const { track } = this.elements;
+    const { offsetStart, offsetEnd } = this.options;
+    const { scrollWidth, clientWidth, scrollLeft } = track;
+    const atStart = scrollLeft &lt;= offsetStart;
+    const atEnd = scrollWidth - scrollLeft - offsetEnd &lt;= clientWidth;
+    if (atStart &amp;&amp; previousEnabled) {
+      this.setControlState("previous", false);
+    } else if (!atStart &amp;&amp; !previousEnabled) {
+      this.setControlState("previous", true);
+    }
+    if (atEnd &amp;&amp; nextEnabled) {
+      this.setControlState("next", false);
+    } else if (!atEnd &amp;&amp; !nextEnabled) {
+      this.setControlState("next", true);
+    }
+  }
+  setControlState(dir, enabled) {
+    const isNext = dir === "next";
+    const { next, nextItem, previous, previousItem } = this.elements;
+    const item = isNext ? nextItem : previousItem; 
+    const button = isNext ? next : previous;
+    const classlistMethod = enabled ? 'remove' : 'add';
+    
+    item.classList[classlistMethod](this.getClass("controls-item--disabled"));
+    button.classList[enabled ? 'remove' : 'add'](this.getClass("control--disabled"));
+    if (enabled) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", "");
+    }
+    this[isNext ? 'nextEnabled' : 'previousEnabled'] = enabled;
+  }
+  resolveAmount(dir) {
+    const isNext = dir === "next";
+    const { amount } = this.options;
+    const { scrollLeft, offsetWidth } = this.elements.track;
+    if (amount === "auto") {
+      return isNext ? scrollLeft + offsetWidth : scrollLeft - offsetWidth;
+    } else if (typeof amount === "function") {
+      return amount(this, dir);
+    } else if (typeof amount === "number") {
+      return isNext ? scrollLeft + amount : scrollLeft - amount;
+    }
+    logError("Unable to resolve amount for scroll");
+    return 500;
+  }
+  next() {
+    this.elements.track.scrollTo({
+      top: 0,
+      left: this.resolveAmount("next"),
+      behavior: "smooth"
+    });
+  }
+  previous() {
+    this.elements.track.scrollTo({
+      top: 0,
+      left: this.resolveAmount("previous"),
+      behavior: "smooth"
+    });
+  }
+  getClass(child) {
+    const { namespace } = this.options;
+    return `${ namespace }__${ child }`;
+  }
+}
+
+export default OverflowScroller;</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sun Dec 17 2023 22:59:29 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

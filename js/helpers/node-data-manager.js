@@ -1,4 +1,8 @@
 /**
+ * @module node-data-manager
+ */
+
+/**
  * Class that provides a method to store data based on node/element
  */
 export default class NodeDataManager {

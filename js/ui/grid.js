@@ -1,3 +1,7 @@
+/**
+ * @module grid
+ */
+
 import { getName } from "../events/index.js";
 
 /**

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>ui/slider.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-css-breakpoint.CssBreakpoints.html">CssBreakpoints</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#at">at</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#getBreakpoint">getBreakpoint</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#update">update</a></li></ul></li><li><a href="module-css-breakpoint-Breakpoint.html">Breakpoint</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#_setDirection">_setDirection</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#max">max</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#min">min</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#only">only</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#remove">remove</a></li></ul></li><li><a href="module-css-breakpoint-BreakpointDirection.html">BreakpointDirection</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#_call">_call</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#add">add</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#change">change</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#getHandlers">getHandlers</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#remove">remove</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-node-data-manager.NodeDataStore.html">NodeDataStore</a></li><li><a href="module-resizer.html">resizer</a></li></ul><h3>Modules</h3><ul><li><a href="module-css-breakpoint.html">css-breakpoint</a></li><li><a href="module-events.html">events</a><ul class='methods'><li data-type='method'><a href="module-events.html#.dispatch">dispatch</a></li><li data-type='method'><a href="module-events.html#.getName">getName</a></li></ul></li><li><a href="module-file-save.html">file-save</a></li><li><a href="module-flipcard.html">flipcard</a></li><li><a href="module-grid.html">grid</a><ul class='methods'><li data-type='method'><a href="module-grid.html#.init">init</a></li><li data-type='method'><a href="module-grid.html#.setPositionClasses">setPositionClasses</a></li><li data-type='method'><a href="module-grid.html#.setup">setup</a></li></ul></li><li><a href="module-logger.html">logger</a><ul class='methods'><li data-type='method'><a href="module-logger.html#.log">log</a></li><li data-type='method'><a href="module-logger.html#.logError">logError</a></li><li data-type='method'><a href="module-logger.html#.logWarning">logWarning</a></li><li data-type='method'><a href="module-logger.html#.set">set</a></li></ul></li><li><a href="module-modals.html">modals</a><ul class='methods'><li data-type='method'><a href="module-modals.html#.close">close</a></li><li data-type='method'><a href="module-modals.html#.setupModal">setupModal</a></li><li data-type='method'><a href="module-modals.html#.show">show</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-overflow-scroller.html">overflow-scroller</a></li><li><a href="module-overflow-scroller-pager.html">overflow-scroller-pager</a></li><li><a href="module-pause-youtube-video.html">pause-youtube-video</a><ul class='methods'><li data-type='method'><a href="module-pause-youtube-video.html#.pauseVideos">pauseVideos</a></li><li data-type='method'><a href="module-pause-youtube-video.html#.prepVideos">prepVideos</a></li></ul></li><li><a href="module-programmatic-modal.html">programmatic-modal</a><ul class='methods'><li data-type='method'><a href="module-programmatic-modal.html#~cacheTrigger">cacheTrigger</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newContainer">newContainer</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newModal">newModal</a></li><li data-type='method'><a href="module-programmatic-modal.html#~setModalId">setModalId</a></li></ul></li><li><a href="module-resizer.html">resizer</a></li><li><a href="module-scrollbar-width-property.html">scrollbar-width-property</a></li><li><a href="module-slider.html">slider</a></li><li><a href="module-tabs.html">tabs</a></li><li><a href="module-tooltip.html">tooltip</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ui/slider.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module slider
+ */
+// =============================================================================
+// Slider
+// =============================================================================
+
+// Version:                   1.0.10
+
+// Changes:   
+//                            1.0.10 | Fix bug when two and going in reverse
+//                            1.0.9 | Fix bug when there are only 2 slides (not sliding correctly [revesers because of switchSlide])
+//                                    this is addressed now and should slide infinitly between two slides
+//                            1.0.8 | Change API, to elements object (from individaul arguments),
+//                                    Add the ability to specify the element to append controls within
+//                            1.0.6 | Add transition class for changes during transition, 
+//                                    add will-change to the transition
+//                            1.0.5 | Fix transtion event difference on windows, convert all 
+//                                    async stuff to promises and simplify
+//                            1.0.4 | Remove live region annoucement (only used if auto rotate)
+
+// Reference:                 https://www.w3.org/WAI/tutorials/carousels/working-example/
+//                            https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html#
+//                            https://www.w3.org/TR/wai-aria-practices-1.1/examples/carousel/carousel-1.html
+//                            https://www.accessibilityoz.com/
+//                            https://www.sitepoint.com/unbearable-accessible-slideshow/
+//                            https://dev.opera.com/articles/css-will-change-property/
+//                              * Will Change use
+
+import maintain from 'ally.js/maintain/_maintain';
+import { log, logError, logWarning } from "@ulu/utils/logger.js";
+import { hasRequiredProps } from '@ulu/utils/object.js';
+import { trimWhitespace } from "@ulu/utils/string.js";
+import { debounce } from "@ulu/utils/performance.js";
+const debugMode = false; // Global dev debug
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const eventOnce = { once: true };
+const cssDuration = d => `${ d }ms`;
+
+// Resize handlers for all slider instances, Load event to avoid triggering
+addEventListener('load', () => {
+  addEventListener('resize', debounce(() => {
+    Slider.instances.forEach(i => i.handleResize());
+  }, 250));
+});
+
+const requiredElements = [
+  "container", 
+  "trackContainer", 
+  "track", 
+  "slides"
+];
+export class Slider {
+  static instances = [];
+  static defaults = {
+    classAccessiblyHidden: "hidden-visually",
+    namespace: "Slider",
+    events: {},
+    transition: true,
+    transitionFade: false,
+    transitionDuration: 700,
+    transitionDurationExit: 400,
+    transitionTimingFunction: "ease-in-out",
+
+    // transition: true
+  }
+  // constructor(container, title, trackContainer, track, slides, config, debug = false) {
+  constructor(elements, config, debug = false) {
+    const options = Object.assign({}, Slider.defaults, config);
+    this.debug = debugMode || debug;
+    this.options = options;
+    this.slide = null;
+    this.index = null;
+    this.transitioning = false;
+
+    if (!hasRequiredProps(requiredElements)) {
+      logError(this, 'Missing a required Element');
+    }
+    if (!elements.slides.length) {
+      logError(this, "Missing slides");
+    }
+    this.slides = [ ...elements.slides ].map((element, index) => {
+      return {
+        element,
+        index,
+        number: index + 1
+      }
+    });
+    this.elements = {
+      ...elements,
+      ...this.createControls(elements.controlContext || elements.container),
+      ...this.createNav(elements.navContext || elements.container)
+    };
+    // Choose the appropriate transition method
+    this.transition =  options.transition ? options.transitionFade || reduceMotion 
+                          ? this.fadeTransition : this.slideTransition :  this.noTransition;
+    this.setup();
+    this.goto(0, null, "init");
+    log(this, "Slider Instance Created", this);
+    Slider.instances.push(this);
+  }
+  /**
+   * Sliding mechanism needs translate updated on resize
+   */
+  handleResize() {
+    const { slide, transition, slideTransition} = this;
+    if (transition === slideTransition &amp;&amp; slide) {
+      this.translateTo(slide.element.offsetLeft, 0);
+    }
+  }
+  /**
+   * Goto to the previous slide
+   */     
+  previous(event) {
+    const { index: lastIndex, slides } = this;
+    const last = slides.length - 1;
+    const prev = lastIndex - 1;
+    const index = prev &lt; 0 ? last : prev;
+    this.emit("previous", [event, index]);
+    this.goto(index, event, "previous");
+  }
+  /**
+   * Goto to the next slide
+   */   
+  next(event) {
+    const { index: lastIndex, slides } = this;
+    const next = lastIndex + 1;
+    const index = next > slides.length - 1 ? 0 : next;
+    this.emit("next", [event, index]);
+    this.goto(index, event, "next");
+  }
+  /**
+   *  Makes sure that no matter what the callback is called if transition event
+   * doesn't start or fails to finish/cancel
+   * @param {number} element
+   * @param {number} duration Duration to wait for complete 
+   * @param {Function} beginTransition Css changes to begin/start transtion 
+   */
+  ensureTranstionEnds(element, duration, beginTransition) {
+    return new Promise(resolve => {
+      const tid = {};
+      // If the transition has started remove the fallback for start
+      // and set one for the end
+      const onStart = () => {
+        clearTimeout(tid.start);
+        tid.end = setTimeout(onComplete, duration + 500);
+      };
+      // The transition has completed, cleanup and resolve
+      const onComplete = () => {
+        clearTimeout(tid.start);
+        clearTimeout(tid.end);
+        element.removeEventListener("transitionrun", onStart, eventOnce);
+        element.removeEventListener('transitionend', onComplete, eventOnce);
+        element.removeEventListener('transitioncancel', onComplete, eventOnce);
+        resolve();
+      };
+      // Wait for animation to start, also set a timer to ensure that
+      // if this event never fires for any reason, the promise will resolve
+      element.addEventListener("transitionrun", onStart, eventOnce);
+      // If it has started it will be waiting for the end
+      // If it never ends for any reason, the promise will resolve
+      element.addEventListener('transitionend', onComplete, eventOnce);
+      element.addEventListener('transitioncancel', onComplete, eventOnce);
+      tid.start = setTimeout(onComplete, duration + 500);
+      // Apply users css changes
+      element.style.transitionDuration = cssDuration(duration);
+      beginTransition();
+      // Bypass events if no duration or 0
+      if (!duration) {
+        onComplete();
+      }
+    });
+  }
+  /**
+   * Translate the track to X
+   */    
+  translateTo(x, duration) {
+    const { track } = this.elements;
+    const set = () => track.style.transform = `translateX(-${ x }px)`;
+    // tell brwoser we're about to animate
+    track.style.willChange =  "transform";
+    return this.ensureTranstionEnds(track, duration, set).then(() => {
+      // Remove to avoid any issues with optimization
+      track.style.willChange =  "auto";
+    });
+  }
+  /**
+   * Show's a specifc slide and hides others, except when passing true to show all
+   * then all slides will visible
+   */
+  setVisibility(activeSlide, showAll) {
+    if (!showAll) {
+      activeSlide.element.style.visibility = "visible";
+    }
+    this.slides.forEach(slide => {
+      if (slide !== activeSlide) {
+        slide.element.style.visibility = showAll ? "visible" : "hidden";
+      }
+    });
+  }
+  /**
+   * Perform a fade on a single slide
+   */
+  fadeSlide(slide, visible) {
+    const { options } = this;
+    const { element } = slide;
+    const duration = visible ? options.transitionDuration : options.transitionDurationExit;
+    return this.ensureTranstionEnds(element, duration, () => {
+      element.style.opacity = visible ? "1" : "0";
+    });
+  }
+  /**
+   * Handler for the entire slide transtion
+   */
+  async slideTransition({ slide, index, old, oldIndex, triggerType }) {
+    const count = this.slides.length;
+    const reverse = triggerType === "previous";
+    const lastIndex = count - 1;
+    const lastToFirst = index === 0 &amp;&amp; oldIndex === lastIndex;
+    const firstToLast = index === lastIndex &amp;&amp; oldIndex === 0;
+    let switchSlide;
+    let duration = this.options.transitionDuration;
+    
+    // Set duration based on how many slides to traverse
+    // First to last or the opposite are single slide animations
+    if (oldIndex &amp;&amp; !lastToFirst &amp;&amp; !firstToLast) {
+      duration = duration * Math.abs(oldIndex - index);
+    }
+    // If first to last or last to first we switch the order of the slides so that
+    // They are right next to each other at the front of the list
+    // Then perform the animation, Then put them back in their natural place without transitioning
+    // so it doesn't move for the user. Note count affects this differently
+    
+    if (count &lt; 3) { 
+      if (lastToFirst &amp;&amp; !reverse) {
+        switchSlide = old;
+      } else if (firstToLast) {
+        switchSlide = reverse ? slide : old;
+      }
+    } else {
+      if (lastToFirst) {
+        switchSlide = old;
+      } else if (firstToLast) {
+        switchSlide = slide;
+      }
+    }
+
+    // Set all slides to visible during the animation 
+    this.setVisibility(null, true);
+
+    // Put the last item at the front of the list and reset the
+    // tracks (or the opposite for first to last)
+    if (switchSlide) {
+      switchSlide.element.style.order = "-1";
+      await this.translateTo(lastToFirst ? 0 : old.element.offsetLeft, 0);
+    }
+    // Perform the main sliding animation
+    await this.translateTo(slide.element.offsetLeft, duration);
+    // Set the order back to normal in the end
+    // Don't transtion so the slider seems like it doesn't jump/move
+    if (switchSlide) {
+      switchSlide.element.style.order = "0";
+      await this.translateTo(slide.element.offsetLeft, 0);
+    }
+
+    this.setVisibility(slide, false);
+  }
+  /**
+   * Handler for the entire fade transtion
+   */  
+  async fadeTransition({ slide, old }) {
+    this.setVisibility(null, true);
+    // Uses order trick to move the current slide
+    if (old) {
+      await this.fadeSlide(old, false);
+      old.element.style.order = "0";
+    } 
+    slide.element.style.order = "-1";
+    await this.fadeSlide(slide, true); 
+    this.setVisibility(slide, false);
+  }
+  /**
+   * Handler for the entire NO transtion
+   */
+  noTransition({ slide, old }) {
+    this.setVisibility(slide, false);
+    if (old) {
+      old.element.style.order = "0";
+    }
+    slide.element.style.order = "-1";
+    return Promise.resolve();
+  }
+  goto(index, event, triggerType) {
+    const { 
+      slide: old, 
+      index: 
+      oldIndex, 
+      slides, 
+      elements
+    } = this;
+    const isInit = triggerType === "init";
+    const slide = slides[index];
+    const activeClass = this.getClass("nav-button--active");
+    const transitionClass = this.getClass("transition", true);
+    const to = { slide, index, old, oldIndex, triggerType };
+
+    if (index === oldIndex) {
+      logWarning(this, "Could not goto slide, still performing transition");
+      return;
+    }
+    if (this.transitioning) {
+      logWarning(this, "Cancel goto(), same slide index as current slide");
+      return;
+    }
+
+    // Make all slide interactive elements inert
+    const lockInteractives = maintain.disabled({ context: this.elements.track  });
+    this.transitioning = true;
+    // Set classes first just feels better
+    if (old) old.navButton.classList.remove(activeClass);
+    slide.navButton.classList.add(activeClass);
+    elements.container.classList.add(transitionClass);
+    // Perform transition and then set state
+    this.transition(to).then(() => {
+      this.index = index;
+      this.slide = slide;
+      this.transitioning = false;
+      elements.container.classList.remove(transitionClass);
+      lockInteractives.disengage();
+      if (!isInit) {
+        slide.element.focus();
+        this.emit("goto", [event, index, slide]);
+      }
+    });
+  }
+  setup() {
+    const { container, track, trackContainer } = this.elements;
+    const trackCss = trimWhitespace(this.trackCss());
+    const trackContainerStyles = trimWhitespace(this.trackContainerStyles());
+    const slideCss = trimWhitespace(this.slideCss());
+    track.setAttribute("style", trackCss);
+    trackContainer.setAttribute("style", trackContainerStyles);
+    this.slides.forEach(slide => {
+      slide.element.setAttribute("style", slideCss);
+      slide.element.setAttribute('tabindex', '-1');
+    });
+    container.classList.add(this.getClass());
+  }
+  trackContainerStyles() {
+    // Crop translated track
+    return `
+      overflow: hidden;
+    `;
+  }
+  transitionCss(property) {
+    const { transitionTimingFunction, transitionDuration } = this.options;
+    return `
+      transition-property: ${ property };
+      transition-duration: ${ cssDuration(transitionDuration) };
+      transition-timing-function: ${ transitionTimingFunction };
+    `;
+  }
+  trackCss() {
+    // Add in sliding transtion properties when not fade
+    return `
+      display: flex;
+      position: relative;
+      list-style: none;
+      ${ this.transition === this.slideTransition ? this.transitionCss("transform") : "" }
+    `;
+  }
+  slideCss() {
+    const fadingTransition = this.transition === this.fadeTransition;
+    // Add in fading transtion properties when not slide (which is on the track)
+    return `
+      width: 100%;
+      flex: 0 0 100%;
+      ${ fadingTransition ? this.transitionCss("opacity") : "" }
+      opacity: ${ fadingTransition ? "0" : "1" }
+    `;
+  }
+  getClass(child, modifier) {
+    const { namespace } = this.options;
+    if (modifier) {
+      return `${ namespace }--${ child }`;
+    } else if (child) {
+      return `${ namespace }__${ child }`;
+    } else {
+      return namespace;
+    }
+  }
+  createControlButton(action) {
+    const button = document.createElement("button");
+    button.classList.add(this.getClass("control-button"));
+    button.classList.add(this.getClass(`control-button--${ action }`));
+    button.setAttribute("data-slider-control", action);
+    button.setAttribute("type", "button");
+    button.innerHTML = this.getControlContent(action);
+    return button;
+  }
+  createControls(context) {
+    const controls = document.createElement('ul');
+    const previousItem = document.createElement("li");
+    const nextItem = document.createElement("li");
+    const previous = this.createControlButton("previous");
+    const next = this.createControlButton("next");
+
+    controls.classList.add(this.getClass("controls"));
+
+    previousItem.appendChild(previous);
+    nextItem.appendChild(next);
+    controls.appendChild(previousItem);
+    controls.appendChild(nextItem);
+    previous.addEventListener('click', this.previous.bind(this));
+    next.addEventListener('click', this.next.bind(this));
+    context.appendChild(controls);
+
+    return {
+      controls,
+      previousItem,
+      nextItem,
+      previous,
+      next
+    };
+  }
+  createNav(container) {
+    const nav = document.createElement("ul");
+    const navButtons = this.slides.map(this.createNavButton.bind(this));
+    const navItems = navButtons.map(button => {
+      const item = document.createElement("li");
+      item.appendChild(button);
+      // item.setAttribute('tabindex', "-1"); // WHY?
+      nav.appendChild(item);
+      return item;
+    });
+
+    nav.classList.add(this.getClass("nav"));
+    container.appendChild(nav);
+
+    return {
+      nav,
+      navButtons,
+      navItems
+    };
+  }
+  createNavButton(slide, index) {
+    const button = document.createElement("button");
+    button.classList.add(this.getClass("nav-button"));
+    button.setAttribute("type", "button");
+    button.innerHTML = this.getNavContent(slide.number);
+    slide.navButton = button; // Add reference to slide object
+    button.addEventListener("click", this.goto.bind(this, index));
+    return button;
+  }
+  getControlContent(action) {
+    return `
+      &lt;span class="hidden-visually">${ action }&lt;/span>
+      &lt;span aria-hidden="true">${ action === 'next' ? '→' : '←' }&lt;/span>
+    `;
+  }
+  getNavContent(number) {
+    return `&lt;span class="hidden-visually">Item&lt;/span> &lt;span>${ number }&lt;/span>`;
+  }
+  emit(name, args) {
+    if (this.options.events[name]) {
+      this.options.events[name].apply(this, args);
+    }
+  }
+}
+
+export default Slider;</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sun Dec 17 2023 22:59:29 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

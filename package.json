@@ -1,7 +1,7 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.0.5",
-  "description": "Sass theming library",
+  "version": "0.0.6",
+  "description": "Theming library",
   "browser": "js/index.js",
   "main": "index.js",
   "exports" :{
@@ -13,7 +13,8 @@
     "docs:dev": "vitepress dev docs-src",
     "docs:build": "vitepress build docs-src",
     "docs:output": "node ./docs-src/.vitepress/sassdoc.js",
-    "docs:output:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js"
+    "docs:output:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js",
+    "docs:build:js": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",

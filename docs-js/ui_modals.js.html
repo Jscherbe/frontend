@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>ui/modals.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-css-breakpoint.CssBreakpoints.html">CssBreakpoints</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#at">at</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#getBreakpoint">getBreakpoint</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#update">update</a></li></ul></li><li><a href="module-css-breakpoint-Breakpoint.html">Breakpoint</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#_setDirection">_setDirection</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#max">max</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#min">min</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#only">only</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#remove">remove</a></li></ul></li><li><a href="module-css-breakpoint-BreakpointDirection.html">BreakpointDirection</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#_call">_call</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#add">add</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#change">change</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#getHandlers">getHandlers</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#remove">remove</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-node-data-manager.NodeDataStore.html">NodeDataStore</a></li><li><a href="module-resizer.html">resizer</a></li></ul><h3>Modules</h3><ul><li><a href="module-css-breakpoint.html">css-breakpoint</a></li><li><a href="module-events.html">events</a><ul class='methods'><li data-type='method'><a href="module-events.html#.dispatch">dispatch</a></li><li data-type='method'><a href="module-events.html#.getName">getName</a></li></ul></li><li><a href="module-file-save.html">file-save</a></li><li><a href="module-flipcard.html">flipcard</a></li><li><a href="module-grid.html">grid</a><ul class='methods'><li data-type='method'><a href="module-grid.html#.init">init</a></li><li data-type='method'><a href="module-grid.html#.setPositionClasses">setPositionClasses</a></li><li data-type='method'><a href="module-grid.html#.setup">setup</a></li></ul></li><li><a href="module-logger.html">logger</a><ul class='methods'><li data-type='method'><a href="module-logger.html#.log">log</a></li><li data-type='method'><a href="module-logger.html#.logError">logError</a></li><li data-type='method'><a href="module-logger.html#.logWarning">logWarning</a></li><li data-type='method'><a href="module-logger.html#.set">set</a></li></ul></li><li><a href="module-modals.html">modals</a><ul class='methods'><li data-type='method'><a href="module-modals.html#.close">close</a></li><li data-type='method'><a href="module-modals.html#.setupModal">setupModal</a></li><li data-type='method'><a href="module-modals.html#.show">show</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-overflow-scroller.html">overflow-scroller</a></li><li><a href="module-overflow-scroller-pager.html">overflow-scroller-pager</a></li><li><a href="module-pause-youtube-video.html">pause-youtube-video</a><ul class='methods'><li data-type='method'><a href="module-pause-youtube-video.html#.pauseVideos">pauseVideos</a></li><li data-type='method'><a href="module-pause-youtube-video.html#.prepVideos">prepVideos</a></li></ul></li><li><a href="module-programmatic-modal.html">programmatic-modal</a><ul class='methods'><li data-type='method'><a href="module-programmatic-modal.html#~cacheTrigger">cacheTrigger</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newContainer">newContainer</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newModal">newModal</a></li><li data-type='method'><a href="module-programmatic-modal.html#~setModalId">setModalId</a></li></ul></li><li><a href="module-resizer.html">resizer</a></li><li><a href="module-scrollbar-width-property.html">scrollbar-width-property</a></li><li><a href="module-slider.html">slider</a></li><li><a href="module-tabs.html">tabs</a></li><li><a href="module-tooltip.html">tooltip</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ui/modals.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module modals
+ */
+// Version:         1.0.4
+// Changes:
+//                  1.0.4 | The modal library has a bug with multiple modals and using a custom close handler
+//                          In the future we want to abandon this library but for now it works by setting up our own open and close buttons
+//                          This is not setup to work with programmatic modals!!
+//                  1.0.3 | Added youtube video closing stuff
+//                  1.0.3 | Added youtube video closing stuff
+//                  1.0.2 | Added custom close handler and checked to make sure resizer doesn't trigger click
+//                  1.0.1 | Added optional resizable (allowResize)
+// Todo:            - Make the container the content is getting the orginal classes, or don't remove them. And allow user to pass classes via config
+
+// Javascript builds strucutre, modal's live in content in simple container. 
+// Modal theme and strucutre is added in scripting That way if we change the 
+// interface in the future we don't need to change/update markup.
+import MicroModal from 'micromodal';
+import Resizer from './resizer.js';
+import { createElementFromHtml } from '@ulu/utils/dom.js';
+import { pauseVideos, prepVideos } from '../helpers/pause-youtube-video.js';
+const classes = {
+  open: 'site-modal--open',
+  container: "site-modal__container",
+  body: "site-modal__body",
+  resizer: "site-modal__resizer"
+};
+const triggerAttr = "data-site-modal-trigger";
+export { triggerAttr };
+const triggerSelector = `[${ triggerAttr }]`;
+const defaults = {
+  allowResize: true,
+  position: "center",
+  containerClass: "",
+  closeSelector: "[data-site-modal-close]"
+};
+const configMicroModal = { 
+  openClass: classes.open,
+  disableScroll: true,
+  openTrigger: 'data-site-modal-trigger',
+  closeTrigger: 'data-NOT-USED', // Proxied to avoid this click handler (on keydown, allow click on things underneath)
+  onClose: function(modal) {
+    pauseVideos(modal);
+  } 
+};
+const wrappers = [];
+
+
+// Create a grouping container to grab all modals from content of the 
+// page and move to the bottom of the page
+// const container = createContainer();
+
+// The [data-site-modal] is used to seperate the libraries' interface 
+// and the modal's styling classes, so it can be adjusted or extended 
+// in the future
+document.querySelectorAll('[data-site-modal]').forEach((element) => setupModal(element));
+
+// Intialize modal library script
+// init();
+attachTriggers();
+
+export function attachTriggers(context = document) {
+  const flag = 'data-site-modal-trigger-attached';
+  context.querySelectorAll(triggerSelector).forEach(trigger => {
+    if (!trigger.hasAttribute(flag)) {
+      const mid = trigger.getAttribute(triggerAttr);
+      if (!mid) {
+        console.warn("Unable to get modal trigger id");
+      } else {
+        trigger.setAttribute(flag, "");
+        trigger.addEventListener("click", () => {
+          show(mid)
+        });
+      }
+    }
+  });
+}
+
+/**
+ * Function to setup each modal
+ * - Creates structure
+ * - Gets settings from elements data attrite
+ * - Moves it to the end of the document
+ * - Adds resizer if position (left || right)
+ * @param {Node} modal Modal element ie. `[data-site-modal]`
+ * @param {Object} settings Custom settings object to merge, same interface as `[data-site-modal]` settings
+ */
+export function setupModal(modal, settings) {
+  // Grab things from original element before modifying
+  const id = modal.id;
+  const originalClasses = modal.getAttribute('class') || '';
+  // Grab settings from element and optionally from settings passed
+  let data = {};
+  if (modal.dataset.siteModal) {
+    data = JSON.parse(modal.dataset.siteModal)
+  }
+  data = Object.assign({}, defaults, data, settings);
+  const { allowResize, position } = data;
+  const notCenter = position !== "center";
+  const hasResizer = notCenter &amp;&amp; allowResize;
+  const resizerMarkup = hasResizer ? `&lt;div class="${ classes.resizer }">&lt;/div>` : '';
+  const resizerModifierClass = allowResize ? "resize" : "no-resize";
+  const closeAttr = "data-site-modal-close";
+  // Remove attributes
+  modal.removeAttribute('data-site-modal');
+  modal.removeAttribute('id');
+  modal.removeAttribute('class');
+  // Template for new modal container (modal's body, the original element is 
+  // appended after as not to lose any listerner's/etc
+  const markup = `
+    &lt;div 
+      class="
+        site-modal 
+        site-modal--${ position } 
+        site-modal--${ resizerModifierClass } 
+        ${ data.containerClass }
+      " 
+      id="${ id }" aria-hidden="true"
+    >
+      &lt;div class="site-modal__overlay" tabindex="-1" ${ closeAttr }>
+        &lt;div class="site-modal__container" role="dialog" aria-modal="true" aria-labelledby="${ id }-title">
+          &lt;div class="site-modal__header">
+            &lt;h2 class="site-modal__title" id="${ id }-title" tabindex="0">${ data.title }&lt;/h2>
+            &lt;button class="site-modal__close" aria-label="Close modal" ${ closeAttr }>
+              &lt;span class="site-modal__close-icon" aria-hidden="true" ${ closeAttr }>&lt;/span>
+            &lt;/button>
+          &lt;/div>
+          &lt;div class="${ classes.body } ${ originalClasses }">&lt;/div>
+          ${ resizerMarkup }
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>`;
+
+  // Create wrapped modal (with repeatable structure), and insert 
+  // the original modal content into it
+  const select = (container, classKey) => container.querySelector("." + classes[classKey]);
+  const wrapper = createElementFromHtml(markup.trim());
+  const elements = {
+    body: select(wrapper, 'body'),
+    resizer: select(wrapper, 'resizer'),
+    container: select(wrapper, 'container')
+  };
+
+  // Move the orginal content into the modal's body
+  elements.body.appendChild(modal);
+  // Add resizer if not a center positioned modal
+  if (hasResizer) {
+    new Resizer(elements.container, elements.resizer, {
+      fromLeft: position === "right"
+    });
+  }
+
+  // Prep Youtube Videos to be able to close
+  prepVideos(wrapper);
+
+  // Add modal to the end of docuemnt
+  wrappers.push(wrapper);
+  document.body.appendChild(wrapper);
+  // Add our own close handlers to avoide the native
+  const closeButtons = wrapper.querySelectorAll(data.closeSelector);
+  closeButtons.forEach(b => b.addEventListener('click', ({ target }) => {
+    const outsideContainer = !elements.container.contains(target) &amp;&amp; target !== elements.container;
+    // Last condition is the overlay/backdrop (click outside)
+    if (target.matches(`[${ closeAttr }]`) || outsideContainer) {
+      close(id);
+    }
+  }));
+}
+/**
+ * Intialize all modals on the page
+ * - can be used after AJAX adds content
+ */
+// export function init() {
+  // MicroModal.init(configMicroModal);
+// }
+/**
+ * Open a modal
+ * @param {String} id The id of the modal to open
+ */
+export function show(id, config) {
+  const merged = Object.assign({}, configMicroModal, config);
+  MicroModal.show(id, merged);
+}
+/**
+ * Close a modal
+ * @param {String} id The id of the modal to open
+ */
+export function close(id) {
+  MicroModal.close(id);
+}
+
+
+
+// function createContainer() {
+//   const container = document.createElement('div');
+//   container.classList.add('site-modals');
+//   document.body.appendChild(container);
+//   return container;
+// }
+
+// From GITHUB Issues (user remedy)
+// export function refresh() {
+//   // Use whatever selector you're using for MicroModal triggers.
+//   const modalTrigger = 'data-micromodal-trigger';
+
+//   // Get all triggers. 
+//   const modalTriggers = document.querySelectorAll( `[${modalTrigger}]` );
+
+//   modalTriggers.forEach( trigger => {
+//       // Get the attribute to save.
+//       const triggerElement = trigger.getAttribute( modalTrigger );
+      
+//       // Remove the attribute briefly to clear memory/existing modals.
+//       trigger.removeAttribute( modalTrigger );
+
+//       // Immediately add it back.
+//       trigger.setAttribute( modalTrigger, triggerElement );
+
+//       // Re-initialize.
+//       init();
+//   } );
+// }</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sun Dec 17 2023 22:59:29 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

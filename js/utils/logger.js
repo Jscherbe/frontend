@@ -1,3 +1,6 @@
+/**
+ * @module logger
+ */
 // Goal: minimzing console conditions for nessasary production log statements
 
 /**

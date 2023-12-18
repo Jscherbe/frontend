@@ -1,3 +1,6 @@
+/**
+ * @module events
+ */
 import { debounce } from "@ulu/utils/performance";
 
 /**

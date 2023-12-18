@@ -1,6 +1,7 @@
 /docs
 /docs-src
 /dist-src
+/docs-js
 notes.todo
 trash/
 jsdoc.json

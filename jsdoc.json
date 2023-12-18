@@ -5,7 +5,7 @@
   "source": {
     "include": "./js/",
     "includePattern": "\\.js$",
-    "excludePattern": "(node_modules/|docs)"
+    "excludePattern": "(node_modules/|docs|deprecated/)"
   },
   "plugins": ["plugins/markdown"],
   "opts": {

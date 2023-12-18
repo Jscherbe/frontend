@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>ui/flipcard.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-css-breakpoint.CssBreakpoints.html">CssBreakpoints</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#at">at</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#getBreakpoint">getBreakpoint</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#update">update</a></li></ul></li><li><a href="module-css-breakpoint-Breakpoint.html">Breakpoint</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#_setDirection">_setDirection</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#max">max</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#min">min</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#only">only</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#remove">remove</a></li></ul></li><li><a href="module-css-breakpoint-BreakpointDirection.html">BreakpointDirection</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#_call">_call</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#add">add</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#change">change</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#getHandlers">getHandlers</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#remove">remove</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-node-data-manager.NodeDataStore.html">NodeDataStore</a></li><li><a href="module-resizer.html">resizer</a></li></ul><h3>Modules</h3><ul><li><a href="module-css-breakpoint.html">css-breakpoint</a></li><li><a href="module-events.html">events</a><ul class='methods'><li data-type='method'><a href="module-events.html#.dispatch">dispatch</a></li><li data-type='method'><a href="module-events.html#.getName">getName</a></li></ul></li><li><a href="module-file-save.html">file-save</a></li><li><a href="module-flipcard.html">flipcard</a></li><li><a href="module-grid.html">grid</a><ul class='methods'><li data-type='method'><a href="module-grid.html#.init">init</a></li><li data-type='method'><a href="module-grid.html#.setPositionClasses">setPositionClasses</a></li><li data-type='method'><a href="module-grid.html#.setup">setup</a></li></ul></li><li><a href="module-logger.html">logger</a><ul class='methods'><li data-type='method'><a href="module-logger.html#.log">log</a></li><li data-type='method'><a href="module-logger.html#.logError">logError</a></li><li data-type='method'><a href="module-logger.html#.logWarning">logWarning</a></li><li data-type='method'><a href="module-logger.html#.set">set</a></li></ul></li><li><a href="module-modals.html">modals</a><ul class='methods'><li data-type='method'><a href="module-modals.html#.close">close</a></li><li data-type='method'><a href="module-modals.html#.setupModal">setupModal</a></li><li data-type='method'><a href="module-modals.html#.show">show</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-overflow-scroller.html">overflow-scroller</a></li><li><a href="module-overflow-scroller-pager.html">overflow-scroller-pager</a></li><li><a href="module-pause-youtube-video.html">pause-youtube-video</a><ul class='methods'><li data-type='method'><a href="module-pause-youtube-video.html#.pauseVideos">pauseVideos</a></li><li data-type='method'><a href="module-pause-youtube-video.html#.prepVideos">prepVideos</a></li></ul></li><li><a href="module-programmatic-modal.html">programmatic-modal</a><ul class='methods'><li data-type='method'><a href="module-programmatic-modal.html#~cacheTrigger">cacheTrigger</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newContainer">newContainer</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newModal">newModal</a></li><li data-type='method'><a href="module-programmatic-modal.html#~setModalId">setModalId</a></li></ul></li><li><a href="module-resizer.html">resizer</a></li><li><a href="module-scrollbar-width-property.html">scrollbar-width-property</a></li><li><a href="module-slider.html">slider</a></li><li><a href="module-tabs.html">tabs</a></li><li><a href="module-tooltip.html">tooltip</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">ui/flipcard.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module flipcard
+ */
+
+// =============================================================================
+// Flipcard
+// =============================================================================
+
+// Version:                    1.0.1
+
+// Changes                    1.0.1 | Added allow selection
+
+import { trimWhitespace } from "@ulu/utils/string.js";
+import { log, logError } from "../utils/logger.js";
+const debugMode = false; // Global dev debug
+
+export class Flipcard {
+  static instances = [];
+  static defaults = {
+    namespace: "Flipcard",
+    proxyClick: {
+      allowSelection: true, // Don't proxy click if the user has more than the minmimum selected
+      selectionMin:  10, // Minimum length that qualifies as a selection
+      exclude:  "a, input, textarea, button"  // Selectors to avoid closing a flipcard onProxyclick 
+    },
+  }
+  constructor(container, front, back, config, debug = false) {
+    if (!container, !front, !back) {
+      logError(this, 'Missing an element (container, front, back)');
+    }
+    this.options = Object.assign({}, Flipcard.defaults, config);
+    const { namespace } = this.options;
+    Flipcard.instances.push(this);
+
+    this.debug = debugMode || debug;
+    this.elements = { container, front, back };
+    this.isOpen = false;
+    this.uid = `${ namespace }-id-${ Flipcard.instances.length }`;
+    this.stateAttr = `data-${ namespace }-state`.toLowerCase();
+    this.setup();
+    this.setVisiblity(false);
+    log(this, this);
+  }
+  toggle() {
+    this.setVisiblity(!this.isOpen);
+  }
+  setup() {
+    const { uid } = this;
+    const { namespace, proxyClick } = this.options;
+    const { container, front, back } = this.elements;
+    const control = this.elements.control = document.createElement("button");
+
+    // Styling and markup
+    control.classList.add(this.getClass("control-button"));
+    control.setAttribute("type", "button");
+    control.innerHTML = this.createControlContent();
+    control.style.gridArea = namespace;
+    control.style.zIndex = "-1"; // Behind everything only used for focus
+    control.addEventListener('focusin', () => {
+      control.style.zIndex = "20"; // above the back
+    });
+    control.addEventListener('focusout', () => {
+      control.style.zIndex = "-1"
+    });
+    control.addEventListener("click", this.toggle.bind(this));
+    back.parentNode.insertBefore(control, back);
+  
+    container.classList.add(this.options.namespace);
+    container.setAttribute("style", trimWhitespace(this.containerCss()));
+    if (proxyClick) {
+      container.addEventListener("click", this.onProxyClick.bind(this));
+    }
+
+    front.style.gridArea = namespace;
+    back.style.gridArea = namespace;
+
+    // Accessibility
+    control.id = `${ uid }-control`;
+    control.setAttribute("aria-controls", back.id);
+    control.setAttribute("aria-expanded", "false");
+    back.id = `${ uid }-back`;
+    back.setAttribute('aria-labelledby', control.id)
+    back.setAttribute('aria-hidden', "true");
+  }
+  /**
+   * Click handler on everything on container
+   * - Determines if click was something that should be ignored (link, etc)
+   */
+  onProxyClick({ target }) {
+    const { exclude, allowSelection, selectionMin } = this.options.proxyClick; 
+    const selection = window.getSelection();
+    if (exclude &amp;&amp; !target.matches(exclude)) {
+      if (!allowSelection || selection.toString().length &lt; selectionMin) {
+        this.toggle();
+      }
+    }
+  }
+  getClass(child) {
+    const { namespace } = this.options;
+    return child ? `${ namespace }__${ child }` : namespace;
+  }
+  createControlContent() {
+    return `
+      &lt;span class="hidden-visually">Show More Information&lt;/span>
+    `;
+  }
+  setVisiblity(visible) {
+    const { back, container, control } = this.elements;
+    const state = visible ? "open" : "closed";
+    back.style.zIndex = visible ? "10" : "1";
+    back.style.visibility = visible ? "visible" : "hidden";
+    container.setAttribute(this.stateAttr, state);
+    back.setAttribute('aria-hidden', visible ? "false" : "true");
+    control.setAttribute('aria-expanded', visible ? "true" : "false");
+    this.isOpen = visible;
+  }
+  containerCss() {
+    return `
+      display: -ms-grid;
+      display: grid;
+      position: relative; 
+      -ms-grid-columns: 1fr; 
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+      grid-template-areas: "${ this.options.namespace }";
+      cursor: pointer;
+    `;
+  }
+  panelCss(zIndex = 1) {
+    return `
+      grid-area: ${ this.options.namespace };
+      z-index: ${ zIndex }
+    `;
+  }
+}
+export default Flipcard;
+
+/**
+ * Preliminary Notes:
+ *   Considerations for Accessiblity:
+ *   - https://webaim.org/standards/wcag/checklist
+ *   - https://www.w3.org/TR/WCAG21/#on-focus
+ *   - https://a11y-style-guide.com/style-guide/section-cards.html
+ *   - Reduced Motion
+ *   - Percievable (interactive)
+ *   - Final Descision
+ *     - Use a buttons
+ *     - Why?
+ *       - Can't use whole card surface as click 
+ *         * Selections
+ *         * Other interactions
+ *         * How to make that make sense to SR
+ *         * Keyboard focuses and then clicks
+ *         * Accidental flipping on zoom
+ *       - Can't use hover
+ *   
+ *   - BRAINSTORM START:
+ *     - Don't use hover or focus (motor control issues)
+ *       - Needs to use click
+ *     - Run through screenreader expierence
+ *       - Hits button (reads title, click to reveal)
+ *       - Focuses the content button (reads content, backside, click to unreveal)
+ *       - NO BUTTONS CAN"T HAVE CONTENT, BUTTONS NEED TO STATE THEIR INTENT
+ *     - Try Again, Run through screenreader expierence
+ *       - Screen reader encounters flipcard
+ *       - Headline is read
+ *       - Button is read (reveal description)
+ *       - Button is clicked
+ *       - Content is shown and focused
+ *       - Button to flip back
+ *     - For Keybaord users
+ *       - The accessible buttons can be used or a click handler can be attached to the 
+ *         flipcard and given
+ *     - Why not always show the content to screenreaders?
+ *       - How to hide controls from them? (controls can't be hidden)
+ *       - How to not have events interfere click
+ *       - Maybe use a single control and make it say "jumpto definition"
+ *         - Kind of lame
+ *       - What about going back to focus and then attaching a click handler?
+ *         - Visual users will see the content on keyboard or mouse or touch
+ *         - We can reduce the motion with query
+ *         - Note: WCAG AAA - 1.4.13 Content on Hover or Focus
+ *           - Need to bind escape
+ *         - Mouse users and touch will need to click
+ *         - How does it focus and work on a screenreader?
+ *       - Cannot use FOCUS!
+ *         - https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html
+ *         - What if the user was zoomed? They may never see the title/front
+ *     - I think it MUST use buttons or a button to flip
+ *       - Because users need to be able to scroll, interact and select text in a back
+ *     @example html
+ *        &lt;div class="flipcard">
+ *          &lt;h3 class="flipcard__front">
+ *            Term Name
+ *            &lt;button class="flipcard__toggle">
+ *              &lt;span class="hidden-visually">Show Definition&lt;/span>
+ *            &lt;/button>
+ *          &lt;/h3>
+ *          &lt;div class="flipcard__back">
+ *            Some definiton example lorem ipsum et depsi anu olor.
+ *            &lt;button class="flipcard__toggle">
+ *              &lt;span class="hidden-visually">Hide Definition&lt;/span>
+ *            &lt;/button>
+ *          &lt;/div>
+ *        &lt;/div>
+ */    </code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sun Dec 17 2023 22:59:29 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

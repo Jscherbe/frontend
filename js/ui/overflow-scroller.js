@@ -1,4 +1,7 @@
 /**
+ * @module overflow-scroller
+ */
+/**
  * @todo - Need to have scroll handler check scroll position
  * @todo - Determine if controls should be visible
  * @todo - Make the amount the scroll controls move forward or backward based on amount or function

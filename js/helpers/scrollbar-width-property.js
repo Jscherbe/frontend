@@ -1,3 +1,6 @@
+/**
+ * @module scrollbar-width-property
+ */
 
 /**
  * Sets a CSS custom property equal to the scrollbar width

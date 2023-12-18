@@ -1,3 +1,6 @@
+/**
+ * @module modals
+ */
 // Version:         1.0.4
 // Changes:
 //                  1.0.4 | The modal library has a bug with multiple modals and using a custom close handler

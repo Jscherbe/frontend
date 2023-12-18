@@ -1,3 +1,7 @@
+/**
+ * @module pause-youtube-video
+ */
+
 // Version:         1.0.4
 // Description:     Pauses youtube using js api (iframe post message)
 

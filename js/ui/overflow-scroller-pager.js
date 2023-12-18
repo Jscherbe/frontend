@@ -1,4 +1,7 @@
 /**
+ * @module overflow-scroller-pager
+ */
+/**
  * Function to be used in overflow scrollers "amount" option. This function will
  * determine how many items can fit in the viewport, taking into account scroll padding left, 
  * and will set the scroll amount to paginate between items. Items size can be anything 

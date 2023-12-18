@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>helpers/css-breakpoint.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-css-breakpoint.CssBreakpoints.html">CssBreakpoints</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#at">at</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#getBreakpoint">getBreakpoint</a></li><li data-type='method'><a href="module-css-breakpoint.CssBreakpoints.html#update">update</a></li></ul></li><li><a href="module-css-breakpoint-Breakpoint.html">Breakpoint</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#_setDirection">_setDirection</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#max">max</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#min">min</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#only">only</a></li><li data-type='method'><a href="module-css-breakpoint-Breakpoint.html#remove">remove</a></li></ul></li><li><a href="module-css-breakpoint-BreakpointDirection.html">BreakpointDirection</a><ul class='methods'><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#_call">_call</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#add">add</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#change">change</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#getHandlers">getHandlers</a></li><li data-type='method'><a href="module-css-breakpoint-BreakpointDirection.html#remove">remove</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-node-data-manager.NodeDataStore.html">NodeDataStore</a></li><li><a href="module-resizer.html">resizer</a></li></ul><h3>Modules</h3><ul><li><a href="module-css-breakpoint.html">css-breakpoint</a></li><li><a href="module-events.html">events</a><ul class='methods'><li data-type='method'><a href="module-events.html#.dispatch">dispatch</a></li><li data-type='method'><a href="module-events.html#.getName">getName</a></li></ul></li><li><a href="module-file-save.html">file-save</a></li><li><a href="module-flipcard.html">flipcard</a></li><li><a href="module-grid.html">grid</a><ul class='methods'><li data-type='method'><a href="module-grid.html#.init">init</a></li><li data-type='method'><a href="module-grid.html#.setPositionClasses">setPositionClasses</a></li><li data-type='method'><a href="module-grid.html#.setup">setup</a></li></ul></li><li><a href="module-logger.html">logger</a><ul class='methods'><li data-type='method'><a href="module-logger.html#.log">log</a></li><li data-type='method'><a href="module-logger.html#.logError">logError</a></li><li data-type='method'><a href="module-logger.html#.logWarning">logWarning</a></li><li data-type='method'><a href="module-logger.html#.set">set</a></li></ul></li><li><a href="module-modals.html">modals</a><ul class='methods'><li data-type='method'><a href="module-modals.html#.close">close</a></li><li data-type='method'><a href="module-modals.html#.setupModal">setupModal</a></li><li data-type='method'><a href="module-modals.html#.show">show</a></li></ul></li><li><a href="module-node-data-manager.html">node-data-manager</a><ul class='methods'><li data-type='method'><a href="module-node-data-manager.html#destroy">destroy</a></li><li data-type='method'><a href="module-node-data-manager.html#find">find</a></li><li data-type='method'><a href="module-node-data-manager.html#get">get</a></li><li data-type='method'><a href="module-node-data-manager.html#set">set</a></li></ul></li><li><a href="module-overflow-scroller.html">overflow-scroller</a></li><li><a href="module-overflow-scroller-pager.html">overflow-scroller-pager</a></li><li><a href="module-pause-youtube-video.html">pause-youtube-video</a><ul class='methods'><li data-type='method'><a href="module-pause-youtube-video.html#.pauseVideos">pauseVideos</a></li><li data-type='method'><a href="module-pause-youtube-video.html#.prepVideos">prepVideos</a></li></ul></li><li><a href="module-programmatic-modal.html">programmatic-modal</a><ul class='methods'><li data-type='method'><a href="module-programmatic-modal.html#~cacheTrigger">cacheTrigger</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newContainer">newContainer</a></li><li data-type='method'><a href="module-programmatic-modal.html#~newModal">newModal</a></li><li data-type='method'><a href="module-programmatic-modal.html#~setModalId">setModalId</a></li></ul></li><li><a href="module-resizer.html">resizer</a></li><li><a href="module-scrollbar-width-property.html">scrollbar-width-property</a></li><li><a href="module-slider.html">slider</a></li><li><a href="module-tabs.html">tabs</a></li><li><a href="module-tooltip.html">tooltip</a></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">helpers/css-breakpoint.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module css-breakpoint
+ */
+
+// Description:     Pass breakpoints from CSS to stylesheet, use this to attach 
+//                  behaviors on breakpoints
+
+import { debounce } from "@ulu/utils/performance";
+import { removeArrayElement } from "@ulu/utils/array";
+import { getName } from "../events/index.js";
+import { log, logError } from "../utils/logger.js";
+
+/**
+ * Resize Handler to update breakpoints for all instances (Called after resize finished)
+ */
+window.addEventListener(getName("pageResized"), () => {
+  CssBreakpoints.instances.forEach(i => i.update());
+});
+
+/**
+ * Class that provides method for retrieving and acting on breakpoints passed
+ * from CSS (using element psuedo content prop)
+ */
+export class CssBreakpoints {
+  static instances = [];
+  static defaults = {
+    element: document.body,
+    psuedoSelector: ':before',
+    debug: false
+  }
+  /**
+   * @param {Object} config Configruation object
+   * @param {Array} config.order Required, Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest
+   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet  (default is body)
+   * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
+   */
+  constructor(config) {
+    if (!config.order) {
+      logError(this, 'Missing order (required)!');
+    }
+    Object.assign(this, CssBreakpoints.defaults, config);
+    this.active = null;
+    this.previous = null;
+    this.activeIndex = null;
+    this.resizeDirection = null;
+    this.previousIndex = null;
+    this.breakpoints = {};
+    this.order.forEach(n => this.breakpoints[n] = new Breakpoint(n, this));
+    log(this, this);
+    this.update(); // Run for the first time, then whenever browser resizes
+    CssBreakpoints.instances.push(this);
+  }
+  /**
+   * Get breakpoint from element (design note: user could override prototype)
+   */
+  getBreakpoint() {
+    return window.getComputedStyle(this.element, this.psuedoSelector).content.replace(/^"|"$/g, '');
+  }
+  /**
+   * Updates the active breakpoint by checking the element and executes handlers on change
+   */
+  update() {
+    const name = this.getBreakpoint();
+    // console.log('name:\n', name);
+    if (name === this.active) return;
+    // this.log(`current breakpoint: ${ name }`);
+    // Update active and cache last
+    this.previous = this.active;
+    this.previousIndex = this.activeIndex;
+
+    const index = this.order.indexOf(name);
+    this.active = name;
+    this.activeIndex = index;
+    const activeBreakpoint = this.at(this.active);
+    // Get arrays of breakpoints based on the order array
+    const mapBreakpoints = n => this.at(n);
+    // From breakpoint to end (highest)
+    const max = this.order.slice(index).map(mapBreakpoints);
+    const notMax = this.order.slice(0, index).map(mapBreakpoints);
+    // From start up to this breakpoint
+    const min = this.order.slice(0, index + 1).map(mapBreakpoints);
+    const notMin = this.order.slice(index + 1).map(mapBreakpoints);
+    const notOnly = this.order.slice().map(mapBreakpoints);
+    notOnly.splice(index, 1);
+    
+    log(this, 'max:', max.map(b => b.name).join());
+    log(this, 'min:', min.map(b => b.name).join());
+    
+    max.forEach(b => b._setDirection('max', true));
+    min.forEach(b => b._setDirection('min', true));
+    activeBreakpoint._setDirection('only', true);
+
+    notMax.forEach(b => b._setDirection('max', false));
+    notMin.forEach(b => b._setDirection('min', false));
+    notOnly.forEach(b => b._setDirection('only', false));
+
+    // Set direction (extra info if needed)
+    if (this.previousIndex !== null) {
+      this.resizeDirection = this.previousIndex &lt; index ? "up" : "down";
+    }
+  }
+  /**
+   * Get a breakpoint by key
+   * @param {String} name The name of the breakpoint to get
+   */
+  at(name) {
+    const bp = this.breakpoints[name];
+    if (!name) {
+      logError(this, 'Unable to find breakpoint for:', bp);
+    }
+    return bp;
+  }
+}
+/**
+ * Used to handle a breakpoints direction's handler and state
+ */
+class BreakpointDirection {
+  constructor(direction, breakpoint) {
+    this.direction = direction; // String name (logging)
+    this.active = false;
+    this.on = [];
+    this.off = []; // Triggered when direction has been set to active and then set to inactive (not on initial inactive)
+    this.breakpoint = breakpoint; // Reference to parent
+  }
+  /**
+   * Change the state of the direction
+   */
+  change(to) {
+    if (this.active !== to) {
+      if (to) this._call(true);
+      else if (this.active) this._call(false); // Going from active to inactive
+      this.active = to;
+    }
+  }
+  /**
+   * Calls all functions in handlers or
+   */
+  _call(forActive) {
+    const handlers = forActive ? this.on : this.off;
+    handlers.forEach(handler => handler());
+    log(this.breakpoint._manager, `Handlers called (${ forActive ? 'on' : 'off' }): ${ this.direction }`);
+  }
+  /**
+   * Returns handlers in normalized object format on/off
+   */
+  getHandlers(handler) {
+    return typeof handler !== "object" ? { on: handler } : handler;
+  }
+  /**
+   * Adds a handler for the direction, optionally use object to add off state handler
+   * @param {Function|Object} handler Function to be executed when direction is active, read object description for on/off
+   * @param {Function|Object} handler.on Function to be executed when direction is active
+   * @param {Function|Object} handler.off Function to be executed when direction was active and is now changed to inactive
+   */
+  add(handler) {
+    const handlers = this.getHandlers(handler);
+    if (handlers.on) {
+      this.on.push(handlers.on);
+    }
+    if (handlers.off) {
+      this.off.push(handlers.off);
+    }
+    // Already active when handler was added, fire now
+    if (this.active &amp;&amp; handlers.on) {
+      handlers.on();
+      log(this.breakpoint._manager, `Handler called immediately: ${ this.direction }`, handlers.on);
+    }
+  }
+  /**
+   * Removes a handler
+   */
+  remove(handler) {
+    const handlers = this.getHandlers(handler);
+    if (handlers.on) {
+      removeArrayElement(this.on, handlers.on);
+    }
+    if (handlers.off) {
+      removeArrayElement(this.off, handlers.off);
+    }
+  }
+}
+/**
+ * Single breakpoint management
+ */
+class Breakpoint {
+  constructor(name, manager) {
+    this.directions = {
+      max: new BreakpointDirection('max', this),
+      min: new BreakpointDirection('min', this),
+      only: new BreakpointDirection('only', this)
+    };
+    this._manager = manager; // Ref to parent class
+    this.name = name;
+  }
+  /**
+   * Private method used inrternally for managing direction activation
+   * - Each direction manages it's own state and handlers
+   * @param {String} direction The directional key
+   * @param {Boolean} active State of that direction to set
+   */
+  _setDirection(direction, active) {
+    this.directions[direction].change(active);
+  }
+  /**
+   * Attach handler to be executed from the breakpoint and to all breakpoints below.
+   * - If the browser resizes from a breakpoint below this breakpoint, 
+   *   and above the breakpoint name specified, this handler will fire
+   * @param {Function} handler Handler to be executed
+   */    
+  max(handler) {
+    this.directions.max.add(handler);
+  }
+  /**
+   * Attach handler to be executed from the breakpoint and to all breakpoints below.
+   * - If the browser resizes from a breakpoint above this breakpoint, 
+   *   and below the breakpoint name specified, this handler will fire
+   * @param {Function} handler Handler to be executed
+   */  
+  min(handler) {
+    this.directions.min.add(handler);
+  }
+  /**
+   * Attach a handler to fire when the breakpoint is within the key
+   * @param {Function} handler Handler to be executed
+   */    
+  only(handler) {
+    this.directions.only.add(handler);
+  }
+  /**
+   * Remove handler
+   * @param {Function} handler Handler to be removed, extended on/off object style can be used
+   * @param {String} direction Remove handler only from specified direction, else search all directions
+   */      
+  remove(handler, direction) {
+    const directions = direction ? [ direction ] : ['max', 'min', 'only'];
+    directions.forEach(d => d.remove(handler));
+  }
+  
+  log(...msg) {
+    msg.unshift(`Breakpoint (${ this.name }):`);
+    this._manager.log.apply(this._manager, msg);
+  }
+}
+
+export default CssBreakpoints;</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sun Dec 17 2023 22:59:29 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
