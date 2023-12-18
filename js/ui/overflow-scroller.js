@@ -7,8 +7,8 @@
  * @todo - Document that user could use something like [https://github.com/LachlanArthur/scroll-snap-api/tree/master/src] to have it go between items
  * 
  */
+import { hasRequiredProps } from '@ulu/utils/object.js';
 import { logError } from "../utils/logger.js";
-import { hasRequiredProps } from '../utils/object.js';
 const requiredElements = [
   "track", 
   "controls"

@@ -8,8 +8,6 @@
 // - Will not include things that aren't used in every site (those would need to 
 //   imported manually
 
-import "./polyfills/element-closest.js";
-
 export { CssBreakpoints } from "./helpers/css-breakpoint.js";
 export * as events from "./events/index.js";
 export * as grid from "./ui/grid.js";

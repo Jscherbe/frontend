@@ -4,6 +4,10 @@
   "description": "Sass theming library",
   "browser": "js/index.js",
   "main": "index.js",
+  "exports" :{
+    "." : "./index.js",
+    "./js/*.js" : "./js/*.js"
+  },
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs-src",
@@ -33,6 +37,8 @@
   "devDependencies": {
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.6",
+    "docdash": "^2.0.2",
+    "jsdoc": "^4.0.2",
     "sass": "^1.51.0",
     "vitepress": "^1.0.0-rc.27"
   }

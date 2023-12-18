@@ -132,16 +132,33 @@ $config: (
   }
 }
 
-/// Repeatable pattern in core
+/// Reusable merge method 
+/// @param {Map} $original Source map 
+/// @param {Map} $changes Changes to merge into source map
+/// @param {String} $mode How to merge changes (merge [defualt], deep, or overwrite)
+/// @return {Map} New map with changes
 
-@function map-merge-or-overwrite($original, $changes, $deep: false, $overwrite: false) {
-  @if $deep {
+@function map-merge($original, $changes, $mode: null) {
+  @if ($mode == "deep") {
     @return map.deep-merge($original, $changes);
-  } @else if $overwrite {
+  } @else if ($mode == "overwrite") {
     @return $changes;
   } @else {
     @return map.merge($original, $changes);
   }
+}
+
+/// Repeatable pattern in core
+/// @deprecated Left in for compatability, will be removed, use map-merge with mode
+
+@function map-merge-or-overwrite($original, $changes, $deep: false, $overwrite: false) {
+  $mode: null;
+  @if $deep {
+    $mode: "deep";
+  } @else if $overwrite {
+    $mode: "overwrite";
+  }
+  @return map-merge($original, $changes, $mode);
 }
 
 /// Utility for providing fallbacks, the first truthy value (non false or null) will be returned

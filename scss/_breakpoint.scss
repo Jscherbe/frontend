@@ -59,11 +59,10 @@ $sizes: (
 ///     "jumbo" : 100em
 ///   ));
 /// @param {Map} $changes A map to merge into the breakpoints map
-/// @param {Map} $deep [false] Deep map merge (doesn't apply here)
-/// @param {Map} $overwrite [false] Overwrite the sizes, instead of merging changes
+/// @param {Map} $merge-mode [null] Merge stradegy see, utils.map-merge options
 
-@mixin set-sizes($changes, $deep: false, $overwrite: false) {
-  $sizes: utils.map-merge-or-overwrite($sizes, $changes, $deep, $overwrite) !global;
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
 /// Get all breakpoint sizes (ie. $sizes) 

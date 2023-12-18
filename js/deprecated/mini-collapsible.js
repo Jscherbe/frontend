@@ -75,7 +75,7 @@
 //                    - Add arrow key cycler from framework collapsible module
 
 import maintain from 'ally.js/maintain/_maintain';
-import { hasRequiredProps } from "../utils/object.js";
+import { hasRequiredProps } from "@ulu/utils/object.js";
 
 const requiredProps = ['selectorContainer', 'selectorToggle', 'selectorContent'];
 const hasRequired = hasRequiredProps(requiredProps);

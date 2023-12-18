@@ -6,8 +6,8 @@
 
 // Changes                    1.0.1 | Added allow selection
 
+import { trimWhitespace } from "@ulu/utils/string.js";
 import { log, logError } from "../utils/logger.js";
-import { trimWhitespace } from "../utils/string.js";
 const debugMode = false; // Global dev debug
 
 export class Flipcard {

@@ -60,11 +60,12 @@ $config: (
     #{ $prefix }-#{ $side } {
       #{ $full-prop }: units.get(1);
     }
-    @if ($isMargin) {
-      #{ $prefix }-#{ $side }-auto {
-        #{ $full-prop }: auto;
-      }
-    }
+    // Duplicates utilities, unnessasary
+    // @if ($isMargin) {
+    //   #{ $prefix }-#{ $side }-auto {
+    //     #{ $full-prop }: auto;
+    //   }
+    // }
     @each $name, $value in units.$config {
       #{ $prefix }-#{ $side }-#{ $name } {
         #{ $full-prop }: units.get($name);

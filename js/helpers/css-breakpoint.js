@@ -7,9 +7,9 @@
 // Description:     Pass breakpoints from CSS to stylesheet, use this to attach 
 //                  behaviors on breakpoints
 
-import { debounce } from "../utils/performance";
+import { debounce } from "@ulu/utils/performance";
+import { removeArrayElement } from "@ulu/utils/array";
 import { getName } from "../events/index.js";
-import { removeArrayElement } from "../utils/array";
 import { log, logError } from "../utils/logger.js";
 
 /**

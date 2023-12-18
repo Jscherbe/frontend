@@ -115,8 +115,8 @@ $color-classes: (
 ///     )
 ///   ), false, true);
 
-@mixin set-contexts($changes, $deep: false, $overwrite: false) {
-  $contexts: utils.map-merge-or-overwrite($contexts, $changes, $deep, $overwrite) !global;
+@mixin set-contexts($changes, $merge-mode: null) {
+  $contexts: utils.map-merge($contexts, $changes, $merge-mode) !global;
 }
 
 /// Get a context by name

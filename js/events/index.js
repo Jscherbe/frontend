@@ -1,4 +1,4 @@
-import { debounce } from "../utils/performance";
+import { debounce } from "@ulu/utils/performance";
 
 /**
  * Event object - called on dispatch

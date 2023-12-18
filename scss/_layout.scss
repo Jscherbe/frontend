@@ -51,8 +51,8 @@ $containers: (
   )
 ) !default;
 
-@mixin set-containers($changes, $deep: false, $overwrite: false) {
-  $containers: utils.map-merge-or-overwrite($containers, $changes, $deep, $overwrite) !global;
+@mixin set-containers($changes, $merge-mode: null) {
+  $containers: utils.map-merge($containers, $changes, $merge-mode) !global;
 }
 
 @function get-container($name, $breakpoint: false) {
@@ -189,7 +189,6 @@ $containers: (
   &:after { 
     clear: both; 
   }
-  *zoom: 1;
 }
 
 /// Removes scrollbar with CSS

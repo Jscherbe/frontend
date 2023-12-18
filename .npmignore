@@ -3,6 +3,7 @@
 /dist-src
 notes.todo
 trash/
+jsdoc.json
 
 # From vuepress scaffolding
 # pids

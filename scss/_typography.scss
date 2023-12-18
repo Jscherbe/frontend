@@ -176,8 +176,8 @@ $sizes: (
 ///     "small" : 0.8rem
 ///   ));
 
-@mixin set-sizes($changes, $deep: false, $overwrite: false) {
-  $sizes: utils.map-merge-or-overwrite($sizes, $changes, $deep, $overwrite) !global;
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
 /// Get a size's map
