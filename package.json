@@ -4,9 +4,9 @@
   "description": "Theming library",
   "browser": "js/index.js",
   "main": "index.js",
-  "exports" :{
-    "." : "./index.js",
-    "./js/*.js" : "./js/*.js"
+  "exports": {
+    ".": "./index.js",
+    "./js/*.js": "./js/*.js"
   },
   "type": "module",
   "scripts": {
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.6",
-    "docdash": "^2.0.2",
+    "clean-jsdoc-theme": "^4.2.17",
     "jsdoc": "^4.0.2",
     "sass": "^1.51.0",
     "vitepress": "^1.0.0-rc.27"
