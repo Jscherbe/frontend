@@ -8,7 +8,7 @@ export default defineConfig({
   title: "ULU",
   description: "Modules sass theming library",
   base: "https://jscherbe.github.io/frontend/scss/",
-  outDir: "../docs",
+  outDir: "../docs/scss",
   themeConfig: {
     ...toDefaultTheme(pages),
   }
