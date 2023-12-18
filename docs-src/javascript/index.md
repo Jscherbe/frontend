@@ -5,4 +5,4 @@ order: 40
 
 # Javascript
 
-Todo
+Please see [JS Documentation](https://jscherbe.github.io/frontend/js/)
