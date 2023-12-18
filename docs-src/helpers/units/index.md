@@ -145,7 +145,7 @@ Creates the unit classes with all variations (from unit presets)
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 44-45
-- **Lines (code):** 46-74
+- **Lines (code):** 46-75
 
 </SassdocDetails>
     

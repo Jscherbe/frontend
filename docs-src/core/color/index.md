@@ -241,7 +241,7 @@ Overwriting contexts
 
 #### Require
 
-- map-merge-or-overwrite()
+- map-merge()
 - [$contexts](/core/color/#variable-contexts)
   
 

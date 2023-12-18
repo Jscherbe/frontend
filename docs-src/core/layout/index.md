@@ -167,7 +167,7 @@ Prints clearfix styles
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 179-179
-- **Lines (code):** 181-193
+- **Lines (code):** 181-192
 
 </SassdocDetails>
     
@@ -188,8 +188,8 @@ Removes scrollbar with CSS
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 195-195
-- **Lines (code):** 196-202
+- **Lines (comments):** 194-194
+- **Lines (code):** 195-201
 
 </SassdocDetails>
     

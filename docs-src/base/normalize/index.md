@@ -20,7 +20,7 @@ outline: deep
 
   
 
-Prints the normalize stylesheet. We are using modern-normalize 1.1.0
+Prints the normalize stylesheet. Originally based on modern-normalize 1.1.0
     
     
 

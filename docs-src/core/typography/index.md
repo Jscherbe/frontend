@@ -240,7 +240,7 @@ Setting the error and type color
 
 #### Require
 
-- map-merge-or-overwrite()
+- map-merge()
 - [$sizes](/core/breakpoint/#variable-sizes)
   
 

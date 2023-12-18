@@ -144,8 +144,8 @@ Update the breakpoint sizes map
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 55-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 55-62
+- **Lines (code):** 64-66
 
 </SassdocDetails>
     
@@ -174,14 +174,13 @@ Changing the medium breakpoint and adding jumbo
 |Name|Type|Description|Default|
 |:--|:--|:--|:--|
 |$changes|`Map`|A map to merge into the breakpoints map||
-|$deep|`Map`|Deep map merge (doesn't apply here)|false|
-|$overwrite|`Map`|Overwrite the sizes, instead of merging changes|false|
+|$merge-mode|`Map`|Merge stradegy see, utils.map-merge options|null|
 
     
 
 #### Require
 
-- map-merge-or-overwrite()
+- map-merge()
 - [$sizes](/core/breakpoint/#variable-sizes)
   
 
@@ -200,8 +199,8 @@ Create a media query that matches the min-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 91-100
-- **Lines (code):** 102-108
+- **Lines (comments):** 90-99
+- **Lines (code):** 101-107
 
 </SassdocDetails>
     
@@ -266,8 +265,8 @@ Create a media query that matches the max-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 110-119
-- **Lines (code):** 121-127
+- **Lines (comments):** 109-118
+- **Lines (code):** 120-126
 
 </SassdocDetails>
     
@@ -333,8 +332,8 @@ Create a media query that matches between two breakpoint sizes
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 129-139
-- **Lines (code):** 141-148
+- **Lines (comments):** 128-138
+- **Lines (code):** 140-147
 
 </SassdocDetails>
     
@@ -402,8 +401,8 @@ Create a media query from a specific size in either direction
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 150-160
-- **Lines (code):** 162-174
+- **Lines (comments):** 149-159
+- **Lines (code):** 161-173
 
 </SassdocDetails>
     
@@ -465,8 +464,8 @@ Attaches breakpoints to an element psuedo content for access via script
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 176-178
-- **Lines (code):** 180-190
+- **Lines (comments):** 175-177
+- **Lines (code):** 179-189
 
 </SassdocDetails>
     
@@ -559,8 +558,8 @@ Get all breakpoint sizes (ie. $sizes)
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 69-69
-- **Lines (code):** 70-72
+- **Lines (comments):** 68-68
+- **Lines (code):** 69-71
 
 </SassdocDetails>
     
@@ -586,8 +585,8 @@ Geta a specific size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 74-76
-- **Lines (code):** 77-80
+- **Lines (comments):** 73-75
+- **Lines (code):** 76-79
 
 </SassdocDetails>
     
@@ -632,8 +631,8 @@ Check if a specific size exist
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 82-84
-- **Lines (code):** 86-89
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-88
 
 </SassdocDetails>
     
