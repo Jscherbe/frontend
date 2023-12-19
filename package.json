@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Theming library",
   "browser": "js/index.js",
   "main": "index.js",
