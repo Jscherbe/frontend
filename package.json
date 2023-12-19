@@ -1,12 +1,15 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Theming library",
   "browser": "js/index.js",
   "main": "index.js",
   "exports": {
+    "./scss/*.scss" : "./scss/*.scss",
+    "./scss/*" : "./scss/*",
     ".": "./index.js",
-    "./js/*.js": "./js/*.js"
+    "./js/*.js": "./js/*.js",
+    "./js/*": "./js/*"
   },
   "type": "module",
   "scripts": {
