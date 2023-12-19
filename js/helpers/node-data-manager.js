@@ -1,5 +1,5 @@
 /**
- * @module node-data-manager
+ * @module @ulu/frontend/helpers/node-data-manager
  */
 
 /**

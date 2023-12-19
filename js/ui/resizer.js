@@ -1,5 +1,5 @@
 /**
- * @module resizer
+ * @module @ulu/frontend/ui/resizer
  */
 // =============================================================================
 // Element Resizer

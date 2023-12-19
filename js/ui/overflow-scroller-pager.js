@@ -1,5 +1,5 @@
 /**
- * @module overflow-scroller-pager
+ * @module @ulu/frontend/ui/overflow-scroller-pager
  */
 /**
  * Function to be used in overflow scrollers "amount" option. This function will

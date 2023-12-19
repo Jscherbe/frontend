@@ -1,5 +1,5 @@
 /**
- * @module modals
+ * @module @ulu/frontend/ui/modals
  */
 // Version:         1.0.4
 // Changes:

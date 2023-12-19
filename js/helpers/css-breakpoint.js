@@ -1,23 +1,21 @@
 /**
- * @module css-breakpoint
+ * @module @ulu/frontend/helpers/css-breakpoint
  */
 
-// Description:     Pass breakpoints from CSS to stylesheet, use this to attach 
-//                  behaviors on breakpoints
-
+// Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints
 import { debounce } from "@ulu/utils/performance";
 import { removeArrayElement } from "@ulu/utils/array";
 import { getName } from "../events/index.js";
 import { log, logError } from "../utils/logger.js";
 
-/**
- * Resize Handler to update breakpoints for all instances (Called after resize finished)
- */
+
+// Resize Handler to update breakpoints for all instances (Called after resize finished)
 window.addEventListener(getName("pageResized"), () => {
   CssBreakpoints.instances.forEach(i => i.update());
 });
 
 /**
+ * @class
  * Class that provides method for retrieving and acting on breakpoints passed
  * from CSS (using element psuedo content prop)
  */
@@ -112,6 +110,7 @@ export class CssBreakpoints {
   }
 }
 /**
+ * @class
  * Used to handle a breakpoints direction's handler and state
  */
 class BreakpointDirection {
@@ -180,6 +179,7 @@ class BreakpointDirection {
   }
 }
 /**
+ * @class
  * Single breakpoint management
  */
 class Breakpoint {

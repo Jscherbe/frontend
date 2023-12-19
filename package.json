@@ -15,7 +15,10 @@
     "docs:preview": "vitepress preview docs-src",
     "docs:update:scss": "node ./docs-src/.vitepress/sassdoc.js",
     "docs:update:scss:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js",
-    "docs:build:js": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs:build:js:TRASH": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "docs:build:js:2": "node ./docs-src/.vitepress/jsdoc.js",
+    "docs:build:js": "jsdoc2md js/**/*.js > docs-test/test.md --no-cache -c jsdoc.json",
+    "docs:build:js:help": "jsdoc2md"
   },
   "repository": {
     "type": "git",

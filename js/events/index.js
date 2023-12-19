@@ -1,5 +1,5 @@
 /**
- * @module events
+ * @module @ulu/frontend/events
  */
 import { debounce } from "@ulu/utils/performance";
 

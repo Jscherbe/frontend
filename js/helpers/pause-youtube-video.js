@@ -1,5 +1,5 @@
 /**
- * @module pause-youtube-video
+ * @module @ulu/frontend/helpers/pause-youtube-video
  */
 
 // Version:         1.0.4

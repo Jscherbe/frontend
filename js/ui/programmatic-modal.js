@@ -1,5 +1,5 @@
 /**
- * @module programmatic-modal
+ * @module @ulu/frontend/ui/programmatic-modal
  */
 // =============================================================================
 // Grabs Breakpoint from CSS

@@ -8,26 +8,31 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const dest = path.resolve(__dirname, "../javascript");
+// const dest = path.resolve(__dirname, "../javascript");
 
+// console.log(path.resolve(__dirname, "../../js/*.js"));
 /* get template data */
 const templateData = jsdoc2md.getTemplateDataSync({ 
-  files: "../../js/**/*.js",
-  configure: "../../jsdoc.json"
+  files: "js/**/*.js",
+  configure: "jsdoc.json"
 });
+
 
 /* reduce templateData to an array of class names */
 const moduleNames = templateData.reduce((moduleNames, identifier) => {
+  console.log(identifier.name);
   if (identifier.kind === 'module') {
     moduleNames.push(identifier.name);
   }
   return moduleNames;
 }, []);
 
+console.log('moduleNames:\n', moduleNames);
+
 /* create a documentation file for each class */
-for (const moduleName of moduleNames) {
-  const template = `{{#module name="${ moduleName }"}}{{>docs}}{{/module}}`
-  console.log(`rendering ${ moduleName}, template: ${ template }`)
-  const output = jsdoc2md.renderSync({ data: templateData, template: template })
-  fs.writeFileSync(path.resolve(dest, `${ moduleName }.md`), output)
-}
+// for (const moduleName of moduleNames) {
+//   const template = `{{#module name="${ moduleName }"}}{{>docs}}{{/module}}`
+//   console.log(`rendering ${ moduleName}, template: ${ template }`)
+//   const output = jsdoc2md.renderSync({ data: templateData, template: template })
+//   fs.writeFileSync(path.resolve(dest, `${ moduleName }.md`), output)
+// }

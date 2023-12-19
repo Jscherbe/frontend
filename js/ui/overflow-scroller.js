@@ -1,5 +1,5 @@
 /**
- * @module overflow-scroller
+ * @module @ulu/frontend/ui/overflow-scroller
  */
 /**
  * @todo - Need to have scroll handler check scroll position

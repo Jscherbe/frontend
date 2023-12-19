@@ -1,5 +1,5 @@
 /**
- * @module grid
+ * @module @ulu/frontend/ui/grid
  */
 
 import { getName } from "../events/index.js";
