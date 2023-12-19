@@ -1,5 +1,5 @@
 /**
- * @module @ulu/frontend/helpers/scrollbar-width-property
+ * @module helpers/scrollbar-width-property
  */
 
 /**

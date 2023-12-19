@@ -1,5 +1,5 @@
 /**
- * @module @ulu/frontend/utils/logger
+ * @module utils/logger
  */
 // Goal: minimzing console conditions for nessasary production log statements
 

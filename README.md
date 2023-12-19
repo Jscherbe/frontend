@@ -2,9 +2,7 @@
 
 Front end development library (SCSS, JS, Vue)
 
-[SCSS Documentation](https://jscherbe.github.io/frontend/scss/)
-
-[JS Documentation](https://jscherbe.github.io/frontend/js/)
+[Documentation](https://jscherbe.github.io/frontend/)
 
 ## SCSS Library
 

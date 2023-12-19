@@ -1,5 +1,5 @@
 /**
- * @module @ulu/frontend/helpers/css-breakpoint
+ * @module helpers/css-breakpoint
  */
 
 // Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints

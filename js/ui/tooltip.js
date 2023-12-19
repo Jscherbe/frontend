@@ -1,5 +1,5 @@
 /**
- * @module @ulu/frontend/ui/tooltip
+ * @module ui/tooltip
  */
 // =============================================================================
 // Tooltip

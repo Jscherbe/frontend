@@ -1,5 +1,5 @@
 /**
- * @module @ulu/frontend/helpers/file-save
+ * @module helpers/file-save
  */
 
 // Description:     Simple script that is useful for testing. It will:
