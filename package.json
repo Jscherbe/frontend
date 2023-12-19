@@ -5,11 +5,12 @@
   "browser": "js/index.js",
   "main": "index.js",
   "exports": {
-    "./scss/*.scss" : "./scss/*.scss",
-    "./scss/*" : "./scss/*",
     ".": "./index.js",
     "./js/*.js": "./js/*.js",
-    "./js/*": "./js/*"
+    "./js/*": "./js/*",
+    "./scss/*.scss" : "./scss/*.scss",
+    "./scss/*" : "./scss/*",
+    "./scss" : "./scss/index.scss"
   },
   "type": "module",
   "scripts": {
