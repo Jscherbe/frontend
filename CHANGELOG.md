@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.0.10
+
+### JS
+
+- Update css-breakpoints helper to get breakpoint value with custom property, and make the psuedo element a legacy option that can be enabled
+
 ## Version 0.0.6
 
 ### SCSS

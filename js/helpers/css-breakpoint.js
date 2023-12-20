@@ -3,7 +3,6 @@
  */
 
 // Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints
-import { debounce } from "@ulu/utils/performance";
 import { removeArrayElement } from "@ulu/utils/array";
 import { getName } from "../events/index.js";
 import { log, logError } from "../utils/logger.js";
@@ -22,14 +21,18 @@ window.addEventListener(getName("pageResized"), () => {
 export class CssBreakpoints {
   static instances = [];
   static defaults = {
-    element: document.body,
+    element: document.documentElement,
+    valueFromPsuedo: false,
+    customProperty: "--breakpoint",
     psuedoSelector: ':before',
     debug: false
   }
   /**
    * @param {Object} config Configruation object
    * @param {Array} config.order Required, Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest
-   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet  (default is body)
+   * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
+   * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
+   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
    * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
    */
   constructor(config) {
@@ -49,10 +52,26 @@ export class CssBreakpoints {
     CssBreakpoints.instances.push(this);
   }
   /**
+   * Get breakpoint from a psuedo element
+   */
+  getBreakpointInPsuedo() {
+    return window.getComputedStyle(this.element, this.psuedoSelector).content.replace(/^"|"$/g, '');
+  }
+  /**
+   * Get breakpoint from a custom property
+   */
+  getBreakpointInProperty() {
+    return getComputedStyle(this.element).getPropertyValue(this.customProperty);
+  }
+  /**
    * Get breakpoint from element (design note: user could override prototype)
    */
   getBreakpoint() {
-    return window.getComputedStyle(this.element, this.psuedoSelector).content.replace(/^"|"$/g, '');
+    if (this.valueFromPsuedo) {
+      return this.getBreakpointInPsuedo();
+    } else {
+      return this.getBreakpointInProperty();
+    }
   }
   /**
    * Updates the active breakpoint by checking the element and executes handlers on change

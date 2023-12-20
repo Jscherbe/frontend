@@ -5,6 +5,7 @@
 notes.todo
 trash/
 jsdoc.json
+tsconfig.json
 
 # From vuepress scaffolding
 # pids
