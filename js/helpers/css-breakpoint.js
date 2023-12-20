@@ -117,7 +117,7 @@ export class CssBreakpoints {
   /**
    * Get a breakpoint by key
    * @param {String} name The name of the breakpoint to get
-   * @return {Breakpoint} Breakpoint to act on (see BreakpointDirection)
+   * @return {Breakpoint} Breakpoint to act on (see Breakpoint class)
    */
   at(name) {
     const bp = this.breakpoints[name];
