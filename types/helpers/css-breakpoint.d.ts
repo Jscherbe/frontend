@@ -10,11 +10,12 @@ export class CssBreakpoints {
         valueFromPsuedo: boolean;
         customProperty: string;
         psuedoSelector: string;
+        order: string[];
         debug: boolean;
     };
     /**
      * @param {Object} config Configruation object
-     * @param {Array} config.order Required, Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest
+     * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
      * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
      * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
      * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
@@ -52,8 +53,91 @@ export class CssBreakpoints {
     /**
      * Get a breakpoint by key
      * @param {String} name The name of the breakpoint to get
+     * @return {Breakpoint} Breakpoint to act on (see BreakpointDirection)
      */
-    at(name: string): any;
+    at(name: string): Breakpoint;
 }
 export default CssBreakpoints;
+/**
+ * @class
+ * Single breakpoint management
+ */
+declare class Breakpoint {
+    constructor(name: any, manager: any);
+    directions: {
+        max: BreakpointDirection;
+        min: BreakpointDirection;
+        only: BreakpointDirection;
+    };
+    _manager: any;
+    name: any;
+    /**
+     * Private method used inrternally for managing direction activation
+     * - Each direction manages it's own state and handlers
+     * @param {String} direction The directional key
+     * @param {Boolean} active State of that direction to set
+     */
+    _setDirection(direction: string, active: boolean): void;
+    /**
+     * Attach handler to be executed from the breakpoint and to all breakpoints below.
+     * - If the browser resizes from a breakpoint below this breakpoint,
+     *   and above the breakpoint name specified, this handler will fire
+     * @param {Function} handler Handler to be executed
+     */
+    max(handler: Function): void;
+    /**
+     * Attach handler to be executed from the breakpoint and to all breakpoints below.
+     * - If the browser resizes from a breakpoint above this breakpoint,
+     *   and below the breakpoint name specified, this handler will fire
+     * @param {Function} handler Handler to be executed
+     */
+    min(handler: Function): void;
+    /**
+     * Attach a handler to fire when the breakpoint is within the key
+     * @param {Function} handler Handler to be executed
+     */
+    only(handler: Function): void;
+    /**
+     * Remove handler
+     * @param {Function} handler Handler to be removed, extended on/off object style can be used
+     * @param {String} direction Remove handler only from specified direction, else search all directions
+     */
+    remove(handler: Function, direction: string): void;
+    log(...msg: any[]): void;
+}
+/**
+ * @class
+ * Used to handle a breakpoints direction's handler and state
+ */
+declare class BreakpointDirection {
+    constructor(direction: any, breakpoint: any);
+    direction: any;
+    active: boolean;
+    on: any[];
+    off: any[];
+    breakpoint: any;
+    /**
+     * Change the state of the direction
+     */
+    change(to: any): void;
+    /**
+     * Calls all functions in handlers or
+     */
+    _call(forActive: any): void;
+    /**
+     * Returns handlers in normalized object format on/off
+     */
+    getHandlers(handler: any): any;
+    /**
+     * Adds a handler for the direction, optionally use object to add off state handler
+     * @param {Function|Object} handler Function to be executed when direction is active, read object description for on/off
+     * @param {Function|Object} handler.on Function to be executed when direction is active
+     * @param {Function|Object} handler.off Function to be executed when direction was active and is now changed to inactive
+     */
+    add(handler: Function | any): void;
+    /**
+     * Removes a handler
+     */
+    remove(handler: any): void;
+}
 //# sourceMappingURL=css-breakpoint.d.ts.map
