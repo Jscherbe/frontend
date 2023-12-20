@@ -25,20 +25,18 @@ export class CssBreakpoints {
     valueFromPsuedo: false,
     customProperty: "--breakpoint",
     psuedoSelector: ':before',
+    order: ["small", "medium", "large"],
     debug: false
   }
   /**
    * @param {Object} config Configruation object
-   * @param {Array} config.order Required, Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest
+   * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
    * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
    * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
    * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
    * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
    */
   constructor(config) {
-    if (!config.order) {
-      logError(this, 'Missing order (required)!');
-    }
     Object.assign(this, CssBreakpoints.defaults, config);
     this.active = null;
     this.previous = null;
@@ -119,6 +117,7 @@ export class CssBreakpoints {
   /**
    * Get a breakpoint by key
    * @param {String} name The name of the breakpoint to get
+   * @return {Breakpoint} Breakpoint to act on (see BreakpointDirection)
    */
   at(name) {
     const bp = this.breakpoints[name];
