@@ -25,7 +25,7 @@ export class CssBreakpoints {
     valueFromPsuedo: false,
     customProperty: "--breakpoint",
     psuedoSelector: ':before',
-    order: ["small", "medium", "large"],
+    order: ["none", "small", "medium", "large"],
     debug: false
   }
   /**
@@ -44,10 +44,27 @@ export class CssBreakpoints {
     this.resizeDirection = null;
     this.previousIndex = null;
     this.breakpoints = {};
+    this.onChangeCallbacks = [];
     this.order.forEach(n => this.breakpoints[n] = new Breakpoint(n, this));
     log(this, this);
     this.update(); // Run for the first time, then whenever browser resizes
     CssBreakpoints.instances.push(this);
+  }
+  /**
+   * Add a callback for everytime a breakpoint changes
+   * - Not recommended, possibly use to watch for changes, etc
+   * - For more control use intance.at(name) with breakpoint methods
+   * @param {Function} callback Function to call, passed one argument current instance which can be used to get information about breakpoints
+   */
+  onChange(callback) {
+    this.onChangeCallbacks.push(callback);
+  }
+  /**
+   * Remove change callback
+   * @param {Function} callback Function to remove
+   */
+  removeOnChange(callback) {
+    removeArrayElement(this.onChangeCallbacks, callback);
   }
   /**
    * Get breakpoint from a psuedo element
@@ -76,6 +93,10 @@ export class CssBreakpoints {
    */
   update() {
     const name = this.getBreakpoint();
+    if (!name) {
+      logError(this, 'Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!');
+      return;
+    }
     // console.log('name:\n', name);
     if (name === this.active) return;
     // this.log(`current breakpoint: ${ name }`);
@@ -113,6 +134,8 @@ export class CssBreakpoints {
     if (this.previousIndex !== null) {
       this.resizeDirection = this.previousIndex < index ? "up" : "down";
     }
+
+    this.onChangeCallbacks.forEach(cb => cb(this));
   }
   /**
    * Get a breakpoint by key

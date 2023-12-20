@@ -34,6 +34,19 @@ export class CssBreakpoints {
     resizeDirection: string;
     previousIndex: any;
     breakpoints: {};
+    onChangeCallbacks: any[];
+    /**
+     * Add a callback for everytime a breakpoint changes
+     * - Not recommended, possibly use to watch for changes, etc
+     * - For more control use intance.at(name) with breakpoint methods
+     * @param {Function} callback Function to call, passed one argument current instance which can be used to get information about breakpoints
+     */
+    onChange(callback: Function): void;
+    /**
+     * Remove change callback
+     * @param {Function} callback Function to remove
+     */
+    removeOnChange(callback: Function): void;
     /**
      * Get breakpoint from a psuedo element
      */
