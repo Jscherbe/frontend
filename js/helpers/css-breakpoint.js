@@ -3,7 +3,7 @@
  */
 
 // Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints
-import { removeArrayElement } from "@ulu/utils/array";
+import { removeArrayElement } from "@ulu/utils/array.js";
 import { getName } from "../events/index.js";
 import { log, logError } from "../utils/logger.js";
 

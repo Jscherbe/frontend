@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Theming library",
   "browser": "js/index.js",
   "main": "index.js",
@@ -13,8 +13,10 @@
     "./scss": "./scss/index.scss"
   },
   "typesVersions": {
-    "*" : {
-      "js/*" : ["./types/*"]
+    "*": {
+      "js/*": [
+        "./types/*"
+      ]
     }
   },
   "type": "module",
@@ -25,7 +27,7 @@
     "docs:update:scss": "node ./docs-src/.vitepress/sassdoc.js",
     "docs:update:scss:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js",
     "docs:build:js": "node ./docs-src/.vitepress/jsdoc.js",
-    "types" : "npx tsc"
+    "types": "npx tsc"
   },
   "repository": {
     "type": "git",
@@ -47,7 +49,6 @@
   },
   "homepage": "https://github.com/Jscherbe/frontend#readme",
   "devDependencies": {
-    "@ulu/utils": "^0.0.4",
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.6",
     "clean-jsdoc-theme": "^4.2.17",
@@ -57,5 +58,8 @@
     "sass": "^1.51.0",
     "typescript": "^5.3.3",
     "vitepress": "^1.0.0-rc.27"
+  },
+  "dependencies": {
+    "@ulu/utils": "^0.0.6"
   }
 }

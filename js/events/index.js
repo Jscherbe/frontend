@@ -1,7 +1,7 @@
 /**
  * @module events
  */
-import { debounce } from "@ulu/utils/performance";
+import { debounce } from "@ulu/utils/performance.js";
 
 /**
  * Event object - called on dispatch

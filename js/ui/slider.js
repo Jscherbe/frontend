@@ -28,7 +28,7 @@
 //                              * Will Change use
 
 import maintain from 'ally.js/maintain/_maintain';
-import { log, logError, logWarning } from "@ulu/utils/logger.js";
+import { log, logError, logWarning } from "../utils/logger.js";
 import { hasRequiredProps } from '@ulu/utils/object.js';
 import { trimWhitespace } from "@ulu/utils/string.js";
 import { debounce } from "@ulu/utils/performance.js";
