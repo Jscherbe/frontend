@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.0.17
+
+### SCSS
+
+- Add !important to all utilities meant to display none, since they should always override
+
 ## Version 0.0.10
 
 ### JS

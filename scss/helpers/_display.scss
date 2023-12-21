@@ -54,19 +54,19 @@
   }
   .hidden,
   .display-none {
-    display: none;
+    display: none !important;
   }
 
   // Display none per breakpoint
   @each $name in map.keys(breakpoint.$sizes) {
     @include breakpoint.min($name) {
       .hidden-min-#{ $name } {
-        display: none;
+        display: none !important;
       }
     }
     @include breakpoint.max($name) {
       .hidden-max-#{ $name } {
-        display: none;
+        display: none !important;
       }
     }
   }
