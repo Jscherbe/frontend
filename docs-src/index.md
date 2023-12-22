@@ -5,7 +5,7 @@ layout: home
 
 hero:
   name: "ULU"
-  text: "Modular theming library"
+  text: "Modular Sass Theming Library"
   tagline: "Versatile, Standardized Configuration, Flexible"
   actions:
     - theme: brand

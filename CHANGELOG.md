@@ -17,6 +17,8 @@
 ### SCSS
 
 - Added utils.map-merge($map, $changes, $mode)
+  - This is a **breaking change**
+    - Update all mixins with merge arguments (button > set-styles, typography > set-sizes, etc), to use a single string argument if a merge strategy is needed. If $deep and $over-write are set you need to choose one, if they are unset or false just remove them, this will use the default map.merge.
   - This will allow expansion if needed and is simpler for modules to implement
   - This is to replace utils.map-merge-or-overwrite which is deprecated now
 - Removed IE "*zoom" clearfix property as we don't support it and it causes errors in CSS minifiers since it's not standard CSS

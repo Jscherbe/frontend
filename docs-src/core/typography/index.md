@@ -24,6 +24,35 @@ Module Settings
     
     
 
+``` scss
+(
+  "font-size" : 16px, 
+  "font-family" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-sans" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-serif" : (Cambria, Georgia, serif),
+  "font-family-monospace" : (Menlo, Consolas, Monaco, monospace),
+  "font-weight" : inherit,
+  "font-weight-headline" : bold,
+  "font-weight-light" : 300,
+  "font-weight-normal" : normal,
+  "font-weight-semibold" : 600,
+  "font-weight-bold" : bold,
+  "line-height" : 1.5,
+  "line-height-dense": 1.3,
+  "line-height-spaced": 1.75,
+  "size-ratio": 2,
+  "size-line-height-ratio": 0.97,
+  "scale-steps": 5,
+  "responsive-change": 0.05vw, 
+  "margin-bottom":  1em,
+  "margin-top":  false,
+  "letter-spacing-uppercase" : 0.04em,
+  "max-width" : 60rem,
+  "max-width-small" : 50rem
+)
+```
+  
+
 
 <SassdocDetails summaryText="Meta Information">
 
@@ -67,6 +96,25 @@ Module Settings
 Default size presets
     
     
+
+``` scss
+(
+  "small-x" :       new-size(scale(-2)),
+  "small" :         new-size(scale(-1)),
+  "base" :          new-size(scale(0)),
+  "large" :         new-size(scale(1),   scale-line-height(1)),
+  "large-x" :       new-size(scale(2),   scale-line-height(2)),
+  "large-xx" :      new-size(scale(3),   scale-line-height(3)),
+  "large-xxx" :     new-size(scale(4),   scale-line-height(4)),
+  "h1" :            new-size(scale(6),   scale-line-height(6),   true),
+  "h2" :            new-size(scale(5),   scale-line-height(5),   true),
+  "h3" :            new-size(scale(4),   scale-line-height(4),   true),
+  "h4" :            new-size(scale(3),   scale-line-height(3),   true),
+  "h5" :            new-size(scale(2),   scale-line-height(2),   true),
+  "h6" :            new-size(scale(1),   scale-line-height(1),   true)
+)
+```
+  
 
 
 <SassdocDetails summaryText="Meta Information">
@@ -873,7 +921,7 @@ Get a sizes property value that doesn't need conversion
       },
       sassdocPreviewOptions: JSON.parse(
         decodeURIComponent(
-          `%7B%22previewStyles%22%3A%22%5Cn%20%20%20%20height%3A%2020em%3B%5Cn%20%20%20%20width%3A%20100%25%3B%5Cn%20%20%20%20border%3A%20none%3B%5Cn%20%20%20%20background-color%3A%20%23f9f9f9%3B%5Cn%20%20%20%20border-radius%3A%206px%3B%5Cn%20%20%20%20padding%3A%2012px%3B%5Cn%20%20%20%20margin%3A%201.5em%200%3B%5Cn%20%20%22%2C%22previewHead%22%3A%22%5Cn%20%20%20%20%3Ctitle%3ESassdoc%20Example%3C%2Ftitle%3E%20%5Cn%20%20%20%20%3Cmeta%20charset%3D%5C%22utf-8%5C%22%3E%20%5Cn%20%20%20%20%3Cmeta%20name%3D%5C%22viewport%5C%22%20content%3D%5C%22width%3Ddevice-width%2C%20initial-scale%3D1%5C%22%3E%20%5Cn%20%20%20%20%3Clink%20rel%3D%5C%22stylesheet%5C%22%20href%3D%5C%22%2Fsassdoc-preview.css%5C%22%3E%5Cn%20%20%22%2C%22previewScripts%22%3A%22%5Cn%20%20%20%20%3Cscript%20src%3D%5C%22%2Fsassdoc-preview.js%5C%22%3E%3C%2Fscript%3E%5Cn%20%20%22%7D`
+          `%7B%22previewStyles%22%3A%22%5Cn%20%20%20%20height%3A%2020em%3B%5Cn%20%20%20%20width%3A%20100%25%3B%5Cn%20%20%20%20border%3A%20none%3B%5Cn%20%20%20%20background-color%3A%20%23f9f9f9%3B%5Cn%20%20%20%20border-radius%3A%206px%3B%5Cn%20%20%20%20padding%3A%2012px%3B%5Cn%20%20%20%20margin%3A%201.5em%200%3B%5Cn%20%20%22%2C%22previewHead%22%3A%22%5Cn%20%20%20%20%3Ctitle%3EULU%20Example%3C%2Ftitle%3E%20%5Cn%20%20%20%20%3Cmeta%20charset%3D%5C%22utf-8%5C%22%3E%20%5Cn%20%20%20%20%3Cmeta%20name%3D%5C%22viewport%5C%22%20content%3D%5C%22width%3Ddevice-width%2C%20initial-scale%3D1%5C%22%3E%20%5Cn%20%20%20%20%3Clink%20rel%3D%5C%22stylesheet%5C%22%20href%3D%5C%22%2Ffrontend%2Fulu-frontend.min.css%5C%22%3E%5Cn%20%20%22%2C%22previewScripts%22%3A%22%5Cn%20%20%20%20%3Cscript%20src%3D%5C%22%2Ffrontend%2Fulu-frontend.min.js%5C%22%3E%3C%2Fscript%3E%5Cn%20%20%22%7D`
         )
       )
     }

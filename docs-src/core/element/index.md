@@ -24,6 +24,41 @@ Module Settings
     
     
 
+``` scss
+(
+  "backdrop-blur":                    4px,
+  "backdrop-color":                   rgba(73, 73, 73, 0.459),
+  "box-shadow":                       0 1px 5px color.get('box-shadow'),
+  "box-shadow:hover":                 0 1px 5px color.get('box-shadow:hover'),
+  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
+  "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
+  "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
+  "border-radius":                    6px,
+  "border-radius-small":              3px,
+  "border-radius-large":              12px,
+  "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
+  "margin-small":                     0.65em,
+  "margin":                           1em,
+  "margin-large":                     2em,
+  "list-item-indent" :                1.5em,
+  "ol-list-style-type":               decimal,
+  "ol-list-style-type-2":             lower-alpha,
+  "ol-list-style-type-3":             lower-roman,
+  "ul-list-style-type":               disc,
+  "ul-list-style-type-2":             circle,
+  "ul-list-style-type-3":             square,
+  "link-text-decoration-default":     none,
+  "link-text-decoration":             underline,
+  "link-text-decoration-style":       dotted,
+  "link-text-decoration-color":       initial,
+  "link-text-decoration-style-hover": solid,
+  "link-text-decoration-color-hover": false,
+  "link-text-decoration-thickness":   0.1em,
+  "link-text-underline-offset" :     auto
+)
+```
+  
+
 
 <SassdocDetails summaryText="Meta Information">
 
@@ -80,6 +115,14 @@ Rule style map, redifine defaults or add to
     
     
 
+``` scss
+(
+  "default": 1px solid color.get("rule"),
+  "light":   1px solid color.get("rule-light"),
+)
+```
+  
+
 
 <SassdocDetails summaryText="Meta Information">
 
@@ -101,6 +144,16 @@ Rule style map, redifine defaults or add to
 Common rule margins (space between rule and type)
     
     
+
+``` scss
+(
+  "smallest": 0.5rem,
+  "small":    1rem,
+  "medium":   2rem,
+  "large":    3rem
+)
+```
+  
 
 
 <SassdocDetails summaryText="Meta Information">
@@ -581,7 +634,7 @@ Sets rule margin
       },
       sassdocPreviewOptions: JSON.parse(
         decodeURIComponent(
-          `%7B%22previewStyles%22%3A%22%5Cn%20%20%20%20height%3A%2020em%3B%5Cn%20%20%20%20width%3A%20100%25%3B%5Cn%20%20%20%20border%3A%20none%3B%5Cn%20%20%20%20background-color%3A%20%23f9f9f9%3B%5Cn%20%20%20%20border-radius%3A%206px%3B%5Cn%20%20%20%20padding%3A%2012px%3B%5Cn%20%20%20%20margin%3A%201.5em%200%3B%5Cn%20%20%22%2C%22previewHead%22%3A%22%5Cn%20%20%20%20%3Ctitle%3ESassdoc%20Example%3C%2Ftitle%3E%20%5Cn%20%20%20%20%3Cmeta%20charset%3D%5C%22utf-8%5C%22%3E%20%5Cn%20%20%20%20%3Cmeta%20name%3D%5C%22viewport%5C%22%20content%3D%5C%22width%3Ddevice-width%2C%20initial-scale%3D1%5C%22%3E%20%5Cn%20%20%20%20%3Clink%20rel%3D%5C%22stylesheet%5C%22%20href%3D%5C%22%2Fsassdoc-preview.css%5C%22%3E%5Cn%20%20%22%2C%22previewScripts%22%3A%22%5Cn%20%20%20%20%3Cscript%20src%3D%5C%22%2Fsassdoc-preview.js%5C%22%3E%3C%2Fscript%3E%5Cn%20%20%22%7D`
+          `%7B%22previewStyles%22%3A%22%5Cn%20%20%20%20height%3A%2020em%3B%5Cn%20%20%20%20width%3A%20100%25%3B%5Cn%20%20%20%20border%3A%20none%3B%5Cn%20%20%20%20background-color%3A%20%23f9f9f9%3B%5Cn%20%20%20%20border-radius%3A%206px%3B%5Cn%20%20%20%20padding%3A%2012px%3B%5Cn%20%20%20%20margin%3A%201.5em%200%3B%5Cn%20%20%22%2C%22previewHead%22%3A%22%5Cn%20%20%20%20%3Ctitle%3EULU%20Example%3C%2Ftitle%3E%20%5Cn%20%20%20%20%3Cmeta%20charset%3D%5C%22utf-8%5C%22%3E%20%5Cn%20%20%20%20%3Cmeta%20name%3D%5C%22viewport%5C%22%20content%3D%5C%22width%3Ddevice-width%2C%20initial-scale%3D1%5C%22%3E%20%5Cn%20%20%20%20%3Clink%20rel%3D%5C%22stylesheet%5C%22%20href%3D%5C%22%2Ffrontend%2Fulu-frontend.min.css%5C%22%3E%5Cn%20%20%22%2C%22previewScripts%22%3A%22%5Cn%20%20%20%20%3Cscript%20src%3D%5C%22%2Ffrontend%2Fulu-frontend.min.js%5C%22%3E%3C%2Fscript%3E%5Cn%20%20%22%7D`
         )
       )
     }

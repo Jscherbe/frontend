@@ -2,7 +2,7 @@
 /// @group button
 ////
 
-/// Version:        1.0.3
+/// This is the core button module. It handles the styling, sizes and other styling attributes of buttons. You can include the "component" button to print the button styles/sizes or you can use the mixins from the core module.
 
 @use "sass:map";
 @use "sass:meta";
@@ -107,18 +107,28 @@ $styles: (
 /// @example scss - General example, replace module-name with module's name
 ///   @include module-name.get("property");
 
-
 @function get($name) {
   $value: utils.require-map-get($config, $name, "button [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
+/// Set button styles
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
 @mixin set-styles($changes, $merge-mode: null) {
   $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
+
+/// Set Button Sizes
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
 @mixin set-sizes($changes, $merge-mode: null) {
   $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
+
+/// Print styles to reset browser button style
 
 @mixin reset() {
   text-transform: none;
@@ -132,6 +142,10 @@ $styles: (
   color: inherit; 
   cursor: pointer;
 }
+
+/// Print default button styles
+/// @param {Boolean} $with-reset [false] Include button.reset()
+
 @mixin default($with-reset: false) {
   $font-size: get("font-size");
   @if ($with-reset) {
@@ -179,6 +193,11 @@ $styles: (
   }
 }
 
+/// Print button size styles for a specifc size
+/// @param {String} $name Name of size from $sizes
+/// @see $sizes
+/// @see set-sizes
+
 @mixin size($name) {
   $size: utils.require-map-get($sizes, $name, 'button [size]');
   $font-size: map.get($size, "font-size");
@@ -190,6 +209,12 @@ $styles: (
     @include typography.size($font-size);
   }
 }
+
+/// Get a value from a button style
+/// @param {String} $name Name of style from $styles
+/// @see {variable} $styles
+/// @see set-styles
+/// @return {*} The property you were trying to get
 
 @function get-style-value($name, $prop, $for-hover: false) {
   $is-color-prop: string.index($prop, "color");
@@ -207,6 +232,13 @@ $styles: (
   }
 }
 
+/// Print a button style's base styles (not hover)
+/// - In most cases you want the style() mixin
+/// - This is used mainly for trying to match a buttons base styles without including the other state (hover, etc) styles
+/// @param {String} $name Name of style from $styles
+/// @see {variable} $styles
+/// @see set-styles
+
 @mixin style-styles($name) {
   background-color: get-style-value($name, "background-color", false);
   color: get-style-value($name, "color", false);
@@ -217,6 +249,13 @@ $styles: (
   font-weight: get-style-value($name, "font-weight", false);
 }
 
+/// Print a button style's base styles (hover styles only)
+/// - In most cases you want the style() mixin
+/// - This is used mainly for trying to match a buttons hover styles without including the base styling
+/// @param {String} $name Name of style from $styles
+/// @see {variable} $styles
+/// @see set-styles
+
 @mixin style-styles-hover($name) {
   background-color: get-style-value($name, "background-color", true);
   color: get-style-value($name, "color", true);
@@ -224,6 +263,17 @@ $styles: (
   box-shadow: get-style-value($name, "box-shadow", true);
   text-decoration: get-style-value($name, "text-decoration", true);
 }
+
+/// Print a button style
+/// - Includes base/visited styling, and hover/focus state styles
+/// - To print only one of those states, use style-styles or style-styles-hover
+/// - By default this mixin prints the buttons base styles along with :visited state. 
+///   This is to avoid link visted states effecting the button styles (if used in editor areas 
+///   or other areas that apply automatic links styling for example. (param below to override behavior)
+/// @param {String} $name Name of style from $styles
+/// @param {String} $no-visited [false] Do not include :visited selector for button base styles
+/// @see {variable} $styles
+/// @see set-styles
 
 @mixin style($name, $no-visited: false) {
   @if ($no-visited) {

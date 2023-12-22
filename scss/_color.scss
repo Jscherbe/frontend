@@ -179,10 +179,11 @@ $color-classes: (
 /// @param {String} $with-prop Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)
 /// @example scss
 ///  @include ulu.all-context-styles();
-/// @example raw Example of a color-context
+/// @example html {preview} Example of a color-context
 ///  <div class="color-context-dark" style="padding: 1rem">
 ////   Some text in dark context
 //// </div>
+
 @mixin all-context-styles($with-prop: null) {
   $prefix: selector.class("color-context");
   @each $name, $context in $contexts {
@@ -197,8 +198,9 @@ $color-classes: (
 /// Outputs all color classes
 /// @example scss
 ///  @include ulu.all-color-class-styles();
-/// @example raw Example of a color-context
+/// @example html {preview} Example of a color-context
 ///  <span class="color-name">Some text</span>
+
 @mixin all-color-class-styles() {
   $prefix: selector.class("color");
   @each $name, $output in $color-classes {

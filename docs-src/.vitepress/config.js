@@ -6,10 +6,13 @@ const pages = createTree({ source: resolve(__dirname, "../") });
 
 export default defineConfig({
   title: "ULU",
-  description: "Modules sass theming library",
+  description: "Modular Sass Theming Library",
   base: "/frontend/",
   outDir: "../docs",
   themeConfig: {
     ...toDefaultTheme(pages),
+  },
+  vite: {
+    publicDir: '../dist/' 
   }
 });

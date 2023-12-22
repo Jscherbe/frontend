@@ -7,7 +7,20 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const dist = resolve(__dirname, "../");
 
+const commonConfig = {
+  previewHead: `
+    <title>ULU Example</title> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <link rel="stylesheet" href="/frontend/ulu-frontend.min.css">
+  `,
+  previewScripts: `
+    <script src="/frontend/ulu-frontend.min.js"></script>
+  `,
+};
+
 const subConfig = base => ({
+  ...commonConfig,
   dir: resolve(__dirname, "../../scss/", base),
   pathBase: `/${ base }`,
   dist,
@@ -15,6 +28,7 @@ const subConfig = base => ({
 
 const configs = [
   {
+    ...commonConfig,
     dist,
     dir: resolve(__dirname, "../../scss/"),
     pathBase: "/core/",

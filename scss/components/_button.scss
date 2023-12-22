@@ -32,7 +32,7 @@ $config: (
 /// Prints button component styles
 /// @example scss
 ///  @include ulu.component-button-styles();
-/// @example raw
+/// @example html {preview}
 ///  <a class="button" href="#">Button Default</a>
 
 @mixin styles {
