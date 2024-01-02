@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.0.18
+
+- Fix docs issue with JS broken from Markdown Attrs
+- Fix missing arguments in typography module sassdocs comments
+
 ## Version 0.0.17
 
 ### SCSS

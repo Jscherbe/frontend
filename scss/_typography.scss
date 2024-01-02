@@ -275,6 +275,7 @@ $sizes: (
 /// Print a typography size (font-size, line-height)
 /// @param {String} $nameOrMap Name to retrieve from sizes map or a unique size map that follows the API
 /// @param {Map} $changes Modifications to be merged into size before using
+/// @param {Boolean} $only-font-size Only print the font size
 
 @mixin size($name, $changes: false, $only-font-size: null) {
   $size: $name;

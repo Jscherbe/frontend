@@ -109,7 +109,7 @@ Change modules $config
   
 
 Returns padding to another property including breakpoints
-ie. { top: $containers-padding; }
+ie. \{ top: $containers-padding; }
     
     
 

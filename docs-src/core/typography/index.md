@@ -344,8 +344,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 275-277
-- **Lines (code):** 279-319
+- **Lines (comments):** 275-278
+- **Lines (code):** 280-320
 
 </SassdocDetails>
     
@@ -358,6 +358,7 @@ Print a typography size (font-size, line-height)
 |:--|:--|:--|
 |$nameOrMap|`String`|Name to retrieve from sizes map or a unique size map that follows the API|
 |$changes|`Map`|Modifications to be merged into size before using|
+|$only-font-size|`Boolean`|Only print the font size|
 
     
 
@@ -799,7 +800,7 @@ Forces conversion to unitless line-height
 
 #### Throw
 
-- ULU: Unable to convert to unitless line-height for: #{ $line-height }
+- ULU: Unable to convert to unitless line-height for: #\{ $line-height }
     
 
 #### Todos
