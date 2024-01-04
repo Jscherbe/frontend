@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const dist = resolve(__dirname, "../");
+const dist = resolve(__dirname, "../scss/");
 
 const commonConfig = {
   previewHead: `

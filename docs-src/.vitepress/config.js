@@ -1,8 +1,5 @@
 import { defineConfig } from 'vitepress';
-import { resolve } from "path";
-import { createTree, toDefaultTheme } from "@ulu/vitepress-auto-menus";
-
-const pages = createTree({ source: resolve(__dirname, "../") });
+import createMenus from "./create-menus.js";
 
 export default defineConfig({
   title: "ULU",
@@ -10,9 +7,10 @@ export default defineConfig({
   base: "/frontend/",
   outDir: "../docs",
   themeConfig: {
-    ...toDefaultTheme(pages),
+    ...createMenus()
   },
   vite: {
     publicDir: '../dist/' 
   }
 });
+
