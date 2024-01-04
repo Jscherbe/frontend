@@ -105,7 +105,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/helpers/units/#variable-config)
+- [$config](/scss/helpers/units/#variable-config)
   
 
 
@@ -132,7 +132,7 @@ Prints all unit helper classes
 
 #### Require
 
-- [create-property-classes()](/helpers/units/#mixin-create-property-classes)
+- [create-property-classes()](/scss/helpers/units/#mixin-create-property-classes)
   
 
 
@@ -160,8 +160,8 @@ Creates the unit classes with all variations (from unit presets)
 
 #### Require
 
-- [get()](/helpers/units/#function-get)
-- [$config](/helpers/units/#variable-config)
+- [get()](/scss/helpers/units/#function-get)
+- [$config](/scss/helpers/units/#variable-config)
   
   
 
@@ -216,7 +216,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/helpers/units/#variable-config)
+- [$config](/scss/helpers/units/#variable-config)
   
   
 
@@ -225,7 +225,7 @@ General example, replace module-name with module's name
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"units","id":"variable-config","uid":"units-variable-config","title":"$config","groupPath":"/helpers/units/","path":"/helpers/units/#variable-config"},{"groupName":"units","id":"mixin-set","uid":"units-mixin-set","title":"set()","groupPath":"/helpers/units/","path":"/helpers/units/#mixin-set","previewsByIndex":{}},{"groupName":"units","id":"function-get","uid":"units-function-get","title":"get()","groupPath":"/helpers/units/","path":"/helpers/units/#function-get","previewsByIndex":{}},{"groupName":"units","id":"mixin-styles","uid":"units-mixin-styles","title":"styles()","groupPath":"/helpers/units/","path":"/helpers/units/#mixin-styles"},{"groupName":"units","id":"mixin-create-property-classes","uid":"units-mixin-create-property-classes","title":"create-property-classes()","groupPath":"/helpers/units/","path":"/helpers/units/#mixin-create-property-classes"}];
+  const sassdocGroup = [{"groupName":"units","id":"variable-config","uid":"units-variable-config","title":"$config","groupPath":"/scss/helpers/units/","path":"/scss/helpers/units/#variable-config"},{"groupName":"units","id":"mixin-set","uid":"units-mixin-set","title":"set()","groupPath":"/scss/helpers/units/","path":"/scss/helpers/units/#mixin-set","previewsByIndex":{}},{"groupName":"units","id":"function-get","uid":"units-function-get","title":"get()","groupPath":"/scss/helpers/units/","path":"/scss/helpers/units/#function-get","previewsByIndex":{}},{"groupName":"units","id":"mixin-styles","uid":"units-mixin-styles","title":"styles()","groupPath":"/scss/helpers/units/","path":"/scss/helpers/units/#mixin-styles"},{"groupName":"units","id":"mixin-create-property-classes","uid":"units-mixin-create-property-classes","title":"create-property-classes()","groupPath":"/scss/helpers/units/","path":"/scss/helpers/units/#mixin-create-property-classes"}];
   export default {
     components: {
       SassdocPreview,

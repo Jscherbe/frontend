@@ -197,7 +197,7 @@ Setting the error and type color
 
 #### Require
 
-- [$palette](/core/color/#variable-palette)
+- [$palette](/scss/core/color/#variable-palette)
   
 
 
@@ -233,7 +233,7 @@ Set ouput classes for all-color-class-styles
 
 #### Require
 
-- [$color-classes](/core/color/#variable-color-classes)
+- [$color-classes](/scss/core/color/#variable-color-classes)
   
 
 
@@ -291,7 +291,7 @@ Overwriting contexts
 #### Require
 
 - map-merge()
-- [$contexts](/core/color/#variable-contexts)
+- [$contexts](/scss/core/color/#variable-contexts)
   
 
 
@@ -327,9 +327,9 @@ Prints contexts styles
 
 #### Require
 
-- [get-context()](/core/color/#function-get-context)
-- [get-context-value()](/core/color/#function-get-context-value)
-- [get()](/core/breakpoint/#function-get)
+- [get-context()](/scss/core/color/#function-get-context)
+- [get-context-value()](/scss/core/color/#function-get-context-value)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -400,10 +400,10 @@ Example of a color-context
 
 #### Require
 
-- [context-styles()](/core/color/#mixin-context-styles)
+- [context-styles()](/scss/core/color/#mixin-context-styles)
 - class()
-- [get()](/core/breakpoint/#function-get)
-- [$contexts](/core/color/#variable-contexts)
+- [get()](/scss/core/breakpoint/#function-get)
+- [$contexts](/scss/core/color/#variable-contexts)
   
 
 
@@ -464,8 +464,8 @@ Example of a color-context
 #### Require
 
 - class()
-- [get()](/core/breakpoint/#function-get)
-- [$color-classes](/core/color/#variable-color-classes)
+- [get()](/scss/core/breakpoint/#function-get)
+- [$color-classes](/scss/core/color/#variable-color-classes)
   
   
 
@@ -516,7 +516,7 @@ Get a color from the palette by name
 #### Require
 
 - require-map-get()
-- [$palette](/core/color/#variable-palette)
+- [$palette](/scss/core/color/#variable-palette)
   
 
 
@@ -562,7 +562,7 @@ Get a context by name
 #### Require
 
 - require-map-get()
-- [$contexts](/core/color/#variable-contexts)
+- [$contexts](/scss/core/color/#variable-contexts)
   
 
 
@@ -608,8 +608,8 @@ Get a context's value'
 
 #### Require
 
-- [get-context()](/core/color/#function-get-context)
-- [get()](/core/breakpoint/#function-get)
+- [get-context()](/scss/core/color/#function-get-context)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -662,7 +662,7 @@ Lighten a color using the default white by a percentage
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -715,7 +715,7 @@ Darken a color with the default black by a percentage
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
   
 
@@ -724,7 +724,7 @@ Darken a color with the default black by a percentage
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"color","id":"variable-palette","uid":"color-variable-palette","title":"$palette","groupPath":"/core/color/","path":"/core/color/#variable-palette"},{"groupName":"color","id":"variable-contexts","uid":"color-variable-contexts","title":"$contexts","groupPath":"/core/color/","path":"/core/color/#variable-contexts"},{"groupName":"color","id":"variable-color-classes","uid":"color-variable-color-classes","title":"$color-classes","groupPath":"/core/color/","path":"/core/color/#variable-color-classes"},{"groupName":"color","id":"mixin-set","uid":"color-mixin-set","title":"set()","groupPath":"/core/color/","path":"/core/color/#mixin-set","previewsByIndex":{}},{"groupName":"color","id":"function-get","uid":"color-function-get","title":"get()","groupPath":"/core/color/","path":"/core/color/#function-get"},{"groupName":"color","id":"mixin-set-color-classes","uid":"color-mixin-set-color-classes","title":"set-color-classes()","groupPath":"/core/color/","path":"/core/color/#mixin-set-color-classes"},{"groupName":"color","id":"mixin-set-contexts","uid":"color-mixin-set-contexts","title":"set-contexts()","groupPath":"/core/color/","path":"/core/color/#mixin-set-contexts","previewsByIndex":{}},{"groupName":"color","id":"function-get-context","uid":"color-function-get-context","title":"get-context()","groupPath":"/core/color/","path":"/core/color/#function-get-context"},{"groupName":"color","id":"function-get-context-value","uid":"color-function-get-context-value","title":"get-context-value()","groupPath":"/core/color/","path":"/core/color/#function-get-context-value"},{"groupName":"color","id":"mixin-context-styles","uid":"color-mixin-context-styles","title":"context-styles()","groupPath":"/core/color/","path":"/core/color/#mixin-context-styles"},{"groupName":"color","id":"function-tint","uid":"color-function-tint","title":"tint()","groupPath":"/core/color/","path":"/core/color/#function-tint"},{"groupName":"color","id":"function-shade","uid":"color-function-shade","title":"shade()","groupPath":"/core/color/","path":"/core/color/#function-shade"},{"groupName":"color","id":"mixin-all-context-styles","uid":"color-mixin-all-context-styles","title":"all-context-styles()","groupPath":"/core/color/","path":"/core/color/#mixin-all-context-styles","previewsByIndex":{"1":" <div class=\"color-context-dark\" style=\"padding: 1rem\">\n  Some text in dark context\n</div>"}},{"groupName":"color","id":"mixin-all-color-class-styles","uid":"color-mixin-all-color-class-styles","title":"all-color-class-styles()","groupPath":"/core/color/","path":"/core/color/#mixin-all-color-class-styles","previewsByIndex":{"1":"<span class=\"color-name\">Some text</span>"}}];
+  const sassdocGroup = [{"groupName":"color","id":"variable-palette","uid":"color-variable-palette","title":"$palette","groupPath":"/scss/core/color/","path":"/scss/core/color/#variable-palette"},{"groupName":"color","id":"variable-contexts","uid":"color-variable-contexts","title":"$contexts","groupPath":"/scss/core/color/","path":"/scss/core/color/#variable-contexts"},{"groupName":"color","id":"variable-color-classes","uid":"color-variable-color-classes","title":"$color-classes","groupPath":"/scss/core/color/","path":"/scss/core/color/#variable-color-classes"},{"groupName":"color","id":"mixin-set","uid":"color-mixin-set","title":"set()","groupPath":"/scss/core/color/","path":"/scss/core/color/#mixin-set","previewsByIndex":{}},{"groupName":"color","id":"function-get","uid":"color-function-get","title":"get()","groupPath":"/scss/core/color/","path":"/scss/core/color/#function-get"},{"groupName":"color","id":"mixin-set-color-classes","uid":"color-mixin-set-color-classes","title":"set-color-classes()","groupPath":"/scss/core/color/","path":"/scss/core/color/#mixin-set-color-classes"},{"groupName":"color","id":"mixin-set-contexts","uid":"color-mixin-set-contexts","title":"set-contexts()","groupPath":"/scss/core/color/","path":"/scss/core/color/#mixin-set-contexts","previewsByIndex":{}},{"groupName":"color","id":"function-get-context","uid":"color-function-get-context","title":"get-context()","groupPath":"/scss/core/color/","path":"/scss/core/color/#function-get-context"},{"groupName":"color","id":"function-get-context-value","uid":"color-function-get-context-value","title":"get-context-value()","groupPath":"/scss/core/color/","path":"/scss/core/color/#function-get-context-value"},{"groupName":"color","id":"mixin-context-styles","uid":"color-mixin-context-styles","title":"context-styles()","groupPath":"/scss/core/color/","path":"/scss/core/color/#mixin-context-styles"},{"groupName":"color","id":"function-tint","uid":"color-function-tint","title":"tint()","groupPath":"/scss/core/color/","path":"/scss/core/color/#function-tint"},{"groupName":"color","id":"function-shade","uid":"color-function-shade","title":"shade()","groupPath":"/scss/core/color/","path":"/scss/core/color/#function-shade"},{"groupName":"color","id":"mixin-all-context-styles","uid":"color-mixin-all-context-styles","title":"all-context-styles()","groupPath":"/scss/core/color/","path":"/scss/core/color/#mixin-all-context-styles","previewsByIndex":{"1":" <div class=\"color-context-dark\" style=\"padding: 1rem\">\n  Some text in dark context\n</div>"}},{"groupName":"color","id":"mixin-all-color-class-styles","uid":"color-mixin-all-color-class-styles","title":"all-color-class-styles()","groupPath":"/scss/core/color/","path":"/scss/core/color/#mixin-all-color-class-styles","previewsByIndex":{"1":"<span class=\"color-name\">Some text</span>"}}];
   export default {
     components: {
       SassdocPreview,

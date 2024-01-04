@@ -71,7 +71,7 @@ Prints all Base styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"all","id":"mixin-base-styles","uid":"all-mixin-base-styles","title":"base-styles()","groupPath":"/base/all/","path":"/base/all/#mixin-base-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"all","id":"mixin-base-styles","uid":"all-mixin-base-styles","title":"base-styles()","groupPath":"/scss/base/all/","path":"/scss/base/all/#mixin-base-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

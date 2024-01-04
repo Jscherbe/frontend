@@ -145,7 +145,7 @@ Change default name
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -200,7 +200,7 @@ Changing the medium breakpoint and adding jumbo
 #### Require
 
 - map-merge()
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -266,7 +266,7 @@ Create a media query that matches the min-width for a given size
 
 #### Require
 
-- [get-size()](/core/breakpoint/#function-get-size)
+- [get-size()](/scss/core/breakpoint/#function-get-size)
   
 
 
@@ -332,8 +332,8 @@ Create a media query that matches the max-width for a given size
 
 #### Require
 
-- [get-size()](/core/breakpoint/#function-get-size)
-- [get()](/core/breakpoint/#function-get)
+- [get-size()](/scss/core/breakpoint/#function-get-size)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -400,7 +400,7 @@ Create a media query that matches between two breakpoint sizes
 
 #### Require
 
-- [get-size()](/core/breakpoint/#function-get-size)
+- [get-size()](/scss/core/breakpoint/#function-get-size)
   
 
 
@@ -462,8 +462,8 @@ $dir: map.get($user-breakpoint, "direction");
 
 #### Require
 
-- [min()](/core/breakpoint/#mixin-min)
-- [max()](/core/breakpoint/#mixin-max)
+- [min()](/scss/core/breakpoint/#mixin-min)
+- [max()](/scss/core/breakpoint/#mixin-max)
   
 
 
@@ -492,9 +492,9 @@ Attaches breakpoints to an element psuedo content for access via script
 
 #### Require
 
-- [min()](/core/breakpoint/#mixin-min)
-- [get()](/core/breakpoint/#function-get)
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [min()](/scss/core/breakpoint/#mixin-min)
+- [get()](/scss/core/breakpoint/#function-get)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
   
 
@@ -559,7 +559,7 @@ $default: breakpoint.get("default");
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -586,7 +586,7 @@ Get all breakpoint sizes (ie. $sizes)
 
 #### Require
 
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -632,7 +632,7 @@ Geta a specific size
 #### Require
 
 - require-map-get()
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -677,8 +677,8 @@ Check if a specific size exist
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [get()](/scss/core/breakpoint/#function-get)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
   
 
@@ -687,7 +687,7 @@ Check if a specific size exist
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"breakpoint","id":"variable-config","uid":"breakpoint-variable-config","title":"$config","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#variable-config"},{"groupName":"breakpoint","id":"mixin-set","uid":"breakpoint-mixin-set","title":"set()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-set","previewsByIndex":{}},{"groupName":"breakpoint","id":"function-get","uid":"breakpoint-function-get","title":"get()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#function-get","previewsByIndex":{}},{"groupName":"breakpoint","id":"variable-sizes","uid":"breakpoint-variable-sizes","title":"$sizes","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#variable-sizes"},{"groupName":"breakpoint","id":"mixin-set-sizes","uid":"breakpoint-mixin-set-sizes","title":"set-sizes()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-set-sizes","previewsByIndex":{}},{"groupName":"breakpoint","id":"function-get-sizes","uid":"breakpoint-function-get-sizes","title":"get-sizes()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#function-get-sizes"},{"groupName":"breakpoint","id":"function-get-size","uid":"breakpoint-function-get-size","title":"get-size()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#function-get-size"},{"groupName":"breakpoint","id":"function-exists","uid":"breakpoint-function-exists","title":"exists()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#function-exists"},{"groupName":"breakpoint","id":"mixin-min","uid":"breakpoint-mixin-min","title":"min()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-min","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-max","uid":"breakpoint-mixin-max","title":"max()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-max","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-min-max","uid":"breakpoint-mixin-min-max","title":"min-max()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-min-max","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-from","uid":"breakpoint-mixin-from","title":"from()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-from","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-embed-for-scripts","uid":"breakpoint-mixin-embed-for-scripts","title":"embed-for-scripts()","groupPath":"/core/breakpoint/","path":"/core/breakpoint/#mixin-embed-for-scripts"}];
+  const sassdocGroup = [{"groupName":"breakpoint","id":"variable-config","uid":"breakpoint-variable-config","title":"$config","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#variable-config"},{"groupName":"breakpoint","id":"mixin-set","uid":"breakpoint-mixin-set","title":"set()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-set","previewsByIndex":{}},{"groupName":"breakpoint","id":"function-get","uid":"breakpoint-function-get","title":"get()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#function-get","previewsByIndex":{}},{"groupName":"breakpoint","id":"variable-sizes","uid":"breakpoint-variable-sizes","title":"$sizes","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#variable-sizes"},{"groupName":"breakpoint","id":"mixin-set-sizes","uid":"breakpoint-mixin-set-sizes","title":"set-sizes()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-set-sizes","previewsByIndex":{}},{"groupName":"breakpoint","id":"function-get-sizes","uid":"breakpoint-function-get-sizes","title":"get-sizes()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#function-get-sizes"},{"groupName":"breakpoint","id":"function-get-size","uid":"breakpoint-function-get-size","title":"get-size()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#function-get-size"},{"groupName":"breakpoint","id":"function-exists","uid":"breakpoint-function-exists","title":"exists()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#function-exists"},{"groupName":"breakpoint","id":"mixin-min","uid":"breakpoint-mixin-min","title":"min()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-min","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-max","uid":"breakpoint-mixin-max","title":"max()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-max","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-min-max","uid":"breakpoint-mixin-min-max","title":"min-max()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-min-max","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-from","uid":"breakpoint-mixin-from","title":"from()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-from","previewsByIndex":{}},{"groupName":"breakpoint","id":"mixin-embed-for-scripts","uid":"breakpoint-mixin-embed-for-scripts","title":"embed-for-scripts()","groupPath":"/scss/core/breakpoint/","path":"/scss/core/breakpoint/#mixin-embed-for-scripts"}];
   export default {
     components: {
       SassdocPreview,

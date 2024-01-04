@@ -77,7 +77,7 @@ Example of type size as base unprefixed
 
 #### Require
 
-- [get()](/base/elements/#function-get)
+- [get()](/scss/base/elements/#function-get)
   
   
 
@@ -86,7 +86,7 @@ Example of type size as base unprefixed
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"typography","id":"mixin-styles","uid":"typography-mixin-styles","title":"styles()","groupPath":"/base/typography/","path":"/base/typography/#mixin-styles","previewsByIndex":{"1":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>"}}];
+  const sassdocGroup = [{"groupName":"typography","id":"mixin-styles","uid":"typography-mixin-styles","title":"styles()","groupPath":"/scss/base/typography/","path":"/scss/base/typography/#mixin-styles","previewsByIndex":{"1":"<span class=\"h1\">A</span>\n<span class=\"h2\">A</span>\n<span class=\"h3\">A</span>\n<span class=\"h4\">A</span>\n<span class=\"h5\">A</span>\n<span class=\"h6\">A</span>"}}];
   export default {
     components: {
       SassdocPreview,

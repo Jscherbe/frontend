@@ -63,7 +63,7 @@ Prints the normalize stylesheet. Originally based on modern-normalize 1.1.0
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"normalize","id":"mixin-styles","uid":"normalize-mixin-styles","title":"styles()","groupPath":"/base/normalize/","path":"/base/normalize/#mixin-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"normalize","id":"mixin-styles","uid":"normalize-mixin-styles","title":"styles()","groupPath":"/scss/base/normalize/","path":"/scss/base/normalize/#mixin-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

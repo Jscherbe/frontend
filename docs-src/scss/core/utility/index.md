@@ -49,7 +49,7 @@ Strips the unit from the number
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"utility","id":"function-strip-unit","uid":"utility-function-strip-unit","title":"strip-unit()","groupPath":"/core/utility/","path":"/core/utility/#function-strip-unit"}];
+  const sassdocGroup = [{"groupName":"utility","id":"function-strip-unit","uid":"utility-function-strip-unit","title":"strip-unit()","groupPath":"/scss/core/utility/","path":"/scss/core/utility/#function-strip-unit"}];
   export default {
     components: {
       SassdocPreview,

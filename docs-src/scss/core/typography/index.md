@@ -193,7 +193,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -289,7 +289,7 @@ Setting the error and type color
 #### Require
 
 - map-merge()
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -369,11 +369,11 @@ Print a typography size (font-size, line-height)
 
 #### Require
 
-- [font-size-responsive()](/core/typography/#mixin-font-size-responsive)
-- [get-size()](/core/breakpoint/#function-get-size)
-- [get-size-converted-value()](/core/typography/#function-get-size-converted-value)
-- [get()](/core/breakpoint/#function-get)
-- [get-size-value()](/core/typography/#function-get-size-value)
+- [font-size-responsive()](/scss/core/typography/#mixin-font-size-responsive)
+- [get-size()](/scss/core/breakpoint/#function-get-size)
+- [get-size-converted-value()](/scss/core/typography/#function-get-size-converted-value)
+- [get()](/scss/core/breakpoint/#function-get)
+- [get-size-value()](/scss/core/typography/#function-get-size-value)
   
   
 
@@ -421,7 +421,7 @@ Get a config option
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -471,8 +471,8 @@ Get scale of the base font-size
 
 #### Require
 
-- [ratio-scale-size()](/core/calculate/#function-ratio-scale-size)
-- [get()](/core/breakpoint/#function-get)
+- [ratio-scale-size()](/scss/core/calculate/#function-ratio-scale-size)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -522,8 +522,8 @@ Get scale of the line-height
 
 #### Require
 
-- [ratio-scale-size()](/core/calculate/#function-ratio-scale-size)
-- [get()](/core/breakpoint/#function-get)
+- [ratio-scale-size()](/scss/core/calculate/#function-ratio-scale-size)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -573,7 +573,7 @@ Convert pixel value to rem value based on typography $font-size
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -624,7 +624,7 @@ Changes pixels to em
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -669,7 +669,7 @@ Creates a size map
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -720,7 +720,7 @@ Get a size's map
 #### Require
 
 - require-map-get()
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -761,9 +761,9 @@ Print a font-size for a given size
 
 #### Require
 
-- [get-size()](/core/breakpoint/#function-get-size)
-- [get()](/core/breakpoint/#function-get)
-- [rem()](/core/typography/#function-rem)
+- [get-size()](/scss/core/breakpoint/#function-get-size)
+- [get()](/scss/core/breakpoint/#function-get)
+- [rem()](/scss/core/typography/#function-rem)
   
 
 
@@ -811,7 +811,7 @@ Forces conversion to unitless line-height
 #### Require
 
 - strip-unit()
-- [rem()](/core/typography/#function-rem)
+- [rem()](/scss/core/typography/#function-rem)
   
 
 
@@ -853,9 +853,9 @@ Print a value from the size and convert it (to appropriate unit for framework)
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
-- [unitless-line-height()](/core/typography/#function-unitless-line-height)
-- [rem()](/core/typography/#function-rem)
+- [get()](/scss/core/breakpoint/#function-get)
+- [unitless-line-height()](/scss/core/typography/#function-unitless-line-height)
+- [rem()](/scss/core/typography/#function-rem)
   
 
 
@@ -898,7 +898,7 @@ Get a sizes property value that doesn't need conversion
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
   
 
@@ -907,7 +907,7 @@ Get a sizes property value that doesn't need conversion
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"typography","id":"variable-config","uid":"typography-variable-config","title":"$config","groupPath":"/core/typography/","path":"/core/typography/#variable-config"},{"groupName":"typography","id":"mixin-set","uid":"typography-mixin-set","title":"set()","groupPath":"/core/typography/","path":"/core/typography/#mixin-set"},{"groupName":"typography","id":"function-get","uid":"typography-function-get","title":"get()","groupPath":"/core/typography/","path":"/core/typography/#function-get"},{"groupName":"typography","id":"function-scale","uid":"typography-function-scale","title":"scale()","groupPath":"/core/typography/","path":"/core/typography/#function-scale"},{"groupName":"typography","id":"function-scale-line-height","uid":"typography-function-scale-line-height","title":"scale-line-height()","groupPath":"/core/typography/","path":"/core/typography/#function-scale-line-height"},{"groupName":"typography","id":"function-rem","uid":"typography-function-rem","title":"rem()","groupPath":"/core/typography/","path":"/core/typography/#function-rem"},{"groupName":"typography","id":"function-em","uid":"typography-function-em","title":"em()","groupPath":"/core/typography/","path":"/core/typography/#function-em"},{"groupName":"typography","id":"mixin-word-break","uid":"typography-mixin-word-break","title":"word-break()","groupPath":"/core/typography/","path":"/core/typography/#mixin-word-break"},{"groupName":"typography","id":"function-new-size","uid":"typography-function-new-size","title":"new-size()","groupPath":"/core/typography/","path":"/core/typography/#function-new-size"},{"groupName":"typography","id":"variable-sizes","uid":"typography-variable-sizes","title":"$sizes","groupPath":"/core/typography/","path":"/core/typography/#variable-sizes"},{"groupName":"typography","id":"mixin-set-sizes","uid":"typography-mixin-set-sizes","title":"set-sizes()","groupPath":"/core/typography/","path":"/core/typography/#mixin-set-sizes","previewsByIndex":{}},{"groupName":"typography","id":"function-get-size","uid":"typography-function-get-size","title":"get-size()","groupPath":"/core/typography/","path":"/core/typography/#function-get-size"},{"groupName":"typography","id":"function-font-size","uid":"typography-function-font-size","title":"font-size()","groupPath":"/core/typography/","path":"/core/typography/#function-font-size"},{"groupName":"typography","id":"function-unitless-line-height","uid":"typography-function-unitless-line-height","title":"unitless-line-height()","groupPath":"/core/typography/","path":"/core/typography/#function-unitless-line-height"},{"groupName":"typography","id":"function-get-size-converted-value","uid":"typography-function-get-size-converted-value","title":"get-size-converted-value()","groupPath":"/core/typography/","path":"/core/typography/#function-get-size-converted-value"},{"groupName":"typography","id":"function-get-size-value","uid":"typography-function-get-size-value","title":"get-size-value()","groupPath":"/core/typography/","path":"/core/typography/#function-get-size-value"},{"groupName":"typography","id":"mixin-font-size-responsive","uid":"typography-mixin-font-size-responsive","title":"font-size-responsive()","groupPath":"/core/typography/","path":"/core/typography/#mixin-font-size-responsive"},{"groupName":"typography","id":"mixin-size","uid":"typography-mixin-size","title":"size()","groupPath":"/core/typography/","path":"/core/typography/#mixin-size"}];
+  const sassdocGroup = [{"groupName":"typography","id":"variable-config","uid":"typography-variable-config","title":"$config","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#variable-config"},{"groupName":"typography","id":"mixin-set","uid":"typography-mixin-set","title":"set()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#mixin-set"},{"groupName":"typography","id":"function-get","uid":"typography-function-get","title":"get()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-get"},{"groupName":"typography","id":"function-scale","uid":"typography-function-scale","title":"scale()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-scale"},{"groupName":"typography","id":"function-scale-line-height","uid":"typography-function-scale-line-height","title":"scale-line-height()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-scale-line-height"},{"groupName":"typography","id":"function-rem","uid":"typography-function-rem","title":"rem()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-rem"},{"groupName":"typography","id":"function-em","uid":"typography-function-em","title":"em()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-em"},{"groupName":"typography","id":"mixin-word-break","uid":"typography-mixin-word-break","title":"word-break()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#mixin-word-break"},{"groupName":"typography","id":"function-new-size","uid":"typography-function-new-size","title":"new-size()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-new-size"},{"groupName":"typography","id":"variable-sizes","uid":"typography-variable-sizes","title":"$sizes","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#variable-sizes"},{"groupName":"typography","id":"mixin-set-sizes","uid":"typography-mixin-set-sizes","title":"set-sizes()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#mixin-set-sizes","previewsByIndex":{}},{"groupName":"typography","id":"function-get-size","uid":"typography-function-get-size","title":"get-size()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-get-size"},{"groupName":"typography","id":"function-font-size","uid":"typography-function-font-size","title":"font-size()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-font-size"},{"groupName":"typography","id":"function-unitless-line-height","uid":"typography-function-unitless-line-height","title":"unitless-line-height()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-unitless-line-height"},{"groupName":"typography","id":"function-get-size-converted-value","uid":"typography-function-get-size-converted-value","title":"get-size-converted-value()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-get-size-converted-value"},{"groupName":"typography","id":"function-get-size-value","uid":"typography-function-get-size-value","title":"get-size-value()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#function-get-size-value"},{"groupName":"typography","id":"mixin-font-size-responsive","uid":"typography-mixin-font-size-responsive","title":"font-size-responsive()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#mixin-font-size-responsive"},{"groupName":"typography","id":"mixin-size","uid":"typography-mixin-size","title":"size()","groupPath":"/scss/core/typography/","path":"/scss/core/typography/#mixin-size"}];
   export default {
     components: {
       SassdocPreview,

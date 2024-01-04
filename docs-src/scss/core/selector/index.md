@@ -111,7 +111,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -198,7 +198,7 @@ General example, replace module-name with module's name
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -235,7 +235,7 @@ Change a class used in the system (ie. like a component for example)
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
   
 
@@ -244,7 +244,7 @@ Change a class used in the system (ie. like a component for example)
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"selector","id":"variable-config","uid":"selector-variable-config","title":"$config","groupPath":"/core/selector/","path":"/core/selector/#variable-config"},{"groupName":"selector","id":"mixin-set","uid":"selector-mixin-set","title":"set()","groupPath":"/core/selector/","path":"/core/selector/#mixin-set","previewsByIndex":{}},{"groupName":"selector","id":"function-get","uid":"selector-function-get","title":"get()","groupPath":"/core/selector/","path":"/core/selector/#function-get","previewsByIndex":{}},{"groupName":"selector","id":"mixin-set-class-overrides","uid":"selector-mixin-set-class-overrides","title":"set-class-overrides()","groupPath":"/core/selector/","path":"/core/selector/#mixin-set-class-overrides"},{"groupName":"selector","id":"function-class","uid":"selector-function-class","title":"class()","groupPath":"/core/selector/","path":"/core/selector/#function-class"}];
+  const sassdocGroup = [{"groupName":"selector","id":"variable-config","uid":"selector-variable-config","title":"$config","groupPath":"/scss/core/selector/","path":"/scss/core/selector/#variable-config"},{"groupName":"selector","id":"mixin-set","uid":"selector-mixin-set","title":"set()","groupPath":"/scss/core/selector/","path":"/scss/core/selector/#mixin-set","previewsByIndex":{}},{"groupName":"selector","id":"function-get","uid":"selector-function-get","title":"get()","groupPath":"/scss/core/selector/","path":"/scss/core/selector/#function-get","previewsByIndex":{}},{"groupName":"selector","id":"mixin-set-class-overrides","uid":"selector-mixin-set-class-overrides","title":"set-class-overrides()","groupPath":"/scss/core/selector/","path":"/scss/core/selector/#mixin-set-class-overrides"},{"groupName":"selector","id":"function-class","uid":"selector-function-class","title":"class()","groupPath":"/scss/core/selector/","path":"/scss/core/selector/#function-class"}];
   export default {
     components: {
       SassdocPreview,

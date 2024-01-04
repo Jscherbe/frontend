@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const dist = resolve(__dirname, "../scss/");
+const dist = resolve(__dirname, "../");
 
 const commonConfig = {
   previewHead: `
@@ -22,7 +22,7 @@ const commonConfig = {
 const subConfig = base => ({
   ...commonConfig,
   dir: resolve(__dirname, "../../scss/", base),
-  pathBase: `/${ base }`,
+  pathBase: `/scss/${ base }`,
   dist,
 });
 
@@ -31,7 +31,7 @@ const configs = [
     ...commonConfig,
     dist,
     dir: resolve(__dirname, "../../scss/"),
-    pathBase: "/core/",
+    pathBase: "/scss/core/",
     sassdocOptions: {
       exclude: [
         "base/*",

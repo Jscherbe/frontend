@@ -107,7 +107,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/base/elements/#variable-config)
+- [$config](/scss/base/elements/#variable-config)
   
 
 
@@ -134,7 +134,7 @@ Output Styles
 
 #### Require
 
-- [get()](/base/elements/#function-get)
+- [get()](/scss/base/elements/#function-get)
   
   
 
@@ -189,7 +189,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/base/elements/#variable-config)
+- [$config](/scss/base/elements/#variable-config)
   
   
 
@@ -198,7 +198,7 @@ General example, replace module-name with module's name
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"layout","id":"variable-config","uid":"layout-variable-config","title":"$config","groupPath":"/base/layout/","path":"/base/layout/#variable-config"},{"groupName":"layout","id":"mixin-set","uid":"layout-mixin-set","title":"set()","groupPath":"/base/layout/","path":"/base/layout/#mixin-set","previewsByIndex":{}},{"groupName":"layout","id":"function-get","uid":"layout-function-get","title":"get()","groupPath":"/base/layout/","path":"/base/layout/#function-get","previewsByIndex":{}},{"groupName":"layout","id":"mixin-styles","uid":"layout-mixin-styles","title":"styles()","groupPath":"/base/layout/","path":"/base/layout/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"layout","id":"variable-config","uid":"layout-variable-config","title":"$config","groupPath":"/scss/base/layout/","path":"/scss/base/layout/#variable-config"},{"groupName":"layout","id":"mixin-set","uid":"layout-mixin-set","title":"set()","groupPath":"/scss/base/layout/","path":"/scss/base/layout/#mixin-set","previewsByIndex":{}},{"groupName":"layout","id":"function-get","uid":"layout-function-get","title":"get()","groupPath":"/scss/base/layout/","path":"/scss/base/layout/#function-get","previewsByIndex":{}},{"groupName":"layout","id":"mixin-styles","uid":"layout-mixin-styles","title":"styles()","groupPath":"/scss/base/layout/","path":"/scss/base/layout/#mixin-styles"}];
   export default {
     components: {
       SassdocPreview,

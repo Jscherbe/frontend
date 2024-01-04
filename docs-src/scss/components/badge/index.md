@@ -109,7 +109,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
 
 
@@ -179,7 +179,7 @@ Prints badge component styles
 
 #### Require
 
-- [get()](/components/badge/#function-get)
+- [get()](/scss/components/badge/#function-get)
   
   
 
@@ -221,7 +221,7 @@ Get a config option
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
   
 
@@ -230,7 +230,7 @@ Get a config option
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"badge","id":"variable-config","uid":"badge-variable-config","title":"$config","groupPath":"/components/badge/","path":"/components/badge/#variable-config"},{"groupName":"badge","id":"mixin-set","uid":"badge-mixin-set","title":"set()","groupPath":"/components/badge/","path":"/components/badge/#mixin-set"},{"groupName":"badge","id":"function-get","uid":"badge-function-get","title":"get()","groupPath":"/components/badge/","path":"/components/badge/#function-get"},{"groupName":"badge","id":"mixin-styles","uid":"badge-mixin-styles","title":"styles()","groupPath":"/components/badge/","path":"/components/badge/#mixin-styles","previewsByIndex":{"1":"<div class=\"badge\">\n  <div class=\"badge__inner\">\n    <img src=\"...\" alt=\"...\">\n  </div>\n</div>\n\n<div class=\"badge\">\n  <div class=\"badge__inner\">\n    <span>JS</span>\n  </div>\n</div>"}}];
+  const sassdocGroup = [{"groupName":"badge","id":"variable-config","uid":"badge-variable-config","title":"$config","groupPath":"/scss/components/badge/","path":"/scss/components/badge/#variable-config"},{"groupName":"badge","id":"mixin-set","uid":"badge-mixin-set","title":"set()","groupPath":"/scss/components/badge/","path":"/scss/components/badge/#mixin-set"},{"groupName":"badge","id":"function-get","uid":"badge-function-get","title":"get()","groupPath":"/scss/components/badge/","path":"/scss/components/badge/#function-get"},{"groupName":"badge","id":"mixin-styles","uid":"badge-mixin-styles","title":"styles()","groupPath":"/scss/components/badge/","path":"/scss/components/badge/#mixin-styles","previewsByIndex":{"1":"<div class=\"badge\">\n  <div class=\"badge__inner\">\n    <img src=\"...\" alt=\"...\">\n  </div>\n</div>\n\n<div class=\"badge\">\n  <div class=\"badge__inner\">\n    <span>JS</span>\n  </div>\n</div>"}}];
   export default {
     components: {
       SassdocPreview,

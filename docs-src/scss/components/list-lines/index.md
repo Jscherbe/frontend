@@ -87,7 +87,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
 
 
@@ -114,7 +114,7 @@ Output component styles
 
 #### Require
 
-- [get()](/components/badge/#function-get)
+- [get()](/scss/components/badge/#function-get)
   
   
 
@@ -156,7 +156,7 @@ Get a config option
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
   
 
@@ -165,7 +165,7 @@ Get a config option
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"list-lines","id":"variable-config","uid":"list-lines-variable-config","title":"$config","groupPath":"/components/list-lines/","path":"/components/list-lines/#variable-config"},{"groupName":"list-lines","id":"mixin-set","uid":"list-lines-mixin-set","title":"set()","groupPath":"/components/list-lines/","path":"/components/list-lines/#mixin-set"},{"groupName":"list-lines","id":"function-get","uid":"list-lines-function-get","title":"get()","groupPath":"/components/list-lines/","path":"/components/list-lines/#function-get"},{"groupName":"list-lines","id":"mixin-inner-styles","uid":"list-lines-mixin-inner-styles","title":"inner-styles()","groupPath":"/components/list-lines/","path":"/components/list-lines/#mixin-inner-styles"}];
+  const sassdocGroup = [{"groupName":"list-lines","id":"variable-config","uid":"list-lines-variable-config","title":"$config","groupPath":"/scss/components/list-lines/","path":"/scss/components/list-lines/#variable-config"},{"groupName":"list-lines","id":"mixin-set","uid":"list-lines-mixin-set","title":"set()","groupPath":"/scss/components/list-lines/","path":"/scss/components/list-lines/#mixin-set"},{"groupName":"list-lines","id":"function-get","uid":"list-lines-function-get","title":"get()","groupPath":"/scss/components/list-lines/","path":"/scss/components/list-lines/#function-get"},{"groupName":"list-lines","id":"mixin-inner-styles","uid":"list-lines-mixin-inner-styles","title":"inner-styles()","groupPath":"/scss/components/list-lines/","path":"/scss/components/list-lines/#mixin-inner-styles"}];
   export default {
     components: {
       SassdocPreview,

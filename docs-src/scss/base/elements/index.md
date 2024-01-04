@@ -107,7 +107,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/base/elements/#variable-config)
+- [$config](/scss/base/elements/#variable-config)
   
 
 
@@ -148,7 +148,7 @@ Prints elements base styles
 
 #### Require
 
-- [get()](/base/elements/#function-get)
+- [get()](/scss/base/elements/#function-get)
   
   
 
@@ -203,7 +203,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/base/elements/#variable-config)
+- [$config](/scss/base/elements/#variable-config)
   
   
 
@@ -212,7 +212,7 @@ General example, replace module-name with module's name
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"elements","id":"variable-config","uid":"elements-variable-config","title":"$config","groupPath":"/base/elements/","path":"/base/elements/#variable-config"},{"groupName":"elements","id":"mixin-set","uid":"elements-mixin-set","title":"set()","groupPath":"/base/elements/","path":"/base/elements/#mixin-set","previewsByIndex":{}},{"groupName":"elements","id":"function-get","uid":"elements-function-get","title":"get()","groupPath":"/base/elements/","path":"/base/elements/#function-get","previewsByIndex":{}},{"groupName":"elements","id":"mixin-base-elements-styles","uid":"elements-mixin-base-elements-styles","title":"base-elements-styles()","groupPath":"/base/elements/","path":"/base/elements/#mixin-base-elements-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"elements","id":"variable-config","uid":"elements-variable-config","title":"$config","groupPath":"/scss/base/elements/","path":"/scss/base/elements/#variable-config"},{"groupName":"elements","id":"mixin-set","uid":"elements-mixin-set","title":"set()","groupPath":"/scss/base/elements/","path":"/scss/base/elements/#mixin-set","previewsByIndex":{}},{"groupName":"elements","id":"function-get","uid":"elements-function-get","title":"get()","groupPath":"/scss/base/elements/","path":"/scss/base/elements/#function-get","previewsByIndex":{}},{"groupName":"elements","id":"mixin-base-elements-styles","uid":"elements-mixin-base-elements-styles","title":"base-elements-styles()","groupPath":"/scss/base/elements/","path":"/scss/base/elements/#mixin-base-elements-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

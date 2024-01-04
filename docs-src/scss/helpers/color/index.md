@@ -43,7 +43,7 @@ Prints color-context and color-[name] styles as helper classes (bottom of styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"color","id":"mixin-styles","uid":"color-mixin-styles","title":"styles()","groupPath":"/helpers/color/","path":"/helpers/color/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"color","id":"mixin-styles","uid":"color-mixin-styles","title":"styles()","groupPath":"/scss/helpers/color/","path":"/scss/helpers/color/#mixin-styles"}];
   export default {
     components: {
       SassdocPreview,

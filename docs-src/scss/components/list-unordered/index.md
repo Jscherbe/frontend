@@ -39,7 +39,7 @@ Output styles
 
 #### Require
 
-- [get()](/components/badge/#function-get)
+- [get()](/scss/components/badge/#function-get)
   
   
 
@@ -48,7 +48,7 @@ Output styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"list-unordered","id":"mixin-styles","uid":"list-unordered-mixin-styles","title":"styles()","groupPath":"/components/list-unordered/","path":"/components/list-unordered/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"list-unordered","id":"mixin-styles","uid":"list-unordered-mixin-styles","title":"styles()","groupPath":"/scss/components/list-unordered/","path":"/scss/components/list-unordered/#mixin-styles"}];
   export default {
     components: {
       SassdocPreview,

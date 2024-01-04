@@ -117,7 +117,7 @@ Setting the error and type color
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
   
 
@@ -168,7 +168,7 @@ Get a unit by name (preset) or number (multiplier of base)
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
   
 
@@ -177,7 +177,7 @@ Get a unit by name (preset) or number (multiplier of base)
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"units","id":"variable-config","uid":"units-variable-config","title":"$config","groupPath":"/core/units/","path":"/core/units/#variable-config"},{"groupName":"units","id":"mixin-set","uid":"units-mixin-set","title":"set()","groupPath":"/core/units/","path":"/core/units/#mixin-set","previewsByIndex":{}},{"groupName":"units","id":"function-get","uid":"units-function-get","title":"get()","groupPath":"/core/units/","path":"/core/units/#function-get"}];
+  const sassdocGroup = [{"groupName":"units","id":"variable-config","uid":"units-variable-config","title":"$config","groupPath":"/scss/core/units/","path":"/scss/core/units/#variable-config"},{"groupName":"units","id":"mixin-set","uid":"units-mixin-set","title":"set()","groupPath":"/scss/core/units/","path":"/scss/core/units/#mixin-set","previewsByIndex":{}},{"groupName":"units","id":"function-get","uid":"units-function-get","title":"get()","groupPath":"/scss/core/units/","path":"/scss/core/units/#function-get"}];
   export default {
     components: {
       SassdocPreview,

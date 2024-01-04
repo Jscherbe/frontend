@@ -107,7 +107,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -182,7 +182,7 @@ Require that the list only is only made up of allowed items
 
 #### Require
 
-- [require-list-has()](/core/utils/#mixin-require-list-has)
+- [require-list-has()](/scss/core/utils/#mixin-require-list-has)
   
 
 
@@ -269,8 +269,8 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [require-map-get()](/core/utils/#function-require-map-get)
-- [$config](/core/breakpoint/#variable-config)
+- [require-map-get()](/scss/core/utils/#function-require-map-get)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -323,7 +323,7 @@ Get a required value from a map, throw an error if not found
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -360,7 +360,7 @@ Returns true if we should include something (map of booleans)
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -501,7 +501,7 @@ Left in for compatability, will be removed, use map-merge with mode
 
 #### Require
 
-- [map-merge()](/core/utils/#function-map-merge)
+- [map-merge()](/scss/core/utils/#function-map-merge)
   
 
 
@@ -559,7 +559,7 @@ Provides fallback values from the same map
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -606,7 +606,7 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -649,7 +649,7 @@ Replaces all or one occurence of a string within a string
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"utils","id":"variable-config","uid":"utils-variable-config","title":"$config","groupPath":"/core/utils/","path":"/core/utils/#variable-config"},{"groupName":"utils","id":"mixin-set","uid":"utils-mixin-set","title":"set()","groupPath":"/core/utils/","path":"/core/utils/#mixin-set","previewsByIndex":{}},{"groupName":"utils","id":"function-get","uid":"utils-function-get","title":"get()","groupPath":"/core/utils/","path":"/core/utils/#function-get","previewsByIndex":{}},{"groupName":"utils","id":"function-require-map-get","uid":"utils-function-require-map-get","title":"require-map-get()","groupPath":"/core/utils/","path":"/core/utils/#function-require-map-get"},{"groupName":"utils","id":"mixin-require-list-has","uid":"utils-mixin-require-list-has","title":"require-list-has()","groupPath":"/core/utils/","path":"/core/utils/#mixin-require-list-has"},{"groupName":"utils","id":"mixin-require-list-contains","uid":"utils-mixin-require-list-contains","title":"require-list-contains()","groupPath":"/core/utils/","path":"/core/utils/#mixin-require-list-contains"},{"groupName":"utils","id":"function-included","uid":"utils-function-included","title":"included()","groupPath":"/core/utils/","path":"/core/utils/#function-included"},{"groupName":"utils","id":"mixin-file-header","uid":"utils-mixin-file-header","title":"file-header()","groupPath":"/core/utils/","path":"/core/utils/#mixin-file-header"},{"groupName":"utils","id":"function-if-type","uid":"utils-function-if-type","title":"if-type()","groupPath":"/core/utils/","path":"/core/utils/#function-if-type"},{"groupName":"utils","id":"function-number-info","uid":"utils-function-number-info","title":"number-info()","groupPath":"/core/utils/","path":"/core/utils/#function-number-info"},{"groupName":"utils","id":"function-map-merge","uid":"utils-function-map-merge","title":"map-merge()","groupPath":"/core/utils/","path":"/core/utils/#function-map-merge"},{"groupName":"utils","id":"function-map-merge-or-overwrite","uid":"utils-function-map-merge-or-overwrite","title":"map-merge-or-overwrite()","groupPath":"/core/utils/","path":"/core/utils/#function-map-merge-or-overwrite"},{"groupName":"utils","id":"function-fallback","uid":"utils-function-fallback","title":"fallback()","groupPath":"/core/utils/","path":"/core/utils/#function-fallback"},{"groupName":"utils","id":"function-map-fallback","uid":"utils-function-map-fallback","title":"map-fallback()","groupPath":"/core/utils/","path":"/core/utils/#function-map-fallback"},{"groupName":"utils","id":"function-function-fallback","uid":"utils-function-function-fallback","title":"function-fallback()","groupPath":"/core/utils/","path":"/core/utils/#function-function-fallback"},{"groupName":"utils","id":"function-string-replace","uid":"utils-function-string-replace","title":"string-replace()","groupPath":"/core/utils/","path":"/core/utils/#function-string-replace"}];
+  const sassdocGroup = [{"groupName":"utils","id":"variable-config","uid":"utils-variable-config","title":"$config","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#variable-config"},{"groupName":"utils","id":"mixin-set","uid":"utils-mixin-set","title":"set()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#mixin-set","previewsByIndex":{}},{"groupName":"utils","id":"function-get","uid":"utils-function-get","title":"get()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-get","previewsByIndex":{}},{"groupName":"utils","id":"function-require-map-get","uid":"utils-function-require-map-get","title":"require-map-get()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-require-map-get"},{"groupName":"utils","id":"mixin-require-list-has","uid":"utils-mixin-require-list-has","title":"require-list-has()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#mixin-require-list-has"},{"groupName":"utils","id":"mixin-require-list-contains","uid":"utils-mixin-require-list-contains","title":"require-list-contains()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#mixin-require-list-contains"},{"groupName":"utils","id":"function-included","uid":"utils-function-included","title":"included()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-included"},{"groupName":"utils","id":"mixin-file-header","uid":"utils-mixin-file-header","title":"file-header()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#mixin-file-header"},{"groupName":"utils","id":"function-if-type","uid":"utils-function-if-type","title":"if-type()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-if-type"},{"groupName":"utils","id":"function-number-info","uid":"utils-function-number-info","title":"number-info()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-number-info"},{"groupName":"utils","id":"function-map-merge","uid":"utils-function-map-merge","title":"map-merge()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-map-merge"},{"groupName":"utils","id":"function-map-merge-or-overwrite","uid":"utils-function-map-merge-or-overwrite","title":"map-merge-or-overwrite()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-map-merge-or-overwrite"},{"groupName":"utils","id":"function-fallback","uid":"utils-function-fallback","title":"fallback()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-fallback"},{"groupName":"utils","id":"function-map-fallback","uid":"utils-function-map-fallback","title":"map-fallback()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-map-fallback"},{"groupName":"utils","id":"function-function-fallback","uid":"utils-function-function-fallback","title":"function-fallback()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-function-fallback"},{"groupName":"utils","id":"function-string-replace","uid":"utils-function-string-replace","title":"string-replace()","groupPath":"/scss/core/utils/","path":"/scss/core/utils/#function-string-replace"}];
   export default {
     components: {
       SassdocPreview,

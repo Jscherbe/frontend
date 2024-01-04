@@ -57,7 +57,7 @@ Prints CSS keyframes
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"keyframes","id":"mixin-styles","uid":"keyframes-mixin-styles","title":"styles()","groupPath":"/base/keyframes/","path":"/base/keyframes/#mixin-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"keyframes","id":"mixin-styles","uid":"keyframes-mixin-styles","title":"styles()","groupPath":"/scss/base/keyframes/","path":"/scss/base/keyframes/#mixin-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

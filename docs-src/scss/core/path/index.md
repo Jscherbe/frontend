@@ -84,7 +84,7 @@ Set aliases or change defaults
 
 #### Require
 
-- [$aliases](/core/path/#variable-aliases)
+- [$aliases](/scss/core/path/#variable-aliases)
   
   
 
@@ -126,7 +126,7 @@ Get an aliase's path
 #### Require
 
 - require-map-get()
-- [$aliases](/core/path/#variable-aliases)
+- [$aliases](/scss/core/path/#variable-aliases)
   
 
 
@@ -172,7 +172,7 @@ Resolves a Path
 
 #### Require
 
-- [get-alias()](/core/path/#function-get-alias)
+- [get-alias()](/scss/core/path/#function-get-alias)
   
   
 
@@ -181,7 +181,7 @@ Resolves a Path
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"path","id":"variable-aliases","uid":"path-variable-aliases","title":"$aliases","groupPath":"/core/path/","path":"/core/path/#variable-aliases"},{"groupName":"path","id":"mixin-set-aliases","uid":"path-mixin-set-aliases","title":"set-aliases()","groupPath":"/core/path/","path":"/core/path/#mixin-set-aliases"},{"groupName":"path","id":"function-get-alias","uid":"path-function-get-alias","title":"get-alias()","groupPath":"/core/path/","path":"/core/path/#function-get-alias"},{"groupName":"path","id":"function-resolve","uid":"path-function-resolve","title":"resolve()","groupPath":"/core/path/","path":"/core/path/#function-resolve","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"path","id":"variable-aliases","uid":"path-variable-aliases","title":"$aliases","groupPath":"/scss/core/path/","path":"/scss/core/path/#variable-aliases"},{"groupName":"path","id":"mixin-set-aliases","uid":"path-mixin-set-aliases","title":"set-aliases()","groupPath":"/scss/core/path/","path":"/scss/core/path/#mixin-set-aliases"},{"groupName":"path","id":"function-get-alias","uid":"path-function-get-alias","title":"get-alias()","groupPath":"/scss/core/path/","path":"/scss/core/path/#function-get-alias"},{"groupName":"path","id":"function-resolve","uid":"path-function-resolve","title":"resolve()","groupPath":"/scss/core/path/","path":"/scss/core/path/#function-resolve","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

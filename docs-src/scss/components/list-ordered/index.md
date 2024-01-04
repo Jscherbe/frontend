@@ -43,7 +43,7 @@ Output styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"list-ordered","id":"mixin-styles","uid":"list-ordered-mixin-styles","title":"styles()","groupPath":"/components/list-ordered/","path":"/components/list-ordered/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"list-ordered","id":"mixin-styles","uid":"list-ordered-mixin-styles","title":"styles()","groupPath":"/scss/components/list-ordered/","path":"/scss/components/list-ordered/#mixin-styles"}];
   export default {
     components: {
       SassdocPreview,

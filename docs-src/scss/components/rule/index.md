@@ -108,7 +108,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
 
 
@@ -135,7 +135,7 @@ Output styles
 
 #### Require
 
-- [get()](/components/badge/#function-get)
+- [get()](/scss/components/badge/#function-get)
   
   
 
@@ -190,7 +190,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
   
 
@@ -199,7 +199,7 @@ General example, replace module-name with module's name
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"rule","id":"variable-config","uid":"rule-variable-config","title":"$config","groupPath":"/components/rule/","path":"/components/rule/#variable-config"},{"groupName":"rule","id":"mixin-set","uid":"rule-mixin-set","title":"set()","groupPath":"/components/rule/","path":"/components/rule/#mixin-set","previewsByIndex":{}},{"groupName":"rule","id":"function-get","uid":"rule-function-get","title":"get()","groupPath":"/components/rule/","path":"/components/rule/#function-get","previewsByIndex":{}},{"groupName":"rule","id":"mixin-styles","uid":"rule-mixin-styles","title":"styles()","groupPath":"/components/rule/","path":"/components/rule/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"rule","id":"variable-config","uid":"rule-variable-config","title":"$config","groupPath":"/scss/components/rule/","path":"/scss/components/rule/#variable-config"},{"groupName":"rule","id":"mixin-set","uid":"rule-mixin-set","title":"set()","groupPath":"/scss/components/rule/","path":"/scss/components/rule/#mixin-set","previewsByIndex":{}},{"groupName":"rule","id":"function-get","uid":"rule-function-get","title":"get()","groupPath":"/scss/components/rule/","path":"/scss/components/rule/#function-get","previewsByIndex":{}},{"groupName":"rule","id":"mixin-styles","uid":"rule-mixin-styles","title":"styles()","groupPath":"/scss/components/rule/","path":"/scss/components/rule/#mixin-styles"}];
   export default {
     components: {
       SassdocPreview,

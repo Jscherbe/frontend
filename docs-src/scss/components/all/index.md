@@ -71,7 +71,7 @@ Prints all Components styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"all","id":"mixin-component-styles","uid":"all-mixin-component-styles","title":"component-styles()","groupPath":"/components/all/","path":"/components/all/#mixin-component-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"all","id":"mixin-component-styles","uid":"all-mixin-component-styles","title":"component-styles()","groupPath":"/scss/components/all/","path":"/scss/components/all/#mixin-component-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

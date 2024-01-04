@@ -43,7 +43,7 @@ Prints color-context styles as base classes (top of stylesheet)
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"color","id":"mixin-styles","uid":"color-mixin-styles","title":"styles()","groupPath":"/base/color/","path":"/base/color/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"color","id":"mixin-styles","uid":"color-mixin-styles","title":"styles()","groupPath":"/scss/base/color/","path":"/scss/base/color/#mixin-styles"}];
   export default {
     components: {
       SassdocPreview,

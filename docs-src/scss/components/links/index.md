@@ -59,7 +59,7 @@ Link compontent styles (.link)
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"links","id":"mixin-styles","uid":"links-mixin-styles","title":"styles()","groupPath":"/components/links/","path":"/components/links/#mixin-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"links","id":"mixin-styles","uid":"links-mixin-styles","title":"styles()","groupPath":"/scss/components/links/","path":"/scss/components/links/#mixin-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

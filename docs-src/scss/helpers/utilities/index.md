@@ -57,7 +57,7 @@ Print utilities helper styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"utilities","id":"mixin-styles","uid":"utilities-mixin-styles","title":"styles()","groupPath":"/helpers/utilities/","path":"/helpers/utilities/#mixin-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"utilities","id":"mixin-styles","uid":"utilities-mixin-styles","title":"styles()","groupPath":"/scss/helpers/utilities/","path":"/scss/helpers/utilities/#mixin-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

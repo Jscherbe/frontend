@@ -100,7 +100,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -128,7 +128,7 @@ ie. \{ top: $containers-padding; }
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -159,7 +159,7 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -246,7 +246,7 @@ Get a config option
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
   
 
@@ -255,7 +255,7 @@ Get a config option
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"layout","id":"variable-config","uid":"layout-variable-config","title":"$config","groupPath":"/core/layout/","path":"/core/layout/#variable-config"},{"groupName":"layout","id":"mixin-set","uid":"layout-mixin-set","title":"set()","groupPath":"/core/layout/","path":"/core/layout/#mixin-set"},{"groupName":"layout","id":"function-get","uid":"layout-function-get","title":"get()","groupPath":"/core/layout/","path":"/core/layout/#function-get"},{"groupName":"layout","id":"mixin-match-container-padding","uid":"layout-mixin-match-container-padding","title":"match-container-padding()","groupPath":"/core/layout/","path":"/core/layout/#mixin-match-container-padding"},{"groupName":"layout","id":"mixin-match-container-margin","uid":"layout-mixin-match-container-margin","title":"match-container-margin()","groupPath":"/core/layout/","path":"/core/layout/#mixin-match-container-margin"},{"groupName":"layout","id":"mixin-clearfix","uid":"layout-mixin-clearfix","title":"clearfix()","groupPath":"/core/layout/","path":"/core/layout/#mixin-clearfix"},{"groupName":"layout","id":"mixin-remove-scrollbar","uid":"layout-mixin-remove-scrollbar","title":"remove-scrollbar()","groupPath":"/core/layout/","path":"/core/layout/#mixin-remove-scrollbar"}];
+  const sassdocGroup = [{"groupName":"layout","id":"variable-config","uid":"layout-variable-config","title":"$config","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#variable-config"},{"groupName":"layout","id":"mixin-set","uid":"layout-mixin-set","title":"set()","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#mixin-set"},{"groupName":"layout","id":"function-get","uid":"layout-function-get","title":"get()","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#function-get"},{"groupName":"layout","id":"mixin-match-container-padding","uid":"layout-mixin-match-container-padding","title":"match-container-padding()","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#mixin-match-container-padding"},{"groupName":"layout","id":"mixin-match-container-margin","uid":"layout-mixin-match-container-margin","title":"match-container-margin()","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#mixin-match-container-margin"},{"groupName":"layout","id":"mixin-clearfix","uid":"layout-mixin-clearfix","title":"clearfix()","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#mixin-clearfix"},{"groupName":"layout","id":"mixin-remove-scrollbar","uid":"layout-mixin-remove-scrollbar","title":"remove-scrollbar()","groupPath":"/scss/core/layout/","path":"/scss/core/layout/#mixin-remove-scrollbar"}];
   export default {
     components: {
       SassdocPreview,

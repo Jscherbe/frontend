@@ -207,7 +207,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -243,7 +243,7 @@ Sets rule styles
 
 #### Require
 
-- [$rule-styles](/core/element/#variable-rule-styles)
+- [$rule-styles](/scss/core/element/#variable-rule-styles)
   
 
 
@@ -279,7 +279,7 @@ Sets rule margins
 
 #### Require
 
-- [$rule-margins](/core/element/#variable-rule-margins)
+- [$rule-margins](/scss/core/element/#variable-rule-margins)
   
 
 
@@ -347,7 +347,7 @@ Print link styles
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -374,7 +374,7 @@ Print the defautl link styling (no hover and focus styles)
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -410,7 +410,7 @@ Print the ordered list items styling
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -446,7 +446,7 @@ Print the unordered list items styling
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -536,7 +536,7 @@ Get a config option
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -573,7 +573,7 @@ Get a rule style
 #### Require
 
 - require-map-get()
-- [$rule-styles](/core/element/#variable-rule-styles)
+- [$rule-styles](/scss/core/element/#variable-rule-styles)
   
 
 
@@ -610,7 +610,7 @@ Sets rule margin
 #### Require
 
 - require-map-get()
-- [$rule-margins](/core/element/#variable-rule-margins)
+- [$rule-margins](/scss/core/element/#variable-rule-margins)
   
   
 
@@ -619,7 +619,7 @@ Sets rule margin
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"element","id":"variable-config","uid":"element-variable-config","title":"$config","groupPath":"/core/element/","path":"/core/element/#variable-config"},{"groupName":"element","id":"variable-rule-styles","uid":"element-variable-rule-styles","title":"$rule-styles","groupPath":"/core/element/","path":"/core/element/#variable-rule-styles"},{"groupName":"element","id":"variable-rule-margins","uid":"element-variable-rule-margins","title":"$rule-margins","groupPath":"/core/element/","path":"/core/element/#variable-rule-margins"},{"groupName":"element","id":"mixin-set","uid":"element-mixin-set","title":"set()","groupPath":"/core/element/","path":"/core/element/#mixin-set"},{"groupName":"element","id":"function-get","uid":"element-function-get","title":"get()","groupPath":"/core/element/","path":"/core/element/#function-get"},{"groupName":"element","id":"mixin-set-rule-styles","uid":"element-mixin-set-rule-styles","title":"set-rule-styles()","groupPath":"/core/element/","path":"/core/element/#mixin-set-rule-styles"},{"groupName":"element","id":"mixin-set-rule-margins","uid":"element-mixin-set-rule-margins","title":"set-rule-margins()","groupPath":"/core/element/","path":"/core/element/#mixin-set-rule-margins"},{"groupName":"element","id":"function-get-rule-style","uid":"element-function-get-rule-style","title":"get-rule-style()","groupPath":"/core/element/","path":"/core/element/#function-get-rule-style"},{"groupName":"element","id":"function-get-rule-margin","uid":"element-function-get-rule-margin","title":"get-rule-margin()","groupPath":"/core/element/","path":"/core/element/#function-get-rule-margin"},{"groupName":"element","id":"mixin-rule","uid":"element-mixin-rule","title":"rule()","groupPath":"/core/element/","path":"/core/element/#mixin-rule"},{"groupName":"element","id":"mixin-link","uid":"element-mixin-link","title":"link()","groupPath":"/core/element/","path":"/core/element/#mixin-link"},{"groupName":"element","id":"mixin-link-defaults","uid":"element-mixin-link-defaults","title":"link-defaults()","groupPath":"/core/element/","path":"/core/element/#mixin-link-defaults"},{"groupName":"element","id":"mixin-styles-ordered-list","uid":"element-mixin-styles-ordered-list","title":"styles-ordered-list()","groupPath":"/core/element/","path":"/core/element/#mixin-styles-ordered-list"},{"groupName":"element","id":"mixin-styles-unordered-list","uid":"element-mixin-styles-unordered-list","title":"styles-unordered-list()","groupPath":"/core/element/","path":"/core/element/#mixin-styles-unordered-list"},{"groupName":"element","id":"mixin-hidden-visually","uid":"element-mixin-hidden-visually","title":"hidden-visually()","groupPath":"/core/element/","path":"/core/element/#mixin-hidden-visually","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"element","id":"variable-config","uid":"element-variable-config","title":"$config","groupPath":"/scss/core/element/","path":"/scss/core/element/#variable-config"},{"groupName":"element","id":"variable-rule-styles","uid":"element-variable-rule-styles","title":"$rule-styles","groupPath":"/scss/core/element/","path":"/scss/core/element/#variable-rule-styles"},{"groupName":"element","id":"variable-rule-margins","uid":"element-variable-rule-margins","title":"$rule-margins","groupPath":"/scss/core/element/","path":"/scss/core/element/#variable-rule-margins"},{"groupName":"element","id":"mixin-set","uid":"element-mixin-set","title":"set()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-set"},{"groupName":"element","id":"function-get","uid":"element-function-get","title":"get()","groupPath":"/scss/core/element/","path":"/scss/core/element/#function-get"},{"groupName":"element","id":"mixin-set-rule-styles","uid":"element-mixin-set-rule-styles","title":"set-rule-styles()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-set-rule-styles"},{"groupName":"element","id":"mixin-set-rule-margins","uid":"element-mixin-set-rule-margins","title":"set-rule-margins()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-set-rule-margins"},{"groupName":"element","id":"function-get-rule-style","uid":"element-function-get-rule-style","title":"get-rule-style()","groupPath":"/scss/core/element/","path":"/scss/core/element/#function-get-rule-style"},{"groupName":"element","id":"function-get-rule-margin","uid":"element-function-get-rule-margin","title":"get-rule-margin()","groupPath":"/scss/core/element/","path":"/scss/core/element/#function-get-rule-margin"},{"groupName":"element","id":"mixin-rule","uid":"element-mixin-rule","title":"rule()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-rule"},{"groupName":"element","id":"mixin-link","uid":"element-mixin-link","title":"link()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-link"},{"groupName":"element","id":"mixin-link-defaults","uid":"element-mixin-link-defaults","title":"link-defaults()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-link-defaults"},{"groupName":"element","id":"mixin-styles-ordered-list","uid":"element-mixin-styles-ordered-list","title":"styles-ordered-list()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-styles-ordered-list"},{"groupName":"element","id":"mixin-styles-unordered-list","uid":"element-mixin-styles-unordered-list","title":"styles-unordered-list()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-styles-unordered-list"},{"groupName":"element","id":"mixin-hidden-visually","uid":"element-mixin-hidden-visually","title":"hidden-visually()","groupPath":"/scss/core/element/","path":"/scss/core/element/#mixin-hidden-visually","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

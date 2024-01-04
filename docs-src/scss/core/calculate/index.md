@@ -92,7 +92,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -168,7 +168,7 @@ Get a config option
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -216,7 +216,7 @@ Calculate the size of something at a given scale (percentage/exponential)
 
 #### Require
 
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -266,7 +266,7 @@ Convert from pixel to em
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"calculate","id":"variable-config","uid":"calculate-variable-config","title":"$config","groupPath":"/core/calculate/","path":"/core/calculate/#variable-config"},{"groupName":"calculate","id":"mixin-set","uid":"calculate-mixin-set","title":"set()","groupPath":"/core/calculate/","path":"/core/calculate/#mixin-set"},{"groupName":"calculate","id":"function-get","uid":"calculate-function-get","title":"get()","groupPath":"/core/calculate/","path":"/core/calculate/#function-get"},{"groupName":"calculate","id":"function-ratio-scale-size","uid":"calculate-function-ratio-scale-size","title":"ratio-scale-size()","groupPath":"/core/calculate/","path":"/core/calculate/#function-ratio-scale-size"},{"groupName":"calculate","id":"function-pixel-to-em","uid":"calculate-function-pixel-to-em","title":"pixel-to-em()","groupPath":"/core/calculate/","path":"/core/calculate/#function-pixel-to-em"},{"groupName":"calculate","id":"mixin-responsive-property","uid":"calculate-mixin-responsive-property","title":"responsive-property()","groupPath":"/core/calculate/","path":"/core/calculate/#mixin-responsive-property"}];
+  const sassdocGroup = [{"groupName":"calculate","id":"variable-config","uid":"calculate-variable-config","title":"$config","groupPath":"/scss/core/calculate/","path":"/scss/core/calculate/#variable-config"},{"groupName":"calculate","id":"mixin-set","uid":"calculate-mixin-set","title":"set()","groupPath":"/scss/core/calculate/","path":"/scss/core/calculate/#mixin-set"},{"groupName":"calculate","id":"function-get","uid":"calculate-function-get","title":"get()","groupPath":"/scss/core/calculate/","path":"/scss/core/calculate/#function-get"},{"groupName":"calculate","id":"function-ratio-scale-size","uid":"calculate-function-ratio-scale-size","title":"ratio-scale-size()","groupPath":"/scss/core/calculate/","path":"/scss/core/calculate/#function-ratio-scale-size"},{"groupName":"calculate","id":"function-pixel-to-em","uid":"calculate-function-pixel-to-em","title":"pixel-to-em()","groupPath":"/scss/core/calculate/","path":"/scss/core/calculate/#function-pixel-to-em"},{"groupName":"calculate","id":"mixin-responsive-property","uid":"calculate-mixin-responsive-property","title":"responsive-property()","groupPath":"/scss/core/calculate/","path":"/scss/core/calculate/#mixin-responsive-property"}];
   export default {
     components: {
       SassdocPreview,

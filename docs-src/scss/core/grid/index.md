@@ -137,7 +137,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -181,7 +181,7 @@ Creates grid css (variation of original data-grid)
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
 - require-map-get()
   
   
@@ -238,7 +238,7 @@ Get a config option
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -276,7 +276,7 @@ Pass custom map to get gutter values from it
 
 #### Require
 
-- [get()](/core/breakpoint/#function-get)
+- [get()](/scss/core/breakpoint/#function-get)
 - require-map-get()
   
   
@@ -286,7 +286,7 @@ Pass custom map to get gutter values from it
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"grid","id":"variable-config","uid":"grid-variable-config","title":"$config","groupPath":"/core/grid/","path":"/core/grid/#variable-config"},{"groupName":"grid","id":"mixin-set","uid":"grid-mixin-set","title":"set()","groupPath":"/core/grid/","path":"/core/grid/#mixin-set","previewsByIndex":{}},{"groupName":"grid","id":"function-get","uid":"grid-function-get","title":"get()","groupPath":"/core/grid/","path":"/core/grid/#function-get","previewsByIndex":{}},{"groupName":"grid","id":"function-get-gutter","uid":"grid-function-get-gutter","title":"get-gutter()","groupPath":"/core/grid/","path":"/core/grid/#function-get-gutter"},{"groupName":"grid","id":"mixin-create","uid":"grid-mixin-create","title":"create()","groupPath":"/core/grid/","path":"/core/grid/#mixin-create"}];
+  const sassdocGroup = [{"groupName":"grid","id":"variable-config","uid":"grid-variable-config","title":"$config","groupPath":"/scss/core/grid/","path":"/scss/core/grid/#variable-config"},{"groupName":"grid","id":"mixin-set","uid":"grid-mixin-set","title":"set()","groupPath":"/scss/core/grid/","path":"/scss/core/grid/#mixin-set","previewsByIndex":{}},{"groupName":"grid","id":"function-get","uid":"grid-function-get","title":"get()","groupPath":"/scss/core/grid/","path":"/scss/core/grid/#function-get","previewsByIndex":{}},{"groupName":"grid","id":"function-get-gutter","uid":"grid-function-get-gutter","title":"get-gutter()","groupPath":"/scss/core/grid/","path":"/scss/core/grid/#function-get-gutter"},{"groupName":"grid","id":"mixin-create","uid":"grid-mixin-create","title":"create()","groupPath":"/scss/core/grid/","path":"/scss/core/grid/#mixin-create"}];
   export default {
     components: {
       SassdocPreview,

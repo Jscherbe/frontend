@@ -57,7 +57,7 @@ Printed Media Styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"print","id":"mixin-styles","uid":"print-mixin-styles","title":"styles()","groupPath":"/helpers/print/","path":"/helpers/print/#mixin-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"print","id":"mixin-styles","uid":"print-mixin-styles","title":"styles()","groupPath":"/scss/helpers/print/","path":"/scss/helpers/print/#mixin-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

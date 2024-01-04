@@ -111,7 +111,7 @@ Setting the prefix to 'ulu'
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -165,7 +165,7 @@ Declare a custom property
 
 #### Require
 
-- [name()](/core/cssvar/#function-name)
+- [name()](/scss/core/cssvar/#function-name)
   
 
 
@@ -218,7 +218,7 @@ Declare each property in a map as a custom property
 
 #### Require
 
-- [declare()](/core/cssvar/#mixin-declare)
+- [declare()](/scss/core/cssvar/#mixin-declare)
   
 
 
@@ -273,7 +273,7 @@ Declare each property in a map as a custom property
 
 #### Require
 
-- [declare()](/core/cssvar/#mixin-declare)
+- [declare()](/scss/core/cssvar/#mixin-declare)
   
   
 
@@ -338,7 +338,7 @@ $prefix: cssvar.get("prefix");
 #### Require
 
 - require-map-get()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -455,7 +455,7 @@ Print an custom property as a value
 
 #### Require
 
-- [name()](/core/cssvar/#function-name)
+- [name()](/scss/core/cssvar/#function-name)
   
   
 
@@ -464,7 +464,7 @@ Print an custom property as a value
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"cssvar","id":"variable-config","uid":"cssvar-variable-config","title":"$config","groupPath":"/core/cssvar/","path":"/core/cssvar/#variable-config"},{"groupName":"cssvar","id":"mixin-set","uid":"cssvar-mixin-set","title":"set()","groupPath":"/core/cssvar/","path":"/core/cssvar/#mixin-set","previewsByIndex":{}},{"groupName":"cssvar","id":"function-get","uid":"cssvar-function-get","title":"get()","groupPath":"/core/cssvar/","path":"/core/cssvar/#function-get","previewsByIndex":{}},{"groupName":"cssvar","id":"function-name","uid":"cssvar-function-name","title":"name()","groupPath":"/core/cssvar/","path":"/core/cssvar/#function-name","previewsByIndex":{}},{"groupName":"cssvar","id":"function-use","uid":"cssvar-function-use","title":"use()","groupPath":"/core/cssvar/","path":"/core/cssvar/#function-use","previewsByIndex":{}},{"groupName":"cssvar","id":"mixin-declare","uid":"cssvar-mixin-declare","title":"declare()","groupPath":"/core/cssvar/","path":"/core/cssvar/#mixin-declare","previewsByIndex":{}},{"groupName":"cssvar","id":"mixin-declare-all","uid":"cssvar-mixin-declare-all","title":"declare-all()","groupPath":"/core/cssvar/","path":"/core/cssvar/#mixin-declare-all","previewsByIndex":{}},{"groupName":"cssvar","id":"mixin-declare-breakpoint","uid":"cssvar-mixin-declare-breakpoint","title":"declare-breakpoint()","groupPath":"/core/cssvar/","path":"/core/cssvar/#mixin-declare-breakpoint","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"cssvar","id":"variable-config","uid":"cssvar-variable-config","title":"$config","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#variable-config"},{"groupName":"cssvar","id":"mixin-set","uid":"cssvar-mixin-set","title":"set()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#mixin-set","previewsByIndex":{}},{"groupName":"cssvar","id":"function-get","uid":"cssvar-function-get","title":"get()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#function-get","previewsByIndex":{}},{"groupName":"cssvar","id":"function-name","uid":"cssvar-function-name","title":"name()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#function-name","previewsByIndex":{}},{"groupName":"cssvar","id":"function-use","uid":"cssvar-function-use","title":"use()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#function-use","previewsByIndex":{}},{"groupName":"cssvar","id":"mixin-declare","uid":"cssvar-mixin-declare","title":"declare()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#mixin-declare","previewsByIndex":{}},{"groupName":"cssvar","id":"mixin-declare-all","uid":"cssvar-mixin-declare-all","title":"declare-all()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#mixin-declare-all","previewsByIndex":{}},{"groupName":"cssvar","id":"mixin-declare-breakpoint","uid":"cssvar-mixin-declare-breakpoint","title":"declare-breakpoint()","groupPath":"/scss/core/cssvar/","path":"/scss/core/cssvar/#mixin-declare-breakpoint","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

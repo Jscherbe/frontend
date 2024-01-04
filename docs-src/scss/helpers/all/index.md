@@ -71,7 +71,7 @@ Prints all Helper styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"all","id":"mixin-helper-styles","uid":"all-mixin-helper-styles","title":"helper-styles()","groupPath":"/helpers/all/","path":"/helpers/all/#mixin-helper-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"all","id":"mixin-helper-styles","uid":"all-mixin-helper-styles","title":"helper-styles()","groupPath":"/scss/helpers/all/","path":"/scss/helpers/all/#mixin-helper-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

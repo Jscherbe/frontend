@@ -207,7 +207,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -245,7 +245,7 @@ Set button styles
 #### Require
 
 - map-merge()
-- [$styles](/core/button/#variable-styles)
+- [$styles](/scss/core/button/#variable-styles)
   
 
 
@@ -283,7 +283,7 @@ Set Button Sizes
 #### Require
 
 - map-merge()
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -341,8 +341,8 @@ Print default button styles
 
 #### Require
 
-- [reset()](/core/button/#mixin-reset)
-- [get()](/core/breakpoint/#function-get)
+- [reset()](/scss/core/button/#mixin-reset)
+- [get()](/scss/core/breakpoint/#function-get)
   
 
 
@@ -378,15 +378,15 @@ Print button size styles for a specifc size
 
 #### See
 
-- [$sizes](/core/breakpoint/#variable-sizes)
-- [set-sizes()](/core/breakpoint/#mixin-set-sizes)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
+- [set-sizes()](/scss/core/breakpoint/#mixin-set-sizes)
   
 
 #### Require
 
 - require-map-get()
-- [get()](/core/breakpoint/#function-get)
-- [$sizes](/core/breakpoint/#variable-sizes)
+- [get()](/scss/core/breakpoint/#function-get)
+- [$sizes](/scss/core/breakpoint/#variable-sizes)
   
 
 
@@ -424,13 +424,13 @@ Print a button style's base styles (not hover)
 
 #### See
 
-- [$styles](/core/button/#variable-styles)
-- [set-styles()](/core/button/#mixin-set-styles)
+- [$styles](/scss/core/button/#variable-styles)
+- [set-styles()](/scss/core/button/#mixin-set-styles)
   
 
 #### Require
 
-- [get-style-value()](/core/button/#function-get-style-value)
+- [get-style-value()](/scss/core/button/#function-get-style-value)
   
 
 
@@ -468,13 +468,13 @@ Print a button style's base styles (hover styles only)
 
 #### See
 
-- [$styles](/core/button/#variable-styles)
-- [set-styles()](/core/button/#mixin-set-styles)
+- [$styles](/scss/core/button/#variable-styles)
+- [set-styles()](/scss/core/button/#mixin-set-styles)
   
 
 #### Require
 
-- [get-style-value()](/core/button/#function-get-style-value)
+- [get-style-value()](/scss/core/button/#function-get-style-value)
   
 
 
@@ -516,14 +516,14 @@ Print a button style
 
 #### See
 
-- [$styles](/core/button/#variable-styles)
-- [set-styles()](/core/button/#mixin-set-styles)
+- [$styles](/scss/core/button/#variable-styles)
+- [set-styles()](/scss/core/button/#mixin-set-styles)
   
 
 #### Require
 
-- [style-styles()](/core/button/#mixin-style-styles)
-- [style-styles-hover()](/core/button/#mixin-style-styles-hover)
+- [style-styles()](/scss/core/button/#mixin-style-styles)
+- [style-styles-hover()](/scss/core/button/#mixin-style-styles-hover)
   
   
 
@@ -580,7 +580,7 @@ General example, replace module-name with module's name
 
 - require-map-get()
 - function-fallback()
-- [$config](/core/breakpoint/#variable-config)
+- [$config](/scss/core/breakpoint/#variable-config)
   
 
 
@@ -625,15 +625,15 @@ Get a value from a button style
 
 #### See
 
-- [$styles](/core/button/#variable-styles)
-- [set-styles()](/core/button/#mixin-set-styles)
+- [$styles](/scss/core/button/#variable-styles)
+- [set-styles()](/scss/core/button/#mixin-set-styles)
   
 
 #### Require
 
 - require-map-get()
-- [get()](/core/breakpoint/#function-get)
-- [$styles](/core/button/#variable-styles)
+- [get()](/scss/core/breakpoint/#function-get)
+- [$styles](/scss/core/button/#variable-styles)
   
   
 
@@ -642,7 +642,7 @@ Get a value from a button style
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"button","id":"variable-config","uid":"button-variable-config","title":"$config","groupPath":"/core/button/","path":"/core/button/#variable-config"},{"groupName":"button","id":"variable-sizes","uid":"button-variable-sizes","title":"$sizes","groupPath":"/core/button/","path":"/core/button/#variable-sizes"},{"groupName":"button","id":"variable-styles","uid":"button-variable-styles","title":"$styles","groupPath":"/core/button/","path":"/core/button/#variable-styles"},{"groupName":"button","id":"mixin-set","uid":"button-mixin-set","title":"set()","groupPath":"/core/button/","path":"/core/button/#mixin-set","previewsByIndex":{}},{"groupName":"button","id":"function-get","uid":"button-function-get","title":"get()","groupPath":"/core/button/","path":"/core/button/#function-get","previewsByIndex":{}},{"groupName":"button","id":"mixin-set-styles","uid":"button-mixin-set-styles","title":"set-styles()","groupPath":"/core/button/","path":"/core/button/#mixin-set-styles"},{"groupName":"button","id":"mixin-set-sizes","uid":"button-mixin-set-sizes","title":"set-sizes()","groupPath":"/core/button/","path":"/core/button/#mixin-set-sizes"},{"groupName":"button","id":"mixin-reset","uid":"button-mixin-reset","title":"reset()","groupPath":"/core/button/","path":"/core/button/#mixin-reset"},{"groupName":"button","id":"mixin-default","uid":"button-mixin-default","title":"default()","groupPath":"/core/button/","path":"/core/button/#mixin-default"},{"groupName":"button","id":"mixin-size","uid":"button-mixin-size","title":"size()","groupPath":"/core/button/","path":"/core/button/#mixin-size"},{"groupName":"button","id":"function-get-style-value","uid":"button-function-get-style-value","title":"get-style-value()","groupPath":"/core/button/","path":"/core/button/#function-get-style-value"},{"groupName":"button","id":"mixin-style-styles","uid":"button-mixin-style-styles","title":"style-styles()","groupPath":"/core/button/","path":"/core/button/#mixin-style-styles"},{"groupName":"button","id":"mixin-style-styles-hover","uid":"button-mixin-style-styles-hover","title":"style-styles-hover()","groupPath":"/core/button/","path":"/core/button/#mixin-style-styles-hover"},{"groupName":"button","id":"mixin-style","uid":"button-mixin-style","title":"style()","groupPath":"/core/button/","path":"/core/button/#mixin-style"}];
+  const sassdocGroup = [{"groupName":"button","id":"variable-config","uid":"button-variable-config","title":"$config","groupPath":"/scss/core/button/","path":"/scss/core/button/#variable-config"},{"groupName":"button","id":"variable-sizes","uid":"button-variable-sizes","title":"$sizes","groupPath":"/scss/core/button/","path":"/scss/core/button/#variable-sizes"},{"groupName":"button","id":"variable-styles","uid":"button-variable-styles","title":"$styles","groupPath":"/scss/core/button/","path":"/scss/core/button/#variable-styles"},{"groupName":"button","id":"mixin-set","uid":"button-mixin-set","title":"set()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-set","previewsByIndex":{}},{"groupName":"button","id":"function-get","uid":"button-function-get","title":"get()","groupPath":"/scss/core/button/","path":"/scss/core/button/#function-get","previewsByIndex":{}},{"groupName":"button","id":"mixin-set-styles","uid":"button-mixin-set-styles","title":"set-styles()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-set-styles"},{"groupName":"button","id":"mixin-set-sizes","uid":"button-mixin-set-sizes","title":"set-sizes()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-set-sizes"},{"groupName":"button","id":"mixin-reset","uid":"button-mixin-reset","title":"reset()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-reset"},{"groupName":"button","id":"mixin-default","uid":"button-mixin-default","title":"default()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-default"},{"groupName":"button","id":"mixin-size","uid":"button-mixin-size","title":"size()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-size"},{"groupName":"button","id":"function-get-style-value","uid":"button-function-get-style-value","title":"get-style-value()","groupPath":"/scss/core/button/","path":"/scss/core/button/#function-get-style-value"},{"groupName":"button","id":"mixin-style-styles","uid":"button-mixin-style-styles","title":"style-styles()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-style-styles"},{"groupName":"button","id":"mixin-style-styles-hover","uid":"button-mixin-style-styles-hover","title":"style-styles-hover()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-style-styles-hover"},{"groupName":"button","id":"mixin-style","uid":"button-mixin-style","title":"style()","groupPath":"/scss/core/button/","path":"/scss/core/button/#mixin-style"}];
   export default {
     components: {
       SassdocPreview,

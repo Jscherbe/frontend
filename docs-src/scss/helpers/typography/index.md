@@ -87,7 +87,7 @@ Example of type size as helper prefixed
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"typography","id":"mixin-styles","uid":"typography-mixin-styles","title":"styles()","groupPath":"/helpers/typography/","path":"/helpers/typography/#mixin-styles","previewsByIndex":{"1":"<span class=\"type-large-xxx\">A</span>\n<span class=\"type-large-xx\">A</span>\n<span class=\"type-large-x\">A</span>\n<span class=\"type-large\">A</span>\n<span class=\"type-base\">A</span>\n<span class=\"type-small\">A</span>\n<span class=\"type-small-x\">A</span>"}}];
+  const sassdocGroup = [{"groupName":"typography","id":"mixin-styles","uid":"typography-mixin-styles","title":"styles()","groupPath":"/scss/helpers/typography/","path":"/scss/helpers/typography/#mixin-styles","previewsByIndex":{"1":"<span class=\"type-large-xxx\">A</span>\n<span class=\"type-large-xx\">A</span>\n<span class=\"type-large-x\">A</span>\n<span class=\"type-large\">A</span>\n<span class=\"type-base\">A</span>\n<span class=\"type-small\">A</span>\n<span class=\"type-small-x\">A</span>"}}];
   export default {
     components: {
       SassdocPreview,

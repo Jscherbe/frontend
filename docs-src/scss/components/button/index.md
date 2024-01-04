@@ -49,7 +49,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
 
 
@@ -109,7 +109,7 @@ Prints button component styles
 
 #### Require
 
-- [get()](/components/badge/#function-get)
+- [get()](/scss/components/badge/#function-get)
   
   
 
@@ -151,7 +151,7 @@ Get a config option
 
 #### Require
 
-- [$config](/components/badge/#variable-config)
+- [$config](/scss/components/badge/#variable-config)
   
   
 
@@ -160,7 +160,7 @@ Get a config option
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"button","id":"mixin-set","uid":"button-mixin-set","title":"set()","groupPath":"/components/button/","path":"/components/button/#mixin-set"},{"groupName":"button","id":"function-get","uid":"button-function-get","title":"get()","groupPath":"/components/button/","path":"/components/button/#function-get"},{"groupName":"button","id":"mixin-styles","uid":"button-mixin-styles","title":"styles()","groupPath":"/components/button/","path":"/components/button/#mixin-styles","previewsByIndex":{"1":"<a class=\"button\" href=\"#\">Button Default</a>"}}];
+  const sassdocGroup = [{"groupName":"button","id":"mixin-set","uid":"button-mixin-set","title":"set()","groupPath":"/scss/components/button/","path":"/scss/components/button/#mixin-set"},{"groupName":"button","id":"function-get","uid":"button-function-get","title":"get()","groupPath":"/scss/components/button/","path":"/scss/components/button/#function-get"},{"groupName":"button","id":"mixin-styles","uid":"button-mixin-styles","title":"styles()","groupPath":"/scss/components/button/","path":"/scss/components/button/#mixin-styles","previewsByIndex":{"1":"<a class=\"button\" href=\"#\">Button Default</a>"}}];
   export default {
     components: {
       SassdocPreview,
