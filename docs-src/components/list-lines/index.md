@@ -87,7 +87,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/components/list-lines/#variable-config)
+- [$config](/components/badge/#variable-config)
   
 
 
@@ -114,7 +114,7 @@ Output component styles
 
 #### Require
 
-- [get()](/components/button/#function-get)
+- [get()](/components/badge/#function-get)
   
   
 
@@ -156,7 +156,7 @@ Get a config option
 
 #### Require
 
-- [$config](/components/list-lines/#variable-config)
+- [$config](/components/badge/#variable-config)
   
   
 

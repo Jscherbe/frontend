@@ -1,11 +1,11 @@
 ---
-title: Rule
-sassdocGroupName: rule
+title: Badge
+sassdocGroupName: badge
 outline: deep
 ---
 
 
-# Rule
+# Badge
 
 
 
@@ -26,9 +26,18 @@ Module Settings
 
 ``` scss
 (
-  "short-width" : 2.75rem,
-  "short-border-width" : 4px,
-  "short-modifiers" : false
+  "font-size":           1.3rem,
+  "border-radius":       50%,
+  "width":               10rem,
+  "font-weight":         bold,
+  "background-color":    gray,
+  "color":               black,
+  "sizes" : (
+    "large" : (
+      "font-size" : 2.75rem,
+      "width" :  6rem
+    )
+  )
 )
 ```
   
@@ -36,11 +45,11 @@ Module Settings
 
 <SassdocDetails summaryText="Meta Information">
 
-- **File:** _rule.scss
-- **Group:** rule
+- **File:** _badge.scss
+- **Group:** badge
 - **Type:** variable
-- **Lines (comments):** 11-14
-- **Lines (code):** 16-20
+- **Lines (comments):** 9-17
+- **Lines (code):** 19-32
 
 </SassdocDetails>
     
@@ -51,8 +60,13 @@ Module Settings
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$config.short-width|Number|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
-|$config.short-border-width|Number|Short rule width of border|
+|$config.font-size|Number|Font size (basic ie. 1.3rem) for badge|
+|$config.border-radius|Number|Border radius of badge|
+|$config.width|Number|Width of badge (default size)|
+|$config.font-weight|Number|Font weight|
+|$config.background-color|Number|Background color (if no image)|
+|$config.color|Number|Type color|
+|$config.sizes|List|List of other sizes (large by defualt), each size is a map of (width, font-size)|
 
     
   
@@ -73,36 +87,23 @@ Change modules $config
 
 <SassdocDetails summaryText="Meta Information">
 
-- **File:** _rule.scss
-- **Group:** rule
+- **File:** _badge.scss
+- **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 22-25
-- **Lines (code):** 27-29
+- **Lines (comments):** 34-36
+- **Lines (code):** 38-40
 
 </SassdocDetails>
     
     
-
-#### Examples
-
-General example, replace module-name with module's name      
-
-
-``` scss
-@include module-name.set(( "property" : value ));
-```
-  
-
-
-
-      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes|
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));|
 
     
 
@@ -116,22 +117,65 @@ General example, replace module-name with module's name
 
   
 
-Output styles
+Prints badge component styles
     
     
 
 
 <SassdocDetails summaryText="Meta Information">
 
-- **File:** _rule.scss
-- **Group:** rule
+- **File:** _badge.scss
+- **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 40-40
-- **Lines (code):** 42-93
+- **Lines (comments):** 50-64
+- **Lines (code):** 66-126
 
 </SassdocDetails>
     
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-badge-styles();
+```
+  
+
+
+
+      
+
+      
+
+
+``` html
+<div class="badge">
+  <div class="badge__inner">
+    <img src="..." alt="...">
+  </div>
+</div>
+
+<div class="badge">
+  <div class="badge__inner">
+    <span>JS</span>
+  </div>
+</div>
+```
+  
+
+
+##### Preview
+
+
+<SassdocPreview uid="badge-mixin-styles" :exampleIndex="1" />
+  
+
+  
+
+      
 
 #### Require
 
@@ -155,36 +199,23 @@ Get a config option
 
 <SassdocDetails summaryText="Meta Information">
 
-- **File:** _rule.scss
-- **Group:** rule
+- **File:** _badge.scss
+- **Group:** badge
 - **Type:** function
-- **Lines (comments):** 31-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-48
 
 </SassdocDetails>
     
     
-
-#### Examples
-
-General example, replace module-name with module's name      
-
-
-``` scss
-@include module-name.get("property");
-```
-  
-
-
-
-      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property|
+|$name|`Map`|Name of property
+  @include module-name.get("property");|
 
     
 
@@ -199,7 +230,7 @@ General example, replace module-name with module's name
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"rule","id":"variable-config","uid":"rule-variable-config","title":"$config","groupPath":"/components/rule/","path":"/components/rule/#variable-config"},{"groupName":"rule","id":"mixin-set","uid":"rule-mixin-set","title":"set()","groupPath":"/components/rule/","path":"/components/rule/#mixin-set","previewsByIndex":{}},{"groupName":"rule","id":"function-get","uid":"rule-function-get","title":"get()","groupPath":"/components/rule/","path":"/components/rule/#function-get","previewsByIndex":{}},{"groupName":"rule","id":"mixin-styles","uid":"rule-mixin-styles","title":"styles()","groupPath":"/components/rule/","path":"/components/rule/#mixin-styles"}];
+  const sassdocGroup = [{"groupName":"badge","id":"variable-config","uid":"badge-variable-config","title":"$config","groupPath":"/components/badge/","path":"/components/badge/#variable-config"},{"groupName":"badge","id":"mixin-set","uid":"badge-mixin-set","title":"set()","groupPath":"/components/badge/","path":"/components/badge/#mixin-set"},{"groupName":"badge","id":"function-get","uid":"badge-function-get","title":"get()","groupPath":"/components/badge/","path":"/components/badge/#function-get"},{"groupName":"badge","id":"mixin-styles","uid":"badge-mixin-styles","title":"styles()","groupPath":"/components/badge/","path":"/components/badge/#mixin-styles","previewsByIndex":{"1":"<div class=\"badge\">\n  <div class=\"badge__inner\">\n    <img src=\"...\" alt=\"...\">\n  </div>\n</div>\n\n<div class=\"badge\">\n  <div class=\"badge__inner\">\n    <span>JS</span>\n  </div>\n</div>"}}];
   export default {
     components: {
       SassdocPreview,

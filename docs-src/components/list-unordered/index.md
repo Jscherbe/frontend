@@ -39,7 +39,7 @@ Output styles
 
 #### Require
 
-- [get()](/components/button/#function-get)
+- [get()](/components/badge/#function-get)
   
   
 

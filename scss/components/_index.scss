@@ -4,6 +4,7 @@
 
 @forward "links" as links-*;
 @forward "button" as button-*;
+@forward "badge" as badge-*;
 @forward "rule" as rule-*;
 @forward "list-lines" as list-lines-*;
 @forward "list-unordered" as list-unordered-*;
@@ -14,6 +15,7 @@
 @use "../utils";
 @use "links";
 @use "button";
+@use "badge";
 @use "rule";
 @use "list-lines";
 @use "list-unordered";
@@ -24,6 +26,7 @@
 $-all-includes: (
   "links" : true,
   "button" : true,
+  "badge" : true,
   "rule" : true,
   "list-lines" : true,
   "list-unordered" : true,
@@ -47,6 +50,9 @@ $-all-includes: (
   }
   @if (map.get($-all-includes, "button")) {
     @include button.styles;
+  }
+  @if (map.get($-all-includes, "badge")) {
+    @include badge.styles;
   }
   @if (map.get($-all-includes, "rule")) {
     @include rule.styles;

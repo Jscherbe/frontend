@@ -1,0 +1,17 @@
+Bring in Vue components as a separate package:
+  ☐ Decided that vue stuff should stay seperate as we wouldn't want to udpate this library to make changes to vue components (as vue changes over time)
+    ☐ This other module may use peer deps or something to limit which version of ulu it works with
+Todos:
+  ☐ Need to add guide about how you can use the modules (ie by chaining or individually)
+  ☐ Need to add guide about configuration
+  ☐ Bring in common components
+    * Only what we would want to support in the core library!
+      * More specific modules should probably be handled like the vue components 
+      * Any module added should likely stay in the library indefinetly, so modules that are more opionated or used as infrequently should probably be made into their own package. Or if they don't seem like they have a future omitted
+    ☐ badge
+    ☐ tag
+    ☐ card
+    ☐ card grid
+    ☐ spinner
+Ideas:
+  ☐ Add scaffolding @idea

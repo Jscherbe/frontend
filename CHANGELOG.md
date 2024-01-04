@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0 | @in-progress
+
+- Add in other common component modules
+  - Users using these modules locally will need to remove and update configuration to pull modules from library instead. Or alternatively they will need to not output/use these new component modules
+  - List of component modules added:
+    - badge
+
 ## Version 0.0.18
 
 - Fix docs issue with JS broken from Markdown Attrs

@@ -1,6 +1,0 @@
-Old:
-  ✘ Need to setup sass and js to have trailing commas @cancelled
-  ✔ Document where to locate and update the dist/ files for the docs, they are currently in the `docs-src/.vuepress/public` @done
-  ✔ Vuepress webpack version conflicts with mine @done
-  ✘ Webpack Mixin needs to allow custom filename as entry. It should also consider using path.join vs path.resolve so that ".." can be used? @cancelled
-  

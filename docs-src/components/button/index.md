@@ -49,7 +49,7 @@ Change modules $config
 
 #### Require
 
-- $config
+- [$config](/components/badge/#variable-config)
   
 
 
@@ -109,7 +109,7 @@ Prints button component styles
 
 #### Require
 
-- [get()](/components/button/#function-get)
+- [get()](/components/badge/#function-get)
   
   
 
@@ -151,7 +151,7 @@ Get a config option
 
 #### Require
 
-- $config
+- [$config](/components/badge/#variable-config)
   
   
 

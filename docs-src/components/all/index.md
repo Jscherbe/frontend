@@ -30,8 +30,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 33-37
-- **Lines (code):** 39-63
+- **Lines (comments):** 36-40
+- **Lines (code):** 42-69
 
 </SassdocDetails>
     
