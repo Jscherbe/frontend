@@ -163,7 +163,9 @@ $styles: (
     @include typography.size($font-size, null, true);
   }
   border-radius: get("border-radius");
-  background-clip: padding-box;
+  // Removed not sure why it was needed, effects buttons with 
+  // borders (rendering between bg and border)
+  // background-clip: padding-box; 
   padding: get("padding");
   line-height: get("line-height");
   letter-spacing: get("letter-spacing");
