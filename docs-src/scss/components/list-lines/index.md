@@ -25,13 +25,13 @@ Module Config
     
 
 ``` scss
-(
+$config: (
   "border-first" : true,
   "border-last" : true,
   "margin-top": 0,
   "margin-bottom": 1em,
   "padding-between" : 1em
-)
+);
 ```
   
 

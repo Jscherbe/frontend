@@ -25,13 +25,13 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "max-width":         90rem,
   "margin":            2rem,
   "z-index-sticky":    100,
   "z-index-above":     450,
   "z-index-fixed":     1000
-)
+);
 ```
   
 
@@ -71,7 +71,7 @@ Containers Lookup (use set-containers)
     
 
 ``` scss
-(
+$containers: (
   "container" : (
     "width" : 100%,
     "max-width" : get("max-width"),
@@ -80,7 +80,7 @@ Containers Lookup (use set-containers)
     "responsive" : false,
     "responsive-amount" : 3vw
   )
-)
+);
 ```
   
 

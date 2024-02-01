@@ -25,11 +25,11 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "link" : true,
   "link:hover" : true,
   "link:visited" : false
-)
+);
 ```
   
 

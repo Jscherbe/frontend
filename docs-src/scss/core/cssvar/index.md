@@ -31,9 +31,9 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "prefix" : ""
-)
+);
 ```
   
 

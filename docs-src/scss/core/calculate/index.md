@@ -25,9 +25,9 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "responsive-change": 0.5vw
-)
+);
 ```
   
 

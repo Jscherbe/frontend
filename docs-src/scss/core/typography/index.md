@@ -25,7 +25,7 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "font-size" : 16px, 
   "font-family" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
   "font-family-sans" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
@@ -49,7 +49,7 @@ Module Settings
   "letter-spacing-uppercase" : 0.04em,
   "max-width" : 60rem,
   "max-width-small" : 50rem
-)
+);
 ```
   
 
@@ -98,7 +98,7 @@ Default size presets
     
 
 ``` scss
-(
+$sizes: (
   "small-x" :       new-size(scale(-2)),
   "small" :         new-size(scale(-1)),
   "base" :          new-size(scale(0)),
@@ -112,7 +112,7 @@ Default size presets
   "h4" :            new-size(scale(3),   scale-line-height(3),   true),
   "h5" :            new-size(scale(2),   scale-line-height(2),   true),
   "h6" :            new-size(scale(1),   scale-line-height(1),   true)
-)
+);
 ```
   
 

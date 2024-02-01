@@ -25,7 +25,7 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "padding":                 (0.75em 1.5em),
   "background-color":        color.tint(black, 30%),
   "background-color-hover": black,
@@ -51,7 +51,7 @@ Module Settings
   "icon-font-size":          1.38rem,
   "icon-border-radius":      50%,
   "text-decoration" :        none
-)
+);
 ```
   
 
@@ -78,7 +78,7 @@ Button sizes
     
 
 ``` scss
-(
+$sizes: (
   "small" : (
     "padding":        (0.35em 1.5em),
     "min-width":      0,
@@ -90,7 +90,7 @@ Button sizes
     "min-width": 11rem,
     "icon-size": 3.5rem
   )
-)
+);
 ```
   
 
@@ -117,7 +117,7 @@ Button styles
     
 
 ``` scss
-(
+$styles: (
   "transparent" : (
     "background-color" : transparent,
     "color" : "type",
@@ -138,7 +138,7 @@ Button styles
       "background-color" : "white",
     )
   ),
-)
+);
 ```
   
 
@@ -324,7 +324,7 @@ Print default button styles
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 146-147
-- **Lines (code):** 149-194
+- **Lines (code):** 149-196
 
 </SassdocDetails>
     
@@ -360,8 +360,8 @@ Print button size styles for a specifc size
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 196-199
-- **Lines (code):** 201-211
+- **Lines (comments):** 198-201
+- **Lines (code):** 203-213
 
 </SassdocDetails>
     
@@ -406,8 +406,8 @@ Print a button style's base styles (not hover)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 235-240
-- **Lines (code):** 242-250
+- **Lines (comments):** 237-242
+- **Lines (code):** 244-252
 
 </SassdocDetails>
     
@@ -450,8 +450,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 252-257
-- **Lines (code):** 259-265
+- **Lines (comments):** 254-259
+- **Lines (code):** 261-267
 
 </SassdocDetails>
     
@@ -497,8 +497,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 267-276
-- **Lines (code):** 278-291
+- **Lines (comments):** 269-278
+- **Lines (code):** 280-293
 
 </SassdocDetails>
     
@@ -598,8 +598,8 @@ Get a value from a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 213-217
-- **Lines (code):** 219-233
+- **Lines (comments):** 215-219
+- **Lines (code):** 221-235
 
 </SassdocDetails>
     

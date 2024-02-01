@@ -25,14 +25,14 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "small-x" : 1rem * 0.5,
   "small" : 1rem * 0.75,
   "default" : 1rem,
   "large" : 1rem * 2,
   "large-x" : 1rem * 3,
   "large-xx" : 1rem * 4
-)
+);
 ```
   
 

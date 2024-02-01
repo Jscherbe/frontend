@@ -25,12 +25,12 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "base":      16px,
   "gap":       0.01em,
   "null-name": "none",
   "default" :  "small"
-)
+);
 ```
   
 
@@ -72,11 +72,11 @@ The default breakpoint sizes (targets are not precise, using em's)
     
 
 ``` scss
-(
+$sizes: (
   "small"  : calculate.pixel-to-em(680px, get("base")),
   "medium" : calculate.pixel-to-em(1200px, get("base")),
   "large"  : calculate.pixel-to-em(1500px, get("base"))
-)
+);
 ```
   
 

@@ -25,7 +25,7 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "backdrop-blur":                    4px,
   "backdrop-color":                   rgba(73, 73, 73, 0.459),
   "box-shadow":                       0 1px 5px color.get('box-shadow'),
@@ -55,7 +55,7 @@ Module Settings
   "link-text-decoration-color-hover": false,
   "link-text-decoration-thickness":   0.1em,
   "link-text-underline-offset" :     auto
-)
+);
 ```
   
 
@@ -116,10 +116,10 @@ Rule style map, redifine defaults or add to
     
 
 ``` scss
-(
+$rule-styles: (
   "default": 1px solid color.get("rule"),
   "light":   1px solid color.get("rule-light"),
-)
+);
 ```
   
 
@@ -146,12 +146,12 @@ Common rule margins (space between rule and type)
     
 
 ``` scss
-(
+$rule-margins: (
   "smallest": 0.5rem,
   "small":    1rem,
   "medium":   2rem,
   "large":    3rem
-)
+);
 ```
   
 

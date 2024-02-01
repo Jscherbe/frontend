@@ -25,10 +25,10 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "debug-maps": true,
   "file-header-comments": true
-)
+);
 ```
   
 

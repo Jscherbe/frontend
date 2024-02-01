@@ -25,11 +25,11 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "short-width" : 2.75rem,
   "short-border-width" : 4px,
   "short-modifiers" : false
-)
+);
 ```
   
 

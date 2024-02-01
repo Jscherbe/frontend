@@ -26,7 +26,7 @@ Note do not use names that start with "--" as those are reserved for custom-prop
     
 
 ``` scss
-(
+$palette: (
   "black":        black,
   "white":        white,
   "type":         black,
@@ -45,7 +45,7 @@ Note do not use names that start with "--" as those are reserved for custom-prop
   "link:active":  darkblue,
   "link:visited": purple,
   "bullet":       inherit
-)
+);
 ```
   
 
@@ -72,7 +72,7 @@ Pairs of background-color and color definitions
     
 
 ``` scss
-(
+$contexts: (
   "dark" : (
     "background-color" : "black",
     "color" : "white",
@@ -83,7 +83,7 @@ Pairs of background-color and color definitions
     "color" : "black",
     "base-class" : true
   ),
-)
+);
 ```
   
 
@@ -121,11 +121,11 @@ Palette entries that are output as classes when using all-color-class-styles
     
 
 ``` scss
-(
+$color-classes: (
   "black" : true,
   "white" : true,
   "type": true
-)
+);
 ```
   
 

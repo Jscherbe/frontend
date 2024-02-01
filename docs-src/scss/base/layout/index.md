@@ -25,11 +25,11 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "containers" : true,
   "container-nested-no-padding" : false,
   "layout-flex" : true,
-)
+);
 ```
   
 

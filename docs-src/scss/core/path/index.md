@@ -27,9 +27,9 @@ Aliases
     
 
 ``` scss
-(
+$aliases: (
   "#Images" : "/images",
-)
+);
 ```
   
 

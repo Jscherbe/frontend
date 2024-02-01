@@ -32,7 +32,7 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "columns":            12,
   "attribute":          "data-grid",
   "attribute-container" : "data-grid-container",
@@ -52,7 +52,7 @@ Module Settings
   "position-class-column-last":  "position-column-last",
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last"
-)
+);
 ```
   
 

@@ -25,9 +25,9 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "sides": ("top", "bottom", "left", "right")
-)
+);
 ```
   
 

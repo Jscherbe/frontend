@@ -25,7 +25,7 @@ Module Settings
     
 
 ``` scss
-(
+$config: (
   "font-size":           1.3rem,
   "border-radius":       50%,
   "width":               10rem,
@@ -38,7 +38,7 @@ Module Settings
       "width" :  6rem
     )
   )
-)
+);
 ```
   
 
