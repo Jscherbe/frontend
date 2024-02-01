@@ -9,6 +9,10 @@
     - fill-context
 - Add .crop-margins to utilities
 
+## Version 0.0.21
+
+- Core/button Remove 'background-clip: padding-box' on buttons, affects buttons with borders (rendering between bg and border)
+
 ## Version 0.0.18
 
 - Fix docs issue with JS broken from Markdown Attrs
