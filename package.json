@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.0.21",
+  "version": "0.0.20",
   "description": "Modular Sass Theming Library",
   "browser": "js/index.js",
   "main": "index.js",

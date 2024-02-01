@@ -2,6 +2,8 @@ Bring in Vue components as a separate package:
   ☐ Decided that vue stuff should stay seperate as we wouldn't want to udpate this library to make changes to vue components (as vue changes over time)
     ☐ This other module may use peer deps or something to limit which version of ulu it works with
 Todos:
+  ☐ Do we need some way to go back to older docs?
+    - Think this is overkill until there is a major revision
   ☐ SCSS
     ☐ Add line-height-densest typography utility class
     ☐ Remove clearfix, or at least in any outputted styles
