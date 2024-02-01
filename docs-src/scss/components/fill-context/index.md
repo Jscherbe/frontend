@@ -1,11 +1,11 @@
 ---
-title: All
-sassdocGroupName: all
+title: Fill-context
+sassdocGroupName: fill-context
 outline: deep
 ---
 
 
-# All
+# Fill-context
 
 
 
@@ -16,22 +16,22 @@ outline: deep
 
 
 
-###  component-styles() <Badge text="mixin" type="tip" vertical="top" />  {#mixin-component-styles} 
+###  styles() <Badge text="mixin" type="tip" vertical="top" />  {#mixin-styles} 
 
   
 
-Prints all Components styles
+Prints fill context styles
     
     
 
 
 <SassdocDetails summaryText="Meta Information">
 
-- **File:** _index.scss
-- **Group:** all
+- **File:** _fill-context.scss
+- **Group:** fill-context
 - **Type:** mixin
-- **Lines (comments):** 39-43
-- **Lines (code):** 45-75
+- **Lines (comments):** 8-24
+- **Lines (code):** 26-49
 
 </SassdocDetails>
     
@@ -43,7 +43,7 @@ Prints all Components styles
 
 
 ``` scss
-@include ulu.component-styles();
+@include ulu.component-fill-context-styles();
 ```
   
 
@@ -51,19 +51,35 @@ Prints all Components styles
 
       
 
-#### Parameters
+      
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$includes|`List`|A list of changes to module includes|
-
-    
-
-#### Require
-
-- get()
+``` html
+<div class="fill-context">
+  <img class="fill-context__object" src="background.jpg">
+</div>
+ 
+ 
+<div class="fill-context fill-context--auto">
+  <img src="background.jpg">
+</div>
+ 
+<div data-grid-item="width: 6" class="fill-context fill-context--in-grid">
+  <img src="background.jpg">
+</div>
+```
   
+
+
+##### Preview
+
+
+<SassdocPreview uid="fill-context-mixin-styles" :exampleIndex="1" />
+  
+
+  
+
+      
   
 
 
@@ -71,7 +87,7 @@ Prints all Components styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"all","id":"mixin-component-styles","uid":"all-mixin-component-styles","title":"component-styles()","groupPath":"/scss/components/all/","path":"/scss/components/all/#mixin-component-styles","previewsByIndex":{}}];
+  const sassdocGroup = [{"groupName":"fill-context","id":"mixin-styles","uid":"fill-context-mixin-styles","title":"styles()","groupPath":"/scss/components/fill-context/","path":"/scss/components/fill-context/#mixin-styles","previewsByIndex":{"1":"<div class=\"fill-context\">\n  <img class=\"fill-context__object\" src=\"background.jpg\">\n</div>\n \n \n<div class=\"fill-context fill-context--auto\">\n  <img src=\"background.jpg\">\n</div>\n \n<div data-grid-item=\"width: 6\" class=\"fill-context fill-context--in-grid\">\n  <img src=\"background.jpg\">\n</div>"}}];
   export default {
     components: {
       SassdocPreview,

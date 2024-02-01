@@ -31,7 +31,7 @@ Print utilities helper styles
 - **Group:** utilities
 - **Type:** mixin
 - **Lines (comments):** 9-11
-- **Lines (code):** 13-102
+- **Lines (code):** 13-110
 
 </SassdocDetails>
     

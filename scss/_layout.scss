@@ -25,20 +25,8 @@ $config: (
   "z-index-fixed":     1000
 ) !default;
 
-/// Change modules $config
-/// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
-@mixin set($changes) {
-  $config: map.merge($config, $changes) !global;
-}
-
-/// Get a config option
-/// @param {Map} $name Name of property
-///   @include module-name.get("property");
-
-@function get($name) {
-  @return utils.require-map-get($config, $name, "layout [config]");
-}
+/// Containers Lookup (use set-containers)
+/// @type Map
 
 $containers: (
   "container" : (
@@ -51,9 +39,33 @@ $containers: (
   )
 ) !default;
 
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+@function get($name) {
+  @return utils.require-map-get($config, $name, "layout [config]");
+}
+
+/// Set layout containers
+/// - See the $containers variable for example of container properties
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
 @mixin set-containers($changes, $merge-mode: null) {
   $containers: utils.map-merge($containers, $changes, $merge-mode) !global;
 }
+
+/// Get a container map
+/// @param {Map} $name Container name
+/// @param {String} $breakpoint Return only the properties for a specific breakpoint for the container
 
 @function get-container($name, $breakpoint: false) {
   $container: utils.require-map-get($containers, $name, "Layout [get-container]");
@@ -64,8 +76,13 @@ $containers: (
     @return $container;
   }
 }
+
 /// Returns padding to another property including breakpoints
 /// ie. { top: $containers-padding; }
+/// @param {String} $property Property name to apply the padding value to
+/// @param {String} $name The container name
+/// @param {Boolean} $sides [true] Match the container padding for the sides (left/right), false will match the containers end padding (top/bottom) 
+
 @mixin match-container-padding($property, $name: "container", $sides: true) {
   $container: get-container($name);
   $breakpoints: map.get($container, "breakpoints");
@@ -85,6 +102,10 @@ $containers: (
 /// The margin is created via empty space when the container hits the max-width
 /// If passing inlude padding it would be the containers
 /// side (x) + the padding. This accounts for the containers max-width to give an absoute value
+/// @param {String} $property Property name to apply the margin value to
+/// @param {String} $name The container name
+/// @param {Boolean} $include-padding [true] Include the containers padding in the margin calculation
+
 @mixin match-container-margin($property, $name: "container", $include-padding: true) {
   $container: get-container($name);
   $breakpoints: map.get($container, "breakpoints");
@@ -102,6 +123,11 @@ $containers: (
   }
 }
 
+/// Get a containers padding value
+/// @param {String} $name Container name
+/// @param {Boolean} $sides [true] Get the left/right value, false return top/bottom
+/// @param {String} $specific-breakpoint [false] Get the value for a specific breakpoint
+
 @function get-container-padding($name, $sides: true, $specific-breakpoint: false) {
   $container: get-container($name, $specific-breakpoint);
   $padding: map.get($container, "padding");
@@ -112,6 +138,11 @@ $containers: (
     @return list.nth($padding, if($sides, 2, 1));
   }
 }
+
+/// Print the containers padding properties
+/// @param {String} $name The container name
+/// @param {Boolean} $sides [true] Sides by default, false is ends
+/// @param {Boolean} $specific-breakpoint [false] Only for a specific breakpoint
 
 @mixin container-padding($name, $sides: true, $ends: true, $specific-breakpoint: false) {
   $container: get-container($name, $specific-breakpoint);
@@ -140,12 +171,27 @@ $containers: (
     }
   }
 }
+
+/// Get containers padding X value (side)
+/// @param {String} $name Container name
+/// @param {Boolean} $specific-breakpoint For a specific breakpoint
+
 @function get-container-padding-x($name, $specific-breakpoint: false) {
   @return get-container-padding($name, true, $specific-breakpoint);
 }
+
+/// Get containers padding Y value (ends)
+/// @param {String} $name Container name
+/// @param {Boolean} $specific-breakpoint For a specific breakpoint
+
 @function get-container-padding-y($name, $specific-breakpoint: false) {
   @return get-container-padding($name, false, $specific-breakpoint);
 }
+
+/// Print all container styles for a given container
+/// @param {String} $name Container name
+/// @param {Boolean} $specific-breakpoint Only for a specific breakpoint (else includes both the base styles and breakpoint styles)
+
 @mixin container-styles($name: "container", $specific-breakpoint: false) {
   $container: get-container($name,  $specific-breakpoint);
   $breakpoints: map.get($container, "breakpoints");

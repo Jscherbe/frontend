@@ -9,6 +9,7 @@
 @forward "list-lines" as list-lines-*;
 @forward "list-unordered" as list-unordered-*;
 @forward "list-ordered" as list-ordered-*;
+@forward "fill-context" as fill-context-*;
 
 @use "sass:map";
 
@@ -20,6 +21,7 @@
 @use "list-lines";
 @use "list-unordered";
 @use "list-ordered";
+@use "fill-context";
 
 // Used to check against user's includes
 
@@ -30,7 +32,8 @@ $-all-includes: (
   "rule" : true,
   "list-lines" : true,
   "list-unordered" : true,
-  "list-ordered" : true
+  "list-ordered" : true,
+  "fill-context" : true,
 );
 
 /// Prints all Components styles
@@ -65,5 +68,8 @@ $-all-includes: (
   }
   @if (map.get($-all-includes, "list-ordered")) {
     @include list-ordered.styles;
+  }
+  @if (map.get($-all-includes, "fill-context")) {
+    @include fill-context.styles;
   }
 }

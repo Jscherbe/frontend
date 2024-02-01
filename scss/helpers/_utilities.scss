@@ -69,6 +69,14 @@
   .no-margin-right {
     margin-right: 0;
   }
+  .crop-margins {
+    &:not(.crop-margins--last) >:first-child {
+      margin-top: 0;
+    }
+    &:not(.crop-margins--first) >:last-child {
+      margin-bottom: 0;
+    }
+  }
   .no-padding {
     padding: 0;
   }
