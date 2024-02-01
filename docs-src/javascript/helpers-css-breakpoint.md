@@ -10,9 +10,13 @@ title: helpers/css-breakpoint
     * _static_
         * [.CssBreakpoints](#module_helpers/css-breakpoint.CssBreakpoints)
             * [new exports.CssBreakpoints(config)](#new_module_helpers/css-breakpoint.CssBreakpoints_new)
+            * [.onChange(callback)](#module_helpers/css-breakpoint.CssBreakpoints+onChange)
+            * [.removeOnChange(callback)](#module_helpers/css-breakpoint.CssBreakpoints+removeOnChange)
+            * [.getBreakpointInPsuedo()](#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInPsuedo)
+            * [.getBreakpointInProperty()](#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInProperty)
             * [.getBreakpoint()](#module_helpers/css-breakpoint.CssBreakpoints+getBreakpoint)
             * [.update()](#module_helpers/css-breakpoint.CssBreakpoints+update)
-            * [.at(name)](#module_helpers/css-breakpoint.CssBreakpoints+at)
+            * [.at(name)](#module_helpers/css-breakpoint.CssBreakpoints+at) ⇒ <code>Breakpoint</code>
     * _inner_
         * [~BreakpointDirection](#module_helpers/css-breakpoint..BreakpointDirection)
             * [.change()](#module_helpers/css-breakpoint..BreakpointDirection+change)
@@ -37,9 +41,13 @@ from CSS (using element psuedo content prop)
 
 * [.CssBreakpoints](#module_helpers/css-breakpoint.CssBreakpoints)
     * [new exports.CssBreakpoints(config)](#new_module_helpers/css-breakpoint.CssBreakpoints_new)
+    * [.onChange(callback)](#module_helpers/css-breakpoint.CssBreakpoints+onChange)
+    * [.removeOnChange(callback)](#module_helpers/css-breakpoint.CssBreakpoints+removeOnChange)
+    * [.getBreakpointInPsuedo()](#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInPsuedo)
+    * [.getBreakpointInProperty()](#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInProperty)
     * [.getBreakpoint()](#module_helpers/css-breakpoint.CssBreakpoints+getBreakpoint)
     * [.update()](#module_helpers/css-breakpoint.CssBreakpoints+update)
-    * [.at(name)](#module_helpers/css-breakpoint.CssBreakpoints+at)
+    * [.at(name)](#module_helpers/css-breakpoint.CssBreakpoints+at) ⇒ <code>Breakpoint</code>
 
 <a name="new_module_helpers/css-breakpoint.CssBreakpoints_new"></a>
 
@@ -48,10 +56,48 @@ from CSS (using element psuedo content prop)
 | Param | Type | Description |
 | --- | --- | --- |
 | config | <code>Object</code> | Configruation object |
-| config.order | <code>Array</code> | Required, Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest |
-| config.element | <code>Node</code> | The element to retrieve active breakpoint from stylesheet  (default is body) |
+| config.order | <code>Array</code> | Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large] |
+| config.customProperty | <code>Array</code> | Property to grab breakpoint from (default is --breakpoint) |
+| config.valueFromPsuedo | <code>Array</code> | Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property |
+| config.element | <code>Node</code> | The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body |
 | config.psuedoSelector | <code>String</code> | Change psuedo selector used to get the breakpoint from the psuedo's content property |
 
+<a name="module_helpers/css-breakpoint.CssBreakpoints+onChange"></a>
+
+#### cssBreakpoints.onChange(callback)
+Add a callback for everytime a breakpoint changes
+- Not recommended, possibly use to watch for changes, etc
+- For more control use intance.at(name) with breakpoint methods
+
+**Kind**: instance method of [<code>CssBreakpoints</code>](#module_helpers/css-breakpoint.CssBreakpoints)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | Function to call, passed one argument current instance which can be used to get information about breakpoints |
+
+<a name="module_helpers/css-breakpoint.CssBreakpoints+removeOnChange"></a>
+
+#### cssBreakpoints.removeOnChange(callback)
+Remove change callback
+
+**Kind**: instance method of [<code>CssBreakpoints</code>](#module_helpers/css-breakpoint.CssBreakpoints)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | Function to remove |
+
+<a name="module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInPsuedo"></a>
+
+#### cssBreakpoints.getBreakpointInPsuedo()
+Get breakpoint from a psuedo element
+
+**Kind**: instance method of [<code>CssBreakpoints</code>](#module_helpers/css-breakpoint.CssBreakpoints)  
+<a name="module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInProperty"></a>
+
+#### cssBreakpoints.getBreakpointInProperty()
+Get breakpoint from a custom property
+
+**Kind**: instance method of [<code>CssBreakpoints</code>](#module_helpers/css-breakpoint.CssBreakpoints)  
 <a name="module_helpers/css-breakpoint.CssBreakpoints+getBreakpoint"></a>
 
 #### cssBreakpoints.getBreakpoint()
@@ -66,10 +112,11 @@ Updates the active breakpoint by checking the element and executes handlers on c
 **Kind**: instance method of [<code>CssBreakpoints</code>](#module_helpers/css-breakpoint.CssBreakpoints)  
 <a name="module_helpers/css-breakpoint.CssBreakpoints+at"></a>
 
-#### cssBreakpoints.at(name)
+#### cssBreakpoints.at(name) ⇒ <code>Breakpoint</code>
 Get a breakpoint by key
 
 **Kind**: instance method of [<code>CssBreakpoints</code>](#module_helpers/css-breakpoint.CssBreakpoints)  
+**Returns**: <code>Breakpoint</code> - Breakpoint to act on (see Breakpoint class)  
 
 | Param | Type | Description |
 | --- | --- | --- |

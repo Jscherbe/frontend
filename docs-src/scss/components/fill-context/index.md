@@ -8,8 +8,58 @@ outline: deep
 # Fill-context
 
 
+<div class="sassdoc-intro">
+  
+Setup images or videos to behave like background images (object-fit).
+  
+</div>
+    
 
 
+
+
+
+
+
+
+Use the parent selector '.fill-context' on the element that should be the 
+frame for the child object (img,video).  Can be used within the grid with 
+modifier (see in example below).
+    
+    
+
+#### Examples
+
+      
+
+
+``` html
+<div class="fill-context">
+  <img class="fill-context__object" src="background.jpg">
+</div>
+ 
+ 
+<div class="fill-context fill-context--auto">
+  <img src="background.jpg">
+</div>
+ 
+<div data-grid-item="width: 6" class="fill-context fill-context--in-grid fill-context--contain">
+  <img src="background.jpg">
+</div>
+```
+  
+
+
+##### Preview
+
+
+<SassdocPreview uid="fill-context-content-content-block-id-1" :exampleIndex="0" />
+  
+
+  
+
+      
+  
 
 ## Mixins
 
@@ -30,8 +80,8 @@ Prints fill context styles
 - **File:** _fill-context.scss
 - **Group:** fill-context
 - **Type:** mixin
-- **Lines (comments):** 8-24
-- **Lines (code):** 26-49
+- **Lines (comments):** 30-32
+- **Lines (code):** 34-64
 
 </SassdocDetails>
     
@@ -50,36 +100,6 @@ Prints fill context styles
 
 
       
-
-      
-
-
-``` html
-<div class="fill-context">
-  <img class="fill-context__object" src="background.jpg">
-</div>
- 
- 
-<div class="fill-context fill-context--auto">
-  <img src="background.jpg">
-</div>
- 
-<div data-grid-item="width: 6" class="fill-context fill-context--in-grid">
-  <img src="background.jpg">
-</div>
-```
-  
-
-
-##### Preview
-
-
-<SassdocPreview uid="fill-context-mixin-styles" :exampleIndex="1" />
-  
-
-  
-
-      
   
 
 
@@ -87,7 +107,7 @@ Prints fill context styles
 
   import SassdocPreview from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocPreview.vue";
   import SassdocDetails from "@ulu/vitepress-sassdoc/lib/assets/components/SassdocDetails.vue";
-  const sassdocGroup = [{"groupName":"fill-context","id":"mixin-styles","uid":"fill-context-mixin-styles","title":"styles()","groupPath":"/scss/components/fill-context/","path":"/scss/components/fill-context/#mixin-styles","previewsByIndex":{"1":"<div class=\"fill-context\">\n  <img class=\"fill-context__object\" src=\"background.jpg\">\n</div>\n \n \n<div class=\"fill-context fill-context--auto\">\n  <img src=\"background.jpg\">\n</div>\n \n<div data-grid-item=\"width: 6\" class=\"fill-context fill-context--in-grid\">\n  <img src=\"background.jpg\">\n</div>"}}];
+  const sassdocGroup = [{"groupName":"fill-context","id":"content-content-block-id-1","uid":"fill-context-content-content-block-id-1","title":"content-block-id-1","groupPath":"/scss/components/fill-context/","path":"/scss/components/fill-context/#content-content-block-id-1","previewsByIndex":{"0":"<div class=\"fill-context\">\n  <img class=\"fill-context__object\" src=\"background.jpg\">\n</div>\n \n \n<div class=\"fill-context fill-context--auto\">\n  <img src=\"background.jpg\">\n</div>\n \n<div data-grid-item=\"width: 6\" class=\"fill-context fill-context--in-grid fill-context--contain\">\n  <img src=\"background.jpg\">\n</div>"}},{"groupName":"fill-context","id":"mixin-styles","uid":"fill-context-mixin-styles","title":"styles()","groupPath":"/scss/components/fill-context/","path":"/scss/components/fill-context/#mixin-styles","previewsByIndex":{}}];
   export default {
     components: {
       SassdocPreview,

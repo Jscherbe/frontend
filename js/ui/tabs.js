@@ -1,23 +1,24 @@
 /**
  * @module ui/tabs
  */
-// =============================================================================
-// Tabs
-// =============================================================================
-// 
-// Version:         1.0.1
-// 
-// Selected by: [data-site-tablist]
-// 
-// Possible options (passed in attribute JSON)
-// - openByUrlHash | Optionally add "openByUrlHash" to   
-//   have the scriptopen a tab and focus it on page load 
-//   (and set it in history as they navigate)
 
-import AriaTablist from 'aria-tablist';
+// * - Attribute to enable behavior 'data-site-tablist'
+// * - Options can be passed via JSON in data attribute
+// *   - openByUrlHash | Optionally add "openByUrlHash" to have the 
+// *     script open a tab and focus it on page load (and set it in history 
+// *     as they navigate)
+
+
+import AriaTablist from "aria-tablist";
 
 const errorHeader = "Site Tablist [data-site-tablist] error:";
+
+/**
+ * Array of current tab instances (exported if you need to interact with them)
+ * @type {Array} 
+ */
 const instances = [];
+
 // Init all instances currently in page
 window.addEventListener("load", () => {
   initWithin(document);
@@ -26,11 +27,11 @@ window.addEventListener("load", () => {
 });
 
 // Initialize when page updates/changes
-document.addEventListener('pageModified', e => initWithin(e.target));
+document.addEventListener("pageModified", e => initWithin(e.target));
 
 function initWithin(context) {
   if (!context) return;
-  const tablists = context.querySelectorAll('[data-site-tablist]');
+  const tablists = context.querySelectorAll("[data-site-tablist]");
   tablists.forEach(init);
 }
 function openByCurrentHash({ options, ariaTablist }) {
@@ -42,7 +43,7 @@ function openByCurrentHash({ options, ariaTablist }) {
         if (possibleId === tab.id) {
           ariaTablist.open(tab);
         }
-      })
+      });
     }
   }
 }
@@ -90,7 +91,7 @@ function setHeights(element) {
   const tabs = [ ...element.children];
   const panels = tabs.map(n => document.querySelector(`[aria-labelledby="${ n.id }"]`)); 
   const parent = panels[0].parentElement;
-  const images = [ ...parent.querySelectorAll('img') ];
+  const images = [ ...parent.querySelectorAll("img") ];
   const imagePromises = images.map(image => imagePromise(image));
   function imagePromise(image) {
     return new Promise((resolve, reject) => {
