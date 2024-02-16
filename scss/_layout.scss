@@ -25,19 +25,7 @@ $config: (
   "z-index-fixed":     1000
 ) !default;
 
-/// Containers Lookup (use set-containers)
-/// @type Map
 
-$containers: (
-  "container" : (
-    "width" : 100%,
-    "max-width" : get("max-width"),
-    "padding" : (get("margin") get("margin")),
-    "breakpoints" : null,
-    "responsive" : false,
-    "responsive-amount" : 3vw
-  )
-) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
@@ -53,6 +41,21 @@ $containers: (
 @function get($name) {
   @return utils.require-map-get($config, $name, "layout [config]");
 }
+
+/// Containers Lookup (use set-containers)
+/// @type Map
+/// @ignore This needs to be below the methods it uses!
+
+$containers: (
+  "container" : (
+    "width" : 100%,
+    "max-width" : get("max-width"),
+    "padding" : (get("margin") get("margin")),
+    "breakpoints" : null,
+    "responsive" : false,
+    "responsive-amount" : 3vw
+  )
+) !default;
 
 /// Set layout containers
 /// - See the $containers variable for example of container properties

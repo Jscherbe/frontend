@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.0.23
+
+- Fix mistake introduced in 0.0.22, that broke container css
+
 ## Version 0.0.22
 
 - Add in other common component modules
