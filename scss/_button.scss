@@ -112,7 +112,7 @@ $styles: (
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Set button styles
+/// Set button styles 
 /// @param {Map} $changes Map of changes
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 

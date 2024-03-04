@@ -26,6 +26,7 @@
     "docs:build": "vitepress build docs-src",
     "docs:preview": "vitepress preview docs-src",
     "docs:update:scss": "node ./docs-src/.vitepress/sassdoc.js",
+    "docs:watch:scss": "SASSDOC_WATCH=true node ./docs-src/.vitepress/sassdoc.js",
     "docs:update:scss:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js",
     "docs:update:js": "node ./docs-src/.vitepress/jsdoc.js",
     "types": "npx tsc"
@@ -56,6 +57,7 @@
   "devDependencies": {
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.9",
+    "chokidar": "^3.6.0",
     "fs-extra": "^11.2.0",
     "jsdoc": "^4.0.2",
     "jsdoc-to-markdown": "^8.0.0",

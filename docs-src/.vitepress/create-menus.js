@@ -21,28 +21,47 @@ export default function createMenus() {
 
   // Modify the nav
   // - Remove old item and replace with dropdown version
-  nav.splice(navIndex, 1, {
-    text: 'SCSS',
-    items: [
-      {
-        text: 'SCSS',
-        items: sections.map(itemNoChildren)
-      }
-    ]
-  });
+  // nav.splice(navIndex, 1, {
+  //   text: 'SCSS',
+  //   items: [
+  //     {
+  //       text: 'SCSS',
+  //       items: sections.map(itemNoChildren)
+  //     }
+  //   ]
+  // });
   
   // Modify the sidebar
   // - Pull out scss section and make separate sidebar configs for each
   //   since we will display them in a dropdown menu (the sections)
   // - We also add the other sections 
-  delete sidebar[sassPath];
-  sections.forEach(current => {
-    // Map from section so they retain the same order as dropdown
-    sidebar[current.link] = [
-      current,
-      ...sections.filter(other => other !== current).map(itemNoChildren)
-    ];
+  // delete sidebar[sassPath];
+  sidebar[sassPath] = sections.map(section => {
+    return {
+      ...section,
+      collapsed: true
+    }
   });
+  //   text: "SCSS",
+
+  // }
+  // console.log(sidebar);
+  // sections.forEach(current => {
+  //   current.collapsed = true;
+    // Map from section so they retain the same order as dropdown
+    // sidebar[current.link] = [
+    //   current,
+      // ...sections.filter(other => other !== current).map(itemNoChildren).map(link => {
+      //   link.text = `SCSS > ${ link.text }`;
+      //   return link;
+      // }),
+      // {
+      //   text: 'Other',
+      //   collapsed: true,
+      //   items: sections.filter(other => other !== current).map(itemNoChildren)
+      // }
+  //   ];
+  // });
 
   return { nav, sidebar };
 }

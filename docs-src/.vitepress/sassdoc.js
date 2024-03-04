@@ -2,11 +2,12 @@ import fs from "fs-extra";
 import { resolve, dirname, join } from "path";
 import { outputPages } from "@ulu/vitepress-sassdoc";
 import { fileURLToPath } from "url";
+import chokidar from "chokidar";
 
+const isWatch = !!process.env.SASSDOC_WATCH;
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
+const src = resolve(__dirname, "../../scss/");
 const dist = resolve(__dirname, "../");
-
 const commonConfig = {
   previewHead: `
     <title>ULU Example</title> 
@@ -18,19 +19,17 @@ const commonConfig = {
     <script src="/frontend/ulu-frontend.min.js"></script>
   `,
 };
-
 const subConfig = base => ({
   ...commonConfig,
   dir: resolve(__dirname, "../../scss/", base),
   pathBase: `/scss/${ base }`,
   dist,
 });
-
 const configs = [
   {
     ...commonConfig,
     dist,
-    dir: resolve(__dirname, "../../scss/"),
+    dir: src,
     pathBase: "/scss/core/",
     sassdocOptions: {
       exclude: [
@@ -49,20 +48,27 @@ const configs = [
 
 let running = false;
 
+if (isWatch) {
+  chokidar.watch(src, { ignoreInitial: true }).on('all', (event, path) => {
+    console.log(`Sass watch ${ event }:`, path);
+    output();
+  });
+}
+
+// Run once
 (async () => {
-  try {
-    await output();
-  } catch (error) {
-    console.log(error);
-  }
+  await output();
 })();
 
 async function output() {
-  if (!running) {
+  if (running) return;
+  try {
     running = true;
     configs.forEach(c => cleanOutputDir(c));
     await Promise.all(configs.map(c => outputPages(c)));
     running = false;
+  } catch (error) {
+    console.log(error);
   }
 }
 
