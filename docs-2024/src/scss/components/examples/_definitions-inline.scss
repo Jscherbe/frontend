@@ -1,0 +1,22 @@
+@use "vars";
+@use "ulu";
+
+.definitions-inline {
+  > div {
+    display: inline-block;
+  }
+  dt, dd {
+    display: inline;
+  }
+  dt {
+    color: ulu.cssvar-use("color-type-tertiary");
+    font-weight: ulu.typography-get("font-weight-light");
+  }
+  dd {
+    color: ulu.cssvar-use("color-type-secondary");
+    font-weight: ulu.typography-get("font-weight-semibold");
+  }
+  dt, dd + dd {
+    margin-right: 0.25em;
+  }
+}

@@ -1,0 +1,25 @@
+@use "vars";
+@use "ulu";
+
+.page-layout {
+  @include ulu.calculate-responsive-property("padding-left", vars.$site-margin);
+  @include ulu.calculate-responsive-property("padding-right", vars.$site-margin);
+  padding-top: vars.$site-nav-padding-top + 0.5rem;
+}
+.page-layout__header {
+  display: flex;
+  align-items: flex-end;
+}
+.page-layout__header-badge {
+  margin-right: 0.65rem;
+  align-self: flex-start;
+}
+.page-layout__header-content {
+  margin-right: 1rem;
+}
+.page-layout__header-actions {
+  margin-left: auto;
+}
+.page-layout__nav {
+  margin: 1rem 0 1.5rem 0;
+}

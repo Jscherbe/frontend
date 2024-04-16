@@ -1,0 +1,71 @@
+@use "vars";
+@use "ulu";
+
+// Use in combination with button component
+.remove-button {
+  padding: 1em;
+  border-radius: ulu.element-get("border-radius");
+  position: relative;
+  font-weight: ulu.typography-get("font-weight-semibold");
+  margin-top: 1em;
+  margin-bottom: 1em;
+  &:hover {
+    .remove-button__icon-inner {
+      opacity: 1;
+    }
+  }
+}
+// .remove-button__value { 
+//   font-weight: normal;
+// }
+.remove-button__label, 
+.remove-button__value { 
+  text-overflow: ellipsis;
+}
+.remove-button__label {
+  color: ulu.cssvar-use("color-accent");
+}
+
+.remove-button__icon {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: ulu.cssvar-use("color-accent");
+  border-radius: 50%;
+  color: ulu.cssvar-use("color-base");
+  width: 1.4em;
+  height: 1.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.remove-button__icon-inner {
+  margin: 0;
+  opacity: 0.85;
+}
+.remove-button--large {
+  .remove-button__label,
+  .remove-button__value {
+    display: block;
+    width: 100%;
+  }
+  .remove-button__label {
+    text-transform: uppercase;
+    margin-bottom: 0.25em;
+  }
+}
+.remove-button--image {
+  width: 3rem;
+  height: 2.75rem;
+  img {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

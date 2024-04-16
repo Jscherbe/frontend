@@ -1,0 +1,10 @@
+@use "ulu";
+
+.headline-label {
+  color: ulu.cssvar-use("color-accent");
+  display: block;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+  font-family: ulu.typography-get("font-family-sans");
+  @include ulu.typography-size("small");
+}

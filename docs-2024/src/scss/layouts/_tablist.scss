@@ -1,0 +1,24 @@
+@use "ulu";
+@use "vars";
+
+.secondary-menu {
+  border-bottom: 1px solid ulu.color-get('rule-light');
+  font-family: ulu.typography-get('font-family-serif');
+  ul {
+    width: 100%;
+    // justify-content: space-evenly;
+  }
+  .nav-strip__link{
+    margin-bottom: 0;
+    // box-sizing: border-box;
+    color: vars.$color-blue;
+    padding: 1.25em 2em;
+    &:hover {
+      color: vars.$color-blue-dark;
+    }
+    &.is-active {
+      color: vars.$color-blue-dark;
+      font-weight: bold;
+    }
+  }
+}

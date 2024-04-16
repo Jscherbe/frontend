@@ -1,0 +1,175 @@
+@use "vars";
+@use "ulu";
+@use "icon";
+@use "sass:map";
+@use "sass:math";
+
+$config: (
+  "background-color":              white,
+  "background-color-open":          #F7F8F7,
+  "padding-x":                      1.5rem,
+  "padding-y":                      1.5rem,
+  "transparent-padding-y":          0.5rem,
+  "transparent-padding-x":          0,
+  "margin":                         3rem,
+  "margin-between":                 0,
+  "border-radius":                  0,
+  "box-shadow":                     none,
+  "border-color":                   ulu.color-get("rule"),
+  "border":                         1px solid ulu.color-get("rule"),
+  "summary-color":                  inherit,
+  "summary-type-size" :             false,
+  "summary-color-hover":            inherit,
+  "summary-padding-y":              1rem,
+  "summary-background-color":     white,
+  "summary-line-height":            inherit,
+  "icon-color":                     ulu.color-get("link"),
+  "icon-color-hover":               ulu.color-get("link:hover"),
+  "icon-background-color" :         transparent,
+  "icon-background-color-hover" :   transparent,
+  "icon-border-radius" :            50%,
+  "icon-size" :                     auto,
+  "icon-font-size" :                1.5rem
+) !default;
+
+@mixin set($changes) { 
+  $config: map.merge($config, $changes) !global; 
+}
+@function get($name) { 
+  @return ulu.utils-require-map-get($config, $name, 'site-details [config]'); 
+}
+
+@mixin styles {
+
+  // When not one of our custom classed details components
+  .site-details,
+  details:not([class]) {
+    position: relative; // For active border
+    border-radius: 0;
+    padding-left: get("padding-x");
+    padding-right: get("padding-x");
+    margin-top: get("margin");
+    margin-bottom: get("margin");
+    border: get("border");
+    background-color: get("background-color");
+    box-shadow: get("box-shadow");
+    &:first-of-type {
+      border-top-left-radius: get("border-radius");
+      border-top-right-radius: get("border-radius");
+      >summary:after {
+        top: get("border-radius");
+      }
+    }
+    &:last-of-type {
+      border-bottom-left-radius: get("border-radius");
+      border-bottom-right-radius: get("border-radius");
+      >summary:after {
+        bottom: get("border-radius");
+      }
+    }
+    & + & {
+      $gap: -(get("margin") - get("margin-between"));
+      margin-top: $gap;
+      margin-top: calc($gap - 1px);
+    }
+    > summary {
+      color: get("summary-color");
+      margin-left: -(get("padding-x"));
+      margin-right: -(get("padding-x"));
+      line-height: get("summary-line-height");
+      padding: get("summary-padding-y") get("padding-x");
+      // outline: none;
+      vertical-align: top;
+      font-weight: bold;
+      list-style: none; // Remove the default arrow (old safari?)
+      cursor: pointer;
+      @if (get("summary-type-size")) {
+        @include ulu.typography-size(get("summary-type-size"));
+      }
+      &:hover {
+        color: get("summary-color-hover");
+        .site-details__icon {
+          background-color: get("icon-background-color-hover");
+          color: get("icon-color-hover");
+        }
+      }
+    }
+    &[open] {
+      background-color: get("background-color-open");
+      padding-bottom: get("padding-y");
+      z-index: 2; // Above child details
+      > summary {
+        margin-bottom: get("padding-y");
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; 
+        border-bottom: get("border");
+      }
+    }
+  }
+  .site-details__icon {
+    flex: 0 0 get("icon-size");
+    margin-left: 0.5em;
+    order: 3;
+    background-color: get("icon-background-color");
+    border-radius: get("icon-border-radius");
+    width: get("icon-size");
+    height: get("icon-size");
+    font-size: get("icon-font-size");
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: arial;
+    &:after {
+      display: inline-block;
+      margin-top: 0.1em;
+      content: "\002B";
+      // margin-left: auto; // flex to side
+      color: get("icon-color");
+    }
+  }
+
+
+  // Only site-detials can have icon, 
+  // so that plain (no extra markup) details can have the default marker
+  .site-details {
+    > summary {
+      display: flex; // For icon
+      align-items: flex-start;
+      justify-content: space-between;
+      &::-webkit-details-marker,
+      &::marker {
+        display: none;
+        content: "";
+      }
+    }
+    &[open] > summary .site-details__icon {
+      &:after {
+        // @include icon.content(icon.$fa-var-minus);
+        content: "\2212"; // Minus
+      }
+    }
+  }
+  .site-details--transparent {
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    padding-left: get("transparent-padding-x");
+    padding-right: get("transparent-padding-x");
+    > summary {
+      margin-left: -(get("transparent-padding-x"));
+      margin-right: -(get("transparent-padding-x"));
+      padding: get("transparent-padding-y") get("transparent-padding-x");
+      background-color: transparent;
+      border: none;
+    }
+    &[open] {
+      background-color: transparent;
+      > summary {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

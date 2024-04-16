@@ -1,0 +1,32 @@
+@use "vars";
+@use "ulu";
+
+.site-placeholder {
+  background-color: ulu.cssvar-use("color-background-muted-x");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+  color: ulu.cssvar-use("color-type-tertiary");
+  border: 2px dashed ulu.cssvar-use("color-background-muted-xxx");
+  margin-bottom: 1rem;
+  border-radius: ulu.element-get("border-radius");
+}
+.site-placeholder__icon {
+  color: ulu.cssvar-use("color-icon");
+  display: block;
+  margin: 0 auto 0.25em auto;
+  font-size: 1.5em;
+}
+.site-placeholder--large {
+  @include ulu.typography-size("large");
+  font-weight: ulu.typography-get("font-weight-light");
+  
+}
+.site-placeholder--small {
+  padding: 0.5em 1em;
+  display: block;
+  border-width: 1px;
+}

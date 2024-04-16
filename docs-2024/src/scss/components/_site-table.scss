@@ -1,0 +1,81 @@
+@use "vars";
+@use "ulu";
+
+// To allow class on table element
+.site-table table,
+table.site-table,
+.wysiwyg table {
+  // background-color: white;
+  text-align: left;
+  border-collapse: separate; 
+  border-spacing: 0 0.5em;
+  width: 100%;
+}
+.site-table,
+.wysiwyg { 
+  // border: 3px solid transparent;
+  caption {
+    margin: 0;
+    padding: 0.75rem 0;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 2px;
+  }
+  td,
+  th {
+    padding: 0.75rem;
+    font-weight: normal;
+    vertical-align: top;
+    background-clip: padding-box;
+    background-color: lightgray;
+    // background-color: ulu.cssvar-use("color-table-cell-background");
+    // border-bottom: 3px solid transparent;
+  }
+  thead th {
+    background-color: lightgray;
+    color: inherit;
+    font-weight: bold;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+  tfoot td {
+    background-color: gray;
+    color: black;
+  }
+  th, td {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.site-table--striped {
+  tbody tr:nth-child(even) td {
+    background-color: rgb(235, 235, 235);
+  }
+}
+// .site-table__header-small {
+//   min-width: 6em;
+// }
+// .site-table__header-medium {
+//   min-width: 12em;
+// }
+// .site-table__header-large {
+//   min-width: 20em;
+// }
+
+// First column is bold
+.site-table--first-column-bold {
+  tbody tr td:first-child {
+    font-weight: bold;
+  }
+}
+// Only works with simple tables
+.site-table--w-actions {
+  thead tr:first-child th:last-child,
+  tbody tr td:last-child {
+    text-align: right;
+    .button {
+      margin: 0;
+    }
+  }
+}

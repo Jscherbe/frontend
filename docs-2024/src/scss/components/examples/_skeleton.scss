@@ -1,0 +1,55 @@
+@use "ulu";
+@use "vars";
+
+/// UI Placeholder component for loading fill state
+
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite;
+  color: ulu.cssvar-use("color-disabled");
+}
+.skeleton__background-color {
+  background-color: ulu.cssvar-use("color-skeleton") !important;
+}
+.skeleton__block,
+.skeleton__text {
+  background-color: ulu.cssvar-use("color-skeleton") !important;
+  border-radius: ulu.element-get("border-radius");
+}
+.skeleton__alt {
+  background-color: ulu.cssvar-use("color-skeleton-alt");
+}
+.skeleton__block--media {
+  aspect-ratio: 4/3;
+}
+.skeleton__text {
+  height: 1em;
+  width: 60%;
+  border-radius: 3em;
+}
+.skeleton__text--inline {
+  display: inline-block;
+  & + & {
+    margin-left: 0.35em;
+  }
+}
+.skeleton__text--small-xxx {
+  width: 10%;
+}
+.skeleton__text--small-xx {
+  width: 20%;
+}
+.skeleton__text--small-x {
+  width: 30%;
+}
+.skeleton__text--small {
+  width: 40%;
+}
+.skeleton__text--large {
+  width: 70%;
+}
+.skeleton__text--large {
+  width: 85%;
+}
+.skeleton__text--large-x {
+  width: 100%;
+}

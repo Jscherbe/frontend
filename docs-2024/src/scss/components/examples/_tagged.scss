@@ -1,0 +1,14 @@
+// Adds tag to another element (positioned)
+
+@use "ulu";
+@use "vars";
+
+.tagged {
+  position: relative;
+}
+.tagged__tag {
+  position: absolute;
+  top: -0.25em;
+  right: -0.25em;
+  margin: 0;
+}

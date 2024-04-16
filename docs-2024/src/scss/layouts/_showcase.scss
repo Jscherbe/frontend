@@ -1,0 +1,52 @@
+@use "ulu";
+@use "vars";
+
+// $margin: 5rem;
+$body-padding: 1.5rem;
+
+.showcase {
+  background-color: white;
+  border-top: 1px solid black;
+  height: 100%;
+  padding-top: 2px;
+}
+.showcase__header {
+  border-top: 5px solid black;
+  padding: 1rem;
+  // overwrite the property rather than using this&:not @daniel
+  &:not(.call-to-action__header) {
+    border-bottom: ulu.element-get-rule-style("light");
+  }
+}
+
+.showcase__header-container {
+  margin: vars.$content-padding auto;
+}
+
+.showcase__body {
+  height: 100%;
+  padding: $body-padding;
+  > .secondary-menu {
+    margin-bottom: 2rem;
+  }
+}
+
+// .showcase__data-grid-cell {
+//   background-color: vars.$color-gray-light;
+// }
+
+
+.call-to-action__icon-container {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: vars.$color-green-light-x;
+  margin: -3rem auto 0;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.call-to-action__icon {
+  margin: auto;
+  transform: rotate(-30deg);
+}

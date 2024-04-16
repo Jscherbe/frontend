@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "vars";
+@use "scss" as ulu;
+
+@include ulu.breakpoint-set-sizes((
+  "small"  : ulu.calculate-pixel-to-em(680px, 16px),
+  "medium" : ulu.calculate-pixel-to-em(1150px, 16px),
+  "large"  : ulu.calculate-pixel-to-em(1300px, 16px), // Measure chart/body
+));

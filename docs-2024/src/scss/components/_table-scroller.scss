@@ -1,0 +1,49 @@
+$enable-shadow: true;
+
+.table-scroller {
+  overflow-y: hidden;
+  max-width: 100%;
+  margin: units(2) 0;
+  margin-bottom: 2rem;
+
+  @if $enable-shadow {
+    box-shadow: inset -4px 0 4px -4px rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    padding-top: 3px;
+    padding-bottom: 3px; // Hang the border off a little so  it looks ok with w/o a caption
+  }
+  
+  >table {
+    margin: 0;
+  } 
+}
+.table-scroller--no-wwrap {
+  table thead th {
+    white-space: nowrap;
+  }
+}
+// Requires that you apply background colors to headers
+.table-scroller--sticky-first {
+  > table {
+    thead tr:first-child th:first-child,
+    tbody tr th:first-child,
+    tbody tr td:first-child,
+    tfoot tr th:first-child,
+    tfoot tr td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      box-shadow: 2px 0 3px rgba(0,0,0,0.35);
+      @if $enable-shadow {
+        box-shadow: 6px 0px 6px -2px rgb(102 102 102 / 20%), 0px 0px 0px 0 #ddd, -2px 0px 0px 0 #ddd;
+      }
+    }
+    tbody tr th:first-child,
+    tbody tr td:first-child,
+    tfoot tr th:first-child,
+    tfoot tr td:first-child {
+      background-color: white;
+      z-index: 1;
+    }
+  }
+}

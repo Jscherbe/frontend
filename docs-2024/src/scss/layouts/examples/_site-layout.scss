@@ -1,0 +1,125 @@
+@use "vars";
+@use "ulu";
+
+// Breakpoint for mobile menu style
+$breakpoint: "medium"; 
+
+// Z-Index is fixed when on desktop and mobile menu
+  // but when on desktop it should still lie under the fixed elements on the page
+$z-index: ulu.layout-get("z-index-fixed") - 2; 
+$z-index-menu: $z-index + 1; 
+
+// .site-layout {}
+.site-layout__header {
+  @include ulu.breakpoint-max($breakpoint) {
+    background-color: ulu.cssvar-use("color-header");
+  }
+}
+.site-layout__header-content {
+  @include ulu.breakpoint-max($breakpoint) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+}
+.site-layout__logo {
+  max-width: 10rem;
+  display: block;
+  @include ulu.breakpoint-min($breakpoint) {
+    display: none;
+  }
+}
+.site-layout__nav,
+.site-layout__toolbar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: $z-index; 
+  padding: vars.$site-nav-padding;
+}
+.site-layout__nav {
+  left: 0;
+  width: ulu.cssvar-use("sidebar-width");
+  padding-top: vars.$site-nav-padding-top;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: ulu.cssvar-use("color-background");
+  z-index: $z-index-menu;
+  overflow-y: auto;
+}
+.site-layout__nav--hidden {
+  visibility: hidden;
+  transform: translateX(-100%);
+}
+.site-layout__nav-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index;
+  background-color: ulu.element-get("backdrop-color");
+  backdrop-filter: blur(ulu.element-get("backdrop-blur"));
+}
+.site-layout__toolbar {
+  width: ulu.cssvar-use("toolbar-width");
+  right: 0;
+  left: auto;
+  padding-left: 0;
+  // display: flex;
+  // flex-direction: column;
+  // text-align: right;
+  // display: none;
+  
+  @include ulu.breakpoint-max($breakpoint) {
+    @include ulu.cssvar-declare("color-button-secondary-background", transparent);
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    padding: 0;
+    height: auto;
+    .button {
+      margin: 0;
+    }
+  }
+}
+.site-layout__toolbar-button {
+  margin: 0 0 0.75em 0;
+}
+
+.site-layout__content {
+  @include ulu.breakpoint-min($breakpoint) {
+    padding-left: ulu.cssvar-use("sidebar-width");
+    transition: padding 200ms ease-out;
+    padding-right: ulu.cssvar-use("toolbar-width");
+  }
+}
+
+.site-layout--nav-collapsed {
+  @include ulu.cssvar-declare("sidebar-width", 4rem);
+  .site-layout__nav {
+    animation: site-nav-collapse 250ms forwards;
+    background-color: ulu.cssvar-use("color-nav-background");
+    padding-left: 0;
+    padding-right: 0;
+  }
+  @keyframes site-nav-collapse {
+    0% {
+      transform: translateX(-4rem);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .site-logo__cqc {
+    height: 0; // So it's still accessible
+  }
+}
+
+

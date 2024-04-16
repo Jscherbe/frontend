@@ -1,0 +1,30 @@
+@use "vars";
+@use "scss" as ulu;
+
+@include ulu.element-set((
+  "backdrop-blur" : 2px,
+  "backdrop-color" : rgba(128, 128, 128, 0.466),
+  "border-radius-small" : 3px,
+  "border-radius" : 5px,
+  "border-radius-large" : 10px,
+  // "margin" : 1.75em,
+  // "margin-large" : 3.75em,
+  // "box-shadow" : functions.default-box-shadow(),
+  // "box-shadow-raised" : 0 1px 20px ulu.color-get('box-shadow'),
+  // "ul-list-style-type" : square,
+  // "ul-list-style-type-2" : disc,
+  // "ul-list-style-type-3" : circle,
+  "link-text-decoration-style":       solid,
+  // "link-text-underline-offset" : 0.2em,
+  "link-text-decoration-thickness" : 1px,
+)); 
+@include ulu.element-set-rule-styles((
+  "default" : 1px solid ulu.color-get("rule"),
+  // "light" : 1px solid ulu.color-get("rule-light"),
+  "large" : 3px solid ulu.color-get("rule"),
+  // "light-large" : 4px solid ulu.color-get("rule-light"),
+));
+@include ulu.element-set-rule-margins((
+  // "large-x" : 3em,
+  "small" : 0.6em,
+));

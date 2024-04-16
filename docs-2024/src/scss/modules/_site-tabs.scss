@@ -1,0 +1,143 @@
+@use "ulu";
+@use "vars";
+@use "mixins";
+
+$config: (
+  "border-width" : 0.25em,
+  "tab-color" : ulu.color-get("link"),
+  "tab-color-hover" : ulu.color-get("link:hover"),
+  "tab-color-selected" : ulu.color-get("selected"),
+  "tab-border-color-selected" : currentColor,
+  "tablist-border-bottom" : ulu.element-get-rule-style("light"),
+  "margin" : 2rem,
+  "border-radius" : 8px,
+  "tabpanel-background-color" : rgb(245, 245, 245)
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return ulu.utils-require-map-get($config, $name, 'site-tabs [config]');
+}
+
+@mixin styles {
+  .site-tabs {
+    margin-bottom: get("margin");
+    margin-top: get("margin");
+    [role="tablist"] {
+      position: relative;
+      z-index: 2;
+      display: flex; 
+      overflow-x: auto;
+      margin-bottom: -1px;
+      border-bottom: get("tablist-border-bottom");
+      // background-color: vars.$color-blue-dark;
+      // padding-left: 1em;
+      // box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      // border-top-left-radius: get("border-radius");
+      // border-top-right-radius: get("border-radius");
+      // @include ulu.breakpoint-min("medium") {
+        // padding-left: get("margin");
+      // }
+    }
+    [role="tab"] {
+      position: relative; 
+      cursor: pointer;
+      padding: 0.75em 0.1em 0.75em 0.1em;
+      color: get("tab-color");
+      font-weight: bold;
+      border-bottom: get("border-width") solid transparent;
+      text-align: center;
+      white-space: nowrap;
+      &:not(:first-child) {
+        margin-left: 1.25em;
+        @include ulu.breakpoint-min("small") {
+          margin-left: 2em;
+        }
+      }
+      &:hover {
+        color: get("tab-color-hover");
+      }
+      &:hover,
+      &:focus,
+      &[aria-selected="true"] {
+        border-bottom-color: currentColor;
+      }
+      &[aria-selected="true"] {
+        color: get("tab-color-selected");
+        border-bottom-color: get("tab-border-color-selected");
+        opacity: 1;
+      }
+    }
+    [role="tabpanel"] {
+      position: relative;
+      z-index: 1;
+      padding: 2rem get("margin");
+      margin-bottom: -1px;
+      // border-bottom-left-radius: get("border-radius");
+      // border-bottom-right-radius: get("border-radius");
+      // background-color: vars.$color-gray-light-x;
+      overflow: hidden;
+
+      background-color: get("tabpanel-background-color");
+      [class*="video-embed"],
+      .full-width-image {
+        margin-left: -(get("margin"));
+        margin-right: -(get("margin"));
+        width: calc(100% + #{ get("margin")  * 2 });
+        max-width: none;
+        &:first-child {
+          margin-top: -2rem;
+        }
+        &:last-child {
+          margin-bottom: -2rem;
+        }
+      }
+    }
+  }
+  .site-tabs--transparent {
+    [role="tablist"] {
+      background-color: transparent;
+      box-shadow: none;
+      // border-bottom: 1px solid vars.$color-gray;
+      padding-left: 0;
+      padding-right: 0;
+      // overflow: visible;
+      // border-bottom: none;
+    }
+    [role="tab"] {
+      // border-bottom: none;
+    }
+    [role="tabpanel"] {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+     
+    }
+  }
+
+  .site-tabs--fullpage {
+    > [role="tablist"] {
+      // border-top: 1px solid rgb(235, 235, 235);
+      // border-bottom: 1px solid rgb(220, 220, 220);
+      // background-color: rgb(245, 245, 245);
+      justify-content: center;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    }
+    >[role="tabpanel"] {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+}

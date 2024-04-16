@@ -1,0 +1,34 @@
+@use "vars";
+@use "ulu";
+
+.site-toolbar {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  .button {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }
+}
+.site-toolbar--separator {
+  border-bottom: ulu.element-get-rule-style();
+}
+.site-toolbar__label {
+  margin-right: 1em;
+}
+.site-toolbar__actions {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+// .site-toolbar__active {
+//   border-top: ulu.element-get-rule-style();
+//   border-top-style: dotted;
+//   padding-top: 0.25em;
+//   padding-bottom: 0.25em;
+//   display: flex;
+//   align-items: center;
+//   flex-wrap: wrap;
+// }

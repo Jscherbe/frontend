@@ -1,0 +1,36 @@
+@use "vars";
+@use "ulu";
+
+.breadcrumbs {
+  ul {
+    display: flex;
+    margin-bottom: 1.25rem;
+    // color: ulu.color-get("link");
+    line-height: ulu.typography-get("line-height-dense");
+  }
+  // a {
+  //   color: inherit;
+  //   line-height: ulu.typography-get("line-height-dense");
+  //   &:hover {
+  //     color: ulu.color-get("link:hover");
+  //   }
+  // }
+  li {
+    white-space: nowrap;
+    max-width: 15em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline-block;
+    padding-right: 1em;
+    margin-right: 0.5em;
+    position: relative;
+  }
+}
+.breadcrumbs__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  color: ulu.cssvar-use("color-type-tertiary");
+  opacity: 0.5;
+}

@@ -1,0 +1,426 @@
+// Version: 1.0.2
+
+// Changes: 
+// - Removed nested fieldset option (not accessible)
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "sass:list";
+@use "ulu";
+@use "vars";
+// @use "icon";
+// @use "mixins";
+
+$config: (
+  "required-color" :  ulu.color-get("error"), 
+  "error-color" : ulu.color-get("error"), 
+  "warning-color" : ulu.color-get("warning"), 
+  "error-highlight-color" : rgb(251, 242, 242), 
+  "warning-highlight-color" : rgb(255, 249, 237), 
+  "item-border-radius" : null,
+  "item-highlight-width" : 6px,
+  "input-margin-y" : 0.75em,
+  "input-padding-x" : 0.5em,
+  "input-padding-y" : 0.25em,
+  "input-min-width" : 10em,
+  "input-background-color" : white,
+  "input-border" : 1px solid ulu.color-tint(black, 100% - 70%),
+  "input-border-radius" : 0,
+  "check-input-size" : 1.15em,
+  "check-input-touch-size" : 2em,
+  "check-input-color" : currentColor,
+  "check-input-background-color" : white,
+  "check-input-background-color-checked" : white,
+  "check-input-background-color-hover" : white,
+  "check-input-background-color-indeterminate" : white,
+  "check-input-border" : null,
+  "check-input-border-color-hover" : null,
+  "check-input-border-color-checked" : null,
+  "check-input-border-color-indeterminate" : null,
+  "check-input-border-color-focus" : null,
+  "check-input-outline" : null,
+  "check-input-outline-hover" : null,
+  "check-input-outline-checked" : null,
+  "check-input-outline-focus" : 1px solid white,
+  "check-input-touch-color-hover" : #e8e8e8,
+  "check-input-touch-color-focus" : null,
+  "check-input-radio-size" : 0.3em,
+  "check-input-checkmark-width" : 0.38em,
+  "check-input-checkmark-height" : 0.68em,
+  "check-input-checkmark-offset-y" : -0.2em,
+  "check-input-checkmark-stroke-size" : 0.18em,
+  "check-input-mark-color" : currentColor,
+  "check-input-mark-color-hover" : null,
+  "check-input-mark-color-focus" : null,
+  "check-input-mark-color-checked" : null,
+  "check-input-mark-color-indeterminate" : null,
+  "check-input-disabled-opacity" : 0.6,
+  "check-input-border-radius": null,
+  "text-input-margin-bottom" : 0.5em,
+  "text-input-margin-top" : 1em,
+  "text-label-font-weight": bold,
+  "select-border-radius" :        4px,
+  "fieldset-background" : transparent,
+  "fieldset-border" : none,
+  "fieldset-margin-bottom" : 1rem,
+  "fieldset-margin-top" : 1rem,
+  "fieldset-padding" : 0,
+  "fieldset-margin-compact" : 0,
+  "fieldset-border-radius" : 0,
+  "fieldset-legend-color" : inherit,
+  "fieldset-legend-border-bottom" : null,
+  "description-max-width" : 25em,
+  "description-color" : false,
+  "description-margin" : (0.25em 0),
+  "error-selector" : ".is-danger",
+  "warning-selector" : ".is-warning",
+  "file-button-style" : true
+) !default;
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+@function get($name) {
+  @return ulu.utils-require-map-get($config, $name, "site-form [config]");
+}
+
+@function -fallback($op1, $op2) {
+  @return ulu.utils-map-fallback($config, $op1, $op2);
+}
+
+@mixin styles() {
+
+  $errorColor: get("error-color");
+  $selectError: get("error-selector");
+  $warningColor: get("warning-color");
+  $selectWarning: get("warning-selector");
+
+  .site-form {
+
+    $input-touch-size: get("check-input-touch-size");
+    $input-size: get("check-input-size");
+    $input-touch-margin: math.div($input-touch-size - $input-size, 2);
+    $input-touch-margin-neg: -($input-touch-margin);
+    $file-button-style: get("file-button-style");
+
+    input:not([type="submit"]),
+    select,
+    textarea,
+    label,
+    legend {
+      color: inherit;
+      font-size: 1em;
+      max-width: 100%;
+      line-height: ulu.typography-get("line-height-dense");
+      box-sizing: border-box;
+      flex-shrink: 0;
+    }
+    select,
+    textarea,
+    [type="text"],
+    [type="tel"],
+    [type="time"],
+    [type="url"],
+    [type="date"],
+    [type="email"],
+    [type="month"],
+    [type="week"],
+    [type="number"],
+    [type="search"],
+    [type="datetime-local"],
+    [type="password"],
+    [type="file"] {
+      padding: get("input-padding-y") get("input-padding-x");
+      background-color: get("input-background-color");
+      border-radius: get("input-border-radius");
+      transition: border linear 0.2s;
+      border: get("input-border");
+      min-width: get("input-min-width");
+      margin: 0;
+      // &:focus {
+        // outline: none;
+        // border: 1px solid ulu.color-get("focus");
+        // box-shadow: ulu.element-get("box-shadow");
+      // }
+    }
+    select {
+      border-radius: get("select-border-radius");
+    }
+    // Replace Native Inputs with CSS styled one
+    [type="checkbox"],
+    [type="radio"] {
+      appearance: none;
+      margin: 0;
+      display: inline-block;
+      width: $input-touch-size; // Touchable surface
+      height: $input-touch-size;
+      margin: $input-touch-margin-neg 0 $input-touch-margin-neg $input-touch-margin-neg; // Optical alignment
+      padding: 0.5em;
+      background-color: transparent;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      transition: background-color 220ms ease-in-out;
+      flex: 0 0 $input-touch-size; // When used in flex container
+      // Box / Circle (centered absolute)
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: $input-size;
+        height: $input-size;
+        outline: get("check-input-outline");
+        border: -fallback("check-input-border", "input-border");
+        border-radius: 50%;
+        transition-timing-function: ease-out;
+        transition-duration: 150ms;
+        transition-property: background-color, border-color;
+        background-color: -fallback("check-input-background-color", "input-background-color");
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      // Checkmark/ radio
+      &:after {
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        transform: rotate(45deg);
+        transition: opacity ease-out 150ms;
+        border: get("check-input-radio-size") solid get("check-input-mark-color");
+        border-radius: 50%;
+      }
+      &:focus {
+        background-color: get("check-input-touch-color-focus");
+        &:before {
+          border-color: get("check-input-border-color-focus");
+          outline: get("check-input-outline-focus");
+        }
+        &:after {
+          border-color: get("check-input-mark-color-focus");
+        }
+      }
+      &:hover {
+        background-color: get("check-input-touch-color-hover");
+        &:before {
+          outline: get("check-input-outline-hover");
+          background-color: get("check-input-background-color-hover");
+          border-color: get("check-input-border-color-hover");
+        }
+        &:after {
+          border-color: get("check-input-mark-color-hover");
+        }
+      }
+      &:checked {
+        &:before {
+          background-color: get("check-input-background-color-checked");
+          border-color: get("check-input-border-color-checked");
+          outline: get("check-input-outline-checked");
+        }
+        &:after {
+          opacity: 1;
+          border-color: get("check-input-mark-color-checked");
+        }
+      }
+      
+      &:disabled,
+      &[aria-disabled="true"],
+      &[disabled] {
+        &,
+        & + label  {
+          opacity: get("check-input-disabled-opacity");
+        }
+      }
+    }
+    [type="checkbox"] {
+      &:before {
+        border-radius: -fallback("check-input-border-radius", "input-border-radius");
+      }
+      &:after {
+        border-radius: 0;
+        width: get("check-input-checkmark-width");
+        height: get("check-input-checkmark-height");
+        transform: rotate(45deg);
+        margin-top: get("check-input-checkmark-offset-y");
+        border-top: none;
+        border-left: none;
+        border-bottom-width: get("check-input-checkmark-stroke-size");
+        border-right-width: get("check-input-checkmark-stroke-size");
+      }
+      &:indeterminate,
+      &[aria-checked=mixed] {
+        &:before {
+          background-color: get("check-input-background-color-indeterminate");
+          border-color: get("check-input-border-color-indeterminate");
+        }
+        &:after {
+          border-right: none;
+          transform: translatey(50%);
+          opacity: 1;
+          height: get("check-input-checkmark-stroke-size");
+          border-color: get("check-input-mark-color-indeterminate");
+        }
+      }
+    }
+
+    fieldset {
+      display: block;
+      width: 0;
+      min-width: 100%;
+      box-sizing: border-box;
+      margin-top: get("fieldset-margin-top");
+      margin-bottom: get("fieldset-margin-bottom");
+      border: get("fieldset-border");
+      background-color: get("fieldset-background");
+      border-radius: get("fieldset-border-radius");
+      padding: get("fieldset-padding");
+      
+      > legend {
+        font-weight: bold;
+        display: block;
+        margin: 0 0 0.5em 0;
+        border: 0;
+        padding: 0;
+        width: 100%;
+        float: left;
+        > span {
+          display: block;
+          margin-bottom: 1rem;
+          padding-bottom: 0.5em;
+          padding-top: 0.5em;
+          border-bottom: get("fieldset-legend-border-bottom");
+          color: get("fieldset-legend-color");
+        }
+        & ~ * {
+          clear: left;
+        }
+      }
+      &#{ $selectError } {
+        > legend {
+          color: $errorColor;
+        }
+      }
+      &#{ $selectWarning } {
+        > legend {
+          color: $warningColor;
+        }
+      }
+    }
+  }
+  
+  .site-form__required-char,
+  label.site-form__required {
+    color: get("required-color");
+    font-size: 110%;
+    font-weight: bold;
+    &:last-child {
+      margin-left: 0.15em;
+    }
+  }
+  .site-form__description {
+    margin: get("description-margin");
+    font-style: italic;
+    @include ulu.typography-size("small", null, true);
+    max-width: get("description-max-width");
+    color: get("description-color");
+  }
+  .site-form__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: get("input-margin-y");
+    border-radius: get("item-border-radius");
+    flex-shrink: 0; // Cannot be smaller than content within
+    @include -form-item-state($selectError, $errorColor, get("error-highlight-color"));
+    @include -form-item-state($selectWarning, $warningColor, get("warning-highlight-color"));
+  }
+  // .site-form__item,
+  // fieldset {
+  //   &#{ $selectError } {
+  //     .site-form__error {
+  //       color: $errorColor;
+  //     }
+  //   }
+  //   &#{ $selectWarning } {
+  //     .site-form__warning {
+  //       color: $warningColor;
+  //     }
+  //   }
+  // }
+  .site-form__item--align-top {
+    align-items: flex-start;
+  }
+  .site-form__item--text,
+  .site-form__item--file,
+  .site-form__item--select,
+  .site-form__item--textarea {
+    display: block;
+    label {
+      font-weight: get("text-label-font-weight");
+      display: block;
+      margin-bottom: get("text-input-margin-bottom");
+      margin-top: get("text-input-margin-top");
+    }
+    input {
+      border-radius: get("input-border-radius");
+    }
+  }
+  .site-form__items-inline {
+    display: flex;
+    flex-wrap: wrap;
+    > .site-form__item {
+      margin-right: 1.5em;
+    }
+  }
+  .site-form__actions {
+    margin: 1rem 0;
+    // text-align: right;
+  }
+  .site-form--full-width {
+    [type="text"],
+    [type="email"],
+    [type="password"] {
+      width: 100%;
+    }
+    textarea {
+      width: 100%;
+    }
+  }
+  .site-form--hide-labels {
+    label {
+      @include ulu.element-hidden-visually;
+    }
+  }
+  .site-form__error {
+    color: $errorColor;
+  }
+  .site-form__warning {
+    color: $warningColor;
+  }
+  @content;
+}
+
+@mixin -form-item-state($selector, $color, $highlightColor) {
+  &#{ $selector } {
+    background-color: $highlightColor;
+    // outline: get("item-outline-width") solid $highlightColor;
+    box-shadow: 0 0 0 get("item-highlight-width") $highlightColor;
+    label {
+      color: $color;
+    }
+    select,
+    textarea,
+    input:not([type="checkbox"]):not([type="radio"]) {
+      border-color: $color;
+    }
+  }
+}
+
+
+
+
+

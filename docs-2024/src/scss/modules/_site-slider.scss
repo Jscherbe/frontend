@@ -1,0 +1,245 @@
+@use "ulu";
+@use "vars";
+@use "mixins";
+@use "sass:map";
+
+/// Works with Slider ulu plugin (styles from success gaps orginally)
+
+/// Config options
+
+$config: (
+  "background-color" : transparent,
+  "margin-top" : 1rem,
+  "margin-bottom" : 3rem,
+  "padding-top" : 0,
+  "padding-bottom" : 0,
+  "button-size" : 3rem,
+  "button-font-size" : 1.35rem,
+  "button-color" : ulu.color-get("link"),
+  "button-border" : 2px solid ulu.color-get("link"),
+  "button-border-radius" : 50%,
+  "button-background-color" : transparent,
+  "button-color-hover" : white,
+  "button-border-color-hover" :  ulu.color-get("link:hover"),
+  "button-background-color-hover" : ulu.color-get("link:hover"),
+  "button-icon-offset-x" : false,
+  "button-icon-offset-y" : false,
+  "button-margin" : 0.75rem,
+  "dot-size" :  1rem,
+  "dot-border-radius" : 50%,
+  "dot-background-color" : transparent,
+  "dot-border-width" : 2px,
+  "dot-border-color" : ulu.color-get("link"),
+  "dot-border-color-hover" : ulu.color-get("link"),
+  "dot-background-color-hover" : ulu.color-get("link"),
+  "dot-background-color-selected" : ulu.color-get("link"),
+  "dot-border-color-selected" : ulu.color-get("link"),
+  "breakpoint" : "small"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return ulu.utils-require-map-get($config, $name, 'site-slider [config]');
+}
+
+@mixin styles {
+
+  $slide-padding-x: get("button-size") + get("button-margin");
+
+  .site-slider {
+    position: relative; // for controls
+    background-color: get("background-color");
+    // padding-top: get("padding-top"); // (2rem + get("button-size")) get("padding-bottom") (2rem + get("button-size"));
+    // get("padding-bottom");
+    // padding-bottom: get
+    margin: get("margin-top") 0 get("margin-bottom") 0;
+    // @include ulu.breakpoint-max(get("breakpoint")) {
+    //   padding: 3rem 1.5rem;
+    // }
+    .site-slider__track,
+    .Slider__controls,
+    .Slider__nav {
+      list-style: none !important;
+      padding-left: 0;
+    }
+    .Slider__control-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: get("button-color");
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: get("button-size");
+      height: get("button-size");
+      font-size: get("button-font-size");
+      background-color: get("button-background-color");
+      border: get("button-border");
+      border-radius: get("button-border-radius");
+      &:hover {
+        background-color: get("button-background-color-hover");
+        border-color: get("button-border-color-hover");
+        color: get("button-color-hover");
+      }
+    }
+    @if get("button-icon-offset-y") {
+      .Slider__control-icon {
+        margin-top: get("button-icon-offset-y");
+      }
+    }
+    .Slider__control-button--previous {
+      left: 0;
+      @if get("button-icon-offset-x")  {
+        .Slider__control-icon {
+          margin-left: get("button-icon-offset-x");
+          
+        }
+      }
+    }
+    .Slider__control-button--next {
+      right: 0;
+      @if get("button-icon-offset-x")  {
+        .Slider__control-icon {
+          margin-right: get("button-icon-offset-x");
+        }
+      }
+    }
+    .Slider__nav {
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 0.5rem 0.15rem;
+      }
+    }
+    .Slider__nav-button {
+      display: block;
+      width: get("dot-size");
+      height: get("dot-size");
+      background-color: get("dot-background-color");
+      border: get("dot-border-width") solid get("dot-border-color");
+      border-radius: get("dot-border-radius");
+      &:hover {
+        background-color: get("dot-background-color-hover");
+      }
+    }
+    .Slider__nav-button--active,
+    .Slider__nav-button--active:hover {
+      background-color: get("dot-background-color-selected");
+      border-color: get("dot-border-color-selected");
+    }
+    .Slider__control-button,
+    .Slider__nav-button {
+      transition-property: color, background-color, border-color;
+      transition-duration: 300ms;
+    }
+  }
+  .site-slider__title {
+    margin-top: -1.5rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  }
+  .site-slider__track {
+    .site-slider--vertical-center & {
+      align-items: center;
+    }
+  }
+  // Options inner container to limit the controls to the just the track aria
+  // in order to exclude the dots/nav from the positioning of the controls
+  .site-slider__control-context {
+    position: relative;
+  }
+  .site-slider__slide {
+    margin: 0;
+    padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
+  }
+  // .site-slider__slide-inner {
+  //   display: flex;
+  //   align-items: flex-start;
+  //   // max-width: 50rem;
+  //   margin: auto;
+  //   padding-left: 0.5rem;
+  //   padding-right: 0.5rem;
+  //   @include ulu.breakpoint-max(get("breakpoint")) {
+  //     justify-content: center;
+  //     align-items: center;
+  //     flex-direction: column;
+  //     text-align: center;
+  //     .site-slider--alt-layout & {
+  //       text-align: left;
+  //       justify-content: flex-start;
+  //       align-items: flex-start;
+  //     }
+  //   }
+  //   .site-slider--vertical-center & {
+  //     align-items: center;
+  //   }
+  //   .site-slider--no-mobile-change & {
+  //     @include ulu.breakpoint-max(get("breakpoint")) {
+  //       justify-content: flex-start;
+  //       flex-direction: row;
+  //       text-align: left;
+  //     }
+  //   }
+  // }
+  // .site-slider__slide-image {
+  //   position: relative;
+  //   width: 33%;
+  //   flex: 0 1 33%;
+  //   margin-left: 3rem;
+  //   &:first-child {
+  //     margin-right: 3rem;
+  //     margin-left: 0;
+  //   }
+  //   img {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     border: 0;
+  //     object-fit: cover;
+  //   }
+  //   @include ulu.breakpoint-max(get("breakpoint")) {
+  //     margin-right: 0;
+  //     margin-bottom: 1rem;
+  //     margin-left: 0;
+  //   }
+  //   .site-slider--no-mobile-change & {
+  //     @include ulu.breakpoint-max(get("breakpoint")) {
+  //       margin-right: 0.5rem;
+  //       margin-bottom: 0;
+  //       width: 7rem;
+  //     }
+  //   }
+  //   .site-slider--vertical-center & {
+  //     width: 25%;
+  //     flex-basis: 25%;
+  //     margin-right: 2rem;
+  //     @include ulu.breakpoint-max(get("breakpoint")) {
+  //       width: 33%;
+  //       flex-basis: 33%;
+  //     }
+  //   }
+  // }
+  // .site-slider__slide-content {
+  //   flex: 1;
+  // }
+  // .site-slider__slide-title {
+  //   margin-top: 0 !important;
+  // }
+}

@@ -1,0 +1,6 @@
+@use "ulu";
+@use "vars";
+
+:root {
+  @include ulu.cssvar-declare-breakpoint();
+}

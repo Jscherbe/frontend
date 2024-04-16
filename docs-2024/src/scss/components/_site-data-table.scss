@@ -1,0 +1,112 @@
+@use "ulu";
+@use "vars";
+
+$border: 1px solid ulu.color-get("rule");
+$background-color: white;
+$color: ulu.color-get("type-secondary");
+$header-background-color: white;
+$cell-background-color: #F9F9F9;
+$muted-row-background-color: ulu.color-shade(white, 2%);
+$muted-border-color: ulu.color-get("rule-light");
+$highlighted-row-background-color: rgb(193, 242, 247);
+$striped-row-background-color: #ffffff;
+
+// Table for data presentation
+// Site-table is for simple tables
+.highcharts-data-table table,
+.site-data-table table,
+table.site-data-table {
+  border: $border;
+  // border-bottom: $border;
+  background-color: $background-color;
+  border-collapse: collapse;
+  color: $color;
+}
+.site-data-table,
+.highcharts-data-table table {
+  @include ulu.typography-size("small", ( 
+    "line-height": ulu.typography-get("line-height-dense" )
+  ));
+
+  th,
+  tr,
+  td {
+    text-align: left;
+  }
+  th {
+    min-width: 6em;
+    vertical-align: middle;
+    color: ulu.color-get("type");
+  }
+  td:not(:last-child), 
+  th:not(:last-child) {
+    border-right: $border;
+  }
+  // This makes it work for nested headers last child that aren't the last in the table
+  th:not(:first-child) {
+    border-left: $border;
+  }
+  tr {
+    border-top: $border;
+  }
+  thead tr:first-child {
+    // To make it look like the table has no borders
+    // &,
+    // th {
+    //   border-top-color: transparent;
+    // }
+    th:first-child {
+      min-width: 10em;
+    }
+  }
+
+  // thead tr:not(:first-child) th {
+  //   padding-top: 0.25em;
+  //   padding-bottom: 0.25em;
+  // }
+  thead tr {
+    background-color: $header-background-color;
+  }
+  tbody tr {
+    background-color: $cell-background-color;
+  }
+  th,
+  td {
+    padding: 0.5em;
+  }
+  .site-data-table__row-muted {
+    background-color: $muted-row-background-color;
+    td {
+      border-color: $muted-border-color;
+    }
+  }
+  .site-data-table__row-highlighted {
+    background-color: $highlighted-row-background-color;
+  }
+  .site-data-table__cell-compact {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+}
+.site-data-table--striped,
+.highcharts-data-table table {
+  tbody tr:nth-child(even) {
+    background-color: $striped-row-background-color;
+  }
+}
+.site-data-table--large-first {
+  thead tr:first-child th:first-child,
+  tbody td:first-child {
+    min-width: 15em;
+  }
+}
+.site-data-table--large-header {
+  thead th {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+.site-data-table--bordered table,
+table.site-data-table--bordered  {
+  border: $border;
+}

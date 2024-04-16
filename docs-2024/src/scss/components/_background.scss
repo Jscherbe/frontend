@@ -1,0 +1,151 @@
+@use "ulu";
+@use "vars";
+
+// Use this selector in your components/css to contextually 
+// change is't appearacnce in dark sections
+// Allow user's to use ".background-only" class to circumvent contextual theming (and maybe apply themseleves
+// Use ".background-dark-theme"
+
+$selectorDark: "[class*="background-dark"]:not(.background-only)" !default;
+
+@mixin styles {
+  #{ $selectorDark } {
+    color: vars.$color-type-dark-background;
+    .link,
+    .links a,
+    .wysiwyg a:not(.button) {
+      color: vars.$color-link-dark;
+      &:hover {
+        color: vars.$color-link-dark-hover;
+      }
+      &:visted {
+        color: vars.$color-link-dark-visited;
+      }
+    }
+    & a {
+      color: vars.$color-link-dark;
+      text-decoration: underline;
+    &:hover {
+      color: vars.$color-link-dark-hover;
+      text-decoration-style: dotted;
+    }
+    &:visted {
+      color: vars.$color-link-dark-visited;
+    }
+    }
+    &.background-dark-green {
+      & a {
+        color: vars.$color-link-dark;
+        text-decoration: underline;
+      &:hover {
+        color: vars.$color-link-dark-hover;
+        text-decoration-style: dotted;
+      }
+      &:visted {
+        color: vars.$color-link-dark-visited;
+      }
+      }
+    }
+    .tag {
+      background-color: rgba(255, 255, 255, 0.7);
+      color: vars.$color-blue-dark;
+    }
+    li {
+      &::marker {
+        color: inherit;
+      }
+    }
+    .list-inline li {
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    // .h1, .h2, .h3 {
+    //   color: inherit;
+    // }
+    // .h4, .h5, .h6 {
+    //   color: vars.$yellow;
+    // }
+    // .h1, .h5 {
+    //   color: vars.$color-headline-dark;
+    // }
+
+    // .color-accent {
+      // color: vars.$color-yellow;
+    // }
+    
+    // &:not(.button) {
+    //   text-shadow: ulu.element-get("text-shadow");
+    // }
+    // [class*="button--outline"] {
+    //   color: inherit;
+    //   &:hover {
+    //     color: black;
+    //   }
+    // }
+    .button:not(:hover) {
+      background-color: rgba(0, 0, 0, 0);
+      border-color: white;
+      color: white;
+    }
+    // .button--secondary {
+    //   border-width: 1px;
+    // }
+    // .button--secondary:not(:hover) {
+    //   border-color: white;
+    //   background-color: transparent;
+    //   color: white;
+    // }
+    .button:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-color: white;
+      color: white;
+    }
+    // .button--secondary:hover {
+    //   border-color: vars.$color-buttons-hover-background;
+    // }
+    // .rule-seperated {
+    //   border-top-color: #425D80;
+    //   border-bottom-color: #425D80;
+    // }
+    // label {
+    //   color: vars.$color-blue-light-x;
+    // }
+    // .rule {
+    //   border-bottom-color: vars.$color-blue-light-x;
+    // }
+    .rule--light,
+    .rule--short {
+      border-bottom-color: vars.$color-blue-light;
+    }
+    // .site-form {
+    //   select, 
+    //   textarea, 
+    //   [type=text] {
+    //     border-color: black;
+    //   }
+    // }
+
+    // [data-grid*="rules-column:"] > [data-grid-item]:before,
+    // [data-grid*="rules-row:"] > [data-grid-item]:after {
+    //   background-color: white;
+    // }
+    // .site-quote__body {
+    //   &:before {
+    //     opacity: 0.25;
+    //   }
+    // }
+    // .site-slider {
+    //   .Slider__nav-button {
+    //     border-color: white;
+    //   }
+    //   .Slider__nav-button--active,
+    //   .Slider__nav-button--active:hover {
+    //     background-color: white;
+    //   }
+    //   .Slider__control-button {
+    //     background-color: white;
+    //   }
+    // }
+    @content;
+  }
+}

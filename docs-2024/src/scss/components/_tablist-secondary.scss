@@ -1,0 +1,22 @@
+@use "ulu";
+@use "vars";
+
+.tablist-secondary {
+  display: flex;
+  overflow: auto;
+  justify-content: center;
+  button {
+    padding: 0.35em 0.5em; 
+    margin-right: 0.25em;
+    background-color: transparent;
+    white-space: nowrap;
+    border-radius: 25px;
+    &:focus,
+    &:hover {
+      background-color: ulu.color-tint(vars.$color-green, 90%);
+    }
+    &.is-active {
+      background-color: ulu.color-tint(vars.$color-green, 80%);
+    }
+  }
+}

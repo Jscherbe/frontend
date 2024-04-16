@@ -1,0 +1,7 @@
+@use "sass:map";
+@use "vars";
+@use "scss" as ulu;
+
+@include ulu.cssvar-set((
+  "prefix" : "site"
+));

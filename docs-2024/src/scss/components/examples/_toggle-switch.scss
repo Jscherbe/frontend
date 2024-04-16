@@ -1,0 +1,38 @@
+@use "ulu";
+@use "vars";
+
+.toggle-switch {
+  background-color: rgb(194, 194, 194);
+  border-radius: 20px;
+  height: 1.35em;
+  width: 2.75em;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transition: transform 250ms;
+    transform: translateY(-50%);
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: white;
+  }
+  &:hover,
+  &:focus {
+    background-color: rgb(167, 167, 167);
+  }
+  &.is-active {
+    justify-content: flex-end;
+    background-color: ulu.color-tint(vars.$color-green, 20%);
+    &:before {
+      transform: translateY(-50%) translateX(1.45em);
+    }
+    &:hover,
+    &:focus {
+      background-color: ulu.color-tint(vars.$color-green, 0%);
+    }
+  }
+}

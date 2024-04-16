@@ -1,0 +1,33 @@
+@use "ulu";
+@use "vars";
+
+audio {
+  display: block;
+  margin: 1rem 0;
+}
+[disabled],
+:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+button[disabled] {
+  pointer-events: none;
+}
+dd, 
+dt,
+dl {
+  margin: 0;
+}
+details {
+  &[open] {
+    summary {
+      ~ * {
+        animation: FadeDownIn 350ms ease-in-out;
+      }
+    }
+  }
+}
+caption {
+  text-align: left;
+  margin: 1em 0;
+}

@@ -1,0 +1,103 @@
+@use "sass:map";
+@use "vars";
+@use "scss" as ulu;
+
+@include ulu.color-set((
+  "type" :                    vars.$color-type,
+  "error" :                   red,
+  "box-shadow" :              gray,
+  "background" :              white,
+  "accent" :                  vars.$color-green,
+  "type-secondary" :          vars.$color-type-secondary,
+  "type-tertiary" :           vars.$color-type-tertiary,
+  "rule" :                    rgb(155,155,155),
+  "rule-light" :              rgb(211,211,211),
+  "link" :                    rgb(40, 76, 121),
+  "link:hover" :              rgb(9, 43, 63),
+  "link:active" :             rgb(9, 43, 63),
+  "link:visited" :            #870ACF,
+  "bullet" :                  inherit,
+));
+// Using a internal module to manage colors and styling since it's a little
+// more complicated than just color
+@include ulu.color-set-contexts((
+  // "dark" : (
+  //   "background-color" :      vars.$color-gray-blue-dark,
+  //   "helper-class" :          true
+  // ),
+  "dark-blue" : (
+    "background-color" :      vars.$color-blue,
+    "helper-class" :          true
+  ),
+  // "dark-gray-blue" : (
+  //   "background-color" :      vars.$color-gray-blue,
+  //   "helper-class" :          true
+  // ),
+  "white" : (
+    "background-color" :      white,
+    "helper-class" :          true
+  ),
+  "gray-light" : (
+    "background-color" :      vars.$color-gray-light,
+    "helper-class" :          true
+  ),
+  // "light-gray-xx" : (
+  //   "background-color" :      vars.$color-gray-light-xx,
+  //   "helper-class" :          true
+  // ),
+  // "light-gray-x" : (
+  //   "background-color" :      vars.$color-gray-light-x,
+  //   "helper-class" :          true
+  // ),
+  // "light-gray" : (
+  //   "background-color" :      vars.$color-background-light-gray,
+  //   "helper-class" :          true
+  // ),
+  // "light-blue-x" : (
+  //   "background-color" :      vars.$color-blue-light-xx,
+  //   "helper-class" :          true
+  // ),
+  // "dark-blue-xx" : (
+  //   "background-color" :      vars.$color-blue-dark-xx,
+  //   "helper-class" :          true
+  // ),
+  // "dark-accent" : (
+  //   "background-color" :      vars.$color-green,
+  //   "helper-class" :          true
+  // ),
+  // "dark" : (
+  //   "background-color" :    black,
+  //   "helper-class" :          true
+  // ),
+  // "dark-gray" : (
+  //   "background-color" :      vars.$color-type,
+  //   "helper-class" :          true
+  // ),
+  // "dark-gradient-blue" : (
+  //   "background-color" :      vars.$color-blue-dark-xx,
+  //   "background-image" :      map.get(vars.$gradients, "dark-blue-down"),
+  //   "helper-class" :          true
+  // ),
+  // "dark-gradient-teal-right" : (
+  //   "background-color" :      vars.$color-grdt-teal-dark-1,
+  //   "background-image" :      map.get(vars.$gradients, "dark-teal-right"),
+  //   "helper-class" :          true
+  // ),
+  // "dark-gradient-teal-left" : (
+  //   "background-color" :      vars.$color-grdt-teal-dark-1,
+  //   "background-image" :      map.get(vars.$gradients, "dark-teal-left"),
+  //   "helper-class" :          true
+  // ),
+  // "dark-gradient-blue-down" : (
+  //   "background-color" :      vars.$color-blue,
+  //   "background-image" :      map.get(vars.$gradients, "dark-blue-down"),
+  //   "helper-class" :          true
+  // )
+), "overwrite");
+
+@include ulu.color-set-color-classes((
+  "accent": true,
+  "type" : true,
+  "type-secondary" : true,
+  "type-tertiary" : true,
+));

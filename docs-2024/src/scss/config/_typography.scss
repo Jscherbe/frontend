@@ -1,0 +1,165 @@
+@use "sass:math";
+
+@use "vars";
+@use "scss" as ulu;
+
+// @daniel set up the bitter bold font version
+@include ulu.typography-set((
+  "line-height" :             1.5,
+  "line-height-dense" :       1.25,
+  "line-height-densest" :     1.15,
+  "line-height-spaced" :      1.95,
+  "font-family" :             vars.$font-family,
+  "font-family-sans" :        vars.$font-family-sans,
+  "font-family-serif" :       vars.$font-family-serif,
+  // "responsive-change" :       0.5vw,
+  "max-width" :               35em,
+  "max-width-small" :         25em,
+  "max-width-small-x" :       12em,
+  // add small-x into specific to use as a class
+  "margin-bottom" :           0.75em
+));
+@include ulu.typography-set-sizes((
+  // "large-xxx" : (
+  //   "font-size":              28px,
+  //   "helper-class" :          true,
+  //   "helper-class-prefixed" : true,
+  // ),
+  // font-size + responsive-change = actual font-size
+  "large-xx" : (
+    "font-size":              32px,
+    "helper-class" :          true,
+    "helper-class-prefixed" : true,
+    // "font-family" :           vars.$font-family-serif,
+// breakpoint template
+    "breakpoints" : (
+      "medium" : (
+        "direction" :         "max",
+        "font-size":          24px,
+      )
+    )
+  ),
+  "large-x" : (
+    "font-size":              22px,
+    "helper-class" :          true,
+    "helper-class-prefixed" : true,
+    // "font-family" :           vars.$font-family-serif,
+    "color" :                 vars.$color-blue,
+    "font-weight":            700,
+    "breakpoints" : (
+      "medium" : (
+        "direction" :         "max",
+        "font-size":          20px,
+      )
+    )
+    ),
+  "large" : (
+    "font-size":              18px,
+    "helper-class" :          true,
+    "helper-class-prefixed" : true,
+    // "font-family" :           vars.$font-family-serif,
+    // "breakpoints" : (
+    //   "medium" : (
+    //     "direction" :         "max",
+    //     "font-size":          16px,
+    //   )
+    // )
+  ),
+  "base" : (
+    "font-size":              16px,
+    "line-height":            true,
+    "helper-class" :          true,
+    "helper-class-prefixed" : true,
+  ),
+  "small" : (
+    "font-size":              14px,
+    "helper-class" :          true,
+    "helper-class-prefixed" : true,  
+  ),
+  // "small-x" : (
+  //   "font-size":              10px,
+  //   "helper-class" :          true,
+  //   "helper-class-prefixed" : true,
+  //   "breakpoints" : (
+  //     "medium" : (
+  //       "direction" :         "max",
+  //       "font-size":          24px,
+  //     )
+  //   )
+//   ),
+  "h1" : (
+    "font-size":              48px,
+    "font-family" :           vars.$font-family-serif,
+    "line-height":            1.25,
+    "margin-bottom" :         0.25em,
+    // how to set up responsive change on individual classes
+    // start at successful mobile sizes and work up from there
+    // "responsive":             0.5vw,
+    "breakpoints" : (
+      "medium" : (
+        "direction" :         "max",
+        "font-size":          38px,
+      )
+    )
+  ),
+  "h2" : (
+    "font-size":              32px,
+    "font-family" :           vars.$font-family-serif,
+    "margin-bottom" :         0.7em,
+    "color" :                 vars.$color-blue,
+    "font-weight" :           "normal",
+    "breakpoints" : (
+      "medium" : (
+        "direction" :         "max",
+        "font-size":          24px,
+      )
+    )
+  ),
+  "h3" : (
+    "font-size":              28px,
+    "font-family" :           vars.$font-family-serif,
+    "margin-bottom" :         0.5em,
+    "color" :                 vars.$color-green,
+    "breakpoints" : (
+      "medium" : (
+        "direction" :         "max",
+        "font-size":          20px,
+      )
+    )
+  ),
+  "h4" : (
+    "font-size":              18px,
+    "font-family" :           vars.$font-family-serif,
+    "margin-bottom" :         0.5em,
+    "color" :                 vars.$color-blue,
+    // "breakpoints" : (
+    //   "medium" : (
+    //     "direction" :         "max",
+    //     "font-size":          16px,
+    //   )
+    // )
+  ),
+  "h5" : (
+    "font-size":              16px,
+    "margin-bottom" :         0.5em,
+    "font-family" :           vars.$font-family-serif,
+    "color" :                 vars.$color-green,
+    // "breakpoints" : (
+    //   "medium" : (
+    //     "direction" :         "max",
+    //     "font-size":          14px,
+    //   )
+    // )
+  ),
+  // "h6" : (
+  //   "font-size":              16px,
+  //   "breakpoints" : (
+  //     "medium" : (
+  //       "direction" :         "max",
+  //       "font-size":          14px,
+  //     )
+  //   )
+  //   )
+  ), "deep");
+                            
+// deep, overwrite, merge as options for above. 

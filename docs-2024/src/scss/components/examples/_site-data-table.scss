@@ -1,0 +1,103 @@
+@use "ulu";
+@use "vars";
+
+$border: 1px solid ulu.cssvar-use("color-rule");
+
+// Table for data presentation
+// Site-table is for simple tables
+.site-data-table table,
+table.site-data-table {
+  // border-top: $border;
+  // border-bottom: $border;
+  background-color: ulu.cssvar-use("color-base");;
+  border-collapse: collapse;
+  color: ulu.cssvar-use("color-type-tertiary");
+}
+.site-data-table {
+  @include ulu.typography-size("small");
+  line-height: ulu.typography-get("line-height-dense");
+  th,
+  tr,
+  td {
+    // border: $border;
+    text-align: left;
+  }
+  th {
+    min-width: 6em;
+  }
+  td:not(:last-child), 
+  th:not(:last-child) {
+    border-right: $border;
+  }
+  // This makes it work for nested headers last child that aren't the last in the table
+  th:not(:first-child) {
+    border-left: $border;
+  }
+  tr + tr {
+    border-top: $border;
+  }
+  thead tr:first-child {
+    // To make it look like the table has no borders
+    // &,
+    // th {
+    //   border-top-color: transparent;
+    // }
+    th:first-child {
+      min-width: 10em;
+    }
+  }
+
+  // thead tr:not(:first-child) th {
+  //   padding-top: 0.25em;
+  //   padding-bottom: 0.25em;
+  // }
+  thead tr {
+    background-color: ulu.cssvar-use("color-data-table-header-background");
+  }
+  tbody tr {
+    background-color: ulu.cssvar-use("color-data-table-cell-background");
+  }
+  th,
+  td {
+    padding: 0.5em;
+  }
+  .site-data-table__row-muted {
+    background-color: ulu.cssvar-use("color-background-muted");
+    td {
+      border-color: ulu.cssvar-use("color-rule-light");
+    }
+  }
+  .site-data-table__row-highlighted {
+    background-color: ulu.cssvar-use("color-background-hightlight");
+  }
+  .site-data-table__cell-compact {
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+  }
+}
+.site-data-table--striped {
+  tbody tr:nth-child(even) {
+    background-color: ulu.cssvar-use("color-data-table-cell-striped-background");
+  }
+}
+.site-data-table--large-first {
+  thead tr:first-child th:first-child,
+  tbody td:first-child {
+    min-width: 15em;
+  }
+}
+.site-data-table--large-header {
+  thead th {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+.site-data-table--bordered table,
+table.site-data-table--bordered  {
+  border: $border;
+}
+// .TableSticky.site-data-table--bordered  {
+//   table:not(.TableSticky__table--actual) {
+//     border-bottom: none;
+//   }
+// }

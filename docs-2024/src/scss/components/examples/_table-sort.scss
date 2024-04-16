@@ -1,0 +1,27 @@
+@use "vars";
+@use "ulu";
+
+.table-sort {
+  display: flex;
+  color: ulu.cssvar-use('color-type-tertiary');
+  &:hover,
+  &.is-active {
+    color: ulu.cssvar-use('color-type');
+  }
+  &:hover {
+    .table-sort__icon {
+      color: ulu.cssvar-use("color-icon-hover");
+    }
+  }
+  &.is-active {
+    .table-sort__icon {
+      color: ulu.cssvar-use('color-accent');
+    }
+  }
+}
+.table-sort__label {
+  margin-right: 0.5em;
+}
+.table-sort__icon {
+  color: ulu.cssvar-use("color-icon");
+}

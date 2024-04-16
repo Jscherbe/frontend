@@ -1,0 +1,64 @@
+@use "vars";
+@use "ulu";
+
+$icon-size: ulu.button-get("icon-size");
+
+.site-nav {
+  display: flex;
+  flex-direction: column; // For the footer
+}
+.site-nav__logo {
+  max-width: 13rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.site-nav__item {
+  margin-bottom: 1em;
+  & + & {
+    margin-bottom: 1rem;
+  }
+  &:last-child {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+}
+.site-nav__actions {
+  margin-top: 0.5em;
+}
+
+.site-layout--nav-collapsed {
+  .site-nav {
+    align-items: center;
+    .site-menu__link {
+      position: relative;
+    }
+    .site-menu__link {
+      overflow: hidden;
+      width: $icon-size;
+      height: $icon-size;
+      border-radius: 50%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      justify-content: center;
+    }
+    .site-menu__link-icon {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .site-menu__link-text {
+      overflow: hidden;
+      flex-grow: 0;
+      flex-basis: 0;
+      opacity: 0;
+    }
+  }
+  .site-nav__logo {
+    writing-mode: vertical-lr;
+  }
+  
+  .site-nav__item--footer {
+    text-align: center;
+  }
+}

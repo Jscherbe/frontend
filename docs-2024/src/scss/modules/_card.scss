@@ -1,0 +1,169 @@
+@use "ulu";
+@use "sass:map";
+
+$config: (
+  "image-ratio" : 56.25%,
+  "padding" : 2rem,
+  "margin-y" : 3rem,
+  "border-radius" : 3px,
+  "horizontal-breakpoint" : "small",
+  "box-shadow" : null,
+  "box-shadow-hover" : null,
+  "color" : null,
+  "color-hover" : null,
+  "background-color" : white,
+  "background-color-hover" : white,
+  "max-width" : 28rem,
+  "body-min-height" : 10rem,
+  "border" : null,
+  "border-hover" : null,
+  "title-margin" : 0.75em,
+  "title-font-weight" : bold,
+  "overlay-background-color-hover" : null,
+  "clickable-card-selector" : ".card[data-proxy-click]",
+  "clickable-card-interact-selector" : "&:hover, &:focus-within",
+  "footer-padding-y" : 0.25rem,
+  "footer-min-height" : 2.5rem,
+) !default;
+
+@mixin set($changes) { 
+  $config: map.merge($config, $changes) !global; 
+}
+@function get($name) { 
+  @return ulu.utils-require-map-get($config, $name, 'card [config]'); 
+}
+@mixin styles {
+
+  .card {
+    color: get("color");
+    background-color: get("background-color");
+    border-radius: get("border-radius");
+    box-shadow: get("box-shadow");
+    margin-top: get("margin-y");
+    margin-bottom: get("margin-y");
+    position: relative;
+    display: flex; // Reorder image
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: get("max-width");
+    // Hover states only possible with click proxy
+    @if (get("border") or get("border-hover") or get("overlay-background-color-hover")) {
+      &:after {
+        position: absolute;
+        content: if(get("border"), "", false);
+        top: 0; 
+        bottom: 0; 
+        right: 0; 
+        left: 0;
+        border: get("border");
+        border-radius: get("border-radius");
+      }
+    }
+  }
+
+  @if (get("clickable-card-selector")) {
+    #{ get("clickable-card-selector") } {
+      #{ get("clickable-card-interact-selector") } {
+        background-color: get("background-color-hover");
+        color: get("color-hover");
+        box-shadow: get("box-shadow-hover");
+        @if (get("border-hover") or get("overlay-background-color-hover")) {
+          &:after {
+            content: "";
+            border: get("border-hover");
+            background-color: get("overlay-background-color-hover")
+          }
+        }
+      }
+    }
+  }
+
+  .card__title {
+    margin-bottom: get("title-margin");
+    display: block;
+    font-weight: get("title-font-weight");
+  }
+  // Fix since sometimes these have nested markup sometimes just raw text
+  
+  .card__image {
+    order: -1;
+    flex: 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-top: get("image-ratio"); // 9:16
+    background-color: rgb(197, 197, 197);
+    border-top-right-radius: get("border-radius");
+    border-top-left-radius: get("border-radius");
+    
+  }
+  .card__image img,
+  .card__image-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+  }
+  .card__image--icon {
+    background-color: transparent; 
+    // padding: get("padding");
+    padding: get("padding");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      position: static;
+      display: block;
+      max-width: 30rem;
+      height: auto;
+      top: auto;
+      left: auto;
+    }
+  }
+  .card__body,
+  .card__footer { 
+    position: relative;
+    z-index: 2; // Above image
+  }
+  .card__body {
+    flex: 1;
+    padding: get("padding");
+    min-height: get("body-min-height");
+  }
+  // For actions/messages
+  // - Layout as flex with min height to support buttons 
+  //   and text without relying so much on padding
+  .card__footer {
+    flex: 0;
+    padding: get("footer-padding-y") get("padding");
+    min-height: get("footer-min-height");
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  // @include ulu.breakpoint-min(get("horizontal-breakpoint")) {
+  //   .card--horizontal {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     .card__image {
+  //       width: 33%;
+  //       flex: 0 1 33%;
+  //       // max-width: 30rem;
+  //       min-height: 28rem;
+  //       // padding-top: 0;
+  //     }
+  //     .card__body {
+  //       display: flex;
+  //       flex: 1;
+  //       flex-direction: column;
+  //       justify-content: center;
+  //       max-width: 80rem;
+  //     }
+  //   }
+  // }
+}

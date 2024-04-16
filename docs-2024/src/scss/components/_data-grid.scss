@@ -1,0 +1,8 @@
+@use "ulu";
+
+@include ulu.grid-create(
+  $rule-color: ulu.color-get("rule-light"),
+  $extra-gutter-scales: (
+    "small" : 0.6
+  )
+);

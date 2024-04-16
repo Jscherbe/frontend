@@ -1,0 +1,23 @@
+@use "vars";
+@use "ulu";
+
+.card-grid {
+  margin: 2rem 0;
+  @include ulu.breakpoint-min("small") {
+    display: grid;
+    grid-template-columns:  1fr 1fr ;
+    grid-auto-rows: 1fr;
+    gap: 1.5rem;
+  }
+  @include ulu.breakpoint-min("medium") {
+    grid-template-columns:  1fr 1fr 1fr;
+  }
+  @include ulu.breakpoint-min("large") {
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+  }
+  .card {
+    max-width: none;
+    height: 100%;
+    margin: 0;
+  }
+}

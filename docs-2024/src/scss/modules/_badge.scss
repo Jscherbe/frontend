@@ -1,0 +1,95 @@
+@use "sass:map";
+@use "ulu";
+@use "vars";
+
+/// @version        1.0.3
+
+/// @changes        
+///                 - 1.0.2 | Convert to three element system (container > circle > image/text/icon)
+///                           which allows it to be responsive (container is max width) circle fills container
+
+$config: (
+  "font-size":           1.3rem,
+  "border-radius":       50%,
+  "width":               10rem,
+  "font-weight":         bold,
+  "background-color":    gray,
+  "color":               black,
+  "sizes" : (
+    "large" : (
+      "font-size" : 2.75rem,
+      "width" :  6rem
+    )
+  )
+) !default;
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+@function get($name) {
+  @return ulu.utils-require-map-get($config, $name, "badge [config]");
+}
+
+@mixin styles {
+  $prefix: ulu.selector-class("badge");
+  // Badge content can be text, image, icon, or background-image
+  #{ $prefix } {
+    display: block;
+    width: get("width");
+    max-width: 100%;
+    flex: 0 0 get("width");
+    font-size: get("font-size");
+    font-weight: get("font-weight");
+  }
+  #{ $prefix }__inner {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    border-radius: get("border-radius");
+    transition: transform 100ms ease-in-out;
+    // Incase this is used as a link or router-link
+    &,
+    &:hover,
+    &:focus,
+    &:visited {
+      background-color: get("background-color");
+      color: get("color");
+    }
+  }
+  #{ $prefix }--clickable {
+    &:hover,
+    &:focus {
+      #{ $prefix }__inner {
+        transform: scale(1.2);
+        // Styles that work when it's a button
+      }
+    }
+  }
+  #{ $prefix }__inner > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #{ $prefix }__inner > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @each $name, $props in get("sizes") {
+    #{ $prefix }--#{ $name } {
+      width: map.get($props, "width");
+      font-size: map.get($props, "font-size");
+      flex-basis: map.get($props, "width");
+    }
+  }
+}
+

@@ -1,0 +1,30 @@
+@use "ulu";
+@use "vars";
+
+// Expects <dl> <div> <dt></td> <dd></dd> </div> ... </dl>
+
+.highlight-list {
+  > div {
+    display: flex;
+    flex-direction: column;
+    // text-align: center;
+    line-height: ulu.typography-get("line-height-dense");
+    & + div {
+      padding-top: 1em;
+      margin-top: 1em;
+      border-top: ulu.element-get-rule-style("light");
+    }
+  }
+  dt {
+    order: 2;
+    @include ulu.typography-size("small", $only-font-size: true);
+    font-weight: normal;
+    color: ulu.cssvar-use("color-type-tertiary");
+  }
+  dd {
+    @include ulu.typography-size("large-xx", $only-font-size: true);
+    font-weight: ulu.typography-get("font-weight-light");
+    font-family: ulu.typography-get("font-family-serif");
+    color: ulu.cssvar-use("color-accent");
+  }
+}
