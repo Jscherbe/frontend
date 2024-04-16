@@ -29,7 +29,9 @@
     "docs:watch:scss": "SASSDOC_WATCH=true node ./docs-src/.vitepress/sassdoc.js",
     "docs:update:scss:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js",
     "docs:update:js": "node ./docs-src/.vitepress/jsdoc.js",
-    "types": "npx tsc"
+    "types": "npx tsc",
+    "newdocs:dev": "npx @11ty/eleventy --serve",
+    "newdocs:build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
@@ -55,8 +57,11 @@
   },
   "homepage": "https://github.com/Jscherbe/frontend#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.9",
+    "eleventy-sass": "^2.2.4",
     "chokidar": "^3.6.0",
     "fs-extra": "^11.2.0",
     "jsdoc": "^4.0.2",
