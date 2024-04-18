@@ -31,6 +31,7 @@
     "docs:update:js": "node ./docs-src/.vitepress/jsdoc.js",
     "types": "npx tsc",
     "newdocs:dev": "npx @11ty/eleventy --serve",
+    "newdocs:dev:debug": "node --inspect-brk ./node_modules/.bin/eleventy --serve",
     "newdocs:build": "npx @11ty/eleventy"
   },
   "repository": {

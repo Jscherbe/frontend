@@ -1,9 +1,9 @@
 @use "ulu";
 @use "vars";
 
-audio {
-  display: block;
-  margin: 1rem 0;
+body {
+  height: 100%;
+  margin: 0;
 }
 [disabled],
 :disabled {

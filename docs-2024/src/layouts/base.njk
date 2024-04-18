@@ -5,28 +5,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{{ title or siteMeta.title }}</title>
 		<meta name="description" content="{{ description or siteMeta.description }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
 		<link rel="stylesheet" href="/assets/stylesheet.css">
+		<script src="https://unpkg.com/feather-icons"></script>
 	</head>
-	<body>
-		<a href="#main" class="visually-hidden">Skip to main content</a>
-		<header>
-			<a href="/">{{ siteMeta.title }}</a>
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
+	<body class="page">
+		
+		<a href="#main" class="site-skip-link hidden-visually-focusable">
+			Skip to main content
+		</a>
+		
+		<header class="page__header header">
+			<a class="header__logo" href="/">{{ siteMeta.title }}</a>
+			<nav class="header__nav">
+				<h2 class="hidden-visually">Main Menu</h2>
 				<ul class="nav">
-					{%- for entry in collections.all | eleventyNavigation %}
+					{%- for entry in collections.all | eleventyNavigation | navEntriesWithPage %}
 						<li class="nav-item">
 							<a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>
-								{{ entry.title }}
+								{% if entry.page.data.icon %}
+									<i data-feather="{{ entry.page.data.icon }}"></i>
+								{% endif %}
+								<span>{{ entry.title }}</span>
 							</a>
 						</li>
 					{%- endfor %}
 				</ul>
 			</nav>
+			{# Links to thinks outside site (github, npm) #}
+			<div class="header__links">
+			</div>
 		</header>
-		<main id="main">
-			{{ content | safe }}
-		</main>
-		<footer></footer>
+		<div class="page__body">
+			<main id="main" >
+				{{ content | safe }}
+			</main>
+			<footer></footer>
+		</div>
 	</body>
+
+
+	<script>feather.replace(); console.log(feather);</script>
 </html>

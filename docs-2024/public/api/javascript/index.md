@@ -1,8 +1,9 @@
 ---
-title: Some test
+title: Javascript API
 layout: base
 eleventyNavigation: 
-  key: test
+  parent: api
+  key: javascript
 ---
 
 This is a test page

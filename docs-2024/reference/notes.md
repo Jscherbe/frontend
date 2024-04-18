@@ -1,3 +1,8 @@
+# Docs 2024
+
+- Should make this into npm module when finished theming and use it for other ulu sites?
+  - Maybe once finished (with actual guides and stuff)
+
 ## Content / Nav Structure
 
 - Home
