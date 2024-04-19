@@ -1,5 +1,5 @@
 module.exports = {
-  title: "ULU Frontend",
+  title: "Ulu",
   url: "https://jscherbe.github.io/frontend/",
   description: "Modular Sass Theming Library",
   author: {

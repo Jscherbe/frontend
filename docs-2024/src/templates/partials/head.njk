@@ -1,0 +1,11 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block metaTitle %}{{ title or siteMeta.title }}{% endblock %}
+  </title>
+  <meta name="description" content="{{ description or siteMeta.description }}">
+  <meta name="generator" content="{{ eleventy.generator }}">
+  <link rel="stylesheet" href="/assets/stylesheet.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>

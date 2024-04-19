@@ -1,6 +1,6 @@
 ---
 title: Welcome
-layout: base
+test: "ok"
 ---
 
 This is the homepage

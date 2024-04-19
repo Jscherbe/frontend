@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+	{% include "partials/head.njk" %}
+	<body class="page">
+		{% include "partials/header.njk" %}
+		<div class="page__body">
+			<main id="main" >
+				{% block main %}
+					{{ content | safe }}
+				{% endblock %}
+			</main>
+			{% include "partials/footer.njk" %}
+		</div>
+		{% include "partials/scripts.njk" %}
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

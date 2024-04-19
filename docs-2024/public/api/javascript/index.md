@@ -1,6 +1,6 @@
 ---
 title: Javascript API
-layout: base
+
 eleventyNavigation: 
   parent: api
   key: javascript

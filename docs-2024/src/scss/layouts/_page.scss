@@ -5,7 +5,7 @@ $z-index: ulu.layout-get("z-index-fixed") - 2;
 $horizontal-header-width: 10rem;
 
 .page {
-  background-color: red;
+  background-color: rgb(221, 221, 221);
 }
 .page__header {
   position: fixed;
