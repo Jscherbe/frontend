@@ -1,2 +1,3 @@
 // See https://github.com/11ty/eleventy/issues/380
-module.exports = "default";
+const layout = "default"
+export default layout;

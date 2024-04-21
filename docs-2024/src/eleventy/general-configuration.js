@@ -1,10 +1,10 @@
-const pluginNavigation = require("@11ty/eleventy-navigation");
+import pluginNavigation from "@11ty/eleventy-navigation";
 
 /**
  * Setup common things needed in all 11ty sites
  * @param {Object} eleventyConfig 
  */
-module.exports = function setupEleventyConfig(eleventyConfig) {
+export default function setupEleventyConfig(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginNavigation);
   // Add ability to access data from nav entry

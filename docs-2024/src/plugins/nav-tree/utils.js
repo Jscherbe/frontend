@@ -1,4 +1,4 @@
-const defaults = {
+export const defaults = {
   /**
    * How to sort tree nodes within each tree's section
    */
@@ -37,7 +37,7 @@ const defaults = {
  * @param {Object} ctx Optional context object for active state data
  * @returns {Array} Array of entries in format [ { entry<CollectionEntry>, children: [...], url<String>, active<Boolean>, activeTrail<Boolean> }, ...], hierachy structure
  */
-function createTree(collection, options, ctx = {}) {
+export function createTree(collection, options, ctx = {}) {
   const opts = Object.assign({}, defaults, options);
   let root = { children: [] };
 
@@ -106,7 +106,7 @@ function createTree(collection, options, ctx = {}) {
 /**
  * Output tree as HTML menu list
  */
-function toHtml(tree, maxDepth = Infinity, linkText = node => node.entry.data.title) {
+export function toHtml(tree, maxDepth = Infinity, linkText = node => node.entry.data.title) {
   return printList(tree);
   
   function printList(children, lastDepth = 0) {
@@ -130,9 +130,3 @@ function toHtml(tree, maxDepth = Infinity, linkText = node => node.entry.data.ti
       </ul>`;
   }
 }
-
-module.exports = {
-  createTree,
-  defaults,
-  toHtml
-};

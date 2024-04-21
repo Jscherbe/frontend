@@ -1,4 +1,4 @@
-module.exports = {
+export const meta = {
   title: "Ulu",
   url: "https://jscherbe.github.io/frontend/",
   description: "Modular Sass Theming Library",
