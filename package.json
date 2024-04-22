@@ -60,6 +60,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.6",
     "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@ulu/sassdoc-to-markdown": "^0.0.11",
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.9",
