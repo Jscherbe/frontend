@@ -37,7 +37,7 @@ Output styles
 
 #### Require
 
-- [get()](/sass/components/badge/#function-get)
+- [get()](/api/sass/components/badge/#function-get)
   
   
   

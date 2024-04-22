@@ -8,9 +8,11 @@ const isSubdir = (parent, dir) => {
   const relative = path.relative(parent, dir);
   return relative && !relative.startsWith('..') && !path.isAbsolute(relative);
 };
+
 let running = false;
+
 const src = path.resolve(".", "scss/");
-const dist = path.resolve(__dirname, "../../../public/api/");
+const dist = path.resolve(__dirname, "../../../public/");
 const commonConfig = {
   previewHead: `
     <title>ULU Example</title> 
@@ -23,18 +25,16 @@ const commonConfig = {
   `,
 };
 
-const subConfig = base => ({
+const createConfig = (base, options) => ({
   ...commonConfig,
-  dir: path.resolve(src, base),
-  pathBase: `/sass/${ base }`,
+  dir: base ? path.resolve(src, base) : src,
+  pathBase: base ? `/api/sass/${ base }` : "/api/sass/core/",
   dist,
+  ...options
 });
+
 const configs = [
-  {
-    ...commonConfig,
-    dist,
-    dir: src,
-    pathBase: "/scss/core/",
+  createConfig(false, {
     sassdocOptions: {
       exclude: [
         "base/*",
@@ -44,13 +44,11 @@ const configs = [
         "stylesheets/*",
       ]
     }
-  },
-  subConfig("base/"),
-  subConfig("components/"),
-  subConfig("helpers/"),
+  }),
+  createConfig("base/"),
+  createConfig("components/"),
+  createConfig("helpers/"),
 ];
-
-// console.log(configs);
 
 
 export default async function plugin(eleventyConfig) {

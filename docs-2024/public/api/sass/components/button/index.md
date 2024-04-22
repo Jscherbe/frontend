@@ -47,7 +47,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/sass/components/badge/#variable-config)
+- [$config](/api/sass/components/badge/#variable-config)
   
 
 
@@ -95,7 +95,7 @@ Prints button component styles
 
 #### Require
 
-- [get()](/sass/components/badge/#function-get)
+- [get()](/api/sass/components/badge/#function-get)
   
   
 
@@ -136,7 +136,7 @@ Get a config option
 
 #### Require
 
-- [$config](/sass/components/badge/#variable-config)
+- [$config](/api/sass/components/badge/#variable-config)
   
   
   

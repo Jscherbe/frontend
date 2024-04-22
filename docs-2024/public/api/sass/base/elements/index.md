@@ -102,7 +102,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/base/elements/#variable-config)
+- [$config](/api/sass/base/elements/#variable-config)
   
 
 
@@ -140,7 +140,7 @@ Prints elements base styles
 
 #### Require
 
-- [get()](/sass/base/elements/#function-get)
+- [get()](/api/sass/base/elements/#function-get)
   
   
 
@@ -192,7 +192,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/base/elements/#variable-config)
+- [$config](/api/sass/base/elements/#variable-config)
   
   
   

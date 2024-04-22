@@ -100,7 +100,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/helpers/units/#variable-config)
+- [$config](/api/sass/helpers/units/#variable-config)
   
 
 
@@ -126,7 +126,7 @@ Prints all unit helper classes
 
 #### Require
 
-- [create-property-classes()](/sass/helpers/units/#mixin-create-property-classes)
+- [create-property-classes()](/api/sass/helpers/units/#mixin-create-property-classes)
   
 
 
@@ -153,8 +153,8 @@ Creates the unit classes with all variations (from unit presets)
 
 #### Require
 
-- [get()](/sass/helpers/units/#function-get)
-- [$config](/sass/helpers/units/#variable-config)
+- [get()](/api/sass/helpers/units/#function-get)
+- [$config](/api/sass/helpers/units/#variable-config)
   
   
 
@@ -206,7 +206,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/helpers/units/#variable-config)
+- [$config](/api/sass/helpers/units/#variable-config)
   
   
   

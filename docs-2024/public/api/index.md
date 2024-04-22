@@ -6,4 +6,11 @@ eleventyNavigation:
   key: api
 ---
 
-This is a test page
+<ul>
+  <li>
+    <a href="/api/sass">Sass API</a>
+  </li>
+   <li>
+    <a href="/api/javascript">Javascript API</a>
+  </li>
+</ul>
