@@ -4,12 +4,6 @@ export default {
    */
   skipPartials: true,
   /**
-   * Delete data.layout if set in page/files data (cascade)
-   * - If you have a default layout set this will cause the output to be wrapped
-   *   in the template, this deletes that so it outputs without a layout
-   */
-  deleteDataLayout: true,
-  /**
    * Include the cwd ie "." in sass resolve loadPaths
    */
   addCwd: false,

@@ -6,8 +6,7 @@ import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import navTreePlugin from "./docs-2024/src/plugins/nav-tree/index.js";
 // import eleventySass from "eleventy-sass";
 import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
-
-// const sassdocPlugin = require("./docs-2024/src/plugins/sassdoc/index.js");
+import sassdocPlugin from "./docs-2024/src/plugins/sassdoc/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const paths = {
@@ -28,10 +27,10 @@ export default async function(eleventyConfig) {
       ],
     }
   }); 
-  eleventyConfig.addWatchTarget(paths.sassUlu);
+  // eleventyConfig.addWatchTarget(paths.sassUlu);
   eleventyConfig.addWatchTarget(paths.sassTheme);
 
-  // eleventyConfig.addPlugin(sassdocPlugin);
+  eleventyConfig.addPlugin(sassdocPlugin);
   
 
   // Overwrite asset after like hugo (no needed for anything in specific but added)

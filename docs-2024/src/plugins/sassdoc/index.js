@@ -1,9 +1,16 @@
-const fs = require("fs-extra");
-const path = require("path");
+import fs from "fs-extra";
+import path from "path";
+import { fileURLToPath } from "url";
+import { outputPages } from "@ulu/sassdoc-to-markdown";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const isSubdir = (parent, dir) => {
+  const relative = path.relative(parent, dir);
+  return relative && !relative.startsWith('..') && !path.isAbsolute(relative);
+};
 let running = false;
-const src = path.resolve(__dirname, "../../../../scss");
-const dist = path.resolve(__dirname, "../../../public/api/sass/");
+const src = path.resolve(".", "scss/");
+const dist = path.resolve(__dirname, "../../../public/api/");
 const commonConfig = {
   previewHead: `
     <title>ULU Example</title> 
@@ -15,10 +22,11 @@ const commonConfig = {
     <script src="/frontend/ulu-frontend.min.js"></script>
   `,
 };
+
 const subConfig = base => ({
   ...commonConfig,
-  dir: path.resolve(__dirname, "../../scss/", base),
-  pathBase: `/scss/${ base }`,
+  dir: path.resolve(src, base),
+  pathBase: `/sass/${ base }`,
   dist,
 });
 const configs = [
@@ -42,36 +50,41 @@ const configs = [
   subConfig("helpers/"),
 ];
 
+// console.log(configs);
 
 
-async function plugin(eleventyConfig) {
-  const sassdocToMd = await import("@ulu/sassdoc-to-markdown");
-  
-  
-  eleventyConfig.on("eleventy.before", async function output() {
-    console.log("RUNNING");
-    // if (running) return;
-    // try {
-    //   running = true;
-    //   configs.forEach(c => cleanOutputDir(c));
-    //   console.log("about to output", configs);
-    //   await Promise.all(configs.map(c => outputPages(c)));
-    //   running = false;
-    // } catch (error) {
-    //   console.log(error);
-    // }
+export default async function plugin(eleventyConfig) {
+  await output();
+  eleventyConfig.addWatchTarget(src);
+  eleventyConfig.on("eleventy.beforeWatch", async (changedFiles) => {
+    const isWithin = changedFiles.some(filepath => isSubdir(src, filepath));
+    if (isWithin) {
+      await output();
+    }
   });
   return {};
 };
 
 
+async function output() {
+  if (running) return;
+  try {
+    running = true;
+    configs.forEach(c => cleanOutputDir(c));
+    await Promise.all(configs.map(c => outputPages(c)));
+    running = false;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 
 
 function cleanOutputDir(config) {
-  const outputPath = join(config.dist, config.pathBase);
+  const outputPath = path.join(config.dist, config.pathBase);
   if (fs.existsSync(outputPath)) {
     fs.readdirSync(outputPath).forEach(item => {
-      const fullpath = join(outputPath, item);
+      const fullpath = path.join(outputPath, item);
       // Delete if directory (was created by sassdoc plugin)
       if (fs.lstatSync(fullpath).isDirectory()) {
         fs.removeSync(fullpath);
@@ -79,7 +92,3 @@ function cleanOutputDir(config) {
     });
   }
 }
-
-
-
-module.exports = plugin;

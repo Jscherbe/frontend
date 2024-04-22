@@ -20,6 +20,19 @@ export const defaults = {
     return false;
   },
   /**
+   * Can be either a section string, or true (current page's section)
+   */
+  baseUrl: null,
+  /**
+   * Only include the current pages's root section ie if page "/guide/intro" its section is "/guide/"
+   * - Can't be used with urlBase
+   */
+  sectionMenu: false,
+  /**
+   * Depth for section menu (ie 1 = "/guide/", 2 = "/guide/subdir/", ...)
+   */
+  sectionDepth: 1,
+  /**
    * Class to use for active
    */
   classActive: "is-active",
@@ -39,11 +52,36 @@ export const defaults = {
  */
 export function createTree(collection, options, ctx = {}) {
   const opts = Object.assign({}, defaults, options);
-  let root = { children: [] };
+  const { sectionMenu } = opts;
+  const isIndexPage = ctx.page.url === "/";
+  const sectionBaseUrl = getSectionBaseUrl(ctx.page.url, opts.sectionDepth);
 
+  // Can't make section menu for this page
+  if ((sectionMenu && !sectionBaseUrl) || (sectionMenu && isIndexPage)) {
+    return null;
+  }
+
+  if (sectionMenu) {
+    console.log("sectionDepth:\n", opts.sectionDepth);
+    console.log("sectionBaseUrl:\n", sectionBaseUrl);
+  }
+
+  let root = { children: [] };
+  
   const entries = collection
     .filter(entry => !opts.exclude(entry))
     .filter(entry => entry.url && entry.url !== "/")
+    .filter(entry => {
+      // Filter by static root or by pages base section
+      if (opts.baseUrl) {
+        return entry.url.startsWith(opts.baseUrl);
+      }
+      if (opts.sectionMenu) {
+        return entry.url.startsWith(sectionBaseUrl);
+      } else {
+        return true;
+      }
+    })
     .sort((a, b) => {
       const urlA = a.url.slice(1);
       const urlB = b.url.slice(1);
@@ -129,4 +167,25 @@ export function toHtml(tree, maxDepth = Infinity, linkText = node => node.entry.
         ${ children.map(printItems).join("\n") }
       </ul>`;
   }
+}
+
+
+function getSectionBaseUrl(url, depth = 1) {
+  if (depth < 1) {
+    throw new Error("Depth parameter must be a positive integer.");
+  }
+
+  let currentSlashIndex = url.indexOf("/");
+  let segmentCount = 0;
+
+  while (currentSlashIndex !== -1 && segmentCount < depth) {
+    segmentCount++;
+    currentSlashIndex = url.indexOf("/", currentSlashIndex + 1);
+  }
+
+  // Handle URLs without enough slashes or invalid depth
+  if (segmentCount < depth || currentSlashIndex === -1) {
+    return false;
+  }
+  return url.slice(0, currentSlashIndex);
 }

@@ -18,6 +18,14 @@ export default function plugin(eleventyConfig, userOpts) {
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css",
     read: false,
+    async getData() {
+      return {
+        eleventyComputed: {
+          layout: false,
+          eleventyExcludeFromCollections: true
+        }
+      };
+    },
     async compile(_inputContent, inputPath) {
       const filename = path.parse(inputPath).name;
       const sassOptions = { ...options.sass };
@@ -44,13 +52,8 @@ export default function plugin(eleventyConfig, userOpts) {
         const result = await compileAsync(inputPath, sassOptions);
         if (result) {
           this.addDependencies(inputPath, result.loadedUrls);
-          return async (data) => {
-            if (options.deleteDataLayout) {
-              delete data.layout;
-            }
-            // Allow user to alter how the file contents (and data) for the file
-            return await options.transform(result, data);
-          };
+          // Allow user to alter how the file contents (and data) for the file
+          return async (data) =>await options.transform(result, data);
         }
       } catch (error) {
         console.error("Error compiling sass for: " + filename);

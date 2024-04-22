@@ -1,6 +1,10 @@
 {# {% import "macros/nav.njk" as nav %} #}
 
 {# {% set mainMenu = collections.all | eleventyNavigation | navEntriesWithPage %} #}
+{% set sectionMenu = collections.all | navTree({ 
+  sectionMenu: true,
+  sectionDepth: 2
+}) %}
 
 <header class="page__header header">
   <a href="#main" class="site-skip-link hidden-visually-focusable">
@@ -16,9 +20,13 @@
   {# {% if page.eleventyNavigation.key %}
     {{ nav.menu(mainMenu, 1) }}
   {% endif %} #}
+  {% if sectionMenu %}
   <nav class="header__section-nav">
     <h2 class="hidden-visually">Sections Menu</h2>
+    {{ sectionMenu | navTreeToHtml | safe }}
   </nav>
+  {% endif %}
+  
   {# Links to thinks outside site (github, npm) #}
   {# <div class="header__links">
   </div> #}
