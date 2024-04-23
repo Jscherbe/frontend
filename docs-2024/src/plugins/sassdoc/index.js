@@ -50,7 +50,6 @@ const configs = [
   createConfig("helpers/"),
 ];
 
-
 export default async function plugin(eleventyConfig) {
   await output();
   eleventyConfig.addWatchTarget(src);
@@ -63,7 +62,6 @@ export default async function plugin(eleventyConfig) {
   return {};
 }
 
-
 async function output() {
   if (running) return;
   try {
@@ -75,8 +73,6 @@ async function output() {
     console.log(error);
   }
 }
-
-
 
 function cleanOutputDir(config) {
   const outputPath = path.join(config.dist, config.pathBase);

@@ -1,0 +1,11 @@
+Content:
+  ☐ Guide on how to use CSS Variables for colors
+    ☐ Setup theme switcher script
+      * Use it in this site 
+Todos:
+  ☐ Setup JS compilation
+    * Used for demoing ulu demo
+    * Dark Light Mode
+After Initial Launch:
+  ☐ Should we make the nav have expandable children (without page load) @not-important
+  ☐ Should make this into npm module when finished theming and use it for other ulu sites? * @not-important

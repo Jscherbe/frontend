@@ -6,6 +6,7 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import navTreePlugin from "./docs-2024/src/plugins/nav-tree/index.js";
 import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
 import sassdocPlugin from "./docs-2024/src/plugins/sassdoc/index.js";
+import jsdocPlugin from "./docs-2024/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -24,6 +25,7 @@ export default async function(eleventyConfig) {
     }
   }); 
   eleventyConfig.addWatchTarget(paths.sassTheme);
+  eleventyConfig.addPlugin(jsdocPlugin);
   eleventyConfig.addPlugin(sassdocPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo
   eleventyConfig.addPlugin(navTreePlugin, {
