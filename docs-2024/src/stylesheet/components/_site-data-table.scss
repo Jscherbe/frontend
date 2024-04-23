@@ -13,9 +13,17 @@ $striped-row-background-color: #ffffff;
 
 // Table for data presentation
 // Site-table is for simple tables
-.highcharts-data-table table,
+.wysiwyg table,
 .site-data-table table,
 table.site-data-table {
+  // Make it scroll without wrapper
+  display: block;
+  white-space: normal;
+  overflow-x: auto;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 100%;
+  border-spacing: 0;
   border: $border;
   // border-bottom: $border;
   background-color: $background-color;
@@ -23,7 +31,7 @@ table.site-data-table {
   color: $color;
 }
 .site-data-table,
-.highcharts-data-table table {
+.wysiwyg table {
   @include ulu.typography-size("small", ( 
     "line-height": ulu.typography-get("line-height-dense" )
   ));
@@ -89,7 +97,7 @@ table.site-data-table {
   }
 }
 .site-data-table--striped,
-.highcharts-data-table table {
+.wysiwgy table {
   tbody tr:nth-child(even) {
     background-color: $striped-row-background-color;
   }

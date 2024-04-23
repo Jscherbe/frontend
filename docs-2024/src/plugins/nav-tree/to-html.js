@@ -1,6 +1,33 @@
 const htmlDefaults = {
+  /**
+   * Base BEM class for menu
+   */
+  class: "nav",
+  /**
+   * Depth to stop printing nav tree if children
+   */
   maxDepth: Infinity, 
+  /**
+   * Format link text (or add markup inside <a>)
+   */
   formatLink: (node, ) => node.entry.data.title,
+  /**
+   * Label for nav (headline inside wrapper)
+   */
+  label: false,
+  /**
+   * Element for label
+   */
+  labelElement: "h2",
+  /**
+   * Print container
+   * - If false no label and the list is the root element (BEM
+   */
+  wrapper: true, 
+  /**
+   * Container element
+   */
+  wrapperElement: "nav"
 };
 /**
  * Output tree as HTML menu list
@@ -8,6 +35,7 @@ const htmlDefaults = {
 export default function toHtml(tree, opts) {
   const options = Object.assign({}, htmlDefaults, opts);
   const { maxDepth, formatLink } = options;
+  const printClass = child => child ? `${ options.class }__${ child }` : options.class;
   
   const printList = (children, lastDepth = 0) => {
     if (lastDepth >= maxDepth) return;
@@ -15,19 +43,31 @@ export default function toHtml(tree, opts) {
     const printItems = node => {
       const childList = node.children && depth < maxDepth ? printList(node.children, depth) : "";
       return `
-        <li class="tree-menu__item ${ node.classes }">
+        <li class="${ printClass("item") } ${ node.classes }">
           <a 
-            class="tree-menu__link ${ node.classes }" 
+            class="${ printClass("link") } ${ node.classes }" 
             href="${ node.url }" 
             ${ node.active ? 'aria-current="page"' : '' }
           >${ formatLink(node) }</a>
           ${ childList }
         </li>`;
-    }
+    };
+    const listClass = printClass(options.wrapper ? "list" : false);
     return `
-      <ul class="tree-menu" data-menu-depth="${ depth }">
+      <ul class="${ listClass }" data-menu-depth="${ depth }">
         ${ children.map(printItems).join("\n") }
       </ul>`;
-  }
-  return printList(tree);
+  };
+  const printLabel = () => {
+    return `<${ options.labelElement } class="${ printClass("label") }"></${ options.labelElement }>`;
+  };
+  const printWithWrapper = () => {
+    return `
+<${ options.wrapperElement } class="${ printClass() }">
+  ${ options.label ? printLabel() : "" }
+  ${ printList(tree) }
+</${ options.wrapperElement }>`
+  };
+  return options.wrapper ? printWithWrapper() : printList(tree);
+  
 }

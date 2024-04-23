@@ -1,9 +1,6 @@
-{# {% set sectionOptions = { 
-  section: true,
-  sectionStartDepth: sectionStartDepth or 1
-} %}
-{% set sectionMenu = collections.all | navTree(sectionOptions) %} #}
-
+{# {% set activeTrailMenu = collections.all | navTree | navTreeActiveTrailOnly %} #}
+{% set treeOptions = { includeIndex: false } %}
+{% set toHtmlOptions = { maxDepth: 1, wrapper: false } %}
 <header class="page__header header">
   <a href="#main" class="site-skip-link hidden-visually-focusable">
     Skip to main content
@@ -13,10 +10,7 @@
   </a>
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
-    {{ collections.all | navTree | navTreeActiveTrailOnly | navTreeToHtml | safe }}
+    {{ collections.all | navTree(treeOptions) | navTreeToHtml(toHtmlOptions) | safe }}
+    {# {{ activeTrailMenu | navTreeToHtml({ class: "site-menu" }) | safe }} #}
   </nav>
-  
-  {# Links to thinks outside site (github, npm) #}
-  {# <div class="header__links">
-  </div> #}
 </header>

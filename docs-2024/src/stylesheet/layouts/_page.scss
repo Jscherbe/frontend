@@ -8,14 +8,14 @@ $horizontal-header-width: 10rem;
   background-color: rgb(221, 221, 221);
 }
 .page__header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: $horizontal-header-width;
-  height: 100%;
-  z-index: $z-index; 
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: $horizontal-header-width;
+  // height: 100%;
+  // z-index: $z-index; 
   background-color: white;
-  overflow-y: auto;
+  // overflow-y: auto;
 }
 .page__body {
   padding-left: $horizontal-header-width;

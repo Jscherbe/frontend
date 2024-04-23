@@ -9,6 +9,10 @@ import defaults from "./defaults.js";
  * @returns {Array} Array of entries in format [ { entry<CollectionEntry>, children: [...], url<String>, active<Boolean>, activeTrail<Boolean> }, ...], hierachy structure
  */
 export default function createTree(collection, options, ctx = {}) {
+  if (!collection?.length) {
+    console.error("Create tree, no collection or items in collection", );
+    return;
+  }
   const opts = Object.assign({}, defaults, options);
   const { section } = opts;
   const isIndexPage = ctx.page.url === "/";
@@ -20,7 +24,7 @@ export default function createTree(collection, options, ctx = {}) {
   }
 
   let root = { children: [] };
-  console.log('start');
+
   const entries = collection
     .filter(entry => {
       if (!entry.url || entry.url === "/" || opts.exclude(entry)) {
@@ -73,10 +77,6 @@ export default function createTree(collection, options, ctx = {}) {
       return acc;
     }, root);
 
-    console.log(tree);
-    debugger;
-
-    
   const cleanup = item => {
     const { url } = item.entry;
     item.children.sort(opts.sorter);

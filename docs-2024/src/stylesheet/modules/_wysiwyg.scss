@@ -45,6 +45,9 @@
   ol {
     // margin-bottom: 1.5em;
   }
+  h1 {
+    @include ulu.typography-size("h1");
+  }
   h2 {
     @include ulu.typography-size("h2");
   }
