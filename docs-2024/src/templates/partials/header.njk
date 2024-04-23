@@ -1,16 +1,20 @@
-{# {% set activeTrailMenu = collections.all | navTree | navTreeActiveTrailOnly %} #}
-{% set treeOptions = { includeIndex: false } %}
-{% set toHtmlOptions = { maxDepth: 1, wrapper: false } %}
+{% set menuTree = collections.all | navTree({ 
+  includeIndex: false 
+})  %}
+{% set menu = menuTree | navTreeActiveTrailOnly | navTreeToHtml({ 
+  wrapper: false, 
+  class: "nav-tree" 
+}) %}
+
 <header class="page__header header">
   <a href="#main" class="site-skip-link hidden-visually-focusable">
     Skip to main content
   </a>
   <a class="header__logo" href="/">
-    {{ site.meta.title }}
+    {% include "partials/logo.njk" %}
   </a>
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
-    {{ collections.all | navTree(treeOptions) | navTreeToHtml(toHtmlOptions) | safe }}
-    {# {{ activeTrailMenu | navTreeToHtml({ class: "site-menu" }) | safe }} #}
+    {{ menu | safe }}
   </nav>
 </header>

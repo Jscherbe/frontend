@@ -10,7 +10,7 @@ const htmlDefaults = {
   /**
    * Format link text (or add markup inside <a>)
    */
-  formatLink: (node, ) => node.entry.data.title,
+  formatLink: (node, options) => node.entry.data.title,
   /**
    * Label for nav (headline inside wrapper)
    */
@@ -42,15 +42,17 @@ export default function toHtml(tree, opts) {
     const depth = lastDepth + 1;
     const printItems = node => {
       const childList = node.children && depth < maxDepth ? printList(node.children, depth) : "";
+      /* eslint-disable */
       return `
         <li class="${ printClass("item") } ${ node.classes }">
           <a 
             class="${ printClass("link") } ${ node.classes }" 
             href="${ node.url }" 
             ${ node.active ? 'aria-current="page"' : '' }
-          >${ formatLink(node) }</a>
+          >${ formatLink(node, options) }</a>
           ${ childList }
         </li>`;
+      /* eslint-enable */
     };
     const listClass = printClass(options.wrapper ? "list" : false);
     return `

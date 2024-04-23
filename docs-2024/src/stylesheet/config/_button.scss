@@ -2,124 +2,26 @@
 @use "scss" as ulu;
 
 // Note: Adjusted button padding to match input padding for search
-@include ulu.button-set((
-  "padding":                (0.5em 3em),
-  "min-width":              5em,
-  "box-shadow":             none,
-  "border-color":           vars.$color-blue-dark,
-  "border-width":           1px,
-  "border-radius":          0,
-  "color":                  vars.$color-blue-dark,
-  "color-hover":            vars.$color-blue-dark,
-  "background-color":       white,
-  "background-color-hover": vars.$color-blue-light,
-  "margin":                 (0.5em 0.5em 0.5em 0),
-  "font-size" :             false,
-  "font-weight":            400,
-  "icon-size" :             2.35em,
-  "icon-font-size":         1.1em,
-  "font-family" :           vars.$font-family-serif,
-));
-@include ulu.button-set-sizes((
-  "small-x" : (
-    "padding": (0.1em 0.65em),
-    "min-width":      0,
-    "icon-size":      1.3rem,
-    "icon-font-size": 0.95rem,
-    "border-radius" : 8px,
-  ),
-  "small" : (
-    "padding": (0.35em 1em),
-    "min-width":      0,
-    "icon-size":      2rem,
-    "icon-font-size": 1rem
-  ),
-  "large" : (
-    "padding":   (1em 2em),
-    "min-width": 11rem,
-    "icon-size": 3.5rem
-  )
-));
-@include ulu.button-set-styles((
-  // "primary" : (
-  //   "color":              ulu.cssvar-use("color-button-primary-type"),
-  //   "background-color":   ulu.cssvar-use("color-button-primary-background"),
-  //   "hover": (
-  //     "background-color": ulu.cssvar-use("color-button-primary-background-hover"),
-  //     "color":            ulu.cssvar-use("color-button-primary-type-hover"),
-  //   )
-  // ),
-  // "secondary" : (
-  //   "color":              ulu.cssvar-use("color-button-secondary-type"),
-  //   "background-color":   ulu.cssvar-use("color-button-secondary-background"),
-  //   "hover": (
-  //     "background-color": ulu.cssvar-use("color-button-secondary-background-hover"),
-  //     "color":            ulu.cssvar-use("color-button-secondary-type-hover"),
-  //   )
-  // ),
-  "outline" : (
-    "background-color":   transparent,
-    "border-color":       gray,
-    "border-width":       1px,
-    "color":              inherit,  
-    "hover": (
-      "background-color": #fff,
-      "border-color":     black,
-      "color":            inherit
-    ),
-  ),
-  "transparent" : (
-    "background-color" : transparent,
-    "color" : ulu.color-get("type"),
-    "border-color" : transparent,
-    "box-shadow" : none,
-    "hover" : (
-      "background-color" : lightgray,
-      "color" : inherit,
-      "border-color" : transparent,
-    )
-  ),
-  // "translucent" : (
-  //   "background-color" : rgba(0,0,0,0.6),
-  //   "color" : inherit,
-  //   "border-color" : transparent,
-  //   "box-shadow" : none,
-  //   "hover" : (
-  //     "background-color" : rgba(0,0,0),
-  //     "color" : black,
-  //     "border-color" : transparent,
-  //   )
-  // ),
-  // "info" : (
-  //   "color":              ulu.cssvar-use("color-foreground-info"),
-  //   "background-color":   ulu.cssvar-use("color-background-info"),
-  //   "hover": (
-  //     "background-color": ulu.cssvar-use("color-background-info-hover"),
-  //     // "color":            ulu.cssvar-use("color-background-info-type-hover"),
-  //   )
-  // ),
-  // "success" : (
-  //   "color":              ulu.cssvar-use("color-foreground-success"),
-  //   "background-color":   ulu.cssvar-use("color-background-success"),
-  //   "hover": (
-  //     "background-color": ulu.cssvar-use("color-background-success-hover"),
-  //     // "color":            ulu.cssvar-use("color-background-success-hover"),
-  //   )
-  // ),
-  // "danger" : (
-  //   "color":              ulu.cssvar-use("color-foreground-danger"),
-  //   "background-color":   ulu.cssvar-use("color-background-danger"),
-  //   "hover": (
-  //     "background-color": ulu.cssvar-use("color-background-danger-hover"),
-  //     // "color":            ulu.cssvar-use("color-background-danger-hover"),
-  //   )
-  // ),
-  // "warning" : (
-  //   "color":              ulu.cssvar-use("color-foreground-warning"),
-  //   "background-color":   ulu.cssvar-use("color-background-warning"),
-  //   "hover": (
-  //     "background-color": ulu.cssvar-use("color-background-warning-hover"),
-  //     // "color":            ulu.cssvar-use("color-button-warning-type-hover"),
-  //   ),
-  // ),
-), "overwrite");
+// @include ulu.button-set(());
+// @include ulu.button-set-sizes((
+//   "small-x" : (
+//     "padding": (0.1em 0.65em),
+//     "min-width":      0,
+//     "icon-size":      1.3rem,
+//     "icon-font-size": 0.95rem,
+//     "border-radius" : 8px,
+//   ),
+//   "small" : (
+//     "padding": (0.35em 1em),
+//     "min-width":      0,
+//     "icon-size":      2rem,
+//     "icon-font-size": 1rem
+//   ),
+//   "large" : (
+//     "padding":   (1em 2em),
+//     "min-width": 11rem,
+//     "icon-size": 3.5rem
+//   )
+// ));
+// @include ulu.button-set-styles((
+// ), "overwrite");

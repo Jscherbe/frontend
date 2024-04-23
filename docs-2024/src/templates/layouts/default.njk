@@ -1,9 +1,6 @@
 
 {% extends "html.njk" %}
 {% block main %}
-  <div>
-    {{ collections.all | navTree({ section: true }) | navTreeActiveTrailOnly | navTreeToHtml | safe }}
-  </div>
   <div class="container wysiwyg">
     {{ content | safe }}
   </div>

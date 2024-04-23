@@ -5,19 +5,9 @@
 
 // @daniel set up the bitter bold font version
 @include ulu.typography-set((
-  "line-height" :             1.5,
-  "line-height-dense" :       1.25,
-  "line-height-densest" :     1.15,
-  "line-height-spaced" :      1.95,
-  "font-family" :             vars.$font-family,
-  "font-family-sans" :        vars.$font-family-sans,
-  "font-family-serif" :       vars.$font-family-serif,
-  // "responsive-change" :       0.5vw,
-  "max-width" :               35em,
-  "max-width-small" :         25em,
-  "max-width-small-x" :       12em,
-  // add small-x into specific to use as a class
-  "margin-bottom" :           0.75em
+  "font-family" :             ("Roboto", sans-serif),
+  "font-family-sans" :        ("Roboto", sans-serif),
+  "font-weight-semibold" :    500,
 ));
 // @include ulu.typography-set-sizes((
 //   "large-xx" : (

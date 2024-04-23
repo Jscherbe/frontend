@@ -58,45 +58,49 @@ export default function createTree(collection, options, ctx = {}) {
   }
 
   const tree = entries.reduce((acc, entry) => {
-      let current = acc;
-      const segments = entry.url.match(/\/[^\/]+/g);
-      if (segments) {
-        segments.forEach((_, index) => {
-          // Get the current part of the path ie "/guide/test" "/test" to test locally
-          const segment = segments.slice(0, index + 1).join("");
-          // See if any children match this segement (if so belongs in there)
-          const existing = current.children.find(entry => entry.segment === segment);
-          if (existing) {
-            current = existing;
-          } else {
-            current.children.push({ entry, segment, children: [] });
-            current = current.children[current.children.length - 1];
-          }
-        });
-      }
-      return acc;
-    }, root);
+    let current = acc;
+    const segments = entry.url.match(/\/[^\/]+/g);
+    if (segments) {
+      segments.forEach((_, index) => {
+        // Get the current part of the path ie "/guide/test" "/test" to test locally
+        const segment = segments.slice(0, index + 1).join("");
+        // See if any children match this segement (if so belongs in there)
+        const existing = current.children.find(entry => entry.segment === segment);
+        if (existing) {
+          current = existing;
+        } else {
+          current.children.push({ entry, segment, children: [] });
+          current = current.children[current.children.length - 1];
+        }
+      });
+    }
+    return acc;
+  }, root);
 
-  const cleanup = item => {
-    const { url } = item.entry;
-    item.children.sort(opts.sorter);
-    item.children.forEach(cleanup);
-    if (!item.children.length) delete item.children;
-    delete item.segment;
-    item.url = url;
-    item.active = url === ctx?.page.url;
-    item.activeTrail = ctx?.page.url.includes(url);
-    // Classes for convienence in templating or in toHtml
-    const classes = [];
-    if (item.active) classes.push(opts.classActive);
-    if (item.activeTrail) classes.push(opts.classActiveTrail);
-    item.classes = classes.join(" ");
+  const cleanup = children => {
+    children
+      .sort(opts.sorter)
+      .forEach(item => {
+        const { url } = item.entry;
+        cleanup(item.children);
+        if (!item.children.length) {
+          delete item.children;
+        }
+        delete item.segment;
+        item.url = url;
+        item.active = url === ctx?.page.url;
+        item.activeTrail = ctx?.page.url.includes(url);
+        // Classes for convienence in templating or in toHtml
+        const classes = [];
+        if (item.active) classes.push(opts.classActive);
+        if (item.activeTrail) classes.push(opts.classActiveTrail);
+        item.classes = classes.join(" ");
+      });
   };
-
-  tree.children.forEach(cleanup);
+  
+  cleanup(tree.children);
   return opts.includeIndex ? [tree] : tree.children;
 }
-
 
 
 function getSectionBaseUrl(url, depth = 1) {

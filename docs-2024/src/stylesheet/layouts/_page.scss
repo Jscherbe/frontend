@@ -2,23 +2,24 @@
 @use "ulu";
 
 $z-index: ulu.layout-get("z-index-fixed") - 2; 
-$horizontal-header-width: 10rem;
+$menu-width: 20rem;
 
 .page {
-  background-color: rgb(221, 221, 221);
+  background-color: white;
 }
 .page__header {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: $horizontal-header-width;
-  // height: 100%;
-  // z-index: $z-index; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $menu-width;
+  height: 100%;
+  z-index: $z-index; 
   background-color: white;
-  // overflow-y: auto;
+  overflow-y: auto;
+  border-right: ulu.element-get-rule-style("light");
 }
 .page__body {
-  padding-left: $horizontal-header-width;
+  padding-left: $menu-width;
 }
 
 

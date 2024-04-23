@@ -26,7 +26,11 @@ export default async function(eleventyConfig) {
   eleventyConfig.addWatchTarget(paths.sassTheme);
   eleventyConfig.addPlugin(sassdocPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo
-  eleventyConfig.addPlugin(navTreePlugin); 
+  eleventyConfig.addPlugin(navTreePlugin, {
+    toHtml: {
+      formatLink: menuLinkFormatter
+    }
+  }); 
   
   return {
     dir: {
@@ -38,3 +42,13 @@ export default async function(eleventyConfig) {
     }
   };
 };
+
+function menuLinkFormatter(node, options) {
+  const { data } = node.entry;
+  const classname = options.class;
+  const lines = [`<span class="${ classname }__text">${ data.title }</span>`];
+  if (data.icon ) {
+    lines.unshift(`<span class="${ classname }__icon" data-feather="${ data.icon }" aria-hidden="true"></span>`);
+  }
+  return lines.join("\n");
+}

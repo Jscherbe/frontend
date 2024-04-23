@@ -1,12 +1,24 @@
+@use "vars";
+@use "ulu";
+
+$padding: 1rem;
+
 .header {
-  display: flex;
+  // display: flex;
+  // padding: $padding;
 }
 .header__logo {
-  margin-right: 1em;
+  display: block;
+  padding: $padding;
 }
 .header__nav {
-  margin-left: auto;
-  .nav {
-    display: flex;
-  }
+  border-top: ulu.element-get-rule-style("light");
+  padding: $padding;
+  // margin-top: 1em;
 }
+// .header__nav {
+//   margin-left: auto;
+//   .nav {
+//     display: flex;
+//   }
+// }

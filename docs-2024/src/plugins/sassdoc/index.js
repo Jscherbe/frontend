@@ -6,7 +6,7 @@ import { outputPages } from "@ulu/sassdoc-to-markdown";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isSubdir = (parent, dir) => {
   const relative = path.relative(parent, dir);
-  return relative && !relative.startsWith('..') && !path.isAbsolute(relative);
+  return relative && !relative.startsWith("..") && !path.isAbsolute(relative);
 };
 
 let running = false;
@@ -28,7 +28,7 @@ const commonConfig = {
 const createConfig = (base, options) => ({
   ...commonConfig,
   dir: base ? path.resolve(src, base) : src,
-  pathBase: base ? `/api/sass/${ base }` : "/api/sass/core/",
+  pathBase: base ? `/sass/${ base }` : "/sass/core/",
   dist,
   ...options
 });
@@ -61,7 +61,7 @@ export default async function plugin(eleventyConfig) {
     }
   });
   return {};
-};
+}
 
 
 async function output() {

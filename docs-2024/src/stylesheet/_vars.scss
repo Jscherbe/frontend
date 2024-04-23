@@ -3,33 +3,15 @@
 @use "sass:meta";
 @use "sass:color";
 
+// Note: Keep core colors and assignments as variables so we don't need ULU to access them
+//       related project, client use, whatever
+
 $color-black:                 rgb(16, 16, 16);
-$color-gray:                  #afafaf;
-$color-gray-light:            #f0f0f1;
-$color-gray-lighter:          #FAFAFA;
-$color-black-blue:            #020c19;
-$color-black-red:             #191919;
-$color-teal-dark:             #022e31;
-$color-blue-light:            #63bcd0;
-$color-blue-lighter:          #92D1DE;
-$color-yellow-lightest:       #fcebc5;
-$color-yellow:                #dda326;
-$color-yellow-dark:           #c68e14;
-$color-orange:                #dd6a26;
-$color-orange-dark:           #c15619;
-$color-orange-gray:           #603a24;
 $color-blue:                  #368db5;
-$color-green:                 #36b567;
-$color-green-light:           #6EC5A3;
-$color-red:                   #E0232D;
-$color-red-light:             #d35056;
-$color-red-gray:              #633030;
-$color-teal:                  #328e8e;
+$color-violet-light-x:        #e2d3f0;
 $color-violet-light:          #ad7dd9;
 $color-violet:                #8c52c3;
-
-$color-background:             white;
-$color-background-dark:        $color-blue;
+$color-violet-dark:           #683894;
 
 $color-type:                  #3b3b3b;
 $color-type-secondary:        #575757;
@@ -47,8 +29,6 @@ $color-link-dark-visited:     #75507c;
 $color-rule:                 rgb(221, 221, 221);
 $color-rule-light:           rgb(221, 221, 221);
 
-$color-tag-background: #75507c;
-
 $site-max-width-large:        110rem;
 $site-max-width:              100rem;
 $site-max-width-small:        70rem;
@@ -60,37 +40,4 @@ $site-header-padding:         6rem;
 
 $site-nav-padding:             1.5rem;
 $site-nav-padding-top:         2rem;
-
-// $border-accent:               5px solid $color-yellow;
-$content-padding:                    3rem;
-$modal-padding-x:                    2rem;
-$modal-padding-y:                    1rem;
-$modal-body-background-color:        white;
-$modal-header-background-color:      blue;
-$modal-header-color:                 blue;
-$modal-close-background-color:       rgba(255, 255, 255, 0.6);
-$modal-close-background-color-hover: white;
-$modal-close-color:                  blue;
-$modal-close-color-hover:            blue;
-
-$font-family:                 'Open Sans', sans-serif;
-$font-family-serif:           serif;
-$font-family-sans:            sans-serif;
-
-
-// brand color palette
-
-$color-blue:                #04507c;
-$color-blue-light:          #e3eff5;
-$color-blue-dark:           #033e61;
-$color-green:               #2c7421;
-$color-green-transparent:   #2c7421ee;
-$color-green-light:         #bacfa9;
-$color-green-light-x:       #e8efe2;
-$color-green-dark:          #14380e;
-$color-green-bright:        #00833e;
-$color-link:                blue;
-
-
-
 
