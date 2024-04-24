@@ -10,9 +10,13 @@ $padding: 1rem;
 .header__logo {
   display: block;
   padding: $padding;
+  border-bottom: ulu.element-get-rule-style("light");
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 .header__nav {
-  border-top: ulu.element-get-rule-style("light");
+  
   padding: $padding;
   // margin-top: 1em;
 }

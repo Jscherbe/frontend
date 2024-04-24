@@ -4,6 +4,7 @@
 $link-padding-x: 0.75em;
 $link-padding-y: 0.35em;
 $link-indent: 1em;
+$collapsible-inner-padding: 0.5em;
 
 .nav-tree__item {
   margin: 3px 0;
@@ -41,7 +42,14 @@ $link-indent: 1em;
     background-color: rgb(240, 240, 240);
   }
 }
+.nav-tree__collapsible {
+  &[open] {
+    padding-bottom: $collapsible-inner-padding;
+  }
+  
+}
 .nav-tree__link--index {
+  margin-top: $collapsible-inner-padding;
   // color: ulu.color-get("type-tertiary");
   // &,
   // &.is-active {
@@ -52,8 +60,8 @@ $link-indent: 1em;
 }
 .nav-tree__icon {
   margin-right: 0.5em;
-  width: 1.25em;
-  flex: 0 0 1.25em;
+  width: 1em;
+  flex: 0 0 1em;
 }
 
 // Depth styling

@@ -3,8 +3,13 @@
 	{% include "partials/head.njk" %}
 	<body class="page">
 		{% include "partials/header.njk" %}
+		{% if toc !== false %}
+			<div class="page__toc page-toc">
+				{{ content | toc | safe }}
+			</div>
+		{% endif %}
 		<div class="page__body">
-			<main id="main" >
+			<main id="main">
 				{% block main %}
 					{{ content | safe }}
 				{% endblock %}

@@ -1,9 +1,5 @@
 ---
-title: Subdir Test 1
-
-eleventyNavigation: 
-  parent: guide
-  key: subdir
+title: Subdir Test 2
 ---
 
-This is a test page 1
+This is a test page 2

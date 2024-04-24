@@ -1,25 +1,40 @@
 @use "vars";
 @use "ulu";
 
-$z-index: ulu.layout-get("z-index-fixed") - 2; 
-$menu-width: 20rem;
+// $z-index: ulu.layout-get("z-index-fixed") - 2; 
+// $menu-width: 20rem;
 
 .page {
   background-color: white;
+  display: grid;
+  grid-template-areas: "header body toc";
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr) minmax(0, 15rem);
+}
+.page__header,
+.page__toc {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
 }
 .page__header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: $menu-width;
-  height: 100%;
-  z-index: $z-index; 
-  background-color: white;
-  overflow-y: auto;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // width: $menu-width;
+  grid-area: header;
+  // height: 100%;
+  // z-index: $z-index; 
+  // background-color: white;
+  
   border-right: ulu.element-get-rule-style("light");
 }
 .page__body {
-  padding-left: $menu-width;
+  grid-area: body;
+  // padding-left: $menu-width;
+}
+.page__toc {
+  grid-area: toc;
 }
 
 

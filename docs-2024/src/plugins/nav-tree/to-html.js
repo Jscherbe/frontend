@@ -36,30 +36,46 @@ const htmlDefaults = {
    */
   wrapperElement: "nav",
   /**
-   * Wrap items with children in details and put index page in 
-   * inner list with common name (ie. Introduction) at start
+   * Sets collapsible to true
    */
   collapsible: false,
+  collapsibleMaxDepth: Infinity,
+  /**
+   * Determines if link with children is printed as collapsible
+   * - Could be frontmatter, could be true for all depths, etc
+   * - Wrap items with children in details and put index page in 
+   *   inner list with common name (ie. Introduction) at start
+   */
+  shouldCollapseNode({ node, depth, tree, options }) {
+    const { data } = node.entry;
+    return options.collapsible && data.collapsible === false ? false : 
+      options.collapsible ? depth < options.collapsibleMaxDepth : 
+      data.collapsible;
+  }
 };
 /**
  * Output tree as HTML menu list
  */
 export default function toHtml(tree, opts) {
   const options = Object.assign({}, htmlDefaults, opts);
-  const { maxDepth, formatLink, collapsible } = options;
+  const { maxDepth, formatLink, shouldCollapseNode } = options;
   const formatToggle = options.formatToggle || formatLink;
-  const printClass = child => child ? `${ options.class }__${ child }` : options.class;
+  const getClass = child => child ? `${ options.class }__${ child }` : options.class;
 
   const printItem = (node, depth, isIndex) => {
     const showChildren = node.children && depth < maxDepth;
-    if (collapsible && showChildren && !isIndex) {
+    if (
+      !isIndex && 
+      showChildren && 
+      shouldCollapseNode({ node, depth, tree, options })
+    ) {
       return `
-<li class="${ printClass("item") } ${ node.classes }">
+<li class="${ getClass("item") } ${ node.classes }">
   <details 
-    class="${ printClass("collapsible") }" 
+    class="${ getClass("collapsible") }" 
     ${ node.activeTrail ? "open" : ""}
   >
-    <summary class="${ printClass("toggle") }">
+    <summary class="${ getClass("toggle") }">
       ${ formatToggle({ node, options }) }
     </summary>
     ${ printList(node.children, depth, node) }
@@ -68,9 +84,9 @@ export default function toHtml(tree, opts) {
       `;
     } else {
       return `
-<li class="${ printClass("item") } ${ node.classes }">
+<li class="${ getClass("item") } ${ node.classes }">
   <a 
-    class="${ printClass("link") } ${ isIndex ? printClass("link--index") : "" } ${ node.classes }" 
+    class="${ getClass("link") } ${ isIndex ? getClass("link--index") : "" } ${ node.classes }" 
     href="${ node.url }" 
     ${ node.active ? 'aria-current="page"' : '' }
   >
@@ -82,23 +98,28 @@ export default function toHtml(tree, opts) {
     }
     /* eslint-enable */
   };
-  const printList = (children, lastDepth, indexNode) => {
+  /**
+   * @param {Array} children Menu items from tree
+   * @param {*} lastDepth This is called recusively this is the iteration above
+   * @param {*} collapsedNode If within a collapsible this is the node that is collapsed (printed in menu list)
+   */
+  const printList = (children, lastDepth, collapsedNode) => {
     if (lastDepth >= maxDepth) return;
     const depth = lastDepth + 1;
-    const listClass = printClass(options.wrapper ? "list" : false);
+    const listClass = getClass(options.wrapper ? "list" : false);
     return `
 <ul class="${ listClass }" data-menu-depth="${ depth }">
-  ${ collapsible && indexNode ? printItem(indexNode, depth, true) : "" }
+  ${ collapsedNode ? printItem(collapsedNode, depth, true) : "" }
   ${ children.map(item => printItem(item, depth)).join("\n") }
 </ul>
     `;
   };
   const printLabel = () => {
-    return `<${ options.labelElement } class="${ printClass("label") }"></${ options.labelElement }>`;
+    return `<${ options.labelElement } class="${ getClass("label") }"></${ options.labelElement }>`;
   };
   const printWithWrapper = () => {
     return `
-<${ options.wrapperElement } class="${ printClass() }">
+<${ options.wrapperElement } class="${ getClass() }">
   ${ options.label ? printLabel() : "" }
   ${ printList(tree, 0) }
 </${ options.wrapperElement }>`

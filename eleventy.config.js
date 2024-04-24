@@ -2,6 +2,8 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import markdownItAnchor from "markdown-it-anchor";
+import tocPlugin from "eleventy-plugin-nesting-toc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import navTreePlugin from "./docs-2024/src/plugins/nav-tree/index.js";
 import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
@@ -16,8 +18,16 @@ const paths = {
 };
 
 export default async function(eleventyConfig) {
+  eleventyConfig.addPlugin(tocPlugin, {
+    tags: ['h2', 'h3', 'h4'],
+    wrapper: "div",
+    headingText: "On this page"
+  });
   eleventyConfig.addPlugin(syntaxHighlight);
-  eleventyConfig.amendLibrary("md", md => md.use(markdownItAttrs));
+  eleventyConfig.amendLibrary("md", md => {
+    md.use(markdownItAttrs);
+    md.use(markdownItAnchor);
+  });
   eleventyConfig.addPlugin(sassPlugin, {
     addCwd: true,
     sass: {
