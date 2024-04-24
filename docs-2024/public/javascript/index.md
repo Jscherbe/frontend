@@ -1,5 +1,5 @@
 ---
-title: Javascript
+title: Javascript API
 weight: 10
 icon: code
 ---

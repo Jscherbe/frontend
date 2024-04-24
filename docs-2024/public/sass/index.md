@@ -1,7 +1,7 @@
 ---
 title: Sass Modules
 weight: 0
-icon: code
+icon: grid
 ---
 
 This is a test page

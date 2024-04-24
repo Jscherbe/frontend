@@ -30,7 +30,8 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo
   eleventyConfig.addPlugin(navTreePlugin, {
     toHtml: {
-      formatLink: menuLinkFormatter
+      formatLink: menuLinkFormatter,
+      formatToggle: menuToggleFormatter
     }
   }); 
   
@@ -45,12 +46,25 @@ export default async function(eleventyConfig) {
   };
 };
 
-function menuLinkFormatter(node, options) {
+function menuLinkFormatter({ node, options, isIndex }) {
   const { data } = node.entry;
   const classname = options.class;
-  const lines = [`<span class="${ classname }__text">${ data.title }</span>`];
-  if (data.icon ) {
-    lines.unshift(`<span class="${ classname }__icon" data-feather="${ data.icon }" aria-hidden="true"></span>`);
-  }
-  return lines.join("\n");
+  const icon = () => `
+    <span class="${ classname }__icon" data-feather="${ data.icon }" aria-hidden="true"></span>
+  `;
+  return `
+    ${ data.icon && !isIndex ? icon() : "" }
+    <span class="${ classname }__text">
+      ${ isIndex ? "Introduction" : data.title }
+    </span>
+  `;
+}
+function menuToggleFormatter({ node, options }) {
+  const classname = options.class;
+  return `
+    <span class="${ classname }__toggle-content">
+      ${ menuLinkFormatter({ node, options }) }
+    </span>
+    <span class="${ classname }__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  `;
 }

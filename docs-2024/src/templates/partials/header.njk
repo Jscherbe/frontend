@@ -1,8 +1,9 @@
 {% set menuTree = collections.all | navTree({ 
   includeIndex: false 
 })  %}
-{% set menu = menuTree | navTreeActiveTrailOnly | navTreeToHtml({ 
+{% set menu = menuTree | navTreeToHtml({ 
   wrapper: false, 
+  collapsible: true,
   class: "nav-tree" 
 }) %}
 

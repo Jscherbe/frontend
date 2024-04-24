@@ -3,6 +3,8 @@ Content:
     ☐ Setup theme switcher script
       * Use it in this site 
 Todos:
+  ☐ Make header logo part sticky, it will have a footer/bottom in future
+    ☐ We can also scrollIntoView the current page, once in the end phases
   ☐ Setup JS compilation
     * Used for demoing ulu demo
     * Dark Light Mode

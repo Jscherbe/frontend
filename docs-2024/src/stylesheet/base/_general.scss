@@ -20,7 +20,8 @@ dl {
 }
 details {
   &[open] {
-    summary {
+    // Only on focus (after clicked), Not on initial
+    summary:focus {
       ~ * {
         animation: FadeDownIn 350ms ease-in-out;
       }
