@@ -1,7 +1,19 @@
 @use "vars";
 @use "ulu";
 
+@use "tag";
 @use "wysiwyg";
 
+@include tag.set((
+  "margin-x" : 0.1em,
+));
+@include tag.set-styles((
+  "primary" : (
+    "color" : white,
+    "background-color" : vars.$color-violet,
+    "border-color" : vars.$color-violet-dark
+  ),
+), "overwrite");
+@include tag.styles();
 @include wysiwyg.styles();
 

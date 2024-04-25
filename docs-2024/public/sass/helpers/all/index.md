@@ -15,9 +15,15 @@ sassdocGroupName: all
 
 
 
-###  helper-styles() {#mixin-helper-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  helper-styles() {#mixin-helper-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -25,14 +31,14 @@ Prints all Helper styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
 - **Lines (comments):** 32-36
 - **Lines (code):** 38-62
-    
+    </details>
     
 
 #### Examples

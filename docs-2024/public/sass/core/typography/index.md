@@ -15,9 +15,15 @@ sassdocGroupName: typography
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -33,7 +39,6 @@ $config: (
   "font-family-serif" : (Cambria, Georgia, serif),
   "font-family-monospace" : (Menlo, Consolas, Monaco, monospace),
   "font-weight" : inherit,
-  "font-weight-headline" : bold,
   "font-weight-light" : 300,
   "font-weight-normal" : normal,
   "font-weight-semibold" : 600,
@@ -41,27 +46,27 @@ $config: (
   "line-height" : 1.5,
   "line-height-dense": 1.3,
   "line-height-spaced": 1.75,
-  "size-ratio": 2,
+  "size-ratio": 1.8,
   "size-line-height-ratio": 0.97,
   "scale-steps": 5,
   "responsive-change": 0.05vw, 
+  "margin-top":  null,
   "margin-bottom":  1em,
-  "margin-top":  false,
   "letter-spacing-uppercase" : 0.04em,
   "max-width" : 60rem,
-  "max-width-small" : 50rem
+  "max-width-small" : 50rem,
 );
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 17-27
-- **Lines (code):** 29-53
-    
+- **Lines (comments):** 17-29
+- **Lines (code):** 31-54
+    </details>
     
 
 #### Map Properties
@@ -77,7 +82,9 @@ $config: (
 |$config.size-ratio|Number|Font size scale when using preset sizes, ratio mixin)|
 |$config.size-line-height-ratio|Number|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desrireable|
 |$config.responsive-change|Number|Amount to scale typography by browser's width (use viewport units)|
-|$config.margin|Number|Default margin for typography (like paragraphs)|
+|$config.margin-top|Number|Default margin for typography (like paragraphs)|
+|$config.margin-bottom|Number|Default margin for typography (like paragraphs)|
+|$config.headline-color|Number|Default color for headlines if using preset sizes|
 
     
 
@@ -87,9 +94,15 @@ $config: (
     
 
 
-###  $sizes {#variable-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -98,32 +111,18 @@ Default size presets
     
 
 ``` scss
-$sizes: (
-  "small-x" :       new-size(scale(-2)),
-  "small" :         new-size(scale(-1)),
-  "base" :          new-size(scale(0)),
-  "large" :         new-size(scale(1),   scale-line-height(1)),
-  "large-x" :       new-size(scale(2),   scale-line-height(2)),
-  "large-xx" :      new-size(scale(3),   scale-line-height(3)),
-  "large-xxx" :     new-size(scale(4),   scale-line-height(4)),
-  "h1" :            new-size(scale(6),   scale-line-height(6),   true),
-  "h2" :            new-size(scale(5),   scale-line-height(5),   true),
-  "h3" :            new-size(scale(4),   scale-line-height(4),   true),
-  "h4" :            new-size(scale(3),   scale-line-height(3),   true),
-  "h5" :            new-size(scale(2),   scale-line-height(2),   true),
-  "h6" :            new-size(scale(1),   scale-line-height(1),   true)
-);
+$sizes: get-default-sizes();
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 143-152
-- **Lines (code):** 154-168
-    
+- **Lines (comments):** 147-156
+- **Lines (code):** 158-158
+    </details>
     
 
 #### Map Properties
@@ -152,9 +151,15 @@ $sizes: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -162,14 +167,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 55-57
-- **Lines (code):** 59-61
-    
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-62
+    </details>
     
 
 #### Parameters
@@ -193,9 +198,15 @@ Change modules $config
   
 
 
-###  word-break() {#mixin-word-break} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  word-break() {#mixin-word-break}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -203,14 +214,14 @@ Break word stradegy
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 114-115
-- **Lines (code):** 117-121
-    
+- **Lines (comments):** 115-116
+- **Lines (code):** 118-122
+    </details>
     
 
 #### Parameters
@@ -228,9 +239,15 @@ Break word stradegy
     
 
 
-###  set-sizes() {#mixin-set-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-sizes() {#mixin-set-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -238,14 +255,14 @@ Update the typography presets map
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 170-177
-- **Lines (code):** 179-181
-    
+- **Lines (comments):** 180-187
+- **Lines (code):** 189-191
+    </details>
     
 
 #### Examples
@@ -285,9 +302,15 @@ Setting the error and type color
   
 
 
-###  font-size-responsive() {#mixin-font-size-responsive} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  font-size-responsive() {#mixin-font-size-responsive}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -295,14 +318,14 @@ Print's the responsive type formula
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 267-269
-- **Lines (code):** 271-273
-    
+- **Lines (comments):** 277-279
+- **Lines (code):** 281-283
+    </details>
     
 
 #### Parameters
@@ -321,9 +344,15 @@ Print's the responsive type formula
     
 
 
-###  size() {#mixin-size} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  size() {#mixin-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -331,14 +360,14 @@ Print a typography size (font-size, line-height)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 275-278
-- **Lines (code):** 280-320
-    
+- **Lines (comments):** 285-288
+- **Lines (code):** 290-330
+    </details>
     
 
 #### Parameters
@@ -372,9 +401,15 @@ Print a typography size (font-size, line-height)
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -382,14 +417,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 63-65
-- **Lines (code):** 67-69
-    
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-70
+    </details>
     
 
 #### Parameters
@@ -414,9 +449,15 @@ Get a config option
   
 
 
-###  scale() {#function-scale} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  scale() {#function-scale}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -424,14 +465,14 @@ Get scale of the base font-size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
-    
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-78
+    </details>
     
 
 #### Parameters
@@ -464,9 +505,15 @@ Get scale of the base font-size
   
 
 
-###  scale-line-height() {#function-scale-line-height} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  scale-line-height() {#function-scale-line-height}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -474,14 +521,14 @@ Get scale of the line-height
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 79-82
-- **Lines (code):** 84-86
-    
+- **Lines (comments):** 80-83
+- **Lines (code):** 85-87
+    </details>
     
 
 #### Parameters
@@ -514,9 +561,15 @@ Get scale of the line-height
   
 
 
-###  rem() {#function-rem} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  rem() {#function-rem}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -524,14 +577,14 @@ Convert pixel value to rem value based on typography $font-size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 88-90
-- **Lines (code):** 92-98
-    
+- **Lines (comments):** 89-91
+- **Lines (code):** 93-99
+    </details>
     
 
 #### Parameters
@@ -563,9 +616,15 @@ Convert pixel value to rem value based on typography $font-size
   
 
 
-###  em() {#function-em} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  em() {#function-em}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -573,14 +632,14 @@ Changes pixels to em
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 100-103
-- **Lines (code):** 105-112
-    
+- **Lines (comments):** 101-104
+- **Lines (code):** 106-113
+    </details>
     
 
 #### Parameters
@@ -613,9 +672,15 @@ Changes pixels to em
   
 
 
-###  new-size() {#function-new-size} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  new-size() {#function-new-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -625,14 +690,14 @@ Creates a size map
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 123-128
-- **Lines (code):** 130-141
-    
+- **Lines (comments):** 124-129
+- **Lines (code):** 131-145
+    </details>
     
 
 #### Parameters
@@ -657,9 +722,55 @@ Creates a size map
   
 
 
-###  get-size() {#function-get-size} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-default-sizes() {#function-get-default-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Function that returns default sizes
+- Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _typography.scss
+- **Group:** typography
+- **Type:** function
+- **Lines (comments):** 160-161
+- **Lines (code):** 162-178
+    </details>
+    
+
+#### Todos
+
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+    
+
+#### Require
+
+- [new-size()](/sass/core/typography/#function-new-size)
+- [scale()](/sass/core/typography/#function-scale)
+- [scale-line-height()](/sass/core/typography/#function-scale-line-height)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-size() {#function-get-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -667,14 +778,14 @@ Get a size's map
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 183-185
-- **Lines (code):** 187-189
-    
+- **Lines (comments):** 193-195
+- **Lines (code):** 197-199
+    </details>
     
 
 #### Parameters
@@ -707,9 +818,15 @@ Get a size's map
   
 
 
-###  font-size() {#function-font-size} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  font-size() {#function-font-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -717,14 +834,14 @@ Print a font-size for a given size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 191-193
-- **Lines (code):** 195-199
-    
+- **Lines (comments):** 201-203
+- **Lines (code):** 205-209
+    </details>
     
 
 #### Parameters
@@ -749,9 +866,15 @@ Print a font-size for a given size
   
 
 
-###  unitless-line-height() {#function-unitless-line-height} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  unitless-line-height() {#function-unitless-line-height}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -759,14 +882,14 @@ Forces conversion to unitless line-height
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 201-203
-- **Lines (code):** 205-219
-    
+- **Lines (comments):** 211-213
+- **Lines (code):** 215-229
+    </details>
     
 
 #### Parameters
@@ -796,9 +919,15 @@ Forces conversion to unitless line-height
   
 
 
-###  get-size-converted-value() {#function-get-size-converted-value} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-size-converted-value() {#function-get-size-converted-value}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -806,14 +935,14 @@ Print a value from the size and convert it (to appropriate unit for framework)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 220-222
-- **Lines (code):** 224-250
-    
+- **Lines (comments):** 230-232
+- **Lines (code):** 234-260
+    </details>
     
 
 #### Parameters
@@ -839,9 +968,15 @@ Print a value from the size and convert it (to appropriate unit for framework)
   
 
 
-###  get-size-value() {#function-get-size-value} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-size-value() {#function-get-size-value}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -850,14 +985,14 @@ Get a sizes property value that doesn't need conversion
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 253-256
-- **Lines (code):** 258-265
-    
+- **Lines (comments):** 263-266
+- **Lines (code):** 268-275
+    </details>
     
 
 #### Parameters

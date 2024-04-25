@@ -15,9 +15,15 @@ sassdocGroupName: color
 
 
 
-###  $palette {#variable-palette} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: map</small>
+###  $palette {#variable-palette}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+
+</div>
 
   
 
@@ -31,6 +37,7 @@ $palette: (
   "black":        black,
   "white":        white,
   "type":         black,
+  "headline" :    rgb(13, 104, 102),
   "background":   white,
   "focus":        blue,
   "error":        red,
@@ -50,20 +57,26 @@ $palette: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 11-13
-- **Lines (code):** 15-34
+- **Lines (code):** 15-35
+    </details>
     
-    
 
 
-###  $contexts {#variable-contexts} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: map</small>
+###  $contexts {#variable-contexts}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+
+</div>
 
   
 
@@ -87,14 +100,14 @@ $contexts: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 36-40
-- **Lines (code):** 42-53
-    
+- **Lines (comments):** 37-41
+- **Lines (code):** 43-54
+    </details>
     
 
 #### Map Properties
@@ -109,9 +122,15 @@ $contexts: (
     
 
 
-###  $color-classes {#variable-color-classes} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public</small>
+###  $color-classes {#variable-color-classes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -128,14 +147,14 @@ $color-classes: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 55-55
-- **Lines (code):** 56-60
-    
+- **Lines (comments):** 56-56
+- **Lines (code):** 57-61
+    </details>
     
   
 
@@ -144,9 +163,15 @@ $color-classes: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -154,14 +179,14 @@ Used to override or extend the color palette
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 62-68
-- **Lines (code):** 70-72
-    
+- **Lines (comments):** 63-69
+- **Lines (code):** 71-73
+    </details>
     
 
 #### Examples
@@ -194,9 +219,15 @@ Setting the error and type color
   
 
 
-###  set-color-classes() {#mixin-set-color-classes} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-color-classes() {#mixin-set-color-classes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -204,14 +235,14 @@ Set ouput classes for all-color-class-styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 94-95
-- **Lines (code):** 97-99
-    
+- **Lines (comments):** 95-96
+- **Lines (code):** 98-100
+    </details>
     
 
 #### Parameters
@@ -229,9 +260,15 @@ Set ouput classes for all-color-class-styles
   
 
 
-###  set-contexts() {#mixin-set-contexts} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-contexts() {#mixin-set-contexts}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -239,14 +276,14 @@ Set color contexts
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 106-116
-- **Lines (code):** 118-120
-    
+- **Lines (comments):** 107-117
+- **Lines (code):** 119-121
+    </details>
     
 
 #### Examples
@@ -284,9 +321,15 @@ Overwriting contexts
   
 
 
-###  context-styles() {#mixin-context-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  context-styles() {#mixin-context-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -294,14 +337,14 @@ Prints contexts styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 145-146
-- **Lines (code):** 148-154
-    
+- **Lines (comments):** 146-147
+- **Lines (code):** 149-155
+    </details>
     
 
 #### Parameters
@@ -321,9 +364,15 @@ Prints contexts styles
   
 
 
-###  all-context-styles() {#mixin-all-context-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  all-context-styles() {#mixin-all-context-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -331,14 +380,14 @@ Prints all context styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 178-185
-- **Lines (code):** 187-196
-    
+- **Lines (comments):** 179-186
+- **Lines (code):** 188-197
+    </details>
     
 
 #### Examples
@@ -383,9 +432,15 @@ Example of a color-context
   
 
 
-###  all-color-class-styles() {#mixin-all-color-class-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  all-color-class-styles() {#mixin-all-color-class-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -393,14 +448,14 @@ Outputs all color classes
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 198-202
-- **Lines (code):** 204-213
-    
+- **Lines (comments):** 199-203
+- **Lines (code):** 205-214
+    </details>
     
 
 #### Examples
@@ -438,9 +493,15 @@ Example of a color-context
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -448,14 +509,14 @@ Get a color from the palette by name
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 74-76
-- **Lines (code):** 78-92
-    
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-93
+    </details>
     
 
 #### Parameters
@@ -483,9 +544,15 @@ Get a color from the palette by name
   
 
 
-###  get-context() {#function-get-context} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-context() {#function-get-context}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -493,14 +560,14 @@ Get a context by name
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 122-124
-- **Lines (code):** 126-128
-    
+- **Lines (comments):** 123-125
+- **Lines (code):** 127-129
+    </details>
     
 
 #### Parameters
@@ -528,9 +595,15 @@ Get a context by name
   
 
 
-###  get-context-value() {#function-get-context-value} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-context-value() {#function-get-context-value}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -538,14 +611,14 @@ Get a context's value'
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 130-133
-- **Lines (code):** 135-143
-    
+- **Lines (comments):** 131-134
+- **Lines (code):** 136-144
+    </details>
     
 
 #### Parameters
@@ -574,9 +647,15 @@ Get a context's value'
   
 
 
-###  tint() {#function-tint} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  tint() {#function-tint}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -584,15 +663,15 @@ Lighten a color using the default white by a percentage
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 156-161
-- **Lines (code):** 163-165
+- **Lines (comments):** 157-162
+- **Lines (code):** 164-166
 - **Author:** 
-    
+    </details>
     
 
 #### Parameters
@@ -626,9 +705,15 @@ Lighten a color using the default white by a percentage
   
 
 
-###  shade() {#function-shade} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  shade() {#function-shade}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -636,15 +721,15 @@ Darken a color with the default black by a percentage
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 167-172
-- **Lines (code):** 174-176
+- **Lines (comments):** 168-173
+- **Lines (code):** 175-177
 - **Author:** Kitty Giraudel
-    
+    </details>
     
 
 #### Parameters

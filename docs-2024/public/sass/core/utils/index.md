@@ -15,9 +15,15 @@ sassdocGroupName: utils
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -33,14 +39,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** variable
 - **Lines (comments):** 11-14
 - **Lines (code):** 16-19
-    
+    </details>
     
 
 #### Map Properties
@@ -59,9 +65,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -69,14 +81,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 21-24
 - **Lines (code):** 25-27
-    
+    </details>
     
 
 #### Examples
@@ -106,9 +118,15 @@ General example, replace module-name with module's name
   
 
 
-###  require-list-has() {#mixin-require-list-has} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  require-list-has() {#mixin-require-list-has}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -116,14 +134,14 @@ Ensure a value is present in the list, throw an error if not found
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 57-60
 - **Lines (code):** 62-67
-    
+    </details>
     
 
 #### Parameters
@@ -143,9 +161,15 @@ Ensure a value is present in the list, throw an error if not found
     
 
 
-###  require-list-contains() {#mixin-require-list-contains} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  require-list-contains() {#mixin-require-list-contains}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -153,14 +177,14 @@ Require that the list only is only made up of allowed items
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 69-71
 - **Lines (code):** 73-77
-    
+    </details>
     
 
 #### Parameters
@@ -179,9 +203,15 @@ Require that the list only is only made up of allowed items
   
 
 
-###  file-header() {#mixin-file-header} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  file-header() {#mixin-file-header}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -189,14 +219,14 @@ Returns true if we should include something (used for output checking)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 88-90
 - **Lines (code):** 92-100
-    
+    </details>
     
 
 #### Parameters
@@ -215,9 +245,15 @@ Returns true if we should include something (used for output checking)
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -225,14 +261,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 29-32
 - **Lines (code):** 34-36
-    
+    </details>
     
 
 #### Examples
@@ -263,9 +299,15 @@ General example, replace module-name with module's name
   
 
 
-###  require-map-get() {#function-require-map-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  require-map-get() {#function-require-map-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -274,14 +316,14 @@ Get a required value from a map, throw an error if not found
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 38-43
 - **Lines (code):** 45-55
-    
+    </details>
     
 
 #### Parameters
@@ -315,9 +357,15 @@ Get a required value from a map, throw an error if not found
   
 
 
-###  included() {#function-included} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  included() {#function-included}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -325,14 +373,14 @@ Returns true if we should include something (map of booleans)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 79-81
 - **Lines (code):** 83-86
-    
+    </details>
     
 
 #### Parameters
@@ -351,20 +399,26 @@ Returns true if we should include something (map of booleans)
   
 
 
-###  if-type() {#function-if-type} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  if-type() {#function-if-type}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 103-105
 - **Lines (code):** 107-113
-    
+    </details>
     
 
 #### Parameters
@@ -379,20 +433,26 @@ Returns true if we should include something (map of booleans)
     
 
 
-###  number-info() {#function-number-info} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  number-info() {#function-number-info}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 116-117
 - **Lines (code):** 119-133
-    
+    </details>
     
 
 #### Parameters
@@ -414,9 +474,15 @@ Returns true if we should include something (map of booleans)
     
 
 
-###  map-merge() {#function-map-merge} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  map-merge() {#function-map-merge}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -424,14 +490,14 @@ Reusable merge method
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 135-139
 - **Lines (code):** 141-149
-    
+    </details>
     
 
 #### Parameters
@@ -455,9 +521,15 @@ Reusable merge method
     
 
 
-###  map-merge-or-overwrite() {#function-map-merge-or-overwrite} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  map-merge-or-overwrite() {#function-map-merge-or-overwrite}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -470,14 +542,14 @@ Repeatable pattern in core
 Left in for compatability, will be removed, use map-merge with mode
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 151-152
 - **Lines (code):** 154-162
-    
+    </details>
     
 
 #### Require
@@ -486,9 +558,15 @@ Left in for compatability, will be removed, use map-merge with mode
   
 
 
-###  fallback() {#function-fallback} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  fallback() {#function-fallback}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -496,14 +574,14 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 164-165
 - **Lines (code):** 167-174
-    
+    </details>
     
 
 #### Returns
@@ -516,9 +594,15 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
     
 
 
-###  map-fallback() {#function-map-fallback} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  map-fallback() {#function-map-fallback}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -526,14 +610,14 @@ Provides fallback values from the same map
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 176-176
 - **Lines (code):** 177-185
-    
+    </details>
     
 
 #### Require
@@ -542,9 +626,15 @@ Provides fallback values from the same map
   
 
 
-###  function-fallback() {#function-function-fallback} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  function-fallback() {#function-function-fallback}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -552,14 +642,14 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 187-191
 - **Lines (code):** 193-202
-    
+    </details>
     
 
 #### Parameters
@@ -588,9 +678,15 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
   
 
 
-###  string-replace() {#function-string-replace} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  string-replace() {#function-string-replace}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -598,14 +694,14 @@ Replaces all or one occurence of a string within a string
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 204-208
 - **Lines (code):** 210-226
-    
+    </details>
     
 
 #### Parameters

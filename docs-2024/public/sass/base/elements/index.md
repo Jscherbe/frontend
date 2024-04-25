@@ -15,9 +15,15 @@ sassdocGroupName: elements
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -34,14 +40,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** variable
 - **Lines (comments):** 15-17
 - **Lines (code):** 19-23
-    
+    </details>
     
 
 #### Map Properties
@@ -59,9 +65,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -69,14 +81,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
 - **Lines (comments):** 25-28
 - **Lines (code):** 29-31
-    
+    </details>
     
 
 #### Examples
@@ -106,9 +118,15 @@ General example, replace module-name with module's name
   
 
 
-###  base-elements-styles() {#mixin-base-elements-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  base-elements-styles() {#mixin-base-elements-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -116,14 +134,14 @@ Prints elements base styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
 - **Lines (comments):** 42-45
 - **Lines (code):** 47-190
-    
+    </details>
     
 
 #### Examples
@@ -149,9 +167,15 @@ Prints elements base styles
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -159,14 +183,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** function
 - **Lines (comments):** 33-36
 - **Lines (code):** 38-40
-    
+    </details>
     
 
 #### Examples

@@ -15,9 +15,15 @@ sassdocGroupName: layout
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -34,14 +40,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
 - **Lines (comments):** 10-12
 - **Lines (code):** 14-18
-    
+    </details>
     
 
 #### Map Properties
@@ -59,9 +65,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -69,14 +81,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 20-23
 - **Lines (code):** 24-26
-    
+    </details>
     
 
 #### Examples
@@ -106,9 +118,15 @@ General example, replace module-name with module's name
   
 
 
-###  styles() {#mixin-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -116,14 +134,14 @@ Output Styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 37-37
 - **Lines (code):** 39-100
-    
+    </details>
     
 
 #### Require
@@ -137,9 +155,15 @@ Output Styles
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -147,14 +171,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 28-31
 - **Lines (code):** 33-35
-    
+    </details>
     
 
 #### Examples

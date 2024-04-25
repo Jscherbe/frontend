@@ -16,9 +16,15 @@ Layout grid that uses attributes instead of classes
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -51,14 +57,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** variable
 - **Lines (comments):** 32-41
 - **Lines (code):** 43-63
-    
+    </details>
     
 
 #### Map Properties
@@ -83,9 +89,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -93,14 +105,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** mixin
 - **Lines (comments):** 65-68
 - **Lines (code):** 70-72
-    
+    </details>
     
 
 #### Examples
@@ -130,9 +142,15 @@ Change modules $config
   
 
 
-###  create() {#mixin-create} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  create() {#mixin-create}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -140,14 +158,14 @@ Creates grid css (variation of original data-grid)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** mixin
 - **Lines (comments):** 107-116
 - **Lines (code):** 118-551
-    
+    </details>
     
 
 #### Parameters
@@ -179,9 +197,15 @@ Creates grid css (variation of original data-grid)
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -189,14 +213,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** function
 - **Lines (comments):** 74-77
 - **Lines (code):** 79-81
-    
+    </details>
     
 
 #### Examples
@@ -227,9 +251,15 @@ Get a config option
   
 
 
-###  get-gutter() {#function-get-gutter} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-gutter() {#function-get-gutter}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -238,14 +268,14 @@ Pass custom map to get gutter values from it
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** function
 - **Lines (comments):** 83-86
 - **Lines (code):** 88-96
-    
+    </details>
     
 
 #### Parameters

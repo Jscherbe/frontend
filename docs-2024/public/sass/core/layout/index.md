@@ -15,9 +15,15 @@ sassdocGroupName: layout
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -36,14 +42,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
 - **Lines (comments):** 12-18
 - **Lines (code):** 20-26
-    
+    </details>
     
 
 #### Map Properties
@@ -60,9 +66,15 @@ $config: (
     
 
 
-###  $containers {#variable-containers} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $containers {#variable-containers}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -84,14 +96,14 @@ $containers: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
 - **Lines (comments):** 45-47
 - **Lines (code):** 49-58
-    
+    </details>
     
   
 
@@ -100,9 +112,15 @@ $containers: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -110,14 +128,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 30-32
 - **Lines (code):** 34-36
-    
+    </details>
     
 
 #### Parameters
@@ -136,9 +154,15 @@ Change modules $config
   
 
 
-###  set-containers() {#mixin-set-containers} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-containers() {#mixin-set-containers}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -147,14 +171,14 @@ Set layout containers
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 60-63
 - **Lines (code):** 65-67
-    
+    </details>
     
 
 #### Parameters
@@ -174,9 +198,15 @@ Set layout containers
   
 
 
-###  match-container-padding() {#mixin-match-container-padding} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  match-container-padding() {#mixin-match-container-padding}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -185,14 +215,14 @@ ie. \{ top: $containers-padding; }
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 83-87
 - **Lines (code):** 89-101
-    
+    </details>
     
 
 #### Parameters
@@ -214,9 +244,15 @@ ie. \{ top: $containers-padding; }
   
 
 
-###  match-container-margin() {#mixin-match-container-margin} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  match-container-margin() {#mixin-match-container-margin}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -228,14 +264,14 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 103-110
 - **Lines (code):** 112-127
-    
+    </details>
     
 
 #### Parameters
@@ -257,9 +293,15 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
   
 
 
-###  container-padding() {#mixin-container-padding} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  container-padding() {#mixin-container-padding}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -267,14 +309,14 @@ Print the containers padding properties
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 145-148
 - **Lines (code):** 150-176
-    
+    </details>
     
 
 #### Parameters
@@ -297,9 +339,15 @@ Print the containers padding properties
   
 
 
-###  container-styles() {#mixin-container-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  container-styles() {#mixin-container-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -307,14 +355,14 @@ Print all container styles for a given container
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 194-196
 - **Lines (code):** 198-226
-    
+    </details>
     
 
 #### Parameters
@@ -335,9 +383,15 @@ Print all container styles for a given container
   
 
 
-###  clearfix() {#mixin-clearfix} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  clearfix() {#mixin-clearfix}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -345,20 +399,26 @@ Prints clearfix styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 228-228
 - **Lines (code):** 230-241
+    </details>
     
-    
 
 
-###  remove-scrollbar() {#mixin-remove-scrollbar} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  remove-scrollbar() {#mixin-remove-scrollbar}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -366,14 +426,14 @@ Removes scrollbar with CSS
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 243-243
 - **Lines (code):** 244-250
-    
+    </details>
     
   
 
@@ -382,9 +442,15 @@ Removes scrollbar with CSS
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -392,14 +458,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 38-40
 - **Lines (code):** 41-43
-    
+    </details>
     
 
 #### Parameters
@@ -419,9 +485,15 @@ Get a config option
   
 
 
-###  get-container() {#function-get-container} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-container() {#function-get-container}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -429,14 +501,14 @@ Get a container map
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 69-71
 - **Lines (code):** 73-81
-    
+    </details>
     
 
 #### Parameters
@@ -457,9 +529,15 @@ Get a container map
   
 
 
-###  get-container-padding() {#function-get-container-padding} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-container-padding() {#function-get-container-padding}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -467,14 +545,14 @@ Get a containers padding value
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 129-132
 - **Lines (code):** 134-143
-    
+    </details>
     
 
 #### Parameters
@@ -495,9 +573,15 @@ Get a containers padding value
   
 
 
-###  get-container-padding-x() {#function-get-container-padding-x} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-container-padding-x() {#function-get-container-padding-x}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -505,14 +589,14 @@ Get containers padding X value (side)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 178-180
 - **Lines (code):** 182-184
-    
+    </details>
     
 
 #### Parameters
@@ -531,9 +615,15 @@ Get containers padding X value (side)
   
 
 
-###  get-container-padding-y() {#function-get-container-padding-y} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-container-padding-y() {#function-get-container-padding-y}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -541,14 +631,14 @@ Get containers padding Y value (ends)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 186-188
 - **Lines (code):** 190-192
-    
+    </details>
     
 
 #### Parameters

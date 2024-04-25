@@ -9,6 +9,7 @@
   "font-family-sans" :        ("Inter", sans-serif),
   "font-weight-semibold" :    500,
 ));
+@include ulu.typography-set-sizes(ulu.typography-get-default-sizes(), "overwrite");
 // @include ulu.typography-set-sizes((
 //   "large-xx" : (
 //     "font-size":              32px,

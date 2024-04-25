@@ -15,9 +15,15 @@ sassdocGroupName: units
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -32,14 +38,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _units.scss
 - **Group:** units
 - **Type:** variable
 - **Lines (comments):** 11-13
 - **Lines (code):** 15-17
-    
+    </details>
     
 
 #### Map Properties
@@ -57,9 +63,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -67,14 +79,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 19-22
 - **Lines (code):** 23-25
-    
+    </details>
     
 
 #### Examples
@@ -104,9 +116,15 @@ General example, replace module-name with module's name
   
 
 
-###  styles() {#mixin-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -114,14 +132,14 @@ Prints all unit helper classes
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 36-36
 - **Lines (code):** 38-42
-    
+    </details>
     
 
 #### Require
@@ -130,9 +148,15 @@ Prints all unit helper classes
   
 
 
-###  create-property-classes() {#mixin-create-property-classes} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  create-property-classes() {#mixin-create-property-classes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -141,14 +165,14 @@ Creates the unit classes with all variations (from unit presets)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 44-45
 - **Lines (code):** 46-75
-    
+    </details>
     
 
 #### Require
@@ -163,9 +187,15 @@ Creates the unit classes with all variations (from unit presets)
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -173,14 +203,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _units.scss
 - **Group:** units
 - **Type:** function
 - **Lines (comments):** 27-30
 - **Lines (code):** 32-34
-    
+    </details>
     
 
 #### Examples

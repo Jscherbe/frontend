@@ -15,9 +15,15 @@ sassdocGroupName: utility
 
 
 
-###  strip-unit() {#function-strip-unit} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  strip-unit() {#function-strip-unit}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -25,14 +31,14 @@ Strips the unit from the number
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _utility.scss
 - **Group:** utility
 - **Type:** function
 - **Lines (comments):** 7-8
 - **Lines (code):** 10-12
-    
+    </details>
     
 
 #### Related Links

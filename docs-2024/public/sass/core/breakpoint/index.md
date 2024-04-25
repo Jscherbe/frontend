@@ -15,9 +15,15 @@ sassdocGroupName: breakpoint
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -35,14 +41,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** variable
 - **Lines (comments):** 9-14
 - **Lines (code):** 16-21
-    
+    </details>
     
 
 #### Map Properties
@@ -58,9 +64,15 @@ $config: (
     
 
 
-###  $sizes {#variable-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -80,14 +92,14 @@ $sizes: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** variable
 - **Lines (comments):** 43-47
 - **Lines (code):** 49-53
-    
+    </details>
     
   
 
@@ -96,9 +108,15 @@ $sizes: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -106,14 +124,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 23-26
 - **Lines (code):** 28-30
-    
+    </details>
     
 
 #### Examples
@@ -143,9 +161,15 @@ Change default name
   
 
 
-###  set-sizes() {#mixin-set-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-sizes() {#mixin-set-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -153,14 +177,14 @@ Update the breakpoint sizes map
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 55-62
 - **Lines (code):** 64-66
-    
+    </details>
     
 
 #### Examples
@@ -195,9 +219,15 @@ Changing the medium breakpoint and adding jumbo
   
 
 
-###  min() {#mixin-min} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  min() {#mixin-min}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -205,14 +235,14 @@ Create a media query that matches the min-width for a given size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 90-99
 - **Lines (code):** 101-107
-    
+    </details>
     
 
 #### Examples
@@ -256,9 +286,15 @@ Create a media query that matches the min-width for a given size
   
 
 
-###  max() {#mixin-max} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  max() {#mixin-max}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -266,14 +302,14 @@ Create a media query that matches the max-width for a given size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 109-118
 - **Lines (code):** 120-126
-    
+    </details>
     
 
 #### Examples
@@ -318,9 +354,15 @@ Create a media query that matches the max-width for a given size
   
 
 
-###  min-max() {#mixin-min-max} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  min-max() {#mixin-min-max}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -328,14 +370,14 @@ Create a media query that matches between two breakpoint sizes
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 128-138
 - **Lines (code):** 140-147
-    
+    </details>
     
 
 #### Examples
@@ -380,9 +422,15 @@ Create a media query that matches between two breakpoint sizes
   
 
 
-###  from() {#mixin-from} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  from() {#mixin-from}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -392,14 +440,14 @@ Create a media query from a specific size in either direction
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 149-159
 - **Lines (code):** 161-173
-    
+    </details>
     
 
 #### Examples
@@ -440,9 +488,15 @@ $dir: map.get($user-breakpoint, "direction");
   
 
 
-###  embed-for-scripts() {#mixin-embed-for-scripts} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  embed-for-scripts() {#mixin-embed-for-scripts}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -452,14 +506,14 @@ Attaches breakpoints to an element psuedo content for access via script
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 175-177
 - **Lines (code):** 179-189
-    
+    </details>
     
 
 #### Require
@@ -475,9 +529,15 @@ Attaches breakpoints to an element psuedo content for access via script
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -485,14 +545,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 32-36
 - **Lines (code):** 38-40
-    
+    </details>
     
 
 #### Examples
@@ -532,9 +592,15 @@ $default: breakpoint.get("default");
   
 
 
-###  get-sizes() {#function-get-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-sizes() {#function-get-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -542,14 +608,14 @@ Get all breakpoint sizes (ie. $sizes)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 68-68
 - **Lines (code):** 69-71
-    
+    </details>
     
 
 #### Require
@@ -558,9 +624,15 @@ Get all breakpoint sizes (ie. $sizes)
   
 
 
-###  get-size() {#function-get-size} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-size() {#function-get-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -568,14 +640,14 @@ Geta a specific size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 73-75
 - **Lines (code):** 76-79
-    
+    </details>
     
 
 #### Parameters
@@ -603,9 +675,15 @@ Geta a specific size
   
 
 
-###  exists() {#function-exists} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  exists() {#function-exists}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -613,14 +691,14 @@ Check if a specific size exist
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 81-83
 - **Lines (code):** 85-88
-    
+    </details>
     
 
 #### Parameters

@@ -1,5 +1,4 @@
 import path from "path";
-import url from "url";
 import { compileAsync } from "sass";
 import defaults from "./defaults.js";
 

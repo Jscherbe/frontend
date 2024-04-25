@@ -24,4 +24,4 @@ export default {
    * Include extra debug logs
    */
   debug: false,
-}
+};

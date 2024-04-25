@@ -1,0 +1,23 @@
+@use "vars";
+@use "ulu";
+
+.sassdoc-item-header {
+  // position: sticky;
+  // top: 0;
+  display: flex;
+  align-items: center;
+  // background-color: white;
+  border-top: ulu.element-get-rule-style("light");
+  border-top-width: 2px;
+  border-top-color: #e4e4e4;
+  padding-top: 1em;
+  margin: 3em 0 1em 0;
+  h3 {
+    margin: 0 1em 0 0;
+    border: none;
+    padding: 0;
+  }
+}
+.sassdoc-item-header__labels {
+  margin-left: auto;
+}

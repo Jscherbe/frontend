@@ -15,9 +15,15 @@ sassdocGroupName: button
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -56,20 +62,26 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 22-23
 - **Lines (code):** 25-51
+    </details>
     
-    
 
 
-###  $sizes {#variable-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -94,20 +106,26 @@ $sizes: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 53-54
 - **Lines (code):** 56-68
+    </details>
     
-    
 
 
-###  $styles {#variable-styles} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $styles {#variable-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -141,14 +159,14 @@ $styles: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 70-71
 - **Lines (code):** 73-94
-    
+    </details>
     
   
 
@@ -157,9 +175,15 @@ $styles: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -167,14 +191,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 96-99
 - **Lines (code):** 101-103
-    
+    </details>
     
 
 #### Examples
@@ -204,9 +228,15 @@ General example, replace module-name with module's name
   
 
 
-###  set-styles() {#mixin-set-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-styles() {#mixin-set-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -214,14 +244,14 @@ Set button styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 115-117
 - **Lines (code):** 119-121
-    
+    </details>
     
 
 #### Parameters
@@ -241,9 +271,15 @@ Set button styles
   
 
 
-###  set-sizes() {#mixin-set-sizes} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-sizes() {#mixin-set-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -251,14 +287,14 @@ Set Button Sizes
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 123-125
 - **Lines (code):** 127-129
-    
+    </details>
     
 
 #### Parameters
@@ -278,9 +314,15 @@ Set Button Sizes
   
 
 
-###  reset() {#mixin-reset} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  reset() {#mixin-reset}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -288,20 +330,26 @@ Print styles to reset browser button style
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 131-131
 - **Lines (code):** 133-144
+    </details>
     
-    
 
 
-###  default() {#mixin-default} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  default() {#mixin-default}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -309,14 +357,14 @@ Print default button styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 146-147
 - **Lines (code):** 149-196
-    
+    </details>
     
 
 #### Parameters
@@ -335,9 +383,15 @@ Print default button styles
   
 
 
-###  size() {#mixin-size} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  size() {#mixin-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -345,14 +399,14 @@ Print button size styles for a specifc size
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 198-201
 - **Lines (code):** 203-213
-    
+    </details>
     
 
 #### Parameters
@@ -378,9 +432,15 @@ Print button size styles for a specifc size
   
 
 
-###  style-styles() {#mixin-style-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  style-styles() {#mixin-style-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -390,14 +450,14 @@ Print a button style's base styles (not hover)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 237-242
 - **Lines (code):** 244-252
-    
+    </details>
     
 
 #### Parameters
@@ -421,9 +481,15 @@ Print a button style's base styles (not hover)
   
 
 
-###  style-styles-hover() {#mixin-style-styles-hover} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  style-styles-hover() {#mixin-style-styles-hover}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -433,14 +499,14 @@ Print a button style's base styles (hover styles only)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 254-259
 - **Lines (code):** 261-267
-    
+    </details>
     
 
 #### Parameters
@@ -464,9 +530,15 @@ Print a button style's base styles (hover styles only)
   
 
 
-###  style() {#mixin-style} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  style() {#mixin-style}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -479,14 +551,14 @@ Print a button style
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 269-278
 - **Lines (code):** 280-293
-    
+    </details>
     
 
 #### Parameters
@@ -517,9 +589,15 @@ Print a button style
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -527,14 +605,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
 - **Lines (comments):** 105-108
 - **Lines (code):** 110-113
-    
+    </details>
     
 
 #### Examples
@@ -566,9 +644,15 @@ General example, replace module-name with module's name
   
 
 
-###  get-style-value() {#function-get-style-value} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-style-value() {#function-get-style-value}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -576,14 +660,14 @@ Get a value from a button style
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
 - **Lines (comments):** 215-219
 - **Lines (code):** 221-235
-    
+    </details>
     
 
 #### Parameters

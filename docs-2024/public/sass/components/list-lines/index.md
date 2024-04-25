@@ -15,9 +15,15 @@ sassdocGroupName: list-lines
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -36,14 +42,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** variable
 - **Lines (comments):** 12-12
 - **Lines (code):** 14-20
-    
+    </details>
     
   
 
@@ -52,9 +58,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -62,14 +74,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
 - **Lines (comments):** 22-24
 - **Lines (code):** 26-28
-    
+    </details>
     
 
 #### Parameters
@@ -88,9 +100,15 @@ Change modules $config
   
 
 
-###  inner-styles() {#mixin-inner-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  inner-styles() {#mixin-inner-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -98,14 +116,14 @@ Output component styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
 - **Lines (comments):** 38-38
 - **Lines (code):** 40-60
-    
+    </details>
     
 
 #### Require
@@ -119,9 +137,15 @@ Output component styles
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -129,14 +153,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** function
 - **Lines (comments):** 30-32
 - **Lines (code):** 34-36
-    
+    </details>
     
 
 #### Parameters

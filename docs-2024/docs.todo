@@ -6,6 +6,13 @@ Todos:
   ☐ Make header logo part sticky, it will have a footer/bottom in future
     ☐ We can also scrollIntoView the current page, once in the end phases
   ☐ Setup JS compilation
+    * Need to really think about this approach
+    * Just build from src to public and pass through that directory in eleventy
+    * Should sass be the same (check to make sure stylesheet isn't being compiled more than once)
+      * If once no big deal to do it like this and allow custom stylesheets inside?
+      * Not nessasary and too complicated for javascript, any client side javascript doesn't need to import
+        * If it did ie. part of the larger bundle, why 
+        * Think about this a little (use cases etc)
     * Used for demoing ulu demo
     * Dark Light Mode
 After Initial Launch:

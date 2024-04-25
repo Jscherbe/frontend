@@ -15,9 +15,15 @@ sassdocGroupName: print
 
 
 
-###  styles() {#mixin-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -25,14 +31,14 @@ Printed Media Styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _print.scss
 - **Group:** print
 - **Type:** mixin
 - **Lines (comments):** 5-7
 - **Lines (code):** 9-58
-    
+    </details>
     
 
 #### Examples

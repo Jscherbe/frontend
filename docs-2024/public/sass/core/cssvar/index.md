@@ -15,9 +15,15 @@ Provides support for custom-properties implementations
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -32,14 +38,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** variable
 - **Lines (comments):** 12-14
 - **Lines (code):** 16-18
-    
+    </details>
     
 
 #### Map Properties
@@ -57,9 +63,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -67,14 +79,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 20-23
 - **Lines (code):** 25-27
-    
+    </details>
     
 
 #### Examples
@@ -104,9 +116,15 @@ Setting the prefix to 'ulu'
   
 
 
-###  declare() {#mixin-declare} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  declare() {#mixin-declare}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -114,14 +132,14 @@ Outputs a single custom property declaration
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 67-74
 - **Lines (code):** 76-78
-    
+    </details>
     
 
 #### Examples
@@ -155,9 +173,15 @@ Declare a custom property
   
 
 
-###  declare-all() {#mixin-declare-all} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  declare-all() {#mixin-declare-all}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -165,14 +189,14 @@ Outputs a map as custom properties
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 80-86
 - **Lines (code):** 88-92
-    
+    </details>
     
 
 #### Examples
@@ -205,9 +229,15 @@ Declare each property in a map as a custom property
   
 
 
-###  declare-breakpoint() {#mixin-declare-breakpoint} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  declare-breakpoint() {#mixin-declare-breakpoint}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -215,14 +245,14 @@ Declare a custom property for current breakpoint
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 94-102
 - **Lines (code):** 104-116
-    
+    </details>
     
 
 #### Examples
@@ -262,9 +292,15 @@ Declare each property in a map as a custom property
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -272,14 +308,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 29-33
 - **Lines (code):** 35-37
-    
+    </details>
     
 
 #### Examples
@@ -319,9 +355,15 @@ $prefix: cssvar.get("prefix");
   
 
 
-###  name() {#function-name} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  name() {#function-name}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -329,14 +371,14 @@ Get a custom property name (with optional prefix)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 39-44
 - **Lines (code):** 46-52
-    
+    </details>
     
 
 #### Examples
@@ -371,9 +413,15 @@ Getting a custom property name
     
 
 
-###  use() {#function-use} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  use() {#function-use}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -381,14 +429,14 @@ Function to use a custom property within a declartion value
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 54-61
 - **Lines (code):** 63-65
-    
+    </details>
     
 
 #### Examples

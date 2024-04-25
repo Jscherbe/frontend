@@ -15,9 +15,15 @@ sassdocGroupName: button
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -25,14 +31,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 16-18
 - **Lines (code):** 20-22
-    
+    </details>
     
 
 #### Parameters
@@ -51,9 +57,15 @@ Change modules $config
   
 
 
-###  styles() {#mixin-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -61,14 +73,14 @@ Prints button component styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 32-36
 - **Lines (code):** 38-95
-    
+    </details>
     
 
 #### Examples
@@ -104,9 +116,15 @@ Prints button component styles
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -114,14 +132,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
 - **Lines (comments):** 24-26
 - **Lines (code):** 28-30
-    
+    </details>
     
 
 #### Parameters

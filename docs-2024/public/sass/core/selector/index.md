@@ -15,9 +15,15 @@ sassdocGroupName: selector
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -33,14 +39,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** variable
 - **Lines (comments):** 9-13
 - **Lines (code):** 15-17
-    
+    </details>
     
 
 #### Map Properties
@@ -63,9 +69,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -73,14 +85,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
 - **Lines (comments):** 23-26
 - **Lines (code):** 27-29
-    
+    </details>
     
 
 #### Examples
@@ -110,9 +122,15 @@ General example, replace module-name with module's name
   
 
 
-###  set-class-overrides() {#mixin-set-class-overrides} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-class-overrides() {#mixin-set-class-overrides}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -120,14 +138,14 @@ Set the class selector overrides
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
 - **Lines (comments):** 40-41
 - **Lines (code):** 43-53
-    
+    </details>
     
 
 #### Parameters
@@ -145,9 +163,15 @@ Set the class selector overrides
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -155,14 +179,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
 - **Lines (comments):** 31-34
 - **Lines (code):** 36-38
-    
+    </details>
     
 
 #### Examples
@@ -193,9 +217,15 @@ General example, replace module-name with module's name
   
 
 
-###  class() {#function-class} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  class() {#function-class}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -204,14 +234,14 @@ Change a class used in the system (ie. like a component for example)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
 - **Lines (comments):** 55-57
 - **Lines (code):** 59-70
-    
+    </details>
     
 
 #### Parameters

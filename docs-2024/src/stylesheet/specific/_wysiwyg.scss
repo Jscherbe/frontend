@@ -1,0 +1,37 @@
+@use "vars";
+@use "ulu";
+
+.wysiwyg {
+  // Make MD table scroll without wrapper
+  table {
+    display: block;
+    white-space: normal;
+    overflow-x: auto;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    border-top: none;
+  }
+  h2 {
+    // position: relative;
+    padding-top: 1em;
+    // padding-bottom: 2em;
+    border-top: 10px solid ulu.color-get("rule-light");
+    // &:after {
+    //   content: "";
+    //   display: block;
+    //   position: absolute;
+    //   top: 0;
+    //   left: -20px;
+    //   bottom: 0;
+    //   width: 6px;
+    //   background-color: #ccc;
+    //   // height: 2em;
+    //   // margin-top: 1em;
+    // }
+  }
+  h3 {
+    padding-top: 1em;
+    border-top: 1px solid ulu.color-get("rule-light");
+  }
+}

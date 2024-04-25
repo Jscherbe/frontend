@@ -15,9 +15,15 @@ sassdocGroupName: all
 
 
 
-###  base-styles() {#mixin-base-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  base-styles() {#mixin-base-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -25,14 +31,14 @@ Prints all Base styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
 - **Lines (comments):** 31-35
 - **Lines (code):** 37-61
-    
+    </details>
     
 
 #### Examples

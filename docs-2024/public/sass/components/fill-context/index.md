@@ -50,9 +50,15 @@ modifier (see in example below).
 
 
 
-###  styles() {#mixin-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -60,14 +66,14 @@ Prints fill context styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _fill-context.scss
 - **Group:** fill-context
 - **Type:** mixin
 - **Lines (comments):** 30-32
 - **Lines (code):** 34-64
-    
+    </details>
     
 
 #### Examples

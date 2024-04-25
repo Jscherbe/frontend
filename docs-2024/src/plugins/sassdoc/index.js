@@ -2,6 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 import { fileURLToPath } from "url";
 import { outputPages } from "@ulu/sassdoc-to-markdown";
+import templates from "./templates/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isSubdir = (parent, dir) => {
@@ -23,6 +24,7 @@ const commonConfig = {
   previewScripts: `
     <script src="/frontend/ulu-frontend.min.js"></script>
   `,
+  annotationTemplates: templates.annotations
 };
 
 const createConfig = (base, options) => ({
@@ -86,3 +88,4 @@ function cleanOutputDir(config) {
     });
   }
 }
+

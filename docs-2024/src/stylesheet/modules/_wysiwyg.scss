@@ -17,33 +17,17 @@
   a:not([class]) {
     @include ulu.element-link($visited: true, $active: true);
   }
-  ul:not(.list-lines, .tablist-secondary, .nav-strip__list) {
+  ul:not(.list-lines, .nav-strip__list) {
     @include ulu.element-styles-unordered-list();
     // list-style-position: inside;
     padding-left: 0;
-    // > li {
-    //   margin-left: 0
-    // }
-    // > li > ul > li {
-    //   margin-left: 1.5em
-    // }
   }
   ol {
     @include ulu.element-styles-ordered-list(inherit);
-    &:not(.checked-list) {
-      list-style-position: inside;
-      padding-left: 0;
-      > li {
-        margin-left: 0
-      }
-    }
-    .checked-list{
-      // put font-awesome check circle list
-    }
   }
   ul,
   ol {
-    // margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
   }
   h1 {
     @include ulu.typography-size("h1");

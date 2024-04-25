@@ -15,9 +15,15 @@ sassdocGroupName: element
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -60,14 +66,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 10-37
 - **Lines (code):** 39-69
-    
+    </details>
     
 
 #### Map Properties
@@ -105,9 +111,15 @@ $config: (
     
 
 
-###  $rule-styles {#variable-rule-styles} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $rule-styles {#variable-rule-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -123,20 +135,26 @@ $rule-styles: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 71-72
 - **Lines (code):** 74-77
+    </details>
     
-    
 
 
-###  $rule-margins {#variable-rule-margins} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $rule-margins {#variable-rule-margins}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -154,14 +172,14 @@ $rule-margins: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 79-80
 - **Lines (code):** 82-87
-    
+    </details>
     
   
 
@@ -170,9 +188,15 @@ $rule-margins: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -180,14 +204,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 89-91
 - **Lines (code):** 92-94
-    
+    </details>
     
 
 #### Parameters
@@ -206,9 +230,15 @@ Change modules $config
   
 
 
-###  set-rule-styles() {#mixin-set-rule-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-rule-styles() {#mixin-set-rule-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -216,14 +246,14 @@ Sets rule styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 104-105
 - **Lines (code):** 107-109
-    
+    </details>
     
 
 #### Parameters
@@ -241,9 +271,15 @@ Sets rule styles
   
 
 
-###  set-rule-margins() {#mixin-set-rule-margins} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set-rule-margins() {#mixin-set-rule-margins}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -251,14 +287,14 @@ Sets rule margins
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 111-112
 - **Lines (code):** 114-116
-    
+    </details>
     
 
 #### Parameters
@@ -276,9 +312,15 @@ Sets rule margins
   
 
 
-###  rule() {#mixin-rule} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  rule() {#mixin-rule}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -286,14 +328,14 @@ Get full rule CSS (style and margin)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 132-133
 - **Lines (code):** 135-141
-    
+    </details>
     
 
 #### Parameters
@@ -306,9 +348,15 @@ Get full rule CSS (style and margin)
     
 
 
-###  link() {#mixin-link} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  link() {#mixin-link}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -316,14 +364,14 @@ Print link styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 151-153
 - **Lines (code):** 155-177
-    
+    </details>
     
 
 #### Parameters
@@ -342,9 +390,15 @@ Print link styles
   
 
 
-###  link-defaults() {#mixin-link-defaults} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  link-defaults() {#mixin-link-defaults}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -352,14 +406,14 @@ Print the defautl link styling (no hover and focus styles)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 179-179
 - **Lines (code):** 181-194
-    
+    </details>
     
 
 #### Require
@@ -368,9 +422,15 @@ Print the defautl link styling (no hover and focus styles)
   
 
 
-###  styles-ordered-list() {#mixin-styles-ordered-list} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles-ordered-list() {#mixin-styles-ordered-list}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -378,14 +438,14 @@ Print the ordered list items styling
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 196-197
 - **Lines (code):** 199-223
-    
+    </details>
     
 
 #### Parameters
@@ -403,9 +463,15 @@ Print the ordered list items styling
   
 
 
-###  styles-unordered-list() {#mixin-styles-unordered-list} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles-unordered-list() {#mixin-styles-unordered-list}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -413,14 +479,14 @@ Print the unordered list items styling
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 225-226
 - **Lines (code):** 228-249
-    
+    </details>
     
 
 #### Parameters
@@ -438,9 +504,15 @@ Print the unordered list items styling
   
 
 
-###  hidden-visually() {#mixin-hidden-visually} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  hidden-visually() {#mixin-hidden-visually}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -448,14 +520,14 @@ Hide text for assistive devices
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 251-256
 - **Lines (code):** 258-276
-    
+    </details>
     
 
 #### Examples
@@ -487,9 +559,15 @@ Hide text for assistive devices
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -497,14 +575,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
 - **Lines (comments):** 96-98
 - **Lines (code):** 100-102
-    
+    </details>
     
 
 #### Parameters
@@ -524,9 +602,15 @@ Get a config option
   
 
 
-###  get-rule-style() {#function-get-rule-style} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-rule-style() {#function-get-rule-style}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -534,14 +618,14 @@ Get a rule style
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
 - **Lines (comments):** 118-119
 - **Lines (code):** 121-123
-    
+    </details>
     
 
 #### Parameters
@@ -560,9 +644,15 @@ Get a rule style
   
 
 
-###  get-rule-margin() {#function-get-rule-margin} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get-rule-margin() {#function-get-rule-margin}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -570,14 +660,14 @@ Sets rule margin
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
 - **Lines (comments):** 125-126
 - **Lines (code):** 128-130
-    
+    </details>
     
 
 #### Parameters

@@ -15,9 +15,15 @@ sassdocGroupName: calculate
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -32,14 +38,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** variable
 - **Lines (comments):** 9-11
 - **Lines (code):** 13-15
-    
+    </details>
     
 
 #### Map Properties
@@ -57,9 +63,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -67,14 +79,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** mixin
 - **Lines (comments):** 17-19
 - **Lines (code):** 20-22
-    
+    </details>
     
 
 #### Parameters
@@ -93,9 +105,15 @@ Change modules $config
   
 
 
-###  responsive-property() {#mixin-responsive-property} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  responsive-property() {#mixin-responsive-property}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -103,14 +121,14 @@ Provides user with a fallback for a calc that's just an enhancement
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** mixin
 - **Lines (comments):** 52-55
 - **Lines (code):** 57-64
-    
+    </details>
     
 
 #### Parameters
@@ -130,9 +148,15 @@ Provides user with a fallback for a calc that's just an enhancement
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -140,14 +164,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
 - **Lines (comments):** 24-26
 - **Lines (code):** 28-30
-    
+    </details>
     
 
 #### Parameters
@@ -167,9 +191,15 @@ Get a config option
   
 
 
-###  ratio-scale-size() {#function-ratio-scale-size} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  ratio-scale-size() {#function-ratio-scale-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -177,14 +207,14 @@ Calculate the size of something at a given scale (percentage/exponential)
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
 - **Lines (comments):** 32-37
 - **Lines (code):** 39-41
-    
+    </details>
     
 
 #### Parameters
@@ -214,9 +244,15 @@ Calculate the size of something at a given scale (percentage/exponential)
   
 
 
-###  pixel-to-em() {#function-pixel-to-em} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  pixel-to-em() {#function-pixel-to-em}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -224,14 +260,14 @@ Convert from pixel to em
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
 - **Lines (comments):** 43-46
 - **Lines (code):** 48-50
-    
+    </details>
     
 
 #### Parameters

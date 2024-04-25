@@ -15,9 +15,15 @@ sassdocGroupName: badge
 
 
 
-###  $config {#variable-config} 
+<div class="sassdoc-item-header">
 
-<small>Variable&ensp;|&ensp;Access: Public&ensp;|&ensp;Type: Map</small>
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
 
   
 
@@ -43,14 +49,14 @@ $config: (
 ```
   
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** variable
 - **Lines (comments):** 9-17
 - **Lines (code):** 19-32
-    
+    </details>
     
 
 #### Map Properties
@@ -74,9 +80,15 @@ $config: (
 
 
 
-###  set() {#mixin-set} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  set() {#mixin-set}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -84,14 +96,14 @@ Change modules $config
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
 - **Lines (comments):** 34-36
 - **Lines (code):** 38-40
-    
+    </details>
     
 
 #### Parameters
@@ -110,9 +122,15 @@ Change modules $config
   
 
 
-###  styles() {#mixin-styles} 
+<div class="sassdoc-item-header">
 
-<small>Mixin&ensp;|&ensp;Access: Public</small>
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -120,14 +138,14 @@ Prints badge component styles
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
 - **Lines (comments):** 50-64
 - **Lines (code):** 66-126
-    
+    </details>
     
 
 #### Examples
@@ -173,9 +191,15 @@ Prints badge component styles
 
 
 
-###  get() {#function-get} 
+<div class="sassdoc-item-header">
 
-<small>Function&ensp;|&ensp;Access: Public</small>
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
 
   
 
@@ -183,14 +207,14 @@ Get a config option
     
     
 
-#### Details
-
+    <details>
+      <summary>File Information</summary>
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
 - **Lines (comments):** 42-44
 - **Lines (code):** 46-48
-    
+    </details>
     
 
 #### Parameters

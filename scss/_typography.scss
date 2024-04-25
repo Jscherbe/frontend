@@ -24,7 +24,9 @@
 /// @prop {Number} $config.size-ratio Font size scale when using preset sizes, ratio mixin)
 /// @prop {Number} $config.size-line-height-ratio Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desrireable
 /// @prop {Number} $config.responsive-change Amount to scale typography by browser's width (use viewport units)
-/// @prop {Number} $config.margin Default margin for typography (like paragraphs)
+/// @prop {Number} $config.margin-top Default margin for typography (like paragraphs)
+/// @prop {Number} $config.margin-bottom Default margin for typography (like paragraphs)
+/// @prop {Number} $config.headline-color Default color for headlines if using preset sizes
 
 $config: (
   "font-size" : 16px, 
@@ -33,7 +35,6 @@ $config: (
   "font-family-serif" : (Cambria, Georgia, serif),
   "font-family-monospace" : (Menlo, Consolas, Monaco, monospace),
   "font-weight" : inherit,
-  "font-weight-headline" : bold,
   "font-weight-light" : 300,
   "font-weight-normal" : normal,
   "font-weight-semibold" : 600,
@@ -41,15 +42,15 @@ $config: (
   "line-height" : 1.5,
   "line-height-dense": 1.3,
   "line-height-spaced": 1.75,
-  "size-ratio": 2,
+  "size-ratio": 1.8,
   "size-line-height-ratio": 0.97,
   "scale-steps": 5,
   "responsive-change": 0.05vw, 
+  "margin-top":  null,
   "margin-bottom":  1em,
-  "margin-top":  false,
   "letter-spacing-uppercase" : 0.04em,
   "max-width" : 60rem,
-  "max-width-small" : 50rem
+  "max-width-small" : 50rem,
 ) !default;
 
 /// Change modules $config
@@ -130,13 +131,16 @@ $config: (
 @function new-size($font-size, $line-height: true, $is-headline: false) {
   @return (
     "font-size": $font-size,
-    "font-weight" : if($is-headline, get("font-weight-headline"), null), 
+    "font-weight" : if($is-headline, get("font-weight-bold"), null), 
     "line-height": $line-height,
+    "margin-bottom" : if($is-headline, get("margin-bottom"), null),
+    "margin-top" : if($is-headline, get("margin-top"), null),
     "responsive" : true,
     "helper-class" : if($is-headline, false, true),
     "helper-class-prefixed" : true,
     "base-class" : if($is-headline, true, false),
-    "base-class-prefixed" : false
+    "base-class-prefixed" : false,
+    "color" : if($is-headline, color.get("headline"), null)
   );
 }
 
@@ -151,21 +155,27 @@ $config: (
 /// @todo Add adaptive and use a map of breakpoints and whether it's up or down
 /// @todo Add headlines
 
-$sizes: (
-  "small-x" :       new-size(scale(-2)),
-  "small" :         new-size(scale(-1)),
-  "base" :          new-size(scale(0)),
-  "large" :         new-size(scale(1),   scale-line-height(1)),
-  "large-x" :       new-size(scale(2),   scale-line-height(2)),
-  "large-xx" :      new-size(scale(3),   scale-line-height(3)),
-  "large-xxx" :     new-size(scale(4),   scale-line-height(4)),
-  "h1" :            new-size(scale(6),   scale-line-height(6),   true),
-  "h2" :            new-size(scale(5),   scale-line-height(5),   true),
-  "h3" :            new-size(scale(4),   scale-line-height(4),   true),
-  "h4" :            new-size(scale(3),   scale-line-height(3),   true),
-  "h5" :            new-size(scale(2),   scale-line-height(2),   true),
-  "h6" :            new-size(scale(1),   scale-line-height(1),   true)
-) !default;
+$sizes: get-default-sizes() !default;
+
+/// Function that returns default sizes
+/// - Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())
+@function get-default-sizes() {
+  @return (
+    "small-x" :       new-size(scale(-2)),
+    "small" :         new-size(scale(-1)),
+    "base" :          new-size(scale(0)),
+    "large" :         new-size(scale(1),   scale-line-height(1)),
+    "large-x" :       new-size(scale(2),   scale-line-height(2)),
+    "large-xx" :      new-size(scale(3),   scale-line-height(3)),
+    "large-xxx" :     new-size(scale(4),   scale-line-height(4)),
+    "h6" :            new-size(scale(1),   scale-line-height(1),   true),
+    "h5" :            new-size(scale(2),   scale-line-height(2),   true),
+    "h4" :            new-size(scale(3),   scale-line-height(3),   true),
+    "h3" :            new-size(scale(4),   scale-line-height(4),   true),
+    "h2" :            new-size(scale(5),   scale-line-height(5),   true),
+    "h1" :            new-size(scale(6),   scale-line-height(6),   true),
+  );
+}
 
 /// Update the typography presets map
 /// @param {Map} $changes A map to merge into the color palette

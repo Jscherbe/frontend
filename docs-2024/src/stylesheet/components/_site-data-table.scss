@@ -3,7 +3,7 @@
 
 $border: 1px solid ulu.color-get("rule");
 $background-color: white;
-$color: ulu.color-get("type-secondary");
+$color: inherit;
 $header-background-color: white;
 $cell-background-color: #F9F9F9;
 $muted-row-background-color: ulu.color-shade(white, 2%);
@@ -17,25 +17,20 @@ $striped-row-background-color: #ffffff;
 .site-data-table table,
 table.site-data-table {
   // Make it scroll without wrapper
-  display: block;
-  white-space: normal;
-  overflow-x: auto;
-  width: -moz-max-content;
-  width: max-content;
-  max-width: 100%;
   border-spacing: 0;
   border: $border;
-  // border-bottom: $border;
   background-color: $background-color;
   border-collapse: collapse;
   color: $color;
 }
 .site-data-table,
 .wysiwyg table {
-  @include ulu.typography-size("small", ( 
-    "line-height": ulu.typography-get("line-height-dense" )
-  ));
-
+  // @include ulu.typography-size("small", $only-font-size: true);
+  line-height: ulu.typography-get("line-height-dense" );
+  th,
+  td {
+    vertical-align: top;
+  }
   th,
   tr,
   td {
@@ -44,7 +39,7 @@ table.site-data-table {
   th {
     min-width: 6em;
     vertical-align: middle;
-    color: ulu.color-get("type");
+    // color: ulu.color-get("type");
   }
   td:not(:last-child), 
   th:not(:last-child) {
@@ -57,21 +52,6 @@ table.site-data-table {
   tr {
     border-top: $border;
   }
-  thead tr:first-child {
-    // To make it look like the table has no borders
-    // &,
-    // th {
-    //   border-top-color: transparent;
-    // }
-    th:first-child {
-      min-width: 10em;
-    }
-  }
-
-  // thead tr:not(:first-child) th {
-  //   padding-top: 0.25em;
-  //   padding-bottom: 0.25em;
-  // }
   thead tr {
     background-color: $header-background-color;
   }
@@ -102,19 +82,9 @@ table.site-data-table {
     background-color: $striped-row-background-color;
   }
 }
-.site-data-table--large-first {
-  thead tr:first-child th:first-child,
+.site-data-table--bold-first,
+.wysiwyg table {
   tbody td:first-child {
-    min-width: 15em;
+    font-weight: bold;
   }
-}
-.site-data-table--large-header {
-  thead th {
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
-}
-.site-data-table--bordered table,
-table.site-data-table--bordered  {
-  border: $border;
 }
