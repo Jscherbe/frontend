@@ -3,6 +3,10 @@ Content:
     ☐ Setup theme switcher script
       * Use it in this site 
 Todos:
+  ✘ Test Vite eleventy plugin @cancelled
+    - HMR doesn't seem to be working
+  ☐ Try to use seperate process with vite as asset server for now
+  ☐ Cleanup unused npm deps
   ☐ Make header logo part sticky, it will have a footer/bottom in future
     ☐ We can also scrollIntoView the current page, once in the end phases
   ☐ Setup JS compilation

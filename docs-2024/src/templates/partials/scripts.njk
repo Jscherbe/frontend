@@ -1,1 +1,9 @@
+{# On dev/serve use vite for assets #}
+{% if eleventy.env.runMode === "serve" %}
+  <script src="http://localhost:5173/@vite/client" type="module"></script>
+  <script src="http://localhost:5173/docs-2024/src/main.js" type="module"></script>
+{% else %}
+  {# On build just the main script (css is added in head) #}
+  <script src="/assets/main.js"></script>
+{% endif %}
 <script>feather.replace();</script>

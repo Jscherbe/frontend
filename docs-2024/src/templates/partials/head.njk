@@ -20,5 +20,8 @@
   />
 
   {# Site Theme #}
-  <link rel="stylesheet" href="/assets/stylesheet.css">
+  {# <link rel="stylesheet" href="/assets/stylesheet.css"> #}
+  {% if eleventy.env.runMode === "build" %}
+    <link rel="stylesheet" href="/assets/style.css">
+  {% endif %}
 </head>

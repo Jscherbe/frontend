@@ -10,16 +10,18 @@ import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
 import sassdocPlugin from "./docs-2024/src/plugins/sassdoc/index.js";
 import jsdocPlugin from "./docs-2024/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
+import common from "./docs.common.config.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const paths = {
-  sassTheme: path.resolve(__dirname, "./docs-2024/src/stylesheet"),
-  sassUlu: path.resolve(__dirname, "./scss"),
-};
 
 export default async function(eleventyConfig) {
+  eleventyConfig.setServerOptions({ 
+    port: common.eleventyServerPort // Needed for asset server
+  }); 
+  eleventyConfig.addPassthroughCopy("src");
+  eleventyConfig.setServerPassthroughCopyBehavior("copy");
   eleventyConfig.addPlugin(tocPlugin, {
-    tags: ['h2', 'h3', 'h4'],
+    tags: ["h2", "h3", "h4"],
     wrapper: "div",
     headingText: "On this page"
   });
@@ -31,10 +33,10 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(sassPlugin, {
     addCwd: true,
     sass: {
-      loadPaths: [ paths.sassTheme ],
+      loadPaths: [ common.paths.sassTheme ],
     }
   }); 
-  eleventyConfig.addWatchTarget(paths.sassTheme);
+  eleventyConfig.addWatchTarget(common.paths.sassTheme);
   eleventyConfig.addPlugin(jsdocPlugin);
   eleventyConfig.addPlugin(sassdocPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo
@@ -54,7 +56,7 @@ export default async function(eleventyConfig) {
       data: "../src/data",
     }
   };
-};
+}
 
 function menuLinkFormatter({ node, options, isIndex }) {
   const { data } = node.entry;
