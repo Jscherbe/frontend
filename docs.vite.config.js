@@ -20,11 +20,12 @@ export default createConfig({
   // alias: {
   //   "@": common.paths.src,
   // },
-  // preprocessorOptions: {
-  //   scss: {
-  //     includePaths: [
-  //       common.paths.sassTheme
-  //     ],
-  //   }
-  // },
+  preprocessorOptions: {
+    scss: {
+      includePaths: [
+        common.paths.sassThemeDir,
+        common.paths.projectDir
+      ],
+    }
+  },
 });

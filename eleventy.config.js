@@ -6,13 +6,13 @@ import markdownItAnchor from "markdown-it-anchor";
 import tocPlugin from "eleventy-plugin-nesting-toc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import navTreePlugin from "./docs-2024/src/plugins/nav-tree/index.js";
-import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
+// import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
 import sassdocPlugin from "./docs-2024/src/plugins/sassdoc/index.js";
 import jsdocPlugin from "./docs-2024/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
 import common from "./docs.common.config.js";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default async function(eleventyConfig) {
   eleventyConfig.setServerOptions({ 
@@ -30,13 +30,13 @@ export default async function(eleventyConfig) {
     md.use(markdownItAttrs);
     md.use(markdownItAnchor);
   });
-  eleventyConfig.addPlugin(sassPlugin, {
-    addCwd: true,
-    sass: {
-      loadPaths: [ common.paths.sassTheme ],
-    }
-  }); 
-  eleventyConfig.addWatchTarget(common.paths.sassTheme);
+  // eleventyConfig.addPlugin(sassPlugin, {
+  //   addCwd: true,
+  //   sass: {
+  //     loadPaths: [ common.paths.sassTheme ],
+  //   }
+  // }); 
+  // eleventyConfig.addWatchTarget(common.paths.sassTheme);
   eleventyConfig.addPlugin(jsdocPlugin);
   eleventyConfig.addPlugin(sassdocPlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo

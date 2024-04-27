@@ -37,7 +37,7 @@ $palette: (
   "black":        black,
   "white":        white,
   "type":         black,
-  "headline" :    rgb(13, 104, 102),
+  "headline" :    inherit,
   "background":   white,
   "focus":        blue,
   "error":        red,

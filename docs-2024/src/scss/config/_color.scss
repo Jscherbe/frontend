@@ -3,7 +3,7 @@
 
 @include ulu.color-set((
   "type" :                    vars.$color-type,
-  "headline" :                vars.$color-violet-dark,
+  // "headline" :                rgb(62, 53, 133),
   "type-secondary" :          vars.$color-type-secondary,
   "type-tertiary" :           vars.$color-type-tertiary,
   "type-disabled" :           vars.$color-type-disabled,

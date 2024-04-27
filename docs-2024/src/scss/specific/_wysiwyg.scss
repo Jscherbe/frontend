@@ -11,27 +11,20 @@
     width: max-content;
     max-width: 100%;
     border-top: none;
+    margin-bottom: 1.5em;
   }
-  h2 {
-    // position: relative;
-    padding-top: 1em;
-    // padding-bottom: 2em;
-    border-top: 10px solid ulu.color-get("rule-light");
-    // &:after {
-    //   content: "";
-    //   display: block;
-    //   position: absolute;
-    //   top: 0;
-    //   left: -20px;
-    //   bottom: 0;
-    //   width: 6px;
-    //   background-color: #ccc;
-    //   // height: 2em;
-    //   // margin-top: 1em;
-    // }
+  details {
+    margin-bottom: 1em;
+    border: 1px solid ulu.element-get-rule-style("light");
+    padding: 1em;
   }
-  h3 {
-    padding-top: 1em;
-    border-top: 1px solid ulu.color-get("rule-light");
-  }
+  // h2,
+  // h3 {
+  //   margin-top: 1em;
+  //   padding-top: 0.5em;
+  //   border-top: 1px solid ulu.color-get("rule-light");
+  // }
+  // h2 {
+  //   border-top: 3px solid ulu.color-get("rule-light");
+  // }
 }
