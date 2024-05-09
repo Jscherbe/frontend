@@ -80,34 +80,36 @@ $config: (
   $prefix: selector.class("popover");
   $arrow-size-half: math.div(get("arrow-size"), 2);
 
-  #{ $prefix }__arrow {
-    display: block;
-    visibility: hidden;
-    z-index: 1;
-    &,
-    &:before {
-      position: absolute;
-      width: get("arrow-size");
-      height: get("arrow-size");
-      background: inherit;
-    }
-    &:before {
-      visibility: visible;
-      content: '';
-      transform: rotate(45deg);
-      // box-shadow: $box-shadow;
-    }
-    [data-placement^='top'] > & {
-      bottom: -($arrow-size-half);
-    }
-    [data-placement^='bottom'] > & {
-      top: -($arrow-size-half);
-    }
-    [data-placement^='left'] > & {
-      right: -($arrow-size-half);
-    }
-    [data-placement^='right'] > & {
-      left: -($arrow-size-half);
+  @if (get("arrow-size")) {
+    #{ $prefix }__arrow {
+      display: block;
+      visibility: hidden;
+      z-index: 1;
+      &,
+      &:before {
+        position: absolute;
+        width: get("arrow-size");
+        height: get("arrow-size");
+        background: inherit;
+      }
+      &:before {
+        visibility: visible;
+        content: '';
+        transform: rotate(45deg);
+        // box-shadow: $box-shadow;
+      }
+      [data-placement^='top'] > & {
+        bottom: -($arrow-size-half);
+      }
+      [data-placement^='bottom'] > & {
+        top: -($arrow-size-half);
+      }
+      [data-placement^='left'] > & {
+        right: -($arrow-size-half);
+      }
+      [data-placement^='right'] > & {
+        left: -($arrow-size-half);
+      }
     }
   }
   // Default position is on the right of the container (Popper handles positioning)

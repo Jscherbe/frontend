@@ -1,8 +1,6 @@
 /**
- * Design Notes:
- * - data-site-popover (toggle)
- *   - If no element is passed by ID, search for sibling with data-site-popover-content
- *   
+ * @todo - Convert popover to class syntax?
+ * @todo - Setup tooltip container and method for populating it and set up popover for this
  */
 import { 
   computePosition,
@@ -28,6 +26,23 @@ const attrs = {
 };
 const attrSelector = key => `[${ attrs[key] }]`;
 
+/**
+ * Default plugin options
+ * - Popover plugin options should be object form only (no shorthand)
+ */
+export const defaults = {
+  popoverPlacement: "bottom",
+  // For the following floatingUi options, true will add the plugin, 
+  // object will be passed as configuration for plugin
+  popoverInline: false,
+  popoverOffset: {
+    mainAxis: 16
+  },
+  popoverShift: true,
+  popoverFlip: true,
+  popoverArrow: true, // Options for arrow (not element)
+};
+
 export function init() {
   document.addEventListener(getName("pageModified"), resolveAll);
   resolveAll();
@@ -45,22 +60,27 @@ export function resolveAll() {
 }
 
 // Note: Sharing options with collapsible for ease of use (no collisions in popover specific!)
-function setup(trigger, content, options) {
-  const arrow = content.querySelector(attrs.arrow);
-  const collapsible = new Collapsible(trigger, content, {
-    onChange({ isOpen }) {
-      if (isOpen) {
-
+function setup(trigger, content, userOptions) {
+  const options = Object.assign({}, defaults, userOptions, {
+    onChange(ctx) {
+      handleFloatingUi(popover, ctx);
+      if (userOptions.onChange) {
+        userOptions.onChange(ctx);
       }
-      positionPopover(trigger, content, arrow, options);
-    },
-    ...options
+    }
   });
-  return { collapsible, options };
+  const popover = {
+    trigger, 
+    content, 
+    arrow: content.querySelector(attrSelector("arrow")),
+    options,
+    collapsible: new Collapsible(trigger, content, options),
+  };
+  return popover;
 }
 
 function resolve(trigger) {
-  const raw = trigger.dataset.sitePopover;
+  const raw = trigger.dataset.uluPopoverTrigger;
   const options = raw?.length ? JSON.parse(raw) : {};
   const content = resolveTriggerContent(trigger);
   if (content) {
@@ -89,11 +109,9 @@ function resolveTriggerContent(trigger) {
   } else {
     const children = Array.from(trigger.parentNode.children);
     const triggerIndex = children.findIndex(c => c === trigger);
-    console.log("triggerIndex:\n", triggerIndex);
     const childrenAfter = children.slice(triggerIndex);
     content = childrenAfter.find(child => child.matches(attrSelector("content")));
   }
-  console.log("content:\n", content);
   if (!content) {
     logError("Unable to resolve 'content' element for popover", trigger);
   }
@@ -101,52 +119,57 @@ function resolveTriggerContent(trigger) {
 }
 
 
-function positionPopover(trigger, content, arrow, options) {
-  const reference = toRef(config.reference);
-  const floating = ref(null);
-  const floatingArrow = ref(null);
+function handleFloatingUi(popover, ctx) {
+  const { trigger, content, options } = popover;
+  if (popover.cleanupFloating) popover.cleanupFloating(); // Cleanup any previous floating instances
+  if (!ctx.isOpen) return; // Exit if closed
 
   const middleware = [
-    ...(config.inline ? [ inline() ] : []),
-    ...(config.offset ? [ offset(config.offset) ] : []),
-    flip(), 
-    shift(),
-    ...(config.arrow ? [ arrow({ element: arrow }) ] : []),
+    ...addFloatingPlugin(inline, options.popoverInline),
+    ...addFloatingPlugin(offset, options.popoverOffset),
+    ...addFloatingPlugin(flip, options.popoverFlip),
+    ...addFloatingPlugin(shift, options.popoverShift),
+    ...addFloatingPlugin(arrow, options.popoverArrow, { element: popover.arrow }),
   ];
-  
-  const options = {
-    placement: config.placement,
-    whileElementsMounted: autoUpdate,
-    middleware
-  }; 
 
-  // const { 
-  //   floatingStyles, 
-  //   placement, 
-  //   middlewareData,
-  //   update,
-  //   isPositioned,
-  // } = useFloating(reference, floating, options);
+  // Setup auto updating floating ui
+  // - Attach cleanup function to instance so we can cleanup on close
+  popover.cleanupFloating = autoUpdate(trigger, content, () => {
+    computePosition(trigger, content, {
+      placement: options.popoverPlacement,
+      middleware
+    }).then(data => {
+      const { x, y, middlewareData, placement } = data;
+      const ap = middlewareData.arrow;
 
-  computePosition(trigger, content, {
+      // Update computed styles for the content (popover container)
+      Object.assign(content.style, { 
+        left: `${ x }px`, 
+        top: `${ y }px` 
+      });
 
-  })
+      // Update placement attribute (used by arrow for theming)
+      content.setAttribute("data-placement", placement);
 
-  const arrowStyles = computed(() => {
-    const pos = middlewareData.value?.arrow;
-    if (!pos) return null;
-    return {
-      position: "absolute",
-      left: pos?.x != null ? `${ pos.x }px` : "",
-      top: pos?.y != null ? `${ pos.y }px` : "",
-    };
+      // If arrow was enabled, add it's computed styles
+      if (ap) {
+        Object.assign(popover.arrow.style, {
+          // position: "absolute",
+          left: ap?.x != null ? `${ ap.x }px` : "",
+          top: ap?.y != null ? `${ ap.y }px` : "",
+        });
+      }
+    });
   });
+}
 
-  if (config.onReady) {
-    config.onReady({ update, isPositioned });
-  }
-  // Collapsible onChange handler
-  return function onPopoverChange({ isOpen }) {
-
+function addFloatingPlugin(plugin, option, overrides = {}) {
+  if (!option) {
+    return [];
+  // If object add it as options, else just enable without options
+  } else if (typeof option === "object") {
+    return [plugin({ ...option,  ...overrides })];
+  } else {
+    return [plugin(overrides)];
   }
 }
