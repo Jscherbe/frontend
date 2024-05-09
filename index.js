@@ -1,3 +1,7 @@
 // For build (dist)
 import "./scss/stylesheets/full.scss";
-import "./js/index.js";
+import * as ulu from "./js/index.js";
+
+if (typeof window !== "undefined") {
+  window.ULU = ulu;
+}

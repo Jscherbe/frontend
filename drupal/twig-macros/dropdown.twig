@@ -1,0 +1,44 @@
+{#
+* ==============================================================================
+* Dropdown
+* ==============================================================================
+*
+* @version 1.0.0
+*
+* @example
+*  {% import directory ~ '/templates/_macros/dropdown.twig' as dropdownMacros %}
+#} 
+
+{#
+* @param {Markup} toggle Markup to include in the toggle button
+* @param {Markup} body Markup to include in the body (hidden area)
+* @param {Object} options Configuration object
+* @param {String} options.modifier Modifer class (needs to correspond with styling)
+* @param {Boolean} options.isMenu The content of this dropdown should be styled as a menu
+* @param {Boolean} options.placement Placement suggestion, possible values:
+    auto, auto-start, auto-end, top, top-start, top-end, bottom, bottom-start, 
+    bottom-end, right, right-start, right-end, left, left-start, left-end
+#}
+
+{% macro dropdown(toggle, body, options = {}) %}
+  {% set defaults = {
+    isMenu:    false,
+    modifier:  "default",
+    placement: "bottom-end"
+  } %}
+  {% set options = defaults|merge(options) %}
+  <div 
+    class="site-dropdown {{ 'site-dropdown--' ~ options.modifier }}" 
+    data-cc-placement="{{ options.placement }}"
+  >
+    <button class="site-dropdown__toggle" type="button">
+      {{ toggle }}
+      <span class="site-dropdown__toggle-icon" aria-hidden="true"></span>
+    </button> 
+    <div class="site-dropdown__content">
+      <div class="{{ options.isMenu ? 'site-dropdown__menu' : 'site-dropdown__content-inner' }}">
+        {{ body }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}

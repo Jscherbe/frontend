@@ -23,11 +23,12 @@
   // left: 0;
   // width: $menu-width;
   grid-area: header;
+  z-index: ulu.layout-get("z-index-above");
   // height: 100%;
   // z-index: $z-index; 
   // background-color: white;
   
-  border-right: ulu.element-get-rule-style("light");
+  // border-right: ulu.element-get-rule-style("light");
 }
 .page__body {
   grid-area: body;
@@ -37,6 +38,9 @@
   grid-area: toc;
 }
 
+.page__body-top {
+  padding-top: 6rem;
+}
 
 
 

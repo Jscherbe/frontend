@@ -1,0 +1,30 @@
+
+{# 
+==================================================================================
+Image Macros
+==================================================================================
+
+Version:            1.0.0
+
+Description:        Reusable interactive elements, correspond with styling and scripting
+
+Usage:              
+  {% import directory ~ '/templates/_macros/image.twig' as imageMacros %}
+
+#}
+
+{#
+* @param {Markup} field Image field
+* @param {Markup} options Configruation
+* @param {Markup} options.alt Custom alt text (default to field)
+* @param {Markup} options.class (default to full-width-image)
+#}
+
+{% macro large(field, options = {}) %}
+  {% if field.value is not empty %}
+    {{ drupal_image(field.entity.uri.value, 'large', { 
+      alt: options.alt|default(field.alt),
+      class: options.class|default("full-width-image")
+    }) }}
+  {% endif %}
+{% endmacro %}

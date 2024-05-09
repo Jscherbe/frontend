@@ -1,0 +1,214 @@
+{#
+* ==============================================================================
+* Slider
+* ==============================================================================
+*
+* @version 1.0.0
+*
+* @example
+*   {% import directory ~ '/templates/_macros/slider.twig' as sliderMacros %}
+* 
+*  @param {String} modifier Slider modifier class (BEM)
+*  @param {String} titleClass Class that goes on the slider's title (title is required)
+*  @param {String} titleElement Element for the title
+*  @param {Array<Markup>} slides Array of slides markup/HTML
+#}
+
+{% macro slider(options = {}) %}
+  {% set defaults = {
+    modifier: "default",
+    title: null,
+    titleClass: "hidden-visually",
+    titleElement: "h2",
+    slides: [],
+    slideClass: null,
+    pluginOptions: {}
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% if options.slides|length %}
+    {% set markup %}
+      <div 
+        class="site-slider site-slider--{{ options.modifier }}" 
+        data-site-slider="{{ options.pluginOptions|json_encode }}"
+      >
+        <div class="site-slider__control-context" data-site-slider-control-context>
+          <div class="site-slider__track-crop" data-site-slider-track-container>
+            <ul class="site-slider__track" data-site-slider-track>
+              {% for slide in options.slides %}
+                <li class="site-slider__slide {{ options.slideClass }}" data-site-slider-slide>
+                  {{ slide }}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endset %}
+    {# 
+      We define the region if the user passes a title (which is hidden) 
+      - else user needs to define the region and title so we just output the functional inner markup
+    #}
+    {% if options.title %}
+      {% set titleId = ctwig_uniqid("slider-title") %}
+      <section class="site-slider-region" aria-labelledby="{{ titleId }}">
+        <{{ options.titleElement }} class="{{ options.titleClass }}" id="{{ titleId }}">
+          {{ options.title }}
+        </{{ options.titleElement }}>
+        {{ markup }}
+      </section>
+    {% else %}
+      {{ markup }}
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
+{% macro sectionLayout(options) %}
+  {% from _self import slider %}
+  {% set defaults = {
+    title: null,
+    titleClass: "h2",
+    titleElement: "h2",
+    slides: [],
+    class: null,
+    modifier: "in-content"
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% if options.slides|length %}
+    {% set titleId = ctwig_uniqid("slider-title") %}
+    <section class="slider-section-layout {{ options.class }}" aria-labelledby="{{ titleId }}">
+      <div class="slider-section-layout__title container-small no-padding-bottom">
+        <{{ options.titleElement }} class="{{ options.titleClass }}" id="{{ titleId }}">
+          {{ options.title }}
+        </{{ options.titleElement }}>
+      </div>
+      <div class="slider-section-layout__slides container no-padding-top">
+        {{ slider({ 
+          slides: options.slides, 
+          modifier: options.modifier,
+          pluginOptions: {
+            transitionFade: false
+          }
+        })}}
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}
+
+
+{% macro scrollSliderSection(options = {}) %}
+  {% from _self import scrollSlider %}
+  {% set defaults = {
+    title: null,
+    titleClass: "h2 h2--no-rule no-margin-bottom",
+    titleElement: "h2",
+    slides: [],
+    modifier: null,
+    titleContainerClasses: null
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% if options.slides|length %}
+    {% set titleId = ctwig_uniqid("slider-title") %}
+    <section class="scroll-slider-section container-full" aria-labelledby="{{ titleId }}">
+      <div class="scroll-slider-section__title container-fit">
+        <{{ options.titleElement }} class="{{ options.titleClass }}" id="{{ titleId }}">
+          {{ options.title }}
+        </{{ options.titleElement }}>
+      </div>
+      <div class="scroll-slider-section__slides">
+        {{ scrollSlider({ 
+          slides: options.slides, 
+          modifier: options.modifier,
+          addEmptyEnds: true
+        })}}
+      </div>
+    </section>
+  {% endif %}
+{% endmacro %}
+
+{% macro scrollSlider(options = {}) %}
+  {% set defaults = {
+    modifier: "default",
+    slides: [],
+    slideClass: null,
+    addEmptyEnds: false,
+    pluginOptions: {}
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% set emptySlide %}
+    <li 
+      class="scroll-slider__slide scroll-slider__slide--empty" 
+      role="presentation"
+      data-scroll-slider-slide
+    >
+      &nbsp;
+    </li>
+  {% endset %}
+  {% if options.slides|length %}
+    <div 
+      class="scroll-slider scroll-slider--{{ options.modifier }}" 
+      data-scroll-slider="{{ options.pluginOptions|json_encode }}"
+    >
+      <div class="scroll-slider__control-context" data-scroll-slider-control-context>
+        <div class="scroll-slider__track-crop" data-scroll-slider-track-container>
+          <ul class="scroll-slider__track" data-scroll-slider-track>
+            {% if options.addEmptyEnds %}
+              {{ emptySlide }}
+            {% endif %}
+            {% for slide in options.slides %}
+              <li class="scroll-slider__slide {{ options.slideClass }}" data-scroll-slider-slide>
+                {{ slide }}
+              </li>
+            {% endfor %}
+            {% if options.addEmptyEnds %}
+              {{ emptySlide }}
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{# Note: From success gaps, scrapped for now #}
+{# {% macro imageLayout(options = {}) %}
+  {% set defaults = {
+    image: null,
+    title: null,
+    titleElement: "h3",
+    titleClass: "h3",
+    body: null,
+    bodyClass: "wysiwyg",
+    linkHref: null,
+    linkText: null,
+    linkClass: "button",
+    imageBefore: false
+  } %}
+  {% set options = defaults|merge(options) %}
+  <div class="site-slider__slide-inner">
+    
+    <div class="site-slider__slide-content">
+      {% if options.title %}
+        <{{ options.titleElement }} class="site-slider__slide-title {{ options.titleClass }}">
+          {{ options.title  }}
+        </{{ options.titleElement }}>
+      {% endif %}
+      {% if options.body %}
+        <div class="{{ options.bodyClass }}">
+          {{ options.body }}
+        </div>
+      {% endif %}
+      {% if options.linkText and options.linkHref %}
+        <p>
+          <a href="{{ options.linkHref }}" class="{{ options.linkClass }}">
+            {{ options.linkText }}
+          </a>
+        </p>
+      {% endif %}
+    </div>
+    {% if options.image %}
+      <div class="site-slider__slide-image {{ options.imageClass }}" style="{{ options.imageBefore ? 'order: -1;' }}">
+        {{ options.image }}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %} #}

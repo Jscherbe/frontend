@@ -1,0 +1,69 @@
+{#
+* ==============================================================================
+* Flipcard
+* ==============================================================================
+*
+* @version 1.0.0
+*
+* @example
+*  {% import directory ~ '/templates/_macros/flipcard.twig' as flipcardMacros %}
+#} 
+
+{# 
+ * @param {Array} flipcards Array of flipcards (markup from flipcard macro below)
+ #}
+
+{% macro flipcardLayout(flipcards) %}
+  <div class="flipcard-grid">
+    {% for flipcard in flipcards %}
+      <div class="flipcard-grid__item">
+        {{ flipcard }}
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
+
+{# 
+ * @param {Markup} front Markup for front
+ * @param {Markup} back Markup for back
+ * @param {Markup} image Image for the front
+ * @param {Object} options Configuration
+ * @param {Object} options.modifier Modifer class (needs to correspond with styling)
+ * @param {Boolean} options.frontOnBack Include a duplicate of the front content on back (no interactive elements, aria-hidden)
+ #}
+
+{% macro flipcard(front, back, image = false, options = {}) %}
+  {% set var = value %}
+  {% set defaults = {
+    modifier:      "default",
+    frontOnBack:   false
+  } %}
+  {% set options = defaults|merge(options) %}
+
+  <div class="flipcard {{ image ? 'flipcard--w-image' }}" data-site-flipcard>
+    <h3 class="flipcard__front" data-site-flipcard-front>
+      {% if image %}
+        <span class="flipcard__front-image">{{ image }}</span>
+      {% endif %}
+      <span class="flipcard__front-content">
+        {{ front }}
+        <span class="flipcard__icon flipcard__icon--front" aria-hidden="true"></span>
+      </span>
+    </h3>
+    <div class="flipcard__back" data-site-flipcard-back>
+      {% if frontOnBack %}
+        <div class="flipcard__back-front-content" aria-hidden="true">
+          {{ front }}
+        </div>
+      {% endif %}
+      <div class="flipcard__back-content">
+        {{ back }}
+      </div>
+      <span class="flipcard__icon flipcard__icon--back" aria-hidden="true"></span>
+    </div>
+    {# Site styling can choose to use this if wanted or it can remain empty #}
+    <div class="flipcard__icon-footer">
+      <span class="flipcard__icon flipcard__icon--footer"  aria-hidden="true"></span>
+    </div>
+  </div>
+{% endmacro %}

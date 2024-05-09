@@ -1,5 +1,6 @@
 @use "vars";
 @use "ulu";
+@use "sass:color";
 
 $link-padding-x: 0.75em;
 $link-padding-y: 0.35em;
@@ -12,11 +13,12 @@ $collapsible-inner-padding: 0.5em;
 .nav-tree__link,
 .nav-tree__toggle {
   display: flex;
+  align-items: baseline;
   padding: $link-padding-y $link-padding-x;
   border-radius: ulu.element-get("border-radius");
-  color: ulu.color-get("type");
+  color: ulu.color-get("type-tertiary");
   &:hover {
-    background-color: rgb(240, 240, 240);
+    background-color: color.change(vars.$color-gray-dark, $alpha: 0.2);
     color: black
   }
 }
@@ -39,7 +41,7 @@ $collapsible-inner-padding: 0.5em;
     // background-color: vars.$color-violet-light-x;
     color: ulu.color-get("accent");
     // font-weight: bold;
-    background-color: rgb(240, 240, 240);
+    background-color: color.change(vars.$color-gray-dark, $alpha: 0.1);
   }
 }
 .nav-tree__collapsible {

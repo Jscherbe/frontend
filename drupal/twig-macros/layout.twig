@@ -1,0 +1,338 @@
+{# 
+  Usage: 
+  {% import directory ~ '/templates/_macros/layout.twig' as layoutMacros %}
+#}
+
+{% macro quote(options) %}
+  {% set defaults = {
+    body: null,
+    author: null,
+    authorTitle: null,
+    authorPhoto: null,
+    bodyClasses: "type-large-x"
+  } %}
+  {% set options = defaults|merge(options) %}
+  <figure class="site-quote">
+    {# inline all was added incase editor field is output in here #}
+    <blockquote class="site-quote__body display-inline-all {{ options.bodyClasses }}">
+      {{ options.body }}
+    </blockquote>
+    {% if options.author %}
+      <figcaption class="site-quote__author">
+        {% if options.authorPhoto %}
+          <div class="site-quote__author-photo">
+            <div class="badge badge--small">
+              <div class="badge__inner">
+                {{ options.authorPhoto }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+        <strong class="site-quote__author-name">
+          {{ options.author }}
+        </strong>
+        {% if options.authorTitle %}
+          <span class="site-quote__author-title">
+            <span class="visually-hidden">, </span>
+            {{ options.authorTitle }}
+          </span>
+        {% endif %}
+        
+      </figcaption>
+    {% endif %}
+  </figure>
+{% endmacro %}
+
+{% macro videoSection(options) %}
+  {% set defaults = {
+    title: null,
+    body: null,
+    url: null,
+    image: null
+  } %}
+  {% set options = defaults|merge(options) %}
+  <div class="video-section">
+    <div data-grid="columns: 12, gutters-row: true">
+      <div data-grid-item="width: 6">
+        {% if options.title %}
+          <h2 class="h2">{{ options.title }}</h2>
+        {% endif %}
+        {% if options.body %}
+          <div class="wysiwyg crop-margins margin-bottom">
+            {{ options.body }}
+          </div>
+        {% endif %}
+        <a class="button" href="{{ options.url }}">
+          Watch Video
+          <span class="fas fa-play-circle" aria-hidden="true"></span>
+        </a>
+      </div>
+      {% if options.image %}
+        <div data-grid-item="width: 5, offset: 1">
+          <a class="video-section__link-image" href="{{ options.url }}">
+            {{ options.image }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro card(ctx, options) %}
+  {% set defaults = {
+    class: null,
+    title: null,
+    titleElement: "h3",
+    titleHref: null,
+    titleLabel: null,
+    titleClass: null,
+    aboveTitle: null,
+    content: null,
+    footer: null,
+    image: null,
+    iconClass: null,
+    proxyClick: true
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% set hasProxyClick = options.proxyClick and options.titleHref %}
+  {% set attributes = create_attribute({ class: [ "card", "site-card", options.class ] }) %}
+  {% if hasProxyClick %}
+    {% set attributes = attributes.setAttribute("data-proxy-click", "") %}
+  {% endif %}
+  
+  {% set title %}
+    {% if options.titleLabel %}
+      <span class="site-card__label">{{  options.titleLabel }}</span>
+    {% endif %}
+    {{ options.aboveTitle }}
+    <span class="site-card__title">{{ options.title }}</span>
+  {% endset %}
+
+  <article {{ attributes }}>
+    <div class="card__body">
+      <{{ options.titleElement }} class="site-card__header">
+        {% if options.titleHref %}
+
+          {% set linkAttrs = create_attribute({ class: "site-card__link", href: options.titleHref }) %}
+          {% if options.proxyClick %}
+             {% set linkAttrs = linkAttrs.setAttribute("data-proxy-click-source", "") %}
+          {% endif %}
+          
+          <a {{ linkAttrs }}>{{ title  }}</a>
+        {% else %}
+          {{ title  }}
+        {% endif %}
+      </{{ options.titleElement }}>
+      {% if options.content %}
+        <div class="site-card__body">
+          {{ options.content }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="card__image site-card__image">
+      {% if options.image %}
+        {{ options.image }}
+      {% else %}
+        <img src="/{{ ctx.directory }}/dist/images/default-card.svg"  alt="">
+      {% endif %}
+      {% if options.iconClass %}
+        <span class="site-card__image-icon {{ options.iconClass }}" aria-hidden="true"></span>
+      {% endif %}
+    </div>
+    {% if options.footer %}
+      <div class="card__footer">
+        {{ options.footer }}
+      </div>
+    {% endif %}
+  </article>
+{% endmacro %}
+
+{% macro sidebar(body, sidebar, options = {}) %}
+  {% set defaults = {
+    reversed: false,
+    reversedMobile: false,
+    bodyClasses: "",
+    sidebarClasses: "",
+    large: false
+  } %}
+  {% set options = defaults|merge(options) %}
+
+  {% set sidebarWidth = options.large ?  "width: 5" : "width: 4" %}
+  {% set bodyWidth = options.large ?  "width: 7" : "width: 8" %}
+  {% set classes = [
+    "layout-sidebar",
+    options.reversed ? "layout-sidebar--reversed",
+    options.reversedMobile ? "layout-sidebar--reversed-mobile",
+  ]|join(" ") %}
+  {% set bodyClasses = ["layout-sidebar__body", "crop-margins", options.bodyClasses]|join(" ") %}
+  {% set sidebarClasses = ["layout-sidebar__sidebar", "crop-margins", options.sidebarClasses ]|join(" ") %}
+  <div 
+    class="{{ classes }}"
+    data-grid="columns: 12; align: start, gutters-row: true, rules-column: right"
+  >
+    {% if options.reversed or options.reversedMobile %}
+      {# note: reversedMobile will set the order so that when the grid is active display: flex it
+      will appear on the side but on mobile non-grid sizes the order will not be used (on top) #}
+      <div 
+        class="{{ sidebarClasses }}" 
+        data-grid-item="{{ sidebarWidth }}"
+        style="{{ options.reversedMobile ? 'order: 2' }}"
+      >
+        {{ sidebar }}
+      </div>
+      <div class="{{ bodyClasses }}" data-grid-item="{{ bodyWidth }}">
+        {{ body }}
+      </div>
+    {% else %}
+      <div class="{{ bodyClasses }}" data-grid-item="{{ bodyWidth }}">
+        {{ body }}
+      </div>
+      {% if sidebar %}
+        <div class="{{ sidebarClasses }}" data-grid-item="{{ sidebarWidth }}">
+          {{ sidebar }}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro node(ctx, options = {}) %}
+  {% from _self import sidebar, responsiveImage %}
+  {% set defaults = {
+    label:              ctx.label,
+    
+    attributes:         ctx.attributes ? 
+                          ctx.attributes|without("role") : create_attribute(),
+    content_attributes: ctx.content_attributes ? 
+                          ctx.content_attributes : create_attribute(),
+    title_attributes:   ctx.title_attributes ? 
+                          ctx.title_attributes : create_attribute(),
+    parentTitle:        not ctx.menu_parent_title is empty ? 
+                          ctx.menu_parent_title : null,
+    body:               ctx.content.body|field_value is not empty ? 
+                          ctx.content.body|field_value : null,
+    sectioned_header:     ctx.content.field_header is not empty ? 
+                          ctx.content.field_header : null,
+    sectioned_body:     ctx.content.field_sectioned_content is not empty ? 
+                          ctx.content.field_sectioned_content : null,
+    sidebar:                  null,
+    sidebarOptions:           {},
+    badgeImage:               null,
+    bodyClass:                null,
+    belowBody:                null,
+    aboveBody:                null,
+    beforeBody:               null,
+    afterBody:                null,
+    beforeHeader:             null,
+    afterHeader:              null,
+    bodyContained:            true,
+    showBodyField:            true,
+    showSectionedBodyField:   true,
+    showHeaderField:          true,
+    showParentTitle:          true,
+  } %}
+
+  {% set options = defaults|merge(options) %}
+  {% set hasFieldBody = options.showBodyField and options.body %}
+  {% set hasFieldSectionedHeader = options.showHeaderField and options.sectioned_header %}
+  {% set hasFieldSectionedBody = options.showSectionedBodyField and options.sectioned_body %}
+  {% set hasBodyContent = hasFieldBody or hasFieldSectionedBody or options.aboveBody or options.belowBody  %}
+
+
+  {% set body %}
+    {{ options.aboveBody }}
+    {% if hasFieldSectionedBody %}
+      {{ options.sectioned_body }}
+    {% endif %}
+    {% if hasFieldBody %}
+      <div class="wysiwyg crop-margins crop-margins--first">
+        {{ options.body }}
+      </div>
+    {% endif %}
+    {{ options.belowBody }}
+  {% endset %}
+
+
+  {% set introClasses = [
+    "page__intro",
+  ] %}
+  <div{{ options.attributes }}>
+    <div class="{{ introClasses|join(' ') }}">
+      {% if hasFieldSectionedHeader %}
+        {{ options.beforeHeader }}
+        {{ options.sectioned_header }}
+        {{ options.afterHeader }}
+      {% else %}
+        {{ options.beforeHeader }}
+        <div class="">
+          <div class="">
+            <h1 {{ options.title_attributes.addClass("h1 page-title") }}>
+              {% if options.showParentTitle and options.parentTitle %}
+                <span class="headline-label">
+                  {{ options.parentTitle }}<span class="hidden-visually">:</span>
+                </span>
+              {% endif %}
+              {{ options.label }}
+            </h1>
+          </div>
+        </div>
+        {{ options.afterHeader }}
+      {% endif %}
+    </div>
+
+    <div class="page__content">
+      {{ options.beforeBody }}
+      {% if options.sidebar or hasBodyContent %}
+        <div class="page__content-body {{ options.bodyClass }}">
+          <div {{ options.content_attributes.addClass([
+            'page__content-body-inner', 
+            options.bodyContained and not hasFieldSectionedBody ? 'container'
+          ]) }}>
+            {% if options.sidebar %}
+              {{ sidebar(body, options.sidebar, options.sidebarOptions) }}
+            {% else %}
+              {{ body }}
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+      {{ options.afterBody }}
+    </div>
+  </div>
+{% endmacro %} 
+
+
+{% macro responsiveImage(options) %}
+  {% set defaults = {
+    alt: "",
+    class: null,
+    classImage: null,
+    src: null,
+    srcMedium: null,
+    srcLarge: null
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% if options.src %}
+    <picture class="{{ options.class }}">
+      {# These line up to the breakpoints in Sass #}
+      {% if options.srcMedium %}
+        <source srcset="{{ options.srcMedium }}" media="(min-width: 53.5em)">
+      {% endif %}
+      {% if options.srcLarge %}
+        <source srcset="{{ options.srcLarge }}" media="(min-width: 76em)">
+      {% endif %}
+      <img 
+        class="{{ options.classImage }}" 
+        src="{{ options.src }}" 
+        alt="{{ options.alt }}"
+      >
+    </picture>
+  {% elseif options.debug %}
+    {{ kint(options) }}
+  {% endif %}
+{% endmacro %}
+
+{#
+Usage:
+{% import directory ~ '/templates/_macros/element.twig' as elementMacros %}
+#}

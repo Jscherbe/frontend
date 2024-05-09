@@ -6,7 +6,8 @@
 // Note: Keep core colors and assignments as variables so we don't need ULU to access them
 //       related project, client use, whatever
 
-$color-black:                 rgb(16, 16, 16);
+$color-black:                 rgb(25, 22, 27);
+$color-gray-dark:             rgb(32, 28, 37);
 $color-blue:                  #368db5;
 $color-violet-light-x:        #e2d3f0;
 $color-violet-light:          #ad7dd9;
@@ -26,8 +27,9 @@ $color-link-dark:             white;
 $color-link-dark-hover:       #b4ecfa;
 $color-link-dark-visited:     #75507c;
 
-$color-rule:                 rgb(221, 221, 221);
-$color-rule-light:           rgb(221, 221, 221);
+$color-rule:                 rgb(128, 123, 134);
+$color-rule-light:           rgb(233, 231, 238);
+$color-rule-accent:          rgb(214, 207, 226);
 
 $site-max-width-large:        110rem;
 $site-max-width:              100rem;

@@ -73,7 +73,7 @@ $config: (
     }
   }
 
-  // Meant to be user by tself without content
+  // Meant to be user by itself without content
   $short-width: get("short-width");
   @if ($short-width) {
     #{ $class }--short {

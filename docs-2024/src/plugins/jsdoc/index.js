@@ -14,7 +14,7 @@ const isSubdir = (parent, dir) => {
 };
 
 const src = path.resolve(".", "js/");
-const dist = path.resolve(__dirname, "../../../public/javascript/");
+const dist = path.resolve(__dirname, "../../../content/javascript/");
 
 function cleanOutputDir() {
   fs.readdirSync(dist)

@@ -12,7 +12,17 @@ const htmlDefaults = {
    * - context has isIndex if using collapsible menu
    */
   formatLink({ node, options, isIndex }) {
-    return isIndex ? "Introduction" : node.entry.data.title;
+    const data = node.entry;
+    return isIndex ? 
+      data.menuTitle || "Introduction" : 
+      data.menuTitle || data.title;
+  },
+  exclude({ node, isIndexLink }) {
+    if (isIndexLink) {
+      return !!node.entry.data.hideIndexInMenu;
+    } else {
+      return node.entry.data.hideInMenu;
+    }
   },
   /**
    * Optional other template for toggle
@@ -58,11 +68,15 @@ const htmlDefaults = {
  */
 export default function toHtml(tree, opts) {
   const options = Object.assign({}, htmlDefaults, opts);
-  const { maxDepth, formatLink, shouldCollapseNode } = options;
+  const { maxDepth, formatLink, shouldCollapseNode, exclude } = options;
   const formatToggle = options.formatToggle || formatLink;
   const getClass = child => child ? `${ options.class }__${ child }` : options.class;
 
   const printItem = (node, depth, isIndex) => {
+    const ctx = { node, options, isIndex };
+    if (exclude(ctx)) {
+      return "";
+    }
     const showChildren = node.children && depth < maxDepth;
     if (
       !isIndex && 
@@ -70,30 +84,33 @@ export default function toHtml(tree, opts) {
       shouldCollapseNode({ node, depth, tree, options })
     ) {
       return `
-<li class="${ getClass("item") } ${ node.classes }">
-  <details 
-    class="${ getClass("collapsible") }" 
-    ${ node.activeTrail ? "open" : ""}
-  >
-    <summary class="${ getClass("toggle") }">
-      ${ formatToggle({ node, options }) }
-    </summary>
-    ${ printList(node.children, depth, node) }
-  </details>
-</li>
+        <li class="${ getClass("item") } ${ node.classes }">
+          <details 
+            class="${ getClass("collapsible") }" 
+            ${ node.activeTrail ? "open" : ""}
+          >
+            <summary class="${ getClass("toggle") }">
+              ${ formatToggle({ node, options }) }
+            </summary>
+            ${ printList(node.children, depth, node) }
+          </details>
+        </li>
       `;
     } else {
+      let indexLink = exclude({ ...ctx, isIndexLink: true }) ? "" : `
+        <a 
+          class="${ getClass("link") } ${ isIndex ? getClass("link--index") : "" } ${ node.classes }" 
+          href="${ node.url }" 
+          ${ node.active ? 'aria-current="page"' : '' }
+        >
+          ${ formatLink({ node, options, isIndex }) }
+        </a>
+      `;
       return `
-<li class="${ getClass("item") } ${ node.classes }">
-  <a 
-    class="${ getClass("link") } ${ isIndex ? getClass("link--index") : "" } ${ node.classes }" 
-    href="${ node.url }" 
-    ${ node.active ? 'aria-current="page"' : '' }
-  >
-    ${ formatLink({ node, options, isIndex }) }
-  </a>
-  ${ showChildren && !isIndex ? printList(node.children, depth) : "" }
-</li>
+        <li class="${ getClass("item") } ${ node.classes }">
+          ${ indexLink }
+          ${ showChildren && !isIndex ? printList(node.children, depth) : "" }
+        </li>
       `;
     }
     /* eslint-enable */
@@ -108,10 +125,10 @@ export default function toHtml(tree, opts) {
     const depth = lastDepth + 1;
     const listClass = getClass(options.wrapper ? "list" : false);
     return `
-<ul class="${ listClass }" data-menu-depth="${ depth }">
-  ${ collapsedNode ? printItem(collapsedNode, depth, true) : "" }
-  ${ children.map(item => printItem(item, depth)).join("\n") }
-</ul>
+      <ul class="${ listClass }" data-menu-depth="${ depth }">
+        ${ collapsedNode ? printItem(collapsedNode, depth, true) : "" }
+        ${ children.map(item => printItem(item, depth)).join("\n") }
+      </ul>
     `;
   };
   const printLabel = () => {
@@ -119,11 +136,10 @@ export default function toHtml(tree, opts) {
   };
   const printWithWrapper = () => {
     return `
-<${ options.wrapperElement } class="${ getClass() }">
-  ${ options.label ? printLabel() : "" }
-  ${ printList(tree, 0) }
-</${ options.wrapperElement }>`
+      <${ options.wrapperElement } class="${ getClass() }">
+        ${ options.label ? printLabel() : "" }
+        ${ printList(tree, 0) }
+      </${ options.wrapperElement }>`
   };
   return options.wrapper ? printWithWrapper() : printList(tree, 0);
-  
 }

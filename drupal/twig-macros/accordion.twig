@@ -1,0 +1,99 @@
+{#
+* ==============================================================================
+* Accordion / Details
+* ==============================================================================
+*
+* @version 1.0.1
+*
+* @example
+  {% import directory ~ '/templates/_macros/accordion.twig' as accordionMacros %}
+
+* @param {Markup} toggle Markup to include in the toggle button
+* @param {Markup} body Markup to include in the body (hidden area)
+* @param {Object} options Configuration object
+* @param {String} options.icon Add icon classes
+* @param {Boolean} options.open Open by default
+* @param {String} options.modifier Modifer class (needs to correspond with styling)
+
+Notes:
+  - don't worry about headings in summary it doesn't work on screenreaders
+  - I wouldn't reset the headline order within (ie. no  sectioning root, I think this will not work for SRs)
+#}
+
+{% macro accordion(toggle, body, options = {}) %}
+  {% set defaults = {
+    open: false,
+    modifier: "default",
+    icon: null,
+    attributes: null
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% set classes = [
+    "site-details",
+    'site-details--' ~ options.modifier 
+  ] %}
+  {% set attributes = options.attributes ?: create_attribute()  %}
+  <details {{ attributes.addClass(classes).setAttribute("open", options.open) }}>
+    <summary class="site-details__summary">
+      {{ toggle }}
+      <span class="site-details__icon {{ options.icon }}" aria-hidden="true"></span>
+    </summary>
+    <div class="site-details__content">
+      {{ body }}
+    </div>
+  </details>
+{% endmacro %}
+
+{% macro accordionGroup(title, accordions, options = {}) %}
+  {% set defaults = {
+    titleHidden: true,
+    modifier:    "default",
+    textOpen:    "Expand All",
+    textClose:   "Close All",
+    icon:        null
+  } %}
+  {% set uid = ctwig_uniqid("site-details-group") %}
+  {% set id = {
+    container:  uid ~ '--container',
+    title:      uid ~ '--title',
+    expand:     uid ~ '--expand'
+  } %}
+  {% set options = defaults|merge(options) %}
+
+  <div class="site-details-group {{ 'site-details-group--' ~ options.modifier }}">
+    <h2 
+      id="{{ id.title }}"
+      class="{{ options.titleHidden ? 'hidden-visually' : 'site-details-group__title' }}" 
+    >
+      {{ title }}
+    </h2>
+    <div 
+      id="{{ id.container }}" 
+      class="site-details-group__inner" 
+      aria-multiselectable="true"
+    >
+      <div class="site-details-group__controls">
+        <button 
+          class="site-details-group__control"
+          id="{{ id.expand }}"
+          type="button"
+          aria-expanded="false"
+          aria-controls="{{ id.container }}"
+          aria-labelledby="{{ id.title }} {{ id.expand }}"
+          data-site-details-group="{{ { 
+            textOpen: options.textOpen, 
+            textClose: options.textClose 
+          }|json_encode }}"
+          hidden
+        >
+          <span 
+            class="site-details-group__controls-all-icon {{ options.icon }}" 
+            aria-hidden="true"
+          ></span>
+          {{ options.textOpen }}
+        </button>
+      </div>
+      
+    </div>
+  </div>
+{% endmacro %}

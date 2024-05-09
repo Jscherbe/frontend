@@ -1,0 +1,192 @@
+////
+/// @group button
+////
+
+// NOTE: This is an updated version that uses floating UI
+
+@use "sass:math";
+@use "sass:map";
+@use "../selector";
+@use "../typography";
+@use "../utils";
+@use "../color";
+@use "../layout";
+@use "../element";
+
+/// Module Settings
+/// @type Map
+/// @prop {Number} $config.color Type color
+/// @prop {Number} $config.background-color Popover background color
+/// @prop {Number} $config.padding Padding for popover
+/// @prop {Number} $config.padding-large Padding for large popover
+/// @prop {Number} $config.max-width Max width for popover (default 90% viewport width)
+/// @prop {Number} $config.width Width for popovers
+/// @prop {Number} $config.width-large Width for large popovers
+/// @prop {Number} $config.width-large-x Width for large-x popovers
+/// @prop {Number} $config.max-height Max height of the inner content of popover
+/// @prop {Number} $config.type-size Set a type size (see typography)
+/// @prop {Number} $config.z-index Change default z-index
+/// @prop {Number} $config.box-shadow Box shadow
+/// @prop {Number} $config.box-shadow-footer Box shadow for footer
+/// @prop {Number} $config.border-radius Border radius
+/// @prop {Number} $config.arrow-size Arrow size (should match JS setting)
+/// @prop {Number} $config.tooltip-background-color Background color for tooltip type popovers
+/// @prop {Number} $config.tooltip-padding Padding for tooltip type popovers
+/// @prop {Number} $config.tooltip-color Color for tooltip type popovers
+
+$config: (
+  "color"                   : inherit,
+  "background-color"        : white,
+  "padding"                 : 1.5rem,
+  "padding-large"           : 2.5rem,
+  "max-width"               : 90vw,
+  "max-height"              : 25rem,
+  "width"                   : 15rem,
+  "width-large"             : 30rem,
+  "width-large-x"           : 50rem,
+  "type-size"               : null,
+  "z-index"                 : layout.get("z-index-fixed") + 1,
+  "box-shadow"              : element.get("box-shadow-above"),
+  "box-shadow-footer"       : 0 0 4px color.get("box-shadow"),
+  "border-radius"           : 6px,
+  "arrow-size"              : 16px,
+  "footer-padding-y"        : 0.25rem,
+  "footer-padding-y-large"  : 0.5rem,
+  "footer-background-color" : color.shade(white, 3%),
+  "footer-color"            : inherit,
+  "tooltip-background-color": white,
+  "tooltip-padding"         : (1.5rem 1.25rem),
+  "tooltip-width"           : max(min-content, 20rem),
+  "tooltip-color"           : inherit,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "component-popover [config]");
+}
+
+@mixin styles {
+  $prefix: selector.class("popover");
+  $arrow-size-half: math.div(get("arrow-size"), 2);
+
+  #{ $prefix }__arrow {
+    display: block;
+    visibility: hidden;
+    z-index: 1;
+    &,
+    &:before {
+      position: absolute;
+      width: get("arrow-size");
+      height: get("arrow-size");
+      background: inherit;
+    }
+    &:before {
+      visibility: visible;
+      content: '';
+      transform: rotate(45deg);
+      // box-shadow: $box-shadow;
+    }
+    [data-placement^='top'] > & {
+      bottom: -($arrow-size-half);
+    }
+    [data-placement^='bottom'] > & {
+      top: -($arrow-size-half);
+    }
+    [data-placement^='left'] > & {
+      right: -($arrow-size-half);
+    }
+    [data-placement^='right'] > & {
+      left: -($arrow-size-half);
+    }
+  }
+  // Default position is on the right of the container (Popper handles positioning)
+  #{ $prefix } {
+    display: none;
+    position: absolute;
+    z-index: get("z-index");
+    background-color: get("background-color");
+    color: get("color");
+    width: get("width");
+    max-width: get("max-width");
+    box-shadow: get("box-shadow");
+    border-radius: get("border-radius");
+    text-align: left;
+    @if (get("type-size")) {
+      @include typography.size(get("type-size"));
+    }
+    &.is-active {
+      display: block;
+    }
+  }
+  #{ $prefix }__inner {
+    display: block;
+    overflow-y: auto;
+    max-height: get("max-height");
+    padding: get("padding");
+    position: relative;
+    border-radius: get("border-radius");
+    z-index: 2; // Above arrow
+    flex: 1; // When used with footer
+  }
+  #{ $prefix }__footer {
+    display: block;
+    flex: 0;
+    box-shadow: get("box-shadow-footer");
+    padding: get("footer-padding-y") get("padding");
+    background-color: get("footer-color");
+    background-color: get("footer-background-color");
+    // text-align: center;
+    border-bottom-left-radius: get("border-radius");
+    border-bottom-right-radius: get("border-radius");
+  }
+
+  // Modifiers
+  #{ $prefix }--tooltip {
+    width: get("tooltip-width");
+    background-color: get("tooltip-background-color");
+    pointer-events: none;
+    color: get("tooltip-color");
+    #{ $prefix }__inner {
+      padding: get("tooltip-padding");
+      min-height: 0;
+    }
+  }
+  // If you want to do something custom (and have it touch the edges)
+  #{ $prefix }--no-padding {
+    #{ $prefix }__inner {
+      padding: 0;
+    }
+  }
+  #{ $prefix }--w-footer {
+    #{ $prefix }__inner {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  #{ $prefix }--large {
+    width: get("width-large");
+  }
+  #{ $prefix }--large-x {
+    width: get("width-large-x");
+  }
+  #{ $prefix }--large,
+  #{ $prefix }--large-x {
+    #{ $prefix }__inner {
+      padding: get("padding-large");
+    }
+    #{ $prefix }__footer {
+      padding: get("footer-padding-y-large") get("padding-large");
+    }
+  }
+}

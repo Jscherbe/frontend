@@ -11,20 +11,32 @@
     width: max-content;
     max-width: 100%;
     border-top: none;
-    margin-bottom: 1.5em;
+    margin-bottom: 2.5em;
   }
   details {
     margin-bottom: 1em;
-    border: 1px solid ulu.element-get-rule-style("light");
-    padding: 1em;
+    padding: 0.5em 1em;
+    background-color: ulu.color-tint(ulu.color-get("rule-light"), 50%);
   }
-  // h2,
-  // h3 {
-  //   margin-top: 1em;
-  //   padding-top: 0.5em;
-  //   border-top: 1px solid ulu.color-get("rule-light");
-  // }
-  // h2 {
-  //   border-top: 3px solid ulu.color-get("rule-light");
-  // }
+  h2 {
+    &:after {
+      content: "";
+      display: block;
+      width: 1em;
+      height: 5px;
+      margin-top: 0.5em;
+      background-color: ulu.color-get("rule-light");
+    }
+    // border-bottom: 8px solid ulu.color-get("rule-light");
+    // padding-bottom: 0.5em;
+    // margin-bottom: 2em;
+    // text-align: center;
+    // background-color: ulu.color-get("accent");
+    // color: white;
+    // padding: 1em;
+    // text-transform: uppercase;
+  }
+  pre {
+    margin-bottom: 2em;
+  }
 }

@@ -38,21 +38,25 @@ $palette: (
   "white":        white,
   "type":         black,
   "headline" :    inherit,
-  "background":   white,
-  "focus":        blue,
-  "error":        red,
-  "warning":      orange,
-  "accent":       orange,
-  "selected" :    green,
-  "box-shadow":   rgba(0, 0, 0, 0.349),
-  "box-shadow:hover" : rgba(0, 0, 0, 0.5),
-  "rule":         gray,
-  "rule-light":   lightgray,
-  "link":         blue,
-  "link:hover":   darkblue,
-  "link:active":  darkblue,
-  "link:visited": purple,
-  "bullet":       inherit
+  "background"              : white,
+  "focus"                   : blue,
+  "error"                   : red,
+  "warning"                 : orange,
+  "accent"                  : orange,
+  "selected"                : green,
+  "box-shadow"              : rgba(0, 0, 0, 0.349),
+  "box-shadow:hover"        : rgba(0, 0, 0, 0.5),
+  "rule"                    : gray,
+  "rule-light"              : lightgray,
+  "link"                    : blue,
+  "link:hover"              : darkblue,
+  "link:active"             : darkblue,
+  "link:visited"            : purple,
+  "bullet"                  : inherit,
+  "control"                 : white,
+  "control:hover"           : white,
+  "control-background"      : purple,
+  "control-background:hover": blue,
 );
 ```
   
@@ -63,7 +67,7 @@ $palette: (
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 11-13
-- **Lines (code):** 15-35
+- **Lines (code):** 15-39
     </details>
     
 
@@ -105,8 +109,8 @@ $contexts: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 37-41
-- **Lines (code):** 43-54
+- **Lines (comments):** 41-45
+- **Lines (code):** 47-58
     </details>
     
 
@@ -152,8 +156,8 @@ $color-classes: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 56-56
-- **Lines (code):** 57-61
+- **Lines (comments):** 60-60
+- **Lines (code):** 61-65
     </details>
     
   
@@ -184,8 +188,8 @@ Used to override or extend the color palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 63-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 67-73
+- **Lines (code):** 75-77
     </details>
     
 
@@ -240,8 +244,8 @@ Set ouput classes for all-color-class-styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 95-96
-- **Lines (code):** 98-100
+- **Lines (comments):** 99-100
+- **Lines (code):** 102-104
     </details>
     
 
@@ -281,8 +285,8 @@ Set color contexts
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 107-117
-- **Lines (code):** 119-121
+- **Lines (comments):** 111-121
+- **Lines (code):** 123-125
     </details>
     
 
@@ -342,8 +346,8 @@ Prints contexts styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 146-147
-- **Lines (code):** 149-155
+- **Lines (comments):** 150-151
+- **Lines (code):** 153-159
     </details>
     
 
@@ -385,8 +389,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 179-186
-- **Lines (code):** 188-197
+- **Lines (comments):** 183-190
+- **Lines (code):** 192-201
     </details>
     
 
@@ -453,8 +457,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 199-203
-- **Lines (code):** 205-214
+- **Lines (comments):** 203-207
+- **Lines (code):** 209-218
     </details>
     
 
@@ -514,8 +518,8 @@ Get a color from the palette by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-93
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-97
     </details>
     
 
@@ -565,8 +569,8 @@ Get a context by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 123-125
-- **Lines (code):** 127-129
+- **Lines (comments):** 127-129
+- **Lines (code):** 131-133
     </details>
     
 
@@ -616,8 +620,8 @@ Get a context's value'
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 131-134
-- **Lines (code):** 136-144
+- **Lines (comments):** 135-138
+- **Lines (code):** 140-148
     </details>
     
 
@@ -668,8 +672,8 @@ Lighten a color using the default white by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 157-162
-- **Lines (code):** 164-166
+- **Lines (comments):** 161-166
+- **Lines (code):** 168-170
 - **Author:** 
     </details>
     
@@ -726,8 +730,8 @@ Darken a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 168-173
-- **Lines (code):** 175-177
+- **Lines (comments):** 172-177
+- **Lines (code):** 179-181
 - **Author:** Kitty Giraudel
     </details>
     

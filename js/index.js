@@ -11,4 +11,6 @@
 export { CssBreakpoints } from "./helpers/css-breakpoint.js";
 export * as events from "./events/index.js";
 export * as grid from "./ui/grid.js";
+export * as collapsible from "./ui/collapsible.js";
+export * as popover from "./ui/popover.js";
 export * as tabs from "./ui/tabs.js";

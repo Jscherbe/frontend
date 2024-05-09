@@ -1,9 +1,11 @@
 @use "ulu";
 @use "vars";
 
-$border: 1px solid ulu.color-get("rule");
+$border-color: ulu.color-get("rule-light");
+$border: 1px solid $border-color;
 $background-color: white;
 $color: inherit;
+$padding: 0.5em;
 $header-background-color: white;
 $cell-background-color: #F9F9F9;
 $muted-row-background-color: ulu.color-shade(white, 2%);
@@ -25,8 +27,19 @@ table.site-data-table {
 }
 .site-data-table,
 .wysiwyg table {
+  
   // @include ulu.typography-size("small", $only-font-size: true);
   line-height: ulu.typography-get("line-height-dense" );
+  caption {
+    background-color: ulu.color-tint(ulu.color-get("accent"), 90%);
+    border-top: $border;
+    border-bottom: 2px solid ulu.color-get("accent");
+    margin: 0;
+    padding: 1em $padding;
+    font-weight: bold;
+    @include  ulu.typography-size("large", $only-font-size: true);
+    color: ulu.color-get("accent");
+  }
   th,
   td {
     vertical-align: top;
@@ -60,7 +73,7 @@ table.site-data-table {
   }
   th,
   td {
-    padding: 0.5em;
+    padding: $padding;
   }
   .site-data-table__row-muted {
     background-color: $muted-row-background-color;

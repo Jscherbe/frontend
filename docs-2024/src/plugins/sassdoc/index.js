@@ -13,7 +13,7 @@ const isSubdir = (parent, dir) => {
 let running = false;
 
 const src = path.resolve(".", "scss/");
-const dist = path.resolve(__dirname, "../../../public/");
+const dist = path.resolve(__dirname, "../../../content/");
 const commonConfig = {
   previewHead: `
     <title>ULU Example</title> 

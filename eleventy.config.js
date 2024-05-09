@@ -8,15 +8,18 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import navTreePlugin from "./docs-2024/src/plugins/nav-tree/index.js";
 // import sassPlugin from "./docs-2024/src/plugins/sass/index.js";
 import sassdocPlugin from "./docs-2024/src/plugins/sassdoc/index.js";
+import optionsTablePlugin from "./docs-2024/src/plugins/options-table/index.js";
 import jsdocPlugin from "./docs-2024/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
-import common from "./docs.common.config.js";
 
 // const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const { NO_DOC_GEN } = process.env;
+
 export default async function(eleventyConfig) {
   eleventyConfig.setServerOptions({ 
-    port: common.eleventyServerPort // Needed for asset server
+    port: 8080, // Needed for asset server
+    domDiff: false, // Messes up asset server (removes vite embeddedstyles from head)
   }); 
   eleventyConfig.addPassthroughCopy("src");
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
@@ -37,8 +40,12 @@ export default async function(eleventyConfig) {
   //   }
   // }); 
   // eleventyConfig.addWatchTarget(common.paths.sassTheme);
-  eleventyConfig.addPlugin(jsdocPlugin);
-  eleventyConfig.addPlugin(sassdocPlugin);
+  if (!NO_DOC_GEN) {
+    eleventyConfig.addPlugin(jsdocPlugin);
+    eleventyConfig.addPlugin(sassdocPlugin);
+  }
+  
+  eleventyConfig.addPlugin(optionsTablePlugin);
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo
   eleventyConfig.addPlugin(navTreePlugin, {
     toHtml: {
@@ -49,7 +56,7 @@ export default async function(eleventyConfig) {
   
   return {
     dir: {
-      input: "docs-2024/public",
+      input: "docs-2024/content",
       output: "docs-2024/dist",
       includes: "../src/templates",
       layouts: "../src/templates/layouts",

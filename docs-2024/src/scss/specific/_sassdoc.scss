@@ -7,10 +7,10 @@
   display: flex;
   align-items: center;
   // background-color: white;
-  border-top: ulu.element-get-rule-style("light");
-  border-top-width: 10px;
-  border-top-color: #e4e4e4;
-  padding-top: 1em;
+  border-bottom: ulu.element-get-rule-style("light");
+  border-bottom-width: 3px;
+  // border-bottom-color: #e4e4e4;
+  padding-bottom: 1em;
   margin: 4em 0 1em 0;
   h3 {
     margin: 0 1em 0 0;

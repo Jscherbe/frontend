@@ -1,7 +1,22 @@
 
 {% extends "html.njk" %}
 {% block main %}
-  <div class="container wysiwyg">
-    {{ content | safe }}
+  <div class="home">
+    <div class="home__header">
+      <div class="container-full">
+        <h1 class="h1">
+          Ulu<span class="hidden-visually">:</span> 
+          <span class{{ title }}
+        </h1>
+        <p class="type-large type-light">
+          {{ intro }}
+        </p>
+      </div>
+    </div>
+    <div class="home__body">
+      <div class="page__body-top container wysiwyg">
+        {{ content | safe }}
+      </div>
+    </div>
   </div>
 {% endblock %}

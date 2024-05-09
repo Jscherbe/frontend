@@ -10,6 +10,7 @@
 @forward "list-unordered" as list-unordered-*;
 @forward "list-ordered" as list-ordered-*;
 @forward "fill-context" as fill-context-*;
+@forward "popover" as popover-*;
 
 @use "sass:map";
 
@@ -22,6 +23,7 @@
 @use "list-unordered";
 @use "list-ordered";
 @use "fill-context";
+@use "popover";
 
 // Used to check against user's includes
 
@@ -34,6 +36,7 @@ $-all-includes: (
   "list-unordered" : true,
   "list-ordered" : true,
   "fill-context" : true,
+  "popover" : true,
 );
 
 /// Prints all Components styles
@@ -71,5 +74,8 @@ $-all-includes: (
   }
   @if (map.get($-all-includes, "fill-context")) {
     @include fill-context.styles;
+  }
+  @if (map.get($-all-includes, "popover")) {
+    @include popover.styles;
   }
 }

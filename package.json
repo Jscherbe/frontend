@@ -31,6 +31,8 @@
     "docs:update:js": "node ./docs-src/.vitepress/jsdoc.js",
     "types": "npx tsc",
     "newdocs:dev": "npx @11ty/eleventy --serve",
+    "newdocs:dev:incremental": "npx @11ty/eleventy --serve --incremental",
+    "newdocs:dev:nogen": "NO_DOC_GEN=true npx @11ty/eleventy --serve --incremental",
     "newdocs:dev:debug": "node --inspect-brk ./node_modules/.bin/eleventy --serve",
     "newdocs:build": "npx @11ty/eleventy",
     "newdocs:assets:dev": "vite --config docs.vite.config.js",
@@ -80,6 +82,7 @@
     "vitepress": "^1.0.0-rc.27"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.6.5",
     "@ulu/utils": "^0.0.6",
     "aria-tablist": "^1.2.2",
     "autoprefixer": "^10.4.16",

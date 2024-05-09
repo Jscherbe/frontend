@@ -3,7 +3,7 @@
 
 @include ulu.color-set((
   "type" :                    vars.$color-type,
-  // "headline" :                rgb(62, 53, 133),
+  "headline" :                vars.$color-type-secondary,
   "type-secondary" :          vars.$color-type-secondary,
   "type-tertiary" :           vars.$color-type-tertiary,
   "type-disabled" :           vars.$color-type-disabled,
@@ -18,6 +18,8 @@
   "link:active" :             vars.$color-link-hover,
   "link:visited" :            vars.$color-link-visited,
   "bullet" :                  inherit,
+  "control-background" :      vars.$color-violet,
+  "control-background:hover" :vars.$color-violet-dark,
 ));
 
 

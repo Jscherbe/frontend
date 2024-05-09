@@ -1,3 +1,9 @@
+SCSS Updates:
+  ☐ Rule styles should be defined as object so that colors can be keys instead of hardcoded
+    * Requires resetting the rule style manually now to update from default color
+    ☐ What about transitioning to css variables for everything?
+      * Get rid of color modules stuff? just make them variables. Would simplify a lot?
+      * Do this once everything is finished
 Bring in Vue components as a separate package:
   ☐ Decided that vue stuff should stay seperate as we wouldn't want to udpate this library to make changes to vue components (as vue changes over time)
     ☐ This other module may use peer deps or something to limit which version of ulu it works with

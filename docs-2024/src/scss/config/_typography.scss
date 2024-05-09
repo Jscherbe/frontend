@@ -8,84 +8,22 @@
   "font-family" :             ("Inter", sans-serif),
   "font-family-sans" :        ("Inter", sans-serif),
   "font-weight-semibold" :    500,
+  "margin-top" :              1.5em
 ));
 @include ulu.typography-set-sizes(ulu.typography-get-default-sizes(), "overwrite");
-// @include ulu.typography-set-sizes((
-//   "large-xx" : (
-//     "font-size":              32px,
-//     "helper-class" :          true,
-//     "helper-class-prefixed" : true,
-//   ),
-//   "large-x" : (
-//     "font-size":              22px,
-//     "helper-class" :          true,
-//     "helper-class-prefixed" : true,
-//     "color" :                 vars.$color-blue,
-//     "font-weight":            700,
-//     "breakpoints" : (
-//       "medium" : (
-//         "direction" :         "max",
-//         "font-size":          20px,
-//       )
-//     )
-//     ),
-//   "large" : (
-//     "font-size":              18px,
-//     "helper-class" :          true,
-//     "helper-class-prefixed" : true,
-//     // "font-family" :           vars.$font-family-serif,
-//     // "breakpoints" : (
-//     //   "medium" : (
-//     //     "direction" :         "max",
-//     //     "font-size":          16px,
-//     //   )
-//     // )
-//   ),
-//   "base" : (
-//     "font-size":              16px,
-//     "line-height":            true,
-//     "helper-class" :          true,
-//     "helper-class-prefixed" : true,
-//   ),
-//   "small" : (
-//     "font-size":              14px,
-//     "helper-class" :          true,
-//     "helper-class-prefixed" : true,  
-//   ),
-//   "h1" : (
-//     "font-size":              48px,
-//     "line-height":            1.25,
-//     "margin-bottom" :         0.25em,
-//     // how to set up responsive change on individual classes
-//     // start at successful mobile sizes and work up from there
-//     // "responsive":             0.5vw,
-//     // "breakpoints" : (
-//     //   "medium" : (
-//     //     "direction" :         "max",
-//     //     "font-size":          38px,
-//     //   )
-//     // )
-//   ),
-//   "h2" : (
-//     "font-size":              32px,
-//     "margin-bottom" :         0.7em,
-//     "font-weight" :           "normal",
-//   ),
-//   "h3" : (
-//     "font-size":              28px,
-//     "margin-bottom" :         0.5em,
-//   ),
-//   "h4" : (
-//     "font-size":              18px,
-//     "font-family" :           vars.$font-family-serif,
-//     "margin-bottom" :         0.5em,
-//     "color" :                 vars.$color-blue,
-//   ),
-//   "h5" : (
-//     "font-size":              16px,
-//     "margin-bottom" :         0.5em,
-//     "font-family" :           vars.$font-family-serif,
-//     "color" :                 vars.$color-green,
-//   ),
-//   ), "deep");
+@include ulu.typography-set-sizes((
+  "h1" : (
+    "color" : "accent",
+    // "font-weight" : normal,
+    "font-size": 50px,
+    "margin-top" : null
+  ),
+  "h2" : (
+    "font-size": 38px,
+    // "font-weight" : normal,
+    "color" : "accent",
+    "margin-top" : 2.5em,
+    "margin-bottom" : 1em,
+  ),
+), "deep");
                           

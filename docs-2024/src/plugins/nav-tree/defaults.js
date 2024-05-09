@@ -16,8 +16,8 @@ export default {
   /**
    * Exclude an item from being put into the tree (passed collection entry object)
    */
-  exclude(_entry) {
-    return false;
+  exclude(entry) {
+    return !!entry.data.notInMenuTree; 
   },
   /**
    * Can be either a section string, or true (current page's section)

@@ -11,11 +11,29 @@
   <a href="#main" class="site-skip-link hidden-visually-focusable">
     Skip to main content
   </a>
-  <a class="header__logo" href="/">
-    {% include "partials/logo.njk" %}
-  </a>
+  <div class="header__main">
+    <a class="header__logo" href="/">
+      {% include "partials/logo.njk" %}
+    </a>
+  </div>
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
-    {{ menu | safe }}
+    <div class="header__nav-links">
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+      >
+        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+      </a>
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend"
+      >
+        <span style="font-size: 70%">NPM</span>
+      </a>
+    </div>
+    <div class="header__nav-menu">
+      {{ menu | safe }}
+    </div>
   </nav>
 </header>

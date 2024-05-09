@@ -24,8 +24,8 @@ $-fallbacks: (
 
 $config: (
   "padding":                 (0.75em 1.5em),
-  "background-color":        color.tint(black, 30%),
-  "background-color-hover": black,
+  "background-color":        "control-background",
+  "background-color-hover":  "control-background:hover",
   "font-family":             inherit,
   "white-space" :            nowrap,
   "font-weight":             bold,
@@ -34,14 +34,13 @@ $config: (
   "text-transform":          none,
   "text-shadow":             none,
   "font-size":               "base",
-  "color":                   white,
-  "color-hover":            white,
-  "color-active":            white,
+  "color":                   "control",
+  "color-hover":             "control:hover",
   "box-shadow":              true,
   "border-radius":           2rem,
-  "border-width":            0,
-  "border-color":            transparent,
-  "border-color-hover":     transparent,
+  "border-width":            1px,
+  "border-color":            "control-background",
+  "border-color-hover":      "control-background:hover",
   "margin":                  (0.45em 0.5em 0.45em 0),
   "min-width":               9rem,
   "icon-size":               2.5rem,
@@ -85,7 +84,7 @@ $styles: (
   "outline" : (
     "background-color" : transparent,
     "color" : "type",
-    "border-color" : "rule",
+    "border-color" : "rule-light",
     "box-shadow" : none,
     "hover" : (
       "background-color" : "white",
@@ -175,12 +174,12 @@ $styles: (
   white-space: get("white-space");
   max-width: 100%; // Questionable, not sure if it's needed
   flex-shrink: 0; 
-  // Should override link visted coloring
+  // Should override link visited coloring
   &,
   &:visited {
     color: color.get(get("color"));
-    border: get("border-width") solid get("border-color");
-    background-color: get("background-color");
+    border: get("border-width") solid color.get(get("border-color"));
+    background-color: color.get(get("background-color"));
     text-decoration: get("text-decoration");
   }
   &:last-child {
@@ -188,9 +187,9 @@ $styles: (
   }
   &:hover,
   &:focus {
-    color: get("color-hover");
-    background-color: get("background-color-hover");
-    border-color: get("border-color-hover");
+    color: color.get(get("color-hover"));
+    background-color: color.get(get("background-color-hover"));
+    border-color: color.get(get("border-color-hover"));
     text-decoration: get("text-decoration");
   }
 }

@@ -4,21 +4,44 @@
 $padding: 1rem;
 
 .header {
+  background-color: ulu.color-tint(vars.$color-gray-dark, 95%);
+  display: flex;
+  flex-direction: column;
   // display: flex;
   // padding: $padding;
 }
-.header__logo {
+.header__main {
+  width: 100%;
   display: block;
   padding: $padding;
-  border-bottom: ulu.element-get-rule-style("light");
+  // border-bottom: ulu.element-get-rule-style("light");
+  background-color: vars.$color-violet;
+  color: white;
   position: sticky;
   top: 0;
-  background-color: white;
+}
+
+.header__logo {
+  &,
+  &:hover,
+  &:focus {
+    color: white;
+  }
 }
 .header__nav {
-  
+  width: 100%;
+}
+.header__nav-menu {
   padding: $padding;
-  // margin-top: 1em;
+}
+.header__nav-links {
+  // padding: 0.1em $padding;
+  // width: 100%;
+  // margin-top: auto;
+  // background-color: ulu.color-tint(vars.$color-gray-dark, 90%);
+  position: fixed;
+  top: 0.25rem;
+  right: 1rem;
 }
 // .header__nav {
 //   margin-left: auto;

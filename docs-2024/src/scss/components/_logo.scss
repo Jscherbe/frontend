@@ -11,22 +11,12 @@
   text-transform: uppercase;
   margin-right: 0.5em;
   padding-right: 0.5em;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #0000006b;
   @include ulu.typography-size("large-x", $only-font-size: true);
-  &,
-  &:hover,
-  &:focus {
-    color: ulu.color-get("accent");
-  }
+  
 }
 .logo__subtitle {
-  
+  opacity: 0.6;
   font-weight: ulu.typography-get("font-weight-light");
-  color: ulu.color-get("type-secondary");
   @include ulu.typography-size("small", $only-font-size: true);
-  &,
-  &:hover,
-  &:focus {
-    color: ulu.color-get("type-secondary");
-  }
 }

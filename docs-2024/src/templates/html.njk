@@ -8,14 +8,12 @@
 				{{ content | toc | safe }}
 			</div>
 		{% endif %}
-		<div class="page__body">
-			<main id="main">
-				{% block main %}
-					{{ content | safe }}
-				{% endblock %}
-			</main>
-			{% include "partials/footer.njk" %}
-		</div>
+		<main id="main" class="page__body">
+			{% block main %}
+				{{ content | safe }}
+			{% endblock %}
+		</main>
+		{% include "partials/footer.njk" %}
 		{% include "partials/scripts.njk" %}
 		{% block scripts %}{% endblock %}
 	</body>

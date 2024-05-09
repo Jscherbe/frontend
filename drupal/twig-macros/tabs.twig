@@ -1,0 +1,84 @@
+{#
+* ==============================================================================
+* Interactive tab Interface (Aria-tablist implementation)
+* ==============================================================================
+*
+* @version 1.0.2
+*
+* @example
+  {% import directory ~ '/templates/_macros/tabs.twig' as tabMacros %}
+  {{ set tabs = [
+    {
+      tab: "About",
+      panel: aboutMarkup
+    },
+    {
+      tab: "Directions",
+      panel: directionsMarkup
+    }
+  ] }}
+  {{ tabMacros.tabs(tabs, {} ) }}
+* @version 1.0.0
+* @param {Array[Tab]} tabs Array of config objects per tab/panel
+* @property {Object} item Config object example
+* @property {Markup} item.tab Markup to be included in tab button (no interactive)
+* @property {Markup} item.panel Markup to be included in panel
+* @property {Boolean} item.open This panel should be open by default
+* @param {Object} options Configuration
+* @param {Object} options.modifier Modifer class (needs to correspond with styling)
+#}
+
+{% macro tabs(tabs, options = {}) %}
+  {% set defaults = {
+    modifier: "default",
+    equalHeights: false,
+    openByUrlHash: false,
+    vertical: false,
+    fullpage: false,
+    panelContainer: false,
+    class: null,
+  } %}
+  {% set options = defaults|merge(options) %}
+  {% set idPrefix = ctwig_uniqid("site-tabs--") %}
+  {% set attributes = create_attribute({
+    class: [
+      "site-tabs",
+      options.vertical ? 'site-tabs--' ~ 'vertical',
+      options.fullpage ? 'site-tabs--' ~ 'fullpage',
+      options.modifier ? 'site-tabs--' ~ options.modifier,
+      options.class
+    ]
+  }) %}
+  {# {% set mods = mods|map((m) => "site-tabs--#{ m }")|join(" ") %} #}
+  <div {{ attributes }}>
+    <div 
+      class="site-tabs__tablist" 
+      data-site-tablist="{{ options|json_encode }}"
+      {{ options.vertical ? 'aria-orientation="vertical"' }}
+    >
+      {% for item in tabs %}
+        <button 
+          type="button"
+          id="{{ idPrefix }}-{{ loop.index }}"
+          {{ item.open ? 'aria-selected="true"' }}
+        >
+          {{ item.tab }}
+        </button>
+      {% endfor %}
+    </div>
+    {% for item in tabs %}
+      <div
+        class="site-tabs__tabpanel"
+        aria-labelledby="{{ idPrefix }}-{{ loop.index }}"
+      >
+        {% if options.fullpage or options.panelContainer %}
+          <div class="site-tabs__tabpanel-container">
+            {{ item.panel }}
+          </div>
+        {% else %}
+          {{ item.panel }}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}

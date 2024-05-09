@@ -28,3 +28,35 @@
     {%- endfor %}
   </ul>
 {% endmacro %}
+
+
+{% macro optionsTable(items, options = {}) %}
+  <table class="site-data-table options-table">
+    {% if options.caption %}
+      <caption>{{ options.caption }}</caption>  
+    {% endif %}
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Value</th>
+        <th>Description/Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+        <tr>
+          <td><strong>{{ item.name }}</strong></td>
+          <td><strong>{{ item.values }}</strong></td>
+          <td>
+            <p v-if="item.description">
+              {{ item.description }}
+            </p>
+            <div v-if="item.example" class="options-table__example">
+              <code>{{ item.example }}</code>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}
