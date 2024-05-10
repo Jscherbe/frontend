@@ -13,10 +13,13 @@ const events = {
   pageResized(context) {
     context.dispatchEvent(new Event(getName("pageResized"), { bubbles: true }));
   }
-}
+};
 
 // Add global document events
-window.addEventListener('resize', debounce(() => dispatch("pageResized", document), 250));
+if (typeof window !== "undefined") {
+  window.addEventListener("resize", debounce(() => dispatch("pageResized", document), 250));
+}
+
 
 /**
  * Triggers one of our custom events
@@ -36,7 +39,7 @@ export function dispatch(type, context) {
 }
 
 /**
- * Handles the actual event names being used (future could namespace)
+ * Namespaced event
  * @param {String} type Type of event to get the actual event name for
  * @returns {String}
  */

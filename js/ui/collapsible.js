@@ -4,9 +4,9 @@
  * - Can use floating ui for positioning poppers (plugin)
  */
 
+import { getName as getEventName } from "../events/index.js";
 import { log, logError } from "../utils/logger.js";
 import { ensureId } from "../utils/dom.js";
-const initAttr = "data-ulu-init";
 
 /**
  * Class for accessible hide/show components
@@ -32,32 +32,28 @@ export class Collapsible {
      */
     openClass: "is-active",
     /**
-     * Callback called anytime there is a change (open/close)
-     */
-    onChange: ctx => {},
-    /**
      * Output debug info
      */
-    debug: false
+    debug: false,
+    onChange(_ctx) {
+      // do something
+    }
   };
   /**
-   * @param {Object} trigger Trigger button/element that opens/closes collapsible
-   * @param {Object} content The content element that the trigger reveals
+   * @param {Object} elements Elements object 
+   * @param {Node} elements.trigger Trigger button/element that opens/closes collapsible
+   * @param {Node} elements.content The content element that the trigger reveals
    * @param {Object} config Configuration options (see defaults)
    * @returns {Object} Collapsible instance
    */
-  constructor(trigger, content, config) {
+  constructor(elements, config) {
+    const { trigger, content } = elements;
     if (!trigger || !content) {
-      logError(this, "missing required configuration options (trigger/content)");
+      logError(this, "missing required elements (trigger or content)");
       return;
     }
     const options = Object.assign({}, Collapsible.defaults, config);
-    if (trigger.hasAttribute(initAttr)) {
-      logError("Attempted to re-initialize a collapsible");
-    } else {
-      trigger.setAttribute(initAttr, "");
-    }
-    this.elements = { trigger, content };
+    this.elements = elements;
     this.options = options;
     this.isOpen = false;
     ensureId(trigger);
@@ -97,20 +93,25 @@ export class Collapsible {
     content.setAttribute("aria-labelledby", trigger.id);
     this.setState(startOpen);
   }
+  createEvent(name, detail) {
+    return new CustomEvent(getEventName("collapsible:" + name), { detail });
+  }
   setState(isOpen, event) {
-    this.debugLog(this, "Set instance state, is open:", isOpen, this);
+    const ctx = { 
+      collapsible: this, 
+      isOpen, 
+      event 
+    };
+    this.debugLog(this, "Set state", ctx);
     const { trigger, content } = this.elements;
     const { openClass } = this.options;
-    const setClass = el => el.classList[isOpen ? 'add' : 'remove'](openClass)
+    const setClass = el => el.classList[isOpen ? "add" : "remove"](openClass);
     trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
     setClass(trigger);
     setClass(content);
     this.isOpen = isOpen;
-    this.options.onChange({ 
-      collapsible: this, 
-      isOpen, 
-      event 
-    });
+    this.options.onChange(ctx);
+    trigger.dispatchEvent(this.createEvent("change", ctx));
   }
   open(event) {
     this.setState(true, event);

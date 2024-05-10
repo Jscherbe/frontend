@@ -1,3 +1,17 @@
+JS Updates:
+  ☐ Consoder whether or not the init attributes are still nessary, maybe these shoudld all move to initializers
+  ☐ Seperate initializers and classes
+    * Like Collapsible, Tooltip (which don't do anything on their own and have to be used by an initializer or by the user directly)
+  ☐ Should popover be a class and then make an initializer
+    * This pattern could make this clearer and allow for custom usage
+      * for example Tooltip may be implemented like useFollow in vue in the future
+      * but still relies on the same behaviors
+  ☐ Like to unify the tooltip and popover underlying implementation (floating ui stuff)
+    * - popover (aria stuff)
+    *   - collapsible
+    *   - floating
+    * - tooltip
+    *   - floating
 SCSS Updates:
   ☐ Rule styles should be defined as object so that colors can be keys instead of hardcoded
     * Requires resetting the rule style manually now to update from default color

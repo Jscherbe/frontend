@@ -5,13 +5,13 @@
 // Tooltip
 // =============================================================================
 
-// Version:         1.0.1
+// Version:         1.0.2
 
 // Description:     Adds a single tooltip div to bottom of document to be used to 
 //                  show text/simple markup of mouse hover or focus
 
 import { logError } from "../utils/logger.js";
-import { createPopper } from '@popperjs/core';
+// import { createPopper } from '@popperjs/core';
 
 const ATTR_DESC = "aria-describedby";
 const popperOptions = {
@@ -45,15 +45,15 @@ export default class Tooltip {
     describedBy: false,
     arrowSize: 10,
     classes: []
-  }
+  };
   constructor(context, markup, config) {
     if (!context) {
-      logError(this, 'Missing context element');
+      logError(this, "Missing context element");
     }
     this.options = Object.assign({}, Tooltip.defaults, config);
     this.context = context;
     this.element = this.create(markup);
-    createPopper(context, this.element, popperOptions);
+    // createPopper(context, this.element, popperOptions);
   }
   create(markup) {
     const { namespace } = this.options;
