@@ -40,3 +40,5 @@ Todos:
     ☐ spinner
 Ideas:
   ☐ Add scaffolding @idea
+  ☐ Create something that will compile seperate stylesheets for all components, helpers, etc (to be used by CDN prototyping / quick patches unpkg, etc). 
+    ☐ Would allow team to add features without adding to stylesheet (we need modals quick, we need tooltips quick, just a thought)
