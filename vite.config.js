@@ -14,7 +14,7 @@ export default defineConfig({
     cssCodeSplit: false,
     outDir: "dist",
     rollupOptions: {
-      input: "dist-src/main.js",
+      input: "index.js",
       output: {
         entryFileNames: `ulu-frontend.min.js`,
         assetFileNames: `ulu-frontend.min.[ext]`,

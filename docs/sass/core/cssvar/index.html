@@ -1,0 +1,2102 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Cssvar
+  </title>
+  <meta name="description" content="Modular Sass Theming Library">
+  <meta name="generator" content="Eleventy v3.0.0">
+  
+  
+  <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
+
+  
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+
+  
+  
+  
+</head>
+	<body class="page">
+		
+
+
+<header class="page__header header">
+  <a href="#main" class="site-skip-link hidden-visually-focusable">
+    Skip to main content
+  </a>
+  <div class="header__main">
+    <a class="header__logo" href="/">
+      <div class="logo">
+  <span class="logo__main">Ulu</span>
+  <span class="logo__subtitle">Docs</span>
+</div>
+    </a>
+  </div>
+  <nav class="header__nav">
+    <h2 class="hidden-visually">Main Menu</h2>
+    <div class="header__nav-links">
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+      >
+        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+      </a>
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend"
+      >
+        <span style="font-size: 70%">NPM</span>
+      </a>
+    </div>
+    <div class="header__nav-menu">
+      
+      <ul class="nav-tree" data-menu-depth="1">
+        
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="book" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Guide
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Demos
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/guide/demos/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/data-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popovers
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/some-page/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Some Page
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="grid" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Sass Modules
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Core
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/core/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/calculate/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Calculate
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active is-active-trail">
+          
+        <a 
+          class="nav-tree__link  is-active is-active-trail" 
+          href="/sass/core/cssvar/" 
+          aria-current="page"
+        >
+          
+    
+    <span class="nav-tree__text">
+      Cssvar
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/element/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Element
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/path/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Path
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/selector/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Selector
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utility/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utility
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utils/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utils
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Base
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/base/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/elements/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/keyframes/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Keyframes
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/normalize/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Normalize
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Components
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/components/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/badge/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Badge
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/fill-context/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Fill-context
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/links/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Links
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-lines/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-ordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-ordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-unordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-unordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/rule/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Rule
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Helpers
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/helpers/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/display/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Display
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/utilities/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utilities
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Javascript API
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/javascript/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/events/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      events
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-css-breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/css-breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-file-save/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/file-save
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-node-data-manager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/node-data-manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-pause-youtube-video/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/pause-youtube-video
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-scrollbar-width-property/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/scrollbar-width-property
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-flipcard/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/flipcard
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-modals/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/modals
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller-pager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller-pager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-programmatic-modal/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/programmatic-modal
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-resizer/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/resizer
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-slider/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tabs/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/utils-logger/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      utils/logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+    </div>
+  </nav>
+</header>
+		
+			<div class="page__toc page-toc">
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            
+                <ol>
+                    
+                    <li><a href="#map-properties">Map Properties</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixins">Mixins</a>
+            
+                <ol>
+                    
+                    <li><a href="#mixin-set">set()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters">Parameters</a>
+            		</li>
+
+                    <li><a href="#require">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-declare">declare()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-1">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-1">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-1">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-declare-all">declare-all()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-2">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-2">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-2">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-declare-breakpoint">declare-breakpoint()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-3">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-3">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-3">Require</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#functions">Functions</a>
+            
+                <ol>
+                    
+                    <li><a href="#function-get">get()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-4">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-4">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns">Returns</a>
+            		</li>
+
+                    <li><a href="#require-4">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-name">name()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-5">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-5">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-1">Returns</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-use">use()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-6">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-6">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-2">Returns</a>
+            		</li>
+
+                    <li><a href="#require-5">Require</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </div>
+			</div>
+		
+		<main id="main" class="page__body">
+			
+  <div class="page__body-top container wysiwyg">
+    <h1 id="cssvar" tabindex="-1">Cssvar</h1>
+<p>Provides support for custom-properties implementations</p>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"prefix"</span> <span class="token punctuation">:</span> <span class="token string">""</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 12-14</li>
+<li><strong>Lines (code):</strong> 16-18  </details>
+</li>
+</ul>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">prefix</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;&quot;</td>
+<td style="text-align:left">Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change modules $config</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 20-23</li>
+<li><strong>Lines (code):</strong> 25-27  </details>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<p>Setting the prefix to 'ulu'</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> cssvar.<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token string">"prefix"</span> <span class="token punctuation">:</span> <span class="token string">"ulu"</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-declare" tabindex="-1">declare()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Outputs a single custom property declaration</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 67-74</li>
+<li><strong>Lines (code):</strong> 76-78  </details>
+</li>
+</ul>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<p>Declare a custom property</p>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">:root </span><span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> cssvar.<span class="token function">declare</span><span class="token punctuation">(</span><span class="token string">"base-color"</span><span class="token punctuation">,</span> red<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of property</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">The properties value to declare</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$prefix</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Override default prefix</td>
+<td style="text-align:left">$config.prefix</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#function-name">name()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-declare-all" tabindex="-1">declare-all()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Outputs a map as custom properties</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 80-86</li>
+<li><strong>Lines (code):</strong> 88-92  </details>
+</li>
+</ul>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<p>Declare each property in a map as a custom property</p>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">:root </span><span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> cssvar.<span class="token function">declare</span><span class="token punctuation">(</span><span class="token variable">$colors</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$props</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Properties to declare</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$prefix</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Override default prefix</td>
+<td style="text-align:left">$config.prefix</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#mixin-declare">declare()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-declare-breakpoint" tabindex="-1">declare-breakpoint()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Declare a custom property for current breakpoint</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 94-102</li>
+<li><strong>Lines (code):</strong> 104-116  </details>
+</li>
+</ul>
+<h4 id="examples-3" tabindex="-1">Examples</h4>
+<p>Declare each property in a map as a custom property</p>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">:root </span><span class="token punctuation">{</span>
+  <span class="token keyword">@include</span> cssvar.<span class="token function">declare-breakpoint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="parameters-3" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$breakpoints</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">breakpoint.get-sizes()</td>
+<td style="text-align:left">Breakpoints to declare</td>
+</tr>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">&quot;breakpoint&quot;</td>
+<td style="text-align:left">Name to use for custom property</td>
+</tr>
+<tr>
+<td style="text-align:left">$initial</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">breakpoint.get(&quot;null-name&quot;)</td>
+<td style="text-align:left">The value for the custom property when not within breakpoint</td>
+</tr>
+<tr>
+<td style="text-align:left">$prefix</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">$config.prefix</td>
+<td style="text-align:left">Override default prefix</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#mixin-declare">declare()</a></li>
+</ul>
+<h2 id="functions" tabindex="-1">Functions</h2>
+<div class="sassdoc-item-header">
+<h3 id="function-get" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a config option</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 29-33</li>
+<li><strong>Lines (code):</strong> 35-37  </details>
+</li>
+</ul>
+<h4 id="examples-4" tabindex="-1">Examples</h4>
+<p>Getting the config value for prefix</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$prefix</span></span><span class="token punctuation">:</span> cssvar.<span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"prefix"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of property</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">Map property value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li>require-map-get()</li>
+<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-name" tabindex="-1">name()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a custom property name (with optional prefix)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 39-44</li>
+<li><strong>Lines (code):</strong> 46-52  </details>
+</li>
+</ul>
+<h4 id="examples-5" tabindex="-1">Examples</h4>
+<p>Getting a custom property name</p>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">#</span><span class="token punctuation">{</span> cssvar.<span class="token function">name</span><span class="token punctuation">(</span><span class="token string">"base-color"</span><span class="token punctuation">)</span> <span class="token punctuation">}</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span></code></pre>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of custom property</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$prefix</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Override default prefix</td>
+<td style="text-align:left">$config.prefix</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-1" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">The formatted property name (unquoted string)</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-use" tabindex="-1">use()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Function to use a custom property within a declartion value</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 54-61</li>
+<li><strong>Lines (code):</strong> 63-65  </details>
+</li>
+</ul>
+<h4 id="examples-6" tabindex="-1">Examples</h4>
+<p>Print an custom property as a value</p>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">.test </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> cssvar.<span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"base-color"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of custom property</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$prefix</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Override default prefix</td>
+<td style="text-align:left">$config.prefix</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Formatted custom propety for use in property value (ie. var(...))</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#function-name">name()</a></li>
+</ul>
+
+  </div>
+
+		</main>
+		<footer></footer>
+		
+
+  <script src="http://localhost:5173/@vite/client" type="module"></script>
+  <script src="http://localhost:5173/docs-src/src/main.js" type="module"></script>
+
+<script>feather.replace();</script>
+		
+	</body>
+</html>

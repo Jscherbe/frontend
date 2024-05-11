@@ -1,0 +1,2909 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Typography
+  </title>
+  <meta name="description" content="Modular Sass Theming Library">
+  <meta name="generator" content="Eleventy v3.0.0">
+  
+  
+  <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
+
+  
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+
+  
+  
+  
+</head>
+	<body class="page">
+		
+
+
+<header class="page__header header">
+  <a href="#main" class="site-skip-link hidden-visually-focusable">
+    Skip to main content
+  </a>
+  <div class="header__main">
+    <a class="header__logo" href="/">
+      <div class="logo">
+  <span class="logo__main">Ulu</span>
+  <span class="logo__subtitle">Docs</span>
+</div>
+    </a>
+  </div>
+  <nav class="header__nav">
+    <h2 class="hidden-visually">Main Menu</h2>
+    <div class="header__nav-links">
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+      >
+        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+      </a>
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend"
+      >
+        <span style="font-size: 70%">NPM</span>
+      </a>
+    </div>
+    <div class="header__nav-menu">
+      
+      <ul class="nav-tree" data-menu-depth="1">
+        
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="book" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Guide
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Demos
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/guide/demos/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/data-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popovers
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/some-page/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Some Page
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="grid" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Sass Modules
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Core
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/core/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/calculate/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Calculate
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/cssvar/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Cssvar
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/element/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Element
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/path/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Path
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/selector/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Selector
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active is-active-trail">
+          
+        <a 
+          class="nav-tree__link  is-active is-active-trail" 
+          href="/sass/core/typography/" 
+          aria-current="page"
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utility/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utility
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utils/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utils
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Base
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/base/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/elements/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/keyframes/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Keyframes
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/normalize/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Normalize
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Components
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/components/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/badge/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Badge
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/fill-context/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Fill-context
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/links/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Links
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-lines/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-ordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-ordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-unordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-unordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/rule/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Rule
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Helpers
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/helpers/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/display/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Display
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/utilities/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utilities
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Javascript API
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/javascript/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/events/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      events
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-css-breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/css-breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-file-save/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/file-save
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-node-data-manager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/node-data-manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-pause-youtube-video/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/pause-youtube-video
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-scrollbar-width-property/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/scrollbar-width-property
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-flipcard/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/flipcard
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-modals/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/modals
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller-pager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller-pager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-programmatic-modal/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/programmatic-modal
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-resizer/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/resizer
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-slider/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tabs/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/utils-logger/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      utils/logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+    </div>
+  </nav>
+</header>
+		
+			<div class="page__toc page-toc">
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            
+                <ol>
+                    
+                    <li><a href="#map-properties">Map Properties</a>
+            		</li>
+
+                    <li><a href="#todos">Todos</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#variable-sizes">$sizes</a>
+            
+                <ol>
+                    
+                    <li><a href="#map-properties-1">Map Properties</a>
+            		</li>
+
+                    <li><a href="#todos-1">Todos</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixins">Mixins</a>
+            
+                <ol>
+                    
+                    <li><a href="#mixin-set">set()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-2">Todos</a>
+            		</li>
+
+                    <li><a href="#require">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-word-break">word-break()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-1">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-3">Todos</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-set-sizes">set-sizes()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-2">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-4">Todos</a>
+            		</li>
+
+                    <li><a href="#require-1">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-font-size-responsive">font-size-responsive()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-3">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-5">Todos</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-size">size()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-4">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-6">Todos</a>
+            		</li>
+
+                    <li><a href="#require-2">Require</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#functions">Functions</a>
+            
+                <ol>
+                    
+                    <li><a href="#function-get">get()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-5">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-7">Todos</a>
+            		</li>
+
+                    <li><a href="#require-3">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-scale">scale()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-6">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns">Returns</a>
+            		</li>
+
+                    <li><a href="#todos-8">Todos</a>
+            		</li>
+
+                    <li><a href="#require-4">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-scale-line-height">scale-line-height()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-7">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-1">Returns</a>
+            		</li>
+
+                    <li><a href="#todos-9">Todos</a>
+            		</li>
+
+                    <li><a href="#require-5">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-rem">rem()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-8">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-2">Returns</a>
+            		</li>
+
+                    <li><a href="#todos-10">Todos</a>
+            		</li>
+
+                    <li><a href="#require-6">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-em">em()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-9">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-3">Returns</a>
+            		</li>
+
+                    <li><a href="#todos-11">Todos</a>
+            		</li>
+
+                    <li><a href="#require-7">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-new-size">new-size()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-10">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-12">Todos</a>
+            		</li>
+
+                    <li><a href="#require-8">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-get-default-sizes">get-default-sizes()</a>
+            
+                <ol>
+                    
+                    <li><a href="#todos-13">Todos</a>
+            		</li>
+
+                    <li><a href="#require-9">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-get-size">get-size()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-11">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-4">Returns</a>
+            		</li>
+
+                    <li><a href="#todos-14">Todos</a>
+            		</li>
+
+                    <li><a href="#require-10">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-font-size">font-size()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-12">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-15">Todos</a>
+            		</li>
+
+                    <li><a href="#require-11">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-unitless-line-height">unitless-line-height()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-13">Parameters</a>
+            		</li>
+
+                    <li><a href="#throw">Throw</a>
+            		</li>
+
+                    <li><a href="#todos-16">Todos</a>
+            		</li>
+
+                    <li><a href="#require-12">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-get-size-converted-value">get-size-converted-value()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-14">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-17">Todos</a>
+            		</li>
+
+                    <li><a href="#require-13">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-get-size-value">get-size-value()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-15">Parameters</a>
+            		</li>
+
+                    <li><a href="#todos-18">Todos</a>
+            		</li>
+
+                    <li><a href="#require-14">Require</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </div>
+			</div>
+		
+		<main id="main" class="page__body">
+			
+  <div class="page__body-top container wysiwyg">
+    <h1 id="typography" tabindex="-1">Typography</h1>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"font-size"</span> <span class="token punctuation">:</span> 16px<span class="token punctuation">,</span> 
+  <span class="token string">"font-family"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>ui-sans-serif<span class="token punctuation">,</span> <span class="token string">"Open Sans"</span><span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"font-family-sans"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>ui-sans-serif<span class="token punctuation">,</span> <span class="token string">"Open Sans"</span><span class="token punctuation">,</span> Helvetica<span class="token punctuation">,</span> Arial<span class="token punctuation">,</span> sans-serif<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"font-family-serif"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>Cambria<span class="token punctuation">,</span> Georgia<span class="token punctuation">,</span> serif<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"font-family-monospace"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>Menlo<span class="token punctuation">,</span> Consolas<span class="token punctuation">,</span> Monaco<span class="token punctuation">,</span> monospace<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"font-weight"</span> <span class="token punctuation">:</span> inherit<span class="token punctuation">,</span>
+  <span class="token string">"font-weight-light"</span> <span class="token punctuation">:</span> 300<span class="token punctuation">,</span>
+  <span class="token string">"font-weight-normal"</span> <span class="token punctuation">:</span> normal<span class="token punctuation">,</span>
+  <span class="token string">"font-weight-semibold"</span> <span class="token punctuation">:</span> 600<span class="token punctuation">,</span>
+  <span class="token string">"font-weight-bold"</span> <span class="token punctuation">:</span> bold<span class="token punctuation">,</span>
+  <span class="token string">"line-height"</span> <span class="token punctuation">:</span> 1.5<span class="token punctuation">,</span>
+  <span class="token string">"line-height-dense"</span><span class="token punctuation">:</span> 1.3<span class="token punctuation">,</span>
+  <span class="token string">"line-height-spaced"</span><span class="token punctuation">:</span> 1.75<span class="token punctuation">,</span>
+  <span class="token string">"size-ratio"</span><span class="token punctuation">:</span> 1.8<span class="token punctuation">,</span>
+  <span class="token string">"size-line-height-ratio"</span><span class="token punctuation">:</span> 0.97<span class="token punctuation">,</span>
+  <span class="token string">"scale-steps"</span><span class="token punctuation">:</span> 5<span class="token punctuation">,</span>
+  <span class="token string">"responsive-change"</span><span class="token punctuation">:</span> 0.05vw<span class="token punctuation">,</span> 
+  <span class="token string">"margin-top"</span><span class="token punctuation">:</span>  <span class="token null keyword">null</span><span class="token punctuation">,</span>
+  <span class="token string">"margin-bottom"</span><span class="token punctuation">:</span>  1em<span class="token punctuation">,</span>
+  <span class="token string">"letter-spacing-uppercase"</span> <span class="token punctuation">:</span> 0.04em<span class="token punctuation">,</span>
+  <span class="token string">"max-width"</span> <span class="token punctuation">:</span> 60rem<span class="token punctuation">,</span>
+  <span class="token string">"max-width-small"</span> <span class="token punctuation">:</span> 50rem<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 17-29</li>
+<li><strong>Lines (code):</strong> 31-54  </details>
+</li>
+</ul>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$config.font-size</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default font size (use pixels, converted, is used for rem base)</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.font-family</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default font family</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.font-family-monospace</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Base font-family for monospace</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.line-height</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default line height</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.line-height-dense</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default dense line height</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.size-ratio</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Font size scale when using preset sizes, ratio mixin)</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.size-line-height-ratio</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desrireable</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.responsive-change</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Amount to scale typography by browser's width (use viewport units)</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.margin-top</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default margin for typography (like paragraphs)</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.margin-bottom</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default margin for typography (like paragraphs)</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.headline-color</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Default color for headlines if using preset sizes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="variable-sizes" tabindex="-1">$sizes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Default size presets</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$sizes</span></span><span class="token punctuation">:</span> <span class="token function">get-default-sizes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 147-156</li>
+<li><strong>Lines (code):</strong> 158-158  </details>
+</li>
+</ul>
+<h4 id="map-properties-1" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$size.name</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Name of size</td>
+</tr>
+<tr>
+<td style="text-align:left">$size.name.font-size</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Font size in rems or pixels</td>
+</tr>
+<tr>
+<td style="text-align:left">$size.name.line-height</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Line height (unitless)</td>
+</tr>
+<tr>
+<td style="text-align:left">$size.name.responsive</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Apply responsive sizes</td>
+</tr>
+<tr>
+<td style="text-align:left">$size.name.base-class</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">This style should be included in the base (top can be overriden)</td>
+</tr>
+<tr>
+<td style="text-align:left">$size.name.helper-class</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">This style should be included in the helpers (overrides)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-1" tabindex="-1">Todos</h4>
+<ul>
+<li>Add adaptive and use a map of breakpoints and whether it's up or down</li>
+<li>Add headlines</li>
+</ul>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change modules $config</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 56-58</li>
+<li><strong>Lines (code):</strong> 60-62  </details>
+</li>
+</ul>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+<tr>
+<td style="text-align:left">@include typography.set-options(( &quot;font-size&quot; : 14px ));</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-2" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-word-break" tabindex="-1">word-break()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Break word stradegy</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 115-116</li>
+<li><strong>Lines (code):</strong> 118-122  </details>
+</li>
+</ul>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$force</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Force words to break (will have unusual breaks)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-3" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set-sizes" tabindex="-1">set-sizes()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Update the typography presets map</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 180-187</li>
+<li><strong>Lines (code):</strong> 189-191  </details>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<p>Setting the error and type color</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> typography.<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token string">"small"</span> <span class="token punctuation">:</span> 0.8rem
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">A map to merge into the color palette</td>
+</tr>
+<tr>
+<td style="text-align:left">$deep</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Use deep merge</td>
+</tr>
+<tr>
+<td style="text-align:left">$overwrite</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Overwrite the presets completly (cannot be used with deep)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-4" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li>map-merge()</li>
+<li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-font-size-responsive" tabindex="-1">font-size-responsive()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Print's the responsive type formula</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 277-279</li>
+<li><strong>Lines (code):</strong> 281-283  </details>
+</li>
+</ul>
+<h4 id="parameters-3" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$font-size</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name to retrieve from sizes map or a unique size map that follows the API</td>
+</tr>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Modifications to be merged into size before using</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-5" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-size" tabindex="-1">size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Print a typography size (font-size, line-height)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 285-288</li>
+<li><strong>Lines (code):</strong> 290-330  </details>
+</li>
+</ul>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$nameOrMap</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name to retrieve from sizes map or a unique size map that follows the API</td>
+</tr>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Modifications to be merged into size before using</td>
+</tr>
+<tr>
+<td style="text-align:left">$only-font-size</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Only print the font size</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-6" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/typography/#mixin-font-size-responsive">font-size-responsive()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get-size">get-size()</a></li>
+<li><a href="/sass/core/typography/#function-get-size-converted-value">get-size-converted-value()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/typography/#function-get-size-value">get-size-value()</a></li>
+</ul>
+<h2 id="functions" tabindex="-1">Functions</h2>
+<div class="sassdoc-item-header">
+<h3 id="function-get" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a config option</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 64-66</li>
+<li><strong>Lines (code):</strong> 68-70  </details>
+</li>
+</ul>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+<tr>
+<td style="text-align:left">@include typography.set-options(( &quot;font-size&quot; : 14px ));</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-7" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li>require-map-get()</li>
+<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-scale" tabindex="-1">scale()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get scale of the base font-size</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 72-74</li>
+<li><strong>Lines (code):</strong> 76-78  </details>
+</li>
+</ul>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$step</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Current size in the scale you want to calculate</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Scaled value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-8" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/calculate/#function-ratio-scale-size">ratio-scale-size()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-scale-line-height" tabindex="-1">scale-line-height()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get scale of the line-height</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 80-83</li>
+<li><strong>Lines (code):</strong> 85-87  </details>
+</li>
+</ul>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$step</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Current size in the scale you want to calculate</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-1" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Scaled value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-9" tabindex="-1">Todos</h4>
+<ul>
+<li>Setup breakpoints</li>
+</ul>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/calculate/#function-ratio-scale-size">ratio-scale-size()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-rem" tabindex="-1">rem()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Convert pixel value to rem value based on typography $font-size</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 89-91</li>
+<li><strong>Lines (code):</strong> 93-99  </details>
+</li>
+</ul>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$pixels</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Pixel value to convert from</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Rem value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-10" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-6" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-em" tabindex="-1">em()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Changes pixels to em</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 101-104</li>
+<li><strong>Lines (code):</strong> 106-113  </details>
+</li>
+</ul>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Pixel value to convert from</td>
+</tr>
+<tr>
+<td style="text-align:left">$base</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Conversion base (defaults to font-size)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Rem value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-11" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-7" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-new-size" tabindex="-1">new-size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Creates a size map</p>
+<ul>
+<li>
+<p>This is just an accelerator for creating a size map</p>
+</li>
+<li>
+<p>You can pass your own size maps using set-sizes()</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _typography.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> typography</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 124-129</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 131-145</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$font-size</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Font size</td>
+</tr>
+<tr>
+<td style="text-align:left">$line-height</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Line height</td>
+</tr>
+<tr>
+<td style="text-align:left">$is-headline</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Is a headline</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-12" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-8" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-default-sizes" tabindex="-1">get-default-sizes()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Function that returns default sizes</p>
+<ul>
+<li>
+<p>Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _typography.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> typography</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 160-161</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 162-178</p>
+  </details>
+</li>
+</ul>
+<h4 id="todos-13" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-9" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/typography/#function-new-size">new-size()</a></li>
+<li><a href="/sass/core/typography/#function-scale">scale()</a></li>
+<li><a href="/sass/core/typography/#function-scale-line-height">scale-line-height()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-size" tabindex="-1">get-size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a size's map</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 193-195</li>
+<li><strong>Lines (code):</strong> 197-199  </details>
+</li>
+</ul>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of size</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-14" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-10" tabindex="-1">Require</h4>
+<ul>
+<li>require-map-get()</li>
+<li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-font-size" tabindex="-1">font-size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Print a font-size for a given size</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 201-203</li>
+<li><strong>Lines (code):</strong> 205-209  </details>
+</li>
+</ul>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Size name</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-15" tabindex="-1">Todos</h4>
+<ul>
+<li>Remove doesn't work for breakpoints or responsive</li>
+</ul>
+<h4 id="require-11" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get-size">get-size()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/typography/#function-rem">rem()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-unitless-line-height" tabindex="-1">unitless-line-height()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Forces conversion to unitless line-height</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 211-213</li>
+<li><strong>Lines (code):</strong> 215-229  </details>
+</li>
+</ul>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$line-height</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Line height size in px, em, or rem</td>
+</tr>
+<tr>
+<td style="text-align:left">$font-size</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Font size in px, em, or rem</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw" tabindex="-1">Throw</h4>
+<ul>
+<li>ULU: Unable to convert to unitless line-height for: #{ $line-height }</li>
+</ul>
+<h4 id="todos-16" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-12" tabindex="-1">Require</h4>
+<ul>
+<li>strip-unit()</li>
+<li><a href="/sass/core/typography/#function-rem">rem()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-size-converted-value" tabindex="-1">get-size-converted-value()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Print a value from the size and convert it (to appropriate unit for framework)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 230-232</li>
+<li><strong>Lines (code):</strong> 234-260  </details>
+</li>
+</ul>
+<h4 id="parameters-14" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$size</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Size's map</td>
+</tr>
+<tr>
+<td style="text-align:left">$props</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The property to get</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-17" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-13" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/typography/#function-unitless-line-height">unitless-line-height()</a></li>
+<li><a href="/sass/core/typography/#function-rem">rem()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-size-value" tabindex="-1">get-size-value()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a sizes property value that doesn't need conversion</p>
+<ul>
+<li>
+<p>Reason: Will map to default if user set's size prop to true</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _typography.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> typography</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 263-266</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 268-275</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-15" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$size</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Size's map</td>
+</tr>
+<tr>
+<td style="text-align:left">$props</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The property to get</td>
+</tr>
+</tbody>
+</table>
+<h4 id="todos-18" tabindex="-1">Todos</h4>
+<ul>
+<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
+</ul>
+<h4 id="require-14" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+
+  </div>
+
+		</main>
+		<footer></footer>
+		
+
+  <script src="http://localhost:5173/@vite/client" type="module"></script>
+  <script src="http://localhost:5173/docs-src/src/main.js" type="module"></script>
+
+<script>feather.replace();</script>
+		
+	</body>
+</html>

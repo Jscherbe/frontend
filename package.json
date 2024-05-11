@@ -22,21 +22,14 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "docs:dev": "vitepress dev docs-src",
-    "docs:build": "vitepress build docs-src",
-    "docs:preview": "vitepress preview docs-src",
-    "docs:update:scss": "node ./docs-src/.vitepress/sassdoc.js",
-    "docs:watch:scss": "SASSDOC_WATCH=true node ./docs-src/.vitepress/sassdoc.js",
-    "docs:update:scss:debug": "node --inspect-brk ./docs-src/.vitepress/sassdoc.js",
-    "docs:update:js": "node ./docs-src/.vitepress/jsdoc.js",
     "types": "npx tsc",
-    "newdocs:dev": "npx @11ty/eleventy --serve",
-    "newdocs:dev:incremental": "npx @11ty/eleventy --serve --incremental",
-    "newdocs:dev:nogen": "NO_DOC_GEN=true npx @11ty/eleventy --serve --incremental",
-    "newdocs:dev:debug": "node --inspect-brk ./node_modules/.bin/eleventy --serve",
-    "newdocs:build": "npx @11ty/eleventy",
-    "newdocs:assets:dev": "vite --config docs.vite.config.js",
-    "newdocs:assets:build": "vite build --config docs.vite.config.js"
+    "docs:dev": "npx @11ty/eleventy --serve --config=docs.eleventy.js",
+    "docs:dev:incremental": "npx @11ty/eleventy --serve --incremental --config=docs.eleventy.js",
+    "docs:dev:nogen": "NO_DOC_GEN=true npx @11ty/eleventy --serve --incremental --config=docs.eleventy.js",
+    "docs:dev:inspect": "node --inspect-brk ./node_modules/.bin/eleventy --serve --config=docs.eleventy.js",
+    "docs:build": "npx @11ty/eleventy",
+    "docs:assets:dev": "vite --config docs.vite.config.js",
+    "docs:assets:build": "vite build --config docs.vite.config.js"
   },
   "repository": {
     "type": "git",
