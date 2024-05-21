@@ -1,0 +1,2387 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Color
+  </title>
+  <meta name="description" content="Modular Sass Theming Library">
+  <meta name="generator" content="Eleventy v3.0.0">
+  
+  
+  <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
+
+  
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/assets/style.css">
+  
+</head>
+	<body class="page">
+		
+
+
+<header class="page__header header">
+  <a href="#main" class="site-skip-link hidden-visually-focusable">
+    Skip to main content
+  </a>
+  <div class="header__main">
+    <a class="header__logo" href="/">
+      <div class="logo">
+  <span class="logo__main">Ulu</span>
+  <span class="logo__subtitle">Docs</span>
+</div>
+    </a>
+  </div>
+  <nav class="header__nav">
+    <h2 class="hidden-visually">Main Menu</h2>
+    <div class="header__nav-links">
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+      >
+        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+      </a>
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend"
+      >
+        <span style="font-size: 70%">NPM</span>
+      </a>
+    </div>
+    <div class="header__nav-menu">
+      
+      <ul class="nav-tree" data-menu-depth="1">
+        
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="book" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Guide
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Demos
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/guide/demos/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/data-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popovers
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/some-page/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Some Page
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="grid" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Sass Modules
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Core
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/core/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/calculate/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Calculate
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active is-active-trail">
+          
+        <a 
+          class="nav-tree__link  is-active is-active-trail" 
+          href="/sass/core/color/" 
+          aria-current="page"
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/cssvar/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Cssvar
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/element/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Element
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/path/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Path
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/selector/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Selector
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utility/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utility
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utils/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utils
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Base
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/base/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/elements/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/keyframes/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Keyframes
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/normalize/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Normalize
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Components
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/components/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/badge/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Badge
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/fill-context/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Fill-context
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/links/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Links
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-lines/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-ordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-ordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-unordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-unordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/rule/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Rule
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Helpers
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/helpers/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/display/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Display
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/utilities/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utilities
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Javascript API
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/javascript/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/events/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      events
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-css-breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/css-breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-file-save/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/file-save
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-node-data-manager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/node-data-manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-pause-youtube-video/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/pause-youtube-video
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-scrollbar-width-property/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/scrollbar-width-property
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-flipcard/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/flipcard
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-modals/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/modals
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller-pager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller-pager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-programmatic-modal/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/programmatic-modal
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-resizer/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/resizer
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-slider/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tabs/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/utils-logger/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      utils/logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+    </div>
+  </nav>
+</header>
+		
+			<div class="page__toc page-toc">
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-palette">$palette</a>
+            		</li>
+
+                    <li><a href="#variable-contexts">$contexts</a>
+            
+                <ol>
+                    
+                    <li><a href="#map-properties">Map Properties</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#variable-color-classes">$color-classes</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixins">Mixins</a>
+            
+                <ol>
+                    
+                    <li><a href="#mixin-set">set()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters">Parameters</a>
+            		</li>
+
+                    <li><a href="#require">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-set-color-classes">set-color-classes()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-1">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-1">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-set-contexts">set-contexts()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-1">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-2">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-2">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-context-styles">context-styles()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-3">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-3">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-all-context-styles">all-context-styles()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-2">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-4">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-4">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-all-color-class-styles">all-color-class-styles()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-3">Examples</a>
+            		</li>
+
+                    <li><a href="#require-5">Require</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#functions">Functions</a>
+            
+                <ol>
+                    
+                    <li><a href="#function-get">get()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-5">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns">Returns</a>
+            		</li>
+
+                    <li><a href="#require-6">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-get-context">get-context()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-6">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-1">Returns</a>
+            		</li>
+
+                    <li><a href="#require-7">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-get-context-value">get-context-value()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-7">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-2">Returns</a>
+            		</li>
+
+                    <li><a href="#require-8">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-tint">tint()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-8">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-3">Returns</a>
+            		</li>
+
+                    <li><a href="#related-links">Related Links</a>
+            		</li>
+
+                    <li><a href="#require-9">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-shade">shade()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-9">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-4">Returns</a>
+            		</li>
+
+                    <li><a href="#related-links-1">Related Links</a>
+            		</li>
+
+                    <li><a href="#require-10">Require</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </div>
+			</div>
+		
+		<main id="main" class="page__body">
+			
+			
+			
+  <div class="page__body-top container wysiwyg">
+    <h1 id="color" tabindex="-1">Color</h1>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-palette" tabindex="-1">$palette</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+</div>
+<p>The color palette map, can be extended or modified with set() and accessed with get()
+Note do not use names that start with &quot;--&quot; as those are reserved for custom-properties (pass through) also &quot;inherit&quot; is reserved.</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$palette</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"black"</span><span class="token punctuation">:</span>        black<span class="token punctuation">,</span>
+  <span class="token string">"white"</span><span class="token punctuation">:</span>        white<span class="token punctuation">,</span>
+  <span class="token string">"type"</span><span class="token punctuation">:</span>         black<span class="token punctuation">,</span>
+  <span class="token string">"headline"</span> <span class="token punctuation">:</span>    inherit<span class="token punctuation">,</span>
+  <span class="token string">"background"</span>              <span class="token punctuation">:</span> white<span class="token punctuation">,</span>
+  <span class="token string">"focus"</span>                   <span class="token punctuation">:</span> blue<span class="token punctuation">,</span>
+  <span class="token string">"error"</span>                   <span class="token punctuation">:</span> red<span class="token punctuation">,</span>
+  <span class="token string">"warning"</span>                 <span class="token punctuation">:</span> orange<span class="token punctuation">,</span>
+  <span class="token string">"accent"</span>                  <span class="token punctuation">:</span> orange<span class="token punctuation">,</span>
+  <span class="token string">"selected"</span>                <span class="token punctuation">:</span> green<span class="token punctuation">,</span>
+  <span class="token string">"box-shadow"</span>              <span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.349<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"box-shadow:hover"</span>        <span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0<span class="token punctuation">,</span> 0.5<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"rule"</span>                    <span class="token punctuation">:</span> gray<span class="token punctuation">,</span>
+  <span class="token string">"rule-light"</span>              <span class="token punctuation">:</span> lightgray<span class="token punctuation">,</span>
+  <span class="token string">"link"</span>                    <span class="token punctuation">:</span> blue<span class="token punctuation">,</span>
+  <span class="token string">"link:hover"</span>              <span class="token punctuation">:</span> darkblue<span class="token punctuation">,</span>
+  <span class="token string">"link:active"</span>             <span class="token punctuation">:</span> darkblue<span class="token punctuation">,</span>
+  <span class="token string">"link:visited"</span>            <span class="token punctuation">:</span> purple<span class="token punctuation">,</span>
+  <span class="token string">"bullet"</span>                  <span class="token punctuation">:</span> inherit<span class="token punctuation">,</span>
+  <span class="token string">"control"</span>                 <span class="token punctuation">:</span> white<span class="token punctuation">,</span>
+  <span class="token string">"control:hover"</span>           <span class="token punctuation">:</span> white<span class="token punctuation">,</span>
+  <span class="token string">"control-background"</span>      <span class="token punctuation">:</span> purple<span class="token punctuation">,</span>
+  <span class="token string">"control-background:hover"</span><span class="token punctuation">:</span> blue<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 11-13</li>
+<li><strong>Lines (code):</strong> 15-39  </details>
+</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="variable-contexts" tabindex="-1">$contexts</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+</div>
+<p>Pairs of background-color and color definitions</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$contexts</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"dark"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token string">"background-color"</span> <span class="token punctuation">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    <span class="token string">"color"</span> <span class="token punctuation">:</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    <span class="token string">"base-class"</span> <span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"light"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token string">"background-color"</span> <span class="token punctuation">:</span> <span class="token string">"white"</span><span class="token punctuation">,</span>
+    <span class="token string">"color"</span> <span class="token punctuation">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+    <span class="token string">"base-class"</span> <span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 41-45</li>
+<li><strong>Lines (code):</strong> 47-58  </details>
+</li>
+</ul>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$contexts.name.background-color</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">String</td>
+</tr>
+<tr>
+<td style="text-align:left">$contexts.name.color</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">String</td>
+</tr>
+<tr>
+<td style="text-align:left">$contexts.name.base-class</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Print this value in the base module as a class (if base prints)</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="variable-color-classes" tabindex="-1">$color-classes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+</div>
+<p>Palette entries that are output as classes when using all-color-class-styles</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$color-classes</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"black"</span> <span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">"white"</span> <span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">"type"</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 60-60</li>
+<li><strong>Lines (code):</strong> 61-65  </details>
+</li>
+</ul>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Used to override or extend the color palette</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 67-73</li>
+<li><strong>Lines (code):</strong> 75-77  </details>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<p>Setting the error and type color</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> color.<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token string">"type"</span> <span class="token punctuation">:</span> #444<span class="token punctuation">,</span>
+  <span class="token string">"error"</span> <span class="token punctuation">:</span> orange<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">A map to merge into the color palette</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/color/#variable-palette">$palette</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set-color-classes" tabindex="-1">set-color-classes()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Set ouput classes for all-color-class-styles</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 99-100</li>
+<li><strong>Lines (code):</strong> 102-104  </details>
+</li>
+</ul>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes (you can disable defaults this way)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/color/#variable-color-classes">$color-classes</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set-contexts" tabindex="-1">set-contexts()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Set color contexts</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 111-121</li>
+<li><strong>Lines (code):</strong> 123-125  </details>
+</li>
+</ul>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<p>Overwriting contexts</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> color.<span class="token function">set-contexts</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token string">"dark"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token string">"background-color"</span> <span class="token punctuation">:</span> red<span class="token punctuation">,</span>
+    <span class="token string">"color"</span> <span class="token punctuation">:</span> white<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">A map to merge</td>
+</tr>
+<tr>
+<td style="text-align:left">$deep</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Use deep merge</td>
+</tr>
+<tr>
+<td style="text-align:left">$overwrite</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Overwrite the completly (cannot be used with deep)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li>map-merge()</li>
+<li><a href="/sass/core/color/#variable-contexts">$contexts</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-context-styles" tabindex="-1">context-styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints contexts styles</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 150-151</li>
+<li><strong>Lines (code):</strong> 153-159  </details>
+</li>
+</ul>
+<h4 id="parameters-3" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of context</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/color/#function-get-context">get-context()</a></li>
+<li><a href="/sass/core/color/#function-get-context-value">get-context-value()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-all-context-styles" tabindex="-1">all-context-styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints all context styles</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 183-190</li>
+<li><strong>Lines (code):</strong> 192-201  </details>
+</li>
+</ul>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">all-context-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Example of a color-context</p>
+<pre class="language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color-context-dark<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">padding</span><span class="token punctuation">:</span> 1rem</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+  Some text in dark context
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$with-prop</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Checks the specific context for a certain prop (has to be truthy)(used for output in helper/base color modules)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/color/#mixin-context-styles">context-styles()</a></li>
+<li>class()</li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/color/#variable-contexts">$contexts</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-all-color-class-styles" tabindex="-1">all-color-class-styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Outputs all color classes</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 203-207</li>
+<li><strong>Lines (code):</strong> 209-218  </details>
+</li>
+</ul>
+<h4 id="examples-3" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">all-color-class-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Example of a color-context</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>color-name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Some text<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li>class()</li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/color/#variable-color-classes">$color-classes</a></li>
+</ul>
+<h2 id="functions" tabindex="-1">Functions</h2>
+<div class="sassdoc-item-header">
+<h3 id="function-get" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a color from the palette by name</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 79-81</li>
+<li><strong>Lines (code):</strong> 83-97  </details>
+</li>
+</ul>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of color to get</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">Note if non-string value is passed it is sent back through, along with custom properties and keyword inherit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-6" tabindex="-1">Require</h4>
+<ul>
+<li>require-map-get()</li>
+<li><a href="/sass/core/color/#variable-palette">$palette</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-context" tabindex="-1">get-context()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a context by name</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 127-129</li>
+<li><strong>Lines (code):</strong> 131-133  </details>
+</li>
+</ul>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of context</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-1" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-7" tabindex="-1">Require</h4>
+<ul>
+<li>require-map-get()</li>
+<li><a href="/sass/core/color/#variable-contexts">$contexts</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-context-value" tabindex="-1">get-context-value()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a context's value'</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 135-138</li>
+<li><strong>Lines (code):</strong> 140-148  </details>
+</li>
+</ul>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of context</td>
+</tr>
+<tr>
+<td style="text-align:left">$prop</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The property to get</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Color</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-8" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/color/#function-get-context">get-context()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-tint" tabindex="-1">tint()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Lighten a color using the default white by a percentage</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 161-166</li>
+<li><strong>Lines (code):</strong> 168-170</li>
+<li><strong>Author:</strong>  </details>
+</li>
+</ul>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$color</td>
+<td style="text-align:left"><code>Color, String</code></td>
+<td style="text-align:left">Color/palette color name to apply to tint</td>
+</tr>
+<tr>
+<td style="text-align:left">$percentage</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Percentage</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Color</td>
+</tr>
+</tbody>
+</table>
+<h4 id="related-links" tabindex="-1">Related Links</h4>
+<ul>
+<li><a href="https://css-tricks.com/snippets/sass/tint-shade-functions/">Modified from source (CSS Tricks, Kitty Giraudel)</a></li>
+</ul>
+<h4 id="require-9" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-shade" tabindex="-1">shade()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Darken a color with the default black by a percentage</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 172-177</li>
+<li><strong>Lines (code):</strong> 179-181</li>
+<li><strong>Author:</strong> Kitty Giraudel  </details>
+</li>
+</ul>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$color</td>
+<td style="text-align:left"><code>Color, String</code></td>
+<td style="text-align:left">Color/palette color name to shade</td>
+</tr>
+<tr>
+<td style="text-align:left">$percentage</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">Percentage to shade</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Color</td>
+</tr>
+</tbody>
+</table>
+<h4 id="related-links-1" tabindex="-1">Related Links</h4>
+<ul>
+<li><a href="https://css-tricks.com/snippets/sass/tint-shade-functions/">Modified from source (CSS Tricks, Kitty Giraudel)</a></li>
+</ul>
+<h4 id="require-10" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+
+  </div>
+
+		</main>
+		<footer></footer>
+		
+
+  
+  <script src="/assets/main.js"></script>
+
+<script>feather.replace();</script>
+		
+	</body>
+</html>

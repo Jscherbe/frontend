@@ -1,0 +1,2457 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Utils
+  </title>
+  <meta name="description" content="Modular Sass Theming Library">
+  <meta name="generator" content="Eleventy v3.0.0">
+  
+  
+  <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
+
+  
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/assets/style.css">
+  
+</head>
+	<body class="page">
+		
+
+
+<header class="page__header header">
+  <a href="#main" class="site-skip-link hidden-visually-focusable">
+    Skip to main content
+  </a>
+  <div class="header__main">
+    <a class="header__logo" href="/">
+      <div class="logo">
+  <span class="logo__main">Ulu</span>
+  <span class="logo__subtitle">Docs</span>
+</div>
+    </a>
+  </div>
+  <nav class="header__nav">
+    <h2 class="hidden-visually">Main Menu</h2>
+    <div class="header__nav-links">
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+      >
+        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+      </a>
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend"
+      >
+        <span style="font-size: 70%">NPM</span>
+      </a>
+    </div>
+    <div class="header__nav-menu">
+      
+      <ul class="nav-tree" data-menu-depth="1">
+        
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="book" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Guide
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Demos
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/guide/demos/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/data-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popovers
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/some-page/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Some Page
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="grid" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Sass Modules
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Core
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/sass/core/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/calculate/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Calculate
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/cssvar/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Cssvar
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/element/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Element
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/path/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Path
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/selector/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Selector
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utility/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utility
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active is-active-trail">
+          
+        <a 
+          class="nav-tree__link  is-active is-active-trail" 
+          href="/sass/core/utils/" 
+          aria-current="page"
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utils
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Base
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/base/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/elements/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/keyframes/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Keyframes
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/normalize/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Normalize
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Components
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/components/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/badge/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Badge
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/fill-context/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Fill-context
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/links/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Links
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-lines/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-ordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-ordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-unordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-unordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/rule/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Rule
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Helpers
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/helpers/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/display/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Display
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/utilities/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utilities
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Javascript API
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/javascript/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/events/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      events
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-css-breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/css-breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-file-save/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/file-save
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-node-data-manager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/node-data-manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-pause-youtube-video/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/pause-youtube-video
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-scrollbar-width-property/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/scrollbar-width-property
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-flipcard/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/flipcard
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-modals/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/modals
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller-pager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller-pager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-programmatic-modal/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/programmatic-modal
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-resizer/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/resizer
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-slider/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tabs/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/utils-logger/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      utils/logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+    </div>
+  </nav>
+</header>
+		
+			<div class="page__toc page-toc">
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            
+                <ol>
+                    
+                    <li><a href="#map-properties">Map Properties</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixins">Mixins</a>
+            
+                <ol>
+                    
+                    <li><a href="#mixin-set">set()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters">Parameters</a>
+            		</li>
+
+                    <li><a href="#require">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-require-list-has">require-list-has()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-1">Parameters</a>
+            		</li>
+
+                    <li><a href="#throw">Throw</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-require-list-contains">require-list-contains()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-2">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-1">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#mixin-file-header">file-header()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-3">Parameters</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#functions">Functions</a>
+            
+                <ol>
+                    
+                    <li><a href="#function-get">get()</a>
+            
+                <ol>
+                    
+                    <li><a href="#examples-1">Examples</a>
+            		</li>
+
+                    <li><a href="#parameters-4">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-2">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-require-map-get">require-map-get()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-5">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns">Returns</a>
+            		</li>
+
+                    <li><a href="#throw-1">Throw</a>
+            		</li>
+
+                    <li><a href="#require-3">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-included">included()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-6">Parameters</a>
+            		</li>
+
+                    <li><a href="#require-4">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-if-type">if-type()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-7">Parameters</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-number-info">number-info()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-8">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-1">Returns</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-map-merge">map-merge()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-9">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-2">Returns</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-map-merge-or-overwrite">map-merge-or-overwrite()</a>
+            
+                <ol>
+                    
+                    <li><a href="#deprecated">Deprecated</a>
+            		</li>
+
+                    <li><a href="#require-5">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-fallback">fallback()</a>
+            
+                <ol>
+                    
+                    <li><a href="#returns-3">Returns</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-map-fallback">map-fallback()</a>
+            
+                <ol>
+                    
+                    <li><a href="#require-6">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-function-fallback">function-fallback()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-10">Parameters</a>
+            		</li>
+
+                    <li><a href="#returns-4">Returns</a>
+            		</li>
+
+                    <li><a href="#require-7">Require</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#function-string-replace">string-replace()</a>
+            
+                <ol>
+                    
+                    <li><a href="#parameters-11">Parameters</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </div>
+			</div>
+		
+		<main id="main" class="page__body">
+			
+			
+			
+  <div class="page__body-top container wysiwyg">
+    <h1 id="utils" tabindex="-1">Utils</h1>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"debug-maps"</span><span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token string">"file-header-comments"</span><span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 11-14</li>
+<li><strong>Lines (code):</strong> 16-19  </details>
+</li>
+</ul>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$config.debug-maps</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Debugs include map print outs</td>
+</tr>
+<tr>
+<td style="text-align:left">$config.file-header-comments</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Remove comment headers if you'd like</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change modules $config</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 21-24</li>
+<li><strong>Lines (code):</strong> 25-27  </details>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<p>General example, replace module-name with module's name</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> module-name.<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token string">"property"</span> <span class="token punctuation">:</span> value <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-require-list-has" tabindex="-1">require-list-has()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Ensure a value is present in the list, throw an error if not found</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 57-60</li>
+<li><strong>Lines (code):</strong> 62-67  </details>
+</li>
+</ul>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$list</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The map to get the value from</td>
+</tr>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The value to search for in the list</td>
+</tr>
+<tr>
+<td style="text-align:left">$context</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The context of using this function for debugging help</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw" tabindex="-1">Throw</h4>
+<ul>
+<li>ULU: Unable to find item</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-require-list-contains" tabindex="-1">require-list-contains()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Require that the list only is only made up of allowed items</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 69-71</li>
+<li><strong>Lines (code):</strong> 73-77  </details>
+</li>
+</ul>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$allowed</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The list of allowed items</td>
+</tr>
+<tr>
+<td style="text-align:left">$list</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The list to test allowed against</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/utils/#mixin-require-list-has">require-list-has()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-file-header" tabindex="-1">file-header()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Returns true if we should include something (used for output checking)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 88-90</li>
+<li><strong>Lines (code):</strong> 92-100  </details>
+</li>
+</ul>
+<h4 id="parameters-3" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$context</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The root area of the framework this file comes from</td>
+</tr>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The name of the specific area/file (optional)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="functions" tabindex="-1">Functions</h2>
+<div class="sassdoc-item-header">
+<h3 id="function-get" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a config option</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 29-32</li>
+<li><strong>Lines (code):</strong> 34-36  </details>
+</li>
+</ul>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<p>General example, replace module-name with module's name</p>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> module-name.<span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"property"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Name of property</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/utils/#function-require-map-get">require-map-get()</a></li>
+<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-require-map-get" tabindex="-1">require-map-get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a required value from a map, throw an error if not found</p>
+<ul>
+<li>
+<p>Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _utils.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> utils</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 38-43</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 45-55</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$map</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">The map to get the value from</td>
+</tr>
+<tr>
+<td style="text-align:left">$key</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The key in the map to get value from</td>
+</tr>
+<tr>
+<td style="text-align:left">$context</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The context of using this function for debugging help</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">The value from the map</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-1" tabindex="-1">Throw</h4>
+<ul>
+<li>ULU: Unable to find</li>
+</ul>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-included" tabindex="-1">included()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Returns true if we should include something (map of booleans)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 79-81</li>
+<li><strong>Lines (code):</strong> 83-86  </details>
+</li>
+</ul>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of item to see if it's included</td>
+</tr>
+<tr>
+<td style="text-align:left">$includes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of includes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-if-type" tabindex="-1">if-type()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 103-105</li>
+<li><strong>Lines (code):</strong> 107-113  </details>
+</li>
+</ul>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$type</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">type of value it should be</td>
+</tr>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">the value to provide if it is that type</td>
+</tr>
+<tr>
+<td style="text-align:left">$fallback</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">the fallback value</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-number-info" tabindex="-1">number-info()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 116-117</li>
+<li><strong>Lines (code):</strong> 119-133  </details>
+</li>
+</ul>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$number</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Number to get meta info for</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-1" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">With properties (unit, value)</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-map-merge" tabindex="-1">map-merge()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Reusable merge method</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 135-139</li>
+<li><strong>Lines (code):</strong> 141-149  </details>
+</li>
+</ul>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$original</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Source map</td>
+</tr>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Changes to merge into source map</td>
+</tr>
+<tr>
+<td style="text-align:left">$mode</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">How to merge changes (merge [defualt], deep, or overwrite)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">New map with changes</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-map-merge-or-overwrite" tabindex="-1">map-merge-or-overwrite()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Repeatable pattern in core</p>
+<h4 id="deprecated" tabindex="-1">Deprecated</h4>
+<p>Left in for compatability, will be removed, use map-merge with mode</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 151-152</li>
+<li><strong>Lines (code):</strong> 154-162  </details>
+</li>
+</ul>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/utils/#function-map-merge">map-merge()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-fallback" tabindex="-1">fallback()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Utility for providing fallbacks, the first truthy value (non false or null) will be returned</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 164-165</li>
+<li><strong>Lines (code):</strong> 167-174  </details>
+</li>
+</ul>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">The first truthy value</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-map-fallback" tabindex="-1">map-fallback()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Provides fallback values from the same map</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 176-176</li>
+<li><strong>Lines (code):</strong> 177-185  </details>
+</li>
+</ul>
+<h4 id="require-6" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-function-fallback" tabindex="-1">function-fallback()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Helps in providing a dynamic fallback for modules whose defaults should come from another</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 187-191</li>
+<li><strong>Lines (code):</strong> 193-202  </details>
+</li>
+</ul>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$prop</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Property trying to get fallback for</td>
+</tr>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">The value that may need the fallback</td>
+</tr>
+<tr>
+<td style="text-align:left">$lookup</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of properties to functions (use sass:meta &gt; meta.get-function to populate)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">The user's original value, or if the value is true get the default value from the provided function</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-7" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-string-replace" tabindex="-1">string-replace()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Replaces all or one occurence of a string within a string</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 204-208</li>
+<li><strong>Lines (code):</strong> 210-226  </details>
+</li>
+</ul>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$string</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">String to operate on</td>
+</tr>
+<tr>
+<td style="text-align:left">$find</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">String to find within string</td>
+</tr>
+<tr>
+<td style="text-align:left">$replace</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">String to replace found strings</td>
+</tr>
+<tr>
+<td style="text-align:left">$all</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Default true replace all matches, if false replace only first</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+
+		</main>
+		<footer></footer>
+		
+
+  
+  <script src="/assets/main.js"></script>
+
+<script>feather.replace();</script>
+		
+	</body>
+</html>

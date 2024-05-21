@@ -35,8 +35,8 @@ Module Settings
 $config: (
   "color"                   : inherit,
   "background-color"        : white,
-  "padding"                 : 1.5rem,
-  "padding-large"           : 2.5rem,
+  "padding"                 : 1rem,
+  "padding-large"           : 2rem,
   "max-width"               : 90vw,
   "max-height"              : 25rem,
   "width"                   : 15rem,

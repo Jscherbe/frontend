@@ -1,6 +1,6 @@
 /* eslint-env node */
 import path from "path";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 import markdownItAnchor from "markdown-it-anchor";
 import tocPlugin from "eleventy-plugin-nesting-toc";
@@ -57,7 +57,7 @@ export default async function(eleventyConfig) {
   return {
     dir: {
       input: "docs-src/content",
-      output: "docs",
+      output: "docs-dist-temp",
       includes: "../src/templates",
       layouts: "../src/templates/layouts",
       data: "../src/data",

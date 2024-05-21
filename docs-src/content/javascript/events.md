@@ -34,7 +34,7 @@ if (updatedMarkup) {
 <a name="module_events.getName"></a>
 
 ### events.getName(type) ⇒ <code>String</code>
-Handles the actual event names being used (future could namespace)
+Namespaced event
 
 **Kind**: static method of [<code>events</code>](#module_events)  
 

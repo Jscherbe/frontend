@@ -1,0 +1,1993 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    helpers/css-breakpoint
+  </title>
+  <meta name="description" content="Modular Sass Theming Library">
+  <meta name="generator" content="Eleventy v3.0.0">
+  
+  
+  <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
+
+  
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/assets/style.css">
+  
+</head>
+	<body class="page">
+		
+
+
+<header class="page__header header">
+  <a href="#main" class="site-skip-link hidden-visually-focusable">
+    Skip to main content
+  </a>
+  <div class="header__main">
+    <a class="header__logo" href="/">
+      <div class="logo">
+  <span class="logo__main">Ulu</span>
+  <span class="logo__subtitle">Docs</span>
+</div>
+    </a>
+  </div>
+  <nav class="header__nav">
+    <h2 class="hidden-visually">Main Menu</h2>
+    <div class="header__nav-links">
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+      >
+        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+      </a>
+      <a 
+        class="button button--small button--icon button--icon-small" 
+        href="https://www.npmjs.com/package/@ulu/frontend"
+      >
+        <span style="font-size: 70%">NPM</span>
+      </a>
+    </div>
+    <div class="header__nav-menu">
+      
+      <ul class="nav-tree" data-menu-depth="1">
+        
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="book" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Guide
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Demos
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/guide/demos/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/data-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/demos/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popovers
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/some-page/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Some Page
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="grid" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Sass Modules
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Core
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/core/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/breakpoint/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/calculate/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Calculate
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/cssvar/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Cssvar
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/element/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Element
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/path/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Path
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/selector/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Selector
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utility/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utility
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/core/utils/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utils
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Base
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/base/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/elements/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/keyframes/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Keyframes
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/layout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Layout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/normalize/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Normalize
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Components
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/components/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/badge/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Badge
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/fill-context/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Fill-context
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/links/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Links
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-lines/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-ordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-ordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/list-unordered/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      List-unordered
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/rule/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Rule
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          <details 
+            class="nav-tree__collapsible" 
+            
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Helpers
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index " 
+          href="/sass/helpers/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/all/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      All
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/color/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Color
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/display/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Display
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/typography/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Typography
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/units/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Units
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/helpers/utilities/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Utilities
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail">
+          <details 
+            class="nav-tree__collapsible" 
+            open
+          >
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Javascript API
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        <li class="nav-tree__item is-active-trail">
+          
+        <a 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          href="/javascript/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/events/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      events
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active is-active-trail">
+          
+        <a 
+          class="nav-tree__link  is-active is-active-trail" 
+          href="/javascript/helpers-css-breakpoint/" 
+          aria-current="page"
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/css-breakpoint
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-file-save/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/file-save
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-node-data-manager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/node-data-manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-pause-youtube-video/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/pause-youtube-video
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/helpers-scrollbar-width-property/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      helpers/scrollbar-width-property
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-flipcard/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/flipcard
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-modals/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/modals
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-overflow-scroller-pager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/overflow-scroller-pager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-programmatic-modal/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/programmatic-modal
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-resizer/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/resizer
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-slider/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tabs/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/utils-logger/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      utils/logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+      </ul>
+    
+    </div>
+  </nav>
+</header>
+		
+			<div class="page__toc page-toc">
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#helpers%2Fcss-breakpoint">helpers/css-breakpoint</a>
+            
+                <ol>
+                    
+                    <li><a href="#helpers%2Fcss-breakpoint.cssbreakpoints">helpers/css-breakpoint.CssBreakpoints</a>
+            
+                <ol>
+                    
+                    <li><a href="#new-exports.cssbreakpoints(config)">new exports.CssBreakpoints(config)</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.onchange(callback)">cssBreakpoints.onChange(callback)</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.removeonchange(callback)">cssBreakpoints.removeOnChange(callback)</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.getbreakpointinpsuedo()">cssBreakpoints.getBreakpointInPsuedo()</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.getbreakpointinproperty()">cssBreakpoints.getBreakpointInProperty()</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.getbreakpoint()">cssBreakpoints.getBreakpoint()</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.update()">cssBreakpoints.update()</a>
+            		</li>
+
+                    <li><a href="#cssbreakpoints.at(name)-%E2%87%92-breakpoint">cssBreakpoints.at(name) ⇒ Breakpoint</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#helpers%2Fcss-breakpoint~breakpointdirection">helpers/css-breakpoint~BreakpointDirection</a>
+            
+                <ol>
+                    
+                    <li><a href="#breakpointdirection.change()">breakpointDirection.change()</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection._call()">breakpointDirection._call()</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection.gethandlers()">breakpointDirection.getHandlers()</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection.add(handler)">breakpointDirection.add(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection.remove()">breakpointDirection.remove()</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#helpers%2Fcss-breakpoint~breakpoint">helpers/css-breakpoint~Breakpoint</a>
+            
+                <ol>
+                    
+                    <li><a href="#breakpoint._setdirection(direction%2C-active)">breakpoint._setDirection(direction, active)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.max(handler)">breakpoint.max(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.min(handler)">breakpoint.min(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.only(handler)">breakpoint.only(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.remove(handler%2C-direction)">breakpoint.remove(handler, direction)</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </div>
+			</div>
+		
+		<main id="main" class="page__body">
+			
+			
+			
+  <div class="page__body-top container wysiwyg">
+    <p><a name="module_helpers/css-breakpoint"></a></p>
+<h2 id="helpers%2Fcss-breakpoint" tabindex="-1">helpers/css-breakpoint</h2>
+<ul>
+<li><a href="#module_helpers/css-breakpoint">helpers/css-breakpoint</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints">.CssBreakpoints</a>
+<ul>
+<li><a href="#new_module_helpers/css-breakpoint.CssBreakpoints_new">new exports.CssBreakpoints(config)</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+onChange">.onChange(callback)</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+removeOnChange">.removeOnChange(callback)</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInPsuedo">.getBreakpointInPsuedo()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInProperty">.getBreakpointInProperty()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+getBreakpoint">.getBreakpoint()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+update">.update()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+at">.at(name)</a> ⇒ <code>Breakpoint</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection">~BreakpointDirection</a>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+change">.change()</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+_call">._call()</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+getHandlers">.getHandlers()</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+add">.add(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+remove">.remove()</a></li>
+</ul>
+</li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint">~Breakpoint</a>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+_setDirection">._setDirection(direction, active)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+max">.max(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+min">.min(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+only">.only(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+remove">.remove(handler, direction)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="module_helpers/css-breakpoint.CssBreakpoints"></a></p>
+<h3 id="helpers%2Fcss-breakpoint.cssbreakpoints" tabindex="-1">helpers/css-breakpoint.CssBreakpoints</h3>
+<p>Class that provides method for retrieving and acting on breakpoints passed
+from CSS (using element psuedo content prop)</p>
+<p><strong>Kind</strong>: static class of <a href="#module_helpers/css-breakpoint"><code>helpers/css-breakpoint</code></a></p>
+<ul>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints">.CssBreakpoints</a>
+<ul>
+<li><a href="#new_module_helpers/css-breakpoint.CssBreakpoints_new">new exports.CssBreakpoints(config)</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+onChange">.onChange(callback)</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+removeOnChange">.removeOnChange(callback)</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInPsuedo">.getBreakpointInPsuedo()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInProperty">.getBreakpointInProperty()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+getBreakpoint">.getBreakpoint()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+update">.update()</a></li>
+<li><a href="#module_helpers/css-breakpoint.CssBreakpoints+at">.at(name)</a> ⇒ <code>Breakpoint</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_module_helpers/css-breakpoint.CssBreakpoints_new"></a></p>
+<h4 id="new-exports.cssbreakpoints(config)" tabindex="-1">new exports.CssBreakpoints(config)</h4>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>Object</code></td>
+<td>Configruation object</td>
+</tr>
+<tr>
+<td>config.order</td>
+<td><code>Array</code></td>
+<td>Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]</td>
+</tr>
+<tr>
+<td>config.customProperty</td>
+<td><code>Array</code></td>
+<td>Property to grab breakpoint from (default is --breakpoint)</td>
+</tr>
+<tr>
+<td>config.valueFromPsuedo</td>
+<td><code>Array</code></td>
+<td>Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property</td>
+</tr>
+<tr>
+<td>config.element</td>
+<td><code>Node</code></td>
+<td>The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body</td>
+</tr>
+<tr>
+<td>config.psuedoSelector</td>
+<td><code>String</code></td>
+<td>Change psuedo selector used to get the breakpoint from the psuedo's content property</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint.CssBreakpoints+onChange"></a></p>
+<h4 id="cssbreakpoints.onchange(callback)" tabindex="-1">cssBreakpoints.onChange(callback)</h4>
+<p>Add a callback for everytime a breakpoint changes</p>
+<ul>
+<li>Not recommended, possibly use to watch for changes, etc</li>
+<li>For more control use intance.at(name) with breakpoint methods</li>
+</ul>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Function to call, passed one argument current instance which can be used to get information about breakpoints</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint.CssBreakpoints+removeOnChange"></a></p>
+<h4 id="cssbreakpoints.removeonchange(callback)" tabindex="-1">cssBreakpoints.removeOnChange(callback)</h4>
+<p>Remove change callback</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callback</td>
+<td><code>function</code></td>
+<td>Function to remove</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInPsuedo"></a></p>
+<h4 id="cssbreakpoints.getbreakpointinpsuedo()" tabindex="-1">cssBreakpoints.getBreakpointInPsuedo()</h4>
+<p>Get breakpoint from a psuedo element</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a><br>
+<a name="module_helpers/css-breakpoint.CssBreakpoints+getBreakpointInProperty"></a></p>
+<h4 id="cssbreakpoints.getbreakpointinproperty()" tabindex="-1">cssBreakpoints.getBreakpointInProperty()</h4>
+<p>Get breakpoint from a custom property</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a><br>
+<a name="module_helpers/css-breakpoint.CssBreakpoints+getBreakpoint"></a></p>
+<h4 id="cssbreakpoints.getbreakpoint()" tabindex="-1">cssBreakpoints.getBreakpoint()</h4>
+<p>Get breakpoint from element (design note: user could override prototype)</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a><br>
+<a name="module_helpers/css-breakpoint.CssBreakpoints+update"></a></p>
+<h4 id="cssbreakpoints.update()" tabindex="-1">cssBreakpoints.update()</h4>
+<p>Updates the active breakpoint by checking the element and executes handlers on change</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a><br>
+<a name="module_helpers/css-breakpoint.CssBreakpoints+at"></a></p>
+<h4 id="cssbreakpoints.at(name)-%E2%87%92-breakpoint" tabindex="-1">cssBreakpoints.at(name) ⇒ <code>Breakpoint</code></h4>
+<p>Get a breakpoint by key</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint.CssBreakpoints"><code>CssBreakpoints</code></a><br>
+<strong>Returns</strong>: <code>Breakpoint</code> - Breakpoint to act on (see Breakpoint class)</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>String</code></td>
+<td>The name of the breakpoint to get</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint..BreakpointDirection"></a></p>
+<h3 id="helpers%2Fcss-breakpoint~breakpointdirection" tabindex="-1">helpers/css-breakpoint~BreakpointDirection</h3>
+<p>Used to handle a breakpoints direction's handler and state</p>
+<p><strong>Kind</strong>: inner class of <a href="#module_helpers/css-breakpoint"><code>helpers/css-breakpoint</code></a></p>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection">~BreakpointDirection</a>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+change">.change()</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+_call">._call()</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+getHandlers">.getHandlers()</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+add">.add(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..BreakpointDirection+remove">.remove()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_helpers/css-breakpoint..BreakpointDirection+change"></a></p>
+<h4 id="breakpointdirection.change()" tabindex="-1">breakpointDirection.change()</h4>
+<p>Change the state of the direction</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..BreakpointDirection"><code>BreakpointDirection</code></a><br>
+<a name="module_helpers/css-breakpoint..BreakpointDirection+_call"></a></p>
+<h4 id="breakpointdirection._call()" tabindex="-1">breakpointDirection._call()</h4>
+<p>Calls all functions in handlers or</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..BreakpointDirection"><code>BreakpointDirection</code></a><br>
+<a name="module_helpers/css-breakpoint..BreakpointDirection+getHandlers"></a></p>
+<h4 id="breakpointdirection.gethandlers()" tabindex="-1">breakpointDirection.getHandlers()</h4>
+<p>Returns handlers in normalized object format on/off</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..BreakpointDirection"><code>BreakpointDirection</code></a><br>
+<a name="module_helpers/css-breakpoint..BreakpointDirection+add"></a></p>
+<h4 id="breakpointdirection.add(handler)" tabindex="-1">breakpointDirection.add(handler)</h4>
+<p>Adds a handler for the direction, optionally use object to add off state handler</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..BreakpointDirection"><code>BreakpointDirection</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handler</td>
+<td><code>function</code> | <code>Object</code></td>
+<td>Function to be executed when direction is active, read object description for on/off</td>
+</tr>
+<tr>
+<td>handler.on</td>
+<td><code>function</code> | <code>Object</code></td>
+<td>Function to be executed when direction is active</td>
+</tr>
+<tr>
+<td>handler.off</td>
+<td><code>function</code> | <code>Object</code></td>
+<td>Function to be executed when direction was active and is now changed to inactive</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint..BreakpointDirection+remove"></a></p>
+<h4 id="breakpointdirection.remove()" tabindex="-1">breakpointDirection.remove()</h4>
+<p>Removes a handler</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..BreakpointDirection"><code>BreakpointDirection</code></a><br>
+<a name="module_helpers/css-breakpoint..Breakpoint"></a></p>
+<h3 id="helpers%2Fcss-breakpoint~breakpoint" tabindex="-1">helpers/css-breakpoint~Breakpoint</h3>
+<p>Single breakpoint management</p>
+<p><strong>Kind</strong>: inner class of <a href="#module_helpers/css-breakpoint"><code>helpers/css-breakpoint</code></a></p>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint">~Breakpoint</a>
+<ul>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+_setDirection">._setDirection(direction, active)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+max">.max(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+min">.min(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+only">.only(handler)</a></li>
+<li><a href="#module_helpers/css-breakpoint..Breakpoint+remove">.remove(handler, direction)</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_helpers/css-breakpoint..Breakpoint+_setDirection"></a></p>
+<h4 id="breakpoint._setdirection(direction%2C-active)" tabindex="-1">breakpoint._setDirection(direction, active)</h4>
+<p>Private method used inrternally for managing direction activation</p>
+<ul>
+<li>Each direction manages it's own state and handlers</li>
+</ul>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..Breakpoint"><code>Breakpoint</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>direction</td>
+<td><code>String</code></td>
+<td>The directional key</td>
+</tr>
+<tr>
+<td>active</td>
+<td><code>Boolean</code></td>
+<td>State of that direction to set</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint..Breakpoint+max"></a></p>
+<h4 id="breakpoint.max(handler)" tabindex="-1">breakpoint.max(handler)</h4>
+<p>Attach handler to be executed from the breakpoint and to all breakpoints below.</p>
+<ul>
+<li>If the browser resizes from a breakpoint below this breakpoint,
+and above the breakpoint name specified, this handler will fire</li>
+</ul>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..Breakpoint"><code>Breakpoint</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handler</td>
+<td><code>function</code></td>
+<td>Handler to be executed</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint..Breakpoint+min"></a></p>
+<h4 id="breakpoint.min(handler)" tabindex="-1">breakpoint.min(handler)</h4>
+<p>Attach handler to be executed from the breakpoint and to all breakpoints below.</p>
+<ul>
+<li>If the browser resizes from a breakpoint above this breakpoint,
+and below the breakpoint name specified, this handler will fire</li>
+</ul>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..Breakpoint"><code>Breakpoint</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handler</td>
+<td><code>function</code></td>
+<td>Handler to be executed</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint..Breakpoint+only"></a></p>
+<h4 id="breakpoint.only(handler)" tabindex="-1">breakpoint.only(handler)</h4>
+<p>Attach a handler to fire when the breakpoint is within the key</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..Breakpoint"><code>Breakpoint</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handler</td>
+<td><code>function</code></td>
+<td>Handler to be executed</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_helpers/css-breakpoint..Breakpoint+remove"></a></p>
+<h4 id="breakpoint.remove(handler%2C-direction)" tabindex="-1">breakpoint.remove(handler, direction)</h4>
+<p>Remove handler</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_helpers/css-breakpoint..Breakpoint"><code>Breakpoint</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>handler</td>
+<td><code>function</code></td>
+<td>Handler to be removed, extended on/off object style can be used</td>
+</tr>
+<tr>
+<td>direction</td>
+<td><code>String</code></td>
+<td>Remove handler only from specified direction, else search all directions</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+
+		</main>
+		<footer></footer>
+		
+
+  
+  <script src="/assets/main.js"></script>
+
+<script>feather.replace();</script>
+		
+	</body>
+</html>
