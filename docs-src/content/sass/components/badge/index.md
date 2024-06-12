@@ -118,7 +118,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/sass/components/badge/#variable-config)
+- [$config](/sass/components/adaptive-spacing/#variable-config)
   
 
 
@@ -182,7 +182,7 @@ Prints badge component styles
 
 #### Require
 
-- [get()](/sass/components/badge/#function-get)
+- [get()](/sass/components/adaptive-spacing/#function-get)
   
   
 
@@ -229,7 +229,7 @@ Get a config option
 
 #### Require
 
-- [$config](/sass/components/badge/#variable-config)
+- [$config](/sass/components/adaptive-spacing/#variable-config)
   
   
   

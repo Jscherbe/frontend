@@ -1,0 +1,115 @@
+////
+/// @group adaptive-spacing
+////
+/// Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+
+@use "sass:map";
+
+@use "../breakpoint";
+@use "../utils";
+@use "../selector";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "sizes" : (
+    "small" : (
+      "default" : 2rem,
+      "medium" : 4rem
+    ),
+    "large" : (
+      "default" : 4rem,
+      "medium" : 8rem
+    )
+  ),
+  outputMargin: false,
+  outputPadding: true,
+  outputX: true,
+  outputY: true,
+  selectorX: "sides",
+  selectorY: "ends"
+);
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "component-adaptive-spacing [config]");
+}
+
+/// Prints adaptive spacing component styles
+/// @example scss
+///  @include ulu.component-adaptive-spacing-styles();
+
+@mixin styles {
+  $prefixMargin: ulu.selector-class("adaptive-margin");
+  $prefixPadding: ulu.selector-class("adaptive-padding");
+  $hasMargin: map.get($config, "outputMargin");
+  $hasPadding: map.get($config, "outputPadding");
+  
+  @each $name, $breakpoints in map.get($config, "sizes") {
+    $sizePrefixMargin: "#{ $prefixMargin }-#{ $name }";
+    $sizePrefixPadding: "#{ $prefixPadding }-#{ $name }";
+    
+    @each $key, $value in $breakpoints {
+      @if $key == "default" {
+        @if $hasMargin {
+          @include -classes-for-type($sizePrefixMargin, "margin", $value);
+        }
+        @if $hasPadding {
+          @include -classes-for-type($sizePrefixPadding, "padding", $value);
+        }
+      } @else {
+        @include ulu.breakpoint-min($key) {
+          @if $hasMargin {
+            @include -classes-for-type($sizePrefixMargin, "margin", $value);
+          }
+          @if $hasPadding {
+            @include -classes-for-type($sizePrefixPadding, "padding", $value);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin -classes-for-type($prefix, $prop, $value) {
+  #{ $prefix } {
+    #{ $prop }: $value;
+  }
+  @if (map.get($config, "outputX")) {
+    #{ $prefix }-#{ map.get($config, "selectorX")} {
+      #{ $prop }-left: $value;
+      #{ $prop }-right: $value;
+    }
+    #{ $prefix }-left {
+      #{ $prop }-left: $value;
+    }
+    #{ $prefix }-right {
+      #{ $prop }-right: $value;
+    }
+  }
+  @if (map.get($config, "outputY")) {
+    #{ $prefix }-#{ map.get($config, "selectorY")} {
+      #{ $prop }-top: $value;
+      #{ $prop }-bottom: $value;
+    }
+    #{ $prefix }-top {
+      #{ $prop }-top: $value;
+    }
+    #{ $prefix }-bottom {
+      #{ $prop }-bottom: $value;
+    }
+  }
+}
+

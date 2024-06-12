@@ -1,0 +1,3 @@
+Todos:
+  ☐ make this SSR safe (no window, document, element access)
+    * Have a default for SSR

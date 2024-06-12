@@ -1,0 +1,1 @@
+import { Collapsible } from "./collapsible.js";

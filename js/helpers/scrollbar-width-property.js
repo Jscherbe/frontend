@@ -1,5 +1,5 @@
 /**
- * @module helpers/scrollbar-width-property
+ * @module helpers
  */
 
 /**
@@ -8,7 +8,7 @@
  * @param {Node} container The container that can be scrolled
  * @param {Stirng} propName Custom property to set
  */
-export default function addScrollbarProperty(element = document.body, container = window, propName = "--scrollbar-width") {
+export function addScrollbarProperty(element = document.body, container = window, propName = "--ulu-scrollbar-width") {
   const scrollbarWidth = container.innerWidth - element.clientWidth;
   element.style.setProperty(propName, `${ scrollbarWidth }px`);
 }

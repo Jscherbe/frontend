@@ -1,0 +1,16 @@
+Library Organization:
+  lib:
+    core:
+    base: 
+    components:
+    helpers:
+
+js:
+  utils:
+  ui:
+    collapsible:
+      index.js
+    grid:
+      index.js
+      init.js
+

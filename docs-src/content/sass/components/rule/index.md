@@ -115,7 +115,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/components/badge/#variable-config)
+- [$config](/sass/components/adaptive-spacing/#variable-config)
   
 
 
@@ -147,7 +147,7 @@ Output styles
 
 #### Require
 
-- [get()](/sass/components/badge/#function-get)
+- [get()](/sass/components/adaptive-spacing/#function-get)
   
   
 
@@ -205,7 +205,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/components/badge/#variable-config)
+- [$config](/sass/components/adaptive-spacing/#variable-config)
   
   
   

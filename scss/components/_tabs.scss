@@ -1,0 +1,139 @@
+////
+/// @group tabs
+////
+
+@use "sass:map";
+@use "../color";
+@use "../selector";
+@use "../breakpoint";
+@use "../element";
+@use "../utils";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "border-radius" : 8px,
+  "border-width" : 0.25em,
+  "margin" : 2rem,
+  "tab-color" : color.get("link"),
+  "tab-color-hover" : color.get("link:hover"),
+  "tab-color-selected" : color.get("selected"),
+  "tab-border-color-selected" : currentColor,
+  "tablist-border-bottom" : element.get-rule-style("light"),
+  "tabpanel-background-color" : rgb(245, 245, 245)
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "component-tabs [config]");
+}
+
+/// Prints tabs component styles
+/// @example scss
+///  @include ulu.component-tabs-styles();
+
+@mixin styles {
+  @include utils.file-header("component", "tabs");
+
+  $prefix: selector.class("tabs");
+
+  #{ $prefix } {
+    margin-bottom: get("margin");
+    margin-top: get("margin");
+    [role="tablist"] {
+      position: relative;
+      z-index: 2;
+      display: flex; 
+      overflow-x: auto;
+      margin-bottom: -1px;
+      border-bottom: get("tablist-border-bottom");
+    }
+    [role="tab"] {
+      position: relative; 
+      cursor: pointer;
+      padding: 0.75em 0.1em 0.75em 0.1em;
+      color: get("tab-color");
+      font-weight: bold;
+      border-bottom: get("border-width") solid transparent;
+      text-align: center;
+      white-space: nowrap;
+      &:not(:first-child) {
+        margin-left: 1.25em;
+        @include breakpoint.min("small") {
+          margin-left: 2em;
+        }
+      }
+      &:hover {
+        color: get("tab-color-hover");
+      }
+      &:hover,
+      &:focus,
+      &[aria-selected="true"] {
+        border-bottom-color: currentColor;
+      }
+      &[aria-selected="true"] {
+        color: get("tab-color-selected");
+        border-bottom-color: get("tab-border-color-selected");
+        opacity: 1;
+      }
+    }
+    [role="tabpanel"] {
+      position: relative;
+      z-index: 1;
+      padding: 2rem get("margin");
+      margin-bottom: -1px;
+      overflow: hidden;
+
+      background-color: get("tabpanel-background-color");
+      [class*="video-embed"],
+      .full-width-image {
+        margin-left: -(get("margin"));
+        margin-right: -(get("margin"));
+        width: calc(100% + #{ get("margin")  * 2 });
+        max-width: none;
+        &:first-child {
+          margin-top: -2rem;
+        }
+        &:last-child {
+          margin-bottom: -2rem;
+        }
+      }
+    }
+  }
+  #{ $prefix }--transparent {
+    [role="tablist"] {
+      background-color: transparent;
+      box-shadow: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    [role="tabpanel"] {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  #{ $prefix }--full-width {
+    > [role="tablist"] {
+      justify-content: center;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    }
+    >[role="tabpanel"] {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+}

@@ -11,6 +11,10 @@
 @forward "list-ordered" as list-ordered-*;
 @forward "fill-context" as fill-context-*;
 @forward "popover" as popover-*;
+@forward "tabs" as tabs-*;
+@forward "modal" as modal-*;
+@forward "ratio-box" as ratio-box-*;
+@forward "adaptive-spacing" as adaptive-spacing-*;
 
 @use "sass:map";
 
@@ -24,6 +28,10 @@
 @use "list-ordered";
 @use "fill-context";
 @use "popover";
+@use "tabs";
+@use "modal";
+@use "ratio-box";
+@use "adaptive-spacing";
 
 // Used to check against user's includes
 
@@ -37,6 +45,10 @@ $-all-includes: (
   "list-ordered" : true,
   "fill-context" : true,
   "popover" : true,
+  "tabs" : true,
+  "modal" : true,
+  "ratio-box" : true,
+  "adaptive-spacing" : true,
 );
 
 /// Prints all Components styles
@@ -77,5 +89,17 @@ $-all-includes: (
   }
   @if (map.get($-all-includes, "popover")) {
     @include popover.styles;
+  }
+  @if (map.get($-all-includes, "tabs")) {
+    @include tabs.styles;
+  }
+  @if (map.get($-all-includes, "modal")) {
+    @include modal.styles;
+  }
+  @if (map.get($-all-includes, "ratio-box")) {
+    @include ratio-box.styles;
+  }
+  @if (map.get($-all-includes, "adaptive-spacing")) {
+    @include adaptive-spacing.styles;
   }
 }

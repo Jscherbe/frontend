@@ -19,8 +19,6 @@
   
   
   
-    <link rel="stylesheet" href="/assets/style.css">
-  
 </head>
 	<body class="page">
 		
@@ -1171,6 +1169,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/javascript/breakpoints/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      breakpoints
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/javascript/events/" 
           
         >
@@ -1190,25 +1207,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/javascript/helpers-css-breakpoint/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      helpers/css-breakpoint
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/javascript/helpers-file-save/" 
           
         >
@@ -1216,25 +1214,6 @@
     
     <span class="nav-tree__text">
       helpers/file-save
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
-          href="/javascript/helpers-node-data-manager/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      helpers/node-data-manager
     </span>
   
         </a>
@@ -1273,6 +1252,25 @@
     
     <span class="nav-tree__text">
       helpers/scrollbar-width-property
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/ui-collapsible/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/collapsible
     </span>
   
         </a>
@@ -1380,6 +1378,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/javascript/ui-popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      ui/popover
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/javascript/ui-programmatic-modal/" 
           
         >
@@ -1437,13 +1454,13 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/javascript/ui-tabs/" 
+          href="/javascript/ui-tabs-init/" 
           
         >
           
     
     <span class="nav-tree__text">
-      ui/tabs
+      ui/tabs/init
     </span>
   
         </a>
@@ -1489,6 +1506,25 @@
           
         </li>
       
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/utils-set-positional-classes/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      utils/set-positional-classes
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -1514,9 +1550,6 @@
 
                     <li><a href="#ui%2Fgrid.setup(selector%2C-classes)">ui/grid.setup(selector, classes)</a>
             		</li>
-
-                    <li><a href="#ui%2Fgrid.setpositionclasses(parent%2C-classes)">ui/grid.setPositionClasses(parent, classes)</a>
-            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -1535,7 +1568,6 @@
 <ul>
 <li><a href="#module_ui/grid.init">.init(selector, classes)</a></li>
 <li><a href="#module_ui/grid.setup">.setup(selector, classes)</a></li>
-<li><a href="#module_ui/grid.setPositionClasses">.setPositionClasses(parent, classes)</a></li>
 </ul>
 </li>
 </ul>
@@ -1589,38 +1621,6 @@
 </tr>
 </tbody>
 </table>
-<p><a name="module_ui/grid.setPositionClasses"></a></p>
-<h3 id="ui%2Fgrid.setpositionclasses(parent%2C-classes)" tabindex="-1">ui/grid.setPositionClasses(parent, classes)</h3>
-<p>Sets up the positonal classes that would come from the equal
-height module. Needs to be rerun by user when layout changes
-or new instances are added to the screen</p>
-<ul>
-<li>Used for gutter crops</li>
-<li>Used for rule placement</li>
-<li><strong>Devs</strong> Remember that default classes should match sass defaults</li>
-</ul>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/grid"><code>ui/grid</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>parent</td>
-<td><code>Node</code></td>
-<td>The grid parent &lt;data-grid=&quot;&quot;&gt;</td>
-</tr>
-<tr>
-<td>classes</td>
-<td><code>Object</code></td>
-<td>Override the default equal heights classes</td>
-</tr>
-</tbody>
-</table>
 
   </div>
 
@@ -1628,8 +1628,8 @@ or new instances are added to the screen</p>
 		<footer></footer>
 		
 
-  
-  <script src="/assets/main.js"></script>
+  <script src="http://localhost:5173/@vite/client" type="module"></script>
+  <script src="http://localhost:5173/docs-src/src/main.js" type="module"></script>
 
 <script>feather.replace();</script>
 		

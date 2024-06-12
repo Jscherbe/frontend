@@ -1,3 +1,7 @@
+/**
+ * @module utils/floating-ui
+ */
+
 import { 
   computePosition,
   autoUpdate,

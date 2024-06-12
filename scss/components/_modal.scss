@@ -1,0 +1,320 @@
+////
+/// @group modal
+////
+
+@use "sass:map";
+
+@use "../color";
+@use "../element";
+@use "../layout";
+@use "../typography";
+@use "../utils";
+
+
+/// Module Settings
+/// @type Map
+$config: (
+  "backdrop-color" :                element.get("backdrop-color"),
+  "backdrop-filter" :               blur(4px),
+  "box-shadow" :                    none,         
+  "width":                          400px,
+  "height":                         340px,
+  "width-centered":                 600px,
+  "border-radius" :                 0,
+  "resizer-width":                  1rem,
+  "resizer-color":                  black,
+  "resizer-color-hover":            black,
+  "resizer-background-color":       rgb(221, 221, 221),
+  "resizer-background-color-hover": rgb(66, 66, 66),
+  "header-padding":                 1rem,
+  "header-border-bottom":           none,
+  "header-background-color":        black,
+  "header-color":                   white,
+  "title-color":                    white,
+  "title-font-weight":              bold,
+  "close-color":                    black,
+  "close-color-hover":              black,
+  "close-background-color":         white,
+  "close-size":                     2.5rem,
+  "close-font-size":                1.2rem,
+  "close-margin":                   0.5rem,
+  "close-background-color-hover":   blue,
+  "body-padding":                   1rem,
+  "background-color":              white,
+  "dark-background-color" :         false,
+  "dark-color" :                   white,
+  "dark-header-border-bottom" :     false,
+  "dark-header-background-color" :  false,
+  "dark-header-color" :             false,
+  "title-icon-margin" :             0.5em
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "component-modal [config]");
+}
+
+/// Prints modal component styles
+/// @example scss
+///  @include ulu.component-modal-styles();
+
+@mixin styles {
+  // // Before it's moved
+  [data-site-modal] {
+    display: none;
+  }
+  
+  .modal {
+    display: none;
+    &.modal--open {
+      display: block;
+    }
+  }
+  .modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: get("backdrop-color");
+    display: flex;
+    backdrop-filter: get("backdrop-filter");
+    justify-content: center;
+    align-items: center;
+    z-index: layout.get("z-index-fixed");
+  }
+  .modal__container {
+    background-color: get("background-color");
+    // Using a flex container for scrollable body
+    display: flex;
+    flex-direction: column;
+    width: get("width");
+    min-height: get("height");
+    max-height: 100vh;
+    max-width: 100%;
+    box-shadow: get("box-shadow");
+    border-radius: get("border-radius");
+    overflow-y: hidden;
+    box-sizing: border-box;
+  
+    // Use native resize
+    .modal--resize.modal--center & {
+      resize: both;  
+      width: get("width-centered");
+    }
+    // Account for custom resizer
+    .modal--resize.modal--right  & {
+      padding-left: get("resizer-width");
+    }
+    .modal--resize.modal--left & {
+      padding-right: get("resizer-width");
+    }
+  }
+  .modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0;
+    padding: get("header-padding");
+    border-bottom: get("header-border-bottom");
+    background-color: get("header-background-color");
+    color: get("header-color");
+  }
+  .modal__body {
+    flex: 1;
+    overflow: auto;
+    padding: get("body-padding");
+  }
+  .modal__title {
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    color: color.get(get("title-color"));
+    font-weight: get("title-font-weight");
+    @include typography.size("large");
+  }
+  .modal__title-icon {
+    margin-right: get("title-icon-margin");
+  }
+  .modal__close {
+    margin: 0 0 0 get("close-margin");
+    flex: 0 0 auto;
+    font-size: get("close-font-size");
+    width: get("close-size");
+    height: get("close-size");
+    background-color: get("close-background-color");
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: get("close-color");
+    &:hover {
+      background-color: get("close-background-color-hover");
+      color: get("close-color-hover");
+    }
+    // @if get("close-icon") {
+    //   &:before {
+    //     @include icon.solid(get("close-icon"));
+    //   }
+    // }
+  }
+  .modal__resizer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: get("resizer-width");
+    display: block;
+    cursor: col-resize;
+    background-color: get("resizer-background-color");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+    transition-delay: 100ms; 
+    color: get("resizer-color");
+    // @if get("resizer-icon") {
+    //   &:before {
+    //     @include icon.solid(get("resizer-icon"));
+    //   }
+    // }
+    &:hover {
+      color: get("resizer-color-hover");
+      background-color: get("resizer-background-color-hover");
+    }
+    .modal--left & {
+      left: auto;
+      right: 0;
+    }
+  }
+  .modal__content {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: rgba(0,0,0,.8);
+  }
+  .modal--right,
+  .modal--left {
+    .modal__container {
+      border-radius: 0;
+    }
+  }
+
+  // Alternate layout on the right/left
+  .modal--right  {
+    .modal__overlay {
+      justify-content: flex-end;
+      align-items: stretch;
+    }
+  }
+  .modal--left  {
+    .modal__overlay {
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  }
+  @if get("dark-background-color") {
+    .modal--background-dark {
+      .modal__container {
+        background-color: get("dark-background-color");
+        color: get("dark-color");
+      }
+      @if get("dark-header-border-bottom") {
+        .modal__header {
+          border-bottom: get("dark-header-border-bottom");
+          background-color: get("dark-header-border-bottom");
+          color: get("dark-header-color");
+        }
+      }
+      .modal__body {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+  .modal--video {
+    .modal__header {
+      border-bottom: none;
+    }
+    .modal__body {
+      padding: 0;
+    }
+  }
+  
+  @keyframes uiModalFadeDownIn {
+      from { opacity: 0; }
+        to { opacity: 1; }
+  }
+  @keyframes uiModalFadeOut {
+      from { opacity: 1; }
+        to { opacity: 0; }
+  }
+  @keyframes uiModalSlideIn {
+    from { transform: translateY(15%); }
+      to { transform: translateY(0); }
+  }
+  @keyframes uiModalSlideOut {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10%); }
+  }
+  @keyframes uiModalSlideRightIn {
+    from { transform: translateX(15%); }
+      to { transform: translateX(0); }
+  }
+  @keyframes uiModalSlideRightOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(-10%); }
+  }
+  @keyframes uiModalSlideLeftIn {
+    from { transform: translateX(-15%); }
+      to { transform: translateX(0); }
+  }
+  @keyframes uiModalSlideLeftOut {
+      from { transform: translateX(0); }
+      to { transform: translateX(10%); }
+  }
+  
+  .modal[aria-hidden="false"] .modal__overlay {
+    animation: uiModalFadeDownIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  .modal[aria-hidden="false"] .modal__container {
+    animation: uiModalSlideIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+  .modal--right[aria-hidden="false"] .modal__container {
+    animation: uiModalSlideRightIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+  .modal--left[aria-hidden="false"] .modal__container {
+    animation: uiModalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+  .modal[aria-hidden="true"] .modal__overlay {
+    animation: uiModalFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  .modal[aria-hidden="true"] .modal__container {
+    animation: uiModalSlideOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+  .modal--right[aria-hidden="true"] .modal__container {
+    animation: uiModalSlideRightOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+  .modal--left[aria-hidden="true"] .modal__container {
+    animation: uiModalSlideLeftOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  
+  .modal .modal__container,
+  .modal .modal__overlay {
+    will-change: transform;
+  }
+}

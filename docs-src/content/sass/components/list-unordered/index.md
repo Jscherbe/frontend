@@ -43,7 +43,7 @@ Output styles
 
 #### Require
 
-- [get()](/sass/components/badge/#function-get)
+- [get()](/sass/components/adaptive-spacing/#function-get)
   
   
   
