@@ -33,6 +33,40 @@ Module Settings
 
 ``` scss
 $config: (
+  "icon-margin" : 1em
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _button.scss
+- **Group:** button
+- **Type:** variable
+- **Lines (comments):** 12-13
+- **Lines (code):** 15-17
+    </details>
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config-1}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
   "color"                   : inherit,
   "background-color"        : white,
   "padding"                 : 1rem,
@@ -123,8 +157,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 16-18
-- **Lines (code):** 20-22
+- **Lines (comments):** 19-21
+- **Lines (code):** 23-25
     </details>
     
 
@@ -140,7 +174,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
 
 
@@ -165,8 +199,8 @@ Prints button component styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 32-36
-- **Lines (code):** 38-95
+- **Lines (comments):** 35-39
+- **Lines (code):** 41-98
     </details>
     
 
@@ -194,7 +228,7 @@ Prints button component styles
 
 #### Require
 
-- [get()](/sass/components/adaptive-spacing/#function-get)
+- [get()](/sass/components/accordion/#function-get)
   
 
 
@@ -236,7 +270,51 @@ Change modules $config
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles-1}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Prints component styles
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _popover.scss
+- **Group:** button
+- **Type:** mixin
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-198
+    </details>
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-example-styles();
+```
+  
+
+      
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
   
   
 
@@ -266,8 +344,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 24-26
-- **Lines (code):** 28-30
+- **Lines (comments):** 27-29
+- **Lines (code):** 31-33
     </details>
     
 
@@ -283,7 +361,7 @@ Get a config option
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
 
 
@@ -325,7 +403,7 @@ Get a config option
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
   
   

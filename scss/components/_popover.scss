@@ -76,6 +76,10 @@ $config: (
   @return utils.require-map-get($config, $name, "component-popover [config]");
 }
 
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
 @mixin styles {
   $prefix: selector.class("popover");
   $arrow-size-half: math.div(get("arrow-size"), 2);

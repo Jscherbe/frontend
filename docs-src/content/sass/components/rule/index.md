@@ -115,7 +115,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
 
 
@@ -147,7 +147,7 @@ Output styles
 
 #### Require
 
-- [get()](/sass/components/adaptive-spacing/#function-get)
+- [get()](/sass/components/accordion/#function-get)
   
   
 
@@ -205,7 +205,7 @@ General example, replace module-name with module's name
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
   
   

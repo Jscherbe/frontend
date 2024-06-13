@@ -4,13 +4,13 @@
 /// Uses padding trick to keep ratio. Defaults to 4:3 (standard). Used for responsive iframe or images (object-fit), etc
 
 @use "sass:map";
-
 @use "../utils";
 
 /// Module Settings
 /// @type Map
 /// @prop {Number} $config.size Default height ratio (of width 100%)
 /// @prop {Number} $config.sizes Other ratios to add (apply with modifier class)
+
 $config: (
   "size" : 75%,
   "sizes" : (
@@ -22,7 +22,6 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
 ///   @include module-name.set(( "property" : value ));
 
 @mixin set($changes) {
@@ -34,12 +33,12 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return ulu.utils-require-map-get($config, $name, 'ratio-box [config]');
+  @return utils.require-map-get($config, $name, "ratio-box [config]");
 }
 
-/// Prints ratio box component styles
+/// Prints component styles
 /// @example scss
-///  @include ulu.component-ratio-box-styles();
+///  @include ulu.component-example-styles();
 
 @mixin styles {
   .ratio-box {

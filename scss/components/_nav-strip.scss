@@ -1,0 +1,126 @@
+////
+/// @group nav-strip
+////
+
+// Expects ul > li > a
+
+@use "sass:map";
+
+@use "../utils";
+@use "../color";
+@use "../typography";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "color" : null,
+  "color-hover" : null,
+  "color-active" : null,
+  "font-weight" : null,
+  "padding-x" : 0,
+  "padding-y" : 0.3em,
+  "underline-color" : orange,
+  "underline-size" : 3px,
+  "margin-between" : 2.25em,
+  "underline-color-hover" : gray,
+  "activeSelector" : ".is-active",
+  "rule-size" : 3px,
+  "rule-color" : color.get("rule"),
+  "rule-offset" : -3px,
+  "padding-y-ruled" : null,
+  "nowrap" : true
+) !default;
+
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "card [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  .nav-strip {
+    // Using direct children b/c don't want it to interfere with content other than direct children
+    // This does limit this selector to being a wrapper of the <ul> only but that seems possible
+    // and will allow other items like popovers etc to exist
+    ul,
+    .nav-strip__list {
+      display: flex;
+      // align-items: center;
+      line-height: typography.get("line-height-dense");
+    }
+    li,
+    .nav-strip__item {
+      margin-right: get("margin-between");
+      // layout flex since items inside may not be the same height
+      display: flex;
+      align-items: flex-end;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    a,
+    button,
+    .nav-strip__link {
+      display: block;
+      color: get("color");
+      padding: get("padding-y") get("padding-x");
+      border-top: get("underline-size") solid transparent;
+      border-bottom: get("underline-size") solid transparent;
+      font-weight: get("font-weight");
+      @if (get("nowrap")) {
+        white-space: nowrap;
+      }
+      &:hover,
+      &:focus {
+        border-bottom-color: get("underline-color-hover");
+        color: get("color-hover");
+      }
+      &#{ get("activeSelector") } {
+        border-bottom-color: get("underline-color");
+        color: get("color-active");
+      }
+    }
+  }
+  .nav-strip--right {
+    ul,
+    .nav-strip__list {
+      justify-content: flex-end;
+    }
+  }
+  .nav-strip--center {
+    ul,
+    .nav-strip__list {
+      justify-content: center;
+    }
+  }
+  // Rail/Rule
+  .nav-strip--rule {
+    ul,
+    .nav-strip__list {
+      border-bottom: get("rule-size") solid get("rule-color");
+    }
+    a, 
+    button,
+    .nav-strip__link {
+      margin-bottom: get("rule-offset");
+      padding-top: get("padding-y-ruled");
+      padding-bottom: get("padding-y-ruled");
+    }
+  }
+}

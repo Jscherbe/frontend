@@ -1,0 +1,62 @@
+////
+/// @group card-grid
+////
+
+@use "sass:map";
+
+@use "../breakpoint";
+@use "../utils";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "gap" : 2rem,
+  "compact-gap" : 1rem,
+  "template-columns" : 1fr 1fr,
+  "compact-template-columns" : 1fr 1fr 1fr,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "card-grid [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  .card-grid {
+    display: grid;
+    grid-template-columns:  get("template-columns");
+    grid-auto-rows: 1fr;
+    gap: get("gap");
+    margin: get("gap") 0;
+    .card {
+      max-width: none;
+      height: 100%;
+      margin: 0;
+    }
+  }
+  .card-grid--compact {
+    grid-template-columns: get("compact-template-columns");
+    gap: get("compact-gap");
+  }
+  @include breakpoint.max("small") {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

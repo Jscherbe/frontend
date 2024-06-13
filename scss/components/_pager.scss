@@ -1,0 +1,136 @@
+////
+/// @group pager
+////
+
+
+@use "sass:map";
+
+@use "../utils";
+@use "../color";
+
+// Markup Matches Drupal Pager
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "font-weight":                   bold,
+  "width":                         2.5rem,
+  "margin-top":                    1rem,
+  "margin-bottom":                 2rem,
+  "item-margin":                   0.17rem,
+  "color":                         white,
+  "color-hover":                   white,
+  "background-color":              color.get("link"),
+  "background-color-hover":        color.get("link:hover"),
+  "border-color":                  color.get("link"),
+  "border-color-hover":            color.get("link:hover"),
+  "border-width":                  1px,
+  "border-radius":                 50%,
+  "active-color":                  color.get("type"),
+  "active-font-weight":            bold,
+  "active-background-color":       #ccc,
+  "active-border-color":           #ccc,
+  "action-width":                  2.5rem,
+  "action-margin":                 0.8rem,
+  "action-color":                  white,
+  "action-background-color":       color.get("link"),
+  "action-background-color-hover": color.get("link:hover"),
+  "action-border-color":           transparent,
+  "action-border-color-hover":     color.get("link"),
+  "action-color-hover":            white
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "card [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  .pager {
+    font-weight: get("font-weight");
+    margin-top: get("margin-top");
+    margin-bottom: get("margin-bottom");
+  }
+  .pager__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .pager__item {
+    margin: get("item-margin");
+    a {
+      
+      display: block;
+      text-align: center;
+      width: get("width");
+      height: get("width");
+      line-height: get("width");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: get("border-radius");
+      border: get("border-width") solid get("border-color");
+      background-color: get("background-color");
+      color: get("color");
+      &:hover {
+        color: get("color-hover");
+        border-color: get("border-color-hover");
+        background-color: get("background-color-hover");
+      }
+    }
+    &.is-active,
+    &--current {
+      a, 
+      a:hover,
+      span {
+        font-weight: get("font-weight");
+        color: get("active-color");
+        background-color: get("active-background-color");
+        border-color: get("active-border-color");
+      }
+    }
+  }
+  .pager__item--first,
+  .pager__item--previous,
+  .pager__item--next,
+  .pager__item--last {
+    a {
+      width: get("action-width");
+      height: get("action-width");
+      line-height: get("action-width");
+      background-color: get("action-background-color");
+      color: get("action-color");
+      font-size: 1.2rem;
+      line-height: 2.8rem;
+      font-weight: bold;
+      &:hover {
+        border-color: get("action-border-color-hover");
+        background-color: get("action-background-color-hover");
+        color: get("action-color-hover");
+      }
+    }
+  }
+  .pager__item--previous {
+    margin-right: get("action-margin")
+  }
+  .pager__item--next {
+    margin-left: get("action-margin")
+  }
+}

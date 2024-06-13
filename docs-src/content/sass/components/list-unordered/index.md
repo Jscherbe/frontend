@@ -43,7 +43,7 @@ Output styles
 
 #### Require
 
-- [get()](/sass/components/adaptive-spacing/#function-get)
+- [get()](/sass/components/accordion/#function-get)
   
   
   

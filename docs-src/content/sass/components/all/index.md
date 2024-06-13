@@ -36,8 +36,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 54-58
-- **Lines (code):** 60-105
+- **Lines (comments):** 75-79
+- **Lines (code):** 81-147
     </details>
     
 
@@ -64,7 +64,7 @@ Prints all Components styles
 
 #### Require
 
-- [get()](/sass/components/adaptive-spacing/#function-get)
+- [get()](/sass/components/accordion/#function-get)
   
   
   

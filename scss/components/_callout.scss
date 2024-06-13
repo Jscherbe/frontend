@@ -1,0 +1,99 @@
+////
+/// @group callout
+////
+
+@use "sass:map";
+
+@use "../utils";
+@use "../selector";
+@use "../element";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "padding" : 1.5rem,
+  "margin" : 2rem,
+  "border" : element.get-rule-style("light"),
+  "border-radius" :  element.get("border-radius"),
+  "box-shadow" : none,
+  "background-color" : rgb(240, 240, 240)
+) !default;
+
+$styles: (
+  "background-dark" : (
+    "background-color" : rgb(240, 240, 240)
+  ),
+  "light" : (
+    "background-color" : white,
+    "border-color" : gray
+  ),
+  "success" : (
+    "color" : green,
+    "background-color" : lightgreen,
+    "border-color" : lightgreen
+  ),
+  "danger" : (
+    "color" : red,
+    "background-color" : rgb(221, 131, 131),
+    "border-color" : rgb(221, 131, 131)
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "callout [config]");
+}
+
+/// Set callout styles 
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-styles($changes, $merge-mode: null) {
+  $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  $prefix: selector.class("callout");
+
+  #{ $prefix } {
+    background-color: get("background-color");
+    padding: get("padding");
+    border: get("border");
+    margin-bottom: get("margin");
+    box-shadow: get("box-shadow");
+    border-radius: get("border-radius");
+    & >:first-child {
+      margin-top: 0;
+    }
+  }
+  #{ $prefix }--outline {
+    background-color: transparent;
+  }
+  @each $name, $style in $styles {
+    #{ $prefix }--#{ $name } {
+      background-color: map.get($style, "background-color"); 
+      color: map.get($style, "color"); 
+      border: map.get($style, "border"); 
+      border-radius: map.get($style, "border-radius"); 
+      border-color: map.get($style, "background-color"); 
+      box-shadow: map.get($style, "box-shadow"); 
+      padding: map.get($style, "padding"); 
+    }
+  }
+}

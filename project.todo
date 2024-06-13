@@ -13,6 +13,7 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Refactor (site-details = accordion) component
   ☐ Rule styles should be defined as object so that colors can be keys instead of hardcoded
     * Requires resetting the rule style manually now to update from default color
     ☐ What about transitioning to css variables for everything?
@@ -42,3 +43,18 @@ Ideas:
   ☐ Add scaffolding @idea
   ☐ Create something that will compile seperate stylesheets for all components, helpers, etc (to be used by CDN prototyping / quick patches unpkg, etc). 
     ☐ Would allow team to add features without adding to stylesheet (we need modals quick, we need tooltips quick, just a thought)
+
+Long Term:
+  Scss:
+    General:
+      ☐ Should we use array/list for components enabled instead of object with booleans?
+        * Could provide full array (from module) to easily populate
+        * Could have warnings to say if a component in the list is not exist
+        * Could allow the user to load components in the order of the array
+          * Don't do this, this should be up to the lib, users can already to this manually
+        * Main benifit of array syntax would be simplicity and easily copying this from in config (reduce config visually too)
+  Popovers:
+    ☐ Use HTML Popover?
+      * Keep an eye on this API may be able to remove some scripting
+      * Not sure if this is fully accessible yet, can probably be added (toggling attrs needed for a11y)
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover

@@ -107,7 +107,7 @@ Change modules $config
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
 
 
@@ -151,8 +151,8 @@ Prints adaptive spacing component styles
 
 #### Require
 
-- [get()](/sass/components/adaptive-spacing/#function-get)
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [get()](/sass/components/accordion/#function-get)
+- [$config](/sass/components/accordion/#variable-config)
   
   
 
@@ -199,7 +199,7 @@ Get a config option
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
   
   

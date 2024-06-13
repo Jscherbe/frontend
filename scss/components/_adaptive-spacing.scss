@@ -52,8 +52,8 @@ $config: (
 ///  @include ulu.component-adaptive-spacing-styles();
 
 @mixin styles {
-  $prefixMargin: ulu.selector-class("adaptive-margin");
-  $prefixPadding: ulu.selector-class("adaptive-padding");
+  $prefixMargin: selector.class("adaptive-margin");
+  $prefixPadding: selector.class("adaptive-padding");
   $hasMargin: map.get($config, "outputMargin");
   $hasPadding: map.get($config, "outputPadding");
   
@@ -70,7 +70,7 @@ $config: (
           @include -classes-for-type($sizePrefixPadding, "padding", $value);
         }
       } @else {
-        @include ulu.breakpoint-min($key) {
+        @include breakpoint.min($key) {
           @if $hasMargin {
             @include -classes-for-type($sizePrefixMargin, "margin", $value);
           }

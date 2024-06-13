@@ -9,6 +9,9 @@
 @use "../utils";
 @use "../button";
 
+/// Module Settings
+/// @type Map
+
 $config: (
   "icon-margin" : 1em
 ) !default;

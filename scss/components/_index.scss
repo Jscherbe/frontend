@@ -2,9 +2,14 @@
 /// @group all
 ////
 
+@forward "accordion" as accordion-*;
 @forward "links" as links-*;
 @forward "button" as button-*;
+@forward "button-verbose" as button-verbose-*;
 @forward "badge" as badge-*;
+@forward "callout" as callout-*;
+@forward "card" as card-*;
+@forward "card-grid" as card-grid-*;
 @forward "rule" as rule-*;
 @forward "list-lines" as list-lines-*;
 @forward "list-unordered" as list-unordered-*;
@@ -14,14 +19,21 @@
 @forward "tabs" as tabs-*;
 @forward "modal" as modal-*;
 @forward "ratio-box" as ratio-box-*;
+@forward "nav-strip" as nav-strip-*;
 @forward "adaptive-spacing" as adaptive-spacing-*;
+@forward "pager" as pager-*;
 
 @use "sass:map";
 
 @use "../utils";
+@use "accordion";
 @use "links";
 @use "button";
+@use "button-verbose";
 @use "badge";
+@use "callout";
+@use "card";
+@use "card-grid";
 @use "rule";
 @use "list-lines";
 @use "list-unordered";
@@ -31,14 +43,21 @@
 @use "tabs";
 @use "modal";
 @use "ratio-box";
+@use "nav-strip";
 @use "adaptive-spacing";
+@use "pager";
 
 // Used to check against user's includes
 
 $-all-includes: (
+  "accordion" : true,
   "links" : true,
   "button" : true,
+  "button-verbose" : true,
   "badge" : true,
+  "callout" : true,
+  "card" : true,
+  "card-grid" : true,
   "rule" : true,
   "list-lines" : true,
   "list-unordered" : true,
@@ -48,7 +67,9 @@ $-all-includes: (
   "tabs" : true,
   "modal" : true,
   "ratio-box" : true,
+  "nav-strip" : true,
   "adaptive-spacing" : true,
+  "pager" : true,
 );
 
 /// Prints all Components styles
@@ -63,14 +84,29 @@ $-all-includes: (
     @include utils.require-list-contains($-all-includes, $includes);
     $-all-includes: map.merge($-all-includes, $includes) !global;
   }
+  @if (map.get($-all-includes, "accordion")) {
+    @include accordion.styles;
+  }
   @if (map.get($-all-includes, "links")) {
     @include links.styles;
   }
   @if (map.get($-all-includes, "button")) {
     @include button.styles;
   }
+  @if (map.get($-all-includes, "button-verbose")) {
+    @include button-verbose.styles;
+  }
   @if (map.get($-all-includes, "badge")) {
     @include badge.styles;
+  }
+  @if (map.get($-all-includes, "callout")) {
+    @include callout.styles;
+  }
+  @if (map.get($-all-includes, "card")) {
+    @include card-grid.styles;
+  }
+  @if (map.get($-all-includes, "card-grid")) {
+    @include card-grid.styles;
   }
   @if (map.get($-all-includes, "rule")) {
     @include rule.styles;
@@ -99,7 +135,13 @@ $-all-includes: (
   @if (map.get($-all-includes, "ratio-box")) {
     @include ratio-box.styles;
   }
+  @if (map.get($-all-includes, "nav-strip")) {
+    @include nav-strip.styles;
+  }
   @if (map.get($-all-includes, "adaptive-spacing")) {
     @include adaptive-spacing.styles;
+  }
+  @if (map.get($-all-includes, "pager")) {
+    @include pager.styles;
   }
 }

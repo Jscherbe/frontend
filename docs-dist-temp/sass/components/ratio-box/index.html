@@ -817,6 +817,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/components/accordion/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Accordion
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/components/adaptive-spacing/" 
           
         >
@@ -881,6 +900,82 @@
     
     <span class="nav-tree__text">
       Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/button-verbose/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button-verbose
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/callout/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Callout
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/card/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Card
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/card-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Card-grid
     </span>
   
         </a>
@@ -995,6 +1090,44 @@
     
     <span class="nav-tree__text">
       Modal
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/nav-strip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Nav-strip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/pager/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Pager
     </span>
   
         </a>
@@ -1746,9 +1879,6 @@
             
                 <ol>
                     
-                    <li><a href="#examples">Examples</a>
-            		</li>
-
                     <li><a href="#parameters">Parameters</a>
             		</li>
 
@@ -1761,7 +1891,7 @@
             
                 <ol>
                     
-                    <li><a href="#examples-1">Examples</a>
+                    <li><a href="#examples">Examples</a>
             		</li>
 
                     <li><a href="#require-1">Require</a>
@@ -1821,7 +1951,7 @@
 <li><strong>File:</strong> _ratio-box.scss</li>
 <li><strong>Group:</strong> ratio-box</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 10-13</li>
+<li><strong>Lines (comments):</strong> 9-12</li>
 <li><strong>Lines (code):</strong> 14-21  </details>
 </li>
 </ul>
@@ -1861,13 +1991,10 @@
 <li><strong>File:</strong> _ratio-box.scss</li>
 <li><strong>Group:</strong> ratio-box</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 23-26</li>
-<li><strong>Lines (code):</strong> 28-30  </details>
+<li><strong>Lines (comments):</strong> 23-25</li>
+<li><strong>Lines (code):</strong> 27-29  </details>
 </li>
 </ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<p>General example, replace module-name with module's name</p>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> module-name.<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token string">"property"</span> <span class="token punctuation">:</span> value <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -1883,11 +2010,16 @@
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Map of changes</td>
 </tr>
+<tr>
+<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
 </tbody>
 </table>
 <h4 id="require" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/sass/components/adaptive-spacing/#variable-config">$config</a></li>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 <div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
@@ -1895,22 +2027,22 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints ratio box component styles</p>
+<p>Prints component styles</p>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
 <li><strong>File:</strong> _ratio-box.scss</li>
 <li><strong>Group:</strong> ratio-box</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 40-42</li>
-<li><strong>Lines (code):</strong> 44-63  </details>
+<li><strong>Lines (comments):</strong> 39-41</li>
+<li><strong>Lines (code):</strong> 43-62  </details>
 </li>
 </ul>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">component-ratio-box-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">component-example-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <h4 id="require-1" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/sass/components/adaptive-spacing/#function-get">get()</a></li>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
@@ -1926,8 +2058,8 @@
 <li><strong>File:</strong> _ratio-box.scss</li>
 <li><strong>Group:</strong> ratio-box</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 32-34</li>
-<li><strong>Lines (code):</strong> 36-38  </details>
+<li><strong>Lines (comments):</strong> 31-33</li>
+<li><strong>Lines (code):</strong> 35-37  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -1954,7 +2086,7 @@
 </table>
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/sass/components/adaptive-spacing/#variable-config">$config</a></li>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 
   </div>

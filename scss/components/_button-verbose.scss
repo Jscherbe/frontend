@@ -1,0 +1,100 @@
+////
+/// @group button-verbose
+////
+/// A button that has additional markup (ie. page with description for example)
+/// - Used on things like linear pagination (up next)
+@use "sass:map";
+
+@use "../utils";
+@use "../color";
+@use "../element";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "margin" : 1em,
+  "margin-inline" : 0.75em,
+  "padding-x": 0.65em,
+  "padding-y": 1em,
+  "icon-font-size" : 1.25rem,
+  "min-width": 20rem,
+  "line-height" : 1.2,
+  "icon-color": gray,
+  "title-color": color.get("link"),
+  "title-margin" : 0.5em,
+  "background-color" : white,
+  "background-color:hover" : color.get("link"),
+  "color" : color.get("type"),
+  "color:hover" : color.get("type"),
+  "title-color:hover" : color.get("link:hover"),
+  "border-radius" : element.get("border-radius"),
+  "box-shadow" : element.get("box-shadow"),
+  "box-shadow:hover" : element.get("box-shadow:hover"),
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "button-verbose [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  .button-verbose {
+    text-decoration: none;
+    border-radius: get("border-radius");
+    box-shadow: get("box-shadow");
+    line-height: get("line-height");
+    position: relative;
+    display: block;
+    margin-bottom: get("margin");
+    max-width: 100%;
+    width: get("min-width");
+    background-color: get("background-color");
+    padding: get("padding-y") get("padding-x");
+    padding-right: (get("padding-x") * 2) + 1em;
+    color: get("color");
+    &:hover {
+      color: get("color:hover");
+      background-color: get("background-color:hover");
+      box-shadow: get("box-shadow:hover");
+      .button-verbose__title  {
+        color: get("title-color:hover");
+      }
+    }
+  }
+  .button-verbose__title {
+    display: block;
+    margin-bottom: get("title-margin");
+    color: get("title-color");
+  }
+  .button-verbose__icon {
+    position: absolute;
+    top: 50%;
+    right: get("padding-x");
+    transform: translateY(-50%);
+    font-size: get("icon-font-size");
+    color: get("icon-color");
+  }
+  .button-verbose--inline {
+    display: inline-block;
+    margin-right: get("margin-inline");
+  }
+  .button-verbose--full-width {
+    width: 100%;
+  }
+}

@@ -48,7 +48,7 @@ $config: (
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** variable
-- **Lines (comments):** 10-13
+- **Lines (comments):** 9-12
 - **Lines (code):** 14-21
     </details>
     
@@ -90,35 +90,24 @@ Change modules $config
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** mixin
-- **Lines (comments):** 23-26
-- **Lines (code):** 28-30
+- **Lines (comments):** 23-25
+- **Lines (code):** 27-29
     </details>
     
-
-#### Examples
-
-General example, replace module-name with module's name      
-
-
-``` scss
-@include module-name.set(( "property" : value ));
-```
-  
-
-      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes|
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));|
 
     
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
 
 
@@ -134,7 +123,7 @@ General example, replace module-name with module's name
 
   
 
-Prints ratio box component styles
+Prints component styles
     
     
 
@@ -143,8 +132,8 @@ Prints ratio box component styles
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-63
+- **Lines (comments):** 39-41
+- **Lines (code):** 43-62
     </details>
     
 
@@ -154,7 +143,7 @@ Prints ratio box component styles
 
 
 ``` scss
-@include ulu.component-ratio-box-styles();
+@include ulu.component-example-styles();
 ```
   
 
@@ -162,7 +151,7 @@ Prints ratio box component styles
 
 #### Require
 
-- [get()](/sass/components/adaptive-spacing/#function-get)
+- [get()](/sass/components/accordion/#function-get)
   
   
 
@@ -192,8 +181,8 @@ Get a config option
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** function
-- **Lines (comments):** 32-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 31-33
+- **Lines (code):** 35-37
     </details>
     
 
@@ -209,7 +198,7 @@ Get a config option
 
 #### Require
 
-- [$config](/sass/components/adaptive-spacing/#variable-config)
+- [$config](/sass/components/accordion/#variable-config)
   
   
   
