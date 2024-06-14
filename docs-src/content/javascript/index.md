@@ -1,6 +1,6 @@
 ---
-title: Javascript API
-weight: 10
+title: Javascript
+weight: 30
 icon: code
 ---
 

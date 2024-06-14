@@ -13,10 +13,18 @@
         </p>
       </div>
     </div>
-    <div class="home__body">
-      <div class="page__body-top container wysiwyg">
-        {{ content | safe }}
-      </div>
+    <div class="page__body-top ">
+      {% if highlights %}
+        <div class="home__highlights container">
+          {% include "partials/highlights.njk" %}
+        </div>
+      {% endif %}
+      {% if content %}
+        <div class="home__body container wysiwyg">
+        </div>
+      {% endif %}
+      {{ content | safe }}
     </div>
   </div>
+  
 {% endblock %}

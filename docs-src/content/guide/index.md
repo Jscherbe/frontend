@@ -1,6 +1,6 @@
 ---
 title: Guide
-hideIndexInMenu: true
+hideIndexInMenu: false
 weight: 0
 icon: book
 ---

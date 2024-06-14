@@ -1,0 +1,23 @@
+{% if highlights %}
+  <div data-grid="columns: 12">
+    {% for highlight in highlights %}
+      <div data-grid-item="width: 4">
+        <h2 class="h4">{{ highlight.title }}</h2>
+        {% if highlight.description %}
+          <p>
+            {{ highlight.description }}
+          </p>
+        {% endif %}
+        {% if highlight.links %}
+          <p>
+            {% for link in highlight.links %}
+              <a class="button" href="{{ link.url }}">
+                {{ link.text | default("View") }}
+              </a>
+            {% endfor %}
+          </p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
