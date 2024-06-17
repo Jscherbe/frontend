@@ -1,4 +1,14 @@
 JS Updates:
+  ☐ Simplify initializers into a common pattern (they all need the same thing)
+    ☐ Would be nice if what ever this is offers consitent api for all
+      * IE. How to get instances for example 
+      * this might be something that is a class/object structure and then 
+        modules will add export functions that tap into this global instance class
+        * For example the module can determine how you get the instance by other means (other than passing node, ie. by id for example, unsure)
+  ☐ logger system could be better
+    ☐ Get rid of class logger, don't want extend or decorators, everything isn't a class
+    ☐ Need the ability to make logger instances with titles, each module can do that on their own
+    ☐ Simplify logger to just stuff like that and get rid of anything to details (showContext? that's too much I think, each module should determine if showing context is important, unsure)
   ☐ Consoder whether or not the init attributes are still nessary, maybe these shoudld all move to initializers
   ☐ Seperate initializers and classes
     * Like Collapsible, Tooltip (which don't do anything on their own and have to be used by an initializer or by the user directly)

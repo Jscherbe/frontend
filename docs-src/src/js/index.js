@@ -6,3 +6,4 @@ console.log("ulu:\n", ulu);
 ulu.grid.init();
 ulu.popover.init();
 ulu.tabs.init();
+ulu.modals.init();
