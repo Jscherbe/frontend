@@ -1,7 +1,7 @@
 ---
 title: Javascript
 weight: 30
-icon: code
+iconClass: fab fa-js
 ---
 
 This is a test page

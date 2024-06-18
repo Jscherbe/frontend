@@ -1,7 +1,9 @@
-
 {% extends "html.njk" %}
 {% block main %}
-  <div class="page__body-top container wysiwyg">
-    {{ content | safe }}
+  <div class="page__body-top container ">
+    {% include "partials/page-header.njk" %}
+    <div class="wysiwyg">
+      {{ content | safe }}
+    </div>
   </div>
 {% endblock %}

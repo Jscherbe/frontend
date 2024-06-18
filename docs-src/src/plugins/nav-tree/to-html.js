@@ -106,18 +106,18 @@ export default function toHtml(tree, opts) {
           ${ formatLink({ node, options, isIndex }) }
         </a>
       `;
-      return `
+      return indexLink ? `
         <li class="${ getClass("item") } ${ node.classes }">
           ${ indexLink }
           ${ showChildren && !isIndex ? printList(node.children, depth) : "" }
         </li>
-      `;
+      ` : "";
     }
     /* eslint-enable */
   };
   /**
    * @param {Array} children Menu items from tree
-   * @param {*} lastDepth This is called recusively this is the iteration above
+   * @param {*} lastDepth This is called recursively this is the iteration above
    * @param {*} collapsedNode If within a collapsible this is the node that is collapsed (printed in menu list)
    */
   const printList = (children, lastDepth, collapsedNode) => {

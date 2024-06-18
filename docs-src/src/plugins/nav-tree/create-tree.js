@@ -1,12 +1,12 @@
 import defaults from "./defaults.js";
 
 /**
- * Provides automatice hierachal tree for nav creation based on a eleventy collection
+ * Provides automatic hierarchal tree for nav creation based on a eleventy collection
  * - Will sort pages by "weight" or "order" (data/frontmatter)
  * @param {Array} collection Eleventy collection
  * @param {Object} options Options for make Tree (see defaults)
  * @param {Object} ctx Optional context object for active state data
- * @returns {Array} Array of entries in format [ { entry<CollectionEntry>, children: [...], url<String>, active<Boolean>, activeTrail<Boolean> }, ...], hierachy structure
+ * @returns {Array} Array of entries in format [ { entry<CollectionEntry>, children: [...], url<String>, active<Boolean>, activeTrail<Boolean> }, ...], hierarchy structure
  */
 export default function createTree(collection, options, ctx = {}) {
   if (!collection?.length) {
@@ -90,7 +90,7 @@ export default function createTree(collection, options, ctx = {}) {
         item.url = url;
         item.active = url === ctx?.page.url;
         item.activeTrail = ctx?.page.url.includes(url);
-        // Classes for convienence in templating or in toHtml
+        // Classes for convenience in templating or in toHtml
         const classes = [];
         if (item.active) classes.push(opts.classActive);
         if (item.activeTrail) classes.push(opts.classActiveTrail);

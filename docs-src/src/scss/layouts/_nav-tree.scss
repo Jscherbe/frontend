@@ -4,7 +4,7 @@
 
 $link-padding-x: 0.75em;
 $link-padding-y: 0.35em;
-$link-indent: 1em;
+$link-indent: 1.5em;
 $collapsible-inner-padding: 0.5em;
 
 .nav-tree__item {
@@ -23,12 +23,20 @@ $collapsible-inner-padding: 0.5em;
   }
 }
 .nav-tree__toggle {
+  font-weight: bold;
   &::marker {
     display: none;
   }
+  & + .nav-tree {
+    margin-top: $collapsible-inner-padding;
+  }
+}
+.nav-tree .nav-tree .nav-tree__toggle {
+  font-weight: normal;
 }
 .nav-tree__toggle-content {
   display: flex;
+  align-items: baseline;
   padding-right: 1em;
 }
 .nav-tree__toggle-icon {
@@ -50,20 +58,11 @@ $collapsible-inner-padding: 0.5em;
   }
   
 }
-.nav-tree__link--index {
-  margin-top: $collapsible-inner-padding;
-  // color: ulu.color-get("type-tertiary");
-  // &,
-  // &.is-active {
-  //   font-weight: ulu.typography-get("font-weight-light");
-  // }
-  // font-style: italic;
-  
-}
 .nav-tree__icon {
-  margin-right: 0.5em;
+  margin-right: 0.35em;
   width: 1em;
-  flex: 0 0 1em;
+  flex: 0 0 1.2em;
+  opacity: 0.8;
 }
 
 // Depth styling
@@ -85,7 +84,7 @@ $collapsible-inner-padding: 0.5em;
     &[data-menu-depth="#{ $index }"] {
       .nav-tree__link,
       .nav-tree__toggle {
-        padding-left: $link-indent * $index;
+        padding-left: $link-indent * ($index - 1);
       }
     }
   }

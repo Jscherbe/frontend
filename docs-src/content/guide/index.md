@@ -2,7 +2,7 @@
 title: Guide
 hideIndexInMenu: false
 weight: 0
-icon: book
+iconClass: fas fa-book
 ---
 
 Guide Landing page

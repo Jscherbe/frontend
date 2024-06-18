@@ -72,28 +72,18 @@ $config: (
 
 @mixin styles {
   // // Before it's moved
-  [data-site-modal] {
+  [data-ulu-dialog-builder] {
     display: none;
   }
   
   .modal {
-    display: none;
-    &.modal--open {
-      display: block;
+    // Required for click outside
+    padding: 0;
+    border: 0;
+    &::backdrop {
+      background: get("backdrop-color");
+      backdrop-filter: get("backdrop-filter");
     }
-  }
-  .modal__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: get("backdrop-color");
-    display: flex;
-    backdrop-filter: get("backdrop-filter");
-    justify-content: center;
-    align-items: center;
-    z-index: layout.get("z-index-fixed");
   }
   .modal__container {
     background-color: get("background-color");
@@ -164,11 +154,6 @@ $config: (
       background-color: get("close-background-color-hover");
       color: get("close-color-hover");
     }
-    // @if get("close-icon") {
-    //   &:before {
-    //     @include icon.solid(get("close-icon"));
-    //   }
-    // }
   }
   .modal__resizer {
     position: absolute;
@@ -186,11 +171,6 @@ $config: (
     transition-duration: 300ms;
     transition-delay: 100ms; 
     color: get("resizer-color");
-    // @if get("resizer-icon") {
-    //   &:before {
-    //     @include icon.solid(get("resizer-icon"));
-    //   }
-    // }
     &:hover {
       color: get("resizer-color-hover");
       background-color: get("resizer-background-color-hover");
@@ -226,25 +206,6 @@ $config: (
       align-items: stretch;
     }
   }
-  @if get("dark-background-color") {
-    .modal--background-dark {
-      .modal__container {
-        background-color: get("dark-background-color");
-        color: get("dark-color");
-      }
-      @if get("dark-header-border-bottom") {
-        .modal__header {
-          border-bottom: get("dark-header-border-bottom");
-          background-color: get("dark-header-border-bottom");
-          color: get("dark-header-color");
-        }
-      }
-      .modal__body {
-        background-color: transparent;
-        color: inherit;
-      }
-    }
-  }
   .modal--video {
     .modal__header {
       border-bottom: none;
@@ -254,62 +215,62 @@ $config: (
     }
   }
   
-  @keyframes uiModalFadeDownIn {
+  @keyframes modalFadeDownIn {
       from { opacity: 0; }
         to { opacity: 1; }
   }
-  @keyframes uiModalFadeOut {
+  @keyframes modalFadeOut {
       from { opacity: 1; }
         to { opacity: 0; }
   }
-  @keyframes uiModalSlideIn {
+  @keyframes modalSlideIn {
     from { transform: translateY(15%); }
       to { transform: translateY(0); }
   }
-  @keyframes uiModalSlideOut {
+  @keyframes modalSlideOut {
       from { transform: translateY(0); }
       to { transform: translateY(-10%); }
   }
-  @keyframes uiModalSlideRightIn {
+  @keyframes modalSlideRightIn {
     from { transform: translateX(15%); }
       to { transform: translateX(0); }
   }
-  @keyframes uiModalSlideRightOut {
+  @keyframes modalSlideRightOut {
       from { transform: translateX(0); }
       to { transform: translateX(-10%); }
   }
-  @keyframes uiModalSlideLeftIn {
+  @keyframes modalSlideLeftIn {
     from { transform: translateX(-15%); }
       to { transform: translateX(0); }
   }
-  @keyframes uiModalSlideLeftOut {
+  @keyframes modalSlideLeftOut {
       from { transform: translateX(0); }
       to { transform: translateX(10%); }
   }
   
   .modal[aria-hidden="false"] .modal__overlay {
-    animation: uiModalFadeDownIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    animation: modalFadeDownIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
   }
   .modal[aria-hidden="false"] .modal__container {
-    animation: uiModalSlideIn .3s cubic-bezier(0, 0, .2, 1);
+    animation: modalSlideIn .3s cubic-bezier(0, 0, .2, 1);
   }
   .modal--right[aria-hidden="false"] .modal__container {
-    animation: uiModalSlideRightIn .3s cubic-bezier(0, 0, .2, 1);
+    animation: modalSlideRightIn .3s cubic-bezier(0, 0, .2, 1);
   }
   .modal--left[aria-hidden="false"] .modal__container {
-    animation: uiModalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
+    animation: modalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
   }
   .modal[aria-hidden="true"] .modal__overlay {
-    animation: uiModalFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+    animation: modalFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
   }
   .modal[aria-hidden="true"] .modal__container {
-    animation: uiModalSlideOut .3s cubic-bezier(0, 0, .2, 1);
+    animation: modalSlideOut .3s cubic-bezier(0, 0, .2, 1);
   }
   .modal--right[aria-hidden="true"] .modal__container {
-    animation: uiModalSlideRightOut .3s cubic-bezier(0, 0, .2, 1);
+    animation: modalSlideRightOut .3s cubic-bezier(0, 0, .2, 1);
   }
   .modal--left[aria-hidden="true"] .modal__container {
-    animation: uiModalSlideLeftOut .3s cubic-bezier(0, 0, .2, 1);
+    animation: modalSlideLeftOut .3s cubic-bezier(0, 0, .2, 1);
   }
   
   

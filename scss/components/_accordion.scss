@@ -69,8 +69,7 @@ $config: (
 @mixin styles {
 
   // When not one of our custom classed details components
-  .site-details,
-  details:not([class]) {
+  .site-details {
     position: relative; // For active border
     border-radius: 0;
     padding-left: get("padding-x");
@@ -158,7 +157,7 @@ $config: (
   }
 
 
-  // Only site-detials can have icon, 
+  // Only site-details can have icon, 
   // so that plain (no extra markup) details can have the default marker
   .site-details {
     > summary {

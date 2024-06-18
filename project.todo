@@ -23,6 +23,14 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Make more things mixins with styles as applied mixins with selectors, that way you can make some of these components youself? Using different selectors?
+    * For example the details styling, sometimes it's best to have it restrained to a selector while others it may be global for all details (override browser defaults), or it may be a need to style a details element differently
+  ☐ Reconsider that components needs:
+    ☐ Should component modules be so simple or should we have more mixins so that the user can decide how styles are used
+      * Deciding to steer away from getting too complex, details below. In short adding the ability to be too custom with applying styles makes it hard to maintain and work on. If something should be used that way it should be designed that way and it might not be a component. Allowing the selectors to be changed should be enough
+      * -- Discussion of pros and cons below --
+      * It makes it easier to output but it also limits the ability to reuse
+      * Mixins may be better, more flexible with common mixin pattern to output with selector? (also on the flip side does this just make things harder to reuse with configuration). An advantage of configuring modules is that it's easier to reuse configuration which is major accelerator between projects, vs having to copy arguments to mixins for example and any manual selectors. But, it is useful in certain scenarios, so can it be added under the hood for alternate use cases? One drawback of the mixin approach is that it is very restrictive or too verbose, CSS has a lot of selectors and not everything is easy to breakdown into micro styles, in the end it may be too complicated to maintain easily. Also along maintaining, mixins are tightly coupled to a specific structure, in the future if that structure changes it makes it more complex to introduce change since their are so many ways these public mixins may be used. I think this could be too much, and it probably makes sense to avoid getting to in the weeds with something that could do everything. If something can be setup in multiple ways (ie. different configurations like callouts), the idea is to be able to adapt the underlying CSS without having to update configurations too much. 
   ☐ Refactor (site-details = accordion) component
   ☐ Rule styles should be defined as object so that colors can be keys instead of hardcoded
     * Requires resetting the rule style manually now to update from default color

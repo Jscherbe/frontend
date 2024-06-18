@@ -1,0 +1,15 @@
+// Import and print Font Awesome the old fashined way (import)
+$fa-font-path: "/assets/fonts/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+// @import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+
+// Custom Icons Below
+
+// NOTE: We can only do this here because FontAwesome hasn't refactored for new sass
+//       so we're at the mercy of the single import since they don't have @use yet
+// .site-modal__close-icon {
+//   @include fa-icon-solid($fa-var-times);
+// }

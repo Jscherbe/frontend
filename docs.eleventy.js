@@ -69,10 +69,10 @@ function menuLinkFormatter({ node, options, isIndex }) {
   const { data } = node.entry;
   const classname = options.class;
   const icon = () => `
-    <span class="${ classname }__icon" data-feather="${ data.icon }" aria-hidden="true"></span>
+    <span class="${ classname }__icon ${ data.iconClass }" aria-hidden="true"></span>
   `;
   return `
-    ${ data.icon && !isIndex ? icon() : "" }
+    ${ data.iconClass && !isIndex ? icon() : "" }
     <span class="${ classname }__text">
       ${ isIndex ? "Introduction" : data.title }
     </span>
@@ -84,6 +84,6 @@ function menuToggleFormatter({ node, options }) {
     <span class="${ classname }__toggle-content">
       ${ menuLinkFormatter({ node, options }) }
     </span>
-    <span class="${ classname }__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="${ classname }__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   `;
 }

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/assets/fonts/inter/inter.css">
 
   
-  <script src="https://unpkg.com/feather-icons"></script>
+  
   
 
   
@@ -54,13 +54,14 @@
         class="button button--small button--icon button--icon-small" 
         href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
       >
-        <span class="svg-icon" data-feather="github" aria-hidden="true"></span>
+        <span class="fab fa-github" aria-hidden="true"></span>
       </a>
       <a 
         class="button button--small button--icon button--icon-small" 
         href="https://www.npmjs.com/package/@ulu/frontend"
       >
-        <span style="font-size: 70%">NPM</span>
+        
+        <span class="fab fa-npm" aria-hidden="true"></span>
       </a>
     </div>
     <div class="header__nav-menu">
@@ -78,14 +79,14 @@
     <span class="nav-tree__toggle-content">
       
     
-    <span class="nav-tree__icon" data-feather="book" aria-hidden="true"></span>
+    <span class="nav-tree__icon fas fa-book" aria-hidden="true"></span>
   
     <span class="nav-tree__text">
       Guide
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -144,30 +145,25 @@
     <span class="nav-tree__toggle-content">
       
     
-    <span class="nav-tree__icon" data-feather="grid" aria-hidden="true"></span>
+    <span class="nav-tree__icon fas fa-vial" aria-hidden="true"></span>
   
     <span class="nav-tree__text">
-      Showcase
+      Demos
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item ">
-          
-          
-        </li>
-      
         
         <li class="nav-tree__item ">
           
         <a 
           class="nav-tree__link  " 
-          href="/showcase/data-grid/" 
+          href="/demos/data-grid/" 
           
         >
           
@@ -186,7 +182,7 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/showcase/modals/" 
+          href="/demos/modals/" 
           
         >
           
@@ -205,7 +201,7 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/showcase/popovers/" 
+          href="/demos/popovers/" 
           
         >
           
@@ -224,7 +220,7 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/showcase/tabs/" 
+          href="/demos/tabs/" 
           
         >
           
@@ -254,14 +250,14 @@
     <span class="nav-tree__toggle-content">
       
     
-    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+    <span class="nav-tree__icon fab fa-sass" aria-hidden="true"></span>
   
     <span class="nav-tree__text">
       Sass
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -301,7 +297,7 @@
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -612,7 +608,7 @@
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -790,7 +786,7 @@
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -1215,7 +1211,7 @@
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -1393,14 +1389,14 @@
     <span class="nav-tree__toggle-content">
       
     
-    <span class="nav-tree__icon" data-feather="code" aria-hidden="true"></span>
+    <span class="nav-tree__icon fab fa-js" aria-hidden="true"></span>
   
     <span class="nav-tree__text">
       Javascript
     </span>
   
     </span>
-    <span class="nav-tree__toggle-icon" data-feather="chevron-up" aria-hidden="true"></span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
   
             </summary>
             
@@ -1455,6 +1451,25 @@
     
     <span class="nav-tree__text">
       collapsible
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/dialog/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      dialog
     </span>
   
         </a>
@@ -1906,8 +1921,12 @@
 			
 			
 			
-  <div class="page__body-top container wysiwyg">
-    <h1 id="modal" tabindex="-1">Modal</h1>
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Modal</h1>
+
+<hr class="rule rule--light rule--margin-large">
+    <div class="wysiwyg">
+      <h1 id="modal" tabindex="-1">Modal</h1>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
@@ -2017,7 +2036,7 @@
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
 <li><strong>Lines (comments):</strong> 69-71</li>
-<li><strong>Lines (code):</strong> 73-320  </details>
+<li><strong>Lines (code):</strong> 73-281  </details>
 </li>
 </ul>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -2071,6 +2090,7 @@
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 
+    </div>
   </div>
 
 		</main>
@@ -2080,7 +2100,7 @@
   <script src="http://localhost:5173/@vite/client" type="module"></script>
   <script src="http://localhost:5173/docs-src/src/main.js" type="module"></script>
 
-<script>feather.replace();</script>
+
 		
 	</body>
 </html>

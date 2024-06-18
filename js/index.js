@@ -11,7 +11,7 @@ export * as events from "./events/index.js";
 export * as flipcard from "./flipcard/index.js";
 export * as grid from "./grid/index.js";
 export * as helpers from "./helpers/index.js";
-export * as modal from "./modal/index.js";
+export * as dialog from "./dialog/index.js";
 export * as overflowScroller from "./overflow-scroller/index.js";
 export * as popover from "./popover/index.js";
 export * as resizer from "./resizer/index.js";

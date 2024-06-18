@@ -17,7 +17,7 @@
           {% endif %}
         >
           {% if entry.page.data.icon %}
-            <i class="menu__icon" data-feather="{{ entry.page.data.icon }}"></i>
+            <span class="menu__icon fas fa-{{ entry.page.data.icon }}" aria-hidden="true"></span>
           {% endif %}
           <span class="menu__text">{{ entry.title }}</span>
         </a>
