@@ -38,7 +38,7 @@ $config: (
   "box-shadow" :                    none,         
   "width":                          400px,
   "height":                         340px,
-  "width-centered":                 600px,
+  "height-no-header":               150px,
   "border-radius" :                 0,
   "resizer-width":                  1rem,
   "resizer-color":                  black,
@@ -65,7 +65,9 @@ $config: (
   "dark-header-border-bottom" :     false,
   "dark-header-background-color" :  false,
   "dark-header-color" :             false,
-  "title-icon-margin" :             0.5em
+  "title-icon-margin" :             0.5em,
+  "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
+  "animation-duration" :            10s,
 );
 ```
   
@@ -76,7 +78,7 @@ $config: (
 - **Group:** modal
 - **Type:** variable
 - **Lines (comments):** 14-15
-- **Lines (code):** 16-50
+- **Lines (code):** 16-52
     </details>
     
   
@@ -107,8 +109,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 52-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-61
     </details>
     
 
@@ -160,8 +162,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-281
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-359
     </details>
     
 
@@ -209,8 +211,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-69
     </details>
     
 

@@ -1,5 +1,14 @@
 Styling:
   ☐ Animations?
+  ☐ Resizing
+    ✔ Work out how this can work with native and click outside @done
+    ☐ Figure out how to setup icon for the resizer for all sites
+      * Fontawesome, or should this just be CSS so we don't need any icons for it
+      * Same for close button should we just use CSS and omit any FA requirements
+      * Or make it super easy to implement the icon only in the template (like default icon classses)
+        * Then user can choose to implement their own (via class) or use the styles that come with it
+  ☐ Prevent Browser Scroll
+  ☐ How should height work? Should a centered modal expand to it's content's height (up to the viewport height) or always be cropped and scroll (static height)?
 Todos:
   ☐ How should the relationship between a dialog and it's trigger work
     * Think there should be no relationship? Just triggers are triggers just attach a handler to open DOM centric way (add errors when the dialog doesn't exist)
@@ -25,3 +34,4 @@ Todos:
           * Then we can have both without any extra code and seperation
 
   ☐ Setup programmatic modal with new system
+  

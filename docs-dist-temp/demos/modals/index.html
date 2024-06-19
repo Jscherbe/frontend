@@ -1860,7 +1860,16 @@
                     
                     <li><a href="#default">Default</a>
             		</li>
+
+                    <li><a href="#positions">Positions</a>
+            		</li>
                 </ol>
+            		</li>
+
+                    <li><a href="#resizing">Resizing</a>
+            		</li>
+
+                    <li><a href="#click-outside">Click Outside</a>
             		</li>
                 </ol>
             </div>
@@ -1881,16 +1890,117 @@
     <div class="wysiwyg">
       <h2 id="examples" tabindex="-1">Examples</h2>
 <h3 id="default" tabindex="-1">Default</h3>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-1">Open Modal</button></p>
+<p>This is the default modal, being created from markup in the body on page load by modal builder. The default modal is centered.</p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-center">Open Modal</button></p>
 <div 
-  id="modal-id-1" 
+  id="modal-id-center" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ "title" : "Test Title", "position" : "right"  }' 
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title" 
+  }' 
   hidden
 >
   This is the modal body <button data-ulu-dialog-close>Close</button>
 </div>
-
+<h3 id="positions" tabindex="-1">Positions</h3>
+<p>The available positions are top, bottom, left, right and center (default). Left and right are sidebard (full height), while top, bottom and center are all min height (can be configured)</p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-left">Left</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-right">Right</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-top">Top</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-bottom">Bottom</button></p>
+<div 
+  id="modal-id-left" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title", 
+    "position" : "left"  
+  }' 
+  hidden
+>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+</div>
+<div 
+  id="modal-id-right" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title", 
+    "position" : "right"
+  }' 
+  hidden
+>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+</div>
+<div 
+  id="modal-id-top" 
+  class="wysiwyg crop-margins"
+  data-ulu-dialog-builder='{ 
+    "position" : "top"
+  }' 
+  hidden
+>
+  <p>
+    This is a modal without a title 
+  </p>
+  <p>
+    <button class="button" data-ulu-dialog-close>Close</button>
+  </p>
+</div>
+<div 
+  id="modal-id-bottom" 
+  class="wysiwyg crop-margins"
+  data-ulu-dialog-builder='{ 
+    "position" : "bottom"
+  }' 
+  hidden
+>
+  <p>
+    This is a modal without a title 
+  </p>
+  <p>
+    <button class="button" data-ulu-dialog-close>Close</button>
+  </p>
+</div>
+<h2 id="resizing" tabindex="-1">Resizing</h2>
+<p>The modals setup with the builder allow resizing. Center, top and bottom modals will use the native resize handle (resize in all directions). The left/right sidebar type modals will be given a drag handle and only able to extend their width (since they already span the full screen height). To enable this behavior pass <code>{ &quot;allowResize&quot; : true }</code> in builder options (data attribute)</p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-center-resize">Center Resizable</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-right-resize">Right Resizable</button></p>
+<div 
+  id="modal-id-center-resize" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title",
+    "allowResize" : true
+  }' 
+  hidden
+>
+  Test
+</div>
+<div 
+  id="modal-id-right-resize" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title",
+    "position" : "right",
+    "allowResize" : true
+  }' 
+  hidden
+>
+  Test
+</div>
+<h2 id="click-outside" tabindex="-1">Click Outside</h2>
+<p>By default clicking outside the modal will close it, this can be disabled by passing <code>{ &quot;clickOutsideCloses&quot; : false }</code></p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-no-outside">No Click Outside</button></p>
+<div 
+  id="modal-id-no-outside" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title",
+    "clickOutsideCloses" : false
+  }' 
+  hidden
+>
+  Test
+</div>
     </div>
   </div>
 

@@ -1,6 +1,7 @@
 import { getName } from "../events/index.js";
 import { getDatasetJson } from "../utils/dom.js";
 import { buildModal } from "./builder.js";
+import { wasClickOutside } from "../utils/dom.js";
 
 const attrSelector = key => `[${ attrs[key] }]:not([${ attrs.init }])`;
 const queryAttr = key => document.querySelectorAll(attrSelector(key))
@@ -109,8 +110,10 @@ export function setupDialog(dialog) {
 
   function handleClicks(event) {
     const { target } = event;
-    const closeFromOutside = target === dialog && options.clickOutsideCloses;
     const closeFromButton = target.closest('[data-ulu-dialog-close]');
+    let closeFromOutside = options.clickOutsideCloses && 
+                           target === dialog && 
+                           wasClickOutside(dialog, event);
     if (closeFromOutside || closeFromButton) {
       dialog.close();
     }
@@ -126,3 +129,5 @@ export function getDialogOptions(dialog) {
   const options = getDatasetJson(dialog, "uluDialog");
   return Object.assign({}, defaults, options);
 }
+
+

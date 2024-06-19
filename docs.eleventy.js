@@ -24,7 +24,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src");
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
   eleventyConfig.addPlugin(tocPlugin, {
-    tags: ["h2", "h3", "h4"],
+    tags: ["h2", "h3"],
     wrapper: "div",
     headingText: "On this page"
   });

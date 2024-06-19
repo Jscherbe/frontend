@@ -1,10 +1,8 @@
-import { hasRequiredProps } from "@ulu/utils/object.js";
 import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "../resizer/resizer.js";
 import { attrs, defaults as dialogDefaults } from "./init.js";
 
-const requiredOptions = ["title"];
-const hasRequiredOptions = hasRequiredProps(requiredOptions);
+const log = (...msgs) => console.log("Modal Builder", ...msgs);
 
 /**
  * Default builder options (extends dialog defaults!)
@@ -20,6 +18,7 @@ export const defaults = {
   class: "",
   classBody: "modal__body",
   classResizer: "modal__resizer",
+  debug: false
 };
 
 /**
@@ -34,12 +33,12 @@ export function buildModal(content, options, template = modalTemplate) {
   if (config.position !== "center" && config.allowResize) {
     config.hasResizer = true;
   }
+  if (config.debug) {
+    log(config, content);
+  }
 
   if (!content.id) {
     throw new Error("Missing ID on dialog");
-  }
-  if (!hasRequiredOptions(config)) {
-    throw new Error("Missing required options: " + requiredOptions.toString());
   }
   
   const markup = template(content.id, config);
@@ -77,12 +76,13 @@ export function modalTemplate(id, config) {
     `modal--${ config.position }`,
     `modal--${ config.size }`,
     `modal--${ config.allowResize ? "resize" : "no-resize" }`,
-     ...(config.video ? ['modal--video'] : []), 
-     ...(config.class ? [config.class] : []), 
+    ...(!config.title ? ['modal--no-header'] : []),
+    ...(config.video ? ['modal--video'] : []), 
+    ...(config.class ? [config.class] : []), 
   ];
   return `
     <dialog id="${ id }"  class="${ classes.join(" ") }">
-      <div class="modal__container">
+      ${ config.title ? `
         <header class="modal__header">
           <h2 class="modal__title">
             ${ config.titleIcon ? 
@@ -90,15 +90,15 @@ export function modalTemplate(id, config) {
             }
             <span class="modal__title-text">${ config.title }</span>
           </h2>
-          <button class="modal__close" aria-label="Close modal" data-ulu-dialog-close>
+          <button class="modal__close" aria-label="Close modal" data-ulu-dialog-close autofocus>
             <span class="modal__close-icon" aria-hidden="true" ${ attrs.close }></span>
           </button>
         </header>
-        <div class="${ config.classBody }"></div>
-        ${ config.hasResizer ? `<div class="${ config.classResizer }"></div>` : '' }
-      </div>
+      ` : "" }
+      <div class="${ config.classBody }"></div>
+      ${ config.hasResizer ? `<div class="${ config.classResizer }"></div>` : '' }
     </div>
-    `;
+  `;
 }
 
 /**

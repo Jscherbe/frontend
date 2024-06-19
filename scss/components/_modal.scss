@@ -19,7 +19,7 @@ $config: (
   "box-shadow" :                    none,         
   "width":                          400px,
   "height":                         340px,
-  "width-centered":                 600px,
+  "height-no-header":               150px,
   "border-radius" :                 0,
   "resizer-width":                  1rem,
   "resizer-color":                  black,
@@ -46,7 +46,9 @@ $config: (
   "dark-header-border-bottom" :     false,
   "dark-header-background-color" :  false,
   "dark-header-color" :             false,
-  "title-icon-margin" :             0.5em
+  "title-icon-margin" :             0.5em,
+  "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
+  "animation-duration" :            10s,
 ) !default;
 
 /// Change modules $config
@@ -78,40 +80,55 @@ $config: (
   
   .modal {
     // Required for click outside
+    // position: fixed;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // display: flex;
     padding: 0;
     border: 0;
+    width: get("width");
+    min-height: get("height");
+    max-height: 100vh;
+    max-width: 100%;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    box-shadow: get("box-shadow");
+    border-radius: get("border-radius");
+    background-color: get("background-color");
+    box-sizing: border-box;
+    &[open] {
+      display: flex;
+      flex-direction: column;
+    }
     &::backdrop {
       background: get("backdrop-color");
       backdrop-filter: get("backdrop-filter");
     }
   }
-  .modal__container {
-    background-color: get("background-color");
-    // Using a flex container for scrollable body
-    display: flex;
-    flex-direction: column;
-    width: get("width");
-    min-height: get("height");
-    max-height: 100vh;
-    max-width: 100%;
-    box-shadow: get("box-shadow");
-    border-radius: get("border-radius");
-    overflow-y: hidden;
-    box-sizing: border-box;
-  
-    // Use native resize
-    .modal--resize.modal--center & {
-      resize: both;  
-      width: get("width-centered");
-    }
-    // Account for custom resizer
-    .modal--resize.modal--right  & {
-      padding-left: get("resizer-width");
-    }
-    .modal--resize.modal--left & {
-      padding-right: get("resizer-width");
-    }
+  .modal--no-header {
+    height: get("height-no-header");
   }
+  .modal--resize {
+    &.modal--center  {
+      resize: both;  
+    }
+    
+  }
+  // .modal__container {
+   
+  //   height: 100%;
+  
+  //   // Use native resize
+    
+  //   // Account for custom resizer
+  //   .modal--resize.modal--right  & {
+  //     padding-left: get("resizer-width");
+  //   }
+  //   .modal--resize.modal--left & {
+  //     padding-right: get("resizer-width");
+  //   }
+  // }
   .modal__header {
     display: flex;
     justify-content: space-between;
@@ -188,23 +205,41 @@ $config: (
   }
   .modal--right,
   .modal--left {
-    .modal__container {
-      border-radius: 0;
-    }
+    border-radius: 0;
+    // top: 0;
+    height: 100vh;
+    // Check if this is needed for ios?
+    // height: 100dvh;
   }
 
-  // Alternate layout on the right/left
+  // Positions
+  .modal--top {
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+  .modal--bottom {
+    margin-bottom: 0;
+    margin-top: auto;
+  }
   .modal--right  {
-    .modal__overlay {
-      justify-content: flex-end;
-      align-items: stretch;
-    }
+    margin-left: auto;
+    margin-right: 0;
+    // right: 0;
+    // left: auto;
+    // .modal__overlay {
+    //   justify-content: flex-end;
+    //   align-items: stretch;
+    // }
   }
   .modal--left  {
-    .modal__overlay {
-      justify-content: flex-start;
-      align-items: stretch;
-    }
+    margin-right: auto;
+    margin-left: 0;
+    // left: 0;
+    // right: auto;
+    // .modal__overlay {
+    //   justify-content: flex-start;
+    //   align-items: stretch;
+    // }
   }
   .modal--video {
     .modal__header {
@@ -215,63 +250,106 @@ $config: (
     }
   }
   
-  @keyframes modalFadeDownIn {
-      from { opacity: 0; }
-        to { opacity: 1; }
+  @keyframes modalFadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(50px);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+      display: block;
+    }
   }
   @keyframes modalFadeOut {
-      from { opacity: 1; }
-        to { opacity: 0; }
+    from { 
+      opacity: 1; 
+      display: block;
+      transform: translateY(0);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translateY(50px);
+    }
   }
   @keyframes modalSlideIn {
-    from { transform: translateY(15%); }
-      to { transform: translateY(0); }
+    from { 
+      transform: translateY(15%); 
+    }
+    to { 
+      transform: translateY(0); 
+    }
   }
   @keyframes modalSlideOut {
-      from { transform: translateY(0); }
-      to { transform: translateY(-10%); }
+    from { 
+      transform: translateY(0); 
+    }
+    to { 
+      transform: translateY(-10%); 
+    }
   }
   @keyframes modalSlideRightIn {
-    from { transform: translateX(15%); }
-      to { transform: translateX(0); }
+    from { 
+      transform: translateX(15%); 
+    }
+    to { 
+      transform: translateX(0); 
+    }
   }
   @keyframes modalSlideRightOut {
-      from { transform: translateX(0); }
-      to { transform: translateX(-10%); }
+    from { 
+      transform: translateX(0); 
+    }
+    to { 
+      transform: translateX(-10%); 
+    }
   }
   @keyframes modalSlideLeftIn {
-    from { transform: translateX(-15%); }
-      to { transform: translateX(0); }
+    from { 
+      transform: translateX(-15%); 
+    }
+    to { 
+      transform: translateX(0); 
+    }
   }
   @keyframes modalSlideLeftOut {
-      from { transform: translateX(0); }
-      to { transform: translateX(10%); }
+    from { 
+      transform: translateX(0); 
+    }
+    to { 
+      transform: translateX(10%); 
+    }
   }
   
-  .modal[aria-hidden="false"] .modal__overlay {
-    animation: modalFadeDownIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-  }
-  .modal[aria-hidden="false"] .modal__container {
-    animation: modalSlideIn .3s cubic-bezier(0, 0, .2, 1);
-  }
-  .modal--right[aria-hidden="false"] .modal__container {
-    animation: modalSlideRightIn .3s cubic-bezier(0, 0, .2, 1);
-  }
-  .modal--left[aria-hidden="false"] .modal__container {
-    animation: modalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
-  }
-  .modal[aria-hidden="true"] .modal__overlay {
-    animation: modalFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-  }
-  .modal[aria-hidden="true"] .modal__container {
-    animation: modalSlideOut .3s cubic-bezier(0, 0, .2, 1);
-  }
-  .modal--right[aria-hidden="true"] .modal__container {
-    animation: modalSlideRightOut .3s cubic-bezier(0, 0, .2, 1);
-  }
-  .modal--left[aria-hidden="true"] .modal__container {
-    animation: modalSlideLeftOut .3s cubic-bezier(0, 0, .2, 1);
-  }
+  // .modal {
+  //   animation: modalFadeOut get("animation-duration") get("animation-timing-function");
+  //   &[open] {
+  //     animation: modalFadeIn get("animation-duration") get("animation-timing-function");
+  //   }
+  // }
+  // .modal[aria-hidden="false"] .modal__container {
+  //   animation: modalSlideIn .3s cubic-bezier(0, 0, .2, 1);
+  // }
+  // .modal--right[aria-hidden="false"] .modal__container {
+  //   animation: modalSlideRightIn .3s cubic-bezier(0, 0, .2, 1);
+  // }
+  // .modal--left[aria-hidden="false"] .modal__container {
+  //   animation: modalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
+  // }
+  // .modal[aria-hidden="true"] .modal__overlay {
+  //   animation: modalFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  // }
+  // .modal[aria-hidden="true"] .modal__container {
+  //   animation: modalSlideOut .3s cubic-bezier(0, 0, .2, 1);
+  // }
+  // .modal--right[aria-hidden="true"] .modal__container {
+  //   animation: modalSlideRightOut .3s cubic-bezier(0, 0, .2, 1);
+  // }
+  // .modal--left[aria-hidden="true"] .modal__container {
+  //   animation: modalSlideLeftOut .3s cubic-bezier(0, 0, .2, 1);
+  // }
   
   
   .modal .modal__container,

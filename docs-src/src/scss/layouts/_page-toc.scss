@@ -20,6 +20,7 @@
     color: ulu.color-get("type-secondary");
     display: block;
     padding: 0.25em 0;
+    @include ulu.typography-word-break();
     &:hover {
       color: black;
     }
