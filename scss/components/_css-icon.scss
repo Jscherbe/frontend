@@ -2,6 +2,21 @@
 /// @group css-icon
 ////
 /// Simple icons that are made from pseudo elements
+/// 
+/// 
+/// TODO:
+/// - Convert to normal module format vs mixins
+///   so we can share properties over making it easy to create variations 
+///   (performance is more important users can just reuse pattern if needed
+/// MAKE:
+/// - plus
+/// - minus
+/// - close/times
+/// - drag (2 bar) (horizontal/vertical)
+/// - caret/chevron (up,down,left,right)
+/// - arrows (up,down,left,right) (using two borders and transparent psuedo
+/// - info (with "i" in certain font-family that looks ok
+/// - Add circle to any (with container being the circle)
 
 @use "sass:map";
 @use "sass:math";
