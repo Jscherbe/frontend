@@ -3,6 +3,7 @@
 ////
 
 @forward "accordion" as accordion-*;
+@forward "css-icon" as css-icon-*;
 @forward "links" as links-*;
 @forward "button" as button-*;
 @forward "button-verbose" as button-verbose-*;
@@ -27,6 +28,7 @@
 
 @use "../utils";
 @use "accordion";
+@use "css-icon";
 @use "links";
 @use "button";
 @use "button-verbose";
@@ -51,6 +53,7 @@
 
 $-all-includes: (
   "accordion" : true,
+  "css-icon" : true,
   "links" : true,
   "button" : true,
   "button-verbose" : true,
@@ -86,6 +89,9 @@ $-all-includes: (
   }
   @if (map.get($-all-includes, "accordion")) {
     @include accordion.styles;
+  }
+  @if (map.get($-all-includes, "css-icon")) {
+    @include css-icon.styles;
   }
   @if (map.get($-all-includes, "links")) {
     @include links.styles;

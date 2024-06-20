@@ -16,9 +16,15 @@ export const defaults = {
   video: false,
   size: "default",
   class: "",
-  classBody: "modal__body",
-  classResizer: "modal__resizer",
+  classCloseIcon: "css-icon-close",
+  classResizerIcon: "css-icon-drag",
   debug: false
+};
+
+// Required classes
+const systemClasses = {
+  body: "modal__body",
+  resizer: "modal__resizer",
 };
 
 /**
@@ -43,8 +49,8 @@ export function buildModal(content, options, template = modalTemplate) {
   
   const markup = template(content.id, config);
   const dialog = createElementFromHtml(markup.trim());
-  const body = dialog.querySelector("." + config.classBody);
-  const resizer = dialog.querySelector("." + config.classResizer)
+  const body = dialog.querySelector("." + systemClasses.body);
+  const resizer = dialog.querySelector("." + systemClasses.resizer)
   const dialogOptions = separateDialogOptions(config);
 
   // Replace content with new dialog, and then insert the content into the new dialogs body
@@ -91,12 +97,16 @@ export function modalTemplate(id, config) {
             <span class="modal__title-text">${ config.title }</span>
           </h2>
           <button class="modal__close" aria-label="Close modal" data-ulu-dialog-close autofocus>
-            <span class="modal__close-icon" aria-hidden="true" ${ attrs.close }></span>
+            <span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true" ${ attrs.close }></span>
           </button>
         </header>
       ` : "" }
-      <div class="${ config.classBody }"></div>
-      ${ config.hasResizer ? `<div class="${ config.classResizer }"></div>` : '' }
+      <div class="${ systemClasses.body }"></div>
+      ${ config.hasResizer ? 
+        `<div class="${ systemClasses.resizer }">
+          <span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>
+        </div>` : '' 
+      }
     </div>
   `;
 }

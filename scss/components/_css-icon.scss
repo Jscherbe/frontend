@@ -1,0 +1,123 @@
+////
+/// @group css-icon
+////
+/// Simple icons that are made from pseudo elements
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../utils";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "size" : 1.1em,
+  "stroke-width" : 0.15em,
+  "stroke-border-radius" : 4px,
+  "color" : currentColor,
+);
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "css-icon [config]");
+}
+
+/// Prints adaptive spacing component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  .css-icon-close {
+    @include close-icon();
+  }
+  .css-icon-drag {
+    @include drag-icon();
+  }
+}
+
+/// Create a drag icon
+/// @param {Number} $size
+/// @param {Number} $stroke-width
+/// @param {Number} $color
+@mixin drag-icon(
+  $size: get("size"), 
+  $stroke-width: get("stroke-width"),
+  $color: get("color"),
+  $stroke-border-radius: get("stroke-border-radius"),
+) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  display: inline-block;
+  
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: $stroke-width; 
+    background-color: $color;
+    @if ($stroke-border-radius) {
+      border-radius: $stroke-border-radius;
+    }
+  }
+  &:before {
+    background-color: $color;
+  }
+  &:after {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/// Create a close icon
+/// @param {Number} $size
+/// @param {Number} $stroke-width
+/// @param {Number} $color
+@mixin close-icon(
+  $size: get("size"), 
+  $stroke-width: get("stroke-width"),
+  $color: get("color"),
+  $stroke-border-radius: get("stroke-border-radius")
+) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  background: none;
+  border: none;
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -(math.div($stroke-width, 2));
+    // margin-left: -(math.div($size, 2));
+    width: 100%;
+    height: $stroke-width;
+    background-color: $color; 
+    @if ($stroke-border-radius) {
+      border-radius: $stroke-border-radius;
+    }
+  }
+  &:before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &:after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
