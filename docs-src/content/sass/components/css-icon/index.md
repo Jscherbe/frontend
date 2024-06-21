@@ -9,6 +9,22 @@ sassdocGroupName: css-icon
 Simple icons that are made from pseudo elements
 
 
+TODO:
+- Convert to normal module format vs mixins
+  so we can share properties over making it easy to create variations 
+  (performance is more important users can just reuse pattern if needed
+MAKE:
+- plus
+- minus
+- close/times
+- drag (2 bar) (horizontal/vertical)
+- caret/chevron (up,down,left,right)
+- arrows (up,down,left,right) (using two borders and transparent psuedo
+- info (with "i" in certain font-family that looks ok
+- triangle (up,down,left,right)(maybe 45deg too?)
+- Add circle to any (with container being the circle)
+
+
 
 ## Variables
 
@@ -33,8 +49,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "size" : 1em,
-  "stroke-width" : 0.2em,
+  "size" : 1.1em,
+  "stroke-width" : 0.15em,
+  "stroke-border-radius" : 4px,
   "color" : currentColor,
 );
 ```
@@ -45,8 +62,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 11-12
-- **Lines (code):** 14-18
+- **Lines (comments):** 27-28
+- **Lines (code):** 30-35
     </details>
     
   
@@ -77,8 +94,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 20-22
-- **Lines (code):** 24-26
+- **Lines (comments):** 37-39
+- **Lines (code):** 41-43
     </details>
     
 
@@ -119,8 +136,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-47
+- **Lines (comments):** 53-55
+- **Lines (code):** 57-105
     </details>
     
 
@@ -138,85 +155,8 @@ Prints adaptive spacing component styles
 
 #### Require
 
-- [close-icon()](/sass/components/css-icon/#mixin-close-icon)
-- [drag-icon()](/sass/components/css-icon/#mixin-drag-icon)
+- [get()](/sass/components/accordion/#function-get)
   
-
-
-<div class="sassdoc-item-header">
-
-###  drag-icon() {#mixin-drag-icon}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Create a drag icon
-    
-    
-
-    <details>
-      <summary>File Information</summary>
-- **File:** _css-icon.scss
-- **Group:** css-icon
-- **Type:** mixin
-- **Lines (comments):** 49-52
-- **Lines (code):** 53-79
-    </details>
-    
-
-#### Parameters
-
-
-|Name|Type|
-|:--|:--|
-|$size|`Number`|
-|$stroke-width|`Number`|
-|$color|`Number`|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  close-icon() {#mixin-close-icon}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Create a close icon
-    
-    
-
-    <details>
-      <summary>File Information</summary>
-- **File:** _css-icon.scss
-- **Group:** css-icon
-- **Type:** mixin
-- **Lines (comments):** 81-84
-- **Lines (code):** 85-114
-    </details>
-    
-
-#### Parameters
-
-
-|Name|Type|
-|:--|:--|
-|$size|`Number`|
-|$stroke-width|`Number`|
-|$color|`Number`|
-
-    
   
 
 ## Functions
@@ -245,8 +185,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 28-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 45-47
+- **Lines (code):** 49-51
     </details>
     
 

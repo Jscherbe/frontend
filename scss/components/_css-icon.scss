@@ -16,6 +16,7 @@
 /// - caret/chevron (up,down,left,right)
 /// - arrows (up,down,left,right) (using two borders and transparent psuedo
 /// - info (with "i" in certain font-family that looks ok
+/// - triangle (up,down,left,right)(maybe 45deg too?)
 /// - Add circle to any (with container being the circle)
 
 @use "sass:map";
@@ -54,85 +55,51 @@ $config: (
 ///  @include ulu.component-example-styles();
 
 @mixin styles {
-  .css-icon-close {
-    @include close-icon();
-  }
-  .css-icon-drag {
-    @include drag-icon();
-  }
-}
-
-/// Create a drag icon
-/// @param {Number} $size
-/// @param {Number} $stroke-width
-/// @param {Number} $color
-@mixin drag-icon(
-  $size: get("size"), 
-  $stroke-width: get("stroke-width"),
-  $color: get("color"),
-  $stroke-border-radius: get("stroke-border-radius"),
-) {
-  display: inline-block;
-  width: $size;
-  height: $size;
-  display: inline-block;
-  
-  &:before,
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: $stroke-width; 
-    background-color: $color;
-    @if ($stroke-border-radius) {
-      border-radius: $stroke-border-radius;
-    }
-  }
-  &:before {
-    background-color: $color;
-  }
-  &:after {
+  .css-icon {
+    display: inline-block;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    width: get("size");
+    height: get("size");
   }
-}
-
-/// Create a close icon
-/// @param {Number} $size
-/// @param {Number} $stroke-width
-/// @param {Number} $color
-@mixin close-icon(
-  $size: get("size"), 
-  $stroke-width: get("stroke-width"),
-  $color: get("color"),
-  $stroke-border-radius: get("stroke-border-radius")
-) {
-  display: inline-block;
-  width: $size;
-  height: $size;
-  background: none;
-  border: none;
-  position: relative;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -(math.div($stroke-width, 2));
-    // margin-left: -(math.div($size, 2));
-    width: 100%;
-    height: $stroke-width;
-    background-color: $color; 
-    @if ($stroke-border-radius) {
-      border-radius: $stroke-border-radius;
+  // Icons that share pseudos for strokes
+  .css-icon--close,
+  .css-icon--drag {
+    &:before,
+    &:after {
+      width: 100%;
+      height: get("stroke-width");
+      background-color: get("color"); 
+      @if (get("stroke-border-radius")) {
+        border-radius: get("stroke-border-radius");
+      }
     }
   }
-  &:before {
-    transform: translateX(-50%) rotate(45deg);
+  .css-icon--close {
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -(math.div(get("stroke-width"), 2));
+    }
+    &:before {
+      transform: translateX(-50%) rotate(45deg);
+    }
+    &:after {
+      transform: translateX(-50%) rotate(-45deg);
+    }
   }
-  &:after {
-    transform: translateX(-50%) rotate(-45deg);
+  .css-icon--drag {
+    &:before,
+    &:after {
+      content: "";
+      display: block; 
+    }
+    &:after {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
