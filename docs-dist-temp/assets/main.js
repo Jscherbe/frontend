@@ -93,7 +93,7 @@ function dispatch(type, context) {
 function getName$1(type) {
   return "ulu:" + type;
 }
-const index$b = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$c = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   dispatch,
   getName: getName$1
@@ -116,7 +116,7 @@ function output(method, context, messages) {
   const label = getName(context) || "Logger";
   console[method](label, ...messages);
 }
-function log(context, ...messages) {
+function log$1(context, ...messages) {
   if (allow(context)) {
     output("log", context, messages);
   }
@@ -153,7 +153,7 @@ const _BreakpointManager = class _BreakpointManager {
     this.breakpoints = {};
     this.onChangeCallbacks = [];
     this.order.forEach((n) => this.breakpoints[n] = new Breakpoint(n, this));
-    log(this, this);
+    log$1(this, this);
     this.update();
     _BreakpointManager.instances.push(this);
   }
@@ -219,8 +219,8 @@ const _BreakpointManager = class _BreakpointManager {
     const notMin = this.order.slice(index2 + 1).map(mapBreakpoints);
     const notOnly = this.order.slice().map(mapBreakpoints);
     notOnly.splice(index2, 1);
-    log(this, "max:", max2.map((b) => b.name).join());
-    log(this, "min:", min2.map((b) => b.name).join());
+    log$1(this, "max:", max2.map((b) => b.name).join());
+    log$1(this, "min:", min2.map((b) => b.name).join());
     max2.forEach((b) => b._setDirection("max", true));
     min2.forEach((b) => b._setDirection("min", true));
     activeBreakpoint._setDirection("only", true);
@@ -281,7 +281,7 @@ class BreakpointDirection {
   _call(forActive) {
     const handlers = forActive ? this.on : this.off;
     handlers.forEach((handler) => handler());
-    log(this.breakpoint._manager, `Handlers called (${forActive ? "on" : "off"}): ${this.direction}`);
+    log$1(this.breakpoint._manager, `Handlers called (${forActive ? "on" : "off"}): ${this.direction}`);
   }
   /**
    * Returns handlers in normalized object format on/off
@@ -305,7 +305,7 @@ class BreakpointDirection {
     }
     if (this.active && handlers.on) {
       handlers.on();
-      log(this.breakpoint._manager, `Handler called immediately: ${this.direction}`, handlers.on);
+      log$1(this.breakpoint._manager, `Handler called immediately: ${this.direction}`, handlers.on);
     }
   }
   /**
@@ -379,7 +379,7 @@ class Breakpoint {
     this._manager.log.apply(this._manager, msg);
   }
 }
-const index$a = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$b = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   BreakpointManager
 }, Symbol.toStringTag, { value: "Module" }));
@@ -439,7 +439,7 @@ const _Collapsible = class _Collapsible {
   }
   debugLog(...msgs) {
     if (this.options.debug) {
-      log(this, ...msgs);
+      log$1(this, ...msgs);
     }
   }
   setup() {
@@ -525,7 +525,7 @@ __publicField(_Collapsible, "defaults", {
   }
 });
 let Collapsible = _Collapsible;
-const index$9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$a = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null
 }, Symbol.toStringTag, { value: "Module" }));
 const linebreaks = /(\r\n|\n|\r)/gm;
@@ -548,7 +548,7 @@ const _Flipcard = class _Flipcard {
     this.stateAttr = `data-${namespace}-state`.toLowerCase();
     this.setup();
     this.setVisiblity(false);
-    log(this, this);
+    log$1(this, this);
   }
   toggle() {
     this.setVisiblity(!this.isOpen);
@@ -649,7 +649,7 @@ __publicField(_Flipcard, "defaults", {
   }
 });
 let Flipcard = _Flipcard;
-const index$8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$9 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Flipcard
 }, Symbol.toStringTag, { value: "Module" }));
@@ -683,26 +683,266 @@ function setPositionClasses(parent, classes = {
     });
   });
 }
-function init$3(selector = "[data-grid]", classes) {
-  document.addEventListener(getName$1("pageModified"), () => setup$2(selector, classes));
-  document.addEventListener(getName$1("pageResized"), () => setup$2(selector, classes));
-  setup$2(selector, classes);
+function init$4(selector = "[data-grid]", classes) {
+  document.addEventListener(getName$1("pageModified"), () => setup$3(selector, classes));
+  document.addEventListener(getName$1("pageResized"), () => setup$3(selector, classes));
+  setup$3(selector, classes);
 }
-function setup$2(selector, classes) {
+function setup$3(selector, classes) {
   document.querySelectorAll(selector).forEach((element) => setPositionClasses(element, classes || void 0));
 }
-const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$8 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$3,
-  setup: setup$2
+  init: init$4,
+  setup: setup$3
 }, Symbol.toStringTag, { value: "Module" }));
 function addScrollbarProperty(element = document.body, container2 = window, propName = "--ulu-scrollbar-width") {
   const scrollbarWidth = container2.innerWidth - element.clientWidth;
   element.style.setProperty(propName, `${scrollbarWidth}px`);
 }
-const index$6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const index$7 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   addScrollbarProperty
+}, Symbol.toStringTag, { value: "Module" }));
+function getDatasetJson(element, key2) {
+  const passed = element.dataset[key2];
+  try {
+    return JSON.parse(passed);
+  } catch (error) {
+    console.error(`Error getting JSON from dataset (${key2})
+`, element, error);
+    return {};
+  }
+}
+function wasClickOutside(element, event) {
+  const rect = element.getBoundingClientRect();
+  return event.clientY < rect.top || // above
+  event.clientY > rect.top + rect.height || // below
+  event.clientX < rect.left || // left side
+  event.clientX > rect.left + rect.width;
+}
+function createElementFromHtml(markup) {
+  const doc = new DOMParser().parseFromString(markup, "text/html");
+  return doc.body.firstElementChild;
+}
+const _Resizer = class _Resizer {
+  /**
+   * 
+   * @param {Node} container Container to be resize   
+   * @param {Node} control Resize handle element 
+   * @param {Object} options Defualt can be changed on class
+   * @param {Boolean} options.debug Enable non-essential debugging logs
+   * @param {Boolean} options.overrideMaxWidth When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)
+   * @param {Boolean} options.fromLeft The script should assume the handle is on the left side of the element
+   */
+  constructor(container2, control, options) {
+    if (!control || !container2) {
+      logError$1(this, "Missing required elements 'control' or 'container'");
+    }
+    this.options = Object.assign({}, _Resizer.defaults, options);
+    this.container = container2;
+    this.control = control;
+    this.handlerMousedown = this.onMousedown.bind(this);
+    this.control.addEventListener("mousedown", this.handlerMousedown);
+  }
+  destroy() {
+    this.control.removeEventListener("mousedown", this.handlerMousedown);
+  }
+  onMousedown(e) {
+    const { overrideMaxWidth, fromLeft } = this.options;
+    const doc = document.documentElement;
+    const win = document.defaultView;
+    const x = e.clientX;
+    const width = parseInt(win.getComputedStyle(this.container).width, 10);
+    if (overrideMaxWidth) {
+      this.container.style.maxWidth = "none";
+    }
+    const mousemove = (event) => {
+      const polarity = fromLeft ? -1 : 1;
+      this.container.style.width = `${width + (event.clientX - x) * polarity}px`;
+    };
+    const cleanup = () => {
+      doc.removeEventListener("mousemove", mousemove, false);
+    };
+    doc.addEventListener("mousemove", mousemove, false);
+    doc.addEventListener("mouseup", cleanup, { capture: true, once: true });
+  }
+};
+__publicField(_Resizer, "defaults", {
+  debug: false,
+  overrideMaxWidth: false,
+  fromLeft: false
+});
+let Resizer = _Resizer;
+const log = (...msgs) => console.log("Modal Builder", ...msgs);
+const defaults$2 = {
+  title: null,
+  titleIcon: null,
+  documentEnd: true,
+  allowResize: false,
+  position: "center",
+  video: false,
+  size: "default",
+  class: "",
+  classCloseIcon: "css-icon-close",
+  classResizerIcon: "css-icon-drag",
+  debug: false
+};
+const systemClasses = {
+  body: "modal__body",
+  resizer: "modal__resizer"
+};
+function buildModal(content, options, template = modalTemplate) {
+  const config2 = Object.assign({}, defaults$2, options);
+  if (config2.position !== "center" && config2.allowResize) {
+    config2.hasResizer = true;
+  }
+  if (config2.debug) {
+    log(config2, content);
+  }
+  if (!content.id) {
+    throw new Error("Missing ID on dialog");
+  }
+  const markup = template(content.id, config2);
+  const dialog = createElementFromHtml(markup.trim());
+  const body = dialog.querySelector("." + systemClasses.body);
+  const resizer = dialog.querySelector("." + systemClasses.resizer);
+  const dialogOptions = separateDialogOptions(config2);
+  content.removeAttribute("id");
+  content.removeAttribute("hidden");
+  content.parentNode.replaceChild(dialog, content);
+  body.appendChild(content);
+  dialog.setAttribute(attrs$1.dialog, JSON.stringify(dialogOptions));
+  if (config2.hasResizer) {
+    new Resizer(dialog, resizer, {
+      fromLeft: config2.position === "right"
+    });
+  }
+  return { dialog };
+}
+function modalTemplate(id2, config2) {
+  const classes = [
+    "modal",
+    `modal--${config2.position}`,
+    `modal--${config2.size}`,
+    `modal--${config2.allowResize ? "resize" : "no-resize"}`,
+    ...!config2.title ? ["modal--no-header"] : [],
+    ...config2.video ? ["modal--video"] : [],
+    ...config2.class ? [config2.class] : []
+  ];
+  return `
+    <dialog id="${id2}"  class="${classes.join(" ")}">
+      ${config2.title ? `
+        <header class="modal__header">
+          <h2 class="modal__title">
+            ${config2.titleIcon ? `<span class="modal__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
+            <span class="modal__title-text">${config2.title}</span>
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-ulu-dialog-close autofocus>
+            <span class="modal__close-icon ${config2.classCloseIcon}" aria-hidden="true" ${attrs$1.close}></span>
+          </button>
+        </header>
+      ` : ""}
+      <div class="${systemClasses.body}"></div>
+      ${config2.hasResizer ? `<div class="${systemClasses.resizer}">
+          <span class="modal__resizer-icon ${config2.classResizerIcon}" aria-hidden="true"></span>
+        </div>` : ""}
+    </div>
+  `;
+}
+function separateDialogOptions(config2) {
+  return Object.keys(defaults$1).reduce((acc, key2) => {
+    if (key2 in config2) {
+      acc[key2] = config2[key2];
+    }
+    return acc;
+  }, {});
+}
+const attrSelector$1 = (key2) => `[${attrs$1[key2]}]:not([${attrs$1.init}])`;
+const queryAttr = (key2) => document.querySelectorAll(attrSelector$1(key2));
+const defaults$1 = {
+  /**
+   * Use non-modal interface for dialog
+   */
+  nonModal: false,
+  /**
+   * Move the dialog to the document end (hoist out of content)
+   * - helpful if dialogs are within editor body, etc
+   */
+  documentEnd: false,
+  /**
+   * Requires styling that reduces any padding/border on dialog
+   */
+  clickOutsideCloses: true
+};
+const attrs$1 = {
+  init: "data-ulu-init",
+  dialog: "data-ulu-dialog",
+  builder: "data-ulu-dialog-builder",
+  trigger: "data-ulu-dialog-trigger",
+  close: "data-ulu-dialog-close"
+};
+function init$3() {
+  document.addEventListener(getName$1("pageModified"), setup$2);
+  setup$2();
+}
+function setup$2() {
+  const builders = queryAttr("builder");
+  builders.forEach(setupBuilder);
+  const dialogs = queryAttr("dialog");
+  dialogs.forEach(setupDialog);
+  const triggers = queryAttr("trigger");
+  triggers.forEach(setupTrigger);
+}
+function setupBuilder(element) {
+  const options = getDatasetJson(element, "uluDialogBuilder");
+  element.removeAttribute(attrs$1.builder);
+  buildModal(element, options);
+}
+function setupTrigger(trigger) {
+  trigger.addEventListener("click", handleTrigger);
+  trigger.setAttribute(attrs$1.init, "");
+  function handleTrigger() {
+    var _a;
+    const id2 = trigger.dataset.uluDialogTrigger;
+    const dialog = document.getElementById(id2);
+    if (!dialog) {
+      console.error("Could not locate dialog (id)", id2);
+      return;
+    }
+    if (((_a = dialog == null ? void 0 : dialog.tagName) == null ? void 0 : _a.toLowerCase()) !== "dialog") {
+      console.error("Attempted to trigger non <dialog> element. If this needs to be built use " + attrs$1.builder);
+      return;
+    }
+    const options = getDialogOptions(dialog);
+    dialog[options.nonModal ? "show" : "showModal"]();
+  }
+}
+function setupDialog(dialog) {
+  const options = getDialogOptions(dialog);
+  dialog.addEventListener("click", handleClicks);
+  dialog.setAttribute(attrs$1.init, "");
+  if (options.documentEnd) {
+    document.body.appendChild(dialog);
+  }
+  function handleClicks(event) {
+    const { target } = event;
+    const closeFromButton = target.closest("[data-ulu-dialog-close]");
+    let closeFromOutside = options.clickOutsideCloses && target === dialog && wasClickOutside(dialog, event);
+    if (closeFromOutside || closeFromButton) {
+      dialog.close();
+    }
+  }
+}
+function getDialogOptions(dialog) {
+  const options = getDatasetJson(dialog, "uluDialog");
+  return Object.assign({}, defaults$1, options);
+}
+const index$6 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  buildModal,
+  init: init$3,
+  setup: setup$2
 }, Symbol.toStringTag, { value: "Module" }));
 function hasRequiredProps(required) {
   return function(object) {
@@ -2461,55 +2701,6 @@ const index$4 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   init: init$2,
   setup: setup$1
 }, Symbol.toStringTag, { value: "Module" }));
-const _Resizer = class _Resizer {
-  /**
-   * 
-   * @param {Node} container Container to be resize   
-   * @param {Node} control Resize handle element 
-   * @param {Object} options Defualt can be changed on class
-   * @param {Boolean} options.debug Enable non-essential debugging logs
-   * @param {Boolean} options.overrideMaxWidth When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)
-   * @param {Boolean} options.fromLeft The script should assume the handle is on the left side of the element
-   */
-  constructor(container2, control, options) {
-    if (!control || !container2) {
-      logError$1(this, "Missing required elements 'control' or 'container'");
-    }
-    this.options = Object.assign({}, _Resizer.defaults, options);
-    this.container = container2;
-    this.control = control;
-    this.handlerMousedown = this.onMousedown.bind(this);
-    this.control.addEventListener("mousedown", this.handlerMousedown);
-  }
-  destroy() {
-    this.control.removeEventListener("mousedown", this.handlerMousedown);
-  }
-  onMousedown(e) {
-    const { overrideMaxWidth, fromLeft } = this.options;
-    const doc = document.documentElement;
-    const win = document.defaultView;
-    const x = e.clientX;
-    const width = parseInt(win.getComputedStyle(this.container).width, 10);
-    if (overrideMaxWidth) {
-      this.container.style.maxWidth = "none";
-    }
-    const mousemove = (event) => {
-      const polarity = fromLeft ? -1 : 1;
-      this.container.style.width = `${width + (event.clientX - x) * polarity}px`;
-    };
-    const cleanup = () => {
-      doc.removeEventListener("mousemove", mousemove, false);
-    };
-    doc.addEventListener("mousemove", mousemove, false);
-    doc.addEventListener("mouseup", cleanup, { capture: true, once: true });
-  }
-};
-__publicField(_Resizer, "defaults", {
-  debug: false,
-  overrideMaxWidth: false,
-  fromLeft: false
-});
-let Resizer = _Resizer;
 const index$3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Resizer
@@ -7429,7 +7620,7 @@ const _Slider = class _Slider {
     this.transition = options.transition ? options.transitionFade || reduceMotion ? this.fadeTransition : this.slideTransition : this.noTransition;
     this.setup();
     this.goto(0, null, "init");
-    log(this, "Slider Instance Created", this);
+    log$1(this, "Slider Instance Created", this);
     _Slider.instances.push(this);
   }
   /**
@@ -8133,12 +8324,13 @@ const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePropert
 }, Symbol.toStringTag, { value: "Module" }));
 const ulu = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  breakpoints: index$a,
-  collapsible: index$9,
-  events: index$b,
-  flipcard: index$8,
-  grid: index$7,
-  helpers: index$6,
+  breakpoints: index$b,
+  collapsible: index$a,
+  dialog: index$6,
+  events: index$c,
+  flipcard: index$9,
+  grid: index$8,
+  helpers: index$7,
   overflowScroller: index$5,
   popover: index$4,
   resizer: index$3,
@@ -14674,9 +14866,10 @@ function init() {
   search.start();
 }
 console.log("ulu:\n", ulu);
-init$3();
+init$4();
 init$2();
 init$1();
+init$3();
 {
   __vitePreload(() => import("./chunks/modulepreload-polyfill.BoyGcPDr.js"), true ? [] : void 0);
 }

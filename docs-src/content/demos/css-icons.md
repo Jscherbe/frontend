@@ -1,5 +1,5 @@
 ---
-title: CSS Icons
+title: CSS Icons 
 intro: Basic icons that use only CSS
 ---
 
@@ -9,36 +9,20 @@ intro: Basic icons that use only CSS
     <tr>
       <th>Name</th>
       <th>Icon</th>
+      <th>Class</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--close"></span></td>
-    </tr>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--drag"></span></td>
-    </tr>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--close"></span></td>
-    </tr>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--close"></span></td>
-    </tr>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--close"></span></td>
-    </tr>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--close"></span></td>
-    </tr>
-    <tr>
-      <td>Close</td> 
-      <td><span class="css-icon css-icon--close"></span></td>
-    </tr>
+    {% for iconClass in iconClasses %}
+      <tr>
+        <td>{{ iconClass }}</td> 
+        <td>
+          <span class="{{ iconClass }}"></span>
+        </td>
+        <td class="type-small">
+          <code>{{ iconClass }}</code>
+        </td>
+      </tr>
+    {% endfor %}
   </tbody>
 </table>

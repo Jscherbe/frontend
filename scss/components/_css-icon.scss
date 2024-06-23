@@ -55,15 +55,19 @@ $config: (
 ///  @include ulu.component-example-styles();
 
 @mixin styles {
+  $border: get("stroke-width") solid get("color");
+  
   .css-icon {
     display: inline-block;
     position: relative;
     width: get("size");
     height: get("size");
+    transform-origin: center;
   }
   // Icons that share pseudos for strokes
   .css-icon--close,
-  .css-icon--drag {
+  .css-icon--drag-x,
+  .css-icon--drag-y {
     &:before,
     &:after {
       width: 100%;
@@ -73,6 +77,18 @@ $config: (
         border-radius: get("stroke-border-radius");
       }
     }
+  }
+  
+  .css-icon--square,
+  .css-icon--circle,
+  .css-icon--triangle {
+    background-color: get("color");
+  }
+  .css-icon--circle {
+    border-radius: 50%;
+  }
+  .css-icon--triangle {
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
   }
   .css-icon--close {
     &:before,
@@ -90,7 +106,8 @@ $config: (
       transform: translateX(-50%) rotate(-45deg);
     }
   }
-  .css-icon--drag {
+  .css-icon--drag-x,
+  .css-icon--drag-y {
     &:before,
     &:after {
       content: "";
@@ -101,5 +118,25 @@ $config: (
       top: 50%;
       transform: translateY(-50%);
     }
+  }
+
+
+  // Functional Modifiers
+  .css-icon--outline {
+    background-color: transparent;
+    border: $border;
+  }
+  // Solid icons
+  // Using the naming system (up/down/left/right) as prefixs so 
+  // that CSS can be simple for standard rotations
+  // All icons will be pointed right by default for this to work
+  .css-icon--left {
+    transform: rotate(180deg);
+  }
+  .css-icon--up {
+    transform: rotate(270deg);
+  }
+  .css-icon--down {
+    transform: rotate(90deg);
   }
 }

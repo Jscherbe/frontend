@@ -1,0 +1,28 @@
+export default {
+  iconClasses: [
+    "css-icon css-icon--close",
+    "css-icon css-icon--plus",
+    "css-icon css-icon--minus",
+    "css-icon css-icon--info",
+    "css-icon css-icon--question",
+    "css-icon css-icon--circle",
+    "css-icon css-icon--circle css-icon--outline",
+    "css-icon css-icon--square",
+    "css-icon css-icon--square css-icon--outline",
+    "css-icon css-icon--drag-x",
+    "css-icon css-icon--drag-x css-icon--up",
+    "css-icon css-icon--drag-y",
+    "css-icon css-icon--triangle",
+    "css-icon css-icon--triangle css-icon--left",
+    "css-icon css-icon--triangle css-icon--up",
+    "css-icon css-icon--triangle css-icon--down",
+    // "css-icon css-icon--left-arrow",
+    // "css-icon css-icon--right-arrow",
+    // "css-icon css-icon--top-arrow",
+    // "css-icon css-icon--bottom-arrow",
+    // "css-icon css-icon--left-angle",
+    // "css-icon css-icon--right-angle",
+    // "css-icon css-icon--top-angle",
+    // "css-icon css-icon--bottom-angle",
+  ]
+}
