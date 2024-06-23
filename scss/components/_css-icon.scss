@@ -1,23 +1,8 @@
 ////
 /// @group css-icon
 ////
-/// Simple icons that are made from pseudo elements
+/// Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
 /// 
-/// 
-/// TODO:
-/// - Convert to normal module format vs mixins
-///   so we can share properties over making it easy to create variations 
-///   (performance is more important users can just reuse pattern if needed
-/// MAKE:
-/// - plus
-/// - minus
-/// - close/times
-/// - drag (2 bar) (horizontal/vertical)
-/// - caret/chevron (up,down,left,right)
-/// - arrows (up,down,left,right) (using two borders and transparent psuedo
-/// - info (with "i" in certain font-family that looks ok
-/// - triangle (up,down,left,right)(maybe 45deg too?)
-/// - Add circle to any (with container being the circle)
 
 @use "sass:map";
 @use "sass:math";
@@ -31,7 +16,7 @@ $config: (
   "size" : 1.1em,
   "stroke-width" : 0.15em,
   "stroke-border-radius" : 4px,
-  "color" : currentColor,
+  "color" : currentColor
 );
 
 /// Change modules $config
@@ -64,12 +49,75 @@ $config: (
     height: get("size");
     transform-origin: center;
   }
+
+  // Solid icons
+  .css-icon--square,
+  .css-icon--circle,
+  .css-icon--info,
+  .css-icon--question {
+    background-color: get("color");
+  }
+  .css-icon--square {
+    // background-clip: content-box;
+    // padding: 1%;
+    transform: scale(0.9);
+  }
+  .css-icon--circle,
+  .css-icon--circle-outline,
+  .css-icon--info,
+  .css-icon--question {
+    border-radius: 50%;
+  }
+  .css-icon--triangle-right,
+  .css-icon--triangle-left,
+  .css-icon--triangle-up,
+  .css-icon--triangle-down {
+    background-color: get("color");
+    clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
+  }
+  .css-icon--circle-outline,
+  .css-icon--square-outline {
+    background-color: transparent;
+    border: $border;
+  }
+  .css-icon--info,
+  .css-icon--question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:before {
+      content: "i";
+      // display: block;
+      line-height: 1;
+      font-size: get("size") * 0.7;
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      color: get("color");
+      filter: invert(1) brightness(1.5);
+      
+    }
+  }
+  .css-icon--question { 
+    &:before {
+      content: "?";
+    }
+  }
+
+
   // Icons that share pseudos for strokes
   .css-icon--close,
+  .css-icon--plus,
+  .css-icon--minus,
   .css-icon--drag-x,
-  .css-icon--drag-y {
+  .css-icon--drag-y,
+  .css-icon--angle-right,
+  .css-icon--angle-left,
+  .css-icon--angle-up,
+  .css-icon--angle-down {
     &:before,
     &:after {
+      content: "";
+      display: block;
       width: 100%;
       height: get("stroke-width");
       background-color: get("color"); 
@@ -78,27 +126,70 @@ $config: (
       }
     }
   }
+  .css-icon--angle-right,
+  .css-icon--angle-left,
+  .css-icon--angle-up,
+  .css-icon--angle-down {
+    transform: rotate(135deg);
+    &:before,
+    &:after {
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      width: 70%;
+    }
+    &:after {
+      width: get("stroke-width");
+      height: 70%;
+    }
+  }
+  .css-icon--angle-left {
+    transform: rotate(315deg);
+  }
+  .css-icon--angle-up {
+    transform: rotate(45deg);
+  }
+  .css-icon--angle-down {
+    transform: rotate(225deg);
+  }
   
-  .css-icon--square,
-  .css-icon--circle,
-  .css-icon--triangle {
-    background-color: get("color");
-  }
-  .css-icon--circle {
-    border-radius: 50%;
-  }
-  .css-icon--triangle {
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-  }
+  // Centered pseudos offset by half of stroke before transform
+  // Icons with centered pseudos
+  .css-icon--plus,
+  .css-icon--minus,
   .css-icon--close {
     &:before,
     &:after {
-      content: "";
       position: absolute;
       top: 50%;
       left: 50%;
       margin-top: -(math.div(get("stroke-width"), 2));
     }
+  }
+  .css-icon--plus,
+  .css-icon--minus {
+    &:before,
+    &:after {
+      width: 80%;
+    }
+  }
+  .css-icon--plus {
+    &:before {
+      transform: translateX(-50%) rotate(90deg);
+    }
+    &:after {
+      transform: translateX(-50%);
+    }
+  }
+  .css-icon--minus {
+    &:before {
+      content: none;
+    }
+    &:after {
+      transform: translateX(-50%);
+    }
+  }
+  .css-icon--close {
     &:before {
       transform: translateX(-50%) rotate(45deg);
     }
@@ -108,35 +199,27 @@ $config: (
   }
   .css-icon--drag-x,
   .css-icon--drag-y {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: get("stroke-width") * 1.5;
     &:before,
     &:after {
       content: "";
       display: block; 
     }
-    &:after {
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-    }
   }
 
-
-  // Functional Modifiers
-  .css-icon--outline {
-    background-color: transparent;
-    border: $border;
-  }
-  // Solid icons
-  // Using the naming system (up/down/left/right) as prefixs so 
-  // that CSS can be simple for standard rotations
-  // All icons will be pointed right by default for this to work
-  .css-icon--left {
+  // Rotations
+  .css-icon--triangle-left {
     transform: rotate(180deg);
   }
-  .css-icon--up {
+  .css-icon--drag-x,
+  .css-icon--triangle-up {
     transform: rotate(270deg);
   }
-  .css-icon--down {
+  .css-icon--triangle-down {
     transform: rotate(90deg);
   }
 }

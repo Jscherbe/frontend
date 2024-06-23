@@ -1935,23 +1935,7 @@
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
       <h1 id="css-icon" tabindex="-1">Css-icon</h1>
-<p>Simple icons that are made from pseudo elements</p>
-<p>TODO:</p>
-<ul>
-<li>Convert to normal module format vs mixins
-so we can share properties over making it easy to create variations
-(performance is more important users can just reuse pattern if needed
-MAKE:</li>
-<li>plus</li>
-<li>minus</li>
-<li>close/times</li>
-<li>drag (2 bar) (horizontal/vertical)</li>
-<li>caret/chevron (up,down,left,right)</li>
-<li>arrows (up,down,left,right) (using two borders and transparent psuedo</li>
-<li>info (with &quot;i&quot; in certain font-family that looks ok</li>
-<li>triangle (up,down,left,right)(maybe 45deg too?)</li>
-<li>Add circle to any (with container being the circle)</li>
-</ul>
+<p>Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library</p>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
@@ -1964,7 +1948,7 @@ MAKE:</li>
   <span class="token string">"size"</span> <span class="token punctuation">:</span> 1.1em<span class="token punctuation">,</span>
   <span class="token string">"stroke-width"</span> <span class="token punctuation">:</span> 0.15em<span class="token punctuation">,</span>
   <span class="token string">"stroke-border-radius"</span> <span class="token punctuation">:</span> 4px<span class="token punctuation">,</span>
-  <span class="token string">"color"</span> <span class="token punctuation">:</span> currentColor<span class="token punctuation">,</span>
+  <span class="token string">"color"</span> <span class="token punctuation">:</span> currentColor
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -1972,8 +1956,8 @@ MAKE:</li>
 <li><strong>File:</strong> _css-icon.scss</li>
 <li><strong>Group:</strong> css-icon</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 27-28</li>
-<li><strong>Lines (code):</strong> 30-35  </details>
+<li><strong>Lines (comments):</strong> 12-13</li>
+<li><strong>Lines (code):</strong> 15-20  </details>
 </li>
 </ul>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -1990,8 +1974,8 @@ MAKE:</li>
 <li><strong>File:</strong> _css-icon.scss</li>
 <li><strong>Group:</strong> css-icon</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 37-39</li>
-<li><strong>Lines (code):</strong> 41-43  </details>
+<li><strong>Lines (comments):</strong> 22-24</li>
+<li><strong>Lines (code):</strong> 26-28  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -2033,8 +2017,8 @@ MAKE:</li>
 <li><strong>File:</strong> _css-icon.scss</li>
 <li><strong>Group:</strong> css-icon</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 53-55</li>
-<li><strong>Lines (code):</strong> 57-142  </details>
+<li><strong>Lines (comments):</strong> 38-40</li>
+<li><strong>Lines (code):</strong> 42-225  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -2057,8 +2041,8 @@ MAKE:</li>
 <li><strong>File:</strong> _css-icon.scss</li>
 <li><strong>Group:</strong> css-icon</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 45-47</li>
-<li><strong>Lines (code):</strong> 49-51  </details>
+<li><strong>Lines (comments):</strong> 30-32</li>
+<li><strong>Lines (code):</strong> 34-36  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

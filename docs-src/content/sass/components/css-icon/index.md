@@ -6,23 +6,7 @@ sassdocGroupName: css-icon
 
 # Css-icon
 
-Simple icons that are made from pseudo elements
-
-
-TODO:
-- Convert to normal module format vs mixins
-  so we can share properties over making it easy to create variations 
-  (performance is more important users can just reuse pattern if needed
-MAKE:
-- plus
-- minus
-- close/times
-- drag (2 bar) (horizontal/vertical)
-- caret/chevron (up,down,left,right)
-- arrows (up,down,left,right) (using two borders and transparent psuedo
-- info (with "i" in certain font-family that looks ok
-- triangle (up,down,left,right)(maybe 45deg too?)
-- Add circle to any (with container being the circle)
+Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
 
 
 
@@ -52,7 +36,7 @@ $config: (
   "size" : 1.1em,
   "stroke-width" : 0.15em,
   "stroke-border-radius" : 4px,
-  "color" : currentColor,
+  "color" : currentColor
 );
 ```
   
@@ -62,8 +46,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 27-28
-- **Lines (code):** 30-35
+- **Lines (comments):** 12-13
+- **Lines (code):** 15-20
     </details>
     
   
@@ -94,8 +78,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 37-39
-- **Lines (code):** 41-43
+- **Lines (comments):** 22-24
+- **Lines (code):** 26-28
     </details>
     
 
@@ -136,8 +120,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-142
+- **Lines (comments):** 38-40
+- **Lines (code):** 42-225
     </details>
     
 
@@ -185,8 +169,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 45-47
-- **Lines (code):** 49-51
+- **Lines (comments):** 30-32
+- **Lines (code):** 34-36
     </details>
     
 

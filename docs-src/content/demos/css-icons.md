@@ -13,14 +13,14 @@ intro: Basic icons that use only CSS
     </tr>
   </thead>
   <tbody>
-    {% for iconClass in iconClasses %}
+    {% for name in iconNames %}
       <tr>
-        <td>{{ iconClass }}</td> 
+        <td>{{ name }}</td> 
         <td>
-          <span class="{{ iconClass }}"></span>
+          <span class="css-icon css-icon--{{ name }}"></span>
         </td>
         <td class="type-small">
-          <code>{{ iconClass }}</code>
+          <code>css-icon css-icon-{{ name }}</code>
         </td>
       </tr>
     {% endfor %}
