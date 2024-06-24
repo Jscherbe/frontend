@@ -3,7 +3,8 @@ import "./search.js";
 
 console.log("ulu:\n", ulu);
 
-ulu.grid.init();
-ulu.popover.init();
-ulu.tabs.init();
-ulu.dialog.init();
+ulu.ui.grid.init();
+ulu.ui.popover.init();
+ulu.ui.tabs.init();
+ulu.ui.dialogBuilder.init();
+ulu.ui.dialog.init();

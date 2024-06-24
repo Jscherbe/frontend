@@ -7,11 +7,18 @@ title: popover
 ## popover
 
 * [popover](#module_popover)
+    * [.Popover](#module_popover.Popover)
     * [.instances](#module_popover.instances)
     * [.init()](#module_popover.init)
     * [.setup()](#module_popover.setup)
     * [.resolve()](#module_popover.resolve)
 
+<a name="module_popover.Popover"></a>
+
+### popover.Popover
+Class that extends Collapsible adding floating-ui for popover behavior
+
+**Kind**: static class of [<code>popover</code>](#module_popover)  
 <a name="module_popover.instances"></a>
 
 ### popover.instances

@@ -1,18 +1,28 @@
-import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
-import { Resizer } from "../resizer/resizer.js";
-import { attrs, defaults as dialogDefaults } from "./init.js";
-
 /**
- * Attributes that are required for querying
+ * @module dialog-builder
  */
-export const builderAttrs = {
+
+// Note this needs to be run before dialogs are initialized!
+
+import { getName } from "../events/index.js";
+import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
+import { Resizer } from "./resizer.js";
+import { getDatasetJson } from "../utils/dom.js";
+import { defaults as dialogDefaults, attrs as dialogAttrs } from "./dialog.js";
+
+const attrs = {
+  builder: "data-ulu-dialog-builder",
   body: "data-ulu-dialog-builder-body",
   resizer: "data-ulu-dialog-builder-resizer"
 };
-const log = (...msgs) => console.log("Modal Builder", ...msgs);
+
+const attrSelector = key => `[${ attrs[key] }]`;
 
 /**
- * Default builder options (extends dialog defaults!)
+ * Default builder options (extends dialog defaults, watch name collisions)
+ * - Decided to extend defaults so the interface in HTML is singular
+ *   - This is sometimes easier to template (merging and serializing options 
+ *     in twig for example)
  */
 export const defaults = {
   title: null,
@@ -56,14 +66,14 @@ export const defaults = {
               }
               <span class="modal__title-text">${ config.title }</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${ attrs.close } autofocus>
+            <button class="modal__close" aria-label="Close modal" ${ dialogAttrs.close } autofocus>
               ${ closeIconMarkup }
             </button>
           </header>
         ` : "" }
-        <div class="modal__body" ${ builderAttrs.body }></div>
+        <div class="modal__body" ${ attrs.body }></div>
         ${ config.hasResizer ? 
-          `<div class="modal__resizer" ${ builderAttrs.resizer }>
+          `<div class="modal__resizer" ${ attrs.resizer }>
             <span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>
           </div>` : '' 
         }
@@ -72,11 +82,42 @@ export const defaults = {
   }
 };
 
-
+// Current default objects (user can override these)
 let currentDefaults = { ...defaults };
 
-export function setBuilderOptions(options) {
-  Object.assign(currentDefaults, options);
+/**
+ * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ */
+export function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Query and setup all builder
+ */
+export function setup() {
+  // First setup builders so they can be setup as normal dialogs after
+  const builders = document.querySelectorAll(attrSelector("builder"));
+  builders.forEach(setupBuilder);
+}
+
+/**
+ * Build a dialog for the given content
+ * @param {Node} element 
+ */
+export function setupBuilder(element) {
+  const options = getDatasetJson(element, "uluDialogBuilder");
+  element.removeAttribute(attrs.builder);
+  buildModal(element, options);
 }
 
 /**
@@ -92,13 +133,13 @@ export function buildModal(content, options) {
     config.hasResizer = true;
   }
   if (config.debug) {
-    log(config, content);
+    console.log(config, content);
   }
   if (!content.id) {
     throw new Error("Missing ID on dialog");
   }
   
-  const selectDialogChild = key => dialog.querySelector(`[${ builderAttrs[key] }]`);
+  const selectDialogChild = key => dialog.querySelector(attrSelector(key));
   const markup = config.template(content.id, config);
   const dialog = createElementFromHtml(markup.trim());
   const body = selectDialogChild("body");
@@ -108,11 +149,12 @@ export function buildModal(content, options) {
   // Replace content with new dialog, and then insert the content into the new dialogs body
   content.removeAttribute("id");
   content.removeAttribute("hidden");
+  content.removeAttribute(attrs.builder);
   content.parentNode.replaceChild(dialog, content);
   body.appendChild(content);
 
   // Add dialog options for other scripts
-  dialog.setAttribute(attrs.dialog, JSON.stringify(dialogOptions));
+  dialog.setAttribute(dialogAttrs.dialog, JSON.stringify(dialogOptions));
 
   if (config.hasResizer) {
     new Resizer(dialog, resizer, {
@@ -122,13 +164,12 @@ export function buildModal(content, options) {
   return { dialog };
 }
 
-
 /**
  * Returns JSON string to embed in data-ulu-dialog for dialog handling
  * @param {Object} config Config object to pull dialog specific settings from
  * @returns {Object}
  */
-export function separateDialogOptions(config) {
+function separateDialogOptions(config) {
   return Object.keys(dialogDefaults).reduce((acc, key) => {
     if (key in config) {
       acc[key] = config[key];
@@ -136,5 +177,3 @@ export function separateDialogOptions(config) {
     return acc;
   }, {});
 }
-
-

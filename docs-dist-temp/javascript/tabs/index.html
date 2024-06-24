@@ -1520,6 +1520,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/javascript/dialog-builder/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      dialog-builder
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/javascript/events/" 
           
         >
@@ -1672,25 +1691,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/javascript/programmatic-modal/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      programmatic-modal
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/javascript/resizer/" 
           
         >
@@ -1736,25 +1736,6 @@
     
     <span class="nav-tree__text">
       tabs
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
-          href="/javascript/tabs-utils/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      tabs/utils
     </span>
   
         </a>
@@ -1857,25 +1838,6 @@
           
         </li>
       
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
-          href="/javascript/utils-set-positional-classes/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      utils/set-positional-classes
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
       </ul>
     
           </details>
@@ -1907,6 +1869,15 @@
 
                     <li><a href="#tabs.setup(element%2C-options)-%E2%87%92-object">tabs.setup(element, options) ⇒ Object</a>
             		</li>
+
+                    <li><a href="#tabs~openbycurrenthash()">tabs~openByCurrentHash()</a>
+            		</li>
+
+                    <li><a href="#tabs~handleopen()">tabs~handleOpen()</a>
+            		</li>
+
+                    <li><a href="#tabs~setheights()">tabs~setHeights()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -1927,10 +1898,21 @@
 <ul>
 <li><a href="#module_tabs">tabs</a>
 <ul>
+<li><em>static</em>
+<ul>
 <li><a href="#module_tabs.instances">.instances</a> : <code>Array</code></li>
 <li><a href="#module_tabs.init">.init(options)</a></li>
 <li><a href="#module_tabs.initWithin">.initWithin(context, options)</a></li>
 <li><a href="#module_tabs.setup">.setup(element, options)</a> ⇒ <code>Object</code></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_tabs..openByCurrentHash">~openByCurrentHash()</a></li>
+<li><a href="#module_tabs..handleOpen">~handleOpen()</a></li>
+<li><a href="#module_tabs..setHeights">~setHeights()</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2008,6 +1990,18 @@
 </tr>
 </tbody>
 </table>
+<p><a name="module_tabs..openByCurrentHash"></a></p>
+<h3 id="tabs~openbycurrenthash()" tabindex="-1">tabs~openByCurrentHash()</h3>
+<p>Opens the a tabpanel if it matches current hash (used in initial init)</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_tabs"><code>tabs</code></a><br>
+<a name="module_tabs..handleOpen"></a></p>
+<h3 id="tabs~handleopen()" tabindex="-1">tabs~handleOpen()</h3>
+<p>Responsible for setting hash on open if option is set</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_tabs"><code>tabs</code></a><br>
+<a name="module_tabs..setHeights"></a></p>
+<h3 id="tabs~setheights()" tabindex="-1">tabs~setHeights()</h3>
+<p>Responsible for creating equal height tab panels</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_tabs"><code>tabs</code></a></p>
 
     </div>
   </div>

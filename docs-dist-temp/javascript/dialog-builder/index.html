@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Color
+    dialog-builder
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -259,10 +259,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -282,10 +282,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -1234,10 +1234,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1255,10 +1255,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/helpers/" 
           
         >
@@ -1293,12 +1293,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/helpers/color/" 
-          aria-current="page"
+          
         >
           
     
@@ -1417,10 +1417,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -1440,10 +1440,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/javascript/" 
           
         >
@@ -1516,12 +1516,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/javascript/dialog-builder/" 
-          
+          aria-current="page"
         >
           
     
@@ -1854,11 +1854,29 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#mixins">Mixins</a>
+                    <li><a href="#dialog-builder">dialog-builder</a>
             
                 <ol>
                     
-                    <li><a href="#mixin-styles">styles()</a>
+                    <li><a href="#dialog-builder.defaults">dialog-builder.defaults</a>
+            		</li>
+
+                    <li><a href="#dialog-builder.setdefaults(options)">dialog-builder.setDefaults(options)</a>
+            		</li>
+
+                    <li><a href="#dialog-builder.init()">dialog-builder.init()</a>
+            		</li>
+
+                    <li><a href="#dialog-builder.setup()">dialog-builder.setup()</a>
+            		</li>
+
+                    <li><a href="#dialog-builder.setupbuilder(element)">dialog-builder.setupBuilder(element)</a>
+            		</li>
+
+                    <li><a href="#dialog-builder.buildmodal(content%2C-options)">dialog-builder.buildModal(content, options)</a>
+            		</li>
+
+                    <li><a href="#dialog-builder~separatedialogoptions(config)-%E2%87%92-object">dialog-builder~separateDialogOptions(config) ⇒ Object</a>
             		</li>
                 </ol>
             		</li>
@@ -1871,29 +1889,137 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Color</h1>
+    <h1 class="page__title h1">dialog-builder</h1>
 
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
-      <h1 id="color" tabindex="-1">Color</h1>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Prints color-context and color-[name] styles as helper classes (bottom of stylesheet)</p>
-<p><details>
-<summary>File Information</summary></p>
+      <p><a name="module_dialog-builder"></a></p>
+<h2 id="dialog-builder" tabindex="-1">dialog-builder</h2>
 <ul>
-<li><strong>File:</strong> _color.scss</li>
-<li><strong>Group:</strong> color</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 8-8</li>
-<li><strong>Lines (code):</strong> 10-14  </details>
+<li><a href="#module_dialog-builder">dialog-builder</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_dialog-builder.defaults">.defaults</a></li>
+<li><a href="#module_dialog-builder.setDefaults">.setDefaults(options)</a></li>
+<li><a href="#module_dialog-builder.init">.init()</a></li>
+<li><a href="#module_dialog-builder.setup">.setup()</a></li>
+<li><a href="#module_dialog-builder.setupBuilder">.setupBuilder(element)</a></li>
+<li><a href="#module_dialog-builder.buildModal">.buildModal(content, options)</a></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_dialog-builder..separateDialogOptions">~separateDialogOptions(config)</a> ⇒ <code>Object</code></li>
+</ul>
 </li>
 </ul>
+</li>
+</ul>
+<p><a name="module_dialog-builder.defaults"></a></p>
+<h3 id="dialog-builder.defaults" tabindex="-1">dialog-builder.defaults</h3>
+<p>Default builder options (extends dialog defaults, watch name collisions)</p>
+<ul>
+<li>Decided to extend defaults so the interface in HTML is singular
+<ul>
+<li>This is sometimes easier to template (merging and serializing options
+in twig for example)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Kind</strong>: static constant of <a href="#module_dialog-builder"><code>dialog-builder</code></a><br>
+<a name="module_dialog-builder.setDefaults"></a></p>
+<h3 id="dialog-builder.setdefaults(options)" tabindex="-1">dialog-builder.setDefaults(options)</h3>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog-builder"><code>dialog-builder</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Change options used as default for dialogs, can then be overriden by data attribute settings on element</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_dialog-builder.init"></a></p>
+<h3 id="dialog-builder.init()" tabindex="-1">dialog-builder.init()</h3>
+<p>Initialize everything in document</p>
+<ul>
+<li>This will only initialize elements once, it is safe to call on page changes</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog-builder"><code>dialog-builder</code></a><br>
+<a name="module_dialog-builder.setup"></a></p>
+<h3 id="dialog-builder.setup()" tabindex="-1">dialog-builder.setup()</h3>
+<p>Query and setup all builder</p>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog-builder"><code>dialog-builder</code></a><br>
+<a name="module_dialog-builder.setupBuilder"></a></p>
+<h3 id="dialog-builder.setupbuilder(element)" tabindex="-1">dialog-builder.setupBuilder(element)</h3>
+<p>Build a dialog for the given content</p>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog-builder"><code>dialog-builder</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element</td>
+<td><code>Node</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_dialog-builder.buildModal"></a></p>
+<h3 id="dialog-builder.buildmodal(content%2C-options)" tabindex="-1">dialog-builder.buildModal(content, options)</h3>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog-builder"><code>dialog-builder</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td><code>Node</code></td>
+<td>Content element of the dialog (what is inserted into the body)</td>
+</tr>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Options for built dialog (see defaults)</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_dialog-builder..separateDialogOptions"></a></p>
+<h3 id="dialog-builder~separatedialogoptions(config)-%E2%87%92-object" tabindex="-1">dialog-builder~separateDialogOptions(config) ⇒ <code>Object</code></h3>
+<p>Returns JSON string to embed in data-ulu-dialog for dialog handling</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_dialog-builder"><code>dialog-builder</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>Object</code></td>
+<td>Config object to pull dialog specific settings from</td>
+</tr>
+</tbody>
+</table>
 
     </div>
   </div>

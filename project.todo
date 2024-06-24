@@ -1,4 +1,9 @@
 JS Updates:
+  ☐ Refactor all imports back to file based modules with category folders (vs flat dir based modules)
+    * 
+  ☐ Rename event getName to getEventName? So it's clear where it's used?
+  ☐ Breakpoints, etc. - make this SSR safe (no window, document, element access)
+    * Have a default for SSR
   ☐ Simplify initializers into a common pattern (they all need the same thing)
     ☐ Would be nice if what ever this is offers consitent api for all
       * IE. How to get instances for example 

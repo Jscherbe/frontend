@@ -2,7 +2,7 @@
  * @module grid
  */
 
-import { setPositionClasses } from "../utils/set-positional-classes.js";
+import { setPositionClasses } from "../utils/dom.js";
 import { getName } from "../events/index.js";
 
 /**

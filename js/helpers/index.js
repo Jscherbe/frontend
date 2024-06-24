@@ -1,2 +1,4 @@
 import { addScrollbarProperty } from "./scrollbar-width-property.js";
-export { addScrollbarProperty };
+import { FileSave } from "./file-save.js";
+
+export { addScrollbarProperty, FileSave };

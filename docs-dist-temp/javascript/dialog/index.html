@@ -1520,6 +1520,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/javascript/dialog-builder/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      dialog-builder
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/javascript/events/" 
           
         >
@@ -1672,25 +1691,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/javascript/programmatic-modal/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      programmatic-modal
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/javascript/resizer/" 
           
         >
@@ -1736,25 +1736,6 @@
     
     <span class="nav-tree__text">
       tabs
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
-          href="/javascript/tabs-utils/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      tabs/utils
     </span>
   
         </a>
@@ -1857,25 +1838,6 @@
           
         </li>
       
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
-          href="/javascript/utils-set-positional-classes/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      utils/set-positional-classes
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
       </ul>
     
           </details>
@@ -1893,6 +1855,33 @@
                 <ol>
                     
                     <li><a href="#dialog">dialog</a>
+            
+                <ol>
+                    
+                    <li><a href="#dialog.attrs">dialog.attrs</a>
+            		</li>
+
+                    <li><a href="#dialog.defaults">dialog.defaults</a>
+            		</li>
+
+                    <li><a href="#dialog.setdefaults(options)">dialog.setDefaults(options)</a>
+            		</li>
+
+                    <li><a href="#dialog.init()">dialog.init()</a>
+            		</li>
+
+                    <li><a href="#dialog.setup()">dialog.setup()</a>
+            		</li>
+
+                    <li><a href="#dialog.setuptrigger(trigger)">dialog.setupTrigger(trigger)</a>
+            		</li>
+
+                    <li><a href="#dialog.setupdialog(dialog)">dialog.setupDialog(dialog)</a>
+            		</li>
+
+                    <li><a href="#dialog.getdialogoptions(dialog)-%E2%87%92-object">dialog.getDialogOptions(dialog) ⇒ Object</a>
+            		</li>
+                </ol>
             		</li>
                 </ol>
             </div>
@@ -1909,6 +1898,115 @@
     <div class="wysiwyg">
       <p><a name="module_dialog"></a></p>
 <h2 id="dialog" tabindex="-1">dialog</h2>
+<ul>
+<li><a href="#module_dialog">dialog</a>
+<ul>
+<li><a href="#module_dialog.attrs">.attrs</a></li>
+<li><a href="#module_dialog.defaults">.defaults</a></li>
+<li><a href="#module_dialog.setDefaults">.setDefaults(options)</a></li>
+<li><a href="#module_dialog.init">.init()</a></li>
+<li><a href="#module_dialog.setup">.setup()</a></li>
+<li><a href="#module_dialog.setupTrigger">.setupTrigger(trigger)</a></li>
+<li><a href="#module_dialog.setupDialog">.setupDialog(dialog)</a></li>
+<li><a href="#module_dialog.getDialogOptions">.getDialogOptions(dialog)</a> ⇒ <code>Object</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_dialog.attrs"></a></p>
+<h3 id="dialog.attrs" tabindex="-1">dialog.attrs</h3>
+<p>Default data attributes</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_dialog"><code>dialog</code></a><br>
+<a name="module_dialog.defaults"></a></p>
+<h3 id="dialog.defaults" tabindex="-1">dialog.defaults</h3>
+<p>Dialog Defaults</p>
+<ul>
+<li>Can be overridden using data-attributes</li>
+</ul>
+<p><strong>Kind</strong>: static constant of <a href="#module_dialog"><code>dialog</code></a><br>
+<a name="module_dialog.setDefaults"></a></p>
+<h3 id="dialog.setdefaults(options)" tabindex="-1">dialog.setDefaults(options)</h3>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog"><code>dialog</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Change options used as default for dialogs, can then be overriden by data attribute settings on element</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_dialog.init"></a></p>
+<h3 id="dialog.init()" tabindex="-1">dialog.init()</h3>
+<p>Initialize everything in document</p>
+<ul>
+<li>This will only initialize elements once, it is safe to call on page changes</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog"><code>dialog</code></a><br>
+<a name="module_dialog.setup"></a></p>
+<h3 id="dialog.setup()" tabindex="-1">dialog.setup()</h3>
+<p>Setup dialogs, triggers and builder type dialogs</p>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog"><code>dialog</code></a><br>
+<a name="module_dialog.setupTrigger"></a></p>
+<h3 id="dialog.setuptrigger(trigger)" tabindex="-1">dialog.setupTrigger(trigger)</h3>
+<p>Setup click handlers on a trigger</p>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog"><code>dialog</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trigger</td>
+<td><code>Node</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_dialog.setupDialog"></a></p>
+<h3 id="dialog.setupdialog(dialog)" tabindex="-1">dialog.setupDialog(dialog)</h3>
+<p>Setup click handlers for a dialog</p>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog"><code>dialog</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dialog</td>
+<td><code>Node</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_dialog.getDialogOptions"></a></p>
+<h3 id="dialog.getdialogoptions(dialog)-%E2%87%92-object" tabindex="-1">dialog.getDialogOptions(dialog) ⇒ <code>Object</code></h3>
+<p>For a given dialog, get it's options (from data attribute)</p>
+<p><strong>Kind</strong>: static method of <a href="#module_dialog"><code>dialog</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dialog</td>
+<td><code>Node</code></td>
+</tr>
+</tbody>
+</table>
 
     </div>
   </div>

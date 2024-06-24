@@ -7,10 +7,15 @@ title: tabs
 ## tabs
 
 * [tabs](#module_tabs)
-    * [.instances](#module_tabs.instances) : <code>Array</code>
-    * [.init(options)](#module_tabs.init)
-    * [.initWithin(context, options)](#module_tabs.initWithin)
-    * [.setup(element, options)](#module_tabs.setup) ⇒ <code>Object</code>
+    * _static_
+        * [.instances](#module_tabs.instances) : <code>Array</code>
+        * [.init(options)](#module_tabs.init)
+        * [.initWithin(context, options)](#module_tabs.initWithin)
+        * [.setup(element, options)](#module_tabs.setup) ⇒ <code>Object</code>
+    * _inner_
+        * [~openByCurrentHash()](#module_tabs..openByCurrentHash)
+        * [~handleOpen()](#module_tabs..handleOpen)
+        * [~setHeights()](#module_tabs..setHeights)
 
 <a name="module_tabs.instances"></a>
 
@@ -52,5 +57,23 @@ Init all tabs within a certain context
 | element | <code>Node</code> | Tablist Element |
 | options | <code>Node</code> | Options to set as defaults (can be overridden by element dataset options) |
 
+<a name="module_tabs..openByCurrentHash"></a>
+
+### tabs~openByCurrentHash()
+Opens the a tabpanel if it matches current hash (used in initial init)
+
+**Kind**: inner method of [<code>tabs</code>](#module_tabs)  
+<a name="module_tabs..handleOpen"></a>
+
+### tabs~handleOpen()
+Responsible for setting hash on open if option is set
+
+**Kind**: inner method of [<code>tabs</code>](#module_tabs)  
+<a name="module_tabs..setHeights"></a>
+
+### tabs~setHeights()
+Responsible for creating equal height tab panels
+
+**Kind**: inner method of [<code>tabs</code>](#module_tabs)  
 
   

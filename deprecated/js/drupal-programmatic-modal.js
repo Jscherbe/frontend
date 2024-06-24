@@ -9,8 +9,8 @@
 // Description:     Drupal programmatic modal insertion script (interface = jquery prototype)
 // Changes:         1.0.2 - Added ability to pass class to container
 
-import { setupModal, show, attachTriggers, triggerAttr } from "./modals/modals.js/index.js";
-import { dispatch } from "./events.js.js";
+import { setupModal, show, attachTriggers, triggerAttr } from "./micromodal-modals.js";
+import { dispatch } from "../../js/events.js";
 
 const $ = window.jQuery;
 const containerId = 'programmatic-modal';

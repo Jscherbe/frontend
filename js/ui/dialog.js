@@ -1,10 +1,25 @@
-import { getName } from "../events/index.js";
-import { getDatasetJson } from "../utils/dom.js";
-import { buildModal } from "./builder.js";
-import { wasClickOutside } from "../utils/dom.js";
+/**
+ * @module dialog
+ */
 
-const attrSelector = key => `[${ attrs[key] }]:not([${ attrs.init }])`;
-const queryAttr = key => document.querySelectorAll(attrSelector(key));
+import { getName } from "../events/index.js";
+import { getDatasetJson, wasClickOutside } from "../utils/dom.js";
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-init",
+  dialog: "data-ulu-dialog",
+  builder: "data-ulu-dialog-builder",
+  trigger: "data-ulu-dialog-trigger",
+  close: "data-ulu-dialog-close",
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
 
 /**
  * Dialog Defaults 
@@ -26,26 +41,16 @@ export const defaults = {
   clickOutsideCloses: true
 };
 
+
+// Current default objects (user can override these)
 let currentDefaults = { ...defaults };
 
 /**
- * 
  * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
  */
-export function setOptions(options) {
-  Object.assign(currentDefaults, options);
+export function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
 }
-
-/**
- * Default data attributes
- */
-export const attrs = {
-  init: "data-ulu-init",
-  dialog: "data-ulu-dialog",
-  builder: "data-ulu-dialog-builder",
-  trigger: "data-ulu-dialog-trigger",
-  close: "data-ulu-dialog-close",
-};
 
 /**
  * Initialize everything in document
@@ -60,27 +65,14 @@ export function init() {
  * Setup dialogs, triggers and builder type dialogs
  */
 export function setup() {
-  // First setup builders so they can be setup as normal dialogs after
-  const builders = queryAttr("builder");
-  builders.forEach(setupBuilder);
-  
   // Then setup all dialogs (including those that were built)
-  const dialogs = queryAttr("dialog");
+  const dialogs = queryAllInitial("dialog");
   dialogs.forEach(setupDialog);
 
-  const triggers = queryAttr("trigger");
+  const triggers = queryAllInitial("trigger");
   triggers.forEach(setupTrigger);
 }
 
-/**
- * Build a dialog for the given content
- * @param {Node} element 
- */
-function setupBuilder(element) {
-  const options = getDatasetJson(element, "uluDialogBuilder");
-  element.removeAttribute(attrs.builder);
-  buildModal(element, options);
-}
 
 /**
  * Setup click handlers on a trigger
