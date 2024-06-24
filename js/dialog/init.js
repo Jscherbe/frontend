@@ -4,7 +4,7 @@ import { buildModal } from "./builder.js";
 import { wasClickOutside } from "../utils/dom.js";
 
 const attrSelector = key => `[${ attrs[key] }]:not([${ attrs.init }])`;
-const queryAttr = key => document.querySelectorAll(attrSelector(key))
+const queryAttr = key => document.querySelectorAll(attrSelector(key));
 
 /**
  * Dialog Defaults 
@@ -25,6 +25,16 @@ export const defaults = {
    */
   clickOutsideCloses: true
 };
+
+let currentDefaults = { ...defaults };
+
+/**
+ * 
+ * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ */
+export function setOptions(options) {
+  Object.assign(currentDefaults, options);
+}
 
 /**
  * Default data attributes
@@ -127,7 +137,7 @@ export function setupDialog(dialog) {
  */
 export function getDialogOptions(dialog) {
   const options = getDatasetJson(dialog, "uluDialog");
-  return Object.assign({}, defaults, options);
+  return Object.assign({}, currentDefaults, options);
 }
 
 

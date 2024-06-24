@@ -2,6 +2,13 @@ import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "../resizer/resizer.js";
 import { attrs, defaults as dialogDefaults } from "./init.js";
 
+/**
+ * Attributes that are required for querying
+ */
+export const builderAttrs = {
+  body: "data-ulu-dialog-builder-body",
+  resizer: "data-ulu-dialog-builder-resizer"
+};
 const log = (...msgs) => console.log("Modal Builder", ...msgs);
 
 /**
@@ -16,25 +23,70 @@ export const defaults = {
   video: false,
   size: "default",
   class: "",
-  classCloseIcon: "css-icon-close",
-  classResizerIcon: "css-icon-drag",
-  debug: false
+  classCloseIcon: "css-icon css-icon--close",
+  classResizerIcon: "css-icon css-icon--drag",
+  debug: false,
+  templateCloseIcon(config) {
+    return `<span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true"></span>`;
+  },
+  /**
+   * Default modal template
+   * @param {String} id ID for new modal
+   * @param {Object} config Resolved options
+   * @returns {String} Markup for modal
+   */
+  template(id, config) {
+    const classes = [
+      "modal",
+      `modal--${ config.position }`,
+      `modal--${ config.size }`,
+      `modal--${ config.allowResize ? "resize" : "no-resize" }`,
+      ...(!config.title ? ['modal--no-header'] : []),
+      ...(config.video ? ['modal--video'] : []), 
+      ...(config.class ? [config.class] : []), 
+    ];
+    const closeIconMarkup = config.templateCloseIcon(config);
+    return `
+      <dialog id="${ id }"  class="${ classes.join(" ") }">
+        ${ config.title ? `
+          <header class="modal__header">
+            <h2 class="modal__title">
+              ${ config.titleIcon ? 
+                `<span class="modal__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
+              }
+              <span class="modal__title-text">${ config.title }</span>
+            </h2>
+            <button class="modal__close" aria-label="Close modal" ${ attrs.close } autofocus>
+              ${ closeIconMarkup }
+            </button>
+          </header>
+        ` : "" }
+        <div class="modal__body" ${ builderAttrs.body }></div>
+        ${ config.hasResizer ? 
+          `<div class="modal__resizer" ${ builderAttrs.resizer }>
+            <span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>
+          </div>` : '' 
+        }
+      </div>
+    `;
+  }
 };
 
-// Required classes
-const systemClasses = {
-  body: "modal__body",
-  resizer: "modal__resizer",
-};
+
+let currentDefaults = { ...defaults };
+
+export function setBuilderOptions(options) {
+  Object.assign(currentDefaults, options);
+}
 
 /**
  * 
  * @param {Node} content Content element of the dialog (what is inserted into the body)
  * @param {Object} options Options for built dialog (see defaults)
  */
-export function buildModal(content, options, template = modalTemplate) {
+export function buildModal(content, options) {
 
-  const config = Object.assign({}, defaults, options);
+  const config = Object.assign({}, currentDefaults, options);
 
   if (config.position !== "center" && config.allowResize) {
     config.hasResizer = true;
@@ -42,15 +94,15 @@ export function buildModal(content, options, template = modalTemplate) {
   if (config.debug) {
     log(config, content);
   }
-
   if (!content.id) {
     throw new Error("Missing ID on dialog");
   }
   
-  const markup = template(content.id, config);
+  const selectDialogChild = key => dialog.querySelector(`[${ builderAttrs[key] }]`);
+  const markup = config.template(content.id, config);
   const dialog = createElementFromHtml(markup.trim());
-  const body = dialog.querySelector("." + systemClasses.body);
-  const resizer = dialog.querySelector("." + systemClasses.resizer)
+  const body = selectDialogChild("body");
+  const resizer = selectDialogChild("resizer");
   const dialogOptions = separateDialogOptions(config);
 
   // Replace content with new dialog, and then insert the content into the new dialogs body
@@ -70,46 +122,6 @@ export function buildModal(content, options, template = modalTemplate) {
   return { dialog };
 }
 
-/**
- * Default modal template
- * @param {String} id ID for new modal
- * @param {Object} config Resolved options
- * @returns {String} Markup for modal
- */
-export function modalTemplate(id, config) {
-  const classes = [
-    "modal",
-    `modal--${ config.position }`,
-    `modal--${ config.size }`,
-    `modal--${ config.allowResize ? "resize" : "no-resize" }`,
-    ...(!config.title ? ['modal--no-header'] : []),
-    ...(config.video ? ['modal--video'] : []), 
-    ...(config.class ? [config.class] : []), 
-  ];
-  return `
-    <dialog id="${ id }"  class="${ classes.join(" ") }">
-      ${ config.title ? `
-        <header class="modal__header">
-          <h2 class="modal__title">
-            ${ config.titleIcon ? 
-              `<span class="modal__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
-            }
-            <span class="modal__title-text">${ config.title }</span>
-          </h2>
-          <button class="modal__close" aria-label="Close modal" data-ulu-dialog-close autofocus>
-            <span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true" ${ attrs.close }></span>
-          </button>
-        </header>
-      ` : "" }
-      <div class="${ systemClasses.body }"></div>
-      ${ config.hasResizer ? 
-        `<div class="${ systemClasses.resizer }">
-          <span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>
-        </div>` : '' 
-      }
-    </div>
-  `;
-}
 
 /**
  * Returns JSON string to embed in data-ulu-dialog for dialog handling
@@ -124,3 +136,5 @@ export function separateDialogOptions(config) {
     return acc;
   }, {});
 }
+
+

@@ -87,11 +87,10 @@ $config: (
     justify-content: center;
     &:before {
       content: "i";
-      // display: block;
-      line-height: 1;
       font-size: get("size") * 0.7;
       font-family: 'Courier New', monospace;
       font-weight: bold;
+      margin-top: 0.1em;
       color: get("color");
       filter: invert(1) brightness(1.5);
       
