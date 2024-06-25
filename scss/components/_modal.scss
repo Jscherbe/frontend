@@ -11,15 +11,18 @@
 @use "../utils";
 
 
+
+
+
 /// Module Settings
 /// @type Map
 $config: (
   "backdrop-color" :                element.get("backdrop-color"),
-  "backdrop-filter" :               blur(4px),
+  "backdrop-blur" :                 4px,
   "box-shadow" :                    none,         
   "width":                          400px,
   "height":                         340px,
-  "height-no-header":               150px,
+  "height-no-header":               100px,
   "border-radius" :                 0,
   "resizer-width":                  1rem,
   "resizer-color":                  black,
@@ -48,7 +51,8 @@ $config: (
   "dark-header-color" :             false,
   "title-icon-margin" :             0.5em,
   "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
-  "animation-duration" :            10s,
+  "animation-duration" :            300ms,
+  "animation-duration-exit" :       150ms,
 ) !default;
 
 /// Change modules $config
@@ -80,11 +84,15 @@ $config: (
   
   .modal {
     // Required for click outside
-    // position: fixed;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    // display: flex;
+    position: fixed;
+    // Important: If you use the margin layout system (ie. auto) on dialogs they 
+    // can't animate out correctly (thinking it jumps from dialog display system 
+    // to normal block and doesn't work. This ALSO affects the z-index (seems to move from top-layer to normal layer). Z-index is for close
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: layout.get("z-index-fixed") + 1;
+    margin: 0;
     padding: 0;
     border: 0;
     width: get("width");
@@ -97,17 +105,18 @@ $config: (
     border-radius: get("border-radius");
     background-color: get("background-color");
     box-sizing: border-box;
+    will-change: transform;
     &[open] {
       display: flex;
       flex-direction: column;
     }
     &::backdrop {
       background: get("backdrop-color");
-      backdrop-filter: get("backdrop-filter");
+      backdrop-filter: blur(get("backdrop-blur"));
     }
   }
   .modal--no-header {
-    height: get("height-no-header");
+    min-height: get("height-no-header");
   }
   .modal--resize {
     &.modal--center  {
@@ -214,32 +223,26 @@ $config: (
 
   // Positions
   .modal--top {
-    margin-top: 0;
-    margin-bottom: auto;
+    top: 0;
+    transform: translateX(-50%);
   }
   .modal--bottom {
-    margin-bottom: 0;
-    margin-top: auto;
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
   }
   .modal--right  {
-    margin-left: auto;
-    margin-right: 0;
-    // right: 0;
-    // left: auto;
-    // .modal__overlay {
-    //   justify-content: flex-end;
-    //   align-items: stretch;
-    // }
+    right: 0;
+    left: auto;
+    top: 0;
+    bottom: 0;
+    transform: none;
   }
   .modal--left  {
-    margin-right: auto;
-    margin-left: 0;
-    // left: 0;
-    // right: auto;
-    // .modal__overlay {
-    //   justify-content: flex-start;
-    //   align-items: stretch;
-    // }
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: none;
   }
   .modal--video {
     .modal__header {
@@ -249,97 +252,175 @@ $config: (
       padding: 0;
     }
   }
-  
-  @keyframes modalFadeIn {
+  @keyframes modalBackdropIn {
+    0% {
+      background-color: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0);
+    }
+    100% {
+      background-color: get("backdrop-color");
+      backdrop-filter: blur(get("backdrop-blur"));
+    }
+  }
+  @keyframes modalCenterIn {
     from { 
       opacity: 0; 
-      transform: translateY(50px);
+      transform: translate(-50%, -40%);
       display: none;
     }
     to { 
       opacity: 1; 
-      transform: translateY(0);
+      transform: translate(-50%, -50%);
       display: block;
     }
   }
-  @keyframes modalFadeOut {
+  @keyframes modalCenterOut {
     from { 
       opacity: 1; 
       display: block;
-      transform: translateY(0);
+      transform: translate(-50%, -50%);
     }
     to { 
       opacity: 0; 
       display: none;
-      transform: translateY(50px);
+      transform: translate(-50%, 40%);
     }
   }
-  @keyframes modalSlideIn {
+  @keyframes modalTopIn {
     from { 
-      transform: translateY(15%); 
+      opacity: 0; 
+      transform: translate(-50%, -15%);
+      display: none;
     }
     to { 
-      transform: translateY(0); 
+      opacity: 1; 
+      transform: translate(-50%, 0);
+      display: block;
     }
   }
-  @keyframes modalSlideOut {
+  @keyframes modalTopOut {
     from { 
-      transform: translateY(0); 
+      opacity: 1; 
+      display: block;
+      transform: translate(-50%, 0);
     }
     to { 
-      transform: translateY(-10%); 
+      opacity: 0; 
+      display: none;
+      transform: translate(-50%, -15%);
     }
   }
-  @keyframes modalSlideRightIn {
+  @keyframes modalBottomIn {
     from { 
-      transform: translateX(15%); 
+      opacity: 0; 
+      transform: translate(-50%, 15%);
+      display: none;
     }
     to { 
-      transform: translateX(0); 
+      opacity: 1; 
+      transform: translate(-50%, 0);
+      display: block;
     }
   }
-  @keyframes modalSlideRightOut {
+  @keyframes modalBottomOut {
     from { 
-      transform: translateX(0); 
+      opacity: 1; 
+      display: block;
+      transform: translate(-50%, 0);
     }
     to { 
-      transform: translateX(-10%); 
+      opacity: 0; 
+      display: none;
+      transform: translate(-50%, 15%);
     }
   }
-  @keyframes modalSlideLeftIn {
+  @keyframes modalLeftIn {
     from { 
-      transform: translateX(-15%); 
+      opacity: 0; 
+      transform: translateX(-15%);
+      display: none;
     }
     to { 
-      transform: translateX(0); 
+      opacity: 1; 
+      transform: translateX(0);
+      display: block;
     }
   }
-  @keyframes modalSlideLeftOut {
+  @keyframes modalLeftOut {
     from { 
-      transform: translateX(0); 
+      opacity: 1; 
+      display: block;
+      transform: translateX(0);
     }
     to { 
-      transform: translateX(10%); 
+      opacity: 0; 
+      display: none;
+      transform: translateX(-15%);
+    }
+  }
+  @keyframes modalRightIn {
+    from { 
+      opacity: 0; 
+      transform: translateX(15%);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0);
+      display: block;
+    }
+  }
+  @keyframes modalRightOut {
+    from { 
+      opacity: 1; 
+      display: block;
+      transform: translateX(0);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translateX(15%);
     }
   }
   
-  // .modal {
-  //   animation: modalFadeOut get("animation-duration") get("animation-timing-function");
-  //   &[open] {
-  //     animation: modalFadeIn get("animation-duration") get("animation-timing-function");
-  //   }
-  // }
-  // .modal[aria-hidden="false"] .modal__container {
-  //   animation: modalSlideIn .3s cubic-bezier(0, 0, .2, 1);
-  // }
-  // .modal--right[aria-hidden="false"] .modal__container {
-  //   animation: modalSlideRightIn .3s cubic-bezier(0, 0, .2, 1);
-  // }
+  .modal {
+    animation: modalCenterOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: modalCenterIn get("animation-duration") get("animation-timing-function");
+    }
+    &::backdrop {
+      animation: modalBackdropIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  .modal--top {
+    animation: modalTopOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: modalTopIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  .modal--bottom {
+    animation: modalBottomOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: modalBottomIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  .modal--right {
+    animation: modalRightOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: modalRightIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  .modal--left {
+    animation: modalLeftOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: modalLeftIn get("animation-duration") get("animation-timing-function");
+    }
+  }
   // .modal--left[aria-hidden="false"] .modal__container {
   //   animation: modalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
   // }
   // .modal[aria-hidden="true"] .modal__overlay {
-  //   animation: modalFadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+  //   animation: modalCenterOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
   // }
   // .modal[aria-hidden="true"] .modal__container {
   //   animation: modalSlideOut .3s cubic-bezier(0, 0, .2, 1);
