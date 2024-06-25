@@ -35,11 +35,11 @@ Module Settings
 $config: (
   "backdrop-color" :                element.get("backdrop-color"),
   "backdrop-blur" :                 4px,
-  "box-shadow" :                    none,         
+  "box-shadow" :                    element.get("box-shadow-above"),         
   "width":                          400px,
   "height":                         340px,
   "height-no-header":               100px,
-  "border-radius" :                 0,
+  "border-radius" :                 element.get("border-radius-large"),
   "resizer-width":                  1rem,
   "resizer-color":                  black,
   "resizer-color-hover":            black,
@@ -78,8 +78,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 17-18
-- **Lines (code):** 19-56
+- **Lines (comments):** 13-14
+- **Lines (code):** 15-52
     </details>
     
   
@@ -110,8 +110,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 58-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-61
     </details>
     
 
@@ -163,8 +163,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-440
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-388
     </details>
     
 
@@ -212,8 +212,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-69
     </details>
     
 

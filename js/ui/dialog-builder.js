@@ -31,6 +31,7 @@ export const defaults = {
   allowResize: false,
   position: "center",
   video: false,
+  noBackdrop: false,
   size: "default",
   class: "",
   classCloseIcon: "css-icon css-icon--close",
@@ -38,6 +39,9 @@ export const defaults = {
   debug: false,
   templateCloseIcon(config) {
     return `<span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true"></span>`;
+  },
+  templateResizerIcon(config) {
+    return `<span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>`;
   },
   /**
    * Default modal template
@@ -51,11 +55,11 @@ export const defaults = {
       `modal--${ config.position }`,
       `modal--${ config.size }`,
       `modal--${ config.allowResize ? "resize" : "no-resize" }`,
-      ...(!config.title ? ['modal--no-header'] : []),
-      ...(config.video ? ['modal--video'] : []), 
+      ...(!config.title ? ["modal--no-header"] : []),
+      ...(config.video ? ["modal--video"] : []), 
+      ...(config.noBackdrop ? ["modal--no-backdrop"] : []), 
       ...(config.class ? [config.class] : []), 
     ];
-    const closeIconMarkup = config.templateCloseIcon(config);
     return `
       <dialog id="${ id }"  class="${ classes.join(" ") }">
         ${ config.title ? `
@@ -67,14 +71,14 @@ export const defaults = {
               <span class="modal__title-text">${ config.title }</span>
             </h2>
             <button class="modal__close" aria-label="Close modal" ${ dialogAttrs.close } autofocus>
-              ${ closeIconMarkup }
+              ${ config.templateCloseIcon(config) }
             </button>
           </header>
         ` : "" }
         <div class="modal__body" ${ attrs.body }></div>
         ${ config.hasResizer ? 
           `<div class="modal__resizer" ${ attrs.resizer }>
-            <span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>
+            ${ config.templateResizerIcon(config) }
           </div>` : '' 
         }
       </div>

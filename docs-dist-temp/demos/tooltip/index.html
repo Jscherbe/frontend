@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Demos
+    Tooltip
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,7 +135,7 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
             open
@@ -254,12 +254,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/tooltip/" 
-          
+          aria-current="page"
         >
           
     
@@ -1869,7 +1869,20 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#basic-example">Basic Example</a>
+            		</li>
+
+                    <li><a href="#with-parameters-(fromelement)">With parameters (fromElement)</a>
+            		</li>
+
+                    <li><a href="#with-parameter">With Parameter</a>
+            		</li>
+                </ol>
+            </div>
 			</div>
 		
 		<main id="main" class="page__body">
@@ -1877,11 +1890,51 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Demos</h1>
+    <h1 class="page__title h1">Tooltip</h1>
+
+  <p class="type-large type-light">
+    Tooltips contain a brief bit of text like a speech bubble. They typically appear when you hover your cursor over an element on the screen, like a button or icon. Their purpose is to give you a quick hint about what that element does.
+  </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <p>This is a test page 1</p>
-
+    <div class="wysiwyg">
+      <h2 id="basic-example" tabindex="-1">Basic Example</h2>
+<div>
+  <p>
+    Lorem ipsum <span class="tooltip-demo" data-ulu-tooltip="This is some more information">"Lorem Ipsum" <span class="fas fa-circle-info" aria-hidden="true"></span></span> , consectetur adipiscing elit. In euismod diam purus, vel condimentum nibh sollicitudin eget. Sed efficitur augue eu urna egestas, eget condimentum nisl tempus. Curabitur maximus risus eget rutrum egestas. Vivamus lectus velit, rhoncus quis fringilla non, maximus sed lectus. Ut hendrerit arcu in felis varius condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi quis dolor laoreet, vehicula diam sed, lobortis leo. Ut consequat justo ac ante commodo, eu posuere sem commodo. Praesent vestibulum scelerisque turpis, eget sodales nunc iaculis quis. Etiam pretium sit amet lorem ac suscipit. Mauris pretium tellus at turpis ullamcorper, eu faucibus arcu cursus. Vestibulum ut mollis dui, non laoreet ligula. Quisque viverra lacus finibus ex pharetra suscipit. In ac ligula mauris.
+  </p>
+</div>
+<h2 id="with-parameters-(fromelement)" tabindex="-1">With parameters (fromElement)</h2>
+<div>
+  <p>
+    Lorem ipsum 
+    <span 
+      class="tooltip-demo" 
+      data-ulu-tooltip='{
+        fromElement: "#tooltip-element-demo"
+      }'
+    >
+      "Lorem Ipsum" <span class="fas fa-circle-info" aria-hidden="true"></span>
+    </span>, consectetur adipiscing elit. In euismod diam purus, vel condimentum nibh sollicitudin eget. Sed efficitur augue eu urna egestas, eget condimentum nisl tempus. Curabitur maximus risus eget rutrum egestas. Vivamus lectus velit, rhoncus quis fringilla non, maximus sed lectus. Ut hendrerit arcu in felis varius condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi quis dolor laoreet, vehicula diam sed, lobortis leo. Ut consequat justo ac ante commodo, eu posuere sem commodo. Praesent vestibulum scelerisque turpis, eget sodales nunc iaculis quis. Etiam pretium sit amet lorem ac suscipit. Mauris pretium tellus at turpis ullamcorper, eu faucibus arcu cursus. Vestibulum ut mollis dui, non laoreet ligula. Quisque viverra lacus finibus ex pharetra suscipit. In ac ligula mauris.
+  </p>
+</div>
+<div hidden id="tooltip-element-demo">My tooltip <em>has italic</em> content from another element</div>
+<h2 id="with-parameter" tabindex="-1">With Parameter</h2>
+<div>
+  <p>
+    Lorem ipsum 
+    <span 
+      class="tooltip-demo" 
+      data-ulu-tooltip='{
+        "content" : "Hello World"
+      }'
+    >
+      "Lorem Ipsum" <span class="fas fa-circle-info" aria-hidden="true"></span>
+    </span>, consectetur adipiscing elit. In euismod diam purus, vel condimentum nibh sollicitudin eget. Sed efficitur augue eu urna egestas, eget condimentum nisl tempus. Curabitur maximus risus eget rutrum egestas. Vivamus lectus velit, rhoncus quis fringilla non, maximus sed lectus. Ut hendrerit arcu in felis varius condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi quis dolor laoreet, vehicula diam sed, lobortis leo. Ut consequat justo ac ante commodo, eu posuere sem commodo. Praesent vestibulum scelerisque turpis, eget sodales nunc iaculis quis. Etiam pretium sit amet lorem ac suscipit. Mauris pretium tellus at turpis ullamcorper, eu faucibus arcu cursus. Vestibulum ut mollis dui, non laoreet ligula. Quisque viverra lacus finibus ex pharetra suscipit. In ac ligula mauris.
+  </p>
+</div>
+<div hidden id="tooltip-element-demo">My tooltip <em>has italic</em> content from another element</div>
+    </div>
   </div>
 
 		</main>

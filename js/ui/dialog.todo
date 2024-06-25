@@ -1,27 +1,30 @@
 Styling:
-  ☐ Animations?
+  ✔ Animations? @done
+  ☐ Check styling on left right
+  ☐ Setup fullscreen option / modifier
+  ☐ Setup programmatic modal with new system
   ☐ Resizing
     ✔ Work out how this can work with native and click outside @done
-    ☐ Figure out how to setup icon for the resizer for all sites
+    ✔ Figure out how to setup icon for the resizer for all sites @done
       * Fontawesome, or should this just be CSS so we don't need any icons for it
       * Same for close button should we just use CSS and omit any FA requirements
       * Or make it super easy to implement the icon only in the template (like default icon classses)
         * Then user can choose to implement their own (via class) or use the styles that come with it
   ☐ Prevent Browser Scroll
-  ☐ How should height work? Should a centered modal expand to it's content's height (up to the viewport height) or always be cropped and scroll (static height)?
+  ✔ How should height work? Should a centered modal expand to it's content's height (up to the viewport height) or always be cropped and scroll (static height)? @done
 Todos:
-  ☐ How should the relationship between a dialog and it's trigger work
+  ✔ How should the relationship between a dialog and it's trigger work @done
     * Think there should be no relationship? Just triggers are triggers just attach a handler to open DOM centric way (add errors when the dialog doesn't exist)
     * For the dialogs they should just have handlers attached for close
       * Init should find all one's that need to be built and build them, then it should initialize them the same way as non-built dialogs
-  ☐ Support both modal and non-modal dialogs (rename)?
-  ☐ Divide into 4 modules
+  ✔ Support both modal and non-modal dialogs (rename)? @done
+  ✘ Divide into 4 modules @cancelled
     1. Initializer (data-attributes)
     2. Templater (for Drupal projects and standard modals)
     3. Open/Close Behaviors
     4. Programmatic Modal
       * This is tough because its opionated towards our system in Drupal (jQuery)
-  ☐ How should this all be structured
+  ✔ How should this all be structured @done
     * JS template dialogs?
       * Pros
         * Many users create the modals in content in CMS we don't want to make that difficult or get stuck with structure
@@ -32,6 +35,3 @@ Todos:
       * Solution
         * Breakup module into two parts the underlying modal scripting (open close trigger) and (conversion modal templating [w. resizer] and as <div>)
           * Then we can have both without any extra code and seperation
-
-  ☐ Setup programmatic modal with new system
-  

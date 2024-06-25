@@ -135,3 +135,23 @@ By default clicking outside the modal will close it, this can be disabled by pas
 >
   Test
 </div>
+
+
+## No Backdrop
+
+Remove the backdrop by passing  `{ "noBackdrop" : true }` to the builder
+
+
+<button class="button" data-ulu-dialog-trigger="modal-id-no-backdrop">No Backdrop</button>
+
+<div 
+  id="modal-id-no-backdrop" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title",
+    "noBackdrop" : true
+  }' 
+  hidden
+>
+  Test
+</div>

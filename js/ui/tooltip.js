@@ -1,85 +1,49 @@
 /**
  * @module tooltip
  */
-// =============================================================================
-// Tooltip
-// =============================================================================
 
-// Version:         1.0.2
+import { getName } from "../events/index.js";
 
-// Description:     Adds a single tooltip div to bottom of document to be used to 
-//                  show text/simple markup of mouse hover or focus
-
-import { logError } from "../utils/class-logger.js";
-// import { createPopper } from '@popperjs/core';
-
-const ATTR_DESC = "aria-describedby";
-const popperOptions = {
-  placement: "auto",
-  strategy: 'fixed',
-  modifiers: [
-    { 
-      name: 'eventListeners', 
-      enabled: false 
-    },
-    {
-      name: 'preventOverflow',
-      enabled: true,
-      options: {
-        mainAxis: true
-      }
-    },
-    // Arrow
-    {
-      name: 'offset',
-      options: {
-        offset: [ 0, 10 ],
-      },
-    }
-  ]
+const attrs = {
+  trigger: "data-ulu-tooltip",
 };
+const attrSelector = key => `[${ attrs[key] }]`;
 
+/**
+ * Initialize default popover
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Query all popovers on current page and set them up
+ * - Use this manually if needed
+ * - Won't setup a popover more than once
+ */
+export function setup() {
+  const triggers = document.querySelectorAll(attrSelector("trigger"));
+  console.log("triggers:\n", triggers);
+}
+
+/**
+ * Tooltip
+ * - Provides basic tooltip functionality
+ * - Uses floating UI for positioning
+ */
 export class Tooltip {
-  static defaults = {
-    namespace: "Tooltip",
-    describedBy: false,
-    arrowSize: 10,
-    classes: []
+  /**
+   * Defaults options
+   */
+  static defaults =  {
+    /**
+     * String/markup to insert into tooltip display
+     */
+    content: null,
+    /**
+     * Pull content from pre-existing content on page
+     */
+    fromElement: null,
   };
-  constructor(context, markup, config) {
-    if (!context) {
-      logError(this, "Missing context element");
-    }
-    this.options = Object.assign({}, Tooltip.defaults, config);
-    this.context = context;
-    this.element = this.create(markup);
-    // createPopper(context, this.element, popperOptions);
-  }
-  create(markup) {
-    const { namespace } = this.options;
-    const element = document.createElement("div");
-
-    element.id = namespace + "--" + Date.now();
-    element.innerHTML = markup;
-    element.classList.add(namespace);
-    element.classList.add(...this.options.classes);
-
-    const arrow = document.createElement("div");
-    arrow.setAttribute("data-popper-arrow", "");
-
-    if (this.options.describedBy) {
-      this.context.setAttribute(ATTR_DESC, element.id);
-    }
-    this.inPage = true;
-    element.appendChild(arrow);
-    return document.body.appendChild(element);
-  }
-  destroy() {
-    if (this.inPage) {
-      document.body.removeChild(this.element);
-    }
-    if (this.options.describedBy) {
-      this.context.removeAttribute(ATTR_DESC);
-    }
-  }
 }

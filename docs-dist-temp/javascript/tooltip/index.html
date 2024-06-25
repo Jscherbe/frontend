@@ -253,6 +253,25 @@
           
         </li>
       
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/demos/tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -1855,6 +1874,24 @@
                 <ol>
                     
                     <li><a href="#tooltip">tooltip</a>
+            
+                <ol>
+                    
+                    <li><a href="#tooltip.tooltip">tooltip.Tooltip</a>
+            		</li>
+
+                    <li><a href="#tooltip.init()">tooltip.init()</a>
+            		</li>
+
+                    <li><a href="#tooltip.setup()">tooltip.setup()</a>
+            		</li>
+
+                    <li><a href="#tooltip~content">tooltip~content</a>
+            		</li>
+
+                    <li><a href="#tooltip~fromelement">tooltip~fromElement</a>
+            		</li>
+                </ol>
             		</li>
                 </ol>
             </div>
@@ -1871,6 +1908,61 @@
     <div class="wysiwyg">
       <p><a name="module_tooltip"></a></p>
 <h2 id="tooltip" tabindex="-1">tooltip</h2>
+<ul>
+<li><a href="#module_tooltip">tooltip</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_tooltip.Tooltip">.Tooltip</a>
+<ul>
+<li><a href="#module_tooltip.Tooltip+defaults">.defaults</a></li>
+</ul>
+</li>
+<li><a href="#module_tooltip.init">.init()</a></li>
+<li><a href="#module_tooltip.setup">.setup()</a></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_tooltip..content">~content</a></li>
+<li><a href="#module_tooltip..fromElement">~fromElement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="module_tooltip.Tooltip"></a></p>
+<h3 id="tooltip.tooltip" tabindex="-1">tooltip.Tooltip</h3>
+<p>Tooltip</p>
+<ul>
+<li>Provides basic tooltip functionality</li>
+<li>Uses floating UI for positioning</li>
+</ul>
+<p><strong>Kind</strong>: static class of <a href="#module_tooltip"><code>tooltip</code></a><br>
+<a name="module_tooltip.Tooltip+defaults"></a></p>
+<h4 id="tooltip.defaults" tabindex="-1">tooltip.defaults</h4>
+<p>Defaults options</p>
+<p><strong>Kind</strong>: instance property of <a href="#module_tooltip.Tooltip"><code>Tooltip</code></a><br>
+<a name="module_tooltip.init"></a></p>
+<h3 id="tooltip.init()" tabindex="-1">tooltip.init()</h3>
+<p>Initialize default popover</p>
+<p><strong>Kind</strong>: static method of <a href="#module_tooltip"><code>tooltip</code></a><br>
+<a name="module_tooltip.setup"></a></p>
+<h3 id="tooltip.setup()" tabindex="-1">tooltip.setup()</h3>
+<p>Query all popovers on current page and set them up</p>
+<ul>
+<li>Use this manually if needed</li>
+<li>Won't setup a popover more than once</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_tooltip"><code>tooltip</code></a><br>
+<a name="module_tooltip..content"></a></p>
+<h3 id="tooltip~content" tabindex="-1">tooltip~content</h3>
+<p>String/markup to insert into tooltip display</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
+<a name="module_tooltip..fromElement"></a></p>
+<h3 id="tooltip~fromelement" tabindex="-1">tooltip~fromElement</h3>
+<p>Pull content from pre-existing content on page</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a></p>
 
     </div>
   </div>

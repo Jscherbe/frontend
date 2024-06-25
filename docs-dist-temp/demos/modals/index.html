@@ -253,6 +253,25 @@
           
         </li>
       
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/demos/tooltip/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -1871,6 +1890,9 @@
 
                     <li><a href="#click-outside">Click Outside</a>
             		</li>
+
+                    <li><a href="#no-backdrop">No Backdrop</a>
+            		</li>
                 </ol>
             </div>
 			</div>
@@ -1996,6 +2018,20 @@
   data-ulu-dialog-builder='{ 
     "title" : "Test Title",
     "clickOutsideCloses" : false
+  }' 
+  hidden
+>
+  Test
+</div>
+<h2 id="no-backdrop" tabindex="-1">No Backdrop</h2>
+<p>Remove the backdrop by passing  <code>{ &quot;noBackdrop&quot; : true }</code> to the builder</p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-no-backdrop">No Backdrop</button></p>
+<div 
+  id="modal-id-no-backdrop" 
+  class="wysiwyg"
+  data-ulu-dialog-builder='{ 
+    "title" : "Test Title",
+    "noBackdrop" : true
   }' 
   hidden
 >

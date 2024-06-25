@@ -38,7 +38,7 @@ export const defaults = {
   /**
    * Requires styling that reduces any padding/border on dialog
    */
-  clickOutsideCloses: true
+  clickOutsideCloses: true,
 };
 
 

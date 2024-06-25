@@ -10,20 +10,16 @@
 @use "../typography";
 @use "../utils";
 
-
-
-
-
 /// Module Settings
 /// @type Map
 $config: (
   "backdrop-color" :                element.get("backdrop-color"),
   "backdrop-blur" :                 4px,
-  "box-shadow" :                    none,         
+  "box-shadow" :                    element.get("box-shadow-above"),         
   "width":                          400px,
   "height":                         340px,
   "height-no-header":               100px,
-  "border-radius" :                 0,
+  "border-radius" :                 element.get("border-radius-large"),
   "resizer-width":                  1rem,
   "resizer-color":                  black,
   "resizer-color-hover":            black,
@@ -105,39 +101,18 @@ $config: (
     border-radius: get("border-radius");
     background-color: get("background-color");
     box-sizing: border-box;
-    will-change: transform;
+    animation: uluModalCenterOut get("animation-duration-exit") get("animation-timing-function");
     &[open] {
+      animation: uluModalCenterIn get("animation-duration") get("animation-timing-function");
       display: flex;
       flex-direction: column;
     }
     &::backdrop {
       background: get("backdrop-color");
       backdrop-filter: blur(get("backdrop-blur"));
+      animation: uluModalBackdropIn get("animation-duration") get("animation-timing-function");
     }
   }
-  .modal--no-header {
-    min-height: get("height-no-header");
-  }
-  .modal--resize {
-    &.modal--center  {
-      resize: both;  
-    }
-    
-  }
-  // .modal__container {
-   
-  //   height: 100%;
-  
-  //   // Use native resize
-    
-  //   // Account for custom resizer
-  //   .modal--resize.modal--right  & {
-  //     padding-left: get("resizer-width");
-  //   }
-  //   .modal--resize.modal--left & {
-  //     padding-right: get("resizer-width");
-  //   }
-  // }
   .modal__header {
     display: flex;
     justify-content: space-between;
@@ -212,37 +187,64 @@ $config: (
     line-height: 1.5;
     color: rgba(0,0,0,.8);
   }
+
+  // Modifiers
   .modal--right,
   .modal--left {
     border-radius: 0;
-    // top: 0;
     height: 100vh;
-    // Check if this is needed for ios?
-    // height: 100dvh;
+    top: 0;
+    bottom: 0;
+    transform: none;
   }
-
-  // Positions
   .modal--top {
     top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
     transform: translateX(-50%);
+    animation: uluModalTopOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalTopIn get("animation-duration") get("animation-timing-function");
+    }
   }
   .modal--bottom {
     top: auto;
     bottom: 0;
     transform: translateX(-50%);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    animation: uluModalBottomOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalBottomIn get("animation-duration") get("animation-timing-function");
+    }
   }
-  .modal--right  {
+  .modal--right {
     right: 0;
     left: auto;
-    top: 0;
-    bottom: 0;
-    transform: none;
+    animation: uluModalRightOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalRightIn get("animation-duration") get("animation-timing-function");
+    }
   }
-  .modal--left  {
+  .modal--left {
     left: 0;
-    top: 0;
-    bottom: 0;
-    transform: none;
+    animation: uluModalLeftOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalLeftIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  .modal--no-header {
+    min-height: get("height-no-header");
+  }
+  .modal--no-backdrop {
+    &::backdrop {
+      display: none;
+    }
+  }
+  .modal--resize {
+    &.modal--center  {
+      resize: both;  
+    }
   }
   .modal--video {
     .modal__header {
@@ -252,7 +254,8 @@ $config: (
       padding: 0;
     }
   }
-  @keyframes modalBackdropIn {
+
+  @keyframes uluModalBackdropIn {
     0% {
       background-color: rgba(0, 0, 0, 0);
       backdrop-filter: blur(0);
@@ -262,7 +265,7 @@ $config: (
       backdrop-filter: blur(get("backdrop-blur"));
     }
   }
-  @keyframes modalCenterIn {
+  @keyframes uluModalCenterIn {
     from { 
       opacity: 0; 
       transform: translate(-50%, -40%);
@@ -274,7 +277,7 @@ $config: (
       display: block;
     }
   }
-  @keyframes modalCenterOut {
+  @keyframes uluModalCenterOut {
     from { 
       opacity: 1; 
       display: block;
@@ -286,7 +289,7 @@ $config: (
       transform: translate(-50%, 40%);
     }
   }
-  @keyframes modalTopIn {
+  @keyframes uluModalTopIn {
     from { 
       opacity: 0; 
       transform: translate(-50%, -15%);
@@ -298,7 +301,7 @@ $config: (
       display: block;
     }
   }
-  @keyframes modalTopOut {
+  @keyframes uluModalTopOut {
     from { 
       opacity: 1; 
       display: block;
@@ -310,7 +313,7 @@ $config: (
       transform: translate(-50%, -15%);
     }
   }
-  @keyframes modalBottomIn {
+  @keyframes uluModalBottomIn {
     from { 
       opacity: 0; 
       transform: translate(-50%, 15%);
@@ -322,7 +325,7 @@ $config: (
       display: block;
     }
   }
-  @keyframes modalBottomOut {
+  @keyframes uluModalBottomOut {
     from { 
       opacity: 1; 
       display: block;
@@ -334,7 +337,7 @@ $config: (
       transform: translate(-50%, 15%);
     }
   }
-  @keyframes modalLeftIn {
+  @keyframes uluModalLeftIn {
     from { 
       opacity: 0; 
       transform: translateX(-15%);
@@ -346,7 +349,7 @@ $config: (
       display: block;
     }
   }
-  @keyframes modalLeftOut {
+  @keyframes uluModalLeftOut {
     from { 
       opacity: 1; 
       display: block;
@@ -358,7 +361,7 @@ $config: (
       transform: translateX(-15%);
     }
   }
-  @keyframes modalRightIn {
+  @keyframes uluModalRightIn {
     from { 
       opacity: 0; 
       transform: translateX(15%);
@@ -370,7 +373,7 @@ $config: (
       display: block;
     }
   }
-  @keyframes modalRightOut {
+  @keyframes uluModalRightOut {
     from { 
       opacity: 1; 
       display: block;
@@ -381,60 +384,5 @@ $config: (
       display: none;
       transform: translateX(15%);
     }
-  }
-  
-  .modal {
-    animation: modalCenterOut get("animation-duration-exit") get("animation-timing-function");
-    &[open] {
-      animation: modalCenterIn get("animation-duration") get("animation-timing-function");
-    }
-    &::backdrop {
-      animation: modalBackdropIn get("animation-duration") get("animation-timing-function");
-    }
-  }
-  .modal--top {
-    animation: modalTopOut get("animation-duration-exit") get("animation-timing-function");
-    &[open] {
-      animation: modalTopIn get("animation-duration") get("animation-timing-function");
-    }
-  }
-  .modal--bottom {
-    animation: modalBottomOut get("animation-duration-exit") get("animation-timing-function");
-    &[open] {
-      animation: modalBottomIn get("animation-duration") get("animation-timing-function");
-    }
-  }
-  .modal--right {
-    animation: modalRightOut get("animation-duration-exit") get("animation-timing-function");
-    &[open] {
-      animation: modalRightIn get("animation-duration") get("animation-timing-function");
-    }
-  }
-  .modal--left {
-    animation: modalLeftOut get("animation-duration-exit") get("animation-timing-function");
-    &[open] {
-      animation: modalLeftIn get("animation-duration") get("animation-timing-function");
-    }
-  }
-  // .modal--left[aria-hidden="false"] .modal__container {
-  //   animation: modalSlideLeftIn .3s cubic-bezier(0, 0, .2, 1);
-  // }
-  // .modal[aria-hidden="true"] .modal__overlay {
-  //   animation: modalCenterOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
-  // }
-  // .modal[aria-hidden="true"] .modal__container {
-  //   animation: modalSlideOut .3s cubic-bezier(0, 0, .2, 1);
-  // }
-  // .modal--right[aria-hidden="true"] .modal__container {
-  //   animation: modalSlideRightOut .3s cubic-bezier(0, 0, .2, 1);
-  // }
-  // .modal--left[aria-hidden="true"] .modal__container {
-  //   animation: modalSlideLeftOut .3s cubic-bezier(0, 0, .2, 1);
-  // }
-  
-  
-  .modal .modal__container,
-  .modal .modal__overlay {
-    will-change: transform;
   }
 }
