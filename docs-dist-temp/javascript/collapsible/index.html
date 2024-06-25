@@ -1897,6 +1897,8 @@
 <li><a href="#module_collapsible.Collapsible">.Collapsible</a>
 <ul>
 <li><a href="#new_module_collapsible.Collapsible_new">new exports.Collapsible(elements, config)</a></li>
+<li><a href="#module_collapsible.Collapsible+setupTemporaryHandlers">.setupTemporaryHandlers()</a></li>
+<li><a href="#module_collapsible.Collapsible+destroyTemporaryHandlers">.destroyTemporaryHandlers()</a></li>
 </ul>
 </li>
 </ul>
@@ -1915,8 +1917,17 @@
 <p><a name="module_collapsible.Collapsible"></a></p>
 <h3 id="collapsible.collapsible" tabindex="-1">collapsible.Collapsible</h3>
 <p>Class for accessible hide/show components</p>
-<p><strong>Kind</strong>: static class of <a href="#module_collapsible"><code>collapsible</code></a><br>
-<a name="new_module_collapsible.Collapsible_new"></a></p>
+<p><strong>Kind</strong>: static class of <a href="#module_collapsible"><code>collapsible</code></a></p>
+<ul>
+<li><a href="#module_collapsible.Collapsible">.Collapsible</a>
+<ul>
+<li><a href="#new_module_collapsible.Collapsible_new">new exports.Collapsible(elements, config)</a></li>
+<li><a href="#module_collapsible.Collapsible+setupTemporaryHandlers">.setupTemporaryHandlers()</a></li>
+<li><a href="#module_collapsible.Collapsible+destroyTemporaryHandlers">.destroyTemporaryHandlers()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_module_collapsible.Collapsible_new"></a></p>
 <h4 id="new-exports.collapsible(elements%2C-config)" tabindex="-1">new exports.Collapsible(elements, config)</h4>
 <p><strong>Returns</strong>: <code>Object</code> - Collapsible instance</p>
 <table>
@@ -1950,7 +1961,15 @@
 </tr>
 </tbody>
 </table>
-<p><a name="module_collapsible..selfManaged"></a></p>
+<p><a name="module_collapsible.Collapsible+setupTemporaryHandlers"></a></p>
+<h4 id="collapsible.setuptemporaryhandlers()" tabindex="-1">collapsible.setupTemporaryHandlers()</h4>
+<p>Setup handlers needed for closing once open</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_collapsible.Collapsible"><code>Collapsible</code></a><br>
+<a name="module_collapsible.Collapsible+destroyTemporaryHandlers"></a></p>
+<h4 id="collapsible.destroytemporaryhandlers()" tabindex="-1">collapsible.destroyTemporaryHandlers()</h4>
+<p>Destroy handlers attached for closing once open</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_collapsible.Collapsible"><code>Collapsible</code></a><br>
+<a name="module_collapsible..selfManaged"></a></p>
 <h3 id="collapsible~selfmanaged" tabindex="-1">collapsible~selfManaged</h3>
 <p>The module won't attach the handlers (you need to do it yourself)</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_collapsible"><code>collapsible</code></a><br>

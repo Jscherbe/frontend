@@ -2,7 +2,6 @@
  * @module collapsible
  */
 
-
 import { getName as getEventName } from "../events/index.js";
 import { log, logError } from "../utils/class-logger.js";
 import { ensureId } from "../utils/id.js";
@@ -13,10 +12,10 @@ import { ensureId } from "../utils/id.js";
 export class Collapsible {
   static defaults = {
     clickOutsideCloses: false,
-    oneOpenPerContext: false,
-    clickWithinCloses: false,
+    // oneOpenPerContext: false, // This should be another module that manages instances within a context (accordions)
+    // clickWithinCloses: false, // Not sure how this was used but seems like it should be separate
     focusoutCloses: false,
-    closeOnEscape: false,
+    escapeCloses: false,
     /**
      * The module won't attach the handlers (you need to do it yourself)
      */
@@ -33,7 +32,7 @@ export class Collapsible {
     /**
      * Output debug info
      */
-    debug: false,
+    debug: true,
     onChange(_ctx) {
       // do something
     }
@@ -55,29 +54,40 @@ export class Collapsible {
     this.elements = elements;
     this.options = options;
     this.isOpen = false;
+    this.handlers = {}; // Spot to cache event handlers
     ensureId(trigger);
     ensureId(content);
     this.debugLog(this, this);
     if (!options.selfManaged) {
       this.attachHandlers();
     }
-    // Collapsible.instances.push(this);
+    this.setup();
   }
   attachHandlers() {
-    const { trigger } = this.elements;
-    this.clickHandler = event => this.onClick(event);
+    const { trigger, content } = this.elements;
+    const { focusoutCloses } = this.options;
+    this.clickHandler = event => {
+      this.onClick(event);
+    }
+    this.focusoutHandler = (event) => {
+      if (focusoutCloses) {
+        this.close(event);
+      }
+    };
     trigger.addEventListener("click", this.clickHandler);
+    content.addEventListener("focusout", this.focusoutHandler);
   }
   removeHandlers() {
-    const { trigger } = this.elements;
+    const { trigger, content } = this.elements;
     trigger.removeEventListener("click", this.clickHandler);
+    content.removeEventListener("focusout", this.focusoutHandler);
   }
   onClick(event) {
     this.toggle(event);
   }
   destroy() {
-    // Collapsible.removeInstance(this);
     this.removeHandlers();
+    this.destroyTemporaryHandlers();
   }
   debugLog(...msgs) {
     if (this.options.debug) {
@@ -111,6 +121,47 @@ export class Collapsible {
     this.isOpen = isOpen;
     this.options.onChange(ctx);
     trigger.dispatchEvent(this.createEvent("change", ctx));
+    if (isOpen) {
+      this.setupTemporaryHandlers();
+    } else {
+      this.destroyTemporaryHandlers();
+    }
+  }
+  /**
+   * Setup handlers needed for closing once open
+   */
+  setupTemporaryHandlers() {
+    const { content, trigger } = this.elements;
+    const { clickOutsideCloses, escapeCloses } = this.options;
+    const onDocumentClick = (event) => {
+      const { target } = event;
+      const inTrigger = trigger.contains(target);
+      const inContent = content.contains(target);
+      if (clickOutsideCloses && !inTrigger && !inContent) {
+        this.close(event);
+      }
+    };
+    const onDocumentKeydown = (event) => {
+      if (escapeCloses && event.key === "Escape") {
+        this.close(event);
+      }
+    };
+    document.addEventListener("click", onDocumentClick);
+    document.addEventListener("keydown", onDocumentKeydown);
+    this.handlers.onDocumentClick = onDocumentClick;
+    this.handlers.onDocumentKeydown = onDocumentKeydown;
+  }
+  /**
+   * Destroy handlers attached for closing once open
+   */
+  destroyTemporaryHandlers() {
+    const { onDocumentClick, onDocumentKeydown } = this.handlers;
+    if (onDocumentClick) {
+      document.removeEventListener("click", onDocumentClick);
+    }
+    if (onDocumentClick) {
+      document.removeEventListener("keydown", onDocumentKeydown);
+    }
   }
   open(event) {
     this.setState(true, event);

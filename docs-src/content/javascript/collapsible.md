@@ -10,6 +10,8 @@ title: collapsible
     * _static_
         * [.Collapsible](#module_collapsible.Collapsible)
             * [new exports.Collapsible(elements, config)](#new_module_collapsible.Collapsible_new)
+            * [.setupTemporaryHandlers()](#module_collapsible.Collapsible+setupTemporaryHandlers)
+            * [.destroyTemporaryHandlers()](#module_collapsible.Collapsible+destroyTemporaryHandlers)
     * _inner_
         * [~selfManaged](#module_collapsible..selfManaged)
         * [~startOpen](#module_collapsible..startOpen)
@@ -22,6 +24,12 @@ title: collapsible
 Class for accessible hide/show components
 
 **Kind**: static class of [<code>collapsible</code>](#module_collapsible)  
+
+* [.Collapsible](#module_collapsible.Collapsible)
+    * [new exports.Collapsible(elements, config)](#new_module_collapsible.Collapsible_new)
+    * [.setupTemporaryHandlers()](#module_collapsible.Collapsible+setupTemporaryHandlers)
+    * [.destroyTemporaryHandlers()](#module_collapsible.Collapsible+destroyTemporaryHandlers)
+
 <a name="new_module_collapsible.Collapsible_new"></a>
 
 #### new exports.Collapsible(elements, config)
@@ -34,6 +42,18 @@ Class for accessible hide/show components
 | elements.content | <code>Node</code> | The content element that the trigger reveals |
 | config | <code>Object</code> | Configuration options (see defaults) |
 
+<a name="module_collapsible.Collapsible+setupTemporaryHandlers"></a>
+
+#### collapsible.setupTemporaryHandlers()
+Setup handlers needed for closing once open
+
+**Kind**: instance method of [<code>Collapsible</code>](#module_collapsible.Collapsible)  
+<a name="module_collapsible.Collapsible+destroyTemporaryHandlers"></a>
+
+#### collapsible.destroyTemporaryHandlers()
+Destroy handlers attached for closing once open
+
+**Kind**: instance method of [<code>Collapsible</code>](#module_collapsible.Collapsible)  
 <a name="module_collapsible..selfManaged"></a>
 
 ### collapsible~selfManaged

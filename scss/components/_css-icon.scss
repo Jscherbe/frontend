@@ -71,7 +71,12 @@ $config: (
   .css-icon--triangle-right,
   .css-icon--triangle-left,
   .css-icon--triangle-up,
-  .css-icon--triangle-down {
+  .css-icon--triangle-down,
+  // Arrow uses same equilateral triangle
+  .css-icon--arrow-left:after,
+  .css-icon--arrow-right:after,
+  .css-icon--arrow-up:after,
+  .css-icon--arrow-down:after {
     background-color: get("color");
     clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
   }
@@ -101,8 +106,7 @@ $config: (
       content: "?";
     }
   }
-
-
+  
   // Icons that share pseudos for strokes
   .css-icon--close,
   .css-icon--plus,
@@ -112,7 +116,11 @@ $config: (
   .css-icon--angle-right,
   .css-icon--angle-left,
   .css-icon--angle-up,
-  .css-icon--angle-down {
+  .css-icon--angle-down,
+  .css-icon--arrow-left,
+  .css-icon--arrow-right,
+  .css-icon--arrow-up,
+  .css-icon--arrow-down {
     &:before,
     &:after {
       content: "";
@@ -123,6 +131,28 @@ $config: (
       @if (get("stroke-border-radius")) {
         border-radius: get("stroke-border-radius");
       }
+    }
+  }
+  .css-icon--arrow-left,
+  .css-icon--arrow-right,
+  .css-icon--arrow-up,
+  .css-icon--arrow-down {
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:before {
+      width: 70%;
+      left: 0;
+    }
+    // Note triangle clip-path is defined above with the solid triangle
+    &:after {
+      border-radius: 0;
+      height: 100%;
+      width: 55%;
+      right: 0;
     }
   }
   .css-icon--angle-right,
@@ -142,7 +172,8 @@ $config: (
       height: 70%;
     }
   }
-  .css-icon--angle-left {
+  .css-icon--angle-left,
+  .css-icon--arrow-left {
     transform: rotate(315deg);
   }
   .css-icon--angle-up {
@@ -151,7 +182,7 @@ $config: (
   .css-icon--angle-down {
     transform: rotate(225deg);
   }
-  
+
   // Centered pseudos offset by half of stroke before transform
   // Icons with centered pseudos
   .css-icon--plus,
@@ -211,14 +242,17 @@ $config: (
   }
 
   // Rotations
-  .css-icon--triangle-left {
+  .css-icon--triangle-left,
+  .css-icon--arrow-left {
     transform: rotate(180deg);
   }
   .css-icon--drag-x,
-  .css-icon--triangle-up {
+  .css-icon--triangle-up,
+  .css-icon--arrow-up {
     transform: rotate(270deg);
   }
-  .css-icon--triangle-down {
+  .css-icon--triangle-down,
+  .css-icon--arrow-down {
     transform: rotate(90deg);
   }
 }

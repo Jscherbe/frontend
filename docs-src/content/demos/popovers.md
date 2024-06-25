@@ -15,7 +15,7 @@ intro: Popovers are clickable elements that show content relative to the toggle
   </button> 
   <div class="popover" data-ulu-popover-content>
     <div class="popover__inner">
-      This is the popover body area
+      This is the popover body area <a href="#">test link</a>
     </div>
     <span class="popover__arrow" data-ulu-popover-arrow></span>
   </div>

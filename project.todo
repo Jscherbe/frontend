@@ -1,4 +1,12 @@
 JS Updates:
+  ☐ 
+  ☐ Finish collapsible
+    ☐ Consider removing focusoutCloses (not sure this makes sense and if so should be on user side)
+      * No patterns focus out when leaving, would encourage bad practices? We don't have anything to 
+        focus the content, and I don't think that's recommended anymore. Was asked to add that once 
+        during 508 review so it could be helpful to have it as an option disabled and makes focusout 
+        more relevant, but if something is obscuring the interface it should be a modal? So it's not
+        a priority
   ☐ Refactor all imports back to file based modules with category folders (vs flat dir based modules)
     * 
   ☐ Rename event getName to getEventName? So it's clear where it's used?

@@ -20,6 +20,11 @@ const attrs = {
 };
 const attrSelector = key => `[${ attrs[key] }]`;
 
+// This modules collapsible defaults
+const collapsibleDefaults = {
+  clickOutsideCloses: true,
+};
+
 /**
  * Initialize default popover
  */
@@ -98,7 +103,8 @@ export function getContentByTrigger(trigger) {
  */
 export class Popover extends Collapsible {
   constructor(elements, config, floatingOptions) {
-    super(elements, config);
+    const options = Object.assign({}, collapsibleDefaults, config);
+    super(elements, options);
     this.floatingOptions = floatingOptions;
   }
   setState(isOpen, event) {
