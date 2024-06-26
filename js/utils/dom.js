@@ -1,3 +1,5 @@
+const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
+
 /**
  * Get an elements JSON dataset value
  * @param {Node} element 
@@ -11,6 +13,24 @@ export function getDatasetJson(element, key) {
   } catch (error) {
     console.error(`Error getting JSON from dataset (${ key })\n`, element, error);
     return {};
+  }
+}
+
+/**
+ * Get an elements JSON dataset value that could potentially just be a single string
+ * - If JSON it will return the object else it will return the value directly
+ * @param {Node} element 
+ * @param {String} key key in dataset object for element
+ * @returns {Object|String} JSON object or current dataset value (string or empty string if no value)
+ */
+export function getDatasetOptionalJson(element, key) {
+  const passed = element.dataset[key];
+  console.log("passed:\n", passed);
+  console.log("regexJsonString.test(passed):\n", regexJsonString.test(passed.trim()));
+  if (passed && regexJsonString.test(passed.trim())) {
+    return getDatasetJson(element, key);
+  } else {
+    return passed;
   }
 }
 

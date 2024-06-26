@@ -87,8 +87,9 @@ $config: (
   "footer-background-color" : color.shade(white, 3%),
   "footer-color"            : inherit,
   "tooltip-background-color": white,
-  "tooltip-padding"         : (1.5rem 1.25rem),
-  "tooltip-width"           : max(min-content, 20rem),
+  "tooltip-padding"         : 0.5rem,
+  "tooltip-width"           : auto,
+  "tooltip-max-width"       : 20rem,
   "tooltip-color"           : inherit,
 );
 ```
@@ -100,7 +101,7 @@ $config: (
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 16-35
-- **Lines (code):** 37-61
+- **Lines (code):** 37-62
     </details>
     
 
@@ -253,8 +254,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 63-65
-- **Lines (code):** 67-69
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-70
     </details>
     
 
@@ -295,8 +296,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-198
+- **Lines (comments):** 80-82
+- **Lines (code):** 84-204
     </details>
     
 
@@ -386,8 +387,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-78
     </details>
     
 

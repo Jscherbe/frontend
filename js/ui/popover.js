@@ -105,7 +105,7 @@ export class Popover extends Collapsible {
   constructor(elements, config, floatingOptions) {
     const options = Object.assign({}, collapsibleDefaults, config);
     super(elements, options);
-    this.floatingOptions = floatingOptions;
+    this.floatingOptions = floatingOptions || {};
   }
   setState(isOpen, event) {
     super.setState(isOpen, event);

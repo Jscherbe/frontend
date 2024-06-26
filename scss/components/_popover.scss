@@ -55,8 +55,9 @@ $config: (
   "footer-background-color" : color.shade(white, 3%),
   "footer-color"            : inherit,
   "tooltip-background-color": white,
-  "tooltip-padding"         : (1.5rem 1.25rem),
-  "tooltip-width"           : max(min-content, 20rem),
+  "tooltip-padding"         : 0.5rem,
+  "tooltip-width"           : auto,
+  "tooltip-max-width"       : 20rem,
   "tooltip-color"           : inherit,
 ) !default;
 
@@ -160,6 +161,7 @@ $config: (
   // Modifiers
   #{ $prefix }--tooltip {
     width: get("tooltip-width");
+    max-width: max(get("max-width"), get("tooltip-max-width"));
     background-color: get("tooltip-background-color");
     pointer-events: none;
     color: get("tooltip-color");
@@ -167,6 +169,10 @@ $config: (
       padding: get("tooltip-padding");
       min-height: 0;
     }
+  }
+  // For fixed strategy
+  #{ $prefix }--fixed {
+    position: fixed;
   }
   // If you want to do something custom (and have it touch the edges)
   #{ $prefix }--no-padding {

@@ -13,6 +13,7 @@ import {
 } from "@floating-ui/dom";
 
 export const defaults = {
+  strategy: "absolute",
   placement: "bottom",
   inline: false,
   offset: {
@@ -31,18 +32,20 @@ export const defaults = {
  */
 export function createFloatingUi(elements, config) {
   const options = Object.assign({}, defaults, config);
+  const { placement, strategy } = options;
   const { trigger, content, contentArrow } = elements;
-  const middleware = [
-    ...addPlugin(inline, options.inline),
-    ...addPlugin(offset, options.offset),
-    ...addPlugin(flip, options.flip),
-    ...addPlugin(shift, options.shift),
-    ...addPlugin(arrow, options.arrow, { element: contentArrow }),
-  ];
+  
   return autoUpdate(trigger, content, () => {
     computePosition(trigger, content, {
-      placement: options.placement,
-      middleware
+      placement,
+      strategy,
+      middleware: [
+        ...addPlugin(inline, options.inline),
+        ...addPlugin(offset, options.offset),
+        ...addPlugin(flip, options.flip),
+        ...addPlugin(shift, options.shift),
+        ...addPlugin(arrow, contentArrow && options.arrow, { element: contentArrow }),
+      ]
     }).then(data => {
       const { x, y, middlewareData, placement } = data;
       const arrowPos = middlewareData.arrow;
