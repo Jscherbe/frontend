@@ -3,6 +3,9 @@
  */
 
 import { getName } from "../events/index.js";
+import { createFloatingUi } from "../utils/floating-ui.js";
+import { log, logError } from "../utils/class-logger.js";
+import { newId } from "../utils/id.js";
 
 const attrs = {
   trigger: "data-ulu-tooltip",
@@ -39,11 +42,49 @@ export class Tooltip {
   static defaults =  {
     /**
      * String/markup to insert into tooltip display
+     * @type {String}
      */
     content: null,
     /**
-     * Pull content from pre-existing content on page
+     * Pull content from pre-existing content on page 
+     * @type {String|Node}
      */
     fromElement: null,
+    /**
+     * Move the content to the bottom of the document
+     * @type {Boolean}
+     */
+    endOfDocument: true,
+    /**
+     * Events to show tooltip on
+     * @type {Array.<String>}
+     */    
+    showEvents: ["pointerenter", "focus"],
+    /**
+     * Events to hide tooltip on
+     * @type {Array.<String>}
+     */
+    hideEvents: ["pointerleave", "blur"],
+    /**
+     * Delay when using the directive
+     * @type {Number}
+     */
+    delay: 500,
   };
+  constructor(trigger, userOptions) {
+    const { trigger } = elements;
+    if (!trigger) {
+      logError(this, "missing required trigger");
+      return;
+    }
+    this.options = Object.assign({}, Tooltip.defaults, userOptions);
+    this.setup();
+  }
+  setup() {
+    const content = document.createElement("div");
+    // const { endOfDocument } = this.options;
+
+    content.id = newId();
+    document.body.appendChild(content);
+  }
 }

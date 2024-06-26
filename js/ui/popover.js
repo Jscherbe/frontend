@@ -109,19 +109,19 @@ export class Popover extends Collapsible {
   }
   setState(isOpen, event) {
     super.setState(isOpen, event);
-    this.destroyFloatingUi();
+    this.destroyFloatingInstance();
     if (isOpen) {
-      this.createFloatingUi();
+      this.createFloatingInstance();
     }
   }
   destroy() {
     super.destroy();
-    this.destroyFloatingUi();
+    this.destroyFloatingInstance();
   }
-  createFloatingUi() {
+  createFloatingInstance() {
     this.floatingCleanup = createFloatingUi(this.elements, this.floatingOptions);
   }
-  destroyFloatingUi() {
+  destroyFloatingInstance() {
     if (this.floatingCleanup) {
       this.floatingCleanup(); 
       this.floatingCleanup = null;
