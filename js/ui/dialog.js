@@ -11,7 +11,6 @@ import { getDatasetJson, wasClickOutside } from "../utils/dom.js";
 export const attrs = {
   init: "data-ulu-init",
   dialog: "data-ulu-dialog",
-  builder: "data-ulu-dialog-builder",
   trigger: "data-ulu-dialog-trigger",
   close: "data-ulu-dialog-close",
 };
@@ -62,7 +61,7 @@ export function init() {
 }
 
 /**
- * Setup dialogs, triggers and builder type dialogs
+ * Setup dialogs and triggers
  */
 export function setup() {
   // Then setup all dialogs (including those that were built)
@@ -72,7 +71,6 @@ export function setup() {
   const triggers = queryAllInitial("trigger");
   triggers.forEach(setupTrigger);
 }
-
 
 /**
  * Setup click handlers on a trigger
@@ -90,11 +88,11 @@ export function setupTrigger(trigger) {
       return;
     }
     if (dialog?.tagName?.toLowerCase() !== "dialog") {
-      console.error("Attempted to trigger non <dialog> element. If this needs to be built use " + attrs.builder);
+      console.error("Attempted to trigger non <dialog> element. Did you mean to use modal builder?" );
       return;
     }
     const options = getDialogOptions(dialog);
-    dialog[options.nonModal ? 'show' : 'showModal']();
+    dialog[options.nonModal ? "show" : "showModal"]();
   }
 }
 
@@ -112,7 +110,7 @@ export function setupDialog(dialog) {
 
   function handleClicks(event) {
     const { target } = event;
-    const closeFromButton = target.closest('[data-ulu-dialog-close]');
+    const closeFromButton = target.closest("[data-ulu-dialog-close]");
     let closeFromOutside = options.clickOutsideCloses && 
                            target === dialog && 
                            wasClickOutside(dialog, event);

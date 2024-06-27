@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Data grid
+    Wysiwyg
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -178,12 +178,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/demos/data-grid/" 
-          aria-current="page"
+          
         >
           
     
@@ -297,10 +297,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -320,10 +320,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/sass/" 
           
         >
@@ -828,10 +828,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -849,10 +849,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/sass/components/" 
           
         >
@@ -1267,12 +1267,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/sass/components/wysiwyg/" 
-          
+          aria-current="page"
         >
           
     
@@ -1911,10 +1911,31 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#basic-example">Basic Example</a>
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
             		</li>
 
-                    <li><a href="#options">Options</a>
+                    <li><a href="#mixins">Mixins</a>
+            
+                <ol>
+                    
+                    <li><a href="#mixin-set">set()</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#functions">Functions</a>
+            
+                <ol>
+                    
+                    <li><a href="#function-get">get()</a>
+            		</li>
+                </ol>
             		</li>
                 </ol>
             </div>
@@ -1925,275 +1946,123 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Data grid</h1>
-
-  <p class="type-large type-light">
-    Flexbox based grid that uses a JSON like attribute for options
-  </p>
+    <h1 class="page__title h1">Wysiwyg</h1>
 
 <hr class="rule rule--light rule--margin-large">
-    <p>The grid is for page layout, it provides different column sizes at each of the configured breakpoints.
-On the smallest size the grid columns will span 100%. The grid is setup using two attributes, data-grid=&quot;&quot; for the parent grid container and data-grid-item=&quot;&quot; for each grid column. The grid uses a script to set position classes, which are used for rule placement since the grid and reflow at different breakpoints.</p>
-<h2 id="basic-example" tabindex="-1">Basic Example</h2>
-<div data-grid="columns: 12">
-  <div data-grid-item="width: 6">Width of 6</div>
-  <div data-grid-item="width: 3">Width of 3</div>
-  <div data-grid-item="width: 3">Width of 3</div>
-</div> 
-<h2 id="options" tabindex="-1">Options</h2>
-<p><table class="site-data-table options-table">
-<caption> Options for 'data-grid'</caption>
+    <div class="wysiwyg">
+      <h1 id="wysiwyg" tabindex="-1">Wysiwyg</h1>
+<p>For auto formatting general HTML elements (used around editor/body text)</p>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"ul-excluded-selectors"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token string">".list-lines"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _wysiwyg.scss</li>
+<li><strong>Group:</strong> wysiwyg</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 12-13</li>
+<li><strong>Lines (code):</strong> 15-17  </details>
+</li>
+</ul>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change modules $config</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _wysiwyg.scss</li>
+<li><strong>Group:</strong> wysiwyg</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 19-21</li>
+<li><strong>Lines (code):</strong> 23-25  </details>
+</li>
+</ul>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Value</th>
-<th>Description/Example</th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
-<tbody></p>
-<p><tr>
-<td><strong>columns</strong></td>
-<td><strong>12</strong></td>
-<td>
-<p v-if="item.description">
-Number of columns for grid, must match grids that are setup in site. For most projects this is just '12'. This is set up this way to allow mutliple grids.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;columns: 12&quot;&gt;...</code>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+<tr>
+<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
+<h2 id="functions" tabindex="-1">Functions</h2>
+<div class="sassdoc-item-header">
+<h3 id="function-get" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
 </div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>justify</strong></td>
-<td><strong>(center|end)</strong></td>
-<td>
-<p v-if="item.description">
-Allows you to justify the columns (horizontal alignment). The defualt is start (left aligned)
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., justify: center&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>align</strong></td>
-<td><strong>(center|start|end|stretch-end|stretch-center)</strong></td>
-<td>
-<p v-if="item.description">
-Allows you to align the columns (vertical alignment within row). The defualt is stretch start. Note using stretch-end or stretch-center will stretch all columns to be the same height but will align the columns content to the end or center.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., align: center&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>gutters</strong></td>
-<td><strong>false</strong></td>
-<td>
-<p v-if="item.description">
-You can remove the gutters between columns by adding this setting. The grid shows the default gutters size by default.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., gutters: false&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>gutters-row</strong></td>
-<td><strong>(true|top|bottom|fit)</strong></td>
-<td>
-<p v-if="item.description">
-If set to 'top' gutters will be between items starting at the top including the first row (so it makes space above the first grid row. Bottom works the same way but on the bottom. True adds gutters between rows and to the top and bottom of the first/last grid row. Fit will only put gutters between the rows.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., gutters-row: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>gutter-scale</strong></td>
-<td><strong>[scale key]</strong></td>
-<td>
-<p v-if="item.description">
-No alternated scales are configured for this site. Allows for different gutter scales to be used with grid. Requires setting up the scales when you configure/create the grid.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., gutter-scale: large&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row</strong></td>
-<td><strong>(top|bottom|between)</strong></td>
-<td>
-<p v-if="item.description">
-Sets rules (dividers) between rows. Top adds rules to the rows top edge. Bottom adds rules to the rows bottom edge. Between adds rules between rows but not on top or bottom.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-style</strong></td>
-<td><strong>[style key]</strong></td>
-<td>
-<p v-if="item.description">
-If alternate rule styles are configured, applies them by the key that was used to configure the alternate style when initializing the grid in SCSS.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-style: light&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-align</strong></td>
-<td><strong>(gutter)</strong></td>
-<td>
-<p v-if="item.description">
-The default (without this set), will align to the outer edge of the grid item. If this is set to 'gutter' it will align to the grid columns gutters instead of extending to the edge.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-align: gutter&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-persist</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-If set the rules between rows will persist when the grid is no longer in use (ie. mobile, smallest breakpoint before columns start to show. Useful to retain divider between rows on mobile.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-persist: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-stacked-only</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-Same as persist adds rules to row before grid is being used (ie. mobile/small), except there will only be rules during this smallest breakpoint (mobile). Useful for when dividers don't make sense when the grid is displaying in columns but do make sense when columns are stacked on mobile.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-stacked-only: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column</strong></td>
-<td><strong>(left|right)</strong></td>
-<td>
-<p v-if="item.description">
-Sets rules (dividers) between columns. Left adds rules between columns using the left side of the column. Right adds rules between columns using the left side of the column
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-column: left&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column-style</strong></td>
-<td><strong>[style key]</strong></td>
-<td>
-<p v-if="item.description">
-If alternate rule styles are configured, applies them by the key that was used to configure the alternate style when initializing the grid in SCSS.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-style: light&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column-ends</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-Specify that the rules should not be removed at the beginning or end of rows. Which happens by default depending on if the rules are on the left or right of the element.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-column-ends: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column-align</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-Sets rules (dividers) between columns
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-column: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p></tbody>
-</table></p>
-<p><table class="site-data-table options-table">
-<caption> Options for 'data-grid-item'</caption>
+<p>Get a config option</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _wysiwyg.scss</li>
+<li><strong>Group:</strong> wysiwyg</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 27-29</li>
+<li><strong>Lines (code):</strong> 31-33  </details>
+</li>
+</ul>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Value</th>
-<th>Description/Example</th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
-<tbody></p>
-<p><tr>
-<td><strong>width</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Number of columns for grid, must match grids that are setup in site. For most projects this is just '12'. This is set up this way to allow mutliple grids.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;width: 4&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>width-[breakpoint]</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Sets the width at a given breakpoint. Breakpoints are configured when initializing the grid in SCSS. Note this can be combined or used independently with the 'width' setting (above). For example if you only wanted the grid to start at the medium breakpoint you would just set 'width-medium'
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;width-medium: 2&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>offset</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Offsets the column by a certain number of columns
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;..., offset: 2&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>offset-[breakpoint]</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Same as width-[breakpoint] except for offset instead of width
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;..., offset: 2&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p></tbody>
-</table></p>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Name of property</td>
+</tr>
+<tr>
+<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
 
+    </div>
   </div>
 
 		</main>

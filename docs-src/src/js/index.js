@@ -7,5 +7,5 @@ ulu.ui.grid.init();
 ulu.ui.popover.init();
 ulu.ui.tooltip.init();
 ulu.ui.tabs.init();
-ulu.ui.dialogBuilder.init();
+ulu.ui.modalBuilder.init();
 ulu.ui.dialog.init();

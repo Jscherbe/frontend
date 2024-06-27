@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Data grid
+    modal-builder
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -178,12 +178,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/demos/data-grid/" 
-          aria-current="page"
+          
         >
           
     
@@ -1474,10 +1474,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -1497,10 +1497,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/javascript/" 
           
         >
@@ -1668,12 +1668,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/javascript/modal-builder/" 
-          
+          aria-current="page"
         >
           
     
@@ -1911,10 +1911,31 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#basic-example">Basic Example</a>
+                    <li><a href="#modal-builder">modal-builder</a>
+            
+                <ol>
+                    
+                    <li><a href="#modal-builder.defaults">modal-builder.defaults</a>
             		</li>
 
-                    <li><a href="#options">Options</a>
+                    <li><a href="#modal-builder.setdefaults(options)">modal-builder.setDefaults(options)</a>
+            		</li>
+
+                    <li><a href="#modal-builder.init()">modal-builder.init()</a>
+            		</li>
+
+                    <li><a href="#modal-builder.setup()">modal-builder.setup()</a>
+            		</li>
+
+                    <li><a href="#modal-builder.setupbuilder(element)">modal-builder.setupBuilder(element)</a>
+            		</li>
+
+                    <li><a href="#modal-builder.buildmodal(content%2C-options)">modal-builder.buildModal(content, options)</a>
+            		</li>
+
+                    <li><a href="#modal-builder~separatedialogoptions(config)-%E2%87%92-object">modal-builder~separateDialogOptions(config) ⇒ Object</a>
+            		</li>
+                </ol>
             		</li>
                 </ol>
             </div>
@@ -1925,275 +1946,139 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Data grid</h1>
-
-  <p class="type-large type-light">
-    Flexbox based grid that uses a JSON like attribute for options
-  </p>
+    <h1 class="page__title h1">modal-builder</h1>
 
 <hr class="rule rule--light rule--margin-large">
-    <p>The grid is for page layout, it provides different column sizes at each of the configured breakpoints.
-On the smallest size the grid columns will span 100%. The grid is setup using two attributes, data-grid=&quot;&quot; for the parent grid container and data-grid-item=&quot;&quot; for each grid column. The grid uses a script to set position classes, which are used for rule placement since the grid and reflow at different breakpoints.</p>
-<h2 id="basic-example" tabindex="-1">Basic Example</h2>
-<div data-grid="columns: 12">
-  <div data-grid-item="width: 6">Width of 6</div>
-  <div data-grid-item="width: 3">Width of 3</div>
-  <div data-grid-item="width: 3">Width of 3</div>
-</div> 
-<h2 id="options" tabindex="-1">Options</h2>
-<p><table class="site-data-table options-table">
-<caption> Options for 'data-grid'</caption>
+    <div class="wysiwyg">
+      <p><a name="module_modal-builder"></a></p>
+<h2 id="modal-builder" tabindex="-1">modal-builder</h2>
+<ul>
+<li><a href="#module_modal-builder">modal-builder</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_modal-builder.defaults">.defaults</a></li>
+<li><a href="#module_modal-builder.setDefaults">.setDefaults(options)</a></li>
+<li><a href="#module_modal-builder.init">.init()</a></li>
+<li><a href="#module_modal-builder.setup">.setup()</a></li>
+<li><a href="#module_modal-builder.setupBuilder">.setupBuilder(element)</a></li>
+<li><a href="#module_modal-builder.buildModal">.buildModal(content, options)</a></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_modal-builder..separateDialogOptions">~separateDialogOptions(config)</a> ⇒ <code>Object</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="module_modal-builder.defaults"></a></p>
+<h3 id="modal-builder.defaults" tabindex="-1">modal-builder.defaults</h3>
+<p>Default builder options (extends dialog defaults, watch name collisions)</p>
+<ul>
+<li>Decided to extend defaults so the interface in HTML is singular
+<ul>
+<li>This is sometimes easier to template (merging and serializing options
+in twig for example)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Kind</strong>: static constant of <a href="#module_modal-builder"><code>modal-builder</code></a><br>
+<a name="module_modal-builder.setDefaults"></a></p>
+<h3 id="modal-builder.setdefaults(options)" tabindex="-1">modal-builder.setDefaults(options)</h3>
+<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
+<table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Value</th>
-<th>Description/Example</th>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
-<tbody></p>
-<p><tr>
-<td><strong>columns</strong></td>
-<td><strong>12</strong></td>
-<td>
-<p v-if="item.description">
-Number of columns for grid, must match grids that are setup in site. For most projects this is just '12'. This is set up this way to allow mutliple grids.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;columns: 12&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>justify</strong></td>
-<td><strong>(center|end)</strong></td>
-<td>
-<p v-if="item.description">
-Allows you to justify the columns (horizontal alignment). The defualt is start (left aligned)
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., justify: center&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>align</strong></td>
-<td><strong>(center|start|end|stretch-end|stretch-center)</strong></td>
-<td>
-<p v-if="item.description">
-Allows you to align the columns (vertical alignment within row). The defualt is stretch start. Note using stretch-end or stretch-center will stretch all columns to be the same height but will align the columns content to the end or center.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., align: center&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>gutters</strong></td>
-<td><strong>false</strong></td>
-<td>
-<p v-if="item.description">
-You can remove the gutters between columns by adding this setting. The grid shows the default gutters size by default.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., gutters: false&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>gutters-row</strong></td>
-<td><strong>(true|top|bottom|fit)</strong></td>
-<td>
-<p v-if="item.description">
-If set to 'top' gutters will be between items starting at the top including the first row (so it makes space above the first grid row. Bottom works the same way but on the bottom. True adds gutters between rows and to the top and bottom of the first/last grid row. Fit will only put gutters between the rows.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., gutters-row: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>gutter-scale</strong></td>
-<td><strong>[scale key]</strong></td>
-<td>
-<p v-if="item.description">
-No alternated scales are configured for this site. Allows for different gutter scales to be used with grid. Requires setting up the scales when you configure/create the grid.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., gutter-scale: large&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row</strong></td>
-<td><strong>(top|bottom|between)</strong></td>
-<td>
-<p v-if="item.description">
-Sets rules (dividers) between rows. Top adds rules to the rows top edge. Bottom adds rules to the rows bottom edge. Between adds rules between rows but not on top or bottom.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-style</strong></td>
-<td><strong>[style key]</strong></td>
-<td>
-<p v-if="item.description">
-If alternate rule styles are configured, applies them by the key that was used to configure the alternate style when initializing the grid in SCSS.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-style: light&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-align</strong></td>
-<td><strong>(gutter)</strong></td>
-<td>
-<p v-if="item.description">
-The default (without this set), will align to the outer edge of the grid item. If this is set to 'gutter' it will align to the grid columns gutters instead of extending to the edge.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-align: gutter&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-persist</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-If set the rules between rows will persist when the grid is no longer in use (ie. mobile, smallest breakpoint before columns start to show. Useful to retain divider between rows on mobile.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-persist: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-row-stacked-only</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-Same as persist adds rules to row before grid is being used (ie. mobile/small), except there will only be rules during this smallest breakpoint (mobile). Useful for when dividers don't make sense when the grid is displaying in columns but do make sense when columns are stacked on mobile.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-stacked-only: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column</strong></td>
-<td><strong>(left|right)</strong></td>
-<td>
-<p v-if="item.description">
-Sets rules (dividers) between columns. Left adds rules between columns using the left side of the column. Right adds rules between columns using the left side of the column
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-column: left&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column-style</strong></td>
-<td><strong>[style key]</strong></td>
-<td>
-<p v-if="item.description">
-If alternate rule styles are configured, applies them by the key that was used to configure the alternate style when initializing the grid in SCSS.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-row-style: light&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column-ends</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-Specify that the rules should not be removed at the beginning or end of rows. Which happens by default depending on if the rules are on the left or right of the element.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-column-ends: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>rules-column-align</strong></td>
-<td><strong>true</strong></td>
-<td>
-<p v-if="item.description">
-Sets rules (dividers) between columns
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid=&quot;..., rules-column: true&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p></tbody>
-</table></p>
-<p><table class="site-data-table options-table">
-<caption> Options for 'data-grid-item'</caption>
+<tbody>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Change options used as default for dialogs, can then be overriden by data attribute settings on element</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_modal-builder.init"></a></p>
+<h3 id="modal-builder.init()" tabindex="-1">modal-builder.init()</h3>
+<p>Initialize everything in document</p>
+<ul>
+<li>This will only initialize elements once, it is safe to call on page changes</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a><br>
+<a name="module_modal-builder.setup"></a></p>
+<h3 id="modal-builder.setup()" tabindex="-1">modal-builder.setup()</h3>
+<p>Query and setup all builder</p>
+<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a><br>
+<a name="module_modal-builder.setupBuilder"></a></p>
+<h3 id="modal-builder.setupbuilder(element)" tabindex="-1">modal-builder.setupBuilder(element)</h3>
+<p>Build a dialog for the given content</p>
+<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
+<table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Value</th>
-<th>Description/Example</th>
+<th>Param</th>
+<th>Type</th>
 </tr>
 </thead>
-<tbody></p>
-<p><tr>
-<td><strong>width</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Number of columns for grid, must match grids that are setup in site. For most projects this is just '12'. This is set up this way to allow mutliple grids.
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;width: 4&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>width-[breakpoint]</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Sets the width at a given breakpoint. Breakpoints are configured when initializing the grid in SCSS. Note this can be combined or used independently with the 'width' setting (above). For example if you only wanted the grid to start at the medium breakpoint you would just set 'width-medium'
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;width-medium: 2&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>offset</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Offsets the column by a certain number of columns
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;..., offset: 2&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p><tr>
-<td><strong>offset-[breakpoint]</strong></td>
-<td><strong>[# of columns]</strong></td>
-<td>
-<p v-if="item.description">
-Same as width-[breakpoint] except for offset instead of width
-</p></p>
-<p><div class="options-table__example">
-<code>&lt;div data-grid-item=&quot;..., offset: 2&quot;&gt;...</code>
-</div>
-</td>
-</tr></p>
-<p></tbody>
-</table></p>
+<tbody>
+<tr>
+<td>element</td>
+<td><code>Node</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_modal-builder.buildModal"></a></p>
+<h3 id="modal-builder.buildmodal(content%2C-options)" tabindex="-1">modal-builder.buildModal(content, options)</h3>
+<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td><code>Node</code></td>
+<td>Content element of the dialog (what is inserted into the body)</td>
+</tr>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Options for built dialog (see defaults)</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_modal-builder..separateDialogOptions"></a></p>
+<h3 id="modal-builder~separatedialogoptions(config)-%E2%87%92-object" tabindex="-1">modal-builder~separateDialogOptions(config) ⇒ <code>Object</code></h3>
+<p>Returns JSON string to embed in data-ulu-dialog for dialog handling</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>Object</code></td>
+<td>Config object to pull dialog specific settings from</td>
+</tr>
+</tbody>
+</table>
 
+    </div>
   </div>
 
 		</main>

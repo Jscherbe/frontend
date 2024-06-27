@@ -1,6 +1,6 @@
 export * as breakpoints from "./breakpoints.js";
 export * as collapsible from "./collapsible.js";
-export * as dialogBuilder from "./dialog-builder.js";
+export * as modalBuilder from "./modal-builder.js";
 export * as dialog from "./dialog.js";
 export * as flipcard from "./flipcard.js";
 export * as grid from "./grid.js";

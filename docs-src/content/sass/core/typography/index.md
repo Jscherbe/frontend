@@ -120,8 +120,8 @@ $sizes: get-default-sizes();
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 147-156
-- **Lines (code):** 158-158
+- **Lines (comments):** 167-176
+- **Lines (code):** 178-178
     </details>
     
 
@@ -744,8 +744,8 @@ Function that returns default sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 160-161
-- **Lines (code):** 162-178
+- **Lines (comments):** 147-148
+- **Lines (code):** 149-165
     </details>
     
 

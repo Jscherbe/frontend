@@ -64,7 +64,7 @@ $current-includes: $all-includes;
   @if (list.index($includes, "keyframes")) {
     @include keyframes.styles;
   }
-  @if (list.index( -includes, "typography")) {
+  @if (list.index($includes, "typography")) {
     @include typography.styles;
   }
   @if (list.index($includes, "color")) {

@@ -1,5 +1,5 @@
 /**
- * @module dialog-builder
+ * @module modal-builder
  */
 
 // Note this needs to be run before dialogs are initialized!
@@ -11,9 +11,9 @@ import { getDatasetJson } from "../utils/dom.js";
 import { defaults as dialogDefaults, attrs as dialogAttrs } from "./dialog.js";
 
 const attrs = {
-  builder: "data-ulu-dialog-builder",
-  body: "data-ulu-dialog-builder-body",
-  resizer: "data-ulu-dialog-builder-resizer"
+  builder: "data-ulu-modal-builder",
+  body: "data-ulu-modal-builder-body",
+  resizer: "data-ulu-modal-builder-resizer"
 };
 
 const attrSelector = key => `[${ attrs[key] }]`;
@@ -61,7 +61,7 @@ export const defaults = {
       ...(config.class ? [config.class] : []), 
     ];
     return `
-      <dialog id="${ id }"  class="${ classes.join(" ") }">
+      <dialog id="${ id }" class="${ classes.join(" ") }">
         ${ config.title ? `
           <header class="modal__header">
             <h2 class="modal__title">
@@ -79,7 +79,7 @@ export const defaults = {
         ${ config.hasResizer ? 
           `<div class="modal__resizer" ${ attrs.resizer }>
             ${ config.templateResizerIcon(config) }
-          </div>` : '' 
+          </div>` : "" 
         }
       </div>
     `;
@@ -109,7 +109,6 @@ export function init() {
  * Query and setup all builder
  */
 export function setup() {
-  // First setup builders so they can be setup as normal dialogs after
   const builders = document.querySelectorAll(attrSelector("builder"));
   builders.forEach(setupBuilder);
 }
@@ -119,7 +118,7 @@ export function setup() {
  * @param {Node} element 
  */
 export function setupBuilder(element) {
-  const options = getDatasetJson(element, "uluDialogBuilder");
+  const options = getDatasetJson(element, "uluModalBuilder");
   element.removeAttribute(attrs.builder);
   buildModal(element, options);
 }
@@ -140,32 +139,32 @@ export function buildModal(content, options) {
     console.log(config, content);
   }
   if (!content.id) {
-    throw new Error("Missing ID on dialog");
+    throw new Error("Missing ID on modal");
   }
   
-  const selectDialogChild = key => dialog.querySelector(attrSelector(key));
   const markup = config.template(content.id, config);
-  const dialog = createElementFromHtml(markup.trim());
-  const body = selectDialogChild("body");
-  const resizer = selectDialogChild("resizer");
+  const modal = createElementFromHtml(markup.trim());
+  const selectChild = key => modal.querySelector(attrSelector(key));
+  const body = selectChild("body");
+  const resizer = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config);
 
   // Replace content with new dialog, and then insert the content into the new dialogs body
   content.removeAttribute("id");
   content.removeAttribute("hidden");
   content.removeAttribute(attrs.builder);
-  content.parentNode.replaceChild(dialog, content);
+  content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
 
   // Add dialog options for other scripts
-  dialog.setAttribute(dialogAttrs.dialog, JSON.stringify(dialogOptions));
+  modal.setAttribute(dialogAttrs.dialog, JSON.stringify(dialogOptions));
 
   if (config.hasResizer) {
-    new Resizer(dialog, resizer, {
+    new Resizer(modal, resizer, {
       fromLeft: config.position === "right"
     });
   }
-  return { dialog };
+  return { modal };
 }
 
 /**

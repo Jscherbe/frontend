@@ -126,7 +126,7 @@ $current-includes: $all-includes;
     @include callout.styles;
   }
   @if (list.index($includes, "card")) {
-    @include card-grid.styles;
+    @include card.styles;
   }
   @if (list.index($includes, "card-grid")) {
     @include card-grid.styles;

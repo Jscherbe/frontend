@@ -48,7 +48,7 @@ Initialize everything in document
 <a name="module_dialog.setup"></a>
 
 ### dialog.setup()
-Setup dialogs, triggers and builder type dialogs
+Setup dialogs and triggers
 
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  
 <a name="module_dialog.setupTrigger"></a>

@@ -144,19 +144,6 @@ $config: (
   );
 }
 
-/// Default size presets
-/// @type Map
-/// @prop {Number} $size.name Name of size
-/// @prop {Number} $size.name.font-size Font size in rems or pixels
-/// @prop {Number} $size.name.line-height Line height (unitless)
-/// @prop {Number} $size.name.responsive Apply responsive sizes
-/// @prop {Boolean} $size.name.base-class This style should be included in the base (top can be overriden)
-/// @prop {Boolean} $size.name.helper-class This style should be included in the helpers (overrides)
-/// @todo Add adaptive and use a map of breakpoints and whether it's up or down
-/// @todo Add headlines
-
-$sizes: get-default-sizes() !default;
-
 /// Function that returns default sizes
 /// - Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())
 @function get-default-sizes() {
@@ -176,6 +163,19 @@ $sizes: get-default-sizes() !default;
     "h1" :            new-size(scale(6),   scale-line-height(6),   true),
   );
 }
+
+/// Default size presets
+/// @type Map
+/// @prop {Number} $size.name Name of size
+/// @prop {Number} $size.name.font-size Font size in rems or pixels
+/// @prop {Number} $size.name.line-height Line height (unitless)
+/// @prop {Number} $size.name.responsive Apply responsive sizes
+/// @prop {Boolean} $size.name.base-class This style should be included in the base (top can be overriden)
+/// @prop {Boolean} $size.name.helper-class This style should be included in the helpers (overrides)
+/// @todo Add adaptive and use a map of breakpoints and whether it's up or down
+/// @todo Add headlines
+
+$sizes: get-default-sizes() !default;
 
 /// Update the typography presets map
 /// @param {Map} $changes A map to merge into the color palette

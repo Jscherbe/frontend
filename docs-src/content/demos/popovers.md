@@ -10,7 +10,7 @@ intro: Popovers are clickable elements that show content relative to the toggle
   <button class="button" type="button" data-ulu-popover-trigger='{"popoverPlacement" : "top"}'>
     <span>Show Popover</span>
     <span class="button__icon">
-      <span data-feather="chevron-down"></span>
+      <span data-feather="fas fa-chevron-down"></span>
     </span>
   </button> 
   <div class="popover" data-ulu-popover-content>

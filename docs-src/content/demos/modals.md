@@ -16,7 +16,7 @@ This is the default modal, being created from markup in the body on page load by
 <div 
   id="modal-id-center" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title" 
   }' 
   hidden
@@ -36,7 +36,7 @@ The available positions are top, bottom, left, right and center (default). Left 
 <div 
   id="modal-id-left" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title", 
     "position" : "left"  
   }' 
@@ -47,7 +47,7 @@ The available positions are top, bottom, left, right and center (default). Left 
 <div 
   id="modal-id-right" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title", 
     "position" : "right"
   }' 
@@ -58,7 +58,7 @@ The available positions are top, bottom, left, right and center (default). Left 
 <div 
   id="modal-id-top" 
   class="wysiwyg crop-margins"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "position" : "top"
   }' 
   hidden
@@ -73,7 +73,7 @@ The available positions are top, bottom, left, right and center (default). Left 
 <div 
   id="modal-id-bottom" 
   class="wysiwyg crop-margins"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "position" : "bottom"
   }' 
   hidden
@@ -97,7 +97,7 @@ The modals setup with the builder allow resizing. Center, top and bottom modals 
 <div 
   id="modal-id-center-resize" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "allowResize" : true
   }' 
@@ -108,7 +108,7 @@ The modals setup with the builder allow resizing. Center, top and bottom modals 
 <div 
   id="modal-id-right-resize" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "position" : "right",
     "allowResize" : true
@@ -127,7 +127,7 @@ By default clicking outside the modal will close it, this can be disabled by pas
 <div 
   id="modal-id-no-outside" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "clickOutsideCloses" : false
   }' 
@@ -147,7 +147,7 @@ Remove the backdrop by passing  `{ "noBackdrop" : true }` to the builder
 <div 
   id="modal-id-no-backdrop" 
   class="wysiwyg"
-  data-ulu-dialog-builder='{ 
+  data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "noBackdrop" : true
   }' 
