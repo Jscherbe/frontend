@@ -220,6 +220,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/demos/overlay-section/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Overlay Section
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/demos/popovers/" 
           
         >
@@ -1873,10 +1892,25 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-all-includes">$all-includes</a>
+            		</li>
+
+                    <li><a href="#variable-current-includes">$current-includes</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
                     
+                    <li><a href="#mixin-set-includes">set-includes()</a>
+            		</li>
+
                     <li><a href="#mixin-component-styles">component-styles()</a>
             		</li>
                 </ol>
@@ -1895,26 +1929,97 @@
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
       <h1 id="all" tabindex="-1">All</h1>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
+<h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
-<h3 id="mixin-component-styles" tabindex="-1">component-styles()</h3>
+<h3 id="variable-all-includes" tabindex="-1">$all-includes</h3>
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
   </div>
 </div>
-<p>Prints all Components styles</p>
+<p>Default includes, all modules</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$all-includes</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"accordion"</span><span class="token punctuation">,</span>
+  <span class="token string">"css-icon"</span><span class="token punctuation">,</span>
+  <span class="token string">"links"</span><span class="token punctuation">,</span>
+  <span class="token string">"button"</span><span class="token punctuation">,</span>
+  <span class="token string">"button-verbose"</span><span class="token punctuation">,</span>
+  <span class="token string">"badge"</span><span class="token punctuation">,</span>
+  <span class="token string">"callout"</span><span class="token punctuation">,</span>
+  <span class="token string">"card"</span><span class="token punctuation">,</span>
+  <span class="token string">"card-grid"</span><span class="token punctuation">,</span>
+  <span class="token string">"rule"</span><span class="token punctuation">,</span>
+  <span class="token string">"list-lines"</span><span class="token punctuation">,</span>
+  <span class="token string">"list-unordered"</span><span class="token punctuation">,</span>
+  <span class="token string">"list-ordered"</span><span class="token punctuation">,</span>
+  <span class="token string">"fill-context"</span><span class="token punctuation">,</span>
+  <span class="token string">"popover"</span><span class="token punctuation">,</span>
+  <span class="token string">"tabs"</span><span class="token punctuation">,</span>
+  <span class="token string">"modal"</span><span class="token punctuation">,</span>
+  <span class="token string">"ratio-box"</span><span class="token punctuation">,</span>
+  <span class="token string">"nav-strip"</span><span class="token punctuation">,</span>
+  <span class="token string">"overlay-section"</span><span class="token punctuation">,</span>
+  <span class="token string">"adaptive-spacing"</span><span class="token punctuation">,</span>
+  <span class="token string">"pager"</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
 <li><strong>File:</strong> _index.scss</li>
 <li><strong>Group:</strong> all</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 78-82</li>
-<li><strong>Lines (code):</strong> 84-153  </details>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 54-55</li>
+<li><strong>Lines (code):</strong> 57-80  </details>
 </li>
 </ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">component-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<div class="sassdoc-item-header">
+<h3 id="variable-current-includes" tabindex="-1">$current-includes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
+  </div>
+</div>
+<p>Current included modules (for output when using styles), defaults to all</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$current-includes</span></span><span class="token punctuation">:</span> <span class="token variable">$all-includes</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _index.scss</li>
+<li><strong>Group:</strong> all</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 82-83</li>
+<li><strong>Lines (code):</strong> 85-85  </details>
+</li>
+</ul>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set-includes" tabindex="-1">set-includes()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change default includes (when user prints modules)</p>
+<ul>
+<li>
+<p>This available as configuration so that it can be configured (to allow easily copying configuration)</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _index.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> all</p>
+</li>
+<li>
+<p><strong>Type:</strong> mixin</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 87-89</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 91-94</p>
+  </details>
+</li>
+</ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -1928,13 +2033,56 @@
 <tr>
 <td style="text-align:left">$includes</td>
 <td style="text-align:left"><code>List</code></td>
-<td style="text-align:left">A list of changes to module includes</td>
+<td style="text-align:left">List of modules by name to be included when styles are printed</td>
 </tr>
 </tbody>
 </table>
 <h4 id="require" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+<li><a href="/sass/components/all/#variable-all-includes">$all-includes</a></li>
+<li><a href="/sass/components/all/#variable-current-includes">$current-includes</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-component-styles" tabindex="-1">component-styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints all Components styles</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _index.scss</li>
+<li><strong>Group:</strong> all</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 96-100</li>
+<li><strong>Lines (code):</strong> 102-173  </details>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">component-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$includes</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">$all-includes</td>
+<td style="text-align:left">A list of components to include (defaults to all)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/all/#variable-all-includes">$all-includes</a></li>
 </ul>
 
     </div>

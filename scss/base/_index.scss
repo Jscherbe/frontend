@@ -8,7 +8,8 @@
 @forward "typography" as typography-*;
 @forward "layout" as layout-*;
 
-@use "sass:map";
+@use "sass:list";
+
 @use "../utils";
 @use "normalize";
 @use "typography";
@@ -17,45 +18,59 @@
 @use "keyframes";
 @use "layout";
 
-// Used to check against user's includes
+/// Default includes, all modules
+/// @type List
 
-$-all-includes: (
-  "normalize" : true, 
-  "elements" : true, 
-  "keyframes" : true, 
-  "typography" : true,
-  "color" : true,
-  "layout" : true
+$all-includes: (
+  "normalize", 
+  "elements", 
+  "keyframes", 
+  "typography",
+  "color",
+  "layout"
 );
+
+/// Current included modules (for output when using styles), defaults to all
+/// @type List
+
+$current-includes: $all-includes;
+
+/// Change default includes (when user prints modules)
+/// - This available as configuration so that it can be configured (to allow easily copying configuration)
+/// @param {List} $includes List of modules by name to be included when styles are printed
+
+@mixin set-includes($includes) {
+  @include utils.require-list-contains($all-includes, $includes);
+  $current-includes: $includes !global;
+}
 
 /// Prints all Base styles
 /// @name base-styles
-/// @param {List} $includes A list of changes to this module's includes
+/// @param {List} $includes [$all-includes] A list of components to include (defaults to current)
 /// @example scss
 ///  @include ulu.base-styles();
 
-@mixin styles($includes: null) {
+@mixin styles($includes: $current-includes) {
   @include utils.file-header("base");
-  @if $includes {
-    @include utils.require-list-contains($-all-includes, $includes);
-    $-all-includes: map.merge($-all-includes, $includes) !global;
-  }
-  @if (map.get($-all-includes, "normalize")) {
+  
+  @include utils.require-list-contains($all-includes, $includes);
+
+  @if (list.index($includes, "normalize")) {
     @include normalize.styles;
   }
-  @if (map.get($-all-includes, "elements")) {
+  @if (list.index($includes, "elements")) {
     @include elements.styles;
   }
-  @if (map.get($-all-includes, "keyframes")) {
+  @if (list.index($includes, "keyframes")) {
     @include keyframes.styles;
   }
-  @if (map.get( $-all-includes, "typography")) {
+  @if (list.index( -includes, "typography")) {
     @include typography.styles;
   }
-  @if (map.get($-all-includes, "color")) {
+  @if (list.index($includes, "color")) {
     @include color.styles;
   }
-  @if (map.get($-all-includes, "layout")) {
+  @if (list.index($includes, "layout")) {
     @include layout.styles;
   }
 }

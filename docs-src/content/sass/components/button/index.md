@@ -67,6 +67,56 @@ Module Settings
 
 ``` scss
 $config: (
+  "content-background-color" : white,
+  "content-border" : 1px solid rgb(227, 227, 227),
+  "content-width" : 34rem,
+  "content-padding" : 2.5rem,
+  "padding" : 6rem,
+  "min-height" : 75vh,
+  "breakpoints" : (
+    "medium" : (
+      "direction" : "down",
+      "padding" : 4rem,
+    ),
+    "small" : (
+      "direction" : "down",
+      "padding" : 2rem,
+      "content-padding" : 1.5rem
+    )
+  )
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _overlay-section.scss
+- **Group:** button
+- **Type:** variable
+- **Lines (comments):** 13-14
+- **Lines (code):** 16-34
+    </details>
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config-2}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
   "color"                   : inherit,
   "background-color"        : white,
   "padding"                 : 1rem,
@@ -251,6 +301,92 @@ Change modules $config
 
     <details>
       <summary>File Information</summary>
+- **File:** _overlay-section.scss
+- **Group:** button
+- **Type:** mixin
+- **Lines (comments):** 36-38
+- **Lines (code):** 40-42
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes
+  @include module-name.set(( "property" : value ));|
+
+    
+
+#### Require
+
+- [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles-1}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Prints component styles
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _overlay-section.scss
+- **Group:** button
+- **Type:** mixin
+- **Lines (comments):** 52-54
+- **Lines (code):** 56-113
+    </details>
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-example-styles();
+```
+  
+
+      
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  set() {#mixin-set-2}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Change modules $config
+    
+    
+
+    <details>
+      <summary>File Information</summary>
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
@@ -277,7 +413,7 @@ Change modules $config
 
 <div class="sassdoc-item-header">
 
-###  styles() {#mixin-styles-1}
+###  styles() {#mixin-styles-2}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -369,6 +505,48 @@ Get a config option
 <div class="sassdoc-item-header">
 
 ###  get() {#function-get-1}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Get a config option
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _overlay-section.scss
+- **Group:** button
+- **Type:** function
+- **Lines (comments):** 44-46
+- **Lines (code):** 48-50
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`Map`|Name of property
+  @include module-name.get("property");|
+
+    
+
+#### Require
+
+- [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get() {#function-get-2}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>

@@ -22,9 +22,10 @@
 @forward "ratio-box" as ratio-box-*;
 @forward "nav-strip" as nav-strip-*;
 @forward "adaptive-spacing" as adaptive-spacing-*;
+@forward "overlay-section" as overlay-section-*;
 @forward "pager" as pager-*;
 
-@use "sass:map";
+@use "sass:list";
 
 @use "../utils";
 @use "accordion";
@@ -46,108 +47,127 @@
 @use "modal";
 @use "ratio-box";
 @use "nav-strip";
+@use "overlay-section";
 @use "adaptive-spacing";
 @use "pager";
 
-// Used to check against user's includes
+/// Default includes, all modules
+/// @type List
 
-$-all-includes: (
-  "accordion" : true,
-  "css-icon" : true,
-  "links" : true,
-  "button" : true,
-  "button-verbose" : true,
-  "badge" : true,
-  "callout" : true,
-  "card" : true,
-  "card-grid" : true,
-  "rule" : true,
-  "list-lines" : true,
-  "list-unordered" : true,
-  "list-ordered" : true,
-  "fill-context" : true,
-  "popover" : true,
-  "tabs" : true,
-  "modal" : true,
-  "ratio-box" : true,
-  "nav-strip" : true,
-  "adaptive-spacing" : true,
-  "pager" : true,
+$all-includes: (
+  "accordion",
+  "css-icon",
+  "links",
+  "button",
+  "button-verbose",
+  "badge",
+  "callout",
+  "card",
+  "card-grid",
+  "rule",
+  "list-lines",
+  "list-unordered",
+  "list-ordered",
+  "fill-context",
+  "popover",
+  "tabs",
+  "modal",
+  "ratio-box",
+  "nav-strip",
+  "overlay-section",
+  "adaptive-spacing",
+  "pager",
 );
+
+/// Current included modules (for output when using styles), defaults to all
+/// @type List
+
+$current-includes: $all-includes;
+
+/// Change default includes (when user prints modules)
+/// - This available as configuration so that it can be configured (to allow easily copying configuration)
+/// @param {List} $includes List of modules by name to be included when styles are printed
+
+@mixin set-includes($includes) {
+  @include utils.require-list-contains($all-includes, $includes);
+  $current-includes: $includes !global;
+}
 
 /// Prints all Components styles
 /// @name component-styles
-/// @param {List} $includes A list of changes to module includes
+/// @param {List} $includes [$all-includes] A list of components to include (defaults to all)
 /// @example scss
 ///  @include ulu.component-styles();
 
-@mixin styles($includes: null) {
+@mixin styles($includes: $current-includes) {
   @include utils.file-header("components");
-  @if $includes {
-    @include utils.require-list-contains($-all-includes, $includes);
-    $-all-includes: map.merge($-all-includes, $includes) !global;
-  }
-  @if (map.get($-all-includes, "accordion")) {
+
+  @include utils.require-list-contains($all-includes, $includes);
+
+  @if (list.index($includes, "accordion")) {
     @include accordion.styles;
   }
-  @if (map.get($-all-includes, "css-icon")) {
+  @if (list.index($includes, "css-icon")) {
     @include css-icon.styles;
   }
-  @if (map.get($-all-includes, "links")) {
+  @if (list.index($includes, "links")) {
     @include links.styles;
   }
-  @if (map.get($-all-includes, "button")) {
+  @if (list.index($includes, "button")) {
     @include button.styles;
   }
-  @if (map.get($-all-includes, "button-verbose")) {
+  @if (list.index($includes, "button-verbose")) {
     @include button-verbose.styles;
   }
-  @if (map.get($-all-includes, "badge")) {
+  @if (list.index($includes, "badge")) {
     @include badge.styles;
   }
-  @if (map.get($-all-includes, "callout")) {
+  @if (list.index($includes, "callout")) {
     @include callout.styles;
   }
-  @if (map.get($-all-includes, "card")) {
+  @if (list.index($includes, "card")) {
     @include card-grid.styles;
   }
-  @if (map.get($-all-includes, "card-grid")) {
+  @if (list.index($includes, "card-grid")) {
     @include card-grid.styles;
   }
-  @if (map.get($-all-includes, "rule")) {
+  @if (list.index($includes, "rule")) {
     @include rule.styles;
   }
-  @if (map.get($-all-includes, "list-lines")) {
+  @if (list.index($includes, "list-lines")) {
     @include list-lines.styles;
   }
-  @if (map.get($-all-includes, "list-unordered")) {
+  @if (list.index($includes, "list-unordered")) {
     @include list-unordered.styles;
   }
-  @if (map.get($-all-includes, "list-ordered")) {
+  @if (list.index($includes, "list-ordered")) {
     @include list-ordered.styles;
   }
-  @if (map.get($-all-includes, "fill-context")) {
+  @if (list.index($includes, "fill-context")) {
     @include fill-context.styles;
   }
-  @if (map.get($-all-includes, "popover")) {
+  @if (list.index($includes, "popover")) {
     @include popover.styles;
   }
-  @if (map.get($-all-includes, "tabs")) {
+  @if (list.index($includes, "tabs")) {
     @include tabs.styles;
   }
-  @if (map.get($-all-includes, "modal")) {
+  @if (list.index($includes, "modal")) {
     @include modal.styles;
   }
-  @if (map.get($-all-includes, "ratio-box")) {
+  @if (list.index($includes, "ratio-box")) {
     @include ratio-box.styles;
   }
-  @if (map.get($-all-includes, "nav-strip")) {
+  @if (list.index($includes, "nav-strip")) {
     @include nav-strip.styles;
   }
-  @if (map.get($-all-includes, "adaptive-spacing")) {
+  @if (list.index($includes, "overlay-section")) {
+    @include overlay-section.styles;
+  }
+  @if (list.index($includes, "adaptive-spacing")) {
     @include adaptive-spacing.styles;
   }
-  @if (map.get($-all-includes, "pager")) {
+  @if (list.index($includes, "pager")) {
     @include pager.styles;
   }
 }

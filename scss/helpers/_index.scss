@@ -9,7 +9,8 @@
 @forward "units"  as units-*;
 @forward "color"  as color-*;
 
-@use "sass:map";
+@use "sass:list";
+
 @use "../utils";
 @use "typography";
 @use "display";
@@ -18,45 +19,59 @@
 @use "print";
 @use "color";
 
-// Used to check against user's includes
+/// Default includes, all modules
+/// @type List
 
-$-all-includes: (
-  "typography" : true, 
-  "units" : true,
-  "display" : true,
-  "utilities" : true, 
-  "print" : true,
-  "color" : true
+$all-includes: (
+  "typography", 
+  "units",
+  "display",
+  "utilities", 
+  "print",
+  "color"
 );
+
+/// Current included modules (for output when using styles), defaults to all
+/// @type List
+
+$current-includes: $all-includes;
+
+/// Change default includes (when user prints modules)
+/// - This available as configuration so that it can be configured (to allow easily copying configuration)
+/// @param {List} $includes List of modules by name to be included when styles are printed
+
+@mixin set-includes($includes) {
+  @include utils.require-list-contains($all-includes, $includes);
+  $current-includes: $includes !global;
+}
 
 /// Prints all Helper styles
 /// @name helper-styles
-/// @param {List} $includes AA list of changes to this module's includes
+/// @param {List} $includes [$all-includes] A list of components to include (defaults to all)
 /// @example scss
 ///  @include ulu.helper-styles();
 
-@mixin styles($includes: null) {
+@mixin styles($includes: $current-includes) {
   @include utils.file-header("helpers");
-  @if $includes {
-    @include utils.require-list-contains($-all-includes, $includes);
-    $-all-includes: map.merge($-all-includes, $includes) !global;
-  }
-  @if (map.get($-all-includes, "typography")) {
+  
+  @include utils.require-list-contains($all-includes, $includes);
+
+  @if (list.index($includes, "typography")) {
     @include typography.styles;
   }
-  @if (map.get($-all-includes, "units")) {
+  @if (list.index($includes, "units")) {
     @include units.styles;
   }
-  @if (map.get($-all-includes, "display")) {
+  @if (list.index($includes, "display")) {
     @include display.styles;
   }
-  @if (map.get($-all-includes, "utilities")) {
+  @if (list.index($includes, "utilities")) {
     @include utilities.styles;
   }
-  @if (map.get($-all-includes, "print")) {
+  @if (list.index($includes, "print")) {
     @include print.styles;
   }
-  @if (map.get($-all-includes, "color")) {
+  @if (list.index($includes, "color")) {
     @include color.styles;
   }
 }

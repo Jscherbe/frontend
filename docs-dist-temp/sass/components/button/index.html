@@ -220,6 +220,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/demos/overlay-section/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Overlay Section
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/demos/popovers/" 
           
         >
@@ -1882,6 +1901,9 @@
 
                     <li><a href="#variable-config-1">$config</a>
             		</li>
+
+                    <li><a href="#variable-config-2">$config</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -1900,6 +1922,12 @@
 
                     <li><a href="#mixin-styles-1">styles()</a>
             		</li>
+
+                    <li><a href="#mixin-set-2">set()</a>
+            		</li>
+
+                    <li><a href="#mixin-styles-2">styles()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -1911,6 +1939,9 @@
             		</li>
 
                     <li><a href="#function-get-1">get()</a>
+            		</li>
+
+                    <li><a href="#function-get-2">get()</a>
             		</li>
                 </ol>
             		</li>
@@ -1951,6 +1982,42 @@
 </ul>
 <div class="sassdoc-item-header">
 <h3 id="variable-config-1" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token string">"content-background-color"</span> <span class="token punctuation">:</span> white<span class="token punctuation">,</span>
+  <span class="token string">"content-border"</span> <span class="token punctuation">:</span> 1px solid <span class="token function">rgb</span><span class="token punctuation">(</span>227<span class="token punctuation">,</span> 227<span class="token punctuation">,</span> 227<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"content-width"</span> <span class="token punctuation">:</span> 34rem<span class="token punctuation">,</span>
+  <span class="token string">"content-padding"</span> <span class="token punctuation">:</span> 2.5rem<span class="token punctuation">,</span>
+  <span class="token string">"padding"</span> <span class="token punctuation">:</span> 6rem<span class="token punctuation">,</span>
+  <span class="token string">"min-height"</span> <span class="token punctuation">:</span> 75vh<span class="token punctuation">,</span>
+  <span class="token string">"breakpoints"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
+    <span class="token string">"medium"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
+      <span class="token string">"direction"</span> <span class="token punctuation">:</span> <span class="token string">"down"</span><span class="token punctuation">,</span>
+      <span class="token string">"padding"</span> <span class="token punctuation">:</span> 4rem<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">"small"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
+      <span class="token string">"direction"</span> <span class="token punctuation">:</span> <span class="token string">"down"</span><span class="token punctuation">,</span>
+      <span class="token string">"padding"</span> <span class="token punctuation">:</span> 2rem<span class="token punctuation">,</span>
+      <span class="token string">"content-padding"</span> <span class="token punctuation">:</span> 1.5rem
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _overlay-section.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 13-14</li>
+<li><strong>Lines (code):</strong> 16-34  </details>
+</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="variable-config-2" tabindex="-1">$config</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
@@ -2172,11 +2239,11 @@
 <p><details>
 <summary>File Information</summary></p>
 <ul>
-<li><strong>File:</strong> _popover.scss</li>
+<li><strong>File:</strong> _overlay-section.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 64-66</li>
-<li><strong>Lines (code):</strong> 68-70  </details>
+<li><strong>Lines (comments):</strong> 36-38</li>
+<li><strong>Lines (code):</strong> 40-42  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -2215,6 +2282,72 @@
 <p><details>
 <summary>File Information</summary></p>
 <ul>
+<li><strong>File:</strong> _overlay-section.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 52-54</li>
+<li><strong>Lines (code):</strong> 56-113  </details>
+</li>
+</ul>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">component-example-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set-2" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change modules $config</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _popover.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 64-66</li>
+<li><strong>Lines (code):</strong> 68-70  </details>
+</li>
+</ul>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+<tr>
+<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles-2" tabindex="-1">styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints component styles</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
@@ -2222,9 +2355,9 @@
 <li><strong>Lines (code):</strong> 84-204  </details>
 </li>
 </ul>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> ulu.<span class="token function">component-example-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-5" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#function-get">get()</a></li>
 </ul>
@@ -2244,49 +2377,6 @@
 <li><strong>Type:</strong> function</li>
 <li><strong>Lines (comments):</strong> 27-29</li>
 <li><strong>Lines (code):</strong> 31-33  </details>
-</li>
-</ul>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-4" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-get-1" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _popover.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 72-74</li>
-<li><strong>Lines (code):</strong> 76-78  </details>
 </li>
 </ul>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -2311,7 +2401,93 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-1" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a config option</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _overlay-section.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 44-46</li>
+<li><strong>Lines (code):</strong> 48-50  </details>
+</li>
+</ul>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Name of property</td>
+</tr>
+<tr>
+<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-7" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-2" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a config option</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _popover.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 72-74</li>
+<li><strong>Lines (code):</strong> 76-78  </details>
+</li>
+</ul>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Name of property</td>
+</tr>
+<tr>
+<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

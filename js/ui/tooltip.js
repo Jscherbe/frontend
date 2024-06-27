@@ -71,6 +71,7 @@ export class Tooltip {
      */
     content: null,
     openClass: "is-active",
+    contentClass: "",
     isHtml: false,
     /**
      * Pull content from pre-existing content on page 
@@ -175,6 +176,10 @@ export class Tooltip {
       body.textContent = innerContent;
     }
     content.id = newId();
+    if (options.contentClass) {
+      content.classList.add(options.contentClass);
+    }
+    
     this.elements.content = content;
     this.elements.contentArrow = content.querySelector(attrSelector("arrow"));
     document.body.appendChild(content);

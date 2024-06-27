@@ -1,0 +1,113 @@
+////
+/// @group button
+////
+
+// NOTE: This is an updated version that uses floating UI
+
+@use "sass:math";
+@use "sass:map";
+@use "../utils";
+@use "../calculate";
+@use "../breakpoint";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "content-background-color" : white,
+  "content-border" : 1px solid rgb(227, 227, 227),
+  "content-width" : 34rem,
+  "content-padding" : 2.5rem,
+  "padding" : 6rem,
+  "min-height" : 75vh,
+  "breakpoints" : (
+    "medium" : (
+      "direction" : "down",
+      "padding" : 4rem,
+    ),
+    "small" : (
+      "direction" : "down",
+      "padding" : 2rem,
+      "content-padding" : 1.5rem
+    )
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "overlay-section [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+
+  .overlay-section {
+    position: relative;
+    display: flex;
+    min-height: get("min-height");
+    align-items: center;
+    justify-content: center;
+    padding: get("padding");
+
+    @each $breakpoint, $props in get("breakpoints") {
+      $direction: map.get($props, "direction");
+      @include breakpoint.from($breakpoint, $direction) {
+        padding: map.get($props, "padding");
+        min-height: map.get($props, "min-height");
+      }
+    }
+  }
+  .overlay-section__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    img, 
+    video {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .overlay-section__content {
+    position: relative;
+    z-index: 2;
+    background-color: get("content-background-color");
+    border: get("content-border");
+    flex: 0 1 get("content-width");
+    padding: get("content-padding");
+    @each $breakpoint, $props in get("breakpoints") {
+      $direction: map.get($props, "direction");
+      @include breakpoint.from($breakpoint, $direction) {
+        padding: map.get($props, "content-padding");
+      }
+    }
+  }
+  .overlay-section--top {
+    align-items: flex-start;
+  }
+  .overlay-section--bottom {
+    align-items: flex-end;
+  }
+  .overlay-section--left {
+    justify-content: flex-start;
+  }
+  .overlay-section--right {
+    justify-content: flex-end;
+  }
+}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Grid
+    Overlay Section
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -216,12 +216,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/overlay-section/" 
-          
+          aria-current="page"
         >
           
     
@@ -297,10 +297,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -320,10 +320,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -339,10 +339,10 @@
         </li>
       
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -360,10 +360,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/core/" 
           
         >
@@ -493,12 +493,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/core/grid/" 
-          aria-current="page"
+          
         >
           
     
@@ -1888,44 +1888,7 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>On this page</h2>
-<div class="toc">
-                <ol>
-                    
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#mixins">Mixins</a>
-            
-                <ol>
-                    
-                    <li><a href="#mixin-set">set()</a>
-            		</li>
-
-                    <li><a href="#mixin-create">create()</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#functions">Functions</a>
-            
-                <ol>
-                    
-                    <li><a href="#function-get">get()</a>
-            		</li>
-
-                    <li><a href="#function-get-gutter">get-gutter()</a>
-            		</li>
-                </ol>
-            		</li>
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
@@ -1933,315 +1896,29 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Grid</h1>
+    <h1 class="page__title h1">Overlay Section</h1>
+
+  <p class="type-large type-light">
+    For section images
+  </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <div class="wysiwyg">
-      <h1 id="grid" tabindex="-1">Grid</h1>
-<p>Layout grid that uses attributes instead of classes</p>
-<ul>
-<li>See the core layout module for changing defaults</li>
-</ul>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+    <div class="overlay-section  overlay-section--left overlay-section--center">
+  <div class="overlay-section__content crop-margins wysiwyg">
+    <h2 class="h2">
+      Featured Insight
+    </h2>
+    <p class="type-large">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur ullamcorper lobortis. Donec sollicitudin ligula lacus, sed tempor sapien rhoncus at. Ut sodales urna ex, quis efficitur risus porttitor nec. Mauris pulvinar eu sapien a euismod. Aliquam mattis dui augue, at venenatis elit porta ac.
+    </p>
+    <p>
+      <a class="button" href="#" rel="nofollow">Read More</a>
+    </p>
   </div>
+  <div class="overlay-section__background">
+    <img src="/assets/placeholder/image-1.jpg" alt="Paris Street">
+  </img>
 </div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-  <span class="token string">"columns"</span><span class="token punctuation">:</span>            12<span class="token punctuation">,</span>
-  <span class="token string">"attribute"</span><span class="token punctuation">:</span>          <span class="token string">"data-grid"</span><span class="token punctuation">,</span>
-  <span class="token string">"attribute-container"</span> <span class="token punctuation">:</span> <span class="token string">"data-grid-container"</span><span class="token punctuation">,</span>
-  <span class="token string">"gutter"</span><span class="token punctuation">:</span>             14px<span class="token punctuation">,</span>
-  <span class="token string">"breakpoint"</span> <span class="token punctuation">:</span>        <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// Fallback to default</span>
-  <span class="token string">"extra-breakpoints"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
-    <span class="token string">"medium"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
-      <span class="token string">"breakpoint"</span> <span class="token punctuation">:</span> <span class="token string">"medium"</span><span class="token punctuation">,</span>
-      <span class="token string">"gutter"</span> <span class="token punctuation">:</span> 15px
-    <span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token string">"large"</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span>
-      <span class="token string">"breakpoint"</span> <span class="token punctuation">:</span> <span class="token string">"large"</span><span class="token punctuation">,</span>
-      <span class="token string">"gutter"</span> <span class="token punctuation">:</span> 20px
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token string">"position-class-column-first"</span><span class="token punctuation">:</span> <span class="token string">"position-column-first"</span><span class="token punctuation">,</span>
-  <span class="token string">"position-class-column-last"</span><span class="token punctuation">:</span>  <span class="token string">"position-column-last"</span><span class="token punctuation">,</span>
-  <span class="token string">"position-class-row-first"</span><span class="token punctuation">:</span>    <span class="token string">"position-row-first"</span><span class="token punctuation">,</span>
-  <span class="token string">"position-class-row-last"</span><span class="token punctuation">:</span>     <span class="token string">"position-row-last"</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _grid.scss</li>
-<li><strong>Group:</strong> grid</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 32-41</li>
-<li><strong>Lines (code):</strong> 43-63  </details>
-</li>
-</ul>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$config.columns</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Default for grid mixin</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.attribute</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">Default attribute to use for grid mixin</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.gutter</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Default gutter for grid mixin</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.extra-breakpoints</td>
-<td style="text-align:left">Map</td>
-<td style="text-align:left">Default extra breakpoints for grid mixin</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.position-class-column-first</td>
-<td style="text-align:left">MaStringp</td>
-<td style="text-align:left">Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.position-class-column-last</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">See definition above</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.position-class-row-first</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">See definition above</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.position-class-row-last</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">See definition above</td>
-</tr>
-</tbody>
-</table>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Change modules $config</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _grid.scss</li>
-<li><strong>Group:</strong> grid</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 65-68</li>
-<li><strong>Lines (code):</strong> 70-72  </details>
-</li>
-</ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> module-name.<span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token string">"property"</span> <span class="token punctuation">:</span> value <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h4 id="parameters" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-create" tabindex="-1">create()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Creates grid css (variation of original data-grid)</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _grid.scss</li>
-<li><strong>Group:</strong> grid</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 107-116</li>
-<li><strong>Lines (code):</strong> 118-551  </details>
-</li>
-</ul>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$columns</td>
-<td style="text-align:left"><code>Number</code></td>
-<td style="text-align:left">Columns in grid</td>
-</tr>
-<tr>
-<td style="text-align:left">$breakpoint</td>
-<td style="text-align:left"><code>Number</code></td>
-<td style="text-align:left">Breakpoint key for starting the grid</td>
-</tr>
-<tr>
-<td style="text-align:left">$extra-breakpoints</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)</td>
-</tr>
-<tr>
-<td style="text-align:left">$gutter</td>
-<td style="text-align:left"><code>Number</code></td>
-<td style="text-align:left">Size in pixels for the gutters</td>
-</tr>
-<tr>
-<td style="text-align:left">$include-rules</td>
-<td style="text-align:left"><code>Boolean</code></td>
-<td style="text-align:left">Print styles for including rules</td>
-</tr>
-<tr>
-<td style="text-align:left">$rule-size</td>
-<td style="text-align:left"><code>Number</code></td>
-<td style="text-align:left">Size of the rule (border/seperator)</td>
-</tr>
-<tr>
-<td style="text-align:left">$extra-rule-styles</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of other rule styles to add (map of maps of size, and color), key is the styles name (&quot;name&quot;: (&quot;size&quot; : 4px, &quot;color&quot; : &quot;color name&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">$extra-gutter-scales</td>
-<td style="text-align:left"><code>String</code></td>
-<td style="text-align:left">A map of gutter scales used like <code>data-grid=&quot;gutter-scale: large</code>, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie <code>( &quot;large&quot; : 2.25 )</code></td>
-</tr>
-<tr>
-<td style="text-align:left">$attribute</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Attribute to use for selecting grid and children. Children attribute get's &quot;-item&quot; as a suffix (&quot;ie. data-grid, data-grid-item&quot;)</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
-<li>require-map-get()</li>
-</ul>
-<h2 id="functions" tabindex="-1">Functions</h2>
-<div class="sassdoc-item-header">
-<h3 id="function-get" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _grid.scss</li>
-<li><strong>Group:</strong> grid</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 74-77</li>
-<li><strong>Lines (code):</strong> 79-81  </details>
-</li>
-</ul>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="token keyword">@include</span> module-name.<span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"property"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-2" tabindex="-1">Require</h4>
-<ul>
-<li>require-map-get()</li>
-<li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-get-gutter" tabindex="-1">get-gutter()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Returns gutter size for grid breakpoint map, defaults to the config's values
-Pass custom map to get gutter values from it</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _grid.scss</li>
-<li><strong>Group:</strong> grid</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 83-86</li>
-<li><strong>Lines (code):</strong> 88-96  </details>
-</li>
-</ul>
-<h4 id="parameters-3" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>String</code></td>
-<td style="text-align:left">The name of the &quot;grid breakpoint&quot; (could be a different name than the actual breakpoint name it maps too)</td>
-</tr>
-<tr>
-<td style="text-align:left">$custom-map</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Provide custom map of grid breakpoints to get the gutter from (defaults to the grid module's defaults 'extra-breakpoints')</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-3" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
-<li>require-map-get()</li>
-</ul>
-
-    </div>
   </div>
 
 		</main>
