@@ -224,3 +224,35 @@ $config: (
     @return $string;
   }
 }
+
+/// Remove an item from a list (not map)
+/// - Used for excluding things or as general utility
+/// @param {List} $list String to operate on
+/// @param {*} $remove Element in the list to remove
+/// @return {List} New list with item removed
+
+@function remove-from-list($list, $remove) {
+  $new-list: (); 
+  @each $item in $list {
+    @if $item != $remove {
+      $new-list: append($new-list, $item); 
+    }
+  }
+  @return $new-list;
+}
+
+/// Remove an item from a list (not map)
+/// - Used for excluding things or as general utility
+/// @param {List} $list String to operate on
+/// @param {List} $remove List elements that should each be removed
+/// @return {List} New list with item removed
+
+@function list-without($list, $removal-list) {
+  $new-list: ();
+  @each $item in $list {
+    @if not index($removal-list, $item) { 
+      $new-list: append($new-list, $item);
+    }
+  }
+  @return $new-list;
+}

@@ -11,7 +11,9 @@ import sassdocPlugin from "./docs-src/src/plugins/sassdoc/index.js";
 import optionsTablePlugin from "./docs-src/src/plugins/options-table/index.js";
 import jsdocPlugin from "./docs-src/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
+import prismCustomClass from "prismjs/plugins/custom-class/prism-custom-class.js";
 
+console.log("prismCustomClass:\n", prismCustomClass);
 // const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const { NO_DOC_GEN } = process.env;
@@ -28,7 +30,15 @@ export default async function(eleventyConfig) {
     wrapper: "div",
     headingText: "On this page"
   });
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    async init({ Prism }) {
+      import("prismjs/plugins/custom-class/prism-custom-class.js")
+        .then(() => console.log("Prism plugin loaded"))
+        .catch((err) => console.error(err));
+
+      Prism.plugins.customClass.prefix("pjs-");
+    }
+  });
   eleventyConfig.amendLibrary("md", md => {
     md.use(markdownItAttrs);
     md.use(markdownItAnchor);
