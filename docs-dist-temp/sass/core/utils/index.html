@@ -1993,6 +1993,12 @@
 
                     <li><a href="#function-string-replace">string-replace()</a>
             		</li>
+
+                    <li><a href="#function-remove-from-list">remove-from-list()</a>
+            		</li>
+
+                    <li><a href="#function-list-without">list-without()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -2726,6 +2732,140 @@
 <td style="text-align:left">$all</td>
 <td style="text-align:left"><code>Boolean</code></td>
 <td style="text-align:left">Default true replace all matches, if false replace only first</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-remove-from-list" tabindex="-1">remove-from-list()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Remove an item from a list (not map)</p>
+<ul>
+<li>
+<p>Used for excluding things or as general utility</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _utils.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> utils</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 228-232</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 234-242</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$list</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">String to operate on</td>
+</tr>
+<tr>
+<td style="text-align:left">$remove</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Element in the list to remove</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-5" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">List</td>
+<td style="text-align:left">New list with item removed</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-list-without" tabindex="-1">list-without()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Remove an item from a list (not map)</p>
+<ul>
+<li>
+<p>Used for excluding things or as general utility</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _utils.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> utils</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 244-248</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 250-258</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$list</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">String to operate on</td>
+</tr>
+<tr>
+<td style="text-align:left">$remove</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">List elements that should each be removed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-6" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">List</td>
+<td style="text-align:left">New list with item removed</td>
 </tr>
 </tbody>
 </table>

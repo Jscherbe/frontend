@@ -715,5 +715,99 @@ Replaces all or one occurence of a string within a string
 |$all|`Boolean`|Default true replace all matches, if false replace only first|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  remove-from-list() {#function-remove-from-list}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Remove an item from a list (not map)
+- Used for excluding things or as general utility
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 228-232
+- **Lines (code):** 234-242
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$list|`List`|String to operate on|
+|$remove|`*`|Element in the list to remove|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|List|New list with item removed|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  list-without() {#function-list-without}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Remove an item from a list (not map)
+- Used for excluding things or as general utility
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 244-248
+- **Lines (code):** 250-258
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$list|`List`|String to operate on|
+|$remove|`List`|List elements that should each be removed|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|List|New list with item removed|
+
+    
   
   

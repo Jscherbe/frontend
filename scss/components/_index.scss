@@ -96,6 +96,13 @@ $current-includes: $all-includes;
   $current-includes: $includes !global;
 }
 
+/// Exclude certain items from includes
+/// @param {List} $excludes List of item names
+
+@mixin set-excludes($excludes) {
+  $current-includes: utils.list-without($current-includes, $excludes) !global;
+}
+
 /// Prints all Components styles
 /// @name component-styles
 /// @param {List} $includes [$all-includes] A list of components to include (defaults to all)
