@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    List-lines
+    Rule
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -254,12 +254,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/rule/" 
-          
+          aria-current="page"
         >
           
     
@@ -316,10 +316,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -339,10 +339,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -847,10 +847,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -868,10 +868,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/components/" 
           
         >
@@ -1134,12 +1134,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/components/list-lines/" 
-          aria-current="page"
+          
         >
           
     
@@ -1945,41 +1945,7 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>On this page</h2>
-<div class="toc">
-                <ol>
-                    
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#mixins">Mixins</a>
-            
-                <ol>
-                    
-                    <li><a href="#mixin-set">set()</a>
-            		</li>
-
-                    <li><a href="#mixin-inner-styles">inner-styles()</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#functions">Functions</a>
-            
-                <ol>
-                    
-                    <li><a href="#function-get">get()</a>
-            		</li>
-                </ol>
-            		</li>
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
@@ -1987,147 +1953,15 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">List-lines</h1>
+    <h1 class="page__title h1">Rule</h1>
+
+  <p class="type-large type-light">
+    Rules of rules
+  </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <div class="wysiwyg">
-      <h1 id="list-lines" tabindex="-1">List-lines</h1>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-</div>
-<p>Module Config</p>
-<pre class="language-scss"><code class="language-scss"><span class="token property"><span class="token variable">$config</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-  <span class="token string">"border-first"</span> <span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token string">"border-last"</span> <span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token string">"margin-top"</span><span class="token punctuation">:</span> 0<span class="token punctuation">,</span>
-  <span class="token string">"margin-bottom"</span><span class="token punctuation">:</span> 1em<span class="token punctuation">,</span>
-  <span class="token string">"padding-between"</span> <span class="token punctuation">:</span> 1em
-<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _list-lines.scss</li>
-<li><strong>Group:</strong> list-lines</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-12</li>
-<li><strong>Lines (code):</strong> 14-20  </details>
-</li>
-</ul>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Change modules $config</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _list-lines.scss</li>
-<li><strong>Group:</strong> list-lines</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 22-24</li>
-<li><strong>Lines (code):</strong> 26-28  </details>
-</li>
-</ul>
-<h4 id="parameters" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-inner-styles" tabindex="-1">inner-styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Output component styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _list-lines.scss</li>
-<li><strong>Group:</strong> list-lines</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 38-38</li>
-<li><strong>Lines (code):</strong> 40-60  </details>
-</li>
-</ul>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<h2 id="functions" tabindex="-1">Functions</h2>
-<div class="sassdoc-item-header">
-<h3 id="function-get" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _list-lines.scss</li>
-<li><strong>Group:</strong> list-lines</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 30-32</li>
-<li><strong>Lines (code):</strong> 34-36  </details>
-</li>
-</ul>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-2" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
+    <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 
-    </div>
   </div>
 
 		</main>
