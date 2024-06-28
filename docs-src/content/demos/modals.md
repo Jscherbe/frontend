@@ -5,6 +5,10 @@ intro: Modals, also known as dialogs or modal windows, are user interface elemen
 
 ---
 
+```html
+<div>Test</div>
+```
+
 ## Examples
 
 ### Default
