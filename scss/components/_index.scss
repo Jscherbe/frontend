@@ -12,6 +12,7 @@
 @forward "card" as card-*;
 @forward "card-grid" as card-grid-*;
 @forward "rule" as rule-*;
+@forward "horizontal-rule" as horizontal-rule-*;
 @forward "list-lines" as list-lines-*;
 @forward "list-unordered" as list-unordered-*;
 @forward "list-ordered" as list-ordered-*;
@@ -38,6 +39,7 @@
 @use "card";
 @use "card-grid";
 @use "rule";
+@use "horizontal-rule";
 @use "list-lines";
 @use "list-unordered";
 @use "list-ordered";
@@ -65,6 +67,7 @@ $all-includes: (
   "card",
   "card-grid",
   "rule",
+  "horizontal-rule",
   "list-lines",
   "list-unordered",
   "list-ordered",
@@ -133,6 +136,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "rule")) {
     @include rule.styles;
+  }
+  @if (list.index($includes, "horizontal-rule")) {
+    @include horizontal-rule.styles;
   }
   @if (list.index($includes, "list-lines")) {
     @include list-lines.styles;

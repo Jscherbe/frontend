@@ -25,8 +25,6 @@ export function getDatasetJson(element, key) {
  */
 export function getDatasetOptionalJson(element, key) {
   const passed = element.dataset[key];
-  console.log("passed:\n", passed);
-  console.log("regexJsonString.test(passed):\n", regexJsonString.test(passed.trim()));
   if (passed && regexJsonString.test(passed.trim())) {
     return getDatasetJson(element, key);
   } else {

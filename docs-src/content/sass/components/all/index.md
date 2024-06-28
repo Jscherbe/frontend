@@ -43,6 +43,7 @@ $all-includes: (
   "card",
   "card-grid",
   "rule",
+  "horizontal-rule",
   "list-lines",
   "list-unordered",
   "list-ordered",
@@ -64,8 +65,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 54-55
-- **Lines (code):** 57-80
+- **Lines (comments):** 56-57
+- **Lines (code):** 59-83
     </details>
     
 
@@ -96,8 +97,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 82-83
-- **Lines (code):** 85-85
+- **Lines (comments):** 85-86
+- **Lines (code):** 88-88
     </details>
     
   
@@ -129,8 +130,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-94
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-97
     </details>
     
 
@@ -171,8 +172,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 96-100
-- **Lines (code):** 102-173
+- **Lines (comments):** 99-103
+- **Lines (code):** 105-179
     </details>
     
 
