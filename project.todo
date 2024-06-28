@@ -1,5 +1,14 @@
+Overall:
+  ☐ Need to finish accordion styling
+  ☐ Need to add form module
+  ☐ Need to seperate grid component from main module
+    ☐ Put grid gutter settings into layout
+      * We can probably just have common settings for gutter gutter-medium gutter-small
+        * Grids can decide how to use that information (whether its breakpoints or sizes used at any screen size?)
+        * Or the attr grid could just rely on the default gutter and then user multiplier to reduce (ie small = default gutter * 0.5). could have gutter screen scaling setting in layout? (ie small = default gutter * (gutterScaleMultiplier * breakpointDepth[1, 2, 3]))
+    ☐ Remove grid module in core (other grids can pull from layout)
 JS Updates:
-  ☐ 
+  ☐ Create utilities for initialization and attributes in scripts so we don't have to repeat this pattern
   ☐ Finish collapsible
     ☐ Consider removing focusoutCloses (not sure this makes sense and if so should be on user side)
       * No patterns focus out when leaving, would encourage bad practices? We don't have anything to 
