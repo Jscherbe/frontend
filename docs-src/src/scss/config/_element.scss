@@ -22,10 +22,10 @@
   "default" : 1px solid ulu.color-get("rule"),
   "light" : 1px solid ulu.color-get("rule-light"),
   // "accent" : 1px solid ulu.color-get("accent"),
-  // "large" : 3px solid ulu.color-get("rule"),
+  "large" : 3px solid ulu.color-get("rule"),
   // "light-large" : 4px solid ulu.color-get("rule-light"),
 ));
 @include ulu.element-set-rule-margins((
-  // "large-x" : 3em,
+  "large-x" : 3em,
   "small" : 0.6em,
 ));

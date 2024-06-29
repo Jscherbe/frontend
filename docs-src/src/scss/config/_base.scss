@@ -4,3 +4,7 @@
 @include ulu.base-layout-set((
   "container-nested-no-padding" : true
 ));
+
+@include ulu.base-set-excludes((
+  "typography"
+));

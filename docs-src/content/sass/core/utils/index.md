@@ -719,7 +719,7 @@ Replaces all or one occurence of a string within a string
 
 <div class="sassdoc-item-header">
 
-###  remove-from-list() {#function-remove-from-list}
+###  list-remove() {#function-list-remove}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>

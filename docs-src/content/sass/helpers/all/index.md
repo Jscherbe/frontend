@@ -136,6 +136,47 @@ Change default includes (when user prints modules)
 
 <div class="sassdoc-item-header">
 
+###  set-excludes() {#mixin-set-excludes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Exclude certain items from includes
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _index.scss
+- **Group:** all
+- **Type:** mixin
+- **Lines (comments):** 48-49
+- **Lines (code):** 51-53
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$excludes|`List`|List of item names|
+
+    
+
+#### Require
+
+- [$current-includes](/sass/helpers/all/#variable-current-includes)
+  
+
+
+<div class="sassdoc-item-header">
+
 ###  helper-styles() {#mixin-helper-styles}
 
   <div class="sassdoc-item-header__labels">
@@ -155,8 +196,8 @@ Prints all Helper styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 48-52
-- **Lines (code):** 54-77
+- **Lines (comments):** 55-59
+- **Lines (code):** 61-84
     </details>
     
 

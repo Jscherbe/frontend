@@ -231,7 +231,7 @@ $config: (
 /// @param {*} $remove Element in the list to remove
 /// @return {List} New list with item removed
 
-@function remove-from-list($list, $remove) {
+@function list-remove($list, $remove) {
   $new-list: (); 
   @each $item in $list {
     @if $item != $remove {
