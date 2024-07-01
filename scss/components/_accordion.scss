@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "sass:math";
 
+@use "../selector";
 @use "../utils";
 @use "../color";
 @use "../typography";
@@ -67,9 +68,15 @@ $config: (
 ///  @include ulu.component-example-styles();
 
 @mixin styles {
+  $prefix: selector.class("accordion");
+  
+  $icon-selector: "#{ $prefix }__icon";
+  $summary-selector: "#{ $prefix }__summary";
+  $content-selector: "#{ $prefix }__content";
+  $transparent-selector: "#{ $prefix }__transparent";
 
   // When not one of our custom classed details components
-  .site-details {
+  #{ $prefix } {
     position: relative; // For active border
     border-radius: 0;
     padding-left: get("padding-x");
@@ -82,14 +89,14 @@ $config: (
     &:first-of-type {
       border-top-left-radius: get("border-radius");
       border-top-right-radius: get("border-radius");
-      >summary:after {
+      >#{ $summary-selector }:after {
         top: get("border-radius");
       }
     }
     &:last-of-type {
       border-bottom-left-radius: get("border-radius");
       border-bottom-right-radius: get("border-radius");
-      >summary:after {
+      >#{ $summary-selector }:after {
         bottom: get("border-radius");
       }
     }
@@ -98,7 +105,7 @@ $config: (
       margin-top: $gap;
       margin-top: calc($gap - 1px);
     }
-    > summary {
+    > #{ $summary-selector } {
       color: get("summary-color");
       margin-left: -(get("padding-x"));
       margin-right: -(get("padding-x"));
@@ -114,7 +121,7 @@ $config: (
       }
       &:hover {
         color: get("summary-color-hover");
-        .site-details__icon {
+        #{ $icon-selector }::after {
           background-color: get("icon-background-color-hover");
           color: get("icon-color-hover");
         }
@@ -124,7 +131,7 @@ $config: (
       background-color: get("background-color-open");
       padding-bottom: get("padding-y");
       z-index: 2; // Above child details
-      > summary {
+      > #{ $summary-selector } {
         margin-bottom: get("padding-y");
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; 
@@ -132,7 +139,7 @@ $config: (
       }
     }
   }
-  .site-details__icon {
+  #{ $icon-selector } {
     flex: 0 0 get("icon-size");
     margin-left: 0.5em;
     order: 3;
@@ -159,8 +166,8 @@ $config: (
 
   // Only site-details can have icon, 
   // so that plain (no extra markup) details can have the default marker
-  .site-details {
-    > summary {
+  #{ $prefix } {
+    > #{ $summary-selector } {
       display: flex; // For icon
       align-items: flex-start;
       justify-content: space-between;
@@ -170,19 +177,19 @@ $config: (
         content: "";
       }
     }
-    &[open] > summary .site-details__icon {
+    &[open] > #{ $summary-selector } #{ $icon-selector } {
       &:after {
         content: "\2212"; // Minus
       }
     }
   }
-  .site-details--transparent {
+  #{ $transparent-selector } {
     border-left: none;
     border-right: none;
     background-color: transparent;
     padding-left: get("transparent-padding-x");
     padding-right: get("transparent-padding-x");
-    > summary {
+    > #{ $summary-selector } {
       margin-left: -(get("transparent-padding-x"));
       margin-right: -(get("transparent-padding-x"));
       padding: get("transparent-padding-y") get("transparent-padding-x");
@@ -191,7 +198,7 @@ $config: (
     }
     &[open] {
       background-color: transparent;
-      > summary {
+      > #{ $summary-selector }{
         border-bottom: none;
         margin-bottom: 0;
       }
