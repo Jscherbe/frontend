@@ -4,13 +4,14 @@ intro: Rules of rules
 layout: default
 ---
 
-## Examples
+## Rule
 
-### Default
+### Basic Rules
 
 ```html
 <div class="rule"></div>
 ```
+<div class="rule"></div>
 
 As a class styling, rules can be added with or without the \<hr> element. The chosen element should reflect whether or not a structural separation of content is needed. For example:
 ```html
@@ -23,15 +24,19 @@ As a class styling, rules can be added with or without the \<hr> element. The ch
 <div>Related to new content above</div>
 ```
 
-### Config
+<h4 class='h6'>Best Practice</h4>
+
+- If using a rule class like "rule--large", you need to precede it with the "rule" class. Use the previous example's \<hr> element for reference
+
+### Configuring Rules
 
 Use config/element.scss to set rule parameters.
 
 ```scss
 @include ulu.element-set-rule-styles((
-  "default" : 1px solid ulu.color-get("rule"),
-  "light" : 1px solid ulu.color-get("rule-light"),
-  "large" : 3px solid ulu.color-get("rule"),
+  "default" : 1px solid black, 
+  "light" : 1px gray,
+  "large" : 3px black,
   "large-x" : 4px solid ulu.color-get("rule"),
 ));
 @include ulu.element-set-rule-margins((
@@ -39,3 +44,25 @@ Use config/element.scss to set rule parameters.
   "small" : 0.6em,
 ));
 ```
+
+
+<h4 class='h6'>Best Practice</h4>
+
+- Set colors using ulu's **color-get** mixin. An example of the mixin is shown above in the "large-x" rule config above. Rule colors are set in config/color.scss.
+- For the rule styles mixin, the class will be "rule--$key". For example, "rule--light". For the rule margins mixin, the class will be "rule--margin-$key". For example, "rule--margin-large". "Default" refers to the base "rule" class, **not** the "rule-default" class.
+
+
+### Examples
+
+Base rule
+<div class="rule"></div>
+Short rule
+<div class="rule rule--short"></div>
+Large Rule
+<div class="rule rule--large"></div>
+Small Margin Rule
+<div class="rule rule--margin-small"></div>
+Large Margin Rule
+<div class="rule rule--margin-large"></div>
+Light Rule
+<div class="rule rule--light"></div>

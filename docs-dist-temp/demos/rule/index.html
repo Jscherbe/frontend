@@ -1949,14 +1949,17 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#examples">Examples</a>
+                    <li><a href="#rule">Rule</a>
             
                 <ol>
                     
-                    <li><a href="#default">Default</a>
+                    <li><a href="#basic-rules">Basic Rules</a>
             		</li>
 
-                    <li><a href="#config">Config</a>
+                    <li><a href="#configuring-rules">Configuring Rules</a>
+            		</li>
+
+                    <li><a href="#examples">Examples</a>
             		</li>
                 </ol>
             		</li>
@@ -1977,9 +1980,10 @@
 
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
-      <h2 id="examples" tabindex="-1">Examples</h2>
-<h3 id="default" tabindex="-1">Default</h3>
+      <h2 id="rule" tabindex="-1">Rule</h2>
+<h3 id="basic-rules" tabindex="-1">Basic Rules</h3>
 <pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rule<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
+<div class="rule"></div>
 <p>As a class styling, rules can be added with or without the &lt;hr&gt; element. The chosen element should reflect whether or not a structural separation of content is needed. For example:</p>
 <pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>h4</span><span class="pjs-token pjs-punctuation">></span></span>Some Content<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>h4</span><span class="pjs-token pjs-punctuation">></span></span>
 <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rule<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
@@ -1988,19 +1992,40 @@
 <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>h4</span><span class="pjs-token pjs-punctuation">></span></span>New Content<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>h4</span><span class="pjs-token pjs-punctuation">></span></span>
 <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rule<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
 <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span><span class="pjs-token pjs-punctuation">></span></span>Related to new content above<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
-<h3 id="config" tabindex="-1">Config</h3>
+<h4 class='h6'>Best Practice</h4>
+<ul>
+<li>If using a rule class like &quot;rule--large&quot;, you need to precede it with the &quot;rule&quot; class. Use the previous example's &lt;hr&gt; element for reference</li>
+</ul>
+<h3 id="configuring-rules" tabindex="-1">Configuring Rules</h3>
 <p>Use config/element.scss to set rule parameters.</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">element-set-rule-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"default"</span> <span class="pjs-token pjs-punctuation">:</span> 1px solid ulu.<span class="pjs-token pjs-function">color-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"rule"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"light"</span> <span class="pjs-token pjs-punctuation">:</span> 1px solid ulu.<span class="pjs-token pjs-function">color-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"rule-light"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"large"</span> <span class="pjs-token pjs-punctuation">:</span> 3px solid ulu.<span class="pjs-token pjs-function">color-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"rule"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"default"</span> <span class="pjs-token pjs-punctuation">:</span> 1px solid black<span class="pjs-token pjs-punctuation">,</span> 
+  <span class="pjs-token pjs-string">"light"</span> <span class="pjs-token pjs-punctuation">:</span> 1px gray<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"large"</span> <span class="pjs-token pjs-punctuation">:</span> 3px black<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"large-x"</span> <span class="pjs-token pjs-punctuation">:</span> 4px solid ulu.<span class="pjs-token pjs-function">color-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"rule"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 <span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">element-set-rule-margins</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"large-x"</span> <span class="pjs-token pjs-punctuation">:</span> 3em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> 0.6em<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-
+<h4 class='h6'>Best Practice</h4>
+<ul>
+<li>Set colors using ulu's <strong>color-get</strong> mixin. An example of the mixin is shown above in the &quot;large-x&quot; rule config above. Rule colors are set in config/color.scss.</li>
+<li>For the rule styles mixin, the class will be &quot;rule--$key&quot;. For example, &quot;rule--light&quot;. For the rule margins mixin, the class will be &quot;rule--margin-$key&quot;. For example, &quot;rule--margin-large&quot;. &quot;Default&quot; refers to the base &quot;rule&quot; class, <strong>not</strong> the &quot;rule-default&quot; class.</li>
+</ul>
+<h3 id="examples" tabindex="-1">Examples</h3>
+<p>Base rule</p>
+<div class="rule"></div>
+Short rule
+<div class="rule rule--short"></div>
+Large Rule
+<div class="rule rule--large"></div>
+Small Margin Rule
+<div class="rule rule--margin-small"></div>
+Large Margin Rule
+<div class="rule rule--margin-large"></div>
+Light Rule
+<div class="rule rule--light"></div>
     </div>
   </div>
 
