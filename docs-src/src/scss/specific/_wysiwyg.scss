@@ -13,7 +13,7 @@
     border-top: none;
     margin-bottom: 2.5em;
   }
-  details {
+  details:not(.accordion) {
     margin-bottom: 1em;
     padding: 0.5em 1em;
     background-color: ulu.color-tint(ulu.color-get("rule-light"), 50%);

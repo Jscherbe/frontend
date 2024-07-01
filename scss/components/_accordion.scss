@@ -141,8 +141,10 @@ $config: (
     }
   }
   #{ $icon-selector } {
+    // @extend .css-icon, .css-icon-angle--right;
+    // @include ulu.css-icon-styles('css-icon');
     flex: 0 0 get("icon-size");
-      color: get("icon-color");
+    color: get("icon-color");
     margin-left: 0.5em;
     order: 3;
     background-color: get("icon-background-color");

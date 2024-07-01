@@ -142,7 +142,7 @@ Prints component styles
 - **Group:** accordion
 - **Type:** mixin
 - **Lines (comments):** 66-68
-- **Lines (code):** 70-207
+- **Lines (code):** 70-209
     </details>
     
 

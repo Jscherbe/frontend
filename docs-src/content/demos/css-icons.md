@@ -20,7 +20,7 @@ intro: Basic icons that use only CSS
           <span class="css-icon css-icon--{{ name }}"></span>
         </td>
         <td class="type-small">
-          <code>css-icon css-icon-{{ name }}</code>
+          <code>css-icon css-icon--{{ name }}</code>
         </td>
       </tr>
     {% endfor %}

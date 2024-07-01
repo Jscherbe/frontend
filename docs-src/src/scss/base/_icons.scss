@@ -10,13 +10,13 @@ $fa-font-path: "/assets/fonts/fontawesome";
 
 // NOTE: We can only do this here because FontAwesome hasn't refactored for new sass
 //       so we're at the mercy of the single import since they don't have @use yet
-.accordion {
-  .accordion__icon {
-    @include fa-icon-solid($fa-var-add);
-  }
-  &[open] {
-    .accordion__icon {
-      @include fa-icon-solid($fa-var-subtract);
-    }
-  }
-}
+// .accordion {
+//   .accordion__icon {
+//     @include fa-icon-solid($fa-var-add);
+//   }
+//   &[open] {
+//     .accordion__icon {
+//       @include fa-icon-solid($fa-var-subtract);
+//     }
+//   }
+// }
