@@ -47,7 +47,7 @@
   h6 {
     @include ulu.typography-size("h6");
   }
-  img {
+  img:not(.card__image img, .card__image--icon img, .card__image-media) {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
   }

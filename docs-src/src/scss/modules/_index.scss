@@ -3,6 +3,7 @@
 
 @use "tag";
 @use "wysiwyg";
+@use "card";
 
 @include tag.set((
   "margin-x" : 0.1em,
@@ -16,4 +17,13 @@
 ), "overwrite");
 @include tag.styles();
 @include wysiwyg.styles();
+
+@include card.set((
+  "box-shadow" : 5px 5px 8px rgb(214, 207, 226),
+  "box-shadow-hover" : null,
+  "background-color" : white,
+  "background-color-hover" : white,
+  "border" : 3px solid vars.$color-violet-dark,
+));
+@include card.styles();
 

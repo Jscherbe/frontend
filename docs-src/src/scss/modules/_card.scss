@@ -13,7 +13,7 @@ $config: (
   "color-hover" : null,
   "background-color" : white,
   "background-color-hover" : white,
-  "max-width" : 28rem,
+  "max-width" : 30rem,
   "body-min-height" : 10rem,
   "border" : null,
   "border-hover" : null,
@@ -79,6 +79,7 @@ $config: (
   }
 
   .card__title {
+    z-index: 2;
     margin-bottom: get("title-margin");
     display: block;
     font-weight: get("title-font-weight");
