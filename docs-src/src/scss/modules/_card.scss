@@ -5,17 +5,20 @@ $config: (
   "image-ratio" : 56.25%,
   "padding" : 2rem,
   "margin-y" : 3rem,
-  "border-radius" : 3px,
   "horizontal-breakpoint" : "small",
   "box-shadow" : null,
   "box-shadow-hover" : null,
   "color" : null,
   "color-hover" : null,
+  "color-covered" : rgb(226, 226, 226),
+  "color-covered-hover" : null,
+  "covered-gradient" : null,
   "background-color" : white,
   "background-color-hover" : white,
   "max-width" : 30rem,
   "body-min-height" : 10rem,
   "border" : null,
+  "border-radius" : 3px,
   "border-hover" : null,
   "title-margin" : 0.75em,
   "title-font-weight" : bold,
@@ -108,7 +111,7 @@ $config: (
     border: 0;
     object-fit: cover;
   }
-  .card__image--icon {
+  .card__image-icon {
     background-color: transparent; 
     // padding: get("padding");
     padding: get("padding");
@@ -144,6 +147,25 @@ $config: (
     display: flex;
     align-items: center;
     justify-content: flex-end;
+  }
+
+  .card__covered {
+    .card__content {
+      z-index: 2;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0));
+      .card__body, .card__title, .card__footer {
+        color: get("color-covered")
+      }
+    }
+    .card__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+    }
   }
 
   // @include ulu.breakpoint-min(get("horizontal-breakpoint")) {
