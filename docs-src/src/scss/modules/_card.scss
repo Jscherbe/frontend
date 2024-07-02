@@ -111,7 +111,7 @@ $config: (
     border: 0;
     object-fit: cover;
   }
-  .card__image-icon {
+  .card__image--icon {
     background-color: transparent; 
     // padding: get("padding");
     padding: get("padding");
@@ -149,22 +149,31 @@ $config: (
     justify-content: flex-end;
   }
 
-  .card__covered {
-    .card__content {
+  .card--covered {
+    .card__body {
       z-index: 2;
       background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
-      .card__body, .card__title, .card__footer {
-        color: get("color-covered")
-      }
+      color: get("color-covered")
     }
-    .card__background {
+    .card__image {
       position: absolute;
       top: 0;
       left: 0;
+      bottom: 0;
       width: 100%;
       height: 100%;
-      border: 0;
-      object-fit: cover;
+      // z-index: 1;
+      overflow: hidden;
+      padding-top: get("image-ratio"); // 9:16
+      background-color: rgb(197, 197, 197);
+      border-radius: get("border-radius");
+      object-fit: fit;
+      img {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        object-fit: cover;
+      }
     }
   }
 

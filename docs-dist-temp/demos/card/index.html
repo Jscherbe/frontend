@@ -2007,19 +2007,73 @@
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
       <h2 id="card-defaults" tabindex="-1">Card Defaults</h2>
-<div class="card card__covered">
-  <div class="card__content">
-    <div class="card__title">Card with Image</div>
-    <div class="card__body">This is a card with an upper image using a containing div with the "card__image" class. </div>
-    <div class="card__footer">My first Card Footer</div>
+<p><span class="site-card__label">Card Label</span>
+<span class="site-card__title">Title</span></p>
+<article class="card card--covered" data-proxy-click>
+  <div class="card__body">
+    <div class="site-card__header">
+      <a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+    </div>
+    <div class="site-card__body-content">
+      This is a card with an upper image using a containing div with the "card__image" class. 
+    </div>
   </div>
-  <img class="card__background" src="/assets/placeholder/image-1.jpg" />
+  <div class="card__image site-card__image">
+    <img src="/assets/placeholder/image-1.jpg" />
+  </div>
+  <div class="card__footer">
+    My first Card Footer
+  </div>
+</article>
+<p>cardImage
+<span class="site-card__label">Card Label</span>
+<span class="site-card__title">Title</span>
+<article class="card" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
 </div>
-<p>cardImage<div class="card"><div class="card__title">Card with Image</div><div class="card__body">This is a card with an upper image using a containing div with the &quot;card__image&quot; class. </div><div class="card__footer">My first Card Footer</div><div class="card__image"><img src="/assets/placeholder/image-1.jpg" /></div></div></p>
-<p>cardIcon<div class="card"><div class="card__title">Card with Icon</div><div class="card__body">This is a card with a lower icon or image using a containing div with the &quot;</div><div class="card__footer">My first Card Footer</div><div class="card__image-icon"><img src="/assets/placeholder/image-1.jpg" /></div></div></p>
-<p>cardMedia<div class="card"><div class="card__title">My first Card</div><div class="card__body">My first Card Body</div><div class="card__footer">My first Card Footer</div><img class="card__image-media" src="/assets/placeholder/image-1.jpg" /></div></p>
-<p>cardCovered<div class="card card__covered"><div class="card__content"><div class="card__title">Card with Image</div> <div class="card__body">This is a card with an upper image using a containing div with the &quot;card__image&quot; class. </div><div class="card__footer">My first Card Footer</div></div><img class="card__background" src="/assets/placeholder/image-1.jpg" /></div></p>
-
+<div class="site-card__body-content">
+This is a card with an upper image using a containing div with the &quot;card__image&quot; class.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+<p>cardIcon
+<span class="site-card__label">Card Label</span>
+<span class="site-card__title">Title</span>
+<article class="card" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
+</div>
+<div class="site-card__body-content">
+This is a card with an upper image using a containing div with the &quot;card__image&quot; class.
+</div>
+</div>
+<div class="card__image card__image--icon site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+<p>cardCovered
+<div class="card card--covered">
+<div class="card__content">
+<div class="card__title">Card with Image</div>
+<div class="card__body">This is a card with an upper image using a containing div with the &quot;card__image&quot; class. </div>
+<div class="card__footer">My first Card Footer</div>
+</div>
+<img class="card__background" src="/assets/placeholder/image-1.jpg" />
+</div></p>
+  <!-- title can be above card or in card -->
+  <!-- there can be a label -->
     </div>
   </div>
 

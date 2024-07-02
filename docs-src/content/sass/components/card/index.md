@@ -10,63 +10,13 @@ sassdocGroupName: card
 
 
 
-## Variables
 
 
 
 
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
 
 Module Settings
     
-    
-
-``` scss
-$config: (
-  "image-ratio" : 56.25%,
-  "padding" : 2rem,
-  "margin-y" : 3rem,
-  "border-radius" : 3px,
-  "horizontal-breakpoint" : "small",
-  "box-shadow" : null,
-  "box-shadow-hover" : null,
-  "color" : null,
-  "color-hover" : null,
-  "background-color" : white,
-  "background-color-hover" : white,
-  "max-width" : 28rem,
-  "body-min-height" : 10rem,
-  "border" : null,
-  "border-hover" : null,
-  "title-margin" : 0.75em,
-  "title-font-weight" : bold,
-  "overlay-background-color-hover" : null,
-  "clickable-card-selector" : ".card[data-proxy-click]",
-  "clickable-card-interact-selector" : "&:hover, &:focus-within",
-  "footer-padding-y" : 0.25rem,
-  "footer-min-height" : 2.5rem,
-);
-```
-  
-
-    <details>
-      <summary>File Information</summary>
-- **File:** _card.scss
-- **Group:** card
-- **Type:** variable
-- **Lines (comments):** 10-11
-- **Lines (code):** 13-36
-    </details>
     
   
 
@@ -96,8 +46,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-44
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-49
     </details>
     
 
@@ -138,8 +88,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 54-56
-- **Lines (code):** 58-193
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-259
     </details>
     
 
@@ -187,8 +137,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 46-48
-- **Lines (code):** 50-52
+- **Lines (comments):** 51-53
+- **Lines (code):** 55-57
     </details>
     
 
