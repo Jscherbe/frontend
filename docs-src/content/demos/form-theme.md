@@ -4,7 +4,7 @@ intro: Settings to style your forms
   
 ---
 
-<form action="" method="get" class=" site-form ">
+<form action="" method="get" class="form-theme form-theme--full-width">
   <div class="form-example">
     <label for="name">Enter your name: </label>
     <input type="text" name="name" id="name" required />
@@ -17,3 +17,4 @@ intro: Settings to style your forms
     <input type="submit" value="Subscribe!" />
   </div>
 </form>
+

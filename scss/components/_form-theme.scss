@@ -16,9 +16,7 @@
 
 
 
-// @scherbe is this the best what to set up the class selector among multiple mixins
 $config: (
-  "class-selector"                            : "form-theme",
   "drupal"                                    : false,
   "color"                                     : inherit,
   "color-placeholder"                         : color-get("type-tertiary"),
@@ -112,7 +110,6 @@ $config: (
 /// @param {Map} $name Name of property
 ///   @include module-name.get("property");
 
-// @Scherbe is the string at the end correct
 @function get($name) {
   @return utils.require-map-get($config, $name, "component-form-theme [config]");
 }
@@ -122,7 +119,7 @@ $config: (
 }
 
 @mixin styles() {
-  $prefix: selector.class(class-selector);
+  $prefix: selector.class("form-theme");
   #{ $prefix } {
     @include form-element-styles();
   }
@@ -432,7 +429,7 @@ $config: (
 
 /// Layout styling for static/app sites
 @mixin layout-element-styles() {
-  $prefix: selector.class(class-selector);
+  $prefix: selector.class("form-theme");
   $errorColor: get("error-color");
   $selectError: get("error-selector");
   $warningColor: get("warning-color");
@@ -482,7 +479,7 @@ $config: (
 
 /// Layout styles but using drupal form structures
 @mixin drupal-layout-element-styles() {
-  $prefix: selector.class(class-selector);
+  $prefix: selector.class("form-theme");
   .form-required-character {
     @include element-required-char();
   }

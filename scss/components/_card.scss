@@ -13,7 +13,6 @@
 // 9/16
 $config: (
   "image-ratio" : 56.25%,
-  // "min-height": 10rem,
   "padding" : 2rem,
   "margin-y" : 3rem,
   "border-radius" : 5px,
@@ -26,7 +25,7 @@ $config: (
   "color-covered-hover" : null,
   "covered-background-color": rgba(0, 0, 0, 0.6),
   "background-color" : white,
-  "background-color-hover" : white,
+  "background-color-hover" : rgb(180, 180, 180),
   "max-width" : 28rem,
   "body-min-height" : 10rem,
   "border" : 3px solid rgb(60, 60, 60),
@@ -34,7 +33,7 @@ $config: (
   "title-margin" : 0.75em,
   "title-font-weight" : bold,
   "overlay-background-color-hover" : null,
-  "clickable-card-selector" : ".card[data-proxy-click]",
+  "clickable-card-selector" : ".card[data-ulu-proxy-click-init]",
   "clickable-card-interact-selector" : "&:hover, &:focus-within",
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
@@ -115,8 +114,7 @@ $config: (
   
   .card__image {
     order: -1;
-    // @scherbe- I commented this out to fix card__image--icon in the card grid
-    // flex: 0;
+    flex: 0;
     position: relative;
     z-index: 1;
     overflow: hidden;

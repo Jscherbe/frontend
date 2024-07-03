@@ -9,3 +9,4 @@ ulu.ui.tooltip.init();
 ulu.ui.tabs.init();
 ulu.ui.modalBuilder.init();
 ulu.ui.dialog.init();
+ulu.ui.proxyClick.init();

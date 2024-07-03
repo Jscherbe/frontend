@@ -46,8 +46,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-48
     </details>
     
 
@@ -88,8 +88,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-262
+- **Lines (comments):** 58-60
+- **Lines (code):** 62-260
     </details>
     
 
@@ -137,8 +137,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 50-52
+- **Lines (code):** 54-56
     </details>
     
 

@@ -9,15 +9,15 @@ import { getName } from "../events/index.js";
 import { getDatasetOptionalJson } from "../utils/dom.js";
 
 const attrs = {
-  trigger: "data-proxy-click",
-  init: "data-ulu-proxy-init",
+  trigger: "data-ulu-proxy-click",
+  init: "data-ulu-proxy-click-init",
 };
 
 const attrSelector = key => `[${ attrs[key] }]`;
 const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
 
 export const defaults = {
-  selector: "[data-proxy-click-source]",
+  selector: "[data-ulu-proxy-click-source]",
   selectorPreventBase: "input, select, textarea, button, a, [tabindex='-1']",
   selectorPrevent: "",
   mousedownDurationPrevent: 250,

@@ -36,8 +36,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 103-105
-- **Lines (code):** 107-109
+- **Lines (comments):** 101-103
+- **Lines (code):** 105-107
     </details>
     
 
@@ -55,11 +55,6 @@ Change modules $config
 
 - [$config](/sass/components/accordion/#variable-config)
   
-
-
-Get a config option
-    
-    
 
 
 <div class="sassdoc-item-header">
@@ -83,8 +78,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 395-395
-- **Lines (code):** 396-403
+- **Lines (comments):** 392-392
+- **Lines (code):** 393-400
     </details>
     
 
@@ -115,8 +110,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 405-405
-- **Lines (code):** 406-412
+- **Lines (comments):** 402-402
+- **Lines (code):** 403-409
     </details>
     
 
@@ -147,8 +142,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 414-414
-- **Lines (code):** 415-425
+- **Lines (comments):** 411-411
+- **Lines (code):** 412-422
     </details>
     
 
@@ -179,8 +174,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 427-427
-- **Lines (code):** 428-431
+- **Lines (comments):** 424-424
+- **Lines (code):** 425-428
     </details>
     
 
@@ -206,8 +201,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 433-433
-- **Lines (code):** 434-481
+- **Lines (comments):** 430-430
+- **Lines (code):** 431-478
     </details>
     
 
@@ -242,8 +237,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 483-483
-- **Lines (code):** 484-507
+- **Lines (comments):** 480-480
+- **Lines (code):** 481-504
     </details>
     
 
@@ -253,6 +248,53 @@ Layout styles but using drupal form structures
 - [element-help-text()](/sass/components/None/#mixin-element-help-text)
 - [element-form-item-block()](/sass/components/None/#mixin-element-form-item-block)
 - [element-form-actions()](/sass/components/None/#mixin-element-form-actions)
+  
+  
+
+## Functions
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  get() {#function-get}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Get a config option
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _form-theme.scss
+- **Group:** None
+- **Type:** function
+- **Lines (comments):** 109-111
+- **Lines (code):** 113-115
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`Map`|Name of property
+  @include module-name.get("property");|
+
+    
+
+#### Require
+
+- [$config](/sass/components/accordion/#variable-config)
   
   
   
