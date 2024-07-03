@@ -16,9 +16,9 @@ $config: (
   // "min-height": 10rem,
   "padding" : 2rem,
   "margin-y" : 3rem,
-  "border-radius" : 3px,
+  "border-radius" : 5px,
   "horizontal-breakpoint" : "small",
-  "box-shadow" : null,
+  "box-shadow" : 5px 5px 8px rgb(180, 180, 180),
   "box-shadow-hover" : null,
   "color" : null,
   "color-hover" : null,
@@ -29,7 +29,7 @@ $config: (
   "background-color-hover" : white,
   "max-width" : 28rem,
   "body-min-height" : 10rem,
-  "border" : null,
+  "border" : 3px solid rgb(60, 60, 60),
   "border-hover" : null,
   "title-margin" : 0.75em,
   "title-font-weight" : bold,
@@ -115,7 +115,8 @@ $config: (
   
   .card__image {
     order: -1;
-    flex: 0;
+    // @scherbe- I commented this out to fix card__image--icon in the card grid
+    // flex: 0;
     position: relative;
     z-index: 1;
     overflow: hidden;

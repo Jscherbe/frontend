@@ -334,6 +334,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/demos/tests/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Test
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/demos/tooltip/" 
           
         >
@@ -2005,16 +2024,12 @@
   </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <div class="wysiwyg">
-      <h2 id="card-defaults" tabindex="-1">Card Defaults</h2>
-<p>cardImage
-<span class="site-card__label">Card Label</span>
-<span class="site-card__title">Title</span>
-<article class="card" data-proxy-click>
+    <h2 id="card-defaults" tabindex="-1">Card Defaults</h2>
+<!-- setup for loop to give a card-grid of identical cards -->
+<h4>Default<h4>
+<p><article class="card" data-proxy-click>
 <div class="card__body">
-<div class="site-card__header">
 <a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
-</div>
 <div class="site-card__body-content">
 This is a card with an upper image using a containing div with the &quot;card__image&quot; class.
 </div>
@@ -2026,10 +2041,43 @@ This is a card with an upper image using a containing div with the &quot;card__i
 My first Card Footer
 </div>
 </article></p>
-<p>cardIcon
-<span class="site-card__label">Card Label</span>
-<span class="site-card__title">Title</span>
-<article class="card" data-proxy-click>
+<h5>Default setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card" data-proxy-click>
+<div class="card__body">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
+<div class="site-card__body-content">
+This is a card with an upper image using a containing div with the &quot;card__image&quot; class.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card" data-proxy-click>
+<div class="card__body">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
+<div class="site-card__body-content">
+This is a card with an upper image using a containing div with the &quot;card__image&quot; class.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Card with Icon<h4>
+<p><article class="card" data-proxy-click>
 <div class="card__body">
 <div class="site-card__header">
 <a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
@@ -2045,10 +2093,47 @@ This is a card with an upper image using a containing div with the &quot;card__i
 My first Card Footer
 </div>
 </article></p>
-<p>cardCovered
-<span class="site-card__label">Card Label</span>
-<div class="site-card__title">Default Covered</div>
-<article class="card card--covered" data-proxy-click>
+<h5>Card with Icon setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
+</div>
+<div class="site-card__body-content">
+This is a card with an upper image using a containing div with the &quot;card__image--icon&quot; class. This maintains the card's padding, so it will line up properly to the text.
+</div>
+</div>
+<div class="card__image card__image--icon site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with Image</a>
+</div>
+<div class="site-card__body-content">
+This is a card with an upper image using a containing div with the &quot;card__image--icon&quot; class. This maintains the card's padding, so it will line up properly to the text.
+</div>
+</div>
+<div class="card__image card__image--icon site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Card with Full Background Image<h4>
+<p><article class="card card--covered" data-proxy-click>
 <div class="card__body">
 <div class="site-card__header">
 <a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
@@ -2064,10 +2149,47 @@ Adding &quot;card--covered&quot; to the parent card to have the image cover the 
 My first Card Footer
 </div>
 </article></p>
-<p>cardCoveredNoContent
-<span class="site-card__label">Card Label</span>
-<div class="site-card__title">No Content/Paragraph</div>
-<article class="card card--covered" data-proxy-click>
+<h5>Card with Full Background Image setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Covered Card without Body Content<h4>
+<p><article class="card card--covered" data-proxy-click>
 <div class="card__body">
 <div class="site-card__header">
 <a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
@@ -2080,10 +2202,41 @@ My first Card Footer
 My first Card Footer
 </div>
 </article></p>
-<p>cardCoveredNoTitle
-<span class="site-card__label">Card Label</span>
-<div class="site-card__title">No Title</div>
-<article class="card card--covered" data-proxy-click>
+<h5>Covered Card without Body Content setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Covered Card without Title<h4>
+<p><article class="card card--covered" data-proxy-click>
 <div class="card__body">
 <div class="site-card__body-content">
 Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
@@ -2096,52 +2249,15 @@ Adding &quot;card--covered&quot; to the parent card to have the image cover the 
 My first Card Footer
 </div>
 </article></p>
-<p>cardCoveredNoFoot
-<span class="site-card__label">Card Label</span>
-<div class="site-card__title">No Footer</div>
-<article class="card card--covered" data-proxy-click>
-<div class="card__body">
-<div class="site-card__header">
-<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
-</div>
-<div class="site-card__body-content">
-Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-</div>
-</div>
-<div class="card__image site-card__image">
-<img src="/assets/placeholder/image-1.jpg" />
-</div>
-</article></p>
-<p>cardCoveredOnlyTitle
-<span class="site-card__label">Card Label</span>
-<div class="site-card__title">Only Title</div>
-<article class="card card--covered" data-proxy-click>
-<div class="card__body">
-<div class="site-card__header">
-<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
-</div>
-</div>
-<div class="card__image site-card__image">
-<img src="/assets/placeholder/image-1.jpg" />
-</div>
-</article></p>
-<p>cardCoveredOnlyBody
-<span class="site-card__label">Card Label</span>
-<div class="site-card__title">Only Body</div>
-<article class="card card--covered" data-proxy-click>
+<h5>Covered Card without Title setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
 <div class="card__body">
 <div class="site-card__body-content">
 Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
 </div>
 </div>
-<div class="card__image site-card__image">
-<img src="/assets/placeholder/image-1.jpg" />
-</div>
-</article></p>
-<p>cardCoveredOnlyFooter
-<span class="site-card__label hidden-visual">Card Label</span>
-<div class="site-card__title">Only Footer</div>
-<article class="card card--covered" data-proxy-click>
 <div class="card__image site-card__image">
 <img src="/assets/placeholder/image-1.jpg" />
 </div>
@@ -2149,9 +2265,180 @@ Adding &quot;card--covered&quot; to the parent card to have the image cover the 
 My first Card Footer
 </div>
 </article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Covered Card without Footer<h4>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+<h5>Covered Card without Footer setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Covered Card with only Title<h4>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+<h5>Covered Card with only Title setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__header">
+<a class="site-card__link card__title" href="#" data-proxy-click-source="">Card with background image</a>
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Covered Card with only Body<h4>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+<h5>Covered Card with only Body setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__body">
+<div class="site-card__body-content">
+Adding &quot;card--covered&quot; to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+</div>
+</div>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+</article></p>
+  </li>
+</ul>
+<h4>Covered Card with only Footer<h4>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+<h5>Covered Card with only Footer setup using card-grid<h5>
+<ul class="card-grid">
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+  <li>
+<p><article class="card card--covered" data-proxy-click>
+<div class="card__image site-card__image">
+<img src="/assets/placeholder/image-1.jpg" />
+</div>
+<div class="card__footer">
+My first Card Footer
+</div>
+</article></p>
+  </li>
+</ul>
   <!-- title can be above card or in card -->
   <!-- there can be a label -->
-    </div>
   </div>
 
 		</main>
