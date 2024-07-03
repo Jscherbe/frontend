@@ -176,6 +176,7 @@ $config: (
   // body + footer {
   // means body keeps before psuedo element while footer loses it
   .card--covered {
+    min-height: 10rem;
     // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
     .card__body {
       position: relative;
@@ -183,6 +184,7 @@ $config: (
       z-index: 2;
       color: get("color-covered");
       background-color: get("covered-background-color");
+      min-height: 0;
       &::before {
         content: "";
         position: absolute;

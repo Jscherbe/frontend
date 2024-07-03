@@ -89,7 +89,7 @@ Prints component styles
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 59-61
-- **Lines (code):** 63-259
+- **Lines (code):** 63-261
     </details>
     
 
