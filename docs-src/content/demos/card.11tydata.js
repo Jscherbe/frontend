@@ -40,7 +40,7 @@ export default {
       </article>`,
     cardCovered: `
       <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <div class="site-card__title">Default Covered</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__body">
           <div class="site-card__header">
@@ -59,7 +59,7 @@ export default {
       </article>`,
     cardCoveredNoContent: `
       <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <div class="site-card__title">No Content/Paragraph</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__body">
           <div class="site-card__header">
@@ -75,7 +75,7 @@ export default {
       </article>`,
     cardCoveredNoTitle: `
       <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <div class="site-card__title">No Title</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__body">
           <div class="site-card__body-content">
@@ -91,7 +91,7 @@ export default {
       </article>`,
     cardCoveredNoFoot: `
       <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <div class="site-card__title">No Footer</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__body">
           <div class="site-card__header">
@@ -107,7 +107,7 @@ export default {
       </article>`,
     cardCoveredOnlyTitle: `
       <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <div class="site-card__title">Only Title</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__body">
           <div class="site-card__header">
@@ -120,7 +120,7 @@ export default {
       </article>`,
     cardCoveredOnlyBody: `
       <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <div class="site-card__title">Only Body</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__body">
           <div class="site-card__body-content">
@@ -132,8 +132,8 @@ export default {
         </div>
       </article>`,
     cardCoveredOnlyFooter: `
-      <span class="site-card__label">Card Label</span>
-      <span class="site-card__title">Title</span>
+      <span class="site-card__label hidden-visual">Card Label</span>
+      <div class="site-card__title">Only Footer</div>
       <article class="card card--covered" data-proxy-click>
         <div class="card__image site-card__image">
           <img src="/assets/placeholder/image-1.jpg" />
