@@ -1,22 +1,22 @@
 @use "vars";
 @use "ulu";
 
-// @use "tag";
+@use "tag";
 @use "wysiwyg";
 // @use "card";
 
-// @include tag.set((
-//   "margin-x" : 0.1em,
-// ));
-// @include tag.set-styles((
-//   "primary" : (
-//     "color" : white,
-//     "background-color" : vars.$color-violet,
-//     "border-color" : vars.$color-violet-dark
-//   ),
-// ), "overwrite");
-// @include tag.styles();
-// @include wysiwyg.styles();
+@include tag.set((
+  "margin-x" : 0.1em,
+));
+@include tag.set-styles((
+  "primary" : (
+    "color" : white,
+    "background-color" : vars.$color-violet,
+    "border-color" : vars.$color-violet-dark
+  ),
+), "overwrite");
+@include tag.styles();
+@include wysiwyg.styles();
 
 // @include card.set((
 //   "box-shadow" : 5px 5px 8px rgb(214, 207, 226),
