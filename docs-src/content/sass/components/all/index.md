@@ -56,6 +56,7 @@ $all-includes: (
   "overlay-section",
   "adaptive-spacing",
   "pager",
+  "form-theme",
 );
 ```
   
@@ -65,8 +66,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 56-57
-- **Lines (code):** 59-83
+- **Lines (comments):** 58-59
+- **Lines (code):** 61-86
     </details>
     
 
@@ -97,8 +98,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 85-86
-- **Lines (code):** 88-88
+- **Lines (comments):** 88-89
+- **Lines (code):** 91-91
     </details>
     
   
@@ -130,8 +131,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-97
+- **Lines (comments):** 93-95
+- **Lines (code):** 97-100
     </details>
     
 
@@ -172,8 +173,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 99-100
-- **Lines (code):** 102-104
+- **Lines (comments):** 102-103
+- **Lines (code):** 105-107
     </details>
     
 
@@ -213,8 +214,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 106-110
-- **Lines (code):** 112-186
+- **Lines (comments):** 109-113
+- **Lines (code):** 115-192
     </details>
     
 

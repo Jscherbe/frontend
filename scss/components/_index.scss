@@ -25,6 +25,7 @@
 @forward "adaptive-spacing" as adaptive-spacing-*;
 @forward "overlay-section" as overlay-section-*;
 @forward "pager" as pager-*;
+@forward "form-theme" as form-theme-*;
 
 @use "sass:list";
 
@@ -52,6 +53,7 @@
 @use "overlay-section";
 @use "adaptive-spacing";
 @use "pager";
+@use "form-theme";
 
 /// Default includes, all modules
 /// @type List
@@ -80,6 +82,7 @@ $all-includes: (
   "overlay-section",
   "adaptive-spacing",
   "pager",
+  "form-theme",
 );
 
 /// Current included modules (for output when using styles), defaults to all
@@ -182,5 +185,8 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "pager")) {
     @include pager.styles;
+  }
+  @if (list.index($includes, "form-theme")) {
+    @include form-theme.styles;
   }
 }

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Utilities
+    Form Theme
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -235,12 +235,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/form-theme/" 
-          
+          aria-current="page"
         >
           
     
@@ -392,10 +392,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -415,10 +415,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -1424,10 +1424,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1445,10 +1445,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/helpers/" 
           
         >
@@ -1578,12 +1578,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/helpers/utilities/" 
-          aria-current="page"
+          
         >
           
     
@@ -2040,20 +2040,7 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>On this page</h2>
-<div class="toc">
-                <ol>
-                    
-                    <li><a href="#mixins">Mixins</a>
-            
-                <ol>
-                    
-                    <li><a href="#mixin-styles">styles()</a>
-            		</li>
-                </ol>
-            		</li>
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
@@ -2061,33 +2048,26 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Utilities</h1>
+    <h1 class="page__title h1">Form Theme</h1>
+
+  <p class="type-large type-light">
+    Settings to style your forms
+  </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <div class="wysiwyg">
-      <h1 id="utilities" tabindex="-1">Utilities</h1>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
+    <form action="" method="get" class=" site-form ">
+  <div class="form-example">
+    <label for="name">Enter your name: </label>
+    <input type="text" name="name" id="name" required />
   </div>
-</div>
-<p>Print utilities helper styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _utilities.scss</li>
-<li><strong>Group:</strong> utilities</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 9-11</li>
-<li><strong>Lines (code):</strong> 13-110  </details>
-</li>
-</ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">helper-utilities-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-
-    </div>
+  <div class="form-example">
+    <label for="email">Enter your email: </label>
+    <input type="email" name="email" id="email" required />
+  </div>
+  <div class="form-example">
+    <input type="submit" value="Subscribe!" />
+  </div>
+</form>
   </div>
 
 		</main>

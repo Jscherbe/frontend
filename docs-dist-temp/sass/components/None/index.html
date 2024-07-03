@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Utilities
+    None
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -923,10 +923,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -944,10 +944,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/sass/components/" 
           
         >
@@ -1305,12 +1305,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/sass/components/None/" 
-          
+          aria-current="page"
         >
           
     
@@ -1424,10 +1424,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1445,10 +1445,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/helpers/" 
           
         >
@@ -1578,12 +1578,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/helpers/utilities/" 
-          aria-current="page"
+          
         >
           
     
@@ -2048,7 +2048,25 @@
             
                 <ol>
                     
-                    <li><a href="#mixin-styles">styles()</a>
+                    <li><a href="#mixin-set">set()</a>
+            		</li>
+
+                    <li><a href="#mixin-element-required-char">element-required-char()</a>
+            		</li>
+
+                    <li><a href="#mixin-element-help-text">element-help-text()</a>
+            		</li>
+
+                    <li><a href="#mixin-element-form-item-block">element-form-item-block()</a>
+            		</li>
+
+                    <li><a href="#mixin-element-form-actions">element-form-actions()</a>
+            		</li>
+
+                    <li><a href="#mixin-layout-element-styles">layout-element-styles()</a>
+            		</li>
+
+                    <li><a href="#mixin-drupal-layout-element-styles">drupal-layout-element-styles()</a>
             		</li>
                 </ol>
             		</li>
@@ -2061,31 +2079,185 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Utilities</h1>
+    <h1 class="page__title h1">None</h1>
 
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
-      <h1 id="utilities" tabindex="-1">Utilities</h1>
+      <h1 id="none" tabindex="-1">None</h1>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+<h3 id="mixin-set" tabindex="-1">set()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Print utilities helper styles</p>
+<p>Change modules $config</p>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
-<li><strong>File:</strong> _utilities.scss</li>
-<li><strong>Group:</strong> utilities</li>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 9-11</li>
-<li><strong>Lines (code):</strong> 13-110  </details>
+<li><strong>Lines (comments):</strong> 103-105</li>
+<li><strong>Lines (code):</strong> 107-109  </details>
 </li>
 </ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">helper-utilities-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+<tr>
+<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
+<p>Get a config option</p>
+<div class="sassdoc-item-header">
+<h3 id="mixin-element-required-char" tabindex="-1">element-required-char()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Required Character styles (ie. &quot;*&quot;)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 395-395</li>
+<li><strong>Lines (code):</strong> 396-403  </details>
+</li>
+</ul>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-element-help-text" tabindex="-1">element-help-text()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Help text / Description</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 405-405</li>
+<li><strong>Lines (code):</strong> 406-412  </details>
+</li>
+</ul>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-element-form-item-block" tabindex="-1">element-form-item-block()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Styles for form item that should have label as block and text input</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 414-414</li>
+<li><strong>Lines (code):</strong> 415-425  </details>
+</li>
+</ul>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-element-form-actions" tabindex="-1">element-form-actions()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Footer of form (with button for example)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 427-427</li>
+<li><strong>Lines (code):</strong> 428-431  </details>
+</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-layout-element-styles" tabindex="-1">layout-element-styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Layout styling for static/app sites</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 433-433</li>
+<li><strong>Lines (code):</strong> 434-481  </details>
+</li>
+</ul>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/None/#mixin-element-required-char">element-required-char()</a></li>
+<li><a href="/sass/components/None/#mixin-element-help-text">element-help-text()</a></li>
+<li><a href="/sass/components/None/#mixin-element-form-item-block">element-form-item-block()</a></li>
+<li><a href="/sass/components/None/#mixin-element-form-actions">element-form-actions()</a></li>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-drupal-layout-element-styles" tabindex="-1">drupal-layout-element-styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Layout styles but using drupal form structures</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _form-theme.scss</li>
+<li><strong>Group:</strong> None</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 483-483</li>
+<li><strong>Lines (code):</strong> 484-507  </details>
+</li>
+</ul>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/None/#mixin-element-required-char">element-required-char()</a></li>
+<li><a href="/sass/components/None/#mixin-element-help-text">element-help-text()</a></li>
+<li><a href="/sass/components/None/#mixin-element-form-item-block">element-form-item-block()</a></li>
+<li><a href="/sass/components/None/#mixin-element-form-actions">element-form-actions()</a></li>
+</ul>
 
     </div>
   </div>

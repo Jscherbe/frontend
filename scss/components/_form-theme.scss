@@ -1,0 +1,523 @@
+// Version: 1.0.3
+
+// Changes: 
+//                  1.0.3 - Merged drupal selectors, broke into mixins
+//                  1.0.2 - Removed nested fieldset option (not accessible)
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "sass:list";
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../element";
+@use "../typography";
+
+
+
+// @scherbe is this the best what to set up the class selector among multiple mixins
+$config: (
+  "class-selector"                            : "form-theme",
+  "drupal"                                    : false,
+  "color"                                     : inherit,
+  "color-placeholder"                         : color-get("type-tertiary"),
+  "font-weight-label"                         : bold,
+  "font-weight-legend"                        : bold,
+  "font-weight-placeholder"                   : normal,
+  "font-weight-input"                         : null,
+  "font-weight-textarea"                      : null,
+  "font-weight-select"                        : null,
+  "required-color"                            : color-get("error"),
+  "error-color"                               : color-get("error"),
+  "warning-color"                             : color-get("warning"),
+  "error-highlight-color"                     : rgb(251, 242, 242),
+  "warning-highlight-color"                   : rgb(255, 249, 237),
+  "item-border-radius"                        : null,
+  "item-highlight-width"                      : 6px,
+  "input-margin-y"                            : 0.75em,
+  "input-padding-x"                           : 0.5em,
+  "input-padding-y"                           : 0.25em,
+  "input-min-width"                           : 10em,
+  "input-background-color"                    : white,
+  "input-border"                              : element-get-rule-style(),
+  "input-border-radius"                       : 0,
+  "check-input-size"                          : 1.15em,
+  "check-input-touch-size"                    : 2em,
+  "check-input-color"                         : currentColor,
+  "check-input-background-color"              : white,
+  "check-input-background-color-checked"      : white,
+  "check-input-background-color-hover"        : white,
+  "check-input-background-color-indeterminate": white,
+  "check-input-border"                        : null,
+  "check-input-border-color-hover"            : null,
+  "check-input-border-color-checked"          : null,
+  "check-input-border-color-indeterminate"    : null,
+  "check-input-border-color-focus"            : null,
+  "check-input-outline"                       : null,
+  "check-input-outline-hover"                 : null,
+  "check-input-outline-checked"               : null,
+  "check-input-outline-focus"                 : 1px solid white,
+  "check-input-touch-color-hover"             : #e8e8e8,
+  "check-input-touch-color-focus"             : null,
+  "check-input-radio-size"                    : 0.3em,
+  "check-input-checkmark-width"               : 0.38em,
+  "check-input-checkmark-height"              : 0.68em,
+  "check-input-checkmark-offset-y"            : -0.2em,
+  "check-input-checkmark-stroke-size"         : 0.18em,
+  "check-input-mark-color"                    : currentColor,
+  "check-input-mark-color-hover"              : null,
+  "check-input-mark-color-focus"              : null,
+  "check-input-mark-color-checked"            : null,
+  "check-input-mark-color-indeterminate"      : null,
+  "check-input-disabled-opacity"              : 0.6,
+  "check-input-border-radius"                 : null,
+  "text-input-margin-bottom"                  : 0.5em,
+  "text-input-margin-top"                     : 1em,
+  "select-border-radius"                      : 4px,
+  "select-background-color"                   : null,
+  "select-border"                             : null,
+  "select-padding-x"                          : null,
+  "select-padding-y"                          : null,
+  "select-image"                              : null,
+  "select-image-size"                         : 0.9em,
+  "select-image-offset"                       : 0.7em,
+  "select-image-margin"                       : 0.65em,
+  "fieldset-background"                       : transparent,
+  "fieldset-border"                           : none,
+  "fieldset-margin-bottom"                    : 1rem,
+  "fieldset-margin-top"                       : 1rem,
+  "fieldset-padding"                          : 0,
+  "fieldset-margin-compact"                   : 0,
+  "fieldset-border-radius"                    : 0,
+  "fieldset-legend-color"                     : inherit,
+  "fieldset-legend-border-bottom"             : null,
+  "description-max-width"                     : 25em,
+  "description-color"                         : false,
+  "description-margin"                        : (0.25em 0),
+  "error-selector"                            : ".is-danger",
+  "warning-selector"                          : ".is-warning",
+  "file-button-style"                         : true
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+// @Scherbe is the string at the end correct
+@function get($name) {
+  @return utils.require-map-get($config, $name, "component-form-theme [config]");
+}
+
+@function -fallback($op1, $op2) {
+  @return utils.map-fallback($config, $op1, $op2);
+}
+
+@mixin styles() {
+  $prefix: selector.class(class-selector);
+  #{ $prefix } {
+    @include form-element-styles();
+  }
+  #{ $prefix }--full-width {
+    [type="text"],
+    [type="email"],
+    [type="password"] {
+      width: 100%;
+    }
+    textarea {
+      width: 100%;
+    }
+  }
+  #{ $prefix }--hide-labels {
+    label {
+      @include element.hidden-visually();
+    }
+  }
+  @if (get("drupal")) {
+    @include drupal-layout-element-styles();
+  } @else {
+    @include layout-element-styles();
+  }
+}
+
+@mixin form-element-styles() {
+  $errorColor: get("error-color");
+  $selectError: get("error-selector");
+  $warningColor: get("warning-color");
+  $selectWarning: get("warning-selector");
+  $input-touch-size: get("check-input-touch-size");
+  $input-size: get("check-input-size");
+  $input-touch-margin: math.div($input-touch-size - $input-size, 2);
+  $input-touch-margin-neg: -($input-touch-margin);
+  $file-button-style: get("file-button-style");
+
+  input:not([type="submit"]),
+  select,
+  textarea,
+  label,
+  legend {
+    color: get("color");
+    font-size: 1em;
+    max-width: 100%;
+    line-height: typography.get("line-height-dense");
+    box-sizing: border-box;
+    flex-shrink: 0;
+    &::placeholder {
+      color: get("color-placeholder");
+      font-weight: get("font-weight-placeholder");
+    }
+  }
+  input:not([type="submit"]) {
+    font-weight: get("font-weight-input");
+  }
+  textarea {
+    font-weight: get("font-weight-textarea");
+  }
+  select,
+  textarea,
+  [type="text"],
+  [type="tel"],
+  [type="time"],
+  [type="url"],
+  [type="date"],
+  [type="email"],
+  [type="month"],
+  [type="week"],
+  [type="number"],
+  [type="search"],
+  [type="datetime-local"],
+  [type="password"],
+  [type="file"] {
+    padding: get("input-padding-y") get("input-padding-x");
+    background-color: get("input-background-color");
+    border-radius: get("input-border-radius");
+    transition: border linear 0.2s;
+    border: get("input-border");
+    min-width: get("input-min-width");
+    margin: 0;
+    // &:focus {
+      // outline: none;
+      // border: 1px solid color-get("focus");
+      // box-shadow: element-get("box-shadow");
+    // }
+  }
+  select {
+    font-weight: get("font-weight-select");
+    border: get("select-border");
+    border-radius: get("select-border-radius");
+    background-color: get("select-background-color");
+    padding: -fallback("select-padding-y", "input-padding-y") -fallback("select-padding-x", "input-padding-x");
+    border: -fallback("select-border", "input-border");
+    @if get("select-image") {
+      // Hide default arrow and extend padding so text doesn't overlap the icon
+      appearance: none; 
+      background-image: url(get("select-image"));
+      background-repeat: no-repeat;
+      background-position: center right get("select-image-offset");
+      background-size: get("select-image-size");
+      padding-right: get("select-image-offset") + get("select-image-size") + get("select-image-margin"); 
+    }
+  }
+  // Replace Native Inputs with CSS styled one
+  [type="checkbox"],
+  [type="radio"] {
+    appearance: none;
+    margin: 0;
+    display: inline-block;
+    width: $input-touch-size; // Touchable surface
+    height: $input-touch-size;
+    margin: $input-touch-margin-neg 0 $input-touch-margin-neg $input-touch-margin-neg; // Optical alignment
+    padding: 0.5em;
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background-color 220ms ease-in-out;
+    flex: 0 0 $input-touch-size; // When used in flex container
+    // Box / Circle (centered absolute)
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: $input-size;
+      height: $input-size;
+      outline: get("check-input-outline");
+      border: -fallback("check-input-border", "input-border");
+      border-radius: 50%;
+      transition-timing-function: ease-out;
+      transition-duration: 150ms;
+      transition-property: background-color, border-color;
+      background-color: -fallback("check-input-background-color", "input-background-color");
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    // Checkmark/ radio
+    &:after {
+      content: '';
+      display: block;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: rotate(45deg);
+      transition: opacity ease-out 150ms;
+      border: get("check-input-radio-size") solid get("check-input-mark-color");
+      border-radius: 50%;
+    }
+    &:focus {
+      background-color: get("check-input-touch-color-focus");
+      &:before {
+        border-color: get("check-input-border-color-focus");
+        outline: get("check-input-outline-focus");
+      }
+      &:after {
+        border-color: get("check-input-mark-color-focus");
+      }
+    }
+    &:hover {
+      background-color: get("check-input-touch-color-hover");
+      &:before {
+        outline: get("check-input-outline-hover");
+        background-color: get("check-input-background-color-hover");
+        border-color: get("check-input-border-color-hover");
+      }
+      &:after {
+        border-color: get("check-input-mark-color-hover");
+      }
+    }
+    &:checked {
+      &:before {
+        background-color: get("check-input-background-color-checked");
+        border-color: get("check-input-border-color-checked");
+        outline: get("check-input-outline-checked");
+      }
+      &:after {
+        opacity: 1;
+        border-color: get("check-input-mark-color-checked");
+      }
+    }
+    
+    &:disabled,
+    &[aria-disabled="true"],
+    &[disabled] {
+      &,
+      & + label  {
+        opacity: get("check-input-disabled-opacity");
+      }
+    }
+  }
+  [type="checkbox"] {
+    &:before {
+      border-radius: -fallback("check-input-border-radius", "input-border-radius");
+    }
+    &:after {
+      border-radius: 0;
+      width: get("check-input-checkmark-width");
+      height: get("check-input-checkmark-height");
+      transform: rotate(45deg);
+      margin-top: get("check-input-checkmark-offset-y");
+      border-top: none;
+      border-left: none;
+      border-bottom-width: get("check-input-checkmark-stroke-size");
+      border-right-width: get("check-input-checkmark-stroke-size");
+    }
+    &:indeterminate,
+    &[aria-checked=mixed] {
+      &:before {
+        background-color: get("check-input-background-color-indeterminate");
+        border-color: get("check-input-border-color-indeterminate");
+      }
+      &:after {
+        border-right: none;
+        transform: translatey(50%);
+        opacity: 1;
+        height: get("check-input-checkmark-stroke-size");
+        border-color: get("check-input-mark-color-indeterminate");
+      }
+    }
+  }
+
+  fieldset {
+    display: block;
+    width: 0;
+    min-width: 100%;
+    box-sizing: border-box;
+    margin-top: get("fieldset-margin-top");
+    margin-bottom: get("fieldset-margin-bottom");
+    border: get("fieldset-border");
+    background-color: get("fieldset-background");
+    border-radius: get("fieldset-border-radius");
+    padding: get("fieldset-padding");
+    
+    > legend {
+      font-weight: get("font-weight-legend");
+      display: block;
+      margin: 0 0 0.5em 0;
+      border: 0;
+      padding: 0;
+      width: 100%;
+      float: left;
+      > span {
+        display: block;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        border-bottom: get("fieldset-legend-border-bottom");
+        color: get("fieldset-legend-color");
+      }
+      & ~ * {
+        clear: left;
+      }
+    }
+    &#{ $selectError } {
+      > legend {
+        color: $errorColor;
+      }
+    }
+    &#{ $selectWarning } {
+      > legend {
+        color: $warningColor;
+      }
+    }
+  }
+}
+
+/// Required Character styles (ie. "*")
+@mixin element-required-char() {
+  color: get("required-color");
+  font-size: 110%;
+  font-weight: bold;
+  &:last-child {
+    margin-left: 0.15em;
+  }
+}
+
+/// Help text / Description
+@mixin element-help-text() {
+  margin: get("description-margin");
+  font-style: italic;
+  @include typography.size("small", null, true);
+  max-width: get("description-max-width");
+  color: get("description-color");
+}
+
+/// Styles for form item that should have label as block and text input
+@mixin element-form-item-block() {
+  label {
+    font-weight: get("font-weight-label");
+    display: block;
+    margin-bottom: get("text-input-margin-bottom");
+    margin-top: get("text-input-margin-top");
+  }
+  input {
+    border-radius: get("input-border-radius");
+  }
+}
+
+/// Footer of form (with button for example)
+@mixin element-form-actions() {
+  display: flex;
+  margin: 1rem 0;
+}
+
+/// Layout styling for static/app sites
+@mixin layout-element-styles() {
+  $prefix: selector.class(class-selector);
+  $errorColor: get("error-color");
+  $selectError: get("error-selector");
+  $warningColor: get("warning-color");
+  $selectWarning: get("warning-selector");
+
+  #{ $prefix }__required-char {
+    @include element-required-char();
+  }
+  #{ $prefix }__description {
+    @include element-help-text();
+  }
+  #{ $prefix }__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: get("input-margin-y");
+    border-radius: get("item-border-radius");
+    flex-shrink: 0; // Cannot be smaller than content within
+    @include -form-item-state($selectError, $errorColor, get("error-highlight-color"));
+    @include -form-item-state($selectWarning, $warningColor, get("warning-highlight-color"));
+  }
+  #{ $prefix }__item--align-top {
+    align-items: flex-start;
+  }
+  #{ $prefix }__item--text,
+  #{ $prefix }__item--file,
+  #{ $prefix }__item--select,
+  #{ $prefix }__item--textarea {
+    @include element-form-item-block();
+  }
+  #{ $prefix }__items-inline {
+    display: flex;
+    flex-wrap: wrap;
+    > #{ $prefix }__item {
+      margin-right: 1.5em;
+    }
+  }
+  #{ $prefix }__actions {
+    @include element-form-actions();
+  }
+  #{ $prefix }__error {
+    color: $errorColor;
+  }
+  #{ $prefix }__warning {
+    color: $warningColor;
+  }
+}
+
+/// Layout styles but using drupal form structures
+@mixin drupal-layout-element-styles() {
+  $prefix: selector.class(class-selector);
+  .form-required-character {
+    @include element-required-char();
+  }
+  .description {
+    @include element-help-text();
+  }
+  .form-item:not(fieldset) {
+    margin-bottom: 1rem;
+  }
+  [class*="form-type-textarea"],
+  [class*="form-type-password"],
+  [class*="form-type-email"],
+  [class*="form-type-tel"],
+  [class*="form-type-number"],
+  [class*="form-type-select"],
+  [class*="form-type-textfield"] {
+    @include element-form-item-block();
+  }
+  #{ $prefix } .form-actions {
+    @include element-form-actions();
+  }
+} 
+
+@mixin -form-item-state($selector, $color, $highlightColor) {
+  &#{ $selector } {
+    background-color: $highlightColor;
+    // outline: get("item-outline-width") solid $highlightColor;
+    box-shadow: 0 0 0 get("item-highlight-width") $highlightColor;
+    label {
+      color: $color;
+    }
+    select,
+    textarea,
+    input:not([type="checkbox"]):not([type="radio"]) {
+      border-color: $color;
+    }
+  }
+}
