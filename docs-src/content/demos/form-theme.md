@@ -3,6 +3,17 @@ title: Form Theme
 intro: Settings to style your forms
   
 ---
+
+# Form Theme
+
+Styles given to the \<form> element and all of it's child elements. 
+
+```html
+  <form action="" method="get" class="form-theme">
+```
+
+## 
+
 ### Default Form
 
 <form action="" method="get" class="form-theme">
