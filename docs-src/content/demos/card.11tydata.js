@@ -5,12 +5,12 @@ const cardTypes= {
       `
         <article class="card" data-ulu-proxy-click>
           <div class="card__body">
-              <a class="site-card__link card__title" href="https://www.google.com" data-ulu-proxy-click-source="">Card with Image</a>
-            <div class="site-card__body-content">
+              <a class="card__title" href="https://www.google.com" data-ulu-proxy-click-source="">Card with Image</a>
+            <p>
               This is a card with an upper image using a containing div with the "card__image" class. 
-            </div>
+            </p>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
           <div class="card__footer">
@@ -25,14 +25,12 @@ const cardTypes= {
       `
         <article class="card" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__header">
-              <a class="site-card__link card__title" href="#" data-ulu-proxy-click-source="">Card with Image</a>
-            </div>
-            <div class="site-card__body-content">
+            <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with Image</a>
+            <p>
               This is a card with an upper image using a containing div with the "card__image--icon" class. This maintains the card's padding, so it will line up properly to the text.
-            </div>
+            </p>
           </div>
-          <div class="card__image card__image--icon site-card__image">
+          <div class="card__image card__image--icon">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
           <div class="card__footer">
@@ -47,14 +45,12 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__header">
-              <a class="site-card__link card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
-            </div>
-            <div class="site-card__body-content">
+            <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            <p>
               Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </div>
+            </p>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
           <div class="card__footer">
@@ -69,11 +65,9 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__header">
-              <a class="site-card__link card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
-            </div>
+              <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
           <div class="card__footer">
@@ -88,11 +82,11 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__body-content">
+            <p>
               Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </div>
+            </p>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
           <div class="card__footer">
@@ -106,14 +100,12 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__header">
-              <a class="site-card__link card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
-            </div>
-            <div class="site-card__body-content">
+            <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            <p>
               Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </div>
+            </p>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
         </article>
@@ -125,11 +117,9 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__header">
-              <a class="site-card__link card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
-            </div>
+              <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
         </article>
@@ -141,11 +131,11 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <div class="site-card__body-content">
+            <p>
               Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </div>
+            </p>
           </div>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
         </article>
@@ -156,7 +146,7 @@ const cardTypes= {
     content: 
       `
         <article class="card card--covered" data-ulu-proxy-click>
-          <div class="card__image site-card__image">
+          <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>
           <div class="card__footer">
