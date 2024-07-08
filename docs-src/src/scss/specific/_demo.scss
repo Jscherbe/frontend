@@ -11,6 +11,17 @@
 // (like an example or demo), please create unique components for those in ../components.
 // These styles should be just for demonstrating something visually
 
+.demo-grid__container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px dashed vars.$color-blue;
+}
+
 .demo-grid {
-  
+  .demo-grid__cell {
+    border: 1px solid vars.$color-violet-light;
+  }
+  .demo-grid__content{
+    background-color: vars.$color-violet-light-x;
+  }
 }

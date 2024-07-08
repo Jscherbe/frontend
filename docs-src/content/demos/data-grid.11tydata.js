@@ -1,4 +1,47 @@
+
+const gridTemplate =[
+  {
+    value:
+    `
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 6
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+      `
+  }
+]
+const gridTemplateShort =`
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+`
+
 export default {
+  gridTemplate,
+  gridTemplateShort,
   gridAttr: [
     {
       name: "columns",

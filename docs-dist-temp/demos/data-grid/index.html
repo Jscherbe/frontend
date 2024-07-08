@@ -2044,7 +2044,22 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#basic-example">Basic Example</a>
+                    <li><a href="#examples">Examples</a>
+            
+                <ol>
+                    
+                    <li><a href="#default-grid">Default Grid</a>
+            		</li>
+
+                    <li><a href="#justify-content">Justify Content</a>
+            		</li>
+
+                    <li><a href="#align">Align</a>
+            		</li>
+
+                    <li><a href="#gutters">gutters</a>
+            		</li>
+                </ol>
             		</li>
 
                     <li><a href="#options">Options</a>
@@ -2067,11 +2082,218 @@
 <hr class="rule rule--light rule--margin-large">
     <p>The grid is for page layout, it provides different column sizes at each of the configured breakpoints.
 On the smallest size the grid columns will span 100%. The grid is setup using two attributes, data-grid=&quot;&quot; for the parent grid container and data-grid-item=&quot;&quot; for each grid column. The grid uses a script to set position classes, which are used for rule placement since the grid and reflow at different breakpoints.</p>
-<h2 id="basic-example" tabindex="-1">Basic Example</h2>
-<div data-grid="columns: 12">
-  <div data-grid-item="width: 6">Width of 6</div>
-  <div data-grid-item="width: 3">Width of 3</div>
-  <div data-grid-item="width: 3">Width of 3</div>
+<h2 id="examples" tabindex="-1">Examples</h2>
+<h3 id="default-grid" tabindex="-1">Default Grid</h3>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+<div data-grid-item="width: 6" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 6
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+  </div>
+</div>
+<h3 id="justify-content" tabindex="-1">Justify Content</h3>
+<p>Allows you to justify the columns (horizontal alignment). The default is start (left aligned)</p>
+<h4 id="default-(justify-start)" tabindex="-1">default (justify start)</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 6
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+  </div>
+</div>
+<h4 id="justify%3A-center" tabindex="-1">justify: center</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, justify: center" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 6
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+  </div>
+</div>
+<h4 id="justify%3A-end" tabindex="-1">justify: end</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, justify: end" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3. But there is alot of text here.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3.
+        </div>
+      </div>
+      <div data-grid-item="width: 3" class="demo-grid__cell">
+        <div class="demo-grid__content">
+          Width of 3
+        </div>
+      </div>
+  </div>
+</div>
+<h3 id="align" tabindex="-1">Align</h3>
+<p>Allows you to align the columns (vertical alignment within row). The default is stretch start. Note using stretch-end or stretch-center will stretch all columns to be the same height but will align the columns content to the end or center.</p>
+<h4 id="default-(stretch-start)" tabindex="-1">Default (stretch start)</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3. This will cause the other cells to either stretch or align depending on how you set the "align" option.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+<h4 id="align%3A-center" tabindex="-1">align: center</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, align: center" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3. This will cause the other cells to either stretch or align depending on how you set the "align" option.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+<h3 id="gutters" tabindex="-1">gutters</h3>
+<p>	
+You can remove the gutters between columns by adding this setting. The grid shows the default gutters size by default.</p>
+<h4 id="default" tabindex="-1">default</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+<h4 id="gutters%3A-false" tabindex="-1">gutters: false</h4>
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, gutters: false" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
 </div> 
 <h2 id="options" tabindex="-1">Options</h2>
 <p><table class="site-data-table options-table">
