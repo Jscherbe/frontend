@@ -78,8 +78,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 392-392
-- **Lines (code):** 393-400
+- **Lines (comments):** 395-395
+- **Lines (code):** 396-403
     </details>
     
 
@@ -110,8 +110,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 402-402
-- **Lines (code):** 403-409
+- **Lines (comments):** 405-405
+- **Lines (code):** 406-412
     </details>
     
 
@@ -142,8 +142,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 411-411
-- **Lines (code):** 412-422
+- **Lines (comments):** 414-414
+- **Lines (code):** 415-426
     </details>
     
 
@@ -174,8 +174,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 424-424
-- **Lines (code):** 425-428
+- **Lines (comments):** 428-428
+- **Lines (code):** 429-432
     </details>
     
 
@@ -201,8 +201,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 430-430
-- **Lines (code):** 431-478
+- **Lines (comments):** 434-434
+- **Lines (code):** 435-482
     </details>
     
 
@@ -237,8 +237,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 480-480
-- **Lines (code):** 481-504
+- **Lines (comments):** 484-484
+- **Lines (code):** 485-508
     </details>
     
 

@@ -37,6 +37,8 @@ $palette: (
   "black":        black,
   "white":        white,
   "type":         black,
+  "type-secondary": rgb(82, 82, 82),
+  "type-tertiary": rgb(157, 157, 157),
   "headline" :    inherit,
   "background"              : white,
   "focus"                   : blue,
@@ -67,7 +69,7 @@ $palette: (
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 11-13
-- **Lines (code):** 15-39
+- **Lines (code):** 15-41
     </details>
     
 
@@ -109,8 +111,8 @@ $contexts: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 41-45
-- **Lines (code):** 47-58
+- **Lines (comments):** 43-47
+- **Lines (code):** 49-60
     </details>
     
 
@@ -156,8 +158,8 @@ $color-classes: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 60-60
-- **Lines (code):** 61-65
+- **Lines (comments):** 62-62
+- **Lines (code):** 63-67
     </details>
     
   
@@ -188,8 +190,8 @@ Used to override or extend the color palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 67-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 69-75
+- **Lines (code):** 77-79
     </details>
     
 
@@ -244,8 +246,8 @@ Set ouput classes for all-color-class-styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 99-100
-- **Lines (code):** 102-104
+- **Lines (comments):** 101-102
+- **Lines (code):** 104-106
     </details>
     
 
@@ -285,8 +287,8 @@ Set color contexts
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 111-121
-- **Lines (code):** 123-125
+- **Lines (comments):** 113-123
+- **Lines (code):** 125-127
     </details>
     
 
@@ -346,8 +348,8 @@ Prints contexts styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 150-151
-- **Lines (code):** 153-159
+- **Lines (comments):** 152-153
+- **Lines (code):** 155-161
     </details>
     
 
@@ -389,8 +391,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 183-190
-- **Lines (code):** 192-201
+- **Lines (comments):** 185-192
+- **Lines (code):** 194-203
     </details>
     
 
@@ -457,8 +459,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 203-207
-- **Lines (code):** 209-218
+- **Lines (comments):** 205-209
+- **Lines (code):** 211-220
     </details>
     
 
@@ -518,8 +520,8 @@ Get a color from the palette by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-97
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-99
     </details>
     
 
@@ -569,8 +571,8 @@ Get a context by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 127-129
-- **Lines (code):** 131-133
+- **Lines (comments):** 129-131
+- **Lines (code):** 133-135
     </details>
     
 
@@ -620,8 +622,8 @@ Get a context's value'
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 135-138
-- **Lines (code):** 140-148
+- **Lines (comments):** 137-140
+- **Lines (code):** 142-150
     </details>
     
 
@@ -672,8 +674,8 @@ Lighten a color using the default white by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 161-166
-- **Lines (code):** 168-170
+- **Lines (comments):** 163-168
+- **Lines (code):** 170-172
 - **Author:** 
     </details>
     
@@ -730,8 +732,8 @@ Darken a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 172-177
-- **Lines (code):** 179-181
+- **Lines (comments):** 174-179
+- **Lines (code):** 181-183
 - **Author:** Kitty Giraudel
     </details>
     

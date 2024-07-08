@@ -19,16 +19,16 @@
 $config: (
   "drupal"                                    : false,
   "color"                                     : inherit,
-  "color-placeholder"                         : color-get("type-tertiary"),
+  "color-placeholder"                         : color.get("type-tertiary"),
   "font-weight-label"                         : bold,
   "font-weight-legend"                        : bold,
   "font-weight-placeholder"                   : normal,
   "font-weight-input"                         : null,
   "font-weight-textarea"                      : null,
   "font-weight-select"                        : null,
-  "required-color"                            : color-get("error"),
-  "error-color"                               : color-get("error"),
-  "warning-color"                             : color-get("warning"),
+  "required-color"                            : color.get("error"),
+  "error-color"                               : color.get("error"),
+  "warning-color"                             : color.get("warning"),
   "error-highlight-color"                     : rgb(251, 242, 242),
   "warning-highlight-color"                   : rgb(255, 249, 237),
   "item-border-radius"                        : null,
@@ -38,7 +38,7 @@ $config: (
   "input-padding-y"                           : 0.25em,
   "input-min-width"                           : 10em,
   "input-background-color"                    : white,
-  "input-border"                              : element-get-rule-style(),
+  "input-border"                              : element.get-rule-style(),
   "input-border-radius"                       : 0,
   "check-input-size"                          : 1.15em,
   "check-input-touch-size"                    : 2em,
@@ -136,6 +136,9 @@ $config: (
   #{ $prefix }--hide-labels {
     label {
       @include element.hidden-visually();
+    }
+    input:required::after {
+      // setup asterisk or other "required" marking
     }
   }
   @if (get("drupal")) {
@@ -410,6 +413,7 @@ $config: (
 
 /// Styles for form item that should have label as block and text input
 @mixin element-form-item-block() {
+  display: block;
   label {
     font-weight: get("font-weight-label");
     display: block;
