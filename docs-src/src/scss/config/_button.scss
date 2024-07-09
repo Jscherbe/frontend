@@ -2,7 +2,9 @@
 @use "scss" as ulu;
 
 // Note: Adjusted button padding to match input padding for search
-// @include ulu.button-set(());
+@include ulu.button-set((
+  "transition-enabled":      true,
+));
 // @include ulu.button-set-sizes((
 //   "small-x" : (
 //     "padding": (0.1em 0.65em),

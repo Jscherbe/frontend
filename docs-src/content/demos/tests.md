@@ -8,3 +8,5 @@ intro: A place to practice and test ideas
 {% for item in data %}
   {{ item }}
 {% endfor %}
+
+<button class="button">Click Me</button>
