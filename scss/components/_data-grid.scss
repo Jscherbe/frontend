@@ -1,0 +1,78 @@
+////
+/// @group data-grid
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../typography";
+@use "../grid";
+
+
+// TODO: This was based on site-details (uses data-grid), would be nice if this
+//       still has the details element styling but also provide selectors. Make 
+//       icon optional?
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "background-color":              white,
+  "background-color-open":          #F7F8F7,
+  "padding-x":                      1.5rem,
+  "padding-y":                      1.5rem,
+  "transparent-padding-y":          0.5rem,
+  "transparent-padding-x":          0,
+  "margin":                         3rem,
+  "margin-between":                 0,
+  "border-radius":                  0,
+  "box-shadow":                     none,
+  "border-color":                   color.get("rule"),
+  "border":                         1px solid color.get("rule"),
+  "summary-color":                  inherit,
+  "summary-type-size" :             false,
+  "summary-color-hover":            inherit,
+  "summary-padding-y":              1rem,
+  "summary-background-color":     white,
+  "summary-line-height":            inherit,
+  "icon-color":                     color.get("link"),
+  "icon-color-hover":               color.get("link:hover"),
+  "icon-background-color" :         transparent,
+  "icon-background-color-hover" :   transparent,
+  "icon-border-radius" :            50%,
+  "icon-size" :                     auto,
+  "icon-font-size" :                1.5rem
+) !default;
+
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "data-grid [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  @include grid.create(
+    $rule-color: color.get("rule-light"),
+    $extra-gutter-scales: (
+      "small" : 0.6
+    )
+  );
+}

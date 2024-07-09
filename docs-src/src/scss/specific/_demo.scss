@@ -18,10 +18,21 @@
 }
 
 .demo-grid {
-  .demo-grid__cell {
+  > .demo-grid__cell {
     border: 1px solid vars.$color-violet-light;
+    &[data-grid-item]::after{
+      background: black;
+      height: 2px;
+    }
+    &[data-grid-item]::before {
+      background: black;
+      width: 2px;  
+    }
   }
   .demo-grid__content{
     background-color: vars.$color-violet-light-x;
   }
+}
+.demo-sandwich {
+  background-color: rgb(255, 211, 130);
 }
