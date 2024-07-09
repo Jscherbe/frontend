@@ -11,6 +11,12 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 ## Examples
 
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    {{ gridTemplateShort }}
+  </div>
+</div>
+
 
 ### Default Grid
 <div class="demo-grid__container">
@@ -120,7 +126,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
     </div>
     <div data-grid-item="width: 3" class="demo-grid__cell">
       <div class="demo-grid__content">
-        Width of 3. But there is alot of text here.
+        Width of 3.
       </div>
     </div>
     <div data-grid-item="width: 3" class="demo-grid__cell">
@@ -225,6 +231,158 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 <div class="demo-grid__container">
   <div data-grid="columns: 12, gutters: false" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+
+### gutters-row
+
+<p>If set to 'top' gutters will be between items starting at the top including the first row (so it makes space above the first grid row. Bottom works the same way but on the bottom. True adds gutters between rows and to the top and bottom of the first/last grid row. Fit will only put gutters between the rows.</p>
+
+#### gutters-row: true
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, gutters-row: true" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+
+#### gutters-row: top
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, gutters-row: top" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+
+#### gutters-row: bottom
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12, gutters-row: bottom" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
+  </div>
+</div> 
+
+#### gutters-row: fit
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 6
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3.
+      </div>
+    </div>
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+      <div class="demo-grid__content">
+        Width of 3
+      </div>
+    </div>
     <div data-grid-item="width: 6" class="demo-grid__cell">
       <div class="demo-grid__content">
         Width of 6

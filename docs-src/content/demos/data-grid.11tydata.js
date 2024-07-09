@@ -1,9 +1,8 @@
 
 const gridTemplate =[
   {
-    value:
-    `
-    <div data-grid-item="width: 6" class="demo-grid__cell">
+    value: `
+      <div data-grid-item="width: 6" class="demo-grid__cell">
         <div class="demo-grid__content">
           Width of 6
         </div>
@@ -18,7 +17,7 @@ const gridTemplate =[
           Width of 3
         </div>
       </div>
-      `
+    `
   }
 ]
 const gridTemplateShort =`
@@ -40,7 +39,7 @@ const gridTemplateShort =`
 `
 
 export default {
-  gridTemplate,
+  gridTemplateValue: gridTemplate[0].value,
   gridTemplateShort,
   gridAttr: [
     {
