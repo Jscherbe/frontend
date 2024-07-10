@@ -17,6 +17,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 <p>Solid Black Line is the grid's rules</p>
 
 ### Default Grid
+
 <div class="demo-grid__container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}

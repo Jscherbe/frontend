@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Button
+    scrollpoint
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -411,10 +411,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -434,10 +434,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -942,10 +942,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -963,10 +963,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/components/" 
           
         >
@@ -1058,12 +1058,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/components/button/" 
-          aria-current="page"
+          
         >
           
     
@@ -1645,10 +1645,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -1668,10 +1668,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/javascript/" 
           
         >
@@ -1934,12 +1934,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/javascript/scrollpoint/" 
-          
+          aria-current="page"
         >
           
     
@@ -2101,56 +2101,59 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#variables">Variables</a>
+                    <li><a href="#scrollpoint">scrollpoint</a>
             
                 <ol>
                     
-                    <li><a href="#variable-config">$config</a>
+                    <li><a href="#scrollpoint.scrollpoint">scrollpoint.Scrollpoint</a>
             		</li>
 
-                    <li><a href="#variable-config-1">$config</a>
+                    <li><a href="#scrollpoint.attrs">scrollpoint.attrs</a>
             		</li>
 
-                    <li><a href="#variable-config-2">$config</a>
-            		</li>
-                </ol>
+                    <li><a href="#scrollpoint.init()">scrollpoint.init()</a>
             		</li>
 
-                    <li><a href="#mixins">Mixins</a>
-            
-                <ol>
-                    
-                    <li><a href="#mixin-set">set()</a>
+                    <li><a href="#scrollpoint.setup()">scrollpoint.setup()</a>
             		</li>
 
-                    <li><a href="#mixin-styles">styles()</a>
+                    <li><a href="#scrollpoint~horizontal">scrollpoint~horizontal</a>
             		</li>
 
-                    <li><a href="#mixin-set-1">set()</a>
+                    <li><a href="#scrollpoint~marginstart">scrollpoint~marginStart</a>
             		</li>
 
-                    <li><a href="#mixin-styles-1">styles()</a>
+                    <li><a href="#scrollpoint~marginend">scrollpoint~marginEnd</a>
             		</li>
 
-                    <li><a href="#mixin-set-2">set()</a>
+                    <li><a href="#scrollpoint~threshold">scrollpoint~threshold</a>
             		</li>
 
-                    <li><a href="#mixin-styles-2">styles()</a>
-            		</li>
-                </ol>
+                    <li><a href="#scrollpoint~exit">scrollpoint~exit</a>
             		</li>
 
-                    <li><a href="#functions">Functions</a>
-            
-                <ol>
-                    
-                    <li><a href="#function-get">get()</a>
+                    <li><a href="#scrollpoint~exitforward">scrollpoint~exitForward</a>
             		</li>
 
-                    <li><a href="#function-get-1">get()</a>
+                    <li><a href="#scrollpoint~exitreverse">scrollpoint~exitReverse</a>
             		</li>
 
-                    <li><a href="#function-get-2">get()</a>
+                    <li><a href="#scrollpoint~setclasses">scrollpoint~setClasses</a>
+            		</li>
+
+                    <li><a href="#scrollpoint~classprefix">scrollpoint~classPrefix</a>
+            		</li>
+
+                    <li><a href="#scrollpoint~setattribute">scrollpoint~setAttribute</a>
+            		</li>
+
+                    <li><a href="#scrollpoint~attributename">scrollpoint~attributeName</a>
+            		</li>
+
+                    <li><a href="#scrollpoint~syncelements">scrollpoint~syncElements</a>
+            		</li>
+
+                    <li><a href="#scrollpoint~onchange()">scrollpoint~onChange()</a>
             		</li>
                 </ol>
             		</li>
@@ -2163,543 +2166,171 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Button</h1>
+    <h1 class="page__title h1">scrollpoint</h1>
 
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
-      <h1 id="button" tabindex="-1">Button</h1>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"icon-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 1em
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<p><details>
-<summary>File Information</summary></p>
+      <p><a name="module_scrollpoint"></a></p>
+<h2 id="scrollpoint" tabindex="-1">scrollpoint</h2>
 <ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-13</li>
-<li><strong>Lines (code):</strong> 15-17  </details>
+<li><a href="#module_scrollpoint">scrollpoint</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_scrollpoint.Scrollpoint">.Scrollpoint</a>
+<ul>
+<li><a href="#new_module_scrollpoint.Scrollpoint_new">new exports.Scrollpoint(element, config)</a></li>
+<li><a href="#module_scrollpoint.Scrollpoint+onObserve">.onObserve()</a></li>
+</ul>
+</li>
+<li><a href="#module_scrollpoint.attrs">.attrs</a></li>
+<li><a href="#module_scrollpoint.init">.init()</a></li>
+<li><a href="#module_scrollpoint.setup">.setup()</a></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_scrollpoint..horizontal">~horizontal</a></li>
+<li><a href="#module_scrollpoint..marginStart">~marginStart</a></li>
+<li><a href="#module_scrollpoint..marginEnd">~marginEnd</a></li>
+<li><a href="#module_scrollpoint..threshold">~threshold</a></li>
+<li><a href="#module_scrollpoint..exit">~exit</a></li>
+<li><a href="#module_scrollpoint..exitForward">~exitForward</a></li>
+<li><a href="#module_scrollpoint..exitReverse">~exitReverse</a></li>
+<li><a href="#module_scrollpoint..setClasses">~setClasses</a></li>
+<li><a href="#module_scrollpoint..classPrefix">~classPrefix</a></li>
+<li><a href="#module_scrollpoint..setAttribute">~setAttribute</a></li>
+<li><a href="#module_scrollpoint..attributeName">~attributeName</a></li>
+<li><a href="#module_scrollpoint..syncElements">~syncElements</a></li>
+<li><a href="#module_scrollpoint..onChange">~onChange()</a></li>
+</ul>
 </li>
 </ul>
-<div class="sassdoc-item-header">
-<h3 id="variable-config-1" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"content-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"content-border"</span> <span class="pjs-token pjs-punctuation">:</span> 1px solid <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>227<span class="pjs-token pjs-punctuation">,</span> 227<span class="pjs-token pjs-punctuation">,</span> 227<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"content-width"</span> <span class="pjs-token pjs-punctuation">:</span> 34rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"content-padding"</span> <span class="pjs-token pjs-punctuation">:</span> 2.5rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 6rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"min-height"</span> <span class="pjs-token pjs-punctuation">:</span> 75vh<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"breakpoints"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"medium"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-      <span class="pjs-token pjs-string">"direction"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"down"</span><span class="pjs-token pjs-punctuation">,</span>
-      <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 4rem<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-      <span class="pjs-token pjs-string">"direction"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"down"</span><span class="pjs-token pjs-punctuation">,</span>
-      <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
-      <span class="pjs-token pjs-string">"content-padding"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5rem
-    <span class="pjs-token pjs-punctuation">)</span>
-  <span class="pjs-token pjs-punctuation">)</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _overlay-section.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 13-14</li>
-<li><strong>Lines (code):</strong> 16-34  </details>
 </li>
 </ul>
-<div class="sassdoc-item-header">
-<h3 id="variable-config-2" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"color"</span>                   <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color"</span>        <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding"</span>                 <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-large"</span>           <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"max-width"</span>               <span class="pjs-token pjs-punctuation">:</span> 90vw<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"max-height"</span>              <span class="pjs-token pjs-punctuation">:</span> 25rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width"</span>                   <span class="pjs-token pjs-punctuation">:</span> 15rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width-large"</span>             <span class="pjs-token pjs-punctuation">:</span> 30rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width-large-x"</span>           <span class="pjs-token pjs-punctuation">:</span> 50rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"type-size"</span>               <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"z-index"</span>                 <span class="pjs-token pjs-punctuation">:</span> layout.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"z-index-fixed"</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-operator">+</span> 1<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow"</span>              <span class="pjs-token pjs-punctuation">:</span> element.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"box-shadow-above"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow-footer"</span>       <span class="pjs-token pjs-punctuation">:</span> 0 0 4px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-radius"</span>           <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"arrow-size"</span>              <span class="pjs-token pjs-punctuation">:</span> 16px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"footer-padding-y"</span>        <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"footer-padding-y-large"</span>  <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"footer-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">shade</span><span class="pjs-token pjs-punctuation">(</span>white<span class="pjs-token pjs-punctuation">,</span> 3%<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"footer-color"</span>            <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-background-color"</span><span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-padding"</span>         <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-width"</span>           <span class="pjs-token pjs-punctuation">:</span> auto<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-max-width"</span>       <span class="pjs-token pjs-punctuation">:</span> 20rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-color"</span>           <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<p><details>
-<summary>File Information</summary></p>
+<p><a name="module_scrollpoint.Scrollpoint"></a></p>
+<h3 id="scrollpoint.scrollpoint" tabindex="-1">scrollpoint.Scrollpoint</h3>
+<p>Single scrollpoint</p>
 <ul>
-<li><strong>File:</strong> _popover.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 16-35</li>
-<li><strong>Lines (code):</strong> 37-62  </details>
+<li>Note &quot;forward&quot; and &quot;reverse&quot; refer to scroll directions
+<ul>
+<li>forward = vertical below / horizontal right</li>
+<li>reverse = vertical above / horizontal left</li>
+</ul>
 </li>
 </ul>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<p><strong>Kind</strong>: static class of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<strong>Todo</strong></p>
+<ul>
+<li>[ ] Convert margin to offset</li>
+<li>[ ] This only goes one direction</li>
+</ul>
+<ul>
+<li><a href="#module_scrollpoint.Scrollpoint">.Scrollpoint</a>
+<ul>
+<li><a href="#new_module_scrollpoint.Scrollpoint_new">new exports.Scrollpoint(element, config)</a></li>
+<li><a href="#module_scrollpoint.Scrollpoint+onObserve">.onObserve()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_module_scrollpoint.Scrollpoint_new"></a></p>
+<h4 id="new-exports.scrollpoint(element%2C-config)" tabindex="-1">new exports.Scrollpoint(element, config)</h4>
+<p>Setup a new scrollpoint</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">$config.color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Type color</td>
+<td>element</td>
+<td><code>Node</code></td>
+<td>The element to create the scrollpoint for</td>
 </tr>
 <tr>
-<td style="text-align:left">$config.background-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Popover background color</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.padding</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Padding for popover</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.padding-large</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Padding for large popover</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.max-width</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Max width for popover (default 90% viewport width)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.width</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Width for popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.width-large</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Width for large popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.width-large-x</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Width for large-x popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.max-height</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Max height of the inner content of popover</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.type-size</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Set a type size (see typography)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.z-index</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Change default z-index</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.box-shadow</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Box shadow</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.box-shadow-footer</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Box shadow for footer</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.border-radius</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Border radius</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.arrow-size</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Arrow size (should match JS setting)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.tooltip-background-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Background color for tooltip type popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.tooltip-padding</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Padding for tooltip type popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.tooltip-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Color for tooltip type popovers</td>
+<td>config</td>
+<td><code>Object</code></td>
+<td>Options to configure the scrollpoint see Scrollpoint.defaults for more information on settings</td>
 </tr>
 </tbody>
 </table>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Change modules $config</p>
-<p><details>
-<summary>File Information</summary></p>
+<p><a name="module_scrollpoint.Scrollpoint+onObserve"></a></p>
+<h4 id="scrollpoint.onobserve()" tabindex="-1">scrollpoint.onObserve()</h4>
+<p>IntersectionObserver Callback</p>
 <ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 19-21</li>
-<li><strong>Lines (code):</strong> 23-25  </details>
-</li>
+<li>Should set the state</li>
 </ul>
-<h4 id="parameters" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require" tabindex="-1">Require</h4>
+<p><strong>Kind</strong>: instance method of <a href="#module_scrollpoint.Scrollpoint"><code>Scrollpoint</code></a><br>
+<a name="module_scrollpoint.attrs"></a></p>
+<h3 id="scrollpoint.attrs" tabindex="-1">scrollpoint.attrs</h3>
+<p>Default data attributes</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint.init"></a></p>
+<h3 id="scrollpoint.init()" tabindex="-1">scrollpoint.init()</h3>
+<p>Initialize everything in document</p>
 <ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
+<li>This will only initialize elements once, it is safe to call on page changes</li>
 </ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Prints button component styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 35-39</li>
-<li><strong>Lines (code):</strong> 41-98  </details>
-</li>
-</ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-button-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>#<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Button Default<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set-1" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Change modules $config</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _overlay-section.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 36-38</li>
-<li><strong>Lines (code):</strong> 40-42  </details>
-</li>
-</ul>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-2" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles-1" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Prints component styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _overlay-section.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 52-54</li>
-<li><strong>Lines (code):</strong> 56-113  </details>
-</li>
-</ul>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-3" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set-2" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Change modules $config</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _popover.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 64-66</li>
-<li><strong>Lines (code):</strong> 68-70  </details>
-</li>
-</ul>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-4" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles-2" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Prints component styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _popover.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 80-82</li>
-<li><strong>Lines (code):</strong> 84-204  </details>
-</li>
-</ul>
-<h4 id="examples-2" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-5" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<h2 id="functions" tabindex="-1">Functions</h2>
-<div class="sassdoc-item-header">
-<h3 id="function-get" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 27-29</li>
-<li><strong>Lines (code):</strong> 31-33  </details>
-</li>
-</ul>
-<h4 id="parameters-3" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-6" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-get-1" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _overlay-section.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 44-46</li>
-<li><strong>Lines (code):</strong> 48-50  </details>
-</li>
-</ul>
-<h4 id="parameters-4" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-7" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-get-2" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _popover.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 72-74</li>
-<li><strong>Lines (code):</strong> 76-78  </details>
-</li>
-</ul>
-<h4 id="parameters-5" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-8" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint.setup"></a></p>
+<h3 id="scrollpoint.setup()" tabindex="-1">scrollpoint.setup()</h3>
+<p>Setup all points and groups</p>
+<p><strong>Kind</strong>: static method of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..horizontal"></a></p>
+<h3 id="scrollpoint~horizontal" tabindex="-1">scrollpoint~horizontal</h3>
+<p>Change scroll orientation to horizontal</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..marginStart"></a></p>
+<h3 id="scrollpoint~marginstart" tabindex="-1">scrollpoint~marginStart</h3>
+<p>Margin for observer top or left (depending on orientation)</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..marginEnd"></a></p>
+<h3 id="scrollpoint~marginend" tabindex="-1">scrollpoint~marginEnd</h3>
+<p>Margin for observer bottom or right (depending on orientation)</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..threshold"></a></p>
+<h3 id="scrollpoint~threshold" tabindex="-1">scrollpoint~threshold</h3>
+<p>Threshold for observer</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..exit"></a></p>
+<h3 id="scrollpoint~exit" tabindex="-1">scrollpoint~exit</h3>
+<p>The point can exited (else persists)</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..exitForward"></a></p>
+<h3 id="scrollpoint~exitforward" tabindex="-1">scrollpoint~exitForward</h3>
+<p>The point can exit from the end</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..exitReverse"></a></p>
+<h3 id="scrollpoint~exitreverse" tabindex="-1">scrollpoint~exitReverse</h3>
+<p>The point can exit from the start</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..setClasses"></a></p>
+<h3 id="scrollpoint~setclasses" tabindex="-1">scrollpoint~setClasses</h3>
+<p>Set state classes</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..classPrefix"></a></p>
+<h3 id="scrollpoint~classprefix" tabindex="-1">scrollpoint~classPrefix</h3>
+<p>Prefix for classes</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..setAttribute"></a></p>
+<h3 id="scrollpoint~setattribute" tabindex="-1">scrollpoint~setAttribute</h3>
+<p>Set attribute for state (less verbose same info as classes)</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..attributeName"></a></p>
+<h3 id="scrollpoint~attributename" tabindex="-1">scrollpoint~attributeName</h3>
+<p>Attribute name to set state info in</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..syncElements"></a></p>
+<h3 id="scrollpoint~syncelements" tabindex="-1">scrollpoint~syncElements</h3>
+<p>Elements that should also get active state info (classes or attributes)</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_scrollpoint"><code>scrollpoint</code></a><br>
+<a name="module_scrollpoint..onChange"></a></p>
+<h3 id="scrollpoint~onchange()" tabindex="-1">scrollpoint~onChange()</h3>
+<p>Callback called when state changes</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_scrollpoint"><code>scrollpoint</code></a></p>
 
     </div>
   </div>
