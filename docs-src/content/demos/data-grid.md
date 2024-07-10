@@ -1,6 +1,7 @@
 ---
 title: Data grid
 intro: Flexbox based grid that uses a JSON like attribute for options
+layout: default
 todos: 
   - Add more examples, bring in example css so that it's visualized
   

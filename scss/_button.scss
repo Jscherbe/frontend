@@ -48,8 +48,7 @@ $config: (
   "icon-border-radius":      50%,
   "text-decoration" :        none,
   "transition-enabled":      false,
-  "transition" :             (background-color 0.5s, color 0.5s, border-color 0.5s),
-  // "transition-time" :        
+  "transition-duration" :    0.5s  
 ) !default;
 
 /// Button sizes
@@ -178,8 +177,9 @@ $styles: (
   max-width: 100%; // Questionable, not sure if it's needed
   flex-shrink: 0; 
   // Should override link visited coloring
+  transition-property: border-color, background-color, color;
   @if get("transition-enabled") {
-    transition: get("transition") ;
+    transition-duration: get("transition-duration");
   }
   &,
   &:visited {
@@ -197,9 +197,6 @@ $styles: (
     background-color: color.get(get("background-color-hover"));
     border-color: color.get(get("border-color-hover"));
     text-decoration: get("text-decoration");
-    @if get("transition-enabled") {
-      transition: get("transition") ;
-    }
   }
 }
 
@@ -257,6 +254,9 @@ $styles: (
   box-shadow: get-style-value($name, "box-shadow", false);
   text-decoration: get-style-value($name, "text-decoration", false);
   font-weight: get-style-value($name, "font-weight", false);
+  @if get-style-value($name, "transition-duration") {
+    transition-duration: get-style-value($name, "transition-duration");
+  }
 }
 
 /// Print a button style's base styles (hover styles only)
