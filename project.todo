@@ -8,6 +8,7 @@ Overall:
         * Or the attr grid could just rely on the default gutter and then user multiplier to reduce (ie small = default gutter * 0.5). could have gutter screen scaling setting in layout? (ie small = default gutter * (gutterScaleMultiplier * breakpointDepth[1, 2, 3]))
     ☐ Remove grid module in core (other grids can pull from layout)
 JS Updates:
+  ☐ Change "delete obj.prop" to "obj.prop = null" for better GC? If this is used anywhere  
   ☐ Create utilities for initialization and attributes in scripts so we don't have to repeat this pattern
   ☐ Finish collapsible
     ☐ Consider removing focusoutCloses (not sure this makes sense and if so should be on user side)

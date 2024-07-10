@@ -87,5 +87,17 @@ export function setPositionClasses(parent, classes = {
         child.classList.add(classes.columnLast);
     });
   });
-
 }
+
+/**
+ * Resolve a target to Element
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ */
+export function getElement(target, context = document) {
+  if (typeof target === "string") {
+    return context.querySelector(target);
+  } else {
+    return target;
+  }
+} 

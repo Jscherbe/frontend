@@ -13,3 +13,4 @@ export * as resizer from "./resizer.js";
 export * as slider from "./slider.js";
 export * as tabs from "./tabs.js";
 export * as proxyClick from "./proxy-click.js";
+export * as scrollpoint from "./scrollpoint.js";
