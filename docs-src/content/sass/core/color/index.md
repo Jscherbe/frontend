@@ -34,12 +34,12 @@ Note do not use names that start with "--" as those are reserved for custom-prop
 
 ``` scss
 $palette: (
-  "black":        black,
-  "white":        white,
-  "type":         black,
-  "type-secondary": rgb(82, 82, 82),
-  "type-tertiary": rgb(157, 157, 157),
-  "headline" :    inherit,
+  "black"                   : black,
+  "white"                   : white,
+  "type"                    : black,
+  "type-secondary"          : rgb(82, 82, 82),
+  "type-tertiary"           : rgb(157, 157, 157),
+  "headline"                : inherit,
   "background"              : white,
   "focus"                   : blue,
   "error"                   : red,

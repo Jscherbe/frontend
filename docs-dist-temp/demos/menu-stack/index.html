@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Ratio-box
+    Menu Stack
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -254,12 +254,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/menu-stack/" 
-          
+          aria-current="page"
         >
           
     
@@ -430,10 +430,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -453,10 +453,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -961,10 +961,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -982,10 +982,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/components/" 
           
         >
@@ -1419,12 +1419,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/components/ratio-box/" 
-          aria-current="page"
+          
         >
           
     
@@ -2135,41 +2135,7 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>On this page</h2>
-<div class="toc">
-                <ol>
-                    
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#mixins">Mixins</a>
-            
-                <ol>
-                    
-                    <li><a href="#mixin-set">set()</a>
-            		</li>
-
-                    <li><a href="#mixin-styles">styles()</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#functions">Functions</a>
-            
-                <ol>
-                    
-                    <li><a href="#function-get">get()</a>
-            		</li>
-                </ol>
-            		</li>
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
@@ -2177,173 +2143,152 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Ratio-box</h1>
+    <h1 class="page__title h1">Menu Stack</h1>
+
+  <p class="type-large type-light">
+    Vertical menu list (with optional checkboxes). Used in sidebar nav, popover menus, etc
+  </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <div class="wysiwyg">
-      <h1 id="ratio-box" tabindex="-1">Ratio-box</h1>
-<p>Uses padding trick to keep ratio. Defaults to 4:3 (standard). Used for responsive iframe or images (object-fit), etc</p>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
+    <h2 class="h2">Basic Example</h2>
+<div class="menu-stack menu-stack--hanging">
+  <h3 class="menu-stack__label">Example Label</h3>
+  <ul>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#">This is Example Menu Item with a really long title</a>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separated">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+  </ul>
 </div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"size"</span> <span class="pjs-token pjs-punctuation">:</span> 75%<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"sizes"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"16x9"</span> <span class="pjs-token pjs-punctuation">:</span> 56.25%<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"9x16"</span> <span class="pjs-token pjs-punctuation">:</span> 177.77%<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"3x4"</span> <span class="pjs-token pjs-punctuation">:</span> 133.33%
-  <span class="pjs-token pjs-punctuation">)</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _ratio-box.scss</li>
-<li><strong>Group:</strong> ratio-box</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 9-12</li>
-<li><strong>Lines (code):</strong> 14-21  </details>
-</li>
-</ul>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$config.size</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Default height ratio (of width 100%)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.sizes</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Other ratios to add (apply with modifier class)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
+<h2 class="h2">Hanging with aria-current test</h2>
+<div class="menu-stack menu-stack--hanging">
+  <h3 class="menu-stack__label">Example Label</h3>
+  <ul>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-current="page">This is Example Menu Item with a really long title</a>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separated">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+  </ul>
 </div>
-<p>Change modules $config</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _ratio-box.scss</li>
-<li><strong>Group:</strong> ratio-box</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 23-25</li>
-<li><strong>Lines (code):</strong> 27-29  </details>
-</li>
-</ul>
-<h4 id="parameters" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
+<h2 class="h2">Multiple labels/lists</h2>
+<div class="menu-stack menu-stack--hanging menu-stack--separated">
+  <h3 class="menu-stack__label">Section 1</h3>
+  <ul>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" >This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">This is Example Menu Item with a really long title</a>
+    </li>
+  </ul>
 </div>
-<p>Prints component styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _ratio-box.scss</li>
-<li><strong>Group:</strong> ratio-box</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 39-41</li>
-<li><strong>Lines (code):</strong> 43-62  </details>
-</li>
-</ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<h2 id="functions" tabindex="-1">Functions</h2>
-<div class="sassdoc-item-header">
-<h3 id="function-get" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
+<div class="menu-stack menu-stack--hanging menu-stack--separated">
+  <h3 class="menu-stack__label">Section 2</h3>
+  <ul>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">This is Example Menu Item with a really long title</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+  </ul>
 </div>
-<p>Get a config option</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _ratio-box.scss</li>
-<li><strong>Group:</strong> ratio-box</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 31-33</li>
-<li><strong>Lines (code):</strong> 35-37  </details>
-</li>
-</ul>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-2" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-
-    </div>
+<h2 class="h2">Checkbox Menu</h2>
+<div class="menu-stack form-theme">
+  <ul>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-1">
+        <label for="cb-1"> Example Item that is very long and will wrap in menu </label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-2">
+        <label for="cb-2">Example Item 2</label>
+      </div>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separated">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-3">
+        <label for="cb-3">Example Item 3</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-4">
+        <label for="cb-4">Example Item 4</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-5">
+        <label for="cb-5">Example Item 5</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-6">
+        <label for="cb-6">Example Item 6</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-7">
+        <label for="cb-7">Example Item 7</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__checkbox">
+        <input type="checkbox" id="cb-8">
+        <label for="cb-8">Example Item 8</label>
+      </div>
+    </li>
+  </ul>
+</div>
+<h2 class="h2">With Icons</h2>
+<div class="menu-stack">
+  <h3 class="menu-stack__label">Example Label</h3>
+  <ul>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" >
+        <span class="menu-stack__link-icon fas fa-house" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Home</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" >
+        <span class="menu-stack__link-icon fas fa-user" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">User Page</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" >
+        <span class="menu-stack__link-icon fas fa-music" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Audio</span>
+      </a>
+    </li>
+  </ul>
+</div>
   </div>
 
 		</main>

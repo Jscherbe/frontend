@@ -31,6 +31,7 @@
 @use "sass:list";
 
 @use "../utils";
+@use "data-grid";
 @use "accordion";
 @use "css-icon";
 @use "links";
@@ -55,12 +56,13 @@
 @use "adaptive-spacing";
 @use "pager";
 @use "form-theme";
-@use "data-grid";
+@use "menu-stack";
 
 /// Default includes, all modules
 /// @type List
 
 $all-includes: (
+  "data-grid",
   "accordion",
   "css-icon",
   "links",
@@ -85,7 +87,7 @@ $all-includes: (
   "adaptive-spacing",
   "pager",
   "form-theme",
-  "data-grid",
+  "menu-stack",
 );
 
 /// Current included modules (for output when using styles), defaults to all
@@ -120,6 +122,9 @@ $current-includes: $all-includes;
 
   @include utils.require-list-contains($all-includes, $includes);
 
+  @if (list.index($includes, "data-grid")) {
+    @include data-grid.styles;
+  }
   @if (list.index($includes, "accordion")) {
     @include accordion.styles;
   }
@@ -192,7 +197,8 @@ $current-includes: $all-includes;
   @if (list.index($includes, "form-theme")) {
     @include form-theme.styles;
   }
-  @if (list.index($includes, "data-grid")) {
-    @include data-grid.styles;
+  
+  @if (list.index($includes, "menu-stack")) {
+    @include menu-stack.styles;
   }
 }

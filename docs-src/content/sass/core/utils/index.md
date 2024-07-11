@@ -648,7 +648,7 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 187-191
-- **Lines (code):** 193-202
+- **Lines (code):** 193-220
     </details>
     
 
@@ -672,6 +672,11 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 
     
 
+#### Throw
+
+- Arguments must be a list, use single list for single argument ie 
+    
+
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
@@ -690,7 +695,7 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 
   
 
-Replaces all or one occurence of a string within a string
+Replaces all or one occurrence of a string within a string
     
     
 
@@ -699,8 +704,8 @@ Replaces all or one occurence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 204-208
-- **Lines (code):** 210-226
+- **Lines (comments):** 222-226
+- **Lines (code):** 228-244
     </details>
     
 
@@ -739,8 +744,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 228-232
-- **Lines (code):** 234-242
+- **Lines (comments):** 246-250
+- **Lines (code):** 252-260
     </details>
     
 
@@ -786,8 +791,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 244-248
-- **Lines (code):** 250-258
+- **Lines (comments):** 262-266
+- **Lines (code):** 268-276
     </details>
     
 
