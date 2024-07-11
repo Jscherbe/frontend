@@ -191,17 +191,35 @@ $config: (
 /// @return {*} The user's original value, or if the value is true get the default value from the provided function
 
 @function function-fallback($prop, $value, $lookup) {
+  $arguments: null;
   // If there was already a value return it else resolve through passed function
   @if ($value == true)  {
-    $fn: map.get($lookup, $prop);
-    @if ($fn) {
-      @return meta.call($fn, $prop);
+    $function: map.get($lookup, $prop);
+    // Allow user to pass a nested map to route to another property
+    @if (meta.type-of($function) == "map") {
+      $functionMap: $function;
+      $function: map.get($functionMap, "function");
+      $prop: map.get($functionMap, "property");
+      // Arguments will override everything (allow calling functions with args)
+      $arguments: map.get($functionMap, "arguments");
+      @debug meta.type-of($arguments);
+    }
+    @if ($function) {
+      @if ($arguments) {
+        @if (meta.type-of($arguments) == "list") {
+          @return meta.call($function, $arguments...);
+        } @else {
+          @error "Arguments must be a list, use single list for single argument ie '(3,)'";
+        }
+      } @else {
+        @return meta.call($function, $prop);
+      }
     } 
   }
   @return $value;
 }
 
-/// Replaces all or one occurence of a string within a string
+/// Replaces all or one occurrence of a string within a string
 /// @param {String} $string String to operate on
 /// @param {String} $find String to find within string
 /// @param {String} $replace String to replace found strings

@@ -505,8 +505,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 262-267
-- **Lines (code):** 269-275
+- **Lines (comments):** 261-266
+- **Lines (code):** 268-274
     </details>
     
 
@@ -557,8 +557,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 277-286
-- **Lines (code):** 288-301
+- **Lines (comments):** 276-285
+- **Lines (code):** 287-300
     </details>
     
 

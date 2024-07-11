@@ -1,4 +1,5 @@
 Overall:
+  ☐ Need to setup shortcode/partial to template demos (ie. write code, show code and result)
   ☐ Need to finish accordion styling
   ☐ Need to add form module
   ☐ Need to seperate grid component from main module

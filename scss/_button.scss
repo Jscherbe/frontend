@@ -14,9 +14,8 @@
 @use "utils";
 
 // Used for function fallback
-$-element-get: meta.get-function("get", false, "element");
 $-fallbacks: (
-  "box-shadow" : $-element-get
+  "box-shadow": meta.get-function("get", false, "element")
 );
 
 /// Module Settings
