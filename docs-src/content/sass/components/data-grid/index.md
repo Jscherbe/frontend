@@ -52,31 +52,6 @@ $config: (
   "position-class-column-last":  "position-column-last",
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
-  "background-color":              white,
-  "background-color-open":          #F7F8F7,
-  "padding-x":                      1.5rem,
-  "padding-y":                      1.5rem,
-  "transparent-padding-y":          0.5rem,
-  "transparent-padding-x":          0,
-  "margin":                         3rem,
-  "margin-between":                 0,
-  "border-radius":                  0,
-  "box-shadow":                     none,
-  "border-color":                   color.get("rule"),
-  "border":                         1px solid color.get("rule"),
-  "summary-color":                  inherit,
-  "summary-type-size" :             false,
-  "summary-color-hover":            inherit,
-  "summary-padding-y":              1rem,
-  "summary-background-color":     white,
-  "summary-line-height":            inherit,
-  "icon-color":                     color.get("link"),
-  "icon-color-hover":               color.get("link:hover"),
-  "icon-background-color" :         transparent,
-  "icon-background-color-hover" :   transparent,
-  "icon-border-radius" :            50%,
-  "icon-size" :                     auto,
-  "icon-font-size" :                1.5rem
 );
 ```
   
@@ -87,7 +62,7 @@ $config: (
 - **Group:** data-grid
 - **Type:** variable
 - **Lines (comments):** 22-31
-- **Lines (code):** 33-80
+- **Lines (code):** 33-55
     </details>
     
 
@@ -134,8 +109,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 58-60
+- **Lines (code):** 62-64
     </details>
     
 
@@ -152,6 +127,51 @@ Change modules $config
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Prints component styles
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _data-grid.scss
+- **Group:** data-grid
+- **Type:** mixin
+- **Lines (comments):** 97-99
+- **Lines (code):** 101-108
+    </details>
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-example-styles();
+```
+  
+
+      
+
+#### Require
+
+- [create()](/sass/components/data-grid/#mixin-create)
+- [get()](/sass/components/accordion/#function-get)
   
 
 
@@ -176,8 +196,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 122-131
-- **Lines (code):** 133-566
+- **Lines (comments):** 110-119
+- **Lines (code):** 121-561
     </details>
     
 
@@ -230,8 +250,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 91-93
-- **Lines (code):** 95-97
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-72
     </details>
     
 
@@ -272,8 +292,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 99-101
-- **Lines (code):** 103-111
+- **Lines (comments):** 74-76
+- **Lines (code):** 78-86
     </details>
     
 
