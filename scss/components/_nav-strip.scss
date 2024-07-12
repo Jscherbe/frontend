@@ -26,7 +26,7 @@ $config: (
   "underline-color-hover" : gray,
   "activeSelector" : ".is-active",
   "rule-size" : 3px,
-  "rule-color" : color.get("rule"),
+  "rule-color" : "rule",
   "rule-offset" : -3px,
   "padding-y-ruled" : null,
   "nowrap" : true
@@ -113,7 +113,7 @@ $config: (
   .nav-strip--rule {
     ul,
     .nav-strip__list {
-      border-bottom: get("rule-size") solid get("rule-color");
+      border-bottom: get("rule-size") solid color.get(get("rule-color"));
     }
     a, 
     button,

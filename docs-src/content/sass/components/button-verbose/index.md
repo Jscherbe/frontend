@@ -45,12 +45,12 @@ $config: (
   "title-color": color.get("link"),
   "title-margin" : 0.5em,
   "background-color" : white,
-  "background-color:hover" : color.get("link"),
-  "color" : color.get("type"),
-  "color:hover" : color.get("type"),
-  "title-color:hover" : color.get("link:hover"),
-  "border-radius" : element.get("border-radius"),
-  "box-shadow" : element.get("box-shadow"),
+  "background-color:hover" : "link",
+  "color" : "type",
+  "color:hover" : "type",
+  "title-color:hover" : "link:hover",
+  "border-radius" : "border-radius",
+  "box-shadow" : "box-shadow",
   "box-shadow:hover" : element.get("box-shadow:hover"),
 );
 ```

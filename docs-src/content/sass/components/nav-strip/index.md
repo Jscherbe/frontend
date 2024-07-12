@@ -45,7 +45,7 @@ $config: (
   "underline-color-hover" : gray,
   "activeSelector" : ".is-active",
   "rule-size" : 3px,
-  "rule-color" : color.get("rule"),
+  "rule-color" : "rule",
   "rule-offset" : -3px,
   "padding-y-ruled" : null,
   "nowrap" : true

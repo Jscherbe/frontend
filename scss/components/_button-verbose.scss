@@ -24,12 +24,12 @@ $config: (
   "title-color": color.get("link"),
   "title-margin" : 0.5em,
   "background-color" : white,
-  "background-color:hover" : color.get("link"),
-  "color" : color.get("type"),
-  "color:hover" : color.get("type"),
-  "title-color:hover" : color.get("link:hover"),
-  "border-radius" : element.get("border-radius"),
-  "box-shadow" : element.get("box-shadow"),
+  "background-color:hover" : "link",
+  "color" : "type",
+  "color:hover" : "type",
+  "title-color:hover" : "link:hover",
+  "border-radius" : "border-radius",
+  "box-shadow" : "box-shadow",
   "box-shadow:hover" : element.get("box-shadow:hover"),
 ) !default;
 
@@ -56,7 +56,7 @@ $config: (
 @mixin styles {
   .button-verbose {
     text-decoration: none;
-    border-radius: get("border-radius");
+    border-radius: element.get(get("border-radius"));
     box-shadow: get("box-shadow");
     line-height: get("line-height");
     position: relative;
@@ -67,13 +67,13 @@ $config: (
     background-color: get("background-color");
     padding: get("padding-y") get("padding-x");
     padding-right: (get("padding-x") * 2) + 1em;
-    color: get("color");
+    color: color.get(get("color"));
     &:hover {
-      color: get("color:hover");
-      background-color: get("background-color:hover");
+      color: color.get(get("color:hover"));
+      background-color: color.get(get("background-color:hover"));
       box-shadow: get("box-shadow:hover");
       .button-verbose__title  {
-        color: get("title-color:hover");
+        color: color.get(get("title-color:hover"));
       }
     }
   }

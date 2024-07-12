@@ -29,16 +29,16 @@ $config: (
   "margin-between":                 0,
   "border-radius":                  0,
   "box-shadow":                     none,
-  "border-color":                   color.get("rule"),
-  "border":                         1px solid color.get("rule"),
+  "border-color":                   "rule",
+  "border":                         1px solid,
   "summary-color":                  inherit,
   "summary-type-size" :             false,
   "summary-color-hover":            inherit,
   "summary-padding-y":              1rem,
   "summary-background-color":     white,
   "summary-line-height":            inherit,
-  "icon-color":                     color.get("link"),
-  "icon-color-hover":               color.get("link:hover"),
+  "icon-color":                     "link",
+  "icon-color-hover":               "link:hover",
   "icon-background-color" :         transparent,
   "icon-background-color-hover" :   transparent,
   "icon-border-radius" :            50%,
@@ -83,7 +83,7 @@ $config: (
     padding-right: get("padding-x");
     margin-top: get("margin");
     margin-bottom: get("margin");
-    border: get("border");
+    border: get("border") color.get(get("border-color"));
     background-color: get("background-color");
     box-shadow: get("box-shadow");
     &:first-of-type {
@@ -136,7 +136,7 @@ $config: (
       color: get("summary-color-hover");
       #{ $icon-selector } {
         background-color: get("icon-background-color-hover");
-        color: get("icon-color-hover");
+        color: color.get(get("icon-color-hover"));
       }
     }
   }
@@ -144,7 +144,7 @@ $config: (
     // @extend .css-icon, .css-icon-angle--right;
     // @include ulu.css-icon-styles('css-icon');
     flex: 0 0 get("icon-size");
-    color: get("icon-color");
+    color: color.get(get("icon-color"));
     margin-left: 0.5em;
     order: 3;
     background-color: get("icon-background-color");
@@ -163,7 +163,7 @@ $config: (
     //   margin-top: 0.1em;
     //   content: "\002B";
     //   // margin-left: auto; // flex to side
-    //   color: get("icon-color");
+    // color: color.get(get("icon-color"));
     // }
   }
 

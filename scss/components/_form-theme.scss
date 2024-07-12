@@ -19,16 +19,16 @@
 $config: (
   "drupal"                                    : false,
   "color"                                     : inherit,
-  "color-placeholder"                         : color.get("type-tertiary"),
+  "color-placeholder"                         : "type-tertiary",
   "font-weight-label"                         : bold,
   "font-weight-legend"                        : bold,
   "font-weight-placeholder"                   : normal,
   "font-weight-input"                         : null,
   "font-weight-textarea"                      : null,
   "font-weight-select"                        : null,
-  "required-color"                            : color.get("error"),
-  "error-color"                               : color.get("error"),
-  "warning-color"                             : color.get("warning"),
+  "required-color"                            : "error",
+  "error-color"                               : "error",
+  "warning-color"                             : "warning",
   "error-highlight-color"                     : rgb(251, 242, 242),
   "warning-highlight-color"                   : rgb(255, 249, 237),
   "item-border-radius"                        : null,
@@ -133,25 +133,29 @@ $config: (
       width: 100%;
     }
   }
+  #{ $prefix }--full-width-select {
+    select {
+      width: 100%;
+    }
+  }
   #{ $prefix }--hide-labels {
     label {
       @include element.hidden-visually();
     }
-    input:required::after {
-      // setup asterisk or other "required" marking
-    }
   }
-  @if (get("drupal")) {
-    @include drupal-layout-element-styles();
-  } @else {
-    @include layout-element-styles();
+  #{ $prefix } {
+    @if (get("drupal")) {
+      @include drupal-layout-element-styles();
+    } @else {
+      @include layout-element-styles();
+    }
   }
 }
 
 @mixin form-element-styles() {
-  $errorColor: get("error-color");
+  $errorColor: color.get(get("error-color"));
   $selectError: get("error-selector");
-  $warningColor: get("warning-color");
+  $warningColor: color.get(get("warning-color"));
   $selectWarning: get("warning-selector");
   $input-touch-size: get("check-input-touch-size");
   $input-size: get("check-input-size");
@@ -171,7 +175,7 @@ $config: (
     box-sizing: border-box;
     flex-shrink: 0;
     &::placeholder {
-      color: get("color-placeholder");
+      color: color.get(get("color-placeholder"));
       font-weight: get("font-weight-placeholder");
     }
   }
@@ -394,7 +398,7 @@ $config: (
 
 /// Required Character styles (ie. "*")
 @mixin element-required-char() {
-  color: get("required-color");
+  color: color.get(get("required-color"));
   font-size: 110%;
   font-weight: bold;
   &:last-child {
@@ -434,9 +438,9 @@ $config: (
 /// Layout styling for static/app sites
 @mixin layout-element-styles() {
   $prefix: selector.class("form-theme");
-  $errorColor: get("error-color");
+  $errorColor: color.get(get("error-color"));
   $selectError: get("error-selector");
-  $warningColor: get("warning-color");
+  $warningColor: color.get(get("warning-color"));
   $selectWarning: get("warning-selector");
 
   #{ $prefix }__required-char {
