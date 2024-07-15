@@ -22,7 +22,7 @@ $-fallbacks: (
     "property" : "box-shadow-above",
   ),
   "z-index" : (
-    "function" : meta.get-function("get", false, "element"),
+    "function" : meta.get-function("get", false, "layout"),
     "property" : "z-index-fixed",
   ),
 );
@@ -67,7 +67,7 @@ $config: (
   "arrow-size"              : 16px,
   "footer-padding-y"        : 0.25rem,
   "footer-padding-y-large"  : 0.5rem,
-  "footer-background-color" : (white, 3%),
+  "footer-background-color" : white,
   "footer-color"            : inherit,
   "tooltip-background-color": white,
   "tooltip-padding"         : 0.5rem,
@@ -168,7 +168,7 @@ $config: (
     box-shadow: get("box-shadow-footer") color.get(get("box-shadow-footer-color"));
     padding: get("footer-padding-y") get("padding");
     background-color: get("footer-color");
-    background-color: color.shade(get("footer-background-color"));
+    background-color: get("footer-background-color");
     // text-align: center;
     border-bottom-left-radius: get("border-radius");
     border-bottom-right-radius: get("border-radius");

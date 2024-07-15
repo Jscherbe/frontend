@@ -15,7 +15,7 @@
 $-fallbacks: (
   "tablist-border-bottom" : (
     "function" : meta.get-function("get-rule-style", false, "element"),
-    "arguments" : "light",
+    "arguments" : ("light",)
   )
 );
 
@@ -95,7 +95,7 @@ $config: (
         border-bottom-color: currentColor;
       }
       &[aria-selected="true"] {
-        color: colot.get(get("tab-color-selected"));
+        color: color.get(get("tab-color-selected"));
         border-bottom-color: get("tab-border-color-selected");
         opacity: 1;
       }

@@ -42,7 +42,7 @@ $config: (
   "min-width": 20rem,
   "line-height" : 1.2,
   "icon-color": gray,
-  "title-color": color.get("link"),
+  "title-color": "link",
   "title-margin" : 0.5em,
   "background-color" : white,
   "background-color:hover" : "link",
@@ -50,8 +50,8 @@ $config: (
   "color:hover" : "type",
   "title-color:hover" : "link:hover",
   "border-radius" : "border-radius",
-  "box-shadow" : "box-shadow",
-  "box-shadow:hover" : element.get("box-shadow:hover"),
+  "box-shadow" : true,
+  "box-shadow:hover" : true,
 );
 ```
   
@@ -61,8 +61,8 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-34
+- **Lines (comments):** 29-30
+- **Lines (code):** 32-51
     </details>
     
   
@@ -93,8 +93,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 53-55
+- **Lines (code):** 57-59
     </details>
     
 
@@ -135,8 +135,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 52-54
-- **Lines (code):** 56-100
+- **Lines (comments):** 70-72
+- **Lines (code):** 74-118
     </details>
     
 
@@ -184,8 +184,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 61-63
+- **Lines (code):** 65-68
     </details>
     
 

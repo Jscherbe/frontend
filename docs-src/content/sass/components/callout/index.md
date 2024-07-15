@@ -35,8 +35,8 @@ Module Settings
 $config: (
   "padding" : 1.5rem,
   "margin" : 2rem,
-  "border" : element.get-rule-style("light"),
-  "border-radius" :  element.get("border-radius"),
+  "border" : true,
+  "border-radius" :  true,
   "box-shadow" : none,
   "background-color" : rgb(240, 240, 240)
 );
@@ -48,8 +48,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 11-12
-- **Lines (code):** 14-21
+- **Lines (comments):** 24-25
+- **Lines (code):** 27-34
     </details>
     
   
@@ -80,8 +80,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-62
     </details>
     
 
@@ -122,8 +122,8 @@ Set callout styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 73-75
+- **Lines (code):** 77-79
     </details>
     
 
@@ -159,8 +159,8 @@ Prints component styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-99
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-113
     </details>
     
 
@@ -208,8 +208,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-71
     </details>
     
 

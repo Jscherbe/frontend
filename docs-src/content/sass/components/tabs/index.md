@@ -36,11 +36,11 @@ $config: (
   "border-radius" : 8px,
   "border-width" : 0.25em,
   "margin" : 2rem,
-  "tab-color" : color.get("link"),
-  "tab-color-hover" : color.get("link:hover"),
-  "tab-color-selected" : color.get("selected"),
+  "tab-color" : "link",
+  "tab-color-hover" : "link:hover",
+  "tab-color-selected" : "selected",
   "tab-border-color-selected" : currentColor,
-  "tablist-border-bottom" : element.get-rule-style("light"),
+  "tablist-border-bottom" : true,
   "tabpanel-background-color" : rgb(245, 245, 245)
 );
 ```
@@ -51,8 +51,8 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-25
+- **Lines (comments):** 22-23
+- **Lines (code):** 25-35
     </details>
     
   
@@ -83,8 +83,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 27-29
-- **Lines (code):** 31-33
+- **Lines (comments):** 37-39
+- **Lines (code):** 41-43
     </details>
     
 
@@ -125,8 +125,8 @@ Prints tabs component styles
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-139
+- **Lines (comments):** 54-56
+- **Lines (code):** 58-150
     </details>
     
 
@@ -174,8 +174,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 35-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 45-47
+- **Lines (code):** 49-52
     </details>
     
 

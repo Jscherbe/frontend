@@ -127,14 +127,15 @@ $config: (
   "width-large"             : 30rem,
   "width-large-x"           : 50rem,
   "type-size"               : null,
-  "z-index"                 : layout.get("z-index-fixed") + 1,
-  "box-shadow"              : element.get("box-shadow-above"),
-  "box-shadow-footer"       : 0 0 4px color.get("box-shadow"),
+  "z-index"                 : true,
+  "box-shadow"              : true,
+  "box-shadow-footer"       : 0 0 4px,
+  "box-shadow-footer-color" : "box-shadow",
   "border-radius"           : 6px,
   "arrow-size"              : 16px,
   "footer-padding-y"        : 0.25rem,
   "footer-padding-y-large"  : 0.5rem,
-  "footer-background-color" : color.shade(white, 3%),
+  "footer-background-color" : white,
   "footer-color"            : inherit,
   "tooltip-background-color": white,
   "tooltip-padding"         : 0.5rem,
@@ -150,8 +151,8 @@ $config: (
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 29-48
-- **Lines (code):** 50-75
+- **Lines (comments):** 30-49
+- **Lines (code):** 51-77
     </details>
     
 
@@ -390,8 +391,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 77-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-85
     </details>
     
 
@@ -432,8 +433,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 93-95
-- **Lines (code):** 97-217
+- **Lines (comments):** 96-98
+- **Lines (code):** 100-220
     </details>
     
 
@@ -565,8 +566,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 85-87
-- **Lines (code):** 89-91
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-94
     </details>
     
 

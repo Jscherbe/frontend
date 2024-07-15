@@ -56,7 +56,7 @@ $config: (
   "action-background-color":       "link",
   "action-background-color-hover": "link:hover",
   "action-border-color":           transparent,
-  "action-border-color-hover":     color.get("link"),
+  "action-border-color-hover":     "link",
   "action-color-hover":            white
 );
 ```

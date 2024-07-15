@@ -112,8 +112,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  $value: utils.require-map-get($config, $name, "component-form-theme [config]");
-  @return utils.function-fallback($name, $value, $-fallbacks);
+  @return utils.require-map-get($config, $name, "component-form-theme [config]");
 }
 
 @function -fallback($op1, $op2) {
