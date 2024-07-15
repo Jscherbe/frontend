@@ -3,10 +3,23 @@
 ////
 
 @use "sass:map";
+@use "sass:meta";
 
 @use "../utils";
 @use "../selector";
 @use "../element";
+
+// Used for function fallback
+$-fallbacks: (
+  "border" : (
+    "function" : meta.get-function("get-rule-style", false, "element"),
+    "property" : "light"
+  ),
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  )
+);
 
 /// Module Settings
 /// @type Map
@@ -14,8 +27,8 @@
 $config: (
   "padding" : 1.5rem,
   "margin" : 2rem,
-  "border" : element.get-rule-style("light"),
-  "border-radius" :  element.get("border-radius"),
+  "border" : true,
+  "border-radius" :  true,
   "box-shadow" : none,
   "background-color" : rgb(240, 240, 240)
 ) !default;
@@ -53,7 +66,8 @@ $styles: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "callout [config]");
+  $value: utils.require-map-get($config, $name, "callout [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Set callout styles 

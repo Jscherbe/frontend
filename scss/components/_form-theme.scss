@@ -38,6 +38,7 @@ $config: (
   "input-padding-y"                           : 0.25em,
   "input-min-width"                           : 10em,
   "input-background-color"                    : white,
+  
   "input-border"                              : element.get-rule-style(),
   "input-border-radius"                       : 0,
   "check-input-size"                          : 1.15em,
@@ -111,7 +112,8 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "component-form-theme [config]");
+  $value: utils.require-map-get($config, $name, "component-form-theme [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 @function -fallback($op1, $op2) {

@@ -6,12 +6,26 @@
 
 @use "sass:math";
 @use "sass:map";
+@use "sass:meta";
+
 @use "../selector";
 @use "../typography";
 @use "../utils";
 @use "../color";
 @use "../layout";
 @use "../element";
+
+// Used for function fallback
+$-fallbacks: (
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow-above",
+  ),
+  "z-index" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "z-index-fixed",
+  ),
+);
 
 /// Module Settings
 /// @type Map
@@ -45,14 +59,15 @@ $config: (
   "width-large"             : 30rem,
   "width-large-x"           : 50rem,
   "type-size"               : null,
-  "z-index"                 : layout.get("z-index-fixed") + 1,
-  "box-shadow"              : element.get("box-shadow-above"),
-  "box-shadow-footer"       : 0 0 4px color.get("box-shadow"),
+  "z-index"                 : true,
+  "box-shadow"              : true,
+  "box-shadow-footer"       : 0 0 4px,
+  "box-shadow-footer-color" : "box-shadow",
   "border-radius"           : 6px,
   "arrow-size"              : 16px,
   "footer-padding-y"        : 0.25rem,
   "footer-padding-y-large"  : 0.5rem,
-  "footer-background-color" : color.shade(white, 3%),
+  "footer-background-color" : (white, 3%),
   "footer-color"            : inherit,
   "tooltip-background-color": white,
   "tooltip-padding"         : 0.5rem,
@@ -74,7 +89,8 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "component-popover [config]");
+  $value: utils.require-map-get($config, $name, "component-popover [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Prints component styles
@@ -121,7 +137,7 @@ $config: (
   #{ $prefix } {
     display: none;
     position: absolute;
-    z-index: get("z-index");
+    z-index: get("z-index") + 1;
     background-color: get("background-color");
     color: get("color");
     width: get("width");
@@ -149,10 +165,10 @@ $config: (
   #{ $prefix }__footer {
     display: block;
     flex: 0;
-    box-shadow: get("box-shadow-footer");
+    box-shadow: get("box-shadow-footer") color.get(get("box-shadow-footer-color"));
     padding: get("footer-padding-y") get("padding");
     background-color: get("footer-color");
-    background-color: get("footer-background-color");
+    background-color: color.shade(get("footer-background-color"));
     // text-align: center;
     border-bottom-left-radius: get("border-radius");
     border-bottom-right-radius: get("border-radius");

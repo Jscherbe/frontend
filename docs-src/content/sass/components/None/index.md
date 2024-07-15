@@ -36,8 +36,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 101-103
-- **Lines (code):** 105-107
+- **Lines (comments):** 107-109
+- **Lines (code):** 111-113
     </details>
     
 
@@ -78,8 +78,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 399-399
-- **Lines (code):** 400-407
+- **Lines (comments):** 406-406
+- **Lines (code):** 407-414
     </details>
     
 
@@ -110,8 +110,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 409-409
-- **Lines (code):** 410-416
+- **Lines (comments):** 416-416
+- **Lines (code):** 417-423
     </details>
     
 
@@ -142,8 +142,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 418-418
-- **Lines (code):** 419-430
+- **Lines (comments):** 425-425
+- **Lines (code):** 426-437
     </details>
     
 
@@ -174,8 +174,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 432-432
-- **Lines (code):** 433-436
+- **Lines (comments):** 439-439
+- **Lines (code):** 440-443
     </details>
     
 
@@ -201,8 +201,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 438-438
-- **Lines (code):** 439-486
+- **Lines (comments):** 445-445
+- **Lines (code):** 446-493
     </details>
     
 
@@ -237,8 +237,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 488-488
-- **Lines (code):** 489-512
+- **Lines (comments):** 495-495
+- **Lines (code):** 496-519
     </details>
     
 
@@ -277,8 +277,8 @@ Get a config option
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** function
-- **Lines (comments):** 109-111
-- **Lines (code):** 113-115
+- **Lines (comments):** 115-117
+- **Lines (code):** 119-122
     </details>
     
 

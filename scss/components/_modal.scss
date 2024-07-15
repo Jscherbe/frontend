@@ -3,6 +3,7 @@
 ////
 
 @use "sass:map";
+@use "sass:meta";
 
 @use "../color";
 @use "../element";
@@ -10,16 +11,32 @@
 @use "../typography";
 @use "../utils";
 
+// Used for function fallback
+$-fallbacks: (
+  "backdrop-color" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "backdrop-color"
+  ),
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow-above",
+  ),
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius-large",
+  )
+);
+
 /// Module Settings
 /// @type Map
 $config: (
-  "backdrop-color" :                element.get("backdrop-color"),
+  "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
-  "box-shadow" :                    element.get("box-shadow-above"),         
+  "box-shadow" :                    true,         
   "width":                          400px,
   "height":                         340px,
   "height-no-header":               100px,
-  "border-radius" :                 element.get("border-radius-large"),
+  "border-radius" :                 true,
   "resizer-width":                  1rem,
   "resizer-color":                  black,
   "resizer-color-hover":            black,
@@ -65,7 +82,8 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "component-modal [config]");
+  $value: utils.require-map-get($config, $name, "component-modal [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Prints modal component styles

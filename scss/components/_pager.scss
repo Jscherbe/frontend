@@ -37,7 +37,7 @@ $config: (
   "action-background-color":       "link",
   "action-background-color-hover": "link:hover",
   "action-border-color":           transparent,
-  "action-border-color-hover":     color.get("link"),
+  "action-border-color-hover":     "link",
   "action-color-hover":            white
 ) !default;
 
@@ -121,7 +121,7 @@ $config: (
       line-height: 2.8rem;
       font-weight: bold;
       &:hover {
-        border-color: get("action-border-color-hover");
+        border-color: color.get(get("action-border-color-hover"));
         background-color: color.get(get("action-background-color-hover"));
         color: get("action-color-hover");
       }

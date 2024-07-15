@@ -150,8 +150,8 @@ $config: (
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 16-35
-- **Lines (code):** 37-62
+- **Lines (comments):** 29-48
+- **Lines (code):** 50-75
     </details>
     
 
@@ -390,8 +390,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 64-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 77-79
+- **Lines (code):** 81-83
     </details>
     
 
@@ -432,8 +432,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 80-82
-- **Lines (code):** 84-204
+- **Lines (comments):** 93-95
+- **Lines (code):** 97-217
     </details>
     
 
@@ -565,8 +565,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 85-87
+- **Lines (code):** 89-91
     </details>
     
 

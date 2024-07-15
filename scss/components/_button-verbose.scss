@@ -4,10 +4,27 @@
 /// A button that has additional markup (ie. page with description for example)
 /// - Used on things like linear pagination (up next)
 @use "sass:map";
+@use "sass:meta";
 
 @use "../utils";
 @use "../color";
 @use "../element";
+
+// Used for function fallback
+$-fallbacks: (
+  "border-radius" : (
+    "border-radius" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  ),
+  "box-shadow" : (
+    "border-radius" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow"
+  ),
+  "box-shadow:hover" : (
+    "border-radius" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow:hover"
+  )
+);
 
 /// Module Settings
 /// @type Map
@@ -21,16 +38,16 @@ $config: (
   "min-width": 20rem,
   "line-height" : 1.2,
   "icon-color": gray,
-  "title-color": color.get("link"),
+  "title-color": "link",
   "title-margin" : 0.5em,
   "background-color" : white,
   "background-color:hover" : "link",
   "color" : "type",
   "color:hover" : "type",
   "title-color:hover" : "link:hover",
-  "border-radius" : "border-radius",
-  "box-shadow" : "box-shadow",
-  "box-shadow:hover" : element.get("box-shadow:hover"),
+  "border-radius" : true,
+  "box-shadow" : true,
+  "box-shadow:hover" : true,
 ) !default;
 
 /// Change modules $config
@@ -46,7 +63,8 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "button-verbose [config]");
+  $value: utils.require-map-get($config, $name, "button-verbose [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Prints component styles
@@ -80,7 +98,7 @@ $config: (
   .button-verbose__title {
     display: block;
     margin-bottom: get("title-margin");
-    color: get("title-color");
+    color: color.get(get("title-color"));
   }
   .button-verbose__icon {
     position: absolute;

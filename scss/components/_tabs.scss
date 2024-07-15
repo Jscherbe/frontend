@@ -3,11 +3,21 @@
 ////
 
 @use "sass:map";
+@use "sass:meta";
+
 @use "../color";
 @use "../selector";
 @use "../breakpoint";
 @use "../element";
 @use "../utils";
+
+// Used for function fallback
+$-fallbacks: (
+  "tablist-border-bottom" : (
+    "function" : meta.get-function("get-rule-style", false, "element"),
+    "arguments" : "light",
+  )
+);
 
 /// Module Settings
 /// @type Map
@@ -16,11 +26,11 @@ $config: (
   "border-radius" : 8px,
   "border-width" : 0.25em,
   "margin" : 2rem,
-  "tab-color" : color.get("link"),
-  "tab-color-hover" : color.get("link:hover"),
-  "tab-color-selected" : color.get("selected"),
+  "tab-color" : "link",
+  "tab-color-hover" : "link:hover",
+  "tab-color-selected" : "selected",
   "tab-border-color-selected" : currentColor,
-  "tablist-border-bottom" : element.get-rule-style("light"),
+  "tablist-border-bottom" : true,
   "tabpanel-background-color" : rgb(245, 245, 245)
 ) !default;
 
@@ -37,7 +47,8 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "component-tabs [config]");
+  $value: utils.require-map-get($config, $name, "component-tabs [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Prints tabs component styles
@@ -64,7 +75,7 @@ $config: (
       position: relative; 
       cursor: pointer;
       padding: 0.75em 0.1em 0.75em 0.1em;
-      color: get("tab-color");
+      color: color.get(get("tab-color"));
       font-weight: bold;
       border-bottom: get("border-width") solid transparent;
       text-align: center;
@@ -76,7 +87,7 @@ $config: (
         }
       }
       &:hover {
-        color: get("tab-color-hover");
+        color: color.get(get("tab-color-hover"));
       }
       &:hover,
       &:focus,
@@ -84,7 +95,7 @@ $config: (
         border-bottom-color: currentColor;
       }
       &[aria-selected="true"] {
-        color: get("tab-color-selected");
+        color: colot.get(get("tab-color-selected"));
         border-bottom-color: get("tab-border-color-selected");
         opacity: 1;
       }
