@@ -648,7 +648,7 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 187-191
-- **Lines (code):** 193-220
+- **Lines (code):** 193-219
     </details>
     
 
@@ -704,8 +704,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 222-226
-- **Lines (code):** 228-244
+- **Lines (comments):** 221-225
+- **Lines (code):** 227-243
     </details>
     
 
@@ -744,8 +744,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 246-250
-- **Lines (code):** 252-260
+- **Lines (comments):** 245-249
+- **Lines (code):** 251-259
     </details>
     
 
@@ -791,8 +791,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 262-266
-- **Lines (code):** 268-276
+- **Lines (comments):** 261-265
+- **Lines (code):** 267-275
     </details>
     
 

@@ -202,9 +202,8 @@ $config: (
       $prop: map.get($functionMap, "property");
       // Arguments will override everything (allow calling functions with args)
       $arguments: map.get($functionMap, "arguments");
-      @debug meta.type-of($arguments);
     }
-    @if ($function) {
+    @if ($function) { 
       @if ($arguments) {
         @if (meta.type-of($arguments) == "list") {
           @return meta.call($function, $arguments...);
