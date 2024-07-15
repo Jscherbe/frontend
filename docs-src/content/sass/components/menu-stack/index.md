@@ -142,7 +142,7 @@ Prints component styles
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 79-83
-- **Lines (code):** 85-176
+- **Lines (code):** 85-181
     </details>
     
 

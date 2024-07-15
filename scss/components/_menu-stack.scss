@@ -101,10 +101,15 @@ $config: (
       @include typography.size(get("label-type-size"), $only-font-size: true);
     }
   }
-  #{ $prefix }__item--separated {
+  #{ $prefix }__item--separator-before {
     border-top: element.get-rule-style(-fallback("link-separated-rule-style", "rule-style"));
     margin-top: -fallback("link-separated-margin", "link-padding-y");
     padding-top: -fallback("link-separated-margin", "link-padding-y");
+  }
+  #{ $prefix }__item--separator-after {
+    border-bottom: element.get-rule-style(-fallback("link-separated-rule-style", "rule-style"));
+    margin-bottom: -fallback("link-separated-margin", "link-padding-y");
+    padding-bottom: -fallback("link-separated-margin", "link-padding-y");
   }
   // By default the link hangs outside the container so that 
   // the icons/text align to the text (above/below)
