@@ -7,13 +7,21 @@
 
 @use "../element";
 @use "../typography";
+@use "../utils";
 
 
 /// Module Settings
 /// @type Map
 
 $config: (
-  "ul-excluded-selectors" : (".list-lines"),
+  "ul-excluded-selectors" : (".list-lines",),
+  "headline-sizes" : (
+    "h2" : "h2",
+    "h3" : "h3",
+    "h4" : "h4",
+    "h5" : "h5",
+    "h6" : "h6",
+  )
 ) !default;
 
 /// Change modules $config
@@ -48,8 +56,7 @@ $config: (
   a:not([class]) {
     @include element.link($visited: true, $active: true);
   }
-  $ul-excluded-selectors: get("ul-excluded-selectors");
-  $ul-excluded-selector: list.join($ul-excluded-selectors, (), ",");
+  $ul-excluded-selector: list.join(get("ul-excluded-selectors"), (), $separator: comma);
   ul:not(#{ $ul-excluded-selector }) {
     @include element.styles-unordered-list();
   }
@@ -60,20 +67,10 @@ $config: (
   ol {
     margin-bottom: element.get("margin");
   }
-  h2 {
-    @include typography.size("h2");
-  }
-  h3 {
-    @include typography.size("h3");
-  }
-  h4 {
-    @include typography.size("h4");
-  }
-  h5 {
-    @include typography.size("h5");
-  }
-  h6 {
-    @include typography.size("h6");
+  @each $element, $size in get("headline-sizes") {
+    #{ $element } {
+      @include typography.size($size);
+    }
   }
   img {
     margin-bottom: element.get("margin");

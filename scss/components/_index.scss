@@ -28,6 +28,7 @@
 @forward "form-theme" as form-theme-*;
 @forward "data-grid" as data-grid-*;
 @forward "menu-stack" as menu-stack-*;
+@forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
 
@@ -58,6 +59,7 @@
 @use "pager";
 @use "form-theme";
 @use "menu-stack";
+@use "wysiwyg";
 
 /// Default includes, all modules
 /// @type List
@@ -89,6 +91,7 @@ $all-includes: (
   "pager",
   "form-theme",
   "menu-stack",
+  "wysiwyg",
 );
 
 /// Current included modules (for output when using styles), defaults to all
@@ -198,8 +201,10 @@ $current-includes: $all-includes;
   @if (list.index($includes, "form-theme")) {
     @include form-theme.styles;
   }
-  
   @if (list.index($includes, "menu-stack")) {
     @include menu-stack.styles;
+  }
+  @if (list.index($includes, "wysiwyg")) {
+    @include wysiwyg.styles;
   }
 }
