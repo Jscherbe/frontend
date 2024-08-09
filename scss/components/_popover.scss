@@ -177,7 +177,7 @@ $config: (
   // Modifiers
   #{ $prefix }--tooltip {
     width: get("tooltip-width");
-    max-width: max(get("max-width"), get("tooltip-max-width"));
+    max-width: min(get("max-width"), get("tooltip-max-width"));
     background-color: get("tooltip-background-color");
     pointer-events: none;
     color: get("tooltip-color");
