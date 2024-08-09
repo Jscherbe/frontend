@@ -26,7 +26,7 @@ $-fallbacks: (
 /// @type Map
 
 $config: (
-  "link-color" : null,
+  "link-color" : "link",
   "link-background-color" : transparent,
   "link-color-hover" : "link:hover",
   "link-background-color-hover" : rgb(219, 219, 219),
@@ -51,6 +51,7 @@ $config: (
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
   "checkbox-area-width" : 3em,
+  "nested-indent" : 0.5em
 ) !default;
 
 
@@ -84,9 +85,6 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("menu-stack");
-  $selector-link: "#{ $prefix }__link";
-  $active-selectors: get("link-active-selectors");
-  $selector-link-active: sassSelector.append($selector-link, $active-selectors...);
 
   #{ $prefix }--separated {
     border-top: element.get-rule-style(get("rule-style"));
@@ -111,12 +109,18 @@ $config: (
     margin-bottom: -fallback("link-separated-margin", "link-padding-y");
     padding-bottom: -fallback("link-separated-margin", "link-padding-y");
   }
+  #{ $prefix }__list {
+    & & {
+      padding-left: get("nested-indent");
+    }
+  }
   // By default the link hangs outside the container so that 
   // the icons/text align to the text (above/below)
   // - Use the modifier "site-menu--contained" to keep the links within 
   //   the parent container (no optical alignment), should be within something that contains it
   #{ $prefix }__link,
-  #{ $prefix }__checkbox {
+  #{ $prefix }__checkbox,
+  #{ $prefix }__toggle {
     width: 100%;
     display: flex;
     align-items: center;
@@ -126,17 +130,20 @@ $config: (
     font-weight: get("link-font-weight");
     color: color.get(get("link-color"));
     background-color: color.get(get("link-background-color"));
+    box-sizing: border-box;
     &:hover,
     &:focus {
       color: color.get(get("link-color-hover"));
       background-color: color.get(get("link-background-color-hover"));
     }
-  }
-  #{ $selector-link-active } {
-    &,
-    &:hover {
-      color: color.get(get("link-color-active"));
-      background-color: color.get(get("link-background-color-active"));
+    @each $active-selector in get("link-active-selectors") {
+      &#{ $active-selector } {
+        &,
+        &:hover {
+          color: color.get(get("link-color-active"));
+          background-color: color.get(get("link-background-color-active"));
+        }
+      }
     }
   }
   #{ $prefix }__checkbox {
@@ -161,15 +168,39 @@ $config: (
     margin-right: get("link-icon-margin");
     width: get("link-icon-width");
   }
+  #{ $prefix }__collapsible {
+    margin: 0;
+    &[open] {
+      #{ $prefix }__toggle-icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  #{ $prefix }__toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
 
   // Modifiers
+
   // Link buttons hang outside in margin so that text optically aligns
   #{ $prefix }--hanging {
-    #{ $prefix }__link {
-      margin-left: -(get("link-padding-x"));
-      margin-right: -(get("link-padding-x"));
-      width: calc(100% + (get("link-padding-x") * 2));
-    }
+    padding-left: get("link-padding-x");
+    padding-right: get("link-padding-x");
+    > #{ $prefix }__list > #{ $prefix }__item {
+      > #{ $prefix }__link, 
+      >#{ $prefix }__collapsible > #{ $prefix }__toggle {
+        margin-left: -(get("link-padding-x"));
+        margin-right: -(get("link-padding-x"));
+        width: calc(100% + (get("link-padding-x") * 2));
+      }
+    } 
+    
+    // #{ $prefix }__toggle { 
+    //   width: auto;
+    // }
   }
   #{ $prefix }--compact {
     #{ $prefix }__link {
