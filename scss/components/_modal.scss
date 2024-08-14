@@ -47,7 +47,9 @@ $config: (
   "header-background-color":        black,
   "header-color":                   white,
   "title-color":                    white,
+  "title-size" :                    "large",
   "title-font-weight":              bold,
+  "title-text-transform" :          null,
   "close-color":                    black,
   "close-color-hover":              black,
   "close-background-color":         white,
@@ -152,7 +154,10 @@ $config: (
     margin: 0;
     color: color.get(get("title-color"));
     font-weight: get("title-font-weight");
-    @include typography.size("large");
+    text-transform: get("title-text-transform");
+    @if (get("title-size")) {
+      @include typography.size(get("title-size"), $only-font-size: true);
+    }
   }
   .modal__title-icon {
     margin-right: get("title-icon-margin");

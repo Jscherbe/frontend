@@ -121,9 +121,21 @@ $config: (
 
 @mixin styles() {
   $prefix: selector.class("form-theme");
+
+  // Shared element styles
   #{ $prefix } {
     @include form-element-styles();
   }
+
+  // Print styles differently for standard vs Drupal
+  // - Has different elements (ie. .form-item)
+  @if (get("drupal")) {
+    @include drupal-layout-element-styles();
+  } @else {
+    @include layout-element-styles();
+  }
+
+  // Modifiers
   #{ $prefix }--full-width {
     [type="text"],
     [type="email"],
@@ -142,13 +154,6 @@ $config: (
   #{ $prefix }--hide-labels {
     label {
       @include element.hidden-visually();
-    }
-  }
-  #{ $prefix } {
-    @if (get("drupal")) {
-      @include drupal-layout-element-styles();
-    } @else {
-      @include layout-element-styles();
     }
   }
 }
@@ -436,6 +441,11 @@ $config: (
   margin: 1rem 0;
 }
 
+/// Footer of form (with button for example)
+@mixin element-form-actions-right() {
+  justify-content: flex-end;
+}
+
 /// Layout styling for static/app sites
 @mixin layout-element-styles() {
   $prefix: selector.class("form-theme");
@@ -478,6 +488,11 @@ $config: (
   #{ $prefix }__actions {
     @include element-form-actions();
   }
+  #{ $prefix }--actions-right {
+    #{ $prefix }__actions {
+      @include element-form-actions-right();
+    }
+  }
   #{ $prefix }__error {
     color: $errorColor;
   }
@@ -489,26 +504,31 @@ $config: (
 /// Layout styles but using drupal form structures
 @mixin drupal-layout-element-styles() {
   $prefix: selector.class("form-theme");
-  .form-required-character {
-    @include element-required-char();
+  #{ $prefix } {
+    .form-required-character {
+      @include element-required-char();
+    }
+    .description {
+      @include element-help-text();
+    }
+    .form-item:not(fieldset) {
+      margin-bottom: 1rem;
+    }
+    [class*="form-type-textarea"],
+    [class*="form-type-password"],
+    [class*="form-type-email"],
+    [class*="form-type-tel"],
+    [class*="form-type-number"],
+    [class*="form-type-select"],
+    [class*="form-type-textfield"] {
+      @include element-form-item-block();
+    }
+    .form-actions {
+      @include element-form-actions();
+    }
   }
-  .description {
-    @include element-help-text();
-  }
-  .form-item:not(fieldset) {
-    margin-bottom: 1rem;
-  }
-  [class*="form-type-textarea"],
-  [class*="form-type-password"],
-  [class*="form-type-email"],
-  [class*="form-type-tel"],
-  [class*="form-type-number"],
-  [class*="form-type-select"],
-  [class*="form-type-textfield"] {
-    @include element-form-item-block();
-  }
-  #{ $prefix } .form-actions {
-    @include element-form-actions();
+  #{ $prefix }--actions-right .form-actions {
+    @include element-form-actions-right();
   }
 } 
 

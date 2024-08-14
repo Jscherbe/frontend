@@ -78,8 +78,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 400-400
-- **Lines (code):** 401-408
+- **Lines (comments):** 405-405
+- **Lines (code):** 406-413
     </details>
     
 
@@ -110,8 +110,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 410-410
-- **Lines (code):** 411-417
+- **Lines (comments):** 415-415
+- **Lines (code):** 416-422
     </details>
     
 
@@ -142,8 +142,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 419-419
-- **Lines (code):** 420-431
+- **Lines (comments):** 424-424
+- **Lines (code):** 425-436
     </details>
     
 
@@ -174,8 +174,35 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 433-433
-- **Lines (code):** 434-437
+- **Lines (comments):** 438-438
+- **Lines (code):** 439-442
+    </details>
+    
+
+
+<div class="sassdoc-item-header">
+
+###  element-form-actions-right() {#mixin-element-form-actions-right}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Footer of form (with button for example)
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _form-theme.scss
+- **Group:** None
+- **Type:** mixin
+- **Lines (comments):** 444-444
+- **Lines (code):** 445-447
     </details>
     
 
@@ -201,8 +228,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 439-439
-- **Lines (code):** 440-487
+- **Lines (comments):** 449-449
+- **Lines (code):** 450-502
     </details>
     
 
@@ -212,6 +239,7 @@ Layout styling for static/app sites
 - [element-help-text()](/sass/components/None/#mixin-element-help-text)
 - [element-form-item-block()](/sass/components/None/#mixin-element-form-item-block)
 - [element-form-actions()](/sass/components/None/#mixin-element-form-actions)
+- [element-form-actions-right()](/sass/components/None/#mixin-element-form-actions-right)
 - [get()](/sass/components/accordion/#function-get)
   
 
@@ -237,8 +265,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 489-489
-- **Lines (code):** 490-513
+- **Lines (comments):** 504-504
+- **Lines (code):** 505-533
     </details>
     
 
@@ -248,6 +276,7 @@ Layout styles but using drupal form structures
 - [element-help-text()](/sass/components/None/#mixin-element-help-text)
 - [element-form-item-block()](/sass/components/None/#mixin-element-form-item-block)
 - [element-form-actions()](/sass/components/None/#mixin-element-form-actions)
+- [element-form-actions-right()](/sass/components/None/#mixin-element-form-actions-right)
   
   
 

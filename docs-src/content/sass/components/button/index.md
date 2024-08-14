@@ -281,6 +281,7 @@ Prints button component styles
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
+- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
   
 
 

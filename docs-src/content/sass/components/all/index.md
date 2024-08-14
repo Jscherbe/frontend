@@ -59,6 +59,7 @@ $all-includes: (
   "pager",
   "form-theme",
   "menu-stack",
+  "placeholder-block",
   "wysiwyg",
 );
 ```
@@ -69,8 +70,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 64-65
-- **Lines (code):** 67-95
+- **Lines (comments):** 66-67
+- **Lines (code):** 69-98
     </details>
     
 
@@ -101,8 +102,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 97-98
-- **Lines (code):** 100-100
+- **Lines (comments):** 100-101
+- **Lines (code):** 103-103
     </details>
     
   
@@ -134,8 +135,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 102-104
-- **Lines (code):** 106-109
+- **Lines (comments):** 105-107
+- **Lines (code):** 109-112
     </details>
     
 
@@ -176,8 +177,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 111-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 114-115
+- **Lines (code):** 117-119
     </details>
     
 
@@ -217,8 +218,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 118-122
-- **Lines (code):** 124-210
+- **Lines (comments):** 121-125
+- **Lines (code):** 127-216
     </details>
     
 

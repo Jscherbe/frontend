@@ -28,6 +28,7 @@
 @forward "form-theme" as form-theme-*;
 @forward "data-grid" as data-grid-*;
 @forward "menu-stack" as menu-stack-*;
+@forward "placeholder-block" as placeholder-block-*;
 @forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
@@ -59,6 +60,7 @@
 @use "pager";
 @use "form-theme";
 @use "menu-stack";
+@use "placeholder-block";
 @use "wysiwyg";
 
 /// Default includes, all modules
@@ -91,6 +93,7 @@ $all-includes: (
   "pager",
   "form-theme",
   "menu-stack",
+  "placeholder-block",
   "wysiwyg",
 );
 
@@ -203,6 +206,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "menu-stack")) {
     @include menu-stack.styles;
+  }
+  @if (list.index($includes, "placeholder-block")) {
+    @include placeholder-block.styles;
   }
   @if (list.index($includes, "wysiwyg")) {
     @include wysiwyg.styles;

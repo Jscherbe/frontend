@@ -33,16 +33,6 @@ Module Settings
 
 ``` scss
 $config: (
-  "sizes" : (
-    "small" : (
-      "default" : 2rem,
-      "medium" : 4rem
-    ),
-    "large" : (
-      "default" : 4rem,
-      "medium" : 8rem
-    )
-  ),
   outputMargin: false,
   outputPadding: true,
   outputX: true,
@@ -59,7 +49,58 @@ $config: (
 - **Group:** adaptive-spacing
 - **Type:** variable
 - **Lines (comments):** 12-13
-- **Lines (code):** 15-32
+- **Lines (code):** 15-22
+    </details>
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Sizes Map
+    
+    
+
+``` scss
+$sizes: (
+  "small" : (
+    "initial" : (
+      "size" : 2rem
+    ),
+    "medium" : (
+      "direction" : "min",
+      "size": 4rem
+    )
+  ),
+  "large" : (
+    "initial" : (
+      "size" : 4rem
+    ),
+    "medium" : (
+      "direction" : "min",
+      "size" : 8rem
+    ),
+  )
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _adaptive-spacing.scss
+- **Group:** adaptive-spacing
+- **Type:** variable
+- **Lines (comments):** 24-25
+- **Lines (code):** 27-46
     </details>
     
   
@@ -90,8 +131,8 @@ Change modules $config
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 34-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 48-50
+- **Lines (code):** 52-54
     </details>
     
 
@@ -108,6 +149,48 @@ Change modules $config
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  set-sizes() {#mixin-set-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Set sizes map
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _adaptive-spacing.scss
+- **Group:** adaptive-spacing
+- **Type:** mixin
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-62
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
+|$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
+
+    
+
+#### Require
+
+- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
   
 
 
@@ -132,8 +215,8 @@ Prints adaptive spacing component styles
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 50-52
-- **Lines (code):** 54-84
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-108
     </details>
     
 
@@ -153,6 +236,7 @@ Prints adaptive spacing component styles
 
 - [get()](/sass/components/accordion/#function-get)
 - [$config](/sass/components/accordion/#variable-config)
+- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
   
   
 
@@ -182,8 +266,8 @@ Get a config option
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** function
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-70
     </details>
     
 
