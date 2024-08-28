@@ -180,11 +180,11 @@ $config: (
       content: "";
     }
   }
-  #{ $prefix }[open] > #{ $summary-selector } #{ $icon-selector } {
+  // #{ $prefix }[open] > #{ $summary-selector } #{ $icon-selector } {
     // &:after {
     //   content: "\2212"; // Minus
     // }
-  }
+  // }
   #{ $transparent-selector } {
     border-left: none;
     border-right: none;
