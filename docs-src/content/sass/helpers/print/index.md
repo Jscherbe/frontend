@@ -37,7 +37,7 @@ Printed Media Styles
 - **Group:** print
 - **Type:** mixin
 - **Lines (comments):** 5-7
-- **Lines (code):** 9-58
+- **Lines (code):** 9-29
     </details>
     
 

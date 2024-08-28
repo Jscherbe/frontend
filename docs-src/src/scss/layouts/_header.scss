@@ -5,10 +5,10 @@ $padding: 1rem;
 
 .header {
   background-color: ulu.color-tint(vars.$color-gray-dark, 95%);
-  display: flex;
-  flex-direction: column;
-  // display: flex;
-  // padding: $padding;
+  @include ulu.breakpoint-min("medium") {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .header__main {
   width: 100%;
@@ -30,6 +30,9 @@ $padding: 1rem;
 }
 .header__nav {
   width: 100%;
+  @include ulu.breakpoint-max("medium") {
+    display: none;
+  }
 }
 .header__nav-menu {
   padding: $padding;

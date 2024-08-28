@@ -172,8 +172,38 @@ $sizes: (
   }
 }
 
-/// Attaches breakpoints to an element psuedo content for access via script
-/// - Note you can also use cssvar.declare-breakpoints to get a similiar implementation with css custom-properties
+
+/// Utility Method for iterating over a map of breakpoints and apply styles
+/// @example scss
+///   @include breakpoints.fromEach($breakpoints) using ($props) {
+///     width: map.get($props, "width");
+///   }
+/// @param {String} $breakpoints A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the
+/// @param {String} $options A map with options to change the behavior
+
+
+@mixin from-each($breakpoints, $options: ()) {
+  $directionRequired: map.get($options, "directionRequired");
+  @each $name, $props in $breakpoints {
+    $direction: map.get($props, "direction");
+    // If direction print with breakpoint
+    @if ($direction) {
+      @include from($name, $direction) {
+        @content($props);
+      }
+    // If user requires direction throw error if missing
+    } @else if ($directionRequired) {
+      @debug $breakpoints;
+      @error 'ULU: Missing required "direction" in breakpoints map (above).';
+    // Else direction wasn't required print without media query (useful for default style)
+    } @else {
+      @content($props);
+    }
+  }
+}
+
+/// Attaches breakpoints to an element pseudo content for access via script
+/// - Note you can also use cssvar.declare-breakpoints to get a similar implementation with css custom-properties
 /// - Use with ulu/js/breakpoints. Breakpoints always min-width (upwards) for javascript setup
 
 @mixin embed-for-scripts() {

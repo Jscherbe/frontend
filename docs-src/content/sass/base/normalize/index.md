@@ -28,6 +28,8 @@ sassdocGroupName: normalize
   
 
 Prints the normalize stylesheet. Originally based on modern-normalize 1.1.0
+- This has been reduced to what is needed and doesn't interfere
+- Should be updated/added to as needed
     
     
 
@@ -36,8 +38,8 @@ Prints the normalize stylesheet. Originally based on modern-normalize 1.1.0
 - **File:** _normalize.scss
 - **Group:** normalize
 - **Type:** mixin
-- **Lines (comments):** 9-12
-- **Lines (code):** 14-315
+- **Lines (comments):** 9-14
+- **Lines (code):** 16-194
     </details>
     
 

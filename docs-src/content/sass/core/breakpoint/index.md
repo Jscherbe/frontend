@@ -490,6 +490,68 @@ $dir: map.get($user-breakpoint, "direction");
 
 <div class="sassdoc-item-header">
 
+###  from-each() {#mixin-from-each}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Utility Method for iterating over a map of breakpoints and apply styles
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _breakpoint.scss
+- **Group:** breakpoint
+- **Type:** mixin
+- **Lines (comments):** 176-182
+- **Lines (code):** 184-203
+    </details>
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include breakpoints.fromEach($breakpoints) using ($props) {
+  width: map.get($props, "width");
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$breakpoints|`String`|A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the|
+|$options|`String`|A map with options to change the behavior|
+
+    
+
+#### Throw
+
+- ULU: Missing required 
+    
+
+#### Require
+
+- [from()](/sass/core/breakpoint/#mixin-from)
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
 ###  embed-for-scripts() {#mixin-embed-for-scripts}
 
   <div class="sassdoc-item-header__labels">
@@ -500,8 +562,8 @@ $dir: map.get($user-breakpoint, "direction");
 
   
 
-Attaches breakpoints to an element psuedo content for access via script
-- Note you can also use cssvar.declare-breakpoints to get a similiar implementation with css custom-properties
+Attaches breakpoints to an element pseudo content for access via script
+- Note you can also use cssvar.declare-breakpoints to get a similar implementation with css custom-properties
 - Use with ulu/js/breakpoints. Breakpoints always min-width (upwards) for javascript setup
     
     
@@ -511,8 +573,8 @@ Attaches breakpoints to an element psuedo content for access via script
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 175-177
-- **Lines (code):** 179-189
+- **Lines (comments):** 205-207
+- **Lines (code):** 209-219
     </details>
     
 

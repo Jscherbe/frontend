@@ -161,7 +161,7 @@ const cardTypesArray = []
 for (let card in cardTypes) {
   cardTypesArray.push(cardTypes[card])
 }
-console.log(cardTypesArray)
+// console.log(cardTypesArray)
 export default {
   // map card types to an array for the liquid to work through
   cardTypes,

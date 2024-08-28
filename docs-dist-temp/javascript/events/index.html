@@ -391,13 +391,13 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/demos/tests/" 
+          href="/demos/tiles/" 
           
         >
           
     
     <span class="nav-tree__text">
-      Test
+      Tiles
     </span>
   
         </a>
@@ -941,6 +941,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/base/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/base/typography/" 
           
         >
@@ -1442,6 +1461,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/components/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popover
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/components/ratio-box/" 
           
         >
@@ -1487,6 +1525,44 @@
     
     <span class="nav-tree__text">
       Tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/tile-button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Tile-button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/tile-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Tile-grid
     </span>
   
         </a>
@@ -2170,6 +2246,12 @@
 
                     <li><a href="#events~events">events~events</a>
             		</li>
+
+                    <li><a href="#events~initresize()">events~initResize()</a>
+            		</li>
+
+                    <li><a href="#events~initprint()">events~initPrint()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -2198,7 +2280,16 @@
 </li>
 <li><em>inner</em>
 <ul>
-<li><a href="#module_events..events">~events</a></li>
+<li><a href="#module_events..events">~events</a>
+<ul>
+<li><a href="#module_events..events.pageModified">.pageModified()</a></li>
+<li><a href="#module_events..events.pageResized">.pageResized()</a></li>
+<li><a href="#module_events..events.beforePrint">.beforePrint()</a></li>
+<li><a href="#module_events..events.afterPrint">.afterPrint()</a></li>
+</ul>
+</li>
+<li><a href="#module_events..initResize">~initResize()</a></li>
+<li><a href="#module_events..initPrint">~initPrint()</a></li>
 </ul>
 </li>
 </ul>
@@ -2257,6 +2348,53 @@
 <h3 id="events~events" tabindex="-1">events~events</h3>
 <p>Event object - called on dispatch</p>
 <p><strong>Kind</strong>: inner constant of <a href="#module_events"><code>events</code></a></p>
+<ul>
+<li><a href="#module_events..events">~events</a>
+<ul>
+<li><a href="#module_events..events.pageModified">.pageModified()</a></li>
+<li><a href="#module_events..events.pageResized">.pageResized()</a></li>
+<li><a href="#module_events..events.beforePrint">.beforePrint()</a></li>
+<li><a href="#module_events..events.afterPrint">.afterPrint()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_events..events.pageModified"></a></p>
+<h4 id="events.pagemodified()" tabindex="-1">events.pageModified()</h4>
+<p>Event is dispatched when DOM in the page has changed, triggers updates from
+all modules listening for the change (init instances, etc)</p>
+<ul>
+<li>Is triggered by modules that were responsible for modifying the page</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
+<a name="module_events..events.pageResized"></a></p>
+<h4 id="events.pageresized()" tabindex="-1">events.pageResized()</h4>
+<p>Event called when page is resized</p>
+<p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
+<a name="module_events..events.beforePrint"></a></p>
+<h4 id="events.beforeprint()" tabindex="-1">events.beforePrint()</h4>
+<p>Event dispatched before page print begins (teardown/restructure/hide things)</p>
+<p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
+<a name="module_events..events.afterPrint"></a></p>
+<h4 id="events.afterprint()" tabindex="-1">events.afterPrint()</h4>
+<p>Event dispatched after page print (cleanup)</p>
+<p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
+<a name="module_events..initResize"></a></p>
+<h3 id="events~initresize()" tabindex="-1">events~initResize()</h3>
+<p>Setup resize handler/dispatch</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_events"><code>events</code></a><br>
+<a name="module_events..initPrint"></a></p>
+<h3 id="events~initprint()" tabindex="-1">events~initPrint()</h3>
+<p>Setup print listeners</p>
+<ul>
+<li>Note: Tested with matchMedia but these events are more consistent
+Experimented with normalizing both events but they fired
+strangely, using any delay won't work (ie setTimeout / RAF)
+chrome pauses immediately javascript after the initial event.
+Reverting to a straightforward method for now. If this ends up
+needing something more robust we can work that out on this side
+and it won't change how the custom events file.</li>
+</ul>
+<p><strong>Kind</strong>: inner method of <a href="#module_events"><code>events</code></a></p>
 
     </div>
   </div>

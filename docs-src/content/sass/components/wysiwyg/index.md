@@ -33,7 +33,8 @@ Module Settings
 
 ``` scss
 $config: (
-  "ul-excluded-selectors" : (".list-lines",),
+  "ul-excluded-selectors" : (".list-lines", ".wysiwyg__exclude"),
+  "img-excluded-selectors" : (".wysiwyg__exclude",),
   "headline-sizes" : (
     "h2" : "h2",
     "h3" : "h3",
@@ -51,7 +52,7 @@ $config: (
 - **Group:** wysiwyg
 - **Type:** variable
 - **Lines (comments):** 13-14
-- **Lines (code):** 16-25
+- **Lines (code):** 16-26
     </details>
     
   
@@ -82,8 +83,8 @@ Change modules $config
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
-- **Lines (comments):** 27-29
-- **Lines (code):** 31-33
+- **Lines (comments):** 28-30
+- **Lines (code):** 32-34
     </details>
     
 
@@ -129,8 +130,8 @@ Get a config option
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** function
-- **Lines (comments):** 35-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 36-38
+- **Lines (code):** 40-42
     </details>
     
 

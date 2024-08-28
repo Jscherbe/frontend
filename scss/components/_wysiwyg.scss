@@ -14,7 +14,8 @@
 /// @type Map
 
 $config: (
-  "ul-excluded-selectors" : (".list-lines",),
+  "ul-excluded-selectors" : (".list-lines", ".wysiwyg__exclude"),
+  "img-excluded-selectors" : (".wysiwyg__exclude",),
   "headline-sizes" : (
     "h2" : "h2",
     "h3" : "h3",
@@ -53,11 +54,13 @@ $config: (
 
 // Internal mixin
 @mixin _styles() {
+  $ul-excludes: list.join(get("ul-excluded-selectors"), (), $separator: comma);
+  $img-excludes: list.join(get("img-excluded-selectors"), (), $separator: comma);
+
   a:not([class]) {
     @include element.link($visited: true, $active: true);
   }
-  $ul-excluded-selector: list.join(get("ul-excluded-selectors"), (), $separator: comma);
-  ul:not(#{ $ul-excluded-selector }) {
+  ul:not(#{ $ul-excludes }) {
     @include element.styles-unordered-list();
   }
   ol {
@@ -72,7 +75,7 @@ $config: (
       @include typography.size($size);
     }
   }
-  img {
+  img:not(#{ $img-excludes }) {
     margin-bottom: element.get("margin");
     margin-top: element.get("margin");
   }

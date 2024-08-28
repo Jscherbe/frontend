@@ -435,6 +435,35 @@ Removes scrollbar with CSS
 - **Lines (code):** 244-250
     </details>
     
+
+
+<div class="sassdoc-item-header">
+
+###  absolute-fill() {#mixin-absolute-fill}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Layout utility for absolute (zero on all sides)
+- Probably helpful for gzip if we use this when these exact styles are needed
+  so they are identical for compression
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _layout.scss
+- **Group:** layout
+- **Type:** mixin
+- **Lines (comments):** 252-254
+- **Lines (code):** 255-266
+    </details>
+    
   
 
 ## Functions

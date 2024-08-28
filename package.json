@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.5",
-    "@ulu/utils": "^0.0.6",
+    "@ulu/utils": "^0.0.13",
     "aria-tablist": "^1.2.2",
     "autoprefixer": "^10.4.16",
     "vite": "^5.0.10"

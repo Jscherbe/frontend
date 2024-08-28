@@ -312,7 +312,7 @@ General example, replace module-name with module's name
   
 
 Get a required value from a map, throw an error if not found
-- Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)
+- Remember that that maps cannot intentionally use null (use false instead, if trying to avoid output if not configured)
     
     
 
@@ -523,6 +523,62 @@ Reusable merge method
 
 <div class="sassdoc-item-header">
 
+###  map-has() {#function-map-has}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Returns true/false if map has property
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 151-154
+- **Lines (code):** 156-161
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$map|`Map`|Source map|
+|$key|`String`|Property to check for|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Boolean|
+
+    
+
+#### Throw
+
+- map-has(): Incorrect type for $map (should be map)
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
 ###  map-merge-or-overwrite() {#function-map-merge-or-overwrite}
 
   <div class="sassdoc-item-header__labels">
@@ -539,7 +595,7 @@ Repeatable pattern in core
 
 #### Deprecated
 
-Left in for compatability, will be removed, use map-merge with mode
+Left in for compatibility, will be removed, use map-merge with mode
     
 
     <details>
@@ -547,8 +603,8 @@ Left in for compatability, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 151-152
-- **Lines (code):** 154-162
+- **Lines (comments):** 163-164
+- **Lines (code):** 166-174
     </details>
     
 
@@ -579,8 +635,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 164-165
-- **Lines (code):** 167-174
+- **Lines (comments):** 176-177
+- **Lines (code):** 179-186
     </details>
     
 
@@ -615,9 +671,59 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 176-176
-- **Lines (code):** 177-185
+- **Lines (comments):** 188-188
+- **Lines (code):** 189-197
     </details>
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  map-contains-any() {#function-map-contains-any}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Checks if a map contains one or more of the keys
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 200-204
+- **Lines (code):** 205-224
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$map|`Map`|The map to check|
+|$keys|`List`|The list of keys to check for|
+|$options|`List`|Options for how this behaves|
+|$options.with-value|`List`|Requires that at least one of the map entries from the list has a value other than null|
+
+    
+
+#### Throw
+
+- map-contains-any(): Incorrect type for $map (should be map)
+- map-contains-any(): Incorrect type for $keys (should be list)
     
 
 #### Require
@@ -647,8 +753,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 187-191
-- **Lines (code):** 193-219
+- **Lines (comments):** 226-230
+- **Lines (code):** 232-258
     </details>
     
 
@@ -704,8 +810,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 221-225
-- **Lines (code):** 227-243
+- **Lines (comments):** 260-264
+- **Lines (code):** 266-282
     </details>
     
 
@@ -744,8 +850,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 245-249
-- **Lines (code):** 251-259
+- **Lines (comments):** 284-288
+- **Lines (code):** 290-298
     </details>
     
 
@@ -791,8 +897,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 261-265
-- **Lines (code):** 267-275
+- **Lines (comments):** 300-304
+- **Lines (code):** 306-314
     </details>
     
 

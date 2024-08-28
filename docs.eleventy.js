@@ -12,6 +12,7 @@ import optionsTablePlugin from "./docs-src/src/plugins/options-table/index.js";
 import jsdocPlugin from "./docs-src/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
 import prismCustomClass from "prismjs/plugins/custom-class/prism-custom-class.js";
+import { shortcodes } from "./docs-src/src/templates/shortcodes/index.js";
 
 console.log("prismCustomClass:\n", prismCustomClass);
 // const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -63,6 +64,9 @@ export default async function(eleventyConfig) {
       formatToggle: menuToggleFormatter
     }
   }); 
+  // Register all site shortcodes
+  Object.entries(shortcodes)
+    .forEach(([name, fn]) => eleventyConfig.addShortcode(name, fn));
   
   return {
     dir: {

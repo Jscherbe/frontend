@@ -34,6 +34,7 @@ Default includes, all modules
 ``` scss
 $all-includes: (
   "normalize", 
+  "print", 
   "elements", 
   "keyframes", 
   "typography",
@@ -48,8 +49,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 21-22
-- **Lines (code):** 24-31
+- **Lines (comments):** 23-24
+- **Lines (code):** 26-34
     </details>
     
 
@@ -80,8 +81,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 33-34
-- **Lines (code):** 36-36
+- **Lines (comments):** 36-37
+- **Lines (code):** 39-39
     </details>
     
   
@@ -113,8 +114,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-45
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-48
     </details>
     
 
@@ -155,8 +156,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 47-48
-- **Lines (code):** 50-52
+- **Lines (comments):** 50-51
+- **Lines (code):** 53-55
     </details>
     
 
@@ -196,8 +197,8 @@ Prints all Base styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 54-58
-- **Lines (code):** 60-83
+- **Lines (comments):** 57-61
+- **Lines (code):** 63-89
     </details>
     
 

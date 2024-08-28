@@ -3,6 +3,7 @@
 ////
 
 @forward "normalize" as normalize-*;
+@forward "print" as print-*;
 @forward "elements" as elements-*;
 @forward "keyframes" as keyframes-*;
 @forward "typography" as typography-*;
@@ -12,6 +13,7 @@
 
 @use "../utils";
 @use "normalize";
+@use "print";
 @use "typography";
 @use "elements";
 @use "color";
@@ -23,6 +25,7 @@
 
 $all-includes: (
   "normalize", 
+  "print", 
   "elements", 
   "keyframes", 
   "typography",
@@ -79,6 +82,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "layout")) {
     @include layout.styles;
+  }
+  @if (list.index($includes, "print")) {
+    @include normalize.styles;
   }
 }
 

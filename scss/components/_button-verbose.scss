@@ -13,15 +13,15 @@
 // Used for function fallback
 $-fallbacks: (
   "border-radius" : (
-    "border-radius" : meta.get-function("get", false, "element"),
+    "function" : meta.get-function("get", false, "element"),
     "property" : "border-radius"
   ),
   "box-shadow" : (
-    "border-radius" : meta.get-function("get", false, "element"),
+    "function" : meta.get-function("get", false, "element"),
     "property" : "box-shadow"
   ),
   "box-shadow:hover" : (
-    "border-radius" : meta.get-function("get", false, "element"),
+    "function" : meta.get-function("get", false, "element"),
     "property" : "box-shadow:hover"
   )
 );

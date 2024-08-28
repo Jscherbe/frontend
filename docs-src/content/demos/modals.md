@@ -17,7 +17,9 @@ This is the default modal, being created from markup in the body on page load by
   id="modal-id-center" 
   class="wysiwyg"
   data-ulu-modal-builder='{ 
-    "title" : "Test Title" 
+    "title" : "Test Title",
+    "print" : true,
+    "documentEnd" : false
   }' 
   hidden
 >
@@ -38,7 +40,7 @@ The available positions are top, bottom, left, right and center (default). Left 
   class="wysiwyg"
   data-ulu-modal-builder='{ 
     "title" : "Test Title", 
-    "position" : "left"  
+    "position" : "left",
   }' 
   hidden
 >
@@ -49,7 +51,7 @@ The available positions are top, bottom, left, right and center (default). Left 
   class="wysiwyg"
   data-ulu-modal-builder='{ 
     "title" : "Test Title", 
-    "position" : "right"
+    "position" : "right",
   }' 
   hidden
 >

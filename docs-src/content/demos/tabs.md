@@ -9,7 +9,7 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
 ### Default
 
 
-<div class="tabs">
+<div class="tabs tabs--print">
   <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : true }'>
     <button type="button" id="tabs-1-1">
       Tab Label 1

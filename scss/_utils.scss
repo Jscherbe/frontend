@@ -36,7 +36,7 @@ $config: (
 }
 
 /// Get a required value from a map, throw an error if not found
-/// - Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)
+/// - Remember that that maps cannot intentionally use null (use false instead, if trying to avoid output if not configured)
 /// @param {Map} $map The map to get the value from
 /// @param {String} $key The key in the map to get value from
 /// @param {String} $context The context of using this function for debugging help
@@ -148,8 +148,20 @@ $config: (
   }
 }
 
+/// Returns true/false if map has property
+/// @param {Map} $map Source map 
+/// @param {String} $key Property to check for
+/// @return {Boolean}
+
+@function map-has($map, $key) {
+  @if (meta.type-of($map) != "map") {
+    @error "map-has(): Incorrect type for $map (should be map)";
+  }
+  @return map.get($map, $key) != null;
+}
+
 /// Repeatable pattern in core
-/// @deprecated Left in for compatability, will be removed, use map-merge with mode
+/// @deprecated Left in for compatibility, will be removed, use map-merge with mode
 
 @function map-merge-or-overwrite($original, $changes, $deep: false, $overwrite: false) {
   $mode: null;
@@ -182,6 +194,33 @@ $config: (
     }
   }
   @return null;
+}
+
+
+/// Checks if a map contains one or more of the keys
+/// @param {Map} $map The map to check
+/// @param {List} $keys The list of keys to check for
+/// @param {List} $options Options for how this behaves
+/// @param {List} $options.with-value Requires that at least one of the map entries from the list has a value other than null
+@function map-contains-any($map, $keys, $options: ()) {
+  @if (meta.type-of($map) != "map") {
+    @error "map-contains-any(): Incorrect type for $map (should be map)";
+  }
+  @if (meta.type-of($keys) != "list") {
+    @error "map-contains-any(): Incorrect type for $keys (should be list)";
+  }
+  @each $key in $keys {
+    @if map.has-key($map, $key) {
+      @if map.get($options, "with-value") {
+        @if map.get($map, $key) != null {
+          @return true;
+        }
+      } @else {
+        @return true;
+      }
+    }
+  }
+  @return false;
 }
 
 /// Helps in providing a dynamic fallback for modules whose defaults should come from another

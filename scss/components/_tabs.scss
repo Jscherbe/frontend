@@ -31,7 +31,8 @@ $config: (
   "tab-color-selected" : "selected",
   "tab-border-color-selected" : currentColor,
   "tablist-border-bottom" : true,
-  "tabpanel-background-color" : rgb(245, 245, 245)
+  "tabpanel-background-color" : rgb(245, 245, 245),
+  "print-margin" : 1.5em,
 ) !default;
 
 /// Change modules $config
@@ -145,6 +146,20 @@ $config: (
     >[role="tabpanel"] {
       background-color: transparent;
       padding: 0;
+    }
+  }
+  // Display all tabs during print
+  #{ $prefix }--print {
+    @media print {
+      [role="tablist"] {
+        display: none;
+      }
+      [role="tabpanel"] {
+        display: block;
+        + [role="tabpanel"] {
+          margin-top: get("print-margin");
+        }
+      }
     }
   }
 }
