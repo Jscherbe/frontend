@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Components
+    Print
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -135,10 +135,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -330,12 +330,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/print/" 
-          
+          aria-current="page"
         >
           
     
@@ -449,10 +449,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -472,10 +472,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -999,10 +999,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1020,12 +1020,12 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/components/" 
-          aria-current="page"
+          
         >
           
     
@@ -2268,7 +2268,17 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#test-printing-page">Test printing page</a>
+            		</li>
+
+                    <li><a href="#test-printing-an-element">Test printing An Element</a>
+            		</li>
+                </ol>
+            </div>
 			</div>
 		
 		<main id="main" class="page__body">
@@ -2276,12 +2286,21 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Components</h1>
+    <h1 class="page__title h1">Print</h1>
+
+  <p class="type-large type-light">
+    Test print triggers
+  </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <div class="wysiwyg">
-      
-    </div>
+    <h2 id="test-printing-page" tabindex="-1">Test printing page</h2>
+<p><button class="button" data-ulu-print>Print Page</button></p>
+<h2 id="test-printing-an-element" tabindex="-1">Test printing An Element</h2>
+<p><button class="button" data-ulu-print='{ "element" : "#test-print-element" }'>Print Element</button></p>
+<div id="test-print-element" class="callout">
+  This message should be the only thing printing.
+</div>
+
   </div>
 
 		</main>

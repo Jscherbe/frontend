@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Components
+    print
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -449,10 +449,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -472,10 +472,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -999,10 +999,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1020,12 +1020,12 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/components/" 
-          aria-current="page"
+          
         >
           
     
@@ -1797,10 +1797,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -1820,10 +1820,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           
         <a 
-          class="nav-tree__link nav-tree__link--index " 
+          class="nav-tree__link nav-tree__link--index is-active-trail" 
           href="/javascript/" 
           
         >
@@ -2067,12 +2067,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/javascript/print/" 
-          
+          aria-current="page"
         >
           
     
@@ -2268,7 +2268,29 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				
+				<h2>On this page</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#print">print</a>
+            
+                <ol>
+                    
+                    <li><a href="#print.init()">print.init()</a>
+            		</li>
+
+                    <li><a href="#print~defaults">print~defaults</a>
+            		</li>
+
+                    <li><a href="#print~setup()">print~setup()</a>
+            		</li>
+
+                    <li><a href="#print~setuptrigger()">print~setupTrigger()</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </div>
 			</div>
 		
 		<main id="main" class="page__body">
@@ -2276,11 +2298,58 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Components</h1>
+    <h1 class="page__title h1">print</h1>
 
 <hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
-      
+      <p><a name="module_print"></a></p>
+<h2 id="print" tabindex="-1">print</h2>
+<ul>
+<li><a href="#module_print">print</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_print.init">.init()</a></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_print..defaults">~defaults</a>
+<ul>
+<li><a href="#module_print..defaults.element">.element</a></li>
+</ul>
+</li>
+<li><a href="#module_print..setup">~setup()</a></li>
+<li><a href="#module_print..setupTrigger">~setupTrigger()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="module_print.init"></a></p>
+<h3 id="print.init()" tabindex="-1">print.init()</h3>
+<p>Initialize everything in document</p>
+<ul>
+<li>This will only initialize elements once, it is safe to call on page changes</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_print"><code>print</code></a><br>
+<a name="module_print..defaults"></a></p>
+<h3 id="print~defaults" tabindex="-1">print~defaults</h3>
+<p>Default options</p>
+<p><strong>Kind</strong>: inner constant of <a href="#module_print"><code>print</code></a><br>
+<a name="module_print..defaults.element"></a></p>
+<h4 id="defaults.element" tabindex="-1">defaults.element</h4>
+<p>Print element/selector</p>
+<p><strong>Kind</strong>: static property of <a href="#module_print..defaults"><code>defaults</code></a><br>
+<a name="module_print..setup"></a></p>
+<h3 id="print~setup()" tabindex="-1">print~setup()</h3>
+<p>Setup all triggers currently on the page</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_print"><code>print</code></a><br>
+<a name="module_print..setupTrigger"></a></p>
+<h3 id="print~setuptrigger()" tabindex="-1">print~setupTrigger()</h3>
+<p>Setup a single trigger (can be used manually without attr if needed)</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_print"><code>print</code></a></p>
+
     </div>
   </div>
 

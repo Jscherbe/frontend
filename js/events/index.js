@@ -27,8 +27,6 @@ const events = {
    * Event called when page is resized
    */
   pageResized(context) {
-    console.log("resized working");
-    
     context.dispatchEvent(new CustomEvent(getName("pageResized"), { bubbles: true }));
   },
   /**
@@ -91,10 +89,8 @@ function initResize() {
 function initPrint() {
   window.addEventListener('beforeprint', () => {
     dispatch("beforePrint", document);
-    console.log("beforeprint");
   });
   window.addEventListener('afterprint', () => {
     dispatch("afterPrint", document);
-    console.log("afterprint");
   }); 
 }
