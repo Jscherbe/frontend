@@ -252,7 +252,7 @@ $containers: (
 /// Layout utility for absolute (zero on all sides)
 /// - Probably helpful for gzip if we use this when these exact styles are needed
 ///   so they are identical for compression
-@mixin absolute-fill($set-size) {
+@mixin absolute-fill($set-size: false) {
   position: absolute;
   top: 0;
   left: 0;

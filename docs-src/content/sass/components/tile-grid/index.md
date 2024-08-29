@@ -187,7 +187,7 @@ Change modules $config
 
 <div class="sassdoc-item-header">
 
-###  set-static-styles() {#mixin-set-static-styles}
+###  set-static() {#mixin-set-static}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>

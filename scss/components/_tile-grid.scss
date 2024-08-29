@@ -65,7 +65,7 @@ $static-styles: (
 /// @param {Map} $changes Map of changes
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
-@mixin set-static-styles($changes, $merge-mode: null) {
+@mixin set-static($changes, $merge-mode: null) {
   $static-styles: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
