@@ -33,7 +33,7 @@ $sizes: (
 /// Static grid width styles
 /// @type Map
 
-$static-styles: (
+$static-sizes: (
   "static" : (
     "default" : (
       "columns" : 1,
@@ -66,7 +66,7 @@ $static-styles: (
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
 @mixin set-static($changes, $merge-mode: null) {
-  $static-styles: utils.map-merge($sizes, $changes, $merge-mode) !global;
+  $static-sizes: utils.map-merge($static-sizes, $changes, $merge-mode) !global;
 }
 
 /// Set sizes map
@@ -133,7 +133,7 @@ $static-styles: (
 
   // Print out the static column styles
   // - Adaptive column count per breakpoint, equal widths
-  @each $modifier, $breakpoints in $static-styles {
+  @each $modifier, $breakpoints in $static-sizes {
     @include breakpoint.from-each($breakpoints) using ($props) {
       #{ $prefix }--#{ $modifier } {
         grid-template-columns: repeat(map.get($props, "columns"), 1fr);
