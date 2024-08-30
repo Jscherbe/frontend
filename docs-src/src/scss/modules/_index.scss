@@ -2,7 +2,7 @@
 @use "ulu";
 
 @use "tag";
-@use "wysiwyg";
+// @use "wysiwyg";
 // @use "card";
 
 @include tag.set((
@@ -16,7 +16,7 @@
   ),
 ), "overwrite");
 @include tag.styles();
-@include wysiwyg.styles();
+// @include wysiwyg.styles();
 
 // @include card.set((
 //   "box-shadow" : 5px 5px 8px rgb(214, 207, 226),

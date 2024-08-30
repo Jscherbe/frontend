@@ -33,6 +33,7 @@ export const defaults = {
   video: false,
   noBackdrop: false,
   size: "default",
+  print: false,
   class: "",
   classCloseIcon: "css-icon css-icon--close",
   classResizerIcon: "css-icon css-icon--drag",
@@ -90,7 +91,7 @@ export const defaults = {
 let currentDefaults = { ...defaults };
 
 /**
- * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ * @param {Object} options Change options used as default for dialogs, can then be overridden by data attribute settings on element
  */
 export function setDefaults(options) {
   currentDefaults = Object.assign({}, currentDefaults, options);
@@ -162,6 +163,24 @@ export function buildModal(content, options) {
   if (config.hasResizer) {
     new Resizer(modal, resizer, {
       fromLeft: config.position === "right"
+    });
+  }
+
+  if (config.print) {
+    console.log("yes");
+    console.log("modal:\n", modal);
+    
+    let printClone;
+    document.addEventListener(getName("beforePrint"), () => {
+      console.log("added");
+      
+      printClone = content.cloneNode(true);
+      modal.after(printClone);
+    });
+    document.addEventListener(getName("afterPrint"), () => {
+      console.log("removed");
+      
+      printClone.remove();
     });
   }
   return { modal };

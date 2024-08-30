@@ -1,0 +1,102 @@
+////
+/// @group tile-button
+////
+/// Button to be used withing tile-grid. Used with button classes.
+
+@use "sass:map";
+@use "sass:meta";
+
+@use "../selector";
+@use "../element";
+@use "../typography";
+@use "../utils";
+
+$-fallbacks: (
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  ),
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-densest"
+  ),
+);
+
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "padding" : (1em 0.5em),
+  "border-radius" : true,
+  "line-height" : true,
+  "row-margin" : 0.5em,
+  "icon-opacity" : 0.5,
+  "icon-font-size" : 1.5em,
+  "icon-margin" : 1em,
+  "description-size" : "small-x"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "component-tile-button [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  $prefix: selector.class("tile-button");
+
+  #{ $prefix } {
+    white-space: normal;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: get("padding");
+    border-radius: get("border-radius");
+    line-height: get("line-height");
+  }
+  #{ $prefix }__row {
+    
+    & + & {
+      margin-top: get("row-margin");
+    }
+  }
+
+  $desc-size: get("description-size");
+
+  @if ($desc-size and typography.has-size($desc-size)) {
+    #{ $prefix }__row--description {
+      @include typography.size($desc-size, $only-font-size: true);
+    }
+  }
+  // Special row style for icons (optionally transparent)
+  #{ $prefix }__row--icon {
+    margin: 0 auto;
+    opacity: get("icon-opacity");
+    font-size: get("icon-font-size");
+    & + #{ $prefix }__row {
+      margin-top: get("icon-margin");
+    }
+  }
+}
+

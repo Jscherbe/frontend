@@ -45,6 +45,7 @@ $config: (
   "font-weight-bold" : bold,
   "line-height" : 1.5,
   "line-height-dense": 1.3,
+  "line-height-densest": 1.1,
   "line-height-spaced": 1.75,
   "size-ratio": 1.8,
   "size-line-height-ratio": 0.97,
@@ -66,7 +67,7 @@ $config: (
 - **Group:** typography
 - **Type:** variable
 - **Lines (comments):** 17-29
-- **Lines (code):** 31-55
+- **Lines (code):** 31-56
     </details>
     
 
@@ -121,8 +122,8 @@ $sizes: get-default-sizes();
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 168-177
-- **Lines (code):** 179-179
+- **Lines (comments):** 169-178
+- **Lines (code):** 180-180
     </details>
     
 
@@ -135,7 +136,7 @@ $sizes: get-default-sizes();
 |$size.name.font-size|Number|Font size in rems or pixels|
 |$size.name.line-height|Number|Line height (unitless)|
 |$size.name.responsive|Number|Apply responsive sizes|
-|$size.name.base-class|Boolean|This style should be included in the base (top can be overriden)|
+|$size.name.base-class|Boolean|This style should be included in the base (top can be overridden)|
 |$size.name.helper-class|Boolean|This style should be included in the helpers (overrides)|
 
     
@@ -173,8 +174,8 @@ Change modules $config
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-63
+- **Lines (comments):** 58-60
+- **Lines (code):** 62-64
     </details>
     
 
@@ -220,8 +221,8 @@ Break word stradegy
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 116-117
-- **Lines (code):** 119-123
+- **Lines (comments):** 117-118
+- **Lines (code):** 120-124
     </details>
     
 
@@ -261,8 +262,8 @@ Update the typography presets map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 181-188
-- **Lines (code):** 190-192
+- **Lines (comments):** 182-189
+- **Lines (code):** 191-193
     </details>
     
 
@@ -287,7 +288,7 @@ Setting the error and type color
 |:--|:--|:--|
 |$changes|`Map`|A map to merge into the color palette|
 |$deep|`Map`|Use deep merge|
-|$overwrite|`Map`|Overwrite the presets completly (cannot be used with deep)|
+|$overwrite|`Map`|Overwrite the presets completely (cannot be used with deep)|
 
     
 
@@ -324,8 +325,8 @@ Print's the responsive type formula
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 278-280
-- **Lines (code):** 282-284
+- **Lines (comments):** 277-279
+- **Lines (code):** 281-283
     </details>
     
 
@@ -366,8 +367,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 286-289
-- **Lines (code):** 291-331
+- **Lines (comments):** 285-288
+- **Lines (code):** 290-330
     </details>
     
 
@@ -423,8 +424,8 @@ Get a config option
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-71
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-72
     </details>
     
 
@@ -471,8 +472,8 @@ Get scale of the base font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 73-75
-- **Lines (code):** 77-79
+- **Lines (comments):** 74-76
+- **Lines (code):** 78-80
     </details>
     
 
@@ -527,8 +528,8 @@ Get scale of the line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 81-84
-- **Lines (code):** 86-88
+- **Lines (comments):** 82-85
+- **Lines (code):** 87-89
     </details>
     
 
@@ -583,8 +584,8 @@ Convert pixel value to rem value based on typography $font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-100
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-101
     </details>
     
 
@@ -638,8 +639,8 @@ Changes pixels to em
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 102-105
-- **Lines (code):** 107-114
+- **Lines (comments):** 103-106
+- **Lines (code):** 108-115
     </details>
     
 
@@ -696,8 +697,8 @@ Creates a size map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 125-130
-- **Lines (code):** 132-146
+- **Lines (comments):** 126-131
+- **Lines (code):** 133-147
     </details>
     
 
@@ -745,8 +746,8 @@ Function that returns default sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 148-149
-- **Lines (code):** 150-166
+- **Lines (comments):** 149-150
+- **Lines (code):** 151-167
     </details>
     
 
@@ -784,8 +785,8 @@ Get a size's map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 194-196
-- **Lines (code):** 198-200
+- **Lines (comments):** 195-197
+- **Lines (code):** 199-201
     </details>
     
 
@@ -821,7 +822,7 @@ Get a size's map
 
 <div class="sassdoc-item-header">
 
-###  font-size() {#function-font-size}
+###  has-size() {#function-has-size}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
@@ -831,7 +832,7 @@ Get a size's map
 
   
 
-Print a font-size for a given size
+Check if a typography size exists
     
     
 
@@ -840,8 +841,8 @@ Print a font-size for a given size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 202-204
-- **Lines (code):** 206-210
+- **Lines (comments):** 203-205
+- **Lines (code):** 207-209
     </details>
     
 
@@ -850,20 +851,28 @@ Print a font-size for a given size
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$value|`String`|Size name|
+|$name|`String`|Name of size|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Boolean|
 
     
 
 #### Todos
 
-- Remove doesn't work for breakpoints or responsive
+- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
 
-- [get-size()](/sass/core/breakpoint/#function-get-size)
-- [get()](/sass/core/breakpoint/#function-get)
-- [rem()](/sass/core/typography/#function-rem)
+- map-has()
+- [$sizes](/sass/core/breakpoint/#variable-sizes)
   
 
 
@@ -888,8 +897,8 @@ Forces conversion to unitless line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 212-214
-- **Lines (code):** 216-230
+- **Lines (comments):** 211-213
+- **Lines (code):** 215-229
     </details>
     
 
@@ -941,8 +950,8 @@ Print a value from the size and convert it (to appropriate unit for framework)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 231-233
-- **Lines (code):** 235-261
+- **Lines (comments):** 230-232
+- **Lines (code):** 234-260
     </details>
     
 
@@ -991,8 +1000,8 @@ Get a sizes property value that doesn't need conversion
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 264-267
-- **Lines (code):** 269-276
+- **Lines (comments):** 263-266
+- **Lines (code):** 268-275
     </details>
     
 

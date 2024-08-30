@@ -33,7 +33,7 @@ Module Settings
 
 ``` scss
 $config: (
-  "link-color" : null,
+  "link-color" : "link",
   "link-background-color" : transparent,
   "link-color-hover" : "link:hover",
   "link-background-color-hover" : rgb(219, 219, 219),
@@ -58,6 +58,7 @@ $config: (
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
   "checkbox-area-width" : 3em,
+  "nested-indent" : 0.5em
 );
 ```
   
@@ -68,7 +69,7 @@ $config: (
 - **Group:** menu-stack
 - **Type:** variable
 - **Lines (comments):** 25-26
-- **Lines (code):** 28-54
+- **Lines (code):** 28-55
     </details>
     
   
@@ -99,8 +100,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-63
+- **Lines (comments):** 58-60
+- **Lines (code):** 62-64
     </details>
     
 
@@ -141,8 +142,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 79-83
-- **Lines (code):** 85-176
+- **Lines (comments):** 80-84
+- **Lines (code):** 86-212
     </details>
     
 
@@ -196,8 +197,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-72
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-73
     </details>
     
 

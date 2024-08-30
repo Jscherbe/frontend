@@ -10,13 +10,67 @@ sassdocGroupName: card
 
 
 
+## Variables
 
 
 
 
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
 
 Module Settings
     
+    
+
+``` scss
+$config: (
+  "image-ratio" : 56.25%,
+  "padding" : 2rem,
+  "margin-y" : 3rem,
+  "border-radius" : 5px,
+  "horizontal-breakpoint" : "small",
+  "box-shadow" : 5px 5px 8px rgb(180, 180, 180),
+  "box-shadow-hover" : null,
+  "color" : null,
+  "color-hover" : null,
+  "color-overlay" : white,
+  "color-overlay-hover" : null,
+  "overlay-background-color": rgba(0, 0, 0, 0.6),
+  "background-color" : white,
+  "background-color-hover" : rgb(242, 244, 246),
+  "max-width" : 28rem,
+  "body-min-height" : 10rem,
+  "border" : null,
+  "border-hover" : 2px solid #278cca,
+  "title-margin" : 0.75em,
+  "title-font-weight" : bold,
+  "overlay-background-color-hover" : null,
+  "clickable-card-selector" : "[data-ulu-proxy-click-init]",
+  "clickable-card-interact-selector" : "&:hover, &:focus-within",
+  "footer-padding-y" : 0.25rem,
+  "footer-min-height" : 2.5rem,
+  "prefix" : "card",
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _card.scss
+- **Group:** card
+- **Type:** variable
+- **Lines (comments):** 12-13
+- **Lines (code):** 15-42
+    </details>
     
   
 
@@ -46,8 +100,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 44-46
+- **Lines (code):** 48-50
     </details>
     
 
@@ -69,7 +123,7 @@ Change modules $config
 
 <div class="sassdoc-item-header">
 
-###  styles() {#mixin-styles}
+###  clickable-card() {#mixin-clickable-card}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -88,8 +142,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 58-60
-- **Lines (code):** 62-260
+- **Lines (comments):** 60-62
+- **Lines (code):** 64-72
     </details>
     
 
@@ -137,8 +191,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 50-52
-- **Lines (code):** 54-56
+- **Lines (comments):** 52-54
+- **Lines (code):** 56-58
     </details>
     
 

@@ -5,14 +5,9 @@
 import { getName as getEventName } from "../events/index.js";
 import { createFloatingUi } from "../utils/floating-ui.js";
 import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
-import { log, logError } from "../utils/class-logger.js";
+import { logError } from "../utils/class-logger.js";
 import { getDatasetOptionalJson } from "../utils/dom.js";
 import { newId, ensureId } from "../utils/id.js";
-
-/**
- * TODO
- * - Need to set accessible attributes
- */
 
 const attrs = {
   trigger: "data-ulu-tooltip",
@@ -78,6 +73,10 @@ export class Tooltip {
      * @type {String|Node}
      */
     fromElement: null,
+    /**
+     * If used on a link that is an anchor link it will display the content of the anchor like fromElement
+     */
+    fromAnchor: false,
     /**
      * Move the content to the bottom of the document
      * @type {Boolean}
@@ -151,11 +150,11 @@ export class Tooltip {
     this.destroyDisplay();
   }
   getInnerContent() {
-    const { fromElement, content, isHtml } = this.options;
+    const { fromElement, content, isHtml, fromAnchor } = this.options;
     if (content) {
       return content;
-    } else if (fromElement) {
-      const element = document.querySelector(fromElement);
+    } else if (fromElement || fromAnchor) {
+      const element = fromAnchor ? this.getAnchorElement() : document.querySelector(fromElement);
       if (element) {
         return isHtml ? element.innerHTML : element.innerText;
       } else {
@@ -164,6 +163,16 @@ export class Tooltip {
     } else {
       logError(this, "Could not resolve inner content");
     }
+  }
+  getAnchorElement() {
+    const { trigger } = this.elements;
+    const { href } = trigger;
+    const id = href ? href.split("#")[1] : null;
+    const element = id ? document.getElementById(id) : null;
+    if (!element) {
+      console.error("Unable to get 'fromAnchor' element", trigger);
+    }
+    return element;
   }
   createContentElement() {
     const { options } = this;

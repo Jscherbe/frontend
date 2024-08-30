@@ -41,7 +41,8 @@ $config: (
   "tab-color-selected" : "selected",
   "tab-border-color-selected" : currentColor,
   "tablist-border-bottom" : true,
-  "tabpanel-background-color" : rgb(245, 245, 245)
+  "tabpanel-background-color" : rgb(245, 245, 245),
+  "print-margin" : 1.5em,
 );
 ```
   
@@ -52,7 +53,7 @@ $config: (
 - **Group:** tabs
 - **Type:** variable
 - **Lines (comments):** 22-23
-- **Lines (code):** 25-35
+- **Lines (code):** 25-36
     </details>
     
   
@@ -83,8 +84,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 37-39
-- **Lines (code):** 41-43
+- **Lines (comments):** 38-40
+- **Lines (code):** 42-44
     </details>
     
 
@@ -125,8 +126,8 @@ Prints tabs component styles
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 54-56
-- **Lines (code):** 58-150
+- **Lines (comments):** 55-57
+- **Lines (code):** 59-165
     </details>
     
 
@@ -174,8 +175,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 45-47
-- **Lines (code):** 49-52
+- **Lines (comments):** 46-48
+- **Lines (code):** 50-53
     </details>
     
 

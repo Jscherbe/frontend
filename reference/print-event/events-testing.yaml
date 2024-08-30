@@ -1,0 +1,53 @@
+Chrome:
+  Printing by button:
+    - beforeprint
+    - mediaQuery true
+    - afterprint
+    - mediaQuery false
+  Printing to a PDF:
+    - beforeprint
+    - mediaQuery false
+    - mediaQuery true
+    - mediaQuery false
+    - mediaQuery true
+    - mediaQuery false
+    - afterprint
+  Printing to dialog and cancel:
+    - beforeprint
+    - mediaQuery false
+    - mediaQuery true
+    - mediaQuery false
+    - afterprint
+Firefox:
+  Printing by button:
+    - beforeprint 
+    - mediaQuery true 
+    - afterprint 
+    - mediaQuery false
+  Printing to a PDF:
+    - beforeprint 
+    - mediaQuery true
+    - afterprint
+    - mediaQuery
+  Printing to dialog and cancel:
+    - beforeprint 
+    - mediaQuery true 
+    - afterprint 
+    - mediaQuery false
+
+Safari:
+  Printing by button:
+    - beforeprint 
+    - mediaQuery true 
+    - mediaQuery false 
+    - afterprint 
+  Printing to a PDF:
+    - beforeprint 
+    - mediaQuery true 
+    - mediaQuery false 
+    - afterprint 
+  Printing to dialog and cancel:
+    - beforeprint 
+    - mediaQuery true 
+    - mediaQuery false 
+    - afterprint 

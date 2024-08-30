@@ -50,7 +50,9 @@ $config: (
   "header-background-color":        black,
   "header-color":                   white,
   "title-color":                    white,
+  "title-size" :                    "large",
   "title-font-weight":              bold,
+  "title-text-transform" :          null,
   "close-color":                    black,
   "close-color-hover":              black,
   "close-background-color":         white,
@@ -79,7 +81,7 @@ $config: (
 - **Group:** modal
 - **Type:** variable
 - **Lines (comments):** 30-31
-- **Lines (code):** 32-69
+- **Lines (code):** 32-71
     </details>
     
   
@@ -110,8 +112,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 71-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 73-76
+- **Lines (code):** 78-80
     </details>
     
 
@@ -163,8 +165,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 89-91
-- **Lines (code):** 93-406
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-425
     </details>
     
 
@@ -212,8 +214,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 80-82
-- **Lines (code):** 84-87
+- **Lines (comments):** 82-84
+- **Lines (code):** 86-89
     </details>
     
 

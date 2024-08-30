@@ -6,11 +6,12 @@
 
 @use "../breakpoint";
 @use "../utils";
+@use "../selector";
+
 
 /// Module Settings
 /// @type Map
 
-// 9/16
 $config: (
   "image-ratio" : 56.25%,
   "padding" : 2rem,
@@ -28,15 +29,16 @@ $config: (
   "background-color-hover" : rgb(242, 244, 246),
   "max-width" : 28rem,
   "body-min-height" : 10rem,
-  "border" : 3px solid rgb(60, 60, 60),
-  "border-hover" : null,
+  "border" : null,
+  "border-hover" : 2px solid #278cca,
   "title-margin" : 0.75em,
   "title-font-weight" : bold,
   "overlay-background-color-hover" : null,
-  "clickable-card-selector" : ".card[data-ulu-proxy-click-init]",
+  "clickable-card-selector" : "[data-ulu-proxy-click-init]",
   "clickable-card-interact-selector" : "&:hover, &:focus-within",
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
+  "prefix" : "card",
 ) !default;
 
 /// Change modules $config
@@ -59,9 +61,20 @@ $config: (
 /// @example scss
 ///  @include ulu.component-example-styles();
 
-@mixin styles {
+@mixin clickable-card {
+  @if (get("clickable-card-selector")) {
+    &#{ get("clickable-card-selector") } {
+      #{ get("clickable-card-interact-selector") } {
+        @content;
+      }
+    }
+  }
+}
 
-  .card {
+@mixin styles {
+  $prefix: selector.class(get("prefix"));
+
+  #{ $prefix }{
     color: get("color");
     background-color: get("background-color");
     border-radius: get("border-radius");
@@ -86,33 +99,30 @@ $config: (
         border-radius: get("border-radius");
       }
     }
-  }
-
-  @if (get("clickable-card-selector")) {
-    #{ get("clickable-card-selector") } {
-      #{ get("clickable-card-interact-selector") } {
-        background-color: get("background-color-hover");
-        color: get("color-hover");
-        box-shadow: get("box-shadow-hover");
-        @if (get("border-hover") or get("overlay-background-color-hover")) {
-          &:after {
-            content: "";
-            border: get("border-hover");
-            background-color: get("overlay-background-color-hover")
-          }
+    
+    @include clickable-card{
+      background-color: get("background-color-hover");
+      color: get("color-hover");
+      box-shadow: get("box-shadow-hover");
+      @if (get("border-hover") or get("overlay-background-color-hover")) {
+        &:after {
+          content: "";
+          border: get("border-hover");
+          background-color: get("overlay-background-color-hover")
         }
       }
     }
   }
 
-  .card__title {
+
+  #{ $prefix }__title {
     margin-bottom: get("title-margin");
     display: block;
     font-weight: get("title-font-weight");
   }
   // Fix since sometimes these have nested markup sometimes just raw text
   
-  .card__image {
+  #{ $prefix }__image {
     order: -1;
     flex: 0;
     position: relative;
@@ -124,8 +134,8 @@ $config: (
     border-top-left-radius: get("border-radius");
     
   }
-  .card__image img,
-  .card__image-media {
+  #{ $prefix }__image img,
+  #{ $prefix}__image-media {
     position: absolute;
     top: 0;
     left: 0;
@@ -134,7 +144,7 @@ $config: (
     border: 0;
     object-fit: cover;
   }
-  .card__image--icon {
+  #{ $prefix }__image--icon {
     background-color: transparent; 
     // padding: get("padding");
     padding: get("padding");
@@ -150,12 +160,12 @@ $config: (
       left: auto;
     }
   }
-  .card__body,
-  .card__footer { 
+  #{ $prefix }__body,
+  #{ $prefix }__footer { 
     position: relative;
     z-index: 2; // Above image
   }
-  .card__body {
+  #{ $prefix }__body {
     flex: 1;
     padding: get("padding");
     min-height: get("body-min-height");
@@ -163,7 +173,7 @@ $config: (
   // For actions/messages
   // - Layout as flex with min height to support buttons 
   //   and text without relying so much on padding
-  .card__footer {
+  #{ $prefix }__footer {
     flex: 0;
     z-index: 4;
     padding: get("footer-padding-y") get("padding");
@@ -174,10 +184,10 @@ $config: (
   }
   // body + footer {
   // means body keeps before psuedo element while footer loses it
-  .card--overlay {
+  #{ $prefix }--overlay {
     min-height: 10rem;
     // background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
-    .card__body {
+    #{ $prefix }__body {
       position: relative;
       margin-top: 20%;
       z-index: 2;
@@ -194,14 +204,14 @@ $config: (
         background: linear-gradient(to top, get("overlay-background-color") 0%, transparent);
       }
     }
-    .card__footer {
+    #{ $prefix }__footer {
       background-color: get("overlay-background-color");
       color: get("color-overlay");
     }
-    .card__title {
+    #{ $prefix }__title {
       color: get("color-overlay");
     }
-    .card__image {
+    #{ $prefix }__image {
       position: absolute;
       top: 0;
       left: 0;
@@ -236,18 +246,18 @@ $config: (
 
   @if (get("horizontal-breakpoint")) {
     @include breakpoint.min(get("horizontal-breakpoint")) {
-      .card--horizontal {
+      #{ $prefix }--horizontal {
         display: flex;
         justify-content: center;
         align-items: center;
-        .card__image {
+        #{ $prefix }__image {
           width: 33%;
           flex: 0 1 33%;
           // max-width: 30rem;
           min-height: 28rem;
           // padding-top: 0;
         }
-        .card__body {
+        #{ $prefix }__body {
           display: flex;
           flex: 1;
           flex-direction: column;

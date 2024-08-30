@@ -28,7 +28,7 @@
     "docs:nogen": "NO_DOC_GEN=true npx @11ty/eleventy --serve --incremental --config=docs.eleventy.js",
     "docs:inspect": "node --inspect-brk ./node_modules/.bin/eleventy --serve --config=docs.eleventy.js",
     "docs:build": "npx @11ty/eleventy --config=docs.eleventy.js",
-    "docs:assets": "vite --config docs.vite.config.js",
+    "docs:assets": "vite --config docs.vite.config.js --force",
     "docs:assets:build": "vite build --config docs.vite.config.js"
   },
   "repository": {
@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.5",
-    "@ulu/utils": "^0.0.6",
+    "@ulu/utils": "^0.0.13",
     "aria-tablist": "^1.2.2",
     "autoprefixer": "^10.4.16",
     "vite": "^5.0.10"

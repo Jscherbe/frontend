@@ -1,5 +1,5 @@
 ////
-/// @group button
+/// @group popover
 ////
 
 // NOTE: This is an updated version that uses floating UI
@@ -49,31 +49,35 @@ $-fallbacks: (
 /// @prop {Number} $config.tooltip-color Color for tooltip type popovers
 
 $config: (
-  "color"                   : inherit,
-  "background-color"        : white,
-  "padding"                 : 1rem,
-  "padding-large"           : 2rem,
-  "max-width"               : 90vw,
-  "max-height"              : 25rem,
-  "width"                   : 15rem,
-  "width-large"             : 30rem,
-  "width-large-x"           : 50rem,
-  "type-size"               : null,
-  "z-index"                 : true,
-  "box-shadow"              : true,
-  "box-shadow-footer"       : 0 0 4px,
-  "box-shadow-footer-color" : "box-shadow",
-  "border-radius"           : 6px,
-  "arrow-size"              : 16px,
-  "footer-padding-y"        : 0.25rem,
-  "footer-padding-y-large"  : 0.5rem,
-  "footer-background-color" : white,
-  "footer-color"            : inherit,
-  "tooltip-background-color": white,
-  "tooltip-padding"         : 0.5rem,
-  "tooltip-width"           : auto,
-  "tooltip-max-width"       : 20rem,
-  "tooltip-color"           : inherit,
+  "color"                        : inherit,
+  "background-color"             : white,
+  "padding"                      : 1rem,
+  "padding-large"                : 2rem,
+  "max-width"                    : 90vw,
+  "max-height"                   : 25rem,
+  "width"                        : 15rem,
+  "width-large"                  : 30rem,
+  "width-large-x"                : 50rem,
+  "type-size"                    : null,
+  "z-index"                      : true,
+  "box-shadow"                   : true,
+  "box-shadow-footer"            : 0 0 4px,
+  "box-shadow-footer-color"      : "box-shadow",
+  "border-radius"                : 6px,
+  "arrow-size"                   : 16px,
+  "header-padding-y"             : 0.25rem,
+  "header-color"                 : null,
+  "header-background-color"      : #ccc,
+  "header-media-background-color": black,
+  "footer-padding-y"             : 0.25rem,
+  "footer-padding-y-large"       : 0.5rem,
+  "footer-background-color"      : #ccc,
+  "footer-color"                 : null,
+  "tooltip-background-color"     : white,
+  "tooltip-padding"              : 0.5rem,
+  "tooltip-width"                : auto,
+  "tooltip-max-width"            : 20rem,
+  "tooltip-color"                : null,
 ) !default;
 
 /// Change modules $config
@@ -152,35 +156,54 @@ $config: (
       display: block;
     }
   }
-  #{ $prefix }__inner {
+  #{ $prefix }__inner,
+  #{ $prefix }__header,
+  #{ $prefix }__footer {
     display: block;
+    border-radius: get("border-radius");
+    position: relative;
+    z-index: 2; // Above arrow
+    flex: 0;
+  }
+  #{ $prefix }__inner {
     overflow-y: auto;
     max-height: get("max-height");
     padding: get("padding");
-    position: relative;
-    border-radius: get("border-radius");
-    z-index: 2; // Above arrow
     flex: 1; // When used with footer
   }
+  // Image, video above content
+  #{ $prefix }__header {
+    overflow: hidden;
+    padding: get("header-padding-y") get("padding");
+    color: get("header-color");
+    background-color: get("header-background-color");
+  }
+  #{ $prefix }__header--media {
+    padding: 0;
+    background-color: get("header-media-background-color");
+  }
   #{ $prefix }__footer {
-    display: block;
-    flex: 0;
     box-shadow: get("box-shadow-footer") color.get(get("box-shadow-footer-color"));
     padding: get("footer-padding-y") get("padding");
-    background-color: get("footer-color");
+    color: get("footer-color");
     background-color: get("footer-background-color");
-    // text-align: center;
-    border-bottom-left-radius: get("border-radius");
-    border-bottom-right-radius: get("border-radius");
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  #{ $prefix }__header:has(+ #{ $prefix }__inner),
+  #{ $prefix }__header:has(+ #{ $prefix }__footer),
+  #{ $prefix }__inner:has(+ #{ $prefix }__footer) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   // Modifiers
   #{ $prefix }--tooltip {
     width: get("tooltip-width");
-    max-width: max(get("max-width"), get("tooltip-max-width"));
+    max-width: min(get("max-width"), get("tooltip-max-width"));
+    color: get("tooltip-color");
     background-color: get("tooltip-background-color");
     pointer-events: none;
-    color: get("tooltip-color");
     #{ $prefix }__inner {
       padding: get("tooltip-padding");
       min-height: 0;
@@ -196,12 +219,6 @@ $config: (
       padding: 0;
     }
   }
-  #{ $prefix }--w-footer {
-    #{ $prefix }__inner {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
   #{ $prefix }--large {
     width: get("width-large");
   }
@@ -215,6 +232,18 @@ $config: (
     }
     #{ $prefix }__footer {
       padding: get("footer-padding-y-large") get("padding-large");
+    }
+  }
+  #{ $prefix }--prints {
+    @media print {
+      display: block;
+      position: static;
+      width: auto;
+      box-shadow: none;
+      max-width: none;
+      #{ $prefix }__arrow  {
+        display: none;
+      }
     }
   }
 }

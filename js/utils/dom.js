@@ -97,7 +97,10 @@ export function setPositionClasses(parent, classes = {
 export function getElement(target, context = document) {
   if (typeof target === "string") {
     return context.querySelector(target);
-  } else {
+  } else if (target instanceof Element) {
     return target;
+  } else {
+    console.warn("Unable to getElement()", target);
+    return null;
   }
 } 

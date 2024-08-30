@@ -16,11 +16,11 @@ title: tooltip
         * [~accessible](#module_tooltip..accessible) : <code>Boolean</code>
         * [~content](#module_tooltip..content) : <code>String</code>
         * [~fromElement](#module_tooltip..fromElement) : <code>String</code> \| <code>Node</code>
+        * [~fromAnchor](#module_tooltip..fromAnchor)
         * [~endOfDocument](#module_tooltip..endOfDocument) : <code>Boolean</code>
         * [~showEvents](#module_tooltip..showEvents) : <code>Array.&lt;String&gt;</code>
         * [~hideEvents](#module_tooltip..hideEvents) : <code>Array.&lt;String&gt;</code>
         * [~delay](#module_tooltip..delay) : <code>Number</code>
-        * [~attrs](#module_tooltip..attrs)
         * [~template()](#module_tooltip..template)
         * [~onChange()](#module_tooltip..onChange) : <code>function</code>
 
@@ -71,6 +71,12 @@ String/markup to insert into tooltip display
 Pull content from pre-existing content on page
 
 **Kind**: inner property of [<code>tooltip</code>](#module_tooltip)  
+<a name="module_tooltip..fromAnchor"></a>
+
+### tooltip~fromAnchor
+If used on a link that is an anchor link it will display the content of the anchor like fromElement
+
+**Kind**: inner property of [<code>tooltip</code>](#module_tooltip)  
 <a name="module_tooltip..endOfDocument"></a>
 
 ### tooltip~endOfDocument : <code>Boolean</code>
@@ -95,13 +101,6 @@ Events to hide tooltip on
 Delay when using the directive
 
 **Kind**: inner property of [<code>tooltip</code>](#module_tooltip)  
-<a name="module_tooltip..attrs"></a>
-
-### tooltip~attrs
-TODO
-- Need to set accessible attributes
-
-**Kind**: inner constant of [<code>tooltip</code>](#module_tooltip)  
 <a name="module_tooltip..template"></a>
 
 ### tooltip~template()

@@ -334,6 +334,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/demos/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/demos/rule/" 
           
         >
@@ -391,13 +410,13 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/demos/tests/" 
+          href="/demos/tiles/" 
           
         >
           
     
     <span class="nav-tree__text">
-      Test
+      Tiles
     </span>
   
         </a>
@@ -941,6 +960,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/base/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/base/typography/" 
           
         >
@@ -1423,6 +1461,44 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/components/placeholder-block/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Placeholder-block
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/popover/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Popover
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/components/ratio-box/" 
           
         >
@@ -1468,6 +1544,44 @@
     
     <span class="nav-tree__text">
       Tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/tile-button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Tile-button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/components/tile-grid/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Tile-grid
     </span>
   
         </a>
@@ -1957,6 +2071,44 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/javascript/print/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      print
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/javascript/print-details/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      print-details
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/javascript/resizer/" 
           
         >
@@ -2188,6 +2340,9 @@
                     <li><a href="#function-map-merge">map-merge()</a>
             		</li>
 
+                    <li><a href="#function-map-has">map-has()</a>
+            		</li>
+
                     <li><a href="#function-map-merge-or-overwrite">map-merge-or-overwrite()</a>
             		</li>
 
@@ -2195,6 +2350,9 @@
             		</li>
 
                     <li><a href="#function-map-fallback">map-fallback()</a>
+            		</li>
+
+                    <li><a href="#function-map-contains-any">map-contains-any()</a>
             		</li>
 
                     <li><a href="#function-function-fallback">function-fallback()</a>
@@ -2492,7 +2650,7 @@
 <p>Get a required value from a map, throw an error if not found</p>
 <ul>
 <li>
-<p>Remeber that that maps cannot intentionally use null (use false instead, if trying to avoid output if unconfigured)</p>
+<p>Remember that that maps cannot intentionally use null (use false instead, if trying to avoid output if not configured)</p>
   <details>
     <summary>File Information</summary>
 </li>
@@ -2757,6 +2915,66 @@
 </tbody>
 </table>
 <div class="sassdoc-item-header">
+<h3 id="function-map-has" tabindex="-1">map-has()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Returns true/false if map has property</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 151-154</li>
+<li><strong>Lines (code):</strong> 156-161  </details>
+</li>
+</ul>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$map</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Source map</td>
+</tr>
+<tr>
+<td style="text-align:left">$key</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Property to check for</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-2" tabindex="-1">Throw</h4>
+<ul>
+<li>map-has(): Incorrect type for $map (should be map)</li>
+</ul>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
 <h3 id="function-map-merge-or-overwrite" tabindex="-1">map-merge-or-overwrite()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
@@ -2764,18 +2982,18 @@
 </div>
 <p>Repeatable pattern in core</p>
 <h4 id="deprecated" tabindex="-1">Deprecated</h4>
-<p>Left in for compatability, will be removed, use map-merge with mode</p>
+<p>Left in for compatibility, will be removed, use map-merge with mode</p>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 151-152</li>
-<li><strong>Lines (code):</strong> 154-162  </details>
+<li><strong>Lines (comments):</strong> 163-164</li>
+<li><strong>Lines (code):</strong> 166-174  </details>
 </li>
 </ul>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/utils/#function-map-merge">map-merge()</a></li>
 </ul>
@@ -2792,11 +3010,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 164-165</li>
-<li><strong>Lines (code):</strong> 167-174  </details>
+<li><strong>Lines (comments):</strong> 176-177</li>
+<li><strong>Lines (code):</strong> 179-186  </details>
 </li>
 </ul>
-<h4 id="returns-3" tabindex="-1">Returns</h4>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -2824,11 +3042,69 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 176-176</li>
-<li><strong>Lines (code):</strong> 177-185  </details>
+<li><strong>Lines (comments):</strong> 188-188</li>
+<li><strong>Lines (code):</strong> 189-197  </details>
 </li>
 </ul>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-map-contains-any" tabindex="-1">map-contains-any()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Checks if a map contains one or more of the keys</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 200-204</li>
+<li><strong>Lines (code):</strong> 205-224  </details>
+</li>
+</ul>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$map</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">The map to check</td>
+</tr>
+<tr>
+<td style="text-align:left">$keys</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The list of keys to check for</td>
+</tr>
+<tr>
+<td style="text-align:left">$options</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">Options for how this behaves</td>
+</tr>
+<tr>
+<td style="text-align:left">$options.with-value</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">Requires that at least one of the map entries from the list has a value other than null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-3" tabindex="-1">Throw</h4>
+<ul>
+<li>map-contains-any(): Incorrect type for $map (should be map)</li>
+<li>map-contains-any(): Incorrect type for $keys (should be list)</li>
+</ul>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -2845,11 +3121,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 187-191</li>
-<li><strong>Lines (code):</strong> 193-220  </details>
+<li><strong>Lines (comments):</strong> 226-230</li>
+<li><strong>Lines (code):</strong> 232-258  </details>
 </li>
 </ul>
-<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -2876,7 +3152,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-4" tabindex="-1">Returns</h4>
+<h4 id="returns-5" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -2891,11 +3167,11 @@
 </tr>
 </tbody>
 </table>
-<h4 id="throw-2" tabindex="-1">Throw</h4>
+<h4 id="throw-4" tabindex="-1">Throw</h4>
 <ul>
 <li>Arguments must be a list, use single list for single argument ie</li>
 </ul>
-<h4 id="require-7" tabindex="-1">Require</h4>
+<h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -2912,11 +3188,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 222-226</li>
-<li><strong>Lines (code):</strong> 228-244  </details>
+<li><strong>Lines (comments):</strong> 260-264</li>
+<li><strong>Lines (code):</strong> 266-282  </details>
 </li>
 </ul>
-<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -2971,14 +3247,14 @@
 <p><strong>Type:</strong> function</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 246-250</p>
+<p><strong>Lines (comments):</strong> 284-288</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 252-260</p>
+<p><strong>Lines (code):</strong> 290-298</p>
   </details>
 </li>
 </ul>
-<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<h4 id="parameters-14" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -3000,7 +3276,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-5" tabindex="-1">Returns</h4>
+<h4 id="returns-6" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -3038,14 +3314,14 @@
 <p><strong>Type:</strong> function</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 262-266</p>
+<p><strong>Lines (comments):</strong> 300-304</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 268-276</p>
+<p><strong>Lines (code):</strong> 306-314</p>
   </details>
 </li>
 </ul>
-<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<h4 id="parameters-15" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -3067,7 +3343,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-6" tabindex="-1">Returns</h4>
+<h4 id="returns-7" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>

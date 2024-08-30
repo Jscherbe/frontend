@@ -13,16 +13,6 @@
 /// @type Map
 
 $config: (
-  "sizes" : (
-    "small" : (
-      "default" : 2rem,
-      "medium" : 4rem
-    ),
-    "large" : (
-      "default" : 4rem,
-      "medium" : 8rem
-    )
-  ),
   outputMargin: false,
   outputPadding: true,
   outputX: true,
@@ -31,12 +21,44 @@ $config: (
   selectorY: "ends"
 );
 
+/// Sizes Map
+/// @type Map
+
+$sizes: (
+  "small" : (
+    "initial" : (
+      "size" : 2rem
+    ),
+    "medium" : (
+      "direction" : "min",
+      "size": 4rem
+    )
+  ),
+  "large" : (
+    "initial" : (
+      "size" : 4rem
+    ),
+    "medium" : (
+      "direction" : "min",
+      "size" : 8rem
+    ),
+  )
+);
+
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 ///   @include module-name.set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
+}
+
+/// Set sizes map
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
 /// Get a config option
@@ -57,12 +79,14 @@ $config: (
   $hasMargin: map.get($config, "outputMargin");
   $hasPadding: map.get($config, "outputPadding");
   
-  @each $name, $breakpoints in map.get($config, "sizes") {
+  @each $name, $breakpoints in $sizes {
     $sizePrefixMargin: "#{ $prefixMargin }-#{ $name }";
     $sizePrefixPadding: "#{ $prefixPadding }-#{ $name }";
-    
-    @each $key, $value in $breakpoints {
-      @if $key == "default" {
+    @each $breakpoint, $props in $breakpoints {
+      $direction: map.get($props, "direction");
+      $value: map.get($props, "size");
+      // If no direction it is the default
+      @if $direction == null {
         @if $hasMargin {
           @include -classes-for-type($sizePrefixMargin, "margin", $value);
         }
@@ -70,7 +94,7 @@ $config: (
           @include -classes-for-type($sizePrefixPadding, "padding", $value);
         }
       } @else {
-        @include breakpoint.min($key) {
+        @include breakpoint.from($breakpoint, $direction) {
           @if $hasMargin {
             @include -classes-for-type($sizePrefixMargin, "margin", $value);
           }

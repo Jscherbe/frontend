@@ -1,0 +1,135 @@
+////
+/// @group popover-overlay
+////
+
+// NOTE: This is an updated version that uses floating UI
+
+@use "sass:map";
+@use "sass:list";
+
+@use "../selector";
+@use "../breakpoint";
+@use "../utils";
+@use "../layout";
+
+
+/// Module Settings
+/// @type Map
+/// @prop {Map} $config.gap Gap between items
+/// @prop {Map} $config.columns Columns by default
+/// @prop {Map} $config.breakpoints Breakpoint Map (for different column widths)
+
+$config: (
+  "color" : white,
+  "text-align" : center,
+  "striped" : true,
+  "padding" : 1em,
+  "background-color" : white,
+  "overlay-color" : rgba(0,0,0,0.2),
+  "overlay-color-striped" : rgba(0,0,0,0.3),
+  "overlay-color-hover" : rgba(0,0,0,0.9),
+  "breakpoints" : (
+    "default" : (
+      "columns" : 1,
+      "gap" : null,
+      "aspect-ratio" : list.slash(4, 3)
+    ),
+    "small" : (
+      "direction" : "min",
+      "columns" : 2,
+      "gap" : null,
+    ),
+    "medium" : (
+      "direction" : "min",
+      "columns" : 3,
+      "gap" : null,
+    ),
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "component-popover-overlay [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  $prefix: selector.class("popover-overlay");
+
+  #{ $prefix } {
+    display: grid;
+  }
+  #{ $prefix }__item,
+  #{ $prefix }__toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  #{ $prefix }__toggle {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: get("text-align");
+    background-color: get("background-color");
+    padding: get("padding");
+    color: get("color");
+    // Overlay
+    &::after {
+      content: "";
+      background-color: get("overlay-color");
+      z-index: 2;
+    }
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: get("overlay-color-hover");
+      }
+    }
+  }
+  
+  #{ $prefix }__toggle::after,
+  #{ $prefix }__toggle-image {
+    @include layout.absolute-fill(true);
+  }
+
+  #{ $prefix }__toggle-image {
+    
+    object-fit: cover;
+    z-index: 1;
+    
+  }
+  #{ $prefix }__toggle-content {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+  }
+
+  @include breakpoint.from-each(get("breakpoints")) using ($props) {
+    #{ $prefix } {
+      grid-template-columns: repeat(map.get($props, "columns"), 1fr);
+      gap: map.get($props, "gap");
+    }
+    @if utils.map-contains-any($props, ("aspect-ratio",)) {
+      #{ $prefix }__item {
+        aspect-ratio: map.get($props, "aspect-ratio");
+      }
+    }
+  }
+}

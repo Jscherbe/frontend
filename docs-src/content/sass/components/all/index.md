@@ -33,13 +33,12 @@ Default includes, all modules
 
 ``` scss
 $all-includes: (
-  "data-grid",
-  "accordion",
   "css-icon",
   "links",
   "button",
   "button-verbose",
   "badge",
+  "accordion",
   "callout",
   "card",
   "card-grid",
@@ -56,9 +55,14 @@ $all-includes: (
   "nav-strip",
   "overlay-section",
   "adaptive-spacing",
+  "data-grid",
   "pager",
   "form-theme",
   "menu-stack",
+  "tile-grid",
+  "tile-button",
+  "placeholder-block",
+  "wysiwyg",
 );
 ```
   
@@ -68,8 +72,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 61-62
-- **Lines (code):** 64-91
+- **Lines (comments):** 70-71
+- **Lines (code):** 73-104
     </details>
     
 
@@ -100,8 +104,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 93-94
-- **Lines (code):** 96-96
+- **Lines (comments):** 106-107
+- **Lines (code):** 109-109
     </details>
     
   
@@ -133,8 +137,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-105
+- **Lines (comments):** 111-113
+- **Lines (code):** 115-118
     </details>
     
 
@@ -175,8 +179,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 107-108
-- **Lines (code):** 110-112
+- **Lines (comments):** 120-121
+- **Lines (code):** 123-125
     </details>
     
 
@@ -216,8 +220,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 114-118
-- **Lines (code):** 120-204
+- **Lines (comments):** 127-131
+- **Lines (code):** 133-228
     </details>
     
 

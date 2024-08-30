@@ -1,0 +1,19 @@
+SCSS Todos:
+  ☐ Should we have the typography sizes print out in two different modules?
+    * Originally this way so that some sizes could be utilities (overrides) (like type-large)
+      and some can be base (top of stylesheet, can be overridden by components, overrides, etc).
+      This makes it flexible
+    ☐ At the least the code in both modules should be a shared typography utility?
+  ✘ Remove calc fallback in typography so that font-size can be variables etc @cancelled
+    * Note: The mixin is still needed because font size can be adaptive
+      * Should we work around this
+  ☐ Add table styling module
+  ☐ Apply the new breakpoint.from-each and utils.map-contains-any
+    * Where appropriate, may not be another need for utils.map-contains-any
+  ☐ Change all psuedo selectors to "::" ie .selector::after
+  ☐ Need to check all module names are correct and set mixins have the correct error names
+  ☐ Fix all typos 
+  ☐ Make sure all arguments and config properties are documented (sassdoc)
+  ☐ Tag module needs to be set up
+  ☐ WYSIWYG (excludes) - This should be refacotred to dedicated mixins to push exlcudes
+    ☐ Then remove list lines and add it to its's own module and call mixin

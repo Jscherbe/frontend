@@ -14,7 +14,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
     <li class="menu-stack__item">
       <a class="menu-stack__link is-active" href="#">This is Example Menu Item with a really long title</a>
     </li>
-    <li class="menu-stack__item menu-stack__item--separated">
+    <li class="menu-stack__item menu-stack__item--separator-before">
       <a class="menu-stack__link" href="#">This is Example Menu Item</a>
     </li>
   </ul>
@@ -31,7 +31,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
     <li class="menu-stack__item">
       <a class="menu-stack__link" href="#" aria-current="page">This is Example Menu Item with a really long title</a>
     </li>
-    <li class="menu-stack__item menu-stack__item--separated">
+    <li class="menu-stack__item menu-stack__item--separator-before">
       <a class="menu-stack__link" href="#">This is Example Menu Item</a>
     </li>
     <li class="menu-stack__item">
@@ -88,7 +88,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
         <label for="cb-2">Example Item 2</label>
       </div>
     </li>
-    <li class="menu-stack__item menu-stack__item--separated">
+    <li class="menu-stack__item menu-stack__item--separator-before">
       <div class="menu-stack__checkbox">
         <input type="checkbox" id="cb-3">
         <label for="cb-3">Example Item 3</label>

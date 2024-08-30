@@ -33,7 +33,7 @@ Default builder options (extends dialog defaults, watch name collisions)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | <code>Object</code> | Change options used as default for dialogs, can then be overriden by data attribute settings on element |
+| options | <code>Object</code> | Change options used as default for dialogs, can then be overridden by data attribute settings on element |
 
 <a name="module_modal-builder.init"></a>
 

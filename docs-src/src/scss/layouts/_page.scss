@@ -9,6 +9,12 @@
   display: grid;
   grid-template-areas: "header body toc";
   grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr) minmax(0, 15rem);
+  @media print {
+    display: block !important;
+  }
+  @include ulu.breakpoint-max("medium") {
+    display: block;
+  }
 }
 .page__header,
 .page__toc {
@@ -16,6 +22,10 @@
   position: sticky;
   top: 0;
   overflow-y: auto;
+  @media print {
+    display: none !important;
+  }
+  
 }
 .page__header {
   // position: fixed;
@@ -29,6 +39,9 @@
   // background-color: white;
   
   // border-right: ulu.element-get-rule-style("light");
+  @include ulu.breakpoint-max("medium") {
+    height: auto;
+  }
 }
 .page__body {
   grid-area: body;
@@ -36,6 +49,10 @@
 }
 .page__toc {
   grid-area: toc;
+  @include ulu.breakpoint-max("medium") {
+    height: auto;
+    position: static;
+  }
 }
 
 .page__body-top {

@@ -1,10 +1,11 @@
 ---
 title: Popovers
 intro: Popovers are clickable elements that show content relative to the toggle
+layout: demo
 ---
 
 
-## Examples
+<h2 class="h2">Examples</h2>
 
 <div>
   <button class="button" type="button" data-ulu-popover-trigger='{"popoverPlacement" : "top"}'>

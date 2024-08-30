@@ -9,6 +9,8 @@ Demos Needed:
   ☐ Badge
   ☐ Wysiwyg
   ☐ Cards (card, card grid)
+    ☐ This one needs to be revisited with the current markup for overlay
+    ☐ Icon version should use the icon (ie FA) in the image space
   ☐ Fill Context
   ☐ Button Verbose
   ☐ Nav strip

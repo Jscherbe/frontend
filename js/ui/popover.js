@@ -23,6 +23,7 @@ const attrSelector = key => `[${ attrs[key] }]`;
 // This modules collapsible defaults
 const collapsibleDefaults = {
   clickOutsideCloses: true,
+  escapeCloses: true
 };
 
 /**

@@ -1,9 +1,0 @@
-// Removes margins on first last child
-.crop-margins {
-  &:not(.crop-margins--last) >:first-child {
-    margin-top: 0;
-  }
-  &:not(.crop-margins--first) >:last-child {
-    margin-bottom: 0;
-  }
-}

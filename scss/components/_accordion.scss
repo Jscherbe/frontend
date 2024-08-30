@@ -60,7 +60,7 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "button-verbose [config]");
+  @return utils.require-map-get($config, $name, "accordion [config]");
 }
 
 /// Prints component styles
@@ -180,11 +180,11 @@ $config: (
       content: "";
     }
   }
-  #{ $prefix }[open] > #{ $summary-selector } #{ $icon-selector } {
+  // #{ $prefix }[open] > #{ $summary-selector } #{ $icon-selector } {
     // &:after {
     //   content: "\2212"; // Minus
     // }
-  }
+  // }
   #{ $transparent-selector } {
     border-left: none;
     border-right: none;

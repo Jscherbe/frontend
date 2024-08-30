@@ -2,12 +2,12 @@
 /// @group all
 ////
 
-@forward "accordion" as accordion-*;
 @forward "css-icon" as css-icon-*;
 @forward "links" as links-*;
 @forward "button" as button-*;
 @forward "button-verbose" as button-verbose-*;
 @forward "badge" as badge-*;
+@forward "accordion" as accordion-*;
 @forward "callout" as callout-*;
 @forward "card" as card-*;
 @forward "card-grid" as card-grid-*;
@@ -22,22 +22,26 @@
 @forward "modal" as modal-*;
 @forward "ratio-box" as ratio-box-*;
 @forward "nav-strip" as nav-strip-*;
-@forward "adaptive-spacing" as adaptive-spacing-*;
 @forward "overlay-section" as overlay-section-*;
+@forward "adaptive-spacing" as adaptive-spacing-*;
+@forward "data-grid" as data-grid-*;
 @forward "pager" as pager-*;
 @forward "form-theme" as form-theme-*;
-@forward "data-grid" as data-grid-*;
+@forward "menu-stack" as menu-stack-*;
+@forward "tile-grid" as tile-grid-*;
+@forward "tile-button" as tile-button-*;
+@forward "placeholder-block" as placeholder-block-*;
+@forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
 
 @use "../utils";
-@use "data-grid";
-@use "accordion";
 @use "css-icon";
 @use "links";
 @use "button";
 @use "button-verbose";
 @use "badge";
+@use "accordion";
 @use "callout";
 @use "card";
 @use "card-grid";
@@ -54,21 +58,25 @@
 @use "nav-strip";
 @use "overlay-section";
 @use "adaptive-spacing";
+@use "data-grid";
 @use "pager";
 @use "form-theme";
 @use "menu-stack";
+@use "tile-grid";
+@use "tile-button";
+@use "placeholder-block";
+@use "wysiwyg";
 
 /// Default includes, all modules
 /// @type List
 
 $all-includes: (
-  "data-grid",
-  "accordion",
   "css-icon",
   "links",
   "button",
   "button-verbose",
   "badge",
+  "accordion",
   "callout",
   "card",
   "card-grid",
@@ -85,9 +93,14 @@ $all-includes: (
   "nav-strip",
   "overlay-section",
   "adaptive-spacing",
+  "data-grid",
   "pager",
   "form-theme",
   "menu-stack",
+  "tile-grid",
+  "tile-button",
+  "placeholder-block",
+  "wysiwyg",
 );
 
 /// Current included modules (for output when using styles), defaults to all
@@ -121,13 +134,7 @@ $current-includes: $all-includes;
   @include utils.file-header("components");
 
   @include utils.require-list-contains($all-includes, $includes);
-
-  @if (list.index($includes, "data-grid")) {
-    @include data-grid.styles;
-  }
-  @if (list.index($includes, "accordion")) {
-    @include accordion.styles;
-  }
+  
   @if (list.index($includes, "css-icon")) {
     @include css-icon.styles;
   }
@@ -142,6 +149,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "badge")) {
     @include badge.styles;
+  }
+  @if (list.index($includes, "accordion")) {
+    @include accordion.styles;
   }
   @if (list.index($includes, "callout")) {
     @include callout.styles;
@@ -191,14 +201,28 @@ $current-includes: $all-includes;
   @if (list.index($includes, "adaptive-spacing")) {
     @include adaptive-spacing.styles;
   }
+  @if (list.index($includes, "data-grid")) {
+    @include data-grid.styles;
+  }
   @if (list.index($includes, "pager")) {
     @include pager.styles;
   }
   @if (list.index($includes, "form-theme")) {
     @include form-theme.styles;
   }
-  
   @if (list.index($includes, "menu-stack")) {
     @include menu-stack.styles;
+  }
+  @if (list.index($includes, "tile-grid")) {
+    @include tile-grid.styles;
+  }
+  @if (list.index($includes, "tile-button")) {
+    @include tile-button.styles;
+  }
+  @if (list.index($includes, "placeholder-block")) {
+    @include placeholder-block.styles;
+  }
+  @if (list.index($includes, "wysiwyg")) {
+    @include wysiwyg.styles;
   }
 }
