@@ -175,6 +175,7 @@ $config: (
   // For accessible tabs
   [role="tab"],
   summary {
+    display: block;
     cursor: pointer;
   }
   dt { 
