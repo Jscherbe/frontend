@@ -19,7 +19,8 @@
 $config: (
   "link" : true,
   "link:hover" : true,
-  "link:visited" : false
+  "link:visited" : false,
+  "details-animation" : (FadeDownIn 350ms ease-in-out),
 ) !default;
 
 /// Change modules $config
@@ -186,5 +187,20 @@ $config: (
   }
   blockquote {
     margin: 0;
+  }
+  @if get("details-animation") {
+    details {
+      &[open] {
+        summary {
+          ~ * {
+            // Prevent issues with opening these programmatically on firefox
+            // - Animation would not be complete in the clone on firefox (looks empty)
+            @media screen {
+              animation: get("details-animation");
+            }
+          }
+        }
+      }
+    }
   }
 }

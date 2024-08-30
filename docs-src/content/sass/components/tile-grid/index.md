@@ -90,7 +90,7 @@ $sizes: (
 
 <div class="sassdoc-item-header">
 
-###  $static-styles {#variable-static-styles}
+###  $static-sizes {#variable-static-sizes}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
@@ -105,7 +105,7 @@ Static grid width styles
     
 
 ``` scss
-$static-styles: (
+$static-sizes: (
   "static" : (
     "default" : (
       "columns" : 1,
@@ -223,8 +223,7 @@ Set fixed sizes map
 
 #### Require
 
-- [$static-styles](/sass/components/tile-grid/#variable-static-styles)
-- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
+- [$static-sizes](/sass/components/tile-grid/#variable-static-sizes)
   
 
 
@@ -312,7 +311,7 @@ Prints component styles
 
 - [get()](/sass/components/accordion/#function-get)
 - [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
-- [$static-styles](/sass/components/tile-grid/#variable-static-styles)
+- [$static-sizes](/sass/components/tile-grid/#variable-static-sizes)
   
   
 

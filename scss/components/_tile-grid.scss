@@ -125,7 +125,7 @@ $static-sizes: (
       }
     }
     @if $aspect-ratio {
-      #{ $prefix }__item {
+      #{ $prefix }--#{ $modifier } #{ $prefix }__item {
         aspect-ratio: $aspect-ratio;
       }
     }

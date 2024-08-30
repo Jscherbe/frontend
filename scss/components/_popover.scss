@@ -234,4 +234,16 @@ $config: (
       padding: get("footer-padding-y-large") get("padding-large");
     }
   }
+  #{ $prefix }--prints {
+    @media print {
+      display: block;
+      position: static;
+      width: auto;
+      box-shadow: none;
+      max-width: none;
+      #{ $prefix }__arrow  {
+        display: none;
+      }
+    }
+  }
 }

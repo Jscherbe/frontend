@@ -35,7 +35,8 @@ Module Settings
 $config: (
   "link" : true,
   "link:hover" : true,
-  "link:visited" : false
+  "link:visited" : false,
+  "details-animation" : (FadeDownIn 350ms ease-in-out),
 );
 ```
   
@@ -46,7 +47,7 @@ $config: (
 - **Group:** elements
 - **Type:** variable
 - **Lines (comments):** 15-17
-- **Lines (code):** 19-23
+- **Lines (code):** 19-24
     </details>
     
 
@@ -86,8 +87,8 @@ Change modules $config
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 25-28
-- **Lines (code):** 29-31
+- **Lines (comments):** 26-29
+- **Lines (code):** 30-32
     </details>
     
 
@@ -139,8 +140,8 @@ Prints elements base styles
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 42-45
-- **Lines (code):** 47-190
+- **Lines (comments):** 43-46
+- **Lines (code):** 48-206
     </details>
     
 
@@ -188,8 +189,8 @@ Get a config option
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** function
-- **Lines (comments):** 33-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 34-37
+- **Lines (code):** 39-41
     </details>
     
 

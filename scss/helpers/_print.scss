@@ -7,15 +7,19 @@
 ///  @include ulu.helper-print-styles();
 
 @mixin styles {
+  
+  .print-exact {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
   .no-print {
     @media print {
       display: none !important;
     }
   }
   .print-only {
-    display: none !important;
-    @media print {
-      display: block !important;
+    @media screen {
+      display: none !important;
     }
   }
   // Utility for making dark backgrounds print "ok"

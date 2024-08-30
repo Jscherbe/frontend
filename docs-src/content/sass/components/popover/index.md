@@ -33,31 +33,35 @@ Module Settings
 
 ``` scss
 $config: (
-  "color"                   : inherit,
-  "background-color"        : white,
-  "padding"                 : 1rem,
-  "padding-large"           : 2rem,
-  "max-width"               : 90vw,
-  "max-height"              : 25rem,
-  "width"                   : 15rem,
-  "width-large"             : 30rem,
-  "width-large-x"           : 50rem,
-  "type-size"               : null,
-  "z-index"                 : true,
-  "box-shadow"              : true,
-  "box-shadow-footer"       : 0 0 4px,
-  "box-shadow-footer-color" : "box-shadow",
-  "border-radius"           : 6px,
-  "arrow-size"              : 16px,
-  "footer-padding-y"        : 0.25rem,
-  "footer-padding-y-large"  : 0.5rem,
-  "footer-background-color" : white,
-  "footer-color"            : inherit,
-  "tooltip-background-color": white,
-  "tooltip-padding"         : 0.5rem,
-  "tooltip-width"           : auto,
-  "tooltip-max-width"       : 20rem,
-  "tooltip-color"           : inherit,
+  "color"                        : inherit,
+  "background-color"             : white,
+  "padding"                      : 1rem,
+  "padding-large"                : 2rem,
+  "max-width"                    : 90vw,
+  "max-height"                   : 25rem,
+  "width"                        : 15rem,
+  "width-large"                  : 30rem,
+  "width-large-x"                : 50rem,
+  "type-size"                    : null,
+  "z-index"                      : true,
+  "box-shadow"                   : true,
+  "box-shadow-footer"            : 0 0 4px,
+  "box-shadow-footer-color"      : "box-shadow",
+  "border-radius"                : 6px,
+  "arrow-size"                   : 16px,
+  "header-padding-y"             : 0.25rem,
+  "header-color"                 : null,
+  "header-background-color"      : #ccc,
+  "header-media-background-color": black,
+  "footer-padding-y"             : 0.25rem,
+  "footer-padding-y-large"       : 0.5rem,
+  "footer-background-color"      : #ccc,
+  "footer-color"                 : null,
+  "tooltip-background-color"     : white,
+  "tooltip-padding"              : 0.5rem,
+  "tooltip-width"                : auto,
+  "tooltip-max-width"            : 20rem,
+  "tooltip-color"                : null,
 );
 ```
   
@@ -68,7 +72,7 @@ $config: (
 - **Group:** popover
 - **Type:** variable
 - **Lines (comments):** 30-49
-- **Lines (code):** 51-77
+- **Lines (code):** 51-81
     </details>
     
 
@@ -125,8 +129,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 83-85
+- **Lines (code):** 87-89
     </details>
     
 
@@ -167,8 +171,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 96-98
-- **Lines (code):** 100-220
+- **Lines (comments):** 100-102
+- **Lines (code):** 104-249
     </details>
     
 
@@ -216,8 +220,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-94
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-98
     </details>
     
 

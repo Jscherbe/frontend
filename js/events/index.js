@@ -87,10 +87,10 @@ function initResize() {
  *         and it won't change how the custom events file.
  */
 function initPrint() {
-  window.addEventListener('beforeprint', () => {
+  window.addEventListener("beforeprint", () => {
     dispatch("beforePrint", document);
   });
-  window.addEventListener('afterprint', () => {
+  window.addEventListener("afterprint", () => {
     dispatch("afterPrint", document);
   }); 
 }
