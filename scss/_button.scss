@@ -46,8 +46,9 @@ $config: (
   "icon-font-size":          1.38rem,
   "icon-border-radius":      50%,
   "text-decoration" :        none,
-  "transition-enabled":      false,
-  "transition-duration" :    0.5s  
+  "transition-enabled":      true,
+  "transition-duration" :    200ms,
+  "transition-properties" :  (border-color, background-color, color, box-shadow)
 ) !default;
 
 /// Button sizes
@@ -176,9 +177,10 @@ $styles: (
   max-width: 100%; // Questionable, not sure if it's needed
   flex-shrink: 0; 
   // Should override link visited coloring
-  transition-property: border-color, background-color, color;
+  
   @if get("transition-enabled") {
     transition-duration: get("transition-duration");
+    transition-property: get("transition-properties");
   }
   &,
   &:visited {
