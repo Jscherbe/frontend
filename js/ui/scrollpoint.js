@@ -85,8 +85,18 @@ export function setup() {
  */
 export class Scrollpoint {
   static defaults = {
-    root: document,
+    /**
+     * Default observer root element
+     */
+    root: null,
+    /**
+     * Use a selector to select the observer root element
+     */
     rootSelector: null,
+    /**
+     * Log debug info to console
+     */
+    debug: false,
     /**
      * Change scroll orientation to horizontal
      */
@@ -179,20 +189,19 @@ export class Scrollpoint {
       exitReverse: this.getClassname("exit--from-reverse"),
     };
     this.setupObserver();
+    if (options.debug) {
+      console.log("Scrollpoint", this);
+    }
   }
   getClassname(suffix) {
     return this.options.classPrefix + "-" + suffix;
   }
   getObserverOptions() {
     const { root, marginStart, marginEnd, threshold, horizontal } = this.options;
-    const rootMargin = horizontal ? 
-       `0px ${ marginStart } 0px ${ marginEnd }` :
-       `${ marginStart } 0px ${ marginEnd } 0px`;
-    return { 
-      root, 
-      rootMargin, 
-      threshold
-    }
+    const rootMargin = horizontal 
+      ? `0px ${ marginStart } 0px ${ marginEnd }` 
+      : `${ marginStart } 0px ${ marginEnd } 0px`;
+    return { root, rootMargin, threshold };
   }
   /**
    * IntersectionObserver Callback
@@ -221,7 +230,11 @@ export class Scrollpoint {
     const handler = entries => {
       this.onObserve(entries);
     };
-    this.observer = new IntersectionObserver(handler, this.getObserverOptions());
+    const config = this.getObserverOptions();
+    if (this.options.debug) {
+      console.log("Scrollpoint (IntersectionObserver)", config);
+    }
+    this.observer = new IntersectionObserver(handler, config);
     this.observer.observe(this.element);
   }
   getScrollY() {

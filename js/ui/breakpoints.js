@@ -76,7 +76,7 @@ export class BreakpointManager {
    * Get breakpoint from a custom property
    */
   getBreakpointInProperty() {
-    return getComputedStyle(this.element).getPropertyValue(this.customProperty);
+    return getComputedStyle(this.element).getPropertyValue(this.customProperty).trim();
   }
   /**
    * Get breakpoint from element (design note: user could override prototype)
