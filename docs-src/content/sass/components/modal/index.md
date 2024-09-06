@@ -36,7 +36,7 @@ $config: (
   "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
   "box-shadow" :                    true,         
-  "width":                          400px,
+  "width":                          80rem,
   "height":                         340px,
   "height-no-header":               100px,
   "border-radius" :                 true,
@@ -166,7 +166,7 @@ Prints modal component styles
 - **Group:** modal
 - **Type:** mixin
 - **Lines (comments):** 91-93
-- **Lines (code):** 95-425
+- **Lines (code):** 95-429
     </details>
     
 

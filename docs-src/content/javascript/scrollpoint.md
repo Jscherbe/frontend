@@ -15,6 +15,9 @@ title: scrollpoint
         * [.init()](#module_scrollpoint.init)
         * [.setup()](#module_scrollpoint.setup)
     * _inner_
+        * [~root](#module_scrollpoint..root)
+        * [~rootSelector](#module_scrollpoint..rootSelector)
+        * [~debug](#module_scrollpoint..debug)
         * [~horizontal](#module_scrollpoint..horizontal)
         * [~marginStart](#module_scrollpoint..marginStart)
         * [~marginEnd](#module_scrollpoint..marginEnd)
@@ -85,6 +88,24 @@ Initialize everything in document
 Setup all points and groups
 
 **Kind**: static method of [<code>scrollpoint</code>](#module_scrollpoint)  
+<a name="module_scrollpoint..root"></a>
+
+### scrollpoint~root
+Default observer root element
+
+**Kind**: inner property of [<code>scrollpoint</code>](#module_scrollpoint)  
+<a name="module_scrollpoint..rootSelector"></a>
+
+### scrollpoint~rootSelector
+Use a selector to select the observer root element
+
+**Kind**: inner property of [<code>scrollpoint</code>](#module_scrollpoint)  
+<a name="module_scrollpoint..debug"></a>
+
+### scrollpoint~debug
+Log debug info to console
+
+**Kind**: inner property of [<code>scrollpoint</code>](#module_scrollpoint)  
 <a name="module_scrollpoint..horizontal"></a>
 
 ### scrollpoint~horizontal

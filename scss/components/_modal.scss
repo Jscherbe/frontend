@@ -33,7 +33,7 @@ $config: (
   "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
   "box-shadow" :                    true,         
-  "width":                          400px,
+  "width":                          80rem,
   "height":                         340px,
   "height-no-header":               100px,
   "border-radius" :                 true,
@@ -276,6 +276,10 @@ $config: (
     .modal__body {
       padding: 0;
     }
+  }
+
+  .modal--no-min-height {
+    min-height: 0;
   }
   // Will display as content when printing
   // NOTE: This will not work with native dialog

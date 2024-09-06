@@ -19,17 +19,17 @@ const hasConsole = "console" in window;
 // If no context output only if config (global) debug is enabled
 function allow(context) {
   return hasConsole && config.debug && (context?.debug || context == null);
-};
+}
 function getName(context) {
   return typeof context === "object" && context?.constructor?.name;
-};
+}
 function output(method, context, messages) {
   const label = getName(context) || "Logger";
   console[method](label, ...messages);
   if (config.outputContext) {
-    console.log('Context:\n', context);
+    console.log("Context:\n", context);
   }
-};
+}
 
 /**
  * Changes to make to configuration

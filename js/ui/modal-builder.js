@@ -34,6 +34,7 @@ export const defaults = {
   noBackdrop: false,
   size: "default",
   print: false,
+  noMinHeight: false,
   class: "",
   classCloseIcon: "css-icon css-icon--close",
   classResizerIcon: "css-icon css-icon--drag",
@@ -59,6 +60,7 @@ export const defaults = {
       ...(!config.title ? ["modal--no-header"] : []),
       ...(config.video ? ["modal--video"] : []), 
       ...(config.noBackdrop ? ["modal--no-backdrop"] : []), 
+      ...(config.noMinHeight ? ["modal--no-min-height"] : [] ),
       ...(config.class ? [config.class] : []), 
     ];
     return `
