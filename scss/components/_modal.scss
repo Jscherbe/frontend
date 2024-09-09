@@ -9,6 +9,7 @@
 @use "../element";
 @use "../layout";
 @use "../typography";
+@use "../selector";
 @use "../utils";
 
 // Used for function fallback
@@ -33,7 +34,11 @@ $config: (
   "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
   "box-shadow" :                    true,         
-  "width":                          80rem,
+  "width":                          60rem,
+  "sizes" : (
+    "small" : 30rem,
+    "large" : 80rem
+  ),
   "height":                         340px,
   "height-no-header":               100px,
   "border-radius" :                 true,
@@ -93,12 +98,14 @@ $config: (
 ///  @include ulu.component-modal-styles();
 
 @mixin styles {
+  $prefix: selector.class("modal");
+
   // // Before it's moved
   [data-ulu-dialog-builder] {
     display: none;
   }
   
-  .modal {
+  #{ $prefix } {
     // Required for click outside
     position: fixed;
     // Important: If you use the margin layout system (ie. auto) on dialogs they 
@@ -133,7 +140,7 @@ $config: (
       animation: uluModalBackdropIn get("animation-duration") get("animation-timing-function");
     }
   }
-  .modal__header {
+  #{ $prefix }__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -143,12 +150,12 @@ $config: (
     background-color: get("header-background-color");
     color: get("header-color");
   }
-  .modal__body {
+  #{ $prefix }__body {
     flex: 1;
     overflow: auto;
     padding: get("body-padding");
   }
-  .modal__title {
+  #{ $prefix }__title {
     display: flex;
     align-items: baseline;
     margin: 0;
@@ -159,10 +166,10 @@ $config: (
       @include typography.size(get("title-size"), $only-font-size: true);
     }
   }
-  .modal__title-icon {
+  #{ $prefix }__title-icon {
     margin-right: get("title-icon-margin");
   }
-  .modal__close {
+  #{ $prefix }__close {
     margin: 0 0 0 get("close-margin");
     flex: 0 0 auto;
     font-size: get("close-font-size");
@@ -179,7 +186,7 @@ $config: (
       color: get("close-color-hover");
     }
   }
-  .modal__resizer {
+  #{ $prefix }__resizer {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -199,12 +206,12 @@ $config: (
       color: get("resizer-color-hover");
       background-color: get("resizer-background-color-hover");
     }
-    .modal--left & {
+    #{ $prefix }--left & {
       left: auto;
       right: 0;
     }
   }
-  .modal__content {
+  #{ $prefix }__content {
     margin-top: 2rem;
     margin-bottom: 2rem;
     line-height: 1.5;
@@ -212,15 +219,20 @@ $config: (
   }
 
   // Modifiers
-  .modal--right,
-  .modal--left {
+  @each $name, $size-width in get("sizes") {
+    #{ $prefix }--#{ $name } {
+      width: $size-width;
+    }
+  }
+  #{ $prefix }--right,
+  #{ $prefix }--left {
     border-radius: 0;
     height: 100vh;
     top: 0;
     bottom: 0;
     transform: none;
   }
-  .modal--top {
+  #{ $prefix }--top {
     top: 0;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
@@ -230,7 +242,7 @@ $config: (
       animation: uluModalTopIn get("animation-duration") get("animation-timing-function");
     }
   }
-  .modal--bottom {
+  #{ $prefix }--bottom {
     top: auto;
     bottom: 0;
     transform: translateX(-50%);
@@ -241,7 +253,7 @@ $config: (
       animation: uluModalBottomIn get("animation-duration") get("animation-timing-function");
     }
   }
-  .modal--right {
+  #{ $prefix }--right {
     right: 0;
     left: auto;
     animation: uluModalRightOut get("animation-duration-exit") get("animation-timing-function");
@@ -249,40 +261,41 @@ $config: (
       animation: uluModalRightIn get("animation-duration") get("animation-timing-function");
     }
   }
-  .modal--left {
+  #{ $prefix }--left {
     left: 0;
     animation: uluModalLeftOut get("animation-duration-exit") get("animation-timing-function");
     &[open] {
       animation: uluModalLeftIn get("animation-duration") get("animation-timing-function");
     }
   }
-  .modal--no-header {
+  #{ $prefix }--no-header {
     min-height: get("height-no-header");
   }
-  .modal--no-backdrop {
+  #{ $prefix }--no-backdrop {
     &::backdrop {
       display: none;
     }
   }
-  .modal--resize {
-    &.modal--center  {
+  #{ $prefix }--resize {
+    &#{ $prefix }--center  {
       resize: both;  
     }
   }
-  .modal--video {
-    .modal__header {
+  #{ $prefix }--video {
+    #{ $prefix }__header {
       border-bottom: none;
     }
-    .modal__body {
+    #{ $prefix }__body {
       padding: 0;
     }
   }
 
-  .modal--no-min-height {
+  #{ $prefix }--no-min-height {
     min-height: 0;
   }
   // Will display as content when printing
   // NOTE: This will not work with native dialog
+  // Printing works with modal printer by cloning mechanism
   // .modal--print {
   //   @media screen {
   //     display: block !important;

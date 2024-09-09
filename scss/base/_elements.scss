@@ -61,15 +61,7 @@ $config: (
     }
   }
   body {
-    color: color.get('type');
-    background-color: color.get("background");
-    font-family: typography.get("font-family");
-    margin: 0;
-    // Note we are using relative units here instead of setting a 
-    // pixel base like we use to on the HTML
-    // This will allow the user preference in font size
-    // Useful for accessibility
-    @include typography.size("base");
+    @include styles-body();
     @include breakpoint.embed-for-scripts();
   }
   h1, 
@@ -204,4 +196,15 @@ $config: (
       }
     }
   }
+}
+
+@mixin styles-body() {
+  color: color.get('type');
+  background-color: color.get("background");
+  font-family: typography.get("font-family");
+  // Note we are using relative units here instead of setting a 
+  // pixel base like we use to on the HTML
+  // This will allow the user preference in font size
+  // Useful for accessibility
+  @include typography.size("base");
 }

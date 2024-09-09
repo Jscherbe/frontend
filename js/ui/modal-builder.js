@@ -169,19 +169,12 @@ export function buildModal(content, options) {
   }
 
   if (config.print) {
-    console.log("yes");
-    console.log("modal:\n", modal);
-    
     let printClone;
     document.addEventListener(getName("beforePrint"), () => {
-      console.log("added");
-      
       printClone = content.cloneNode(true);
       modal.after(printClone);
     });
     document.addEventListener(getName("afterPrint"), () => {
-      console.log("removed");
-      
       printClone.remove();
     });
   }
