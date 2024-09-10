@@ -10,3 +10,4 @@ ulu.ui.dialog.init();
 ulu.ui.proxyClick.init();
 ulu.ui.scrollpoint.init();
 ulu.ui.print.init();
+ulu.ui.printDetails.init();

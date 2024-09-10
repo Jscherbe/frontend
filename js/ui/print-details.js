@@ -28,25 +28,15 @@ export function init(options) {
   // Add flag and open each details that's closed
   document.addEventListener(getName("beforePrint"), () => {
     document.querySelectorAll(config.selector).forEach(details => {
-      console.log("open");
-      
       if (!details.open) {
         details.setAttribute(attrs.opened, true);
-        details.setAttribute("open", true);
         details.open = true;
-        details.dispatchEvent(new Event("toggle"));
-        console.log("toggle");
-        
-        // details.open = true;
       }
     });
   });
   // When print ends find all flagged and close
   document.addEventListener(getName("afterPrint"), () => {
     document.querySelectorAll(attrSelector("opened")).forEach(details => {
-      console.log("close");
-      
-      // details.removeAttribute("open");
       details.removeAttribute(attrs.opened);
       details.open = false;
     });
