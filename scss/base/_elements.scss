@@ -141,14 +141,13 @@ $config: (
     border-style: none;
   }
   // Not styling ordered lists because they are used in navigation and other UI components
-  ul { 
+  // - Would rather explicitly style numbered lists so menus and things 
+  //   don't have to reset. Usually there's only a few type of in content 
+  //   numbered lists and those are styled via classes or wysiwyg
+  ul,
+  ol { 
     list-style: none; 
   }
-  // Style ordered lists since we don't use them much in the UI components
-  ol {
-    list-style: none; 
-  }
-  
   a {
     // User can disable link styling if they want to add more specific styling
     // and omit this in element base
