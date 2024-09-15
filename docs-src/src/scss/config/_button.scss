@@ -25,5 +25,14 @@
 //     "icon-size": 3.5rem
 //   )
 // ));
-// @include ulu.button-set-styles((
-// ), "overwrite");
+@include ulu.button-set-styles((
+  "secondary" : (
+    "background-color" : ulu.color-tint(vars.$color-violet, 70%),
+    "border-color" : ulu.color-tint(vars.$color-violet, 70%),
+    "color" : vars.$color-violet,
+    "hover" : (
+      "background-color" : white,
+      "border-color" : white,
+    )
+  )
+), "merge");

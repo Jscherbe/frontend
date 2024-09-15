@@ -9,8 +9,12 @@
 //   "short-width" : 10.5rem,
 //   "short-border-width" : 1px
 // ));
-// @include ulu.component-button-set((
-//   "icon-margin" : 0.25em
-// ));
+@include ulu.component-modal-set((
+  "header-background-color" : vars.$color-blue-violet,
+  "close-color" : vars.$color-blue-violet,
+  "close-color-hover" : ulu.color-shade(vars.$color-blue-violet, 15%),
+  "close-background-color" : ulu.color-tint(vars.$color-blue-violet, 70%),
+  "close-background-color-hover" : white,
+));
 
 // @include ulu.component-set-excludes("modal");

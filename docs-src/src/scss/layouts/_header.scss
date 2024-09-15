@@ -2,17 +2,19 @@
 @use "ulu";
 
 $padding: 1rem;
+$breakpoint: "medium";
 
 .header {
   background-color: ulu.color-tint(vars.$color-gray-dark, 95%);
-  @include ulu.breakpoint-min("medium") {
+  @include ulu.breakpoint-min($breakpoint) {
     display: flex;
     flex-direction: column;
   }
 }
 .header__main {
   width: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
   padding: $padding;
   // border-bottom: ulu.element-get-rule-style("light");
   background-color: vars.$color-violet;
@@ -28,9 +30,15 @@ $padding: 1rem;
     color: white;
   }
 }
+.header__mobile-toggle {
+  margin: 0 0 0 auto;
+  @include ulu.breakpoint-min($breakpoint) {
+    display: none;
+  }
+}
 .header__nav {
   width: 100%;
-  @include ulu.breakpoint-max("medium") {
+  @include ulu.breakpoint-max($breakpoint) {
     display: none;
   }
 }

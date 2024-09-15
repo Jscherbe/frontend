@@ -15,6 +15,13 @@
     <a class="header__logo" href="/">
       {% include "partials/logo.njk" %}
     </a>
+    <button
+      class="header__mobile-toggle hidden-min-medium button button--icon button--secondary"
+      data-ulu-dialog-trigger="mobile-menu"
+      aria-label="Open Menu"
+    >
+      <span class="fas fa-bars" aria-hidden="true"></span>
+    </button>
   </div>
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
@@ -34,6 +41,15 @@
       </a>
     </div>
     <div class="header__nav-menu">
+      {{ menu | safe }}
+    </div>
+    <div 
+      id="mobile-menu"
+      data-ulu-modal-builder='{
+        "title" : "Menu",
+        "position" : "right"
+      }'
+    >
       {{ menu | safe }}
     </div>
   </nav>

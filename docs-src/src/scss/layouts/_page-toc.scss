@@ -3,18 +3,45 @@
 
 .page-toc {
   padding: 5rem 1rem 1rem 1rem;
+  @include ulu.breakpoint-max("medium") {
+    @include ulu.layout-container-styles("container");
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    .toc {
+      background-color: ulu.color-tint(vars.$color-violet, 90%);
+      padding: 1rem;
+      border-radius: ulu.element-get("border-radius");
+    }
+  }
   h2 {
     @include ulu.typography-size("h6", $only-font-size: true);
-    border-bottom: ulu.element-get-rule-style("light");
+    font-weight: bold;
     margin-bottom: 0.35em;
     padding-bottom: 0.35em;
+    @include ulu.breakpoint-min("medium") {
+      border-bottom: ulu.element-get-rule-style("light");
+    }
   }
   ol {
     @include ulu.typography-size("small", $only-font-size: true);
     line-height: ulu.typography-get("line-height-dense");
+    font-weight: bold;
+  }
+  .toc > ol {
+    @include ulu.breakpoint-max("medium") {
+      // display: grid;
+      columns: 2;
+      column-gap: 2em;
+      column-rule: 1px dotted #ddd;
+      overflow: auto;
+    }
   }
   ol ol {
     margin-left: 1em;
+    font-weight: normal;
+  }
+  li {
+    break-inside: avoid
   }
   a {
     color: ulu.color-get("type-secondary");

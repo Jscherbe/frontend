@@ -29,7 +29,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ["h2", "h3"],
     wrapper: "div",
-    headingText: "On this page"
+    headingText: "Jump To:"
   });
   eleventyConfig.addPlugin(syntaxHighlight, {
     async init({ Prism }) {
