@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Fix examples for how to use the set mixins
+  ☐ Idea: scaffolding for configs
   ☐ Change color-context to background by default?
   ☐ Should we have the typography sizes print out in two different modules?
     * Originally this way so that some sizes could be utilities (overrides) (like type-large)
