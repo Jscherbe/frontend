@@ -57,6 +57,9 @@
 
 .page__body-top {
   padding-top: 6rem;
+  @include ulu.breakpoint-max("small") {
+    padding-top: 3rem;
+  }
 }
 
 

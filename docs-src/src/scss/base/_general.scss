@@ -1,6 +1,9 @@
 @use "ulu";
 @use "vars";
 
+html {
+  scroll-padding-top: 6rem;
+}
 body {
   height: 100%;
   margin: 0;

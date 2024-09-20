@@ -22,24 +22,13 @@
         "direction" : "max",
         "padding": ($smallEnds vars.$site-margin-small)
       ),
-      // "medium" : (
-      //   "direction" : "min",
-      //   "padding": ($smallEnds vars.$site-margin)
-      // )
     )
   );
 }
 @include ulu.layout-set-containers((
   "container" : container(),
   // Used for headers and things that go full width
-  "container-full" : (
-    "padding":   (0 vars.$site-margin),
-    "responsive" : false,
-  ),
-  "container-full-vertical-padding" : (
-    "padding":   (vars.$site-header-padding vars.$site-margin),
-    "responsive" : false,
-  ),
+  "container-full" : container(0, 0, null),
   "container-fit" : container(0, 0),
   "container-small" : container(3rem, 3rem, $max: vars.$site-max-width-small),
   "container-small-fit" : container(0, 0, vars.$site-max-width-small),

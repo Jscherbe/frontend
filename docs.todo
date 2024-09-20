@@ -1,3 +1,9 @@
+SCSS Docs Checks:
+  ☐ Check Mixin Documentation
+    ☐ Core
+    ☐ Base
+    ☐ Components
+    ☐ Helpers
 Demos Needed:
   ☐ Rule
   ☐ Link
