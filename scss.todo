@@ -1,4 +1,10 @@
 SCSS Todos:
+  ☐ Setup Flipcard scss module (and test js)
+  ☐ Setup Slider scss module (and test js)
+  ☐ Explore ways to make multiple color palettes for css-vars easier? @priority-low
+  ☐ Solution for fallback colors in user side?
+    ☐ Some utility to pass values or variables from so that if undefined user gets notice but the value is left null or default?
+  ☐ Make button default styles have no hover @important
   ☐ Fix examples for how to use the set mixins
   ☐ Idea: scaffolding for configs
   ☐ Change color-context to background by default?
