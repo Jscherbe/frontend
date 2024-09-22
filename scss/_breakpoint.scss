@@ -70,7 +70,7 @@ $sizes: (
   @return $sizes;
 }
 
-/// Geta a specific size
+/// Get a specific size
 /// @param {String} $size The name of the size to get
 /// @return {Number} The sizes value
  
@@ -78,6 +78,17 @@ $sizes: (
   @return utils.require-map-get($sizes, $size, "breakpoint size");
 }
 
+/// Get a size's value 
+/// @param {Boolean} $max [false] Get the max value
+/// @return {Number} The value for the given size
+
+@function get-size-value($size, $max: false) {
+  @if ($max) {
+    @return get-size($size) - get("gap");
+  } @else {
+    @return get-size($size);
+  }
+}
 /// Check if a specific size exist
 /// @param {String} $name The breakpoint size to check if exists
 /// @return {Boolean} 
@@ -100,7 +111,7 @@ $sizes: (
 
 @mixin min($size) {
   // Adding the small fraction to prevent overlap
-  $min: get-size($size); 
+  $min: get-size-value($size); 
   @media screen and (min-width: $min) {
     @content;
   }
@@ -119,7 +130,7 @@ $sizes: (
 
 @mixin max($size) {
   // Adding the small fraction to prevent overlap
-  $max: get-size($size) - get("gap"); 
+  $max: get-size-value($size, true); 
   @media screen and (max-width: $max) {
     @content;
   }

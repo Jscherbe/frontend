@@ -240,8 +240,8 @@ Create a media query that matches the min-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 90-99
-- **Lines (code):** 101-107
+- **Lines (comments):** 101-110
+- **Lines (code):** 112-118
     </details>
     
 
@@ -282,7 +282,7 @@ Create a media query that matches the min-width for a given size
 
 #### Require
 
-- [get-size()](/sass/core/breakpoint/#function-get-size)
+- [get-size-value()](/sass/core/breakpoint/#function-get-size-value)
   
 
 
@@ -307,8 +307,8 @@ Create a media query that matches the max-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 109-118
-- **Lines (code):** 120-126
+- **Lines (comments):** 120-129
+- **Lines (code):** 131-137
     </details>
     
 
@@ -349,8 +349,7 @@ Create a media query that matches the max-width for a given size
 
 #### Require
 
-- [get-size()](/sass/core/breakpoint/#function-get-size)
-- [get()](/sass/core/breakpoint/#function-get)
+- [get-size-value()](/sass/core/breakpoint/#function-get-size-value)
   
 
 
@@ -375,8 +374,8 @@ Create a media query that matches between two breakpoint sizes
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 128-138
-- **Lines (code):** 140-147
+- **Lines (comments):** 139-149
+- **Lines (code):** 151-158
     </details>
     
 
@@ -445,8 +444,8 @@ Create a media query from a specific size in either direction
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 149-159
-- **Lines (code):** 161-173
+- **Lines (comments):** 160-170
+- **Lines (code):** 172-184
     </details>
     
 
@@ -509,8 +508,8 @@ Utility Method for iterating over a map of breakpoints and apply styles
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 176-182
-- **Lines (code):** 184-203
+- **Lines (comments):** 187-193
+- **Lines (code):** 195-214
     </details>
     
 
@@ -573,8 +572,8 @@ Attaches breakpoints to an element pseudo content for access via script
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 205-207
-- **Lines (code):** 209-219
+- **Lines (comments):** 216-218
+- **Lines (code):** 220-230
     </details>
     
 
@@ -698,7 +697,7 @@ Get all breakpoint sizes (ie. $sizes)
 
   
 
-Geta a specific size
+Get a specific size
     
     
 
@@ -739,6 +738,57 @@ Geta a specific size
 
 <div class="sassdoc-item-header">
 
+###  get-size-value() {#function-get-size-value}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Get a size's value 
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _breakpoint.scss
+- **Group:** breakpoint
+- **Type:** function
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-91
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|$max|`Boolean`|false|Get the max value|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Number|The value for the given size|
+
+    
+
+#### Require
+
+- [get-size()](/sass/core/breakpoint/#function-get-size)
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
 ###  exists() {#function-exists}
 
   <div class="sassdoc-item-header__labels">
@@ -758,8 +808,8 @@ Check if a specific size exist
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-88
+- **Lines (comments):** 92-94
+- **Lines (code):** 96-99
     </details>
     
 

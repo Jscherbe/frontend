@@ -394,7 +394,7 @@ Print a typography size (font-size, line-height)
 - [get-size()](/sass/core/breakpoint/#function-get-size)
 - [get-size-converted-value()](/sass/core/typography/#function-get-size-converted-value)
 - [get()](/sass/core/breakpoint/#function-get)
-- [get-size-value()](/sass/core/typography/#function-get-size-value)
+- [get-size-value()](/sass/core/breakpoint/#function-get-size-value)
   
   
 

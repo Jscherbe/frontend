@@ -285,6 +285,64 @@ Declare each property in a map as a custom property
 
 - [declare()](/sass/core/cssvar/#mixin-declare)
   
+
+
+<div class="sassdoc-item-header">
+
+###  declare-breakpoint-sizes() {#mixin-declare-breakpoint-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Declare a custom property for each breakpoint size
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _cssvar.scss
+- **Group:** cssvar
+- **Type:** mixin
+- **Lines (comments):** 118-125
+- **Lines (code):** 127-138
+    </details>
+    
+
+#### Examples
+
+Declare each property in a map as a custom property      
+
+
+``` scss
+:root {
+  @include cssvar.declare-breakpoint-sizes();
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|$breakpoints|`Map`|breakpoint.get-sizes()|Breakpoints to declare|
+|$name|`String`|"breakpoint-size-"|Name to use for custom property (prefixes size name)|
+|$prefix|`String`|$config.prefix|Override default prefix|
+
+    
+
+#### Require
+
+- [declare()](/sass/core/cssvar/#mixin-declare)
+- [get-size-value()](/sass/core/breakpoint/#function-get-size-value)
+  
   
 
 ## Functions

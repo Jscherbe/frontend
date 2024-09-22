@@ -4578,6 +4578,9 @@
                     <li><a href="#function-get-size">get-size()</a>
             		</li>
 
+                    <li><a href="#function-get-size-value">get-size-value()</a>
+            		</li>
+
                     <li><a href="#function-exists">exists()</a>
             		</li>
                 </ol>
@@ -4792,8 +4795,8 @@
 <li><strong>File:</strong> _breakpoint.scss</li>
 <li><strong>Group:</strong> breakpoint</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 90-99</li>
-<li><strong>Lines (code):</strong> 101-107  </details>
+<li><strong>Lines (comments):</strong> 101-110</li>
+<li><strong>Lines (code):</strong> 112-118  </details>
 </li>
 </ul>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -4822,7 +4825,7 @@
 </table>
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/sass/core/breakpoint/#function-get-size">get-size()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get-size-value">get-size-value()</a></li>
 </ul>
 <div class="sassdoc-item-header">
 <h3 id="mixin-max" tabindex="-1">max()</h3>
@@ -4837,8 +4840,8 @@
 <li><strong>File:</strong> _breakpoint.scss</li>
 <li><strong>Group:</strong> breakpoint</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 109-118</li>
-<li><strong>Lines (code):</strong> 120-126  </details>
+<li><strong>Lines (comments):</strong> 120-129</li>
+<li><strong>Lines (code):</strong> 131-137  </details>
 </li>
 </ul>
 <h4 id="examples-3" tabindex="-1">Examples</h4>
@@ -4867,8 +4870,7 @@
 </table>
 <h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/sass/core/breakpoint/#function-get-size">get-size()</a></li>
-<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get-size-value">get-size-value()</a></li>
 </ul>
 <div class="sassdoc-item-header">
 <h3 id="mixin-min-max" tabindex="-1">min-max()</h3>
@@ -4883,8 +4885,8 @@
 <li><strong>File:</strong> _breakpoint.scss</li>
 <li><strong>Group:</strong> breakpoint</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 128-138</li>
-<li><strong>Lines (code):</strong> 140-147  </details>
+<li><strong>Lines (comments):</strong> 139-149</li>
+<li><strong>Lines (code):</strong> 151-158  </details>
 </li>
 </ul>
 <h4 id="examples-4" tabindex="-1">Examples</h4>
@@ -4946,10 +4948,10 @@
 <p><strong>Type:</strong> mixin</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 149-159</p>
+<p><strong>Lines (comments):</strong> 160-170</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 161-173</p>
+<p><strong>Lines (code):</strong> 172-184</p>
   </details>
 </li>
 </ul>
@@ -5003,8 +5005,8 @@
 <li><strong>File:</strong> _breakpoint.scss</li>
 <li><strong>Group:</strong> breakpoint</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 176-182</li>
-<li><strong>Lines (code):</strong> 184-203  </details>
+<li><strong>Lines (comments):</strong> 187-193</li>
+<li><strong>Lines (code):</strong> 195-214  </details>
 </li>
 </ul>
 <h4 id="examples-6" tabindex="-1">Examples</h4>
@@ -5068,10 +5070,10 @@
 <p><strong>Type:</strong> mixin</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 205-207</p>
+<p><strong>Lines (comments):</strong> 216-218</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 209-219</p>
+<p><strong>Lines (code):</strong> 220-230</p>
   </details>
 </li>
 </ul>
@@ -5166,7 +5168,7 @@
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Geta a specific size</p>
+<p>Get a specific size</p>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
@@ -5215,6 +5217,62 @@
 <li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
 </ul>
 <div class="sassdoc-item-header">
+<h3 id="function-get-size-value" tabindex="-1">get-size-value()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a size's value</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _breakpoint.scss</li>
+<li><strong>Group:</strong> breakpoint</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 81-83</li>
+<li><strong>Lines (code):</strong> 85-91  </details>
+</li>
+</ul>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$max</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Get the max value</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">The value for the given size</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-11" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get-size">get-size()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
 <h3 id="function-exists" tabindex="-1">exists()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
@@ -5227,11 +5285,11 @@
 <li><strong>File:</strong> _breakpoint.scss</li>
 <li><strong>Group:</strong> breakpoint</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 81-83</li>
-<li><strong>Lines (code):</strong> 85-88  </details>
+<li><strong>Lines (comments):</strong> 92-94</li>
+<li><strong>Lines (code):</strong> 96-99  </details>
 </li>
 </ul>
-<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5248,7 +5306,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-2" tabindex="-1">Returns</h4>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5261,7 +5319,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-11" tabindex="-1">Require</h4>
+<h4 id="require-12" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 <li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>

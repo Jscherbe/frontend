@@ -114,3 +114,25 @@ $config: (
     }
   }
 }
+
+/// Declare a custom property for each breakpoint size
+/// @example scss Declare each property in a map as a custom property
+///   :root {
+///     @include cssvar.declare-breakpoint-sizes();
+///   }
+/// @param {Map} $breakpoints [breakpoint.get-sizes()] Breakpoints to declare
+/// @param {String} $name ["breakpoint-size-"] Name to use for custom property (prefixes size name)
+/// @param {String} $prefix [$config.prefix] Override default prefix
+
+@mixin declare-breakpoint-sizes(
+  $breakpoints: breakpoint.get-sizes(), 
+  $name: "breakpoint",
+  $prefix: get("prefix"),
+) {
+  @each $size, $value in $breakpoints {
+    $min: breakpoint.get-size-value($size);
+    $max: breakpoint.get-size-value($size, true);
+    @include declare("#{ $name }-#{ $size }-min", $min, $prefix);
+    @include declare("#{ $name }-#{ $size }-max", $max, $prefix);
+  }
+}
