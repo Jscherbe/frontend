@@ -1,4 +1,9 @@
 SCSS Todos:
+  ☐ Should container have defaults by default (ie preset ones)
+    ☐ Should we add margins for defaults (ie margin-small)
+      * We can then get rid of site-margin variables and use config
+    ☐ Need to see how well reponsive containers work again, much simpler but the ability to not be able to set the mobile margin is probably a reason to move away from that for the default, then have the one breakpoint
+      * I don't think it needs to support mutiple breakpoints for the presets really the main margin and the mobile margin are all that's needed. If user has other margin needs they can setup custom containers and use their own variables or add custom properties to config (ie "margin-medium")
   ☐ Setup Flipcard scss module (and test js)
   ☐ Setup Slider scss module (and test js)
   ☐ Explore ways to make multiple color palettes for css-vars easier? @priority-low
