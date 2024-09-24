@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Accordion carrot icon swap vs. icon rotate. How would we handle that? Modifier? (if not rotate, user has to give 2 images).
+  * Look into using css icons and supporting both methods
   ☐ Should container have defaults by default (ie preset ones)
     ☐ Should we add margins for defaults (ie margin-small)
       * We can then get rid of site-margin variables and use config
