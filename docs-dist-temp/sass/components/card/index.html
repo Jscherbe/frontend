@@ -4539,7 +4539,10 @@
                     <li><a href="#mixin-set">set()</a>
             		</li>
 
-                    <li><a href="#mixin-clickable-card">clickable-card()</a>
+                    <li><a href="#mixin-when-clickable">when-clickable()</a>
+            		</li>
+
+                    <li><a href="#mixin-styles">styles()</a>
             		</li>
                 </ol>
             		</li>
@@ -4575,12 +4578,11 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"image-ratio"</span> <span class="pjs-token pjs-punctuation">:</span> 56.25%<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-y"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 5px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"horizontal-breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> 5px 5px 8px <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>180<span class="pjs-token pjs-punctuation">,</span> 180<span class="pjs-token pjs-punctuation">,</span> 180<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
@@ -4591,16 +4593,35 @@
   <span class="pjs-token pjs-string">"background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>242<span class="pjs-token pjs-punctuation">,</span> 244<span class="pjs-token pjs-punctuation">,</span> 246<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 28rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"body-min-height"</span> <span class="pjs-token pjs-punctuation">:</span> 10rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border"</span> <span class="pjs-token pjs-punctuation">:</span> 1px solid #ccc<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-hover"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid #278cca<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"title-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color-card-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"title-font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> bold<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-ratio"</span> <span class="pjs-token pjs-punctuation">:</span> 56.25%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>197<span class="pjs-token pjs-punctuation">,</span> 197<span class="pjs-token pjs-punctuation">,</span> 197<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-margin"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-comment">// For when you have a margin</span>
+  <span class="pjs-token pjs-string">"image-transform-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-filter-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"overlay-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"clickable-card-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"clickable-card-selector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"[data-ulu-proxy-click-init]"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"clickable-card-interact-selector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"&amp;:hover, &amp;:focus-within"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"footer-padding-y"</span> <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"footer-min-height"</span> <span class="pjs-token pjs-punctuation">:</span> 2.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"prefix"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"card"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-enabled"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span> ease-in-out<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span>    200ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">,</span> transform<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span>    350ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span> ease-in-out<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>transform<span class="pjs-token pjs-punctuation">,</span> filter<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -4608,8 +4629,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-13</li>
-<li><strong>Lines (code):</strong> 15-42  </details>
+<li><strong>Lines (comments):</strong> 11-12</li>
+<li><strong>Lines (code):</strong> 14-59  </details>
 </li>
 </ul>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -4626,8 +4647,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 44-46</li>
-<li><strong>Lines (code):</strong> 48-50  </details>
+<li><strong>Lines (comments):</strong> 61-63</li>
+<li><strong>Lines (code):</strong> 65-67  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -4657,7 +4678,47 @@
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-clickable-card" tabindex="-1">clickable-card()</h3>
+<h3 id="mixin-when-clickable" tabindex="-1">when-clickable()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Mixin styles for card when it has proxy click enabled and is being interacted with (hover/focus)</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _card.scss</li>
+<li><strong>Group:</strong> card</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 77-78</li>
+<li><strong>Lines (code):</strong> 80-95  </details>
+</li>
+</ul>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$hover</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
@@ -4669,14 +4730,15 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 60-62</li>
-<li><strong>Lines (code):</strong> 64-72  </details>
+<li><strong>Lines (comments):</strong> 102-104</li>
+<li><strong>Lines (code):</strong> 106-359  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-1" tabindex="-1">Require</h4>
+<h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
+<li><a href="/sass/components/card/#mixin-when-clickable">when-clickable()</a></li>
 <li><a href="/sass/components/accordion/#function-get">get()</a></li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
@@ -4693,11 +4755,11 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 52-54</li>
-<li><strong>Lines (code):</strong> 56-58  </details>
+<li><strong>Lines (comments):</strong> 69-71</li>
+<li><strong>Lines (code):</strong> 73-75  </details>
 </li>
 </ul>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -4719,7 +4781,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

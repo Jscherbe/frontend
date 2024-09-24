@@ -8,17 +8,15 @@
 @use "../utils";
 @use "../selector";
 
-
 /// Module Settings
 /// @type Map
 
 $config: (
-  "image-ratio" : 56.25%,
   "padding" : 2rem,
   "margin-y" : 3rem,
   "border-radius" : 5px,
   "horizontal-breakpoint" : "small",
-  "box-shadow" : 5px 5px 8px rgb(180, 180, 180),
+  "box-shadow" : null,
   "box-shadow-hover" : null,
   "color" : null,
   "color-hover" : null,
@@ -29,16 +27,35 @@ $config: (
   "background-color-hover" : rgb(242, 244, 246),
   "max-width" : 28rem,
   "body-min-height" : 10rem,
-  "border" : null,
+  "border" : 1px solid #ccc,
   "border-hover" : 2px solid #278cca,
-  "title-margin" : 0.75em,
+  "header-margin" : 0.75em,
+  "title-color" : null,
+  "title-color-hover" : null,
+  "title-color-card-hover" : null,
+  "title-margin" : 0,
   "title-font-weight" : bold,
+  "image-ratio" : 56.25%,
+  "image-background-color" : rgb(197, 197, 197),
+  "image-margin" : null,
+  "image-border" : null, // For when you have a margin
+  "image-transform-hover" : null,
+  "image-filter-hover" : null,
   "overlay-background-color-hover" : null,
+  "clickable-card-enabled" : true,
   "clickable-card-selector" : "[data-ulu-proxy-click-init]",
   "clickable-card-interact-selector" : "&:hover, &:focus-within",
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "prefix" : "card",
+  "transition-enabled":      true,
+  "transition-timing-function" : ease-in-out,
+  "transition-duration" :    200ms,
+  "transition-properties" :  (border-color, background-color, color, box-shadow, transform),
+  "image-transition-enabled" : true,
+  "image-transition-duration" :    350ms,
+  "image-transition-timing-function" : ease-in-out,
+  "image-transition-properties" : (transform, filter),
 ) !default;
 
 /// Change modules $config
@@ -57,24 +74,39 @@ $config: (
   @return utils.require-map-get($config, $name, "card [config]");
 }
 
-/// Prints component styles
-/// @example scss
-///  @include ulu.component-example-styles();
+/// Mixin styles for card when it has proxy click enabled and is being interacted with (hover/focus)
+/// @param {Boolean} $hover [false] Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
 
-@mixin clickable-card {
-  @if (get("clickable-card-selector")) {
-    &#{ get("clickable-card-selector") } {
-      #{ get("clickable-card-interact-selector") } {
-        @content;
+@mixin when-clickable($hover: false) {
+  $prefix: selector.class(get("prefix"));
+  @if (get("clickable-card-enabled") and get("clickable-card-selector")) {
+    #{ $prefix } {
+      &#{ get("clickable-card-selector") } {
+        @if ($hover) {
+          #{ get("clickable-card-interact-selector") } {
+            @content;
+          }
+        } @else {
+          @content;
+        }
       }
     }
   }
 }
 
+
+@mixin shared-transition-styles() {
+  transition-duration: get("transition-duration");
+  transition-timing-function: get("transition-timing-function");
+}
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
 @mixin styles {
   $prefix: selector.class(get("prefix"));
 
-  #{ $prefix }{
+  #{ $prefix } {
     color: get("color");
     background-color: get("background-color");
     border-radius: get("border-radius");
@@ -86,8 +118,9 @@ $config: (
     flex-direction: column;
     justify-content: flex-end;
     max-width: get("max-width");
-    // Hover states only possible with click proxy
-    @if (get("border") or get("border-hover") or get("overlay-background-color-hover")) {
+  }
+  @if (get("border") or get("border-hover") or get("overlay-background-color-hover")) {
+    @include when-clickable($hover: false) {
       &:after {
         position: absolute;
         content: if(get("border"), "", false);
@@ -98,31 +131,64 @@ $config: (
         border: get("border");
         border-radius: get("border-radius");
         z-index: 4;
-      }
-    }
-    
-    @include clickable-card{
-      background-color: get("background-color-hover");
-      color: get("color-hover");
-      box-shadow: get("box-shadow-hover");
-      @if (get("border-hover") or get("overlay-background-color-hover")) {
-        &:after {
-          content: "";
-          border: get("border-hover");
-          background-color: get("overlay-background-color-hover")
-        }
+        pointer-events: none;
       }
     }
   }
 
+  @include when-clickable($hover: true) {
+    background-color: get("background-color-hover");
+    color: get("color-hover");
+    box-shadow: get("box-shadow-hover");
+    
+    @if (get("border-hover") or get("overlay-background-color-hover")) {
+      &:after {
+        content: "";
+        border: get("border-hover");
+        background-color: get("overlay-background-color-hover");
+      }
+    }
+  }
+
+  // Setting transitions regardless of clickable card selector
+  // This shouldn't interfere since styles aren't changed if not clickable (ie. .card [border-color, etc])
+  @if get("transition-enabled") {
+    #{ $prefix },
+    #{ $prefix }::after,
+    #{ $prefix }__title {
+      @include shared-transition-styles();
+      transition-property: get("transition-properties");
+    }
+  } 
 
   #{ $prefix }__title {
+    color: get("title-color");
     margin-bottom: get("title-margin");
     display: block;
     font-weight: get("title-font-weight");
+    @if get("title-color-hover") {
+      &:hover,
+      &:focus {
+        color: get("title-color-hover");
+      }
+    }
+    a {
+      all: unset;
+    }
   }
-  // Fix since sometimes these have nested markup sometimes just raw text
+  @if get("title-color-card-hover") {
+    @include when-clickable($hover: true) {
+      #{ $prefix }__title {
+        color: get("title-color-card-hover");
+      }
+    }
+  }
+
+  #{ $prefix }__header + #{ $prefix }__content {
+    margin-top: get("header-margin");
+  }
   
+  // Fix since sometimes these have nested markup sometimes just raw text
   #{ $prefix }__image {
     order: -1;
     flex: 0;
@@ -130,10 +196,11 @@ $config: (
     z-index: 1;
     overflow: hidden;
     padding-top: get("image-ratio"); // 9:16
-    background-color: rgb(197, 197, 197);
+    margin: get("image-margin");
+    border: get("image-border");
+    background-color: get("image-background-color");
     border-top-right-radius: get("border-radius");
     border-top-left-radius: get("border-radius");
-    
   }
   #{ $prefix }__image img,
   #{ $prefix}__image-media {
@@ -144,11 +211,30 @@ $config: (
     height: 100%;
     border: 0;
     object-fit: cover;
+    transform-origin: center center;
+    @if (get("image-transition-enabled")) {
+      transition-duration: get("image-transition-duration");
+      transition-timing-function: get("image-transition-timing-function");
+      transition-property: get("image-transition-properties");
+    }
   }
+  @if (get("image-transform-hover") or get("image-filter-hover")) {
+    @include when-clickable($hover: true) {
+      #{ $prefix }__image img,
+      #{ $prefix}__image-media {
+        transform: get("image-transform-hover");
+        filter: get("image-filter-hover");
+      }
+    }
+  }
+  #{ $prefix }__body,
+  #{ $prefix }__footer,
+  #{ $prefix }__image--icon {
+    padding: get("padding");
+  }
+
   #{ $prefix }__image--icon {
     background-color: transparent; 
-    // padding: get("padding");
-    padding: get("padding");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +254,6 @@ $config: (
   }
   #{ $prefix }__body {
     flex: 1;
-    padding: get("padding");
     min-height: get("body-min-height");
   }
   // For actions/messages
@@ -177,14 +262,15 @@ $config: (
   #{ $prefix }__footer {
     flex: 0;
     z-index: 4;
-    padding: get("footer-padding-y") get("padding");
+    padding-top: get("footer-padding-y");
+    padding-bottom: get("footer-padding-y");
     min-height: get("footer-min-height");
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
   // body + footer {
-  // means body keeps before psuedo element while footer loses it
+  // means body keeps before pseudo element while footer loses it
   #{ $prefix }--overlay {
     min-height: 10rem;
     #{ $prefix }__body {
