@@ -73,6 +73,7 @@ $config: (
       border-bottom: get("tablist-border-bottom");
     }
     [role="tab"] {
+      display: block;
       position: relative; 
       cursor: pointer;
       padding: 0.75em 0.1em 0.75em 0.1em;

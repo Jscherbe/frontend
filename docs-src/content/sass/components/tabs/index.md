@@ -127,7 +127,7 @@ Prints tabs component styles
 - **Group:** tabs
 - **Type:** mixin
 - **Lines (comments):** 55-57
-- **Lines (code):** 59-165
+- **Lines (code):** 59-166
     </details>
     
 

@@ -165,11 +165,10 @@ $config: (
   //   @include button.reset();
   // }
   // For accessible tabs
-  [role="tab"],
-  summary {
-    display: block;
-    cursor: pointer;
-  }
+  // [role="tab"],
+  // summary {
+    
+  // }
   dt { 
     font-weight: bold;
   }

@@ -35,16 +35,14 @@ Module Settings
 $config: (
   "background-color":              white,
   "background-color-open":          #F7F8F7,
-  "padding-x":                      1.5rem,
-  "padding-y":                      1.5rem,
-  "transparent-padding-y":          0.5rem,
-  "transparent-padding-x":          0,
+  "padding-x":                      1.5em,
+  "padding-y":                      1.5em,
   "margin":                         3rem,
   "margin-between":                 0,
   "border-radius":                  0,
   "box-shadow":                     none,
   "border-color":                   "rule",
-  "border":                         1px solid,
+  "border-width":                   1px,
   "summary-color":                  inherit,
   "summary-type-size" :             false,
   "summary-color-hover":            inherit,
@@ -59,6 +57,8 @@ $config: (
   "icon-size" :                     auto,
   "icon-font-size" :                1.5rem,
   "icon-stroke-width" :             0.15em,
+  "transparent-padding-y":          1em,
+  "transparent-padding-x":          0,
 );
 ```
   
@@ -68,8 +68,8 @@ $config: (
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** variable
-- **Lines (comments):** 18-19
-- **Lines (code):** 21-48
+- **Lines (comments):** 17-18
+- **Lines (code):** 20-47
     </details>
     
   
@@ -100,8 +100,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 49-51
+- **Lines (code):** 53-55
     </details>
     
 
@@ -142,8 +142,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-203
+- **Lines (comments):** 65-67
+- **Lines (code):** 69-187
     </details>
     
 
@@ -191,8 +191,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 57-59
+- **Lines (code):** 61-63
     </details>
     
 

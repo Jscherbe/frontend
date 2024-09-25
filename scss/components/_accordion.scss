@@ -10,7 +10,6 @@
 @use "../color";
 @use "../typography";
 
-
 // TODO: This was based on site-details (uses accordion), would be nice if this
 //       still has the details element styling but also provide selectors. Make 
 //       icon optional?
@@ -21,16 +20,14 @@
 $config: (
   "background-color":              white,
   "background-color-open":          #F7F8F7,
-  "padding-x":                      1.5rem,
-  "padding-y":                      1.5rem,
-  "transparent-padding-y":          0.5rem,
-  "transparent-padding-x":          0,
+  "padding-x":                      1.5em,
+  "padding-y":                      1.5em,
   "margin":                         3rem,
   "margin-between":                 0,
   "border-radius":                  0,
   "box-shadow":                     none,
   "border-color":                   "rule",
-  "border":                         1px solid,
+  "border-width":                   1px,
   "summary-color":                  inherit,
   "summary-type-size" :             false,
   "summary-color-hover":            inherit,
@@ -45,8 +42,9 @@ $config: (
   "icon-size" :                     auto,
   "icon-font-size" :                1.5rem,
   "icon-stroke-width" :             0.15em,
+  "transparent-padding-y":          1em,
+  "transparent-padding-x":          0,
 ) !default;
-
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
@@ -71,6 +69,8 @@ $config: (
 @mixin styles {
   $prefix: selector.class("accordion");
 
+  $border: get("border-width") solid color.get(get("border-color"));
+
   // When not one of our custom classed details components
   #{ $prefix } {
     position: relative; // For active border
@@ -79,7 +79,7 @@ $config: (
     padding-right: get("padding-x");
     margin-top: get("margin");
     margin-bottom: get("margin");
-    border: get("border") color.get(get("border-color"));
+    border: $border;
     background-color: get("background-color");
     box-shadow: get("box-shadow");
     &:first-of-type {
@@ -110,15 +110,11 @@ $config: (
         margin-bottom: get("padding-y");
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; 
-        border-bottom: get("border");
+        border-bottom: $border;
       }
     }
   }
-
   #{ $prefix }__summary {
-    display: flex; // For icon
-    align-items: center;
-    justify-content: space-between;
     color: get("summary-color");
     margin-left: -(get("padding-x"));
     margin-right: -(get("padding-x"));
@@ -126,13 +122,19 @@ $config: (
     padding: get("summary-padding-y") get("padding-x");
     vertical-align: top;
     font-weight: bold;
-    list-style: none; // Remove the default arrow (old safari?)
     cursor: pointer;
-    &::-webkit-details-marker,
-    &::marker {
-      display: none;
-      content: "";
+    &:has(#{ $prefix }__icon) {
+      display: flex; // For icon
+      align-items: center;
+      justify-content: space-between;
+      list-style: none; // Remove the default arrow (old safari?)
+      &::-webkit-details-marker,
+      &::marker {
+        display: none;
+        content: "";
+      }
     }
+    
     @if (get("summary-type-size")) {
       @include typography.size(get("summary-type-size"));
     }
@@ -160,24 +162,6 @@ $config: (
     justify-content: center;
     text-align: center;
   }
-  // #{ $prefix }__icon-default {
-  //   &::before,
-  //   &::after {
-  //     content: "";
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     margin-top: -(math.div(get("icon-stroke-width"), 2));
-  //   }
-  //   // &::before {
-
-  //   // }
-  // }
-  // #{ $prefix }--rotate-icon {
-  //   &[open], 
-  //   &.is-active {
-  //   }
-  // }
   #{ $prefix }--transparent {
     border-left: none;
     border-right: none;

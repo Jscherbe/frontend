@@ -35,8 +35,11 @@ Module Settings
 $config: (
   "size" : 1.1em,
   "stroke-width" : 0.15em,
-  "stroke-border-radius" : 4px,
-  "color" : currentColor
+  "stroke-border-radius" : 1px,
+  "color" : currentColor,
+  "active-selector" : "details[open] > summary &, &.is-active",
+  "transition-duration" : 200ms,
+  "transition-timing-function" : ease-in
 );
 ```
   
@@ -46,8 +49,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-20
+- **Lines (comments):** 13-14
+- **Lines (code):** 16-24
     </details>
     
   
@@ -78,8 +81,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 22-24
-- **Lines (code):** 26-28
+- **Lines (comments):** 26-28
+- **Lines (code):** 30-32
     </details>
     
 
@@ -120,8 +123,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-258
+- **Lines (comments):** 48-50
+- **Lines (code):** 52-311
     </details>
     
 
@@ -169,8 +172,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 34-36
+- **Lines (code):** 38-40
     </details>
     
 

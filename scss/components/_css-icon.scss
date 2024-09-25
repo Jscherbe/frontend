@@ -2,7 +2,8 @@
 /// @group css-icon
 ////
 /// Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
-/// 
+
+// Note: File size is 7kb (1kb gzip) (2024-09-25)
 
 @use "sass:map";
 @use "sass:math";
@@ -15,8 +16,11 @@
 $config: (
   "size" : 1.1em,
   "stroke-width" : 0.15em,
-  "stroke-border-radius" : 4px,
-  "color" : currentColor
+  "stroke-border-radius" : 1px,
+  "color" : currentColor,
+  "active-selector" : "details[open] > summary &, &.is-active",
+  "transition-duration" : 200ms,
+  "transition-timing-function" : ease-in
 );
 
 /// Change modules $config
@@ -33,6 +37,12 @@ $config: (
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "css-icon [config]");
+}
+
+@mixin when-active() {
+  #{ get("active-selector") } {
+    @content;
+  }
 }
 
 /// Prints adaptive spacing component styles
@@ -110,10 +120,13 @@ $config: (
   // Icons that share pseudos for strokes
   .css-icon--close,
   .css-icon--plus,
+  .css-icon--plus-to-minus,
   .css-icon--minus,
   .css-icon--drag-x,
   .css-icon--drag-y,
   .css-icon--angle-right,
+  .css-icon--angle-right-to-down,
+  .css-icon--angle-up-to-down,
   .css-icon--angle-left,
   .css-icon--angle-up,
   .css-icon--angle-down,
@@ -156,6 +169,8 @@ $config: (
     }
   }
   .css-icon--angle-right,
+  .css-icon--angle-right-to-down,
+  .css-icon--angle-up-to-down,
   .css-icon--angle-left,
   .css-icon--angle-up,
   .css-icon--angle-down {
@@ -176,7 +191,8 @@ $config: (
   .css-icon--arrow-left {
     transform: rotate(315deg);
   }
-  .css-icon--angle-up {
+  .css-icon--angle-up,
+  .css-icon--angle-up-to-down {
     transform: rotate(45deg);
   }
   .css-icon--angle-down {
@@ -186,6 +202,7 @@ $config: (
   // Centered pseudos offset by half of stroke before transform
   // Icons with centered pseudos
   .css-icon--plus,
+  .css-icon--plus-to-minus,
   .css-icon--minus,
   .css-icon--close {
     &:before,
@@ -197,13 +214,15 @@ $config: (
     }
   }
   .css-icon--plus,
+  .css-icon--plus-to-minus,
   .css-icon--minus {
     &:before,
     &:after {
       width: 80%;
     }
   }
-  .css-icon--plus {
+  .css-icon--plus,
+  .css-icon--plus-to-minus {
     &:before {
       transform: translateX(-50%) rotate(90deg);
     }
@@ -254,5 +273,39 @@ $config: (
   .css-icon--triangle-down,
   .css-icon--arrow-down {
     transform: rotate(90deg);
+  }
+
+  // Active icon types
+  .css-icon--plus-to-minus {
+    &,
+    &::before,
+    &::after {
+      transition: get("transition-duration") get("transition-timing-function");
+      transition-property: opacity, transform;
+    }
+    @include when-active() {
+      &::before {
+        opacity: 0;
+        transform: translateX(-50%) rotate(180deg);
+      }
+    }
+  }
+  .css-icon--angle-right-to-down,
+  .css-icon--angle-up-to-down {
+    @include when-active() {
+      transition-duration: get("transition-duration");
+      transition-property: transform;
+    }
+  }
+  .css-icon--angle-right-to-down,
+  .css-icon--angle-up-to-down {
+    @include when-active() {
+      transform: rotate(225deg);
+    }
+  }
+  .css-icon--angle-up-to-down {
+    @include when-active() {
+      transition-duration: get("transition-duration") * 2;
+    }
   }
 }
