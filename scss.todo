@@ -1,6 +1,11 @@
 SCSS Todos:
   ☐ Accordion carrot icon swap vs. icon rotate. How would we handle that? Modifier? (if not rotate, user has to give 2 images).
-  * Look into using css icons and supporting both methods
+    * Look into using css icons and supporting both methods
+    * Accordion add css icon active modifier is-active have activating selector option and build the selector. The user can specify other selectors
+    * No need for default, custom icons do their own thing in user style sheet include a Nixon to create the active selector for the icon. Make the transition time a module setting. Maybe make animation core module to have global setting or maybe add to element like duration and timing. Then we need fullbacks which are ok I guess
+    * Maybe instead of fallbacks we put fallback methods on core modules ie element.get-as-fallback(key, value)
+    Or have function util.fallback
+    The issue with this technique vs fallback map is the fallback method system while more verbose allows any user to grab computed property vs having to match implementation. Which is helpful for third party user who may not be aware of value that are or are not defined (complex cases) but honking it through
   ☐ Should container have defaults by default (ie preset ones)
     ☐ Should we add margins for defaults (ie margin-small)
       * We can then get rid of site-margin variables and use config

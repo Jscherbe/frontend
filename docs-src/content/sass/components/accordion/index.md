@@ -57,7 +57,8 @@ $config: (
   "icon-background-color-hover" :   transparent,
   "icon-border-radius" :            50%,
   "icon-size" :                     auto,
-  "icon-font-size" :                1.5rem
+  "icon-font-size" :                1.5rem,
+  "icon-stroke-width" :             0.15em,
 );
 ```
   
@@ -68,7 +69,7 @@ $config: (
 - **Group:** accordion
 - **Type:** variable
 - **Lines (comments):** 18-19
-- **Lines (code):** 21-47
+- **Lines (code):** 21-48
     </details>
     
   
@@ -99,8 +100,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 50-52
-- **Lines (code):** 54-56
+- **Lines (comments):** 51-53
+- **Lines (code):** 55-57
     </details>
     
 
@@ -141,8 +142,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-209
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-203
     </details>
     
 
@@ -190,8 +191,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 58-60
-- **Lines (code):** 62-64
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-65
     </details>
     
 
