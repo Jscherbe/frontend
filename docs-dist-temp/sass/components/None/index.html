@@ -4550,6 +4550,9 @@
 
                     <li><a href="#mixin-drupal-layout-element-styles">drupal-layout-element-styles()</a>
             		</li>
+
+                    <li><a href="#mixin-styles">styles()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -4767,6 +4770,53 @@
 <li><a href="/sass/components/None/#mixin-element-form-actions">element-form-actions()</a></li>
 <li><a href="/sass/components/None/#mixin-element-form-actions-right">element-form-actions-right()</a></li>
 </ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints component styles</p>
+<ul>
+<li>
+<p>Note: This needs to be paired with the display helper class &quot;hidden-visually-focusable&quot;</p>
+</li>
+<li>
+<p>Note: Remember to add an id to the content you want to skip to. Often this will go to the content after the nav menu.</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _skip-link.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> None</p>
+</li>
+<li>
+<p><strong>Type:</strong> mixin</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 7-20</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 22-39</p>
+  </details>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-skip-link-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> 
+  <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>skip-link hidden-visually-focusable<span class="pjs-token pjs-punctuation">"</span></span> 
+  <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>#main-content<span class="pjs-token pjs-punctuation">"</span></span>
+<span class="pjs-token pjs-punctuation">></span></span>
+  Skip to main content
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>nav</span><span class="pjs-token pjs-punctuation">></span></span>...<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>nav</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>main</span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>main-content<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>...<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>main</span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
+<h4 id="require-6" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
 <h3 id="function-get" tabindex="-1">get()</h3>
@@ -4807,7 +4857,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

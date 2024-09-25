@@ -6,7 +6,7 @@ intro: An accordion disclosure element is a user interface component that allows
 
 ## Basic Setup
 
-Wihtout an icon in the summary will fallback to browser default 
+Without an icon in the summary will fallback to browser default 
 
 <details class="accordion">
   <summary class="accordion__summary">
