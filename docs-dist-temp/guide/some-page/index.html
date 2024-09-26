@@ -4538,31 +4538,31 @@
 </li>
 </ul>
 <p>Example <em>_ulu.scss</em> file</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@forward</span> <span class="pjs-token pjs-string">"@ulu/frontend/scss"</span><span class="pjs-token pjs-punctuation">;</span> 
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"config"</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@forward</span> <span class="token string">"@ulu/frontend/scss"</span><span class="token punctuation">;</span> 
+<span class="token keyword">@use</span> <span class="token string">"config"</span><span class="token punctuation">;</span></code></pre>
 <p>Example <em>styles.scss</em>, using @import so that site styles print vs defining mixins for each _index.scss and calling it (that would work). Use @import approach to support legacy scss that's in your theme while using ulu for the overall theme.</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"vars"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"ulu"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"config"</span><span class="pjs-token pjs-punctuation">;</span>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@use</span> <span class="token string">"vars"</span><span class="token punctuation">;</span>
+<span class="token keyword">@use</span> <span class="token string">"ulu"</span><span class="token punctuation">;</span>
+<span class="token keyword">@use</span> <span class="token string">"config"</span><span class="token punctuation">;</span>
 
-<span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">base-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@import</span> <span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="token keyword">@include</span> ulu.<span class="token function">base-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"base"</span><span class="token punctuation">;</span>
 
-<span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@import</span> <span class="pjs-token pjs-string">"components"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@import</span> <span class="pjs-token pjs-string">"layouts"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="token keyword">@include</span> ulu.<span class="token function">component-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"components"</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"layouts"</span><span class="token punctuation">;</span>
 
-<span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">helper-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@import</span> <span class="pjs-token pjs-string">"specific"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="token keyword">@include</span> ulu.<span class="token function">helper-styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">@import</span> <span class="token string">"specific"</span><span class="token punctuation">;</span>
 </code></pre>
 <p>Example <em>/scss/config/_color.scss</em>, Which shows how to configure each module. Note we are using the global namespace which forwards all modules in the same structure as the directories but using &quot;-&quot;. So core modules are the &quot;ulu.color&quot; is /_color.scss modules, and ulu.component-card is /component/_card.scss.</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"vars"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"@ulu/frontend/scss"</span> <span class="pjs-token pjs-module-modifier pjs-keyword">as</span> ulu<span class="pjs-token pjs-punctuation">;</span>
+<pre class="language-scss"><code class="language-scss"><span class="token keyword">@use</span> <span class="token string">"vars"</span><span class="token punctuation">;</span>
+<span class="token keyword">@use</span> <span class="token string">"@ulu/frontend/scss"</span> <span class="token module-modifier keyword">as</span> ulu<span class="token punctuation">;</span>
 
-<span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">color-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"type"</span> <span class="pjs-token pjs-punctuation">:</span>            ulu.<span class="pjs-token pjs-function">cssvar-use</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color-type"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"type-secondary"</span> <span class="pjs-token pjs-punctuation">:</span>  ulu.<span class="pjs-token pjs-function">cssvar-use</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color-type-secondary"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<span class="token keyword">@include</span> ulu.<span class="token function">color-set</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token string">"type"</span> <span class="token punctuation">:</span>            ulu.<span class="token function">cssvar-use</span><span class="token punctuation">(</span><span class="token string">"color-type"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token string">"type-secondary"</span> <span class="token punctuation">:</span>  ulu.<span class="token function">cssvar-use</span><span class="token punctuation">(</span><span class="token string">"color-type-secondary"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
     </div>
   </div>
