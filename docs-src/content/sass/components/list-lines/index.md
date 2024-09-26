@@ -47,9 +47,22 @@ $config: (
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** variable
-- **Lines (comments):** 12-12
-- **Lines (code):** 14-20
+- **Lines (comments):** 12-17
+- **Lines (code):** 19-25
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|border-first|Boolean|true|If enabled, adds a top border to the first item in list-lines.|
+|border-last|Boolean|true|If enabled, adds a bottom border to the last item in list-lines.|
+|margin-top|Dimension|0|Top margin of list.|
+|margin-bottom|Dimension|1em|Bottom margin of list.|
+|padding-between|Dimension|1em|Padding between items in list.|
+
     
   
 
@@ -79,8 +92,8 @@ Change modules $config
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 22-24
-- **Lines (code):** 26-28
+- **Lines (comments):** 27-29
+- **Lines (code):** 31-33
     </details>
     
 
@@ -121,8 +134,8 @@ Output component styles
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 38-38
-- **Lines (code):** 40-60
+- **Lines (comments):** 43-43
+- **Lines (code):** 45-65
     </details>
     
 
@@ -158,8 +171,8 @@ Get a config option
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** function
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 35-37
+- **Lines (code):** 39-41
     </details>
     
 

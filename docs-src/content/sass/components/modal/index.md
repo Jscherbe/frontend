@@ -84,9 +84,56 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 31-32
-- **Lines (code):** 33-76
+- **Lines (comments):** 31-71
+- **Lines (code):** 73-116
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|backdrop-color|Map|true||
+|backdrop-blur|Map|4px||
+|box-shadow|Map|true||
+|width|Map|60rem||
+|sizes|Map|Object||
+|height|Map|340px||
+|height-no-header|Map|100px||
+|border-radius[true]|Map|||
+|resizer-width|Map|1rem||
+|resizer-color|Map|black||
+|resizer-color-hover|Map|black||
+|resizer-background-color|Map|rgb(221, 221, 221)||
+|resizer-background-color-hover|Map|rgb(66, 66, 66)||
+|header-padding|Map|1rem||
+|header-border-bottom|Map|none||
+|header-background-color|Map|black||
+|header-color|Map|white||
+|title-color|Map|white||
+|title-size|Map|large||
+|title-font-weight|Map|bold||
+|title-text-transform|Map|null||
+|close-color|Map|black||
+|close-color-hover|Map|black||
+|close-background-color|Map|white||
+|close-size|Map|2.5rem||
+|close-font-size|Map|1.2rem||
+|close-margin|Map|0.5rem||
+|close-background-color-hover|Map|blue||
+|body-padding|Map|1rem||
+|background-color|Map|white||
+|dark-background-color|Map|false||
+|dark-color|Map|white||
+|dark-header-border-bottom|Map|false||
+|dark-header-background-color|Map|false||
+|dark-header-color|Map|false||
+|title-icon-margin|Map||0.[5em]|
+|animation-timing-function|Map|cubic-bezier(0, 0, .2, 1)||
+|animation-duration|Map|300ms||
+|animation-duration-exit|Map|150ms||
+
     
   
 
@@ -116,8 +163,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 78-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 118-121
+- **Lines (code):** 123-125
     </details>
     
 
@@ -169,8 +216,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 96-98
-- **Lines (code):** 100-442
+- **Lines (comments):** 136-138
+- **Lines (code):** 140-482
     </details>
     
 
@@ -218,8 +265,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-94
+- **Lines (comments):** 127-129
+- **Lines (code):** 131-134
     </details>
     
 

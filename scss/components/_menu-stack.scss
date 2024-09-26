@@ -24,6 +24,32 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {} link-color [link]
+/// @prop {} link-background-color [transparent]
+/// @prop {} link-color-hover [link:hover]
+/// @prop {} link-background-color-hover [rgb(219, 219, 219)]
+/// @prop {} link-color-active [black]
+/// @prop {} link-background-color-active [rgb(219, 219, 219)]
+/// @prop {} link-border-radius [true]
+/// @prop {} link-padding-y[0.35em]
+/// @prop {} link-padding-x[1em]
+/// @prop {} link-margin [0.2em]
+/// @prop {} link-separated-rule-style [false]
+/// @prop {} link-separated-margin [false]
+/// @prop {} link-icon-margin [0.65em]
+/// @prop {} link-icon-width [1em]
+/// @prop {} link-font-weight [null]
+/// @prop {} link-active-selectors [(.is-active, '[aria-current=page]')]
+/// @prop {} compact-link-padding-y [0.25em]
+/// @prop {} compact-link-padding-x [0.75em]
+/// @prop {} rule-style [default]
+/// @prop {} rule-margin [0.5em]
+/// @prop {} label-type-size [false]
+/// @prop {} label-color [null]
+/// @prop {} label-margin [0.5em]
+/// @prop {} label-text-transform [uppercase]
+/// @prop {} checkbox-area-width [3em]
+/// @prop {} nested-indent [0.5em]
 
 $config: (
   "link-color" : "link",

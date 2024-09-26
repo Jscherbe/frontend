@@ -10,6 +10,11 @@
 @use "../utils";
 
 /// Module Config
+/// @prop {Boolean} border-first [true] If enabled, adds a top border to the first item in list-lines.
+/// @prop {Boolean} border-last [true] If enabled, adds a bottom border to the last item in list-lines.
+/// @prop {Dimension} margin-top [0] Top margin of list.
+/// @prop {Dimension} margin-bottom [1em] Bottom margin of list.
+/// @prop {Dimension} padding-between [1em] Padding between items in list.
 
 $config: (
   "border-first" : true,

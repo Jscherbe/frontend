@@ -61,24 +61,25 @@ $config: (
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** variable
-- **Lines (comments):** 22-31
-- **Lines (code):** 33-55
+- **Lines (comments):** 22-32
+- **Lines (code):** 34-56
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.columns|Number|Default for grid mixin|
-|$config.attribute|String|Default attribute to use for grid mixin|
-|$config.gutter|Number|Default gutter for grid mixin|
-|$config.extra-breakpoints|Map|Default extra breakpoints for grid mixin|
-|$config.position-class-column-first|MaStringp|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
-|$config.position-class-column-last|String|See definition above|
-|$config.position-class-row-first|String|See definition above|
-|$config.position-class-row-last|String|See definition above|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|columns|Number|12|Default for grid mixin.|
+|attribute|String|data-grid|Default attribute to use for grid mixin.|
+|attribute-container|String|data-grid-container|Default attribute to use for grid's container.|
+|gutter|Number|14px|Default gutter for grid mixin.|
+|extra-breakpoints|Map|14px|Default extra breakpoints for grid mixin|
+|position-class-column-first|String|position-column-first|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
+|position-class-column-last|String|position-column-last|See definition above|
+|position-class-row-first|String|position-row-first|See definition above|
+|position-class-row-last|String|position-row-last|See definition above|
 
     
   
@@ -109,8 +110,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 58-60
-- **Lines (code):** 62-64
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-65
     </details>
     
 
@@ -151,8 +152,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 97-99
-- **Lines (code):** 101-108
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-109
     </details>
     
 
@@ -196,8 +197,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 110-119
-- **Lines (code):** 121-561
+- **Lines (comments):** 111-120
+- **Lines (code):** 122-562
     </details>
     
 
@@ -250,8 +251,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-72
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-73
     </details>
     
 
@@ -292,8 +293,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 74-76
-- **Lines (code):** 78-86
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-87
     </details>
     
 

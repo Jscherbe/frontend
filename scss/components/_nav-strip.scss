@@ -12,6 +12,22 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {} color [null]
+/// @prop {} color-hover [null]
+/// @prop {} color-active [null]
+/// @prop {} font-weight [null]
+/// @prop {} padding-x [0]
+/// @prop {} padding-y [0.3em]
+/// @prop {} underline-color [orange]
+/// @prop {} underline-size [3px]
+/// @prop {} margin-between [2.25em]
+/// @prop {} underline-color-hover [gray]
+/// @prop {} activeSelector [.is-active]
+/// @prop {} rule-size [3px]
+/// @prop {} rule-color [rule]
+/// @prop {} rule-offset [-3px]
+/// @prop {} padding-y-ruled [null]
+/// @prop {} nowrap [true]
 
 $config: (
   "color" : null,

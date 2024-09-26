@@ -49,9 +49,24 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-24
+- **Lines (comments):** 13-21
+- **Lines (code):** 23-31
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|size|Dimension|1.1em|The width, height and font size of the css-icon.|
+|stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
+|stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
+|color|Color|currentColor|@joe-check|
+|active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
+|transition-duration|Time|200ms|The duration length for the transition.|
+|transition-timing-function|CssValue|ease-in|The timing function for the transition.|
+
     
   
 
@@ -81,8 +96,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 26-28
-- **Lines (code):** 30-32
+- **Lines (comments):** 33-35
+- **Lines (code):** 37-39
     </details>
     
 
@@ -123,8 +138,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-311
+- **Lines (comments):** 55-57
+- **Lines (code):** 59-318
     </details>
     
 
@@ -172,8 +187,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 34-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-47
     </details>
     
 

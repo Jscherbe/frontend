@@ -58,9 +58,33 @@ $config: (
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-33
+- **Lines (comments):** 13-30
+- **Lines (code):** 32-49
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|color|Map|null|
+|color-hover|Map|null|
+|color-active|Map|null|
+|font-weight|Map|null|
+|padding-x|Map|0|
+|padding-y|Map|0.3em|
+|underline-color|Map|orange|
+|underline-size|Map|3px|
+|margin-between|Map|2.25em|
+|underline-color-hover|Map|gray|
+|activeSelector|Map|.is-active|
+|rule-size|Map|3px|
+|rule-color|Map|rule|
+|rule-offset|Map|-3px|
+|padding-y-ruled|Map|null|
+|nowrap|Map|true|
+
     
   
 
@@ -90,8 +114,8 @@ Change modules $config
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 52-54
+- **Lines (code):** 56-58
     </details>
     
 
@@ -132,8 +156,8 @@ Prints component styles
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 52-54
-- **Lines (code):** 56-126
+- **Lines (comments):** 68-70
+- **Lines (code):** 72-142
     </details>
     
 
@@ -181,8 +205,8 @@ Get a config option
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** function
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 60-62
+- **Lines (code):** 64-66
     </details>
     
 

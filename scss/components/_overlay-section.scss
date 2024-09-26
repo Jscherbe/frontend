@@ -12,6 +12,13 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {} content-background-color [white]
+/// @prop {} content-border [1px solid rgb(227, 227, 227)]
+/// @prop {} content-width [34rem]
+/// @prop {} content-padding [2.5rem]
+/// @prop {} padding [6rem]
+/// @prop {} min-height [75vh]
+/// @prop {} breakpoints [Map]
 
 $config: (
   "content-background-color" : white,

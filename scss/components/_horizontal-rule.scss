@@ -8,6 +8,8 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} min-height [1em] Min height for rule.
+/// @prop {Dimension} margin [1em] Top and bottom margin for rule.
 
 $config: (
   "min-height": 1em,

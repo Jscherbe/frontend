@@ -21,14 +21,15 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.columns Default for grid mixin
-/// @prop {String} $config.attribute Default attribute to use for grid mixin
-/// @prop {Number} $config.gutter Default gutter for grid mixin
-/// @prop {Map} $config.extra-breakpoints Default extra breakpoints for grid mixin
-/// @prop {MaStringp} $config.position-class-column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
-/// @prop {String} $config.position-class-column-last See definition above
-/// @prop {String} $config.position-class-row-first See definition above
-/// @prop {String} $config.position-class-row-last See definition above
+/// @prop {Number} columns [12] Default for grid mixin.
+/// @prop {String} attribute [data-grid] Default attribute to use for grid mixin.
+/// @prop {String} attribute-container [data-grid-container] Default attribute to use for grid's container.
+/// @prop {Number} gutter [14px] Default gutter for grid mixin.
+/// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
+/// @prop {String} position-class-column-first [position-column-first] Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+/// @prop {String} position-class-column-last [position-column-last] See definition above
+/// @prop {String} position-class-row-first [position-row-first] See definition above
+/// @prop {String} position-class-row-last [position-row-last] See definition above
 
 
 

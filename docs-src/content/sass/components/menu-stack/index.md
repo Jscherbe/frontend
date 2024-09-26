@@ -68,9 +68,43 @@ $config: (
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** variable
-- **Lines (comments):** 25-26
-- **Lines (code):** 28-55
+- **Lines (comments):** 25-52
+- **Lines (code):** 54-81
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|link-color|Map|link||
+|link-background-color|Map|transparent||
+|link-color-hover|Map|link:hover||
+|link-background-color-hover|Map|rgb(219, 219, 219)||
+|link-color-active|Map|black||
+|link-background-color-active|Map|rgb(219, 219, 219)||
+|link-border-radius|Map|true||
+|link-padding-y[0.35em]|Map|||
+|link-padding-x[1em]|Map|||
+|link-margin|Map|0.2em||
+|link-separated-rule-style|Map|false||
+|link-separated-margin|Map|false||
+|link-icon-margin|Map|0.65em||
+|link-icon-width|Map|1em||
+|link-font-weight|Map|null||
+|link-active-selectors|Map|(.is-active, '[aria-current=page|')]|
+|compact-link-padding-y|Map|0.25em||
+|compact-link-padding-x|Map|0.75em||
+|rule-style|Map|default||
+|rule-margin|Map|0.5em||
+|label-type-size|Map|false||
+|label-color|Map|null||
+|label-margin|Map|0.5em||
+|label-text-transform|Map|uppercase||
+|checkbox-area-width|Map|3em||
+|nested-indent|Map|0.5em||
+
     
   
 
@@ -100,8 +134,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 58-60
-- **Lines (code):** 62-64
+- **Lines (comments):** 84-86
+- **Lines (code):** 88-90
     </details>
     
 
@@ -142,8 +176,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 80-84
-- **Lines (code):** 86-212
+- **Lines (comments):** 106-110
+- **Lines (code):** 112-238
     </details>
     
 
@@ -197,8 +231,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-73
+- **Lines (comments):** 92-94
+- **Lines (code):** 96-99
     </details>
     
 

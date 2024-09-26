@@ -44,9 +44,19 @@ $config: (
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** variable
-- **Lines (comments):** 9-10
-- **Lines (code):** 12-15
+- **Lines (comments):** 9-12
+- **Lines (code):** 14-17
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|min-height|Dimension|1em|Min height for rule.|
+|margin|Dimension|1em|Top and bottom margin for rule.|
+
     
   
 
@@ -76,8 +86,8 @@ Change modules $config
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** mixin
-- **Lines (comments):** 17-20
-- **Lines (code):** 22-24
+- **Lines (comments):** 19-22
+- **Lines (code):** 24-26
     </details>
     
 
@@ -129,8 +139,8 @@ Prints adaptive spacing component styles
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** mixin
-- **Lines (comments):** 35-37
-- **Lines (code):** 39-49
+- **Lines (comments):** 37-39
+- **Lines (code):** 41-51
     </details>
     
 
@@ -178,8 +188,8 @@ Get a config option
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** function
-- **Lines (comments):** 26-29
-- **Lines (code):** 31-33
+- **Lines (comments):** 28-31
+- **Lines (code):** 33-35
     </details>
     
 

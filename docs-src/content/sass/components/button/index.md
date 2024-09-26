@@ -102,9 +102,24 @@ $config: (
 - **File:** _overlay-section.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-34
+- **Lines (comments):** 13-21
+- **Lines (code):** 23-41
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|content-background-color|Map|white|
+|content-border|Map|1px solid rgb(227, 227, 227)|
+|content-width|Map|34rem|
+|content-padding|Map|2.5rem|
+|padding|Map|6rem|
+|min-height|Map|75vh|
+|breakpoints|Map|Map|
+
     
   
 
@@ -231,8 +246,8 @@ Change modules $config
 - **File:** _overlay-section.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-49
     </details>
     
 
@@ -273,8 +288,8 @@ Prints component styles
 - **File:** _overlay-section.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 52-54
-- **Lines (code):** 56-113
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-120
     </details>
     
 
@@ -364,8 +379,8 @@ Get a config option
 - **File:** _overlay-section.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 51-53
+- **Lines (code):** 55-57
     </details>
     
 
