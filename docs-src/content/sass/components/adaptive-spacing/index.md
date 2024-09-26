@@ -48,9 +48,23 @@ $config: (
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-22
+- **Lines (comments):** 12-19
+- **Lines (code):** 21-29
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|outputMargin|Boolean|false|@joe-check need examples for this to build documentation|
+|outputPadding|Boolean|true|This is the background color of the accordion before it is expanded.|
+|outputX|Boolean|true|This is the background color of the accordion before it is expanded.|
+|outputY|Boolean|true|This is the background color of the accordion before it is expanded.|
+|selectorX|Boolean|"sides"|This is the background color of the accordion before it is expanded.|
+|selectorY|Boolean|"ends"|This is the background color of the accordion before it is expanded.|
+
     
 
 
@@ -99,8 +113,8 @@ $sizes: (
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** variable
-- **Lines (comments):** 24-25
-- **Lines (code):** 27-46
+- **Lines (comments):** 31-32
+- **Lines (code):** 34-53
     </details>
     
   
@@ -131,8 +145,8 @@ Change modules $config
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-54
+- **Lines (comments):** 55-57
+- **Lines (code):** 59-61
     </details>
     
 
@@ -173,8 +187,8 @@ Set sizes map
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-62
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-69
     </details>
     
 
@@ -215,8 +229,8 @@ Prints adaptive spacing component styles
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-108
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-115
     </details>
     
 
@@ -266,8 +280,8 @@ Get a config option
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** function
-- **Lines (comments):** 64-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
     </details>
     
 

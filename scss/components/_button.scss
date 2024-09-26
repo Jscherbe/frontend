@@ -11,6 +11,8 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} icon-margin [1em] List of other sizes (large by defualt), each size is a map of (width, font-size) 
+
 
 $config: (
   "icon-margin" : 1em

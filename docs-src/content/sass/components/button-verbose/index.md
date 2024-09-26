@@ -61,9 +61,35 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 29-30
-- **Lines (code):** 32-51
+- **Lines (comments):** 29-48
+- **Lines (code):** 50-69
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|margin|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
+|margin-inline|Dimension|0.75em|Font size (basic ie. 1.3rem) for badge|
+|padding-x|Dimension|0.65em|Font size (basic ie. 1.3rem) for badge|
+|padding-y|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
+|icon-font-size|Dimension|1.25rem|Font size (basic ie. 1.3rem) for badge|
+|min-width|Dimension|20rem|Font size (basic ie. 1.3rem) for badge|
+|line-height|Number|1.2|Font size (basic ie. 1.3rem) for badge|
+|icon-color|Color|gray|Font size (basic ie. 1.3rem) for badge|
+|title-color|String|link|Font size (basic ie. 1.3rem) for badge|
+|title-margin|Dimension|0.5em|Font size (basic ie. 1.3rem) for badge|
+|background-color|Color|white|Font size (basic ie. 1.3rem) for badge|
+|background-color:hover|Color|link|Font size (basic ie. 1.3rem) for badge|
+|color|String|type|Font size (basic ie. 1.3rem) for badge|
+|color:hover|String|type|Font size (basic ie. 1.3rem) for badge|
+|title-color:hover|String|link:hover|Font size (basic ie. 1.3rem) for badge|
+|border-radius|String|border-radius|Font size (basic ie. 1.3rem) for badge|
+|box-shadow|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
+|box-shadow:hover|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
+
     
   
 
@@ -93,8 +119,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
     </details>
     
 
@@ -135,8 +161,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-118
+- **Lines (comments):** 88-90
+- **Lines (code):** 92-136
     </details>
     
 
@@ -184,8 +210,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-68
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-86
     </details>
     
 

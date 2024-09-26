@@ -10,6 +10,20 @@
 ///   color.get();
 ///
 
+/// Module Settings
+/// @type Map
+/// @prop {String} [] Unstructured text.
+/// @prop {Number} [] Numeric values.
+/// @prop {List} [] Ordered collection of items.
+/// @prop {Map} [] Unordered collection of key-value pairs.
+/// @prop {Boolean} [] True or false values.
+/// @prop {Color} [] Represents color values (e.g., #fff, rgb(255, 255, 255)).
+/// @prop {Dimension} [] Represents measurements (e.g., 10px, 2rem).
+/// @prop {Time} [] Represents time values (e.g., 2s, 100ms).
+/// @prop {Angle} [] Represents angle values (e.g., 45deg, 1rad).
+/// @prop {CssValue} [] Value: Represents values specific to CSS properties (e.g., border value, box shadow value).
+/// @prop {Gradient} [] Represents gradient values (e.g., linear-gradient, radial-gradient).
+
 @forward "path" as path-*;
 @forward "cssvar" as cssvar-*;
 @forward "color" as color-*;

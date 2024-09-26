@@ -48,9 +48,23 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 24-25
-- **Lines (code):** 27-34
+- **Lines (comments):** 24-31
+- **Lines (code):** 33-40
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|padding|Dimension|1.5rem|Padding of the Callout.|
+|margin|Dimension|2rem|Bottom margin of the Callout.|
+|border|Boolean|true|The border of the Callout.|
+|border-radius|Boolean|true|The border radius of the Callout.|
+|box-shadow|CssValue|none|The box-shadow of the Callout.|
+|background-color|Color|rgb(240, 240, 240)|The background color of the Callout.|
+
     
   
 
@@ -80,8 +94,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-62
+- **Lines (comments):** 62-64
+- **Lines (code):** 66-68
     </details>
     
 
@@ -122,8 +136,8 @@ Set callout styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 73-75
-- **Lines (code):** 77-79
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-85
     </details>
     
 
@@ -159,8 +173,8 @@ Prints component styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-113
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-119
     </details>
     
 
@@ -208,8 +222,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 64-66
-- **Lines (code):** 68-71
+- **Lines (comments):** 70-72
+- **Lines (code):** 74-77
     </details>
     
 

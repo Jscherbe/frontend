@@ -28,6 +28,7 @@
 @forward "pager" as pager-*;
 @forward "form-theme" as form-theme-*;
 @forward "menu-stack" as menu-stack-*;
+@forward "skip-link" as skip-link-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
 @forward "placeholder-block" as placeholder-block-*;
@@ -62,6 +63,7 @@
 @use "pager";
 @use "form-theme";
 @use "menu-stack";
+@use "skip-link";
 @use "tile-grid";
 @use "tile-button";
 @use "placeholder-block";
@@ -97,6 +99,7 @@ $all-includes: (
   "pager",
   "form-theme",
   "menu-stack",
+  "skip-link",
   "tile-grid",
   "tile-button",
   "placeholder-block",
@@ -212,6 +215,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "menu-stack")) {
     @include menu-stack.styles;
+  }
+  @if (list.index($includes, "skip-link")) {
+    @include skip-link.styles;
   }
   @if (list.index($includes, "tile-grid")) {
     @include tile-grid.styles;

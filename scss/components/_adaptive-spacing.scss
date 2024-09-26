@@ -11,6 +11,13 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Boolean}  outputMargin  [false] @joe-check need examples for this to build documentation
+/// @prop {Boolean}  outputPadding  [true] This is the background color of the accordion before it is expanded. 
+/// @prop {Boolean}  outputX  [true] This is the background color of the accordion before it is expanded. 
+/// @prop {Boolean}  outputY  [true] This is the background color of the accordion before it is expanded. 
+/// @prop {Boolean}  selectorX  ["sides"] This is the background color of the accordion before it is expanded. 
+/// @prop {Boolean}  selectorY  ["ends"] This is the background color of the accordion before it is expanded. 
+
 
 $config: (
   outputMargin: false,

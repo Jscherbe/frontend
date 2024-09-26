@@ -23,6 +23,12 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} padding [1.5rem] Padding of the Callout.
+/// @prop {Dimension} margin [2rem] Bottom margin of the Callout.
+/// @prop {Boolean} border [true] The border of the Callout.
+/// @prop {Boolean} border-radius [true] The border radius of the Callout.
+/// @prop {CssValue} box-shadow [none] The box-shadow of the Callout.
+/// @prop {Color} background-color [rgb(240, 240, 240)] The background color of the Callout.
 
 $config: (
   "padding" : 1.5rem,

@@ -43,9 +43,18 @@ $config: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-17
+- **Lines (comments):** 12-14
+- **Lines (code):** 16-19
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|icon-margin|Dimension|1em|List of other sizes (large by defualt), each size is a map of (width, font-size)|
+
     
 
 
@@ -125,8 +134,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 19-21
-- **Lines (code):** 23-25
+- **Lines (comments):** 21-23
+- **Lines (code):** 25-27
     </details>
     
 
@@ -167,8 +176,8 @@ Prints button component styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 35-39
-- **Lines (code):** 41-98
+- **Lines (comments):** 37-41
+- **Lines (code):** 43-100
     </details>
     
 
@@ -313,8 +322,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 27-29
-- **Lines (code):** 31-33
+- **Lines (comments):** 29-31
+- **Lines (code):** 33-35
     </details>
     
 

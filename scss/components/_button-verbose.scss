@@ -28,6 +28,24 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} margin [1em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} margin-inline [0.75em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} padding-x [0.65em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} padding-y [1em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} icon-font-size [1.25rem] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} min-width [20rem] Font size (basic ie. 1.3rem) for badge
+/// @prop {Number} line-height [1.2] Font size (basic ie. 1.3rem) for badge
+/// @prop {Color} icon-color [gray] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} title-color [link] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} title-margin [0.5em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Color} background-color [white] Font size (basic ie. 1.3rem) for badge
+/// @prop {Color} background-color:hover [link] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} color [type] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} color:hover [type] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} title-color:hover [link:hover] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} border-radius [border-radius] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} box-shadow [true] @joe-check these box-shadows are booleans, but it should be a css value
+/// @prop {String} box-shadow:hover [true] @joe-check these box-shadows are booleans, but it should be a css value
 
 $config: (
   "margin" : 1em,

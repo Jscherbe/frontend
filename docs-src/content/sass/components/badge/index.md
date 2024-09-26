@@ -62,15 +62,15 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.font-size|Number|Font size (basic ie. 1.3rem) for badge|
-|$config.border-radius|Number|Border radius of badge|
-|$config.width|Number|Width of badge (default size)|
-|$config.font-weight|Number|Font weight|
-|$config.background-color|Number|Background color (if no image)|
-|$config.color|Number|Type color|
-|$config.sizes|List|List of other sizes (large by defualt), each size is a map of (width, font-size)|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
+|border-radius|Number|50%|Border radius of badge|
+|width|Number|10rem|Width of badge (default size)|
+|font-weight|Number|bold|Font weight|
+|background-color|Number|gray|Background color (if no image)|
+|color|Number|black|Type color|
+|sizes|List|Object|List of other sizes (large by defualt), each size is a map of (width, font-size)|
 
     
   

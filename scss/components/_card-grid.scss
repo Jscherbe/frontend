@@ -9,6 +9,11 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} gap [2rem] The grid gap of the card-grid.
+/// @prop {Dimension} compact-gap [1rem] The grid gap of the card-grid--compact.
+/// @prop {CssValue} template-columns [1fr 1fr] The template-columns of the card-grid.
+/// @prop {CssValue} compact-template-columns [1fr 1fr 1fr] The template-columns of the card-grid--compact.
+
 
 $config: (
   "gap" : 2rem,
