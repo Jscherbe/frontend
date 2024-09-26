@@ -38,11 +38,15 @@ $collapsible-inner-padding: 0.5em;
   display: flex;
   align-items: baseline;
   padding-right: 1em;
+  flex-grow: 1;
 }
 .nav-tree__toggle-icon {
   margin-left: auto;
   width: 1em;
   flex: 0 0 1em;
+  .nav-tree__collapsible[open] > .nav-tree__toggle & {
+    transform: rotate(180deg);
+  }
 }
 .nav-tree__link {
   &.is-active {
@@ -56,7 +60,9 @@ $collapsible-inner-padding: 0.5em;
   &[open] {
     padding-bottom: $collapsible-inner-padding;
   }
-  
+}
+.nav-tree__text {
+  flex-grow: 1;
 }
 .nav-tree__icon {
   margin-right: 0.35em;

@@ -1,6 +1,6 @@
 ---
 title: Guide
-hideIndexInMenu: false
+hideIndexInMenu: true
 weight: 0
 iconClass: fas fa-book
 ---

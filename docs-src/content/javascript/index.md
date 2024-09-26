@@ -1,5 +1,5 @@
 ---
-title: Javascript
+title: Javascript API
 weight: 30
 iconClass: fab fa-js
 ---
