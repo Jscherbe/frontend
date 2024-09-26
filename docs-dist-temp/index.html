@@ -43,7 +43,7 @@
     <a class="header__logo" href="/">
       <div class="logo">
   <span class="logo__main">Ulu</span>
-  <span class="logo__subtitle">Docs</span>
+  <span class="logo__subtitle">Frontend</span>
 </div>
     </a>
     <button
@@ -4483,89 +4483,64 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				
+				<h2>Jump To:</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#modular">Modular</a>
+            		</li>
+
+                    <li><a href="#configurable-and-customizable">Configurable and Customizable</a>
+            		</li>
+
+                    <li><a href="#breakpoint-management-system">Breakpoint Management System</a>
+            		</li>
+
+                    <li><a href="#printing">Printing</a>
+            		</li>
+                </ol>
+            </div>
 			</div>
 		
 		<main id="main" class="page__body">
 			
 			
 			
-  <div class="home page__body-top">
-    <div class="home__header">
-      <div class="container-full">
-        <h1 class="h1">
-          Modular Theming Library
-        </h1>
-        <p class="type-large type-light">
-          Versatile, Standardized Configuration, Flexible
-        </p>
-      </div>
-    </div>
-    <div class="page__body-top ">
-      
-        <div class="home__highlights container">
-          
-  <div data-grid="columns: 12">
-    
-      <div data-grid-item="width: 4">
-        <h2 class="h4">Modular</h2>
-        
-          <p>
-            Choose only the components you need, or easily include everything in one step
-          </p>
-        
-        
-          <p>
-            
-              <a class="button" href="/showcase/">
-                Showcase
-              </a>
-            
-          </p>
-        
-      </div>
-    
-      <div data-grid-item="width: 4">
-        <h2 class="h4">Configurable</h2>
-        
-          <p>
-            Everything has a common configuration pattern. All configuration is documented in API documentation
-          </p>
-        
-        
-          <p>
-            
-              <a class="button" href="/sass/">
-                Sass API
-              </a>
-            
-              <a class="button" href="/javascript/">
-                Javascript API
-              </a>
-            
-          </p>
-        
-      </div>
-    
-      <div data-grid-item="width: 4">
-        <h2 class="h4">Accessible</h2>
-        
-          <p>
-            Built with accessibility standards in mind
-          </p>
-        
-        
-      </div>
-    
-  </div>
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Modular Theming Library</h1>
 
-        </div>
-      
-      
-      
+  <p class="type-large type-light">
+    Versatile, Standardized Configuration, Flexible
+  </p>
+
+<hr class="rule rule--light rule--margin-large">
+    <div class="wysiwyg">
+      <h2 id="modular" tabindex="-1">Modular</h2>
+<p>Choose only the components you need, or easily include everything in one step.</p>
+<p>The SCSS and JavaScript are modularized for flexibility. Refer to the SCSS API for documentation on SCSS modules and the JS API for JavaScript modules.</p>
+<p><strong>Key benefits of modularization:</strong></p>
+<ul>
+<li><strong>Customization</strong>: The JavaScript is decoupled from component styling, allowing you to use it independently for custom components (e.g., special popovers, dialogs, etc.).</li>
+<li><strong>Efficiency</strong>: Choose only the components you need to reduce bundle size and improve performance.</li>
+</ul>
+<h2 id="configurable-and-customizable" tabindex="-1">Configurable and Customizable</h2>
+<p>This library offers a standardized and flexible approach to configuring both SCSS and JS modules. Once you've learned how to configure one module, the APIs for all others follow a similar pattern.</p>
+<p>This library is designed to facilitate the creation of highly customizable themes. The default styles are intentionally minimal to provide a solid foundation for customization. While the defaults are sensible, color is entirely up to you. Begin by adjusting the default palette in the color module, and then fine-tune individual component color settings as needed. This approach aims to address the challenge of creating diverse and distinctive themes that can serve as a foundation for various site designs. The components showcased in the demos demonstrate the default styling.</p>
+<p>Note: This library supports the use of CSS custom properties. Define your custom properties and then pass them as configuration for colors and other elements. Refer to the scss core cssvars module for more information on helper mixins and functions related to custom properties.</p>
+<h2 id="breakpoint-management-system" tabindex="-1">Breakpoint Management System</h2>
+<p>This library simplifies the process of defining and managing breakpoints in your layout. It provides a flexible framework for defining breakpoints (points where styles should change) and using them in various scenarios:</p>
+<ul>
+<li><strong>Below the breakpoint:</strong> Use styles intended for smaller screens.</li>
+<li><strong>Above the breakpoint:</strong> Use styles intended for larger screens.</li>
+<li><strong>Between breakpoints:</strong> Use styles that adapt to specific screen sizes.</li>
+</ul>
+<p>The library also includes helpful utilities for passing breakpoint information to JavaScript. Additionally, a dedicated JavaScript module is available for managing breakpoints dynamically and implementing responsive behaviors.</p>
+<p>For in-depth details and examples, please refer to the scss core breakpoint module and the javascript ui breakpoints module.</p>
+<h2 id="printing" tabindex="-1">Printing</h2>
+<p>While most components can be printed directly, certain components, such as those with interactive or collapsible elements, may require JavaScript assistance to ensure optimal print output. The JavaScript modules provided offer the necessary mechanisms for managing print behavior in these specific cases.</p>
+
     </div>
   </div>
-  
 
 		</main>
 		<footer></footer>

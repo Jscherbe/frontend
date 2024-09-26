@@ -1,5 +1,6 @@
 export const meta = {
   title: "Ulu",
+  subtitle: "Frontend",
   url: "https://jscherbe.github.io/frontend/",
   description: "Modular Sass Theming Library",
   author: {

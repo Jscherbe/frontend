@@ -30,13 +30,13 @@ export default async function(eleventyConfig) {
     headingText: "Jump To:"
   });
   eleventyConfig.addPlugin(syntaxHighlight, {
-    // async init({ Prism }) {
-    //   import("prismjs/plugins/custom-class/prism-custom-class.js")
-    //     .then(() => console.log("Prism plugin loaded"))
-    //     .catch((err) => console.error(err));
+    async init({ Prism }) {
+      await import("prismjs/plugins/custom-class/prism-custom-class.js")
+        .then(() => console.log("Prism plugin loaded"))
+        .catch((err) => console.error(err));
 
-    //   Prism.plugins.customClass.prefix("pjs-");
-    // }
+      Prism.plugins.customClass.prefix("pjs-");
+    }
   });
   eleventyConfig.amendLibrary("md", md => {
     md.use(markdownItAttrs);
