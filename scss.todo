@@ -7,6 +7,13 @@ SCSS Todos:
     * Maybe instead of fallbacks we put fallback methods on core modules ie element.get-as-fallback(key, value)
     Or have function util.fallback
     The issue with this technique vs fallback map is the fallback method system while more verbose allows any user to grab computed property vs having to match implementation. Which is helpful for third party user who may not be aware of value that are or are not defined (complex cases) but honking it through
+  ☐ Could tint/shade custom properties if passes to mixins in the future @idea
+    * Need to think this all the way through before setting anything like this up
+    * Browser compatablity started in 2023 (not that great)
+    * Not sure this would have the affect that would be wanted 
+      * In different themes (ie. light/dark) the shading or tinting may not work for all themes (guess this would be a used decision)
+    * Could be additional mixin color-css-shade color-css-tint
+    * See https://codepen.io/Jscherbe/pen/abeOjoN
   ☐ Should container have defaults by default (ie preset ones)
     ☐ Should we add margins for defaults (ie margin-small)
       * We can then get rid of site-margin variables and use config
