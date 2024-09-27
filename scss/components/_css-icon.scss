@@ -134,6 +134,7 @@ $config: (
   .css-icon--angle-right,
   .css-icon--angle-right-to-down,
   .css-icon--angle-up-to-down,
+  .css-icon--angle-down-to-up,
   .css-icon--angle-left,
   .css-icon--angle-up,
   .css-icon--angle-down,
@@ -178,6 +179,7 @@ $config: (
   .css-icon--angle-right,
   .css-icon--angle-right-to-down,
   .css-icon--angle-up-to-down,
+  .css-icon--angle-down-to-up,
   .css-icon--angle-left,
   .css-icon--angle-up,
   .css-icon--angle-down {
@@ -202,7 +204,8 @@ $config: (
   .css-icon--angle-up-to-down {
     transform: rotate(45deg);
   }
-  .css-icon--angle-down {
+  .css-icon--angle-down,
+  .css-icon--angle-down-to-up {
     transform: rotate(225deg);
   }
 
@@ -298,7 +301,8 @@ $config: (
     }
   }
   .css-icon--angle-right-to-down,
-  .css-icon--angle-up-to-down {
+  .css-icon--angle-up-to-down,
+  .css-icon--angle-down-to-up {
     @include when-active() {
       transition-duration: get("transition-duration");
       transition-property: transform;
@@ -310,7 +314,13 @@ $config: (
       transform: rotate(225deg);
     }
   }
-  .css-icon--angle-up-to-down {
+  .css-icon--angle-down-to-up {
+    @include when-active() {
+      transform: rotate(45deg);
+    }
+  }
+  .css-icon--angle-up-to-down,
+  .css-icon--angle-down-to-up {
     @include when-active() {
       transition-duration: get("transition-duration") * 2;
     }

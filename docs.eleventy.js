@@ -96,6 +96,6 @@ function menuToggleFormatter({ node, options }) {
     <span class="${ classname }__toggle-content">
       ${ menuLinkFormatter({ node, options }) }
     </span>
-    <span class="${ classname }__toggle-icon fas fa-chevron-up" aria-hidden="true"></span>
+    <span class="${ classname }__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
   `;
 }

@@ -139,7 +139,7 @@ Prints adaptive spacing component styles
 - **Group:** css-icon
 - **Type:** mixin
 - **Lines (comments):** 55-57
-- **Lines (code):** 59-318
+- **Lines (code):** 59-328
     </details>
     
 
