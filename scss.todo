@@ -1,5 +1,5 @@
 SCSS Todos:
-  ☐ Make sure modal styles still work with resizer @important
+  ✔ Make sure modal styles still work with resizer @important @done
   ☐ Make sure all color values go through color get (in modules)
   ☐ Accordion carrot icon swap vs. icon rotate. How would we handle that? Modifier? (if not rotate, user has to give 2 images).
     * Look into using css icons and supporting both methods

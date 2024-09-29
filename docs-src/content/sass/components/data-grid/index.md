@@ -33,19 +33,19 @@ Module Settings
 
 ``` scss
 $config: (
-  "columns":            12,
-  "attribute":          "data-grid",
-  "attribute-container" : "data-grid-container",
-  "gutter":             14px,
-  "breakpoint" :        false, // Fallback to default
-  "extra-breakpoints" : (
+  "columns":             12,
+  "attribute":           "data-grid",
+  "attribute-container": "data-grid-container",
+  "gutter":              14px,
+  "breakpoint":          false, // Fallback to default
+  "extra-breakpoints":   (
     "medium" : (
-      "breakpoint" : "medium",
-      "gutter" : 15px
+      "breakpoint": "medium",
+      "gutter":     15px
     ),
     "large" : (
-      "breakpoint" : "large",
-      "gutter" : 20px
+      "breakpoint": "large",
+      "gutter":     20px
     )
   ),
   "position-class-column-first": "position-column-first",
@@ -61,8 +61,8 @@ $config: (
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** variable
-- **Lines (comments):** 22-32
-- **Lines (code):** 34-56
+- **Lines (comments):** 16-26
+- **Lines (code):** 28-48
     </details>
     
 
@@ -110,8 +110,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 51-53
+- **Lines (code):** 55-57
     </details>
     
 
@@ -143,7 +143,7 @@ Change modules $config
 
   
 
-Prints component styles
+Prints default grid styles, if you want to customize further please use the create mixin
     
     
 
@@ -152,8 +152,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-109
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-96
     </details>
     
 
@@ -163,7 +163,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-data-grid-styles();
 ```
   
 
@@ -172,7 +172,6 @@ Prints component styles
 #### Require
 
 - [create()](/sass/components/data-grid/#mixin-create)
-- [get()](/sass/components/accordion/#function-get)
   
 
 
@@ -197,8 +196,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 111-120
-- **Lines (code):** 122-562
+- **Lines (comments):** 98-107
+- **Lines (code):** 109-549
     </details>
     
 
@@ -209,10 +208,10 @@ Creates grid css (variation of original data-grid)
 |:--|:--|:--|
 |$columns|`Number`|Columns in grid|
 |$breakpoint|`Number`|Breakpoint key for starting the grid|
-|$extra-breakpoints|`Map`|Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smalles to largest)|
+|$extra-breakpoints|`Map`|Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smallest to largest)|
 |$gutter|`Number`|Size in pixels for the gutters|
 |$include-rules|`Boolean`|Print styles for including rules|
-|$rule-size|`Number`|Size of the rule (border/seperator)|
+|$rule-size|`Number`|Size of the rule (border/separator)|
 |$extra-rule-styles|`Map`|Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))|
 |$extra-gutter-scales|`String`|A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`|
 |$attribute|`Map`|Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")|
@@ -251,8 +250,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-65
     </details>
     
 
@@ -293,8 +292,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-87
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-79
     </details>
     
 

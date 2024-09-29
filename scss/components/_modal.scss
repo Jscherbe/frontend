@@ -159,6 +159,7 @@ $config: (
     padding: 0;
     border: 0;
     width: get("width");
+    min-width: 200px; // For resizing minimum width
     min-height: get("height");
     max-height: 100vh;
     max-width: 100%;
@@ -319,6 +320,12 @@ $config: (
   #{ $prefix }--resize {
     &#{ $prefix }--center  {
       resize: both;  
+    }
+    &#{ $prefix }--right  {
+      padding-left: get("resizer-width");  
+    }
+    &#{ $prefix }--left  {
+      padding-right: get("resizer-width");  
     }
   }
   #{ $prefix }--video {
