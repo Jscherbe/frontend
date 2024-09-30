@@ -18,10 +18,10 @@
 /// @type Map
 /// @prop {Color}  background-color  [white] This is the background color of the accordion before it is expanded. 
 /// @prop {Color}  background-color-open  [#F7F8F7] This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.
-/// @prop {Dimension} padding-x  [1.5em] @joe-check This value gives horizontal padding to the accordion container. The accordion's summary will use this value to add both the same padding as well as a negative margin. This is so that the borders stretch across the whole container.
-/// @prop {Dimension} padding-y  [1.5em] @joe-check This value gives horizontal padding to the accordion container. The accordion's summary will use this value to add both the same padding as well as a negative margin. This is so that the borders stretch across the whole container.
-/// @prop {Dimension} margin  [3rem] text This is the margin above and below the accordion. If there are stacked accordions, by default they will use negative margin to offset this difference. To add a margin between accordions, use the margin-between option.
-/// @prop {Dimension} margin-between  [0] This adds a margin between accordions. By default, accordions do not have any net margin between each other.
+/// @prop {Dimension} padding-x  [1.5em] @joe-check This value gives horizontal padding to the accordion.
+/// @prop {Dimension} padding-y  [1.5em] @joe-check This value gives horizontal padding to the accordion.
+/// @prop {Dimension} margin  [3rem] text This is the margin above and below the accordion. Multiple Accordions will stack. See margin-between below.
+/// @prop {Dimension} margin-between  [0] This adds a margin between adjacent accordions. By default, accordions do not have any net margin between each other.
 /// @prop {Number} border-radius  [0] This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.
 /// @prop {CssValue} box-shadow  [none] Adds a box shadow to the accordion for shading.
 /// @prop {Dimension} border-width  [1px] The width of the borders of the accordions
@@ -29,16 +29,15 @@
 /// @prop {Dimension} summary-type-size  [false] The size of the text in the accordion summary. 
 /// @prop {Color} summary-color-hover  [inherit] The color of the text in the accordion summary when hovering or focusing on it.
 /// @prop {Dimension} summary-padding-y  [1rem] The vertical padding of the summary.
-/// @prop {Color} summary-background-color  [white] @joe-check THIS IS UNUSED BELOW. DELETE?
+/// @prop {Color} summary-background-color  [null] @joe-check THIS IS UNUSED BELOW. DELETE?
 /// @prop {Dimension} summary-line-height  [inherit] Adjusts the line height of the summary element.
-/// @prop {String} icon-color  [link] Color of the icon. This uses color.scss, so the value of this options should be a color variable from color.scss.
+/// @prop {String} icon-color  [link] Color of the icon. This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {String} icon-color-hover  [link:hover] Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {Color} icon-background-color  [transparent] The background color of the icon.
 /// @prop {Color} icon-background-color-hover  [transparent] The background color of the icon when hovered or focused.
 /// @prop {Number} icon-border-radius  [50%] The border-radius of the icon.
 /// @prop {Dimension} icon-size  [auto] The size of the icon. Used as the base in the flex property.
 /// @prop {Dimension} icon-font-size  [1.5rem] The font-size of the icon.
-/// @prop {Dimension} icon-stroke-width  [0.15em] @joe-check THIS IS UNUSED BELOW. DELETE?
 /// @prop {Dimension} transparent-padding-y  [1em] The upper and lower padding of the transparent summary.
 /// @prop {Dimension} transparent-padding-x  [0] The upper and lower padding of the transparent summary.
 

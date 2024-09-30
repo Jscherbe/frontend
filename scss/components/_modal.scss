@@ -30,21 +30,21 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {} backdrop-color [true]
-/// @prop {} backdrop-blur [4px]
-/// @prop {} box-shadow [true]
-/// @prop {} width [60rem]
-/// @prop {} sizes [Object]
-/// @prop {} height [340px]
-/// @prop {} height-no-header [100px]
-/// @prop {} border-radius[true]
-/// @prop {} resizer-width [1rem]
-/// @prop {} resizer-color [black]
-/// @prop {} resizer-color-hover [black]
-/// @prop {} resizer-background-color [rgb(221, 221, 221)]
-/// @prop {} resizer-background-color-hover [rgb(66, 66, 66)]
-/// @prop {} header-padding [1rem]
-/// @prop {} header-border-bottom [none]
+/// @prop {Color} backdrop-color [true] The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.
+/// @prop {CssValue} backdrop-blur [4px] Determines the blur of the backdrop.
+/// @prop {CssValue} box-shadow [true] Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.
+/// @prop {Dimension} width [60rem] The width of the Modal
+/// @prop {Map} sizes [Map] Size options to enable unique stylings.
+/// @prop {Dimension} height [340px] The min-height of the modal.
+/// @prop {Dimension} height-no-header [100px] The min-height of the modal.
+/// @prop {CssValue} border-radius [true] The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.
+/// @prop {Dimension} resizer-width [1rem] The width of the resizer.
+/// @prop {Color} resizer-color [black] The type color of the resizer.
+/// @prop {Color} resizer-color-hover [black] The type color of the resizer when hovered or focused.
+/// @prop {Color} resizer-background-color [rgb(221, 221, 221)] The background color of the resizer.
+/// @prop {Color} resizer-background-color-hover [rgb(66, 66, 66)] The background color of the resizer when hovered or focused.
+/// @prop {Dimension} header-padding [1rem] The padding of the modal header.
+/// @prop {CssValue} header-border-bottom [none]
 /// @prop {} header-background-color [black]
 /// @prop {} header-color [white]
 /// @prop {} title-color [white]

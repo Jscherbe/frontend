@@ -24,32 +24,32 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {} link-color [link]
-/// @prop {} link-background-color [transparent]
-/// @prop {} link-color-hover [link:hover]
-/// @prop {} link-background-color-hover [rgb(219, 219, 219)]
-/// @prop {} link-color-active [black]
-/// @prop {} link-background-color-active [rgb(219, 219, 219)]
-/// @prop {} link-border-radius [true]
-/// @prop {} link-padding-y[0.35em]
-/// @prop {} link-padding-x[1em]
-/// @prop {} link-margin [0.2em]
-/// @prop {} link-separated-rule-style [false]
-/// @prop {} link-separated-margin [false]
-/// @prop {} link-icon-margin [0.65em]
-/// @prop {} link-icon-width [1em]
-/// @prop {} link-font-weight [null]
-/// @prop {} link-active-selectors [(.is-active, '[aria-current=page]')]
-/// @prop {} compact-link-padding-y [0.25em]
-/// @prop {} compact-link-padding-x [0.75em]
-/// @prop {} rule-style [default]
-/// @prop {} rule-margin [0.5em]
-/// @prop {} label-type-size [false]
-/// @prop {} label-color [null]
-/// @prop {} label-margin [0.5em]
-/// @prop {} label-text-transform [uppercase]
-/// @prop {} checkbox-area-width [3em]
-/// @prop {} nested-indent [0.5em]
+/// @prop {String} link-color [link] The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {Color} link-background-color [transparent] The background color of the menu-stack toggle. 
+/// @prop {String} link-color-hover [link:hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {Color} link-background-color-hover [rgb(219, 219, 219)] The background color of the menu-stack toggle when hovered or focused.
+/// @prop {Color} link-color-active [black] The type color of the menu-stack toggle when active.
+/// @prop {Color} link-background-color-active [rgb(219, 219, 219)] The background color of the menu-stack toggle when active.
+/// @prop {Dimension} link-border-radius [true] The border radius of the menu-stack toggle. If set to true, will use the border radius from the button component.
+/// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
+/// @prop {Dimension} link-padding-x [1em] Horizontal padding for menu-stack toggle.
+/// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
+/// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
+/// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
+/// @prop {Dimension} link-icon-margin [0.65em] Adds a right margin to the icon.
+/// @prop {Dimension} link-icon-width [1em] The width of the icon.
+/// @prop {CssValue} link-font-weight [null] The font weight of the menu-stack toggle.
+/// @prop {list} link-active-selectors [(.is-active, '[aria-current=page]')] Selectors to apply active styling.
+/// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
+/// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
+/// @prop {String} rule-style [default] Determines the styling of the rule. Uses the rule.scss component.
+/// @prop {Dimension} rule-margin [0.5em] Sets the padding and margin of the rule.
+/// @prop {CssValue} label-type-size [false] Adjusts the type size of the label.
+/// @prop {Color} label-color [null] The type color of the label.
+/// @prop {Dimension} label-margin [0.5em] The margin of the label.
+/// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
+/// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox are.
+/// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
 
 $config: (
   "link-color" : "link",

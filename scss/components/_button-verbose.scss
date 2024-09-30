@@ -44,7 +44,7 @@ $-fallbacks: (
 /// @prop {String} color:hover [type] Font size (basic ie. 1.3rem) for badge
 /// @prop {String} title-color:hover [link:hover] Font size (basic ie. 1.3rem) for badge
 /// @prop {String} border-radius [border-radius] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} box-shadow [true] @joe-check these box-shadows are booleans, but it should be a css value
+/// @prop {String} box-shadow [true] Use the fallback. But note it.
 /// @prop {String} box-shadow:hover [true] @joe-check these box-shadows are booleans, but it should be a css value
 
 $config: (
