@@ -18,7 +18,7 @@ const dist = path.resolve(__dirname, "../../../content/javascript/");
 
 function cleanOutputDir() {
   fs.readdirSync(dist)
-    .filter(file => file !== "index.md")
+    .filter(file => file !== "index.md" && file.endsWith("md"))
     .forEach(file => {
       fs.removeSync(path.join(dist, file));
     });
@@ -46,7 +46,11 @@ function output() {
   for (const moduleName of moduleNames) {
     const template = `{{#module name="${ moduleName }"}}{{>docs}}{{/module}}`;
     // console.log(`rendering ${ moduleName}, template: ${ template }`);
-    const markdown = jsdoc2md.renderSync({ data: templateData, template: template });
+    const markdown = jsdoc2md.renderSync({ 
+      data: templateData, 
+      template: template,
+      "heading-depth" : 1
+    });
     const filename = `${ urlize(moduleName) }.md`;
     const filepath = path.resolve(path.join(dist, filename));
     const content = outputTemplate(moduleName, markdown);

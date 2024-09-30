@@ -4,7 +4,7 @@ title: breakpoints
 
 <a name="module_breakpoints"></a>
 
-## breakpoints
+# breakpoints
 
 * [breakpoints](#module_breakpoints)
     * _static_
@@ -33,7 +33,7 @@ title: breakpoints
 
 <a name="module_breakpoints.BreakpointManager"></a>
 
-### breakpoints.BreakpointManager
+## breakpoints.BreakpointManager
 Class that provides method for retrieving and acting on breakpoints passed
 from CSS (using element psuedo content prop)
 
@@ -51,7 +51,7 @@ from CSS (using element psuedo content prop)
 
 <a name="new_module_breakpoints.BreakpointManager_new"></a>
 
-#### new exports.BreakpointManager(config)
+### new exports.BreakpointManager(config)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -64,7 +64,7 @@ from CSS (using element psuedo content prop)
 
 <a name="module_breakpoints.BreakpointManager+onChange"></a>
 
-#### breakpointManager.onChange(callback)
+### breakpointManager.onChange(callback)
 Add a callback for everytime a breakpoint changes
 - Not recommended, possibly use to watch for changes, etc
 - For more control use intance.at(name) with breakpoint methods
@@ -77,7 +77,7 @@ Add a callback for everytime a breakpoint changes
 
 <a name="module_breakpoints.BreakpointManager+removeOnChange"></a>
 
-#### breakpointManager.removeOnChange(callback)
+### breakpointManager.removeOnChange(callback)
 Remove change callback
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_breakpoints.BreakpointManager)  
@@ -88,31 +88,31 @@ Remove change callback
 
 <a name="module_breakpoints.BreakpointManager+getBreakpointInPsuedo"></a>
 
-#### breakpointManager.getBreakpointInPsuedo()
+### breakpointManager.getBreakpointInPsuedo()
 Get breakpoint from a psuedo element
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_breakpoints.BreakpointManager)  
 <a name="module_breakpoints.BreakpointManager+getBreakpointInProperty"></a>
 
-#### breakpointManager.getBreakpointInProperty()
+### breakpointManager.getBreakpointInProperty()
 Get breakpoint from a custom property
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_breakpoints.BreakpointManager)  
 <a name="module_breakpoints.BreakpointManager+getBreakpoint"></a>
 
-#### breakpointManager.getBreakpoint()
+### breakpointManager.getBreakpoint()
 Get breakpoint from element (design note: user could override prototype)
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_breakpoints.BreakpointManager)  
 <a name="module_breakpoints.BreakpointManager+update"></a>
 
-#### breakpointManager.update()
+### breakpointManager.update()
 Updates the active breakpoint by checking the element and executes handlers on change
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_breakpoints.BreakpointManager)  
 <a name="module_breakpoints.BreakpointManager+at"></a>
 
-#### breakpointManager.at(name) ⇒ <code>Breakpoint</code>
+### breakpointManager.at(name) ⇒ <code>Breakpoint</code>
 Get a breakpoint by key
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_breakpoints.BreakpointManager)  
@@ -124,7 +124,7 @@ Get a breakpoint by key
 
 <a name="module_breakpoints..BreakpointDirection"></a>
 
-### breakpoints~BreakpointDirection
+## breakpoints~BreakpointDirection
 Used to handle a breakpoints direction's handler and state
 
 **Kind**: inner class of [<code>breakpoints</code>](#module_breakpoints)  
@@ -138,25 +138,25 @@ Used to handle a breakpoints direction's handler and state
 
 <a name="module_breakpoints..BreakpointDirection+change"></a>
 
-#### breakpointDirection.change()
+### breakpointDirection.change()
 Change the state of the direction
 
 **Kind**: instance method of [<code>BreakpointDirection</code>](#module_breakpoints..BreakpointDirection)  
 <a name="module_breakpoints..BreakpointDirection+_call"></a>
 
-#### breakpointDirection.\_call()
+### breakpointDirection.\_call()
 Calls all functions in handlers or
 
 **Kind**: instance method of [<code>BreakpointDirection</code>](#module_breakpoints..BreakpointDirection)  
 <a name="module_breakpoints..BreakpointDirection+getHandlers"></a>
 
-#### breakpointDirection.getHandlers()
+### breakpointDirection.getHandlers()
 Returns handlers in normalized object format on/off
 
 **Kind**: instance method of [<code>BreakpointDirection</code>](#module_breakpoints..BreakpointDirection)  
 <a name="module_breakpoints..BreakpointDirection+add"></a>
 
-#### breakpointDirection.add(handler)
+### breakpointDirection.add(handler)
 Adds a handler for the direction, optionally use object to add off state handler
 
 **Kind**: instance method of [<code>BreakpointDirection</code>](#module_breakpoints..BreakpointDirection)  
@@ -169,13 +169,13 @@ Adds a handler for the direction, optionally use object to add off state handler
 
 <a name="module_breakpoints..BreakpointDirection+remove"></a>
 
-#### breakpointDirection.remove()
+### breakpointDirection.remove()
 Removes a handler
 
 **Kind**: instance method of [<code>BreakpointDirection</code>](#module_breakpoints..BreakpointDirection)  
 <a name="module_breakpoints..Breakpoint"></a>
 
-### breakpoints~Breakpoint
+## breakpoints~Breakpoint
 Single breakpoint management
 
 **Kind**: inner class of [<code>breakpoints</code>](#module_breakpoints)  
@@ -189,7 +189,7 @@ Single breakpoint management
 
 <a name="module_breakpoints..Breakpoint+_setDirection"></a>
 
-#### breakpoint.\_setDirection(direction, active)
+### breakpoint.\_setDirection(direction, active)
 Private method used inrternally for managing direction activation
 - Each direction manages it's own state and handlers
 
@@ -202,7 +202,7 @@ Private method used inrternally for managing direction activation
 
 <a name="module_breakpoints..Breakpoint+max"></a>
 
-#### breakpoint.max(handler)
+### breakpoint.max(handler)
 Attach handler to be executed from the breakpoint and to all breakpoints below.
 - If the browser resizes from a breakpoint below this breakpoint, 
   and above the breakpoint name specified, this handler will fire
@@ -215,7 +215,7 @@ Attach handler to be executed from the breakpoint and to all breakpoints below.
 
 <a name="module_breakpoints..Breakpoint+min"></a>
 
-#### breakpoint.min(handler)
+### breakpoint.min(handler)
 Attach handler to be executed from the breakpoint and to all breakpoints below.
 - If the browser resizes from a breakpoint above this breakpoint, 
   and below the breakpoint name specified, this handler will fire
@@ -228,7 +228,7 @@ Attach handler to be executed from the breakpoint and to all breakpoints below.
 
 <a name="module_breakpoints..Breakpoint+only"></a>
 
-#### breakpoint.only(handler)
+### breakpoint.only(handler)
 Attach a handler to fire when the breakpoint is within the key
 
 **Kind**: instance method of [<code>Breakpoint</code>](#module_breakpoints..Breakpoint)  
@@ -239,7 +239,7 @@ Attach a handler to fire when the breakpoint is within the key
 
 <a name="module_breakpoints..Breakpoint+remove"></a>
 
-#### breakpoint.remove(handler, direction)
+### breakpoint.remove(handler, direction)
 Remove handler
 
 **Kind**: instance method of [<code>Breakpoint</code>](#module_breakpoints..Breakpoint)  

@@ -4,7 +4,7 @@ title: tabs
 
 <a name="module_tabs"></a>
 
-## tabs
+# tabs
 
 * [tabs](#module_tabs)
     * _static_
@@ -19,13 +19,13 @@ title: tabs
 
 <a name="module_tabs.instances"></a>
 
-### tabs.instances : <code>Array</code>
+## tabs.instances : <code>Array</code>
 Array of current tab instances (exported if you need to interact with them)
 
 **Kind**: static constant of [<code>tabs</code>](#module_tabs)  
 <a name="module_tabs.init"></a>
 
-### tabs.init(options)
+## tabs.init(options)
 Init all instances currently in document
 
 **Kind**: static method of [<code>tabs</code>](#module_tabs)  
@@ -36,7 +36,7 @@ Init all instances currently in document
 
 <a name="module_tabs.initWithin"></a>
 
-### tabs.initWithin(context, options)
+## tabs.initWithin(context, options)
 Init all tabs within a certain context
 
 **Kind**: static method of [<code>tabs</code>](#module_tabs)  
@@ -48,7 +48,7 @@ Init all tabs within a certain context
 
 <a name="module_tabs.setup"></a>
 
-### tabs.setup(element, options) ⇒ <code>Object</code>
+## tabs.setup(element, options) ⇒ <code>Object</code>
 **Kind**: static method of [<code>tabs</code>](#module_tabs)  
 **Returns**: <code>Object</code> - Instance object  
 
@@ -59,19 +59,19 @@ Init all tabs within a certain context
 
 <a name="module_tabs..openByCurrentHash"></a>
 
-### tabs~openByCurrentHash()
+## tabs~openByCurrentHash()
 Opens the a tabpanel if it matches current hash (used in initial init)
 
 **Kind**: inner method of [<code>tabs</code>](#module_tabs)  
 <a name="module_tabs..handleOpen"></a>
 
-### tabs~handleOpen()
+## tabs~handleOpen()
 Responsible for setting hash on open if option is set
 
 **Kind**: inner method of [<code>tabs</code>](#module_tabs)  
 <a name="module_tabs..setHeights"></a>
 
-### tabs~setHeights()
+## tabs~setHeights()
 Responsible for creating equal height tab panels
 
 **Kind**: inner method of [<code>tabs</code>](#module_tabs)  

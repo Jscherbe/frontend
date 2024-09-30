@@ -1,0 +1,6 @@
+.api-docs {
+  // Hide anchor above title output by jsdoc
+  p:has(a[name]) {
+    display: none;
+  }
+}

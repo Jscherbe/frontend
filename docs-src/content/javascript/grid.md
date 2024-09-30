@@ -4,7 +4,7 @@ title: grid
 
 <a name="module_grid"></a>
 
-## grid
+# grid
 
 * [grid](#module_grid)
     * [.init(selector, classes)](#module_grid.init)
@@ -12,7 +12,7 @@ title: grid
 
 <a name="module_grid.init"></a>
 
-### grid.init(selector, classes)
+## grid.init(selector, classes)
 Sets up document for grid position classes
 
 **Kind**: static method of [<code>grid</code>](#module_grid)  
@@ -24,7 +24,7 @@ Sets up document for grid position classes
 
 <a name="module_grid.setup"></a>
 
-### grid.setup(selector, classes)
+## grid.setup(selector, classes)
 Goes through document and finds elements that need to have positioning classes
 
 **Kind**: static method of [<code>grid</code>](#module_grid)  

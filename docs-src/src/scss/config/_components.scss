@@ -1,5 +1,6 @@
 @use "vars";
 @use "scss" as ulu;
+@use "sass:map";
 
 // @include ulu.component-list-lines-set((
 // //   "border-first" : false,
@@ -18,3 +19,7 @@
 ));
 
 // @include ulu.component-set-excludes("modal");
+$wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
+@include ulu.component-wysiwyg-set((
+  "headline-sizes" :  map.merge($wysiwyg-headings, ("h1" : "h1"))
+))

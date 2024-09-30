@@ -4525,11 +4525,13 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#tooltip">tooltip</a>
+                    <li><a href="#tooltip.tooltip">tooltip.Tooltip</a>
             
                 <ol>
                     
-                    <li><a href="#tooltip.tooltip">tooltip.Tooltip</a>
+                    <li><a href="#tooltip.defaults">tooltip.defaults</a>
+            		</li>
+                </ol>
             		</li>
 
                     <li><a href="#tooltip.init()">tooltip.init()</a>
@@ -4568,8 +4570,6 @@
                     <li><a href="#tooltip~onchange()-%3A-function">tooltip~onChange() : function</a>
             		</li>
                 </ol>
-            		</li>
-                </ol>
             </div>
 			</div>
 		
@@ -4577,13 +4577,10 @@
 			
 			
 			
-  <div class="page__body-top container ">
-    <h1 class="page__title h1">tooltip</h1>
-
-<hr class="rule rule--light rule--margin-large">
+  <div class="page__body-top container api-docs">
     <div class="wysiwyg">
       <p><a name="module_tooltip"></a></p>
-<h2 id="tooltip" tabindex="-1">tooltip</h2>
+<h1 id="tooltip" tabindex="-1">tooltip</h1>
 <ul>
 <li><a href="#module_tooltip">tooltip</a>
 <ul>
@@ -4616,7 +4613,7 @@
 </li>
 </ul>
 <p><a name="module_tooltip.Tooltip"></a></p>
-<h3 id="tooltip.tooltip" tabindex="-1">tooltip.Tooltip</h3>
+<h2 id="tooltip.tooltip" tabindex="-1">tooltip.Tooltip</h2>
 <p>Tooltip</p>
 <ul>
 <li>Provides basic tooltip functionality</li>
@@ -4624,15 +4621,15 @@
 </ul>
 <p><strong>Kind</strong>: static class of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip.Tooltip+defaults"></a></p>
-<h4 id="tooltip.defaults" tabindex="-1">tooltip.defaults</h4>
+<h3 id="tooltip.defaults" tabindex="-1">tooltip.defaults</h3>
 <p>Defaults options</p>
 <p><strong>Kind</strong>: instance property of <a href="#module_tooltip.Tooltip"><code>Tooltip</code></a><br>
 <a name="module_tooltip.init"></a></p>
-<h3 id="tooltip.init()" tabindex="-1">tooltip.init()</h3>
+<h2 id="tooltip.init()" tabindex="-1">tooltip.init()</h2>
 <p>Initialize default popover</p>
 <p><strong>Kind</strong>: static method of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip.setup"></a></p>
-<h3 id="tooltip.setup()" tabindex="-1">tooltip.setup()</h3>
+<h2 id="tooltip.setup()" tabindex="-1">tooltip.setup()</h2>
 <p>Query all popovers on current page and set them up</p>
 <ul>
 <li>Use this manually if needed</li>
@@ -4640,46 +4637,46 @@
 </ul>
 <p><strong>Kind</strong>: static method of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..accessible"></a></p>
-<h3 id="tooltip~accessible-%3A-boolean" tabindex="-1">tooltip~accessible : <code>Boolean</code></h3>
+<h2 id="tooltip~accessible-%3A-boolean" tabindex="-1">tooltip~accessible : <code>Boolean</code></h2>
 <p>Should the tooltip and content be linked accessibly</p>
 <ul>
 <li>Note tooltips can only apply to interactive elements! (ie button, input, role=&quot;...&quot;, etc)</li>
 </ul>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..content"></a></p>
-<h3 id="tooltip~content-%3A-string" tabindex="-1">tooltip~content : <code>String</code></h3>
+<h2 id="tooltip~content-%3A-string" tabindex="-1">tooltip~content : <code>String</code></h2>
 <p>String/markup to insert into tooltip display</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..fromElement"></a></p>
-<h3 id="tooltip~fromelement-%3A-string-%7C-node" tabindex="-1">tooltip~fromElement : <code>String</code> | <code>Node</code></h3>
+<h2 id="tooltip~fromelement-%3A-string-%7C-node" tabindex="-1">tooltip~fromElement : <code>String</code> | <code>Node</code></h2>
 <p>Pull content from pre-existing content on page</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..fromAnchor"></a></p>
-<h3 id="tooltip~fromanchor" tabindex="-1">tooltip~fromAnchor</h3>
+<h2 id="tooltip~fromanchor" tabindex="-1">tooltip~fromAnchor</h2>
 <p>If used on a link that is an anchor link it will display the content of the anchor like fromElement</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..endOfDocument"></a></p>
-<h3 id="tooltip~endofdocument-%3A-boolean" tabindex="-1">tooltip~endOfDocument : <code>Boolean</code></h3>
+<h2 id="tooltip~endofdocument-%3A-boolean" tabindex="-1">tooltip~endOfDocument : <code>Boolean</code></h2>
 <p>Move the content to the bottom of the document</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..showEvents"></a></p>
-<h3 id="tooltip~showevents-%3A-array.%3Cstring%3E" tabindex="-1">tooltip~showEvents : <code>Array.&lt;String&gt;</code></h3>
+<h2 id="tooltip~showevents-%3A-array.%3Cstring%3E" tabindex="-1">tooltip~showEvents : <code>Array.&lt;String&gt;</code></h2>
 <p>Events to show tooltip on</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..hideEvents"></a></p>
-<h3 id="tooltip~hideevents-%3A-array.%3Cstring%3E" tabindex="-1">tooltip~hideEvents : <code>Array.&lt;String&gt;</code></h3>
+<h2 id="tooltip~hideevents-%3A-array.%3Cstring%3E" tabindex="-1">tooltip~hideEvents : <code>Array.&lt;String&gt;</code></h2>
 <p>Events to hide tooltip on</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..delay"></a></p>
-<h3 id="tooltip~delay-%3A-number" tabindex="-1">tooltip~delay : <code>Number</code></h3>
+<h2 id="tooltip~delay-%3A-number" tabindex="-1">tooltip~delay : <code>Number</code></h2>
 <p>Delay when using the directive</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..template"></a></p>
-<h3 id="tooltip~template()" tabindex="-1">tooltip~template()</h3>
+<h2 id="tooltip~template()" tabindex="-1">tooltip~template()</h2>
 <p>Template for the content display</p>
 <p><strong>Kind</strong>: inner method of <a href="#module_tooltip"><code>tooltip</code></a><br>
 <a name="module_tooltip..onChange"></a></p>
-<h3 id="tooltip~onchange()-%3A-function" tabindex="-1">tooltip~onChange() : <code>function</code></h3>
+<h2 id="tooltip~onchange()-%3A-function" tabindex="-1">tooltip~onChange() : <code>function</code></h2>
 <p>Callback when tooltip is shown or hidden</p>
 <p><strong>Kind</strong>: inner method of <a href="#module_tooltip"><code>tooltip</code></a></p>
 

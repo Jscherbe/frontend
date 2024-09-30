@@ -4,6 +4,7 @@
 /// For auto formatting general HTML elements (used around editor/body text)
 
 @use "sass:list";
+@use "sass:map";
 
 @use "../element";
 @use "../typography";

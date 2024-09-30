@@ -2,6 +2,11 @@
 @use "ulu";
 
 .wysiwyg {
+  h1 {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: ulu.element-get-rule-style("light");
+  }
   // Make MD table scroll without wrapper
   table {
     display: block;

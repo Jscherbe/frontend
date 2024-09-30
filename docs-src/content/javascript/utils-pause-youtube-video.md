@@ -4,7 +4,7 @@ title: utils/pause-youtube-video
 
 <a name="module_utils/pause-youtube-video"></a>
 
-## utils/pause-youtube-video
+# utils/pause-youtube-video
 
 * [utils/pause-youtube-video](#module_utils/pause-youtube-video)
     * [.pauseVideos(context)](#module_utils/pause-youtube-video.pauseVideos)
@@ -12,7 +12,7 @@ title: utils/pause-youtube-video
 
 <a name="module_utils/pause-youtube-video.pauseVideos"></a>
 
-### utils/pause-youtube-video.pauseVideos(context)
+## utils/pause-youtube-video.pauseVideos(context)
 Somewhat hacky way to pause the video
 - https://www.digitalredpanther.com/blog/play-pause-stop-youtube-embed
 - Actual JS API documentation (Didn't follow this for now) (https://developers.google.com/youtube/iframe_api_reference)
@@ -25,7 +25,7 @@ Somewhat hacky way to pause the video
 
 <a name="module_utils/pause-youtube-video.prepVideos"></a>
 
-### utils/pause-youtube-video.prepVideos()
+## utils/pause-youtube-video.prepVideos()
 Prep videos to be paused
 - Add query parameters for js API
 - Removes all other query parameters from iframe.src

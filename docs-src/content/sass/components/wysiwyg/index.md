@@ -51,8 +51,8 @@ $config: (
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-26
+- **Lines (comments):** 14-15
+- **Lines (code):** 17-27
     </details>
     
   
@@ -83,8 +83,8 @@ Change modules $config
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
-- **Lines (comments):** 28-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 29-31
+- **Lines (code):** 33-35
     </details>
     
 
@@ -130,8 +130,8 @@ Get a config option
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** function
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 37-39
+- **Lines (code):** 41-43
     </details>
     
 

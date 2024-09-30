@@ -4,7 +4,7 @@ title: utils/class-logger
 
 <a name="module_utils/class-logger"></a>
 
-## utils/class-logger
+# utils/class-logger
 
 * [utils/class-logger](#module_utils/class-logger)
     * _static_
@@ -17,7 +17,7 @@ title: utils/class-logger
 
 <a name="module_utils/class-logger.set"></a>
 
-### utils/class-logger.set(changes)
+## utils/class-logger.set(changes)
 Changes to make to configuration
 
 **Kind**: static method of [<code>utils/class-logger</code>](#module_utils/class-logger)  
@@ -28,7 +28,7 @@ Changes to make to configuration
 
 <a name="module_utils/class-logger.log"></a>
 
-### utils/class-logger.log(context, ...messages)
+## utils/class-logger.log(context, ...messages)
 Proxy Console.log
 
 **Kind**: static method of [<code>utils/class-logger</code>](#module_utils/class-logger)  
@@ -40,7 +40,7 @@ Proxy Console.log
 
 <a name="module_utils/class-logger.logWarning"></a>
 
-### utils/class-logger.logWarning(context, ...messages)
+## utils/class-logger.logWarning(context, ...messages)
 Proxy Console.warn
 
 **Kind**: static method of [<code>utils/class-logger</code>](#module_utils/class-logger)  
@@ -52,7 +52,7 @@ Proxy Console.warn
 
 <a name="module_utils/class-logger.logError"></a>
 
-### utils/class-logger.logError(context, ...messages)
+## utils/class-logger.logError(context, ...messages)
 Proxy Console.error
 
 **Kind**: static method of [<code>utils/class-logger</code>](#module_utils/class-logger)  
@@ -64,7 +64,7 @@ Proxy Console.error
 
 <a name="module_utils/class-logger..config"></a>
 
-### utils/class-logger~config
+## utils/class-logger~config
 Configuration Object
 
 **Kind**: inner constant of [<code>utils/class-logger</code>](#module_utils/class-logger)  
