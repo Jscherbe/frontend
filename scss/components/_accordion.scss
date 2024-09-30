@@ -110,16 +110,10 @@ $config: (
     &:first-of-type {
       border-top-left-radius: get("border-radius");
       border-top-right-radius: get("border-radius");
-      >#{ $prefix }__summary {
-        top: get("border-radius");
-      }
     }
     &:last-of-type {
       border-bottom-left-radius: get("border-radius");
       border-bottom-right-radius: get("border-radius");
-      >#{ $prefix }__summary {
-        bottom: get("border-radius");
-      }
     }
     & + & {
       $gap: -(get("margin") - get("margin-between"));
