@@ -4,10 +4,10 @@ title: overflow-scroller-pager
 
 <a name="module_overflow-scroller-pager"></a>
 
-## overflow-scroller-pager
+# overflow-scroller-pager
 <a name="module_overflow-scroller-pager.createPager"></a>
 
-### overflow-scroller-pager.createPager() ⇒ <code>function</code>
+## overflow-scroller-pager.createPager() ⇒ <code>function</code>
 Function to be used in overflow scrollers "amount" option. This function will
 determine how many items can fit in the viewport, taking into account scroll padding left, 
 and will set the scroll amount to paginate between items. Items size can be anything 

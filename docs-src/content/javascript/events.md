@@ -4,7 +4,7 @@ title: events
 
 <a name="module_events"></a>
 
-## events
+# events
 
 * [events](#module_events)
     * _static_
@@ -21,7 +21,7 @@ title: events
 
 <a name="module_events.dispatch"></a>
 
-### events.dispatch(type, context)
+## events.dispatch(type, context)
 Triggers one of our custom events
 
 **Kind**: static method of [<code>events</code>](#module_events)  
@@ -39,7 +39,7 @@ if (updatedMarkup) {
 ```
 <a name="module_events.getName"></a>
 
-### events.getName(type) ⇒ <code>String</code>
+## events.getName(type) ⇒ <code>String</code>
 Namespaced event
 
 **Kind**: static method of [<code>events</code>](#module_events)  
@@ -50,7 +50,7 @@ Namespaced event
 
 <a name="module_events..events"></a>
 
-### events~events
+## events~events
 Event object - called on dispatch
 
 **Kind**: inner constant of [<code>events</code>](#module_events)  
@@ -63,7 +63,7 @@ Event object - called on dispatch
 
 <a name="module_events..events.pageModified"></a>
 
-#### events.pageModified()
+### events.pageModified()
 Event is dispatched when DOM in the page has changed, triggers updates from
 all modules listening for the change (init instances, etc)
 - Is triggered by modules that were responsible for modifying the page
@@ -71,31 +71,31 @@ all modules listening for the change (init instances, etc)
 **Kind**: static method of [<code>events</code>](#module_events..events)  
 <a name="module_events..events.pageResized"></a>
 
-#### events.pageResized()
+### events.pageResized()
 Event called when page is resized
 
 **Kind**: static method of [<code>events</code>](#module_events..events)  
 <a name="module_events..events.beforePrint"></a>
 
-#### events.beforePrint()
+### events.beforePrint()
 Event dispatched before page print begins (teardown/restructure/hide things)
 
 **Kind**: static method of [<code>events</code>](#module_events..events)  
 <a name="module_events..events.afterPrint"></a>
 
-#### events.afterPrint()
+### events.afterPrint()
 Event dispatched after page print (cleanup)
 
 **Kind**: static method of [<code>events</code>](#module_events..events)  
 <a name="module_events..initResize"></a>
 
-### events~initResize()
+## events~initResize()
 Setup resize handler/dispatch
 
 **Kind**: inner method of [<code>events</code>](#module_events)  
 <a name="module_events..initPrint"></a>
 
-### events~initPrint()
+## events~initPrint()
 Setup print listeners
 - Note: Tested with matchMedia but these events are more consistent
         Experimented with normalizing both events but they fired

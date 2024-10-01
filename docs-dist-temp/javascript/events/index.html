@@ -4525,10 +4525,6 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#events">events</a>
-            
-                <ol>
-                    
                     <li><a href="#events.dispatch(type%2C-context)">events.dispatch(type, context)</a>
             		</li>
 
@@ -4536,14 +4532,27 @@
             		</li>
 
                     <li><a href="#events~events">events~events</a>
+            
+                <ol>
+                    
+                    <li><a href="#events.pagemodified()">events.pageModified()</a>
+            		</li>
+
+                    <li><a href="#events.pageresized()">events.pageResized()</a>
+            		</li>
+
+                    <li><a href="#events.beforeprint()">events.beforePrint()</a>
+            		</li>
+
+                    <li><a href="#events.afterprint()">events.afterPrint()</a>
+            		</li>
+                </ol>
             		</li>
 
                     <li><a href="#events~initresize()">events~initResize()</a>
             		</li>
 
                     <li><a href="#events~initprint()">events~initPrint()</a>
-            		</li>
-                </ol>
             		</li>
                 </ol>
             </div>
@@ -4553,13 +4562,10 @@
 			
 			
 			
-  <div class="page__body-top container ">
-    <h1 class="page__title h1">events</h1>
-
-<hr class="rule rule--light rule--margin-large">
+  <div class="page__body-top container api-docs">
     <div class="wysiwyg">
       <p><a name="module_events"></a></p>
-<h2 id="events" tabindex="-1">events</h2>
+<h1 id="events" tabindex="-1">events</h1>
 <ul>
 <li><a href="#module_events">events</a>
 <ul>
@@ -4587,7 +4593,7 @@
 </li>
 </ul>
 <p><a name="module_events.dispatch"></a></p>
-<h3 id="events.dispatch(type%2C-context)" tabindex="-1">events.dispatch(type, context)</h3>
+<h2 id="events.dispatch(type%2C-context)" tabindex="-1">events.dispatch(type, context)</h2>
 <p>Triggers one of our custom events</p>
 <p><strong>Kind</strong>: static method of <a href="#module_events"><code>events</code></a></p>
 <table>
@@ -4616,7 +4622,7 @@
     <span class="pjs-token pjs-function">dispatch</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"pageModified"</span><span class="pjs-token pjs-punctuation">,</span> modalElement<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-punctuation">}</span></code></pre>
 <p><a name="module_events.getName"></a></p>
-<h3 id="events.getname(type)-%E2%87%92-string" tabindex="-1">events.getName(type) ⇒ <code>String</code></h3>
+<h2 id="events.getname(type)-%E2%87%92-string" tabindex="-1">events.getName(type) ⇒ <code>String</code></h2>
 <p>Namespaced event</p>
 <p><strong>Kind</strong>: static method of <a href="#module_events"><code>events</code></a></p>
 <table>
@@ -4636,7 +4642,7 @@
 </tbody>
 </table>
 <p><a name="module_events..events"></a></p>
-<h3 id="events~events" tabindex="-1">events~events</h3>
+<h2 id="events~events" tabindex="-1">events~events</h2>
 <p>Event object - called on dispatch</p>
 <p><strong>Kind</strong>: inner constant of <a href="#module_events"><code>events</code></a></p>
 <ul>
@@ -4650,7 +4656,7 @@
 </li>
 </ul>
 <p><a name="module_events..events.pageModified"></a></p>
-<h4 id="events.pagemodified()" tabindex="-1">events.pageModified()</h4>
+<h3 id="events.pagemodified()" tabindex="-1">events.pageModified()</h3>
 <p>Event is dispatched when DOM in the page has changed, triggers updates from
 all modules listening for the change (init instances, etc)</p>
 <ul>
@@ -4658,23 +4664,23 @@ all modules listening for the change (init instances, etc)</p>
 </ul>
 <p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
 <a name="module_events..events.pageResized"></a></p>
-<h4 id="events.pageresized()" tabindex="-1">events.pageResized()</h4>
+<h3 id="events.pageresized()" tabindex="-1">events.pageResized()</h3>
 <p>Event called when page is resized</p>
 <p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
 <a name="module_events..events.beforePrint"></a></p>
-<h4 id="events.beforeprint()" tabindex="-1">events.beforePrint()</h4>
+<h3 id="events.beforeprint()" tabindex="-1">events.beforePrint()</h3>
 <p>Event dispatched before page print begins (teardown/restructure/hide things)</p>
 <p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
 <a name="module_events..events.afterPrint"></a></p>
-<h4 id="events.afterprint()" tabindex="-1">events.afterPrint()</h4>
+<h3 id="events.afterprint()" tabindex="-1">events.afterPrint()</h3>
 <p>Event dispatched after page print (cleanup)</p>
 <p><strong>Kind</strong>: static method of <a href="#module_events..events"><code>events</code></a><br>
 <a name="module_events..initResize"></a></p>
-<h3 id="events~initresize()" tabindex="-1">events~initResize()</h3>
+<h2 id="events~initresize()" tabindex="-1">events~initResize()</h2>
 <p>Setup resize handler/dispatch</p>
 <p><strong>Kind</strong>: inner method of <a href="#module_events"><code>events</code></a><br>
 <a name="module_events..initPrint"></a></p>
-<h3 id="events~initprint()" tabindex="-1">events~initPrint()</h3>
+<h2 id="events~initprint()" tabindex="-1">events~initPrint()</h2>
 <p>Setup print listeners</p>
 <ul>
 <li>Note: Tested with matchMedia but these events are more consistent

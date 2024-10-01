@@ -4,10 +4,10 @@ title: helpers
 
 <a name="module_helpers"></a>
 
-## helpers
+# helpers
 <a name="module_helpers.addScrollbarProperty"></a>
 
-### helpers.addScrollbarProperty(element, container, propName)
+## helpers.addScrollbarProperty(element, container, propName)
 Sets a CSS custom property equal to the scrollbar width
 
 **Kind**: static method of [<code>helpers</code>](#module_helpers)  

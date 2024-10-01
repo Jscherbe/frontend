@@ -4,7 +4,7 @@ title: resizer
 
 <a name="module_resizer"></a>
 
-## resizer
+# resizer
 
 * [resizer](#module_resizer)
     * [.Resizer](#module_resizer.Resizer)
@@ -12,11 +12,11 @@ title: resizer
 
 <a name="module_resizer.Resizer"></a>
 
-### resizer.Resizer
+## resizer.Resizer
 **Kind**: static class of [<code>resizer</code>](#module_resizer)  
 <a name="new_module_resizer.Resizer_new"></a>
 
-#### new exports.Resizer(container, control, options)
+### new exports.Resizer(container, control, options)
 
 | Param | Type | Description |
 | --- | --- | --- |

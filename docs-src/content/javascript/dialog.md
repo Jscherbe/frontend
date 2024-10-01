@@ -4,7 +4,7 @@ title: dialog
 
 <a name="module_dialog"></a>
 
-## dialog
+# dialog
 
 * [dialog](#module_dialog)
     * [.attrs](#module_dialog.attrs)
@@ -18,20 +18,20 @@ title: dialog
 
 <a name="module_dialog.attrs"></a>
 
-### dialog.attrs
+## dialog.attrs
 Default data attributes
 
 **Kind**: static constant of [<code>dialog</code>](#module_dialog)  
 <a name="module_dialog.defaults"></a>
 
-### dialog.defaults
+## dialog.defaults
 Dialog Defaults 
 - Can be overridden using data-attributes
 
 **Kind**: static constant of [<code>dialog</code>](#module_dialog)  
 <a name="module_dialog.setDefaults"></a>
 
-### dialog.setDefaults(options)
+## dialog.setDefaults(options)
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  
 
 | Param | Type | Description |
@@ -40,20 +40,20 @@ Dialog Defaults
 
 <a name="module_dialog.init"></a>
 
-### dialog.init()
+## dialog.init()
 Initialize everything in document
 - This will only initialize elements once, it is safe to call on page changes
 
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  
 <a name="module_dialog.setup"></a>
 
-### dialog.setup()
+## dialog.setup()
 Setup dialogs and triggers
 
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  
 <a name="module_dialog.setupTrigger"></a>
 
-### dialog.setupTrigger(trigger)
+## dialog.setupTrigger(trigger)
 Setup click handlers on a trigger
 
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  
@@ -64,7 +64,7 @@ Setup click handlers on a trigger
 
 <a name="module_dialog.setupDialog"></a>
 
-### dialog.setupDialog(dialog)
+## dialog.setupDialog(dialog)
 Setup click handlers for a dialog
 
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  
@@ -75,7 +75,7 @@ Setup click handlers for a dialog
 
 <a name="module_dialog.getDialogOptions"></a>
 
-### dialog.getDialogOptions(dialog) ⇒ <code>Object</code>
+## dialog.getDialogOptions(dialog) ⇒ <code>Object</code>
 For a given dialog, get it's options (from data attribute)
 
 **Kind**: static method of [<code>dialog</code>](#module_dialog)  

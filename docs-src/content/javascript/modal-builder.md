@@ -4,7 +4,7 @@ title: modal-builder
 
 <a name="module_modal-builder"></a>
 
-## modal-builder
+# modal-builder
 
 * [modal-builder](#module_modal-builder)
     * _static_
@@ -19,7 +19,7 @@ title: modal-builder
 
 <a name="module_modal-builder.defaults"></a>
 
-### modal-builder.defaults
+## modal-builder.defaults
 Default builder options (extends dialog defaults, watch name collisions)
 - Decided to extend defaults so the interface in HTML is singular
   - This is sometimes easier to template (merging and serializing options 
@@ -28,7 +28,7 @@ Default builder options (extends dialog defaults, watch name collisions)
 **Kind**: static constant of [<code>modal-builder</code>](#module_modal-builder)  
 <a name="module_modal-builder.setDefaults"></a>
 
-### modal-builder.setDefaults(options)
+## modal-builder.setDefaults(options)
 **Kind**: static method of [<code>modal-builder</code>](#module_modal-builder)  
 
 | Param | Type | Description |
@@ -37,20 +37,20 @@ Default builder options (extends dialog defaults, watch name collisions)
 
 <a name="module_modal-builder.init"></a>
 
-### modal-builder.init()
+## modal-builder.init()
 Initialize everything in document
 - This will only initialize elements once, it is safe to call on page changes
 
 **Kind**: static method of [<code>modal-builder</code>](#module_modal-builder)  
 <a name="module_modal-builder.setup"></a>
 
-### modal-builder.setup()
+## modal-builder.setup()
 Query and setup all builder
 
 **Kind**: static method of [<code>modal-builder</code>](#module_modal-builder)  
 <a name="module_modal-builder.setupBuilder"></a>
 
-### modal-builder.setupBuilder(element)
+## modal-builder.setupBuilder(element)
 Build a dialog for the given content
 
 **Kind**: static method of [<code>modal-builder</code>](#module_modal-builder)  
@@ -61,7 +61,7 @@ Build a dialog for the given content
 
 <a name="module_modal-builder.buildModal"></a>
 
-### modal-builder.buildModal(content, options)
+## modal-builder.buildModal(content, options)
 **Kind**: static method of [<code>modal-builder</code>](#module_modal-builder)  
 
 | Param | Type | Description |
@@ -71,7 +71,7 @@ Build a dialog for the given content
 
 <a name="module_modal-builder..separateDialogOptions"></a>
 
-### modal-builder~separateDialogOptions(config) ⇒ <code>Object</code>
+## modal-builder~separateDialogOptions(config) ⇒ <code>Object</code>
 Returns JSON string to embed in data-ulu-dialog for dialog handling
 
 **Kind**: inner method of [<code>modal-builder</code>](#module_modal-builder)  

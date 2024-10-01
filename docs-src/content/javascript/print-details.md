@@ -4,7 +4,7 @@ title: print-details
 
 <a name="module_print-details"></a>
 
-## print-details
+# print-details
 
 * [print-details](#module_print-details)
     * [.attrs](#module_print-details.attrs)
@@ -12,13 +12,13 @@ title: print-details
 
 <a name="module_print-details.attrs"></a>
 
-### print-details.attrs
+## print-details.attrs
 Default data attributes
 
 **Kind**: static constant of [<code>print-details</code>](#module_print-details)  
 <a name="module_print-details.init"></a>
 
-### print-details.init()
+## print-details.init()
 Initialize details print 
 - will open details before print
 - will return to previous state after

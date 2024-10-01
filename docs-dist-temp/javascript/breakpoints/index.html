@@ -4525,17 +4525,74 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#breakpoints">breakpoints</a>
+                    <li><a href="#breakpoints.breakpointmanager">breakpoints.BreakpointManager</a>
             
                 <ol>
                     
-                    <li><a href="#breakpoints.breakpointmanager">breakpoints.BreakpointManager</a>
+                    <li><a href="#new-exports.breakpointmanager(config)">new exports.BreakpointManager(config)</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.onchange(callback)">breakpointManager.onChange(callback)</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.removeonchange(callback)">breakpointManager.removeOnChange(callback)</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.getbreakpointinpsuedo()">breakpointManager.getBreakpointInPsuedo()</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.getbreakpointinproperty()">breakpointManager.getBreakpointInProperty()</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.getbreakpoint()">breakpointManager.getBreakpoint()</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.update()">breakpointManager.update()</a>
+            		</li>
+
+                    <li><a href="#breakpointmanager.at(name)-%E2%87%92-breakpoint">breakpointManager.at(name) ⇒ Breakpoint</a>
+            		</li>
+                </ol>
             		</li>
 
                     <li><a href="#breakpoints~breakpointdirection">breakpoints~BreakpointDirection</a>
+            
+                <ol>
+                    
+                    <li><a href="#breakpointdirection.change()">breakpointDirection.change()</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection._call()">breakpointDirection._call()</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection.gethandlers()">breakpointDirection.getHandlers()</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection.add(handler)">breakpointDirection.add(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpointdirection.remove()">breakpointDirection.remove()</a>
+            		</li>
+                </ol>
             		</li>
 
                     <li><a href="#breakpoints~breakpoint">breakpoints~Breakpoint</a>
+            
+                <ol>
+                    
+                    <li><a href="#breakpoint._setdirection(direction%2C-active)">breakpoint._setDirection(direction, active)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.max(handler)">breakpoint.max(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.min(handler)">breakpoint.min(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.only(handler)">breakpoint.only(handler)</a>
+            		</li>
+
+                    <li><a href="#breakpoint.remove(handler%2C-direction)">breakpoint.remove(handler, direction)</a>
             		</li>
                 </ol>
             		</li>
@@ -4547,13 +4604,10 @@
 			
 			
 			
-  <div class="page__body-top container ">
-    <h1 class="page__title h1">breakpoints</h1>
-
-<hr class="rule rule--light rule--margin-large">
+  <div class="page__body-top container api-docs">
     <div class="wysiwyg">
       <p><a name="module_breakpoints"></a></p>
-<h2 id="breakpoints" tabindex="-1">breakpoints</h2>
+<h1 id="breakpoints" tabindex="-1">breakpoints</h1>
 <ul>
 <li><a href="#module_breakpoints">breakpoints</a>
 <ul>
@@ -4599,7 +4653,7 @@
 </li>
 </ul>
 <p><a name="module_breakpoints.BreakpointManager"></a></p>
-<h3 id="breakpoints.breakpointmanager" tabindex="-1">breakpoints.BreakpointManager</h3>
+<h2 id="breakpoints.breakpointmanager" tabindex="-1">breakpoints.BreakpointManager</h2>
 <p>Class that provides method for retrieving and acting on breakpoints passed
 from CSS (using element psuedo content prop)</p>
 <p><strong>Kind</strong>: static class of <a href="#module_breakpoints"><code>breakpoints</code></a></p>
@@ -4618,7 +4672,7 @@ from CSS (using element psuedo content prop)</p>
 </li>
 </ul>
 <p><a name="new_module_breakpoints.BreakpointManager_new"></a></p>
-<h4 id="new-exports.breakpointmanager(config)" tabindex="-1">new exports.BreakpointManager(config)</h4>
+<h3 id="new-exports.breakpointmanager(config)" tabindex="-1">new exports.BreakpointManager(config)</h3>
 <table>
 <thead>
 <tr>
@@ -4661,7 +4715,7 @@ from CSS (using element psuedo content prop)</p>
 </tbody>
 </table>
 <p><a name="module_breakpoints.BreakpointManager+onChange"></a></p>
-<h4 id="breakpointmanager.onchange(callback)" tabindex="-1">breakpointManager.onChange(callback)</h4>
+<h3 id="breakpointmanager.onchange(callback)" tabindex="-1">breakpointManager.onChange(callback)</h3>
 <p>Add a callback for everytime a breakpoint changes</p>
 <ul>
 <li>Not recommended, possibly use to watch for changes, etc</li>
@@ -4685,7 +4739,7 @@ from CSS (using element psuedo content prop)</p>
 </tbody>
 </table>
 <p><a name="module_breakpoints.BreakpointManager+removeOnChange"></a></p>
-<h4 id="breakpointmanager.removeonchange(callback)" tabindex="-1">breakpointManager.removeOnChange(callback)</h4>
+<h3 id="breakpointmanager.removeonchange(callback)" tabindex="-1">breakpointManager.removeOnChange(callback)</h3>
 <p>Remove change callback</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints.BreakpointManager"><code>BreakpointManager</code></a></p>
 <table>
@@ -4705,23 +4759,23 @@ from CSS (using element psuedo content prop)</p>
 </tbody>
 </table>
 <p><a name="module_breakpoints.BreakpointManager+getBreakpointInPsuedo"></a></p>
-<h4 id="breakpointmanager.getbreakpointinpsuedo()" tabindex="-1">breakpointManager.getBreakpointInPsuedo()</h4>
+<h3 id="breakpointmanager.getbreakpointinpsuedo()" tabindex="-1">breakpointManager.getBreakpointInPsuedo()</h3>
 <p>Get breakpoint from a psuedo element</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints.BreakpointManager"><code>BreakpointManager</code></a><br>
 <a name="module_breakpoints.BreakpointManager+getBreakpointInProperty"></a></p>
-<h4 id="breakpointmanager.getbreakpointinproperty()" tabindex="-1">breakpointManager.getBreakpointInProperty()</h4>
+<h3 id="breakpointmanager.getbreakpointinproperty()" tabindex="-1">breakpointManager.getBreakpointInProperty()</h3>
 <p>Get breakpoint from a custom property</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints.BreakpointManager"><code>BreakpointManager</code></a><br>
 <a name="module_breakpoints.BreakpointManager+getBreakpoint"></a></p>
-<h4 id="breakpointmanager.getbreakpoint()" tabindex="-1">breakpointManager.getBreakpoint()</h4>
+<h3 id="breakpointmanager.getbreakpoint()" tabindex="-1">breakpointManager.getBreakpoint()</h3>
 <p>Get breakpoint from element (design note: user could override prototype)</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints.BreakpointManager"><code>BreakpointManager</code></a><br>
 <a name="module_breakpoints.BreakpointManager+update"></a></p>
-<h4 id="breakpointmanager.update()" tabindex="-1">breakpointManager.update()</h4>
+<h3 id="breakpointmanager.update()" tabindex="-1">breakpointManager.update()</h3>
 <p>Updates the active breakpoint by checking the element and executes handlers on change</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints.BreakpointManager"><code>BreakpointManager</code></a><br>
 <a name="module_breakpoints.BreakpointManager+at"></a></p>
-<h4 id="breakpointmanager.at(name)-%E2%87%92-breakpoint" tabindex="-1">breakpointManager.at(name) ⇒ <code>Breakpoint</code></h4>
+<h3 id="breakpointmanager.at(name)-%E2%87%92-breakpoint" tabindex="-1">breakpointManager.at(name) ⇒ <code>Breakpoint</code></h3>
 <p>Get a breakpoint by key</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints.BreakpointManager"><code>BreakpointManager</code></a><br>
 <strong>Returns</strong>: <code>Breakpoint</code> - Breakpoint to act on (see Breakpoint class)</p>
@@ -4742,7 +4796,7 @@ from CSS (using element psuedo content prop)</p>
 </tbody>
 </table>
 <p><a name="module_breakpoints..BreakpointDirection"></a></p>
-<h3 id="breakpoints~breakpointdirection" tabindex="-1">breakpoints~BreakpointDirection</h3>
+<h2 id="breakpoints~breakpointdirection" tabindex="-1">breakpoints~BreakpointDirection</h2>
 <p>Used to handle a breakpoints direction's handler and state</p>
 <p><strong>Kind</strong>: inner class of <a href="#module_breakpoints"><code>breakpoints</code></a></p>
 <ul>
@@ -4757,19 +4811,19 @@ from CSS (using element psuedo content prop)</p>
 </li>
 </ul>
 <p><a name="module_breakpoints..BreakpointDirection+change"></a></p>
-<h4 id="breakpointdirection.change()" tabindex="-1">breakpointDirection.change()</h4>
+<h3 id="breakpointdirection.change()" tabindex="-1">breakpointDirection.change()</h3>
 <p>Change the state of the direction</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..BreakpointDirection"><code>BreakpointDirection</code></a><br>
 <a name="module_breakpoints..BreakpointDirection+_call"></a></p>
-<h4 id="breakpointdirection._call()" tabindex="-1">breakpointDirection._call()</h4>
+<h3 id="breakpointdirection._call()" tabindex="-1">breakpointDirection._call()</h3>
 <p>Calls all functions in handlers or</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..BreakpointDirection"><code>BreakpointDirection</code></a><br>
 <a name="module_breakpoints..BreakpointDirection+getHandlers"></a></p>
-<h4 id="breakpointdirection.gethandlers()" tabindex="-1">breakpointDirection.getHandlers()</h4>
+<h3 id="breakpointdirection.gethandlers()" tabindex="-1">breakpointDirection.getHandlers()</h3>
 <p>Returns handlers in normalized object format on/off</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..BreakpointDirection"><code>BreakpointDirection</code></a><br>
 <a name="module_breakpoints..BreakpointDirection+add"></a></p>
-<h4 id="breakpointdirection.add(handler)" tabindex="-1">breakpointDirection.add(handler)</h4>
+<h3 id="breakpointdirection.add(handler)" tabindex="-1">breakpointDirection.add(handler)</h3>
 <p>Adds a handler for the direction, optionally use object to add off state handler</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..BreakpointDirection"><code>BreakpointDirection</code></a></p>
 <table>
@@ -4799,11 +4853,11 @@ from CSS (using element psuedo content prop)</p>
 </tbody>
 </table>
 <p><a name="module_breakpoints..BreakpointDirection+remove"></a></p>
-<h4 id="breakpointdirection.remove()" tabindex="-1">breakpointDirection.remove()</h4>
+<h3 id="breakpointdirection.remove()" tabindex="-1">breakpointDirection.remove()</h3>
 <p>Removes a handler</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..BreakpointDirection"><code>BreakpointDirection</code></a><br>
 <a name="module_breakpoints..Breakpoint"></a></p>
-<h3 id="breakpoints~breakpoint" tabindex="-1">breakpoints~Breakpoint</h3>
+<h2 id="breakpoints~breakpoint" tabindex="-1">breakpoints~Breakpoint</h2>
 <p>Single breakpoint management</p>
 <p><strong>Kind</strong>: inner class of <a href="#module_breakpoints"><code>breakpoints</code></a></p>
 <ul>
@@ -4818,7 +4872,7 @@ from CSS (using element psuedo content prop)</p>
 </li>
 </ul>
 <p><a name="module_breakpoints..Breakpoint+_setDirection"></a></p>
-<h4 id="breakpoint._setdirection(direction%2C-active)" tabindex="-1">breakpoint._setDirection(direction, active)</h4>
+<h3 id="breakpoint._setdirection(direction%2C-active)" tabindex="-1">breakpoint._setDirection(direction, active)</h3>
 <p>Private method used inrternally for managing direction activation</p>
 <ul>
 <li>Each direction manages it's own state and handlers</li>
@@ -4846,7 +4900,7 @@ from CSS (using element psuedo content prop)</p>
 </tbody>
 </table>
 <p><a name="module_breakpoints..Breakpoint+max"></a></p>
-<h4 id="breakpoint.max(handler)" tabindex="-1">breakpoint.max(handler)</h4>
+<h3 id="breakpoint.max(handler)" tabindex="-1">breakpoint.max(handler)</h3>
 <p>Attach handler to be executed from the breakpoint and to all breakpoints below.</p>
 <ul>
 <li>If the browser resizes from a breakpoint below this breakpoint,
@@ -4870,7 +4924,7 @@ and above the breakpoint name specified, this handler will fire</li>
 </tbody>
 </table>
 <p><a name="module_breakpoints..Breakpoint+min"></a></p>
-<h4 id="breakpoint.min(handler)" tabindex="-1">breakpoint.min(handler)</h4>
+<h3 id="breakpoint.min(handler)" tabindex="-1">breakpoint.min(handler)</h3>
 <p>Attach handler to be executed from the breakpoint and to all breakpoints below.</p>
 <ul>
 <li>If the browser resizes from a breakpoint above this breakpoint,
@@ -4894,7 +4948,7 @@ and below the breakpoint name specified, this handler will fire</li>
 </tbody>
 </table>
 <p><a name="module_breakpoints..Breakpoint+only"></a></p>
-<h4 id="breakpoint.only(handler)" tabindex="-1">breakpoint.only(handler)</h4>
+<h3 id="breakpoint.only(handler)" tabindex="-1">breakpoint.only(handler)</h3>
 <p>Attach a handler to fire when the breakpoint is within the key</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..Breakpoint"><code>Breakpoint</code></a></p>
 <table>
@@ -4914,7 +4968,7 @@ and below the breakpoint name specified, this handler will fire</li>
 </tbody>
 </table>
 <p><a name="module_breakpoints..Breakpoint+remove"></a></p>
-<h4 id="breakpoint.remove(handler%2C-direction)" tabindex="-1">breakpoint.remove(handler, direction)</h4>
+<h3 id="breakpoint.remove(handler%2C-direction)" tabindex="-1">breakpoint.remove(handler, direction)</h3>
 <p>Remove handler</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_breakpoints..Breakpoint"><code>Breakpoint</code></a></p>
 <table>
