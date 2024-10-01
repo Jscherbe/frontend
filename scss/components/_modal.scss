@@ -44,31 +44,31 @@ $-fallbacks: (
 /// @prop {Color} resizer-background-color [rgb(221, 221, 221)] The background color of the resizer.
 /// @prop {Color} resizer-background-color-hover [rgb(66, 66, 66)] The background color of the resizer when hovered or focused.
 /// @prop {Dimension} header-padding [1rem] The padding of the modal header.
-/// @prop {CssValue} header-border-bottom [none]
-/// @prop {} header-background-color [black]
-/// @prop {} header-color [white]
-/// @prop {} title-color [white]
-/// @prop {} title-size [large]
-/// @prop {} title-font-weight [bold]
-/// @prop {} title-text-transform [null]
-/// @prop {} close-color [black]
-/// @prop {} close-color-hover [black]
-/// @prop {} close-background-color [white]
-/// @prop {} close-size [2.5rem]
-/// @prop {} close-font-size [1.2rem]
-/// @prop {} close-margin [0.5rem]
-/// @prop {} close-background-color-hover [blue]
-/// @prop {} body-padding [1rem]
-/// @prop {} background-color [white]
-/// @prop {} dark-background-color [false]
-/// @prop {} dark-color [white]
-/// @prop {} dark-header-border-bottom [false]
-/// @prop {} dark-header-background-color [false]
-/// @prop {} dark-header-color [false]
-/// @prop {} title-icon-margin 0.[5em]
-/// @prop {} animation-timing-function [cubic-bezier(0, 0, .2, 1)]
-/// @prop {} animation-duration [300ms]
-/// @prop {} animation-duration-exit [150ms]
+/// @prop {CssValue} header-border-bottom [none] Bottom-border on the modal header.
+/// @prop {Color} header-background-color [black] Background color for the header.
+/// @prop {Color} header-color [white] Type color of the header.
+/// @prop {Color} title-color [white] Type color of the title.
+/// @prop {String} title-size [large] The font-size of the title.  This uses typography.scss, so the value of this options should be a variable from typography.scss.
+/// @prop {CssValue} title-font-weight [bold] Font weight of the title.
+/// @prop {CssValue} title-text-transform [null] Transform option for the title.
+/// @prop {Color} close-color [black] Type color for the modal close icon.
+/// @prop {Color} close-color-hover [black] Type color for the modal close icon when hovered or focused.
+/// @prop {Color} close-background-color [white] Background color for the modal close icon.
+/// @prop {Dimension} close-size [2.5rem] Size of the modal close icon.
+/// @prop {Dimension} close-font-size [1.2rem] Font-siz of of the modal close icon font size.
+/// @prop {Dimension} close-margin [0.5rem] The margin for the modal close icon.
+/// @prop {Close} close-background-color-hover [blue] Background color for the modal close icon when hovered or focused.
+/// @prop {Dimension} body-padding [1rem] The padding of the body content.
+/// @prop {Color} background-color [white] The background color of the modal.
+/// @prop {} dark-background-color [false] @joe-check unused
+/// @prop {} dark-color [white] @joe-check unused
+/// @prop {} dark-header-border-bottom [false] @joe-check unused
+/// @prop {} dark-header-background-color [false] @joe-check unused
+/// @prop {} dark-header-color [false] @joe-check unused
+/// @prop {Dimension} title-icon-margin [0.5em] The margin of the title icon
+/// @prop {CssValue} animation-timing-function [cubic-bezier(0, 0, .2, 1)] The animation timing menu of the modal.
+/// @prop {Time} animation-duration [300ms] Animation duration for the modal opening.
+/// @prop {Time} animation-duration-exit [150ms] Animation duration for the modal closing.
 
 $config: (
   "backdrop-color" :                true,

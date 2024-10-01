@@ -12,22 +12,22 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {} color [null]
-/// @prop {} color-hover [null]
-/// @prop {} color-active [null]
-/// @prop {} font-weight [null]
-/// @prop {} padding-x [0]
-/// @prop {} padding-y [0.3em]
-/// @prop {} underline-color [orange]
-/// @prop {} underline-size [3px]
-/// @prop {} margin-between [2.25em]
-/// @prop {} underline-color-hover [gray]
-/// @prop {} activeSelector [.is-active]
-/// @prop {} rule-size [3px]
-/// @prop {} rule-color [rule]
-/// @prop {} rule-offset [-3px]
-/// @prop {} padding-y-ruled [null]
-/// @prop {} nowrap [true]
+/// @prop {Color} color [null] Type color for the nav-strip.
+/// @prop {Color} color-hover [null] Type color for the nav-strip when hovered or focused.
+/// @prop {Color} color-active [null] Type color for the nav-strip when active.
+/// @prop {CssValue} font-weight [null] Font weight of navstrip.
+/// @prop {Dimension} padding-x [0] Horizontal padding for the nav-strip links.
+/// @prop {Dimension} padding-y [0.3em] Vertical padding for the nav-strip links.
+/// @prop {Color} underline-color [orange] Underline color when link is active.
+/// @prop {Dimension} underline-size [3px] Size of the underline.
+/// @prop {Dimension} margin-between [2.25em] Margin between nav-strip items.
+/// @prop {Color} underline-color-hover [gray] Color of the underline when hovered or focused.
+/// @prop {String} activeSelector [.is-active] Selector that portrays active status.
+/// @prop {Dimension} rule-size [3px] Size of the nav-strip rule.
+/// @prop {String} rule-color [rule] Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.
+/// @prop {Dimension} rule-offset [-3px] Offset the rule for the navstrip.
+/// @prop {Dimension} padding-y-ruled [null] Vertical padding for the nav-strip links when using nav-strip--rule.
+/// @prop {Boolean} nowrap [true] Disables the word wrap.
 
 $config: (
   "color" : null,
