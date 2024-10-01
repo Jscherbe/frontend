@@ -28,6 +28,20 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Color} color [true] The type color of the placeholder. If set to true, will use the "type-tertiary" variable from color.scss.
+/// @prop {Color} background-color [rgba(0,0,0,0.15)] The background color of the placeholder.
+/// @prop {Dimension} border-width [2px] The border width of the placeholder.
+/// @prop {Dimension} border-width-compact [1px] The border width of the placeholder when using the compact option.
+/// @prop {CssValue} border-style [dashed] The border style of the placeholder border.
+/// @prop {Color} border-color [rgba(0,0,0,0.3)] The border color.
+/// @prop {Dimension} padding [2em] The padding of the placeholder.
+/// @prop {Dimension} padding-compact [(0.5em 1em)] The padding of the placeholder when using the compact option.
+/// @prop {Dimension} icon-font-size [3em] The font-size of the placeholder icon.
+/// @prop {Dimension} icon-margin [0.25em] The margin of the placeholder icon.
+/// @prop {Color} icon-color [rgba(0, 0, 0, 0.5)] The icon type color.
+/// @prop {Dimension} border-radius [true] The border radius of the placeholder. If set to true, will use the "border-radius-large" variable from element.scss.
+/// @prop {Dimension} margin-bottom [true] The bottom margin of the placeholder. If set to true, will use the "margin" variable from element.scss.
+/// @prop {Dimension} expanded-height [15rem] The height of the placeholder when using the expanded option.
 
 $config: (
   "color" : true,

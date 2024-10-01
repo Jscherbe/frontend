@@ -12,13 +12,13 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {} content-background-color [white]
-/// @prop {} content-border [1px solid rgb(227, 227, 227)]
-/// @prop {} content-width [34rem]
-/// @prop {} content-padding [2.5rem]
-/// @prop {} padding [6rem]
-/// @prop {} min-height [75vh]
-/// @prop {} breakpoints [Map]
+/// @prop {Color} content-background-color [white] The background color of the content.
+/// @prop {CssValue} content-border [1px solid rgb(227, 227, 227)] The border of the content
+/// @prop {Dimension} content-width [34rem] The width of the content.
+/// @prop {Dimension} content-padding [2.5rem] The padding of the content.
+/// @prop {Dimension} padding [6rem] The padding of the container.
+/// @prop {Dimension} min-height [75vh] the min-height of the section.
+/// @prop {Map} breakpoints [Map] The breakpoints of the section.
 
 $config: (
   "content-background-color" : white,
