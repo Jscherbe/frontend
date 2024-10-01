@@ -13,6 +13,9 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Number} gap [1rem] The gap for the tile grid.
+/// @prop {Number} width [10em]
+/// @prop {CssValue} aspect-ratio [list.slash(4, 3)]
 
 $config: (
   "gap" : 1rem,

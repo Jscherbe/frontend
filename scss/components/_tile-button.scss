@@ -25,6 +25,14 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} padding [(1em 0.5em)] The padding of the tile button
+/// @prop {Dimension} border-radius [true] The border radius of the tile button. If set to true, will use the element.scss property for "border-radius".
+/// @prop {Dimension} line-height [true] The line-height of the tile-button. If set to true, will use the typography.scss property for "line-height-densest".
+/// @prop {Dimension} row-margin [0.5em] The margin between rows.
+/// @prop {Number} icon-opacity [0.5] The opacity of the icon.
+/// @prop {Dimension} icon-font-size [1.5em] The font size of the icon.
+/// @prop {Dimension} icon-margin [1em] The margin for the icon.
+/// @prop {String} description-size [small-x] The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.
 
 $config: (
   "padding" : (1em 0.5em),

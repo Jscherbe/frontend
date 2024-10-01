@@ -21,6 +21,16 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} border-radius [8px] The border radius of the tabs.
+/// @prop {Dimension} border-width [0.25em] The width of the tab border.
+/// @prop {Dimension} margin [2rem] The gap between tabs and above and below tabs.
+/// @prop {String} tab-color [link] The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.
+/// @prop {String} tab-color-hover [link:hover] The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.
+/// @prop {String} tab-color-selected [selected] The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.
+/// @prop {Color} tab-border-color-selected [currentColor] The border color when selected.
+/// @prop {CssValue} tablist-border-bottom [true] The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".
+/// @prop {Color} tabpanel-background-color [rgb(245, 245, 245)] The tabpanel background color.
+/// @prop {Dimension} print-margin [1.5em] The subtab margin of child tabs.
 
 $config: (
   "border-radius" : 8px,

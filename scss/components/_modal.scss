@@ -48,7 +48,7 @@ $-fallbacks: (
 /// @prop {Color} header-background-color [black] Background color for the header.
 /// @prop {Color} header-color [white] Type color of the header.
 /// @prop {Color} title-color [white] Type color of the title.
-/// @prop {String} title-size [large] The font-size of the title.  This uses typography.scss, so the value of this options should be a variable from typography.scss.
+/// @prop {String} title-size [large] The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.
 /// @prop {CssValue} title-font-weight [bold] Font weight of the title.
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
 /// @prop {Color} close-color [black] Type color for the modal close icon.
