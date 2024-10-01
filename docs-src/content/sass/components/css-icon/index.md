@@ -62,7 +62,7 @@ $config: (
 |size|Dimension|1.1em|The width, height and font size of the css-icon.|
 |stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
 |stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
-|color|Color|currentColor|@joe-check|
+|color|Color|currentColor|The color of the css-icon.|
 |active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
 |transition-duration|Time|200ms|The duration length for the transition.|
 |transition-timing-function|CssValue|ease-in|The timing function for the transition.|

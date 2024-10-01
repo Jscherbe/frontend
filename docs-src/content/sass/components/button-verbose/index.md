@@ -87,7 +87,7 @@ $config: (
 |color:hover|String|type|Font size (basic ie. 1.3rem) for badge|
 |title-color:hover|String|link:hover|Font size (basic ie. 1.3rem) for badge|
 |border-radius|String|border-radius|Font size (basic ie. 1.3rem) for badge|
-|box-shadow|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
+|box-shadow|String|true|Use the fallback. But note it.|
 |box-shadow:hover|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
 
     

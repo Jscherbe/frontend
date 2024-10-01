@@ -94,21 +94,21 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|backdrop-color|Map|true||
-|backdrop-blur|Map|4px||
-|box-shadow|Map|true||
-|width|Map|60rem||
-|sizes|Map|Object||
-|height|Map|340px||
-|height-no-header|Map|100px||
-|border-radius[true]|Map|||
-|resizer-width|Map|1rem||
-|resizer-color|Map|black||
-|resizer-color-hover|Map|black||
-|resizer-background-color|Map|rgb(221, 221, 221)||
-|resizer-background-color-hover|Map|rgb(66, 66, 66)||
-|header-padding|Map|1rem||
-|header-border-bottom|Map|none||
+|backdrop-color|Color|true|The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.|
+|backdrop-blur|CssValue|4px|Determines the blur of the backdrop.|
+|box-shadow|CssValue|true|Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.|
+|width|Dimension|60rem|The width of the Modal|
+|sizes|Map|Map|Size options to enable unique stylings.|
+|height|Dimension|340px|The min-height of the modal.|
+|height-no-header|Dimension|100px|The min-height of the modal.|
+|border-radius|CssValue|true|The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.|
+|resizer-width|Dimension|1rem|The width of the resizer.|
+|resizer-color|Color|black|The type color of the resizer.|
+|resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
+|resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
+|resizer-background-color-hover|Color|rgb(66, 66, 66)|The background color of the resizer when hovered or focused.|
+|header-padding|Dimension|1rem|The padding of the modal header.|
+|header-border-bottom|CssValue|none||
 |header-background-color|Map|black||
 |header-color|Map|white||
 |title-color|Map|white||

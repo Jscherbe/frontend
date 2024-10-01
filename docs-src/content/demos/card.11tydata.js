@@ -1,3 +1,19 @@
+// <article class="card">
+//   <div class="card__body">
+//   <div class="card__header">
+//     <h5 class="card__title>
+//       <a href="/work/iri-strategic-communications-program" class="card__title-link">
+//         <span class="headline-label type-small">IRI</span> 
+//         Strategic Communications Program
+//       </a>
+//     </h5>
+//   </div>
+// </div>
+// <div class="card__image">
+//   <img src="/pages/work/iri-strategic-communications-program/_required/thumbnail.jpg" alt="">
+// </div><!--v-if-->
+// </article>
+
 const cardTypes= {
   default: {
     title: 'Default',
@@ -5,7 +21,9 @@ const cardTypes= {
       `
         <article class="card" data-ulu-proxy-click>
           <div class="card__body">
-              <a class="card__title" href="https://www.google.com" data-ulu-proxy-click-source="">Card with Image</a>
+            <h5 class="card__title">
+              <a class="card__title-link" href="https://www.google.com" data-ulu-proxy-click-source="">Card with Image</a>
+            </h5>
             <p>
               This is a card with an upper image using a containing div with the "card__image" class. 
             </p>
@@ -25,7 +43,9 @@ const cardTypes= {
       `
         <article class="card" data-ulu-proxy-click>
           <div class="card__body">
-            <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with Image</a>
+            <h5 class="card__title">
+              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with Image</a>
+            </h5>
             <p>
               This is a card with an upper image using a containing div with the "card__image--icon" class. This maintains the card's padding, so it will line up properly to the text.
             </p>
@@ -45,7 +65,9 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            <h5 class="card__title">
+              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image dasdf</a>
+            </h5>
             <p>
               Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
             </p>
@@ -65,7 +87,9 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-              <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            <h5 class="card__title">
+              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            </h5>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
@@ -100,7 +124,9 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-            <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            <h5 class="card__title">
+              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            </h5>
             <p>
               Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
             </p>
@@ -117,7 +143,9 @@ const cardTypes= {
       `
         <article class="card card--covered" data-ulu-proxy-click>
           <div class="card__body">
-              <a class="card__title" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            <h5 class="card__title">
+              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image</a>
+            </h5>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />

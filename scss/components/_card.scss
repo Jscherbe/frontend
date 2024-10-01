@@ -201,13 +201,13 @@ $config: (
   @if get("transition-enabled") {
     #{ $prefix },
     #{ $prefix }::after,
-    #{ $prefix }__title {
+    #{ $prefix }__title--link {
       @include shared-transition-styles();
       transition-property: get("transition-properties");
     }
   } 
 
-  #{ $prefix }__title {
+  #{ $prefix }__title--link {
     color: get("title-color");
     margin-bottom: get("title-margin");
     display: block;
@@ -224,7 +224,7 @@ $config: (
   }
   @if get("title-color-card-hover") {
     @include when-clickable($hover: true) {
-      #{ $prefix }__title {
+      #{ $prefix }__title--link {
         color: get("title-color-card-hover");
       }
     }
@@ -343,7 +343,7 @@ $config: (
       // background-color: get("overlay-background-color");
       color: get("color-overlay");
     }
-    #{ $prefix }__title {
+    #{ $prefix }__title--link {
       color: get("color-overlay");
     }
     #{ $prefix }__image {

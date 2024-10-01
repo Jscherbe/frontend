@@ -9,11 +9,11 @@ intro: Cards are...
 <!-- setup for loop to give a card-grid of identical cards -->
 
 {% for card in cardTypesArray %}
-<h4>{{ card.title }}<h4>
+<h3>{{ card.title }}<h3>
 
 {{ card.content }}
 
-<h5>{{ card.title }} setup using card-grid<h5>
+<h4>{{ card.title }} setup using card-grid<h4>
 
 <ul class="card-grid">
   <li>

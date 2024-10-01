@@ -78,32 +78,32 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|link-color|Map|link||
-|link-background-color|Map|transparent||
-|link-color-hover|Map|link:hover||
-|link-background-color-hover|Map|rgb(219, 219, 219)||
-|link-color-active|Map|black||
-|link-background-color-active|Map|rgb(219, 219, 219)||
-|link-border-radius|Map|true||
-|link-padding-y[0.35em]|Map|||
-|link-padding-x[1em]|Map|||
-|link-margin|Map|0.2em||
-|link-separated-rule-style|Map|false||
-|link-separated-margin|Map|false||
-|link-icon-margin|Map|0.65em||
-|link-icon-width|Map|1em||
-|link-font-weight|Map|null||
-|link-active-selectors|Map|(.is-active, '[aria-current=page|')]|
-|compact-link-padding-y|Map|0.25em||
-|compact-link-padding-x|Map|0.75em||
-|rule-style|Map|default||
-|rule-margin|Map|0.5em||
-|label-type-size|Map|false||
-|label-color|Map|null||
-|label-margin|Map|0.5em||
-|label-text-transform|Map|uppercase||
-|checkbox-area-width|Map|3em||
-|nested-indent|Map|0.5em||
+|link-color|String|link|The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|link-background-color|Color|transparent|The background color of the menu-stack toggle.|
+|link-color-hover|String|link:hover|The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|link-background-color-hover|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when hovered or focused.|
+|link-color-active|Color|black|The type color of the menu-stack toggle when active.|
+|link-background-color-active|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when active.|
+|link-border-radius|Dimension|true|The border radius of the menu-stack toggle. If set to true, will use the border radius from the button component.|
+|link-padding-y|Dimension|0.35em|Vertical padding for menu-stack toggle.|
+|link-padding-x|Dimension|1em|Horizontal padding for menu-stack toggle.|
+|link-margin|Dimension|0.2em|Margin for the menu-stack toggle.|
+|link-separated-rule-style|Boolean|false|Enables a rule between the items in the menu-stack.|
+|link-separated-margin|Boolean|false|Enables a margin between the items in the menu-stack.|
+|link-icon-margin|Dimension|0.65em|Adds a right margin to the icon.|
+|link-icon-width|Dimension|1em|The width of the icon.|
+|link-font-weight|CssValue|null|The font weight of the menu-stack toggle.|
+|link-active-selectors|list|(.is-active, '[aria-current=page|')] Selectors to apply active styling.|
+|compact-link-padding-y|Dimension|0.25em|The links vertical padding when using the compact option.|
+|compact-link-padding-x|Dimension|0.75em|The links horizontal padding when using the compact option.|
+|rule-style|String|default|Determines the styling of the rule. Uses the rule.scss component.|
+|rule-margin|Dimension|0.5em|Sets the padding and margin of the rule.|
+|label-type-size|CssValue|false|Adjusts the type size of the label.|
+|label-color|Color|null|The type color of the label.|
+|label-margin|Dimension|0.5em|The margin of the label.|
+|label-text-transform|CssValue|uppercase|Transforms the label text.|
+|checkbox-area-width|Dimension|3em|The width of the checkbox are.|
+|nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
 
     
   
