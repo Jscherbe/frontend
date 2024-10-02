@@ -10,6 +10,9 @@
 /// Module Settings
 /// @type Map
 /// @prop {Number} $config.sides Sides to print for helper classes (ie. reduce output of uneeded sides)
+/// @prop {Boolean} containers [true] Enables container styling.
+/// @prop {Boolean} container-nested-no-padding [false] Toggles whether nested receive horizontal padding or not. 
+/// @prop {Boolean} layout-flex [true] Enables layout-flex styling.
 
 $config: (
   "containers" : true,

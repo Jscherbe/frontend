@@ -15,6 +15,10 @@
 /// Module Settings
 /// @type Map
 /// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active
+/// @prop {Boolean} link [true] Enables link styling.
+/// @prop {Boolean} link:hover [true] Enables link hover and focus styling.
+/// @prop {Boolean} link:visited [true] Enables visited link styling.
+/// @prop {CssValue} details-animation [(FadeDownIn 350ms ease-in-out)] Animation for the details element when toggled.
 
 $config: (
   "link" : true,
