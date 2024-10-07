@@ -52,9 +52,27 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 22-23
-- **Lines (code):** 25-36
+- **Lines (comments):** 22-33
+- **Lines (code):** 35-46
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|border-radius|Dimension|8px|The border radius of the tabs.|
+|border-width|Dimension|0.25em|The width of the tab border.|
+|margin|Dimension|2rem|The gap between tabs and above and below tabs.|
+|tab-color|String|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-color-hover|String|link:hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-color-selected|String|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-border-color-selected|Color|currentColor|The border color when selected.|
+|tablist-border-bottom|CssValue|true|The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".|
+|tabpanel-background-color|Color|rgb(245, 245, 245)|The tabpanel background color.|
+|print-margin|Dimension|1.5em|The subtab margin of child tabs.|
+
     
   
 
@@ -84,8 +102,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-44
+- **Lines (comments):** 48-50
+- **Lines (code):** 52-54
     </details>
     
 
@@ -126,8 +144,8 @@ Prints tabs component styles
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 55-57
-- **Lines (code):** 59-166
+- **Lines (comments):** 65-67
+- **Lines (code):** 69-176
     </details>
     
 
@@ -175,8 +193,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 46-48
-- **Lines (code):** 50-53
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-63
     </details>
     
 

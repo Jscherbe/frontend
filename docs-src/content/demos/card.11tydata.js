@@ -24,9 +24,9 @@ const cardTypes= {
             <h5 class="card__title">
               <a class="card__title-link" href="https://www.google.com" data-ulu-proxy-click-source="">Card with Image</a>
             </h5>
-            <p>
+            <div>
               This is a card with an upper image using a containing div with the "card__image" class. 
-            </p>
+            </div>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
@@ -37,40 +37,40 @@ const cardTypes= {
         </article>
       `,
   },
-  cardIcon: {
-    title: 'Card with Icon',
-    content: 
-      `
-        <article class="card" data-ulu-proxy-click>
-          <div class="card__body">
-            <h5 class="card__title">
-              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with Image</a>
-            </h5>
-            <p>
-              This is a card with an upper image using a containing div with the "card__image--icon" class. This maintains the card's padding, so it will line up properly to the text.
-            </p>
-          </div>
-          <div class="card__image card__image--icon">
-            <img src="/assets/placeholder/image-1.jpg" />
-          </div>
-          <div class="card__footer">
-            My first Card Footer
-          </div>
-        </article>
-      `,
-  },
-  cardCovered: {
+  // cardIcon: {
+  //   title: 'Card with Icon',
+  //   content: 
+  //     `
+  //       <article class="card" data-ulu-proxy-click>
+  //         <div class="card__body">
+  //           <h5 class="card__title">
+  //             <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with Image</a>
+  //           </h5>
+  //           <div>
+  //             This is a card with an upper image using a containing div with the "card__image--icon" class. This maintains the card's padding, so it will line up properly to the text.
+  //           </div>
+  //         </div>
+  //         <div class="card__image card__image--icon">
+  //           <img src="/assets/placeholder/image-1.jpg" />
+  //         </div>
+  //         <div class="card__footer">
+  //           My first Card Footer
+  //         </div>
+  //       </article>
+  //     `,
+  // },
+  cardOverlay: {
     title: 'Card with Full Background Image',
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__body">
             <h5 class="card__title">
               <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image dasdf</a>
             </h5>
-            <p>
-              Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </p>
+            <div>
+              Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+            </div>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
@@ -81,11 +81,11 @@ const cardTypes= {
         </article>
       `,
   },
-  cardCoveredNoContent: {
-    title: "Covered Card without Body Content",
+  cardOverlayNoContent: {
+    title: "overlay Card without Body Content",
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__body">
             <h5 class="card__title">
               <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image</a>
@@ -100,15 +100,15 @@ const cardTypes= {
         </article>
       `,
   },
-  cardCoveredNoTitle: {
-    title: "Covered Card without Title",
+  cardOverlayNoTitle: {
+    title: "overlay Card without Title",
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__body">
-            <p>
-              Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </p>
+            <div>
+              Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+            </div>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
@@ -118,18 +118,18 @@ const cardTypes= {
           </div>
       </article>`,
   },
-  cardCoveredNoFoot: {
-    title: "Covered Card without Footer",
+  cardOverlayNoFoot: {
+    title: "overlay Card without Footer",
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__body">
             <h5 class="card__title">
               <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image</a>
             </h5>
-            <p>
-              Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </p>
+            <div>
+              Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+            </div>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
@@ -137,11 +137,11 @@ const cardTypes= {
         </article>
       `,
   },
-  cardCoveredOnlyTitle: {
-    title: "Covered Card with only Title",
+  cardOverlayOnlyTitle: {
+    title: "overlay Card with only Title",
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__body">
             <h5 class="card__title">
               <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image</a>
@@ -153,15 +153,15 @@ const cardTypes= {
         </article>
       `,
   },
-  cardCoveredOnlyBody: {
-    title: "Covered Card with only Body",
+  cardOverlayOnlyBody: {
+    title: "overlay Card with only Body",
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__body">
-            <p>
-              Adding "card--covered" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
-            </p>
+            <div>
+              Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+            </div>
           </div>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
@@ -169,11 +169,11 @@ const cardTypes= {
         </article>
       `,
   },
-  cardCoveredOnlyFooter: {
-    title: "Covered Card with only Footer",
+  cardOverlayOnlyFooter: {
+    title: "overlay Card with only Footer",
     content: 
       `
-        <article class="card card--covered" data-ulu-proxy-click>
+        <article class="card card--overlay" data-ulu-proxy-click>
           <div class="card__image">
             <img src="/assets/placeholder/image-1.jpg" />
           </div>

@@ -110,15 +110,15 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|content-background-color|Map|white|
-|content-border|Map|1px solid rgb(227, 227, 227)|
-|content-width|Map|34rem|
-|content-padding|Map|2.5rem|
-|padding|Map|6rem|
-|min-height|Map|75vh|
-|breakpoints|Map|Map|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|content-background-color|Color|white|The background color of the content.|
+|content-border|CssValue|1px solid rgb(227, 227, 227)|The border of the content|
+|content-width|Dimension|34rem|The width of the content.|
+|content-padding|Dimension|2.5rem|The padding of the content.|
+|padding|Dimension|6rem|The padding of the container.|
+|min-height|Dimension|75vh|the min-height of the section.|
+|breakpoints|Map|Map|The breakpoints of the section.|
 
     
   

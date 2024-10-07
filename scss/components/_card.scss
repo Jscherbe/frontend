@@ -55,7 +55,10 @@
 /// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image tranition.
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 
-
+// todo
+// replace min-height with aspect ratio. use "overlay-aspect-ratio" and "aspect-ratio" instead of "image-ratio"
+// Create a Boolean to check if they want the shade mask on top of body. 
+// sass color adjust for smooth transition. Add a comment for this if we can’t get to this
 
 $config: (
   "padding" : 2rem,
@@ -79,9 +82,11 @@ $config: (
   "title-color" : null,
   "title-color-hover" : null,
   "title-color-card-hover" : null,
-  "title-margin" : 0,
+  "title-margin" : 1rem,
   "title-font-weight" : bold,
   "image-ratio" : 56.25%,
+  "image-aspect-ratio": 5/3,
+  "overlay-aspect-ratio": 2/1,
   "image-background-color" : rgb(197, 197, 197),
   "image-margin" : null,
   "image-border" : null, // For when you have a margin
@@ -218,7 +223,7 @@ $config: (
         color: get("title-color-hover");
       }
     }
-    a {
+    #{ $prefix }__title-link {
       all: unset;
     }
   }
@@ -237,16 +242,17 @@ $config: (
   // Fix since sometimes these have nested markup sometimes just raw text
   #{ $prefix }__image {
     order: -1;
-    flex: 0;
     position: relative;
     z-index: 1;
     overflow: hidden;
-    padding-top: get("image-ratio"); // 9:16
+    // padding-top: get("image-ratio"); // 9:16
     margin: get("image-margin");
     border: get("image-border");
     background-color: get("image-background-color");
     border-top-right-radius: get("border-radius");
     border-top-left-radius: get("border-radius");
+    aspect-ratio: get("image-aspect-ratio");
+    width: 100%;
   }
   #{ $prefix }__image img,
   #{ $prefix}__image-media {
@@ -318,15 +324,18 @@ $config: (
   // body + footer {
   // means body keeps before pseudo element while footer loses it
   #{ $prefix }--overlay {
-    min-height: 10rem;
+    overflow: hidden;
+    aspect-ratio: 2/1;
+    height: auto;
     #{ $prefix }__body {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
       position: relative;
-      margin-top: 20%;
+      margin-top: auto;
+      flex: 0;
       z-index: 2;
       color: get("color-overlay");
-      // background-color: get("overlay-background-color");
+      background-color: get("overlay-background-color");
       min-height: 0;
+      padding-bottom: 0;
       &::before {
         content: "";
         position: absolute;
@@ -335,12 +344,10 @@ $config: (
         right: 0;
         height: 4rem;
         background: linear-gradient(to top, get("overlay-background-color") 0%, rgba(0, 0, 0, 0));
-        // background: linear-gradient(to top, get("overlay-background-color") 0%, transparent);
       }
     }
     #{ $prefix }__footer {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, 0.9));
-      // background-color: get("overlay-background-color");
+      background-color: get("overlay-background-color");
       color: get("color-overlay");
     }
     #{ $prefix }__title {
@@ -356,8 +363,8 @@ $config: (
       padding-top: 0;
       background-color: rgb(255, 255, 255);
       border-radius: get("border-radius");
-      // object-fit: cover;
-      img {
+      aspect-ratio: auto;
+      img {      
         z-index: 1;
         position: relative;
         width: 100%;
@@ -371,9 +378,7 @@ $config: (
           bottom: 0;
           left: 0;
           right: 0;
-          // content: "hello";
           background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
-          // z-index: 30;
         }
       }
     }

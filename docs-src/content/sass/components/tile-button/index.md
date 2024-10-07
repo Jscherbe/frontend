@@ -50,9 +50,25 @@ $config: (
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** variable
-- **Lines (comments):** 26-27
-- **Lines (code):** 29-38
+- **Lines (comments):** 26-35
+- **Lines (code):** 37-46
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|padding|Dimension|(1em 0.5em)|The padding of the tile button|
+|border-radius|Dimension|true|The border radius of the tile button. If set to true, will use the element.scss property for "border-radius".|
+|line-height|Dimension|true|The line-height of the tile-button. If set to true, will use the typography.scss property for "line-height-densest".|
+|row-margin|Dimension|0.5em|The margin between rows.|
+|icon-opacity|Number|0.5|The opacity of the icon.|
+|icon-font-size|Dimension|1.5em|The font size of the icon.|
+|icon-margin|Dimension|1em|The margin for the icon.|
+|description-size|String|small-x|The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
+
     
   
 
@@ -82,8 +98,8 @@ Change modules $config
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 48-50
+- **Lines (code):** 52-54
     </details>
     
 
@@ -124,8 +140,8 @@ Prints component styles
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-101
+- **Lines (comments):** 65-67
+- **Lines (code):** 69-109
     </details>
     
 
@@ -173,8 +189,8 @@ Get a config option
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** function
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-55
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-63
     </details>
     
 

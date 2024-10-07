@@ -51,8 +51,10 @@ $config: (
     margin: get("gap") 0;
     .card {
       max-width: none;
-      height: 100%;
       margin: 0;
+      &:not(.card--overlay) {
+        height: 100%;
+      }
     }
   }
   .card-grid--compact {

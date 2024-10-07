@@ -45,9 +45,20 @@ $config: (
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** variable
-- **Lines (comments):** 14-15
-- **Lines (code):** 17-21
+- **Lines (comments):** 14-18
+- **Lines (code):** 20-24
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|gap|Number|1rem|The gap for the tile grid.|
+|width|Number|10em||
+|aspect-ratio|CssValue|list.slash(4, 3)||
+
     
 
 
@@ -82,8 +93,8 @@ $sizes: (
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** variable
-- **Lines (comments):** 23-25
-- **Lines (code):** 27-31
+- **Lines (comments):** 26-28
+- **Lines (code):** 30-34
     </details>
     
 
@@ -132,8 +143,8 @@ $static-sizes: (
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** variable
-- **Lines (comments):** 33-34
-- **Lines (code):** 36-54
+- **Lines (comments):** 36-37
+- **Lines (code):** 39-57
     </details>
     
   
@@ -164,8 +175,8 @@ Change modules $config
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-62
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-65
     </details>
     
 
@@ -206,8 +217,8 @@ Set fixed sizes map
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 64-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-73
     </details>
     
 
@@ -248,8 +259,8 @@ Set sizes map
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-81
     </details>
     
 
@@ -290,8 +301,8 @@ Prints component styles
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 88-90
-- **Lines (code):** 92-154
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-157
     </details>
     
 
@@ -341,8 +352,8 @@ Get a config option
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** function
-- **Lines (comments):** 80-82
-- **Lines (code):** 84-86
+- **Lines (comments):** 83-85
+- **Lines (code):** 87-89
     </details>
     
 

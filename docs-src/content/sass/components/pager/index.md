@@ -67,9 +67,42 @@ $config: (
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-42
+- **Lines (comments):** 13-39
+- **Lines (code):** 41-67
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|font-weight|CssValue|bold|Font-weight of the pager.|
+|width|Dimension|2.5rem|The width of the pager items.|
+|margin-top|Dimension|1rem|The top margin of the pager.|
+|margin-bottom|Dimension|2rem|The bottom margin of the pager.|
+|item-margin|Dimension|0.17rem|The item margin.|
+|color|Color|white|The type color of the pager item.|
+|color-hover|Color|white|The type color of the pager item when covered and focused.|
+|background-color|String|link|The background color of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|background-color-hover|String|linkhover|The background color of the pager when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|border-color|String|link|The border color of the pager item. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|border-color-hover|String|linkhover|The border color of the pager item when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|border-width|Dimension|1px|The border width of the pager item.|
+|border-radius|Dimension|50%|The border radius of the pager item.|
+|active-color|Color|type|The type color when active. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|active-font-weight|CssValue|bold|The font weight of the pager when focused or hovered.|
+|active-background-color|Color|#ccc|The background color of the pager when active.|
+|active-border-color|Color|#ccc|The border color of the pager when active.|
+|action-width|Dimension|2.5rem|The width of the action options of the pager.|
+|action-margin|Dimension|0.8rem|The margin of the action options of the pager.|
+|action-color|Color|white|The type color of the actions options of the pager.|
+|action-background-color|String|link|The background color of the actions options of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|action-background-color-hover|String|linkhover|The background color of the actions options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|action-border-color|Color|transparent|The border color of the action options of the pager.|
+|action-border-color-hover|String|link|The border color of the action options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|action-color-hover|Color|white|The type color of the actions options of the pager when focused or hovered.|
+
     
   
 
@@ -99,8 +132,8 @@ Change modules $config
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** mixin
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 69-71
+- **Lines (code):** 73-75
     </details>
     
 
@@ -141,8 +174,8 @@ Prints component styles
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** mixin
-- **Lines (comments):** 60-62
-- **Lines (code):** 64-136
+- **Lines (comments):** 85-87
+- **Lines (code):** 89-161
     </details>
     
 
@@ -190,8 +223,8 @@ Get a config option
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** function
-- **Lines (comments):** 52-54
-- **Lines (code):** 56-58
+- **Lines (comments):** 77-79
+- **Lines (code):** 81-83
     </details>
     
 

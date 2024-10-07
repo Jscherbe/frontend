@@ -46,17 +46,21 @@ $config: (
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** variable
-- **Lines (comments):** 15-17
-- **Lines (code):** 19-24
+- **Lines (comments):** 15-21
+- **Lines (code):** 23-28
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.links-state-styling|Number|Just color/defaults vs hover/visited/active|
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|$config.links-state-styling|Number|Just color/defaults vs hover/visited/active||
+|link|Boolean|Enables link styling.|true|
+|link:hover|Boolean|Enables link hover and focus styling.|true|
+|link:visited|Boolean|Enables visited link styling.|true|
+|details-animation|CssValue|Animation for the details element when toggled.|(FadeDownIn 350ms ease-in-out)|
 
     
   
@@ -87,8 +91,8 @@ Change modules $config
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 26-29
-- **Lines (code):** 30-32
+- **Lines (comments):** 30-33
+- **Lines (code):** 34-36
     </details>
     
 
@@ -140,8 +144,8 @@ Prints elements base styles
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 43-46
-- **Lines (code):** 48-197
+- **Lines (comments):** 47-50
+- **Lines (code):** 52-201
     </details>
     
 
@@ -189,8 +193,8 @@ Get a config option
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** function
-- **Lines (comments):** 34-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 38-41
+- **Lines (code):** 43-45
     </details>
     
 

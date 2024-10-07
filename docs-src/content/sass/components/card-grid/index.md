@@ -133,7 +133,7 @@ Prints component styles
 - **Group:** card-grid
 - **Type:** mixin
 - **Lines (comments):** 41-43
-- **Lines (code):** 45-67
+- **Lines (code):** 45-69
     </details>
     
 

@@ -108,31 +108,31 @@ $config: (
 |resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
 |resizer-background-color-hover|Color|rgb(66, 66, 66)|The background color of the resizer when hovered or focused.|
 |header-padding|Dimension|1rem|The padding of the modal header.|
-|header-border-bottom|CssValue|none||
-|header-background-color|Map|black||
-|header-color|Map|white||
-|title-color|Map|white||
-|title-size|Map|large||
-|title-font-weight|Map|bold||
-|title-text-transform|Map|null||
-|close-color|Map|black||
-|close-color-hover|Map|black||
-|close-background-color|Map|white||
-|close-size|Map|2.5rem||
-|close-font-size|Map|1.2rem||
-|close-margin|Map|0.5rem||
-|close-background-color-hover|Map|blue||
-|body-padding|Map|1rem||
-|background-color|Map|white||
-|dark-background-color|Map|false||
-|dark-color|Map|white||
-|dark-header-border-bottom|Map|false||
-|dark-header-background-color|Map|false||
-|dark-header-color|Map|false||
-|title-icon-margin|Map||0.[5em]|
-|animation-timing-function|Map|cubic-bezier(0, 0, .2, 1)||
-|animation-duration|Map|300ms||
-|animation-duration-exit|Map|150ms||
+|header-border-bottom|CssValue|none|Bottom-border on the modal header.|
+|header-background-color|Color|black|Background color for the header.|
+|header-color|Color|white|Type color of the header.|
+|title-color|Color|white|Type color of the title.|
+|title-size|String|large|The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
+|title-font-weight|CssValue|bold|Font weight of the title.|
+|title-text-transform|CssValue|null|Transform option for the title.|
+|close-color|Color|black|Type color for the modal close icon.|
+|close-color-hover|Color|black|Type color for the modal close icon when hovered or focused.|
+|close-background-color|Color|white|Background color for the modal close icon.|
+|close-size|Dimension|2.5rem|Size of the modal close icon.|
+|close-font-size|Dimension|1.2rem|Font-siz of of the modal close icon font size.|
+|close-margin|Dimension|0.5rem|The margin for the modal close icon.|
+|close-background-color-hover|Close|blue|Background color for the modal close icon when hovered or focused.|
+|body-padding|Dimension|1rem|The padding of the body content.|
+|background-color|Color|white|The background color of the modal.|
+|dark-background-color|Map|false|@joe-check unused|
+|dark-color|Map|white|@joe-check unused|
+|dark-header-border-bottom|Map|false|@joe-check unused|
+|dark-header-background-color|Map|false|@joe-check unused|
+|dark-header-color|Map|false|@joe-check unused|
+|title-icon-margin|Dimension|0.5em|The margin of the title icon|
+|animation-timing-function|CssValue|cubic-bezier(0, 0, .2, 1)|The animation timing menu of the modal.|
+|animation-duration|Time|300ms|Animation duration for the modal opening.|
+|animation-duration-exit|Time|150ms|Animation duration for the modal closing.|
 
     
   

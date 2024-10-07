@@ -45,17 +45,20 @@ $config: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 10-12
-- **Lines (code):** 14-18
+- **Lines (comments):** 10-15
+- **Lines (code):** 17-21
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.sides|Number|Sides to print for helper classes (ie. reduce output of uneeded sides)|
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|$config.sides|Number|Sides to print for helper classes (ie. reduce output of uneeded sides)||
+|containers|Boolean|Enables container styling.|true|
+|container-nested-no-padding|Boolean|Toggles whether nested receive horizontal padding or not.|false|
+|layout-flex|Boolean|Enables layout-flex styling.|true|
 
     
   
@@ -86,8 +89,8 @@ Change modules $config
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 20-23
-- **Lines (code):** 24-26
+- **Lines (comments):** 23-26
+- **Lines (code):** 27-29
     </details>
     
 
@@ -139,8 +142,8 @@ Output Styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 37-37
-- **Lines (code):** 39-100
+- **Lines (comments):** 40-40
+- **Lines (code):** 42-103
     </details>
     
 
@@ -176,8 +179,8 @@ Get a config option
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 28-31
-- **Lines (code):** 33-35
+- **Lines (comments):** 31-34
+- **Lines (code):** 36-38
     </details>
     
 

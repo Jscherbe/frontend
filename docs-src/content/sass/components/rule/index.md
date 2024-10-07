@@ -45,18 +45,19 @@ $config: (
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** variable
-- **Lines (comments):** 11-14
-- **Lines (code):** 16-20
+- **Lines (comments):** 11-15
+- **Lines (code):** 17-21
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.short-width|Number|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
-|$config.short-border-width|Number|Short rule width of border|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|short-width|Number|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
+|short-border-width|Number|4px|Short rule width of border|
+|short-modifiers|Number|false|@joe-check|
 
     
   
@@ -87,8 +88,8 @@ Change modules $config
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
-- **Lines (comments):** 22-25
-- **Lines (code):** 27-29
+- **Lines (comments):** 23-26
+- **Lines (code):** 28-30
     </details>
     
 
@@ -140,8 +141,8 @@ Output styles
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
-- **Lines (comments):** 40-40
-- **Lines (code):** 42-93
+- **Lines (comments):** 41-41
+- **Lines (code):** 43-94
     </details>
     
 
@@ -177,8 +178,8 @@ Get a config option
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** function
-- **Lines (comments):** 31-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
     </details>
     
 

@@ -66,24 +66,24 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|color|Map|null|
-|color-hover|Map|null|
-|color-active|Map|null|
-|font-weight|Map|null|
-|padding-x|Map|0|
-|padding-y|Map|0.3em|
-|underline-color|Map|orange|
-|underline-size|Map|3px|
-|margin-between|Map|2.25em|
-|underline-color-hover|Map|gray|
-|activeSelector|Map|.is-active|
-|rule-size|Map|3px|
-|rule-color|Map|rule|
-|rule-offset|Map|-3px|
-|padding-y-ruled|Map|null|
-|nowrap|Map|true|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|color|Color|null|Type color for the nav-strip.|
+|color-hover|Color|null|Type color for the nav-strip when hovered or focused.|
+|color-active|Color|null|Type color for the nav-strip when active.|
+|font-weight|CssValue|null|Font weight of navstrip.|
+|padding-x|Dimension|0|Horizontal padding for the nav-strip links.|
+|padding-y|Dimension|0.3em|Vertical padding for the nav-strip links.|
+|underline-color|Color|orange|Underline color when link is active.|
+|underline-size|Dimension|3px|Size of the underline.|
+|margin-between|Dimension|2.25em|Margin between nav-strip items.|
+|underline-color-hover|Color|gray|Color of the underline when hovered or focused.|
+|activeSelector|String|.is-active|Selector that portrays active status.|
+|rule-size|Dimension|3px|Size of the nav-strip rule.|
+|rule-color|String|rule|Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.|
+|rule-offset|Dimension|-3px|Offset the rule for the navstrip.|
+|padding-y-ruled|Dimension|null|Vertical padding for the nav-strip links when using nav-strip--rule.|
+|nowrap|Boolean|true|Disables the word wrap.|
 
     
   
