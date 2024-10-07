@@ -72,6 +72,8 @@ $config: (
   "color-overlay" : white,
   "color-overlay-hover" : null,
   "overlay-background-color": rgba(0, 0, 0, 0.6),
+  "overlay-shading": true,
+  "overlay-body-padding-y": 1rem,
   "background-color" : white,
   "background-color-hover" : rgb(242, 244, 246),
   "max-width" : 28rem,
@@ -335,15 +337,18 @@ $config: (
       color: get("color-overlay");
       background-color: get("overlay-background-color");
       min-height: 0;
-      padding-bottom: 0;
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 100%;
-        left: 0;
-        right: 0;
-        height: 4rem;
-        background: linear-gradient(to top, get("overlay-background-color") 0%, rgba(0, 0, 0, 0));
+      padding-top: get("overlay-body-padding-y");
+      padding-bottom: get("overlay-body-padding-y");
+      @if (get("overlay-shading")) {
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          right: 0;
+          height: 4rem;
+          background: linear-gradient(to top, get("overlay-background-color") 0%, rgba(0, 0, 0, 0));
+        }
       }
     }
     #{ $prefix }__footer {
