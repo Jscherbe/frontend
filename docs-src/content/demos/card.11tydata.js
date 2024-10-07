@@ -37,28 +37,28 @@ const cardTypes= {
         </article>
       `,
   },
-  // cardIcon: {
-  //   title: 'Card with Icon',
-  //   content: 
-  //     `
-  //       <article class="card" data-ulu-proxy-click>
-  //         <div class="card__body">
-  //           <h5 class="card__title">
-  //             <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with Image</a>
-  //           </h5>
-  //           <div>
-  //             This is a card with an upper image using a containing div with the "card__image--icon" class. This maintains the card's padding, so it will line up properly to the text.
-  //           </div>
-  //         </div>
-  //         <div class="card__image card__image--icon">
-  //           <img src="/assets/placeholder/image-1.jpg" />
-  //         </div>
-  //         <div class="card__footer">
-  //           My first Card Footer
-  //         </div>
-  //       </article>
-  //     `,
-  // },
+  cardIcon: {
+    title: 'Card with Icon',
+    content: 
+      `
+        <article class="card" data-ulu-proxy-click>
+          <div class="card__body">
+            <h5 class="card__title">
+              <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with icon</a>
+            </h5>
+            <div>
+              This is a card with an upper image using a containing div with the "card__image--icon" class. This maintains the card's padding, so it will line up properly to the text.
+            </div>
+          </div>
+          <div class="card__image card__image--icon">
+            <span class="css-icon css-icon--square"></span>
+          </div>
+          <div class="card__footer">
+            My first Card Footer
+          </div>
+        </article>
+      `,
+  },
   cardOverlay: {
     title: 'Card with Full Background Image',
     content: 
