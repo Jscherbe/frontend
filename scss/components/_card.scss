@@ -86,7 +86,7 @@ $config: (
   "title-font-weight" : bold,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": 5/3,
-  "overlay-aspect-ratio": 2/1,
+  "overlay-aspect-ratio": 4/3,
   "image-background-color" : rgb(197, 197, 197),
   "image-margin" : null,
   "image-border" : null, // For when you have a margin
@@ -305,7 +305,7 @@ $config: (
     z-index: 2; // Above image
   }
   #{ $prefix }__body {
-    flex: 1;
+    flex-grow: 1;
     min-height: get("body-min-height");
   }
   // For actions/messages
@@ -325,12 +325,12 @@ $config: (
   // means body keeps before pseudo element while footer loses it
   #{ $prefix }--overlay {
     overflow: hidden;
-    aspect-ratio: 2/1;
+    aspect-ratio: 4/3;
     height: auto;
     #{ $prefix }__body {
       position: relative;
       margin-top: auto;
-      flex: 0;
+      flex-grow: 0;
       z-index: 2;
       color: get("color-overlay");
       background-color: get("overlay-background-color");
