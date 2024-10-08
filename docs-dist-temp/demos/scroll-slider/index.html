@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    modal-builder
+    Scroll Slider
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -124,10 +124,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -357,12 +357,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/scroll-slider/" 
-          
+          aria-current="page"
         >
           
     
@@ -1824,10 +1824,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1847,10 +1847,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/javascript/" 
           
         >
@@ -2018,12 +2018,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/javascript/modal-builder/" 
-          aria-current="page"
+          
         >
           
     
@@ -2369,10 +2369,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -2602,12 +2602,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/scroll-slider/" 
-          
+          aria-current="page"
         >
           
     
@@ -4069,10 +4069,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -4092,10 +4092,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/javascript/" 
           
         >
@@ -4263,12 +4263,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/javascript/modal-builder/" 
-          aria-current="page"
+          
         >
           
     
@@ -4563,25 +4563,10 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#modal-builder.defaults">modal-builder.defaults</a>
+                    <li><a href="#default-scroll-slider">Default Scroll Slider</a>
             		</li>
 
-                    <li><a href="#modal-builder.setdefaults(options)">modal-builder.setDefaults(options)</a>
-            		</li>
-
-                    <li><a href="#modal-builder.init()">modal-builder.init()</a>
-            		</li>
-
-                    <li><a href="#modal-builder.setup()">modal-builder.setup()</a>
-            		</li>
-
-                    <li><a href="#modal-builder.setupbuilder(element)">modal-builder.setupBuilder(element)</a>
-            		</li>
-
-                    <li><a href="#modal-builder.buildmodal(content%2C-options)">modal-builder.buildModal(content, options)</a>
-            		</li>
-
-                    <li><a href="#modal-builder~separatedialogoptions(config)-%E2%87%92-object">modal-builder~separateDialogOptions(config) ⇒ Object</a>
+                    <li><a href="#slider-title670540522040d">Latest Updates</a>
             		</li>
                 </ol>
             </div>
@@ -4591,136 +4576,208 @@
 			
 			
 			
-  <div class="page__body-top container api-docs">
-    <div class="wysiwyg">
-      <p><a name="module_modal-builder"></a></p>
-<h1 id="modal-builder" tabindex="-1">modal-builder</h1>
-<ul>
-<li><a href="#module_modal-builder">modal-builder</a>
-<ul>
-<li><em>static</em>
-<ul>
-<li><a href="#module_modal-builder.defaults">.defaults</a></li>
-<li><a href="#module_modal-builder.setDefaults">.setDefaults(options)</a></li>
-<li><a href="#module_modal-builder.init">.init()</a></li>
-<li><a href="#module_modal-builder.setup">.setup()</a></li>
-<li><a href="#module_modal-builder.setupBuilder">.setupBuilder(element)</a></li>
-<li><a href="#module_modal-builder.buildModal">.buildModal(content, options)</a></li>
-</ul>
-</li>
-<li><em>inner</em>
-<ul>
-<li><a href="#module_modal-builder..separateDialogOptions">~separateDialogOptions(config)</a> ⇒ <code>Object</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a name="module_modal-builder.defaults"></a></p>
-<h2 id="modal-builder.defaults" tabindex="-1">modal-builder.defaults</h2>
-<p>Default builder options (extends dialog defaults, watch name collisions)</p>
-<ul>
-<li>Decided to extend defaults so the interface in HTML is singular
-<ul>
-<li>This is sometimes easier to template (merging and serializing options
-in twig for example)</li>
-</ul>
-</li>
-</ul>
-<p><strong>Kind</strong>: static constant of <a href="#module_modal-builder"><code>modal-builder</code></a><br>
-<a name="module_modal-builder.setDefaults"></a></p>
-<h2 id="modal-builder.setdefaults(options)" tabindex="-1">modal-builder.setDefaults(options)</h2>
-<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>options</td>
-<td><code>Object</code></td>
-<td>Change options used as default for dialogs, can then be overridden by data attribute settings on element</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_modal-builder.init"></a></p>
-<h2 id="modal-builder.init()" tabindex="-1">modal-builder.init()</h2>
-<p>Initialize everything in document</p>
-<ul>
-<li>This will only initialize elements once, it is safe to call on page changes</li>
-</ul>
-<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a><br>
-<a name="module_modal-builder.setup"></a></p>
-<h2 id="modal-builder.setup()" tabindex="-1">modal-builder.setup()</h2>
-<p>Query and setup all builder</p>
-<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a><br>
-<a name="module_modal-builder.setupBuilder"></a></p>
-<h2 id="modal-builder.setupbuilder(element)" tabindex="-1">modal-builder.setupBuilder(element)</h2>
-<p>Build a dialog for the given content</p>
-<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>element</td>
-<td><code>Node</code></td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_modal-builder.buildModal"></a></p>
-<h2 id="modal-builder.buildmodal(content%2C-options)" tabindex="-1">modal-builder.buildModal(content, options)</h2>
-<p><strong>Kind</strong>: static method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>content</td>
-<td><code>Node</code></td>
-<td>Content element of the dialog (what is inserted into the body)</td>
-</tr>
-<tr>
-<td>options</td>
-<td><code>Object</code></td>
-<td>Options for built dialog (see defaults)</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_modal-builder..separateDialogOptions"></a></p>
-<h2 id="modal-builder~separatedialogoptions(config)-%E2%87%92-object" tabindex="-1">modal-builder~separateDialogOptions(config) ⇒ <code>Object</code></h2>
-<p>Returns JSON string to embed in data-ulu-dialog for dialog handling</p>
-<p><strong>Kind</strong>: inner method of <a href="#module_modal-builder"><code>modal-builder</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>config</td>
-<td><code>Object</code></td>
-<td>Config object to pull dialog specific settings from</td>
-</tr>
-</tbody>
-</table>
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Scroll Slider</h1>
 
+  <p class="type-large type-light">
+    Scroll Slider Intro
+  </p>
+
+<hr class="rule rule--light rule--margin-large">
+    <div class="wysiwyg">
+      <h2 id="default-scroll-slider" tabindex="-1">Default Scroll Slider</h2>
+<p><div>test title</div>
+<div>Information</div></p>
+<section class="scroll-slider-section container-full" aria-labelledby="slider-title670540522040d">
+  <div class="scroll-slider-section__title container-fit">
+    <h2 class="h4 no-margin-bottom" id="slider-title670540522040d">
+      Latest Updates
+    </h2>
+  </div>
+<div class="scroll-slider-section__slides">
+  <div class="scroll-slider scroll-slider--cards" data-scroll-slider="[]">
+    <div class="scroll-slider__control-context" data-scroll-slider-control-context="">
+      <div class="scroll-slider__track-crop" data-scroll-slider-track-container="">
+        <ul class="scroll-slider__track" data-scroll-slider-track="">
+          <li class="scroll-slider__slide scroll-slider__slide--empty" role="presentation" data-scroll-slider-slide="">
+            &nbsp;
+          </li>
+          <li class="scroll-slider__slide " data-scroll-slider-slide="">
+            <div class="card">
+              <div class="card__body">
+                <a class="card__title" href="/knowledge-resources/toolkit/46933/eviction-prevention-toolkit">
+                  <span class="tag-container">
+                    <span class="tag site-content-type">New Toolkit</span>
+                  </span>
+                  <strong>Eviction Prevention: A Toolkit for Tenants and Service Providers</strong>
+                </a>
+                <div class="wysiwgy">
+                  <p>
+                    <span>This Toolkit outlines strategies for supporting people with mental health conditions, substance use disorders, or co-occurring disorders living in community-based low-income housing to prevent eviction.</span></p>
+                  <p>
+                    <a class="button" href="/knowledge-resources/toolkit/46933/eviction-prevention-toolkit">
+                      Download the Toolkit
+                    </a>
+                  </p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+    <div class="card">
+<div class="card__body">
+<a class="card__title" href="https://hhrctraining.org/knowledge-resources/fact-sheet/39058/low-barrier-shelter-policies">
+  <span class="tag-container">
+    <span class="tag site-content-type">New Guide</span>
+  </span>
+<strong>Low-Barrier Shelter: Policies into Practice</strong>
+    </a>
+  <div class="wysiwgy">
+    <p><span>This guide provides information on the core components of low-barrier shelters. It provides examples of key policies, procedures to support those policies, and ideas for navigating common challenges in implementation.&nbsp;</span></p>
+    <p>
+  <a class="button" href="https://hhrctraining.org/knowledge-resources/fact-sheet/39058/low-barrier-shelter-policies">
+    Download the Guide
+  </a>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+    <div class="card">
+<div class="card__body">
+<a class="card__title" href="https://hhrctraining.org/knowledge-resources/fact-sheet/39063/psychotic-disorders">
+  <span class="tag-container">
+    <span class="tag site-content-type">New Resource</span>
+  </span>
+<strong>Treatment, Housing, and Outreach Support for Individuals with Psychotic Disorders</strong>
+    </a>
+  <div class="wysiwgy">
+    <p><span>This fact sheet provides an overview of psychosis and its treatment options, tips for outreach and engagement, including de-escalation techniques, and strategies for supporting people with psychotic symptoms in achieving and maintaining housing.&nbsp;</span></p>
+    <p>
+  <a class="button" href="https://hhrctraining.org/knowledge-resources/fact-sheet/39063/psychotic-disorders">
+    Download the Resource
+  </a>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+    <div class="card">
+<div class="card__body">
+<a class="card__title" href="https://hhrctraining.org/knowledge-resources/fact-sheet/17897/xylazine-basics">
+  <span class="tag-container">
+    <span class="tag site-content-type">Fact Sheet</span>
+  </span>
+<strong>Xylazine Basics</strong>
+<p></a></p>
+  <div class="wysiwgy">
+    <p>This document discusses the effects of xylazine and describes harm reduction practices, wound care, and overdose prevention.&nbsp;</p>
+<p><p>
+<a class="button" href="https://hhrctraining.org/knowledge-resources/fact-sheet/17897/xylazine-basics">
+View the Fact Sheet
+</a></p>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+<p><div class="card"></p>
+<div class="card__body">
+<a class="card__title" href="/knowledge-resources/toolkit/17735/expanding-peer-support-roles">
+  <span class="tag-container">
+    <span class="tag site-content-type">Toolkit</span>
+  </span>
+<strong>Expanding Peer Support Roles in Homeless Services Delivery: A Toolkit for Service Providers</strong>
+<p></a></p>
+  <div class="wysiwgy">
+    <p>Peer support is a fast-growing occupation in the behavioral health sector and homeless service&nbsp;organizations can also benefit from its value.&nbsp;This toolkit guides organizations looking to strengthen peers' integration into their workforce.&nbsp;</p>
+<p><p>
+<a class="button" href="/knowledge-resources/toolkit/17735/expanding-peer-support-roles">
+Download the Toolkit
+</a></p>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+<p><div class="card"></p>
+<div class="card__body">
+<a class="card__title" href="https://hhrctraining.org/knowledge-resources/toolkit/1926/helping-obtain-ID">
+  <span class="tag-container">
+    <span class="tag site-content-type">Featured Resource</span>
+  </span>
+<strong>Helping Obtain Identification Documents</strong>
+<p></a></p>
+  <div class="wysiwgy">
+    <p>This resource provides guidance on helping individuals who are experiencing homelessness obtain identification (ID) documents, including birth certificates, Social Security cards, state-issued IDs, DD214s, and Green Cards.&nbsp;</p>
+<p><p>
+<a class="button" href="https://hhrctraining.org/knowledge-resources/toolkit/1926/helping-obtain-ID">
+Download the Toolkit
+</a></p>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+<p><div class="card"></p>
+<div class="card__body">
+<a class="card__title" href="https://hhrctraining.org/knowledge-resources/article/13618/orientation-guide">
+  <span class="tag-container">
+    <span class="tag site-content-type">Staff Onboarding</span>
+  </span>
+<strong>HHRC Orientation Guide</strong>
+<p></a></p>
+  <div class="wysiwgy">
+    <p>This guide assists providers in onboarding new professionals by providing a compilation of introductory resources to review in their first three months.&nbsp;</p>
+<p><p>
+<a class="button" href="https://hhrctraining.org/knowledge-resources/article/13618/orientation-guide">
+Download the Guide
+</a></p>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+  <li class="scroll-slider__slide " data-scroll-slider-slide="">
+<p><div class="card"></p>
+<div class="card__body">
+<a class="card__title" href="https://hhrctraining.org/knowledge-resources/fact-sheet/7548/fair-housing-protections">
+  <span class="tag-container">
+    <span class="tag site-content-type">Fact Sheet</span>
+  </span>
+<strong>Fair Housing Protections for People with SMI, SUD, or COD</strong>
+<p></a></p>
+  <div class="wysiwgy">
+    <p>This document describes how individuals with disabilities can leverage federal laws to protect themselves from this type of discrimination and ensure equal access and opportunity to enjoy housing that suits their needs.</p>
+<p><p>
+<a class="button" href="https://hhrctraining.org/knowledge-resources/fact-sheet/7548/fair-housing-protections">
+Download the Fact Sheet
+</a></p>
+</p>
+</div>
+</div>
+    </div>
+  </li>
+<li class="scroll-slider__slide scroll-slider__slide--empty" role="presentation" data-scroll-slider-slide="">
+&nbsp;
+    </li>
+<p></ul></p>
+  </div>
+<ul class="OverflowScroller__controls"><li class="OverflowScroller__controls-item OverflowScroller__controls-item--previous OverflowScroller__controls-item--disabled"><button class="OverflowScroller__control-button OverflowScroller__control-button--previous OverflowScroller__control--disabled" type="button" disabled="">
+<span class="hidden-visually">Scroll Right</span>
+<span class="Slider__control-icon fas fa-chevron-left" aria-hidden="true"></span>
+    </button></li><li class="OverflowScroller__controls-item OverflowScroller__controls-item--next"><button class="OverflowScroller__control-button OverflowScroller__control-button--next" type="button">
+<span class="hidden-visually">Scroll Left</span>
+<span class="Slider__control-icon fas fa-chevron-right" aria-hidden="true"></span>
+    </button></li></ul></div>
+    </div>
+</div>
+    </section>
     </div>
   </div>
 

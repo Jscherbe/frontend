@@ -16,3 +16,4 @@ export * as proxyClick from "./proxy-click.js";
 export * as scrollpoint from "./scrollpoint.js";
 export * as print from "./print.js";
 export * as printDetails from "./print-details.js";
+export * as scrollSlider from "./scroll-slider.js";

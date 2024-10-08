@@ -1,0 +1,183 @@
+@use "vars";
+@use "sass:map";
+@use "../element";
+@use "../color";
+@use "../utils";
+@use "../layout";
+@use "../breakpoint";
+
+// Reference:
+// - https://web.dev/css-scroll-snap/
+
+/// Config options
+
+$config: (
+  "container" : "container",
+  "background-color" : false,
+  "margin-top" : 1rem,
+  "margin-bottom" : 3rem,
+  "padding-top" : 0,
+  "padding-bottom" : 0,
+  "button-indent" : 1.5rem,
+  "button-indent-small" : 0.5rem,
+  "button-size" : 3rem,
+  "button-font-size" : 1.35rem,
+  "button-color" : color.get("type"),
+  "button-border" : 2px solid white,
+  "button-border-radius" : 50%,
+  "button-background-color" : white,
+  "button-box-shadow" : element.get("box-shadow"),
+  "button-color-hover" : color.get("link"),
+  "button-border-color-hover" : white,
+  "button-background-color-hover" : white,
+  "button-icon-offset-x" : false,
+  "button-icon-offset-y" : false,
+  "containers" : ("container",)
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "scroll-slider [config]");
+}
+
+@mixin styles {
+  
+  .scroll-slider {
+    position: relative; // for controls
+    background-color: get("background-color");
+    margin: get("margin-top") 0 get("margin-bottom") 0;
+  }
+  .scroll-slider--cards {
+    .scroll-slider__slide {
+      margin-right: 1.35rem;
+      // display: flex;
+      > .card {
+        width: 100%;
+        max-width: none;
+        height: calc(100% - 2rem);
+        margin: 1rem 0 1rem 0;// For shadows
+      }
+    }
+    .scroll-slider__slide--empty {
+      margin-right: 0;
+    }
+  }
+  .scroll-slider__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    // scroll-padding-left: calc(((100vw - vars.$site-max-width) / 2) + vars.$site-margin);
+    // switch below to a modifier (like .scroll-slider--in-container, .scroll-slider--in-container-large-x) Default is container
+    @include layout.match-container-margin("scroll-padding-left", get("container"));
+    // scroll-padding-right: 1rem;
+    // Hide scrollbars
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* for Chrome, Safari, and Opera */
+    }
+    // padding: 1rem;
+    // Add space to end of list
+    // &:after {
+    //   content: "\00a0";
+    //   display: block;
+    //   width: 1rem;
+    //   height: 100%;
+    //   flex: 0 0 1rem;
+    // }
+  }
+  .scroll-slider__slide {
+    
+    flex: 0 0 450px;
+    max-width: 90vw;
+    scroll-snap-align: start;
+    $container: layout.get-container("container", "small");
+    @debug $container;
+    @include breakpoint.max("small") {
+      $pad: layout.get-container-padding-x("container", "small");
+      max-width: none;
+      flex-basis: calc(100vw - ($pad * 2) - var(--scrollbar-width));
+    }
+    // margin-right: 1rem;
+  }
+  .scroll-slider__slide--empty {
+    scroll-snap-align: none;
+    // flex-basis: calc(((100vw - vars.$site-max-width) / 2) + vars.$site-margin);
+    @include layout.match-container-margin("flex-basis", get("container"));
+    margin-right: 0;
+    // @include ulu.breakpoint-max("small") {
+    //   &:last-child {
+    //     display: none;
+    //   }
+    // }
+  }
+  .scroll-slider__controls {
+    list-style: none !important;
+    padding: 0;
+  }
+  .OverflowScroller__control-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: get("button-color");
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: get("button-size");
+    height: get("button-size");
+    font-size: get("button-font-size");
+    background-color: get("button-background-color");
+    box-shadow: get("button-box-shadow");
+    border: get("button-border");
+    border-radius: get("button-border-radius");
+    &:hover {
+      background-color: get("button-background-color-hover");
+      border-color: get("button-border-color-hover");
+      color: get("button-color-hover");
+    }
+  }
+  @if get("button-icon-offset-y") {
+    .OverflowScroller__control-icon {
+      margin-top: get("button-icon-offset-y");
+    }
+  }
+  .OverflowScroller__control-button--previous {
+    left: get("button-indent");
+    @if get("button-icon-offset-x")  {
+      .OverflowScroller__control-icon {
+        margin-left: get("button-icon-offset-x");
+        
+      }
+    }
+  }
+  .OverflowScroller__control-button--next {
+    right: get("button-indent");
+    @if get("button-icon-offset-x")  {
+      .OverflowScroller__control-icon {
+        margin-right: get("button-icon-offset-x");
+      }
+    }
+  }
+  @include breakpoint.max("small") {
+    .OverflowScroller__control-button--previous {
+      left: get("button-indent-small");
+    }
+    .OverflowScroller__control-button--next {
+      right: get("button-indent-small");
+    }
+  }
+}

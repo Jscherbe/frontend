@@ -9,7 +9,7 @@ layout: demo
 <p>
   The default is reflowable grid that attempts to match the width specified filling the available space
 </p>
-
+<!-- {% tileGridItem argument1 argument2 %} -->
 <ul class="tile-grid">
   {% tileGridItem %}
   {% tileGridItem %}
