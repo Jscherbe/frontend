@@ -65,7 +65,6 @@
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.9",
     "algoliasearch": "^4.23.3",
-    "ally.js": "^1.4.1",
     "chokidar": "^3.6.0",
     "eleventy-plugin-nesting-toc": "^1.3.0",
     "fs-extra": "^11.2.0",
@@ -87,5 +86,8 @@
     "aria-tablist": "^1.2.2",
     "autoprefixer": "^10.4.16",
     "vite": "^5.0.10"
+  },
+  "optionalDependencies": {
+    "ally.js": "^1.4.1"
   }
 }
