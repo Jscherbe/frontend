@@ -12,3 +12,4 @@ ulu.ui.scrollpoint.init();
 ulu.ui.print.init();
 ulu.ui.printDetails.init();
 ulu.ui.scrollSlider.init();
+ulu.ui.sliderHelper.init();
