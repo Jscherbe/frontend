@@ -1,4 +1,15 @@
 SCSS Todos:
+  ☐ Add active state to buttons
+  ☐ Create button-group for toolbars/swtichers
+  ☐ Overlap with tab styling and nav-strip. Note nav-strip can be used for tabs we just need to add the correct selectors for the active state
+    * Pros of the tabs module
+      * Print stuff (pretty minor could just be a helper or something)
+      * Container/panel styling? 
+      * Already has macros
+        * Macros could be refactored to use nav-strip
+        * Could be an add on for nav-strip
+          * nav-strip-panel (for tabpanel)
+            * This could be easy to adjust and refactor
   ☐ Go through the card overlay, can we adjust the card grid to have an auto fill like tile grid
   ☐ Consider adding the button active state to the button core?
     ☐ Versus specific
