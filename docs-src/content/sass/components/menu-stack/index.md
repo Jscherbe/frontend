@@ -47,6 +47,7 @@ $config: (
   "link-separated-margin" : false,
   "link-icon-margin" : 0.65em,
   "link-icon-width" : 1em,
+  "toggle-icon-rotate" : false,
   "link-font-weight" : null,
   "link-active-selectors" : (".is-active", '[aria-current="page"]'),
   "compact-link-padding-y": 0.25em,
@@ -58,7 +59,7 @@ $config: (
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
   "checkbox-area-width" : 3em,
-  "nested-indent" : 0.5em
+  "nested-indent" : 0.5em,
 );
 ```
   
@@ -68,8 +69,8 @@ $config: (
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** variable
-- **Lines (comments):** 25-52
-- **Lines (code):** 54-81
+- **Lines (comments):** 25-53
+- **Lines (code):** 55-83
     </details>
     
 
@@ -104,6 +105,7 @@ $config: (
 |label-text-transform|CssValue|uppercase|Transforms the label text.|
 |checkbox-area-width|Dimension|3em|The width of the checkbox are.|
 |nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
+|toggle-icon-rotate|Number|false|Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)|
 
     
   
@@ -134,8 +136,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 84-86
-- **Lines (code):** 88-90
+- **Lines (comments):** 86-88
+- **Lines (code):** 90-92
     </details>
     
 
@@ -176,8 +178,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 106-110
-- **Lines (code):** 112-238
+- **Lines (comments):** 108-112
+- **Lines (code):** 114-242
     </details>
     
 
@@ -231,8 +233,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-99
+- **Lines (comments):** 94-96
+- **Lines (code):** 98-101
     </details>
     
 

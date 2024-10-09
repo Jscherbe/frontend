@@ -1,13 +1,15 @@
 ////
 /// @group nav-strip
 ////
-
-// Expects ul > li > a
+/// A horizontal navigation strip or rail that displays a list of links to
+/// different pages or sections of a website. The active link, indicating the 
+/// current page or section, is visually emphasized with an underline.
 
 @use "sass:map";
 
 @use "../utils";
 @use "../color";
+@use "../selector";
 @use "../typography";
 
 /// Module Settings
@@ -45,7 +47,7 @@ $config: (
   "rule-color" : "rule",
   "rule-offset" : -3px,
   "padding-y-ruled" : null,
-  "nowrap" : true
+  "nowrap" : true,
 ) !default;
 
 
@@ -70,70 +72,72 @@ $config: (
 ///  @include ulu.component-example-styles();
 
 @mixin styles {
-  .nav-strip {
-    // Using direct children b/c don't want it to interfere with content other than direct children
-    // This does limit this selector to being a wrapper of the <ul> only but that seems possible
-    // and will allow other items like popovers etc to exist
-    ul,
-    .nav-strip__list {
-      display: flex;
-      // align-items: center;
-      line-height: typography.get("line-height-dense");
-    }
-    li,
-    .nav-strip__item {
-      margin-right: get("margin-between");
-      // layout flex since items inside may not be the same height
-      display: flex;
-      align-items: flex-end;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-    a,
-    button,
-    .nav-strip__link {
-      display: block;
-      color: get("color");
-      padding: get("padding-y") get("padding-x");
-      border-top: get("underline-size") solid transparent;
-      border-bottom: get("underline-size") solid transparent;
-      font-weight: get("font-weight");
-      @if (get("nowrap")) {
-        white-space: nowrap;
-      }
-      &:hover,
-      &:focus {
-        border-bottom-color: get("underline-color-hover");
-        color: get("color-hover");
-      }
-      &#{ get("activeSelector") } {
-        border-bottom-color: get("underline-color");
-        color: get("color-active");
-      }
+  $prefix: selector.class("nav-strip");
+
+  // Original thought to not limit to direct child
+  // auto is for when we don't have control over markup
+  // The list descendants will be selected that way but the list is
+  // currently selecting any list/list-item
+  #{ $prefix }__list,
+  #{ $prefix }--auto ul {
+    display: flex;
+    line-height: typography.get("line-height-dense");
+  }
+  #{ $prefix }__item,
+  #{ $prefix }--auto li {
+    margin-right: get("margin-between");
+    // layout flex since items inside may not be the same height
+    display: flex;
+    align-items: flex-end;
+    &:last-child {
+      margin-right: 0;
     }
   }
-  .nav-strip--right {
-    ul,
-    .nav-strip__list {
+  
+  #{ $prefix }__link,
+  #{ $prefix }--auto li > a,
+  #{ $prefix }--auto li > button {
+    display: block;
+    color: get("color");
+    padding: get("padding-y") get("padding-x");
+    border-top: get("underline-size") solid transparent;
+    border-bottom: get("underline-size") solid transparent;
+    font-weight: get("font-weight");
+    @if (get("nowrap")) {
+      white-space: nowrap;
+    }
+    &:hover,
+    &:focus {
+      border-bottom-color: get("underline-color-hover");
+      color: get("color-hover");
+    }
+    &#{ get("activeSelector") } {
+      border-bottom-color: get("underline-color");
+      color: get("color-active");
+    }
+  }
+  
+  // Modifiers
+  #{ $prefix }--right {
+    #{ $prefix }__list,
+    &#{ $prefix }--auto ul {
       justify-content: flex-end;
     }
   }
-  .nav-strip--center {
-    ul,
-    .nav-strip__list {
+  #{ $prefix }--center {
+    #{ $prefix }__list,
+    &#{ $prefix }--auto ul {
       justify-content: center;
     }
   }
-  // Rail/Rule
-  .nav-strip--rule {
-    ul,
-    .nav-strip__list {
+  #{ $prefix }--rule {
+    #{ $prefix }__list,
+    &#{ $prefix }--auto ul {
       border-bottom: get("rule-size") solid color.get(get("rule-color"));
     }
-    a, 
-    button,
-    .nav-strip__link {
+    #{ $prefix }__link,
+    &#{ $prefix }--auto li > a,
+    &#{ $prefix }--auto li > button {
       margin-bottom: get("rule-offset");
       padding-top: get("padding-y-ruled");
       padding-bottom: get("padding-y-ruled");

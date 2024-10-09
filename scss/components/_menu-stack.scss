@@ -50,6 +50,7 @@ $-fallbacks: (
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
 /// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox are.
 /// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
+/// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
 
 $config: (
   "link-color" : "link",
@@ -66,6 +67,7 @@ $config: (
   "link-separated-margin" : false,
   "link-icon-margin" : 0.65em,
   "link-icon-width" : 1em,
+  "toggle-icon-rotate" : false,
   "link-font-weight" : null,
   "link-active-selectors" : (".is-active", '[aria-current="page"]'),
   "compact-link-padding-y": 0.25em,
@@ -77,7 +79,7 @@ $config: (
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
   "checkbox-area-width" : 3em,
-  "nested-indent" : 0.5em
+  "nested-indent" : 0.5em,
 ) !default;
 
 
@@ -196,9 +198,11 @@ $config: (
   }
   #{ $prefix }__collapsible {
     margin: 0;
-    &[open] {
-      #{ $prefix }__toggle-icon {
-        transform: rotate(180deg);
+    @if (get("toggle-icon-rotate")) {
+      &[open] {
+        #{ $prefix }__toggle-icon {
+          transform: rotate(get("toggle-icon-rotate"));
+        }
       }
     }
   }

@@ -6,7 +6,9 @@ sassdocGroupName: nav-strip
 
 # Nav-strip
 
-
+A horizontal navigation strip or rail that displays a list of links to
+different pages or sections of a website. The active link, indicating the 
+current page or section, is visually emphasized with an underline.
 
 
 
@@ -48,7 +50,7 @@ $config: (
   "rule-color" : "rule",
   "rule-offset" : -3px,
   "padding-y-ruled" : null,
-  "nowrap" : true
+  "nowrap" : true,
 );
 ```
   
@@ -58,8 +60,8 @@ $config: (
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** variable
-- **Lines (comments):** 13-30
-- **Lines (code):** 32-49
+- **Lines (comments):** 15-32
+- **Lines (code):** 34-51
     </details>
     
 
@@ -114,8 +116,8 @@ Change modules $config
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 52-54
-- **Lines (code):** 56-58
+- **Lines (comments):** 54-56
+- **Lines (code):** 58-60
     </details>
     
 
@@ -156,8 +158,8 @@ Prints component styles
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 68-70
-- **Lines (code):** 72-142
+- **Lines (comments):** 70-72
+- **Lines (code):** 74-146
     </details>
     
 
@@ -205,8 +207,8 @@ Get a config option
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** function
-- **Lines (comments):** 60-62
-- **Lines (code):** 64-66
+- **Lines (comments):** 62-64
+- **Lines (code):** 66-68
     </details>
     
 
