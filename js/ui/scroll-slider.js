@@ -27,7 +27,7 @@ function init(container) {
   const config = Object.assign({}, defaults, passed);
   const elements = {
     track: container.querySelector("[data-ulu-scroll-slider-track]"),
-    controls: container.querySelector("[data-ulus-croll-slider-control-context]")
+    controls: container.querySelector("[data-ulu-scroll-slider-control-context]")
   };
   // replace with OverflowScroller when finished removing sitescrollslider
   instances.push(new SiteScrollSlider(elements, config));
