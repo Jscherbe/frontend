@@ -133,7 +133,6 @@ $config: (
     border: 0;
     outline: 0;
   }
-  
   figure {
     margin: 0;
   }
@@ -162,17 +161,14 @@ $config: (
       );
     }
   }
-  // button,
-  // [type="button"],
-  // [type="reset"],
-  // [type="submit"] {
-  //   @include button.reset();
-  // }
-  // For accessible tabs
-  // [role="tab"],
-  // summary {
-    
-  // }
+  [disabled],
+  :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  button[disabled] {
+    pointer-events: none;
+  }
   dt { 
     font-weight: bold;
   }
@@ -197,6 +193,10 @@ $config: (
         }
       }
     }
+  }
+  audio {
+    display: block;
+    margin: 1rem 0;
   }
 }
 

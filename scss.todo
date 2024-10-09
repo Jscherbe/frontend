@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Add active state to buttons
+  ☐ Create button-group for toolbars/swtichers
   ☐ Overlap with tab styling and nav-strip. Note nav-strip can be used for tabs we just need to add the correct selectors for the active state
     * Pros of the tabs module
       * Print stuff (pretty minor could just be a helper or something)
