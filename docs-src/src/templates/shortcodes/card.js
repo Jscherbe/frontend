@@ -15,7 +15,7 @@ export default function(
         <img src="/assets/placeholder/image-1.jpg" />
       </div>
       <div class="card__footer">
-        My first Card Footer
+        My Card Footer
       </div>
     </article>
       `;

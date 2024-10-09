@@ -453,6 +453,7 @@ export class Slider {
     button.addEventListener("click", this.goto.bind(this, index));
     return button;
   }
+  // change to css-icon 
   getControlContent(action) {
     return `
       <span class="hidden-visually">${ action }</span>
@@ -460,7 +461,7 @@ export class Slider {
     `;
   }
   getNavContent(number) {
-    return `<span class="hidden-visually">Item</span> <span>${ number }</span>`;
+    return `<span class="hidden-visually">Item ${ number }</span>`;
   }
   emit(name, args) {
     if (this.options.events[name]) {

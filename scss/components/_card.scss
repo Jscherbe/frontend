@@ -3,6 +3,7 @@
 ////
 
 @use "sass:map";
+@use 'sass:list';
 
 @use "../breakpoint";
 @use "../utils";
@@ -87,8 +88,8 @@ $config: (
   "title-margin" : 1rem,
   "title-font-weight" : bold,
   "image-ratio" : 56.25%,
-  "image-aspect-ratio": 5/3,
-  "overlay-aspect-ratio": 4/3,
+  "image-aspect-ratio": list.slash(5, 3),
+  "overlay-aspect-ratio": list.slash(4, 3),
   "image-background-color" : rgb(197, 197, 197),
   "image-margin" : null,
   "image-border" : null, // For when you have a margin

@@ -1,5 +1,29 @@
+/**
+ * @module scroll-slider
+ */
+
 import { OverflowScroller } from "./overflow-scroller.js";
-import { createPager } from "./overflow-scroller-pager.js"
+import { createPager } from "./overflow-scroller-pager.js";
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-scroll-slider-init",
+  slider: "data-ulu-scroll-slider",
+  track: "data-ulu-scroll-slider-track",
+  controls: "data-ulu-scroll-slider-control-context"
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+
+
 const instances = [];
 // Add in icon and labels
 // @daniel won't need to extend
@@ -19,15 +43,29 @@ const defaults = {
   amount: createPager()
 };
 
-document.querySelectorAll("[data-ulu-scroll-slider]").forEach(init);
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
 
-function init(container) {
-  const raw = container.dataset.siteSlider;
-  const passed = raw ? JSON.parse(raw) : {};
-  const config = Object.assign({}, defaults, passed);
+// document.querySelectorAll("[data-ulu-scroll-slider]").forEach(init);
+export function setup() {
+  const builders = document.querySelectorAll(attrSelectorInitial("slider"));
+  builders.forEach(setupSlider);
+}
+
+// getDatasetOptionalJson
+function setupSlider(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluScrollSlider");
+  const config = Object.assign({}, defaults, options);
   const elements = {
-    track: container.querySelector("[data-ulu-scroll-slider-track]"),
-    controls: container.querySelector("[data-ulu-scroll-slider-control-context]")
+    track: container.querySelector(attrSelector("track")),
+    controls: container.querySelector(attrSelector("controls"))
   };
   // replace with OverflowScroller when finished removing sitescrollslider
   instances.push(new SiteScrollSlider(elements, config));

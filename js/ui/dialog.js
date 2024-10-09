@@ -9,7 +9,7 @@ import { getDatasetJson, wasClickOutside } from "../utils/dom.js";
  * Default data attributes
  */
 export const attrs = {
-  init: "data-ulu-init",
+  init: "data-ulu-dialog-init",
   dialog: "data-ulu-dialog",
   trigger: "data-ulu-dialog-trigger",
   close: "data-ulu-dialog-close",

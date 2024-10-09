@@ -13,7 +13,7 @@ export default function(
       `;
   }
   return `
-    <section class="scroll-slider-section container-full" aria-labelledby="slider-title">
+    <section class="scroll-slider-section container-full" data-ulu-scroll-slider-init aria-labelledby="slider-title">
       <div class="scroll-slider-section__title container-fit">
         <h2 class="h2 h2--no-rule no-margin-bottom" id="slider-title">
           ${ title }
