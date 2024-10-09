@@ -1,10 +1,8 @@
 {# Layout where user needs to set headlines and wysiwyg #}
 {% extends "fullpage-html.njk" %}
 {% block main %}
-  <div class="page__body-top">
-    <div class="container">
-      {% include "partials/page-header.njk" %}
-    </div>
-    {{ content | safe }}
+  <div class="container">
+    {% include "partials/page-header.njk" %}
   </div>
+  {{ content | safe }}
 {% endblock %}
