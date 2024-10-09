@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+	{% include "partials/head.njk" %}
+	<body class="page page--fullscreen">
+		{% include "partials/fullpage-header.njk" %}
+		<main id="main" class="page__body">
+			{% block main %}
+				{{ content | safe }}
+			{% endblock %}
+		</main>
+		{% include "partials/footer.njk" %}
+		{% include "partials/scripts.njk" %}
+		{% block scripts %}{% endblock %}
+	</body>
+</html>

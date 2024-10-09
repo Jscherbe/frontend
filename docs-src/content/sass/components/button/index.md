@@ -33,7 +33,7 @@ Module Settings
 
 ``` scss
 $config: (
-  "icon-margin" : 1em
+  "icon-margin" : 0.5em
 );
 ```
   

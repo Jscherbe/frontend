@@ -65,6 +65,7 @@ $config: (
     width: get("size");
     height: get("size");
     transform-origin: center;
+    vertical-align: bottom;
   }
 
   // Solid icons
