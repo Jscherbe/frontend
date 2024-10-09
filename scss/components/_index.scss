@@ -30,6 +30,7 @@
 @forward "menu-stack" as menu-stack-*;
 @forward "scroll-slider" as scroll-slider-*;
 @forward "skip-link" as skip-link-*;
+@forward "slider" as slider-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
 @forward "placeholder-block" as placeholder-block-*;
@@ -66,6 +67,7 @@
 @use "menu-stack";
 @use "scroll-slider";
 @use "skip-link";
+@use "slider";
 @use "tile-grid";
 @use "tile-button";
 @use "placeholder-block";
@@ -103,6 +105,7 @@ $all-includes: (
   "menu-stack",
   "scroll-slider",
   "skip-link",
+  "slider",
   "tile-grid",
   "tile-button",
   "placeholder-block",
@@ -224,6 +227,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "skip-link")) {
     @include skip-link.styles;
+  }
+  @if (list.index($includes, "slider")) {
+    @include slider.styles;
   }
   @if (list.index($includes, "tile-grid")) {
     @include tile-grid.styles;

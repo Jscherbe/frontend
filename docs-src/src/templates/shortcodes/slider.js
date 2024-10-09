@@ -7,7 +7,7 @@ export default function(
     let cardContent = ``;
     for(let i = cards; i > 0; i--) {
       cardContent = cardContent + `
-          <li class="site-slider__slide " data-ulu-slider-slide>
+          <li class="slider__slide " data-ulu-slider-slide>
             ${ card(cards - i + 1) } 
           </li>
         `;
@@ -20,10 +20,10 @@ export default function(
           </h2>
         </div>
         <div class="slider-section-layout__slides container no-padding-top">
-          <div class="site-slider site-slider--small" data-ulu-slider="{&quot;transitionFade&quot;:false}">
-            <div class="site-slider__control-context" data-ulu-slider-control-context>
-              <div class="site-slider__track-crop" data-ulu-slider-track-container>
-                <ul class="site-slider__track" data-ulu-slider-track>
+          <div class="slider slider--small" data-ulu-slider="{&quot;transitionFade&quot;:false}">
+            <div class="slider__control-context" data-ulu-slider-control-context>
+              <div class="slider__track-crop" data-ulu-slider-track-container>
+                <ul class="slider__track" data-ulu-slider-track>
                   ${ cardContent }
                 </ul>
               </div>

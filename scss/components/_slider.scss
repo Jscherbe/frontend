@@ -1,0 +1,191 @@
+////
+/// @group slider
+////
+
+@use "sass:map";
+
+@use "../color";
+@use "../utils";
+@use "../breakpoint";
+@use "../selector";
+
+/// Module Settings
+/// @todo
+
+$config: (
+  "background-color" : transparent,
+  "margin-top" : 1rem,
+  "margin-bottom" : 3rem,
+  "padding-top" : 0,
+  "padding-top-small" : 0,
+  "padding-bottom" : 0,
+  "padding-bottom-small" : 0,
+  "button-size" : 3rem,
+  "button-size-small" : false,
+  "button-font-size" : 1.35rem,
+  "button-font-size-small" : false,
+  "button-color" : color.get("link"),
+  "button-border" : 2px solid color.get("link"),
+  "button-border-radius" : 50%,
+  "button-background-color" : transparent,
+  "button-color-hover" : white,
+  "button-border-color-hover" :  color.get("link:hover"),
+  "button-background-color-hover" : color.get("link:hover"),
+  "button-icon-offset-x" : false,
+  "button-icon-offset-y" : false,
+  "button-margin" : 0.75rem,
+  "button-margin-small" : 0.75rem,
+  "dot-size" :  1rem,
+  "dot-border-radius" : 50%,
+  "dot-background-color" : transparent,
+  "dot-border-width" : 2px,
+  "dot-border-color" : color.get("link"),
+  "dot-border-color-hover" : color.get("link"),
+  "dot-background-color-hover" : color.get("link"),
+  "dot-background-color-selected" : color.get("link"),
+  "dot-border-color-selected" : color.get("link"),
+  "breakpoint" : "small"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss - General example, replace module-name with module's name
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, 'slider [config]');
+}
+
+/// Prints modal component styles
+/// @example scss
+///  @include ulu.component-slider-styles();
+
+@mixin styles {
+  $prefix: selector.class("slider");
+  $prefix-capital: selector.class("Slider");
+  $slide-padding-x: get("button-size") + get("button-margin");
+  #{ $prefix } {
+    position: relative; // for controls
+    background-color: get("background-color");
+    margin: get("margin-top") 0 get("margin-bottom") 0;
+    #{ $prefix }__track,
+    #{ $prefix-capital }__controls,
+    #{ $prefix-capital }__nav {
+      list-style: none !important;
+      padding-left: 0;
+    }
+    #{ $prefix-capital }__control-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: get("button-color");
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: get("button-size");
+      height: get("button-size");
+      font-size: get("button-font-size");
+      background-color: get("button-background-color");
+      border: get("button-border");
+      border-radius: get("button-border-radius");
+      &:hover {
+        background-color: get("button-background-color-hover");
+        border-color: get("button-border-color-hover");
+        color: get("button-color-hover");
+      }
+      @if (get("button-size") or get("button-font-size")) {
+        @include breakpoint.max(get("breakpoint")) {
+          width: get("button-size-small");
+          height: get("button-size-small");
+          font-size: get("button-font-size-small");
+        }
+      }
+    }
+    @if get("button-icon-offset-y") {
+      #{ $prefix-capital }__control-icon {
+        margin-top: get("button-icon-offset-y");
+      }
+    }
+    #{ $prefix-capital }__control-button--previous {
+      left: 0;
+      @if get("button-icon-offset-x")  {
+        #{ $prefix-capital }__control-icon {
+          margin-left: get("button-icon-offset-x");
+          
+        }
+      }
+    }
+    #{ $prefix-capital }__control-button--next {
+      right: 0;
+      @if get("button-icon-offset-x")  {
+        #{ $prefix-capital }__control-icon {
+          margin-right: get("button-icon-offset-x");
+        }
+      }
+    }
+    #{ $prefix-capital }__nav {
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 0.5rem 0.15rem;
+      }
+    }
+    #{ $prefix-capital }__nav-button {
+      display: block;
+      width: get("dot-size");
+      height: get("dot-size");
+      background-color: get("dot-background-color");
+      border: get("dot-border-width") solid get("dot-border-color");
+      border-radius: get("dot-border-radius");
+      &:hover {
+        background-color: get("dot-background-color-hover");
+      }
+    }
+    #{ $prefix-capital }__nav-button--active,
+    #{ $prefix-capital }__nav-button--active:hover {
+      background-color: get("dot-background-color-selected");
+      border-color: get("dot-border-color-selected");
+    }
+    #{ $prefix-capital }__control-button,
+    #{ $prefix-capital }__nav-button {
+      transition-property: color, background-color, border-color;
+      transition-duration: 300ms;
+    }
+  }
+  #{ $prefix }__title {
+    margin-top: -1.5rem !important;
+    margin-bottom: 1rem !important;
+    padding-bottom: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  }
+  #{ $prefix }__track {
+    #{ $prefix }--vertical-center & {
+      align-items: center;
+    }
+  }
+  // Options inner container to limit the controls to the just the track aria
+  // in order to exclude the dots/nav from the positioning of the controls
+  #{ $prefix }__control-context {
+    position: relative;
+  }
+  #{ $prefix }__slide {
+    margin: 0;
+    padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
+    @if (get("button-size-small")) {
+      @include breakpoint.max(get("breakpoint")) {
+        $bp-slide-padding: get("button-size-small") + get("button-margin-small");
+        padding: get("padding-top-small") $bp-slide-padding get("padding-bottom-small") $bp-slide-padding;
+      }
+    }
+  }
+}
