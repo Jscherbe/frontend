@@ -1,6 +1,8 @@
 import * as ulu from "../../../js/index.js";
 import "./search.js";
 
+window.Ulu = ulu;
+
 ulu.ui.page.init();
 ulu.ui.grid.init();
 ulu.ui.popover.init();

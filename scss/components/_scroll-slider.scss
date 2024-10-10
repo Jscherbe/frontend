@@ -109,7 +109,6 @@ $config: (
     max-width: 90vw;
     scroll-snap-align: start;
     $container: layout.get-container("container", "small");
-    @debug $container;
     @include breakpoint.max("small") {
       $pad: layout.get-container-padding-x("container", "small");
       max-width: none;
