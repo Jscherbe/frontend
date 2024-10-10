@@ -64,9 +64,11 @@ $all-includes: (
   "scroll-slider",
   "skip-link",
   "slider",
+  "image-grid",
   "tile-grid",
   "tile-button",
   "placeholder-block",
+  "pull-quote",
   "wysiwyg",
 );
 ```

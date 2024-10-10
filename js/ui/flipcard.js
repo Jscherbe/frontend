@@ -1,5 +1,5 @@
 /**
- * @module flipcard
+ * @module ui/flipcard
  */
 
 import { trimWhitespace } from "@ulu/utils/string.js";

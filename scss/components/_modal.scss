@@ -328,7 +328,7 @@ $config: (
       padding-right: get("resizer-width");  
     }
   }
-  #{ $prefix }--video {
+  #{ $prefix }--body-fills {
     #{ $prefix }__header {
       border-bottom: none;
     }

@@ -1,13 +1,12 @@
 ---
 title: Modals
-layout: default
 intro: Modals, also known as dialogs or modal windows, are user interface elements that appear on top of the main application window. They typically have a dimmed background to draw focus to the modal itself, and often prevent users from interacting with the underlying content until the modal is closed
 
 ---
 
-## Examples
+<h2 class="h2">Examples</h2>
 
-### Default
+<h3 class="h3">Default</h3>
 
 This is the default modal, being created from markup in the body on page load by modal builder. The default modal is centered.
 
@@ -26,7 +25,44 @@ This is the default modal, being created from markup in the body on page load by
   This is the modal body <button data-ulu-dialog-close>Close</button>
 </div>
 
-### Positions
+<h3 class="h3">Youtube Videos Automatically Pause</h3>
+
+If option for modal builder pauseYoutubeVideos is true (default true)
+
+<button class="button" data-ulu-dialog-trigger="modal-id-youtube">Open Modal</button>
+
+<div 
+  id="modal-id-youtube" 
+  data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "print" : true,
+    "bodyFills" : true,
+    "documentEnd" : true
+  }' 
+  hidden
+>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/y0sF5xhGreA?si=aRdiK0Xzf3zvHP_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<button class="button" data-ulu-dialog-trigger="modal-id-native-video">Open Modal (native video)</button>
+
+<div 
+  id="modal-id-native-video" 
+  data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "print" : true,
+    "bodyFills" : true,
+    "documentEnd" : true
+  }' 
+  hidden
+>
+  <video controls class="full-width">
+    <source src="/assets/placeholder/4065947-uhd_4096_2160_25fps.mp4" type="video/mp4" />
+  </video>
+</div>
+
+
+<h3 class="h3">Positions</h3>
 
 The available positions are top, bottom, left, right and center (default). Left and right are sidebard (full height), while top, bottom and center are all min height (can be configured)
 
@@ -40,7 +76,7 @@ The available positions are top, bottom, left, right and center (default). Left 
   class="wysiwyg"
   data-ulu-modal-builder='{ 
     "title" : "Test Title", 
-    "position" : "left",
+    "position" : "left"
   }' 
   hidden
 >
@@ -51,7 +87,7 @@ The available positions are top, bottom, left, right and center (default). Left 
   class="wysiwyg"
   data-ulu-modal-builder='{ 
     "title" : "Test Title", 
-    "position" : "right",
+    "position" : "right"
   }' 
   hidden
 >
@@ -88,7 +124,7 @@ The available positions are top, bottom, left, right and center (default). Left 
   </p>
 </div>
 
-## Resizing
+<h2 class="h2">Resizing</h2>
 
 The modals setup with the builder allow resizing. Center, top and bottom modals will use the native resize handle (resize in all directions). The left/right sidebar type modals will be given a drag handle and only able to extend their width (since they already span the full screen height). To enable this behavior pass `{ "allowResize" : true }` in builder options (data attribute)
 
@@ -120,7 +156,7 @@ The modals setup with the builder allow resizing. Center, top and bottom modals 
   Test
 </div>
 
-## Click Outside
+<h2 class="h2">Click Outside</h2>
 
 By default clicking outside the modal will close it, this can be disabled by passing `{ "clickOutsideCloses" : false }`
 
@@ -139,7 +175,7 @@ By default clicking outside the modal will close it, this can be disabled by pas
 </div>
 
 
-## No Backdrop
+<h2 class="h2">No Backdrop</h2>
 
 Remove the backdrop by passing  `{ "noBackdrop" : true }` to the builder
 

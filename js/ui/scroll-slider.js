@@ -1,5 +1,5 @@
 /**
- * @module scroll-slider
+ * @module ui/scroll-slider
  */
 
 import { OverflowScroller } from "./overflow-scroller.js";

@@ -1,10 +1,10 @@
 /**
- * @module dialog
+ * @module ui/dialog
  */
 
 import { getName } from "../events/index.js";
 import { getDatasetJson, wasClickOutside } from "../utils/dom.js";
-
+import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
 /**
  * Default data attributes
  */
@@ -38,6 +38,10 @@ export const defaults = {
    * Requires styling that reduces any padding/border on dialog
    */
   clickOutsideCloses: true,
+  /**
+   * Whether or not to pause videos when dialog closes (currently just youtube and native)
+   */
+  pauseVideos: true,
 };
 
 
@@ -107,6 +111,9 @@ export function setupDialog(dialog) {
   if (options.documentEnd) {
     document.body.appendChild(dialog);
   }
+  if (options.pauseVideos) {
+    prepVideos(dialog);
+  }
 
   function handleClicks(event) {
     const { target } = event;
@@ -115,6 +122,9 @@ export function setupDialog(dialog) {
                            target === dialog && 
                            wasClickOutside(dialog, event);
     if (closeFromOutside || closeFromButton) {
+      if (options.pauseVideos) {
+        pauseVideos(dialog);
+      }
       dialog.close();
     }
   }
@@ -130,4 +140,18 @@ export function getDialogOptions(dialog) {
   return Object.assign({}, currentDefaults, options);
 }
 
+/**
+ * Pause native and youtube videos for a given dialog
+ */
+function prepVideos(dialog) {
+  prepYoutubeVideos(dialog);
+}
+/**
+ * Prep videos to be paused for a given dialog
+ */
+function pauseVideos(dialog) {
+  pauseYoutubeVideos(dialog);
+  const nativeVideos = dialog.querySelectorAll("video");
+  nativeVideos.forEach(video => video.pause());
+}
 

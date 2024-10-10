@@ -1,5 +1,5 @@
 /**
- * @module modal-builder
+ * @module ui/modal-builder
  */
 
 // Note this needs to be run before dialogs are initialized!
@@ -30,7 +30,7 @@ export const defaults = {
   documentEnd: true,
   allowResize: false,
   position: "center",
-  video: false,
+  bodyFills: false,
   noBackdrop: false,
   size: "default",
   print: false,
@@ -58,7 +58,7 @@ export const defaults = {
       `modal--${ config.size }`,
       `modal--${ config.allowResize ? "resize" : "no-resize" }`,
       ...(!config.title ? ["modal--no-header"] : []),
-      ...(config.video ? ["modal--video"] : []), 
+      ...(config.bodyFills ? ["modal--body-fills"] : []), 
       ...(config.noBackdrop ? ["modal--no-backdrop"] : []), 
       ...(config.noMinHeight ? ["modal--no-min-height"] : [] ),
       ...(config.class ? [config.class] : []), 

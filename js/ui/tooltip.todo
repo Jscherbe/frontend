@@ -1,6 +1,0 @@
-Todos:
-  ☐ Is there any benefit in Tooltip class? Like collapsible
-    * Class allows user to modify behaviors?
-    * Class allows us to build ontop of tooltip 
-  ☐ Finish refactoring this with floating ui
-  ☐ Think that we should have dedicated elements for each tooltip instead of singular

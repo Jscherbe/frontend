@@ -1,3 +1,8 @@
+/**
+ * @module ui/proxy-click
+ */
+
+
 // Used for cards and things that look like they should be clickable even 
 // though the link in their content is the only clickable element. This way the 
 // entire cards content doesn't need to be in a link (which isn't accessible)

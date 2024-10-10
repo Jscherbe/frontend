@@ -1,0 +1,66 @@
+////
+/// @group image-grid
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../breakpoint";
+
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "breakpoint": "small",
+  "gap":        3px,
+  "min-width":  math.div(100%, 3)
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "image-grid [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+
+  $prefix: selector.class("image-grid");
+  $gap: get("gap");
+
+  #{ $prefix } {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1px;
+    overflow: hidden;
+  }
+  #{ $prefix }__item {
+    // Have to use borders vs flexbox gap (adds to percentages) @important
+    border-bottom: $gap solid transparent;
+    border-top: $gap solid transparent;
+    @include breakpoint.min(get("breakpoint")) {
+      border: $gap solid transparent;
+      flex: 1 1;
+      min-width: get("min-width");
+    }
+    > img {
+      width: 100%;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 /**
- * @module grid
+ * @module ui/grid
  */
 
 import { setPositionClasses } from "../utils/dom.js";

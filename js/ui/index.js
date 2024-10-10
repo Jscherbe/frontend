@@ -1,3 +1,4 @@
+export * as page from "./page.js";
 export * as breakpoints from "./breakpoints.js";
 export * as collapsible from "./collapsible.js";
 export * as modalBuilder from "./modal-builder.js";

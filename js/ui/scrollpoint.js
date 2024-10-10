@@ -1,5 +1,5 @@
 /**
- * @module scrollpoint 
+ * @module ui/scrollpoint 
  */
 
 // Module that uses intersection observer to add scrollpoint like behavior.

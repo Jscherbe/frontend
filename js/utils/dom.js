@@ -1,4 +1,9 @@
-const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
+/**
+ * @module utils/dom
+ */
+
+
+export const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
 
 /**
  * Get an elements JSON dataset value
@@ -11,7 +16,7 @@ export function getDatasetJson(element, key) {
   try {
     return JSON.parse(passed);
   } catch (error) {
-    console.error(`Error getting JSON from dataset (${ key })\n`, element, error);
+    console.error(`Error getting JSON from dataset (${ key }) -- "${ passed }"\n`, element, error);
     return {};
   }
 }
@@ -104,3 +109,14 @@ export function getElement(target, context = document) {
     return null;
   }
 } 
+
+/**
+ * Sets a CSS custom property equal to the scrollbar width
+ * @param {Node} element The element that is the child of a scrollabel container
+ * @param {Node} container The container that can be scrolled
+ * @param {Stirng} propName Custom property to set
+ */
+export function addScrollbarProperty(element = document.body, container = window, propName = "--ulu-scrollbar-width") {
+  const scrollbarWidth = container.innerWidth - element.clientWidth;
+  element.style.setProperty(propName, `${ scrollbarWidth }px`);
+}
