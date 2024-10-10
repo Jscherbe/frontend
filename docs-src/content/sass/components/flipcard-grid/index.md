@@ -33,7 +33,7 @@ Module Settings
 
 ``` scss
 $config: (
-  
+  "gutter" : 1rem
 );
 ```
   
@@ -160,7 +160,7 @@ Prints adaptive spacing component styles
 - **Group:** flipcard-grid
 - **Type:** mixin
 - **Lines (comments):** 44-46
-- **Lines (code):** 48-71
+- **Lines (code):** 48-69
     </details>
     
 
@@ -175,6 +175,11 @@ Prints adaptive spacing component styles
   
 
       
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
+  
   
 
 ## Functions

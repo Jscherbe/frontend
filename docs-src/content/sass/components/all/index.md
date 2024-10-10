@@ -79,8 +79,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 80-81
-- **Lines (code):** 83-119
+- **Lines (comments):** 84-85
+- **Lines (code):** 87-125
     </details>
     
 
@@ -111,8 +111,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 121-122
-- **Lines (code):** 124-124
+- **Lines (comments):** 127-128
+- **Lines (code):** 130-130
     </details>
     
   
@@ -144,8 +144,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 126-128
-- **Lines (code):** 130-133
+- **Lines (comments):** 132-134
+- **Lines (code):** 136-139
     </details>
     
 
@@ -186,8 +186,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 135-136
-- **Lines (code):** 138-140
+- **Lines (comments):** 141-142
+- **Lines (code):** 144-146
     </details>
     
 
@@ -227,8 +227,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 142-146
-- **Lines (code):** 148-258
+- **Lines (comments):** 148-152
+- **Lines (code):** 154-270
     </details>
     
 

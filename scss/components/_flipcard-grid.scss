@@ -14,7 +14,7 @@
 
 
 $config: (
-  
+  "gutter" : 1rem
 );
 
 /// Change modules $config
@@ -47,14 +47,12 @@ $config: (
 
 @mixin styles {
 
-  $gutter: 1rem;
-
   .flipcard-grid {
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: 1fr;
     justify-items: stretch;
-    gap: $gutter;
+    gap: get("gutter");
     list-style: none !important; // B/c in Editor
     padding: 0 !important; // B/c in Editor
     @media (min-width: 40rem) {

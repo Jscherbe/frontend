@@ -33,7 +33,15 @@ Module Settings
 
 ``` scss
 $config: (
-  
+  "background-color" : white,
+  "border" : 1px solid black,
+  "border-radius" : 6px,
+  "border-color-hover" : black,
+  "control-button-border-focus" : 2px solid blue,
+  "icon-color" : yellow,
+  "anim-duration" : 430ms,
+  "anim-delay" : 200ms,
+  "padding" : 1.5rem,
 );
 ```
   
@@ -44,7 +52,7 @@ $config: (
 - **Group:** flipcard
 - **Type:** variable
 - **Lines (comments):** 12-13
-- **Lines (code):** 15-18
+- **Lines (code):** 15-27
     </details>
     
   
@@ -75,8 +83,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 20-22
-- **Lines (code):** 24-26
+- **Lines (comments):** 29-31
+- **Lines (code):** 33-35
     </details>
     
 
@@ -117,8 +125,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 28-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 37-39
+- **Lines (code):** 41-43
     </details>
     
 
@@ -159,8 +167,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-193
+- **Lines (comments):** 53-55
+- **Lines (code):** 57-197
     </details>
     
 
@@ -175,6 +183,11 @@ Prints adaptive spacing component styles
   
 
       
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
+  
   
 
 ## Functions
@@ -203,8 +216,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 45-47
+- **Lines (code):** 49-51
     </details>
     
 

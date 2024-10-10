@@ -13,8 +13,17 @@
 /// @type Map
 
 
+
 $config: (
-  
+  "background-color" : white,
+  "border" : 1px solid black,
+  "border-radius" : 6px,
+  "border-color-hover" : black,
+  "control-button-border-focus" : 2px solid blue,
+  "icon-color" : yellow,
+  "anim-duration" : 430ms,
+  "anim-delay" : 200ms,
+  "padding" : 1.5rem,
 );
 
 /// Change modules $config
@@ -46,29 +55,24 @@ $config: (
 ///  @include ulu.component-adaptive-spacing-styles();
 
 @mixin styles {
-  $anim-duration: 430ms;
-  $anim-delay: 200ms;
-  $padding: 1.5rem;
-
   .flipcard {
     height: 100%;
     // border: element.get-rule-style("light");
-    background-color: white;
+    background-color: get("background-color");
     line-height: 1.4;
     overflow: hidden;
     position: relative;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 6px;
+    border: get("border");
+    border-radius: get("border-radius");
     &.Flipcard:hover {
-      border-color: black;
+      border-color: get("border-color-hover");
     }
     .Flipcard__control-button:focus {
-      border: 2px solid blue;
+      border: get("control-button-border-focus");
     }
   }
   .flipcard__icon {
-    color: yellow;
+    color: get('icon-color');
     display: block;
     margin-top: 1.25rem;
   }
@@ -91,15 +95,15 @@ $config: (
         transform: scale(1.15);
       }
       .flipcard__front-content {
-        transform: translatey(-($padding * 0.5));
+        transform: translatey(-(get('padding') * 0.5));
       }
     }
     [data-flipcard-state="open"] & {
       opacity: 0;
-      animation: flipcard-front-close $anim-duration ease-out forwards;
+      animation: flipcard-front-close get('anim-duration') ease-out forwards;
     }
     [data-flipcard-state="closed"] & {
-      animation: flipcard-front-open $anim-duration ease-in-out forwards;
+      animation: flipcard-front-open get('anim-duration') ease-in-out forwards;
     }
   }
   .flipcard__front-image,
@@ -121,7 +125,7 @@ $config: (
   .flipcard__front-content {
     position: relative;
     z-index: 2;
-    padding: $padding;
+    padding: get('padding');
     align-self: end;
     transition: transform 350ms ease-in-out;
     // So that it doesn't ride up when the user hovers
@@ -129,20 +133,20 @@ $config: (
       content: '';
       display: block;
       position: absolute;
-      top: -$padding;
-      bottom: -$padding;
-      left: -$padding;
-      right: -$padding;
+      top: -get('padding');
+      bottom: -get('padding');
+      left: -get('padding');
+      right: -get('padding');
       background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
       z-index: -1;
     }
   }
   .flipcard__back {
     // background-color: red;
-    padding: $padding;
+    padding: get('padding');
     justify-content: flex-end;
     [data-flipcard-state="open"] & {
-      animation: flipcard-back-open $anim-duration ease-out forwards;
+      animation: flipcard-back-open get('anim-duration') ease-out forwards;
       @media (prefers-reduced-motion) {
         animation: fadeIn 430ms ease-in-out;
       }
