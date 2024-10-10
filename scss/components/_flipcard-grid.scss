@@ -1,0 +1,71 @@
+////
+/// @group flipcard-grid
+////
+/// Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+
+@use "sass:map";
+
+@use "../breakpoint";
+@use "../utils";
+@use "../selector";
+
+/// Module Settings
+/// @type Map
+
+
+$config: (
+  
+);
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Set sizes map
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "flipcard-grid [config]");
+}
+
+/// Prints adaptive spacing component styles
+/// @example scss
+///  @include ulu.component-adaptive-spacing-styles();
+
+@mixin styles {
+
+  $gutter: 1rem;
+
+  .flipcard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    justify-items: stretch;
+    gap: $gutter;
+    list-style: none !important; // B/c in Editor
+    padding: 0 !important; // B/c in Editor
+    @media (min-width: 40rem) {
+      grid-template-columns: 1fr 1fr;
+    }
+    // @media (min-width: 60rem) {
+    //   grid-template-columns: 1fr 1fr 1fr;
+    // }
+  }
+  .flipcard-grid__item {
+    margin: 0 !important; // B/c in Editor
+    // height: 150%;
+  }
+}

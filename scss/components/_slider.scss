@@ -10,7 +10,39 @@
 @use "../selector";
 
 /// Module Settings
-/// @todo
+/// @type Map
+/// @prop {Color} background-color [transparent]
+/// @prop {Dimension} margin-top [1rem]
+/// @prop {Dimension} margin-bottom [3rem]
+/// @prop {Dimension} padding-top [0]
+/// @prop {Dimension} padding-top-small [0]
+/// @prop {Dimension} padding-bottom [0]
+/// @prop {Dimension} padding-bottom-small [0]
+/// @prop {Dimension} button-size [3rem]
+/// @prop {Dimension} button-size-small [false]
+/// @prop {Dimension} button-font-size [1.35rem]
+/// @prop {Dimension} button-font-size-small [false]
+/// @prop {Color} button-color [color.get("link")]
+/// @prop {CssValue} button-border [2px solid color.get("link")]
+/// @prop {Dimension} button-border-radius [50%]
+/// @prop {Color} button-background-color [transparent]
+/// @prop {Color} button-color-hover [white]
+/// @prop {Color} button-border-color-hover  [color.get("link:hover")]
+/// @prop {Color} button-background-color-hover [color.get("link:hover")]
+/// @prop {Dimension} button-icon-offset-x [false]
+/// @prop {Dimension} button-icon-offset-y [false]
+/// @prop {} button-margin [0.75rem]
+/// @prop {} button-margin-small [0.75rem]
+/// @prop {} dot-size  [1rem]
+/// @prop {} dot-border-radius [50%]
+/// @prop {} dot-background-color [transparent]
+/// @prop {} dot-border-width [2px]
+/// @prop {} dot-border-color [color.get("link")]
+/// @prop {} dot-border-color-hover [color.get("link")]
+/// @prop {} dot-background-color-hover [color.get("link")]
+/// @prop {} dot-background-color-selected [color.get("link")]
+/// @prop {} dot-border-color-selected [color.get("link")]
+/// @prop {} breakpoint ["small"]
 
 $config: (
   "background-color" : transparent,
@@ -70,19 +102,19 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("slider");
-  $prefix-capital: selector.class("Slider");
+  $prefix-plugin: selector.class("Slider");
   $slide-padding-x: get("button-size") + get("button-margin");
   #{ $prefix } {
     position: relative; // for controls
     background-color: get("background-color");
     margin: get("margin-top") 0 get("margin-bottom") 0;
     #{ $prefix }__track,
-    #{ $prefix-capital }__controls,
-    #{ $prefix-capital }__nav {
+    #{ $prefix-plugin }__controls,
+    #{ $prefix-plugin }__nav {
       list-style: none !important;
       padding-left: 0;
     }
-    #{ $prefix-capital }__control-button {
+    #{ $prefix-plugin }__control-button {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -111,35 +143,35 @@ $config: (
       }
     }
     @if get("button-icon-offset-y") {
-      #{ $prefix-capital }__control-icon {
+      #{ $prefix-plugin }__control-icon {
         margin-top: get("button-icon-offset-y");
       }
     }
-    #{ $prefix-capital }__control-button--previous {
+    #{ $prefix-plugin }__control-button--previous {
       left: 0;
       @if get("button-icon-offset-x")  {
-        #{ $prefix-capital }__control-icon {
+        #{ $prefix-plugin }__control-icon {
           margin-left: get("button-icon-offset-x");
           
         }
       }
     }
-    #{ $prefix-capital }__control-button--next {
+    #{ $prefix-plugin }__control-button--next {
       right: 0;
       @if get("button-icon-offset-x")  {
-        #{ $prefix-capital }__control-icon {
+        #{ $prefix-plugin }__control-icon {
           margin-right: get("button-icon-offset-x");
         }
       }
     }
-    #{ $prefix-capital }__nav {
+    #{ $prefix-plugin }__nav {
       display: flex;
       justify-content: center;
       li {
         margin: 0.5rem 0.15rem;
       }
     }
-    #{ $prefix-capital }__nav-button {
+    #{ $prefix-plugin }__nav-button {
       display: block;
       width: get("dot-size");
       height: get("dot-size");
@@ -150,13 +182,13 @@ $config: (
         background-color: get("dot-background-color-hover");
       }
     }
-    #{ $prefix-capital }__nav-button--active,
-    #{ $prefix-capital }__nav-button--active:hover {
+    #{ $prefix-plugin }__nav-button--active,
+    #{ $prefix-plugin }__nav-button--active:hover {
       background-color: get("dot-background-color-selected");
       border-color: get("dot-border-color-selected");
     }
-    #{ $prefix-capital }__control-button,
-    #{ $prefix-capital }__nav-button {
+    #{ $prefix-plugin }__control-button,
+    #{ $prefix-plugin }__nav-button {
       transition-property: color, background-color, border-color;
       transition-duration: 300ms;
     }

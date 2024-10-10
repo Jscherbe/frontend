@@ -13,3 +13,4 @@ ulu.ui.print.init();
 ulu.ui.printDetails.init();
 ulu.ui.scrollSlider.init();
 ulu.ui.slider.init();
+ulu.ui.flipcard.init();

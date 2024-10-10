@@ -48,6 +48,8 @@ $all-includes: (
   "list-unordered",
   "list-ordered",
   "fill-context",
+  "flipcard",
+  "flipcard-grid",
   "popover",
   "tabs",
   "modal",
@@ -75,8 +77,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 76-77
-- **Lines (code):** 79-113
+- **Lines (comments):** 80-81
+- **Lines (code):** 83-119
     </details>
     
 
@@ -107,8 +109,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 115-116
-- **Lines (code):** 118-118
+- **Lines (comments):** 121-122
+- **Lines (code):** 124-124
     </details>
     
   
@@ -140,8 +142,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 120-122
-- **Lines (code):** 124-127
+- **Lines (comments):** 126-128
+- **Lines (code):** 130-133
     </details>
     
 
@@ -182,8 +184,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 129-130
-- **Lines (code):** 132-134
+- **Lines (comments):** 135-136
+- **Lines (code):** 138-140
     </details>
     
 
@@ -223,8 +225,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 136-140
-- **Lines (code):** 142-246
+- **Lines (comments):** 142-146
+- **Lines (code):** 148-258
     </details>
     
 

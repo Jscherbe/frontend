@@ -17,6 +17,8 @@
 @forward "list-unordered" as list-unordered-*;
 @forward "list-ordered" as list-ordered-*;
 @forward "fill-context" as fill-context-*;
+@forward "flipcard" as flipcard-*;
+@forward "flipcard-grid" as flipcard-grid-*;
 @forward "popover" as popover-*;
 @forward "tabs" as tabs-*;
 @forward "modal" as modal-*;
@@ -54,6 +56,8 @@
 @use "list-unordered";
 @use "list-ordered";
 @use "fill-context";
+@use "flipcard";
+@use "flipcard-grid";
 @use "popover";
 @use "tabs";
 @use "modal";
@@ -92,6 +96,8 @@ $all-includes: (
   "list-unordered",
   "list-ordered",
   "fill-context",
+  "flipcard",
+  "flipcard-grid",
   "popover",
   "tabs",
   "modal",
@@ -188,6 +194,12 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "fill-context")) {
     @include fill-context.styles;
+  }
+  @if (list.index($includes, "flipcard")) {
+    @include flipcard.styles;
+  }
+  @if (list.index($includes, "flipcard-grid")) {
+    @include flipcard-grid.styles;
   }
   @if (list.index($includes, "popover")) {
     @include popover.styles;

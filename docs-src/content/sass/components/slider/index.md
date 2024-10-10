@@ -20,7 +20,7 @@ sassdocGroupName: slider
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
@@ -74,14 +74,49 @@ $config: (
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-48
+- **Lines (comments):** 12-45
+- **Lines (code):** 47-80
     </details>
     
 
-#### Todos
+#### Map Properties
 
-- 
+
+|Name|Type|Default|
+|:--|:--|:--|
+|background-color|Color|transparent|
+|margin-top|Dimension|1rem|
+|margin-bottom|Dimension|3rem|
+|padding-top|Dimension|0|
+|padding-top-small|Dimension|0|
+|padding-bottom|Dimension|0|
+|padding-bottom-small|Dimension|0|
+|button-size|Dimension|3rem|
+|button-size-small|Dimension|false|
+|button-font-size|Dimension|1.35rem|
+|button-font-size-small|Dimension|false|
+|button-color|Color|color.get("link")|
+|button-border|CssValue|2px solid color.get("link")|
+|button-border-radius|Dimension|50%|
+|button-background-color|Color|transparent|
+|button-color-hover|Color|white|
+|button-border-color-hover|Color|color.get("link:hover")|
+|button-background-color-hover|Color|color.get("link:hover")|
+|button-icon-offset-x|Dimension|false|
+|button-icon-offset-y|Dimension|false|
+|button-margin|Map|0.75rem|
+|button-margin-small|Map|0.75rem|
+|dot-size|Map|1rem|
+|dot-border-radius|Map|50%|
+|dot-background-color|Map|transparent|
+|dot-border-width|Map|2px|
+|dot-border-color|Map|color.get("link")|
+|dot-border-color-hover|Map|color.get("link")|
+|dot-background-color-hover|Map|color.get("link")|
+|dot-background-color-selected|Map|color.get("link")|
+|dot-border-color-selected|Map|color.get("link")|
+|breakpoint|Map|"small"|
+
     
   
 
@@ -111,8 +146,8 @@ Change modules $config
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 50-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 82-85
+- **Lines (code):** 87-89
     </details>
     
 
@@ -164,8 +199,8 @@ Prints modal component styles
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-191
+- **Lines (comments):** 99-101
+- **Lines (code):** 103-223
     </details>
     
 
@@ -213,8 +248,8 @@ Get a config option
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** function
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-97
     </details>
     
 

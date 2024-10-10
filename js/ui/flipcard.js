@@ -4,6 +4,8 @@
 
 import { trimWhitespace } from "@ulu/utils/string.js";
 import { log, logError } from "../utils/class-logger.js";
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
 const debugMode = false; // Global dev debug
 
 export class Flipcard {
@@ -124,6 +126,57 @@ export class Flipcard {
       z-index: ${ zIndex }
     `;
   }
+}
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-flipcard-init",
+  flipcard: "data-ulu-flipcard",
+  front: "data-ulu-flipcard-front",
+  back: "data-ulu-flipcard-back",
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+
+// const containers = document.querySelectorAll('[data-ulu-flipcard]');
+const instances = [];
+
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+export function setup() {
+  const builders = document.querySelectorAll(attrSelectorInitial("flipcard"));
+  builders.forEach(setupFlipcard);
+}
+
+// containers.forEach(init);
+
+function setupFlipcard(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluFlipcard");
+  const config = Object.assign({},  options);
+  const front = container.querySelector(attrSelectorInitial("front"));
+  const back = container.querySelector(attrSelectorInitial("back"));
+  instances.push(new Flipcard(container, front, back, config));
+}
+
+// getDatasetOptionalJson
+function setupSlider(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluFlipcard");
+  const config = Object.assign({},  options);
+  const elements = {
+    track: container.querySelector(attrSelector("track")),
+    controls: container.querySelector(attrSelector("controls"))
+  };
+  // replace with OverflowScroller when finished removing sitescrollslider
+  instances.push(new SiteScrollSlider(elements, config));
 }
 
 /**

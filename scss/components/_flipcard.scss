@@ -1,0 +1,193 @@
+
+////
+/// @group flipcard
+////
+/// Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+
+@use "sass:map";
+@use "sass:math";
+@use "../element";
+@use "../utils";
+
+/// Module Settings
+/// @type Map
+
+
+$config: (
+  
+);
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Set sizes map
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "flipcard [config]");
+}
+
+/// Prints adaptive spacing component styles
+/// @example scss
+///  @include ulu.component-adaptive-spacing-styles();
+
+@mixin styles {
+  $anim-duration: 430ms;
+  $anim-delay: 200ms;
+  $padding: 1.5rem;
+
+  .flipcard {
+    height: 100%;
+    // border: element.get-rule-style("light");
+    background-color: white;
+    line-height: 1.4;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 6px;
+    &.Flipcard:hover {
+      border-color: black;
+    }
+    .Flipcard__control-button:focus {
+      border: 2px solid blue;
+    }
+  }
+  .flipcard__icon {
+    color: yellow;
+    display: block;
+    margin-top: 1.25rem;
+  }
+  .flipcard__front,
+  .flipcard__back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .flipcard__front {
+    // To lay the image out on top of the text
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    grid-template-areas: "flipcard-front";
+    &:hover {
+      .flipcard__front-image {
+        transition-duration: 8000ms;
+        transition-delay: 0;
+        transform: scale(1.15);
+      }
+      .flipcard__front-content {
+        transform: translatey(-($padding * 0.5));
+      }
+    }
+    [data-flipcard-state="open"] & {
+      opacity: 0;
+      animation: flipcard-front-close $anim-duration ease-out forwards;
+    }
+    [data-flipcard-state="closed"] & {
+      animation: flipcard-front-open $anim-duration ease-in-out forwards;
+    }
+  }
+  .flipcard__front-image,
+  .flipcard__front-content {
+    display: block;
+    grid-area: flipcard-front / flipcard-front / flipcard-front / flipcard-front;
+  }
+  .flipcard__front-image {
+    @media (prefers-reduced-motion) {
+      transition: transform 1000ms 200ms ease-out;
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+    }
+  }
+  .flipcard__front-content {
+    position: relative;
+    z-index: 2;
+    padding: $padding;
+    align-self: end;
+    transition: transform 350ms ease-in-out;
+    // So that it doesn't ride up when the user hovers
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -$padding;
+      bottom: -$padding;
+      left: -$padding;
+      right: -$padding;
+      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+      z-index: -1;
+    }
+  }
+  .flipcard__back {
+    // background-color: red;
+    padding: $padding;
+    justify-content: flex-end;
+    [data-flipcard-state="open"] & {
+      animation: flipcard-back-open $anim-duration ease-out forwards;
+      @media (prefers-reduced-motion) {
+        animation: fadeIn 430ms ease-in-out;
+      }
+    }
+  }
+  @keyframes flipcard-back-open {
+    0% {
+      opacity: 0;
+      // transform: scale(0.7);
+      // transform: translatey(100%);
+    }
+    30% {
+      opacity: 0;
+      transform: translatey(100%);
+    }
+    100% {
+      opacity: 1;
+      // transform: scale(1);
+      transform: translatey(0);
+    }
+  }
+  @keyframes flipcard-front-close {
+    0% {
+      opacity: 1;
+      // transform: scale(1);
+    }
+    80% {
+      opacity: 0;
+      // transform: scale(0.7);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes flipcard-front-open {
+    0% {
+      opacity: 0;
+      // transform: scale(0.7);
+    }
+    // 30% {
+    //   opacity: 0;
+    // }
+    100% {
+      opacity: 1;
+      // transform: scale(1);
+    }
+  }
+}
