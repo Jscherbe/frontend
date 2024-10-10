@@ -1,5 +1,5 @@
 /**
- * @module popover
+ * @module ui/popover
  */
 
 import { getName } from "../events/index.js";

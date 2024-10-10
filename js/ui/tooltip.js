@@ -1,5 +1,5 @@
 /**
- * @module tooltip
+ * @module ui/tooltip
  */
 
 import { getName as getEventName } from "../events/index.js";

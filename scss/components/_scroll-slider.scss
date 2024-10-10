@@ -109,7 +109,7 @@ $config: (
     @include breakpoint.max("small") {
       $pad: layout.get-container-padding-x("container", "small");
       max-width: none;
-      flex-basis: calc(100vw - ($pad * 2) - var(--scrollbar-width));
+      flex-basis: calc(100vw - ($pad * 2) - var(--ulu-scrollbar-width));
     }
     // margin-right: 1rem;
   }

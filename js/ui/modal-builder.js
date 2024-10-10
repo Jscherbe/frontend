@@ -1,5 +1,5 @@
 /**
- * @module modal-builder
+ * @module ui/modal-builder
  */
 
 // Note this needs to be run before dialogs are initialized!

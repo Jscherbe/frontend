@@ -1,5 +1,5 @@
 /**
- * @module print-details
+ * @module ui/print-details
  */
 
 import { getName } from "../events/index.js";

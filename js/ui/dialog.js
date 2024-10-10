@@ -1,5 +1,5 @@
 /**
- * @module dialog
+ * @module ui/dialog
  */
 
 import { getName } from "../events/index.js";

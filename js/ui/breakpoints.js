@@ -1,5 +1,5 @@
 /**
- * @module breakpoints
+ * @module ui/breakpoints
  */
 
 // Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints

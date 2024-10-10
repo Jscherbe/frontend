@@ -1,5 +1,5 @@
 /**
- * @module tabs
+ * @module ui/tabs
  */
 
 import AriaTablist from "aria-tablist";

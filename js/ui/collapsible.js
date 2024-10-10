@@ -1,5 +1,5 @@
 /**
- * @module collapsible
+ * @module ui/collapsible
  */
 
 import { getName as getEventName } from "../events/index.js";

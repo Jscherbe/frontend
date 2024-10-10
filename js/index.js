@@ -6,6 +6,5 @@
 //   imported manually
 
 export * as events from "./events/index.js";
-export * as helpers from "./helpers/index.js";
 export * as ui from "./ui/index.js";
 export * as utils from "./utils/index.js";
