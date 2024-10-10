@@ -1,0 +1,95 @@
+////
+/// @group pull-quote
+////
+/// Layout for a pull quote, relies on badge component for image
+
+@use "sass:map";
+@use "sass:meta";
+
+@use "../selector";
+@use "../typography";
+@use "../utils";
+@use "../color";
+
+// Used for function fallback
+$-fallbacks: (
+  "body-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+$config: (
+  "padding-y" : 2em,
+  "quote-mark-enabled" : true,
+  "quote-mark-color" : null,
+  "quote-mark-font-size" : 3.75em,
+  "quote-mark-font-family" : "Georgia",
+  "quote-mark-line-height" : 0.35,
+  "quote-mark-character" : "\201c",
+  "image-margin-top" : 2.5rem,
+  "image-margin-bottom" : 1rem,
+  "name-margin-bottom" : 1rem,
+  "body-line-height" : true,
+  "title-font-style" : italic
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "pull-quote [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  $prefix: selector.class("pull-quote");
+
+  #{ $prefix } {
+    padding: get("padding-y") 0;
+    text-align: center;
+  }
+  #{ $prefix }__body {
+    line-height: get("body-line-height");
+    @if (get("quote-mark-enabled")) {
+      &:before {
+        display: block;
+        position: relative;
+        // content: open-quote;
+        content: get("quote-mark-character");
+        font-family: get("quote-mark-font-family");
+        color: color.get(get("quote-mark-color"));
+        font-size: get("quote-mark-font-size");
+        margin: 0 auto;
+        line-height: get("quote-mark-line-height");
+      }
+    }
+  }
+  #{ $prefix }__author-name {
+    display: block;
+    margin-top: get("name-margin-bottom");
+  }
+  #{ $prefix }__author-title {
+    display: block;
+    font-style: get("title-font-style");
+  }
+  #{ $prefix }__author-image {
+    margin: get("image-margin-top") auto get("image-margin-bottom") auto;
+    width: min-content;
+  }
+}

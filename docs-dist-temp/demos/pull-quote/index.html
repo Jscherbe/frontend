@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    utils/class-logger
+    Pull Quote
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -124,10 +124,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -485,12 +485,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/pull-quote/" 
-          
+          aria-current="page"
         >
           
     
@@ -2066,10 +2066,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -2089,10 +2089,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/javascript/" 
           
         >
@@ -2488,12 +2488,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/javascript/utils-class-logger/" 
-          aria-current="page"
+          
         >
           
     
@@ -2630,10 +2630,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -2991,12 +2991,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/pull-quote/" 
-          
+          aria-current="page"
         >
           
     
@@ -4572,10 +4572,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -4595,10 +4595,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/javascript/" 
           
         >
@@ -4994,12 +4994,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/javascript/utils-class-logger/" 
-          aria-current="page"
+          
         >
           
     
@@ -5081,154 +5081,38 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>Jump To:</h2>
-<div class="toc">
-                <ol>
-                    
-                    <li><a href="#utils%2Fclass-logger.set(changes)">utils/class-logger.set(changes)</a>
-            		</li>
-
-                    <li><a href="#utils%2Fclass-logger.log(context%2C-...messages)">utils/class-logger.log(context, ...messages)</a>
-            		</li>
-
-                    <li><a href="#utils%2Fclass-logger.logwarning(context%2C-...messages)">utils/class-logger.logWarning(context, ...messages)</a>
-            		</li>
-
-                    <li><a href="#utils%2Fclass-logger.logerror(context%2C-...messages)">utils/class-logger.logError(context, ...messages)</a>
-            		</li>
-
-                    <li><a href="#utils%2Fclass-logger~config">utils/class-logger~config</a>
-            		</li>
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
 			
 			
 			
-  <div class="page__body-top container api-docs">
-    <div class="wysiwyg">
-      <p><a name="module_utils/class-logger"></a></p>
-<h1 id="utils%2Fclass-logger" tabindex="-1">utils/class-logger</h1>
-<ul>
-<li><a href="#module_utils/class-logger">utils/class-logger</a>
-<ul>
-<li><em>static</em>
-<ul>
-<li><a href="#module_utils/class-logger.set">.set(changes)</a></li>
-<li><a href="#module_utils/class-logger.log">.log(context, ...messages)</a></li>
-<li><a href="#module_utils/class-logger.logWarning">.logWarning(context, ...messages)</a></li>
-<li><a href="#module_utils/class-logger.logError">.logError(context, ...messages)</a></li>
-</ul>
-</li>
-<li><em>inner</em>
-<ul>
-<li><a href="#module_utils/class-logger..config">~config</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a name="module_utils/class-logger.set"></a></p>
-<h2 id="utils%2Fclass-logger.set(changes)" tabindex="-1">utils/class-logger.set(changes)</h2>
-<p>Changes to make to configuration</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/class-logger"><code>utils/class-logger</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>changes</td>
-<td><code>Object</code></td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/class-logger.log"></a></p>
-<h2 id="utils%2Fclass-logger.log(context%2C-...messages)" tabindex="-1">utils/class-logger.log(context, ...messages)</h2>
-<p>Proxy Console.log</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/class-logger"><code>utils/class-logger</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>context</td>
-<td><code>Object</code></td>
-<td>Class instance (optional), will rely on classes (debug) property for output</td>
-</tr>
-<tr>
-<td>...messages</td>
-<td><code>any</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/class-logger.logWarning"></a></p>
-<h2 id="utils%2Fclass-logger.logwarning(context%2C-...messages)" tabindex="-1">utils/class-logger.logWarning(context, ...messages)</h2>
-<p>Proxy Console.warn</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/class-logger"><code>utils/class-logger</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>context</td>
-<td><code>Object</code></td>
-<td>Class instance (optional), will rely on classes (debug) property for output</td>
-</tr>
-<tr>
-<td>...messages</td>
-<td><code>any</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/class-logger.logError"></a></p>
-<h2 id="utils%2Fclass-logger.logerror(context%2C-...messages)" tabindex="-1">utils/class-logger.logError(context, ...messages)</h2>
-<p>Proxy Console.error</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/class-logger"><code>utils/class-logger</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>context</td>
-<td><code>Object</code></td>
-<td>Class instance (optional), will rely on classes (debug) property for output</td>
-</tr>
-<tr>
-<td>...messages</td>
-<td><code>any</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/class-logger..config"></a></p>
-<h2 id="utils%2Fclass-logger~config" tabindex="-1">utils/class-logger~config</h2>
-<p>Configuration Object</p>
-<p><strong>Kind</strong>: inner constant of <a href="#module_utils/class-logger"><code>utils/class-logger</code></a></p>
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Pull Quote</h1>
 
+<hr class="rule rule--light rule--margin-large">
+    <figure class="pull-quote">
+  <blockquote class="pull-quote__body display-inline-all type-large-x">
+    <p>"This is the quote's text area. For displaying a pull quote!"</p>
+  </blockquote>
+  <figcaption class="pull-quote__author">
+    <div class="pull-quote__author-image">
+      <div class="badge badge--small">
+        <div class="badge__inner">
+          <img alt="placeholder" src="https://picsum.photos/200/200">
+        </div>
+      </div>
     </div>
+    <strong class="pull-quote__author-name">
+      Jane L. Doe
+    </strong>
+    <span class="pull-quote__author-title">
+      <span class="hidden-visually">, </span>
+      Activity Manager
+    </span>
+  </figcaption>
+</figure>
   </div>
 
 		</main>
