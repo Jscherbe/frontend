@@ -16,7 +16,7 @@ export function getDatasetJson(element, key) {
   try {
     return JSON.parse(passed);
   } catch (error) {
-    console.error(`Error getting JSON from dataset (${ key })\n`, element, error);
+    console.error(`Error getting JSON from dataset (${ key }) -- "${ passed }"\n`, element, error);
     return {};
   }
 }

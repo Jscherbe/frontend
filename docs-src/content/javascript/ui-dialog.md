@@ -7,14 +7,18 @@ title: ui/dialog
 # ui/dialog
 
 * [ui/dialog](#module_ui/dialog)
-    * [.attrs](#module_ui/dialog.attrs)
-    * [.defaults](#module_ui/dialog.defaults)
-    * [.setDefaults(options)](#module_ui/dialog.setDefaults)
-    * [.init()](#module_ui/dialog.init)
-    * [.setup()](#module_ui/dialog.setup)
-    * [.setupTrigger(trigger)](#module_ui/dialog.setupTrigger)
-    * [.setupDialog(dialog)](#module_ui/dialog.setupDialog)
-    * [.getDialogOptions(dialog)](#module_ui/dialog.getDialogOptions) ⇒ <code>Object</code>
+    * _static_
+        * [.attrs](#module_ui/dialog.attrs)
+        * [.defaults](#module_ui/dialog.defaults)
+        * [.setDefaults(options)](#module_ui/dialog.setDefaults)
+        * [.init()](#module_ui/dialog.init)
+        * [.setup()](#module_ui/dialog.setup)
+        * [.setupTrigger(trigger)](#module_ui/dialog.setupTrigger)
+        * [.setupDialog(dialog)](#module_ui/dialog.setupDialog)
+        * [.getDialogOptions(dialog)](#module_ui/dialog.getDialogOptions) ⇒ <code>Object</code>
+    * _inner_
+        * [~prepVideos()](#module_ui/dialog..prepVideos)
+        * [~pauseVideos()](#module_ui/dialog..pauseVideos)
 
 <a name="module_ui/dialog.attrs"></a>
 
@@ -84,5 +88,17 @@ For a given dialog, get it's options (from data attribute)
 | --- | --- |
 | dialog | <code>Node</code> | 
 
+<a name="module_ui/dialog..prepVideos"></a>
+
+## ui/dialog~prepVideos()
+Pause native and youtube videos for a given dialog
+
+**Kind**: inner method of [<code>ui/dialog</code>](#module_ui/dialog)  
+<a name="module_ui/dialog..pauseVideos"></a>
+
+## ui/dialog~pauseVideos()
+Prep videos to be paused for a given dialog
+
+**Kind**: inner method of [<code>ui/dialog</code>](#module_ui/dialog)  
 
   
