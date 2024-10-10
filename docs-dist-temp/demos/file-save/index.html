@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Print
+    File Save
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -124,10 +124,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -224,12 +224,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/file-save/" 
-          
+          aria-current="page"
         >
           
     
@@ -616,10 +616,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -639,10 +639,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -1895,10 +1895,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -1916,10 +1916,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/helpers/" 
           
         >
@@ -1992,12 +1992,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/helpers/print/" 
-          aria-current="page"
+          
         >
           
     
@@ -2680,10 +2680,10 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active-trail">
           <details 
             class="nav-tree__collapsible" 
-            
+            open
           >
             <summary class="nav-tree__toggle">
               
@@ -2780,12 +2780,12 @@
         </li>
       
 
-        <li class="nav-tree__item ">
+        <li class="nav-tree__item is-active is-active-trail">
           
         <a 
-          class="nav-tree__link  " 
+          class="nav-tree__link  is-active is-active-trail" 
           href="/demos/file-save/" 
-          
+          aria-current="page"
         >
           
     
@@ -3172,10 +3172,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -3195,10 +3195,10 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/" 
           
         >
@@ -4451,10 +4451,10 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           <details 
             class="nav-tree__collapsible" 
-            open
+            
           >
             <summary class="nav-tree__toggle">
               
@@ -4472,10 +4472,10 @@
             
       <ul class="nav-tree" data-menu-depth="3">
         
-        <li class="nav-tree__item is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link nav-tree__link--index is-active-trail" 
+          class="nav-tree__link nav-tree__link--index " 
           href="/sass/helpers/" 
           
         >
@@ -4548,12 +4548,12 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail">
+        <li class="nav-tree__item ">
           
         <a 
-          class="nav-tree__link  is-active is-active-trail" 
+          class="nav-tree__link  " 
           href="/sass/helpers/print/" 
-          aria-current="page"
+          
         >
           
     
@@ -5181,51 +5181,86 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>Jump To:</h2>
-<div class="toc">
-                <ol>
-                    
-                    <li><a href="#mixins">Mixins</a>
-            
-                <ol>
-                    
-                    <li><a href="#mixin-styles">styles()</a>
-            		</li>
-                </ol>
-            		</li>
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
 			
 			
 			
-  <div class="page__body-top container api-docs">
-    <div class="wysiwyg">
-      <h1 id="print" tabindex="-1">Print</h1>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">File Save</h1>
+
+  <p class="type-large type-light">
+    Basic test for the file-save utility
+  </p>
+
+<hr class="rule rule--light rule--margin-large">
+    <div class="form-theme form-theme--full-width">
+  <div class="form-theme__item form-theme__item--textarea">
+    <label for="file-save-filename">Filename:</label>
+    <input 
+      type="text" 
+      id="file-save-filename" 
+      name="file-save-filename" 
+      placeholder="example.txt"
+    />
+  </div>
+  <div class="form-theme__item form-theme__item--textarea">
+    <label for="file-save-content">Content:</label>
+    <textarea id="file-save-content" name="file-save-content" rows="5">This text will be in the file</textarea>
   </div>
 </div>
-<p>Printed Media Styles</p>
-<p><details>
-<summary>File Information</summary></p>
-<ul>
-<li><strong>File:</strong> _print.scss</li>
-<li><strong>Group:</strong> print</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 5-7</li>
-<li><strong>Lines (code):</strong> 9-33  </details>
-</li>
-</ul>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">helper-print-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<button class="button" id="file-save-trigger">
+  Create File Link
+</button>
+<div id="file-save-link-container"></div>
+<h2 class="h2">Script for this page</h2>
+<pre class="language-js"><code class="language-js"><span class="pjs-token pjs-function">addEventListener</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"DOMContentLoaded"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-operator">=></span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-keyword">const</span> elements <span class="pjs-token pjs-operator">=</span> <span class="pjs-token pjs-punctuation">{</span>
+    <span class="pjs-token pjs-literal-property pjs-property">trigger</span><span class="pjs-token pjs-operator">:</span> document<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">getElementById</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"file-save-trigger"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-literal-property pjs-property">filename</span><span class="pjs-token pjs-operator">:</span> document<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">getElementById</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"file-save-filename"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-literal-property pjs-property">content</span><span class="pjs-token pjs-operator">:</span> document<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">getElementById</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"file-save-content"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-literal-property pjs-property">linkContainer</span><span class="pjs-token pjs-operator">:</span> document<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">getElementById</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"file-save-link-container"</span><span class="pjs-token pjs-punctuation">)</span>
+  <span class="pjs-token pjs-punctuation">}</span><span class="pjs-token pjs-punctuation">;</span>
+  elements<span class="pjs-token pjs-punctuation">.</span>trigger<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">addEventListener</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"click"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-operator">=></span> <span class="pjs-token pjs-punctuation">{</span>
+    <span class="pjs-token pjs-keyword">if</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-operator">!</span>Ulu<span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-keyword">return</span><span class="pjs-token pjs-punctuation">;</span>
+    <span class="pjs-token pjs-keyword">const</span> <span class="pjs-token pjs-punctuation">{</span> FileSave <span class="pjs-token pjs-punctuation">}</span> <span class="pjs-token pjs-operator">=</span> Ulu<span class="pjs-token pjs-punctuation">.</span>utils<span class="pjs-token pjs-punctuation">.</span>fileSave<span class="pjs-token pjs-punctuation">;</span>
+    <span class="pjs-token pjs-keyword">const</span> filename <span class="pjs-token pjs-operator">=</span> elements<span class="pjs-token pjs-punctuation">.</span>filename<span class="pjs-token pjs-punctuation">.</span>value <span class="pjs-token pjs-operator">||</span> <span class="pjs-token pjs-string">"example.txt"</span><span class="pjs-token pjs-punctuation">;</span>
+    <span class="pjs-token pjs-keyword">const</span> content <span class="pjs-token pjs-operator">=</span> elements<span class="pjs-token pjs-punctuation">.</span>content<span class="pjs-token pjs-punctuation">.</span>value<span class="pjs-token pjs-punctuation">;</span>
+    <span class="pjs-token pjs-keyword">const</span> file <span class="pjs-token pjs-operator">=</span> <span class="pjs-token pjs-keyword">new</span> <span class="pjs-token pjs-class-name">FileSave</span><span class="pjs-token pjs-punctuation">(</span>content<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-punctuation">{</span> filename <span class="pjs-token pjs-punctuation">}</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+    <span class="pjs-token pjs-keyword">if</span> <span class="pjs-token pjs-punctuation">(</span>file<span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
+      <span class="pjs-token pjs-keyword">const</span> link <span class="pjs-token pjs-operator">=</span> file<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">createLink</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"Download File"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+      link<span class="pjs-token pjs-punctuation">.</span>classList<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">add</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"button"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"button--secondary"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+      elements<span class="pjs-token pjs-punctuation">.</span>linkContainer<span class="pjs-token pjs-punctuation">.</span>innerHTML <span class="pjs-token pjs-operator">=</span> <span class="pjs-token pjs-string">""</span><span class="pjs-token pjs-punctuation">;</span>
+      elements<span class="pjs-token pjs-punctuation">.</span>linkContainer<span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">appendChild</span><span class="pjs-token pjs-punctuation">(</span>link<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+    <span class="pjs-token pjs-punctuation">}</span>
+  <span class="pjs-token pjs-punctuation">}</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<script>
+  addEventListener("DOMContentLoaded", () => {
+    const elements = {
+      trigger: document.getElementById("file-save-trigger"),
+      filename: document.getElementById("file-save-filename"),
+      content: document.getElementById("file-save-content"),
+      linkContainer: document.getElementById("file-save-link-container")
+    };
+    elements.trigger.addEventListener("click", () => {
+      if (!Ulu) return;
+      const { FileSave } = Ulu.utils.fileSave;
+      const filename = elements.filename.value || "example.txt";
+      const content = elements.content.value;
+      const file = new FileSave(content, { filename });
+      if (file) {
+        const link = file.createLink("Download File");
+        link.classList.add("button", "button--secondary");
+        elements.linkContainer.innerHTML = "";
+        elements.linkContainer.appendChild(link);
+      }
+    });
+  });
+</script>
 
-    </div>
   </div>
 
 		</main>
