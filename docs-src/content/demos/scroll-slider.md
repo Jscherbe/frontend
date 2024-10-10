@@ -1,7 +1,7 @@
 ---
 title: Scroll Slider
 intro: Scroll Slider Intro
-layout: demo
+layout: fullpage
 ---
 
 {% scrollSlider 6 'Scroll-Slider' %}

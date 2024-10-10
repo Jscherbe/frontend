@@ -1,18 +1,15 @@
 import card from "./card.js";
 
 export default function(
-  cards = 3,
-  title = 'Slider'
+  title = 'Slider',
+  content = `<li class="slider__slide" data-ulu-slider-slide>
+    <img src="/assets/placeholder/image-1.jpg" />
+  </li>
+  <li class="slider__slide" data-ulu-slider-slide>
+    <img src="/assets/placeholder/image-1.jpg" />
+  </li>`
 ) {
-    let cardContent = ``;
-    for(let i = cards; i > 0; i--) {
-      cardContent = cardContent + `
-          <li class="slider__slide " data-ulu-slider-slide>
-            ${ card(cards - i + 1) } 
-          </li>
-        `;
-    }
-    return `
+    return `<h3 class="h3">${ title }</h3>
       <section class="slider-section-layout background-dark-blue-xx" aria-labelledby="slider-title67053c398e12d">
         <div class="slider-section-layout__title container-small no-padding-bottom">
           <h2 class="hidden-visually" id="slider-title67053c398e12d">
@@ -24,7 +21,7 @@ export default function(
             <div class="slider__control-context" data-ulu-slider-control-context>
               <div class="slider__track-crop" data-ulu-slider-track-container>
                 <ul class="slider__track" data-ulu-slider-track>
-                  ${ cardContent }
+                  ${ content }
                 </ul>
               </div>
             </div>
