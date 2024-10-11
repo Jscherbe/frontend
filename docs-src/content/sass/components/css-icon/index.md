@@ -33,9 +33,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "size" : 1.1em,
+  "size" : 1em,
   "stroke-width" : 0.15em,
-  "stroke-border-radius" : 1px,
+  "stroke-border-radius" : null,
   "color" : currentColor,
   "active-selector" : "details[open] > summary &, &.is-active",
   "transition-duration" : 200ms, 

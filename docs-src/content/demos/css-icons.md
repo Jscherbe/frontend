@@ -7,17 +7,25 @@ intro: Basic icons that use only CSS
   <caption>Available Icons</caption>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Icon</th>
+      <th style="width: 30%">Text Example</th>
+      <th>In Button</th>
       <th>Class</th>
     </tr>
   </thead>
   <tbody>
     {% for name in iconNames %}
       <tr>
-        <td>{{ name }}</td> 
         <td>
-          <span class="css-icon css-icon--{{ name }}"></span>
+          <span class="css-icon css-icon--{{ name }}" aria-hidden="true"></span>
+          {{ name }}
+        </td>
+        <td>
+          <button 
+            class="button button--icon" 
+            aria-label="Example Button"
+          >
+            <span class="css-icon css-icon--{{ name }} type-small" aria-hidden="true"></span>
+          </button>
         </td>
         <td class="type-small">
           <code>css-icon css-icon--{{ name }}</code>
@@ -27,13 +35,12 @@ intro: Basic icons that use only CSS
   </tbody>
 </table>
 
-<h2>Icons that transition</h2>
+<h2 class="h2">Icons that transition</h2>
 
 <table class="site-data-table">
   <caption>Available Icons</caption>
   <thead>
     <tr>
-      <th>Name</th>
       <th>Icon</th>
       <th>Class</th>
       <th>Toggle State</th>
@@ -42,12 +49,12 @@ intro: Basic icons that use only CSS
   <tbody>
     {% for name in iconNamesActiveState %}
       <tr>
-        <td>{{ name }}</td> 
         <td>
           <span  
             class="css-icon css-icon--{{ name }}"
             data-demo-icon-target
           ></span>
+          {{ name }}
         </td>
         <td class="type-small">
           <code>css-icon css-icon--{{ name }}</code>
