@@ -26,7 +26,7 @@ $config: (
   "stroke-border-radius" : 1px,
   "color" : currentColor,
   "active-selector" : "details[open] > summary &, &.is-active",
-  "transition-duration" : 200ms,
+  "transition-duration" : 200ms, 
   "transition-timing-function" : ease-in
 );
 
@@ -58,7 +58,11 @@ $config: (
 
 @mixin styles {
   $border: get("stroke-width") solid get("color");
-  
+  $stroke-width: get("stroke-width");
+  $half-height: math.div(get("size"), 2);
+  $half-stroke-width: math.div(get("stroke-width"), 2);
+
+
   .css-icon {
     display: inline-block;
     position: relative;
@@ -116,7 +120,6 @@ $config: (
       margin-top: 0.1em;
       color: get("color");
       filter: invert(1) brightness(1.5);
-      
     }
   }
   .css-icon--question { 
@@ -142,13 +145,15 @@ $config: (
   .css-icon--arrow-left,
   .css-icon--arrow-right,
   .css-icon--arrow-up,
-  .css-icon--arrow-down {
+  .css-icon--arrow-down,
+  .css-icon--menu,
+  .css-icon--menu-to-close {
     &:before,
     &:after {
       content: "";
       display: block;
       width: 100%;
-      height: get("stroke-width");
+      height: $stroke-width;
       background-color: get("color"); 
       @if (get("stroke-border-radius")) {
         border-radius: get("stroke-border-radius");
@@ -193,7 +198,7 @@ $config: (
       width: 70%;
     }
     &:after {
-      width: get("stroke-width");
+      width: $stroke-width;
       height: 70%;
     }
   }
@@ -216,13 +221,7 @@ $config: (
   .css-icon--plus-to-minus,
   .css-icon--minus,
   .css-icon--close {
-    &:before,
-    &:after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -(math.div(get("stroke-width"), 2));
-    }
+    @include -absolute-centered-pseudos-styles();
   }
   .css-icon--plus,
   .css-icon--plus-to-minus,
@@ -250,24 +249,37 @@ $config: (
     }
   }
   .css-icon--close {
-    &:before {
-      transform: translateX(-50%) rotate(45deg);
-    }
-    &:after {
-      transform: translateX(-50%) rotate(-45deg);
-    }
+    @include -close-pseudos-styles();
   }
   .css-icon--drag-x,
   .css-icon--drag-y {
     display: flex;
-    // align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: get("stroke-width") * 1.5;
+    gap: $stroke-width * 1.5;
     &:before,
     &:after {
       content: "";
       display: block; 
+    }
+  }
+
+  // Unique
+  .css-icon--menu,
+  .css-icon--menu-to-close {
+    padding-top: $half-stroke-width;
+    padding-bottom: $half-stroke-width;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    &::before,
+    &::after {
+      position: absolute;
+      bottom: $half-stroke-width;
+    }
+    &::before {
+      top: $half-stroke-width;
+      box-shadow: 0px calc($half-height - $stroke-width) get("color");
     }
   }
 
@@ -325,5 +337,45 @@ $config: (
     @include when-active() {
       transition-duration: get("transition-duration") * 2;
     }
+  }
+  .css-icon--menu-to-close {
+    
+    &::before,
+    &::after {
+      transition: get("transition-duration") get("transition-timing-function");
+      transition-property: transform, top, bottom, left, height, margin-top;
+    }
+    
+    @include when-active() {
+      @include -absolute-centered-pseudos-styles();
+      @include -close-pseudos-styles();
+      &:before {
+        // transition-property: transform, top, bottom, box-shadow;
+        // transition-delay: get("transition-duration");
+        // box-shadow: 0px math.div($half-height, 2) transparent;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Internal mixins
+
+@mixin -absolute-centered-pseudos-styles() {
+  &:before,
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -(math.div(get("stroke-width"), 2));
+  }
+}
+
+@mixin -close-pseudos-styles() {
+  &:before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+  &:after {
+    transform: translateX(-50%) rotate(-45deg);
   }
 }

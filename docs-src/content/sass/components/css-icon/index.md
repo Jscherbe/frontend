@@ -38,7 +38,7 @@ $config: (
   "stroke-border-radius" : 1px,
   "color" : currentColor,
   "active-selector" : "details[open] > summary &, &.is-active",
-  "transition-duration" : 200ms,
+  "transition-duration" : 200ms, 
   "transition-timing-function" : ease-in
 );
 ```
@@ -139,7 +139,7 @@ Prints adaptive spacing component styles
 - **Group:** css-icon
 - **Type:** mixin
 - **Lines (comments):** 55-57
-- **Lines (code):** 59-329
+- **Lines (code):** 59-360
     </details>
     
 

@@ -5451,8 +5451,133 @@
 <code>css-icon css-icon--arrow-down</code>
 </td>
 </tr></p>
+<p><tr>
+<td>menu</td>
+<td>
+<span class="css-icon css-icon--menu"></span>
+</td>
+<td class="type-small">
+<code>css-icon css-icon--menu</code>
+</td>
+</tr></p>
   </tbody>
 </table>
+<h2>Icons that transition</h2>
+<table class="site-data-table">
+  <caption>Available Icons</caption>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Icon</th>
+      <th>Class</th>
+      <th>Toggle State</th>
+    </tr>
+  </thead>
+  <tbody>
+<p><tr>
+<td>menu-to-close</td>
+<td>
+<span  
+            class="css-icon css-icon--menu-to-close"
+            data-demo-icon-target
+          ></span>
+</td>
+<td class="type-small">
+<code>css-icon css-icon--menu-to-close</code>
+</td>
+<td>
+<button 
+            class="button button--small"
+            data-demo-icon-toggle
+          >Toggle</button>
+</td>
+</tr></p>
+<p><tr>
+<td>plus-to-minus</td>
+<td>
+<span  
+            class="css-icon css-icon--plus-to-minus"
+            data-demo-icon-target
+          ></span>
+</td>
+<td class="type-small">
+<code>css-icon css-icon--plus-to-minus</code>
+</td>
+<td>
+<button 
+            class="button button--small"
+            data-demo-icon-toggle
+          >Toggle</button>
+</td>
+</tr></p>
+<p><tr>
+<td>angle-right-to-down</td>
+<td>
+<span  
+            class="css-icon css-icon--angle-right-to-down"
+            data-demo-icon-target
+          ></span>
+</td>
+<td class="type-small">
+<code>css-icon css-icon--angle-right-to-down</code>
+</td>
+<td>
+<button 
+            class="button button--small"
+            data-demo-icon-toggle
+          >Toggle</button>
+</td>
+</tr></p>
+<p><tr>
+<td>angle-up-to-down</td>
+<td>
+<span  
+            class="css-icon css-icon--angle-up-to-down"
+            data-demo-icon-target
+          ></span>
+</td>
+<td class="type-small">
+<code>css-icon css-icon--angle-up-to-down</code>
+</td>
+<td>
+<button 
+            class="button button--small"
+            data-demo-icon-toggle
+          >Toggle</button>
+</td>
+</tr></p>
+<p><tr>
+<td>angle-down-to-up</td>
+<td>
+<span  
+            class="css-icon css-icon--angle-down-to-up"
+            data-demo-icon-target
+          ></span>
+</td>
+<td class="type-small">
+<code>css-icon css-icon--angle-down-to-up</code>
+</td>
+<td>
+<button 
+            class="button button--small"
+            data-demo-icon-toggle
+          >Toggle</button>
+</td>
+</tr></p>
+  </tbody>
+</table>
+<script>
+  const toggles = document.querySelectorAll("[data-demo-icon-toggle]");
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const row = toggle.closest("tr");
+      const icon = row ? row.querySelector("[data-demo-icon-target]") : null;
+      if (icon) {
+        icon.classList.toggle("is-active");
+      }
+    });
+  });
+</script>
   </div>
 
 		</main>
