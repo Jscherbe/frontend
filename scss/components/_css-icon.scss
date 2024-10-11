@@ -21,13 +21,18 @@
 /// @prop {CssValue} transition-timing-function [ease-in] The timing function for the transition.
 
 $config: (
-  "size" : 1.1em,
-  "stroke-width" : 0.15em,
-  "stroke-border-radius" : 1px,
+  "size" : 1.15em,
+  "text-size" : 1em,
+  "stroke-width" : 0.18em,
+  "text-offset" : 0.05em,
+  "vertical-align" : -0.2em,
+  "stroke-border-radius" : null,
   "color" : currentColor,
   "active-selector" : "details[open] > summary &, &.is-active",
   "transition-duration" : 200ms, 
-  "transition-timing-function" : ease-in
+  "transition-timing-function" : ease-in,
+  "font-family" : ('Courier New', monospace),
+  "margin" : (0 0.15em),
 );
 
 /// Change modules $config
@@ -58,6 +63,7 @@ $config: (
 
 @mixin styles {
   $border: get("stroke-width") solid get("color");
+  $size: get("size");
   $stroke-width: get("stroke-width");
   $half-height: math.div(get("size"), 2);
   $half-stroke-width: math.div(get("stroke-width"), 2);
@@ -69,7 +75,13 @@ $config: (
     width: get("size");
     height: get("size");
     transform-origin: center;
-    vertical-align: bottom;
+    vertical-align: -0.25em;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    margin: get("margin");
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
   }
 
   // Solid icons
@@ -109,15 +121,21 @@ $config: (
   }
   .css-icon--info,
   .css-icon--question {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: inline-flex;
+    // align-items: flex-end;
+    // align-content: center;
+    // vertical-align: baseline;
+    // justify-content: center;
     &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       content: "i";
-      font-size: get("size") * 0.7;
-      font-family: 'Courier New', monospace;
+      font-size: get("text-size");
+      font-family: get("font-family");
       font-weight: bold;
-      margin-top: 0.1em;
+      margin-top: get("text-offset");
       color: get("color");
       filter: invert(1) brightness(1.5);
     }
@@ -228,7 +246,7 @@ $config: (
   .css-icon--minus {
     &:before,
     &:after {
-      width: 80%;
+      width: 100%;
     }
   }
   .css-icon--plus,
@@ -253,33 +271,37 @@ $config: (
   }
   .css-icon--drag-x,
   .css-icon--drag-y {
-    display: flex;
+    // gap: $stroke-width * 1.35;
+    display: inline-flex;
     justify-content: center;
-    flex-direction: column;
-    gap: $stroke-width * 1.5;
     &:before,
     &:after {
-      content: "";
-      display: block; 
+      width: $stroke-width;
+      height: 100%;
+      margin: 0 ($stroke-width * 0.75);
     }
   }
 
   // Unique
   .css-icon--menu,
   .css-icon--menu-to-close {
-    padding-top: $half-stroke-width;
-    padding-bottom: $half-stroke-width;
+    // width: 80%;
+    // height: 80%;
+    padding-top: $stroke-width;
+    // padding-bottom: $stroke-width;
+    // height: $size * 0.8;
     // display: flex;
     // flex-direction: column;
     // justify-content: space-between;
     &::before,
     &::after {
-      position: absolute;
-      bottom: $half-stroke-width;
+      // position: absolute;
+      bottom: $stroke-width;
     }
     &::before {
-      top: $half-stroke-width;
-      box-shadow: 0px calc($half-height - $stroke-width) get("color");
+      top: $stroke-width;
+      box-shadow: 0px ($stroke-width * 2) get("color");
+      margin-bottom: $stroke-width * 3;
     }
   }
 
