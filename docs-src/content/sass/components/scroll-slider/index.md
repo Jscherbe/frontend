@@ -53,7 +53,8 @@ $config: (
   "button-background-color-hover" : white,
   "button-icon-offset-x" : false,
   "button-icon-offset-y" : false,
-  "containers" : ("container",)
+  "containers" : ("container",),
+  "prefix": "scroll-slider"
 );
 ```
   
@@ -63,9 +64,14 @@ $config: (
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** variable
-- **Lines (comments):** 16-16
-- **Lines (code):** 18-40
+- **Lines (comments):** 43-43
+- **Lines (code):** 45-68
     </details>
+    
+
+
+Module Settings
+    
     
   
 
@@ -95,8 +101,8 @@ Change modules $config
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
-- **Lines (comments):** 42-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 70-73
+- **Lines (code):** 75-77
     </details>
     
 
@@ -153,8 +159,8 @@ Get a config option
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** function
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-85
     </details>
     
 

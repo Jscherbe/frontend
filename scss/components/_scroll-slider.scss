@@ -9,9 +9,36 @@
 @use "../utils";
 @use "../layout";
 @use "../breakpoint";
+@use "../selector";
+
 
 // Reference:
 // - https://web.dev/css-scroll-snap/
+
+/// Module Settings
+/// @type Map
+/// @param {} container  ["container"]
+/// @param {} background-color  [false]
+/// @param {} margin-top  [1rem]
+/// @param {} margin-bottom  [3rem]
+/// @param {} padding-top  [0]
+/// @param {} padding-bottom  [0]
+/// @param {} button-indent  [1.5rem]
+/// @param {} button-indent-small  [0.5rem]
+/// @param {} button-size  [3rem]
+/// @param {} button-font-size  [1.35rem]
+/// @param {} button-color  [color.get("type")]
+/// @param {} button-border  [2px solid white]
+/// @param {} button-border-radius  [50%]
+/// @param {} button-background-color  [white]
+/// @param {} button-box-shadow  [element.get("box-shadow")]
+/// @param {} button-color-hover  [color.get("link")]
+/// @param {} button-border-color-hover  [white]
+/// @param {} button-background-color-hover  [white]
+/// @param {} button-icon-offset-x  [false]
+/// @param {} button-icon-offset-y  [false]
+/// @param {} containers  [("container",)]
+/// @param {} prefix ["scroll-slide"]
 
 /// Config options
 
@@ -36,7 +63,8 @@ $config: (
   "button-background-color-hover" : white,
   "button-icon-offset-x" : false,
   "button-icon-offset-y" : false,
-  "containers" : ("container",)
+  "containers" : ("container",),
+  "prefix": "scroll-slider"
 ) !default;
 
 /// Change modules $config
@@ -57,14 +85,15 @@ $config: (
 }
 
 @mixin styles {
+  $prefix: selector.class(get("prefix"));
   
-  .scroll-slider {
+  #{ $prefix } {
     position: relative; // for controls
     background-color: get("background-color");
     margin: get("margin-top") 0 get("margin-bottom") 0;
   }
-  .scroll-slider--cards {
-    .scroll-slider__slide {
+  #{ $prefix }--cards {
+    #{ $prefix }__slide {
       margin-right: 1.35rem;
       // display: flex;
       > .card {
@@ -74,17 +103,17 @@ $config: (
         margin: 1rem 0 1rem 0;// For shadows
       }
     }
-    .scroll-slider__slide--empty {
+    #{ $prefix }__slide--empty {
       margin-right: 0;
     }
   }
-  .scroll-slider__track {
+  #{ $prefix }__track {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     // scroll-padding-left: calc(((100vw - vars.$site-max-width) / 2) + vars.$site-margin);
-    // switch below to a modifier (like .scroll-slider--in-container, .scroll-slider--in-container-large-x) Default is container
+    // switch below to a modifier (like #{ $prefix }--in-container, #{ $prefix }--in-container-large-x) Default is container
     @include layout.match-container-margin("scroll-padding-left", get("container"));
     // scroll-padding-right: 1rem;
     // Hide scrollbars
@@ -103,7 +132,7 @@ $config: (
     //   flex: 0 0 1rem;
     // }
   }
-  .scroll-slider__slide {
+  #{ $prefix }__slide {
     
     flex: 0 0 450px;
     max-width: 90vw;
@@ -116,7 +145,7 @@ $config: (
     }
     // margin-right: 1rem;
   }
-  .scroll-slider__slide--empty {
+  #{ $prefix }__slide--empty {
     scroll-snap-align: none;
     // flex-basis: calc(((100vw - vars.$site-max-width) / 2) + vars.$site-margin);
     @include layout.match-container-margin("flex-basis", get("container"));
@@ -127,7 +156,7 @@ $config: (
     //   }
     // }
   }
-  .scroll-slider__controls {
+  #{ $prefix }__controls {
     list-style: none !important;
     padding: 0;
   }

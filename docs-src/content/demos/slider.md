@@ -1,9 +1,11 @@
 ---
 title: Slider
 intro: Slider Intro
+layout: fullpage
 ---
-
-{% slider 'Slider with Images' %}
+<div class="container-fill">  
+  {% slider 'Slider with Images' %}
+</div>
 {% capture textContent %}
   {% for i in (1..4) -%}
     <li class="slider__slide" data-ulu-slider-slide>
@@ -24,4 +26,6 @@ intro: Slider Intro
     </li>
   {%- endfor %}
 {% endcapture %}
-{% slider 'Slider with Text' textContent %}
+<div class="container-fill">  
+  {% slider 'Slider with Text' textContent %}
+</div>
