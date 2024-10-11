@@ -20,7 +20,7 @@ $config: (
   "border-radius" : 6px,
   "border-color-hover" : black,
   "control-button-border-focus" : 2px solid blue,
-  "icon-color" : yellow,
+  "icon-color" : black,
   "anim-duration" : 430ms,
   "anim-delay" : 200ms,
   "padding" : 1.5rem,
@@ -55,6 +55,36 @@ $config: (
 ///  @include ulu.component-adaptive-spacing-styles();
 
 @mixin styles {
+  // @dan @joe-check added vignette styling here. Need to discuss best way to include this
+  .vignette {
+    position: relative;
+  }
+  .vignette:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: red;
+      background: linear-gradient(0deg,rgba(93,23,36,.6),rgba(93,23,36,0) 45%);
+      pointer-events: none
+  }
+
+  .vignette>img {
+      -webkit-filter: saturate(85%);
+      filter: saturate(85%)
+  }
+
+  .vignette--secondary:after {
+      background: linear-gradient(45deg,rgba(93,23,36,.6),rgba(93,23,36,0) 40%,rgba(48,87,108,0) 60%,rgba(48,87,108,.6))
+  }
+
+  .vignette--secondary>img {
+      -webkit-filter: saturate(60%);
+      filter: saturate(60%)
+  }
   .flipcard {
     height: 100%;
     // border: element.get-rule-style("light");
@@ -80,7 +110,7 @@ $config: (
   .flipcard__back {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
   }
   .flipcard__front {
     // To lay the image out on top of the text

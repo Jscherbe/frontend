@@ -38,7 +38,7 @@ $config: (
   "border-radius" : 6px,
   "border-color-hover" : black,
   "control-button-border-focus" : 2px solid blue,
-  "icon-color" : yellow,
+  "icon-color" : black,
   "anim-duration" : 430ms,
   "anim-delay" : 200ms,
   "padding" : 1.5rem,
@@ -168,7 +168,7 @@ Prints adaptive spacing component styles
 - **Group:** flipcard
 - **Type:** mixin
 - **Lines (comments):** 53-55
-- **Lines (code):** 57-197
+- **Lines (code):** 57-227
     </details>
     
 
