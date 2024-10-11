@@ -21,7 +21,7 @@
 @include ulu.element-set-rule-styles((
   "default" : 1px solid ulu.color-get("rule"),
   "light" : 1px solid ulu.color-get("rule-light"),
-  // "accent" : 1px solid ulu.color-get("accent"),
+  "accent" : 1px solid ulu.color-get("accent-light"),
   "large" : 3px solid ulu.color-get("rule"),
   // "light-large" : 4px solid ulu.color-get("rule-light"),
 ));

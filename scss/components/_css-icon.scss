@@ -339,20 +339,15 @@ $config: (
     }
   }
   .css-icon--menu-to-close {
-    
-    &::before,
-    &::after {
-      transition: get("transition-duration") get("transition-timing-function");
-      transition-property: transform, top, bottom, left, height, margin-top;
-    }
-    
     @include when-active() {
       @include -absolute-centered-pseudos-styles();
       @include -close-pseudos-styles();
+      animation: ScaleIn get("transition-duration") get("transition-timing-function") forwards;
+      &::before,
+      &::after {
+        transition: none;
+      }
       &:before {
-        // transition-property: transform, top, bottom, box-shadow;
-        // transition-delay: get("transition-duration");
-        // box-shadow: 0px math.div($half-height, 2) transparent;
         box-shadow: none;
       }
     }

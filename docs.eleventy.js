@@ -59,7 +59,11 @@ export default async function(eleventyConfig) {
   eleventyConfig.addPlugin(navTreePlugin, {
     toHtml: {
       formatLink: menuLinkFormatter,
-      formatToggle: menuToggleFormatter
+      formatToggle: menuToggleFormatter,
+      shouldCollapseNode({ node, depth }) {
+        const demoPage = node.url.startsWith("/demos/");
+        return demoPage ? depth < 2 : true;
+      }
     }
   }); 
   // Register all site shortcodes

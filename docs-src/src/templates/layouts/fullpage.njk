@@ -1,8 +1,16 @@
 {# Layout where user needs to set headlines and wysiwyg #}
 {% extends "fullpage-html.njk" %}
 {% block main %}
-  <div class="container">
-    {% include "partials/page-header.njk" %}
+  <div class="background-light-gray">
+    <div class="container padding-bottom">
+      <h1 class="page__title h1">{{ title }}</h1>
+      {% if intro %}
+        <div class="rule rule--short rule--accent"></div>
+        <p class="type-large type-light">
+          {{ intro }}
+        </p>
+      {% endif %}
+    </div>
   </div>
   {{ content | safe }}
 {% endblock %}

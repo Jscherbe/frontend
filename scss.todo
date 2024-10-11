@@ -1,4 +1,5 @@
 SCSS Todos:
+  ☐ Namespace keyframes @in-progress
   ☐ Make css-icon--menu-to-close use css animation instead
     * Fade in-out-in (so the css can stay simple)
     * Could also move back to justified

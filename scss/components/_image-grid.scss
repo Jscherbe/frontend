@@ -47,7 +47,7 @@ $config: (
   #{ $prefix } {
     display: flex;
     flex-wrap: wrap;
-    margin: -1px;
+    margin: -($gap);
     overflow: hidden;
   }
   #{ $prefix }__item {

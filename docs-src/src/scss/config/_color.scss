@@ -11,6 +11,7 @@
   "box-shadow" :              gray,
   "background" :              white,
   "accent" :                  vars.$color-violet-dark,
+  "accent-light" :            ulu.color-tint(vars.$color-violet-dark, 40%),
   "rule" :                    vars.$color-rule,
   "rule-light" :              vars.$color-rule-light,
   "link" :                    vars.$color-link,
@@ -35,10 +36,10 @@
   //   "background-color" :      white,
   //   "helper-class" :          true
   // ),
-  // "gray-light" : (
-  //   "background-color" :      vars.$color-gray-light,
-  //   "helper-class" :          true
-  // ),
+  "light-gray" : (
+    "background-color" :      vars.$color-gray-light-x,
+    "helper-class" :          true
+  ),
 ), "overwrite");
 
 @include ulu.color-set-color-classes((

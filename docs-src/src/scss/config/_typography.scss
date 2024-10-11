@@ -10,17 +10,22 @@
   "font-weight-semibold" :    500,
   "margin-top" :              1.5em
 ));
-@include ulu.typography-set-sizes(ulu.typography-get-default-sizes(), "overwrite");
+
+@include ulu.typography-set-sizes(
+  ulu.typography-get-default-sizes(), 
+  "overwrite"
+);
+
 @include ulu.typography-set-sizes((
   "h1" : (
     "color" : "accent",
     // "font-weight" : normal,
     "font-size": 50px,
-    "margin-top" : null
+    "margin-top" : null,
+    "margin-bottom" : 0.5em
   ),
   "h2" : (
     "font-size": 38px,
-    // "font-weight" : normal,
     "color" : "accent",
     "margin-top" : 2.5em,
     "margin-bottom" : 1em,
