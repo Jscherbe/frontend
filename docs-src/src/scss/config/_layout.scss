@@ -1,26 +1,37 @@
 @use "vars";
 @use "scss" as ulu;
 
+$max-width-large:        110rem;
+$max-width:              100rem;
+$max-width-small:        70rem;
+$max-width-smallest:     50rem;
+$margin:                 6rem;
+$margin-small:           2rem;
+$margin-responsive:      3vw;
+$header-padding:         6rem;
+$margin:                 5rem;
+$margin-small:           2rem;
+
 @include ulu.layout-set((
   "z-index-above": 450 // Below Drupal toolbar
 ));
 
-
 // Setup Containers
 @function container(
   $ends: 6rem, 
-  $smallEnds: 3rem, 
-  $max: vars.$site-max-width,
-
+  $ends-small: 3rem, 
+  $max-width: $max-width,
+  $sides: $margin,
+  $sides-small: $margin-small,
 ) {
   @return (
-    "max-width": $max,
-    "padding":   ($ends vars.$site-margin),
-    "responsive" : false, // vars.$site-margin-responsive,
+    "max-width": $max-width,
+    "padding":   ($ends $sides),
+    "responsive" : false, // vars.$margin-responsive,
     "breakpoints" : (
       "small" : (
         "direction" : "max",
-        "padding": ($smallEnds vars.$site-margin-small)
+        "padding": ($ends-small, $sides-small)
       ),
     )
   );
@@ -28,12 +39,34 @@
 @include ulu.layout-set-containers((
   "container" : container(),
   // Used for headers and things that go full width
-  "container-full" : container(0, 0, null),
-  "container-fit" : container(0, 0),
-  "container-small" : container(3rem, 3rem, $max: vars.$site-max-width-small),
-  "container-small-fit" : container(0, 0, vars.$site-max-width-small),
-  "container-small-x" : container($max: vars.$site-max-width-smallest),
-  "container-small-x-fit" : container(0, 0, vars.$site-max-width-smallest),
-  "container-large" : container($max: vars.$site-max-width-large),
-  // "container-large-fit" : container(0, 0, vars.$site-max-width-large),
+  "container-full" : container(
+    $ends: 0, 
+    $ends-small: 0,
+    $max-width: null
+  ),
+  "container-fit" : container(
+    $ends: 0, 
+    $ends-small: 0
+  ),
+  "container-small" : container(
+    $ends: 3rem, 
+    $ends-small: 3rem, 
+    $max-width: $max-width-small
+  ),
+  "container-small-fit" : container(
+    $ends: 0, 
+    $ends-small: 0, 
+    $max-width: $max-width-small
+  ),
+  "container-small-x" : container(
+    $max-width: $max-width-smallest
+  ),
+  "container-small-x-fit" : container(
+    $ends: 0, 
+    $ends-small: 0, 
+    $max-width: $max-width-smallest
+  ),
+  "container-large" : container(
+    $max-width: $max-width-large
+  ),
 ));
