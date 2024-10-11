@@ -26,12 +26,12 @@ $margin-small:           2rem;
 ) {
   @return (
     "max-width": $max-width,
-    "padding":   ($ends $sides),
+    "padding": ($ends $sides),
     "responsive" : false, // vars.$margin-responsive,
     "breakpoints" : (
       "small" : (
         "direction" : "max",
-        "padding": ($ends-small, $sides-small)
+        "padding": ($ends-small $sides-small)
       ),
     )
   );
@@ -42,6 +42,11 @@ $margin-small:           2rem;
   "container-full" : container(
     $ends: 0, 
     $ends-small: 0,
+    $max-width: null
+  ),
+  "container-fill" : container(
+    $sides: 0, 
+    $sides-small: 0,
     $max-width: null
   ),
   "container-fit" : container(
