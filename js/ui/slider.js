@@ -198,7 +198,7 @@ export class Slider {
    * @param {number} duration Duration to wait for complete 
    * @param {Function} beginTransition Css changes to begin/start transtion 
    */
-  ensureTranstionEnds(element, duration, beginTransition) {
+  ensureTransitionEnds(element, duration, beginTransition) {
     return new Promise(resolve => {
       const tid = {};
       // If the transition has started remove the fallback for start
@@ -241,7 +241,7 @@ export class Slider {
     const set = () => track.style.transform = `translateX(-${ x }px)`;
     // tell brwoser we're about to animate
     track.style.willChange =  "transform";
-    return this.ensureTranstionEnds(track, duration, set).then(() => {
+    return this.ensureTransitionEnds(track, duration, set).then(() => {
       // Remove to avoid any issues with optimization
       track.style.willChange =  "auto";
     });
@@ -267,7 +267,7 @@ export class Slider {
     const { options } = this;
     const { element } = slide;
     const duration = visible ? options.transitionDuration : options.transitionDurationExit;
-    return this.ensureTranstionEnds(element, duration, () => {
+    return this.ensureTransitionEnds(element, duration, () => {
       element.style.opacity = visible ? "1" : "0";
     });
   }
