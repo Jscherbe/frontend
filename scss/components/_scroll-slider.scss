@@ -164,23 +164,7 @@ $config: (
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: get("button-color");
     z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: get("button-size");
-    height: get("button-size");
-    font-size: get("button-font-size");
-    background-color: get("button-background-color");
-    box-shadow: get("button-box-shadow");
-    border: get("button-border");
-    border-radius: get("button-border-radius");
-    &:hover {
-      background-color: get("button-background-color-hover");
-      border-color: get("button-border-color-hover");
-      color: get("button-color-hover");
-    }
   }
   @if get("button-icon-offset-y") {
     .OverflowScroller__control-icon {

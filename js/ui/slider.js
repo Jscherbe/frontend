@@ -69,7 +69,6 @@ export const attrs = {
 // Utils for selecting things based on attributes
 const attrSelector = key => `[${ attrs[key] }]`;
 const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-// const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
 
 const defaults = {
   amount: createPager()
@@ -122,7 +121,9 @@ export class Slider {
     transitionDuration: 700,
     transitionDurationExit: 400,
     transitionTimingFunction: "ease-in-out",
-
+    buttonClasses: ["button", "button--icon"],
+    iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
+    iconClassesNext: ["css-icon", "css-icon--angle-right"]
     // transition: true
   }
   // constructor(container, title, trackContainer, track, slides, config, debug = false) {
@@ -454,6 +455,7 @@ export class Slider {
     const button = document.createElement("button");
     button.classList.add(this.getClass("control-button"));
     button.classList.add(this.getClass(`control-button--${ action }`));
+    button.classList.add(...this.options.buttonClasses);
     button.setAttribute("data-slider-control", action);
     button.setAttribute("type", "button");
     button.innerHTML = this.getControlContent(action);
@@ -515,9 +517,10 @@ export class Slider {
   }
   // change to css-icon 
   getControlContent(action) {
+    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
     return `
       <span class="hidden-visually">${ action }</span>
-      <span aria-hidden="true">${ action === 'next' ? '→' : '←' }</span>
+      <span class="${ classes.join(' ') }" aria-hidden="true"></span>
     `;
   }
   getNavContent(number) {

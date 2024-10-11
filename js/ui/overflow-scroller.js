@@ -25,6 +25,9 @@ export class OverflowScroller {
     offsetStart: 100,
     offsetEnd: 100,
     amount: "auto",
+    buttonClasses: ["button", "button--icon"],
+    iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
+    iconClassesNext: ["css-icon", "css-icon--angle-right"]
   }
   constructor(elements, config) {
     this.options = Object.assign({}, OverflowScroller.defaults, config);
@@ -78,14 +81,16 @@ export class OverflowScroller {
     const button = document.createElement("button");
     button.classList.add(this.getClass("control-button"));
     button.classList.add(this.getClass(`control-button--${ action }`));
+    button.classList.add(...this.options.buttonClasses);
     button.setAttribute("type", "button");
     button.innerHTML = this.getControlContent(action);
     return button;
   }
   getControlContent(action) {
+    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
     return `
       <span class="hidden-visually">${ action }</span>
-      <span aria-hidden="true">${ action === 'next' ? '→' : '←' }</span>
+      <span class="${ classes.join(' ') }" aria-hidden="true"></span>
     `;
   }
   onScroll(event) {

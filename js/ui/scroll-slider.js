@@ -21,7 +21,6 @@ export const attrs = {
 // Utils for selecting things based on attributes
 const attrSelector = key => `[${ attrs[key] }]`;
 const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
 
 
 const instances = [];

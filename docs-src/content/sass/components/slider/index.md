@@ -200,7 +200,7 @@ Prints modal component styles
 - **Group:** slider
 - **Type:** mixin
 - **Lines (comments):** 99-101
-- **Lines (code):** 103-223
+- **Lines (code):** 103-201
     </details>
     
 
