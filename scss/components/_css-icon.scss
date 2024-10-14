@@ -3,6 +3,24 @@
 ////
 /// Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
 
+// Notes: 
+// - Using this to avoid having coupled image in base, can easily switch 
+//   to font awesome in production
+// - Can't use clip-path with svg clipPath without it being loaded in document (more coupling/setup)
+// - Can't use mask-image until it's more universal (could create icons the 
+//   old way and export and use the masks in the future (complex shapes)
+
+// Consider:
+// - Removing option for rounded corners to rel
+// - Max 3 elements (clip-path, ::before, :: after)
+//   - Could make menu icon this way instead of box shadow
+// - No way to solve font based scaling and subpixels on 72dpi, works well at higher resolutions
+//   - Maybe using the clip-path for all the icons? (see if the browser smooths out 
+//     subpixels better)s
+//     - We could use 3 layers of clip masks, couldn't have rounded corners though 
+//       (won't work I don't think just would have two before and after
+
+
 // Note: File size is 7kb (1kb gzip) (2024-09-25)
 
 @use "sass:map";

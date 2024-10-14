@@ -24,6 +24,7 @@ export default {
     "arrow-up",
     "arrow-down",
     "menu",
+    "test"
     // "css-icon css-icon--left-arrow",
     // "css-icon css-icon--right-arrow",
     // "css-icon css-icon--top-arrow",

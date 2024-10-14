@@ -33,13 +33,18 @@ Module Settings
 
 ``` scss
 $config: (
-  "size" : 1em,
-  "stroke-width" : 0.15em,
+  "size" : 1.15em,
+  "text-size" : 1em,
+  "stroke-width" : 0.18em,
+  "text-offset" : 0.05em,
+  "vertical-align" : -0.2em,
   "stroke-border-radius" : null,
   "color" : currentColor,
   "active-selector" : "details[open] > summary &, &.is-active",
   "transition-duration" : 200ms, 
-  "transition-timing-function" : ease-in
+  "transition-timing-function" : ease-in,
+  "font-family" : ('Courier New', monospace),
+  "margin" : (0 0.15em),
 );
 ```
   
@@ -49,8 +54,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 13-21
-- **Lines (code):** 23-31
+- **Lines (comments):** 30-38
+- **Lines (code):** 40-53
     </details>
     
 
@@ -96,8 +101,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 33-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 55-57
+- **Lines (code):** 59-61
     </details>
     
 
@@ -138,8 +143,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 55-57
-- **Lines (code):** 59-355
+- **Lines (comments):** 77-79
+- **Lines (code):** 81-394
     </details>
     
 
@@ -187,8 +192,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-47
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-69
     </details>
     
 
