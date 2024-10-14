@@ -12,6 +12,11 @@
 /// Module Settings
 /// @type Map
 
+/// @todo 
+/// setup three options: default, center-title, bottom-title
+/// default: title in middle, icon on bottom right
+/// center-title: title in middle. Icon in middle
+/// bottom-title: icon on bottom-left, title directly above
 
 
 $config: (
@@ -20,10 +25,17 @@ $config: (
   "border-radius" : 6px,
   "border-color-hover" : black,
   "control-button-border-focus" : 2px solid blue,
-  "icon-color" : black,
   "anim-duration" : 430ms,
   "anim-delay" : 200ms,
   "padding" : 1.5rem,
+  "title-color" : red,
+  "title-color-hover" : green,
+  "icon-color" : pink,
+  "icon-color-hover" : aqua,
+  "icon-color-image" : aqua,
+  "icon-color-image-hover" : pink,
+  "title-color-image" : black,
+  "title-color-image-hover" : blue,
 );
 
 /// Change modules $config
@@ -56,35 +68,6 @@ $config: (
 
 @mixin styles {
   // @dan @joe-check added vignette styling here. Need to discuss best way to include this
-  .vignette {
-    position: relative;
-  }
-  .vignette:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: red;
-      background: linear-gradient(0deg,rgba(93,23,36,.6),rgba(93,23,36,0) 45%);
-      pointer-events: none
-  }
-
-  .vignette>img {
-      -webkit-filter: saturate(85%);
-      filter: saturate(85%)
-  }
-
-  .vignette--secondary:after {
-      background: linear-gradient(45deg,rgba(93,23,36,.6),rgba(93,23,36,0) 40%,rgba(48,87,108,0) 60%,rgba(48,87,108,.6))
-  }
-
-  .vignette--secondary>img {
-      -webkit-filter: saturate(60%);
-      filter: saturate(60%)
-  }
   .flipcard {
     height: 100%;
     // border: element.get-rule-style("light");
@@ -101,17 +84,13 @@ $config: (
       border: get("control-button-border-focus");
     }
   }
-  .flipcard__icon {
-    color: get('icon-color');
-    display: block;
-    margin-top: 1.25rem;
-  }
   .flipcard__front,
   .flipcard__back {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
+  
   .flipcard__front {
     // To lay the image out on top of the text
     display: grid;
@@ -125,7 +104,10 @@ $config: (
         transform: scale(1.15);
       }
       .flipcard__front-content {
-        transform: translatey(-(get('padding') * 0.5));
+        color: get("title-color-hover");
+      }
+      .flipcard__icon {
+        color: get("icon-color-hover");
       }
     }
     [data-flipcard-state="open"] & {
@@ -136,12 +118,22 @@ $config: (
       animation: flipcard-front-open get('anim-duration') ease-in-out forwards;
     }
   }
+  .flipcard--w-image {
+    &:hover {
+      .flipcard__front-content {
+        color: get("title-color-image-hover");
+      }
+      .flipcard__icon {
+        color: get("icon-color-image-hover");
+      }
+    }
+  }
   .flipcard__front-image,
   .flipcard__front-content {
-    display: block;
     grid-area: flipcard-front / flipcard-front / flipcard-front / flipcard-front;
   }
   .flipcard__front-image {
+    display: block;
     @media (prefers-reduced-motion) {
       transition: transform 1000ms 200ms ease-out;
     }
@@ -152,7 +144,17 @@ $config: (
       opacity: 0.7;
     }
   }
+  .flipcard__icon {
+    color: get('icon-color');
+    display: block;
+    margin-top: 0.5rem;
+  }
   .flipcard__front-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: get("title-color");
     position: relative;
     z-index: 2;
     padding: get('padding');
@@ -163,12 +165,20 @@ $config: (
       content: '';
       display: block;
       position: absolute;
-      top: -get('padding');
-      bottom: -get('padding');
-      left: -get('padding');
-      right: -get('padding');
+      top: calc(0rem - get('padding'));
+      bottom: calc(0rem - get('padding'));
+      left: calc(0rem - get('padding'));
+      right: calc(0rem - get('padding'));
       background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
       z-index: -1;
+    }
+  }
+  .flipcard--w-image {
+    .flipcard__icon {
+      color: get("icon-color-image");
+    }
+    .flipcard__front-content {
+      color: get("title-color-image")
     }
   }
   .flipcard__back {
@@ -223,5 +233,50 @@ $config: (
       opacity: 1;
       // transform: scale(1);
     }
+  }
+}
+
+.flipcard--center-title {
+  .flipcard__front-content {
+    justify-content: center;
+    align-items: center;
+  }
+}
+.flipcard--bottom-title {
+  .flipcard__front-content {
+    justify-content: flex-end;
+  }
+}
+// .flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
+//   .flipcard__front-content {
+//     align-items: center;
+//     justify-content: center;
+//   }
+//   .flipcard__icon-container {
+//     margin-top: 0;
+//     width: 100%;
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: flex-end;
+//   }
+// }
+.flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
+  .flipcard__front-content {
+    align-items: center;
+  }
+  .flipcard__icon-container {
+    margin-top: 0;
+    height: calc(50% - get("padding") / 2);
+    // height: calc(50% - get("padding"));
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}
+// modifier for animations
+.flipcard--animation:hover {
+  .flipcard__front-content {
+    transform: translatey(-(get('padding') * 0.5));
   }
 }

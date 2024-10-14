@@ -1,10 +1,10 @@
 ---
-title: Flipcard
-sassdocGroupName: flipcard
+title: Vignette
+sassdocGroupName: vignette
 ---
 
 
-# Flipcard
+# Vignette
 
 Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
 
@@ -20,56 +20,32 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
 
   
 
+Module Settings
+    
+    
+
 ``` scss
 $config: (
-  "background-color" : white,
-  "border" : 1px solid black,
-  "border-radius" : 6px,
-  "border-color-hover" : black,
-  "control-button-border-focus" : 2px solid blue,
-  "anim-duration" : 430ms,
-  "anim-delay" : 200ms,
-  "padding" : 1.5rem,
-  "title-color" : red,
-  "title-color-hover" : green,
-  "icon-color" : pink,
-  "icon-color-hover" : aqua,
-  "icon-color-image" : aqua,
-  "icon-color-image-hover" : pink,
-  "title-color-image" : black,
-  "title-color-image-hover" : blue,
+  "background-color" : rgb(0,0,0),
 );
 ```
   
 
     <details>
       <summary>File Information</summary>
-- **File:** _flipcard.scss
-- **Group:** flipcard
+- **File:** _vignette.scss
+- **Group:** vignette
 - **Type:** variable
-- **Lines (comments):** 15-19
-- **Lines (code):** 21-39
+- **Lines (comments):** 13-14
+- **Lines (code):** 16-20
     </details>
-    
-
-#### Todos
-
-- setup three options: default, center-title, bottom-title
-default: title in middle, icon on bottom right
-center-title: title in middle. Icon in middle
-bottom-title: icon on bottom-left, title directly above
-    
-
-
-Module Settings
-    
     
   
 
@@ -96,11 +72,11 @@ Change modules $config
 
     <details>
       <summary>File Information</summary>
-- **File:** _flipcard.scss
-- **Group:** flipcard
+- **File:** _vignette.scss
+- **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-47
+- **Lines (comments):** 22-24
+- **Lines (code):** 26-28
     </details>
     
 
@@ -138,11 +114,11 @@ Set sizes map
 
     <details>
       <summary>File Information</summary>
-- **File:** _flipcard.scss
-- **Group:** flipcard
+- **File:** _vignette.scss
+- **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 49-51
-- **Lines (code):** 53-55
+- **Lines (comments):** 30-32
+- **Lines (code):** 34-36
     </details>
     
 
@@ -180,11 +156,11 @@ Prints adaptive spacing component styles
 
     <details>
       <summary>File Information</summary>
-- **File:** _flipcard.scss
-- **Group:** flipcard
+- **File:** _vignette.scss
+- **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-237
+- **Lines (comments):** 46-48
+- **Lines (code):** 50-78
     </details>
     
 
@@ -229,11 +205,11 @@ Get a config option
 
     <details>
       <summary>File Information</summary>
-- **File:** _flipcard.scss
-- **Group:** flipcard
+- **File:** _vignette.scss
+- **Group:** vignette
 - **Type:** function
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-63
+- **Lines (comments):** 38-40
+- **Lines (code):** 42-44
     </details>
     
 

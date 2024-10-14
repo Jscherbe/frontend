@@ -38,6 +38,7 @@
 @forward "tile-button" as tile-button-*;
 @forward "placeholder-block" as placeholder-block-*;
 @forward "pull-quote" as pull-quote-*;
+@forward "vignette" as vignette-*;
 @forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
@@ -79,6 +80,7 @@
 @use "tile-button";
 @use "placeholder-block";
 @use "pull-quote";
+@use "vignette";
 @use "wysiwyg";
 
 /// Default includes, all modules
@@ -121,6 +123,7 @@ $all-includes: (
   "tile-button",
   "placeholder-block",
   "pull-quote",
+  "vignette",
   "wysiwyg",
 );
 
@@ -263,6 +266,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "pull-quote")) {
     @include pull-quote.styles;
+  }
+  @if (list.index($includes, "vignette")) {
+    @include vignette.styles;
   }
   @if (list.index($includes, "wysiwyg")) {
     @include wysiwyg.styles;

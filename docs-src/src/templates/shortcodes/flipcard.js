@@ -1,29 +1,34 @@
 export default function(
   number = "1", 
   hasImage = false,
-  frontOnBack = false
+  frontOnBack = false,
+  options = ''
 ) {
-  const containerClass = hasImage ? 'flipcard flipcard--w-image' : 'flipcard';
+  const containerClass = hasImage ? `flipcard flipcard--animation flipcard--w-image ${ options }` : `flipcard ${ options }`;
   const frontContent = hasImage ? 
     `<span class="flipcard__front-image vignette"><img src="/assets/placeholder/image-1.jpg" /></span>
     <span class="flipcard__front-content type-large type-bold">
     <div>This is the front of flipcard ${ number }</div>
-    <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+    <div class="flipcard__icon-container">
+      <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+    </div>
     </span>` : 
     `<span class="flipcard__front-content type-large type-bold">
     <div>This is the Title of flipcard ${ number }</div>
-    <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+    <div class="flipcard__icon-container">
+      <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+    </div>
     </span>`;
   const backContent = frontOnBack ? 
     `<div class="flipcard__back-front-content type-large type-bold margin-bottom-small" aria-hidden="true">
       <div>This is the Title of flipcard ${ number }</div>
     </div>
     <div class="flipcard__back-content">
-      This is the back
+      Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.
     </div>
     <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>` :
     `<div class="flipcard__back-content">
-      <div>This is the back</div>
+      <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
     </div>
     <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>`;
 
@@ -34,8 +39,8 @@ export default function(
     <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
       ${ backContent }
     </div>
-    <div class="flipcard__icon-footer">
-    <span class="flipcard__icon flipcard__icon--footer"  aria-hidden="true"></span>
-    </div>
     </div>`;
   }
+  // <div class="flipcard__icon-footer">
+  // <span class="flipcard__icon flipcard__icon--footer"  aria-hidden="true"></span>
+  // </div>
