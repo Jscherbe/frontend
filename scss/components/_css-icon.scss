@@ -10,18 +10,10 @@
 // - Can't use mask-image until it's more universal (could create icons the 
 //   old way and export and use the masks in the future (complex shapes)
 
-// Consider:
-// - Removing option for rounded corners to rel
-// - Max 3 elements (clip-path, ::before, :: after)
-//   - Could make menu icon this way instead of box shadow
-// - No way to solve font based scaling and subpixels on 72dpi, works well at higher resolutions
-//   - Maybe using the clip-path for all the icons? (see if the browser smooths out 
-//     subpixels better)s
-//     - We could use 3 layers of clip masks, couldn't have rounded corners though 
-//       (won't work I don't think just would have two before and after
-
-
-// Note: File size is 7kb (1kb gzip) (2024-09-25)
+// Note: File size is 7kb (1kb gzip) (2024-09-25)(
+// Benchmarks:
+// - 2024/09/25 - 1.3kb - File size (7kb unzipped)
+// - 2024/10/14 - 1.3kb - Tested after adding active icons and using attribute selectors
 
 @use "sass:map";
 @use "sass:math";
@@ -41,7 +33,7 @@
 $config: (
   "size" : 1.15em,
   "text-size" : 1em,
-  "stroke-width" : 0.18em,
+  "stroke-width" : 3px,
   "text-offset" : 0.05em,
   "vertical-align" : -0.2em,
   "stroke-border-radius" : null,
@@ -51,6 +43,12 @@ $config: (
   "transition-timing-function" : ease-in,
   "font-family" : ('Courier New', monospace),
   "margin" : (0 0.15em),
+  "stroke-sizes" : (
+    "large" : (
+      "stroke-width" : 5px,
+      "stroke-border-radius" : 2px
+    )
+  )
 );
 
 /// Change modules $config
@@ -75,6 +73,16 @@ $config: (
   }
 }
 
+@mixin for-each-stroke() {
+  @each $name, $props in get("stroke-sizes") {
+    $stroke-width: map.get($props, "stroke-width");
+    $stroke-border-radius: map.get($props, "stroke-width");
+    .css-icon--stroke-#{ $name } {
+      @content($stroke-width, $stroke-border-radius);
+    }
+  }
+}
+
 /// Prints adaptive spacing component styles
 /// @example scss
 ///  @include ulu.component-example-styles();
@@ -84,7 +92,7 @@ $config: (
   $size: get("size");
   $stroke-width: get("stroke-width");
   $half-height: math.div(get("size"), 2);
-  $half-stroke-width: math.div(get("stroke-width"), 2);
+  $half-stroke-width: math.round(math.div(get("stroke-width"), 2));
 
 
   .css-icon {
@@ -100,142 +108,148 @@ $config: (
     margin: get("margin");
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    // Icons that share pseudos for strokes
+    &:before,
+    &:after {
+      // content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: $stroke-width;
+      top: 50%;
+      left: 50%;
+      background-color: get("color"); 
+      transform: translateX(-50%);
+      margin-top: -($half-stroke-width);
+      border-radius: get("stroke-border-radius");
+    }
+  }
+  @include for-each-stroke() using ($alt-width, $alt-border-radius) {
+    &::before,
+    &::after {
+      height: $alt-width;
+      margin-top: -(math.div($alt-width, 2));
+      border-radius: $alt-border-radius;
+    }
+  }
+  .css-icon--plus,
+  .css-icon--plus-to-minus,
+  .css-icon--minus,
+  .css-icon--close {
+    &::before,
+    &::after {
+      content: "";
+    }
   }
 
+
   // Solid icons
-  .css-icon--square,
-  .css-icon--circle,
-  .css-icon--info,
-  .css-icon--question {
+  [class*="css-icon--circle"],
+  [class*="css-icon--square"] {
     background-color: get("color");
   }
-  .css-icon--square {
-    // background-clip: content-box;
-    // padding: 1%;
-    transform: scale(0.9);
-  }
-  .css-icon--circle,
-  .css-icon--circle-outline,
-  .css-icon--info,
-  .css-icon--question {
+  [class*="css-icon--circle"] {
     border-radius: 50%;
   }
-  .css-icon--triangle-right,
-  .css-icon--triangle-left,
-  .css-icon--triangle-up,
-  .css-icon--triangle-down,
-  // Arrow uses same equilateral triangle
-  .css-icon--arrow-left:after,
-  .css-icon--arrow-right:after,
-  .css-icon--arrow-up:after,
-  .css-icon--arrow-down:after {
-    background-color: get("color");
-    clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
+
+  .css-icon--square {
+    transform: scale(0.9);
+  }
+  .css-icon--square,
+  .css-icon--circle,
+  .css-icon--circle-outline,
+  .css-icon--square-outline {
+    &::before,
+    &::after {
+      content: none;
+    }
   }
   .css-icon--circle-outline,
   .css-icon--square-outline {
     background-color: transparent;
     border: $border;
   }
-  .css-icon--info,
-  .css-icon--question {
-    // display: inline-flex;
-    // align-items: flex-end;
-    // align-content: center;
-    // vertical-align: baseline;
-    // justify-content: center;
+
+  
+  .css-icon--circle-info,
+  .css-icon--circle-question {
     &:before {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       content: "i";
+      text-align: center;
       font-size: get("text-size");
       font-family: get("font-family");
       font-weight: bold;
       margin-top: get("text-offset");
       color: get("color");
+      height: auto;
+      left: 0;
+      right: 0;
+      background-color: transparent;
       filter: invert(1) brightness(1.5);
+      transform: translateY(-50%);
+    }
+    &::after {
+      content: none;
     }
   }
-  .css-icon--question { 
+  .css-icon--circle-question { 
     &:before {
       content: "?";
     }
   }
-  
-  // Icons that share pseudos for strokes
-  .css-icon--close,
-  .css-icon--plus,
-  .css-icon--plus-to-minus,
-  .css-icon--minus,
-  .css-icon--drag-x,
-  .css-icon--drag-y,
-  .css-icon--angle-right,
-  .css-icon--angle-right-to-down,
-  .css-icon--angle-up-to-down,
-  .css-icon--angle-down-to-up,
-  .css-icon--angle-left,
-  .css-icon--angle-up,
-  .css-icon--angle-down,
-  .css-icon--arrow-left,
-  .css-icon--arrow-right,
-  .css-icon--arrow-up,
-  .css-icon--arrow-down,
-  .css-icon--menu,
-  .css-icon--menu-to-close {
-    &:before,
-    &:after {
+
+  [class*="css-icon--arrow"] {
+    &::before,
+    &::after {
       content: "";
-      display: block;
-      width: 100%;
-      height: $stroke-width;
-      background-color: get("color"); 
-      @if (get("stroke-border-radius")) {
-        border-radius: get("stroke-border-radius");
-      }
+      transform: translateY(-50%);
+      margin-top: 0;
     }
   }
-  .css-icon--arrow-left,
-  .css-icon--arrow-right,
-  .css-icon--arrow-up,
-  .css-icon--arrow-down {
-    &:before,
-    &:after {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+  
+  // Arrow uses same equilateral triangle
+  [class*="css-icon--triangle"],
+  [class*="css-icon--arrow"]::after {
+    background-color: get("color");
+    clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
+  }
+  [class*="css-icon--arrow"] {
     &:before {
+      content: "";
       width: 70%;
       left: 0;
     }
     // Note triangle clip-path is defined above with the solid triangle
     &:after {
+      content: "";
       border-radius: 0;
       height: 100%;
       width: 55%;
       right: 0;
+      left: auto;
     }
   }
-  .css-icon--angle-right,
-  .css-icon--angle-right-to-down,
-  .css-icon--angle-up-to-down,
-  .css-icon--angle-down-to-up,
-  .css-icon--angle-left,
-  .css-icon--angle-up,
-  .css-icon--angle-down {
+  [class*="css-icon--angle"] {
     transform: rotate(135deg);
     &:before,
     &:after {
-      position: absolute;
+      content: "";
       top: 30%;
       left: 30%;
-      width: 70%;
+      width: 70%;    
+      transform: none;
+      margin-top: 0;
     }
     &:after {
       width: $stroke-width;
       height: 70%;
+    }
+  }
+  @include for-each-stroke() using ($alt-width, $alt-border-radius) {
+    &[class*="css-icon--angle"] {
+      &:after {
+        width: $alt-width;
+      }
     }
   }
   .css-icon--angle-left,
@@ -253,20 +267,7 @@ $config: (
 
   // Centered pseudos offset by half of stroke before transform
   // Icons with centered pseudos
-  .css-icon--plus,
-  .css-icon--plus-to-minus,
-  .css-icon--minus,
-  .css-icon--close {
-    @include -absolute-centered-pseudos-styles();
-  }
-  .css-icon--plus,
-  .css-icon--plus-to-minus,
-  .css-icon--minus {
-    &:before,
-    &:after {
-      width: 100%;
-    }
-  }
+
   .css-icon--plus,
   .css-icon--plus-to-minus {
     &:before {
@@ -285,41 +286,68 @@ $config: (
     }
   }
   .css-icon--close {
-    @include -close-pseudos-styles();
-  }
-  .css-icon--drag-x,
-  .css-icon--drag-y {
-    // gap: $stroke-width * 1.35;
-    display: inline-flex;
-    justify-content: center;
-    &:before,
+    &:before {
+      transform: translate(-50%) rotate(45deg);
+    }
     &:after {
-      width: $stroke-width;
-      height: 100%;
-      margin: 0 ($stroke-width * 0.75);
+      transform: translate(-50%) rotate(-45deg);
+    }
+  }
+  [class*="css-icon--drag"] {
+    &::before {
+      content: "";
+      // Make up for margin-top by default
+      margin-top: -($stroke-width + $stroke-width);
+    }
+    &::after {
+      content: "";
+      margin-top: $stroke-width;
     }
   }
 
-  // Unique
+  @include for-each-stroke() using ($alt-width, $alt-border-radius) {
+    &[class*="css-icon--drag"] {
+      &::before {
+        margin-top: -($alt-width + $alt-width);
+      }
+      &::after {
+        margin-top: $alt-width;
+      }
+    }
+  }
+
   .css-icon--menu,
   .css-icon--menu-to-close {
-    // width: 80%;
-    // height: 80%;
     padding-top: $stroke-width;
-    // padding-bottom: $stroke-width;
-    // height: $size * 0.8;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
     &::before,
     &::after {
-      // position: absolute;
+      content: "";
+      position: static;
+      transform: none;
+      top: auto;
       bottom: $stroke-width;
     }
     &::before {
+      $menu-gap: math.round($stroke-width * 2.25);
       top: $stroke-width;
-      box-shadow: 0px ($stroke-width * 2) get("color");
-      margin-bottom: $stroke-width * 3;
+      box-shadow: 0px ($menu-gap) get("color");
+      margin-bottom: ($menu-gap + ($stroke-width * 2));
+    }
+  }
+  @include for-each-stroke() using ($alt-width, $alt-border-radius) {
+    &.css-icon--menu,
+    &.css-icon--menu-to-close {
+      padding-top: $alt-width;
+      &::before,
+      &::after {
+        bottom: $alt-width;
+      }
+      &::before {
+        $menu-gap: math.round($alt-width * 2.25);
+        top: $alt-width;
+        box-shadow: 0px ($menu-gap) get("color");
+        margin-bottom: ($menu-gap + ($alt-width * 2));
+      }
     }
   }
 
@@ -338,7 +366,7 @@ $config: (
     transform: rotate(90deg);
   }
 
-  // Active icon types
+  // Active icons
   .css-icon--plus-to-minus {
     &,
     &::before,
@@ -353,6 +381,7 @@ $config: (
       }
     }
   }
+  
   .css-icon--angle-right-to-down,
   .css-icon--angle-up-to-down,
   .css-icon--angle-down-to-up {
@@ -380,37 +409,18 @@ $config: (
   }
   .css-icon--menu-to-close {
     @include when-active() {
-      @include -absolute-centered-pseudos-styles();
-      @include -close-pseudos-styles();
       animation: ScaleIn get("transition-duration") get("transition-timing-function") forwards;
       &::before,
       &::after {
+        position: absolute;
+        top: 50%;
         transition: none;
+        transform: translate(-50%) rotate(-45deg);
       }
       &:before {
         box-shadow: none;
+        transform: translate(-50%) rotate(45deg);
       }
     }
-  }
-}
-
-// Internal mixins
-
-@mixin -absolute-centered-pseudos-styles() {
-  &:before,
-  &:after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -(math.div(get("stroke-width"), 2));
-  }
-}
-
-@mixin -close-pseudos-styles() {
-  &:before {
-    transform: translateX(-50%) rotate(45deg);
-  }
-  &:after {
-    transform: translateX(-50%) rotate(-45deg);
   }
 }

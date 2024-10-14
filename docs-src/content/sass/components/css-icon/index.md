@@ -35,7 +35,7 @@ Module Settings
 $config: (
   "size" : 1.15em,
   "text-size" : 1em,
-  "stroke-width" : 0.18em,
+  "stroke-width" : 3px,
   "text-offset" : 0.05em,
   "vertical-align" : -0.2em,
   "stroke-border-radius" : null,
@@ -45,6 +45,12 @@ $config: (
   "transition-timing-function" : ease-in,
   "font-family" : ('Courier New', monospace),
   "margin" : (0 0.15em),
+  "stroke-sizes" : (
+    "large" : (
+      "stroke-width" : 5px,
+      "stroke-border-radius" : 2px
+    )
+  )
 );
 ```
   
