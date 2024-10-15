@@ -53,7 +53,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|prefix|String|""|Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable|
+|prefix|String|""|Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable|
 
     
   
@@ -137,8 +137,8 @@ Outputs a single custom property declaration
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 67-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 72-79
+- **Lines (code):** 81-83
     </details>
     
 
@@ -194,8 +194,8 @@ Outputs a map as custom properties
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 80-86
-- **Lines (code):** 88-92
+- **Lines (comments):** 85-91
+- **Lines (code):** 93-97
     </details>
     
 
@@ -250,8 +250,8 @@ Declare a custom property for current breakpoint
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 94-102
-- **Lines (code):** 104-116
+- **Lines (comments):** 99-107
+- **Lines (code):** 109-121
     </details>
     
 
@@ -308,8 +308,8 @@ Declare a custom property for each breakpoint size
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 118-125
-- **Lines (code):** 127-138
+- **Lines (comments):** 123-130
+- **Lines (code):** 132-143
     </details>
     
 
@@ -483,7 +483,7 @@ Getting a custom property name
 
   
 
-Function to use a custom property within a declartion value 
+Function to use a custom property within a declaration value 
     
     
 
@@ -492,8 +492,8 @@ Function to use a custom property within a declartion value
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
-- **Lines (comments):** 54-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 54-62
+- **Lines (code):** 64-70
     </details>
     
 
@@ -517,6 +517,7 @@ Print an custom property as a value
 |Name|Type|Description|Default|
 |:--|:--|:--|:--|
 |$name|`String`|Name of custom property||
+|$default-value|`String`|Provide a default value for var()|null|
 |$prefix|`String`|Override default prefix|$config.prefix|
 
     
@@ -526,7 +527,7 @@ Print an custom property as a value
 
 |Type|Description|
 |:--|:--|
-|String|Formatted custom propety for use in property value (ie. var(...))|
+|String|Formatted custom property for use in property value (ie. var(...))|
 
     
 

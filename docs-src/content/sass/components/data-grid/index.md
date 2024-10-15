@@ -37,7 +37,13 @@ $config: (
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
   "gutter":              14px,
-  "breakpoint":          false, // Fallback to default
+  "breakpoint":          false,                   // Fallback to default
+  "position-class-column-first": "position-column-first",
+  "position-class-column-last":  "position-column-last",
+  "position-class-row-first":    "position-row-first",
+  "position-class-row-last":     "position-row-last",
+  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
+  "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -48,10 +54,6 @@ $config: (
       "gutter":     20px
     )
   ),
-  "position-class-column-first": "position-column-first",
-  "position-class-column-last":  "position-column-last",
-  "position-class-row-first":    "position-row-first",
-  "position-class-row-last":     "position-row-last",
 );
 ```
   
@@ -62,7 +64,7 @@ $config: (
 - **Group:** data-grid
 - **Type:** variable
 - **Lines (comments):** 16-26
-- **Lines (code):** 28-48
+- **Lines (code):** 28-50
     </details>
     
 
@@ -110,8 +112,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 53-55
+- **Lines (code):** 57-59
     </details>
     
 
@@ -152,8 +154,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-96
+- **Lines (comments):** 92-94
+- **Lines (code):** 96-98
     </details>
     
 
@@ -196,8 +198,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 98-107
-- **Lines (code):** 109-549
+- **Lines (comments):** 100-109
+- **Lines (code):** 111-563
     </details>
     
 
@@ -250,8 +252,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 61-63
+- **Lines (code):** 65-67
     </details>
     
 
@@ -292,8 +294,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-79
+- **Lines (comments):** 69-71
+- **Lines (code):** 73-81
     </details>
     
 

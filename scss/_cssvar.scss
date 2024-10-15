@@ -11,7 +11,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} prefix [""] Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable
+/// @prop {String} prefix [""] Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable
 
 $config: (
   "prefix" : ""
@@ -51,17 +51,22 @@ $config: (
   }
 }
 
-/// Function to use a custom property within a declartion value 
+/// Function to use a custom property within a declaration value 
 /// @example scss Print an custom property as a value
 ///   .test {
 ///     color: cssvar.use("base-color");
 ///   }
 /// @param {String} $name Name of custom property 
+/// @param {String} $default-value [null] Provide a default value for var()
 /// @param {String} $prefix [$config.prefix] Override default prefix
-/// @return {String} Formatted custom propety for use in property value (ie. var(...))
+/// @return {String} Formatted custom property for use in property value (ie. var(...))
 
-@function use($name, $prefix: get("prefix")) {
-  @return var(name($name, $prefix));
+@function use($name, $default-value: null, $prefix: get("prefix")) {
+  @if ($default-value) {
+    @return var(name($name, $prefix), $default-value);
+  } @else {
+    @return var(name($name, $prefix));
+  }
 }
 
 /// Outputs a single custom property declaration

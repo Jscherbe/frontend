@@ -2,20 +2,26 @@
 title: Data grid
 intro: Flexbox based grid that uses a JSON like attribute for options
 layout: default
-todos: 
+todo: 
   - Add more examples, bring in example css so that it's visualized
   
 ---
 
 The grid is for page layout, it provides different column sizes at each of the configured breakpoints.
+
 On the smallest size the grid columns will span 100%. The grid is setup using two attributes, data-grid="" for the parent grid container and data-grid-item="" for each grid column. The grid uses a script to set position classes, which are used for rule placement since the grid and reflow at different breakpoints.
+
+## Options
+
+{{ gridAttr | optionsTable: "Options for 'data-grid'" }}
+{{ gridItemAttr | optionsTable: "Options for 'data-grid-item'" }}
 
 ## Examples
 
-<p>Dotted Line is the container holding the data-grid</p>
-<p>Solid Line is the individual cells including gutters</p>
-<p>Purple Background is the cell's content</p>
-<p>Solid Black Line is the grid's rules</p>
+- Dotted Line is the container holding the data-grid
+- Solid Line is the individual cells including gutters
+- Purple Background is the cell's content
+- Solid Black Line is the grid's rules
 
 ### Default Grid
 
@@ -25,10 +31,48 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
   </div>
 </div>
 
+#### default (test sticky column)
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div class="demo-grid__cell" data-grid-item="width: 4, sticky: top">
+      <div class="demo-grid__content">
+        Stuck to top
+      </div>
+    </div>
+    <div class="demo-grid__cell" data-grid-item="width-medium: 8">
+      <div class="demo-grid__content">
+        {{ placeholder.text }}
+        {{ placeholder.text }}
+        {{ placeholder.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div class="demo-grid__cell" data-grid-item="width: 4, sticky: bottom">
+      <div class="demo-grid__content">
+        Stuck to Bottom
+      </div>
+    </div>
+    <div class="demo-grid__cell" data-grid-item="width: 8">
+      <div class="demo-grid__content">
+        {{ placeholder.text }}
+        {{ placeholder.text }}
+        {{ placeholder.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
 ### Justify Content
+
 <p>Allows you to justify the columns (horizontal alignment). The default is start (left aligned)</p>
 
 #### default (justify start)
+
 <div class="demo-grid__container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}
@@ -247,8 +291,13 @@ You can remove the gutters between columns by adding this setting. The grid show
   </div>
 </div>
 
-## Options
+#### default (justify start)
+
+<div class="demo-grid__container">
+  <div data-grid="columns: 12" class="demo-grid">
+    {{ gridTemplate }}
+    {{ gridTemplateShort }}
+  </div>
+</div>
 
 
-{{ gridAttr | optionsTable: "Options for 'data-grid'" }}
-{{ gridItemAttr | optionsTable: "Options for 'data-grid-item'" }}
