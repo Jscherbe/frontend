@@ -11,26 +11,26 @@
 
 /// Module Settings
 /// @type Map
-/// @param {Color} background-color [white] Background color of the text-only flipcard front.
-/// @param {Color} background-color-image [rgba(96, 255, 255, 0.89)] Background color of the image flipcard front.
-/// @param {Number} image-opacity [0.7] Opacity of the image to allow shading from the background color.
-/// @param {Color} background-color-back [rgb(178, 178, 178)] Background color on the back of the flipcard.
-/// @param {Color} border [1px solid black] Flipcard border.
-/// @param {Dimension} border-radius [6px] Border radius for flipcard.
-/// @param {Color} border-color-hover [black] border color when hovered.
-/// @param {CssValue} control-button-border-focus [2px solid blue] Border that shows when focused.
-/// @param {Time} anim-duration [430ms] Animation duration.
-/// @param {Time} anim-delay [200ms] Animation delay.
-/// @param {Dimension} padding [1.5rem] Padding for the flipcard.
-/// @param {Color} title-color [red] Color of the front page text.
-/// @param {Color} title-color-hover [green] Color of the front page text when hovered or focused.
-/// @param {Color} icon-color [pink] Color of the icon.
-/// @param {Color} icon-color-hover [aqua] Color of the icon when hovered or focused.
-/// @param {Color} icon-color-image [aqua] Color of the icon when using an image.
-/// @param {Color} icon-color-image-hover [pink] Color of the icon when using an image and hovered or focused.
-/// @param {Color} title-color-image [black] Color of the front page text when using an image.
-/// @param {Color} title-color-image-hover [blue] Color of the front page text when using an image and hovered or focused.
-/// @param {Boolean} bottom-shadow [true] Boolean that enables a bottom shadow to the image flipcard.
+/// @prop {Color} background-color [white] Background color of the text-only flipcard front.
+/// @prop {Color} background-color-image [rgba(96, 255, 255, 0.89)] Background color of the image flipcard front.
+/// @prop {Number} image-opacity [0.7] Opacity of the image to allow shading from the background color.
+/// @prop {Color} background-color-back [rgb(178, 178, 178)] Background color on the back of the flipcard.
+/// @prop {Color} border [1px solid black] Flipcard border.
+/// @prop {Dimension} border-radius [6px] Border radius for flipcard.
+/// @prop {Color} border-color-hover [black] border color when hovered.
+/// @prop {CssValue} control-button-border-focus [2px solid blue] Border that shows when focused.
+/// @prop {Time} anim-duration [430ms] Animation duration.
+/// @prop {Time} anim-delay [200ms] Animation delay.
+/// @prop {Dimension} padding [1.5rem] Padding for the flipcard.
+/// @prop {Color} title-color [red] Color of the front page text.
+/// @prop {Color} title-color-hover [green] Color of the front page text when hovered or focused.
+/// @prop {Color} icon-color [pink] Color of the icon.
+/// @prop {Color} icon-color-hover [aqua] Color of the icon when hovered or focused.
+/// @prop {Color} icon-color-image [aqua] Color of the icon when using an image.
+/// @prop {Color} icon-color-image-hover [pink] Color of the icon when using an image and hovered or focused.
+/// @prop {Color} title-color-image [black] Color of the front page text when using an image.
+/// @prop {Color} title-color-image-hover [blue] Color of the front page text when using an image and hovered or focused.
+/// @prop {Boolean} bottom-shadow [true] Boolean that enables a bottom shadow to the image flipcard.
 
 /// @todo 
 /// 

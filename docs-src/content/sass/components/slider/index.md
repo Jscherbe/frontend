@@ -104,18 +104,18 @@ $config: (
 |button-background-color-hover|Color|color.get("link-hover")|
 |button-icon-offset-x|Dimension|false|
 |button-icon-offset-y|Dimension|false|
-|button-margin|Map|0.75rem|
-|button-margin-small|Map|0.75rem|
-|dot-size|Map|1rem|
-|dot-border-radius|Map|50%|
-|dot-background-color|Map|transparent|
-|dot-border-width|Map|2px|
-|dot-border-color|Map|color.get("link")|
-|dot-border-color-hover|Map|color.get("link")|
-|dot-background-color-hover|Map|color.get("link")|
-|dot-background-color-selected|Map|color.get("link")|
-|dot-border-color-selected|Map|color.get("link")|
-|breakpoint|Map|"small"|
+|button-margin|Dimension|0.75rem|
+|button-margin-small|Dimension|0.75rem|
+|dot-size|Dimension|1rem|
+|dot-border-radius|Dimension|50%|
+|dot-background-color|Color|transparent|
+|dot-border-width|Dimension|2px|
+|dot-border-color|Color|color.get("link")|
+|dot-border-color-hover|Color|color.get("link")|
+|dot-background-color-hover|Color|color.get("link")|
+|dot-background-color-selected|Color|color.get("link")|
+|dot-border-color-selected|Color|color.get("link")|
+|breakpoint|List|"small"|
 
     
   

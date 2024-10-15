@@ -17,28 +17,28 @@
 
 /// Module Settings
 /// @type Map
-/// @param {} container  ["container"]
-/// @param {} background-color  [false]
-/// @param {} margin-top  [1rem]
-/// @param {} margin-bottom  [3rem]
-/// @param {} padding-top  [0]
-/// @param {} padding-bottom  [0]
-/// @param {} button-indent  [1.5rem]
-/// @param {} button-indent-small  [0.5rem]
-/// @param {} button-size  [3rem]
-/// @param {} button-font-size  [1.35rem]
-/// @param {} button-color  [color.get("type")]
-/// @param {} button-border  [2px solid white]
-/// @param {} button-border-radius  [50%]
-/// @param {} button-background-color  [white]
-/// @param {} button-box-shadow  [element.get("box-shadow")]
-/// @param {} button-color-hover  [color.get("link")]
-/// @param {} button-border-color-hover  [white]
-/// @param {} button-background-color-hover  [white]
-/// @param {} button-icon-offset-x  [false]
-/// @param {} button-icon-offset-y  [false]
-/// @param {} containers  [("container",)]
-/// @param {} prefix ["scroll-slide"]
+/// @prop {String} container  ["container"]
+/// @prop {Color} background-color  [false]
+/// @prop {Dimension} margin-top  [1rem]
+/// @prop {Dimension} margin-bottom  [3rem]
+/// @prop {Dimension} padding-top  [0]
+/// @prop {Dimension} padding-bottom  [0]
+/// @prop {Dimension} button-indent  [1.5rem]
+/// @prop {Dimension} button-indent-small  [0.5rem]
+/// @prop {Dimension} button-size  [3rem]
+/// @prop {Dimension} button-font-size  [1.35rem]
+/// @prop {Color} button-color  [color.get("type")]
+/// @prop {CssValue} button-border  [2px solid white]
+/// @prop {Dimension} button-border-radius  [50%]
+/// @prop {Color} button-background-color  [white]
+/// @prop {CssValue} button-box-shadow  [element.get("box-shadow")]
+/// @prop {Color} button-color-hover  [color.get("link")]
+/// @prop {Color} button-border-color-hover  [white]
+/// @prop {Color} button-background-color-hover  [white]
+/// @prop {Dimension} button-icon-offset-x  [false]
+/// @prop {Dimension} button-icon-offset-y  [false]
+/// @prop {List} containers  [("container",)]
+/// @prop {String} prefix ["scroll-slide"]
 
 /// Config options
 
@@ -95,7 +95,6 @@ $config: (
   #{ $prefix }--cards {
     #{ $prefix }__slide {
       margin-right: 1.35rem;
-      // display: flex;
       > .card {
         width: 100%;
         max-width: none;

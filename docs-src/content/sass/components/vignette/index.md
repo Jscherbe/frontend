@@ -43,9 +43,18 @@ $config: (
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-20
+- **Lines (comments):** 13-15
+- **Lines (code):** 17-20
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|background-color|Color|rgb(0,0,0)|Color used for the fade-in of the vignette.|
+
     
   
 
