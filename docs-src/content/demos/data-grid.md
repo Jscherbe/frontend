@@ -40,7 +40,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
         Stuck to top
       </div>
     </div>
-    <div class="demo-grid__cell" data-grid-item="width-medium: 8">
+    <div class="demo-grid__cell" data-grid-item="width: 8">
       <div class="demo-grid__content">
         {{ placeholder.text }}
         {{ placeholder.text }}

@@ -5520,6 +5520,18 @@ Same as width-[breakpoint] except for offset instead of width
 </div>
 </td>
 </tr></p>
+<p><tr>
+<td><strong>sticky</strong></td>
+<td><strong>[top, bottom]</strong></td>
+<td>
+<p v-if="item.description">
+Set's a column to be sticky
+</p></p>
+<p><div class="options-table__example">
+<code>&lt;div data-grid-item=&quot;..., sticky: top&quot;&gt;...</code>
+</div>
+</td>
+</tr></p>
 <p></tbody>
 </table></p>
 <h2 id="examples" tabindex="-1">Examples</h2>
@@ -5557,7 +5569,7 @@ Same as width-[breakpoint] except for offset instead of width
         Stuck to top
       </div>
     </div>
-    <div class="demo-grid__cell" data-grid-item="width-medium: 8">
+    <div class="demo-grid__cell" data-grid-item="width: 8">
       <div class="demo-grid__content">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.
