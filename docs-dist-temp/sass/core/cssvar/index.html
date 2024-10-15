@@ -5301,7 +5301,7 @@
 <td style="text-align:left">prefix</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;&quot;</td>
-<td style="text-align:left">Default prefix, will be added to all custom properties when using mixin or functions, unless overriden, set to empty quotes to disable</td>
+<td style="text-align:left">Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable</td>
 </tr>
 </tbody>
 </table>
@@ -5360,8 +5360,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 67-74</li>
-<li><strong>Lines (code):</strong> 76-78  </details>
+<li><strong>Lines (comments):</strong> 72-79</li>
+<li><strong>Lines (code):</strong> 81-83  </details>
 </li>
 </ul>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5417,8 +5417,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 80-86</li>
-<li><strong>Lines (code):</strong> 88-92  </details>
+<li><strong>Lines (comments):</strong> 85-91</li>
+<li><strong>Lines (code):</strong> 93-97  </details>
 </li>
 </ul>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -5468,8 +5468,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 94-102</li>
-<li><strong>Lines (code):</strong> 104-116  </details>
+<li><strong>Lines (comments):</strong> 99-107</li>
+<li><strong>Lines (code):</strong> 109-121  </details>
 </li>
 </ul>
 <h4 id="examples-3" tabindex="-1">Examples</h4>
@@ -5531,8 +5531,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 118-125</li>
-<li><strong>Lines (code):</strong> 127-138  </details>
+<li><strong>Lines (comments):</strong> 123-130</li>
+<li><strong>Lines (code):</strong> 132-143  </details>
 </li>
 </ul>
 <h4 id="examples-4" tabindex="-1">Examples</h4>
@@ -5700,15 +5700,15 @@
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Function to use a custom property within a declartion value</p>
+<p>Function to use a custom property within a declaration value</p>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 54-61</li>
-<li><strong>Lines (code):</strong> 63-65  </details>
+<li><strong>Lines (comments):</strong> 54-62</li>
+<li><strong>Lines (code):</strong> 64-70  </details>
 </li>
 </ul>
 <h4 id="examples-7" tabindex="-1">Examples</h4>
@@ -5734,6 +5734,12 @@
 <td style="text-align:left"></td>
 </tr>
 <tr>
+<td style="text-align:left">$default-value</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Provide a default value for var()</td>
+<td style="text-align:left">null</td>
+</tr>
+<tr>
 <td style="text-align:left">$prefix</td>
 <td style="text-align:left"><code>String</code></td>
 <td style="text-align:left">Override default prefix</td>
@@ -5752,7 +5758,7 @@
 <tbody>
 <tr>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Formatted custom propety for use in property value (ie. var(...))</td>
+<td style="text-align:left">Formatted custom property for use in property value (ie. var(...))</td>
 </tr>
 </tbody>
 </table>

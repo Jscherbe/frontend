@@ -30,7 +30,13 @@ $config: (
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
   "gutter":              14px,
-  "breakpoint":          false, // Fallback to default
+  "breakpoint":          false,                   // Fallback to default
+  "position-class-column-first": "position-column-first",
+  "position-class-column-last":  "position-column-last",
+  "position-class-row-first":    "position-row-first",
+  "position-class-row-last":     "position-row-last",
+  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
+  "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -41,10 +47,6 @@ $config: (
       "gutter":     20px
     )
   ),
-  "position-class-column-first": "position-column-first",
-  "position-class-column-last":  "position-column-last",
-  "position-class-row-first":    "position-row-first",
-  "position-class-row-last":     "position-row-last",
 ) !default;
 
 
@@ -126,7 +128,9 @@ $config: (
   $attribute: get("attribute"),
   $include-container: true,
   $container-attribute: get("attribute-container"),
-  $container-gutter-scales: true
+  $container-gutter-scales: true,
+  $sticky-top: get("sticky-top"),
+  $sticky-bottom: get("sticky-bottom")
 ) {
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
@@ -369,6 +373,16 @@ $config: (
         float: left; // Fallback
         padding-left: $gutter;
         padding-right: $gutter;
+      }
+      > #{'[#{ $attribute-item }*="sticky: top"]'} {
+        position: sticky;
+        align-self: start;
+        top: $sticky-top;
+      }
+      > #{'[#{ $attribute-item }*="sticky: bottom"]'} {
+        position: sticky;
+        align-self: end;
+        bottom: $sticky-bottom;
       }
 
       @if $extra-gutter-scales {

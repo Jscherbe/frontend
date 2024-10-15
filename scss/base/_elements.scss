@@ -52,7 +52,12 @@ $config: (
 @mixin styles {
 
   @include utils.file-header('base', 'elements');
-
+  // Core/default css-vars
+  :root {
+    --ulu-sticky-top-offset: 0; // Should be adjusted by user
+    --ulu-sticky-bottom-offset: 0; // Should be adjusted by user
+    --ulu-scrollbar-width: 0; // Needs to be set by JS
+  }
   *,
   ::before,
   ::after {
