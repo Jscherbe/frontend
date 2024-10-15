@@ -41,7 +41,7 @@ intro: Basic icons that use only CSS
   <caption>Available Icons</caption>
   <thead>
     <tr>
-      <th>Icon</th>
+      <th style="width: 50%">Icon</th>
       <th>Class</th>
       <th>Toggle State</th>
     </tr>

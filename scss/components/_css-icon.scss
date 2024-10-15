@@ -315,38 +315,33 @@ $config: (
       }
     }
   }
-
+  // For the menu icon the blocks are stacked with box shadow being the 
+  // third bar
   .css-icon--menu,
   .css-icon--menu-to-close {
-    padding-top: $stroke-width;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
     &::before,
     &::after {
       content: "";
       position: static;
       transform: none;
-      top: auto;
-      bottom: $stroke-width;
+      margin-top: 0;
     }
     &::before {
-      $menu-gap: math.round($stroke-width * 2.25);
-      top: $stroke-width;
-      box-shadow: 0px ($menu-gap) get("color");
-      margin-bottom: ($menu-gap + ($stroke-width * 2));
+      box-shadow: 0px ($stroke-width * 2 + 1px) get("color");
+      margin-bottom: ($stroke-width * 3) + 2px;
     }
   }
   @include for-each-stroke() using ($alt-width, $alt-border-radius) {
     &.css-icon--menu,
     &.css-icon--menu-to-close {
-      padding-top: $alt-width;
-      &::before,
-      &::after {
-        bottom: $alt-width;
-      }
       &::before {
-        $menu-gap: math.round($alt-width * 2.25);
-        top: $alt-width;
-        box-shadow: 0px ($menu-gap) get("color");
-        margin-bottom: ($menu-gap + ($alt-width * 2));
+        box-shadow: 0px ($alt-width * 2 + 1px) get("color");
+        margin-bottom: ($alt-width * 3) + 2px;
       }
     }
   }

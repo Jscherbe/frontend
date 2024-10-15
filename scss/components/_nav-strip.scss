@@ -42,7 +42,7 @@ $config: (
   "underline-size" : 3px,
   "margin-between" : 2.25em,
   "underline-color-hover" : gray,
-  "activeSelector" : ".is-active",
+  "activeSelector" : "&.is-active, &.has-active",
   "rule-size" : 3px,
   "rule-color" : "rule",
   "rule-offset" : -3px,
@@ -111,7 +111,7 @@ $config: (
       border-bottom-color: get("underline-color-hover");
       color: get("color-hover");
     }
-    &#{ get("activeSelector") } {
+    #{ get("activeSelector") } {
       border-bottom-color: get("underline-color");
       color: get("color-active");
     }
