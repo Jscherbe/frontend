@@ -11,13 +11,34 @@
 
 /// Module Settings
 /// @type Map
+/// @param {Color} background-color [white] Background color of the text-only flipcard front.
+/// @param {Color} background-color-image [rgba(96, 255, 255, 0.89)] Background color of the image flipcard front.
+/// @param {Number} image-opacity [0.7] Opacity of the image to allow shading from the background color.
+/// @param {Color} background-color-back [rgb(178, 178, 178)] Background color on the back of the flipcard.
+/// @param {Color} border [1px solid black] Flipcard border.
+/// @param {Dimension} border-radius [6px] Border radius for flipcard.
+/// @param {Color} border-color-hover [black] border color when hovered.
+/// @param {CssValue} control-button-border-focus [2px solid blue] Border that shows when focused.
+/// @param {Time} anim-duration [430ms] Animation duration.
+/// @param {Time} anim-delay [200ms] Animation delay.
+/// @param {Dimension} padding [1.5rem] Padding for the flipcard.
+/// @param {Color} title-color [red] Color of the front page text.
+/// @param {Color} title-color-hover [green] Color of the front page text when hovered or focused.
+/// @param {Color} icon-color [pink] Color of the icon.
+/// @param {Color} icon-color-hover [aqua] Color of the icon when hovered or focused.
+/// @param {Color} icon-color-image [aqua] Color of the icon when using an image.
+/// @param {Color} icon-color-image-hover [pink] Color of the icon when using an image and hovered or focused.
+/// @param {Color} title-color-image [black] Color of the front page text when using an image.
+/// @param {Color} title-color-image-hover [blue] Color of the front page text when using an image and hovered or focused.
+/// @param {Boolean} bottom-shadow [true] Boolean that enables a bottom shadow to the image flipcard.
 
 /// @todo 
-/// Why was the shadow originally set to the negative size of it's parent element? Should it just be bottom?  Line 173
-/// added some reduced motion where I thought applicable. Line 111
+/// 
 
 $config: (
   "background-color" : white,
+  "background-color-image" : rgba(96, 255, 255, 0.89),
+  "image-opacity" : 0.7,
   "background-color-back" : rgb(178, 178, 178),
   "border" : 1px solid black,
   "border-radius" : 6px,
@@ -66,7 +87,6 @@ $config: (
 ///  @include ulu.component-adaptive-spacing-styles();
 
 @mixin styles {
-  // @dan @joe-check added vignette styling here. Need to discuss best way to include this
   .flipcard {
     height: 100%;
     background-color: get("background-color");
@@ -119,6 +139,8 @@ $config: (
     }
   }
   .flipcard--w-image {
+    background-color: get("background-color-image");
+
     &:hover {
       .flipcard__front-content {
         color: get("title-color-image-hover");
@@ -141,7 +163,7 @@ $config: (
       object-fit: cover;
       width: 100%;
       height: 100%;
-      opacity: 0.7;
+      opacity: get("image-opacity");
     }
   }
   .flipcard__icon {
@@ -159,9 +181,7 @@ $config: (
     z-index: 2;
     padding: get('padding');
     align-self: end;
-    transition: transform 350ms ease-in-out;
-    // So that it doesn't ride up when the user hovers
-    
+    transition: transform 350ms ease-in-out;    
   }
   .flipcard--w-image {
     .flipcard__icon {
@@ -170,16 +190,13 @@ $config: (
     .flipcard__front-content {
       color: get("title-color-image");
       @if(get("bottom-shadow")) {
+        // bottom position includes padding so that the shadow 
         &:after {
           content: '';
           display: block;
           position: absolute;
-          // top: calc(0rem - get('padding'));
           bottom: calc(0rem - get('padding'));
-          // left: calc(0rem - get('padding'));
-          // right: calc(0rem - get('padding'));
           top: 0;
-          // bottom: 0;
           left: 0;
           right: 0;
           background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));

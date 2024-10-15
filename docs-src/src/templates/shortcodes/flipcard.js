@@ -13,7 +13,7 @@ export default function(
       <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
     </div>
     </span>` : 
-    `<span class="flipcard__front-content type-large type-bold">
+    `<span class="flipcard__front-content type-large type-bold vignette">
     <div>This is the Title of flipcard ${ number }</div>
     <div class="flipcard__icon-container">
       <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>

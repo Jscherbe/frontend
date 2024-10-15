@@ -30,6 +30,8 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 ``` scss
 $config: (
   "background-color" : white,
+  "background-color-image" : rgba(96, 255, 255, 0.89),
+  "image-opacity" : 0.7,
   "background-color-back" : rgb(178, 178, 178),
   "border" : 1px solid black,
   "border-radius" : 6px,
@@ -56,15 +58,14 @@ $config: (
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
-- **Lines (comments):** 15-17
-- **Lines (code):** 19-38
+- **Lines (comments):** 35-36
+- **Lines (code):** 38-59
     </details>
     
 
 #### Todos
 
-- Why was the shadow originally set to the negative size of it's parent element? Should it just be bottom?  Line 173
-added some reduced motion where I thought applicable. Line 111
+- 
     
 
 
@@ -99,8 +100,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 61-63
+- **Lines (code):** 65-67
     </details>
     
 
@@ -141,8 +142,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-54
+- **Lines (comments):** 69-71
+- **Lines (code):** 73-75
     </details>
     
 
@@ -183,8 +184,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 64-66
-- **Lines (code):** 68-244
+- **Lines (comments):** 85-87
+- **Lines (code):** 89-261
     </details>
     
 
@@ -232,8 +233,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-62
+- **Lines (comments):** 77-79
+- **Lines (code):** 81-83
     </details>
     
 
