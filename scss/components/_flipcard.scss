@@ -12,13 +12,6 @@
 /// Module Settings
 /// @type Map
 
-/// @todo 
-/// setup three options: default, center-title, bottom-title
-/// default: title in middle, icon on bottom right
-/// center-title: title in middle. Icon in middle
-/// bottom-title: icon on bottom-left, title directly above
-
-
 $config: (
   "background-color" : white,
   "border" : 1px solid black,
@@ -251,31 +244,16 @@ $config: (
     justify-content: flex-end;
   }
 }
-// .flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
-//   .flipcard__front-content {
-//     align-items: center;
-//     justify-content: center;
-//   }
-//   .flipcard__icon-container {
-//     margin-top: 0;
-//     width: 100%;
-//     display: flex;
-//     align-items: flex-end;
-//     justify-content: flex-end;
-//   }
-// }
 .flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
   .flipcard__front-content {
     align-items: center;
+    justify-content: center;
+    position: relative;
   }
   .flipcard__icon-container {
-    margin-top: 0;
-    height: calc(50% - get("padding") / 2);
-    // height: calc(50% - get("padding"));
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    position: absolute;
+    bottom: get("padding");
+    right: get("padding");
   }
 }
 // modifier for animations

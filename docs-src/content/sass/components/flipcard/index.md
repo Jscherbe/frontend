@@ -20,12 +20,16 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
 
   
+
+Module Settings
+    
+    
 
 ``` scss
 $config: (
@@ -55,22 +59,9 @@ $config: (
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
-- **Lines (comments):** 15-19
-- **Lines (code):** 21-40
+- **Lines (comments):** 12-13
+- **Lines (code):** 15-33
     </details>
-    
-
-#### Todos
-
-- setup three options: default, center-title, bottom-title
-default: title in middle, icon on bottom right
-center-title: title in middle. Icon in middle
-bottom-title: icon on bottom-left, title directly above
-    
-
-
-Module Settings
-    
     
   
 
@@ -100,8 +91,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 35-37
+- **Lines (code):** 39-41
     </details>
     
 
@@ -142,8 +133,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 50-52
-- **Lines (code):** 54-56
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-49
     </details>
     
 
@@ -184,8 +175,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-241
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-234
     </details>
     
 
@@ -233,8 +224,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 58-60
-- **Lines (code):** 62-64
+- **Lines (comments):** 51-53
+- **Lines (code):** 55-57
     </details>
     
 
