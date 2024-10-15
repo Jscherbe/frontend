@@ -17,10 +17,10 @@ $config: (
   "background-color:hover" : ulu.color-get("link"),
   "color" : ulu.color-get("type"),
   "color:hover" : ulu.color-get("type"),
-  "title-color:hover" : ulu.color-get("link:hover"),
+  "title-color:hover" : ulu.color-get("link-hover"),
   "border-radius" : ulu.element-get("border-radius"),
   "box-shadow" : ulu.element-get("box-shadow"),
-  "box-shadow:hover" : ulu.element-get("box-shadow:hover"),
+  "box-shadow-hover" : ulu.element-get("box-shadow-hover"),
 ) !default;
 
 @mixin set($changes) {
@@ -48,7 +48,7 @@ $config: (
     &:hover {
       color: get("color:hover");
       background-color: get("background-color:hover");
-      box-shadow: get("box-shadow:hover");
+      box-shadow: get("box-shadow-hover");
       .button-verbose__title  {
         color: get("title-color:hover");
       }

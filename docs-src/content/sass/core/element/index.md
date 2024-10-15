@@ -36,7 +36,7 @@ $config: (
   "backdrop-blur":                    4px,
   "backdrop-color":                   rgba(73, 73, 73, 0.459),
   "box-shadow":                       0 1px 5px color.get('box-shadow'),
-  "box-shadow:hover":                 0 1px 5px color.get('box-shadow:hover'),
+  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
   "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
   "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),

@@ -18,7 +18,7 @@
       opacity: 1; 
     }
   }
-  @keyframes FadeDownIn {
+  @keyframes UluFadeInDown {
     0% {
       opacity: 0; 
       transform: translateY(-10px);
@@ -28,53 +28,51 @@
       transform: translateY(0);
     }
   }
-  @keyframes fadeInLeft {
+  @keyframes UluFadeInLeft {
     0% {
       opacity: 0; 
-      transform: translatex(-10px);
+      transform: translateX(-10px);
     }
     100% {
       opacity: 1; 
-      transform: translatex(0);
+      transform: translateX(0);
     }
   }
-  @keyframes fadeInLeftMore {
+  @keyframes UluFadeInLeftMore {
     0% {
       opacity: 0; 
-      transform: translatex(-50px);
+      transform: translateX(-50px);
     }
     100% {
       opacity: 1; 
-      transform: translatex(0);
+      transform: translateX(0);
     }
   }
-  @keyframes fadeInRight {
+  @keyframes UluFadeInRight {
     0% {
       opacity: 0; 
-      transform: translatex(10px);
+      transform: translateX(10px);
     }
     100% {
       opacity: 1; 
-      transform: translatex(0);
+      transform: translateX(0);
     }
   }
-  @keyframes fadeInRightMore {
+  @keyframes UluFadeInRightMore {
     0% {
       opacity: 0; 
-      transform: translatex(50px);
+      transform: translateX(50px);
     }
     100% {
       opacity: 1; 
-      transform: translatex(0);
+      transform: translateX(0);
     }
   }
-  @keyframes fadeInZoom {
-    // Delay
+  @keyframes UluFadeInZoom {
     0% {
       opacity: 0; 
       transform: scale(0);
     }
-    // Start
     50% {
       opacity: 0; 
       transform: scale(0);
@@ -84,7 +82,7 @@
       transform: scale(1);
     }
   }
-  @keyframes fadeOutLeft {
+  @keyframes UluFadeOutLeft {
     0% {
       opacity: 1;
       transform: translateX(0);
@@ -94,7 +92,7 @@
       transform: translateX(-10px);
     }
   }
-  @keyframes fadeOutRight {
+  @keyframes UluFadeOutRight {
     0% {
       opacity: 1;
       transform: translateX(0);
@@ -104,7 +102,7 @@
       transform: translateX(10px);
     }
   }
-  @keyframes fadeOutLeftMore {
+  @keyframes UluFadeOutLeftMore {
     0% {
       opacity: 1;
       transform: translateX(0);
@@ -114,7 +112,7 @@
       transform: translateX(-50px);
     }
   }
-  @keyframes fadeOutRightMore {
+  @keyframes UluFadeOutRightMore {
     0% {
       opacity: 1;
       transform: translateX(0);
@@ -124,36 +122,24 @@
       transform: translateX(50px);
     }
   }
-  @keyframes rotate {
-    0% {
+  @keyframes UluSpin {
+    from {
       transform: rotate(0deg);
     }
-    100%  {
+    to {
       transform: rotate(360deg);
     }
   }
-  @keyframes spin {
-    from {
-      transform:rotate(0deg);
-    }
-    to {
-      transform:rotate(360deg);
-    }
-  }
-  @keyframes pulse {
+  @keyframes UluPulse {
     50% {
       opacity: 0.5;
     }
   }
-  @keyframes ScaleIn {
+  @keyframes UluScaleIn {
     0% {
       opacity: 0;
       transform: scale(0);
     }
-    // 50% {
-    //   // opacity: 0;
-    //   transform: scale(0);
-    // }
     100% {
       opacity: 1;
       transform: scale(1);

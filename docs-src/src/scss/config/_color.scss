@@ -15,12 +15,12 @@
   "rule" :                    vars.$color-rule,
   "rule-light" :              vars.$color-rule-light,
   "link" :                    vars.$color-link,
-  "link:hover" :              vars.$color-link-hover,
-  "link:active" :             vars.$color-link-hover,
-  "link:visited" :            vars.$color-link-visited,
+  "link-hover" :              vars.$color-link-hover,
+  "link-active" :             vars.$color-link-hover,
+  "link-visited" :            vars.$color-link-visited,
   "bullet" :                  inherit,
   "control-background" :      vars.$color-violet,
-  "control-background:hover" :vars.$color-violet-dark,
+  "control-background-hover" :vars.$color-violet-dark,
 ));
 
 

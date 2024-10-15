@@ -27,8 +27,8 @@
 /// @prop {Dimension} button-border-radius [50%]
 /// @prop {Color} button-background-color [transparent]
 /// @prop {Color} button-color-hover [white]
-/// @prop {Color} button-border-color-hover  [color.get("link:hover")]
-/// @prop {Color} button-background-color-hover [color.get("link:hover")]
+/// @prop {Color} button-border-color-hover  [color.get("link-hover")]
+/// @prop {Color} button-background-color-hover [color.get("link-hover")]
 /// @prop {Dimension} button-icon-offset-x [false]
 /// @prop {Dimension} button-icon-offset-y [false]
 /// @prop {} button-margin [0.75rem]
@@ -61,8 +61,8 @@ $config: (
   "button-border-radius" : 50%,
   "button-background-color" : transparent,
   "button-color-hover" : white,
-  "button-border-color-hover" :  color.get("link:hover"),
-  "button-background-color-hover" : color.get("link:hover"),
+  "button-border-color-hover" :  color.get("link-hover"),
+  "button-background-color-hover" : color.get("link-hover"),
   "button-icon-offset-x" : false,
   "button-icon-offset-y" : false,
   "button-margin" : 0.75rem,

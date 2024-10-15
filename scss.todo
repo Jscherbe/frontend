@@ -1,11 +1,12 @@
 SCSS Todos:
-  ☐ Get rid of psuedo class type colors?
+  ✔ Get rid of psuedo class type colors? @done
     * Should we prefer just kabab case for everything?
-  ☐ Namespace keyframes @in-progress
-  ☐ Make css-icon--menu-to-close use css animation instead
+  ✔ Namespace keyframes @done
+  ✔ Make css-icon--menu-to-close use css animation instead @done
     * Fade in-out-in (so the css can stay simple)
     * Could also move back to justified
   ✔ Add active state to buttons @done
+  ☐ Card overlay height min-content to break out of aspect ratio if needed
   ☐ Create button-group for toolbars/swtichers
   ☐ Overlap with tab styling and nav-strip. Note nav-strip can be used for tabs we just need to add the correct selectors for the active state
     * Pros of the tabs module
@@ -20,8 +21,8 @@ SCSS Todos:
   ☐ Consider adding the button active state to the button core?
     ☐ Versus specific
   ☐ Add button nav
-  ☐ For menu-stack (get rid of rotation)
-  ☐ Css Icons add 3 bar icon (menu hamburger) @started(24-10-07 10:35)
+  ✔ For menu-stack (get rid of rotation) @done
+  ✔ Css Icons add 3 bar icon (menu hamburger) @started(24-10-07 10:35) @done @lasted(1w23h56m51s)
     * Use borders (four borders)
 
   ✔ Make sure modal styles still work with resizer @important @done

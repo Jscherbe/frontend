@@ -26,7 +26,7 @@ $-fallbacks: (
 /// @type Map
 /// @prop {String} link-color [link] The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {Color} link-background-color [transparent] The background color of the menu-stack toggle. 
-/// @prop {String} link-color-hover [link:hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {String} link-color-hover [link-hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {Color} link-background-color-hover [rgb(219, 219, 219)] The background color of the menu-stack toggle when hovered or focused.
 /// @prop {Color} link-color-active [black] The type color of the menu-stack toggle when active.
 /// @prop {Color} link-background-color-active [rgb(219, 219, 219)] The background color of the menu-stack toggle when active.
@@ -55,7 +55,7 @@ $-fallbacks: (
 $config: (
   "link-color" : "link",
   "link-background-color" : transparent,
-  "link-color-hover" : "link:hover",
+  "link-color-hover" : "link-hover",
   "link-background-color-hover" : rgb(219, 219, 219),
   "link-color-active" : black,
   "link-background-color-active" : rgb(219, 219, 219),

@@ -409,7 +409,7 @@ $config: (
   }
   .css-icon--menu-to-close {
     @include when-active() {
-      animation: ScaleIn get("transition-duration") get("transition-timing-function") forwards;
+      animation: UluScaleIn get("transition-duration") get("transition-timing-function") forwards;
       &::before,
       &::after {
         position: absolute;
