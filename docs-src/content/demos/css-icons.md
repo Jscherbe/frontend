@@ -82,3 +82,26 @@ intro: Basic icons that use only CSS
     });
   });
 </script>
+
+<table class="site-data-table">
+  <caption>Test Different Stroke Width</caption>
+  <thead>
+    <tr>
+      <th style="width: 60%">Text Example</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for name in iconNames %}
+      <tr>
+        <td class="type-large-xx">
+          <span class="css-icon css-icon--stroke-large css-icon--{{ name }}" aria-hidden="true"></span>
+          {{ name }}
+        </td>
+        <td class="type-small">
+          <code>css-icon css-icon--stroke-large css-icon--{{ name }}</code>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

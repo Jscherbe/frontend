@@ -1,9 +1,11 @@
 SCSS Todos:
+  ☐ Get rid of psuedo class type colors?
+    * Should we prefer just kabab case for everything?
   ☐ Namespace keyframes @in-progress
   ☐ Make css-icon--menu-to-close use css animation instead
     * Fade in-out-in (so the css can stay simple)
     * Could also move back to justified
-  ☐ Add active state to buttons
+  ✔ Add active state to buttons @done
   ☐ Create button-group for toolbars/swtichers
   ☐ Overlap with tab styling and nav-strip. Note nav-strip can be used for tabs we just need to add the correct selectors for the active state
     * Pros of the tabs module

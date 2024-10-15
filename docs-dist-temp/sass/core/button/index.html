@@ -171,6 +171,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/demos/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/demos/card/" 
           
         >
@@ -2720,6 +2739,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/demos/button/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Button
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/demos/card/" 
           
         >
@@ -5205,6 +5243,9 @@
                     <li><a href="#mixin-default">default()</a>
             		</li>
 
+                    <li><a href="#mixin-when-active">when-active()</a>
+            		</li>
+
                     <li><a href="#mixin-size">size()</a>
             		</li>
 
@@ -5251,32 +5292,36 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>                 <span class="pjs-token pjs-punctuation">(</span>0.75em 1.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-string">"control-background"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-string">"control-background:hover"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"font-family"</span><span class="pjs-token pjs-punctuation">:</span>             inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"white-space"</span> <span class="pjs-token pjs-punctuation">:</span>            nowrap<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"white-space"</span><span class="pjs-token pjs-punctuation">:</span>             nowrap<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"font-weight"</span><span class="pjs-token pjs-punctuation">:</span>             bold<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"line-height"</span><span class="pjs-token pjs-punctuation">:</span>             1.1<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"letter-spacing"</span><span class="pjs-token pjs-punctuation">:</span>          0.02em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-transform"</span><span class="pjs-token pjs-punctuation">:</span>          none<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-shadow"</span><span class="pjs-token pjs-punctuation">:</span>             none<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span>               <span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span>                   <span class="pjs-token pjs-string">"control"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color-hover"</span><span class="pjs-token pjs-punctuation">:</span>             <span class="pjs-token pjs-string">"control:hover"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">:</span>              <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius"</span><span class="pjs-token pjs-punctuation">:</span>           2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-width"</span><span class="pjs-token pjs-punctuation">:</span>            1px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-color"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-background"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-string">"control-background:hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span>                   <span class="pjs-token pjs-string">"control"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-hover"</span><span class="pjs-token pjs-punctuation">:</span>             <span class="pjs-token pjs-string">"control:hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-active"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-active"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-border"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-string">"control-border:hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color-active"</span><span class="pjs-token pjs-punctuation">:</span>     <span class="pjs-token pjs-string">"control-border-active"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-string">"control-background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-string">"control-background:hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color-active"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"control-background-active"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin"</span><span class="pjs-token pjs-punctuation">:</span>                  <span class="pjs-token pjs-punctuation">(</span>0.45em 0.5em 0.45em 0<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span>               9rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span>               2.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"icon-font-size"</span><span class="pjs-token pjs-punctuation">:</span>          1.38rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"icon-border-radius"</span><span class="pjs-token pjs-punctuation">:</span>      50%<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"text-decoration"</span> <span class="pjs-token pjs-punctuation">:</span>        none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"text-decoration"</span><span class="pjs-token pjs-punctuation">:</span>         none<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"transition-enabled"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span>    200ms<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">)</span>
+  <span class="pjs-token pjs-string">"transition-duration"</span><span class="pjs-token pjs-punctuation">:</span>     200ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-properties"</span><span class="pjs-token pjs-punctuation">:</span>   <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"active-selector"</span><span class="pjs-token pjs-punctuation">:</span>         <span class="pjs-token pjs-string">"&amp;.is-active"</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -5285,7 +5330,7 @@
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> variable</li>
 <li><strong>Lines (comments):</strong> 21-22</li>
-<li><strong>Lines (code):</strong> 24-52  </details>
+<li><strong>Lines (code):</strong> 24-56  </details>
 </li>
 </ul>
 <div class="sassdoc-item-header">
@@ -5314,8 +5359,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 54-55</li>
-<li><strong>Lines (code):</strong> 57-69  </details>
+<li><strong>Lines (comments):</strong> 58-59</li>
+<li><strong>Lines (code):</strong> 61-73  </details>
 </li>
 </ul>
 <div class="sassdoc-item-header">
@@ -5353,8 +5398,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 71-72</li>
-<li><strong>Lines (code):</strong> 74-95  </details>
+<li><strong>Lines (comments):</strong> 75-76</li>
+<li><strong>Lines (code):</strong> 78-99  </details>
 </li>
 </ul>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5371,8 +5416,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 97-100</li>
-<li><strong>Lines (code):</strong> 102-104  </details>
+<li><strong>Lines (comments):</strong> 101-104</li>
+<li><strong>Lines (code):</strong> 106-108  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5412,8 +5457,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 116-118</li>
-<li><strong>Lines (code):</strong> 120-122  </details>
+<li><strong>Lines (comments):</strong> 120-122</li>
+<li><strong>Lines (code):</strong> 124-126  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5456,8 +5501,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 124-126</li>
-<li><strong>Lines (code):</strong> 128-130  </details>
+<li><strong>Lines (comments):</strong> 128-130</li>
+<li><strong>Lines (code):</strong> 132-134  </details>
 </li>
 </ul>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
@@ -5500,8 +5545,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 132-132</li>
-<li><strong>Lines (code):</strong> 134-145  </details>
+<li><strong>Lines (comments):</strong> 136-136</li>
+<li><strong>Lines (code):</strong> 138-149  </details>
 </li>
 </ul>
 <div class="sassdoc-item-header">
@@ -5517,8 +5562,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 147-148</li>
-<li><strong>Lines (code):</strong> 150-202  </details>
+<li><strong>Lines (comments):</strong> 151-152</li>
+<li><strong>Lines (code):</strong> 154-211  </details>
 </li>
 </ul>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -5543,6 +5588,28 @@
 <h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/button/#mixin-reset">reset()</a></li>
+<li><a href="/sass/core/button/#mixin-when-active">when-active()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-when-active" tabindex="-1">when-active()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Mixin to wrap in active selectors</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _button.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 213-213</li>
+<li><strong>Lines (code):</strong> 214-218  </details>
+</li>
+</ul>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
 <div class="sassdoc-item-header">
@@ -5551,15 +5618,15 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Print button size styles for a specifc size</p>
+<p>Print button size styles for a specific size</p>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 204-207</li>
-<li><strong>Lines (code):</strong> 209-219  </details>
+<li><strong>Lines (comments):</strong> 220-223</li>
+<li><strong>Lines (code):</strong> 225-235  </details>
 </li>
 </ul>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -5584,7 +5651,7 @@
 <li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
 <li><a href="/sass/core/breakpoint/#mixin-set-sizes">set-sizes()</a></li>
 </ul>
-<h4 id="require-4" tabindex="-1">Require</h4>
+<h4 id="require-5" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
@@ -5616,10 +5683,10 @@
 <p><strong>Type:</strong> mixin</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 243-248</p>
+<p><strong>Lines (comments):</strong> 267-272</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 250-261</p>
+<p><strong>Lines (code):</strong> 274-285</p>
   </details>
 </li>
 </ul>
@@ -5645,7 +5712,7 @@
 <li><a href="/sass/core/button/#variable-styles">$styles</a></li>
 <li><a href="/sass/core/button/#mixin-set-styles">set-styles()</a></li>
 </ul>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/button/#function-get-style-value">get-style-value()</a></li>
 </ul>
@@ -5675,10 +5742,10 @@
 <p><strong>Type:</strong> mixin</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 263-268</p>
+<p><strong>Lines (comments):</strong> 287-292</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 270-276</p>
+<p><strong>Lines (code):</strong> 294-300</p>
   </details>
 </li>
 </ul>
@@ -5704,7 +5771,7 @@
 <li><a href="/sass/core/button/#variable-styles">$styles</a></li>
 <li><a href="/sass/core/button/#mixin-set-styles">set-styles()</a></li>
 </ul>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/button/#function-get-style-value">get-style-value()</a></li>
 </ul>
@@ -5724,7 +5791,7 @@
 </li>
 <li>
 <p>By default this mixin prints the buttons base styles along with :visited state.
-This is to avoid link visted states effecting the button styles (if used in editor areas
+This is to avoid link visited states effecting the button styles (if used in editor areas
 or other areas that apply automatic links styling for example. (param below to override behavior)</p>
   <details>
     <summary>File Information</summary>
@@ -5739,10 +5806,10 @@ or other areas that apply automatic links styling for example. (param below to o
 <p><strong>Type:</strong> mixin</p>
 </li>
 <li>
-<p><strong>Lines (comments):</strong> 278-287</p>
+<p><strong>Lines (comments):</strong> 310-319</p>
 </li>
 <li>
-<p><strong>Lines (code):</strong> 289-302</p>
+<p><strong>Lines (code):</strong> 321-337</p>
   </details>
 </li>
 </ul>
@@ -5776,10 +5843,11 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><a href="/sass/core/button/#variable-styles">$styles</a></li>
 <li><a href="/sass/core/button/#mixin-set-styles">set-styles()</a></li>
 </ul>
-<h4 id="require-7" tabindex="-1">Require</h4>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/button/#mixin-style-styles">style-styles()</a></li>
 <li><a href="/sass/core/button/#mixin-style-styles-hover">style-styles-hover()</a></li>
+<li><a href="/sass/core/button/#mixin-when-active">when-active()</a></li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
@@ -5795,8 +5863,8 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 106-109</li>
-<li><strong>Lines (code):</strong> 111-114  </details>
+<li><strong>Lines (comments):</strong> 110-113</li>
+<li><strong>Lines (code):</strong> 115-118  </details>
 </li>
 </ul>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5819,7 +5887,7 @@ or other areas that apply automatic links styling for example. (param below to o
 </tr>
 </tbody>
 </table>
-<h4 id="require-8" tabindex="-1">Require</h4>
+<h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li>function-fallback()</li>
@@ -5838,8 +5906,8 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 221-225</li>
-<li><strong>Lines (code):</strong> 227-241  </details>
+<li><strong>Lines (comments):</strong> 237-241</li>
+<li><strong>Lines (code):</strong> 243-265  </details>
 </li>
 </ul>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>
@@ -5879,7 +5947,7 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><a href="/sass/core/button/#variable-styles">$styles</a></li>
 <li><a href="/sass/core/button/#mixin-set-styles">set-styles()</a></li>
 </ul>
-<h4 id="require-9" tabindex="-1">Require</h4>
+<h4 id="require-10" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
