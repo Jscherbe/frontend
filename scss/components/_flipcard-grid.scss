@@ -14,7 +14,8 @@
 
 
 $config: (
-  "gutter" : 1rem
+  "gutter" : 1rem,
+  "grid-template-columns" : 1fr 1fr,
 );
 
 /// Change modules $config
@@ -56,14 +57,11 @@ $config: (
     list-style: none !important; // B/c in Editor
     padding: 0 !important; // B/c in Editor
     @media (min-width: 40rem) {
-      grid-template-columns: 1fr 1fr;
+      // grid-template-columns: 1fr 1fr;
+      grid-template-columns: get("grid-template-columns");
     }
-    // @media (min-width: 60rem) {
-    //   grid-template-columns: 1fr 1fr 1fr;
-    // }
   }
   .flipcard-grid__item {
     margin: 0 !important; // B/c in Editor
-    // height: 150%;
   }
 }

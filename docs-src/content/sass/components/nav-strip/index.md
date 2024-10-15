@@ -45,7 +45,7 @@ $config: (
   "underline-size" : 3px,
   "margin-between" : 2.25em,
   "underline-color-hover" : gray,
-  "activeSelector" : ".is-active",
+  "activeSelector" : "&.is-active, &.has-active",
   "rule-size" : 3px,
   "rule-color" : "rule",
   "rule-offset" : -3px,
