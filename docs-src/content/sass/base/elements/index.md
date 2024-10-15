@@ -34,8 +34,8 @@ Module Settings
 ``` scss
 $config: (
   "link" : true,
-  "link:hover" : true,
-  "link:visited" : false,
+  "link-hover" : true,
+  "link-visited" : false,
   "details-animation" : (FadeDownIn 350ms ease-in-out),
 );
 ```
@@ -58,8 +58,8 @@ $config: (
 |:--|:--|:--|:--|
 |$config.links-state-styling|Number|Just color/defaults vs hover/visited/active||
 |link|Boolean|Enables link styling.|true|
-|link:hover|Boolean|Enables link hover and focus styling.|true|
-|link:visited|Boolean|Enables visited link styling.|true|
+|link-hover|Boolean|Enables link hover and focus styling.|true|
+|link-visited|Boolean|Enables visited link styling.|true|
 |details-animation|CssValue|Animation for the details element when toggled.|(FadeDownIn 350ms ease-in-out)|
 
     

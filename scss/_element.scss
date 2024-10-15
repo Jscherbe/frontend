@@ -40,7 +40,7 @@ $config: (
   "backdrop-blur":                    4px,
   "backdrop-color":                   rgba(73, 73, 73, 0.459),
   "box-shadow":                       0 1px 5px color.get('box-shadow'),
-  "box-shadow:hover":                 0 1px 5px color.get('box-shadow:hover'),
+  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
   "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
   "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
@@ -160,18 +160,18 @@ $rule-margins: (
   text-decoration-thickness: get("link-text-decoration-thickness");
   text-underline-offset: get("link-text-underline-offset");
   &:hover {
-    color: color.get("link:hover");
+    color: color.get("link-hover");
     text-decoration-style: get("link-text-decoration-style-hover");
     text-decoration-color: get("link-text-decoration-color-hover");
   }
   @if ($visited) {
     &:visited {
-      color: color.get("link:visited");
+      color: color.get("link-visited");
     }
   }
   @if ($active) {
     &:active {
-      color: color.get("link:active");
+      color: color.get("link-active");
     }
   }
 }
@@ -183,12 +183,12 @@ $rule-margins: (
   text-decoration: get("link-text-decoration-default");
   @if ($hover) {
     &:hover {
-      color: color.get("link:hover");
+      color: color.get("link-hover");
     }
   }
   @if ($visited) {
     &:visited {
-      color: color.get("link:visited");
+      color: color.get("link-visited");
     }
   }
 }

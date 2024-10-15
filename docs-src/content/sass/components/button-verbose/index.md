@@ -45,13 +45,13 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "background-color" : white,
-  "background-color:hover" : "link",
+  "background-color-hover" : "link",
   "color" : "type",
-  "color:hover" : "type",
-  "title-color:hover" : "link:hover",
+  "color-hover" : "type",
+  "title-color-hover" : "link-hover",
   "border-radius" : "border-radius",
   "box-shadow" : true,
-  "box-shadow:hover" : true,
+  "box-shadow-hover" : true,
 );
 ```
   
@@ -82,13 +82,13 @@ $config: (
 |title-color|String|link|Font size (basic ie. 1.3rem) for badge|
 |title-margin|Dimension|0.5em|Font size (basic ie. 1.3rem) for badge|
 |background-color|Color|white|Font size (basic ie. 1.3rem) for badge|
-|background-color:hover|Color|link|Font size (basic ie. 1.3rem) for badge|
+|background-color-hover|Color|link|Font size (basic ie. 1.3rem) for badge|
 |color|String|type|Font size (basic ie. 1.3rem) for badge|
-|color:hover|String|type|Font size (basic ie. 1.3rem) for badge|
-|title-color:hover|String|link:hover|Font size (basic ie. 1.3rem) for badge|
+|color-hover|String|type|Font size (basic ie. 1.3rem) for badge|
+|title-color-hover|String|link-hover|Font size (basic ie. 1.3rem) for badge|
 |border-radius|String|border-radius|Font size (basic ie. 1.3rem) for badge|
 |box-shadow|String|true|Use the fallback. But note it.|
-|box-shadow:hover|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
+|box-shadow-hover|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
 
     
   

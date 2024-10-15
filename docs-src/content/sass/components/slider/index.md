@@ -49,8 +49,8 @@ $config: (
   "button-border-radius" : 50%,
   "button-background-color" : transparent,
   "button-color-hover" : white,
-  "button-border-color-hover" :  color.get("link:hover"),
-  "button-background-color-hover" : color.get("link:hover"),
+  "button-border-color-hover" :  color.get("link-hover"),
+  "button-background-color-hover" : color.get("link-hover"),
   "button-icon-offset-x" : false,
   "button-icon-offset-y" : false,
   "button-margin" : 0.75rem,
@@ -100,8 +100,8 @@ $config: (
 |button-border-radius|Dimension|50%|
 |button-background-color|Color|transparent|
 |button-color-hover|Color|white|
-|button-border-color-hover|Color|color.get("link:hover")|
-|button-background-color-hover|Color|color.get("link:hover")|
+|button-border-color-hover|Color|color.get("link-hover")|
+|button-background-color-hover|Color|color.get("link-hover")|
 |button-icon-offset-x|Dimension|false|
 |button-icon-offset-y|Dimension|false|
 |button-margin|Map|0.75rem|

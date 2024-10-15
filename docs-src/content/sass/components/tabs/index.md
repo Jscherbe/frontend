@@ -37,7 +37,7 @@ $config: (
   "border-width" : 0.25em,
   "margin" : 2rem,
   "tab-color" : "link",
-  "tab-color-hover" : "link:hover",
+  "tab-color-hover" : "link-hover",
   "tab-color-selected" : "selected",
   "tab-border-color-selected" : currentColor,
   "tablist-border-bottom" : true,
@@ -66,7 +66,7 @@ $config: (
 |border-width|Dimension|0.25em|The width of the tab border.|
 |margin|Dimension|2rem|The gap between tabs and above and below tabs.|
 |tab-color|String|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
-|tab-color-hover|String|link:hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-color-hover|String|link-hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-selected|String|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-border-color-selected|Color|currentColor|The border color when selected.|
 |tablist-border-bottom|CssValue|true|The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".|

@@ -35,7 +35,7 @@ Module Settings
 $config: (
   "link-color" : "link",
   "link-background-color" : transparent,
-  "link-color-hover" : "link:hover",
+  "link-color-hover" : "link-hover",
   "link-background-color-hover" : rgb(219, 219, 219),
   "link-color-active" : black,
   "link-background-color-active" : rgb(219, 219, 219),
@@ -81,7 +81,7 @@ $config: (
 |:--|:--|:--|:--|
 |link-color|String|link|The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.|
 |link-background-color|Color|transparent|The background color of the menu-stack toggle.|
-|link-color-hover|String|link:hover|The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|link-color-hover|String|link-hover|The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.|
 |link-background-color-hover|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when hovered or focused.|
 |link-color-active|Color|black|The type color of the menu-stack toggle when active.|
 |link-background-color-active|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when active.|

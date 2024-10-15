@@ -16,14 +16,14 @@
 /// @type Map
 /// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active
 /// @prop {Boolean} link [true] Enables link styling.
-/// @prop {Boolean} link:hover [true] Enables link hover and focus styling.
-/// @prop {Boolean} link:visited [true] Enables visited link styling.
+/// @prop {Boolean} link-hover [true] Enables link hover and focus styling.
+/// @prop {Boolean} link-visited [true] Enables visited link styling.
 /// @prop {CssValue} details-animation [(FadeDownIn 350ms ease-in-out)] Animation for the details element when toggled.
 
 $config: (
   "link" : true,
-  "link:hover" : true,
-  "link:visited" : false,
+  "link-hover" : true,
+  "link-visited" : false,
   "details-animation" : (FadeDownIn 350ms ease-in-out),
 ) !default;
 
@@ -159,8 +159,8 @@ $config: (
     // and omit this in element base
     @if (get("link")) {
       @include element.link-defaults(
-        $hover: get("link:hover"),
-        $visited: get("link:visited"),
+        $hover: get("link-hover"),
+        $visited: get("link-visited"),
       );
     }
   }

@@ -5,7 +5,7 @@
 $config: (
   "border-width" : 0.25em,
   "tab-color" : ulu.color-get("link"),
-  "tab-color-hover" : ulu.color-get("link:hover"),
+  "tab-color-hover" : ulu.color-get("link-hover"),
   "tab-color-selected" : ulu.color-get("selected"),
   "tab-border-color-selected" : currentColor,
   "tablist-border-bottom" : ulu.element-get-rule-style("light"),

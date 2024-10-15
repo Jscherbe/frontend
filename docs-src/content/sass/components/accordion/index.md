@@ -50,7 +50,7 @@ $config: (
   "summary-background-color":    white,
   "summary-line-height":         inherit,
   "icon-color":                  "link",
-  "icon-color-hover":            "link:hover",
+  "icon-color-hover":            "link-hover",
   "icon-background-color":       transparent,
   "icon-background-color-hover": transparent,
   "icon-border-radius":          50%,
@@ -94,7 +94,7 @@ $config: (
 |summary-background-color|Color|null|@joe-check THIS IS UNUSED BELOW. DELETE?|
 |summary-line-height|Dimension|inherit|Adjusts the line height of the summary element.|
 |icon-color|String|link|Color of the icon. This uses color.scss, so the value of this option should be a color variable from color.scss.|
-|icon-color-hover|String|link:hover|Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|icon-color-hover|String|link-hover|Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |icon-background-color|Color|transparent|The background color of the icon.|
 |icon-background-color-hover|Color|transparent|The background color of the icon when hovered or focused.|
 |icon-border-radius|Number|50%|The border-radius of the icon.|
