@@ -6,7 +6,7 @@ export default function(
 ) {
   const containerClass = hasImage ? `flipcard flipcard--animation flipcard--w-image ${ options }` : `flipcard ${ options }`;
   const frontContent = hasImage ? 
-    `<span class="flipcard__front-image vignette"><img src="/assets/placeholder/image-1.jpg" /></span>
+    `<span class="flipcard__front-image"><img src="/assets/placeholder/image-1.jpg" /></span>
     <span class="flipcard__front-content type-large type-bold">
     <div>This is the front of flipcard ${ number }</div>
     <div class="flipcard__icon-container">

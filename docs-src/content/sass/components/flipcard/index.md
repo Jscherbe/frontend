@@ -45,6 +45,7 @@ $config: (
   "icon-color-image-hover" : pink,
   "title-color-image" : black,
   "title-color-image-hover" : blue,
+  "bottom-shadow" : true
 );
 ```
   
@@ -55,7 +56,7 @@ $config: (
 - **Group:** flipcard
 - **Type:** variable
 - **Lines (comments):** 15-19
-- **Lines (code):** 21-39
+- **Lines (code):** 21-40
     </details>
     
 
@@ -99,8 +100,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-47
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-48
     </details>
     
 
@@ -141,8 +142,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 49-51
-- **Lines (code):** 53-55
+- **Lines (comments):** 50-52
+- **Lines (code):** 54-56
     </details>
     
 
@@ -183,8 +184,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-237
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-241
     </details>
     
 
@@ -232,8 +233,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-63
+- **Lines (comments):** 58-60
+- **Lines (code):** 62-64
     </details>
     
 

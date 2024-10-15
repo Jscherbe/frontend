@@ -36,6 +36,7 @@ $config: (
   "icon-color-image-hover" : pink,
   "title-color-image" : black,
   "title-color-image-hover" : blue,
+  "bottom-shadow" : true
 );
 
 /// Change modules $config
@@ -161,24 +162,27 @@ $config: (
     align-self: end;
     transition: transform 350ms ease-in-out;
     // So that it doesn't ride up when the user hovers
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: calc(0rem - get('padding'));
-      bottom: calc(0rem - get('padding'));
-      left: calc(0rem - get('padding'));
-      right: calc(0rem - get('padding'));
-      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-      z-index: -1;
-    }
+    
   }
   .flipcard--w-image {
     .flipcard__icon {
       color: get("icon-color-image");
     }
     .flipcard__front-content {
-      color: get("title-color-image")
+      color: get("title-color-image");
+      @if(get("bottom-shadow")) {
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: calc(0rem - get('padding'));
+          bottom: calc(0rem - get('padding'));
+          left: calc(0rem - get('padding'));
+          right: calc(0rem - get('padding'));
+          background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+          z-index: -1;
+        }
+      }
     }
   }
   .flipcard__back {
