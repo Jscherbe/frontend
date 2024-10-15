@@ -36,8 +36,13 @@ $palette: (
   "bullet"                  : inherit,
   "control"                 : white,
   "control:hover"           : white,
+  "control-active"           : white,
+  "control-border"          : purple,
+  "control-border:hover"       : blue,
+  "control-border-active"       : orange,
   "control-background"      : purple,
   "control-background:hover": blue,
+  "control-background-active": orange,
 ) !default;
 
 /// Pairs of background-color and color definitions
@@ -85,8 +90,8 @@ $color-classes: (
 @function get($name) {
   // Allow non lookup if the value is already a color (helps with code flow)
   @if (meta.type-of($name) == "string") {
-    // Allow custom-properties and keyword inherit to pass through
-    @if ($name == "inherit" or string.index($name, "var(") == 1) {
+    // Allow custom-properties and keyword inherit/transparent to pass through
+    @if ($name == "inherit" or $name == "transparent" or string.index($name, "var(") == 1) {
       @return $name;
     // Else look up the color from the palette
     } @else {

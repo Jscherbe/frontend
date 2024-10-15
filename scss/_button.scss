@@ -23,32 +23,36 @@ $-fallbacks: (
 
 $config: (
   "padding":                 (0.75em 1.5em),
-  "background-color":        "control-background",
-  "background-color-hover":  "control-background:hover",
   "font-family":             inherit,
-  "white-space" :            nowrap,
+  "white-space":             nowrap,
   "font-weight":             bold,
   "line-height":             1.1,
   "letter-spacing":          0.02em,
   "text-transform":          none,
   "text-shadow":             none,
   "font-size":               "base",
-  "color":                   "control",
-  "color-hover":             "control:hover",
   "box-shadow":              true,
   "border-radius":           2rem,
   "border-width":            1px,
-  "border-color":            "control-background",
-  "border-color-hover":      "control-background:hover",
+  "color":                   "control",
+  "color-hover":             "control:hover",
+  "color-active":            "control-active",
+  "border-color":            "control-border",
+  "border-color-hover":      "control-border:hover",
+  "border-color-active":     "control-border-active",
+  "background-color":        "control-background",
+  "background-color-hover":  "control-background:hover",
+  "background-color-active": "control-background-active",
   "margin":                  (0.45em 0.5em 0.45em 0),
   "min-width":               9rem,
   "icon-size":               2.5rem,
   "icon-font-size":          1.38rem,
   "icon-border-radius":      50%,
-  "text-decoration" :        none,
+  "text-decoration":         none,
   "transition-enabled":      true,
-  "transition-duration" :    200ms,
-  "transition-properties" :  (border-color, background-color, color, box-shadow)
+  "transition-duration":     200ms,
+  "transition-properties":   (border-color, background-color, color, box-shadow),
+  "active-selector":         "&.is-active"
 ) !default;
 
 /// Button sizes
@@ -199,9 +203,21 @@ $styles: (
     border-color: color.get(get("border-color-hover"));
     text-decoration: get("text-decoration");
   }
+  @include when-active() {
+    color: color.get(get("color-active"));
+    background-color: color.get(get("background-color-active"));
+    border-color: color.get(get("border-color-active"));
+  }
 }
 
-/// Print button size styles for a specifc size
+/// Mixin to wrap in active selectors
+@mixin when-active() {
+  #{ get("active-selector") } {
+    @content;
+  }
+}
+
+/// Print button size styles for a specific size
 /// @param {String} $name Name of size from $sizes
 /// @see $sizes
 /// @see set-sizes
@@ -224,16 +240,24 @@ $styles: (
 /// @see set-styles
 /// @return {*} The property you were trying to get
 
-@function get-style-value($name, $prop, $for-hover: false) {
-  $is-color-prop: string.index($prop, "color");
+@function get-style-value($name, $prop, $state: null) {
   $style: utils.require-map-get($styles, $name, 'button [color value]');
-  $hover: map.get($style, "hover");
-  $hover: if($hover, $hover, ());
-  $from: if($for-hover, $hover, $style);
+  $state-style: ();
+  // If a specific state [hover, active] grab that map
+  @if ($state) {
+    $state-style: map.get($style, $state);
+    $state-style: if($state-style, $state-style, ());
+  }
+  // From is the map to grab styles from
+  $from: if($state, $state-style, $style);
   $value: map.get($from, $prop);
-  $value: if($value, $value, map.get($style, $prop)); // Fallback to parent (if hover)
 
-  @if (meta.type-of($value) == "string" and $is-color-prop and $value != "inherit" and $value != "transparent") {
+  // Fallback to parent (if hover)
+  @if ($state == "hover") {
+    $value: if($value, $value, map.get($style, $prop)); 
+  }
+
+  @if (meta.type-of($value) == "string" and string.index($prop, "color")) {
     @return color.get($value);
   } @else {
     @return $value;
@@ -248,13 +272,13 @@ $styles: (
 /// @see set-styles
 
 @mixin style-styles($name) {
-  background-color: get-style-value($name, "background-color", false);
-  color: get-style-value($name, "color", false);
-  border-color: get-style-value($name, "border-color", false);
-  border-width: get-style-value($name, "border-width", false);
-  box-shadow: get-style-value($name, "box-shadow", false);
-  text-decoration: get-style-value($name, "text-decoration", false);
-  font-weight: get-style-value($name, "font-weight", false);
+  background-color: get-style-value($name, "background-color");
+  color: get-style-value($name, "color");
+  border-color: get-style-value($name, "border-color");
+  border-width: get-style-value($name, "border-width");
+  box-shadow: get-style-value($name, "box-shadow");
+  text-decoration: get-style-value($name, "text-decoration");
+  font-weight: get-style-value($name, "font-weight");
   @if get-style-value($name, "transition-duration") {
     transition-duration: get-style-value($name, "transition-duration");
   }
@@ -268,18 +292,26 @@ $styles: (
 /// @see set-styles
 
 @mixin style-styles-hover($name) {
-  background-color: get-style-value($name, "background-color", true);
-  color: get-style-value($name, "color", true);
-  border-color: get-style-value($name, "border-color", true);
-  box-shadow: get-style-value($name, "box-shadow", true);
-  text-decoration: get-style-value($name, "text-decoration", true);
+  background-color: get-style-value($name, "background-color", "hover");
+  color: get-style-value($name, "color", "hover");
+  border-color: get-style-value($name, "border-color", "hover");
+  box-shadow: get-style-value($name, "box-shadow", "hover");
+  text-decoration: get-style-value($name, "text-decoration", "hover");
+}
+
+@mixin style-styles-active($name) {
+  @include when-active() {
+    background-color: get-style-value($name, "background-color", "active");
+    color: get-style-value($name, "color", "active");
+    border-color: get-style-value($name, "border-color", "active");
+  }
 }
 
 /// Print a button style
 /// - Includes base/visited styling, and hover/focus state styles
 /// - To print only one of those states, use style-styles or style-styles-hover
 /// - By default this mixin prints the buttons base styles along with :visited state. 
-///   This is to avoid link visted states effecting the button styles (if used in editor areas 
+///   This is to avoid link visited states effecting the button styles (if used in editor areas 
 ///   or other areas that apply automatic links styling for example. (param below to override behavior)
 /// @param {String} $name Name of style from $styles
 /// @param {String} $no-visited [false] Do not include :visited selector for button base styles
@@ -298,5 +330,8 @@ $styles: (
   &:hover,
   &:focus {
     @include style-styles-hover($name);
+  }
+  @include when-active() {
+    @include style-styles-active($name);
   }
 }

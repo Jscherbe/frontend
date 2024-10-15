@@ -34,32 +34,36 @@ Module Settings
 ``` scss
 $config: (
   "padding":                 (0.75em 1.5em),
-  "background-color":        "control-background",
-  "background-color-hover":  "control-background:hover",
   "font-family":             inherit,
-  "white-space" :            nowrap,
+  "white-space":             nowrap,
   "font-weight":             bold,
   "line-height":             1.1,
   "letter-spacing":          0.02em,
   "text-transform":          none,
   "text-shadow":             none,
   "font-size":               "base",
-  "color":                   "control",
-  "color-hover":             "control:hover",
   "box-shadow":              true,
   "border-radius":           2rem,
   "border-width":            1px,
-  "border-color":            "control-background",
-  "border-color-hover":      "control-background:hover",
+  "color":                   "control",
+  "color-hover":             "control:hover",
+  "color-active":            "control-active",
+  "border-color":            "control-border",
+  "border-color-hover":      "control-border:hover",
+  "border-color-active":     "control-border-active",
+  "background-color":        "control-background",
+  "background-color-hover":  "control-background:hover",
+  "background-color-active": "control-background-active",
   "margin":                  (0.45em 0.5em 0.45em 0),
   "min-width":               9rem,
   "icon-size":               2.5rem,
   "icon-font-size":          1.38rem,
   "icon-border-radius":      50%,
-  "text-decoration" :        none,
+  "text-decoration":         none,
   "transition-enabled":      true,
-  "transition-duration" :    200ms,
-  "transition-properties" :  (border-color, background-color, color, box-shadow)
+  "transition-duration":     200ms,
+  "transition-properties":   (border-color, background-color, color, box-shadow),
+  "active-selector":         "&.is-active"
 );
 ```
   
@@ -70,7 +74,7 @@ $config: (
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 21-22
-- **Lines (code):** 24-52
+- **Lines (code):** 24-56
     </details>
     
 
@@ -113,8 +117,8 @@ $sizes: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 54-55
-- **Lines (code):** 57-69
+- **Lines (comments):** 58-59
+- **Lines (code):** 61-73
     </details>
     
 
@@ -166,8 +170,8 @@ $styles: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 71-72
-- **Lines (code):** 74-95
+- **Lines (comments):** 75-76
+- **Lines (code):** 78-99
     </details>
     
   
@@ -198,8 +202,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 97-100
-- **Lines (code):** 102-104
+- **Lines (comments):** 101-104
+- **Lines (code):** 106-108
     </details>
     
 
@@ -251,8 +255,8 @@ Set button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 116-118
-- **Lines (code):** 120-122
+- **Lines (comments):** 120-122
+- **Lines (code):** 124-126
     </details>
     
 
@@ -294,8 +298,8 @@ Set Button Sizes
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 124-126
-- **Lines (code):** 128-130
+- **Lines (comments):** 128-130
+- **Lines (code):** 132-134
     </details>
     
 
@@ -337,8 +341,8 @@ Print styles to reset browser button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 132-132
-- **Lines (code):** 134-145
+- **Lines (comments):** 136-136
+- **Lines (code):** 138-149
     </details>
     
 
@@ -364,8 +368,8 @@ Print default button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 147-148
-- **Lines (code):** 150-202
+- **Lines (comments):** 151-152
+- **Lines (code):** 154-211
     </details>
     
 
@@ -381,6 +385,39 @@ Print default button styles
 #### Require
 
 - [reset()](/sass/core/button/#mixin-reset)
+- [when-active()](/sass/core/button/#mixin-when-active)
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  when-active() {#mixin-when-active}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Mixin to wrap in active selectors
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _button.scss
+- **Group:** button
+- **Type:** mixin
+- **Lines (comments):** 213-213
+- **Lines (code):** 214-218
+    </details>
+    
+
+#### Require
+
 - [get()](/sass/core/breakpoint/#function-get)
   
 
@@ -397,7 +434,7 @@ Print default button styles
 
   
 
-Print button size styles for a specifc size
+Print button size styles for a specific size
     
     
 
@@ -406,8 +443,8 @@ Print button size styles for a specifc size
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 204-207
-- **Lines (code):** 209-219
+- **Lines (comments):** 220-223
+- **Lines (code):** 225-235
     </details>
     
 
@@ -457,8 +494,8 @@ Print a button style's base styles (not hover)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 243-248
-- **Lines (code):** 250-261
+- **Lines (comments):** 267-272
+- **Lines (code):** 274-285
     </details>
     
 
@@ -506,8 +543,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 263-268
-- **Lines (code):** 270-276
+- **Lines (comments):** 287-292
+- **Lines (code):** 294-300
     </details>
     
 
@@ -548,7 +585,7 @@ Print a button style
 - Includes base/visited styling, and hover/focus state styles
 - To print only one of those states, use style-styles or style-styles-hover
 - By default this mixin prints the buttons base styles along with :visited state. 
-  This is to avoid link visted states effecting the button styles (if used in editor areas 
+  This is to avoid link visited states effecting the button styles (if used in editor areas 
   or other areas that apply automatic links styling for example. (param below to override behavior)
     
     
@@ -558,8 +595,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 278-287
-- **Lines (code):** 289-302
+- **Lines (comments):** 310-319
+- **Lines (code):** 321-337
     </details>
     
 
@@ -583,6 +620,7 @@ Print a button style
 
 - [style-styles()](/sass/core/button/#mixin-style-styles)
 - [style-styles-hover()](/sass/core/button/#mixin-style-styles-hover)
+- [when-active()](/sass/core/button/#mixin-when-active)
   
   
 
@@ -612,8 +650,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 106-109
-- **Lines (code):** 111-114
+- **Lines (comments):** 110-113
+- **Lines (code):** 115-118
     </details>
     
 
@@ -667,8 +705,8 @@ Get a value from a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 221-225
-- **Lines (code):** 227-241
+- **Lines (comments):** 237-241
+- **Lines (code):** 243-265
     </details>
     
 

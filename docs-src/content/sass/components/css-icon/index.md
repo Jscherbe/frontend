@@ -60,8 +60,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 31-39
-- **Lines (code):** 41-54
+- **Lines (comments):** 23-31
+- **Lines (code):** 33-52
     </details>
     
 
@@ -107,8 +107,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-62
+- **Lines (comments):** 54-56
+- **Lines (code):** 58-60
     </details>
     
 
@@ -149,8 +149,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 78-80
-- **Lines (code):** 82-395
+- **Lines (comments):** 86-88
+- **Lines (code):** 90-426
     </details>
     
 
@@ -198,8 +198,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 64-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 62-64
+- **Lines (code):** 66-68
     </details>
     
 
