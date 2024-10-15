@@ -18,13 +18,13 @@
 /// @prop {Boolean} link [true] Enables link styling.
 /// @prop {Boolean} link-hover [true] Enables link hover and focus styling.
 /// @prop {Boolean} link-visited [true] Enables visited link styling.
-/// @prop {CssValue} details-animation [(FadeDownIn 350ms ease-in-out)] Animation for the details element when toggled.
+/// @prop {CssValue} details-animation [(UluFadeInDown 350ms ease-in-out)] Animation for the details element when toggled.
 
 $config: (
   "link" : true,
   "link-hover" : true,
   "link-visited" : false,
-  "details-animation" : (FadeDownIn 350ms ease-in-out),
+  "details-animation" : (UluFadeInDown 350ms ease-in-out),
 ) !default;
 
 /// Change modules $config

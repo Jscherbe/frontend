@@ -1,8 +1,8 @@
 SCSS Todos:
-  ☐ Get rid of psuedo class type colors?
+  ✔ Get rid of psuedo class type colors? @done
     * Should we prefer just kabab case for everything?
   ☐ Namespace keyframes @in-progress
-  ☐ Make css-icon--menu-to-close use css animation instead
+  ✔ Make css-icon--menu-to-close use css animation instead @done
     * Fade in-out-in (so the css can stay simple)
     * Could also move back to justified
   ✔ Add active state to buttons @done

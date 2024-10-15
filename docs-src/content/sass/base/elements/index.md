@@ -36,7 +36,7 @@ $config: (
   "link" : true,
   "link-hover" : true,
   "link-visited" : false,
-  "details-animation" : (FadeDownIn 350ms ease-in-out),
+  "details-animation" : (UluFadeInDown 350ms ease-in-out),
 );
 ```
   
@@ -60,7 +60,7 @@ $config: (
 |link|Boolean|Enables link styling.|true|
 |link-hover|Boolean|Enables link hover and focus styling.|true|
 |link-visited|Boolean|Enables visited link styling.|true|
-|details-animation|CssValue|Animation for the details element when toggled.|(FadeDownIn 350ms ease-in-out)|
+|details-animation|CssValue|Animation for the details element when toggled.|(UluFadeInDown 350ms ease-in-out)|
 
     
   
