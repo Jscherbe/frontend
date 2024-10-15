@@ -20,20 +20,17 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+    <span class="tag tag--primary"><strong>Variable</strong></span>
   </div>
 
 </div>
 
   
 
-Module Settings
-    
-    
-
 ``` scss
 $config: (
   "background-color" : white,
+  "background-color-back" : rgb(178, 178, 178),
   "border" : 1px solid black,
   "border-radius" : 6px,
   "border-color-hover" : black,
@@ -59,9 +56,20 @@ $config: (
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-33
+- **Lines (comments):** 15-17
+- **Lines (code):** 19-38
     </details>
+    
+
+#### Todos
+
+- Why was the shadow originally set to the negative size of it's parent element? Should it just be bottom?  Line 173
+added some reduced motion where I thought applicable. Line 111
+    
+
+
+Module Settings
+    
     
   
 
@@ -91,8 +99,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 35-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-46
     </details>
     
 
@@ -133,8 +141,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 48-50
+- **Lines (code):** 52-54
     </details>
     
 
@@ -175,8 +183,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-234
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-244
     </details>
     
 
@@ -224,8 +232,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-62
     </details>
     
 

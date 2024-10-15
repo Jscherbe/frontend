@@ -12,8 +12,13 @@
 /// Module Settings
 /// @type Map
 
+/// @todo 
+/// Why was the shadow originally set to the negative size of it's parent element? Should it just be bottom?  Line 173
+/// added some reduced motion where I thought applicable. Line 111
+
 $config: (
   "background-color" : white,
+  "background-color-back" : rgb(178, 178, 178),
   "border" : 1px solid black,
   "border-radius" : 6px,
   "border-color-hover" : black,
@@ -64,7 +69,6 @@ $config: (
   // @dan @joe-check added vignette styling here. Need to discuss best way to include this
   .flipcard {
     height: 100%;
-    // border: element.get-rule-style("light");
     background-color: get("background-color");
     line-height: 1.4;
     overflow: hidden;
@@ -104,12 +108,14 @@ $config: (
         color: get("icon-color-hover");
       }
     }
-    [data-flipcard-state="open"] & {
-      opacity: 0;
-      animation: flipcard-front-close get('anim-duration') ease-out forwards;
-    }
-    [data-flipcard-state="closed"] & {
-      animation: flipcard-front-open get('anim-duration') ease-in-out forwards;
+    @media (prefers-reduced-motion: no-preference) {
+      [data-flipcard-state="open"] & {
+        opacity: 0;
+        animation: flipcard-front-close get('anim-duration') ease-out forwards;
+      }
+      [data-flipcard-state="closed"] & {
+        animation: flipcard-front-open get('anim-duration') ease-in-out forwards;
+      }
     }
   }
   .flipcard--w-image {
@@ -168,10 +174,14 @@ $config: (
           content: '';
           display: block;
           position: absolute;
-          top: calc(0rem - get('padding'));
+          // top: calc(0rem - get('padding'));
           bottom: calc(0rem - get('padding'));
-          left: calc(0rem - get('padding'));
-          right: calc(0rem - get('padding'));
+          // left: calc(0rem - get('padding'));
+          // right: calc(0rem - get('padding'));
+          top: 0;
+          // bottom: 0;
+          left: 0;
+          right: 0;
           background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
           z-index: -1;
         }
@@ -179,7 +189,7 @@ $config: (
     }
   }
   .flipcard__back {
-    // background-color: red;
+    background-color: get("background-color-back");
     padding: get('padding');
     justify-content: flex-end;
     [data-flipcard-state="open"] & {
@@ -192,8 +202,8 @@ $config: (
   @keyframes flipcard-back-open {
     0% {
       opacity: 0;
-      // transform: scale(0.7);
-      // transform: translatey(100%);
+      transform: scale(0.7);
+      transform: translatey(100%);
     }
     30% {
       opacity: 0;
@@ -201,18 +211,18 @@ $config: (
     }
     100% {
       opacity: 1;
-      // transform: scale(1);
+      transform: scale(1);
       transform: translatey(0);
     }
   }
   @keyframes flipcard-front-close {
     0% {
       opacity: 1;
-      // transform: scale(1);
+      transform: scale(1);
     }
     80% {
       opacity: 0;
-      // transform: scale(0.7);
+      transform: scale(0.7);
     }
     100% {
       opacity: 0;
@@ -221,14 +231,14 @@ $config: (
   @keyframes flipcard-front-open {
     0% {
       opacity: 0;
-      // transform: scale(0.7);
+      transform: scale(0.7);
     }
-    // 30% {
-    //   opacity: 0;
-    // }
+    30% {
+      opacity: 0;
+    }
     100% {
       opacity: 1;
-      // transform: scale(1);
+      transform: scale(1);
     }
   }
 }
