@@ -5,6 +5,8 @@
 @use "sass:map";
 @use "sass:meta";
 @use "sass:string";
+@use "sass:color";
+
 @use "utils";
 @use "selector";
 
@@ -173,7 +175,7 @@ $color-classes: (
 /// @link https://css-tricks.com/snippets/sass/tint-shade-functions/ Modified from source (CSS Tricks, Kitty Giraudel)
 
 @function tint($color, $percentage) {
-  @return mix(get("white"), get($color), $percentage);
+  @return color.mix(get("white"), get($color), $percentage);
 }
 
 /// Darken a color with the default black by a percentage
@@ -184,7 +186,7 @@ $color-classes: (
 /// @link https://css-tricks.com/snippets/sass/tint-shade-functions/ Modified from source (CSS Tricks, Kitty Giraudel)
 
 @function shade($color, $percentage) {
-  @return mix(get("black"), get($color), $percentage);
+  @return color.mix(get("black"), get($color), $percentage);
 }
 
 /// Prints all context styles 

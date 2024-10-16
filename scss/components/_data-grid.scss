@@ -37,6 +37,17 @@ $config: (
   "position-class-row-last":     "position-row-last",
   "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
+  "rule-size" : 1px,
+  "rule-color" : "rule",
+  "extra-rule-styles" : (
+    "light" : (
+      "size" : 1px,
+      "color": "rule-light"
+    )
+  ),
+  "extra-gutter-scales" : (
+    "small": 0.6
+  ),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -109,22 +120,15 @@ $config: (
 /// @param {Map} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
 
 @mixin create(
-  $columns: 12,
+  $columns: get("columns"),
   $breakpoint: get-default-breakpoint(),
   $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
   $gutter: get("gutter"),
   $include-rules: false,
-  $rule-size: 1px,
-  $rule-color: "rule-light",
-  $extra-rule-styles: (
-    "light" : (
-      "size" : 1px,
-      "color": "rule-light"
-    )
-  ),
-  $extra-gutter-scales: (
-    "small": 0.6
-  ),
+  $rule-size: get("rule-size"),
+  $rule-color: get("rule-color"),
+  $extra-rule-styles: get("extra-rule-styles"),
+  $extra-gutter-scales: get("extra-gutter-scales"),
   $attribute: get("attribute"),
   $include-container: true,
   $container-attribute: get("attribute-container"),
@@ -288,7 +292,7 @@ $config: (
         // For removing the rule per row (via equal heights for now)
         &.#{ $position-class-row-last } {
           &#{ $select-rule-row } {
-            content: none;
+            content: none !important;
           }
         }
       }
@@ -528,7 +532,7 @@ $config: (
         &#{'[#{ $attribute }*="rules-row-style: #{ $name }"]'} {
           > #{ $select-item } {
             &#{ $select-rule-row } {
-              background-color: $color;
+              background-color: color.get($color);
               height: $size;
             }
           }
@@ -702,7 +706,7 @@ $config: (
   &#{'[#{ $attribute }*="rules-row: #{ $key }"]'} {
     > #{ $select-item } {
       &#{ $select-rule-row } {
-        content: $size;
+        content: "";
         #{ $position }: math.floor(math.div($size, 2)) * -1;
       }
     }

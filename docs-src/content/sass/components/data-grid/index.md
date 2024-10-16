@@ -44,6 +44,17 @@ $config: (
   "position-class-row-last":     "position-row-last",
   "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
+  "rule-size" : 1px,
+  "rule-color" : "rule",
+  "extra-rule-styles" : (
+    "light" : (
+      "size" : 1px,
+      "color": "rule-light"
+    )
+  ),
+  "extra-gutter-scales" : (
+    "small": 0.6
+  ),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -64,7 +75,7 @@ $config: (
 - **Group:** data-grid
 - **Type:** variable
 - **Lines (comments):** 16-26
-- **Lines (code):** 28-50
+- **Lines (code):** 28-61
     </details>
     
 
@@ -112,8 +123,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-70
     </details>
     
 
@@ -154,8 +165,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-98
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-109
     </details>
     
 
@@ -198,8 +209,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 100-109
-- **Lines (code):** 111-563
+- **Lines (comments):** 111-120
+- **Lines (code):** 122-567
     </details>
     
 
@@ -252,8 +263,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-78
     </details>
     
 
@@ -294,8 +305,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-81
+- **Lines (comments):** 80-82
+- **Lines (code):** 84-92
     </details>
     
 

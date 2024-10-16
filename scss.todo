@@ -1,4 +1,11 @@
 SCSS Todos:
+  ☐ Data Grid
+    ☐ Column Rules Align to Gutter need breakpoints and need to work with gutter scales
+      * maybe this should be optional, to omit if unnessary
+    ☐ Row Rules should work with gutter breakpoints and with gutter scales
+      * maybe this should be optional, to omit if unnessary
+    ☐ Add init to grid setup so that rules can be hidden until ready
+      * Could have transition on color (transparent when not init'd)
   ✔ Get rid of psuedo class type colors? @done
     * Should we prefer just kabab case for everything?
   ✔ Namespace keyframes @done

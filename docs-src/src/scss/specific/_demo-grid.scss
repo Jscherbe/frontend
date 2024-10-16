@@ -1,6 +1,8 @@
 @use "vars";
 @use "ulu";
 
+@use "sass:color";
+
 // A place to put any demo styles, please prefix selectors with "demo" 
 // (like .demo-grid, .demo-background, etc). These styles should be used to demonstrate 
 //something in the page. Such as adding background elements so the user can see how a 
@@ -11,38 +13,19 @@
 // (like an example or demo), please create unique components for those in ../components.
 // These styles should be just for demonstrating something visually
 
-.demo-grid__container {
+$demo-color: ulu.color-tint(vars.$color-violet-light, 15%);
+
+.demo-grid-container {
   padding-top: 10px;
   padding-bottom: 10px;
-  border: 1px dashed vars.$color-blue;
+  border: 2px dashed color.change($demo-color, $alpha: 0.5);
 }
 
-.demo-grid {
-  > .demo-grid__cell {
-    border: 1px solid vars.$color-violet-light;
-    &[data-grid-item]::after{
-      background: black;
-      height: 2px;
-    }
-    &[data-grid-item]::before {
-      background: black;
-      width: 2px;  
-    }
-  }
-  .demo-grid__content{
-    background-color: vars.$color-violet-light-x;
-  }
+.demo-grid__content{
+  background-color: color.change($demo-color, $alpha: 0.1);
+  padding: 2em 0;
 }
-.demo-sandwich {
+// .demo-grid__cell {}
+.demo-grid-element-outside {
   background-color: rgb(255, 211, 130);
-}
-
-.demo-scrollpoint {
-  padding: 1rem;
-  text-align: center;
-  background-color: #ffa;
-  transition: background-color 200ms ease;
-  &[data-scrollpoint-state*="enter"] {
-    background-color: rgb(23, 130, 112);
-  }
 }
