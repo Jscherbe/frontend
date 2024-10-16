@@ -1,5 +1,10 @@
 SCSS Todos:
   ☐ Data Grid
+    ☐ I think we can refactor to gap now
+      * Still use flexbox
+      ☐ Deprecate current module, incase a site needs IE support
+      ☐ Document that older browsers are not supported for module
+      ☐ Once the code is simpler add options for flexbox related layouts and we can use this with columns that fill, etc
     ☐ Column Rules Align to Gutter need breakpoints and need to work with gutter scales
       * maybe this should be optional, to omit if unnessary
     ☐ Row Rules should work with gutter breakpoints and with gutter scales
