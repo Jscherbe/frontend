@@ -35,33 +35,34 @@ Module Settings
 $config: (
   "backdrop-blur":                    4px,
   "backdrop-color":                   rgba(73, 73, 73, 0.459),
+  "list-item-indent" :                1.5em,
+  "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
+
+  "border-radius":                    6px,
+  "border-radius-small":              3px,
+  "border-radius-large":              12px,
   "box-shadow":                       0 1px 5px color.get('box-shadow'),
   "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
   "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
   "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
-  "border-radius":                    6px,
-  "border-radius-small":              3px,
-  "border-radius-large":              12px,
-  "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
-  "margin-small":                     0.65em,
+  "link-text-decoration":             underline,
+  "link-text-decoration-color":       initial,
+  "link-text-decoration-color-hover": false,
+  "link-text-decoration-default":     none,
+  "link-text-underline-offset" :     auto,
+  "link-text-decoration-style":       dotted,
+  "link-text-decoration-style-hover": solid,
+  "link-text-decoration-thickness":   0.1em,
   "margin":                           1em,
+  "margin-small":                     0.65em,
   "margin-large":                     2em,
-  "list-item-indent" :                1.5em,
   "ol-list-style-type":               decimal,
   "ol-list-style-type-2":             lower-alpha,
   "ol-list-style-type-3":             lower-roman,
   "ul-list-style-type":               disc,
   "ul-list-style-type-2":             circle,
   "ul-list-style-type-3":             square,
-  "link-text-decoration-default":     none,
-  "link-text-decoration":             underline,
-  "link-text-decoration-style":       dotted,
-  "link-text-decoration-color":       initial,
-  "link-text-decoration-style-hover": solid,
-  "link-text-decoration-color-hover": false,
-  "link-text-decoration-thickness":   0.1em,
-  "link-text-underline-offset" :     auto
 );
 ```
   
@@ -72,7 +73,7 @@ $config: (
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 10-37
-- **Lines (code):** 39-69
+- **Lines (code):** 39-70
     </details>
     
 
@@ -140,8 +141,8 @@ $rule-styles: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 71-72
-- **Lines (code):** 74-77
+- **Lines (comments):** 72-73
+- **Lines (code):** 75-78
     </details>
     
 
@@ -177,8 +178,8 @@ $rule-margins: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 79-80
-- **Lines (code):** 82-87
+- **Lines (comments):** 80-81
+- **Lines (code):** 83-88
     </details>
     
   
@@ -209,8 +210,8 @@ Change modules $config
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 89-91
-- **Lines (code):** 92-94
+- **Lines (comments):** 90-92
+- **Lines (code):** 93-95
     </details>
     
 
@@ -251,8 +252,8 @@ Sets rule styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 104-105
-- **Lines (code):** 107-109
+- **Lines (comments):** 105-106
+- **Lines (code):** 108-110
     </details>
     
 
@@ -292,8 +293,8 @@ Sets rule margins
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 111-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 112-113
+- **Lines (code):** 115-117
     </details>
     
 
@@ -333,8 +334,8 @@ Get full rule CSS (style and margin)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 132-133
-- **Lines (code):** 135-141
+- **Lines (comments):** 133-134
+- **Lines (code):** 136-142
     </details>
     
 
@@ -369,8 +370,8 @@ Print link styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 151-153
-- **Lines (code):** 155-177
+- **Lines (comments):** 152-154
+- **Lines (code):** 156-178
     </details>
     
 
@@ -411,8 +412,8 @@ Print the defautl link styling (no hover and focus styles)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 179-179
-- **Lines (code):** 181-194
+- **Lines (comments):** 180-180
+- **Lines (code):** 182-195
     </details>
     
 
@@ -443,8 +444,8 @@ Print the ordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 196-197
-- **Lines (code):** 199-223
+- **Lines (comments):** 197-198
+- **Lines (code):** 200-224
     </details>
     
 
@@ -484,8 +485,8 @@ Print the unordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 225-226
-- **Lines (code):** 228-249
+- **Lines (comments):** 226-227
+- **Lines (code):** 229-250
     </details>
     
 
@@ -525,8 +526,8 @@ Hide text for assistive devices
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 251-256
-- **Lines (code):** 258-276
+- **Lines (comments):** 252-257
+- **Lines (code):** 259-277
     </details>
     
 
@@ -580,8 +581,8 @@ Get a config option
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 96-98
-- **Lines (code):** 100-102
+- **Lines (comments):** 97-99
+- **Lines (code):** 101-103
     </details>
     
 
@@ -623,8 +624,8 @@ Get a rule style
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 118-119
-- **Lines (code):** 121-123
+- **Lines (comments):** 119-120
+- **Lines (code):** 122-124
     </details>
     
 
@@ -665,8 +666,8 @@ Sets rule margin
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 125-126
-- **Lines (code):** 128-130
+- **Lines (comments):** 126-127
+- **Lines (code):** 129-131
     </details>
     
 

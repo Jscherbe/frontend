@@ -22,43 +22,44 @@ $-fallbacks: (
 /// @type Map
 
 $config: (
-  "padding":                 (0.75em 1.5em),
-  "font-family":             inherit,
-  "white-space":             nowrap,
-  "font-weight":             bold,
+  "active-selector":         "&.is-active",
+  "box-shadow":              true,
   "line-height":             1.1,
   "letter-spacing":          0.02em,
-  "text-transform":          none,
-  "text-shadow":             none,
-  "font-size":               "base",
-  "box-shadow":              true,
+  "margin":                  (0.45em 0.5em 0.45em 0),
+  "min-width":               9rem,
+  "padding":                 (0.75em 1.5em),
+  "white-space":             nowrap,
+  
+  "border-color":            "control-border",
+  "border-color-active":     "control-border-active",
+  "border-color-hover":      "control-border-hover",
   "border-radius":           2rem,
   "border-width":            1px,
-  "color":                   "control",
-  "color-hover":             "control-hover",
-  "color-active":            "control-active",
-  "border-color":            "control-border",
-  "border-color-hover":      "control-border-hover",
-  "border-color-active":     "control-border-active",
   "background-color":        "control-background",
   "background-color-hover":  "control-background-hover",
   "background-color-active": "control-background-active",
-  "margin":                  (0.45em 0.5em 0.45em 0),
-  "min-width":               9rem,
+  "color":                   "control",
+  "color-hover":             "control-hover",
+  "color-active":            "control-active",
+  "font-family":             inherit,
+  "font-weight":             bold,
+  "font-size":               "base",
   "icon-size":               2.5rem,
   "icon-font-size":          1.38rem,
   "icon-border-radius":      50%,
+  "text-shadow":             none,
+  "text-transform":          none,
   "text-decoration":         none,
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
-  "active-selector":         "&.is-active"
-) !default;
-
-/// Button sizes
-/// @type Map
-
-$sizes: (
+  ) !default;
+  
+  /// Button sizes
+  /// @type Map
+  
+  $sizes: (
   "small" : (
     "padding":        (0.35em 1.5em),
     "min-width":      0,

@@ -34,9 +34,9 @@ Module Settings
 ``` scss
 $config: (
   "base":      16px,
+  "default" :  "small",
   "gap":       0.01em,
   "null-name": "none",
-  "default" :  "small"
 );
 ```
   

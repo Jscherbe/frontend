@@ -33,8 +33,8 @@ Module Settings
 
 ``` scss
 $config: (
-  "max-width":         90rem,
   "margin":            2rem,
+  "max-width":         90rem,
   "z-index-sticky":    100,
   "z-index-above":     450,
   "z-index-fixed":     1000

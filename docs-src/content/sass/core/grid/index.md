@@ -34,11 +34,15 @@ Module Settings
 
 ``` scss
 $config: (
-  "columns":            12,
   "attribute":          "data-grid",
   "attribute-container" : "data-grid-container",
-  "gutter":             14px,
   "breakpoint" :        false, // Fallback to default
+  "columns":            12,
+  "gutter":             14px,
+  "position-class-column-first": "position-column-first",
+  "position-class-column-last":  "position-column-last",
+  "position-class-row-first":    "position-row-first",
+  "position-class-row-last":     "position-row-last",
   "extra-breakpoints" : (
     "medium" : (
       "breakpoint" : "medium",
@@ -49,10 +53,6 @@ $config: (
       "gutter" : 20px
     )
   ),
-  "position-class-column-first": "position-column-first",
-  "position-class-column-last":  "position-column-last",
-  "position-class-row-first":    "position-row-first",
-  "position-class-row-last":     "position-row-last"
 );
 ```
   
