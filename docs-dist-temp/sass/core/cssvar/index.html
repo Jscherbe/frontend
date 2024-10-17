@@ -5236,6 +5236,9 @@
 
                     <li><a href="#mixin-declare-breakpoint-sizes">declare-breakpoint-sizes()</a>
             		</li>
+
+                    <li><a href="#mixin-declare-theme-values">declare-theme-values()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -5250,6 +5253,15 @@
             		</li>
 
                     <li><a href="#function-use">use()</a>
+            		</li>
+
+                    <li><a href="#function-join">join()</a>
+            		</li>
+
+                    <li><a href="#function-add">add()</a>
+            		</li>
+
+                    <li><a href="#function-subtract">subtract()</a>
             		</li>
                 </ol>
             		</li>
@@ -5282,8 +5294,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-14</li>
-<li><strong>Lines (code):</strong> 16-18  </details>
+<li><strong>Lines (comments):</strong> 14-16</li>
+<li><strong>Lines (code):</strong> 18-20  </details>
 </li>
 </ul>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5319,8 +5331,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 20-23</li>
-<li><strong>Lines (code):</strong> 25-27  </details>
+<li><strong>Lines (comments):</strong> 22-25</li>
+<li><strong>Lines (code):</strong> 27-29  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5360,8 +5372,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 72-79</li>
-<li><strong>Lines (code):</strong> 81-83  </details>
+<li><strong>Lines (comments):</strong> 74-81</li>
+<li><strong>Lines (code):</strong> 83-85  </details>
 </li>
 </ul>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5417,8 +5429,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 85-91</li>
-<li><strong>Lines (code):</strong> 93-97  </details>
+<li><strong>Lines (comments):</strong> 87-93</li>
+<li><strong>Lines (code):</strong> 95-99  </details>
 </li>
 </ul>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -5468,8 +5480,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 99-107</li>
-<li><strong>Lines (code):</strong> 109-121  </details>
+<li><strong>Lines (comments):</strong> 101-109</li>
+<li><strong>Lines (code):</strong> 111-123  </details>
 </li>
 </ul>
 <h4 id="examples-3" tabindex="-1">Examples</h4>
@@ -5531,8 +5543,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 123-130</li>
-<li><strong>Lines (code):</strong> 132-143  </details>
+<li><strong>Lines (comments):</strong> 125-132</li>
+<li><strong>Lines (code):</strong> 134-145  </details>
 </li>
 </ul>
 <h4 id="examples-4" tabindex="-1">Examples</h4>
@@ -5576,6 +5588,74 @@
 <li><a href="/sass/core/cssvar/#mixin-declare">declare()</a></li>
 <li><a href="/sass/core/breakpoint/#function-get-size-value">get-size-value()</a></li>
 </ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-declare-theme-values" tabindex="-1">declare-theme-values()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Outputs css vars for a specific type from a theme map</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 147-168</li>
+<li><strong>Lines (code):</strong> 170-177  </details>
+</li>
+</ul>
+<h4 id="examples-5" tabindex="-1">Examples</h4>
+<p>Example of theme map and usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-comment">// Defining a map to hold my color theme values</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$color-themes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"color-button"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"light"</span> <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"dark"</span> <span class="pjs-token pjs-punctuation">:</span> red
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> ...
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+
+<span class="pjs-token pjs-comment">// Declaring default theme</span>
+<span class="pjs-token pjs-selector">:root </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">cssvar-declare-theme-values</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$color-themes</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-comment">// Creating class to use on body/other elements to switch to dark theme</span>
+<span class="pjs-token pjs-selector">.theme-dark </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">cssvar-declare-theme-values</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$color-themes</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"dark"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$theme</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">The map containing the values. Example (</td>
+</tr>
+<tr>
+<td style="text-align:left">$key</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The key used to retrieve values from the map.</td>
+</tr>
+<tr>
+<td style="text-align:left">$prefix</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The optional prefix for CSS variables.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#mixin-declare">declare()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
 <h3 id="function-get" tabindex="-1">get()</h3>
@@ -5590,14 +5670,14 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 29-33</li>
-<li><strong>Lines (code):</strong> 35-37  </details>
+<li><strong>Lines (comments):</strong> 31-35</li>
+<li><strong>Lines (code):</strong> 37-39  </details>
 </li>
 </ul>
-<h4 id="examples-5" tabindex="-1">Examples</h4>
+<h4 id="examples-6" tabindex="-1">Examples</h4>
 <p>Getting the config value for prefix</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$prefix</span></span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"prefix"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5629,7 +5709,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
@@ -5647,14 +5727,14 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 39-44</li>
-<li><strong>Lines (code):</strong> 46-52  </details>
+<li><strong>Lines (comments):</strong> 41-46</li>
+<li><strong>Lines (code):</strong> 48-54  </details>
 </li>
 </ul>
-<h4 id="examples-6" tabindex="-1">Examples</h4>
+<h4 id="examples-7" tabindex="-1">Examples</h4>
 <p>Getting a custom property name</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-selector">#</span><span class="pjs-token pjs-punctuation">{</span> cssvar.<span class="pjs-token pjs-function">name</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base-color"</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">}</span> <span class="pjs-token pjs-punctuation">{</span> ... <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5707,16 +5787,16 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 54-62</li>
-<li><strong>Lines (code):</strong> 64-70  </details>
+<li><strong>Lines (comments):</strong> 56-64</li>
+<li><strong>Lines (code):</strong> 66-72  </details>
 </li>
 </ul>
-<h4 id="examples-7" tabindex="-1">Examples</h4>
+<h4 id="examples-8" tabindex="-1">Examples</h4>
 <p>Print an custom property as a value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-selector">.test </span><span class="pjs-token pjs-punctuation">{</span>
   <span class="pjs-token pjs-property">color</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">use</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base-color"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5762,9 +5842,187 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/cssvar/#function-name">name()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-join" tabindex="-1">join()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Joins a list of cssvar names</p>
+<ul>
+<li>
+<p>Use to &quot;+&quot;, &quot;-&quot; and then use in calc</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _cssvar.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> cssvar</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 179-183</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 185-191</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$names</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">list of names (string), like if using use</td>
+</tr>
+<tr>
+<td style="text-align:left">$separator</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Separator to use when joining custom property var statements</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">For example if separator was &quot;+&quot; would result in &quot;var(--some-prop) + var(--another-prop)&quot;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-8" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#function-use">use()</a></li>
+<li>list-join()</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-add" tabindex="-1">add()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>For any names passed will join them with &quot;+&quot; and wrap in calc</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 193-195</li>
+<li><strong>Lines (code):</strong> 197-199  </details>
+</li>
+</ul>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name string (pass multiple comma separated)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">A string like &quot;calc(var(--some-prop) + var(--another-prop))&quot;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-9" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#function-join">join()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-subtract" tabindex="-1">subtract()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>For any names passed will join them with &quot;-&quot; and wrap in calc</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 201-203</li>
+<li><strong>Lines (code):</strong> 205-207  </details>
+</li>
+</ul>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name string (pass multiple comma separated)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-5" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">A string like &quot;calc(var(--some-prop) - var(--another-prop))&quot;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-10" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/cssvar/#function-join">join()</a></li>
 </ul>
 
     </div>
