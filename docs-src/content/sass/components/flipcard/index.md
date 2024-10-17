@@ -29,26 +29,26 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 
 ``` scss
 $config: (
+  "anim-delay" : 200ms,
+  "anim-duration" : 430ms,
   "background-color" : white,
   "background-color-image" : rgba(96, 255, 255, 0.89),
-  "image-opacity" : 0.7,
   "background-color-back" : rgb(178, 178, 178),
+  "bottom-shadow" : true,
   "border" : 1px solid black,
-  "border-radius" : 6px,
   "border-color-hover" : black,
+  "border-radius" : 6px,
   "control-button-border-focus" : 2px solid blue,
-  "anim-duration" : 430ms,
-  "anim-delay" : 200ms,
-  "padding" : 1.5rem,
-  "title-color" : red,
-  "title-color-hover" : green,
   "icon-color" : pink,
   "icon-color-hover" : aqua,
   "icon-color-image" : aqua,
   "icon-color-image-hover" : pink,
+  "image-opacity" : 0.7,
+  "padding" : 1.5rem,
+  "title-color" : red,
+  "title-color-hover" : green,
   "title-color-image" : black,
   "title-color-image-hover" : blue,
-  "bottom-shadow" : true
 );
 ```
   

@@ -33,8 +33,8 @@ Module Settings
 
 ``` scss
 $config: (
+  "margin": 1em,
   "min-height": 1em,
-  "margin": 1em
 );
 ```
   

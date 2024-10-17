@@ -78,10 +78,10 @@ Module Settings
 $config: (
   "content-background-color" : white,
   "content-border" : 1px solid rgb(227, 227, 227),
-  "content-width" : 34rem,
   "content-padding" : 2.5rem,
-  "padding" : 6rem,
+  "content-width" : 34rem,
   "min-height" : 75vh,
+  "padding" : 6rem,
   "breakpoints" : (
     "medium" : (
       "direction" : "down",
@@ -114,10 +114,10 @@ $config: (
 |:--|:--|:--|:--|
 |content-background-color|Color|white|The background color of the content.|
 |content-border|CssValue|1px solid rgb(227, 227, 227)|The border of the content|
-|content-width|Dimension|34rem|The width of the content.|
 |content-padding|Dimension|2.5rem|The padding of the content.|
-|padding|Dimension|6rem|The padding of the container.|
+|content-width|Dimension|34rem|The width of the content.|
 |min-height|Dimension|75vh|the min-height of the section.|
+|padding|Dimension|6rem|The padding of the container.|
 |breakpoints|Map|Map|The breakpoints of the section.|
 
     

@@ -20,7 +20,7 @@ sassdocGroupName: menu-stack
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+    <span class="tag tag--primary"><strong>Variable</strong></span>
   </div>
 
 </div>
@@ -28,38 +28,40 @@ sassdocGroupName: menu-stack
   
 
 Module Settings
+    @type Map
     
     
 
 ``` scss
 $config: (
-  "link-color" : "link",
-  "link-background-color" : transparent,
-  "link-color-hover" : "link-hover",
-  "link-background-color-hover" : rgb(219, 219, 219),
-  "link-color-active" : black,
-  "link-background-color-active" : rgb(219, 219, 219),
-  "link-border-radius" : true,
-  "link-padding-y": 0.35em,
-  "link-padding-x": 1em,
-  "link-margin" : 0.2em,
-  "link-separated-rule-style" : false,
-  "link-separated-margin" : false,
-  "link-icon-margin" : 0.65em,
-  "link-icon-width" : 1em,
-  "toggle-icon-rotate" : false,
-  "link-font-weight" : null,
-  "link-active-selectors" : (".is-active", '[aria-current="page"]'),
-  "compact-link-padding-y": 0.25em,
-  "compact-link-padding-x": 0.75em,
+  "checkbox-area-width" : 3em,
+  "nested-indent" : 0.5em,
   "rule-style" : "default",
   "rule-margin" : 0.5em,
-  "label-type-size" : false,
+  "link-separated-margin" : false,
+  "link-separated-rule-style" : false,
+  "toggle-icon-rotate" : false,
+  "compact-link-padding-x": 0.75em,
+  "compact-link-padding-y": 0.25em,
+
   "label-color" : null,
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
-  "checkbox-area-width" : 3em,
-  "nested-indent" : 0.5em,
+  "label-type-size" : false,
+  "link-active-selectors" : (".is-active", '[aria-current="page"]'),
+  "link-background-color" : transparent,
+  "link-background-color-active" : rgb(219, 219, 219),
+  "link-background-color-hover" : rgb(219, 219, 219),
+  "link-border-radius" : true,
+  "link-color" : "link",
+  "link-color-active" : black,
+  "link-color-hover" : "link-hover",
+  "link-font-weight" : null,
+  "link-icon-margin" : 0.65em,
+  "link-icon-width" : 1em,
+  "link-margin" : 0.2em,
+  "link-padding-x": 1em,
+  "link-padding-y": 0.35em,
 );
 ```
   
@@ -70,7 +72,7 @@ $config: (
 - **Group:** menu-stack
 - **Type:** variable
 - **Lines (comments):** 25-53
-- **Lines (code):** 55-83
+- **Lines (code):** 55-84
     </details>
     
 
@@ -79,33 +81,33 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|link-color|String|link|The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.|
-|link-background-color|Color|transparent|The background color of the menu-stack toggle.|
-|link-color-hover|String|link-hover|The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.|
-|link-background-color-hover|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when hovered or focused.|
-|link-color-active|Color|black|The type color of the menu-stack toggle when active.|
-|link-background-color-active|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when active.|
-|link-border-radius|Dimension|true|The border radius of the menu-stack toggle. If set to true, will use the border radius from the button component.|
-|link-padding-y|Dimension|0.35em|Vertical padding for menu-stack toggle.|
-|link-padding-x|Dimension|1em|Horizontal padding for menu-stack toggle.|
-|link-margin|Dimension|0.2em|Margin for the menu-stack toggle.|
-|link-separated-rule-style|Boolean|false|Enables a rule between the items in the menu-stack.|
+|checkbox-area-width|Dimension|3em|The width of the checkbox are.|
 |link-separated-margin|Boolean|false|Enables a margin between the items in the menu-stack.|
-|link-icon-margin|Dimension|0.65em|Adds a right margin to the icon.|
-|link-icon-width|Dimension|1em|The width of the icon.|
-|link-font-weight|CssValue|null|The font weight of the menu-stack toggle.|
-|link-active-selectors|list|(.is-active, '[aria-current=page|')] Selectors to apply active styling.|
-|compact-link-padding-y|Dimension|0.25em|The links vertical padding when using the compact option.|
-|compact-link-padding-x|Dimension|0.75em|The links horizontal padding when using the compact option.|
-|rule-style|String|default|Determines the styling of the rule. Uses the rule.scss component.|
+|link-separated-rule-style|Boolean|false|Enables a rule between the items in the menu-stack.|
+|nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
 |rule-margin|Dimension|0.5em|Sets the padding and margin of the rule.|
-|label-type-size|CssValue|false|Adjusts the type size of the label.|
+|rule-style|String|default|Determines the styling of the rule. Uses the rule.scss component.|
+|toggle-icon-rotate|Number|false|Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)|
+|compact-link-padding-x|Dimension|0.75em|The links horizontal padding when using the compact option.|
+|compact-link-padding-y|Dimension|0.25em|The links vertical padding when using the compact option.|
 |label-color|Color|null|The type color of the label.|
 |label-margin|Dimension|0.5em|The margin of the label.|
 |label-text-transform|CssValue|uppercase|Transforms the label text.|
-|checkbox-area-width|Dimension|3em|The width of the checkbox are.|
-|nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
-|toggle-icon-rotate|Number|false|Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)|
+|label-type-size|CssValue|false|Adjusts the type size of the label.|
+|link-active-selectors|list|(.is-active, '[aria-current=page|')] Selectors to apply active styling.|
+|link-background-color|Color|transparent|The background color of the menu-stack toggle.|
+|link-background-color-active|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when active.|
+|link-background-color-hover|Color|rgb(219, 219, 219)|The background color of the menu-stack toggle when hovered or focused.|
+|link-border-radius|Dimension|true|The border radius of the menu-stack toggle. If set to true, will use the border radius from the button component.|
+|link-color|String|link|The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|link-color-active|Color|black|The type color of the menu-stack toggle when active.|
+|link-color-hover|String|link-hover|The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|link-font-weight|CssValue|null|The font weight of the menu-stack toggle.|
+|link-icon-margin|Dimension|0.65em|Adds a right margin to the icon.|
+|link-icon-width|Dimension|1em|The width of the icon.|
+|link-margin|Dimension|0.2em|Margin for the menu-stack toggle.|
+|link-padding-x|Dimension|1em|Horizontal padding for menu-stack toggle.|
+|link-padding-y|Dimension|0.35em|Vertical padding for menu-stack toggle.|
 
     
   
@@ -136,8 +138,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 86-88
-- **Lines (code):** 90-92
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-93
     </details>
     
 
@@ -178,8 +180,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 108-112
-- **Lines (code):** 114-242
+- **Lines (comments):** 109-113
+- **Lines (code):** 115-243
     </details>
     
 
@@ -233,8 +235,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 94-96
-- **Lines (code):** 98-101
+- **Lines (comments):** 95-97
+- **Lines (code):** 99-102
     </details>
     
 

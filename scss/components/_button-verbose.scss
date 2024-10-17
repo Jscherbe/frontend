@@ -28,44 +28,44 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} margin [1em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} margin-inline [0.75em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} padding-x [0.65em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} padding-y [1em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} icon-font-size [1.25rem] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} min-width [20rem] Font size (basic ie. 1.3rem) for badge
-/// @prop {Number} line-height [1.2] Font size (basic ie. 1.3rem) for badge
-/// @prop {Color} icon-color [gray] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} title-color [link] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} title-margin [0.5em] Font size (basic ie. 1.3rem) for badge
 /// @prop {Color} background-color [white] Font size (basic ie. 1.3rem) for badge
 /// @prop {Color} background-color-hover [link] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} color [type] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} color-hover [type] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} title-color-hover [link-hover] Font size (basic ie. 1.3rem) for badge
 /// @prop {String} border-radius [border-radius] Font size (basic ie. 1.3rem) for badge
 /// @prop {String} box-shadow [true] Use the fallback. But note it.
 /// @prop {String} box-shadow-hover [true] @joe-check these box-shadows are booleans, but it should be a css value
+/// @prop {String} color [type] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} color-hover [type] Font size (basic ie. 1.3rem) for badge
+/// @prop {Color} icon-color [gray] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} icon-font-size [1.25rem] Font size (basic ie. 1.3rem) for badge
+/// @prop {Number} line-height [1.2] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} margin [1em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} margin-inline [0.75em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} min-width [20rem] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} padding-x [0.65em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} padding-y [1em] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} title-color [link] Font size (basic ie. 1.3rem) for badge
+/// @prop {String} title-color-hover [link-hover] Font size (basic ie. 1.3rem) for badge
+/// @prop {Dimension} title-margin [0.5em] Font size (basic ie. 1.3rem) for badge
 
 $config: (
-  "margin" : 1em,
-  "margin-inline" : 0.75em,
-  "padding-x": 0.65em,
-  "padding-y": 1em,
-  "icon-font-size" : 1.25rem,
-  "min-width": 20rem,
-  "line-height" : 1.2,
-  "icon-color": gray,
-  "title-color": "link",
-  "title-margin" : 0.5em,
   "background-color" : white,
   "background-color-hover" : "link",
-  "color" : "type",
-  "color-hover" : "type",
-  "title-color-hover" : "link-hover",
   "border-radius" : "border-radius",
   "box-shadow" : true,
   "box-shadow-hover" : true,
+  "color" : "type",
+  "color-hover" : "type",
+  "icon-color": gray,
+  "icon-font-size" : 1.25rem,
+  "line-height" : 1.2,
+  "margin" : 1em,
+  "margin-inline" : 0.75em,
+  "min-width": 20rem,
+  "padding-x": 0.65em,
+  "padding-y": 1em,
+  "title-color": "link",
+  "title-margin" : 0.5em,
+  "title-color-hover" : "link-hover",
 ) !default;
 
 /// Change modules $config

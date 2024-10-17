@@ -5261,22 +5261,22 @@ current page or section, is visually emphasized with an underline.</p>
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"activeSelector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"&amp;.is-active, &amp;.has-active"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color-active"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-between"</span> <span class="pjs-token pjs-punctuation">:</span> 2.25em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding-x"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding-y"</span> <span class="pjs-token pjs-punctuation">:</span> 0.3em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"underline-color"</span> <span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"underline-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-between"</span> <span class="pjs-token pjs-punctuation">:</span> 2.25em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"underline-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> gray<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"activeSelector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"&amp;.is-active, &amp;.has-active"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"rule-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"rule-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"rule-offset"</span> <span class="pjs-token pjs-punctuation">:</span> -3px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding-y-ruled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"nowrap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"rule-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"rule-offset"</span> <span class="pjs-token pjs-punctuation">:</span> -3px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"rule-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"underline-color"</span> <span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"underline-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> gray<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"underline-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3px<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -5300,16 +5300,16 @@ current page or section, is visually emphasized with an underline.</p>
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">activeSelector</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">.is-active</td>
+<td style="text-align:left">Selector that portrays active status.</td>
+</tr>
+<tr>
 <td style="text-align:left">color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">null</td>
 <td style="text-align:left">Type color for the nav-strip.</td>
-</tr>
-<tr>
-<td style="text-align:left">color-hover</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">Type color for the nav-strip when hovered or focused.</td>
 </tr>
 <tr>
 <td style="text-align:left">color-active</td>
@@ -5318,10 +5318,28 @@ current page or section, is visually emphasized with an underline.</p>
 <td style="text-align:left">Type color for the nav-strip when active.</td>
 </tr>
 <tr>
+<td style="text-align:left">color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Type color for the nav-strip when hovered or focused.</td>
+</tr>
+<tr>
 <td style="text-align:left">font-weight</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">null</td>
 <td style="text-align:left">Font weight of navstrip.</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-between</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2.25em</td>
+<td style="text-align:left">Margin between nav-strip items.</td>
+</tr>
+<tr>
+<td style="text-align:left">nowrap</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Disables the word wrap.</td>
 </tr>
 <tr>
 <td style="text-align:left">padding-x</td>
@@ -5336,6 +5354,12 @@ current page or section, is visually emphasized with an underline.</p>
 <td style="text-align:left">Vertical padding for the nav-strip links.</td>
 </tr>
 <tr>
+<td style="text-align:left">padding-y-ruled</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Vertical padding for the nav-strip links when using nav-strip--rule.</td>
+</tr>
+<tr>
 <td style="text-align:left">underline-color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">orange</td>
@@ -5348,28 +5372,10 @@ current page or section, is visually emphasized with an underline.</p>
 <td style="text-align:left">Size of the underline.</td>
 </tr>
 <tr>
-<td style="text-align:left">margin-between</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">2.25em</td>
-<td style="text-align:left">Margin between nav-strip items.</td>
-</tr>
-<tr>
 <td style="text-align:left">underline-color-hover</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">gray</td>
 <td style="text-align:left">Color of the underline when hovered or focused.</td>
-</tr>
-<tr>
-<td style="text-align:left">activeSelector</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">.is-active</td>
-<td style="text-align:left">Selector that portrays active status.</td>
-</tr>
-<tr>
-<td style="text-align:left">rule-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">3px</td>
-<td style="text-align:left">Size of the nav-strip rule.</td>
 </tr>
 <tr>
 <td style="text-align:left">rule-color</td>
@@ -5378,22 +5384,16 @@ current page or section, is visually emphasized with an underline.</p>
 <td style="text-align:left">Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.</td>
 </tr>
 <tr>
+<td style="text-align:left">rule-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">3px</td>
+<td style="text-align:left">Size of the nav-strip rule.</td>
+</tr>
+<tr>
 <td style="text-align:left">rule-offset</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">-3px</td>
 <td style="text-align:left">Offset the rule for the navstrip.</td>
-</tr>
-<tr>
-<td style="text-align:left">padding-y-ruled</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">Vertical padding for the nav-strip links when using nav-strip--rule.</td>
-</tr>
-<tr>
-<td style="text-align:left">nowrap</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">Disables the word wrap.</td>
 </tr>
 </tbody>
 </table>

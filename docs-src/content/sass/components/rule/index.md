@@ -33,9 +33,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "short-width" : 2.75rem,
   "short-border-width" : 4px,
-  "short-modifiers" : false
+  "short-modifiers" : false,
+  "short-width" : 2.75rem,
 );
 ```
   
@@ -55,9 +55,9 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|short-width|Number|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
 |short-border-width|Number|4px|Short rule width of border|
 |short-modifiers|Number|false|@joe-check|
+|short-width|Number|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
 
     
   

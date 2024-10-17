@@ -17,54 +17,55 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} container  ["container"]
 /// @prop {Color} background-color  [false]
-/// @prop {Dimension} margin-top  [1rem]
+/// @prop {String} container  ["container"]
+/// @prop {List} containers  [("container",)]
 /// @prop {Dimension} margin-bottom  [3rem]
-/// @prop {Dimension} padding-top  [0]
+/// @prop {Dimension} margin-top  [1rem]
 /// @prop {Dimension} padding-bottom  [0]
+/// @prop {Dimension} padding-top  [0]
+/// @prop {String} prefix ["scroll-slide"]
+/// @prop {Color} button-background-color  [white]
+/// @prop {Color} button-background-color-hover  [white]
+/// @prop {CssValue} button-border  [2px solid white]
+/// @prop {Color} button-border-color-hover  [white]
+/// @prop {Dimension} button-border-radius  [50%]
+/// @prop {CssValue} button-box-shadow  [element.get("box-shadow")]
+/// @prop {Color} button-color  [color.get("type")]
+/// @prop {Color} button-color-hover  [color.get("link")]
+/// @prop {Dimension} button-font-size  [1.35rem]
 /// @prop {Dimension} button-indent  [1.5rem]
 /// @prop {Dimension} button-indent-small  [0.5rem]
 /// @prop {Dimension} button-size  [3rem]
-/// @prop {Dimension} button-font-size  [1.35rem]
-/// @prop {Color} button-color  [color.get("type")]
-/// @prop {CssValue} button-border  [2px solid white]
-/// @prop {Dimension} button-border-radius  [50%]
-/// @prop {Color} button-background-color  [white]
-/// @prop {CssValue} button-box-shadow  [element.get("box-shadow")]
-/// @prop {Color} button-color-hover  [color.get("link")]
-/// @prop {Color} button-border-color-hover  [white]
-/// @prop {Color} button-background-color-hover  [white]
 /// @prop {Dimension} button-icon-offset-x  [false]
 /// @prop {Dimension} button-icon-offset-y  [false]
-/// @prop {List} containers  [("container",)]
-/// @prop {String} prefix ["scroll-slide"]
 
 /// Config options
 
 $config: (
-  "container" : "container",
   "background-color" : false,
-  "margin-top" : 1rem,
+  "container" : "container",
+  "containers" : ("container",),
   "margin-bottom" : 3rem,
-  "padding-top" : 0,
+  "margin-top" : 1rem,
   "padding-bottom" : 0,
+  "padding-top" : 0,
+  "prefix": "scroll-slider",
+
+  "button-background-color" : white,
+  "button-background-color-hover" : white,
+  "button-border" : 2px solid white,
+  "button-border-color-hover" : white,
+  "button-border-radius" : 50%,
+  "button-box-shadow" : element.get("box-shadow"),
+  "button-color" : color.get("type"),
+  "button-color-hover" : color.get("link"),
+  "button-font-size" : 1.35rem,
+  "button-icon-offset-x" : false,
+  "button-icon-offset-y" : false,
   "button-indent" : 1.5rem,
   "button-indent-small" : 0.5rem,
   "button-size" : 3rem,
-  "button-font-size" : 1.35rem,
-  "button-color" : color.get("type"),
-  "button-border" : 2px solid white,
-  "button-border-radius" : 50%,
-  "button-background-color" : white,
-  "button-box-shadow" : element.get("box-shadow"),
-  "button-color-hover" : color.get("link"),
-  "button-border-color-hover" : white,
-  "button-background-color-hover" : white,
-  "button-icon-offset-x" : false,
-  "button-icon-offset-y" : false,
-  "containers" : ("container",),
-  "prefix": "scroll-slider"
 ) !default;
 
 /// Change modules $config

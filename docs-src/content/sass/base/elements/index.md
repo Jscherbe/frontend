@@ -33,10 +33,10 @@ Module Settings
 
 ``` scss
 $config: (
+  "details-animation" : (UluFadeInDown 350ms ease-in-out),
   "link" : true,
   "link-hover" : true,
   "link-visited" : false,
-  "details-animation" : (UluFadeInDown 350ms ease-in-out),
 );
 ```
   
@@ -57,10 +57,10 @@ $config: (
 |Name|Type|Description|Default|
 |:--|:--|:--|:--|
 |$config.links-state-styling|Number|Just color/defaults vs hover/visited/active||
+|details-animation|CssValue|Animation for the details element when toggled.|(UluFadeInDown 350ms ease-in-out)|
 |link|Boolean|Enables link styling.|true|
 |link-hover|Boolean|Enables link hover and focus styling.|true|
 |link-visited|Boolean|Enables visited link styling.|true|
-|details-animation|CssValue|Animation for the details element when toggled.|(UluFadeInDown 350ms ease-in-out)|
 
     
   

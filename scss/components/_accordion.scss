@@ -18,56 +18,56 @@
 /// @type Map
 /// @prop {Color}  background-color  [white] This is the background color of the accordion before it is expanded. 
 /// @prop {Color}  background-color-open  [#F7F8F7] This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.
-/// @prop {Dimension} padding-x  [1.5em] @joe-check This value gives horizontal padding to the accordion.
-/// @prop {Dimension} padding-y  [1.5em] @joe-check This value gives horizontal padding to the accordion.
+/// @prop {Number} border-radius  [0] This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.
+/// @prop {Dimension} border-width  [1px] The width of the borders of the accordions
+/// @prop {CssValue} box-shadow  [none] Adds a box shadow to the accordion for shading.
 /// @prop {Dimension} margin  [3rem] text This is the margin above and below the accordion. Multiple Accordions will stack. See margin-between below.
 /// @prop {Dimension} margin-between  [0] This adds a margin between adjacent accordions. By default, accordions do not have any net margin between each other.
-/// @prop {Number} border-radius  [0] This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.
-/// @prop {CssValue} box-shadow  [none] Adds a box shadow to the accordion for shading.
-/// @prop {Dimension} border-width  [1px] The width of the borders of the accordions
-/// @prop {Color} summary-color  [inherit] The color of the text in the accordion summary.
-/// @prop {Dimension} summary-type-size  [false] The size of the text in the accordion summary. 
-/// @prop {Color} summary-color-hover  [inherit] The color of the text in the accordion summary when hovering or focusing on it.
-/// @prop {Dimension} summary-padding-y  [1rem] The vertical padding of the summary.
-/// @prop {Color} summary-background-color  [null] @joe-check THIS IS UNUSED BELOW. DELETE?
-/// @prop {Dimension} summary-line-height  [inherit] Adjusts the line height of the summary element.
-/// @prop {String} icon-color  [link] Color of the icon. This uses color.scss, so the value of this option should be a color variable from color.scss.
-/// @prop {String} icon-color-hover  [link-hover] Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.
+/// @prop {Dimension} padding-x  [1.5em] @joe-check This value gives horizontal padding to the accordion.
+/// @prop {Dimension} padding-y  [1.5em] @joe-check This value gives horizontal padding to the accordion.
 /// @prop {Color} icon-background-color  [transparent] The background color of the icon.
 /// @prop {Color} icon-background-color-hover  [transparent] The background color of the icon when hovered or focused.
 /// @prop {Number} icon-border-radius  [50%] The border-radius of the icon.
-/// @prop {Dimension} icon-size  [auto] The size of the icon. Used as the base in the flex property.
+/// @prop {String} icon-color  [link] Color of the icon. This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {String} icon-color-hover  [link-hover] Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {Dimension} icon-font-size  [1.5rem] The font-size of the icon.
+/// @prop {Dimension} icon-size  [auto] The size of the icon. Used as the base in the flex property.
+/// @prop {Color} summary-background-color  [null] @joe-check THIS IS UNUSED BELOW. DELETE?
+/// @prop {Color} summary-color  [inherit] The color of the text in the accordion summary.
+/// @prop {Color} summary-color-hover  [inherit] The color of the text in the accordion summary when hovering or focusing on it.
+/// @prop {Dimension} summary-line-height  [inherit] Adjusts the line height of the summary element.
+/// @prop {Dimension} summary-padding-y  [1rem] The vertical padding of the summary.
+/// @prop {Dimension} summary-type-size  [false] The size of the text in the accordion summary. 
 /// @prop {Dimension} transparent-padding-y  [1em] The upper and lower padding of the transparent summary.
 /// @prop {Dimension} transparent-padding-x  [0] The upper and lower padding of the transparent summary.
 
 $config: (
   "background-color":            white,
   "background-color-open":       #F7F8F7,
-  "padding-x":                   1.5em,
-  "padding-y":                   1.5em,
+  "border-color":                "rule",
+  "border-radius":               0,
+  "border-width":                1px,
+  "box-shadow":                  none,
   "margin":                      3rem,
   "margin-between":              0,
-  "border-radius":               0,
-  "box-shadow":                  none,
-  "border-color":                "rule",
-  "border-width":                1px,
-  "summary-color":               inherit,
-  "summary-type-size":           false,
-  "summary-color-hover":         inherit,
-  "summary-padding-y":           1rem,
-  "summary-background-color":    white,
-  "summary-line-height":         inherit,
-  "icon-color":                  "link",
-  "icon-color-hover":            "link-hover",
+  "padding-x":                   1.5em,
+  "padding-y":                   1.5em,
   "icon-background-color":       transparent,
   "icon-background-color-hover": transparent,
   "icon-border-radius":          50%,
-  "icon-size":                   auto,
+  "icon-color":                  "link",
+  "icon-color-hover":            "link-hover",
   "icon-font-size":              1.5rem,
+  "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
-  "transparent-padding-y":       1em,
+  "summary-background-color":    white,
+  "summary-color":               inherit,
+  "summary-color-hover":         inherit,
+  "summary-line-height":         inherit,
+  "summary-padding-y":           1rem,
+  "summary-type-size":           false,
   "transparent-padding-x":       0,
+  "transparent-padding-y":       1em,
 ) !default;
 
 /// Change modules $config

@@ -5258,148 +5258,47 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"color"</span>                        <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"arrow-size"</span>                   <span class="pjs-token pjs-punctuation">:</span> 16px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"background-color"</span>             <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding"</span>                      <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-large"</span>                <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-radius"</span>                <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span>                        <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"max-width"</span>                    <span class="pjs-token pjs-punctuation">:</span> 90vw<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"max-height"</span>                   <span class="pjs-token pjs-punctuation">:</span> 25rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width"</span>                        <span class="pjs-token pjs-punctuation">:</span> 15rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width-large"</span>                  <span class="pjs-token pjs-punctuation">:</span> 30rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width-large-x"</span>                <span class="pjs-token pjs-punctuation">:</span> 50rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding"</span>                      <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-large"</span>                <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"type-size"</span>                    <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"z-index"</span>                      <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  
   <span class="pjs-token pjs-string">"box-shadow"</span>                   <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow-footer"</span>            <span class="pjs-token pjs-punctuation">:</span> 0 0 4px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow-footer-color"</span>      <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-radius"</span>                <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"arrow-size"</span>                   <span class="pjs-token pjs-punctuation">:</span> 16px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"header-padding-y"</span>             <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"header-color"</span>                 <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-background-color"</span>      <span class="pjs-token pjs-punctuation">:</span> #ccc<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-color"</span>                 <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-media-background-color"</span><span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"footer-padding-y"</span>             <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"footer-padding-y-large"</span>       <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-padding-y"</span>             <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"footer-background-color"</span>      <span class="pjs-token pjs-punctuation">:</span> #ccc<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"footer-color"</span>                 <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-padding-y"</span>             <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-padding-y-large"</span>       <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tooltip-background-color"</span>     <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"tooltip-color"</span>                <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"tooltip-max-width"</span>            <span class="pjs-token pjs-punctuation">:</span> 20rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tooltip-padding"</span>              <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tooltip-width"</span>                <span class="pjs-token pjs-punctuation">:</span> auto<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-max-width"</span>            <span class="pjs-token pjs-punctuation">:</span> 20rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tooltip-color"</span>                <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+  <span class="pjs-token pjs-string">"width"</span>                        <span class="pjs-token pjs-punctuation">:</span> 15rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"width-large"</span>                  <span class="pjs-token pjs-punctuation">:</span> 30rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"width-large-x"</span>                <span class="pjs-token pjs-punctuation">:</span> 50rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 30-49</li>
-<li><strong>Lines (code):</strong> 51-81  </details>
+<li><strong>Lines (comments):</strong> 30-31</li>
+<li><strong>Lines (code):</strong> 33-65  </details>
 </li>
 </ul>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$config.color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Type color</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.background-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Popover background color</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.padding</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Padding for popover</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.padding-large</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Padding for large popover</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.max-width</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Max width for popover (default 90% viewport width)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.width</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Width for popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.width-large</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Width for large popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.width-large-x</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Width for large-x popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.max-height</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Max height of the inner content of popover</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.type-size</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Set a type size (see typography)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.z-index</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Change default z-index</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.box-shadow</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Box shadow</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.box-shadow-footer</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Box shadow for footer</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.border-radius</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Border radius</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.arrow-size</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Arrow size (should match JS setting)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.tooltip-background-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Background color for tooltip type popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.tooltip-padding</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Padding for tooltip type popovers</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.tooltip-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Color for tooltip type popovers</td>
-</tr>
-</tbody>
-</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5414,8 +5313,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 83-85</li>
-<li><strong>Lines (code):</strong> 87-89  </details>
+<li><strong>Lines (comments):</strong> 67-69</li>
+<li><strong>Lines (code):</strong> 71-73  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -5457,8 +5356,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 100-102</li>
-<li><strong>Lines (code):</strong> 104-249  </details>
+<li><strong>Lines (comments):</strong> 84-86</li>
+<li><strong>Lines (code):</strong> 88-233  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5481,8 +5380,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 91-93</li>
-<li><strong>Lines (code):</strong> 95-98  </details>
+<li><strong>Lines (comments):</strong> 75-77</li>
+<li><strong>Lines (code):</strong> 79-82  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

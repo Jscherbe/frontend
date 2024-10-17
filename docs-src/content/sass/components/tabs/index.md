@@ -36,13 +36,14 @@ $config: (
   "border-radius" : 8px,
   "border-width" : 0.25em,
   "margin" : 2rem,
+  "print-margin" : 1.5em,
+  "tablist-border-bottom" : true,
+  "tabpanel-background-color" : rgb(245, 245, 245),
+
+  "tab-border-color-selected" : currentColor,
   "tab-color" : "link",
   "tab-color-hover" : "link-hover",
   "tab-color-selected" : "selected",
-  "tab-border-color-selected" : currentColor,
-  "tablist-border-bottom" : true,
-  "tabpanel-background-color" : rgb(245, 245, 245),
-  "print-margin" : 1.5em,
 );
 ```
   
@@ -53,7 +54,7 @@ $config: (
 - **Group:** tabs
 - **Type:** variable
 - **Lines (comments):** 22-33
-- **Lines (code):** 35-46
+- **Lines (code):** 35-47
     </details>
     
 
@@ -65,13 +66,13 @@ $config: (
 |border-radius|Dimension|8px|The border radius of the tabs.|
 |border-width|Dimension|0.25em|The width of the tab border.|
 |margin|Dimension|2rem|The gap between tabs and above and below tabs.|
+|print-margin|Dimension|1.5em|The subtab margin of child tabs.|
+|tablist-border-bottom|CssValue|true|The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".|
+|tabpanel-background-color|Color|rgb(245, 245, 245)|The tabpanel background color.|
+|tab-border-color-selected|Color|currentColor|The border color when selected.|
 |tab-color|String|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-hover|String|link-hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-selected|String|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
-|tab-border-color-selected|Color|currentColor|The border color when selected.|
-|tablist-border-bottom|CssValue|true|The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".|
-|tabpanel-background-color|Color|rgb(245, 245, 245)|The tabpanel background color.|
-|print-margin|Dimension|1.5em|The subtab margin of child tabs.|
 
     
   
@@ -102,8 +103,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-54
+- **Lines (comments):** 49-51
+- **Lines (code):** 53-55
     </details>
     
 
@@ -144,8 +145,8 @@ Prints tabs component styles
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-176
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-177
     </details>
     
 
@@ -193,8 +194,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-63
+- **Lines (comments):** 57-59
+- **Lines (code):** 61-64
     </details>
     
 

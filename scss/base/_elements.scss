@@ -15,16 +15,16 @@
 /// Module Settings
 /// @type Map
 /// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active
+/// @prop {CssValue} details-animation [(UluFadeInDown 350ms ease-in-out)] Animation for the details element when toggled.
 /// @prop {Boolean} link [true] Enables link styling.
 /// @prop {Boolean} link-hover [true] Enables link hover and focus styling.
 /// @prop {Boolean} link-visited [true] Enables visited link styling.
-/// @prop {CssValue} details-animation [(UluFadeInDown 350ms ease-in-out)] Animation for the details element when toggled.
 
 $config: (
+  "details-animation" : (UluFadeInDown 350ms ease-in-out),
   "link" : true,
   "link-hover" : true,
   "link-visited" : false,
-  "details-animation" : (UluFadeInDown 350ms ease-in-out),
 ) !default;
 
 /// Change modules $config

@@ -14,40 +14,40 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {String} activeSelector [.is-active] Selector that portrays active status.
 /// @prop {Color} color [null] Type color for the nav-strip.
-/// @prop {Color} color-hover [null] Type color for the nav-strip when hovered or focused.
 /// @prop {Color} color-active [null] Type color for the nav-strip when active.
+/// @prop {Color} color-hover [null] Type color for the nav-strip when hovered or focused.
 /// @prop {CssValue} font-weight [null] Font weight of navstrip.
+/// @prop {Dimension} margin-between [2.25em] Margin between nav-strip items.
+/// @prop {Boolean} nowrap [true] Disables the word wrap.
 /// @prop {Dimension} padding-x [0] Horizontal padding for the nav-strip links.
 /// @prop {Dimension} padding-y [0.3em] Vertical padding for the nav-strip links.
+/// @prop {Dimension} padding-y-ruled [null] Vertical padding for the nav-strip links when using nav-strip--rule.
 /// @prop {Color} underline-color [orange] Underline color when link is active.
 /// @prop {Dimension} underline-size [3px] Size of the underline.
-/// @prop {Dimension} margin-between [2.25em] Margin between nav-strip items.
 /// @prop {Color} underline-color-hover [gray] Color of the underline when hovered or focused.
-/// @prop {String} activeSelector [.is-active] Selector that portrays active status.
-/// @prop {Dimension} rule-size [3px] Size of the nav-strip rule.
 /// @prop {String} rule-color [rule] Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.
+/// @prop {Dimension} rule-size [3px] Size of the nav-strip rule.
 /// @prop {Dimension} rule-offset [-3px] Offset the rule for the navstrip.
-/// @prop {Dimension} padding-y-ruled [null] Vertical padding for the nav-strip links when using nav-strip--rule.
-/// @prop {Boolean} nowrap [true] Disables the word wrap.
 
 $config: (
+  "activeSelector" : "&.is-active, &.has-active",
   "color" : null,
-  "color-hover" : null,
   "color-active" : null,
+  "color-hover" : null,
   "font-weight" : null,
+  "margin-between" : 2.25em,
   "padding-x" : 0,
   "padding-y" : 0.3em,
-  "underline-color" : orange,
-  "underline-size" : 3px,
-  "margin-between" : 2.25em,
-  "underline-color-hover" : gray,
-  "activeSelector" : "&.is-active, &.has-active",
-  "rule-size" : 3px,
-  "rule-color" : "rule",
-  "rule-offset" : -3px,
   "padding-y-ruled" : null,
   "nowrap" : true,
+  "rule-color" : "rule",
+  "rule-offset" : -3px,
+  "rule-size" : 3px,
+  "underline-color" : orange,
+  "underline-color-hover" : gray,
+  "underline-size" : 3px,
 ) !default;
 
 

@@ -33,18 +33,19 @@ Module Settings
 
 ``` scss
 $config: (
-  "padding-y" : 2em,
-  "quote-mark-enabled" : true,
-  "quote-mark-color" : null,
-  "quote-mark-font-size" : 3.75em,
-  "quote-mark-font-family" : "Georgia",
-  "quote-mark-line-height" : 0.35,
-  "quote-mark-character" : "\201c",
-  "image-margin-top" : 2.5rem,
-  "image-margin-bottom" : 1rem,
-  "name-margin-bottom" : 1rem,
   "body-line-height" : true,
-  "title-font-style" : italic
+  "image-margin-bottom" : 1rem,
+  "image-margin-top" : 2.5rem,
+  "name-margin-bottom" : 1rem,
+  "padding-y" : 2em,
+  "title-font-style" : italic,
+
+  "quote-mark-character" : "\201c",
+  "quote-mark-color" : null,
+  "quote-mark-font-family" : "Georgia",
+  "quote-mark-font-size" : 3.75em,
+  "quote-mark-enabled" : true,
+  "quote-mark-line-height" : 0.35,
 );
 ```
   
@@ -55,7 +56,7 @@ $config: (
 - **Group:** pull-quote
 - **Type:** variable
 - **Lines (comments):** 22-23
-- **Lines (code):** 24-37
+- **Lines (code):** 24-38
     </details>
     
   
@@ -86,8 +87,8 @@ Change modules $config
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
-- **Lines (comments):** 39-41
-- **Lines (code):** 43-45
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-46
     </details>
     
 
@@ -128,8 +129,8 @@ Prints component styles
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-95
+- **Lines (comments):** 57-59
+- **Lines (code):** 61-96
     </details>
     
 
@@ -177,8 +178,8 @@ Get a config option
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** function
-- **Lines (comments):** 47-49
-- **Lines (code):** 51-54
+- **Lines (comments):** 48-50
+- **Lines (code):** 52-55
     </details>
     
 

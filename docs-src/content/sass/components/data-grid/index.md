@@ -33,17 +33,17 @@ Module Settings
 
 ``` scss
 $config: (
-  "columns":             12,
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
-  "gutter":              14px,
   "breakpoint":          false,                   // Fallback to default
+  "columns":             12,
+  "gutter":              14px,
   "position-class-column-first": "position-column-first",
   "position-class-column-last":  "position-column-last",
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
-  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
+  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -77,11 +77,11 @@ $config: (
 |attribute|String|data-grid|Default attribute to use for grid mixin.|
 |attribute-container|String|data-grid-container|Default attribute to use for grid's container.|
 |gutter|Number|14px|Default gutter for grid mixin.|
-|extra-breakpoints|Map|14px|Default extra breakpoints for grid mixin|
 |position-class-column-first|String|position-column-first|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
 |position-class-column-last|String|position-column-last|See definition above|
 |position-class-row-first|String|position-row-first|See definition above|
 |position-class-row-last|String|position-row-last|See definition above|
+|extra-breakpoints|Map|14px|Default extra breakpoints for grid mixin|
 
     
   

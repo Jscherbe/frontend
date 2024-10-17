@@ -33,18 +33,18 @@ Module Settings
 
 ``` scss
 $config: (
-  "size" : 1.15em,
-  "text-size" : 1em,
-  "stroke-width" : 3px,
-  "text-offset" : 0.05em,
-  "vertical-align" : -0.2em,
-  "stroke-border-radius" : null,
-  "color" : currentColor,
   "active-selector" : "details[open] > summary &, &.is-active",
-  "transition-duration" : 200ms, 
-  "transition-timing-function" : ease-in,
+  "color" : currentColor,
   "font-family" : ('Courier New', monospace),
   "margin" : (0 0.15em),
+  "size" : 1.15em,
+  "stroke-border-radius" : null,
+  "stroke-width" : 3px,
+  "text-offset" : 0.05em,
+  "text-size" : 1em,
+  "vertical-align" : -0.2em,
+  "transition-duration" : 200ms, 
+  "transition-timing-function" : ease-in,
   "stroke-sizes" : (
     "large" : (
       "stroke-width" : 5px,
@@ -70,11 +70,11 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|size|Dimension|1.1em|The width, height and font size of the css-icon.|
-|stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
-|stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
-|color|Color|currentColor|The color of the css-icon.|
 |active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
+|color|Color|currentColor|The color of the css-icon.|
+|size|Dimension|1.1em|The width, height and font size of the css-icon.|
+|stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
+|stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
 |transition-duration|Time|200ms|The duration length for the transition.|
 |transition-timing-function|CssValue|ease-in|The timing function for the transition.|
 

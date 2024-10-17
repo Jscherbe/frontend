@@ -33,12 +33,12 @@ Module Settings
 
 ``` scss
 $config: (
-  "font-size":           1.3rem,
-  "border-radius":       50%,
-  "width":               10rem,
-  "font-weight":         bold,
   "background-color":    gray,
+  "border-radius":       50%,
   "color":               black,
+  "font-size":           1.3rem,
+  "font-weight":         bold,
+  "width":               10rem,
   "sizes" : (
     "large" : (
       "font-size" : 2.75rem,
@@ -64,13 +64,13 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
-|border-radius|Number|50%|Border radius of badge|
-|width|Number|10rem|Width of badge (default size)|
-|font-weight|Number|bold|Font weight|
 |background-color|Number|gray|Background color (if no image)|
+|border-radius|Number|50%|Border radius of badge|
 |color|Number|black|Type color|
+|font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
+|font-weight|Number|bold|Font weight|
 |sizes|List|Object|List of other sizes (large by defualt), each size is a map of (width, font-size)|
+|width|Number|10rem|Width of badge (default size)|
 
     
   

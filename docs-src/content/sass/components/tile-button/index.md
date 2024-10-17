@@ -33,14 +33,14 @@ Module Settings
 
 ``` scss
 $config: (
-  "padding" : (1em 0.5em),
   "border-radius" : true,
+  "description-size" : "small-x",
   "line-height" : true,
+  "padding" : (1em 0.5em),
   "row-margin" : 0.5em,
-  "icon-opacity" : 0.5,
   "icon-font-size" : 1.5em,
   "icon-margin" : 1em,
-  "description-size" : "small-x"
+  "icon-opacity" : 0.5,
 );
 ```
   
@@ -60,14 +60,14 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|padding|Dimension|(1em 0.5em)|The padding of the tile button|
 |border-radius|Dimension|true|The border radius of the tile button. If set to true, will use the element.scss property for "border-radius".|
+|description-size|String|small-x|The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
 |line-height|Dimension|true|The line-height of the tile-button. If set to true, will use the typography.scss property for "line-height-densest".|
+|padding|Dimension|(1em 0.5em)|The padding of the tile button|
 |row-margin|Dimension|0.5em|The margin between rows.|
-|icon-opacity|Number|0.5|The opacity of the icon.|
 |icon-font-size|Dimension|1.5em|The font size of the icon.|
 |icon-margin|Dimension|1em|The margin for the icon.|
-|description-size|String|small-x|The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
+|icon-opacity|Number|0.5|The opacity of the icon.|
 
     
   

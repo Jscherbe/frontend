@@ -36,8 +36,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 102-104
-- **Lines (code):** 106-108
+- **Lines (comments):** 101-103
+- **Lines (code):** 105-107
     </details>
     
 
@@ -78,8 +78,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 405-405
-- **Lines (code):** 406-413
+- **Lines (comments):** 404-404
+- **Lines (code):** 405-412
     </details>
     
 
@@ -110,8 +110,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 415-415
-- **Lines (code):** 416-422
+- **Lines (comments):** 414-414
+- **Lines (code):** 415-421
     </details>
     
 
@@ -142,8 +142,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 424-424
-- **Lines (code):** 425-436
+- **Lines (comments):** 423-423
+- **Lines (code):** 424-435
     </details>
     
 
@@ -174,8 +174,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 438-438
-- **Lines (code):** 439-442
+- **Lines (comments):** 437-437
+- **Lines (code):** 438-441
     </details>
     
 
@@ -201,8 +201,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 444-444
-- **Lines (code):** 445-447
+- **Lines (comments):** 443-443
+- **Lines (code):** 444-446
     </details>
     
 
@@ -228,8 +228,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 449-449
-- **Lines (code):** 450-502
+- **Lines (comments):** 448-448
+- **Lines (code):** 449-501
     </details>
     
 
@@ -265,8 +265,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
-- **Lines (comments):** 504-504
-- **Lines (code):** 505-533
+- **Lines (comments):** 503-503
+- **Lines (code):** 504-532
     </details>
     
 
@@ -306,8 +306,8 @@ Get a config option
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** function
-- **Lines (comments):** 110-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 109-111
+- **Lines (code):** 113-115
     </details>
     
 

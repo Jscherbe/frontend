@@ -33,12 +33,12 @@ Module Settings
 
 ``` scss
 $config: (
-  "padding" : 1.5rem,
-  "margin" : 2rem,
+  "background-color" : rgb(240, 240, 240),
   "border" : true,
   "border-radius" :  true,
   "box-shadow" : none,
-  "background-color" : rgb(240, 240, 240)
+  "margin" : 2rem,
+  "padding" : 1.5rem,
 );
 ```
   
@@ -58,12 +58,12 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|padding|Dimension|1.5rem|Padding of the Callout.|
-|margin|Dimension|2rem|Bottom margin of the Callout.|
+|background-color|Color|rgb(240, 240, 240)|The background color of the Callout.|
 |border|Boolean|true|The border of the Callout.|
 |border-radius|Boolean|true|The border radius of the Callout.|
 |box-shadow|CssValue|none|The box-shadow of the Callout.|
-|background-color|Color|rgb(240, 240, 240)|The background color of the Callout.|
+|margin|Dimension|2rem|Bottom margin of the Callout.|
+|padding|Dimension|1.5rem|Padding of the Callout.|
 
     
   

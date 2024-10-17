@@ -33,28 +33,29 @@ Config options
 
 ``` scss
 $config: (
-  "container" : "container",
   "background-color" : false,
-  "margin-top" : 1rem,
+  "container" : "container",
+  "containers" : ("container",),
   "margin-bottom" : 3rem,
-  "padding-top" : 0,
+  "margin-top" : 1rem,
   "padding-bottom" : 0,
+  "padding-top" : 0,
+  "prefix": "scroll-slider",
+
+  "button-background-color" : white,
+  "button-background-color-hover" : white,
+  "button-border" : 2px solid white,
+  "button-border-color-hover" : white,
+  "button-border-radius" : 50%,
+  "button-box-shadow" : element.get("box-shadow"),
+  "button-color" : color.get("type"),
+  "button-color-hover" : color.get("link"),
+  "button-font-size" : 1.35rem,
+  "button-icon-offset-x" : false,
+  "button-icon-offset-y" : false,
   "button-indent" : 1.5rem,
   "button-indent-small" : 0.5rem,
   "button-size" : 3rem,
-  "button-font-size" : 1.35rem,
-  "button-color" : color.get("type"),
-  "button-border" : 2px solid white,
-  "button-border-radius" : 50%,
-  "button-background-color" : white,
-  "button-box-shadow" : element.get("box-shadow"),
-  "button-color-hover" : color.get("link"),
-  "button-border-color-hover" : white,
-  "button-background-color-hover" : white,
-  "button-icon-offset-x" : false,
-  "button-icon-offset-y" : false,
-  "containers" : ("container",),
-  "prefix": "scroll-slider"
 );
 ```
   
@@ -65,7 +66,7 @@ $config: (
 - **Group:** scroll-slider
 - **Type:** variable
 - **Lines (comments):** 43-43
-- **Lines (code):** 45-68
+- **Lines (code):** 45-69
     </details>
     
 
@@ -101,8 +102,8 @@ Change modules $config
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
-- **Lines (comments):** 70-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 71-74
+- **Lines (code):** 76-78
     </details>
     
 
@@ -159,8 +160,8 @@ Get a config option
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** function
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 80-82
+- **Lines (code):** 84-86
     </details>
     
 

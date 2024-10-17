@@ -19,67 +19,68 @@ $-fallbacks: (
   "link-border-radius" : (
     "function" : meta.get-function("get", false, "button"),
     "property" : "border-radius"
-  )
-);
-
-/// Module Settings
-/// @type Map
-/// @prop {String} link-color [link] The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.
-/// @prop {Color} link-background-color [transparent] The background color of the menu-stack toggle. 
-/// @prop {String} link-color-hover [link-hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
-/// @prop {Color} link-background-color-hover [rgb(219, 219, 219)] The background color of the menu-stack toggle when hovered or focused.
-/// @prop {Color} link-color-active [black] The type color of the menu-stack toggle when active.
-/// @prop {Color} link-background-color-active [rgb(219, 219, 219)] The background color of the menu-stack toggle when active.
-/// @prop {Dimension} link-border-radius [true] The border radius of the menu-stack toggle. If set to true, will use the border radius from the button component.
-/// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
-/// @prop {Dimension} link-padding-x [1em] Horizontal padding for menu-stack toggle.
-/// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
-/// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
+    )
+    );
+    
+    /// Module Settings
+    /// @type Map
+/// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox are.
 /// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
-/// @prop {Dimension} link-icon-margin [0.65em] Adds a right margin to the icon.
-/// @prop {Dimension} link-icon-width [1em] The width of the icon.
-/// @prop {CssValue} link-font-weight [null] The font weight of the menu-stack toggle.
-/// @prop {list} link-active-selectors [(.is-active, '[aria-current=page]')] Selectors to apply active styling.
-/// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
-/// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
-/// @prop {String} rule-style [default] Determines the styling of the rule. Uses the rule.scss component.
+/// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
+/// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
 /// @prop {Dimension} rule-margin [0.5em] Sets the padding and margin of the rule.
-/// @prop {CssValue} label-type-size [false] Adjusts the type size of the label.
+/// @prop {String} rule-style [default] Determines the styling of the rule. Uses the rule.scss component.
+/// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
+/// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
+/// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
 /// @prop {Color} label-color [null] The type color of the label.
 /// @prop {Dimension} label-margin [0.5em] The margin of the label.
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
-/// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox are.
-/// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
-/// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
+/// @prop {CssValue} label-type-size [false] Adjusts the type size of the label.
+/// @prop {list} link-active-selectors [(.is-active, '[aria-current=page]')] Selectors to apply active styling.
+/// @prop {Color} link-background-color [transparent] The background color of the menu-stack toggle. 
+/// @prop {Color} link-background-color-active [rgb(219, 219, 219)] The background color of the menu-stack toggle when active.
+/// @prop {Color} link-background-color-hover [rgb(219, 219, 219)] The background color of the menu-stack toggle when hovered or focused.
+/// @prop {Dimension} link-border-radius [true] The border radius of the menu-stack toggle. If set to true, will use the border radius from the button component.
+/// @prop {String} link-color [link] The type color of the menu-stack toggle. This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {Color} link-color-active [black] The type color of the menu-stack toggle when active.
+/// @prop {String} link-color-hover [link-hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {CssValue} link-font-weight [null] The font weight of the menu-stack toggle.
+/// @prop {Dimension} link-icon-margin [0.65em] Adds a right margin to the icon.
+/// @prop {Dimension} link-icon-width [1em] The width of the icon.
+/// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
+/// @prop {Dimension} link-padding-x [1em] Horizontal padding for menu-stack toggle.
+/// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
 
 $config: (
-  "link-color" : "link",
-  "link-background-color" : transparent,
-  "link-color-hover" : "link-hover",
-  "link-background-color-hover" : rgb(219, 219, 219),
-  "link-color-active" : black,
-  "link-background-color-active" : rgb(219, 219, 219),
-  "link-border-radius" : true,
-  "link-padding-y": 0.35em,
-  "link-padding-x": 1em,
-  "link-margin" : 0.2em,
-  "link-separated-rule-style" : false,
-  "link-separated-margin" : false,
-  "link-icon-margin" : 0.65em,
-  "link-icon-width" : 1em,
-  "toggle-icon-rotate" : false,
-  "link-font-weight" : null,
-  "link-active-selectors" : (".is-active", '[aria-current="page"]'),
-  "compact-link-padding-y": 0.25em,
-  "compact-link-padding-x": 0.75em,
+  "checkbox-area-width" : 3em,
+  "nested-indent" : 0.5em,
   "rule-style" : "default",
   "rule-margin" : 0.5em,
-  "label-type-size" : false,
+  "link-separated-margin" : false,
+  "link-separated-rule-style" : false,
+  "toggle-icon-rotate" : false,
+  "compact-link-padding-x": 0.75em,
+  "compact-link-padding-y": 0.25em,
+
   "label-color" : null,
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
-  "checkbox-area-width" : 3em,
-  "nested-indent" : 0.5em,
+  "label-type-size" : false,
+  "link-active-selectors" : (".is-active", '[aria-current="page"]'),
+  "link-background-color" : transparent,
+  "link-background-color-active" : rgb(219, 219, 219),
+  "link-background-color-hover" : rgb(219, 219, 219),
+  "link-border-radius" : true,
+  "link-color" : "link",
+  "link-color-active" : black,
+  "link-color-hover" : "link-hover",
+  "link-font-weight" : null,
+  "link-icon-margin" : 0.65em,
+  "link-icon-width" : 1em,
+  "link-margin" : 0.2em,
+  "link-padding-x": 1em,
+  "link-padding-y": 0.35em,
 ) !default;
 
 

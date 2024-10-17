@@ -8,21 +8,21 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
-/// @prop {Number} border-radius [50%] Border radius of badge
-/// @prop {Number} width [10rem] Width of badge (default size)
-/// @prop {Number} font-weight [bold] Font weight
 /// @prop {Number} background-color [gray] Background color (if no image)
+/// @prop {Number} border-radius [50%] Border radius of badge
 /// @prop {Number} color [black] Type color
+/// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
+/// @prop {Number} font-weight [bold] Font weight
 /// @prop {List} sizes [Object] List of other sizes (large by defualt), each size is a map of (width, font-size) 
+/// @prop {Number} width [10rem] Width of badge (default size)
 
 $config: (
-  "font-size":           1.3rem,
-  "border-radius":       50%,
-  "width":               10rem,
-  "font-weight":         bold,
   "background-color":    gray,
+  "border-radius":       50%,
   "color":               black,
+  "font-size":           1.3rem,
+  "font-weight":         bold,
+  "width":               10rem,
   "sizes" : (
     "large" : (
       "font-size" : 2.75rem,

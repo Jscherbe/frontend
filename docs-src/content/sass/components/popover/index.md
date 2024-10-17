@@ -33,36 +33,37 @@ Module Settings
 
 ``` scss
 $config: (
-  "color"                        : inherit,
+  "arrow-size"                   : 16px,
   "background-color"             : white,
-  "padding"                      : 1rem,
-  "padding-large"                : 2rem,
+  "border-radius"                : 6px,
+  "color"                        : inherit,
   "max-width"                    : 90vw,
   "max-height"                   : 25rem,
-  "width"                        : 15rem,
-  "width-large"                  : 30rem,
-  "width-large-x"                : 50rem,
+  "padding"                      : 1rem,
+  "padding-large"                : 2rem,
   "type-size"                    : null,
   "z-index"                      : true,
+  
   "box-shadow"                   : true,
   "box-shadow-footer"            : 0 0 4px,
   "box-shadow-footer-color"      : "box-shadow",
-  "border-radius"                : 6px,
-  "arrow-size"                   : 16px,
-  "header-padding-y"             : 0.25rem,
-  "header-color"                 : null,
   "header-background-color"      : #ccc,
+  "header-color"                 : null,
   "header-media-background-color": black,
-  "footer-padding-y"             : 0.25rem,
-  "footer-padding-y-large"       : 0.5rem,
+  "header-padding-y"             : 0.25rem,
   "footer-background-color"      : #ccc,
   "footer-color"                 : null,
+  "footer-padding-y"             : 0.25rem,
+  "footer-padding-y-large"       : 0.5rem,
   "tooltip-background-color"     : white,
+  "tooltip-color"                : null,
+  "tooltip-max-width"            : 20rem,
   "tooltip-padding"              : 0.5rem,
   "tooltip-width"                : auto,
-  "tooltip-max-width"            : 20rem,
-  "tooltip-color"                : null,
-);
+  "width"                        : 15rem,
+  "width-large"                  : 30rem,
+  "width-large-x"                : 50rem,
+  );
 ```
   
 
@@ -71,35 +72,9 @@ $config: (
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** variable
-- **Lines (comments):** 30-49
-- **Lines (code):** 51-81
+- **Lines (comments):** 30-31
+- **Lines (code):** 33-65
     </details>
-    
-
-#### Map Properties
-
-
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.color|Number|Type color|
-|$config.background-color|Number|Popover background color|
-|$config.padding|Number|Padding for popover|
-|$config.padding-large|Number|Padding for large popover|
-|$config.max-width|Number|Max width for popover (default 90% viewport width)|
-|$config.width|Number|Width for popovers|
-|$config.width-large|Number|Width for large popovers|
-|$config.width-large-x|Number|Width for large-x popovers|
-|$config.max-height|Number|Max height of the inner content of popover|
-|$config.type-size|Number|Set a type size (see typography)|
-|$config.z-index|Number|Change default z-index|
-|$config.box-shadow|Number|Box shadow|
-|$config.box-shadow-footer|Number|Box shadow for footer|
-|$config.border-radius|Number|Border radius|
-|$config.arrow-size|Number|Arrow size (should match JS setting)|
-|$config.tooltip-background-color|Number|Background color for tooltip type popovers|
-|$config.tooltip-padding|Number|Padding for tooltip type popovers|
-|$config.tooltip-color|Number|Color for tooltip type popovers|
-
     
   
 
@@ -129,8 +104,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-73
     </details>
     
 
@@ -171,8 +146,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 100-102
-- **Lines (code):** 104-249
+- **Lines (comments):** 84-86
+- **Lines (code):** 88-233
     </details>
     
 
@@ -220,8 +195,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
-- **Lines (comments):** 91-93
-- **Lines (code):** 95-98
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-82
     </details>
     
 

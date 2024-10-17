@@ -10,57 +10,13 @@ sassdocGroupName: card-grid
 
 
 
-## Variables
 
 
 
 
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
 
 Module Settings
     
-    
-
-``` scss
-$config: (
-  "gap" : 2rem,
-  "compact-gap" : 1rem,
-  "template-columns" : 1fr 1fr,
-  "compact-template-columns" : 1fr 1fr 1fr,
-);
-```
-  
-
-    <details>
-      <summary>File Information</summary>
-- **File:** _card-grid.scss
-- **Group:** card-grid
-- **Type:** variable
-- **Lines (comments):** 10-15
-- **Lines (code):** 17-23
-    </details>
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|gap|Dimension|2rem|The grid gap of the card-grid.|
-|compact-gap|Dimension|1rem|The grid gap of the card-grid--compact.|
-|template-columns|CssValue|1fr 1fr|The template-columns of the card-grid.|
-|compact-template-columns|CssValue|1fr 1fr 1fr|The template-columns of the card-grid--compact.|
-
     
   
 
@@ -90,8 +46,8 @@ Change modules $config
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
-- **Lines (comments):** 25-27
-- **Lines (code):** 29-31
+- **Lines (comments):** 26-28
+- **Lines (code):** 30-32
     </details>
     
 
@@ -132,8 +88,8 @@ Prints component styles
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-69
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-70
     </details>
     
 
@@ -181,8 +137,8 @@ Get a config option
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** function
-- **Lines (comments):** 33-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 34-36
+- **Lines (code):** 38-40
     </details>
     
 

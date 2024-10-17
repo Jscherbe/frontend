@@ -22,18 +22,19 @@ $-fallbacks: (
 /// Module Settings
 /// @type Map
 $config: (
-  "padding-y" : 2em,
-  "quote-mark-enabled" : true,
-  "quote-mark-color" : null,
-  "quote-mark-font-size" : 3.75em,
-  "quote-mark-font-family" : "Georgia",
-  "quote-mark-line-height" : 0.35,
-  "quote-mark-character" : "\201c",
-  "image-margin-top" : 2.5rem,
-  "image-margin-bottom" : 1rem,
-  "name-margin-bottom" : 1rem,
   "body-line-height" : true,
-  "title-font-style" : italic
+  "image-margin-bottom" : 1rem,
+  "image-margin-top" : 2.5rem,
+  "name-margin-bottom" : 1rem,
+  "padding-y" : 2em,
+  "title-font-style" : italic,
+
+  "quote-mark-character" : "\201c",
+  "quote-mark-color" : null,
+  "quote-mark-font-family" : "Georgia",
+  "quote-mark-font-size" : 3.75em,
+  "quote-mark-enabled" : true,
+  "quote-mark-line-height" : 0.35,
 ) !default;
 
 /// Change modules $config

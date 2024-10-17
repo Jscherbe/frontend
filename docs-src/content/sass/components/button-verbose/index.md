@@ -34,24 +34,24 @@ Module Settings
 
 ``` scss
 $config: (
-  "margin" : 1em,
-  "margin-inline" : 0.75em,
-  "padding-x": 0.65em,
-  "padding-y": 1em,
-  "icon-font-size" : 1.25rem,
-  "min-width": 20rem,
-  "line-height" : 1.2,
-  "icon-color": gray,
-  "title-color": "link",
-  "title-margin" : 0.5em,
   "background-color" : white,
   "background-color-hover" : "link",
-  "color" : "type",
-  "color-hover" : "type",
-  "title-color-hover" : "link-hover",
   "border-radius" : "border-radius",
   "box-shadow" : true,
   "box-shadow-hover" : true,
+  "color" : "type",
+  "color-hover" : "type",
+  "icon-color": gray,
+  "icon-font-size" : 1.25rem,
+  "line-height" : 1.2,
+  "margin" : 1em,
+  "margin-inline" : 0.75em,
+  "min-width": 20rem,
+  "padding-x": 0.65em,
+  "padding-y": 1em,
+  "title-color": "link",
+  "title-margin" : 0.5em,
+  "title-color-hover" : "link-hover",
 );
 ```
   
@@ -71,24 +71,24 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|margin|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
-|margin-inline|Dimension|0.75em|Font size (basic ie. 1.3rem) for badge|
-|padding-x|Dimension|0.65em|Font size (basic ie. 1.3rem) for badge|
-|padding-y|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
-|icon-font-size|Dimension|1.25rem|Font size (basic ie. 1.3rem) for badge|
-|min-width|Dimension|20rem|Font size (basic ie. 1.3rem) for badge|
-|line-height|Number|1.2|Font size (basic ie. 1.3rem) for badge|
-|icon-color|Color|gray|Font size (basic ie. 1.3rem) for badge|
-|title-color|String|link|Font size (basic ie. 1.3rem) for badge|
-|title-margin|Dimension|0.5em|Font size (basic ie. 1.3rem) for badge|
 |background-color|Color|white|Font size (basic ie. 1.3rem) for badge|
 |background-color-hover|Color|link|Font size (basic ie. 1.3rem) for badge|
-|color|String|type|Font size (basic ie. 1.3rem) for badge|
-|color-hover|String|type|Font size (basic ie. 1.3rem) for badge|
-|title-color-hover|String|link-hover|Font size (basic ie. 1.3rem) for badge|
 |border-radius|String|border-radius|Font size (basic ie. 1.3rem) for badge|
 |box-shadow|String|true|Use the fallback. But note it.|
 |box-shadow-hover|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
+|color|String|type|Font size (basic ie. 1.3rem) for badge|
+|color-hover|String|type|Font size (basic ie. 1.3rem) for badge|
+|icon-color|Color|gray|Font size (basic ie. 1.3rem) for badge|
+|icon-font-size|Dimension|1.25rem|Font size (basic ie. 1.3rem) for badge|
+|line-height|Number|1.2|Font size (basic ie. 1.3rem) for badge|
+|margin|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
+|margin-inline|Dimension|0.75em|Font size (basic ie. 1.3rem) for badge|
+|min-width|Dimension|20rem|Font size (basic ie. 1.3rem) for badge|
+|padding-x|Dimension|0.65em|Font size (basic ie. 1.3rem) for badge|
+|padding-y|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
+|title-color|String|link|Font size (basic ie. 1.3rem) for badge|
+|title-color-hover|String|link-hover|Font size (basic ie. 1.3rem) for badge|
+|title-margin|Dimension|0.5em|Font size (basic ie. 1.3rem) for badge|
 
     
   

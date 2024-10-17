@@ -19,24 +19,24 @@
 /// @prop {String} attribute [data-grid] Default attribute to use for grid mixin.
 /// @prop {String} attribute-container [data-grid-container] Default attribute to use for grid's container.
 /// @prop {Number} gutter [14px] Default gutter for grid mixin.
-/// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
 /// @prop {String} position-class-column-first [position-column-first] Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
 /// @prop {String} position-class-column-last [position-column-last] See definition above
 /// @prop {String} position-class-row-first [position-row-first] See definition above
 /// @prop {String} position-class-row-last [position-row-last] See definition above
+/// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
 
 $config: (
-  "columns":             12,
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
-  "gutter":              14px,
   "breakpoint":          false,                   // Fallback to default
+  "columns":             12,
+  "gutter":              14px,
   "position-class-column-first": "position-column-first",
   "position-class-column-last":  "position-column-last",
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
-  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
+  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",

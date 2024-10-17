@@ -56,3 +56,15 @@
     - Or allow the user to configure the modules and not try and group modules
       - One flat list
     - Needs more thought
+
+  ### Naming Convention for Config Options
+
+  - When naming config options, the hierarchy is: Element, Styling, State of Element
+    - For Example: icon-color-hover = element-styling-state
+  
+  ### Organizing Config Options
+  
+  - Config options are alphabetized with the following exceptions.
+    - If the option relates to a modifier with 3 or more options, these options are alphabetized together below the rest of the config options.
+    - Any maps go at the very bottom. This is to help with scanning the rest of the options
+    <!-- add a section about how to document the modules. Add the naming convention rules and the alphabetizing rules -->

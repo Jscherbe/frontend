@@ -35,30 +35,30 @@ Module Settings
 $config: (
   "background-color":            white,
   "background-color-open":       #F7F8F7,
-  "padding-x":                   1.5em,
-  "padding-y":                   1.5em,
+  "border-color":                "rule",
+  "border-radius":               0,
+  "border-width":                1px,
+  "box-shadow":                  none,
   "margin":                      3rem,
   "margin-between":              0,
-  "border-radius":               0,
-  "box-shadow":                  none,
-  "border-color":                "rule",
-  "border-width":                1px,
-  "summary-color":               inherit,
-  "summary-type-size":           false,
-  "summary-color-hover":         inherit,
-  "summary-padding-y":           1rem,
-  "summary-background-color":    white,
-  "summary-line-height":         inherit,
-  "icon-color":                  "link",
-  "icon-color-hover":            "link-hover",
+  "padding-x":                   1.5em,
+  "padding-y":                   1.5em,
   "icon-background-color":       transparent,
   "icon-background-color-hover": transparent,
   "icon-border-radius":          50%,
-  "icon-size":                   auto,
+  "icon-color":                  "link",
+  "icon-color-hover":            "link-hover",
   "icon-font-size":              1.5rem,
+  "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
-  "transparent-padding-y":       1em,
+  "summary-background-color":    white,
+  "summary-color":               inherit,
+  "summary-color-hover":         inherit,
+  "summary-line-height":         inherit,
+  "summary-padding-y":           1rem,
+  "summary-type-size":           false,
   "transparent-padding-x":       0,
+  "transparent-padding-y":       1em,
 );
 ```
   
@@ -80,26 +80,26 @@ $config: (
 |:--|:--|:--|:--|
 |background-color|Color|white|This is the background color of the accordion before it is expanded.|
 |background-color-open|Color|#F7F8F7|This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.|
-|padding-x|Dimension|1.5em|@joe-check This value gives horizontal padding to the accordion.|
-|padding-y|Dimension|1.5em|@joe-check This value gives horizontal padding to the accordion.|
+|border-radius|Number|0|This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.|
+|border-width|Dimension|1px|The width of the borders of the accordions|
+|box-shadow|CssValue|none|Adds a box shadow to the accordion for shading.|
 |margin|Dimension|3rem|text This is the margin above and below the accordion. Multiple Accordions will stack. See margin-between below.|
 |margin-between|Dimension|0|This adds a margin between adjacent accordions. By default, accordions do not have any net margin between each other.|
-|border-radius|Number|0|This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.|
-|box-shadow|CssValue|none|Adds a box shadow to the accordion for shading.|
-|border-width|Dimension|1px|The width of the borders of the accordions|
-|summary-color|Color|inherit|The color of the text in the accordion summary.|
-|summary-type-size|Dimension|false|The size of the text in the accordion summary.|
-|summary-color-hover|Color|inherit|The color of the text in the accordion summary when hovering or focusing on it.|
-|summary-padding-y|Dimension|1rem|The vertical padding of the summary.|
-|summary-background-color|Color|null|@joe-check THIS IS UNUSED BELOW. DELETE?|
-|summary-line-height|Dimension|inherit|Adjusts the line height of the summary element.|
-|icon-color|String|link|Color of the icon. This uses color.scss, so the value of this option should be a color variable from color.scss.|
-|icon-color-hover|String|link-hover|Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|padding-x|Dimension|1.5em|@joe-check This value gives horizontal padding to the accordion.|
+|padding-y|Dimension|1.5em|@joe-check This value gives horizontal padding to the accordion.|
 |icon-background-color|Color|transparent|The background color of the icon.|
 |icon-background-color-hover|Color|transparent|The background color of the icon when hovered or focused.|
 |icon-border-radius|Number|50%|The border-radius of the icon.|
-|icon-size|Dimension|auto|The size of the icon. Used as the base in the flex property.|
+|icon-color|String|link|Color of the icon. This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|icon-color-hover|String|link-hover|Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |icon-font-size|Dimension|1.5rem|The font-size of the icon.|
+|icon-size|Dimension|auto|The size of the icon. Used as the base in the flex property.|
+|summary-background-color|Color|null|@joe-check THIS IS UNUSED BELOW. DELETE?|
+|summary-color|Color|inherit|The color of the text in the accordion summary.|
+|summary-color-hover|Color|inherit|The color of the text in the accordion summary when hovering or focusing on it.|
+|summary-line-height|Dimension|inherit|Adjusts the line height of the summary element.|
+|summary-padding-y|Dimension|1rem|The vertical padding of the summary.|
+|summary-type-size|Dimension|false|The size of the text in the accordion summary.|
 |transparent-padding-y|Dimension|1em|The upper and lower padding of the transparent summary.|
 |transparent-padding-x|Dimension|0|The upper and lower padding of the transparent summary.|
 

@@ -33,9 +33,9 @@ Module Settings
 
 ``` scss
 $config: (
+  "aspect-ratio" : list.slash(4, 3),
   "gap" : 1rem,
   "width" : 10em,
-  "aspect-ratio" : list.slash(4, 3)
 );
 ```
   
@@ -55,9 +55,9 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
+|aspect-ratio|CssValue|list.slash(4, 3)||
 |gap|Number|1rem|The gap for the tile grid.|
 |width|Number|10em||
-|aspect-ratio|CssValue|list.slash(4, 3)||
 
     
 

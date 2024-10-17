@@ -13,14 +13,14 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {CssValue} aspect-ratio [list.slash(4, 3)]
 /// @prop {Number} gap [1rem] The gap for the tile grid.
 /// @prop {Number} width [10em]
-/// @prop {CssValue} aspect-ratio [list.slash(4, 3)]
 
 $config: (
+  "aspect-ratio" : list.slash(4, 3),
   "gap" : 1rem,
   "width" : 10em,
-  "aspect-ratio" : list.slash(4, 3)
 ) !default;
 
 /// Alternate Sizes for reflowable grid

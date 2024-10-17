@@ -5255,28 +5255,29 @@
 </div>
 <p>Config options</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"container"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"container"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"container"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"container"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"containers"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"container"</span><span class="pjs-token pjs-punctuation">,</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"prefix"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"scroll-slider"</span><span class="pjs-token pjs-punctuation">,</span>
+
+  <span class="pjs-token pjs-string">"button-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-border"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-border-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 50%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> element.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.35rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-icon-offset-x"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-icon-offset-y"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-indent"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-indent-small"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.35rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-border"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 50%<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> element.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-border-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-icon-offset-x"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-icon-offset-y"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"containers"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"container"</span><span class="pjs-token pjs-punctuation">,</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"prefix"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"scroll-slider"</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -5285,7 +5286,7 @@
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> variable</li>
 <li><strong>Lines (comments):</strong> 43-43</li>
-<li><strong>Lines (code):</strong> 45-68  </details>
+<li><strong>Lines (code):</strong> 45-69  </details>
 </li>
 </ul>
 <p>Module Settings</p>
@@ -5303,8 +5304,8 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 70-73</li>
-<li><strong>Lines (code):</strong> 75-77  </details>
+<li><strong>Lines (comments):</strong> 71-74</li>
+<li><strong>Lines (code):</strong> 76-78  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5345,8 +5346,8 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 79-81</li>
-<li><strong>Lines (code):</strong> 83-85  </details>
+<li><strong>Lines (comments):</strong> 80-82</li>
+<li><strong>Lines (code):</strong> 84-86  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

@@ -35,8 +35,8 @@ Module Config
 $config: (
   "border-first" : true,
   "border-last" : true,
-  "margin-top": 0,
   "margin-bottom": 1em,
+  "margin-top": 0,
   "padding-between" : 1em
 );
 ```
@@ -59,8 +59,8 @@ $config: (
 |:--|:--|:--|:--|
 |border-first|Boolean|true|If enabled, adds a top border to the first item in list-lines.|
 |border-last|Boolean|true|If enabled, adds a bottom border to the last item in list-lines.|
-|margin-top|Dimension|0|Top margin of list.|
 |margin-bottom|Dimension|1em|Bottom margin of list.|
+|margin-top|Dimension|0|Top margin of list.|
 |padding-between|Dimension|1em|Padding between items in list.|
 
     

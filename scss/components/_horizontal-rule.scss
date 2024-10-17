@@ -12,8 +12,8 @@
 /// @prop {Dimension} margin [1em] Top and bottom margin for rule.
 
 $config: (
+  "margin": 1em,
   "min-height": 1em,
-  "margin": 1em
 ) !default;
 
 /// Change modules $config

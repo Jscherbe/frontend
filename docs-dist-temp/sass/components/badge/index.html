@@ -5258,12 +5258,12 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span>           1.3rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-radius"</span><span class="pjs-token pjs-punctuation">:</span>       50%<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span>               10rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-weight"</span><span class="pjs-token pjs-punctuation">:</span>         bold<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>    gray<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-radius"</span><span class="pjs-token pjs-punctuation">:</span>       50%<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span>               black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span>           1.3rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight"</span><span class="pjs-token pjs-punctuation">:</span>         bold<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span>               10rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"sizes"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
     <span class="pjs-token pjs-string">"large"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
       <span class="pjs-token pjs-string">"font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 2.75rem<span class="pjs-token pjs-punctuation">,</span>
@@ -5293,10 +5293,10 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">font-size</td>
+<td style="text-align:left">background-color</td>
 <td style="text-align:left">Number</td>
-<td style="text-align:left">1.3rem</td>
-<td style="text-align:left">Font size (basic ie. 1.3rem) for badge</td>
+<td style="text-align:left">gray</td>
+<td style="text-align:left">Background color (if no image)</td>
 </tr>
 <tr>
 <td style="text-align:left">border-radius</td>
@@ -5305,10 +5305,16 @@
 <td style="text-align:left">Border radius of badge</td>
 </tr>
 <tr>
-<td style="text-align:left">width</td>
+<td style="text-align:left">color</td>
 <td style="text-align:left">Number</td>
-<td style="text-align:left">10rem</td>
-<td style="text-align:left">Width of badge (default size)</td>
+<td style="text-align:left">black</td>
+<td style="text-align:left">Type color</td>
+</tr>
+<tr>
+<td style="text-align:left">font-size</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">1.3rem</td>
+<td style="text-align:left">Font size (basic ie. 1.3rem) for badge</td>
 </tr>
 <tr>
 <td style="text-align:left">font-weight</td>
@@ -5317,22 +5323,16 @@
 <td style="text-align:left">Font weight</td>
 </tr>
 <tr>
-<td style="text-align:left">background-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">gray</td>
-<td style="text-align:left">Background color (if no image)</td>
-</tr>
-<tr>
-<td style="text-align:left">color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">black</td>
-<td style="text-align:left">Type color</td>
-</tr>
-<tr>
 <td style="text-align:left">sizes</td>
 <td style="text-align:left">List</td>
 <td style="text-align:left">Object</td>
 <td style="text-align:left">List of other sizes (large by defualt), each size is a map of (width, font-size)</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">10rem</td>
+<td style="text-align:left">Width of badge (default size)</td>
 </tr>
 </tbody>
 </table>

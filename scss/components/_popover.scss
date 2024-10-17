@@ -29,57 +29,41 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.color Type color
-/// @prop {Number} $config.background-color Popover background color
-/// @prop {Number} $config.padding Padding for popover
-/// @prop {Number} $config.padding-large Padding for large popover
-/// @prop {Number} $config.max-width Max width for popover (default 90% viewport width)
-/// @prop {Number} $config.width Width for popovers
-/// @prop {Number} $config.width-large Width for large popovers
-/// @prop {Number} $config.width-large-x Width for large-x popovers
-/// @prop {Number} $config.max-height Max height of the inner content of popover
-/// @prop {Number} $config.type-size Set a type size (see typography)
-/// @prop {Number} $config.z-index Change default z-index
-/// @prop {Number} $config.box-shadow Box shadow
-/// @prop {Number} $config.box-shadow-footer Box shadow for footer
-/// @prop {Number} $config.border-radius Border radius
-/// @prop {Number} $config.arrow-size Arrow size (should match JS setting)
-/// @prop {Number} $config.tooltip-background-color Background color for tooltip type popovers
-/// @prop {Number} $config.tooltip-padding Padding for tooltip type popovers
-/// @prop {Number} $config.tooltip-color Color for tooltip type popovers
+
 
 $config: (
-  "color"                        : inherit,
+  "arrow-size"                   : 16px,
   "background-color"             : white,
-  "padding"                      : 1rem,
-  "padding-large"                : 2rem,
+  "border-radius"                : 6px,
+  "color"                        : inherit,
   "max-width"                    : 90vw,
   "max-height"                   : 25rem,
-  "width"                        : 15rem,
-  "width-large"                  : 30rem,
-  "width-large-x"                : 50rem,
+  "padding"                      : 1rem,
+  "padding-large"                : 2rem,
   "type-size"                    : null,
   "z-index"                      : true,
+  
   "box-shadow"                   : true,
   "box-shadow-footer"            : 0 0 4px,
   "box-shadow-footer-color"      : "box-shadow",
-  "border-radius"                : 6px,
-  "arrow-size"                   : 16px,
-  "header-padding-y"             : 0.25rem,
-  "header-color"                 : null,
   "header-background-color"      : #ccc,
+  "header-color"                 : null,
   "header-media-background-color": black,
-  "footer-padding-y"             : 0.25rem,
-  "footer-padding-y-large"       : 0.5rem,
+  "header-padding-y"             : 0.25rem,
   "footer-background-color"      : #ccc,
   "footer-color"                 : null,
+  "footer-padding-y"             : 0.25rem,
+  "footer-padding-y-large"       : 0.5rem,
   "tooltip-background-color"     : white,
+  "tooltip-color"                : null,
+  "tooltip-max-width"            : 20rem,
   "tooltip-padding"              : 0.5rem,
   "tooltip-width"                : auto,
-  "tooltip-max-width"            : 20rem,
-  "tooltip-color"                : null,
-) !default;
-
+  "width"                        : 15rem,
+  "width-large"                  : 30rem,
+  "width-large-x"                : 50rem,
+  ) !default;
+  
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 ///   @include module-name.set(( "property" : value ));

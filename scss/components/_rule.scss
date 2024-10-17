@@ -10,14 +10,14 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} short-width [2.75rem] Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output
 /// @prop {Number} short-border-width [4px] Short rule width of border
 /// @prop {Number} short-modifiers [false] @joe-check
+/// @prop {Number} short-width [2.75rem] Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output
 
 $config: (
-  "short-width" : 2.75rem,
   "short-border-width" : 4px,
-  "short-modifiers" : false
+  "short-modifiers" : false,
+  "short-width" : 2.75rem,
 ) !default;
 
 /// Change modules $config

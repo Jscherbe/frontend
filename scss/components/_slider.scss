@@ -12,73 +12,74 @@
 /// Module Settings
 /// @type Map
 /// @prop {Color} background-color [transparent]
-/// @prop {Dimension} margin-top [1rem]
+/// @prop {List} breakpoint ["small"]
 /// @prop {Dimension} margin-bottom [3rem]
-/// @prop {Dimension} padding-top [0]
-/// @prop {Dimension} padding-top-small [0]
+/// @prop {Dimension} margin-top [1rem]
 /// @prop {Dimension} padding-bottom [0]
 /// @prop {Dimension} padding-bottom-small [0]
-/// @prop {Dimension} button-size [3rem]
-/// @prop {Dimension} button-size-small [false]
+/// @prop {Dimension} padding-top [0]
+/// @prop {Dimension} padding-top-small [0]
+/// @prop {Color} button-background-color [transparent]
+/// @prop {Color} button-background-color-hover [color.get("link-hover")]
+/// @prop {CssValue} button-border [2px solid color.get("link")]
+/// @prop {Color} button-border-color-hover  [color.get("link-hover")]
+/// @prop {Dimension} button-border-radius [50%]
+/// @prop {Color} button-color [color.get("link")]
+/// @prop {Color} button-color-hover [white]
 /// @prop {Dimension} button-font-size [1.35rem]
 /// @prop {Dimension} button-font-size-small [false]
-/// @prop {Color} button-color [color.get("link")]
-/// @prop {CssValue} button-border [2px solid color.get("link")]
-/// @prop {Dimension} button-border-radius [50%]
-/// @prop {Color} button-background-color [transparent]
-/// @prop {Color} button-color-hover [white]
-/// @prop {Color} button-border-color-hover  [color.get("link-hover")]
-/// @prop {Color} button-background-color-hover [color.get("link-hover")]
 /// @prop {Dimension} button-icon-offset-x [false]
 /// @prop {Dimension} button-icon-offset-y [false]
 /// @prop {Dimension} button-margin [0.75rem]
 /// @prop {Dimension} button-margin-small [0.75rem]
-/// @prop {Dimension} dot-size  [1rem]
-/// @prop {Dimension} dot-border-radius [50%]
+/// @prop {Dimension} button-size [3rem]
+/// @prop {Dimension} button-size-small [false]
 /// @prop {Color} dot-background-color [transparent]
-/// @prop {Dimension} dot-border-width [2px]
-/// @prop {Color} dot-border-color [color.get("link")]
-/// @prop {Color} dot-border-color-hover [color.get("link")]
 /// @prop {Color} dot-background-color-hover [color.get("link")]
 /// @prop {Color} dot-background-color-selected [color.get("link")]
+/// @prop {Dimension} dot-border-radius [50%]
+/// @prop {Color} dot-border-color [color.get("link")]
+/// @prop {Color} dot-border-color-hover [color.get("link")]
 /// @prop {Color} dot-border-color-selected [color.get("link")]
-/// @prop {List} breakpoint ["small"]
+/// @prop {Dimension} dot-border-width [2px]
+/// @prop {Dimension} dot-size  [1rem]
 
 $config: (
   "background-color" : transparent,
-  "margin-top" : 1rem,
+  "breakpoint" : "small",
   "margin-bottom" : 3rem,
-  "padding-top" : 0,
-  "padding-top-small" : 0,
-  "padding-bottom" : 0,
-  "padding-bottom-small" : 0,
-  "button-size" : 3rem,
-  "button-size-small" : false,
-  "button-font-size" : 1.35rem,
-  "button-font-size-small" : false,
-  "button-color" : color.get("link"),
-  "button-border" : 2px solid color.get("link"),
-  "button-border-radius" : 50%,
+  "margin-top" : 1rem,
+
   "button-background-color" : transparent,
-  "button-color-hover" : white,
+  "button-border" : 2px solid color.get("link"),
   "button-border-color-hover" :  color.get("link-hover"),
+  "button-border-radius" : 50%,
+  "button-color-hover" : white,
   "button-background-color-hover" : color.get("link-hover"),
+  "button-color" : color.get("link"),
+  "button-font-size" : 1.35rem,
   "button-icon-offset-x" : false,
   "button-icon-offset-y" : false,
+  "button-font-size-small" : false,
   "button-margin" : 0.75rem,
   "button-margin-small" : 0.75rem,
-  "dot-size" :  1rem,
-  "dot-border-radius" : 50%,
+  "button-size" : 3rem,
+  "button-size-small" : false,
   "dot-background-color" : transparent,
-  "dot-border-width" : 2px,
-  "dot-border-color" : color.get("link"),
-  "dot-border-color-hover" : color.get("link"),
   "dot-background-color-hover" : color.get("link"),
   "dot-background-color-selected" : color.get("link"),
+  "dot-border-color" : color.get("link"),
+  "dot-border-color-hover" : color.get("link"),
   "dot-border-color-selected" : color.get("link"),
-  "breakpoint" : "small"
-) !default;
-
+  "dot-border-radius" : 50%,
+  "dot-border-width" : 2px,
+  "dot-size" :  1rem,
+  "padding-bottom" : 0,
+  "padding-bottom-small" : 0,
+  "padding-top" : 0,
+  "padding-top-small" : 0,
+  ) !default;
+  
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 /// @example scss - General example, replace module-name with module's name

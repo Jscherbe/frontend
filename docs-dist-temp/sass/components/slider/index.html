@@ -5259,38 +5259,39 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-top-small"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-bottom-small"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-size-small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.35rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-font-size-small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-border"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 50%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
+
   <span class="pjs-token pjs-string">"button-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"button-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-border"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-border-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span>  color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link-hover"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 50%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link-hover"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.35rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-icon-offset-x"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-icon-offset-y"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-font-size-small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.75rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-margin-small"</span> <span class="pjs-token pjs-punctuation">:</span> 0.75rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"dot-size"</span> <span class="pjs-token pjs-punctuation">:</span>  1rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"dot-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 50%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"button-size-small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"dot-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"dot-border-width"</span> <span class="pjs-token pjs-punctuation">:</span> 2px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"dot-border-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"dot-border-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"dot-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"dot-background-color-selected"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dot-border-color"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dot-border-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"dot-border-color-selected"</span> <span class="pjs-token pjs-punctuation">:</span> color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+  <span class="pjs-token pjs-string">"dot-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 50%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dot-border-width"</span> <span class="pjs-token pjs-punctuation">:</span> 2px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dot-size"</span> <span class="pjs-token pjs-punctuation">:</span>  1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-bottom-small"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-top-small"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
 <ul>
@@ -5298,7 +5299,7 @@
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> variable</li>
 <li><strong>Lines (comments):</strong> 12-45</li>
-<li><strong>Lines (code):</strong> 47-80  </details>
+<li><strong>Lines (code):</strong> 47-81  </details>
 </li>
 </ul>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5317,9 +5318,9 @@
 <td style="text-align:left">transparent</td>
 </tr>
 <tr>
-<td style="text-align:left">margin-top</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1rem</td>
+<td style="text-align:left">breakpoint</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">&quot;small&quot;</td>
 </tr>
 <tr>
 <td style="text-align:left">margin-bottom</td>
@@ -5327,14 +5328,9 @@
 <td style="text-align:left">3rem</td>
 </tr>
 <tr>
-<td style="text-align:left">padding-top</td>
+<td style="text-align:left">margin-top</td>
 <td style="text-align:left">Dimension</td>
-<td style="text-align:left">0</td>
-</tr>
-<tr>
-<td style="text-align:left">padding-top-small</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0</td>
+<td style="text-align:left">1rem</td>
 </tr>
 <tr>
 <td style="text-align:left">padding-bottom</td>
@@ -5347,14 +5343,49 @@
 <td style="text-align:left">0</td>
 </tr>
 <tr>
-<td style="text-align:left">button-size</td>
+<td style="text-align:left">padding-top</td>
 <td style="text-align:left">Dimension</td>
-<td style="text-align:left">3rem</td>
+<td style="text-align:left">0</td>
 </tr>
 <tr>
-<td style="text-align:left">button-size-small</td>
+<td style="text-align:left">padding-top-small</td>
 <td style="text-align:left">Dimension</td>
-<td style="text-align:left">false</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">button-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">transparent</td>
+</tr>
+<tr>
+<td style="text-align:left">button-background-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;link-hover&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-border</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">2px solid color.get(&quot;link&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-border-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;link-hover&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">50%</td>
+</tr>
+<tr>
+<td style="text-align:left">button-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;link&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
 </tr>
 <tr>
 <td style="text-align:left">button-font-size</td>
@@ -5365,41 +5396,6 @@
 <td style="text-align:left">button-font-size-small</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">false</td>
-</tr>
-<tr>
-<td style="text-align:left">button-color</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">color.get(&quot;link&quot;)</td>
-</tr>
-<tr>
-<td style="text-align:left">button-border</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">2px solid color.get(&quot;link&quot;)</td>
-</tr>
-<tr>
-<td style="text-align:left">button-border-radius</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">50%</td>
-</tr>
-<tr>
-<td style="text-align:left">button-background-color</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">transparent</td>
-</tr>
-<tr>
-<td style="text-align:left">button-color-hover</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">white</td>
-</tr>
-<tr>
-<td style="text-align:left">button-border-color-hover</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">color.get(&quot;link-hover&quot;)</td>
-</tr>
-<tr>
-<td style="text-align:left">button-background-color-hover</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">color.get(&quot;link-hover&quot;)</td>
 </tr>
 <tr>
 <td style="text-align:left">button-icon-offset-x</td>
@@ -5422,34 +5418,19 @@
 <td style="text-align:left">0.75rem</td>
 </tr>
 <tr>
-<td style="text-align:left">dot-size</td>
+<td style="text-align:left">button-size</td>
 <td style="text-align:left">Dimension</td>
-<td style="text-align:left">1rem</td>
+<td style="text-align:left">3rem</td>
 </tr>
 <tr>
-<td style="text-align:left">dot-border-radius</td>
+<td style="text-align:left">button-size-small</td>
 <td style="text-align:left">Dimension</td>
-<td style="text-align:left">50%</td>
+<td style="text-align:left">false</td>
 </tr>
 <tr>
 <td style="text-align:left">dot-background-color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">transparent</td>
-</tr>
-<tr>
-<td style="text-align:left">dot-border-width</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">2px</td>
-</tr>
-<tr>
-<td style="text-align:left">dot-border-color</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">color.get(&quot;link&quot;)</td>
-</tr>
-<tr>
-<td style="text-align:left">dot-border-color-hover</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">color.get(&quot;link&quot;)</td>
 </tr>
 <tr>
 <td style="text-align:left">dot-background-color-hover</td>
@@ -5462,14 +5443,34 @@
 <td style="text-align:left">color.get(&quot;link&quot;)</td>
 </tr>
 <tr>
+<td style="text-align:left">dot-border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">50%</td>
+</tr>
+<tr>
+<td style="text-align:left">dot-border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;link&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">dot-border-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;link&quot;)</td>
+</tr>
+<tr>
 <td style="text-align:left">dot-border-color-selected</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">color.get(&quot;link&quot;)</td>
 </tr>
 <tr>
-<td style="text-align:left">breakpoint</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">&quot;small&quot;</td>
+<td style="text-align:left">dot-border-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2px</td>
+</tr>
+<tr>
+<td style="text-align:left">dot-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1rem</td>
 </tr>
 </tbody>
 </table>
@@ -5487,8 +5488,8 @@
 <li><strong>File:</strong> _slider.scss</li>
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 82-85</li>
-<li><strong>Lines (code):</strong> 87-89  </details>
+<li><strong>Lines (comments):</strong> 83-86</li>
+<li><strong>Lines (code):</strong> 88-90  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5528,8 +5529,8 @@
 <li><strong>File:</strong> _slider.scss</li>
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 99-101</li>
-<li><strong>Lines (code):</strong> 103-201  </details>
+<li><strong>Lines (comments):</strong> 100-102</li>
+<li><strong>Lines (code):</strong> 104-202  </details>
 </li>
 </ul>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5552,8 +5553,8 @@
 <li><strong>File:</strong> _slider.scss</li>
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 91-93</li>
-<li><strong>Lines (code):</strong> 95-97  </details>
+<li><strong>Lines (comments):</strong> 92-94</li>
+<li><strong>Lines (code):</strong> 96-98  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

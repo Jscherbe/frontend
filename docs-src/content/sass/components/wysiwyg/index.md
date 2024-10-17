@@ -33,8 +33,8 @@ Module Settings
 
 ``` scss
 $config: (
-  "ul-excluded-selectors" : (".list-lines", ".wysiwyg__exclude"),
   "img-excluded-selectors" : (".wysiwyg__exclude",),
+  "ul-excluded-selectors" : (".list-lines", ".wysiwyg__exclude"),
   "headline-sizes" : (
     "h2" : "h2",
     "h3" : "h3",

@@ -2,84 +2,84 @@
 /// @group all
 ////
 
-@forward "css-icon" as css-icon-*;
-@forward "links" as links-*;
+@forward "accordion" as accordion-*;
+@forward "adaptive-spacing" as adaptive-spacing-*;
+@forward "badge" as badge-*;
 @forward "button" as button-*;
 @forward "button-verbose" as button-verbose-*;
-@forward "badge" as badge-*;
-@forward "accordion" as accordion-*;
 @forward "callout" as callout-*;
 @forward "card" as card-*;
 @forward "card-grid" as card-grid-*;
-@forward "rule" as rule-*;
-@forward "horizontal-rule" as horizontal-rule-*;
-@forward "list-lines" as list-lines-*;
-@forward "list-unordered" as list-unordered-*;
-@forward "list-ordered" as list-ordered-*;
+@forward "css-icon" as css-icon-*;
+@forward "data-grid" as data-grid-*;
 @forward "fill-context" as fill-context-*;
 @forward "flipcard" as flipcard-*;
 @forward "flipcard-grid" as flipcard-grid-*;
-@forward "popover" as popover-*;
-@forward "tabs" as tabs-*;
+@forward "form-theme" as form-theme-*;
+@forward "horizontal-rule" as horizontal-rule-*;
+@forward "image-grid" as image-grid-*;
+@forward "links" as links-*;
+@forward "list-lines" as list-lines-*;
+@forward "list-ordered" as list-ordered-*;
+@forward "list-unordered" as list-unordered-*;
+@forward "menu-stack" as menu-stack-*;
 @forward "modal" as modal-*;
-@forward "ratio-box" as ratio-box-*;
 @forward "nav-strip" as nav-strip-*;
 @forward "overlay-section" as overlay-section-*;
-@forward "adaptive-spacing" as adaptive-spacing-*;
-@forward "data-grid" as data-grid-*;
 @forward "pager" as pager-*;
-@forward "form-theme" as form-theme-*;
-@forward "menu-stack" as menu-stack-*;
+@forward "placeholder-block" as placeholder-block-*;
+@forward "pull-quote" as pull-quote-*;
+@forward "popover" as popover-*;
+@forward "ratio-box" as ratio-box-*;
+@forward "rule" as rule-*;
 @forward "scroll-slider" as scroll-slider-*;
 @forward "skip-link" as skip-link-*;
 @forward "slider" as slider-*;
-@forward "image-grid" as image-grid-*;
+@forward "tabs" as tabs-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
-@forward "placeholder-block" as placeholder-block-*;
-@forward "pull-quote" as pull-quote-*;
 @forward "vignette" as vignette-*;
 @forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
 
 @use "../utils";
-@use "css-icon";
-@use "links";
+@use "adaptive-spacing";
+@use "accordion";
+@use "badge";
 @use "button";
 @use "button-verbose";
-@use "badge";
-@use "accordion";
 @use "callout";
 @use "card";
 @use "card-grid";
-@use "rule";
-@use "horizontal-rule";
-@use "list-lines";
-@use "list-unordered";
-@use "list-ordered";
+@use "css-icon";
+@use "data-grid";
 @use "fill-context";
 @use "flipcard";
 @use "flipcard-grid";
-@use "popover";
-@use "tabs";
+@use "form-theme";
+@use "horizontal-rule";
+@use "image-grid";
+@use "list-lines";
+@use "list-ordered";
+@use "list-unordered";
+@use "links";
+@use "menu-stack";
 @use "modal";
-@use "ratio-box";
 @use "nav-strip";
 @use "overlay-section";
-@use "adaptive-spacing";
-@use "data-grid";
 @use "pager";
-@use "form-theme";
-@use "menu-stack";
+@use "placeholder-block";
+@use "popover";
+@use "pull-quote";
+@use "ratio-box";
+@use "rule";
 @use "scroll-slider";
 @use "skip-link";
 @use "slider";
-@use "image-grid";
+@use "tabs";
 @use "tile-grid";
 @use "tile-button";
-@use "placeholder-block";
-@use "pull-quote";
 @use "vignette";
 @use "wysiwyg";
 
@@ -87,38 +87,38 @@
 /// @type List
 
 $all-includes: (
-  "css-icon",
-  "links",
+  "accordion",
+  "adaptive-spacing",
+  "badge",
   "button",
   "button-verbose",
-  "badge",
-  "accordion",
   "callout",
   "card",
   "card-grid",
-  "rule",
-  "horizontal-rule",
-  "list-lines",
-  "list-unordered",
-  "list-ordered",
+  "css-icon",
+  "data-grid",
   "fill-context",
   "flipcard",
   "flipcard-grid",
-  "popover",
-  "tabs",
+  "form-theme",
+  "horizontal-rule",
+  "image-grid",
+  "links",
+  "list-lines",
+  "list-ordered",
+  "list-unordered",
+  "menu-stack",
   "modal",
-  "ratio-box",
   "nav-strip",
   "overlay-section",
-  "adaptive-spacing",
-  "data-grid",
   "pager",
-  "form-theme",
-  "menu-stack",
+  "popover",
+  "ratio-box",
+  "rule",
   "scroll-slider",
   "skip-link",
   "slider",
-  "image-grid",
+  "tabs",
   "tile-grid",
   "tile-button",
   "placeholder-block",
@@ -159,11 +159,11 @@ $current-includes: $all-includes;
 
   @include utils.require-list-contains($all-includes, $includes);
   
-  @if (list.index($includes, "css-icon")) {
-    @include css-icon.styles;
+  @if (list.index($includes, "accordion")) {
+    @include accordion.styles;
   }
-  @if (list.index($includes, "links")) {
-    @include links.styles;
+  @if (list.index($includes, "adaptive-spacing")) {
+    @include adaptive-spacing.styles;
   }
   @if (list.index($includes, "button")) {
     @include button.styles;
@@ -174,9 +174,6 @@ $current-includes: $all-includes;
   @if (list.index($includes, "badge")) {
     @include badge.styles;
   }
-  @if (list.index($includes, "accordion")) {
-    @include accordion.styles;
-  }
   @if (list.index($includes, "callout")) {
     @include callout.styles;
   }
@@ -186,20 +183,11 @@ $current-includes: $all-includes;
   @if (list.index($includes, "card-grid")) {
     @include card-grid.styles;
   }
-  @if (list.index($includes, "rule")) {
-    @include rule.styles;
+  @if (list.index($includes, "css-icon")) {
+    @include css-icon.styles;
   }
-  @if (list.index($includes, "horizontal-rule")) {
-    @include horizontal-rule.styles;
-  }
-  @if (list.index($includes, "list-lines")) {
-    @include list-lines.styles;
-  }
-  @if (list.index($includes, "list-unordered")) {
-    @include list-unordered.styles;
-  }
-  @if (list.index($includes, "list-ordered")) {
-    @include list-ordered.styles;
+  @if (list.index($includes, "data-grid")) {
+    @include data-grid.styles;
   }
   @if (list.index($includes, "fill-context")) {
     @include fill-context.styles;
@@ -210,17 +198,32 @@ $current-includes: $all-includes;
   @if (list.index($includes, "flipcard-grid")) {
     @include flipcard-grid.styles;
   }
-  @if (list.index($includes, "popover")) {
-    @include popover.styles;
+  @if (list.index($includes, "form-theme")) {
+    @include form-theme.styles;
   }
-  @if (list.index($includes, "tabs")) {
-    @include tabs.styles;
+  @if (list.index($includes, "horizontal-rule")) {
+    @include horizontal-rule.styles;
+  }
+  @if (list.index($includes, "image-grid")) {
+    @include image-grid.styles;
+  }
+  @if (list.index($includes, "links")) {
+    @include links.styles;
+  }
+  @if (list.index($includes, "list-lines")) {
+    @include list-lines.styles;
+  }
+  @if (list.index($includes, "list-unordered")) {
+    @include list-unordered.styles;
+  }
+  @if (list.index($includes, "list-ordered")) {
+    @include list-ordered.styles;
+  }
+  @if (list.index($includes, "menu-stack")) {
+    @include menu-stack.styles;
   }
   @if (list.index($includes, "modal")) {
     @include modal.styles;
-  }
-  @if (list.index($includes, "ratio-box")) {
-    @include ratio-box.styles;
   }
   @if (list.index($includes, "nav-strip")) {
     @include nav-strip.styles;
@@ -228,20 +231,23 @@ $current-includes: $all-includes;
   @if (list.index($includes, "overlay-section")) {
     @include overlay-section.styles;
   }
-  @if (list.index($includes, "adaptive-spacing")) {
-    @include adaptive-spacing.styles;
-  }
-  @if (list.index($includes, "data-grid")) {
-    @include data-grid.styles;
-  }
   @if (list.index($includes, "pager")) {
     @include pager.styles;
   }
-  @if (list.index($includes, "form-theme")) {
-    @include form-theme.styles;
+  @if (list.index($includes, "placeholder-block")) {
+    @include placeholder-block.styles;
   }
-  @if (list.index($includes, "menu-stack")) {
-    @include menu-stack.styles;
+  @if (list.index($includes, "popover")) {
+    @include popover.styles;
+  }
+  @if (list.index($includes, "pull-quote")) {
+    @include pull-quote.styles;
+  }
+  @if (list.index($includes, "ratio-box")) {
+    @include ratio-box.styles;
+  }
+  @if (list.index($includes, "rule")) {
+    @include rule.styles;
   }
   @if (list.index($includes, "scroll-slider")) {
     @include scroll-slider.styles;
@@ -252,20 +258,14 @@ $current-includes: $all-includes;
   @if (list.index($includes, "slider")) {
     @include slider.styles;
   }
-  @if (list.index($includes, "image-grid")) {
-    @include image-grid.styles;
+  @if (list.index($includes, "tabs")) {
+    @include tabs.styles;
   }
   @if (list.index($includes, "tile-grid")) {
     @include tile-grid.styles;
   }
   @if (list.index($includes, "tile-button")) {
     @include tile-button.styles;
-  }
-  @if (list.index($includes, "placeholder-block")) {
-    @include placeholder-block.styles;
-  }
-  @if (list.index($includes, "pull-quote")) {
-    @include pull-quote.styles;
   }
   @if (list.index($includes, "vignette")) {
     @include vignette.styles;
