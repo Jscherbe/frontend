@@ -6,6 +6,8 @@
 @use "sass:meta";
 @use "sass:map";
 @use "sass:string";
+@use "sass:list";
+
 @use "utils";
 @use "breakpoint";
 
@@ -140,4 +142,66 @@ $config: (
     @include declare("#{ $name }-#{ $size }-min", $min, $prefix);
     @include declare("#{ $name }-#{ $size }-max", $max, $prefix);
   }
+}
+
+/// Outputs css vars for a specific type from a theme map
+/// @param {Map} $theme The map containing the values. Example (
+/// @param {String} $key The key used to retrieve values from the map.
+/// @param {String} $prefix The optional prefix for CSS variables.
+/// @example scss - Example of theme map and usage
+///   // Defining a map to hold my color theme values
+///   $color-themes: (
+///     "color-button" : (
+///       "light" : blue,
+///       "dark" : red
+///     ), ...
+///   );
+/// 
+///   // Declaring default theme
+///   :root {
+///     @include ulu.cssvar-declare-theme-values($color-themes, "light");
+///   }
+///   
+///   // Creating class to use on body/other elements to switch to dark theme
+///   .theme-dark {
+///     @include ulu.cssvar-declare-theme-values($color-themes, "dark");
+///   }
+
+@mixin declare-theme-values($theme, $key, $prefix: get("prefix")) {
+  @each $name, $definition in $theme {
+    $value: map.get($definition, $key);
+    @if ($value) {
+      @include declare($name, $value, $prefix);
+    }
+  }
+}
+
+/// Joins a list of cssvar names
+/// - Use to "+", "-" and then use in calc
+/// @param {List} $names list of names (string), like if using use
+/// @param {String} $separator Separator to use when joining custom property var statements
+/// @return {String} For example if separator was "+" would result in "var(--some-prop) + var(--another-prop)"
+
+@function join($names, $separator) {
+  $values: ();
+  @each $name in $names {
+    $values: append($values, use($name));
+  }
+  @return utils.list-join($values, $separator);
+}
+
+/// For any names passed will join them with "+" and wrap in calc
+/// @param {String} $name Name string (pass multiple comma separated)
+/// @return {String} A string like "calc(var(--some-prop) + var(--another-prop))"
+
+@function add($names...) {
+  @return calc(join($names, "+"));
+}
+
+/// For any names passed will join them with "-" and wrap in calc
+/// @param {String} $name Name string (pass multiple comma separated)
+/// @return {String} A string like "calc(var(--some-prop) - var(--another-prop))"
+
+@function subtract($names...) {
+  @return calc(join($names, "-"));
 }

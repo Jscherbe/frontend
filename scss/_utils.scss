@@ -312,3 +312,26 @@ $config: (
   }
   @return $new-list;
 }
+
+/// Join a list with a separator
+/// @param {List} $list List to join
+/// @param {String} $separator [", "] Separator to use
+/// @param {Boolean} $to-string [true] The resulting list with join separator will be converted to a string (false will return new list with separators added between original items
+/// @return {String|List} If separator was +, the result would be "value1 + value2" or (value1, "+", value2) depending on $to-string argument
+
+@function list-join($list, $separator: ", ", $to-string: true) {
+  $joined: ();
+  $length: length($list);
+  @for $i from 1 through $length {
+    $item: nth($list, $i);
+    $joined: append($joined, $item);
+    @if $i < $length {
+      $joined: append($joined, $separator);
+    }
+  }
+  @if ($to-string) {
+    @return #{ $joined };
+  } @else {
+    @return $joined;
+  }
+}
