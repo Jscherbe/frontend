@@ -72,14 +72,14 @@ $config: (
 |:--|:--|:--|:--|
 |active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
 |color|Color|currentColor|The color of the css-icon.|
-|font-family|Map|('Courier New', monospace)||
-|margin|Map|(0 0.15em)||
+|font-family|CssBalue|('Courier New', monospace)||
+|margin|CssValue|(0 0.15em)||
 |size|Dimension|1.1em|The width, height and font size of the css-icon.|
 |stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
 |stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
-|text-offset|Map|0.05em||
-|text-size|Map|1em||
-|vertical-align|Map|-0.2em||
+|text-offset|Dimension|0.05em||
+|text-size|Dimension|1em||
+|vertical-align|Dimension|-0.2em||
 |transition-duration|Time|200ms|The duration length for the transition.|
 |transition-timing-function|CssValue|ease-in|The timing function for the transition.|
 |stroke-sizes|Map|Map||

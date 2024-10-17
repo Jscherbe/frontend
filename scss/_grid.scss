@@ -32,16 +32,15 @@
 /// Module Settings
 /// @type Map
 /// @prop {String} attribute ["data-grid"] Default attribute to use for grid mixin
-/// @prop {} attribute-container ["data-grid-container"]
-/// @prop {} breakpoint [false]
+/// @prop {String} attribute-container ["data-grid-container"]
+/// @prop {CssValue} breakpoint [false]
 /// @prop {Number} columns [12] Default for grid mixin
 /// @prop {Number} gutter [14px] Default gutter for grid mixin
-/// @prop {Map} extra-breakpoints ["position-column-first"] Default extra breakpoints for grid mixin
-/// @prop {MaStringp} position-class-column-first Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
+/// @prop {String} position-class-column-first ["position-column-first"] Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
 /// @prop {String} position-class-column-last ["position-column-last"] See definition above
 /// @prop {String} position-class-row-first ["position-row-first"] See definition above
 /// @prop {String} position-class-row-last ["position-row-last"] See definition above
-/// @prop {} extra-breakpoints [Map]
+/// @prop {Map} extra-breakpoints [Map] Default extra breakpoints for grid mixin
 
 $config: (
   "attribute":          "data-grid",

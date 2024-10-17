@@ -51,9 +51,9 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.responsive-change|Number|Default responsive amount to modify items using responsive-property mixin|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|responsive-change|Number|0.5vw|Default responsive amount to modify items using responsive-property mixin|
 
     
   

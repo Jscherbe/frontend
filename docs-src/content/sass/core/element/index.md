@@ -84,15 +84,15 @@ $config: (
 |:--|:--|:--|:--|
 |backdrop-blur|Number|Backdrop blur amount used on elements/components||
 |backdrop-color|Color|Backdrop color (modal overlays, etc)||
-|list-item-indent|Map||1.5em|
+|list-item-indent|Dimension||1.5em|
 |text-shadow|List|Common text shadow||
 |border-radius|Number|Common element border radius||
 |border-radius-large|Number|Common element border radius (large)||
 |border-radius-small|Number|Common element border radius (small)||
 |box-shadow|List|Box-shadow definition for elements that are on top of page||
 |box-shadow-above|List|Box-shadow definition for elements that are above the page (fixed items, etc)||
-|box-shadow-hover|Map||0 1px 5px color.get('box-shadow-hover')|
-|box-shadow-inset|Map||0 1px 5px color.get('box-shadow')|
+|box-shadow-hover|CssValue||0 1px 5px color.get('box-shadow-hover')|
+|box-shadow-inset|CssValue||0 1px 5px color.get('box-shadow')|
 |box-shadow-raised|List|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)||
 |link-text-decoration|String|||
 |link-text-decoration-color|Color|||

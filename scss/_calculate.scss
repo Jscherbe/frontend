@@ -8,7 +8,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.responsive-change Default responsive amount to modify items using responsive-property mixin
+/// @prop {Number} responsive-change [0.5vw] Default responsive amount to modify items using responsive-property mixin
 
 $config: (
   "responsive-change": 0.5vw

@@ -77,27 +77,27 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|letter-spacing-uppercase|Map|0.04em||
+|letter-spacing-uppercase|Dimension|0.04em||
 |margin-bottom|Number|1em|Default margin for typography (like paragraphs)|
 |margin-top|Number|null|Default margin for typography (like paragraphs)|
 |responsive-change|Number|0.05vw|Amount to scale typography by browser's width (use viewport units)|
-|scale-steps|Map|5||
+|scale-steps|Number|5||
 |size-ratio|Number|1.8|Font size scale when using preset sizes, ratio mixin)|
 |size-line-height-ratio|Number|0.97|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desrireable|
 |font-family|Number|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)|Default font family|
 |font-family-monospace|Number|(Menlo, Consolas, Monaco, monospace)|Base font-family for monospace|
-|font-family-sans|Map|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)||
-|font-family-serif|Map|(Cambria, Georgia, serif||
+|font-family-sans|CssValue|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)||
+|font-family-serif|CssValue|(Cambria, Georgia, serif||
 |font-size|Number|16px|Default font size (use pixels, converted, is used for rem base)|
-|font-weight|Map|inherit||
-|font-weight-bold|Map|bold||
-|font-weight-light|Map|300||
-|font-weight-normal|Map|normal||
-|font-weight-semibold|Map|600||
+|font-weight|CssValue|inherit||
+|font-weight-bold|CssValue|bold||
+|font-weight-light|CssValue|300||
+|font-weight-normal|CssValue|normal||
+|font-weight-semibold|CssValue|600||
 |line-height|Number|1.5|Default line height|
 |line-height-dense|Number|1.3|Default dense line height|
-|line-height-densest|Map|1.1||
-|line-height-spaced|Map|1.75||
+|line-height-densest|Number|1.1||
+|line-height-spaced|Number|1.75||
 |headline-color|Number||Default color for headlines if using preset sizes @joe-check is this an antiquated option?|
 
     

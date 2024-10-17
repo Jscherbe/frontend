@@ -84,37 +84,37 @@ $config: (
 
 |Name|Type|Default|
 |:--|:--|:--|
-|active-selector|Map|"&.is-active"|
-|box-shadow|Map|true|
-|line-height|Map|1.1|
-|letter-spacing|Map|0.02em|
-|margin|Map|(0.45em 0.5em 0.45em 0)|
-|min-width|Map|9rem|
-|padding|Map|(0.75em 1.5em)|
-|white-space|Map|nowrap|
-|border-color|Map|"control-border"|
-|border-color-active|Map|"control-border-active"|
-|border-color-hover|Map|"control-border-hover"|
-|border-radius|Map|2rem|
-|border-width|Map|1px|
-|background-color|Map|"control-background"|
-|background-color-hover|Map|"control-background-hover"|
-|background-color-active|Map|"control-background-active"|
-|color|Map|"control"|
-|color-hover|Map|"control-hover"|
-|color-active|Map|"control-active"|
-|font-family|Map|inherit|
-|font-weight|Map|bold|
-|font-size|Map|"base"|
-|icon-size|Map|2.5rem|
-|icon-font-size|Map|1.38rem|
-|icon-border-radius|Map|50%|
-|text-shadow|Map|none|
-|text-transform|Map|none|
-|text-decoration|Map|none|
-|transition-enabled|Map|true|
-|transition-duration|Map|200ms|
-|transition-properties|Map|(border-color, background-color, color, box-shadow)|
+|active-selector|String|"&.is-active"|
+|box-shadow|CssValue|true|
+|line-height|Number|1.1|
+|letter-spacing|Dimension|0.02em|
+|margin|Dimension|(0.45em 0.5em 0.45em 0)|
+|min-width|Dimension|9rem|
+|padding|Dimension|(0.75em 1.5em)|
+|white-space|CssValue|nowrap|
+|border-color|String|"control-border"|
+|border-color-active|String|"control-border-active"|
+|border-color-hover|String|"control-border-hover"|
+|border-radius|Dimension|2rem|
+|border-width|Dimension|1px|
+|background-color|String|"control-background"|
+|background-color-hover|String|"control-background-hover"|
+|background-color-active|String|"control-background-active"|
+|color|String|"control"|
+|color-hover|String|"control-hover"|
+|color-active|String|"control-active"|
+|font-family|CssValue|inherit|
+|font-weight|CssValue|bold|
+|font-size|String|"base"|
+|icon-size|Dimension|2.5rem|
+|icon-font-size|Dimension|1.38rem|
+|icon-border-radius|Dimension|50%|
+|text-shadow|CssValue|none|
+|text-transform|CssValue|none|
+|text-decoration|CssValue|none|
+|transition-enabled|Boolean|true|
+|transition-duration|Time|200ms|
+|transition-properties|List|(border-color, background-color, color, box-shadow)|
 
     
 

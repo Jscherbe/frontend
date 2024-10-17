@@ -13,8 +13,8 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {} img-excluded-selectors [(".wysiwyg__exclude",)]
-/// @prop {} ul-excluded-selectors [(".list-lines", ".wysiwyg__exclude")]
+/// @prop {List} img-excluded-selectors [(".wysiwyg__exclude",)]
+/// @prop {List} ul-excluded-selectors [(".list-lines", ".wysiwyg__exclude")]
 /// @prop {Map} headline-sizes [Map]
 
 $config: (

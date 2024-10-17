@@ -61,8 +61,8 @@ $config: (
 
 |Name|Type|Default|
 |:--|:--|:--|
-|img-excluded-selectors|Map|(".wysiwyg__exclude",)|
-|ul-excluded-selectors|Map|(".list-lines", ".wysiwyg__exclude")|
+|img-excluded-selectors|List|(".wysiwyg__exclude",)|
+|ul-excluded-selectors|List|(".list-lines", ".wysiwyg__exclude")|
 |headline-sizes|Map|Map|
 
     

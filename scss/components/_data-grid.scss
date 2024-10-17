@@ -23,13 +23,13 @@
 /// @prop {String} position-class-column-last [position-column-last] See definition above
 /// @prop {String} position-class-row-first [position-row-first] See definition above
 /// @prop {String} position-class-row-last [position-row-last] See definition above
-/// @prop {} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)]
+/// @prop {} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)] @joe-check do we want to call these a dimension?
 /// @prop {} sticky-top [var(--ulu-sticky-top-offset, 0)]
-/// @prop {} rule-color ["rule"]
-/// @prop {} rule-size [1px]
-/// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
-/// @prop {} extra-gutter-scales [Map]
-/// @prop {} extra-rule-styles [Map]
+/// @prop {String} rule-color ["rule"]
+/// @prop {Dimension} rule-size [1px]
+/// @prop {Map} extra-breakpoints [Map] Default extra breakpoints for grid mixin
+/// @prop {Map} extra-gutter-scales [Map]
+/// @prop {Map} extra-rule-styles [Map]
 
 $config: (
   "attribute":           "data-grid",

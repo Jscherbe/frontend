@@ -11,15 +11,15 @@
 /// @type Map
 /// @prop {Number} backdrop-blur Backdrop blur amount used on elements/components
 /// @prop {Color} backdrop-color Backdrop color (modal overlays, etc)
-/// @prop {} list-item-indent [1.5em]
+/// @prop {Dimension} list-item-indent [1.5em]
 /// @prop {List} text-shadow Common text shadow
 /// @prop {Number} border-radius Common element border radius
 /// @prop {Number} border-radius-large Common element border radius (large)
 /// @prop {Number} border-radius-small Common element border radius (small)
 /// @prop {List} box-shadow Box-shadow definition for elements that are on top of page
 /// @prop {List} box-shadow-above Box-shadow definition for elements that are above the page (fixed items, etc)
-/// @prop {} box-shadow-hover [0 1px 5px color.get('box-shadow-hover')]
-/// @prop {} box-shadow-inset [0 1px 5px color.get('box-shadow')]
+/// @prop {CssValue} box-shadow-hover [0 1px 5px color.get('box-shadow-hover')]
+/// @prop {CssValue} box-shadow-inset [0 1px 5px color.get('box-shadow')]
 /// @prop {List} box-shadow-raised Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
 /// @prop {String} link-text-decoration
 /// @prop {Color} link-text-decoration-color

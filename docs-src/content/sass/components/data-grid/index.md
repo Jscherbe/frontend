@@ -92,11 +92,11 @@ $config: (
 |position-class-column-last|String|position-column-last|See definition above|
 |position-class-row-first|String|position-row-first|See definition above|
 |position-class-row-last|String|position-row-last|See definition above|
-|sticky-bottom|Map|var(--ulu-sticky-bottom-offset, 0)||
+|sticky-bottom|Map|var(--ulu-sticky-bottom-offset, 0)|@joe-check do we want to call these a dimension?|
 |sticky-top|Map|var(--ulu-sticky-top-offset, 0)||
-|rule-color|Map|"rule"||
-|rule-size|Map|1px||
-|extra-breakpoints|Map|14px|Default extra breakpoints for grid mixin|
+|rule-color|String|"rule"||
+|rule-size|Dimension|1px||
+|extra-breakpoints|Map|Map|Default extra breakpoints for grid mixin|
 |extra-gutter-scales|Map|Map||
 |extra-rule-styles|Map|Map||
 
