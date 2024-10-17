@@ -43,15 +43,25 @@ $config: (
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
-  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
+  "rule-size" : 1px,
+  "rule-color" : "rule",
+  "extra-rule-styles" : (
+    "light" : (
+      "size" : 1px,
+      "color": "rule-light"
+    )
+  ),
+  "extra-gutter-scales" : (
+    "small": 0.6
+  ),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
-      "gutter":     15px
+      "gutter":     18px
     ),
     "large" : (
       "breakpoint": "large",
-      "gutter":     20px
+      "gutter":     24px
     )
   ),
 );
@@ -64,7 +74,7 @@ $config: (
 - **Group:** data-grid
 - **Type:** variable
 - **Lines (comments):** 16-26
-- **Lines (code):** 28-50
+- **Lines (code):** 28-60
     </details>
     
 
@@ -112,8 +122,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-69
     </details>
     
 
@@ -154,8 +164,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-98
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-104
     </details>
     
 
@@ -198,8 +208,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 100-109
-- **Lines (code):** 111-563
+- **Lines (comments):** 106-114
+- **Lines (code):** 116-561
     </details>
     
 
@@ -212,7 +222,6 @@ Creates grid css (variation of original data-grid)
 |$breakpoint|`Number`|Breakpoint key for starting the grid|
 |$extra-breakpoints|`Map`|Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smallest to largest)|
 |$gutter|`Number`|Size in pixels for the gutters|
-|$include-rules|`Boolean`|Print styles for including rules|
 |$rule-size|`Number`|Size of the rule (border/separator)|
 |$extra-rule-styles|`Map`|Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))|
 |$extra-gutter-scales|`String`|A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`|
@@ -252,8 +261,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
     </details>
     
 
@@ -270,50 +279,6 @@ Get a config option
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
-  
-
-
-<div class="sassdoc-item-header">
-
-###  get-gutter() {#function-get-gutter}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-
-</div>
-
-  
-
-Prints component styles
-    
-    
-
-    <details>
-      <summary>File Information</summary>
-- **File:** _data-grid.scss
-- **Group:** data-grid
-- **Type:** function
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-81
-    </details>
-    
-
-#### Examples
-
-      
-
-
-``` scss
-@include ulu.component-example-styles();
-```
-  
-
-      
-
-#### Require
-
-- [get()](/sass/components/accordion/#function-get)
   
   
   

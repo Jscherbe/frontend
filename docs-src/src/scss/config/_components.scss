@@ -22,4 +22,17 @@
 $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 @include ulu.component-wysiwyg-set((
   "headline-sizes" :  map.merge($wysiwyg-headings, ("h1" : "h1"))
-))
+));
+
+@include ulu.component-data-grid-set((
+  "extra-rule-styles" : (
+    "light" : (
+      "size" : 1px,
+      "color": "rule-light"
+    ),
+    "demo" : (
+      "size" : 3px,
+      "color": "rule"
+    )
+  )
+));

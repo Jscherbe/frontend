@@ -36,15 +36,25 @@ $config: (
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
-  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
+  "rule-size" : 1px,
+  "rule-color" : "rule",
+  "extra-rule-styles" : (
+    "light" : (
+      "size" : 1px,
+      "color": "rule-light"
+    )
+  ),
+  "extra-gutter-scales" : (
+    "small": 0.6
+  ),
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
-      "gutter":     15px
+      "gutter":     18px
     ),
     "large" : (
       "breakpoint": "large",
-      "gutter":     20px
+      "gutter":     24px
     )
   ),
 ) !default;
@@ -65,10 +75,6 @@ $config: (
 @function get($name) {
   @return utils.require-map-get($config, $name, "data-grid [config]");
 }
-
-/// Prints component styles
-/// @example scss
-///  @include ulu.component-example-styles();
 
 @function get-gutter($name: null, $custom-map: null) {
   @if (not $name) {
@@ -102,29 +108,20 @@ $config: (
 /// @param {Number} $breakpoint Breakpoint key for starting the grid
 /// @param {Map} $extra-breakpoints Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smallest to largest)
 /// @param {Number} $gutter Size in pixels for the gutters
-/// @param {Boolean} $include-rules Print styles for including rules
 /// @param {Number} $rule-size Size of the rule (border/separator)
 /// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
 /// @param {String} $extra-gutter-scales A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`
 /// @param {Map} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
 
 @mixin create(
-  $columns: 12,
+  $columns: get("columns"),
   $breakpoint: get-default-breakpoint(),
-  $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
+  $extra-breakpoints: get("extra-breakpoints"),
   $gutter: get("gutter"),
-  $include-rules: false,
-  $rule-size: 1px,
-  $rule-color: "rule-light",
-  $extra-rule-styles: (
-    "light" : (
-      "size" : 1px,
-      "color": "rule-light"
-    )
-  ),
-  $extra-gutter-scales: (
-    "small": 0.6
-  ),
+  $rule-size: get("rule-size"),
+  $rule-color: get("rule-color"),
+  $extra-rule-styles: get("extra-rule-styles"),
+  $extra-gutter-scales: get("extra-gutter-scales"),
   $attribute: get("attribute"),
   $include-container: true,
   $container-attribute: get("attribute-container"),
@@ -132,6 +129,7 @@ $config: (
   $sticky-top: get("sticky-top"),
   $sticky-bottom: get("sticky-bottom")
 ) {
+  @debug $extra-breakpoints;
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
   $select-item: '[#{ $attribute-item }]';
@@ -288,7 +286,7 @@ $config: (
         // For removing the rule per row (via equal heights for now)
         &.#{ $position-class-row-last } {
           &#{ $select-rule-row } {
-            content: none;
+            content: none !important;
           }
         }
       }
@@ -528,7 +526,7 @@ $config: (
         &#{'[#{ $attribute }*="rules-row-style: #{ $name }"]'} {
           > #{ $select-item } {
             &#{ $select-rule-row } {
-              background-color: $color;
+              background-color: color.get($color);
               height: $size;
             }
           }
@@ -702,7 +700,7 @@ $config: (
   &#{'[#{ $attribute }*="rules-row: #{ $key }"]'} {
     > #{ $select-item } {
       &#{ $select-rule-row } {
-        content: $size;
+        content: "";
         #{ $position }: math.floor(math.div($size, 2)) * -1;
       }
     }

@@ -154,5 +154,11 @@ export default {
       description: "Same as width-[breakpoint] except for offset instead of width",
       example: '<div data-grid-item="..., offset: 2">...'
     },
+    {
+      name: "sticky",
+      values: "[top, bottom]",
+      description: "Set's a column to be sticky",
+      example: '<div data-grid-item="..., sticky: top">...'
+    },
   ]
 }

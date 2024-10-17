@@ -25,7 +25,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 ### Default Grid
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}
   </div>
@@ -33,14 +33,14 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 #### default (test sticky column)
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     <div class="demo-grid__cell" data-grid-item="width: 4, sticky: top">
       <div class="demo-grid__content">
         Stuck to top
       </div>
     </div>
-    <div class="demo-grid__cell" data-grid-item="width-medium: 8">
+    <div class="demo-grid__cell" data-grid-item="width: 8">
       <div class="demo-grid__content">
         {{ placeholder.text }}
         {{ placeholder.text }}
@@ -50,7 +50,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
   </div>
 </div>
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     <div class="demo-grid__cell" data-grid-item="width: 4, sticky: bottom">
       <div class="demo-grid__content">
@@ -73,7 +73,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 #### default (justify start)
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
@@ -82,7 +82,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 #### justify: center
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12, justify: center" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
@@ -91,7 +91,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 #### justify: end
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12, justify: end" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
@@ -104,7 +104,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 #### Default (stretch start)
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}
   </div>
@@ -112,7 +112,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 
 #### align: center
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12, align: center" class="demo-grid">
     {{ gridTemplate }}
   </div>
@@ -125,23 +125,23 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### default
 
-<div class="demo-sandwich">Element directly before grid</div>
-<div class="demo-grid__container">
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}
   </div>
 </div> 
-<div class="demo-sandwich">Element directly after grid</div>
+<div class="demo-grid-element-outside">Element directly after grid</div>
 
 #### gutters: false
 
-<div class="demo-sandwich">Element directly before grid</div>
-<div class="demo-grid__container">
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
   <div data-grid="columns: 12, gutters: false" class="demo-grid">
     {{ gridTemplate }}
   </div>
 </div> 
-<div class="demo-sandwich">Element directly after grid</div>
+<div class="demo-grid-element-outside">Element directly after grid</div>
 
 ### gutters-row
 
@@ -149,47 +149,47 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### gutters-row: true
 
-<div class="demo-sandwich">Element directly before grid</div>
-<div class="demo-grid__container">
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
   <div data-grid="columns: 12, gutters-row: true" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
 </div> 
-<div class="demo-sandwich">Element directly after grid</div>
+<div class="demo-grid-element-outside">Element directly after grid</div>
 
 #### gutters-row: top
 
-<div class="demo-sandwich">Element directly before grid</div>
-<div class="demo-grid__container">
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
   <div data-grid="columns: 12, gutters-row: top" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
 </div> 
-<div class="demo-sandwich">Element directly after grid</div>
+<div class="demo-grid-element-outside">Element directly after grid</div>
 
 #### gutters-row: bottom
 
-<div class="demo-sandwich">Element directly before grid</div>
-<div class="demo-grid__container">
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
   <div data-grid="columns: 12, gutters-row: bottom" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
 </div> 
-<div class="demo-sandwich">Element directly after grid</div>
+<div class="demo-grid-element-outside">Element directly after grid</div>
 
 #### gutters-row: fit
 
-<div class="demo-sandwich">Element directly before grid</div>
-<div class="demo-grid__container">
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
   <div data-grid="columns: 12, gutters-row: fit" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
 </div> 
-<div class="demo-sandwich">Element directly after grid</div>
+<div class="demo-grid-element-outside">Element directly after grid</div>
 
 
 ### gutter-scale
@@ -209,8 +209,11 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### rules-row: top
 
-<div class="demo-grid__container">
-  <div data-grid="columns: 12, rules-row: top" class="demo-grid">
+<div class="demo-grid-container">
+  <div 
+    data-grid="columns: 12, rules-row: top, rules-row-style: demo" 
+    class="demo-grid"
+  >
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
@@ -218,8 +221,11 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### rules-row: bottom
 
-<div class="demo-grid__container">
-  <div data-grid="columns: 12, rules-row: bottom" class="demo-grid">
+<div class="demo-grid-container">
+  <div 
+    data-grid="columns: 12, rules-row: bottom, rules-row-style: demo" 
+    class="demo-grid"
+  >
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
@@ -227,8 +233,11 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### rules-row: between
 
-<div class="demo-grid__container">
-  <div data-grid="columns: 12, rules-row: between" class="demo-grid">
+<div class="demo-grid-container">
+  <div 
+    data-grid="columns: 12, rules-row: between, rules-row-style: demo" 
+    class="demo-grid"
+  >
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
@@ -242,8 +251,11 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### rules-row-align: gutter
 
-<div class="demo-grid__container">
-  <div data-grid="columns: 12, rules-row: top, rules-row-align: gutter" class="demo-grid">
+<div class="demo-grid-container">
+  <div 
+    data-grid="columns: 12, rules-row: top, rules-row-align: gutter, rules-row-style: demo" 
+    class="demo-grid"
+  >
     {{ gridTemplate }}
   </div>
 </div>
@@ -254,8 +266,23 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### rules-column: right
 
-<div class="demo-grid__container">
-  <div data-grid="columns: 12, rules-column: right" class="demo-grid">
+<div class="demo-grid-container">
+  <div 
+    data-grid="columns: 12, rules-column: right, rules-column-style: demo" 
+    class="demo-grid"
+  >
+    {{ gridTemplate }}
+    {{ gridTemplateShort }}
+  </div>
+</div>
+
+#### rules-column: between align to gutter
+
+<div class="demo-grid-container">
+  <div 
+    data-grid="columns: 12, rules-column: right, rules-column-align: gutter, rules-column-style: demo" 
+    class="demo-grid"
+  >
     {{ gridTemplate }}
     {{ gridTemplateShort }}
   </div>
@@ -264,14 +291,14 @@ You can remove the gutters between columns by adding this setting. The grid show
 ### item width
 
 <p>	
-  Number of columns for grid, must match grids that are setup in site. For most projects this is just '12'. This is set up this way to allow mutliple grids. All examples specify the item's width
+  Number of columns for grid, must match grids that are setup in site. For most projects this is just '12'. This is set up this way to allow multiple grids. All examples specify the item's width
 </p>
 
 ### item offset
 
 <p>	Offsets the column by a certain number of columns</p>
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     <div data-grid-item="width: 3" class="demo-grid__cell">
     <div class="demo-grid__content">
@@ -293,7 +320,7 @@ You can remove the gutters between columns by adding this setting. The grid show
 
 #### default (justify start)
 
-<div class="demo-grid__container">
+<div class="demo-grid-container">
   <div data-grid="columns: 12" class="demo-grid">
     {{ gridTemplate }}
     {{ gridTemplateShort }}

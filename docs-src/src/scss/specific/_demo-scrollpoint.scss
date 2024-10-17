@@ -1,0 +1,9 @@
+.demo-scrollpoint {
+  padding: 1rem;
+  text-align: center;
+  background-color: #ffa;
+  transition: background-color 200ms ease;
+  &[data-scrollpoint-state*="enter"] {
+    background-color: rgb(23, 130, 112);
+  }
+}
