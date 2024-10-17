@@ -37,8 +37,8 @@ $config: (
   "large" : 1rem * 2,
   "large-x" : 1rem * 3,
   "large-xx" : 1rem * 4,
-  "small-x" : 1rem * 0.5,
   "small" : 1rem * 0.75,
+  "small-x" : 1rem * 0.5,
 );
 ```
   
@@ -56,14 +56,14 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|small-x|Number||
-|small|Number||
-|default|Number|Base unit of measurent|
-|large|Number||
-|large-x|Number||
-|large-xx|Number||
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|default|Number|1rem|Base unit of measurent|
+|large|Number|1rem * 2||
+|large-x|Number|1rem * 3||
+|large-xx|Number|1rem * 4||
+|small|Number|1rem * 0.75||
+|small-x|Number|1rem * 0.5||
 
     
   

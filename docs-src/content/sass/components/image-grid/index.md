@@ -45,9 +45,20 @@ $config: (
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-20
+- **Lines (comments):** 13-17
+- **Lines (code):** 19-23
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|breakpoint|Map|"small"|
+|gap|Map|3px|
+|min-width|Map|math.div(100%, 3)|
+
     
   
 
@@ -77,8 +88,8 @@ Change modules $config
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** mixin
-- **Lines (comments):** 22-24
-- **Lines (code):** 26-28
+- **Lines (comments):** 25-27
+- **Lines (code):** 29-31
     </details>
     
 
@@ -119,8 +130,8 @@ Prints component styles
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-66
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-69
     </details>
     
 
@@ -168,8 +179,8 @@ Get a config option
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** function
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 33-35
+- **Lines (code):** 37-39
     </details>
     
 

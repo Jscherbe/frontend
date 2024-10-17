@@ -35,9 +35,9 @@ Module Settings
 $config: (
   "margin":            2rem,
   "max-width":         90rem,
-  "z-index-sticky":    100,
   "z-index-above":     450,
-  "z-index-fixed":     1000
+  "z-index-fixed":     1000,
+  "z-index-sticky":    100,
 );
 ```
   
@@ -55,13 +55,13 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.max-width|Number|Common max-width for site|
-|$config.margin|Number|Common margin for site|
-|$config.z-index-fixed|Number|Common z-index, above everything|
-|$config.z-index-sticky|Number|Common z-index for sticky or stuck items|
-|$config.z-index-above|Number|Common z-index, below sticky|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|margin|Number|2rem|Common margin for site|
+|max-width|Number|90rem|Common max-width for site|
+|z-index-above|Number|1000|Common z-index, below sticky|
+|z-index-fixed|Number|100|Common z-index, above everything|
+|z-index-sticky|Number|450|Common z-index for sticky or stuck items|
 
     
 

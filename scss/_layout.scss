@@ -11,18 +11,18 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.max-width Common max-width for site
-/// @prop {Number} $config.margin Common margin for site
-/// @prop {Number} $config.z-index-fixed Common z-index, above everything
-/// @prop {Number} $config.z-index-sticky Common z-index for sticky or stuck items
-/// @prop {Number} $config.z-index-above Common z-index, below sticky
+/// @prop {Number} margin [2rem] Common margin for site
+/// @prop {Number} max-width [90rem] Common max-width for site
+/// @prop {Number} z-index-above [1000] Common z-index, below sticky
+/// @prop {Number} z-index-fixed [100] Common z-index, above everything
+/// @prop {Number} z-index-sticky [450] Common z-index for sticky or stuck items
 
 $config: (
   "margin":            2rem,
   "max-width":         90rem,
-  "z-index-sticky":    100,
   "z-index-above":     450,
-  "z-index-fixed":     1000
+  "z-index-fixed":     1000,
+  "z-index-sticky":    100,
 ) !default;
 
 

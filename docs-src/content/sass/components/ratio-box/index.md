@@ -56,10 +56,10 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.size|Number|Default height ratio (of width 100%)|
-|$config.sizes|Number|Other ratios to add (apply with modifier class)|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|size|Number|75%|Default height ratio (of width 100%)|
+|sizes|Map|Map|Other ratios to add (apply with modifier class)|
 
     
   

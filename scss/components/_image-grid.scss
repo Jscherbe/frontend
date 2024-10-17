@@ -12,6 +12,9 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {} breakpoint ["small"]
+/// @prop {} gap [3px]
+/// @prop {} min-width [math.div(100%, 3)]
 
 $config: (
   "breakpoint": "small",

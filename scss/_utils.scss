@@ -10,8 +10,8 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Boolean} $config.debug-maps Debugs include map print outs
-/// @prop {Boolean} $config.file-header-comments Remove comment headers if you'd like
+/// @prop {Boolean} debug-maps [true] Debugs include map print outs
+/// @prop {Boolean} file-header-comments [true] Remove comment headers if you'd like
 
 $config: (
   "debug-maps": true,

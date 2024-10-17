@@ -15,15 +15,21 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} columns [12] Default for grid mixin.
 /// @prop {String} attribute [data-grid] Default attribute to use for grid mixin.
 /// @prop {String} attribute-container [data-grid-container] Default attribute to use for grid's container.
+/// @prop {Number} columns [12] Default for grid mixin.
 /// @prop {Number} gutter [14px] Default gutter for grid mixin.
 /// @prop {String} position-class-column-first [position-column-first] Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
 /// @prop {String} position-class-column-last [position-column-last] See definition above
 /// @prop {String} position-class-row-first [position-row-first] See definition above
 /// @prop {String} position-class-row-last [position-row-last] See definition above
+/// @prop {} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)]
+/// @prop {} sticky-top [var(--ulu-sticky-top-offset, 0)]
+/// @prop {} rule-color ["rule"]
+/// @prop {} rule-size [1px]
 /// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
+/// @prop {} extra-gutter-scales [Map]
+/// @prop {} extra-rule-styles [Map]
 
 $config: (
   "attribute":           "data-grid",

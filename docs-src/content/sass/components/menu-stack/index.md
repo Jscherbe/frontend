@@ -20,7 +20,7 @@ sassdocGroupName: menu-stack
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
@@ -28,7 +28,6 @@ sassdocGroupName: menu-stack
   
 
 Module Settings
-    @type Map
     
     
 

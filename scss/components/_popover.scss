@@ -29,7 +29,35 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-
+/// @prop {} arrow-size [16px]
+/// @prop {} background-color [white]
+/// @prop {} border-radius [6px]
+/// @prop {} color [inherit]
+/// @prop {} max-width [90vw]
+/// @prop {} max-height [25rem]
+/// @prop {} padding [1rem]
+/// @prop {} padding-large [2rem]
+/// @prop {} type-size [null]
+/// @prop {} z-index [true]
+/// @prop {} box-shadow [true]
+/// @prop {} box-shadow-footer [0 0 4px]
+/// @prop {} box-shadow-footer-color [box-shadow"]
+/// @prop {} header-background-color [#ccc]
+/// @prop {} header-color [null]
+/// @prop {} header-media-background-color [black]
+/// @prop {} header-padding-y [0.25rem]
+/// @prop {} footer-background-color [#ccc]
+/// @prop {} footer-color [null]
+/// @prop {} footer-padding-y [0.25rem]
+/// @prop {} footer-padding-y-large [0.5rem]
+/// @prop {} tooltip-background-color [white]
+/// @prop {} tooltip-color [null]
+/// @prop {} tooltip-max-width [20rem]
+/// @prop {} tooltip-padding [0.5rem]
+/// @prop {} tooltip-width [auto]
+/// @prop {} width [15rem]
+/// @prop {} width-large [30rem]
+/// @prop {} width-large-x [50rem]
 
 $config: (
   "arrow-size"                   : 16px,

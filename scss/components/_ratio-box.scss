@@ -8,8 +8,8 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.size Default height ratio (of width 100%)
-/// @prop {Number} $config.sizes Other ratios to add (apply with modifier class)
+/// @prop {Number} size [75%] Default height ratio (of width 100%)
+/// @prop {Map} sizes [Map] Other ratios to add (apply with modifier class)
 
 $config: (
   "size" : 75%,

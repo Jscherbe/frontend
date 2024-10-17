@@ -14,7 +14,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active
+/// @prop {Number} $config.links-state-styling Just color/defaults vs hover/visited/active @joe-check is this antiquated?
 /// @prop {CssValue} details-animation [(UluFadeInDown 350ms ease-in-out)] Animation for the details element when toggled.
 /// @prop {Boolean} link [true] Enables link styling.
 /// @prop {Boolean} link-hover [true] Enables link hover and focus styling.

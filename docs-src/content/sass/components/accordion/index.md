@@ -68,8 +68,8 @@ $config: (
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** variable
-- **Lines (comments):** 17-42
-- **Lines (code):** 44-71
+- **Lines (comments):** 17-44
+- **Lines (code):** 46-73
     </details>
     
 
@@ -80,6 +80,7 @@ $config: (
 |:--|:--|:--|:--|
 |background-color|Color|white|This is the background color of the accordion before it is expanded.|
 |background-color-open|Color|#F7F8F7|This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.|
+|border-color|String|"rule"||
 |border-radius|Number|0|This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.|
 |border-width|Dimension|1px|The width of the borders of the accordions|
 |box-shadow|CssValue|none|Adds a box shadow to the accordion for shading.|
@@ -94,6 +95,7 @@ $config: (
 |icon-color-hover|String|link-hover|Color of the icon when hovered or focused on. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |icon-font-size|Dimension|1.5rem|The font-size of the icon.|
 |icon-size|Dimension|auto|The size of the icon. Used as the base in the flex property.|
+|icon-stroke-width|Dimension|0.15em||
 |summary-background-color|Color|null|@joe-check THIS IS UNUSED BELOW. DELETE?|
 |summary-color|Color|inherit|The color of the text in the accordion summary.|
 |summary-color-hover|Color|inherit|The color of the text in the accordion summary when hovering or focusing on it.|
@@ -132,8 +134,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 73-75
-- **Lines (code):** 77-79
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-81
     </details>
     
 
@@ -174,8 +176,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 89-91
-- **Lines (code):** 93-205
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-207
     </details>
     
 
@@ -223,8 +225,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-87
+- **Lines (comments):** 83-85
+- **Lines (code):** 87-89
     </details>
     
 

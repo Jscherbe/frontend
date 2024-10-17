@@ -62,24 +62,27 @@ $config: (
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** variable
-- **Lines (comments):** 32-41
-- **Lines (code):** 43-63
+- **Lines (comments):** 32-44
+- **Lines (code):** 46-66
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.columns|Number|Default for grid mixin|
-|$config.attribute|String|Default attribute to use for grid mixin|
-|$config.gutter|Number|Default gutter for grid mixin|
-|$config.extra-breakpoints|Map|Default extra breakpoints for grid mixin|
-|$config.position-class-column-first|MaStringp|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
-|$config.position-class-column-last|String|See definition above|
-|$config.position-class-row-first|String|See definition above|
-|$config.position-class-row-last|String|See definition above|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|attribute|String|"data-grid"|Default attribute to use for grid mixin|
+|attribute-container|Map|"data-grid-container"||
+|breakpoint|Map|false||
+|columns|Number|12|Default for grid mixin|
+|gutter|Number|14px|Default gutter for grid mixin|
+|extra-breakpoints|Map|"position-column-first"|Default extra breakpoints for grid mixin|
+|position-class-column-first|MaStringp||Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
+|position-class-column-last|String|"position-column-last"|See definition above|
+|position-class-row-first|String|"position-row-first"|See definition above|
+|position-class-row-last|String|"position-row-last"|See definition above|
+|extra-breakpoints|Map|Map||
 
     
   
@@ -110,8 +113,8 @@ Change modules $config
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** mixin
-- **Lines (comments):** 65-68
-- **Lines (code):** 70-72
+- **Lines (comments):** 68-71
+- **Lines (code):** 73-75
     </details>
     
 
@@ -163,8 +166,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** mixin
-- **Lines (comments):** 107-116
-- **Lines (code):** 118-551
+- **Lines (comments):** 110-119
+- **Lines (code):** 121-554
     </details>
     
 
@@ -218,8 +221,8 @@ Get a config option
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** function
-- **Lines (comments):** 74-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 77-80
+- **Lines (code):** 82-84
     </details>
     
 
@@ -273,8 +276,8 @@ Pass custom map to get gutter values from it
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** function
-- **Lines (comments):** 83-86
-- **Lines (code):** 88-96
+- **Lines (comments):** 86-89
+- **Lines (code):** 91-99
     </details>
     
 

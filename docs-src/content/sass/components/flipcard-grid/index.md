@@ -44,9 +44,19 @@ $config: (
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-19
+- **Lines (comments):** 12-15
+- **Lines (code):** 17-21
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|gutter|Map|1rem|
+|grid-template-columns|Map|1fr 1fr|
+
     
   
 
@@ -76,8 +86,8 @@ Change modules $config
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** mixin
-- **Lines (comments):** 21-23
-- **Lines (code):** 25-27
+- **Lines (comments):** 23-25
+- **Lines (code):** 27-29
     </details>
     
 
@@ -118,8 +128,8 @@ Set sizes map
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** mixin
-- **Lines (comments):** 29-31
-- **Lines (code):** 33-35
+- **Lines (comments):** 31-33
+- **Lines (code):** 35-37
     </details>
     
 
@@ -160,8 +170,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** mixin
-- **Lines (comments):** 45-47
-- **Lines (code):** 49-67
+- **Lines (comments):** 47-49
+- **Lines (code):** 51-69
     </details>
     
 
@@ -209,8 +219,8 @@ Get a config option
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** function
-- **Lines (comments):** 37-39
-- **Lines (code):** 41-43
+- **Lines (comments):** 39-41
+- **Lines (code):** 43-45
     </details>
     
 

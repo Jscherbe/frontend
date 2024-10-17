@@ -51,9 +51,20 @@ $config: (
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** variable
-- **Lines (comments):** 14-15
-- **Lines (code):** 17-27
+- **Lines (comments):** 14-18
+- **Lines (code):** 20-30
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|img-excluded-selectors|Map|(".wysiwyg__exclude",)|
+|ul-excluded-selectors|Map|(".list-lines", ".wysiwyg__exclude")|
+|headline-sizes|Map|Map|
+
     
   
 
@@ -83,8 +94,8 @@ Change modules $config
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
-- **Lines (comments):** 29-31
-- **Lines (code):** 33-35
+- **Lines (comments):** 32-34
+- **Lines (code):** 36-38
     </details>
     
 
@@ -130,8 +141,8 @@ Get a config option
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** function
-- **Lines (comments):** 37-39
-- **Lines (code):** 41-43
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-46
     </details>
     
 

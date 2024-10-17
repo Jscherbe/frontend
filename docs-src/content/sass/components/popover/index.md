@@ -72,9 +72,46 @@ $config: (
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** variable
-- **Lines (comments):** 30-31
-- **Lines (code):** 33-65
+- **Lines (comments):** 30-60
+- **Lines (code):** 62-93
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|arrow-size|Map|16px|
+|background-color|Map|white|
+|border-radius|Map|6px|
+|color|Map|inherit|
+|max-width|Map|90vw|
+|max-height|Map|25rem|
+|padding|Map|1rem|
+|padding-large|Map|2rem|
+|type-size|Map|null|
+|z-index|Map|true|
+|box-shadow|Map|true|
+|box-shadow-footer|Map|0 0 4px|
+|box-shadow-footer-color|Map|box-shadow"|
+|header-background-color|Map|#ccc|
+|header-color|Map|null|
+|header-media-background-color|Map|black|
+|header-padding-y|Map|0.25rem|
+|footer-background-color|Map|#ccc|
+|footer-color|Map|null|
+|footer-padding-y|Map|0.25rem|
+|footer-padding-y-large|Map|0.5rem|
+|tooltip-background-color|Map|white|
+|tooltip-color|Map|null|
+|tooltip-max-width|Map|20rem|
+|tooltip-padding|Map|0.5rem|
+|tooltip-width|Map|auto|
+|width|Map|15rem|
+|width-large|Map|30rem|
+|width-large-x|Map|50rem|
+
     
   
 
@@ -104,8 +141,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 95-97
+- **Lines (code):** 99-101
     </details>
     
 
@@ -146,8 +183,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 84-86
-- **Lines (code):** 88-233
+- **Lines (comments):** 112-114
+- **Lines (code):** 116-261
     </details>
     
 
@@ -195,8 +232,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-82
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-110
     </details>
     
 

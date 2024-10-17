@@ -9,32 +9,35 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} $config.backdrop-blur Backdrop blur amount used on elements/components
-/// @prop {Color} $config.backdrop-color Backdrop color (modal overlays, etc)
-/// @prop {List} $config.box-shadow Box-shadow definition for elements that are on top of page
-/// @prop {List} $config.box-shadow-raised Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
-/// @prop {List} $config.box-shadow-above Box-shadow definition for elements that are above the page (fixed items, etc)
-/// @prop {Number} $config.border-radius Common element border radius
-/// @prop {Number} $config.border-radius-small Common element border radius (small)
-/// @prop {Number} $config.border-radius-large Common element border radius (large)
-/// @prop {List} $config.text-shadow Common text shadow
-/// @prop {Number} $config.margin-small Common element margin (small) (default for lists)
-/// @prop {Number} $config.margin Common element margin
-/// @prop {Number} $config.margin-large Common element margin (large)
-/// @prop {String} $config.ol-list-style-type Ordered list type (level 1)
-/// @prop {String} $config.ol-list-style-type-2 Ordered list type (level 2)
-/// @prop {String} $config.ol-list-style-type-3 Ordered list type (level 3)
-/// @prop {String} $config.ul-list-style-type
-/// @prop {String} $config.ul-list-style-type-2
-/// @prop {String} $config.ul-list-style-type-3
-/// @prop {String} $config.link-text-decoration-default Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)
-/// @prop {String} $config.link-text-decoration
-/// @prop {String} $config.link-text-decoration-style
-/// @prop {Color} $config.link-text-decoration-color
-/// @prop {String} $config.link-text-decoration-style-hover
-/// @prop {Color} $config.link-text-decoration-color-hover
-/// @prop {Number} $config.link-text-decoration-thickness
-/// @prop {Number} $config.link-text-underline-offset
+/// @prop {Number} backdrop-blur Backdrop blur amount used on elements/components
+/// @prop {Color} backdrop-color Backdrop color (modal overlays, etc)
+/// @prop {} list-item-indent [1.5em]
+/// @prop {List} text-shadow Common text shadow
+/// @prop {Number} border-radius Common element border radius
+/// @prop {Number} border-radius-large Common element border radius (large)
+/// @prop {Number} border-radius-small Common element border radius (small)
+/// @prop {List} box-shadow Box-shadow definition for elements that are on top of page
+/// @prop {List} box-shadow-above Box-shadow definition for elements that are above the page (fixed items, etc)
+/// @prop {} box-shadow-hover [0 1px 5px color.get('box-shadow-hover')]
+/// @prop {} box-shadow-inset [0 1px 5px color.get('box-shadow')]
+/// @prop {List} box-shadow-raised Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
+/// @prop {String} link-text-decoration
+/// @prop {Color} link-text-decoration-color
+/// @prop {String} link-text-decoration-default Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)
+/// @prop {Color} link-text-decoration-color-hover
+/// @prop {Number} link-text-underline-offset
+/// @prop {String} link-text-decoration-style
+/// @prop {String} link-text-decoration-style-hover
+/// @prop {Number} link-text-decoration-thickness
+/// @prop {Number} margin Common element margin
+/// @prop {Number} margin-large Common element margin (large)
+/// @prop {Number} margin-small Common element margin (small) (default for lists)
+/// @prop {String} ol-list-style-type Ordered list type (level 1)
+/// @prop {String} ol-list-style-type-2 Ordered list type (level 2)
+/// @prop {String} ol-list-style-type-3 Ordered list type (level 3)
+/// @prop {String} ul-list-style-type
+/// @prop {String} ul-list-style-type-2
+/// @prop {String} ul-list-style-type-3
 
 $config: (
   "backdrop-blur":                    4px,
@@ -46,10 +49,10 @@ $config: (
   "border-radius-small":              3px,
   "border-radius-large":              12px,
   "box-shadow":                       0 1px 5px color.get('box-shadow'),
-  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
-  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
+  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
   "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
+  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "link-text-decoration":             underline,
   "link-text-decoration-color":       initial,
   "link-text-decoration-color-hover": false,

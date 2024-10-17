@@ -55,7 +55,7 @@ $config: (
 
 |Name|Type|Description|Default|
 |:--|:--|:--|:--|
-|$config.sides|Number|Sides to print for helper classes (ie. reduce output of uneeded sides)||
+|$config.sides|Number|Sides to print for helper classes (ie. reduce output of uneeded sides) @joe-check is this antiquated?||
 |containers|Boolean|Enables container styling.|true|
 |container-nested-no-padding|Boolean|Toggles whether nested receive horizontal padding or not.|false|
 |layout-flex|Boolean|Enables layout-flex styling.|true|

@@ -24,11 +24,17 @@
 /// @type Map
 /// @prop {String} active-selector [details[open] > summary &, &.is-active] The active selector for css-icon.
 /// @prop {Color} color [currentColor] The color of the css-icon.
+/// @prop {} font-family [('Courier New', monospace)]
+/// @prop {} margin [(0 0.15em)]
 /// @prop {Dimension} size [1.1em] The width, height and font size of the css-icon.
 /// @prop {Dimension} stroke-border-radius [1px] The rounding of the strokes for css-icon.
 /// @prop {Dimension} stroke-width [0.15em] The stroke width of the css-icon.
+/// @prop {} text-offset [0.05em]
+/// @prop {} text-size [1em]
+/// @prop {} vertical-align [-0.2em]
 /// @prop {Time} transition-duration [200ms] The duration length for the transition.
 /// @prop {CssValue} transition-timing-function [ease-in] The timing function for the transition.
+/// @prop {Map} stroke-sizes [Map]
 
 $config: (
   "active-selector" : "details[open] > summary &, &.is-active",

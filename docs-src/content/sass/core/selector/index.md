@@ -52,9 +52,9 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.prefix|String|Global prefix for selectors (would be used for classname prefix for example)|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|prefix|String|""|Global prefix for selectors (would be used for classname prefix for example)|
 
     
 

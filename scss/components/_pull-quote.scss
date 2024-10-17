@@ -21,6 +21,19 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {} body-line-height [true]
+/// @prop {} image-margin-bottom [1rem]
+/// @prop {} image-margin-top [2.5rem]
+/// @prop {} name-margin-bottom [1rem]
+/// @prop {} padding-y [2em]
+/// @prop {} title-font-style [italic]
+/// @prop {} quote-mark-character ["\201c"]
+/// @prop {} quote-mark-color [null]
+/// @prop {} quote-mark-font-family ["Georgia"]
+/// @prop {} quote-mark-font-size [3.75em]
+/// @prop {} quote-mark-enabled [true]
+/// @prop {} quote-mark-line-height [0.35]
+
 $config: (
   "body-line-height" : true,
   "image-margin-bottom" : 1rem,

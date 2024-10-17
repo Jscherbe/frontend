@@ -20,6 +20,37 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {} active-selector ["&.is-active"]
+/// @prop {} box-shadow [true]
+/// @prop {} line-height [1.1]
+/// @prop {} letter-spacing [0.02em]
+/// @prop {} margin [(0.45em 0.5em 0.45em 0)]
+/// @prop {} min-width [9rem]
+/// @prop {} padding [(0.75em 1.5em)]
+/// @prop {} white-space [nowrap]
+/// @prop {} border-color ["control-border"]
+/// @prop {} border-color-active ["control-border-active"]
+/// @prop {} border-color-hover ["control-border-hover"]
+/// @prop {} border-radius [2rem]
+/// @prop {} border-width [1px]
+/// @prop {} background-color ["control-background"]
+/// @prop {} background-color-hover ["control-background-hover"]
+/// @prop {} background-color-active ["control-background-active"]
+/// @prop {} color ["control"]
+/// @prop {} color-hover ["control-hover"]
+/// @prop {} color-active ["control-active"]
+/// @prop {} font-family [inherit]
+/// @prop {} font-weight [bold]
+/// @prop {} font-size ["base"]
+/// @prop {} icon-size [2.5rem]
+/// @prop {} icon-font-size [1.38rem]
+/// @prop {} icon-border-radius [50%]
+/// @prop {} text-shadow [none]
+/// @prop {} text-transform [none]
+/// @prop {} text-decoration [none]
+/// @prop {} transition-enabled [true]
+/// @prop {} transition-duration [200ms]
+/// @prop {} transition-properties [(border-color, background-color, color, box-shadow)]
 
 $config: (
   "active-selector":         "&.is-active",
@@ -30,7 +61,7 @@ $config: (
   "min-width":               9rem,
   "padding":                 (0.75em 1.5em),
   "white-space":             nowrap,
-  
+
   "border-color":            "control-border",
   "border-color-active":     "control-border-active",
   "border-color-hover":      "control-border-hover",

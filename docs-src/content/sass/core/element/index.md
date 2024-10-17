@@ -42,10 +42,10 @@ $config: (
   "border-radius-small":              3px,
   "border-radius-large":              12px,
   "box-shadow":                       0 1px 5px color.get('box-shadow'),
-  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
-  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
+  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
   "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
+  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
   "link-text-decoration":             underline,
   "link-text-decoration-color":       initial,
   "link-text-decoration-color-hover": false,
@@ -72,42 +72,45 @@ $config: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 10-37
-- **Lines (code):** 39-70
+- **Lines (comments):** 10-40
+- **Lines (code):** 42-73
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.backdrop-blur|Number|Backdrop blur amount used on elements/components|
-|$config.backdrop-color|Color|Backdrop color (modal overlays, etc)|
-|$config.box-shadow|List|Box-shadow definition for elements that are on top of page|
-|$config.box-shadow-raised|List|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)|
-|$config.box-shadow-above|List|Box-shadow definition for elements that are above the page (fixed items, etc)|
-|$config.border-radius|Number|Common element border radius|
-|$config.border-radius-small|Number|Common element border radius (small)|
-|$config.border-radius-large|Number|Common element border radius (large)|
-|$config.text-shadow|List|Common text shadow|
-|$config.margin-small|Number|Common element margin (small) (default for lists)|
-|$config.margin|Number|Common element margin|
-|$config.margin-large|Number|Common element margin (large)|
-|$config.ol-list-style-type|String|Ordered list type (level 1)|
-|$config.ol-list-style-type-2|String|Ordered list type (level 2)|
-|$config.ol-list-style-type-3|String|Ordered list type (level 3)|
-|$config.ul-list-style-type|String||
-|$config.ul-list-style-type-2|String||
-|$config.ul-list-style-type-3|String||
-|$config.link-text-decoration-default|String|Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)|
-|$config.link-text-decoration|String||
-|$config.link-text-decoration-style|String||
-|$config.link-text-decoration-color|Color||
-|$config.link-text-decoration-style-hover|String||
-|$config.link-text-decoration-color-hover|Color||
-|$config.link-text-decoration-thickness|Number||
-|$config.link-text-underline-offset|Number||
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|backdrop-blur|Number|Backdrop blur amount used on elements/components||
+|backdrop-color|Color|Backdrop color (modal overlays, etc)||
+|list-item-indent|Map||1.5em|
+|text-shadow|List|Common text shadow||
+|border-radius|Number|Common element border radius||
+|border-radius-large|Number|Common element border radius (large)||
+|border-radius-small|Number|Common element border radius (small)||
+|box-shadow|List|Box-shadow definition for elements that are on top of page||
+|box-shadow-above|List|Box-shadow definition for elements that are above the page (fixed items, etc)||
+|box-shadow-hover|Map||0 1px 5px color.get('box-shadow-hover')|
+|box-shadow-inset|Map||0 1px 5px color.get('box-shadow')|
+|box-shadow-raised|List|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)||
+|link-text-decoration|String|||
+|link-text-decoration-color|Color|||
+|link-text-decoration-default|String|Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)||
+|link-text-decoration-color-hover|Color|||
+|link-text-underline-offset|Number|||
+|link-text-decoration-style|String|||
+|link-text-decoration-style-hover|String|||
+|link-text-decoration-thickness|Number|||
+|margin|Number|Common element margin||
+|margin-large|Number|Common element margin (large)||
+|margin-small|Number|Common element margin (small) (default for lists)||
+|ol-list-style-type|String|Ordered list type (level 1)||
+|ol-list-style-type-2|String|Ordered list type (level 2)||
+|ol-list-style-type-3|String|Ordered list type (level 3)||
+|ul-list-style-type|String|||
+|ul-list-style-type-2|String|||
+|ul-list-style-type-3|String|||
 
     
 
@@ -141,8 +144,8 @@ $rule-styles: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 72-73
-- **Lines (code):** 75-78
+- **Lines (comments):** 75-76
+- **Lines (code):** 78-81
     </details>
     
 
@@ -178,8 +181,8 @@ $rule-margins: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 80-81
-- **Lines (code):** 83-88
+- **Lines (comments):** 83-84
+- **Lines (code):** 86-91
     </details>
     
   
@@ -210,8 +213,8 @@ Change modules $config
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 90-92
-- **Lines (code):** 93-95
+- **Lines (comments):** 93-95
+- **Lines (code):** 96-98
     </details>
     
 
@@ -252,8 +255,8 @@ Sets rule styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 105-106
-- **Lines (code):** 108-110
+- **Lines (comments):** 108-109
+- **Lines (code):** 111-113
     </details>
     
 
@@ -293,8 +296,8 @@ Sets rule margins
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 112-113
-- **Lines (code):** 115-117
+- **Lines (comments):** 115-116
+- **Lines (code):** 118-120
     </details>
     
 
@@ -334,8 +337,8 @@ Get full rule CSS (style and margin)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 133-134
-- **Lines (code):** 136-142
+- **Lines (comments):** 136-137
+- **Lines (code):** 139-145
     </details>
     
 
@@ -370,8 +373,8 @@ Print link styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 152-154
-- **Lines (code):** 156-178
+- **Lines (comments):** 155-157
+- **Lines (code):** 159-181
     </details>
     
 
@@ -412,8 +415,8 @@ Print the defautl link styling (no hover and focus styles)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 180-180
-- **Lines (code):** 182-195
+- **Lines (comments):** 183-183
+- **Lines (code):** 185-198
     </details>
     
 
@@ -444,8 +447,8 @@ Print the ordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 197-198
-- **Lines (code):** 200-224
+- **Lines (comments):** 200-201
+- **Lines (code):** 203-227
     </details>
     
 
@@ -485,8 +488,8 @@ Print the unordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 226-227
-- **Lines (code):** 229-250
+- **Lines (comments):** 229-230
+- **Lines (code):** 232-253
     </details>
     
 
@@ -526,8 +529,8 @@ Hide text for assistive devices
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 252-257
-- **Lines (code):** 259-277
+- **Lines (comments):** 255-260
+- **Lines (code):** 262-280
     </details>
     
 
@@ -581,8 +584,8 @@ Get a config option
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 97-99
-- **Lines (code):** 101-103
+- **Lines (comments):** 100-102
+- **Lines (code):** 104-106
     </details>
     
 
@@ -624,8 +627,8 @@ Get a rule style
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 119-120
-- **Lines (code):** 122-124
+- **Lines (comments):** 122-123
+- **Lines (code):** 125-127
     </details>
     
 
@@ -666,8 +669,8 @@ Sets rule margin
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 126-127
-- **Lines (code):** 129-131
+- **Lines (comments):** 129-130
+- **Lines (code):** 132-134
     </details>
     
 

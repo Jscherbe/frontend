@@ -8,20 +8,20 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} small-x 
-/// @prop {Number} small 
-/// @prop {Number} default Base unit of measurent
-/// @prop {Number} large 
-/// @prop {Number} large-x 
-/// @prop {Number} large-xx 
+/// @prop {Number} default [1rem] Base unit of measurent
+/// @prop {Number} large [1rem * 2]
+/// @prop {Number} large-x [1rem * 3]
+/// @prop {Number} large-xx [1rem * 4]
+/// @prop {Number} small [1rem * 0.75]
+/// @prop {Number} small-x [1rem * 0.5]
 
 $config: (
   "default" : 1rem,
   "large" : 1rem * 2,
   "large-x" : 1rem * 3,
   "large-xx" : 1rem * 4,
-  "small-x" : 1rem * 0.5,
   "small" : 1rem * 0.75,
+  "small-x" : 1rem * 0.5,
 ) !default;
 
 /// Update the units config

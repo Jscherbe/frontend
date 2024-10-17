@@ -55,9 +55,29 @@ $config: (
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** variable
-- **Lines (comments):** 22-23
-- **Lines (code):** 24-38
+- **Lines (comments):** 22-35
+- **Lines (code):** 37-51
     </details>
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|body-line-height|Map|true|
+|image-margin-bottom|Map|1rem|
+|image-margin-top|Map|2.5rem|
+|name-margin-bottom|Map|1rem|
+|padding-y|Map|2em|
+|title-font-style|Map|italic|
+|quote-mark-character|Map|"\201c"|
+|quote-mark-color|Map|null|
+|quote-mark-font-family|Map|"Georgia"|
+|quote-mark-font-size|Map|3.75em|
+|quote-mark-enabled|Map|true|
+|quote-mark-line-height|Map|0.35|
+
     
   
 
@@ -87,8 +107,8 @@ Change modules $config
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 53-55
+- **Lines (code):** 57-59
     </details>
     
 
@@ -129,8 +149,8 @@ Prints component styles
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-96
+- **Lines (comments):** 70-72
+- **Lines (code):** 74-109
     </details>
     
 
@@ -178,8 +198,8 @@ Get a config option
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** function
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-55
+- **Lines (comments):** 61-63
+- **Lines (code):** 65-68
     </details>
     
 

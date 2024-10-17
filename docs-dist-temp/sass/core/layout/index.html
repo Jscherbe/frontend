@@ -5296,9 +5296,9 @@
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"margin"</span><span class="pjs-token pjs-punctuation">:</span>            2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"max-width"</span><span class="pjs-token pjs-punctuation">:</span>         90rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"z-index-sticky"</span><span class="pjs-token pjs-punctuation">:</span>    100<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"z-index-above"</span><span class="pjs-token pjs-punctuation">:</span>     450<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"z-index-fixed"</span><span class="pjs-token pjs-punctuation">:</span>     1000
+  <span class="pjs-token pjs-string">"z-index-fixed"</span><span class="pjs-token pjs-punctuation">:</span>     1000<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"z-index-sticky"</span><span class="pjs-token pjs-punctuation">:</span>    100<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -5316,34 +5316,40 @@
 <tr>
 <th style="text-align:left">Name</th>
 <th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
 <th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">$config.max-width</td>
+<td style="text-align:left">margin</td>
 <td style="text-align:left">Number</td>
-<td style="text-align:left">Common max-width for site</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.margin</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">2rem</td>
 <td style="text-align:left">Common margin for site</td>
 </tr>
 <tr>
-<td style="text-align:left">$config.z-index-fixed</td>
+<td style="text-align:left">max-width</td>
 <td style="text-align:left">Number</td>
+<td style="text-align:left">90rem</td>
+<td style="text-align:left">Common max-width for site</td>
+</tr>
+<tr>
+<td style="text-align:left">z-index-above</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">1000</td>
+<td style="text-align:left">Common z-index, below sticky</td>
+</tr>
+<tr>
+<td style="text-align:left">z-index-fixed</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">100</td>
 <td style="text-align:left">Common z-index, above everything</td>
 </tr>
 <tr>
-<td style="text-align:left">$config.z-index-sticky</td>
+<td style="text-align:left">z-index-sticky</td>
 <td style="text-align:left">Number</td>
+<td style="text-align:left">450</td>
 <td style="text-align:left">Common z-index for sticky or stuck items</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.z-index-above</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common z-index, below sticky</td>
 </tr>
 </tbody>
 </table>

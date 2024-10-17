@@ -52,10 +52,10 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.debug-maps|Boolean|Debugs include map print outs|
-|$config.file-header-comments|Boolean|Remove comment headers if you'd like|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|debug-maps|Boolean|true|Debugs include map print outs|
+|file-header-comments|Boolean|true|Remove comment headers if you'd like|
 
     
   

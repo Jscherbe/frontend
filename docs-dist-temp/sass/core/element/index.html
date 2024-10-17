@@ -5300,10 +5300,10 @@
   <span class="pjs-token pjs-string">"border-radius-small"</span><span class="pjs-token pjs-punctuation">:</span>              3px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius-large"</span><span class="pjs-token pjs-punctuation">:</span>              12px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">:</span>                       0 1px 5px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow-hover"</span><span class="pjs-token pjs-punctuation">:</span>                 0 1px 5px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow-hover'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow-raised"</span><span class="pjs-token pjs-punctuation">:</span>                0 1px 12px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow-above"</span><span class="pjs-token pjs-punctuation">:</span>                 0 1px 20px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow-hover"</span><span class="pjs-token pjs-punctuation">:</span>                 0 1px 5px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow-hover'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow-inset"</span><span class="pjs-token pjs-punctuation">:</span>                 0 1px 5px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow-raised"</span><span class="pjs-token pjs-punctuation">:</span>                0 1px 12px color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">'box-shadow'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-text-decoration"</span><span class="pjs-token pjs-punctuation">:</span>             underline<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-text-decoration-color"</span><span class="pjs-token pjs-punctuation">:</span>       initial<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-text-decoration-color-hover"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5328,8 +5328,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 10-37</li>
-<li><strong>Lines (code):</strong> 39-70  </details>
+<li><strong>Lines (comments):</strong> 10-40</li>
+<li><strong>Lines (code):</strong> 42-73  </details>
 </li>
 </ul>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5339,137 +5339,182 @@
 <th style="text-align:left">Name</th>
 <th style="text-align:left">Type</th>
 <th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">$config.backdrop-blur</td>
+<td style="text-align:left">backdrop-blur</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">Backdrop blur amount used on elements/components</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.backdrop-color</td>
+<td style="text-align:left">backdrop-color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">Backdrop color (modal overlays, etc)</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.box-shadow</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">Box-shadow definition for elements that are on top of page</td>
+<td style="text-align:left">list-item-indent</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">1.5em</td>
 </tr>
 <tr>
-<td style="text-align:left">$config.box-shadow-raised</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">Box-shadow definition for elements that are raised off of the page (dropdowns, etc)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.box-shadow-above</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">Box-shadow definition for elements that are above the page (fixed items, etc)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.border-radius</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common element border radius</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.border-radius-small</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common element border radius (small)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.border-radius-large</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common element border radius (large)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.text-shadow</td>
+<td style="text-align:left">text-shadow</td>
 <td style="text-align:left">List</td>
 <td style="text-align:left">Common text shadow</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.margin-small</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common element margin (small) (default for lists)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.margin</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common element margin</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.margin-large</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">Common element margin (large)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.ol-list-style-type</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">Ordered list type (level 1)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.ol-list-style-type-2</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">Ordered list type (level 2)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.ol-list-style-type-3</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">Ordered list type (level 3)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.ul-list-style-type</td>
-<td style="text-align:left">String</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.ul-list-style-type-2</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">border-radius</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Common element border radius</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.ul-list-style-type-3</td>
-<td style="text-align:left">String</td>
+<td style="text-align:left">border-radius-large</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Common element border radius (large)</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.link-text-decoration-default</td>
+<td style="text-align:left">border-radius-small</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Common element border radius (small)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">Box-shadow definition for elements that are on top of page</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow-above</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">Box-shadow definition for elements that are above the page (fixed items, etc)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow-hover</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0 1px 5px color.get('box-shadow-hover')</td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow-inset</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0 1px 5px color.get('box-shadow')</td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow-raised</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">Box-shadow definition for elements that are raised off of the page (dropdowns, etc)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">link-text-decoration</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">link-text-decoration-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">link-text-decoration-default</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)</td>
-</tr>
-<tr>
-<td style="text-align:left">$config.link-text-decoration</td>
-<td style="text-align:left">String</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.link-text-decoration-style</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">$config.link-text-decoration-color</td>
+<td style="text-align:left">link-text-decoration-color-hover</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.link-text-decoration-style-hover</td>
+<td style="text-align:left">link-text-underline-offset</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">link-text-decoration-style</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">$config.link-text-decoration-color-hover</td>
-<td style="text-align:left">Color</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.link-text-decoration-thickness</td>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">link-text-decoration-style-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$config.link-text-underline-offset</td>
+<td style="text-align:left">link-text-decoration-thickness</td>
 <td style="text-align:left">Number</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">margin</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Common element margin</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">margin-large</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Common element margin (large)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">margin-small</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Common element margin (small) (default for lists)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ol-list-style-type</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Ordered list type (level 1)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ol-list-style-type-2</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Ordered list type (level 2)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ol-list-style-type-3</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Ordered list type (level 3)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ul-list-style-type</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ul-list-style-type-2</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ul-list-style-type-3</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
 </tbody>
@@ -5491,8 +5536,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 72-73</li>
-<li><strong>Lines (code):</strong> 75-78  </details>
+<li><strong>Lines (comments):</strong> 75-76</li>
+<li><strong>Lines (code):</strong> 78-81  </details>
 </li>
 </ul>
 <div class="sassdoc-item-header">
@@ -5514,8 +5559,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 80-81</li>
-<li><strong>Lines (code):</strong> 83-88  </details>
+<li><strong>Lines (comments):</strong> 83-84</li>
+<li><strong>Lines (code):</strong> 86-91  </details>
 </li>
 </ul>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5532,8 +5577,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 90-92</li>
-<li><strong>Lines (code):</strong> 93-95  </details>
+<li><strong>Lines (comments):</strong> 93-95</li>
+<li><strong>Lines (code):</strong> 96-98  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -5575,8 +5620,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 105-106</li>
-<li><strong>Lines (code):</strong> 108-110  </details>
+<li><strong>Lines (comments):</strong> 108-109</li>
+<li><strong>Lines (code):</strong> 111-113  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5613,8 +5658,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 112-113</li>
-<li><strong>Lines (code):</strong> 115-117  </details>
+<li><strong>Lines (comments):</strong> 115-116</li>
+<li><strong>Lines (code):</strong> 118-120  </details>
 </li>
 </ul>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
@@ -5651,8 +5696,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 133-134</li>
-<li><strong>Lines (code):</strong> 136-142  </details>
+<li><strong>Lines (comments):</strong> 136-137</li>
+<li><strong>Lines (code):</strong> 139-145  </details>
 </li>
 </ul>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -5685,8 +5730,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 152-154</li>
-<li><strong>Lines (code):</strong> 156-178  </details>
+<li><strong>Lines (comments):</strong> 155-157</li>
+<li><strong>Lines (code):</strong> 159-181  </details>
 </li>
 </ul>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -5728,8 +5773,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 180-180</li>
-<li><strong>Lines (code):</strong> 182-195  </details>
+<li><strong>Lines (comments):</strong> 183-183</li>
+<li><strong>Lines (code):</strong> 185-198  </details>
 </li>
 </ul>
 <h4 id="require-4" tabindex="-1">Require</h4>
@@ -5749,8 +5794,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 197-198</li>
-<li><strong>Lines (code):</strong> 200-224  </details>
+<li><strong>Lines (comments):</strong> 200-201</li>
+<li><strong>Lines (code):</strong> 203-227  </details>
 </li>
 </ul>
 <h4 id="parameters-5" tabindex="-1">Parameters</h4>
@@ -5787,8 +5832,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 226-227</li>
-<li><strong>Lines (code):</strong> 229-250  </details>
+<li><strong>Lines (comments):</strong> 229-230</li>
+<li><strong>Lines (code):</strong> 232-253  </details>
 </li>
 </ul>
 <h4 id="parameters-6" tabindex="-1">Parameters</h4>
@@ -5825,8 +5870,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 252-257</li>
-<li><strong>Lines (code):</strong> 259-277  </details>
+<li><strong>Lines (comments):</strong> 255-260</li>
+<li><strong>Lines (code):</strong> 262-280  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5864,8 +5909,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 97-99</li>
-<li><strong>Lines (code):</strong> 101-103  </details>
+<li><strong>Lines (comments):</strong> 100-102</li>
+<li><strong>Lines (code):</strong> 104-106  </details>
 </li>
 </ul>
 <h4 id="parameters-8" tabindex="-1">Parameters</h4>
@@ -5908,8 +5953,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 119-120</li>
-<li><strong>Lines (code):</strong> 122-124  </details>
+<li><strong>Lines (comments):</strong> 122-123</li>
+<li><strong>Lines (code):</strong> 125-127  </details>
 </li>
 </ul>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>
@@ -5947,8 +5992,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 126-127</li>
-<li><strong>Lines (code):</strong> 129-131  </details>
+<li><strong>Lines (comments):</strong> 129-130</li>
+<li><strong>Lines (code):</strong> 132-134  </details>
 </li>
 </ul>
 <h4 id="parameters-10" tabindex="-1">Parameters</h4>

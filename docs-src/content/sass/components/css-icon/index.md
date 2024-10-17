@@ -60,8 +60,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 23-31
-- **Lines (code):** 33-52
+- **Lines (comments):** 23-37
+- **Lines (code):** 39-58
     </details>
     
 
@@ -72,11 +72,17 @@ $config: (
 |:--|:--|:--|:--|
 |active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
 |color|Color|currentColor|The color of the css-icon.|
+|font-family|Map|('Courier New', monospace)||
+|margin|Map|(0 0.15em)||
 |size|Dimension|1.1em|The width, height and font size of the css-icon.|
 |stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
 |stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
+|text-offset|Map|0.05em||
+|text-size|Map|1em||
+|vertical-align|Map|-0.2em||
 |transition-duration|Time|200ms|The duration length for the transition.|
 |transition-timing-function|CssValue|ease-in|The timing function for the transition.|
+|stroke-sizes|Map|Map||
 
     
   
@@ -107,8 +113,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 54-56
-- **Lines (code):** 58-60
+- **Lines (comments):** 60-62
+- **Lines (code):** 64-66
     </details>
     
 
@@ -149,8 +155,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 86-88
-- **Lines (code):** 90-421
+- **Lines (comments):** 92-94
+- **Lines (code):** 96-427
     </details>
     
 
@@ -198,8 +204,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 62-64
-- **Lines (code):** 66-68
+- **Lines (comments):** 68-70
+- **Lines (code):** 72-74
     </details>
     
 
