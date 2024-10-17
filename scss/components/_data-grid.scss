@@ -19,22 +19,23 @@
 /// @prop {String} attribute [data-grid] Default attribute to use for grid mixin.
 /// @prop {String} attribute-container [data-grid-container] Default attribute to use for grid's container.
 /// @prop {Number} gutter [14px] Default gutter for grid mixin.
+/// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
 /// @prop {String} position-class-column-first [position-column-first] Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)
 /// @prop {String} position-class-column-last [position-column-last] See definition above
 /// @prop {String} position-class-row-first [position-row-first] See definition above
 /// @prop {String} position-class-row-last [position-row-last] See definition above
-/// @prop {Map} extra-breakpoints [14px] Default extra breakpoints for grid mixin
 
 $config: (
+  "columns":             12,
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
-  "breakpoint":          false,                   // Fallback to default
-  "columns":             12,
   "gutter":              14px,
+  "breakpoint":          false,                   // Fallback to default
   "position-class-column-first": "position-column-first",
   "position-class-column-last":  "position-column-last",
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
+  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
   "rule-size" : 1px,
   "rule-color" : "rule",
@@ -50,11 +51,11 @@ $config: (
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
-      "gutter":     18px
+      "gutter":     15px
     ),
     "large" : (
       "breakpoint": "large",
-      "gutter":     24px
+      "gutter":     20px
     )
   ),
 ) !default;
@@ -75,6 +76,10 @@ $config: (
 @function get($name) {
   @return utils.require-map-get($config, $name, "data-grid [config]");
 }
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
 
 @function get-gutter($name: null, $custom-map: null) {
   @if (not $name) {
@@ -108,6 +113,7 @@ $config: (
 /// @param {Number} $breakpoint Breakpoint key for starting the grid
 /// @param {Map} $extra-breakpoints Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smallest to largest)
 /// @param {Number} $gutter Size in pixels for the gutters
+/// @param {Boolean} $include-rules Print styles for including rules
 /// @param {Number} $rule-size Size of the rule (border/separator)
 /// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
 /// @param {String} $extra-gutter-scales A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`
@@ -116,8 +122,9 @@ $config: (
 @mixin create(
   $columns: get("columns"),
   $breakpoint: get-default-breakpoint(),
-  $extra-breakpoints: get("extra-breakpoints"),
+  $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
   $gutter: get("gutter"),
+  $include-rules: false,
   $rule-size: get("rule-size"),
   $rule-color: get("rule-color"),
   $extra-rule-styles: get("extra-rule-styles"),
@@ -129,7 +136,6 @@ $config: (
   $sticky-top: get("sticky-top"),
   $sticky-bottom: get("sticky-bottom")
 ) {
-  @debug $extra-breakpoints;
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
   $select-item: '[#{ $attribute-item }]';
