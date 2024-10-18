@@ -1120,6 +1120,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/base/root/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Root
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/base/typography/" 
           
         >
@@ -3688,6 +3707,25 @@
           
         <a 
           class="nav-tree__link  " 
+          href="/sass/base/root/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Root
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
           href="/sass/base/typography/" 
           
         >
@@ -5284,6 +5322,9 @@
 
                     <li><a href="#function-list-without">list-without()</a>
             		</li>
+
+                    <li><a href="#function-list-join">list-join()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -6273,6 +6314,69 @@
 <tr>
 <td style="text-align:left">List</td>
 <td style="text-align:left">New list with item removed</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-list-join" tabindex="-1">list-join()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Join a list with a separator</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 316-320</li>
+<li><strong>Lines (code):</strong> 322-337  </details>
+</li>
+</ul>
+<h4 id="parameters-16" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$list</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">List to join</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">$separator</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Separator to use</td>
+<td style="text-align:left">&quot;, &quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">$to-string</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">The resulting list with join separator will be converted to a string (false will return new list with separators added between original items</td>
+<td style="text-align:left">true</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-8" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">List</td>
 </tr>
 </tbody>
 </table>

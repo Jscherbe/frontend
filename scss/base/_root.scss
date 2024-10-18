@@ -1,0 +1,26 @@
+////
+/// @group root
+////
+
+@use "sass:map";
+
+@use "../utils";
+
+/// Prints elements base styles
+/// @name base-elements-styles
+/// @example scss
+///  @include ulu.base-elements-styles();
+
+@mixin styles {
+  @include utils.file-header('base', 'root');
+  // Core/default css-vars
+  :root {
+    @include custom-properties();
+  }
+}
+
+@mixin custom-properties() {
+  --ulu-sticky-top-offset: 0px; // Should be adjusted by user
+  --ulu-sticky-bottom-offset: 0px; // Should be adjusted by user
+  --ulu-scrollbar-width: 0px; // Needs to be set by JS
+}

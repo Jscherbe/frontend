@@ -920,5 +920,52 @@ Remove an item from a list (not map)
 |List|New list with item removed|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  list-join() {#function-list-join}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Join a list with a separator
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 316-320
+- **Lines (code):** 322-337
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|$list|`List`|List to join||
+|$separator|`String`|Separator to use|", "|
+|$to-string|`Boolean`|The resulting list with join separator will be converted to a string (false will return new list with separators added between original items|true|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|String|List|If separator was +, the result would be "value1 + value2" or (value1, "+", value2) depending on $to-string argument|
+
+    
   
   

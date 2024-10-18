@@ -43,8 +43,8 @@ $config: (
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** variable
-- **Lines (comments):** 12-14
-- **Lines (code):** 16-18
+- **Lines (comments):** 14-16
+- **Lines (code):** 18-20
     </details>
     
 
@@ -84,8 +84,8 @@ Change modules $config
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 20-23
-- **Lines (code):** 25-27
+- **Lines (comments):** 22-25
+- **Lines (code):** 27-29
     </details>
     
 
@@ -137,8 +137,8 @@ Outputs a single custom property declaration
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 72-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 74-81
+- **Lines (code):** 83-85
     </details>
     
 
@@ -194,8 +194,8 @@ Outputs a map as custom properties
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 85-91
-- **Lines (code):** 93-97
+- **Lines (comments):** 87-93
+- **Lines (code):** 95-99
     </details>
     
 
@@ -250,8 +250,8 @@ Declare a custom property for current breakpoint
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 99-107
-- **Lines (code):** 109-121
+- **Lines (comments):** 101-109
+- **Lines (code):** 111-123
     </details>
     
 
@@ -308,8 +308,8 @@ Declare a custom property for each breakpoint size
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
-- **Lines (comments):** 123-130
-- **Lines (code):** 132-143
+- **Lines (comments):** 125-132
+- **Lines (code):** 134-145
     </details>
     
 
@@ -343,6 +343,78 @@ Declare each property in a map as a custom property
 - [declare()](/sass/core/cssvar/#mixin-declare)
 - [get-size-value()](/sass/core/breakpoint/#function-get-size-value)
   
+
+
+<div class="sassdoc-item-header">
+
+###  declare-theme-values() {#mixin-declare-theme-values}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Outputs css vars for a specific type from a theme map
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _cssvar.scss
+- **Group:** cssvar
+- **Type:** mixin
+- **Lines (comments):** 147-168
+- **Lines (code):** 170-177
+    </details>
+    
+
+#### Examples
+
+Example of theme map and usage      
+
+
+``` scss
+// Defining a map to hold my color theme values
+$color-themes: (
+  "color-button" : (
+    "light" : blue,
+    "dark" : red
+  ), ...
+);
+
+// Declaring default theme
+:root {
+  @include ulu.cssvar-declare-theme-values($color-themes, "light");
+}
+
+// Creating class to use on body/other elements to switch to dark theme
+.theme-dark {
+  @include ulu.cssvar-declare-theme-values($color-themes, "dark");
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$theme|`Map`|The map containing the values. Example (|
+|$key|`String`|The key used to retrieve values from the map.|
+|$prefix|`String`|The optional prefix for CSS variables.|
+
+    
+
+#### Require
+
+- [declare()](/sass/core/cssvar/#mixin-declare)
+- [get()](/sass/core/breakpoint/#function-get)
+  
   
 
 ## Functions
@@ -371,8 +443,8 @@ Get a config option
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
-- **Lines (comments):** 29-33
-- **Lines (code):** 35-37
+- **Lines (comments):** 31-35
+- **Lines (code):** 37-39
     </details>
     
 
@@ -434,8 +506,8 @@ Get a custom property name (with optional prefix)
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
-- **Lines (comments):** 39-44
-- **Lines (code):** 46-52
+- **Lines (comments):** 41-46
+- **Lines (code):** 48-54
     </details>
     
 
@@ -492,8 +564,8 @@ Function to use a custom property within a declaration value
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
-- **Lines (comments):** 54-62
-- **Lines (code):** 64-70
+- **Lines (comments):** 56-64
+- **Lines (code):** 66-72
     </details>
     
 
@@ -534,6 +606,159 @@ Print an custom property as a value
 #### Require
 
 - [name()](/sass/core/cssvar/#function-name)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  join() {#function-join}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Joins a list of cssvar names
+- Use to "+", "-" and then use in calc
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _cssvar.scss
+- **Group:** cssvar
+- **Type:** function
+- **Lines (comments):** 179-183
+- **Lines (code):** 185-191
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$names|`List`|list of names (string), like if using use|
+|$separator|`String`|Separator to use when joining custom property var statements|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|String|For example if separator was "+" would result in "var(--some-prop) + var(--another-prop)"|
+
+    
+
+#### Require
+
+- [use()](/sass/core/cssvar/#function-use)
+- list-join()
+  
+
+
+<div class="sassdoc-item-header">
+
+###  add() {#function-add}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+For any names passed will join them with "+" and wrap in calc
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _cssvar.scss
+- **Group:** cssvar
+- **Type:** function
+- **Lines (comments):** 193-195
+- **Lines (code):** 197-199
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`String`|Name string (pass multiple comma separated)|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|String|A string like "calc(var(--some-prop) + var(--another-prop))"|
+
+    
+
+#### Require
+
+- [join()](/sass/core/cssvar/#function-join)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  subtract() {#function-subtract}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+For any names passed will join them with "-" and wrap in calc
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _cssvar.scss
+- **Group:** cssvar
+- **Type:** function
+- **Lines (comments):** 201-203
+- **Lines (code):** 205-207
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`String`|Name string (pass multiple comma separated)|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|String|A string like "calc(var(--some-prop) - var(--another-prop))"|
+
+    
+
+#### Require
+
+- [join()](/sass/core/cssvar/#function-join)
   
   
   
