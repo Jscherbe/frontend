@@ -57,8 +57,6 @@
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 
 // todo
-// replace min-height with aspect ratio. use "overlay-aspect-ratio" and "aspect-ratio" instead of "image-ratio"
-// Create a Boolean to check if they want the shade mask on top of body. 
 // sass color adjust for smooth transition. Add a comment for this if we can’t get to this
 
 $config: (
@@ -327,12 +325,11 @@ $config: (
   // body + footer {
   // means body keeps before pseudo element while footer loses it
   #{ $prefix }--overlay {
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    height: auto;
+    // overflow: hidden;
+    aspect-ratio: get("overlay-aspect-ratio");
+    height: min-content;
     #{ $prefix }__body {
       position: relative;
-      margin-top: auto;
       flex-grow: 0;
       z-index: 2;
       color: get("color-overlay");
@@ -341,6 +338,7 @@ $config: (
       padding-top: get("overlay-body-padding-y");
       padding-bottom: get("overlay-body-padding-y");
       @if (get("overlay-shading")) {
+        margin-top: 4rem;
         &::before {
           content: "";
           position: absolute;

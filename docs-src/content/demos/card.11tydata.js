@@ -69,7 +69,7 @@ const cardTypes= {
               <a class="card__title-link" href="#" data-ulu-proxy-click-source="">Card with background image dasdf</a>
             </h5>
             <div>
-              Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
+              Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.Adding "card--overlay" to the parent card to have the image cover the entire background. Text will be displayed over a semi-transparent gradient.
             </div>
           </div>
           <div class="card__image">
