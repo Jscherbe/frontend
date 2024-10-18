@@ -53,9 +53,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -101,9 +98,6 @@ Update the units config
 - **Lines (code):** 34-36
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -164,9 +158,6 @@ Get a unit by name (preset) or number (multiplier of base)
 - **Lines (code):** 42-47
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

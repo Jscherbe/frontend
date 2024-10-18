@@ -1,8 +1,11 @@
 import { headline, titleCase } from "@ulu/markdown-output-utils";
 
 export default ({ item, headlineLevel }) => {
-  console.log(item);
-  return `
-Hello World
+  const { demo } = item.data;
+  if (demo) {
+    return `
+${ demo }
   `;
+  }
+  
 };

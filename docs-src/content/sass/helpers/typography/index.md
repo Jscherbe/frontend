@@ -41,9 +41,6 @@ Prints Typography Helper styles
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       

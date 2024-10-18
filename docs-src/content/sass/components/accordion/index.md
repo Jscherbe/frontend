@@ -73,9 +73,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -142,9 +139,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -187,7 +181,7 @@ Prints component styles
     </details>
     
 
-Hello World
+accordion test
   
 
 #### Examples
@@ -238,9 +232,6 @@ Get a config option
 - **Lines (code):** 87-89
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

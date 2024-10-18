@@ -72,9 +72,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -142,9 +139,6 @@ $sizes: get-default-sizes();
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -197,9 +191,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -247,9 +238,6 @@ Break word stradegy
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -290,9 +278,6 @@ Update the typography presets map
 - **Lines (code):** 203-205
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -357,9 +342,6 @@ Print's the responsive type formula
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -401,9 +383,6 @@ Print a typography size (font-size, line-height)
 - **Lines (code):** 302-342
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -462,9 +441,6 @@ Get a config option
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -512,9 +488,6 @@ Get scale of the base font-size
 - **Lines (code):** 90-92
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -572,9 +545,6 @@ Get scale of the line-height
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -631,9 +601,6 @@ Convert pixel value to rem value based on typography $font-size
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -688,9 +655,6 @@ Changes pixels to em
 - **Lines (code):** 120-127
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -750,9 +714,6 @@ Creates a size map
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -802,9 +763,6 @@ Function that returns default sizes
     </details>
     
 
-Hello World
-  
-
 #### Todos
 
 - Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
@@ -843,9 +801,6 @@ Get a size's map
 - **Lines (code):** 211-213
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -903,9 +858,6 @@ Check if a typography size exists
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -962,9 +914,6 @@ Forces conversion to unitless line-height
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -1018,9 +967,6 @@ Print a value from the size and convert it (to appropriate unit for framework)
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -1070,9 +1016,6 @@ Get a sizes property value that doesn't need conversion
 - **Lines (code):** 280-287
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

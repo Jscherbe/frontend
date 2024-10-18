@@ -63,9 +63,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Todos
 
 - 
@@ -75,9 +72,6 @@ Hello World
 Module Settings
     
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -110,9 +104,6 @@ Change modules $config
 - **Lines (code):** 65-67
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -156,9 +147,6 @@ Set sizes map
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -200,9 +188,6 @@ Prints adaptive spacing component styles
 - **Lines (code):** 89-261
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -252,9 +237,6 @@ Get a config option
 - **Lines (code):** 81-83
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

@@ -52,9 +52,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -108,9 +105,6 @@ $containers: (
 - **Lines (code):** 49-58
     </details>
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -143,9 +137,6 @@ Change modules $config
 - **Lines (code):** 34-36
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -190,9 +181,6 @@ Set layout containers
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -236,9 +224,6 @@ ie. \{ top: $containers-padding; }
 - **Lines (code):** 89-101
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -289,9 +274,6 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -336,9 +318,6 @@ Print the containers padding properties
 - **Lines (code):** 150-176
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -386,9 +365,6 @@ Print all container styles for a given container
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -433,9 +409,6 @@ Prints clearfix styles
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -462,9 +435,6 @@ Removes scrollbar with CSS
 - **Lines (code):** 244-250
     </details>
     
-
-Hello World
-  
 
 
 <div class="sassdoc-item-header">
@@ -494,9 +464,6 @@ Layout utility for absolute (zero on all sides)
 - **Lines (code):** 255-266
     </details>
     
-
-Hello World
-  
   
 
 ## Functions
@@ -529,9 +496,6 @@ Get a config option
 - **Lines (code):** 41-43
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -575,9 +539,6 @@ Get a container map
 - **Lines (code):** 73-81
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -623,9 +584,6 @@ Get a containers padding value
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -670,9 +628,6 @@ Get containers padding X value (side)
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -714,9 +669,6 @@ Get containers padding Y value (ends)
 - **Lines (code):** 190-192
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

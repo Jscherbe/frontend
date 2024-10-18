@@ -75,9 +75,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -145,9 +142,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -189,9 +183,6 @@ Prints component styles
 - **Lines (code):** 115-243
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -247,9 +238,6 @@ Get a config option
 - **Lines (code):** 99-102
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

@@ -56,9 +56,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -101,9 +98,6 @@ Change modules $config
 - **Lines (code):** 36-38
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -151,9 +145,6 @@ Get a config option
 - **Lines (code):** 44-46
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

@@ -40,8 +40,5 @@ Prints color-context styles as base classes (top of stylesheet)
 - **Lines (code):** 10-13
     </details>
     
-
-Hello World
-  
   
   

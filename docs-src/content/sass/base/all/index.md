@@ -56,9 +56,6 @@ $all-includes: (
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -90,9 +87,6 @@ $current-includes: $all-includes;
 - **Lines (code):** 44-44
     </details>
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -126,9 +120,6 @@ Change default includes (when user prints modules)
 - **Lines (code):** 50-53
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -172,9 +163,6 @@ Exclude certain items from includes
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -215,9 +203,6 @@ Prints all Base styles
 - **Lines (code):** 68-98
     </details>
     
-
-Hello World
-  
 
 #### Examples
 

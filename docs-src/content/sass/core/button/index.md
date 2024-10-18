@@ -79,9 +79,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -166,9 +163,6 @@ $sizes: (
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -221,9 +215,6 @@ $styles: (
 - **Lines (code):** 110-131
     </details>
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -256,9 +247,6 @@ Change modules $config
 - **Lines (code):** 138-140
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -313,9 +301,6 @@ Set button styles
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -358,9 +343,6 @@ Set Button Sizes
 - **Lines (code):** 164-166
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -405,9 +387,6 @@ Print styles to reset browser button style
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -434,9 +413,6 @@ Print default button styles
 - **Lines (code):** 186-243
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -481,9 +457,6 @@ Mixin to wrap in active selectors
     </details>
     
 
-Hello World
-  
-
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
@@ -515,9 +488,6 @@ Print button size styles for a specific size
 - **Lines (code):** 257-267
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -570,9 +540,6 @@ Print a button style's base styles (not hover)
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -621,9 +588,6 @@ Print a button style's base styles (hover styles only)
 - **Lines (code):** 326-332
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -676,9 +640,6 @@ Print a button style
 - **Lines (code):** 353-369
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -735,9 +696,6 @@ Get a config option
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
 General example, replace module-name with module's name      
@@ -792,9 +750,6 @@ Get a value from a button style
 - **Lines (code):** 275-297
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

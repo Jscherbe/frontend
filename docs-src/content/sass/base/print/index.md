@@ -43,9 +43,6 @@ Printed Media Stylesheet
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       

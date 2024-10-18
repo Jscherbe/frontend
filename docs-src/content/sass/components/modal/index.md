@@ -18,9 +18,6 @@ sassdocGroupName: modal
 Module Settings
     
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -53,9 +50,6 @@ Change modules $config
 - **Lines (code):** 125-127
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -110,9 +104,6 @@ Prints modal component styles
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       
@@ -161,9 +152,6 @@ Get a config option
 - **Lines (code):** 133-136
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

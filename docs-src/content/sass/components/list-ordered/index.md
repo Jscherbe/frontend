@@ -40,8 +40,5 @@ Output styles
 - **Lines (code):** 11-16
     </details>
     
-
-Hello World
-  
   
   

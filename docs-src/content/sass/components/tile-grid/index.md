@@ -50,9 +50,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -100,9 +97,6 @@ $sizes: (
 - **Lines (code):** 30-34
     </details>
     
-
-Hello World
-  
 
 
 <div class="sassdoc-item-header">
@@ -153,9 +147,6 @@ $static-sizes: (
 - **Lines (code):** 39-57
     </details>
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -188,9 +179,6 @@ Change modules $config
 - **Lines (code):** 63-65
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -234,9 +222,6 @@ Set fixed sizes map
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -279,9 +264,6 @@ Set sizes map
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -323,9 +305,6 @@ Prints component styles
 - **Lines (code):** 95-157
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -377,9 +356,6 @@ Get a config option
 - **Lines (code):** 87-89
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

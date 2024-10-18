@@ -41,9 +41,6 @@ Output styles
     </details>
     
 
-Hello World
-  
-
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)

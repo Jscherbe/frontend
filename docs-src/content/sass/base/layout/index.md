@@ -50,9 +50,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -96,9 +93,6 @@ Change modules $config
 - **Lines (code):** 27-29
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -153,9 +147,6 @@ Output Styles
     </details>
     
 
-Hello World
-  
-
 #### Require
 
 - [get()](/sass/base/elements/#function-get)
@@ -192,9 +183,6 @@ Get a config option
 - **Lines (code):** 36-38
     </details>
     
-
-Hello World
-  
 
 #### Examples
 

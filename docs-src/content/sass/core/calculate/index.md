@@ -48,9 +48,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -91,9 +88,6 @@ Change modules $config
 - **Lines (code):** 20-22
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -136,9 +130,6 @@ Provides user with a fallback for a calc that's just an enhancement
 - **Lines (code):** 57-64
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -183,9 +174,6 @@ Get a config option
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -228,9 +216,6 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **Lines (code):** 39-41
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -284,9 +269,6 @@ Convert from pixel to em
 - **Lines (code):** 48-50
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

@@ -78,9 +78,6 @@ $palette: (
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -123,9 +120,6 @@ $contexts: (
 - **Lines (code):** 56-67
     </details>
     
-
-Hello World
-  
 
 #### Map Properties
 
@@ -173,9 +167,6 @@ $color-classes: (
 - **Lines (code):** 70-74
     </details>
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -208,9 +199,6 @@ Used to override or extend the color palette
 - **Lines (code):** 84-86
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -268,9 +256,6 @@ Set ouput classes for all-color-class-styles
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -311,9 +296,6 @@ Set color contexts
 - **Lines (code):** 132-134
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -376,9 +358,6 @@ Prints contexts styles
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -421,9 +400,6 @@ Prints all context styles
 - **Lines (code):** 201-210
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -493,9 +469,6 @@ Outputs all color classes
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       
@@ -557,9 +530,6 @@ Get a color from the palette by name
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -611,9 +581,6 @@ Get a context by name
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -664,9 +631,6 @@ Get a context's value'
 - **Lines (code):** 149-157
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -720,9 +684,6 @@ Lighten a color using the default white by a percentage
 - **Author:** 
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -781,9 +742,6 @@ Darken a color with the default black by a percentage
 - **Author:** Kitty Giraudel
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

@@ -43,9 +43,6 @@ Prints component styles
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       

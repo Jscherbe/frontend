@@ -59,9 +59,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -109,9 +106,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -153,9 +147,6 @@ Prints badge component styles
 - **Lines (code):** 66-126
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -225,9 +216,6 @@ Get a config option
 - **Lines (code):** 46-48
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

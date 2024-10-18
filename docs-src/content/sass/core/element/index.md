@@ -77,9 +77,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -152,9 +149,6 @@ $rule-styles: (
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -191,9 +185,6 @@ $rule-margins: (
 - **Lines (code):** 86-91
     </details>
     
-
-Hello World
-  
   
 
 ## Mixins
@@ -226,9 +217,6 @@ Change modules $config
 - **Lines (code):** 96-98
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -272,9 +260,6 @@ Sets rule styles
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -315,9 +300,6 @@ Sets rule margins
 - **Lines (code):** 118-120
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -360,9 +342,6 @@ Get full rule CSS (style and margin)
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -398,9 +377,6 @@ Print link styles
 - **Lines (code):** 159-181
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -444,9 +420,6 @@ Print the defautl link styling (no hover and focus styles)
     </details>
     
 
-Hello World
-  
-
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
@@ -478,9 +451,6 @@ Print the ordered list items styling
 - **Lines (code):** 203-227
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -523,9 +493,6 @@ Print the unordered list items styling
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -566,9 +533,6 @@ Hide text for assistive devices
 - **Lines (code):** 262-280
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -625,9 +589,6 @@ Get a config option
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -671,9 +632,6 @@ Get a rule style
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -715,9 +673,6 @@ Sets rule margin
 - **Lines (code):** 132-134
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

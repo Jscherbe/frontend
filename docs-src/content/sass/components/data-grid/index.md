@@ -79,9 +79,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -137,9 +134,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -181,9 +175,6 @@ Prints default grid styles, if you want to customize further please use the crea
 - **Lines (code):** 113-115
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -228,9 +219,6 @@ Creates grid css (variation of original data-grid)
 - **Lines (code):** 128-573
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
@@ -286,9 +274,6 @@ Get a config option
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -330,9 +315,6 @@ Prints component styles
 - **Lines (code):** 90-98
     </details>
     
-
-Hello World
-  
 
 #### Examples
 

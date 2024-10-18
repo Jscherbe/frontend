@@ -126,9 +126,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -248,9 +245,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -293,9 +287,6 @@ Required Character styles (ie. "*")
     </details>
     
 
-Hello World
-  
-
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
@@ -327,9 +318,6 @@ Help text / Description
 - **Lines (code):** 495-501
     </details>
     
-
-Hello World
-  
 
 #### Require
 
@@ -363,9 +351,6 @@ Styles for form item that should have label as block and text input
     </details>
     
 
-Hello World
-  
-
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
@@ -398,9 +383,6 @@ Footer of form (with button for example)
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -428,9 +410,6 @@ Footer of form (with button for example)
     </details>
     
 
-Hello World
-  
-
 
 <div class="sassdoc-item-header">
 
@@ -457,9 +436,6 @@ Layout styling for static/app sites
 - **Lines (code):** 529-581
     </details>
     
-
-Hello World
-  
 
 #### Require
 
@@ -497,9 +473,6 @@ Layout styles but using drupal form structures
 - **Lines (code):** 584-612
     </details>
     
-
-Hello World
-  
 
 #### Require
 
@@ -541,9 +514,6 @@ Get a config option
 - **Lines (code):** 193-195
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

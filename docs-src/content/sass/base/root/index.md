@@ -41,9 +41,6 @@ Prints elements base styles
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       

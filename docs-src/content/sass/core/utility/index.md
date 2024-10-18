@@ -41,9 +41,6 @@ Strips the unit from the number
     </details>
     
 
-Hello World
-  
-
 #### Related Links
 
 - [Orginal source (Miriam Suzanne)](https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841)

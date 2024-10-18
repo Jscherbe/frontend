@@ -80,9 +80,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -155,9 +152,6 @@ Change modules $config
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
 General example, replace module-name with module's name      
@@ -211,9 +205,6 @@ Prints modal component styles
     </details>
     
 
-Hello World
-  
-
 #### Examples
 
       
@@ -262,9 +253,6 @@ Get a config option
 - **Lines (code):** 96-98
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 

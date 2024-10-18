@@ -21,9 +21,6 @@ modifier (see in example below).
     
     
 
-Hello World
-  
-
 #### Examples
 
       
@@ -78,9 +75,6 @@ Prints fill context styles
 - **Lines (code):** 34-64
     </details>
     
-
-Hello World
-  
 
 #### Examples
 

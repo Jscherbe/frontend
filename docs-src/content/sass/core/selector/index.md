@@ -49,9 +49,6 @@ $config: (
     </details>
     
 
-Hello World
-  
-
 #### Map Properties
 
 
@@ -97,9 +94,6 @@ Change modules $config
 - **Lines (code):** 27-29
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -154,9 +148,6 @@ Set the class selector overrides
     </details>
     
 
-Hello World
-  
-
 #### Parameters
 
 
@@ -197,9 +188,6 @@ Get a config option
 - **Lines (code):** 36-38
     </details>
     
-
-Hello World
-  
 
 #### Examples
 
@@ -255,9 +243,6 @@ Change a class used in the system (ie. like a component for example)
 - **Lines (code):** 59-70
     </details>
     
-
-Hello World
-  
 
 #### Parameters
 
