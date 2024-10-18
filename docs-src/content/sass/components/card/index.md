@@ -135,10 +135,17 @@ Prints component styles
     
 
 
-        Check out our card.
-        <a class="button" href="/demos/card/">Our Demo</a>
-      
-  
+<div class="callout callout--demo crop-margins">
+
+#### Demo
+
+
+
+<a class="button" href="/demos/Check out our card. [card]">Our Demo</a>
+
+</div>
+
+
 
 #### Examples
 

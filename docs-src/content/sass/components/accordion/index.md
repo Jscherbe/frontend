@@ -182,10 +182,17 @@ Prints component styles
     
 
 
-        Check out our demo
-        <a class="button" href="/demos/accordion/">Our Demo</a>
-      
-  
+<div class="callout callout--demo crop-margins">
+
+#### Demo
+
+
+
+<a class="button" href="/demos/Check out our demo [accordion]">Our Demo</a>
+
+</div>
+
+
 
 #### Examples
 

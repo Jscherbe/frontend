@@ -8,15 +8,10 @@ export default function demo() {
   return {
     name: 'demo',
     parse(text) {
-      const regex = {
-        findLink: /(?<=\[).+?(?=\])/,
-      }
-      const link = regex.findLink.exec(text);
-      const content = text.replace(` [${link}]`,'');
-      return `
-        ${content}
-        <a class="button" href="/demos/${link}/">Our Demo</a>
-      `;
+      const parts = text.split(" - ");
+      const link = parts[0];
+      const content = parts[1] ? parts[1] : null;
+      return { link, content };
     },
     multiple: false,
   }

@@ -177,10 +177,17 @@ Prints default grid styles, if you want to customize further please use the crea
     
 
 
-        Check out our data-grid demo
-        <a class="button" href="/demos/data-grid#align/">Our Demo</a>
-      
-  
+<div class="callout callout--demo crop-margins">
+
+#### Demo
+
+Check out our data-grid demo
+
+<a class="button" href="/demos/data-grid#align">Our Demo</a>
+
+</div>
+
+
 
 #### Examples
 
