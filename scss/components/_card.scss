@@ -152,6 +152,7 @@ $config: (
   transition-timing-function: get("transition-timing-function");
 }
 /// Prints component styles
+/// @demo Check out our card. [card]
 /// @example scss
 ///  @include ulu.component-example-styles();
 

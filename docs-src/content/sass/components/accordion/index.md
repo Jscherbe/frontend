@@ -181,7 +181,10 @@ Prints component styles
     </details>
     
 
-accordion test
+
+        Check out our demo
+        <a class="button" href="/demos/accordion/">Our Demo</a>
+      
   
 
 #### Examples

@@ -129,10 +129,16 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 154-156
-- **Lines (code):** 158-414
+- **Lines (comments):** 154-157
+- **Lines (code):** 159-415
     </details>
     
+
+
+        Check out our card.
+        <a class="button" href="/demos/card/">Our Demo</a>
+      
+  
 
 #### Examples
 

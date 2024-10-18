@@ -171,10 +171,16 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 109-111
-- **Lines (code):** 113-115
+- **Lines (comments):** 109-112
+- **Lines (code):** 114-116
     </details>
     
+
+
+        Check out our data-grid demo
+        <a class="button" href="/demos/data-grid#align/">Our Demo</a>
+      
+  
 
 #### Examples
 
@@ -215,8 +221,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 117-126
-- **Lines (code):** 128-573
+- **Lines (comments):** 118-127
+- **Lines (code):** 129-574
     </details>
     
 
