@@ -2,8 +2,10 @@
 /// @group all
 ////
 
+@forward "root" as root-*;
 @forward "normalize" as normalize-*;
 @forward "print" as print-*;
+@forward "color" as color-*;
 @forward "elements" as elements-*;
 @forward "keyframes" as keyframes-*;
 @forward "typography" as typography-*;
