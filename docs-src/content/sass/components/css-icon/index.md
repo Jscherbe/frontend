@@ -65,6 +65,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -73,16 +76,16 @@ $config: (
 |active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
 |color|Color|currentColor|The color of the css-icon.|
 |font-family|CssBalue|('Courier New', monospace)||
-|margin|CssValue|(0 0.15em)||
+|margin|CssValue|(0 0.15em)|The icon's margin|
 |size|Dimension|1.1em|The width, height and font size of the css-icon.|
 |stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
 |stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
-|text-offset|Dimension|0.05em||
-|text-size|Dimension|1em||
-|vertical-align|Dimension|-0.2em||
+|text-offset|Dimension|0.05em|When using an icon with text, adds a margin to match the text height.|
+|text-size|Dimension|1em|font-size of the icon when using text.|
+|vertical-align|Dimension|-0.2em|@joe-check is this antiquated?|
 |transition-duration|Time|200ms|The duration length for the transition.|
 |transition-timing-function|CssValue|ease-in|The timing function for the transition.|
-|stroke-sizes|Map|Map||
+|stroke-sizes|Map|Map|Modifiers to adjust stroke sizes for the icons.|
 
     
   
@@ -117,6 +120,9 @@ Change modules $config
 - **Lines (code):** 64-66
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -159,6 +165,9 @@ Prints adaptive spacing component styles
 - **Lines (code):** 96-427
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -208,6 +217,9 @@ Get a config option
 - **Lines (code):** 72-74
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

@@ -49,6 +49,9 @@ $aliases: (
 - **Lines (code):** 14-16
     </details>
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -81,6 +84,9 @@ Set aliases or change defaults
 - **Lines (code):** 21-23
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -128,6 +134,9 @@ Get an aliase's path
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -172,6 +181,9 @@ Resolves a Path
 - **Lines (code):** 42-58
     </details>
     
+
+Hello World
+  
 
 #### Examples
 

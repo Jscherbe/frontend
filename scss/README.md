@@ -65,6 +65,6 @@
   ### Organizing Config Options
   
   - Config options are alphabetized with the following exceptions.
-    - If the option relates to a modifier with 3 or more options, these options are alphabetized together below the rest of the config options.
+    - If the options has 3 or more matching first word, they are grouped together at the bottom. (ie: icon-background-color, icon-margin, icon-size)
     - Any maps go at the very bottom. This is to help with scanning the rest of the options
     <!-- add a section about how to document the modules. Add the naming convention rules and the alphabetizing rules -->

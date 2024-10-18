@@ -18,6 +18,9 @@ sassdocGroupName: card-grid
 Module Settings
     
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -50,6 +53,9 @@ Change modules $config
 - **Lines (code):** 30-32
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -92,6 +98,9 @@ Prints component styles
 - **Lines (code):** 46-70
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -141,6 +150,9 @@ Get a config option
 - **Lines (code):** 38-40
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

@@ -79,6 +79,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -94,11 +97,11 @@ $config: (
 |position-class-row-last|String|position-row-last|See definition above|
 |sticky-bottom|Map|var(--ulu-sticky-bottom-offset, 0)|@joe-check do we want to call these a dimension?|
 |sticky-top|Map|var(--ulu-sticky-top-offset, 0)||
-|rule-color|String|"rule"||
-|rule-size|Dimension|1px||
+|rule-color|String|"rule"|The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|rule-size|Dimension|1px|The width of the rule|
 |extra-breakpoints|Map|Map|Default extra breakpoints for grid mixin|
-|extra-gutter-scales|Map|Map||
-|extra-rule-styles|Map|Map||
+|extra-gutter-scales|Map|Map|Extra options for gutter scales.|
+|extra-rule-styles|Map|Map|Extra options for rule styles.|
 
     
   
@@ -133,6 +136,9 @@ Change modules $config
 - **Lines (code):** 74-76
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -175,6 +181,9 @@ Prints default grid styles, if you want to customize further please use the crea
 - **Lines (code):** 113-115
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -219,6 +228,9 @@ Creates grid css (variation of original data-grid)
 - **Lines (code):** 128-573
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -274,6 +286,9 @@ Get a config option
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -315,6 +330,9 @@ Prints component styles
 - **Lines (code):** 90-98
     </details>
     
+
+Hello World
+  
 
 #### Examples
 

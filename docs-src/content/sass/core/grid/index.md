@@ -67,6 +67,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -116,6 +119,9 @@ Change modules $config
 - **Lines (code):** 72-74
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -169,6 +175,9 @@ Creates grid css (variation of original data-grid)
 - **Lines (code):** 120-553
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -225,6 +234,9 @@ Get a config option
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
       
@@ -279,6 +291,9 @@ Pass custom map to get gutter values from it
 - **Lines (code):** 90-98
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

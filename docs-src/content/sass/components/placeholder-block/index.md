@@ -18,6 +18,9 @@ sassdocGroupName: placeholder-block
 Module Settings
     
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -50,6 +53,9 @@ Change modules $config
 - **Lines (code):** 70-72
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -92,6 +98,9 @@ Prints component styles
 - **Lines (code):** 87-117
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -141,6 +150,9 @@ Get a config option
 - **Lines (code):** 78-81
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

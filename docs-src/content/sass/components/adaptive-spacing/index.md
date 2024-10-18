@@ -53,6 +53,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -117,6 +120,9 @@ $sizes: (
 - **Lines (code):** 34-53
     </details>
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -149,6 +155,9 @@ Change modules $config
 - **Lines (code):** 59-61
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -192,6 +201,9 @@ Set sizes map
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -233,6 +245,9 @@ Prints adaptive spacing component styles
 - **Lines (code):** 83-115
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -284,6 +299,9 @@ Get a config option
 - **Lines (code):** 75-77
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

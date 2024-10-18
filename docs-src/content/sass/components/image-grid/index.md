@@ -50,14 +50,17 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|breakpoint|Map|"small"|
-|gap|Map|3px|
-|min-width|Map|math.div(100%, 3)|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|breakpoint|String|"small"|Sets the min breakpoint for the grid to print. This uses breakpoint.scss, so the value of this option should be a breakpoint variable from breakpoint.scss.|
+|gap|Dimension|3px|The gap between images in the grid.|
+|min-width|Dimension|math.div(100%, 3)|The min-width of the images in the grid.|
 
     
   
@@ -92,6 +95,9 @@ Change modules $config
 - **Lines (code):** 29-31
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -134,6 +140,9 @@ Prints component styles
 - **Lines (code):** 45-69
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -183,6 +192,9 @@ Get a config option
 - **Lines (code):** 37-39
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

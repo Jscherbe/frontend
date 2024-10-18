@@ -73,6 +73,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -139,6 +142,9 @@ Change modules $config
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -176,10 +182,13 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 91-93
-- **Lines (code):** 95-207
+- **Lines (comments):** 91-94
+- **Lines (code):** 96-208
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -229,6 +238,9 @@ Get a config option
 - **Lines (code):** 87-89
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

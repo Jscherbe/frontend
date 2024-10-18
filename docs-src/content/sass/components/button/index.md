@@ -48,6 +48,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -107,6 +110,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -154,6 +160,9 @@ Change modules $config
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -195,6 +204,9 @@ Prints button component styles
 - **Lines (code):** 43-100
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -251,6 +263,9 @@ Change modules $config
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -292,6 +307,9 @@ Prints component styles
 - **Lines (code):** 63-120
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -342,6 +360,9 @@ Get a config option
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -383,6 +404,9 @@ Get a config option
 - **Lines (code):** 55-57
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

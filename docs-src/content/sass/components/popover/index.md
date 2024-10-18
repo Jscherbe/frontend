@@ -77,40 +77,43 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
 |Name|Type|Default|
 |:--|:--|:--|
-|arrow-size|Map|16px|
-|background-color|Map|white|
-|border-radius|Map|6px|
-|color|Map|inherit|
-|max-width|Map|90vw|
-|max-height|Map|25rem|
-|padding|Map|1rem|
-|padding-large|Map|2rem|
-|type-size|Map|null|
-|z-index|Map|true|
-|box-shadow|Map|true|
-|box-shadow-footer|Map|0 0 4px|
-|box-shadow-footer-color|Map|box-shadow"|
-|header-background-color|Map|#ccc|
-|header-color|Map|null|
-|header-media-background-color|Map|black|
-|header-padding-y|Map|0.25rem|
-|footer-background-color|Map|#ccc|
-|footer-color|Map|null|
-|footer-padding-y|Map|0.25rem|
-|footer-padding-y-large|Map|0.5rem|
-|tooltip-background-color|Map|white|
-|tooltip-color|Map|null|
-|tooltip-max-width|Map|20rem|
-|tooltip-padding|Map|0.5rem|
-|tooltip-width|Map|auto|
-|width|Map|15rem|
-|width-large|Map|30rem|
-|width-large-x|Map|50rem|
+|arrow-size|Dimension|16px|
+|background-color|Color|white|
+|border-radius|Dimension|6px|
+|color|Color|inherit|
+|max-width|Dimension|90vw|
+|max-height|Dimension|25rem|
+|padding|Dimension|1rem|
+|padding-large|Dimension|2rem|
+|type-size|Dimension|null|
+|z-index|Number|true|
+|box-shadow|CssValue|true|
+|box-shadow-footer|CssValue|0 0 4px|
+|box-shadow-footer-color|String|"box-shadow"|
+|header-background-color|Color|#ccc|
+|header-color|Color|null|
+|header-media-background-color|Color|black|
+|header-padding-y|Dimension|0.25rem|
+|footer-background-color|Color|#ccc|
+|footer-color|Color|null|
+|footer-padding-y|Dimension|0.25rem|
+|footer-padding-y-large|Dimension|0.5rem|
+|tooltip-background-color|Color|white|
+|tooltip-color|Color|null|
+|tooltip-max-width|Dimension|20rem|
+|tooltip-padding|Dimension|0.5rem|
+|tooltip-width|Dimension|auto|
+|width|Dimension|15rem|
+|width-large|Dimension|30rem|
+|width-large-x|Dimension|50rem|
 
     
   
@@ -145,6 +148,9 @@ Change modules $config
 - **Lines (code):** 99-101
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -187,6 +193,9 @@ Prints component styles
 - **Lines (code):** 116-261
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -236,6 +245,9 @@ Get a config option
 - **Lines (code):** 107-110
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

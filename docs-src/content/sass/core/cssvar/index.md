@@ -48,6 +48,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -88,6 +91,9 @@ Change modules $config
 - **Lines (code):** 27-29
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -141,6 +147,9 @@ Outputs a single custom property declaration
 - **Lines (code):** 83-85
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -199,6 +208,9 @@ Outputs a map as custom properties
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
 Declare each property in a map as a custom property      
@@ -254,6 +266,9 @@ Declare a custom property for current breakpoint
 - **Lines (code):** 111-123
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -313,6 +328,9 @@ Declare a custom property for each breakpoint size
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
 Declare each property in a map as a custom property      
@@ -370,6 +388,9 @@ Outputs css vars for a specific type from a theme map
 - **Lines (code):** 170-177
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -448,6 +469,9 @@ Get a config option
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
 Getting the config value for prefix      
@@ -511,6 +535,9 @@ Get a custom property name (with optional prefix)
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
 Getting a custom property name      
@@ -568,6 +595,9 @@ Function to use a custom property within a declaration value
 - **Lines (code):** 66-72
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -636,6 +666,9 @@ Joins a list of cssvar names
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -688,6 +721,9 @@ For any names passed will join them with "+" and wrap in calc
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -737,6 +773,9 @@ For any names passed will join them with "-" and wrap in calc
 - **Lines (code):** 205-207
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

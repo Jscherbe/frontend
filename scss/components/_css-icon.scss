@@ -25,16 +25,16 @@
 /// @prop {String} active-selector [details[open] > summary &, &.is-active] The active selector for css-icon.
 /// @prop {Color} color [currentColor] The color of the css-icon.
 /// @prop {CssBalue} font-family [('Courier New', monospace)]
-/// @prop {CssValue} margin [(0 0.15em)]
+/// @prop {CssValue} margin [(0 0.15em)] The icon's margin
 /// @prop {Dimension} size [1.1em] The width, height and font size of the css-icon.
 /// @prop {Dimension} stroke-border-radius [1px] The rounding of the strokes for css-icon.
 /// @prop {Dimension} stroke-width [0.15em] The stroke width of the css-icon.
-/// @prop {Dimension} text-offset [0.05em]
-/// @prop {Dimension} text-size [1em]
-/// @prop {Dimension} vertical-align [-0.2em]
+/// @prop {Dimension} text-offset [0.05em] When using an icon with text, adds a margin to match the text height.
+/// @prop {Dimension} text-size [1em] font-size of the icon when using text.
+/// @prop {Dimension} vertical-align [-0.2em] @joe-check is this antiquated?
 /// @prop {Time} transition-duration [200ms] The duration length for the transition.
 /// @prop {CssValue} transition-timing-function [ease-in] The timing function for the transition.
-/// @prop {Map} stroke-sizes [Map]
+/// @prop {Map} stroke-sizes [Map] Modifiers to adjust stroke sizes for the icons.
 
 $config: (
   "active-selector" : "details[open] > summary &, &.is-active",

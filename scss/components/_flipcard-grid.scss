@@ -11,8 +11,8 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {} gutter [1rem]
-/// @prop {} grid-template-columns [1fr 1fr]
+/// @prop {Dimension} gutter [1rem] The gutter between grid items.
+/// @prop {CssValue} grid-template-columns [1fr 1fr] The size ratio of items in the grid.
 
 
 $config: (

@@ -51,10 +51,13 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 24-25
-- **Lines (code):** 27-37
+- **Lines (comments):** 26-27
+- **Lines (code):** 29-39
     </details>
     
+
+Hello World
+  
 
 
 <div class="sassdoc-item-header">
@@ -83,10 +86,13 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 39-40
-- **Lines (code):** 42-42
+- **Lines (comments):** 41-42
+- **Lines (code):** 44-44
     </details>
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -116,10 +122,13 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-51
+- **Lines (comments):** 46-48
+- **Lines (code):** 50-53
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -158,10 +167,13 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 53-54
-- **Lines (code):** 56-58
+- **Lines (comments):** 55-56
+- **Lines (code):** 58-60
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -199,10 +211,13 @@ Prints all Base styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 60-64
-- **Lines (code):** 66-96
+- **Lines (comments):** 62-66
+- **Lines (code):** 68-98
     </details>
     
+
+Hello World
+  
 
 #### Examples
 

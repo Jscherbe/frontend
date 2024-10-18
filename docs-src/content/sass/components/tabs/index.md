@@ -58,6 +58,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -108,6 +111,9 @@ Change modules $config
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -149,6 +155,9 @@ Prints tabs component styles
 - **Lines (code):** 70-177
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -198,6 +207,9 @@ Get a config option
 - **Lines (code):** 61-64
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

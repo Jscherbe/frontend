@@ -18,6 +18,9 @@ sassdocGroupName: card
 Module Settings
     
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -50,6 +53,9 @@ Change modules $config
 - **Lines (code):** 117-119
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -93,6 +99,9 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -133,6 +142,9 @@ Prints component styles
 - **Lines (code):** 158-414
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -183,6 +195,9 @@ Get a config option
 - **Lines (code):** 125-127
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

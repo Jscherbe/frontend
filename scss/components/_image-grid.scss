@@ -12,9 +12,9 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {} breakpoint ["small"]
-/// @prop {} gap [3px]
-/// @prop {} min-width [math.div(100%, 3)]
+/// @prop {String} breakpoint ["small"] Sets the min breakpoint for the grid to print. This uses breakpoint.scss, so the value of this option should be a breakpoint variable from breakpoint.scss.
+/// @prop {Dimension} gap [3px] The gap between images in the grid.
+/// @prop {Dimension} min-width [math.div(100%, 3)] The min-width of the images in the grid.
 
 $config: (
   "breakpoint": "small",

@@ -50,6 +50,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -92,6 +95,9 @@ Change modules $config
 - **Lines (code):** 28-30
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -146,6 +152,9 @@ Output styles
     </details>
     
 
+Hello World
+  
+
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
@@ -182,6 +191,9 @@ Get a config option
 - **Lines (code):** 37-39
     </details>
     
+
+Hello World
+  
 
 #### Examples
 

@@ -25,11 +25,11 @@
 /// @prop {String} position-class-row-last [position-row-last] See definition above
 /// @prop {} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)] @joe-check do we want to call these a dimension?
 /// @prop {} sticky-top [var(--ulu-sticky-top-offset, 0)]
-/// @prop {String} rule-color ["rule"]
-/// @prop {Dimension} rule-size [1px]
+/// @prop {String} rule-color ["rule"] The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.
+/// @prop {Dimension} rule-size [1px] The width of the rule
 /// @prop {Map} extra-breakpoints [Map] Default extra breakpoints for grid mixin
-/// @prop {Map} extra-gutter-scales [Map]
-/// @prop {Map} extra-rule-styles [Map]
+/// @prop {Map} extra-gutter-scales [Map] Extra options for gutter scales.
+/// @prop {Map} extra-rule-styles [Map] Extra options for rule styles.
 
 $config: (
   "attribute":           "data-grid",

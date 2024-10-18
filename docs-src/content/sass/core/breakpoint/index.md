@@ -51,6 +51,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -101,6 +104,9 @@ $sizes: (
 - **Lines (code):** 49-53
     </details>
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -133,6 +139,9 @@ Change modules $config
 - **Lines (code):** 28-30
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -186,6 +195,9 @@ Update the breakpoint sizes map
 - **Lines (code):** 64-66
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -244,6 +256,9 @@ Create a media query that matches the min-width for a given size
 - **Lines (code):** 112-118
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -312,6 +327,9 @@ Create a media query that matches the max-width for a given size
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
       
@@ -378,6 +396,9 @@ Create a media query that matches between two breakpoint sizes
 - **Lines (code):** 151-158
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -449,6 +470,9 @@ Create a media query from a specific size in either direction
     </details>
     
 
+Hello World
+  
+
 #### Examples
 
       
@@ -512,6 +536,9 @@ Utility Method for iterating over a map of breakpoints and apply styles
 - **Lines (code):** 195-214
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -577,6 +604,9 @@ Attaches breakpoints to an element pseudo content for access via script
     </details>
     
 
+Hello World
+  
+
 #### Require
 
 - [min()](/sass/core/breakpoint/#mixin-min)
@@ -615,6 +645,9 @@ Get a config option
 - **Lines (code):** 38-40
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -679,6 +712,9 @@ Get all breakpoint sizes (ie. $sizes)
     </details>
     
 
+Hello World
+  
+
 #### Require
 
 - [$sizes](/sass/core/breakpoint/#variable-sizes)
@@ -710,6 +746,9 @@ Get a specific size
 - **Lines (code):** 76-79
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -762,6 +801,9 @@ Get a size's value
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -812,6 +854,9 @@ Check if a specific size exist
 - **Lines (code):** 96-99
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

@@ -49,6 +49,9 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
@@ -90,6 +93,9 @@ Change modules $config
 - **Lines (code):** 25-27
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -144,6 +150,9 @@ Ensure a value is present in the list, throw an error if not found
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -187,6 +196,9 @@ Require that the list only is only made up of allowed items
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -229,6 +241,9 @@ Returns true if we should include something (used for output checking)
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -270,6 +285,9 @@ Get a config option
 - **Lines (code):** 34-36
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -325,6 +343,9 @@ Get a required value from a map, throw an error if not found
 - **Lines (code):** 45-55
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -383,6 +404,9 @@ Returns true if we should include something (map of booleans)
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -421,6 +445,9 @@ Returns true if we should include something (map of booleans)
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -454,6 +481,9 @@ Returns true if we should include something (map of booleans)
 - **Lines (code):** 119-133
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -499,6 +529,9 @@ Reusable merge method
 - **Lines (code):** 141-149
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -546,6 +579,9 @@ Returns true/false if map has property
 - **Lines (code):** 156-161
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -608,6 +644,9 @@ Left in for compatibility, will be removed, use map-merge with mode
     </details>
     
 
+Hello World
+  
+
 #### Require
 
 - [map-merge()](/sass/core/utils/#function-map-merge)
@@ -639,6 +678,9 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **Lines (code):** 179-186
     </details>
     
+
+Hello World
+  
 
 #### Returns
 
@@ -676,6 +718,9 @@ Provides fallback values from the same map
     </details>
     
 
+Hello World
+  
+
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
@@ -707,6 +752,9 @@ Checks if a map contains one or more of the keys
 - **Lines (code):** 205-224
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -757,6 +805,9 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **Lines (code):** 232-258
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -815,6 +866,9 @@ Replaces all or one occurrence of a string within a string
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -854,6 +908,9 @@ Remove an item from a list (not map)
 - **Lines (code):** 290-298
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -902,6 +959,9 @@ Remove an item from a list (not map)
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -947,6 +1007,9 @@ Join a list with a separator
 - **Lines (code):** 322-337
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

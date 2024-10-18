@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { outputPages } from "@ulu/sassdoc-to-markdown";
 import templates from "./templates/index.js";
+import customAnnotations from "./annotations/index.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isSubdir = (parent, dir) => {
@@ -24,7 +25,27 @@ const commonConfig = {
   previewScripts: `
     <script src="/frontend/ulu-frontend.min.js"></script>
   `,
-  annotationTemplates: templates.annotations
+  annotationTemplates: templates.annotations,
+  customAnnotations,
+  annotations: [
+    "name",
+    "description",
+    "deprecated",
+    "_code",
+    "_meta",
+    "demo",
+    "property",
+    "example",
+    "parameter",
+    "return",
+    "output",
+    "throw",
+    "link",
+    "since",
+    "todo",
+    "see",
+    "require"
+  ],
 };
 
 const createConfig = (base, options) => ({

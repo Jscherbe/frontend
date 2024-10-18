@@ -49,13 +49,16 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|gutter|Map|1rem|
-|grid-template-columns|Map|1fr 1fr|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|gutter|Dimension|1rem|The gutter between grid items.|
+|grid-template-columns|CssValue|1fr 1fr|The size ratio of items in the grid.|
 
     
   
@@ -90,6 +93,9 @@ Change modules $config
 - **Lines (code):** 27-29
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
@@ -133,6 +139,9 @@ Set sizes map
     </details>
     
 
+Hello World
+  
+
 #### Parameters
 
 
@@ -174,6 +183,9 @@ Prints adaptive spacing component styles
 - **Lines (code):** 51-69
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -223,6 +235,9 @@ Get a config option
 - **Lines (code):** 43-45
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 

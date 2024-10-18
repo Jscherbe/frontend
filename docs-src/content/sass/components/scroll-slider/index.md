@@ -70,10 +70,16 @@ $config: (
     </details>
     
 
+Hello World
+  
+
 
 Module Settings
     
     
+
+Hello World
+  
   
 
 ## Mixins
@@ -106,6 +112,9 @@ Change modules $config
 - **Lines (code):** 76-78
     </details>
     
+
+Hello World
+  
 
 #### Examples
 
@@ -164,6 +173,9 @@ Get a config option
 - **Lines (code):** 84-86
     </details>
     
+
+Hello World
+  
 
 #### Parameters
 
