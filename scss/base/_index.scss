@@ -13,9 +13,10 @@
 
 @use "../utils";
 @use "normalize";
+@use "root";
+@use "elements";
 @use "print";
 @use "typography";
-@use "elements";
 @use "color";
 @use "keyframes";
 @use "layout";
@@ -24,7 +25,9 @@
 /// @type List
 
 $all-includes: (
-  "normalize", 
+  "normalize",
+  "root"
+  "elements," 
   "print", 
   "elements", 
   "keyframes", 
@@ -65,8 +68,12 @@ $current-includes: $all-includes;
   
   @include utils.require-list-contains($all-includes, $includes);
 
+  
   @if (list.index($includes, "normalize")) {
     @include normalize.styles;
+  }
+  @if (list.index($includes, "root")) {
+    @include root.styles;
   }
   @if (list.index($includes, "elements")) {
     @include elements.styles;
