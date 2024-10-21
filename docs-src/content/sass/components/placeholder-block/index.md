@@ -10,9 +10,58 @@ sassdocGroupName: placeholder-block
 
 
 
+## Variables
 
 
 
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+``` scss
+$config: (
+  "background-color" : rgba(0,0,0,0.15),
+  "color" : true,
+  "expanded-height" : 15rem,
+  "margin-bottom" : true,
+  "padding" : 2em,
+  "padding-compact" : (0.5em 1em),
+
+  "border-color" : rgba(0,0,0,0.3),
+  "border-radius" : true,
+  "border-style" : dashed,
+  "border-width" : 2px,
+  "border-width-compact" : 1px,
+  "icon-color" : rgba(0, 0, 0, 0.5),
+  "icon-font-size" : 3em,
+  "icon-margin" : 0.25em,
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _placeholder-block.scss
+- **Group:** placeholder-block
+- **Type:** variable
+- **Lines (comments):** 46-46
+- **Lines (code):** 48-64
+    </details>
+    
+
+#### Todos
+
+- [joe-check] compact is at the end here (padding-compact) but at the beginning in card-grid(gap-compact)
+    
 
 
 Module Settings
@@ -46,8 +95,8 @@ Change modules $config
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-72
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-73
     </details>
     
 
@@ -88,8 +137,8 @@ Prints component styles
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-117
+- **Lines (comments):** 84-86
+- **Lines (code):** 88-118
     </details>
     
 
@@ -137,8 +186,8 @@ Get a config option
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** function
-- **Lines (comments):** 74-76
-- **Lines (code):** 78-81
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-82
     </details>
     
 

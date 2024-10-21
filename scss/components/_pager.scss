@@ -38,7 +38,7 @@
 /// @prop {Dimension} action-margin [0.8rem] The margin of the action options of the pager.
 /// @prop {Dimension} action-width [2.5rem] The width of the action options of the pager.
 
-// @joe-check active comes before (active-color) while other modules have it come afer(color-active)
+/// @todo [joe-check] active comes before (active-color) while other modules have it come afer(color-active)
 $config: (
   "background-color":              "link",
   "background-color-hover":        "link-hover",

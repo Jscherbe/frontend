@@ -10,9 +10,47 @@ sassdocGroupName: card-grid
 
 
 
+## Variables
 
 
 
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+``` scss
+$config: (
+  "gap" : 2rem,
+  "template-columns" : 1fr 1fr,
+  "compact-gap" : 1rem,
+  "compact-template-columns" : 1fr 1fr 1fr,
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _card-grid.scss
+- **Group:** card-grid
+- **Type:** variable
+- **Lines (comments):** 17-17
+- **Lines (code):** 19-24
+    </details>
+    
+
+#### Todos
+
+- [joe-check]
+    
 
 
 Module Settings

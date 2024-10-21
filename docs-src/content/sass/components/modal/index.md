@@ -10,9 +10,86 @@ sassdocGroupName: modal
 
 
 
+## Variables
 
 
 
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+``` scss
+$config: (
+  "backdrop-color" :                true,
+  "backdrop-blur" :                 4px,
+  "background-color":              white,
+  "body-padding":                   1rem,
+  "border-radius" :                 true,
+  "box-shadow" :                    true,         
+  "height":                         340px,
+  "height-no-header":               100px,
+  "width":                          60rem,
+  
+  "animation-duration" :            300ms,
+  "animation-duration-exit" :       150ms,
+  "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
+  "close-background-color":         white,
+  "close-background-color-hover":   blue,
+  "close-color":                    black,
+  "close-color-hover":              black,
+  "close-font-size":                1.2rem,
+  "close-margin":                   0.5rem,
+  "close-size":                     2.5rem,
+  "dark-background-color" :         false,
+  "dark-color" :                   white,
+  "dark-header-border-bottom" :     false,
+  "dark-header-background-color" :  false,
+  "dark-header-color" :             false,
+  "header-background-color":        black,
+  "header-border-bottom":           none,
+  "header-color":                   white,
+  "header-padding":                 1rem,
+  "resizer-background-color":       rgb(221, 221, 221),
+  "resizer-background-color-hover": rgb(66, 66, 66),
+  "resizer-color":                  black,
+  "resizer-color-hover":            black,
+  "resizer-width":                  1rem,
+  "title-color":                    white,
+  "title-font-weight":              bold,
+  "title-icon-margin" :             0.5em,
+  "title-size" :                    "large",
+  "title-text-transform" :          null,
+  "sizes" : (
+    "small" : 30rem,
+    "large" : 80rem
+  ),
+);
+```
+  
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _modal.scss
+- **Group:** modal
+- **Type:** variable
+- **Lines (comments):** 73-73
+- **Lines (code):** 74-118
+    </details>
+    
+
+#### Todos
+
+- [joe-check] should items like 'dark-background-color' be 'background-color-dark' instead?
+    
 
 
 Module Settings

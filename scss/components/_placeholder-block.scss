@@ -43,7 +43,8 @@ $-fallbacks: (
 /// @prop {Dimension} icon-margin [0.25em] The margin of the placeholder icon.
 /// @prop {Color} icon-color [rgba(0, 0, 0, 0.5)] The icon type color.
 
-// @joe-check compact is at the end here (padding-compact) but at the beginning in card-grid(gap-compact)
+/// @todo [joe-check] compact is at the end here (padding-compact) but at the beginning in card-grid(gap-compact)
+
 $config: (
   "background-color" : rgba(0,0,0,0.15),
   "color" : true,

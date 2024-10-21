@@ -20,12 +20,16 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
 
   
+
+Module Settings
+    
+    
 
 ``` scss
 $config: (
@@ -58,19 +62,37 @@ $config: (
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
-- **Lines (comments):** 35-36
-- **Lines (code):** 38-59
+- **Lines (comments):** 12-33
+- **Lines (code):** 35-57
     </details>
     
 
-#### Todos
-
-- 
-    
+#### Map Properties
 
 
-Module Settings
-    
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|background-color|Color|white|Background color of the text-only flipcard front.|
+|background-color-image|Color|rgba(96, 255, 255, 0.89)|Background color of the image flipcard front.|
+|image-opacity|Number|0.7|Opacity of the image to allow shading from the background color.|
+|background-color-back|Color|rgb(178, 178, 178)|Background color on the back of the flipcard.|
+|border|Color|1px solid black|Flipcard border.|
+|border-radius|Dimension|6px|Border radius for flipcard.|
+|border-color-hover|Color|black|border color when hovered.|
+|control-button-border-focus|CssValue|2px solid blue|Border that shows when focused.|
+|anim-duration|Time|430ms|Animation duration.|
+|anim-delay|Time|200ms|Animation delay.|
+|padding|Dimension|1.5rem|Padding for the flipcard.|
+|title-color|Color|red|Color of the front page text.|
+|title-color-hover|Color|green|Color of the front page text when hovered or focused.|
+|icon-color|Color|pink|Color of the icon.|
+|icon-color-hover|Color|aqua|Color of the icon when hovered or focused.|
+|icon-color-image|Color|aqua|Color of the icon when using an image.|
+|icon-color-image-hover|Color|pink|Color of the icon when using an image and hovered or focused.|
+|title-color-image|Color|black|Color of the front page text when using an image.|
+|title-color-image-hover|Color|blue|Color of the front page text when using an image and hovered or focused.|
+|bottom-shadow|Boolean|true|Boolean that enables a bottom shadow to the image flipcard.|
+
     
   
 
@@ -100,8 +122,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-65
     </details>
     
 
@@ -142,8 +164,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-75
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-73
     </details>
     
 
@@ -184,8 +206,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 85-87
-- **Lines (code):** 89-261
+- **Lines (comments):** 83-85
+- **Lines (code):** 87-259
     </details>
     
 
@@ -233,8 +255,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 77-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-81
     </details>
     
 

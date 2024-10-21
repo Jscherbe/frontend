@@ -5247,6 +5247,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5278,6 +5287,72 @@
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
       <h1 id="modal" tabindex="-1">Modal</h1>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+</div>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"backdrop-color"</span> <span class="pjs-token pjs-punctuation">:</span>                <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"backdrop-blur"</span> <span class="pjs-token pjs-punctuation">:</span>                 4px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>              white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"body-padding"</span><span class="pjs-token pjs-punctuation">:</span>                   1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span>                 <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span>                    <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>         
+  <span class="pjs-token pjs-string">"height"</span><span class="pjs-token pjs-punctuation">:</span>                         340px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"height-no-header"</span><span class="pjs-token pjs-punctuation">:</span>               100px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span>                          60rem<span class="pjs-token pjs-punctuation">,</span>
+  
+  <span class="pjs-token pjs-string">"animation-duration"</span> <span class="pjs-token pjs-punctuation">:</span>            300ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"animation-duration-exit"</span> <span class="pjs-token pjs-punctuation">:</span>       150ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"animation-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span>     <span class="pjs-token pjs-function">cubic-bezier</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> .2<span class="pjs-token pjs-punctuation">,</span> 1<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-background-color"</span><span class="pjs-token pjs-punctuation">:</span>         white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>   blue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-color"</span><span class="pjs-token pjs-punctuation">:</span>                    black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>              black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-font-size"</span><span class="pjs-token pjs-punctuation">:</span>                1.2rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-margin"</span><span class="pjs-token pjs-punctuation">:</span>                   0.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-size"</span><span class="pjs-token pjs-punctuation">:</span>                     2.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dark-background-color"</span> <span class="pjs-token pjs-punctuation">:</span>         <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dark-color"</span> <span class="pjs-token pjs-punctuation">:</span>                   white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dark-header-border-bottom"</span> <span class="pjs-token pjs-punctuation">:</span>     <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dark-header-background-color"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dark-header-color"</span> <span class="pjs-token pjs-punctuation">:</span>             <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-background-color"</span><span class="pjs-token pjs-punctuation">:</span>        black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-border-bottom"</span><span class="pjs-token pjs-punctuation">:</span>           none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-color"</span><span class="pjs-token pjs-punctuation">:</span>                   white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-padding"</span><span class="pjs-token pjs-punctuation">:</span>                 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"resizer-background-color"</span><span class="pjs-token pjs-punctuation">:</span>       <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>221<span class="pjs-token pjs-punctuation">,</span> 221<span class="pjs-token pjs-punctuation">,</span> 221<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"resizer-background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>66<span class="pjs-token pjs-punctuation">,</span> 66<span class="pjs-token pjs-punctuation">,</span> 66<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"resizer-color"</span><span class="pjs-token pjs-punctuation">:</span>                  black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"resizer-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>            black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"resizer-width"</span><span class="pjs-token pjs-punctuation">:</span>                  1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color"</span><span class="pjs-token pjs-punctuation">:</span>                    white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-font-weight"</span><span class="pjs-token pjs-punctuation">:</span>              bold<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-icon-margin"</span> <span class="pjs-token pjs-punctuation">:</span>             0.5em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-size"</span> <span class="pjs-token pjs-punctuation">:</span>                    <span class="pjs-token pjs-string">"large"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-text-transform"</span> <span class="pjs-token pjs-punctuation">:</span>          <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"sizes"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> 30rem<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"large"</span> <span class="pjs-token pjs-punctuation">:</span> 80rem
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _modal.scss</li>
+<li><strong>Group:</strong> modal</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 73-73</li>
+<li><strong>Lines (code):</strong> 74-118  </details>
+</li>
+</ul>
+<h4 id="todos" tabindex="-1">Todos</h4>
+<ul>
+<li>[joe-check] should items like 'dark-background-color' be 'background-color-dark' instead?</li>
+</ul>
 <p>Module Settings</p>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
