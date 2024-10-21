@@ -14,8 +14,6 @@
 /// @prop {Dimension} gap [2rem] The grid gap of the card-grid.
 /// @prop {CssValue} template-columns [1fr 1fr] The template-columns of the card-grid.
 
-/// @todo [joe-check]
-
 $config: (
   "gap" : 2rem,
   "template-columns" : 1fr 1fr,

@@ -5291,9 +5291,10 @@
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 </div>
+<p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>              <span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-string">"link-hover"</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5329,15 +5330,173 @@
 <li><strong>File:</strong> _pager.scss</li>
 <li><strong>Group:</strong> pager</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 41-41</li>
-<li><strong>Lines (code):</strong> 42-70  </details>
+<li><strong>Lines (comments):</strong> 15-41</li>
+<li><strong>Lines (code):</strong> 43-71  </details>
 </li>
 </ul>
-<h4 id="todos" tabindex="-1">Todos</h4>
-<ul>
-<li>[joe-check] active comes before (active-color) while other modules have it come afer(color-active)</li>
-</ul>
-<p>Module Settings</p>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">link</td>
+<td style="text-align:left">The background color of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">linkhover</td>
+<td style="text-align:left">The background color of the pager when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">link</td>
+<td style="text-align:left">The border color of the pager item. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">linkhover</td>
+<td style="text-align:left">The border color of the pager item when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">50%</td>
+<td style="text-align:left">The border radius of the pager item.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1px</td>
+<td style="text-align:left">The border width of the pager item.</td>
+</tr>
+<tr>
+<td style="text-align:left">color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The type color of the pager item.</td>
+</tr>
+<tr>
+<td style="text-align:left">color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The type color of the pager item when covered and focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">font-weight</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left">Font-weight of the pager.</td>
+</tr>
+<tr>
+<td style="text-align:left">item-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.17rem</td>
+<td style="text-align:left">The item margin.</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-bottom</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2rem</td>
+<td style="text-align:left">The bottom margin of the pager.</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1rem</td>
+<td style="text-align:left">The top margin of the pager.</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2.5rem</td>
+<td style="text-align:left">The width of the pager items.</td>
+</tr>
+<tr>
+<td style="text-align:left">active-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#ccc</td>
+<td style="text-align:left">The background color of the pager when active.</td>
+</tr>
+<tr>
+<td style="text-align:left">active-border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#ccc</td>
+<td style="text-align:left">The border color of the pager when active.</td>
+</tr>
+<tr>
+<td style="text-align:left">active-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">type</td>
+<td style="text-align:left">The type color when active. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">active-font-weight</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left">The font weight of the pager when focused or hovered.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-background-color</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">link</td>
+<td style="text-align:left">The background color of the actions options of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-background-color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">linkhover</td>
+<td style="text-align:left">The background color of the actions options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">transparent</td>
+<td style="text-align:left">The border color of the action options of the pager.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-border-color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">link</td>
+<td style="text-align:left">The border color of the action options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The type color of the actions options of the pager.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The type color of the actions options of the pager when focused or hovered.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.8rem</td>
+<td style="text-align:left">The margin of the action options of the pager.</td>
+</tr>
+<tr>
+<td style="text-align:left">action-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2.5rem</td>
+<td style="text-align:left">The width of the action options of the pager.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5352,8 +5511,8 @@
 <li><strong>File:</strong> _pager.scss</li>
 <li><strong>Group:</strong> pager</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 72-74</li>
-<li><strong>Lines (code):</strong> 76-78  </details>
+<li><strong>Lines (comments):</strong> 73-75</li>
+<li><strong>Lines (code):</strong> 77-79  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -5395,8 +5554,8 @@
 <li><strong>File:</strong> _pager.scss</li>
 <li><strong>Group:</strong> pager</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 88-90</li>
-<li><strong>Lines (code):</strong> 92-164  </details>
+<li><strong>Lines (comments):</strong> 89-91</li>
+<li><strong>Lines (code):</strong> 93-165  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5419,8 +5578,8 @@
 <li><strong>File:</strong> _pager.scss</li>
 <li><strong>Group:</strong> pager</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 80-82</li>
-<li><strong>Lines (code):</strong> 84-86  </details>
+<li><strong>Lines (comments):</strong> 81-83</li>
+<li><strong>Lines (code):</strong> 85-87  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

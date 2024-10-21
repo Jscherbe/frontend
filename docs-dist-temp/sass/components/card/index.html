@@ -5247,6 +5247,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5281,7 +5290,351 @@
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
       <h1 id="card" tabindex="-1">Card</h1>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
 <p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>242<span class="pjs-token pjs-punctuation">,</span> 244<span class="pjs-token pjs-punctuation">,</span> 246<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"body-min-height"</span> <span class="pjs-token pjs-punctuation">:</span> 10rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border"</span> <span class="pjs-token pjs-punctuation">:</span> 1px solid #ccc<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-hover"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid #278cca<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 5px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"clickable-card-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"clickable-card-selector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"[data-ulu-proxy-click-init]"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"clickable-card-interact-selector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"&amp;:hover, &amp;:focus-within"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-padding-y"</span> <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-min-height"</span> <span class="pjs-token pjs-punctuation">:</span> 2.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"horizontal-breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"header-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-ratio"</span> <span class="pjs-token pjs-punctuation">:</span> 56.25%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-aspect-ratio"</span><span class="pjs-token pjs-punctuation">:</span> list.<span class="pjs-token pjs-function">slash</span><span class="pjs-token pjs-punctuation">(</span>5<span class="pjs-token pjs-punctuation">,</span> 3<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>197<span class="pjs-token pjs-punctuation">,</span> 197<span class="pjs-token pjs-punctuation">,</span> 197<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-comment">// For when you have a margin</span>
+  <span class="pjs-token pjs-string">"image-filter-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-margin"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transform-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span>    350ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>transform<span class="pjs-token pjs-punctuation">,</span> filter<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-transition-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span> ease-in-out<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-y"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 28rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"prefix"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"card"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-color-card-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"title-font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> bold<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-enabled"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span> ease-in-out<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span>    200ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">,</span> transform<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"overlay-aspect-ratio"</span><span class="pjs-token pjs-punctuation">:</span> list.<span class="pjs-token pjs-function">slash</span><span class="pjs-token pjs-punctuation">(</span>4<span class="pjs-token pjs-punctuation">,</span> 3<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"overlay-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-overlay"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-overlay-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"overlay-background-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0.6<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"overlay-shading"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"overlay-body-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _card.scss</li>
+<li><strong>Group:</strong> card</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 15-60</li>
+<li><strong>Lines (code):</strong> 62-113  </details>
+</li>
+</ul>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2rem</td>
+<td style="text-align:left">The padding for the image icon</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">3rem</td>
+<td style="text-align:left">Top and bottom margin for the card.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">5rem</td>
+<td style="text-align:left">The border radius of the card.</td>
+</tr>
+<tr>
+<td style="text-align:left">horizontal-breakpoint</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">small</td>
+<td style="text-align:left">The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.</td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The box-shadow for the card.</td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow-hover</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The box-shadow for the card when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The type color of the card.</td>
+</tr>
+<tr>
+<td style="text-align:left">color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The type color of the card when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">color-overlay</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The type color of the card when using card--overlay.</td>
+</tr>
+<tr>
+<td style="text-align:left">color-overlay-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The type color of the card when hovered or focused and when using card--overlay.</td>
+</tr>
+<tr>
+<td style="text-align:left">overlay-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">rgba(0, 0, 0, 0.6)</td>
+<td style="text-align:left">The background color for the text box when using card--overlay.</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The background color of the card.</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">rgb(242, 244, 246)</td>
+<td style="text-align:left">The background color of the card when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">max-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">28rem</td>
+<td style="text-align:left">The max-width of the card.</td>
+</tr>
+<tr>
+<td style="text-align:left">body-min-height</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">10rem</td>
+<td style="text-align:left">the min-height of the card body.</td>
+</tr>
+<tr>
+<td style="text-align:left">border</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">1px solid #ccc</td>
+<td style="text-align:left">The card border.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-hover</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">2px solid #278cca</td>
+<td style="text-align:left">The card border when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">header-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.75em</td>
+<td style="text-align:left">The margin for the card header.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">They type color of the title.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">They type color of the title when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-color-card-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">@joe-check  what is the difference between this and title-color-hover?</td>
+</tr>
+<tr>
+<td style="text-align:left">title-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">The margin for the title.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-font-weight</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left">The font weight for the title.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-ratio</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">56.25%</td>
+<td style="text-align:left">The image ratio for the card image.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">rgb(197, 197, 197)</td>
+<td style="text-align:left">The background color behind the image.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The margin for the image.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-border</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">// For when you have a margin, the border for the image.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-transform-hover</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Animation for the image when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-filter-hover</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Filter for the image when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">overlay-background-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">The color of the pseudo-element when using proxy click.</td>
+</tr>
+<tr>
+<td style="text-align:left">clickable-card-enabled</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Enable or disable proxy click.</td>
+</tr>
+<tr>
+<td style="text-align:left">clickable-card-selector</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">data-ulu-proxy-click-init</td>
+<td style="text-align:left">The selector for proxy-click.js to find the card and implement the clickable card script.</td>
+</tr>
+<tr>
+<td style="text-align:left">clickable-card-interact-selector</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&amp;:hover, &amp;:focus-within</td>
+<td style="text-align:left">The selectors for the cards being interacted with.</td>
+</tr>
+<tr>
+<td style="text-align:left">footer-padding-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.25rem</td>
+<td style="text-align:left">The top and bottom padding for the footer.</td>
+</tr>
+<tr>
+<td style="text-align:left">footer-min-height</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2.5rem</td>
+<td style="text-align:left">The min height for the footer</td>
+</tr>
+<tr>
+<td style="text-align:left">prefix</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">card</td>
+<td style="text-align:left">The class name used to add card styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-enabled</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Enable or disable transition for card.</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-timing-function</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">ease-in-out</td>
+<td style="text-align:left">The timing function for the card animation.</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-duration</td>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">200ms</td>
+<td style="text-align:left">The animation duration for the card animation.</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-properties</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">(border-color, background-color, color, box-shadow, transform)</td>
+<td style="text-align:left">The properties for the card animation.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-transition-enabled</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Enable or disable the image transition.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-transition-duration</td>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">350ms</td>
+<td style="text-align:left">The duration of the image transition.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-transition-timing-function</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">ease-in-out</td>
+<td style="text-align:left">The timing function for the image tranition.</td>
+</tr>
+<tr>
+<td style="text-align:left">image-transition-properties</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">(transform, filter)</td>
+<td style="text-align:left">The properties for the image transitions.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5296,8 +5649,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 113-115</li>
-<li><strong>Lines (code):</strong> 117-119  </details>
+<li><strong>Lines (comments):</strong> 115-117</li>
+<li><strong>Lines (code):</strong> 119-121  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -5339,8 +5692,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 129-130</li>
-<li><strong>Lines (code):</strong> 132-147  </details>
+<li><strong>Lines (comments):</strong> 131-132</li>
+<li><strong>Lines (code):</strong> 134-149  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5379,8 +5732,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 154-157</li>
-<li><strong>Lines (code):</strong> 159-415  </details>
+<li><strong>Lines (comments):</strong> 156-159</li>
+<li><strong>Lines (code):</strong> 161-417  </details>
 </li>
 </ul>
 <div class="callout callout--demo crop-margins">
@@ -5408,8 +5761,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 121-123</li>
-<li><strong>Lines (code):</strong> 125-127  </details>
+<li><strong>Lines (comments):</strong> 123-125</li>
+<li><strong>Lines (code):</strong> 127-129  </details>
 </li>
 </ul>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>

@@ -20,12 +20,16 @@ sassdocGroupName: placeholder-block
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
 
   
+
+Module Settings
+    
+    
 
 ``` scss
 $config: (
@@ -53,19 +57,31 @@ $config: (
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** variable
-- **Lines (comments):** 46-46
-- **Lines (code):** 48-64
+- **Lines (comments):** 31-46
+- **Lines (code):** 48-65
     </details>
     
 
-#### Todos
-
-- [joe-check] compact is at the end here (padding-compact) but at the beginning in card-grid(gap-compact)
-    
+#### Map Properties
 
 
-Module Settings
-    
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|background-color|Color|rgba(0,0,0,0.15)|The background color of the placeholder.|
+|color|Color|true|The type color of the placeholder. If set to true, will use the "type-tertiary" variable from color.scss.|
+|margin-bottom|Dimension|true|The bottom margin of the placeholder. If set to true, will use the "margin" variable from element.scss.|
+|padding|Dimension|2em|The padding of the placeholder.|
+|padding-compact|Dimension|(0.5em 1em)|The padding of the placeholder when using the compact option.|
+|expanded-height|Dimension|15rem|The height of the placeholder when using the expanded option.|
+|border-color|Color|rgba(0,0,0,0.3)|The border color.|
+|border-radius|Dimension|true|The border radius of the placeholder. If set to true, will use the "border-radius-large" variable from element.scss.|
+|border-style|CssValue|dashed|The border style of the placeholder border.|
+|border-width|Dimension|2px|The border width of the placeholder.|
+|border-width-compact|Dimension|1px|The border width of the placeholder when using the compact option.|
+|icon-font-size|Dimension|3em|The font-size of the placeholder icon.|
+|icon-margin|Dimension|0.25em|The margin of the placeholder icon.|
+|icon-color|Color|rgba(0, 0, 0, 0.5)|The icon type color.|
+
     
   
 
@@ -95,8 +111,8 @@ Change modules $config
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 68-70
+- **Lines (code):** 72-74
     </details>
     
 
@@ -137,8 +153,8 @@ Prints component styles
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
-- **Lines (comments):** 84-86
-- **Lines (code):** 88-118
+- **Lines (comments):** 85-87
+- **Lines (code):** 89-119
     </details>
     
 
@@ -186,8 +202,8 @@ Get a config option
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** function
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-82
+- **Lines (comments):** 76-78
+- **Lines (code):** 80-83
     </details>
     
 

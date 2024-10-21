@@ -20,14 +20,14 @@ sassdocGroupName: scroll-slider
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
 
   
 
-Config options
+Module Settings
     
     
 
@@ -65,14 +65,39 @@ $config: (
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** variable
-- **Lines (comments):** 43-43
-- **Lines (code):** 45-69
+- **Lines (comments):** 18-41
+- **Lines (code):** 43-67
     </details>
     
 
+#### Map Properties
 
-Module Settings
-    
+
+|Name|Type|Default|
+|:--|:--|:--|
+|background-color|Color|false|
+|container|String|"container"|
+|containers|List|("container",)|
+|margin-bottom|Dimension|3rem|
+|margin-top|Dimension|1rem|
+|padding-bottom|Dimension|0|
+|padding-top|Dimension|0|
+|prefix|String|"scroll-slide"|
+|button-background-color|Color|white|
+|button-background-color-hover|Color|white|
+|button-border|CssValue|2px solid white|
+|button-border-color-hover|Color|white|
+|button-border-radius|Dimension|50%|
+|button-box-shadow|CssValue|element.get("box-shadow")|
+|button-color|Color|color.get("type")|
+|button-color-hover|Color|color.get("link")|
+|button-font-size|Dimension|1.35rem|
+|button-indent|Dimension|1.5rem|
+|button-indent-small|Dimension|0.5rem|
+|button-size|Dimension|3rem|
+|button-icon-offset-x|Dimension|false|
+|button-icon-offset-y|Dimension|false|
+
     
   
 
@@ -102,8 +127,8 @@ Change modules $config
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
-- **Lines (comments):** 71-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 69-72
+- **Lines (code):** 74-76
     </details>
     
 
@@ -160,8 +185,8 @@ Get a config option
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** function
-- **Lines (comments):** 80-82
-- **Lines (code):** 84-86
+- **Lines (comments):** 78-80
+- **Lines (code):** 82-84
     </details>
     
 

@@ -5291,9 +5291,10 @@
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 </div>
+<p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"backdrop-color"</span> <span class="pjs-token pjs-punctuation">:</span>                <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"backdrop-blur"</span> <span class="pjs-token pjs-punctuation">:</span>                 4px<span class="pjs-token pjs-punctuation">,</span>
@@ -5345,15 +5346,257 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 73-73</li>
-<li><strong>Lines (code):</strong> 74-118  </details>
+<li><strong>Lines (comments):</strong> 33-73</li>
+<li><strong>Lines (code):</strong> 75-119  </details>
 </li>
 </ul>
-<h4 id="todos" tabindex="-1">Todos</h4>
-<ul>
-<li>[joe-check] should items like 'dark-background-color' be 'background-color-dark' instead?</li>
-</ul>
-<p>Module Settings</p>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">backdrop-blur</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">4px</td>
+<td style="text-align:left">Determines the blur of the backdrop.</td>
+</tr>
+<tr>
+<td style="text-align:left">backdrop-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">The background color of the modal.</td>
+</tr>
+<tr>
+<td style="text-align:left">body-padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1rem</td>
+<td style="text-align:left">The padding of the body content.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-radius</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.</td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">340px</td>
+<td style="text-align:left">The min-height of the modal.</td>
+</tr>
+<tr>
+<td style="text-align:left">height-no-header</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">100px</td>
+<td style="text-align:left">The min-height of the modal.</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">60rem</td>
+<td style="text-align:left">The width of the Modal</td>
+</tr>
+<tr>
+<td style="text-align:left">animation-duration</td>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">300ms</td>
+<td style="text-align:left">Animation duration for the modal opening.</td>
+</tr>
+<tr>
+<td style="text-align:left">animation-duration-exit</td>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">150ms</td>
+<td style="text-align:left">Animation duration for the modal closing.</td>
+</tr>
+<tr>
+<td style="text-align:left">animation-timing-function</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">cubic-bezier(0, 0, .2, 1)</td>
+<td style="text-align:left">The animation timing menu of the modal.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">Background color for the modal close icon.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-background-color-hover</td>
+<td style="text-align:left">Close</td>
+<td style="text-align:left">blue</td>
+<td style="text-align:left">Background color for the modal close icon when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">black</td>
+<td style="text-align:left">Type color for the modal close icon.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">black</td>
+<td style="text-align:left">Type color for the modal close icon when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-font-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1.2rem</td>
+<td style="text-align:left">Font-siz of of the modal close icon font size.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.5rem</td>
+<td style="text-align:left">The margin for the modal close icon.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2.5rem</td>
+<td style="text-align:left">Size of the modal close icon.</td>
+</tr>
+<tr>
+<td style="text-align:left">dark-background-color</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">@joe-check unused</td>
+</tr>
+<tr>
+<td style="text-align:left">dark-color</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">@joe-check unused</td>
+</tr>
+<tr>
+<td style="text-align:left">dark-header-background-color</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">@joe-check unused</td>
+</tr>
+<tr>
+<td style="text-align:left">dark-header-border-bottom</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">@joe-check unused</td>
+</tr>
+<tr>
+<td style="text-align:left">dark-header-color</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">@joe-check unused</td>
+</tr>
+<tr>
+<td style="text-align:left">header-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">black</td>
+<td style="text-align:left">Background color for the header.</td>
+</tr>
+<tr>
+<td style="text-align:left">header-border-bottom</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Bottom-border on the modal header.</td>
+</tr>
+<tr>
+<td style="text-align:left">header-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">Type color of the header.</td>
+</tr>
+<tr>
+<td style="text-align:left">header-padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1rem</td>
+<td style="text-align:left">The padding of the modal header.</td>
+</tr>
+<tr>
+<td style="text-align:left">resizer-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">rgb(221, 221, 221)</td>
+<td style="text-align:left">The background color of the resizer.</td>
+</tr>
+<tr>
+<td style="text-align:left">resizer-background-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">rgb(66, 66, 66)</td>
+<td style="text-align:left">The background color of the resizer when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">resizer-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">black</td>
+<td style="text-align:left">The type color of the resizer.</td>
+</tr>
+<tr>
+<td style="text-align:left">resizer-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">black</td>
+<td style="text-align:left">The type color of the resizer when hovered or focused.</td>
+</tr>
+<tr>
+<td style="text-align:left">resizer-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1rem</td>
+<td style="text-align:left">The width of the resizer.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">Type color of the title.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-font-weight</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left">Font weight of the title.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-icon-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.5em</td>
+<td style="text-align:left">The margin of the title icon</td>
+</tr>
+<tr>
+<td style="text-align:left">title-size</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">large</td>
+<td style="text-align:left">The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">title-text-transform</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Transform option for the title.</td>
+</tr>
+<tr>
+<td style="text-align:left">sizes</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">Size options to enable unique stylings.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5368,8 +5611,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 120-123</li>
-<li><strong>Lines (code):</strong> 125-127  </details>
+<li><strong>Lines (comments):</strong> 121-124</li>
+<li><strong>Lines (code):</strong> 126-128  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5409,8 +5652,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 138-140</li>
-<li><strong>Lines (code):</strong> 142-491  </details>
+<li><strong>Lines (comments):</strong> 139-141</li>
+<li><strong>Lines (code):</strong> 143-492  </details>
 </li>
 </ul>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5433,8 +5676,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 129-131</li>
-<li><strong>Lines (code):</strong> 133-136  </details>
+<li><strong>Lines (comments):</strong> 130-132</li>
+<li><strong>Lines (code):</strong> 134-137  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

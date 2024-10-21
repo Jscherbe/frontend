@@ -9,6 +9,9 @@
 @use "../utils";
 @use "../selector";
 
+// todo
+// sass color adjust for smooth transition. Add a comment for this if we can’t get to this
+
 /// Module Settings
 /// @type Map
 /// @prop {Dimension} padding [2rem] The padding for the image icon
@@ -56,8 +59,7 @@
 /// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image tranition.
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 
-// todo
-// sass color adjust for smooth transition. Add a comment for this if we can’t get to this
+
 
 $config: (
   "background-color" : white,
@@ -413,3 +415,4 @@ $config: (
     }
   }
 }
+

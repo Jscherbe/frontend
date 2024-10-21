@@ -20,12 +20,16 @@ sassdocGroupName: modal
 ###  $config {#variable-config}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
 
   
+
+Module Settings
+    
+    
 
 ``` scss
 $config: (
@@ -81,19 +85,56 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 73-73
-- **Lines (code):** 74-118
+- **Lines (comments):** 33-73
+- **Lines (code):** 75-119
     </details>
     
 
-#### Todos
-
-- [joe-check] should items like 'dark-background-color' be 'background-color-dark' instead?
-    
+#### Map Properties
 
 
-Module Settings
-    
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|backdrop-blur|CssValue|4px|Determines the blur of the backdrop.|
+|backdrop-color|Color|true|The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.|
+|background-color|Color|white|The background color of the modal.|
+|body-padding|Dimension|1rem|The padding of the body content.|
+|border-radius|CssValue|true|The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.|
+|box-shadow|CssValue|true|Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.|
+|height|Dimension|340px|The min-height of the modal.|
+|height-no-header|Dimension|100px|The min-height of the modal.|
+|width|Dimension|60rem|The width of the Modal|
+|animation-duration|Time|300ms|Animation duration for the modal opening.|
+|animation-duration-exit|Time|150ms|Animation duration for the modal closing.|
+|animation-timing-function|CssValue|cubic-bezier(0, 0, .2, 1)|The animation timing menu of the modal.|
+|close-background-color|Color|white|Background color for the modal close icon.|
+|close-background-color-hover|Close|blue|Background color for the modal close icon when hovered or focused.|
+|close-color|Color|black|Type color for the modal close icon.|
+|close-color-hover|Color|black|Type color for the modal close icon when hovered or focused.|
+|close-font-size|Dimension|1.2rem|Font-siz of of the modal close icon font size.|
+|close-margin|Dimension|0.5rem|The margin for the modal close icon.|
+|close-size|Dimension|2.5rem|Size of the modal close icon.|
+|dark-background-color|Map|false|@joe-check unused|
+|dark-color|Map|white|@joe-check unused|
+|dark-header-background-color|Map|false|@joe-check unused|
+|dark-header-border-bottom|Map|false|@joe-check unused|
+|dark-header-color|Map|false|@joe-check unused|
+|header-background-color|Color|black|Background color for the header.|
+|header-border-bottom|CssValue|none|Bottom-border on the modal header.|
+|header-color|Color|white|Type color of the header.|
+|header-padding|Dimension|1rem|The padding of the modal header.|
+|resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
+|resizer-background-color-hover|Color|rgb(66, 66, 66)|The background color of the resizer when hovered or focused.|
+|resizer-color|Color|black|The type color of the resizer.|
+|resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
+|resizer-width|Dimension|1rem|The width of the resizer.|
+|title-color|Color|white|Type color of the title.|
+|title-font-weight|CssValue|bold|Font weight of the title.|
+|title-icon-margin|Dimension|0.5em|The margin of the title icon|
+|title-size|String|large|The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
+|title-text-transform|CssValue|null|Transform option for the title.|
+|sizes|Map|Map|Size options to enable unique stylings.|
+
     
   
 
@@ -123,8 +164,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 120-123
-- **Lines (code):** 125-127
+- **Lines (comments):** 121-124
+- **Lines (code):** 126-128
     </details>
     
 
@@ -176,8 +217,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 138-140
-- **Lines (code):** 142-491
+- **Lines (comments):** 139-141
+- **Lines (code):** 143-492
     </details>
     
 
@@ -225,8 +266,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 129-131
-- **Lines (code):** 133-136
+- **Lines (comments):** 130-132
+- **Lines (code):** 134-137
     </details>
     
 

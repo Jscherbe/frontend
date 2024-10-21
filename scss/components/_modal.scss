@@ -28,6 +28,8 @@ $-fallbacks: (
   )
 );
 
+// todo [joe-check] for config options should items like 'dark-background-color' be 'background-color-dark' instead? Line 94
+
 /// Module Settings
 /// @type Map
 /// @prop {CssValue} backdrop-blur [4px] Determines the blur of the backdrop.
@@ -70,7 +72,6 @@ $-fallbacks: (
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
 /// @prop {Map} sizes [Map] Size options to enable unique stylings.
 
-/// @todo [joe-check] should items like 'dark-background-color' be 'background-color-dark' instead?
 $config: (
   "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
@@ -489,3 +490,4 @@ $config: (
     }
   }
 }
+

@@ -26,6 +26,8 @@ $-fallbacks: (
   ),
 );
 
+// todos [joe-check] for the config options, compact is at the end in this module (padding-compact) but at the beginning in card-grid(gap-compact) Line 35
+
 /// Module Settings
 /// @type Map
 /// @prop {Color} background-color [rgba(0,0,0,0.15)] The background color of the placeholder.
@@ -43,7 +45,6 @@ $-fallbacks: (
 /// @prop {Dimension} icon-margin [0.25em] The margin of the placeholder icon.
 /// @prop {Color} icon-color [rgba(0, 0, 0, 0.5)] The icon type color.
 
-/// @todo [joe-check] compact is at the end here (padding-compact) but at the beginning in card-grid(gap-compact)
 
 $config: (
   "background-color" : rgba(0,0,0,0.15),

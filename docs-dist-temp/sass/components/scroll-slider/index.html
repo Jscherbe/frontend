@@ -5288,10 +5288,10 @@
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 </div>
-<p>Config options</p>
+<p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"container"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"container"</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5323,11 +5323,132 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 43-43</li>
-<li><strong>Lines (code):</strong> 45-69  </details>
+<li><strong>Lines (comments):</strong> 18-41</li>
+<li><strong>Lines (code):</strong> 43-67  </details>
 </li>
 </ul>
-<p>Module Settings</p>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">container</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;container&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">containers</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">(&quot;container&quot;,)</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-bottom</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">3rem</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1rem</td>
+</tr>
+<tr>
+<td style="text-align:left">padding-bottom</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">padding-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">prefix</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;scroll-slide&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">button-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+</tr>
+<tr>
+<td style="text-align:left">button-background-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+</tr>
+<tr>
+<td style="text-align:left">button-border</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">2px solid white</td>
+</tr>
+<tr>
+<td style="text-align:left">button-border-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+</tr>
+<tr>
+<td style="text-align:left">button-border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">50%</td>
+</tr>
+<tr>
+<td style="text-align:left">button-box-shadow</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">element.get(&quot;box-shadow&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;type&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">color.get(&quot;link&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:left">button-font-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1.35rem</td>
+</tr>
+<tr>
+<td style="text-align:left">button-indent</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1.5rem</td>
+</tr>
+<tr>
+<td style="text-align:left">button-indent-small</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.5rem</td>
+</tr>
+<tr>
+<td style="text-align:left">button-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">3rem</td>
+</tr>
+<tr>
+<td style="text-align:left">button-icon-offset-x</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">button-icon-offset-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">false</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5342,8 +5463,8 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 71-74</li>
-<li><strong>Lines (code):</strong> 76-78  </details>
+<li><strong>Lines (comments):</strong> 69-72</li>
+<li><strong>Lines (code):</strong> 74-76  </details>
 </li>
 </ul>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5384,8 +5505,8 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 80-82</li>
-<li><strong>Lines (code):</strong> 84-86  </details>
+<li><strong>Lines (comments):</strong> 78-80</li>
+<li><strong>Lines (code):</strong> 82-84  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

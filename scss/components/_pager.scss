@@ -10,6 +10,8 @@
 
 // Markup Matches Drupal Pager
 
+// todo [joe-check] for config options, active comes before (active-color) in this module while other modules have it come afer(color-active) Line 30
+
 /// Module Settings
 /// @type Map
 /// @prop {String} background-color [link] The background color of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.
@@ -38,7 +40,6 @@
 /// @prop {Dimension} action-margin [0.8rem] The margin of the action options of the pager.
 /// @prop {Dimension} action-width [2.5rem] The width of the action options of the pager.
 
-/// @todo [joe-check] active comes before (active-color) while other modules have it come afer(color-active)
 $config: (
   "background-color":              "link",
   "background-color-hover":        "link-hover",
