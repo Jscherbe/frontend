@@ -46,21 +46,20 @@ $config: (
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** variable
-- **Lines (comments):** 15-21
-- **Lines (code):** 23-28
+- **Lines (comments):** 15-20
+- **Lines (code):** 22-27
     </details>
     
 
 #### Map Properties
 
 
-|Name|Type|Description|Default|
+|Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|$config.links-state-styling|Number|Just color/defaults vs hover/visited/active @joe-check is this antiquated?||
-|details-animation|CssValue|Animation for the details element when toggled.|(UluFadeInDown 350ms ease-in-out)|
-|link|Boolean|Enables link styling.|true|
-|link-hover|Boolean|Enables link hover and focus styling.|true|
-|link-visited|Boolean|Enables visited link styling.|true|
+|details-animation|CssValue|(UluFadeInDown 350ms ease-in-out)|Animation for the details element when toggled.|
+|link|Boolean|true|Enables link styling.|
+|link-hover|Boolean|true|Enables link hover and focus styling.|
+|link-visited|Boolean|true|Enables visited link styling.|
 
     
   
@@ -91,8 +90,8 @@ Change modules $config
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 30-33
-- **Lines (code):** 34-36
+- **Lines (comments):** 29-32
+- **Lines (code):** 33-35
     </details>
     
 
@@ -144,8 +143,8 @@ Prints elements base styles
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 47-50
-- **Lines (code):** 52-209
+- **Lines (comments):** 46-49
+- **Lines (code):** 51-208
     </details>
     
 
@@ -193,8 +192,8 @@ Get a config option
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** function
-- **Lines (comments):** 38-41
-- **Lines (code):** 43-45
+- **Lines (comments):** 37-40
+- **Lines (code):** 42-44
     </details>
     
 
