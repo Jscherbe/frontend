@@ -191,12 +191,16 @@ $config: (
   }
   #{ $prefix }__slide {
     margin: 0;
-    padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
     @if (get("button-size-small")) {
       @include breakpoint.max(get("breakpoint")) {
         $bp-slide-padding: get("button-size-small") + get("button-margin-small");
         padding: get("padding-top-small") $bp-slide-padding get("padding-bottom-small") $bp-slide-padding;
       }
+    }
+  }
+  #{ $prefix }--slide-control-margins {
+    #{ $prefix }__slide {
+      padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
     }
   }
 }
