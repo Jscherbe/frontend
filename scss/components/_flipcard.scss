@@ -263,6 +263,13 @@ $config: (
     justify-content: center;
     align-items: center;
   }
+  .flipcard__back-content {
+    .flipcard__icon-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
 }
 .flipcard--bottom-title {
   .flipcard__front-content {
@@ -274,11 +281,23 @@ $config: (
     align-items: center;
     justify-content: center;
     position: relative;
+    padding-top: calc(get("padding") + 1.2rem);
+    padding-bottom: calc(get("padding") + 1.2rem);
+    .flipcard__icon-container {
+      position: absolute;
+      bottom: get("padding");
+      right: get("padding");
+    }
   }
-  .flipcard__icon-container {
-    position: absolute;
-    bottom: get("padding");
-    right: get("padding");
+  .flipcard__back {
+    position: relative;
+    padding-top: calc(get("padding") + 1.2rem);
+    padding-bottom: calc(get("padding") + 1.2rem);
+    .flipcard__icon-container {
+      position: absolute;
+      bottom: get("padding");
+      right: get("padding");
+    }
   }
 }
 // modifier for animations

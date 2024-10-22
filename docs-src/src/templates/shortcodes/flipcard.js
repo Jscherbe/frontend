@@ -13,7 +13,7 @@ export default function(
       <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
     </div>
     </span>` : 
-    `<span class="flipcard__front-content type-large type-bold vignette">
+    `<span class="flipcard__front-content type-large type-bold">
     <div>This is the Title of flipcard ${ number }</div>
     <div class="flipcard__icon-container">
       <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
@@ -24,13 +24,17 @@ export default function(
       <div>This is the Title of flipcard ${ number }</div>
     </div>
     <div class="flipcard__back-content">
-      Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.
+      <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+      <div class="flipcard__icon-container">
+    <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
     </div>
-    <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>` :
+    </div>` :
     `<div class="flipcard__back-content">
       <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+      <div class="flipcard__icon-container">
+    <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
     </div>
-    <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>`;
+    </div>`;
 
   return `<div class="${ containerClass }" data-ulu-flipcard>
     <h3 class="flipcard__front" data-ulu-flipcard-front>
