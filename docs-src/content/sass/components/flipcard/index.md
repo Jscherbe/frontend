@@ -35,6 +35,10 @@ Module Settings
 $config: (
   "anim-delay" : 200ms,
   "anim-duration" : 430ms,
+  "anim-front-close": "FlipcardFrontClose",
+  "anim-front-open": "FlipcardFrontOpen",
+  "anim-back-open": "FlipcardBackOpen",
+  "anim-timing-function": ease-out,
   "background-color" : white,
   "background-color-image" : rgba(96, 255, 255, 0.89),
   "background-color-back" : rgb(178, 178, 178),
@@ -63,7 +67,7 @@ $config: (
 - **Group:** flipcard
 - **Type:** variable
 - **Lines (comments):** 12-33
-- **Lines (code):** 35-57
+- **Lines (code):** 35-61
     </details>
     
 
@@ -122,8 +126,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-69
     </details>
     
 
@@ -164,8 +168,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
     </details>
     
 
@@ -206,8 +210,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-259
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-263
     </details>
     
 
@@ -255,8 +259,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-85
     </details>
     
 

@@ -36,6 +36,10 @@
 $config: (
   "anim-delay" : 200ms,
   "anim-duration" : 430ms,
+  "anim-front-close": "FlipcardFrontClose",
+  "anim-front-open": "FlipcardFrontOpen",
+  "anim-back-open": "FlipcardBackOpen",
+  "anim-timing-function": ease-out,
   "background-color" : white,
   "background-color-image" : rgba(96, 255, 255, 0.89),
   "background-color-back" : rgb(178, 178, 178),
@@ -129,10 +133,10 @@ $config: (
     @media (prefers-reduced-motion: no-preference) {
       [data-flipcard-state="open"] & {
         opacity: 0;
-        animation: flipcard-front-close get('anim-duration') ease-out forwards;
+        animation: get("anim-front-close") get('anim-duration') get("anim-timing-function") forwards;
       }
       [data-flipcard-state="closed"] & {
-        animation: flipcard-front-open get('anim-duration') ease-in-out forwards;
+        animation: get("anim-front-open") get('anim-duration') get("anim-timing-function") forwards;
       }
     }
   }
@@ -155,7 +159,7 @@ $config: (
   .flipcard__front-image {
     display: block;
     @media (prefers-reduced-motion) {
-      transition: transform 1000ms 200ms ease-out;
+      transition: transform 1000ms 200ms get("anim-timing-function");
     }
     img {
       object-fit: cover;
@@ -179,7 +183,7 @@ $config: (
     z-index: 2;
     padding: get('padding');
     align-self: end;
-    transition: transform 350ms ease-in-out;    
+    transition: transform 350ms get("anim-timing-function");    
   }
   .flipcard--w-image {
     .flipcard__icon {
@@ -208,52 +212,52 @@ $config: (
     padding: get('padding');
     justify-content: flex-end;
     [data-flipcard-state="open"] & {
-      animation: flipcard-back-open get('anim-duration') ease-out forwards;
+      animation: get("anim-back-open") get('anim-duration') get("anim-timing-function") forwards;
       @media (prefers-reduced-motion) {
-        animation: fadeIn 430ms ease-in-out;
+        animation: fadeIn 430ms get("anim-timing-function");
       }
     }
   }
-  @keyframes flipcard-back-open {
+  @keyframes FlipcardBackOpen {
     0% {
       opacity: 0;
-      transform: scale(0.7);
-      transform: translatey(100%);
+      // transform: scale(0.7);
+      transform: translateY(100%);
     }
     30% {
       opacity: 0;
-      transform: translatey(100%);
+      transform: translateY(100%);
     }
     100% {
       opacity: 1;
-      transform: scale(1);
-      transform: translatey(0);
+      // transform: scale(1);
+      transform: translateY(0);
     }
   }
-  @keyframes flipcard-front-close {
+  @keyframes FlipcardFrontClose {
     0% {
       opacity: 1;
-      transform: scale(1);
+      // transform: scale(1);
     }
     80% {
       opacity: 0;
-      transform: scale(0.7);
+      // transform: scale(0.7);
     }
     100% {
       opacity: 0;
     }
   }
-  @keyframes flipcard-front-open {
+  @keyframes FlipcardFrontOpen {
     0% {
       opacity: 0;
-      transform: scale(0.7);
+      // transform: scale(0.7);
     }
     30% {
       opacity: 0;
     }
     100% {
       opacity: 1;
-      transform: scale(1);
+      // transform: scale(1);
     }
   }
 }
@@ -303,6 +307,6 @@ $config: (
 // modifier for animations
 .flipcard--animation:hover {
   .flipcard__front-content {
-    transform: translatey(-(get('padding') * 0.5));
+    transform: translateY(-(get('padding') * 0.5));
   }
 }
