@@ -46,13 +46,15 @@ $config: (
   "button-background-color-hover" : color.get("link-hover"),
   "button-color" : color.get("link"),
   "button-font-size" : 1.35rem,
-  "button-icon-offset-x" : false,
+  "button-icon-offset-x" : 2rem,
   "button-icon-offset-y" : false,
   "button-font-size-small" : false,
-  "button-margin" : 0.75rem,
+  "button-margin" : 2rem,
   "button-margin-small" : 0.75rem,
   "button-size" : 3rem,
   "button-size-small" : false,
+  "button-height": 2.5rem,
+  "button-width": 2.5rem,
   "dot-background-color" : transparent,
   "dot-background-color-hover" : color.get("link"),
   "dot-background-color-selected" : color.get("link"),
@@ -75,8 +77,8 @@ $config: (
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** variable
-- **Lines (comments):** 12-45
-- **Lines (code):** 47-81
+- **Lines (comments):** 12-47
+- **Lines (code):** 49-85
     </details>
     
 
@@ -117,6 +119,8 @@ $config: (
 |dot-border-color-selected|Color|color.get("link")|
 |dot-border-width|Dimension|2px|
 |dot-size|Dimension|1rem|
+|button-height|Dimension|1rem|
+|button-width|Dimension|1rem|
 
     
   
@@ -147,8 +151,8 @@ Change modules $config
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 83-86
-- **Lines (code):** 88-90
+- **Lines (comments):** 87-90
+- **Lines (code):** 92-94
     </details>
     
 
@@ -200,8 +204,8 @@ Prints modal component styles
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 100-102
-- **Lines (code):** 104-206
+- **Lines (comments):** 104-106
+- **Lines (code):** 108-236
     </details>
     
 
@@ -249,8 +253,8 @@ Get a config option
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** function
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-98
+- **Lines (comments):** 96-98
+- **Lines (code):** 100-102
     </details>
     
 

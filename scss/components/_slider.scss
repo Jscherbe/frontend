@@ -43,6 +43,8 @@
 /// @prop {Color} dot-border-color-selected [color.get("link")]
 /// @prop {Dimension} dot-border-width [2px]
 /// @prop {Dimension} dot-size  [1rem]
+/// @prop {Dimension} button-height  [1rem]
+/// @prop {Dimension} button-width  [1rem]
 
 $config: (
   "background-color" : transparent,
@@ -58,13 +60,15 @@ $config: (
   "button-background-color-hover" : color.get("link-hover"),
   "button-color" : color.get("link"),
   "button-font-size" : 1.35rem,
-  "button-icon-offset-x" : false,
+  "button-icon-offset-x" : 2rem,
   "button-icon-offset-y" : false,
   "button-font-size-small" : false,
-  "button-margin" : 0.75rem,
+  "button-margin" : 2rem,
   "button-margin-small" : 0.75rem,
   "button-size" : 3rem,
   "button-size-small" : false,
+  "button-height": 2.5rem,
+  "button-width": 2.5rem,
   "dot-background-color" : transparent,
   "dot-background-color-hover" : color.get("link"),
   "dot-background-color-selected" : color.get("link"),
@@ -109,68 +113,51 @@ $config: (
     position: relative; // for controls
     background-color: get("background-color");
     margin: get("margin-top") 0 get("margin-bottom") 0;
-    #{ $prefix }__track,
-    #{ $prefix-plugin }__controls,
-    #{ $prefix-plugin }__nav {
-      list-style: none !important;
-      padding-left: 0;
+  }
+  #{ $prefix }__track,
+  #{ $prefix-plugin }__controls,
+  #{ $prefix-plugin }__nav {
+    list-style: none !important;
+    padding-left: 0;
+  }
+  #{ $prefix-plugin }__control-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  @if get("button-icon-offset-y") {
+    #{ $prefix-plugin }__control-icon {
+      margin-top: get("button-icon-offset-y");
     }
-    #{ $prefix-plugin }__control-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 10;
+  }
+  #{ $prefix-plugin }__nav {
+    display: flex;
+    justify-content: center;
+    li {
+      margin: 0.5rem 0.15rem;
     }
-    @if get("button-icon-offset-y") {
-      #{ $prefix-plugin }__control-icon {
-        margin-top: get("button-icon-offset-y");
-      }
+  }
+  #{ $prefix-plugin }__nav-button {
+    display: block;
+    width: get("dot-size");
+    height: get("dot-size");
+    background-color: get("dot-background-color");
+    border: get("dot-border-width") solid get("dot-border-color");
+    border-radius: get("dot-border-radius");
+    &:hover {
+      background-color: get("dot-background-color-hover");
     }
-    #{ $prefix-plugin }__control-button--previous {
-      left: 0;
-      @if get("button-icon-offset-x")  {
-        #{ $prefix-plugin }__control-icon {
-          margin-left: get("button-icon-offset-x");
-          
-        }
-      }
-    }
-    #{ $prefix-plugin }__control-button--next {
-      right: 0;
-      @if get("button-icon-offset-x")  {
-        #{ $prefix-plugin }__control-icon {
-          margin-right: get("button-icon-offset-x");
-        }
-      }
-    }
-    #{ $prefix-plugin }__nav {
-      display: flex;
-      justify-content: center;
-      li {
-        margin: 0.5rem 0.15rem;
-      }
-    }
-    #{ $prefix-plugin }__nav-button {
-      display: block;
-      width: get("dot-size");
-      height: get("dot-size");
-      background-color: get("dot-background-color");
-      border: get("dot-border-width") solid get("dot-border-color");
-      border-radius: get("dot-border-radius");
-      &:hover {
-        background-color: get("dot-background-color-hover");
-      }
-    }
-    #{ $prefix-plugin }__nav-button--active,
-    #{ $prefix-plugin }__nav-button--active:hover {
-      background-color: get("dot-background-color-selected");
-      border-color: get("dot-border-color-selected");
-    }
-    #{ $prefix-plugin }__control-button,
-    #{ $prefix-plugin }__nav-button {
-      transition-property: color, background-color, border-color;
-      transition-duration: 300ms;
-    }
+  }
+  #{ $prefix-plugin }__nav-button--active,
+  #{ $prefix-plugin }__nav-button--active:hover {
+    background-color: get("dot-background-color-selected");
+    border-color: get("dot-border-color-selected");
+  }
+  #{ $prefix-plugin }__control-button,
+  #{ $prefix-plugin }__nav-button {
+    transition-property: color, background-color, border-color;
+    transition-duration: 300ms;
   }
   #{ $prefix }__title {
     margin-top: -1.5rem !important;
@@ -191,16 +178,59 @@ $config: (
   }
   #{ $prefix }__slide {
     margin: 0;
-    @if (get("button-size-small")) {
-      @include breakpoint.max(get("breakpoint")) {
-        $bp-slide-padding: get("button-size-small") + get("button-margin-small");
-        padding: get("padding-top-small") $bp-slide-padding get("padding-bottom-small") $bp-slide-padding;
-      }
-    }
+    // @if (get("button-size-small")) {
+    //   @include breakpoint.max(get("breakpoint")) {
+    //     $bp-slide-padding: get("button-size-small") + get("button-margin-small");
+    //     padding: get("padding-top-small") $bp-slide-padding get("padding-bottom-small") $bp-slide-padding;
+    //   }
+    // }
   }
   #{ $prefix }--slide-control-margins {
     #{ $prefix }__slide {
       padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
+    }
+  }
+  .slide-gap-for-controls {
+    $padding:  get("button-width") + get("button-margin");
+    padding: get("padding-top") $padding get("padding-bottom") $padding;
+  }
+  #{ $prefix-plugin }__control-button--previous {
+    left: 0;
+    @if get("button-icon-offset-x")  {
+      #{ $prefix-plugin }__control-icon {
+        margin-left: get("button-icon-offset-x");
+      }
+    }
+  }
+  #{ $prefix-plugin }__control-button--next {
+    right: 0;
+    @if get("button-icon-offset-x")  {
+      #{ $prefix-plugin }__control-icon {
+        margin-right: get("button-icon-offset-x");
+      }
+    }
+  }
+  .slider--inset-controls {
+    .slide-gap-for-controls {
+      $padding:  get("button-width") + get("button-margin") + get("button-icon-offset-x");
+      padding: get("padding-top") $padding get("padding-bottom") $padding;
+    }
+    #{ $prefix-plugin }__control-button--previous {
+      left: 0;
+      @if get("button-icon-offset-x")  {
+        &#{ $prefix-plugin }__control-icon {
+          margin-left: get("button-icon-offset-x");
+          
+        }
+      }
+    }
+    #{ $prefix-plugin }__control-button--next {
+      right: 0;
+      @if get("button-icon-offset-x")  {
+        &#{ $prefix-plugin }__control-icon {
+          margin-right: get("button-icon-offset-x");
+        }
+      }
     }
   }
 }

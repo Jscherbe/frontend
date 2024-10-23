@@ -121,7 +121,7 @@ export class Slider {
     transitionDuration: 700,
     transitionDurationExit: 400,
     transitionTimingFunction: "ease-in-out",
-    buttonClasses: ["button", "button--icon"],
+    buttonClasses: ["Slider__control-icon", "button", "button--icon"],
     iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
     iconClassesNext: ["css-icon", "css-icon--angle-right"]
     // transition: true
