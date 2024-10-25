@@ -33,7 +33,8 @@ Module Settings
 
 ``` scss
 $config: (
-  "text-alignment-matches-position" : true,
+  "text-alignment-matches" : false,
+  "text-alignment-matches-center-only" : true,
   "background-color" : white,
   "box-shadow" : true,
   "margin-bottom" : true,
@@ -59,7 +60,7 @@ $config: (
 - **Group:** captioned-figure
 - **Type:** variable
 - **Lines (comments):** 30-31
-- **Lines (code):** 33-50
+- **Lines (code):** 33-51
     </details>
     
   
@@ -90,8 +91,8 @@ Change modules $config
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 52-54
-- **Lines (code):** 56-58
+- **Lines (comments):** 53-55
+- **Lines (code):** 57-59
     </details>
     
 
@@ -132,8 +133,8 @@ Prints component styles
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 69-72
-- **Lines (code):** 74-169
+- **Lines (comments):** 70-73
+- **Lines (code):** 75-171
     </details>
     
 
@@ -194,8 +195,8 @@ Get a config option
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** function
-- **Lines (comments):** 60-62
-- **Lines (code):** 64-67
+- **Lines (comments):** 61-63
+- **Lines (code):** 65-68
     </details>
     
 

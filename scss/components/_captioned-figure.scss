@@ -31,7 +31,8 @@ $-fallbacks: (
 /// @type Map
 
 $config: (
-  "text-alignment-matches-position" : true,
+  "text-alignment-matches" : false,
+  "text-alignment-matches-center-only" : true,
   "background-color" : white,
   "box-shadow" : true,
   "margin-bottom" : true,
@@ -73,7 +74,8 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("captioned-figure");
-  $set-aligns: get("text-alignment-matches-position");
+  $set-aligns: get("text-alignment-matches");
+  $aligns-center-only: get("text-alignment-matches-center-only");
 
   #{ $prefix } {
     display: block;
@@ -126,7 +128,7 @@ $config: (
   #{ $prefix }--left {
     #{ $prefix }__caption {
       left: 0;
-      @if ($set-aligns) {
+      @if ($set-aligns and not $aligns-center-only) {
         text-align: left;
       }
     }
@@ -134,7 +136,7 @@ $config: (
   #{ $prefix }--right {
     #{ $prefix }__caption {
       right: 0;
-      @if ($set-aligns) {
+      @if ($set-aligns and not $aligns-center-only) {
         text-align: right;
       }
     }
@@ -154,7 +156,7 @@ $config: (
     #{ $prefix }__caption {
       left: 50%;
       transform: translateX(-50%);
-      @if ($set-aligns) {
+      @if ($set-aligns or $aligns-center-only) {
         text-align: center;
       }
     }
