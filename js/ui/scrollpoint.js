@@ -69,7 +69,8 @@ export function setup() {
   elements.forEach(element => {
     const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
     const config = Object.assign({}, elOptions);
-    new Scrollpoint(element, config)
+    element.setAttribute(attrs.init, "");
+    new Scrollpoint(element, config);
   });
 }
 
