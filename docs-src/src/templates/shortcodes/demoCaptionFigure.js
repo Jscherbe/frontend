@@ -4,11 +4,10 @@ export default function(...sides) {
 <figure class="captioned-figure ${ classes }">
   <img 
     src="/assets/placeholder/image-1.jpg" 
-    class="captioned-figure__media" 
     alt="Colorful cobblestone City Street"
   >
-  <figcaption class="captioned-figure__caption crop-margins">
-    Colorful cobblestone City Street
+  <figcaption class="captioned-figure__caption">
+    Colorful cobblestone City Street, caption with a lot of text to see what happens when lines wrap
   </figcaption>
 </figure>
   `;

@@ -33,19 +33,22 @@ Module Settings
 
 ``` scss
 $config: (
+  "text-alignment-matches-position" : true,
+  "background-color" : white,
   "box-shadow" : true,
   "margin-bottom" : true,
   "line-height" : true,
-  "padding" :  0.5em,
-  "max-width" : min(100%, 25em),
+  "caption-padding" :  0.5em,
   "color" : null,
-  "background-color" : rgba(255,255,255,0.7),
-  "backdrop-filter" : blur(2px),
-  "traditional-color" : null,
-  "traditional-background-color" : transparent,
-  "traditional-margin-top" : 1em,
-  "traditional-padding" : 0,
-  "traditional-max-width" : 35em,
+  "type-size" : "small",
+  "caption-max-width" : min(100%, 15em),
+  "caption-background-color" : rgba(255,255,255,0.7),
+  "caption-backdrop-filter" : blur(2px),
+  "traditional-caption-color" : null,
+  "traditional-caption-background-color" : transparent,
+  "traditional-caption-padding" : 0.5em,
+  "traditional-caption-max-width" : 35em,
+  "traditional-caption-text-align" : right,
 );
 ```
   
@@ -56,7 +59,7 @@ $config: (
 - **Group:** captioned-figure
 - **Type:** variable
 - **Lines (comments):** 30-31
-- **Lines (code):** 33-47
+- **Lines (code):** 33-50
     </details>
     
   
@@ -87,8 +90,8 @@ Change modules $config
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 49-51
-- **Lines (code):** 53-55
+- **Lines (comments):** 52-54
+- **Lines (code):** 56-58
     </details>
     
 
@@ -129,8 +132,8 @@ Prints component styles
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 66-69
-- **Lines (code):** 71-146
+- **Lines (comments):** 69-72
+- **Lines (code):** 74-169
     </details>
     
 
@@ -191,8 +194,8 @@ Get a config option
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** function
-- **Lines (comments):** 57-59
-- **Lines (code):** 61-64
+- **Lines (comments):** 60-62
+- **Lines (code):** 64-67
     </details>
     
 

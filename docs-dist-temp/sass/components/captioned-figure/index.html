@@ -5411,19 +5411,22 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"text-alignment-matches-position"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"line-height"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span>  0.5em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"max-width"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">min</span><span class="pjs-token pjs-punctuation">(</span>100%<span class="pjs-token pjs-punctuation">,</span> 25em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"caption-padding"</span> <span class="pjs-token pjs-punctuation">:</span>  0.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>255<span class="pjs-token pjs-punctuation">,</span>255<span class="pjs-token pjs-punctuation">,</span>255<span class="pjs-token pjs-punctuation">,</span>0.7<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"backdrop-filter"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">blur</span><span class="pjs-token pjs-punctuation">(</span>2px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"traditional-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"traditional-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"traditional-margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"traditional-padding"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"traditional-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 35em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"type-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"caption-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">min</span><span class="pjs-token pjs-punctuation">(</span>100%<span class="pjs-token pjs-punctuation">,</span> 15em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"caption-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>255<span class="pjs-token pjs-punctuation">,</span>255<span class="pjs-token pjs-punctuation">,</span>255<span class="pjs-token pjs-punctuation">,</span>0.7<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"caption-backdrop-filter"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">blur</span><span class="pjs-token pjs-punctuation">(</span>2px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"traditional-caption-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"traditional-caption-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"traditional-caption-padding"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"traditional-caption-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 35em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"traditional-caption-text-align"</span> <span class="pjs-token pjs-punctuation">:</span> right<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p><details>
 <summary>File Information</summary></p>
@@ -5432,7 +5435,7 @@
 <li><strong>Group:</strong> captioned-figure</li>
 <li><strong>Type:</strong> variable</li>
 <li><strong>Lines (comments):</strong> 30-31</li>
-<li><strong>Lines (code):</strong> 33-47  </details>
+<li><strong>Lines (code):</strong> 33-50  </details>
 </li>
 </ul>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5449,8 +5452,8 @@
 <li><strong>File:</strong> _captioned-figure.scss</li>
 <li><strong>Group:</strong> captioned-figure</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 49-51</li>
-<li><strong>Lines (code):</strong> 53-55  </details>
+<li><strong>Lines (comments):</strong> 52-54</li>
+<li><strong>Lines (code):</strong> 56-58  </details>
 </li>
 </ul>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -5492,8 +5495,8 @@
 <li><strong>File:</strong> _captioned-figure.scss</li>
 <li><strong>Group:</strong> captioned-figure</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 66-69</li>
-<li><strong>Lines (code):</strong> 71-146  </details>
+<li><strong>Lines (comments):</strong> 69-72</li>
+<li><strong>Lines (code):</strong> 74-169  </details>
 </li>
 </ul>
 <div class="callout callout--demo crop-margins">
@@ -5520,8 +5523,8 @@
 <li><strong>File:</strong> _captioned-figure.scss</li>
 <li><strong>Group:</strong> captioned-figure</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 57-59</li>
-<li><strong>Lines (code):</strong> 61-64  </details>
+<li><strong>Lines (comments):</strong> 60-62</li>
+<li><strong>Lines (code):</strong> 64-67  </details>
 </li>
 </ul>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>

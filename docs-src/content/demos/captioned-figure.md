@@ -1,27 +1,24 @@
 ---
 title: Captioned Figure
-layout: default
 ---
 
+<h2 class="h2">Traditional</h2>
 
-## Traditional
+<h3 class="h3">Traditional with link</h3>
 
-### Traditional with link
-
-<figure class="captioned-figure captioned-figure--traditional">
-  <a class="captioned-figure__media-link" href="#">
+<a class="captioned-figure captioned-figure--traditional" href="#">
+  <figure>
     <img 
       src="/assets/placeholder/image-1.jpg" 
-      class="captioned-figure__media" 
       alt="Colorful cobblestone City Street"
     >
-  </a>
-  <figcaption class="captioned-figure__caption crop-margins">
-    Colorful cobblestone City Street
-  </figcaption>
-</figure>
+    <figcaption class="captioned-figure__caption">
+      Colorful cobblestone City Street
+    </figcaption>
+  </figure>
+</a>
 
-### Traditional with no link
+<h3 class="h3">Traditional with no link</h3>
 
 <figure class="captioned-figure captioned-figure--traditional">
   <img 
@@ -29,33 +26,41 @@ layout: default
     class="captioned-figure__media" 
     alt="Colorful cobblestone City Street"
   >
-  <figcaption class="captioned-figure__caption crop-margins">
+  <figcaption class="captioned-figure__caption">
     Colorful cobblestone City Street
   </figcaption>
 </figure>
 
-## Positioned Examples
+<h2 class="h2">Positioned Examples</h2>
 
-### Example figure positioned "left" "bottom"
+<h3 class="h3">Example figure positioned "left" "bottom"</h3>
 
 {% demoCaptionFigure "left" "bottom" %}
 
-### Example figure positioned "center" "bottom"
+<h3 class="h3">Example figure positioned "center" "bottom"</h3>
 
 {% demoCaptionFigure "center" "bottom" %}
 
-### Example figure positioned "right" "bottom"
+<h3 class="h3">Example figure positioned "right" "bottom"</h3>
 
 {% demoCaptionFigure "right" "bottom" %}
 
-### Example figure positioned "left" "top"
+<h3 class="h3">Example figure positioned "left" "top"</h3>
 
 {% demoCaptionFigure "left" "top" %}
 
-### Example figure positioned "center" "top"
+<h3 class="h3">Example figure positioned "center" "top"</h3>
 
 {% demoCaptionFigure "center" "top" %}
 
-### Example figure positioned "right" "top"
+<h3 class="h3">Example figure positioned "right" "top"</h3>
 
 {% demoCaptionFigure "right" "top" %}
+
+<h3 class="h3">Example figure positioned "right" "center"</h3>
+
+{% demoCaptionFigure "right" "center" %}
+
+<h3 class="h3">Example figure positioned "left" "center"</h3>
+
+{% demoCaptionFigure "left" "center" %}
