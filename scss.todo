@@ -1,4 +1,23 @@
 SCSS Todos:
+  ☐ Coing back to the idea about padding-x padding-y on container
+    * Makes it simpler for calculations but it also means extra properties
+    * There are a lot of modules that offer padding and margin, maybe they can all be open ended?
+      * Refactor the get-container-padding-x() to use a util function for grabbing 4 unit box offsets [margin, padding]
+        * Make it work no matter the number of items in the list ie margin: 2em 1em 0; 
+        * Then configs can be simpler across the board and modules can use (not sure about naming) 
+          * like utils.get-box-offset($list-or-value, $ends: true) or separate functions?
+            * utils.get-box-offset-x, utils.get-box-offset-y, utils.get-box-offset-top, utils.get-box-offset-bottom, utils.get-box-offset-left, utils.get-box-offset-right
+              * Where x and y will return left or top? falling back to right or bottom? (not sure about that)
+              * Could require that these types of interfaces are either (single value, double value, four value)
+              * Can't see any scenario where 3 sides would be used (offseting an image in a card / bleeding to one side)
+                * Unlikely and should probably be a specific override in user stylesheet
+                * That's where maybe either throwing an erro for incorrect syntax of box-offset list or
+                * Allowing it but returning the larger number of a given access (ie. for x check left and right return largest)
+                * Think about this more, would make implementing properties like this easy and allow the user simpler (known/css) like config, while allowing modules to do calculations on either offset
+                * Think if offset is the best word to describe this
+              * Note, the main util function that resolves the values should return a map of information (top, left, bottom, right)
+                * Functions for convience should use this information and return the appropriate value
+                * Naming notes, get-box-offsets, get-box-spacing-sides, get-spacing-info() [winner]
   ☐ Data Grid
     ☐ I think we can refactor to gap now
       * Still use flexbox

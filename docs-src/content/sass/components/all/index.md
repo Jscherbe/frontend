@@ -70,6 +70,7 @@ $all-includes: (
   "placeholder-block",
   "pull-quote",
   "vignette",
+  "captioned-figure",
   "wysiwyg",
 );
 ```
@@ -80,8 +81,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 86-87
-- **Lines (code):** 89-128
+- **Lines (comments):** 88-89
+- **Lines (code):** 91-131
     </details>
     
 
@@ -112,8 +113,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 130-131
-- **Lines (code):** 133-133
+- **Lines (comments):** 133-134
+- **Lines (code):** 136-136
     </details>
     
   
@@ -145,8 +146,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 135-137
-- **Lines (code):** 139-142
+- **Lines (comments):** 138-140
+- **Lines (code):** 142-145
     </details>
     
 
@@ -187,8 +188,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 144-145
-- **Lines (code):** 147-149
+- **Lines (comments):** 147-148
+- **Lines (code):** 150-152
     </details>
     
 
@@ -228,8 +229,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 151-155
-- **Lines (code):** 157-276
+- **Lines (comments):** 154-158
+- **Lines (code):** 160-282
     </details>
     
 

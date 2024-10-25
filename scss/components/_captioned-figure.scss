@@ -1,0 +1,146 @@
+////
+/// @group captioned-figure
+////
+/// Figure with caption layout (to position caption)
+
+@use "sass:map";
+@use "sass:meta";
+
+@use "../selector";
+@use "../utils";
+@use "../element";
+@use "../typography";
+
+// Used for function fallback
+$-fallbacks: (
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow-raised"
+  ),
+  "margin-bottom" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "margin"
+  ),
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "box-shadow" : true,
+  "margin-bottom" : true,
+  "line-height" : true,
+  "padding" :  0.5em,
+  "max-width" : min(100%, 25em),
+  "color" : null,
+  "background-color" : rgba(255,255,255,0.7),
+  "backdrop-filter" : blur(2px),
+  "traditional-color" : null,
+  "traditional-background-color" : transparent,
+  "traditional-margin-top" : 1em,
+  "traditional-padding" : 0,
+  "traditional-max-width" : 35em,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "captioned-figure [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo Check out our demo [accordion]
+/// @example scss
+///  @include ulu.component-captioned-figure-styles();
+
+@mixin styles {
+  $prefix: selector.class("captioned-figure");
+
+  #{ $prefix } {
+    position: relative;
+    margin-bottom: get("margin-bottom");
+    line-height: get("line-height");
+  }
+  #{ $prefix }__media {
+    width: 100%;
+    height: auto;
+  }
+  #{ $prefix }__media-link {
+    display: block;
+    @if (get("box-shadow")) {
+      &:hover,
+      &:focus {
+        #{ $prefix }__media {
+          box-shadow: get("box-shadow");
+        }
+      }
+    }
+  }
+  #{ $prefix }__caption {
+    position: absolute;
+    color: get("color");
+    max-width: get("max-width");
+    background-color: get("background-color");
+    padding: get("padding");
+    backdrop-filter: get("backdrop-filter");
+  }
+  #{ $prefix }--traditional {
+    #{ $prefix }__caption {
+      position: static;
+      color: get("traditional-color");
+      margin-top: get("traditional-margin-top");
+      max-width: get("traditional-max-width");
+      background-color: get("traditional-background-color");
+      padding: get("traditional-padding");
+    }
+  }
+  #{ $prefix }--left {
+    #{ $prefix }__caption {
+      left: 0;
+    }
+  }
+  #{ $prefix }--right {
+    #{ $prefix }__caption {
+      right: 0;
+    }
+  }
+  #{ $prefix }--bottom {
+    #{ $prefix }__caption {
+      bottom: 0;
+    }
+  }
+  #{ $prefix }--top {
+    #{ $prefix }__caption {
+      top: 0;
+    }
+  }
+  #{ $prefix }--bottom#{ $prefix }--center,
+  #{ $prefix }--top#{ $prefix }--center {
+    #{ $prefix }__caption {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  #{ $prefix }--left#{ $prefix }--center,
+  #{ $prefix }--right#{ $prefix }--center {
+    #{ $prefix }__caption {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
