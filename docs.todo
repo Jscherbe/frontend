@@ -1,3 +1,7 @@
+Future Ideas:
+  ☐ Allow configuring library in browser for demos and stuff?
+    * Sass is now supported compiling in browser see
+      * https://sass-lang.com/blog/sass-in-the-browser/
 SCSS Docs Checks:
   ☐ Check Mixin Documentation
     ☐ Core
