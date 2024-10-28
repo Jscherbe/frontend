@@ -5439,6 +5439,21 @@
 
                     <li><a href="#function-list-join">list-join()</a>
             		</li>
+
+                    <li><a href="#function-get-spacing-info">get-spacing-info()</a>
+            		</li>
+
+                    <li><a href="#function-get-spacing-top">get-spacing-top()</a>
+            		</li>
+
+                    <li><a href="#function-get-spacing-right">get-spacing-right()</a>
+            		</li>
+
+                    <li><a href="#function-get-spacing-bottom">get-spacing-bottom()</a>
+            		</li>
+
+                    <li><a href="#function-get-spacing-left">get-spacing-left()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -6494,6 +6509,215 @@
 </tr>
 </tbody>
 </table>
+<div class="sassdoc-item-header">
+<h3 id="function-get-spacing-info" tabindex="-1">get-spacing-info()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Resolve spacing info (ie. margin/padding like arguments)</p>
+<ul>
+<li>
+<p>Will normalize the argument that may be shorthand or single value</p>
+</li>
+<li>
+<p>Used to programmatic things with single value config options for padding/margin</p>
+  <details>
+    <summary>File Information</summary>
+</li>
+<li>
+<p><strong>File:</strong> _utils.scss</p>
+</li>
+<li>
+<p><strong>Group:</strong> utils</p>
+</li>
+<li>
+<p><strong>Type:</strong> function</p>
+</li>
+<li>
+<p><strong>Lines (comments):</strong> 339-344</p>
+</li>
+<li>
+<p><strong>Lines (code):</strong> 346-362</p>
+  </details>
+</li>
+</ul>
+<h4 id="parameters-17" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left">`Number</td>
+<td style="text-align:left">List`</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-9" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">Map with spacing info for each side (top, right, bottom, left)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-5" tabindex="-1">Throw</h4>
+<ul>
+<li>Spacing has more than 4 arguments (not correct shorthand)</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-spacing-top" tabindex="-1">get-spacing-top()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Resolve the top spacing value for margin/padding like arguments</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 364-365</li>
+<li><strong>Lines (code):</strong> 367-369  </details>
+</li>
+</ul>
+<h4 id="returns-10" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-10" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/utils/#function-get-spacing-info">get-spacing-info()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-spacing-right" tabindex="-1">get-spacing-right()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Resolve the right spacing value for margin/padding like arguments</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 371-372</li>
+<li><strong>Lines (code):</strong> 374-376  </details>
+</li>
+</ul>
+<h4 id="returns-11" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-11" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/utils/#function-get-spacing-info">get-spacing-info()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-spacing-bottom" tabindex="-1">get-spacing-bottom()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Resolve the bottom spacing value for margin/padding like arguments</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 378-379</li>
+<li><strong>Lines (code):</strong> 381-383  </details>
+</li>
+</ul>
+<h4 id="returns-12" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-12" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/utils/#function-get-spacing-info">get-spacing-info()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-spacing-left" tabindex="-1">get-spacing-left()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Resolve the left spacing value for margin/padding like arguments</p>
+<p><details>
+<summary>File Information</summary></p>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 385-386</li>
+<li><strong>Lines (code):</strong> 388-390  </details>
+</li>
+</ul>
+<h4 id="returns-13" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-13" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/sass/core/utils/#function-get-spacing-info">get-spacing-info()</a></li>
+</ul>
 
     </div>
   </div>
