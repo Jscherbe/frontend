@@ -335,3 +335,56 @@ $config: (
     @return $joined;
   }
 }
+
+/// Resolve spacing info (ie. margin/padding like arguments)
+/// - Will normalize the argument that may be shorthand or single value
+/// - Used to programmatic things with single value config options for padding/margin
+/// @param {Number|List} $value The value to resolve (usually a config option)
+/// @throw If the list length > 4 (incorrect syntax for shorthand)
+/// @return {Map} Map with spacing info for each side (top, right, bottom, left)
+
+@function get-spacing-info($value) {
+  $is-list: meta.type-of($value) == "list";
+  $length: if($is-list, list.length($value), 1);
+  $single: $length == 1;
+  $top: if($is-list, list.nth($value, 1), $value);  // Top is always the same
+
+  @if ($length > 4) {
+    @error "Spacing has more than 4 arguments (not correct shorthand)";
+  }
+
+  @return (
+    "top" :    $top,
+    "right" :  if($single, $top, list.nth($value, 2)),
+    "bottom" : if($single, $top, list.nth($value, if($length >= 3, 3, 1))),
+    "left" :   if($single, $top, list.nth($value, if($length == 4, 4, 2)))
+  );
+}
+
+/// Resolve the top spacing value for margin/padding like arguments
+/// @return {Number}
+
+@function get-spacing-top($value) {
+  @return map.get(get-spacing-info($value), "top");
+}
+
+/// Resolve the right spacing value for margin/padding like arguments
+/// @return {Number}
+
+@function get-spacing-right($value) {
+  @return map.get(get-spacing-info($value), "right");
+}
+
+/// Resolve the bottom spacing value for margin/padding like arguments
+/// @return {Number}
+
+@function get-spacing-bottom($value) {
+  @return map.get(get-spacing-info($value), "bottom");
+}
+
+/// Resolve the left spacing value for margin/padding like arguments
+/// @return {Number}
+
+@function get-spacing-left($value) {
+  @return map.get(get-spacing-info($value), "left");
+}

@@ -967,5 +967,225 @@ Join a list with a separator
 |String|List|If separator was +, the result would be "value1 + value2" or (value1, "+", value2) depending on $to-string argument|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-info() {#function-get-spacing-info}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve spacing info (ie. margin/padding like arguments)
+- Will normalize the argument that may be shorthand or single value
+- Used to programmatic things with single value config options for padding/margin
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 339-344
+- **Lines (code):** 346-362
+    </details>
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|List`|The value to resolve (usually a config option)|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Map|Map with spacing info for each side (top, right, bottom, left)|
+
+    
+
+#### Throw
+
+- Spacing has more than 4 arguments (not correct shorthand)
+    
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-top() {#function-get-spacing-top}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the top spacing value for margin/padding like arguments
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 364-365
+- **Lines (code):** 367-369
+    </details>
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing-info()](/sass/core/utils/#function-get-spacing-info)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-right() {#function-get-spacing-right}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the right spacing value for margin/padding like arguments
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 371-372
+- **Lines (code):** 374-376
+    </details>
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing-info()](/sass/core/utils/#function-get-spacing-info)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-bottom() {#function-get-spacing-bottom}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the bottom spacing value for margin/padding like arguments
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 378-379
+- **Lines (code):** 381-383
+    </details>
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing-info()](/sass/core/utils/#function-get-spacing-info)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-left() {#function-get-spacing-left}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the left spacing value for margin/padding like arguments
+    
+    
+
+    <details>
+      <summary>File Information</summary>
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 385-386
+- **Lines (code):** 388-390
+    </details>
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing-info()](/sass/core/utils/#function-get-spacing-info)
+  
   
   
