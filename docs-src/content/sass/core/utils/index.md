@@ -1079,8 +1079,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 339-352
-- **Lines (code):** 354-370
+- **Lines (comments):** 339-354
+- **Lines (code):** 356-372
 
 </details>
 
@@ -1093,9 +1093,11 @@ Example of getting left value
 
 ``` scss
 $user-padding: (1em, 2em, 4em);
+$spacing: get-spacing($user-padding);
+// $spacing ("top" : 1em, "right" : 2em, "bottom" : 4em, "left" : 2em);
 
 .example {
-  left: map.get(get-spacing($user-padding), "left");
+  left: map.get($spacing, "left");
   // left = 2em
 }
 ```
@@ -1150,8 +1152,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 372-381
-- **Lines (code):** 383-385
+- **Lines (comments):** 374-383
+- **Lines (code):** 385-387
 
 </details>
 
@@ -1222,8 +1224,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 387-396
-- **Lines (code):** 398-400
+- **Lines (comments):** 389-398
+- **Lines (code):** 400-402
 
 </details>
 
@@ -1294,8 +1296,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 402-411
-- **Lines (code):** 413-415
+- **Lines (comments):** 404-413
+- **Lines (code):** 415-417
 
 </details>
 
@@ -1366,8 +1368,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 417-426
-- **Lines (code):** 428-430
+- **Lines (comments):** 419-428
+- **Lines (code):** 430-432
 
 </details>
 

@@ -343,9 +343,11 @@ $config: (
 /// @param {Number|List} $value The value to resolve (usually a config option)
 /// @example scss Example of getting left value
 ///   $user-padding: (1em, 2em, 4em);
+///   $spacing: get-spacing($user-padding);
+///   // $spacing ("top" : 1em, "right" : 2em, "bottom" : 4em, "left" : 2em);
 /// 
 ///   .example {
-///     left: map.get(get-spacing($user-padding), "left");
+///     left: map.get($spacing, "left");
 ///     // left = 2em
 ///   }
 /// @return {Map} Map with spacing info for each side (top, right, bottom, left)
