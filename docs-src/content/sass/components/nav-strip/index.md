@@ -55,14 +55,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** variable
 - **Lines (comments):** 15-32
 - **Lines (code):** 34-51
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -111,14 +115,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
 - **Lines (comments):** 54-56
 - **Lines (code):** 58-60
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -153,14 +161,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
 - **Lines (comments):** 70-72
 - **Lines (code):** 74-146
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -202,14 +214,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** function
 - **Lines (comments):** 62-64
 - **Lines (code):** 66-68
-    </details>
+
+</details>
+
     
 
 #### Parameters

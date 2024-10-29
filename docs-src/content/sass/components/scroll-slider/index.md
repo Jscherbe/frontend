@@ -60,14 +60,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** variable
 - **Lines (comments):** 18-41
 - **Lines (code):** 43-67
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -122,14 +126,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
 - **Lines (comments):** 69-72
 - **Lines (code):** 74-76
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -180,14 +188,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** function
 - **Lines (comments):** 78-80
 - **Lines (code):** 82-84
-    </details>
+
+</details>
+
     
 
 #### Parameters

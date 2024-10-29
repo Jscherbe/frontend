@@ -66,14 +66,18 @@ Prints fill context styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _fill-context.scss
 - **Group:** fill-context
 - **Type:** mixin
 - **Lines (comments):** 30-32
 - **Lines (code):** 34-64
-    </details>
+
+</details>
+
     
 
 #### Examples

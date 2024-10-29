@@ -49,14 +49,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** variable
 - **Lines (comments):** 9-17
 - **Lines (code):** 19-32
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -96,14 +100,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
 - **Lines (comments):** 34-36
 - **Lines (code):** 38-40
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -138,14 +146,18 @@ Prints badge component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
 - **Lines (comments):** 50-64
 - **Lines (code):** 66-126
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -207,14 +219,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
 - **Lines (comments):** 42-44
 - **Lines (code):** 46-48
-    </details>
+
+</details>
+
     
 
 #### Parameters

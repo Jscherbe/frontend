@@ -31,14 +31,18 @@ Strips the unit from the number
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utility.scss
 - **Group:** utility
 - **Type:** function
 - **Lines (comments):** 7-8
 - **Lines (code):** 10-12
-    </details>
+
+</details>
+
     
 
 #### Related Links

@@ -40,14 +40,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** variable
 - **Lines (comments):** 14-18
 - **Lines (code):** 20-24
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -88,14 +92,18 @@ $sizes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** variable
 - **Lines (comments):** 26-28
 - **Lines (code):** 30-34
-    </details>
+
+</details>
+
     
 
 
@@ -138,14 +146,18 @@ $static-sizes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** variable
 - **Lines (comments):** 36-37
 - **Lines (code):** 39-57
-    </details>
+
+</details>
+
     
   
 
@@ -170,14 +182,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
 - **Lines (comments):** 59-61
 - **Lines (code):** 63-65
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -212,14 +228,18 @@ Set fixed sizes map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
 - **Lines (comments):** 67-69
 - **Lines (code):** 71-73
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -254,14 +274,18 @@ Set sizes map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
 - **Lines (comments):** 75-77
 - **Lines (code):** 79-81
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -296,14 +320,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
 - **Lines (comments):** 91-93
 - **Lines (code):** 95-157
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -347,14 +375,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** function
 - **Lines (comments):** 83-85
 - **Lines (code):** 87-89
-    </details>
+
+</details>
+
     
 
 #### Parameters

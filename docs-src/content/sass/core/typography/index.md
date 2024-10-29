@@ -61,14 +61,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
 - **Lines (comments):** 17-39
 - **Lines (code):** 41-66
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -127,14 +131,18 @@ $sizes: get-default-sizes();
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
 - **Lines (comments):** 179-188
 - **Lines (code):** 190-190
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -179,14 +187,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 68-70
 - **Lines (code):** 72-74
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -226,14 +238,18 @@ Break word stradegy
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 127-128
 - **Lines (code):** 130-134
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -267,14 +283,18 @@ Update the typography presets map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 192-199
 - **Lines (code):** 201-203
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -330,14 +350,18 @@ Print's the responsive type formula
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 287-289
 - **Lines (code):** 291-293
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -372,14 +396,18 @@ Print a typography size (font-size, line-height)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 295-298
 - **Lines (code):** 300-340
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -429,14 +457,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 76-78
 - **Lines (code):** 80-82
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -477,14 +509,18 @@ Get scale of the base font-size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 84-86
 - **Lines (code):** 88-90
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -533,14 +569,18 @@ Get scale of the line-height
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 92-95
 - **Lines (code):** 97-99
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -589,14 +629,18 @@ Convert pixel value to rem value based on typography $font-size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 101-103
 - **Lines (code):** 105-111
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -644,14 +688,18 @@ Changes pixels to em
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 113-116
 - **Lines (code):** 118-125
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -702,14 +750,18 @@ Creates a size map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 136-141
 - **Lines (code):** 143-157
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -751,14 +803,18 @@ Function that returns default sizes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 159-160
 - **Lines (code):** 161-177
-    </details>
+
+</details>
+
     
 
 #### Todos
@@ -790,14 +846,18 @@ Get a size's map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 205-207
 - **Lines (code):** 209-211
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -846,14 +906,18 @@ Check if a typography size exists
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 213-215
 - **Lines (code):** 217-219
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -902,14 +966,18 @@ Forces conversion to unitless line-height
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 221-223
 - **Lines (code):** 225-239
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -955,14 +1023,18 @@ Print a value from the size and convert it (to appropriate unit for framework)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 240-242
 - **Lines (code):** 244-270
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -1005,14 +1077,18 @@ Get a sizes property value that doesn't need conversion
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 273-276
 - **Lines (code):** 278-285
-    </details>
+
+</details>
+
     
 
 #### Parameters

@@ -31,14 +31,18 @@ Prints color-context styles as base classes (top of stylesheet)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 8-8
 - **Lines (code):** 10-13
-    </details>
+
+</details>
+
     
   
   

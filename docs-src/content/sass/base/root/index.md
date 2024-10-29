@@ -31,14 +31,18 @@ Prints elements base styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _root.scss
 - **Group:** root
 - **Type:** mixin
 - **Lines (comments):** 9-12
 - **Lines (code):** 14-20
-    </details>
+
+</details>
+
     
 
 #### Examples

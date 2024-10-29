@@ -56,14 +56,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
 - **Lines (comments):** 29-48
 - **Lines (code):** 50-69
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -114,14 +118,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
 - **Lines (comments):** 71-73
 - **Lines (code):** 75-77
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -156,14 +164,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
 - **Lines (comments):** 88-90
 - **Lines (code):** 92-136
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -205,14 +217,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
 - **Lines (comments):** 79-81
 - **Lines (code):** 83-86
-    </details>
+
+</details>
+
     
 
 #### Parameters

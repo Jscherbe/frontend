@@ -46,14 +46,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** variable
 - **Lines (comments):** 14-18
 - **Lines (code):** 20-30
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -89,14 +93,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
 - **Lines (comments):** 32-34
 - **Lines (code):** 36-38
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -136,14 +144,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** function
 - **Lines (comments):** 40-42
 - **Lines (code):** 44-46
-    </details>
+
+</details>
+
     
 
 #### Parameters

@@ -38,14 +38,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** variable
 - **Lines (comments):** 13-15
 - **Lines (code):** 17-20
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -79,14 +83,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
 - **Lines (comments):** 22-24
 - **Lines (code):** 26-28
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -121,14 +129,18 @@ Set sizes map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
 - **Lines (comments):** 30-32
 - **Lines (code):** 34-36
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -163,14 +175,18 @@ Prints adaptive spacing component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
 - **Lines (comments):** 46-48
 - **Lines (code):** 50-78
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -212,14 +228,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** function
 - **Lines (comments):** 38-40
 - **Lines (code):** 42-44
-    </details>
+
+</details>
+
     
 
 #### Parameters

@@ -38,14 +38,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** variable
 - **Lines (comments):** 11-13
 - **Lines (code):** 15-17
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -79,14 +83,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 19-22
 - **Lines (code):** 23-25
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -132,14 +140,18 @@ Prints all unit helper classes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 36-36
 - **Lines (code):** 38-42
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -165,14 +177,18 @@ Creates the unit classes with all variations (from unit presets)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 44-45
 - **Lines (code):** 46-75
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -203,14 +219,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** function
 - **Lines (comments):** 27-30
 - **Lines (code):** 32-34
-    </details>
+
+</details>
+
     
 
 #### Examples

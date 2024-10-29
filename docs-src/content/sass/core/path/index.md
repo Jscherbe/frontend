@@ -40,14 +40,18 @@ $aliases: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _path.scss
 - **Group:** path
 - **Type:** variable
 - **Lines (comments):** 9-12
 - **Lines (code):** 14-16
-    </details>
+
+</details>
+
     
   
 
@@ -72,14 +76,18 @@ Set aliases or change defaults
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _path.scss
 - **Group:** path
 - **Type:** mixin
 - **Lines (comments):** 18-19
 - **Lines (code):** 21-23
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -118,14 +126,18 @@ Get an aliase's path
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _path.scss
 - **Group:** path
 - **Type:** function
 - **Lines (comments):** 25-26
 - **Lines (code):** 28-30
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -163,14 +175,18 @@ Resolves a Path
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _path.scss
 - **Group:** path
 - **Type:** function
 - **Lines (comments):** 32-40
 - **Lines (code):** 42-58
-    </details>
+
+</details>
+
     
 
 #### Examples

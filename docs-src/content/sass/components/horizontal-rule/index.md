@@ -39,14 +39,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** variable
 - **Lines (comments):** 9-12
 - **Lines (code):** 14-17
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -81,14 +85,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** mixin
 - **Lines (comments):** 19-22
 - **Lines (code):** 24-26
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -134,14 +142,18 @@ Prints adaptive spacing component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** mixin
 - **Lines (comments):** 37-39
 - **Lines (code):** 41-51
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -183,14 +195,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _horizontal-rule.scss
 - **Group:** horizontal-rule
 - **Type:** function
 - **Lines (comments):** 28-31
 - **Lines (code):** 33-35
-    </details>
+
+</details>
+
     
 
 #### Examples

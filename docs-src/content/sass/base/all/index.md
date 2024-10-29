@@ -46,14 +46,18 @@ $all-includes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
 - **Lines (comments):** 26-27
 - **Lines (code):** 29-39
-    </details>
+
+</details>
+
     
 
 
@@ -78,14 +82,18 @@ $current-includes: $all-includes;
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
 - **Lines (comments):** 41-42
 - **Lines (code):** 44-44
-    </details>
+
+</details>
+
     
   
 
@@ -111,14 +119,18 @@ Change default includes (when user prints modules)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
 - **Lines (comments):** 46-48
 - **Lines (code):** 50-53
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -153,14 +165,18 @@ Exclude certain items from includes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
 - **Lines (comments):** 55-56
 - **Lines (code):** 58-60
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -194,14 +210,18 @@ Prints all Base styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
 - **Lines (comments):** 62-66
 - **Lines (code):** 68-98
-    </details>
+
+</details>
+
     
 
 #### Examples

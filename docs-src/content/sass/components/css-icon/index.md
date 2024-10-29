@@ -55,14 +55,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
 - **Lines (comments):** 23-37
 - **Lines (code):** 39-58
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -108,14 +112,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
 - **Lines (comments):** 60-62
 - **Lines (code):** 64-66
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -150,14 +158,18 @@ Prints adaptive spacing component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
 - **Lines (comments):** 92-94
 - **Lines (code):** 96-427
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -199,14 +211,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
 - **Lines (comments):** 68-70
 - **Lines (code):** 72-74
-    </details>
+
+</details>
+
     
 
 #### Parameters

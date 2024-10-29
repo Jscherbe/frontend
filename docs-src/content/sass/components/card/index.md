@@ -85,14 +85,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
 - **Lines (comments):** 15-60
 - **Lines (code):** 62-113
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -169,14 +173,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 115-117
 - **Lines (code):** 119-121
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -211,14 +219,18 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 131-132
 - **Lines (code):** 134-149
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -252,14 +264,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 156-159
 - **Lines (code):** 161-417
-    </details>
+
+</details>
+
     
 
 
@@ -315,14 +331,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
 - **Lines (comments):** 123-125
 - **Lines (code):** 127-129
-    </details>
+
+</details>
+
     
 
 #### Parameters

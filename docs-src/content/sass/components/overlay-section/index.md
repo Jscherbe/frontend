@@ -54,14 +54,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** variable
 - **Lines (comments):** 13-21
 - **Lines (code):** 23-41
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -101,14 +105,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
 - **Lines (comments):** 43-45
 - **Lines (code):** 47-49
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -143,14 +151,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
 - **Lines (comments):** 59-61
 - **Lines (code):** 63-120
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -192,14 +204,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** function
 - **Lines (comments):** 51-53
 - **Lines (code):** 55-57
-    </details>
+
+</details>
+
     
 
 #### Parameters

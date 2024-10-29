@@ -116,14 +116,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** variable
 - **Lines (comments):** 17-97
 - **Lines (code):** 99-179
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -235,14 +239,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 181-183
 - **Lines (code):** 185-187
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -277,14 +285,18 @@ Required Character styles (ie. "*")
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 484-484
 - **Lines (code):** 485-492
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -309,14 +321,18 @@ Help text / Description
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 494-494
 - **Lines (code):** 495-501
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -341,14 +357,18 @@ Styles for form item that should have label as block and text input
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 503-503
 - **Lines (code):** 504-515
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -373,14 +393,18 @@ Footer of form (with button for example)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 517-517
 - **Lines (code):** 518-521
-    </details>
+
+</details>
+
     
 
 
@@ -400,14 +424,18 @@ Footer of form (with button for example)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 523-523
 - **Lines (code):** 524-526
-    </details>
+
+</details>
+
     
 
 
@@ -427,14 +455,18 @@ Layout styling for static/app sites
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 528-528
 - **Lines (code):** 529-581
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -464,14 +496,18 @@ Layout styles but using drupal form structures
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** mixin
 - **Lines (comments):** 583-583
 - **Lines (code):** 584-612
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -505,14 +541,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _form-theme.scss
 - **Group:** None
 - **Type:** function
 - **Lines (comments):** 189-191
 - **Lines (code):** 193-195
-    </details>
+
+</details>
+
     
 
 #### Parameters

@@ -65,14 +65,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** variable
 - **Lines (comments):** 25-53
 - **Lines (code):** 55-84
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -132,14 +136,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 87-89
 - **Lines (code):** 91-93
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -174,14 +182,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 109-113
 - **Lines (code):** 115-243
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -229,14 +241,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
 - **Lines (comments):** 95-97
 - **Lines (code):** 99-102
-    </details>
+
+</details>
+
     
 
 #### Parameters

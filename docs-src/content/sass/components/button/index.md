@@ -38,14 +38,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 12-14
 - **Lines (code):** 16-19
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -79,14 +83,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 21-23
 - **Lines (code):** 25-27
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -121,14 +129,18 @@ Prints button component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 37-41
 - **Lines (code):** 43-100
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -181,14 +193,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
 - **Lines (comments):** 29-31
 - **Lines (code):** 33-35
-    </details>
+
+</details>
+
     
 
 #### Parameters

@@ -31,14 +31,18 @@ Prints CSS keyframes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _keyframes.scss
 - **Group:** keyframes
 - **Type:** mixin
 - **Lines (comments):** 7-9
 - **Lines (code):** 11-168
-    </details>
+
+</details>
+
     
 
 #### Examples

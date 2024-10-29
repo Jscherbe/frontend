@@ -54,14 +54,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** variable
 - **Lines (comments):** 30-31
 - **Lines (code):** 33-51
-    </details>
+
+</details>
+
     
   
 
@@ -86,14 +90,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
 - **Lines (comments):** 53-55
 - **Lines (code):** 57-59
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -128,14 +136,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
 - **Lines (comments):** 70-73
 - **Lines (code):** 75-171
-    </details>
+
+</details>
+
     
 
 
@@ -190,14 +202,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** function
 - **Lines (comments):** 61-63
 - **Lines (code):** 65-68
-    </details>
+
+</details>
+
     
 
 #### Parameters

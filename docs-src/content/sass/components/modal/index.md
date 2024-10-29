@@ -80,14 +80,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
 - **Lines (comments):** 33-73
 - **Lines (code):** 75-119
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -159,14 +163,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
 - **Lines (comments):** 121-124
 - **Lines (code):** 126-128
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -212,14 +220,18 @@ Prints modal component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
 - **Lines (comments):** 139-141
 - **Lines (code):** 143-492
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -261,14 +273,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
 - **Lines (comments):** 130-132
 - **Lines (code):** 134-137
-    </details>
+
+</details>
+
     
 
 #### Parameters

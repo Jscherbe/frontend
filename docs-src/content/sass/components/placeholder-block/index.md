@@ -52,14 +52,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** variable
 - **Lines (comments):** 31-46
 - **Lines (code):** 48-65
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -106,14 +110,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
 - **Lines (comments):** 68-70
 - **Lines (code):** 72-74
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -148,14 +156,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
 - **Lines (comments):** 85-87
 - **Lines (code):** 89-119
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -197,14 +209,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** function
 - **Lines (comments):** 76-78
 - **Lines (code):** 80-83
-    </details>
+
+</details>
+
     
 
 #### Parameters

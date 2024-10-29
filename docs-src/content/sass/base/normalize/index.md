@@ -33,14 +33,18 @@ Prints the normalize stylesheet. Originally based on modern-normalize 1.1.0
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _normalize.scss
 - **Group:** normalize
 - **Type:** mixin
 - **Lines (comments):** 9-14
 - **Lines (code):** 16-198
-    </details>
+
+</details>
+
     
 
 #### Examples

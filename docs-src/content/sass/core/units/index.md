@@ -43,14 +43,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** variable
 - **Lines (comments):** 9-16
 - **Lines (code):** 18-25
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -89,14 +93,18 @@ Update the units config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
 - **Lines (comments):** 27-32
 - **Lines (code):** 34-36
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -149,14 +157,18 @@ Get a unit by name (preset) or number (multiplier of base)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _units.scss
 - **Group:** units
 - **Type:** function
 - **Lines (comments):** 38-40
 - **Lines (code):** 42-47
-    </details>
+
+</details>
+
     
 
 #### Parameters

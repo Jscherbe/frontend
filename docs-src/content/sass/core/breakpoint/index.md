@@ -41,14 +41,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** variable
 - **Lines (comments):** 9-14
 - **Lines (code):** 16-21
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -92,14 +96,18 @@ $sizes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** variable
 - **Lines (comments):** 43-47
 - **Lines (code):** 49-53
-    </details>
+
+</details>
+
     
   
 
@@ -124,14 +132,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 23-26
 - **Lines (code):** 28-30
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -177,14 +189,18 @@ Update the breakpoint sizes map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 55-62
 - **Lines (code):** 64-66
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -235,14 +251,18 @@ Create a media query that matches the min-width for a given size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 101-110
 - **Lines (code):** 112-118
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -302,14 +322,18 @@ Create a media query that matches the max-width for a given size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 120-129
 - **Lines (code):** 131-137
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -369,14 +393,18 @@ Create a media query that matches between two breakpoint sizes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 139-149
 - **Lines (code):** 151-158
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -439,14 +467,18 @@ Create a media query from a specific size in either direction
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 160-170
 - **Lines (code):** 172-184
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -503,14 +535,18 @@ Utility Method for iterating over a map of breakpoints and apply styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 187-193
 - **Lines (code):** 195-214
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -567,14 +603,18 @@ Attaches breakpoints to an element pseudo content for access via script
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
 - **Lines (comments):** 216-218
 - **Lines (code):** 220-230
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -606,14 +646,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 32-36
 - **Lines (code):** 38-40
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -669,14 +713,18 @@ Get all breakpoint sizes (ie. $sizes)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 68-68
 - **Lines (code):** 69-71
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -701,14 +749,18 @@ Get a specific size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 73-75
 - **Lines (code):** 76-79
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -752,14 +804,18 @@ Get a size's value
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 81-83
 - **Lines (code):** 85-91
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -803,14 +859,18 @@ Check if a specific size exist
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
 - **Lines (comments):** 92-94
 - **Lines (code):** 96-99
-    </details>
+
+</details>
+
     
 
 #### Parameters

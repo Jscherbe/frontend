@@ -31,14 +31,18 @@ Prints elements base styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 10-19
 - **Lines (code):** 21-41
-    </details>
+
+</details>
+
     
 
 #### Examples

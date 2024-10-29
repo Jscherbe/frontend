@@ -40,14 +40,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** variable
 - **Lines (comments):** 13-17
 - **Lines (code):** 19-23
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -83,14 +87,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** mixin
 - **Lines (comments):** 25-27
 - **Lines (code):** 29-31
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -125,14 +133,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** mixin
 - **Lines (comments):** 41-43
 - **Lines (code):** 45-69
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -174,14 +186,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** function
 - **Lines (comments):** 33-35
 - **Lines (code):** 37-39
-    </details>
+
+</details>
+
     
 
 #### Parameters

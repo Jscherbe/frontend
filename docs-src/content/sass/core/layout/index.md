@@ -42,14 +42,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
 - **Lines (comments):** 12-18
 - **Lines (code):** 20-26
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -96,14 +100,18 @@ $containers: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
 - **Lines (comments):** 45-47
 - **Lines (code):** 49-58
-    </details>
+
+</details>
+
     
   
 
@@ -128,14 +136,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 30-32
 - **Lines (code):** 34-36
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -171,14 +183,18 @@ Set layout containers
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 60-63
 - **Lines (code):** 65-67
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -215,14 +231,18 @@ ie. \{ top: $containers-padding; }
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 83-87
 - **Lines (code):** 89-101
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -264,14 +284,18 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 103-110
 - **Lines (code):** 112-127
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -309,14 +333,18 @@ Print the containers padding properties
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 145-148
 - **Lines (code):** 150-176
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -355,14 +383,18 @@ Print all container styles for a given container
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 194-196
 - **Lines (code):** 198-226
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -399,14 +431,18 @@ Prints clearfix styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 228-228
 - **Lines (code):** 230-241
-    </details>
+
+</details>
+
     
 
 
@@ -426,14 +462,18 @@ Removes scrollbar with CSS
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 243-243
 - **Lines (code):** 244-250
-    </details>
+
+</details>
+
     
 
 
@@ -455,14 +495,18 @@ Layout utility for absolute (zero on all sides)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 252-254
 - **Lines (code):** 255-266
-    </details>
+
+</details>
+
     
   
 
@@ -487,14 +531,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 38-40
 - **Lines (code):** 41-43
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -530,14 +578,18 @@ Get a container map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 69-71
 - **Lines (code):** 73-81
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -574,14 +626,18 @@ Get a containers padding value
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 129-132
 - **Lines (code):** 134-143
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -618,14 +674,18 @@ Get containers padding X value (side)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 178-180
 - **Lines (code):** 182-184
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -660,14 +720,18 @@ Get containers padding Y value (ends)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 186-188
 - **Lines (code):** 190-192
-    </details>
+
+</details>
+
     
 
 #### Parameters

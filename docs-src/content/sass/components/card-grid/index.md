@@ -41,14 +41,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** variable
 - **Lines (comments):** 10-15
 - **Lines (code):** 17-22
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -85,14 +89,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
 - **Lines (comments):** 24-26
 - **Lines (code):** 28-30
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -127,14 +135,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
 - **Lines (comments):** 40-42
 - **Lines (code):** 44-68
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -176,14 +188,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** function
 - **Lines (comments):** 32-34
 - **Lines (code):** 36-38
-    </details>
+
+</details>
+
     
 
 #### Parameters

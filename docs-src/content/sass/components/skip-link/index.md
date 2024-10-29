@@ -33,14 +33,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** mixin
 - **Lines (comments):** 10-23
 - **Lines (code):** 25-42
-    </details>
+
+</details>
+
     
 
 #### Examples

@@ -31,14 +31,18 @@ Output styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _list-unordered.scss
 - **Group:** list-unordered
 - **Type:** mixin
 - **Lines (comments):** 9-9
 - **Lines (code):** 11-21
-    </details>
+
+</details>
+
     
 
 #### Require

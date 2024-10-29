@@ -31,14 +31,18 @@ Print utilities helper styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _display.scss
 - **Group:** display
 - **Type:** mixin
 - **Lines (comments):** 14-16
 - **Lines (code):** 18-73
-    </details>
+
+</details>
+
     
 
 #### Examples

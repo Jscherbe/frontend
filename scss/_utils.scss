@@ -338,12 +338,20 @@ $config: (
 
 /// Resolve spacing info (ie. margin/padding like arguments)
 /// - Will normalize the argument that may be shorthand or single value
-/// - Used to programmatic things with single value config options for padding/margin
+/// - Used for programmatic things with single value config options for padding/margin
+/// 
 /// @param {Number|List} $value The value to resolve (usually a config option)
-/// @throw If the list length > 4 (incorrect syntax for shorthand)
+/// @example scss Example of getting left value
+///   $user-padding: (1em, 2em, 4em);
+/// 
+///   .example {
+///     left: map.get(get-spacing($user-padding), "left");
+///     // left = 2em
+///   }
 /// @return {Map} Map with spacing info for each side (top, right, bottom, left)
+/// @throw If the list length > 4 (incorrect syntax for shorthand)
 
-@function get-spacing-info($value) {
+@function get-spacing($value) {
   $is-list: meta.type-of($value) == "list";
   $length: if($is-list, list.length($value), 1);
   $single: $length == 1;
@@ -362,29 +370,61 @@ $config: (
 }
 
 /// Resolve the top spacing value for margin/padding like arguments
+/// @param {Number|List} $value The value to resolve (usually a config option)
+/// @example scss Example of getting top value
+///   $user-padding: (1em, 2em, 4em);
+/// 
+///   .example {
+///     top: get-spacing-top($user-padding);
+///     // top = 2em
+///   }
 /// @return {Number}
 
 @function get-spacing-top($value) {
-  @return map.get(get-spacing-info($value), "top");
+  @return map.get(get-spacing($value), "top");
 }
 
 /// Resolve the right spacing value for margin/padding like arguments
+/// @param {Number|List} $value The value to resolve (usually a config option)
+/// @example scss Example of getting right value
+///   $user-padding: (1em, 2em, 4em);
+/// 
+///   .example {
+///     right: get-spacing-right($user-padding);
+///     // right = 2em
+///   }
 /// @return {Number}
 
 @function get-spacing-right($value) {
-  @return map.get(get-spacing-info($value), "right");
+  @return map.get(get-spacing($value), "right");
 }
 
 /// Resolve the bottom spacing value for margin/padding like arguments
+/// @param {Number|List} $value The value to resolve (usually a config option)
+/// @example scss Example of getting bottom value
+///   $user-padding: (1em, 2em, 4em);
+/// 
+///   .example {
+///     bottom: get-spacing-bottom($user-padding);
+///     // bottom = 2em
+///   }
 /// @return {Number}
 
 @function get-spacing-bottom($value) {
-  @return map.get(get-spacing-info($value), "bottom");
+  @return map.get(get-spacing($value), "bottom");
 }
 
 /// Resolve the left spacing value for margin/padding like arguments
+/// @param {Number|List} $value The value to resolve (usually a config option)
+/// @example scss Example of getting left value
+///   $user-padding: (1em, 2em, 4em);
+/// 
+///   .example {
+///     left: get-spacing-left($user-padding);
+///     // left = 2em
+///   }
 /// @return {Number}
 
 @function get-spacing-left($value) {
-  @return map.get(get-spacing-info($value), "left");
+  @return map.get(get-spacing($value), "left");
 }

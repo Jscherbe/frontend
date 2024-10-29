@@ -57,14 +57,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** variable
 - **Lines (comments):** 32-43
 - **Lines (code):** 45-65
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -107,14 +111,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** mixin
 - **Lines (comments):** 67-70
 - **Lines (code):** 72-74
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -160,14 +168,18 @@ Creates grid css (variation of original data-grid)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** mixin
 - **Lines (comments):** 109-118
 - **Lines (code):** 120-553
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -215,14 +227,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** function
 - **Lines (comments):** 76-79
 - **Lines (code):** 81-83
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -270,14 +286,18 @@ Pass custom map to get gutter values from it
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _grid.scss
 - **Group:** grid
 - **Type:** function
 - **Lines (comments):** 85-88
 - **Lines (code):** 90-98
-    </details>
+
+</details>
+
     
 
 #### Parameters
