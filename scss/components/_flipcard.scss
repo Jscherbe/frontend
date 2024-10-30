@@ -260,53 +260,52 @@ $config: (
       // transform: scale(1);
     }
   }
-}
-
-.flipcard--center-title {
-  .flipcard__front-content {
-    justify-content: center;
-    align-items: center;
-  }
-  .flipcard__back-content {
-    .flipcard__icon-container {
-      display: flex;
+  .flipcard--center-title {
+    .flipcard__front-content {
       justify-content: center;
-      width: 100%;
+      align-items: center;
+    }
+    .flipcard__back-content {
+      .flipcard__icon-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
     }
   }
-}
-.flipcard--bottom-title {
-  .flipcard__front-content {
-    justify-content: flex-end;
-  }
-}
-.flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
-  .flipcard__front-content {
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-top: calc(get("padding") + 1.2rem);
-    padding-bottom: calc(get("padding") + 1.2rem);
-    .flipcard__icon-container {
-      position: absolute;
-      bottom: get("padding");
-      right: get("padding");
+  .flipcard--bottom-title {
+    .flipcard__front-content {
+      justify-content: flex-end;
     }
   }
-  .flipcard__back {
-    position: relative;
-    padding-top: calc(get("padding") + 1.2rem);
-    padding-bottom: calc(get("padding") + 1.2rem);
-    .flipcard__icon-container {
-      position: absolute;
-      bottom: get("padding");
-      right: get("padding");
+  .flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
+    .flipcard__front-content {
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-top: calc(get("padding") + 1.2rem);
+      padding-bottom: calc(get("padding") + 1.2rem);
+      .flipcard__icon-container {
+        position: absolute;
+        bottom: get("padding");
+        right: get("padding");
+      }
+    }
+    .flipcard__back {
+      position: relative;
+      padding-top: calc(get("padding") + 1.2rem);
+      padding-bottom: calc(get("padding") + 1.2rem);
+      .flipcard__icon-container {
+        position: absolute;
+        bottom: get("padding");
+        right: get("padding");
+      }
     }
   }
-}
-// modifier for animations
-.flipcard--animation:hover {
-  .flipcard__front-content {
-    transform: translateY(-(get('padding') * 0.5));
+  // modifier for animations
+  .flipcard--animation:hover {
+    .flipcard__front-content {
+      transform: translateY(-(get('padding') * 0.5));
+    }
   }
 }

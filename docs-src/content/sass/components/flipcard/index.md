@@ -211,7 +211,7 @@ Prints adaptive spacing component styles
 - **Group:** flipcard
 - **Type:** mixin
 - **Lines (comments):** 87-89
-- **Lines (code):** 91-263
+- **Lines (code):** 91-311
     </details>
     
 
