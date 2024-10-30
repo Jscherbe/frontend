@@ -33,14 +33,18 @@ Link compontent styles (.link)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _links.scss
 - **Group:** links
 - **Type:** mixin
 - **Lines (comments):** 8-12
 - **Lines (code):** 14-34
-    </details>
+
+</details>
+
     
 
 #### Examples

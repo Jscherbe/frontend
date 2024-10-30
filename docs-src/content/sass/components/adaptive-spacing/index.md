@@ -43,14 +43,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** variable
 - **Lines (comments):** 12-19
 - **Lines (code):** 21-29
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -108,14 +112,18 @@ $sizes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** variable
 - **Lines (comments):** 31-32
 - **Lines (code):** 34-53
-    </details>
+
+</details>
+
     
   
 
@@ -140,14 +148,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
 - **Lines (comments):** 55-57
 - **Lines (code):** 59-61
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -182,14 +194,18 @@ Set sizes map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
 - **Lines (comments):** 63-65
 - **Lines (code):** 67-69
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -224,14 +240,18 @@ Prints adaptive spacing component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
 - **Lines (comments):** 79-81
 - **Lines (code):** 83-115
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -275,14 +295,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** function
 - **Lines (comments):** 71-73
 - **Lines (code):** 75-77
-    </details>
+
+</details>
+
     
 
 #### Parameters

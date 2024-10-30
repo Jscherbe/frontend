@@ -14,10 +14,14 @@ export default ({ item }) => {
       "Author" :                author
     });
     return `
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 ${ list }
-    </details>
+
+</details>
+
     `;
   }
 };

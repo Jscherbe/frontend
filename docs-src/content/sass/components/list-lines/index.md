@@ -42,14 +42,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** variable
 - **Lines (comments):** 12-17
 - **Lines (code):** 19-25
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -87,14 +91,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
 - **Lines (comments):** 27-29
 - **Lines (code):** 31-33
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -129,14 +137,18 @@ Output component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
 - **Lines (comments):** 43-43
 - **Lines (code):** 45-65
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -166,14 +178,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** function
 - **Lines (comments):** 35-37
 - **Lines (code):** 39-41
-    </details>
+
+</details>
+
     
 
 #### Parameters

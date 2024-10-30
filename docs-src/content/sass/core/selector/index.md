@@ -39,14 +39,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** variable
 - **Lines (comments):** 9-13
 - **Lines (code):** 15-17
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -85,14 +89,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
 - **Lines (comments):** 23-26
 - **Lines (code):** 27-29
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -138,14 +146,18 @@ Set the class selector overrides
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
 - **Lines (comments):** 40-41
 - **Lines (code):** 43-53
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -179,14 +191,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
 - **Lines (comments):** 31-34
 - **Lines (code):** 36-38
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -234,14 +250,18 @@ Change a class used in the system (ie. like a component for example)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
 - **Lines (comments):** 55-57
 - **Lines (code):** 59-70
-    </details>
+
+</details>
+
     
 
 #### Parameters

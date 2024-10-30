@@ -67,14 +67,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 10-40
 - **Lines (code):** 42-73
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -139,14 +143,18 @@ $rule-styles: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 75-76
 - **Lines (code):** 78-81
-    </details>
+
+</details>
+
     
 
 
@@ -176,14 +184,18 @@ $rule-margins: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 83-84
 - **Lines (code):** 86-91
-    </details>
+
+</details>
+
     
   
 
@@ -208,14 +220,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 93-95
 - **Lines (code):** 96-98
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -250,14 +266,18 @@ Sets rule styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 108-109
 - **Lines (code):** 111-113
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -291,14 +311,18 @@ Sets rule margins
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 115-116
 - **Lines (code):** 118-120
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -332,14 +356,18 @@ Get full rule CSS (style and margin)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 136-137
 - **Lines (code):** 139-145
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -368,14 +396,18 @@ Print link styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 155-157
 - **Lines (code):** 159-181
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -410,14 +442,18 @@ Print the defautl link styling (no hover and focus styles)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 183-183
 - **Lines (code):** 185-198
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -442,14 +478,18 @@ Print the ordered list items styling
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 200-201
 - **Lines (code):** 203-227
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -483,14 +523,18 @@ Print the unordered list items styling
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 229-230
 - **Lines (code):** 232-253
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -524,14 +568,18 @@ Hide text for assistive devices
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
 - **Lines (comments):** 255-260
 - **Lines (code):** 262-280
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -579,14 +627,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
 - **Lines (comments):** 100-102
 - **Lines (code):** 104-106
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -622,14 +674,18 @@ Get a rule style
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
 - **Lines (comments):** 122-123
 - **Lines (code):** 125-127
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -664,14 +720,18 @@ Sets rule margin
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
 - **Lines (comments):** 129-130
 - **Lines (code):** 132-134
-    </details>
+
+</details>
+
     
 
 #### Parameters

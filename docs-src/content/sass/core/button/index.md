@@ -69,14 +69,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 21-53
 - **Lines (code):** 55-88
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -153,14 +157,18 @@ $sizes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 90-91
 - **Lines (code):** 92-105
-    </details>
+
+</details>
+
     
 
 
@@ -206,14 +214,18 @@ $styles: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 107-108
 - **Lines (code):** 110-131
-    </details>
+
+</details>
+
     
   
 
@@ -238,14 +250,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 133-136
 - **Lines (code):** 138-140
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -291,14 +307,18 @@ Set button styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 152-154
 - **Lines (code):** 156-158
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -334,14 +354,18 @@ Set Button Sizes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 160-162
 - **Lines (code):** 164-166
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -377,14 +401,18 @@ Print styles to reset browser button style
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 168-168
 - **Lines (code):** 170-181
-    </details>
+
+</details>
+
     
 
 
@@ -404,14 +432,18 @@ Print default button styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 183-184
 - **Lines (code):** 186-243
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -447,14 +479,18 @@ Mixin to wrap in active selectors
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 245-245
 - **Lines (code):** 246-250
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -479,14 +515,18 @@ Print button size styles for a specific size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 252-255
 - **Lines (code):** 257-267
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -530,14 +570,18 @@ Print a button style's base styles (not hover)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 299-304
 - **Lines (code):** 306-317
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -579,14 +623,18 @@ Print a button style's base styles (hover styles only)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 319-324
 - **Lines (code):** 326-332
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -631,14 +679,18 @@ Print a button style
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 342-351
 - **Lines (code):** 353-369
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -686,14 +738,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
 - **Lines (comments):** 142-145
 - **Lines (code):** 147-150
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -741,14 +797,18 @@ Get a value from a button style
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
 - **Lines (comments):** 269-273
 - **Lines (code):** 275-297
-    </details>
+
+</details>
+
     
 
 #### Parameters

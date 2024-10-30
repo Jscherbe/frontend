@@ -69,14 +69,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** variable
 - **Lines (comments):** 16-32
 - **Lines (code):** 34-67
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -124,14 +128,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
 - **Lines (comments):** 70-72
 - **Lines (code):** 74-76
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -166,14 +174,18 @@ Prints default grid styles, if you want to customize further please use the crea
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
 - **Lines (comments):** 109-112
 - **Lines (code):** 114-116
-    </details>
+
+</details>
+
     
 
 
@@ -223,14 +235,18 @@ Creates grid css (variation of original data-grid)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
 - **Lines (comments):** 118-127
 - **Lines (code):** 129-574
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -277,14 +293,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
 - **Lines (comments):** 78-80
 - **Lines (code):** 82-84
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -319,14 +339,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
 - **Lines (comments):** 86-88
 - **Lines (code):** 90-98
-    </details>
+
+</details>
+
     
 
 #### Examples

@@ -50,14 +50,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** variable
 - **Lines (comments):** 22-35
 - **Lines (code):** 37-51
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -102,14 +106,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
 - **Lines (comments):** 53-55
 - **Lines (code):** 57-59
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -144,14 +152,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
 - **Lines (comments):** 70-72
 - **Lines (code):** 74-109
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -193,14 +205,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** function
 - **Lines (comments):** 61-63
 - **Lines (code):** 65-68
-    </details>
+
+</details>
+
     
 
 #### Parameters

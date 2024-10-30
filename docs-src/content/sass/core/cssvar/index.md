@@ -38,14 +38,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** variable
 - **Lines (comments):** 14-16
 - **Lines (code):** 18-20
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -79,14 +83,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 22-25
 - **Lines (code):** 27-29
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -132,14 +140,18 @@ Outputs a single custom property declaration
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 74-81
 - **Lines (code):** 83-85
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -189,14 +201,18 @@ Outputs a map as custom properties
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 87-93
 - **Lines (code):** 95-99
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -245,14 +261,18 @@ Declare a custom property for current breakpoint
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 101-109
 - **Lines (code):** 111-123
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -303,14 +323,18 @@ Declare a custom property for each breakpoint size
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 125-132
 - **Lines (code):** 134-145
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -361,14 +385,18 @@ Outputs css vars for a specific type from a theme map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** mixin
 - **Lines (comments):** 147-168
 - **Lines (code):** 170-177
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -438,14 +466,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 31-35
 - **Lines (code):** 37-39
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -501,14 +533,18 @@ Get a custom property name (with optional prefix)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 41-46
 - **Lines (code):** 48-54
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -559,14 +595,18 @@ Function to use a custom property within a declaration value
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 56-64
 - **Lines (code):** 66-72
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -626,14 +666,18 @@ Joins a list of cssvar names
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 179-183
 - **Lines (code):** 185-191
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -678,14 +722,18 @@ For any names passed will join them with "+" and wrap in calc
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 193-195
 - **Lines (code):** 197-199
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -728,14 +776,18 @@ For any names passed will join them with "-" and wrap in calc
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _cssvar.scss
 - **Group:** cssvar
 - **Type:** function
 - **Lines (comments):** 201-203
 - **Lines (code):** 205-207
-    </details>
+
+</details>
+
     
 
 #### Parameters

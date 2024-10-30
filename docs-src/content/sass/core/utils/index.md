@@ -39,14 +39,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** variable
 - **Lines (comments):** 11-14
 - **Lines (code):** 16-19
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -81,14 +85,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 21-24
 - **Lines (code):** 25-27
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -134,14 +142,18 @@ Ensure a value is present in the list, throw an error if not found
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 57-60
 - **Lines (code):** 62-67
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -177,14 +189,18 @@ Require that the list only is only made up of allowed items
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 69-71
 - **Lines (code):** 73-77
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -219,14 +235,18 @@ Returns true if we should include something (used for output checking)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
 - **Lines (comments):** 88-90
 - **Lines (code):** 92-100
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -261,14 +281,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 29-32
 - **Lines (code):** 34-36
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -316,14 +340,18 @@ Get a required value from a map, throw an error if not found
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 38-43
 - **Lines (code):** 45-55
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -373,14 +401,18 @@ Returns true if we should include something (map of booleans)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 79-81
 - **Lines (code):** 83-86
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -411,14 +443,18 @@ Returns true if we should include something (map of booleans)
 
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 103-105
 - **Lines (code):** 107-113
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -445,14 +481,18 @@ Returns true if we should include something (map of booleans)
 
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 116-117
 - **Lines (code):** 119-133
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -490,14 +530,18 @@ Reusable merge method
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 135-139
 - **Lines (code):** 141-149
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -537,14 +581,18 @@ Returns true/false if map has property
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 151-154
 - **Lines (code):** 156-161
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -598,14 +646,18 @@ Repeatable pattern in core
 Left in for compatibility, will be removed, use map-merge with mode
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 163-164
 - **Lines (code):** 166-174
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -630,14 +682,18 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 176-177
 - **Lines (code):** 179-186
-    </details>
+
+</details>
+
     
 
 #### Returns
@@ -666,14 +722,18 @@ Provides fallback values from the same map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 188-188
 - **Lines (code):** 189-197
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -698,14 +758,18 @@ Checks if a map contains one or more of the keys
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 200-204
 - **Lines (code):** 205-224
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -748,14 +812,18 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 226-230
 - **Lines (code):** 232-258
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -805,14 +873,18 @@ Replaces all or one occurrence of a string within a string
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 260-264
 - **Lines (code):** 266-282
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -845,14 +917,18 @@ Remove an item from a list (not map)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 284-288
 - **Lines (code):** 290-298
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -892,14 +968,18 @@ Remove an item from a list (not map)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 300-304
 - **Lines (code):** 306-314
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -938,14 +1018,18 @@ Join a list with a separator
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 316-320
 - **Lines (code):** 322-337
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -967,5 +1051,369 @@ Join a list with a separator
 |String|List|If separator was +, the result would be "value1 + value2" or (value1, "+", value2) depending on $to-string argument|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing() {#function-get-spacing}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve spacing info (ie. margin/padding like arguments)
+- Will normalize the argument that may be shorthand or single value
+- Used for programmatic things with single value config options for padding/margin
+
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 339-354
+- **Lines (code):** 356-372
+
+</details>
+
+    
+
+#### Examples
+
+Example of getting left value      
+
+
+``` scss
+$user-padding: (1em, 2em, 4em);
+$spacing: get-spacing($user-padding);
+// $spacing ("top" : 1em, "right" : 2em, "bottom" : 4em, "left" : 2em);
+
+.example {
+  left: map.get($spacing, "left");
+  // left = 2em
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|List`|The value to resolve (usually a config option)|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Map|Map with spacing info for each side (top, right, bottom, left)|
+
+    
+
+#### Throw
+
+- Spacing has more than 4 arguments (not correct shorthand)
+    
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-top() {#function-get-spacing-top}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the top spacing value for margin/padding like arguments
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 374-383
+- **Lines (code):** 385-387
+
+</details>
+
+    
+
+#### Examples
+
+Example of getting top value      
+
+
+``` scss
+$user-padding: (1em, 2em, 4em);
+
+.example {
+  top: get-spacing-top($user-padding);
+  // top = 2em
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|List`|The value to resolve (usually a config option)|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing()](/sass/core/utils/#function-get-spacing)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-right() {#function-get-spacing-right}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the right spacing value for margin/padding like arguments
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 389-398
+- **Lines (code):** 400-402
+
+</details>
+
+    
+
+#### Examples
+
+Example of getting right value      
+
+
+``` scss
+$user-padding: (1em, 2em, 4em);
+
+.example {
+  right: get-spacing-right($user-padding);
+  // right = 2em
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|List`|The value to resolve (usually a config option)|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing()](/sass/core/utils/#function-get-spacing)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-bottom() {#function-get-spacing-bottom}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the bottom spacing value for margin/padding like arguments
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 404-413
+- **Lines (code):** 415-417
+
+</details>
+
+    
+
+#### Examples
+
+Example of getting bottom value      
+
+
+``` scss
+$user-padding: (1em, 2em, 4em);
+
+.example {
+  bottom: get-spacing-bottom($user-padding);
+  // bottom = 2em
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|List`|The value to resolve (usually a config option)|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing()](/sass/core/utils/#function-get-spacing)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-spacing-left() {#function-get-spacing-left}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Resolve the left spacing value for margin/padding like arguments
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 419-428
+- **Lines (code):** 430-432
+
+</details>
+
+    
+
+#### Examples
+
+Example of getting left value      
+
+
+``` scss
+$user-padding: (1em, 2em, 4em);
+
+.example {
+  left: get-spacing-left($user-padding);
+  // left = 2em
+}
+```
+  
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`Number|List`|The value to resolve (usually a config option)|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+- [get-spacing()](/sass/core/utils/#function-get-spacing)
+  
   
   

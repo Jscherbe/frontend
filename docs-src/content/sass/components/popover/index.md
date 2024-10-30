@@ -67,14 +67,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** variable
 - **Lines (comments):** 30-60
 - **Lines (code):** 62-93
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -136,14 +140,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
 - **Lines (comments):** 95-97
 - **Lines (code):** 99-101
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -178,14 +186,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
 - **Lines (comments):** 112-114
 - **Lines (code):** 116-261
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -227,14 +239,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
 - **Lines (comments):** 103-105
 - **Lines (code):** 107-110
-    </details>
+
+</details>
+
     
 
 #### Parameters

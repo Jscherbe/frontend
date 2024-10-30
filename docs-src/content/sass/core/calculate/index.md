@@ -38,14 +38,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** variable
 - **Lines (comments):** 9-11
 - **Lines (code):** 13-15
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -79,14 +83,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** mixin
 - **Lines (comments):** 17-19
 - **Lines (code):** 20-22
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -121,14 +129,18 @@ Provides user with a fallback for a calc that's just an enhancement
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** mixin
 - **Lines (comments):** 52-55
 - **Lines (code):** 57-64
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -164,14 +176,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
 - **Lines (comments):** 24-26
 - **Lines (code):** 28-30
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -207,14 +223,18 @@ Calculate the size of something at a given scale (percentage/exponential)
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
 - **Lines (comments):** 32-37
 - **Lines (code):** 39-41
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -260,14 +280,18 @@ Convert from pixel to em
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
 - **Lines (comments):** 43-46
 - **Lines (code):** 48-50
-    </details>
+
+</details>
+
     
 
 #### Parameters

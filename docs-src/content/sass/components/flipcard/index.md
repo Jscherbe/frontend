@@ -61,14 +61,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
 - **Lines (comments):** 12-33
 - **Lines (code):** 35-61
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -121,14 +125,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
 - **Lines (comments):** 63-65
 - **Lines (code):** 67-69
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -163,14 +171,18 @@ Set sizes map
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
 - **Lines (comments):** 71-73
 - **Lines (code):** 75-77
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -205,8 +217,10 @@ Prints adaptive spacing component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
@@ -254,14 +268,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
 - **Lines (comments):** 79-81
 - **Lines (code):** 83-85
-    </details>
+
+</details>
+
     
 
 #### Parameters

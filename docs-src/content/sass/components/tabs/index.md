@@ -48,14 +48,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
 - **Lines (comments):** 22-33
 - **Lines (code):** 35-47
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -98,14 +102,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
 - **Lines (comments):** 49-51
 - **Lines (code):** 53-55
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -140,14 +148,18 @@ Prints tabs component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
 - **Lines (comments):** 66-68
 - **Lines (code):** 70-177
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -189,14 +201,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
 - **Lines (comments):** 57-59
 - **Lines (code):** 61-64
-    </details>
+
+</details>
+
     
 
 #### Parameters

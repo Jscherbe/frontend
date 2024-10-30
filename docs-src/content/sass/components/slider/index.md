@@ -72,14 +72,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** variable
 - **Lines (comments):** 12-47
 - **Lines (code):** 49-85
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -146,14 +150,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
 - **Lines (comments):** 87-90
 - **Lines (code):** 92-94
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -199,8 +207,10 @@ Prints modal component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
@@ -248,14 +258,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** function
 - **Lines (comments):** 96-98
 - **Lines (code):** 100-102
-    </details>
+
+</details>
+
     
 
 #### Parameters

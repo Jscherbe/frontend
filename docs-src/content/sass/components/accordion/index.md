@@ -63,14 +63,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** variable
 - **Lines (comments):** 17-44
 - **Lines (code):** 46-73
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -129,14 +133,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
 - **Lines (comments):** 75-77
 - **Lines (code):** 79-81
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -171,14 +179,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
 - **Lines (comments):** 91-94
 - **Lines (code):** 96-208
-    </details>
+
+</details>
+
     
 
 
@@ -233,14 +245,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
 - **Lines (comments):** 83-85
 - **Lines (code):** 87-89
-    </details>
+
+</details>
+
     
 
 #### Parameters

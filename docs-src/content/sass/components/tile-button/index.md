@@ -45,14 +45,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** variable
 - **Lines (comments):** 26-35
 - **Lines (code):** 37-46
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -93,14 +97,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
 - **Lines (comments):** 48-50
 - **Lines (code):** 52-54
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -135,14 +143,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
 - **Lines (comments):** 65-67
 - **Lines (code):** 69-109
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -184,14 +196,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** function
 - **Lines (comments):** 56-58
 - **Lines (code):** 60-63
-    </details>
+
+</details>
+
     
 
 #### Parameters

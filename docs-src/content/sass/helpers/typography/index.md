@@ -31,14 +31,18 @@ Prints Typography Helper styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 10-20
 - **Lines (code):** 22-80
-    </details>
+
+</details>
+
     
 
 #### Examples

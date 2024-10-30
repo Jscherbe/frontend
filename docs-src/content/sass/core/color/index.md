@@ -68,14 +68,18 @@ $palette: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 13-15
 - **Lines (code):** 17-48
-    </details>
+
+</details>
+
     
 
 
@@ -111,14 +115,18 @@ $contexts: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 50-54
 - **Lines (code):** 56-67
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -158,14 +166,18 @@ $color-classes: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 69-69
 - **Lines (code):** 70-74
-    </details>
+
+</details>
+
     
   
 
@@ -190,14 +202,18 @@ Used to override or extend the color palette
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 76-82
 - **Lines (code):** 84-86
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -246,14 +262,18 @@ Set ouput classes for all-color-class-styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 108-109
 - **Lines (code):** 111-113
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -287,14 +307,18 @@ Set color contexts
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 120-130
 - **Lines (code):** 132-134
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -348,14 +372,18 @@ Prints contexts styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 159-160
 - **Lines (code):** 162-168
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -391,14 +419,18 @@ Prints all context styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 192-199
 - **Lines (code):** 201-210
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -459,14 +491,18 @@ Outputs all color classes
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
 - **Lines (comments):** 212-216
 - **Lines (code):** 218-227
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -520,14 +556,18 @@ Get a color from the palette by name
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
 - **Lines (comments):** 88-90
 - **Lines (code):** 92-106
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -571,14 +611,18 @@ Get a context by name
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
 - **Lines (comments):** 136-138
 - **Lines (code):** 140-142
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -622,14 +666,18 @@ Get a context's value'
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
 - **Lines (comments):** 144-147
 - **Lines (code):** 149-157
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -674,15 +722,19 @@ Lighten a color using the default white by a percentage
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
 - **Lines (comments):** 170-175
 - **Lines (code):** 177-179
 - **Author:** 
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -732,15 +784,19 @@ Darken a color with the default black by a percentage
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
 - **Lines (comments):** 181-186
 - **Lines (code):** 188-190
 - **Author:** Kitty Giraudel
-    </details>
+
+</details>
+
     
 
 #### Parameters

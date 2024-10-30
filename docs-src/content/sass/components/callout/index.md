@@ -43,14 +43,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
 - **Lines (comments):** 24-31
 - **Lines (code):** 33-40
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -89,14 +93,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
 - **Lines (comments):** 62-64
 - **Lines (code):** 66-68
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -131,14 +139,18 @@ Set callout styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
 - **Lines (comments):** 79-81
 - **Lines (code):** 83-85
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -168,14 +180,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
 - **Lines (comments):** 87-89
 - **Lines (code):** 91-119
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -217,14 +233,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
 - **Lines (comments):** 70-72
 - **Lines (code):** 74-77
-    </details>
+
+</details>
+
     
 
 #### Parameters

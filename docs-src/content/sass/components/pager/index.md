@@ -64,14 +64,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** variable
 - **Lines (comments):** 15-41
 - **Lines (code):** 43-71
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -129,14 +133,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** mixin
 - **Lines (comments):** 73-75
 - **Lines (code):** 77-79
-    </details>
+
+</details>
+
     
 
 #### Parameters
@@ -171,14 +179,18 @@ Prints component styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** mixin
 - **Lines (comments):** 89-91
 - **Lines (code):** 93-165
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -220,14 +232,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** function
 - **Lines (comments):** 81-83
 - **Lines (code):** 85-87
-    </details>
+
+</details>
+
     
 
 #### Parameters

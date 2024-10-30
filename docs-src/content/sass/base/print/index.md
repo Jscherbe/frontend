@@ -33,14 +33,18 @@ Printed Media Stylesheet
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _print.scss
 - **Group:** print
 - **Type:** mixin
 - **Lines (comments):** 5-9
 - **Lines (code):** 11-48
-    </details>
+
+</details>
+
     
 
 #### Examples

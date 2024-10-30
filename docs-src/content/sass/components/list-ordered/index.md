@@ -31,14 +31,18 @@ Output styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _list-ordered.scss
 - **Group:** list-ordered
 - **Type:** mixin
 - **Lines (comments):** 9-9
 - **Lines (code):** 11-16
-    </details>
+
+</details>
+
     
   
   

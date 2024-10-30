@@ -31,14 +31,18 @@ Printed Media Styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _print.scss
 - **Group:** print
 - **Type:** mixin
 - **Lines (comments):** 5-7
 - **Lines (code):** 9-33
-    </details>
+
+</details>
+
     
 
 #### Examples

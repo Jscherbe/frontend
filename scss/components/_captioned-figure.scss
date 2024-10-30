@@ -1,0 +1,171 @@
+////
+/// @group captioned-figure
+////
+/// Figure with caption layout (to position caption)
+
+@use "sass:map";
+@use "sass:meta";
+
+@use "../selector";
+@use "../utils";
+@use "../element";
+@use "../typography";
+
+// Used for function fallback
+$-fallbacks: (
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow-raised"
+  ),
+  "margin-bottom" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "margin"
+  ),
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "text-alignment-matches" : false,
+  "text-alignment-matches-center-only" : true,
+  "background-color" : white,
+  "box-shadow" : true,
+  "margin-bottom" : true,
+  "line-height" : true,
+  "caption-padding" :  0.5em,
+  "color" : null,
+  "type-size" : "small",
+  "caption-max-width" : min(100%, 15em),
+  "caption-background-color" : rgba(255,255,255,0.7),
+  "caption-backdrop-filter" : blur(2px),
+  "traditional-caption-color" : null,
+  "traditional-caption-background-color" : transparent,
+  "traditional-caption-padding" : 0.5em,
+  "traditional-caption-max-width" : 35em,
+  "traditional-caption-text-align" : right,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "captioned-figure [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo Check out our demo [accordion]
+/// @example scss
+///  @include ulu.component-captioned-figure-styles();
+
+@mixin styles {
+  $prefix: selector.class("captioned-figure");
+  $set-aligns: get("text-alignment-matches");
+  $aligns-center-only: get("text-alignment-matches-center-only");
+
+  #{ $prefix } {
+    display: block;
+    position: relative;
+    margin-bottom: get("margin-bottom");
+    background-color: get("background-color");
+    > img {
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
+  a#{ $prefix },
+  button#{ $prefix } {
+    display: block;
+    @if (get("box-shadow")) {
+      &:hover,
+      &:focus {
+        box-shadow: get("box-shadow");
+      }
+    }
+  }
+  #{ $prefix }__caption {
+    position: absolute;
+    color: get("color");
+    @include typography.size(get("type-size"), $only-font-size: true);
+    line-height: get("line-height");
+    max-width: get("caption-max-width");
+    background-color: get("caption-background-color");
+    padding: get("caption-padding");
+    backdrop-filter: get("caption-backdrop-filter");
+  }
+  #{ $prefix }--traditional {
+    #{ $prefix }__caption {
+      position: static;
+      color: get("traditional-caption-color");
+      max-width: get("traditional-caption-max-width");
+      background-color: get("traditional-caption-background-color");
+      padding: get("traditional-caption-padding");
+      text-align: get("traditional-caption-text-align");
+      @if (get("traditional-caption-text-align") == right) {
+        margin-left: auto;
+      }
+      @if (get("traditional-caption-text-align") == center) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  #{ $prefix }--left {
+    #{ $prefix }__caption {
+      left: 0;
+      @if ($set-aligns and not $aligns-center-only) {
+        text-align: left;
+      }
+    }
+  }
+  #{ $prefix }--right {
+    #{ $prefix }__caption {
+      right: 0;
+      @if ($set-aligns and not $aligns-center-only) {
+        text-align: right;
+      }
+    }
+  }
+  #{ $prefix }--bottom {
+    #{ $prefix }__caption {
+      bottom: 0;
+    }
+  }
+  #{ $prefix }--top {
+    #{ $prefix }__caption {
+      top: 0;
+    }
+  }
+  #{ $prefix }--bottom#{ $prefix }--center,
+  #{ $prefix }--top#{ $prefix }--center {
+    #{ $prefix }__caption {
+      left: 50%;
+      transform: translateX(-50%);
+      @if ($set-aligns or $aligns-center-only) {
+        text-align: center;
+      }
+    }
+  }
+  #{ $prefix }--left#{ $prefix }--center,
+  #{ $prefix }--right#{ $prefix }--center {
+    #{ $prefix }__caption {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

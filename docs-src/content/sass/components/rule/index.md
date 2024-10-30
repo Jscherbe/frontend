@@ -40,14 +40,18 @@ $config: (
 ```
   
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** variable
 - **Lines (comments):** 11-15
 - **Lines (code):** 17-21
-    </details>
+
+</details>
+
     
 
 #### Map Properties
@@ -83,14 +87,18 @@ Change modules $config
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
 - **Lines (comments):** 23-26
 - **Lines (code):** 28-30
-    </details>
+
+</details>
+
     
 
 #### Examples
@@ -136,14 +144,18 @@ Output styles
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
 - **Lines (comments):** 41-41
 - **Lines (code):** 43-94
-    </details>
+
+</details>
+
     
 
 #### Require
@@ -173,14 +185,18 @@ Get a config option
     
     
 
-    <details>
-      <summary>File Information</summary>
+
+<details>
+  <summary>File Information</summary>
+  
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** function
 - **Lines (comments):** 32-35
 - **Lines (code):** 37-39
-    </details>
+
+</details>
+
     
 
 #### Examples
