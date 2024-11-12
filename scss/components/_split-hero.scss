@@ -1,0 +1,104 @@
+
+////
+/// @group split-hero
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../breakpoint";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "breakpoint" : "medium",
+  "height" : 100vh,
+  "height-stacked" : 60vh
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "split-hero [config]");
+}
+
+/// Prints component styles
+/// @demo Check out our demo [accordion]
+/// @example scss
+///  @include ulu.component-split-hero-styles();
+
+@mixin styles {
+  $prefix: selector.class("split-hero");
+  $height: get("height");
+  $breakpoint: get("breakpoint");
+
+  #{ $prefix } {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    @include breakpoint.min($breakpoint) {
+      min-height: $height;
+    }
+  }
+  #{ $prefix }__graphic {
+    flex-grow: 1;
+    @include breakpoint.max($breakpoint) {
+      height: get("height-stacked");
+    }
+  }
+  #{ $prefix }__graphic,
+  #{ $prefix }__graphic {
+    width: 100%;
+  }
+  #{ $prefix }__graphic-media {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  #{ $prefix }--top {
+    #{ $prefix }__graphic {
+      @include breakpoint.min($breakpoint) {
+        order: -1;
+      }
+    }
+  }
+  @include breakpoint.min($breakpoint) {
+    #{ $prefix }--right,
+    #{ $prefix }--left {
+      text-align: right;
+      flex-direction: row;
+      height: $height;
+      height: min(min-content, $height);
+      #{ $prefix }__graphic,
+      #{ $prefix }__content {
+        height: 100%;
+        flex: 1 0 50%;
+      }
+      
+      #{ $prefix }__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    #{ $prefix }--left {
+      text-align: left;
+      #{ $prefix }__graphic {
+        order: -1;
+      }
+    }
+  }
+}

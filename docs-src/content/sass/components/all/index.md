@@ -64,6 +64,7 @@ $all-includes: (
   "scroll-slider",
   "skip-link",
   "slider",
+  "split-hero",
   "tabs",
   "tile-grid",
   "tile-button",
@@ -83,8 +84,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 88-89
-- **Lines (code):** 91-131
+- **Lines (comments):** 90-91
+- **Lines (code):** 93-134
 
 </details>
 
@@ -119,8 +120,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 133-134
-- **Lines (code):** 136-136
+- **Lines (comments):** 136-137
+- **Lines (code):** 139-139
 
 </details>
 
@@ -156,8 +157,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 138-140
-- **Lines (code):** 142-145
+- **Lines (comments):** 141-143
+- **Lines (code):** 145-148
 
 </details>
 
@@ -202,8 +203,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 147-148
-- **Lines (code):** 150-152
+- **Lines (comments):** 150-151
+- **Lines (code):** 153-155
 
 </details>
 
@@ -247,8 +248,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 154-158
-- **Lines (code):** 160-282
+- **Lines (comments):** 157-161
+- **Lines (code):** 163-288
 
 </details>
 

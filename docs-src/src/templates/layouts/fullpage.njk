@@ -2,14 +2,16 @@
 {% extends "fullpage-html.njk" %}
 {% block main %}
   <div class="background-light-gray">
-    <div class="container padding-bottom">
-      <h1 class="page__title h1">{{ title }}</h1>
-      {% if intro %}
-        <div class="rule rule--short rule--accent"></div>
-        <p class="type-large type-light">
-          {{ intro }}
-        </p>
-      {% endif %}
+    <div class="container">
+      <div class="type-max-width">
+        <h1 class="page__title h1">{{ title }}</h1>
+        {% if intro %}
+          <div class="rule rule--short rule--accent"></div>
+          <p class="type-large type-light">
+            {{ intro }}
+          </p>
+        {% endif %}
+      </div>
     </div>
   </div>
   {{ content | safe }}

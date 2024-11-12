@@ -5,6 +5,7 @@ import slider from "./slider.js";
 import card from "./card.js";
 import flipcard from "./flipcard.js";
 import demoCaptionFigure from "./demoCaptionFigure.js";
+import demoSplitHero from "./demoSplitHero.js";
 
 export const shortcodes = {
   popoverGridItem,
@@ -13,5 +14,6 @@ export const shortcodes = {
   card,
   slider,
   flipcard,
-  demoCaptionFigure
+  demoCaptionFigure,
+  demoSplitHero
 };

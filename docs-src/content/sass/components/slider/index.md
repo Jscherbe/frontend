@@ -216,7 +216,9 @@ Prints modal component styles
 - **Type:** mixin
 - **Lines (comments):** 104-106
 - **Lines (code):** 108-241
-    </details>
+
+</details>
+
     
 
 #### Examples
