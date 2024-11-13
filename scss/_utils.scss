@@ -58,21 +58,29 @@ $config: (
 /// @param {List} $list The map to get the value from
 /// @param {String} $value The value to search for in the list
 /// @param {String} $context The context of using this function for debugging help
+/// @param {String} $warn Display warning instead of throwing error
 
-@mixin require-list-has($list, $value, $context: "unknown") {
-  $index: list.index($list, $value) != null;
+@mixin require-list-has($list, $value, $context: "unknown", $warn: false) {
+  $index: list.index($list, $value);
   @if ($index == null) {
-    @error 'ULU: Unable to find item "#{ $value }" in #{ $context } list.';
+    $message: 'ULU: Unable to find item "#{ $value }" in #{ $context } list.';
+    @if ($warn) {
+      @warn $message;
+    } @else {
+      @error $message;
+    }
   }
 }
 
 /// Require that the list only is only made up of allowed items
 /// @param {List} $allowed The list of allowed items
 /// @param {String} $list The list to test allowed against
+/// @param {String} $context The context of using this function for debugging help
+/// @param {String} $warn Display warning instead of throwing error
 
-@mixin require-list-contains($allowed, $list, $context: "unknown") {
+@mixin require-list-contains($allowed, $list, $context: "unknown", $warn: false) {
   @each $item in $list {
-    @include require-list-has($allowed, $item, $context);
+    @include require-list-has($allowed, $item, $context, $warn);
   }
 }
 

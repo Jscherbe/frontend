@@ -41,7 +41,7 @@ $current-includes: $all-includes;
 /// @param {List} $includes List of modules by name to be included when styles are printed
 
 @mixin set-includes($includes) {
-  @include utils.require-list-contains($all-includes, $includes);
+  @include utils.require-list-contains($all-includes, $includes, "helpers.set-includes", true);
   $current-includes: $includes !global;
 }
 

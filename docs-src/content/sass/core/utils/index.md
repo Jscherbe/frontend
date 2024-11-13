@@ -149,8 +149,8 @@ Ensure a value is present in the list, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 57-60
-- **Lines (code):** 62-67
+- **Lines (comments):** 57-61
+- **Lines (code):** 63-73
 
 </details>
 
@@ -164,12 +164,8 @@ Ensure a value is present in the list, throw an error if not found
 |$list|`List`|The map to get the value from|
 |$value|`String`|The value to search for in the list|
 |$context|`String`|The context of using this function for debugging help|
+|$warn|`String`|Display warning instead of throwing error|
 
-    
-
-#### Throw
-
-- ULU: Unable to find item 
     
 
 
@@ -196,8 +192,8 @@ Require that the list only is only made up of allowed items
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-77
+- **Lines (comments):** 75-79
+- **Lines (code):** 81-85
 
 </details>
 
@@ -210,6 +206,8 @@ Require that the list only is only made up of allowed items
 |:--|:--|:--|
 |$allowed|`List`|The list of allowed items|
 |$list|`String`|The list to test allowed against|
+|$context|`String`|The context of using this function for debugging help|
+|$warn|`String`|Display warning instead of throwing error|
 
     
 
@@ -242,8 +240,8 @@ Returns true if we should include something (used for output checking)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 88-90
-- **Lines (code):** 92-100
+- **Lines (comments):** 96-98
+- **Lines (code):** 100-108
 
 </details>
 
@@ -408,8 +406,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-86
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-94
 
 </details>
 
@@ -450,8 +448,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 103-105
-- **Lines (code):** 107-113
+- **Lines (comments):** 111-113
+- **Lines (code):** 115-121
 
 </details>
 
@@ -488,8 +486,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 116-117
-- **Lines (code):** 119-133
+- **Lines (comments):** 124-125
+- **Lines (code):** 127-141
 
 </details>
 
@@ -537,8 +535,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 135-139
-- **Lines (code):** 141-149
+- **Lines (comments):** 143-147
+- **Lines (code):** 149-157
 
 </details>
 
@@ -588,8 +586,8 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 151-154
-- **Lines (code):** 156-161
+- **Lines (comments):** 159-162
+- **Lines (code):** 164-169
 
 </details>
 
@@ -653,8 +651,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 163-164
-- **Lines (code):** 166-174
+- **Lines (comments):** 171-172
+- **Lines (code):** 174-182
 
 </details>
 
@@ -689,8 +687,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 176-177
-- **Lines (code):** 179-186
+- **Lines (comments):** 184-185
+- **Lines (code):** 187-194
 
 </details>
 
@@ -729,8 +727,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 188-188
-- **Lines (code):** 189-197
+- **Lines (comments):** 196-196
+- **Lines (code):** 197-205
 
 </details>
 
@@ -765,8 +763,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 200-204
-- **Lines (code):** 205-224
+- **Lines (comments):** 208-212
+- **Lines (code):** 213-232
 
 </details>
 
@@ -819,8 +817,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 226-230
-- **Lines (code):** 232-258
+- **Lines (comments):** 234-238
+- **Lines (code):** 240-266
 
 </details>
 
@@ -880,8 +878,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 260-264
-- **Lines (code):** 266-282
+- **Lines (comments):** 268-272
+- **Lines (code):** 274-290
 
 </details>
 
@@ -924,8 +922,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 284-288
-- **Lines (code):** 290-298
+- **Lines (comments):** 292-296
+- **Lines (code):** 298-306
 
 </details>
 
@@ -975,8 +973,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 300-304
-- **Lines (code):** 306-314
+- **Lines (comments):** 308-312
+- **Lines (code):** 314-322
 
 </details>
 
@@ -1025,8 +1023,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 316-320
-- **Lines (code):** 322-337
+- **Lines (comments):** 324-328
+- **Lines (code):** 330-345
 
 </details>
 
@@ -1079,8 +1077,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 339-354
-- **Lines (code):** 356-372
+- **Lines (comments):** 347-362
+- **Lines (code):** 364-380
 
 </details>
 
@@ -1152,8 +1150,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 374-383
-- **Lines (code):** 385-387
+- **Lines (comments):** 382-391
+- **Lines (code):** 393-395
 
 </details>
 
@@ -1224,8 +1222,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 389-398
-- **Lines (code):** 400-402
+- **Lines (comments):** 397-406
+- **Lines (code):** 408-410
 
 </details>
 
@@ -1296,8 +1294,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 404-413
-- **Lines (code):** 415-417
+- **Lines (comments):** 412-421
+- **Lines (code):** 423-425
 
 </details>
 
@@ -1368,8 +1366,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 419-428
-- **Lines (code):** 430-432
+- **Lines (comments):** 427-436
+- **Lines (code):** 438-440
 
 </details>
 
