@@ -5,6 +5,7 @@
 
 @use "sass:map";
 @use "sass:math";
+@use "sass:list";
 
 @use "../selector";
 @use "../utils";
@@ -13,13 +14,20 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Map} extra-split-ratios  [wide 70/30] A map where the name is the modifier and the value is a list with two percentages (the first percentage will be correspond with the graphic or content depending on selector [ie. .hero--split-graphic-[name] would apply the first percentage to the graphic while hero--split-content-[name] would apply the first percentage to the content]) 
 
 $config: (
   "breakpoint" : "medium",
   "height" : 100vh,
+  "height-compact" : 40vh,
   "graphic-height-stacked" : 60vh,
   "content-max-width" : 40rem,
-  "text-align" : center
+  "content-padding-top" : 3rem,
+  "content-padding-bottom" : 3rem,
+  "text-align" : center,
+  "extra-split-ratios" : (
+    "wide" : (60%, 40%)
+  )
 ) !default;
 
 /// Change modules $config
@@ -53,6 +61,10 @@ $config: (
     flex-direction: column;
     text-align: get("text-align");
   }
+  #{ $prefix }__content-container {
+    padding-top: get("content-padding-top");
+    padding-top: get("content-padding-bottom");
+  }
   #{ $prefix }__content-inner {
     max-width: get("content-max-width");
     margin-left: auto;
@@ -62,7 +74,6 @@ $config: (
     position: relative;
     flex-grow: 1;
     width: 100%;
-    
   }
   #{ $prefix }__graphic-media {
     position: absolute;
@@ -72,18 +83,10 @@ $config: (
     height: 100%;
     object-fit: cover;
   }
-  #{ $prefix }--split {
-    @include breakpoint.min($breakpoint) {
-      min-height: $height;
-    }
-    #{ $prefix }__graphic {
-      @include breakpoint.max($breakpoint) {
-        height: get("graphic-height-stacked");
-      }
-    }
-  }
   
   
+  
+  // This doesn't interfere with overlay
   #{ $prefix }--top {
     #{ $prefix }__graphic {
       @include breakpoint.min($breakpoint) {
@@ -91,6 +94,7 @@ $config: (
       }
     }
   }
+  // These are shared between overlay and split style
   @include breakpoint.min($breakpoint) {
     #{ $prefix }--right,
     #{ $prefix }--left {
@@ -121,6 +125,32 @@ $config: (
       }
     }
   }
+  #{ $prefix }--split {
+    @include breakpoint.min($breakpoint) {
+      min-height: $height;
+    }
+    #{ $prefix }__graphic {
+      @include breakpoint.max($breakpoint) {
+        height: get("graphic-height-stacked");
+      }
+    }
+  }
+
+  @if get("extra-split-ratios") {
+    @include breakpoint.min($breakpoint) {
+      @each $name, $ratio in get("extra-split-ratios") {
+        #{ $prefix }--split-graphic-#{ $name } #{ $prefix }__graphic,
+        #{ $prefix }--split-content-#{ $name } #{ $prefix }__content {
+          flex-basis: list.nth($ratio, 1);
+        }
+        #{ $prefix }--split-graphic-#{ $name } #{ $prefix }__content,
+        #{ $prefix }--split-content-#{ $name } #{ $prefix }__graphic {
+          flex-basis: list.nth($ratio, 2);
+        }
+      }
+    }
+  }
+  
 
   #{ $prefix }--overlay {
     position: relative;
@@ -145,5 +175,8 @@ $config: (
     &#{ $prefix }--top #{ $prefix }__content {
       justify-content: flex-start;
     }
+  }
+  #{ $prefix }--compact {
+    min-height: get("height-compact");
   }
 }

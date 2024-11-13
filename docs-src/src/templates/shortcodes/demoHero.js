@@ -4,7 +4,7 @@ export default function(title, lightImage, ...modifiers) {
 <section class="hero ${ classes }">
   <div class="hero__content">
     <div class="hero__content-container container-large">
-      <div class="hero__content-inner">
+      <div class="hero__content-inner crop-margins">
         <h2 class="h1">${ title }</h2>
         <p class="type-large type-light">
           This is an example lead-in sentence. Lorem ipsum et depsi anu. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.
