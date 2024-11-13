@@ -21,6 +21,11 @@ $breakpoint: "medium";
   color: white;
   position: sticky;
   top: 0;
+  .fullscreen-layout & {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+  }
 }
 
 .header__logo {

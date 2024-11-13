@@ -15,6 +15,9 @@
   @include ulu.breakpoint-max("medium") {
     display: block;
   }
+  .fullscreen-layout & {
+    display: block;
+  }
 }
 .page__header,
 .page__toc {
@@ -42,6 +45,9 @@
   @include ulu.breakpoint-max("medium") {
     height: auto;
   }
+  .fullscreen-layout & {
+    height: ulu.cssvar-use("header-height");
+  }
 }
 .page__body {
   grid-area: body;
@@ -62,9 +68,3 @@
   }
 }
 
-.page--fullscreen {
-  display: block;
-  .page__header {
-    height: auto;
-  }
-}

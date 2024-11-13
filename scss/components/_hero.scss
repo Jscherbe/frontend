@@ -1,6 +1,6 @@
 
 ////
-/// @group split-hero
+/// @group hero
 ////
 
 @use "sass:map";
@@ -9,6 +9,7 @@
 @use "../selector";
 @use "../utils";
 @use "../breakpoint";
+@use "../typography";
 
 /// Module Settings
 /// @type Map
@@ -16,7 +17,9 @@
 $config: (
   "breakpoint" : "medium",
   "height" : 100vh,
-  "graphic-height-stacked" : 60vh
+  "graphic-height-stacked" : 60vh,
+  "content-max-width" : 40rem,
+  "text-align" : center
 ) !default;
 
 /// Change modules $config
@@ -32,42 +35,55 @@ $config: (
 ///   @include module-name.get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "split-hero [config]");
+  @return utils.require-map-get($config, $name, "hero [config]");
 }
 
 /// Prints component styles
 /// @demo Check out our demo [accordion]
 /// @example scss
-///  @include ulu.component-split-hero-styles();
+///  @include ulu.component-hero-styles();
 
 @mixin styles {
-  $prefix: selector.class("split-hero");
+  $prefix: selector.class("hero");
   $height: get("height");
   $breakpoint: get("breakpoint");
 
   #{ $prefix } {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: get("text-align");
+  }
+  #{ $prefix }__content-inner {
+    max-width: get("content-max-width");
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #{ $prefix }__graphic {
+    position: relative;
+    flex-grow: 1;
+    width: 100%;
+    
+  }
+  #{ $prefix }__graphic-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #{ $prefix }--split {
     @include breakpoint.min($breakpoint) {
       min-height: $height;
     }
-  }
-  #{ $prefix }__graphic {
-    flex-grow: 1;
-    @include breakpoint.max($breakpoint) {
-      height: get("graphic-height-stacked");
+    #{ $prefix }__graphic {
+      @include breakpoint.max($breakpoint) {
+        height: get("graphic-height-stacked");
+      }
     }
   }
-  #{ $prefix }__graphic,
-  #{ $prefix }__graphic {
-    width: 100%;
-  }
-  #{ $prefix }__graphic-media {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+  
+  
   #{ $prefix }--top {
     #{ $prefix }__graphic {
       @include breakpoint.min($breakpoint) {
@@ -84,11 +100,15 @@ $config: (
       #{ $prefix }__content {
         flex: 1 0 50%;
       }
-      
       #{ $prefix }__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
+      }
+    }
+    #{ $prefix }--right {
+      #{ $prefix }__content-inner {
+        margin-right: 0;
       }
     }
     #{ $prefix }--left {
@@ -96,6 +116,34 @@ $config: (
       #{ $prefix }__graphic {
         order: -1;
       }
+      #{ $prefix }__content-inner {
+        margin-left: 0;
+      }
+    }
+  }
+
+  #{ $prefix }--overlay {
+    position: relative;
+    justify-content: center;
+    min-height: $height;
+    #{ $prefix }__content { 
+      position: relative;
+      z-index: 2;
+    }
+    #{ $prefix }__graphic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &#{ $prefix }--bottom,
+    &#{ $prefix }--bottom #{ $prefix }__content {
+      justify-content: flex-end;
+    }
+    &#{ $prefix }--top,
+    &#{ $prefix }--top #{ $prefix }__content {
+      justify-content: flex-start;
     }
   }
 }

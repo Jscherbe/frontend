@@ -1,0 +1,10 @@
+@use "vars" as *;
+@use "ulu";
+
+$defaults: (
+  "header-height": 0,
+  "sticky-margin" : 3rem,
+  "sticky-offset-top" : ulu.cssvar-add("header-height", "sticky-margin"),
+  "fullscreen-height" : calc(100vh - #{ ulu.cssvar-use("header-height") })
+);
+

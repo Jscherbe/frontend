@@ -64,7 +64,7 @@ $all-includes: (
   "scroll-slider",
   "skip-link",
   "slider",
-  "split-hero",
+  "hero",
   "tabs",
   "tile-grid",
   "tile-button",

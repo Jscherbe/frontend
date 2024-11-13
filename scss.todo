@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Need to setup tag module @important
+  ☐ Look at other modules that should be setup
   ☐ Coing back to the idea about padding-x padding-y on container @setup @not-implemented
     ✔ Setup @done
       * Makes it simpler for calculations but it also means extra properties

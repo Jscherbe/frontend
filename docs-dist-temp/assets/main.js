@@ -126,6 +126,11 @@ function initPrint() {
     dispatch("afterPrint", document);
   });
 }
+const index$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  dispatch,
+  getName: getName$1
+}, Symbol.toStringTag, { value: "Module" }));
 const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
 function getDatasetJson(element, key2) {
   const passed = element.dataset[key2];
@@ -169,10 +174,10 @@ function setPositionClasses(parent, classes = {
     lastY = y;
     child.classList.remove(...Object.values(classes));
   });
-  rows.forEach((row, index) => {
-    if (index === 0)
+  rows.forEach((row, index2) => {
+    if (index2 === 0)
       row.forEach((child) => child.classList.add(classes.rowFirst));
-    if (index == rows.length - 1)
+    if (index2 == rows.length - 1)
       row.forEach((child) => child.classList.add(classes.rowLast));
     row.forEach((child, childIndex) => {
       if (childIndex === 0)
@@ -196,13 +201,27 @@ function addScrollbarProperty(element = document.body, container2 = window, prop
   const scrollbarWidth = container2.innerWidth - element.clientWidth;
   element.style.setProperty(propName, `${scrollbarWidth}px`);
 }
-function init$d() {
+const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  addScrollbarProperty,
+  getDatasetJson,
+  getDatasetOptionalJson,
+  getElement,
+  regexJsonString,
+  setPositionClasses,
+  wasClickOutside
+}, Symbol.toStringTag, { value: "Module" }));
+function init$e() {
   addScrollbarProperty();
 }
+const page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  init: init$e
+}, Symbol.toStringTag, { value: "Module" }));
 function removeArrayElement(array, element) {
-  var index = array.indexOf(element);
-  if (index > -1) {
-    array.splice(index, 1);
+  var index2 = array.indexOf(element);
+  if (index2 > -1) {
+    array.splice(index2, 1);
   }
 }
 const config = {
@@ -222,6 +241,12 @@ function getName(context) {
 function output(method, context, messages) {
   const label = getName(context) || "Logger";
   console[method](label, ...messages);
+  if (config.outputContext) {
+    console.log("Context:\n", context);
+  }
+}
+function set(changes) {
+  Object.assign(config, changes);
 }
 function log(context, ...messages) {
   if (allow(context)) {
@@ -229,15 +254,22 @@ function log(context, ...messages) {
   }
 }
 function logWarning(context, ...messages) {
-  {
+  if (config.warningsAlways || allow(context)) {
     output("warn", context, messages);
   }
 }
 function logError$1(context, ...messages) {
-  {
+  if (config.errorsAlways || allow(context)) {
     output("error", context, messages);
   }
 }
+const classLogger = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  log,
+  logError: logError$1,
+  logWarning,
+  set
+}, Symbol.toStringTag, { value: "Module" }));
 window.addEventListener(getName$1("pageResized"), () => {
   BreakpointManager.instances.forEach((i) => i.update());
 });
@@ -315,17 +347,17 @@ const _BreakpointManager = class _BreakpointManager {
       return;
     this.previous = this.active;
     this.previousIndex = this.activeIndex;
-    const index = this.order.indexOf(name);
+    const index2 = this.order.indexOf(name);
     this.active = name;
-    this.activeIndex = index;
+    this.activeIndex = index2;
     const activeBreakpoint = this.at(this.active);
     const mapBreakpoints = (n) => this.at(n);
-    const max2 = this.order.slice(index).map(mapBreakpoints);
-    const notMax = this.order.slice(0, index).map(mapBreakpoints);
-    const min2 = this.order.slice(0, index + 1).map(mapBreakpoints);
-    const notMin = this.order.slice(index + 1).map(mapBreakpoints);
+    const max2 = this.order.slice(index2).map(mapBreakpoints);
+    const notMax = this.order.slice(0, index2).map(mapBreakpoints);
+    const min2 = this.order.slice(0, index2 + 1).map(mapBreakpoints);
+    const notMin = this.order.slice(index2 + 1).map(mapBreakpoints);
     const notOnly = this.order.slice().map(mapBreakpoints);
-    notOnly.splice(index, 1);
+    notOnly.splice(index2, 1);
     log(this, "max:", max2.map((b) => b.name).join());
     log(this, "min:", min2.map((b) => b.name).join());
     max2.forEach((b) => b._setDirection("max", true));
@@ -335,7 +367,7 @@ const _BreakpointManager = class _BreakpointManager {
     notMin.forEach((b) => b._setDirection("min", false));
     notOnly.forEach((b) => b._setDirection("only", false));
     if (this.previousIndex !== null) {
-      this.resizeDirection = this.previousIndex < index ? "up" : "down";
+      this.resizeDirection = this.previousIndex < index2 ? "up" : "down";
     }
     this.onChangeCallbacks.forEach((cb) => cb(this));
   }
@@ -486,6 +518,10 @@ class Breakpoint {
     this._manager.log.apply(this._manager, msg);
   }
 }
+const breakpoints = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  BreakpointManager
+}, Symbol.toStringTag, { value: "Module" }));
 let idCount = 0;
 function newId() {
   return `ulu-uid-${++idCount}`;
@@ -495,6 +531,11 @@ function ensureId(element) {
     element.id = newId();
   }
 }
+const id = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  ensureId,
+  newId
+}, Symbol.toStringTag, { value: "Module" }));
 const _Collapsible = class _Collapsible {
   /**
    * @param {Object} elements Elements object 
@@ -677,6 +718,10 @@ __publicField(_Collapsible, "defaults", {
   }
 });
 let Collapsible = _Collapsible;
+const collapsible = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Collapsible
+}, Symbol.toStringTag, { value: "Module" }));
 const _Resizer = class _Resizer {
   /**
    * 
@@ -726,6 +771,10 @@ __publicField(_Resizer, "defaults", {
   fromLeft: false
 });
 let Resizer = _Resizer;
+const resizer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Resizer
+}, Symbol.toStringTag, { value: "Module" }));
 const selectors = [
   ".youtube-embedded-video",
   'iframe[title*="YouTube video player"]',
@@ -753,15 +802,20 @@ function prepVideos$1(context = document) {
 function getVideos(context) {
   return context.querySelectorAll(selectors.join(", "));
 }
-const attrs$9 = {
+const pauseYoutubeVideo = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  pauseVideos: pauseVideos$1,
+  prepVideos: prepVideos$1
+}, Symbol.toStringTag, { value: "Module" }));
+const attrs$a = {
   init: "data-ulu-dialog-init",
   dialog: "data-ulu-dialog",
   trigger: "data-ulu-dialog-trigger",
   close: "data-ulu-dialog-close"
 };
-const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
-const attrSelectorInitial$6 = (key2) => `${attrSelector$9(key2)}:not([${attrs$9.init}])`;
-const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$6(key2));
+const attrSelector$a = (key2) => `[${attrs$a[key2]}]`;
+const attrSelectorInitial$7 = (key2) => `${attrSelector$a(key2)}:not([${attrs$a.init}])`;
+const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$7(key2));
 const defaults$7 = {
   /**
    * Use non-modal interface for dialog
@@ -782,11 +836,14 @@ const defaults$7 = {
   pauseVideos: true
 };
 let currentDefaults$2 = { ...defaults$7 };
-function init$c() {
-  document.addEventListener(getName$1("pageModified"), setup$a);
-  setup$a();
+function setDefaults$2(options) {
+  currentDefaults$2 = Object.assign({}, currentDefaults$2, options);
 }
-function setup$a() {
+function init$d() {
+  document.addEventListener(getName$1("pageModified"), setup$b);
+  setup$b();
+}
+function setup$b() {
   const dialogs = queryAllInitial$2("dialog");
   dialogs.forEach(setupDialog);
   const triggers = queryAllInitial$2("trigger");
@@ -794,70 +851,81 @@ function setup$a() {
 }
 function setupTrigger$2(trigger) {
   trigger.addEventListener("click", handleTrigger);
-  trigger.setAttribute(attrs$9.init, "");
+  trigger.setAttribute(attrs$a.init, "");
   function handleTrigger() {
     var _a;
-    const id = trigger.dataset.uluDialogTrigger;
-    const dialog = document.getElementById(id);
-    if (!dialog) {
-      console.error("Could not locate dialog (id)", id);
+    const id2 = trigger.dataset.uluDialogTrigger;
+    const dialog2 = document.getElementById(id2);
+    if (!dialog2) {
+      console.error("Could not locate dialog (id)", id2);
       return;
     }
-    if (((_a = dialog == null ? void 0 : dialog.tagName) == null ? void 0 : _a.toLowerCase()) !== "dialog") {
+    if (((_a = dialog2 == null ? void 0 : dialog2.tagName) == null ? void 0 : _a.toLowerCase()) !== "dialog") {
       console.error("Attempted to trigger non <dialog> element. Did you mean to use modal builder?");
       return;
     }
-    const options = getDialogOptions(dialog);
-    dialog[options.nonModal ? "show" : "showModal"]();
+    const options = getDialogOptions(dialog2);
+    dialog2[options.nonModal ? "show" : "showModal"]();
   }
 }
-function setupDialog(dialog) {
-  const options = getDialogOptions(dialog);
-  dialog.addEventListener("click", handleClicks);
-  dialog.setAttribute(attrs$9.init, "");
+function setupDialog(dialog2) {
+  const options = getDialogOptions(dialog2);
+  dialog2.addEventListener("click", handleClicks);
+  dialog2.setAttribute(attrs$a.init, "");
   if (options.documentEnd) {
-    document.body.appendChild(dialog);
+    document.body.appendChild(dialog2);
   }
-  if (options.pauseYoutubeVideos) {
-    prepVideos(dialog);
+  if (options.pauseVideos) {
+    prepVideos(dialog2);
   }
   function handleClicks(event) {
     const { target } = event;
     const closeFromButton = target.closest("[data-ulu-dialog-close]");
-    let closeFromOutside = options.clickOutsideCloses && target === dialog && wasClickOutside(dialog, event);
+    let closeFromOutside = options.clickOutsideCloses && target === dialog2 && wasClickOutside(dialog2, event);
     if (closeFromOutside || closeFromButton) {
-      if (options.pauseYoutubeVideos) {
-        pauseVideos(dialog);
+      if (options.pauseVideos) {
+        pauseVideos(dialog2);
       }
-      dialog.close();
+      dialog2.close();
     }
   }
 }
-function getDialogOptions(dialog) {
-  const options = getDatasetJson(dialog, "uluDialog");
+function getDialogOptions(dialog2) {
+  const options = getDatasetJson(dialog2, "uluDialog");
   return Object.assign({}, currentDefaults$2, options);
 }
-function prepVideos(dialog) {
-  prepVideos$1(dialog);
+function prepVideos(dialog2) {
+  prepVideos$1(dialog2);
 }
-function pauseVideos(dialog) {
-  pauseVideos$1(dialog);
-  const nativeVideos = dialog.querySelectorAll("video");
+function pauseVideos(dialog2) {
+  pauseVideos$1(dialog2);
+  const nativeVideos = dialog2.querySelectorAll("video");
   nativeVideos.forEach((video) => video.pause());
 }
-const attrs$8 = {
+const dialog = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  attrs: attrs$a,
+  defaults: defaults$7,
+  getDialogOptions,
+  init: init$d,
+  setDefaults: setDefaults$2,
+  setup: setup$b,
+  setupDialog,
+  setupTrigger: setupTrigger$2
+}, Symbol.toStringTag, { value: "Module" }));
+const attrs$9 = {
   builder: "data-ulu-modal-builder",
   body: "data-ulu-modal-builder-body",
   resizer: "data-ulu-modal-builder-resizer"
 };
-const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
+const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
 const defaults$6 = {
   title: null,
   titleIcon: null,
   documentEnd: true,
   allowResize: false,
   position: "center",
-  video: false,
+  bodyFills: false,
   noBackdrop: false,
   size: "default",
   print: false,
@@ -878,33 +946,33 @@ const defaults$6 = {
    * @param {Object} config Resolved options
    * @returns {String} Markup for modal
    */
-  template(id, config2) {
+  template(id2, config2) {
     const classes = [
       "modal",
       `modal--${config2.position}`,
       `modal--${config2.size}`,
       `modal--${config2.allowResize ? "resize" : "no-resize"}`,
       ...!config2.title ? ["modal--no-header"] : [],
-      ...config2.video ? ["modal--video"] : [],
+      ...config2.bodyFills ? ["modal--body-fills"] : [],
       ...config2.noBackdrop ? ["modal--no-backdrop"] : [],
       ...config2.noMinHeight ? ["modal--no-min-height"] : [],
       ...config2.class ? [config2.class] : []
     ];
     return `
-      <dialog id="${id}" class="${classes.join(" ")}">
+      <dialog id="${id2}" class="${classes.join(" ")}">
         ${config2.title ? `
           <header class="modal__header">
             <h2 class="modal__title">
               ${config2.titleIcon ? `<span class="modal__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="modal__title-text">${config2.title}</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${attrs$9.close} autofocus>
+            <button class="modal__close" aria-label="Close modal" ${attrs$a.close} autofocus>
               ${config2.templateCloseIcon(config2)}
             </button>
           </header>
         ` : ""}
-        <div class="modal__body" ${attrs$8.body}></div>
-        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$8.resizer}>
+        <div class="modal__body" ${attrs$9.body}></div>
+        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$9.resizer}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
       </div>
@@ -912,17 +980,20 @@ const defaults$6 = {
   }
 };
 let currentDefaults$1 = { ...defaults$6 };
-function init$b() {
-  document.addEventListener(getName$1("pageModified"), setup$9);
-  setup$9();
+function setDefaults$1(options) {
+  currentDefaults$1 = Object.assign({}, currentDefaults$1, options);
 }
-function setup$9() {
-  const builders = document.querySelectorAll(attrSelector$8("builder"));
+function init$c() {
+  document.addEventListener(getName$1("pageModified"), setup$a);
+  setup$a();
+}
+function setup$a() {
+  const builders = document.querySelectorAll(attrSelector$9("builder"));
   builders.forEach(setupBuilder);
 }
 function setupBuilder(element) {
   const options = getDatasetJson(element, "uluModalBuilder");
-  element.removeAttribute(attrs$8.builder);
+  element.removeAttribute(attrs$9.builder);
   buildModal(element, options);
 }
 function buildModal(content, options) {
@@ -938,18 +1009,18 @@ function buildModal(content, options) {
   }
   const markup = config2.template(content.id, config2);
   const modal = createElementFromHtml(markup.trim());
-  const selectChild = (key2) => modal.querySelector(attrSelector$8(key2));
+  const selectChild = (key2) => modal.querySelector(attrSelector$9(key2));
   const body = selectChild("body");
-  const resizer = selectChild("resizer");
+  const resizer2 = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config2);
   content.removeAttribute("id");
   content.removeAttribute("hidden");
-  content.removeAttribute(attrs$8.builder);
+  content.removeAttribute(attrs$9.builder);
   content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
-  modal.setAttribute(attrs$9.dialog, JSON.stringify(dialogOptions));
+  modal.setAttribute(attrs$a.dialog, JSON.stringify(dialogOptions));
   if (config2.hasResizer) {
-    new Resizer(modal, resizer, {
+    new Resizer(modal, resizer2, {
       fromLeft: config2.position === "right"
     });
   }
@@ -973,19 +1044,181 @@ function separateDialogOptions(config2) {
     return acc;
   }, {});
 }
+const modalBuilder = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  buildModal,
+  defaults: defaults$6,
+  init: init$c,
+  setDefaults: setDefaults$1,
+  setup: setup$a,
+  setupBuilder
+}, Symbol.toStringTag, { value: "Module" }));
 const linebreaks = /(\r\n|\n|\r)/gm;
 const multiSpace = /\s+/g;
 function trimWhitespace(string) {
   return string.replace(linebreaks, "").replace(multiSpace, " ").trim();
 }
+const _Flipcard = class _Flipcard {
+  constructor(container2, front, back, config2, debug = false) {
+    if (!back) {
+      logError$1(this, "Missing an element (container, front, back)");
+    }
+    this.options = Object.assign({}, _Flipcard.defaults, config2);
+    const { namespace } = this.options;
+    _Flipcard.instances.push(this);
+    this.debug = debug;
+    this.elements = { container: container2, front, back };
+    this.isOpen = false;
+    this.uid = `${namespace}-id-${_Flipcard.instances.length}`;
+    this.stateAttr = `data-${namespace}-state`.toLowerCase();
+    this.setup();
+    this.setVisiblity(false);
+    log(this, this);
+  }
+  toggle() {
+    this.setVisiblity(!this.isOpen);
+  }
+  setup() {
+    const { uid } = this;
+    const { namespace, proxyClick: proxyClick2 } = this.options;
+    const { container: container2, front, back } = this.elements;
+    const control = this.elements.control = document.createElement("button");
+    control.classList.add(this.getClass("control-button"));
+    control.setAttribute("type", "button");
+    control.innerHTML = this.createControlContent();
+    control.style.gridArea = namespace;
+    control.style.zIndex = "-1";
+    control.addEventListener("focusin", () => {
+      control.style.zIndex = "20";
+    });
+    control.addEventListener("focusout", () => {
+      control.style.zIndex = "-1";
+    });
+    control.addEventListener("click", this.toggle.bind(this));
+    back.parentNode.insertBefore(control, back);
+    container2.classList.add(this.options.namespace);
+    container2.setAttribute("style", trimWhitespace(this.containerCss()));
+    if (proxyClick2) {
+      container2.addEventListener("click", this.onProxyClick.bind(this));
+    }
+    front.style.gridArea = namespace;
+    back.style.gridArea = namespace;
+    control.id = `${uid}-control`;
+    control.setAttribute("aria-controls", back.id);
+    control.setAttribute("aria-expanded", "false");
+    back.id = `${uid}-back`;
+    back.setAttribute("aria-labelledby", control.id);
+    back.setAttribute("aria-hidden", "true");
+  }
+  /**
+   * Click handler on everything on container
+   * - Determines if click was something that should be ignored (link, etc)
+   */
+  onProxyClick({ target }) {
+    const { exclude, allowSelection, selectionMin } = this.options.proxyClick;
+    const selection = window.getSelection();
+    if (exclude && !target.matches(exclude)) {
+      if (!allowSelection || selection.toString().length < selectionMin) {
+        this.toggle();
+      }
+    }
+  }
+  getClass(child) {
+    const { namespace } = this.options;
+    return child ? `${namespace}__${child}` : namespace;
+  }
+  createControlContent() {
+    return `
+      <span class="hidden-visually">Show More Information</span>
+    `;
+  }
+  setVisiblity(visible2) {
+    const { back, container: container2, control } = this.elements;
+    const state = visible2 ? "open" : "closed";
+    back.style.zIndex = visible2 ? "10" : "1";
+    back.style.visibility = visible2 ? "visible" : "hidden";
+    container2.setAttribute(this.stateAttr, state);
+    back.setAttribute("aria-hidden", visible2 ? "false" : "true");
+    control.setAttribute("aria-expanded", visible2 ? "true" : "false");
+    this.isOpen = visible2;
+  }
+  containerCss() {
+    return `
+      display: -ms-grid;
+      display: grid;
+      position: relative; 
+      -ms-grid-columns: 1fr; 
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+      grid-template-areas: "${this.options.namespace}";
+      cursor: pointer;
+    `;
+  }
+  panelCss(zIndex = 1) {
+    return `
+      grid-area: ${this.options.namespace};
+      z-index: ${zIndex}
+    `;
+  }
+};
+__publicField(_Flipcard, "instances", []);
+__publicField(_Flipcard, "defaults", {
+  namespace: "Flipcard",
+  proxyClick: {
+    allowSelection: true,
+    // Don't proxy click if the user has more than the minmimum selected
+    selectionMin: 10,
+    // Minimum length that qualifies as a selection
+    exclude: "a, input, textarea, button"
+    // Selectors to avoid closing a flipcard onProxyclick 
+  }
+});
+let Flipcard = _Flipcard;
+const attrs$8 = {
+  init: "data-ulu-flipcard-init",
+  flipcard: "data-ulu-flipcard",
+  front: "data-ulu-flipcard-front",
+  back: "data-ulu-flipcard-back"
+};
+const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
+const attrSelectorInitial$6 = (key2) => `${attrSelector$8(key2)}:not([${attrs$8.init}])`;
+const instances$4 = [];
+function init$b() {
+  document.addEventListener(getName$1("pageModified"), setup$9);
+  setup$9();
+}
+function setup$9() {
+  const builders = document.querySelectorAll(attrSelectorInitial$6("flipcard"));
+  builders.forEach(setupFlipcard);
+}
+function setupFlipcard(container2) {
+  container2.setAttribute(attrs$8.init, "");
+  const options = getDatasetOptionalJson(container2, "uluFlipcard");
+  const config2 = Object.assign({}, options);
+  const front = container2.querySelector(attrSelectorInitial$6("front"));
+  const back = container2.querySelector(attrSelectorInitial$6("back"));
+  instances$4.push(new Flipcard(container2, front, back, config2));
+}
+const flipcard = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Flipcard,
+  attrs: attrs$8,
+  init: init$b,
+  setup: setup$9
+}, Symbol.toStringTag, { value: "Module" }));
 function init$a(selector = "[data-grid]", classes) {
-  document.addEventListener(getName$1("pageModified"), () => setup$8(selector));
-  document.addEventListener(getName$1("pageResized"), () => setup$8(selector));
-  setup$8(selector);
+  document.addEventListener(getName$1("pageModified"), () => setup$8(selector, classes));
+  document.addEventListener(getName$1("pageResized"), () => setup$8(selector, classes));
+  setup$8(selector, classes);
 }
 function setup$8(selector, classes) {
-  document.querySelectorAll(selector).forEach((element) => setPositionClasses(element, void 0));
+  document.querySelectorAll(selector).forEach((element) => setPositionClasses(element, classes || void 0));
 }
+const grid = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  init: init$a,
+  setup: setup$8
+}, Symbol.toStringTag, { value: "Module" }));
 function createPager() {
   return function pager(instance, dir) {
     const isNext = dir === "next";
@@ -1026,6 +1259,10 @@ function createPager() {
     }
   };
 }
+const overflowScrollerPager = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  createPager
+}, Symbol.toStringTag, { value: "Module" }));
 function hasRequiredProps(required) {
   return (obj) => {
     return required.every((prop) => {
@@ -1089,14 +1326,16 @@ const _OverflowScroller = class _OverflowScroller {
     const button = document.createElement("button");
     button.classList.add(this.getClass("control-button"));
     button.classList.add(this.getClass(`control-button--${action}`));
+    button.classList.add(...this.options.buttonClasses);
     button.setAttribute("type", "button");
     button.innerHTML = this.getControlContent(action);
     return button;
   }
   getControlContent(action) {
+    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
     return `
       <span class="hidden-visually">${action}</span>
-      <span aria-hidden="true">${action === "next" ? "→" : "←"}</span>
+      <span class="${classes.join(" ")}" aria-hidden="true"></span>
     `;
   }
   onScroll(event) {
@@ -1177,9 +1416,16 @@ __publicField(_OverflowScroller, "defaults", {
   horizontal: true,
   offsetStart: 100,
   offsetEnd: 100,
-  amount: "auto"
+  amount: "auto",
+  buttonClasses: ["button", "button--icon"],
+  iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
+  iconClassesNext: ["css-icon", "css-icon--angle-right"]
 });
 let OverflowScroller = _OverflowScroller;
+const overflowScroller = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  OverflowScroller
+}, Symbol.toStringTag, { value: "Module" }));
 const min = Math.min;
 const max = Math.max;
 const round = Math.round;
@@ -2654,6 +2900,11 @@ function addPlugin(plugin, option, overrides = {}) {
     return [plugin(overrides)];
   }
 }
+const floatingUi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  createFloatingUi,
+  defaults: defaults$5
+}, Symbol.toStringTag, { value: "Module" }));
 const instances$3 = /* @__PURE__ */ new WeakMap();
 const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
 const attrs$7 = {
@@ -2741,6 +2992,15 @@ class Popover extends Collapsible {
     }
   }
 }
+const popover = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Popover,
+  getContentByTrigger,
+  init: init$9,
+  instances: instances$3,
+  resolve,
+  setup: setup$7
+}, Symbol.toStringTag, { value: "Module" }));
 const attrs$6 = {
   trigger: "data-ulu-tooltip",
   init: "data-ulu-init",
@@ -2814,8 +3074,8 @@ const _Tooltip = class _Tooltip {
   getAnchorElement() {
     const { trigger } = this.elements;
     const { href } = trigger;
-    const id = href ? href.split("#")[1] : null;
-    const element = id ? document.getElementById(id) : null;
+    const id2 = href ? href.split("#")[1] : null;
+    const element = id2 ? document.getElementById(id2) : null;
     if (!element) {
       console.error("Unable to get 'fromAnchor' element", trigger);
     }
@@ -2998,6 +3258,13 @@ __publicField(_Tooltip, "defaultFloatingOptions", {
   // strategy: "fixed"
 });
 let Tooltip = _Tooltip;
+const tooltip = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Tooltip,
+  init: init$8,
+  setup: setup$6,
+  setupTrigger: setupTrigger$1
+}, Symbol.toStringTag, { value: "Module" }));
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -3184,10 +3451,10 @@ platform.exports;
       return os;
     }
     function each(object, callback) {
-      var index = -1, length = object ? object.length : 0;
+      var index2 = -1, length = object ? object.length : 0;
       if (typeof length == "number" && length > -1 && length <= maxSafeInteger) {
-        while (++index < length) {
-          callback(object[index], index, object);
+        while (++index2 < length) {
+          callback(object[index2], index2, object);
         }
       } else {
         forOwn(object, callback);
@@ -3216,8 +3483,8 @@ platform.exports;
     }
     function reduce(array, callback) {
       var accumulator = null;
-      each(array, function(value, index) {
-        accumulator = callback(accumulator, value, index, array);
+      each(array, function(value, index2) {
+        accumulator = callback(accumulator, value, index2, array);
       });
       return accumulator;
     }
@@ -3927,7 +4194,7 @@ var versionExports = version.exports;
     get: function get() {
       return cache;
     },
-    set: function set(values) {
+    set: function set2(values) {
       Object.keys(values).forEach(function(key2) {
         cache[key2] = values[key2];
       });
@@ -5452,12 +5719,12 @@ var css_escape = { exports: {} };
       }
       var string = String(value);
       var length = string.length;
-      var index = -1;
+      var index2 = -1;
       var codeUnit;
       var result = "";
       var firstCodeUnit = string.charCodeAt(0);
-      while (++index < length) {
-        codeUnit = string.charCodeAt(index);
+      while (++index2 < length) {
+        codeUnit = string.charCodeAt(index2);
         if (codeUnit == 0) {
           result += "�";
           continue;
@@ -5467,9 +5734,9 @@ var css_escape = { exports: {} };
           // U+007F, […]
           codeUnit >= 1 && codeUnit <= 31 || codeUnit == 127 || // If the character is the first character and is in the range [0-9]
           // (U+0030 to U+0039), […]
-          index == 0 && codeUnit >= 48 && codeUnit <= 57 || // If the character is the second character and is in the range [0-9]
+          index2 == 0 && codeUnit >= 48 && codeUnit <= 57 || // If the character is the second character and is in the range [0-9]
           // (U+0030 to U+0039) and the first character is a `-` (U+002D), […]
-          index == 1 && codeUnit >= 48 && codeUnit <= 57 && firstCodeUnit == 45
+          index2 == 1 && codeUnit >= 48 && codeUnit <= 57 && firstCodeUnit == 45
         ) {
           result += "\\" + codeUnit.toString(16) + " ";
           continue;
@@ -5477,16 +5744,16 @@ var css_escape = { exports: {} };
         if (
           // If the character is the first character and is a `-` (U+002D), and
           // there is no second character, […]
-          index == 0 && length == 1 && codeUnit == 45
+          index2 == 0 && length == 1 && codeUnit == 45
         ) {
-          result += "\\" + string.charAt(index);
+          result += "\\" + string.charAt(index2);
           continue;
         }
         if (codeUnit >= 128 || codeUnit == 45 || codeUnit == 95 || codeUnit >= 48 && codeUnit <= 57 || codeUnit >= 65 && codeUnit <= 90 || codeUnit >= 97 && codeUnit <= 122) {
-          result += string.charAt(index);
+          result += string.charAt(index2);
           continue;
         }
-        result += "\\" + string.charAt(index);
+        result += "\\" + string.charAt(index2);
       }
       return result;
     };
@@ -7819,11 +8086,11 @@ var keyExports = key$1.exports;
           return;
         }
         var currentIndex = void 0;
-        var found = sequence.some(function(element, index) {
+        var found = sequence.some(function(element, index2) {
           if (!(0, _activeElement2.default)(element)) {
             return false;
           }
-          currentIndex = index;
+          currentIndex = index2;
           return true;
         });
         if (!found) {
@@ -7935,11 +8202,11 @@ const _Slider = class _Slider {
     if (!elements.slides.length) {
       logError$1(this, "Missing slides");
     }
-    this.slides = [...elements.slides].map((element, index) => {
+    this.slides = [...elements.slides].map((element, index2) => {
       return {
         element,
-        index,
-        number: index + 1
+        index: index2,
+        number: index2 + 1
       };
     });
     this.elements = {
@@ -7969,9 +8236,9 @@ const _Slider = class _Slider {
     const { index: lastIndex, slides } = this;
     const last = slides.length - 1;
     const prev = lastIndex - 1;
-    const index = prev < 0 ? last : prev;
-    this.emit("previous", [event, index]);
-    this.goto(index, event, "previous");
+    const index2 = prev < 0 ? last : prev;
+    this.emit("previous", [event, index2]);
+    this.goto(index2, event, "previous");
   }
   /**
    * Goto to the next slide
@@ -7979,9 +8246,9 @@ const _Slider = class _Slider {
   next(event) {
     const { index: lastIndex, slides } = this;
     const next = lastIndex + 1;
-    const index = next > slides.length - 1 ? 0 : next;
-    this.emit("next", [event, index]);
-    this.goto(index, event, "next");
+    const index2 = next > slides.length - 1 ? 0 : next;
+    this.emit("next", [event, index2]);
+    this.goto(index2, event, "next");
   }
   /**
    *  Makes sure that no matter what the callback is called if transition event
@@ -7990,7 +8257,7 @@ const _Slider = class _Slider {
    * @param {number} duration Duration to wait for complete 
    * @param {Function} beginTransition Css changes to begin/start transtion 
    */
-  ensureTranstionEnds(element, duration, beginTransition) {
+  ensureTransitionEnds(element, duration, beginTransition) {
     return new Promise((resolve2) => {
       const tid = {};
       const onStart = () => {
@@ -8021,9 +8288,9 @@ const _Slider = class _Slider {
    */
   translateTo(x, duration) {
     const { track } = this.elements;
-    const set = () => track.style.transform = `translateX(-${x}px)`;
+    const set2 = () => track.style.transform = `translateX(-${x}px)`;
     track.style.willChange = "transform";
-    return this.ensureTranstionEnds(track, duration, set).then(() => {
+    return this.ensureTransitionEnds(track, duration, set2).then(() => {
       track.style.willChange = "auto";
     });
   }
@@ -8048,23 +8315,23 @@ const _Slider = class _Slider {
     const { options } = this;
     const { element } = slide;
     const duration = visible2 ? options.transitionDuration : options.transitionDurationExit;
-    return this.ensureTranstionEnds(element, duration, () => {
+    return this.ensureTransitionEnds(element, duration, () => {
       element.style.opacity = visible2 ? "1" : "0";
     });
   }
   /**
    * Handler for the entire slide transtion
    */
-  async slideTransition({ slide, index, old, oldIndex, triggerType }) {
+  async slideTransition({ slide, index: index2, old, oldIndex, triggerType }) {
     const count = this.slides.length;
     const reverse = triggerType === "previous";
     const lastIndex = count - 1;
-    const lastToFirst = index === 0 && oldIndex === lastIndex;
-    const firstToLast = index === lastIndex && oldIndex === 0;
+    const lastToFirst = index2 === 0 && oldIndex === lastIndex;
+    const firstToLast = index2 === lastIndex && oldIndex === 0;
     let switchSlide;
     let duration = this.options.transitionDuration;
     if (oldIndex && !lastToFirst && !firstToLast) {
-      duration = duration * Math.abs(oldIndex - index);
+      duration = duration * Math.abs(oldIndex - index2);
     }
     if (count < 3) {
       if (lastToFirst && !reverse) {
@@ -8115,7 +8382,7 @@ const _Slider = class _Slider {
     slide.element.style.order = "-1";
     return Promise.resolve();
   }
-  goto(index, event, triggerType) {
+  goto(index2, event, triggerType) {
     const {
       slide: old,
       index: oldIndex,
@@ -8123,11 +8390,11 @@ const _Slider = class _Slider {
       elements
     } = this;
     const isInit = triggerType === "init";
-    const slide = slides[index];
+    const slide = slides[index2];
     const activeClass = this.getClass("nav-button--active");
     const transitionClass = this.getClass("transition", true);
-    const to = { slide, index, old, oldIndex, triggerType };
-    if (index === oldIndex) {
+    const to = { slide, index: index2, old, oldIndex, triggerType };
+    if (index2 === oldIndex) {
       logWarning(this, "Could not goto slide, still performing transition");
       return;
     }
@@ -8142,14 +8409,14 @@ const _Slider = class _Slider {
     slide.navButton.classList.add(activeClass);
     elements.container.classList.add(transitionClass);
     this.transition(to).then(() => {
-      this.index = index;
+      this.index = index2;
       this.slide = slide;
       this.transitioning = false;
       elements.container.classList.remove(transitionClass);
       lockInteractives.disengage();
       if (!isInit) {
         slide.element.focus();
-        this.emit("goto", [event, index, slide]);
+        this.emit("goto", [event, index2, slide]);
       }
     });
   }
@@ -8210,6 +8477,7 @@ const _Slider = class _Slider {
     const button = document.createElement("button");
     button.classList.add(this.getClass("control-button"));
     button.classList.add(this.getClass(`control-button--${action}`));
+    button.classList.add(...this.options.buttonClasses);
     button.setAttribute("data-slider-control", action);
     button.setAttribute("type", "button");
     button.innerHTML = this.getControlContent(action);
@@ -8254,20 +8522,21 @@ const _Slider = class _Slider {
       navItems
     };
   }
-  createNavButton(slide, index) {
+  createNavButton(slide, index2) {
     const button = document.createElement("button");
     button.classList.add(this.getClass("nav-button"));
     button.setAttribute("type", "button");
     button.innerHTML = this.getNavContent(slide.number);
     slide.navButton = button;
-    button.addEventListener("click", this.goto.bind(this, index));
+    button.addEventListener("click", this.goto.bind(this, index2));
     return button;
   }
   // change to css-icon 
   getControlContent(action) {
+    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
     return `
       <span class="hidden-visually">${action}</span>
-      <span aria-hidden="true">${action === "next" ? "→" : "←"}</span>
+      <span class="${classes.join(" ")}" aria-hidden="true"></span>
     `;
   }
   getNavContent(number) {
@@ -8288,10 +8557,21 @@ __publicField(_Slider, "defaults", {
   transitionFade: false,
   transitionDuration: 700,
   transitionDurationExit: 400,
-  transitionTimingFunction: "ease-in-out"
+  transitionTimingFunction: "ease-in-out",
+  buttonClasses: ["Slider__control-icon", "button", "button--icon"],
+  iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
+  iconClassesNext: ["css-icon", "css-icon--angle-right"]
   // transition: true
 });
 let Slider = _Slider;
+const slider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Slider,
+  attrs: attrs$5,
+  init: init$7,
+  setup: setup$5,
+  setupSlider: setupSlider$1
+}, Symbol.toStringTag, { value: "Module" }));
 var ariaTablist_min = { exports: {} };
 (function(module, exports) {
   !function(t, e) {
@@ -8621,8 +8901,8 @@ function handleOpen({ options }, panel, tab) {
   }
 }
 function setHeights(element) {
-  const tabs = [...element.children];
-  const panels = tabs.map((n) => document.querySelector(`[aria-labelledby="${n.id}"]`));
+  const tabs2 = [...element.children];
+  const panels = tabs2.map((n) => document.querySelector(`[aria-labelledby="${n.id}"]`));
   const parent = panels[0].parentElement;
   const images = [...parent.querySelectorAll("img")];
   const imagePromises = images.map((image) => imagePromise(image));
@@ -8638,6 +8918,13 @@ function setHeights(element) {
     panels.forEach((panel) => panel.style.minHeight = `${max2}px`);
   });
 }
+const tabs = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  init: init$6,
+  initWithin,
+  instances: instances$1,
+  setup: setup$4
+}, Symbol.toStringTag, { value: "Module" }));
 const attrs$4 = {
   trigger: "data-ulu-proxy-click",
   init: "data-ulu-proxy-click-init"
@@ -8651,6 +8938,9 @@ const defaults$3 = {
   mousedownDurationPrevent: 250
 };
 let currentDefaults = { ...defaults$3 };
+function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
 function init$5() {
   document.addEventListener(getName$1("pageModified"), () => setup$3());
   setup$3();
@@ -8687,6 +8977,14 @@ function attachHandlers(proxy, child, options) {
   });
   proxy.style.cursor = "pointer";
 }
+const proxyClick = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  attachHandlers,
+  defaults: defaults$3,
+  init: init$5,
+  setDefaults,
+  setup: setup$3
+}, Symbol.toStringTag, { value: "Module" }));
 const attrs$3 = {
   init: "data-ulu-scrollpoint-init",
   /**
@@ -8710,6 +9008,7 @@ function setup$2() {
   elements.forEach((element) => {
     const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
     const config2 = Object.assign({}, elOptions);
+    element.setAttribute(attrs$3.init, "");
     new Scrollpoint(element, config2);
   });
 }
@@ -8922,6 +9221,13 @@ __publicField(_Scrollpoint, "defaults", {
   }
 });
 let Scrollpoint = _Scrollpoint;
+const scrollpoint = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Scrollpoint,
+  attrs: attrs$3,
+  init: init$4,
+  setup: setup$2
+}, Symbol.toStringTag, { value: "Module" }));
 function printOnly(content) {
   const w = window.open();
   w.document.write(content);
@@ -8971,6 +9277,11 @@ function setupTrigger(trigger, options) {
     }
   });
 }
+const print = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  attrs: attrs$2,
+  init: init$3
+}, Symbol.toStringTag, { value: "Module" }));
 const attrs$1 = {
   opened: "data-ulu-print-details-opened"
 };
@@ -8995,6 +9306,11 @@ function init$2(options) {
     });
   });
 }
+const printDetails = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  attrs: attrs$1,
+  init: init$2
+}, Symbol.toStringTag, { value: "Module" }));
 const attrs = {
   init: "data-ulu-scroll-slider-init",
   slider: "data-ulu-scroll-slider",
@@ -9004,18 +9320,6 @@ const attrs = {
 const attrSelector = (key2) => `[${attrs[key2]}]`;
 const attrSelectorInitial = (key2) => `${attrSelector(key2)}:not([${attrs.init}])`;
 const instances = [];
-class SiteScrollSlider extends OverflowScroller {
-  constructor(...args) {
-    super(...args);
-  }
-  // update this in the OverflowScroller module
-  getControlContent(action) {
-    return `
-      <span class="hidden-visually">${action === "next" ? "Scroll Left" : "Scroll Right"}</span>
-      <span class="Slider__control-icon fas fa-chevron-${action === "next" ? "right" : "left"}" aria-hidden="true"></span>
-    `;
-  }
-}
 const defaults = {
   amount: createPager()
 };
@@ -9035,8 +9339,108 @@ function setupSlider(container2) {
     track: container2.querySelector(attrSelector("track")),
     controls: container2.querySelector(attrSelector("controls"))
   };
-  instances.push(new SiteScrollSlider(elements, config2));
+  instances.push(new OverflowScroller(elements, config2));
 }
+const scrollSlider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  attrs,
+  init: init$1,
+  setup
+}, Symbol.toStringTag, { value: "Module" }));
+const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  breakpoints,
+  collapsible,
+  dialog,
+  flipcard,
+  grid,
+  get index() {
+    return index$1;
+  },
+  modalBuilder,
+  overflowScroller,
+  overflowScrollerPager,
+  page,
+  popover,
+  print,
+  printDetails,
+  proxyClick,
+  resizer,
+  scrollSlider,
+  scrollpoint,
+  slider,
+  tabs,
+  tooltip
+}, Symbol.toStringTag, { value: "Module" }));
+const _FileSave = class _FileSave {
+  /**
+   * @param {*} data Data to put in blob file
+   * @param {FileSaveOptions} options Options for file, see defaults (ie. type, filename)
+   */
+  constructor(data, options) {
+    this.options = Object.assign({}, _FileSave.defaults, options);
+    this.data = data;
+    this.blob = new Blob([data], { type: this.options.type });
+    this.url = URL.createObjectURL(this.blob);
+  }
+  /**
+   * Remove the blob url 
+   */
+  destroy() {
+    return URL.revokeObjectURL(this.url);
+  }
+  /**
+   * Get the blob url
+   */
+  getUrl() {
+    return this.url;
+  }
+  /**
+   * Create link element with blob as href
+   * @param {String} text The text to put in the link
+   */
+  createLink(text) {
+    const link = document.createElement("a");
+    const textNode = document.createTextNode(text);
+    link.setAttribute("download", this.options.filename);
+    link.setAttribute("href", this.url);
+    link.appendChild(textNode);
+    return link;
+  }
+  /**
+   * Check for Compatibility (optional, implement on user side)
+   */
+  static isBrowserSupported() {
+    return "FileReader" in window;
+  }
+};
+__publicField(_FileSave, "defaults", {
+  filename: "filesave-file.txt",
+  type: "text/plain;charset=utf-8"
+});
+let FileSave = _FileSave;
+const fileSave = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  FileSave
+}, Symbol.toStringTag, { value: "Module" }));
+const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  classLogger,
+  dom,
+  fileSave,
+  floatingUi,
+  id,
+  get index() {
+    return index;
+  },
+  pauseYoutubeVideo
+}, Symbol.toStringTag, { value: "Module" }));
+const ulu = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  events: index$2,
+  ui: index$1,
+  utils: index
+}, Symbol.toStringTag, { value: "Module" }));
 var algoliasearchLite_umd = { exports: {} };
 /*! algoliasearch-lite.umd.js | 4.23.3 | © Algolia, inc. | https://github.com/algolia/algoliasearch-client-javascript */
 (function(module, exports) {
@@ -15564,19 +15968,21 @@ function init() {
   ]);
   search.start();
 }
-init$d();
+window.Ulu = ulu;
+init$e();
 init$a();
 init$9();
 init$8();
 init$6();
-init$b();
 init$c();
+init$d();
 init$5();
 init$4();
 init$3();
 init$2();
 init$1();
 init$7();
+init$b();
 {
   __vitePreload(() => import("./chunks/modulepreload-polyfill.BoyGcPDr.js"), true ? [] : void 0);
 }

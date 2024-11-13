@@ -35,7 +35,7 @@
 @forward "scroll-slider" as scroll-slider-*;
 @forward "skip-link" as skip-link-*;
 @forward "slider" as slider-*;
-@forward "split-hero" as split-hero-*;
+@forward "hero" as hero-*;
 @forward "tabs" as tabs-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
@@ -79,7 +79,7 @@
 @use "scroll-slider";
 @use "skip-link";
 @use "slider";
-@use "split-hero";
+@use "hero";
 @use "tabs";
 @use "tile-grid";
 @use "tile-button";
@@ -122,7 +122,7 @@ $all-includes: (
   "scroll-slider",
   "skip-link",
   "slider",
-  "split-hero",
+  "hero",
   "tabs",
   "tile-grid",
   "tile-button",
@@ -171,8 +171,8 @@ $current-includes: $all-includes;
   @if (list.index($includes, "adaptive-spacing")) {
     @include adaptive-spacing.styles;
   }
-  @if (list.index($includes, "split-hero")) {
-    @include split-hero.styles;
+  @if (list.index($includes, "hero")) {
+    @include hero.styles;
   }
   @if (list.index($includes, "button")) {
     @include button.styles;

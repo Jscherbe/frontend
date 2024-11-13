@@ -1,10 +1,10 @@
 ---
-title: Split-hero
-sassdocGroupName: split-hero
+title: Hero
+sassdocGroupName: hero
 ---
 
 
-# Split-hero
+# Hero
 
 
 
@@ -35,7 +35,9 @@ Module Settings
 $config: (
   "breakpoint" : "medium",
   "height" : 100vh,
-  "height-stacked" : 60vh
+  "graphic-height-stacked" : 60vh,
+  "content-max-width" : 40rem,
+  "text-align" : center
 );
 ```
   
@@ -44,11 +46,11 @@ $config: (
 <details>
   <summary>File Information</summary>
   
-- **File:** _split-hero.scss
-- **Group:** split-hero
+- **File:** _hero.scss
+- **Group:** hero
 - **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-20
+- **Lines (comments):** 14-15
+- **Lines (code):** 17-23
 
 </details>
 
@@ -80,11 +82,11 @@ Change modules $config
 <details>
   <summary>File Information</summary>
   
-- **File:** _split-hero.scss
-- **Group:** split-hero
+- **File:** _hero.scss
+- **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 22-24
-- **Lines (code):** 26-28
+- **Lines (comments):** 25-27
+- **Lines (code):** 29-31
 
 </details>
 
@@ -126,11 +128,11 @@ Prints component styles
 <details>
   <summary>File Information</summary>
   
-- **File:** _split-hero.scss
-- **Group:** split-hero
+- **File:** _hero.scss
+- **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 38-41
-- **Lines (code):** 43-104
+- **Lines (comments):** 41-44
+- **Lines (code):** 46-149
 
 </details>
 
@@ -155,7 +157,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-split-hero-styles();
+@include ulu.component-hero-styles();
 ```
   
 
@@ -192,11 +194,11 @@ Get a config option
 <details>
   <summary>File Information</summary>
   
-- **File:** _split-hero.scss
-- **Group:** split-hero
+- **File:** _hero.scss
+- **Group:** hero
 - **Type:** function
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 33-35
+- **Lines (code):** 37-39
 
 </details>
 

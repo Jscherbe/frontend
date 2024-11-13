@@ -1,6 +1,15 @@
 @use "ulu";
 @use "vars";
+@use "css-vars";
 
+:root {
+  @include ulu.cssvar-declare-breakpoint();
+  @include ulu.cssvar-declare-all(css-vars.$defaults);
+  --ulu-sticky-top-offset: #{ ulu.cssvar-use("sticky-offset-top") };
+  &.fullscreen-layout {
+    @include ulu.cssvar-declare("header-height", 3.75rem);
+  }
+}
 html {
   scroll-padding-top: 6rem;
 }

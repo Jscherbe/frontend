@@ -36,3 +36,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
     )
   )
 ));
+
+@include ulu.component-hero-set((
+  height: ulu.cssvar-use("fullscreen-height")
+));
