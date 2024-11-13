@@ -68,8 +68,7 @@ $current-includes: $all-includes;
 @mixin styles($includes: $current-includes) {
   @include utils.file-header("base");
   
-  @include utils.require-list-contains($all-includes, $includes);
-
+  @include utils.require-list-contains($all-includes, $includes, "base.$includes", true);
   
   @if (list.index($includes, "normalize")) {
     @include normalize.styles;

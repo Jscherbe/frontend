@@ -218,7 +218,7 @@ Prints all Base styles
 - **Group:** all
 - **Type:** mixin
 - **Lines (comments):** 62-66
-- **Lines (code):** 68-98
+- **Lines (code):** 68-97
 
 </details>
 
