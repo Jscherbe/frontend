@@ -1,7 +1,9 @@
 SCSS Todos:
-  ☐ Need to setup tag module @important
-  ☐ Look at other modules that should be setup
-  ☐ Coing back to the idea about padding-x padding-y on container @setup @not-implemented
+  ☐ Need to create something to make color easier (ie. foreground, background)
+    * This was the original reason for color-contexts (maybe we can leverage those for foreground, background in success, danger, etc)
+  ✔ Need to setup tag module @important @done
+  ✔ Look at other modules that should be setup @done
+  ✔ Coing back to the idea about padding-x padding-y on container @setup @not-implemented @done
     ✔ Setup @done
       * Makes it simpler for calculations but it also means extra properties
       * There are a lot of modules that offer padding and margin, maybe they can all be open ended?
@@ -21,8 +23,8 @@ SCSS Todos:
                 * Note, the main util function that resolves the values should return a map of information (top, left, bottom, right)
                   * Functions for convience should use this information and return the appropriate value
                   * Naming notes, get-box-offsets, get-box-spacing-sides, get-spacing-info() [winner]
-    ☐ Is the name good or too long?
-    ☐ Setup for containers in layout
+    ✔ Is the name good or too long? @done
+    ✔ Setup for containers in layout @done
   ☐ Data Grid
     ☐ I think we can refactor to gap now
       * Still use flexbox
