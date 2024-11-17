@@ -163,6 +163,11 @@ Set callout styles
 
     
 
+#### Require
+
+- $styles
+  
+
 
 <div class="sassdoc-item-header">
 
@@ -209,6 +214,7 @@ Prints component styles
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
+- $styles
   
   
 

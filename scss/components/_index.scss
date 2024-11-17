@@ -37,6 +37,7 @@
 @forward "slider" as slider-*;
 @forward "hero" as hero-*;
 @forward "tabs" as tabs-*;
+@forward "tag" as tag-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
 @forward "vignette" as vignette-*;
@@ -81,6 +82,7 @@
 @use "slider";
 @use "hero";
 @use "tabs";
+@use "tag";
 @use "tile-grid";
 @use "tile-button";
 @use "vignette";
@@ -124,6 +126,7 @@ $all-includes: (
   "slider",
   "hero",
   "tabs",
+  "tag",
   "tile-grid",
   "tile-button",
   "placeholder-block",
@@ -182,6 +185,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "badge")) {
     @include badge.styles;
+  }
+  @if (list.index($includes, "tag")) {
+    @include tag.styles;
   }
   @if (list.index($includes, "callout")) {
     @include callout.styles;

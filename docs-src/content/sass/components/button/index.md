@@ -169,6 +169,7 @@ Prints button component styles
 
 - [get()](/sass/components/accordion/#function-get)
 - [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
+- $styles
   
   
 

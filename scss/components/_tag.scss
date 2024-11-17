@@ -1,0 +1,138 @@
+////
+/// @group tag
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../typography";
+
+
+// Used for function fallback
+$-fallbacks: (
+  "font-family" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "font-family-sans"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "font-weight" : normal,
+  "font-family" : true,
+  "box-shadow" : none,
+  "padding" : (0.4em 0.75em),
+  "vertical-align" : baseline,
+  "margin-between" : 0.5em,
+  "margin-between-tags" : 0,
+  "line-height" : 1,
+  "type-size" : "small",
+  "background-color" : #eaeaea,
+  "border-radius" : 1.25em,
+  "border-color" : transparent,
+  "border-width" : 1px,
+  "color": "type-tertiary",
+) !default;
+
+/// Style Map (alternate tag styles)
+$styles: (
+  "success" : (
+    "color" : rgb(37, 73, 37),
+    "background-color" : rgb(190, 220, 190),
+  ),
+  "danger" : (
+    "color" : rgb(78, 24, 24),
+    "background-color" : rgb(235, 179, 179),
+  ),
+  "outline" : (
+    "background-color" : transparent,
+    "border-color" : #ccc
+  )
+) !default;
+
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Set tag styles 
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-styles($changes, $merge-mode: null) {
+  $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "tag [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-tag-styles();
+
+@mixin styles {
+  $prefix: selector.class("tag");
+
+  #{ $prefix } {
+    border-radius: get("border-radius"); 
+    display: inline-block;
+    padding: get("padding");
+    font-weight: get("font-weight");
+    vertical-align: get("vertical-align");
+    font-style: normal;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    border: get("border-width") solid color.get(get("border-color"));
+    background-color: color.get(get("background-color"));
+    color: color.get(get("color"));
+    font-family: get("font-family");
+    @if (typography.has-size(get("type-size"))) {
+      @include typography.size(get("type-size"), $only-font-size: true);
+    }
+    line-height: get("line-height");
+    &:not(:last-child) {
+      margin-right: get("margin-between");
+    }
+    &:not(:first-child) {
+      margin-left: get("margin-between");
+    }
+    & + & {
+      margin-left: get("margin-between-tags");
+    }
+  }
+
+  @each $name, $style in $styles {
+    $type-size: map.get($style, "type-size");
+    #{ $prefix }--#{ $name } {
+      background-color: color.get(map.get($style, "background-color")); 
+      color: color.get(map.get($style, "color")); 
+      border: map.get($style, "border"); 
+      border-radius: map.get($style, "border-radius"); 
+      border-color: color.get(map.get($style, "border-color")); 
+      border-width: color.get(map.get($style, "border-width")); 
+      box-shadow: map.get($style, "box-shadow"); 
+      padding: map.get($style, "padding");  
+      @if (typography.has-size($type-size)) {
+        @include typography.size($type-size, $only-font-size: true);
+      }
+      line-height: map.get($style, "line-height");
+    }
+  }
+}

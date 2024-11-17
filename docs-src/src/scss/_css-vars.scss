@@ -2,7 +2,7 @@
 @use "ulu";
 
 $defaults: (
-  "header-height": 0,
+  "header-height": 0px,
   "sticky-margin" : 3rem,
   "sticky-offset-top" : ulu.cssvar-add("header-height", "sticky-margin"),
   "fullscreen-height" : calc(100vh - #{ ulu.cssvar-use("header-height") })
