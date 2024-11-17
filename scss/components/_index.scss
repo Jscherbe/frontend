@@ -42,6 +42,7 @@
 @forward "tile-button" as tile-button-*;
 @forward "vignette" as vignette-*;
 @forward "captioned-figure" as captioned-figure-*;
+@forward "spoke-spinner" as spoke-spinner-*;
 @forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
@@ -87,6 +88,7 @@
 @use "tile-button";
 @use "vignette";
 @use "captioned-figure";
+@use "spoke-spinner";
 @use "wysiwyg";
 
 /// Default includes, all modules
@@ -133,6 +135,7 @@ $all-includes: (
   "pull-quote",
   "vignette",
   "captioned-figure",
+  "spoke-spinner",
   "wysiwyg",
 );
 
@@ -287,6 +290,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "captioned-figure")) {
     @include captioned-figure.styles;
+  }
+  @if (list.index($includes, "spoke-spinner")) {
+    @include spoke-spinner.styles;
   }
   @if (list.index($includes, "wysiwyg")) {
     @include wysiwyg.styles;
