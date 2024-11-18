@@ -40,6 +40,7 @@
 @forward "tag" as tag-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
+@forward "tile-grid-overlay" as tile-grid-overlay-*;
 @forward "vignette" as vignette-*;
 @forward "captioned-figure" as captioned-figure-*;
 @forward "spoke-spinner" as spoke-spinner-*;
@@ -86,6 +87,7 @@
 @use "tag";
 @use "tile-grid";
 @use "tile-button";
+@use "tile-grid-overlay";
 @use "vignette";
 @use "captioned-figure";
 @use "spoke-spinner";
@@ -131,6 +133,7 @@ $all-includes: (
   "tag",
   "tile-grid",
   "tile-button",
+  "tile-grid-overlay",
   "placeholder-block",
   "pull-quote",
   "vignette",
@@ -284,6 +287,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "tile-button")) {
     @include tile-button.styles;
+  }
+  @if (list.index($includes, "tile-grid-overlay")) {
+    @include tile-grid-overlay.styles;
   }
   @if (list.index($includes, "vignette")) {
     @include vignette.styles;

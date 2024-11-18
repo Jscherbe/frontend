@@ -69,6 +69,7 @@ $all-includes: (
   "tag",
   "tile-grid",
   "tile-button",
+  "tile-grid-overlay",
   "placeholder-block",
   "pull-quote",
   "vignette",
@@ -86,8 +87,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 94-95
-- **Lines (code):** 97-140
+- **Lines (comments):** 96-97
+- **Lines (code):** 99-143
 
 </details>
 
@@ -122,8 +123,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** all
 - **Type:** variable
-- **Lines (comments):** 142-143
-- **Lines (code):** 145-145
+- **Lines (comments):** 145-146
+- **Lines (code):** 148-148
 
 </details>
 
@@ -159,8 +160,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 147-149
-- **Lines (code):** 151-154
+- **Lines (comments):** 150-152
+- **Lines (code):** 154-157
 
 </details>
 
@@ -205,8 +206,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 156-157
-- **Lines (code):** 159-161
+- **Lines (comments):** 159-160
+- **Lines (code):** 162-164
 
 </details>
 
@@ -250,8 +251,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** all
 - **Type:** mixin
-- **Lines (comments):** 163-167
-- **Lines (code):** 169-300
+- **Lines (comments):** 166-170
+- **Lines (code):** 172-306
 
 </details>
 

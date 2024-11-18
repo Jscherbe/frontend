@@ -53,6 +53,18 @@ $static-sizes: (
       "columns" : 3,
       "gap" : null,
     ),
+  ),
+  "static-wide" : (
+    "default" : (
+      "columns" : 1,
+      "gap" : null,
+      "aspect-ratio" : list.slash(4, 3)
+    ),
+    "small" : (
+      "direction" : "min",
+      "columns" : 2,
+      "gap" : null,
+    ),
   )
 ) !default;
 

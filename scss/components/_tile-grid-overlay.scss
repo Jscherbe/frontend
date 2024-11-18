@@ -1,0 +1,130 @@
+////
+/// @group tile-grid-overlay
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../layout";
+@use "../breakpoint";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "button-background-color": #ce97e6dc,
+  "button-background-color-hover": #b882cf,
+  "button-background-color-striped": #b397e6cc,
+  "button-background-color-active": #868dece4,
+  "background-image-filter" : (grayscale(1) contrast(0.6) brightness(1.5)),
+  "breakpoint-even-columns-min" : "small",
+  "breakpoint-even-columns-max" : "medium",
+  "wide-breakpoint-even-columns-min" : "small"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "tile-grid-overlay [config]");
+}
+
+/// Prints component styles
+/// @demo Check out our demo [accordion]
+/// @example scss
+///  @include ulu.component-tile-grid-overlay-styles();
+
+@mixin styles {
+
+  $prefix: selector.class("tile-grid-overlay");
+
+  #{ $prefix } {
+    position: relative;
+  }
+  #{ $prefix }__background-image {
+    @include layout.absolute-fill();
+    filter: get("background-image-filter");
+  }
+  #{ $prefix }__grid {
+    position: relative;
+    @media print {
+      display: block;
+    }
+  }
+  #{ $prefix }__button {
+    background-color: color.get(get("button-background-color"));
+    border-radius: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    &:hover,
+    &:focus {
+      // Competes with striping
+      background-color: color.get(get("button-background-color-hover")) !important; 
+    }
+    &.is-active {
+      // Competes with striping
+      background-color: color.get(get("button-background-color-active")) !important; 
+    }
+    @media print {
+      display: block;
+      text-align: left;
+      height: auto;
+      aspect-ratio: auto;
+      padding-left: 0;
+    }
+  }
+
+  // Striping
+  #{ $prefix }__item {
+    &:nth-child(even) #{ $prefix }__button {
+      background-color: color.get(get("button-background-color-striped"));
+    }
+    // They want it to alternate when 2 column, so it has to flip flop
+    // Then when it returns to above or below this 2 column area odd works like before
+    @include breakpoint.min-max(
+      get("breakpoint-even-columns-min"), 
+      get("breakpoint-even-columns-max")
+    ) {
+      @include -two-column-striping($prefix);
+    }
+  }
+
+  // When 2 columns needs the same styles as between small/medium on standard layout
+  // no way to reuse because it's inside different media queries
+  #{ $prefix }__grid--wide {
+    #{ $prefix }__item {
+      @include breakpoint.min(get("wide-breakpoint-even-columns-min")) {
+        @include -two-column-striping($prefix);
+      }
+    }
+  }
+}
+
+// Since we can't reuse this at least rules will match for compression using mixin
+// Needs to correspond with breakpoints for static tile-grid
+@mixin -two-column-striping($prefix) {
+  &:nth-child(4n + 1) #{ $prefix }__button {
+    background-color: color.get(get("button-background-color"));
+  }
+  &:nth-child(4n + 2) #{ $prefix }__button {
+    background-color: color.get(get("button-background-color-striped"));
+  }
+  &:nth-child(4n + 3) #{ $prefix }__button {
+    background-color: color.get(get("button-background-color-striped"));
+  }
+  &:nth-child(4n + 4) #{ $prefix }__button {
+    background-color: color.get(get("button-background-color"));
+  }
+}

@@ -141,6 +141,18 @@ $static-sizes: (
       "columns" : 3,
       "gap" : null,
     ),
+  ),
+  "static-wide" : (
+    "default" : (
+      "columns" : 1,
+      "gap" : null,
+      "aspect-ratio" : list.slash(4, 3)
+    ),
+    "small" : (
+      "direction" : "min",
+      "columns" : 2,
+      "gap" : null,
+    ),
   )
 );
 ```
@@ -154,7 +166,7 @@ $static-sizes: (
 - **Group:** tile-grid
 - **Type:** variable
 - **Lines (comments):** 36-37
-- **Lines (code):** 39-57
+- **Lines (code):** 39-69
 
 </details>
 
@@ -189,8 +201,8 @@ Change modules $config
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
 
 </details>
 
@@ -235,8 +247,8 @@ Set fixed sizes map
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-85
 
 </details>
 
@@ -281,8 +293,8 @@ Set sizes map
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-93
 
 </details>
 
@@ -327,8 +339,8 @@ Prints component styles
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 91-93
-- **Lines (code):** 95-157
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-169
 
 </details>
 
@@ -382,8 +394,8 @@ Get a config option
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** function
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 95-97
+- **Lines (code):** 99-101
 
 </details>
 

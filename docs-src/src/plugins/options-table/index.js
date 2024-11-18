@@ -39,7 +39,7 @@ function rowTemplate(item) {
 }
 
 function escapeHtml(text) {
-  console.log(text);
+  // console.log(text);
   return text.replace(/[<>&]/g, (char) => {
     switch (char) {
       case "<":

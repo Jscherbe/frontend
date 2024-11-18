@@ -41,6 +41,9 @@ $config: (
   "icon-font-size" : 1.5em,
   "icon-margin" : 1em,
   "icon-opacity" : 0.5,
+  "transition-enabled" : true,
+  "transition-duration" : true,
+  "transition-properties" : true
 );
 ```
   
@@ -52,8 +55,8 @@ $config: (
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** variable
-- **Lines (comments):** 26-35
-- **Lines (code):** 37-46
+- **Lines (comments):** 39-48
+- **Lines (code):** 50-62
 
 </details>
 
@@ -104,8 +107,8 @@ Change modules $config
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-54
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-70
 
 </details>
 
@@ -150,8 +153,8 @@ Prints component styles
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-109
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-129
 
 </details>
 
@@ -203,8 +206,8 @@ Get a config option
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** function
-- **Lines (comments):** 56-58
-- **Lines (code):** 60-63
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-79
 
 </details>
 

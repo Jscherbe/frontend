@@ -10,6 +10,7 @@
 @use "../element";
 @use "../typography";
 @use "../utils";
+@use "../button";
 
 $-fallbacks: (
   "border-radius" : (
@@ -19,6 +20,18 @@ $-fallbacks: (
   "line-height" : (
     "function" : meta.get-function("get", false, "typography"),
     "property" : "line-height-densest"
+  ),
+  "transition-duration" : (
+    "function" : meta.get-function("get", false, "button"),
+    "property" : "transition-duration"
+  ),
+  "transition-properties" : (
+    "function" : meta.get-function("get", false, "button"),
+    "property" : "transition-properties"
+  ),
+  "transition-enabled" : (
+    "function" : meta.get-function("get", false, "button"),
+    "property" : "transition-enabled"
   ),
 );
 
@@ -43,6 +56,9 @@ $config: (
   "icon-font-size" : 1.5em,
   "icon-margin" : 1em,
   "icon-opacity" : 0.5,
+  "transition-enabled" : true,
+  "transition-duration" : true,
+  "transition-properties" : true
 ) !default;
 
 /// Change modules $config
@@ -82,6 +98,10 @@ $config: (
     padding: get("padding");
     border-radius: get("border-radius");
     line-height: get("line-height");
+    @if get("transition-enabled") {
+      transition-duration: get("transition-duration");
+      transition-property: get("transition-properties");
+    }
   }
   #{ $prefix }__row {
     

@@ -1,0 +1,98 @@
+---
+title: Tile Grid Overlay
+intro: Tile grid with image overlay. Component that uses popover, tile-grid, tile-button and fill-context along with styles of it's own
+layout: fullpage
+---
+
+{% capture item %}
+<li class="tile-grid__item tile-grid-overlay__item">
+  <button 
+    class="tile-button tile-grid-overlay__button theme-dark" 
+    type="button"
+    data-ulu-popover-trigger='{
+      "floating" : { "placement" : "bottom-end" }
+    }'
+  >
+    <strong class="tile-button__row">Just Another Item</strong>
+    <span class="tile-button__row no-print">
+      <span class="fas fa-plus" aria-hidden="true"></span>
+    </span>
+  </button>
+  <div class="popover theme-light popover--large" data-ulu-popover-content>
+    <div class="popover__inner">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius finibus dignissim. Aenean
+        ullamcorper sodales auctor. Aenean consectetur dignissim lacus, nec sodales nibh sodales nec. Sed vulputate
+        euismod orci, ut tristique ligula elementum id. Aenean pellentesque lorem at augue fringilla, vitae dapibus
+        nulla semper. Nam facilisis eleifend dui, ac dictum mauris maximus id. 
+      </p>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</li>
+{% endcapture %}
+
+{% capture itemWithImage %}
+<li class="tile-grid__item tile-grid-overlay__item">
+  <button 
+    class="tile-button tile-grid-overlay__button theme-dark" 
+    type="button"
+    data-ulu-popover-trigger='{
+      "floating" : { "placement" : "bottom-end" }
+    }'
+  >
+    <strong class="tile-button__row">Item With an Image</strong>
+    <span class="tile-button__row no-print">
+      <span class="fas fa-plus" aria-hidden="true"></span>
+    </span>
+  </button>
+  <div class="popover theme-light popover--large" data-ulu-popover-content>
+    <div class="popover__header popover__header--media">
+      <img src="/assets/placeholder/image-1.jpg" width="975" height="557" loading="lazy">
+    </div>
+    <div class="popover__inner">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius finibus dignissim. Aenean
+        ullamcorper sodales auctor. Aenean consectetur dignissim lacus, nec sodales nibh sodales nec. Sed vulputate
+        euismod orci, ut tristique ligula elementum id. Aenean pellentesque lorem at augue fringilla, vitae dapibus
+        nulla semper. Nam facilisis eleifend dui, ac dictum mauris maximus id. 
+      </p>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</li>
+{% endcapture %}
+
+<div class="container">
+  <h2 class="h2">Default Example</h2>
+  <div class="tile-grid-overlay">
+    <div class="tile-grid-overlay__background-image fill-context fill-context--auto no-print">
+      <img src="/assets/placeholder/image-1.jpg" width="1024" height="683" loading="lazy">
+    </div>
+    <ul class="tile-grid tile-grid--no-gap tile-grid--static tile-grid-overlay__grid">
+      {{ item }}
+      {{ itemWithImage }}
+      {{ item }}
+      {{ item }}
+      {{ item }}
+      {{ item }}
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <h2 class="h2">Wide Example</h2>
+  <p>Note: This needs to match up with the tile grids.</p>
+  <div class="tile-grid-overlay">
+    <div class="tile-grid-overlay__background-image fill-context fill-context--auto no-print">
+      <img src="/assets/placeholder/image-1.jpg" width="1024" height="683" loading="lazy">
+    </div>
+    <ul class="tile-grid tile-grid--no-gap tile-grid--static-wide tile-grid-overlay__grid tile-grid-overlay__grid--wide">
+      {{ item }}
+      {{ itemWithImage }}
+      {{ item }}
+      {{ item }}
+      {{ item }}
+      {{ item }}
+    </ul>
+  </div>
+</div>
