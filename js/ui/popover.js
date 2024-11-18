@@ -17,6 +17,7 @@ const attrs = {
   trigger: "data-ulu-popover-trigger",
   content: "data-ulu-popover-content",
   arrow: "data-ulu-popover-arrow",
+  anchor: "data-ulu-popover-trigger-anchor",
 };
 const attrSelector = key => `[${ attrs[key] }]`;
 
@@ -62,6 +63,7 @@ export function resolve(trigger) {
   const elements = {
     trigger,
     content,
+    anchor: trigger.querySelector(attrSelector("anchor")) || trigger,
     contentArrow: content.querySelector(attrSelector("arrow"))
   };
   const floatingOptions = options.floating || {};
@@ -120,7 +122,11 @@ export class Popover extends Collapsible {
     this.destroyFloatingInstance();
   }
   createFloatingInstance() {
-    this.floatingCleanup = createFloatingUi(this.elements, this.floatingOptions);
+    const { content, anchor, contentArrow } = this.elements;
+    const floatingElements = { trigger: anchor, contentArrow, content };    
+    console.log(floatingElements);
+    
+    this.floatingCleanup = createFloatingUi(floatingElements, this.floatingOptions);
   }
   destroyFloatingInstance() {
     if (this.floatingCleanup) {
