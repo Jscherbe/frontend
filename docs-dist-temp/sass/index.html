@@ -118,6 +118,25 @@
           
         </li>
       
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/developing-ulu-scss-module/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Developing Ulu SCSS Module
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -2914,6 +2933,25 @@
           
         </li>
       
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/guide/developing-ulu-scss-module/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Developing Ulu SCSS Module
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5667,6 +5705,9 @@
                     
                     <li><a href="#organization">Organization</a>
             		</li>
+
+                    <li><a href="#property%2Fargument-types-explained">Property/Argument Types Explained</a>
+            		</li>
                 </ol>
             </div>
 			</div>
@@ -5675,7 +5716,10 @@
 			
 			
 			
-  <div class="page__body-top container api-docs">
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Sass API</h1>
+
+<hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
       <p>Sass is broken into modules. Each module can be configured by calling it's set() mixin and passing the configuration options you want to change.</p>
 <h2 id="organization" tabindex="-1">Organization</h2>
@@ -5687,6 +5731,19 @@
 <li><strong>Helpers</strong> These modules provide bottom of the stylesheet overriding styles (display utilities, typographic overriding utilities, etc)</li>
 <li><strong>Stylesheets</strong> This contains modules for outputting entire stylesheets. Normally you will want to construct your own stylesheet by call</li>
 </ul>
+<h2 id="property%2Fargument-types-explained" tabindex="-1">Property/Argument Types Explained</h2>
+<p>Throughout the Sass API documentation the following types of arguments are annotated:</p>
+<p><strong>{String}</strong> - Unstructured text.
+<strong>{Number}</strong> - Numeric values.
+<strong>{List}</strong> - Ordered collection of items.
+<strong>{Map}</strong> - Unordered collection of key-value pairs.
+<strong>{Boolean}</strong> - True or false values.
+<strong>{Color}</strong> - Represents color values (e.g., #fff, rgb(255, 255, 255)).
+<strong>{Dimension}</strong> - Represents measurements (e.g., 10px, 2rem).
+<strong>{Time}</strong> - Represents time values (e.g., 2s, 100ms).
+<strong>{Angle}</strong> - Represents angle values (e.g., 45deg, 1rad).
+<strong>{CssValue}</strong> - Value: Represents values specific to CSS properties (e.g., border value, box shadow value).
+<strong>{Gradient}</strong> - Represents gradient values (e.g., linear-gradient, radial-gradient).</p>
 
     </div>
   </div>

@@ -285,7 +285,7 @@ Prints component styles
 
 
 
-<a class="button" href="/demos/Check out our card. [card]">Our Demo</a>
+<a class="button" href="/demos/card">Our Demo</a>
 
 </div>
 

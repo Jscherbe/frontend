@@ -1,4 +1,5 @@
 JS Todos:
+  ☐ Should events just be a ui module? (but I think it's useful if we build more event types/system)
   ☐ Look through all setup (ie init > setup) to make sure they work with or around the context from pageModified event
   ☐ Create a solution for the repeating init attributes and selectors (DRY)
   ☐ issue with scroll-slider where the first items don't scroll back into view

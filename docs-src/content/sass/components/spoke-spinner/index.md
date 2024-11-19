@@ -215,25 +215,12 @@ Prints component styles
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** mixin
-- **Lines (comments):** 52-72
-- **Lines (code):** 74-201
+- **Lines (comments):** 52-71
+- **Lines (code):** 73-200
 
 </details>
 
     
-
-
-<div class="callout callout--demo crop-margins">
-
-#### Demo
-
-
-
-<a class="button" href="/demos/Check out our demo [accordion]">Our Demo</a>
-
-</div>
-
-
 
 #### Examples
 

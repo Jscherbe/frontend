@@ -146,25 +146,12 @@ Prints component styles
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 49-52
-- **Lines (code):** 54-182
+- **Lines (comments):** 49-51
+- **Lines (code):** 53-181
 
 </details>
 
     
-
-
-<div class="callout callout--demo crop-margins">
-
-#### Demo
-
-
-
-<a class="button" href="/demos/Check out our demo [accordion]">Our Demo</a>
-
-</div>
-
-
 
 #### Examples
 

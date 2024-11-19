@@ -200,7 +200,7 @@ Prints component styles
 
 
 
-<a class="button" href="/demos/Check out our demo [accordion]">Our Demo</a>
+<a class="button" href="/demos/accordion">Our Demo</a>
 
 </div>
 

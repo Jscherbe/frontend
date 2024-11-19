@@ -1,0 +1,53 @@
+////
+/// @group component-name
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+
+// Used for function fallback
+$-fallbacks: (
+  // Example mapping fallback to another modules config value
+  "content-box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow"
+  ),
+  // Example using arguments to function
+  "content-border-bottom" : (
+    "function" : meta.get-function("get-rule-style", false, "element"),
+    "arguments" : ("light",)
+  )
+);
+
+/// Module Settings
+/// @type Map
+
+$config: () !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "component-name [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  $prefix: selector.class("component-name");
+}

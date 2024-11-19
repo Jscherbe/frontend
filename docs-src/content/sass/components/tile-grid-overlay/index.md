@@ -134,25 +134,12 @@ Prints component styles
 - **File:** _tile-grid-overlay.scss
 - **Group:** tile-grid-overlay
 - **Type:** mixin
-- **Lines (comments):** 44-47
-- **Lines (code):** 49-113
+- **Lines (comments):** 44-46
+- **Lines (code):** 48-112
 
 </details>
 
     
-
-
-<div class="callout callout--demo crop-margins">
-
-#### Demo
-
-
-
-<a class="button" href="/demos/Check out our demo [accordion]">Our Demo</a>
-
-</div>
-
-
 
 #### Examples
 

@@ -57,7 +57,7 @@ $config: (
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$config.sides|Number|Sides to print for helper classes (ie. reduce output of uneeded sides)|
+|$config.sides|Number|Sides to print for helper classes (ie. reduce output of unneeded sides)|
 
     
   

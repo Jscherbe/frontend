@@ -143,25 +143,12 @@ Prints component styles
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 70-73
-- **Lines (code):** 75-171
+- **Lines (comments):** 70-72
+- **Lines (code):** 74-170
 
 </details>
 
     
-
-
-<div class="callout callout--demo crop-margins">
-
-#### Demo
-
-
-
-<a class="button" href="/demos/Check out our demo [accordion]">Our Demo</a>
-
-</div>
-
-
 
 #### Examples
 
