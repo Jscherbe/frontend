@@ -1,5 +1,8 @@
 SCSS Todos:
   ☐ Add table component @important!
+    ☐ In progress, need to look through other table components we use and see if this needs further options
+      * Column widths, etc
+      * Should probably have the table have borders and make modifier to remove them
   ☐ Add table wrap component
   ☐ Need to create something to make color easier (ie. foreground, background)
     * This was the original reason for color-contexts (maybe we can leverage those for foreground, background in success, danger, etc)
