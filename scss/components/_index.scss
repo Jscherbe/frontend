@@ -12,6 +12,7 @@
 @forward "card-grid" as card-grid-*;
 @forward "css-icon" as css-icon-*;
 @forward "data-grid" as data-grid-*;
+@forward "data-table" as data-table-*;
 @forward "fill-context" as fill-context-*;
 @forward "flipcard" as flipcard-*;
 @forward "flipcard-grid" as flipcard-grid-*;
@@ -59,6 +60,7 @@
 @use "card-grid";
 @use "css-icon";
 @use "data-grid";
+@use "data-table";
 @use "fill-context";
 @use "flipcard";
 @use "flipcard-grid";
@@ -107,6 +109,7 @@ $all-includes: (
   "card-grid",
   "css-icon",
   "data-grid",
+  "data-table",
   "fill-context",
   "flipcard",
   "flipcard-grid",
@@ -209,6 +212,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "data-grid")) {
     @include data-grid.styles;
+  }
+  @if (list.index($includes, "data-table")) {
+    @include data-table.styles;
   }
   @if (list.index($includes, "fill-context")) {
     @include fill-context.styles;

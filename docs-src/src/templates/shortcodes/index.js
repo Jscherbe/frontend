@@ -4,6 +4,7 @@ import scrollSlider from "./scrollSlider.js";
 import slider from "./slider.js";
 import card from "./card.js";
 import flipcard from "./flipcard.js";
+import demoDataTable from "./demoDataTable.js";
 import demoCaptionFigure from "./demoCaptionFigure.js";
 import demoHero from "./demoHero.js";
 import spokeSpinner from "./spokeSpinner.js";
@@ -16,6 +17,7 @@ export const shortcodes = {
   slider,
   flipcard,
   demoCaptionFigure,
+  demoDataTable,
   demoHero,
   spokeSpinner
 };

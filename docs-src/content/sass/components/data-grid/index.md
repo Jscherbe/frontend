@@ -6,7 +6,7 @@ sassdocGroupName: data-grid
 
 # Data-grid
 
-
+A page grid layout component that uses data attribute instead of class names, for brevity and readability
 
 
 
@@ -76,8 +76,8 @@ $config: (
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** variable
-- **Lines (comments):** 16-32
-- **Lines (code):** 34-67
+- **Lines (comments):** 20-36
+- **Lines (code):** 38-71
 
 </details>
 
@@ -135,8 +135,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-76
+- **Lines (comments):** 74-76
+- **Lines (code):** 78-80
 
 </details>
 
@@ -181,8 +181,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 109-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 113-116
+- **Lines (code):** 118-120
 
 </details>
 
@@ -242,8 +242,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 118-127
-- **Lines (code):** 129-574
+- **Lines (comments):** 122-131
+- **Lines (code):** 133-578
 
 </details>
 
@@ -300,8 +300,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 78-80
-- **Lines (code):** 82-84
+- **Lines (comments):** 82-84
+- **Lines (code):** 86-88
 
 </details>
 
@@ -346,8 +346,8 @@ Prints component styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 86-88
-- **Lines (code):** 90-98
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-102
 
 </details>
 

@@ -1,0 +1,167 @@
+////
+/// @group data-table
+/// For tabular data in native HTML tables. Note, this component can be used with the Vue sticky table plugin.
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+
+@use "../selector";
+@use "../color";
+@use "../utils";
+@use "../typography";
+
+// Used for function fallback
+$-fallbacks: (
+  // // Example mapping fallback to another modules config value
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "cell-padding" : (0.5em,),
+  "text-align" : left,
+  "type-size" : "small",
+  "background-color" : white,
+  "header-background-color" : #eeeeee,
+  "body-background-color" : white,
+  "footer-background-color" : #f3f3f3,
+  "color" : "type-secondary",
+  "line-height" : true,
+  "column-min-width" : 6em,
+  "first-column-large-min-width" : 15em,
+  "border-width" : 1px,
+  "border-color" : #dddddd,
+  "striped-row-background-color" : #eeeeee,
+  "muted-row-background-color" : #ccc,
+  "muted-row-border-color" : null,
+  "highlighted-row-background-color" : #ccc,
+  "highlighted-row-border-color" : null,
+  "large-header-cell-padding-y" : 1em,
+  "caption-type-size" : "large",
+  "caption-font-weight" : bold,
+  "caption-margin" : (0 0 1em 0),
+  "caption-padding" : (0,)
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "data-table [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-example-styles();
+
+@mixin styles {
+  $prefix: selector.class("data-table");
+
+  $border: get("border-width") solid color.get(get("border-color"));
+
+  // Selector can be on table or wrapping table for convenience
+  #{ $prefix } table,
+  table#{ $prefix } {
+    background-color: color.get(get("background-color"));
+    border-collapse: collapse;
+    color: color.get(get("color"));
+  }
+  #{ $prefix } {
+    @if (get("type-size") and typography.has-size(get("type-size"))) {
+      @include typography.size(get("type-size"), $only-font-size: true);
+    }
+    line-height: get("line-height");
+
+    caption {
+      @if (get("caption-type-size") and typography.has-size(get("caption-type-size"))) {
+        @include typography.size(get("caption-type-size"));
+      }
+      font-weight: get("caption-font-weight");
+      text-align: left;
+      margin: get("caption-margin");
+      padding: get("caption-padding");
+    }
+    th,
+    tr,
+    td {
+      text-align: get("text-align");
+    }
+    th {
+      min-width: get("column-min-width");
+    }
+    td:not(:last-child), 
+    th:not(:last-child) {
+      border-right: $border;
+    }
+    // This makes it work for nested headers last child that aren't the last in the table
+    th:not(:first-child) {
+      border-left: $border;
+    }
+    tr + tr {
+      border-top: $border;
+    }
+    thead tr {
+      background-color: color.get(get("header-background-color"));
+    }
+    tbody tr {
+      background-color: color.get(get("body-background-color"));
+    }
+    tfoot tr {
+      background-color: color.get(get("footer-background-color"));
+    }
+    th,
+    td {
+      padding: get("cell-padding");
+    }
+    #{ $prefix }__row-muted {
+      background-color: color.get(get("muted-row-background-color"));
+      td {
+        border-color: color.get(get("muted-row-border-color"));
+      }
+    }
+    #{ $prefix }__row-highlighted {
+      background-color: color.get(get("highlighted-row-background-color"));
+      td {
+        border-color: color.get(get("highlighted-row-border-color"));
+      }
+    }
+  }
+  #{ $prefix }--striped {
+    tbody tr:nth-child(even) {
+      background-color: color.get(get("striped-row-background-color"));
+    }
+  }
+  #{ $prefix }--large-first {
+    thead tr:first-child th:first-child,
+    tbody td:first-child {
+      min-width: get("first-column-large-min-width");
+    }
+  }
+  #{ $prefix }--large-header {
+    thead th {
+      padding-top: get("large-header-cell-padding-y");
+      padding-bottom: get("large-header-cell-padding-y");
+    }
+  }
+  #{ $prefix }--bordered table,
+  table#{ $prefix }--bordered  {
+    border: $border;
+  }
+}

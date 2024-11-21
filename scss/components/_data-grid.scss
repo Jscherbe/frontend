@@ -1,6 +1,10 @@
 ////
 /// @group data-grid
+/// A page grid layout component that uses data attribute instead of class names, for brevity and readability
 ////
+
+/// Content Block
+/// @demo data-grid
 
 @use "sass:map";
 @use "sass:math";

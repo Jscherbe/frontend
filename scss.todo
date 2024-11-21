@@ -1,5 +1,6 @@
 SCSS Todos:
   ☐ Add table component @important!
+  ☐ Add table wrap component
   ☐ Need to create something to make color easier (ie. foreground, background)
     * This was the original reason for color-contexts (maybe we can leverage those for foreground, background in success, danger, etc)
   ✔ Need to setup tag module @important @done
