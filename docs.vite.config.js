@@ -25,6 +25,8 @@ export default createConfig({
         path.resolve(__dirname, "./docs-src/src/scss/"),
         path.resolve(__dirname)
       ],
+      quietDeps: true,
+      api: "modern-compiler"
     }
   },
 });

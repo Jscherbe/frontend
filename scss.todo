@@ -1,4 +1,8 @@
 SCSS Todos:
+  ☐ Prepare for new SCSS release
+    ☐ Fix nested rules warnings
+    ☐ Remove @import
+      * Also ulu base styles are on top of site but some of the site stuff like (custom variables need to be printed at top?). Maybe relates to having something dedicated to print css-vars from ulu (declarations), user can opt out by ommiting base/cssvars? Needs more thought 
   ☐ Add button-nav and button-group
   ☐ Add table component @important!
     ☐ In progress, need to look through other table components we use and see if this needs further options
