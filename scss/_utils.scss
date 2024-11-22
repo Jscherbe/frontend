@@ -299,7 +299,7 @@ $config: (
   $new-list: (); 
   @each $item in $list {
     @if $item != $remove {
-      $new-list: append($new-list, $item); 
+      $new-list: list.append($new-list, $item); 
     }
   }
   @return $new-list;
@@ -314,8 +314,8 @@ $config: (
 @function list-without($list, $removal-list) {
   $new-list: ();
   @each $item in $list {
-    @if not index($removal-list, $item) { 
-      $new-list: append($new-list, $item);
+    @if not list.index($removal-list, $item) { 
+      $new-list: list.append($new-list, $item);
     }
   }
   @return $new-list;
@@ -329,12 +329,12 @@ $config: (
 
 @function list-join($list, $separator: ", ", $to-string: true) {
   $joined: ();
-  $length: length($list);
+  $length: list.length($list);
   @for $i from 1 through $length {
-    $item: nth($list, $i);
-    $joined: append($joined, $item);
+    $item: list.nth($list, $i);
+    $joined: list.append($joined, $item);
     @if $i < $length {
-      $joined: append($joined, $separator);
+      $joined: list.append($joined, $separator);
     }
   }
   @if ($to-string) {

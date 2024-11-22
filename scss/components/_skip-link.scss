@@ -1,11 +1,58 @@
+
 ////
 /// @group skip-link
 ////
 
+@use "sass:meta";
+
 @use "../element";
 @use "../layout";
-@use "../cssvar";
 @use "../selector";
+@use "../utils";
+
+// Used for function fallback
+$-fallbacks: (
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  ),
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow"
+  ),
+  "z-index" : (
+    "function" : meta.get-function("get", false, "layout"),
+    "property" : "z-index-fixed"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "padding" : (1em 2em),
+  "background-color" : white,
+  "box-shadow" : true,
+  "border-radius" : true,
+  "z-index" : true
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+///   @include module-name.set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+///   @include module-name.get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "button-verbose [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
 
 /// Prints component styles
 /// - Note: This needs to be paired with the display helper class "hidden-visually-focusable"
@@ -13,14 +60,14 @@
 /// @example scss
 ///  @include ulu.component-skip-link-styles();
 /// @example html
-/// <a 
-///   class="skip-link hidden-visually-focusable" 
-///   href="#main-content"
-/// >
-///   Skip to main content
-/// </a>
-/// <nav>...</nav>
-/// <main id="main-content">...</main>
+///   <a 
+///     class="skip-link hidden-visually-focusable" 
+///     href="#main-content"
+///   >
+///     Skip to main content
+///   </a>
+///   ...
+///   <main id="main-content">...</main>
 
 @mixin styles {
   $prefix: selector.class("skip-link");
@@ -28,15 +75,15 @@
   #{ $prefix } {
     display: block;
     position: fixed;
-    z-index: layout.get("z-index-fixed");
+    z-index: get("z-index");
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    padding: 1em 2em;
-    background-color: cssvar.use("color-base");
+    padding: get("padding");
+    background-color: get("background-color");
     font-weight: bold;
-    box-shadow: element.get("box-shadow-above");
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    box-shadow: get("box-shadow");
+    border-bottom-left-radius: get("border-radius");
+    border-bottom-right-radius: get("border-radius");
   }
 }

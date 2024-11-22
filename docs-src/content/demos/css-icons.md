@@ -3,7 +3,7 @@ title: CSS Icons
 intro: Basic icons that use only CSS
 ---
 
-<table class="site-data-table">
+<table class="data-table">
   <caption>Available Icons</caption>
   <thead>
     <tr>
@@ -37,7 +37,7 @@ intro: Basic icons that use only CSS
 
 <h2 class="h2">Icons that transition</h2>
 
-<table class="site-data-table">
+<table class="data-table">
   <caption>Available Icons</caption>
   <thead>
     <tr>
@@ -83,7 +83,7 @@ intro: Basic icons that use only CSS
   });
 </script>
 
-<table class="site-data-table">
+<table class="data-table">
   <caption>Test Different Stroke Width</caption>
   <thead>
     <tr>

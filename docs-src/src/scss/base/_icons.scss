@@ -1,22 +1,20 @@
-// Import and print Font Awesome the old fashined way (import)
-$fa-font-path: "/assets/fonts/fontawesome";
-@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "@fortawesome/fontawesome-free/scss/solid.scss";
-// @import "@fortawesome/fontawesome-free/scss/regular.scss";
-@import "@fortawesome/fontawesome-free/scss/brands.scss";
+//==============================================================================
+// Font Awesome Icons
+//==============================================================================
 
+$path: "/assets/fonts/fontawesome";
 
-// Custom Icons Below
+@use "@fortawesome/fontawesome-free/scss/fontawesome" with ($fa-font-path: $path);
+@use "@fortawesome/fontawesome-free/scss/solid" with ($fa-font-path: $path);
+// @use "@fortawesome/fontawesome-free/scss/regular.scss" with ($fa-font-path: $path);
+@use "@fortawesome/fontawesome-free/scss/brands" with ($fa-font-path: $path);
 
-// NOTE: We can only do this here because FontAwesome hasn't refactored for new sass
-//       so we're at the mercy of the single import since they don't have @use yet
-// .accordion {
-//   .accordion__icon {
-//     @include fa-icon-solid($fa-var-add);
-//   }
-//   &[open] {
-//     .accordion__icon {
-//       @include fa-icon-solid($fa-var-subtract);
-//     }
-//   }
+// Important: 
+// - We can only do this here because FontAwesome hasn't refactored for new sass
+//   so we're at the mercy of the single import since they don't have @use yet.
+// - Use sparingly, font-awesome uses extend so this extends all the .fas, etc 
+//   selectors. so selectors should be kept as simple as possible 
+
+// .TEST-MIXIN-FA-ICON {
+//   @include fontawesome.fa-icon-solid(fontawesome.$fa-var-add);
 // }

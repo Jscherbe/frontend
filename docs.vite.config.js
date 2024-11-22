@@ -21,10 +21,13 @@ export default createConfig({
   },
   preprocessorOptions: {
     scss: {
-      includePaths: [
+      // Note dart sass uses loadPaths vs includePaths
+      loadPaths: [
         path.resolve(__dirname, "./docs-src/src/scss/"),
         path.resolve(__dirname)
       ],
+      quietDeps: true,
+      api: "modern-compiler"
     }
   },
 });
