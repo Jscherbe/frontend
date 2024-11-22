@@ -110,27 +110,31 @@ $theme-colors: (
     "light" : ulu.color-tint($color-rule-light, 50%),
     "dark": red
   ),
-  "color-data-table-background" : (
+  "color-table-background" : (
     "light" :white,
     "dark": yellow
   ),
-  "color-data-table-header-background" : (
+  "color-table-header-background" : (
+    "light" :#eeeeee,
+    "dark":  $color-violet-dark
+  ),
+  "color-table-cell-background" : (
     "light" :white,
-    "dark": yellow
+    "dark": $color-gray-dark
   ),
-  "color-data-table-cell-background" : (
-    "light" :#F9F9F9,
-    "dark": yellow
+  "color-table-footer-background" : (
+    "light" :#f3f3f3,
+    "dark": ulu.color-tint($color-gray-dark, 10%)
   ),
-  "color-data-table-muted-row-background" : (
+  "color-table-muted-row-background" : (
     "light" :ulu.color-shade(white, 2%),
     "dark": yellow
   ),
-  "color-data-table-highlighted-row-background" : (
+  "color-table-highlighted-row-background" : (
     "light" :rgb(193, 242, 247),
     "dark": yellow
   ),
-  "color-data-table-striped-row-background" : (
+  "color-table-striped-row-background" : (
     "light" :#ffffff,
     "dark": yellow
   ),

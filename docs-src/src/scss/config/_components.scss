@@ -50,3 +50,14 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "background-color": ulu.cssvar-use("color-background"),
   "caption-background-color" : ulu.cssvar-use("color-captioned-figure-caption-background"),
 ));
+
+@include ulu.component-card-set((
+  "color": vars.$color-type
+));
+
+@include ulu.component-data-table-set((
+  "background-color" : ulu.cssvar-use("color-background"),
+  "header-background-color" : ulu.cssvar-use("color-table-header-background"),
+  "body-background-color" : ulu.cssvar-use("color-table-cell-background"),
+  "footer-background-color" : ulu.cssvar-use("color-table-footer-background"),
+))
