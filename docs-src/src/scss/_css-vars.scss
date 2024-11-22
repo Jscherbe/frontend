@@ -1,5 +1,7 @@
 @use "vars" as *;
 @use "ulu";
+@use "sass:color";
+
 
 $defaults: (
   "header-height": 0px,
@@ -140,19 +142,19 @@ $theme-colors: (
   ),
   "color-modal-primary" : (
     "light" : $color-blue-violet,
-    "dark": yellow
+    "dark": ulu.color-shade($color-blue-violet, 20%)
   ),
   "color-modal-close-hover" : (
     "light" : ulu.color-shade($color-blue-violet, 15%),
-    "dark": yellow
+    "dark": ulu.color-shade($color-blue-violet, 15%)
   ),
   "color-modal-close-background" : (
     "light" : ulu.color-tint($color-blue-violet, 70%),
-    "dark": yellow
+    "dark": ulu.color-tint($color-blue-violet, 70%)
   ),
   "color-modal-close-background-hover" : (
     "light" : white,
-    "dark": yellow
+    "dark": white
   ),
   "color-type-navtree-hover" : (
     "light" : black,
@@ -162,9 +164,21 @@ $theme-colors: (
     "light" : white,
     "dark": $color-violet-dark
   ),
+  "color-button-background-hover" : (
+    "light" : rgb(219, 219, 219),
+    "dark": ulu.color-tint($color-gray-dark, 10%)
+  ),
   "color-captioned-figure-caption-background" : (
     "light" : rgba(255,255,255,0.7),
     "dark": rgba(0,0,0,0.6)
-  )
+  ),
+  "color-navtree-active" : (
+    "light" : color.change($color-gray-dark, $alpha: 0.1),
+    "dark": color.change($color-gray-dark, $alpha: 0.4)
+  ),
+  "color-navtree-hover" : (
+    "light" : color.change($color-gray-dark, $alpha: 0.2),
+    "dark": color.change($color-gray-dark, $alpha: 0.6)
+  ),
 )
 

@@ -10,13 +10,7 @@
 //   "short-width" : 10.5rem,
 //   "short-border-width" : 1px
 // ));
-@include ulu.component-modal-set((
-  "header-background-color" : ulu.cssvar-use("color-modal-primary"),
-  "close-color" : ulu.cssvar-use("color-modal-primary"),
-  "close-color-hover" : ulu.cssvar-use("color-modal-close-hover"),
-  "close-background-color" : ulu.cssvar-use("color-modal-close-background"),
-  "close-background-color-hover" : ulu.cssvar-use("color-modal-close-background-hover"),
-));
+
 
 // @include ulu.component-set-excludes("modal");
 $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
@@ -60,4 +54,17 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "header-background-color" : ulu.cssvar-use("color-table-header-background"),
   "body-background-color" : ulu.cssvar-use("color-table-cell-background"),
   "footer-background-color" : ulu.cssvar-use("color-table-footer-background"),
-))
+));
+
+@include ulu.component-menu-stack-set((
+  "link-background-color-hover": ulu.cssvar-use("color-button-background-hover")
+));
+
+@include ulu.component-modal-set((
+  "background-color": ulu.cssvar-use('color-background'),
+  "header-background-color" : ulu.cssvar-use("color-modal-primary"),
+  "close-color" : ulu.cssvar-use("color-modal-primary"),
+  "close-color-hover" : ulu.cssvar-use("color-modal-close-hover"),
+  "close-background-color" : ulu.cssvar-use("color-modal-close-background"),
+  "close-background-color-hover" : ulu.cssvar-use("color-modal-close-background-hover"),
+));
