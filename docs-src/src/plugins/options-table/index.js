@@ -4,7 +4,7 @@ export default function(eleventyConfig) {
 
 function tableTemplate(items, caption) {
   return `
-    <table class="site-data-table options-table">
+    <table class="data-table options-table">
       ${ caption ? `<caption> ${ caption }</caption>` : "" }
       <thead>
         <tr>

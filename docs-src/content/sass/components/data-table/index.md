@@ -150,7 +150,7 @@ Prints component styles
 - **Group:** data-table
 - **Type:** mixin
 - **Lines (comments):** 70-72
-- **Lines (code):** 74-167
+- **Lines (code):** 74-168
 
 </details>
 
