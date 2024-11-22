@@ -1,0 +1,7 @@
+////
+/// @group helpers
+/// This module prints helper styles, providing a convenient way to include them in stylesheets via @use. It offers the same functionality as the helper-styles() mixin.
+////
+
+@use "../helpers";
+@include helpers.styles();

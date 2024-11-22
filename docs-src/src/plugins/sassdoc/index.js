@@ -26,6 +26,7 @@ const commonConfig = {
     <script src="/frontend/ulu-frontend.min.js"></script>
   `,
   annotationTemplates: templates.annotations,
+  pageTemplates: templates.page,
   customAnnotations,
   annotations: [
     "name",
@@ -46,6 +47,8 @@ const commonConfig = {
     "see",
     "require"
   ],
+  hidePrivate: true,
+  hidePrivateKeepGroup: true
 };
 
 const createConfig = (base, options) => ({

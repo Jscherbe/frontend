@@ -6,7 +6,11 @@ sassdocGroupName: captioned-figure
 
 # Captioned-figure
 
+<div class="type-large">
+
 Figure with caption layout (to position caption)
+
+</div>
 
 
 
@@ -159,6 +163,8 @@ Prints component styles
 @include ulu.component-captioned-figure-styles();
 ```
   
+
+
 
       
 

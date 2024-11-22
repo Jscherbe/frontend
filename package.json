@@ -60,7 +60,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@ulu/markdown-output-utils": "^0.0.6",
-    "@ulu/sassdoc-to-markdown": "^0.0.11",
+    "@ulu/sassdoc-to-markdown": "^0.0.15",
     "@ulu/vite-config-cms-theme": "^0.0.10",
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.9",

@@ -6,7 +6,11 @@ sassdocGroupName: rule
 
 # Rule
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -111,6 +115,8 @@ General example, replace module-name with module's name
 ```
   
 
+
+
       
 
 #### Parameters
@@ -208,6 +214,8 @@ General example, replace module-name with module's name
 @include module-name.get("property");
 ```
   
+
+
 
       
 
