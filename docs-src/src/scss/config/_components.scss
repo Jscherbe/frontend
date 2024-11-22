@@ -68,3 +68,13 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "close-background-color" : ulu.cssvar-use("color-modal-close-background"),
   "close-background-color-hover" : ulu.cssvar-use("color-modal-close-background-hover"),
 ));
+
+@include ulu.component-overlay-section-set((
+  "content-background-color" : ulu.cssvar-use("color-background"),
+));
+
+@include ulu.component-popover-set((
+  "background-color": ulu.cssvar-use("color-background"),
+  "footer-background-color"      : ulu.cssvar-use("color-header-background"),
+  "box-shadow"                   : 0 0 4px ulu.color-get("box-shadow"),
+))
