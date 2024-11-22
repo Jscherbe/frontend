@@ -3,6 +3,7 @@
 
 .page-toc {
   padding: 5rem 1rem 1rem 1rem;
+  background-color: ulu.cssvar-use("color-background");
   @include ulu.breakpoint-max("medium") {
     @include ulu.layout-container-styles("container");
     padding-bottom: 2rem;
@@ -49,7 +50,7 @@
     padding: 0.25em 0;
     @include ulu.typography-word-break();
     &:hover {
-      color: black;
+      color: ulu.cssvar-use("color-type-navtree-hover");
     }
     &.is-active {
       color: ulu.color-get("accent");

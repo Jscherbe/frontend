@@ -11,7 +11,7 @@
   text-transform: uppercase;
   margin-right: 0.5em;
   padding-right: 0.5em;
-  border-right: 1px solid #0000006b;
+  border-right: 1px solid ulu.cssvar-use("color-rule-logo");
   @include ulu.typography-size("large-x", $only-font-size: true);
   
 }

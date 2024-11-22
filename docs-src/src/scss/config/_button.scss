@@ -4,6 +4,9 @@
 // Note: Adjusted button padding to match input padding for search
 @include ulu.button-set((
   "transition-enabled":      true,
+  "color": ulu.cssvar-use("color-button"),
+  "color-hover": ulu.cssvar-use("color-button"),
+  "border-color-hover": purple
 ));
 // @include ulu.button-set-sizes((
 //   "small-x" : (

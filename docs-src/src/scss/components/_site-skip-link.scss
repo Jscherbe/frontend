@@ -9,7 +9,7 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 1em 2em;
-  background-color: white;
+  background-color: ulu.cssvar-use("color-background");
   font-weight: bold;
   box-shadow: ulu.element-get("box-shadow-above");
   border-bottom-left-radius: 10px;

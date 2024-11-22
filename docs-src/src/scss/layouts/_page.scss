@@ -51,6 +51,7 @@
 }
 .page__body {
   grid-area: body;
+  background-color: ulu.cssvar-use("color-background");
   // padding-left: $menu-width;
 }
 .page__toc {

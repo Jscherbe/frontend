@@ -11,11 +11,11 @@
 //   "short-border-width" : 1px
 // ));
 @include ulu.component-modal-set((
-  "header-background-color" : vars.$color-blue-violet,
-  "close-color" : vars.$color-blue-violet,
-  "close-color-hover" : ulu.color-shade(vars.$color-blue-violet, 15%),
-  "close-background-color" : ulu.color-tint(vars.$color-blue-violet, 70%),
-  "close-background-color-hover" : white,
+  "header-background-color" : ulu.cssvar-use("color-modal-primary"),
+  "close-color" : ulu.cssvar-use("color-modal-primary"),
+  "close-color-hover" : ulu.cssvar-use("color-modal-close-hover"),
+  "close-background-color" : ulu.cssvar-use("color-modal-close-background"),
+  "close-background-color-hover" : ulu.cssvar-use("color-modal-close-background-hover"),
 ));
 
 // @include ulu.component-set-excludes("modal");
@@ -39,4 +39,14 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 
 @include ulu.component-hero-set((
   height: ulu.cssvar-use("fullscreen-height")
+));
+
+@include ulu.component-accordion-set((
+  "background-color" : ulu.cssvar-use("color-header-background"),
+  "background-color-open" : ulu.cssvar-use("color-header-background")
+));
+
+@include ulu.component-captioned-figure-set((
+  "background-color": ulu.cssvar-use("color-background"),
+  "caption-background-color" : ulu.cssvar-use("color-captioned-figure-caption-background"),
 ));

@@ -1,0 +1,45 @@
+@use "ulu";
+@use "vars";
+@use "css-vars";
+@use "sass:map";
+
+
+/// Outputs css vars for a specific type from the color themes map
+/// @param {String} $key The theme key (ie. light/dark)
+/// 
+/// replace with the output theme vars
+@mixin -output-theme-vars($key) {
+  @each $varName, $types in css-vars.$theme-colors {
+    $val: map.get($types, $key);
+    @if ($val) {
+      @include ulu.cssvar-declare($varName, $val);
+    }
+  }
+}
+
+:root {
+  @include ulu.cssvar-declare-all(css-vars.$defaults);
+}
+:root,
+.theme-dark {
+  color-scheme: dark; 
+  @include -output-theme-vars("dark");
+  color: ulu.cssvar-use("color-type");
+  /// Can be used on elements that need dark mode but that have colors that can't be udpated (canvas charts for example)
+  /// It inverts the items color, and then inverts/spins the element colors so they match the hue before inversion
+  /// It also decreases the contrast slightly
+  /// @todo In the future a opposite class, for dark mode color schemes if needed
+  /// @todo In the future could add filter: none for this class on theme-light to support nesting (unnessasary)
+  ///       
+  .theme-dark-fake {
+    filter: invert(1) hue-rotate(180deg) saturate(0.7);
+    // Need to reset the color incase the element has html elements
+    // since they will be inverted we use the light theme color here
+    color: ulu.cssvar-use("color-type");
+  }
+  .theme-light {
+    color-scheme: light; 
+    @include -output-theme-vars("light");
+    color: ulu.cssvar-use("color-type");
+  }
+}

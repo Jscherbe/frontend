@@ -5,7 +5,7 @@ $padding: 1rem;
 $breakpoint: "medium";
 
 .header {
-  background-color: ulu.color-tint(vars.$color-gray-dark, 95%);
+  background-color: ulu.cssvar-use("color-header-background");
   @include ulu.breakpoint-min($breakpoint) {
     display: flex;
     flex-direction: column;
@@ -17,8 +17,8 @@ $breakpoint: "medium";
   align-items: center;
   padding: $padding;
   // border-bottom: ulu.element-get-rule-style("light");
-  background-color: vars.$color-violet;
-  color: white;
+  background-color: ulu.cssvar-use("color-accent");
+  color: ulu.cssvar-use("color-type-inverse");
   position: sticky;
   top: 0;
   .fullscreen-layout & {
@@ -32,7 +32,7 @@ $breakpoint: "medium";
   &,
   &:hover,
   &:focus {
-    color: white;
+    color: ulu.cssvar-use("color-type-inverse");
   }
 }
 .header__mobile-toggle {

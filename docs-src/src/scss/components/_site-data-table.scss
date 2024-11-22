@@ -3,15 +3,15 @@
 
 $border-color: ulu.color-get("rule-light");
 $border: 1px solid $border-color;
-$background-color: white;
+$background-color: ulu.cssvar-use("color-data-table-background");
 $color: inherit;
 $padding: 0.5em;
-$header-background-color: white;
-$cell-background-color: #F9F9F9;
-$muted-row-background-color: ulu.color-shade(white, 2%);
+$header-background-color: ulu.cssvar-use("color-data-table-header-background");
+$cell-background-color: ulu.cssvar-use("color-data-table-cell-background");
+$muted-row-background-color: ulu.cssvar-use("color-data-table-muted-row-background");
 $muted-border-color: ulu.color-get("rule-light");
-$highlighted-row-background-color: rgb(193, 242, 247);
-$striped-row-background-color: #ffffff;
+$highlighted-row-background-color: ulu.cssvar-use("color-data-table-highlighted-row-background");
+$striped-row-background-color: ulu.cssvar-use("color-data-table-striped-row-background");
 
 // Table for data presentation
 // Site-table is for simple tables
@@ -31,7 +31,7 @@ table.site-data-table {
   // @include ulu.typography-size("small", $only-font-size: true);
   line-height: ulu.typography-get("line-height-dense" );
   caption {
-    background-color: ulu.color-tint(ulu.color-get("accent"), 90%);
+    background-color: ulu.cssvar-use("color-caption-background");
     border-top: $border;
     border-bottom: 2px solid ulu.color-get("accent");
     margin: 0;

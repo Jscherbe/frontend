@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	{% include "partials/head.njk" %}
-	<body class="page">
+	<body class="page theme-light" data-site-theme>
 		{% include "partials/header.njk" %}
 		{% if toc !== false %}
 			<div class="page__toc page-toc">
@@ -9,6 +9,8 @@
 			</div>
 		{% endif %}
 		<main id="main" class="page__body">
+					<div class="test-box">This is for testing</div>
+
 			{# @todo need to set this up in modal #}
 			{# <div class="site-search">
 				<div id="search-form"></div>

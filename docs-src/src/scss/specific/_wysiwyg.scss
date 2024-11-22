@@ -21,7 +21,7 @@
   details:not(.accordion) {
     margin-bottom: 1em;
     padding: 0.5em 1em;
-    background-color: ulu.color-tint(ulu.color-get("rule-light"), 50%);
+    background-color: ulu.cssvar-use("color-background-details");
     @include ulu.typography-size("small", $only-font-size: true);
     &[open] > summary {
       margin-bottom: 1em;

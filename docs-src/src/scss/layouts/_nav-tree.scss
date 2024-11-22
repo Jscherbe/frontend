@@ -19,7 +19,7 @@ $collapsible-inner-padding: 0.5em;
   color: ulu.color-get("type-tertiary");
   &:hover {
     background-color: color.change(vars.$color-gray-dark, $alpha: 0.2);
-    color: black
+    color: ulu.cssvar-use("color-type-navtree-hover")
   }
 }
 .nav-tree__toggle {
