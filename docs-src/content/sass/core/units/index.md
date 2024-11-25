@@ -6,11 +6,7 @@ sassdocGroupName: units
 
 # Units
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -122,8 +118,6 @@ Setting the error and type color
 ));
 ```
   
-
-
 
       
 

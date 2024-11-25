@@ -6,11 +6,7 @@ sassdocGroupName: print
 
 # Print
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -60,8 +56,6 @@ Printed Media Stylesheet
 @include ulu.helper-print-styles();
 ```
   
-
-
 
       
   

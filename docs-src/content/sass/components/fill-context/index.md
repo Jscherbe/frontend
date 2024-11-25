@@ -6,11 +6,7 @@ sassdocGroupName: fill-context
 
 # Fill-context
 
-<div class="type-large">
-
 Setup images or videos to behave like background images (object-fit).
-
-</div>
 
 
 
@@ -45,26 +41,6 @@ modifier (see in example below).
 </div>
 ```
   
-
-
-##### Preview
-
-<div>
-<div class="fill-context">
-  <img class="fill-context__object" src="background.jpg">
-</div>
- 
- 
-<div class="fill-context fill-context--auto">
-  <img src="background.jpg">
-</div>
- 
-<div data-grid-item="width: 6" class="fill-context fill-context--in-grid fill-context--contain">
-  <img src="background.jpg">
-</div>
-</div>
-
-    
 
       
   
@@ -113,8 +89,6 @@ Prints fill context styles
 @include ulu.component-fill-context-styles();
 ```
   
-
-
 
       
   

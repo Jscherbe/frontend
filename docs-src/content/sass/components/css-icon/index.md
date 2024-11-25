@@ -6,11 +6,7 @@ sassdocGroupName: css-icon
 
 # Css-icon
 
-<div class="type-large">
-
 Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
-
-</div>
 
 
 
@@ -185,8 +181,6 @@ Prints adaptive spacing component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 

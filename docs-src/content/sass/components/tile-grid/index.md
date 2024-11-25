@@ -6,11 +6,7 @@ sassdocGroupName: tile-grid
 
 # Tile-grid
 
-<div class="type-large">
-
 Creates a CSS grid with items that have matching aspect ratios. Reflows to fit as many items as can be fit withing current grid's width by default. Allows passing static styles to create fixed number of columns per row. Static styles are set adaptively and can adjust the number of columns at different breakpoints.
-
-</div>
 
 
 
@@ -359,8 +355,6 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 

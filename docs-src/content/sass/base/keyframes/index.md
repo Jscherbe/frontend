@@ -6,11 +6,7 @@ sassdocGroupName: keyframes
 
 # Keyframes
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -58,8 +54,6 @@ Prints CSS keyframes
 @include ulu.base-keyframes-styles();
 ```
   
-
-
 
       
   

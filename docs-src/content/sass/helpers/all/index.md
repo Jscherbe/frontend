@@ -6,11 +6,7 @@ sassdocGroupName: all
 
 # All
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -234,8 +230,6 @@ Prints all Helper styles
 @include ulu.helper-styles();
 ```
   
-
-
 
       
 

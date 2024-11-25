@@ -6,11 +6,7 @@ sassdocGroupName: list-lines
 
 # List-lines
 
-<div class="type-large">
 
-
-
-</div>
 
 
 

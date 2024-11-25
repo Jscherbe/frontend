@@ -6,11 +6,7 @@ sassdocGroupName: utilities
 
 # Utilities
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -58,8 +54,6 @@ Print utilities helper styles
 @include ulu.helper-utilities-styles();
 ```
   
-
-
 
       
   

@@ -6,11 +6,7 @@ sassdocGroupName: tag
 
 # Tag
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -255,8 +251,6 @@ Prints component styles
 @include ulu.component-tag-styles();
 ```
   
-
-
 
       
 

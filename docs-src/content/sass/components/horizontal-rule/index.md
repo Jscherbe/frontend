@@ -6,11 +6,7 @@ sassdocGroupName: horizontal-rule
 
 # Horizontal-rule
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -113,8 +109,6 @@ General example, replace module-name with module's name
 ```
   
 
-
-
       
 
 #### Parameters
@@ -172,8 +166,6 @@ Prints adaptive spacing component styles
 ```
   
 
-
-
       
 
 #### Require
@@ -226,8 +218,6 @@ General example, replace module-name with module's name
 @include module-name.get("property");
 ```
   
-
-
 
       
 

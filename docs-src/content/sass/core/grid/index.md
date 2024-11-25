@@ -6,12 +6,8 @@ sassdocGroupName: grid
 
 # Grid
 
-<div class="type-large">
-
 Layout grid that uses attributes instead of classes
 - See the core layout module for changing defaults
-
-</div>
 
 
 
@@ -139,8 +135,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -256,8 +250,6 @@ Get a config option
 @include module-name.get("property");
 ```
   
-
-
 
       
 

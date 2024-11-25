@@ -6,11 +6,7 @@ sassdocGroupName: pull-quote
 
 # Pull-quote
 
-<div class="type-large">
-
 Layout for a pull quote, relies on badge component for image
-
-</div>
 
 
 
@@ -179,8 +175,6 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 

@@ -6,11 +6,7 @@ sassdocGroupName: accordion
 
 # Accordion
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -219,8 +215,6 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 

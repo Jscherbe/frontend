@@ -6,11 +6,7 @@ sassdocGroupName: spoke-spinner
 
 # Spoke-spinner
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -236,8 +232,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 Example markup      
@@ -262,8 +256,6 @@ Example markup
 </div>
 ```
   
-
-
 
       
 

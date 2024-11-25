@@ -6,11 +6,7 @@ sassdocGroupName: element
 
 # Element
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -597,8 +593,6 @@ Hide text for assistive devices
 @include ulu.layout-hidden-visually(false)
 ```
   
-
-
 
       
 

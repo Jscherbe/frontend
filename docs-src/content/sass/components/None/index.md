@@ -6,11 +6,7 @@ sassdocGroupName: None
 
 # None
 
-<div class="type-large">
 
-
-
-</div>
 
 
 

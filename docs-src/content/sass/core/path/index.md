@@ -6,11 +6,7 @@ sassdocGroupName: path
 
 # Path
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -204,8 +200,6 @@ Resolves a Path
 }
 ```
   
-
-
 
       
 

@@ -6,11 +6,7 @@ sassdocGroupName: wysiwyg
 
 # Wysiwyg
 
-<div class="type-large">
-
 For auto formatting general HTML elements (used around editor/body text)
-
-</div>
 
 
 

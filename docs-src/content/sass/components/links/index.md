@@ -6,11 +6,7 @@ sassdocGroupName: links
 
 # Links
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -60,8 +56,6 @@ Link compontent styles (.link)
 @include ulu.component-links-styles();
 ```
   
-
-
 
       
   

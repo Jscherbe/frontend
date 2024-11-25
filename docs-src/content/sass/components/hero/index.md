@@ -6,11 +6,7 @@ sassdocGroupName: hero
 
 # Hero
 
-<div class="type-large">
 
-
-
-</div>
 
 
 
@@ -166,8 +162,6 @@ Prints component styles
 @include ulu.component-hero-styles();
 ```
   
-
-
 
       
 

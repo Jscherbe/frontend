@@ -6,11 +6,7 @@ sassdocGroupName: list-unordered
 
 # List-unordered
 
-<div class="type-large">
 
-
-
-</div>
 
 
 

@@ -6,11 +6,7 @@ sassdocGroupName: ratio-box
 
 # Ratio-box
 
-<div class="type-large">
-
 Uses padding trick to keep ratio. Defaults to 4:3 (standard). Used for responsive iframe or images (object-fit), etc
-
-</div>
 
 
 
@@ -162,8 +158,6 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 
