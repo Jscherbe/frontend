@@ -6,7 +6,11 @@ sassdocGroupName: scroll-slider
 
 # Scroll-slider
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -149,6 +153,8 @@ General example, replace module-name with module's name
 @include module-name.set(( "property" : value ));
 ```
   
+
+
 
       
 

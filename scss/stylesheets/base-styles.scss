@@ -1,0 +1,7 @@
+////
+/// @group base
+/// This module prints base styles, providing a convenient way to include them in stylesheets via @use. It offers the same functionality as the base-styles() mixin. hello worlds
+////
+
+@use "../base";
+@include base.styles();

@@ -6,7 +6,11 @@ sassdocGroupName: color
 
 # Color
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -229,6 +233,8 @@ Setting the error and type color
 ```
   
 
+
+
       
 
 #### Parameters
@@ -335,6 +341,8 @@ Overwriting contexts
 ), false, true);
 ```
   
+
+
 
       
 
@@ -443,6 +451,8 @@ Prints all context styles
 ```
   
 
+
+
       
 
 Example of a color-context      
@@ -454,6 +464,17 @@ Example of a color-context
 </div>
 ```
   
+
+
+##### Preview
+
+<div>
+ <div class="color-context-dark" style="padding: 1rem">
+  Some text in dark context
+</div>
+</div>
+
+    
 
       
 
@@ -515,6 +536,8 @@ Outputs all color classes
 ```
   
 
+
+
       
 
 Example of a color-context      
@@ -524,6 +547,15 @@ Example of a color-context
 <span class="color-name">Some text</span>
 ```
   
+
+
+##### Preview
+
+<div>
+<span class="color-name">Some text</span>
+</div>
+
+    
 
       
 

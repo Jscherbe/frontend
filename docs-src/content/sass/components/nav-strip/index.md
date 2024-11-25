@@ -6,9 +6,13 @@ sassdocGroupName: nav-strip
 
 # Nav-strip
 
+<div class="type-large">
+
 A horizontal navigation strip or rail that displays a list of links to
 different pages or sections of a website. The active link, indicating the 
 current page or section, is visually emphasized with an underline.
+
+</div>
 
 
 
@@ -184,6 +188,8 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
+
+
 
       
 

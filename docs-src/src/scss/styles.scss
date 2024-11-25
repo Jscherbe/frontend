@@ -4,7 +4,14 @@
 @use "vars";
 @use "ulu";
 @use "config";
+
+@use "scss/stylesheets/base-styles";
 @use "base";
+
+@use "scss/stylesheets/component-styles";
 @use "components"; 
+
 @use "layouts";
+
+@use "scss/stylesheets/helper-styles";
 @use "specific";

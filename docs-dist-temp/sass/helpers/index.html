@@ -1121,25 +1121,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/base/all/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      All
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/base/color/" 
           
         >
@@ -1166,6 +1147,25 @@
     
     <span class="nav-tree__text">
       Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/index/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Index
     </span>
   
         </a>
@@ -3974,25 +3974,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/base/all/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      All
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/base/color/" 
           
         >
@@ -4019,6 +4000,25 @@
     
     <span class="nav-tree__text">
       Elements
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a 
+          class="nav-tree__link  " 
+          href="/sass/base/index/" 
+          
+        >
+          
+    
+    <span class="nav-tree__text">
+      Index
     </span>
   
         </a>
@@ -5784,9 +5784,20 @@
 			
 			
 			
-  <div class="page__body-top container api-docs">
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Helpers</h1>
+
+  <p class="type-large type-light">
+    The helper styles are the bottom of the stylesheet. They are meant to override things.
+  </p>
+
+<hr class="rule rule--light rule--margin-large">
     <div class="wysiwyg">
-      
+      <p>All helper module styles can be printed individually or by the root/index module styles mixin (ie. <code>ulu.helper-styles()</code>).
+Alternatively, for convenience in setting up stylesheets it also provides a module to print it's styles out directly</p>
+<p>In your stylesheet to print these styles without calling the mixin yourself you can use the following 'styles' module. This is handy for creating the main stylesheet with just @use since mixins have to be called after @use statements.</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"@ulu/frontend/scss/stylesheets/helpers-stylesheet"</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+
     </div>
   </div>
 

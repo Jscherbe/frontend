@@ -6,7 +6,11 @@ sassdocGroupName: typography
 
 # Typography
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -308,6 +312,8 @@ Setting the error and type color
 ));
 ```
   
+
+
 
       
 

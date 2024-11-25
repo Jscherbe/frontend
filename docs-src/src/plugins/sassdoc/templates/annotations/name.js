@@ -2,6 +2,7 @@ import { headline, titleCase } from "@ulu/markdown-output-utils";
 
 export default ({ item, headlineLevel }) => {
   const { id, title } = item;
+  // Intentionally removed 'access' because private stuff shouldn't be in docs
   const { context, type: variableType } = item.data;
   const { type } = context;
   // content blocks don't get a name/title

@@ -6,7 +6,11 @@ sassdocGroupName: adaptive-spacing
 
 # Adaptive-spacing
 
+<div class="type-large">
+
 Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+
+</div>
 
 
 
@@ -263,6 +267,8 @@ Prints adaptive spacing component styles
 @include ulu.component-adaptive-spacing-styles();
 ```
   
+
+
 
       
 

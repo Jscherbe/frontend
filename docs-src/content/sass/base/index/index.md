@@ -1,12 +1,16 @@
 ---
-title: All
-sassdocGroupName: all
+title: Index
+sassdocGroupName: index
 ---
 
 
-# All
+# Index
+
+<div class="type-large">
 
 
+
+</div>
 
 
 
@@ -51,7 +55,7 @@ $all-includes: (
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** variable
 - **Lines (comments):** 26-27
 - **Lines (code):** 29-39
@@ -87,7 +91,7 @@ $current-includes: $all-includes;
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** variable
 - **Lines (comments):** 41-42
 - **Lines (code):** 44-44
@@ -124,7 +128,7 @@ Change default includes (when user prints modules)
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** mixin
 - **Lines (comments):** 46-48
 - **Lines (code):** 50-53
@@ -144,8 +148,8 @@ Change default includes (when user prints modules)
 
 #### Require
 
-- [$all-includes](/sass/base/all/#variable-all-includes)
-- [$current-includes](/sass/base/all/#variable-current-includes)
+- [$all-includes](/sass/base/index/#variable-all-includes)
+- [$current-includes](/sass/base/index/#variable-current-includes)
   
 
 
@@ -170,7 +174,7 @@ Exclude certain items from includes
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** mixin
 - **Lines (comments):** 55-56
 - **Lines (code):** 58-60
@@ -190,7 +194,7 @@ Exclude certain items from includes
 
 #### Require
 
-- [$current-includes](/sass/base/all/#variable-current-includes)
+- [$current-includes](/sass/base/index/#variable-current-includes)
   
 
 
@@ -215,7 +219,7 @@ Prints all Base styles
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** mixin
 - **Lines (comments):** 62-66
 - **Lines (code):** 68-97
@@ -234,6 +238,8 @@ Prints all Base styles
 ```
   
 
+
+
       
 
 #### Parameters
@@ -247,7 +253,7 @@ Prints all Base styles
 
 #### Require
 
-- [$all-includes](/sass/base/all/#variable-all-includes)
+- [$all-includes](/sass/base/index/#variable-all-includes)
   
   
   

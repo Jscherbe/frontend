@@ -6,7 +6,11 @@ sassdocGroupName: color
 
 # Color
 
+<div class="type-large">
 
+
+
+</div>
 
 
 

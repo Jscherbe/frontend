@@ -6,7 +6,11 @@ sassdocGroupName: modal
 
 # Modal
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -187,6 +191,8 @@ General example, replace module-name with module's name
 ```
   
 
+
+
       
 
 #### Parameters
@@ -243,6 +249,8 @@ Prints modal component styles
 @include ulu.component-modal-styles();
 ```
   
+
+
 
       
 

@@ -1,0 +1,7 @@
+////
+/// @group components
+/// This module prints component styles, providing a convenient way to include them in stylesheets via @use. It offers the same functionality as the component-styles() mixin.
+////
+
+@use "../components";
+@include components.styles();
