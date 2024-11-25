@@ -1,5 +1,5 @@
 // For build (dist)
-import "./scss/stylesheets/full-stylesheet.scss";
+import "./scss/stylesheets/full.scss";
 import * as ulu from "./js/index.js";
 
 if (typeof window !== "undefined") {

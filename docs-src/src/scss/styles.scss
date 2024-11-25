@@ -5,13 +5,13 @@
 @use "ulu";
 @use "config";
 
-@use "scss/stylesheets/base-stylesheet";
+@use "scss/stylesheets/base-styles";
 @use "base";
 
-@use "scss/stylesheets/components-stylesheet";
+@use "scss/stylesheets/component-styles";
 @use "components"; 
 
 @use "layouts";
 
-@use "scss/stylesheets/helpers-stylesheet";
+@use "scss/stylesheets/helper-styles";
 @use "specific";
