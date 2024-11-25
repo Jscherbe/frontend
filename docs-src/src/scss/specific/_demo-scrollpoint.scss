@@ -1,7 +1,9 @@
+@use "ulu";
+
 .demo-scrollpoint {
   padding: 1rem;
   text-align: center;
-  background-color: #ffa;
+  background-color: ulu.cssvar-use("color-demo-scrollpoint");
   transition: background-color 200ms ease;
   &[data-scrollpoint-state*="enter"] {
     background-color: rgb(23, 130, 112);

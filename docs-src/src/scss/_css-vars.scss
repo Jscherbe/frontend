@@ -2,6 +2,7 @@
 @use "ulu";
 @use "sass:color";
 
+// @developers goldenrod is a placeholder color.
 
 $defaults: (
   "header-height": 0px,
@@ -11,14 +12,7 @@ $defaults: (
 );
 
 $theme-colors: (
-  "color-base":(
-    "light" : white, 
-    "dark": black, 
-  ),
-  "color-test":(
-    "light" : red, 
-    "dark": blue, 
-  ),
+
   "color-type" : (
     "light" : $color-type,
     "dark": white
@@ -26,10 +20,6 @@ $theme-colors: (
   "color-type-inverse" : (
     "light" : white,
     "dark": $color-type
-  ),
-  "color-headline" : (
-    "light" : $color-type-secondary,
-    "dark": red
   ),
   "color-type-secondary" : (
     "light" : $color-type-secondary,
@@ -41,7 +31,7 @@ $theme-colors: (
   ),
   "color-type-disabled" : (
     "light" : $color-type-disabled,
-    "dark": red
+    "dark": goldenrod
   ),
   "color-error" : (
     "light" :red,
@@ -66,7 +56,7 @@ $theme-colors: (
   ),
   "color-accent-light" : (
     "light": ulu.color-tint( $color-violet-dark, 40%),
-    "dark": red
+    "dark": goldenrod
   ),
   "color-rule" : (
     "light" : $color-rule,
@@ -78,7 +68,7 @@ $theme-colors: (
   ),
   "color-rule-logo" : (
     "light" : #0000006b,
-    "dark": red
+    "dark": $color-gray-light
   ),
   "color-link" : (
     "light" : $color-link,
@@ -90,11 +80,11 @@ $theme-colors: (
   ),
   "color-link-active" : (
     "light" : $color-link-hover,
-    "dark": red
+    "dark": goldenrod
   ),
   "color-link-visited" : (
     "light" : $color-link-visited,
-    "dark": red
+    "dark": goldenrod
   ),
   "color-control-background" : (
     "light" : $color-violet,
@@ -104,17 +94,13 @@ $theme-colors: (
     "light" : $color-violet-dark,
     "dark": $color-gray-light-x
   ),
-  "color-caption-background" :(
-    "light" : ulu.color-tint($color-violet-dark, 90%),
-    "dark": red
-  ),
+  // "color-caption-background" :(
+  //   "light" : ulu.color-tint($color-violet-dark, 90%),
+  //   "dark": red
+  // ),
   "color-background-details" :(
     "light" : ulu.color-tint($color-rule-light, 50%),
-    "dark": red
-  ),
-  "color-table-background" : (
-    "light" :white,
-    "dark": yellow
+    "dark": ulu.color-tint($color-gray-dark, 25%)
   ),
   "color-table-header-background" : (
     "light" :#eeeeee,
@@ -130,15 +116,15 @@ $theme-colors: (
   ),
   "color-table-muted-row-background" : (
     "light" :ulu.color-shade(white, 2%),
-    "dark": yellow
+    "dark": goldenrod
   ),
   "color-table-highlighted-row-background" : (
     "light" :rgb(193, 242, 247),
-    "dark": yellow
+    "dark": goldenrod
   ),
   "color-table-striped-row-background" : (
     "light" :#ffffff,
-    "dark": yellow
+    "dark": goldenrod
   ),
   "color-modal-primary" : (
     "light" : $color-blue-violet,
@@ -180,5 +166,9 @@ $theme-colors: (
     "light" : color.change($color-gray-dark, $alpha: 0.2),
     "dark": color.change($color-gray-dark, $alpha: 0.6)
   ),
+  "color-demo-scrollpoint" : (
+    "light" : #ffa,
+    "dark" : $color-violet-dark
+  )
 )
 

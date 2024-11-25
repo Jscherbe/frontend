@@ -40,6 +40,10 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "background-color-open" : ulu.cssvar-use("color-header-background")
 ));
 
+@include ulu.component-callout-set((
+  "background-color": ulu.cssvar-use("color-background-details")
+));
+
 @include ulu.component-captioned-figure-set((
   "background-color": ulu.cssvar-use("color-background"),
   "caption-background-color" : ulu.cssvar-use("color-captioned-figure-caption-background"),
@@ -77,4 +81,13 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "background-color": ulu.cssvar-use("color-background"),
   "footer-background-color"      : ulu.cssvar-use("color-header-background"),
   "box-shadow"                   : 0 0 4px ulu.color-get("box-shadow"),
+  "tooltip-background-color": ulu.cssvar-use("color-background")
+));
+
+@include ulu.component-tabs-set((
+  "tabpanel-background-color" : ulu.cssvar-use("color-header-background"),
+));
+
+@include ulu.component-tag-set((
+  "background-color": ulu.cssvar-use("color-table-header-background")
 ))
