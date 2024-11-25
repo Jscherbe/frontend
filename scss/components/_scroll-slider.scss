@@ -112,7 +112,7 @@ $config: (
     scroll-snap-type: x mandatory;
     // scroll-padding-left: calc(((100vw - vars.$site-max-width) / 2) + vars.$site-margin);
     // switch below to a modifier (like #{ $prefix }--in-container, #{ $prefix }--in-container-large-x) Default is container
-    @include layout.match-container-margin("scroll-padding-left", get("container"));
+    
     // scroll-padding-right: 1rem;
     // Hide scrollbars
     -ms-overflow-style: none; /* for Internet Explorer, Edge */
@@ -120,6 +120,7 @@ $config: (
     &::-webkit-scrollbar {
       display: none; /* for Chrome, Safari, and Opera */
     }
+    @include layout.match-container-margin("scroll-padding-left", get("container"));
     // padding: 1rem;
     // Add space to end of list
     // &:after {
@@ -147,7 +148,9 @@ $config: (
     scroll-snap-align: none;
     // flex-basis: calc(((100vw - vars.$site-max-width) / 2) + vars.$site-margin);
     @include layout.match-container-margin("flex-basis", get("container"));
-    margin-right: 0;
+    & {
+      margin-right: 0;
+    }
     // @include ulu.breakpoint-max("small") {
     //   &:last-child {
     //     display: none;
