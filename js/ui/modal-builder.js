@@ -27,6 +27,7 @@ const attrSelector = key => `[${ attrs[key] }]`;
 export const defaults = {
   title: null,
   titleIcon: null,
+  nonModal: false,
   documentEnd: true,
   allowResize: false,
   position: "center",

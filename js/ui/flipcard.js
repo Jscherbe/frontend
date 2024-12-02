@@ -17,7 +17,7 @@ export class Flipcard {
       selectionMin:  10, // Minimum length that qualifies as a selection
       exclude:  "a, input, textarea, button"  // Selectors to avoid closing a flipcard onProxyclick 
     },
-  }
+  };
   constructor(container, front, back, config, debug = false) {
     if (!container, !front, !back) {
       logError(this, 'Missing an element (container, front, back)');
