@@ -322,6 +322,7 @@ $sizes: get-default-sizes() !default;
   @if (not $only-font-size) {
     font-weight: get-size-value($size, "font-weight");
     font-family: get-size-value($size, "font-family");
+    font-variation-settings: get-size-value($size, "font-variation-settings");
     line-height: get-size-converted-value($size, "line-height");
     margin-top: get-size-converted-value($size, "margin-top");
     margin-bottom: get-size-converted-value($size, "margin-bottom");

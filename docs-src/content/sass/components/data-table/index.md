@@ -6,7 +6,11 @@ sassdocGroupName: data-table
 
 # Data-table
 
+<div class="type-large">
+
 For tabular data in native HTML tables. Note, this component can be used with the Vue sticky table plugin.
+
+</div>
 
 
 
@@ -165,6 +169,8 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
+
+
 
       
 

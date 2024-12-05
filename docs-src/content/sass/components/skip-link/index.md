@@ -6,7 +6,11 @@ sassdocGroupName: skip-link
 
 # Skip-link
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -150,6 +154,8 @@ Prints component styles
 ```
   
 
+
+
       
 
       
@@ -166,6 +172,8 @@ Prints component styles
 <main id="main-content">...</main>
 ```
   
+
+
 
       
 

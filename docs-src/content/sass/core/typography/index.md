@@ -6,7 +6,11 @@ sassdocGroupName: typography
 
 # Typography
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -309,6 +313,8 @@ Setting the error and type color
 ```
   
 
+
+
       
 
 #### Parameters
@@ -404,7 +410,7 @@ Print a typography size (font-size, line-height)
 - **Group:** typography
 - **Type:** mixin
 - **Lines (comments):** 295-298
-- **Lines (code):** 300-340
+- **Lines (code):** 300-341
 
 </details>
 

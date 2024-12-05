@@ -6,7 +6,11 @@ sassdocGroupName: tabs
 
 # Tabs
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -171,6 +175,8 @@ Prints tabs component styles
 @include ulu.component-tabs-styles();
 ```
   
+
+
 
       
 

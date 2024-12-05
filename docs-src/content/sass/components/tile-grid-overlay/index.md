@@ -6,7 +6,11 @@ sassdocGroupName: tile-grid-overlay
 
 # Tile-grid-overlay
 
+<div class="type-large">
 
+
+
+</div>
 
 
 
@@ -150,6 +154,8 @@ Prints component styles
 @include ulu.component-tile-grid-overlay-styles();
 ```
   
+
+
 
       
 

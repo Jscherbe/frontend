@@ -6,7 +6,11 @@ sassdocGroupName: tile-button
 
 # Tile-button
 
+<div class="type-large">
+
 Button to be used withing tile-grid. Used with button classes.
+
+</div>
 
 
 
@@ -169,6 +173,8 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
+
+
 
       
 
