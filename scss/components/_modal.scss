@@ -144,7 +144,7 @@ $config: (
   $prefix: selector.class("modal");
 
   // // Before it's moved
-  [data-ulu-dialog-builder] {
+  [data-ulu-modal-builder] {
     display: none;
   }
   
