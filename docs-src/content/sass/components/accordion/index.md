@@ -57,6 +57,7 @@ $config: (
   "icon-stroke-width":           0.15em,
   "summary-background-color":    white,
   "summary-color":               inherit,
+  "summary-background-color-hover": inherit,
   "summary-color-hover":         inherit,
   "summary-line-height":         inherit,
   "summary-padding-y":           1rem,
@@ -75,7 +76,7 @@ $config: (
 - **Group:** accordion
 - **Type:** variable
 - **Lines (comments):** 17-44
-- **Lines (code):** 46-73
+- **Lines (code):** 46-74
 
 </details>
 
@@ -144,8 +145,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 76-78
+- **Lines (code):** 80-82
 
 </details>
 
@@ -190,8 +191,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 91-94
-- **Lines (code):** 96-208
+- **Lines (comments):** 92-95
+- **Lines (code):** 97-218
 
 </details>
 
@@ -219,8 +220,6 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 
@@ -258,8 +257,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 84-86
+- **Lines (code):** 88-90
 
 </details>
 

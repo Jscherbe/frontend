@@ -123,8 +123,6 @@ Setting the error and type color
 ```
   
 
-
-
       
 
 #### Parameters

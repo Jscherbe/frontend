@@ -160,8 +160,6 @@ Change default name
 ```
   
 
-
-
       
 
 #### Parameters
@@ -221,8 +219,6 @@ Changing the medium breakpoint and adding jumbo
 ));
 ```
   
-
-
 
       
 
@@ -285,8 +281,6 @@ Create a media query that matches the min-width for a given size
 ```
   
 
-
-
       
 
       
@@ -298,8 +292,6 @@ Create a media query that matches the min-width for a given size
 }
 ```
   
-
-
 
       
 
@@ -360,8 +352,6 @@ Create a media query that matches the max-width for a given size
 ```
   
 
-
-
       
 
       
@@ -373,8 +363,6 @@ Create a media query that matches the max-width for a given size
 }
 ```
   
-
-
 
       
 
@@ -435,8 +423,6 @@ Create a media query that matches between two breakpoint sizes
 ```
   
 
-
-
       
 
       
@@ -448,8 +434,6 @@ Create a media query that matches between two breakpoint sizes
 }
 ```
   
-
-
 
       
 
@@ -514,8 +498,6 @@ $dir: map.get($user-breakpoint, "direction");
 }
 ```
   
-
-
 
       
 
@@ -582,8 +564,6 @@ Utility Method for iterating over a map of breakpoints and apply styles
 }
 ```
   
-
-
 
       
 
@@ -693,8 +673,6 @@ Get default breakpoint name
 $default: breakpoint.get("default");
 ```
   
-
-
 
       
 

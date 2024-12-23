@@ -59,8 +59,6 @@ Printed Media Styles
 ```
   
 
-
-
       
   
   

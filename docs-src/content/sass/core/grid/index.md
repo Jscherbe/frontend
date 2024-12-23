@@ -139,8 +139,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -256,8 +254,6 @@ Get a config option
 @include module-name.get("property");
 ```
   
-
-
 
       
 

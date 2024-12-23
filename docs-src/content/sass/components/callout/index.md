@@ -40,6 +40,8 @@ $config: (
   "background-color" : rgb(240, 240, 240),
   "border" : true,
   "border-radius" :  true,
+  "left-border" : false,
+  "left-border-color" : green,
   "box-shadow" : none,
   "margin" : 2rem,
   "padding" : 1.5rem,
@@ -54,8 +56,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 24-31
-- **Lines (code):** 33-40
+- **Lines (comments):** 25-32
+- **Lines (code):** 34-43
 
 </details>
 
@@ -104,8 +106,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 62-64
-- **Lines (code):** 66-68
+- **Lines (comments):** 65-67
+- **Lines (code):** 69-71
 
 </details>
 
@@ -150,8 +152,8 @@ Set callout styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 82-84
+- **Lines (code):** 86-88
 
 </details>
 
@@ -196,8 +198,8 @@ Prints component styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-119
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-134
 
 </details>
 
@@ -212,8 +214,6 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
-
-
 
       
 
@@ -252,8 +252,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-77
+- **Lines (comments):** 73-75
+- **Lines (code):** 77-80
 
 </details>
 

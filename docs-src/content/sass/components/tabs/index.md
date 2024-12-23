@@ -176,8 +176,6 @@ Prints tabs component styles
 ```
   
 
-
-
       
 
 #### Require

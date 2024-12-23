@@ -207,8 +207,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 #### Require

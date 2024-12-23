@@ -168,3 +168,31 @@ Without an icon in the summary will fallback to browser default
   </div>
 </details>
 
+## Examples with No borders
+
+
+<details class="accordion accordion--no-borders">
+  <summary class="accordion__summary">
+    This is an example title with long content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere sem ac neque rhoncus lacinia. Suspendisse ornare enim in ultrices egestas.
+    <span class="accordion__icon" aria-hidden="true">
+      <span class="css-icon css-icon--angle-down-to-up"></span>
+    </span>
+  </summary>
+  <div class="accordion__content">
+    {{ placeholder.paragraph }}
+    {{ placeholder.paragraph }}
+  </div>
+</details>
+<details class="accordion accordion--no-borders">
+  <summary class="accordion__summary">
+    This is an example Title
+    <span class="accordion__icon" aria-hidden="true">
+      <span class="css-icon css-icon--angle-down-to-up"></span>
+    </span>
+  </summary>
+  <div class="accordion__content">
+    {{ placeholder.paragraph }}
+    {{ placeholder.paragraph }}
+  </div>
+</details>
+

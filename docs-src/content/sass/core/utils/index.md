@@ -113,8 +113,6 @@ General example, replace module-name with module's name
 ```
   
 
-
-
       
 
 #### Parameters
@@ -308,8 +306,6 @@ General example, replace module-name with module's name
 @include module-name.get("property");
 ```
   
-
-
 
       
 
@@ -1109,8 +1105,6 @@ $spacing: get-spacing($user-padding);
 ```
   
 
-
-
       
 
 #### Parameters
@@ -1181,8 +1175,6 @@ $user-padding: (1em, 2em, 4em);
 }
 ```
   
-
-
 
       
 
@@ -1256,8 +1248,6 @@ $user-padding: (1em, 2em, 4em);
 ```
   
 
-
-
       
 
 #### Parameters
@@ -1330,8 +1320,6 @@ $user-padding: (1em, 2em, 4em);
 ```
   
 
-
-
       
 
 #### Parameters
@@ -1403,8 +1391,6 @@ $user-padding: (1em, 2em, 4em);
 }
 ```
   
-
-
 
       
 

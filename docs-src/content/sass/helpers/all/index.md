@@ -235,8 +235,6 @@ Prints all Helper styles
 ```
   
 
-
-
       
 
 #### Parameters
