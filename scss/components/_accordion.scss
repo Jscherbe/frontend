@@ -64,6 +64,7 @@ $config: (
   "icon-stroke-width":           0.15em,
   "summary-background-color":    white,
   "summary-color":               inherit,
+  "summary-background-color-hover": inherit,
   "summary-color-hover":         inherit,
   "summary-line-height":         inherit,
   "summary-padding-y":           1rem,
@@ -136,6 +137,7 @@ $config: (
     }
   }
   #{ $prefix }__summary {
+    background-color: get("summary-background-color");
     color: get("summary-color");
     margin-left: -(get("padding-x"));
     margin-right: -(get("padding-x"));
@@ -160,6 +162,7 @@ $config: (
       @include typography.size(get("summary-type-size"));
     }
     &:hover {
+      background-color: get("summary-background-color-hover");
       color: get("summary-color-hover");
       #{ $prefix }__icon {
         background-color: get("icon-background-color-hover");
@@ -203,6 +206,13 @@ $config: (
         border-bottom: none;
         margin-bottom: 0;
       }
+    }
+  }
+  #{ $prefix }--no-borders {
+    border: none;
+    margin-bottom: 4rem;
+    &[open] > .accordion__summary {
+      border-bottom: none;
     }
   }
 }

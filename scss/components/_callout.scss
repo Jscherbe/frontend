@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "sass:meta";
 
+
 @use "../utils";
 @use "../selector";
 @use "../element";
@@ -34,6 +35,8 @@ $config: (
   "background-color" : rgb(240, 240, 240),
   "border" : true,
   "border-radius" :  true,
+  "left-border" : false,
+  "left-border-color" : green,
   "box-shadow" : none,
   "margin" : 2rem,
   "padding" : 1.5rem,
@@ -50,7 +53,7 @@ $styles: (
   "success" : (
     "color" : green,
     "background-color" : lightgreen,
-    "border-color" : lightgreen
+    "border-color" : lightgreen,
   ),
   "danger" : (
     "color" : red,
@@ -107,6 +110,7 @@ $styles: (
   }
   @each $name, $style in $styles {
     #{ $prefix }--#{ $name } {
+      position: relative;
       background-color: map.get($style, "background-color"); 
       color: map.get($style, "color"); 
       border: map.get($style, "border"); 
@@ -114,6 +118,17 @@ $styles: (
       border-color: map.get($style, "border-color"); 
       box-shadow: map.get($style, "box-shadow"); 
       padding: map.get($style, "padding"); 
+      @if map.get($style, "left-border") {
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          content: "";
+          width: 0.5rem;
+          background-color: map.get($style, "left-border-color");
+        }
+      }
     }
   }
 }
