@@ -106,8 +106,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-71
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-87
 
 </details>
 
@@ -152,8 +152,8 @@ Set callout styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 82-84
-- **Lines (code):** 86-88
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-104
 
 </details>
 
@@ -198,8 +198,8 @@ Prints component styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-134
+- **Lines (comments):** 106-108
+- **Lines (code):** 110-151
 
 </details>
 
@@ -252,8 +252,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 73-75
-- **Lines (code):** 77-80
+- **Lines (comments):** 89-91
+- **Lines (code):** 93-96
 
 </details>
 
