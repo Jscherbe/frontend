@@ -174,6 +174,8 @@ Prints badge component styles
 ```
   
 
+
+
       
 
       
@@ -193,6 +195,25 @@ Prints badge component styles
 </div>
 ```
   
+
+
+##### Preview
+
+<div>
+<div class="badge">
+  <div class="badge__inner">
+    <img src="..." alt="...">
+  </div>
+</div>
+
+<div class="badge">
+  <div class="badge__inner">
+    <span>JS</span>
+  </div>
+</div>
+</div>
+
+    
 
       
 

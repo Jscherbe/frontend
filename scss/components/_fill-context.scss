@@ -4,7 +4,7 @@
 /// Setup images or videos to behave like background images (object-fit).
 
 
-@use "../grid";
+@use "data-grid";
 @use "../breakpoint";
 
 
@@ -51,7 +51,7 @@
   }
 
   .fill-context--in-grid {
-    $breakpoint: grid.get-default-breakpoint();
+    $breakpoint: data-grid.get-default-breakpoint();
     @include breakpoint.max($breakpoint) {
       .fill-context__object,
       &.fill-context--auto img {
