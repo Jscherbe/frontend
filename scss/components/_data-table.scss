@@ -6,6 +6,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
+@use "sass:selector" as sassSelector;
 
 @use "../selector";
 @use "../color";
@@ -47,7 +48,8 @@ $config: (
   "caption-type-size" : "large",
   "caption-font-weight" : bold,
   "caption-margin" : (0 0 1em 0),
-  "caption-padding" : (0,)
+  "caption-padding" : (0,),
+  "extra-selector" : ".wysiwyg table"
 ) !default;
 
 /// Change modules $config
@@ -73,18 +75,26 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("data-table");
-
   $border: get("border-width") solid color.get(get("border-color"));
+  
+  $selector-table: sassSelector.parse("#{ $prefix } table, table#{ $prefix }");
+  $selector-inner: sassSelector.parse($prefix);
+  $extra-selector: get("extra-selector");
+
+  // Allow this to work with wysiwyg class, or as "table" for editor stylesheet
+  @if ($extra-selector) {
+    $selector-table: sassSelector.parse("#{ $selector-table }, #{ $extra-selector }");
+    $selector-inner: sassSelector.parse("#{ $selector-inner }, #{ $extra-selector }");
+  }
 
   // Selector can be on table or wrapping table for convenience
-  #{ $prefix } table,
-  table#{ $prefix } {
+  #{ $selector-table } {
     background-color: color.get(get("background-color"));
     border-collapse: collapse;
     border: $border;
     color: color.get(get("color"));
   }
-  #{ $prefix } {
+  #{ $selector-inner } {
     @if (get("type-size") and typography.has-size(get("type-size"))) {
       @include typography.size(get("type-size"), $only-font-size: true);
     }
@@ -131,17 +141,17 @@ $config: (
     td {
       padding: get("cell-padding");
     }
-    #{ $prefix }__row-muted {
-      background-color: color.get(get("muted-row-background-color"));
-      td {
-        border-color: color.get(get("muted-row-border-color"));
-      }
+  }
+  #{ $prefix }__row-muted {
+    background-color: color.get(get("muted-row-background-color"));
+    td {
+      border-color: color.get(get("muted-row-border-color"));
     }
-    #{ $prefix }__row-highlighted {
-      background-color: color.get(get("highlighted-row-background-color"));
-      td {
-        border-color: color.get(get("highlighted-row-border-color"));
-      }
+  }
+  #{ $prefix }__row-highlighted {
+    background-color: color.get(get("highlighted-row-background-color"));
+    td {
+      border-color: color.get(get("highlighted-row-border-color"));
     }
   }
   #{ $prefix }--striped {

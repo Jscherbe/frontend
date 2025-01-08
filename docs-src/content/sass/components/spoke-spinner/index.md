@@ -236,6 +236,8 @@ Prints component styles
 ```
   
 
+
+
       
 
 Example markup      
@@ -260,6 +262,8 @@ Example markup
 </div>
 ```
   
+
+
 
       
 

@@ -59,7 +59,8 @@ $config: (
   "caption-type-size" : "large",
   "caption-font-weight" : bold,
   "caption-margin" : (0 0 1em 0),
-  "caption-padding" : (0,)
+  "caption-padding" : (0,),
+  "extra-selector" : ".wysiwyg table"
 );
 ```
   
@@ -71,8 +72,8 @@ $config: (
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** variable
-- **Lines (comments):** 24-25
-- **Lines (code):** 27-51
+- **Lines (comments):** 25-26
+- **Lines (code):** 28-53
 
 </details>
 
@@ -107,8 +108,8 @@ Change modules $config
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 55-57
+- **Lines (code):** 59-61
 
 </details>
 
@@ -153,8 +154,8 @@ Prints component styles
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-168
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-178
 
 </details>
 
@@ -169,6 +170,8 @@ Prints component styles
 @include ulu.component-example-styles();
 ```
   
+
+
 
       
 
@@ -206,8 +209,8 @@ Get a config option
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-68
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-70
 
 </details>
 

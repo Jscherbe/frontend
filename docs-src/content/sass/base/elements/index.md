@@ -117,6 +117,8 @@ General example, replace module-name with module's name
 ```
   
 
+
+
       
 
 #### Parameters
@@ -174,6 +176,8 @@ Prints elements base styles
 ```
   
 
+
+
       
 
 #### Require
@@ -226,6 +230,8 @@ General example, replace module-name with module's name
 @include module-name.get("property");
 ```
   
+
+
 
       
 

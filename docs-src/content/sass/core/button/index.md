@@ -45,7 +45,6 @@ $config: (
   "min-width":               9rem,
   "padding":                 (0.75em 1.5em),
   "white-space":             nowrap,
-
   "border-color":            "control-border",
   "border-color-active":     "control-border-active",
   "border-color-hover":      "control-border-hover",
@@ -81,7 +80,7 @@ $config: (
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 21-53
-- **Lines (code):** 55-88
+- **Lines (code):** 55-87
 
 </details>
 
@@ -168,8 +167,8 @@ $sizes: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 90-91
-- **Lines (code):** 92-105
+- **Lines (comments):** 89-90
+- **Lines (code):** 91-104
 
 </details>
 
@@ -225,8 +224,8 @@ $styles: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 107-108
-- **Lines (code):** 110-131
+- **Lines (comments):** 106-107
+- **Lines (code):** 109-130
 
 </details>
 
@@ -261,8 +260,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 133-136
-- **Lines (code):** 138-140
+- **Lines (comments):** 132-135
+- **Lines (code):** 137-139
 
 </details>
 
@@ -277,6 +276,8 @@ General example, replace module-name with module's name
 @include module-name.set(( "property" : value ));
 ```
   
+
+
 
       
 
@@ -318,8 +319,8 @@ Set button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 152-154
-- **Lines (code):** 156-158
+- **Lines (comments):** 151-153
+- **Lines (code):** 155-157
 
 </details>
 
@@ -365,8 +366,8 @@ Set Button Sizes
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 160-162
-- **Lines (code):** 164-166
+- **Lines (comments):** 159-161
+- **Lines (code):** 163-165
 
 </details>
 
@@ -412,8 +413,8 @@ Print styles to reset browser button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 168-168
-- **Lines (code):** 170-181
+- **Lines (comments):** 167-167
+- **Lines (code):** 169-180
 
 </details>
 
@@ -443,8 +444,8 @@ Print default button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 183-184
-- **Lines (code):** 186-243
+- **Lines (comments):** 182-183
+- **Lines (code):** 185-242
 
 </details>
 
@@ -490,8 +491,8 @@ Mixin to wrap in active selectors
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 245-245
-- **Lines (code):** 246-250
+- **Lines (comments):** 244-244
+- **Lines (code):** 245-249
 
 </details>
 
@@ -526,8 +527,8 @@ Print button size styles for a specific size
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 252-255
-- **Lines (code):** 257-267
+- **Lines (comments):** 251-254
+- **Lines (code):** 256-266
 
 </details>
 
@@ -581,8 +582,8 @@ Print a button style's base styles (not hover)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 299-304
-- **Lines (code):** 306-317
+- **Lines (comments):** 298-303
+- **Lines (code):** 305-316
 
 </details>
 
@@ -634,8 +635,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 319-324
-- **Lines (code):** 326-332
+- **Lines (comments):** 318-323
+- **Lines (code):** 325-331
 
 </details>
 
@@ -690,8 +691,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 342-351
-- **Lines (code):** 353-369
+- **Lines (comments):** 341-350
+- **Lines (code):** 352-368
 
 </details>
 
@@ -749,8 +750,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 142-145
-- **Lines (code):** 147-150
+- **Lines (comments):** 141-144
+- **Lines (code):** 146-149
 
 </details>
 
@@ -765,6 +766,8 @@ General example, replace module-name with module's name
 @include module-name.get("property");
 ```
   
+
+
 
       
 
@@ -808,8 +811,8 @@ Get a value from a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 269-273
-- **Lines (code):** 275-297
+- **Lines (comments):** 268-272
+- **Lines (code):** 274-296
 
 </details>
 
