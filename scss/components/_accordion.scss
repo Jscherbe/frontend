@@ -34,10 +34,10 @@
 /// @prop {Dimension} icon-font-size  [1.5rem] The font-size of the icon.
 /// @prop {Dimension} icon-size  [auto] The size of the icon. Used as the base in the flex property.
 /// @prop {Dimension} icon-stroke-width [0.15em]
-/// @prop {Color} summary-background-color  [null] @joe-check THIS IS UNUSED BELOW. DELETE?
-/// @prop {Color} summary-color  [inherit] The color of the text in the accordion summary.
-/// @prop {Color} summary-color-hover  [inherit] The color of the text in the accordion summary when hovering or focusing on it.
-/// @prop {Dimension} summary-line-height  [inherit] Adjusts the line height of the summary element.
+/// @prop {Color} summary-background-color  [null] @dan fill this in
+/// @prop {Color} summary-color  [null] The color of the text in the accordion summary.
+/// @prop {Color} summary-color-hover  [null] The color of the text in the accordion summary when hovering or focusing on it.
+/// @prop {Dimension} summary-line-height  [null] Adjusts the line height of the summary element.
 /// @prop {Dimension} summary-padding-y  [1rem] The vertical padding of the summary.
 /// @prop {Dimension} summary-type-size  [false] The size of the text in the accordion summary. 
 /// @prop {Dimension} transparent-padding-y  [1em] The upper and lower padding of the transparent summary.
@@ -63,10 +63,10 @@ $config: (
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
   "summary-background-color":    white,
-  "summary-color":               inherit,
-  "summary-background-color-hover": inherit,
-  "summary-color-hover":         inherit,
-  "summary-line-height":         inherit,
+  "summary-color":               null,
+  "summary-background-color-hover": null,
+  "summary-color-hover":         null,
+  "summary-line-height":         null,
   "summary-padding-y":           1rem,
   "summary-type-size":           false,
   "transparent-padding-x":       0,

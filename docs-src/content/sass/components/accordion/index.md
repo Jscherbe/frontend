@@ -56,10 +56,10 @@ $config: (
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
   "summary-background-color":    white,
-  "summary-color":               inherit,
-  "summary-background-color-hover": inherit,
-  "summary-color-hover":         inherit,
-  "summary-line-height":         inherit,
+  "summary-color":               null,
+  "summary-background-color-hover": null,
+  "summary-color-hover":         null,
+  "summary-line-height":         null,
   "summary-padding-y":           1rem,
   "summary-type-size":           false,
   "transparent-padding-x":       0,
@@ -105,10 +105,10 @@ $config: (
 |icon-font-size|Dimension|1.5rem|The font-size of the icon.|
 |icon-size|Dimension|auto|The size of the icon. Used as the base in the flex property.|
 |icon-stroke-width|Dimension|0.15em||
-|summary-background-color|Color|null|@joe-check THIS IS UNUSED BELOW. DELETE?|
-|summary-color|Color|inherit|The color of the text in the accordion summary.|
-|summary-color-hover|Color|inherit|The color of the text in the accordion summary when hovering or focusing on it.|
-|summary-line-height|Dimension|inherit|Adjusts the line height of the summary element.|
+|summary-background-color|Color|null|@dan fill this in|
+|summary-color|Color|null|The color of the text in the accordion summary.|
+|summary-color-hover|Color|null|The color of the text in the accordion summary when hovering or focusing on it.|
+|summary-line-height|Dimension|null|Adjusts the line height of the summary element.|
 |summary-padding-y|Dimension|1rem|The vertical padding of the summary.|
 |summary-type-size|Dimension|false|The size of the text in the accordion summary.|
 |transparent-padding-y|Dimension|1em|The upper and lower padding of the transparent summary.|

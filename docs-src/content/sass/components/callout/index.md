@@ -40,9 +40,10 @@ $config: (
   "background-color" : rgb(240, 240, 240),
   "border" : true,
   "border-radius" :  true,
-  "left-border" : false,
-  "left-border-color" : green,
   "box-shadow" : none,
+  "left-cap" : false,
+  "left-cap-color" : green,
+  "left-cap-width" : 0.5rem,
   "margin" : 2rem,
   "padding" : 1.5rem,
 );
@@ -56,8 +57,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 25-32
-- **Lines (code):** 34-43
+- **Lines (comments):** 25-35
+- **Lines (code):** 37-47
 
 </details>
 
@@ -72,6 +73,9 @@ $config: (
 |border|Boolean|true|The border of the Callout.|
 |border-radius|Boolean|true|The border radius of the Callout.|
 |box-shadow|CssValue|none|The box-shadow of the Callout.|
+|left-cap|Boolean|false|Toggles the use of left caps in styled callouts.|
+|left-cap-color|Color|green|Color of the left cap.|
+|left-cap-width|Dimension|0.5rem|Width of the left cap.|
 |margin|Dimension|2rem|Bottom margin of the Callout.|
 |padding|Dimension|1.5rem|Padding of the Callout.|
 
@@ -106,8 +110,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-87
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-96
 
 </details>
 
@@ -152,8 +156,8 @@ Set callout styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-104
+- **Lines (comments):** 107-109
+- **Lines (code):** 111-113
 
 </details>
 
@@ -173,6 +177,37 @@ Set callout styles
 
 - $styles
   
+
+
+<div class="sassdoc-item-header">
+
+###  left-cap() {#mixin-left-cap}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Prints left-cap styling 
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _callout.scss
+- **Group:** callout
+- **Type:** mixin
+- **Lines (comments):** 115-115
+- **Lines (code):** 117-130
+
+</details>
+
+    
 
 
 <div class="sassdoc-item-header">
@@ -198,8 +233,8 @@ Prints component styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 106-108
-- **Lines (code):** 110-151
+- **Lines (comments):** 132-134
+- **Lines (code):** 136-169
 
 </details>
 
@@ -219,6 +254,7 @@ Prints component styles
 
 #### Require
 
+- [left-cap()](/sass/components/callout/#mixin-left-cap)
 - [get()](/sass/components/accordion/#function-get)
 - $styles
   
@@ -252,8 +288,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 89-91
-- **Lines (code):** 93-96
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-105
 
 </details>
 

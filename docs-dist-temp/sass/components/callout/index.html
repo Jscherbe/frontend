@@ -5875,6 +5875,9 @@
                     <li><a href="#mixin-set-styles">set-styles()</a>
             		</li>
 
+                    <li><a href="#mixin-left-cap">left-cap()</a>
+            		</li>
+
                     <li><a href="#mixin-styles">styles()</a>
             		</li>
                 </ol>
@@ -5914,9 +5917,10 @@
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-border-color"</span> <span class="pjs-token pjs-punctuation">:</span> green<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"left-cap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"left-cap-color"</span> <span class="pjs-token pjs-punctuation">:</span> green<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"left-cap-width"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5rem<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
@@ -5926,8 +5930,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 25-32</li>
-<li><strong>Lines (code):</strong> 34-43</li>
+<li><strong>Lines (comments):</strong> 25-35</li>
+<li><strong>Lines (code):</strong> 37-47</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5966,6 +5970,24 @@
 <td style="text-align:left">The box-shadow of the Callout.</td>
 </tr>
 <tr>
+<td style="text-align:left">left-cap</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Toggles the use of left caps in styled callouts.</td>
+</tr>
+<tr>
+<td style="text-align:left">left-cap-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">green</td>
+<td style="text-align:left">Color of the left cap.</td>
+</tr>
+<tr>
+<td style="text-align:left">left-cap-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.5rem</td>
+<td style="text-align:left">Width of the left cap.</td>
+</tr>
+<tr>
 <td style="text-align:left">margin</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">2rem</td>
@@ -5993,8 +6015,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 81-83</li>
-<li><strong>Lines (code):</strong> 85-87</li>
+<li><strong>Lines (comments):</strong> 90-92</li>
+<li><strong>Lines (code):</strong> 94-96</li>
 </ul>
 </details>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -6036,8 +6058,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 98-100</li>
-<li><strong>Lines (code):</strong> 102-104</li>
+<li><strong>Lines (comments):</strong> 107-109</li>
+<li><strong>Lines (code):</strong> 111-113</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -6067,6 +6089,23 @@
 <li>$styles</li>
 </ul>
 <div class="sassdoc-item-header">
+<h3 id="mixin-left-cap" tabindex="-1">left-cap()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints left-cap styling</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _callout.scss</li>
+<li><strong>Group:</strong> callout</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 115-115</li>
+<li><strong>Lines (code):</strong> 117-130</li>
+</ul>
+</details>
+<div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -6079,14 +6118,15 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 106-108</li>
-<li><strong>Lines (code):</strong> 110-151</li>
+<li><strong>Lines (comments):</strong> 132-134</li>
+<li><strong>Lines (code):</strong> 136-169</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
+<li><a href="/sass/components/callout/#mixin-left-cap">left-cap()</a></li>
 <li><a href="/sass/components/accordion/#function-get">get()</a></li>
 <li>$styles</li>
 </ul>
@@ -6104,8 +6144,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 89-91</li>
-<li><strong>Lines (code):</strong> 93-96</li>
+<li><strong>Lines (comments):</strong> 98-100</li>
+<li><strong>Lines (code):</strong> 102-105</li>
 </ul>
 </details>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
