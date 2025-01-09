@@ -32,7 +32,8 @@ sassdocGroupName: color
   
 
 The color palette map, can be extended or modified with set() and accessed with get()
-Note do not use names that start with "--" as those are reserved for custom-properties (pass through) also "inherit" is reserved.
+- Note do not use names that start with "var(" which are reserved for custom properties. Also do not use "inherit" or "transparent" as those are reserved.
+- The default palette color names are used throughout the system
     
     
 
@@ -79,8 +80,8 @@ $palette: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 13-15
-- **Lines (code):** 17-48
+- **Lines (comments):** 13-16
+- **Lines (code):** 18-49
 
 </details>
 
@@ -126,8 +127,8 @@ $contexts: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 50-54
-- **Lines (code):** 56-67
+- **Lines (comments):** 51-55
+- **Lines (code):** 57-68
 
 </details>
 
@@ -158,6 +159,7 @@ $contexts: (
   
 
 Palette entries that are output as classes when using all-color-class-styles
+- Use set-color-classes mixin to alter this map
     
     
 
@@ -177,8 +179,8 @@ $color-classes: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 69-69
-- **Lines (code):** 70-74
+- **Lines (comments):** 70-71
+- **Lines (code):** 72-76
 
 </details>
 
@@ -213,8 +215,8 @@ Used to override or extend the color palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 76-82
-- **Lines (code):** 84-86
+- **Lines (comments):** 78-84
+- **Lines (code):** 86-88
 
 </details>
 
@@ -264,7 +266,7 @@ Setting the error and type color
 
   
 
-Set ouput classes for all-color-class-styles
+Set output classes for all-color-class-styles
     
     
 
@@ -275,8 +277,8 @@ Set ouput classes for all-color-class-styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 108-109
-- **Lines (code):** 111-113
+- **Lines (comments):** 110-111
+- **Lines (code):** 113-115
 
 </details>
 
@@ -320,8 +322,8 @@ Set color contexts
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 120-130
-- **Lines (code):** 132-134
+- **Lines (comments):** 124-134
+- **Lines (code):** 136-138
 
 </details>
 
@@ -387,8 +389,8 @@ Prints contexts styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 159-160
-- **Lines (code):** 162-168
+- **Lines (comments):** 163-164
+- **Lines (code):** 166-172
 
 </details>
 
@@ -434,8 +436,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 192-199
-- **Lines (code):** 201-210
+- **Lines (comments):** 196-203
+- **Lines (code):** 205-214
 
 </details>
 
@@ -519,8 +521,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 212-216
-- **Lines (code):** 218-227
+- **Lines (comments):** 216-220
+- **Lines (code):** 222-231
 
 </details>
 
@@ -595,8 +597,8 @@ Get a color from the palette by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 88-90
-- **Lines (code):** 92-106
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-108
 
 </details>
 
@@ -616,13 +618,50 @@ Get a color from the palette by name
 
 |Type|Description|
 |:--|:--|
-|Color|Note if non-string value is passed it is sent back through, along with custom properties and keyword inherit|
+|Color|Note if non-string value is passed it is sent back through, along with custom properties ("var(..." and keywords inherit and transparent. This is by design so that you can always pass a user's colors through this (without having to check if it's a color value or a string [color palette])|
 
     
 
 #### Require
 
 - require-map-get()
+- [$palette](/sass/core/color/#variable-palette)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  exists() {#function-exists}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Check if a color is set in the palette
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comments):** 117-117
+- **Lines (code):** 119-122
+
+</details>
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
 - [$palette](/sass/core/color/#variable-palette)
   
 
@@ -650,8 +689,8 @@ Get a context by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 136-138
-- **Lines (code):** 140-142
+- **Lines (comments):** 140-142
+- **Lines (code):** 144-146
 
 </details>
 
@@ -705,8 +744,8 @@ Get a context's value'
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 144-147
-- **Lines (code):** 149-157
+- **Lines (comments):** 148-151
+- **Lines (code):** 153-161
 
 </details>
 
@@ -761,8 +800,8 @@ Lighten a color using the default white by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 170-175
-- **Lines (code):** 177-179
+- **Lines (comments):** 174-179
+- **Lines (code):** 181-183
 - **Author:** 
 
 </details>
@@ -823,8 +862,8 @@ Darken a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 181-186
-- **Lines (code):** 188-190
+- **Lines (comments):** 185-190
+- **Lines (code):** 192-194
 - **Author:** Kitty Giraudel
 
 </details>

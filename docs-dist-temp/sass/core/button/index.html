@@ -5934,7 +5934,7 @@
   <span class="pjs-token pjs-string">"transition-enabled"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"transition-duration"</span><span class="pjs-token pjs-punctuation">:</span>     200ms<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"transition-properties"</span><span class="pjs-token pjs-punctuation">:</span>   <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
 <ul>
@@ -5952,6 +5952,7 @@
 <th style="text-align:left">Name</th>
 <th style="text-align:left">Type</th>
 <th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
@@ -5959,167 +5960,202 @@
 <td style="text-align:left">active-selector</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;&amp;.is-active&quot;</td>
+<td style="text-align:left">The selector that determines if a button is active</td>
 </tr>
 <tr>
 <td style="text-align:left">box-shadow</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">true</td>
+<td style="text-align:left">Specify box shadow for default button. Default true will fallback to element &quot;box-shadow&quot;</td>
 </tr>
 <tr>
 <td style="text-align:left">line-height</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">1.1</td>
+<td style="text-align:left">Line height for button</td>
 </tr>
 <tr>
 <td style="text-align:left">letter-spacing</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">0.02em</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">margin</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">(0.45em 0.5em 0.45em 0)</td>
+<td style="text-align:left">Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline</td>
 </tr>
 <tr>
 <td style="text-align:left">min-width</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">9rem</td>
+<td style="text-align:left">The smallest width for all buttons</td>
 </tr>
 <tr>
 <td style="text-align:left">padding</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">(0.75em 1.5em)</td>
+<td style="text-align:left">Button inner padding value, pass space separated list</td>
 </tr>
 <tr>
 <td style="text-align:left">white-space</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">nowrap</td>
+<td style="text-align:left">Adjust button line wrapping, by default line's are not wrapped</td>
 </tr>
 <tr>
 <td style="text-align:left">border-color</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-border&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">border-color-active</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-border-active&quot;</td>
+<td style="text-align:left">The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.</td>
 </tr>
 <tr>
 <td style="text-align:left">border-color-hover</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-border-hover&quot;</td>
+<td style="text-align:left">Color of border when button is hovered</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color-active</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-border-active&quot;</td>
+<td style="text-align:left">Color of border when a button has active class</td>
 </tr>
 <tr>
 <td style="text-align:left">border-radius</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">2rem</td>
+<td style="text-align:left">Border Radius for button</td>
 </tr>
 <tr>
 <td style="text-align:left">border-width</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">1px</td>
+<td style="text-align:left">Width of button border</td>
 </tr>
 <tr>
 <td style="text-align:left">background-color</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-background&quot;</td>
+<td style="text-align:left">Background color of button</td>
 </tr>
 <tr>
 <td style="text-align:left">background-color-hover</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-background-hover&quot;</td>
+<td style="text-align:left">Background color of button when hovered</td>
 </tr>
 <tr>
 <td style="text-align:left">background-color-active</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-background-active&quot;</td>
+<td style="text-align:left">Background color of button when active</td>
 </tr>
 <tr>
 <td style="text-align:left">color</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control&quot;</td>
+<td style="text-align:left">Text color of button</td>
 </tr>
 <tr>
 <td style="text-align:left">color-hover</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-hover&quot;</td>
+<td style="text-align:left">Text color of button when hovered</td>
 </tr>
 <tr>
 <td style="text-align:left">color-active</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;control-active&quot;</td>
+<td style="text-align:left">Text color of button when active</td>
 </tr>
 <tr>
 <td style="text-align:left">font-family</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">inherit</td>
+<td style="text-align:left">Font family for button</td>
 </tr>
 <tr>
 <td style="text-align:left">font-weight</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">bold</td>
+<td style="text-align:left">Font weight for button</td>
 </tr>
 <tr>
 <td style="text-align:left">font-size</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;base&quot;</td>
+<td style="text-align:left">Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes</td>
 </tr>
 <tr>
 <td style="text-align:left">icon-size</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">2.5rem</td>
+<td style="text-align:left">The size of a button when used with an icon</td>
 </tr>
 <tr>
 <td style="text-align:left">icon-font-size</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">1.38rem</td>
+<td style="text-align:left">The font size for the icon when a button is an icon button</td>
 </tr>
 <tr>
 <td style="text-align:left">icon-border-radius</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">50%</td>
+<td style="text-align:left">The border radius of a icon button (defaults to 50% circle)</td>
 </tr>
 <tr>
 <td style="text-align:left">text-shadow</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">none</td>
+<td style="text-align:left">Text shadow for button</td>
 </tr>
 <tr>
 <td style="text-align:left">text-transform</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">none</td>
+<td style="text-align:left">Text transform for button</td>
 </tr>
 <tr>
 <td style="text-align:left">text-decoration</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">none</td>
+<td style="text-align:left">Text decoration of button</td>
 </tr>
 <tr>
 <td style="text-align:left">transition-enabled</td>
 <td style="text-align:left">Boolean</td>
 <td style="text-align:left">true</td>
+<td style="text-align:left">Whether or not to enable transitions on button properties like background-color, color, border color as they change state</td>
 </tr>
 <tr>
 <td style="text-align:left">transition-duration</td>
 <td style="text-align:left">Time</td>
 <td style="text-align:left">200ms</td>
+<td style="text-align:left">The duration of the button's transition if enabled</td>
 </tr>
 <tr>
 <td style="text-align:left">transition-properties</td>
 <td style="text-align:left">List</td>
 <td style="text-align:left">(border-color, background-color, color, box-shadow)</td>
+<td style="text-align:left">The properties to transition if <code>transition-enabled</code></td>
 </tr>
 </tbody>
 </table>
 <div class="sassdoc-item-header">
 <h3 id="variable-sizes" tabindex="-1">$sizes</h3>
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 </div>
-<p>Button sizes
-@type Map</p>
+<p>Button sizes</p>
+<ul>
+<li>A map that holds to the sizes for buttons in the theme</li>
+<li>Use set-sizes() to adjust the sizes for the theme</li>
+<li>Don't edit sizes variable directly</li>
+</ul>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$sizes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
     <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-punctuation">(</span>0.35em 1.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
@@ -6139,8 +6175,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 89-90</li>
-<li><strong>Lines (code):</strong> 91-104</li>
+<li><strong>Lines (comments):</strong> 89-93</li>
+<li><strong>Lines (code):</strong> 94-107</li>
 </ul>
 </details>
 <div class="sassdoc-item-header">
@@ -6150,6 +6186,10 @@
   </div>
 </div>
 <p>Button styles</p>
+<ul>
+<li>A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles</li>
+<li>Don't edit styles variable directly</li>
+</ul>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$styles</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"transparent"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
     <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
@@ -6178,8 +6218,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 106-107</li>
-<li><strong>Lines (code):</strong> 109-130</li>
+<li><strong>Lines (comments):</strong> 109-112</li>
+<li><strong>Lines (code):</strong> 114-135</li>
 </ul>
 </details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -6196,8 +6236,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 132-135</li>
-<li><strong>Lines (code):</strong> 137-139</li>
+<li><strong>Lines (comments):</strong> 137-140</li>
+<li><strong>Lines (code):</strong> 142-144</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -6231,14 +6271,17 @@
   </div>
 </div>
 <p>Set button styles</p>
+<ul>
+<li>See $styles for example of structure of map</li>
+</ul>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 151-153</li>
-<li><strong>Lines (code):</strong> 155-157</li>
+<li><strong>Lines (comments):</strong> 156-159</li>
+<li><strong>Lines (code):</strong> 161-163</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -6275,14 +6318,17 @@
   </div>
 </div>
 <p>Set Button Sizes</p>
+<ul>
+<li>See $sizes for example of structure of map</li>
+</ul>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 159-161</li>
-<li><strong>Lines (code):</strong> 163-165</li>
+<li><strong>Lines (comments):</strong> 165-168</li>
+<li><strong>Lines (code):</strong> 170-172</li>
 </ul>
 </details>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
@@ -6318,15 +6364,15 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Print styles to reset browser button style</p>
+<p>Reset CSS for button (to change browser defaults for button styling)</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 167-167</li>
-<li><strong>Lines (code):</strong> 169-180</li>
+<li><strong>Lines (comments):</strong> 174-174</li>
+<li><strong>Lines (code):</strong> 176-187</li>
 </ul>
 </details>
 <div class="sassdoc-item-header">
@@ -6335,15 +6381,15 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Print default button styles</p>
+<p>Output the default button styles</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 182-183</li>
-<li><strong>Lines (code):</strong> 185-242</li>
+<li><strong>Lines (comments):</strong> 189-190</li>
+<li><strong>Lines (code):</strong> 192-249</li>
 </ul>
 </details>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -6378,16 +6424,26 @@
   </div>
 </div>
 <p>Mixin to wrap in active selectors</p>
+<ul>
+<li>Use to match the button's active selector</li>
+</ul>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 244-244</li>
-<li><strong>Lines (code):</strong> 245-249</li>
+<li><strong>Lines (comments):</strong> 251-259</li>
+<li><strong>Lines (code):</strong> 261-265</li>
 </ul>
 </details>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-comment">// Site specific styling for active button</span>
+<span class="pjs-token pjs-selector">.button </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-keyword">@include</span> <span class="pjs-token pjs-function">when-active</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
+    <span class="pjs-token pjs-property">background</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>0.25turn<span class="pjs-token pjs-punctuation">,</span> #3f87a6<span class="pjs-token pjs-punctuation">,</span> #ebf8e1<span class="pjs-token pjs-punctuation">,</span> #f69d3c<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="require-4" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6405,8 +6461,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 251-254</li>
-<li><strong>Lines (code):</strong> 256-266</li>
+<li><strong>Lines (comments):</strong> 267-270</li>
+<li><strong>Lines (code):</strong> 272-282</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -6454,8 +6510,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 298-303</li>
-<li><strong>Lines (code):</strong> 305-316</li>
+<li><strong>Lines (comments):</strong> 314-319</li>
+<li><strong>Lines (code):</strong> 321-332</li>
 </ul>
 </details>
 <h4 id="parameters-5" tabindex="-1">Parameters</h4>
@@ -6501,8 +6557,8 @@
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 318-323</li>
-<li><strong>Lines (code):</strong> 325-331</li>
+<li><strong>Lines (comments):</strong> 334-339</li>
+<li><strong>Lines (code):</strong> 341-347</li>
 </ul>
 </details>
 <h4 id="parameters-6" tabindex="-1">Parameters</h4>
@@ -6551,8 +6607,8 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 341-350</li>
-<li><strong>Lines (code):</strong> 352-368</li>
+<li><strong>Lines (comments):</strong> 357-366</li>
+<li><strong>Lines (code):</strong> 368-384</li>
 </ul>
 </details>
 <h4 id="parameters-7" tabindex="-1">Parameters</h4>
@@ -6605,11 +6661,11 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 141-144</li>
-<li><strong>Lines (code):</strong> 146-149</li>
+<li><strong>Lines (comments):</strong> 146-149</li>
+<li><strong>Lines (code):</strong> 151-154</li>
 </ul>
 </details>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
 <p>General example, replace module-name with module's name</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> module-name.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-8" tabindex="-1">Parameters</h4>
@@ -6648,8 +6704,8 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><strong>File:</strong> _button.scss</li>
 <li><strong>Group:</strong> button</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 268-272</li>
-<li><strong>Lines (code):</strong> 274-296</li>
+<li><strong>Lines (comments):</strong> 284-288</li>
+<li><strong>Lines (code):</strong> 290-312</li>
 </ul>
 </details>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>

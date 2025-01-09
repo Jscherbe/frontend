@@ -23,7 +23,7 @@
 /// @prop {List} box-shadow-raised Box-shadow definition for elements that are raised off of the page (dropdowns, etc)
 /// @prop {String} link-text-decoration
 /// @prop {Color} link-text-decoration-color
-/// @prop {String} link-text-decoration-default Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)
+/// @prop {String} link-text-decoration-default Whether links use underline, remember that removing underline will create an accessibility issue (not relying on color)
 /// @prop {Color} link-text-decoration-color-hover
 /// @prop {Number} link-text-underline-offset
 /// @prop {String} link-text-decoration-style
@@ -44,7 +44,6 @@ $config: (
   "backdrop-color":                   rgba(73, 73, 73, 0.459),
   "list-item-indent" :                1.5em,
   "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
-
   "border-radius":                    6px,
   "border-radius-small":              3px,
   "border-radius-large":              12px,
@@ -93,6 +92,7 @@ $rule-margins: (
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 ///   @include module-name.set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
@@ -143,16 +143,47 @@ $rule-margins: (
   @include rule-style($style-name);
   @include rule-margin($margin-name);
 }
+
+/// Output CSS for a rule's style (not margins
+/// @param {String} $name ["default"] name of rule style
+
 @mixin rule-style($name: "default") {
   border-bottom: get-rule-style($name);
 }
+
+/// Output CSS for a rule's margin
+/// @param {String} $name ["default"] name of rule style
+
 @mixin rule-margin($name:  null) {
   $margin: if($name, get-rule-margin($name), get("margin"));
   margin-top: $margin;
   margin-bottom: $margin;
 }
 
-/// Print link styles
+/// Print the default link styling (no hover and focus styles)
+/// - Default link styling just sets the color and the link-text-decoration-default
+/// - This is usually output at the top of the stylesheet to style the general <a> element
+/// - Use link() mixin to print the full link styling (when used in content/text) which includes the full 
+///   styling (text-decoration, etc)
+/// @param {Boolean} $visited Include visited style
+/// @param {Boolean} $active Include active style
+
+@mixin link-defaults($hover: true, $visited: false) {
+  color: color.get("link");
+  text-decoration: get("link-text-decoration-default");
+  @if ($hover) {
+    &:hover {
+      color: color.get("link-hover");
+    }
+  }
+  @if ($visited) {
+    &:visited {
+      color: color.get("link-visited");
+    }
+  }
+}
+
+/// Output link CSS styles (this is the full link styling when used in content/text)
 /// @param {Boolean} $visited Include visited style
 /// @param {Boolean} $active Include active style
 
@@ -176,23 +207,6 @@ $rule-margins: (
   @if ($active) {
     &:active {
       color: color.get("link-active");
-    }
-  }
-}
-
-/// Print the defautl link styling (no hover and focus styles)
-
-@mixin link-defaults($hover: true, $visited: false) {
-  color: color.get("link");
-  text-decoration: get("link-text-decoration-default");
-  @if ($hover) {
-    &:hover {
-      color: color.get("link-hover");
-    }
-  }
-  @if ($visited) {
-    &:visited {
-      color: color.get("link-visited");
     }
   }
 }
@@ -239,7 +253,6 @@ $rule-margins: (
     }
   }
   ul {
-    // margin: get("margin-small") 0;
     list-style-type: get("ul-list-style-type-2") ;
   }
    ul ul {

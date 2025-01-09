@@ -11,7 +11,8 @@
 @use "selector";
 
 /// The color palette map, can be extended or modified with set() and accessed with get()
-/// Note do not use names that start with "--" as those are reserved for custom-properties (pass through) also "inherit" is reserved.
+/// - Note do not use names that start with "var(" which are reserved for custom properties. Also do not use "inherit" or "transparent" as those are reserved.
+/// - The default palette color names are used throughout the system
 /// @type map  
 
 $palette: (
@@ -67,6 +68,7 @@ $contexts: (
 );
 
 /// Palette entries that are output as classes when using all-color-class-styles
+/// - Use set-color-classes mixin to alter this map
 $color-classes: (
   "black" : true,
   "white" : true,
@@ -87,7 +89,7 @@ $color-classes: (
 
 /// Get a color from the palette by name
 /// @param {String} $name Name of color to get
-/// @return {Color} Note if non-string value is passed it is sent back through, along with custom properties and keyword inherit
+/// @return {Color} Note if non-string value is passed it is sent back through, along with custom properties ("var(..." and keywords inherit and transparent. This is by design so that you can always pass a user's colors through this (without having to check if it's a color value or a string [color palette])
 
 @function get($name) {
   // Allow non lookup if the value is already a color (helps with code flow)
@@ -105,12 +107,14 @@ $color-classes: (
   @return $name;
 }
 
-/// Set ouput classes for all-color-class-styles
+/// Set output classes for all-color-class-styles
 /// @param {Map} $changes Map of changes (you can disable defaults this way)
 
 @mixin set-color-classes($changes) {
   $color-classes: map.merge($color-classes, $changes) !global;
 }
+
+/// Check if a color is set in the palette
 
 @function exists($name) {
   $color: map.get($palette, $name);
@@ -149,7 +153,7 @@ $color-classes: (
 @function get-context-value($name, $prop) {
   $context: get-context($name);
   $value: map.get($context, $prop);
-  // Get from pallete by name
+  // Get from palette by name
   @if (meta.type-of($value) == "string") {
     $value: get($value);
   }

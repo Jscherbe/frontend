@@ -25,8 +25,6 @@ $config: (
   "z-index-sticky":    100,
 ) !default;
 
-
-
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 ///   @include module-name.set(( "property" : value ));
@@ -103,8 +101,8 @@ $containers: (
 /// For a given property for every breakpoint in a given container
 /// creates a css calc value that will match the containers side margin
 /// The margin is created via empty space when the container hits the max-width
-/// If passing inlude padding it would be the containers
-/// side (x) + the padding. This accounts for the containers max-width to give an absoute value
+/// If passing include padding it would be the containers
+/// side (x) + the padding. This accounts for the containers max-width to give an absolute value
 /// @param {String} $property Property name to apply the margin value to
 /// @param {String} $name The container name
 /// @param {Boolean} $include-padding [true] Include the containers padding in the margin calculation

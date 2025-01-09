@@ -68,7 +68,7 @@ $config: (
 
 #### Todos
 
-- See about documenting when a component doesn't run through the selecotr module to get it's base classname
+- See about documenting when a component doesn't run through the selectors module to get it's base classname
     
   
 

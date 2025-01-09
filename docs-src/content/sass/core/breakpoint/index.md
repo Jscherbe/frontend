@@ -64,10 +64,10 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|base|Number|16px|Assumed pixel base, can change based on users font settings so this is just o get us in the ballpark). Note this is not the base font size but the user agent's or user's browser preferernce. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)|
-|gap|Number|0.01em|The amount to offset min from max media queries incase you are using both (ie prevent overlap)|
-|null-name|String|"none"|The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property|
-|default|String|"small"|The name of the breakpont that is considered the major change (ie desktop to mobile) used by other modules/components|
+|base|Number|16px|Assumed pixel base, can change based on users font settings so this is just to get us in the ballpark. Note this is not the base font size but the user agent's or user's browser preference. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)|
+|gap|Number|0.01em|The amount to offset min from max media queries incase you are using both (prevent overlap)|
+|null-name|String|"none"|The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property (see breakpoint.embed-for-scripts() or cssvar.declare-breakpoint-sizes()) to pass breakpoints to JS. The js ui/breakpoints.js module provides methods for interacting with breakpoints in JS.|
+|default|String|"small"|The name of the breakpoint that is considered the major change (ie desktop to mobile) used by other modules/components|
 
     
 
@@ -84,10 +84,10 @@ $config: (
 
   
 
-The default breakpoint sizes (targets are not precise, using em's)
+The default breakpoint sizes
 - Map of breakpoints
 - Each property is the breakpoints name
-- Each value is that breakpoints point (set in em)
+- Each value is that breakpoints point (set in em by default)
     
     
 
@@ -107,8 +107,8 @@ $sizes: (
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** variable
-- **Lines (comments):** 43-47
-- **Lines (code):** 49-53
+- **Lines (comments):** 42-46
+- **Lines (code):** 48-52
 
 </details>
 
@@ -202,8 +202,8 @@ Update the breakpoint sizes map
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 55-62
-- **Lines (code):** 64-66
+- **Lines (comments):** 54-61
+- **Lines (code):** 63-65
 
 </details>
 
@@ -232,7 +232,7 @@ Changing the medium breakpoint and adding jumbo
 |Name|Type|Description|Default|
 |:--|:--|:--|:--|
 |$changes|`Map`|A map to merge into the breakpoints map||
-|$merge-mode|`Map`|Merge stradegy see, utils.map-merge options|null|
+|$merge-mode|`Map`|Merge strategy see, utils.map-merge options|null|
 
     
 
@@ -266,8 +266,8 @@ Create a media query that matches the min-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 101-110
-- **Lines (code):** 112-118
+- **Lines (comments):** 103-112
+- **Lines (code):** 114-120
 
 </details>
 
@@ -341,8 +341,8 @@ Create a media query that matches the max-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 120-129
-- **Lines (code):** 131-137
+- **Lines (comments):** 122-131
+- **Lines (code):** 133-139
 
 </details>
 
@@ -416,8 +416,8 @@ Create a media query that matches between two breakpoint sizes
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 139-149
-- **Lines (code):** 151-158
+- **Lines (comments):** 141-151
+- **Lines (code):** 153-160
 
 </details>
 
@@ -482,7 +482,7 @@ Create a media query that matches between two breakpoint sizes
   
 
 Create a media query from a specific size in either direction 
-- This is for mostly programmatic usage, so that a user could pass a breakpoint confiuration in either direction
+- This is for mostly programmatic usage, so that a user could pass a breakpoint configuration that may contain values that go in either direction
 - This way you don't need to repeat conditions (ie if min ... else ...)
     
     
@@ -494,8 +494,8 @@ Create a media query from a specific size in either direction
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 160-170
-- **Lines (code):** 172-184
+- **Lines (comments):** 162-172
+- **Lines (code):** 174-186
 
 </details>
 
@@ -564,8 +564,8 @@ Utility Method for iterating over a map of breakpoints and apply styles
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 187-193
-- **Lines (code):** 195-214
+- **Lines (comments):** 188-195
+- **Lines (code):** 197-215
 
 </details>
 
@@ -592,8 +592,9 @@ Utility Method for iterating over a map of breakpoints and apply styles
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$breakpoints|`String`|A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the|
+|$breakpoints|`String`|A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the code|
 |$options|`String`|A map with options to change the behavior|
+|$options.directionRequired|`Boolean`|Require direction throw error if missing direction|
 
     
 
@@ -623,7 +624,8 @@ Utility Method for iterating over a map of breakpoints and apply styles
 
 Attaches breakpoints to an element pseudo content for access via script
 - Note you can also use cssvar.declare-breakpoints to get a similar implementation with css custom-properties
-- Use with ulu/js/breakpoints. Breakpoints always min-width (upwards) for javascript setup
+- Use with ulu/js/breakpoints (class has options for content property or css custom property)
+- Breakpoints always min-width (upwards) for javascript setup
     
     
 
@@ -634,8 +636,8 @@ Attaches breakpoints to an element pseudo content for access via script
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 216-218
-- **Lines (code):** 220-230
+- **Lines (comments):** 217-220
+- **Lines (code):** 222-232
 
 </details>
 
@@ -735,7 +737,7 @@ $default: breakpoint.get("default");
 
   
 
-Get all breakpoint sizes (ie. $sizes) 
+Get all breakpoint sizes
     
     
 
@@ -746,10 +748,19 @@ Get all breakpoint sizes (ie. $sizes)
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 68-68
-- **Lines (code):** 69-71
+- **Lines (comments):** 67-68
+- **Lines (code):** 70-72
 
 </details>
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Map|Map of breakpoints (equivalent to $sizes)|
 
     
 
@@ -771,7 +782,7 @@ Get all breakpoint sizes (ie. $sizes)
 
   
 
-Get a specific size
+Get a specific breakpoint's raw value/size
     
     
 
@@ -782,8 +793,8 @@ Get a specific size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 73-75
-- **Lines (code):** 76-79
+- **Lines (comments):** 74-76
+- **Lines (code):** 77-80
 
 </details>
 
@@ -826,7 +837,7 @@ Get a specific size
 
   
 
-Get a size's value 
+Get a specific breakpoint's size's value and optionally specify max to get the ending/max value for a breakpoint
     
     
 
@@ -837,8 +848,8 @@ Get a size's value
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-91
+- **Lines (comments):** 82-84
+- **Lines (code):** 86-92
 
 </details>
 
@@ -892,8 +903,8 @@ Check if a specific size exist
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-99
+- **Lines (comments):** 94-96
+- **Lines (code):** 98-101
 
 </details>
 

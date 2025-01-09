@@ -111,8 +111,8 @@ $containers: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 45-47
-- **Lines (code):** 49-58
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-56
 
 </details>
 
@@ -147,8 +147,8 @@ Change modules $config
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 28-30
+- **Lines (code):** 32-34
 
 </details>
 
@@ -194,8 +194,8 @@ Set layout containers
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 60-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 58-61
+- **Lines (code):** 63-65
 
 </details>
 
@@ -242,8 +242,8 @@ ie. \{ top: $containers-padding; }
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 83-87
-- **Lines (code):** 89-101
+- **Lines (comments):** 81-85
+- **Lines (code):** 87-99
 
 </details>
 
@@ -283,8 +283,8 @@ ie. \{ top: $containers-padding; }
 For a given property for every breakpoint in a given container
 creates a css calc value that will match the containers side margin
 The margin is created via empty space when the container hits the max-width
-If passing inlude padding it would be the containers
-side (x) + the padding. This accounts for the containers max-width to give an absoute value
+If passing include padding it would be the containers
+side (x) + the padding. This accounts for the containers max-width to give an absolute value
     
     
 
@@ -295,8 +295,8 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 103-110
-- **Lines (code):** 112-127
+- **Lines (comments):** 101-108
+- **Lines (code):** 110-125
 
 </details>
 
@@ -344,8 +344,8 @@ Print the containers padding properties
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 145-148
-- **Lines (code):** 150-176
+- **Lines (comments):** 143-146
+- **Lines (code):** 148-174
 
 </details>
 
@@ -394,8 +394,8 @@ Print all container styles for a given container
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 194-196
-- **Lines (code):** 198-226
+- **Lines (comments):** 192-194
+- **Lines (code):** 196-224
 
 </details>
 
@@ -442,8 +442,8 @@ Prints clearfix styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 228-228
-- **Lines (code):** 230-241
+- **Lines (comments):** 226-226
+- **Lines (code):** 228-239
 
 </details>
 
@@ -473,8 +473,8 @@ Removes scrollbar with CSS
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 243-243
-- **Lines (code):** 244-250
+- **Lines (comments):** 241-241
+- **Lines (code):** 242-248
 
 </details>
 
@@ -506,8 +506,8 @@ Layout utility for absolute (zero on all sides)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 252-254
-- **Lines (code):** 255-266
+- **Lines (comments):** 250-252
+- **Lines (code):** 253-264
 
 </details>
 
@@ -542,8 +542,8 @@ Get a config option
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 38-40
-- **Lines (code):** 41-43
+- **Lines (comments):** 36-38
+- **Lines (code):** 39-41
 
 </details>
 
@@ -589,8 +589,8 @@ Get a container map
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-81
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-79
 
 </details>
 
@@ -637,8 +637,8 @@ Get a containers padding value
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 129-132
-- **Lines (code):** 134-143
+- **Lines (comments):** 127-130
+- **Lines (code):** 132-141
 
 </details>
 
@@ -685,8 +685,8 @@ Get containers padding X value (side)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 178-180
-- **Lines (code):** 182-184
+- **Lines (comments):** 176-178
+- **Lines (code):** 180-182
 
 </details>
 
@@ -731,8 +731,8 @@ Get containers padding Y value (ends)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 186-188
-- **Lines (code):** 190-192
+- **Lines (comments):** 184-186
+- **Lines (code):** 188-190
 
 </details>
 

@@ -41,7 +41,6 @@ $config: (
   "backdrop-color":                   rgba(73, 73, 73, 0.459),
   "list-item-indent" :                1.5em,
   "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
-
   "border-radius":                    6px,
   "border-radius-small":              3px,
   "border-radius-large":              12px,
@@ -79,7 +78,7 @@ $config: (
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 10-40
-- **Lines (code):** 42-73
+- **Lines (code):** 42-72
 
 </details>
 
@@ -104,7 +103,7 @@ $config: (
 |box-shadow-raised|List|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)||
 |link-text-decoration|String|||
 |link-text-decoration-color|Color|||
-|link-text-decoration-default|String|Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)||
+|link-text-decoration-default|String|Whether links use underline, remember that removing underline will create an accessibility issue (not relying on color)||
 |link-text-decoration-color-hover|Color|||
 |link-text-underline-offset|Number|||
 |link-text-decoration-style|String|||
@@ -154,8 +153,8 @@ $rule-styles: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 75-76
-- **Lines (code):** 78-81
+- **Lines (comments):** 74-75
+- **Lines (code):** 77-80
 
 </details>
 
@@ -195,8 +194,8 @@ $rule-margins: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 83-84
-- **Lines (code):** 86-91
+- **Lines (comments):** 82-83
+- **Lines (code):** 85-90
 
 </details>
 
@@ -231,7 +230,7 @@ Change modules $config
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 93-95
+- **Lines (comments):** 92-94
 - **Lines (code):** 96-98
 
 </details>
@@ -383,10 +382,16 @@ Get full rule CSS (style and margin)
 
     
 
+#### Require
+
+- [rule-style()](/sass/core/element/#mixin-rule-style)
+- [rule-margin()](/sass/core/element/#mixin-rule-margin)
+  
+
 
 <div class="sassdoc-item-header">
 
-###  link() {#mixin-link}
+###  rule-style() {#mixin-rule-style}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -396,7 +401,7 @@ Get full rule CSS (style and margin)
 
   
 
-Print link styles
+Output CSS for a rule's style (not margins
     
     
 
@@ -407,8 +412,103 @@ Print link styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 155-157
-- **Lines (code):** 159-181
+- **Lines (comments):** 147-148
+- **Lines (code):** 150-152
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|$name|`String`|"default"|name of rule style|
+
+    
+
+#### Require
+
+- [get-rule-style()](/sass/core/element/#function-get-rule-style)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  rule-margin() {#mixin-rule-margin}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output CSS for a rule's margin
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comments):** 154-155
+- **Lines (code):** 157-161
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|$name|`String`|"default"|name of rule style|
+
+    
+
+#### Require
+
+- [get-rule-margin()](/sass/core/element/#function-get-rule-margin)
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  link-defaults() {#mixin-link-defaults}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Print the default link styling (no hover and focus styles)
+- Default link styling just sets the color and the link-text-decoration-default
+- This is usually output at the top of the stylesheet to style the general <a> element
+- Use link() mixin to print the full link styling (when used in content/text) which includes the full 
+  styling (text-decoration, etc)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comments):** 163-169
+- **Lines (code):** 171-184
 
 </details>
 
@@ -432,7 +532,7 @@ Print link styles
 
 <div class="sassdoc-item-header">
 
-###  link-defaults() {#mixin-link-defaults}
+###  link() {#mixin-link}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -442,7 +542,7 @@ Print link styles
 
   
 
-Print the defautl link styling (no hover and focus styles)
+Output link CSS styles (this is the full link styling when used in content/text)
     
     
 
@@ -453,10 +553,20 @@ Print the defautl link styling (no hover and focus styles)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 183-183
-- **Lines (code):** 185-198
+- **Lines (comments):** 186-188
+- **Lines (code):** 190-212
 
 </details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$visited|`Boolean`|Include visited style|
+|$active|`Boolean`|Include active style|
 
     
 
@@ -489,8 +599,8 @@ Print the ordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 200-201
-- **Lines (code):** 203-227
+- **Lines (comments):** 214-215
+- **Lines (code):** 217-241
 
 </details>
 
@@ -534,8 +644,8 @@ Print the unordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 229-230
-- **Lines (code):** 232-253
+- **Lines (comments):** 243-244
+- **Lines (code):** 246-266
 
 </details>
 
@@ -579,8 +689,8 @@ Hide text for assistive devices
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 255-260
-- **Lines (code):** 262-280
+- **Lines (comments):** 268-273
+- **Lines (code):** 275-293
 
 </details>
 

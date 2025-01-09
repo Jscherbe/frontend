@@ -5849,10 +5849,16 @@
                     <li><a href="#mixin-rule">rule()</a>
             		</li>
 
-                    <li><a href="#mixin-link">link()</a>
+                    <li><a href="#mixin-rule-style">rule-style()</a>
+            		</li>
+
+                    <li><a href="#mixin-rule-margin">rule-margin()</a>
             		</li>
 
                     <li><a href="#mixin-link-defaults">link-defaults()</a>
+            		</li>
+
+                    <li><a href="#mixin-link">link()</a>
             		</li>
 
                     <li><a href="#mixin-styles-ordered-list">styles-ordered-list()</a>
@@ -5907,7 +5913,6 @@
   <span class="pjs-token pjs-string">"backdrop-color"</span><span class="pjs-token pjs-punctuation">:</span>                   <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>73<span class="pjs-token pjs-punctuation">,</span> 73<span class="pjs-token pjs-punctuation">,</span> 73<span class="pjs-token pjs-punctuation">,</span> 0.459<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"list-item-indent"</span> <span class="pjs-token pjs-punctuation">:</span>                1.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-shadow"</span><span class="pjs-token pjs-punctuation">:</span>                      0 1px 4px <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span>0<span class="pjs-token pjs-punctuation">,</span>0<span class="pjs-token pjs-punctuation">,</span>0.3<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-
   <span class="pjs-token pjs-string">"border-radius"</span><span class="pjs-token pjs-punctuation">:</span>                    6px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius-small"</span><span class="pjs-token pjs-punctuation">:</span>              3px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius-large"</span><span class="pjs-token pjs-punctuation">:</span>              12px<span class="pjs-token pjs-punctuation">,</span>
@@ -5941,7 +5946,7 @@
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> variable</li>
 <li><strong>Lines (comments):</strong> 10-40</li>
-<li><strong>Lines (code):</strong> 42-73</li>
+<li><strong>Lines (code):</strong> 42-72</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -6042,7 +6047,7 @@
 <tr>
 <td style="text-align:left">link-text-decoration-default</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">Whether links use underline, remember that removing underline will create an accessiblity issue (not relying on color)</td>
+<td style="text-align:left">Whether links use underline, remember that removing underline will create an accessibility issue (not relying on color)</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
@@ -6148,8 +6153,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 75-76</li>
-<li><strong>Lines (code):</strong> 78-81</li>
+<li><strong>Lines (comments):</strong> 74-75</li>
+<li><strong>Lines (code):</strong> 77-80</li>
 </ul>
 </details>
 <div class="sassdoc-item-header">
@@ -6171,8 +6176,8 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 83-84</li>
-<li><strong>Lines (code):</strong> 86-91</li>
+<li><strong>Lines (comments):</strong> 82-83</li>
+<li><strong>Lines (code):</strong> 85-90</li>
 </ul>
 </details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -6189,7 +6194,7 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 93-95</li>
+<li><strong>Lines (comments):</strong> 92-94</li>
 <li><strong>Lines (code):</strong> 96-98</li>
 </ul>
 </details>
@@ -6329,24 +6334,116 @@
 </tr>
 </tbody>
 </table>
+<h4 id="require-3" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/element/#mixin-rule-style">rule-style()</a></li>
+<li><a href="/sass/core/element/#mixin-rule-margin">rule-margin()</a></li>
+</ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-link" tabindex="-1">link()</h3>
+<h3 id="mixin-rule-style" tabindex="-1">rule-style()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Print link styles</p>
+<p>Output CSS for a rule's style (not margins</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 155-157</li>
-<li><strong>Lines (code):</strong> 159-181</li>
+<li><strong>Lines (comments):</strong> 147-148</li>
+<li><strong>Lines (code):</strong> 150-152</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">&quot;default&quot;</td>
+<td style="text-align:left">name of rule style</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-4" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/element/#function-get-rule-style">get-rule-style()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-rule-margin" tabindex="-1">rule-margin()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Output CSS for a rule's margin</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _element.scss</li>
+<li><strong>Group:</strong> element</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 154-155</li>
+<li><strong>Lines (code):</strong> 157-161</li>
+</ul>
+</details>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">&quot;default&quot;</td>
+<td style="text-align:left">name of rule style</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/element/#function-get-rule-margin">get-rule-margin()</a></li>
+<li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-link-defaults" tabindex="-1">link-defaults()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Print the default link styling (no hover and focus styles)</p>
+<ul>
+<li>Default link styling just sets the color and the link-text-decoration-default</li>
+<li>This is usually output at the top of the stylesheet to style the general <a> element</li>
+<li>Use link() mixin to print the full link styling (when used in content/text) which includes the full
+styling (text-decoration, etc)</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _element.scss</li>
+<li><strong>Group:</strong> element</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 163-169</li>
+<li><strong>Lines (code):</strong> 171-184</li>
+</ul>
+</details>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6368,28 +6465,50 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-link-defaults" tabindex="-1">link-defaults()</h3>
+<h3 id="mixin-link" tabindex="-1">link()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Print the defautl link styling (no hover and focus styles)</p>
+<p>Output link CSS styles (this is the full link styling when used in content/text)</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 183-183</li>
-<li><strong>Lines (code):</strong> 185-198</li>
+<li><strong>Lines (comments):</strong> 186-188</li>
+<li><strong>Lines (code):</strong> 190-212</li>
 </ul>
 </details>
-<h4 id="require-4" tabindex="-1">Require</h4>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$visited</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Include visited style</td>
+</tr>
+<tr>
+<td style="text-align:left">$active</td>
+<td style="text-align:left"><code>Boolean</code></td>
+<td style="text-align:left">Include active style</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6406,11 +6525,11 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 200-201</li>
-<li><strong>Lines (code):</strong> 203-227</li>
+<li><strong>Lines (comments):</strong> 214-215</li>
+<li><strong>Lines (code):</strong> 217-241</li>
 </ul>
 </details>
-<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6427,7 +6546,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6444,11 +6563,11 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 229-230</li>
-<li><strong>Lines (code):</strong> 232-253</li>
+<li><strong>Lines (comments):</strong> 243-244</li>
+<li><strong>Lines (code):</strong> 246-266</li>
 </ul>
 </details>
-<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6465,7 +6584,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6482,15 +6601,15 @@
 <li><strong>File:</strong> _element.scss</li>
 <li><strong>Group:</strong> element</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 255-260</li>
-<li><strong>Lines (code):</strong> 262-280</li>
+<li><strong>Lines (comments):</strong> 268-273</li>
+<li><strong>Lines (code):</strong> 275-293</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">layout-hidden-visually</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span>
 <span class="pjs-token pjs-comment">// Reset styling</span>
 <span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">layout-hidden-visually</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">)</span></code></pre>
-<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6525,7 +6644,7 @@
 <li><strong>Lines (code):</strong> 104-106</li>
 </ul>
 </details>
-<h4 id="parameters-8" tabindex="-1">Parameters</h4>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6547,7 +6666,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-7" tabindex="-1">Require</h4>
+<h4 id="require-10" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
@@ -6569,7 +6688,7 @@
 <li><strong>Lines (code):</strong> 125-127</li>
 </ul>
 </details>
-<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6586,7 +6705,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-8" tabindex="-1">Require</h4>
+<h4 id="require-11" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/sass/core/element/#variable-rule-styles">$rule-styles</a></li>
@@ -6608,7 +6727,7 @@
 <li><strong>Lines (code):</strong> 132-134</li>
 </ul>
 </details>
-<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6625,7 +6744,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-9" tabindex="-1">Require</h4>
+<h4 id="require-12" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/sass/core/element/#variable-rule-margins">$rule-margins</a></li>

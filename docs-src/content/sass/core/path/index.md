@@ -126,7 +126,7 @@ Set aliases or change defaults
 
   
 
-Get an aliase's path
+Get an aliases path
     
     
 

@@ -20,37 +20,37 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {String} active-selector ["&.is-active"]
-/// @prop {CssValue} box-shadow [true]
-/// @prop {Number} line-height [1.1]
+/// @prop {String} active-selector ["&.is-active"] The selector that determines if a button is active
+/// @prop {CssValue} box-shadow [true] Specify box shadow for default button. Default true will fallback to element "box-shadow"
+/// @prop {Number} line-height [1.1] Line height for button
 /// @prop {Dimension} letter-spacing [0.02em]
-/// @prop {Dimension} margin [(0.45em 0.5em 0.45em 0)]
-/// @prop {Dimension} min-width [9rem]
-/// @prop {Dimension} padding [(0.75em 1.5em)]
-/// @prop {CssValue} white-space [nowrap]
-/// @prop {String} border-color ["control-border"]
-/// @prop {String} border-color-active ["control-border-active"]
-/// @prop {String} border-color-hover ["control-border-hover"]
-/// @prop {Dimension} border-radius [2rem]
-/// @prop {Dimension} border-width [1px]
-/// @prop {String} background-color ["control-background"]
-/// @prop {String} background-color-hover ["control-background-hover"]
-/// @prop {String} background-color-active ["control-background-active"]
-/// @prop {String} color ["control"]
-/// @prop {String} color-hover ["control-hover"]
-/// @prop {String} color-active ["control-active"]
-/// @prop {CssValue} font-family [inherit]
-/// @prop {CssValue} font-weight [bold]
-/// @prop {String} font-size ["base"]
-/// @prop {Dimension} icon-size [2.5rem]
-/// @prop {Dimension} icon-font-size [1.38rem]
-/// @prop {Dimension} icon-border-radius [50%]
-/// @prop {CssValue} text-shadow [none]
-/// @prop {CssValue} text-transform [none]
-/// @prop {CssValue} text-decoration [none]
-/// @prop {Boolean} transition-enabled [true]
-/// @prop {Time} transition-duration [200ms]
-/// @prop {List} transition-properties [(border-color, background-color, color, box-shadow)]
+/// @prop {Dimension} margin [(0.45em 0.5em 0.45em 0)] Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline
+/// @prop {Dimension} min-width [9rem] The smallest width for all buttons
+/// @prop {Dimension} padding [(0.75em 1.5em)] Button inner padding value, pass space separated list
+/// @prop {CssValue} white-space [nowrap] Adjust button line wrapping, by default line's are not wrapped
+/// @prop {String} border-color ["control-border"] The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.
+/// @prop {String} border-color-hover ["control-border-hover"] Color of border when button is hovered
+/// @prop {String} border-color-active ["control-border-active"] Color of border when a button has active class
+/// @prop {Dimension} border-radius [2rem] Border Radius for button
+/// @prop {Dimension} border-width [1px] Width of button border
+/// @prop {String} background-color ["control-background"] Background color of button
+/// @prop {String} background-color-hover ["control-background-hover"] Background color of button when hovered
+/// @prop {String} background-color-active ["control-background-active"] Background color of button when active
+/// @prop {String} color ["control"] Text color of button
+/// @prop {String} color-hover ["control-hover"] Text color of button when hovered
+/// @prop {String} color-active ["control-active"] Text color of button when active
+/// @prop {CssValue} font-family [inherit] Font family for button
+/// @prop {CssValue} font-weight [bold] Font weight for button
+/// @prop {String} font-size ["base"] Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes
+/// @prop {Dimension} icon-size [2.5rem] The size of a button when used with an icon
+/// @prop {Dimension} icon-font-size [1.38rem] The font size for the icon when a button is an icon button
+/// @prop {Dimension} icon-border-radius [50%] The border radius of a icon button (defaults to 50% circle)
+/// @prop {CssValue} text-shadow [none] Text shadow for button
+/// @prop {CssValue} text-transform [none] Text transform for button
+/// @prop {CssValue} text-decoration [none] Text decoration of button
+/// @prop {Boolean} transition-enabled [true] Whether or not to enable transitions on button properties like background-color, color, border color as they change state
+/// @prop {Time} transition-duration [200ms] The duration of the button's transition if enabled
+/// @prop {List} transition-properties [(border-color, background-color, color, box-shadow)] The properties to transition if `transition-enabled` 
 
 $config: (
   "active-selector":         "&.is-active",
@@ -84,12 +84,15 @@ $config: (
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
-  ) !default;
+) !default;
   
-  /// Button sizes
-  /// @type Map
+/// Button sizes
+/// - A map that holds to the sizes for buttons in the theme
+/// - Use set-sizes() to adjust the sizes for the theme
+/// - Don't edit sizes variable directly
+/// @type Map
   
-  $sizes: (
+$sizes: (
   "small" : (
     "padding":        (0.35em 1.5em),
     "min-width":      0,
@@ -104,6 +107,8 @@ $config: (
 ) !default;
 
 /// Button styles
+/// - A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles
+/// - Don't edit styles variable directly
 /// @type Map
 
 $styles: (
@@ -149,6 +154,7 @@ $styles: (
 }
 
 /// Set button styles 
+/// - See $styles for example of structure of map
 /// @param {Map} $changes Map of changes
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
@@ -157,6 +163,7 @@ $styles: (
 }
 
 /// Set Button Sizes
+/// - See $sizes for example of structure of map
 /// @param {Map} $changes Map of changes
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
@@ -164,7 +171,7 @@ $styles: (
   $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
-/// Print styles to reset browser button style
+/// Reset CSS for button (to change browser defaults for button styling)
 
 @mixin reset() {
   text-transform: none;
@@ -179,7 +186,7 @@ $styles: (
   cursor: pointer;
 }
 
-/// Print default button styles
+/// Output the default button styles
 /// @param {Boolean} $with-reset [false] Include button.reset()
 
 @mixin default($with-reset: false) {
@@ -242,6 +249,15 @@ $styles: (
 }
 
 /// Mixin to wrap in active selectors
+/// - Use to match the button's active selector
+/// @example scss
+///   // Site specific styling for active button
+///   .button {
+///     @include when-active() {
+///       background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+///     }
+///   }
+
 @mixin when-active() {
   #{ get("active-selector") } {
     @content;

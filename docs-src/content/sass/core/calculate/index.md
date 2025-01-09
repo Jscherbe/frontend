@@ -95,7 +95,7 @@ Change modules $config
 - **Group:** calculate
 - **Type:** mixin
 - **Lines (comments):** 17-19
-- **Lines (code):** 20-22
+- **Lines (code):** 21-23
 
 </details>
 
@@ -107,7 +107,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include calculate.set(( "property" : value ));|
 
     
 
@@ -140,8 +140,8 @@ Provides user with a fallback for a calc that's just an enhancement
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** mixin
-- **Lines (comments):** 52-55
-- **Lines (code):** 57-64
+- **Lines (comments):** 53-56
+- **Lines (code):** 58-65
 
 </details>
 
@@ -187,8 +187,8 @@ Get a config option
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
-- **Lines (comments):** 24-26
-- **Lines (code):** 28-30
+- **Lines (comments):** 25-27
+- **Lines (code):** 29-31
 
 </details>
 
@@ -200,7 +200,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include calculate.get("property");|
 
     
 
@@ -234,8 +234,8 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
-- **Lines (comments):** 32-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 33-38
+- **Lines (code):** 40-42
 
 </details>
 
@@ -291,8 +291,8 @@ Convert from pixel to em
 - **File:** _calculate.scss
 - **Group:** calculate
 - **Type:** function
-- **Lines (comments):** 43-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 44-47
+- **Lines (code):** 49-51
 
 </details>
 

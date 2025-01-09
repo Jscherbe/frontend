@@ -8,7 +8,7 @@
 
 /// Module Settings
 /// - This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. 
-/// @todo See about documenting when a component doesn't run through the selecotr module to get it's base classname
+/// @todo See about documenting when a component doesn't run through the selectors module to get it's base classname
 /// @type Map
 /// @prop {String} prefix [""] Global prefix for selectors (would be used for classname prefix for example)
 

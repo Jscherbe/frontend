@@ -22,7 +22,7 @@ $aliases: (
   $aliases: map.merge($aliases, $changes) !global;
 }
 
-/// Get an aliase's path
+/// Get an aliases path
 /// @param {String} Name Name of alias
 
 @function get-alias($name) {

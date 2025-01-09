@@ -8,10 +8,10 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} base  [16px] Assumed pixel base, can change based on users font settings so this is just o get us in the ballpark). Note this is not the base font size but the user agent's or user's browser preferernce. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)
-/// @prop {Number} gap  [0.01em] The amount to offset min from max media queries incase you are using both (ie prevent overlap)
-/// @prop {String} null-name ["none"] The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property
-/// @prop {String} default ["small"] The name of the breakpont that is considered the major change (ie desktop to mobile) used by other modules/components
+/// @prop {Number} base  [16px] Assumed pixel base, can change based on users font settings so this is just to get us in the ballpark. Note this is not the base font size but the user agent's or user's browser preference. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)
+/// @prop {Number} gap  [0.01em] The amount to offset min from max media queries incase you are using both (prevent overlap)
+/// @prop {String} null-name ["none"] The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property (see breakpoint.embed-for-scripts() or cssvar.declare-breakpoint-sizes()) to pass breakpoints to JS. The js ui/breakpoints.js module provides methods for interacting with breakpoints in JS.
+/// @prop {String} default ["small"] The name of the breakpoint that is considered the major change (ie desktop to mobile) used by other modules/components
 
 $config: (
   "base":      16px,
@@ -39,11 +39,10 @@ $config: (
   @return utils.require-map-get($config, $name, 'breakpoint [config]');
 }
 
-
-/// The default breakpoint sizes (targets are not precise, using em's)
+/// The default breakpoint sizes
 /// - Map of breakpoints
 /// - Each property is the breakpoints name
-/// - Each value is that breakpoints point (set in em)
+/// - Each value is that breakpoints point (set in em by default)
 /// @type Map
 
 $sizes: (
@@ -59,18 +58,20 @@ $sizes: (
 ///     "jumbo" : 100em
 ///   ));
 /// @param {Map} $changes A map to merge into the breakpoints map
-/// @param {Map} $merge-mode [null] Merge stradegy see, utils.map-merge options
+/// @param {Map} $merge-mode [null] Merge strategy see, utils.map-merge options
 
 @mixin set-sizes($changes, $merge-mode: null) {
   $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
-/// Get all breakpoint sizes (ie. $sizes) 
+/// Get all breakpoint sizes
+/// @return {Map} Map of breakpoints (equivalent to $sizes)
+
 @function get-sizes() {
   @return $sizes;
 }
 
-/// Get a specific size
+/// Get a specific breakpoint's raw value/size
 /// @param {String} $size The name of the size to get
 /// @return {Number} The sizes value
  
@@ -78,7 +79,7 @@ $sizes: (
   @return utils.require-map-get($sizes, $size, "breakpoint size");
 }
 
-/// Get a size's value 
+/// Get a specific breakpoint's size's value and optionally specify max to get the ending/max value for a breakpoint
 /// @param {Boolean} $max [false] Get the max value
 /// @return {Number} The value for the given size
 
@@ -89,6 +90,7 @@ $sizes: (
     @return get-size($size);
   }
 }
+
 /// Check if a specific size exist
 /// @param {String} $name The breakpoint size to check if exists
 /// @return {Boolean} 
@@ -158,7 +160,7 @@ $sizes: (
 }
 
 /// Create a media query from a specific size in either direction 
-/// - This is for mostly programmatic usage, so that a user could pass a breakpoint confiuration in either direction
+/// - This is for mostly programmatic usage, so that a user could pass a breakpoint configuration that may contain values that go in either direction
 /// - This way you don't need to repeat conditions (ie if min ... else ...)
 /// @example scss
 ///   $size: map.get($user-breakpoint, "size");
@@ -183,15 +185,14 @@ $sizes: (
   }
 }
 
-
 /// Utility Method for iterating over a map of breakpoints and apply styles
 /// @example scss
 ///   @include breakpoints.fromEach($breakpoints) using ($props) {
 ///     width: map.get($props, "width");
 ///   }
-/// @param {String} $breakpoints A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the
+/// @param {String} $breakpoints A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the code
 /// @param {String} $options A map with options to change the behavior
-
+/// @param {Boolean} $options.directionRequired Require direction throw error if missing direction
 
 @mixin from-each($breakpoints, $options: ()) {
   $directionRequired: map.get($options, "directionRequired");
@@ -215,7 +216,8 @@ $sizes: (
 
 /// Attaches breakpoints to an element pseudo content for access via script
 /// - Note you can also use cssvar.declare-breakpoints to get a similar implementation with css custom-properties
-/// - Use with ulu/js/breakpoints. Breakpoints always min-width (upwards) for javascript setup
+/// - Use with ulu/js/breakpoints (class has options for content property or css custom property)
+/// - Breakpoints always min-width (upwards) for javascript setup
 
 @mixin embed-for-scripts() {
   &:before {

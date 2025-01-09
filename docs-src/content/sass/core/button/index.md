@@ -68,7 +68,7 @@ $config: (
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
-  );
+);
 ```
   
 
@@ -89,39 +89,39 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|active-selector|String|"&.is-active"|
-|box-shadow|CssValue|true|
-|line-height|Number|1.1|
-|letter-spacing|Dimension|0.02em|
-|margin|Dimension|(0.45em 0.5em 0.45em 0)|
-|min-width|Dimension|9rem|
-|padding|Dimension|(0.75em 1.5em)|
-|white-space|CssValue|nowrap|
-|border-color|String|"control-border"|
-|border-color-active|String|"control-border-active"|
-|border-color-hover|String|"control-border-hover"|
-|border-radius|Dimension|2rem|
-|border-width|Dimension|1px|
-|background-color|String|"control-background"|
-|background-color-hover|String|"control-background-hover"|
-|background-color-active|String|"control-background-active"|
-|color|String|"control"|
-|color-hover|String|"control-hover"|
-|color-active|String|"control-active"|
-|font-family|CssValue|inherit|
-|font-weight|CssValue|bold|
-|font-size|String|"base"|
-|icon-size|Dimension|2.5rem|
-|icon-font-size|Dimension|1.38rem|
-|icon-border-radius|Dimension|50%|
-|text-shadow|CssValue|none|
-|text-transform|CssValue|none|
-|text-decoration|CssValue|none|
-|transition-enabled|Boolean|true|
-|transition-duration|Time|200ms|
-|transition-properties|List|(border-color, background-color, color, box-shadow)|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|active-selector|String|"&.is-active"|The selector that determines if a button is active|
+|box-shadow|CssValue|true|Specify box shadow for default button. Default true will fallback to element "box-shadow"|
+|line-height|Number|1.1|Line height for button|
+|letter-spacing|Dimension|0.02em||
+|margin|Dimension|(0.45em 0.5em 0.45em 0)|Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline|
+|min-width|Dimension|9rem|The smallest width for all buttons|
+|padding|Dimension|(0.75em 1.5em)|Button inner padding value, pass space separated list|
+|white-space|CssValue|nowrap|Adjust button line wrapping, by default line's are not wrapped|
+|border-color|String|"control-border"|The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.|
+|border-color-hover|String|"control-border-hover"|Color of border when button is hovered|
+|border-color-active|String|"control-border-active"|Color of border when a button has active class|
+|border-radius|Dimension|2rem|Border Radius for button|
+|border-width|Dimension|1px|Width of button border|
+|background-color|String|"control-background"|Background color of button|
+|background-color-hover|String|"control-background-hover"|Background color of button when hovered|
+|background-color-active|String|"control-background-active"|Background color of button when active|
+|color|String|"control"|Text color of button|
+|color-hover|String|"control-hover"|Text color of button when hovered|
+|color-active|String|"control-active"|Text color of button when active|
+|font-family|CssValue|inherit|Font family for button|
+|font-weight|CssValue|bold|Font weight for button|
+|font-size|String|"base"|Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes|
+|icon-size|Dimension|2.5rem|The size of a button when used with an icon|
+|icon-font-size|Dimension|1.38rem|The font size for the icon when a button is an icon button|
+|icon-border-radius|Dimension|50%|The border radius of a icon button (defaults to 50% circle)|
+|text-shadow|CssValue|none|Text shadow for button|
+|text-transform|CssValue|none|Text transform for button|
+|text-decoration|CssValue|none|Text decoration of button|
+|transition-enabled|Boolean|true|Whether or not to enable transitions on button properties like background-color, color, border color as they change state|
+|transition-duration|Time|200ms|The duration of the button's transition if enabled|
+|transition-properties|List|(border-color, background-color, color, box-shadow)|The properties to transition if `transition-enabled`|
 
     
 
@@ -131,7 +131,7 @@ $config: (
 ###  $sizes {#variable-sizes}
 
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
   </div>
 
 </div>
@@ -139,7 +139,9 @@ $config: (
   
 
 Button sizes
-  @type Map
+- A map that holds to the sizes for buttons in the theme
+- Use set-sizes() to adjust the sizes for the theme
+- Don't edit sizes variable directly
     
     
 
@@ -167,8 +169,8 @@ $sizes: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 89-90
-- **Lines (code):** 91-104
+- **Lines (comments):** 89-93
+- **Lines (code):** 94-107
 
 </details>
 
@@ -188,6 +190,8 @@ $sizes: (
   
 
 Button styles
+- A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles
+- Don't edit styles variable directly
     
     
 
@@ -224,8 +228,8 @@ $styles: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 106-107
-- **Lines (code):** 109-130
+- **Lines (comments):** 109-112
+- **Lines (code):** 114-135
 
 </details>
 
@@ -260,8 +264,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 132-135
-- **Lines (code):** 137-139
+- **Lines (comments):** 137-140
+- **Lines (code):** 142-144
 
 </details>
 
@@ -309,6 +313,7 @@ General example, replace module-name with module's name
   
 
 Set button styles 
+- See $styles for example of structure of map
     
     
 
@@ -319,8 +324,8 @@ Set button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 151-153
-- **Lines (code):** 155-157
+- **Lines (comments):** 156-159
+- **Lines (code):** 161-163
 
 </details>
 
@@ -356,6 +361,7 @@ Set button styles
   
 
 Set Button Sizes
+- See $sizes for example of structure of map
     
     
 
@@ -366,8 +372,8 @@ Set Button Sizes
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 159-161
-- **Lines (code):** 163-165
+- **Lines (comments):** 165-168
+- **Lines (code):** 170-172
 
 </details>
 
@@ -402,7 +408,7 @@ Set Button Sizes
 
   
 
-Print styles to reset browser button style
+Reset CSS for button (to change browser defaults for button styling)
     
     
 
@@ -413,8 +419,8 @@ Print styles to reset browser button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 167-167
-- **Lines (code):** 169-180
+- **Lines (comments):** 174-174
+- **Lines (code):** 176-187
 
 </details>
 
@@ -433,7 +439,7 @@ Print styles to reset browser button style
 
   
 
-Print default button styles
+Output the default button styles
     
     
 
@@ -444,8 +450,8 @@ Print default button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 182-183
-- **Lines (code):** 185-242
+- **Lines (comments):** 189-190
+- **Lines (code):** 192-249
 
 </details>
 
@@ -481,6 +487,7 @@ Print default button styles
   
 
 Mixin to wrap in active selectors
+- Use to match the button's active selector
     
     
 
@@ -491,12 +498,31 @@ Mixin to wrap in active selectors
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 244-244
-- **Lines (code):** 245-249
+- **Lines (comments):** 251-259
+- **Lines (code):** 261-265
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+// Site specific styling for active button
+.button {
+  @include when-active() {
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  }
+}
+```
+  
+
+
+
+      
 
 #### Require
 
@@ -527,8 +553,8 @@ Print button size styles for a specific size
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 251-254
-- **Lines (code):** 256-266
+- **Lines (comments):** 267-270
+- **Lines (code):** 272-282
 
 </details>
 
@@ -582,8 +608,8 @@ Print a button style's base styles (not hover)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 298-303
-- **Lines (code):** 305-316
+- **Lines (comments):** 314-319
+- **Lines (code):** 321-332
 
 </details>
 
@@ -635,8 +661,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 318-323
-- **Lines (code):** 325-331
+- **Lines (comments):** 334-339
+- **Lines (code):** 341-347
 
 </details>
 
@@ -691,8 +717,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 341-350
-- **Lines (code):** 352-368
+- **Lines (comments):** 357-366
+- **Lines (code):** 368-384
 
 </details>
 
@@ -750,8 +776,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 141-144
-- **Lines (code):** 146-149
+- **Lines (comments):** 146-149
+- **Lines (code):** 151-154
 
 </details>
 
@@ -811,8 +837,8 @@ Get a value from a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 268-272
-- **Lines (code):** 274-296
+- **Lines (comments):** 284-288
+- **Lines (code):** 290-312
 
 </details>
 
