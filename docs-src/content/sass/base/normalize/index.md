@@ -8,7 +8,7 @@ sassdocGroupName: normalize
 
 <div class="type-large">
 
-
+Output base normalize stylesheet
 
 </div>
 
@@ -44,8 +44,8 @@ Prints the normalize stylesheet. Originally based on modern-normalize 1.1.0
 - **File:** _normalize.scss
 - **Group:** normalize
 - **Type:** mixin
-- **Lines (comments):** 9-14
-- **Lines (code):** 16-198
+- **Lines (comments):** 10-15
+- **Lines (code):** 17-199
 
 </details>
 

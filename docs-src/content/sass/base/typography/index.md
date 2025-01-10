@@ -8,7 +8,7 @@ sassdocGroupName: typography
 
 <div class="type-large">
 
-
+Output base typography classes
 
 </div>
 
@@ -31,7 +31,9 @@ sassdocGroupName: typography
 
   
 
-Prints elements base styles
+Prints typography base styles
+- These are any type sizes that specify "base-class" in their configuration
+- Type sizes with "base-class-prefixed" will be prefixed with the "type-" prefix
     
     
 
@@ -42,8 +44,8 @@ Prints elements base styles
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 10-19
-- **Lines (code):** 21-41
+- **Lines (comments):** 11-22
+- **Lines (code):** 24-44
 
 </details>
 

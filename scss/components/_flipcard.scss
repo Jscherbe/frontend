@@ -214,7 +214,7 @@ $config: (
     [data-flipcard-state="open"] & {
       animation: get("anim-back-open") get('anim-duration') get("anim-timing-function") forwards;
       @media (prefers-reduced-motion) {
-        animation: fadeIn 430ms get("anim-timing-function");
+        animation: UluFadeIn 430ms get("anim-timing-function");
       }
     }
   }

@@ -8,7 +8,7 @@ sassdocGroupName: elements
 
 <div class="type-large">
 
-
+Outputs general HTML element styles (body, a, etc)
 
 </div>
 
@@ -52,8 +52,8 @@ $config: (
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** variable
-- **Lines (comments):** 15-20
-- **Lines (code):** 22-27
+- **Lines (comments):** 16-21
+- **Lines (code):** 23-28
 
 </details>
 
@@ -100,8 +100,8 @@ Change modules $config
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 29-32
-- **Lines (code):** 33-35
+- **Lines (comments):** 30-33
+- **Lines (code):** 34-36
 
 </details>
 
@@ -109,11 +109,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.base-elements-set(( "property" : value ));
 ```
   
 
@@ -148,7 +148,7 @@ General example, replace module-name with module's name
 
   
 
-Prints elements base styles
+Output the elements base styles
     
     
 
@@ -159,8 +159,8 @@ Prints elements base styles
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** mixin
-- **Lines (comments):** 46-49
-- **Lines (code):** 51-208
+- **Lines (comments):** 47-50
+- **Lines (code):** 52-203
 
 </details>
 
@@ -214,8 +214,8 @@ Get a config option
 - **File:** _elements.scss
 - **Group:** elements
 - **Type:** function
-- **Lines (comments):** 37-40
-- **Lines (code):** 42-44
+- **Lines (comments):** 38-41
+- **Lines (code):** 43-45
 
 </details>
 
@@ -223,11 +223,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.get("property");
+@include ulu.base-elements-get("property");
 ```
   
 

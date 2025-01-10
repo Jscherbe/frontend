@@ -8,7 +8,7 @@ sassdocGroupName: root
 
 <div class="type-large">
 
-
+Responsible for outputting the base :root custom properties for ulu
 
 </div>
 
@@ -21,7 +21,7 @@ sassdocGroupName: root
 
 <div class="sassdoc-item-header">
 
-###  base-elements-styles() {#mixin-base-elements-styles}
+###  styles() {#mixin-styles}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -31,7 +31,7 @@ sassdocGroupName: root
 
   
 
-Prints elements base styles
+Output custom properties in :root for base stylesheet
     
     
 
@@ -42,7 +42,7 @@ Prints elements base styles
 - **File:** _root.scss
 - **Group:** root
 - **Type:** mixin
-- **Lines (comments):** 9-12
+- **Lines (comments):** 10-12
 - **Lines (code):** 14-20
 
 </details>
@@ -55,12 +55,48 @@ Prints elements base styles
 
 
 ``` scss
-@include ulu.base-elements-styles();
+@include ulu.base-root-styles();
 ```
   
 
 
 
       
+
+#### Require
+
+- [custom-properties()](/sass/base/root/#mixin-custom-properties)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  custom-properties() {#mixin-custom-properties}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output custom properties for ulu
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _root.scss
+- **Group:** root
+- **Type:** mixin
+- **Lines (comments):** 22-22
+- **Lines (code):** 24-28
+
+</details>
+
+    
   
   

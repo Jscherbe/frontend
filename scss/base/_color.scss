@@ -1,11 +1,12 @@
 ////
 /// @group color
+/// Outputs color base classes
 ////
 
 @use "../utils";
 @use "../color";
 
-/// Prints color-context styles as base classes (top of stylesheet)
+/// Outputs color-context styles as base classes (top of stylesheet)
 
 @mixin styles {
   @include utils.file-header('base', 'color');

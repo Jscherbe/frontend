@@ -8,7 +8,7 @@ sassdocGroupName: keyframes
 
 <div class="type-large">
 
-
+Outputs keyframes used in animations for components, etc
 
 </div>
 
@@ -31,7 +31,7 @@ sassdocGroupName: keyframes
 
   
 
-Prints CSS keyframes
+Output ulu CSS keyframes
     
     
 
@@ -42,8 +42,8 @@ Prints CSS keyframes
 - **File:** _keyframes.scss
 - **Group:** keyframes
 - **Type:** mixin
-- **Lines (comments):** 7-9
-- **Lines (code):** 11-168
+- **Lines (comments):** 8-10
+- **Lines (code):** 12-169
 
 </details>
 

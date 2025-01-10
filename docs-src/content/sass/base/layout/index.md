@@ -8,7 +8,7 @@ sassdocGroupName: layout
 
 <div class="type-large">
 
-
+Output base layout styles (containers, flex layout utilities, etc)
 
 </div>
 
@@ -51,8 +51,8 @@ $config: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 10-14
-- **Lines (code):** 16-20
+- **Lines (comments):** 11-15
+- **Lines (code):** 17-21
 
 </details>
 
@@ -98,8 +98,8 @@ Change modules $config
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 22-25
-- **Lines (code):** 26-28
+- **Lines (comments):** 23-26
+- **Lines (code):** 28-30
 
 </details>
 
@@ -107,11 +107,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.base-layout-set(( "property" : value ));
 ```
   
 
@@ -146,7 +146,7 @@ General example, replace module-name with module's name
 
   
 
-Output Styles 
+Output Layout Styles 
     
     
 
@@ -157,8 +157,8 @@ Output Styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 39-39
-- **Lines (code):** 41-102
+- **Lines (comments):** 41-41
+- **Lines (code):** 43-104
 
 </details>
 
@@ -198,8 +198,8 @@ Get a config option
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 30-33
-- **Lines (code):** 35-37
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
 
 </details>
 
@@ -207,11 +207,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.get("property");
+@include ulu.base-layout-get("property");
 ```
   
 

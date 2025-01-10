@@ -8,7 +8,7 @@ sassdocGroupName: color
 
 <div class="type-large">
 
-
+Outputs color base classes
 
 </div>
 
@@ -31,7 +31,7 @@ sassdocGroupName: color
 
   
 
-Prints color-context styles as base classes (top of stylesheet)
+Outputs color-context styles as base classes (top of stylesheet)
     
     
 
@@ -42,8 +42,8 @@ Prints color-context styles as base classes (top of stylesheet)
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 8-8
-- **Lines (code):** 10-13
+- **Lines (comments):** 9-9
+- **Lines (code):** 11-14
 
 </details>
 

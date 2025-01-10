@@ -1,15 +1,15 @@
 ////
 /// @group root
+/// Responsible for outputting the base :root custom properties for ulu
 ////
 
 @use "sass:map";
 
 @use "../utils";
 
-/// Prints elements base styles
-/// @name base-elements-styles
+/// Output custom properties in :root for base stylesheet
 /// @example scss
-///  @include ulu.base-elements-styles();
+///  @include ulu.base-root-styles();
 
 @mixin styles {
   @include utils.file-header('base', 'root');
@@ -18,6 +18,8 @@
     @include custom-properties();
   }
 }
+
+/// Output custom properties for ulu
 
 @mixin custom-properties() {
   --ulu-sticky-top-offset: 0px; // Should be adjusted by user

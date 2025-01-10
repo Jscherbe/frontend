@@ -8,7 +8,7 @@ sassdocGroupName: print
 
 <div class="type-large">
 
-
+Output base print CSS styles
 
 </div>
 
@@ -32,7 +32,7 @@ sassdocGroupName: print
   
 
 Printed Media Stylesheet
-- Note this is a portion of the print styles from the orginal framework
+- Note this is a portion of the print styles from the original framework
   and may be outdated. Most of the styling options have been removed though
     
     
@@ -44,8 +44,8 @@ Printed Media Stylesheet
 - **File:** _print.scss
 - **Group:** print
 - **Type:** mixin
-- **Lines (comments):** 5-9
-- **Lines (code):** 11-48
+- **Lines (comments):** 6-10
+- **Lines (code):** 12-49
 
 </details>
 
@@ -57,7 +57,7 @@ Printed Media Stylesheet
 
 
 ``` scss
-@include ulu.helper-print-styles();
+@include ulu.base-print-styles();
 ```
   
 

@@ -5784,7 +5784,10 @@
             
                 <ol>
                     
-                    <li><a href="#mixin-base-elements-styles">base-elements-styles()</a>
+                    <li><a href="#mixin-styles">styles()</a>
+            		</li>
+
+                    <li><a href="#mixin-custom-properties">custom-properties()</a>
             		</li>
                 </ol>
             		</li>
@@ -5801,27 +5804,49 @@
     <div class="wysiwyg">
       <h1 id="root" tabindex="-1">Root</h1>
 <div class="type-large">
+<p>Responsible for outputting the base :root custom properties for ulu</p>
 </div>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
-<h3 id="mixin-base-elements-styles" tabindex="-1">base-elements-styles()</h3>
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints elements base styles</p>
+<p>Output custom properties in :root for base stylesheet</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _root.scss</li>
 <li><strong>Group:</strong> root</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 9-12</li>
+<li><strong>Lines (comments):</strong> 10-12</li>
 <li><strong>Lines (code):</strong> 14-20</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">base-elements-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">base-root-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/base/root/#mixin-custom-properties">custom-properties()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-custom-properties" tabindex="-1">custom-properties()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Output custom properties for ulu</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _root.scss</li>
+<li><strong>Group:</strong> root</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 22-22</li>
+<li><strong>Lines (code):</strong> 24-28</li>
+</ul>
+</details>
 
     </div>
   </div>

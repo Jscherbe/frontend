@@ -1,5 +1,6 @@
 ////
 /// @group typography
+/// Output base typography classes
 ////
 
 @use "sass:map";
@@ -7,7 +8,9 @@
 @use "../selector";
 @use "../utils";
 
-/// Prints elements base styles
+/// Prints typography base styles
+/// - These are any type sizes that specify "base-class" in their configuration
+/// - Type sizes with "base-class-prefixed" will be prefixed with the "type-" prefix
 /// @example scss
 ///  @include ulu.base-typography-styles();
 /// @example html {preview} Example of type size as base unprefixed

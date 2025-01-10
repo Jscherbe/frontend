@@ -1,16 +1,17 @@
 ////
 /// @group keyframes
+/// Outputs keyframes used in animations for components, etc
 ////
 
 @use "../utils";
 
-/// Prints CSS keyframes
+/// Output ulu CSS keyframes
 /// @example scss
 ///  @include ulu.base-keyframes-styles();
 
 @mixin styles {
   @include utils.file-header('base', 'keyframes');
-  @keyframes fadeIn {
+  @keyframes UluFadeIn {
     0% {
       opacity: 0; 
     }

@@ -1,5 +1,6 @@
 ////
 /// @group elements
+/// Outputs general HTML element styles (body, a, etc)
 ////
 
 @use "sass:map";
@@ -28,22 +29,22 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss - General example
+///   @include ulu.base-elements-set(( "property" : value ));
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.get("property");
+/// @example scss - General example
+///   @include ulu.base-elements-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "element [config]");
 }
 
-/// Prints elements base styles
+/// Output the elements base styles
 /// @name base-elements-styles
 /// @example scss
 ///  @include ulu.base-elements-styles();
@@ -51,12 +52,6 @@ $config: (
 @mixin styles {
 
   @include utils.file-header('base', 'elements');
-  // Core/default css-vars
-  :root {
-    --ulu-sticky-top-offset: 0; // Should be adjusted by user
-    --ulu-sticky-bottom-offset: 0; // Should be adjusted by user
-    --ulu-scrollbar-width: 0; // Needs to be set by JS
-  }
   *,
   ::before,
   ::after {

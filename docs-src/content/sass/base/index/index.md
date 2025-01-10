@@ -8,7 +8,7 @@ sassdocGroupName: index
 
 <div class="type-large">
 
-
+Output all base styles
 
 </div>
 
@@ -57,8 +57,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 26-27
-- **Lines (code):** 29-39
+- **Lines (comments):** 27-28
+- **Lines (code):** 30-40
 
 </details>
 
@@ -93,8 +93,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 41-42
-- **Lines (code):** 44-44
+- **Lines (comments):** 42-43
+- **Lines (code):** 45-45
 
 </details>
 
@@ -130,8 +130,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 46-48
-- **Lines (code):** 50-53
+- **Lines (comments):** 47-49
+- **Lines (code):** 51-54
 
 </details>
 
@@ -176,8 +176,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 55-56
-- **Lines (code):** 58-60
+- **Lines (comments):** 56-57
+- **Lines (code):** 59-61
 
 </details>
 
@@ -221,8 +221,8 @@ Prints all Base styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 62-66
-- **Lines (code):** 68-97
+- **Lines (comments):** 63-67
+- **Lines (code):** 69-98
 
 </details>
 
