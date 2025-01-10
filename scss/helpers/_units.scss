@@ -1,5 +1,6 @@
 ////
 /// @group units
+/// Output unit helper stylesheet
 ////
 
 @use "sass:map";
@@ -18,22 +19,23 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss - General example
+///   @include ulu.helper-units-set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.get("property");
+/// @example scss - General example
+///   @include ulu.helper-units-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "units [config]");
 }
 
-/// Prints all unit helper classes
+/// Output all unit helper classes
 
 @mixin styles {
   @include utils.file-header('helpers', 'leading');
@@ -42,7 +44,8 @@ $config: (
 }
 
 /// Creates the unit classes with all variations (from unit presets)
-/// - This can be used by itself if not outputing .styles() or if you wanted to change the default prefixes
+/// - This can be used by itself if not outputting .styles() or if you wanted to change the default prefixes
+
 @mixin create-property-classes($property, $prefix, $isMargin: false) {
   // On all sides
   #{ $prefix } {
@@ -60,12 +63,6 @@ $config: (
     #{ $prefix }-#{ $side } {
       #{ $full-prop }: units.get(1);
     }
-    // Duplicates utilities, unnessasary
-    // @if ($isMargin) {
-    //   #{ $prefix }-#{ $side }-auto {
-    //     #{ $full-prop }: auto;
-    //   }
-    // }
     @each $name, $value in units.$config {
       #{ $prefix }-#{ $side }-#{ $name } {
         #{ $full-prop }: units.get($name);

@@ -8,7 +8,7 @@ sassdocGroupName: display
 
 <div class="type-large">
 
-
+Output display related helper stylesheet
 
 </div>
 
@@ -32,6 +32,7 @@ sassdocGroupName: display
   
 
 Print utilities helper styles
+- Such as hidden, display-block, hidden-visually, and display helpers that for all breakpoints
     
     
 
@@ -42,8 +43,8 @@ Print utilities helper styles
 - **File:** _display.scss
 - **Group:** display
 - **Type:** mixin
-- **Lines (comments):** 13-15
-- **Lines (code):** 17-72
+- **Lines (comments):** 14-17
+- **Lines (code):** 19-74
 
 </details>
 

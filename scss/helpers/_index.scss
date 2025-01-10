@@ -1,5 +1,6 @@
 ////
-/// @group all
+/// @group index
+/// Outputs helper stylesheets (overriding stylesheets that should be output after base and components)
 ////
 
 @forward "typography" as typography-*;

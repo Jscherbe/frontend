@@ -1,5 +1,6 @@
 ////
 /// @group badge
+/// Outputs badge component stylesheet
 ////
 
 @use "sass:map";
@@ -13,7 +14,7 @@
 /// @prop {Number} color [black] Type color
 /// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
 /// @prop {Number} font-weight [bold] Font weight
-/// @prop {List} sizes [Object] List of other sizes (large by defualt), each size is a map of (width, font-size) 
+/// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
 /// @prop {Number} width [10rem] Width of badge (default size)
 
 $config: (
@@ -33,7 +34,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-badge-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -41,13 +42,13 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-badge-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "badge [config]");
 }
 
-/// Prints badge component styles
+/// Output badge component styles
 /// @example scss
 ///  @include ulu.component-badge-styles();
 /// @example html {preview}

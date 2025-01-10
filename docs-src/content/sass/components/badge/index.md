@@ -8,7 +8,7 @@ sassdocGroupName: badge
 
 <div class="type-large">
 
-
+Outputs badge component stylesheet
 
 </div>
 
@@ -60,8 +60,8 @@ $config: (
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** variable
-- **Lines (comments):** 9-17
-- **Lines (code):** 19-32
+- **Lines (comments):** 10-18
+- **Lines (code):** 20-33
 
 </details>
 
@@ -77,7 +77,7 @@ $config: (
 |color|Number|black|Type color|
 |font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
 |font-weight|Number|bold|Font weight|
-|sizes|List|Object|List of other sizes (large by defualt), each size is a map of (width, font-size)|
+|sizes|List|Object|List of other sizes (large by default), each size is a map of (width, font-size)|
 |width|Number|10rem|Width of badge (default size)|
 
     
@@ -111,8 +111,8 @@ Change modules $config
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 34-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 35-37
+- **Lines (code):** 39-41
 
 </details>
 
@@ -124,7 +124,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-badge-set(( "property" : value ));|
 
     
 
@@ -146,7 +146,7 @@ Change modules $config
 
   
 
-Prints badge component styles
+Output badge component styles
     
     
 
@@ -157,8 +157,8 @@ Prints badge component styles
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 50-64
-- **Lines (code):** 66-126
+- **Lines (comments):** 51-65
+- **Lines (code):** 67-127
 
 </details>
 
@@ -251,8 +251,8 @@ Get a config option
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-49
 
 </details>
 
@@ -264,7 +264,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-badge-get("property");|
 
     
 

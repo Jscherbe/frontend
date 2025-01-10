@@ -1,14 +1,14 @@
 ---
-title: All
-sassdocGroupName: all
+title: Index
+sassdocGroupName: index
 ---
 
 
-# All
+# Index
 
 <div class="type-large">
 
-
+Outputs all component stylesheets, optionally choose to set includes or excludes to narrow down components that are output.
 
 </div>
 
@@ -37,12 +37,50 @@ Default includes, all modules
 
 ``` scss
 $all-includes: (
-  "typography", 
-  "units",
-  "display",
-  "utilities", 
-  "print",
-  "color"
+  "accordion",
+  "adaptive-spacing",
+  "badge",
+  "button",
+  "button-verbose",
+  "callout",
+  "card",
+  "card-grid",
+  "css-icon",
+  "data-grid",
+  "data-table",
+  "fill-context",
+  "flipcard",
+  "flipcard-grid",
+  "form-theme",
+  "horizontal-rule",
+  "image-grid",
+  "links",
+  "list-lines",
+  "list-ordered",
+  "list-unordered",
+  "menu-stack",
+  "modal",
+  "nav-strip",
+  "overlay-section",
+  "pager",
+  "popover",
+  "ratio-box",
+  "rule",
+  "scroll-slider",
+  "skip-link",
+  "slider",
+  "hero",
+  "tabs",
+  "tag",
+  "tile-grid",
+  "tile-button",
+  "tile-grid-overlay",
+  "placeholder-block",
+  "pull-quote",
+  "vignette",
+  "captioned-figure",
+  "spoke-spinner",
+  "wysiwyg",
 );
 ```
   
@@ -52,10 +90,10 @@ $all-includes: (
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** variable
-- **Lines (comments):** 22-23
-- **Lines (code):** 25-32
+- **Lines (comments):** 99-100
+- **Lines (code):** 102-147
 
 </details>
 
@@ -88,10 +126,10 @@ $current-includes: $all-includes;
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** variable
-- **Lines (comments):** 34-35
-- **Lines (code):** 37-37
+- **Lines (comments):** 149-150
+- **Lines (code):** 152-152
 
 </details>
 
@@ -125,10 +163,10 @@ Change default includes (when user prints modules)
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 39-41
-- **Lines (code):** 43-46
+- **Lines (comments):** 154-156
+- **Lines (code):** 158-161
 
 </details>
 
@@ -145,8 +183,8 @@ Change default includes (when user prints modules)
 
 #### Require
 
-- [$all-includes](/sass/helpers/all/#variable-all-includes)
-- [$current-includes](/sass/helpers/all/#variable-current-includes)
+- [$all-includes](/sass/components/index/#variable-all-includes)
+- [$current-includes](/sass/components/index/#variable-current-includes)
   
 
 
@@ -171,10 +209,10 @@ Exclude certain items from includes
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 48-49
-- **Lines (code):** 51-53
+- **Lines (comments):** 163-164
+- **Lines (code):** 166-168
 
 </details>
 
@@ -191,13 +229,13 @@ Exclude certain items from includes
 
 #### Require
 
-- [$current-includes](/sass/helpers/all/#variable-current-includes)
+- [$current-includes](/sass/components/index/#variable-current-includes)
   
 
 
 <div class="sassdoc-item-header">
 
-###  helper-styles() {#mixin-helper-styles}
+###  component-styles() {#mixin-component-styles}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -207,7 +245,7 @@ Exclude certain items from includes
 
   
 
-Prints all Helper styles
+Prints all Components styles
     
     
 
@@ -216,10 +254,10 @@ Prints all Helper styles
   <summary>File Information</summary>
   
 - **File:** _index.scss
-- **Group:** all
+- **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 55-59
-- **Lines (code):** 61-84
+- **Lines (comments):** 170-174
+- **Lines (code):** 176-313
 
 </details>
 
@@ -231,7 +269,7 @@ Prints all Helper styles
 
 
 ``` scss
-@include ulu.helper-styles();
+@include ulu.component-styles();
 ```
   
 
@@ -250,7 +288,7 @@ Prints all Helper styles
 
 #### Require
 
-- [$all-includes](/sass/helpers/all/#variable-all-includes)
+- [$all-includes](/sass/components/index/#variable-all-includes)
   
   
   

@@ -8,7 +8,7 @@ sassdocGroupName: print
 
 <div class="type-large">
 
-
+Output print helper stylesheet
 
 </div>
 
@@ -32,6 +32,7 @@ sassdocGroupName: print
   
 
 Printed Media Styles 
+- Includes (.print-exact, .no-print, .print-only, .print-invert)
     
     
 
@@ -42,8 +43,8 @@ Printed Media Styles
 - **File:** _print.scss
 - **Group:** print
 - **Type:** mixin
-- **Lines (comments):** 5-7
-- **Lines (code):** 9-33
+- **Lines (comments):** 6-9
+- **Lines (code):** 11-35
 
 </details>
 

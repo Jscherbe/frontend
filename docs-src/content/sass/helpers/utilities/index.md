@@ -8,7 +8,7 @@ sassdocGroupName: utilities
 
 <div class="type-large">
 
-
+Output general utility helper classes
 
 </div>
 
@@ -32,6 +32,7 @@ sassdocGroupName: utilities
   
 
 Print utilities helper styles
+- Includes classes like (.crop-margins, .no-scroll-y, .image-full-width, etc)
     
     
 
@@ -42,8 +43,8 @@ Print utilities helper styles
 - **File:** _utilities.scss
 - **Group:** utilities
 - **Type:** mixin
-- **Lines (comments):** 8-10
-- **Lines (code):** 12-112
+- **Lines (comments):** 9-12
+- **Lines (code):** 14-114
 
 </details>
 

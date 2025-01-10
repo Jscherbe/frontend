@@ -8,7 +8,7 @@ sassdocGroupName: accordion
 
 <div class="type-large">
 
-
+Outputs accordion component stylesheet, which can be used with <details> or custom disclosure components
 
 </div>
 
@@ -75,8 +75,8 @@ $config: (
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** variable
-- **Lines (comments):** 17-44
-- **Lines (code):** 46-74
+- **Lines (comments):** 14-41
+- **Lines (code):** 43-71
 
 </details>
 
@@ -92,11 +92,11 @@ $config: (
 |border-color|String|"rule"||
 |border-radius|Number|0|This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.|
 |border-width|Dimension|1px|The width of the borders of the accordions|
-|box-shadow|CssValue|none|Adds a box shadow to the accordion for shading.|
+|box-shadow|CssValue|none|Adds a box shadow to accordion container|
 |margin|Dimension|3rem|text This is the margin above and below the accordion. Multiple Accordions will stack. See margin-between below.|
 |margin-between|Dimension|0|This adds a margin between adjacent accordions. By default, accordions do not have any net margin between each other.|
-|padding-x|Dimension|1.5em|@joe-check This value gives horizontal padding to the accordion.|
-|padding-y|Dimension|1.5em|@joe-check This value gives horizontal padding to the accordion.|
+|padding-x|Dimension|1.5em|Singular value for the left and right padding|
+|padding-y|Dimension|1.5em|Singular value for the top and bottom padding|
 |icon-background-color|Color|transparent|The background color of the icon.|
 |icon-background-color-hover|Color|transparent|The background color of the icon when hovered or focused.|
 |icon-border-radius|Number|50%|The border-radius of the icon.|
@@ -105,7 +105,7 @@ $config: (
 |icon-font-size|Dimension|1.5rem|The font-size of the icon.|
 |icon-size|Dimension|auto|The size of the icon. Used as the base in the flex property.|
 |icon-stroke-width|Dimension|0.15em||
-|summary-background-color|Color|null|@dan fill this in|
+|summary-background-color|Color|null|The background color for the summary (toggle button) of the accordion|
 |summary-color|Color|null|The color of the text in the accordion summary.|
 |summary-color-hover|Color|null|The color of the text in the accordion summary when hovering or focusing on it.|
 |summary-line-height|Dimension|null|Adjusts the line height of the summary element.|
@@ -145,8 +145,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-82
+- **Lines (comments):** 73-75
+- **Lines (code):** 77-79
 
 </details>
 
@@ -191,8 +191,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 92-95
-- **Lines (code):** 97-218
+- **Lines (comments):** 89-92
+- **Lines (code):** 94-215
 
 </details>
 
@@ -259,8 +259,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 84-86
-- **Lines (code):** 88-90
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-87
 
 </details>
 

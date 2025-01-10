@@ -8,8 +8,7 @@ sassdocGroupName: button-verbose
 
 <div class="type-large">
 
-A button that has additional markup (ie. page with description for example)
-- Used on things like linear pagination (up next)
+A button that has additional markup (ie. page with description for example). Used on things like linear pagination (up next).
 
 </div>
 

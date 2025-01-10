@@ -8,7 +8,7 @@ sassdocGroupName: color
 
 <div class="type-large">
 
-
+Output color helper classes
 
 </div>
 
@@ -42,8 +42,8 @@ Prints color-context and color-[name] styles as helper classes (bottom of styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 8-8
-- **Lines (code):** 10-14
+- **Lines (comments):** 9-9
+- **Lines (code):** 11-15
 
 </details>
 

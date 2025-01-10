@@ -8,7 +8,7 @@ sassdocGroupName: typography
 
 <div class="type-large">
 
-
+Output all typography helper classes
 
 </div>
 
@@ -32,6 +32,8 @@ sassdocGroupName: typography
   
 
 Prints Typography Helper styles
+- Outputs all typography sizes that specify "helper-class"
+- Outputs general typography helper classes (.type-bold, .line-height-dense, etc)
     
     
 
@@ -42,8 +44,8 @@ Prints Typography Helper styles
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 10-20
-- **Lines (code):** 22-80
+- **Lines (comments):** 11-23
+- **Lines (code):** 25-83
 
 </details>
 

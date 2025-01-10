@@ -1,8 +1,10 @@
 ////
 /// @group print
+/// Output print helper stylesheet
 ////
 
 /// Printed Media Styles 
+/// - Includes (.print-exact, .no-print, .print-only, .print-invert)
 /// @example scss
 ///  @include ulu.helper-print-styles();
 

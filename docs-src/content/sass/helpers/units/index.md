@@ -8,7 +8,7 @@ sassdocGroupName: units
 
 <div class="type-large">
 
-
+Output unit helper stylesheet
 
 </div>
 
@@ -49,8 +49,8 @@ $config: (
 - **File:** _units.scss
 - **Group:** units
 - **Type:** variable
-- **Lines (comments):** 11-13
-- **Lines (code):** 15-17
+- **Lines (comments):** 12-14
+- **Lines (code):** 16-18
 
 </details>
 
@@ -94,8 +94,8 @@ Change modules $config
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
-- **Lines (comments):** 19-22
-- **Lines (code):** 23-25
+- **Lines (comments):** 20-23
+- **Lines (code):** 25-27
 
 </details>
 
@@ -103,11 +103,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.helper-units-set(( "property" : value ));
 ```
   
 
@@ -142,7 +142,7 @@ General example, replace module-name with module's name
 
   
 
-Prints all unit helper classes
+Output all unit helper classes
     
     
 
@@ -153,8 +153,8 @@ Prints all unit helper classes
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
-- **Lines (comments):** 36-36
-- **Lines (code):** 38-42
+- **Lines (comments):** 38-38
+- **Lines (code):** 40-44
 
 </details>
 
@@ -179,7 +179,7 @@ Prints all unit helper classes
   
 
 Creates the unit classes with all variations (from unit presets)
-- This can be used by itself if not outputing .styles() or if you wanted to change the default prefixes
+- This can be used by itself if not outputting .styles() or if you wanted to change the default prefixes
     
     
 
@@ -190,8 +190,8 @@ Creates the unit classes with all variations (from unit presets)
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
-- **Lines (comments):** 44-45
-- **Lines (code):** 46-75
+- **Lines (comments):** 46-47
+- **Lines (code):** 49-72
 
 </details>
 
@@ -232,8 +232,8 @@ Get a config option
 - **File:** _units.scss
 - **Group:** units
 - **Type:** function
-- **Lines (comments):** 27-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 29-32
+- **Lines (code):** 34-36
 
 </details>
 
@@ -241,11 +241,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.get("property");
+@include ulu.helper-units-get("property");
 ```
   
 

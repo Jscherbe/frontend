@@ -1,5 +1,6 @@
 ////
-/// @group all
+/// @group index
+/// Outputs all component stylesheets, optionally choose to set includes or excludes to narrow down components that are output.
 ////
 
 @forward "accordion" as accordion-*;

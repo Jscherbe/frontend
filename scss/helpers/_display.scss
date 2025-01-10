@@ -1,5 +1,6 @@
 ////
 /// @group display
+/// Output display related helper stylesheet 
 ////
 
 @use "sass:map";
@@ -11,6 +12,7 @@
 @use "../selector";
 
 /// Print utilities helper styles
+/// - Such as hidden, display-block, hidden-visually, and display helpers that for all breakpoints
 /// @example scss
 ///  @include ulu.helper-display-styles();
 

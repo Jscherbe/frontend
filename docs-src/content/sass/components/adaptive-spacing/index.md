@@ -8,7 +8,7 @@ sassdocGroupName: adaptive-spacing
 
 <div class="type-large">
 
-Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+Creates adaptive (changing at breakpoints) in between items (vertical/horizontal layout)
 
 </div>
 
@@ -37,12 +37,12 @@ Module Settings
 
 ``` scss
 $config: (
-  outputMargin: false,
-  outputPadding: true,
-  outputX: true,
-  outputY: true,
-  selectorX: "sides",
-  selectorY: "ends"
+  "outputMargin": false,
+  "outputPadding": true,
+  "outputX": true,
+  "outputY": true,
+  "selectorX": "sides",
+  "selectorY": "ends"
 );
 ```
   
@@ -172,7 +172,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-adaptive-spacing-set(( "property" : value ));|
 
     
 
@@ -240,7 +240,7 @@ Set sizes map
 
   
 
-Prints adaptive spacing component styles
+Outputs adaptive spacing component styles
     
     
 
@@ -321,7 +321,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-adaptive-spacing-get("property");|
 
     
 
