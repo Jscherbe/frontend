@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Get rid of "replace module-name with module's name" when it has been replaced with actual modules name
+  ☐ See about documenting when a component doesn't run through the selectors module to get it's base classname
   ☐ Prepare for new SCSS release
     ☐ Fix nested rules warnings
     ☐ Remove @import

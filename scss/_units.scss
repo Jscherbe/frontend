@@ -1,5 +1,6 @@
 ////
 /// @group units
+/// Manages common spacing values (used by utility classes like margin/padding)
 ////
 
 @use "sass:meta";
@@ -8,7 +9,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} default [1rem] Base unit of measurent
+/// @prop {Number} default [1rem] Base unit of measure
 /// @prop {Number} large [1rem * 2]
 /// @prop {Number} large-x [1rem * 3]
 /// @prop {Number} large-xx [1rem * 4]
@@ -16,12 +17,12 @@
 /// @prop {Number} small-x [1rem * 0.5]
 
 $config: (
-  "default" : 1rem,
-  "large" : 1rem * 2,
-  "large-x" : 1rem * 3,
-  "large-xx" : 1rem * 4,
-  "small" : 1rem * 0.75,
-  "small-x" : 1rem * 0.5,
+  "default":  1rem,
+  "large":    1rem * 2,
+  "large-x":  1rem * 3,
+  "large-xx": 1rem * 4,
+  "small":    1rem * 0.75,
+  "small-x":  1rem * 0.5,
 ) !default;
 
 /// Update the units config

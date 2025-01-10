@@ -1,6 +1,6 @@
 ////
 /// @group typography
-/// @todo Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+/// Manages typography settings, sizes and provides typography related utilities
 ////
 
 @use "sass:map";
@@ -10,7 +10,6 @@
 
 @use "color";
 @use "utils";
-@use "utility";
 @use "calculate";
 @use "breakpoint";
 
@@ -22,7 +21,7 @@
 /// @prop {Number} responsive-change [0.05vw] Amount to scale typography by browser's width (use viewport units)
 /// @prop {Number} scale-steps [5]
 /// @prop {Number} size-ratio [1.8] Font size scale when using preset sizes, ratio mixin)
-/// @prop {Number} size-line-height-ratio [0.97] Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desireable
+/// @prop {Number} size-line-height-ratio [0.97] Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desirable
 /// @prop {Number} font-family [(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)] Default font family
 /// @prop {Number} font-family-monospace [(Menlo, Consolas, Monaco, monospace)] Base font-family for monospace
 /// @prop {CssValue} font-family-sans [(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)]
@@ -39,35 +38,35 @@
 /// @prop {Number} line-height-spaced [1.75]
 
 $config: (
-  "letter-spacing-uppercase" : 0.04em,
-  "margin-bottom":  1em,
-  "margin-top":  null,
-  "responsive-change": 0.05vw, 
-  "scale-steps": 5,
-  "size-ratio": 1.8,
-  "size-line-height-ratio": 0.97,
-  "font-family" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
-  "font-family-monospace" : (Menlo, Consolas, Monaco, monospace),
-  "font-family-sans" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
-  "font-family-serif" : (Cambria, Georgia, serif),
-  "font-size" : 16px, 
-  "font-weight" : inherit,
-  "font-weight-bold" : bold,
-  "font-weight-light" : 300,
-  "font-weight-normal" : normal,
-  "font-weight-semibold" : 600,
-  "line-height" : 1.5,
-  "line-height-dense": 1.3,
-  "line-height-densest": 1.1,
-  "line-height-spaced": 1.75,
-  "max-width" : 60em,
-  "max-width-large" : 75em,
-  "max-width-small" : 45em,
+  "letter-spacing-uppercase": 0.04em,
+  "margin-bottom":            1em,
+  "margin-top":               null,
+  "responsive-change":        0.05vw,
+  "scale-steps":              5,
+  "size-ratio":               1.8,
+  "size-line-height-ratio":   0.97,
+  "font-family":              (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-monospace":    (Menlo, Consolas, Monaco, monospace),
+  "font-family-sans":         (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-serif":        (Cambria, Georgia, serif),
+  "font-size":                16px,
+  "font-weight":              inherit,
+  "font-weight-bold":         bold,
+  "font-weight-light":        300,
+  "font-weight-normal":       normal,
+  "font-weight-semibold":     600,
+  "line-height":              1.5,
+  "line-height-dense":        1.3,
+  "line-height-densest":      1.1,
+  "line-height-spaced":       1.75,
+  "max-width":                60em,
+  "max-width-large":          75em,
+  "max-width-small":          45em,
 ) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include typography.set-options(( "font-size" : 14px ));
+///   @include typography.set(( "font-size" : 14px ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -75,7 +74,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $changes Map of changes
-///   @include typography.set-options(( "font-size" : 14px ));
+///   @include typography.get(( "font-size" : 14px ));
 
 @function get($name) {
   @return utils.require-map-get($config, $name, 'typography [config]');
@@ -124,7 +123,7 @@ $config: (
   }
 }
 
-/// Break word stradegy
+/// Output CSS Break word strategy
 /// @param {Boolean} $force Force words to break (will have unusual breaks)
 
 @mixin word-break($force: false) {
@@ -135,6 +134,7 @@ $config: (
 
 /// Creates a size map 
 /// - This is just an accelerator for creating a size map
+/// - This is opinionated about how sizes are setup, headlines get (margins, bold, headline color) and are base classes while non-headlines are added as helper classes and do not get (margins, bold, color)
 /// - You can pass your own size maps using set-sizes()
 /// @param {Number} $font-size Font size
 /// @param {Number} $line-height Line height
@@ -157,7 +157,10 @@ $config: (
 }
 
 /// Function that returns default sizes
-/// - Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())
+/// - Used to set the sizes initially and 
+/// - You can use this if you've reconfigured typography settings and want to update the default sizes with the new settings
+/// @return {Map} The default typography sizes
+
 @function get-default-sizes() {
   @return (
     "small-x" :       new-size(scale(-2)),
@@ -182,27 +185,37 @@ $config: (
 /// @prop {Number} $size.name.font-size Font size in rems or pixels
 /// @prop {Number} $size.name.line-height Line height (unitless)
 /// @prop {Number} $size.name.responsive Apply responsive sizes
+/// @prop {Number} $size.name.breakpoints Map of breakpoints where each key is breakpoint with map of changes (ie. font-size, etc)  
+/// @prop {Number} $size.name.breakpoints.breakpoint.direction Direction the breakpoint should be applied to (ie. min/max)
 /// @prop {Boolean} $size.name.base-class This style should be included in the base (top can be overridden)
 /// @prop {Boolean} $size.name.helper-class This style should be included in the helpers (overrides)
-/// @todo Add adaptive and use a map of breakpoints and whether it's up or down
-/// @todo Add headlines
 
 $sizes: get-default-sizes() !default;
 
-/// Update the typography presets map
+/// Configure the typography sizes
 /// @param {Map} $changes A map to merge into the color palette
-/// @param {Map} $deep Use deep merge
-/// @param {Map} $overwrite Overwrite the presets completely (cannot be used with deep)
-/// @example scss Setting the error and type color
-///   @include typography.set((
-///     "small" : 0.8rem
-///   ));
+/// @param {Map} $merge-mode [null] Merge strategy see, utils.map-merge options
+/// @example scss - Adjusting the h1 and h2 sizes while keeping pre-existing sizes by using deep merge
+///   @include typography.set-sizes((
+///     "h1" : (
+///       "color" : "accent",
+///       "font-size": 50px,
+///       "margin-top" : null,
+///       "margin-bottom" : 0.5em
+///     ),
+///     "h2" : (
+///       "font-size": 38px,
+///       "color" : blue,
+///       "margin-top" : 2.5em,
+///       "margin-bottom" : 1em,
+///     ),
+///   ), "deep");
 
 @mixin set-sizes($changes, $merge-mode: null) {
   $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
-/// Get a size's map
+/// Get a specific size's settings map
 /// @param {String} $name Name of size
 /// @return {Map} 
 
@@ -229,14 +242,15 @@ $sizes: get-default-sizes() !default;
   }
   $unit: math.unit($line-height);
   @if ($unit == "em") {
-    @return utility.strip-unit($line-height);
+    @return utils.strip-unit($line-height);
   } @else if ($unit == "pixels" or $unit == "rem") {
     $calc: math.div(rem($line-height), rem($font-size));
-    @return utility.strip-unit($calc);
+    @return utils.strip-unit($calc);
   } @else {
     @error "ULU: Unable to convert to unitless line-height for: #{ $line-height }";
   }
 }
+
 /// Print a value from the size and convert it (to appropriate unit for framework)
 /// @param {Map} $size Size's map 
 /// @param {String} $props The property to get
@@ -269,7 +283,6 @@ $sizes: get-default-sizes() !default;
   }
 }
 
-
 /// Get a sizes property value that doesn't need conversion 
 /// - Reason: Will map to default if user set's size prop to true
 /// @param {Map} $size Size's map 
@@ -294,8 +307,8 @@ $sizes: get-default-sizes() !default;
 
 /// Print a typography size (font-size, line-height)
 /// @param {String} $nameOrMap Name to retrieve from sizes map or a unique size map that follows the API
-/// @param {Map} $changes Modifications to be merged into size before using
-/// @param {Boolean} $only-font-size Only print the font size
+/// @param {Map} $changes Modifications to be merged into size before output
+/// @param {Boolean} $only-font-size Only output the font size
 
 @mixin size($name, $changes: false, $only-font-size: null) {
   $size: $name;

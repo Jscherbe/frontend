@@ -1,5 +1,6 @@
 ////
 /// @group selector
+/// This module is used to alter selectors for components
 ////
 
 @use "sass:string";
@@ -7,8 +8,6 @@
 @use "utils";
 
 /// Module Settings
-/// - This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. 
-/// @todo See about documenting when a component doesn't run through the selectors module to get it's base classname
 /// @type Map
 /// @prop {String} prefix [""] Global prefix for selectors (would be used for classname prefix for example)
 
@@ -18,27 +17,35 @@ $config: (
 
 // Map to store class overrides ("button" : "site-button") for example
 $-class-overrides: ();
+
+// Map that stores wildcard entries
 $-class-wildcards: ();
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss - General example
+///   @include selector.set(( "property" : value ));
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.get("property");
+/// @example scss - General example
+///   @include selector.get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "selector [config]");
 }
 
 /// Set the class selector overrides
-/// @param {Map} $changes Changes to merge
+/// - When a component or user module that is using selector module requests a classname any changes passed here will override the default selector
+/// @param {Map} $changes Changes to merge map of classnames to classname change
+/// @example scss - Changing the color-context classname to background and all typography base/utility classes to 'text' using wildcard
+///   @include ulu.selector-set-class-overrides((
+///     "color-context" : "background",
+///     "type*" : "text"
+///   ));
 
 @mixin set-class-overrides($changes) {
   @each $key, $prop in $changes {
@@ -54,11 +61,11 @@ $-class-wildcards: ();
 
 /// Used to allow global prefixing of classes, and also the ability to 
 /// Change a class used in the system (ie. like a component for example)
-/// @param {String} $class The classname to set
+/// @param {String} $class The base classname to get (which is then returned modified if the user has adjusted that specific classname
 
 @function class($class, $name-only: false) {
   // Check if it's a wildcard
-  $wildcard: get-class-wildcard($class);
+  $wildcard: -get-class-wildcard($class);
   $override: map.get($-class-overrides, $class);
   $updated: if($override, $override, if($wildcard, $wildcard, $class));
   $name: "#{ get("prefix") }#{ $updated }";
@@ -69,7 +76,9 @@ $-class-wildcards: ();
   }
 }
 
-@function get-class-wildcard($class) {
+// Internal function to check all wildcards entries for passed class
+
+@function -get-class-wildcard($class) {
   $change: $class;
   @each $key, $prop in $-class-wildcards {
     $index: string.index($class, $key);

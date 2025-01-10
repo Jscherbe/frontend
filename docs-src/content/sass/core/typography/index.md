@@ -8,7 +8,7 @@ sassdocGroupName: typography
 
 <div class="type-large">
 
-
+Manages typography settings, sizes and provides typography related utilities
 
 </div>
 
@@ -37,30 +37,30 @@ Module Settings
 
 ``` scss
 $config: (
-  "letter-spacing-uppercase" : 0.04em,
-  "margin-bottom":  1em,
-  "margin-top":  null,
-  "responsive-change": 0.05vw, 
-  "scale-steps": 5,
-  "size-ratio": 1.8,
-  "size-line-height-ratio": 0.97,
-  "font-family" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
-  "font-family-monospace" : (Menlo, Consolas, Monaco, monospace),
-  "font-family-sans" : (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
-  "font-family-serif" : (Cambria, Georgia, serif),
-  "font-size" : 16px, 
-  "font-weight" : inherit,
-  "font-weight-bold" : bold,
-  "font-weight-light" : 300,
-  "font-weight-normal" : normal,
-  "font-weight-semibold" : 600,
-  "line-height" : 1.5,
-  "line-height-dense": 1.3,
-  "line-height-densest": 1.1,
-  "line-height-spaced": 1.75,
-  "max-width" : 60em,
-  "max-width-large" : 75em,
-  "max-width-small" : 45em,
+  "letter-spacing-uppercase": 0.04em,
+  "margin-bottom":            1em,
+  "margin-top":               null,
+  "responsive-change":        0.05vw,
+  "scale-steps":              5,
+  "size-ratio":               1.8,
+  "size-line-height-ratio":   0.97,
+  "font-family":              (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-monospace":    (Menlo, Consolas, Monaco, monospace),
+  "font-family-sans":         (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-serif":        (Cambria, Georgia, serif),
+  "font-size":                16px,
+  "font-weight":              inherit,
+  "font-weight-bold":         bold,
+  "font-weight-light":        300,
+  "font-weight-normal":       normal,
+  "font-weight-semibold":     600,
+  "line-height":              1.5,
+  "line-height-dense":        1.3,
+  "line-height-densest":      1.1,
+  "line-height-spaced":       1.75,
+  "max-width":                60em,
+  "max-width-large":          75em,
+  "max-width-small":          45em,
 );
 ```
   
@@ -72,8 +72,8 @@ $config: (
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 17-39
-- **Lines (code):** 41-66
+- **Lines (comments):** 16-38
+- **Lines (code):** 40-65
 
 </details>
 
@@ -90,7 +90,7 @@ $config: (
 |responsive-change|Number|0.05vw|Amount to scale typography by browser's width (use viewport units)|
 |scale-steps|Number|5||
 |size-ratio|Number|1.8|Font size scale when using preset sizes, ratio mixin)|
-|size-line-height-ratio|Number|0.97|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desireable|
+|size-line-height-ratio|Number|0.97|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desirable|
 |font-family|Number|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)|Default font family|
 |font-family-monospace|Number|(Menlo, Consolas, Monaco, monospace)|Base font-family for monospace|
 |font-family-sans|CssValue|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)||
@@ -106,11 +106,6 @@ $config: (
 |line-height-densest|Number|1.1||
 |line-height-spaced|Number|1.75||
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 
@@ -142,8 +137,8 @@ $sizes: get-default-sizes();
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 179-188
-- **Lines (code):** 190-190
+- **Lines (comments):** 182-191
+- **Lines (code):** 193-193
 
 </details>
 
@@ -158,15 +153,11 @@ $sizes: get-default-sizes();
 |$size.name.font-size|Number|Font size in rems or pixels|
 |$size.name.line-height|Number|Line height (unitless)|
 |$size.name.responsive|Number|Apply responsive sizes|
+|$size.name.breakpoints|Number|Map of breakpoints where each key is breakpoint with map of changes (ie. font-size, etc)|
+|$size.name.breakpoints.breakpoint.direction|Number|Direction the breakpoint should be applied to (ie. min/max)|
 |$size.name.base-class|Boolean|This style should be included in the base (top can be overridden)|
 |$size.name.helper-class|Boolean|This style should be included in the helpers (overrides)|
 
-    
-
-#### Todos
-
-- Add adaptive and use a map of breakpoints and whether it's up or down
-- Add headlines
     
   
 
@@ -198,8 +189,8 @@ Change modules $config
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 68-70
-- **Lines (code):** 72-74
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-73
 
 </details>
 
@@ -211,13 +202,8 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include typography.set-options(( "font-size" : 14px ));|
+  @include typography.set(( "font-size" : 14px ));|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -238,7 +224,7 @@ Change modules $config
 
   
 
-Break word stradegy
+Output CSS Break word strategy
     
     
 
@@ -249,8 +235,8 @@ Break word stradegy
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 127-128
-- **Lines (code):** 130-134
+- **Lines (comments):** 126-127
+- **Lines (code):** 129-133
 
 </details>
 
@@ -263,11 +249,6 @@ Break word stradegy
 |:--|:--|:--|
 |$force|`Boolean`|Force words to break (will have unusual breaks)|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 
@@ -283,7 +264,7 @@ Break word stradegy
 
   
 
-Update the typography presets map
+Configure the typography sizes
     
     
 
@@ -294,8 +275,8 @@ Update the typography presets map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 192-199
-- **Lines (code):** 201-203
+- **Lines (comments):** 195-212
+- **Lines (code):** 214-216
 
 </details>
 
@@ -303,13 +284,24 @@ Update the typography presets map
 
 #### Examples
 
-Setting the error and type color      
+Adjusting the h1 and h2 sizes while keeping pre-existing sizes by using deep merge      
 
 
 ``` scss
-@include typography.set((
-  "small" : 0.8rem
-));
+@include typography.set-sizes((
+  "h1" : (
+    "color" : "accent",
+    "font-size": 50px,
+    "margin-top" : null,
+    "margin-bottom" : 0.5em
+  ),
+  "h2" : (
+    "font-size": 38px,
+    "color" : blue,
+    "margin-top" : 2.5em,
+    "margin-bottom" : 1em,
+  ),
+), "deep");
 ```
   
 
@@ -320,17 +312,11 @@ Setting the error and type color
 #### Parameters
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$changes|`Map`|A map to merge into the color palette|
-|$deep|`Map`|Use deep merge|
-|$overwrite|`Map`|Overwrite the presets completely (cannot be used with deep)|
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|$changes|`Map`|A map to merge into the color palette||
+|$merge-mode|`Map`|Merge strategy see, utils.map-merge options|null|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -363,8 +349,8 @@ Print's the responsive type formula
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 287-289
-- **Lines (code):** 291-293
+- **Lines (comments):** 300-302
+- **Lines (code):** 304-306
 
 </details>
 
@@ -378,11 +364,6 @@ Print's the responsive type formula
 |$font-size|`String`|Name to retrieve from sizes map or a unique size map that follows the API|
 |$changes|`Map`|Modifications to be merged into size before using|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 
@@ -409,8 +390,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 295-298
-- **Lines (code):** 300-341
+- **Lines (comments):** 308-311
+- **Lines (code):** 313-354
 
 </details>
 
@@ -422,14 +403,9 @@ Print a typography size (font-size, line-height)
 |Name|Type|Description|
 |:--|:--|:--|
 |$nameOrMap|`String`|Name to retrieve from sizes map or a unique size map that follows the API|
-|$changes|`Map`|Modifications to be merged into size before using|
-|$only-font-size|`Boolean`|Only print the font size|
+|$changes|`Map`|Modifications to be merged into size before output|
+|$only-font-size|`Boolean`|Only output the font size|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -470,8 +446,8 @@ Get a config option
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-82
+- **Lines (comments):** 75-77
+- **Lines (code):** 79-81
 
 </details>
 
@@ -483,13 +459,8 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include typography.set-options(( "font-size" : 14px ));|
+  @include typography.get(( "font-size" : 14px ));|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -522,8 +493,8 @@ Get scale of the base font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 84-86
-- **Lines (code):** 88-90
+- **Lines (comments):** 83-85
+- **Lines (code):** 87-89
 
 </details>
 
@@ -545,11 +516,6 @@ Get scale of the base font-size
 |:--|:--|
 |Number|Scaled value|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -582,8 +548,8 @@ Get scale of the line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 92-95
-- **Lines (code):** 97-99
+- **Lines (comments):** 91-94
+- **Lines (code):** 96-98
 
 </details>
 
@@ -642,8 +608,8 @@ Convert pixel value to rem value based on typography $font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 101-103
-- **Lines (code):** 105-111
+- **Lines (comments):** 100-102
+- **Lines (code):** 104-110
 
 </details>
 
@@ -665,11 +631,6 @@ Convert pixel value to rem value based on typography $font-size
 |:--|:--|
 |Number|Rem value|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -701,8 +662,8 @@ Changes pixels to em
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 113-116
-- **Lines (code):** 118-125
+- **Lines (comments):** 112-115
+- **Lines (code):** 117-124
 
 </details>
 
@@ -727,11 +688,6 @@ Changes pixels to em
 
     
 
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
-    
-
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
@@ -752,6 +708,7 @@ Changes pixels to em
 
 Creates a size map 
 - This is just an accelerator for creating a size map
+- This is opinionated about how sizes are setup, headlines get (margins, bold, headline color) and are base classes while non-headlines are added as helper classes and do not get (margins, bold, color)
 - You can pass your own size maps using set-sizes()
     
     
@@ -763,7 +720,7 @@ Creates a size map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 136-141
+- **Lines (comments):** 135-141
 - **Lines (code):** 143-157
 
 </details>
@@ -779,11 +736,6 @@ Creates a size map
 |$line-height|`Number`|Line height|
 |$is-headline|`Boolean`|Is a headline|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -805,7 +757,8 @@ Creates a size map
   
 
 Function that returns default sizes
-- Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())
+- Used to set the sizes initially and 
+- You can use this if you've reconfigured typography settings and want to update the default sizes with the new settings
     
     
 
@@ -816,16 +769,20 @@ Function that returns default sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 159-160
-- **Lines (code):** 161-177
+- **Lines (comments):** 159-162
+- **Lines (code):** 164-180
 
 </details>
 
     
 
-#### Todos
+#### Returns
 
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
+
+|Type|Description|
+|:--|:--|
+|Map|The default typography sizes|
+
     
 
 #### Require
@@ -848,7 +805,7 @@ Function that returns default sizes
 
   
 
-Get a size's map
+Get a specific size's settings map
     
     
 
@@ -859,8 +816,8 @@ Get a size's map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 205-207
-- **Lines (code):** 209-211
+- **Lines (comments):** 218-220
+- **Lines (code):** 222-224
 
 </details>
 
@@ -882,11 +839,6 @@ Get a size's map
 |:--|
 |Map|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -919,8 +871,8 @@ Check if a typography size exists
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 213-215
-- **Lines (code):** 217-219
+- **Lines (comments):** 226-228
+- **Lines (code):** 230-232
 
 </details>
 
@@ -942,11 +894,6 @@ Check if a typography size exists
 |:--|
 |Boolean|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -979,8 +926,8 @@ Forces conversion to unitless line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 221-223
-- **Lines (code):** 225-239
+- **Lines (comments):** 234-236
+- **Lines (code):** 238-252
 
 </details>
 
@@ -999,11 +946,6 @@ Forces conversion to unitless line-height
 #### Throw
 
 - ULU: Unable to convert to unitless line-height for: #\{ $line-height }
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -1036,8 +978,8 @@ Print a value from the size and convert it (to appropriate unit for framework)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 240-242
-- **Lines (code):** 244-270
+- **Lines (comments):** 254-256
+- **Lines (code):** 258-284
 
 </details>
 
@@ -1051,11 +993,6 @@ Print a value from the size and convert it (to appropriate unit for framework)
 |$size|`Map`|Size's map|
 |$props|`String`|The property to get|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require
@@ -1090,8 +1027,8 @@ Get a sizes property value that doesn't need conversion
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 273-276
-- **Lines (code):** 278-285
+- **Lines (comments):** 286-289
+- **Lines (code):** 291-298
 
 </details>
 
@@ -1105,11 +1042,6 @@ Get a sizes property value that doesn't need conversion
 |$size|`Map`|Size's map|
 |$props|`String`|The property to get|
 
-    
-
-#### Todos
-
-- Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.
     
 
 #### Require

@@ -8,7 +8,7 @@ sassdocGroupName: units
 
 <div class="type-large">
 
-
+Manages common spacing values (used by utility classes like margin/padding)
 
 </div>
 
@@ -37,12 +37,12 @@ Module Settings
 
 ``` scss
 $config: (
-  "default" : 1rem,
-  "large" : 1rem * 2,
-  "large-x" : 1rem * 3,
-  "large-xx" : 1rem * 4,
-  "small" : 1rem * 0.75,
-  "small-x" : 1rem * 0.5,
+  "default":  1rem,
+  "large":    1rem * 2,
+  "large-x":  1rem * 3,
+  "large-xx": 1rem * 4,
+  "small":    1rem * 0.75,
+  "small-x":  1rem * 0.5,
 );
 ```
   
@@ -54,8 +54,8 @@ $config: (
 - **File:** _units.scss
 - **Group:** units
 - **Type:** variable
-- **Lines (comments):** 9-16
-- **Lines (code):** 18-25
+- **Lines (comments):** 10-17
+- **Lines (code):** 19-26
 
 </details>
 
@@ -66,7 +66,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|default|Number|1rem|Base unit of measurent|
+|default|Number|1rem|Base unit of measure|
 |large|Number|1rem * 2||
 |large-x|Number|1rem * 3||
 |large-xx|Number|1rem * 4||
@@ -104,8 +104,8 @@ Update the units config
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
-- **Lines (comments):** 27-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 28-33
+- **Lines (code):** 35-37
 
 </details>
 
@@ -170,8 +170,8 @@ Get a unit by name (preset) or number (multiplier of base)
 - **File:** _units.scss
 - **Group:** units
 - **Type:** function
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-47
+- **Lines (comments):** 39-41
+- **Lines (code):** 43-48
 
 </details>
 

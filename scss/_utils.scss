@@ -1,5 +1,6 @@
 ////
 /// @group utils
+/// Basic utility functions/mixins used throughout system
 ////
 
 @use "sass:map";
@@ -10,8 +11,8 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Boolean} debug-maps [true] Debugs include map print outs
-/// @prop {Boolean} file-header-comments [true] Remove comment headers if you'd like
+/// @prop {Boolean} debug-maps [true] Enable or disable debug map output
+/// @prop {Boolean} file-header-comments [true] Enable or disable module/file header comments
 
 $config: (
   "debug-maps": true,
@@ -20,16 +21,17 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss - General example
+///   @include utils.set(( "property" : value ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.get("property");
+/// @example scss - General example
+///   @include utils.get("property");
 
 @function get($name) {
   @return require-map-get($config, $name, 'utils');
@@ -437,4 +439,12 @@ $config: (
 
 @function get-spacing-left($value) {
   @return map.get(get-spacing($value), "left");
+}
+
+/// Strips the unit from the number
+/// - Normally this shouldn't be needed
+/// @link https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841 Original source (Miriam Suzanne)
+
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
 }

@@ -8,7 +8,7 @@ sassdocGroupName: utils
 
 <div class="type-large">
 
-
+Basic utility functions/mixins used throughout system
 
 </div>
 
@@ -50,8 +50,8 @@ $config: (
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** variable
-- **Lines (comments):** 11-14
-- **Lines (code):** 16-19
+- **Lines (comments):** 12-15
+- **Lines (code):** 17-20
 
 </details>
 
@@ -62,8 +62,8 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|debug-maps|Boolean|true|Debugs include map print outs|
-|file-header-comments|Boolean|true|Remove comment headers if you'd like|
+|debug-maps|Boolean|true|Enable or disable debug map output|
+|file-header-comments|Boolean|true|Enable or disable module/file header comments|
 
     
   
@@ -96,8 +96,8 @@ Change modules $config
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 21-24
-- **Lines (code):** 25-27
+- **Lines (comments):** 22-25
+- **Lines (code):** 27-29
 
 </details>
 
@@ -105,11 +105,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include utils.set(( "property" : value ));
 ```
   
 
@@ -155,8 +155,8 @@ Ensure a value is present in the list, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 57-61
-- **Lines (code):** 63-73
+- **Lines (comments):** 59-63
+- **Lines (code):** 65-75
 
 </details>
 
@@ -198,8 +198,8 @@ Require that the list only is only made up of allowed items
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 75-79
-- **Lines (code):** 81-85
+- **Lines (comments):** 77-81
+- **Lines (code):** 83-87
 
 </details>
 
@@ -246,8 +246,8 @@ Returns true if we should include something (used for output checking)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 96-98
-- **Lines (code):** 100-108
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-110
 
 </details>
 
@@ -292,8 +292,8 @@ Get a config option
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 29-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 31-34
+- **Lines (code):** 36-38
 
 </details>
 
@@ -301,11 +301,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.get("property");
+@include utils.get("property");
 ```
   
 
@@ -353,8 +353,8 @@ Get a required value from a map, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 38-43
-- **Lines (code):** 45-55
+- **Lines (comments):** 40-45
+- **Lines (code):** 47-57
 
 </details>
 
@@ -414,8 +414,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-94
+- **Lines (comments):** 89-91
+- **Lines (code):** 93-96
 
 </details>
 
@@ -456,8 +456,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 111-113
-- **Lines (code):** 115-121
+- **Lines (comments):** 113-115
+- **Lines (code):** 117-123
 
 </details>
 
@@ -494,8 +494,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 124-125
-- **Lines (code):** 127-141
+- **Lines (comments):** 126-127
+- **Lines (code):** 129-143
 
 </details>
 
@@ -543,8 +543,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 143-147
-- **Lines (code):** 149-157
+- **Lines (comments):** 145-149
+- **Lines (code):** 151-159
 
 </details>
 
@@ -594,8 +594,8 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 159-162
-- **Lines (code):** 164-169
+- **Lines (comments):** 161-164
+- **Lines (code):** 166-171
 
 </details>
 
@@ -659,8 +659,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 171-172
-- **Lines (code):** 174-182
+- **Lines (comments):** 173-174
+- **Lines (code):** 176-184
 
 </details>
 
@@ -695,8 +695,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 184-185
-- **Lines (code):** 187-194
+- **Lines (comments):** 186-187
+- **Lines (code):** 189-196
 
 </details>
 
@@ -735,8 +735,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 196-196
-- **Lines (code):** 197-205
+- **Lines (comments):** 198-198
+- **Lines (code):** 199-207
 
 </details>
 
@@ -771,8 +771,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 208-212
-- **Lines (code):** 213-232
+- **Lines (comments):** 210-214
+- **Lines (code):** 215-234
 
 </details>
 
@@ -825,8 +825,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 234-238
-- **Lines (code):** 240-266
+- **Lines (comments):** 236-240
+- **Lines (code):** 242-268
 
 </details>
 
@@ -886,8 +886,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 268-272
-- **Lines (code):** 274-290
+- **Lines (comments):** 270-274
+- **Lines (code):** 276-292
 
 </details>
 
@@ -930,8 +930,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 292-296
-- **Lines (code):** 298-306
+- **Lines (comments):** 294-298
+- **Lines (code):** 300-308
 
 </details>
 
@@ -981,8 +981,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 308-312
-- **Lines (code):** 314-322
+- **Lines (comments):** 310-314
+- **Lines (code):** 316-324
 
 </details>
 
@@ -1031,8 +1031,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 324-328
-- **Lines (code):** 330-345
+- **Lines (comments):** 326-330
+- **Lines (code):** 332-347
 
 </details>
 
@@ -1085,8 +1085,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 347-362
-- **Lines (code):** 364-380
+- **Lines (comments):** 349-364
+- **Lines (code):** 366-382
 
 </details>
 
@@ -1160,8 +1160,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 382-391
-- **Lines (code):** 393-395
+- **Lines (comments):** 384-393
+- **Lines (code):** 395-397
 
 </details>
 
@@ -1234,8 +1234,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 397-406
-- **Lines (code):** 408-410
+- **Lines (comments):** 399-408
+- **Lines (code):** 410-412
 
 </details>
 
@@ -1308,8 +1308,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 412-421
-- **Lines (code):** 423-425
+- **Lines (comments):** 414-423
+- **Lines (code):** 425-427
 
 </details>
 
@@ -1382,8 +1382,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 427-436
-- **Lines (code):** 438-440
+- **Lines (comments):** 429-438
+- **Lines (code):** 440-442
 
 </details>
 
@@ -1431,5 +1431,43 @@ $user-padding: (1em, 2em, 4em);
 - [get()](/sass/core/breakpoint/#function-get)
 - [get-spacing()](/sass/core/utils/#function-get-spacing)
   
+
+
+<div class="sassdoc-item-header">
+
+###  strip-unit() {#function-strip-unit}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Strips the unit from the number
+- Normally this shouldn't be needed
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 444-446
+- **Lines (code):** 448-450
+
+</details>
+
+    
+
+#### Related Links
+
+- [Original source (Miriam Suzanne)](https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841)
+
+    
   
   

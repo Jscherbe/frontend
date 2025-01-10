@@ -42,8 +42,8 @@ Print utilities helper styles
 - **File:** _display.scss
 - **Group:** display
 - **Type:** mixin
-- **Lines (comments):** 14-16
-- **Lines (code):** 18-73
+- **Lines (comments):** 13-15
+- **Lines (code):** 17-72
 
 </details>
 

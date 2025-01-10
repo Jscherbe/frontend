@@ -8,7 +8,7 @@ sassdocGroupName: selector
 
 <div class="type-large">
 
-
+This module is used to alter selectors for components
 
 </div>
 
@@ -32,7 +32,6 @@ sassdocGroupName: selector
   
 
 Module Settings
-- This module can be used for dynamic classnames (used in base and some components). Some components selectors are too complex or coupled for dynamic classnames. 
     
     
 
@@ -50,8 +49,8 @@ $config: (
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** variable
-- **Lines (comments):** 9-13
-- **Lines (code):** 15-17
+- **Lines (comments):** 10-12
+- **Lines (code):** 14-16
 
 </details>
 
@@ -64,11 +63,6 @@ $config: (
 |:--|:--|:--|:--|
 |prefix|String|""|Global prefix for selectors (would be used for classname prefix for example)|
 
-    
-
-#### Todos
-
-- See about documenting when a component doesn't run through the selectors module to get it's base classname
     
   
 
@@ -100,8 +94,8 @@ Change modules $config
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
-- **Lines (comments):** 23-26
-- **Lines (code):** 27-29
+- **Lines (comments):** 24-27
+- **Lines (code):** 28-30
 
 </details>
 
@@ -109,11 +103,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include selector.set(( "property" : value ));
 ```
   
 
@@ -149,6 +143,7 @@ General example, replace module-name with module's name
   
 
 Set the class selector overrides
+- When a component or user module that is using selector module requests a classname any changes passed here will override the default selector
     
     
 
@@ -159,19 +154,36 @@ Set the class selector overrides
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
-- **Lines (comments):** 40-41
-- **Lines (code):** 43-53
+- **Lines (comments):** 41-48
+- **Lines (code):** 50-60
 
 </details>
 
     
+
+#### Examples
+
+Changing the color-context classname to background and all typography base/utility classes to 'text' using wildcard      
+
+
+``` scss
+@include ulu.selector-set-class-overrides((
+  "color-context" : "background",
+  "type*" : "text"
+));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Changes to merge|
+|$changes|`Map`|Changes to merge map of classnames to classname change|
 
     
   
@@ -204,8 +216,8 @@ Get a config option
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
-- **Lines (comments):** 31-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
 
 </details>
 
@@ -213,11 +225,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.get("property");
+@include selector.get("property");
 ```
   
 
@@ -265,8 +277,8 @@ Change a class used in the system (ie. like a component for example)
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
-- **Lines (comments):** 55-57
-- **Lines (code):** 59-70
+- **Lines (comments):** 62-64
+- **Lines (code):** 66-77
 
 </details>
 
@@ -277,7 +289,7 @@ Change a class used in the system (ie. like a component for example)
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$class|`String`|The classname to set|
+|$class|`String`|The base classname to get (which is then returned modified if the user has adjusted that specific classname|
 
     
 

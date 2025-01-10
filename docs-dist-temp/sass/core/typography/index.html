@@ -1038,25 +1038,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/utility/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Utility
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/utils/" 
           
         >
@@ -3910,25 +3891,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/utility/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Utility
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/utils/" 
           
         >
@@ -5905,6 +5867,7 @@
     <div class="wysiwyg">
       <h1 id="typography" tabindex="-1">Typography</h1>
 <div class="type-large">
+<p>Manages typography settings, sizes and provides typography related utilities</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5915,30 +5878,30 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"letter-spacing-uppercase"</span> <span class="pjs-token pjs-punctuation">:</span> 0.04em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-bottom"</span><span class="pjs-token pjs-punctuation">:</span>  1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-top"</span><span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"responsive-change"</span><span class="pjs-token pjs-punctuation">:</span> 0.05vw<span class="pjs-token pjs-punctuation">,</span> 
-  <span class="pjs-token pjs-string">"scale-steps"</span><span class="pjs-token pjs-punctuation">:</span> 5<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"size-ratio"</span><span class="pjs-token pjs-punctuation">:</span> 1.8<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"size-line-height-ratio"</span><span class="pjs-token pjs-punctuation">:</span> 0.97<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-family"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>ui-sans-serif<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"Open Sans"</span><span class="pjs-token pjs-punctuation">,</span> Helvetica<span class="pjs-token pjs-punctuation">,</span> Arial<span class="pjs-token pjs-punctuation">,</span> sans-serif<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-family-monospace"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>Menlo<span class="pjs-token pjs-punctuation">,</span> Consolas<span class="pjs-token pjs-punctuation">,</span> Monaco<span class="pjs-token pjs-punctuation">,</span> monospace<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-family-sans"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>ui-sans-serif<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"Open Sans"</span><span class="pjs-token pjs-punctuation">,</span> Helvetica<span class="pjs-token pjs-punctuation">,</span> Arial<span class="pjs-token pjs-punctuation">,</span> sans-serif<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-family-serif"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>Cambria<span class="pjs-token pjs-punctuation">,</span> Georgia<span class="pjs-token pjs-punctuation">,</span> serif<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 16px<span class="pjs-token pjs-punctuation">,</span> 
-  <span class="pjs-token pjs-string">"font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-weight-bold"</span> <span class="pjs-token pjs-punctuation">:</span> bold<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-weight-light"</span> <span class="pjs-token pjs-punctuation">:</span> 300<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-weight-normal"</span> <span class="pjs-token pjs-punctuation">:</span> normal<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-weight-semibold"</span> <span class="pjs-token pjs-punctuation">:</span> 600<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"line-height"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"line-height-dense"</span><span class="pjs-token pjs-punctuation">:</span> 1.3<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"line-height-densest"</span><span class="pjs-token pjs-punctuation">:</span> 1.1<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"line-height-spaced"</span><span class="pjs-token pjs-punctuation">:</span> 1.75<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 60em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"max-width-large"</span> <span class="pjs-token pjs-punctuation">:</span> 75em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"max-width-small"</span> <span class="pjs-token pjs-punctuation">:</span> 45em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"letter-spacing-uppercase"</span><span class="pjs-token pjs-punctuation">:</span> 0.04em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-bottom"</span><span class="pjs-token pjs-punctuation">:</span>            1em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-top"</span><span class="pjs-token pjs-punctuation">:</span>               <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"responsive-change"</span><span class="pjs-token pjs-punctuation">:</span>        0.05vw<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"scale-steps"</span><span class="pjs-token pjs-punctuation">:</span>              5<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"size-ratio"</span><span class="pjs-token pjs-punctuation">:</span>               1.8<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"size-line-height-ratio"</span><span class="pjs-token pjs-punctuation">:</span>   0.97<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-family"</span><span class="pjs-token pjs-punctuation">:</span>              <span class="pjs-token pjs-punctuation">(</span>ui-sans-serif<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"Open Sans"</span><span class="pjs-token pjs-punctuation">,</span> Helvetica<span class="pjs-token pjs-punctuation">,</span> Arial<span class="pjs-token pjs-punctuation">,</span> sans-serif<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-family-monospace"</span><span class="pjs-token pjs-punctuation">:</span>    <span class="pjs-token pjs-punctuation">(</span>Menlo<span class="pjs-token pjs-punctuation">,</span> Consolas<span class="pjs-token pjs-punctuation">,</span> Monaco<span class="pjs-token pjs-punctuation">,</span> monospace<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-family-sans"</span><span class="pjs-token pjs-punctuation">:</span>         <span class="pjs-token pjs-punctuation">(</span>ui-sans-serif<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"Open Sans"</span><span class="pjs-token pjs-punctuation">,</span> Helvetica<span class="pjs-token pjs-punctuation">,</span> Arial<span class="pjs-token pjs-punctuation">,</span> sans-serif<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-family-serif"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-punctuation">(</span>Cambria<span class="pjs-token pjs-punctuation">,</span> Georgia<span class="pjs-token pjs-punctuation">,</span> serif<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span>                16px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight"</span><span class="pjs-token pjs-punctuation">:</span>              inherit<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight-bold"</span><span class="pjs-token pjs-punctuation">:</span>         bold<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight-light"</span><span class="pjs-token pjs-punctuation">:</span>        300<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight-normal"</span><span class="pjs-token pjs-punctuation">:</span>       normal<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight-semibold"</span><span class="pjs-token pjs-punctuation">:</span>     600<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"line-height"</span><span class="pjs-token pjs-punctuation">:</span>              1.5<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"line-height-dense"</span><span class="pjs-token pjs-punctuation">:</span>        1.3<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"line-height-densest"</span><span class="pjs-token pjs-punctuation">:</span>      1.1<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"line-height-spaced"</span><span class="pjs-token pjs-punctuation">:</span>       1.75<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"max-width"</span><span class="pjs-token pjs-punctuation">:</span>                60em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"max-width-large"</span><span class="pjs-token pjs-punctuation">:</span>          75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"max-width-small"</span><span class="pjs-token pjs-punctuation">:</span>          45em<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -5946,8 +5909,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 17-39</li>
-<li><strong>Lines (code):</strong> 41-66</li>
+<li><strong>Lines (comments):</strong> 16-38</li>
+<li><strong>Lines (code):</strong> 40-65</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -6001,7 +5964,7 @@
 <td style="text-align:left">size-line-height-ratio</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">0.97</td>
-<td style="text-align:left">Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desireable</td>
+<td style="text-align:left">Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desirable</td>
 </tr>
 <tr>
 <td style="text-align:left">font-family</td>
@@ -6089,10 +6052,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <div class="sassdoc-item-header">
 <h3 id="variable-sizes" tabindex="-1">$sizes</h3>
   <div class="sassdoc-item-header__labels">
@@ -6107,8 +6066,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 179-188</li>
-<li><strong>Lines (code):</strong> 190-190</li>
+<li><strong>Lines (comments):</strong> 182-191</li>
+<li><strong>Lines (code):</strong> 193-193</li>
 </ul>
 </details>
 <h4 id="map-properties-1" tabindex="-1">Map Properties</h4>
@@ -6142,6 +6101,16 @@
 <td style="text-align:left">Apply responsive sizes</td>
 </tr>
 <tr>
+<td style="text-align:left">$size.name.breakpoints</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Map of breakpoints where each key is breakpoint with map of changes (ie. font-size, etc)</td>
+</tr>
+<tr>
+<td style="text-align:left">$size.name.breakpoints.breakpoint.direction</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Direction the breakpoint should be applied to (ie. min/max)</td>
+</tr>
+<tr>
 <td style="text-align:left">$size.name.base-class</td>
 <td style="text-align:left">Boolean</td>
 <td style="text-align:left">This style should be included in the base (top can be overridden)</td>
@@ -6153,11 +6122,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-1" tabindex="-1">Todos</h4>
-<ul>
-<li>Add adaptive and use a map of breakpoints and whether it's up or down</li>
-<li>Add headlines</li>
-</ul>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -6172,8 +6136,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 68-70</li>
-<li><strong>Lines (code):</strong> 72-74</li>
+<li><strong>Lines (comments):</strong> 67-69</li>
+<li><strong>Lines (code):</strong> 71-73</li>
 </ul>
 </details>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -6192,16 +6156,12 @@
 <td style="text-align:left">Map of changes</td>
 </tr>
 <tr>
-<td style="text-align:left">@include typography.set-options(( &quot;font-size&quot; : 14px ));</td>
+<td style="text-align:left">@include typography.set(( &quot;font-size&quot; : 14px ));</td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-<h4 id="todos-2" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#variable-config">$config</a></li>
@@ -6212,15 +6172,15 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Break word stradegy</p>
+<p>Output CSS Break word strategy</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 127-128</li>
-<li><strong>Lines (code):</strong> 130-134</li>
+<li><strong>Lines (comments):</strong> 126-127</li>
+<li><strong>Lines (code):</strong> 129-133</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -6240,32 +6200,39 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-3" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set-sizes" tabindex="-1">set-sizes()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Update the typography presets map</p>
+<p>Configure the typography sizes</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 192-199</li>
-<li><strong>Lines (code):</strong> 201-203</li>
+<li><strong>Lines (comments):</strong> 195-212</li>
+<li><strong>Lines (code):</strong> 214-216</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
-<p>Setting the error and type color</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> typography.<span class="pjs-token pjs-function">set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> 0.8rem
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<p>Adjusting the h1 and h2 sizes while keeping pre-existing sizes by using deep merge</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> typography.<span class="pjs-token pjs-function">set-sizes</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"h1"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"accent"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span> 50px<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"margin-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"h2"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span> 38px<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 2.5em<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"margin-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"deep"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6273,6 +6240,7 @@
 <th style="text-align:left">Name</th>
 <th style="text-align:left">Type</th>
 <th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
 </tr>
 </thead>
 <tbody>
@@ -6280,23 +6248,16 @@
 <td style="text-align:left">$changes</td>
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">A map to merge into the color palette</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">$deep</td>
+<td style="text-align:left">$merge-mode</td>
 <td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Use deep merge</td>
-</tr>
-<tr>
-<td style="text-align:left">$overwrite</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Overwrite the presets completely (cannot be used with deep)</td>
+<td style="text-align:left">Merge strategy see, utils.map-merge options</td>
+<td style="text-align:left">null</td>
 </tr>
 </tbody>
 </table>
-<h4 id="todos-4" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-1" tabindex="-1">Require</h4>
 <ul>
 <li>map-merge()</li>
@@ -6315,8 +6276,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 287-289</li>
-<li><strong>Lines (code):</strong> 291-293</li>
+<li><strong>Lines (comments):</strong> 300-302</li>
+<li><strong>Lines (code):</strong> 304-306</li>
 </ul>
 </details>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -6341,10 +6302,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-5" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <div class="sassdoc-item-header">
 <h3 id="mixin-size" tabindex="-1">size()</h3>
   <div class="sassdoc-item-header__labels">
@@ -6358,8 +6315,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 295-298</li>
-<li><strong>Lines (code):</strong> 300-341</li>
+<li><strong>Lines (comments):</strong> 308-311</li>
+<li><strong>Lines (code):</strong> 313-354</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -6380,19 +6337,15 @@
 <tr>
 <td style="text-align:left">$changes</td>
 <td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Modifications to be merged into size before using</td>
+<td style="text-align:left">Modifications to be merged into size before output</td>
 </tr>
 <tr>
 <td style="text-align:left">$only-font-size</td>
 <td style="text-align:left"><code>Boolean</code></td>
-<td style="text-align:left">Only print the font size</td>
+<td style="text-align:left">Only output the font size</td>
 </tr>
 </tbody>
 </table>
-<h4 id="todos-6" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/typography/#mixin-font-size-responsive">font-size-responsive()</a></li>
@@ -6415,8 +6368,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 76-78</li>
-<li><strong>Lines (code):</strong> 80-82</li>
+<li><strong>Lines (comments):</strong> 75-77</li>
+<li><strong>Lines (code):</strong> 79-81</li>
 </ul>
 </details>
 <h4 id="parameters-5" tabindex="-1">Parameters</h4>
@@ -6435,16 +6388,12 @@
 <td style="text-align:left">Map of changes</td>
 </tr>
 <tr>
-<td style="text-align:left">@include typography.set-options(( &quot;font-size&quot; : 14px ));</td>
+<td style="text-align:left">@include typography.get(( &quot;font-size&quot; : 14px ));</td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-<h4 id="todos-7" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
@@ -6463,8 +6412,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 84-86</li>
-<li><strong>Lines (code):</strong> 88-90</li>
+<li><strong>Lines (comments):</strong> 83-85</li>
+<li><strong>Lines (code):</strong> 87-89</li>
 </ul>
 </details>
 <h4 id="parameters-6" tabindex="-1">Parameters</h4>
@@ -6499,10 +6448,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-8" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-4" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/calculate/#function-ratio-scale-size">ratio-scale-size()</a></li>
@@ -6521,8 +6466,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 92-95</li>
-<li><strong>Lines (code):</strong> 97-99</li>
+<li><strong>Lines (comments):</strong> 91-94</li>
+<li><strong>Lines (code):</strong> 96-98</li>
 </ul>
 </details>
 <h4 id="parameters-7" tabindex="-1">Parameters</h4>
@@ -6557,7 +6502,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-9" tabindex="-1">Todos</h4>
+<h4 id="todos" tabindex="-1">Todos</h4>
 <ul>
 <li>Setup breakpoints</li>
 </ul>
@@ -6579,8 +6524,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 101-103</li>
-<li><strong>Lines (code):</strong> 105-111</li>
+<li><strong>Lines (comments):</strong> 100-102</li>
+<li><strong>Lines (code):</strong> 104-110</li>
 </ul>
 </details>
 <h4 id="parameters-8" tabindex="-1">Parameters</h4>
@@ -6615,10 +6560,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-10" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6636,8 +6577,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 113-116</li>
-<li><strong>Lines (code):</strong> 118-125</li>
+<li><strong>Lines (comments):</strong> 112-115</li>
+<li><strong>Lines (code):</strong> 117-124</li>
 </ul>
 </details>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>
@@ -6677,10 +6618,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-11" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6694,6 +6631,7 @@
 <p>Creates a size map</p>
 <ul>
 <li>This is just an accelerator for creating a size map</li>
+<li>This is opinionated about how sizes are setup, headlines get (margins, bold, headline color) and are base classes while non-headlines are added as helper classes and do not get (margins, bold, color)</li>
 <li>You can pass your own size maps using set-sizes()</li>
 </ul>
 <details>
@@ -6702,7 +6640,7 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 136-141</li>
+<li><strong>Lines (comments):</strong> 135-141</li>
 <li><strong>Lines (code):</strong> 143-157</li>
 </ul>
 </details>
@@ -6733,10 +6671,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-12" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6749,7 +6683,8 @@
 </div>
 <p>Function that returns default sizes</p>
 <ul>
-<li>Used to set the sizes initially and you can use this if you've reconfigured type and want to just update the default sizes (by passing result to set-sizes())</li>
+<li>Used to set the sizes initially and</li>
+<li>You can use this if you've reconfigured typography settings and want to update the default sizes with the new settings</li>
 </ul>
 <details>
   <summary>File Information</summary>
@@ -6757,14 +6692,25 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 159-160</li>
-<li><strong>Lines (code):</strong> 161-177</li>
+<li><strong>Lines (comments):</strong> 159-162</li>
+<li><strong>Lines (code):</strong> 164-180</li>
 </ul>
 </details>
-<h4 id="todos-13" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">The default typography sizes</td>
+</tr>
+</tbody>
+</table>
 <h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/typography/#function-new-size">new-size()</a></li>
@@ -6777,74 +6723,18 @@
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Get a size's map</p>
+<p>Get a specific size's settings map</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 205-207</li>
-<li><strong>Lines (code):</strong> 209-211</li>
+<li><strong>Lines (comments):</strong> 218-220</li>
+<li><strong>Lines (code):</strong> 222-224</li>
 </ul>
 </details>
 <h4 id="parameters-11" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>String</code></td>
-<td style="text-align:left">Name of size</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-4" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Map</td>
-</tr>
-</tbody>
-</table>
-<h4 id="todos-14" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
-<h4 id="require-10" tabindex="-1">Require</h4>
-<ul>
-<li>require-map-get()</li>
-<li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-has-size" tabindex="-1">has-size()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Check if a typography size exists</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _typography.scss</li>
-<li><strong>Group:</strong> typography</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 213-215</li>
-<li><strong>Lines (code):</strong> 217-219</li>
-</ul>
-</details>
-<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6870,14 +6760,62 @@
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">Map</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-10" tabindex="-1">Require</h4>
+<ul>
+<li>require-map-get()</li>
+<li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-has-size" tabindex="-1">has-size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Check if a typography size exists</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 226-228</li>
+<li><strong>Lines (code):</strong> 230-232</li>
+</ul>
+</details>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Name of size</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-6" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td style="text-align:left">Boolean</td>
 </tr>
 </tbody>
 </table>
-<h4 id="todos-15" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-11" tabindex="-1">Require</h4>
 <ul>
 <li>map-has()</li>
@@ -6896,8 +6834,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 221-223</li>
-<li><strong>Lines (code):</strong> 225-239</li>
+<li><strong>Lines (comments):</strong> 234-236</li>
+<li><strong>Lines (code):</strong> 238-252</li>
 </ul>
 </details>
 <h4 id="parameters-13" tabindex="-1">Parameters</h4>
@@ -6926,10 +6864,6 @@
 <ul>
 <li>ULU: Unable to convert to unitless line-height for: #{ $line-height }</li>
 </ul>
-<h4 id="todos-16" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-12" tabindex="-1">Require</h4>
 <ul>
 <li>strip-unit()</li>
@@ -6948,8 +6882,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 240-242</li>
-<li><strong>Lines (code):</strong> 244-270</li>
+<li><strong>Lines (comments):</strong> 254-256</li>
+<li><strong>Lines (code):</strong> 258-284</li>
 </ul>
 </details>
 <h4 id="parameters-14" tabindex="-1">Parameters</h4>
@@ -6974,10 +6908,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-17" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-13" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
@@ -7000,8 +6930,8 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 273-276</li>
-<li><strong>Lines (code):</strong> 278-285</li>
+<li><strong>Lines (comments):</strong> 286-289</li>
+<li><strong>Lines (code):</strong> 291-298</li>
 </ul>
 </details>
 <h4 id="parameters-15" tabindex="-1">Parameters</h4>
@@ -7026,10 +6956,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="todos-18" tabindex="-1">Todos</h4>
-<ul>
-<li>Idea: Should the maps value be processes when using the set-sizes, set? Instead of recalculated each time get-size is or get is used.</li>
-</ul>
 <h4 id="require-14" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/core/breakpoint/#function-get">get()</a></li>
