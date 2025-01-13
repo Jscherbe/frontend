@@ -1,5 +1,6 @@
 ////
 /// @group callout
+/// A container for content that highlights important information, provides context, or guides user attention within an interface
 ////
 
 @use "sass:map";
@@ -50,6 +51,9 @@ $styles: (
   "background-dark" : (
     "background-color" : rgb(240, 240, 240)
   ),
+  "outline" : (
+    "background-color": transparent
+  ),
   "light" : (
     "background-color" : white,
     "border-color" : gray
@@ -89,7 +93,7 @@ $styles: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-callout-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -97,42 +101,43 @@ $styles: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-callout-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "callout [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Set callout styles 
-/// @param {Map} $changes Map of changes
+/// Set callout style variations
+/// @param {Map} $changes Map of changes (options for style include [background-color, color, border, border-radius, border-color, box-shadow, padding, left-cap, left-cap-width, left-cap-color]
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
 @mixin set-styles($changes, $merge-mode: null) {
   $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
 
-/// Prints left-cap styling 
+/// Output styling for a callout that adds a left cap
+/// @param {Dimension} $width The width of the left cap
+/// @param {Color} $color The left cap color
 
 @mixin left-cap($width: get("left-cap-width"), $color: get("left-cap-color")) {
-  border-radius: 0;
-  border: none;
+  position: relative; 
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   &::before {
     position: absolute;
+    content: "";
     left: 0;
     top: 0;
     bottom: 0;
-    content: "";
     width: $width;
-    // width: 0.5rem;
     background-color: $color;
   }
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// @example scss
-///  @include ulu.component-example-styles();
-
+///  @include ulu.component-callout-styles();
 
 @mixin styles {
   $prefix: selector.class("callout");
@@ -147,13 +152,12 @@ $styles: (
     & >:first-child {
       margin-top: 0;
     }
-  }
-  #{ $prefix }--outline {
-    background-color: transparent;
+    @if get("left-cap") {
+      @include left-cap();
+    }
   }
   @each $name, $style in $styles {
     #{ $prefix }--#{ $name } {
-      position: relative;
       background-color: map.get($style, "background-color"); 
       color: map.get($style, "color"); 
       border: map.get($style, "border"); 

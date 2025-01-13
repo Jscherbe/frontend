@@ -121,7 +121,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-data-table-set(( "property" : value ));|
 
     
 
@@ -143,7 +143,7 @@ Change modules $config
 
   
 
-Prints component styles
+Output component stylesheet
     
     
 
@@ -167,7 +167,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-data-table-styles();
 ```
   
 
@@ -222,7 +222,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-data-table-get("property");|
 
     
 

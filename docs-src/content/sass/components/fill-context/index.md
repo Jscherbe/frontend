@@ -14,18 +14,57 @@ Setup images or videos to behave like background images (object-fit).
 
 
 
+## Mixins
 
 
 
 
+<div class="sassdoc-item-header">
 
-Use the parent selector '.fill-context' on the element that should be the 
-frame for the child object (img,video).  Can be used within the grid with 
-modifier (see in example below).
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output component stylesheet
+- Use the parent selector '.fill-context' on the element that should be the 
+  frame for the child object (img,video).  
+- Can be used within the grid with modifier (see in example below).
     
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _fill-context.scss
+- **Group:** fill-context
+- **Type:** mixin
+- **Lines (comments):** 10-28
+- **Lines (code):** 30-62
+
+</details>
+
     
 
 #### Examples
+
+      
+
+
+``` scss
+@include ulu.component-fill-context-styles();
+```
+  
+
+
+
+      
 
       
 
@@ -67,55 +106,10 @@ modifier (see in example below).
     
 
       
+
+#### Require
+
+- [get-default-breakpoint()](/sass/components/data-grid/#function-get-default-breakpoint)
   
-
-## Mixins
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  styles() {#mixin-styles}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Prints fill context styles
-    
-    
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _fill-context.scss
-- **Group:** fill-context
-- **Type:** mixin
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-64
-
-</details>
-
-    
-
-#### Examples
-
-      
-
-
-``` scss
-@include ulu.component-fill-context-styles();
-```
-  
-
-
-
-      
   
   

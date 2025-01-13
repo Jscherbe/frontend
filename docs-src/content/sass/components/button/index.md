@@ -8,7 +8,7 @@ sassdocGroupName: button
 
 <div class="type-large">
 
-
+Output core button styles and sizes
 
 </div>
 
@@ -49,8 +49,8 @@ $config: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 12-14
-- **Lines (code):** 16-19
+- **Lines (comments):** 13-15
+- **Lines (code):** 17-19
 
 </details>
 
@@ -61,7 +61,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|icon-margin|Dimension|1em|List of other sizes (large by defualt), each size is a map of (width, font-size)|
+|icon-margin|Dimension|1em|List of other sizes (large by default), each size is a map of (width, font-size)|
 
     
   
@@ -107,7 +107,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-button-set(( "property" : value ));|
 
     
 
@@ -129,7 +129,7 @@ Change modules $config
 
   
 
-Prints button component styles
+Output button component styles
     
     
 
@@ -229,7 +229,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-button-get("property");|
 
     
 

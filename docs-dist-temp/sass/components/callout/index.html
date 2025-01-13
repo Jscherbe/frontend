@@ -5828,6 +5828,7 @@
     <div class="wysiwyg">
       <h1 id="callout" tabindex="-1">Callout</h1>
 <div class="type-large">
+<p>A container for content that highlights important information, provides context, or guides user attention within an interface</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5854,8 +5855,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 25-35</li>
-<li><strong>Lines (code):</strong> 37-47</li>
+<li><strong>Lines (comments):</strong> 26-36</li>
+<li><strong>Lines (code):</strong> 38-48</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5939,8 +5940,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 90-92</li>
-<li><strong>Lines (code):</strong> 94-96</li>
+<li><strong>Lines (comments):</strong> 94-96</li>
+<li><strong>Lines (code):</strong> 98-100</li>
 </ul>
 </details>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
@@ -5959,7 +5960,7 @@
 <td style="text-align:left">Map of changes</td>
 </tr>
 <tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
+<td style="text-align:left">@include ulu.component-callout-set(( &quot;property&quot; : value ));</td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
@@ -5975,15 +5976,15 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Set callout styles</p>
+<p>Set callout style variations</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 107-109</li>
-<li><strong>Lines (code):</strong> 111-113</li>
+<li><strong>Lines (comments):</strong> 111-113</li>
+<li><strong>Lines (code):</strong> 115-117</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5999,7 +6000,7 @@
 <tr>
 <td style="text-align:left">$changes</td>
 <td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
+<td style="text-align:left">Map of changes (options for style include [background-color, color, border, border-radius, border-color, box-shadow, padding, left-cap, left-cap-width, left-cap-color]</td>
 </tr>
 <tr>
 <td style="text-align:left">$merge-mode</td>
@@ -6018,36 +6019,58 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints left-cap styling</p>
+<p>Output styling for a callout that adds a left cap</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 115-115</li>
-<li><strong>Lines (code):</strong> 117-130</li>
+<li><strong>Lines (comments):</strong> 119-121</li>
+<li><strong>Lines (code):</strong> 123-136</li>
 </ul>
 </details>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$width</td>
+<td style="text-align:left"><code>Dimension</code></td>
+<td style="text-align:left">The width of the left cap</td>
+</tr>
+<tr>
+<td style="text-align:left">$color</td>
+<td style="text-align:left"><code>Color</code></td>
+<td style="text-align:left">The left cap color</td>
+</tr>
+</tbody>
+</table>
 <div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints component styles</p>
+<p>Output component stylesheet</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 132-134</li>
-<li><strong>Lines (code):</strong> 136-169</li>
+<li><strong>Lines (comments):</strong> 138-140</li>
+<li><strong>Lines (code):</strong> 142-173</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-callout-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/callout/#mixin-left-cap">left-cap()</a></li>
@@ -6068,11 +6091,11 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 98-100</li>
-<li><strong>Lines (code):</strong> 102-105</li>
+<li><strong>Lines (comments):</strong> 102-104</li>
+<li><strong>Lines (code):</strong> 106-109</li>
 </ul>
 </details>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<h4 id="parameters-3" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6088,7 +6111,7 @@
 <td style="text-align:left">Name of property</td>
 </tr>
 <tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
+<td style="text-align:left">@include ulu.component-callout-get(&quot;property&quot;);</td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>

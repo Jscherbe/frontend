@@ -1,11 +1,13 @@
 ////
 /// @group card-grid
+/// Lightweight CSS Grid setup for card components
 ////
 
 @use "sass:map";
 
 @use "../breakpoint";
 @use "../utils";
+@use "../selector";
 
 /// Module Settings
 /// @type Map
@@ -23,7 +25,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-card-grid-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -31,7 +33,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-card-grid-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "card-grid [config]");
@@ -39,29 +41,32 @@ $config: (
 
 /// Prints component styles
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-card-grid-styles();
 
 @mixin styles {
-  .card-grid {
+  $prefix: selector.class("card-grid");
+  $prefix-card: selector.class("card");
+  
+  #{ $prefix } {
     display: grid;
     grid-template-columns:  get("template-columns");
     grid-auto-rows: 1fr;
     gap: get("gap");
     margin: get("gap") 0;
-    .card {
+    #{ $prefix-card } {
       max-width: none;
       margin: 0;
-      &:not(.card--overlay) {
+      &:not(#{ $prefix-card }--overlay) {
         height: 100%;
       }
     }
   }
-  .card-grid--compact {
+  #{ $prefix }--compact {
     grid-template-columns: get("compact-template-columns");
     gap: get("compact-gap");
   }
   @include breakpoint.max("small") {
-    .card-grid {
+    #{ $prefix } {
       grid-template-columns: 1fr;
     }
   }

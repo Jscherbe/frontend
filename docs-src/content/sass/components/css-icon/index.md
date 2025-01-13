@@ -8,7 +8,7 @@ sassdocGroupName: css-icon
 
 <div class="type-large">
 
-Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
+Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library. Note the selectors currently can't be modified.
 
 </div>
 
@@ -46,7 +46,7 @@ $config: (
   "stroke-width" : 3px,
   "text-offset" : 0.05em,
   "text-size" : 1em,
-  "vertical-align" : -0.2em,
+  "vertical-align" : -0.25em,
   "transition-duration" : 200ms, 
   "transition-timing-function" : ease-in,
   "stroke-sizes" : (
@@ -80,14 +80,14 @@ $config: (
 |:--|:--|:--|:--|
 |active-selector|String|details[open|> summary &, &.is-active] The active selector for css-icon.|
 |color|Color|currentColor|The color of the css-icon.|
-|font-family|CssBalue|('Courier New', monospace)||
+|font-family|CssValue|('Courier New', monospace)||
 |margin|CssValue|(0 0.15em)|The icon's margin|
 |size|Dimension|1.1em|The width, height and font size of the css-icon.|
 |stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
 |stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
 |text-offset|Dimension|0.05em|When using an icon with text, adds a margin to match the text height.|
 |text-size|Dimension|1em|font-size of the icon when using text.|
-|vertical-align|Dimension|-0.2em|@joe-check is this antiquated?|
+|vertical-align|Dimension|-0.2em|Vertical-align for css-icon|
 |transition-duration|Time|200ms|The duration length for the transition.|
 |transition-timing-function|CssValue|ease-in|The timing function for the transition.|
 |stroke-sizes|Map|Map|Modifiers to adjust stroke sizes for the icons.|
@@ -136,13 +136,51 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-css-icon-set(( "property" : value ));|
 
     
 
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  when-active() {#mixin-when-active}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Used to style active icons
+- Probably only useful for extending this component and matching active selector
+- Used internally in module
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _css-icon.scss
+- **Group:** css-icon
+- **Type:** mixin
+- **Lines (comments):** 76-78
+- **Lines (code):** 80-84
+
+</details>
+
+    
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
   
 
 
@@ -158,7 +196,7 @@ Change modules $config
 
   
 
-Prints adaptive spacing component styles
+Output CSS icon component stylesheet
     
     
 
@@ -169,8 +207,8 @@ Prints adaptive spacing component styles
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-427
+- **Lines (comments):** 96-98
+- **Lines (code):** 100-431
 
 </details>
 
@@ -182,7 +220,7 @@ Prints adaptive spacing component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-css-icon-styles();
 ```
   
 
@@ -192,6 +230,7 @@ Prints adaptive spacing component styles
 
 #### Require
 
+- [when-active()](/sass/components/css-icon/#mixin-when-active)
 - [get()](/sass/components/accordion/#function-get)
   
   
@@ -237,7 +276,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-css-icon-get("property");|
 
     
 

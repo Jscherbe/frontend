@@ -27,8 +27,8 @@
 /// @prop {String} position-class-column-last [position-column-last] See definition above
 /// @prop {String} position-class-row-first [position-row-first] See definition above
 /// @prop {String} position-class-row-last [position-row-last] See definition above
-/// @prop {} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)] @joe-check do we want to call these a dimension?
-/// @prop {} sticky-top [var(--ulu-sticky-top-offset, 0)]
+/// @prop {Dimension} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)] When a column is sticky bottom this is the value for the sticky offset, set to --ulu-sticky-bottom-offset by default
+/// @prop {Dimension} sticky-top [var(--ulu-sticky-top-offset, 0)] When a column is sticky top this is the value for the sticky offset, set to --ulu-sticky-top-offset by default
 /// @prop {String} rule-color ["rule"] The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {Dimension} rule-size [1px] The width of the rule
 /// @prop {Map} extra-breakpoints [Map] Default extra breakpoints for grid mixin
@@ -73,7 +73,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-data-grid-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -81,15 +81,15 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-data-grid-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "data-grid [config]");
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-data-grid-styles();
 
 @function get-gutter($name: null, $custom-map: null) {
   @if (not $name) {
@@ -100,6 +100,8 @@ $config: (
     @return map.get($settings, "gutter");
   }
 }
+
+/// Get the default breakpoint for the grid (when it starts to be a grid (vs stacked/mobile)
 
 @function get-default-breakpoint() {
   $breakpoint: get("breakpoint");
@@ -119,7 +121,8 @@ $config: (
   @include create();
 }
 
-/// Creates grid css (variation of original data-grid)
+/// Output data grid styles
+/// - Can be used instead of styles() to have full control over options or for alternate grids (grids with different settings/column count) 
 /// @param {Number} $columns Columns in grid
 /// @param {Number} $breakpoint Breakpoint key for starting the grid
 /// @param {Map} $extra-breakpoints Map with other breakpoints to add (map of breakpoint and gutter see config.extra-breakpoints for an example (smallest to largest)

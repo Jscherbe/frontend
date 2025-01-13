@@ -8,7 +8,7 @@ sassdocGroupName: card
 
 <div class="type-large">
 
-
+A versatile container for displaying and summarizing individual items, entities, or resources in a visually appealing and concise format
 
 </div>
 
@@ -68,7 +68,6 @@ $config: (
   "margin-y" : 3rem,
   "max-width" : 28rem,
   "padding" : 2rem,
-  "prefix" : "card",
   "title-color" : null,
   "title-color-hover" : null,
   "title-color-card-hover" : null,
@@ -96,8 +95,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 15-60
-- **Lines (code):** 62-113
+- **Lines (comments):** 16-60
+- **Lines (code):** 62-112
 
 </details>
 
@@ -126,9 +125,8 @@ $config: (
 |border|CssValue|1px solid #ccc|The card border.|
 |border-hover|CssValue|2px solid #278cca|The card border when hovered or focused.|
 |header-margin|Dimension|0.75em|The margin for the card header.|
-|title-color|Color|null|They type color of the title.|
-|title-color-hover|Color|null|They type color of the title when hovered or focused.|
-|title-color-card-hover|Color|null|@joe-check  what is the difference between this and title-color-hover?|
+|title-color|Color|null|The type color of the title.|
+|title-color-hover|Color|null|The type color of the title (if link/button) when hovered or focused|
 |title-margin|Dimension|0|The margin for the title.|
 |title-font-weight|CssValue|bold|The font weight for the title.|
 |image-ratio|Number|56.25%|The image ratio for the card image.|
@@ -150,7 +148,7 @@ $config: (
 |transition-properties|List|(border-color, background-color, color, box-shadow, transform)|The properties for the card animation.|
 |image-transition-enabled|Boolean|true|Enable or disable the image transition.|
 |image-transition-duration|Time|350ms|The duration of the image transition.|
-|image-transition-timing-function|CssValue|ease-in-out|The timing function for the image tranition.|
+|image-transition-timing-function|CssValue|ease-in-out|The timing function for the image transition.|
 |image-transition-properties|List|(transform, filter)|The properties for the image transitions.|
 
     
@@ -184,8 +182,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 115-117
-- **Lines (code):** 119-121
+- **Lines (comments):** 114-116
+- **Lines (code):** 118-120
 
 </details>
 
@@ -230,8 +228,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 131-132
-- **Lines (code):** 134-149
+- **Lines (comments):** 130-131
+- **Lines (code):** 133-148
 
 </details>
 
@@ -275,8 +273,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 156-159
-- **Lines (code):** 161-417
+- **Lines (comments):** 155-158
+- **Lines (code):** 160-416
 
 </details>
 
@@ -344,8 +342,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 123-125
-- **Lines (code):** 127-129
+- **Lines (comments):** 122-124
+- **Lines (code):** 126-128
 
 </details>
 

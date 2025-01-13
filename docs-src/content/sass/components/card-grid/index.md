@@ -8,7 +8,7 @@ sassdocGroupName: card-grid
 
 <div class="type-large">
 
-
+Lightweight CSS Grid setup for card components
 
 </div>
 
@@ -52,8 +52,8 @@ $config: (
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** variable
-- **Lines (comments):** 10-15
-- **Lines (code):** 17-22
+- **Lines (comments):** 12-17
+- **Lines (code):** 19-24
 
 </details>
 
@@ -100,8 +100,8 @@ Change modules $config
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
-- **Lines (comments):** 24-26
-- **Lines (code):** 28-30
+- **Lines (comments):** 26-28
+- **Lines (code):** 30-32
 
 </details>
 
@@ -113,7 +113,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-card-grid-set(( "property" : value ));|
 
     
 
@@ -146,8 +146,8 @@ Prints component styles
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-68
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-73
 
 </details>
 
@@ -159,7 +159,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-card-grid-styles();
 ```
   
 
@@ -201,8 +201,8 @@ Get a config option
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** function
-- **Lines (comments):** 32-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 34-36
+- **Lines (code):** 38-40
 
 </details>
 
@@ -214,7 +214,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-card-grid-get("property");|
 
     
 

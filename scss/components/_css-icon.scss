@@ -1,7 +1,7 @@
 ////
 /// @group css-icon
+/// Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library. Note the selectors currently can't be modified.
 ////
-/// Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library
 
 // Notes: 
 // - Using this to avoid having coupled image in base, can easily switch 
@@ -24,14 +24,14 @@
 /// @type Map
 /// @prop {String} active-selector [details[open] > summary &, &.is-active] The active selector for css-icon.
 /// @prop {Color} color [currentColor] The color of the css-icon.
-/// @prop {CssBalue} font-family [('Courier New', monospace)]
+/// @prop {CssValue} font-family [('Courier New', monospace)]
 /// @prop {CssValue} margin [(0 0.15em)] The icon's margin
 /// @prop {Dimension} size [1.1em] The width, height and font size of the css-icon.
 /// @prop {Dimension} stroke-border-radius [1px] The rounding of the strokes for css-icon.
 /// @prop {Dimension} stroke-width [0.15em] The stroke width of the css-icon.
 /// @prop {Dimension} text-offset [0.05em] When using an icon with text, adds a margin to match the text height.
 /// @prop {Dimension} text-size [1em] font-size of the icon when using text.
-/// @prop {Dimension} vertical-align [-0.2em] @joe-check is this antiquated?
+/// @prop {Dimension} vertical-align [-0.2em] Vertical-align for css-icon 
 /// @prop {Time} transition-duration [200ms] The duration length for the transition.
 /// @prop {CssValue} transition-timing-function [ease-in] The timing function for the transition.
 /// @prop {Map} stroke-sizes [Map] Modifiers to adjust stroke sizes for the icons.
@@ -46,7 +46,7 @@ $config: (
   "stroke-width" : 3px,
   "text-offset" : 0.05em,
   "text-size" : 1em,
-  "vertical-align" : -0.2em,
+  "vertical-align" : -0.25em,
   "transition-duration" : 200ms, 
   "transition-timing-function" : ease-in,
   "stroke-sizes" : (
@@ -59,7 +59,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-css-icon-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -67,11 +67,15 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-css-icon-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "css-icon [config]");
 }
+
+/// Used to style active icons
+/// - Probably only useful for extending this component and matching active selector
+/// - Used internally in module
 
 @mixin when-active() {
   #{ get("active-selector") } {
@@ -89,9 +93,9 @@ $config: (
   }
 }
 
-/// Prints adaptive spacing component styles
+/// Output CSS icon component stylesheet
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-css-icon-styles();
 
 @mixin styles {
   $border: get("stroke-width") solid get("color");
@@ -107,7 +111,7 @@ $config: (
     width: get("size");
     height: get("size");
     transform-origin: center;
-    vertical-align: -0.25em;
+    vertical-align: get("vertical-align");
     font-variant: normal;
     text-rendering: auto;
     line-height: 1;

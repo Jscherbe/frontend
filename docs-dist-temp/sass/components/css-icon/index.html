@@ -5796,6 +5796,9 @@
                     <li><a href="#mixin-set">set()</a>
             		</li>
 
+                    <li><a href="#mixin-when-active">when-active()</a>
+            		</li>
+
                     <li><a href="#mixin-styles">styles()</a>
             		</li>
                 </ol>
@@ -5822,7 +5825,7 @@
     <div class="wysiwyg">
       <h1 id="css-icon" tabindex="-1">Css-icon</h1>
 <div class="type-large">
-<p>Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library</p>
+<p>Simple icons that only require CSS selectors, used for defaults (JS, etc). Not meant to be replacement for complete icon library. Note the selectors currently can't be modified.</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5842,7 +5845,7 @@
   <span class="pjs-token pjs-string">"stroke-width"</span> <span class="pjs-token pjs-punctuation">:</span> 3px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-offset"</span> <span class="pjs-token pjs-punctuation">:</span> 0.05em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"vertical-align"</span> <span class="pjs-token pjs-punctuation">:</span> -0.2em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"vertical-align"</span> <span class="pjs-token pjs-punctuation">:</span> -0.25em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span> 200ms<span class="pjs-token pjs-punctuation">,</span> 
   <span class="pjs-token pjs-string">"transition-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span> ease-in<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"stroke-sizes"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
@@ -5887,7 +5890,7 @@
 </tr>
 <tr>
 <td style="text-align:left">font-family</td>
-<td style="text-align:left">CssBalue</td>
+<td style="text-align:left">CssValue</td>
 <td style="text-align:left">('Courier New', monospace)</td>
 <td style="text-align:left"></td>
 </tr>
@@ -5931,7 +5934,7 @@
 <td style="text-align:left">vertical-align</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">-0.2em</td>
-<td style="text-align:left">@joe-check is this antiquated?</td>
+<td style="text-align:left">Vertical-align for css-icon</td>
 </tr>
 <tr>
 <td style="text-align:left">transition-duration</td>
@@ -5987,7 +5990,7 @@
 <td style="text-align:left">Map of changes</td>
 </tr>
 <tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
+<td style="text-align:left">@include ulu.component-css-icon-set(( &quot;property&quot; : value ));</td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
@@ -5998,26 +6001,52 @@
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+<h3 id="mixin-when-active" tabindex="-1">when-active()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints adaptive spacing component styles</p>
+<p>Used to style active icons</p>
+<ul>
+<li>Probably only useful for extending this component and matching active selector</li>
+<li>Used internally in module</li>
+</ul>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _css-icon.scss</li>
 <li><strong>Group:</strong> css-icon</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 92-94</li>
-<li><strong>Lines (code):</strong> 96-427</li>
+<li><strong>Lines (comments):</strong> 76-78</li>
+<li><strong>Lines (code):</strong> 80-84</li>
+</ul>
+</details>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Output CSS icon component stylesheet</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _css-icon.scss</li>
+<li><strong>Group:</strong> css-icon</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 96-98</li>
+<li><strong>Lines (code):</strong> 100-431</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-1" tabindex="-1">Require</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-css-icon-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
+<li><a href="/sass/components/css-icon/#mixin-when-active">when-active()</a></li>
 <li><a href="/sass/components/accordion/#function-get">get()</a></li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
@@ -6054,13 +6083,13 @@
 <td style="text-align:left">Name of property</td>
 </tr>
 <tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
+<td style="text-align:left">@include ulu.component-css-icon-get(&quot;property&quot;);</td>
 <td style="text-align:left"></td>
 <td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

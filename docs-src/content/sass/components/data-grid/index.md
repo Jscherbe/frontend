@@ -100,8 +100,8 @@ $config: (
 |position-class-column-last|String|position-column-last|See definition above|
 |position-class-row-first|String|position-row-first|See definition above|
 |position-class-row-last|String|position-row-last|See definition above|
-|sticky-bottom|Map|var(--ulu-sticky-bottom-offset, 0)|@joe-check do we want to call these a dimension?|
-|sticky-top|Map|var(--ulu-sticky-top-offset, 0)||
+|sticky-bottom|Dimension|var(--ulu-sticky-bottom-offset, 0)|When a column is sticky bottom this is the value for the sticky offset, set to --ulu-sticky-bottom-offset by default|
+|sticky-top|Dimension|var(--ulu-sticky-top-offset, 0)|When a column is sticky top this is the value for the sticky offset, set to --ulu-sticky-top-offset by default|
 |rule-color|String|"rule"|The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.|
 |rule-size|Dimension|1px|The width of the rule|
 |extra-breakpoints|Map|Map|Default extra breakpoints for grid mixin|
@@ -152,7 +152,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-data-grid-set(( "property" : value ));|
 
     
 
@@ -185,8 +185,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 113-116
-- **Lines (code):** 118-120
+- **Lines (comments):** 115-118
+- **Lines (code):** 120-122
 
 </details>
 
@@ -237,7 +237,8 @@ Prints default grid styles, if you want to customize further please use the crea
 
   
 
-Creates grid css (variation of original data-grid)
+Output data grid styles
+- Can be used instead of styles() to have full control over options or for alternate grids (grids with different settings/column count) 
     
     
 
@@ -248,8 +249,8 @@ Creates grid css (variation of original data-grid)
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 122-131
-- **Lines (code):** 133-578
+- **Lines (comments):** 124-134
+- **Lines (code):** 136-581
 
 </details>
 
@@ -319,7 +320,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-data-grid-get("property");|
 
     
 
@@ -341,7 +342,7 @@ Get a config option
 
   
 
-Prints component styles
+Output component stylesheet
     
     
 
@@ -365,13 +366,49 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-data-grid-styles();
 ```
   
 
 
 
       
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  get-default-breakpoint() {#function-get-default-breakpoint}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Get the default breakpoint for the grid (when it starts to be a grid (vs stacked/mobile)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _data-grid.scss
+- **Group:** data-grid
+- **Type:** function
+- **Lines (comments):** 104-104
+- **Lines (code):** 106-113
+
+</details>
+
+    
 
 #### Require
 

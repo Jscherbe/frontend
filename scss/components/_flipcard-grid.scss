@@ -18,39 +18,33 @@
 $config: (
   "gutter" : 1rem,
   "grid-template-columns" : 1fr 1fr,
+  "breakpoint" : "small"
 );
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.flipcard-grid-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
-/// Set sizes map
-/// @param {Map} $changes Map of changes
-/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
-
-@mixin set-sizes($changes, $merge-mode: null) {
-  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
-}
-
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.flipcard-grid-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "flipcard-grid [config]");
 }
 
-/// Prints adaptive spacing component styles
+/// Output component stylesheet
 /// @example scss
-///  @include ulu.component-adaptive-spacing-styles();
+///  @include ulu.flipcard-grid-styles();
 
 @mixin styles {
+  $prefix: selector.class("flipcard-grid");
 
-  .flipcard-grid {
+  #{ $prefix } {
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: 1fr;
@@ -58,12 +52,13 @@ $config: (
     gap: get("gutter");
     list-style: none !important; // B/c in Editor
     padding: 0 !important; // B/c in Editor
-    @media (min-width: 40rem) {
-      // grid-template-columns: 1fr 1fr;
-      grid-template-columns: get("grid-template-columns");
+    @if (breakpoint.exists(get("breakpoint"))) {
+      @include breakpoint.min(get("breakpoint")) {
+        grid-template-columns: get("grid-template-columns");
+      }
     }
   }
-  .flipcard-grid__item {
+  #{ $prefix }__item {
     margin: 0 !important; // B/c in Editor
   }
 }

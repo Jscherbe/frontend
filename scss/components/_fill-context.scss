@@ -3,14 +3,16 @@
 ////
 /// Setup images or videos to behave like background images (object-fit).
 
-
 @use "data-grid";
 @use "../breakpoint";
+@use "../selector";
 
-
-/// Use the parent selector '.fill-context' on the element that should be the 
-/// frame for the child object (img,video).  Can be used within the grid with 
-/// modifier (see in example below).
+/// Output component stylesheet
+/// - Use the parent selector '.fill-context' on the element that should be the 
+///   frame for the child object (img,video).  
+/// - Can be used within the grid with modifier (see in example below).
+/// @example scss
+///   @include ulu.component-fill-context-styles();
 /// @example html {preview}
 ///   <div class="fill-context">
 ///     <img class="fill-context__object" src="background.jpg">
@@ -24,37 +26,33 @@
 ///   <div data-grid-item="width: 6" class="fill-context fill-context--in-grid fill-context--contain">
 ///     <img src="background.jpg">
 ///   </div>
-/// 
-
-
-/// Prints fill context styles
-/// @example scss
-///   @include ulu.component-fill-context-styles();
 
 @mixin styles {
-  .fill-context {
+  $prefix: selector.class("fill-context");
+
+  #{ $prefix } {
     position: relative;
   }
-  .fill-context__object,
-  .fill-context--auto img {
+  #{ $prefix }__object,
+  #{ $prefix }--auto img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .fill-context--contain {
-    &.fill-context--auto img,
-    .fill-context__object {
+  #{ $prefix }--contain {
+    &#{ $prefix }--auto img,
+    #{ $prefix }__object {
       object-fit: contain;
     }
   }
 
-  .fill-context--in-grid {
+  #{ $prefix }--in-grid {
     $breakpoint: data-grid.get-default-breakpoint();
     @include breakpoint.max($breakpoint) {
-      .fill-context__object,
-      &.fill-context--auto img {
+      #{ $prefix }__object,
+      &#{ $prefix }--auto img {
         position: static;
         height: auto;
         object-fit: fill;

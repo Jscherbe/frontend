@@ -1,5 +1,6 @@
 ////
 /// @group card
+/// A versatile container for displaying and summarizing individual items, entities, or resources in a visually appealing and concise format
 ////
 
 @use "sass:map";
@@ -32,9 +33,8 @@
 /// @prop {CssValue} border [1px solid #ccc] The card border.
 /// @prop {CssValue} border-hover [2px solid #278cca] The card border when hovered or focused.
 /// @prop {Dimension} header-margin [0.75em] The margin for the card header.
-/// @prop {Color} title-color [null] They type color of the title.
-/// @prop {Color} title-color-hover [null] They type color of the title when hovered or focused.
-/// @prop {Color} title-color-card-hover [null] @joe-check  what is the difference between this and title-color-hover?
+/// @prop {Color} title-color [null] The type color of the title.
+/// @prop {Color} title-color-hover [null] The type color of the title (if link/button) when hovered or focused
 /// @prop {Dimension} title-margin [0] The margin for the title.
 /// @prop {CssValue} title-font-weight [bold] The font weight for the title.
 /// @prop {Number} image-ratio [56.25%] The image ratio for the card image.
@@ -56,7 +56,7 @@
 /// @prop {List} transition-properties [(border-color, background-color, color, box-shadow, transform)] The properties for the card animation.
 /// @prop {Boolean} image-transition-enabled [true] Enable or disable the image transition.
 /// @prop {Time} image-transition-duration [350ms] The duration of the image transition.
-/// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image tranition.
+/// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 
 
@@ -93,7 +93,6 @@ $config: (
   "margin-y" : 3rem,
   "max-width" : 28rem,
   "padding" : 2rem,
-  "prefix" : "card",
   "title-color" : null,
   "title-color-hover" : null,
   "title-color-card-hover" : null,
@@ -132,7 +131,7 @@ $config: (
 /// @param {Boolean} $hover [false] Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
 
 @mixin when-clickable($hover: false) {
-  $prefix: selector.class(get("prefix"));
+  $prefix: selector.class("card");
   @if (get("clickable-card-enabled") and get("clickable-card-selector")) {
     #{ $prefix } {
       &#{ get("clickable-card-selector") } {
@@ -159,7 +158,7 @@ $config: (
 ///  @include ulu.component-example-styles();
 
 @mixin styles {
-  $prefix: selector.class(get("prefix"));
+  $prefix: selector.class("card");
 
   #{ $prefix } {
     color: get("color");
@@ -231,10 +230,10 @@ $config: (
       all: unset;
     }
   }
-  @if get("title-color-card-hover") {
+  @if get("title-color-hover") {
     @include when-clickable($hover: true) {
       #{ $prefix }__title {
-        color: get("title-color-card-hover");
+        color: get("title-color-hover");
       }
     }
   }

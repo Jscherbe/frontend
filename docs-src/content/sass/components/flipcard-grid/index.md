@@ -39,6 +39,7 @@ Module Settings
 $config: (
   "gutter" : 1rem,
   "grid-template-columns" : 1fr 1fr,
+  "breakpoint" : "small"
 );
 ```
   
@@ -51,7 +52,7 @@ $config: (
 - **Group:** flipcard-grid
 - **Type:** variable
 - **Lines (comments):** 12-15
-- **Lines (code):** 17-21
+- **Lines (code):** 17-22
 
 </details>
 
@@ -96,8 +97,8 @@ Change modules $config
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** mixin
-- **Lines (comments):** 23-25
-- **Lines (code):** 27-29
+- **Lines (comments):** 24-26
+- **Lines (code):** 28-30
 
 </details>
 
@@ -109,59 +110,13 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.flipcard-grid-set(( "property" : value ));|
 
     
 
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
-  
-
-
-<div class="sassdoc-item-header">
-
-###  set-sizes() {#mixin-set-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Set sizes map
-    
-    
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _flipcard-grid.scss
-- **Group:** flipcard-grid
-- **Type:** mixin
-- **Lines (comments):** 31-33
-- **Lines (code):** 35-37
-
-</details>
-
-    
-
-#### Parameters
-
-
-|Name|Type|Description|
-|:--|:--|:--|
-|$changes|`Map`|Map of changes|
-|$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
-
-    
-
-#### Require
-
-- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
   
 
 
@@ -177,7 +132,7 @@ Set sizes map
 
   
 
-Prints adaptive spacing component styles
+Output component stylesheet
     
     
 
@@ -188,8 +143,8 @@ Prints adaptive spacing component styles
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** mixin
-- **Lines (comments):** 47-49
-- **Lines (code):** 51-69
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-64
 
 </details>
 
@@ -201,7 +156,7 @@ Prints adaptive spacing component styles
 
 
 ``` scss
-@include ulu.component-adaptive-spacing-styles();
+@include ulu.flipcard-grid-styles();
 ```
   
 
@@ -243,8 +198,8 @@ Get a config option
 - **File:** _flipcard-grid.scss
 - **Group:** flipcard-grid
 - **Type:** function
-- **Lines (comments):** 39-41
-- **Lines (code):** 43-45
+- **Lines (comments):** 32-34
+- **Lines (code):** 36-38
 
 </details>
 
@@ -256,7 +211,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.flipcard-grid-get("property");|
 
     
 

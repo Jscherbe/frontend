@@ -8,7 +8,7 @@ sassdocGroupName: callout
 
 <div class="type-large">
 
-
+A container for content that highlights important information, provides context, or guides user attention within an interface
 
 </div>
 
@@ -57,8 +57,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 25-35
-- **Lines (code):** 37-47
+- **Lines (comments):** 26-36
+- **Lines (code):** 38-48
 
 </details>
 
@@ -110,8 +110,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-96
+- **Lines (comments):** 94-96
+- **Lines (code):** 98-100
 
 </details>
 
@@ -123,7 +123,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.component-callout-set(( "property" : value ));|
 
     
 
@@ -145,7 +145,7 @@ Change modules $config
 
   
 
-Set callout styles 
+Set callout style variations
     
     
 
@@ -156,8 +156,8 @@ Set callout styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 107-109
-- **Lines (code):** 111-113
+- **Lines (comments):** 111-113
+- **Lines (code):** 115-117
 
 </details>
 
@@ -168,7 +168,7 @@ Set callout styles
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes|
+|$changes|`Map`|Map of changes (options for style include [background-color, color, border, border-radius, border-color, box-shadow, padding, left-cap, left-cap-width, left-cap-color]|
 |$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
 
     
@@ -191,7 +191,7 @@ Set callout styles
 
   
 
-Prints left-cap styling 
+Output styling for a callout that adds a left cap
     
     
 
@@ -202,10 +202,20 @@ Prints left-cap styling
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 115-115
-- **Lines (code):** 117-130
+- **Lines (comments):** 119-121
+- **Lines (code):** 123-136
 
 </details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$width|`Dimension`|The width of the left cap|
+|$color|`Color`|The left cap color|
 
     
 
@@ -222,7 +232,7 @@ Prints left-cap styling
 
   
 
-Prints component styles
+Output component stylesheet
     
     
 
@@ -233,8 +243,8 @@ Prints component styles
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 132-134
-- **Lines (code):** 136-169
+- **Lines (comments):** 138-140
+- **Lines (code):** 142-173
 
 </details>
 
@@ -246,7 +256,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-callout-styles();
 ```
   
 
@@ -290,8 +300,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-105
+- **Lines (comments):** 102-104
+- **Lines (code):** 106-109
 
 </details>
 
@@ -303,7 +313,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.component-callout-get("property");|
 
     
 

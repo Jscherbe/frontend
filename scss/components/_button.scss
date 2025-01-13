@@ -1,5 +1,6 @@
 ////
 /// @group button
+/// Output core button styles and sizes
 ////
 
 @use "sass:map";
@@ -11,8 +12,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} icon-margin [1em] List of other sizes (large by defualt), each size is a map of (width, font-size) 
-
+/// @prop {Dimension} icon-margin [1em] List of other sizes (large by default), each size is a map of (width, font-size) 
 
 $config: (
   "icon-margin" : 0.5em
@@ -20,7 +20,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-button-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -28,13 +28,13 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-button-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "component-button [config]");
 }
 
-/// Prints button component styles
+/// Output button component styles
 /// @example scss
 ///  @include ulu.component-button-styles();
 /// @example html {preview}

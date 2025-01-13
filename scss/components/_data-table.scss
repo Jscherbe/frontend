@@ -54,7 +54,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.component-data-table-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -62,16 +62,16 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.component-data-table-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "data-table [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-data-table-styles();
 
 @mixin styles {
   $prefix: selector.class("data-table");
