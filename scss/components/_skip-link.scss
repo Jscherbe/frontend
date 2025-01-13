@@ -1,6 +1,7 @@
 
 ////
 /// @group skip-link
+/// Accessible skip link component (works in combination with .hidden-visually-focusable)
 ////
 
 @use "sass:meta";
@@ -39,7 +40,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-skip-link-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -47,14 +49,15 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-skip-link-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "button-verbose [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// - Note: This needs to be paired with the display helper class "hidden-visually-focusable"
 /// - Note: Remember to add an id to the content you want to skip to. Often this will go to the content after the nav menu.
 /// @example scss

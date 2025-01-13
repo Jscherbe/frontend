@@ -1,7 +1,7 @@
 ////
 /// @group wysiwyg
 ////
-/// For auto formatting general HTML elements (used around editor/body text)
+/// For auto formatting general HTML elements (used around editor/body text). This selector can't currently be changed.
 
 @use "sass:list";
 @use "sass:map";
@@ -31,7 +31,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-wysiwyg-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -39,13 +40,20 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-wysiwyg-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "component-wysiwyg [config]");
 }
 
-// Note this is setup so that it can be used for separate stylesheets (ie. tinymce or ckeditor)
+/// Output component stylesheet
+/// - Note this is setup so that it can be used for separate stylesheets (ie. tinyMCE or ckeditor)
+/// @example scss
+///   @include ulu.component-wysiwyg-styles(true);
+///   // Output not in selector (for editor stylesheet/preview)
+///   @include ulu.component-wysiwyg-styles(false); 
+
 @mixin styles($in-selector: true) {
   @if ($in-selector) {
     .wysiwyg {

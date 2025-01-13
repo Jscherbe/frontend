@@ -8,7 +8,7 @@ sassdocGroupName: vignette
 
 <div class="type-large">
 
-Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+Create a vignette effect around image/video/etc
 
 </div>
 
@@ -38,6 +38,7 @@ Module Settings
 ``` scss
 $config: (
   "background-color" : rgb(0,0,0),
+  "image-filter" : saturate(85%)
 );
 ```
   
@@ -49,8 +50,8 @@ $config: (
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** variable
-- **Lines (comments):** 13-15
-- **Lines (code):** 17-20
+- **Lines (comments):** 12-14
+- **Lines (code):** 16-19
 
 </details>
 
@@ -61,7 +62,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|background-color|Color|rgb(0,0,0)|Color used for the fade-in of the vignette.|
+|background-color|Color|rgb(0,0,0)|Color used for the fade-in of the vignette. Must be actual color not color module palette name|
 
     
   
@@ -94,58 +95,26 @@ Change modules $config
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 22-24
+- **Lines (comments):** 21-24
 - **Lines (code):** 26-28
 
 </details>
 
     
 
-#### Parameters
+#### Examples
+
+      
 
 
-|Name|Type|Description|
-|:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
-
-    
-
-#### Require
-
-- [$config](/sass/components/accordion/#variable-config)
+``` scss
+@include ulu.component-vignette-set(( "property" : value ));
+```
   
 
 
-<div class="sassdoc-item-header">
 
-###  set-sizes() {#mixin-set-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Set sizes map
-    
-    
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _vignette.scss
-- **Group:** vignette
-- **Type:** mixin
-- **Lines (comments):** 30-32
-- **Lines (code):** 34-36
-
-</details>
-
-    
+      
 
 #### Parameters
 
@@ -153,13 +122,12 @@ Set sizes map
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes|
-|$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
 
     
 
 #### Require
 
-- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
+- [$config](/sass/components/accordion/#variable-config)
   
 
 
@@ -175,7 +143,7 @@ Set sizes map
 
   
 
-Prints adaptive spacing component styles
+Output component stylesheet
     
     
 
@@ -186,8 +154,8 @@ Prints adaptive spacing component styles
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 46-48
-- **Lines (code):** 50-78
+- **Lines (comments):** 39-41
+- **Lines (code):** 43-65
 
 </details>
 
@@ -199,7 +167,7 @@ Prints adaptive spacing component styles
 
 
 ``` scss
-@include ulu.component-adaptive-spacing-styles();
+@include ulu.component-vignette-styles();
 ```
   
 
@@ -239,20 +207,33 @@ Get a config option
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** function
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-44
+- **Lines (comments):** 30-33
+- **Lines (code):** 35-37
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-vignette-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

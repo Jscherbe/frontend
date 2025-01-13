@@ -5822,7 +5822,7 @@
     <div class="wysiwyg">
       <h1 id="tile-button" tabindex="-1">Tile-button</h1>
 <div class="type-large">
-<p>Button to be used withing tile-grid. Used with button classes.</p>
+<p>Button to be used within tile-grid. Used in combination with button component classes.</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5851,8 +5851,8 @@
 <li><strong>File:</strong> _tile-button.scss</li>
 <li><strong>Group:</strong> tile-button</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 39-48</li>
-<li><strong>Lines (code):</strong> 50-62</li>
+<li><strong>Lines (comments):</strong> 38-47</li>
+<li><strong>Lines (code):</strong> 49-61</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5930,10 +5930,12 @@
 <li><strong>File:</strong> _tile-button.scss</li>
 <li><strong>Group:</strong> tile-button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 64-66</li>
+<li><strong>Lines (comments):</strong> 63-66</li>
 <li><strong>Lines (code):</strong> 68-70</li>
 </ul>
 </details>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-tile-button-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5948,11 +5950,6 @@
 <td style="text-align:left">$changes</td>
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -5973,12 +5970,12 @@
 <li><strong>File:</strong> _tile-button.scss</li>
 <li><strong>Group:</strong> tile-button</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 81-83</li>
-<li><strong>Lines (code):</strong> 85-129</li>
+<li><strong>Lines (comments):</strong> 82-84</li>
+<li><strong>Lines (code):</strong> 86-130</li>
 </ul>
 </details>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-example-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-tile-button-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="require-1" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#function-get">get()</a></li>
@@ -5997,10 +5994,12 @@
 <li><strong>File:</strong> _tile-button.scss</li>
 <li><strong>Group:</strong> tile-button</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 72-74</li>
-<li><strong>Lines (code):</strong> 76-79</li>
+<li><strong>Lines (comments):</strong> 72-75</li>
+<li><strong>Lines (code):</strong> 77-80</li>
 </ul>
 </details>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-tile-button-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6015,11 +6014,6 @@
 <td style="text-align:left">$name</td>
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>

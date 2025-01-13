@@ -8,7 +8,7 @@ sassdocGroupName: skip-link
 
 <div class="type-large">
 
-
+Accessible skip link component (works in combination with .hidden-visually-focusable)
 
 </div>
 
@@ -53,8 +53,8 @@ $config: (
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** variable
-- **Lines (comments):** 29-30
-- **Lines (code):** 32-38
+- **Lines (comments):** 30-31
+- **Lines (code):** 33-39
 
 </details>
 
@@ -89,20 +89,33 @@ Change modules $config
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 41-44
+- **Lines (code):** 46-48
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-skip-link-set(( "property" : value ));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -124,7 +137,7 @@ Change modules $config
 
   
 
-Prints component styles
+Output component stylesheet
 - Note: This needs to be paired with the display helper class "hidden-visually-focusable"
 - Note: Remember to add an id to the content you want to skip to. Often this will go to the content after the nav menu.
     
@@ -137,8 +150,8 @@ Prints component styles
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** mixin
-- **Lines (comments):** 57-70
-- **Lines (code):** 72-89
+- **Lines (comments):** 60-73
+- **Lines (code):** 75-92
 
 </details>
 
@@ -207,20 +220,33 @@ Get a config option
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** function
-- **Lines (comments):** 48-50
-- **Lines (code):** 52-55
+- **Lines (comments):** 50-53
+- **Lines (code):** 55-58
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-skip-link-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

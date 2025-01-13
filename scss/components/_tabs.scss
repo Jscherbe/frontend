@@ -1,5 +1,6 @@
 ////
 /// @group tabs
+/// Tab interface component styles, for aria based tab interface
 ////
 
 @use "sass:map";
@@ -24,7 +25,7 @@ $-fallbacks: (
 /// @prop {Dimension} border-radius [8px] The border radius of the tabs.
 /// @prop {Dimension} border-width [0.25em] The width of the tab border.
 /// @prop {Dimension} margin [2rem] The gap between tabs and above and below tabs.
-/// @prop {Dimension} print-margin [1.5em] The subtab margin of child tabs.
+/// @prop {Dimension} print-margin [1.5em] Margin between tabs when stacked for print
 /// @prop {CssValue} tablist-border-bottom [true] The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".
 /// @prop {Color} tabpanel-background-color [rgb(245, 245, 245)] The tabpanel background color.
 /// @prop {Color} tab-border-color-selected [currentColor] The border color when selected.
@@ -39,7 +40,6 @@ $config: (
   "print-margin" : 1.5em,
   "tablist-border-bottom" : true,
   "tabpanel-background-color" : rgb(245, 245, 245),
-
   "tab-border-color-selected" : currentColor,
   "tab-color" : "link",
   "tab-color-hover" : "link-hover",
@@ -48,7 +48,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-tabs-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -56,14 +57,15 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-tabs-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "component-tabs [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Prints tabs component styles
+/// Output component stylesheet
 /// @example scss
 ///  @include ulu.component-tabs-styles();
 

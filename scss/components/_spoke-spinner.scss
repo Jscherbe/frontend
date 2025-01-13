@@ -1,5 +1,6 @@
 ////
 /// @group spoke-spinner
+/// A spoke style spinner/loader icon, requires ulu.base-keyframes
 ////
 
 @use "sass:map";
@@ -22,12 +23,12 @@ $config: (
 ) !default;
 
 /// Map of other sizes (use as modifiers), same properties as config/defaults
-$styles: (
-) !default;
+$styles: () !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-spoke-spinner-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -43,13 +44,14 @@ $styles: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-spoke-spinner-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "spoke-spinner [config]");
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// @example scss
 ///  @include ulu.component-spoke-spinner-styles();
 /// @example html Example markup
@@ -92,7 +94,7 @@ $styles: (
   }
   #{ $prefix }__spinner div {
     transform-origin: $sizeHalf $sizeHalf;
-    animation: UluSpokeSpinner get("duration") linear infinite;
+    animation: UluFadeOut get("duration") linear infinite;
   }
   #{ $prefix }__spinner div:after {
     content: " ";
@@ -186,15 +188,6 @@ $styles: (
         border-radius: map.get($merged, "border-radius");
         background: color.get(map.get($merged, "color"));
       }
-    }
-  }
-
-  @keyframes UluSpokeSpinner {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
     }
   }
 }

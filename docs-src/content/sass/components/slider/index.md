@@ -8,7 +8,7 @@ sassdocGroupName: slider
 
 <div class="type-large">
 
-
+Slider/Carousal component that works with the ui/slider.js script
 
 </div>
 
@@ -41,7 +41,6 @@ $config: (
   "breakpoint" : "small",
   "margin-bottom" : 3rem,
   "margin-top" : 1rem,
-
   "button-background-color" : transparent,
   "button-border" : 2px solid color.get("link"),
   "button-border-color-hover" :  color.get("link-hover"),
@@ -83,8 +82,8 @@ $config: (
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** variable
-- **Lines (comments):** 12-47
-- **Lines (code):** 49-85
+- **Lines (comments):** 13-48
+- **Lines (code):** 50-85
 
 </details>
 
@@ -170,11 +169,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.component-slider-set(( "property" : value ));
 ```
   
 
@@ -207,7 +206,7 @@ General example, replace module-name with module's name
 
   
 
-Prints modal component styles
+Output component stylesheet
     
     
 
@@ -218,8 +217,8 @@ Prints modal component styles
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 104-106
-- **Lines (code):** 108-241
+- **Lines (comments):** 105-107
+- **Lines (code):** 109-241
 
 </details>
 
@@ -271,20 +270,33 @@ Get a config option
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** function
-- **Lines (comments):** 96-98
-- **Lines (code):** 100-102
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-103
 
 </details>
 
     
+
+#### Examples
+
+General example      
+
+
+``` scss
+@include ulu.component-slider-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

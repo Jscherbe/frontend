@@ -8,7 +8,7 @@ sassdocGroupName: scroll-slider
 
 <div class="type-large">
 
-
+Overflow scrolling slider component (use with ui/overflow-scroller.js)
 
 </div>
 
@@ -45,7 +45,6 @@ $config: (
   "padding-bottom" : 0,
   "padding-top" : 0,
   "prefix": "scroll-slider",
-
   "button-background-color" : white,
   "button-background-color-hover" : white,
   "button-border" : 2px solid white,
@@ -71,8 +70,8 @@ $config: (
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** variable
-- **Lines (comments):** 18-41
-- **Lines (code):** 43-67
+- **Lines (comments):** 15-38
+- **Lines (code):** 40-63
 
 </details>
 
@@ -137,8 +136,8 @@ Change modules $config
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
-- **Lines (comments):** 69-72
-- **Lines (code):** 74-76
+- **Lines (comments):** 65-68
+- **Lines (code):** 70-72
 
 </details>
 
@@ -146,11 +145,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.component-scroll-slider-set(( "property" : value ));
 ```
   
 
@@ -168,6 +167,56 @@ General example, replace module-name with module's name
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output component stylesheet
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _scroll-slider.scss
+- **Group:** scroll-slider
+- **Type:** mixin
+- **Lines (comments):** 83-85
+- **Lines (code):** 87-201
+
+</details>
+
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-scroll-slider-styles();
+```
+  
+
+
+
+      
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
   
   
 
@@ -199,20 +248,33 @@ Get a config option
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** function
-- **Lines (comments):** 78-80
-- **Lines (code):** 82-84
+- **Lines (comments):** 74-77
+- **Lines (code):** 79-81
 
 </details>
 
     
+
+#### Examples
+
+General example      
+
+
+``` scss
+@include ulu.component-scroll-slider-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

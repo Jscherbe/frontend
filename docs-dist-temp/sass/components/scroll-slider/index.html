@@ -5795,6 +5795,9 @@
                     
                     <li><a href="#mixin-set">set()</a>
             		</li>
+
+                    <li><a href="#mixin-styles">styles()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -5819,6 +5822,7 @@
     <div class="wysiwyg">
       <h1 id="scroll-slider" tabindex="-1">Scroll-slider</h1>
 <div class="type-large">
+<p>Overflow scrolling slider component (use with ui/overflow-scroller.js)</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5837,7 +5841,6 @@
   <span class="pjs-token pjs-string">"padding-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"prefix"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"scroll-slider"</span><span class="pjs-token pjs-punctuation">,</span>
-
   <span class="pjs-token pjs-string">"button-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-border"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid white<span class="pjs-token pjs-punctuation">,</span>
@@ -5859,8 +5862,8 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 18-41</li>
-<li><strong>Lines (code):</strong> 43-67</li>
+<li><strong>Lines (comments):</strong> 15-38</li>
+<li><strong>Lines (code):</strong> 40-63</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5999,13 +6002,13 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 69-72</li>
-<li><strong>Lines (code):</strong> 74-76</li>
+<li><strong>Lines (comments):</strong> 65-68</li>
+<li><strong>Lines (code):</strong> 70-72</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
-<p>General example, replace module-name with module's name</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> module-name.<span class="pjs-token pjs-function">set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<p>General example</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-scroll-slider-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6027,6 +6030,29 @@
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Output component stylesheet</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _scroll-slider.scss</li>
+<li><strong>Group:</strong> scroll-slider</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 83-85</li>
+<li><strong>Lines (code):</strong> 87-201</li>
+</ul>
+</details>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-scroll-slider-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/components/accordion/#function-get">get()</a></li>
+</ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
 <h3 id="function-get" tabindex="-1">get()</h3>
@@ -6041,10 +6067,13 @@
 <li><strong>File:</strong> _scroll-slider.scss</li>
 <li><strong>Group:</strong> scroll-slider</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 78-80</li>
-<li><strong>Lines (code):</strong> 82-84</li>
+<li><strong>Lines (comments):</strong> 74-77</li>
+<li><strong>Lines (code):</strong> 79-81</li>
 </ul>
 </details>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<p>General example</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-scroll-slider-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6060,14 +6089,9 @@
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Name of property</td>
 </tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
 </tbody>
 </table>
-<h4 id="require-1" tabindex="-1">Require</h4>
+<h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

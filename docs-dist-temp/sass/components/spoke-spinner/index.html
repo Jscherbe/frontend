@@ -5828,6 +5828,7 @@
     <div class="wysiwyg">
       <h1 id="spoke-spinner" tabindex="-1">Spoke-spinner</h1>
 <div class="type-large">
+<p>A spoke style spinner/loader icon, requires ulu.base-keyframes</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5851,8 +5852,8 @@
 <li><strong>File:</strong> _spoke-spinner.scss</li>
 <li><strong>Group:</strong> spoke-spinner</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-13</li>
-<li><strong>Lines (code):</strong> 15-22</li>
+<li><strong>Lines (comments):</strong> 13-14</li>
+<li><strong>Lines (code):</strong> 16-23</li>
 </ul>
 </details>
 <div class="sassdoc-item-header">
@@ -5862,16 +5863,15 @@
   </div>
 </div>
 <p>Map of other sizes (use as modifiers), same properties as config/defaults</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$styles</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$styles</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _spoke-spinner.scss</li>
 <li><strong>Group:</strong> spoke-spinner</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 24-24</li>
-<li><strong>Lines (code):</strong> 25-26</li>
+<li><strong>Lines (comments):</strong> 25-25</li>
+<li><strong>Lines (code):</strong> 26-26</li>
 </ul>
 </details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5888,10 +5888,12 @@
 <li><strong>File:</strong> _spoke-spinner.scss</li>
 <li><strong>Group:</strong> spoke-spinner</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 28-30</li>
-<li><strong>Lines (code):</strong> 32-34</li>
+<li><strong>Lines (comments):</strong> 28-31</li>
+<li><strong>Lines (code):</strong> 33-35</li>
 </ul>
 </details>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-spoke-spinner-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5906,11 +5908,6 @@
 <td style="text-align:left">$changes</td>
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -5931,8 +5928,8 @@
 <li><strong>File:</strong> _spoke-spinner.scss</li>
 <li><strong>Group:</strong> spoke-spinner</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 36-38</li>
-<li><strong>Lines (code):</strong> 40-42</li>
+<li><strong>Lines (comments):</strong> 37-39</li>
+<li><strong>Lines (code):</strong> 41-43</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5967,18 +5964,18 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints component styles</p>
+<p>Output component stylesheet</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _spoke-spinner.scss</li>
 <li><strong>Group:</strong> spoke-spinner</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 52-71</li>
-<li><strong>Lines (code):</strong> 73-200</li>
+<li><strong>Lines (comments):</strong> 54-73</li>
+<li><strong>Lines (code):</strong> 75-193</li>
 </ul>
 </details>
-<h4 id="examples" tabindex="-1">Examples</h4>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-spoke-spinner-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <p>Example markup</p>
 <pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>spoke-spinner<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
@@ -6016,10 +6013,12 @@
 <li><strong>File:</strong> _spoke-spinner.scss</li>
 <li><strong>Group:</strong> spoke-spinner</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 44-46</li>
-<li><strong>Lines (code):</strong> 48-50</li>
+<li><strong>Lines (comments):</strong> 45-48</li>
+<li><strong>Lines (code):</strong> 50-52</li>
 </ul>
 </details>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-spoke-spinner-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6034,11 +6033,6 @@
 <td style="text-align:left">$name</td>
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>

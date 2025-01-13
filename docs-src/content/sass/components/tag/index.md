@@ -8,7 +8,7 @@ sassdocGroupName: tag
 
 <div class="type-large">
 
-
+A small, lightweight label used to categorize, classify, or identify items within an interface
 
 </div>
 
@@ -62,8 +62,8 @@ $config: (
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** variable
-- **Lines (comments):** 23-24
-- **Lines (code):** 26-41
+- **Lines (comments):** 24-25
+- **Lines (code):** 27-42
 
 </details>
 
@@ -111,8 +111,8 @@ $styles: (
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** variable
-- **Lines (comments):** 43-43
-- **Lines (code):** 44-57
+- **Lines (comments):** 44-44
+- **Lines (code):** 46-59
 
 </details>
 
@@ -147,20 +147,33 @@ Change modules $config
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 60-62
-- **Lines (code):** 64-66
+- **Lines (comments):** 62-65
+- **Lines (code):** 67-69
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tag-set(( "property" : value ));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -193,8 +206,8 @@ Set tag styles
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 68-70
-- **Lines (code):** 72-74
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
 
 </details>
 
@@ -228,7 +241,7 @@ Set tag styles
 
   
 
-Prints component styles
+Output component stylesheet
     
     
 
@@ -239,8 +252,8 @@ Prints component styles
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 85-87
-- **Lines (code):** 89-138
+- **Lines (comments):** 89-91
+- **Lines (code):** 93-142
 
 </details>
 
@@ -293,20 +306,33 @@ Get a config option
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** function
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-83
+- **Lines (comments):** 79-82
+- **Lines (code):** 84-87
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tag-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 
