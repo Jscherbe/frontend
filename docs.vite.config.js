@@ -6,7 +6,7 @@ export default createConfig({
   port: 5173, 
   localOptionsFile: false,
   input: "docs-src/src/main.js",
-  outDir: "docs-dist-temp/assets/",
+  outDir: "docs/assets/",
   origin: "http://localhost:8080", 
   themePath: "",
   globalJquery: false,

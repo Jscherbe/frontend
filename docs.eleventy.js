@@ -20,7 +20,7 @@ const { NO_DOC_GEN } = process.env;
 export default async function(eleventyConfig) {
   eleventyConfig.setServerOptions({ 
     port: 8080, // Needed for asset server
-    domDiff: false, // Messes up asset server (removes vite embeddedstyles from head)
+    domDiff: false, // Messes up asset server (removes vite embedded styles from head)
   }); 
   eleventyConfig.addPassthroughCopy("src");
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
@@ -73,7 +73,7 @@ export default async function(eleventyConfig) {
   return {
     dir: {
       input: "docs-src/content",
-      output: "docs-dist-temp",
+      output: "docs",
       includes: "../src/templates",
       layouts: "../src/templates/layouts",
       data: "../src/data",

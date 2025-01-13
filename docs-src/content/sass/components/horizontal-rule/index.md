@@ -113,6 +113,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -170,6 +172,8 @@ Prints adaptive spacing component styles
 ```
   
 
+
+
       
 
 #### Require
@@ -222,6 +226,8 @@ Get a config option
 @include ulu.component-horizontal-rule-get("property");
 ```
   
+
+
 
       
 

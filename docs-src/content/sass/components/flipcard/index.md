@@ -153,6 +153,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -260,6 +262,8 @@ Get a config option
 @include ulu.component-flipcard-get("property");
 ```
   
+
+
 
       
 

@@ -177,6 +177,8 @@ General example
 ```
   
 
+
+
       
 
 #### Parameters
@@ -234,6 +236,8 @@ Output component stylesheet
 ```
   
 
+
+
       
 
 #### Require
@@ -286,6 +290,8 @@ General example
 @include ulu.component-slider-get("property");
 ```
   
+
+
 
       
 
