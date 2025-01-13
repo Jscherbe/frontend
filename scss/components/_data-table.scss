@@ -54,6 +54,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example
 ///   @include ulu.component-data-table-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -62,6 +63,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example
 ///   @include ulu.component-data-table-get("property");
 
 @function get($name) {

@@ -72,7 +72,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example
+///   @include ulu.component-accordion-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -80,7 +81,8 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example
+///   @include ulu.component-accordion-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "accordion [config]");
@@ -89,7 +91,7 @@ $config: (
 /// Prints component styles
 /// @demo accordion
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-accordion-styles();
 
 @mixin styles {
   $prefix: selector.class("accordion");

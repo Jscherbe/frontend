@@ -159,20 +159,31 @@ Change modules $config
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 55-57
-- **Lines (code):** 59-61
+- **Lines (comments):** 55-58
+- **Lines (code):** 60-62
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-adaptive-spacing-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-adaptive-spacing-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -205,8 +216,8 @@ Set sizes map
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 63-65
-- **Lines (code):** 67-69
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-70
 
 </details>
 
@@ -251,8 +262,8 @@ Outputs adaptive spacing component styles
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** mixin
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-115
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-117
 
 </details>
 
@@ -306,20 +317,31 @@ Get a config option
 - **File:** _adaptive-spacing.scss
 - **Group:** adaptive-spacing
 - **Type:** function
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 72-75
+- **Lines (code):** 77-79
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-adaptive-spacing-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-adaptive-spacing-get("property");|
+|$name|`Map`|Name of property|
 
     
 

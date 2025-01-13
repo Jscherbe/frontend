@@ -1,8 +1,7 @@
-// Version: 1.0.3
-
-// Changes: 
-//                  1.0.3 - Merged drupal selectors, broke into mixins
-//                  1.0.2 - Removed nested fieldset option (not accessible)
+////
+/// @group form-theme
+/// A container for content that highlights important information, provides context, or guides user attention within an interface
+////
 
 @use "sass:map";
 @use "sass:meta";
@@ -180,7 +179,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example
+///   @include ulu.component-form-theme-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -188,7 +188,8 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example
+///   @include ulu.component-form-theme-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "component-form-theme [config]");
@@ -197,6 +198,10 @@ $config: (
 @function -fallback($op1, $op2) {
   @return utils.map-fallback($config, $op1, $op2);
 }
+
+/// Output component stylesheet
+/// @example scss
+///  @include ulu.component-form-theme-styles();
 
 @mixin styles() {
   $prefix: selector.class("form-theme");

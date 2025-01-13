@@ -120,8 +120,9 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss 
+/// @example
+///   @include ulu.component-modal-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -129,7 +130,8 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example
+///   @include ulu.component-modal-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "component-modal [config]");

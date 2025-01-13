@@ -42,7 +42,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example
+///   @include ulu.component-overlay-section-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -50,7 +51,8 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example
+///   @include ulu.component-overlay-section-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "overlay-section [config]");
@@ -58,7 +60,8 @@ $config: (
 
 /// Prints component styles
 /// @example scss
-///  @include ulu.component-example-styles();
+/// @example scss
+///  @include ulu.component-overlay-section-styles();
 
 @mixin styles {
 

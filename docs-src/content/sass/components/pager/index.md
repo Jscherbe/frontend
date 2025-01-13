@@ -144,20 +144,31 @@ Change modules $config
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** mixin
-- **Lines (comments):** 73-75
-- **Lines (code):** 77-79
+- **Lines (comments):** 73-76
+- **Lines (code):** 78-80
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-pager-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -190,8 +201,8 @@ Prints component styles
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** mixin
-- **Lines (comments):** 89-91
-- **Lines (code):** 93-165
+- **Lines (comments):** 92-94
+- **Lines (code):** 96-168
 
 </details>
 
@@ -203,7 +214,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-pager-styles();
 ```
   
 
@@ -243,20 +254,31 @@ Get a config option
 - **File:** _pager.scss
 - **Group:** pager
 - **Type:** function
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-87
+- **Lines (comments):** 82-85
+- **Lines (code):** 87-90
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-pager-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

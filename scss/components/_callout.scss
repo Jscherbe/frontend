@@ -93,6 +93,7 @@ $styles: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example
 ///   @include ulu.component-callout-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -101,6 +102,7 @@ $styles: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example
 ///   @include ulu.component-callout-get("property");
 
 @function get($name) {

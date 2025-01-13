@@ -31,7 +31,7 @@ sassdocGroupName: list-ordered
 
   
 
-Output styles
+Output component stylesheet
     
     
 
@@ -42,11 +42,23 @@ Output styles
 - **File:** _list-ordered.scss
 - **Group:** list-ordered
 - **Type:** mixin
-- **Lines (comments):** 9-9
-- **Lines (code):** 11-16
+- **Lines (comments):** 9-11
+- **Lines (code):** 13-18
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-list-ordered-styles();
+```
+  
+
+      
   
   

@@ -31,7 +31,7 @@ sassdocGroupName: list-unordered
 
   
 
-Output styles
+Output component stylesheet
     
     
 
@@ -42,12 +42,24 @@ Output styles
 - **File:** _list-unordered.scss
 - **Group:** list-unordered
 - **Type:** mixin
-- **Lines (comments):** 9-9
-- **Lines (code):** 11-21
+- **Lines (comments):** 9-11
+- **Lines (code):** 13-23
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-list-unordered-styles();
+```
+  
+
+      
 
 #### Require
 

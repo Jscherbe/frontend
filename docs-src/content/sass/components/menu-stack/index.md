@@ -147,20 +147,31 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-93
+- **Lines (comments):** 87-90
+- **Lines (code):** 92-94
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-menu-stack-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -193,8 +204,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 109-113
-- **Lines (code):** 115-243
+- **Lines (comments):** 111-115
+- **Lines (code):** 117-245
 
 </details>
 
@@ -206,7 +217,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-menu-stack-styles();
 ```
   
 
@@ -252,20 +263,31 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 95-97
-- **Lines (code):** 99-102
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-104
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-menu-stack-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

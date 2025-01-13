@@ -128,20 +128,31 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 71-74
+- **Lines (code):** 76-78
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-button-verbose-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -174,8 +185,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 88-90
-- **Lines (code):** 92-136
+- **Lines (comments):** 90-92
+- **Lines (code):** 94-138
 
 </details>
 
@@ -187,7 +198,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-button-verbose-styles();
 ```
   
 
@@ -227,20 +238,31 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-86
+- **Lines (comments):** 80-83
+- **Lines (code):** 85-88
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-button-verbose-get(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

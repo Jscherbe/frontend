@@ -182,20 +182,31 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 114-116
-- **Lines (code):** 118-120
+- **Lines (comments):** 114-117
+- **Lines (code):** 119-121
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-card-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -228,8 +239,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 130-131
-- **Lines (code):** 133-148
+- **Lines (comments):** 132-133
+- **Lines (code):** 135-150
 
 </details>
 
@@ -273,8 +284,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 155-158
-- **Lines (code):** 160-416
+- **Lines (comments):** 157-161
+- **Lines (code):** 163-419
 
 </details>
 
@@ -299,7 +310,17 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+scss
+```
+  
+
+      
+
+      
+
+
+``` scss
+@include ulu.component-card-styles();
 ```
   
 
@@ -340,20 +361,31 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 122-124
-- **Lines (code):** 126-128
+- **Lines (comments):** 123-126
+- **Lines (code):** 128-130
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-card-get(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

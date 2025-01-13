@@ -116,20 +116,31 @@ Change modules $config
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 43-46
+- **Lines (code):** 48-50
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-overlay-section-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -162,8 +173,8 @@ Prints component styles
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
-- **Lines (comments):** 59-61
-- **Lines (code):** 63-120
+- **Lines (comments):** 61-64
+- **Lines (code):** 66-123
 
 </details>
 
@@ -175,7 +186,17 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+scss
+```
+  
+
+      
+
+      
+
+
+``` scss
+@include ulu.component-overlay-section-styles();
 ```
   
 
@@ -215,20 +236,31 @@ Get a config option
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** function
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 52-55
+- **Lines (code):** 57-59
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-overlay-section-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

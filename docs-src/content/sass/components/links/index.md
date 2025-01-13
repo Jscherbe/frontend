@@ -31,7 +31,7 @@ sassdocGroupName: links
 
   
 
-Link compontent styles (.link)
+Link component styles (.link)
 - Contextual link styling
 - Styles all links within as normal text hyperlinks (hover, visited)
     

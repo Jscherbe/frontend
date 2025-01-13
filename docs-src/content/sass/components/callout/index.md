@@ -110,20 +110,31 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 94-96
-- **Lines (code):** 98-100
+- **Lines (comments):** 94-97
+- **Lines (code):** 99-101
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-callout-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-callout-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -156,8 +167,8 @@ Set callout style variations
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 111-113
-- **Lines (code):** 115-117
+- **Lines (comments):** 113-115
+- **Lines (code):** 117-119
 
 </details>
 
@@ -202,8 +213,8 @@ Output styling for a callout that adds a left cap
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 119-121
-- **Lines (code):** 123-136
+- **Lines (comments):** 121-123
+- **Lines (code):** 125-138
 
 </details>
 
@@ -243,8 +254,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 138-140
-- **Lines (code):** 142-173
+- **Lines (comments):** 140-142
+- **Lines (code):** 144-175
 
 </details>
 
@@ -298,20 +309,31 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 102-104
-- **Lines (code):** 106-109
+- **Lines (comments):** 103-106
+- **Lines (code):** 108-111
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-callout-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-callout-get("property");|
+|$name|`Map`|Name of property|
 
     
 

@@ -108,20 +108,31 @@ Change modules $config
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 55-57
-- **Lines (code):** 59-61
+- **Lines (comments):** 55-58
+- **Lines (code):** 60-62
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-data-table-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-data-table-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -154,8 +165,8 @@ Output component stylesheet
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-178
+- **Lines (comments):** 74-76
+- **Lines (code):** 78-180
 
 </details>
 
@@ -207,20 +218,31 @@ Get a config option
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** function
-- **Lines (comments):** 63-65
-- **Lines (code):** 67-70
+- **Lines (comments):** 64-67
+- **Lines (code):** 69-72
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-data-table-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-data-table-get("property");|
+|$name|`Map`|Name of property|
 
     
 

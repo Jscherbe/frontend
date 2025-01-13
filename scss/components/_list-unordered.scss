@@ -6,7 +6,9 @@
 @use "../color";
 @use "../selector";
 
-/// Output styles
+/// Output component stylesheet
+/// @example scss
+///  @include ulu.component-list-unordered-styles();
 
 @mixin styles {
   $prefix: selector.class("list-unordered");

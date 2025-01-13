@@ -117,20 +117,31 @@ Change modules $config
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 53-56
+- **Lines (code):** 58-60
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-pull-quote-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -163,8 +174,8 @@ Prints component styles
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** mixin
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-109
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-111
 
 </details>
 
@@ -176,7 +187,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-pull-quote-styles();
 ```
   
 
@@ -216,20 +227,31 @@ Get a config option
 - **File:** _pull-quote.scss
 - **Group:** pull-quote
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-68
+- **Lines (comments):** 62-65
+- **Lines (code):** 67-70
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-pull-quote-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

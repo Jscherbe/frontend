@@ -105,11 +105,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.component-horizontal-rule-set(( "property" : value ));
 ```
   
 
@@ -166,7 +166,7 @@ Prints adaptive spacing component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-horizontal-styles();
 ```
   
 
@@ -215,11 +215,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+      
 
 
 ``` scss
-@include module-name.get("property");
+@include ulu.component-horizontal-rule-get("property");
 ```
   
 

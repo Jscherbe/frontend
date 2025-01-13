@@ -174,8 +174,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 121-124
-- **Lines (code):** 126-128
+- **Lines (comments):** 121-125
+- **Lines (code):** 127-129
 
 </details>
 
@@ -183,11 +183,21 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+scss
+```
+  
+
+      
+
+      
+
+
+``` scss
+@include ulu.component-modal-set(( "property" : value ));
 ```
   
 
@@ -231,8 +241,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 139-141
-- **Lines (code):** 143-492
+- **Lines (comments):** 141-143
+- **Lines (code):** 145-494
 
 </details>
 
@@ -284,20 +294,31 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 130-132
-- **Lines (code):** 134-137
+- **Lines (comments):** 131-134
+- **Lines (code):** 136-139
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-modal-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

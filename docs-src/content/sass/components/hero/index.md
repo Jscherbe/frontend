@@ -104,20 +104,31 @@ Change modules $config
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 33-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 33-36
+- **Lines (code):** 38-40
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-hero-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -150,8 +161,8 @@ Prints component styles
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 49-51
-- **Lines (code):** 53-181
+- **Lines (comments):** 51-53
+- **Lines (code):** 55-183
 
 </details>
 
@@ -203,20 +214,31 @@ Get a config option
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** function
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-47
+- **Lines (comments):** 42-45
+- **Lines (code):** 47-49
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-hero-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

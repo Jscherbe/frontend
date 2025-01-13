@@ -100,20 +100,31 @@ Change modules $config
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
-- **Lines (comments):** 26-28
-- **Lines (code):** 30-32
+- **Lines (comments):** 26-29
+- **Lines (code):** 31-33
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-card-grid-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-card-grid-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -146,8 +157,8 @@ Prints component styles
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** mixin
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-73
+- **Lines (comments):** 44-46
+- **Lines (code):** 48-75
 
 </details>
 
@@ -199,20 +210,31 @@ Get a config option
 - **File:** _card-grid.scss
 - **Group:** card-grid
 - **Type:** function
-- **Lines (comments):** 34-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 35-38
+- **Lines (code):** 40-42
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-card-grid-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-card-grid-get("property");|
+|$name|`Map`|Name of property|
 
     
 

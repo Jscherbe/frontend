@@ -59,6 +59,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example
 ///   @include ulu.component-css-icon-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -67,6 +68,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example
 ///   @include ulu.component-css-icon-get("property");
 
 @function get($name) {

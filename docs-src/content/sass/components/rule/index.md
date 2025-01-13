@@ -107,11 +107,11 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.component-rule-set(( "property" : value ));
 ```
   
 
@@ -155,12 +155,24 @@ Output styles
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
-- **Lines (comments):** 41-41
-- **Lines (code):** 43-94
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-96
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-rule-styles();
+```
+  
+
+      
 
 #### Require
 
@@ -205,11 +217,11 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+      
 
 
 ``` scss
-@include module-name.get("property");
+@include ulu.component-rule-get("property");
 ```
   
 

@@ -98,20 +98,31 @@ Change modules $config
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** mixin
-- **Lines (comments):** 25-27
-- **Lines (code):** 29-31
+- **Lines (comments):** 25-28
+- **Lines (code):** 30-32
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-image-grid-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -144,8 +155,8 @@ Prints component styles
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** mixin
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-69
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-71
 
 </details>
 
@@ -157,7 +168,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-image-grid-styles();
 ```
   
 
@@ -197,20 +208,31 @@ Get a config option
 - **File:** _image-grid.scss
 - **Group:** image-grid
 - **Type:** function
-- **Lines (comments):** 33-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 34-37
+- **Lines (code):** 39-41
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-image-grid-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

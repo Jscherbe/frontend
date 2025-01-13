@@ -111,20 +111,31 @@ Change modules $config
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 35-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 35-38
+- **Lines (code):** 40-42
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-badge-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-badge-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -157,8 +168,8 @@ Output badge component styles
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 51-65
-- **Lines (code):** 67-127
+- **Lines (comments):** 53-67
+- **Lines (code):** 69-129
 
 </details>
 
@@ -230,20 +241,31 @@ Get a config option
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 44-47
+- **Lines (code):** 49-51
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-badge-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-badge-get("property");|
+|$name|`Map`|Name of property|
 
     
 

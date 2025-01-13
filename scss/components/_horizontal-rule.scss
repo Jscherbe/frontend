@@ -18,8 +18,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss 
+///   @include ulu.component-horizontal-rule-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -27,8 +27,8 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.get("property");
+/// @example scss 
+///   @include ulu.component-horizontal-rule-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "horizontal-rule [config]");
@@ -36,7 +36,7 @@ $config: (
 
 /// Prints adaptive spacing component styles
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-horizontal-styles();
 
 @mixin styles {
   .horizontal-rule {

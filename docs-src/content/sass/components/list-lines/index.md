@@ -102,20 +102,31 @@ Change modules $config
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 27-29
-- **Lines (code):** 31-33
+- **Lines (comments):** 27-30
+- **Lines (code):** 32-34
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-list-lines-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -148,8 +159,8 @@ Output component styles
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 43-43
-- **Lines (code):** 45-65
+- **Lines (comments):** 45-45
+- **Lines (code):** 47-67
 
 </details>
 
@@ -157,6 +168,55 @@ Output component styles
 
 #### Require
 
+- [get()](/sass/components/accordion/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output component stylesheet
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _list-lines.scss
+- **Group:** list-lines
+- **Type:** mixin
+- **Lines (comments):** 69-71
+- **Lines (code):** 73-84
+
+</details>
+
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-list-lines-styles();
+```
+  
+
+      
+
+#### Require
+
+- [inner-styles()](/sass/components/list-lines/#mixin-inner-styles)
 - [get()](/sass/components/accordion/#function-get)
   
   
@@ -189,20 +249,31 @@ Get a config option
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** function
-- **Lines (comments):** 35-37
-- **Lines (code):** 39-41
+- **Lines (comments):** 36-39
+- **Lines (code):** 41-43
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-list-lines-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

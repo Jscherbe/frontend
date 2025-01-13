@@ -126,20 +126,31 @@ Change modules $config
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 54-56
-- **Lines (code):** 58-60
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-61
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-nav-strip-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -172,8 +183,8 @@ Prints component styles
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-146
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-148
 
 </details>
 
@@ -185,7 +196,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-nav-strip-styles();
 ```
   
 
@@ -225,20 +236,31 @@ Get a config option
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** function
-- **Lines (comments):** 62-64
-- **Lines (code):** 66-68
+- **Lines (comments):** 63-66
+- **Lines (code):** 68-70
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-nav-strip-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

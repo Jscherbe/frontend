@@ -67,7 +67,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example
+///   @include ulu.component-placeholder-block-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -75,7 +76,8 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example
+///   @include ulu.component-placeholder-block-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "placeholder [config]");
@@ -84,7 +86,7 @@ $config: (
 
 /// Prints component styles
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-placeholder-block-styles();
 
 @mixin styles {
   $prefix: selector.class("placeholder-block");

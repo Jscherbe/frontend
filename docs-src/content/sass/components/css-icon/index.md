@@ -123,20 +123,31 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 60-62
-- **Lines (code):** 64-66
+- **Lines (comments):** 60-63
+- **Lines (code):** 65-67
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-css-icon-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-css-icon-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -171,8 +182,8 @@ Used to style active icons
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-84
+- **Lines (comments):** 78-80
+- **Lines (code):** 82-86
 
 </details>
 
@@ -207,8 +218,8 @@ Output CSS icon component stylesheet
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 96-98
-- **Lines (code):** 100-431
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-433
 
 </details>
 
@@ -261,20 +272,31 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 68-70
-- **Lines (code):** 72-74
+- **Lines (comments):** 69-72
+- **Lines (code):** 74-76
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-css-icon-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-css-icon-get("property");|
+|$name|`Map`|Name of property|
 
     
 

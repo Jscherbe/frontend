@@ -101,20 +101,31 @@ Change modules $config
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 53-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 53-56
+- **Lines (code):** 58-60
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-captioned-figure-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-captioned-figure-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -147,14 +158,24 @@ Prints component styles
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 70-72
-- **Lines (code):** 74-170
+- **Lines (comments):** 72-75
+- **Lines (code):** 77-173
 
 </details>
 
     
 
 #### Examples
+
+      
+
+
+``` scss
+scss
+```
+  
+
+      
 
       
 
@@ -200,20 +221,31 @@ Get a config option
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** function
-- **Lines (comments):** 61-63
-- **Lines (code):** 65-68
+- **Lines (comments):** 62-65
+- **Lines (code):** 67-70
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-captioned-figure-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-captioned-figure-get("property");|
+|$name|`Map`|Name of property|
 
     
 

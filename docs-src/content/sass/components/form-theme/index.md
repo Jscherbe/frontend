@@ -1,14 +1,14 @@
 ---
-title: None
-sassdocGroupName: None
+title: Form-theme
+sassdocGroupName: form-theme
 ---
 
 
-# None
+# Form-theme
 
 <div class="type-large">
 
-
+A container for content that highlights important information, provides context, or guides user attention within an interface
 
 </div>
 
@@ -125,10 +125,10 @@ $config: (
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** variable
-- **Lines (comments):** 17-97
-- **Lines (code):** 99-179
+- **Lines (comments):** 16-96
+- **Lines (code):** 98-178
 
 </details>
 
@@ -248,28 +248,89 @@ Change modules $config
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 181-183
+- **Lines (comments):** 180-183
 - **Lines (code):** 185-187
 
 </details>
 
     
 
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-form-theme-set(( "property" : value ));
+```
+  
+
+      
+
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
 #### Require
 
 - [$config](/sass/components/accordion/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output component stylesheet
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _form-theme.scss
+- **Group:** form-theme
+- **Type:** mixin
+- **Lines (comments):** 202-204
+- **Lines (code):** 206-243
+
+</details>
+
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-form-theme-styles();
+```
+  
+
+      
+
+#### Require
+
+- [drupal-layout-element-styles()](/sass/components/form-theme/#mixin-drupal-layout-element-styles)
+- [layout-element-styles()](/sass/components/form-theme/#mixin-layout-element-styles)
+- [get()](/sass/components/accordion/#function-get)
   
 
 
@@ -294,10 +355,10 @@ Required Character styles (ie. "*")
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 484-484
-- **Lines (code):** 485-492
+- **Lines (comments):** 489-489
+- **Lines (code):** 490-497
 
 </details>
 
@@ -330,10 +391,10 @@ Help text / Description
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 494-494
-- **Lines (code):** 495-501
+- **Lines (comments):** 499-499
+- **Lines (code):** 500-506
 
 </details>
 
@@ -366,10 +427,10 @@ Styles for form item that should have label as block and text input
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 503-503
-- **Lines (code):** 504-515
+- **Lines (comments):** 508-508
+- **Lines (code):** 509-520
 
 </details>
 
@@ -402,10 +463,10 @@ Footer of form (with button for example)
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 517-517
-- **Lines (code):** 518-521
+- **Lines (comments):** 522-522
+- **Lines (code):** 523-526
 
 </details>
 
@@ -433,10 +494,10 @@ Footer of form (with button for example)
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 523-523
-- **Lines (code):** 524-526
+- **Lines (comments):** 528-528
+- **Lines (code):** 529-531
 
 </details>
 
@@ -464,10 +525,10 @@ Layout styling for static/app sites
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 528-528
-- **Lines (code):** 529-581
+- **Lines (comments):** 533-533
+- **Lines (code):** 534-586
 
 </details>
 
@@ -475,11 +536,11 @@ Layout styling for static/app sites
 
 #### Require
 
-- [element-required-char()](/sass/components/None/#mixin-element-required-char)
-- [element-help-text()](/sass/components/None/#mixin-element-help-text)
-- [element-form-item-block()](/sass/components/None/#mixin-element-form-item-block)
-- [element-form-actions()](/sass/components/None/#mixin-element-form-actions)
-- [element-form-actions-right()](/sass/components/None/#mixin-element-form-actions-right)
+- [element-required-char()](/sass/components/form-theme/#mixin-element-required-char)
+- [element-help-text()](/sass/components/form-theme/#mixin-element-help-text)
+- [element-form-item-block()](/sass/components/form-theme/#mixin-element-form-item-block)
+- [element-form-actions()](/sass/components/form-theme/#mixin-element-form-actions)
+- [element-form-actions-right()](/sass/components/form-theme/#mixin-element-form-actions-right)
 - [get()](/sass/components/accordion/#function-get)
   
 
@@ -505,10 +566,10 @@ Layout styles but using drupal form structures
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 583-583
-- **Lines (code):** 584-612
+- **Lines (comments):** 588-588
+- **Lines (code):** 589-617
 
 </details>
 
@@ -516,11 +577,11 @@ Layout styles but using drupal form structures
 
 #### Require
 
-- [element-required-char()](/sass/components/None/#mixin-element-required-char)
-- [element-help-text()](/sass/components/None/#mixin-element-help-text)
-- [element-form-item-block()](/sass/components/None/#mixin-element-form-item-block)
-- [element-form-actions()](/sass/components/None/#mixin-element-form-actions)
-- [element-form-actions-right()](/sass/components/None/#mixin-element-form-actions-right)
+- [element-required-char()](/sass/components/form-theme/#mixin-element-required-char)
+- [element-help-text()](/sass/components/form-theme/#mixin-element-help-text)
+- [element-form-item-block()](/sass/components/form-theme/#mixin-element-form-item-block)
+- [element-form-actions()](/sass/components/form-theme/#mixin-element-form-actions)
+- [element-form-actions-right()](/sass/components/form-theme/#mixin-element-form-actions-right)
   
   
 
@@ -550,22 +611,33 @@ Get a config option
   <summary>File Information</summary>
   
 - **File:** _form-theme.scss
-- **Group:** None
+- **Group:** form-theme
 - **Type:** function
-- **Lines (comments):** 189-191
-- **Lines (code):** 193-195
+- **Lines (comments):** 189-192
+- **Lines (code):** 194-196
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-form-theme-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

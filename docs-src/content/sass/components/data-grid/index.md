@@ -139,20 +139,31 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 74-76
-- **Lines (code):** 78-80
+- **Lines (comments):** 74-77
+- **Lines (code):** 79-81
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-data-grid-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-data-grid-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -185,8 +196,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 115-118
-- **Lines (code):** 120-122
+- **Lines (comments):** 117-120
+- **Lines (code):** 122-124
 
 </details>
 
@@ -247,8 +258,8 @@ Output data grid styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 124-134
-- **Lines (code):** 136-581
+- **Lines (comments):** 126-136
+- **Lines (code):** 138-583
 
 </details>
 
@@ -305,20 +316,31 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 82-84
-- **Lines (code):** 86-88
+- **Lines (comments):** 83-86
+- **Lines (code):** 88-90
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-data-grid-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-data-grid-get("property");|
+|$name|`Map`|Name of property|
 
     
 
@@ -351,8 +373,8 @@ Output component stylesheet
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-102
+- **Lines (comments):** 92-94
+- **Lines (code):** 96-104
 
 </details>
 
@@ -399,8 +421,8 @@ Get the default breakpoint for the grid (when it starts to be a grid (vs stacked
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 104-104
-- **Lines (code):** 106-113
+- **Lines (comments):** 106-106
+- **Lines (code):** 108-115
 
 </details>
 

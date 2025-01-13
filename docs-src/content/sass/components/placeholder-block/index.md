@@ -121,20 +121,31 @@ Change modules $config
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
-- **Lines (comments):** 68-70
-- **Lines (code):** 72-74
+- **Lines (comments):** 68-71
+- **Lines (code):** 73-75
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-placeholder-block-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -167,8 +178,8 @@ Prints component styles
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** mixin
-- **Lines (comments):** 85-87
-- **Lines (code):** 89-119
+- **Lines (comments):** 87-89
+- **Lines (code):** 91-121
 
 </details>
 
@@ -180,7 +191,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-placeholder-block-styles();
 ```
   
 
@@ -220,20 +231,31 @@ Get a config option
 - **File:** _placeholder-block.scss
 - **Group:** placeholder-block
 - **Type:** function
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-83
+- **Lines (comments):** 77-80
+- **Lines (code):** 82-85
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-placeholder-block-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

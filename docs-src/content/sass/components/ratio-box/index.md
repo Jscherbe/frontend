@@ -100,20 +100,31 @@ Change modules $config
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** mixin
-- **Lines (comments):** 23-25
-- **Lines (code):** 27-29
+- **Lines (comments):** 23-26
+- **Lines (code):** 28-30
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-ratio-box-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -146,8 +157,8 @@ Prints component styles
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** mixin
-- **Lines (comments):** 39-41
-- **Lines (code):** 43-62
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-64
 
 </details>
 
@@ -159,7 +170,7 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-ratio-box-styles();
 ```
   
 
@@ -199,20 +210,31 @@ Get a config option
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** function
-- **Lines (comments):** 31-33
-- **Lines (code):** 35-37
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-ratio-box-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 
