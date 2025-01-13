@@ -228,7 +228,7 @@ Setting the error and type color
 
 
 ``` scss
-@include color.set((
+@include ulu.color-set((
   "type" : #444,
   "error" : orange,
 ));
@@ -335,7 +335,7 @@ Overwriting contexts
 
 
 ``` scss
-@include color.set-contexts((
+@include ulu.color-set-contexts((
   "dark" : (
     "background-color" : red,
     "color" : white,

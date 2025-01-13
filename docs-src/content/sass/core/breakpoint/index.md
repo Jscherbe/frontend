@@ -8,7 +8,7 @@ sassdocGroupName: breakpoint
 
 <div class="type-large">
 
-
+Utilities for working with breakpoints
 
 </div>
 
@@ -93,9 +93,9 @@ The default breakpoint sizes
 
 ``` scss
 $sizes: (
-  "small"  : calculate.pixel-to-em(680px, get("base")),
-  "medium" : calculate.pixel-to-em(1200px, get("base")),
-  "large"  : calculate.pixel-to-em(1500px, get("base"))
+  "small"  : utils.pixel-to-em(680px, get("base")),
+  "medium" : utils.pixel-to-em(1200px, get("base")),
+  "large"  : utils.pixel-to-em(1500px, get("base"))
 );
 ```
   
@@ -156,7 +156,7 @@ Change default name
 
 
 ``` scss
-@include breakpoint.set(( "default" : "mini" ));
+@include ulu.breakpoint-set(( "default" : "mini" ));
 ```
   
 
@@ -215,7 +215,7 @@ Changing the medium breakpoint and adding jumbo
 
 
 ``` scss
-@include breakpoints.set((
+@include ulu.breakpoints-set-sizes((
   "medium" : 50em,
   "jumbo" : 100em
 ));
@@ -279,7 +279,7 @@ Create a media query that matches the min-width for a given size
 
 
 ``` scss
-@include breakpoints.min("small") {
+@include ulu.breakpoints-min("small") {
   // Your styles
 }
 ```
@@ -692,7 +692,7 @@ Get default breakpoint name
 
 
 ``` scss
-$default: breakpoint.get("default");
+$default: ulu.breakpoint-get("default");
 ```
   
 

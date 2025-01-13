@@ -107,7 +107,7 @@ Setting the prefix to 'ulu'
 
 
 ``` scss
-@include cssvar.set(( "prefix" : "ulu" ));
+@include ulu.cssvar-set(( "prefix" : "ulu" ));
 ```
   
 
@@ -167,7 +167,7 @@ Declare a custom property
 
 ``` scss
 :root {
-  @include cssvar.declare("base-color", red);
+  @include ulu.cssvar-declare("base-color", red);
 }
 ```
   
@@ -230,7 +230,7 @@ Declare each property in a map as a custom property
 
 ``` scss
 :root {
-  @include cssvar.declare($colors);
+  @include ulu.cssvar-declare($colors);
 }
 ```
   
@@ -292,7 +292,7 @@ Declare each property in a map as a custom property
 
 ``` scss
 :root {
-  @include cssvar.declare-breakpoint();
+  @include ulu.cssvar-declare-breakpoint();
 }
 ```
   
@@ -356,7 +356,7 @@ Declare each property in a map as a custom property
 
 ``` scss
 :root {
-  @include cssvar.declare-breakpoint-sizes();
+  @include ulu.cssvar-declare-breakpoint-sizes();
 }
 ```
   
@@ -502,7 +502,7 @@ Getting the config value for prefix
 
 
 ``` scss
-$prefix: cssvar.get("prefix");
+$prefix: ulu.cssvar-get("prefix");
 ```
   
 
@@ -571,7 +571,7 @@ Getting a custom property name
 
 
 ``` scss
-#{ cssvar.name("base-color") } { ... }
+#{ ulu.cssvar-name("base-color") } { ... }
 ```
   
 
@@ -636,7 +636,7 @@ Print an custom property as a value
 
 ``` scss
 .test {
-  color: cssvar.use("base-color");
+  color: ulu.cssvar-use("base-color");
 }
 ```
   

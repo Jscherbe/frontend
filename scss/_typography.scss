@@ -10,7 +10,6 @@
 
 @use "color";
 @use "utils";
-@use "calculate";
 @use "breakpoint";
 
 /// Module Settings
@@ -66,7 +65,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include typography.set(( "font-size" : 14px ));
+///   @include ulu.typography-set(( "font-size" : 14px ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -74,7 +73,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $changes Map of changes
-///   @include typography.get(( "font-size" : 14px ));
+///   @include ulu.typography-get(( "font-size" : 14px ));
 
 @function get($name) {
   @return utils.require-map-get($config, $name, 'typography [config]');
@@ -85,7 +84,7 @@ $config: (
 /// @return {Number} Scaled value
 
 @function scale($step) {
-  @return calculate.ratio-scale-size(get("font-size"), get("size-ratio"), get("scale-steps"), $step);
+  @return utils.ratio-scale-size(get("font-size"), get("size-ratio"), get("scale-steps"), $step);
 }
 
 /// Get scale of the line-height
@@ -94,7 +93,7 @@ $config: (
 /// @todo Setup breakpoints
 
 @function scale-line-height($step) {
-  @return calculate.ratio-scale-size(get("line-height"), get("size-line-height-ratio"), get("scale-steps"), $step);
+  @return utils.ratio-scale-size(get("line-height"), get("size-line-height-ratio"), get("scale-steps"), $step);
 }
 
 /// Convert pixel value to rem value based on typography $font-size
@@ -196,7 +195,7 @@ $sizes: get-default-sizes() !default;
 /// @param {Map} $changes A map to merge into the color palette
 /// @param {Map} $merge-mode [null] Merge strategy see, utils.map-merge options
 /// @example scss - Adjusting the h1 and h2 sizes while keeping pre-existing sizes by using deep merge
-///   @include typography.set-sizes((
+///   @include ulu.typography-set-sizes((
 ///     "h1" : (
 ///       "color" : "accent",
 ///       "font-size": 50px,

@@ -21,7 +21,7 @@ $config: (
 
 /// Change modules $config
 /// @example scss Setting the prefix to 'ulu'
-///   @include cssvar.set(( "prefix" : "ulu" ));
+///   @include ulu.cssvar-set(( "prefix" : "ulu" ));
 /// @param {Map} $changes Map of changes
 
 @mixin set($changes) {
@@ -30,7 +30,7 @@ $config: (
 
 /// Get a config option
 /// @example scss Getting the config value for prefix
-///   $prefix: cssvar.get("prefix");
+///   $prefix: ulu.cssvar-get("prefix");
 /// @param {String} $name Name of property
 /// @return {*} Map property value
 
@@ -40,7 +40,7 @@ $config: (
 
 /// Get a custom property name (with optional prefix)
 /// @example scss Getting a custom property name
-///   #{ cssvar.name("base-color") } { ... }
+///   #{ ulu.cssvar-name("base-color") } { ... }
 /// @param {String} $name Name of custom property 
 /// @param {String} $prefix [$config.prefix] Override default prefix
 /// @return {String} The formatted property name (unquoted string)
@@ -56,7 +56,7 @@ $config: (
 /// Function to use a custom property within a declaration value 
 /// @example scss Print an custom property as a value
 ///   .test {
-///     color: cssvar.use("base-color");
+///     color: ulu.cssvar-use("base-color");
 ///   }
 /// @param {String} $name Name of custom property 
 /// @param {String} $default-value [null] Provide a default value for var()
@@ -74,7 +74,7 @@ $config: (
 /// Outputs a single custom property declaration
 /// @example scss Declare a custom property
 ///   :root {
-///     @include cssvar.declare("base-color", red);
+///     @include ulu.cssvar-declare("base-color", red);
 ///   }
 /// @param {String} $name Name of property
 /// @param {*} $value The properties value to declare
@@ -87,7 +87,7 @@ $config: (
 /// Outputs a map as custom properties
 /// @example scss Declare each property in a map as a custom property
 ///   :root {
-///     @include cssvar.declare($colors);
+///     @include ulu.cssvar-declare($colors);
 ///   }
 /// @param {Map} $props Properties to declare
 /// @param {String} $prefix [$config.prefix] Override default prefix
@@ -101,7 +101,7 @@ $config: (
 /// Declare a custom property for current breakpoint
 /// @example scss Declare each property in a map as a custom property
 ///   :root {
-///     @include cssvar.declare-breakpoint();
+///     @include ulu.cssvar-declare-breakpoint();
 ///   }
 /// @param {Map} $breakpoints [breakpoint.get-sizes()] Breakpoints to declare
 /// @param {String} $name ["breakpoint"] Name to use for custom property
@@ -125,7 +125,7 @@ $config: (
 /// Declare a custom property for each breakpoint size
 /// @example scss Declare each property in a map as a custom property
 ///   :root {
-///     @include cssvar.declare-breakpoint-sizes();
+///     @include ulu.cssvar-declare-breakpoint-sizes();
 ///   }
 /// @param {Map} $breakpoints [breakpoint.get-sizes()] Breakpoints to declare
 /// @param {String} $name ["breakpoint-size-"] Name to use for custom property (prefixes size name)

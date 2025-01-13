@@ -72,8 +72,8 @@ $config: (
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 16-38
-- **Lines (code):** 40-65
+- **Lines (comments):** 15-37
+- **Lines (code):** 39-64
 
 </details>
 
@@ -137,8 +137,8 @@ $sizes: get-default-sizes();
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 182-191
-- **Lines (code):** 193-193
+- **Lines (comments):** 181-190
+- **Lines (code):** 192-192
 
 </details>
 
@@ -189,8 +189,8 @@ Change modules $config
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-73
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-72
 
 </details>
 
@@ -202,7 +202,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include typography.set(( "font-size" : 14px ));|
+  @include ulu.typography-set(( "font-size" : 14px ));|
 
     
 
@@ -235,8 +235,8 @@ Output CSS Break word strategy
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 126-127
-- **Lines (code):** 129-133
+- **Lines (comments):** 125-126
+- **Lines (code):** 128-132
 
 </details>
 
@@ -275,8 +275,8 @@ Configure the typography sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 195-212
-- **Lines (code):** 214-216
+- **Lines (comments):** 194-211
+- **Lines (code):** 213-215
 
 </details>
 
@@ -288,7 +288,7 @@ Adjusting the h1 and h2 sizes while keeping pre-existing sizes by using deep mer
 
 
 ``` scss
-@include typography.set-sizes((
+@include ulu.typography-set-sizes((
   "h1" : (
     "color" : "accent",
     "font-size": 50px,
@@ -349,8 +349,8 @@ Print's the responsive type formula
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 300-302
-- **Lines (code):** 304-306
+- **Lines (comments):** 299-301
+- **Lines (code):** 303-305
 
 </details>
 
@@ -390,8 +390,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 308-311
-- **Lines (code):** 313-354
+- **Lines (comments):** 307-310
+- **Lines (code):** 312-353
 
 </details>
 
@@ -446,8 +446,8 @@ Get a config option
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 75-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 74-76
+- **Lines (code):** 78-80
 
 </details>
 
@@ -459,7 +459,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include typography.get(( "font-size" : 14px ));|
+  @include ulu.typography-get(( "font-size" : 14px ));|
 
     
 
@@ -493,8 +493,8 @@ Get scale of the base font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 82-84
+- **Lines (code):** 86-88
 
 </details>
 
@@ -520,7 +520,7 @@ Get scale of the base font-size
 
 #### Require
 
-- [ratio-scale-size()](/sass/core/calculate/#function-ratio-scale-size)
+- ratio-scale-size()
 - [get()](/sass/core/breakpoint/#function-get)
   
 
@@ -548,8 +548,8 @@ Get scale of the line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 91-94
-- **Lines (code):** 96-98
+- **Lines (comments):** 90-93
+- **Lines (code):** 95-97
 
 </details>
 
@@ -580,7 +580,7 @@ Get scale of the line-height
 
 #### Require
 
-- [ratio-scale-size()](/sass/core/calculate/#function-ratio-scale-size)
+- ratio-scale-size()
 - [get()](/sass/core/breakpoint/#function-get)
   
 
@@ -608,8 +608,8 @@ Convert pixel value to rem value based on typography $font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 100-102
-- **Lines (code):** 104-110
+- **Lines (comments):** 99-101
+- **Lines (code):** 103-109
 
 </details>
 
@@ -662,8 +662,8 @@ Changes pixels to em
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 112-115
-- **Lines (code):** 117-124
+- **Lines (comments):** 111-114
+- **Lines (code):** 116-123
 
 </details>
 
@@ -720,8 +720,8 @@ Creates a size map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 135-141
-- **Lines (code):** 143-157
+- **Lines (comments):** 134-140
+- **Lines (code):** 142-156
 
 </details>
 
@@ -769,8 +769,8 @@ Function that returns default sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 159-162
-- **Lines (code):** 164-180
+- **Lines (comments):** 158-161
+- **Lines (code):** 163-179
 
 </details>
 
@@ -816,8 +816,8 @@ Get a specific size's settings map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 218-220
-- **Lines (code):** 222-224
+- **Lines (comments):** 217-219
+- **Lines (code):** 221-223
 
 </details>
 
@@ -871,8 +871,8 @@ Check if a typography size exists
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 226-228
-- **Lines (code):** 230-232
+- **Lines (comments):** 225-227
+- **Lines (code):** 229-231
 
 </details>
 
@@ -926,8 +926,8 @@ Forces conversion to unitless line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 234-236
-- **Lines (code):** 238-252
+- **Lines (comments):** 233-235
+- **Lines (code):** 237-251
 
 </details>
 
@@ -978,8 +978,8 @@ Print a value from the size and convert it (to appropriate unit for framework)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 254-256
-- **Lines (code):** 258-284
+- **Lines (comments):** 253-255
+- **Lines (code):** 257-283
 
 </details>
 
@@ -1027,8 +1027,8 @@ Get a sizes property value that doesn't need conversion
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 286-289
-- **Lines (code):** 291-298
+- **Lines (comments):** 285-288
+- **Lines (code):** 290-297
 
 </details>
 

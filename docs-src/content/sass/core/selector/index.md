@@ -107,7 +107,7 @@ General example
 
 
 ``` scss
-@include selector.set(( "property" : value ));
+@include ulu.selector-set(( "property" : value ));
 ```
   
 
@@ -229,7 +229,7 @@ General example
 
 
 ``` scss
-@include selector.get("property");
+@include ulu.selector-get("property");
 ```
   
 

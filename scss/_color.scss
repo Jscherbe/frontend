@@ -78,7 +78,7 @@ $color-classes: (
 /// Used to override or extend the color palette
 /// @param {Map} $changes A map to merge into the color palette
 /// @example scss Setting the error and type color
-///   @include color.set((
+///   @include ulu.color-set((
 ///     "type" : #444,
 ///     "error" : orange,
 ///   ));
@@ -126,7 +126,7 @@ $color-classes: (
 /// @param {Map} $deep Use deep merge
 /// @param {Map} $overwrite Overwrite the completly (cannot be used with deep)
 /// @example scss Overwriting contexts
-///   @include color.set-contexts((
+///   @include ulu.color-set-contexts((
 ///     "dark" : (
 ///       "background-color" : red,
 ///       "color" : white,

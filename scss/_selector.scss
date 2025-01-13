@@ -24,7 +24,7 @@ $-class-wildcards: ();
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 /// @example scss - General example
-///   @include selector.set(( "property" : value ));
+///   @include ulu.selector-set(( "property" : value ));
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
@@ -32,7 +32,7 @@ $-class-wildcards: ();
 /// Get a config option
 /// @param {Map} $name Name of property
 /// @example scss - General example
-///   @include selector.get("property");
+///   @include ulu.selector-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "selector [config]");

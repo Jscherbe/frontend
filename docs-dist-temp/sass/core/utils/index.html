@@ -867,25 +867,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/calculate/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Calculate
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/color/" 
           
         >
@@ -3720,25 +3701,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/calculate/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Calculate
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/color/" 
           
         >
@@ -5804,6 +5766,9 @@
 
                     <li><a href="#mixin-file-header">file-header()</a>
             		</li>
+
+                    <li><a href="#mixin-responsive-property">responsive-property()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -5876,6 +5841,12 @@
 
                     <li><a href="#function-strip-unit">strip-unit()</a>
             		</li>
+
+                    <li><a href="#function-ratio-scale-size">ratio-scale-size()</a>
+            		</li>
+
+                    <li><a href="#function-pixel-to-em">pixel-to-em()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -5903,7 +5874,9 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"debug-maps"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"file-header-comments"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+  <span class="pjs-token pjs-string">"file-header-comments"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"responsive-change"</span><span class="pjs-token pjs-punctuation">:</span> 0.5vw<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"pixel-em-base"</span> <span class="pjs-token pjs-punctuation">:</span> 16px
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -5911,8 +5884,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-15</li>
-<li><strong>Lines (code):</strong> 17-20</li>
+<li><strong>Lines (comments):</strong> 12-17</li>
+<li><strong>Lines (code):</strong> 19-24</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5938,6 +5911,18 @@
 <td style="text-align:left">true</td>
 <td style="text-align:left">Enable or disable module/file header comments</td>
 </tr>
+<tr>
+<td style="text-align:left">responsive-change</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">0.5vw</td>
+<td style="text-align:left">Default responsive amount to modify items using responsive-property mixin</td>
+</tr>
+<tr>
+<td style="text-align:left">pixel-em-base</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">16px</td>
+<td style="text-align:left">Default base pixel font size for pixel-to-em</td>
+</tr>
 </tbody>
 </table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5954,13 +5939,13 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 22-25</li>
-<li><strong>Lines (code):</strong> 27-29</li>
+<li><strong>Lines (comments):</strong> 26-29</li>
+<li><strong>Lines (code):</strong> 31-33</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
 <p>General example</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> utils.<span class="pjs-token pjs-function">set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">utils-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5995,8 +5980,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 59-63</li>
-<li><strong>Lines (code):</strong> 65-75</li>
+<li><strong>Lines (comments):</strong> 63-67</li>
+<li><strong>Lines (code):</strong> 69-79</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -6044,8 +6029,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 77-81</li>
-<li><strong>Lines (code):</strong> 83-87</li>
+<li><strong>Lines (comments):</strong> 81-85</li>
+<li><strong>Lines (code):</strong> 87-91</li>
 </ul>
 </details>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
@@ -6097,8 +6082,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 98-100</li>
-<li><strong>Lines (code):</strong> 102-110</li>
+<li><strong>Lines (comments):</strong> 102-104</li>
+<li><strong>Lines (code):</strong> 106-114</li>
 </ul>
 </details>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -6123,6 +6108,50 @@
 </tr>
 </tbody>
 </table>
+<div class="sassdoc-item-header">
+<h3 id="mixin-responsive-property" tabindex="-1">responsive-property()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Provides user with a fallback for a calc that's just an enhancement</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 476-479</li>
+<li><strong>Lines (code):</strong> 481-488</li>
+</ul>
+</details>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$property</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The CSS property to set</td>
+</tr>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">The value to set on the property</td>
+</tr>
+<tr>
+<td style="text-align:left">$responsive-change</td>
+<td style="text-align:left"><code>Css</code></td>
+<td style="text-align:left">The amount to change (vw or vh units) (combined with unit past)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
 <h3 id="function-get" tabindex="-1">get()</h3>
@@ -6137,14 +6166,14 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 31-34</li>
-<li><strong>Lines (code):</strong> 36-38</li>
+<li><strong>Lines (comments):</strong> 35-38</li>
+<li><strong>Lines (code):</strong> 40-42</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
 <p>General example</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> utils.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">utils-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6182,11 +6211,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 40-45</li>
-<li><strong>Lines (code):</strong> 47-57</li>
+<li><strong>Lines (comments):</strong> 44-49</li>
+<li><strong>Lines (code):</strong> 51-61</li>
 </ul>
 </details>
-<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6249,11 +6278,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 89-91</li>
-<li><strong>Lines (code):</strong> 93-96</li>
+<li><strong>Lines (comments):</strong> 93-95</li>
+<li><strong>Lines (code):</strong> 97-100</li>
 </ul>
 </details>
-<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6291,11 +6320,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 113-115</li>
-<li><strong>Lines (code):</strong> 117-123</li>
+<li><strong>Lines (comments):</strong> 117-119</li>
+<li><strong>Lines (code):</strong> 121-127</li>
 </ul>
 </details>
-<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6334,11 +6363,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 126-127</li>
-<li><strong>Lines (code):</strong> 129-143</li>
+<li><strong>Lines (comments):</strong> 130-131</li>
+<li><strong>Lines (code):</strong> 133-147</li>
 </ul>
 </details>
-<h4 id="parameters-8" tabindex="-1">Parameters</h4>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6383,11 +6412,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 145-149</li>
-<li><strong>Lines (code):</strong> 151-159</li>
+<li><strong>Lines (comments):</strong> 149-153</li>
+<li><strong>Lines (code):</strong> 155-163</li>
 </ul>
 </details>
-<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6442,11 +6471,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 161-164</li>
-<li><strong>Lines (code):</strong> 166-171</li>
+<li><strong>Lines (comments):</strong> 165-168</li>
+<li><strong>Lines (code):</strong> 170-175</li>
 </ul>
 </details>
-<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6504,8 +6533,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 173-174</li>
-<li><strong>Lines (code):</strong> 176-184</li>
+<li><strong>Lines (comments):</strong> 177-178</li>
+<li><strong>Lines (code):</strong> 180-188</li>
 </ul>
 </details>
 <h4 id="require-6" tabindex="-1">Require</h4>
@@ -6525,8 +6554,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 186-187</li>
-<li><strong>Lines (code):</strong> 189-196</li>
+<li><strong>Lines (comments):</strong> 190-191</li>
+<li><strong>Lines (code):</strong> 193-200</li>
 </ul>
 </details>
 <h4 id="returns-4" tabindex="-1">Returns</h4>
@@ -6557,8 +6586,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 198-198</li>
-<li><strong>Lines (code):</strong> 199-207</li>
+<li><strong>Lines (comments):</strong> 202-202</li>
+<li><strong>Lines (code):</strong> 203-211</li>
 </ul>
 </details>
 <h4 id="require-7" tabindex="-1">Require</h4>
@@ -6578,11 +6607,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 210-214</li>
-<li><strong>Lines (code):</strong> 215-234</li>
+<li><strong>Lines (comments):</strong> 214-218</li>
+<li><strong>Lines (code):</strong> 219-238</li>
 </ul>
 </details>
-<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6636,11 +6665,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 236-240</li>
-<li><strong>Lines (code):</strong> 242-268</li>
+<li><strong>Lines (comments):</strong> 240-244</li>
+<li><strong>Lines (code):</strong> 246-272</li>
 </ul>
 </details>
-<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6703,11 +6732,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 270-274</li>
-<li><strong>Lines (code):</strong> 276-292</li>
+<li><strong>Lines (comments):</strong> 274-278</li>
+<li><strong>Lines (code):</strong> 280-296</li>
 </ul>
 </details>
-<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<h4 id="parameters-14" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6755,11 +6784,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 294-298</li>
-<li><strong>Lines (code):</strong> 300-308</li>
+<li><strong>Lines (comments):</strong> 298-302</li>
+<li><strong>Lines (code):</strong> 304-312</li>
 </ul>
 </details>
-<h4 id="parameters-14" tabindex="-1">Parameters</h4>
+<h4 id="parameters-15" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6812,11 +6841,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 310-314</li>
-<li><strong>Lines (code):</strong> 316-324</li>
+<li><strong>Lines (comments):</strong> 314-318</li>
+<li><strong>Lines (code):</strong> 320-328</li>
 </ul>
 </details>
-<h4 id="parameters-15" tabindex="-1">Parameters</h4>
+<h4 id="parameters-16" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6866,11 +6895,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 326-330</li>
-<li><strong>Lines (code):</strong> 332-347</li>
+<li><strong>Lines (comments):</strong> 330-334</li>
+<li><strong>Lines (code):</strong> 336-351</li>
 </ul>
 </details>
-<h4 id="parameters-16" tabindex="-1">Parameters</h4>
+<h4 id="parameters-17" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6933,8 +6962,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 349-364</li>
-<li><strong>Lines (code):</strong> 366-382</li>
+<li><strong>Lines (comments):</strong> 353-368</li>
+<li><strong>Lines (code):</strong> 370-386</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -6947,7 +6976,7 @@
   <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> map.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$spacing</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// left = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-17" tabindex="-1">Parameters</h4>
+<h4 id="parameters-18" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6996,8 +7025,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 384-393</li>
-<li><strong>Lines (code):</strong> 395-397</li>
+<li><strong>Lines (comments):</strong> 388-397</li>
+<li><strong>Lines (code):</strong> 399-401</li>
 </ul>
 </details>
 <h4 id="examples-3" tabindex="-1">Examples</h4>
@@ -7008,7 +7037,7 @@
   <span class="pjs-token pjs-property">top</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-top</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// top = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-18" tabindex="-1">Parameters</h4>
+<h4 id="parameters-19" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7056,8 +7085,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 399-408</li>
-<li><strong>Lines (code):</strong> 410-412</li>
+<li><strong>Lines (comments):</strong> 403-412</li>
+<li><strong>Lines (code):</strong> 414-416</li>
 </ul>
 </details>
 <h4 id="examples-4" tabindex="-1">Examples</h4>
@@ -7068,7 +7097,7 @@
   <span class="pjs-token pjs-property">right</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-right</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// right = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-19" tabindex="-1">Parameters</h4>
+<h4 id="parameters-20" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7116,8 +7145,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 414-423</li>
-<li><strong>Lines (code):</strong> 425-427</li>
+<li><strong>Lines (comments):</strong> 418-427</li>
+<li><strong>Lines (code):</strong> 429-431</li>
 </ul>
 </details>
 <h4 id="examples-5" tabindex="-1">Examples</h4>
@@ -7128,7 +7157,7 @@
   <span class="pjs-token pjs-property">bottom</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-bottom</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// bottom = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-20" tabindex="-1">Parameters</h4>
+<h4 id="parameters-21" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7176,8 +7205,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 429-438</li>
-<li><strong>Lines (code):</strong> 440-442</li>
+<li><strong>Lines (comments):</strong> 433-442</li>
+<li><strong>Lines (code):</strong> 444-446</li>
 </ul>
 </details>
 <h4 id="examples-6" tabindex="-1">Examples</h4>
@@ -7188,7 +7217,7 @@
   <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-left</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// left = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-21" tabindex="-1">Parameters</h4>
+<h4 id="parameters-22" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7239,14 +7268,134 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 444-446</li>
-<li><strong>Lines (code):</strong> 448-450</li>
+<li><strong>Lines (comments):</strong> 448-450</li>
+<li><strong>Lines (code):</strong> 452-454</li>
 </ul>
 </details>
 <h4 id="related-links" tabindex="-1">Related Links</h4>
 <ul>
 <li><a href="https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841">Original source (Miriam Suzanne)</a></li>
 </ul>
+<div class="sassdoc-item-header">
+<h3 id="function-ratio-scale-size" tabindex="-1">ratio-scale-size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Calculate the size of something at a given scale (percentage/exponential)</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 456-461</li>
+<li><strong>Lines (code):</strong> 463-465</li>
+</ul>
+</details>
+<h4 id="parameters-23" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$base</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The number the scale starts at</td>
+</tr>
+<tr>
+<td style="text-align:left">$ratio</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The amount the scale changes over one set</td>
+</tr>
+<tr>
+<td style="text-align:left">$sizes</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The number of steps in the scale</td>
+</tr>
+<tr>
+<td style="text-align:left">$size</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The step you are trying to calculate</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-14" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-14" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-pixel-to-em" tabindex="-1">pixel-to-em()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Convert from pixel to em</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 467-470</li>
+<li><strong>Lines (code):</strong> 472-474</li>
+</ul>
+</details>
+<h4 id="parameters-24" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$pixels</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The number the scale starts at</td>
+</tr>
+<tr>
+<td style="text-align:left">$base</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">How many pixels equal 1em</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-15" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Em Conversion</td>
+</tr>
+</tbody>
+</table>
 
     </div>
   </div>

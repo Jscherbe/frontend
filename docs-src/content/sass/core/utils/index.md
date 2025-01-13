@@ -38,7 +38,9 @@ Module Settings
 ``` scss
 $config: (
   "debug-maps": true,
-  "file-header-comments": true
+  "file-header-comments": true,
+  "responsive-change": 0.5vw,
+  "pixel-em-base" : 16px
 );
 ```
   
@@ -50,8 +52,8 @@ $config: (
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** variable
-- **Lines (comments):** 12-15
-- **Lines (code):** 17-20
+- **Lines (comments):** 12-17
+- **Lines (code):** 19-24
 
 </details>
 
@@ -64,6 +66,8 @@ $config: (
 |:--|:--|:--|:--|
 |debug-maps|Boolean|true|Enable or disable debug map output|
 |file-header-comments|Boolean|true|Enable or disable module/file header comments|
+|responsive-change|Number|0.5vw|Default responsive amount to modify items using responsive-property mixin|
+|pixel-em-base|Number|16px|Default base pixel font size for pixel-to-em|
 
     
   
@@ -96,8 +100,8 @@ Change modules $config
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 22-25
-- **Lines (code):** 27-29
+- **Lines (comments):** 26-29
+- **Lines (code):** 31-33
 
 </details>
 
@@ -109,7 +113,7 @@ General example
 
 
 ``` scss
-@include utils.set(( "property" : value ));
+@include ulu.utils-set(( "property" : value ));
 ```
   
 
@@ -155,8 +159,8 @@ Ensure a value is present in the list, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 59-63
-- **Lines (code):** 65-75
+- **Lines (comments):** 63-67
+- **Lines (code):** 69-79
 
 </details>
 
@@ -198,8 +202,8 @@ Require that the list only is only made up of allowed items
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 77-81
-- **Lines (code):** 83-87
+- **Lines (comments):** 81-85
+- **Lines (code):** 87-91
 
 </details>
 
@@ -246,8 +250,8 @@ Returns true if we should include something (used for output checking)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-110
+- **Lines (comments):** 102-104
+- **Lines (code):** 106-114
 
 </details>
 
@@ -260,6 +264,48 @@ Returns true if we should include something (used for output checking)
 |:--|:--|:--|
 |$context|`List`|The root area of the framework this file comes from|
 |$name|`List`|The name of the specific area/file (optional)|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  responsive-property() {#mixin-responsive-property}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Provides user with a fallback for a calc that's just an enhancement
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** mixin
+- **Lines (comments):** 476-479
+- **Lines (code):** 481-488
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$property|`String`|The CSS property to set|
+|$value|`*`|The value to set on the property|
+|$responsive-change|`Css`|The amount to change (vw or vh units) (combined with unit past)|
 
     
   
@@ -292,8 +338,8 @@ Get a config option
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 31-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 35-38
+- **Lines (code):** 40-42
 
 </details>
 
@@ -305,7 +351,7 @@ General example
 
 
 ``` scss
-@include utils.get("property");
+@include ulu.utils-get("property");
 ```
   
 
@@ -353,8 +399,8 @@ Get a required value from a map, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 40-45
-- **Lines (code):** 47-57
+- **Lines (comments):** 44-49
+- **Lines (code):** 51-61
 
 </details>
 
@@ -414,8 +460,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 89-91
-- **Lines (code):** 93-96
+- **Lines (comments):** 93-95
+- **Lines (code):** 97-100
 
 </details>
 
@@ -456,8 +502,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 113-115
-- **Lines (code):** 117-123
+- **Lines (comments):** 117-119
+- **Lines (code):** 121-127
 
 </details>
 
@@ -494,8 +540,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 126-127
-- **Lines (code):** 129-143
+- **Lines (comments):** 130-131
+- **Lines (code):** 133-147
 
 </details>
 
@@ -543,8 +589,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 145-149
-- **Lines (code):** 151-159
+- **Lines (comments):** 149-153
+- **Lines (code):** 155-163
 
 </details>
 
@@ -594,8 +640,8 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 161-164
-- **Lines (code):** 166-171
+- **Lines (comments):** 165-168
+- **Lines (code):** 170-175
 
 </details>
 
@@ -659,8 +705,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 173-174
-- **Lines (code):** 176-184
+- **Lines (comments):** 177-178
+- **Lines (code):** 180-188
 
 </details>
 
@@ -695,8 +741,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 186-187
-- **Lines (code):** 189-196
+- **Lines (comments):** 190-191
+- **Lines (code):** 193-200
 
 </details>
 
@@ -735,8 +781,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 198-198
-- **Lines (code):** 199-207
+- **Lines (comments):** 202-202
+- **Lines (code):** 203-211
 
 </details>
 
@@ -771,8 +817,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 210-214
-- **Lines (code):** 215-234
+- **Lines (comments):** 214-218
+- **Lines (code):** 219-238
 
 </details>
 
@@ -825,8 +871,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 236-240
-- **Lines (code):** 242-268
+- **Lines (comments):** 240-244
+- **Lines (code):** 246-272
 
 </details>
 
@@ -886,8 +932,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 270-274
-- **Lines (code):** 276-292
+- **Lines (comments):** 274-278
+- **Lines (code):** 280-296
 
 </details>
 
@@ -930,8 +976,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 294-298
-- **Lines (code):** 300-308
+- **Lines (comments):** 298-302
+- **Lines (code):** 304-312
 
 </details>
 
@@ -981,8 +1027,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 310-314
-- **Lines (code):** 316-324
+- **Lines (comments):** 314-318
+- **Lines (code):** 320-328
 
 </details>
 
@@ -1031,8 +1077,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 326-330
-- **Lines (code):** 332-347
+- **Lines (comments):** 330-334
+- **Lines (code):** 336-351
 
 </details>
 
@@ -1085,8 +1131,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 349-364
-- **Lines (code):** 366-382
+- **Lines (comments):** 353-368
+- **Lines (code):** 370-386
 
 </details>
 
@@ -1160,8 +1206,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 384-393
-- **Lines (code):** 395-397
+- **Lines (comments):** 388-397
+- **Lines (code):** 399-401
 
 </details>
 
@@ -1234,8 +1280,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 399-408
-- **Lines (code):** 410-412
+- **Lines (comments):** 403-412
+- **Lines (code):** 414-416
 
 </details>
 
@@ -1308,8 +1354,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 414-423
-- **Lines (code):** 425-427
+- **Lines (comments):** 418-427
+- **Lines (code):** 429-431
 
 </details>
 
@@ -1382,8 +1428,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 429-438
-- **Lines (code):** 440-442
+- **Lines (comments):** 433-442
+- **Lines (code):** 444-446
 
 </details>
 
@@ -1457,8 +1503,8 @@ Strips the unit from the number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 444-446
-- **Lines (code):** 448-450
+- **Lines (comments):** 448-450
+- **Lines (code):** 452-454
 
 </details>
 
@@ -1467,6 +1513,113 @@ Strips the unit from the number
 #### Related Links
 
 - [Original source (Miriam Suzanne)](https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841)
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  ratio-scale-size() {#function-ratio-scale-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Calculate the size of something at a given scale (percentage/exponential)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 456-461
+- **Lines (code):** 463-465
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$base|`Number`|The number the scale starts at|
+|$ratio|`Number`|The amount the scale changes over one set|
+|$sizes|`Number`|The number of steps in the scale|
+|$size|`Number`|The step you are trying to calculate|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Number|
+
+    
+
+#### Require
+
+- [$sizes](/sass/core/breakpoint/#variable-sizes)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  pixel-to-em() {#function-pixel-to-em}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Convert from pixel to em
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 467-470
+- **Lines (code):** 472-474
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$pixels|`Number`|The number the scale starts at|
+|$base|`Number`|How many pixels equal 1em|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Number|Em Conversion|
 
     
   
