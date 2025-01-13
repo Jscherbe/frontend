@@ -23,7 +23,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include ulu.flipcard-grid-set(( "property" : value ));
+///   @include ulu.component-flipcard-grid-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -31,7 +31,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include ulu.flipcard-grid-get("property");
+///   @include ulu.component-flipcard-grid-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "flipcard-grid [config]");
@@ -39,7 +39,7 @@ $config: (
 
 /// Output component stylesheet
 /// @example scss
-///  @include ulu.flipcard-grid-styles();
+///  @include ulu.component-flipcard-grid-styles();
 
 @mixin styles {
   $prefix: selector.class("flipcard-grid");
