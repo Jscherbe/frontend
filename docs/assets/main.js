@@ -9393,7 +9393,6 @@ function changeTheme(body2) {
 function changeIcons(context = document) {
   const icons = context.querySelectorAll(attrSelectorInitial("icon"));
   icons.forEach((icon) => {
-    console.log(currentTheme);
     if (currentTheme == options.lightTheme) {
       icon.classList = options.darkIcon;
     } else {
