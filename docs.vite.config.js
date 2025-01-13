@@ -4,7 +4,7 @@ import { createConfig } from "@ulu/vite-config-cms-theme";
 export default createConfig({
   publicDir: "docs-src/src/static/",
   port: 5173, 
-  base: "https://jscherbe.github.io/frontend/",
+  base: "/frontend/",
   localOptionsFile: false,
   input: "docs-src/src/main.js",
   outDir: "docs/assets/",

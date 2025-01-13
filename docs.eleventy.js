@@ -71,7 +71,7 @@ export default async function(eleventyConfig) {
     .forEach(([name, fn]) => eleventyConfig.addShortcode(name, fn));
   
   return {
-    pathPrefix: "https://jscherbe.github.io/frontend/",
+    pathPrefix: "/frontend/",
     dir: {
       input: "docs-src/content",
       output: "docs",
