@@ -87,7 +87,6 @@ export function setup() {
 }
 
 export function setupSlider(container) {
-  console.log(container)
   container.setAttribute(attrs.init, "");
   const options = getDatasetOptionalJson(container, "uluScrollSlider");
   const config = Object.assign({}, defaults, options);

@@ -3000,7 +3000,6 @@ class Popover extends Collapsible {
   createFloatingInstance() {
     const { content, anchor, contentArrow } = this.elements;
     const floatingElements = { trigger: anchor, contentArrow, content };
-    console.log(floatingElements);
     this.floatingCleanup = createFloatingUi(floatingElements, this.floatingOptions);
   }
   destroyFloatingInstance() {
@@ -8173,7 +8172,6 @@ function setup$6() {
   builders.forEach(setupSlider$1);
 }
 function setupSlider$1(container2) {
-  console.log(container2);
   container2.setAttribute(attrs$6.init, "");
   const options2 = getDatasetOptionalJson(container2, "uluScrollSlider");
   const config2 = Object.assign({}, defaults$4, options2);
