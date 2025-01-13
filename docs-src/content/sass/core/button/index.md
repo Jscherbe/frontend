@@ -281,8 +281,6 @@ General example
 ```
   
 
-
-
       
 
 #### Parameters
@@ -519,8 +517,6 @@ Mixin to wrap in active selectors
 }
 ```
   
-
-
 
       
 
@@ -792,8 +788,6 @@ General example
 @include ulu.button-get("property");
 ```
   
-
-
 
       
 

@@ -232,8 +232,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 #### Require

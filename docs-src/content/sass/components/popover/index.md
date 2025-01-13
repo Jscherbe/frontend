@@ -225,8 +225,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 #### Require

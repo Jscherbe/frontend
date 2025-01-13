@@ -201,8 +201,6 @@ scss
 ```
   
 
-
-
       
 
 #### Parameters
@@ -259,8 +257,6 @@ Prints modal component styles
 @include ulu.component-modal-styles();
 ```
   
-
-
 
       
 

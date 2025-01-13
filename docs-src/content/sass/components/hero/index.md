@@ -178,8 +178,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 #### Require
