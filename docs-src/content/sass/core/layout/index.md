@@ -53,8 +53,8 @@ $config: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 12-18
-- **Lines (code):** 20-26
+- **Lines (comments):** 11-17
+- **Lines (code):** 19-25
 
 </details>
 
@@ -111,8 +111,8 @@ $containers: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-56
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-55
 
 </details>
 
@@ -147,8 +147,8 @@ Change modules $config
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 28-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 27-29
+- **Lines (code):** 31-33
 
 </details>
 
@@ -160,7 +160,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.layout-set(( "property" : value ));|
 
     
 
@@ -194,8 +194,8 @@ Set layout containers
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 58-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 57-60
+- **Lines (code):** 62-64
 
 </details>
 
@@ -242,8 +242,8 @@ ie. \{ top: $containers-padding; }
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 81-85
-- **Lines (code):** 87-99
+- **Lines (comments):** 80-84
+- **Lines (code):** 86-98
 
 </details>
 
@@ -295,8 +295,8 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 101-108
-- **Lines (code):** 110-125
+- **Lines (comments):** 100-107
+- **Lines (code):** 109-124
 
 </details>
 
@@ -344,8 +344,8 @@ Print the containers padding properties
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 143-146
-- **Lines (code):** 148-174
+- **Lines (comments):** 142-145
+- **Lines (code):** 147-173
 
 </details>
 
@@ -394,8 +394,8 @@ Print all container styles for a given container
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 192-194
-- **Lines (code):** 196-224
+- **Lines (comments):** 191-193
+- **Lines (code):** 195-223
 
 </details>
 
@@ -442,8 +442,8 @@ Prints clearfix styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 226-226
-- **Lines (code):** 228-239
+- **Lines (comments):** 225-225
+- **Lines (code):** 227-238
 
 </details>
 
@@ -473,8 +473,8 @@ Removes scrollbar with CSS
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 241-241
-- **Lines (code):** 242-248
+- **Lines (comments):** 240-240
+- **Lines (code):** 241-247
 
 </details>
 
@@ -506,8 +506,8 @@ Layout utility for absolute (zero on all sides)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 250-252
-- **Lines (code):** 253-264
+- **Lines (comments):** 249-251
+- **Lines (code):** 252-263
 
 </details>
 
@@ -542,8 +542,8 @@ Get a config option
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 36-38
-- **Lines (code):** 39-41
+- **Lines (comments):** 35-37
+- **Lines (code):** 38-40
 
 </details>
 
@@ -555,7 +555,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.layout-get("property");|
 
     
 
@@ -589,8 +589,8 @@ Get a container map
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 67-69
-- **Lines (code):** 71-79
+- **Lines (comments):** 66-68
+- **Lines (code):** 70-78
 
 </details>
 
@@ -637,8 +637,8 @@ Get a containers padding value
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 127-130
-- **Lines (code):** 132-141
+- **Lines (comments):** 126-129
+- **Lines (code):** 131-140
 
 </details>
 
@@ -685,8 +685,8 @@ Get containers padding X value (side)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 176-178
-- **Lines (code):** 180-182
+- **Lines (comments):** 175-177
+- **Lines (code):** 179-181
 
 </details>
 
@@ -731,8 +731,8 @@ Get containers padding Y value (ends)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 184-186
-- **Lines (code):** 188-190
+- **Lines (comments):** 183-185
+- **Lines (code):** 187-189
 
 </details>
 

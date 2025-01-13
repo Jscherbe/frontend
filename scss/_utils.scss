@@ -13,16 +13,20 @@
 /// @type Map
 /// @prop {Boolean} debug-maps [true] Enable or disable debug map output
 /// @prop {Boolean} file-header-comments [true] Enable or disable module/file header comments
+/// @prop {Number} responsive-change [0.5vw] Default responsive amount to modify items using responsive-property mixin
+/// @prop {Number} pixel-em-base [16px] Default base pixel font size for pixel-to-em
 
 $config: (
   "debug-maps": true,
-  "file-header-comments": true
+  "file-header-comments": true,
+  "responsive-change": 0.5vw,
+  "pixel-em-base" : 16px
 ) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 /// @example scss - General example
-///   @include utils.set(( "property" : value ));
+///   @include ulu.utils-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -31,7 +35,7 @@ $config: (
 /// Get a config option
 /// @param {Map} $name Name of property
 /// @example scss - General example
-///   @include utils.get("property");
+///   @include ulu.utils-get("property");
 
 @function get($name) {
   @return require-map-get($config, $name, 'utils');
@@ -447,4 +451,38 @@ $config: (
 
 @function strip-unit($value) {
   @return math.div($value, ($value * 0 + 1));
+}
+
+/// Calculate the size of something at a given scale (percentage/exponential)
+/// @param {Number} $base The number the scale starts at
+/// @param {Number} $ratio The amount the scale changes over one set
+/// @param {Number} $sizes The number of steps in the scale
+/// @param {Number} $size The step you are trying to calculate
+/// @return {Number}
+
+@function ratio-scale-size($base, $ratio, $sizes, $size) {
+  @return $base * math.pow($ratio, math.div($size, $sizes));
+}
+
+/// Convert from pixel to em
+/// @param {Number} $pixels The number the scale starts at
+/// @param {Number} $base How many pixels equal 1em
+/// @return {Number} Em Conversion
+
+@function pixel-to-em($pixels, $base: get("pixel-em-base")) {
+  @return math.div($pixels, $base) + 1em;
+}
+
+/// Provides user with a fallback for a calc that's just an enhancement
+/// @param {String} $property The CSS property to set
+/// @param {*} $value The value to set on the property
+/// @param {Css} $responsive-change The amount to change (vw or vh units) (combined with unit past)
+
+@mixin responsive-property(
+  $property, 
+  $value, 
+  $responsive-change: get("responsive-change")
+) {
+  #{ $property } : $value;
+  #{ $property } : calc(#{ $value } + #{ $responsive-change });
 }

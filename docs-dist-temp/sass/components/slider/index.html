@@ -867,25 +867,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/calculate/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Calculate
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/color/" 
           
         >
@@ -3720,25 +3701,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/calculate/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Calculate
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/color/" 
           
         >
@@ -5822,6 +5784,7 @@
     <div class="wysiwyg">
       <h1 id="slider" tabindex="-1">Slider</h1>
 <div class="type-large">
+<p>Slider/Carousal component that works with the ui/slider.js script</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5836,7 +5799,6 @@
   <span class="pjs-token pjs-string">"breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-top"</span> <span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
-
   <span class="pjs-token pjs-string">"button-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-border"</span> <span class="pjs-token pjs-punctuation">:</span> 2px solid color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"button-border-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span>  color.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"link-hover"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5874,8 +5836,8 @@
 <li><strong>File:</strong> _slider.scss</li>
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-47</li>
-<li><strong>Lines (code):</strong> 49-85</li>
+<li><strong>Lines (comments):</strong> 13-48</li>
+<li><strong>Lines (code):</strong> 50-85</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -6114,8 +6076,8 @@
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
-<p>General example, replace module-name with module's name</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> module-name.<span class="pjs-token pjs-function">set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<p>General example</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-slider-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6143,15 +6105,15 @@
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints modal component styles</p>
+<p>Output component stylesheet</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _slider.scss</li>
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 104-106</li>
-<li><strong>Lines (code):</strong> 108-241</li>
+<li><strong>Lines (comments):</strong> 105-107</li>
+<li><strong>Lines (code):</strong> 109-241</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -6174,10 +6136,13 @@
 <li><strong>File:</strong> _slider.scss</li>
 <li><strong>Group:</strong> slider</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 96-98</li>
-<li><strong>Lines (code):</strong> 100-102</li>
+<li><strong>Lines (comments):</strong> 96-99</li>
+<li><strong>Lines (code):</strong> 101-103</li>
 </ul>
 </details>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<p>General example</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-slider-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -6192,11 +6157,6 @@
 <td style="text-align:left">$name</td>
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Name of property</td>
-</tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>

@@ -200,10 +200,12 @@ Resolves a Path
 
 ``` scss
 .img {
-  background-image: url(path.resolve("#Images/branding/logo"));
+  background-image: url(ulu.path-resolve("#Images/branding/logo"));
 }
 ```
   
+
+
 
       
 

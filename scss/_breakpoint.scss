@@ -1,9 +1,9 @@
 ////
 /// @group breakpoint
+/// Utilities for working with breakpoints
 ////
 
 @use "sass:map";
-@use "calculate";
 @use "utils";
 
 /// Module Settings
@@ -22,7 +22,7 @@ $config: (
 
 /// Change modules $config
 /// @example scss Change default name
-///   @include breakpoint.set(( "default" : "mini" ));
+///   @include ulu.breakpoint-set(( "default" : "mini" ));
 /// @param {Map} $changes Map of changes
 
 @mixin set($changes) {
@@ -31,7 +31,7 @@ $config: (
 
 /// Get a config option
 /// @example scss Get default breakpoint name
-///   $default: breakpoint.get("default");
+///   $default: ulu.breakpoint-get("default");
 /// @param {Map} $name Name of property
 /// @return {*} Property Value
 
@@ -46,14 +46,14 @@ $config: (
 /// @type Map
 
 $sizes: (
-  "small"  : calculate.pixel-to-em(680px, get("base")),
-  "medium" : calculate.pixel-to-em(1200px, get("base")),
-  "large"  : calculate.pixel-to-em(1500px, get("base"))
+  "small"  : utils.pixel-to-em(680px, get("base")),
+  "medium" : utils.pixel-to-em(1200px, get("base")),
+  "large"  : utils.pixel-to-em(1500px, get("base"))
 ) !default;
 
 /// Update the breakpoint sizes map
 /// @example scss Changing the medium breakpoint and adding jumbo
-///   @include breakpoints.set((
+///   @include ulu.breakpoints-set-sizes((
 ///     "medium" : 50em,
 ///     "jumbo" : 100em
 ///   ));
@@ -102,7 +102,7 @@ $sizes: (
 
 /// Create a media query that matches the min-width for a given size
 /// @example scss
-///   @include breakpoints.min("small") {
+///   @include ulu.breakpoints-min("small") {
 ///     // Your styles
 ///   }
 /// @example css

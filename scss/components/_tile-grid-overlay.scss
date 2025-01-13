@@ -1,5 +1,6 @@
 ////
 /// @group tile-grid-overlay
+/// Provides styles to use tile-grid over the top of image
 ////
 
 @use "sass:map";
@@ -27,7 +28,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-tile-grid-overlay-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -35,13 +37,14 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-tile-grid-overlay-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "tile-grid-overlay [config]");
 }
 
-/// Prints component styles
+/// Output component styles
 /// @example scss
 ///  @include ulu.component-tile-grid-overlay-styles();
 

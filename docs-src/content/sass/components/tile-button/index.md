@@ -8,7 +8,7 @@ sassdocGroupName: tile-button
 
 <div class="type-large">
 
-Button to be used withing tile-grid. Used with button classes.
+Button to be used within tile-grid. Used in combination with button component classes.
 
 </div>
 
@@ -59,8 +59,8 @@ $config: (
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** variable
-- **Lines (comments):** 39-48
-- **Lines (code):** 50-62
+- **Lines (comments):** 38-47
+- **Lines (code):** 49-61
 
 </details>
 
@@ -111,20 +111,33 @@ Change modules $config
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
-- **Lines (comments):** 64-66
+- **Lines (comments):** 63-66
 - **Lines (code):** 68-70
 
 </details>
 
     
 
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tile-button-set(( "property" : value ));
+```
+  
+
+
+
+      
+
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -157,8 +170,8 @@ Prints component styles
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** mixin
-- **Lines (comments):** 81-83
-- **Lines (code):** 85-129
+- **Lines (comments):** 82-84
+- **Lines (code):** 86-130
 
 </details>
 
@@ -170,9 +183,11 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-tile-button-styles();
 ```
   
+
+
 
       
 
@@ -210,20 +225,33 @@ Get a config option
 - **File:** _tile-button.scss
 - **Group:** tile-button
 - **Type:** function
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-79
+- **Lines (comments):** 72-75
+- **Lines (code):** 77-80
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tile-button-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

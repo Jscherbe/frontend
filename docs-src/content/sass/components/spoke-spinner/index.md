@@ -8,7 +8,7 @@ sassdocGroupName: spoke-spinner
 
 <div class="type-large">
 
-
+A spoke style spinner/loader icon, requires ulu.base-keyframes
 
 </div>
 
@@ -54,8 +54,8 @@ $config: (
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** variable
-- **Lines (comments):** 12-13
-- **Lines (code):** 15-22
+- **Lines (comments):** 13-14
+- **Lines (code):** 16-23
 
 </details>
 
@@ -79,8 +79,7 @@ Map of other sizes (use as modifiers), same properties as config/defaults
     
 
 ``` scss
-$styles: (
-);
+$styles: ();
 ```
   
 
@@ -91,8 +90,8 @@ $styles: (
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** variable
-- **Lines (comments):** 24-24
-- **Lines (code):** 25-26
+- **Lines (comments):** 25-25
+- **Lines (code):** 26-26
 
 </details>
 
@@ -127,20 +126,33 @@ Change modules $config
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** mixin
-- **Lines (comments):** 28-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 28-31
+- **Lines (code):** 33-35
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-spoke-spinner-set(( "property" : value ));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -173,8 +185,8 @@ Set tag styles
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** mixin
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 37-39
+- **Lines (code):** 41-43
 
 </details>
 
@@ -208,7 +220,7 @@ Set tag styles
 
   
 
-Prints component styles
+Output component stylesheet
     
     
 
@@ -219,8 +231,8 @@ Prints component styles
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** mixin
-- **Lines (comments):** 52-71
-- **Lines (code):** 73-200
+- **Lines (comments):** 54-73
+- **Lines (code):** 75-193
 
 </details>
 
@@ -235,6 +247,8 @@ Prints component styles
 @include ulu.component-spoke-spinner-styles();
 ```
   
+
+
 
       
 
@@ -260,6 +274,8 @@ Example markup
 </div>
 ```
   
+
+
 
       
 
@@ -298,20 +314,33 @@ Get a config option
 - **File:** _spoke-spinner.scss
 - **Group:** spoke-spinner
 - **Type:** function
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 45-48
+- **Lines (code):** 50-52
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-spoke-spinner-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

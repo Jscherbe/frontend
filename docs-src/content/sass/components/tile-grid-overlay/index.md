@@ -8,7 +8,7 @@ sassdocGroupName: tile-grid-overlay
 
 <div class="type-large">
 
-
+Provides styles to use tile-grid over the top of image
 
 </div>
 
@@ -56,8 +56,8 @@ $config: (
 - **File:** _tile-grid-overlay.scss
 - **Group:** tile-grid-overlay
 - **Type:** variable
-- **Lines (comments):** 14-15
-- **Lines (code):** 17-26
+- **Lines (comments):** 15-16
+- **Lines (code):** 18-27
 
 </details>
 
@@ -92,20 +92,33 @@ Change modules $config
 - **File:** _tile-grid-overlay.scss
 - **Group:** tile-grid-overlay
 - **Type:** mixin
-- **Lines (comments):** 28-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 29-32
+- **Lines (code):** 34-36
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tile-grid-overlay-set(( "property" : value ));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -127,7 +140,7 @@ Change modules $config
 
   
 
-Prints component styles
+Output component styles
     
     
 
@@ -138,8 +151,8 @@ Prints component styles
 - **File:** _tile-grid-overlay.scss
 - **Group:** tile-grid-overlay
 - **Type:** mixin
-- **Lines (comments):** 44-46
-- **Lines (code):** 48-112
+- **Lines (comments):** 47-49
+- **Lines (code):** 51-115
 
 </details>
 
@@ -154,6 +167,8 @@ Prints component styles
 @include ulu.component-tile-grid-overlay-styles();
 ```
   
+
+
 
       
 
@@ -191,20 +206,33 @@ Get a config option
 - **File:** _tile-grid-overlay.scss
 - **Group:** tile-grid-overlay
 - **Type:** function
-- **Lines (comments):** 36-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 38-41
+- **Lines (code):** 43-45
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tile-grid-overlay-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

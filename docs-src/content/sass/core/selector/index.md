@@ -107,9 +107,11 @@ General example
 
 
 ``` scss
-@include selector.set(( "property" : value ));
+@include ulu.selector-set(( "property" : value ));
 ```
   
+
+
 
       
 
@@ -172,6 +174,8 @@ Changing the color-context classname to background and all typography base/utili
 ```
   
 
+
+
       
 
 #### Parameters
@@ -225,9 +229,11 @@ General example
 
 
 ``` scss
-@include selector.get("property");
+@include ulu.selector-get("property");
 ```
   
+
+
 
       
 

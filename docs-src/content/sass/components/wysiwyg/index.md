@@ -8,7 +8,7 @@ sassdocGroupName: wysiwyg
 
 <div class="type-large">
 
-For auto formatting general HTML elements (used around editor/body text)
+For auto formatting general HTML elements (used around editor/body text). This selector can't currently be changed.
 
 </div>
 
@@ -104,20 +104,33 @@ Change modules $config
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
-- **Lines (comments):** 32-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-wysiwyg-set(( "property" : value ));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -125,6 +138,54 @@ Change modules $config
 
 - [$config](/sass/components/accordion/#variable-config)
   
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output component stylesheet
+- Note this is setup so that it can be used for separate stylesheets (ie. tinyMCE or ckeditor)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _wysiwyg.scss
+- **Group:** wysiwyg
+- **Type:** mixin
+- **Lines (comments):** 50-55
+- **Lines (code):** 57-65
+
+</details>
+
+    
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-wysiwyg-styles(true);
+// Output not in selector (for editor stylesheet/preview)
+@include ulu.component-wysiwyg-styles(false);
+```
+  
+
+
+
+      
   
 
 ## Functions
@@ -155,20 +216,33 @@ Get a config option
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** function
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 41-44
+- **Lines (code):** 46-48
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-wysiwyg-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

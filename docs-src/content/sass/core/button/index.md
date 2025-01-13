@@ -273,13 +273,15 @@ Change modules $config
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.set(( "property" : value ));
+@include ulu.button-set(( "property" : value ));
 ```
   
+
+
 
       
 
@@ -517,6 +519,8 @@ Mixin to wrap in active selectors
 }
 ```
   
+
+
 
       
 
@@ -781,13 +785,15 @@ Get a config option
 
 #### Examples
 
-General example, replace module-name with module's name      
+General example      
 
 
 ``` scss
-@include module-name.get("property");
+@include ulu.button-get("property");
 ```
   
+
+
 
       
 

@@ -134,7 +134,7 @@ $config: (
 
   
 
-Rule style map, redifine defaults or add to
+Rule style map, redefine defaults or add to
     
     
 
@@ -243,7 +243,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+  @include ulu.element-set(( "property" : value ));|
 
     
 
@@ -708,6 +708,8 @@ Hide text for assistive devices
 ```
   
 
+
+
       
 
 #### Parameters
@@ -761,7 +763,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include module-name.get("property");|
+  @include ulu.element-get("property");|
 
     
 

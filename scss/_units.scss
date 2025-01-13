@@ -28,7 +28,7 @@ $config: (
 /// Update the units config
 /// @param {Map} $changes A map to merge into the color palette
 /// @example scss Setting the error and type color
-///   @include units.set((
+///   @include ulu.units-set((
 ///     "default" : 1.5em
 ///   ));
 

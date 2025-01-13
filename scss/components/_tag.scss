@@ -1,5 +1,6 @@
 ////
 /// @group tag
+/// A small, lightweight label used to categorize, classify, or identify items within an interface
 ////
 
 @use "sass:map";
@@ -41,6 +42,7 @@ $config: (
 ) !default;
 
 /// Style Map (alternate tag styles)
+
 $styles: (
   "success" : (
     "color" : rgb(37, 73, 37),
@@ -59,7 +61,8 @@ $styles: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-tag-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -75,14 +78,15 @@ $styles: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-tag-get("property");
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "tag [config]");
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// @example scss
 ///  @include ulu.component-tag-styles();
 

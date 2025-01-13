@@ -205,20 +205,33 @@ Change modules $config
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 71-74
+- **Lines (code):** 76-78
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tile-grid-set(( "property" : value ));
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -251,8 +264,8 @@ Set fixed sizes map
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 80-82
+- **Lines (code):** 84-86
 
 </details>
 
@@ -297,8 +310,8 @@ Set sizes map
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-93
+- **Lines (comments):** 88-90
+- **Lines (code):** 92-94
 
 </details>
 
@@ -332,7 +345,7 @@ Set sizes map
 
   
 
-Prints component styles
+Output component stylesheet
     
     
 
@@ -343,8 +356,8 @@ Prints component styles
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** mixin
-- **Lines (comments):** 103-105
-- **Lines (code):** 107-169
+- **Lines (comments):** 105-107
+- **Lines (code):** 109-171
 
 </details>
 
@@ -356,9 +369,11 @@ Prints component styles
 
 
 ``` scss
-@include ulu.component-example-styles();
+@include ulu.component-tile-grid-styles();
 ```
   
+
+
 
       
 
@@ -398,20 +413,33 @@ Get a config option
 - **File:** _tile-grid.scss
 - **Group:** tile-grid
 - **Type:** function
-- **Lines (comments):** 95-97
-- **Lines (code):** 99-101
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-103
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-tile-grid-get("property");
+```
+  
+
+
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

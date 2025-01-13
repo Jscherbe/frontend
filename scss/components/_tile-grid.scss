@@ -1,7 +1,7 @@
 ////
 /// @group tile-grid
-////
 /// Creates a CSS grid with items that have matching aspect ratios. Reflows to fit as many items as can be fit withing current grid's width by default. Allows passing static styles to create fixed number of columns per row. Static styles are set adaptively and can adjust the number of columns at different breakpoints.
+////
 
 @use "sass:map";
 @use "sass:list";
@@ -70,7 +70,8 @@ $static-sizes: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example scss
+///   @include ulu.component-tile-grid-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -94,15 +95,16 @@ $static-sizes: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss
+///   @include ulu.component-tile-grid-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "component-tile-grid [config]");
 }
 
-/// Prints component styles
+/// Output component stylesheet
 /// @example scss
-///  @include ulu.component-example-styles();
+///  @include ulu.component-tile-grid-styles();
 
 @mixin styles {
   $prefix: selector.class("tile-grid");

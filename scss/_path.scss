@@ -35,7 +35,7 @@ $aliases: (
 /// - Aliases work by starting with "#", Since it's an illegal uri character, needs to be escaped if used as literal, we felt that it was the safest way to mix aliases in with real URLs (so that a dev of a module using path.resolve can always pass paths through (user input unknown if alias)
 /// @example scss
 ///   .img {
-///     background-image: url(path.resolve("#Images/branding/logo"));
+///     background-image: url(ulu.path-resolve("#Images/branding/logo"));
 ///   }
 ///
 

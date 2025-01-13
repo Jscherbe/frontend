@@ -867,25 +867,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/calculate/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Calculate
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/color/" 
           
         >
@@ -3720,25 +3701,6 @@
           
         <a 
           class="nav-tree__link  " 
-          href="/sass/core/calculate/" 
-          
-        >
-          
-    
-    <span class="nav-tree__text">
-      Calculate
-    </span>
-  
-        </a>
-      
-          
-        </li>
-      
-
-        <li class="nav-tree__item ">
-          
-        <a 
-          class="nav-tree__link  " 
           href="/sass/core/color/" 
           
         >
@@ -5796,9 +5758,6 @@
                     <li><a href="#mixin-set">set()</a>
             		</li>
 
-                    <li><a href="#mixin-set-sizes">set-sizes()</a>
-            		</li>
-
                     <li><a href="#mixin-styles">styles()</a>
             		</li>
                 </ol>
@@ -5825,7 +5784,7 @@
     <div class="wysiwyg">
       <h1 id="vignette" tabindex="-1">Vignette</h1>
 <div class="type-large">
-<p>Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)</p>
+<p>Create a vignette effect around image/video/etc</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5837,6 +5796,7 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span>0<span class="pjs-token pjs-punctuation">,</span>0<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-filter"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">saturate</span><span class="pjs-token pjs-punctuation">(</span>85%<span class="pjs-token pjs-punctuation">)</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -5844,8 +5804,8 @@
 <li><strong>File:</strong> _vignette.scss</li>
 <li><strong>Group:</strong> vignette</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 13-15</li>
-<li><strong>Lines (code):</strong> 17-20</li>
+<li><strong>Lines (comments):</strong> 12-14</li>
+<li><strong>Lines (code):</strong> 16-19</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5863,7 +5823,7 @@
 <td style="text-align:left">background-color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">rgb(0,0,0)</td>
-<td style="text-align:left">Color used for the fade-in of the vignette.</td>
+<td style="text-align:left">Color used for the fade-in of the vignette. Must be actual color not color module palette name</td>
 </tr>
 </tbody>
 </table>
@@ -5881,10 +5841,12 @@
 <li><strong>File:</strong> _vignette.scss</li>
 <li><strong>Group:</strong> vignette</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 22-24</li>
+<li><strong>Lines (comments):</strong> 21-24</li>
 <li><strong>Lines (code):</strong> 26-28</li>
 </ul>
 </details>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-vignette-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5900,11 +5862,6 @@
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Map of changes</td>
 </tr>
-<tr>
-<td style="text-align:left">@include module-name.set(( &quot;property&quot; : value ));</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
 </tbody>
 </table>
 <h4 id="require" tabindex="-1">Require</h4>
@@ -5912,68 +5869,25 @@
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-set-sizes" tabindex="-1">set-sizes()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Set sizes map</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _vignette.scss</li>
-<li><strong>Group:</strong> vignette</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 30-32</li>
-<li><strong>Lines (code):</strong> 34-36</li>
-</ul>
-</details>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-<tr>
-<td style="text-align:left">$merge-mode</td>
-<td style="text-align:left"><code>String</code></td>
-<td style="text-align:left">Merge mode see utils.map-merge() [null</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/sass/components/adaptive-spacing/#variable-sizes">$sizes</a></li>
-</ul>
-<div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
   </div>
 </div>
-<p>Prints adaptive spacing component styles</p>
+<p>Output component stylesheet</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _vignette.scss</li>
 <li><strong>Group:</strong> vignette</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 46-48</li>
-<li><strong>Lines (code):</strong> 50-78</li>
+<li><strong>Lines (comments):</strong> 39-41</li>
+<li><strong>Lines (code):</strong> 43-65</li>
 </ul>
 </details>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-adaptive-spacing-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-vignette-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="require-1" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#function-get">get()</a></li>
 </ul>
@@ -5991,11 +5905,13 @@
 <li><strong>File:</strong> _vignette.scss</li>
 <li><strong>Group:</strong> vignette</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 38-40</li>
-<li><strong>Lines (code):</strong> 42-44</li>
+<li><strong>Lines (comments):</strong> 30-33</li>
+<li><strong>Lines (code):</strong> 35-37</li>
 </ul>
 </details>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-vignette-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6010,14 +5926,9 @@
 <td style="text-align:left"><code>Map</code></td>
 <td style="text-align:left">Name of property</td>
 </tr>
-<tr>
-<td style="text-align:left">@include module-name.get(&quot;property&quot;);</td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
 </tbody>
 </table>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

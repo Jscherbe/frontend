@@ -1,5 +1,6 @@
 ////
 /// @group scroll-slider
+/// Overflow scrolling slider component (use with ui/overflow-scroller.js)
 ////
 
 @use "sass:map";
@@ -10,10 +11,6 @@
 @use "../layout";
 @use "../breakpoint";
 @use "../selector";
-
-
-// Reference:
-// - https://web.dev/css-scroll-snap/
 
 /// Module Settings
 /// @type Map
@@ -49,7 +46,6 @@ $config: (
   "padding-bottom" : 0,
   "padding-top" : 0,
   "prefix": "scroll-slider",
-
   "button-background-color" : white,
   "button-background-color-hover" : white,
   "button-border" : 2px solid white,
@@ -68,8 +64,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example, replace module-name with module's name
-///   @include module-name.set(( "property" : value ));
+/// @example scss - General example
+///   @include ulu.component-scroll-slider-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -77,11 +73,16 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example scss - General example
+///   @include ulu.component-scroll-slider-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "scroll-slider [config]");
 }
+
+/// Output component stylesheet
+/// @example scss
+///  @include ulu.component-scroll-slider-styles();
 
 @mixin styles {
   $prefix: selector.class(get("prefix"));

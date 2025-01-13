@@ -117,11 +117,13 @@ Setting the error and type color
 
 
 ``` scss
-@include units.set((
+@include ulu.units-set((
   "default" : 1.5em
 ));
 ```
   
+
+
 
       
 

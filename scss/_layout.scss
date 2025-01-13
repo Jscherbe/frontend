@@ -6,7 +6,6 @@
 @use "sass:list";
 @use "sass:meta";
 @use "utils";
-@use "calculate";
 @use "breakpoint";
 
 /// Module Settings
@@ -27,7 +26,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.layout-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -35,7 +34,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.layout-get("property");
 @function get($name) {
   @return utils.require-map-get($config, $name, "layout [config]");
 }
@@ -150,16 +149,16 @@ $containers: (
   $responsive: map.get($container, "responsive");
   $x: get-container-padding-x($name, $specific-breakpoint);
   $y: get-container-padding-y($name, $specific-breakpoint);
-  $resp-amount: if(meta.type-of($responsive) == number, $responsive, calculate.get("responsive-change"));
+  $resp-amount: if(meta.type-of($responsive) == number, $responsive, utils.get("responsive-change"));
   
   @if $responsive {
     @if $sides {
-      @include calculate.responsive-property("padding-left", $x, $resp-amount);
-      @include calculate.responsive-property("padding-right", $x, $resp-amount);
+      @include utils.responsive-property("padding-left", $x, $resp-amount);
+      @include utils.responsive-property("padding-right", $x, $resp-amount);
     }
     @if $ends {
-      @include calculate.responsive-property("padding-top", $y, $resp-amount);
-      @include calculate.responsive-property("padding-bottom", $y, $resp-amount);
+      @include utils.responsive-property("padding-top", $y, $resp-amount);
+      @include utils.responsive-property("padding-bottom", $y, $resp-amount);
     }
   } @else {
     @if $sides {

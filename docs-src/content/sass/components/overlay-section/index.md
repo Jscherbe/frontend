@@ -65,8 +65,8 @@ $config: (
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** variable
-- **Lines (comments):** 13-21
-- **Lines (code):** 23-41
+- **Lines (comments):** 12-20
+- **Lines (code):** 22-40
 
 </details>
 
@@ -116,8 +116,8 @@ Change modules $config
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
-- **Lines (comments):** 43-46
-- **Lines (code):** 48-50
+- **Lines (comments):** 42-45
+- **Lines (code):** 47-49
 
 </details>
 
@@ -173,8 +173,8 @@ Prints component styles
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
-- **Lines (comments):** 61-64
-- **Lines (code):** 66-123
+- **Lines (comments):** 60-63
+- **Lines (code):** 65-122
 
 </details>
 
@@ -236,8 +236,8 @@ Get a config option
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** function
-- **Lines (comments):** 52-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 51-54
+- **Lines (code):** 56-58
 
 </details>
 

@@ -71,7 +71,7 @@ $config: (
   "ul-list-style-type-3":             square,
 ) !default;
 
-/// Rule style map, redifine defaults or add to
+/// Rule style map, redefine defaults or add to
 /// @type Map
 
 $rule-styles: (
@@ -91,7 +91,7 @@ $rule-margins: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+///   @include ulu.element-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -99,7 +99,7 @@ $rule-margins: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+///   @include ulu.element-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "element [config]");

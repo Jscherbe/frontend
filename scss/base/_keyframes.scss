@@ -93,6 +93,14 @@
       transform: scale(1);
     }
   }
+  @keyframes UluFadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
   @keyframes UluFadeOutLeft {
     0% {
       opacity: 1;
