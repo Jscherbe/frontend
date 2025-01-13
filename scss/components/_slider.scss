@@ -214,7 +214,7 @@ $config: (
       }
     }
   }
-  .slider--inset-controls {
+  #{ $prefix }--inset-controls {
     .slide-gap-for-controls {
       $padding: get("button-width") + get("button-margin") + get("button-icon-offset-x");
       padding-left: $padding;
