@@ -9625,7 +9625,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("./fa-solid-900.woff2") format("woff2"), url("./fa-solid-900.ttf") format("truetype");
+  src: url("/frontend/assets/fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("/frontend/assets/fonts/fontawesome/fa-solid-900.ttf") format("truetype");
 }
 .fas,
 .fa-solid {
@@ -9647,7 +9647,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("./fa-brands-400.woff2") format("woff2"), url("./fa-brands-400.ttf") format("truetype");
+  src: url("/frontend/assets/fonts/fontawesome/fa-brands-400.woff2") format("woff2"), url("/frontend/assets/fonts/fontawesome/fa-brands-400.ttf") format("truetype");
 }
 .fab,
 .fa-brands {

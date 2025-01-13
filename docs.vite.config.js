@@ -11,7 +11,7 @@ export default defineConfig((ctx) => {
     input: "docs-src/src/main.js",
     outDir: "docs/assets",
     origin: "http://localhost:8080", 
-    themePath: "",
+    themePath: "/frontend",
     globalJquery: false,
     withLegacy: false,
     withVue: false,
@@ -35,8 +35,8 @@ export default defineConfig((ctx) => {
     },
   })(ctx);
 
-  if (!isServe) {
+  // if (!isServe) {
     config.base = "./";
-  }
+  // }
   return config;
 });

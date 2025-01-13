@@ -2,7 +2,7 @@
 // Font Awesome Icons
 //==============================================================================
 
-$path: "@fortawesome/fontawesome-free/webfonts";
+$path: "/frontend/assets/fonts/fontawesome";
 
 @use "@fortawesome/fontawesome-free/scss/fontawesome" with ($fa-font-path: $path);
 @use "@fortawesome/fontawesome-free/scss/solid" with ($fa-font-path: $path);
