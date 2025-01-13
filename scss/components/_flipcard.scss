@@ -5,9 +5,8 @@
 /// Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
 
 @use "sass:map";
-@use "sass:math";
-@use "../element";
 @use "../utils";
+@use "../selector";
 
 /// Module Settings
 /// @type Map
@@ -62,7 +61,8 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-///   @include module-name.set(( "property" : value ));
+/// @example
+///   @include ulu.component-flipcard-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -78,18 +78,17 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-///   @include module-name.get("property");
+/// @example
+///   @include ulu.component-flipcard-get("property");
 
 @function get($name) {
   @return utils.require-map-get($config, $name, "flipcard [config]");
 }
 
-/// Prints adaptive spacing component styles
-/// @example scss
-///  @include ulu.component-adaptive-spacing-styles();
-
 @mixin styles {
-  .flipcard {
+  $prefix: selector.class("flipcard");
+
+  #{ $prefix } {
     height: 100%;
     background-color: get("background-color");
     line-height: 1.4;
@@ -97,36 +96,36 @@ $config: (
     position: relative;
     border: get("border");
     border-radius: get("border-radius");
-    &.Flipcard:hover {
+    &#{ $prefix }:hover {
       border-color: get("border-color-hover");
     }
-    .Flipcard__control-button:focus {
+    #{ $prefix }__control-button:focus {
       border: get("control-button-border-focus");
     }
   }
-  .flipcard__front,
-  .flipcard__back {
+  #{ $prefix }__front,
+  #{ $prefix }__back {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
   
-  .flipcard__front {
+  #{ $prefix }__front {
     // To lay the image out on top of the text
     display: grid;
     grid-template-columns: 1fr;
     justify-items: stretch;
     grid-template-areas: "flipcard-front";
     &:hover {
-      .flipcard__front-image {
+      #{ $prefix }__front-image {
         transition-duration: 8000ms;
         transition-delay: 0;
         transform: scale(1.15);
       }
-      .flipcard__front-content {
+      #{ $prefix }__front-content {
         color: get("title-color-hover");
       }
-      .flipcard__icon {
+      #{ $prefix }__icon {
         color: get("icon-color-hover");
       }
     }
@@ -140,23 +139,23 @@ $config: (
       }
     }
   }
-  .flipcard--w-image {
+  #{ $prefix }--w-image {
     background-color: get("background-color-image");
 
     &:hover {
-      .flipcard__front-content {
+      #{ $prefix }__front-content {
         color: get("title-color-image-hover");
       }
-      .flipcard__icon {
+      #{ $prefix }__icon {
         color: get("icon-color-image-hover");
       }
     }
   }
-  .flipcard__front-image,
-  .flipcard__front-content {
+  #{ $prefix }__front-image,
+  #{ $prefix }__front-content {
     grid-area: flipcard-front / flipcard-front / flipcard-front / flipcard-front;
   }
-  .flipcard__front-image {
+  #{ $prefix }__front-image {
     display: block;
     @media (prefers-reduced-motion) {
       transition: transform 1000ms 200ms get("anim-timing-function");
@@ -168,12 +167,12 @@ $config: (
       opacity: get("image-opacity");
     }
   }
-  .flipcard__icon {
+  #{ $prefix }__icon {
     color: get('icon-color');
     display: block;
     margin-top: 0.5rem;
   }
-  .flipcard__front-content {
+  #{ $prefix }__front-content {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -185,11 +184,11 @@ $config: (
     align-self: end;
     transition: transform 350ms get("anim-timing-function");    
   }
-  .flipcard--w-image {
-    .flipcard__icon {
+  #{ $prefix }--w-image {
+    #{ $prefix }__icon {
       color: get("icon-color-image");
     }
-    .flipcard__front-content {
+    #{ $prefix }__front-content {
       color: get("title-color-image");
       @if(get("bottom-shadow")) {
         // bottom position includes padding so that the shadow 
@@ -207,7 +206,7 @@ $config: (
       }
     }
   }
-  .flipcard__back {
+  #{ $prefix }__back {
     background-color: get("background-color-back");
     padding: get('padding');
     justify-content: flex-end;
@@ -221,7 +220,6 @@ $config: (
   @keyframes FlipcardBackOpen {
     0% {
       opacity: 0;
-      // transform: scale(0.7);
       transform: translateY(100%);
     }
     30% {
@@ -230,18 +228,15 @@ $config: (
     }
     100% {
       opacity: 1;
-      // transform: scale(1);
       transform: translateY(0);
     }
   }
   @keyframes FlipcardFrontClose {
     0% {
       opacity: 1;
-      // transform: scale(1);
     }
     80% {
       opacity: 0;
-      // transform: scale(0.7);
     }
     100% {
       opacity: 0;
@@ -250,52 +245,50 @@ $config: (
   @keyframes FlipcardFrontOpen {
     0% {
       opacity: 0;
-      // transform: scale(0.7);
     }
     30% {
       opacity: 0;
     }
     100% {
       opacity: 1;
-      // transform: scale(1);
     }
   }
-  .flipcard--center-title {
-    .flipcard__front-content {
+  #{ $prefix }--center-title {
+    #{ $prefix }__front-content {
       justify-content: center;
       align-items: center;
     }
-    .flipcard__back-content {
-      .flipcard__icon-container {
+    #{ $prefix }__back-content {
+      #{ $prefix }__icon-container {
         display: flex;
         justify-content: center;
         width: 100%;
       }
     }
   }
-  .flipcard--bottom-title {
-    .flipcard__front-content {
+  #{ $prefix }--bottom-title {
+    #{ $prefix }__front-content {
       justify-content: flex-end;
     }
   }
-  .flipcard:not(.flipcard--bottom-title, .flipcard--center-title) {
-    .flipcard__front-content {
+  #{ $prefix }:not(#{ $prefix }--bottom-title, #{ $prefix }--center-title) {
+    #{ $prefix }__front-content {
       align-items: center;
       justify-content: center;
       position: relative;
       padding-top: calc(get("padding") + 1.2rem);
       padding-bottom: calc(get("padding") + 1.2rem);
-      .flipcard__icon-container {
+      #{ $prefix }__icon-container {
         position: absolute;
         bottom: get("padding");
         right: get("padding");
       }
     }
-    .flipcard__back {
+    #{ $prefix }__back {
       position: relative;
       padding-top: calc(get("padding") + 1.2rem);
       padding-bottom: calc(get("padding") + 1.2rem);
-      .flipcard__icon-container {
+      #{ $prefix }__icon-container {
         position: absolute;
         bottom: get("padding");
         right: get("padding");
@@ -303,8 +296,8 @@ $config: (
     }
   }
   // modifier for animations
-  .flipcard--animation:hover {
-    .flipcard__front-content {
+  #{ $prefix }--animation:hover {
+    #{ $prefix }__front-content {
       transform: translateY(-(get('padding') * 0.5));
     }
   }

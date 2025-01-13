@@ -305,8 +305,6 @@ Adjusting the h1 and h2 sizes while keeping pre-existing sizes by using deep mer
 ```
   
 
-
-
       
 
 #### Parameters

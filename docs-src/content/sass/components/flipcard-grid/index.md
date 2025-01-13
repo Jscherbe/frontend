@@ -110,7 +110,7 @@ Change modules $config
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|Map of changes
-  @include ulu.flipcard-grid-set(( "property" : value ));|
+  @include ulu.component-flipcard-grid-set(( "property" : value ));|
 
     
 
@@ -156,11 +156,9 @@ Output component stylesheet
 
 
 ``` scss
-@include ulu.flipcard-grid-styles();
+@include ulu.component-flipcard-grid-styles();
 ```
   
-
-
 
       
 
@@ -211,7 +209,7 @@ Get a config option
 |Name|Type|Description|
 |:--|:--|:--|
 |$name|`Map`|Name of property
-  @include ulu.flipcard-grid-get("property");|
+  @include ulu.component-flipcard-grid-get("property");|
 
     
 

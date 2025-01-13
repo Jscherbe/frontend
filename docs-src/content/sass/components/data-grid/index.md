@@ -215,8 +215,6 @@ Prints default grid styles, if you want to customize further please use the crea
 ```
   
 
-
-
       
 
 #### Require
@@ -369,8 +367,6 @@ Output component stylesheet
 @include ulu.component-data-grid-styles();
 ```
   
-
-
 
       
 

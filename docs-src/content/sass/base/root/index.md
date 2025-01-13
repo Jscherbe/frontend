@@ -59,8 +59,6 @@ Output custom properties in :root for base stylesheet
 ```
   
 
-
-
       
 
 #### Require

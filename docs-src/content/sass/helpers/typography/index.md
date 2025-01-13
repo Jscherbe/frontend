@@ -61,8 +61,6 @@ Prints Typography Helper styles
 ```
   
 
-
-
       
 
 Example of type size as helper prefixed      
@@ -78,21 +76,6 @@ Example of type size as helper prefixed
 <span class="type-small-x">A</span>
 ```
   
-
-
-##### Preview
-
-<div>
-<span class="type-large-xxx">A</span>
-<span class="type-large-xx">A</span>
-<span class="type-large-x">A</span>
-<span class="type-large">A</span>
-<span class="type-base">A</span>
-<span class="type-small">A</span>
-<span class="type-small-x">A</span>
-</div>
-
-    
 
       
 

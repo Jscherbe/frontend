@@ -111,8 +111,6 @@ General example
 ```
   
 
-
-
       
 
 #### Parameters
@@ -174,8 +172,6 @@ Changing the color-context classname to background and all typography base/utili
 ```
   
 
-
-
       
 
 #### Parameters
@@ -232,8 +228,6 @@ General example
 @include selector.get("property");
 ```
   
-
-
 
       
 

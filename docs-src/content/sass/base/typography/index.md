@@ -61,8 +61,6 @@ Prints typography base styles
 ```
   
 
-
-
       
 
 Example of type size as base unprefixed      
@@ -77,20 +75,6 @@ Example of type size as base unprefixed
 <span class="h6">A</span>
 ```
   
-
-
-##### Preview
-
-<div>
-<span class="h1">A</span>
-<span class="h2">A</span>
-<span class="h3">A</span>
-<span class="h4">A</span>
-<span class="h5">A</span>
-<span class="h6">A</span>
-</div>
-
-    
 
       
 

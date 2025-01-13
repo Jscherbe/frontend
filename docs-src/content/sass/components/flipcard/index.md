@@ -72,8 +72,8 @@ $config: (
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
-- **Lines (comments):** 12-33
-- **Lines (code):** 35-61
+- **Lines (comments):** 11-32
+- **Lines (code):** 34-60
 
 </details>
 
@@ -136,20 +136,31 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 63-65
+- **Lines (comments):** 62-65
 - **Lines (code):** 67-69
 
 </details>
 
     
 
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-flipcard-set(( "property" : value ));
+```
+  
+
+      
+
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include module-name.set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -203,56 +214,6 @@ Set sizes map
 
 - [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
   
-
-
-<div class="sassdoc-item-header">
-
-###  styles() {#mixin-styles}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Prints adaptive spacing component styles
-    
-    
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _flipcard.scss
-- **Group:** flipcard
-- **Type:** mixin
-- **Lines (comments):** 87-89
-- **Lines (code):** 91-311
-
-</details>
-
-    
-
-#### Examples
-
-      
-
-
-``` scss
-@include ulu.component-adaptive-spacing-styles();
-```
-  
-
-
-
-      
-
-#### Require
-
-- [get()](/sass/components/accordion/#function-get)
-  
   
 
 ## Functions
@@ -283,20 +244,31 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 79-82
+- **Lines (code):** 84-86
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-flipcard-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include module-name.get("property");|
+|$name|`Map`|Name of property|
 
     
 

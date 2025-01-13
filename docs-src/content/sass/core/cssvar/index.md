@@ -111,8 +111,6 @@ Setting the prefix to 'ulu'
 ```
   
 
-
-
       
 
 #### Parameters
@@ -171,8 +169,6 @@ Declare a custom property
 }
 ```
   
-
-
 
       
 
@@ -235,8 +231,6 @@ Declare each property in a map as a custom property
 ```
   
 
-
-
       
 
 #### Parameters
@@ -296,8 +290,6 @@ Declare each property in a map as a custom property
 }
 ```
   
-
-
 
       
 
@@ -360,8 +352,6 @@ Declare each property in a map as a custom property
 }
 ```
   
-
-
 
       
 
@@ -439,8 +429,6 @@ $color-themes: (
 ```
   
 
-
-
       
 
 #### Parameters
@@ -505,8 +493,6 @@ Getting the config value for prefix
 $prefix: cssvar.get("prefix");
 ```
   
-
-
 
       
 
@@ -575,8 +561,6 @@ Getting a custom property name
 ```
   
 
-
-
       
 
 #### Parameters
@@ -640,8 +624,6 @@ Print an custom property as a value
 }
 ```
   
-
-
 
       
 
