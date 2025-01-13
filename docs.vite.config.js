@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import { createConfig } from "@ulu/vite-config-cms-theme";
 
 export default defineConfig((ctx) => {
-  const isServe = ctx.command === "serve";
+  // const isServe = ctx.command === "serve";
   const config = createConfig({
     publicDir: "docs-src/src/static/",
     port: 5173, 
@@ -35,8 +35,8 @@ export default defineConfig((ctx) => {
     },
   })(ctx);
 
-  // if (!isServe) {
-    config.base = "./";
-  // }
+  // Make paths relative for github pages
+  config.base = "./";
+
   return config;
 });
