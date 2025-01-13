@@ -170,9 +170,10 @@ Output component stylesheet
 
 ``` scss
 @include ulu.component-flipcard-grid-styles();
-@include ulu.component-flipcard-grid-styles();
 ```
   
+
+
 
       
 

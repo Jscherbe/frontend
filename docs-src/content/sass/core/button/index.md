@@ -281,6 +281,8 @@ General example, replace module-name with module's name
 ```
   
 
+
+
       
 
 #### Parameters
@@ -517,6 +519,8 @@ Mixin to wrap in active selectors
 }
 ```
   
+
+
 
       
 
@@ -788,6 +792,8 @@ General example, replace module-name with module's name
 @include module-name.get("property");
 ```
   
+
+
 
       
 

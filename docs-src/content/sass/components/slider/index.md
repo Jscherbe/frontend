@@ -177,6 +177,8 @@ General example
 ```
   
 
+
+
       
 
 #### Parameters
@@ -233,6 +235,8 @@ Output component stylesheet
 @include ulu.component-slider-styles();
 ```
   
+
+
 
       
 
