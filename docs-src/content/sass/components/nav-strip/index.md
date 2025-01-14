@@ -143,6 +143,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -200,6 +202,8 @@ Prints component styles
 ```
   
 
+
+
       
 
 #### Require
@@ -252,6 +256,8 @@ Get a config option
 @include ulu.component-nav-strip-get("property");
 ```
   
+
+
 
       
 

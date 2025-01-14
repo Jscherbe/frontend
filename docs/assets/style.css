@@ -16366,7 +16366,7 @@ table.data-table--no-border {
   padding: 0 4.5rem 0 4.5rem;
 }
 
-.slide-gap-for-controls {
+.slider__slide-gap-for-controls {
   padding-left: 4.5rem;
   padding-right: 4.5rem;
 }
@@ -16385,7 +16385,7 @@ table.data-table--no-border {
   margin-right: 2rem;
 }
 
-.slider--inset-controls .slide-gap-for-controls {
+.slider--inset-controls .slider__slide-gap-for-controls {
   padding-left: 6.5rem;
   padding-right: 6.5rem;
 }

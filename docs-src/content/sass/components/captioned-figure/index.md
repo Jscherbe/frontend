@@ -118,6 +118,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -175,6 +177,8 @@ scss
 ```
   
 
+
+
       
 
       
@@ -184,6 +188,8 @@ scss
 @include ulu.component-captioned-figure-styles();
 ```
   
+
+
 
       
 
@@ -237,6 +243,8 @@ Get a config option
 @include ulu.component-captioned-figure-get("property");
 ```
   
+
+
 
       
 
