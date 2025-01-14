@@ -57,11 +57,6 @@ $config: (
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
   "close-size":                     2.5rem,
-  "dark-background-color" :         false,
-  "dark-color" :                   white,
-  "dark-header-border-bottom" :     false,
-  "dark-header-background-color" :  false,
-  "dark-header-color" :             false,
   "header-background-color":        black,
   "header-border-bottom":           none,
   "header-color":                   white,
@@ -91,8 +86,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 33-73
-- **Lines (code):** 75-119
+- **Lines (comments):** 31-66
+- **Lines (code):** 68-107
 
 </details>
 
@@ -122,11 +117,6 @@ $config: (
 |close-font-size|Dimension|1.2rem|Font-siz of of the modal close icon font size.|
 |close-margin|Dimension|0.5rem|The margin for the modal close icon.|
 |close-size|Dimension|2.5rem|Size of the modal close icon.|
-|dark-background-color|Map|false|@joe-check unused|
-|dark-color|Map|white|@joe-check unused|
-|dark-header-background-color|Map|false|@joe-check unused|
-|dark-header-border-bottom|Map|false|@joe-check unused|
-|dark-header-color|Map|false|@joe-check unused|
 |header-background-color|Color|black|Background color for the header.|
 |header-border-bottom|CssValue|none|Bottom-border on the modal header.|
 |header-color|Color|white|Type color of the header.|
@@ -174,8 +164,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 121-124
-- **Lines (code):** 126-128
+- **Lines (comments):** 109-112
+- **Lines (code):** 114-116
 
 </details>
 
@@ -233,8 +223,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 140-142
-- **Lines (code):** 144-493
+- **Lines (comments):** 128-130
+- **Lines (code):** 132-481
 
 </details>
 
@@ -288,8 +278,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 130-133
-- **Lines (code):** 135-138
+- **Lines (comments):** 118-121
+- **Lines (code):** 123-126
 
 </details>
 

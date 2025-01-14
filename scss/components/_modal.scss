@@ -28,8 +28,6 @@ $-fallbacks: (
   )
 );
 
-// todo [joe-check] for config options should items like 'dark-background-color' be 'background-color-dark' instead? Line 94
-
 /// Module Settings
 /// @type Map
 /// @prop {CssValue} backdrop-blur [4px] Determines the blur of the backdrop.
@@ -51,11 +49,6 @@ $-fallbacks: (
 /// @prop {Dimension} close-font-size [1.2rem] Font-siz of of the modal close icon font size.
 /// @prop {Dimension} close-margin [0.5rem] The margin for the modal close icon.
 /// @prop {Dimension} close-size [2.5rem] Size of the modal close icon.
-/// @prop {} dark-background-color [false] @joe-check unused
-/// @prop {} dark-color [white] @joe-check unused
-/// @prop {} dark-header-background-color [false] @joe-check unused
-/// @prop {} dark-header-border-bottom [false] @joe-check unused
-/// @prop {} dark-header-color [false] @joe-check unused
 /// @prop {Color} header-background-color [black] Background color for the header.
 /// @prop {CssValue} header-border-bottom [none] Bottom-border on the modal header.
 /// @prop {Color} header-color [white] Type color of the header.
@@ -93,11 +86,6 @@ $config: (
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
   "close-size":                     2.5rem,
-  "dark-background-color" :         false,
-  "dark-color" :                   white,
-  "dark-header-border-bottom" :     false,
-  "dark-header-background-color" :  false,
-  "dark-header-color" :             false,
   "header-background-color":        black,
   "header-border-bottom":           none,
   "header-color":                   white,

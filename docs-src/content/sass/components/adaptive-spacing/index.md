@@ -66,7 +66,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|outputMargin|Boolean|false|@joe-check need examples for this to build documentation|
+|outputMargin|Boolean|false|Toggles the output of margin classes.|
 |outputPadding|Boolean|true|This is the background color of the accordion before it is expanded.|
 |outputX|Boolean|true|This is the background color of the accordion before it is expanded.|
 |outputY|Boolean|true|This is the background color of the accordion before it is expanded.|

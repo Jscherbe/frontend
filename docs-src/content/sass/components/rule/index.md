@@ -63,9 +63,9 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|short-border-width|Number|4px|Short rule width of border|
-|short-modifiers|Number|false|@joe-check|
-|short-width|Number|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
+|short-border-width|Dimension|4px|Short rule width of border|
+|short-modifiers|Object|false|Objects to adjust the styles of different short rule styles.|
+|short-width|Dimension|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
 
     
   

@@ -28,8 +28,8 @@ $-fallbacks: (
 /// @prop {CssValue} box-shadow [none] Box shadow for the tag.
 /// @prop {Dimension} padding [(0.4em 0.75em)] Inner padding for the tag.
 /// @prop {CssValue} vertical-align [baseline] Vertical alignment of tag text.
-/// @prop {Dimension} margin-between [0.5em] Margin between tags.
-/// @prop {Dimension} margin-between-tags [0] @joe-check 
+/// @prop {Dimension} margin-between [0.5em] Margin between tag and other elements.
+/// @prop {Dimension} margin-between-tags [0] Margin between tag and other tags.
 /// @prop {Number} line-height [1] Line height for the tag text.
 /// @prop {String} type-size ["small"] Font size for the tag text.
 /// @prop {Color} background-color [#eaeaea] Background color of the tag.

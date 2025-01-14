@@ -38,24 +38,12 @@ Module Settings
 ``` scss
 $config: (
   "background-color" : transparent,
-  "breakpoint" : "small",
   "margin-bottom" : 3rem,
   "margin-top" : 1rem,
-  "button-background-color" : transparent,
-  "button-border" : 2px solid color.get("link"),
-  "button-border-color-hover" :  color.get("link-hover"),
-  "button-border-radius" : 50%,
-  "button-color-hover" : white,
-  "button-background-color-hover" : color.get("link-hover"),
-  "button-color" : color.get("link"),
-  "button-font-size" : 1.35rem,
   "button-icon-offset-x" : 2rem,
   "button-icon-offset-y" : false,
-  "button-font-size-small" : false,
   "button-margin" : 2rem,
-  "button-margin-small" : 0.75rem,
   "button-size" : 3rem,
-  "button-size-small" : false,
   "button-height": 2.5rem,
   "button-width": 2.5rem,
   "dot-background-color" : transparent,
@@ -68,9 +56,7 @@ $config: (
   "dot-border-width" : 2px,
   "dot-size" :  1rem,
   "padding-bottom" : 0,
-  "padding-bottom-small" : 0,
   "padding-top" : 0,
-  "padding-top-small" : 0,
   );
 ```
   
@@ -82,8 +68,8 @@ $config: (
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** variable
-- **Lines (comments):** 13-48
-- **Lines (code):** 50-85
+- **Lines (comments):** 12-33
+- **Lines (code):** 35-56
 
 </details>
 
@@ -95,28 +81,14 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |background-color|Color|transparent|Background color for the entire slider section.|
-|breakpoint|List|"small"|Currently commented out @joe-check|
 |margin-bottom|Dimension|3rem|Bottom margin color for the entire slider section.|
 |margin-top|Dimension|1rem|Top margin color for the entire slider section.|
 |padding-bottom|Dimension|0|Bottom padding for individual slides.|
-|padding-bottom-small|Dimension|0|Smaller option for bottom padding for individual slides. Currently commented out @joe-check|
 |padding-top|Dimension|0|Top padding for individual slides.|
-|padding-top-small|Dimension|0|Smaller option for top padding for individual slides. Currently commented out @joe-check|
-|button-background-color|Color|transparent|Currently unused @joe-check|
-|button-background-color-hover|Color|color.get("link-hover")|Currently unused @joe-check|
-|button-border|CssValue|2px solid color.get("link")|Currently unused @joe-check|
-|button-border-color-hover|Color|color.get("link-hover")|Currently unused @joe-check|
-|button-border-radius|Dimension|50%|Currently unused @joe-check|
-|button-color|Color|color.get("link")|Currently unused @joe-check|
-|button-color-hover|Color|white|Currently unused @joe-check|
-|button-font-size|Dimension|1.35rem|Currently unused @joe-check|
-|button-font-size-small|Dimension|false|Currently unused @joe-check|
-|button-icon-offset-x|Dimension|false|Offsets the control icons in from their respective sides. @joe-check|
+|button-icon-offset-x|Dimension|false|Offsets the control icons in from their respective sides.|
 |button-icon-offset-y|Dimension|false|Offsets the control options down by adding a margin.|
 |button-margin|Dimension|0.75rem|The margin between the controls and the slide content when using .slider__slide-gap-for-controls|
-|button-margin-small|Dimension|0.75rem|Currently commented out @joe-check|
 |button-size|Dimension|3rem|Size of the button. Likely antiquated and replaced with button-width and button-height|
-|button-size-small|Dimension|false|Currently commented out @joe-check|
 |dot-background-color|Color|transparent|The color of the dot when unselected.|
 |dot-background-color-hover|Color|color.get("link")|The color of the dot when hovered.|
 |dot-background-color-selected|Color|color.get("link")|The color of the dot when selected.|
@@ -160,8 +132,8 @@ Change modules $config
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 87-90
-- **Lines (code):** 92-94
+- **Lines (comments):** 58-61
+- **Lines (code):** 63-65
 
 </details>
 
@@ -219,8 +191,8 @@ Output component stylesheet
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 105-107
-- **Lines (code):** 109-241
+- **Lines (comments):** 76-78
+- **Lines (code):** 80-205
 
 </details>
 
@@ -274,8 +246,8 @@ Get a config option
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** function
-- **Lines (comments):** 96-99
-- **Lines (code):** 101-103
+- **Lines (comments):** 67-70
+- **Lines (code):** 72-74
 
 </details>
 

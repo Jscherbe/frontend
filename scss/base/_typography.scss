@@ -12,14 +12,14 @@
 /// - These are any type sizes that specify "base-class" in their configuration
 /// - Type sizes with "base-class-prefixed" will be prefixed with the "type-" prefix
 /// @example scss
-///  @include ulu.base-typography-styles();
+///   @include ulu.base-typography-styles();
 /// @example html {preview} Example of type size as base unprefixed
-///  <span class="h1">A</span>
-///  <span class="h2">A</span>
-///  <span class="h3">A</span>
-///  <span class="h4">A</span>
-///  <span class="h5">A</span>
-///  <span class="h6">A</span>
+///   <span class="h1">A</span>
+///   <span class="h2">A</span>
+///   <span class="h3">A</span>
+///   <span class="h4">A</span>
+///   <span class="h5">A</span>
+///   <span class="h6">A</span>
 
 @mixin styles {
 

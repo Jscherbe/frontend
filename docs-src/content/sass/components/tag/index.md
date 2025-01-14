@@ -79,8 +79,8 @@ $config: (
 |box-shadow|CssValue|none|Box shadow for the tag.|
 |padding|Dimension|(0.4em 0.75em)|Inner padding for the tag.|
 |vertical-align|CssValue|baseline|Vertical alignment of tag text.|
-|margin-between|Dimension|0.5em|Margin between tags.|
-|margin-between-tags|Dimension|0|@joe-check|
+|margin-between|Dimension|0.5em|Margin between tag and other elements.|
+|margin-between-tags|Dimension|0|Margin between tag and other tags.|
 |line-height|Number|1|Line height for the tag text.|
 |type-size|String|"small"|Font size for the tag text.|
 |background-color|Color|#eaeaea|Background color of the tag.|

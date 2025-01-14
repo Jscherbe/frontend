@@ -132,7 +132,7 @@ $config: (
       position: relative;
       z-index: 1;
       padding: get("tabpanel-x-padding") get("margin");
-      margin-bottom: -1px; //@joe-check
+      margin-bottom: -1px;
       overflow: hidden;
 
       background-color: get("tabpanel-background-color");

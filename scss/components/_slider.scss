@@ -7,34 +7,19 @@
 
 @use "../color";
 @use "../utils";
-@use "../breakpoint";
 @use "../selector";
 
 /// Module Settings
 /// @type Map
 /// @prop {Color} background-color [transparent] Background color for the entire slider section.
-/// @prop {List} breakpoint ["small"] Currently commented out @joe-check
 /// @prop {Dimension} margin-bottom [3rem] Bottom margin color for the entire slider section.
 /// @prop {Dimension} margin-top [1rem] Top margin color for the entire slider section.
 /// @prop {Dimension} padding-bottom [0] Bottom padding for individual slides.
-/// @prop {Dimension} padding-bottom-small [0] Smaller option for bottom padding for individual slides. Currently commented out @joe-check
 /// @prop {Dimension} padding-top [0] Top padding for individual slides.
-/// @prop {Dimension} padding-top-small [0] Smaller option for top padding for individual slides. Currently commented out @joe-check
-/// @prop {Color} button-background-color [transparent] Currently unused @joe-check
-/// @prop {Color} button-background-color-hover [color.get("link-hover")] Currently unused @joe-check
-/// @prop {CssValue} button-border [2px solid color.get("link")] Currently unused @joe-check
-/// @prop {Color} button-border-color-hover  [color.get("link-hover")] Currently unused @joe-check
-/// @prop {Dimension} button-border-radius [50%] Currently unused @joe-check
-/// @prop {Color} button-color [color.get("link")] Currently unused @joe-check
-/// @prop {Color} button-color-hover [white] Currently unused @joe-check
-/// @prop {Dimension} button-font-size [1.35rem] Currently unused @joe-check
-/// @prop {Dimension} button-font-size-small [false] Currently unused @joe-check
-/// @prop {Dimension} button-icon-offset-x [false] Offsets the control icons in from their respective sides. @joe-check
+/// @prop {Dimension} button-icon-offset-x [false] Offsets the control icons in from their respective sides.
 /// @prop {Dimension} button-icon-offset-y [false] Offsets the control options down by adding a margin. 
 /// @prop {Dimension} button-margin [0.75rem] The margin between the controls and the slide content when using .slider__slide-gap-for-controls
-/// @prop {Dimension} button-margin-small [0.75rem] Currently commented out @joe-check
 /// @prop {Dimension} button-size [3rem] Size of the button. Likely antiquated and replaced with button-width and button-height
-/// @prop {Dimension} button-size-small [false] Currently commented out @joe-check
 /// @prop {Color} dot-background-color [transparent] The color of the dot when unselected.
 /// @prop {Color} dot-background-color-hover [color.get("link")] The color of the dot when hovered.
 /// @prop {Color} dot-background-color-selected [color.get("link")] The color of the dot when selected.
@@ -49,24 +34,12 @@
 
 $config: (
   "background-color" : transparent,
-  "breakpoint" : "small",
   "margin-bottom" : 3rem,
   "margin-top" : 1rem,
-  "button-background-color" : transparent,
-  "button-border" : 2px solid color.get("link"),
-  "button-border-color-hover" :  color.get("link-hover"),
-  "button-border-radius" : 50%,
-  "button-color-hover" : white,
-  "button-background-color-hover" : color.get("link-hover"),
-  "button-color" : color.get("link"),
-  "button-font-size" : 1.35rem,
   "button-icon-offset-x" : 2rem,
   "button-icon-offset-y" : false,
-  "button-font-size-small" : false,
   "button-margin" : 2rem,
-  "button-margin-small" : 0.75rem,
   "button-size" : 3rem,
-  "button-size-small" : false,
   "button-height": 2.5rem,
   "button-width": 2.5rem,
   "dot-background-color" : transparent,
@@ -79,9 +52,7 @@ $config: (
   "dot-border-width" : 2px,
   "dot-size" :  1rem,
   "padding-bottom" : 0,
-  "padding-bottom-small" : 0,
   "padding-top" : 0,
-  "padding-top-small" : 0,
   ) !default;
   
 /// Change modules $config
@@ -180,14 +151,7 @@ $config: (
   }
   #{ $prefix }__slide {
     margin: 0;
-    // @if (get("button-size-small")) {
-    //   @include breakpoint.max(get("breakpoint")) {
-    //     $bp-slide-padding: get("button-size-small") + get("button-margin-small");
-    //     padding: get("padding-top-small") $bp-slide-padding get("padding-bottom-small") $bp-slide-padding;
-    //   }
-    // }
   }
-  // @joe-check should we remove this modifier for universal slide padding in favor of the individualized modifiers below?
   #{ $prefix }--slide-control-margins {
     #{ $prefix }__slide {
       padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
