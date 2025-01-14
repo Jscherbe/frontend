@@ -2,7 +2,7 @@ import card from "./card.js";
 
 export default function(
   title = 'Slider',
-  content = `<li class="slider__slide slide-gap-for-controls" data-ulu-slider-slide>
+  content = `<li class="slider__slide slider__slide-gap-for-controls" data-ulu-slider-slide>
     <img src="/assets/placeholder/image-1.jpg" />
   </li>
   <li class="slider__slide" data-ulu-slider-slide>

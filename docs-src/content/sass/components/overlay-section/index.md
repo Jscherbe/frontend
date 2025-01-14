@@ -133,8 +133,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -192,8 +190,6 @@ scss
 ```
   
 
-
-
       
 
       
@@ -203,8 +199,6 @@ scss
 @include ulu.component-overlay-section-styles();
 ```
   
-
-
 
       
 
@@ -258,8 +252,6 @@ Get a config option
 @include ulu.component-overlay-section-get("property");
 ```
   
-
-
 
       
 

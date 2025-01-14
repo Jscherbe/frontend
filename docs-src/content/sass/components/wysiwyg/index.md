@@ -121,8 +121,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -183,8 +181,6 @@ Output component stylesheet
 ```
   
 
-
-
       
   
 
@@ -232,8 +228,6 @@ Get a config option
 @include ulu.component-wysiwyg-get("property");
 ```
   
-
-
 
       
 

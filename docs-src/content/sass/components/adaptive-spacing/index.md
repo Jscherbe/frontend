@@ -176,8 +176,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -281,8 +279,6 @@ Outputs adaptive spacing component styles
 ```
   
 
-
-
       
 
 #### Require
@@ -337,8 +333,6 @@ Get a config option
 @include ulu.component-adaptive-spacing-get("property");
 ```
   
-
-
 
       
 

@@ -153,8 +153,6 @@ General example
 ```
   
 
-
-
       
 
 #### Parameters
@@ -196,7 +194,7 @@ Output component stylesheet
 - **Group:** scroll-slider
 - **Type:** mixin
 - **Lines (comments):** 83-85
-- **Lines (code):** 87-201
+- **Lines (code):** 87-204
 
 </details>
 
@@ -211,8 +209,6 @@ Output component stylesheet
 @include ulu.component-scroll-slider-styles();
 ```
   
-
-
 
       
 
@@ -266,8 +262,6 @@ General example
 @include ulu.component-scroll-slider-get("property");
 ```
   
-
-
 
       
 

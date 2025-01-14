@@ -191,8 +191,6 @@ scss
 ```
   
 
-
-
       
 
       
@@ -202,8 +200,6 @@ scss
 @include ulu.component-modal-set(( "property" : value ));
 ```
   
-
-
 
       
 
@@ -262,8 +258,6 @@ Prints modal component styles
 ```
   
 
-
-
       
 
 #### Require
@@ -316,8 +310,6 @@ Get a config option
 @include ulu.component-modal-get("property");
 ```
   
-
-
 
       
 

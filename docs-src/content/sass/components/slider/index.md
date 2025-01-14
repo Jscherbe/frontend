@@ -113,7 +113,7 @@ $config: (
 |button-font-size-small|Dimension|false|Currently unused @joe-check|
 |button-icon-offset-x|Dimension|false|Offsets the control icons in from their respective sides. @joe-check|
 |button-icon-offset-y|Dimension|false|Offsets the control options down by adding a margin.|
-|button-margin|Dimension|0.75rem|The margin between the controls and the slide content when using .slide-gap-for-controls|
+|button-margin|Dimension|0.75rem|The margin between the controls and the slide content when using .slider__slide-gap-for-controls|
 |button-margin-small|Dimension|0.75rem|Currently commented out @joe-check|
 |button-size|Dimension|3rem|Size of the button. Likely antiquated and replaced with button-width and button-height|
 |button-size-small|Dimension|false|Currently commented out @joe-check|
@@ -177,8 +177,6 @@ General example
 ```
   
 
-
-
       
 
 #### Parameters
@@ -236,8 +234,6 @@ Output component stylesheet
 ```
   
 
-
-
       
 
 #### Require
@@ -290,8 +286,6 @@ General example
 @include ulu.component-slider-get("property");
 ```
   
-
-
 
       
 

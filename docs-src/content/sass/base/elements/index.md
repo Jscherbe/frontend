@@ -117,8 +117,6 @@ General example
 ```
   
 
-
-
       
 
 #### Parameters
@@ -176,8 +174,6 @@ Output the elements base styles
 ```
   
 
-
-
       
 
 #### Require
@@ -230,8 +226,6 @@ General example
 @include ulu.base-elements-get("property");
 ```
   
-
-
 
       
 

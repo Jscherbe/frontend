@@ -242,8 +242,8 @@ ie. \{ top: $containers-padding; }
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 80-84
-- **Lines (code):** 86-98
+- **Lines (comments):** 98-102
+- **Lines (code):** 104-116
 
 </details>
 
@@ -295,8 +295,8 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 100-107
-- **Lines (code):** 109-124
+- **Lines (comments):** 118-125
+- **Lines (code):** 127-142
 
 </details>
 
@@ -344,8 +344,8 @@ Print the containers padding properties
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 142-145
-- **Lines (code):** 147-173
+- **Lines (comments):** 160-163
+- **Lines (code):** 165-191
 
 </details>
 
@@ -394,8 +394,8 @@ Print all container styles for a given container
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 191-193
-- **Lines (code):** 195-223
+- **Lines (comments):** 209-211
+- **Lines (code):** 213-241
 
 </details>
 
@@ -442,8 +442,8 @@ Prints clearfix styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 225-225
-- **Lines (code):** 227-238
+- **Lines (comments):** 243-243
+- **Lines (code):** 245-256
 
 </details>
 
@@ -473,8 +473,8 @@ Removes scrollbar with CSS
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 240-240
-- **Lines (code):** 241-247
+- **Lines (comments):** 258-258
+- **Lines (code):** 259-265
 
 </details>
 
@@ -506,8 +506,8 @@ Layout utility for absolute (zero on all sides)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 249-251
-- **Lines (code):** 252-263
+- **Lines (comments):** 267-269
+- **Lines (code):** 270-281
 
 </details>
 
@@ -590,7 +590,7 @@ Get a container map
 - **Group:** layout
 - **Type:** function
 - **Lines (comments):** 66-68
-- **Lines (code):** 70-78
+- **Lines (code):** 70-96
 
 </details>
 
@@ -604,6 +604,11 @@ Get a container map
 |$name|`Map`|Container name|
 |$breakpoint|`String`|Return only the properties for a specific breakpoint for the container|
 
+    
+
+#### Throw
+
+- ULU: No container breakpoints for container 
     
 
 #### Require
@@ -637,8 +642,8 @@ Get a containers padding value
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 126-129
-- **Lines (code):** 131-140
+- **Lines (comments):** 144-147
+- **Lines (code):** 149-158
 
 </details>
 
@@ -685,8 +690,8 @@ Get containers padding X value (side)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 175-177
-- **Lines (code):** 179-181
+- **Lines (comments):** 193-195
+- **Lines (code):** 197-199
 
 </details>
 
@@ -731,8 +736,8 @@ Get containers padding Y value (ends)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 183-185
-- **Lines (code):** 187-189
+- **Lines (comments):** 201-203
+- **Lines (code):** 205-207
 
 </details>
 

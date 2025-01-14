@@ -267,8 +267,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -325,8 +323,6 @@ Output component stylesheet
 @include ulu.component-form-theme-styles();
 ```
   
-
-
 
       
 
@@ -633,8 +629,6 @@ Get a config option
 @include ulu.component-form-theme-get("property");
 ```
   
-
-
 
       
 

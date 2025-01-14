@@ -31,7 +31,7 @@
 /// @prop {Dimension} button-font-size-small [false] Currently unused @joe-check
 /// @prop {Dimension} button-icon-offset-x [false] Offsets the control icons in from their respective sides. @joe-check
 /// @prop {Dimension} button-icon-offset-y [false] Offsets the control options down by adding a margin. 
-/// @prop {Dimension} button-margin [0.75rem] The margin between the controls and the slide content when using .slide-gap-for-controls
+/// @prop {Dimension} button-margin [0.75rem] The margin between the controls and the slide content when using .slider__slide-gap-for-controls
 /// @prop {Dimension} button-margin-small [0.75rem] Currently commented out @joe-check
 /// @prop {Dimension} button-size [3rem] Size of the button. Likely antiquated and replaced with button-width and button-height
 /// @prop {Dimension} button-size-small [false] Currently commented out @joe-check
@@ -193,7 +193,7 @@ $config: (
       padding: get("padding-top") $slide-padding-x get("padding-bottom") $slide-padding-x;
     }
   }
-  .slide-gap-for-controls {
+  #{ $prefix }__slide-gap-for-controls {
     $padding:  get("button-width") + get("button-margin");
     padding-left: $padding;
     padding-right: $padding;
@@ -215,7 +215,7 @@ $config: (
     }
   }
   #{ $prefix }--inset-controls {
-    .slide-gap-for-controls {
+    #{ $prefix }__slide-gap-for-controls {
       $padding: get("button-width") + get("button-margin") + get("button-icon-offset-x");
       padding-left: $padding;
       padding-right: $padding;
