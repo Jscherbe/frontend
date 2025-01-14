@@ -42,11 +42,17 @@ $config: (
   "margin" : 2rem,
   "print-margin" : 1.5em,
   "tablist-border-bottom" : true,
+  "tablist-border-bottom-width" : 1px,
   "tabpanel-background-color" : rgb(245, 245, 245),
+  "tabpanel-x-padding" : 2rem,
   "tab-border-color-selected" : currentColor,
   "tab-color" : "link",
   "tab-color-hover" : "link-hover",
   "tab-color-selected" : "selected",
+  "tab-font-weight" : bold,
+  "tab-margin-between": 1.25em,
+  "tab-margin-between-small": 2em,
+  "tab-padding" : 0.75em 0.1em 0.75em 0.1em,
 );
 ```
   
@@ -58,8 +64,8 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 23-34
-- **Lines (code):** 36-47
+- **Lines (comments):** 23-40
+- **Lines (code):** 42-59
 
 </details>
 
@@ -75,11 +81,17 @@ $config: (
 |margin|Dimension|2rem|The gap between tabs and above and below tabs.|
 |print-margin|Dimension|1.5em|Margin between tabs when stacked for print|
 |tablist-border-bottom|CssValue|true|The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".|
+|tablist-border-bottom-width|Dimension|1px||
 |tabpanel-background-color|Color|rgb(245, 245, 245)|The tabpanel background color.|
+|tabpanel-x-padding|Dimension|2rem||
 |tab-border-color-selected|Color|currentColor|The border color when selected.|
 |tab-color|String|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-hover|String|link-hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-selected|String|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-font-weight|CssValue|bold||
+|tab-margin-between|Dimension|1.25em||
+|tab-margin-between-small|Dimension|2em||
+|tab-padding|String|0.75em 0.1em 0.75em 0.1em||
 
     
   
@@ -112,8 +124,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 49-52
-- **Lines (code):** 54-56
+- **Lines (comments):** 61-64
+- **Lines (code):** 66-68
 
 </details>
 
@@ -169,8 +181,8 @@ Output component stylesheet
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 68-70
-- **Lines (code):** 72-179
+- **Lines (comments):** 80-82
+- **Lines (code):** 84-193
 
 </details>
 
@@ -222,8 +234,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 58-61
-- **Lines (code):** 63-66
+- **Lines (comments):** 70-73
+- **Lines (code):** 75-78
 
 </details>
 
