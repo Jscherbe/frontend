@@ -143,6 +143,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -246,6 +248,8 @@ Output component stylesheet
 ```
   
 
+
+
       
 
 Example markup      
@@ -270,6 +274,8 @@ Example markup
 </div>
 ```
   
+
+
 
       
 
@@ -324,6 +330,8 @@ Get a config option
 @include ulu.component-spoke-spinner-get("property");
 ```
   
+
+
 
       
 

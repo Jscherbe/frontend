@@ -111,6 +111,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -168,6 +170,8 @@ Output button component styles
 ```
   
 
+
+
       
 
       
@@ -177,6 +181,15 @@ Output button component styles
 <a class="button" href="#">Button Default</a>
 ```
   
+
+
+##### Preview
+
+<div>
+<a class="button" href="#">Button Default</a>
+</div>
+
+    
 
       
 
@@ -232,6 +245,8 @@ Get a config option
 @include ulu.component-button-get("property");
 ```
   
+
+
 
       
 

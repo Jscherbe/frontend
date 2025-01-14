@@ -199,6 +199,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -255,6 +257,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 @include ulu.component-card-styles();
 ```
   
+
+
 
       
 
@@ -327,6 +331,8 @@ scss
 ```
   
 
+
+
       
 
       
@@ -336,6 +342,8 @@ scss
 @include ulu.component-card-styles();
 ```
   
+
+
 
       
 
@@ -390,6 +398,8 @@ Get a config option
 @include ulu.component-card-get(( "property" : value ));
 ```
   
+
+
 
       
 

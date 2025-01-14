@@ -109,6 +109,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -166,6 +168,8 @@ Output component styles
 ```
   
 
+
+
       
 
 #### Require
@@ -218,6 +222,8 @@ Get a config option
 @include ulu.component-tile-grid-overlay-get("property");
 ```
   
+
+
 
       
 

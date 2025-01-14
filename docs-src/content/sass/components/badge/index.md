@@ -128,6 +128,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -185,6 +187,8 @@ Output badge component styles
 ```
   
 
+
+
       
 
       
@@ -204,6 +208,25 @@ Output badge component styles
 </div>
 ```
   
+
+
+##### Preview
+
+<div>
+<div class="badge">
+  <div class="badge__inner">
+    <img src="..." alt="...">
+  </div>
+</div>
+
+<div class="badge">
+  <div class="badge__inner">
+    <span>JS</span>
+  </div>
+</div>
+</div>
+
+    
 
       
 
@@ -257,6 +280,8 @@ Get a config option
 @include ulu.component-badge-get("property");
 ```
   
+
+
 
       
 

@@ -222,6 +222,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -371,6 +373,8 @@ Output component stylesheet
 ```
   
 
+
+
       
 
 #### Require
@@ -425,6 +429,8 @@ Get a config option
 @include ulu.component-tile-grid-get("property");
 ```
   
+
+
 
       
 
