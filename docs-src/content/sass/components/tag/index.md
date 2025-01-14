@@ -62,10 +62,32 @@ $config: (
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** variable
-- **Lines (comments):** 24-25
-- **Lines (code):** 27-42
+- **Lines (comments):** 24-39
+- **Lines (code):** 41-56
 
 </details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|font-weight|CssValue|normal|Font weight for the tag text.|
+|font-family|String|true|Font family for the tag text.|
+|box-shadow|CssValue|none|Box shadow for the tag.|
+|padding|Dimension|(0.4em 0.75em)|Inner padding for the tag.|
+|vertical-align|CssValue|baseline|Vertical alignment of tag text.|
+|margin-between|Dimension|0.5em|Margin between tags.|
+|margin-between-tags|Dimension|0|@joe-check|
+|line-height|Number|1|Line height for the tag text.|
+|type-size|String|"small"|Font size for the tag text.|
+|background-color|Color|#eaeaea|Background color of the tag.|
+|border-radius|Dimension|1.25em|Border radius of the tag.|
+|border-color|Color|transparent|Border color for the tag.|
+|border-width|Dimension|1px|Border width of the tag.|
+|color|String|"type-tertiary"|Color of the tag text.|
 
     
 
@@ -111,8 +133,8 @@ $styles: (
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** variable
-- **Lines (comments):** 44-44
-- **Lines (code):** 46-59
+- **Lines (comments):** 58-58
+- **Lines (code):** 60-73
 
 </details>
 
@@ -147,8 +169,8 @@ Change modules $config
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 62-65
-- **Lines (code):** 67-69
+- **Lines (comments):** 76-79
+- **Lines (code):** 81-83
 
 </details>
 
@@ -204,8 +226,8 @@ Set tag styles
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 85-87
+- **Lines (code):** 89-91
 
 </details>
 
@@ -250,8 +272,8 @@ Output component stylesheet
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 89-91
-- **Lines (code):** 93-142
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-156
 
 </details>
 
@@ -304,8 +326,8 @@ Get a config option
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** function
-- **Lines (comments):** 79-82
-- **Lines (code):** 84-87
+- **Lines (comments):** 93-96
+- **Lines (code):** 98-101
 
 </details>
 

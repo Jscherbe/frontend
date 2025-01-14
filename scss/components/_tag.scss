@@ -23,6 +23,20 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {CssValue} font-weight [normal] Font weight for the tag text.
+/// @prop {String} font-family [true] Font family for the tag text.
+/// @prop {CssValue} box-shadow [none] Box shadow for the tag.
+/// @prop {Dimension} padding [(0.4em 0.75em)] Inner padding for the tag.
+/// @prop {CssValue} vertical-align [baseline] Vertical alignment of tag text.
+/// @prop {Dimension} margin-between [0.5em] Margin between tags.
+/// @prop {Dimension} margin-between-tags [0] @joe-check 
+/// @prop {Number} line-height [1] Line height for the tag text.
+/// @prop {String} type-size ["small"] Font size for the tag text.
+/// @prop {Color} background-color [#eaeaea] Background color of the tag.
+/// @prop {Dimension} border-radius [1.25em] Border radius of the tag.
+/// @prop {Color} border-color [transparent] Border color for the tag.
+/// @prop {Dimension} border-width [1px] Border width of the tag.
+/// @prop {String} color ["type-tertiary"] Color of the tag text.
 
 $config: (
   "font-weight" : normal,
