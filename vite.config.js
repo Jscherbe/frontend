@@ -3,9 +3,6 @@ import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
 import autoprefixer from "autoprefixer";
 
-console.log("RUNNING");
-
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
@@ -32,8 +29,13 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        includePaths: [resolve(__dirname, `./scss`)],
-      },
+        // Note dart sass uses loadPaths vs includePaths
+        loadPaths: [
+          resolve(__dirname, "./scss")
+        ],
+        quietDeps: true,
+        api: "modern-compiler"
+      }
     },
   },
 });

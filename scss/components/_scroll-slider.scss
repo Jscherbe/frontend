@@ -137,13 +137,16 @@ $config: (
     flex: 0 0 450px;
     max-width: 90vw;
     scroll-snap-align: start;
-    $container: layout.get-container("container", "small");
-    @include breakpoint.max("small") {
-      $pad: layout.get-container-padding-x("container", "small");
-      max-width: none;
-      flex-basis: calc(100vw - ($pad * 2) - var(--ulu-scrollbar-width));
+
+    $containerBreakpoint: layout.get-container("container", $breakpoint: "small", $required: false);
+    // Only if this container has this breakpoint
+    @if ($containerBreakpoint) {
+      @include breakpoint.max("small") {
+        $pad: layout.get-container-padding-x("container", "small");
+        max-width: none;
+        flex-basis: calc(100vw - ($pad * 2) - var(--ulu-scrollbar-width));
+      }
     }
-    // margin-right: 1rem;
   }
   #{ $prefix }__slide--empty {
     scroll-snap-align: none;

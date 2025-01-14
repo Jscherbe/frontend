@@ -67,14 +67,32 @@ $containers: (
 /// @param {Map} $name Container name
 /// @param {String} $breakpoint Return only the properties for a specific breakpoint for the container
 
-@function get-container($name, $breakpoint: false) {
-  $container: utils.require-map-get($containers, $name, "Layout [get-container]");
-  $breakpoints: map.get($container, "breakpoints");
-  @if ($breakpoint) {
-    @return utils.require-map-get($breakpoints, $breakpoint, "[container breakpoint]");
+@function get-container($name, $breakpoint: false, $required: true) {
+  $container: null;
+  @if ($required) {
+    $container: utils.require-map-get($containers, $name, "Layout [get-container]");
   } @else {
-    @return $container;
+    $container: map.get($containers, $name);
   }
+
+  @if ($container and $breakpoint) {
+    $breakpoints: map.get($container, "breakpoints");
+    @if ($required) {
+      @if ($breakpoints) {
+        @return utils.require-map-get($breakpoints, $breakpoint, "[container breakpoint]");
+      } @else {
+        @error 'ULU: No container breakpoints for container "#{ $name }", requested breakpoint #{ $breakpoint }';
+      }
+    } @else {
+      @if ($breakpoints) {
+        @return map.get($breakpoints, $breakpoint);
+      } @else {
+        @return null;
+      }
+    }
+  }
+
+  @return $container;
 }
 
 /// Returns padding to another property including breakpoints
