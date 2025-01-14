@@ -60,8 +60,6 @@ Printed Media Styles
 ```
   
 
-
-
       
   
   

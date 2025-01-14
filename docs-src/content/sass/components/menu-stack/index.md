@@ -164,8 +164,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -222,8 +220,6 @@ Prints component styles
 @include ulu.component-menu-stack-styles();
 ```
   
-
-
 
       
 
@@ -283,8 +279,6 @@ Get a config option
 @include ulu.component-menu-stack-get("property");
 ```
   
-
-
 
       
 

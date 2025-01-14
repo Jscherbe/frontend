@@ -153,8 +153,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -212,8 +210,6 @@ Output component stylesheet
 ```
   
 
-
-
       
 
 #### Require
@@ -266,8 +262,6 @@ Get a config option
 @include ulu.component-scroll-slider-get("property");
 ```
   
-
-
 
       
 

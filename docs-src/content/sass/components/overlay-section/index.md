@@ -133,8 +133,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -192,8 +190,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 #### Require
@@ -246,8 +242,6 @@ Get a config option
 @include ulu.component-overlay-section-get("property");
 ```
   
-
-
 
       
 

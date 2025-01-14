@@ -78,24 +78,24 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|background-color|Color|white|Font size (basic ie. 1.3rem) for badge|
-|background-color-hover|Color|link|Font size (basic ie. 1.3rem) for badge|
-|border-radius|String|border-radius|Font size (basic ie. 1.3rem) for badge|
-|box-shadow|String|true|Use the fallback. But note it.|
-|box-shadow-hover|String|true|@joe-check these box-shadows are booleans, but it should be a css value|
-|color|String|type|Font size (basic ie. 1.3rem) for badge|
-|color-hover|String|type|Font size (basic ie. 1.3rem) for badge|
-|icon-color|Color|gray|Font size (basic ie. 1.3rem) for badge|
-|icon-font-size|Dimension|1.25rem|Font size (basic ie. 1.3rem) for badge|
-|line-height|Number|1.2|Font size (basic ie. 1.3rem) for badge|
-|margin|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
-|margin-inline|Dimension|0.75em|Font size (basic ie. 1.3rem) for badge|
-|min-width|Dimension|20rem|Font size (basic ie. 1.3rem) for badge|
-|padding-x|Dimension|0.65em|Font size (basic ie. 1.3rem) for badge|
-|padding-y|Dimension|1em|Font size (basic ie. 1.3rem) for badge|
-|title-color|String|link|Font size (basic ie. 1.3rem) for badge|
-|title-color-hover|String|link-hover|Font size (basic ie. 1.3rem) for badge|
-|title-margin|Dimension|0.5em|Font size (basic ie. 1.3rem) for badge|
+|background-color|Color|white|Background color for the button.|
+|background-color-hover|Color|link|Background color for the button when hovered or focused.|
+|border-radius|String|border-radius|Border radius of the button.|
+|box-shadow|CssValue|true|Box shadow for the button. If set to true, uses default box-shadow.|
+|box-shadow-hover|CssValue|true|Box shadow for the button when hovered or focused. If set to true, uses default box-shadow-hover.|
+|color|String|type|Text color for the button.|
+|color-hover|String|type|Text color for the button when hovered or focused.|
+|icon-color|Color|gray|Color for button icons.|
+|icon-font-size|Dimension|1.25rem|Font size for the button.|
+|line-height|Number|1.2|Line height for button text.|
+|margin|Dimension|1em|Margin for the button.|
+|margin-inline|Dimension|0.75em|Margin for the button when using the inline modifier.|
+|min-width|Dimension|20rem|Min-width of the button.|
+|padding-x|Dimension|0.65em|Horizontal padding of the button.|
+|padding-y|Dimension|1em|Vertical padding of the button.|
+|title-color|String|link|Color of the title of the button.|
+|title-color-hover|String|link-hover|Color of the title of the button when hovered or focused.|
+|title-margin|Dimension|0.5em|Margin for the button's title.|
 
     
   
@@ -144,8 +144,6 @@ Change modules $config
 @include ulu.component-button-verbose-set(( "property" : value ));
 ```
   
-
-
 
       
 
@@ -204,8 +202,6 @@ Prints component styles
 ```
   
 
-
-
       
 
 #### Require
@@ -258,8 +254,6 @@ Get a config option
 @include ulu.component-button-verbose-get(( "property" : value ));
 ```
   
-
-
 
       
 

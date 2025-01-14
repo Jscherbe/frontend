@@ -28,24 +28,24 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Color} background-color [white] Font size (basic ie. 1.3rem) for badge
-/// @prop {Color} background-color-hover [link] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} border-radius [border-radius] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} box-shadow [true] Use the fallback. But note it.
-/// @prop {String} box-shadow-hover [true] @joe-check these box-shadows are booleans, but it should be a css value
-/// @prop {String} color [type] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} color-hover [type] Font size (basic ie. 1.3rem) for badge
-/// @prop {Color} icon-color [gray] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} icon-font-size [1.25rem] Font size (basic ie. 1.3rem) for badge
-/// @prop {Number} line-height [1.2] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} margin [1em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} margin-inline [0.75em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} min-width [20rem] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} padding-x [0.65em] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} padding-y [1em] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} title-color [link] Font size (basic ie. 1.3rem) for badge
-/// @prop {String} title-color-hover [link-hover] Font size (basic ie. 1.3rem) for badge
-/// @prop {Dimension} title-margin [0.5em] Font size (basic ie. 1.3rem) for badge
+/// @prop {Color} background-color [white] Background color for the button.
+/// @prop {Color} background-color-hover [link] Background color for the button when hovered or focused.
+/// @prop {String} border-radius [border-radius] Border radius of the button.
+/// @prop {CssValue} box-shadow [true] Box shadow for the button. If set to true, uses default box-shadow.
+/// @prop {CssValue} box-shadow-hover [true] Box shadow for the button when hovered or focused. If set to true, uses default box-shadow-hover.
+/// @prop {String} color [type] Text color for the button.
+/// @prop {String} color-hover [type] Text color for the button when hovered or focused.
+/// @prop {Color} icon-color [gray] Color for button icons.
+/// @prop {Dimension} icon-font-size [1.25rem] Font size for the button.
+/// @prop {Number} line-height [1.2] Line height for button text.
+/// @prop {Dimension} margin [1em] Margin for the button.
+/// @prop {Dimension} margin-inline [0.75em] Margin for the button when using the inline modifier.
+/// @prop {Dimension} min-width [20rem] Min-width of the button.
+/// @prop {Dimension} padding-x [0.65em] Horizontal padding of the button.
+/// @prop {Dimension} padding-y [1em] Vertical padding of the button.
+/// @prop {String} title-color [link] Color of the title of the button.
+/// @prop {String} title-color-hover [link-hover] Color of the title of the button when hovered or focused.
+/// @prop {Dimension} title-margin [0.5em] Margin for the button's title.
 
 $config: (
   "background-color" : white,

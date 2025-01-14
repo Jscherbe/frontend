@@ -191,8 +191,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -250,8 +248,6 @@ Prints modal component styles
 ```
   
 
-
-
       
 
 #### Require
@@ -304,8 +300,6 @@ Get a config option
 @include ulu.component-modal-get("property");
 ```
   
-
-
 
       
 

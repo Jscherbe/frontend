@@ -199,8 +199,6 @@ Change modules $config
 ```
   
 
-
-
       
 
 #### Parameters
@@ -329,8 +327,6 @@ scss
 ```
   
 
-
-
       
 
       
@@ -340,8 +336,6 @@ scss
 @include ulu.component-card-styles();
 ```
   
-
-
 
       
 
@@ -396,8 +390,6 @@ Get a config option
 @include ulu.component-card-get(( "property" : value ));
 ```
   
-
-
 
       
 
