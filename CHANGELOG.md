@@ -1,5 +1,21 @@
 # Change Log
 
+## Version 0.1.0-beta.0
+
+- Minor release keeps most of the current API for SASS the same but adds new functions/mixins and components. JS has been slightly reorganized and outdated modules have been replaced
+- Remove calculate module and move the functions to utils (responsive property and pixel-to-em)
+- Add other components modules 
+- Update documentation and API documentation
+- Update all sass to work with new/future sass version 
+- Add root styles for ulu specific custom properties
+- Add transitions to buttons
+- JS remove mini collapsible and rely on floating ui library for tooltip/popovers
+- JS move to native dialog element instead of micro-modal
+- JS add new collapsible class for popovers or other accessible collapsible containers
+- JS reorganize utils and helpers
+- Create new docs website with api docs and component examples
+- Full build (ie. /dist/) is bundled by Vite 
+
 ## Version 0.0.23
 
 - Fix mistake introduced in 0.0.22, that broke container css
