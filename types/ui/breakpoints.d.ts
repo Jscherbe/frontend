@@ -3,7 +3,7 @@
  * Class that provides method for retrieving and acting on breakpoints passed
  * from CSS (using element psuedo content prop)
  */
-export class CssBreakpoints {
+export class BreakpointManager {
     static instances: any[];
     static defaults: {
         element: HTMLElement;
@@ -70,7 +70,6 @@ export class CssBreakpoints {
      */
     at(name: string): Breakpoint;
 }
-export default CssBreakpoints;
 /**
  * @class
  * Single breakpoint management
@@ -153,4 +152,5 @@ declare class BreakpointDirection {
      */
     remove(handler: any): void;
 }
-//# sourceMappingURL=css-breakpoint.d.ts.map
+export {};
+//# sourceMappingURL=breakpoints.d.ts.map

@@ -7,6 +7,9 @@ export class OverflowScroller {
         offsetStart: number;
         offsetEnd: number;
         amount: string;
+        buttonClasses: string[];
+        iconClassesPrevious: string[];
+        iconClassesNext: string[];
     };
     constructor(elements: any, config: any);
     options: any;
@@ -33,5 +36,4 @@ export class OverflowScroller {
     previous(): void;
     getClass(child: any): string;
 }
-export default OverflowScroller;
 //# sourceMappingURL=overflow-scroller.d.ts.map

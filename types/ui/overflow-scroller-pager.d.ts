@@ -13,5 +13,5 @@
  *
  * @return {Function} A function to be used in overflow scrollers "amount" configuration property
  */
-export default function create(): Function;
+export function createPager(): Function;
 //# sourceMappingURL=overflow-scroller-pager.d.ts.map

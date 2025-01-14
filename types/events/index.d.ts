@@ -9,7 +9,7 @@
  */
 export function dispatch(type: string, context: Node): void;
 /**
- * Handles the actual event names being used (future could namespace)
+ * Namespaced event
  * @param {String} type Type of event to get the actual event name for
  * @returns {String}
  */

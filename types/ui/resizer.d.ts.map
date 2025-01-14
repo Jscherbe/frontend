@@ -1,1 +1,1 @@
-{"version":3,"file":"resizer.d.ts","sourceRoot":"","sources":["../../js/ui/resizer.js"],"names":[],"mappings":"AAeA;IACE;;;;MAIE;IACF;;;;;;;;OAQG;IACH,uBAPW,IAAI,WACJ,IAAI;QAEa,KAAK;QACL,gBAAgB;QAChB,QAAQ;OAWnC;IALC,aAAkE;IAClE,gBAA0B;IAC1B,cAAsB;IACtB,sBAAmD;IAGrD,gBAEC;IACD,0BAkBC;CACF"}
+{"version":3,"file":"resizer.d.ts","sourceRoot":"","sources":["../../js/ui/resizer.js"],"names":[],"mappings":"AAeA;IACE;;;;MAIE;IACF;;;;;;;;OAQG;IACH,uBAPW,IAAI,WACJ,IAAI;QAEa,KAAK;QACL,gBAAgB;QAChB,QAAQ;OAWnC;IALC,aAA2D;IAC3D,gBAA0B;IAC1B,cAAsB;IACtB,sBAAmD;IAGrD,gBAEC;IACD,0BAkBC;CACF"}

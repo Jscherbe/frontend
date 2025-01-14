@@ -21,4 +21,4 @@ export function logWarning(context: any, ...messages: any[]): void;
  * @param  {...any} messages
  */
 export function logError(context: any, ...messages: any[]): void;
-//# sourceMappingURL=logger.d.ts.map
+//# sourceMappingURL=class-logger.d.ts.map

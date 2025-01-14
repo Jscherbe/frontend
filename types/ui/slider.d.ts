@@ -1,3 +1,13 @@
+export function init(): void;
+export function setup(): void;
+export function setupSlider(container: any): void;
+export namespace attrs {
+    let init: string;
+    let slider: string;
+    let track: string;
+    let trackContainer: string;
+    let controls: string;
+}
 export class Slider {
     static instances: any[];
     static defaults: {
@@ -9,6 +19,9 @@ export class Slider {
         transitionDuration: number;
         transitionDurationExit: number;
         transitionTimingFunction: string;
+        buttonClasses: string[];
+        iconClassesPrevious: string[];
+        iconClassesNext: string[];
     };
     constructor(elements: any, config: any, debug?: boolean);
     debug: boolean;
@@ -49,7 +62,7 @@ export class Slider {
      * @param {number} duration Duration to wait for complete
      * @param {Function} beginTransition Css changes to begin/start transtion
      */
-    ensureTranstionEnds(element: number, duration: number, beginTransition: Function): any;
+    ensureTransitionEnds(element: number, duration: number, beginTransition: Function): any;
     /**
      * Translate the track to X
      */
@@ -112,5 +125,4 @@ export class Slider {
     getNavContent(number: any): string;
     emit(name: any, args: any): void;
 }
-export default Slider;
 //# sourceMappingURL=slider.d.ts.map

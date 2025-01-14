@@ -1,3 +1,5 @@
+export function init(): void;
+export function setup(): void;
 export class Flipcard {
     static instances: any[];
     static defaults: {
@@ -34,5 +36,10 @@ export class Flipcard {
     containerCss(): string;
     panelCss(zIndex?: number): string;
 }
-export default Flipcard;
+export namespace attrs {
+    let init: string;
+    let flipcard: string;
+    let front: string;
+    let back: string;
+}
 //# sourceMappingURL=flipcard.d.ts.map

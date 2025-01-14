@@ -1,4 +1,4 @@
-export default class ElementResizer {
+export class Resizer {
     static defaults: {
         debug: boolean;
         overrideMaxWidth: boolean;
