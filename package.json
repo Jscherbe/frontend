@@ -27,9 +27,10 @@
     "docs:incremental": "npx @11ty/eleventy --serve --incremental --config=docs.eleventy.js",
     "docs:nogen": "NO_DOC_GEN=true npx @11ty/eleventy --serve --incremental --config=docs.eleventy.js",
     "docs:inspect": "node --inspect-brk ./node_modules/.bin/eleventy --serve --config=docs.eleventy.js",
-    "docs:build": "npx @11ty/eleventy --config=docs.eleventy.js",
+    "docs:build:prod": "IS_PRODUCTION=true npx @11ty/eleventy --config=docs.eleventy.js",
     "docs:assets": "vite --config docs.vite.config.js --force",
-    "docs:assets:build": "vite build --config docs.vite.config.js"
+    "docs:assets:build": "vite build --config docs.vite.config.js",
+    "docs:assets:build:prod": "IS_PRODUCTION=true vite build --config docs.vite.config.js"
   },
   "repository": {
     "type": "git",

@@ -15,7 +15,7 @@ import { shortcodes } from "./docs-src/src/templates/shortcodes/index.js";
 
 // const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const { NO_DOC_GEN } = process.env;
+const { NO_DOC_GEN, IS_PRODUCTION } = process.env;
 
 export default async function(eleventyConfig) {
   eleventyConfig.setServerOptions({ 
@@ -74,7 +74,7 @@ export default async function(eleventyConfig) {
     pathPrefix: "/frontend/",
     dir: {
       input: "docs-src/content",
-      output: "docs",
+      output: IS_PRODUCTION ? "docs" : "docs-dev",
       includes: "../src/templates",
       layouts: "../src/templates/layouts",
       data: "../src/data",

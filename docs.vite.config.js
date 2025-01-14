@@ -2,6 +2,10 @@ import path from "path";
 import { defineConfig } from "vite";
 import { createConfig } from "@ulu/vite-config-cms-theme";
 
+const { IS_PRODUCTION } = process.env;
+
+console.log("IS_PRODUCTION:\n", IS_PRODUCTION);
+
 export default defineConfig((ctx) => {
   // const isServe = ctx.command === "serve";
   const config = createConfig({
@@ -9,7 +13,7 @@ export default defineConfig((ctx) => {
     port: 5173, 
     localOptionsFile: false,
     input: "docs-src/src/main.js",
-    outDir: "docs/assets",
+    outDir: IS_PRODUCTION ? "docs/assets" : "docs-dev/assets",
     origin: "http://localhost:8080", 
     themePath: "/frontend",
     globalJquery: false,
