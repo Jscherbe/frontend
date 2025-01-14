@@ -94,20 +94,31 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 21-23
-- **Lines (code):** 25-27
+- **Lines (comments):** 21-24
+- **Lines (code):** 26-28
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-button-set(( "property" : value ));
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes
-  @include ulu.component-button-set(( "property" : value ));|
+|$changes|`Map`|Map of changes|
 
     
 
@@ -140,8 +151,8 @@ Output button component styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 37-41
-- **Lines (code):** 43-100
+- **Lines (comments):** 39-43
+- **Lines (code):** 45-102
 
 </details>
 
@@ -205,20 +216,31 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 29-31
-- **Lines (code):** 33-35
+- **Lines (comments):** 30-33
+- **Lines (code):** 35-37
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-button-get("property");
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$name|`Map`|Name of property
-  @include ulu.component-button-get("property");|
+|$name|`Map`|Name of property|
 
     
 

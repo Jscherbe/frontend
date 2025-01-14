@@ -64,7 +64,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss - General example
+/// @example scss 
 ///   @include ulu.component-scroll-slider-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -73,7 +73,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example
+/// @example scss 
 ///   @include ulu.component-scroll-slider-get("property");
 
 @function get($name) {

@@ -41,7 +41,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-overlay-section-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -50,7 +50,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-overlay-section-get("property");
 
 @function get($name) {
@@ -58,7 +58,6 @@ $config: (
 }
 
 /// Prints component styles
-/// @example scss
 /// @example scss
 ///  @include ulu.component-overlay-section-styles();
 

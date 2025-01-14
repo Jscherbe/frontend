@@ -113,7 +113,7 @@ $config: (
   
   /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-card-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -122,7 +122,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-card-get(( "property" : value ));
 
 @function get($name) {
@@ -131,6 +131,9 @@ $config: (
 
 /// Mixin styles for card when it has proxy click enabled and is being interacted with (hover/focus)
 /// @param {Boolean} $hover [false] Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-card-styles();
 
 @mixin when-clickable($hover: false) {
   $prefix: selector.class("card");

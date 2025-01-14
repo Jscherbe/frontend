@@ -145,7 +145,7 @@ Change modules $config
 
 #### Examples
 
-General example      
+      
 
 
 ``` scss
@@ -255,7 +255,7 @@ Get a config option
 
 #### Examples
 
-General example      
+      
 
 
 ``` scss

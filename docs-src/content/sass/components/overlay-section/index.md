@@ -173,24 +173,14 @@ Prints component styles
 - **File:** _overlay-section.scss
 - **Group:** overlay-section
 - **Type:** mixin
-- **Lines (comments):** 60-63
-- **Lines (code):** 65-122
+- **Lines (comments):** 60-62
+- **Lines (code):** 64-121
 
 </details>
 
     
 
 #### Examples
-
-      
-
-
-``` scss
-scss
-```
-  
-
-      
 
       
 

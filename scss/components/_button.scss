@@ -20,6 +20,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example scss
 ///   @include ulu.component-button-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -28,6 +29,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
+/// @example scss
 ///   @include ulu.component-button-get("property");
 
 @function get($name) {

@@ -26,7 +26,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-list-lines-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -35,7 +35,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-list-lines-get("property");
 
 @function get($name) {

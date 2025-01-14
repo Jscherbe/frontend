@@ -88,9 +88,9 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |background-color|String|link|The background color of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.|
-|background-color-hover|String|linkhover|The background color of the pager when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|background-color-hover|String|link-hover|The background color of the pager when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |border-color|String|link|The border color of the pager item. This uses color.scss, so the value of this options should be a color variable from color.scss.|
-|border-color-hover|String|linkhover|The border color of the pager item when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|border-color-hover|String|link-hover|The border color of the pager item when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |border-radius|Dimension|50%|The border radius of the pager item.|
 |border-width|Dimension|1px|The border width of the pager item.|
 |color|Color|white|The type color of the pager item.|
@@ -105,7 +105,7 @@ $config: (
 |active-color|Color|type|The type color when active. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |active-font-weight|CssValue|bold|The font weight of the pager when focused or hovered.|
 |action-background-color|String|link|The background color of the actions options of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.|
-|action-background-color-hover|String|linkhover|The background color of the actions options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.|
+|action-background-color-hover|String|link-hover|The background color of the actions options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |action-border-color|Color|transparent|The border color of the action options of the pager.|
 |action-border-color-hover|String|link|The border color of the action options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.|
 |action-color|Color|white|The type color of the actions options of the pager.|

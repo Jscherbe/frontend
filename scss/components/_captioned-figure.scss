@@ -52,7 +52,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-captioned-figure-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -61,7 +61,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-captioned-figure-get("property");
 
 @function get($name) {
@@ -71,7 +71,6 @@ $config: (
 
 /// Prints component styles
 /// @example scss
-/// @example
 ///  @include ulu.component-captioned-figure-styles();
 
 @mixin styles {

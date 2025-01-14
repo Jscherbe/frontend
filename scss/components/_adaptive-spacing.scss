@@ -54,7 +54,7 @@ $sizes: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-adaptive-spacing-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -71,7 +71,7 @@ $sizes: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-adaptive-spacing-get("property");
 
 @function get($name) {

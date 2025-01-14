@@ -239,19 +239,32 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 132-133
-- **Lines (code):** 135-150
+- **Lines (comments):** 132-136
+- **Lines (code):** 138-153
 
 </details>
 
     
+
+#### Examples
+
+      
+
+
+``` scss
+@include ulu.component-card-styles();
+```
+  
+
+      
 
 #### Parameters
 
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|$hover|`Boolean`|false|Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)|
+|$hover|`Boolean`|false|Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
+Prints component styles|
 
     
 
@@ -284,8 +297,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 157-161
-- **Lines (code):** 163-419
+- **Lines (comments):** 160-164
+- **Lines (code):** 166-422
 
 </details>
 

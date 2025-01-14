@@ -174,24 +174,14 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 121-125
-- **Lines (code):** 127-129
+- **Lines (comments):** 121-124
+- **Lines (code):** 126-128
 
 </details>
 
     
 
 #### Examples
-
-      
-
-
-``` scss
-scss
-```
-  
-
-      
 
       
 
@@ -241,8 +231,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 141-143
-- **Lines (code):** 145-494
+- **Lines (comments):** 140-142
+- **Lines (code):** 144-493
 
 </details>
 
@@ -294,8 +284,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 131-134
-- **Lines (code):** 136-139
+- **Lines (comments):** 130-133
+- **Lines (code):** 135-138
 
 </details>
 

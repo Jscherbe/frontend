@@ -15,9 +15,9 @@
 /// Module Settings
 /// @type Map
 /// @prop {String} background-color [link] The background color of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.
-/// @prop {String} background-color-hover [linkhover] The background color of the pager when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.
+/// @prop {String} background-color-hover [link-hover] The background color of the pager when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {String} border-color [link] The border color of the pager item. This uses color.scss, so the value of this options should be a color variable from color.scss.
-/// @prop {String} border-color-hover [linkhover] The border color of the pager item when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.
+/// @prop {String} border-color-hover [link-hover] The border color of the pager item when hovered or focused. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {Dimension} border-radius [50%] The border radius of the pager item.
 /// @prop {Dimension} border-width [1px] The border width of the pager item.
 /// @prop {Color} color [white] The type color of the pager item.
@@ -32,7 +32,7 @@
 /// @prop {Color} active-color [type] The type color when active. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {CssValue} active-font-weight [bold] The font weight of the pager when focused or hovered.
 /// @prop {String} action-background-color [link] The background color of the actions options of the pager. This uses color.scss, so the value of this options should be a color variable from color.scss.
-/// @prop {String} action-background-color-hover [linkhover] The background color of the actions options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.
+/// @prop {String} action-background-color-hover [link-hover] The background color of the actions options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {Color} action-border-color [transparent] The border color of the action options of the pager.
 /// @prop {String} action-border-color-hover [link] The border color of the action options of the pager when focused or hovered. This uses color.scss, so the value of this options should be a color variable from color.scss.
 /// @prop {Color} action-color [white] The type color of the actions options of the pager.
@@ -72,7 +72,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-pager-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -81,7 +81,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-pager-get("property");
 
 

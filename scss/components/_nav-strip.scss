@@ -53,7 +53,7 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example
+/// @example scss
 ///   @include ulu.component-nav-strip-set(( "property" : value ));
 
 @mixin set($changes) {
@@ -62,7 +62,7 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example
+/// @example scss
 ///   @include ulu.component-nav-strip-get("property");
 
 @function get($name) {
@@ -70,7 +70,7 @@ $config: (
 }
 
 /// Prints component styles
-/// @example
+/// @example scss
 ///   @include ulu.component-nav-strip-styles();
 
 @mixin styles {

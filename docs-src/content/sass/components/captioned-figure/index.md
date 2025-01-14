@@ -158,24 +158,14 @@ Prints component styles
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 72-75
-- **Lines (code):** 77-173
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-172
 
 </details>
 
     
 
 #### Examples
-
-      
-
-
-``` scss
-scss
-```
-  
-
-      
 
       
 
