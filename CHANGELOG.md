@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.1
+
+- Remove dev dependencies from package json (vite, autoprefixer) and move specific JS module dependencies (ie. floating ui, ally.js and aria-tablist) to optionalDependencies so they can be installed if the user is using modules that require them
+
 ## Version 0.1.0-beta.0
 
 - Minor release keeps most of the current API for SASS the same but adds new functions/mixins and components. JS has been slightly reorganized and outdated modules have been replaced
