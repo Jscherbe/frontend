@@ -1,22 +1,13 @@
+/.vscode
 /docs
 /docs-src
-/dist-src
 /docs-js
+/reference
 notes.todo
 trash/
-jsdoc.json
-tsconfig.json
 
-# From vuepress scaffolding
-# pids
-# logs
-# node_modules
-# npm-debug.log
-# coverage/
-# run
-# dist
-# .DS_Store
-# .nyc_output
-# .basement
-# config.local.js
-# basement_dist
+docs.eleventy.js
+docs.vite.config.js
+jsdoc.json
+vite.config.js
+tsconfig.json
