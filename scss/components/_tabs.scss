@@ -27,16 +27,16 @@ $-fallbacks: (
 /// @prop {Dimension} margin [2rem] The gap between tabs and above and below tabs.
 /// @prop {Dimension} print-margin [1.5em] Margin between tabs when stacked for print
 /// @prop {CssValue} tablist-border-bottom [true] The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".
-/// @prop {Dimension} tablist-border-bottom-width [1px] 
+/// @prop {Dimension} tablist-border-bottom-width [1px] The bottom border width for the tablist.
 /// @prop {Color} tabpanel-background-color [rgb(245, 245, 245)] The tabpanel background color.
-/// @prop {Dimension} tabpanel-x-padding [2rem] 
+/// @prop {Dimension} tabpanel-x-padding [2rem] Horizontal padding for the tab panel.
 /// @prop {Color} tab-border-color-selected [currentColor] The border color when selected.
 /// @prop {String} tab-color [link] The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.
 /// @prop {String} tab-color-hover [link-hover] The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.
 /// @prop {String} tab-color-selected [selected] The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.
-/// @prop {CssValue} tab-font-weight [bold] 
-/// @prop {Dimension} tab-margin-between [1.25em] 
-/// @prop {Dimension} tab-margin-between-small [2em] 
+/// @prop {CssValue} tab-font-weight [bold] The font weight for the tab text.
+/// @prop {Dimension} tab-margin-between [1.25em] The margin between tabs.
+/// @prop {Dimension} tab-margin-between-small [2em] The margin between tabs on small screens.
 /// @prop {String} tab-padding [0.75em 0.1em 0.75em 0.1em] 
 
 $config: (
@@ -154,7 +154,6 @@ $config: (
   #{ $prefix }--transparent {
     [role="tablist"] {
       background-color: transparent;
-      box-shadow: none;
       padding-left: 0;
       padding-right: 0;
     }
@@ -168,8 +167,6 @@ $config: (
   #{ $prefix }--full-width {
     > [role="tablist"] {
       justify-content: safe center;
-      // box-shadow: 0 4px 4px red; // @joe-check Why does only full-width have box shadow 
-      box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     }
     >[role="tabpanel"] {
       background-color: transparent;
