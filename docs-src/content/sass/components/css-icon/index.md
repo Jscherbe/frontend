@@ -140,6 +140,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -235,6 +237,8 @@ Output CSS icon component stylesheet
 ```
   
 
+
+
       
 
 #### Require
@@ -288,6 +292,8 @@ Get a config option
 @include ulu.component-css-icon-get("property");
 ```
   
+
+
 
       
 

@@ -16366,7 +16366,7 @@ table.data-table--no-border {
   padding: 0 4.5rem 0 4.5rem;
 }
 
-.slide-gap-for-controls {
+.slider__slide-gap-for-controls {
   padding-left: 4.5rem;
   padding-right: 4.5rem;
 }
@@ -16385,7 +16385,7 @@ table.data-table--no-border {
   margin-right: 2rem;
 }
 
-.slider--inset-controls .slide-gap-for-controls {
+.slider--inset-controls .slider__slide-gap-for-controls {
   padding-left: 6.5rem;
   padding-right: 6.5rem;
 }
@@ -16418,8 +16418,9 @@ component:tabs
   display: -ms-flexbox;
   display: flex;
   overflow-x: auto;
-  margin-bottom: -1px;
   border-bottom: 1px solid var(--site-color-rule-light);
+  border-bottom-width: 1px;
+  margin-bottom: -1px;
 }
 .tabs [role=tab] {
   display: block;
@@ -16477,8 +16478,6 @@ component:tabs
 
 .tabs--transparent [role=tablist] {
   background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
   padding-left: 0;
   padding-right: 0;
 }
@@ -16492,8 +16491,6 @@ component:tabs
   -webkit-box-pack: safe center;
       -ms-flex-pack: safe center;
           justify-content: safe center;
-  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
 }
 .tabs--full-width > [role=tabpanel] {
   background-color: transparent;

@@ -156,6 +156,8 @@ Change modules $config
 ```
   
 
+
+
       
 
 #### Parameters
@@ -225,6 +227,8 @@ Prints default grid styles, if you want to customize further please use the crea
 @include ulu.component-data-grid-styles();
 ```
   
+
+
 
       
 
@@ -333,6 +337,8 @@ Get a config option
 ```
   
 
+
+
       
 
 #### Parameters
@@ -389,6 +395,8 @@ Output component stylesheet
 @include ulu.component-data-grid-styles();
 ```
   
+
+
 
       
 

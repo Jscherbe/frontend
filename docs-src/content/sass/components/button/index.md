@@ -168,6 +168,8 @@ Output button component styles
 ```
   
 
+
+
       
 
       
@@ -177,6 +179,15 @@ Output button component styles
 <a class="button" href="#">Button Default</a>
 ```
   
+
+
+##### Preview
+
+<div>
+<a class="button" href="#">Button Default</a>
+</div>
+
+    
 
       
 
