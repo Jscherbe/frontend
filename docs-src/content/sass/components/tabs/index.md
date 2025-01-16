@@ -37,22 +37,27 @@ Module Settings
 
 ``` scss
 $config: (
-  "border-radius" : 8px,
-  "border-width" : 0.25em,
-  "margin" : 2rem,
+  "margin" : (2rem, 0),
   "print-margin" : 1.5em,
-  "tablist-border-bottom" : true,
-  "tablist-border-bottom-width" : 1px,
-  "tabpanel-background-color" : rgb(245, 245, 245),
-  "tabpanel-x-padding" : 2rem,
-  "tab-border-color-selected" : currentColor,
-  "tab-color" : "link",
+  "tablist-divider" : true,
+  "tablist-divider-width" : 1px,
+  "indicator-size" : 3px,
+  "indicator-color" : currentColor,
+  "tab-color" : "type-tertiary",
   "tab-color-hover" : "link-hover",
   "tab-color-selected" : "selected",
-  "tab-font-weight" : bold,
-  "tab-margin-between": 1.25em,
-  "tab-margin-between-small": 2em,
-  "tab-padding" : 0.75em 0.1em 0.75em 0.1em,
+  "tab-background-color-selected" : null,
+  "tab-font-weight" : true,
+  "tab-padding" : (0.75em),
+  "tab-gap" : 1em,
+  "tabpanel-background-color" : #f6f6f6,
+  "tabpanel-padding" : (2rem),
+  "vertical-tablist-width" : minmax(15rem, 30%),
+  "vertical-tab-padding" : (0.25em 0.75em),
+  "vertical-divider-width" : 0px,
+  "vertical-tab-gap" : 0.75em,
+  "vertical-indicator-left" : true,
+  "horizontal-tab-wrap" : false
 );
 ```
   
@@ -64,8 +69,8 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 23-40
-- **Lines (code):** 42-59
+- **Lines (comments):** 28-50
+- **Lines (code):** 52-74
 
 </details>
 
@@ -76,22 +81,27 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|border-radius|Dimension|8px|The border radius of the tabs.|
-|border-width|Dimension|0.25em|The width of the tab border.|
-|margin|Dimension|2rem|The gap between tabs and above and below tabs.|
+|margin|Dimension|(2rem, 0)|The margin for the tabs container|
 |print-margin|Dimension|1.5em|Margin between tabs when stacked for print|
-|tablist-border-bottom|CssValue|true|The bottom border of the tabs. If set to true, will use the element.scss property for "get-rule-style".|
-|tablist-border-bottom-width|Dimension|1px|The bottom border width for the tablist.|
+|tablist-divider|CssValue|true|The border separating the tabs from the panels. By default (true) will use element rule light style|
+|tablist-divider-width|Dimension|1px|The width of the divider|
 |tabpanel-background-color|Color|rgb(245, 245, 245)|The tabpanel background color.|
-|tabpanel-x-padding|Dimension|2rem|Horizontal padding for the tab panel.|
-|tab-border-color-selected|Color|currentColor|The border color when selected.|
-|tab-color|String|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
-|tab-color-hover|String|link-hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
-|tab-color-selected|String|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
-|tab-font-weight|CssValue|bold|The font weight for the tab text.|
-|tab-margin-between|Dimension|1.25em|The margin between tabs.|
-|tab-margin-between-small|Dimension|2em|The margin between tabs on small screens.|
-|tab-padding|String|0.75em 0.1em 0.75em 0.1em||
+|tabpanel-padding|Dimension|(2rem,)|Padding for the tabpanel|
+|indicator-size|Dimension|0.25em|The size of the tab's active border/indicator|
+|indicator-color|Color|currentColor|The color of the indicator|
+|tab-color|Color|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-color-hover|Color|link-hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-color-selected|Color|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
+|tab-background-color-selected|Color|null|The tab background color when selected|
+|tab-font-weight|CssValue|true|The font weight for the tab, defaults to typography "font-weight-semibold"|
+|tab-padding|Dimension|0.75em 0.1em 0.75em 0.1em|Padding for the tab|
+|tab-gap|Dimension|1em|Gap between tabs|
+|vertical-tablist-width|Dimension|minmax(15rem, 30%),|The width of the tablist column when tabs are layout is vertical|
+|vertical-tab-padding|Dimension|(0.25em 0.75em)|Tab padding when vertical|
+|vertical-divider-width|Dimension|0px|Divider between tabs and panels when vertical|
+|vertical-tab-gap|Dimension|0.75em|The gap between tabs when vertical|
+|vertical-indicator-left|Boolean|true|The indicator for selected tab should be on the left when vertical (false will be on right/inside)|
+|horizontal-tab-wrap|Boolean|false|Set to true to allow line wrapping when the tabs are in horizontal orientation, vertical is always allowed to wrap|
 
     
   
@@ -124,8 +134,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 61-64
-- **Lines (code):** 66-68
+- **Lines (comments):** 76-79
+- **Lines (code):** 81-83
 
 </details>
 
@@ -183,8 +193,8 @@ Output component stylesheet
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 80-82
-- **Lines (code):** 84-199
+- **Lines (comments):** 95-97
+- **Lines (code):** 99-255
 
 </details>
 
@@ -238,8 +248,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 70-73
-- **Lines (code):** 75-78
+- **Lines (comments):** 85-88
+- **Lines (code):** 90-93
 
 </details>
 
