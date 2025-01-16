@@ -6,3 +6,4 @@
 jsconfig.json
 /docs-src/.vitepress/cache
 /logs
+/docs-dev
