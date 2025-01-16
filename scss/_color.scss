@@ -95,7 +95,7 @@ $color-classes: (
   // Allow non lookup if the value is already a color (helps with code flow)
   @if (meta.type-of($name) == "string") {
     // Allow custom-properties and keyword inherit/transparent to pass through
-    @if ($name == "inherit" or $name == "transparent" or string.index($name, "var(") == 1) {
+    @if ($name == "inherit" or $name == "transparent" or $name == "currentColor" or string.index($name, "var(") == 1) {
       @return $name;
     // Else look up the color from the palette
     } @else {

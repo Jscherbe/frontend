@@ -2,6 +2,12 @@
  * @module ui/tabs
  */
 
+// TODO:
+// - For Vertical tabs we should be updating the orientation when on mobile. 
+//   Currently using all arrows so that the interface works in both 
+//   orientations when vertical. Leaving that behavior for now but maybe consider
+//   setting this up to destroy tab interface when ui layout changes?
+
 import AriaTablist from "aria-tablist";
 
 const initAttr = "data-ulu-tablist-init";
@@ -127,13 +133,27 @@ function setHeights(element) {
   const images = [ ...parent.querySelectorAll("img") ];
   const imagePromises = images.map(image => imagePromise(image));
   function imagePromise(image) {
-    return new Promise((resolve, reject) => {
-      image.onload = () => resolve(image);
-      image.onerror = reject;
+    return new Promise((resolve) => {
+      if (image.complete) {
+        resolve(image);
+      } else {
+        image.onload = resolve;
+        // Errors should also resolve so that height matching continues
+        image.onerror = resolve; 
+      }
     });
   }
+  // Run after images are loaded, or if no images it will resolve and run
   Promise.all(imagePromises).then(() => {
-    const heights = panels.map(panel => panel.offsetHeight);
+    const heights = panels.map(panel => {
+      let panelHeight = panel.offsetHeight;
+      if (panel.hidden) {
+        panel.hidden = false;
+        panelHeight = panel.offsetHeight;
+        panel.hidden = true;
+      }
+      return panelHeight;
+    });
     const max = Math.max(...heights);
     panels.forEach(panel => panel.style.minHeight = `${ max }px`);
   });
