@@ -54,6 +54,9 @@ For in-depth details and examples, please refer to the scss core breakpoint modu
 
 While most components can be printed directly, certain components, such as those with interactive or collapsible elements, may require JavaScript assistance to ensure optimal print output. The JavaScript modules provided offer the necessary mechanisms for managing print behavior in these specific cases.
 
+## Javascript
+
+ Javascript modules are mostly used for static/traditional sites, a Vue specific library is in development that offers the same functionality for Vue apps.
 
 
 
