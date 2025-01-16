@@ -8889,13 +8889,25 @@ function setHeights(element) {
   const images = [...parent.querySelectorAll("img")];
   const imagePromises = images.map((image) => imagePromise(image));
   function imagePromise(image) {
-    return new Promise((resolve2, reject) => {
-      image.onload = () => resolve2(image);
-      image.onerror = reject;
+    return new Promise((resolve2) => {
+      if (image.complete) {
+        resolve2(image);
+      } else {
+        image.onload = resolve2;
+        image.onerror = resolve2;
+      }
     });
   }
   Promise.all(imagePromises).then(() => {
-    const heights = panels.map((panel) => panel.offsetHeight);
+    const heights = panels.map((panel) => {
+      let panelHeight = panel.offsetHeight;
+      if (panel.hidden) {
+        panel.hidden = false;
+        panelHeight = panel.offsetHeight;
+        panel.hidden = true;
+      }
+      return panelHeight;
+    });
     const max2 = Math.max(...heights);
     panels.forEach((panel) => panel.style.minHeight = `${max2}px`);
   });
