@@ -83,9 +83,7 @@
     "vite": "^5.4.11"
   },
   "dependencies": {
-    "@ulu/utils": "^0.0.17"
-  },
-  "optionalDependencies": {
+    "@ulu/utils": "^0.0.17",
     "ally.js": "^1.4.1",
     "aria-tablist": "^1.2.2",
     "@floating-ui/dom": "^1.6.5"
