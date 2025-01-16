@@ -1,5 +1,16 @@
 # Change Log
 
+## Version 0.1.0-beta.2
+
+- scss
+  - color
+    - Add "currentColor" as passthrough for color.get()
+  - tabs
+    - Add vertical orientation styling
+    - Rework configuration properties to be orientation-less (requires remapping if you have setting set)
+- js/ui/tabs
+  - Fix equalHeights option (fix images that are already loaded or load error preventing heights script, check hidden tabs height and test that it works for vertical tabs)
+
 ## Version 0.1.0-beta.0
 
 - Minor release keeps most of the current API for SASS the same but adds new functions/mixins and components. JS has been slightly reorganized and outdated modules have been replaced
