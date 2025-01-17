@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.3
+
+- scss/components/tabs - Add breakpoint to vertical tabs (to go to horizontal)
+
 ## Version 0.1.0-beta.2
 
 - scss
