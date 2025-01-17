@@ -183,6 +183,7 @@ $config: (
         gap: get("vertical-tab-gap");
         border-right: get("tablist-divider");
         border-right-width: get("vertical-divider-width");
+        border-bottom: none;
         grid-column: 1;
       }
       [role="tab"] {
