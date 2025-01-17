@@ -75,7 +75,9 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("nav-strip");
-
+  #{ $prefix } {
+    max-width: 100%; // So ul will overflow
+  }
   // Original thought to not limit to direct child
   // auto is for when we don't have control over markup
   // The list descendants will be selected that way but the list is
