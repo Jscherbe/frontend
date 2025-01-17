@@ -57,6 +57,7 @@ $config: (
   "vertical-divider-width" : 0px,
   "vertical-tab-gap" : 0.75em,
   "vertical-indicator-left" : true,
+  "vertical-breakpoint" : true,
   "horizontal-tab-wrap" : false
 );
 ```
@@ -69,8 +70,8 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 28-50
-- **Lines (code):** 52-74
+- **Lines (comments):** 32-55
+- **Lines (code):** 57-80
 
 </details>
 
@@ -101,6 +102,7 @@ $config: (
 |vertical-divider-width|Dimension|0px|Divider between tabs and panels when vertical|
 |vertical-tab-gap|Dimension|0.75em|The gap between tabs when vertical|
 |vertical-indicator-left|Boolean|true|The indicator for selected tab should be on the left when vertical (false will be on right/inside)|
+|vertical-breakpoint|Boolean|true|Set the breakpoint when the vertical tabs should switch to horizontal (defaults to breakpoint 'default')|
 |horizontal-tab-wrap|Boolean|false|Set to true to allow line wrapping when the tabs are in horizontal orientation, vertical is always allowed to wrap|
 
     
@@ -134,8 +136,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 76-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 82-85
+- **Lines (code):** 87-89
 
 </details>
 
@@ -193,8 +195,8 @@ Output component stylesheet
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 95-97
-- **Lines (code):** 99-255
+- **Lines (comments):** 101-103
+- **Lines (code):** 105-244
 
 </details>
 
@@ -248,8 +250,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 85-88
-- **Lines (code):** 90-93
+- **Lines (comments):** 91-94
+- **Lines (code):** 96-99
 
 </details>
 

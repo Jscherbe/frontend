@@ -22,6 +22,10 @@ $-fallbacks: (
   "tab-font-weight" : (
     "function" : meta.get-function("get", false, "typography"),
     "property" : "font-weight-semibold"
+  ),
+  "vertical-breakpoint" : (
+    "function" : meta.get-function("get", false, "breakpoint"),
+    "property" : "default"
   )
 );
 
@@ -47,6 +51,7 @@ $-fallbacks: (
 /// @prop {Dimension} vertical-divider-width [0px] Divider between tabs and panels when vertical
 /// @prop {Dimension} vertical-tab-gap [0.75em] The gap between tabs when vertical
 /// @prop {Boolean} vertical-indicator-left [true] The indicator for selected tab should be on the left when vertical (false will be on right/inside)
+/// @prop {Boolean} vertical-breakpoint [true] Set the breakpoint when the vertical tabs should switch to horizontal (defaults to breakpoint 'default')
 /// @prop {Boolean} horizontal-tab-wrap [false] Set to true to allow line wrapping when the tabs are in horizontal orientation, vertical is always allowed to wrap
 
 $config: (
@@ -70,6 +75,7 @@ $config: (
   "vertical-divider-width" : 0px,
   "vertical-tab-gap" : 0.75em,
   "vertical-indicator-left" : true,
+  "vertical-breakpoint" : true,
   "horizontal-tab-wrap" : false
 ) !default;
 
@@ -110,20 +116,30 @@ $config: (
       display: flex; 
       gap: get("tab-gap");
       overflow-x: auto;
+      border-bottom: get("tablist-divider");
+      border-bottom-width: get("tablist-divider-width");
     }
     [role="tab"] {
       display: block;
       position: relative; 
       cursor: pointer;
+      text-align: center;
       padding: get("tab-padding");
       color: color.get(get("tab-color"));
       font-weight: get("tab-font-weight");
+      @if (not get("horizontal-tab-wrap")) {
+        white-space: nowrap;
+      }
       // Indicator
       &::after {
         content: "";
         position: absolute;
         background-color: color.get(get("indicator-color"));
         opacity: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: get("indicator-size");
       }
       &:hover {
         color: color.get(get("tab-color-hover"));
@@ -131,35 +147,11 @@ $config: (
       &[aria-selected="true"] {
         color: color.get(get("tab-color-selected"));
         background-color: color.get(get("tab-background-color-selected"));
-
-      }
-    }
-
-    // Styling for horizontal tabs
-    &:not(#{ $prefix }--vertical) {
-      [role="tablist"] {
-        border-bottom: get("tablist-divider");
-        border-bottom-width: get("tablist-divider-width");
-      }
-      [role="tab"] {
-        text-align: center;
-        @if (not get("horizontal-tab-wrap")) {
-          white-space: nowrap;
-        }
         &::after {
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: get("indicator-size");
-        }
-        &[aria-selected="true"] {
-          &::after {
-            opacity: 1;
-          }
+          opacity: 1;
         }
       }
     }
-
     [role="tabpanel"] {
       position: relative;
       z-index: 1;
@@ -182,36 +174,33 @@ $config: (
     }
   }
 
-  #{ $prefix }--vertical {
-    display: grid;
-    grid-template-columns: get("vertical-tablist-width") auto; 
-    [role="tablist"] {
-      flex-direction: column;
-      gap: get("vertical-tab-gap");
-      border-right: get("tablist-divider");
-      border-right-width: get("vertical-divider-width");
-      grid-column: 1;
-    }
-    [role="tab"] {
-      padding: get("vertical-tab-padding");
-      &::after {
-        @if (get("vertical-indicator-left")) {
-          left: 0;
-        } @else {
-          right: 0;
-        }
-        bottom: 0;
-        top: 0;
-        width: get("indicator-size");
+  @include breakpoint.min(get("vertical-breakpoint")) {
+    #{ $prefix }--vertical {
+      display: grid;
+      grid-template-columns: get("vertical-tablist-width") auto; 
+      [role="tablist"] {
+        flex-direction: column;
+        gap: get("vertical-tab-gap");
+        border-right: get("tablist-divider");
+        border-right-width: get("vertical-divider-width");
+        grid-column: 1;
       }
-      &[aria-selected="true"] {
+      [role="tab"] {
+        padding: get("vertical-tab-padding");
+        white-space: normal;
+        text-align: left;
         &::after {
-          opacity: 1;
+          left: if(get("vertical-indicator-left"), 0, auto);
+          right: if(not get("vertical-indicator-left"), 0, auto);;
+          bottom: 0;
+          top: 0;
+          width: get("indicator-size");
+          height: auto;
         }
       }
-    }
-    [role="tabpanel"] {
-      grid-column: 2; // needed for equalHeights in vertical
+      [role="tabpanel"] {
+        grid-column: 2; // needed for equalHeights in vertical
+      }
     }
   }
 

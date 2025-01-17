@@ -17,6 +17,12 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     <button type="button" id="tabs-1-3">
       Tab Label 3
     </button>
+    <button type="button" id="tabs-1-4">
+      Tab Label 4
+    </button>
+    <button type="button" id="tabs-1-5">
+      Tab Label 5
+    </button>
   </div>
   <div class="tabs__tabpanel" aria-labelledby="tabs-1-1">
     {{ placeholder.paragraph }}
@@ -30,6 +36,12 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     </div>
   </div>
   <div class="tabs__tabpanel" aria-labelledby="tabs-1-3">
+    {{ placeholder.paragraph }}
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-1-4">
+    {{ placeholder.paragraph }}
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-1-5">
     {{ placeholder.paragraph }}
   </div>
 </div>
