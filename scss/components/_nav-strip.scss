@@ -42,11 +42,11 @@ $config: (
   "padding-y" : 0.3em,
   "padding-y-ruled" : null,
   "nowrap" : true,
-  "rule-color" : "rule",
-  "rule-offset" : -3px,
+  "rule-color" : "rule-light",
+  "rule-offset" : 0,
   "rule-size" : 3px,
-  "underline-color" : orange,
-  "underline-color-hover" : gray,
+  "underline-color" : "selected",
+  "underline-color-hover" : "rule",
   "underline-size" : 3px,
 ) !default;
 
@@ -83,24 +83,22 @@ $config: (
   #{ $prefix }__list,
   #{ $prefix }--auto ul {
     display: flex;
+    overflow-x: auto;
     line-height: typography.get("line-height-dense");
+    gap: get("margin-between");
   }
   #{ $prefix }__item,
   #{ $prefix }--auto li {
-    margin-right: get("margin-between");
     // layout flex since items inside may not be the same height
     display: flex;
     align-items: flex-end;
-    &:last-child {
-      margin-right: 0;
-    }
   }
   
   #{ $prefix }__link,
   #{ $prefix }--auto li > a,
   #{ $prefix }--auto li > button {
     display: block;
-    color: get("color");
+    color: color.get(get("color"));
     padding: get("padding-y") get("padding-x");
     border-top: get("underline-size") solid transparent;
     border-bottom: get("underline-size") solid transparent;
@@ -110,12 +108,12 @@ $config: (
     }
     &:hover,
     &:focus {
-      border-bottom-color: get("underline-color-hover");
-      color: get("color-hover");
+      border-bottom-color: color.get(get("underline-color-hover"));
+      color: color.get(get("color-hover"));
     }
     #{ get("activeSelector") } {
-      border-bottom-color: get("underline-color");
-      color: get("color-active");
+      border-bottom-color: color.get(get("underline-color"));
+      color: color.get(get("color-active"));
     }
   }
   
@@ -133,13 +131,20 @@ $config: (
     }
   }
   #{ $prefix }--rule {
-    #{ $prefix }__list,
-    &#{ $prefix }--auto ul {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       border-bottom: get("rule-size") solid color.get(get("rule-color"));
     }
     #{ $prefix }__link,
     &#{ $prefix }--auto li > a,
     &#{ $prefix }--auto li > button {
+      position: relative;
+      z-index: 2;
       margin-bottom: get("rule-offset");
       padding-top: get("padding-y-ruled");
       padding-bottom: get("padding-y-ruled");

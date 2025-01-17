@@ -8,10 +8,7 @@ intro: A horizontal navigation strip or rail that displays a list of links to di
 {% capture listWithSelectors %}
   {% for i in (1..4) -%}
     <li class="nav-strip__item">
-      <a href="#" class="
-        nav-strip__link
-        {% if i == 2  %}is-active{% endif -%}
-      ">
+      <a href="#" class="nav-strip__link {% if i == 2  %}is-active{% endif -%}">
         Link Number {{ i }}
       </a>
     </li>
@@ -21,9 +18,7 @@ intro: A horizontal navigation strip or rail that displays a list of links to di
 {% capture listWithoutSelectors %}
   {% for i in (1..4) -%}
       <li>
-        <a href="#" class="
-          {% if i == 2  %}is-active{% endif -%}
-        ">
+        <a href="#" class="{% if i == 2  %}is-active{% endif -%}">
           Link Number {{ i }}
         </a>
       </li>

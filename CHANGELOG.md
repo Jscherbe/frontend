@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.5
+
+- scss/components/nav-strip - Adjust rule style so the rule is not a border on parent (so child can overlap if desired), Adjust all colors to run through color.get(), Convert to gap instead of margins
+
 ## Version 0.1.0-beta.3 - 0.1.0-beta.4
 
 - scss/components/tabs - Add breakpoint to vertical tabs (to go to horizontal)

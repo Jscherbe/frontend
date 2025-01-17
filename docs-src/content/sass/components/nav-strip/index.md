@@ -49,11 +49,11 @@ $config: (
   "padding-y" : 0.3em,
   "padding-y-ruled" : null,
   "nowrap" : true,
-  "rule-color" : "rule",
-  "rule-offset" : -3px,
+  "rule-color" : "rule-light",
+  "rule-offset" : 0,
   "rule-size" : 3px,
-  "underline-color" : orange,
-  "underline-color-hover" : gray,
+  "underline-color" : "selected",
+  "underline-color-hover" : "rule",
   "underline-size" : 3px,
 );
 ```
@@ -186,7 +186,7 @@ Prints component styles
 - **Group:** nav-strip
 - **Type:** mixin
 - **Lines (comments):** 72-74
-- **Lines (code):** 76-148
+- **Lines (code):** 76-153
 
 </details>
 
