@@ -13,8 +13,8 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Color}  background-color  [white] This is the background color of the accordion before it is expanded. 
-/// @prop {Color}  background-color-open  [#F7F8F7] This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.
+/// @prop {Color}  background-color  [accordion-background] This is the background color of the accordion before it is expanded. 
+/// @prop {Color}  background-color-open  [accordion-background-open] This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.
 /// @prop {String} border-color ["rule"]
 /// @prop {Number} border-radius  [0] This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.
 /// @prop {Dimension} border-width  [1px] The width of the borders of the accordions
@@ -41,8 +41,8 @@
 /// @prop {Dimension} transparent-padding-x  [0] The upper and lower padding of the transparent summary.
 
 $config: (
-  "background-color":            white,
-  "background-color-open":       #F7F8F7,
+  "background-color":            "background",
+  "background-color-open":       "background-gray",
   "border-color":                "rule",
   "border-radius":               0,
   "border-width":                1px,
@@ -59,7 +59,7 @@ $config: (
   "icon-font-size":              1.5rem,
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
-  "summary-background-color":    white,
+  "summary-background-color":    "white",
   "summary-color":               null,
   "summary-background-color-hover": null,
   "summary-color-hover":         null,
@@ -107,7 +107,7 @@ $config: (
     margin-top: get("margin");
     margin-bottom: get("margin");
     border: $border;
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     box-shadow: get("box-shadow");
     &:first-of-type {
       border-top-left-radius: get("border-radius");
@@ -124,7 +124,7 @@ $config: (
     }
     &[open], 
     &.is-active  {
-      background-color: get("background-color-open");
+      background-color: color.get(get("background-color-open"));
       padding-bottom: get("padding-y");
       z-index: 2; // Above child details
       > #{ $prefix }__summary {
@@ -136,8 +136,8 @@ $config: (
     }
   }
   #{ $prefix }__summary {
-    background-color: get("summary-background-color");
-    color: get("summary-color");
+    background-color: color.get(get("summary-background-color"));
+    color: color.get(get("summary-color"));
     margin-left: -(get("padding-x"));
     margin-right: -(get("padding-x"));
     line-height: get("summary-line-height");
@@ -161,10 +161,10 @@ $config: (
       @include typography.size(get("summary-type-size"));
     }
     &:hover {
-      background-color: get("summary-background-color-hover");
-      color: get("summary-color-hover");
+      background-color: color.get(get("summary-background-color-hover"));
+      color: color.get(get("summary-color-hover"));
       #{ $prefix }__icon {
-        background-color: get("icon-background-color-hover");
+        background-color: color.get(get("icon-background-color-hover"));
         color: color.get(get("icon-color-hover"));
       }
     }
@@ -174,7 +174,7 @@ $config: (
     color: color.get(get("icon-color"));
     margin-left: 0.5em;
     order: 3;
-    background-color: get("icon-background-color");
+    background-color: color.get(get("icon-background-color"));
     border-radius: get("icon-border-radius");
     width: get("icon-size");
     height: get("icon-size");

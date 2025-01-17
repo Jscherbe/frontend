@@ -186,7 +186,7 @@ Prints component styles
 - **Group:** nav-strip
 - **Type:** mixin
 - **Lines (comments):** 72-74
-- **Lines (code):** 76-153
+- **Lines (code):** 76-155
 
 </details>
 

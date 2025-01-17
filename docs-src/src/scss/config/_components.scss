@@ -37,7 +37,8 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 
 @include ulu.component-accordion-set((
   "background-color" : ulu.cssvar-use("color-header-background"),
-  "background-color-open" : ulu.cssvar-use("color-header-background")
+  "background-color-open" : ulu.cssvar-use("color-header-background"),
+  "summary-background-color": ulu.cssvar-use("color-background")
 ));
 
 @include ulu.component-callout-set((

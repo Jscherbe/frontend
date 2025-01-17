@@ -46,6 +46,7 @@ $palette: (
   "type-tertiary"           : rgb(157, 157, 157),
   "headline"                : inherit,
   "background"              : white,
+  "background-gray"         : #F7F8F7,
   "focus"                   : blue,
   "error"                   : red,
   "warning"                 : orange,
@@ -81,7 +82,7 @@ $palette: (
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 13-16
-- **Lines (code):** 18-49
+- **Lines (code):** 18-50
 
 </details>
 
@@ -127,8 +128,8 @@ $contexts: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 51-55
-- **Lines (code):** 57-68
+- **Lines (comments):** 52-56
+- **Lines (code):** 58-69
 
 </details>
 
@@ -179,8 +180,8 @@ $color-classes: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 70-71
-- **Lines (code):** 72-76
+- **Lines (comments):** 71-72
+- **Lines (code):** 73-77
 
 </details>
 
@@ -215,8 +216,8 @@ Used to override or extend the color palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 78-84
-- **Lines (code):** 86-88
+- **Lines (comments):** 79-85
+- **Lines (code):** 87-89
 
 </details>
 
@@ -277,8 +278,8 @@ Set output classes for all-color-class-styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 110-111
-- **Lines (code):** 113-115
+- **Lines (comments):** 111-112
+- **Lines (code):** 114-116
 
 </details>
 
@@ -322,8 +323,8 @@ Set color contexts
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 124-134
-- **Lines (code):** 136-138
+- **Lines (comments):** 125-135
+- **Lines (code):** 137-139
 
 </details>
 
@@ -389,8 +390,8 @@ Prints contexts styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 163-164
-- **Lines (code):** 166-172
+- **Lines (comments):** 164-165
+- **Lines (code):** 167-173
 
 </details>
 
@@ -436,8 +437,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 196-203
-- **Lines (code):** 205-214
+- **Lines (comments):** 197-204
+- **Lines (code):** 206-215
 
 </details>
 
@@ -521,8 +522,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 216-220
-- **Lines (code):** 222-231
+- **Lines (comments):** 217-221
+- **Lines (code):** 223-232
 
 </details>
 
@@ -597,8 +598,8 @@ Get a color from the palette by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-108
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-109
 
 </details>
 
@@ -652,8 +653,8 @@ Check if a color is set in the palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 117-117
-- **Lines (code):** 119-122
+- **Lines (comments):** 118-118
+- **Lines (code):** 120-123
 
 </details>
 
@@ -689,8 +690,8 @@ Get a context by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 140-142
-- **Lines (code):** 144-146
+- **Lines (comments):** 141-143
+- **Lines (code):** 145-147
 
 </details>
 
@@ -744,8 +745,8 @@ Get a context's value'
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 148-151
-- **Lines (code):** 153-161
+- **Lines (comments):** 149-152
+- **Lines (code):** 154-162
 
 </details>
 
@@ -800,8 +801,8 @@ Lighten a color using the default white by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 174-179
-- **Lines (code):** 181-183
+- **Lines (comments):** 175-180
+- **Lines (code):** 182-184
 - **Author:** 
 
 </details>
@@ -862,8 +863,8 @@ Darken a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 185-190
-- **Lines (code):** 192-194
+- **Lines (comments):** 186-191
+- **Lines (code):** 193-195
 - **Author:** Kitty Giraudel
 
 </details>

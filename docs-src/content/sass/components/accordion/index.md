@@ -37,8 +37,8 @@ Module Settings
 
 ``` scss
 $config: (
-  "background-color":            white,
-  "background-color-open":       #F7F8F7,
+  "background-color":            "background",
+  "background-color-open":       "background-gray",
   "border-color":                "rule",
   "border-radius":               0,
   "border-width":                1px,
@@ -55,7 +55,7 @@ $config: (
   "icon-font-size":              1.5rem,
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
-  "summary-background-color":    white,
+  "summary-background-color":    "white",
   "summary-color":               null,
   "summary-background-color-hover": null,
   "summary-color-hover":         null,
@@ -87,8 +87,8 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|background-color|Color|white|This is the background color of the accordion before it is expanded.|
-|background-color-open|Color|#F7F8F7|This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.|
+|background-color|Color|accordion-background|This is the background color of the accordion before it is expanded.|
+|background-color-open|Color|accordion-background-open|This is the background color of the accordion before it is expanded. This will change the background color of the accordion's summary as well as the details.|
 |border-color|String|"rule"||
 |border-radius|Number|0|This applies a rounding of edges for the accordion. If there are multiple accordions in a stack, this will only apply to the top of the first accordion and the bottom of the last accordion.|
 |border-width|Dimension|1px|The width of the borders of the accordions|
