@@ -43,11 +43,11 @@ $config: (
   "button-height": 2.5rem,
   "button-width": 2.5rem,
   "dot-background-color" : transparent,
-  "dot-background-color-hover" : color.get("link"),
-  "dot-background-color-selected" : color.get("link"),
-  "dot-border-color" : color.get("link"),
-  "dot-border-color-hover" : color.get("link"),
-  "dot-border-color-selected" : color.get("link"),
+  "dot-background-color-hover" : "link",
+  "dot-background-color-selected" : "link",
+  "dot-border-color" : "link",
+  "dot-border-color-hover" : "link",
+  "dot-border-color-selected" : "link",
   "dot-border-radius" : 50%,
   "dot-border-width" : 2px,
   "dot-size" :  1rem,
@@ -83,7 +83,7 @@ $config: (
   $slide-padding-x: get("button-width") + get("button-margin");
   #{ $prefix } {
     position: relative; // for controls
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     margin: get("margin-top") 0 get("margin-bottom") 0;
   }
   #{ $prefix }__track,
@@ -114,17 +114,17 @@ $config: (
     display: block;
     width: get("dot-size");
     height: get("dot-size");
-    background-color: get("dot-background-color");
-    border: get("dot-border-width") solid get("dot-border-color");
+    background-color: color.get(get("dot-background-color"));
+    border: get("dot-border-width") solid color.get(get("dot-border-color"));
     border-radius: get("dot-border-radius");
     &:hover {
-      background-color: get("dot-background-color-hover");
+      background-color: color.get(get("dot-background-color-hover"));
     }
   }
   #{ $prefix-plugin }__nav-button--active,
   #{ $prefix-plugin }__nav-button--active:hover {
-    background-color: get("dot-background-color-selected");
-    border-color: get("dot-border-color-selected");
+    background-color: color.get(get("dot-background-color-selected"));
+    border-color: color.get(get("dot-border-color-selected"));
   }
   #{ $prefix-plugin }__control-button,
   #{ $prefix-plugin }__nav-button {

@@ -89,7 +89,7 @@ $config: (
   
   #{ $prefix } {
     position: relative; // for controls
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     margin: get("margin-top") 0 get("margin-bottom") 0;
   }
   #{ $prefix }--cards {

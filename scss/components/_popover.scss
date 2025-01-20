@@ -156,8 +156,8 @@ $config: (
     display: none;
     position: absolute;
     z-index: get("z-index") + 1;
-    background-color: get("background-color");
-    color: get("color");
+    background-color: color.get(get("background-color"));
+    color: color.get(get("color"));
     width: get("width");
     max-width: get("max-width");
     box-shadow: get("box-shadow");
@@ -189,18 +189,18 @@ $config: (
   #{ $prefix }__header {
     overflow: hidden;
     padding: get("header-padding-y") get("padding");
-    color: get("header-color");
-    background-color: get("header-background-color");
+    color: color.get(get("header-color"));
+    background-color: color.get(get("header-background-color"));
   }
   #{ $prefix }__header--media {
     padding: 0;
-    background-color: get("header-media-background-color");
+    background-color: color.get(get("header-media-background-color"));
   }
   #{ $prefix }__footer {
     box-shadow: get("box-shadow-footer") color.get(get("box-shadow-footer-color"));
     padding: get("footer-padding-y") get("padding");
-    color: get("footer-color");
-    background-color: get("footer-background-color");
+    color: color.get(get("footer-color"));
+    background-color: color.get(get("footer-background-color"));
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
@@ -215,8 +215,8 @@ $config: (
   #{ $prefix }--tooltip {
     width: get("tooltip-width");
     max-width: min(get("max-width"), get("tooltip-max-width"));
-    color: get("tooltip-color");
-    background-color: get("tooltip-background-color");
+    color: color.get(get("tooltip-color"));
+    background-color: color.get(get("tooltip-background-color"));
     pointer-events: none;
     #{ $prefix }__inner {
       padding: get("tooltip-padding");

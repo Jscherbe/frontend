@@ -51,8 +51,8 @@ $config: (
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** variable
-- **Lines (comments):** 11-15
-- **Lines (code):** 17-21
+- **Lines (comments):** 10-14
+- **Lines (code):** 16-20
 
 </details>
 
@@ -98,8 +98,8 @@ Change modules $config
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
-- **Lines (comments):** 23-26
-- **Lines (code):** 28-30
+- **Lines (comments):** 22-25
+- **Lines (code):** 27-29
 
 </details>
 
@@ -157,8 +157,8 @@ Output styles
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** mixin
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-96
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-95
 
 </details>
 
@@ -212,8 +212,8 @@ Get a config option
 - **File:** _rule.scss
 - **Group:** rule
 - **Type:** function
-- **Lines (comments):** 32-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 31-34
+- **Lines (code):** 36-38
 
 </details>
 

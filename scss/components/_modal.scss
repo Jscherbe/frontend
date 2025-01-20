@@ -159,7 +159,7 @@ $config: (
     box-sizing: border-box;
     box-shadow: get("box-shadow");
     border-radius: get("border-radius");
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     box-sizing: border-box;
     animation: uluModalCenterOut get("animation-duration-exit") get("animation-timing-function");
     &[open] {
@@ -168,7 +168,7 @@ $config: (
       flex-direction: column;
     }
     &::backdrop {
-      background: get("backdrop-color");
+      background: color.get(get("backdrop-color"));
       backdrop-filter: blur(get("backdrop-blur"));
       animation: uluModalBackdropIn get("animation-duration") get("animation-timing-function");
     }
@@ -180,8 +180,8 @@ $config: (
     flex: 0;
     padding: get("header-padding");
     border-bottom: get("header-border-bottom");
-    background-color: get("header-background-color");
-    color: get("header-color");
+    background-color: color.get(get("header-background-color"));
+    color: color.get(get("header-color"));
   }
   #{ $prefix }__body {
     flex: 1;
@@ -208,15 +208,15 @@ $config: (
     font-size: get("close-font-size");
     width: get("close-size");
     height: get("close-size");
-    background-color: get("close-background-color");
+    background-color: color.get(get("close-background-color"));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: get("close-color");
+    color: color.get(get("close-color"));
     &:hover {
-      background-color: get("close-background-color-hover");
-      color: get("close-color-hover");
+      background-color: color.get(get("close-background-color-hover"));
+      color: color.get(get("close-color-hover"));
     }
   }
   #{ $prefix }__resizer {
@@ -227,17 +227,17 @@ $config: (
     width: get("resizer-width");
     display: block;
     cursor: col-resize;
-    background-color: get("resizer-background-color");
+    background-color: color.get(get("resizer-background-color"));
     display: flex;
     align-items: center;
     justify-content: center;
     transition-property: background-color, color;
     transition-duration: 300ms;
     transition-delay: 100ms; 
-    color: get("resizer-color");
+    color: color.get(get("resizer-color"));
     &:hover {
-      color: get("resizer-color-hover");
-      background-color: get("resizer-background-color-hover");
+      color: color.get(get("resizer-color-hover"));
+      background-color: color.get(get("resizer-background-color-hover"));
     }
     #{ $prefix }--left & {
       left: auto;
@@ -354,7 +354,7 @@ $config: (
       backdrop-filter: blur(0);
     }
     100% {
-      background-color: get("backdrop-color");
+      background-color: color.get(get("backdrop-color"));
       backdrop-filter: blur(get("backdrop-blur"));
     }
   }

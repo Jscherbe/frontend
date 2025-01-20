@@ -53,8 +53,8 @@ $config: (
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** variable
-- **Lines (comments):** 30-31
-- **Lines (code):** 33-39
+- **Lines (comments):** 31-32
+- **Lines (code):** 34-40
 
 </details>
 
@@ -89,8 +89,8 @@ Change modules $config
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** mixin
-- **Lines (comments):** 41-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 42-45
+- **Lines (code):** 47-49
 
 </details>
 
@@ -150,8 +150,8 @@ Output component stylesheet
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** mixin
-- **Lines (comments):** 60-73
-- **Lines (code):** 75-92
+- **Lines (comments):** 61-74
+- **Lines (code):** 76-93
 
 </details>
 
@@ -224,8 +224,8 @@ Get a config option
 - **File:** _skip-link.scss
 - **Group:** skip-link
 - **Type:** function
-- **Lines (comments):** 50-53
-- **Lines (code):** 55-58
+- **Lines (comments):** 51-54
+- **Lines (code):** 56-59
 
 </details>
 

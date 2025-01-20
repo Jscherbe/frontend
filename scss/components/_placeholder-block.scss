@@ -92,20 +92,20 @@ $config: (
   $prefix: selector.class("placeholder-block");
 
   #{ $prefix } {
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: get("padding");
-    color: get("color");
-    border: get("border-width") get("border-style") get("border-color");
+    color: color.get(get("color"));
+    border: get("border-width") get("border-style") color.get(get("border-color"));
     margin-bottom: get("margin-bottom");
     border-radius: get("border-radius");
   }
   #{ $prefix }__icon {
-    color: get("icon-color");
+    color: color.get(get("icon-color"));
     display: block;
     margin: 0 auto get("icon-margin") auto;
     font-size: get("icon-font-size");

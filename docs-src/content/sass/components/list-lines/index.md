@@ -53,8 +53,8 @@ $config: (
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** variable
-- **Lines (comments):** 12-17
-- **Lines (code):** 19-25
+- **Lines (comments):** 11-16
+- **Lines (code):** 18-24
 
 </details>
 
@@ -102,8 +102,8 @@ Change modules $config
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 27-30
-- **Lines (code):** 32-34
+- **Lines (comments):** 26-29
+- **Lines (code):** 31-33
 
 </details>
 
@@ -161,8 +161,8 @@ Output component styles
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 45-45
-- **Lines (code):** 47-67
+- **Lines (comments):** 44-44
+- **Lines (code):** 46-66
 
 </details>
 
@@ -197,8 +197,8 @@ Output component stylesheet
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** mixin
-- **Lines (comments):** 69-71
-- **Lines (code):** 73-84
+- **Lines (comments):** 68-70
+- **Lines (code):** 72-83
 
 </details>
 
@@ -253,8 +253,8 @@ Get a config option
 - **File:** _list-lines.scss
 - **Group:** list-lines
 - **Type:** function
-- **Lines (comments):** 36-39
-- **Lines (code):** 41-43
+- **Lines (comments):** 35-38
+- **Lines (code):** 40-42
 
 </details>
 

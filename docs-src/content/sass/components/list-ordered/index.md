@@ -42,8 +42,8 @@ Output component stylesheet
 - **File:** _list-ordered.scss
 - **Group:** list-ordered
 - **Type:** mixin
-- **Lines (comments):** 9-11
-- **Lines (code):** 13-18
+- **Lines (comments):** 8-10
+- **Lines (code):** 12-17
 
 </details>
 

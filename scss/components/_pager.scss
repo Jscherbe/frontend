@@ -120,9 +120,9 @@ $config: (
       border-radius: get("border-radius");
       border: get("border-width") solid color.get(get("border-color"));
       background-color: color.get(get("background-color"));
-      color: get("color");
+      color: color.get(get("color"));
       &:hover {
-        color: get("color-hover");
+        color: color.get(get("color-hover"));
         border-color: color.get(get("border-color-hover"));
         background-color: color.get(get("background-color-hover"));
       }
@@ -134,8 +134,8 @@ $config: (
       span {
         font-weight: get("font-weight");
         color: color.get(get("active-color"));
-        background-color: get("active-background-color");
-        border-color: get("active-border-color");
+        background-color: color.get(get("active-background-color"));
+        border-color: color.get(get("active-border-color"));
       }
     }
   }
@@ -148,14 +148,14 @@ $config: (
       height: get("action-width");
       line-height: get("action-width");
       background-color: color.get(get("action-background-color"));
-      color: get("action-color");
+      color: color.get(get("action-color"));
       font-size: 1.2rem;
       line-height: 2.8rem;
       font-weight: bold;
       &:hover {
         border-color: color.get(get("action-border-color-hover"));
         background-color: color.get(get("action-background-color-hover"));
-        color: get("action-color-hover");
+        color: color.get(get("action-color-hover"));
       }
     }
   }

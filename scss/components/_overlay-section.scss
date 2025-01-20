@@ -8,6 +8,7 @@
 @use "sass:map";
 @use "../utils";
 @use "../breakpoint";
+@use "../color";
 
 /// Module Settings
 /// @type Map
@@ -95,7 +96,7 @@ $config: (
   .overlay-section__content {
     position: relative;
     z-index: 2;
-    background-color: get("content-background-color");
+    background-color: color.get(get("content-background-color"));
     border: get("content-border");
     flex: 0 1 get("content-width");
     padding: get("content-padding");
