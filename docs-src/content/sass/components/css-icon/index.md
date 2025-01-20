@@ -66,8 +66,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 23-37
-- **Lines (code):** 39-58
+- **Lines (comments):** 24-38
+- **Lines (code):** 40-59
 
 </details>
 
@@ -123,8 +123,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 60-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 61-64
+- **Lines (code):** 66-68
 
 </details>
 
@@ -184,8 +184,8 @@ Used to style active icons
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 78-80
-- **Lines (code):** 82-86
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-87
 
 </details>
 
@@ -220,8 +220,8 @@ Output CSS icon component stylesheet
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-433
+- **Lines (comments):** 99-101
+- **Lines (code):** 103-434
 
 </details>
 
@@ -276,8 +276,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 69-72
-- **Lines (code):** 74-76
+- **Lines (comments):** 70-73
+- **Lines (code):** 75-77
 
 </details>
 

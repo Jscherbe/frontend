@@ -258,7 +258,7 @@ $config: (
   textarea,
   label,
   legend {
-    color: get("color");
+    color: color.get(get("color"));
     font-size: 1em;
     max-width: 100%;
     line-height: typography.get("line-height-dense");
@@ -291,7 +291,7 @@ $config: (
   [type="password"],
   [type="file"] {
     padding: get("input-padding-y") get("input-padding-x");
-    background-color: get("input-background-color");
+    background-color: color.get(get("input-background-color"));
     border-radius: get("input-border-radius");
     transition: border linear 0.2s;
     border: get("input-border");
@@ -307,7 +307,7 @@ $config: (
     font-weight: get("font-weight-select");
     border: get("select-border");
     border-radius: get("select-border-radius");
-    background-color: get("select-background-color");
+    background-color: color.get(get("select-background-color"));
     padding: -fallback("select-padding-y", "input-padding-y") -fallback("select-padding-x", "input-padding-x");
     border: -fallback("select-border", "input-border");
     @if get("select-image") {
@@ -365,39 +365,39 @@ $config: (
       opacity: 0;
       transform: rotate(45deg);
       transition: opacity ease-out 150ms;
-      border: get("check-input-radio-size") solid get("check-input-mark-color");
+      border: get("check-input-radio-size") solid color.get(get("check-input-mark-color"));
       border-radius: 50%;
     }
     &:focus {
-      background-color: get("check-input-touch-color-focus");
+      background-color: color.get(get("check-input-touch-color-focus"));
       &:before {
-        border-color: get("check-input-border-color-focus");
+        border-color: color.get(get("check-input-border-color-focus"));
         outline: get("check-input-outline-focus");
       }
       &:after {
-        border-color: get("check-input-mark-color-focus");
+        border-color: color.get(get("check-input-mark-color-focus"));
       }
     }
     &:hover {
-      background-color: get("check-input-touch-color-hover");
+      background-color: color.get(get("check-input-touch-color-hover"));
       &:before {
         outline: get("check-input-outline-hover");
-        background-color: get("check-input-background-color-hover");
-        border-color: get("check-input-border-color-hover");
+        background-color: color.get(get("check-input-background-color-hover"));
+        border-color: color.get(get("check-input-border-color-hover"));
       }
       &:after {
-        border-color: get("check-input-mark-color-hover");
+        border-color: color.get(get("check-input-mark-color-hover"));
       }
     }
     &:checked {
       &:before {
-        background-color: get("check-input-background-color-checked");
-        border-color: get("check-input-border-color-checked");
+        background-color: color.get(get("check-input-background-color-checked"));
+        border-color: color.get(get("check-input-border-color-checked"));
         outline: get("check-input-outline-checked");
       }
       &:after {
         opacity: 1;
-        border-color: get("check-input-mark-color-checked");
+        border-color: color.get(get("check-input-mark-color-checked"));
       }
     }
     
@@ -428,15 +428,15 @@ $config: (
     &:indeterminate,
     &[aria-checked=mixed] {
       &:before {
-        background-color: get("check-input-background-color-indeterminate");
-        border-color: get("check-input-border-color-indeterminate");
+        background-color: color.get(get("check-input-background-color-indeterminate"));
+        border-color: color.get(get("check-input-border-color-indeterminate"));
       }
       &:after {
         border-right: none;
         transform: translatey(50%);
         opacity: 1;
         height: get("check-input-checkmark-stroke-size");
-        border-color: get("check-input-mark-color-indeterminate");
+        border-color: color.get(get("check-input-mark-color-indeterminate"));
       }
     }
   }
@@ -449,7 +449,7 @@ $config: (
     margin-top: get("fieldset-margin-top");
     margin-bottom: get("fieldset-margin-bottom");
     border: get("fieldset-border");
-    background-color: get("fieldset-background");
+    background-color: color.get(get("fieldset-background"));
     border-radius: get("fieldset-border-radius");
     padding: get("fieldset-padding");
     
@@ -467,7 +467,7 @@ $config: (
         padding-bottom: 0.5em;
         padding-top: 0.5em;
         border-bottom: get("fieldset-legend-border-bottom");
-        color: get("fieldset-legend-color");
+        color: color.get(get("fieldset-legend-color"));
       }
       & ~ * {
         clear: left;
@@ -475,12 +475,12 @@ $config: (
     }
     &#{ $selectError } {
       > legend {
-        color: $errorColor;
+        color: color.get($errorColor);
       }
     }
     &#{ $selectWarning } {
       > legend {
-        color: $warningColor;
+        color: color.get($warningColor);
       }
     }
   }
@@ -502,7 +502,7 @@ $config: (
   font-style: italic;
   @include typography.size("small", null, true);
   max-width: get("description-max-width");
-  color: get("description-color");
+  color: color.get(get("description-color"));
 }
 
 /// Styles for form item that should have label as block and text input
@@ -550,8 +550,8 @@ $config: (
     margin-bottom: get("input-margin-y");
     border-radius: get("item-border-radius");
     flex-shrink: 0; // Cannot be smaller than content within
-    @include -form-item-state($selectError, $errorColor, get("error-highlight-color"));
-    @include -form-item-state($selectWarning, $warningColor, get("warning-highlight-color"));
+    @include -form-item-state($selectError, $errorColor, color.get(get("error-highlight-color")));
+    @include -form-item-state($selectWarning, $warningColor, color.get(get("warning-highlight-color")));
   }
   #{ $prefix }__item--align-top {
     align-items: flex-start;
@@ -578,10 +578,10 @@ $config: (
     }
   }
   #{ $prefix }__error {
-    color: $errorColor;
+    color: color.get($errorColor);
   }
   #{ $prefix }__warning {
-    color: $warningColor;
+    color: color.get($warningColor);
   }
 }
 
@@ -622,12 +622,12 @@ $config: (
     // outline: get("item-outline-width") solid $highlightColor;
     box-shadow: 0 0 0 get("item-highlight-width") $highlightColor;
     label {
-      color: $color;
+      color: color.get($color);
     }
     select,
     textarea,
     input:not([type="checkbox"]):not([type="radio"]) {
-      border-color: $color;
+      border-color: color.get($color);
     }
   }
 }

@@ -9,6 +9,7 @@
 @use "../breakpoint";
 @use "../utils";
 @use "../selector";
+@use "../color";
 
 // todo
 // sass color adjust for smooth transition. Add a comment for this if we can’t get to this
@@ -167,8 +168,8 @@ $config: (
   $prefix: selector.class("card");
 
   #{ $prefix } {
-    color: get("color");
-    background-color: get("background-color");
+    color: color.get(get("color"));
+    background-color: color.get(get("background-color"));
     border-radius: get("border-radius");
     box-shadow: get("box-shadow");
     margin-top: get("margin-y");
@@ -197,15 +198,15 @@ $config: (
   }
 
   @include when-clickable($hover: true) {
-    background-color: get("background-color-hover");
-    color: get("color-hover");
+    background-color: color.get(get("background-color-hover"));
+    color: color.get(get("color-hover"));
     box-shadow: get("box-shadow-hover");
     
     @if (get("border-hover") or get("overlay-background-color-hover")) {
       &:after {
         content: "";
         border: get("border-hover");
-        background-color: get("overlay-background-color-hover");
+        background-color: color.get(get("overlay-background-color-hover"));
       }
     }
   }
@@ -222,14 +223,14 @@ $config: (
   } 
 
   #{ $prefix }__title {
-    color: get("title-color");
+    color: color.get(get("title-color"));
     margin-bottom: get("title-margin");
     display: block;
     font-weight: get("title-font-weight");
     @if get("title-color-hover") {
       &:hover,
       &:focus {
-        color: get("title-color-hover");
+        color: color.get(get("title-color-hover"));
       }
     }
     #{ $prefix }__title-link {
@@ -239,7 +240,7 @@ $config: (
   @if get("title-color-hover") {
     @include when-clickable($hover: true) {
       #{ $prefix }__title {
-        color: get("title-color-hover");
+        color: color.get(get("title-color-hover"));
       }
     }
   }
@@ -257,7 +258,7 @@ $config: (
     // padding-top: get("image-ratio"); // 9:16
     margin: get("image-margin");
     border: get("image-border");
-    background-color: get("image-background-color");
+    background-color: color.get(get("image-background-color"));
     border-top-right-radius: get("border-radius");
     border-top-left-radius: get("border-radius");
     aspect-ratio: get("image-aspect-ratio");
@@ -340,8 +341,8 @@ $config: (
       position: relative;
       flex-grow: 0;
       z-index: 2;
-      color: get("color-overlay");
-      background-color: get("overlay-background-color");
+      color: color.get(get("color-overlay"));
+      background-color: color.get(get("overlay-background-color"));
       min-height: 0;
       padding-top: get("overlay-body-padding-y");
       padding-bottom: get("overlay-body-padding-y");
@@ -359,11 +360,11 @@ $config: (
       }
     }
     #{ $prefix }__footer {
-      background-color: get("overlay-background-color");
-      color: get("color-overlay");
+      background-color: color.get(get("overlay-background-color"));
+      color: color.get(get("color-overlay"));
     }
     #{ $prefix }__title {
-      color: get("color-overlay");
+      color: color.get(get("color-overlay"));
     }
     #{ $prefix }__image {
       position: absolute;
@@ -373,7 +374,7 @@ $config: (
       right: 0;
       overflow: hidden;
       padding-top: 0;
-      background-color: rgb(255, 255, 255);
+      background-color: color.get(rgb(255, 255, 255));
       border-radius: get("border-radius");
       aspect-ratio: auto;
       img {      

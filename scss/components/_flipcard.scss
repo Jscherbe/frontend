@@ -5,6 +5,7 @@
 /// Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
 
 @use "sass:map";
+@use "../color";
 @use "../utils";
 @use "../selector";
 
@@ -90,14 +91,14 @@ $config: (
 
   #{ $prefix } {
     height: 100%;
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     line-height: 1.4;
     overflow: hidden;
     position: relative;
     border: get("border");
     border-radius: get("border-radius");
     &#{ $prefix }:hover {
-      border-color: get("border-color-hover");
+      border-color: color.get(get("border-color-hover"));
     }
     #{ $prefix }__control-button:focus {
       border: get("control-button-border-focus");
@@ -123,10 +124,10 @@ $config: (
         transform: scale(1.15);
       }
       #{ $prefix }__front-content {
-        color: get("title-color-hover");
+        color: color.get(get("title-color-hover"));
       }
       #{ $prefix }__icon {
-        color: get("icon-color-hover");
+        color: color.get(get("icon-color-hover"));
       }
     }
     @media (prefers-reduced-motion: no-preference) {
@@ -140,14 +141,14 @@ $config: (
     }
   }
   #{ $prefix }--w-image {
-    background-color: get("background-color-image");
+    background-color: color.get(get("background-color-image"));
 
     &:hover {
       #{ $prefix }__front-content {
-        color: get("title-color-image-hover");
+        color: color.get(get("title-color-image-hover"));
       }
       #{ $prefix }__icon {
-        color: get("icon-color-image-hover");
+        color: color.get(get("icon-color-image-hover"));
       }
     }
   }
@@ -168,7 +169,7 @@ $config: (
     }
   }
   #{ $prefix }__icon {
-    color: get('icon-color');
+    color: color.get(get('icon-color'));
     display: block;
     margin-top: 0.5rem;
   }
@@ -177,7 +178,7 @@ $config: (
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    color: get("title-color");
+    color: color.get(get("title-color"));
     position: relative;
     z-index: 2;
     padding: get('padding');
@@ -186,10 +187,10 @@ $config: (
   }
   #{ $prefix }--w-image {
     #{ $prefix }__icon {
-      color: get("icon-color-image");
+      color: color.get(get("icon-color-image"));
     }
     #{ $prefix }__front-content {
-      color: get("title-color-image");
+      color: color.get(get("title-color-image"));
       @if(get("bottom-shadow")) {
         // bottom position includes padding so that the shadow 
         &:after {
@@ -207,7 +208,7 @@ $config: (
     }
   }
   #{ $prefix }__back {
-    background-color: get("background-color-back");
+    background-color: color.get(get("background-color-back"));
     padding: get('padding');
     justify-content: flex-end;
     [data-flipcard-state="open"] & {

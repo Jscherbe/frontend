@@ -17,6 +17,7 @@
 
 @use "sass:map";
 @use "sass:math";
+@use "../color";
 
 @use "../utils";
 
@@ -100,7 +101,7 @@ $config: (
 ///  @include ulu.component-css-icon-styles();
 
 @mixin styles {
-  $border: get("stroke-width") solid get("color");
+  $border: get("stroke-width") solid color.get(get("color"));
   $size: get("size");
   $stroke-width: get("stroke-width");
   $half-height: math.div(get("size"), 2);
@@ -130,7 +131,7 @@ $config: (
       height: $stroke-width;
       top: 50%;
       left: 50%;
-      background-color: get("color"); 
+      background-color: color.get(get("color")); 
       transform: translateX(-50%);
       margin-top: -($half-stroke-width);
       border-radius: get("stroke-border-radius");
@@ -158,7 +159,7 @@ $config: (
   // Solid icons
   [class*="css-icon--circle"],
   [class*="css-icon--square"] {
-    background-color: get("color");
+    background-color: color.get(get("color"));
   }
   [class*="css-icon--circle"] {
     border-radius: 50%;
@@ -192,7 +193,7 @@ $config: (
       font-family: get("font-family");
       font-weight: bold;
       margin-top: get("text-offset");
-      color: get("color");
+      color: color.get(get("color"));
       height: auto;
       left: 0;
       right: 0;
@@ -222,7 +223,7 @@ $config: (
   // Arrow uses same equilateral triangle
   [class*="css-icon--triangle"],
   [class*="css-icon--arrow"]::after {
-    background-color: get("color");
+    background-color: color.get(get("color"));
     clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
   }
   [class*="css-icon--arrow"] {
@@ -344,7 +345,7 @@ $config: (
       margin-top: 0;
     }
     &::before {
-      box-shadow: 0px ($stroke-width * 2 + 1px) get("color");
+      box-shadow: 0px ($stroke-width * 2 + 1px) color.get(get("color"));
       margin-bottom: ($stroke-width * 3) + 2px;
     }
   }
@@ -352,7 +353,7 @@ $config: (
     &.css-icon--menu,
     &.css-icon--menu-to-close {
       &::before {
-        box-shadow: 0px ($alt-width * 2 + 1px) get("color");
+        box-shadow: 0px ($alt-width * 2 + 1px) color.get(get("color"));
         margin-bottom: ($alt-width * 3) + 2px;
       }
     }

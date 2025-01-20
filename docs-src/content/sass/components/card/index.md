@@ -95,8 +95,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 16-60
-- **Lines (code):** 62-112
+- **Lines (comments):** 17-61
+- **Lines (code):** 63-113
 
 </details>
 
@@ -182,8 +182,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 114-117
-- **Lines (code):** 119-121
+- **Lines (comments):** 115-118
+- **Lines (code):** 120-122
 
 </details>
 
@@ -241,8 +241,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 132-136
-- **Lines (code):** 138-153
+- **Lines (comments):** 133-137
+- **Lines (code):** 139-154
 
 </details>
 
@@ -301,8 +301,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 160-164
-- **Lines (code):** 166-422
+- **Lines (comments):** 161-165
+- **Lines (code):** 167-423
 
 </details>
 
@@ -382,8 +382,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 123-126
-- **Lines (code):** 128-130
+- **Lines (comments):** 124-127
+- **Lines (code):** 129-131
 
 </details>
 
