@@ -10,6 +10,7 @@
 @use "../utils";
 @use "../selector";
 @use "../element";
+@use "../color";
 
 // Used for function fallback
 $-fallbacks: (
@@ -133,7 +134,7 @@ $styles: (
     top: 0;
     bottom: 0;
     width: $width;
-    background-color: $color;
+    background-color: color.get($color);
   }
 }
 
@@ -145,7 +146,7 @@ $styles: (
   $prefix: selector.class("callout");
 
   #{ $prefix } {
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     padding: get("padding");
     border: get("border");
     margin-bottom: get("margin");
@@ -160,11 +161,11 @@ $styles: (
   }
   @each $name, $style in $styles {
     #{ $prefix }--#{ $name } {
-      background-color: map.get($style, "background-color"); 
-      color: map.get($style, "color"); 
+      background-color: color.get(map.get($style, "background-color")); 
+      color: color.get(map.get($style, "color")); 
       border: map.get($style, "border"); 
       border-radius: map.get($style, "border-radius"); 
-      border-color: map.get($style, "border-color"); 
+      border-color: color.get(map.get($style, "border-color")); 
       box-shadow: map.get($style, "box-shadow"); 
       padding: map.get($style, "padding"); 
       @if map.get($style, "left-cap") {

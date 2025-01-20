@@ -102,7 +102,7 @@ $config: (
     margin-bottom: get("margin");
     max-width: 100%;
     width: get("min-width");
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     padding: get("padding-y") get("padding-x");
     padding-right: (get("padding-x") * 2) + 1em;
     color: color.get(get("color"));
@@ -126,7 +126,7 @@ $config: (
     right: get("padding-x");
     transform: translateY(-50%);
     font-size: get("icon-font-size");
-    color: get("icon-color");
+    color: color.get(get("icon-color"));
   }
   .button-verbose--inline {
     display: inline-block;

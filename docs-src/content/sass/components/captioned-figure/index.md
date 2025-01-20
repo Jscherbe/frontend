@@ -65,8 +65,8 @@ $config: (
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** variable
-- **Lines (comments):** 30-31
-- **Lines (code):** 33-51
+- **Lines (comments):** 31-32
+- **Lines (code):** 34-52
 
 </details>
 
@@ -101,8 +101,8 @@ Change modules $config
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 53-56
-- **Lines (code):** 58-60
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-61
 
 </details>
 
@@ -160,8 +160,8 @@ Prints component styles
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** mixin
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-172
+- **Lines (comments):** 73-75
+- **Lines (code):** 77-173
 
 </details>
 
@@ -215,8 +215,8 @@ Get a config option
 - **File:** _captioned-figure.scss
 - **Group:** captioned-figure
 - **Type:** function
-- **Lines (comments):** 62-65
-- **Lines (code):** 67-70
+- **Lines (comments):** 63-66
+- **Lines (code):** 68-71
 
 </details>
 

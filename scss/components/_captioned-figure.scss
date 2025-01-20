@@ -10,6 +10,7 @@
 @use "../utils";
 @use "../element";
 @use "../typography";
+@use "../color";
 
 // Used for function fallback
 $-fallbacks: (
@@ -82,7 +83,7 @@ $config: (
     display: block;
     position: relative;
     margin-bottom: get("margin-bottom");
-    background-color: get("background-color");
+    background-color: color.get(get("background-color"));
     > img {
       width: 100%;
       height: auto;
@@ -101,20 +102,20 @@ $config: (
   }
   #{ $prefix }__caption {
     position: absolute;
-    color: get("color");
+    color: color.get(get("color"));
     @include typography.size(get("type-size"), $only-font-size: true);
     line-height: get("line-height");
     max-width: get("caption-max-width");
-    background-color: get("caption-background-color");
+    background-color: color.get(get("caption-background-color"));
     padding: get("caption-padding");
     backdrop-filter: get("caption-backdrop-filter");
   }
   #{ $prefix }--traditional {
     #{ $prefix }__caption {
       position: static;
-      color: get("traditional-caption-color");
+      color: color.get(get("traditional-caption-color"));
       max-width: get("traditional-caption-max-width");
-      background-color: get("traditional-caption-background-color");
+      background-color: color.get(get("traditional-caption-background-color"));
       padding: get("traditional-caption-padding");
       text-align: get("traditional-caption-text-align");
       @if (get("traditional-caption-text-align") == right) {

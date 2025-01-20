@@ -6,6 +6,7 @@
 @use "sass:map";
 @use "../utils";
 @use "../selector";
+@use "../color";
 
 /// Module Settings
 /// @type Map
@@ -94,8 +95,8 @@ $config: (
     &:hover,
     &:focus,
     &:visited {
-      background-color: get("background-color");
-      color: get("color");
+      background-color: color.get(get("background-color"));
+      color: color.get(get("color"));
     }
   }
   #{ $prefix }--clickable {

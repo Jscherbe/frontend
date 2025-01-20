@@ -57,8 +57,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 26-36
-- **Lines (code):** 38-48
+- **Lines (comments):** 27-37
+- **Lines (code):** 39-49
 
 </details>
 
@@ -110,8 +110,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 94-97
-- **Lines (code):** 99-101
+- **Lines (comments):** 95-98
+- **Lines (code):** 100-102
 
 </details>
 
@@ -169,8 +169,8 @@ Set callout style variations
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 113-115
-- **Lines (code):** 117-119
+- **Lines (comments):** 114-116
+- **Lines (code):** 118-120
 
 </details>
 
@@ -215,8 +215,8 @@ Output styling for a callout that adds a left cap
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 121-123
-- **Lines (code):** 125-138
+- **Lines (comments):** 122-124
+- **Lines (code):** 126-139
 
 </details>
 
@@ -231,6 +231,11 @@ Output styling for a callout that adds a left cap
 |$color|`Color`|The left cap color|
 
     
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
+  
 
 
 <div class="sassdoc-item-header">
@@ -256,8 +261,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 140-142
-- **Lines (code):** 144-175
+- **Lines (comments):** 141-143
+- **Lines (code):** 145-176
 
 </details>
 
@@ -313,8 +318,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 103-106
-- **Lines (code):** 108-111
+- **Lines (comments):** 104-107
+- **Lines (code):** 109-112
 
 </details>
 

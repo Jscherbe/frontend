@@ -60,8 +60,8 @@ $config: (
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** variable
-- **Lines (comments):** 10-18
-- **Lines (code):** 20-33
+- **Lines (comments):** 11-19
+- **Lines (code):** 21-34
 
 </details>
 
@@ -111,8 +111,8 @@ Change modules $config
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 35-38
-- **Lines (code):** 40-42
+- **Lines (comments):** 36-39
+- **Lines (code):** 41-43
 
 </details>
 
@@ -170,8 +170,8 @@ Output badge component styles
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 53-67
-- **Lines (code):** 69-129
+- **Lines (comments):** 54-68
+- **Lines (code):** 70-130
 
 </details>
 
@@ -264,8 +264,8 @@ Get a config option
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
-- **Lines (comments):** 44-47
-- **Lines (code):** 49-51
+- **Lines (comments):** 45-48
+- **Lines (code):** 50-52
 
 </details>
 
