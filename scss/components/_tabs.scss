@@ -157,7 +157,7 @@ $config: (
       z-index: 1;
       padding: get("tabpanel-padding");
       overflow: hidden;
-      background-color: get("tabpanel-background-color");
+      background-color: color.get(get("tabpanel-background-color"));
     }
   }
   // For images, etc that should fill tabpanel

@@ -144,7 +144,7 @@ $styles: (
       border: map.get($style, "border"); 
       border-radius: map.get($style, "border-radius"); 
       border-color: color.get(map.get($style, "border-color")); 
-      border-width: color.get(map.get($style, "border-width")); 
+      border-width: map.get($style, "border-width"); 
       box-shadow: map.get($style, "box-shadow"); 
       padding: map.get($style, "padding");  
       @if (typography.has-size($type-size)) {
