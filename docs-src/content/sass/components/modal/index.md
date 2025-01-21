@@ -68,6 +68,7 @@ $config: (
   "resizer-width":                  1rem,
   "title-color":                    white,
   "title-font-weight":              bold,
+  "title-font-family" :             null,
   "title-icon-margin" :             0.5em,
   "title-size" :                    "large",
   "title-text-transform" :          null,
@@ -86,8 +87,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 31-66
-- **Lines (code):** 68-107
+- **Lines (comments):** 31-67
+- **Lines (code):** 69-109
 
 </details>
 
@@ -128,6 +129,7 @@ $config: (
 |resizer-width|Dimension|1rem|The width of the resizer.|
 |title-color|Color|white|Type color of the title.|
 |title-font-weight|CssValue|bold|Font weight of the title.|
+|title-font-family|CssValue|null|Font family for title|
 |title-icon-margin|Dimension|0.5em|The margin of the title icon|
 |title-size|String|large|The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
 |title-text-transform|CssValue|null|Transform option for the title.|
@@ -164,8 +166,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 109-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 111-114
+- **Lines (code):** 116-118
 
 </details>
 
@@ -223,8 +225,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 128-130
-- **Lines (code):** 132-481
+- **Lines (comments):** 130-132
+- **Lines (code):** 134-484
 
 </details>
 
@@ -278,8 +280,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 118-121
-- **Lines (code):** 123-126
+- **Lines (comments):** 120-123
+- **Lines (code):** 125-128
 
 </details>
 

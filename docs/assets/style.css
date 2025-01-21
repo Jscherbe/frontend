@@ -15611,6 +15611,10 @@ table.data-table--no-border {
             transform: translateX(15%);
   }
 }
+.nav-strip {
+  max-width: 100%;
+}
+
 .nav-strip__list,
 .nav-strip--auto ul {
   display: -webkit-box;

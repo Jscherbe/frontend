@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.6
+
+- Add "title-font-family" to scss/components/modal
+
 ## Version 0.1.0-beta.5
 
 - scss/components/nav-strip - Adjust rule style so the rule is not a border on parent (so child can overlap if desired), Adjust all colors to run through color.get(), Convert to gap instead of margins

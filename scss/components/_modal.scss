@@ -60,6 +60,7 @@ $-fallbacks: (
 /// @prop {Dimension} resizer-width [1rem] The width of the resizer.
 /// @prop {Color} title-color [white] Type color of the title.
 /// @prop {CssValue} title-font-weight [bold] Font weight of the title.
+/// @prop {CssValue} title-font-family [null] Font family for title
 /// @prop {Dimension} title-icon-margin [0.5em] The margin of the title icon
 /// @prop {String} title-size [large] The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
@@ -97,6 +98,7 @@ $config: (
   "resizer-width":                  1rem,
   "title-color":                    white,
   "title-font-weight":              bold,
+  "title-font-family" :             null,
   "title-icon-margin" :             0.5em,
   "title-size" :                    "large",
   "title-text-transform" :          null,
@@ -194,6 +196,7 @@ $config: (
     margin: 0;
     color: color.get(get("title-color"));
     font-weight: get("title-font-weight");
+    font-family: get("title-font-family");
     text-transform: get("title-text-transform");
     @if (get("title-size")) {
       @include typography.size(get("title-size"), $only-font-size: true);
