@@ -11892,7 +11892,7 @@ components:
 }
 
 .accordion__summary {
-  background-color: white;
+  background-color: var(--site-color-background);
   margin-left: -1.5em;
   margin-right: -1.5em;
   padding: 1rem 1.5em;
@@ -16326,17 +16326,17 @@ table.data-table--no-border {
   width: 1rem;
   height: 1rem;
   background-color: transparent;
-  border: 2px solid blue;
+  border: 2px solid var(--site-color-link);
   border-radius: 50%;
 }
 .Slider__nav-button:hover {
-  background-color: blue;
+  background-color: var(--site-color-link);
 }
 
 .Slider__nav-button--active,
 .Slider__nav-button--active:hover {
-  background-color: blue;
-  border-color: blue;
+  background-color: var(--site-color-link);
+  border-color: var(--site-color-link);
 }
 
 .Slider__control-button,
