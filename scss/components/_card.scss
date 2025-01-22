@@ -179,21 +179,18 @@ $config: (
     flex-direction: column;
     justify-content: flex-end;
     max-width: get("max-width");
-  }
-  @if (get("border") or get("border-hover") or get("overlay-background-color-hover")) {
-    @include when-clickable($hover: false) {
-      &:after {
-        position: absolute;
-        content: if(get("border"), "", false);
-        top: 0; 
-        bottom: 0; 
-        right: 0; 
-        left: 0;
-        border: get("border");
-        border-radius: get("border-radius");
-        z-index: 4;
-        pointer-events: none;
-      }
+    // Border is on pseudo so that it's on top of image/etc
+    &:after {
+      position: absolute;
+      content: if(get("border"), "", false);
+      top: 0; 
+      bottom: 0; 
+      right: 0; 
+      left: 0;
+      border: get("border");
+      border-radius: get("border-radius");
+      z-index: 4;
+      pointer-events: none;
     }
   }
 
@@ -346,6 +343,10 @@ $config: (
       min-height: 0;
       padding-top: get("overlay-body-padding-y");
       padding-bottom: get("overlay-body-padding-y");
+      &:not(:has(~ #{ $prefix }__footer)) {
+        border-bottom-left-radius: get("border-radius");
+        border-bottom-right-radius: get("border-radius");
+      }
       @if (get("overlay-shading")) {
         margin-top: 4rem;
         &::before {
@@ -362,6 +363,15 @@ $config: (
     #{ $prefix }__footer {
       background-color: color.get(get("overlay-background-color"));
       color: color.get(get("color-overlay"));
+      border-bottom-left-radius: get("border-radius");
+      border-bottom-right-radius: get("border-radius");
+    }
+    #{ $prefix }__body,
+    #{ $prefix }__footer {
+      &:last-child {
+        border-bottom-left-radius: get("border-radius");
+        border-bottom-right-radius: get("border-radius");
+      }
     }
     #{ $prefix }__title {
       color: color.get(get("color-overlay"));
