@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.9
+
+- Updates to "scss/component/card" - Fix card overlay border-radius (body and footer), fix card border being conditional on interactive (proxy-click)
+
 ## Version 0.1.0-beta.8
 
 - Update "scss/components/data-table" to have border and no margin on caption by default, add caption config properties (caption-text-align, caption-background-color)

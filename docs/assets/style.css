@@ -12663,8 +12663,7 @@ component:button
           justify-content: flex-end;
   max-width: 28rem;
 }
-
-.card[data-ulu-proxy-click-init]:after {
+.card:after {
   position: absolute;
   content: "";
   top: 0;
@@ -12826,6 +12825,10 @@ component:button
   padding-bottom: 1rem;
   margin-top: 4rem;
 }
+.card--overlay .card__body:not(:has(~ .card__footer)) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 .card--overlay .card__body::before {
   content: "";
   position: absolute;
@@ -12839,6 +12842,13 @@ component:button
 .card--overlay .card__footer {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.card--overlay .card__body:last-child,
+.card--overlay .card__footer:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .card--overlay .card__title {
   color: white;
