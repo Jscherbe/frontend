@@ -2,39 +2,35 @@ export default function(eleventyConfig) {
   eleventyConfig.addFilter("optionsTable", tableTemplate);
 }
 
+// NOTE: This has to be flat/no indent to avoid markdown hoisting <code> out of table
 function tableTemplate(items, caption) {
   return `
-    <table class="data-table options-table">
-      ${ caption ? `<caption> ${ caption }</caption>` : "" }
-      <thead>
-        <tr>
-          <th>Option</th>
-          <th>Value</th>
-          <th>Description/Example</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${ items.map(rowTemplate).join("\n") }
-      </tbody>
-    </table>  
+<table class="data-table options-table">
+${ caption ? `<caption> ${ caption }</caption>` : "" }
+<thead>
+<tr>
+<th>Option</th>
+<th>Value</th>
+<th>Description/Example</th>
+</tr>
+</thead>
+<tbody>
+${ items.map(rowTemplate).join("\n") }
+</tbody>
+</table>  
   `;
 }
+
 function rowTemplate(item) {
   return `
-    <tr>
-      <td><strong>${ item.name }</strong></td>
-      <td><strong>${ item.values }</strong></td>
-      <td>
-        <p v-if="item.description">
-          ${ item.description }
-        </p>
-        ${ item.example ? `
-          <div class="options-table__example">
-           <code>${ escapeHtml(item.example) }</code>
-          </div>` : "" 
-        }
-      </td>
-    </tr>
+<tr>
+<td><strong>${ item.name }</strong></td>
+<td><strong>${ item.values }</strong></td>
+<td>
+${ item.description ? `<p>${ item.description }</p>` : "" }
+${ item.example ? `<p class="options-table__example"><code>${ escapeHtml(item.example) }</code></p>` : "" }
+</td>
+</tr>
   `;
 }
 

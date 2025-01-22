@@ -13974,8 +13974,9 @@ details[open] > summary .css-icon--menu-to-close:before, .css-icon--menu-to-clos
   line-height: 1.4908900142;
   font-weight: bold;
   text-align: left;
-  margin: 0 0 1em 0;
-  padding: 0;
+  margin: 0;
+  padding: 0.5em;
+  border-bottom: 1px solid #dddddd;
 }
 .data-table th,
 .data-table tr,

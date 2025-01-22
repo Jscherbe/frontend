@@ -46,9 +46,11 @@ $config: (
   "highlighted-row-border-color" : null,
   "large-header-cell-padding-y" : 1em,
   "caption-type-size" : "large",
+  "caption-background-color" : null,
   "caption-font-weight" : bold,
-  "caption-margin" : (0 0 1em 0),
-  "caption-padding" : (0,),
+  "caption-margin" : (0,),
+  "caption-padding" : (0.5em,),
+  "caption-text-align" : left,
   "extra-selector" : ".wysiwyg table"
 ) !default;
 
@@ -107,9 +109,11 @@ $config: (
         @include typography.size(get("caption-type-size"));
       }
       font-weight: get("caption-font-weight");
-      text-align: left;
+      text-align: get("caption-text-align");
       margin: get("caption-margin");
       padding: get("caption-padding");
+      background-color: get("caption-background-color");
+      border-bottom: $border;
     }
     th,
     tr,

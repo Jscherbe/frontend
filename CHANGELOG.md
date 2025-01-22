@@ -1,9 +1,13 @@
 # Change Log
 
+## Version 0.1.0-beta.8
+
+- Update "scss/components/data-table" to have border and no margin on caption by default, add caption config properties (caption-text-align, caption-background-color)
+
 ## Version 0.1.0-beta.7
 
-- Add "list-inline" component
-- Update "list-lines" component to have adjustable base selector
+- Add "scss/components/list-inline" component
+- Update "scss/components/list-lines" component to have adjustable base selector
 
 ## Version 0.1.0-beta.6
 
