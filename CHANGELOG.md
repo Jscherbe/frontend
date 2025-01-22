@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.7
+
+- Add "list-inline" component
+- Update "list-lines" component to have adjustable base selector
+
 ## Version 0.1.0-beta.6
 
 - Add "title-font-family" to scss/components/modal

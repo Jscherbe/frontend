@@ -14852,8 +14852,35 @@ table.data-table--no-border {
 }
 
 .list-lines--dense > li {
-  padding: 0.5em 0;
+  padding: 0.65em 0;
   line-height: 1.3;
+}
+
+ul.list-inline,
+.list-inline ul {
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 0 1em 0;
+}
+
+.list-inline li {
+  padding-right: 1em;
+  margin-right: 1em;
+  border-right: 1px solid var(--site-color-rule-light);
+}
+.list-inline li:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.list-inline--large-gap li {
+  padding-right: 2em;
+  margin-right: 2em;
 }
 
 .list-unordered {

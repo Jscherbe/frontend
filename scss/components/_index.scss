@@ -22,6 +22,7 @@
 @forward "image-grid" as image-grid-*;
 @forward "links" as links-*;
 @forward "list-lines" as list-lines-*;
+@forward "list-inline" as list-inline-*;
 @forward "list-ordered" as list-ordered-*;
 @forward "list-unordered" as list-unordered-*;
 @forward "menu-stack" as menu-stack-*;
@@ -69,6 +70,7 @@
 @use "horizontal-rule";
 @use "image-grid";
 @use "list-lines";
+@use "list-inline";
 @use "list-ordered";
 @use "list-unordered";
 @use "links";
@@ -119,6 +121,7 @@ $all-includes: (
   "image-grid",
   "links",
   "list-lines",
+  "list-inline",
   "list-ordered",
   "list-unordered",
   "menu-stack",
@@ -240,6 +243,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "list-lines")) {
     @include list-lines.styles;
+  }
+  @if (list.index($includes, "list-inline")) {
+    @include list-inline.styles;
   }
   @if (list.index($includes, "list-unordered")) {
     @include list-unordered.styles;
