@@ -46,7 +46,6 @@ $config: (
   "toggle-icon-rotate" : false,
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
-
   "label-color" : null,
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
@@ -77,7 +76,7 @@ $config: (
 - **Group:** menu-stack
 - **Type:** variable
 - **Lines (comments):** 25-53
-- **Lines (code):** 55-84
+- **Lines (code):** 55-83
 
 </details>
 
@@ -88,7 +87,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|checkbox-area-width|Dimension|3em|The width of the checkbox are.|
+|checkbox-area-width|Dimension|3em|The width of the checkbox area.|
 |link-separated-margin|Boolean|false|Enables a margin between the items in the menu-stack.|
 |link-separated-rule-style|Boolean|false|Enables a rule between the items in the menu-stack.|
 |nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
@@ -147,8 +146,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 87-90
-- **Lines (code):** 92-94
+- **Lines (comments):** 86-89
+- **Lines (code):** 91-93
 
 </details>
 
@@ -206,8 +205,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 111-115
-- **Lines (code):** 117-245
+- **Lines (comments):** 110-114
+- **Lines (code):** 116-244
 
 </details>
 
@@ -267,8 +266,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 96-99
-- **Lines (code):** 101-104
+- **Lines (comments):** 95-98
+- **Lines (code):** 100-103
 
 </details>
 

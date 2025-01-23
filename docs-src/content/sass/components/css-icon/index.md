@@ -44,6 +44,7 @@ $config: (
   "size" : 1.15em,
   "stroke-border-radius" : null,
   "stroke-width" : 3px,
+  "drag-gap-multiplier" : 0.75,
   "text-offset" : 0.05em,
   "text-size" : 1em,
   "vertical-align" : -0.25em,
@@ -66,8 +67,8 @@ $config: (
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** variable
-- **Lines (comments):** 24-38
-- **Lines (code):** 40-59
+- **Lines (comments):** 24-39
+- **Lines (code):** 41-61
 
 </details>
 
@@ -85,6 +86,7 @@ $config: (
 |size|Dimension|1.1em|The width, height and font size of the css-icon.|
 |stroke-border-radius|Dimension|1px|The rounding of the strokes for css-icon.|
 |stroke-width|Dimension|0.15em|The stroke width of the css-icon.|
+|drag-gap-multiplier|Dimension|0.75|Multiplier used to adjust the space between drag-x/drag-y icons (used for all stroke sizes)|
 |text-offset|Dimension|0.05em|When using an icon with text, adds a margin to match the text height.|
 |text-size|Dimension|1em|font-size of the icon when using text.|
 |vertical-align|Dimension|-0.2em|Vertical-align for css-icon|
@@ -123,8 +125,8 @@ Change modules $config
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 61-64
-- **Lines (code):** 66-68
+- **Lines (comments):** 63-66
+- **Lines (code):** 68-70
 
 </details>
 
@@ -184,8 +186,8 @@ Used to style active icons
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 79-81
-- **Lines (code):** 83-87
+- **Lines (comments):** 81-83
+- **Lines (code):** 85-89
 
 </details>
 
@@ -220,8 +222,8 @@ Output CSS icon component stylesheet
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** mixin
-- **Lines (comments):** 99-101
-- **Lines (code):** 103-434
+- **Lines (comments):** 101-103
+- **Lines (code):** 105-438
 
 </details>
 
@@ -276,8 +278,8 @@ Get a config option
 - **File:** _css-icon.scss
 - **Group:** css-icon
 - **Type:** function
-- **Lines (comments):** 70-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 72-75
+- **Lines (code):** 77-79
 
 </details>
 

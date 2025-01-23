@@ -24,7 +24,7 @@ $-fallbacks: (
     
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox are.
+/// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox area.
 /// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
 /// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
 /// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
@@ -62,7 +62,6 @@ $config: (
   "toggle-icon-rotate" : false,
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
-
   "label-color" : null,
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,

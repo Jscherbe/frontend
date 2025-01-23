@@ -38,7 +38,7 @@ export const defaults = {
   noMinHeight: false,
   class: "",
   classCloseIcon: "css-icon css-icon--close",
-  classResizerIcon: "css-icon css-icon--drag",
+  classResizerIcon: "css-icon css-icon--drag-x",
   debug: false,
   templateCloseIcon(config) {
     return `<span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true"></span>`;

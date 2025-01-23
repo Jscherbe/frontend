@@ -46,7 +46,7 @@ $config: (
   "height":                         340px,
   "height-no-header":               100px,
   "width":                          60rem,
-  
+  "width-left-right" :              30rem,
   "animation-duration" :            300ms,
   "animation-duration-exit" :       150ms,
   "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
@@ -62,10 +62,10 @@ $config: (
   "header-color":                   white,
   "header-padding":                 1rem,
   "resizer-background-color":       rgb(221, 221, 221),
-  "resizer-background-color-hover": rgb(66, 66, 66),
-  "resizer-color":                  black,
+  "resizer-background-color-hover": rgb(192, 192, 192),
+  "resizer-color":                  rgb(99, 99, 99),
   "resizer-color-hover":            black,
-  "resizer-width":                  1rem,
+  "resizer-width":                  1.25rem,
   "title-color":                    white,
   "title-font-weight":              bold,
   "title-font-family" :             null,
@@ -123,8 +123,8 @@ $config: (
 |header-color|Color|white|Type color of the header.|
 |header-padding|Dimension|1rem|The padding of the modal header.|
 |resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
-|resizer-background-color-hover|Color|rgb(66, 66, 66)|The background color of the resizer when hovered or focused.|
-|resizer-color|Color|black|The type color of the resizer.|
+|resizer-background-color-hover|Color|rgb(192, 192, 192)|The background color of the resizer when hovered or focused.|
+|resizer-color|Color|rgb(99, 99, 99)|The type color of the resizer.|
 |resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
 |resizer-width|Dimension|1rem|The width of the resizer.|
 |title-color|Color|white|Type color of the title.|
@@ -226,7 +226,7 @@ Prints modal component styles
 - **Group:** modal
 - **Type:** mixin
 - **Lines (comments):** 130-132
-- **Lines (code):** 134-484
+- **Lines (code):** 134-485
 
 </details>
 

@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.10
+
+- "scss/component/modal" - Add "width-left-right" for sidebar style width setting
+- "scss/component/css-icons" - Add "drag-gap-multiplier" to adjust the gap between strokes
+- "js/ui/modal-builder" - Fix css-icon class for resizer (to css-icon--drag-x)
+
 ## Version 0.1.0-beta.9
 
 - Updates to "scss/component/card" - Fix card overlay border-radius (body and footer), fix card border being conditional on interactive (proxy-click)

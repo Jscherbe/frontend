@@ -30,6 +30,7 @@
 /// @prop {Dimension} size [1.1em] The width, height and font size of the css-icon.
 /// @prop {Dimension} stroke-border-radius [1px] The rounding of the strokes for css-icon.
 /// @prop {Dimension} stroke-width [0.15em] The stroke width of the css-icon.
+/// @prop {Dimension} drag-gap-multiplier [0.75] Multiplier used to adjust the space between drag-x/drag-y icons (used for all stroke sizes)
 /// @prop {Dimension} text-offset [0.05em] When using an icon with text, adds a margin to match the text height.
 /// @prop {Dimension} text-size [1em] font-size of the icon when using text.
 /// @prop {Dimension} vertical-align [-0.2em] Vertical-align for css-icon 
@@ -45,6 +46,7 @@ $config: (
   "size" : 1.15em,
   "stroke-border-radius" : null,
   "stroke-width" : 3px,
+  "drag-gap-multiplier" : 0.75,
   "text-offset" : 0.05em,
   "text-size" : 1em,
   "vertical-align" : -0.25em,
@@ -310,21 +312,23 @@ $config: (
     &::before {
       content: "";
       // Make up for margin-top by default
-      margin-top: -($stroke-width + $stroke-width);
+      margin-top: -(($stroke-width + $stroke-width) * get("drag-gap-multiplier"));
     }
     &::after {
       content: "";
-      margin-top: $stroke-width;
+      margin-top: $stroke-width * get("drag-gap-multiplier");
     }
   }
 
   @include for-each-stroke() using ($alt-width, $alt-border-radius) {
+    // $drag-gap-multiplier: map.get($props, "drag-gap-multiplier");
+    // $drag-gap-multiplier: if($drag-gap-multiplier, $drag-gap-multiplier, 0);
     &[class*="css-icon--drag"] {
       &::before {
-        margin-top: -($alt-width + $alt-width);
+        margin-top: -(($alt-width + $alt-width) * get("drag-gap-multiplier"));
       }
       &::after {
-        margin-top: $alt-width;
+        margin-top: $alt-width * get("drag-gap-multiplier");
       }
     }
   }
