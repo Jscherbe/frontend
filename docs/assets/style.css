@@ -13159,18 +13159,18 @@ component:button
 
 [class*=css-icon--drag]::before {
   content: "";
-  margin-top: -6px;
+  margin-top: -4.5px;
 }
 [class*=css-icon--drag]::after {
   content: "";
-  margin-top: 3px;
+  margin-top: 2.25px;
 }
 
 .css-icon--stroke-large[class*=css-icon--drag]::before {
-  margin-top: -10px;
+  margin-top: -7.5px;
 }
 .css-icon--stroke-large[class*=css-icon--drag]::after {
-  margin-top: 5px;
+  margin-top: 3.75px;
 }
 
 .css-icon--menu,
@@ -15203,7 +15203,7 @@ ul.list-inline,
   top: 0;
   bottom: 0;
   left: 0;
-  width: 1rem;
+  width: 1.25rem;
   display: block;
   cursor: col-resize;
   background-color: rgb(221, 221, 221);
@@ -15222,11 +15222,11 @@ ul.list-inline,
           transition-duration: 300ms;
   -webkit-transition-delay: 100ms;
           transition-delay: 100ms;
-  color: black;
+  color: rgb(99, 99, 99);
 }
 .modal__resizer:hover {
   color: black;
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(192, 192, 192);
 }
 .modal--left .modal__resizer {
   left: auto;
@@ -15252,6 +15252,7 @@ ul.list-inline,
 .modal--left {
   border-radius: 0;
   height: 100vh;
+  width: 30rem;
   top: 0;
   bottom: 0;
   -webkit-transform: none;
@@ -15327,10 +15328,10 @@ ul.list-inline,
   resize: both;
 }
 .modal--resize.modal--right {
-  padding-left: 1rem;
+  padding-left: 1.25rem;
 }
 .modal--resize.modal--left {
-  padding-right: 1rem;
+  padding-right: 1.25rem;
 }
 
 .modal--body-fills .modal__header {
