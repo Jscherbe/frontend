@@ -54,12 +54,13 @@ $-fallbacks: (
 /// @prop {Color} header-color [white] Type color of the header.
 /// @prop {Dimension} header-padding [1rem] The padding of the modal header.
 /// @prop {Color} resizer-background-color [rgb(221, 221, 221)] The background color of the resizer.
-/// @prop {Color} resizer-background-color-hover [rgb(66, 66, 66)] The background color of the resizer when hovered or focused.
-/// @prop {Color} resizer-color [black] The type color of the resizer.
+/// @prop {Color} resizer-background-color-hover [rgb(192, 192, 192)] The background color of the resizer when hovered or focused.
+/// @prop {Color} resizer-color [rgb(99, 99, 99)] The type color of the resizer.
 /// @prop {Color} resizer-color-hover [black] The type color of the resizer when hovered or focused.
 /// @prop {Dimension} resizer-width [1rem] The width of the resizer.
 /// @prop {Color} title-color [white] Type color of the title.
 /// @prop {CssValue} title-font-weight [bold] Font weight of the title.
+/// @prop {CssValue} title-font-family [null] Font family for title
 /// @prop {Dimension} title-icon-margin [0.5em] The margin of the title icon
 /// @prop {String} title-size [large] The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
@@ -75,7 +76,7 @@ $config: (
   "height":                         340px,
   "height-no-header":               100px,
   "width":                          60rem,
-  
+  "width-left-right" :              30rem,
   "animation-duration" :            300ms,
   "animation-duration-exit" :       150ms,
   "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
@@ -91,12 +92,13 @@ $config: (
   "header-color":                   white,
   "header-padding":                 1rem,
   "resizer-background-color":       rgb(221, 221, 221),
-  "resizer-background-color-hover": rgb(66, 66, 66),
-  "resizer-color":                  black,
+  "resizer-background-color-hover": rgb(192, 192, 192),
+  "resizer-color":                  rgb(99, 99, 99),
   "resizer-color-hover":            black,
-  "resizer-width":                  1rem,
+  "resizer-width":                  1.25rem,
   "title-color":                    white,
   "title-font-weight":              bold,
+  "title-font-family" :             null,
   "title-icon-margin" :             0.5em,
   "title-size" :                    "large",
   "title-text-transform" :          null,
@@ -194,6 +196,7 @@ $config: (
     margin: 0;
     color: color.get(get("title-color"));
     font-weight: get("title-font-weight");
+    font-family: get("title-font-family");
     text-transform: get("title-text-transform");
     @if (get("title-size")) {
       @include typography.size(get("title-size"), $only-font-size: true);
@@ -261,6 +264,7 @@ $config: (
   #{ $prefix }--left {
     border-radius: 0;
     height: 100vh;
+    width: get("width-left-right");
     top: 0;
     bottom: 0;
     transform: none;

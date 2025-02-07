@@ -1,0 +1,80 @@
+////
+/// @group list-inline
+////
+
+@use "sass:map";
+
+@use "../element";
+@use "../selector";
+@use "../utils";
+
+/// Module Config
+/// @prop {String} rule-style ["light"] Name of element > rule style to use for divider/border
+/// @prop {Dimension} margin-top [0] Top margin of list.
+/// @prop {Dimension} margin-bottom [1em] Bottom margin of list.
+/// @prop {Dimension} space-between [1em] Gap between item and dividers
+/// @prop {Dimension} space-between-large [1em] Gap between item and dividers when using large-gap modifier
+
+$config: (
+  "rule-style" : "light",
+  "margin-top": 0,
+  "margin-bottom": 1em,
+  "space-between" : 1em,
+  "space-between-large" : 2em
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-list-inline-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-list-inline-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "list-inline [config]");
+}
+
+/// Output component stylesheet
+/// @example scss
+///  @include ulu.component-list-inline-styles();
+
+@mixin styles {
+  $prefix: selector.class("list-inline");
+  $border: element.get-rule-style(get("rule-style"));
+  
+  ul#{ $prefix },
+  #{ $prefix } ul {
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: get("margin-top") 0 get("margin-bottom") 0;
+  }
+  #{ $prefix } {
+    li {
+      // Not using flex gap because we would need to position
+      // pseudo for divider, so we would still need to use math
+      // So custom properties couldn't be used (no benefit)
+      padding-right: get("space-between");
+      margin-right: get("space-between");
+      border-right: $border;
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  #{ $prefix }--large-gap {
+    li {
+      padding-right: get("space-between-large");
+      margin-right: get("space-between-large");
+    }
+  }
+}

@@ -3,24 +3,40 @@
 ////
 
 @use "sass:map";
+@use "sass:meta";
 
 @use "../element";
 @use "../typography";
+@use "../selector";
 @use "../utils";
+
+// Used for function fallback
+$-fallbacks: (
+  "dense-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+);
 
 /// Module Config
 /// @prop {Boolean} border-first [true] If enabled, adds a top border to the first item in list-lines.
 /// @prop {Boolean} border-last [true] If enabled, adds a bottom border to the last item in list-lines.
+/// @prop {String} rule-style ["light"] Name of element > rule style to use for divider/border
 /// @prop {Dimension} margin-bottom [1em] Bottom margin of list.
 /// @prop {Dimension} margin-top [0] Top margin of list.
 /// @prop {Dimension} padding-between [1em] Padding between items in list.
+/// @prop {Dimension} padding-between [1em] Padding between items in list when using dense modifier
+/// @prop {Dimension} line-height-dense [true] Line height when list lines has dense modifier (defaults to typography line-height-dense)
 
 $config: (
   "border-first" : true,
   "border-last" : true,
   "margin-bottom": 1em,
   "margin-top": 0,
-  "padding-between" : 1em
+  "rule-style" : "light",
+  "padding-between" : 1em,
+  "dense-padding-between" : 0.65em,
+  "dense-line-height" : true
 ) !default;
 
 /// Change modules $config
@@ -38,31 +54,8 @@ $config: (
 ///   @include ulu.component-list-lines-get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "grid [config]");
-}
-
-/// Output component styles
-
-@mixin inner-styles {
-  $border: element.get-rule-style("light") !default;
-  list-style: none;
-  margin: get("margin-top") 0 get("margin-bottom") 0;
-  padding: 0;
-  @if (get("border-first")) {
-    border-top: $border;
-  }
-  >li {
-    border-bottom: $border;
-    padding: get("padding-between") 0;
-    >*:last-child {
-      margin-bottom: 0;
-    }
-    @if (not get("border-last")) {
-      &:last-child {
-        border-bottom-width: 0;
-      }
-    }
-  }
+  $value: utils.require-map-get($config, $name, "list-lines [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Output component stylesheet
@@ -70,14 +63,33 @@ $config: (
 ///  @include ulu.component-list-lines-styles();
 
 @mixin styles {
-  
-  .list-lines {
-    @include inner-styles;
-  }
-  .list-lines--dense {
+  $prefix: selector.class("list-lines");
+  $border: element.get-rule-style(get("rule-style"));
+
+  #{ $prefix } {
+    list-style: none;
+    margin: get("margin-top") 0 get("margin-bottom") 0;
+    padding: 0;
+    @if (get("border-first")) {
+      border-top: $border;
+    }
     >li {
-      padding: 0.5em 0;
-      line-height: typography.get("line-height-dense");
+      border-bottom: $border;
+      padding: get("padding-between") 0;
+      >*:last-child {
+        margin-bottom: 0;
+      }
+      @if (not get("border-last")) {
+        &:last-child {
+          border-bottom-width: 0;
+        }
+      }
+    }
+  }
+  #{ $prefix }--dense {
+    >li {
+      padding: get("dense-padding-between") 0;
+      line-height: get("dense-line-height");
     }
   }
 }

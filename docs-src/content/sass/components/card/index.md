@@ -302,7 +302,7 @@ Prints component styles
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 161-165
-- **Lines (code):** 167-423
+- **Lines (code):** 167-433
 
 </details>
 

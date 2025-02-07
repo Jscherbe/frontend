@@ -305,7 +305,6 @@ $config: (
   }
   select {
     font-weight: get("font-weight-select");
-    border: get("select-border");
     border-radius: get("select-border-radius");
     background-color: color.get(get("select-background-color"));
     padding: -fallback("select-padding-y", "input-padding-y") -fallback("select-padding-x", "input-padding-x");

@@ -46,7 +46,7 @@ $config: (
   "height":                         340px,
   "height-no-header":               100px,
   "width":                          60rem,
-  
+  "width-left-right" :              30rem,
   "animation-duration" :            300ms,
   "animation-duration-exit" :       150ms,
   "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
@@ -62,12 +62,13 @@ $config: (
   "header-color":                   white,
   "header-padding":                 1rem,
   "resizer-background-color":       rgb(221, 221, 221),
-  "resizer-background-color-hover": rgb(66, 66, 66),
-  "resizer-color":                  black,
+  "resizer-background-color-hover": rgb(192, 192, 192),
+  "resizer-color":                  rgb(99, 99, 99),
   "resizer-color-hover":            black,
-  "resizer-width":                  1rem,
+  "resizer-width":                  1.25rem,
   "title-color":                    white,
   "title-font-weight":              bold,
+  "title-font-family" :             null,
   "title-icon-margin" :             0.5em,
   "title-size" :                    "large",
   "title-text-transform" :          null,
@@ -86,8 +87,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 31-66
-- **Lines (code):** 68-107
+- **Lines (comments):** 31-67
+- **Lines (code):** 69-109
 
 </details>
 
@@ -122,12 +123,13 @@ $config: (
 |header-color|Color|white|Type color of the header.|
 |header-padding|Dimension|1rem|The padding of the modal header.|
 |resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
-|resizer-background-color-hover|Color|rgb(66, 66, 66)|The background color of the resizer when hovered or focused.|
-|resizer-color|Color|black|The type color of the resizer.|
+|resizer-background-color-hover|Color|rgb(192, 192, 192)|The background color of the resizer when hovered or focused.|
+|resizer-color|Color|rgb(99, 99, 99)|The type color of the resizer.|
 |resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
 |resizer-width|Dimension|1rem|The width of the resizer.|
 |title-color|Color|white|Type color of the title.|
 |title-font-weight|CssValue|bold|Font weight of the title.|
+|title-font-family|CssValue|null|Font family for title|
 |title-icon-margin|Dimension|0.5em|The margin of the title icon|
 |title-size|String|large|The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
 |title-text-transform|CssValue|null|Transform option for the title.|
@@ -164,8 +166,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 109-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 111-114
+- **Lines (code):** 116-118
 
 </details>
 
@@ -223,8 +225,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 128-130
-- **Lines (code):** 132-481
+- **Lines (comments):** 130-132
+- **Lines (code):** 134-485
 
 </details>
 
@@ -278,8 +280,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 118-121
-- **Lines (code):** 123-126
+- **Lines (comments):** 120-123
+- **Lines (code):** 125-128
 
 </details>
 

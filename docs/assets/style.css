@@ -11892,7 +11892,7 @@ components:
 }
 
 .accordion__summary {
-  background-color: white;
+  background-color: var(--site-color-background);
   margin-left: -1.5em;
   margin-right: -1.5em;
   padding: 1rem 1.5em;
@@ -12663,8 +12663,7 @@ component:button
           justify-content: flex-end;
   max-width: 28rem;
 }
-
-.card[data-ulu-proxy-click-init]:after {
+.card:after {
   position: absolute;
   content: "";
   top: 0;
@@ -12826,6 +12825,10 @@ component:button
   padding-bottom: 1rem;
   margin-top: 4rem;
 }
+.card--overlay .card__body:not(:has(~ .card__footer)) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 .card--overlay .card__body::before {
   content: "";
   position: absolute;
@@ -12839,6 +12842,13 @@ component:button
 .card--overlay .card__footer {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.card--overlay .card__body:last-child,
+.card--overlay .card__footer:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .card--overlay .card__title {
   color: white;
@@ -13149,18 +13159,18 @@ component:button
 
 [class*=css-icon--drag]::before {
   content: "";
-  margin-top: -6px;
+  margin-top: -4.5px;
 }
 [class*=css-icon--drag]::after {
   content: "";
-  margin-top: 3px;
+  margin-top: 2.25px;
 }
 
 .css-icon--stroke-large[class*=css-icon--drag]::before {
-  margin-top: -10px;
+  margin-top: -7.5px;
 }
 .css-icon--stroke-large[class*=css-icon--drag]::after {
-  margin-top: 5px;
+  margin-top: 3.75px;
 }
 
 .css-icon--menu,
@@ -13974,8 +13984,9 @@ details[open] > summary .css-icon--menu-to-close:before, .css-icon--menu-to-clos
   line-height: 1.4908900142;
   font-weight: bold;
   text-align: left;
-  margin: 0 0 1em 0;
-  padding: 0;
+  margin: 0;
+  padding: 0.5em;
+  border-bottom: 1px solid #dddddd;
 }
 .data-table th,
 .data-table tr,
@@ -14852,8 +14863,35 @@ table.data-table--no-border {
 }
 
 .list-lines--dense > li {
-  padding: 0.5em 0;
+  padding: 0.65em 0;
   line-height: 1.3;
+}
+
+ul.list-inline,
+.list-inline ul {
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 0 1em 0;
+}
+
+.list-inline li {
+  padding-right: 1em;
+  margin-right: 1em;
+  border-right: 1px solid var(--site-color-rule-light);
+}
+.list-inline li:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.list-inline--large-gap li {
+  padding-right: 2em;
+  margin-right: 2em;
 }
 
 .list-unordered {
@@ -15165,7 +15203,7 @@ table.data-table--no-border {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 1rem;
+  width: 1.25rem;
   display: block;
   cursor: col-resize;
   background-color: rgb(221, 221, 221);
@@ -15184,11 +15222,11 @@ table.data-table--no-border {
           transition-duration: 300ms;
   -webkit-transition-delay: 100ms;
           transition-delay: 100ms;
-  color: black;
+  color: rgb(99, 99, 99);
 }
 .modal__resizer:hover {
   color: black;
-  background-color: rgb(66, 66, 66);
+  background-color: rgb(192, 192, 192);
 }
 .modal--left .modal__resizer {
   left: auto;
@@ -15214,6 +15252,7 @@ table.data-table--no-border {
 .modal--left {
   border-radius: 0;
   height: 100vh;
+  width: 30rem;
   top: 0;
   bottom: 0;
   -webkit-transform: none;
@@ -15289,10 +15328,10 @@ table.data-table--no-border {
   resize: both;
 }
 .modal--resize.modal--right {
-  padding-left: 1rem;
+  padding-left: 1.25rem;
 }
 .modal--resize.modal--left {
-  padding-right: 1rem;
+  padding-right: 1.25rem;
 }
 
 .modal--body-fills .modal__header {
@@ -15611,6 +15650,10 @@ table.data-table--no-border {
             transform: translateX(15%);
   }
 }
+.nav-strip {
+  max-width: 100%;
+}
+
 .nav-strip__list,
 .nav-strip--auto ul {
   display: -webkit-box;
@@ -16322,17 +16365,17 @@ table.data-table--no-border {
   width: 1rem;
   height: 1rem;
   background-color: transparent;
-  border: 2px solid blue;
+  border: 2px solid var(--site-color-link);
   border-radius: 50%;
 }
 .Slider__nav-button:hover {
-  background-color: blue;
+  background-color: var(--site-color-link);
 }
 
 .Slider__nav-button--active,
 .Slider__nav-button--active:hover {
-  background-color: blue;
-  border-color: blue;
+  background-color: var(--site-color-link);
+  border-color: var(--site-color-link);
 }
 
 .Slider__control-button,

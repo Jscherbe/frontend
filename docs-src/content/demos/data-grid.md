@@ -14,6 +14,7 @@ On the smallest size the grid columns will span 100%. The grid is setup using tw
 ## Options
 
 {{ gridAttr | optionsTable: "Options for 'data-grid'" }}
+
 {{ gridItemAttr | optionsTable: "Options for 'data-grid-item'" }}
 
 ## Examples

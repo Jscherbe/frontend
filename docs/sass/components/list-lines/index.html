@@ -343,6 +343,36 @@
 
         <li class="nav-tree__item ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/list-inline/">
+          
+    
+    <span class="nav-tree__text">
+      List Inline
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/list-lines/">
+          
+    
+    <span class="nav-tree__text">
+      List Lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/menu-stack/">
           
     
@@ -1352,6 +1382,21 @@
     
     <span class="nav-tree__text">
       Links
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/list-inline/">
+          
+    
+    <span class="nav-tree__text">
+      List-inline
     </span>
   
         </a>
@@ -2602,6 +2647,36 @@
 
         <li class="nav-tree__item ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/list-inline/">
+          
+    
+    <span class="nav-tree__text">
+      List Inline
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/list-lines/">
+          
+    
+    <span class="nav-tree__text">
+      List Lines
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/menu-stack/">
           
     
@@ -3619,6 +3694,21 @@
         </li>
       
 
+        <li class="nav-tree__item ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/list-inline/">
+          
+    
+    <span class="nav-tree__text">
+      List-inline
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
         <li class="nav-tree__item is-active is-active-trail">
           
         <a class="nav-tree__link  is-active is-active-trail" href="/frontend/sass/components/list-lines/" aria-current="page">
@@ -4603,9 +4693,6 @@
                     <li><a href="#mixin-set">set()</a>
             		</li>
 
-                    <li><a href="#mixin-inner-styles">inner-styles()</a>
-            		</li>
-
                     <li><a href="#mixin-styles">styles()</a>
             		</li>
                 </ol>
@@ -4646,7 +4733,10 @@
   <span class="pjs-token pjs-string">"border-last"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-bottom"</span><span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-top"</span><span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-between"</span> <span class="pjs-token pjs-punctuation">:</span> 1em
+  <span class="pjs-token pjs-string">"rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-between"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dense-padding-between"</span> <span class="pjs-token pjs-punctuation">:</span> 0.65em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"dense-line-height"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -4654,8 +4744,8 @@
 <li><strong>File:</strong> _list-lines.scss</li>
 <li><strong>Group:</strong> list-lines</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 12-17</li>
-<li><strong>Lines (code):</strong> 19-25</li>
+<li><strong>Lines (comments):</strong> 21-29</li>
+<li><strong>Lines (code):</strong> 31-40</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -4682,6 +4772,12 @@
 <td style="text-align:left">If enabled, adds a bottom border to the last item in list-lines.</td>
 </tr>
 <tr>
+<td style="text-align:left">rule-style</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;light&quot;</td>
+<td style="text-align:left">Name of element &gt; rule style to use for divider/border</td>
+</tr>
+<tr>
 <td style="text-align:left">margin-bottom</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">1em</td>
@@ -4699,6 +4795,18 @@
 <td style="text-align:left">1em</td>
 <td style="text-align:left">Padding between items in list.</td>
 </tr>
+<tr>
+<td style="text-align:left">padding-between</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1em</td>
+<td style="text-align:left">Padding between items in list when using dense modifier</td>
+</tr>
+<tr>
+<td style="text-align:left">line-height-dense</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Line height when list lines has dense modifier (defaults to typography line-height-dense)</td>
+</tr>
 </tbody>
 </table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -4715,8 +4823,8 @@
 <li><strong>File:</strong> _list-lines.scss</li>
 <li><strong>Group:</strong> list-lines</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 27-30</li>
-<li><strong>Lines (code):</strong> 32-34</li>
+<li><strong>Lines (comments):</strong> 42-45</li>
+<li><strong>Lines (code):</strong> 47-49</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -4743,27 +4851,6 @@
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-inner-styles" tabindex="-1">inner-styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Output component styles</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _list-lines.scss</li>
-<li><strong>Group:</strong> list-lines</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 45-45</li>
-<li><strong>Lines (code):</strong> 47-67</li>
-</ul>
-</details>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -4776,15 +4863,14 @@
 <li><strong>File:</strong> _list-lines.scss</li>
 <li><strong>Group:</strong> list-lines</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 69-71</li>
-<li><strong>Lines (code):</strong> 73-84</li>
+<li><strong>Lines (comments):</strong> 61-63</li>
+<li><strong>Lines (code):</strong> 65-95</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-list-lines-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="require-1" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/frontend/sass/components/list-lines/#mixin-inner-styles">inner-styles()</a></li>
 <li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
@@ -4801,8 +4887,8 @@
 <li><strong>File:</strong> _list-lines.scss</li>
 <li><strong>Group:</strong> list-lines</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 36-39</li>
-<li><strong>Lines (code):</strong> 41-43</li>
+<li><strong>Lines (comments):</strong> 51-54</li>
+<li><strong>Lines (code):</strong> 56-59</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -4824,7 +4910,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

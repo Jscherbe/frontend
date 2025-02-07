@@ -1,17 +1,27 @@
 # Change Log
 
+## Version 0.1.0-beta.10
+
+- "scss/component/modal" - Add "width-left-right" for sidebar style width setting
+- "scss/component/css-icons" - Add "drag-gap-multiplier" to adjust the gap between strokes
+- "js/ui/modal-builder" - Fix css-icon class for resizer (to css-icon--drag-x)
+
+## Version 0.1.0-beta.9
+
+- Updates to "scss/component/card" - Fix card overlay border-radius (body and footer), fix card border being conditional on interactive (proxy-click)
+
+## Version 0.1.0-beta.8
+
+- Update "scss/components/data-table" to have border and no margin on caption by default, add caption config properties (caption-text-align, caption-background-color)
+
+## Version 0.1.0-beta.7
+
+- Add "scss/components/list-inline" component
+- Update "scss/components/list-lines" component to have adjustable base selector
+
 ## Version 0.1.0-beta.6
 
-  - scss
-    - callout
-      - Adjustments to left cap styling
-        - Left-cap height and horizontal positioning now include the border-width
-        - Left-cap mixin is now a private mixin
-      - **replaced "border" config option with "border-color" and "border-width"**
-    - form
-      - Replaced config defaults using color.get("error") to now use color.get("danger")
-    - color
-      - New color options and adjusted colors error and warning.
+- Add "title-font-family" to scss/components/modal
 
 ## Version 0.1.0-beta.5
 

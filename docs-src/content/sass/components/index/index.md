@@ -56,6 +56,7 @@ $all-includes: (
   "image-grid",
   "links",
   "list-lines",
+  "list-inline",
   "list-ordered",
   "list-unordered",
   "menu-stack",
@@ -92,8 +93,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 99-100
-- **Lines (code):** 102-147
+- **Lines (comments):** 101-102
+- **Lines (code):** 104-150
 
 </details>
 
@@ -128,8 +129,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 149-150
-- **Lines (code):** 152-152
+- **Lines (comments):** 152-153
+- **Lines (code):** 155-155
 
 </details>
 
@@ -165,8 +166,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 154-156
-- **Lines (code):** 158-161
+- **Lines (comments):** 157-159
+- **Lines (code):** 161-164
 
 </details>
 
@@ -211,8 +212,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 163-164
-- **Lines (code):** 166-168
+- **Lines (comments):** 166-167
+- **Lines (code):** 169-171
 
 </details>
 
@@ -256,8 +257,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 170-174
-- **Lines (code):** 176-313
+- **Lines (comments):** 173-177
+- **Lines (code):** 179-319
 
 </details>
 
