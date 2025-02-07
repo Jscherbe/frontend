@@ -1,5 +1,18 @@
 # Change Log
 
+## Version 0.1.0-beta.11
+
+  - scss
+    - callout
+      - Adjustments to left cap styling
+        - Left-cap height and horizontal positioning now include the border-width
+        - Left-cap mixin is now a private mixin
+      - **replaced "border" config option with "border-color" and "border-width"**
+    - form
+      - Replaced config defaults using color.get("error") to now use color.get("danger")
+    - color
+      - New color options and adjusted colors error and warning.
+
 ## Version 0.1.0-beta.10
 
 - "scss/component/modal" - Add "width-left-right" for sidebar style width setting
