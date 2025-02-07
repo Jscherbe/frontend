@@ -14,10 +14,6 @@
 
 // Used for function fallback
 $-fallbacks: (
-  "border" : (
-    "function" : meta.get-function("get-rule-style", false, "element"),
-    "property" : "light"
-  ),
   "border-radius" : (
     "function" : meta.get-function("get", false, "element"),
     "property" : "border-radius"
@@ -27,8 +23,9 @@ $-fallbacks: (
 /// Module Settings
 /// @type Map
 /// @prop {Color} background-color [rgb(240, 240, 240)] The background color of the Callout.
-/// @prop {Boolean} border [true] The border of the Callout.
+/// @prop {Color} border-color ["rule-light"] The border color of the Callout.
 /// @prop {Boolean} border-radius [true] The border radius of the Callout.
+/// @prop {Dimension} border-width [1px] The border width of the Callout.
 /// @prop {CssValue} box-shadow [none] The box-shadow of the Callout.
 /// @prop {Boolean} left-cap [false] Toggles the use of left caps in styled callouts.
 /// @prop {Color} left-cap-color [green] Color of the left cap.
@@ -38,58 +35,41 @@ $-fallbacks: (
 
 $config: (
   "background-color" : rgb(240, 240, 240),
-  "border" : true,
+  "border-color" : "rule-light",
   "border-radius" :  true,
+  "border-width" : 1px,
   "box-shadow" : none,
-  "left-cap" : false,
-  "left-cap-color" : green,
+  "left-cap" : true,
+  "left-cap-color" : rgb(160, 160, 160),
   "left-cap-width" : 0.5rem,
   "margin" : 2rem,
   "padding" : 1.5rem,
 ) !default;
 
 $styles: (
-  "background-dark" : (
-    "background-color" : rgb(240, 240, 240)
-  ),
   "outline" : (
     "background-color": transparent
   ),
-  "light" : (
-    "background-color" : white,
-    "border-color" : gray
-  ),
-  "informative" : (
-    "background-color" : #e7f6f8,
-    "left-cap-color" : #00bde3,
+  "info" : (
+    "background-color" : "info-background",
+    "left-cap-color" : "info",
     "left-cap" : true,
-    "left-cap-width": 0.5rem
   ),
   "warning" : (
-    "background-color" : #faf3d1,
-    "left-cap-color" : #ffbe2e,
+    "background-color" : "info-background",
+    "left-cap-color" : "info",
     "left-cap" : true,
-    "left-cap-width": 0.5rem
   ),
   "success" : (
-    "background-color" : #ecf3ec,
-    "left-cap-color" : #00a91c,
+    "background-color" : "success-background",
+    "left-cap-color" : "success",
     "left-cap" : true,
-    "left-cap-width": 0.5rem
   ),
   "danger" : (
-    "background-color" : #f4e3db,
-    "left-cap-color" : #d54309,
+    "background-color" : "danger-background",
+    "left-cap-color" : "danger",
     "left-cap" : true,
-    "left-cap-width": 0.5rem
   ),
-  "emergency" : (
-    "background-color" : #9c3d10,
-    "left-cap-color" : #9c3d10,
-    "left-cap" : true,
-    "color" : white,
-    "left-cap-width": 0.5rem
-  )
 ) !default;
 
 /// Change modules $config
@@ -119,22 +99,14 @@ $styles: (
   $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
 
-/// Output styling for a callout that adds a left cap
-/// @param {Dimension} $width The width of the left cap
-/// @param {Color} $color The left cap color
-
-@mixin left-cap($width: get("left-cap-width"), $color: get("left-cap-color")) {
+@mixin -left-cap($color: get("left-cap-color")) {
+  $left-padding: get-spacing-left(get("padding"));
   position: relative; 
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  padding-left: get("left-cap-width") + $left-padding;
   &::before {
-    position: absolute;
     content: "";
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: $width;
-    background-color: color.get($color);
   }
 }
 
@@ -144,19 +116,30 @@ $styles: (
 
 @mixin styles {
   $prefix: selector.class("callout");
-
+  
   #{ $prefix } {
     background-color: color.get(get("background-color"));
     padding: get("padding");
-    border: get("border");
+    border: get("border-width") solid color.get(get("border-color"));
     margin-bottom: get("margin");
     box-shadow: get("box-shadow");
     border-radius: get("border-radius");
     & >:first-child {
       margin-top: 0;
     }
+    &::before {
+      position: absolute;
+      left: 0 - get("border-width");
+      top: 0 - get("border-width");
+      bottom: 0 - get("border-width");
+      width: get("left-cap-width");
+      background-color: color.get(get("left-cap-color"));
+    }
     @if get("left-cap") {
-      @include left-cap();
+      @include -left-cap();
+      &::before {
+        content: "";
+      }
     }
   }
   @each $name, $style in $styles {
@@ -168,8 +151,13 @@ $styles: (
       border-color: color.get(map.get($style, "border-color")); 
       box-shadow: map.get($style, "box-shadow"); 
       padding: map.get($style, "padding"); 
+      &::before {
+        background-color: color.get(map.get($style, "left-cap-color"));
+      }
       @if map.get($style, "left-cap") {
-        @include left-cap( map.get($style, "left-cap-width"), map.get($style, "left-cap-color"));
+        @if not get("left-cap") {
+          @include -left-cap();
+        }
       }
     }
   }

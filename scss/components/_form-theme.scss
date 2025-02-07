@@ -18,7 +18,7 @@
 /// @prop {} color [inherit]
 /// @prop {} color-placeholder ["type-tertiary"]
 /// @prop {} drupal [false]
-/// @prop {} error-color ["error"]
+/// @prop {} error-color ["danger"]
 /// @prop {} error-highlight-color [rgb(251, 242, 242)]
 /// @prop {} error-selector [".is-danger"]
 /// @prop {} file-button-style [true]
@@ -37,7 +37,7 @@
 /// @prop {} input-background-color [white]
 /// @prop {} item-border-radius [null]
 /// @prop {} item-highlight-width [6px]
-/// @prop {} required-color ["error"]
+/// @prop {} required-color ["danger"]
 /// @prop {} text-input-margin-bottom [0.5em]
 /// @prop {} text-input-margin-top [1em]
 /// @prop {} warning-color ["warning"]
@@ -99,7 +99,7 @@ $config: (
   "color"                                     : inherit,
   "color-placeholder"                         : "type-tertiary",
   "drupal"                                    : false,
-  "error-color"                               : "error",
+  "error-color"                               : "danger",
   "error-highlight-color"                     : rgb(251, 242, 242),
   "error-selector"                            : ".is-danger",
   "file-button-style"                         : true,
@@ -118,7 +118,7 @@ $config: (
   "input-background-color"                    : white,
   "item-border-radius"                        : null,
   "item-highlight-width"                      : 6px,
-  "required-color"                            : "error",
+  "required-color"                            : "danger",
   "text-input-margin-bottom"                  : 0.5em,
   "text-input-margin-top"                     : 1em,
   "warning-color"                             : "warning",

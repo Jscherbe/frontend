@@ -14,74 +14,6 @@ A container for content that highlights important information, provides context,
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "background-color" : rgb(240, 240, 240),
-  "border" : true,
-  "border-radius" :  true,
-  "box-shadow" : none,
-  "left-cap" : false,
-  "left-cap-color" : green,
-  "left-cap-width" : 0.5rem,
-  "margin" : 2rem,
-  "padding" : 1.5rem,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _callout.scss
-- **Group:** callout
-- **Type:** variable
-- **Lines (comments):** 27-37
-- **Lines (code):** 39-49
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|background-color|Color|rgb(240, 240, 240)|The background color of the Callout.|
-|border|Boolean|true|The border of the Callout.|
-|border-radius|Boolean|true|The border radius of the Callout.|
-|box-shadow|CssValue|none|The box-shadow of the Callout.|
-|left-cap|Boolean|false|Toggles the use of left caps in styled callouts.|
-|left-cap-color|Color|green|Color of the left cap.|
-|left-cap-width|Dimension|0.5rem|Width of the left cap.|
-|margin|Dimension|2rem|Bottom margin of the Callout.|
-|padding|Dimension|1.5rem|Padding of the Callout.|
-
-    
-  
-
 ## Mixins
 
 
@@ -110,8 +42,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 95-98
-- **Lines (code):** 100-102
+- **Lines (comments):** 85-88
+- **Lines (code):** 90-92
 
 </details>
 
@@ -169,8 +101,8 @@ Set callout style variations
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 114-116
-- **Lines (code):** 118-120
+- **Lines (comments):** 104-106
+- **Lines (code):** 108-110
 
 </details>
 
@@ -189,52 +121,6 @@ Set callout style variations
 #### Require
 
 - $styles
-  
-
-
-<div class="sassdoc-item-header">
-
-###  left-cap() {#mixin-left-cap}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-
-</div>
-
-  
-
-Output styling for a callout that adds a left cap
-    
-    
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _callout.scss
-- **Group:** callout
-- **Type:** mixin
-- **Lines (comments):** 122-124
-- **Lines (code):** 126-139
-
-</details>
-
-    
-
-#### Parameters
-
-
-|Name|Type|Description|
-|:--|:--|:--|
-|$width|`Dimension`|The width of the left cap|
-|$color|`Color`|The left cap color|
-
-    
-
-#### Require
-
-- [get()](/sass/components/accordion/#function-get)
   
 
 
@@ -261,8 +147,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 141-143
-- **Lines (code):** 145-176
+- **Lines (comments):** 128-130
+- **Lines (code):** 132-168
 
 </details>
 
@@ -284,7 +170,6 @@ Output component stylesheet
 
 #### Require
 
-- [left-cap()](/sass/components/callout/#mixin-left-cap)
 - [get()](/sass/components/accordion/#function-get)
 - $styles
   
@@ -318,8 +203,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 104-107
-- **Lines (code):** 109-112
+- **Lines (comments):** 94-97
+- **Lines (code):** 99-102
 
 </details>
 
@@ -352,5 +237,142 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## CSS
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  // Did we decide to get rid of the callout fallback function? If not, how do I get rule width for cap height/width
+//   remove it and use border-width and border-color
+// how to get padding-left regardless of callout config for padding
+//    get-spacing-left($value)
+
+$config: (
+  "background-color" : "callout-background",
+  "border" : true,
+  "border-width" : 1px,
+  "border-color" : true,
+  "border-radius" :  true,
+  "box-shadow" : none,
+  "left-cap" : false,
+  "left-cap-color" : "callout-foreground",
+  "left-cap-width" : 0.5rem,
+  "margin" : 2rem,
+  "padding" : 1.5rem,
+) !default;
+
+$styles: (
+  "outline" : (
+    "background-color": transparent
+  ),
+  "informative" : (
+    "background-color" : "callout-info-background",
+    "left-cap-color" : "callout-info-foreground",
+    "left-cap" : true,
+  ),
+  "warning" : (
+    "background-color" : "callout-info-background",
+    "left-cap-color" : "callout-info-foreground",
+    "left-cap" : true,
+  ),
+  "success" : (
+    "background-color" : "callout-success-background",
+    "left-cap-color" : "callout-success-foreground",
+    "left-cap" : true,
+  ),
+  "danger" : (
+    "background-color" : "callout-danger-background",
+    "left-cap-color" : "callout-danger-foreground",
+    "left-cap" : true,
+    "left-cap-width": 0.5rem
+  ),
+) !default;
+
+/// Change modules $config
+/// @param {#css-// Did we decide to get rid of the callout fallback function? If not, how do I get rule width for cap height/width
+//   remove it and use border-width and border-color
+// how to get padding-left regardless of callout config for padding
+//    get-spacing-left($value)
+
+$config: (
+  "background-color" : "callout-background",
+  "border" : true,
+  "border-width" : 1px,
+  "border-color" : true,
+  "border-radius" :  true,
+  "box-shadow" : none,
+  "left-cap" : false,
+  "left-cap-color" : "callout-foreground",
+  "left-cap-width" : 0.5rem,
+  "margin" : 2rem,
+  "padding" : 1.5rem,
+) !default;
+
+$styles: (
+  "outline" : (
+    "background-color": transparent
+  ),
+  "informative" : (
+    "background-color" : "callout-info-background",
+    "left-cap-color" : "callout-info-foreground",
+    "left-cap" : true,
+  ),
+  "warning" : (
+    "background-color" : "callout-info-background",
+    "left-cap-color" : "callout-info-foreground",
+    "left-cap" : true,
+  ),
+  "success" : (
+    "background-color" : "callout-success-background",
+    "left-cap-color" : "callout-success-foreground",
+    "left-cap" : true,
+  ),
+  "danger" : (
+    "background-color" : "callout-danger-background",
+    "left-cap-color" : "callout-danger-foreground",
+    "left-cap" : true,
+    "left-cap-width": 0.5rem
+  ),
+) !default;
+
+/// Change modules $config
+/// @param}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Css</strong></span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+{
+  Map
+ }
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _callout.scss
+- **Group:** callout
+- **Type:** css
+- **Lines (comments):** 27-37
+- **Lines (code):** 86-168
+
+</details>
+
+    
   
   

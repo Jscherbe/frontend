@@ -1,5 +1,18 @@
 # Change Log
 
+## Version 0.1.0-beta.6
+
+  - scss
+    - callout
+      - Adjustments to left cap styling
+        - Left-cap height and horizontal positioning now include the border-width
+        - Left-cap mixin is now a private mixin
+      - **replaced "border" config option with "border-color" and "border-width"**
+    - form
+      - Replaced config defaults using color.get("error") to now use color.get("danger")
+    - color
+      - New color options and adjusted colors error and warning.
+
 ## Version 0.1.0-beta.5
 
 - scss/components/nav-strip - Adjust rule style so the rule is not a border on parent (so child can overlap if desired), Adjust all colors to run through color.get(), Convert to gap instead of margins

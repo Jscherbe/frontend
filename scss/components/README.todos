@@ -13,3 +13,16 @@ Todos:
       * May override base styles
       * May contain layouts
       * May wrap or contain base (button vs button-group)
+
+Daniel Todos:
+  ☐ Remove uswds stylings for informative and emergency callouts and move it into soar's site
+    ☐ get rid of extra styles in frontend to clean up the left cap
+      ✔ add a dash to left-cap mixin (to make private) and remove documentation for that mixin @done
+      ✔ setup cap colors (define colors) @done
+      remove the width of the individual callout styles
+      remove background-dark, light, emergency styles
+    ☐ Reach out to Rachel about the bug with the theme toggle not working
+      ☐ ask her to recreate it
+  ☐ Setup search results page
+    ☐ General Node/Page Setup
+    ☐ Setup View
