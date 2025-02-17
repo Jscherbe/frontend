@@ -1,4 +1,7 @@
 SCSS Todos:
+  ☐ Should typography size pass through if the value is a unit
+    * Allowing this to be used like color-get where native values (ie. non string and non map) would be passed through so that users may pass font-size's through type-size settings
+    * Original core button module uses the name "font-size" for type-size so this would fix that without breaking things or needing to update property names
   ☐ Why is there root and elements base modules (elements has root too?)
   ☐ Get rid of "replace module-name with module's name" when it has been replaced with actual modules name
   ☐ See about documenting when a component doesn't run through the selectors module to get it's base classname

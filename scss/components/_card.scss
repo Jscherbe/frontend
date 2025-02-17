@@ -182,7 +182,7 @@ $config: (
     // Border is on pseudo so that it's on top of image/etc
     &:after {
       position: absolute;
-      content: if(get("border"), "", false);
+      content: if(get("border"), "", null);
       top: 0; 
       bottom: 0; 
       right: 0; 
