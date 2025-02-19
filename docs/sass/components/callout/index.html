@@ -4696,9 +4696,6 @@
                     <li><a href="#mixin-set-styles">set-styles()</a>
             		</li>
 
-                    <li><a href="#mixin-left-cap">left-cap()</a>
-            		</li>
-
                     <li><a href="#mixin-styles">styles()</a>
             		</li>
                 </ol>
@@ -4737,11 +4734,12 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule-light"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-width"</span> <span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-cap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-cap-color"</span> <span class="pjs-token pjs-punctuation">:</span> green<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"left-cap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"left-cap-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>160<span class="pjs-token pjs-punctuation">,</span> 160<span class="pjs-token pjs-punctuation">,</span> 160<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"left-cap-width"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5rem<span class="pjs-token pjs-punctuation">,</span>
@@ -4752,8 +4750,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 27-37</li>
-<li><strong>Lines (code):</strong> 39-49</li>
+<li><strong>Lines (comments):</strong> 23-34</li>
+<li><strong>Lines (code):</strong> 36-47</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -4774,16 +4772,22 @@
 <td style="text-align:left">The background color of the Callout.</td>
 </tr>
 <tr>
-<td style="text-align:left">border</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">The border of the Callout.</td>
+<td style="text-align:left">border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">&quot;rule-light&quot;</td>
+<td style="text-align:left">The border color of the Callout.</td>
 </tr>
 <tr>
 <td style="text-align:left">border-radius</td>
 <td style="text-align:left">Boolean</td>
 <td style="text-align:left">true</td>
 <td style="text-align:left">The border radius of the Callout.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1px</td>
+<td style="text-align:left">The border width of the Callout.</td>
 </tr>
 <tr>
 <td style="text-align:left">box-shadow</td>
@@ -4837,8 +4841,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 95-98</li>
-<li><strong>Lines (code):</strong> 100-102</li>
+<li><strong>Lines (comments):</strong> 75-78</li>
+<li><strong>Lines (code):</strong> 80-82</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -4877,8 +4881,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 114-116</li>
-<li><strong>Lines (code):</strong> 118-120</li>
+<li><strong>Lines (comments):</strong> 94-96</li>
+<li><strong>Lines (code):</strong> 98-100</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -4908,49 +4912,6 @@
 <li>$styles</li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="mixin-left-cap" tabindex="-1">left-cap()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Output styling for a callout that adds a left cap</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _callout.scss</li>
-<li><strong>Group:</strong> callout</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 122-124</li>
-<li><strong>Lines (code):</strong> 126-139</li>
-</ul>
-</details>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$width</td>
-<td style="text-align:left"><code>Dimension</code></td>
-<td style="text-align:left">The width of the left cap</td>
-</tr>
-<tr>
-<td style="text-align:left">$color</td>
-<td style="text-align:left"><code>Color</code></td>
-<td style="text-align:left">The left cap color</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-2" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -4963,15 +4924,14 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 141-143</li>
-<li><strong>Lines (code):</strong> 145-176</li>
+<li><strong>Lines (comments):</strong> 113-115</li>
+<li><strong>Lines (code):</strong> 117-164</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-callout-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
-<li><a href="/frontend/sass/components/callout/#mixin-left-cap">left-cap()</a></li>
 <li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
 <li>$styles</li>
 </ul>
@@ -4989,13 +4949,13 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 104-107</li>
-<li><strong>Lines (code):</strong> 109-112</li>
+<li><strong>Lines (comments):</strong> 84-87</li>
+<li><strong>Lines (code):</strong> 89-92</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-callout-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="parameters-3" tabindex="-1">Parameters</h4>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5012,7 +4972,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-4" tabindex="-1">Require</h4>
+<h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

@@ -4673,24 +4673,7 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				<h2>Jump To:</h2>
-<div class="toc">
-                <ol>
-                    
-                <ol>
-                    
-                    <li><a href="#default-form">Default Form</a>
-            		</li>
-
-                    <li><a href="#full-width">Full-width</a>
-            		</li>
-
-                    <li><a href="#hide-labels">Hide Labels</a>
-            		</li>
-                </ol>
-            
-                </ol>
-            </div>
+				
 			</div>
 		
 		<main id="main" class="page__body">
@@ -4706,11 +4689,9 @@
   </p>
 
 <hr class="rule rule--light rule--margin-large">
-    <h1 id="form-theme" tabindex="-1">Form Theme</h1>
-<p>Styles given to the &lt;form&gt; element and all of it's child elements.</p>
-<pre class="language-html"><code class="language-html">  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>form</span> <span class="pjs-token pjs-attr-name">action</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">method</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>get<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>form-theme<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
-<h2 id="" tabindex="-1"></h2>
-<h3 id="default-form" tabindex="-1">Default Form</h3>
+    <p>Styles given to the &lt;form&gt; element and all of it's child elements.</p>
+<pre class="language-html"><code class="language-html">  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>form</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>form-theme<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>...<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>form</span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
+<h2 class="h2">Default Form</h2>
 <form action="." method="get" class="form-theme">
   <div class="form-theme__item form-theme__item--text">
     <label for="name">Enter your name:<span class="form-theme__required-char">*</span> </label>
@@ -4762,7 +4743,9 @@
     </select>
   </div>
   <fieldset>
-    <legend>Choose your favorite monster</legend>
+    <legend>
+      <span>Choose your favorite monster</span>
+    </legend>
     <div class="form-theme__items-inline">
       <div class="form-theme__item">
         <input type="radio" id="kraken" name="monster" value="K">
@@ -4783,11 +4766,11 @@
     <textarea name="story" rows="5" cols="33" placeholder="It was a dark and stormy night..."></textarea>
   </div>
   <div class="form-theme__actions">
-    <input type="submit" value="Subscribe!">
+    <input type="submit" value="Subscribe!" class="button">
   </div>
 </form>
 <div class="rule"></div>
-<h3 id="full-width" tabindex="-1">Full-width</h3>
+<h2 class="h2">Full-width</h2>
 <form action="." method="get" class="form-theme form-theme--full-width">
   <div class="form-theme__item form-theme__item--text">
     <label for="name">Enter your name:<span class="form-theme__required-char">*</span> </label>
@@ -4839,7 +4822,9 @@
     </select>
   </div>
   <fieldset>
-    <legend>Choose your favorite monster</legend>
+    <legend>
+      <span>Choose your favorite monster</span>
+    </legend>
     <div class="form-theme__items-inline">
       <div class="form-theme__item">
         <input type="radio" id="kraken" name="monster" value="K">
@@ -4860,11 +4845,11 @@
     <textarea name="story" rows="5" cols="33" placeholder="It was a dark and stormy night..."></textarea>
   </div>
   <div class="form-theme__actions">
-    <input type="submit" value="Subscribe!">
+    <input type="submit" value="Subscribe!" class="button">
   </div>
 </form>
 <div class="rule"></div>
-<h3 id="hide-labels" tabindex="-1">Hide Labels</h3>
+<h2 class="h2">Hide Labels</h2>
 <form action="." method="get" class="form-theme form-theme--hide-labels">
   <div class="form-theme__item form-theme__item--text">
     <label for="name">Enter your name:<span class="form-theme__required-char">*</span> </label>
@@ -4904,7 +4889,9 @@
     </select>
   </div>
   <fieldset>
-    <legend>Choose your favorite monster</legend>
+    <legend>
+      <span>Choose your favorite monster</span>
+    </legend>
     <div class="form-theme__items-inline">
       <div class="form-theme__item">
         <input type="radio" id="kraken" name="monster" value="K">
@@ -4925,7 +4912,7 @@
     <textarea name="story" rows="5" cols="33" placeholder="It was a dark and stormy night..."></textarea>
   </div>
   <div class="form-theme__actions">
-    <input type="submit" value="Subscribe!">
+    <input type="submit" value="Subscribe!" class="button">
   </div>
 </form>
 

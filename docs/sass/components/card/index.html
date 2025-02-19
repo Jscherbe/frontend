@@ -4749,6 +4749,8 @@
   <span class="pjs-token pjs-string">"footer-padding-y"</span> <span class="pjs-token pjs-punctuation">:</span> 0.25rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"footer-min-height"</span> <span class="pjs-token pjs-punctuation">:</span> 2.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"horizontal-breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"horizontal-image-width"</span> <span class="pjs-token pjs-punctuation">:</span> 33%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"horizontal-body-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 80rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"image-ratio"</span> <span class="pjs-token pjs-punctuation">:</span> 56.25%<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"image-aspect-ratio"</span><span class="pjs-token pjs-punctuation">:</span> list.<span class="pjs-token pjs-function">slash</span><span class="pjs-token pjs-punctuation">(</span>5<span class="pjs-token pjs-punctuation">,</span> 3<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
@@ -4756,6 +4758,7 @@
   <span class="pjs-token pjs-string">"image-border"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-comment">// For when you have a margin</span>
   <span class="pjs-token pjs-string">"image-filter-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"image-margin"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"image-icon-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 30rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"image-transform-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"image-transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span>    350ms<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"image-transition-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
@@ -4780,15 +4783,15 @@
   <span class="pjs-token pjs-string">"overlay-background-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0.6<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"overlay-shading"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"overlay-body-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 17-61</li>
-<li><strong>Lines (code):</strong> 63-113</li>
+<li><strong>Lines (comments):</strong> 17-63</li>
+<li><strong>Lines (code):</strong> 65-117</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -4819,12 +4822,6 @@
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">5rem</td>
 <td style="text-align:left">The border radius of the card.</td>
-</tr>
-<tr>
-<td style="text-align:left">horizontal-breakpoint</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">small</td>
-<td style="text-align:left">The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.</td>
 </tr>
 <tr>
 <td style="text-align:left">box-shadow</td>
@@ -5055,10 +5052,28 @@
 <td style="text-align:left">The timing function for the image transition.</td>
 </tr>
 <tr>
+<td style="text-align:left">image-icon-max-width</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">30rem</td>
+<td style="text-align:left">Max width for image when using the modifier on the .card__image--icon</td>
+</tr>
+<tr>
 <td style="text-align:left">image-transition-properties</td>
 <td style="text-align:left">List</td>
 <td style="text-align:left">(transform, filter)</td>
 <td style="text-align:left">The properties for the image transitions.</td>
+</tr>
+<tr>
+<td style="text-align:left">horizontal-breakpoint</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">small</td>
+<td style="text-align:left">The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.</td>
+</tr>
+<tr>
+<td style="text-align:left">horizontal-body-max-width</td>
+<td style="text-align:left">Unit</td>
+<td style="text-align:left">80rem</td>
+<td style="text-align:left">The max-width of body when horizontal</td>
 </tr>
 </tbody>
 </table>
@@ -5076,8 +5091,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 115-118</li>
-<li><strong>Lines (code):</strong> 120-122</li>
+<li><strong>Lines (comments):</strong> 119-122</li>
+<li><strong>Lines (code):</strong> 124-126</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5116,8 +5131,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 133-137</li>
-<li><strong>Lines (code):</strong> 139-154</li>
+<li><strong>Lines (comments):</strong> 137-141</li>
+<li><strong>Lines (code):</strong> 143-158</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5164,8 +5179,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 161-165</li>
-<li><strong>Lines (code):</strong> 167-433</li>
+<li><strong>Lines (comments):</strong> 165-169</li>
+<li><strong>Lines (code):</strong> 171-437</li>
 </ul>
 </details>
 <div class="callout callout--demo crop-margins">
@@ -5194,8 +5209,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 124-127</li>
-<li><strong>Lines (code):</strong> 129-131</li>
+<li><strong>Lines (comments):</strong> 128-131</li>
+<li><strong>Lines (code):</strong> 133-135</li>
 </ul>
 </details>
 <h4 id="examples-3" tabindex="-1">Examples</h4>
