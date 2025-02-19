@@ -19,7 +19,6 @@
 /// @prop {Dimension} padding [2rem] The padding for the image icon
 /// @prop {Dimension} margin-y [3rem] Top and bottom margin for the card.
 /// @prop {Dimension} border-radius [5rem] The border radius of the card.
-/// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
 /// @prop {CssValue} box-shadow [null] The box-shadow for the card.
 /// @prop {CssValue} box-shadow-hover [null] The box-shadow for the card when hovered or focused.
 /// @prop {Color} color [null] The type color of the card.
@@ -58,8 +57,10 @@
 /// @prop {Boolean} image-transition-enabled [true] Enable or disable the image transition.
 /// @prop {Time} image-transition-duration [350ms] The duration of the image transition.
 /// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
+/// @prop {List} image-icon-max-width [30rem] Max width for image when using the modifier on the .card__image--icon
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
-
+/// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
+/// @prop {Unit} horizontal-body-max-width [80rem] The max-width of body when horizontal
 
 
 $config: (
@@ -79,6 +80,8 @@ $config: (
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
+  "horizontal-image-width" : 33%,
+  "horizontal-body-max-width" : 80rem,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
@@ -86,6 +89,7 @@ $config: (
   "image-border" : null, // For when you have a margin
   "image-filter-hover" : null,
   "image-margin" : null,
+  "image-icon-max-width" : 30rem,
   "image-transform-hover" : null,
   "image-transition-duration" :    350ms,
   "image-transition-enabled" : true,
@@ -110,7 +114,7 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
-  ) !default;
+) !default;
   
   /// Change modules $config
 /// @param {Map} $changes Map of changes
@@ -300,7 +304,7 @@ $config: (
     img {
       position: static;
       display: block;
-      max-width: 30rem;
+      max-width: get("image-icon-max-width");
       height: auto;
       top: auto;
       left: auto;
@@ -414,8 +418,8 @@ $config: (
         justify-content: center;
         align-items: center;
         #{ $prefix }__image {
-          width: 33%;
-          flex: 0 1 33%;
+          width: get("horizontal-image-width");
+          flex: 0 1 get("horizontal-image-width");
           // max-width: 30rem;
           min-height: 28rem;
           // padding-top: 0;
@@ -425,7 +429,7 @@ $config: (
           flex: 1;
           flex-direction: column;
           justify-content: center;
-          max-width: 80rem;
+          max-width: get("horizontal-body-max-width");
         }
       }
     }

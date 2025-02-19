@@ -219,8 +219,8 @@ $config: (
 
   // Link buttons hang outside in margin so that text optically aligns
   #{ $prefix }--hanging {
-    padding-left: get("link-padding-x");
-    padding-right: get("link-padding-x");
+    // padding-left: get("link-padding-x");
+    // padding-right: get("link-padding-x");
     > #{ $prefix }__list > #{ $prefix }__item {
       > #{ $prefix }__link, 
       >#{ $prefix }__collapsible > #{ $prefix }__toggle {

@@ -40,7 +40,7 @@ $config: (
   "color"                                     : inherit,
   "color-placeholder"                         : "type-tertiary",
   "drupal"                                    : false,
-  "error-color"                               : "error",
+  "error-color"                               : "danger",
   "error-highlight-color"                     : rgb(251, 242, 242),
   "error-selector"                            : ".is-danger",
   "file-button-style"                         : true,
@@ -52,14 +52,14 @@ $config: (
   "font-weight-select"                        : null,
   "input-border"                              : element.get-rule-style(),
   "input-border-radius"                       : 0,
-  "input-margin-y"                            : 0.75em,
+  "item-margin-y"                            : 0.75em,
   "input-padding-x"                           : 0.5em,
   "input-padding-y"                           : 0.25em,
   "input-min-width"                           : 10em,
   "input-background-color"                    : white,
   "item-border-radius"                        : null,
   "item-highlight-width"                      : 6px,
-  "required-color"                            : "error",
+  "required-color"                            : "danger",
   "text-input-margin-bottom"                  : 0.5em,
   "text-input-margin-top"                     : 1em,
   "warning-color"                             : "warning",
@@ -107,6 +107,8 @@ $config: (
   "fieldset-border-radius"                    : 0,
   "fieldset-legend-color"                     : inherit,
   "fieldset-legend-border-bottom"             : null,
+  "fieldset-legend-padding-bottom"            : 0,
+  "fieldset-legend-margin-bottom"             : 0.5em,
   "select-border-radius"                      : 4px,
   "select-background-color"                   : null,
   "select-border"                             : null,
@@ -116,6 +118,7 @@ $config: (
   "select-image-size"                         : 0.9em,
   "select-image-offset"                       : 0.7em,
   "select-image-margin"                       : 0.65em,
+  "inline-gap"                                : 1em
 );
 ```
   
@@ -127,8 +130,8 @@ $config: (
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** variable
-- **Lines (comments):** 16-96
-- **Lines (code):** 98-178
+- **Lines (comments):** 16-99
+- **Lines (code):** 101-184
 
 </details>
 
@@ -137,87 +140,90 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|color|Map|inherit|
-|color-placeholder|Map|"type-tertiary"|
-|drupal|Map|false|
-|error-color|Map|"error"|
-|error-highlight-color|Map|rgb(251, 242, 242)|
-|error-selector|Map|".is-danger"|
-|file-button-style|Map|true|
-|font-weight-label|Map|bold|
-|font-weight-legend|Map|bold|
-|font-weight-placeholder|Map|normal|
-|font-weight-input|Map|null|
-|font-weight-textarea|Map|null|
-|font-weight-select|Map|null|
-|input-border|Map|element.get-rule-style()|
-|input-border-radius|Map|0|
-|input-margin-y|Map|0.75em|
-|input-padding-x|Map|0.5em|
-|input-padding-y|Map|0.25em|
-|input-min-width|Map|10em|
-|input-background-color|Map|white|
-|item-border-radius|Map|null|
-|item-highlight-width|Map|6px|
-|required-color|Map|"error"|
-|text-input-margin-bottom|Map|0.5em|
-|text-input-margin-top|Map|1em|
-|warning-color|Map|"warning"|
-|warning-highlight-color|Map|rgb(255, 249, 237)|
-|warning-selector|Map|".is-warning"|
-|check-input-color|Map|currentColor|
-|check-input-size|Map|1.15em|
-|check-input-touch-size|Map|2em|
-|check-input-background-color|Map|white|
-|check-input-background-color-checked|Map|white|
-|check-input-background-color-hover|Map|white|
-|check-input-background-color-indeterminate|Map|white|
-|check-input-border|Map|null|
-|check-input-border-color-hover|Map|null|
-|check-input-border-color-checked|Map|null|
-|check-input-border-color-indeterminate|Map|null|
-|check-input-border-color-focus|Map|null|
-|check-input-outline|Map|null|
-|check-input-outline-hover|Map|null|
-|check-input-outline-checked|Map|null|
-|check-input-outline-focus|Map|1px solid white|
-|check-input-touch-color-hover|Map|#e8e8e8|
-|check-input-touch-color-focus|Map|null|
-|check-input-radio-size|Map|0.3em|
-|check-input-checkmark-width|Map|0.38em|
-|check-input-checkmark-height|Map|0.68em|
-|check-input-checkmark-offset-y|Map|-0.2em|
-|check-input-checkmark-stroke-size|Map|0.18em|
-|check-input-mark-color|Map|currentColor|
-|check-input-mark-color-hover|Map|null|
-|check-input-mark-color-focus|Map|null|
-|check-input-mark-color-checked|Map|null|
-|check-input-mark-color-indeterminate|Map|null|
-|check-input-disabled-opacity|Map|0.6|
-|check-input-border-radius|Map|null|
-|description-color|Map|false|
-|description-margin|Map|(0.25em 0)|
-|description-max-width|Map|25em|
-|fieldset-background|Map|transparent|
-|fieldset-border|Map|none|
-|fieldset-margin-bottom|Map|1rem|
-|fieldset-margin-top|Map|1rem|
-|fieldset-padding|Map|0|
-|fieldset-margin-compact|Map|0|
-|fieldset-border-radius|Map|0|
-|fieldset-legend-color|Map|inherit|
-|fieldset-legend-border-bottom|Map|null|
-|select-border-radius|Map|4px|
-|select-background-color|Map|null|
-|select-border|Map|null|
-|select-padding-x|Map|null|
-|select-padding-y|Map|null|
-|select-image|Map|null|
-|select-image-size|Map|0.9em|
-|select-image-offset|Map|0.7em|
-|select-image-margin|Map|0.65em|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|color|Map|inherit||
+|color-placeholder|Map|"type-tertiary"||
+|drupal|Map|false||
+|error-color|Map|"danger"||
+|error-highlight-color|Map|rgb(251, 242, 242)||
+|error-selector|Map|".is-danger"||
+|file-button-style|Map|true||
+|font-weight-label|Map|bold||
+|font-weight-legend|Map|bold||
+|font-weight-placeholder|Map|normal||
+|font-weight-input|Map|null||
+|font-weight-textarea|Map|null||
+|font-weight-select|Map|null||
+|input-border|Map|element.get-rule-style()||
+|input-border-radius|Map|0||
+|input-margin-y|Map|0.75em||
+|input-padding-x|Map|0.5em||
+|input-padding-y|Map|0.25em||
+|input-min-width|Map|10em||
+|input-background-color|Map|white||
+|item-border-radius|Map|null||
+|item-highlight-width|Map|6px||
+|required-color|Map|"danger"||
+|text-input-margin-bottom|Map|0.5em||
+|text-input-margin-top|Map|1em||
+|warning-color|Map|"warning"||
+|warning-highlight-color|Map|rgb(255, 249, 237)||
+|warning-selector|Map|".is-warning"||
+|check-input-color|Map|currentColor||
+|check-input-size|Map|1.15em||
+|check-input-touch-size|Map|2em||
+|check-input-background-color|Map|white||
+|check-input-background-color-checked|Map|white||
+|check-input-background-color-hover|Map|white||
+|check-input-background-color-indeterminate|Map|white||
+|check-input-border|Map|null||
+|check-input-border-color-hover|Map|null||
+|check-input-border-color-checked|Map|null||
+|check-input-border-color-indeterminate|Map|null||
+|check-input-border-color-focus|Map|null||
+|check-input-outline|Map|null||
+|check-input-outline-hover|Map|null||
+|check-input-outline-checked|Map|null||
+|check-input-outline-focus|Map|1px solid white||
+|check-input-touch-color-hover|Map|#e8e8e8||
+|check-input-touch-color-focus|Map|null||
+|check-input-radio-size|Map|0.3em||
+|check-input-checkmark-width|Map|0.38em||
+|check-input-checkmark-height|Map|0.68em||
+|check-input-checkmark-offset-y|Map|-0.2em||
+|check-input-checkmark-stroke-size|Map|0.18em||
+|check-input-mark-color|Map|currentColor||
+|check-input-mark-color-hover|Map|null||
+|check-input-mark-color-focus|Map|null||
+|check-input-mark-color-checked|Map|null||
+|check-input-mark-color-indeterminate|Map|null||
+|check-input-disabled-opacity|Map|0.6||
+|check-input-border-radius|Map|null||
+|description-color|Map|false||
+|description-margin|Map|(0.25em 0)||
+|description-max-width|Map|25em||
+|fieldset-background|Map|transparent||
+|fieldset-border|Map|none||
+|fieldset-margin-bottom|Map|1rem||
+|fieldset-margin-top|Map|1rem||
+|fieldset-padding|Map|0||
+|fieldset-margin-compact|Map|0||
+|fieldset-border-bottom|Map|0||
+|fieldset-border-radius|Map|0||
+|fieldset-legend-color|Map|inherit||
+|fieldset-legend-border-bottom|Map|null||
+|fieldset-legend-padding-bottom|Map|null||
+|select-border-radius|Map|4px||
+|select-background-color|Map|null||
+|select-border|Map|null||
+|select-padding-x|Map|null||
+|select-padding-y|Map|null||
+|select-image|Map|null||
+|select-image-size|Map|0.9em||
+|select-image-offset|Map|0.7em||
+|select-image-margin|Map|0.65em||
+|inline-gap|Unit|1em|Gap between items that are inline like checkboxes|
 
     
   
@@ -250,8 +256,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 180-183
-- **Lines (code):** 185-187
+- **Lines (comments):** 186-189
+- **Lines (code):** 191-193
 
 </details>
 
@@ -309,8 +315,8 @@ Output component stylesheet
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 202-204
-- **Lines (code):** 206-243
+- **Lines (comments):** 208-210
+- **Lines (code):** 212-249
 
 </details>
 
@@ -361,8 +367,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 489-489
-- **Lines (code):** 490-497
+- **Lines (comments):** 488-488
+- **Lines (code):** 489-496
 
 </details>
 
@@ -397,8 +403,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 499-499
-- **Lines (code):** 500-506
+- **Lines (comments):** 498-498
+- **Lines (code):** 499-505
 
 </details>
 
@@ -433,8 +439,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 508-508
-- **Lines (code):** 509-520
+- **Lines (comments):** 507-507
+- **Lines (code):** 508-519
 
 </details>
 
@@ -469,8 +475,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 522-522
-- **Lines (code):** 523-526
+- **Lines (comments):** 521-521
+- **Lines (code):** 522-525
 
 </details>
 
@@ -500,8 +506,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 528-528
-- **Lines (code):** 529-531
+- **Lines (comments):** 527-527
+- **Lines (code):** 528-530
 
 </details>
 
@@ -531,8 +537,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 533-533
-- **Lines (code):** 534-586
+- **Lines (comments):** 532-532
+- **Lines (code):** 533-586
 
 </details>
 
@@ -617,8 +623,8 @@ Get a config option
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** function
-- **Lines (comments):** 189-192
-- **Lines (code):** 194-196
+- **Lines (comments):** 195-198
+- **Lines (code):** 200-202
 
 </details>
 

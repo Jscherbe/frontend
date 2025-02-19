@@ -82,9 +82,11 @@
 /// @prop {} fieldset-margin-top [1rem]
 /// @prop {} fieldset-padding [0]
 /// @prop {} fieldset-margin-compact [0]
+/// @prop {} fieldset-border-bottom [0]
 /// @prop {} fieldset-border-radius [0]
 /// @prop {} fieldset-legend-color [inherit]
 /// @prop {} fieldset-legend-border-bottom [null]
+/// @prop {} fieldset-legend-padding-bottom [null]
 /// @prop {} select-border-radius [4px]
 /// @prop {} select-background-color [null]
 /// @prop {} select-border [null]
@@ -94,6 +96,7 @@
 /// @prop {} select-image-size [0.9em]
 /// @prop {} select-image-offset [0.7em]
 /// @prop {} select-image-margin [0.65em]
+/// @prop {Unit} inline-gap [1em] Gap between items that are inline like checkboxes
 
 $config: (
   "color"                                     : inherit,
@@ -111,7 +114,7 @@ $config: (
   "font-weight-select"                        : null,
   "input-border"                              : element.get-rule-style(),
   "input-border-radius"                       : 0,
-  "input-margin-y"                            : 0.75em,
+  "item-margin-y"                            : 0.75em,
   "input-padding-x"                           : 0.5em,
   "input-padding-y"                           : 0.25em,
   "input-min-width"                           : 10em,
@@ -166,6 +169,8 @@ $config: (
   "fieldset-border-radius"                    : 0,
   "fieldset-legend-color"                     : inherit,
   "fieldset-legend-border-bottom"             : null,
+  "fieldset-legend-padding-bottom"            : 0,
+  "fieldset-legend-margin-bottom"             : 0.5em,
   "select-border-radius"                      : 4px,
   "select-background-color"                   : null,
   "select-border"                             : null,
@@ -175,6 +180,7 @@ $config: (
   "select-image-size"                         : 0.9em,
   "select-image-offset"                       : 0.7em,
   "select-image-margin"                       : 0.65em,
+  "inline-gap"                                : 1em
 ) !default;
 
 /// Change modules $config
@@ -455,19 +461,13 @@ $config: (
     > legend {
       font-weight: get("font-weight-legend");
       display: block;
-      margin: 0 0 0.5em 0;
+      margin: 0 0 get("fieldset-legend-margin-bottom") 0;
       border: 0;
-      padding: 0;
+      padding: 0 0 get("fieldset-legend-padding-bottom") 0;
       width: 100%;
       float: left;
-      > span {
-        display: block;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5em;
-        padding-top: 0.5em;
-        border-bottom: get("fieldset-legend-border-bottom");
-        color: color.get(get("fieldset-legend-color"));
-      }
+      border-bottom: get("fieldset-legend-border-bottom");
+      color: color.get(get("fieldset-legend-color"));
       & ~ * {
         clear: left;
       }
@@ -546,7 +546,7 @@ $config: (
   #{ $prefix }__item {
     display: flex;
     align-items: center;
-    margin-bottom: get("input-margin-y");
+    margin-bottom: get("item-margin-y");
     border-radius: get("item-border-radius");
     flex-shrink: 0; // Cannot be smaller than content within
     @include -form-item-state($selectError, $errorColor, color.get(get("error-highlight-color")));
@@ -564,8 +564,9 @@ $config: (
   #{ $prefix }__items-inline {
     display: flex;
     flex-wrap: wrap;
+    gap: get("inline-gap");
     > #{ $prefix }__item {
-      margin-right: 1.5em;
+      margin: 0;
     }
   }
   #{ $prefix }__actions {

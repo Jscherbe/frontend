@@ -4,17 +4,13 @@ intro: Settings to style your forms
   
 ---
 
-# Form Theme
-
 Styles given to the \<form> element and all of it's child elements. 
 
 ```html
-  <form action="" method="get" class="form-theme">
+  <form class="form-theme">...</form>
 ```
 
-## 
-
-### Default Form
+<h2 class="h2">Default Form</h2>
 
 <form action="" method="get" class="form-theme">
   <div class="form-theme__item form-theme__item--text">
@@ -67,7 +63,9 @@ Styles given to the \<form> element and all of it's child elements.
     </select>
   </div>
   <fieldset>
-    <legend>Choose your favorite monster</legend>
+    <legend>
+      <span>Choose your favorite monster</span>
+    </legend>
     <div class="form-theme__items-inline">
       <div class="form-theme__item">
         <input type="radio" id="kraken" name="monster" value="K" />
@@ -88,13 +86,13 @@ Styles given to the \<form> element and all of it's child elements.
     <textarea name="story" rows="5" cols="33" placeholder="It was a dark and stormy night..."></textarea>
   </div>
   <div class="form-theme__actions">
-    <input type="submit" value="Subscribe!" />
+    <input type="submit" value="Subscribe!" class="button" />
   </div>
 </form>
 
 <div class="rule"></div>
 
-### Full-width
+<h2 class="h2">Full-width</h2>
 
 <form action="" method="get" class="form-theme form-theme--full-width">
   <div class="form-theme__item form-theme__item--text">
@@ -147,7 +145,9 @@ Styles given to the \<form> element and all of it's child elements.
     </select>
   </div>
   <fieldset>
-    <legend>Choose your favorite monster</legend>
+    <legend>
+      <span>Choose your favorite monster</span>
+    </legend>
     <div class="form-theme__items-inline">
       <div class="form-theme__item">
         <input type="radio" id="kraken" name="monster" value="K" />
@@ -168,13 +168,13 @@ Styles given to the \<form> element and all of it's child elements.
     <textarea name="story" rows="5" cols="33" placeholder="It was a dark and stormy night..."></textarea>
   </div>
   <div class="form-theme__actions">
-    <input type="submit" value="Subscribe!" />
+    <input type="submit" value="Subscribe!" class="button" />
   </div>
 </form>
 
 <div class="rule"></div>
 
-### Hide Labels
+<h2 class="h2">Hide Labels</h2>
 
 <form action="" method="get" class="form-theme form-theme--hide-labels">
   <div class="form-theme__item form-theme__item--text">
@@ -215,7 +215,9 @@ Styles given to the \<form> element and all of it's child elements.
     </select>
   </div>
   <fieldset>
-    <legend>Choose your favorite monster</legend>
+    <legend>
+      <span>Choose your favorite monster</span>
+    </legend>
     <div class="form-theme__items-inline">
       <div class="form-theme__item">
         <input type="radio" id="kraken" name="monster" value="K" />
@@ -236,7 +238,7 @@ Styles given to the \<form> element and all of it's child elements.
     <textarea name="story" rows="5" cols="33" placeholder="It was a dark and stormy night..."></textarea>
   </div>
   <div class="form-theme__actions">
-    <input type="submit" value="Subscribe!" />
+    <input type="submit" value="Subscribe!" class="button" />
   </div>
 </form>
 

@@ -53,6 +53,8 @@ $config: (
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
+  "horizontal-image-width" : 33%,
+  "horizontal-body-max-width" : 80rem,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
@@ -60,6 +62,7 @@ $config: (
   "image-border" : null, // For when you have a margin
   "image-filter-hover" : null,
   "image-margin" : null,
+  "image-icon-max-width" : 30rem,
   "image-transform-hover" : null,
   "image-transition-duration" :    350ms,
   "image-transition-enabled" : true,
@@ -84,7 +87,7 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
-  );
+);
 ```
   
 
@@ -95,8 +98,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 17-61
-- **Lines (code):** 63-113
+- **Lines (comments):** 17-63
+- **Lines (code):** 65-117
 
 </details>
 
@@ -110,7 +113,6 @@ $config: (
 |padding|Dimension|2rem|The padding for the image icon|
 |margin-y|Dimension|3rem|Top and bottom margin for the card.|
 |border-radius|Dimension|5rem|The border radius of the card.|
-|horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|
 |box-shadow|CssValue|null|The box-shadow for the card.|
 |box-shadow-hover|CssValue|null|The box-shadow for the card when hovered or focused.|
 |color|Color|null|The type color of the card.|
@@ -149,7 +151,10 @@ $config: (
 |image-transition-enabled|Boolean|true|Enable or disable the image transition.|
 |image-transition-duration|Time|350ms|The duration of the image transition.|
 |image-transition-timing-function|CssValue|ease-in-out|The timing function for the image transition.|
+|image-icon-max-width|List|30rem|Max width for image when using the modifier on the .card__image--icon|
 |image-transition-properties|List|(transform, filter)|The properties for the image transitions.|
+|horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|
+|horizontal-body-max-width|Unit|80rem|The max-width of body when horizontal|
 
     
   
@@ -182,8 +187,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 115-118
-- **Lines (code):** 120-122
+- **Lines (comments):** 119-122
+- **Lines (code):** 124-126
 
 </details>
 
@@ -241,8 +246,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 133-137
-- **Lines (code):** 139-154
+- **Lines (comments):** 137-141
+- **Lines (code):** 143-158
 
 </details>
 
@@ -301,8 +306,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 161-165
-- **Lines (code):** 167-433
+- **Lines (comments):** 165-169
+- **Lines (code):** 171-437
 
 </details>
 
@@ -382,8 +387,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 124-127
-- **Lines (code):** 129-131
+- **Lines (comments):** 128-131
+- **Lines (code):** 133-135
 
 </details>
 

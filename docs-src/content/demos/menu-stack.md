@@ -5,9 +5,9 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 
 <h2 class="h2">Basic Example</h2>
 
-<div class="menu-stack menu-stack--hanging">
+<div class="menu-stack">
   <h3 class="menu-stack__label">Example Label</h3>
-  <ul>
+  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <a class="menu-stack__link" href="#" >This is Example Menu Item</a>
     </li>
@@ -24,7 +24,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 
 <div class="menu-stack menu-stack--hanging">
   <h3 class="menu-stack__label">Example Label</h3>
-  <ul>
+  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <a class="menu-stack__link" href="#" >This is Example Menu Item</a>
     </li>
@@ -48,9 +48,9 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 
 <h2 class="h2">Multiple labels/lists</h2>
 
-<div class="menu-stack menu-stack--hanging menu-stack--separated">
+<div class="menu-stack menu-stack--separated">
   <h3 class="menu-stack__label">Section 1</h3>
-  <ul>
+  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <a class="menu-stack__link is-active" href="#" >This is Example Menu Item</a>
     </li>
@@ -61,7 +61,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 </div>
 <div class="menu-stack menu-stack--hanging menu-stack--separated">
   <h3 class="menu-stack__label">Section 2</h3>
-  <ul>
+  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <a class="menu-stack__link" href="#">This is Example Menu Item with a really long title</a>
     </li>
@@ -75,7 +75,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 
 <h2 class="h2">Checkbox Menu</h2>
 <div class="menu-stack form-theme">
-  <ul>
+  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <div class="menu-stack__checkbox">
         <input type="checkbox" id="cb-1">
@@ -131,7 +131,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 
 <div class="menu-stack">
   <h3 class="menu-stack__label">Example Label</h3>
-  <ul>
+  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <a class="menu-stack__link is-active" href="#" >
         <span class="menu-stack__link-icon fas fa-house" aria-hidden="true"></span>

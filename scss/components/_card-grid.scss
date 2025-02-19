@@ -51,7 +51,7 @@ $config: (
   
   #{ $prefix } {
     display: grid;
-    grid-template-columns:  get("template-columns");
+    grid-template-columns: get("template-columns");
     grid-auto-rows: 1fr;
     gap: get("gap");
     margin: get("gap") 0;

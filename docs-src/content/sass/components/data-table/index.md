@@ -41,10 +41,11 @@ $config: (
   "text-align" : left,
   "type-size" : "small",
   "background-color" : white,
-  "header-background-color" : #eeeeee,
+  "header-background-color" : #f5f4f4,
   "body-background-color" : white,
   "footer-background-color" : #f3f3f3,
   "color" : "type-secondary",
+  "header-color" : "headline",
   "line-height" : true,
   "column-min-width" : 6em,
   "first-column-large-min-width" : 15em,
@@ -59,8 +60,9 @@ $config: (
   "caption-type-size" : "large",
   "caption-background-color" : null,
   "caption-font-weight" : bold,
+  "caption-border-bottom" : null,
   "caption-margin" : (0,),
-  "caption-padding" : (0.5em,),
+  "caption-padding" : (0.65em 0),
   "caption-text-align" : left,
   "extra-selector" : ".wysiwyg table"
 );
@@ -75,7 +77,7 @@ $config: (
 - **Group:** data-table
 - **Type:** variable
 - **Lines (comments):** 25-26
-- **Lines (code):** 28-55
+- **Lines (code):** 28-57
 
 </details>
 
@@ -110,8 +112,8 @@ Change modules $config
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 57-60
-- **Lines (code):** 62-64
+- **Lines (comments):** 59-62
+- **Lines (code):** 64-66
 
 </details>
 
@@ -169,8 +171,8 @@ Output component stylesheet
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-184
+- **Lines (comments):** 78-80
+- **Lines (code):** 82-189
 
 </details>
 
@@ -224,8 +226,8 @@ Get a config option
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** function
-- **Lines (comments):** 66-69
-- **Lines (code):** 71-74
+- **Lines (comments):** 68-71
+- **Lines (code):** 73-76
 
 </details>
 

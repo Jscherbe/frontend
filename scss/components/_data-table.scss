@@ -30,10 +30,11 @@ $config: (
   "text-align" : left,
   "type-size" : "small",
   "background-color" : white,
-  "header-background-color" : #eeeeee,
+  "header-background-color" : #f5f4f4,
   "body-background-color" : white,
   "footer-background-color" : #f3f3f3,
   "color" : "type-secondary",
+  "header-color" : "headline",
   "line-height" : true,
   "column-min-width" : 6em,
   "first-column-large-min-width" : 15em,
@@ -48,8 +49,9 @@ $config: (
   "caption-type-size" : "large",
   "caption-background-color" : null,
   "caption-font-weight" : bold,
+  "caption-border-bottom" : null,
   "caption-margin" : (0,),
-  "caption-padding" : (0.5em,),
+  "caption-padding" : (0.65em 0),
   "caption-text-align" : left,
   "extra-selector" : ".wysiwyg table"
 ) !default;
@@ -113,7 +115,7 @@ $config: (
       margin: get("caption-margin");
       padding: get("caption-padding");
       background-color: get("caption-background-color");
-      border-bottom: $border;
+      border-bottom: get("caption-border-bottom");
     }
     th,
     tr,
@@ -136,6 +138,9 @@ $config: (
     }
     thead tr {
       background-color: color.get(get("header-background-color"));
+    }
+    thead th {
+      color: color.get(get("header-color"));
     }
     tbody tr {
       background-color: color.get(get("body-background-color"));
