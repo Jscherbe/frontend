@@ -59,8 +59,8 @@ $config: (
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** variable
-- **Lines (comments):** 15-17
-- **Lines (code):** 19-31
+- **Lines (comments):** 15-25
+- **Lines (code):** 27-40
 
 </details>
 
@@ -72,6 +72,14 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |extra-split-ratios|Map|wide 70/30|A map where the name is the modifier and the value is a list with two percentages (the first percentage will be correspond with the graphic or content depending on selector [ie. .hero--split-graphic-[name] would apply the first percentage to the graphic while hero--split-content-[name] would apply the first percentage to the content])|
+|breakpoint|String|"medium"|At what breakpoint the hero goes to small screen styling.|
+|height|Dimension|100vh|Height of the hero|
+|height-compact|Dimension|40vh||
+|graphic-height-stacked|Dimension|60vh||
+|content-max-width|Dimension|40rem||
+|content-padding-top|Dimension|3rem||
+|content-padding-bottom|Dimension|3rem||
+|text-align|CssValue|center||
 
     
   
@@ -104,8 +112,8 @@ Change modules $config
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 33-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 42-45
+- **Lines (code):** 47-49
 
 </details>
 
@@ -163,8 +171,8 @@ Prints component styles
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 51-53
-- **Lines (code):** 55-183
+- **Lines (comments):** 60-62
+- **Lines (code):** 64-192
 
 </details>
 
@@ -218,8 +226,8 @@ Get a config option
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** function
-- **Lines (comments):** 42-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 51-54
+- **Lines (code):** 56-58
 
 </details>
 

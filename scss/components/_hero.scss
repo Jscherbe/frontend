@@ -15,6 +15,15 @@
 /// Module Settings
 /// @type Map
 /// @prop {Map} extra-split-ratios  [wide 70/30] A map where the name is the modifier and the value is a list with two percentages (the first percentage will be correspond with the graphic or content depending on selector [ie. .hero--split-graphic-[name] would apply the first percentage to the graphic while hero--split-content-[name] would apply the first percentage to the content]) 
+/// @prop {String} breakpoint ["medium"] At what breakpoint the hero goes to small screen styling.
+/// @prop {Dimension} height [100vh] Height of the hero.
+/// @prop {Dimension} height-compact [40vh] Height of the hero when using the "--compact" styling.
+/// @prop {Dimension} graphic-height-stacked [60vh] Height of the graphic.
+/// @prop {Dimension} content-max-width [40rem] Max width of the content.
+/// @prop {Dimension} content-padding-top [3rem] Top padding of the content.
+/// @prop {Dimension} content-padding-bottom [3rem] Bottom padding of the content.
+/// @prop {CssValue} text-align [center] Text align of the content.
+
 
 $config: (
   "breakpoint" : "medium",

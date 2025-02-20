@@ -76,10 +76,46 @@ $config: (
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** variable
-- **Lines (comments):** 25-26
-- **Lines (code):** 28-57
+- **Lines (comments):** 25-54
+- **Lines (code):** 56-85
 
 </details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|cell-padding|Dimension|(0.5em,)|Padding of the th and td elements.|
+|text-align|CssValue|left|Text align of the table.|
+|type-size|String|"small"|Font size of the table.|
+|background-color|Color|white|Background color of table container.|
+|header-background-color|Color|#f5f4f4|Background color of the the table header.|
+|body-background-color|Color|white|Background color of table body.|
+|footer-background-color|Color|#f3f3f3|Background color of table footer.|
+|color|Color|"type-secondary"|Font color of the table.|
+|header-color|Color|"headline"|Font color for the table header.|
+|line-height|Number|true|Line height for the table.|
+|column-min-width|Dimension|6em|Min-width of the th element.|
+|first-column-large-min-width|Dimension|15em|When using "--large-first" style, the min width of the first th element.|
+|border-width|Dimension|1px|Border width of the table.|
+|border-color|Color|#dddddd|Border color for the table.|
+|striped-row-background-color|Color|#eeeeee|Background color for even rows if using "--striped" styling.|
+|muted-row-background-color|Color|#ccc|Background color for odd rows if using "--striped" styling.|
+|muted-row-border-color|Color|null|Border color for odd rows if using "--striped" styling.|
+|highlighted-row-background-color|Color|#ccc|Background color row if using "__row-highlighted" styling.|
+|highlighted-row-border-color|Color|null|Border color row if using "__row-highlighted" styling.|
+|large-header-cell-padding-y|Dimension|1em|Vertical padding of header if using "--large-header" styling.|
+|caption-type-size|String|"large"|Type size of table caption.|
+|caption-background-color|Color|null|Background color of table caption.|
+|caption-font-weight|CssValue|bold|Font weight of caption.|
+|caption-border-bottom|CssBalue|null|Bottom border of the caption.|
+|caption-margin|Dimension|(0,)|Margin of the caption.|
+|caption-padding|Dimension|(0.65em 0)|Padding of the caption.|
+|caption-text-align|CssValue|left|Text align of the caption.|
+|extra-selector|String|".wysiwyg table"|Additional selectors to include table styling.|
 
     
   
@@ -112,8 +148,8 @@ Change modules $config
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 59-62
-- **Lines (code):** 64-66
+- **Lines (comments):** 87-90
+- **Lines (code):** 92-94
 
 </details>
 
@@ -171,8 +207,8 @@ Output component stylesheet
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 78-80
-- **Lines (code):** 82-189
+- **Lines (comments):** 106-108
+- **Lines (code):** 110-217
 
 </details>
 
@@ -226,8 +262,8 @@ Get a config option
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** function
-- **Lines (comments):** 68-71
-- **Lines (code):** 73-76
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-104
 
 </details>
 

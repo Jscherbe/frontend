@@ -29,35 +29,35 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} arrow-size [16px]
-/// @prop {Color} background-color [white]
-/// @prop {Dimension} border-radius [6px]
-/// @prop {Color} color [inherit]
-/// @prop {Dimension} max-width [90vw]
-/// @prop {Dimension} max-height [25rem]
-/// @prop {Dimension} padding [1rem]
-/// @prop {Dimension} padding-large [2rem]
-/// @prop {Dimension} type-size [null]
-/// @prop {Number} z-index [true]
-/// @prop {CssValue} box-shadow [true]
-/// @prop {CssValue} box-shadow-footer [0 0 4px]
-/// @prop {String} box-shadow-footer-color ["box-shadow"]
-/// @prop {Color} header-background-color [#ccc]
-/// @prop {Color} header-color [null]
-/// @prop {Color} header-media-background-color [black]
-/// @prop {Dimension} header-padding-y [0.25rem]
-/// @prop {Color} footer-background-color [#ccc]
-/// @prop {Color} footer-color [null]
-/// @prop {Dimension} footer-padding-y [0.25rem]
-/// @prop {Dimension} footer-padding-y-large [0.5rem]
-/// @prop {Color} tooltip-background-color [white]
-/// @prop {Color} tooltip-color [null]
-/// @prop {Dimension} tooltip-max-width [20rem]
-/// @prop {Dimension} tooltip-padding [0.5rem]
-/// @prop {Dimension} tooltip-width [auto]
-/// @prop {Dimension} width [15rem]
-/// @prop {Dimension} width-large [30rem]
-/// @prop {Dimension} width-large-x [50rem]
+/// @prop {Dimension} arrow-size [16px] size of the dropdown arrow.
+/// @prop {Color} background-color [white] Background color of the popover.
+/// @prop {Dimension} border-radius [6px] Border radius of the popover.
+/// @prop {Color} color [inherit] Text color of the popover.
+/// @prop {Dimension} max-width [90vw] Max width of the popover.
+/// @prop {Dimension} max-height [25rem] Max height of the popover.
+/// @prop {Dimension} padding [1rem] Padding of the popover.
+/// @prop {Dimension} padding-large [2rem] Padding of the popover if using "--large" or "--large-x" styling.
+/// @prop {Dimension} type-size [null] Font size of the popover.
+/// @prop {Number} z-index [true] z-index of the popover.
+/// @prop {CssValue} box-shadow [true] Box shadow of the popover.
+/// @prop {CssValue} box-shadow-footer [0 0 4px] Box shadow of the popover footer.
+/// @prop {String} box-shadow-footer-color ["box-shadow"] Color of the footer's box shadow.
+/// @prop {Color} header-background-color [#ccc] Background color of the popover header
+/// @prop {Color} header-color [null] Text color for the header.
+/// @prop {Color} header-media-background-color [black] background color for header media.
+/// @prop {Dimension} header-padding-y [0.25rem] Vertical padding of the header.
+/// @prop {Color} footer-background-color [#ccc] Background color of the footer.
+/// @prop {Color} footer-color [null] Text color of the footer.
+/// @prop {Dimension} footer-padding-y [0.25rem] Vertical padding of the footer.
+/// @prop {Dimension} footer-padding-y-large [0.5rem] Vertical padding of the footer if using "--large" or "--large-x" styling.
+/// @prop {Color} tooltip-background-color [white] Background color of the tooltip.
+/// @prop {Color} tooltip-color [null] Font color of the tooltip.
+/// @prop {Dimension} tooltip-max-width [20rem] Max width of the tooltip.
+/// @prop {Dimension} tooltip-padding [0.5rem] Padding of the tooltip.
+/// @prop {Dimension} tooltip-width [auto] Width of the tooltip.
+/// @prop {Dimension} width [15rem] Width of the popover.
+/// @prop {Dimension} width-large [30rem] Width of the popover if using "--large".
+/// @prop {Dimension} width-large-x [50rem] Width of the popover if using "--large-x".
 
 $config: (
   "arrow-size"                   : 16px,

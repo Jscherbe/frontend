@@ -24,6 +24,34 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} cell-padding [(0.5em,)] Padding of the th and td elements.
+/// @prop {CssValue} text-align [left] Text align of the table.
+/// @prop {String} type-size ["small"] Font size of the table.
+/// @prop {Color} background-color [white] Background color of table container.
+/// @prop {Color} header-background-color [#f5f4f4] Background color of the the table header.
+/// @prop {Color} body-background-color [white] Background color of table body.
+/// @prop {Color} footer-background-color [#f3f3f3] Background color of table footer.
+/// @prop {Color} color ["type-secondary"] Font color of the table.
+/// @prop {Color} header-color ["headline"] Font color for the table header.
+/// @prop {Number} line-height [true] Line height for the table.
+/// @prop {Dimension} column-min-width [6em] Min-width of the th element.
+/// @prop {Dimension} first-column-large-min-width [15em] When using "--large-first" style, the min width of the first th element.
+/// @prop {Dimension} border-width [1px] Border width of the table.
+/// @prop {Color} border-color [#dddddd] Border color for the table.
+/// @prop {Color} striped-row-background-color [#eeeeee] Background color for even rows if using "--striped" styling.
+/// @prop {Color} muted-row-background-color [#ccc] Background color for odd rows if using "--striped" styling.
+/// @prop {Color} muted-row-border-color [null] Border color for odd rows if using "--striped" styling.
+/// @prop {Color} highlighted-row-background-color [#ccc] Background color row if using "__row-highlighted" styling.
+/// @prop {Color} highlighted-row-border-color [null]  Border color row if using "__row-highlighted" styling.
+/// @prop {Dimension} large-header-cell-padding-y [1em]  Vertical padding of header if using "--large-header" styling.
+/// @prop {String} caption-type-size ["large"] Type size of table caption.
+/// @prop {Color} caption-background-color [null] Background color of table caption.
+/// @prop {CssValue} caption-font-weight [bold] Font weight of caption.
+/// @prop {CssBalue} caption-border-bottom [null] Bottom border of the caption.
+/// @prop {Dimension} caption-margin [(0,)] Margin of the caption.
+/// @prop {Dimension} caption-padding [(0.65em 0)] Padding of the caption.
+/// @prop {CssValue} caption-text-align [left] Text align of the caption.
+/// @prop {String} extra-selector [".wysiwyg table"] Additional selectors to include table styling.
 
 $config: (
   "cell-padding" : (0.5em,),

@@ -21,18 +21,18 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {} body-line-height [true]
-/// @prop {} image-margin-bottom [1rem]
-/// @prop {} image-margin-top [2.5rem]
-/// @prop {} name-margin-bottom [1rem]
-/// @prop {} padding-y [2em]
-/// @prop {} title-font-style [italic]
-/// @prop {} quote-mark-character ["\201c"]
-/// @prop {} quote-mark-color [null]
-/// @prop {} quote-mark-font-family ["Georgia"]
-/// @prop {} quote-mark-font-size [3.75em]
-/// @prop {} quote-mark-enabled [true]
-/// @prop {} quote-mark-line-height [0.35]
+/// @prop {Number} body-line-height [true]
+/// @prop {Dimension} image-margin-bottom [1rem]
+/// @prop {Dimension} image-margin-top [2.5rem]
+/// @prop {Dimension} name-margin-bottom [1rem]
+/// @prop {Dimension} padding-y [2em]
+/// @prop {CssValue} title-font-style [italic]
+/// @prop {String} quote-mark-character ["\201c"]
+/// @prop {Color} quote-mark-color [null]
+/// @prop {String} quote-mark-font-family ["Georgia"]
+/// @prop {Dimension} quote-mark-font-size [3.75em]
+/// @prop {Boolean} quote-mark-enabled [true]
+/// @prop {Number} quote-mark-line-height [0.35]
 
 $config: (
   "body-line-height" : true,

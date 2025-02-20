@@ -30,6 +30,23 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Boolean} text-alignment-matches [false] Toggles matching alignment.
+/// @prop {Boolean} text-alignment-matches-center-only [true] Toggles matching alignment, but only if center.
+/// @prop {Color} background-color [white] Background color of the component.
+/// @prop {CssValue} box-shadow [true] Box shadow the captioned figure.
+/// @prop {Dimension} margin-bottom [true] Bottom margin of the captioned figure.
+/// @prop {Number} line-height [true] Line height of the captioned figure caption.
+/// @prop {Dimension} caption-padding [0.5em] Padding of the captioned figure caption. 
+/// @prop {Color} color [null] Font color of the captioned figure caption. 
+/// @prop {String} type-size ["small"] Font size of the captioned figure caption. 
+/// @prop {Dimension} caption-max-width [min(100%, 15em)] Max width of the captioned figure caption. 
+/// @prop {Color} caption-background-color [rgba(255,255,255,0.7)] background color of the captioned figure caption. 
+/// @prop {CssValue} caption-backdrop-filter [blur(2px)] Filter of the backdrop of the captioned figure.
+/// @prop {Color} traditional-caption-color [null] Traditional style for font color.
+/// @prop {Color} traditional-caption-background-color [transparent] Traditional style for caption background color.
+/// @prop {Dimension} traditional-caption-padding [0.5em] Traditional style for caption padding.
+/// @prop {Dimension} traditional-caption-max-width [35em] Traditional style for caption max width.
+/// @prop {CssValue} traditional-caption-text-align [right] Traditional style for caption text-align.
 
 $config: (
   "text-alignment-matches" : false,
