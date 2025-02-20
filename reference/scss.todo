@@ -1,7 +1,9 @@
 SCSS Todos:
   ✔ Data table color for thead th @done
   ✔ Form theme remove margins and paddings on fieldset legend @done
-  ☐ Think about merging the css grid components (tile-grid, card-grid, flipcard-grid)
+  ☐ Think about merging the css grid components (tile-grid, card-grid, flipcard-grid) @important
+    ☐ At least we need to consider adding breakpoints to the card-grid or make the interfaces match
+      * not sure that we can reuse the CSS need to double check how these are setup
   ☐ Card grid should have map of modifiers (with changes to columsn and gap)
     * compact should live within this
   ☐ Should typography size pass through if the value is a unit
