@@ -12,6 +12,7 @@
 /// Module Settings
 /// @type Map
 /// @prop {Color} background-color [rgb(0,0,0)] Color used for the fade-in of the vignette. Must be actual color not color module palette name
+/// @prop {CssValue} image-filter [saturate(85%)] Filter value placed over image.
 
 $config: (
   "background-color" : rgb(0,0,0),

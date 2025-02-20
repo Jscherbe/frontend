@@ -134,3 +134,17 @@ SCSS Todos:
   ☐ Tag module needs to be set up
   ☐ WYSIWYG (excludes) - This should be refacotred to dedicated mixins to push exlcudes
     ☐ Then remove list lines and add it to its's own module and call mixin
+
+  Documentation:
+    - setup config documentation for the following components
+      ✔ scss/components/_captioned-figure.scss @done
+      ✔ scss/components/_data-table.scss @done
+      ☐ scss/components/_form-theme.scss
+      ✔ scss/components/_hero.scss @done
+      ✔ scss/components/_popover.scss @done
+      ☐ scss/components/_pull-quote.scss
+      ☐ scss/components/_scroll-slider.scss
+      ☐ scss/components/_skip-link.scss
+      ☐ scss/components/_spoke-spinner.scss
+      ☐ scss/components/_tile-grid-overlay.scss
+      ✔ scss/components/_vignette.scss @done
