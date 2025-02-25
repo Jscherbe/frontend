@@ -14895,7 +14895,7 @@ ul.list-inline,
 }
 
 .menu-stack--separated {
-  border-top: 1px solid var(--site-color-rule);
+  border-top: 1px solid var(--site-color-rule-light);
   padding-top: 0.5em;
   margin-top: 0.5em;
 }
@@ -14903,18 +14903,19 @@ ul.list-inline,
 .menu-stack__label {
   text-transform: uppercase;
   padding-bottom: 0.5em;
+  line-height: 1.3;
 }
 
 .menu-stack__item--separator-before {
-  border-top: 1px solid var(--site-color-rule);
-  margin-top: 0.35em;
-  padding-top: 0.35em;
+  border-top: 1px solid var(--site-color-rule-light);
+  margin-top: 0.5em;
+  padding-top: 0.5em;
 }
 
 .menu-stack__item--separator-after {
-  border-bottom: 1px solid var(--site-color-rule);
-  margin-bottom: 0.35em;
-  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--site-color-rule-light);
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .menu-stack__list .menu-stack__list {
@@ -14931,9 +14932,10 @@ ul.list-inline,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.35em 1em;
+  padding: 0.5em 1.25em;
   margin: 0.2em 0;
   border-radius: 2rem;
+  line-height: 1.3;
   color: var(--site-color-link);
   background-color: transparent;
   -webkit-box-sizing: border-box;
@@ -14973,14 +14975,14 @@ ul.list-inline,
 .menu-stack__selectable [type=radio],
 .menu-stack__selectable-input {
   position: absolute;
-  top: 0.55em;
-  left: 1em;
+  top: 0.7em;
+  left: 1.25em;
 }
 
 .menu-stack__selectable label,
 .menu-stack__selectable-label {
   width: 100%;
-  padding: 0.55em 1em 0.55em 3em;
+  padding: 0.7em 1.25em 0.7em 3em;
 }
 
 .menu-stack__link-text {
@@ -15014,9 +15016,9 @@ ul.list-inline,
 
 .menu-stack--hanging > .menu-stack__list > .menu-stack__item > .menu-stack__link,
 .menu-stack--hanging > .menu-stack__list > .menu-stack__item > .menu-stack__collapsible > .menu-stack__toggle {
-  margin-left: -1em;
-  margin-right: -1em;
-  width: calc(100% + 2em);
+  margin-left: -1.25em;
+  margin-right: -1.25em;
+  width: calc(100% + 2.5em);
 }
 
 .menu-stack--compact .menu-stack__link {

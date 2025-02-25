@@ -19,6 +19,14 @@ $-fallbacks: (
   "link-border-radius" : (
     "function" : meta.get-function("get", false, "button"),
     "property" : "border-radius"
+  ),
+  "label-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+  "link-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
   )
 );
     
@@ -36,7 +44,8 @@ $-fallbacks: (
 /// @prop {Color} label-color [null] The type color of the label.
 /// @prop {Dimension} label-margin [0.5em] The margin of the label.
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
-/// @prop {CssValue} label-type-size [false] Adjusts the type size of the label.
+/// @prop {CssValue} label-type-size [false] Adjusts the type size of the label. Only uses font-size from type size.
+/// @prop {CssValue} label-line-height [true] Adjust the label line-height, defaults to typography line-height-dense
 /// @prop {list} link-active-selectors [(.is-active, '[aria-current=page]')] Selectors to apply active styling.
 /// @prop {Color} link-background-color [transparent] The background color of the menu-stack toggle. 
 /// @prop {Color} link-background-color-active [rgb(219, 219, 219)] The background color of the menu-stack toggle when active.
@@ -46,6 +55,7 @@ $-fallbacks: (
 /// @prop {Color} link-color-active [black] The type color of the menu-stack toggle when active.
 /// @prop {String} link-color-hover [link-hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {CssValue} link-font-weight [null] The font weight of the menu-stack toggle.
+/// @prop {CssValue} label-line-height [true] Adjust the link line-height, defaults to typography line-height-dense
 /// @prop {Dimension} link-icon-margin [0.65em] Adds a right margin to the icon.
 /// @prop {Dimension} link-icon-width [1em] The width of the icon.
 /// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
@@ -55,31 +65,33 @@ $-fallbacks: (
 $config: (
   "selectable-input-width" : 3em,
   "nested-indent" : 0.5em,
-  "rule-style" : "default",
+  "rule-style" : "light",
   "rule-margin" : 0.5em,
-  "link-separated-margin" : false,
-  "link-separated-rule-style" : false,
   "toggle-icon-rotate" : false,
-  "compact-link-padding-x": 0.75em,
-  "compact-link-padding-y": 0.25em,
   "label-color" : null,
   "label-margin" : 0.5em,
   "label-text-transform" : uppercase,
   "label-type-size" : false,
+  "label-line-height" : true,
+  "link-separated-margin" : false,
+  "link-separated-rule-style" : false,
   "link-active-selectors" : (".is-active", '[aria-current="page"]'),
   "link-background-color" : transparent,
   "link-background-color-active" : rgb(219, 219, 219),
-  "link-background-color-hover" : rgb(219, 219, 219),
+  "link-background-color-hover" : rgb(240, 240, 240),
   "link-border-radius" : true,
   "link-color" : "link",
   "link-color-active" : black,
   "link-color-hover" : "link-hover",
   "link-font-weight" : null,
+  "link-line-height" : true,
   "link-icon-margin" : 0.65em,
   "link-icon-width" : 1em,
   "link-margin" : 0.2em,
-  "link-padding-x": 1em,
-  "link-padding-y": 0.35em,
+  "link-padding-x": 1.25em,
+  "link-padding-y": 0.5em,
+  "compact-link-padding-x": 0.75em,
+  "compact-link-padding-y": 0.25em,
 ) !default;
 
 
@@ -126,6 +138,7 @@ $config: (
     text-transform: get("label-text-transform");
     padding-bottom: get("label-margin");
     color: color.get(get("label-color"));
+    line-height: get("label-line-height");
     @if (get("label-type-size")) {
       @include typography.size(get("label-type-size"), $only-font-size: true);
     }
@@ -159,6 +172,7 @@ $config: (
     margin: get("link-margin") 0;
     border-radius: get("link-border-radius");
     font-weight: get("link-font-weight");
+    line-height: get("link-line-height");
     color: color.get(get("link-color"));
     background-color: color.get(get("link-background-color"));
     box-sizing: border-box;

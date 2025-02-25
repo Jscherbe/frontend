@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.13
+
+- SCSS > Components > Menu Stack
+  - Add options for line-height for link and label
+  - Change rule color to light by default
+
 ## Version 0.1.0-beta.12
 
 - SCSS > Components > Menu Stack

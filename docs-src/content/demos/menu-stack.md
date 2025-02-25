@@ -12,7 +12,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
       <a class="menu-stack__link" href="#" >This is Example Menu Item</a>
     </li>
     <li class="menu-stack__item">
-      <a class="menu-stack__link is-active" href="#">This is Example Menu Item with a really long title</a>
+      <a class="menu-stack__link is-active" href="#">This is Example Menu Item with a really long title. It even has another sentence for checking line wrapping</a>
     </li>
     <li class="menu-stack__item menu-stack__item--separator-before">
       <a class="menu-stack__link" href="#">This is Example Menu Item</a>
@@ -134,7 +134,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
   <h3 class="menu-stack__label">Example Label</h3>
   <ul class="menu-stack__list">
     <li class="menu-stack__item">
-      <a class="menu-stack__link is-active" href="#" >
+      <a class="menu-stack__link" href="#" >
         <span class="menu-stack__link-icon fas fa-house" aria-hidden="true"></span>
         <span class="menu-stack__link-text">Home</span>
       </a>
@@ -146,7 +146,7 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
       </a>
     </li>
     <li class="menu-stack__item">
-      <a class="menu-stack__link is-active" href="#" >
+      <a class="menu-stack__link" href="#" >
         <span class="menu-stack__link-icon fas fa-music" aria-hidden="true"></span>
         <span class="menu-stack__link-text">Audio</span>
       </a>
