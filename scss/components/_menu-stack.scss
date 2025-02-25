@@ -24,7 +24,7 @@ $-fallbacks: (
     
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} checkbox-area-width [3em] The width of the checkbox area.
+/// @prop {Dimension} selectable-input-width [3em] The width of the checkbox/radio input
 /// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
 /// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
 /// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
@@ -53,7 +53,7 @@ $-fallbacks: (
 /// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
 
 $config: (
-  "checkbox-area-width" : 3em,
+  "selectable-input-width" : 3em,
   "nested-indent" : 0.5em,
   "rule-style" : "default",
   "rule-margin" : 0.5em,
@@ -115,6 +115,7 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("menu-stack");
+  $selectable-y: (get("link-padding-y") + get("link-margin"));
 
   #{ $prefix }--separated {
     border-top: element.get-rule-style(get("rule-style"));
@@ -149,7 +150,7 @@ $config: (
   // - Use the modifier "site-menu--contained" to keep the links within 
   //   the parent container (no optical alignment), should be within something that contains it
   #{ $prefix }__link,
-  #{ $prefix }__checkbox,
+  #{ $prefix }__selectable,
   #{ $prefix }__toggle {
     width: 100%;
     display: flex;
@@ -176,19 +177,21 @@ $config: (
       }
     }
   }
-  #{ $prefix }__checkbox {
-    $checkbox-y: (get("link-padding-y") + get("link-margin"));
+  #{ $prefix }__selectable {
     padding: 0;
     position: relative;
-    [type="checkbox"] {
-      position: absolute;
-      top: $checkbox-y;
-      left: get("link-padding-x");
-    }
-    label {
-      width: 100%;
-      padding: $checkbox-y get("link-padding-x") $checkbox-y get("checkbox-area-width");
-    }
+  }
+  #{ $prefix }__selectable [type="checkbox"],
+  #{ $prefix }__selectable [type="radio"],
+  #{ $prefix }__selectable-input {
+    position: absolute;
+    top: $selectable-y;
+    left: get("link-padding-x");
+  }
+  #{ $prefix }__selectable label,
+  #{ $prefix }__selectable-label {
+    width: 100%;
+    padding: $selectable-y get("link-padding-x") $selectable-y get("selectable-input-width");
   }
   #{ $prefix }__link-text {
     display: block;

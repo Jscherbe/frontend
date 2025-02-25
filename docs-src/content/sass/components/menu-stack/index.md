@@ -37,7 +37,7 @@ Module Settings
 
 ``` scss
 $config: (
-  "checkbox-area-width" : 3em,
+  "selectable-input-width" : 3em,
   "nested-indent" : 0.5em,
   "rule-style" : "default",
   "rule-margin" : 0.5em,
@@ -87,7 +87,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|checkbox-area-width|Dimension|3em|The width of the checkbox area.|
+|selectable-input-width|Dimension|3em|The width of the checkbox/radio input|
 |link-separated-margin|Boolean|false|Enables a margin between the items in the menu-stack.|
 |link-separated-rule-style|Boolean|false|Enables a rule between the items in the menu-stack.|
 |nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
@@ -206,7 +206,7 @@ Prints component styles
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 110-114
-- **Lines (code):** 116-244
+- **Lines (code):** 116-247
 
 </details>
 

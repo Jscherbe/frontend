@@ -88,37 +88,37 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|arrow-size|Dimension|16px|
-|background-color|Color|white|
-|border-radius|Dimension|6px|
-|color|Color|inherit|
-|max-width|Dimension|90vw|
-|max-height|Dimension|25rem|
-|padding|Dimension|1rem|
-|padding-large|Dimension|2rem|
-|type-size|Dimension|null|
-|z-index|Number|true|
-|box-shadow|CssValue|true|
-|box-shadow-footer|CssValue|0 0 4px|
-|box-shadow-footer-color|String|"box-shadow"|
-|header-background-color|Color|#ccc|
-|header-color|Color|null|
-|header-media-background-color|Color|black|
-|header-padding-y|Dimension|0.25rem|
-|footer-background-color|Color|#ccc|
-|footer-color|Color|null|
-|footer-padding-y|Dimension|0.25rem|
-|footer-padding-y-large|Dimension|0.5rem|
-|tooltip-background-color|Color|white|
-|tooltip-color|Color|null|
-|tooltip-max-width|Dimension|20rem|
-|tooltip-padding|Dimension|0.5rem|
-|tooltip-width|Dimension|auto|
-|width|Dimension|15rem|
-|width-large|Dimension|30rem|
-|width-large-x|Dimension|50rem|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|arrow-size|Dimension|16px|size of the dropdown arrow.|
+|background-color|Color|white|Background color of the popover.|
+|border-radius|Dimension|6px|Border radius of the popover.|
+|color|Color|inherit|Text color of the popover.|
+|max-width|Dimension|90vw|Max width of the popover.|
+|max-height|Dimension|25rem|Max height of the popover.|
+|padding|Dimension|1rem|Padding of the popover.|
+|padding-large|Dimension|2rem|Padding of the popover if using "--large" or "--large-x" styling.|
+|type-size|Dimension|null|Font size of the popover.|
+|z-index|Number|true|z-index of the popover.|
+|box-shadow|CssValue|true|Box shadow of the popover.|
+|box-shadow-footer|CssValue|0 0 4px|Box shadow of the popover footer.|
+|box-shadow-footer-color|String|"box-shadow"|Color of the footer's box shadow.|
+|header-background-color|Color|#ccc|Background color of the popover header|
+|header-color|Color|null|Text color for the header.|
+|header-media-background-color|Color|black|background color for header media.|
+|header-padding-y|Dimension|0.25rem|Vertical padding of the header.|
+|footer-background-color|Color|#ccc|Background color of the footer.|
+|footer-color|Color|null|Text color of the footer.|
+|footer-padding-y|Dimension|0.25rem|Vertical padding of the footer.|
+|footer-padding-y-large|Dimension|0.5rem|Vertical padding of the footer if using "--large" or "--large-x" styling.|
+|tooltip-background-color|Color|white|Background color of the tooltip.|
+|tooltip-color|Color|null|Font color of the tooltip.|
+|tooltip-max-width|Dimension|20rem|Max width of the tooltip.|
+|tooltip-padding|Dimension|0.5rem|Padding of the tooltip.|
+|tooltip-width|Dimension|auto|Width of the tooltip.|
+|width|Dimension|15rem|Width of the popover.|
+|width-large|Dimension|30rem|Width of the popover if using "--large".|
+|width-large-x|Dimension|50rem|Width of the popover if using "--large-x".|
 
     
   

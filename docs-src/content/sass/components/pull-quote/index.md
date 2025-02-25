@@ -73,18 +73,18 @@ $config: (
 
 |Name|Type|Default|
 |:--|:--|:--|
-|body-line-height|Map|true|
-|image-margin-bottom|Map|1rem|
-|image-margin-top|Map|2.5rem|
-|name-margin-bottom|Map|1rem|
-|padding-y|Map|2em|
-|title-font-style|Map|italic|
-|quote-mark-character|Map|"\201c"|
-|quote-mark-color|Map|null|
-|quote-mark-font-family|Map|"Georgia"|
-|quote-mark-font-size|Map|3.75em|
-|quote-mark-enabled|Map|true|
-|quote-mark-line-height|Map|0.35|
+|body-line-height|Number|true|
+|image-margin-bottom|Dimension|1rem|
+|image-margin-top|Dimension|2.5rem|
+|name-margin-bottom|Dimension|1rem|
+|padding-y|Dimension|2em|
+|title-font-style|CssValue|italic|
+|quote-mark-character|String|"\201c"|
+|quote-mark-color|Color|null|
+|quote-mark-font-family|String|"Georgia"|
+|quote-mark-font-size|Dimension|3.75em|
+|quote-mark-enabled|Boolean|true|
+|quote-mark-line-height|Number|0.35|
 
     
   

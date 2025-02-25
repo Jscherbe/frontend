@@ -73,13 +73,13 @@ $config: (
 |:--|:--|:--|:--|
 |extra-split-ratios|Map|wide 70/30|A map where the name is the modifier and the value is a list with two percentages (the first percentage will be correspond with the graphic or content depending on selector [ie. .hero--split-graphic-[name] would apply the first percentage to the graphic while hero--split-content-[name] would apply the first percentage to the content])|
 |breakpoint|String|"medium"|At what breakpoint the hero goes to small screen styling.|
-|height|Dimension|100vh|Height of the hero|
-|height-compact|Dimension|40vh||
-|graphic-height-stacked|Dimension|60vh||
-|content-max-width|Dimension|40rem||
-|content-padding-top|Dimension|3rem||
-|content-padding-bottom|Dimension|3rem||
-|text-align|CssValue|center||
+|height|Dimension|100vh|Height of the hero.|
+|height-compact|Dimension|40vh|Height of the hero when using the "--compact" styling.|
+|graphic-height-stacked|Dimension|60vh|Height of the graphic.|
+|content-max-width|Dimension|40rem|Max width of the content.|
+|content-padding-top|Dimension|3rem|Top padding of the content.|
+|content-padding-bottom|Dimension|3rem|Bottom padding of the content.|
+|text-align|CssValue|center|Text align of the content.|
 
     
   

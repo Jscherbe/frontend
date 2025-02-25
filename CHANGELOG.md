@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0-beta.12
+
+- SCSS > Components > Menu Stack
+  - Refactor menu-stack__checkbox selector to menu-stack__selectable so it works for both radio/checkbox layouts
+  - Added other selectors if needed menu-stack__selectable-[input/label], but it still works with native element selectors (ie. [type="checkbox"])
+  - Change config (checkbox-area-width to selectable-input-width)
+
 ## Version 0.1.0-beta.11
 
 - SCSS

@@ -50,8 +50,8 @@ $config: (
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** variable
-- **Lines (comments):** 12-14
-- **Lines (code):** 16-19
+- **Lines (comments):** 12-15
+- **Lines (code):** 17-20
 
 </details>
 
@@ -63,6 +63,7 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |background-color|Color|rgb(0,0,0)|Color used for the fade-in of the vignette. Must be actual color not color module palette name|
+|image-filter|CssValue|saturate(85%)|Filter value placed over image.|
 
     
   
@@ -95,8 +96,8 @@ Change modules $config
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 21-24
-- **Lines (code):** 26-28
+- **Lines (comments):** 22-25
+- **Lines (code):** 27-29
 
 </details>
 
@@ -154,8 +155,8 @@ Output component stylesheet
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 39-41
-- **Lines (code):** 43-65
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-66
 
 </details>
 
@@ -209,8 +210,8 @@ Get a config option
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** function
-- **Lines (comments):** 30-33
-- **Lines (code):** 35-37
+- **Lines (comments):** 31-34
+- **Lines (code):** 36-38
 
 </details>
 

@@ -14922,7 +14922,7 @@ ul.list-inline,
 }
 
 .menu-stack__link,
-.menu-stack__checkbox,
+.menu-stack__selectable,
 .menu-stack__toggle {
   width: 100%;
   display: -webkit-box;
@@ -14940,40 +14940,45 @@ ul.list-inline,
           box-sizing: border-box;
 }
 .menu-stack__link:hover, .menu-stack__link:focus,
-.menu-stack__checkbox:hover,
-.menu-stack__checkbox:focus,
+.menu-stack__selectable:hover,
+.menu-stack__selectable:focus,
 .menu-stack__toggle:hover,
 .menu-stack__toggle:focus {
   color: var(--site-color-link-hover);
   background-color: var(--site-color-button-background-hover);
 }
 .menu-stack__link.is-active, .menu-stack__link.is-active:hover,
-.menu-stack__checkbox.is-active,
-.menu-stack__checkbox.is-active:hover,
+.menu-stack__selectable.is-active,
+.menu-stack__selectable.is-active:hover,
 .menu-stack__toggle.is-active,
 .menu-stack__toggle.is-active:hover {
   color: black;
   background-color: rgb(219, 219, 219);
 }
 .menu-stack__link[aria-current=page], .menu-stack__link[aria-current=page]:hover,
-.menu-stack__checkbox[aria-current=page],
-.menu-stack__checkbox[aria-current=page]:hover,
+.menu-stack__selectable[aria-current=page],
+.menu-stack__selectable[aria-current=page]:hover,
 .menu-stack__toggle[aria-current=page],
 .menu-stack__toggle[aria-current=page]:hover {
   color: black;
   background-color: rgb(219, 219, 219);
 }
 
-.menu-stack__checkbox {
+.menu-stack__selectable {
   padding: 0;
   position: relative;
 }
-.menu-stack__checkbox [type=checkbox] {
+
+.menu-stack__selectable [type=checkbox],
+.menu-stack__selectable [type=radio],
+.menu-stack__selectable-input {
   position: absolute;
   top: 0.55em;
   left: 1em;
 }
-.menu-stack__checkbox label {
+
+.menu-stack__selectable label,
+.menu-stack__selectable-label {
   width: 100%;
   padding: 0.55em 1em 0.55em 3em;
 }
