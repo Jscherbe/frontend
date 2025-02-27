@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Can we have color palette and assignments and tint/shade
+    * Originally before custom properties, we were able to tint/shade/modify color assignments (ie color.get), once custom properties and keywords were set to pass through (which is needed) this made it impossible to use it this way. Is there a way to workaround this (other data ie palette that is reserved for pure colors, carrying more info along with custom property version [ie. object with value and pure color]). I think we don't want to make it too complicated but if a solution exists that makes all of this definable in color module it might be more user friendly? One easy solution but not necessarily the right one is to give warnings if attempting to adjust an non color 
   ✔ Data table color for thead th @done
   ✔ Form theme remove margins and paddings on fieldset legend @done
   ☐ Think about merging the css grid components (tile-grid, card-grid, flipcard-grid) @important

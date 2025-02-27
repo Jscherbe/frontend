@@ -4765,10 +4765,191 @@
 <li><strong>File:</strong> _data-table.scss</li>
 <li><strong>Group:</strong> data-table</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 25-26</li>
-<li><strong>Lines (code):</strong> 28-57</li>
+<li><strong>Lines (comments):</strong> 25-54</li>
+<li><strong>Lines (code):</strong> 56-85</li>
 </ul>
 </details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cell-padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(0.5em,)</td>
+<td style="text-align:left">Padding of the th and td elements.</td>
+</tr>
+<tr>
+<td style="text-align:left">text-align</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">left</td>
+<td style="text-align:left">Text align of the table.</td>
+</tr>
+<tr>
+<td style="text-align:left">type-size</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;small&quot;</td>
+<td style="text-align:left">Font size of the table.</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">Background color of table container.</td>
+</tr>
+<tr>
+<td style="text-align:left">header-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#f5f4f4</td>
+<td style="text-align:left">Background color of the the table header.</td>
+</tr>
+<tr>
+<td style="text-align:left">body-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">white</td>
+<td style="text-align:left">Background color of table body.</td>
+</tr>
+<tr>
+<td style="text-align:left">footer-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#f3f3f3</td>
+<td style="text-align:left">Background color of table footer.</td>
+</tr>
+<tr>
+<td style="text-align:left">color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">&quot;type-secondary&quot;</td>
+<td style="text-align:left">Font color of the table.</td>
+</tr>
+<tr>
+<td style="text-align:left">header-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">&quot;headline&quot;</td>
+<td style="text-align:left">Font color for the table header.</td>
+</tr>
+<tr>
+<td style="text-align:left">line-height</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Line height for the table.</td>
+</tr>
+<tr>
+<td style="text-align:left">column-min-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">6em</td>
+<td style="text-align:left">Min-width of the th element.</td>
+</tr>
+<tr>
+<td style="text-align:left">first-column-large-min-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">15em</td>
+<td style="text-align:left">When using &quot;--large-first&quot; style, the min width of the first th element.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1px</td>
+<td style="text-align:left">Border width of the table.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#dddddd</td>
+<td style="text-align:left">Border color for the table.</td>
+</tr>
+<tr>
+<td style="text-align:left">striped-row-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#eeeeee</td>
+<td style="text-align:left">Background color for even rows if using &quot;--striped&quot; styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">muted-row-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#ccc</td>
+<td style="text-align:left">Background color for odd rows if using &quot;--striped&quot; styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">muted-row-border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Border color for odd rows if using &quot;--striped&quot; styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">highlighted-row-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">#ccc</td>
+<td style="text-align:left">Background color row if using &quot;__row-highlighted&quot; styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">highlighted-row-border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Border color row if using &quot;__row-highlighted&quot; styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">large-header-cell-padding-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1em</td>
+<td style="text-align:left">Vertical padding of header if using &quot;--large-header&quot; styling.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-type-size</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;large&quot;</td>
+<td style="text-align:left">Type size of table caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Background color of table caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-font-weight</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left">Font weight of caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-border-bottom</td>
+<td style="text-align:left">CssBalue</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Bottom border of the caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(0,)</td>
+<td style="text-align:left">Margin of the caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(0.65em 0)</td>
+<td style="text-align:left">Padding of the caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">caption-text-align</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">left</td>
+<td style="text-align:left">Text align of the caption.</td>
+</tr>
+<tr>
+<td style="text-align:left">extra-selector</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;.wysiwyg table&quot;</td>
+<td style="text-align:left">Additional selectors to include table styling.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -4783,8 +4964,8 @@
 <li><strong>File:</strong> _data-table.scss</li>
 <li><strong>Group:</strong> data-table</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 59-62</li>
-<li><strong>Lines (code):</strong> 64-66</li>
+<li><strong>Lines (comments):</strong> 87-90</li>
+<li><strong>Lines (code):</strong> 92-94</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -4823,8 +5004,8 @@
 <li><strong>File:</strong> _data-table.scss</li>
 <li><strong>Group:</strong> data-table</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 78-80</li>
-<li><strong>Lines (code):</strong> 82-189</li>
+<li><strong>Lines (comments):</strong> 106-108</li>
+<li><strong>Lines (code):</strong> 110-217</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -4847,8 +5028,8 @@
 <li><strong>File:</strong> _data-table.scss</li>
 <li><strong>Group:</strong> data-table</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 68-71</li>
-<li><strong>Lines (code):</strong> 73-76</li>
+<li><strong>Lines (comments):</strong> 96-99</li>
+<li><strong>Lines (code):</strong> 101-104</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>

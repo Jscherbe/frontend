@@ -4729,33 +4729,35 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"checkbox-area-width"</span> <span class="pjs-token pjs-punctuation">:</span> 3em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"selectable-input-width"</span> <span class="pjs-token pjs-punctuation">:</span> 3em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"nested-indent"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"default"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"rule-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-separated-margin"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-separated-rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"toggle-icon-rotate"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"compact-link-padding-x"</span><span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"compact-link-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 0.25em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"label-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"label-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"label-text-transform"</span> <span class="pjs-token pjs-punctuation">:</span> uppercase<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"label-type-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"label-line-height"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-separated-margin"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-separated-rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-active-selectors"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">".is-active"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">'[aria-current="page"]'</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-background-color-active"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>219<span class="pjs-token pjs-punctuation">,</span> 219<span class="pjs-token pjs-punctuation">,</span> 219<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>219<span class="pjs-token pjs-punctuation">,</span> 219<span class="pjs-token pjs-punctuation">,</span> 219<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-background-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"link"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-color-active"</span> <span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"link-hover"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-line-height"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-icon-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.65em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-icon-width"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"link-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.2em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-padding-x"</span><span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 0.35em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-padding-x"</span><span class="pjs-token pjs-punctuation">:</span> 1.25em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"compact-link-padding-x"</span><span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"compact-link-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 0.25em<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -4763,8 +4765,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 25-53</li>
-<li><strong>Lines (code):</strong> 55-83</li>
+<li><strong>Lines (comments):</strong> 33-63</li>
+<li><strong>Lines (code):</strong> 65-95</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -4779,10 +4781,10 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">checkbox-area-width</td>
+<td style="text-align:left">selectable-input-width</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">3em</td>
-<td style="text-align:left">The width of the checkbox area.</td>
+<td style="text-align:left">The width of the checkbox/radio input</td>
 </tr>
 <tr>
 <td style="text-align:left">link-separated-margin</td>
@@ -4854,7 +4856,13 @@
 <td style="text-align:left">label-type-size</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">false</td>
-<td style="text-align:left">Adjusts the type size of the label.</td>
+<td style="text-align:left">Adjusts the type size of the label. Only uses font-size from type size.</td>
+</tr>
+<tr>
+<td style="text-align:left">label-line-height</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Adjust the label line-height, defaults to typography line-height-dense</td>
 </tr>
 <tr>
 <td style="text-align:left">link-active-selectors</td>
@@ -4911,6 +4919,12 @@
 <td style="text-align:left">The font weight of the menu-stack toggle.</td>
 </tr>
 <tr>
+<td style="text-align:left">label-line-height</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Adjust the link line-height, defaults to typography line-height-dense</td>
+</tr>
+<tr>
 <td style="text-align:left">link-icon-margin</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">0.65em</td>
@@ -4956,8 +4970,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 86-89</li>
-<li><strong>Lines (code):</strong> 91-93</li>
+<li><strong>Lines (comments):</strong> 98-101</li>
+<li><strong>Lines (code):</strong> 103-105</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -4996,8 +5010,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 110-114</li>
-<li><strong>Lines (code):</strong> 116-244</li>
+<li><strong>Lines (comments):</strong> 122-126</li>
+<li><strong>Lines (code):</strong> 128-261</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5025,8 +5039,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 95-98</li>
-<li><strong>Lines (code):</strong> 100-103</li>
+<li><strong>Lines (comments):</strong> 107-110</li>
+<li><strong>Lines (code):</strong> 112-115</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
