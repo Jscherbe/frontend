@@ -134,6 +134,7 @@ SCSS Todos:
   ☐ Tag module needs to be set up
   ☐ WYSIWYG (excludes) - This should be refacotred to dedicated mixins to push exlcudes
     ☐ Then remove list lines and add it to its's own module and call mixin
+  ☐ Update flipcard to use utils mixin that pulls specific padding. This will allow users to pass different formats of padding (ie: (x), (x,y) (x,y,z,) (w,x,y,z))
 
   Documentation:
     - setup config documentation for the following components
