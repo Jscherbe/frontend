@@ -1,7 +1,7 @@
 /* eslint-env node */
 import path from "path";
 // import { fileURLToPath } from "url";
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
 import markdownItAnchor from "markdown-it-anchor";
 import tocPlugin from "eleventy-plugin-nesting-toc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
@@ -55,7 +55,10 @@ export default async function(eleventyConfig) {
   }
   
   eleventyConfig.addPlugin(optionsTablePlugin);
-  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  // Overwrite asset paths like hugo
+  // Overwrite asset paths like hugo
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  
+  // Allow importing MD from outside sources (ie. Changelog)
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(navTreePlugin, {
     toHtml: {
       formatLink: menuLinkFormatter,

@@ -6,9 +6,20 @@ $link-padding-x: 0.75em;
 $link-padding-y: 0.35em;
 $link-indent: 1.5em;
 $collapsible-inner-padding: 0.5em;
+$item-margin-y: 3px;
 
 .nav-tree__item {
-  margin: 3px 0;
+  margin: $item-margin-y 0;
+}
+.nav-tree__item--separator-before {
+  border-top: ulu.element-get-rule-style("light");
+  padding-top: $item-margin-y * 2;
+  margin-top: $item-margin-y * 2;
+}
+.nav-tree__item--separator-after {
+  border-bottom: ulu.element-get-rule-style("light");
+  padding-bottom: $item-margin-y * 2;
+  margin-bottom: $item-margin-y * 2;
 }
 .nav-tree__link,
 .nav-tree__toggle {

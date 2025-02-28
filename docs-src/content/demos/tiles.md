@@ -1,7 +1,7 @@
 ---
 title: Tiles
 intro: Tile and tile grid tests
-layout: demo
+layout: unformatted
 ---
 
 <h2 class="h2">Default</h2> 

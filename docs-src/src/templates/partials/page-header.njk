@@ -4,4 +4,6 @@
     {{ intro }}
   </p>
 {% endif %}
-<hr class="rule rule--light rule--margin-large">
+{% if not pageHeader.noRule  %}
+  <hr class="rule rule--light rule--margin-large">
+{% endif %}

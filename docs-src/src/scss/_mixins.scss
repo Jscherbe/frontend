@@ -1,0 +1,9 @@
+@use "vars";
+@use "ulu";
+
+@mixin site-headline-rule() {
+  border-bottom: ulu.element-get-rule-style("light");
+  border-bottom-width: 3px;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}

@@ -1,7 +1,7 @@
 ---
 title: Popovers
 intro: Popovers are clickable elements that show content relative to the toggle
-layout: demo
+layout: unformatted
 ---
 
 

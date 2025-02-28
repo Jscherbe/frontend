@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.14
+
+- SCSS > Components > Nav Strip
+  - Add remove-scrollbar() CSS to nav strip list
+
 ## Version 0.1.0-beta.13
 
 - SCSS > Components > Menu Stack

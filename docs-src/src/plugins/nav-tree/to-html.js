@@ -74,6 +74,15 @@ export default function toHtml(tree, opts) {
 
   const printItem = (node, depth, isIndex) => {
     const ctx = { node, options, isIndex };
+    const menuOptions = node.entry.data?.navTree || {};
+    // if (node.entry.data.title === "Changelog") {
+    //   debugger;
+    // }
+    const itemClasses = [
+      menuOptions.separatorBefore ? getClass("item--separator-before") : null,
+      menuOptions.separatorAfter ? getClass("item--separator-after") : null,
+    ].filter(v => v).join(" ");
+
     if (exclude(ctx)) {
       return "";
     }
@@ -84,7 +93,7 @@ export default function toHtml(tree, opts) {
       shouldCollapseNode({ node, depth, tree, options })
     ) {
       return `
-        <li class="${ getClass("item") } ${ node.classes }">
+        <li class="${ getClass("item") } ${ node.classes } ${ itemClasses }">
           <details 
             class="${ getClass("collapsible") }" 
             ${ node.activeTrail ? "open" : ""}
@@ -107,7 +116,7 @@ export default function toHtml(tree, opts) {
         </a>
       `;
       return indexLink ? `
-        <li class="${ getClass("item") } ${ node.classes }">
+        <li class="${ getClass("item") } ${ node.classes } ${ itemClasses }">
           ${ indexLink }
           ${ showChildren && !isIndex ? printList(node.children, depth) : "" }
         </li>

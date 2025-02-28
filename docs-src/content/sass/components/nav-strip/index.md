@@ -66,8 +66,8 @@ $config: (
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** variable
-- **Lines (comments):** 15-32
-- **Lines (code):** 34-51
+- **Lines (comments):** 16-33
+- **Lines (code):** 35-52
 
 </details>
 
@@ -126,8 +126,8 @@ Change modules $config
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 54-57
-- **Lines (code):** 59-61
+- **Lines (comments):** 55-58
+- **Lines (code):** 60-62
 
 </details>
 
@@ -185,8 +185,8 @@ Prints component styles
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** mixin
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-155
+- **Lines (comments):** 73-75
+- **Lines (code):** 77-157
 
 </details>
 
@@ -240,8 +240,8 @@ Get a config option
 - **File:** _nav-strip.scss
 - **Group:** nav-strip
 - **Type:** function
-- **Lines (comments):** 63-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 64-67
+- **Lines (code):** 69-71
 
 </details>
 

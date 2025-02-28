@@ -1,0 +1,21 @@
+@use "vars";
+@use "ulu";
+@use "mixins";
+
+.changelog {
+  line-height: ulu.typography-get("line-height-dense");
+  h1 {
+    display: none;
+  }
+  h2 {
+    @include ulu.typography-size("h3");
+    @include mixins.site-headline-rule();
+    margin-top: 1.5em;
+  }
+  ul {
+    @include ulu.element-styles-unordered-list();
+  }
+  ol {
+    @include ulu.element-styles-ordered-list();
+  }
+}

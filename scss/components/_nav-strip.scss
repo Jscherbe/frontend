@@ -10,6 +10,7 @@
 @use "../utils";
 @use "../color";
 @use "../selector";
+@use "../layout";
 @use "../typography";
 
 /// Module Settings
@@ -88,6 +89,7 @@ $config: (
     overflow-x: auto;
     line-height: typography.get("line-height-dense");
     gap: get("margin-between");
+    @include layout.remove-scrollbar();
   }
   #{ $prefix }__item,
   #{ $prefix }--auto li {
