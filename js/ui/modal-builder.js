@@ -4,6 +4,7 @@
 
 // Note this needs to be run before dialogs are initialized!
 
+import { wrapSettingString } from "../settings.js";
 import { getName } from "../events/index.js";
 import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "./resizer.js";
@@ -37,8 +38,8 @@ export const defaults = {
   print: false,
   noMinHeight: false,
   class: "",
-  classCloseIcon: "css-icon css-icon--close",
-  classResizerIcon: "css-icon css-icon--drag-x",
+  classCloseIcon: wrapSettingString("iconClassClose"),
+  classResizerIcon: wrapSettingString("iconClassDragX"),
   debug: false,
   templateCloseIcon(config) {
     return `<span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true"></span>`;

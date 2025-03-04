@@ -1,4 +1,9 @@
 JS Todos:
+  ✔ Setup config module @done
+    ✔ Setup but issue with settings being set before changes can occur @done
+  ☐ Need to double check the theme toggle
+    ☐ Needs to be node js safe like other modules
+    ☐ Check logic and implementation
   ☐ Should events just be a ui module? (but I think it's useful if we build more event types/system)
   ☐ Look through all setup (ie init > setup) to make sure they work with or around the context from pageModified event
   ☐ Create a solution for the repeating init attributes and selectors (DRY)

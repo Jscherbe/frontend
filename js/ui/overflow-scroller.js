@@ -10,6 +10,7 @@
  * @todo - Document that user could use something like [https://github.com/LachlanArthur/scroll-snap-api/tree/master/src] to have it go between items
  * 
  */
+import { wrapSettingString } from "../settings.js";
 import { hasRequiredProps } from '@ulu/utils/object.js';
 import { logError } from "../utils/class-logger.js";
 const requiredElements = [
@@ -26,8 +27,8 @@ export class OverflowScroller {
     offsetEnd: 100,
     amount: "auto",
     buttonClasses: ["button", "button--icon"],
-    iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
-    iconClassesNext: ["css-icon", "css-icon--angle-right"]
+    iconClassPrevious: wrapSettingString("iconClassPrevious"),
+    iconClassNext: wrapSettingString("iconClassNext"),
   }
   constructor(elements, config) {
     this.options = Object.assign({}, OverflowScroller.defaults, config);
@@ -87,10 +88,10 @@ export class OverflowScroller {
     return button;
   }
   getControlContent(action) {
-    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
+    const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
     return `
       <span class="hidden-visually">${ action }</span>
-      <span class="${ classes.join(' ') }" aria-hidden="true"></span>
+      <span class="${ classes }" aria-hidden="true"></span>
     `;
   }
   onScroll(event) {

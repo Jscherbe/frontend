@@ -1,4 +1,5 @@
 SCSS Todos:
+  ☐ Include common container we need full/fit/fill
   ✔ Should we remove scrollbar on nav-stip (ie. layout.remove-scrollbar())? @done
     * It's there as a precaution and is sometimes used
     * Is an issue for accessibility

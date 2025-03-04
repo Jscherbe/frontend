@@ -41,7 +41,7 @@ $config: (
   "margin-bottom" : 3rem,
   "margin-top" : 1rem,
   "button-icon-offset-x" : 2rem,
-  "button-icon-offset-y" : false,
+  "button-icon-offset-y" : null,
   "button-margin" : 2rem,
   "button-size" : 3rem,
   "button-height": 2.5rem,
@@ -192,7 +192,7 @@ Output component stylesheet
 - **Group:** slider
 - **Type:** mixin
 - **Lines (comments):** 76-78
-- **Lines (code):** 80-205
+- **Lines (code):** 80-184
 
 </details>
 

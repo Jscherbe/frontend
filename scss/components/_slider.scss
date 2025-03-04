@@ -37,7 +37,7 @@ $config: (
   "margin-bottom" : 3rem,
   "margin-top" : 1rem,
   "button-icon-offset-x" : 2rem,
-  "button-icon-offset-y" : false,
+  "button-icon-offset-y" : null,
   "button-margin" : 2rem,
   "button-size" : 3rem,
   "button-height": 2.5rem,
@@ -97,11 +97,7 @@ $config: (
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-  }
-  @if get("button-icon-offset-y") {
-    #{ $prefix-plugin }__control-icon {
-      margin-top: get("button-icon-offset-y");
-    }
+    margin-top: get("button-icon-offset-y");
   }
   #{ $prefix-plugin }__nav {
     display: flex;
@@ -164,19 +160,11 @@ $config: (
   }
   #{ $prefix-plugin }__control-button--previous {
     left: 0;
-    @if get("button-icon-offset-x")  {
-      #{ $prefix-plugin }__control-icon {
-        margin-left: get("button-icon-offset-x");
-      }
-    }
+    margin-left: get("button-icon-offset-x");
   }
   #{ $prefix-plugin }__control-button--next {
     right: 0;
-    @if get("button-icon-offset-x")  {
-      #{ $prefix-plugin }__control-icon {
-        margin-right: get("button-icon-offset-x");
-      }
-    }
+    margin-right: get("button-icon-offset-x");
   }
   #{ $prefix }--inset-controls {
     #{ $prefix }__slide-gap-for-controls {
@@ -186,20 +174,11 @@ $config: (
     }
     #{ $prefix-plugin }__control-button--previous {
       left: 0;
-      @if get("button-icon-offset-x")  {
-        &#{ $prefix-plugin }__control-icon {
-          margin-left: get("button-icon-offset-x");
-          
-        }
-      }
+      margin-left: get("button-icon-offset-x");
     }
     #{ $prefix-plugin }__control-button--next {
       right: 0;
-      @if get("button-icon-offset-x")  {
-        &#{ $prefix-plugin }__control-icon {
-          margin-right: get("button-icon-offset-x");
-        }
-      }
+      margin-right: get("button-icon-offset-x");
     }
   }
 }

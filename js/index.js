@@ -5,6 +5,7 @@
 // - Will not include things that aren't used in every site (those would need to 
 //   imported manually
 
+export * as settings from "./settings.js";
 export * as events from "./events/index.js";
 export * as ui from "./ui/index.js";
 export * as utils from "./utils/index.js";

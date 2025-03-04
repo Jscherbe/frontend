@@ -27,6 +27,7 @@
 //                            https://dev.opera.com/articles/css-will-change-property/
 //                              * Will Change use
 
+import { wrapSettingString } from "../settings.js";
 import maintain from 'ally.js/maintain/_maintain';
 import { hasRequiredProps } from '@ulu/utils/object.js';
 import { trimWhitespace } from "@ulu/utils/string.js";
@@ -120,9 +121,9 @@ export class Slider {
     transitionDuration: 700,
     transitionDurationExit: 400,
     transitionTimingFunction: "ease-in-out",
-    buttonClasses: ["Slider__control-icon", "button", "button--icon"],
-    iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
-    iconClassesNext: ["css-icon", "css-icon--angle-right"]
+    buttonClasses: ["button", "button--icon"],
+    iconClassPrevious: wrapSettingString("iconClassPrevious"),
+    iconClassNext: wrapSettingString("iconClassNext"),
     // transition: true
   }
   // constructor(container, title, trackContainer, track, slides, config, debug = false) {
@@ -454,6 +455,7 @@ export class Slider {
     const button = document.createElement("button");
     button.classList.add(this.getClass("control-button"));
     button.classList.add(this.getClass(`control-button--${ action }`));
+    
     button.classList.add(...this.options.buttonClasses);
     button.setAttribute("data-slider-control", action);
     button.setAttribute("type", "button");
@@ -514,12 +516,11 @@ export class Slider {
     button.addEventListener("click", this.goto.bind(this, index));
     return button;
   }
-  // change to css-icon 
   getControlContent(action) {
-    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
+    const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
     return `
       <span class="hidden-visually">${ action }</span>
-      <span class="${ classes.join(' ') }" aria-hidden="true"></span>
+      <span class="${ this.getClass("control-icon") } ${ classes }" aria-hidden="true"></span>
     `;
   }
   getNavContent(number) {

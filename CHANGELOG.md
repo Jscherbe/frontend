@@ -1,5 +1,24 @@
 # Change Log
 
+## Version 0.1.0-beta.15
+
+- JS
+  - Settings.js 
+    - Setup new shared setting module (currently holds icon string settings)
+    - Setup common methods for dealing with settings
+    - Setup wrapped string get method for use in configuring defaults for other modules
+      - So we don't need to refactor for after runtime settings changes
+  - utils/font-awesome.js - Includes helper method for setting font-awesome icons (configureIcons)
+  - ui/modal-builder.js - Adjust to use settings to get icon defaults
+  - ui/overflow-scroller.js and js/ui/slider.js
+    - Change `iconClassesPrevious` and `iconClassesNext` to non array settings `iconClassPrevious` and iconClassNext
+    - Change the above defaults to pull from settings.js
+  - js/ui/slider.js
+    - Fix selector .Slider__control-icon was on .Slider__control-button is now moved to icon
+- SCSS
+  - components/_slider.scss
+    - Fix incorrect selector .Slider__control-icon which was actually targeting the control-button
+
 ## Version 0.1.0-beta.14
 
 - SCSS > Components > Nav Strip
