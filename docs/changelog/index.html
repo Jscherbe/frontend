@@ -1970,6 +1970,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/settings/">
+          
+    
+    <span class="nav-tree__text">
+      settings
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/ui-breakpoints/">
           
     
@@ -4291,6 +4306,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/settings/">
+          
+    
+    <span class="nav-tree__text">
+      settings
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/ui-breakpoints/">
           
     
@@ -4711,6 +4741,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#version-0.1.0-beta.15">Version 0.1.0-beta.15</a>
+            		</li>
+
                     <li><a href="#version-0.1.0-beta.14">Version 0.1.0-beta.14</a>
             		</li>
 
@@ -4810,6 +4843,46 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="version-0.1.0-beta.15" tabindex="-1">Version 0.1.0-beta.15</h2>
+<ul>
+<li>JS
+<ul>
+<li>Settings.js
+<ul>
+<li>Setup new shared setting module (currently holds icon string settings)</li>
+<li>Setup common methods for dealing with settings</li>
+<li>Setup wrapped string get method for use in configuring defaults for other modules
+<ul>
+<li>So we don't need to refactor for after runtime settings changes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>utils/font-awesome.js - Includes helper method for setting font-awesome icons (configureIcons)</li>
+<li>ui/modal-builder.js - Adjust to use settings to get icon defaults</li>
+<li>ui/overflow-scroller.js and js/ui/slider.js
+<ul>
+<li>Change <code>iconClassesPrevious</code> and <code>iconClassesNext</code> to non array settings <code>iconClassPrevious</code> and iconClassNext</li>
+<li>Change the above defaults to pull from settings.js</li>
+</ul>
+</li>
+<li>js/ui/slider.js
+<ul>
+<li>Fix selector .Slider__control-icon was on .Slider__control-button is now moved to icon</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SCSS
+<ul>
+<li>components/_slider.scss
+<ul>
+<li>Fix incorrect selector .Slider__control-icon which was actually targeting the control-button</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="version-0.1.0-beta.14" tabindex="-1">Version 0.1.0-beta.14</h2>
 <ul>
 <li>SCSS &gt; Components &gt; Nav Strip

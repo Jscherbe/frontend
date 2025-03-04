@@ -8,8 +8,8 @@ export class OverflowScroller {
         offsetEnd: number;
         amount: string;
         buttonClasses: string[];
-        iconClassesPrevious: string[];
-        iconClassesNext: string[];
+        iconClassPrevious: any;
+        iconClassNext: any;
     };
     constructor(elements: any, config: any);
     options: any;

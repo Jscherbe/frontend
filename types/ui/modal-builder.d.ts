@@ -38,8 +38,8 @@ export namespace defaults {
     export let noMinHeight: boolean;
     let _class: string;
     export { _class as class };
-    export let classCloseIcon: string;
-    export let classResizerIcon: string;
+    export let classCloseIcon: any;
+    export let classResizerIcon: any;
     export let debug: boolean;
     export function templateCloseIcon(config: any): string;
     export function templateResizerIcon(config: any): string;

@@ -16380,15 +16380,11 @@ ul.list-inline,
 
 .Slider__control-button--previous {
   left: 0;
-}
-.Slider__control-button--previous .Slider__control-icon {
   margin-left: 2rem;
 }
 
 .Slider__control-button--next {
   right: 0;
-}
-.Slider__control-button--next .Slider__control-icon {
   margin-right: 2rem;
 }
 
@@ -16398,14 +16394,10 @@ ul.list-inline,
 }
 .slider--inset-controls .Slider__control-button--previous {
   left: 0;
-}
-.slider--inset-controls .Slider__control-button--previous.Slider__control-icon {
   margin-left: 2rem;
 }
 .slider--inset-controls .Slider__control-button--next {
   right: 0;
-}
-.slider--inset-controls .Slider__control-button--next.Slider__control-icon {
   margin-right: 2rem;
 }
 

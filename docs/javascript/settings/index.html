@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    ui/print
+    settings
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -1968,9 +1968,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/javascript/settings/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/settings/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -2133,9 +2133,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-print/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-print/">
           
     
     <span class="nav-tree__text">
@@ -4304,9 +4304,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/javascript/settings/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/settings/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -4469,9 +4469,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-print/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-print/">
           
     
     <span class="nav-tree__text">
@@ -4741,22 +4741,25 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#ui%2Fprint.init()">ui/print.init()</a>
+                    <li><a href="#settings.getdefaultsettings()-%E2%87%92-object">settings.getDefaultSettings() ⇒ object</a>
             		</li>
 
-                    <li><a href="#ui%2Fprint~defaults">ui/print~defaults</a>
-            
-                <ol>
-                    
-                    <li><a href="#defaults.element">defaults.element</a>
-            		</li>
-                </ol>
+                    <li><a href="#settings.updatesettings(changes)">settings.updateSettings(changes)</a>
             		</li>
 
-                    <li><a href="#ui%2Fprint~setup()">ui/print~setup()</a>
+                    <li><a href="#settings.getsettings()-%E2%87%92-object">settings.getSettings() ⇒ object</a>
             		</li>
 
-                    <li><a href="#ui%2Fprint~setuptrigger()">ui/print~setupTrigger()</a>
+                    <li><a href="#settings.getsetting(key)-%E2%87%92-*">settings.getSetting(key) ⇒ *</a>
+            		</li>
+
+                    <li><a href="#settings.updatesetting(key%2C-value)">settings.updateSetting(key, value)</a>
+            		</li>
+
+                    <li><a href="#settings.wrapsettingstring(key)-%E2%87%92-object">settings.wrapSettingString(key) ⇒ object</a>
+            		</li>
+
+                    <li><a href="#settings.configureicons()">settings.configureIcons()</a>
             		</li>
                 </ol>
             </div>
@@ -4769,53 +4772,126 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <p><a name="module_ui/print"></a></p>
-<h1 id="ui%2Fprint" tabindex="-1">ui/print</h1>
+      <p><a name="module_settings"></a></p>
+<h1 id="settings" tabindex="-1">settings</h1>
+<p>Manages shared configuration for the library.</p>
 <ul>
-<li><a href="#module_ui/print">ui/print</a>
+<li><a href="#module_settings">settings</a>
 <ul>
-<li><em>static</em>
-<ul>
-<li><a href="#module_ui/print.init">.init()</a></li>
-</ul>
-</li>
-<li><em>inner</em>
-<ul>
-<li><a href="#module_ui/print..defaults">~defaults</a>
-<ul>
-<li><a href="#module_ui/print..defaults.element">.element</a></li>
-</ul>
-</li>
-<li><a href="#module_ui/print..setup">~setup()</a></li>
-<li><a href="#module_ui/print..setupTrigger">~setupTrigger()</a></li>
+<li><a href="#module_settings.getDefaultSettings">.getDefaultSettings()</a> ⇒ <code>object</code></li>
+<li><a href="#module_settings.updateSettings">.updateSettings(changes)</a></li>
+<li><a href="#module_settings.getSettings">.getSettings()</a> ⇒ <code>object</code></li>
+<li><a href="#module_settings.getSetting">.getSetting(key)</a> ⇒ <code>*</code></li>
+<li><a href="#module_settings.updateSetting">.updateSetting(key, value)</a></li>
+<li><a href="#module_settings.wrapSettingString">.wrapSettingString(key)</a> ⇒ <code>object</code></li>
+<li><a href="#module_settings.configureIcons">.configureIcons()</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<p><a name="module_ui/print.init"></a></p>
-<h2 id="ui%2Fprint.init()" tabindex="-1">ui/print.init()</h2>
-<p>Initialize everything in document</p>
-<ul>
-<li>This will only initialize elements once, it is safe to call on page changes</li>
-</ul>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/print"><code>ui/print</code></a><br>
-<a name="module_ui/print..defaults"></a></p>
-<h2 id="ui%2Fprint~defaults" tabindex="-1">ui/print~defaults</h2>
-<p>Default options</p>
-<p><strong>Kind</strong>: inner constant of <a href="#module_ui/print"><code>ui/print</code></a><br>
-<a name="module_ui/print..defaults.element"></a></p>
-<h3 id="defaults.element" tabindex="-1">defaults.element</h3>
-<p>Print element/selector</p>
-<p><strong>Kind</strong>: static property of <a href="#module_ui/print..defaults"><code>defaults</code></a><br>
-<a name="module_ui/print..setup"></a></p>
-<h2 id="ui%2Fprint~setup()" tabindex="-1">ui/print~setup()</h2>
-<p>Setup all triggers currently on the page</p>
-<p><strong>Kind</strong>: inner method of <a href="#module_ui/print"><code>ui/print</code></a><br>
-<a name="module_ui/print..setupTrigger"></a></p>
-<h2 id="ui%2Fprint~setuptrigger()" tabindex="-1">ui/print~setupTrigger()</h2>
-<p>Setup a single trigger (can be used manually without attr if needed)</p>
-<p><strong>Kind</strong>: inner method of <a href="#module_ui/print"><code>ui/print</code></a></p>
+<p><a name="module_settings.getDefaultSettings"></a></p>
+<h2 id="settings.getdefaultsettings()-%E2%87%92-object" tabindex="-1">settings.getDefaultSettings() ⇒ <code>object</code></h2>
+<p>Retrieves a copy of the default settings.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a><br>
+<strong>Returns</strong>: <code>object</code> - A copy of the default settings object.<br>
+<a name="module_settings.updateSettings"></a></p>
+<h2 id="settings.updatesettings(changes)" tabindex="-1">settings.updateSettings(changes)</h2>
+<p>Updates multiple configuration settings.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>changes</td>
+<td><code>object</code></td>
+<td>An object containing the settings to update.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_settings.getSettings"></a></p>
+<h2 id="settings.getsettings()-%E2%87%92-object" tabindex="-1">settings.getSettings() ⇒ <code>object</code></h2>
+<p>Retrieves a copy of the current configuration settings.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a><br>
+<strong>Returns</strong>: <code>object</code> - A copy of the current settings object.<br>
+<a name="module_settings.getSetting"></a></p>
+<h2 id="settings.getsetting(key)-%E2%87%92-*" tabindex="-1">settings.getSetting(key) ⇒ <code>*</code></h2>
+<p>Retrieves a specific configuration setting by key.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a><br>
+<strong>Returns</strong>: <code>*</code> - The value of the setting, or undefined if not found.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>string</code></td>
+<td>The key of the setting to retrieve.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_settings.updateSetting"></a></p>
+<h2 id="settings.updatesetting(key%2C-value)" tabindex="-1">settings.updateSetting(key, value)</h2>
+<p>Updates a specific configuration setting.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>string</code></td>
+<td>The key of the setting to update.</td>
+</tr>
+<tr>
+<td>value</td>
+<td><code>*</code></td>
+<td>The new value for the setting.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_settings.wrapSettingString"></a></p>
+<h2 id="settings.wrapsettingstring(key)-%E2%87%92-object" tabindex="-1">settings.wrapSettingString(key) ⇒ <code>object</code></h2>
+<p>Creates a wrapped string representation of a configuration setting.
+This function returns an object with a <code>toString()</code> method that, when called,
+retrieves the current value of the specified setting. This allows the setting
+to be used as a string literal, dynamically retrieving its value.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a><br>
+<strong>Returns</strong>: <code>object</code> - An object with a <code>toString()</code> method that returns the setting value.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>string</code></td>
+<td>The key of the setting to wrap.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_settings.configureIcons"></a></p>
+<h2 id="settings.configureicons()" tabindex="-1">settings.configureIcons()</h2>
+<p>Sets icon settings to Font Awesome icons</p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a></p>
 
     </div>
   </div>

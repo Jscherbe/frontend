@@ -20,8 +20,8 @@ export class Slider {
         transitionDurationExit: number;
         transitionTimingFunction: string;
         buttonClasses: string[];
-        iconClassesPrevious: string[];
-        iconClassesNext: string[];
+        iconClassPrevious: any;
+        iconClassNext: any;
     };
     constructor(elements: any, config: any, debug?: boolean);
     debug: boolean;

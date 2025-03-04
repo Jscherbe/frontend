@@ -73,6 +73,48 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
+const defaults$8 = {
+  iconClassClose: "css-icon css-icon--close",
+  iconClassDragX: "css-icon css-icon--drag-x",
+  iconClassPrevious: "css-icon  css-icon--angle-left",
+  iconClassNext: "css-icon  css-icon--angle-right"
+};
+let currentSettings = { ...defaults$8 };
+function getDefaultSettings() {
+  return { ...defaults$8 };
+}
+function updateSettings(changes) {
+  Object.assign(currentSettings, changes);
+}
+function getSettings() {
+  return { ...currentSettings };
+}
+function getSetting(key2) {
+  if (!currentSettings.hasOwnProperty(key2)) {
+    console.warn(`Attempted to access non-existent setting: ${key2}`);
+    return void 0;
+  }
+  return currentSettings[key2];
+}
+function updateSetting(key2, value) {
+  currentSettings[key2] = value;
+}
+function wrapSettingString(key2) {
+  return {
+    toString() {
+      return getSetting(key2);
+    }
+  };
+}
+const settings = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  getDefaultSettings,
+  getSetting,
+  getSettings,
+  updateSetting,
+  updateSettings,
+  wrapSettingString
+}, Symbol.toStringTag, { value: "Module" }));
 function debounce(callback, wait, immediate, valueThis) {
   var timeout;
   return function executedFunction() {
@@ -948,8 +990,8 @@ const defaults$6 = {
   print: false,
   noMinHeight: false,
   class: "",
-  classCloseIcon: "css-icon css-icon--close",
-  classResizerIcon: "css-icon css-icon--drag-x",
+  classCloseIcon: wrapSettingString("iconClassClose"),
+  classResizerIcon: wrapSettingString("iconClassDragX"),
   debug: false,
   templateCloseIcon(config2) {
     return `<span class="modal__close-icon ${config2.classCloseIcon}" aria-hidden="true"></span>`;
@@ -1348,10 +1390,10 @@ const _OverflowScroller = class _OverflowScroller {
     return button;
   }
   getControlContent(action) {
-    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
+    const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
     return `
       <span class="hidden-visually">${action}</span>
-      <span class="${classes.join(" ")}" aria-hidden="true"></span>
+      <span class="${classes}" aria-hidden="true"></span>
     `;
   }
   onScroll(event) {
@@ -1433,8 +1475,8 @@ __publicField(_OverflowScroller, "defaults", {
   offsetEnd: 100,
   amount: "auto",
   buttonClasses: ["button", "button--icon"],
-  iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
-  iconClassesNext: ["css-icon", "css-icon--angle-right"]
+  iconClassPrevious: wrapSettingString("iconClassPrevious"),
+  iconClassNext: wrapSettingString("iconClassNext")
 });
 let OverflowScroller = _OverflowScroller;
 const overflowScroller = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -8529,12 +8571,11 @@ const _Slider = class _Slider {
     button.addEventListener("click", this.goto.bind(this, index2));
     return button;
   }
-  // change to css-icon 
   getControlContent(action) {
-    const classes = this.options[action === "next" ? "iconClassesNext" : "iconClassesPrevious"];
+    const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
     return `
       <span class="hidden-visually">${action}</span>
-      <span class="${classes.join(" ")}" aria-hidden="true"></span>
+      <span class="${this.getClass("control-icon")} ${classes}" aria-hidden="true"></span>
     `;
   }
   getNavContent(number) {
@@ -8556,9 +8597,9 @@ __publicField(_Slider, "defaults", {
   transitionDuration: 700,
   transitionDurationExit: 400,
   transitionTimingFunction: "ease-in-out",
-  buttonClasses: ["Slider__control-icon", "button", "button--icon"],
-  iconClassesPrevious: ["css-icon", "css-icon--angle-left"],
-  iconClassesNext: ["css-icon", "css-icon--angle-right"]
+  buttonClasses: ["button", "button--icon"],
+  iconClassPrevious: wrapSettingString("iconClassPrevious"),
+  iconClassNext: wrapSettingString("iconClassNext")
   // transition: true
 });
 let Slider = _Slider;
@@ -9507,12 +9548,25 @@ const fileSave = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProp
   __proto__: null,
   FileSave
 }, Symbol.toStringTag, { value: "Module" }));
+function configureIcons() {
+  updateSettings({
+    iconClassClose: "fas fa-xmark",
+    iconClassDragX: "fas fa-solid fa-grip-lines-vertical",
+    iconClassPrevious: "fas fa-solid fa-chevron-left",
+    iconClassNext: "fas fa-solid fa-chevron-right"
+  });
+}
+const fontAwesome = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  configureIcons
+}, Symbol.toStringTag, { value: "Module" }));
 const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   classLogger,
   dom,
   fileSave,
   floatingUi,
+  fontAwesome,
   id,
   get index() {
     return index;
@@ -9522,6 +9576,7 @@ const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePropert
 const ulu = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   events: index$2,
+  settings,
   ui: index$1,
   utils: index
 }, Symbol.toStringTag, { value: "Module" }));
@@ -15637,6 +15692,8 @@ function init() {
   search.start();
 }
 window.Ulu = ulu;
+configureIcons();
+console.log(getSettings());
 init$f();
 init$b();
 init$a();
