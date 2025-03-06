@@ -3,7 +3,7 @@
 ## Version 0.1.0-beta.16
 
 - js/ui/programmatic-modal.js 
-  - Change createAndOpen config option "selector" to "element" and allow passing both selector or element
+  - Change createAndOpen config option "selector" to ambiguous name "element" to allow passing both selector or element (using getElement())
 
 ## Version 0.1.0-beta.15
 
