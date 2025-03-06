@@ -5,6 +5,7 @@
 
 import { getName, dispatch } from "../events/index.js";
 import { newId } from "../utils/id.js";
+import { getElement } from "../utils/dom.js";
 import { buildModal } from "./modal-builder.js";
 
 export class ProgrammaticModalManager {
@@ -43,8 +44,8 @@ export class ProgrammaticModalManager {
     });
   }
   createAndOpen(config, afterCreate) {
-    const { selector, noClickTrigger, removeOnClose } = config;
-    const content = document.querySelector(selector);
+    const { noClickTrigger, removeOnClose, element } = config;
+    const content = getElement(element);
     if (!content.id) {
       content.id = newId();
     }
@@ -57,7 +58,7 @@ export class ProgrammaticModalManager {
     }
 
     if (!content) {
-      console.error("No element found from config.selector. ", config);
+      console.error("No element found from config.element. ", config);
       return;
     }
     const { modal } = buildModal(content, config.modal);

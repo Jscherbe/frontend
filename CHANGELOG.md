@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.16
+
+- js/ui/programmatic-modal.js 
+  - Change createAndOpen config option "selector" to "element" and allow passing both selector or element
+
 ## Version 0.1.0-beta.15
 
 - JS
