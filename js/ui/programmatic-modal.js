@@ -44,10 +44,15 @@ export class ProgrammaticModalManager {
     });
   }
   createAndOpen(config, afterCreate) {
-    const { noClickTrigger, removeOnClose, element } = config;
+    const { noClickTrigger, removeOnClose, element, classes } = config;
     const content = getElement(element);
     if (!content.id) {
       content.id = newId();
+    }
+
+    // Added to match original jquery module api
+    if (classes) {
+      content.classList.add(...classes);
     }
 
     let trigger;

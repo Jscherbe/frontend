@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.17
+
+- js/ui/programmatic-modal.js 
+  - Add "classes" option to createAndOpen, to match legacy module's API
+
 ## Version 0.1.0-beta.16
 
 - js/ui/programmatic-modal.js 
