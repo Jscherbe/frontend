@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.18
+
+- scss/components/_button-verbose.scss
+  - Add text align left
+  
 ## Version 0.1.0-beta.17
 
 - js/ui/programmatic-modal.js 

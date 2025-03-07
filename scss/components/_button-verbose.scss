@@ -106,6 +106,7 @@ $config: (
     padding: get("padding-y") get("padding-x");
     padding-right: (get("padding-x") * 2) + 1em;
     color: color.get(get("color"));
+    text-align: left;
     &:hover {
       color: color.get(get("color-hover"));
       background-color: color.get(get("background-color-hover"));
