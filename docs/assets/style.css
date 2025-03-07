@@ -12395,6 +12395,7 @@ component:button
   padding: 1em 0.65em;
   padding-right: 2.3em;
   color: var(--site-color-type);
+  text-align: left;
 }
 .button-verbose:hover {
   color: var(--site-color-type);

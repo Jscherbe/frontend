@@ -5,9 +5,6 @@ window.Ulu = ulu;
 
 ulu.utils.fontAwesome.configureIcons();
 
-console.log(ulu.settings.getSettings());
-
-
 ulu.ui.page.init();
 ulu.ui.grid.init();
 ulu.ui.popover.init();
@@ -23,3 +20,4 @@ ulu.ui.scrollSlider.init();
 ulu.ui.slider.init();
 ulu.ui.flipcard.init();
 ulu.ui.themeToggle.init();
+ulu.ui.detailsGroup.init();

@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.19
+
+- js/ui/details-group.js
+  - Added new module to manage groups of details (just one open at time right now)
+
 ## Version 0.1.0-beta.18
 
 - scss/components/_button-verbose.scss

@@ -19,3 +19,4 @@ export * as print from "./print.js";
 export * as printDetails from "./print-details.js";
 export * as scrollSlider from "./scroll-slider.js";
 export * as themeToggle from "./theme-toggle.js";
+export * as detailsGroup from "./details-group.js";
