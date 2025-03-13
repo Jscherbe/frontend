@@ -12,7 +12,10 @@ $defaults: (
 );
 
 $theme-colors: (
-
+  "color-content-header-background" : (
+    "light" : $color-gray-light-x,
+    "dark" : ulu.color-shade($color-gray-dark, 20%)
+  ),
   "color-type" : (
     "light" : $color-type,
     "dark": white

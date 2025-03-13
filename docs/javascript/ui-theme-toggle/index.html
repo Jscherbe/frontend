@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Modals
+    ui/theme-toggle
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -131,8 +131,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -407,9 +407,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/modals/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/modals/">
           
     
     <span class="nav-tree__text">
@@ -1954,8 +1954,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -1974,9 +1974,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active-trail ">
           
-        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -2319,9 +2319,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/javascript/ui-theme-toggle/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-theme-toggle/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -2527,8 +2527,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -2803,9 +2803,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/modals/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/modals/">
           
     
     <span class="nav-tree__text">
@@ -4350,8 +4350,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -4370,9 +4370,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active-trail ">
           
-        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -4715,9 +4715,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/javascript/ui-theme-toggle/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-theme-toggle/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -4863,7 +4863,68 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				
+				<h2>Jump To:</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#ui%2Ftheme-toggle.attrs">ui/theme-toggle.attrs</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle.defaults">ui/theme-toggle.defaults</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle.setdefaults(options)">ui/theme-toggle.setDefaults(options)</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle.init()">ui/theme-toggle.init()</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle.setup()">ui/theme-toggle.setup()</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle.setuptoggle(toggle)">ui/theme-toggle.setupToggle(toggle)</a>
+            
+                <ol>
+                    
+                    <li><a href="#setuptoggle~togglestate()">setupToggle~toggleState()</a>
+            		</li>
+
+                    <li><a href="#setuptoggle~ontoggleclick()">setupToggle~onToggleClick()</a>
+            		</li>
+
+                    <li><a href="#setuptoggle~attachremotes()">setupToggle~attachRemotes()</a>
+            		</li>
+
+                    <li><a href="#setuptoggle~cleanupremotes()">setupToggle~cleanupRemotes()</a>
+            		</li>
+
+                    <li><a href="#setuptoggle~destroy()">setupToggle~destroy()</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~setstate()">ui/theme-toggle~setState()</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~resolveinitial()-%E2%87%92-string">ui/theme-toggle~resolveInitial() ⇒ String</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~getmatchingthemequery()-%E2%87%92-string">ui/theme-toggle~getMatchingThemeQuery() ⇒ String</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~getnextthemekey()">ui/theme-toggle~getNextThemeKey()</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~getotherthemes()">ui/theme-toggle~getOtherThemes()</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~concatthemeclasses()">ui/theme-toggle~concatThemeClasses()</a>
+            		</li>
+
+                    <li><a href="#ui%2Ftheme-toggle~getstoragekey()">ui/theme-toggle~getStorageKey()</a>
+            		</li>
+                </ol>
+            </div>
 			</div>
 		
 		<main id="main" class="page__body">
@@ -4871,122 +4932,178 @@
 			
 			
 			
-  <div class="page__body-top container ">
-    <h1 class="page__title h1">Modals</h1>
+  <div class="page__body-top container api-docs">
+    <div class="wysiwyg">
+      <p><a name="module_ui/theme-toggle"></a></p>
+<h1 id="ui%2Ftheme-toggle" tabindex="-1">ui/theme-toggle</h1>
+<ul>
+<li><a href="#module_ui/theme-toggle">ui/theme-toggle</a>
+<ul>
+<li><em>static</em>
+<ul>
+<li><a href="#module_ui/theme-toggle.attrs">.attrs</a></li>
+<li><a href="#module_ui/theme-toggle.defaults">.defaults</a></li>
+<li><a href="#module_ui/theme-toggle.setDefaults">.setDefaults(options)</a></li>
+<li><a href="#module_ui/theme-toggle.init">.init()</a></li>
+<li><a href="#module_ui/theme-toggle.setup">.setup()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle">.setupToggle(toggle)</a>
+<ul>
+<li><a href="#module_ui/theme-toggle.setupToggle..toggleState">~toggleState()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..onToggleClick">~onToggleClick()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..attachRemotes">~attachRemotes()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..cleanupRemotes">~cleanupRemotes()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..destroy">~destroy()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_ui/theme-toggle..setState">~setState()</a></li>
+<li><a href="#module_ui/theme-toggle..resolveInitial">~resolveInitial()</a> ⇒ <code>String</code></li>
+<li><a href="#module_ui/theme-toggle..getMatchingThemeQuery">~getMatchingThemeQuery()</a> ⇒ <code>String</code></li>
+<li><a href="#module_ui/theme-toggle..getNextThemeKey">~getNextThemeKey()</a></li>
+<li><a href="#module_ui/theme-toggle..getOtherThemes">~getOtherThemes()</a></li>
+<li><a href="#module_ui/theme-toggle..concatThemeClasses">~concatThemeClasses()</a></li>
+<li><a href="#module_ui/theme-toggle..getStorageKey">~getStorageKey()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="module_ui/theme-toggle.attrs"></a></p>
+<h2 id="ui%2Ftheme-toggle.attrs" tabindex="-1">ui/theme-toggle.attrs</h2>
+<p>Default data attributes</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle.defaults"></a></p>
+<h2 id="ui%2Ftheme-toggle.defaults" tabindex="-1">ui/theme-toggle.defaults</h2>
+<p>Default Options</p>
+<ul>
+<li>Can be overridden using data-attributes</li>
+</ul>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle.setDefaults"></a></p>
+<h2 id="ui%2Ftheme-toggle.setdefaults(options)" tabindex="-1">ui/theme-toggle.setDefaults(options)</h2>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Change options used as default for dialogs, can then be overridden by data attribute settings on element</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/theme-toggle.init"></a></p>
+<h2 id="ui%2Ftheme-toggle.init()" tabindex="-1">ui/theme-toggle.init()</h2>
+<p>Initialize everything in document</p>
+<ul>
+<li>This will only initialize elements once, it is safe to call on page changes</li>
+</ul>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle.setup"></a></p>
+<h2 id="ui%2Ftheme-toggle.setup()" tabindex="-1">ui/theme-toggle.setup()</h2>
+<p>Query and setup all</p>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle.setupToggle"></a></p>
+<h2 id="ui%2Ftheme-toggle.setuptoggle(toggle)" tabindex="-1">ui/theme-toggle.setupToggle(toggle)</h2>
+<p>Sets up a single toggle</p>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>toggle</td>
+<td><code>HTMLElement</code></td>
+<td>A toggle to be setup</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="#module_ui/theme-toggle.setupToggle">.setupToggle(toggle)</a>
+<ul>
+<li><a href="#module_ui/theme-toggle.setupToggle..toggleState">~toggleState()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..onToggleClick">~onToggleClick()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..attachRemotes">~attachRemotes()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..cleanupRemotes">~cleanupRemotes()</a></li>
+<li><a href="#module_ui/theme-toggle.setupToggle..destroy">~destroy()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_ui/theme-toggle.setupToggle..toggleState"></a></p>
+<h3 id="setuptoggle~togglestate()" tabindex="-1">setupToggle~toggleState()</h3>
+<p>Instance function to get the next theme in cycle</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle.setupToggle"><code>setupToggle</code></a><br>
+<a name="module_ui/theme-toggle.setupToggle..onToggleClick"></a></p>
+<h3 id="setuptoggle~ontoggleclick()" tabindex="-1">setupToggle~onToggleClick()</h3>
+<p>Handler for click for both toggle and remote toggles</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle.setupToggle"><code>setupToggle</code></a><br>
+<a name="module_ui/theme-toggle.setupToggle..attachRemotes"></a></p>
+<h3 id="setuptoggle~attachremotes()" tabindex="-1">setupToggle~attachRemotes()</h3>
+<p>Utility to attach remote handlers</p>
+<ul>
+<li>Used initially and when page is modified</li>
+</ul>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle.setupToggle"><code>setupToggle</code></a><br>
+<a name="module_ui/theme-toggle.setupToggle..cleanupRemotes"></a></p>
+<h3 id="setuptoggle~cleanupremotes()" tabindex="-1">setupToggle~cleanupRemotes()</h3>
+<p>This only cleans up remotes that are still in DOM</p>
+<ul>
+<li>For ones that have been removed we don't store any references to them</li>
+</ul>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle.setupToggle"><code>setupToggle</code></a><br>
+<a name="module_ui/theme-toggle.setupToggle..destroy"></a></p>
+<h3 id="setuptoggle~destroy()" tabindex="-1">setupToggle~destroy()</h3>
+<p>Function to cleanup listeners and remove init attributes</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle.setupToggle"><code>setupToggle</code></a><br>
+<a name="module_ui/theme-toggle..setState"></a></p>
+<h2 id="ui%2Ftheme-toggle~setstate()" tabindex="-1">ui/theme-toggle~setState()</h2>
+<p>Change the state of target/toggle</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle..resolveInitial"></a></p>
+<h2 id="ui%2Ftheme-toggle~resolveinitial()-%E2%87%92-string" tabindex="-1">ui/theme-toggle~resolveInitial() ⇒ <code>String</code></h2>
+<p>Function determines what the initial state is</p>
+<ul>
+<li>Check OS preference, saved preference, or initialState depending on options</li>
+</ul>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<strong>Returns</strong>: <code>String</code> - The resolved initial theme's key<br>
+<a name="module_ui/theme-toggle..getMatchingThemeQuery"></a></p>
+<h2 id="ui%2Ftheme-toggle~getmatchingthemequery()-%E2%87%92-string" tabindex="-1">ui/theme-toggle~getMatchingThemeQuery() ⇒ <code>String</code></h2>
+<p>Check each theme for a matching media query</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<strong>Returns</strong>: <code>String</code> - Matching theme key<br>
+<a name="module_ui/theme-toggle..getNextThemeKey"></a></p>
+<h2 id="ui%2Ftheme-toggle~getnextthemekey()" tabindex="-1">ui/theme-toggle~getNextThemeKey()</h2>
+<p>Get the next key in the themes based on the currentKey</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle..getOtherThemes"></a></p>
+<h2 id="ui%2Ftheme-toggle~getotherthemes()" tabindex="-1">ui/theme-toggle~getOtherThemes()</h2>
+<p>Get all other theme object except the current</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle..concatThemeClasses"></a></p>
+<h2 id="ui%2Ftheme-toggle~concatthemeclasses()" tabindex="-1">ui/theme-toggle~concatThemeClasses()</h2>
+<p>Concatenates multiple class properties into one array</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a><br>
+<a name="module_ui/theme-toggle..getStorageKey"></a></p>
+<h2 id="ui%2Ftheme-toggle~getstoragekey()" tabindex="-1">ui/theme-toggle~getStorageKey()</h2>
+<p>Creates the storage key (either prefix or prefix with group name)</p>
+<p><strong>Kind</strong>: inner method of <a href="#module_ui/theme-toggle"><code>ui/theme-toggle</code></a></p>
 
-  <p class="type-large type-light">
-    Modals, also known as dialogs or modal windows, are user interface elements that appear on top of the main application window. They typically have a dimmed background to draw focus to the modal itself, and often prevent users from interacting with the underlying content until the modal is closed
-  </p>
-
-
-  <hr class="rule rule--light rule--margin-large">
-
-    <h2 class="h2">Examples</h2>
-<h3 class="h3">Default</h3>
-<p>This is the default modal, being created from markup in the body on page load by modal builder. The default modal is centered.</p>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-center">Open Modal</button></p>
-<div id="modal-id-center" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "print" : true,
-    "documentEnd" : false
-  }' hidden="">
-  This is the modal body <button data-ulu-dialog-close="">Close</button>
-</div>
-<h3 class="h3">Youtube Videos Automatically Pause</h3>
-<p>If option for modal builder pauseYoutubeVideos is true (default true)</p>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-youtube">Open Modal</button></p>
-<div id="modal-id-youtube" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "print" : true,
-    "bodyFills" : true,
-    "documentEnd" : true
-  }' hidden="">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/y0sF5xhGreA?si=aRdiK0Xzf3zvHP_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-</div>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-native-video">Open Modal (native video)</button></p>
-<div id="modal-id-native-video" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "print" : true,
-    "bodyFills" : true,
-    "documentEnd" : true
-  }' hidden="">
-  <video controls="" class="full-width">
-    <source src="/frontend/assets/placeholder/4065947-uhd_4096_2160_25fps.mp4" type="video/mp4">
-  </video>
-</div>
-<h3 class="h3">Positions</h3>
-<p>The available positions are top, bottom, left, right and center (default). Left and right are sidebard (full height), while top, bottom and center are all min height (can be configured)</p>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-left">Left</button>
-<button class="button" data-ulu-dialog-trigger="modal-id-right">Right</button>
-<button class="button" data-ulu-dialog-trigger="modal-id-top">Top</button>
-<button class="button" data-ulu-dialog-trigger="modal-id-bottom">Bottom</button></p>
-<div id="modal-id-left" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title", 
-    "position" : "left"
-  }' hidden="">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
-</div>
-<div id="modal-id-right" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title", 
-    "position" : "right"
-  }' hidden="">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
-</div>
-<div id="modal-id-top" class="wysiwyg crop-margins" data-ulu-modal-builder='{ 
-    "position" : "top"
-  }' hidden="">
-  <p>
-    This is a modal without a title 
-  </p>
-  <p>
-    <button class="button" data-ulu-dialog-close="">Close</button>
-  </p>
-</div>
-<div id="modal-id-bottom" class="wysiwyg crop-margins" data-ulu-modal-builder='{ 
-    "position" : "bottom"
-  }' hidden="">
-  <p>
-    This is a modal without a title 
-  </p>
-  <p>
-    <button class="button" data-ulu-dialog-close="">Close</button>
-  </p>
-</div>
-<h2 class="h2">Resizing</h2>
-<p>The modals setup with the builder allow resizing. Center, top and bottom modals will use the native resize handle (resize in all directions). The left/right sidebar type modals will be given a drag handle and only able to extend their width (since they already span the full screen height). To enable this behavior pass <code>{ &quot;allowResize&quot; : true }</code> in builder options (data attribute)</p>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-center-resize">Center Resizable</button>
-<button class="button" data-ulu-dialog-trigger="modal-id-right-resize">Right Resizable</button></p>
-<div id="modal-id-center-resize" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "allowResize" : true
-  }' hidden="">
-  Test
-</div>
-<div id="modal-id-right-resize" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "position" : "right",
-    "allowResize" : true
-  }' hidden="">
-  Test
-</div>
-<h2 class="h2">Click Outside</h2>
-<p>By default clicking outside the modal will close it, this can be disabled by passing <code>{ &quot;clickOutsideCloses&quot; : false }</code></p>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-no-outside">No Click Outside</button></p>
-<div id="modal-id-no-outside" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "clickOutsideCloses" : false
-  }' hidden="">
-  Test
-</div>
-<h2 class="h2">No Backdrop</h2>
-<p>Remove the backdrop by passing  <code>{ &quot;noBackdrop&quot; : true }</code> to the builder</p>
-<p><button class="button" data-ulu-dialog-trigger="modal-id-no-backdrop">No Backdrop</button></p>
-<div id="modal-id-no-backdrop" class="wysiwyg" data-ulu-modal-builder='{ 
-    "title" : "Test Title",
-    "noBackdrop" : true
-  }' hidden="">
-  Test
-</div>
+    </div>
   </div>
 
 		</main>

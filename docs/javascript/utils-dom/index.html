@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="/frontend/assets/style.css">
   
 </head>
-	<body class="page theme-light" data-site-theme="">
+	<body class="page theme-light">
 		
 
 
@@ -55,7 +55,13 @@
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
     <div class="header__nav-links">
-      <button class="button button--small button--icon button--icon-small" data-site-theme-toggle=""><span class="fas fa-moon" data-site-theme-toggle-icon=""></span></button>
+      <button class="button button--small button--icon button--icon-small" data-ulu-theme-toggle='{ 
+          "savePreference" : true,
+          "checkMediaQuery" : true,
+          "group" : "page"
+        }'>
+        <span class="fas fa-moon" data-ulu-theme-toggle-icon=""></span>
+      </button>
       <a class="button button--small button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github">
         <span class="fab fa-github" aria-hidden="true"></span>
       </a>
@@ -588,6 +594,21 @@
     
     <span class="nav-tree__text">
       Tag
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      Theme Toggle
     </span>
   
         </a>
@@ -2290,6 +2311,21 @@
     
     <span class="nav-tree__text">
       ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      ui/theme-toggle
     </span>
   
         </a>
@@ -2964,6 +3000,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      Theme Toggle
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/tile-grid-overlay/">
           
     
@@ -4666,6 +4717,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      ui/theme-toggle
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/ui-tooltip/">
           
     
@@ -4813,7 +4879,13 @@
                     <li><a href="#utils%2Fdom.setpositionclasses(parent%2C-classes)">utils/dom.setPositionClasses(parent, classes)</a>
             		</li>
 
-                    <li><a href="#utils%2Fdom.getelement(target%2C-context)">utils/dom.getElement(target, context)</a>
+                    <li><a href="#utils%2Fdom.getelement(target%2C-context)-%E2%87%92-htmlelement">utils/dom.getElement(target, context) ⇒ HTMLElement</a>
+            		</li>
+
+                    <li><a href="#utils%2Fdom.getelements(target%2C-context)-%E2%87%92-array">utils/dom.getElements(target, context) ⇒ Array</a>
+            		</li>
+
+                    <li><a href="#utils%2Fdom.resolveclasses(input)-%E2%87%92-array.%3Cstring%3E">utils/dom.resolveClasses(input) ⇒ Array.<string></string></a>
             		</li>
 
                     <li><a href="#utils%2Fdom.addscrollbarproperty(element%2C-container%2C-propname)">utils/dom.addScrollbarProperty(element, container, propName)</a>
@@ -4838,7 +4910,9 @@
 <li><a href="#module_utils/dom.getDatasetOptionalJson">.getDatasetOptionalJson(element, key)</a> ⇒ <code>Object</code> | <code>String</code></li>
 <li><a href="#module_utils/dom.wasClickOutside">.wasClickOutside()</a></li>
 <li><a href="#module_utils/dom.setPositionClasses">.setPositionClasses(parent, classes)</a></li>
-<li><a href="#module_utils/dom.getElement">.getElement(target, context)</a></li>
+<li><a href="#module_utils/dom.getElement">.getElement(target, context)</a> ⇒ <code>HTMLElement</code></li>
+<li><a href="#module_utils/dom.getElements">.getElements(target, context)</a> ⇒ <code>Array</code></li>
+<li><a href="#module_utils/dom.resolveClasses">.resolveClasses(input)</a> ⇒ <code>Array.&lt;string&gt;</code></li>
 <li><a href="#module_utils/dom.addScrollbarProperty">.addScrollbarProperty(element, container, propName)</a></li>
 </ul>
 </li>
@@ -4935,9 +5009,10 @@ or new instances are added to the screen</p>
 </tbody>
 </table>
 <p><a name="module_utils/dom.getElement"></a></p>
-<h2 id="utils%2Fdom.getelement(target%2C-context)" tabindex="-1">utils/dom.getElement(target, context)</h2>
+<h2 id="utils%2Fdom.getelement(target%2C-context)-%E2%87%92-htmlelement" tabindex="-1">utils/dom.getElement(target, context) ⇒ <code>HTMLElement</code></h2>
 <p>Resolve a target to Element</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a></p>
+<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
+<strong>Returns</strong>: <code>HTMLElement</code> - The element or null if not found</p>
 <table>
 <thead>
 <tr>
@@ -4959,6 +5034,57 @@ or new instances are added to the screen</p>
 </tr>
 </tbody>
 </table>
+<p><a name="module_utils/dom.getElements"></a></p>
+<h2 id="utils%2Fdom.getelements(target%2C-context)-%E2%87%92-array" tabindex="-1">utils/dom.getElements(target, context) ⇒ <code>Array</code></h2>
+<p>Resolve a target to Elements</p>
+<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
+<strong>Returns</strong>: <code>Array</code> - The elements or null if not found</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td><code>String</code> | <code>Node</code></td>
+<td>The selector or node/element</td>
+</tr>
+<tr>
+<td>context</td>
+<td><code>Object</code></td>
+<td>[document] The context to query possible selectors from</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/dom.resolveClasses"></a></p>
+<h2 id="utils%2Fdom.resolveclasses(input)-%E2%87%92-array.%3Cstring%3E" tabindex="-1">utils/dom.resolveClasses(input) ⇒ <code>Array.&lt;string&gt;</code></h2>
+<p>Resolves a class input (string or array) into a consistent array of class names.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
+<strong>Returns</strong>: <code>Array.&lt;string&gt;</code> - An array of class names. Returns an empty array for invalid or falsy input.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td><code>string</code> | <code>Array.&lt;string&gt;</code></td>
+<td>The class input, which can be a string, an array of strings, or any other value.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre class="language-js"><code class="language-js"><span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"fas fa-check  my-class"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["fas", "fa-check", "my-class"]</span>
+<span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">[</span><span class="pjs-token pjs-string">"another-class"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"yet-another-class"</span><span class="pjs-token pjs-punctuation">]</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["another-class", "yet-another-class"]</span>
+<span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"single-class"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["single-class"]</span></code></pre>
 <p><a name="module_utils/dom.addScrollbarProperty"></a></p>
 <h2 id="utils%2Fdom.addscrollbarproperty(element%2C-container%2C-propname)" tabindex="-1">utils/dom.addScrollbarProperty(element, container, propName)</h2>
 <p>Sets a CSS custom property equal to the scrollbar width</p>

@@ -3,8 +3,18 @@
     <a class="header__logo" href="/">
       {% include "partials/logo.njk" %}
     </a>
-    <a 
+    <button 
       class="button button--small button--icon button--secondary margin-left-auto" 
+      data-ulu-theme-toggle='{ 
+        "savePreference" : true,
+        "checkMediaQuery" : true,
+        "group" : "page"
+      }'
+    >
+      <span class="fas fa-moon" data-ulu-theme-toggle-icon></span>
+    </button>
+    <a 
+      class="button button--small button--icon button--secondary" 
       href="../"
       aria-label="Exit"
     >
