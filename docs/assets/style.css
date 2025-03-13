@@ -11760,6 +11760,7 @@ readers do not read off random characters that represent icons */
 :root,
 .theme-dark {
   color-scheme: dark;
+  --site-color-content-header-background: rgb(25.6, 22.4, 29.6);
   --site-color-type: white;
   --site-color-type-inverse: #323a4f;
   --site-color-type-secondary: rgb(228, 223, 236);
@@ -11809,6 +11810,7 @@ readers do not read off random characters that represent icons */
 :root .theme-light,
 .theme-dark .theme-light {
   color-scheme: light;
+  --site-color-content-header-background: rgb(228, 223, 236);
   --site-color-type: #323a4f;
   --site-color-type-inverse: white;
   --site-color-type-secondary: #3f4963;
@@ -17160,6 +17162,10 @@ button.captioned-figure:focus {
   .page__body-top {
     padding-top: 3rem;
   }
+}
+
+.page__content-header {
+  background-color: var(--site-color-content-header-background);
 }
 
 .header {
