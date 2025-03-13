@@ -142,8 +142,8 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|color|Map|inherit||
-|color-placeholder|Map|"type-tertiary"||
+|color|CssValue|inherit|Color of the text of the form.|
+|color-placeholder|CssValue|"type-tertiary"|Color for the placeh|
 |drupal|Map|false||
 |error-color|Map|"danger"||
 |error-highlight-color|Map|rgb(251, 242, 242)||

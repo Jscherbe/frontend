@@ -6,6 +6,7 @@
 @forward "accordion" as accordion-*;
 @forward "adaptive-spacing" as adaptive-spacing-*;
 @forward "badge" as badge-*;
+@forward "basic-hero" as basic-hero-*;
 @forward "button" as button-*;
 @forward "button-verbose" as button-verbose-*;
 @forward "callout" as callout-*;
@@ -55,6 +56,7 @@
 @use "adaptive-spacing";
 @use "accordion";
 @use "badge";
+@use "basic-hero";
 @use "button";
 @use "button-verbose";
 @use "callout";
@@ -105,6 +107,7 @@ $all-includes: (
   "accordion",
   "adaptive-spacing",
   "badge",
+  "basic-hero",
   "button",
   "button-verbose",
   "callout",
@@ -198,6 +201,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "badge")) {
     @include badge.styles;
+  }
+  @if (list.index($includes, "basic-hero")) {
+    @include basic-hero.styles;
   }
   @if (list.index($includes, "tag")) {
     @include tag.styles;

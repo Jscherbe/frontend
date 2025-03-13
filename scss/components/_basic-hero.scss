@@ -1,0 +1,100 @@
+////
+/// @group basic-hero
+/// Basic styling for a hero.
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+
+@use "../breakpoint";
+@use "../selector";
+@use "../utils";
+@use "../typography";
+@use "../color";
+
+/// Module Settings
+/// @type Map
+/// @prop {CssValue} text-align [center] Alignment of text within hero.
+/// @prop {Color} background-color ["color-hero-background"] Background color of the hero
+
+$config: (
+  "text-align" : left,
+  "background-color" : "background-gray",
+  "padding-top": 3rem,
+  "padding-bottom" : 2rem,
+  "media-box-shadow" : 0 2px 10px color.get("box-shadow"),
+  "media-background-color": #fff,
+  "media-padding" : 4px,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-basic-hero-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-basic-hero-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "basic-hero [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-basic-hero-styles();
+
+@mixin styles {
+  $prefix: selector.class("basic-hero");
+
+  #{ $prefix } {
+    text-align: get("text-align"); 
+    background-color: color.get(get("background-color")); 
+  }
+  
+  #{ $prefix }__content {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem 1rem;
+    padding-top: get("padding-top");
+    padding-bottom: get("padding-bottom");
+    @include breakpoint.max("small") {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #{ $prefix }__content-main {
+    flex: 0 1 typography.get("max-width");
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+  }
+  
+  #{ $prefix }__content-media {
+    margin-top: 1rem; // margin added here because we don't want margin if there isn't media
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 25rem;
+    flex: 0 1 25rem;
+    padding: get("media-padding");
+    background-color: get("media-background-color");
+    -webkit-box-shadow: get("media-box-shadow");
+    box-shadow: get("media-box-shadow")
+  }
+}
