@@ -11,7 +11,9 @@ title: utils/dom
     * [.getDatasetOptionalJson(element, key)](#module_utils/dom.getDatasetOptionalJson) ⇒ <code>Object</code> \| <code>String</code>
     * [.wasClickOutside()](#module_utils/dom.wasClickOutside)
     * [.setPositionClasses(parent, classes)](#module_utils/dom.setPositionClasses)
-    * [.getElement(target, context)](#module_utils/dom.getElement)
+    * [.getElement(target, context)](#module_utils/dom.getElement) ⇒ <code>HTMLElement</code>
+    * [.getElements(target, context)](#module_utils/dom.getElements) ⇒ <code>Array</code>
+    * [.resolveClasses(input)](#module_utils/dom.resolveClasses) ⇒ <code>Array.&lt;string&gt;</code>
     * [.addScrollbarProperty(element, container, propName)](#module_utils/dom.addScrollbarProperty)
 
 <a name="module_utils/dom.getDatasetJson"></a>
@@ -66,16 +68,48 @@ Sets up the positional classes that would come from the equal
 
 <a name="module_utils/dom.getElement"></a>
 
-## utils/dom.getElement(target, context)
+## utils/dom.getElement(target, context) ⇒ <code>HTMLElement</code>
 Resolve a target to Element
 
 **Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
+**Returns**: <code>HTMLElement</code> - The element or null if not found  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | target | <code>String</code> \| <code>Node</code> | The selector or node/element |
 | context | <code>Object</code> | [document] The context to query possible selectors from |
 
+<a name="module_utils/dom.getElements"></a>
+
+## utils/dom.getElements(target, context) ⇒ <code>Array</code>
+Resolve a target to Elements
+
+**Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
+**Returns**: <code>Array</code> - The elements or null if not found  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| target | <code>String</code> \| <code>Node</code> | The selector or node/element |
+| context | <code>Object</code> | [document] The context to query possible selectors from |
+
+<a name="module_utils/dom.resolveClasses"></a>
+
+## utils/dom.resolveClasses(input) ⇒ <code>Array.&lt;string&gt;</code>
+Resolves a class input (string or array) into a consistent array of class names.
+
+**Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
+**Returns**: <code>Array.&lt;string&gt;</code> - An array of class names. Returns an empty array for invalid or falsy input.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| input | <code>string</code> \| <code>Array.&lt;string&gt;</code> | The class input, which can be a string, an array of strings, or any other value. |
+
+**Example**  
+```js
+resolveClassArray("fas fa-check  my-class"); // Returns ["fas", "fa-check", "my-class"]
+resolveClassArray(["another-class", "yet-another-class"]); // Returns ["another-class", "yet-another-class"]
+resolveClassArray("single-class"); // Returns ["single-class"]
+```
 <a name="module_utils/dom.addScrollbarProperty"></a>
 
 ## utils/dom.addScrollbarProperty(element, container, propName)
