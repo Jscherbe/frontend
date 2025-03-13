@@ -1,5 +1,24 @@
 # Change Log
 
+## Version 0.1.0-beta.20 (unpublished)
+
+- js/ui/theme-toggle.js (refactored to allow)
+  - Multiple instances of theme toggles
+  - Remote theme toggles (other toggles buttons that follow/match main toggle)
+    - If the toggle button is used in more than one place in UI
+    - Toggle and remote linked via 'group' option
+  - Allow targeting multiple containers to toggle theme on
+  - New options/API structure
+    - Now accepts themes object with settings on what it should toggle
+  - Allow callback for customizing behavior when changing state
+  - Add demo/tests
+- js/utils/dom.js
+  - Add getElements() (matches getElement) but for multiple elements
+  - Add resolveClasses() to allow class options to be string or array form
+    - So that scripts using can easily resolve classes to consistent type for use in element.classList, etc
+- js/ui/details-group.js
+  - Fix error in event pageModified (caused by passing event object to setup)
+
 ## Version 0.1.0-beta.19
 
 - js/ui/details-group.js

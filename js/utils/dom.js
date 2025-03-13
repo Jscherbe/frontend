@@ -98,6 +98,7 @@ export function setPositionClasses(parent, classes = {
  * Resolve a target to Element
  * @param {String|Node} target The selector or node/element
  * @param {Object} context [document] The context to query possible selectors from
+ * @return {HTMLElement} The element or null if not found
  */
 export function getElement(target, context = document) {
   if (typeof target === "string") {
@@ -105,10 +106,51 @@ export function getElement(target, context = document) {
   } else if (target instanceof Element) {
     return target;
   } else {
-    console.warn("Unable to getElement()", target);
+    console.warn("getElement: Invalid target type (expected String/Node)", target);
     return null;
   }
 } 
+
+/**
+ * Resolve a target to Elements
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ * @return {Array} The elements or null if not found
+ */
+export function getElements(target, context = document) {
+  if (typeof target === "string") {
+    return [...context.querySelectorAll(target)];
+  } else if (target instanceof Element) {
+    return [target];
+  } else if (Array.isArray(target) || target instanceof NodeList) {
+    return [...target];
+  } else {
+    console.warn("getElement: Invalid target type (expected String/Node/Array/Node List)", target);
+    return null;
+  }
+} 
+
+/**
+ * Resolves a class input (string or array) into a consistent array of class names.
+ * @param {string|string[]} input - The class input, which can be a string, an array of strings, or any other value.
+ * @returns {string[]} An array of class names. Returns an empty array for invalid or falsy input.
+ * @example
+ * resolveClassArray("fas fa-check  my-class"); // Returns ["fas", "fa-check", "my-class"]
+ * resolveClassArray(["another-class", "yet-another-class"]); // Returns ["another-class", "yet-another-class"]
+ * resolveClassArray("single-class"); // Returns ["single-class"]
+ */
+export function resolveClasses(classes) {
+  if (typeof classes === "string") {
+    return classes.split(" ").filter(c => c !== ""); // Split and remove empty strings
+  } else if (Array.isArray(classes)) {
+    return classes;
+  } else if (!classes) {
+      return [];
+  } else {
+    console.warn("resolveClassArray: Invalid class input type.", classes);
+    return [];
+  }
+}
 
 /**
  * Sets a CSS custom property equal to the scrollbar width
