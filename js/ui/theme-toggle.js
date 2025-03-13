@@ -44,7 +44,6 @@ export const defaults = {
   themes: {
     light: {
       label: "Light",
-      value: "light",
       iconClass: "fas fa-sun",
       targetClass: "theme-light",
       mediaQuery: "(prefers-color-scheme: light)"
