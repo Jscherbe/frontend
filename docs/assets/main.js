@@ -73,15 +73,15 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
-const defaults$9 = {
+const defaults$a = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
   iconClassPrevious: "css-icon  css-icon--angle-left",
   iconClassNext: "css-icon  css-icon--angle-right"
 };
-let currentSettings = { ...defaults$9 };
+let currentSettings = { ...defaults$a };
 function getDefaultSettings() {
-  return { ...defaults$9 };
+  return { ...defaults$a };
 }
 function updateSettings(changes) {
   Object.assign(currentSettings, changes);
@@ -254,8 +254,32 @@ function getElement(target, context = document) {
   } else if (target instanceof Element) {
     return target;
   } else {
-    console.warn("Unable to getElement()", target);
+    console.warn("getElement: Invalid target type (expected String/Node)", target);
     return null;
+  }
+}
+function getElements(target, context = document) {
+  if (typeof target === "string") {
+    return [...context.querySelectorAll(target)];
+  } else if (target instanceof Element) {
+    return [target];
+  } else if (Array.isArray(target) || target instanceof NodeList) {
+    return [...target];
+  } else {
+    console.warn("getElement: Invalid target type (expected String/Node/Array/Node List)", target);
+    return null;
+  }
+}
+function resolveClasses(classes) {
+  if (typeof classes === "string") {
+    return classes.split(" ").filter((c) => c !== "");
+  } else if (Array.isArray(classes)) {
+    return classes;
+  } else if (!classes) {
+    return [];
+  } else {
+    console.warn("resolveClassArray: Invalid class input type.", classes);
+    return [];
   }
 }
 function addScrollbarProperty(element = document.body, container2 = window, propName = "--ulu-scrollbar-width") {
@@ -268,7 +292,9 @@ const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   getDatasetJson,
   getDatasetOptionalJson,
   getElement,
+  getElements,
   regexJsonString,
+  resolveClasses,
   setPositionClasses,
   wasClickOutside
 }, Symbol.toStringTag, { value: "Module" }));
@@ -608,15 +634,15 @@ const _Collapsible = class _Collapsible {
       logError$1(this, "missing required elements (trigger or content)");
       return;
     }
-    const options2 = Object.assign({}, _Collapsible.defaults, config2);
+    const options = Object.assign({}, _Collapsible.defaults, config2);
     this.elements = elements;
-    this.options = options2;
+    this.options = options;
     this.isOpen = false;
     this.handlers = {};
     ensureId(trigger);
     ensureId(content);
     this.debugLog(this, this);
-    if (!options2.selfManaged) {
+    if (!options.selfManaged) {
       this.attachHandlers();
     }
     this.setup();
@@ -790,11 +816,11 @@ const _Resizer = class _Resizer {
    * @param {Boolean} options.overrideMaxWidth When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)
    * @param {Boolean} options.fromLeft The script should assume the handle is on the left side of the element
    */
-  constructor(container2, control, options2) {
+  constructor(container2, control, options) {
     if (!control || !container2) {
       logError$1(this, "Missing required elements 'control' or 'container'");
     }
-    this.options = Object.assign({}, _Resizer.defaults, options2);
+    this.options = Object.assign({}, _Resizer.defaults, options);
     this.container = container2;
     this.control = control;
     this.handlerMousedown = this.onMousedown.bind(this);
@@ -873,8 +899,8 @@ const attrs$c = {
 };
 const attrSelector$c = (key2) => `[${attrs$c[key2]}]`;
 const attrSelectorInitial$9 = (key2) => `${attrSelector$c(key2)}:not([${attrs$c.init}])`;
-const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$9(key2));
-const defaults$8 = {
+const queryAllInitial$3 = (key2) => document.querySelectorAll(attrSelectorInitial$9(key2));
+const defaults$9 = {
   /**
    * Use non-modal interface for dialog
    */
@@ -893,18 +919,18 @@ const defaults$8 = {
    */
   pauseVideos: true
 };
-let currentDefaults$2 = { ...defaults$8 };
-function setDefaults$2(options2) {
-  currentDefaults$2 = Object.assign({}, currentDefaults$2, options2);
+let currentDefaults$3 = { ...defaults$9 };
+function setDefaults$3(options) {
+  currentDefaults$3 = Object.assign({}, currentDefaults$3, options);
 }
 function init$f() {
   document.addEventListener(getName$1("pageModified"), setup$d);
   setup$d();
 }
 function setup$d() {
-  const dialogs = queryAllInitial$2("dialog");
+  const dialogs = queryAllInitial$3("dialog");
   dialogs.forEach(setupDialog);
-  const triggers = queryAllInitial$2("trigger");
+  const triggers = queryAllInitial$3("trigger");
   triggers.forEach(setupTrigger$2);
 }
 function setupTrigger$2(trigger) {
@@ -922,26 +948,26 @@ function setupTrigger$2(trigger) {
       console.error("Attempted to trigger non <dialog> element. Did you mean to use modal builder?");
       return;
     }
-    const options2 = getDialogOptions(dialog2);
-    dialog2[options2.nonModal ? "show" : "showModal"]();
+    const options = getDialogOptions(dialog2);
+    dialog2[options.nonModal ? "show" : "showModal"]();
   }
 }
 function setupDialog(dialog2) {
-  const options2 = getDialogOptions(dialog2);
+  const options = getDialogOptions(dialog2);
   dialog2.addEventListener("click", handleClicks);
   dialog2.setAttribute(attrs$c.init, "");
-  if (options2.documentEnd) {
+  if (options.documentEnd) {
     document.body.appendChild(dialog2);
   }
-  if (options2.pauseVideos) {
+  if (options.pauseVideos) {
     prepVideos(dialog2);
   }
   function handleClicks(event) {
     const { target } = event;
     const closeFromButton = target.closest("[data-ulu-dialog-close]");
-    let closeFromOutside = options2.clickOutsideCloses && target === dialog2 && wasClickOutside(dialog2, event);
+    let closeFromOutside = options.clickOutsideCloses && target === dialog2 && wasClickOutside(dialog2, event);
     if (closeFromOutside || closeFromButton) {
-      if (options2.pauseVideos) {
+      if (options.pauseVideos) {
         pauseVideos(dialog2);
       }
       dialog2.close();
@@ -949,8 +975,8 @@ function setupDialog(dialog2) {
   }
 }
 function getDialogOptions(dialog2) {
-  const options2 = getDatasetJson(dialog2, "uluDialog");
-  return Object.assign({}, currentDefaults$2, options2);
+  const options = getDatasetJson(dialog2, "uluDialog");
+  return Object.assign({}, currentDefaults$3, options);
 }
 function prepVideos(dialog2) {
   prepVideos$1(dialog2);
@@ -963,10 +989,10 @@ function pauseVideos(dialog2) {
 const dialog = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   attrs: attrs$c,
-  defaults: defaults$8,
+  defaults: defaults$9,
   getDialogOptions,
   init: init$f,
-  setDefaults: setDefaults$2,
+  setDefaults: setDefaults$3,
   setup: setup$d,
   setupDialog,
   setupTrigger: setupTrigger$2
@@ -977,7 +1003,7 @@ const attrs$b = {
   resizer: "data-ulu-modal-builder-resizer"
 };
 const attrSelector$b = (key2) => `[${attrs$b[key2]}]`;
-const defaults$7 = {
+const defaults$8 = {
   title: null,
   titleIcon: null,
   nonModal: false,
@@ -1038,9 +1064,9 @@ const defaults$7 = {
     `;
   }
 };
-let currentDefaults$1 = { ...defaults$7 };
-function setDefaults$1(options2) {
-  currentDefaults$1 = Object.assign({}, currentDefaults$1, options2);
+let currentDefaults$2 = { ...defaults$8 };
+function setDefaults$2(options) {
+  currentDefaults$2 = Object.assign({}, currentDefaults$2, options);
 }
 function init$e() {
   document.addEventListener(getName$1("pageModified"), setup$c);
@@ -1051,12 +1077,12 @@ function setup$c() {
   builders.forEach(setupBuilder);
 }
 function setupBuilder(element) {
-  const options2 = getDatasetJson(element, "uluModalBuilder");
+  const options = getDatasetJson(element, "uluModalBuilder");
   element.removeAttribute(attrs$b.builder);
-  buildModal(element, options2);
+  buildModal(element, options);
 }
-function buildModal(content, options2) {
-  const config2 = Object.assign({}, currentDefaults$1, options2);
+function buildModal(content, options) {
+  const config2 = Object.assign({}, currentDefaults$2, options);
   if (config2.position !== "center" && config2.allowResize) {
     config2.hasResizer = true;
   }
@@ -1069,14 +1095,14 @@ function buildModal(content, options2) {
   const markup = config2.template(content.id, config2);
   const modal = createElementFromHtml(markup.trim());
   const selectChild = (key2) => modal.querySelector(attrSelector$b(key2));
-  const body2 = selectChild("body");
+  const body = selectChild("body");
   const resizer2 = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config2);
   content.removeAttribute("id");
   content.removeAttribute("hidden");
   content.removeAttribute(attrs$b.builder);
   content.parentNode.replaceChild(modal, content);
-  body2.appendChild(content);
+  body.appendChild(content);
   modal.setAttribute(attrs$c.dialog, JSON.stringify(dialogOptions));
   if (config2.hasResizer) {
     new Resizer(modal, resizer2, {
@@ -1096,7 +1122,7 @@ function buildModal(content, options2) {
   return { modal };
 }
 function separateDialogOptions(config2) {
-  return Object.keys(defaults$8).reduce((acc, key2) => {
+  return Object.keys(defaults$9).reduce((acc, key2) => {
     if (key2 in config2) {
       acc[key2] = config2[key2];
     }
@@ -1106,9 +1132,9 @@ function separateDialogOptions(config2) {
 const modalBuilder = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   buildModal,
-  defaults: defaults$7,
+  defaults: defaults$8,
   init: init$e,
-  setDefaults: setDefaults$1,
+  setDefaults: setDefaults$2,
   setup: setup$c,
   setupBuilder
 }, Symbol.toStringTag, { value: "Module" }));
@@ -1252,8 +1278,8 @@ function setup$b() {
 }
 function setupFlipcard(container2) {
   container2.setAttribute(attrs$a.init, "");
-  const options2 = getDatasetOptionalJson(container2, "uluFlipcard");
-  const config2 = Object.assign({}, options2);
+  const options = getDatasetOptionalJson(container2, "uluFlipcard");
+  const config2 = Object.assign({}, options);
   const front = container2.querySelector(attrSelectorInitial$8("front"));
   const back = container2.querySelector(attrSelectorInitial$8("back"));
   instances$4.push(new Flipcard(container2, front, back, config2));
@@ -1749,10 +1775,10 @@ const computePosition$1 = async (reference, floating, config2) => {
     middlewareData
   };
 };
-async function detectOverflow(state, options2) {
+async function detectOverflow(state, options) {
   var _await$platform$isEle;
-  if (options2 === void 0) {
-    options2 = {};
+  if (options === void 0) {
+    options = {};
   }
   const {
     x,
@@ -1768,7 +1794,7 @@ async function detectOverflow(state, options2) {
     elementContext = "floating",
     altBoundary = false,
     padding = 0
-  } = evaluate(options2, state);
+  } = evaluate(options, state);
   const paddingObject = getPaddingObject(padding);
   const altContext = elementContext === "floating" ? "reference" : "floating";
   const element = elements[altBoundary ? altContext : elementContext];
@@ -1805,9 +1831,9 @@ async function detectOverflow(state, options2) {
     right: (elementClientRect.right - clippingClientRect.right + paddingObject.right) / offsetScale.x
   };
 }
-const arrow$1 = (options2) => ({
+const arrow$1 = (options) => ({
   name: "arrow",
-  options: options2,
+  options,
   async fn(state) {
     const {
       x,
@@ -1821,7 +1847,7 @@ const arrow$1 = (options2) => ({
     const {
       element,
       padding = 0
-    } = evaluate(options2, state) || {};
+    } = evaluate(options, state) || {};
     if (element == null) {
       return {};
     }
@@ -1867,13 +1893,13 @@ const arrow$1 = (options2) => ({
     };
   }
 });
-const flip$1 = function(options2) {
-  if (options2 === void 0) {
-    options2 = {};
+const flip$1 = function(options) {
+  if (options === void 0) {
+    options = {};
   }
   return {
     name: "flip",
-    options: options2,
+    options,
     async fn(state) {
       var _middlewareData$arrow, _middlewareData$flip;
       const {
@@ -1892,7 +1918,7 @@ const flip$1 = function(options2) {
         fallbackAxisSideDirection = "none",
         flipAlignment = true,
         ...detectOverflowOptions
-      } = evaluate(options2, state);
+      } = evaluate(options, state);
       if ((_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
         return {};
       }
@@ -1988,13 +2014,13 @@ function getRectsByLine(rects) {
   }
   return groups.map((rect) => rectToClientRect(getBoundingRect(rect)));
 }
-const inline$1 = function(options2) {
-  if (options2 === void 0) {
-    options2 = {};
+const inline$1 = function(options) {
+  if (options === void 0) {
+    options = {};
   }
   return {
     name: "inline",
-    options: options2,
+    options,
     async fn(state) {
       const {
         placement,
@@ -2007,7 +2033,7 @@ const inline$1 = function(options2) {
         padding = 2,
         x,
         y
-      } = evaluate(options2, state);
+      } = evaluate(options, state);
       const nativeClientRects = Array.from(await (platform2.getClientRects == null ? void 0 : platform2.getClientRects(elements.reference)) || []);
       const clientRects = getRectsByLine(nativeClientRects);
       const fallback = rectToClientRect(getBoundingRect(nativeClientRects));
@@ -2079,7 +2105,7 @@ const inline$1 = function(options2) {
     }
   };
 };
-async function convertValueToCoords(state, options2) {
+async function convertValueToCoords(state, options) {
   const {
     placement,
     platform: platform2,
@@ -2091,7 +2117,7 @@ async function convertValueToCoords(state, options2) {
   const isVertical = getSideAxis(placement) === "y";
   const mainAxisMulti = ["left", "top"].includes(side) ? -1 : 1;
   const crossAxisMulti = rtl && isVertical ? -1 : 1;
-  const rawValue = evaluate(options2, state);
+  const rawValue = evaluate(options, state);
   let {
     mainAxis,
     crossAxis,
@@ -2117,13 +2143,13 @@ async function convertValueToCoords(state, options2) {
     y: crossAxis * crossAxisMulti
   };
 }
-const offset$1 = function(options2) {
-  if (options2 === void 0) {
-    options2 = 0;
+const offset$1 = function(options) {
+  if (options === void 0) {
+    options = 0;
   }
   return {
     name: "offset",
-    options: options2,
+    options,
     async fn(state) {
       var _middlewareData$offse, _middlewareData$arrow;
       const {
@@ -2132,7 +2158,7 @@ const offset$1 = function(options2) {
         placement,
         middlewareData
       } = state;
-      const diffCoords = await convertValueToCoords(state, options2);
+      const diffCoords = await convertValueToCoords(state, options);
       if (placement === ((_middlewareData$offse = middlewareData.offset) == null ? void 0 : _middlewareData$offse.placement) && (_middlewareData$arrow = middlewareData.arrow) != null && _middlewareData$arrow.alignmentOffset) {
         return {};
       }
@@ -2147,13 +2173,13 @@ const offset$1 = function(options2) {
     }
   };
 };
-const shift$1 = function(options2) {
-  if (options2 === void 0) {
-    options2 = {};
+const shift$1 = function(options) {
+  if (options === void 0) {
+    options = {};
   }
   return {
     name: "shift",
-    options: options2,
+    options,
     async fn(state) {
       const {
         x,
@@ -2176,7 +2202,7 @@ const shift$1 = function(options2) {
           }
         },
         ...detectOverflowOptions
-      } = evaluate(options2, state);
+      } = evaluate(options, state);
       const coords = {
         x,
         y
@@ -2506,13 +2532,13 @@ function getWindowScrollBarX(element) {
 function getDocumentRect(element) {
   const html = getDocumentElement(element);
   const scroll = getNodeScroll(element);
-  const body2 = element.ownerDocument.body;
-  const width = max(html.scrollWidth, html.clientWidth, body2.scrollWidth, body2.clientWidth);
-  const height = max(html.scrollHeight, html.clientHeight, body2.scrollHeight, body2.clientHeight);
+  const body = element.ownerDocument.body;
+  const width = max(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
+  const height = max(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
   let x = -scroll.scrollLeft + getWindowScrollBarX(element);
   const y = -scroll.scrollTop;
-  if (getComputedStyle$1(body2).direction === "rtl") {
-    x += max(html.clientWidth, body2.clientWidth) - width;
+  if (getComputedStyle$1(body).direction === "rtl") {
+    x += max(html.clientWidth, body.clientWidth) - width;
   }
   return {
     width,
@@ -2778,7 +2804,7 @@ function observeMove(element, onMove) {
     const insetBottom = floor(root.clientHeight - (top + height));
     const insetLeft = floor(left);
     const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
-    const options2 = {
+    const options = {
       rootMargin,
       threshold: max(0, min(1, threshold)) || 1
     };
@@ -2801,21 +2827,21 @@ function observeMove(element, onMove) {
     }
     try {
       io = new IntersectionObserver(handleObserve, {
-        ...options2,
+        ...options,
         // Handle <iframe>s
         root: root.ownerDocument
       });
     } catch (e) {
-      io = new IntersectionObserver(handleObserve, options2);
+      io = new IntersectionObserver(handleObserve, options);
     }
     io.observe(element);
   }
   refresh(true);
   return cleanup;
 }
-function autoUpdate(reference, floating, update, options2) {
-  if (options2 === void 0) {
-    options2 = {};
+function autoUpdate(reference, floating, update, options) {
+  if (options === void 0) {
+    options = {};
   }
   const {
     ancestorScroll = true,
@@ -2823,7 +2849,7 @@ function autoUpdate(reference, floating, update, options2) {
     elementResize = typeof ResizeObserver === "function",
     layoutShift = typeof IntersectionObserver === "function",
     animationFrame = false
-  } = options2;
+  } = options;
   const referenceEl = unwrapElement(reference);
   const ancestors = ancestorScroll || ancestorResize ? [...referenceEl ? getOverflowAncestors(referenceEl) : [], ...getOverflowAncestors(floating)] : [];
   ancestors.forEach((ancestor) => {
@@ -2886,11 +2912,11 @@ const shift = shift$1;
 const flip = flip$1;
 const arrow = arrow$1;
 const inline = inline$1;
-const computePosition = (reference, floating, options2) => {
+const computePosition = (reference, floating, options) => {
   const cache = /* @__PURE__ */ new Map();
   const mergedOptions = {
     platform: platform$2,
-    ...options2
+    ...options
   };
   const platformWithCache = {
     ...mergedOptions.platform,
@@ -2901,7 +2927,7 @@ const computePosition = (reference, floating, options2) => {
     platform: platformWithCache
   });
 };
-const defaults$6 = {
+const defaults$7 = {
   strategy: "absolute",
   placement: "bottom",
   inline: false,
@@ -2914,19 +2940,19 @@ const defaults$6 = {
   // Options for arrow (not element)
 };
 function createFloatingUi(elements, config2) {
-  const options2 = Object.assign({}, defaults$6, config2);
-  const { placement, strategy } = options2;
+  const options = Object.assign({}, defaults$7, config2);
+  const { placement, strategy } = options;
   const { trigger, content, contentArrow } = elements;
   return autoUpdate(trigger, content, () => {
     computePosition(trigger, content, {
       placement,
       strategy,
       middleware: [
-        ...addPlugin(inline, options2.inline),
-        ...addPlugin(offset, options2.offset),
-        ...addPlugin(flip, options2.flip),
-        ...addPlugin(shift, options2.shift),
-        ...addPlugin(arrow, contentArrow && options2.arrow, { element: contentArrow })
+        ...addPlugin(inline, options.inline),
+        ...addPlugin(offset, options.offset),
+        ...addPlugin(flip, options.flip),
+        ...addPlugin(shift, options.shift),
+        ...addPlugin(arrow, contentArrow && options.arrow, { element: contentArrow })
       ]
     }).then((data) => {
       const { x, y, middlewareData, placement: placement2 } = data;
@@ -2958,7 +2984,7 @@ function addPlugin(plugin, option, overrides = {}) {
 const floatingUi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   createFloatingUi,
-  defaults: defaults$6
+  defaults: defaults$7
 }, Symbol.toStringTag, { value: "Module" }));
 const instances$3 = /* @__PURE__ */ new WeakMap();
 const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
@@ -2980,13 +3006,13 @@ function init$b() {
 function setup$9() {
   const triggers = document.querySelectorAll(attrSelector$9("trigger"));
   const resolved = Array.from(triggers).filter((trigger) => !instances$3.has(trigger)).map(resolve).filter((v) => v);
-  resolved.forEach(({ elements, options: options2, floatingOptions }) => {
-    instances$3.set(elements.trigger, new Popover(elements, options2, floatingOptions));
+  resolved.forEach(({ elements, options, floatingOptions }) => {
+    instances$3.set(elements.trigger, new Popover(elements, options, floatingOptions));
   });
 }
 function resolve(trigger) {
   const raw = trigger.dataset.uluPopoverTrigger;
-  const options2 = (raw == null ? void 0 : raw.length) ? JSON.parse(raw) : {};
+  const options = (raw == null ? void 0 : raw.length) ? JSON.parse(raw) : {};
   const content = getContentByTrigger(trigger);
   const elements = {
     trigger,
@@ -2994,10 +3020,10 @@ function resolve(trigger) {
     anchor: trigger.querySelector(attrSelector$9("anchor")) || trigger,
     contentArrow: content.querySelector(attrSelector$9("arrow"))
   };
-  const floatingOptions = options2.floating || {};
-  delete options2.floating;
+  const floatingOptions = options.floating || {};
+  delete options.floating;
   if (content) {
-    return { elements, options: options2, floatingOptions };
+    return { elements, options, floatingOptions };
   } else {
     logError("Unable to make popover for", trigger);
     return false;
@@ -3024,8 +3050,8 @@ function getContentByTrigger(trigger) {
 }
 class Popover extends Collapsible {
   constructor(elements, config2, floatingOptions) {
-    const options2 = Object.assign({}, collapsibleDefaults, config2);
-    super(elements, options2);
+    const options = Object.assign({}, collapsibleDefaults, config2);
+    super(elements, options);
     this.floatingOptions = floatingOptions || {};
   }
   setState(isOpen, event) {
@@ -3078,11 +3104,11 @@ function setup$8() {
 }
 function setupTrigger$1(trigger) {
   const passed = getDatasetOptionalJson(trigger, "uluTooltip");
-  const options2 = typeof passed === "object" ? passed : {};
+  const options = typeof passed === "object" ? passed : {};
   if (typeof passed === "string") {
-    options2.content = passed;
+    options.content = passed;
   }
-  return new Tooltip({ trigger }, options2);
+  return new Tooltip({ trigger }, options);
 }
 const _Tooltip = class _Tooltip {
   constructor(elements, userOptions, floatingOptions) {
@@ -3140,18 +3166,18 @@ const _Tooltip = class _Tooltip {
     return element;
   }
   createContentElement() {
-    const { options: options2 } = this;
-    const content = createElementFromHtml(options2.template(options2));
-    const body2 = content.querySelector(attrSelector$8("body"));
+    const { options } = this;
+    const content = createElementFromHtml(options.template(options));
+    const body = content.querySelector(attrSelector$8("body"));
     const innerContent = this.getInnerContent();
-    if (options2.isHtml) {
-      body2.innerHTML = innerContent;
+    if (options.isHtml) {
+      body.innerHTML = innerContent;
     } else {
-      body2.textContent = innerContent;
+      body.textContent = innerContent;
     }
     content.id = newId();
-    if (options2.contentClass) {
-      content.classList.add(options2.contentClass);
+    if (options.contentClass) {
+      content.classList.add(options.contentClass);
     }
     this.elements.content = content;
     this.elements.contentArrow = content.querySelector(attrSelector$8("arrow"));
@@ -4167,16 +4193,16 @@ var platformExports = platform$1.exports;
     data.document = _document;
     return data;
   }
-  function test(data, options2) {
+  function test(data, options) {
     data.wrapper.innerHTML = "";
-    var element = typeof options2.element === "string" ? data.document.createElement(options2.element) : options2.element(data.wrapper, data.document);
-    var focus2 = options2.mutate && options2.mutate(element, data.wrapper, data.document);
+    var element = typeof options.element === "string" ? data.document.createElement(options.element) : options.element(data.wrapper, data.document);
+    var focus2 = options.mutate && options.mutate(element, data.wrapper, data.document);
     if (!focus2 && focus2 !== false) {
       focus2 = element;
     }
     !element.parentNode && data.wrapper.appendChild(element);
     focus2 && focus2.focus && focus2.focus();
-    return options2.validate ? options2.validate(element, focus2, data.document) : data.document.activeElement === focus2;
+    return options.validate ? options.validate(element, focus2, data.document) : data.document.activeElement === focus2;
   }
   function after(data) {
     if (data.activeElement === document.body) {
@@ -6354,16 +6380,16 @@ var focusable_quickExports = focusable_quick.exports;
       defaultToDocument: true,
       context
     });
-    var options2 = {
+    var options = {
       context: element,
       includeContext,
       includeOnlyTabbable,
       strategy
     };
     if (strategy === "quick") {
-      return (0, _focusable4.default)(options2);
+      return (0, _focusable4.default)(options);
     } else if (strategy === "strict" || strategy === "all") {
-      return (0, _focusable2.default)(options2);
+      return (0, _focusable2.default)(options);
     }
     throw new TypeError('query/focusable requires option.strategy to be one of ["quick", "strict", "all"]');
   };
@@ -8201,7 +8227,7 @@ const attrs$7 = {
 };
 const attrSelector$7 = (key2) => `[${attrs$7[key2]}]`;
 const attrSelectorInitial$6 = (key2) => `${attrSelector$7(key2)}:not([${attrs$7.init}])`;
-const defaults$5 = {
+const defaults$6 = {
   amount: createPager()
 };
 const instances$2 = [];
@@ -8215,8 +8241,8 @@ function setup$7() {
 }
 function setupSlider$1(container2) {
   container2.setAttribute(attrs$7.init, "");
-  const options2 = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$5, options2);
+  const options = getDatasetOptionalJson(container2, "uluScrollSlider");
+  const config2 = Object.assign({}, defaults$6, options);
   const elements = {
     container: container2,
     track: container2.querySelector("[data-ulu-slider-track]"),
@@ -8231,9 +8257,9 @@ function setupSlider$1(container2) {
 const _Slider = class _Slider {
   // constructor(container, title, trackContainer, track, slides, config, debug = false) {
   constructor(elements, config2, debug = false) {
-    const options2 = Object.assign({}, _Slider.defaults, config2);
+    const options = Object.assign({}, _Slider.defaults, config2);
     this.debug = debug;
-    this.options = options2;
+    this.options = options;
     this.slide = null;
     this.index = null;
     this.transitioning = false;
@@ -8255,7 +8281,7 @@ const _Slider = class _Slider {
       ...this.createControls(elements.controlContext || elements.container),
       ...this.createNav(elements.navContext || elements.container)
     };
-    this.transition = options2.transition ? options2.transitionFade || reduceMotion ? this.fadeTransition : this.slideTransition : this.noTransition;
+    this.transition = options.transition ? options.transitionFade || reduceMotion ? this.fadeTransition : this.slideTransition : this.noTransition;
     this.setup();
     this.goto(0, null, "init");
     log(this, "Slider Instance Created", this);
@@ -8353,9 +8379,9 @@ const _Slider = class _Slider {
    * Perform a fade on a single slide
    */
   fadeSlide(slide, visible2) {
-    const { options: options2 } = this;
+    const { options } = this;
     const { element } = slide;
-    const duration = visible2 ? options2.transitionDuration : options2.transitionDurationExit;
+    const duration = visible2 ? options.transitionDuration : options.transitionDurationExit;
     return this.ensureTransitionEnds(element, duration, () => {
       element.style.opacity = visible2 ? "1" : "0";
     });
@@ -8857,9 +8883,9 @@ const AriaTablist = /* @__PURE__ */ getDefaultExportFromCjs(ariaTablist_minExpor
 const initAttr = "data-ulu-tablist-init";
 const errorHeader = "[data-ulu-tablist] error:";
 const instances$1 = [];
-function init$8(options2 = {}) {
+function init$8(options = {}) {
   const initial = () => {
-    initWithin(document, options2);
+    initWithin(document, options);
     instances$1.forEach(openByCurrentHash);
   };
   if (document.readyState === "complete") {
@@ -8867,17 +8893,17 @@ function init$8(options2 = {}) {
   } else {
     window.addEventListener("load", initial);
   }
-  document.addEventListener("pageModified", (e) => initWithin(e.target, options2));
+  document.addEventListener("pageModified", (e) => initWithin(e.target, options));
 }
-function initWithin(context, options2 = {}) {
+function initWithin(context, options = {}) {
   if (!context) {
     console.warn("Missing context to initWithin, skipping init of tabs");
     return;
   }
   const tablists = context.querySelectorAll(`[data-ulu-tablist]:not([${initAttr}])`);
-  tablists.forEach((element) => setup$6(element, options2));
+  tablists.forEach((element) => setup$6(element, options));
 }
-function setup$6(element, options2 = {}) {
+function setup$6(element, options = {}) {
   let elementOptions = {};
   if (element.dataset.uluTablist) {
     try {
@@ -8886,11 +8912,11 @@ function setup$6(element, options2 = {}) {
       console.error(errorHeader, "(JSON Parse for options)", element);
     }
   }
-  const config2 = Object.assign({}, options2, elementOptions);
+  const config2 = Object.assign({}, options, elementOptions);
   if (config2.vertical) {
     config2.allArrows = true;
   }
-  const instance = { element, options: options2 };
+  const instance = { element, options };
   instance.ariaTablist = AriaTablist(element, {
     onOpen(...args) {
       args.unshift(instance);
@@ -8905,8 +8931,8 @@ function setup$6(element, options2 = {}) {
   element.setAttribute(initAttr, "");
   return instance;
 }
-function openByCurrentHash({ options: options2, ariaTablist }) {
-  if (options2.openByUrlHash) {
+function openByCurrentHash({ options, ariaTablist }) {
+  if (options.openByUrlHash) {
     const { hash } = window.location;
     if (hash && hash.length > 1) {
       const possibleId = hash.substring(1);
@@ -8918,8 +8944,8 @@ function openByCurrentHash({ options: options2, ariaTablist }) {
     }
   }
 }
-function handleOpen({ options: options2 }, panel, tab) {
-  if (options2.openByUrlHash && window.history) {
+function handleOpen({ options }, panel, tab) {
+  if (options.openByUrlHash && window.history) {
     window.history.replaceState(null, "", `#${tab.id}`);
   }
 }
@@ -8966,15 +8992,15 @@ const attrs$6 = {
 };
 const attrSelector$6 = (key2) => `[${attrs$6[key2]}]`;
 const attrSelectorInitial$5 = (key2) => `${attrSelector$6(key2)}:not([${attrs$6.init}])`;
-const defaults$4 = {
+const defaults$5 = {
   selector: "[data-ulu-proxy-click-source]",
   selectorPreventBase: "input, select, textarea, button, a, [tabindex='-1']",
   selectorPrevent: "",
   mousedownDurationPrevent: 250
 };
-let currentDefaults = { ...defaults$4 };
-function setDefaults(options2) {
-  currentDefaults = Object.assign({}, currentDefaults, options2);
+let currentDefaults$1 = { ...defaults$5 };
+function setDefaults$1(options) {
+  currentDefaults$1 = Object.assign({}, currentDefaults$1, options);
 }
 function init$7() {
   document.addEventListener(getName$1("pageModified"), () => setup$5());
@@ -8984,18 +9010,18 @@ function setup$5(context = document) {
   const proxies = context.querySelectorAll(attrSelectorInitial$5("trigger"));
   proxies.forEach((proxy) => {
     const elOptions = getDatasetOptionalJson(proxy, "siteProxyClick");
-    const options2 = Object.assign({}, currentDefaults, elOptions);
-    const child = proxy.querySelector(options2.selector);
+    const options = Object.assign({}, currentDefaults$1, elOptions);
+    const child = proxy.querySelector(options.selector);
     if (child) {
-      attachHandlers(proxy, child, options2);
+      attachHandlers(proxy, child, options);
       proxy.setAttribute(attrs$6.init, "");
     } else {
-      console.error("Unable to locate proxy click source", options2.selector);
+      console.error("Unable to locate proxy click source", options.selector);
     }
   });
 }
-function attachHandlers(proxy, child, options2) {
-  const { selectorPreventBase: spb, selectorPrevent: sp } = options2;
+function attachHandlers(proxy, child, options) {
+  const { selectorPreventBase: spb, selectorPrevent: sp } = options;
   const selectorPrevent = `${spb}${sp ? `, ${sp}` : ""}`;
   let start, shouldProxy;
   proxy.addEventListener("mousedown", ({ target, timeStamp }) => {
@@ -9006,7 +9032,7 @@ function attachHandlers(proxy, child, options2) {
     }
   });
   proxy.addEventListener("mouseup", ({ timeStamp }) => {
-    if (shouldProxy && timeStamp - start < options2.mousedownDurationPrevent) {
+    if (shouldProxy && timeStamp - start < options.mousedownDurationPrevent) {
       child.click();
     }
   });
@@ -9015,9 +9041,9 @@ function attachHandlers(proxy, child, options2) {
 const proxyClick = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   attachHandlers,
-  defaults: defaults$4,
+  defaults: defaults$5,
   init: init$7,
-  setDefaults,
+  setDefaults: setDefaults$1,
   setup: setup$5
 }, Symbol.toStringTag, { value: "Module" }));
 const attrs$5 = {
@@ -9033,13 +9059,13 @@ const attrs$5 = {
 };
 const attrSelector$5 = (key2) => `[${attrs$5[key2]}]`;
 const attrSelectorInitial$4 = (key2) => `${attrSelector$5(key2)}:not([${attrs$5.init}])`;
-const queryAllInitial$1 = (key2) => document.querySelectorAll(attrSelectorInitial$4(key2));
+const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$4(key2));
 function init$6() {
   document.addEventListener(getName$1("pageModified"), setup$4);
   setup$4();
 }
 function setup$4() {
-  const elements = queryAllInitial$1("point");
+  const elements = queryAllInitial$2("point");
   elements.forEach((element) => {
     const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
     const config2 = Object.assign({}, elOptions);
@@ -9054,23 +9080,23 @@ const _Scrollpoint = class _Scrollpoint {
    * @param {Object} config Options to configure the scrollpoint see Scrollpoint.defaults for more information on settings
    */
   constructor(element, config2) {
-    const options2 = Object.assign({}, _Scrollpoint.defaults, config2);
+    const options = Object.assign({}, _Scrollpoint.defaults, config2);
     if (!element) {
       logError$1(this, "Missing required element");
       return;
     }
-    if (options2.rootSelector) {
-      options2.root = document.querySelector(options2.rootSelector);
-      delete options2.rootSelector;
+    if (options.rootSelector) {
+      options.root = document.querySelector(options.rootSelector);
+      delete options.rootSelector;
     }
-    this.options = options2;
+    this.options = options;
     this.observer = null;
     this.lastPosition = null;
     this.isActive = false;
     this.element = element;
     this.syncedElements = [
       element,
-      ...options2.syncElements.map((target) => getElement(target))
+      ...options.syncElements.map((target) => getElement(target))
     ];
     this.classes = {
       enter: this.getClassname("enter"),
@@ -9081,7 +9107,7 @@ const _Scrollpoint = class _Scrollpoint {
       exitReverse: this.getClassname("exit--from-reverse")
     };
     this.setupObserver();
-    if (options2.debug) {
+    if (options.debug) {
       console.log("Scrollpoint", this);
     }
   }
@@ -9099,14 +9125,14 @@ const _Scrollpoint = class _Scrollpoint {
    */
   onObserve(entries) {
     const y = this.getScrollY();
-    const { lastPosition, isActive, options: options2 } = this;
+    const { lastPosition, isActive, options } = this;
     const isForward = lastPosition === null ? null : lastPosition < y;
     entries.forEach((entry) => {
       const { isIntersecting } = entry;
       if (isIntersecting && !isActive) {
         this.setState(true, isForward);
-      } else if (!isIntersecting && isActive && options2.exit) {
-        if (isForward && options2.exitForward || !isForward && options2.exitReverse) {
+      } else if (!isIntersecting && isActive && options.exit) {
+        if (isForward && options.exitForward || !isForward && options.exitReverse) {
           this.setState(false, isForward);
         }
       }
@@ -9279,8 +9305,8 @@ const attrs$4 = {
 };
 const attrSelector$4 = (key2) => `[${attrs$4[key2]}]`;
 const attrSelectorInitial$3 = (key2) => `${attrSelector$4(key2)}:not([${attrs$4.init}])`;
-const queryAllInitial = (key2) => document.querySelectorAll(attrSelectorInitial$3(key2));
-const defaults$3 = {
+const queryAllInitial$1 = (key2) => document.querySelectorAll(attrSelectorInitial$3(key2));
+const defaults$4 = {
   /**
    * Print element/selector
    */
@@ -9291,14 +9317,14 @@ function init$5() {
   setup$3();
 }
 function setup$3() {
-  const triggers = queryAllInitial("trigger");
+  const triggers = queryAllInitial$1("trigger");
   triggers.forEach((trigger) => {
-    const options2 = getDatasetOptionalJson(trigger, "uluPrint");
-    setupTrigger(trigger, options2);
+    const options = getDatasetOptionalJson(trigger, "uluPrint");
+    setupTrigger(trigger, options);
   });
 }
-function setupTrigger(trigger, options2) {
-  const config2 = Object.assign({}, defaults$3, options2);
+function setupTrigger(trigger, options) {
+  const config2 = Object.assign({}, defaults$4, options);
   trigger.addEventListener("click", (event) => {
     if (config2.element) {
       const element = getElement(config2.element);
@@ -9321,11 +9347,11 @@ const attrs$3 = {
   opened: "data-ulu-print-details-opened"
 };
 const attrSelector$3 = (key2) => `[${attrs$3[key2]}]`;
-const defaults$2 = {
+const defaults$3 = {
   selector: "details:not([open])"
 };
-function init$4(options2) {
-  const config2 = Object.assign({}, defaults$2, options2);
+function init$4(options) {
+  const config2 = Object.assign({}, defaults$3, options);
   document.addEventListener(getName$1("beforePrint"), () => {
     document.querySelectorAll(config2.selector).forEach((details) => {
       if (!details.open) {
@@ -9355,7 +9381,7 @@ const attrs$2 = {
 const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
 const attrSelectorInitial$2 = (key2) => `${attrSelector$2(key2)}:not([${attrs$2.init}])`;
 const instances = [];
-const defaults$1 = {
+const defaults$2 = {
   amount: createPager()
 };
 function init$3() {
@@ -9368,8 +9394,8 @@ function setup$2() {
 }
 function setupSlider(container2) {
   container2.setAttribute(attrs$2.init, "");
-  const options2 = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$1, options2);
+  const options = getDatasetOptionalJson(container2, "uluScrollSlider");
+  const config2 = Object.assign({}, defaults$2, options);
   const elements = {
     track: container2.querySelector(attrSelector$2("track")),
     controls: container2.querySelector(attrSelector$2("controls"))
@@ -9383,93 +9409,262 @@ const scrollSlider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.define
   setup: setup$2
 }, Symbol.toStringTag, { value: "Module" }));
 const attrs$1 = {
-  trigger: "data-site-theme-toggle",
-  icon: "data-site-theme-toggle-icon",
-  init: "data-site-theme-toggle-init"
+  init: "data-ulu-theme-toggle-init",
+  toggle: "data-ulu-theme-toggle",
+  toggleIcon: "data-ulu-theme-toggle-icon",
+  toggleLabel: "data-ulu-theme-toggle-label",
+  toggleRemote: "data-ulu-theme-toggle-remote",
+  state: "data-ulu-theme-toggle-state"
 };
 const attrSelector$1 = (key2) => `[${attrs$1[key2]}]`;
 const attrSelectorInitial$1 = (key2) => `${attrSelector$1(key2)}:not([${attrs$1.init}])`;
-const options = {
-  darkTheme: "theme-dark",
-  lightTheme: "theme-light",
-  defaultTheme: "dark",
-  darkIcon: "fa-solid fa-moon",
-  lightIcon: "fa-solid fa-sun"
+const queryAllInitial = (key2) => document.querySelectorAll(attrSelectorInitial$1(key2));
+const queryRemotes = (group) => document.querySelectorAll(
+  `[${attrs$1.toggleRemote}="${group}"]`
+);
+const queryRemotesInitial = (group) => document.querySelectorAll(
+  `[${attrs$1.toggleRemote}="${group}"]:not([${attrs$1.init}])`
+);
+const debugLog = (...msgs) => console.log("Theme Toggle:", ...msgs);
+const requiredToggleProps = ["target"];
+const checkToggleProps = hasRequiredProps(requiredToggleProps);
+const when = (cond, fn) => cond ? fn() : null;
+const defaults$1 = {
+  /**
+   * Object of each theme that should be toggle/cycled through
+   */
+  themes: {
+    light: {
+      label: "Light",
+      value: "light",
+      iconClass: "fas fa-sun",
+      targetClass: "theme-light",
+      mediaQuery: "(prefers-color-scheme: light)"
+    },
+    dark: {
+      label: "Dark",
+      iconClass: "fas fa-moon",
+      targetClass: "theme-dark",
+      mediaQuery: "(prefers-color-scheme: dark)"
+    }
+  },
+  /**
+   * Required this is the element(s) that should be changed by a specific toggle
+   * - The element should have data-ulu-theme-toggle-target="SOME_IDENTIFIER"
+   */
+  target: "body",
+  /**
+   * Optional group to link remote toggles (toggles that follow the main one and can toggle too)
+   */
+  group: null,
+  /**
+   * Optional callback to do something when the state changes
+   */
+  onChange(_ctx) {
+  },
+  /**
+   * The initial state for this component
+   * - May be overridden by saved preference or media query if options are enabled
+   */
+  initialState: "light",
+  /**
+   * Check the OS systems user preference via 'preferenceQuery' option
+   */
+  checkMediaQuery: false,
+  /**
+   * Will store the preference in local storage so it persists between page loads
+   */
+  savePreference: false,
+  /**
+   * The key that will be used to store the preference in local storage
+   * - This will be used as prefix in combination with group if defined
+   */
+  storagePrefix: "ulu-theme-",
+  /**
+   * Output information to console for debugging
+   */
+  debug: false
 };
-const body = document.querySelector("[data-site-theme]");
-let currentTheme = body.classList.contains(options.darkTheme) ? options.darkTheme : options.lightTheme;
-const defaultThemeInverse = options.defaultTheme === "dark" ? "light" : "dark";
+let currentDefaults = { ...defaults$1 };
+function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
 function init$2() {
-  document.addEventListener(getName$1("beforePrint"), () => printSetup());
-  document.addEventListener(getName$1("afterPrint"), () => printTearDown());
+  document.addEventListener(getName$1("pageModified"), setup$1);
   setup$1();
 }
-function setup$1(context = document) {
-  const body2 = context.querySelector("[data-site-theme]");
-  setupTheme(body2);
-  const elements = context.querySelectorAll(attrSelectorInitial$1("trigger"));
-  elements.forEach((element) => {
-    element.setAttribute(attrs$1.init, "");
-    element.addEventListener("click", () => {
-      changeTheme(body2);
+function setup$1() {
+  queryAllInitial("toggle").forEach(setupToggle);
+}
+function setupToggle(toggle, passedOptions) {
+  const elementOptions = getDatasetJson(toggle, "uluThemeToggle");
+  const options = Object.assign({}, defaults$1, passedOptions, elementOptions);
+  if (!checkToggleProps(options)) {
+    console.error(`Missing a required option: ${requiredToggleProps.join(", ")}`);
+    return;
+  }
+  const group = options.group;
+  const ctx = { toggle, options };
+  const initialKey = resolveInitial(options);
+  if (!initialKey) {
+    console.error("Unable to resolve initial key");
+    return;
+  }
+  setState(initialKey, ctx);
+  toggle.addEventListener("click", onToggleClick);
+  toggle.setAttribute(attrs$1.init, "");
+  attachRemotes();
+  document.addEventListener(getName$1("pageModified"), attachRemotes);
+  function toggleState(event) {
+    const targets = getElements(options.target);
+    const lastKey = targets[0].dataset.uluThemeToggleState;
+    const key2 = getNextThemeKey(lastKey, options);
+    if (!key2) {
+      console.error("Issue getting next theme key");
+      return;
+    }
+    setState(key2, { ...ctx, event });
+  }
+  function onToggleClick(event) {
+    toggleState(event);
+  }
+  function attachRemotes() {
+    if (!group) return;
+    const remotes = queryRemotesInitial(group);
+    remotes.forEach((remote) => {
+      remote.addEventListener("click", onToggleClick);
+      remote.setAttribute(attrs$1.init, "");
     });
+  }
+  function cleanupRemotes() {
+    if (!group) return;
+    const remotes = queryRemotesInitial(group);
+    remotes.forEach((remote) => {
+      remote.removeEventListener("click", onToggleClick);
+      remote.removeAttribute(attrs$1.init, "");
+    });
+  }
+  function destroy() {
+    toggle.removeEventListener("click", onToggleClick);
+    toggle.removeAttribute(attrs$1.init, "");
+    cleanupRemotes();
+    document.removeEventListener(getName$1("pageModified"), attachRemotes);
+  }
+  return {
+    destroy,
+    toggle,
+    options,
+    toggleState,
+    setState(themeKey) {
+      setState(themeKey, ctx);
+    }
+  };
+}
+function setState(key2, ctx) {
+  if (!key2) {
+    console.error("Missing key");
+    return;
+  }
+  const { toggle, options } = ctx;
+  const { themes, group } = options;
+  const elements = {
+    targets: getElements(options.target),
+    toggles: [toggle, ...group ? queryRemotes(group) : []]
+  };
+  if (!elements.targets.length || !elements.toggles.length) {
+    console.error("Issue setting state, couldn't find needed elements", elements);
+    return;
+  }
+  const theme = themes[key2];
+  const otherThemes = getOtherThemes(key2, themes);
+  const stateCtx = {
+    ...ctx,
+    key: key2,
+    elements,
+    theme,
+    otherThemes
+  };
+  if (options.debug) {
+    debugLog("set state context", stateCtx);
+  }
+  const otherTargetClasses = concatThemeClasses(otherThemes, "targetClass");
+  const otherIconClasses = concatThemeClasses(otherThemes, "iconClass");
+  elements.targets.forEach((element) => {
+    element.setAttribute(attrs$1.state, key2);
+    element.classList.remove(...otherTargetClasses);
+    element.classList.add(...resolveClasses(theme.targetClass));
   });
-  changeIcons();
-}
-function setupTheme(body2) {
-  const sitePreference = localStorage.getItem("data-theme");
-  const machinePreference = window.matchMedia && window.matchMedia(`(prefers-color-scheme: ${defaultThemeInverse})`).matches;
-  if (sitePreference && sitePreference != currentTheme) {
-    changeTheme(body2);
-  } else if (machinePreference) {
-    changeTheme(body2);
+  elements.toggles.forEach((element) => {
+    const label = element.querySelector(attrSelector$1("toggleLabel"));
+    const icon = element.querySelector(attrSelector$1("toggleIcon"));
+    if (label) {
+      label.textContent = theme.label;
+    }
+    if (icon) {
+      icon.classList.remove(...otherIconClasses);
+      icon.classList.add(...resolveClasses(theme.iconClass));
+    }
+    element.setAttribute(attrs$1.state, key2);
+  });
+  if (options.onChange) {
+    options.onChange(stateCtx);
+  }
+  if (options.savePreference) {
+    localStorage.setItem(getStorageKey(options), key2);
   }
 }
-function changeTheme(body2) {
-  let newTheme;
-  let oldTheme;
-  if (body2.classList.contains(options.darkTheme)) {
-    oldTheme = options.darkTheme;
-    newTheme = options.lightTheme;
-  } else if (body2.classList.contains(options.lightTheme)) {
-    oldTheme = options.lightTheme;
-    newTheme = options.darkTheme;
+function resolveInitial(options) {
+  const { savePreference, checkMediaQuery, themes, initialState } = options;
+  const storageKey = getStorageKey(options);
+  const saved = when(savePreference, () => localStorage.getItem(storageKey));
+  const mediaQueryPreference = when(checkMediaQuery, () => getMatchingThemeQuery(themes));
+  const resolved = saved || mediaQueryPreference || initialState;
+  if (options.debug) {
+    debugLog("Preference Saved:", saved);
+    debugLog("Media Query Preference:", mediaQueryPreference);
+    debugLog("Initial State:", initialState);
   }
-  body2.classList.remove(oldTheme);
-  body2.classList.add(newTheme);
-  localStorage.setItem("data-theme", newTheme);
-  currentTheme = newTheme;
-  changeIcons();
+  if (!resolved) {
+    console.error("Failed to resolve initial theme (pass 'initialState' to options)");
+  }
+  return resolved;
 }
-function changeIcons(context = document) {
-  const icons = context.querySelectorAll(attrSelectorInitial$1("icon"));
-  icons.forEach((icon) => {
-    if (currentTheme == options.lightTheme) {
-      icon.classList = options.darkIcon;
-    } else {
-      icon.classList = options.lightIcon;
+function getMatchingThemeQuery(themes) {
+  const found = Object.entries(themes).find(([_key, theme]) => {
+    if (theme.mediaQuery) {
+      return window.matchMedia(theme.mediaQuery).matches;
     }
   });
+  return found ? found[0] : null;
 }
-function printSetup() {
-  const body2 = document.querySelector("body");
-  if (body2.classList.contains(options.darkTheme)) {
-    body2.classList.remove(options.darkTheme);
-    body2.classList.add(options.lightTheme);
-  }
+function getNextThemeKey(activeKey, options) {
+  const { themes } = options;
+  const keys = Object.keys(themes);
+  const index2 = keys.findIndex((theme) => theme === activeKey);
+  const nextIndex = index2 === -1 ? 0 : (index2 + 1) % keys.length;
+  return keys[nextIndex];
 }
-function printTearDown() {
-  const body2 = document.querySelector("body");
-  if (!body2.classList.contains(currentTheme)) {
-    body2.classList.remove(options.lightTheme);
-    body2.classList.add(options.darkTheme);
-  }
+function getOtherThemes(currentKey, themes) {
+  const all = Object.entries(themes);
+  return all.filter(([key2]) => key2 !== currentKey).map(([_key, value]) => value);
+}
+function concatThemeClasses(themes, property) {
+  return themes.reduce((acc, theme) => {
+    return acc.concat(resolveClasses(theme[property]));
+  }, []);
+}
+function getStorageKey(options) {
+  const { storagePrefix, group } = options;
+  return group ? `${storagePrefix}${group}` : storagePrefix;
 }
 const themeToggle = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
+  attrs: attrs$1,
+  defaults: defaults$1,
   init: init$2,
-  options,
-  setup: setup$1
+  setDefaults,
+  setup: setup$1,
+  setupToggle
 }, Symbol.toStringTag, { value: "Module" }));
 const attrs = {
   init: "data-ulu-details-group-init",
@@ -9483,7 +9678,7 @@ const defaults = {
   childSelector: ":scope > details"
 };
 function init$1() {
-  document.addEventListener(getName$1("pageModified"), setup);
+  document.addEventListener(getName$1("pageModified"), () => setup());
   setup();
 }
 function setup(context = document) {
@@ -9496,11 +9691,11 @@ function setup(context = document) {
 }
 function setupGroup(element) {
   const elementOptions = getDatasetOptionalJson(element, "uluDetailsGroup");
-  const options2 = Object.assign({}, defaults, elementOptions);
-  element.setAttribute(attrs.init, "");
+  const options = Object.assign({}, defaults, elementOptions);
+  element.setAttribute(attrs.t, "");
   setupChildren();
   function queryChildren() {
-    return element.querySelectorAll(options2.childSelector);
+    return element.querySelectorAll(options.childSelector);
   }
   function setupChildren() {
     queryChildren().forEach((child) => {
@@ -9514,7 +9709,7 @@ function setupGroup(element) {
     });
   }
   function toggleHandler({ target }) {
-    if (options2.onlyOneOpen) {
+    if (options.onlyOneOpen) {
       if (target.open) {
         queryChildren().forEach((child) => {
           if (child !== target && child.open) {
@@ -9572,8 +9767,8 @@ const _FileSave = class _FileSave {
    * @param {*} data Data to put in blob file
    * @param {FileSaveOptions} options Options for file, see defaults (ie. type, filename)
    */
-  constructor(data, options2) {
-    this.options = Object.assign({}, _FileSave.defaults, options2);
+  constructor(data, options) {
+    this.options = Object.assign({}, _FileSave.defaults, options);
     this.data = data;
     this.blob = new Blob([data], { type: this.options.type });
     this.url = URL.createObjectURL(this.blob);

@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="/frontend/assets/style.css">
   
 </head>
-	<body class="page theme-light" data-site-theme="">
+	<body class="page theme-light">
 		
 
 
@@ -55,7 +55,14 @@
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
     <div class="header__nav-links">
-      <button class="button button--small button--icon button--icon-small" data-site-theme-toggle=""><span class="fas fa-moon" data-site-theme-toggle-icon=""></span></button>
+      <button class="button button--small button--icon button--icon-small" data-ulu-theme-toggle='{ 
+          "savePreference" : true,
+          "checkMediaQuery" : true,
+          "group" : "page",
+          "debug" : true
+        }'>
+        <span class="fas fa-moon" data-ulu-theme-toggle-icon=""></span>
+      </button>
       <a class="button button--small button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github">
         <span class="fab fa-github" aria-hidden="true"></span>
       </a>
@@ -588,6 +595,21 @@
     
     <span class="nav-tree__text">
       Tag
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      Theme Toggle
     </span>
   
         </a>
@@ -2290,6 +2312,21 @@
     
     <span class="nav-tree__text">
       ui/tabs
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      ui/theme-toggle
     </span>
   
         </a>
@@ -2964,6 +3001,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      Theme Toggle
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/tile-grid-overlay/">
           
     
@@ -4666,6 +4718,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-theme-toggle/">
+          
+    
+    <span class="nav-tree__text">
+      ui/theme-toggle
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/ui-tooltip/">
           
     
@@ -4801,6 +4868,12 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#version-0.1.0-beta.20-(unpublished)">Version 0.1.0-beta.20 (unpublished)</a>
+            		</li>
+
+                    <li><a href="#version-0.1.0-beta.19">Version 0.1.0-beta.19</a>
+            		</li>
+
                     <li><a href="#version-0.1.0-beta.18">Version 0.1.0-beta.18</a>
             		</li>
 
@@ -4912,6 +4985,51 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="version-0.1.0-beta.20-(unpublished)" tabindex="-1">Version 0.1.0-beta.20 (unpublished)</h2>
+<ul>
+<li>js/ui/theme-toggle.js (refactored to allow)
+<ul>
+<li>Multiple instances of theme toggles</li>
+<li>Remote theme toggles (other toggles buttons that follow/match main toggle)
+<ul>
+<li>If the toggle button is used in more than one place in UI</li>
+<li>Toggle and remote linked via 'group' option</li>
+</ul>
+</li>
+<li>Allow targeting multiple containers to toggle theme on</li>
+<li>New options/API structure
+<ul>
+<li>Now accepts themes object with settings on what it should toggle</li>
+</ul>
+</li>
+<li>Allow callback for customizing behavior when changing state</li>
+<li>Add demo/tests</li>
+</ul>
+</li>
+<li>js/utils/dom.js
+<ul>
+<li>Add getElements() (matches getElement) but for multiple elements</li>
+<li>Add resolveClasses() to allow class options to be string or array form
+<ul>
+<li>So that scripts using can easily resolve classes to consistent type for use in element.classList, etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>js/ui/details-group.js
+<ul>
+<li>Fix error in event pageModified (caused by passing event object to setup)</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0.1.0-beta.19" tabindex="-1">Version 0.1.0-beta.19</h2>
+<ul>
+<li>js/ui/details-group.js
+<ul>
+<li>Added new module to manage groups of details (just one open at time right now)</li>
+</ul>
+</li>
+</ul>
 <h2 id="version-0.1.0-beta.18" tabindex="-1">Version 0.1.0-beta.18</h2>
 <ul>
 <li>scss/components/_button-verbose.scss
