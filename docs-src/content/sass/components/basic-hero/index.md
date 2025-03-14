@@ -37,13 +37,13 @@ Module Settings
 
 ``` scss
 $config: (
-  "text-align" : left,
   "background-color" : "background-gray",
   "padding-top": 3rem,
   "padding-bottom" : 2rem,
   "media-box-shadow" : 0 2px 10px color.get("box-shadow"),
-  "media-background-color": #fff,
-  "media-padding" : 4px,
+  "gap" : (3rem 1rem),
+  "main-flex-basis" : true,
+  "media-flex-basis" : 25rem,
 );
 ```
   
@@ -55,8 +55,8 @@ $config: (
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** variable
-- **Lines (comments):** 16-19
-- **Lines (code):** 21-29
+- **Lines (comments):** 25-28
+- **Lines (code):** 30-38
 
 </details>
 
@@ -101,8 +101,8 @@ Change modules $config
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** mixin
-- **Lines (comments):** 31-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 40-43
+- **Lines (code):** 45-47
 
 </details>
 
@@ -160,8 +160,8 @@ Prints component styles
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** mixin
-- **Lines (comments):** 49-51
-- **Lines (code):** 53-100
+- **Lines (comments):** 59-61
+- **Lines (code):** 63-96
 
 </details>
 
@@ -215,8 +215,8 @@ Get a config option
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** function
-- **Lines (comments):** 40-43
-- **Lines (code):** 45-47
+- **Lines (comments):** 49-52
+- **Lines (code):** 54-57
 
 </details>
 
