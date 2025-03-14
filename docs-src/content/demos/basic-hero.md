@@ -28,3 +28,27 @@ layout: fullpage
     </div>
   </div>
 </div>
+<div class="rule"></div>
+<div class="theme-light">
+  <div class="basic-hero basic-hero--center">
+    <div class="basic-hero__content container">
+      <div class="basic-hero__content-main">
+        <div>slot above title</div>
+        <h1 class="h1">
+          <span class="site-header__title-parent">
+            Parent Title
+            <span class="hidden-visually">:</span>
+            <span class="site-header__title-parent-rule display-block rule rule--short type-base rule--accent center"></span>
+          </span>
+          <span class="site-header__title-text">Title</span>
+        </h1>
+        <div class="site-header__subtitle">
+          Subtitle
+        </div>
+        <div>
+          below Title
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

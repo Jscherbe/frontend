@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0-beta.21 (unpublished)
+
+- scss/components/basic-hero **new**
+  - Simple hero or header styling
+- js/ui/theme-toggle.js 
+  - inverted the default icons so that the icon reflects the theme it will trigger
+
 ## Version 0.1.0-beta.20 (unpublished)
 
 - js/ui/theme-toggle.js (refactored to allow)
