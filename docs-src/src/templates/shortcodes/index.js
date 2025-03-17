@@ -8,6 +8,8 @@ import demoDataTable from "./demoDataTable.js";
 import demoCaptionFigure from "./demoCaptionFigure.js";
 import demoHero from "./demoHero.js";
 import spokeSpinner from "./spokeSpinner.js";
+import fullscreenIntertitle from "./fullscreenIntertitle.js";
+import headline from "./headline.js";
 
 export const shortcodes = {
   popoverGridItem,
@@ -19,5 +21,10 @@ export const shortcodes = {
   demoCaptionFigure,
   demoDataTable,
   demoHero,
-  spokeSpinner
+  spokeSpinner,
+  headline
+};
+
+export const pairedShortcodes = {
+  fullscreenIntertitle
 };

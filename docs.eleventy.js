@@ -11,7 +11,7 @@ import sassdocPlugin from "./docs-src/src/plugins/sassdoc/index.js";
 import optionsTablePlugin from "./docs-src/src/plugins/options-table/index.js";
 import jsdocPlugin from "./docs-src/src/plugins/jsdoc/index.js";
 import markdownItAttrs from "markdown-it-attrs";
-import { shortcodes } from "./docs-src/src/templates/shortcodes/index.js";
+import { shortcodes, pairedShortcodes } from "./docs-src/src/templates/shortcodes/index.js";
 
 // const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -72,6 +72,8 @@ export default async function(eleventyConfig) {
   // Register all site shortcodes
   Object.entries(shortcodes)
     .forEach(([name, fn]) => eleventyConfig.addShortcode(name, fn));
+  Object.entries(pairedShortcodes)
+    .forEach(([name, fn]) => eleventyConfig.addPairedShortcode(name, fn));
   
   return {
     pathPrefix: "/frontend/",

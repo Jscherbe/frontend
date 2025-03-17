@@ -8,7 +8,7 @@ sassdocGroupName: basic-hero
 
 <div class="type-large">
 
-Basic styling for a hero.
+Basic styling for a hero
 
 </div>
 
@@ -40,9 +40,11 @@ $config: (
   "background-color" : "background-gray",
   "padding-top": 3rem,
   "padding-bottom" : 2rem,
-  "gap" : (3rem 1rem),
+  "gap" : (4rem 2rem),
   "main-max-width" : true,
-  "media-max-width" : 25rem,
+  "main-min-width" : true,
+  "media-max-width" : 20rem,
+  "media-vertical-align" : center
 );
 ```
   
@@ -54,8 +56,8 @@ $config: (
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** variable
-- **Lines (comments):** 25-28
-- **Lines (code):** 30-37
+- **Lines (comments):** 29-32
+- **Lines (code):** 34-43
 
 </details>
 
@@ -100,8 +102,8 @@ Change modules $config
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** mixin
-- **Lines (comments):** 39-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 45-48
+- **Lines (code):** 50-52
 
 </details>
 
@@ -159,8 +161,8 @@ Prints component styles
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** mixin
-- **Lines (comments):** 58-60
-- **Lines (code):** 62-98
+- **Lines (comments):** 64-66
+- **Lines (code):** 68-112
 
 </details>
 
@@ -214,8 +216,8 @@ Get a config option
 - **File:** _basic-hero.scss
 - **Group:** basic-hero
 - **Type:** function
-- **Lines (comments):** 48-51
-- **Lines (code):** 53-56
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-62
 
 </details>
 

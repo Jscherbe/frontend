@@ -1,6 +1,6 @@
 ////
 /// @group basic-hero
-/// Basic styling for a hero.
+/// Basic styling for a hero
 ////
 
 @use "sass:map";
@@ -20,6 +20,10 @@ $-fallbacks: (
     "function" : meta.get-function("get", false, "typography"),
     "property" : "max-width"
   ),
+  "main-min-width" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "max-width-small"
+  ),
 );
 
 /// Module Settings
@@ -31,9 +35,11 @@ $config: (
   "background-color" : "background-gray",
   "padding-top": 3rem,
   "padding-bottom" : 2rem,
-  "gap" : (3rem 1rem),
+  "gap" : (4rem 2rem),
   "main-max-width" : true,
-  "media-max-width" : 25rem,
+  "main-min-width" : true,
+  "media-max-width" : 20rem,
+  "media-vertical-align" : center
 ) !default;
 
 /// Change modules $config
@@ -65,7 +71,6 @@ $config: (
   #{ $prefix } {
     background-color: color.get(get("background-color")); 
   }
-  
   #{ $prefix }__content {
     display: flex;
     align-items: stretch;
@@ -75,24 +80,33 @@ $config: (
     padding-top: get("padding-top");
     padding-bottom: get("padding-bottom");
   }
-
   #{ $prefix }__content-main {
-    flex: 0 1 get("main-max-width");
+    $min-width: if(get("main-min-width"), get("main-min-width"), get("main-max-width"));
+    // Using max/min-width so that we don't need to add selectors to change flex-basis
+    // when centered. Using flex-basis: 0 to allow flexbox to decide the items width
+    // allows it to expand/shrink within. min(100%... Never larger than parent
+    min-width: min(100%, $min-width); 
+    max-width: get("main-max-width");
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
   }
-  
   #{ $prefix }__content-media {
-    margin-top: 1rem; // margin added here because we don't want margin if there isn't media
     display: flex;
     align-items: center;
-    align-self: center;
+    align-self: get("media-vertical-align");
     justify-content: center;
-    flex: 0 1 get("media-max-width"); 
+    flex: 0 0 auto; 
+    width: min(100%, get("media-max-width"));
   }
 
+  // Modifiers
   #{ $prefix }--center {
-    text-align: center;
     #{ $prefix }__content {
-      justify-content: center;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      text-align: center;
+      align-items: center;
     }
   }
 }
