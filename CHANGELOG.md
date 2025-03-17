@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.21
+
+- scss/components/tabs.scss
+  - Minor: fix margin output (space separated list vs comma)
+  - Remove scrollbar in tablist
+
 ## Version 0.1.0-beta.20
 
 - scss/components/basic-hero **new**
