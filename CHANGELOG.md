@@ -1,15 +1,11 @@
 # Change Log
 
-## Version 0.1.0-beta.21 (unpublished)
+## Version 0.1.0-beta.20
 
 - scss/components/basic-hero **new**
-  - Simple hero or header styling
-- js/ui/theme-toggle.js 
-  - inverted the default icons so that the icon reflects the theme it will trigger
-
-## Version 0.1.0-beta.20 (unpublished)
-
+  - Added component for handling simple hero or header styling with text and media in container
 - js/ui/theme-toggle.js (refactored to allow)
+  - Inverted the default icons so that the icon reflects the theme it will trigger
   - Multiple instances of theme toggles
   - Remote theme toggles (other toggles buttons that follow/match main toggle)
     - If the toggle button is used in more than one place in UI
