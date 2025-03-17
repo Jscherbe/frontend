@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="fullscreen-layout">
+	<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Basic Hero
+  </title>
+  <meta name="description" content="Modular Sass Theming Library">
+  <meta name="generator" content="Eleventy v3.0.0">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/frontend/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/frontend/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/frontend/assets/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/frontend/assets/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/frontend/assets/favicons/safari-pinned-tab.svg" color="#8455bd">
+  <link rel="shortcut icon" href="/frontend/assets/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  
+  <link rel="stylesheet" href="/frontend/assets/fonts/inter/inter.css">
+
+  
+  
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/frontend/assets/style.css">
+  
+</head>
+	<body class="page theme-light">
+		<header class="page__header header">
+  <div class="header__main">
+    <a class="header__logo" href="/frontend/">
+      <div class="logo">
+  <span class="logo__main">Ulu</span>
+  <span class="logo__subtitle">Frontend</span>
+</div>
+    </a>
+    <button class="button button--small button--icon button--secondary margin-left-auto" data-ulu-theme-toggle='{ 
+        "savePreference" : true,
+        "checkMediaQuery" : true,
+        "group" : "page"
+      }'>
+      <span class="hidden-visually">Toggle Theme to <span data-ulu-theme-toggle-label="">Dark</span></span>
+      <span class="fas fa-moon" data-ulu-theme-toggle-icon=""></span>
+    </button>
+    <a class="button button--small button--icon button--secondary" href="../" aria-label="Exit">
+      <span class="css-icon css-icon--close" aria-hidden="true"></span>
+    </a>
+  </div>
+</header>
+		<main id="main" class="page__body">
+			
+  <div class="page__content-header">
+    <div class="container">
+      <div class="type-max-width">
+        <h1 class="page__title h1">Basic Hero</h1>
+        
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-demo-header container padding-top padding-bottom">
+  <h2 class="h2 no-margin">Testing Normal Layout</h2>
+</div>
+<div class="theme-light">
+  <div class="basic-hero">
+  <div class="basic-hero__content container">
+    <div class="basic-hero__content-main">
+      <h1 class="h1">
+        This is the Title it is Multiple Lines Long When On Small Screens
+      </h1>
+    </div>
+    <div class="basic-hero__content-media">
+      <img src="/frontend/assets/placeholder/image-1.jpg">
+    </div>
+  </div>
+  </div>
+</div>
+<div class="fullscreen-demo-header container padding-top padding-bottom">
+  <h2 class="h2 no-margin">Testing Center Layout</h2>
+</div>
+<div class="theme-light">
+  <div class="basic-hero basic-hero--center">
+  <div class="basic-hero__content container">
+    <div class="basic-hero__content-main">
+      <h1 class="h1">
+        This is the Title it is Multiple Lines Long When On Small Screens
+      </h1>
+    </div>
+    <div class="basic-hero__content-media">
+      <img src="/frontend/assets/placeholder/image-1.jpg">
+    </div>
+  </div>
+  </div>
+</div>
+
+		</main>
+		<footer></footer>
+		
+
+  
+  <script src="/frontend/assets/main.js" type="module"></script>
+
+
+		
+	</body>
+</html>

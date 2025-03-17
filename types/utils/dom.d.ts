@@ -32,8 +32,26 @@ export function setPositionClasses(parent: Node, classes?: any): void;
  * Resolve a target to Element
  * @param {String|Node} target The selector or node/element
  * @param {Object} context [document] The context to query possible selectors from
+ * @return {HTMLElement} The element or null if not found
  */
-export function getElement(target: string | Node, context?: any): any;
+export function getElement(target: string | Node, context?: any): HTMLElement;
+/**
+ * Resolve a target to Elements
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ * @return {Array} The elements or null if not found
+ */
+export function getElements(target: string | Node, context?: any): any[];
+/**
+ * Resolves a class input (string or array) into a consistent array of class names.
+ * @param {string|string[]} input - The class input, which can be a string, an array of strings, or any other value.
+ * @returns {string[]} An array of class names. Returns an empty array for invalid or falsy input.
+ * @example
+ * resolveClassArray("fas fa-check  my-class"); // Returns ["fas", "fa-check", "my-class"]
+ * resolveClassArray(["another-class", "yet-another-class"]); // Returns ["another-class", "yet-another-class"]
+ * resolveClassArray("single-class"); // Returns ["single-class"]
+ */
+export function resolveClasses(classes: any): string[];
 /**
  * Sets a CSS custom property equal to the scrollbar width
  * @param {Node} element The element that is the child of a scrollabel container

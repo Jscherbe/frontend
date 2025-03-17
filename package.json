@@ -30,7 +30,8 @@
     "docs:build:prod": "IS_PRODUCTION=true npx @11ty/eleventy --config=docs.eleventy.js",
     "docs:assets": "vite --config docs.vite.config.js --force",
     "docs:assets:build": "vite build --config docs.vite.config.js",
-    "docs:assets:build:prod": "IS_PRODUCTION=true vite build --config docs.vite.config.js"
+    "docs:assets:build:prod": "IS_PRODUCTION=true vite build --config docs.vite.config.js",
+    "publish" : "npm run build && npm run types && npm run docs:build:prod && npm run docs:assets:build:prod"
   },
   "repository": {
     "type": "git",

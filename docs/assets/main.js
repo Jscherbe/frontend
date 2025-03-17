@@ -9437,13 +9437,13 @@ const defaults$1 = {
     light: {
       label: "Light",
       value: "light",
-      iconClass: "fas fa-sun",
+      iconClass: "fas fa-moon",
       targetClass: "theme-light",
       mediaQuery: "(prefers-color-scheme: light)"
     },
     dark: {
       label: "Dark",
-      iconClass: "fas fa-moon",
+      iconClass: "fas fa-sun",
       targetClass: "theme-dark",
       mediaQuery: "(prefers-color-scheme: dark)"
     }
