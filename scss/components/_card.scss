@@ -430,6 +430,8 @@ $config: (
         justify-content: center;
         align-items: center;
         #{ $prefix }__image {
+          border-top-right-radius: 0;
+          border-bottom-left-radius: get("border-radius");
           width: get("horizontal-image-width");
           flex: 0 1 get("horizontal-image-width");
           // max-width: 30rem;

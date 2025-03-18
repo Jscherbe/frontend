@@ -231,7 +231,7 @@ Prints component styles
 - **Group:** sticky-list
 - **Type:** mixin
 - **Lines (comments):** 92-116
-- **Lines (code):** 118-197
+- **Lines (code):** 118-196
 
 </details>
 
@@ -351,8 +351,8 @@ Outputs background color mask CSS (gradient from transparent to original color)
 - **File:** _sticky-list.scss
 - **Group:** sticky-list
 - **Type:** mixin
-- **Lines (comments):** 199-200
-- **Lines (code):** 202-207
+- **Lines (comments):** 198-199
+- **Lines (code):** 201-206
 
 </details>
 
