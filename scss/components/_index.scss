@@ -88,6 +88,7 @@
 @use "rule";
 @use "scroll-slider";
 @use "skip-link";
+@use "sticky-list";
 @use "slider";
 @use "hero";
 @use "tabs";
@@ -137,6 +138,7 @@ $all-includes: (
   "rule",
   "scroll-slider",
   "skip-link",
+  "sticky-list",
   "slider",
   "hero",
   "tabs",
@@ -294,6 +296,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "skip-link")) {
     @include skip-link.styles;
+  }
+  @if (list.index($includes, "sticky-list")) {
+    @include sticky-list.styles;
   }
   @if (list.index($includes, "slider")) {
     @include slider.styles;

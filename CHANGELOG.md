@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.22
+
+- scss/component/sticky-list.scss
+  - Added basic CSS sticky list component
+
 ## Version 0.1.0-beta.21
 
 - scss/components/tabs.scss

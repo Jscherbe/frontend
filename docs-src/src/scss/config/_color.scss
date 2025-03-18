@@ -29,14 +29,14 @@
 // more complicated than just color
 @include ulu.color-set-contexts((
 
-  // "dark-blue" : (
-  //   "background-color" :      vars.$color-blue,
-  //   "helper-class" :          true
-  // ),
-  // "white" : (
-  //   "background-color" :      white,
-  //   "helper-class" :          true
-  // ),
+  "dark" : (
+    "background-color" :      black,
+    "helper-class" :          true
+  ),
+  "light" : (
+    "background-color" :      white,
+    "helper-class" :          true
+  ),
   "light-gray" : (
     "background-color" :      vars.$color-gray-light-x,
     "helper-class" :          true

@@ -16354,6 +16354,80 @@ ul.list-inline,
   border-bottom-right-radius: 5px;
 }
 
+.sticky-list {
+  padding: 1em 0;
+}
+
+@media screen and (min-width: 72.875em) {
+  .sticky-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+  }
+  .sticky-list__title,
+  .sticky-list > :not(ul) {
+    display: block;
+    position: sticky;
+    top: 45vh;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    min-width: 8em;
+    padding-top: 5rem;
+    padding-bottom: 55vh;
+    text-align: right;
+  }
+  .sticky-list__list,
+  .sticky-list > ul {
+    list-style: none;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
+  }
+  .sticky-list__item,
+  .sticky-list > ul > li {
+    display: block;
+    position: sticky;
+    top: 45vh;
+    margin: 0 !important;
+    padding: 5rem 0 55vh 0;
+    background-color: white;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(5rem, white));
+    background: linear-gradient(180deg, white 0%, white 5rem);
+  }
+  .sticky-list__item:first-child,
+  .sticky-list > ul > li:first-child {
+    margin-top: 0;
+  }
+  .sticky-list__item:last-child,
+  .sticky-list > ul > li:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 72.875em) {
+  .theme-dark .sticky-list__item,
+  .theme-dark .sticky-list > ul > li {
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: black;
+    background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(5rem, black));
+    background: linear-gradient(180deg, black 0%, black 5rem);
+  }
+}
 .slider {
   position: relative;
   background-color: transparent;
@@ -18283,6 +18357,14 @@ helpers:utilities
 helpers:color
 ============================================================================= 
 */
+.background-dark {
+  background-color: black;
+}
+
+.background-light {
+  background-color: white;
+}
+
 .background-light-gray {
   background-color: rgb(228, 223, 236);
 }

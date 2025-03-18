@@ -1,0 +1,207 @@
+
+////
+/// @group sticky-list
+////
+/// Sticky first column, sticky elements inside adjacent columns to first. (Sticky list with header)
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:color" as sassColor;
+
+@use "../color";
+@use "../element";
+@use "../breakpoint";
+@use "../typography";
+@use "../utils";
+@use "../selector";
+
+// Used for function fallback
+$-fallbacks: (
+  "margin" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "margin"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {Color} background-color [transparent] Background color for the entire slider section.
+/// @prop {Number} margin [true] Margin on ends of component (defaults to element margin)
+/// @prop {Number} offset [55vh] The offset for the mask (static padding on mask to create space between item's)
+/// @prop {Number} mask-size [5rem] The size of the mask (background-color) above the items
+/// @prop {Number} sticky-top [45vh] When to stick
+/// @prop {String} breakpoint ["medium"] The upward breakpoint that this is allowed to be sticky 
+/// @prop {String} title-size ["medium"] The typography size to use for title
+/// @prop {Number} title-width [40%] The width of the title when this is displayed in columns
+/// @prop {Number} title-min-width [8em] The min width for title when displayed in columns
+/// @prop {CssValue} title-text-align [right] Text alignment for title when displayed in columns
+/// @prop {Number} item-padding-x [0] Optional padding on the left/right for items
+/// @prop {Number} gap [2rem] The gap between title and items when displayed in columns
+/// @prop {Color} background-color [white] The background color used for the mask
+/// @prop {List} background-contexts Adjust the background mask color by contextual selectors. Pass List of Maps with ("selector" [parent/contextual selector], "background-color", "item-padding-x" [optional])  
+
+$config: (
+  "margin" : true,
+  "offset" : 55vh,
+  "mask-size" : 5rem,
+  "sticky-top" : 45vh,
+  "breakpoint" : "medium",
+  "title-size" : "medium",
+  "title-width" : 40%,
+  "title-min-width" : 8em,
+  "title-text-align" : right,
+  "item-padding-x" : 0,
+  "gap" : 2rem,
+  "background-color" : white,
+  "background-contexts" : (
+    (
+      "selector" : ".theme-dark",
+      "background-color" : black,
+      "item-padding-x" : 1em
+    ),
+  )
+);
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-sticky-list-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Set sizes map
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-sticky-list-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "sticky-list [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo sticky-list
+/// @example scss
+///   @include ulu.component-sticky-list-styles();
+/// @example html {preview}
+/// <div class="sticky-list">
+///   <strong class="sticky-list__title">Example:</strong>
+///   <ul class="sticky-list__list">
+///     <li class="sticky-list__item">
+///       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec nisl magna
+///     </li>
+///     <li class="sticky-list__item">
+///       Aenean sollicitudin mauris lectus, blandit suscipit lectus fringilla sed
+///     </li>
+///     <li class="sticky-list__item">
+///       Suspendisse sollicitudin, justo sed efficitur tempor, risus
+///     </li>
+///     <li class="sticky-list__item">
+///       Suspendisse sollicitudin, justo sed efficitur tempor, risus
+///     </li>
+///     <li class="sticky-list__item">
+///       Suspendisse sollicitudin, justo sed efficitur tempor, risus
+///     </li>
+///   </ul>
+/// </div>
+
+@mixin styles {
+  $prefix: selector.class("sticky-list");
+  $mask-size: get("mask-size");
+  $offset: get("offset");
+  $title-size: get("title-size");
+  $sticky-top: get("sticky-top");
+
+  #{ $prefix } {
+    padding: get("margin") 0;
+  }
+  @include breakpoint.min(get("breakpoint")) {
+    #{ $prefix } {
+      display: flex;
+      align-items: flex-start;
+      gap: get("gap");
+      position: relative;
+      @if ($title-size and typography.has-size($title-size)) {
+        @include typography.size($title-size, $only-font-size: true);
+      } @else if ($title-size) {
+        @warn "Unable to find '#{$title-size}' typography size for title";
+      }
+    }
+    #{ $prefix }__title,
+    #{ $prefix } > :not(ul) {
+      display: block;
+      position: sticky;
+      top: $sticky-top;
+      flex-basis: get("title-width");
+      min-width: get("title-min-width");
+      padding-top: $mask-size;
+      padding-bottom: $offset;
+      text-align: get("title-text-align");
+    }
+    #{ $prefix }__list,
+    #{ $prefix } > ul {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+    #{ $prefix }__item,
+    #{ $prefix } > ul > li {
+      display: block;
+      position: sticky;
+      top: $sticky-top;
+      margin: 0 !important; // If in editor (to complicated for :not())
+      padding: $mask-size get("item-padding-x") $offset get("item-padding-x");
+      @include set-background(get("background-color"));
+    }
+    #{ $prefix }__item:first-child,
+    #{ $prefix } > ul > li:first-child {
+      margin-top: 0;
+    }
+    #{ $prefix }__item:last-child,
+    #{ $prefix } > ul > li:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Print out any contextual background styles
+  @each $props in get("background-contexts") {
+    @debug $props;
+    $selector: map.get($props, "selector");
+    $item-padding-x: map.get($props, "item-padding-x");
+    @include breakpoint.min(get("breakpoint")) {
+      #{ $selector } {
+        #{ $prefix }__item,
+        #{ $prefix } > ul > li {
+          @if ($item-padding-x) {
+            padding-left: $item-padding-x;
+            padding-right: $item-padding-x;
+          }
+          @include set-background(map.get($props, "background-color"));
+        }
+      }
+    }
+  }
+}
+
+/// Outputs background color mask CSS (gradient from transparent to original color)
+/// @param {Color} $color The color to create the CSS for
+
+@mixin set-background($color) {
+  $color: color.get($color);
+  $color-transparent: sassColor.adjust($color, $alpha: 0);
+  background-color: $color;
+  background: linear-gradient(180deg, $color-transparent 0%, $color get("mask-size"));
+}

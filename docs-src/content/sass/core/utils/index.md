@@ -40,7 +40,7 @@ $config: (
   "debug-maps": true,
   "file-header-comments": true,
   "responsive-change": 0.5vw,
-  "pixel-em-base" : 16px
+  "pixel-em-base" : 16px,
 );
 ```
   

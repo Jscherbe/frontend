@@ -1,4 +1,7 @@
 Future Ideas:
+  ☐ We should have a shortcode to print out both demo and markup example
+    * So it's written in one place
+  ☐ We should maybe create our own heading parser so that our jump to links aren't dependent on markup parser (demos without markdown don't get jump to links)
   ☐ Should sass api page names just be lower case?
   ☐ Need to add dark / light mode
   ☐ Allow configuring library in browser for demos and stuff?
