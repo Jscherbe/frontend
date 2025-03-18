@@ -1,4 +1,5 @@
 SCSS Todos:
+  ☐ See about using the extra :after element on popover arrow to create the border/shadow needed (since the :before is overlapping) @minor
   ☐ Fix card horizontal (is centering content horizontally [content has max width])
   ☐ Include common container we need full/fit/fill
   ✔ Should we remove scrollbar on nav-stip (ie. layout.remove-scrollbar())? @done
