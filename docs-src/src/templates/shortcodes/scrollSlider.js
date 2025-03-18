@@ -1,4 +1,4 @@
-import card from "./card.js";
+import demoCard from "./demoCard.js";
 
 export default function(
   cards = 3,
@@ -8,7 +8,7 @@ export default function(
   for(let i = cards; i > 0; i--) {
     cardContent = cardContent + `
         <li class="scroll-slider__slide" data-ulu-scroll-slider-slide>
-          ${ card(cards - i + 1) } 
+          ${ demoCard(cards - i + 1) } 
         </li>
       `;
   }

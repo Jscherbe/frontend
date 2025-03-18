@@ -1,4 +1,3 @@
-import card from "./card.js";
 
 export default function(
   title = 'Slider',

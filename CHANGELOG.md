@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.21
+
+- scss/components/card
+  - add flex-direction: row to card styling to correctly lay out horizontal cards
+  - add card--image-fit modifier to all images to properly be contained in cards regardless of card size
+
 ## Version 0.1.0-beta.20
 
 - scss/components/basic-hero **new**

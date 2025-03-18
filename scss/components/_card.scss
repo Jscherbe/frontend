@@ -411,17 +411,29 @@ $config: (
     }
   }
 
+  .card--image-fit {
+    .card__image {
+      img {
+        padding: 1rem;
+        object-fit: contain;
+        object-position: top center;
+        filter: drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
   @if (get("horizontal-breakpoint")) {
     @include breakpoint.min(get("horizontal-breakpoint")) {
       #{ $prefix }--horizontal {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
         #{ $prefix }__image {
           width: get("horizontal-image-width");
           flex: 0 1 get("horizontal-image-width");
           // max-width: 30rem;
-          min-height: 28rem;
+          // min-height: 28rem;
           // padding-top: 0;
         }
         #{ $prefix }__body {
