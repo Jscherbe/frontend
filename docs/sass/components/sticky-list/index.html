@@ -5048,11 +5048,11 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"margin"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"offset"</span> <span class="pjs-token pjs-punctuation">:</span> 55vh<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"mask-size"</span> <span class="pjs-token pjs-punctuation">:</span> 5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"mask-offset-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 55vh<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"mask-offset-top"</span> <span class="pjs-token pjs-punctuation">:</span> 5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"sticky-top"</span> <span class="pjs-token pjs-punctuation">:</span> 45vh<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"breakpoint"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"medium"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"title-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"medium"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"type-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"large"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"title-width"</span> <span class="pjs-token pjs-punctuation">:</span> 40%<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"title-min-width"</span> <span class="pjs-token pjs-punctuation">:</span> 8em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"title-text-align"</span> <span class="pjs-token pjs-punctuation">:</span> right<span class="pjs-token pjs-punctuation">,</span>
@@ -5061,7 +5061,7 @@
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"background-contexts"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
     <span class="pjs-token pjs-punctuation">(</span>
-      <span class="pjs-token pjs-string">"selector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">".theme-dark"</span><span class="pjs-token pjs-punctuation">,</span>
+      <span class="pjs-token pjs-string">"selector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">".background-dark"</span><span class="pjs-token pjs-punctuation">,</span>
       <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
       <span class="pjs-token pjs-string">"item-padding-x"</span> <span class="pjs-token pjs-punctuation">:</span> 1em
     <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5101,16 +5101,16 @@
 <td style="text-align:left">Margin on ends of component (defaults to element margin)</td>
 </tr>
 <tr>
-<td style="text-align:left">offset</td>
+<td style="text-align:left">mask-offset-bottom</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">55vh</td>
-<td style="text-align:left">The offset for the mask (static padding on mask to create space between item's)</td>
+<td style="text-align:left">The offset for the mask (on bottom)</td>
 </tr>
 <tr>
-<td style="text-align:left">mask-size</td>
+<td style="text-align:left">mask-offset-top</td>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">5rem</td>
-<td style="text-align:left">The size of the mask (background-color) above the items</td>
+<td style="text-align:left">The offset for the mask (on top)</td>
 </tr>
 <tr>
 <td style="text-align:left">sticky-top</td>
@@ -5125,7 +5125,7 @@
 <td style="text-align:left">The upward breakpoint that this is allowed to be sticky</td>
 </tr>
 <tr>
-<td style="text-align:left">title-size</td>
+<td style="text-align:left">type-size</td>
 <td style="text-align:left">String</td>
 <td style="text-align:left">&quot;medium&quot;</td>
 <td style="text-align:left">The typography size to use for title</td>

@@ -27,11 +27,11 @@ $-fallbacks: (
 /// @type Map
 /// @prop {Color} background-color [transparent] Background color for the entire slider section.
 /// @prop {Number} margin [true] Margin on ends of component (defaults to element margin)
-/// @prop {Number} offset [55vh] The offset for the mask (static padding on mask to create space between item's)
-/// @prop {Number} mask-size [5rem] The size of the mask (background-color) above the items
+/// @prop {Number} mask-offset-bottom [55vh] The offset for the mask (on bottom)
+/// @prop {Number} mask-offset-top [5rem] The offset for the mask (on top)
 /// @prop {Number} sticky-top [45vh] When to stick
 /// @prop {String} breakpoint ["medium"] The upward breakpoint that this is allowed to be sticky 
-/// @prop {String} title-size ["medium"] The typography size to use for title
+/// @prop {String} type-size ["medium"] The typography size to use for title
 /// @prop {Number} title-width [40%] The width of the title when this is displayed in columns
 /// @prop {Number} title-min-width [8em] The min width for title when displayed in columns
 /// @prop {CssValue} title-text-align [right] Text alignment for title when displayed in columns
@@ -42,11 +42,11 @@ $-fallbacks: (
 
 $config: (
   "margin" : true,
-  "offset" : 55vh,
-  "mask-size" : 5rem,
+  "mask-offset-bottom" : 55vh,
+  "mask-offset-top" : 5rem,
   "sticky-top" : 45vh,
   "breakpoint" : "medium",
-  "title-size" : "medium",
+  "type-size" : "large",
   "title-width" : 40%,
   "title-min-width" : 8em,
   "title-text-align" : right,
@@ -55,7 +55,7 @@ $config: (
   "background-color" : white,
   "background-contexts" : (
     (
-      "selector" : ".theme-dark",
+      "selector" : ".background-dark",
       "background-color" : black,
       "item-padding-x" : 1em
     ),
@@ -117,9 +117,9 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("sticky-list");
-  $mask-size: get("mask-size");
-  $offset: get("offset");
-  $title-size: get("title-size");
+  $mask-offset-top: get("mask-offset-top");
+  $mask-offset-bottom: get("mask-offset-bottom");
+  $type-size: get("type-size");
   $sticky-top: get("sticky-top");
 
   #{ $prefix } {
@@ -131,10 +131,10 @@ $config: (
       align-items: flex-start;
       gap: get("gap");
       position: relative;
-      @if ($title-size and typography.has-size($title-size)) {
-        @include typography.size($title-size, $only-font-size: true);
-      } @else if ($title-size) {
-        @warn "Unable to find '#{$title-size}' typography size for title";
+      @if ($type-size and typography.has-size($type-size)) {
+        @include typography.size($type-size, $only-font-size: true);
+      } @else if ($type-size) {
+        @warn "Unable to find '#{$type-size}' typography size for title";
       }
     }
     #{ $prefix }__title,
@@ -144,8 +144,8 @@ $config: (
       top: $sticky-top;
       flex-basis: get("title-width");
       min-width: get("title-min-width");
-      padding-top: $mask-size;
-      padding-bottom: $offset;
+      padding-top: $mask-offset-top;
+      padding-bottom: $mask-offset-bottom;
       text-align: get("title-text-align");
     }
     #{ $prefix }__list,
@@ -163,7 +163,7 @@ $config: (
       position: sticky;
       top: $sticky-top;
       margin: 0 !important; // If in editor (to complicated for :not())
-      padding: $mask-size get("item-padding-x") $offset get("item-padding-x");
+      padding: $mask-offset-top get("item-padding-x") $mask-offset-bottom get("item-padding-x");
       @include set-background(get("background-color"));
     }
     #{ $prefix }__item:first-child,
@@ -201,7 +201,7 @@ $config: (
 
 @mixin set-background($color) {
   $color: color.get($color);
-  $color-transparent: sassColor.adjust($color, $alpha: 0);
+  $color-transparent: sassColor.change($color, $alpha: 0);
   background-color: $color;
-  background: linear-gradient(180deg, $color-transparent 0%, $color get("mask-size"));
+  background: linear-gradient(180deg, $color-transparent 0%, $color get("mask-offset-top"));
 }

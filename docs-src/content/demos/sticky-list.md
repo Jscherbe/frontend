@@ -5,7 +5,7 @@ intro: Basic CSS only sticky list
 
 {% capture markup %}
   <div class="sticky-list">
-    <h3 class="sticky-list__title">
+    <h3 class="sticky-list__title h3">
       Title for list
     </h3>
     <ul>

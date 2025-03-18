@@ -38,11 +38,11 @@ Module Settings
 ``` scss
 $config: (
   "margin" : true,
-  "offset" : 55vh,
-  "mask-size" : 5rem,
+  "mask-offset-bottom" : 55vh,
+  "mask-offset-top" : 5rem,
   "sticky-top" : 45vh,
   "breakpoint" : "medium",
-  "title-size" : "medium",
+  "type-size" : "large",
   "title-width" : 40%,
   "title-min-width" : 8em,
   "title-text-align" : right,
@@ -51,7 +51,7 @@ $config: (
   "background-color" : white,
   "background-contexts" : (
     (
-      "selector" : ".theme-dark",
+      "selector" : ".background-dark",
       "background-color" : black,
       "item-padding-x" : 1em
     ),
@@ -81,11 +81,11 @@ $config: (
 |:--|:--|:--|:--|
 |background-color|Color|transparent|Background color for the entire slider section.|
 |margin|Number|true|Margin on ends of component (defaults to element margin)|
-|offset|Number|55vh|The offset for the mask (static padding on mask to create space between item's)|
-|mask-size|Number|5rem|The size of the mask (background-color) above the items|
+|mask-offset-bottom|Number|55vh|The offset for the mask (on bottom)|
+|mask-offset-top|Number|5rem|The offset for the mask (on top)|
 |sticky-top|Number|45vh|When to stick|
 |breakpoint|String|"medium"|The upward breakpoint that this is allowed to be sticky|
-|title-size|String|"medium"|The typography size to use for title|
+|type-size|String|"medium"|The typography size to use for title|
 |title-width|Number|40%|The width of the title when this is displayed in columns|
 |title-min-width|Number|8em|The min width for title when displayed in columns|
 |title-text-align|CssValue|right|Text alignment for title when displayed in columns|

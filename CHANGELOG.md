@@ -1,8 +1,13 @@
 # Change Log
 
-## Version 0.1.0-beta.22
+## Version 0.1.0-beta.23
 
 - scss/component/sticky-list.scss
+  - Adjusts to new component (property name changes)
+
+## Version 0.1.0-beta.22
+
+- scss/component/sticky-list.scss **new**
   - Added basic CSS sticky list component
 
 ## Version 0.1.0-beta.21
