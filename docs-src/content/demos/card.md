@@ -61,8 +61,6 @@ intro: Cards are...
 {% demoCard 1 'card--overlay' true false true true true %}
 <h3 class="h3">No Content</h3>
 {% demoCard 1 'card--overlay' true true false true true %}
-<h3 class="h3">No Image</h3>
-{% demoCard 1 'card--overlay' true true true false true %}
 <h3 class="h3">No Footer</h3>
 {% demoCard 1 'card--overlay' true true true true false %}
 

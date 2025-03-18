@@ -11,6 +11,7 @@ import spokeSpinner from "./spokeSpinner.js";
 import fullscreenIntertitle from "./fullscreenIntertitle.js";
 import headline from "./headline.js";
 import demoCardGrid from "./demoCardGrid.js";
+import demoAccordion from "./demoAccordion.js";
 
 export const shortcodes = {
   popoverGridItem,
@@ -24,9 +25,10 @@ export const shortcodes = {
   demoHero,
   spokeSpinner,
   headline,
-  demoCardGrid
+  demoCardGrid,
 };
 
 export const pairedShortcodes = {
-  fullscreenIntertitle
+  fullscreenIntertitle,
+  demoAccordion
 };
