@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.24
+
+- Minor, remove debug statement
+
 ## Version 0.1.0-beta.23
 
 - scss/component/sticky-list.scss

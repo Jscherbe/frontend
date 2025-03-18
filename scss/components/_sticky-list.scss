@@ -178,7 +178,6 @@ $config: (
 
   // Print out any contextual background styles
   @each $props in get("background-contexts") {
-    @debug $props;
     $selector: map.get($props, "selector");
     $item-padding-x: map.get($props, "item-padding-x");
     @include breakpoint.min(get("breakpoint")) {
