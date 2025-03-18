@@ -1,10 +1,30 @@
 # Change Log
 
-## Version 0.1.0-beta.21
+## Version 0.1.0-beta.25
 
 - scss/components/card
   - add flex-direction: row to card styling to correctly lay out horizontal cards
   - add card--image-fit modifier to all images to properly be contained in cards regardless of card size
+
+## Version 0.1.0-beta.24
+
+- Minor, remove debug statement
+
+## Version 0.1.0-beta.23
+
+- scss/component/sticky-list.scss
+  - Adjusts to new component (property name changes)
+
+## Version 0.1.0-beta.22
+
+- scss/component/sticky-list.scss **new**
+  - Added basic CSS sticky list component
+
+## Version 0.1.0-beta.21
+
+- scss/components/tabs.scss
+  - Minor: fix margin output (space separated list vs comma)
+  - Remove scrollbar in tablist
 
 ## Version 0.1.0-beta.20
 

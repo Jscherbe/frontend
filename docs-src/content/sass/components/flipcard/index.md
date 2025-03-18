@@ -8,7 +8,7 @@ sassdocGroupName: flipcard
 
 <div class="type-large">
 
-Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+Flipcard (content revealed on backside of card after click)
 
 </div>
 
@@ -73,7 +73,7 @@ $config: (
 - **Group:** flipcard
 - **Type:** variable
 - **Lines (comments):** 12-33
-- **Lines (code):** 35-61
+- **Lines (code):** 35-60
 
 </details>
 
@@ -136,8 +136,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 63-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 62-65
+- **Lines (code):** 67-69
 
 </details>
 
@@ -195,8 +195,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 72-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 71-73
+- **Lines (code):** 75-77
 
 </details>
 
@@ -215,6 +215,81 @@ Set sizes map
 #### Require
 
 - [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  styles() {#mixin-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Prints component styles
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _flipcard.scss
+- **Group:** flipcard
+- **Type:** mixin
+- **Lines (comments):** 88-92
+- **Lines (code):** 94-310
+
+</details>
+
+    
+
+
+<div class="callout callout--demo crop-margins">
+
+#### Demo
+
+
+
+<a class="button" href="/demos/flipcard">Our Demo</a>
+
+</div>
+
+
+
+#### Examples
+
+      
+
+
+``` scss
+scss
+```
+  
+
+
+
+      
+
+      
+
+
+``` scss
+@include ulu.component-flipcard-styles();
+```
+  
+
+
+
+      
+
+#### Require
+
+- [get()](/sass/components/accordion/#function-get)
   
   
 
@@ -246,8 +321,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 80-83
-- **Lines (code):** 85-87
+- **Lines (comments):** 79-82
+- **Lines (code):** 84-86
 
 </details>
 

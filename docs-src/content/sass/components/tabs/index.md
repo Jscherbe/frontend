@@ -37,7 +37,7 @@ Module Settings
 
 ``` scss
 $config: (
-  "margin" : (2rem, 0),
+  "margin" : (2rem 0),
   "print-margin" : 1.5em,
   "tablist-divider" : true,
   "tablist-divider-width" : 1px,
@@ -70,8 +70,8 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 32-55
-- **Lines (code):** 57-80
+- **Lines (comments):** 33-56
+- **Lines (code):** 58-81
 
 </details>
 
@@ -136,8 +136,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 82-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 83-86
+- **Lines (code):** 88-90
 
 </details>
 
@@ -195,8 +195,8 @@ Output component stylesheet
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 101-103
-- **Lines (code):** 105-245
+- **Lines (comments):** 102-104
+- **Lines (code):** 106-247
 
 </details>
 
@@ -250,8 +250,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 91-94
-- **Lines (code):** 96-99
+- **Lines (comments):** 92-95
+- **Lines (code):** 97-100
 
 </details>
 

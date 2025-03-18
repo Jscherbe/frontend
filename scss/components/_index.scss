@@ -38,6 +38,7 @@
 @forward "rule" as rule-*;
 @forward "scroll-slider" as scroll-slider-*;
 @forward "skip-link" as skip-link-*;
+@forward "sticky-list" as sticky-list-*;
 @forward "slider" as slider-*;
 @forward "hero" as hero-*;
 @forward "tabs" as tabs-*;
@@ -88,6 +89,7 @@
 @use "rule";
 @use "scroll-slider";
 @use "skip-link";
+@use "sticky-list";
 @use "slider";
 @use "hero";
 @use "tabs";
@@ -137,6 +139,7 @@ $all-includes: (
   "rule",
   "scroll-slider",
   "skip-link",
+  "sticky-list",
   "slider",
   "hero",
   "tabs",
@@ -294,6 +297,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "skip-link")) {
     @include skip-link.styles;
+  }
+  @if (list.index($includes, "sticky-list")) {
+    @include sticky-list.styles;
   }
   @if (list.index($includes, "slider")) {
     @include slider.styles;

@@ -9,6 +9,7 @@
 @use "../color";
 @use "../selector";
 @use "../breakpoint";
+@use "../layout";
 @use "../typography";
 @use "../element";
 @use "../utils";
@@ -55,7 +56,7 @@ $-fallbacks: (
 /// @prop {Boolean} horizontal-tab-wrap [false] Set to true to allow line wrapping when the tabs are in horizontal orientation, vertical is always allowed to wrap
 
 $config: (
-  "margin" : (2rem, 0),
+  "margin" : (2rem 0),
   "print-margin" : 1.5em,
   "tablist-divider" : true,
   "tablist-divider-width" : 1px,
@@ -118,6 +119,7 @@ $config: (
       overflow-x: auto;
       border-bottom: get("tablist-divider");
       border-bottom-width: get("tablist-divider-width");
+      @include layout.remove-scrollbar();
     }
     [role="tab"] {
       display: block;

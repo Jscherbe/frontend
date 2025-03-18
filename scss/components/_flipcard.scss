@@ -2,7 +2,7 @@
 ////
 /// @group flipcard
 ////
-/// Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)
+/// Flipcard (content revealed on backside of card after click)
 
 @use "sass:map";
 @use "../color";
@@ -31,7 +31,6 @@
 /// @prop {Color} title-color-image [black] Color of the front page text when using an image.
 /// @prop {Color} title-color-image-hover [blue] Color of the front page text when using an image and hovered or focused.
 /// @prop {Boolean} bottom-shadow [true] Boolean that enables a bottom shadow to the image flipcard.
-
 
 $config: (
   "anim-delay" : 200ms,
@@ -85,6 +84,12 @@ $config: (
 @function get($name) {
   @return utils.require-map-get($config, $name, "flipcard [config]");
 }
+
+/// Prints component styles
+/// @demo flipcard
+/// @example scss
+/// @example
+///   @include ulu.component-flipcard-styles();
 
 @mixin styles {
   $prefix: selector.class("flipcard");

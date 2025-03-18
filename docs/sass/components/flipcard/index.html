@@ -590,6 +590,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/sticky-list/">
+          
+    
+    <span class="nav-tree__text">
+      Sticky List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/tabs/">
           
     
@@ -1719,6 +1734,21 @@
     
     <span class="nav-tree__text">
       Spoke-spinner
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/sticky-list/">
+          
+    
+    <span class="nav-tree__text">
+      Sticky-list
     </span>
   
         </a>
@@ -3016,6 +3046,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/sticky-list/">
+          
+    
+    <span class="nav-tree__text">
+      Sticky List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/tabs/">
           
     
@@ -4155,6 +4200,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/sass/components/sticky-list/">
+          
+    
+    <span class="nav-tree__text">
+      Sticky-list
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/sass/components/tabs/">
           
     
@@ -4946,6 +5006,9 @@
 
                     <li><a href="#mixin-set-sizes">set-sizes()</a>
             		</li>
+
+                    <li><a href="#mixin-styles">styles()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -4970,7 +5033,7 @@
     <div class="wysiwyg">
       <h1 id="flipcard" tabindex="-1">Flipcard</h1>
 <div class="type-large">
-<p>Creates adaptive (changing at breakpoints)n between items (vertical/horizontal layout)</p>
+<p>Flipcard (content revealed on backside of card after click)</p>
 </div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
@@ -5013,7 +5076,7 @@
 <li><strong>Group:</strong> flipcard</li>
 <li><strong>Type:</strong> variable</li>
 <li><strong>Lines (comments):</strong> 12-33</li>
-<li><strong>Lines (code):</strong> 35-61</li>
+<li><strong>Lines (code):</strong> 35-60</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5163,8 +5226,8 @@
 <li><strong>File:</strong> _flipcard.scss</li>
 <li><strong>Group:</strong> flipcard</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 63-66</li>
-<li><strong>Lines (code):</strong> 68-70</li>
+<li><strong>Lines (comments):</strong> 62-65</li>
+<li><strong>Lines (code):</strong> 67-69</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5203,8 +5266,8 @@
 <li><strong>File:</strong> _flipcard.scss</li>
 <li><strong>Group:</strong> flipcard</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 72-74</li>
-<li><strong>Lines (code):</strong> 76-78</li>
+<li><strong>Lines (comments):</strong> 71-73</li>
+<li><strong>Lines (code):</strong> 75-77</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5233,6 +5296,34 @@
 <ul>
 <li><a href="/frontend/sass/components/adaptive-spacing/#variable-sizes">$sizes</a></li>
 </ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints component styles</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _flipcard.scss</li>
+<li><strong>Group:</strong> flipcard</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 88-92</li>
+<li><strong>Lines (code):</strong> 94-310</li>
+</ul>
+</details>
+<div class="callout callout--demo crop-margins">
+<h4 id="demo" tabindex="-1">Demo</h4>
+<p><a class="button" href="/frontend/demos/flipcard">Our Demo</a></p>
+</div>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss">scss</code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-flipcard-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
+</ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
 <h3 id="function-get" tabindex="-1">get()</h3>
@@ -5247,11 +5338,11 @@
 <li><strong>File:</strong> _flipcard.scss</li>
 <li><strong>Group:</strong> flipcard</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 80-83</li>
-<li><strong>Lines (code):</strong> 85-87</li>
+<li><strong>Lines (comments):</strong> 79-82</li>
+<li><strong>Lines (code):</strong> 84-86</li>
 </ul>
 </details>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-flipcard-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
 <table>
@@ -5270,7 +5361,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
