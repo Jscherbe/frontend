@@ -12945,11 +12945,12 @@ component:button
             justify-content: center;
     max-width: 80rem;
   }
-  .card--horizontal:not(:has(.card__image)) {
+  .card--horizontal:not(:has(.card__image)), .card--horizontal.card--no-image {
     grid-template-columns: 1fr;
   }
   .card--horizontal:not(:has(.card__image)) .card__body,
-  .card--horizontal:not(:has(.card__image)) .card__footer {
+  .card--horizontal:not(:has(.card__image)) .card__footer, .card--horizontal.card--no-image .card__body,
+  .card--horizontal.card--no-image .card__footer {
     grid-column: 1/2;
   }
 }

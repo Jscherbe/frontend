@@ -21,6 +21,10 @@ export default function(
   footer = true,
   isIcon = false
 ) {
+  const modifiers = modifier.split(" ");
+  if (!image) {
+    modifiers.push("card--no-image");
+  }
   // create markup snippets to conditionally render
   let titleMarkup = `
     <h5 class="card__title">
@@ -48,5 +52,5 @@ export default function(
   let bodyMarkup = `<div class="card__body">${ title ? titleMarkup : "" }${ content ? contentMarkup : "" }</div>`;
 
   // Condensed to not create <p> elements
-  return `<article class="card ${ modifier }" ${ title ? "data-ulu-proxy-click" : "" }>${ body ? bodyMarkup : "" }${ image ? imageMarkup : "" }${ footer ? footerMarkup : "" }</article>`;
+  return `<article class="card ${ modifiers.join(' ') }" ${ title ? "data-ulu-proxy-click" : "" }>${ body ? bodyMarkup : "" }${ image ? imageMarkup : "" }${ footer ? footerMarkup : "" }</article>`;
 }

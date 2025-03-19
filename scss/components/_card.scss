@@ -470,7 +470,9 @@ $config: (
     }
 
     // For modern browsers
-    &:not(:has(#{ $prefix }__image)) {
+    // Optionally use no-image modifier for older browser support
+    &:not(:has(#{ $prefix }__image)),
+    &#{ $prefix }--no-image {
       grid-template-columns: 1fr;
       #{ $prefix }__body,
       #{ $prefix }__footer {
