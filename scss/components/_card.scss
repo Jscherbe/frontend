@@ -62,8 +62,9 @@
 /// @prop {List} image-icon-max-width [30rem] Max width for image when using the modifier on the .card__image--icon
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 /// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
+/// @prop {Unit} horizontal-min-height [10rem] Minimum height when horizontal
+/// @prop {Unit} horizontal-max-width [40rem] Maximum width when horizontal
 /// @prop {Unit} horizontal-body-max-width [80rem] The max-width of body when horizontal
-
 
 $config: (
   "background-color" : white,
@@ -478,9 +479,18 @@ $config: (
       @include -card-horizontal-no-image-styles();
     }
   }
+}
 
+@mixin -card-horizontal-no-image-styles() {
+  $prefix: selector.class("card");
+  grid-template-columns: 1fr;
+  #{ $prefix }__body,
+  #{ $prefix }__footer {
+    grid-column: 1 / 2;
+  }
+}
 
-  // OLD CSS
+// OLD CSS FOR HORIZONTAL
   // #{ $prefix }--horizontal {
   //   display: flex;
   //   flex-direction: row;
@@ -504,14 +514,4 @@ $config: (
   //     max-width: get("horizontal-body-max-width");
   //   }
   // }
-}
-
-@mixin -card-horizontal-no-image-styles() {
-  $prefix: selector.class("card");
-  grid-template-columns: 1fr;
-  #{ $prefix }__body,
-  #{ $prefix }__footer {
-    grid-column: 1 / 2;
-  }
-}
 
