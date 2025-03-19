@@ -471,13 +471,11 @@ $config: (
 
     // For modern browsers
     // Optionally use no-image modifier for older browser support
-    &#{ $prefix }--no-image,
     &:not(:has(#{ $prefix }__image)) {
-      grid-template-columns: 1fr;
-      #{ $prefix }__body,
-      #{ $prefix }__footer {
-        grid-column: 1 / 2;
-      }
+      @include -card-horizontal-no-image-styles();
+    }
+    &#{ $prefix }--no-image {
+      @include -card-horizontal-no-image-styles();
     }
   }
 
@@ -506,5 +504,14 @@ $config: (
   //     max-width: get("horizontal-body-max-width");
   //   }
   // }
+}
+
+@mixin -card-horizontal-no-image-styles() {
+  $prefix: selector.class("card");
+  grid-template-columns: 1fr;
+  #{ $prefix }__body,
+  #{ $prefix }__footer {
+    grid-column: 1 / 2;
+  }
 }
 
