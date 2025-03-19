@@ -458,6 +458,10 @@ $config: (
       border-top-right-radius: 0;
       border-bottom-left-radius: get("border-radius");
     }
+    #{ $prefix }__body,
+    #{ $prefix }__footer {
+      grid-column: 2 / 3;
+    }
     #{ $prefix }__body {
       display: flex;
       flex-direction: column;
@@ -468,6 +472,10 @@ $config: (
     // For modern browsers
     &:not(:has(#{ $prefix }__image)) {
       grid-template-columns: 1fr;
+      #{ $prefix }__body,
+      #{ $prefix }__footer {
+        grid-column: 1 / 2;
+      }
     }
   }
 

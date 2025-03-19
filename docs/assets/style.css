@@ -12933,6 +12933,10 @@ component:button
     border-top-right-radius: 0;
     border-bottom-left-radius: 5px;
   }
+  .card--horizontal .card__body,
+  .card--horizontal .card__footer {
+    grid-column: 2/3;
+  }
   .card--horizontal .card__body {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -12948,6 +12952,10 @@ component:button
   }
   .card--horizontal:not(:has(.card__image)) {
     grid-template-columns: 1fr;
+  }
+  .card--horizontal:not(:has(.card__image)) .card__body,
+  .card--horizontal:not(:has(.card__image)) .card__footer {
+    grid-column: 1/2;
   }
 }
 .card-grid {
