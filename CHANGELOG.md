@@ -2,8 +2,12 @@
 
 ## Version 0.1.0-beta.25
 
+- scss/components/accordion
+  - Make normal summary (when used without icon) flexbox for older browser support (uses :has() selector)
 - scss/components/card
-  - add flex-direction: row to card styling to correctly lay out horizontal cards
+  - Change how horizontal cards display when in horizontal
+    - Body and footer stack to the side of image
+    - Image fills height
   - add card--image-fit modifier to all images to properly be contained in cards regardless of card size
 
 ## Version 0.1.0-beta.24

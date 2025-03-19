@@ -5152,9 +5152,19 @@
 <h1 id="change-log" tabindex="-1">Change Log</h1>
 <h2 id="version-0.1.0-beta.25" tabindex="-1">Version 0.1.0-beta.25</h2>
 <ul>
+<li>scss/components/accordion
+<ul>
+<li>Make normal summary (when used without icon) flexbox for older browser support (uses :has() selector)</li>
+</ul>
+</li>
 <li>scss/components/card
 <ul>
-<li>add flex-direction: row to card styling to correctly lay out horizontal cards</li>
+<li>Change how horizontal cards display when in horizontal
+<ul>
+<li>Body and footer stack to the side of image</li>
+<li>Image fills height</li>
+</ul>
+</li>
 <li>add card--image-fit modifier to all images to properly be contained in cards regardless of card size</li>
 </ul>
 </li>
