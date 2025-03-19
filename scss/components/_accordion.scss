@@ -145,10 +145,9 @@ $config: (
     vertical-align: top;
     font-weight: bold;
     cursor: pointer;
+    display: flex; // For icon
+    align-items: center;
     &:has(#{ $prefix }__icon) {
-      display: flex; // For icon
-      align-items: center;
-      justify-content: space-between;
       list-style: none; // Remove the default arrow (old safari?)
       &::-webkit-details-marker,
       &::marker {
@@ -172,8 +171,8 @@ $config: (
   #{ $prefix }__icon {
     flex: 0 0 get("icon-size");
     color: color.get(get("icon-color"));
-    margin-left: 0.5em;
-    order: 3;
+    margin-left: auto;
+    padding-left: 0.5em;
     background-color: color.get(get("icon-background-color"));
     border-radius: get("icon-border-radius");
     width: get("icon-size");

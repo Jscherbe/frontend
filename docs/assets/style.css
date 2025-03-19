@@ -11901,17 +11901,14 @@ components:
   vertical-align: top;
   font-weight: bold;
   cursor: pointer;
-}
-.accordion__summary:has(.accordion__icon) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+.accordion__summary:has(.accordion__icon) {
   list-style: none;
 }
 .accordion__summary:has(.accordion__icon)::-webkit-details-marker, .accordion__summary:has(.accordion__icon)::marker {
@@ -11928,10 +11925,8 @@ components:
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   color: var(--site-color-link);
-  margin-left: 0.5em;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+  margin-left: auto;
+  padding-left: 0.5em;
   background-color: transparent;
   border-radius: 50%;
   width: auto;
