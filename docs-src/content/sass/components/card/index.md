@@ -53,12 +53,14 @@ $config: (
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
-  "horizontal-image-width" : 33%,
+  "horizontal-image-width" : min(33%, 20rem),
   "horizontal-body-max-width" : 80rem,
+  "horizontal-min-height" : 10rem,
+  "horizontal-max-width" : 40rem,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
-  "image-background-color" : rgb(197, 197, 197),
+  "image-background-color" : rgb(238, 238, 238),
   "image-border" : null, // For when you have a margin
   "image-filter-hover" : null,
   "image-margin" : null,
@@ -68,6 +70,8 @@ $config: (
   "image-transition-enabled" : true,
   "image-transition-properties" : (transform, filter),
   "image-transition-timing-function" : ease-in-out,
+  "image-fit-padding" : 1rem,
+  "image-fit-filter" : drop-shadow(0 0px 8px rgba(0, 0, 0, 0.3)),
   "margin-y" : 3rem,
   "max-width" : 28rem,
   "padding" : 2rem,
@@ -98,8 +102,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 17-63
-- **Lines (code):** 65-117
+- **Lines (comments):** 17-65
+- **Lines (code):** 67-123
 
 </details>
 
@@ -151,6 +155,8 @@ $config: (
 |image-transition-enabled|Boolean|true|Enable or disable the image transition.|
 |image-transition-duration|Time|350ms|The duration of the image transition.|
 |image-transition-timing-function|CssValue|ease-in-out|The timing function for the image transition.|
+|image-fit-padding|Number|1rem|Padding on inside of image when using image fit modifier|
+|image-fit-filter|CssValue|drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2))|Filter to use on image when using image fit modifier|
 |image-icon-max-width|List|30rem|Max width for image when using the modifier on the .card__image--icon|
 |image-transition-properties|List|(transform, filter)|The properties for the image transitions.|
 |horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|
@@ -187,8 +193,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 119-122
-- **Lines (code):** 124-126
+- **Lines (comments):** 125-128
+- **Lines (code):** 130-132
 
 </details>
 
@@ -246,8 +252,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 137-141
-- **Lines (code):** 143-158
+- **Lines (comments):** 143-147
+- **Lines (code):** 149-164
 
 </details>
 
@@ -306,8 +312,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 165-169
-- **Lines (code):** 171-451
+- **Lines (comments):** 171-175
+- **Lines (code):** 177-441
 
 </details>
 
@@ -387,8 +393,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 128-131
-- **Lines (code):** 133-135
+- **Lines (comments):** 134-137
+- **Lines (code):** 139-141
 
 </details>
 

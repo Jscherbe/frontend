@@ -67,17 +67,13 @@ intro: Cards are...
 
 {% demoAccordion "Card Horizontal Styling" %}
   <div class="h4">All Fields</div>
-  {% demoCard 1 'card--horizontal' %}
-  <div class="h4">No Body (no proxy click link)</div>
-  {% demoCard 1 'card--horizontal' false true true true true %}
+  {% demoCard 1 'card--horizontal' true true true true false false %}
   <div class="h4">No Title (no proxy click link)</div>
   {% demoCard 1 'card--horizontal' true false true true true %}
   <div class="h4">No Content</div>
   {% demoCard 1 'card--horizontal' true true false true true %}
   <div class="h4">No Image</div>
-  {% demoCard 1 'card--w-image' true true true false true %}
-  <div class="h4">No Footer</div>
-  {% demoCard 1 'card--horizontal' true true true true false %}
+  {% demoCard 1 'card--horizontal' true true true false true %}
 {% enddemoAccordion %}
 
 {% demoAccordion "Card Horizontal and Image-fit Styling" %}
@@ -90,7 +86,7 @@ intro: Cards are...
   <div class="h4">No Content</div>
   {% demoCard 1 'card--image-fit card--horizontal' true true false true true %}
   <div class="h4">No Image</div>
-  {% demoCard 1 'card--w-image' true true true false true %}
+  {% demoCard 1 'card--w-image card--horizontal' true true true false true %}
   <div class="h4">No Footer</div>
   {% demoCard 1 'card--image-fit card--horizontal' true true true true false %}
 {% enddemoAccordion %}

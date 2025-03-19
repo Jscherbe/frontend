@@ -57,6 +57,8 @@
 /// @prop {Boolean} image-transition-enabled [true] Enable or disable the image transition.
 /// @prop {Time} image-transition-duration [350ms] The duration of the image transition.
 /// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
+/// @prop {Number} image-fit-padding [1rem] Padding on inside of image when using image fit modifier
+/// @prop {CssValue} image-fit-filter [drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2))] Filter to use on image when using image fit modifier
 /// @prop {List} image-icon-max-width [30rem] Max width for image when using the modifier on the .card__image--icon
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 /// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
@@ -80,12 +82,14 @@ $config: (
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
-  "horizontal-image-width" : 33%,
+  "horizontal-image-width" : min(33%, 20rem),
   "horizontal-body-max-width" : 80rem,
+  "horizontal-min-height" : 10rem,
+  "horizontal-max-width" : 40rem,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
-  "image-background-color" : rgb(197, 197, 197),
+  "image-background-color" : rgb(238, 238, 238),
   "image-border" : null, // For when you have a margin
   "image-filter-hover" : null,
   "image-margin" : null,
@@ -95,6 +99,8 @@ $config: (
   "image-transition-enabled" : true,
   "image-transition-properties" : (transform, filter),
   "image-transition-timing-function" : ease-in-out,
+  "image-fit-padding" : 1rem,
+  "image-fit-filter" : drop-shadow(0 0px 8px rgba(0, 0, 0, 0.3)),
   "margin-y" : 3rem,
   "max-width" : 28rem,
   "padding" : 2rem,
@@ -183,6 +189,9 @@ $config: (
     flex-direction: column;
     justify-content: flex-end;
     max-width: get("max-width");
+    // Not absolutely necessary, incase we want to remove in future
+    overflow: hidden; 
+
     // Border is on pseudo so that it's on top of image/etc
     &:after {
       position: absolute;
@@ -411,42 +420,81 @@ $config: (
     }
   }
 
-  .card--image-fit {
-    .card__image {
+  #{ $prefix }--image-fit {
+    #{ $prefix }__image {
       img {
-        padding: 1rem;
+        padding: get("image-fit-padding");
         object-fit: contain;
         object-position: top center;
-        filter: drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2));
+        filter: get("image-fit-filter");
       }
     }
   }
 
   @if (get("horizontal-breakpoint")) {
     @include breakpoint.min(get("horizontal-breakpoint")) {
-      #{ $prefix }--horizontal {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        #{ $prefix }__image {
-          border-top-right-radius: 0;
-          border-bottom-left-radius: get("border-radius");
-          width: get("horizontal-image-width");
-          flex: 0 1 get("horizontal-image-width");
-          // max-width: 30rem;
-          // min-height: 28rem;
-          // padding-top: 0;
-        }
-        #{ $prefix }__body {
-          display: flex;
-          flex: 1;
-          flex-direction: column;
-          justify-content: center;
-          max-width: get("horizontal-body-max-width");
-        }
-      }
+      @include -horizontal-card-styles();
+    }
+  } @else {
+    @include -horizontal-card-styles();
+  }
+}
+
+@mixin -horizontal-card-styles() {
+  $prefix: selector.class("card");
+
+  #{ $prefix }--horizontal {
+    display: grid;
+    grid-template-columns: get("horizontal-image-width") 1fr;
+    // Creating the two rows (body and footer), if one is missing it's height will be 0
+    // Cannot use gap with the grid as it will create space when a row isn't needed
+    grid-template-rows: auto auto;
+    min-height: get("horizontal-min-height");
+    max-width: get("horizontal-max-width");
+    #{ $prefix }__image {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+      aspect-ratio: auto;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: get("border-radius");
+    }
+    #{ $prefix }__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: get("horizontal-body-max-width");
+    }
+
+    // For modern browsers
+    &:not(:has(#{ $prefix }__image)) {
+      grid-template-columns: 1fr;
     }
   }
+
+
+  // OLD CSS
+  // #{ $prefix }--horizontal {
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   align-items: center;
+  //   #{ $prefix }__image {
+  //     align-self: stretch;
+  //     border-top-right-radius: 0;
+  //     border-bottom-left-radius: get("border-radius");
+  //     width: get("horizontal-image-width");
+  //     flex: 0 0 get("horizontal-image-width");
+  //     // max-width: 30rem;
+  //     // min-height: 28rem;
+  //     // padding-top: 0;
+  //   }
+  //   #{ $prefix }__body {
+  //     display: flex;
+  //     flex: 1;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     max-width: get("horizontal-body-max-width");
+  //   }
+  // }
 }
 

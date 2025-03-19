@@ -35,7 +35,7 @@ export default function(
   
   let footerMarkup = `
     <div class="card__footer">
-      <a class="button" href="https://www.yahoo.com/">Footer</a>
+      <a class="button button--small" href="https://www.yahoo.com/">Footer</a>
     </div>
   `.trim();
   let imageMarkup = `
