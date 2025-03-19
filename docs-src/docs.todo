@@ -10,18 +10,18 @@ Todos:
   ☐ add
     ✔ buttons in footer @done
     ✔ images-fit in default @done
-    ☐ non images-fit in horizontal
+    ✔ non images-fit in horizontal @done
     ✔ icons in image icon section @done
   ✔ Demos for horizontal card @done
     * needed some styling added to horizontal card
     ✔ add card--image-fit styling @done
-  ☐ Demos for card-grid
+  ✔ Demos for card-grid @done
     *use footer for buttons
     * border radius on buttons
     *likely need card-grid--one-column styles
   ☐ Demo for card grid/list switcher (the same as we had in CCN)
     * We can bring in the Js from CCN and I will finish it at some point, just update the attributes so that they are "data-ulu-..." 
-  ☐ @daniel Look through the cards demos, we want to make sure we have examples of all modifiers and inner element combinations (ie. with image without image, with footer, without footer, etc). make sure to add headlines/descriptions to the tests 
+  ✔ @daniel Look through the cards demos, we want to make sure we have examples of all modifiers and inner element combinations (ie. with image without image, with footer, without footer, etc). make sure to add headlines/descriptions to the tests @done
   ✘ Test Vite eleventy plugin @cancelled
     - HMR doesn't seem to be working
   ☐ Try to use seperate process with vite as asset server for now
