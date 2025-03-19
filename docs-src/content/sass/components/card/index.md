@@ -102,8 +102,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 17-65
-- **Lines (code):** 67-123
+- **Lines (comments):** 17-67
+- **Lines (code):** 69-124
 
 </details>
 
@@ -160,6 +160,8 @@ $config: (
 |image-icon-max-width|List|30rem|Max width for image when using the modifier on the .card__image--icon|
 |image-transition-properties|List|(transform, filter)|The properties for the image transitions.|
 |horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|
+|horizontal-min-height|Unit|10rem|Minimum height when horizontal|
+|horizontal-max-width|Unit|40rem|Maximum width when horizontal|
 |horizontal-body-max-width|Unit|80rem|The max-width of body when horizontal|
 
     
@@ -193,8 +195,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 125-128
-- **Lines (code):** 130-132
+- **Lines (comments):** 126-129
+- **Lines (code):** 131-133
 
 </details>
 
@@ -252,8 +254,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 143-147
-- **Lines (code):** 149-164
+- **Lines (comments):** 144-148
+- **Lines (code):** 150-165
 
 </details>
 
@@ -312,8 +314,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 171-175
-- **Lines (code):** 177-441
+- **Lines (comments):** 172-176
+- **Lines (code):** 178-442
 
 </details>
 
@@ -393,8 +395,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 134-137
-- **Lines (code):** 139-141
+- **Lines (comments):** 135-138
+- **Lines (code):** 140-142
 
 </details>
 
