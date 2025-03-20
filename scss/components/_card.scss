@@ -421,6 +421,16 @@ $config: (
     }
   }
 
+  // Incase this modifier is being used to hide the image
+  // not just to tell the component how to layout without image
+  // - Use case is hiding image when you can't control the output 
+  //   of the inside of the card (printed no matter what). We had
+  //   this happen in HHRC, including this extra CSS for that
+  #{ $prefix }--no-image {
+    #{ $prefix }__image {
+      display: none;
+    }
+  }
   #{ $prefix }--image-fit {
     #{ $prefix }__image {
       img {
