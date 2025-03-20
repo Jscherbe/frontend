@@ -1,5 +1,14 @@
 # Change Log
 
+## Version 0.1.0-beta.27
+
+- scss/components/popover
+  - Add popover's content box-shadow to arrow (using the other pseudo to mask the shadow)
+- scss/components/utils
+  - Fix number-info function, and add errors option
+  - Add function add-unit() to add unit to a number
+  - Add function hypotenuse() which returns hypotenuse of triangle
+
 ## Version 0.1.0-beta.26
 
 - scss/components/card

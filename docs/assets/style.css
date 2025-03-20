@@ -15986,34 +15986,58 @@ ul.list-inline,
 }
 
 .popover__arrow {
-  display: block;
   visibility: hidden;
   z-index: 1;
 }
-.popover__arrow, .popover__arrow:before {
+.popover__arrow, .popover__arrow:before, .popover__arrow:after {
+  display: block;
   position: absolute;
   width: 16px;
   height: 16px;
   background: inherit;
 }
-.popover__arrow:before {
+.popover__arrow:before, .popover__arrow:after {
   visibility: visible;
   content: "";
+}
+.popover__arrow:before {
+  -webkit-box-shadow: 0 0 4px var(--site-color-box-shadow);
+          box-shadow: 0 0 4px var(--site-color-box-shadow);
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+.popover__arrow:after {
+  background: inherit;
+  background: inherit;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 15.313708499px;
+  width: 26.627416998px;
+}
 [data-placement^=top] > .popover__arrow {
   bottom: -8px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 [data-placement^=bottom] > .popover__arrow {
   top: -8px;
 }
 [data-placement^=left] > .popover__arrow {
   right: -8px;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 [data-placement^=right] > .popover__arrow {
   left: -8px;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 
 .popover {

@@ -3068,6 +3068,7 @@ class Popover extends Collapsible {
   createFloatingInstance() {
     const { content, anchor, contentArrow } = this.elements;
     const floatingElements = { trigger: anchor, contentArrow, content };
+    console.log("this.floatingOptions:\n", this.floatingOptions);
     this.floatingCleanup = createFloatingUi(floatingElements, this.floatingOptions);
   }
   destroyFloatingInstance() {

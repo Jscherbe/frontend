@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Button verbose (remove margins if last-child)
+    * Think about adding another width property (min(100%, get("width))) so that it doesn't overflow in flexbox situations
   ☐ See about using the extra :after element on popover arrow to create the border/shadow needed (since the :before is overlapping) @minor
   ☐ Fix card horizontal (is centering content horizontally [content has max width])
   ☐ Include common container we need full/fit/fill
