@@ -38,6 +38,7 @@ Module Settings
 ``` scss
 $config: (
   "arrow-size"                   : 16px,
+  "arrow-mask-overlap"           : 4px,
   "background-color"             : white,
   "border-radius"                : 6px,
   "color"                        : inherit,
@@ -47,7 +48,6 @@ $config: (
   "padding-large"                : 2rem,
   "type-size"                    : null,
   "z-index"                      : true,
-  
   "box-shadow"                   : true,
   "box-shadow-footer"            : 0 0 4px,
   "box-shadow-footer-color"      : "box-shadow",
@@ -78,8 +78,8 @@ $config: (
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** variable
-- **Lines (comments):** 30-60
-- **Lines (code):** 62-93
+- **Lines (comments):** 30-61
+- **Lines (code):** 63-94
 
 </details>
 
@@ -90,7 +90,8 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|arrow-size|Dimension|16px|size of the dropdown arrow.|
+|arrow-size|Dimension|16px|Size of the dropdown arrow.|
+|arrow-mask-overlap|Dimension|4px|Size that the mask extends beyond the arrow size (which covers up the arrow box shadow inside the popover content). This should be adjusted based on the size of the box-shadow being used)|
 |background-color|Color|white|Background color of the popover.|
 |border-radius|Dimension|6px|Border radius of the popover.|
 |color|Color|inherit|Text color of the popover.|
@@ -151,8 +152,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 95-98
-- **Lines (code):** 100-102
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-103
 
 </details>
 
@@ -210,8 +211,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 114-116
-- **Lines (code):** 118-263
+- **Lines (comments):** 115-117
+- **Lines (code):** 119-234
 
 </details>
 
@@ -265,8 +266,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
-- **Lines (comments):** 104-107
-- **Lines (code):** 109-112
+- **Lines (comments):** 105-108
+- **Lines (code):** 110-113
 
 </details>
 

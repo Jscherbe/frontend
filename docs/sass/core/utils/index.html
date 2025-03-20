@@ -5067,6 +5067,9 @@
                     <li><a href="#function-number-info">number-info()</a>
             		</li>
 
+                    <li><a href="#function-add-unit">add-unit()</a>
+            		</li>
+
                     <li><a href="#function-map-merge">map-merge()</a>
             		</li>
 
@@ -5122,6 +5125,9 @@
             		</li>
 
                     <li><a href="#function-pixel-to-em">pixel-to-em()</a>
+            		</li>
+
+                    <li><a href="#function-hypotenuse">hypotenuse()</a>
             		</li>
                 </ol>
             		</li>
@@ -5397,8 +5403,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 476-479</li>
-<li><strong>Lines (code):</strong> 481-488</li>
+<li><strong>Lines (comments):</strong> 491-494</li>
+<li><strong>Lines (code):</strong> 496-503</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -5640,7 +5646,7 @@
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
 <li><strong>Lines (comments):</strong> 130-131</li>
-<li><strong>Lines (code):</strong> 133-147</li>
+<li><strong>Lines (code):</strong> 133-153</li>
 </ul>
 </details>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>
@@ -5671,7 +5677,69 @@
 <tbody>
 <tr>
 <td style="text-align:left">Map</td>
-<td style="text-align:left">With properties (unit, value)</td>
+<td style="text-align:left">With properties (unit, value, invalid [true/false if not number])</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-1" tabindex="-1">Throw</h4>
+<ul>
+<li $number="">Expected Number, got #{ meta.type-of($number) } for #</li>
+</ul>
+<h4 id="require-5" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-strip-unit">strip-unit()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-add-unit" tabindex="-1">add-unit()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Adds unit to unitless number</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 155-158</li>
+<li><strong>Lines (code):</strong> 160-162</li>
+</ul>
+</details>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$number</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The unitless number to add unit to</td>
+</tr>
+<tr>
+<td style="text-align:left">$unit</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The unit to add to number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">Number with unit attached (can't be used in maths)</td>
 </tr>
 </tbody>
 </table>
@@ -5688,11 +5756,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 149-153</li>
-<li><strong>Lines (code):</strong> 155-163</li>
+<li><strong>Lines (comments):</strong> 164-168</li>
+<li><strong>Lines (code):</strong> 170-178</li>
 </ul>
 </details>
-<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5719,7 +5787,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-2" tabindex="-1">Returns</h4>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5747,11 +5815,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 165-168</li>
-<li><strong>Lines (code):</strong> 170-175</li>
+<li><strong>Lines (comments):</strong> 180-183</li>
+<li><strong>Lines (code):</strong> 185-190</li>
 </ul>
 </details>
-<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5773,7 +5841,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-3" tabindex="-1">Returns</h4>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5786,11 +5854,11 @@
 </tr>
 </tbody>
 </table>
-<h4 id="throw-1" tabindex="-1">Throw</h4>
+<h4 id="throw-2" tabindex="-1">Throw</h4>
 <ul>
 <li>map-has(): Incorrect type for $map (should be map)</li>
 </ul>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -5809,11 +5877,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 177-178</li>
-<li><strong>Lines (code):</strong> 180-188</li>
+<li><strong>Lines (comments):</strong> 192-193</li>
+<li><strong>Lines (code):</strong> 195-203</li>
 </ul>
 </details>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-map-merge">map-merge()</a></li>
 </ul>
@@ -5830,11 +5898,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 190-191</li>
-<li><strong>Lines (code):</strong> 193-200</li>
+<li><strong>Lines (comments):</strong> 205-206</li>
+<li><strong>Lines (code):</strong> 208-215</li>
 </ul>
 </details>
-<h4 id="returns-4" tabindex="-1">Returns</h4>
+<h4 id="returns-5" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5862,11 +5930,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 202-202</li>
-<li><strong>Lines (code):</strong> 203-211</li>
+<li><strong>Lines (comments):</strong> 217-217</li>
+<li><strong>Lines (code):</strong> 218-226</li>
 </ul>
 </details>
-<h4 id="require-7" tabindex="-1">Require</h4>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -5883,11 +5951,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 214-218</li>
-<li><strong>Lines (code):</strong> 219-238</li>
+<li><strong>Lines (comments):</strong> 229-233</li>
+<li><strong>Lines (code):</strong> 234-253</li>
 </ul>
 </details>
-<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5919,12 +5987,12 @@
 </tr>
 </tbody>
 </table>
-<h4 id="throw-2" tabindex="-1">Throw</h4>
+<h4 id="throw-3" tabindex="-1">Throw</h4>
 <ul>
 <li>map-contains-any(): Incorrect type for $map (should be map)</li>
 <li>map-contains-any(): Incorrect type for $keys (should be list)</li>
 </ul>
-<h4 id="require-8" tabindex="-1">Require</h4>
+<h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -5941,11 +6009,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 240-244</li>
-<li><strong>Lines (code):</strong> 246-272</li>
+<li><strong>Lines (comments):</strong> 255-259</li>
+<li><strong>Lines (code):</strong> 261-287</li>
 </ul>
 </details>
-<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<h4 id="parameters-14" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5972,7 +6040,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-5" tabindex="-1">Returns</h4>
+<h4 id="returns-6" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5987,11 +6055,11 @@
 </tr>
 </tbody>
 </table>
-<h4 id="throw-3" tabindex="-1">Throw</h4>
+<h4 id="throw-4" tabindex="-1">Throw</h4>
 <ul>
 <li>Arguments must be a list, use single list for single argument ie</li>
 </ul>
-<h4 id="require-9" tabindex="-1">Require</h4>
+<h4 id="require-10" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6008,11 +6076,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 274-278</li>
-<li><strong>Lines (code):</strong> 280-296</li>
+<li><strong>Lines (comments):</strong> 289-293</li>
+<li><strong>Lines (code):</strong> 295-311</li>
 </ul>
 </details>
-<h4 id="parameters-14" tabindex="-1">Parameters</h4>
+<h4 id="parameters-15" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6060,11 +6128,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 298-302</li>
-<li><strong>Lines (code):</strong> 304-312</li>
+<li><strong>Lines (comments):</strong> 313-317</li>
+<li><strong>Lines (code):</strong> 319-327</li>
 </ul>
 </details>
-<h4 id="parameters-15" tabindex="-1">Parameters</h4>
+<h4 id="parameters-16" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6086,7 +6154,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-6" tabindex="-1">Returns</h4>
+<h4 id="returns-7" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6117,11 +6185,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 314-318</li>
-<li><strong>Lines (code):</strong> 320-328</li>
+<li><strong>Lines (comments):</strong> 329-333</li>
+<li><strong>Lines (code):</strong> 335-343</li>
 </ul>
 </details>
-<h4 id="parameters-16" tabindex="-1">Parameters</h4>
+<h4 id="parameters-17" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6143,7 +6211,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-7" tabindex="-1">Returns</h4>
+<h4 id="returns-8" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6171,11 +6239,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 330-334</li>
-<li><strong>Lines (code):</strong> 336-351</li>
+<li><strong>Lines (comments):</strong> 345-349</li>
+<li><strong>Lines (code):</strong> 351-366</li>
 </ul>
 </details>
-<h4 id="parameters-17" tabindex="-1">Parameters</h4>
+<h4 id="parameters-18" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6206,7 +6274,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-8" tabindex="-1">Returns</h4>
+<h4 id="returns-9" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6238,8 +6306,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 353-368</li>
-<li><strong>Lines (code):</strong> 370-386</li>
+<li><strong>Lines (comments):</strong> 368-383</li>
+<li><strong>Lines (code):</strong> 385-401</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -6251,67 +6319,6 @@
 <span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
   <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> map.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$spacing</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// left = 2em</span>
-<span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-18" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$value</td>
-<td style="text-align:left">`Number</td>
-<td style="text-align:left">List`</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-9" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Map</td>
-<td style="text-align:left">Map with spacing info for each side (top, right, bottom, left)</td>
-</tr>
-</tbody>
-</table>
-<h4 id="throw-4" tabindex="-1">Throw</h4>
-<ul>
-<li>Spacing has more than 4 arguments (not correct shorthand)</li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-get-spacing-top" tabindex="-1">get-spacing-top()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Resolve the top spacing value for margin/padding like arguments</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 388-397</li>
-<li><strong>Lines (code):</strong> 399-401</li>
-</ul>
-</details>
-<h4 id="examples-3" tabindex="-1">Examples</h4>
-<p>Example of getting top value</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property">top</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-top</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-  <span class="pjs-token pjs-comment">// top = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-19" tabindex="-1">Parameters</h4>
 <table>
@@ -6335,26 +6342,27 @@
 <thead>
 <tr>
 <th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Number</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">Map with spacing info for each side (top, right, bottom, left)</td>
 </tr>
 </tbody>
 </table>
-<h4 id="require-10" tabindex="-1">Require</h4>
+<h4 id="throw-5" tabindex="-1">Throw</h4>
 <ul>
-<li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
-<li><a href="/frontend/sass/core/utils/#function-get-spacing">get-spacing()</a></li>
+<li>Spacing has more than 4 arguments (not correct shorthand)</li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="function-get-spacing-right" tabindex="-1">get-spacing-right()</h3>
+<h3 id="function-get-spacing-top" tabindex="-1">get-spacing-top()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Resolve the right spacing value for margin/padding like arguments</p>
+<p>Resolve the top spacing value for margin/padding like arguments</p>
 <details>
   <summary>File Information</summary>
 <ul>
@@ -6365,13 +6373,13 @@
 <li><strong>Lines (code):</strong> 414-416</li>
 </ul>
 </details>
-<h4 id="examples-4" tabindex="-1">Examples</h4>
-<p>Example of getting right value</p>
+<h4 id="examples-3" tabindex="-1">Examples</h4>
+<p>Example of getting top value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
 <span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property">right</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-right</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-  <span class="pjs-token pjs-comment">// right = 2em</span>
+  <span class="pjs-token pjs-property">top</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-top</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-comment">// top = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-20" tabindex="-1">Parameters</h4>
 <table>
@@ -6409,12 +6417,12 @@
 <li><a href="/frontend/sass/core/utils/#function-get-spacing">get-spacing()</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="function-get-spacing-bottom" tabindex="-1">get-spacing-bottom()</h3>
+<h3 id="function-get-spacing-right" tabindex="-1">get-spacing-right()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Resolve the bottom spacing value for margin/padding like arguments</p>
+<p>Resolve the right spacing value for margin/padding like arguments</p>
 <details>
   <summary>File Information</summary>
 <ul>
@@ -6425,13 +6433,13 @@
 <li><strong>Lines (code):</strong> 429-431</li>
 </ul>
 </details>
-<h4 id="examples-5" tabindex="-1">Examples</h4>
-<p>Example of getting bottom value</p>
+<h4 id="examples-4" tabindex="-1">Examples</h4>
+<p>Example of getting right value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
 <span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property">bottom</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-bottom</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-  <span class="pjs-token pjs-comment">// bottom = 2em</span>
+  <span class="pjs-token pjs-property">right</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-right</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-comment">// right = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-21" tabindex="-1">Parameters</h4>
 <table>
@@ -6469,12 +6477,12 @@
 <li><a href="/frontend/sass/core/utils/#function-get-spacing">get-spacing()</a></li>
 </ul>
 <div class="sassdoc-item-header">
-<h3 id="function-get-spacing-left" tabindex="-1">get-spacing-left()</h3>
+<h3 id="function-get-spacing-bottom" tabindex="-1">get-spacing-bottom()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Resolve the left spacing value for margin/padding like arguments</p>
+<p>Resolve the bottom spacing value for margin/padding like arguments</p>
 <details>
   <summary>File Information</summary>
 <ul>
@@ -6485,13 +6493,13 @@
 <li><strong>Lines (code):</strong> 444-446</li>
 </ul>
 </details>
-<h4 id="examples-6" tabindex="-1">Examples</h4>
-<p>Example of getting left value</p>
+<h4 id="examples-5" tabindex="-1">Examples</h4>
+<p>Example of getting bottom value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
 <span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-left</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-  <span class="pjs-token pjs-comment">// left = 2em</span>
+  <span class="pjs-token pjs-property">bottom</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-bottom</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-comment">// bottom = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-22" tabindex="-1">Parameters</h4>
 <table>
@@ -6529,6 +6537,66 @@
 <li><a href="/frontend/sass/core/utils/#function-get-spacing">get-spacing()</a></li>
 </ul>
 <div class="sassdoc-item-header">
+<h3 id="function-get-spacing-left" tabindex="-1">get-spacing-left()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Resolve the left spacing value for margin/padding like arguments</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 448-457</li>
+<li><strong>Lines (code):</strong> 459-461</li>
+</ul>
+</details>
+<h4 id="examples-6" tabindex="-1">Examples</h4>
+<p>Example of getting left value</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+
+<span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-left</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-comment">// left = 2em</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-23" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left">`Number</td>
+<td style="text-align:left">List`</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-14" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-14" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/frontend/sass/core/utils/#function-get-spacing">get-spacing()</a></li>
+</ul>
+<div class="sassdoc-item-header">
 <h3 id="function-strip-unit" tabindex="-1">strip-unit()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
@@ -6544,8 +6612,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 448-450</li>
-<li><strong>Lines (code):</strong> 452-454</li>
+<li><strong>Lines (comments):</strong> 463-465</li>
+<li><strong>Lines (code):</strong> 467-469</li>
 </ul>
 </details>
 <h4 id="related-links" tabindex="-1">Related Links</h4>
@@ -6565,11 +6633,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 456-461</li>
-<li><strong>Lines (code):</strong> 463-465</li>
+<li><strong>Lines (comments):</strong> 471-476</li>
+<li><strong>Lines (code):</strong> 478-480</li>
 </ul>
 </details>
-<h4 id="parameters-23" tabindex="-1">Parameters</h4>
+<h4 id="parameters-24" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6601,7 +6669,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-14" tabindex="-1">Returns</h4>
+<h4 id="returns-15" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6614,7 +6682,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-14" tabindex="-1">Require</h4>
+<h4 id="require-15" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
 </ul>
@@ -6631,11 +6699,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 467-470</li>
-<li><strong>Lines (code):</strong> 472-474</li>
+<li><strong>Lines (comments):</strong> 482-485</li>
+<li><strong>Lines (code):</strong> 487-489</li>
 </ul>
 </details>
-<h4 id="parameters-24" tabindex="-1">Parameters</h4>
+<h4 id="parameters-25" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6657,7 +6725,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-15" tabindex="-1">Returns</h4>
+<h4 id="returns-16" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6669,6 +6737,63 @@
 <tr>
 <td style="text-align:left">Number</td>
 <td style="text-align:left">Em Conversion</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-hypotenuse" tabindex="-1">hypotenuse()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Calculates the hypotenuse of a triangle</p>
+<ul>
+<li>Can be used to get length between two corners of a rectangle</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 505-509</li>
+<li><strong>Lines (code):</strong> 511-513</li>
+</ul>
+</details>
+<h4 id="parameters-26" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$width</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The width of the triangle</td>
+</tr>
+<tr>
+<td style="text-align:left">$height</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The height of the triangle</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-17" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">Hypotenuse of a triangle</td>
 </tr>
 </tbody>
 </table>

@@ -1,0 +1,65 @@
+---
+title: Popovers
+intro: Popovers are clickable elements that show content relative to the toggle
+layout: unformatted
+---
+
+<h2 class="h2">Example with placements</h2>
+
+{% for placement in placements -%}
+
+  <button class="button" type="button" data-ulu-popover-trigger='{
+    "floating" : { "placement" : "{{ placement }}" }
+  }'>
+    <span>Placement ({{ placement }})</span>
+    <span class="button__icon">
+      <span data-feather="fas fa-chevron-down"></span>
+    </span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      <p>
+        This is the popover body area <a href="#">test link</a>
+      </p>
+      {{ placeholder.paragraph }}
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+
+{% endfor %}
+
+<h2 class="h2">With Footer</h2>
+
+<div>
+  <button class="button" type="button" data-ulu-popover-trigger>
+    <span>Show Popover</span>
+    <span class="button__icon">
+      <span data-feather="fas fa-chevron-down"></span>
+    </span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      This is the popover body area <a href="#">test link</a>
+    </div>
+    <div class="popover__footer">Popover Footer</div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+
+<h2 class="h2">No Arrow</h2>
+
+<div>
+  <button class="button" type="button" data-ulu-popover-trigger>
+    <span>Show Popover</span>
+    <span class="button__icon">
+      <span data-feather="fas fa-chevron-down"></span>
+    </span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+</div>

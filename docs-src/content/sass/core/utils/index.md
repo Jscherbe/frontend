@@ -291,8 +291,8 @@ Provides user with a fallback for a calc that's just an enhancement
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 476-479
-- **Lines (code):** 481-488
+- **Lines (comments):** 491-494
+- **Lines (code):** 496-503
 
 </details>
 
@@ -541,7 +541,7 @@ Returns true if we should include something (map of booleans)
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 130-131
-- **Lines (code):** 133-147
+- **Lines (code):** 133-153
 
 </details>
 
@@ -561,7 +561,67 @@ Returns true if we should include something (map of booleans)
 
 |Type|Description|
 |:--|:--|
-|Map|With properties (unit, value)|
+|Map|With properties (unit, value, invalid [true/false if not number])|
+
+    
+
+#### Throw
+
+- Expected Number, got #\{ meta.type-of($number) } for #{ $number }
+    
+
+#### Require
+
+- [strip-unit()](/sass/core/utils/#function-strip-unit)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  add-unit() {#function-add-unit}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Adds unit to unitless number
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 155-158
+- **Lines (code):** 160-162
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$number|`Number`|The unitless number to add unit to|
+|$unit|`String`|The unit to add to number|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|String|Number with unit attached (can't be used in maths)|
 
     
 
@@ -589,8 +649,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 149-153
-- **Lines (code):** 155-163
+- **Lines (comments):** 164-168
+- **Lines (code):** 170-178
 
 </details>
 
@@ -640,8 +700,8 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 165-168
-- **Lines (code):** 170-175
+- **Lines (comments):** 180-183
+- **Lines (code):** 185-190
 
 </details>
 
@@ -705,8 +765,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 177-178
-- **Lines (code):** 180-188
+- **Lines (comments):** 192-193
+- **Lines (code):** 195-203
 
 </details>
 
@@ -741,8 +801,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 190-191
-- **Lines (code):** 193-200
+- **Lines (comments):** 205-206
+- **Lines (code):** 208-215
 
 </details>
 
@@ -781,8 +841,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 202-202
-- **Lines (code):** 203-211
+- **Lines (comments):** 217-217
+- **Lines (code):** 218-226
 
 </details>
 
@@ -817,8 +877,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 214-218
-- **Lines (code):** 219-238
+- **Lines (comments):** 229-233
+- **Lines (code):** 234-253
 
 </details>
 
@@ -871,8 +931,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 240-244
-- **Lines (code):** 246-272
+- **Lines (comments):** 255-259
+- **Lines (code):** 261-287
 
 </details>
 
@@ -932,8 +992,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 274-278
-- **Lines (code):** 280-296
+- **Lines (comments):** 289-293
+- **Lines (code):** 295-311
 
 </details>
 
@@ -976,8 +1036,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 298-302
-- **Lines (code):** 304-312
+- **Lines (comments):** 313-317
+- **Lines (code):** 319-327
 
 </details>
 
@@ -1027,8 +1087,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 314-318
-- **Lines (code):** 320-328
+- **Lines (comments):** 329-333
+- **Lines (code):** 335-343
 
 </details>
 
@@ -1077,8 +1137,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 330-334
-- **Lines (code):** 336-351
+- **Lines (comments):** 345-349
+- **Lines (code):** 351-366
 
 </details>
 
@@ -1131,8 +1191,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 353-368
-- **Lines (code):** 370-386
+- **Lines (comments):** 368-383
+- **Lines (code):** 385-401
 
 </details>
 
@@ -1206,8 +1266,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 388-397
-- **Lines (code):** 399-401
+- **Lines (comments):** 403-412
+- **Lines (code):** 414-416
 
 </details>
 
@@ -1280,8 +1340,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 403-412
-- **Lines (code):** 414-416
+- **Lines (comments):** 418-427
+- **Lines (code):** 429-431
 
 </details>
 
@@ -1354,8 +1414,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 418-427
-- **Lines (code):** 429-431
+- **Lines (comments):** 433-442
+- **Lines (code):** 444-446
 
 </details>
 
@@ -1428,8 +1488,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 433-442
-- **Lines (code):** 444-446
+- **Lines (comments):** 448-457
+- **Lines (code):** 459-461
 
 </details>
 
@@ -1503,8 +1563,8 @@ Strips the unit from the number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 448-450
-- **Lines (code):** 452-454
+- **Lines (comments):** 463-465
+- **Lines (code):** 467-469
 
 </details>
 
@@ -1540,8 +1600,8 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 456-461
-- **Lines (code):** 463-465
+- **Lines (comments):** 471-476
+- **Lines (code):** 478-480
 
 </details>
 
@@ -1597,8 +1657,8 @@ Convert from pixel to em
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 467-470
-- **Lines (code):** 472-474
+- **Lines (comments):** 482-485
+- **Lines (code):** 487-489
 
 </details>
 
@@ -1620,6 +1680,57 @@ Convert from pixel to em
 |Type|Description|
 |:--|:--|
 |Number|Em Conversion|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  hypotenuse() {#function-hypotenuse}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Calculates the hypotenuse of a triangle
+- Can be used to get length between two corners of a rectangle
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 505-509
+- **Lines (code):** 511-513
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$width|`Number`|The width of the triangle|
+|$height|`Number`|The height of the triangle|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Number|Hypotenuse of a triangle|
 
     
   

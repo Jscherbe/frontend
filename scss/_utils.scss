@@ -128,22 +128,37 @@ $config: (
 
 // Returns number unit info, and strips the unit
 /// @param {String} $number Number to get meta info for
-/// @return {Map} With properties (unit, value)
+/// @return {Map} With properties (unit, value, invalid [true/false if not number])
 
-@function number-info($number) {
-  $is-number: meta.type-of($number) != 'number';
-  $is-unitless: math.is-unitless($number);
-  @if ($is-unitless or not $is-number) {
+@function number-info($number, $errors: false) {
+
+  @if (meta.type-of($number) == 'number') {
+    $is-unitless: math.is-unitless($number);
+    @return (
+      "unit": if($is-unitless, null, math.unit($number)),
+      "value": if($is-unitless, $number, strip-unit($number)),
+      "invalid" : false
+    );
+
+  } @else {
+    @if ($errors) {
+      @error "Expected Number, got #{ meta.type-of($number) } for #{ $number }";
+    }
     @return (
       "unit": null,
-      "value": $number 
-    );
-  } @else {
-    @return (
-      "unit" : math.unit($value), 
-      "value": math.div($number, ($number * 0 + 1))
+      "value": $number,
+      "invalid" : true
     );
   }
+}
+
+/// Adds unit to unitless number
+/// @param {Number} $number The unitless number to add unit to
+/// @param {String} $unit The unit to add to number
+/// @return {String} Number with unit attached (can't be used in maths)
+
+@function add-unit($number, $unit) {
+  @return $number + string.unquote($unit);
 }
 
 /// Reusable merge method 
@@ -485,4 +500,14 @@ $config: (
 ) {
   #{ $property } : $value;
   #{ $property } : calc(#{ $value } + #{ $responsive-change });
+}
+
+/// Calculates the hypotenuse of a triangle
+/// - Can be used to get length between two corners of a rectangle
+/// @param {Number} $width The width of the triangle
+/// @param {Number} $height The height of the triangle
+/// @return {Number} Hypotenuse of a triangle
+
+@function hypotenuse($width, $height) {
+  @return math.sqrt(math.pow($width, 2) + math.pow($height, 2));
 }

@@ -29,7 +29,8 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} arrow-size [16px] size of the dropdown arrow.
+/// @prop {Dimension} arrow-size [16px] Size of the dropdown arrow.
+/// @prop {Dimension} arrow-mask-overlap [4px] Size that the mask extends beyond the arrow size (which covers up the arrow box shadow inside the popover content). This should be adjusted based on the size of the box-shadow being used)
 /// @prop {Color} background-color [white] Background color of the popover.
 /// @prop {Dimension} border-radius [6px] Border radius of the popover.
 /// @prop {Color} color [inherit] Text color of the popover.
@@ -61,6 +62,7 @@ $-fallbacks: (
 
 $config: (
   "arrow-size"                   : 16px,
+  "arrow-mask-overlap"           : 4px,
   "background-color"             : white,
   "border-radius"                : 6px,
   "color"                        : inherit,
@@ -70,7 +72,6 @@ $config: (
   "padding-large"                : 2rem,
   "type-size"                    : null,
   "z-index"                      : true,
-  
   "box-shadow"                   : true,
   "box-shadow-footer"            : 0 0 4px,
   "box-shadow-footer-color"      : "box-shadow",
@@ -117,39 +118,9 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("popover");
-  $arrow-size-half: math.div(get("arrow-size"), 2);
 
   @if (get("arrow-size")) {
-    #{ $prefix }__arrow {
-      display: block;
-      visibility: hidden;
-      z-index: 1;
-      &,
-      &:before {
-        position: absolute;
-        width: get("arrow-size");
-        height: get("arrow-size");
-        background: inherit;
-      }
-      &:before {
-        visibility: visible;
-        content: '';
-        transform: rotate(45deg);
-        // box-shadow: $box-shadow;
-      }
-      [data-placement^='top'] > & {
-        bottom: -($arrow-size-half);
-      }
-      [data-placement^='bottom'] > & {
-        top: -($arrow-size-half);
-      }
-      [data-placement^='left'] > & {
-        right: -($arrow-size-half);
-      }
-      [data-placement^='right'] > & {
-        left: -($arrow-size-half);
-      }
-    }
+    @include -arrow-styles();
   }
   // Default position is on the right of the container (Popper handles positioning)
   #{ $prefix } {
@@ -258,6 +229,68 @@ $config: (
       #{ $prefix }__arrow  {
         display: none;
       }
+    }
+  }
+}
+
+@mixin -arrow-styles() {
+  $prefix: selector.class("popover");
+  $size: get("arrow-size");
+  $half: math.div($size, 2);
+  $size-info: utils.number-info($size);
+  $unitless: map.get($size-info, "value");
+  $unit: map.get($size-info, "unit");
+  $hypotenuse: utils.hypotenuse($unitless, $unitless);
+  $hypotenuse-half: math.div($hypotenuse, 2);
+  $overlap: utils.strip-unit(get("arrow-mask-overlap"));
+  $mask-height: utils.add-unit($hypotenuse-half + $overlap, $unit);
+  $mask-width: utils.add-unit($hypotenuse + $overlap, $unit);
+
+  #{ $prefix }__arrow {
+    visibility: hidden;
+    z-index: 1;
+    &,
+    &:before,
+    &:after {
+      display: block;
+      position: absolute;
+      width: $size;
+      height: $size;
+      background: inherit;
+    }
+    &:before,
+    &:after {
+      visibility: visible;
+      content: '';
+    }
+    &:before {
+      box-shadow: get("box-shadow");
+      transform: rotate(45deg);
+    }
+    // Masking shape
+    &:after {
+      background: inherit;
+      background: inherit;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: $mask-height;
+      width: $mask-width;
+    }
+    [data-placement^='top'] > & {
+      bottom: -($half);
+      transform: rotate(180deg); // Rotate w. mask
+    }
+    [data-placement^='bottom'] > & {
+      top: -($half);
+    }
+    [data-placement^='left'] > & {
+      right: -($half);
+      transform: rotate(90deg); // Rotate w. mask
+    }
+    [data-placement^='right'] > & {
+      left: -($half);
+      transform: rotate(-90deg); // Rotate w. mask
     }
   }
 }
