@@ -16008,8 +16008,6 @@ ul.list-inline,
           transform: rotate(45deg);
 }
 .popover__arrow:after {
-  background: inherit;
-  background: inherit;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -16038,6 +16036,10 @@ ul.list-inline,
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
+}
+
+[data-placement^=top] > .popover__footer ~ .popover__arrow:before, [data-placement^=top] > .popover__footer ~ .popover__arrow:after {
+  background-color: var(--site-color-header-background);
 }
 
 .popover {
@@ -16090,8 +16092,7 @@ ul.list-inline,
 }
 
 .popover__footer {
-  -webkit-box-shadow: 0 0 4px var(--site-color-box-shadow);
-          box-shadow: 0 0 4px var(--site-color-box-shadow);
+  border-top: 1px solid #dfdfdf;
   padding: 0.25rem 1rem;
   background-color: var(--site-color-header-background);
   border-top-left-radius: 0;
