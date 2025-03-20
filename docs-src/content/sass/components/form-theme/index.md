@@ -143,9 +143,9 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |color|CssValue|inherit|Color of the text of the form.|
-|color-placeholder|CssValue|"type-tertiary"|Color for the placeh|
-|drupal|Map|false||
-|error-color|Map|"danger"||
+|color-placeholder|CssValue|"type-tertiary"|Color for the placeholder text.|
+|drupal|Boolean|false|Toggle if using drupal to include drupal specific styling.|
+|error-color|Color|"danger"|Type color for errors.|
 |error-highlight-color|Map|rgb(251, 242, 242)||
 |error-selector|Map|".is-danger"||
 |file-button-style|Map|true||

@@ -16,9 +16,9 @@
 /// Module Settings
 /// @type Map
 /// @prop {CssValue} color [inherit] Color of the text of the form.
-/// @prop {CssValue} color-placeholder ["type-tertiary"] Color for the placeh
-/// @prop {} drupal [false]
-/// @prop {} error-color ["danger"]
+/// @prop {CssValue} color-placeholder ["type-tertiary"] Color for the placeholder text.
+/// @prop {Boolean} drupal [false] Toggle if using drupal to include drupal specific styling.
+/// @prop {Color} error-color ["danger"] Type color for errors.
 /// @prop {} error-highlight-color [rgb(251, 242, 242)]
 /// @prop {} error-selector [".is-danger"]
 /// @prop {} file-button-style [true]

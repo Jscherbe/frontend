@@ -1,5 +1,6 @@
 import * as ulu from "../../../js/index.js";
 import "./search.js";
+import { init as initListGrid, setConfig as setConfigListGrid } from "./list-grid-switcher.js";
 
 window.Ulu = ulu;
 
@@ -21,3 +22,20 @@ ulu.ui.slider.init();
 ulu.ui.flipcard.init();
 ulu.ui.themeToggle.init();
 ulu.ui.detailsGroup.init();
+
+setConfigListGrid({
+  onChange(container, value) {
+    const isList = value === "list";
+    const cards = container.querySelectorAll(".card");
+    const cardGrid = container.querySelector(".card-grid");
+    if (cards) {
+      cards.forEach(card => {
+        card.classList[isList ? "add" : "remove"]("card--horizontal");
+      });
+    }
+    if (cardGrid) {
+      cardGrid.classList[isList ? "add" : "remove"]("card-grid--one-column");
+    }
+  }
+});
+initListGrid();

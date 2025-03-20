@@ -47,3 +47,29 @@ intro: Card Grids are...
 {% demoCardGrid 3 'card-grid--compact' %}
 
 {% demoCardGrid 3 '' 'card--w-image card--image-fit card--horizontal' %}
+
+<section class="list-grid" data-list-grid="grid">
+  <header class="list-grid__header">
+    <h3 class="h3">List Grid with Switcher</h3>
+    <div class="list-grid__toolbar site-toolbar">
+      <button 
+        class="icon-switch" 
+        type="button" 
+        data-list-grid-toggle
+        aria-label="Toggle List/Grid Mode"
+      >
+        <span class="icon-switch__icon fa-solid fa-list" data-list-grid-toggle-list></span>
+        <span class="icon-switch__icon is-active" data-list-grid-toggle-grid>
+          <!-- need svg icon -->
+          <svg class="inline-icon" viewBox="0 0 19 19">
+            <rect fill="currentColor" x="0" y="0" width="8" height="8" rx="1.24" ry="1.24"/>
+            <rect fill="currentColor" x="11" y="0" width="8" height="8" rx="1.24" ry="1.24"/>
+            <rect fill="currentColor" x="0" y="11" width="8" height="8" rx="1.24" ry="1.24"/>
+            <rect fill="currentColor" x="11" y="11" width="8" height="8" rx="1.24" ry="1.24"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+  {% demoCardGrid 3 'list-grid__rows' 'card--w-image card--image-fit card--horizontal list-grid__card' %}
+</section>

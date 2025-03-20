@@ -1,0 +1,35 @@
+@use "vars";
+@use "ulu";
+
+.icon-switch {
+  display: inline-flex;
+  // border-radius: 20px;
+  background-color: ulu.cssvar-use("color-control-background");
+  padding: 0.3em;
+  // margin: ulu.button-get("margin");
+}
+
+.icon-switch__icon {
+  flex: 1 1 0px;
+  border-radius: 3px;
+  width: 1.8em;
+  height: 1.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // color: ulu.cssvar-use("color-disabled");
+  color: white;
+  &:not(:last-child) {
+    margin-right: 0.25em;
+  }
+  &:hover:not(.is-active) {
+    color: gray;
+  }
+  &.is-active {
+    background-color: white;
+    color: ulu.cssvar-use("color-control-background");
+    box-shadow: ulu.element-get("box-shadow-raised");
+    // color: ulu.cssvar-use("color-active");
+    // background-color: ulu.cssvar-use("color-base");
+  }
+}
