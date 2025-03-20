@@ -12903,6 +12903,10 @@ component:button
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
 }
 
+.card--no-image .card__image {
+  display: none;
+}
+
 .card--image-fit .card__image img {
   padding: 1rem;
   -o-object-fit: contain;

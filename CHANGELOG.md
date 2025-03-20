@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.26
+
+- scss/components/card
+  - Make modifier card--no-image, which is used to inform layout in the card when it doesn't have an image, now hides the image as well (with CSS)
+  
 ## Version 0.1.0-beta.25
 
 - scss/components/accordion
