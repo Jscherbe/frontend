@@ -4,6 +4,8 @@ intro: Cards are...
 
 ---
 
+<h2 class="h2">Interactive Card Demo</h2>
+
 <div id="icd" class="interactive-demo">
   <div id="icd-display" class="interactive-demo__display">
   </div>
@@ -44,12 +46,14 @@ intro: Cards are...
       <button type="button" id="icdSubmit" class="button">Refresh</button>
     </div>
   </form>
-  <div><em>Note the following config combinations are not currently supported</em></div>
-  <dl>
-    <dt>Overlay</dt>
-    <dd>No Image</dd>
-    <dd>Icon</dd>
-</dl>
+  <div class="callout">
+    <h3 class="h4">The following configuration combinations are not currently supported</h3>
+    <dl>
+      <dt>Overlay</dt>
+      <dd>No Image</dd>
+      <dd>Icon</dd>
+    </dl>
+  </div>
 </div>
 
 
