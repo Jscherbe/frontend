@@ -41,19 +41,12 @@ intro: Cards are...
         <option value="horizontal">Horizontal</option>
         <option value="overlay">Overlay</option>
       </select>
+      <div class="form-theme__description">Note: Overlay is not compatible with "Icon" and "No Image" options.</div>
     </div>
     <div class="form-theme__actions">
       <button type="button" id="icdSubmit" class="button">Refresh</button>
     </div>
   </form>
-  <div class="callout">
-    <h3 class="h4">The following configuration combinations are not currently supported</h3>
-    <dl>
-      <dt>Overlay</dt>
-      <dd>No Image</dd>
-      <dd>Icon</dd>
-    </dl>
-  </div>
 </div>
 
 
