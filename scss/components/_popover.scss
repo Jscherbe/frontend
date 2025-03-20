@@ -41,13 +41,12 @@ $-fallbacks: (
 /// @prop {Dimension} type-size [null] Font size of the popover.
 /// @prop {Number} z-index [true] z-index of the popover.
 /// @prop {CssValue} box-shadow [true] Box shadow of the popover.
-/// @prop {CssValue} box-shadow-footer [0 0 4px] Box shadow of the popover footer.
-/// @prop {String} box-shadow-footer-color ["box-shadow"] Color of the footer's box shadow.
 /// @prop {Color} header-background-color [#ccc] Background color of the popover header
 /// @prop {Color} header-color [null] Text color for the header.
 /// @prop {Color} header-media-background-color [black] background color for header media.
 /// @prop {Dimension} header-padding-y [0.25rem] Vertical padding of the header.
 /// @prop {Color} footer-background-color [#ccc] Background color of the footer.
+/// @prop {Color} footer-border-top [1px solid #dfdfdf] Optional border used to separate the content from footer
 /// @prop {Color} footer-color [null] Text color of the footer.
 /// @prop {Dimension} footer-padding-y [0.25rem] Vertical padding of the footer.
 /// @prop {Dimension} footer-padding-y-large [0.5rem] Vertical padding of the footer if using "--large" or "--large-x" styling.
@@ -73,12 +72,11 @@ $config: (
   "type-size"                    : null,
   "z-index"                      : true,
   "box-shadow"                   : true,
-  "box-shadow-footer"            : 0 0 4px,
-  "box-shadow-footer-color"      : "box-shadow",
   "header-background-color"      : #ccc,
   "header-color"                 : null,
   "header-media-background-color": black,
   "header-padding-y"             : 0.25rem,
+  "footer-border-top"            : 1px solid #dfdfdf,  
   "footer-background-color"      : #ccc,
   "footer-color"                 : null,
   "footer-padding-y"             : 0.25rem,
@@ -168,7 +166,7 @@ $config: (
     background-color: color.get(get("header-media-background-color"));
   }
   #{ $prefix }__footer {
-    box-shadow: get("box-shadow-footer") color.get(get("box-shadow-footer-color"));
+    border-top: get("footer-border-top");
     padding: get("footer-padding-y") get("padding");
     color: color.get(get("footer-color"));
     background-color: color.get(get("footer-background-color"));
@@ -269,28 +267,35 @@ $config: (
     }
     // Masking shape
     &:after {
-      background: inherit;
-      background: inherit;
       top: 50%;
       left: 50%;
       transform: translateX(-50%);
       height: $mask-height;
       width: $mask-width;
     }
-    [data-placement^='top'] > & {
+    [data-placement^="top"] > & {
       bottom: -($half);
       transform: rotate(180deg); // Rotate w. mask
     }
-    [data-placement^='bottom'] > & {
+    [data-placement^="bottom"] > & {
       top: -($half);
     }
-    [data-placement^='left'] > & {
+    [data-placement^="left"] > & {
       right: -($half);
       transform: rotate(90deg); // Rotate w. mask
     }
-    [data-placement^='right'] > & {
+    [data-placement^="right"] > & {
       left: -($half);
       transform: rotate(-90deg); // Rotate w. mask
+    }
+  }
+  // Account for footer and change arrow color when positioned next to it
+  #{ $prefix }__footer ~ #{ $prefix }__arrow {
+    [data-placement^="top"] > & {
+      &:before,
+      &:after {
+        background-color: get("footer-background-color");
+      }
     }
   }
 }

@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.28
+
+- scss/components/popover
+  - Remove options (footer-box-shadow, footer-box-shadow-color) as it interferes with main popover box shadow and arrow box shadow. 
+  - Added "footer-border-top" to separate footer from content (useful for showing overflow)
+
 ## Version 0.1.0-beta.27
 
 - scss/components/popover

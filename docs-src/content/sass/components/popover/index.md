@@ -49,12 +49,11 @@ $config: (
   "type-size"                    : null,
   "z-index"                      : true,
   "box-shadow"                   : true,
-  "box-shadow-footer"            : 0 0 4px,
-  "box-shadow-footer-color"      : "box-shadow",
   "header-background-color"      : #ccc,
   "header-color"                 : null,
   "header-media-background-color": black,
   "header-padding-y"             : 0.25rem,
+  "footer-border-top"            : 1px solid #dfdfdf,  
   "footer-background-color"      : #ccc,
   "footer-color"                 : null,
   "footer-padding-y"             : 0.25rem,
@@ -78,8 +77,8 @@ $config: (
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** variable
-- **Lines (comments):** 30-61
-- **Lines (code):** 63-94
+- **Lines (comments):** 30-60
+- **Lines (code):** 62-92
 
 </details>
 
@@ -102,13 +101,12 @@ $config: (
 |type-size|Dimension|null|Font size of the popover.|
 |z-index|Number|true|z-index of the popover.|
 |box-shadow|CssValue|true|Box shadow of the popover.|
-|box-shadow-footer|CssValue|0 0 4px|Box shadow of the popover footer.|
-|box-shadow-footer-color|String|"box-shadow"|Color of the footer's box shadow.|
 |header-background-color|Color|#ccc|Background color of the popover header|
 |header-color|Color|null|Text color for the header.|
 |header-media-background-color|Color|black|background color for header media.|
 |header-padding-y|Dimension|0.25rem|Vertical padding of the header.|
 |footer-background-color|Color|#ccc|Background color of the footer.|
+|footer-border-top|Color|1px solid #dfdfdf|Optional border used to separate the content from footer|
 |footer-color|Color|null|Text color of the footer.|
 |footer-padding-y|Dimension|0.25rem|Vertical padding of the footer.|
 |footer-padding-y-large|Dimension|0.5rem|Vertical padding of the footer if using "--large" or "--large-x" styling.|
@@ -152,8 +150,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 96-99
-- **Lines (code):** 101-103
+- **Lines (comments):** 94-97
+- **Lines (code):** 99-101
 
 </details>
 
@@ -211,8 +209,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 115-117
-- **Lines (code):** 119-234
+- **Lines (comments):** 113-115
+- **Lines (code):** 117-232
 
 </details>
 
@@ -266,8 +264,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
-- **Lines (comments):** 105-108
-- **Lines (code):** 110-113
+- **Lines (comments):** 103-106
+- **Lines (code):** 108-111
 
 </details>
 
