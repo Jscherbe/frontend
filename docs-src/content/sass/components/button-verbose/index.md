@@ -188,7 +188,7 @@ Prints component styles
 - **Group:** button-verbose
 - **Type:** mixin
 - **Lines (comments):** 90-92
-- **Lines (code):** 94-139
+- **Lines (code):** 94-142
 
 </details>
 

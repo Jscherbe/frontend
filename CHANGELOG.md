@@ -1,5 +1,14 @@
 # Change Log
 
+## Version 0.1.0-beta.29 (unreleased)
+
+- scss/components/card
+  - Add cursor pointer to card__title-link and move default title hover styles from card__title to card__title-link
+- scss/components/button-verbose
+  - Make inline modifier remove margin right if last child
+- scss/components/form-theme
+  - Add "description-line-height" option defaulting to typography line-height dense
+
 ## Version 0.1.0-beta.28
 
 - scss/components/popover

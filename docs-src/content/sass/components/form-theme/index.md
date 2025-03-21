@@ -98,6 +98,7 @@ $config: (
   "description-color"                         : false,
   "description-margin"                        : (0.25em 0),
   "description-max-width"                     : 25em,
+  "description-line-height"                   : true,
   "fieldset-background"                       : transparent,
   "fieldset-border"                           : none,
   "fieldset-margin-bottom"                    : 1rem,
@@ -130,8 +131,8 @@ $config: (
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** variable
-- **Lines (comments):** 16-99
-- **Lines (code):** 101-184
+- **Lines (comments):** 25-109
+- **Lines (code):** 111-195
 
 </details>
 
@@ -203,6 +204,7 @@ $config: (
 |description-color|Map|false||
 |description-margin|Map|(0.25em 0)||
 |description-max-width|Map|25em||
+|description-line-height|Number|true|Line height for description element, defaults to typograpahy line-height-dense|
 |fieldset-background|Map|transparent||
 |fieldset-border|Map|none||
 |fieldset-margin-bottom|Map|1rem||
@@ -256,8 +258,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 186-189
-- **Lines (code):** 191-193
+- **Lines (comments):** 197-200
+- **Lines (code):** 202-204
 
 </details>
 
@@ -315,8 +317,8 @@ Output component stylesheet
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 208-210
-- **Lines (code):** 212-249
+- **Lines (comments):** 220-222
+- **Lines (code):** 224-261
 
 </details>
 
@@ -367,8 +369,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 488-488
-- **Lines (code):** 489-496
+- **Lines (comments):** 500-500
+- **Lines (code):** 501-508
 
 </details>
 
@@ -403,8 +405,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 498-498
-- **Lines (code):** 499-505
+- **Lines (comments):** 510-510
+- **Lines (code):** 511-518
 
 </details>
 
@@ -439,8 +441,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 507-507
-- **Lines (code):** 508-519
+- **Lines (comments):** 520-520
+- **Lines (code):** 521-532
 
 </details>
 
@@ -475,8 +477,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 521-521
-- **Lines (code):** 522-525
+- **Lines (comments):** 534-534
+- **Lines (code):** 535-538
 
 </details>
 
@@ -506,8 +508,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 527-527
-- **Lines (code):** 528-530
+- **Lines (comments):** 540-540
+- **Lines (code):** 541-543
 
 </details>
 
@@ -537,8 +539,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 532-532
-- **Lines (code):** 533-586
+- **Lines (comments):** 545-545
+- **Lines (code):** 546-599
 
 </details>
 
@@ -578,8 +580,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 588-588
-- **Lines (code):** 589-617
+- **Lines (comments):** 601-601
+- **Lines (code):** 602-630
 
 </details>
 
@@ -623,8 +625,8 @@ Get a config option
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** function
-- **Lines (comments):** 195-198
-- **Lines (code):** 200-202
+- **Lines (comments):** 206-209
+- **Lines (code):** 211-214
 
 </details>
 
