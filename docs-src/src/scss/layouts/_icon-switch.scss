@@ -1,35 +1,85 @@
-@use "vars";
+
+////
+/// @group icon-switch
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+
+// @use "../selector";
+// @use "../utils";
+// @use "color";
+// @use "element";
+
+@use "../../../../scss/element";
+@use "../../../../scss/color";
+@use "../../../../scss/selector";
+@use "../../../../scss/utils";
+
 @use "ulu";
 
-.icon-switch {
-  display: inline-flex;
-  // border-radius: 20px;
-  background-color: ulu.cssvar-use("color-control-background");
-  padding: 0.3em;
-  // margin: ulu.button-get("margin");
+/// Module Settings
+/// @type Map
+
+
+$config: (
+  "background-color" : 'ulu.cssvar-use("color-control-background")',
+  "background-color-active" : white,
+  "icon-color" : white,
+  "icon-color-hover" : gray
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-icon-switch-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
 }
 
-.icon-switch__icon {
-  flex: 1 1 0px;
-  border-radius: 3px;
-  width: 1.8em;
-  height: 1.8em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // color: ulu.cssvar-use("color-disabled");
-  color: white;
-  &:not(:last-child) {
-    margin-right: 0.25em;
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-icon-switch-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "icon-switch [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-icon-switch-styles();
+
+@mixin styles {
+  .icon-switch {
+    display: inline-flex;
+    background-color: get("background-color");
+    padding: 0.3em;
   }
-  &:hover:not(.is-active) {
-    color: gray;
-  }
-  &.is-active {
-    background-color: white;
-    color: ulu.cssvar-use("color-control-background");
-    box-shadow: ulu.element-get("box-shadow-raised");
-    // color: ulu.cssvar-use("color-active");
-    // background-color: ulu.cssvar-use("color-base");
+  
+  .icon-switch__icon {
+    flex: 1 1 0px;
+    border-radius: 3px;
+    width: 1.8em;
+    height: 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: color.get(get("icon-color"));
+    &:not(:last-child) {
+      margin-right: 0.25em;
+    }
+    &:hover:not(.is-active) {
+      color: color.get(get("icon-color"));
+    }
+    &.is-active {
+      background-color: color.get(get("background-color-active"));
+      color: ulu.cssvar-use("color-control-background");
+      box-shadow: element.get("box-shadow-raised");
+    }
   }
 }
+
+@include styles()

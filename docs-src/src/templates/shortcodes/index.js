@@ -12,6 +12,7 @@ import fullscreenIntertitle from "./fullscreenIntertitle.js";
 import headline from "./headline.js";
 import demoCardGrid from "./demoCardGrid.js";
 import demoAccordion from "./demoAccordion.js";
+import svgBoxes from "./svgBoxes.js";
 
 export const shortcodes = {
   popoverGridItem,
@@ -26,6 +27,7 @@ export const shortcodes = {
   spokeSpinner,
   headline,
   demoCardGrid,
+  svgBoxes
 };
 
 export const pairedShortcodes = {
