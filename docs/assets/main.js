@@ -73,15 +73,15 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
-const defaults$a = {
+const defaults$b = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
   iconClassPrevious: "css-icon  css-icon--angle-left",
   iconClassNext: "css-icon  css-icon--angle-right"
 };
-let currentSettings = { ...defaults$a };
+let currentSettings = { ...defaults$b };
 function getDefaultSettings() {
-  return { ...defaults$a };
+  return { ...defaults$b };
 }
 function updateSettings(changes) {
   Object.assign(currentSettings, changes);
@@ -298,12 +298,12 @@ const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   setPositionClasses,
   wasClickOutside
 }, Symbol.toStringTag, { value: "Module" }));
-function init$g() {
+function init$h() {
   addScrollbarProperty();
 }
 const page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$g
+  init: init$h
 }, Symbol.toStringTag, { value: "Module" }));
 function removeArrayElement(array, element) {
   var index2 = array.indexOf(element);
@@ -311,7 +311,7 @@ function removeArrayElement(array, element) {
     array.splice(index2, 1);
   }
 }
-const config = {
+const config$1 = {
   debug: false,
   warningsAlways: true,
   errorsAlways: true,
@@ -319,7 +319,7 @@ const config = {
 };
 const hasConsole = "console" in window;
 function allow(context) {
-  return hasConsole && config.debug && ((context == null ? void 0 : context.debug) || context == null);
+  return hasConsole && config$1.debug && ((context == null ? void 0 : context.debug) || context == null);
 }
 function getName(context) {
   var _a;
@@ -328,12 +328,12 @@ function getName(context) {
 function output(method, context, messages) {
   const label = getName(context) || "Logger";
   console[method](label, ...messages);
-  if (config.outputContext) {
+  if (config$1.outputContext) {
     console.log("Context:\n", context);
   }
 }
 function set(changes) {
-  Object.assign(config, changes);
+  Object.assign(config$1, changes);
 }
 function log(context, ...messages) {
   if (allow(context)) {
@@ -341,12 +341,12 @@ function log(context, ...messages) {
   }
 }
 function logWarning(context, ...messages) {
-  if (config.warningsAlways || allow(context)) {
+  if (config$1.warningsAlways || allow(context)) {
     output("warn", context, messages);
   }
 }
 function logError$1(context, ...messages) {
-  if (config.errorsAlways || allow(context)) {
+  if (config$1.errorsAlways || allow(context)) {
     output("error", context, messages);
   }
 }
@@ -891,16 +891,16 @@ const pauseYoutubeVideo = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.d
   pauseVideos: pauseVideos$1,
   prepVideos: prepVideos$1
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$c = {
+const attrs$d = {
   init: "data-ulu-dialog-init",
   dialog: "data-ulu-dialog",
   trigger: "data-ulu-dialog-trigger",
   close: "data-ulu-dialog-close"
 };
-const attrSelector$c = (key2) => `[${attrs$c[key2]}]`;
-const attrSelectorInitial$9 = (key2) => `${attrSelector$c(key2)}:not([${attrs$c.init}])`;
+const attrSelector$d = (key2) => `[${attrs$d[key2]}]`;
+const attrSelectorInitial$9 = (key2) => `${attrSelector$d(key2)}:not([${attrs$d.init}])`;
 const queryAllInitial$3 = (key2) => document.querySelectorAll(attrSelectorInitial$9(key2));
-const defaults$9 = {
+const defaults$a = {
   /**
    * Use non-modal interface for dialog
    */
@@ -919,11 +919,11 @@ const defaults$9 = {
    */
   pauseVideos: true
 };
-let currentDefaults$3 = { ...defaults$9 };
+let currentDefaults$3 = { ...defaults$a };
 function setDefaults$3(options) {
   currentDefaults$3 = Object.assign({}, currentDefaults$3, options);
 }
-function init$f() {
+function init$g() {
   document.addEventListener(getName$1("pageModified"), setup$d);
   setup$d();
 }
@@ -935,7 +935,7 @@ function setup$d() {
 }
 function setupTrigger$2(trigger) {
   trigger.addEventListener("click", handleTrigger);
-  trigger.setAttribute(attrs$c.init, "");
+  trigger.setAttribute(attrs$d.init, "");
   function handleTrigger() {
     var _a;
     const id2 = trigger.dataset.uluDialogTrigger;
@@ -955,7 +955,7 @@ function setupTrigger$2(trigger) {
 function setupDialog(dialog2) {
   const options = getDialogOptions(dialog2);
   dialog2.addEventListener("click", handleClicks);
-  dialog2.setAttribute(attrs$c.init, "");
+  dialog2.setAttribute(attrs$d.init, "");
   if (options.documentEnd) {
     document.body.appendChild(dialog2);
   }
@@ -988,22 +988,22 @@ function pauseVideos(dialog2) {
 }
 const dialog = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$c,
-  defaults: defaults$9,
+  attrs: attrs$d,
+  defaults: defaults$a,
   getDialogOptions,
-  init: init$f,
+  init: init$g,
   setDefaults: setDefaults$3,
   setup: setup$d,
   setupDialog,
   setupTrigger: setupTrigger$2
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$b = {
+const attrs$c = {
   builder: "data-ulu-modal-builder",
   body: "data-ulu-modal-builder-body",
   resizer: "data-ulu-modal-builder-resizer"
 };
-const attrSelector$b = (key2) => `[${attrs$b[key2]}]`;
-const defaults$8 = {
+const attrSelector$c = (key2) => `[${attrs$c[key2]}]`;
+const defaults$9 = {
   title: null,
   titleIcon: null,
   nonModal: false,
@@ -1051,34 +1051,34 @@ const defaults$8 = {
               ${config2.titleIcon ? `<span class="modal__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="modal__title-text">${config2.title}</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${attrs$c.close} autofocus>
+            <button class="modal__close" aria-label="Close modal" ${attrs$d.close} autofocus>
               ${config2.templateCloseIcon(config2)}
             </button>
           </header>
         ` : ""}
-        <div class="modal__body" ${attrs$b.body}></div>
-        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$b.resizer}>
+        <div class="modal__body" ${attrs$c.body}></div>
+        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$c.resizer}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
       </div>
     `;
   }
 };
-let currentDefaults$2 = { ...defaults$8 };
+let currentDefaults$2 = { ...defaults$9 };
 function setDefaults$2(options) {
   currentDefaults$2 = Object.assign({}, currentDefaults$2, options);
 }
-function init$e() {
+function init$f() {
   document.addEventListener(getName$1("pageModified"), setup$c);
   setup$c();
 }
 function setup$c() {
-  const builders = document.querySelectorAll(attrSelector$b("builder"));
+  const builders = document.querySelectorAll(attrSelector$c("builder"));
   builders.forEach(setupBuilder);
 }
 function setupBuilder(element) {
   const options = getDatasetJson(element, "uluModalBuilder");
-  element.removeAttribute(attrs$b.builder);
+  element.removeAttribute(attrs$c.builder);
   buildModal(element, options);
 }
 function buildModal(content, options) {
@@ -1094,16 +1094,16 @@ function buildModal(content, options) {
   }
   const markup = config2.template(content.id, config2);
   const modal = createElementFromHtml(markup.trim());
-  const selectChild = (key2) => modal.querySelector(attrSelector$b(key2));
+  const selectChild = (key2) => modal.querySelector(attrSelector$c(key2));
   const body = selectChild("body");
   const resizer2 = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config2);
   content.removeAttribute("id");
   content.removeAttribute("hidden");
-  content.removeAttribute(attrs$b.builder);
+  content.removeAttribute(attrs$c.builder);
   content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
-  modal.setAttribute(attrs$c.dialog, JSON.stringify(dialogOptions));
+  modal.setAttribute(attrs$d.dialog, JSON.stringify(dialogOptions));
   if (config2.hasResizer) {
     new Resizer(modal, resizer2, {
       fromLeft: config2.position === "right"
@@ -1122,7 +1122,7 @@ function buildModal(content, options) {
   return { modal };
 }
 function separateDialogOptions(config2) {
-  return Object.keys(defaults$9).reduce((acc, key2) => {
+  return Object.keys(defaults$a).reduce((acc, key2) => {
     if (key2 in config2) {
       acc[key2] = config2[key2];
     }
@@ -1132,8 +1132,8 @@ function separateDialogOptions(config2) {
 const modalBuilder = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   buildModal,
-  defaults: defaults$8,
-  init: init$e,
+  defaults: defaults$9,
+  init: init$f,
   setDefaults: setDefaults$2,
   setup: setup$c,
   setupBuilder
@@ -1259,16 +1259,16 @@ __publicField(_Flipcard, "defaults", {
   }
 });
 let Flipcard = _Flipcard;
-const attrs$a = {
+const attrs$b = {
   init: "data-ulu-flipcard-init",
   flipcard: "data-ulu-flipcard",
   front: "data-ulu-flipcard-front",
   back: "data-ulu-flipcard-back"
 };
-const attrSelector$a = (key2) => `[${attrs$a[key2]}]`;
-const attrSelectorInitial$8 = (key2) => `${attrSelector$a(key2)}:not([${attrs$a.init}])`;
+const attrSelector$b = (key2) => `[${attrs$b[key2]}]`;
+const attrSelectorInitial$8 = (key2) => `${attrSelector$b(key2)}:not([${attrs$b.init}])`;
 const instances$4 = [];
-function init$d() {
+function init$e() {
   document.addEventListener(getName$1("pageModified"), setup$b);
   setup$b();
 }
@@ -1277,7 +1277,7 @@ function setup$b() {
   builders.forEach(setupFlipcard);
 }
 function setupFlipcard(container2) {
-  container2.setAttribute(attrs$a.init, "");
+  container2.setAttribute(attrs$b.init, "");
   const options = getDatasetOptionalJson(container2, "uluFlipcard");
   const config2 = Object.assign({}, options);
   const front = container2.querySelector(attrSelectorInitial$8("front"));
@@ -1287,11 +1287,11 @@ function setupFlipcard(container2) {
 const flipcard = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Flipcard,
-  attrs: attrs$a,
-  init: init$d,
+  attrs: attrs$b,
+  init: init$e,
   setup: setup$b
 }, Symbol.toStringTag, { value: "Module" }));
-function init$c(selector = "[data-grid]", classes) {
+function init$d(selector = "[data-grid]", classes) {
   document.addEventListener(getName$1("pageModified"), () => setup$a(selector, classes));
   document.addEventListener(getName$1("pageResized"), () => setup$a(selector, classes));
   setup$a(selector, classes);
@@ -1301,7 +1301,7 @@ function setup$a(selector, classes) {
 }
 const grid = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$c,
+  init: init$d,
   setup: setup$a
 }, Symbol.toStringTag, { value: "Module" }));
 function createPager() {
@@ -2927,7 +2927,7 @@ const computePosition = (reference, floating, options) => {
     platform: platformWithCache
   });
 };
-const defaults$7 = {
+const defaults$8 = {
   strategy: "absolute",
   placement: "bottom",
   inline: false,
@@ -2940,7 +2940,7 @@ const defaults$7 = {
   // Options for arrow (not element)
 };
 function createFloatingUi(elements, config2) {
-  const options = Object.assign({}, defaults$7, config2);
+  const options = Object.assign({}, defaults$8, config2);
   const { placement, strategy } = options;
   const { trigger, content, contentArrow } = elements;
   return autoUpdate(trigger, content, () => {
@@ -2984,27 +2984,27 @@ function addPlugin(plugin, option, overrides = {}) {
 const floatingUi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   createFloatingUi,
-  defaults: defaults$7
+  defaults: defaults$8
 }, Symbol.toStringTag, { value: "Module" }));
 const instances$3 = /* @__PURE__ */ new WeakMap();
 const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
-const attrs$9 = {
+const attrs$a = {
   trigger: "data-ulu-popover-trigger",
   content: "data-ulu-popover-content",
   arrow: "data-ulu-popover-arrow",
   anchor: "data-ulu-popover-trigger-anchor"
 };
-const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
+const attrSelector$a = (key2) => `[${attrs$a[key2]}]`;
 const collapsibleDefaults = {
   clickOutsideCloses: true,
   escapeCloses: true
 };
-function init$b() {
+function init$c() {
   document.addEventListener(getName$1("pageModified"), setup$9);
   setup$9();
 }
 function setup$9() {
-  const triggers = document.querySelectorAll(attrSelector$9("trigger"));
+  const triggers = document.querySelectorAll(attrSelector$a("trigger"));
   const resolved = Array.from(triggers).filter((trigger) => !instances$3.has(trigger)).map(resolve).filter((v) => v);
   resolved.forEach(({ elements, options, floatingOptions }) => {
     instances$3.set(elements.trigger, new Popover(elements, options, floatingOptions));
@@ -3017,8 +3017,8 @@ function resolve(trigger) {
   const elements = {
     trigger,
     content,
-    anchor: trigger.querySelector(attrSelector$9("anchor")) || trigger,
-    contentArrow: content.querySelector(attrSelector$9("arrow"))
+    anchor: trigger.querySelector(attrSelector$a("anchor")) || trigger,
+    contentArrow: content.querySelector(attrSelector$a("arrow"))
   };
   const floatingOptions = options.floating || {};
   delete options.floating;
@@ -3035,13 +3035,13 @@ function getContentByTrigger(trigger) {
   const ariaControls = trigger.getAttribute("aria-controls");
   if (ariaControls) {
     content = document.getElementById(ariaControls);
-  } else if ((_a = trigger == null ? void 0 : trigger.nextElementSibling) == null ? void 0 : _a.hasAttribute(attrs$9.content)) {
+  } else if ((_a = trigger == null ? void 0 : trigger.nextElementSibling) == null ? void 0 : _a.hasAttribute(attrs$a.content)) {
     content = trigger.nextElementSibling;
   } else {
     const children = Array.from(trigger.parentNode.children);
     const triggerIndex = children.findIndex((c) => c === trigger);
     const childrenAfter = children.slice(triggerIndex);
-    content = childrenAfter.find((child) => child.matches(attrSelector$9("content")));
+    content = childrenAfter.find((child) => child.matches(attrSelector$a("content")));
   }
   if (!content) {
     logError("Unable to resolve 'content' element for popover", trigger);
@@ -3082,20 +3082,20 @@ const popover = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   Popover,
   getContentByTrigger,
-  init: init$b,
+  init: init$c,
   instances: instances$3,
   resolve,
   setup: setup$9
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$8 = {
+const attrs$9 = {
   trigger: "data-ulu-tooltip",
   init: "data-ulu-init",
   body: "data-ulu-tooltip-display-body",
   arrow: "data-ulu-tooltip-arrow"
 };
-const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
-const attrSelectorInitial$7 = (key2) => `${attrSelector$8(key2)}:not([${attrs$8.init}])`;
-function init$a() {
+const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
+const attrSelectorInitial$7 = (key2) => `${attrSelector$9(key2)}:not([${attrs$9.init}])`;
+function init$b() {
   document.addEventListener(getName$1("pageModified"), setup$8);
   setup$8();
 }
@@ -3169,7 +3169,7 @@ const _Tooltip = class _Tooltip {
   createContentElement() {
     const { options } = this;
     const content = createElementFromHtml(options.template(options));
-    const body = content.querySelector(attrSelector$8("body"));
+    const body = content.querySelector(attrSelector$9("body"));
     const innerContent = this.getInnerContent();
     if (options.isHtml) {
       body.innerHTML = innerContent;
@@ -3181,7 +3181,7 @@ const _Tooltip = class _Tooltip {
       content.classList.add(options.contentClass);
     }
     this.elements.content = content;
-    this.elements.contentArrow = content.querySelector(attrSelector$8("arrow"));
+    this.elements.contentArrow = content.querySelector(attrSelector$9("arrow"));
     document.body.appendChild(content);
   }
   attachHandlers() {
@@ -3325,7 +3325,7 @@ __publicField(_Tooltip, "defaults", {
   template(_config) {
     return `
         <div class="popover popover--tooltip">
-          <div class="popover__inner" ${attrs$8.body}>
+          <div class="popover__inner" ${attrs$9.body}>
           </div>
           <span class="popover__arrow" data-ulu-tooltip-arrow></span>
         </div>
@@ -3345,7 +3345,7 @@ let Tooltip = _Tooltip;
 const tooltip = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Tooltip,
-  init: init$a,
+  init: init$b,
   setup: setup$8,
   setupTrigger: setupTrigger$1
 }, Symbol.toStringTag, { value: "Module" }));
@@ -8219,20 +8219,20 @@ const requiredElements = [
   "track",
   "slides"
 ];
-const attrs$7 = {
+const attrs$8 = {
   init: "data-ulu-slider-init",
   slider: "data-ulu-slider",
   track: "data-ulu-slider-track",
   trackContainer: "data-ulu-slider-track-container",
   controls: "data-ulu-slider-control-context"
 };
-const attrSelector$7 = (key2) => `[${attrs$7[key2]}]`;
-const attrSelectorInitial$6 = (key2) => `${attrSelector$7(key2)}:not([${attrs$7.init}])`;
-const defaults$6 = {
+const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
+const attrSelectorInitial$6 = (key2) => `${attrSelector$8(key2)}:not([${attrs$8.init}])`;
+const defaults$7 = {
   amount: createPager()
 };
 const instances$2 = [];
-function init$9() {
+function init$a() {
   document.addEventListener(getName$1("pageModified"), setup$7);
   setup$7();
 }
@@ -8241,9 +8241,9 @@ function setup$7() {
   builders.forEach(setupSlider$1);
 }
 function setupSlider$1(container2) {
-  container2.setAttribute(attrs$7.init, "");
+  container2.setAttribute(attrs$8.init, "");
   const options = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$6, options);
+  const config2 = Object.assign({}, defaults$7, options);
   const elements = {
     container: container2,
     track: container2.querySelector("[data-ulu-slider-track]"),
@@ -8633,8 +8633,8 @@ let Slider = _Slider;
 const slider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Slider,
-  attrs: attrs$7,
-  init: init$9,
+  attrs: attrs$8,
+  init: init$a,
   setup: setup$7,
   setupSlider: setupSlider$1
 }, Symbol.toStringTag, { value: "Module" }));
@@ -8884,7 +8884,7 @@ const AriaTablist = /* @__PURE__ */ getDefaultExportFromCjs(ariaTablist_minExpor
 const initAttr = "data-ulu-tablist-init";
 const errorHeader = "[data-ulu-tablist] error:";
 const instances$1 = [];
-function init$8(options = {}) {
+function init$9(options = {}) {
   const initial = () => {
     initWithin(document, options);
     instances$1.forEach(openByCurrentHash);
@@ -8982,28 +8982,28 @@ function setHeights(element) {
 }
 const tabs = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$8,
+  init: init$9,
   initWithin,
   instances: instances$1,
   setup: setup$6
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$6 = {
+const attrs$7 = {
   trigger: "data-ulu-proxy-click",
   init: "data-ulu-proxy-click-init"
 };
-const attrSelector$6 = (key2) => `[${attrs$6[key2]}]`;
-const attrSelectorInitial$5 = (key2) => `${attrSelector$6(key2)}:not([${attrs$6.init}])`;
-const defaults$5 = {
+const attrSelector$7 = (key2) => `[${attrs$7[key2]}]`;
+const attrSelectorInitial$5 = (key2) => `${attrSelector$7(key2)}:not([${attrs$7.init}])`;
+const defaults$6 = {
   selector: "[data-ulu-proxy-click-source]",
   selectorPreventBase: "input, select, textarea, button, a, [tabindex='-1']",
   selectorPrevent: "",
   mousedownDurationPrevent: 250
 };
-let currentDefaults$1 = { ...defaults$5 };
+let currentDefaults$1 = { ...defaults$6 };
 function setDefaults$1(options) {
   currentDefaults$1 = Object.assign({}, currentDefaults$1, options);
 }
-function init$7() {
+function init$8() {
   document.addEventListener(getName$1("pageModified"), () => setup$5());
   setup$5();
 }
@@ -9015,7 +9015,7 @@ function setup$5(context = document) {
     const child = proxy.querySelector(options.selector);
     if (child) {
       attachHandlers(proxy, child, options);
-      proxy.setAttribute(attrs$6.init, "");
+      proxy.setAttribute(attrs$7.init, "");
     } else {
       console.error("Unable to locate proxy click source", options.selector);
     }
@@ -9042,12 +9042,12 @@ function attachHandlers(proxy, child, options) {
 const proxyClick = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   attachHandlers,
-  defaults: defaults$5,
-  init: init$7,
+  defaults: defaults$6,
+  init: init$8,
   setDefaults: setDefaults$1,
   setup: setup$5
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$5 = {
+const attrs$6 = {
   init: "data-ulu-scrollpoint-init",
   /**
    * Individual scrollpoint
@@ -9058,10 +9058,10 @@ const attrs$5 = {
   // Goes on container for all items
   // group: "data-ulu-scrollpoint-group"
 };
-const attrSelector$5 = (key2) => `[${attrs$5[key2]}]`;
-const attrSelectorInitial$4 = (key2) => `${attrSelector$5(key2)}:not([${attrs$5.init}])`;
+const attrSelector$6 = (key2) => `[${attrs$6[key2]}]`;
+const attrSelectorInitial$4 = (key2) => `${attrSelector$6(key2)}:not([${attrs$6.init}])`;
 const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$4(key2));
-function init$6() {
+function init$7() {
   document.addEventListener(getName$1("pageModified"), setup$4);
   setup$4();
 }
@@ -9070,7 +9070,7 @@ function setup$4() {
   elements.forEach((element) => {
     const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
     const config2 = Object.assign({}, elOptions);
-    element.setAttribute(attrs$5.init, "");
+    element.setAttribute(attrs$6.init, "");
     new Scrollpoint(element, config2);
   });
 }
@@ -9286,8 +9286,8 @@ let Scrollpoint = _Scrollpoint;
 const scrollpoint = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Scrollpoint,
-  attrs: attrs$5,
-  init: init$6,
+  attrs: attrs$6,
+  init: init$7,
   setup: setup$4
 }, Symbol.toStringTag, { value: "Module" }));
 function printOnly(content) {
@@ -9300,20 +9300,20 @@ function printElement(element) {
   var content = element.innerHTML;
   printOnly(content);
 }
-const attrs$4 = {
+const attrs$5 = {
   trigger: "data-ulu-print",
   init: "data-ulu-print-init"
 };
-const attrSelector$4 = (key2) => `[${attrs$4[key2]}]`;
-const attrSelectorInitial$3 = (key2) => `${attrSelector$4(key2)}:not([${attrs$4.init}])`;
+const attrSelector$5 = (key2) => `[${attrs$5[key2]}]`;
+const attrSelectorInitial$3 = (key2) => `${attrSelector$5(key2)}:not([${attrs$5.init}])`;
 const queryAllInitial$1 = (key2) => document.querySelectorAll(attrSelectorInitial$3(key2));
-const defaults$4 = {
+const defaults$5 = {
   /**
    * Print element/selector
    */
   element: null
 };
-function init$5() {
+function init$6() {
   document.addEventListener(getName$1("pageModified"), setup$3);
   setup$3();
 }
@@ -9325,7 +9325,7 @@ function setup$3() {
   });
 }
 function setupTrigger(trigger, options) {
-  const config2 = Object.assign({}, defaults$4, options);
+  const config2 = Object.assign({}, defaults$5, options);
   trigger.addEventListener("click", (event) => {
     if (config2.element) {
       const element = getElement(config2.element);
@@ -9341,51 +9341,51 @@ function setupTrigger(trigger, options) {
 }
 const print = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$4,
-  init: init$5
+  attrs: attrs$5,
+  init: init$6
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$3 = {
+const attrs$4 = {
   opened: "data-ulu-print-details-opened"
 };
-const attrSelector$3 = (key2) => `[${attrs$3[key2]}]`;
-const defaults$3 = {
+const attrSelector$4 = (key2) => `[${attrs$4[key2]}]`;
+const defaults$4 = {
   selector: "details:not([open])"
 };
-function init$4(options) {
-  const config2 = Object.assign({}, defaults$3, options);
+function init$5(options) {
+  const config2 = Object.assign({}, defaults$4, options);
   document.addEventListener(getName$1("beforePrint"), () => {
     document.querySelectorAll(config2.selector).forEach((details) => {
       if (!details.open) {
-        details.setAttribute(attrs$3.opened, true);
+        details.setAttribute(attrs$4.opened, true);
         details.open = true;
       }
     });
   });
   document.addEventListener(getName$1("afterPrint"), () => {
-    document.querySelectorAll(attrSelector$3("opened")).forEach((details) => {
-      details.removeAttribute(attrs$3.opened);
+    document.querySelectorAll(attrSelector$4("opened")).forEach((details) => {
+      details.removeAttribute(attrs$4.opened);
       details.open = false;
     });
   });
 }
 const printDetails = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$3,
-  init: init$4
+  attrs: attrs$4,
+  init: init$5
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$2 = {
+const attrs$3 = {
   init: "data-ulu-scroll-slider-init",
   slider: "data-ulu-scroll-slider",
   track: "data-ulu-scroll-slider-track",
   controls: "data-ulu-scroll-slider-control-context"
 };
-const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
-const attrSelectorInitial$2 = (key2) => `${attrSelector$2(key2)}:not([${attrs$2.init}])`;
+const attrSelector$3 = (key2) => `[${attrs$3[key2]}]`;
+const attrSelectorInitial$2 = (key2) => `${attrSelector$3(key2)}:not([${attrs$3.init}])`;
 const instances = [];
-const defaults$2 = {
+const defaults$3 = {
   amount: createPager()
 };
-function init$3() {
+function init$4() {
   document.addEventListener(getName$1("pageModified"), setup$2);
   setup$2();
 }
@@ -9394,22 +9394,22 @@ function setup$2() {
   builders.forEach(setupSlider);
 }
 function setupSlider(container2) {
-  container2.setAttribute(attrs$2.init, "");
+  container2.setAttribute(attrs$3.init, "");
   const options = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$2, options);
+  const config2 = Object.assign({}, defaults$3, options);
   const elements = {
-    track: container2.querySelector(attrSelector$2("track")),
-    controls: container2.querySelector(attrSelector$2("controls"))
+    track: container2.querySelector(attrSelector$3("track")),
+    controls: container2.querySelector(attrSelector$3("controls"))
   };
   instances.push(new OverflowScroller(elements, config2));
 }
 const scrollSlider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$2,
-  init: init$3,
+  attrs: attrs$3,
+  init: init$4,
   setup: setup$2
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$1 = {
+const attrs$2 = {
   init: "data-ulu-theme-toggle-init",
   toggle: "data-ulu-theme-toggle",
   toggleIcon: "data-ulu-theme-toggle-icon",
@@ -9417,20 +9417,20 @@ const attrs$1 = {
   toggleRemote: "data-ulu-theme-toggle-remote",
   state: "data-ulu-theme-toggle-state"
 };
-const attrSelector$1 = (key2) => `[${attrs$1[key2]}]`;
-const attrSelectorInitial$1 = (key2) => `${attrSelector$1(key2)}:not([${attrs$1.init}])`;
+const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
+const attrSelectorInitial$1 = (key2) => `${attrSelector$2(key2)}:not([${attrs$2.init}])`;
 const queryAllInitial = (key2) => document.querySelectorAll(attrSelectorInitial$1(key2));
 const queryRemotes = (group) => document.querySelectorAll(
-  `[${attrs$1.toggleRemote}="${group}"]`
+  `[${attrs$2.toggleRemote}="${group}"]`
 );
 const queryRemotesInitial = (group) => document.querySelectorAll(
-  `[${attrs$1.toggleRemote}="${group}"]:not([${attrs$1.init}])`
+  `[${attrs$2.toggleRemote}="${group}"]:not([${attrs$2.init}])`
 );
 const debugLog = (...msgs) => console.log("Theme Toggle:", ...msgs);
 const requiredToggleProps = ["target"];
 const checkToggleProps = hasRequiredProps(requiredToggleProps);
 const when = (cond, fn) => cond ? fn() : null;
-const defaults$1 = {
+const defaults$2 = {
   /**
    * Object of each theme that should be toggle/cycled through
    */
@@ -9486,11 +9486,11 @@ const defaults$1 = {
    */
   debug: false
 };
-let currentDefaults = { ...defaults$1 };
+let currentDefaults = { ...defaults$2 };
 function setDefaults(options) {
   currentDefaults = Object.assign({}, currentDefaults, options);
 }
-function init$2() {
+function init$3() {
   document.addEventListener(getName$1("pageModified"), setup$1);
   setup$1();
 }
@@ -9499,7 +9499,7 @@ function setup$1() {
 }
 function setupToggle(toggle, passedOptions) {
   const elementOptions = getDatasetJson(toggle, "uluThemeToggle");
-  const options = Object.assign({}, defaults$1, passedOptions, elementOptions);
+  const options = Object.assign({}, defaults$2, passedOptions, elementOptions);
   if (!checkToggleProps(options)) {
     console.error(`Missing a required option: ${requiredToggleProps.join(", ")}`);
     return;
@@ -9511,9 +9511,9 @@ function setupToggle(toggle, passedOptions) {
     console.error("Unable to resolve initial key");
     return;
   }
-  setState(initialKey, ctx);
+  setState$1(initialKey, ctx);
   toggle.addEventListener("click", onToggleClick);
-  toggle.setAttribute(attrs$1.init, "");
+  toggle.setAttribute(attrs$2.init, "");
   attachRemotes();
   document.addEventListener(getName$1("pageModified"), attachRemotes);
   function toggleState(event) {
@@ -9524,7 +9524,7 @@ function setupToggle(toggle, passedOptions) {
       console.error("Issue getting next theme key");
       return;
     }
-    setState(key2, { ...ctx, event });
+    setState$1(key2, { ...ctx, event });
   }
   function onToggleClick(event) {
     toggleState(event);
@@ -9534,7 +9534,7 @@ function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach((remote) => {
       remote.addEventListener("click", onToggleClick);
-      remote.setAttribute(attrs$1.init, "");
+      remote.setAttribute(attrs$2.init, "");
     });
   }
   function cleanupRemotes() {
@@ -9542,12 +9542,12 @@ function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach((remote) => {
       remote.removeEventListener("click", onToggleClick);
-      remote.removeAttribute(attrs$1.init, "");
+      remote.removeAttribute(attrs$2.init, "");
     });
   }
   function destroy() {
     toggle.removeEventListener("click", onToggleClick);
-    toggle.removeAttribute(attrs$1.init, "");
+    toggle.removeAttribute(attrs$2.init, "");
     cleanupRemotes();
     document.removeEventListener(getName$1("pageModified"), attachRemotes);
   }
@@ -9557,11 +9557,11 @@ function setupToggle(toggle, passedOptions) {
     options,
     toggleState,
     setState(themeKey) {
-      setState(themeKey, ctx);
+      setState$1(themeKey, ctx);
     }
   };
 }
-function setState(key2, ctx) {
+function setState$1(key2, ctx) {
   if (!key2) {
     console.error("Missing key");
     return;
@@ -9591,13 +9591,13 @@ function setState(key2, ctx) {
   const otherTargetClasses = concatThemeClasses(otherThemes, "targetClass");
   const otherIconClasses = concatThemeClasses(otherThemes, "iconClass");
   elements.targets.forEach((element) => {
-    element.setAttribute(attrs$1.state, key2);
+    element.setAttribute(attrs$2.state, key2);
     element.classList.remove(...otherTargetClasses);
     element.classList.add(...resolveClasses(theme.targetClass));
   });
   elements.toggles.forEach((element) => {
-    const label = element.querySelector(attrSelector$1("toggleLabel"));
-    const icon = element.querySelector(attrSelector$1("toggleIcon"));
+    const label = element.querySelector(attrSelector$2("toggleLabel"));
+    const icon = element.querySelector(attrSelector$2("toggleIcon"));
     if (label) {
       label.textContent = theme.label;
     }
@@ -9605,7 +9605,7 @@ function setState(key2, ctx) {
       icon.classList.remove(...otherIconClasses);
       icon.classList.add(...resolveClasses(theme.iconClass));
     }
-    element.setAttribute(attrs$1.state, key2);
+    element.setAttribute(attrs$2.state, key2);
   });
   if (options.onChange) {
     options.onChange(stateCtx);
@@ -9660,25 +9660,25 @@ function getStorageKey(options) {
 }
 const themeToggle = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$1,
-  defaults: defaults$1,
-  init: init$2,
+  attrs: attrs$2,
+  defaults: defaults$2,
+  init: init$3,
   setDefaults,
   setup: setup$1,
   setupToggle
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs = {
+const attrs$1 = {
   init: "data-ulu-details-group-init",
   childInit: "data-ulu-details-group-child-init",
   group: "data-ulu-details-group"
 };
-const attrSelector = (key2) => `[${attrs[key2]}]`;
-const attrSelectorInitial = (key2) => `${attrSelector(key2)}:not([${attrs.init}])`;
-const defaults = {
+const attrSelector$1 = (key2) => `[${attrs$1[key2]}]`;
+const attrSelectorInitial = (key2) => `${attrSelector$1(key2)}:not([${attrs$1.init}])`;
+const defaults$1 = {
   onlyOneOpen: true,
   childSelector: ":scope > details"
 };
-function init$1() {
+function init$2() {
   document.addEventListener(getName$1("pageModified"), () => setup());
   setup();
 }
@@ -9692,18 +9692,18 @@ function setup(context = document) {
 }
 function setupGroup(element) {
   const elementOptions = getDatasetOptionalJson(element, "uluDetailsGroup");
-  const options = Object.assign({}, defaults, elementOptions);
-  element.setAttribute(attrs.t, "");
+  const options = Object.assign({}, defaults$1, elementOptions);
+  element.setAttribute(attrs$1.t, "");
   setupChildren();
   function queryChildren() {
     return element.querySelectorAll(options.childSelector);
   }
   function setupChildren() {
     queryChildren().forEach((child) => {
-      if (child.hasAttribute(attrs.childInit)) {
+      if (child.hasAttribute(attrs$1.childInit)) {
         return;
       } else {
-        child.setAttribute(attrs.childInit, "");
+        child.setAttribute(attrs$1.childInit, "");
       }
       console.log(child);
       child.addEventListener("toggle", toggleHandler);
@@ -9723,16 +9723,16 @@ function setupGroup(element) {
   function destroy() {
     queryChildren().forEach((child) => {
       child.removeEventListener("toggle", toggleHandler);
-      child.removeAttribute(attrs.childInit);
+      child.removeAttribute(attrs$1.childInit);
     });
-    element.removeAttribute(attrs.init);
+    element.removeAttribute(attrs$1.init);
   }
   return { destroy, element, setupChildren };
 }
 const detailsGroup = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs,
-  init: init$1,
+  attrs: attrs$1,
+  init: init$2,
   setup,
   setupGroup
 }, Symbol.toStringTag, { value: "Module" }));
@@ -15920,9 +15920,9 @@ const instantsearch = /* @__PURE__ */ getDefaultExportFromCjs(instantsearch_prod
 const container = document.querySelector(".site-search");
 if (container) {
   console.log("init");
-  init();
+  init$1();
 }
-function init() {
+function init$1() {
   const searchClient = algoliasearch(
     "3PP8YC3MQX",
     "ab9e8106a1317eb9a3da408229b70590"
@@ -15957,24 +15957,112 @@ function init() {
   ]);
   search.start();
 }
+const attrs = {
+  container: "data-list-grid",
+  toggle: "data-list-grid-toggle",
+  toggleItemList: "data-list-grid-toggle-list",
+  toggleItemGrid: "data-list-grid-toggle-grid"
+};
+const defaults = {
+  activeClass: "is-active",
+  localStorageKey: "siteListGrid",
+  onChange() {
+  }
+};
+let config = defaults;
+const attrSelector = (key2) => `[${attrs[key2]}]`;
+function getPreference() {
+  return localStorage.getItem(config.localStorageKey);
+}
+function setConfig(changes) {
+  config = Object.assign({}, defaults, changes);
+}
+function init() {
+  const preference = getPreference();
+  const containers = document.querySelectorAll(attrSelector("container"));
+  if (!containers) return;
+  containers.forEach((container2) => {
+    const toggle = container2.querySelector(attrSelector("toggle"));
+    if (preference) {
+      setState(container2, preference);
+    }
+    if (toggle) {
+      toggle.addEventListener("click", onToggle);
+    }
+  });
+}
+function setState(container2, value) {
+  const toggle = container2.querySelector(attrSelector("toggle"));
+  container2.setAttribute(attrs.container, value);
+  localStorage.setItem(config.localStorageKey, value);
+  if (toggle) {
+    setStateToggle(toggle, value);
+  } else {
+    console.warn("Unable to get toggle for list grid");
+  }
+  if (config.onChange) {
+    try {
+      config.onChange(container2, value);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+function setStateToggle(toggle, value) {
+  const isList = value === "list";
+  const list = toggle.querySelector(attrSelector("toggleItemList"));
+  const grid2 = toggle.querySelector(attrSelector("toggleItemGrid"));
+  if (list && grid2) {
+    list.classList[isList ? "add" : "remove"](config.activeClass);
+    grid2.classList[isList ? "remove" : "add"](config.activeClass);
+  } else {
+    console.warn("Unable to get elements for setStateToggle()");
+  }
+}
+function onToggle() {
+  const container2 = this.closest(attrSelector("container"));
+  if (!container2) {
+    console.warn("Unable to find container list grid");
+    return;
+  }
+  const state = container2.getAttribute(attrs.container);
+  const to = state === "list" ? "grid" : "list";
+  setState(container2, to);
+}
 window.Ulu = ulu;
 configureIcons();
-init$g();
+init$h();
+init$d();
 init$c();
 init$b();
-init$a();
-init$8();
-init$e();
+init$9();
 init$f();
+init$g();
+init$8();
 init$7();
 init$6();
 init$5();
 init$4();
+init$a();
+init$e();
 init$3();
-init$9();
-init$d();
 init$2();
-init$1();
+setConfig({
+  onChange(container2, value) {
+    const isList = value === "list";
+    const cards = container2.querySelectorAll(".card");
+    const cardGrid = container2.querySelector(".card-grid");
+    if (cards) {
+      cards.forEach((card) => {
+        card.classList[isList ? "add" : "remove"]("card--horizontal");
+      });
+    }
+    if (cardGrid) {
+      cardGrid.classList[isList ? "add" : "remove"]("card-grid--one-column");
+    }
+  }
+});
+init();
 {
   __vitePreload(() => import("./chunks/modulepreload-polyfill.DaKOjhqt.js"), true ? [] : void 0, import.meta.url);
 }
