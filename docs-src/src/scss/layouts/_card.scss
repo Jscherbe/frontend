@@ -1,5 +1,7 @@
 @use "ulu";
 
+// @joe-check @daniel needs to be added to card component once reviewed
+
 .card-grid--one-column {
   grid-template-columns: 1fr;
   .card {
@@ -7,28 +9,11 @@
     height: auto !important;
   }
   .card__image {
-    // width: 10rem;
     flex-basis: 15rem;
     flex-shrink: 0;
     min-height: 0;
     @include ulu.breakpoint-max("small") {
       flex-basis: 10rem;
-    }
-  }
-  .card--horizontal-w-columns {
-    .card__body {
-      @include ulu.breakpoint-min("small") {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1em;
-      }
-    }
-    .card__content {
-      margin-top: 0;
-      @include ulu.breakpoint-min("small") {
-        border-left: ulu.element-get-rule-style("light");
-        padding-left: 1em;
-      }
     }
   }
 }

@@ -3,6 +3,8 @@
 /// @group icon-switch
 ////
 
+// @joe-check @daniel needs to be made into component once reviewed
+
 @use "sass:map";
 @use "sass:math";
 @use "sass:list";
@@ -24,7 +26,7 @@
 
 
 $config: (
-  "background-color" : 'ulu.cssvar-use("color-control-background")',
+  "background-color" : ulu.cssvar-use("color-control-background"),
   "background-color-active" : white,
   "icon-color" : white,
   "icon-color-hover" : gray
