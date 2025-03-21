@@ -31,7 +31,8 @@
     "docs:assets": "vite --config docs.vite.config.js --force",
     "docs:assets:build": "vite build --config docs.vite.config.js",
     "docs:assets:build:prod": "IS_PRODUCTION=true vite build --config docs.vite.config.js",
-    "deploy" : "npm run build && npm run types && npm run docs:build:prod && npm run docs:assets:build:prod"
+    "deploy" : "npm run build && npm run types && npm run docs:build:prod && npm run docs:assets:build:prod",
+    "deploy:docs" : "npm run docs:build:prod && npm run docs:assets:build:prod"
   },
   "repository": {
     "type": "git",
