@@ -28,42 +28,41 @@ $-fallbacks: (
 /// @prop {CssValue} color-placeholder ["type-tertiary"] Color for the placeholder text.
 /// @prop {Boolean} drupal [false] Toggle if using drupal to include drupal specific styling.
 /// @prop {Color} error-color ["danger"] Type color for errors.
-/// @prop {} error-highlight-color [rgb(251, 242, 242)]
-/// @prop {} error-selector [".is-danger"]
-/// @prop {} file-button-style [true]
-/// @prop {} font-weight-label [bold]
-/// @prop {} font-weight-legend [bold]
-/// @prop {} font-weight-placeholder [normal]
-/// @prop {} font-weight-input [null]
-/// @prop {} font-weight-textarea [null]
-/// @prop {} font-weight-select [null]
-/// @prop {} input-border [element.get-rule-style()]
-/// @prop {} input-border-radius [0]
-/// @prop {} input-margin-y [0.75em]
-/// @prop {} input-padding-x [0.5em]
-/// @prop {} input-padding-y [0.25em]
-/// @prop {} input-min-width [10em]
-/// @prop {} input-background-color [white]
-/// @prop {} item-border-radius [null]
-/// @prop {} item-highlight-width [6px]
-/// @prop {} required-color ["danger"]
-/// @prop {} text-input-margin-bottom [0.5em]
-/// @prop {} text-input-margin-top [1em]
-/// @prop {} warning-color ["warning"]
-/// @prop {} warning-highlight-color [rgb(255, 249, 237)]
-/// @prop {} warning-selector [".is-warning"]
-/// @prop {} check-input-color [currentColor]
-/// @prop {} check-input-size [1.15em]
-/// @prop {} check-input-touch-size [2em]
-/// @prop {} check-input-background-color [white]
-/// @prop {} check-input-background-color-checked [white]
-/// @prop {} check-input-background-color-hover [white]
-/// @prop {} check-input-background-color-indeterminate [white]
-/// @prop {} check-input-border [null]
-/// @prop {} check-input-border-color-hover [null]
-/// @prop {} check-input-border-color-checked [null]
-/// @prop {} check-input-border-color-indeterminate [null]
-/// @prop {} check-input-border-color-focus [null]
+/// @prop {Color} error-highlight-color [rgb(251, 242, 242)] Outline color of error container.
+/// @prop {String} error-selector [".is-danger"] Class for error styling.
+/// @prop {} file-button-style [true] @joe-check should this have a fallback
+/// @prop {CssValue} font-weight-label [bold] Font weight of the labels.
+/// @prop {CssValue} font-weight-legend [bold] Font weight of the legend.
+/// @prop {CssValue} font-weight-placeholder [normal] Font weight of placeholder text.
+/// @prop {CssValue} font-weight-input [null] Font weight of input text.
+/// @prop {CssValue} font-weight-textarea [null] Font weight of textarea text.
+/// @prop {CssValue} font-weight-select [null] Font weight of select text.
+/// @prop {CssValue} input-border [element.get-rule-style()] Border of the input.
+/// @prop {Dimension} input-border-radius [0] Border radius of the input.
+/// @prop {Dimension} input-padding-x [0.5em] Horizontal padding of the input.
+/// @prop {Dimension} input-padding-y [0.25em] Vertical padding of the input.
+/// @prop {Dimension} input-min-width [10em] Min width of the input.
+/// @prop {Color} input-background-color [white] Background color of the input.
+/// @prop {Dimension} item-border-radius [null] Border radius for __item.
+/// @prop {Dimension} item-highlight-width [6px] Width of the item box highlight.
+/// @prop {Color} required-color ["danger"] Color for required text.
+/// @prop {Dimension} text-input-margin-bottom [0.5em] 
+/// @prop {Dimension} text-input-margin-top [1em]
+/// @prop {Color} warning-color ["warning"]
+/// @prop {Color} warning-highlight-color [rgb(255, 249, 237)]
+/// @prop {String} warning-selector [".is-warning"]
+/// @prop {Color} check-input-color [currentColor]
+/// @prop {Dimension} check-input-size [1.15em]
+/// @prop {Dimension} check-input-touch-size [2em]
+/// @prop {Color} check-input-background-color [white]
+/// @prop {Color} check-input-background-color-checked [white]
+/// @prop {Color} check-input-background-color-hover [white]
+/// @prop {Color} check-input-background-color-indeterminate [white]
+/// @prop {} check-input-border [null] @joe-check check how this is called with a fallback in the styles mixin
+/// @prop {Color} check-input-border-color-hover [null]
+/// @prop {Color} check-input-border-color-checked [null]
+/// @prop {Color} check-input-border-color-indeterminate [null]
+/// @prop {Color} check-input-border-color-focus [null]
 /// @prop {} check-input-outline [null]
 /// @prop {} check-input-outline-hover [null]
 /// @prop {} check-input-outline-checked [null]
