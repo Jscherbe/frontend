@@ -1,0 +1,23 @@
+@use "vars";
+@use "ulu";
+
+$border: 1px solid #e5e5e5;
+
+.interactive-demo {
+  background-color: #f6f6f6;
+  border-radius: ulu.element-get("border-radius");
+  overflow: hidden;
+  border: $border;
+  @include ulu.breakpoint-min("medium") {
+    display: grid;
+    grid-template-columns: 1fr 12rem;
+  }
+}
+
+.interactive-demo__display {
+  padding: 0.75rem;
+}
+.interactive-demo__form {
+  background-color: #e5e5e5;
+  padding: 0.5rem;
+}

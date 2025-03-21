@@ -149,19 +149,34 @@ $config: (
 
 @mixin when-clickable($hover: false) {
   $prefix: selector.class("card");
+  // When proxy click enabled
   @if (get("clickable-card-enabled") and get("clickable-card-selector")) {
-    #{ $prefix } {
-      &#{ get("clickable-card-selector") } {
-        @if ($hover) {
-          #{ get("clickable-card-interact-selector") } {
-            @content;
-          }
-        } @else {
+    #{ $prefix }#{ get("clickable-card-selector") },
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable {
+      @if ($hover) {
+        #{ get("clickable-card-interact-selector") } {
           @content;
         }
+      } @else {
+        @content;
       }
     }
-  }
+  // Without proxy click (only if interactive)
+  } @else {
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable {
+      @if ($hover) {
+        #{ get("clickable-card-interact-selector") } {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  } 
 }
 
 
@@ -238,14 +253,15 @@ $config: (
     margin-bottom: get("title-margin");
     display: block;
     font-weight: get("title-font-weight");
-    @if get("title-color-hover") {
-      &:hover,
-      &:focus {
-        color: color.get(get("title-color-hover"));
-      }
-    }
     #{ $prefix }__title-link {
       all: unset;
+      cursor: pointer;
+      @if get("title-color-hover") {
+        &:hover,
+        &:focus {
+          color: color.get(get("title-color-hover"));
+        }
+      }
     }
   }
   @if get("title-color-hover") {

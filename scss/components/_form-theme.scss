@@ -7,11 +7,20 @@
 @use "sass:meta";
 @use "sass:math";
 @use "sass:list";
+
 @use "../selector";
 @use "../utils";
 @use "../color";
 @use "../element";
 @use "../typography";
+
+// Used for function fallback
+$-fallbacks: (
+  "description-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense",
+  ),
+);
 
 /// Module Settings
 /// @type Map
@@ -76,6 +85,7 @@
 /// @prop {} description-color [false]
 /// @prop {} description-margin [(0.25em 0)]
 /// @prop {} description-max-width [25em]
+/// @prop {Number} description-line-height [true] Line height for description element, defaults to typograpahy line-height-dense
 /// @prop {} fieldset-background [transparent]
 /// @prop {} fieldset-border [none]
 /// @prop {} fieldset-margin-bottom [1rem]
@@ -160,6 +170,7 @@ $config: (
   "description-color"                         : false,
   "description-margin"                        : (0.25em 0),
   "description-max-width"                     : 25em,
+  "description-line-height"                   : true,
   "fieldset-background"                       : transparent,
   "fieldset-border"                           : none,
   "fieldset-margin-bottom"                    : 1rem,
@@ -198,7 +209,8 @@ $config: (
 ///   @include ulu.component-form-theme-get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "component-form-theme [config]");
+  $value: utils.require-map-get($config, $name, "component-form-theme [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 @function -fallback($op1, $op2) {
@@ -500,6 +512,7 @@ $config: (
   margin: get("description-margin");
   font-style: italic;
   @include typography.size("small", null, true);
+  line-height: get("description-line-height");
   max-width: get("description-max-width");
   color: color.get(get("description-color"));
 }

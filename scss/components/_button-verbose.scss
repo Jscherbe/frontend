@@ -132,6 +132,9 @@ $config: (
   .button-verbose--inline {
     display: inline-block;
     margin-right: get("margin-inline");
+    &:last-child {
+      margin-right: 0;
+    }
   }
   .button-verbose--full-width {
     width: 100%;
