@@ -64,7 +64,7 @@ $config: (
   "image-border" : null, // For when you have a margin
   "image-filter-hover" : null,
   "image-margin" : null,
-  "image-icon-max-width" : 30rem,
+  "image-icon-max-width" : 8rem,
   "image-transform-hover" : null,
   "image-transition-duration" :    350ms,
   "image-transition-enabled" : true,
@@ -127,7 +127,7 @@ $config: (
 |background-color|Color|white|The background color of the card.|
 |background-color-hover|Color|rgb(242, 244, 246)|The background color of the card when hovered or focused.|
 |max-width|Dimension|28rem|The max-width of the card.|
-|body-min-height|Dimension|10rem|the min-height of the card body.|
+|body-min-height|Dimension|8rem|the min-height of the card body.|
 |border|CssValue|1px solid #ccc|The card border.|
 |border-hover|CssValue|2px solid #278cca|The card border when hovered or focused.|
 |header-margin|Dimension|0.75em|The margin for the card header.|
@@ -157,7 +157,7 @@ $config: (
 |image-transition-timing-function|CssValue|ease-in-out|The timing function for the image transition.|
 |image-fit-padding|Number|1rem|Padding on inside of image when using image fit modifier|
 |image-fit-filter|CssValue|drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2))|Filter to use on image when using image fit modifier|
-|image-icon-max-width|List|30rem|Max width for image when using the modifier on the .card__image--icon|
+|image-icon-max-width|List|10rem|Max width for image when using the modifier on the .card__image--icon|
 |image-transition-properties|List|(transform, filter)|The properties for the image transitions.|
 |horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|
 |horizontal-min-height|Unit|10rem|Minimum height when horizontal|
