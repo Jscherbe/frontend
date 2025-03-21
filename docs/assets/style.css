@@ -12788,7 +12788,6 @@ button.card:focus-within:after,
 }
 
 .card__image--icon {
-  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12802,7 +12801,7 @@ button.card:focus-within:after,
 .card__image--icon img {
   position: static;
   display: block;
-  max-width: 30rem;
+  max-width: 8rem;
   height: auto;
   top: auto;
   left: auto;
@@ -17724,7 +17723,7 @@ button.captioned-figure:focus {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background-color: var(--site-color-control-background);
+  background-color: 'ulu.cssvar-use("color-control-background")';
   padding: 0.3em;
 }
 
@@ -17750,7 +17749,7 @@ button.captioned-figure:focus {
   margin-right: 0.25em;
 }
 .icon-switch__icon:hover:not(.is-active) {
-  color: gray;
+  color: white;
 }
 .icon-switch__icon.is-active {
   background-color: white;

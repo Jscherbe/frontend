@@ -29,7 +29,7 @@
 /// @prop {Color} background-color [white] The background color of the card.
 /// @prop {Color} background-color-hover [rgb(242, 244, 246)] The background color of the card when hovered or focused.
 /// @prop {Dimension} max-width [28rem] The max-width of the card.
-/// @prop {Dimension} body-min-height [10rem] the min-height of the card body.
+/// @prop {Dimension} body-min-height [8rem] the min-height of the card body.
 /// @prop {CssValue} border [1px solid #ccc] The card border.
 /// @prop {CssValue} border-hover [2px solid #278cca] The card border when hovered or focused.
 /// @prop {Dimension} header-margin [0.75em] The margin for the card header.
@@ -59,7 +59,7 @@
 /// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
 /// @prop {Number} image-fit-padding [1rem] Padding on inside of image when using image fit modifier
 /// @prop {CssValue} image-fit-filter [drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2))] Filter to use on image when using image fit modifier
-/// @prop {List} image-icon-max-width [30rem] Max width for image when using the modifier on the .card__image--icon
+/// @prop {List} image-icon-max-width [10rem] Max width for image when using the modifier on the .card__image--icon
 /// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
 /// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
 /// @prop {Unit} horizontal-min-height [10rem] Minimum height when horizontal
@@ -94,7 +94,7 @@ $config: (
   "image-border" : null, // For when you have a margin
   "image-filter-hover" : null,
   "image-margin" : null,
-  "image-icon-max-width" : 30rem,
+  "image-icon-max-width" : 8rem,
   "image-transform-hover" : null,
   "image-transition-duration" :    350ms,
   "image-transition-enabled" : true,
@@ -323,7 +323,7 @@ $config: (
   }
 
   #{ $prefix }__image--icon {
-    background-color: transparent; 
+    // background-color: transparent; 
     display: flex;
     align-items: center;
     justify-content: center;

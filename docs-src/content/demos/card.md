@@ -30,30 +30,37 @@ intro: Cards are...
       </div>
     </fieldset>
     <div class="form-theme__item form-theme__item--select">
-      <label for="fieldImage">Action:</label>
+      <label for="fieldAction">
+        Action
+        <span class="fas fa-info-circle" data-ulu-tooltip="Proxy click only works when title is present"></span>
+      </label>
       <select id="fieldAction" name="fieldAction">
         <option value="">None</option>
         <option value="link">Card is Link</option>
         <option value="proxy" selected>Proxy Click</option>
       </select>
-      <p class="form-theme__description">Proxy click only works when title is present</p>
     </div>
     <div class="form-theme__item form-theme__item--select">
-      <label for="fieldImage">Image:</label>
-      <select id="fieldImage" name="fieldImage">
+      <label for="fieldMedia">
+        Media
+      </label>
+      <select id="fieldMedia" name="fieldMedia">
         <option value="icon">Icon</option>
         <option value="image" selected>Image</option>
+        <option value="imageFit">Image (fit)</option>
         <option value="none">No Image</option>
       </select>
     </div>
     <div class="form-theme__item form-theme__item--select">
-      <label for="fieldModifier">Modifier:</label>
-      <select id="fieldModifier" name="fieldModifier">
-        <option value="default" selected>Default</option>
+      <label for="fieldLayout">
+        Layout
+        <span class="fas fa-info-circle" data-ulu-tooltip="Overlay is not compatible with 'Icon' and 'No Image' options"></span>
+      </label>
+      <select id="fieldLayout" name="fieldLayout">
+        <option value="" selected>Default</option>
         <option value="horizontal">Horizontal</option>
         <option value="overlay">Overlay</option>
       </select>
-      <p class="form-theme__description">Overlay is not compatible with "Icon" and "No Image" options.</p>
     </div>
     <!-- <div class="form-theme__actions">
       <button type="button" id="icdSubmit" class="button button--small">Update</button>
@@ -85,14 +92,20 @@ intro: Cards are...
 
     function cardTemplate(options) {
       const when = (cond, whenTrue, whenFalse = "") => cond ? whenTrue : whenFalse;
+      const imageType = options.fieldMedia;
       const hasProxy = options.fieldAction == "proxy";
       const isLink = options.fieldAction == "link";
+      const hasImage = imageType === "image" || imageType === "imageFit";
       const element = isLink ? "a" : "article";
-      const imageType = options.fieldImage;
+      const classes = [
+        "card",
+        options.fieldLayout ? `card--${ options.fieldLayout }` : "",
+        options.fieldMedia === "imageFit" ? `card--image-fit` : "",
+      ];
 
       return `
         <${ element } 
-          class="card card--${ options.fieldModifier }"
+          class="${ classes.filter(v => v).join(' ') }"
           ${ when(hasProxy, "data-ulu-proxy-click") }
           ${ when(isLink, "href='https://www.google.com'") }
         >
@@ -118,14 +131,14 @@ intro: Cards are...
               `) }
             </div>
           `)}
-          ${ when(imageType === "image", `
+          ${ when(hasImage, `
             <div class="card__image">
               <img src="/frontend/assets/placeholder/image-1.jpg">
             </div>
           `) }
           ${ when(imageType === "icon", `
             <div class="card__image card__image--icon">
-              <span aria-hidden class="css-icon css-icon--circle-question"></span>
+              <img src="/frontend/assets/placeholder/icon-calendar.svg" width="150" height="150">
             </div>
           `) }
           ${ when(options.fieldFooter, `
