@@ -1,4 +1,27 @@
 JS Todos:
+  ☐ Maybe we should go back to classes as the base for the instances
+    * Not make it so tightly coupled like old framework but within each module
+    * Something like new UluInstance that can be extended as needed
+      * Can output instance by default
+      * Pro: Provide global debugging and global debug flag
+      * Pro: This would really help and avoid duplicate code
+      * Pro: Move common methods to class instead of utilities?
+      * Then modules can initiate classes
+        * Although it would be helpful to have attributes for init in class
+        * new InstanceManager({
+          attributes: {
+            ...attributes
+          },
+        }) 
+        instanceManager.selectInitial();
+        * Then have init() {
+          
+          instanceManager.start(functionToCreateInstance);
+          // Return the manager for the user if they need to something complicated
+          // May not be needed
+          return instanceManager;
+        }    
+      * Con Maybe: What about issues with references (ie destroy and garbage collection)?
   ✔ Setup config module @done
     ✔ Setup but issue with settings being set before changes can occur @done
   ☐ Need to double check the theme toggle

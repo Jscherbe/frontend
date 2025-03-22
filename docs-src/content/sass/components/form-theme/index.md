@@ -131,8 +131,8 @@ $config: (
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** variable
-- **Lines (comments):** 25-109
-- **Lines (code):** 111-195
+- **Lines (comments):** 25-108
+- **Lines (code):** 110-194
 
 </details>
 
@@ -147,42 +147,41 @@ $config: (
 |color-placeholder|CssValue|"type-tertiary"|Color for the placeholder text.|
 |drupal|Boolean|false|Toggle if using drupal to include drupal specific styling.|
 |error-color|Color|"danger"|Type color for errors.|
-|error-highlight-color|Map|rgb(251, 242, 242)||
-|error-selector|Map|".is-danger"||
-|file-button-style|Map|true||
-|font-weight-label|Map|bold||
-|font-weight-legend|Map|bold||
-|font-weight-placeholder|Map|normal||
-|font-weight-input|Map|null||
-|font-weight-textarea|Map|null||
-|font-weight-select|Map|null||
-|input-border|Map|element.get-rule-style()||
-|input-border-radius|Map|0||
-|input-margin-y|Map|0.75em||
-|input-padding-x|Map|0.5em||
-|input-padding-y|Map|0.25em||
-|input-min-width|Map|10em||
-|input-background-color|Map|white||
-|item-border-radius|Map|null||
-|item-highlight-width|Map|6px||
-|required-color|Map|"danger"||
-|text-input-margin-bottom|Map|0.5em||
-|text-input-margin-top|Map|1em||
-|warning-color|Map|"warning"||
-|warning-highlight-color|Map|rgb(255, 249, 237)||
-|warning-selector|Map|".is-warning"||
-|check-input-color|Map|currentColor||
-|check-input-size|Map|1.15em||
-|check-input-touch-size|Map|2em||
-|check-input-background-color|Map|white||
-|check-input-background-color-checked|Map|white||
-|check-input-background-color-hover|Map|white||
-|check-input-background-color-indeterminate|Map|white||
-|check-input-border|Map|null||
-|check-input-border-color-hover|Map|null||
-|check-input-border-color-checked|Map|null||
-|check-input-border-color-indeterminate|Map|null||
-|check-input-border-color-focus|Map|null||
+|error-highlight-color|Color|rgb(251, 242, 242)|Outline color of error container.|
+|error-selector|String|".is-danger"|Class for error styling.|
+|file-button-style|Map|true|@joe-check should this have a fallback|
+|font-weight-label|CssValue|bold|Font weight of the labels.|
+|font-weight-legend|CssValue|bold|Font weight of the legend.|
+|font-weight-placeholder|CssValue|normal|Font weight of placeholder text.|
+|font-weight-input|CssValue|null|Font weight of input text.|
+|font-weight-textarea|CssValue|null|Font weight of textarea text.|
+|font-weight-select|CssValue|null|Font weight of select text.|
+|input-border|CssValue|element.get-rule-style()|Border of the input.|
+|input-border-radius|Dimension|0|Border radius of the input.|
+|input-padding-x|Dimension|0.5em|Horizontal padding of the input.|
+|input-padding-y|Dimension|0.25em|Vertical padding of the input.|
+|input-min-width|Dimension|10em|Min width of the input.|
+|input-background-color|Color|white|Background color of the input.|
+|item-border-radius|Dimension|null|Border radius for __item.|
+|item-highlight-width|Dimension|6px|Width of the item box highlight.|
+|required-color|Color|"danger"|Color for required text.|
+|text-input-margin-bottom|Dimension|0.5em||
+|text-input-margin-top|Dimension|1em||
+|warning-color|Color|"warning"||
+|warning-highlight-color|Color|rgb(255, 249, 237)||
+|warning-selector|String|".is-warning"||
+|check-input-color|Color|currentColor||
+|check-input-size|Dimension|1.15em||
+|check-input-touch-size|Dimension|2em||
+|check-input-background-color|Color|white||
+|check-input-background-color-checked|Color|white||
+|check-input-background-color-hover|Color|white||
+|check-input-background-color-indeterminate|Color|white||
+|check-input-border|Map|null|@joe-check check how this is called with a fallback in the styles mixin|
+|check-input-border-color-hover|Color|null||
+|check-input-border-color-checked|Color|null||
+|check-input-border-color-indeterminate|Color|null||
+|check-input-border-color-focus|Color|null||
 |check-input-outline|Map|null||
 |check-input-outline-hover|Map|null||
 |check-input-outline-checked|Map|null||
@@ -258,8 +257,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 197-200
-- **Lines (code):** 202-204
+- **Lines (comments):** 196-199
+- **Lines (code):** 201-203
 
 </details>
 
@@ -317,8 +316,8 @@ Output component stylesheet
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 220-222
-- **Lines (code):** 224-261
+- **Lines (comments):** 219-221
+- **Lines (code):** 223-260
 
 </details>
 
@@ -369,8 +368,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 500-500
-- **Lines (code):** 501-508
+- **Lines (comments):** 499-499
+- **Lines (code):** 500-507
 
 </details>
 
@@ -405,8 +404,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 510-510
-- **Lines (code):** 511-518
+- **Lines (comments):** 509-509
+- **Lines (code):** 510-517
 
 </details>
 
@@ -441,8 +440,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 520-520
-- **Lines (code):** 521-532
+- **Lines (comments):** 519-519
+- **Lines (code):** 520-531
 
 </details>
 
@@ -477,8 +476,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 534-534
-- **Lines (code):** 535-538
+- **Lines (comments):** 533-533
+- **Lines (code):** 534-537
 
 </details>
 
@@ -508,8 +507,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 540-540
-- **Lines (code):** 541-543
+- **Lines (comments):** 539-539
+- **Lines (code):** 540-542
 
 </details>
 
@@ -539,8 +538,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 545-545
-- **Lines (code):** 546-599
+- **Lines (comments):** 544-544
+- **Lines (code):** 545-598
 
 </details>
 
@@ -580,8 +579,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 601-601
-- **Lines (code):** 602-630
+- **Lines (comments):** 600-600
+- **Lines (code):** 601-629
 
 </details>
 
@@ -625,8 +624,8 @@ Get a config option
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** function
-- **Lines (comments):** 206-209
-- **Lines (code):** 211-214
+- **Lines (comments):** 205-208
+- **Lines (code):** 210-213
 
 </details>
 

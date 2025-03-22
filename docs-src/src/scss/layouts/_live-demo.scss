@@ -3,7 +3,7 @@
 
 $border: 1px solid #e5e5e5;
 
-.interactive-demo {
+.live-demo {
   background-color: #f6f6f6;
   border-radius: ulu.element-get("border-radius");
   overflow: hidden;
@@ -14,10 +14,10 @@ $border: 1px solid #e5e5e5;
   }
 }
 
-.interactive-demo__display {
+.live-demo__display {
   padding: 0.75rem;
 }
-.interactive-demo__form {
+.live-demo__form {
   background-color: #e5e5e5;
   padding: 0.5rem;
 }

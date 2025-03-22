@@ -12,6 +12,7 @@ import fullscreenIntertitle from "./fullscreenIntertitle.js";
 import headline from "./headline.js";
 import demoCardGrid from "./demoCardGrid.js";
 import demoAccordion from "./demoAccordion.js";
+import liveDemo from "./liveDemo.js";
 import svgBoxes from "./svgBoxes.js";
 
 export const shortcodes = {
@@ -27,7 +28,8 @@ export const shortcodes = {
   spokeSpinner,
   headline,
   demoCardGrid,
-  svgBoxes
+  svgBoxes,
+  liveDemo
 };
 
 export const pairedShortcodes = {

@@ -1,6 +1,7 @@
 import * as ulu from "../../../js/index.js";
 import "./search.js";
 import { init as initListGrid, setConfig as setConfigListGrid } from "./list-grid-switcher.js";
+import { init as initLiveDemo } from "./live-demo.js";
 
 window.Ulu = ulu;
 
@@ -38,4 +39,6 @@ setConfigListGrid({
     }
   }
 });
+
 initListGrid();
+initLiveDemo();

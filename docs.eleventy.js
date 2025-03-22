@@ -24,6 +24,8 @@ export default async function(eleventyConfig) {
   }); 
   eleventyConfig.addPassthroughCopy("src");
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
+  eleventyConfig.addWatchTarget("docs-src/content/**/*.twig");
+
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ["h2", "h3"],
     wrapper: "div",

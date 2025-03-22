@@ -1,0 +1,64 @@
+{% set hasProxy = action == "proxy" %}
+{% set isLink = action == "link" %}
+{% set hasImage = media == "image" or media == "imageFit" %}
+{% set element = isLink ? "a" : "article" %}
+{% set classes = [
+  "card",
+  layout ? "card--" ~ layout : "",
+  media == "imageFit" ? "card--image-fit" : ""
+] %}
+
+<{{ element }} 
+  class="{{ classes|join(' ') }}"
+  {{ hasProxy ? "data-ulu-proxy-click" }}
+  {{ isLink ? "href='https://www.google.com'" }}
+>
+  {% if body %}
+    <div class="card__body">
+      {% if title %}
+        <h5 class="card__title">
+          {# If link don't nest link (no link title) #}
+          {% if isLink %}
+            Card Title
+          {% else %}
+            <a 
+              class="card__title-link" 
+              href="https://www.google.com" 
+              {{ hasProxy ? "data-ulu-proxy-click-source" }}
+            >
+              Card Title
+            </a>
+          {% endif %}
+        </h5>
+      {% endif %}
+      {% if content %}
+        <div>
+          This is the card content. It can contain around 2-3 sentences.
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if hasImage %}
+    <div class="card__image">
+      <img src="/frontend/assets/placeholder/image-1.jpg">
+    </div>
+  {% endif %}
+
+  {% if media == "icon" %}
+    <div class="card__image card__image--icon">
+      <img src="/frontend/assets/placeholder/icon-calendar.svg" width="150" height="150">
+    </div>
+  {% endif %}
+
+  {% if footer %}
+    <div class="card__footer">
+      {# If link don't nest link (no link title) #}
+      {% if isLink %}
+        Card Footer Text
+      {% else %}
+        <a class="button button--small" href="https://www.yahoo.com/">Footer</a>
+      {% endif %}
+    </div>
+  {% endif %}
+</{{ element }}>
