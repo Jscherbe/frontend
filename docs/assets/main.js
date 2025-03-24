@@ -73,15 +73,15 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
-const defaults$b = {
+const defaults$c = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
   iconClassPrevious: "css-icon  css-icon--angle-left",
   iconClassNext: "css-icon  css-icon--angle-right"
 };
-let currentSettings = { ...defaults$b };
+let currentSettings = { ...defaults$c };
 function getDefaultSettings() {
-  return { ...defaults$b };
+  return { ...defaults$c };
 }
 function updateSettings(changes) {
   Object.assign(currentSettings, changes);
@@ -298,12 +298,12 @@ const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   setPositionClasses,
   wasClickOutside
 }, Symbol.toStringTag, { value: "Module" }));
-function init$h() {
+function init$i() {
   addScrollbarProperty();
 }
 const page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$h
+  init: init$i
 }, Symbol.toStringTag, { value: "Module" }));
 function removeArrayElement(array, element) {
   var index2 = array.indexOf(element);
@@ -891,16 +891,16 @@ const pauseYoutubeVideo = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.d
   pauseVideos: pauseVideos$1,
   prepVideos: prepVideos$1
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$d = {
+const attrs$e = {
   init: "data-ulu-dialog-init",
   dialog: "data-ulu-dialog",
   trigger: "data-ulu-dialog-trigger",
   close: "data-ulu-dialog-close"
 };
-const attrSelector$d = (key2) => `[${attrs$d[key2]}]`;
-const attrSelectorInitial$9 = (key2) => `${attrSelector$d(key2)}:not([${attrs$d.init}])`;
-const queryAllInitial$3 = (key2) => document.querySelectorAll(attrSelectorInitial$9(key2));
-const defaults$a = {
+const attrSelector$e = (key2) => `[${attrs$e[key2]}]`;
+const attrSelectorInitial$a = (key2) => `${attrSelector$e(key2)}:not([${attrs$e.init}])`;
+const queryAllInitial$4 = (key2) => document.querySelectorAll(attrSelectorInitial$a(key2));
+const defaults$b = {
   /**
    * Use non-modal interface for dialog
    */
@@ -919,23 +919,23 @@ const defaults$a = {
    */
   pauseVideos: true
 };
-let currentDefaults$3 = { ...defaults$a };
+let currentDefaults$3 = { ...defaults$b };
 function setDefaults$3(options) {
   currentDefaults$3 = Object.assign({}, currentDefaults$3, options);
 }
-function init$g() {
-  document.addEventListener(getName$1("pageModified"), setup$d);
-  setup$d();
+function init$h() {
+  document.addEventListener(getName$1("pageModified"), setup$e);
+  setup$e();
 }
-function setup$d() {
-  const dialogs = queryAllInitial$3("dialog");
+function setup$e() {
+  const dialogs = queryAllInitial$4("dialog");
   dialogs.forEach(setupDialog);
-  const triggers = queryAllInitial$3("trigger");
+  const triggers = queryAllInitial$4("trigger");
   triggers.forEach(setupTrigger$2);
 }
 function setupTrigger$2(trigger) {
   trigger.addEventListener("click", handleTrigger);
-  trigger.setAttribute(attrs$d.init, "");
+  trigger.setAttribute(attrs$e.init, "");
   function handleTrigger() {
     var _a;
     const id2 = trigger.dataset.uluDialogTrigger;
@@ -955,7 +955,7 @@ function setupTrigger$2(trigger) {
 function setupDialog(dialog2) {
   const options = getDialogOptions(dialog2);
   dialog2.addEventListener("click", handleClicks);
-  dialog2.setAttribute(attrs$d.init, "");
+  dialog2.setAttribute(attrs$e.init, "");
   if (options.documentEnd) {
     document.body.appendChild(dialog2);
   }
@@ -988,22 +988,22 @@ function pauseVideos(dialog2) {
 }
 const dialog = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$d,
-  defaults: defaults$a,
+  attrs: attrs$e,
+  defaults: defaults$b,
   getDialogOptions,
-  init: init$g,
+  init: init$h,
   setDefaults: setDefaults$3,
-  setup: setup$d,
+  setup: setup$e,
   setupDialog,
   setupTrigger: setupTrigger$2
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$c = {
+const attrs$d = {
   builder: "data-ulu-modal-builder",
   body: "data-ulu-modal-builder-body",
   resizer: "data-ulu-modal-builder-resizer"
 };
-const attrSelector$c = (key2) => `[${attrs$c[key2]}]`;
-const defaults$9 = {
+const attrSelector$d = (key2) => `[${attrs$d[key2]}]`;
+const defaults$a = {
   title: null,
   titleIcon: null,
   nonModal: false,
@@ -1051,34 +1051,34 @@ const defaults$9 = {
               ${config2.titleIcon ? `<span class="modal__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="modal__title-text">${config2.title}</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${attrs$d.close} autofocus>
+            <button class="modal__close" aria-label="Close modal" ${attrs$e.close} autofocus>
               ${config2.templateCloseIcon(config2)}
             </button>
           </header>
         ` : ""}
-        <div class="modal__body" ${attrs$c.body}></div>
-        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$c.resizer}>
+        <div class="modal__body" ${attrs$d.body}></div>
+        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$d.resizer}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
       </div>
     `;
   }
 };
-let currentDefaults$2 = { ...defaults$9 };
+let currentDefaults$2 = { ...defaults$a };
 function setDefaults$2(options) {
   currentDefaults$2 = Object.assign({}, currentDefaults$2, options);
 }
-function init$f() {
-  document.addEventListener(getName$1("pageModified"), setup$c);
-  setup$c();
+function init$g() {
+  document.addEventListener(getName$1("pageModified"), setup$d);
+  setup$d();
 }
-function setup$c() {
-  const builders = document.querySelectorAll(attrSelector$c("builder"));
+function setup$d() {
+  const builders = document.querySelectorAll(attrSelector$d("builder"));
   builders.forEach(setupBuilder);
 }
 function setupBuilder(element) {
   const options = getDatasetJson(element, "uluModalBuilder");
-  element.removeAttribute(attrs$c.builder);
+  element.removeAttribute(attrs$d.builder);
   buildModal(element, options);
 }
 function buildModal(content, options) {
@@ -1094,16 +1094,16 @@ function buildModal(content, options) {
   }
   const markup = config2.template(content.id, config2);
   const modal = createElementFromHtml(markup.trim());
-  const selectChild = (key2) => modal.querySelector(attrSelector$c(key2));
+  const selectChild = (key2) => modal.querySelector(attrSelector$d(key2));
   const body = selectChild("body");
   const resizer2 = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config2);
   content.removeAttribute("id");
   content.removeAttribute("hidden");
-  content.removeAttribute(attrs$c.builder);
+  content.removeAttribute(attrs$d.builder);
   content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
-  modal.setAttribute(attrs$d.dialog, JSON.stringify(dialogOptions));
+  modal.setAttribute(attrs$e.dialog, JSON.stringify(dialogOptions));
   if (config2.hasResizer) {
     new Resizer(modal, resizer2, {
       fromLeft: config2.position === "right"
@@ -1122,7 +1122,7 @@ function buildModal(content, options) {
   return { modal };
 }
 function separateDialogOptions(config2) {
-  return Object.keys(defaults$a).reduce((acc, key2) => {
+  return Object.keys(defaults$b).reduce((acc, key2) => {
     if (key2 in config2) {
       acc[key2] = config2[key2];
     }
@@ -1132,10 +1132,10 @@ function separateDialogOptions(config2) {
 const modalBuilder = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   buildModal,
-  defaults: defaults$9,
-  init: init$f,
+  defaults: defaults$a,
+  init: init$g,
   setDefaults: setDefaults$2,
-  setup: setup$c,
+  setup: setup$d,
   setupBuilder
 }, Symbol.toStringTag, { value: "Module" }));
 const linebreaks = /(\r\n|\n|\r)/gm;
@@ -1259,50 +1259,50 @@ __publicField(_Flipcard, "defaults", {
   }
 });
 let Flipcard = _Flipcard;
-const attrs$b = {
+const attrs$c = {
   init: "data-ulu-flipcard-init",
   flipcard: "data-ulu-flipcard",
   front: "data-ulu-flipcard-front",
   back: "data-ulu-flipcard-back"
 };
-const attrSelector$b = (key2) => `[${attrs$b[key2]}]`;
-const attrSelectorInitial$8 = (key2) => `${attrSelector$b(key2)}:not([${attrs$b.init}])`;
+const attrSelector$c = (key2) => `[${attrs$c[key2]}]`;
+const attrSelectorInitial$9 = (key2) => `${attrSelector$c(key2)}:not([${attrs$c.init}])`;
 const instances$4 = [];
-function init$e() {
-  document.addEventListener(getName$1("pageModified"), setup$b);
-  setup$b();
+function init$f() {
+  document.addEventListener(getName$1("pageModified"), setup$c);
+  setup$c();
 }
-function setup$b() {
-  const builders = document.querySelectorAll(attrSelectorInitial$8("flipcard"));
+function setup$c() {
+  const builders = document.querySelectorAll(attrSelectorInitial$9("flipcard"));
   builders.forEach(setupFlipcard);
 }
 function setupFlipcard(container2) {
-  container2.setAttribute(attrs$b.init, "");
+  container2.setAttribute(attrs$c.init, "");
   const options = getDatasetOptionalJson(container2, "uluFlipcard");
   const config2 = Object.assign({}, options);
-  const front = container2.querySelector(attrSelectorInitial$8("front"));
-  const back = container2.querySelector(attrSelectorInitial$8("back"));
+  const front = container2.querySelector(attrSelectorInitial$9("front"));
+  const back = container2.querySelector(attrSelectorInitial$9("back"));
   instances$4.push(new Flipcard(container2, front, back, config2));
 }
 const flipcard = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Flipcard,
-  attrs: attrs$b,
-  init: init$e,
-  setup: setup$b
+  attrs: attrs$c,
+  init: init$f,
+  setup: setup$c
 }, Symbol.toStringTag, { value: "Module" }));
-function init$d(selector = "[data-grid]", classes) {
-  document.addEventListener(getName$1("pageModified"), () => setup$a(selector, classes));
-  document.addEventListener(getName$1("pageResized"), () => setup$a(selector, classes));
-  setup$a(selector, classes);
+function init$e(selector = "[data-grid]", classes) {
+  document.addEventListener(getName$1("pageModified"), () => setup$b(selector, classes));
+  document.addEventListener(getName$1("pageResized"), () => setup$b(selector, classes));
+  setup$b(selector, classes);
 }
-function setup$a(selector, classes) {
+function setup$b(selector, classes) {
   document.querySelectorAll(selector).forEach((element) => setPositionClasses(element, classes || void 0));
 }
 const grid = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$d,
-  setup: setup$a
+  init: init$e,
+  setup: setup$b
 }, Symbol.toStringTag, { value: "Module" }));
 function createPager() {
   return function pager(instance, dir) {
@@ -1509,9 +1509,9 @@ const overflowScroller = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   OverflowScroller
 }, Symbol.toStringTag, { value: "Module" }));
-const min = Math.min;
-const max = Math.max;
-const round = Math.round;
+const min$1 = Math.min;
+const max$1 = Math.max;
+const round$1 = Math.round;
 const floor = Math.floor;
 const createCoords = (v) => ({
   x: v,
@@ -1528,7 +1528,7 @@ const oppositeAlignmentMap = {
   end: "start"
 };
 function clamp(start, value, end) {
-  return max(start, min(value, end));
+  return max$1(start, min$1(value, end));
 }
 function evaluate(value, param) {
   return typeof value === "function" ? value(param) : value;
@@ -1872,14 +1872,14 @@ const arrow$1 = (options) => ({
     }
     const centerToReference = endDiff / 2 - startDiff / 2;
     const largestPossiblePadding = clientSize / 2 - arrowDimensions[length] / 2 - 1;
-    const minPadding = min(paddingObject[minProp], largestPossiblePadding);
-    const maxPadding = min(paddingObject[maxProp], largestPossiblePadding);
-    const min$1 = minPadding;
+    const minPadding = min$1(paddingObject[minProp], largestPossiblePadding);
+    const maxPadding = min$1(paddingObject[maxProp], largestPossiblePadding);
+    const min$1$1 = minPadding;
     const max2 = clientSize - arrowDimensions[length] - maxPadding;
     const center = clientSize / 2 - arrowDimensions[length] / 2 + centerToReference;
-    const offset2 = clamp(min$1, center, max2);
-    const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center !== offset2 && rects.reference[length] / 2 - (center < min$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
-    const alignmentOffset = shouldAddOffset ? center < min$1 ? center - min$1 : center - max2 : 0;
+    const offset2 = clamp(min$1$1, center, max2);
+    const shouldAddOffset = !middlewareData.arrow && getAlignment(placement) != null && center !== offset2 && rects.reference[length] / 2 - (center < min$1$1 ? minPadding : maxPadding) - arrowDimensions[length] / 2 < 0;
+    const alignmentOffset = shouldAddOffset ? center < min$1$1 ? center - min$1$1 : center - max2 : 0;
     return {
       [axis]: coords[axis] + alignmentOffset,
       data: {
@@ -1988,10 +1988,10 @@ const flip$1 = function(options) {
   };
 };
 function getBoundingRect(rects) {
-  const minX = min(...rects.map((rect) => rect.left));
-  const minY = min(...rects.map((rect) => rect.top));
-  const maxX = max(...rects.map((rect) => rect.right));
-  const maxY = max(...rects.map((rect) => rect.bottom));
+  const minX = min$1(...rects.map((rect) => rect.left));
+  const minY = min$1(...rects.map((rect) => rect.top));
+  const maxX = max$1(...rects.map((rect) => rect.right));
+  const maxY = max$1(...rects.map((rect) => rect.bottom));
   return {
     x: minX,
     y: minY,
@@ -2065,8 +2065,8 @@ const inline$1 = function(options) {
             };
           }
           const isLeftSide = getSide(placement) === "left";
-          const maxRight = max(...clientRects.map((rect) => rect.right));
-          const minLeft = min(...clientRects.map((rect) => rect.left));
+          const maxRight = max$1(...clientRects.map((rect) => rect.right));
+          const minLeft = min$1(...clientRects.map((rect) => rect.left));
           const measureRects = clientRects.filter((rect) => isLeftSide ? rect.left === minLeft : rect.right === maxRight);
           const top = measureRects[0].top;
           const bottom = measureRects[measureRects.length - 1].bottom;
@@ -2365,7 +2365,7 @@ function getCssDimensions(element) {
   const hasOffset = isHTMLElement(element);
   const offsetWidth = hasOffset ? element.offsetWidth : width;
   const offsetHeight = hasOffset ? element.offsetHeight : height;
-  const shouldFallback = round(width) !== offsetWidth || round(height) !== offsetHeight;
+  const shouldFallback = round$1(width) !== offsetWidth || round$1(height) !== offsetHeight;
   if (shouldFallback) {
     width = offsetWidth;
     height = offsetHeight;
@@ -2390,8 +2390,8 @@ function getScale(element) {
     height,
     $
   } = getCssDimensions(domElement);
-  let x = ($ ? round(rect.width) : rect.width) / width;
-  let y = ($ ? round(rect.height) : rect.height) / height;
+  let x = ($ ? round$1(rect.width) : rect.width) / width;
+  let y = ($ ? round$1(rect.height) : rect.height) / height;
   if (!x || !Number.isFinite(x)) {
     x = 1;
   }
@@ -2533,12 +2533,12 @@ function getDocumentRect(element) {
   const html = getDocumentElement(element);
   const scroll = getNodeScroll(element);
   const body = element.ownerDocument.body;
-  const width = max(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
-  const height = max(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
+  const width = max$1(html.scrollWidth, html.clientWidth, body.scrollWidth, body.clientWidth);
+  const height = max$1(html.scrollHeight, html.clientHeight, body.scrollHeight, body.clientHeight);
   let x = -scroll.scrollLeft + getWindowScrollBarX(element);
   const y = -scroll.scrollTop;
   if (getComputedStyle$1(body).direction === "rtl") {
-    x += max(html.clientWidth, body.clientWidth) - width;
+    x += max$1(html.clientWidth, body.clientWidth) - width;
   }
   return {
     width,
@@ -2650,10 +2650,10 @@ function getClippingRect(_ref) {
   const firstClippingAncestor = clippingAncestors[0];
   const clippingRect = clippingAncestors.reduce((accRect, clippingAncestor) => {
     const rect = getClientRectFromClippingAncestor(element, clippingAncestor, strategy);
-    accRect.top = max(rect.top, accRect.top);
-    accRect.right = min(rect.right, accRect.right);
-    accRect.bottom = min(rect.bottom, accRect.bottom);
-    accRect.left = max(rect.left, accRect.left);
+    accRect.top = max$1(rect.top, accRect.top);
+    accRect.right = min$1(rect.right, accRect.right);
+    accRect.bottom = min$1(rect.bottom, accRect.bottom);
+    accRect.left = max$1(rect.left, accRect.left);
     return accRect;
   }, getClientRectFromClippingAncestor(element, firstClippingAncestor, strategy));
   return {
@@ -2806,7 +2806,7 @@ function observeMove(element, onMove) {
     const rootMargin = -insetTop + "px " + -insetRight + "px " + -insetBottom + "px " + -insetLeft + "px";
     const options = {
       rootMargin,
-      threshold: max(0, min(1, threshold)) || 1
+      threshold: max$1(0, min$1(1, threshold)) || 1
     };
     let isFirstUpdate = true;
     function handleObserve(entries) {
@@ -2927,7 +2927,7 @@ const computePosition = (reference, floating, options) => {
     platform: platformWithCache
   });
 };
-const defaults$8 = {
+const defaults$9 = {
   strategy: "absolute",
   placement: "bottom",
   inline: false,
@@ -2940,7 +2940,7 @@ const defaults$8 = {
   // Options for arrow (not element)
 };
 function createFloatingUi(elements, config2) {
-  const options = Object.assign({}, defaults$8, config2);
+  const options = Object.assign({}, defaults$9, config2);
   const { placement, strategy } = options;
   const { trigger, content, contentArrow } = elements;
   return autoUpdate(trigger, content, () => {
@@ -2984,27 +2984,27 @@ function addPlugin(plugin, option, overrides = {}) {
 const floatingUi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   createFloatingUi,
-  defaults: defaults$8
+  defaults: defaults$9
 }, Symbol.toStringTag, { value: "Module" }));
 const instances$3 = /* @__PURE__ */ new WeakMap();
 const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
-const attrs$a = {
+const attrs$b = {
   trigger: "data-ulu-popover-trigger",
   content: "data-ulu-popover-content",
   arrow: "data-ulu-popover-arrow",
   anchor: "data-ulu-popover-trigger-anchor"
 };
-const attrSelector$a = (key2) => `[${attrs$a[key2]}]`;
+const attrSelector$b = (key2) => `[${attrs$b[key2]}]`;
 const collapsibleDefaults = {
   clickOutsideCloses: true,
   escapeCloses: true
 };
-function init$c() {
-  document.addEventListener(getName$1("pageModified"), setup$9);
-  setup$9();
+function init$d() {
+  document.addEventListener(getName$1("pageModified"), setup$a);
+  setup$a();
 }
-function setup$9() {
-  const triggers = document.querySelectorAll(attrSelector$a("trigger"));
+function setup$a() {
+  const triggers = document.querySelectorAll(attrSelector$b("trigger"));
   const resolved = Array.from(triggers).filter((trigger) => !instances$3.has(trigger)).map(resolve).filter((v) => v);
   resolved.forEach(({ elements, options, floatingOptions }) => {
     instances$3.set(elements.trigger, new Popover(elements, options, floatingOptions));
@@ -3017,8 +3017,8 @@ function resolve(trigger) {
   const elements = {
     trigger,
     content,
-    anchor: trigger.querySelector(attrSelector$a("anchor")) || trigger,
-    contentArrow: content.querySelector(attrSelector$a("arrow"))
+    anchor: trigger.querySelector(attrSelector$b("anchor")) || trigger,
+    contentArrow: content.querySelector(attrSelector$b("arrow"))
   };
   const floatingOptions = options.floating || {};
   delete options.floating;
@@ -3035,13 +3035,13 @@ function getContentByTrigger(trigger) {
   const ariaControls = trigger.getAttribute("aria-controls");
   if (ariaControls) {
     content = document.getElementById(ariaControls);
-  } else if ((_a = trigger == null ? void 0 : trigger.nextElementSibling) == null ? void 0 : _a.hasAttribute(attrs$a.content)) {
+  } else if ((_a = trigger == null ? void 0 : trigger.nextElementSibling) == null ? void 0 : _a.hasAttribute(attrs$b.content)) {
     content = trigger.nextElementSibling;
   } else {
     const children = Array.from(trigger.parentNode.children);
     const triggerIndex = children.findIndex((c) => c === trigger);
     const childrenAfter = children.slice(triggerIndex);
-    content = childrenAfter.find((child) => child.matches(attrSelector$a("content")));
+    content = childrenAfter.find((child) => child.matches(attrSelector$b("content")));
   }
   if (!content) {
     logError("Unable to resolve 'content' element for popover", trigger);
@@ -3082,25 +3082,25 @@ const popover = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   Popover,
   getContentByTrigger,
-  init: init$c,
+  init: init$d,
   instances: instances$3,
   resolve,
-  setup: setup$9
+  setup: setup$a
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$9 = {
+const attrs$a = {
   trigger: "data-ulu-tooltip",
   init: "data-ulu-init",
   body: "data-ulu-tooltip-display-body",
   arrow: "data-ulu-tooltip-arrow"
 };
-const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
-const attrSelectorInitial$7 = (key2) => `${attrSelector$9(key2)}:not([${attrs$9.init}])`;
-function init$b() {
-  document.addEventListener(getName$1("pageModified"), setup$8);
-  setup$8();
+const attrSelector$a = (key2) => `[${attrs$a[key2]}]`;
+const attrSelectorInitial$8 = (key2) => `${attrSelector$a(key2)}:not([${attrs$a.init}])`;
+function init$c() {
+  document.addEventListener(getName$1("pageModified"), setup$9);
+  setup$9();
 }
-function setup$8() {
-  const triggers = document.querySelectorAll(attrSelectorInitial$7("trigger"));
+function setup$9() {
+  const triggers = document.querySelectorAll(attrSelectorInitial$8("trigger"));
   triggers.forEach(setupTrigger$1);
 }
 function setupTrigger$1(trigger) {
@@ -3169,7 +3169,7 @@ const _Tooltip = class _Tooltip {
   createContentElement() {
     const { options } = this;
     const content = createElementFromHtml(options.template(options));
-    const body = content.querySelector(attrSelector$9("body"));
+    const body = content.querySelector(attrSelector$a("body"));
     const innerContent = this.getInnerContent();
     if (options.isHtml) {
       body.innerHTML = innerContent;
@@ -3181,7 +3181,7 @@ const _Tooltip = class _Tooltip {
       content.classList.add(options.contentClass);
     }
     this.elements.content = content;
-    this.elements.contentArrow = content.querySelector(attrSelector$9("arrow"));
+    this.elements.contentArrow = content.querySelector(attrSelector$a("arrow"));
     document.body.appendChild(content);
   }
   attachHandlers() {
@@ -3325,7 +3325,7 @@ __publicField(_Tooltip, "defaults", {
   template(_config) {
     return `
         <div class="popover popover--tooltip">
-          <div class="popover__inner" ${attrs$9.body}>
+          <div class="popover__inner" ${attrs$a.body}>
           </div>
           <span class="popover__arrow" data-ulu-tooltip-arrow></span>
         </div>
@@ -3345,13 +3345,37 @@ let Tooltip = _Tooltip;
 const tooltip = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Tooltip,
-  init: init$b,
-  setup: setup$8,
+  init: init$c,
+  setup: setup$9,
   setupTrigger: setupTrigger$1
 }, Symbol.toStringTag, { value: "Module" }));
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
+function getAugmentedNamespace(n) {
+  if (n.__esModule) return n;
+  var f = n.default;
+  if (typeof f == "function") {
+    var a = function a2() {
+      if (this instanceof a2) {
+        return Reflect.construct(f, arguments, this.constructor);
+      }
+      return f.apply(this, arguments);
+    };
+    a.prototype = f.prototype;
+  } else a = {};
+  Object.defineProperty(a, "__esModule", { value: true });
+  Object.keys(n).forEach(function(k) {
+    var d = Object.getOwnPropertyDescriptor(n, k);
+    Object.defineProperty(a, k, d.get ? d : {
+      enumerable: true,
+      get: function() {
+        return n[k];
+      }
+    });
+  });
+  return a;
 }
 var _maintain = { exports: {} };
 var disabled$2 = { exports: {} };
@@ -5789,9 +5813,9 @@ var imageMap = {};
 var css_escape = { exports: {} };
 /*! https://mths.be/cssescape v1.5.1 by @mathias | MIT license */
 (function(module, exports) {
-  (function(root, factory) {
+  (function(root, factory2) {
     {
-      module.exports = factory(root);
+      module.exports = factory2(root);
     }
   })(typeof commonjsGlobal != "undefined" ? commonjsGlobal : commonjsGlobal, function(root) {
     if (root.CSS && root.CSS.escape) {
@@ -8219,31 +8243,31 @@ const requiredElements = [
   "track",
   "slides"
 ];
-const attrs$8 = {
+const attrs$9 = {
   init: "data-ulu-slider-init",
   slider: "data-ulu-slider",
   track: "data-ulu-slider-track",
   trackContainer: "data-ulu-slider-track-container",
   controls: "data-ulu-slider-control-context"
 };
-const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
-const attrSelectorInitial$6 = (key2) => `${attrSelector$8(key2)}:not([${attrs$8.init}])`;
-const defaults$7 = {
+const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
+const attrSelectorInitial$7 = (key2) => `${attrSelector$9(key2)}:not([${attrs$9.init}])`;
+const defaults$8 = {
   amount: createPager()
 };
 const instances$2 = [];
-function init$a() {
-  document.addEventListener(getName$1("pageModified"), setup$7);
-  setup$7();
+function init$b() {
+  document.addEventListener(getName$1("pageModified"), setup$8);
+  setup$8();
 }
-function setup$7() {
-  const builders = document.querySelectorAll(attrSelectorInitial$6("slider"));
+function setup$8() {
+  const builders = document.querySelectorAll(attrSelectorInitial$7("slider"));
   builders.forEach(setupSlider$1);
 }
 function setupSlider$1(container2) {
-  container2.setAttribute(attrs$8.init, "");
+  container2.setAttribute(attrs$9.init, "");
   const options = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$7, options);
+  const config2 = Object.assign({}, defaults$8, options);
   const elements = {
     container: container2,
     track: container2.querySelector("[data-ulu-slider-track]"),
@@ -8633,9 +8657,9 @@ let Slider = _Slider;
 const slider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Slider,
-  attrs: attrs$8,
-  init: init$a,
-  setup: setup$7,
+  attrs: attrs$9,
+  init: init$b,
+  setup: setup$8,
   setupSlider: setupSlider$1
 }, Symbol.toStringTag, { value: "Module" }));
 var ariaTablist_min = { exports: {} };
@@ -8884,7 +8908,7 @@ const AriaTablist = /* @__PURE__ */ getDefaultExportFromCjs(ariaTablist_minExpor
 const initAttr = "data-ulu-tablist-init";
 const errorHeader = "[data-ulu-tablist] error:";
 const instances$1 = [];
-function init$9(options = {}) {
+function init$a(options = {}) {
   const initial = () => {
     initWithin(document, options);
     instances$1.forEach(openByCurrentHash);
@@ -8902,9 +8926,9 @@ function initWithin(context, options = {}) {
     return;
   }
   const tablists = context.querySelectorAll(`[data-ulu-tablist]:not([${initAttr}])`);
-  tablists.forEach((element) => setup$6(element, options));
+  tablists.forEach((element) => setup$7(element, options));
 }
-function setup$6(element, options = {}) {
+function setup$7(element, options = {}) {
   let elementOptions = {};
   if (element.dataset.uluTablist) {
     try {
@@ -8982,40 +9006,40 @@ function setHeights(element) {
 }
 const tabs = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  init: init$9,
+  init: init$a,
   initWithin,
   instances: instances$1,
-  setup: setup$6
+  setup: setup$7
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$7 = {
+const attrs$8 = {
   trigger: "data-ulu-proxy-click",
   init: "data-ulu-proxy-click-init"
 };
-const attrSelector$7 = (key2) => `[${attrs$7[key2]}]`;
-const attrSelectorInitial$5 = (key2) => `${attrSelector$7(key2)}:not([${attrs$7.init}])`;
-const defaults$6 = {
+const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
+const attrSelectorInitial$6 = (key2) => `${attrSelector$8(key2)}:not([${attrs$8.init}])`;
+const defaults$7 = {
   selector: "[data-ulu-proxy-click-source]",
   selectorPreventBase: "input, select, textarea, button, a, [tabindex='-1']",
   selectorPrevent: "",
   mousedownDurationPrevent: 250
 };
-let currentDefaults$1 = { ...defaults$6 };
+let currentDefaults$1 = { ...defaults$7 };
 function setDefaults$1(options) {
   currentDefaults$1 = Object.assign({}, currentDefaults$1, options);
 }
-function init$8() {
-  document.addEventListener(getName$1("pageModified"), () => setup$5());
-  setup$5();
+function init$9() {
+  document.addEventListener(getName$1("pageModified"), () => setup$6());
+  setup$6();
 }
-function setup$5(context = document) {
-  const proxies = context.querySelectorAll(attrSelectorInitial$5("trigger"));
+function setup$6(context = document) {
+  const proxies = context.querySelectorAll(attrSelectorInitial$6("trigger"));
   proxies.forEach((proxy) => {
     const elOptions = getDatasetOptionalJson(proxy, "siteProxyClick");
     const options = Object.assign({}, currentDefaults$1, elOptions);
     const child = proxy.querySelector(options.selector);
     if (child) {
       attachHandlers(proxy, child, options);
-      proxy.setAttribute(attrs$7.init, "");
+      proxy.setAttribute(attrs$8.init, "");
     } else {
       console.error("Unable to locate proxy click source", options.selector);
     }
@@ -9042,12 +9066,12 @@ function attachHandlers(proxy, child, options) {
 const proxyClick = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   attachHandlers,
-  defaults: defaults$6,
-  init: init$8,
+  defaults: defaults$7,
+  init: init$9,
   setDefaults: setDefaults$1,
-  setup: setup$5
+  setup: setup$6
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$6 = {
+const attrs$7 = {
   init: "data-ulu-scrollpoint-init",
   /**
    * Individual scrollpoint
@@ -9058,19 +9082,19 @@ const attrs$6 = {
   // Goes on container for all items
   // group: "data-ulu-scrollpoint-group"
 };
-const attrSelector$6 = (key2) => `[${attrs$6[key2]}]`;
-const attrSelectorInitial$4 = (key2) => `${attrSelector$6(key2)}:not([${attrs$6.init}])`;
-const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$4(key2));
-function init$7() {
-  document.addEventListener(getName$1("pageModified"), setup$4);
-  setup$4();
+const attrSelector$7 = (key2) => `[${attrs$7[key2]}]`;
+const attrSelectorInitial$5 = (key2) => `${attrSelector$7(key2)}:not([${attrs$7.init}])`;
+const queryAllInitial$3 = (key2) => document.querySelectorAll(attrSelectorInitial$5(key2));
+function init$8() {
+  document.addEventListener(getName$1("pageModified"), setup$5);
+  setup$5();
 }
-function setup$4() {
-  const elements = queryAllInitial$2("point");
+function setup$5() {
+  const elements = queryAllInitial$3("point");
   elements.forEach((element) => {
     const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
     const config2 = Object.assign({}, elOptions);
-    element.setAttribute(attrs$6.init, "");
+    element.setAttribute(attrs$7.init, "");
     new Scrollpoint(element, config2);
   });
 }
@@ -9286,9 +9310,9 @@ let Scrollpoint = _Scrollpoint;
 const scrollpoint = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Scrollpoint,
-  attrs: attrs$6,
-  init: init$7,
-  setup: setup$4
+  attrs: attrs$7,
+  init: init$8,
+  setup: setup$5
 }, Symbol.toStringTag, { value: "Module" }));
 function printOnly(content) {
   const w = window.open();
@@ -9300,32 +9324,32 @@ function printElement(element) {
   var content = element.innerHTML;
   printOnly(content);
 }
-const attrs$5 = {
+const attrs$6 = {
   trigger: "data-ulu-print",
   init: "data-ulu-print-init"
 };
-const attrSelector$5 = (key2) => `[${attrs$5[key2]}]`;
-const attrSelectorInitial$3 = (key2) => `${attrSelector$5(key2)}:not([${attrs$5.init}])`;
-const queryAllInitial$1 = (key2) => document.querySelectorAll(attrSelectorInitial$3(key2));
-const defaults$5 = {
+const attrSelector$6 = (key2) => `[${attrs$6[key2]}]`;
+const attrSelectorInitial$4 = (key2) => `${attrSelector$6(key2)}:not([${attrs$6.init}])`;
+const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$4(key2));
+const defaults$6 = {
   /**
    * Print element/selector
    */
   element: null
 };
-function init$6() {
-  document.addEventListener(getName$1("pageModified"), setup$3);
-  setup$3();
+function init$7() {
+  document.addEventListener(getName$1("pageModified"), setup$4);
+  setup$4();
 }
-function setup$3() {
-  const triggers = queryAllInitial$1("trigger");
+function setup$4() {
+  const triggers = queryAllInitial$2("trigger");
   triggers.forEach((trigger) => {
     const options = getDatasetOptionalJson(trigger, "uluPrint");
     setupTrigger(trigger, options);
   });
 }
 function setupTrigger(trigger, options) {
-  const config2 = Object.assign({}, defaults$5, options);
+  const config2 = Object.assign({}, defaults$6, options);
   trigger.addEventListener("click", (event) => {
     if (config2.element) {
       const element = getElement(config2.element);
@@ -9341,75 +9365,75 @@ function setupTrigger(trigger, options) {
 }
 const print = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$5,
-  init: init$6
+  attrs: attrs$6,
+  init: init$7
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$4 = {
+const attrs$5 = {
   opened: "data-ulu-print-details-opened"
 };
-const attrSelector$4 = (key2) => `[${attrs$4[key2]}]`;
-const defaults$4 = {
+const attrSelector$5 = (key2) => `[${attrs$5[key2]}]`;
+const defaults$5 = {
   selector: "details:not([open])"
 };
-function init$5(options) {
-  const config2 = Object.assign({}, defaults$4, options);
+function init$6(options) {
+  const config2 = Object.assign({}, defaults$5, options);
   document.addEventListener(getName$1("beforePrint"), () => {
     document.querySelectorAll(config2.selector).forEach((details) => {
       if (!details.open) {
-        details.setAttribute(attrs$4.opened, true);
+        details.setAttribute(attrs$5.opened, true);
         details.open = true;
       }
     });
   });
   document.addEventListener(getName$1("afterPrint"), () => {
-    document.querySelectorAll(attrSelector$4("opened")).forEach((details) => {
-      details.removeAttribute(attrs$4.opened);
+    document.querySelectorAll(attrSelector$5("opened")).forEach((details) => {
+      details.removeAttribute(attrs$5.opened);
       details.open = false;
     });
   });
 }
 const printDetails = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$4,
-  init: init$5
+  attrs: attrs$5,
+  init: init$6
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$3 = {
+const attrs$4 = {
   init: "data-ulu-scroll-slider-init",
   slider: "data-ulu-scroll-slider",
   track: "data-ulu-scroll-slider-track",
   controls: "data-ulu-scroll-slider-control-context"
 };
-const attrSelector$3 = (key2) => `[${attrs$3[key2]}]`;
-const attrSelectorInitial$2 = (key2) => `${attrSelector$3(key2)}:not([${attrs$3.init}])`;
+const attrSelector$4 = (key2) => `[${attrs$4[key2]}]`;
+const attrSelectorInitial$3 = (key2) => `${attrSelector$4(key2)}:not([${attrs$4.init}])`;
 const instances = [];
-const defaults$3 = {
+const defaults$4 = {
   amount: createPager()
 };
-function init$4() {
-  document.addEventListener(getName$1("pageModified"), setup$2);
-  setup$2();
+function init$5() {
+  document.addEventListener(getName$1("pageModified"), setup$3);
+  setup$3();
 }
-function setup$2() {
-  const builders = document.querySelectorAll(attrSelectorInitial$2("slider"));
+function setup$3() {
+  const builders = document.querySelectorAll(attrSelectorInitial$3("slider"));
   builders.forEach(setupSlider);
 }
 function setupSlider(container2) {
-  container2.setAttribute(attrs$3.init, "");
+  container2.setAttribute(attrs$4.init, "");
   const options = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$3, options);
+  const config2 = Object.assign({}, defaults$4, options);
   const elements = {
-    track: container2.querySelector(attrSelector$3("track")),
-    controls: container2.querySelector(attrSelector$3("controls"))
+    track: container2.querySelector(attrSelector$4("track")),
+    controls: container2.querySelector(attrSelector$4("controls"))
   };
   instances.push(new OverflowScroller(elements, config2));
 }
 const scrollSlider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$3,
-  init: init$4,
-  setup: setup$2
+  attrs: attrs$4,
+  init: init$5,
+  setup: setup$3
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$2 = {
+const attrs$3 = {
   init: "data-ulu-theme-toggle-init",
   toggle: "data-ulu-theme-toggle",
   toggleIcon: "data-ulu-theme-toggle-icon",
@@ -9417,20 +9441,20 @@ const attrs$2 = {
   toggleRemote: "data-ulu-theme-toggle-remote",
   state: "data-ulu-theme-toggle-state"
 };
-const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
-const attrSelectorInitial$1 = (key2) => `${attrSelector$2(key2)}:not([${attrs$2.init}])`;
-const queryAllInitial = (key2) => document.querySelectorAll(attrSelectorInitial$1(key2));
+const attrSelector$3 = (key2) => `[${attrs$3[key2]}]`;
+const attrSelectorInitial$2 = (key2) => `${attrSelector$3(key2)}:not([${attrs$3.init}])`;
+const queryAllInitial$1 = (key2) => document.querySelectorAll(attrSelectorInitial$2(key2));
 const queryRemotes = (group) => document.querySelectorAll(
-  `[${attrs$2.toggleRemote}="${group}"]`
+  `[${attrs$3.toggleRemote}="${group}"]`
 );
 const queryRemotesInitial = (group) => document.querySelectorAll(
-  `[${attrs$2.toggleRemote}="${group}"]:not([${attrs$2.init}])`
+  `[${attrs$3.toggleRemote}="${group}"]:not([${attrs$3.init}])`
 );
-const debugLog = (...msgs) => console.log("Theme Toggle:", ...msgs);
+const debugLog$1 = (...msgs) => console.log("Theme Toggle:", ...msgs);
 const requiredToggleProps = ["target"];
 const checkToggleProps = hasRequiredProps(requiredToggleProps);
 const when = (cond, fn) => cond ? fn() : null;
-const defaults$2 = {
+const defaults$3 = {
   /**
    * Object of each theme that should be toggle/cycled through
    */
@@ -9486,20 +9510,20 @@ const defaults$2 = {
    */
   debug: false
 };
-let currentDefaults = { ...defaults$2 };
+let currentDefaults = { ...defaults$3 };
 function setDefaults(options) {
   currentDefaults = Object.assign({}, currentDefaults, options);
 }
-function init$3() {
-  document.addEventListener(getName$1("pageModified"), setup$1);
-  setup$1();
+function init$4() {
+  document.addEventListener(getName$1("pageModified"), setup$2);
+  setup$2();
 }
-function setup$1() {
-  queryAllInitial("toggle").forEach(setupToggle);
+function setup$2() {
+  queryAllInitial$1("toggle").forEach(setupToggle);
 }
 function setupToggle(toggle, passedOptions) {
   const elementOptions = getDatasetJson(toggle, "uluThemeToggle");
-  const options = Object.assign({}, defaults$2, passedOptions, elementOptions);
+  const options = Object.assign({}, defaults$3, passedOptions, elementOptions);
   if (!checkToggleProps(options)) {
     console.error(`Missing a required option: ${requiredToggleProps.join(", ")}`);
     return;
@@ -9513,7 +9537,7 @@ function setupToggle(toggle, passedOptions) {
   }
   setState$1(initialKey, ctx);
   toggle.addEventListener("click", onToggleClick);
-  toggle.setAttribute(attrs$2.init, "");
+  toggle.setAttribute(attrs$3.init, "");
   attachRemotes();
   document.addEventListener(getName$1("pageModified"), attachRemotes);
   function toggleState(event) {
@@ -9534,7 +9558,7 @@ function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach((remote) => {
       remote.addEventListener("click", onToggleClick);
-      remote.setAttribute(attrs$2.init, "");
+      remote.setAttribute(attrs$3.init, "");
     });
   }
   function cleanupRemotes() {
@@ -9542,12 +9566,12 @@ function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach((remote) => {
       remote.removeEventListener("click", onToggleClick);
-      remote.removeAttribute(attrs$2.init, "");
+      remote.removeAttribute(attrs$3.init, "");
     });
   }
   function destroy() {
     toggle.removeEventListener("click", onToggleClick);
-    toggle.removeAttribute(attrs$2.init, "");
+    toggle.removeAttribute(attrs$3.init, "");
     cleanupRemotes();
     document.removeEventListener(getName$1("pageModified"), attachRemotes);
   }
@@ -9586,18 +9610,18 @@ function setState$1(key2, ctx) {
     otherThemes
   };
   if (options.debug) {
-    debugLog("set state context", stateCtx);
+    debugLog$1("set state context", stateCtx);
   }
   const otherTargetClasses = concatThemeClasses(otherThemes, "targetClass");
   const otherIconClasses = concatThemeClasses(otherThemes, "iconClass");
   elements.targets.forEach((element) => {
-    element.setAttribute(attrs$2.state, key2);
+    element.setAttribute(attrs$3.state, key2);
     element.classList.remove(...otherTargetClasses);
     element.classList.add(...resolveClasses(theme.targetClass));
   });
   elements.toggles.forEach((element) => {
-    const label = element.querySelector(attrSelector$2("toggleLabel"));
-    const icon = element.querySelector(attrSelector$2("toggleIcon"));
+    const label = element.querySelector(attrSelector$3("toggleLabel"));
+    const icon = element.querySelector(attrSelector$3("toggleIcon"));
     if (label) {
       label.textContent = theme.label;
     }
@@ -9605,7 +9629,7 @@ function setState$1(key2, ctx) {
       icon.classList.remove(...otherIconClasses);
       icon.classList.add(...resolveClasses(theme.iconClass));
     }
-    element.setAttribute(attrs$2.state, key2);
+    element.setAttribute(attrs$3.state, key2);
   });
   if (options.onChange) {
     options.onChange(stateCtx);
@@ -9621,9 +9645,9 @@ function resolveInitial(options) {
   const mediaQueryPreference = when(checkMediaQuery, () => getMatchingThemeQuery(themes));
   const resolved = saved || mediaQueryPreference || initialState;
   if (options.debug) {
-    debugLog("Preference Saved:", saved);
-    debugLog("Media Query Preference:", mediaQueryPreference);
-    debugLog("Initial State:", initialState);
+    debugLog$1("Preference Saved:", saved);
+    debugLog$1("Media Query Preference:", mediaQueryPreference);
+    debugLog$1("Initial State:", initialState);
   }
   if (!resolved) {
     console.error("Failed to resolve initial theme (pass 'initialState' to options)");
@@ -9660,31 +9684,31 @@ function getStorageKey(options) {
 }
 const themeToggle = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$2,
-  defaults: defaults$2,
-  init: init$3,
+  attrs: attrs$3,
+  defaults: defaults$3,
+  init: init$4,
   setDefaults,
-  setup: setup$1,
+  setup: setup$2,
   setupToggle
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$1 = {
+const attrs$2 = {
   init: "data-ulu-details-group-init",
   childInit: "data-ulu-details-group-child-init",
   group: "data-ulu-details-group"
 };
-const attrSelector$1 = (key2) => `[${attrs$1[key2]}]`;
-const attrSelectorInitial = (key2) => `${attrSelector$1(key2)}:not([${attrs$1.init}])`;
-const defaults$1 = {
+const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
+const attrSelectorInitial$1 = (key2) => `${attrSelector$2(key2)}:not([${attrs$2.init}])`;
+const defaults$2 = {
   onlyOneOpen: true,
   childSelector: ":scope > details"
 };
-function init$2() {
-  document.addEventListener(getName$1("pageModified"), () => setup());
-  setup();
+function init$3() {
+  document.addEventListener(getName$1("pageModified"), () => setup$1());
+  setup$1();
 }
-function setup(context = document) {
+function setup$1(context = document) {
   try {
-    const elements = context.querySelectorAll(attrSelectorInitial("group"));
+    const elements = context.querySelectorAll(attrSelectorInitial$1("group"));
     return [...elements].map(setupGroup);
   } catch (error) {
     console.error(error);
@@ -9692,18 +9716,18 @@ function setup(context = document) {
 }
 function setupGroup(element) {
   const elementOptions = getDatasetOptionalJson(element, "uluDetailsGroup");
-  const options = Object.assign({}, defaults$1, elementOptions);
-  element.setAttribute(attrs$1.t, "");
+  const options = Object.assign({}, defaults$2, elementOptions);
+  element.setAttribute(attrs$2.t, "");
   setupChildren();
   function queryChildren() {
     return element.querySelectorAll(options.childSelector);
   }
   function setupChildren() {
     queryChildren().forEach((child) => {
-      if (child.hasAttribute(attrs$1.childInit)) {
+      if (child.hasAttribute(attrs$2.childInit)) {
         return;
       } else {
-        child.setAttribute(attrs$1.childInit, "");
+        child.setAttribute(attrs$2.childInit, "");
       }
       console.log(child);
       child.addEventListener("toggle", toggleHandler);
@@ -9723,17 +9747,17 @@ function setupGroup(element) {
   function destroy() {
     queryChildren().forEach((child) => {
       child.removeEventListener("toggle", toggleHandler);
-      child.removeAttribute(attrs$1.childInit);
+      child.removeAttribute(attrs$2.childInit);
     });
-    element.removeAttribute(attrs$1.init);
+    element.removeAttribute(attrs$2.init);
   }
   return { destroy, element, setupChildren };
 }
 const detailsGroup = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$1,
-  init: init$2,
-  setup,
+  attrs: attrs$2,
+  init: init$3,
+  setup: setup$1,
   setupGroup
 }, Symbol.toStringTag, { value: "Module" }));
 const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -15920,9 +15944,9 @@ const instantsearch = /* @__PURE__ */ getDefaultExportFromCjs(instantsearch_prod
 const container = document.querySelector(".site-search");
 if (container) {
   console.log("init");
-  init$1();
+  init$2();
 }
-function init$1() {
+function init$2() {
   const searchClient = algoliasearch(
     "3PP8YC3MQX",
     "ab9e8106a1317eb9a3da408229b70590"
@@ -15957,32 +15981,32 @@ function init$1() {
   ]);
   search.start();
 }
-const attrs = {
+const attrs$1 = {
   container: "data-list-grid",
   toggle: "data-list-grid-toggle",
   toggleItemList: "data-list-grid-toggle-list",
   toggleItemGrid: "data-list-grid-toggle-grid"
 };
-const defaults = {
+const defaults$1 = {
   activeClass: "is-active",
   localStorageKey: "siteListGrid",
   onChange() {
   }
 };
-let config = defaults;
-const attrSelector = (key2) => `[${attrs[key2]}]`;
+let config = defaults$1;
+const attrSelector$1 = (key2) => `[${attrs$1[key2]}]`;
 function getPreference() {
   return localStorage.getItem(config.localStorageKey);
 }
 function setConfig(changes) {
-  config = Object.assign({}, defaults, changes);
+  config = Object.assign({}, defaults$1, changes);
 }
-function init() {
+function init$1() {
   const preference = getPreference();
-  const containers = document.querySelectorAll(attrSelector("container"));
+  const containers = document.querySelectorAll(attrSelector$1("container"));
   if (!containers) return;
   containers.forEach((container2) => {
-    const toggle = container2.querySelector(attrSelector("toggle"));
+    const toggle = container2.querySelector(attrSelector$1("toggle"));
     if (preference) {
       setState(container2, preference);
     }
@@ -15992,8 +16016,8 @@ function init() {
   });
 }
 function setState(container2, value) {
-  const toggle = container2.querySelector(attrSelector("toggle"));
-  container2.setAttribute(attrs.container, value);
+  const toggle = container2.querySelector(attrSelector$1("toggle"));
+  container2.setAttribute(attrs$1.container, value);
   localStorage.setItem(config.localStorageKey, value);
   if (toggle) {
     setStateToggle(toggle, value);
@@ -16010,8 +16034,8 @@ function setState(container2, value) {
 }
 function setStateToggle(toggle, value) {
   const isList = value === "list";
-  const list = toggle.querySelector(attrSelector("toggleItemList"));
-  const grid2 = toggle.querySelector(attrSelector("toggleItemGrid"));
+  const list = toggle.querySelector(attrSelector$1("toggleItemList"));
+  const grid2 = toggle.querySelector(attrSelector$1("toggleItemGrid"));
   if (list && grid2) {
     list.classList[isList ? "add" : "remove"](config.activeClass);
     grid2.classList[isList ? "remove" : "add"](config.activeClass);
@@ -16020,33 +16044,7146 @@ function setStateToggle(toggle, value) {
   }
 }
 function onToggle() {
-  const container2 = this.closest(attrSelector("container"));
+  const container2 = this.closest(attrSelector$1("container"));
   if (!container2) {
     console.warn("Unable to find container list grid");
     return;
   }
-  const state = container2.getAttribute(attrs.container);
+  const state = container2.getAttribute(attrs$1.container);
   const to = state === "list" ? "grid" : "list";
   setState(container2, to);
 }
+var twig_core;
+var hasRequiredTwig_core;
+function requireTwig_core() {
+  if (hasRequiredTwig_core) return twig_core;
+  hasRequiredTwig_core = 1;
+  twig_core = function(Twig2) {
+    Twig2.trace = false;
+    Twig2.debug = false;
+    Twig2.cache = true;
+    Twig2.noop = function() {
+    };
+    Twig2.merge = function(target, source, onlyChanged) {
+      Object.keys(source).forEach((key2) => {
+        if (onlyChanged && !(key2 in target)) {
+          return;
+        }
+        target[key2] = source[key2];
+      });
+      return target;
+    };
+    Twig2.Error = function(message, file) {
+      this.message = message;
+      this.name = "TwigException";
+      this.type = "TwigException";
+      this.file = file;
+    };
+    Twig2.Error.prototype.toString = function() {
+      const output2 = this.name + ": " + this.message;
+      return output2;
+    };
+    Twig2.log = {
+      trace(...args) {
+        if (Twig2.trace && console) {
+          console.log(Array.prototype.slice.call(args));
+        }
+      },
+      debug(...args) {
+        if (Twig2.debug && console) {
+          console.log(Array.prototype.slice.call(args));
+        }
+      }
+    };
+    if (typeof console === "undefined") {
+      Twig2.log.error = function() {
+      };
+    } else if (typeof console.error !== "undefined") {
+      Twig2.log.error = function(...args) {
+        console.error(...args);
+      };
+    } else if (typeof console.log !== "undefined") {
+      Twig2.log.error = function(...args) {
+        console.log(...args);
+      };
+    }
+    Twig2.token = {};
+    Twig2.token.type = {
+      output: "output",
+      logic: "logic",
+      comment: "comment",
+      raw: "raw",
+      outputWhitespacePre: "output_whitespace_pre",
+      outputWhitespacePost: "output_whitespace_post",
+      outputWhitespaceBoth: "output_whitespace_both",
+      logicWhitespacePre: "logic_whitespace_pre",
+      logicWhitespacePost: "logic_whitespace_post",
+      logicWhitespaceBoth: "logic_whitespace_both"
+    };
+    Twig2.token.definitions = [
+      {
+        type: Twig2.token.type.raw,
+        open: "{% raw %}",
+        close: "{% endraw %}"
+      },
+      {
+        type: Twig2.token.type.raw,
+        open: "{% verbatim %}",
+        close: "{% endverbatim %}"
+      },
+      // *Whitespace type tokens*
+      //
+      // These typically take the form `{{- expression -}}` or `{{- expression }}` or `{{ expression -}}`.
+      {
+        type: Twig2.token.type.outputWhitespacePre,
+        open: "{{-",
+        close: "}}"
+      },
+      {
+        type: Twig2.token.type.outputWhitespacePost,
+        open: "{{",
+        close: "-}}"
+      },
+      {
+        type: Twig2.token.type.outputWhitespaceBoth,
+        open: "{{-",
+        close: "-}}"
+      },
+      {
+        type: Twig2.token.type.logicWhitespacePre,
+        open: "{%-",
+        close: "%}"
+      },
+      {
+        type: Twig2.token.type.logicWhitespacePost,
+        open: "{%",
+        close: "-%}"
+      },
+      {
+        type: Twig2.token.type.logicWhitespaceBoth,
+        open: "{%-",
+        close: "-%}"
+      },
+      // *Output type tokens*
+      //
+      // These typically take the form `{{ expression }}`.
+      {
+        type: Twig2.token.type.output,
+        open: "{{",
+        close: "}}"
+      },
+      // *Logic type tokens*
+      //
+      // These typically take a form like `{% if expression %}` or `{% endif %}`
+      {
+        type: Twig2.token.type.logic,
+        open: "{%",
+        close: "%}"
+      },
+      // *Comment type tokens*
+      //
+      // These take the form `{# anything #}`
+      {
+        type: Twig2.token.type.comment,
+        open: "{#",
+        close: "#}"
+      }
+    ];
+    Twig2.token.strings = ['"', "'"];
+    Twig2.token.findStart = function(template) {
+      const output2 = {
+        position: null,
+        def: null
+      };
+      let closePosition = null;
+      const len = Twig2.token.definitions.length;
+      let i;
+      let tokenTemplate;
+      let firstKeyPosition;
+      let closeKeyPosition;
+      for (i = 0; i < len; i++) {
+        tokenTemplate = Twig2.token.definitions[i];
+        firstKeyPosition = template.indexOf(tokenTemplate.open);
+        closeKeyPosition = template.indexOf(tokenTemplate.close);
+        Twig2.log.trace("Twig.token.findStart: ", "Searching for ", tokenTemplate.open, " found at ", firstKeyPosition);
+        if (firstKeyPosition >= 0) {
+          if (tokenTemplate.open.length !== tokenTemplate.close.length) {
+            if (closeKeyPosition < 0) {
+              continue;
+            }
+          }
+        }
+        if (firstKeyPosition >= 0 && (output2.position === null || firstKeyPosition < output2.position)) {
+          output2.position = firstKeyPosition;
+          output2.def = tokenTemplate;
+          closePosition = closeKeyPosition;
+        } else if (firstKeyPosition >= 0 && output2.position !== null && firstKeyPosition === output2.position) {
+          if (tokenTemplate.open.length > output2.def.open.length) {
+            output2.position = firstKeyPosition;
+            output2.def = tokenTemplate;
+            closePosition = closeKeyPosition;
+          } else if (tokenTemplate.open.length === output2.def.open.length) {
+            if (tokenTemplate.close.length > output2.def.close.length) {
+              if (closeKeyPosition >= 0 && closeKeyPosition < closePosition) {
+                output2.position = firstKeyPosition;
+                output2.def = tokenTemplate;
+                closePosition = closeKeyPosition;
+              }
+            } else if (closeKeyPosition >= 0 && closeKeyPosition < closePosition) {
+              output2.position = firstKeyPosition;
+              output2.def = tokenTemplate;
+              closePosition = closeKeyPosition;
+            }
+          }
+        }
+      }
+      return output2;
+    };
+    Twig2.token.findEnd = function(template, tokenDef, start) {
+      let end = null;
+      let found = false;
+      let offset2 = 0;
+      let strPos = null;
+      let strFound = null;
+      let pos = null;
+      let endOffset = null;
+      let thisStrPos = null;
+      let endStrPos = null;
+      let i;
+      let l;
+      while (!found) {
+        strPos = null;
+        strFound = null;
+        pos = template.indexOf(tokenDef.close, offset2);
+        if (pos >= 0) {
+          end = pos;
+          found = true;
+        } else {
+          throw new Twig2.Error("Unable to find closing bracket '" + tokenDef.close + "' opened near template position " + start);
+        }
+        if (tokenDef.type === Twig2.token.type.comment) {
+          break;
+        }
+        if (tokenDef.type === Twig2.token.type.raw) {
+          break;
+        }
+        l = Twig2.token.strings.length;
+        for (i = 0; i < l; i += 1) {
+          thisStrPos = template.indexOf(Twig2.token.strings[i], offset2);
+          if (thisStrPos > 0 && thisStrPos < pos && (strPos === null || thisStrPos < strPos)) {
+            strPos = thisStrPos;
+            strFound = Twig2.token.strings[i];
+          }
+        }
+        if (strPos !== null) {
+          endOffset = strPos + 1;
+          end = null;
+          found = false;
+          for (; ; ) {
+            endStrPos = template.indexOf(strFound, endOffset);
+            if (endStrPos < 0) {
+              throw Twig2.Error("Unclosed string in template");
+            }
+            if (template.slice(endStrPos - 1, endStrPos) === "\\") {
+              endOffset = endStrPos + 1;
+            } else {
+              offset2 = endStrPos + 1;
+              break;
+            }
+          }
+        }
+      }
+      return end;
+    };
+    Twig2.tokenize = function(template) {
+      const tokens = [];
+      let currentPosition = 0;
+      let foundToken = null;
+      let end = null;
+      while (template.length > 0) {
+        foundToken = Twig2.token.findStart(template);
+        Twig2.log.trace("Twig.tokenize: ", "Found token: ", foundToken);
+        if (foundToken.position === null) {
+          tokens.push({
+            type: Twig2.token.type.raw,
+            value: template,
+            position: {
+              start: currentPosition,
+              end: currentPosition + foundToken.position
+            }
+          });
+          template = "";
+        } else {
+          if (foundToken.position > 0) {
+            tokens.push({
+              type: Twig2.token.type.raw,
+              value: template.slice(0, Math.max(0, foundToken.position)),
+              position: {
+                start: currentPosition,
+                end: currentPosition + Math.max(0, foundToken.position)
+              }
+            });
+          }
+          template = template.slice(foundToken.position + foundToken.def.open.length);
+          currentPosition += foundToken.position + foundToken.def.open.length;
+          end = Twig2.token.findEnd(template, foundToken.def, currentPosition);
+          Twig2.log.trace("Twig.tokenize: ", "Token ends at ", end);
+          tokens.push({
+            type: foundToken.def.type,
+            value: template.slice(0, Math.max(0, end)).trim(),
+            position: {
+              start: currentPosition - foundToken.def.open.length,
+              end: currentPosition + end + foundToken.def.close.length
+            }
+          });
+          if (template.slice(end + foundToken.def.close.length, end + foundToken.def.close.length + 1) === "\n") {
+            switch (foundToken.def.type) {
+              case "logic_whitespace_pre":
+              case "logic_whitespace_post":
+              case "logic_whitespace_both":
+              case "logic":
+                end += 1;
+                break;
+            }
+          }
+          template = template.slice(end + foundToken.def.close.length);
+          currentPosition += end + foundToken.def.close.length;
+        }
+      }
+      return tokens;
+    };
+    Twig2.compile = function(tokens) {
+      const self2 = this;
+      try {
+        const output2 = [];
+        const stack = [];
+        let intermediateOutput = [];
+        let token = null;
+        let logicToken = null;
+        let unclosedToken = null;
+        let prevToken = null;
+        let prevOutput = null;
+        let prevIntermediateOutput = null;
+        let prevTemplate = null;
+        let nextToken = null;
+        let tokOutput = null;
+        let type = null;
+        let open = null;
+        let next = null;
+        const compileOutput = function(token2) {
+          Twig2.expression.compile.call(self2, token2);
+          if (stack.length > 0) {
+            intermediateOutput.push(token2);
+          } else {
+            output2.push(token2);
+          }
+        };
+        const compileLogic = function(token2) {
+          logicToken = Twig2.logic.compile.call(self2, token2);
+          logicToken.position = token2.position;
+          type = logicToken.type;
+          open = Twig2.logic.handler[type].open;
+          next = Twig2.logic.handler[type].next;
+          Twig2.log.trace(
+            "Twig.compile: ",
+            "Compiled logic token to ",
+            logicToken,
+            " next is: ",
+            next,
+            " open is : ",
+            open
+          );
+          if (open !== void 0 && !open) {
+            prevToken = stack.pop();
+            prevTemplate = Twig2.logic.handler[prevToken.type];
+            if (!prevTemplate.next.includes(type)) {
+              throw new Error(type + " not expected after a " + prevToken.type);
+            }
+            prevToken.output = prevToken.output || [];
+            prevToken.output = prevToken.output.concat(intermediateOutput);
+            intermediateOutput = [];
+            tokOutput = {
+              type: Twig2.token.type.logic,
+              token: prevToken,
+              position: {
+                open: prevToken.position,
+                close: token2.position
+              }
+            };
+            if (stack.length > 0) {
+              intermediateOutput.push(tokOutput);
+            } else {
+              output2.push(tokOutput);
+            }
+          }
+          if (next !== void 0 && next.length > 0) {
+            Twig2.log.trace("Twig.compile: ", "Pushing ", logicToken, " to logic stack.");
+            if (stack.length > 0) {
+              prevToken = stack.pop();
+              prevToken.output = prevToken.output || [];
+              prevToken.output = prevToken.output.concat(intermediateOutput);
+              stack.push(prevToken);
+              intermediateOutput = [];
+            }
+            stack.push(logicToken);
+          } else if (open !== void 0 && open) {
+            tokOutput = {
+              type: Twig2.token.type.logic,
+              token: logicToken,
+              position: logicToken.position
+            };
+            if (stack.length > 0) {
+              intermediateOutput.push(tokOutput);
+            } else {
+              output2.push(tokOutput);
+            }
+          }
+        };
+        while (tokens.length > 0) {
+          token = tokens.shift();
+          prevOutput = output2[output2.length - 1];
+          prevIntermediateOutput = intermediateOutput[intermediateOutput.length - 1];
+          nextToken = tokens[0];
+          Twig2.log.trace("Compiling token ", token);
+          switch (token.type) {
+            case Twig2.token.type.raw:
+              if (stack.length > 0) {
+                intermediateOutput.push(token);
+              } else {
+                output2.push(token);
+              }
+              break;
+            case Twig2.token.type.logic:
+              compileLogic.call(self2, token);
+              break;
+            case Twig2.token.type.comment:
+              break;
+            case Twig2.token.type.output:
+              compileOutput.call(self2, token);
+              break;
+            case Twig2.token.type.logicWhitespacePre:
+            case Twig2.token.type.logicWhitespacePost:
+            case Twig2.token.type.logicWhitespaceBoth:
+            case Twig2.token.type.outputWhitespacePre:
+            case Twig2.token.type.outputWhitespacePost:
+            case Twig2.token.type.outputWhitespaceBoth:
+              if (token.type !== Twig2.token.type.outputWhitespacePost && token.type !== Twig2.token.type.logicWhitespacePost) {
+                if (prevOutput) {
+                  if (prevOutput.type === Twig2.token.type.raw) {
+                    output2.pop();
+                    prevOutput.value = prevOutput.value.trimEnd();
+                    output2.push(prevOutput);
+                  }
+                }
+                if (prevIntermediateOutput) {
+                  if (prevIntermediateOutput.type === Twig2.token.type.raw) {
+                    intermediateOutput.pop();
+                    prevIntermediateOutput.value = prevIntermediateOutput.value.trimEnd();
+                    intermediateOutput.push(prevIntermediateOutput);
+                  }
+                }
+              }
+              switch (token.type) {
+                case Twig2.token.type.outputWhitespacePre:
+                case Twig2.token.type.outputWhitespacePost:
+                case Twig2.token.type.outputWhitespaceBoth:
+                  compileOutput.call(self2, token);
+                  break;
+                case Twig2.token.type.logicWhitespacePre:
+                case Twig2.token.type.logicWhitespacePost:
+                case Twig2.token.type.logicWhitespaceBoth:
+                  compileLogic.call(self2, token);
+                  break;
+                default:
+                  break;
+              }
+              if (token.type !== Twig2.token.type.outputWhitespacePre && token.type !== Twig2.token.type.logicWhitespacePre) {
+                if (nextToken) {
+                  if (nextToken.type === Twig2.token.type.raw) {
+                    tokens.shift();
+                    nextToken.value = nextToken.value.trimStart();
+                    tokens.unshift(nextToken);
+                  }
+                }
+              }
+              break;
+            default:
+              break;
+          }
+          Twig2.log.trace(
+            "Twig.compile: ",
+            " Output: ",
+            output2,
+            " Logic Stack: ",
+            stack,
+            " Pending Output: ",
+            intermediateOutput
+          );
+        }
+        if (stack.length > 0) {
+          unclosedToken = stack.pop();
+          throw new Error("Unable to find an end tag for " + unclosedToken.type + ", expecting one of " + unclosedToken.next);
+        }
+        return output2;
+      } catch (error) {
+        if (self2.options.rethrow) {
+          if (error.type === "TwigException" && !error.file) {
+            error.file = self2.id;
+          }
+          throw error;
+        } else {
+          Twig2.log.error("Error compiling twig template " + self2.id + ": ");
+          if (error.stack) {
+            Twig2.log.error(error.stack);
+          } else {
+            Twig2.log.error(error.toString());
+          }
+        }
+      }
+    };
+    function handleException(state, ex) {
+      if (state.template.options.rethrow) {
+        if (typeof ex === "string") {
+          ex = new Twig2.Error(ex);
+        }
+        if (ex.type === "TwigException" && !ex.file) {
+          ex.file = state.template.id;
+        }
+        throw ex;
+      } else {
+        Twig2.log.error("Error parsing twig template " + state.template.id + ": ");
+        if (ex.stack) {
+          Twig2.log.error(ex.stack);
+        } else {
+          Twig2.log.error(ex.toString());
+        }
+        if (Twig2.debug) {
+          return ex.toString();
+        }
+      }
+    }
+    Twig2.prepare = function(data) {
+      Twig2.log.debug("Twig.prepare: ", "Tokenizing ", data);
+      const rawTokens = Twig2.tokenize.call(this, data);
+      Twig2.log.debug("Twig.prepare: ", "Compiling ", rawTokens);
+      const tokens = Twig2.compile.call(this, rawTokens);
+      Twig2.log.debug("Twig.prepare: ", "Compiled ", tokens);
+      return tokens;
+    };
+    Twig2.output = function(output2) {
+      const { autoescape } = this.options;
+      if (!autoescape) {
+        return output2.join("");
+      }
+      const strategy = typeof autoescape === "string" ? autoescape : "html";
+      const escapedOutput = output2.map((str) => {
+        if (str && (str.twigMarkup !== true && str.twigMarkup !== strategy) && !(strategy === "html" && str.twigMarkup === "html_attr")) {
+          str = Twig2.filters.escape(str, [strategy]);
+        }
+        return str;
+      });
+      if (escapedOutput.length === 0) {
+        return "";
+      }
+      const joinedOutput = escapedOutput.join("");
+      if (joinedOutput.length === 0) {
+        return "";
+      }
+      return new Twig2.Markup(joinedOutput, true);
+    };
+    Twig2.Templates = {
+      /**
+       * Registered template loaders - use Twig.Templates.registerLoader to add supported loaders
+       * @type {Object}
+       */
+      loaders: {},
+      /**
+       * Registered template parsers - use Twig.Templates.registerParser to add supported parsers
+       * @type {Object}
+       */
+      parsers: {},
+      /**
+       * Cached / loaded templates
+       * @type {Object}
+       */
+      registry: {}
+    };
+    Twig2.validateId = function(id2) {
+      if (id2 === "prototype") {
+        throw new Twig2.Error(id2 + " is not a valid twig identifier");
+      } else if (Twig2.cache && Object.hasOwnProperty.call(Twig2.Templates.registry, id2)) {
+        throw new Twig2.Error("There is already a template with the ID " + id2);
+      }
+      return true;
+    };
+    Twig2.Templates.registerLoader = function(methodName, func, scope) {
+      if (typeof func !== "function") {
+        throw new Twig2.Error("Unable to add loader for " + methodName + ": Invalid function reference given.");
+      }
+      if (scope) {
+        func = func.bind(scope);
+      }
+      this.loaders[methodName] = func;
+    };
+    Twig2.Templates.unRegisterLoader = function(methodName) {
+      if (this.isRegisteredLoader(methodName)) {
+        delete this.loaders[methodName];
+      }
+    };
+    Twig2.Templates.isRegisteredLoader = function(methodName) {
+      return Object.hasOwnProperty.call(this.loaders, methodName);
+    };
+    Twig2.Templates.registerParser = function(methodName, func, scope) {
+      if (typeof func !== "function") {
+        throw new Twig2.Error("Unable to add parser for " + methodName + ": Invalid function regerence given.");
+      }
+      if (scope) {
+        func = func.bind(scope);
+      }
+      this.parsers[methodName] = func;
+    };
+    Twig2.Templates.unRegisterParser = function(methodName) {
+      if (this.isRegisteredParser(methodName)) {
+        delete this.parsers[methodName];
+      }
+    };
+    Twig2.Templates.isRegisteredParser = function(methodName) {
+      return Object.hasOwnProperty.call(this.parsers, methodName);
+    };
+    Twig2.Templates.save = function(template) {
+      if (template.id === void 0) {
+        throw new Twig2.Error("Unable to save template with no id");
+      }
+      Twig2.Templates.registry[template.id] = template;
+    };
+    Twig2.Templates.load = function(id2) {
+      if (!Object.hasOwnProperty.call(Twig2.Templates.registry, id2)) {
+        return null;
+      }
+      return Twig2.Templates.registry[id2];
+    };
+    Twig2.Templates.loadRemote = function(location, params, callback, errorCallback) {
+      const id2 = typeof params.id === "undefined" ? location : params.id;
+      const cached = Twig2.Templates.registry[id2];
+      if (Twig2.cache && typeof cached !== "undefined") {
+        if (typeof callback === "function") {
+          callback(cached);
+        }
+        return cached;
+      }
+      params.parser = params.parser || "twig";
+      params.id = id2;
+      if (typeof params.async === "undefined") {
+        params.async = true;
+      }
+      const loader = this.loaders[params.method] || this.loaders.fs;
+      return loader.call(this, location, params, callback, errorCallback);
+    };
+    function is(type, obj) {
+      const clas = Object.prototype.toString.call(obj).slice(8, -1);
+      return obj !== void 0 && obj !== null && clas === type;
+    }
+    Twig2.Block = function(template, token) {
+      this.template = template;
+      this.token = token;
+    };
+    Twig2.Block.prototype.render = function(parseState, context) {
+      const originalTemplate = parseState.template;
+      let promise;
+      parseState.template = this.template;
+      if (this.token.expression) {
+        promise = Twig2.expression.parseAsync.call(parseState, this.token.output, context);
+      } else {
+        promise = parseState.parseAsync(this.token.output, context);
+      }
+      return promise.then((value) => {
+        return Twig2.expression.parseAsync.call(
+          parseState,
+          {
+            type: Twig2.expression.type.string,
+            value
+          },
+          context
+        );
+      }).then((output2) => {
+        parseState.template = originalTemplate;
+        return output2;
+      });
+    };
+    Twig2.ParseState = function(template, blockOverrides, context) {
+      this.renderedBlocks = {};
+      this.overrideBlocks = blockOverrides === void 0 ? {} : blockOverrides;
+      this.context = context === void 0 ? {} : context;
+      this.macros = {};
+      this.nestingStack = [];
+      this.template = template;
+    };
+    Twig2.ParseState.prototype.getBlock = function(name, checkOnlyInheritedBlocks) {
+      let block;
+      if (checkOnlyInheritedBlocks !== true) {
+        block = this.overrideBlocks[name];
+      }
+      if (block === void 0) {
+        block = this.template.getBlock(name, checkOnlyInheritedBlocks);
+      }
+      if (block === void 0 && this.template.parentTemplate !== null) {
+        block = this.template.parentTemplate.getBlock(name);
+      }
+      return block;
+    };
+    Twig2.ParseState.prototype.getBlocks = function(includeParentBlocks) {
+      let blocks = {};
+      if (includeParentBlocks !== false && this.template.parentTemplate !== null && // Prevent infinite loop
+      this.template.parentTemplate !== this.template) {
+        blocks = this.template.parentTemplate.getBlocks();
+      }
+      blocks = {
+        ...blocks,
+        // Override with any blocks defined within the associated template
+        ...this.template.getBlocks(),
+        // Override with any blocks specified when initialized
+        ...this.overrideBlocks
+      };
+      return blocks;
+    };
+    Twig2.ParseState.prototype.getNestingStackToken = function(type) {
+      let matchingToken;
+      this.nestingStack.forEach((token) => {
+        if (matchingToken === void 0 && token.type === type) {
+          matchingToken = token;
+        }
+      });
+      return matchingToken;
+    };
+    Twig2.ParseState.prototype.parse = function(tokens, context, allowAsync) {
+      const state = this;
+      let output2 = [];
+      let err = null;
+      let isAsync = true;
+      let promise = null;
+      let chain = true;
+      if (context) {
+        state.context = context;
+      }
+      function outputPush(o) {
+        output2.push(o);
+      }
+      function parseTokenLogic(logic) {
+        if (typeof logic.chain !== "undefined") {
+          chain = logic.chain;
+        }
+        if (typeof logic.context !== "undefined") {
+          state.context = logic.context;
+        }
+        if (typeof logic.output !== "undefined") {
+          output2.push(logic.output);
+        }
+      }
+      promise = Twig2.async.forEach(tokens, (token) => {
+        Twig2.log.debug("Twig.ParseState.parse: ", "Parsing token: ", token);
+        switch (token.type) {
+          case Twig2.token.type.raw:
+            output2.push(Twig2.filters.raw(token.value));
+            break;
+          case Twig2.token.type.logic:
+            return Twig2.logic.parseAsync.call(state, token.token, state.context, chain).then(parseTokenLogic);
+          case Twig2.token.type.comment:
+            break;
+          case Twig2.token.type.outputWhitespacePre:
+          case Twig2.token.type.outputWhitespacePost:
+          case Twig2.token.type.outputWhitespaceBoth:
+          case Twig2.token.type.output:
+            Twig2.log.debug("Twig.ParseState.parse: ", "Output token: ", token.stack);
+            return Twig2.expression.parseAsync.call(state, token.stack, state.context).then(outputPush);
+        }
+      }).then(() => {
+        output2 = Twig2.output.call(state.template, output2);
+        isAsync = false;
+        return output2;
+      }).catch((error) => {
+        if (allowAsync) {
+          handleException(state, error);
+        }
+        err = error;
+      });
+      if (allowAsync) {
+        return promise;
+      }
+      if (err !== null) {
+        return handleException(state, err);
+      }
+      if (isAsync) {
+        throw new Twig2.Error("You are using Twig.js in sync mode in combination with async extensions.");
+      }
+      return output2;
+    };
+    Twig2.Template = function(params) {
+      const { data, id: id2, base, path, url, name, method, options } = params;
+      this.base = base;
+      this.blocks = {
+        defined: {},
+        imported: {}
+      };
+      this.id = id2;
+      this.method = method;
+      this.name = name;
+      this.options = options;
+      this.parentTemplate = null;
+      this.path = path;
+      this.url = url;
+      if (is("String", data)) {
+        this.tokens = Twig2.prepare.call(this, data);
+      } else {
+        this.tokens = data;
+      }
+      if (id2 !== void 0) {
+        Twig2.Templates.save(this);
+      }
+    };
+    Twig2.Template.prototype.getBlock = function(name, checkOnlyInheritedBlocks, checkImports = true) {
+      let block;
+      if (checkOnlyInheritedBlocks !== true) {
+        block = this.blocks.defined[name];
+      }
+      if (checkImports && block === void 0) {
+        block = this.blocks.imported[name];
+      }
+      if (block === void 0 && this.parentTemplate !== null) {
+        block = this.parentTemplate.getBlock(name, checkOnlyInheritedBlocks, checkImports = false);
+      }
+      return block;
+    };
+    Twig2.Template.prototype.getBlocks = function() {
+      let blocks = {};
+      blocks = {
+        ...blocks,
+        // Get any blocks imported from other templates
+        ...this.blocks.imported,
+        // Override with any blocks defined within the template itself
+        ...this.blocks.defined
+      };
+      return blocks;
+    };
+    Twig2.Template.prototype.render = function(context, params, allowAsync) {
+      const template = this;
+      params = params || {};
+      return Twig2.async.potentiallyAsync(template, allowAsync, () => {
+        const state = new Twig2.ParseState(template, params.blocks, context);
+        return state.parseAsync(template.tokens).then((output2) => {
+          let parentTemplate;
+          let url;
+          if (template.parentTemplate !== null) {
+            if (template.options.allowInlineIncludes) {
+              parentTemplate = Twig2.Templates.load(template.parentTemplate);
+              if (parentTemplate) {
+                parentTemplate.options = template.options;
+              }
+            }
+            if (!parentTemplate) {
+              url = Twig2.path.parsePath(template, template.parentTemplate);
+              parentTemplate = Twig2.Templates.loadRemote(url, {
+                method: template.getLoaderMethod(),
+                base: template.base,
+                async: false,
+                id: url,
+                options: template.options
+              });
+            }
+            template.parentTemplate = parentTemplate;
+            return template.parentTemplate.renderAsync(
+              state.context,
+              {
+                blocks: state.getBlocks(false),
+                isInclude: true
+              }
+            );
+          }
+          if (params.isInclude === true) {
+            return output2;
+          }
+          return output2.valueOf();
+        });
+      });
+    };
+    Twig2.Template.prototype.importFile = function(file) {
+      let url = null;
+      let subTemplate;
+      if (!this.url && this.options.allowInlineIncludes) {
+        file = this.path ? Twig2.path.parsePath(this, file) : file;
+        subTemplate = Twig2.Templates.load(file);
+        if (!subTemplate) {
+          subTemplate = Twig2.Templates.loadRemote(url, {
+            id: file,
+            method: this.getLoaderMethod(),
+            async: false,
+            path: file,
+            options: this.options
+          });
+          if (!subTemplate) {
+            throw new Twig2.Error("Unable to find the template " + file);
+          }
+        }
+        subTemplate.options = this.options;
+        return subTemplate;
+      }
+      url = Twig2.path.parsePath(this, file);
+      subTemplate = Twig2.Templates.loadRemote(url, {
+        method: this.getLoaderMethod(),
+        base: this.base,
+        async: false,
+        options: this.options,
+        id: url
+      });
+      return subTemplate;
+    };
+    Twig2.Template.prototype.getLoaderMethod = function() {
+      if (this.path) {
+        return "fs";
+      }
+      if (this.url) {
+        return "ajax";
+      }
+      return this.method || "fs";
+    };
+    Twig2.Template.prototype.compile = function(options) {
+      return Twig2.compiler.compile(this, options);
+    };
+    Twig2.Markup = function(content, strategy) {
+      if (typeof content !== "string") {
+        return content;
+      }
+      const output2 = new String(content);
+      output2.twigMarkup = typeof strategy === "undefined" ? true : strategy;
+      return output2;
+    };
+    return Twig2;
+  };
+  return twig_core;
+}
+var twig_compiler;
+var hasRequiredTwig_compiler;
+function requireTwig_compiler() {
+  if (hasRequiredTwig_compiler) return twig_compiler;
+  hasRequiredTwig_compiler = 1;
+  twig_compiler = function(Twig2) {
+    Twig2.compiler = {
+      module: {}
+    };
+    Twig2.compiler.compile = function(template, options) {
+      const tokens = JSON.stringify(template.tokens);
+      const { id: id2 } = template;
+      let output2 = null;
+      if (options.module) {
+        if (Twig2.compiler.module[options.module] === void 0) {
+          throw new Twig2.Error("Unable to find module type " + options.module);
+        }
+        output2 = Twig2.compiler.module[options.module](id2, tokens, options.twig);
+      } else {
+        output2 = Twig2.compiler.wrap(id2, tokens);
+      }
+      return output2;
+    };
+    Twig2.compiler.module = {
+      amd(id2, tokens, pathToTwig) {
+        return 'define(["' + pathToTwig + '"], function (Twig) {\n	var twig, templates;\ntwig = Twig.twig;\ntemplates = ' + Twig2.compiler.wrap(id2, tokens) + "\n	return templates;\n});";
+      },
+      node(id2, tokens) {
+        return 'var twig = require("twig").twig;\nexports.template = ' + Twig2.compiler.wrap(id2, tokens);
+      },
+      cjs2(id2, tokens, pathToTwig) {
+        return 'module.declare([{ twig: "' + pathToTwig + '" }], function (require, exports, module) {\n	var twig = require("twig").twig;\n	exports.template = ' + Twig2.compiler.wrap(id2, tokens) + "\n});";
+      }
+    };
+    Twig2.compiler.wrap = function(id2, tokens) {
+      return 'twig({id:"' + id2.replace('"', '\\"') + '", data:' + tokens + ", precompiled: true});\n";
+    };
+    return Twig2;
+  };
+  return twig_compiler;
+}
+var twig_expression_operator;
+var hasRequiredTwig_expression_operator;
+function requireTwig_expression_operator() {
+  if (hasRequiredTwig_expression_operator) return twig_expression_operator;
+  hasRequiredTwig_expression_operator = 1;
+  twig_expression_operator = function(Twig2) {
+    Twig2.expression.operator = {
+      leftToRight: "leftToRight",
+      rightToLeft: "rightToLeft"
+    };
+    const containment = function(a, b) {
+      if (b === void 0 || b === null) {
+        return null;
+      }
+      if (b.indexOf !== void 0) {
+        return (a === b || a !== "") && b.includes(a);
+      }
+      let el;
+      for (el in b) {
+        if (Object.hasOwnProperty.call(b, el) && b[el] === a) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Twig2.expression.operator.lookup = function(operator, token) {
+      switch (operator) {
+        case "..":
+          token.precidence = 20;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case ",":
+          token.precidence = 18;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "?:":
+        case "?":
+        case ":":
+          token.precidence = 16;
+          token.associativity = Twig2.expression.operator.rightToLeft;
+          break;
+        case "??":
+          token.precidence = 15;
+          token.associativity = Twig2.expression.operator.rightToLeft;
+          break;
+        case "or":
+          token.precidence = 14;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "and":
+          token.precidence = 13;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "b-or":
+          token.precidence = 12;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "b-xor":
+          token.precidence = 11;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "b-and":
+          token.precidence = 10;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "==":
+        case "!=":
+          token.precidence = 9;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "<=>":
+          token.precidence = 9;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "<":
+        case "<=":
+        case ">":
+        case ">=":
+        case "not in":
+        case "in":
+          token.precidence = 8;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "~":
+        case "+":
+        case "-":
+          token.precidence = 6;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "//":
+        case "**":
+        case "*":
+        case "/":
+        case "%":
+          token.precidence = 5;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "not":
+          token.precidence = 3;
+          token.associativity = Twig2.expression.operator.rightToLeft;
+          break;
+        case "matches":
+          token.precidence = 8;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "starts with":
+          token.precidence = 8;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        case "ends with":
+          token.precidence = 8;
+          token.associativity = Twig2.expression.operator.leftToRight;
+          break;
+        default:
+          throw new Twig2.Error("Failed to lookup operator: " + operator + " is an unknown operator.");
+      }
+      token.operator = operator;
+      return token;
+    };
+    Twig2.expression.operator.parse = function(operator, stack) {
+      Twig2.log.trace("Twig.expression.operator.parse: ", "Handling ", operator);
+      let a;
+      let b;
+      let c;
+      if (operator === "?") {
+        c = stack.pop();
+      }
+      b = stack.pop();
+      if (operator !== "not") {
+        a = stack.pop();
+      }
+      if (operator !== "in" && operator !== "not in" && operator !== "??") {
+        if (a && Array.isArray(a)) {
+          a = a.length;
+        }
+        if (operator !== "?" && (b && Array.isArray(b))) {
+          b = b.length;
+        }
+      }
+      if (operator === "matches") {
+        if (b && typeof b === "string") {
+          const reParts = b.match(/^\/(.*)\/([gims]?)$/);
+          const reBody = reParts[1];
+          const reFlags = reParts[2];
+          b = new RegExp(reBody, reFlags);
+        }
+      }
+      switch (operator) {
+        case ":":
+          break;
+        case "??":
+          if (a === void 0) {
+            a = b;
+            b = c;
+            c = void 0;
+          }
+          if (a !== void 0 && a !== null) {
+            stack.push(a);
+          } else {
+            stack.push(b);
+          }
+          break;
+        case "?:":
+          if (Twig2.lib.boolval(a)) {
+            stack.push(a);
+          } else {
+            stack.push(b);
+          }
+          break;
+        case "?":
+          if (a === void 0) {
+            a = b;
+            b = c;
+            c = void 0;
+          }
+          if (Twig2.lib.boolval(a)) {
+            stack.push(b);
+          } else {
+            stack.push(c);
+          }
+          break;
+        case "+":
+          b = parseFloat(b);
+          a = parseFloat(a);
+          stack.push(a + b);
+          break;
+        case "-":
+          b = parseFloat(b);
+          a = parseFloat(a);
+          stack.push(a - b);
+          break;
+        case "*":
+          b = parseFloat(b);
+          a = parseFloat(a);
+          stack.push(a * b);
+          break;
+        case "/":
+          b = parseFloat(b);
+          a = parseFloat(a);
+          stack.push(a / b);
+          break;
+        case "//":
+          b = parseFloat(b);
+          a = parseFloat(a);
+          stack.push(Math.floor(a / b));
+          break;
+        case "%":
+          b = parseFloat(b);
+          a = parseFloat(a);
+          stack.push(a % b);
+          break;
+        case "~":
+          stack.push((typeof a !== "undefined" && a !== null ? a.toString() : "") + (typeof b !== "undefined" && b !== null ? b.toString() : ""));
+          break;
+        case "not":
+        case "!":
+          stack.push(!Twig2.lib.boolval(b));
+          break;
+        case "<=>":
+          stack.push(a === b ? 0 : a < b ? -1 : 1);
+          break;
+        case "<":
+          stack.push(a < b);
+          break;
+        case "<=":
+          stack.push(a <= b);
+          break;
+        case ">":
+          stack.push(a > b);
+          break;
+        case ">=":
+          stack.push(a >= b);
+          break;
+        case "===":
+          stack.push(a === b);
+          break;
+        case "==":
+          stack.push(a == b);
+          break;
+        case "!==":
+          stack.push(a !== b);
+          break;
+        case "!=":
+          stack.push(a != b);
+          break;
+        case "or":
+          stack.push(Twig2.lib.boolval(a) || Twig2.lib.boolval(b));
+          break;
+        case "b-or":
+          stack.push(a | b);
+          break;
+        case "b-xor":
+          stack.push(a ^ b);
+          break;
+        case "and":
+          stack.push(Twig2.lib.boolval(a) && Twig2.lib.boolval(b));
+          break;
+        case "b-and":
+          stack.push(a & b);
+          break;
+        case "**":
+          stack.push(a ** b);
+          break;
+        case "not in":
+          stack.push(!containment(a, b));
+          break;
+        case "in":
+          stack.push(containment(a, b));
+          break;
+        case "matches":
+          stack.push(b.test(a));
+          break;
+        case "starts with":
+          stack.push(typeof a === "string" && a.indexOf(b) === 0);
+          break;
+        case "ends with":
+          stack.push(typeof a === "string" && a.includes(b, a.length - b.length));
+          break;
+        case "..":
+          stack.push(Twig2.functions.range(a, b));
+          break;
+        default:
+          throw new Twig2.Error("Failed to parse operator: " + operator + " is an unknown operator.");
+      }
+    };
+    return Twig2;
+  };
+  return twig_expression_operator;
+}
+var twig_expression;
+var hasRequiredTwig_expression;
+function requireTwig_expression() {
+  if (hasRequiredTwig_expression) return twig_expression;
+  hasRequiredTwig_expression = 1;
+  twig_expression = function(Twig2) {
+    function parseParams(state, params, context) {
+      if (params) {
+        return Twig2.expression.parseAsync.call(state, params, context);
+      }
+      return Twig2.Promise.resolve(false);
+    }
+    Twig2.expression = {};
+    requireTwig_expression_operator()(Twig2);
+    Twig2.expression.reservedWords = [
+      "true",
+      "false",
+      "null",
+      "TRUE",
+      "FALSE",
+      "NULL",
+      "_context",
+      "and",
+      "b-and",
+      "or",
+      "b-or",
+      "b-xor",
+      "in",
+      "not in",
+      "if",
+      "matches",
+      "starts",
+      "ends",
+      "with"
+    ];
+    Twig2.expression.type = {
+      comma: "Twig.expression.type.comma",
+      operator: {
+        unary: "Twig.expression.type.operator.unary",
+        binary: "Twig.expression.type.operator.binary"
+      },
+      string: "Twig.expression.type.string",
+      bool: "Twig.expression.type.bool",
+      slice: "Twig.expression.type.slice",
+      array: {
+        start: "Twig.expression.type.array.start",
+        end: "Twig.expression.type.array.end"
+      },
+      object: {
+        start: "Twig.expression.type.object.start",
+        end: "Twig.expression.type.object.end"
+      },
+      parameter: {
+        start: "Twig.expression.type.parameter.start",
+        end: "Twig.expression.type.parameter.end"
+      },
+      subexpression: {
+        start: "Twig.expression.type.subexpression.start",
+        end: "Twig.expression.type.subexpression.end"
+      },
+      key: {
+        period: "Twig.expression.type.key.period",
+        brackets: "Twig.expression.type.key.brackets"
+      },
+      filter: "Twig.expression.type.filter",
+      _function: "Twig.expression.type._function",
+      variable: "Twig.expression.type.variable",
+      number: "Twig.expression.type.number",
+      _null: "Twig.expression.type.null",
+      context: "Twig.expression.type.context",
+      test: "Twig.expression.type.test"
+    };
+    Twig2.expression.set = {
+      // What can follow an expression (in general)
+      operations: [
+        Twig2.expression.type.filter,
+        Twig2.expression.type.operator.unary,
+        Twig2.expression.type.operator.binary,
+        Twig2.expression.type.array.end,
+        Twig2.expression.type.object.end,
+        Twig2.expression.type.parameter.end,
+        Twig2.expression.type.subexpression.end,
+        Twig2.expression.type.comma,
+        Twig2.expression.type.test
+      ],
+      expressions: [
+        Twig2.expression.type._function,
+        Twig2.expression.type.bool,
+        Twig2.expression.type.string,
+        Twig2.expression.type.variable,
+        Twig2.expression.type.number,
+        Twig2.expression.type._null,
+        Twig2.expression.type.context,
+        Twig2.expression.type.parameter.start,
+        Twig2.expression.type.array.start,
+        Twig2.expression.type.object.start,
+        Twig2.expression.type.subexpression.start,
+        Twig2.expression.type.operator.unary
+      ]
+    };
+    Twig2.expression.set.operationsExtended = Twig2.expression.set.operations.concat([
+      Twig2.expression.type.key.period,
+      Twig2.expression.type.key.brackets,
+      Twig2.expression.type.slice
+    ]);
+    Twig2.expression.fn = {
+      compile: {
+        push(token, stack, output2) {
+          output2.push(token);
+        },
+        pushBoth(token, stack, output2) {
+          output2.push(token);
+          stack.push(token);
+        }
+      },
+      parse: {
+        push(token, stack) {
+          stack.push(token);
+        },
+        pushValue(token, stack) {
+          stack.push(token.value);
+        }
+      }
+    };
+    Twig2.expression.definitions = [
+      {
+        type: Twig2.expression.type.test,
+        regex: /^is\s+(not)?\s*([a-zA-Z_]\w*(\s?(?:as|by))?)/,
+        next: Twig2.expression.set.operations.concat([Twig2.expression.type.parameter.start]),
+        compile(token, stack, output2) {
+          token.filter = token.match[2];
+          token.modifier = token.match[1];
+          delete token.match;
+          delete token.value;
+          output2.push(token);
+        },
+        parse(token, stack, context) {
+          const value = stack.pop();
+          const state = this;
+          return parseParams(state, token.params, context).then((params) => {
+            const result = Twig2.test(token.filter, value, params);
+            if (token.modifier === "not") {
+              stack.push(!result);
+            } else {
+              stack.push(result);
+            }
+          });
+        }
+      },
+      {
+        type: Twig2.expression.type.comma,
+        // Match a comma
+        regex: /^,/,
+        next: Twig2.expression.set.expressions.concat([Twig2.expression.type.array.end, Twig2.expression.type.object.end]),
+        compile(token, stack, output2) {
+          let i = stack.length - 1;
+          let stackToken;
+          delete token.match;
+          delete token.value;
+          for (; i >= 0; i--) {
+            stackToken = stack.pop();
+            if (stackToken.type === Twig2.expression.type.object.start || stackToken.type === Twig2.expression.type.parameter.start || stackToken.type === Twig2.expression.type.array.start) {
+              stack.push(stackToken);
+              break;
+            }
+            output2.push(stackToken);
+          }
+          output2.push(token);
+        }
+      },
+      {
+        /**
+         * Match a number (integer or decimal)
+         */
+        type: Twig2.expression.type.number,
+        // Match a number
+        regex: /^-?\d+(\.\d+)?/,
+        next: Twig2.expression.set.operations,
+        compile(token, stack, output2) {
+          token.value = Number(token.value);
+          output2.push(token);
+        },
+        parse: Twig2.expression.fn.parse.pushValue
+      },
+      {
+        type: Twig2.expression.type.operator.binary,
+        // Match any of ??, ?:, +, *, /, -, %, ~, <=>, <, <=, >, >=, !=, ==, **, ?, :, and, b-and, or, b-or, b-xor, in, not in
+        // and, or, in, not in, matches, starts with, ends with can be followed by a space or parenthesis
+        regex: /(^\?\?|^\?:|^(b-and)|^(b-or)|^(b-xor)|^[+\-~%?]|^(<=>)|^[:](?!\d\])|^[!=]==?|^[!<>]=?|^\*\*?|^\/\/?|^(and)[(|\s+]|^(or)[(|\s+]|^(in)[(|\s+]|^(not in)[(|\s+]|^(matches)|^(starts with)|^(ends with)|^\.\.)/,
+        next: Twig2.expression.set.expressions,
+        transform(match, tokens) {
+          switch (match[0]) {
+            case "and(":
+            case "or(":
+            case "in(":
+            case "not in(":
+              tokens[tokens.length - 1].value = match[2];
+              return match[0];
+            default:
+              return "";
+          }
+        },
+        compile(token, stack, output2) {
+          delete token.match;
+          token.value = token.value.trim();
+          const { value } = token;
+          const operator = Twig2.expression.operator.lookup(value, token);
+          Twig2.log.trace("Twig.expression.compile: ", "Operator: ", operator, " from ", value);
+          while (stack.length > 0 && (stack[stack.length - 1].type === Twig2.expression.type.operator.unary || stack[stack.length - 1].type === Twig2.expression.type.operator.binary) && (operator.associativity === Twig2.expression.operator.leftToRight && operator.precidence >= stack[stack.length - 1].precidence || operator.associativity === Twig2.expression.operator.rightToLeft && operator.precidence > stack[stack.length - 1].precidence)) {
+            const temp = stack.pop();
+            output2.push(temp);
+          }
+          if (value === ":") {
+            if (stack[stack.length - 1] && stack[stack.length - 1].value === "?") ;
+            else {
+              const keyToken = output2.pop();
+              if (keyToken.type === Twig2.expression.type.string || keyToken.type === Twig2.expression.type.variable) {
+                token.key = keyToken.value;
+              } else if (keyToken.type === Twig2.expression.type.number) {
+                token.key = keyToken.value.toString();
+              } else if (keyToken.expression && (keyToken.type === Twig2.expression.type.parameter.end || keyToken.type === Twig2.expression.type.subexpression.end)) {
+                token.params = keyToken.params;
+              } else {
+                throw new Twig2.Error("Unexpected value before ':' of " + keyToken.type + " = " + keyToken.value);
+              }
+              output2.push(token);
+            }
+          } else {
+            stack.push(operator);
+          }
+        },
+        parse(token, stack, context) {
+          const state = this;
+          if (token.key) {
+            stack.push(token);
+          } else if (token.params) {
+            return Twig2.expression.parseAsync.call(state, token.params, context).then((key2) => {
+              token.key = key2;
+              stack.push(token);
+              if (!context.loop) {
+                delete token.params;
+              }
+            });
+          } else {
+            Twig2.expression.operator.parse(token.value, stack);
+          }
+        }
+      },
+      {
+        type: Twig2.expression.type.operator.unary,
+        // Match any of not
+        regex: /(^not\s+)/,
+        next: Twig2.expression.set.expressions,
+        compile(token, stack, output2) {
+          delete token.match;
+          token.value = token.value.trim();
+          const { value } = token;
+          const operator = Twig2.expression.operator.lookup(value, token);
+          Twig2.log.trace("Twig.expression.compile: ", "Operator: ", operator, " from ", value);
+          while (stack.length > 0 && (stack[stack.length - 1].type === Twig2.expression.type.operator.unary || stack[stack.length - 1].type === Twig2.expression.type.operator.binary) && (operator.associativity === Twig2.expression.operator.leftToRight && operator.precidence >= stack[stack.length - 1].precidence || operator.associativity === Twig2.expression.operator.rightToLeft && operator.precidence > stack[stack.length - 1].precidence)) {
+            const temp = stack.pop();
+            output2.push(temp);
+          }
+          stack.push(operator);
+        },
+        parse(token, stack) {
+          Twig2.expression.operator.parse(token.value, stack);
+        }
+      },
+      {
+        /**
+         * Match a string. This is anything between a pair of single or double quotes.
+         */
+        type: Twig2.expression.type.string,
+        // See: http://blog.stevenlevithan.com/archives/match-quoted-string
+        regex: /^(["'])(?:(?=(\\?))\2[\s\S])*?\1/,
+        next: Twig2.expression.set.operationsExtended,
+        compile(token, stack, output2) {
+          let { value } = token;
+          delete token.match;
+          if (value.slice(0, 1) === '"') {
+            value = value.replace('\\"', '"');
+          } else {
+            value = value.replace("\\'", "'");
+          }
+          token.value = value.slice(1, -1).replace(/\\n/g, "\n").replace(/\\r/g, "\r");
+          Twig2.log.trace("Twig.expression.compile: ", "String value: ", token.value);
+          output2.push(token);
+        },
+        parse: Twig2.expression.fn.parse.pushValue
+      },
+      {
+        /**
+         * Match a subexpression set start.
+         */
+        type: Twig2.expression.type.subexpression.start,
+        regex: /^\(/,
+        next: Twig2.expression.set.expressions.concat([Twig2.expression.type.subexpression.end]),
+        compile(token, stack, output2) {
+          token.value = "(";
+          output2.push(token);
+          stack.push(token);
+        },
+        parse: Twig2.expression.fn.parse.push
+      },
+      {
+        /**
+         * Match a subexpression set end.
+         */
+        type: Twig2.expression.type.subexpression.end,
+        regex: /^\)/,
+        next: Twig2.expression.set.operationsExtended,
+        validate(match, tokens) {
+          let i = tokens.length - 1;
+          let foundSubexpressionStart = false;
+          let nextSubexpressionStartInvalid = false;
+          let unclosedParameterCount = 0;
+          while (!foundSubexpressionStart && i >= 0) {
+            const token = tokens[i];
+            foundSubexpressionStart = token.type === Twig2.expression.type.subexpression.start;
+            if (foundSubexpressionStart && nextSubexpressionStartInvalid) {
+              nextSubexpressionStartInvalid = false;
+              foundSubexpressionStart = false;
+            }
+            if (token.type === Twig2.expression.type.parameter.start) {
+              unclosedParameterCount++;
+            } else if (token.type === Twig2.expression.type.parameter.end) {
+              unclosedParameterCount--;
+            } else if (token.type === Twig2.expression.type.subexpression.end) {
+              nextSubexpressionStartInvalid = true;
+            }
+            i--;
+          }
+          return foundSubexpressionStart && unclosedParameterCount === 0;
+        },
+        compile(token, stack, output2) {
+          let stackToken;
+          const endToken = token;
+          stackToken = stack.pop();
+          while (stack.length > 0 && stackToken.type !== Twig2.expression.type.subexpression.start) {
+            output2.push(stackToken);
+            stackToken = stack.pop();
+          }
+          const paramStack = [];
+          while (token.type !== Twig2.expression.type.subexpression.start) {
+            paramStack.unshift(token);
+            token = output2.pop();
+          }
+          paramStack.unshift(token);
+          stackToken = stack[stack.length - 1];
+          if (stackToken === void 0 || stackToken.type !== Twig2.expression.type._function && stackToken.type !== Twig2.expression.type.filter && stackToken.type !== Twig2.expression.type.test && stackToken.type !== Twig2.expression.type.key.brackets) {
+            endToken.expression = true;
+            paramStack.pop();
+            paramStack.shift();
+            endToken.params = paramStack;
+            output2.push(endToken);
+          } else {
+            endToken.expression = false;
+            stackToken.params = paramStack;
+          }
+        },
+        parse(token, stack, context) {
+          const state = this;
+          if (token.expression) {
+            return Twig2.expression.parseAsync.call(state, token.params, context).then((value) => {
+              stack.push(value);
+            });
+          }
+          throw new Twig2.Error("Unexpected subexpression end when token is not marked as an expression");
+        }
+      },
+      {
+        /**
+         * Match a parameter set start.
+         */
+        type: Twig2.expression.type.parameter.start,
+        regex: /^\(/,
+        next: Twig2.expression.set.expressions.concat([Twig2.expression.type.parameter.end]),
+        validate(match, tokens) {
+          const lastToken = tokens[tokens.length - 1];
+          return lastToken && !Twig2.expression.reservedWords.includes(lastToken.value.trim());
+        },
+        compile: Twig2.expression.fn.compile.pushBoth,
+        parse: Twig2.expression.fn.parse.push
+      },
+      {
+        /**
+         * Match a parameter set end.
+         */
+        type: Twig2.expression.type.parameter.end,
+        regex: /^\)/,
+        next: Twig2.expression.set.operationsExtended,
+        compile(token, stack, output2) {
+          let stackToken;
+          const endToken = token;
+          stackToken = stack.pop();
+          while (stack.length > 0 && stackToken.type !== Twig2.expression.type.parameter.start) {
+            output2.push(stackToken);
+            stackToken = stack.pop();
+          }
+          const paramStack = [];
+          while (token.type !== Twig2.expression.type.parameter.start) {
+            paramStack.unshift(token);
+            token = output2.pop();
+          }
+          paramStack.unshift(token);
+          token = output2[output2.length - 1];
+          if (token === void 0 || token.type !== Twig2.expression.type._function && token.type !== Twig2.expression.type.filter && token.type !== Twig2.expression.type.test && token.type !== Twig2.expression.type.key.brackets) {
+            endToken.expression = true;
+            paramStack.pop();
+            paramStack.shift();
+            endToken.params = paramStack;
+            output2.push(endToken);
+          } else {
+            endToken.expression = false;
+            token.params = paramStack;
+          }
+        },
+        parse(token, stack, context) {
+          const newArray = [];
+          let arrayEnded = false;
+          let value = null;
+          const state = this;
+          if (token.expression) {
+            return Twig2.expression.parseAsync.call(state, token.params, context).then((value2) => {
+              stack.push(value2);
+            });
+          }
+          while (stack.length > 0) {
+            value = stack.pop();
+            if (value && value.type && value.type === Twig2.expression.type.parameter.start) {
+              arrayEnded = true;
+              break;
+            }
+            newArray.unshift(value);
+          }
+          if (!arrayEnded) {
+            throw new Twig2.Error("Expected end of parameter set.");
+          }
+          stack.push(newArray);
+        }
+      },
+      {
+        type: Twig2.expression.type.slice,
+        regex: /^\[(-?\w*:-?\w*)\]/,
+        next: Twig2.expression.set.operationsExtended,
+        compile(token, stack, output2) {
+          const sliceRange = token.match[1].split(":");
+          const sliceStart = sliceRange[0];
+          const sliceEnd = sliceRange[1];
+          token.value = "slice";
+          token.params = [sliceStart, sliceEnd];
+          if (!sliceEnd) {
+            token.params = [sliceStart];
+          }
+          output2.push(token);
+        },
+        parse(token, stack, context) {
+          const input = stack.pop();
+          let { params } = token;
+          const state = this;
+          if (parseInt(params[0], 10).toString() === params[0]) {
+            params[0] = parseInt(params[0], 10);
+          } else {
+            const value = context[params[0]];
+            if (state.template.options.strictVariables && value === void 0) {
+              throw new Twig2.Error('Variable "' + params[0] + '" does not exist.');
+            }
+            params[0] = value;
+          }
+          if (params[1]) {
+            if (parseInt(params[1], 10).toString() === params[1]) {
+              params[1] = parseInt(params[1], 10);
+            } else {
+              const value = context[params[1]];
+              if (state.template.options.strictVariables && value === void 0) {
+                throw new Twig2.Error('Variable "' + params[1] + '" does not exist.');
+              }
+              if (value === void 0) {
+                params = [params[0]];
+              } else {
+                params[1] = value;
+              }
+            }
+          }
+          stack.push(Twig2.filter.call(state, token.value, input, params));
+        }
+      },
+      {
+        /**
+         * Match an array start.
+         */
+        type: Twig2.expression.type.array.start,
+        regex: /^\[/,
+        next: Twig2.expression.set.expressions.concat([Twig2.expression.type.array.end]),
+        compile: Twig2.expression.fn.compile.pushBoth,
+        parse: Twig2.expression.fn.parse.push
+      },
+      {
+        /**
+         * Match an array end.
+         */
+        type: Twig2.expression.type.array.end,
+        regex: /^\]/,
+        next: Twig2.expression.set.operationsExtended,
+        compile(token, stack, output2) {
+          let i = stack.length - 1;
+          let stackToken;
+          for (; i >= 0; i--) {
+            stackToken = stack.pop();
+            if (stackToken.type === Twig2.expression.type.array.start) {
+              break;
+            }
+            output2.push(stackToken);
+          }
+          output2.push(token);
+        },
+        parse(token, stack) {
+          const newArray = [];
+          let arrayEnded = false;
+          let value = null;
+          while (stack.length > 0) {
+            value = stack.pop();
+            if (value && value.type && value.type === Twig2.expression.type.array.start) {
+              arrayEnded = true;
+              break;
+            }
+            newArray.unshift(value);
+          }
+          if (!arrayEnded) {
+            throw new Twig2.Error("Expected end of array.");
+          }
+          stack.push(newArray);
+        }
+      },
+      // Token that represents the start of a hash map '}'
+      //
+      // Hash maps take the form:
+      //    { "key": 'value', "another_key": item }
+      //
+      // Keys must be quoted (either single or double) and values can be any expression.
+      {
+        type: Twig2.expression.type.object.start,
+        regex: /^\{/,
+        next: Twig2.expression.set.expressions.concat([Twig2.expression.type.object.end]),
+        compile: Twig2.expression.fn.compile.pushBoth,
+        parse: Twig2.expression.fn.parse.push
+      },
+      // Token that represents the end of a Hash Map '}'
+      //
+      // This is where the logic for building the internal
+      // representation of a hash map is defined.
+      {
+        type: Twig2.expression.type.object.end,
+        regex: /^\}/,
+        next: Twig2.expression.set.operationsExtended,
+        compile(token, stack, output2) {
+          let i = stack.length - 1;
+          let stackToken;
+          for (; i >= 0; i--) {
+            stackToken = stack.pop();
+            if (stackToken && stackToken.type === Twig2.expression.type.object.start) {
+              break;
+            }
+            output2.push(stackToken);
+          }
+          output2.push(token);
+        },
+        parse(endToken, stack) {
+          const newObject = {};
+          let objectEnded = false;
+          let token = null;
+          let hasValue = false;
+          let value = null;
+          while (stack.length > 0) {
+            token = stack.pop();
+            if (token && token.type && token.type === Twig2.expression.type.object.start) {
+              objectEnded = true;
+              break;
+            }
+            if (token && token.type && (token.type === Twig2.expression.type.operator.binary || token.type === Twig2.expression.type.operator.unary) && token.key) {
+              if (!hasValue) {
+                throw new Twig2.Error("Missing value for key '" + token.key + "' in object definition.");
+              }
+              newObject[token.key] = value;
+              if (newObject._keys === void 0) {
+                newObject._keys = [];
+              }
+              newObject._keys.unshift(token.key);
+              value = null;
+              hasValue = false;
+            } else {
+              hasValue = true;
+              value = token;
+            }
+          }
+          if (!objectEnded) {
+            throw new Twig2.Error("Unexpected end of object.");
+          }
+          stack.push(newObject);
+        }
+      },
+      // Token representing a filter
+      //
+      // Filters can follow any expression and take the form:
+      //    expression|filter(optional, args)
+      //
+      // Filter parsing is done in the Twig.filters namespace.
+      {
+        type: Twig2.expression.type.filter,
+        // Match a | then a letter or _, then any number of letters, numbers, _ or -
+        regex: /^\|\s?([a-zA-Z_][a-zA-Z0-9_-]*)/,
+        next: Twig2.expression.set.operationsExtended.concat([
+          Twig2.expression.type.parameter.start
+        ]),
+        compile(token, stack, output2) {
+          token.value = token.match[1];
+          output2.push(token);
+        },
+        parse(token, stack, context) {
+          const input = stack.pop();
+          const state = this;
+          return parseParams(state, token.params, context).then((params) => {
+            return Twig2.filter.call(state, token.value, input, params);
+          }).then((value) => {
+            stack.push(value);
+          });
+        }
+      },
+      {
+        type: Twig2.expression.type._function,
+        // Match any letter or _, then any number of letters, numbers, _ or - followed by (
+        regex: /^([a-zA-Z_]\w*)\s*\(/,
+        next: Twig2.expression.type.parameter.start,
+        validate(match) {
+          return match[1] && !Twig2.expression.reservedWords.includes(match[1]);
+        },
+        transform() {
+          return "(";
+        },
+        compile(token, stack, output2) {
+          const fn = token.match[1];
+          token.fn = fn;
+          delete token.match;
+          delete token.value;
+          output2.push(token);
+        },
+        parse(token, stack, context) {
+          const state = this;
+          const { fn } = token;
+          let value;
+          return parseParams(state, token.params, context).then((params) => {
+            if (Twig2.functions[fn]) {
+              value = Twig2.functions[fn].apply(state, params);
+            } else if (typeof context[fn] === "function") {
+              value = context[fn](...params);
+            } else {
+              throw new Twig2.Error(fn + " function does not exist and is not defined in the context");
+            }
+            return value;
+          }).then((result) => {
+            stack.push(result);
+          });
+        }
+      },
+      // Token representing a variable.
+      //
+      // Variables can contain letters, numbers, underscores and
+      // dashes, but must start with a letter or underscore.
+      //
+      // Variables are retrieved from the render context and take
+      // the value of 'undefined' if the given variable doesn't
+      // exist in the context.
+      {
+        type: Twig2.expression.type.variable,
+        // Match any letter or _, then any number of letters, numbers, _ or -
+        regex: /^[a-zA-Z_]\w*/,
+        next: Twig2.expression.set.operationsExtended.concat([
+          Twig2.expression.type.parameter.start
+        ]),
+        compile: Twig2.expression.fn.compile.push,
+        validate(match) {
+          return !Twig2.expression.reservedWords.includes(match[0]);
+        },
+        parse(token, stack, context) {
+          const state = this;
+          return Twig2.expression.resolveAsync.call(state, context[token.value], context).then((value) => {
+            if (state.template.options.strictVariables && value === void 0) {
+              throw new Twig2.Error('Variable "' + token.value + '" does not exist.');
+            }
+            stack.push(value);
+          });
+        }
+      },
+      {
+        type: Twig2.expression.type.key.period,
+        regex: /^\.(\w+)/,
+        next: Twig2.expression.set.operationsExtended.concat([
+          Twig2.expression.type.parameter.start
+        ]),
+        compile(token, stack, output2) {
+          token.key = token.match[1];
+          delete token.match;
+          delete token.value;
+          output2.push(token);
+        },
+        parse(token, stack, context, nextToken) {
+          const state = this;
+          const { key: key2 } = token;
+          const object = stack.pop();
+          let value;
+          if (object && !Object.prototype.hasOwnProperty.call(object, key2) && state.template.options.strictVariables) {
+            const keys = Object.keys(object);
+            if (keys.length > 0) {
+              throw new Twig2.Error('Key "' + key2 + '" for object with keys "' + Object.keys(object).join(", ") + '" does not exist.');
+            } else {
+              throw new Twig2.Error('Key "' + key2 + '" does not exist as the object is empty.');
+            }
+          }
+          return parseParams(state, token.params, context).then((params) => {
+            if (object === null || object === void 0) {
+              value = void 0;
+            } else {
+              const capitalize = function(value2) {
+                return value2.slice(0, 1).toUpperCase() + value2.slice(1);
+              };
+              if (typeof object === "object" && key2 in object) {
+                value = object[key2];
+              } else if (object["get" + capitalize(key2)]) {
+                value = object["get" + capitalize(key2)];
+              } else if (object["is" + capitalize(key2)]) {
+                value = object["is" + capitalize(key2)];
+              } else {
+                value = void 0;
+              }
+            }
+            return Twig2.expression.resolveAsync.call(state, value, context, params, nextToken, object);
+          }).then((result) => {
+            stack.push(result);
+          });
+        }
+      },
+      {
+        type: Twig2.expression.type.key.brackets,
+        regex: /^\[([^\]]*)\]/,
+        next: Twig2.expression.set.operationsExtended.concat([
+          Twig2.expression.type.parameter.start
+        ]),
+        compile(token, stack, output2) {
+          const match = token.match[1];
+          delete token.value;
+          delete token.match;
+          token.stack = Twig2.expression.compile({
+            value: match
+          }).stack;
+          output2.push(token);
+        },
+        parse(token, stack, context, nextToken) {
+          const state = this;
+          let params = null;
+          let object;
+          let value;
+          return parseParams(state, token.params, context).then((parameters) => {
+            params = parameters;
+            return Twig2.expression.parseAsync.call(state, token.stack, context);
+          }).then((key2) => {
+            object = stack.pop();
+            if (object && !Object.prototype.hasOwnProperty.call(object, key2) && state.template.options.strictVariables) {
+              const keys = Object.keys(object);
+              if (keys.length > 0) {
+                throw new Twig2.Error('Key "' + key2 + '" for array with keys "' + keys.join(", ") + '" does not exist.');
+              } else {
+                throw new Twig2.Error('Key "' + key2 + '" does not exist as the array is empty.');
+              }
+            } else if (object === null || object === void 0) {
+              return null;
+            }
+            if (typeof object === "object" && key2 in object) {
+              value = object[key2];
+            } else {
+              value = null;
+            }
+            return Twig2.expression.resolveAsync.call(state, value, object, params, nextToken);
+          }).then((result) => {
+            stack.push(result);
+          });
+        }
+      },
+      {
+        /**
+         * Match a null value.
+         */
+        type: Twig2.expression.type._null,
+        // Match a number
+        regex: /^(null|NULL|none|NONE)/,
+        next: Twig2.expression.set.operations,
+        compile(token, stack, output2) {
+          delete token.match;
+          token.value = null;
+          output2.push(token);
+        },
+        parse: Twig2.expression.fn.parse.pushValue
+      },
+      {
+        /**
+         * Match the context
+         */
+        type: Twig2.expression.type.context,
+        regex: /^_context/,
+        next: Twig2.expression.set.operationsExtended.concat([
+          Twig2.expression.type.parameter.start
+        ]),
+        compile: Twig2.expression.fn.compile.push,
+        parse(token, stack, context) {
+          stack.push(context);
+        }
+      },
+      {
+        /**
+         * Match a boolean
+         */
+        type: Twig2.expression.type.bool,
+        regex: /^(true|TRUE|false|FALSE)/,
+        next: Twig2.expression.set.operations,
+        compile(token, stack, output2) {
+          token.value = token.match[0].toLowerCase() === "true";
+          delete token.match;
+          output2.push(token);
+        },
+        parse: Twig2.expression.fn.parse.pushValue
+      }
+    ];
+    Twig2.expression.resolveAsync = function(value, context, params, nextToken, object) {
+      const state = this;
+      if (typeof value !== "function") {
+        return Twig2.Promise.resolve(value);
+      }
+      let promise = Twig2.Promise.resolve(params);
+      if (nextToken && nextToken.type === Twig2.expression.type.parameter.end) {
+        const tokensAreParameters = true;
+        promise = promise.then(() => {
+          return nextToken.params && Twig2.expression.parseAsync.call(state, nextToken.params, context, tokensAreParameters);
+        }).then((p) => {
+          nextToken.cleanup = true;
+          return p;
+        });
+      }
+      return promise.then((params2) => {
+        return value.apply(object || context, params2 || []);
+      });
+    };
+    Twig2.expression.resolve = function(value, context, params, nextToken, object) {
+      return Twig2.async.potentiallyAsync(this, false, function() {
+        return Twig2.expression.resolveAsync.call(this, value, context, params, nextToken, object);
+      });
+    };
+    Twig2.expression.handler = {};
+    Twig2.expression.extendType = function(type) {
+      Twig2.expression.type[type] = "Twig.expression.type." + type;
+    };
+    Twig2.expression.extend = function(definition) {
+      if (!definition.type) {
+        throw new Twig2.Error("Unable to extend logic definition. No type provided for " + definition);
+      }
+      Twig2.expression.handler[definition.type] = definition;
+    };
+    while (Twig2.expression.definitions.length > 0) {
+      Twig2.expression.extend(Twig2.expression.definitions.shift());
+    }
+    Twig2.expression.tokenize = function(rawToken) {
+      let expression = rawToken.value;
+      const tokens = [];
+      let expOffset = 0;
+      let next = null;
+      let type;
+      let regex;
+      let regexI;
+      let tokenNext;
+      let matchFound;
+      let invalidMatches = [];
+      const matchFunction = function(...args) {
+        let matchI = arguments.length - 2;
+        const match = new Array(matchI);
+        while (matchI-- > 0) {
+          match[matchI] = args[matchI];
+        }
+        Twig2.log.trace(
+          "Twig.expression.tokenize",
+          "Matched a ",
+          type,
+          " regular expression of ",
+          match
+        );
+        if (next && !next.includes(type)) {
+          invalidMatches.push(
+            type + " cannot follow a " + tokens[tokens.length - 1].type + " at template:" + expOffset + " near '" + match[0].slice(0, 20) + "...'"
+          );
+          return match[0];
+        }
+        const handler = Twig2.expression.handler[type];
+        if (handler.validate && !handler.validate(match, tokens)) {
+          return match[0];
+        }
+        invalidMatches = [];
+        const token = {
+          type,
+          value: match[0],
+          match
+        };
+        if (rawToken.position) {
+          token.position = rawToken.position;
+        }
+        tokens.push(token);
+        matchFound = true;
+        next = tokenNext;
+        expOffset += match[0].length;
+        if (handler.transform) {
+          return handler.transform(match, tokens);
+        }
+        return "";
+      };
+      Twig2.log.debug("Twig.expression.tokenize", "Tokenizing expression ", expression);
+      while (expression.length > 0) {
+        expression = expression.trim();
+        for (type in Twig2.expression.handler) {
+          if (Object.hasOwnProperty.call(Twig2.expression.handler, type)) {
+            tokenNext = Twig2.expression.handler[type].next;
+            regex = Twig2.expression.handler[type].regex;
+            Twig2.log.trace("Checking type ", type, " on ", expression);
+            matchFound = false;
+            if (Array.isArray(regex)) {
+              regexI = regex.length;
+              while (regexI-- > 0) {
+                expression = expression.replace(regex[regexI], matchFunction);
+              }
+            } else {
+              expression = expression.replace(regex, matchFunction);
+            }
+            if (matchFound) {
+              break;
+            }
+          }
+        }
+        if (!matchFound) {
+          if (invalidMatches.length > 0) {
+            throw new Twig2.Error(invalidMatches.join(" OR "));
+          } else {
+            throw new Twig2.Error("Unable to parse '" + expression + "' at template position" + expOffset);
+          }
+        }
+      }
+      Twig2.log.trace("Twig.expression.tokenize", "Tokenized to ", tokens);
+      return tokens;
+    };
+    Twig2.expression.compile = function(rawToken) {
+      const tokens = Twig2.expression.tokenize(rawToken);
+      let token = null;
+      const output2 = [];
+      const stack = [];
+      let tokenTemplate = null;
+      Twig2.log.trace("Twig.expression.compile: ", "Compiling ", rawToken.value);
+      while (tokens.length > 0) {
+        token = tokens.shift();
+        tokenTemplate = Twig2.expression.handler[token.type];
+        Twig2.log.trace("Twig.expression.compile: ", "Compiling ", token);
+        tokenTemplate.compile(token, stack, output2);
+        Twig2.log.trace("Twig.expression.compile: ", "Stack is", stack);
+        Twig2.log.trace("Twig.expression.compile: ", "Output is", output2);
+      }
+      while (stack.length > 0) {
+        output2.push(stack.pop());
+      }
+      Twig2.log.trace("Twig.expression.compile: ", "Final output is", output2);
+      rawToken.stack = output2;
+      delete rawToken.value;
+      return rawToken;
+    };
+    Twig2.expression.parse = function(tokens, context, tokensAreParameters, allowAsync) {
+      const state = this;
+      if (!Array.isArray(tokens)) {
+        tokens = [tokens];
+      }
+      const stack = [];
+      const loopTokenFixups = [];
+      const binaryOperator = Twig2.expression.type.operator.binary;
+      return Twig2.async.potentiallyAsync(state, allowAsync, () => {
+        return Twig2.async.forEach(tokens, (token, index2) => {
+          let tokenTemplate = null;
+          let nextToken = null;
+          let result;
+          if (token.cleanup) {
+            return;
+          }
+          if (tokens.length > index2 + 1) {
+            nextToken = tokens[index2 + 1];
+          }
+          tokenTemplate = Twig2.expression.handler[token.type];
+          if (tokenTemplate.parse) {
+            result = tokenTemplate.parse.call(state, token, stack, context, nextToken);
+          }
+          if (token.type === binaryOperator && context.loop) {
+            loopTokenFixups.push(token);
+          }
+          return result;
+        }).then(() => {
+          let len = loopTokenFixups.length;
+          let loopTokenFixup = null;
+          while (len-- > 0) {
+            loopTokenFixup = loopTokenFixups[len];
+            if (loopTokenFixup.params && loopTokenFixup.key) {
+              delete loopTokenFixup.key;
+            }
+          }
+          if (tokensAreParameters) {
+            const params = stack.splice(0);
+            stack.push(params);
+          }
+          return stack.pop();
+        });
+      });
+    };
+    return Twig2;
+  };
+  return twig_expression;
+}
+var twig_filters;
+var hasRequiredTwig_filters;
+function requireTwig_filters() {
+  if (hasRequiredTwig_filters) return twig_filters;
+  hasRequiredTwig_filters = 1;
+  twig_filters = function(Twig2) {
+    function is(type, obj) {
+      const clas = Object.prototype.toString.call(obj).slice(8, -1);
+      return obj !== void 0 && obj !== null && clas === type;
+    }
+    Twig2.filters = {
+      // String Filters
+      upper(value) {
+        if (typeof value !== "string") {
+          return value;
+        }
+        return value.toUpperCase();
+      },
+      lower(value) {
+        if (typeof value !== "string") {
+          return value;
+        }
+        return value.toLowerCase();
+      },
+      capitalize(value) {
+        if (typeof value !== "string") {
+          return value;
+        }
+        return value.slice(0, 1).toUpperCase() + value.toLowerCase().slice(1);
+      },
+      title(value) {
+        if (typeof value !== "string") {
+          return value;
+        }
+        return value.toLowerCase().replace(/(^|\s)([a-z])/g, (m, p1, p2) => {
+          return p1 + p2.toUpperCase();
+        });
+      },
+      length(value) {
+        if (Twig2.lib.is("Array", value) || typeof value === "string") {
+          return value.length;
+        }
+        if (Twig2.lib.is("Object", value)) {
+          if (value._keys === void 0) {
+            return Object.keys(value).length;
+          }
+          return value._keys.length;
+        }
+        return 0;
+      },
+      // Array/Object Filters
+      reverse(value) {
+        if (is("Array", value)) {
+          return value.reverse();
+        }
+        if (is("String", value)) {
+          return value.split("").reverse().join("");
+        }
+        if (is("Object", value)) {
+          const keys = value._keys || Object.keys(value).reverse();
+          value._keys = keys;
+          return value;
+        }
+      },
+      sort(value) {
+        if (is("Array", value)) {
+          return value.sort();
+        }
+        if (is("Object", value)) {
+          delete value._keys;
+          const keys = Object.keys(value);
+          const sortedKeys = keys.sort((a, b) => {
+            let a1;
+            let b1;
+            if (value[a] > value[b] === !(value[a] <= value[b])) {
+              return value[a] > value[b] ? 1 : value[a] < value[b] ? -1 : 0;
+            }
+            if (!isNaN(a1 = parseFloat(value[a])) && !isNaN(b1 = parseFloat(value[b]))) {
+              return a1 > b1 ? 1 : a1 < b1 ? -1 : 0;
+            }
+            if (typeof value[a] === "string") {
+              return value[a] > value[b].toString() ? 1 : value[a] < value[b].toString() ? -1 : 0;
+            }
+            if (typeof value[b] === "string") {
+              return value[a].toString() > value[b] ? 1 : value[a].toString() < value[b] ? -1 : 0;
+            }
+            return null;
+          });
+          value._keys = sortedKeys;
+          return value;
+        }
+      },
+      keys(value) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        const keyset = value._keys || Object.keys(value);
+        const output2 = [];
+        keyset.forEach((key2) => {
+          if (key2 === "_keys") {
+            return;
+          }
+          if (Object.hasOwnProperty.call(value, key2)) {
+            output2.push(key2);
+          }
+        });
+        return output2;
+      },
+      /* eslint-disable-next-line camelcase */
+      url_encode(value) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        if (Twig2.lib.is("Object", value)) {
+          const serialize = function(obj, prefix) {
+            const result2 = [];
+            const keyset = obj._keys || Object.keys(obj);
+            keyset.forEach((key2) => {
+              if (!Object.prototype.hasOwnProperty.call(obj, key2)) {
+                return;
+              }
+              const resultKey = prefix ? prefix + "[" + key2 + "]" : key2;
+              const resultValue = obj[key2];
+              result2.push(
+                Twig2.lib.is("Object", resultValue) || Array.isArray(resultValue) ? serialize(resultValue, resultKey) : encodeURIComponent(resultKey) + "=" + encodeURIComponent(resultValue)
+              );
+            });
+            return result2.join("&amp;");
+          };
+          return serialize(value);
+        }
+        let result = encodeURIComponent(value);
+        result = result.replace("'", "%27");
+        return result;
+      },
+      join(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        let joinStr = "";
+        let output2 = [];
+        let keyset = null;
+        if (params && params[0]) {
+          joinStr = params[0];
+        }
+        if (is("Array", value)) {
+          output2 = value;
+        } else {
+          keyset = value._keys || Object.keys(value);
+          keyset.forEach((key2) => {
+            if (key2 === "_keys") {
+              return;
+            }
+            if (Object.hasOwnProperty.call(value, key2)) {
+              output2.push(value[key2]);
+            }
+          });
+        }
+        return output2.join(joinStr);
+      },
+      default(value, params) {
+        if (params !== void 0 && params.length > 1) {
+          throw new Twig2.Error("default filter expects one argument");
+        }
+        if (value === void 0 || value === null || value === "") {
+          if (params === void 0) {
+            return "";
+          }
+          return params[0];
+        }
+        return value;
+      },
+      /* eslint-disable-next-line camelcase */
+      json_encode(value) {
+        if (value === void 0 || value === null) {
+          return "null";
+        }
+        if (typeof value === "object" && is("Array", value)) {
+          const output2 = [];
+          value.forEach((v) => {
+            output2.push(Twig2.filters.json_encode(v));
+          });
+          return "[" + output2.join(",") + "]";
+        }
+        if (typeof value === "object" && is("Date", value)) {
+          return '"' + value.toISOString() + '"';
+        }
+        if (typeof value === "object") {
+          const keyset = value._keys || Object.keys(value);
+          const output2 = [];
+          keyset.forEach((key2) => {
+            output2.push(JSON.stringify(key2) + ":" + Twig2.filters.json_encode(value[key2]));
+          });
+          return "{" + output2.join(",") + "}";
+        }
+        return JSON.stringify(value);
+      },
+      merge(value, params) {
+        let obj = [];
+        let arrIndex = 0;
+        let keyset = [];
+        if (is("Array", value)) {
+          params.forEach((param) => {
+            if (!is("Array", param)) {
+              obj = {};
+            }
+          });
+        } else {
+          obj = {};
+        }
+        if (!is("Array", obj)) {
+          obj._keys = [];
+        }
+        if (is("Array", value)) {
+          value.forEach((val) => {
+            if (obj._keys) {
+              obj._keys.push(arrIndex);
+            }
+            obj[arrIndex] = val;
+            arrIndex++;
+          });
+        } else {
+          keyset = value._keys || Object.keys(value);
+          keyset.forEach((key2) => {
+            obj[key2] = value[key2];
+            obj._keys.push(key2);
+            const intKey = parseInt(key2, 10);
+            if (!isNaN(intKey) && intKey >= arrIndex) {
+              arrIndex = intKey + 1;
+            }
+          });
+        }
+        params.forEach((param) => {
+          if (is("Array", param)) {
+            param.forEach((val) => {
+              if (obj._keys) {
+                obj._keys.push(arrIndex);
+              }
+              obj[arrIndex] = val;
+              arrIndex++;
+            });
+          } else {
+            keyset = param._keys || Object.keys(param);
+            keyset.forEach((key2) => {
+              if (!obj[key2]) {
+                obj._keys.push(key2);
+              }
+              obj[key2] = param[key2];
+              const intKey = parseInt(key2, 10);
+              if (!isNaN(intKey) && intKey >= arrIndex) {
+                arrIndex = intKey + 1;
+              }
+            });
+          }
+        });
+        if (params.length === 0) {
+          throw new Twig2.Error("Filter merge expects at least one parameter");
+        }
+        return obj;
+      },
+      date(value, params) {
+        const date2 = Twig2.functions.date(value);
+        const format = params && Boolean(params.length) ? params[0] : "F j, Y H:i";
+        return Twig2.lib.date(format.replace(/\\\\/g, "\\"), date2);
+      },
+      /* eslint-disable-next-line camelcase */
+      date_modify(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        if (params === void 0 || params.length !== 1) {
+          throw new Twig2.Error("date_modify filter expects 1 argument");
+        }
+        const modifyText = params[0];
+        let time;
+        if (Twig2.lib.is("Date", value)) {
+          time = Twig2.lib.strtotime(modifyText, value.getTime() / 1e3);
+        }
+        if (Twig2.lib.is("String", value)) {
+          time = Twig2.lib.strtotime(modifyText, Twig2.lib.strtotime(value));
+        }
+        if (Twig2.lib.is("Number", value)) {
+          time = Twig2.lib.strtotime(modifyText, value);
+        }
+        return new Date(time * 1e3);
+      },
+      replace(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        const pairs = params[0];
+        let tag;
+        for (tag in pairs) {
+          if (Object.hasOwnProperty.call(pairs, tag) && tag !== "_keys") {
+            value = Twig2.lib.replaceAll(value, tag, pairs[tag]);
+          }
+        }
+        return value;
+      },
+      format(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        return Twig2.lib.vsprintf(value, params);
+      },
+      striptags(value, allowed) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        return Twig2.lib.stripTags(value, allowed);
+      },
+      escape(value, params) {
+        if (value === void 0 || value === null || value === "") {
+          return;
+        }
+        let strategy = "html";
+        if (params && Boolean(params.length) && params[0] !== true) {
+          strategy = params[0];
+        }
+        if (strategy === "html") {
+          const rawValue = value.toString().replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+          return new Twig2.Markup(rawValue, "html");
+        }
+        if (strategy === "js") {
+          const rawValue = value.toString();
+          let result = "";
+          for (let i = 0; i < rawValue.length; i++) {
+            if (rawValue[i].match(/^[a-zA-Z0-9,._]$/)) {
+              result += rawValue[i];
+            } else {
+              const char = rawValue.charAt(i);
+              const charCode = rawValue.charCodeAt(i);
+              const shortMap = {
+                "\\": "\\\\",
+                "/": "\\/",
+                "\b": "\\b",
+                "\f": "\\f",
+                "\n": "\\n",
+                "\r": "\\r",
+                "	": "\\t"
+              };
+              if (shortMap[char]) {
+                result += shortMap[char];
+              } else {
+                result += Twig2.lib.sprintf("\\u%04s", charCode.toString(16).toUpperCase());
+              }
+            }
+          }
+          return new Twig2.Markup(result, "js");
+        }
+        if (strategy === "css") {
+          const rawValue = value.toString();
+          let result = "";
+          for (let i = 0; i < rawValue.length; i++) {
+            if (rawValue[i].match(/^[a-zA-Z0-9]$/)) {
+              result += rawValue[i];
+            } else {
+              const charCode = rawValue.charCodeAt(i);
+              result += "\\" + charCode.toString(16).toUpperCase() + " ";
+            }
+          }
+          return new Twig2.Markup(result, "css");
+        }
+        if (strategy === "url") {
+          const result = Twig2.filters.url_encode(value);
+          return new Twig2.Markup(result, "url");
+        }
+        if (strategy === "html_attr") {
+          const rawValue = value.toString();
+          let result = "";
+          for (let i = 0; i < rawValue.length; i++) {
+            if (rawValue[i].match(/^[a-zA-Z0-9,.\-_]$/)) {
+              result += rawValue[i];
+            } else if (rawValue[i].match(/^[&<>"]$/)) {
+              result += rawValue[i].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+            } else {
+              const charCode = rawValue.charCodeAt(i);
+              if (charCode <= 31 && charCode !== 9 && charCode !== 10 && charCode !== 13) {
+                result += "&#xFFFD;";
+              } else if (charCode < 128) {
+                result += Twig2.lib.sprintf("&#x%02s;", charCode.toString(16).toUpperCase());
+              } else {
+                result += Twig2.lib.sprintf("&#x%04s;", charCode.toString(16).toUpperCase());
+              }
+            }
+          }
+          return new Twig2.Markup(result, "html_attr");
+        }
+        throw new Twig2.Error("escape strategy unsupported");
+      },
+      /* Alias of escape */
+      e(value, params) {
+        return Twig2.filters.escape(value, params);
+      },
+      nl2br(value) {
+        if (value === void 0 || value === null || value === "") {
+          return;
+        }
+        const linebreakTag = "BACKSLASH_n_replace";
+        const br = "<br />" + linebreakTag;
+        value = Twig2.filters.escape(value).replace(/\r\n/g, br).replace(/\r/g, br).replace(/\n/g, br);
+        value = Twig2.lib.replaceAll(value, linebreakTag, "\n");
+        return new Twig2.Markup(value);
+      },
+      /**
+       * Adapted from: http://phpjs.org/functions/number_format:481
+       */
+      /* eslint-disable-next-line camelcase */
+      number_format(value, params) {
+        let number = value;
+        const decimals = params && params[0] ? params[0] : void 0;
+        const dec = params && params[1] !== void 0 ? params[1] : ".";
+        const sep = params && params[2] !== void 0 ? params[2] : ",";
+        number = String(number).replace(/[^0-9+\-Ee.]/g, "");
+        const n = isFinite(Number(number)) ? Number(number) : 0;
+        const prec = isFinite(Number(decimals)) ? Math.abs(decimals) : 0;
+        let s = "";
+        const toFixedFix = function(n2, prec2) {
+          const k = 10 ** prec2;
+          return String(Math.round(n2 * k) / k);
+        };
+        s = (prec ? toFixedFix(n, prec) : String(Math.round(n))).split(".");
+        if (s[0].length > 3) {
+          s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+        }
+        if ((s[1] || "").length < prec) {
+          s[1] = s[1] || "";
+          s[1] += new Array(prec - s[1].length + 1).join("0");
+        }
+        return s.join(dec);
+      },
+      trim(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        let str = String(value);
+        let whitespace;
+        if (params && params[0]) {
+          whitespace = String(params[0]);
+        } else {
+          whitespace = " \n\r	\f\v            ​\u2028\u2029　";
+        }
+        for (let i = 0; i < str.length; i++) {
+          if (!whitespace.includes(str.charAt(i))) {
+            str = str.slice(Math.max(0, i));
+            break;
+          }
+        }
+        for (let i = str.length - 1; i >= 0; i--) {
+          if (!whitespace.includes(str.charAt(i))) {
+            str = str.slice(0, Math.max(0, i + 1));
+            break;
+          }
+        }
+        return whitespace.includes(str.charAt(0)) ? "" : str;
+      },
+      truncate(value, params) {
+        let length = 30;
+        let preserve = false;
+        let separator = "...";
+        value = String(value);
+        if (params) {
+          if (params[0]) {
+            length = params[0];
+          }
+          if (params[1]) {
+            preserve = params[1];
+          }
+          if (params[2]) {
+            separator = params[2];
+          }
+        }
+        if (value.length > length) {
+          if (preserve) {
+            length = value.indexOf(" ", length);
+            if (length === -1) {
+              return value;
+            }
+          }
+          value = value.slice(0, length) + separator;
+        }
+        return value;
+      },
+      slice(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        if (params === void 0 || params.length === 0) {
+          throw new Twig2.Error("slice filter expects at least 1 argument");
+        }
+        const start = params[0] || 0;
+        let length = params.length > 1 ? params[1] : value.length;
+        const startIndex = start >= 0 ? start : Math.max(value.length + start, 0);
+        if (length < 0) {
+          length = value.length - startIndex + length;
+        }
+        if (Twig2.lib.is("Array", value)) {
+          const output2 = [];
+          for (let i = startIndex; i < startIndex + length && i < value.length; i++) {
+            output2.push(value[i]);
+          }
+          return output2;
+        }
+        if (Twig2.lib.is("String", value)) {
+          return value.slice(startIndex, startIndex + length);
+        }
+        throw new Twig2.Error("slice filter expects value to be an array or string");
+      },
+      abs(value) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        return Math.abs(value);
+      },
+      first(value) {
+        if (is("Array", value)) {
+          return value[0];
+        }
+        if (is("Object", value)) {
+          if ("_keys" in value) {
+            return value[value._keys[0]];
+          }
+        } else if (typeof value === "string") {
+          return value.slice(0, 1);
+        }
+      },
+      split(value, params) {
+        if (value === void 0 || value === null) {
+          return;
+        }
+        if (params === void 0 || params.length === 0 || params.length > 2) {
+          throw new Twig2.Error("split filter expects 1 or 2 argument");
+        }
+        if (Twig2.lib.is("String", value)) {
+          const delimiter = params[0];
+          const limit = params[1];
+          const split = value.split(delimiter);
+          if (limit === void 0) {
+            return split;
+          }
+          if (limit < 0) {
+            return value.split(delimiter, split.length + limit);
+          }
+          const limitedSplit = [];
+          if (delimiter === "") {
+            while (split.length > 0) {
+              let temp = "";
+              for (let i = 0; i < limit && split.length > 0; i++) {
+                temp += split.shift();
+              }
+              limitedSplit.push(temp);
+            }
+          } else {
+            for (let i = 0; i < limit - 1 && split.length > 0; i++) {
+              limitedSplit.push(split.shift());
+            }
+            if (split.length > 0) {
+              limitedSplit.push(split.join(delimiter));
+            }
+          }
+          return limitedSplit;
+        }
+        throw new Twig2.Error("split filter expects value to be a string");
+      },
+      last(value) {
+        if (Twig2.lib.is("Object", value)) {
+          let keys;
+          if (value._keys === void 0) {
+            keys = Object.keys(value);
+          } else {
+            keys = value._keys;
+          }
+          return value[keys[keys.length - 1]];
+        }
+        if (Twig2.lib.is("Number", value)) {
+          return value.toString().slice(-1);
+        }
+        return value[value.length - 1];
+      },
+      raw(value) {
+        return new Twig2.Markup(value || "");
+      },
+      batch(items, params) {
+        let size = params.shift();
+        const fill = params.shift();
+        let last;
+        let missing;
+        if (!Twig2.lib.is("Array", items)) {
+          throw new Twig2.Error("batch filter expects items to be an array");
+        }
+        if (!Twig2.lib.is("Number", size)) {
+          throw new Twig2.Error("batch filter expects size to be a number");
+        }
+        size = Math.ceil(size);
+        const result = Twig2.lib.chunkArray(items, size);
+        if (fill && items.length % size !== 0) {
+          last = result.pop();
+          missing = size - last.length;
+          while (missing--) {
+            last.push(fill);
+          }
+          result.push(last);
+        }
+        return result;
+      },
+      round(value, params) {
+        params = params || [];
+        const precision = params.length > 0 ? params[0] : 0;
+        const method = params.length > 1 ? params[1] : "common";
+        value = parseFloat(value);
+        if (precision && !Twig2.lib.is("Number", precision)) {
+          throw new Twig2.Error("round filter expects precision to be a number");
+        }
+        if (method === "common") {
+          return Twig2.lib.round(value, precision);
+        }
+        if (!Twig2.lib.is("Function", Math[method])) {
+          throw new Twig2.Error("round filter expects method to be 'floor', 'ceil', or 'common'");
+        }
+        return Math[method](value * 10 ** precision) / 10 ** precision;
+      },
+      spaceless(value) {
+        return value.replace(/>\s+</g, "><").trim();
+      }
+    };
+    Twig2.filter = function(filter, value, params) {
+      const state = this;
+      if (!Twig2.filters[filter]) {
+        throw new Twig2.Error("Unable to find filter " + filter);
+      }
+      return Twig2.filters[filter].call(state, value, params);
+    };
+    Twig2.filter.extend = function(filter, definition) {
+      Twig2.filters[filter] = definition;
+    };
+    return Twig2;
+  };
+  return twig_filters;
+}
+var twig_functions = { exports: {} };
+var hasRequiredTwig_functions;
+function requireTwig_functions() {
+  if (hasRequiredTwig_functions) return twig_functions.exports;
+  hasRequiredTwig_functions = 1;
+  (function(module) {
+    module.exports = function(Twig2) {
+      const TEMPLATE_NOT_FOUND_MESSAGE = 'Template "{name}" is not defined.';
+      Twig2.functions = {
+        //  Attribute, block, constant, date, dump, parent, random,.
+        // Range function from http://phpjs.org/functions/range:499
+        // Used under an MIT License
+        range(low, high, step) {
+          const matrix = [];
+          let inival;
+          let endval;
+          const walker = step || 1;
+          let chars = false;
+          if (!isNaN(low) && !isNaN(high)) {
+            inival = parseInt(low, 10);
+            endval = parseInt(high, 10);
+          } else if (isNaN(low) && isNaN(high)) {
+            chars = true;
+            inival = low.charCodeAt(0);
+            endval = high.charCodeAt(0);
+          } else {
+            inival = isNaN(low) ? 0 : low;
+            endval = isNaN(high) ? 0 : high;
+          }
+          const plus = !(inival > endval);
+          if (plus) {
+            while (inival <= endval) {
+              matrix.push(chars ? String.fromCharCode(inival) : inival);
+              inival += walker;
+            }
+          } else {
+            while (inival >= endval) {
+              matrix.push(chars ? String.fromCharCode(inival) : inival);
+              inival -= walker;
+            }
+          }
+          return matrix;
+        },
+        cycle(arr, i) {
+          const pos = i % arr.length;
+          return arr[pos];
+        },
+        dump(...args) {
+          const argsCopy = [...args];
+          const state = this;
+          const EOL = "\n";
+          const indentChar = "  ";
+          let indentTimes = 0;
+          let out = "";
+          const indent = function(times) {
+            let ind = "";
+            while (times > 0) {
+              times--;
+              ind += indentChar;
+            }
+            return ind;
+          };
+          const displayVar = function(variable) {
+            out += indent(indentTimes);
+            if (typeof variable === "object") {
+              dumpVar(variable);
+            } else if (typeof variable === "function") {
+              out += "function()" + EOL;
+            } else if (typeof variable === "string") {
+              out += "string(" + variable.length + ') "' + variable + '"' + EOL;
+            } else if (typeof variable === "number") {
+              out += "number(" + variable + ")" + EOL;
+            } else if (typeof variable === "boolean") {
+              out += "bool(" + variable + ")" + EOL;
+            }
+          };
+          const dumpVar = function(variable) {
+            let i;
+            if (variable === null) {
+              out += "NULL" + EOL;
+            } else if (variable === void 0) {
+              out += "undefined" + EOL;
+            } else if (typeof variable === "object") {
+              out += indent(indentTimes) + typeof variable;
+              indentTimes++;
+              out += "(" + function(obj) {
+                let size = 0;
+                let key2;
+                for (key2 in obj) {
+                  if (Object.hasOwnProperty.call(obj, key2)) {
+                    size++;
+                  }
+                }
+                return size;
+              }(variable) + ") {" + EOL;
+              for (i in variable) {
+                if (Object.hasOwnProperty.call(variable, i)) {
+                  out += indent(indentTimes) + "[" + i + "]=> " + EOL;
+                  displayVar(variable[i]);
+                }
+              }
+              indentTimes--;
+              out += indent(indentTimes) + "}" + EOL;
+            } else {
+              displayVar(variable);
+            }
+          };
+          if (argsCopy.length === 0) {
+            argsCopy.push(state.context);
+          }
+          argsCopy.forEach((variable) => {
+            dumpVar(variable);
+          });
+          return out;
+        },
+        date(date2) {
+          let dateObj;
+          if (date2 === void 0 || date2 === null || date2 === "") {
+            dateObj = /* @__PURE__ */ new Date();
+          } else if (Twig2.lib.is("Date", date2)) {
+            dateObj = date2;
+          } else if (Twig2.lib.is("String", date2)) {
+            if (date2.match(/^\d+$/)) {
+              dateObj = new Date(date2 * 1e3);
+            } else {
+              dateObj = new Date(Twig2.lib.strtotime(date2) * 1e3);
+            }
+          } else if (Twig2.lib.is("Number", date2)) {
+            dateObj = new Date(date2 * 1e3);
+          } else {
+            throw new Twig2.Error("Unable to parse date " + date2);
+          }
+          return dateObj;
+        },
+        block(blockName) {
+          const state = this;
+          const block = state.getBlock(blockName);
+          if (block !== void 0) {
+            return block.render(state, state.context);
+          }
+        },
+        parent() {
+          const state = this;
+          return state.getBlock(state.getNestingStackToken(Twig2.logic.type.block).blockName, true).render(state, state.context);
+        },
+        attribute(object, method, params) {
+          if (Twig2.lib.is("Object", object)) {
+            if (Object.hasOwnProperty.call(object, method)) {
+              if (typeof object[method] === "function") {
+                return object[method].apply(void 0, params);
+              }
+              return object[method];
+            }
+          }
+          return object ? object[method] || void 0 : void 0;
+        },
+        max(values, ...args) {
+          if (Twig2.lib.is("Object", values)) {
+            delete values._keys;
+            return Twig2.lib.max(values);
+          }
+          return Reflect.apply(Twig2.lib.max, null, [values, ...args]);
+        },
+        min(values, ...args) {
+          if (Twig2.lib.is("Object", values)) {
+            delete values._keys;
+            return Twig2.lib.min(values);
+          }
+          return Reflect.apply(Twig2.lib.min, null, [values, ...args]);
+        },
+        /* eslint-disable-next-line camelcase */
+        template_from_string(template) {
+          const state = this;
+          if (template === void 0) {
+            template = "";
+          }
+          return Twig2.Templates.parsers.twig({
+            options: state.template.options,
+            data: template
+          });
+        },
+        random(value) {
+          const LIMIT_INT31 = 2147483648;
+          function getRandomNumber(n) {
+            const random = Math.floor(Math.random() * LIMIT_INT31);
+            const min2 = Math.min.call(null, 0, n);
+            const max2 = Math.max.call(null, 0, n);
+            return min2 + Math.floor((max2 - min2 + 1) * random / LIMIT_INT31);
+          }
+          if (Twig2.lib.is("Number", value)) {
+            return getRandomNumber(value);
+          }
+          if (Twig2.lib.is("String", value)) {
+            return value.charAt(getRandomNumber(value.length - 1));
+          }
+          if (Twig2.lib.is("Array", value)) {
+            return value[getRandomNumber(value.length - 1)];
+          }
+          if (Twig2.lib.is("Object", value)) {
+            const keys = Object.keys(value);
+            return value[keys[getRandomNumber(keys.length - 1)]];
+          }
+          return getRandomNumber(LIMIT_INT31 - 1);
+        },
+        /**
+         * Returns the content of a template without rendering it
+         * @param {string} name
+         * @param {boolean} [ignoreMissing=false]
+         * @returns {string}
+         */
+        source(name, ignoreMissing) {
+          const state = this;
+          const { namespaces } = state.template.options;
+          let templateSource;
+          let templateFound = false;
+          const isNodeEnvironment = typeof window === "undefined";
+          let loader;
+          let path = name;
+          if (namespaces && typeof namespaces === "object") {
+            path = Twig2.path.expandNamespace(namespaces, path);
+          }
+          if (isNodeEnvironment) {
+            loader = "fs";
+          } else {
+            loader = "ajax";
+          }
+          const params = {
+            id: name,
+            path,
+            method: loader,
+            parser: "source",
+            async: false,
+            fetchTemplateSource: true
+          };
+          if (typeof ignoreMissing === "undefined") {
+            ignoreMissing = false;
+          }
+          try {
+            templateSource = Twig2.Templates.loadRemote(name, params);
+            if (typeof templateSource === "undefined" || templateSource === null) {
+              templateSource = "";
+            } else {
+              templateFound = true;
+            }
+          } catch (error) {
+            Twig2.log.debug("Twig.functions.source: ", "Problem loading template  ", error);
+          }
+          if (!templateFound && !ignoreMissing) {
+            return TEMPLATE_NOT_FOUND_MESSAGE.replace("{name}", name);
+          }
+          return templateSource;
+        }
+      };
+      Twig2._function = function(_function, value, params) {
+        if (!Twig2.functions[_function]) {
+          throw new Twig2.Error("Unable to find function " + _function);
+        }
+        return Twig2.functions[_function](value, params);
+      };
+      Twig2._function.extend = function(_function, definition) {
+        Twig2.functions[_function] = definition;
+      };
+      return Twig2;
+    };
+  })(twig_functions);
+  return twig_functions.exports;
+}
+var sprintf;
+var hasRequiredSprintf;
+function requireSprintf() {
+  if (hasRequiredSprintf) return sprintf;
+  hasRequiredSprintf = 1;
+  sprintf = function sprintf2() {
+    var regex = /%%|%(?:(\d+)\$)?((?:[-+#0 ]|'[\s\S])*)(\d+)?(?:\.(\d*))?([\s\S])/g;
+    var args = arguments;
+    var i = 0;
+    var format = args[i++];
+    var _pad = function _pad2(str, len, chr, leftJustify) {
+      if (!chr) {
+        chr = " ";
+      }
+      var padding = str.length >= len ? "" : new Array(1 + len - str.length >>> 0).join(chr);
+      return leftJustify ? str + padding : padding + str;
+    };
+    var justify = function justify2(value, prefix, leftJustify, minWidth, padChar) {
+      var diff = minWidth - value.length;
+      if (diff > 0) {
+        if (!leftJustify && padChar === "0") {
+          value = [value.slice(0, prefix.length), _pad("", diff, "0", true), value.slice(prefix.length)].join("");
+        } else {
+          value = _pad(value, minWidth, padChar, leftJustify);
+        }
+      }
+      return value;
+    };
+    var _formatBaseX = function _formatBaseX2(value, base, leftJustify, minWidth, precision, padChar) {
+      var number = value >>> 0;
+      value = _pad(number.toString(base), precision || 0, "0", false);
+      return justify(value, "", leftJustify, minWidth, padChar);
+    };
+    var _formatString = function _formatString2(value, leftJustify, minWidth, precision, customPadChar) {
+      if (precision !== null && precision !== void 0) {
+        value = value.slice(0, precision);
+      }
+      return justify(value, "", leftJustify, minWidth, customPadChar);
+    };
+    var doFormat = function doFormat2(substring, argIndex, modifiers, minWidth, precision, specifier) {
+      var number = void 0, prefix = void 0, method = void 0, textTransform = void 0, value = void 0;
+      if (substring === "%%") {
+        return "%";
+      }
+      var padChar = " ";
+      var leftJustify = false;
+      var positiveNumberPrefix = "";
+      var j = void 0, l = void 0;
+      for (j = 0, l = modifiers.length; j < l; j++) {
+        switch (modifiers.charAt(j)) {
+          case " ":
+          case "0":
+            padChar = modifiers.charAt(j);
+            break;
+          case "+":
+            positiveNumberPrefix = "+";
+            break;
+          case "-":
+            leftJustify = true;
+            break;
+          case "'":
+            if (j + 1 < l) {
+              padChar = modifiers.charAt(j + 1);
+              j++;
+            }
+            break;
+        }
+      }
+      if (!minWidth) {
+        minWidth = 0;
+      } else {
+        minWidth = +minWidth;
+      }
+      if (!isFinite(minWidth)) {
+        throw new Error("Width must be finite");
+      }
+      if (!precision) {
+        precision = specifier === "d" ? 0 : "fFeE".indexOf(specifier) > -1 ? 6 : void 0;
+      } else {
+        precision = +precision;
+      }
+      if (argIndex && +argIndex === 0) {
+        throw new Error("Argument number must be greater than zero");
+      }
+      if (argIndex && +argIndex >= args.length) {
+        throw new Error("Too few arguments");
+      }
+      value = argIndex ? args[+argIndex] : args[i++];
+      switch (specifier) {
+        case "%":
+          return "%";
+        case "s":
+          return _formatString(value + "", leftJustify, minWidth, precision, padChar);
+        case "c":
+          return _formatString(String.fromCharCode(+value), leftJustify, minWidth, precision, padChar);
+        case "b":
+          return _formatBaseX(value, 2, leftJustify, minWidth, precision, padChar);
+        case "o":
+          return _formatBaseX(value, 8, leftJustify, minWidth, precision, padChar);
+        case "x":
+          return _formatBaseX(value, 16, leftJustify, minWidth, precision, padChar);
+        case "X":
+          return _formatBaseX(value, 16, leftJustify, minWidth, precision, padChar).toUpperCase();
+        case "u":
+          return _formatBaseX(value, 10, leftJustify, minWidth, precision, padChar);
+        case "i":
+        case "d":
+          number = +value || 0;
+          number = Math.round(number - number % 1);
+          prefix = number < 0 ? "-" : positiveNumberPrefix;
+          value = prefix + _pad(String(Math.abs(number)), precision, "0", false);
+          if (leftJustify && padChar === "0") {
+            padChar = " ";
+          }
+          return justify(value, prefix, leftJustify, minWidth, padChar);
+        case "e":
+        case "E":
+        case "f":
+        case "F":
+        case "g":
+        case "G":
+          number = +value;
+          prefix = number < 0 ? "-" : positiveNumberPrefix;
+          method = ["toExponential", "toFixed", "toPrecision"]["efg".indexOf(specifier.toLowerCase())];
+          textTransform = ["toString", "toUpperCase"]["eEfFgG".indexOf(specifier) % 2];
+          value = prefix + Math.abs(number)[method](precision);
+          return justify(value, prefix, leftJustify, minWidth, padChar)[textTransform]();
+        default:
+          return "";
+      }
+    };
+    try {
+      return format.replace(regex, doFormat);
+    } catch (err) {
+      return false;
+    }
+  };
+  return sprintf;
+}
+var vsprintf;
+var hasRequiredVsprintf;
+function requireVsprintf() {
+  if (hasRequiredVsprintf) return vsprintf;
+  hasRequiredVsprintf = 1;
+  vsprintf = function vsprintf2(format, args) {
+    var sprintf2 = requireSprintf();
+    return sprintf2.apply(this, [format].concat(args));
+  };
+  return vsprintf;
+}
+var _php_cast_int;
+var hasRequired_php_cast_int;
+function require_php_cast_int() {
+  if (hasRequired_php_cast_int) return _php_cast_int;
+  hasRequired_php_cast_int = 1;
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+  } : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+  _php_cast_int = function _php_cast_int2(value) {
+    var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+    switch (type) {
+      case "number":
+        if (isNaN(value) || !isFinite(value)) {
+          return 0;
+        }
+        return value < 0 ? Math.ceil(value) : Math.floor(value);
+      case "string":
+        return parseInt(value, 10) || 0;
+      case "boolean":
+      default:
+        return +!!value;
+    }
+  };
+  return _php_cast_int;
+}
+var _php_cast_float;
+var hasRequired_php_cast_float;
+function require_php_cast_float() {
+  if (hasRequired_php_cast_float) return _php_cast_float;
+  hasRequired_php_cast_float = 1;
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+  } : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+  _php_cast_float = function _php_cast_float2(value) {
+    var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+    switch (type) {
+      case "number":
+        return value;
+      case "string":
+        return parseFloat(value) || 0;
+      case "boolean":
+      default:
+        return require_php_cast_int()(value);
+    }
+  };
+  return _php_cast_float;
+}
+var round;
+var hasRequiredRound;
+function requireRound() {
+  if (hasRequiredRound) return round;
+  hasRequiredRound = 1;
+  function roundToInt(value, mode) {
+    var tmp = Math.floor(Math.abs(value) + 0.5);
+    if (mode === "PHP_ROUND_HALF_DOWN" && value === tmp - 0.5 || mode === "PHP_ROUND_HALF_EVEN" && value === 0.5 + 2 * Math.floor(tmp / 2) || mode === "PHP_ROUND_HALF_ODD" && value === 0.5 + 2 * Math.floor(tmp / 2) - 1) {
+      tmp -= 1;
+    }
+    return value < 0 ? -tmp : tmp;
+  }
+  round = function round2(value) {
+    var precision = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
+    var mode = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : "PHP_ROUND_HALF_UP";
+    var floatCast = require_php_cast_float();
+    var intCast = require_php_cast_int();
+    var p = void 0;
+    value = floatCast(value);
+    precision = intCast(precision);
+    p = Math.pow(10, precision);
+    if (isNaN(value) || !isFinite(value)) {
+      return value;
+    }
+    if (Math.trunc(value) === value && precision >= 0) {
+      return value;
+    }
+    var preRoundPrecision = 14 - Math.floor(Math.log10(Math.abs(value)));
+    if (preRoundPrecision > precision && preRoundPrecision - 15 < precision) {
+      value = roundToInt(value * Math.pow(10, preRoundPrecision), mode);
+      value /= Math.pow(10, Math.abs(precision - preRoundPrecision));
+    } else {
+      value *= p;
+    }
+    value = roundToInt(value, mode);
+    return value / p;
+  };
+  return round;
+}
+var max;
+var hasRequiredMax;
+function requireMax() {
+  if (hasRequiredMax) return max;
+  hasRequiredMax = 1;
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+  } : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+  max = function max2() {
+    var ar = void 0;
+    var retVal = void 0;
+    var i = 0;
+    var n = 0;
+    var argv = arguments;
+    var argc = argv.length;
+    var _obj2Array = function _obj2Array2(obj) {
+      if (Object.prototype.toString.call(obj) === "[object Array]") {
+        return obj;
+      } else {
+        var _ar = [];
+        for (var _i in obj) {
+          if (obj.hasOwnProperty(_i)) {
+            _ar.push(obj[_i]);
+          }
+        }
+        return _ar;
+      }
+    };
+    var _compare = function _compare2(current, next) {
+      var i2 = 0;
+      var n2 = 0;
+      var tmp = 0;
+      var nl = 0;
+      var cl = 0;
+      if (current === next) {
+        return 0;
+      } else if ((typeof current === "undefined" ? "undefined" : _typeof(current)) === "object") {
+        if ((typeof next === "undefined" ? "undefined" : _typeof(next)) === "object") {
+          current = _obj2Array(current);
+          next = _obj2Array(next);
+          cl = current.length;
+          nl = next.length;
+          if (nl > cl) {
+            return 1;
+          } else if (nl < cl) {
+            return -1;
+          }
+          for (i2 = 0, n2 = cl; i2 < n2; ++i2) {
+            tmp = _compare2(current[i2], next[i2]);
+            if (tmp === 1) {
+              return 1;
+            } else if (tmp === -1) {
+              return -1;
+            }
+          }
+          return 0;
+        }
+        return -1;
+      } else if ((typeof next === "undefined" ? "undefined" : _typeof(next)) === "object") {
+        return 1;
+      } else if (isNaN(next) && !isNaN(current)) {
+        if (current === 0) {
+          return 0;
+        }
+        return current < 0 ? 1 : -1;
+      } else if (isNaN(current) && !isNaN(next)) {
+        if (next === 0) {
+          return 0;
+        }
+        return next > 0 ? 1 : -1;
+      }
+      if (next === current) {
+        return 0;
+      }
+      return next > current ? 1 : -1;
+    };
+    if (argc === 0) {
+      throw new Error("At least one value should be passed to max()");
+    } else if (argc === 1) {
+      if (_typeof(argv[0]) === "object") {
+        ar = _obj2Array(argv[0]);
+      } else {
+        throw new Error("Wrong parameter count for max()");
+      }
+      if (ar.length === 0) {
+        throw new Error("Array must contain at least one element for max()");
+      }
+    } else {
+      ar = argv;
+    }
+    retVal = ar[0];
+    for (i = 1, n = ar.length; i < n; ++i) {
+      if (_compare(retVal, ar[i]) === 1) {
+        retVal = ar[i];
+      }
+    }
+    return retVal;
+  };
+  return max;
+}
+var min;
+var hasRequiredMin;
+function requireMin() {
+  if (hasRequiredMin) return min;
+  hasRequiredMin = 1;
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+  } : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+  min = function min2() {
+    var ar = void 0;
+    var retVal = void 0;
+    var i = 0;
+    var n = 0;
+    var argv = arguments;
+    var argc = argv.length;
+    var _obj2Array = function _obj2Array2(obj) {
+      if (Object.prototype.toString.call(obj) === "[object Array]") {
+        return obj;
+      }
+      var ar2 = [];
+      for (var _i in obj) {
+        if (obj.hasOwnProperty(_i)) {
+          ar2.push(obj[_i]);
+        }
+      }
+      return ar2;
+    };
+    var _compare = function _compare2(current, next) {
+      var i2 = 0;
+      var n2 = 0;
+      var tmp = 0;
+      var nl = 0;
+      var cl = 0;
+      if (current === next) {
+        return 0;
+      } else if ((typeof current === "undefined" ? "undefined" : _typeof(current)) === "object") {
+        if ((typeof next === "undefined" ? "undefined" : _typeof(next)) === "object") {
+          current = _obj2Array(current);
+          next = _obj2Array(next);
+          cl = current.length;
+          nl = next.length;
+          if (nl > cl) {
+            return 1;
+          } else if (nl < cl) {
+            return -1;
+          }
+          for (i2 = 0, n2 = cl; i2 < n2; ++i2) {
+            tmp = _compare2(current[i2], next[i2]);
+            if (tmp === 1) {
+              return 1;
+            } else if (tmp === -1) {
+              return -1;
+            }
+          }
+          return 0;
+        }
+        return -1;
+      } else if ((typeof next === "undefined" ? "undefined" : _typeof(next)) === "object") {
+        return 1;
+      } else if (isNaN(next) && !isNaN(current)) {
+        if (current === 0) {
+          return 0;
+        }
+        return current < 0 ? 1 : -1;
+      } else if (isNaN(current) && !isNaN(next)) {
+        if (next === 0) {
+          return 0;
+        }
+        return next > 0 ? 1 : -1;
+      }
+      if (next === current) {
+        return 0;
+      }
+      return next > current ? 1 : -1;
+    };
+    if (argc === 0) {
+      throw new Error("At least one value should be passed to min()");
+    } else if (argc === 1) {
+      if (_typeof(argv[0]) === "object") {
+        ar = _obj2Array(argv[0]);
+      } else {
+        throw new Error("Wrong parameter count for min()");
+      }
+      if (ar.length === 0) {
+        throw new Error("Array must contain at least one element for min()");
+      }
+    } else {
+      ar = argv;
+    }
+    retVal = ar[0];
+    for (i = 1, n = ar.length; i < n; ++i) {
+      if (_compare(retVal, ar[i]) === -1) {
+        retVal = ar[i];
+      }
+    }
+    return retVal;
+  };
+  return min;
+}
+var _phpCastString;
+var hasRequired_phpCastString;
+function require_phpCastString() {
+  if (hasRequired_phpCastString) return _phpCastString;
+  hasRequired_phpCastString = 1;
+  var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+    return typeof obj;
+  } : function(obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+  };
+  _phpCastString = function _phpCastString2(value) {
+    var type = typeof value === "undefined" ? "undefined" : _typeof(value);
+    switch (type) {
+      case "boolean":
+        return value ? "1" : "";
+      case "string":
+        return value;
+      case "number":
+        if (isNaN(value)) {
+          return "NAN";
+        }
+        if (!isFinite(value)) {
+          return (value < 0 ? "-" : "") + "INF";
+        }
+        return value + "";
+      case "undefined":
+        return "";
+      case "object":
+        if (Array.isArray(value)) {
+          return "Array";
+        }
+        if (value !== null) {
+          return "Object";
+        }
+        return "";
+      case "function":
+      default:
+        throw new Error("Unsupported value type");
+    }
+  };
+  return _phpCastString;
+}
+var strip_tags;
+var hasRequiredStrip_tags;
+function requireStrip_tags() {
+  if (hasRequiredStrip_tags) return strip_tags;
+  hasRequiredStrip_tags = 1;
+  strip_tags = function strip_tags2(input, allowed) {
+    var _phpCastString2 = require_phpCastString();
+    allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join("");
+    var tags = /<\/?([a-z0-9]*)\b[^>]*>?/gi;
+    var commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+    var after = _phpCastString2(input);
+    after = after.substring(after.length - 1) === "<" ? after.substring(0, after.length - 1) : after;
+    while (true) {
+      var before = after;
+      after = before.replace(commentsAndPhpTags, "").replace(tags, function($0, $1) {
+        return allowed.indexOf("<" + $1.toLowerCase() + ">") > -1 ? $0 : "";
+      });
+      if (before === after) {
+        return after;
+      }
+    }
+  };
+  return strip_tags;
+}
+var strtotime;
+var hasRequiredStrtotime;
+function requireStrtotime() {
+  if (hasRequiredStrtotime) return strtotime;
+  hasRequiredStrtotime = 1;
+  var reSpace = "[ \\t]+";
+  var reSpaceOpt = "[ \\t]*";
+  var reMeridian = "(?:([ap])\\.?m\\.?([\\t ]|$))";
+  var reHour24 = "(2[0-4]|[01]?[0-9])";
+  var reHour24lz = "([01][0-9]|2[0-4])";
+  var reHour12 = "(0?[1-9]|1[0-2])";
+  var reMinute = "([0-5]?[0-9])";
+  var reMinutelz = "([0-5][0-9])";
+  var reSecond = "(60|[0-5]?[0-9])";
+  var reSecondlz = "(60|[0-5][0-9])";
+  var reFrac = "(?:\\.([0-9]+))";
+  var reDayfull = "sunday|monday|tuesday|wednesday|thursday|friday|saturday";
+  var reDayabbr = "sun|mon|tue|wed|thu|fri|sat";
+  var reDaytext = reDayfull + "|" + reDayabbr + "|weekdays?";
+  var reReltextnumber = "first|second|third|fourth|fifth|sixth|seventh|eighth?|ninth|tenth|eleventh|twelfth";
+  var reReltexttext = "next|last|previous|this";
+  var reReltextunit = "(?:second|sec|minute|min|hour|day|fortnight|forthnight|month|year)s?|weeks|" + reDaytext;
+  var reYear = "([0-9]{1,4})";
+  var reYear2 = "([0-9]{2})";
+  var reYear4 = "([0-9]{4})";
+  var reYear4withSign = "([+-]?[0-9]{4})";
+  var reMonth = "(1[0-2]|0?[0-9])";
+  var reMonthlz = "(0[0-9]|1[0-2])";
+  var reDay = "(?:(3[01]|[0-2]?[0-9])(?:st|nd|rd|th)?)";
+  var reDaylz = "(0[0-9]|[1-2][0-9]|3[01])";
+  var reMonthFull = "january|february|march|april|may|june|july|august|september|october|november|december";
+  var reMonthAbbr = "jan|feb|mar|apr|may|jun|jul|aug|sept?|oct|nov|dec";
+  var reMonthroman = "i[vx]|vi{0,3}|xi{0,2}|i{1,3}";
+  var reMonthText = "(" + reMonthFull + "|" + reMonthAbbr + "|" + reMonthroman + ")";
+  var reTzCorrection = "((?:GMT)?([+-])" + reHour24 + ":?" + reMinute + "?)";
+  var reTzAbbr = "\\(?([a-zA-Z]{1,6})\\)?";
+  var reDayOfYear = "(00[1-9]|0[1-9][0-9]|[12][0-9][0-9]|3[0-5][0-9]|36[0-6])";
+  var reWeekOfYear = "(0[1-9]|[1-4][0-9]|5[0-3])";
+  var reDateNoYear = reMonthText + "[ .\\t-]*" + reDay + "[,.stndrh\\t ]*";
+  function processMeridian(hour, meridian) {
+    meridian = meridian && meridian.toLowerCase();
+    switch (meridian) {
+      case "a":
+        hour += hour === 12 ? -12 : 0;
+        break;
+      case "p":
+        hour += hour !== 12 ? 12 : 0;
+        break;
+    }
+    return hour;
+  }
+  function processYear(yearStr) {
+    var year = +yearStr;
+    if (yearStr.length < 4 && year < 100) {
+      year += year < 70 ? 2e3 : 1900;
+    }
+    return year;
+  }
+  function lookupMonth(monthStr) {
+    return {
+      jan: 0,
+      january: 0,
+      i: 0,
+      feb: 1,
+      february: 1,
+      ii: 1,
+      mar: 2,
+      march: 2,
+      iii: 2,
+      apr: 3,
+      april: 3,
+      iv: 3,
+      may: 4,
+      v: 4,
+      jun: 5,
+      june: 5,
+      vi: 5,
+      jul: 6,
+      july: 6,
+      vii: 6,
+      aug: 7,
+      august: 7,
+      viii: 7,
+      sep: 8,
+      sept: 8,
+      september: 8,
+      ix: 8,
+      oct: 9,
+      october: 9,
+      x: 9,
+      nov: 10,
+      november: 10,
+      xi: 10,
+      dec: 11,
+      december: 11,
+      xii: 11
+    }[monthStr.toLowerCase()];
+  }
+  function lookupWeekday(dayStr) {
+    var desiredSundayNumber = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : 0;
+    var dayNumbers = {
+      mon: 1,
+      monday: 1,
+      tue: 2,
+      tuesday: 2,
+      wed: 3,
+      wednesday: 3,
+      thu: 4,
+      thursday: 4,
+      fri: 5,
+      friday: 5,
+      sat: 6,
+      saturday: 6,
+      sun: 0,
+      sunday: 0
+    };
+    return dayNumbers[dayStr.toLowerCase()] || desiredSundayNumber;
+  }
+  function lookupRelative(relText) {
+    var relativeNumbers = {
+      last: -1,
+      previous: -1,
+      this: 0,
+      first: 1,
+      next: 1,
+      second: 2,
+      third: 3,
+      fourth: 4,
+      fifth: 5,
+      sixth: 6,
+      seventh: 7,
+      eight: 8,
+      eighth: 8,
+      ninth: 9,
+      tenth: 10,
+      eleventh: 11,
+      twelfth: 12
+    };
+    var relativeBehavior = {
+      this: 1
+    };
+    var relTextLower = relText.toLowerCase();
+    return {
+      amount: relativeNumbers[relTextLower],
+      behavior: relativeBehavior[relTextLower] || 0
+    };
+  }
+  function processTzCorrection(tzOffset, oldValue) {
+    var reTzCorrectionLoose = /(?:GMT)?([+-])(\d+)(:?)(\d{0,2})/i;
+    tzOffset = tzOffset && tzOffset.match(reTzCorrectionLoose);
+    if (!tzOffset) {
+      return oldValue;
+    }
+    var sign = tzOffset[1] === "-" ? -1 : 1;
+    var hours = +tzOffset[2];
+    var minutes = +tzOffset[4];
+    if (!tzOffset[4] && !tzOffset[3]) {
+      minutes = Math.floor(hours % 100);
+      hours = Math.floor(hours / 100);
+    }
+    return sign * (hours * 60 + minutes) * 60;
+  }
+  var tzAbbrOffsets = {
+    acdt: 37800,
+    acst: 34200,
+    addt: -7200,
+    adt: -10800,
+    aedt: 39600,
+    aest: 36e3,
+    ahdt: -32400,
+    ahst: -36e3,
+    akdt: -28800,
+    akst: -32400,
+    amt: -13840,
+    apt: -10800,
+    ast: -14400,
+    awdt: 32400,
+    awst: 28800,
+    awt: -10800,
+    bdst: 7200,
+    bdt: -36e3,
+    bmt: -14309,
+    bst: 3600,
+    cast: 34200,
+    cat: 7200,
+    cddt: -14400,
+    cdt: -18e3,
+    cemt: 10800,
+    cest: 7200,
+    cet: 3600,
+    cmt: -15408,
+    cpt: -18e3,
+    cst: -21600,
+    cwt: -18e3,
+    chst: 36e3,
+    dmt: -1521,
+    eat: 10800,
+    eddt: -10800,
+    edt: -14400,
+    eest: 10800,
+    eet: 7200,
+    emt: -26248,
+    ept: -14400,
+    est: -18e3,
+    ewt: -14400,
+    ffmt: -14660,
+    fmt: -4056,
+    gdt: 39600,
+    gmt: 0,
+    gst: 36e3,
+    hdt: -34200,
+    hkst: 32400,
+    hkt: 28800,
+    hmt: -19776,
+    hpt: -34200,
+    hst: -36e3,
+    hwt: -34200,
+    iddt: 14400,
+    idt: 10800,
+    imt: 25025,
+    ist: 7200,
+    jdt: 36e3,
+    jmt: 8440,
+    jst: 32400,
+    kdt: 36e3,
+    kmt: 5736,
+    kst: 30600,
+    lst: 9394,
+    mddt: -18e3,
+    mdst: 16279,
+    mdt: -21600,
+    mest: 7200,
+    met: 3600,
+    mmt: 9017,
+    mpt: -21600,
+    msd: 14400,
+    msk: 10800,
+    mst: -25200,
+    mwt: -21600,
+    nddt: -5400,
+    ndt: -9052,
+    npt: -9e3,
+    nst: -12600,
+    nwt: -9e3,
+    nzdt: 46800,
+    nzmt: 41400,
+    nzst: 43200,
+    pddt: -21600,
+    pdt: -25200,
+    pkst: 21600,
+    pkt: 18e3,
+    plmt: 25590,
+    pmt: -13236,
+    ppmt: -17340,
+    ppt: -25200,
+    pst: -28800,
+    pwt: -25200,
+    qmt: -18840,
+    rmt: 5794,
+    sast: 7200,
+    sdmt: -16800,
+    sjmt: -20173,
+    smt: -13884,
+    sst: -39600,
+    tbmt: 10751,
+    tmt: 12344,
+    uct: 0,
+    utc: 0,
+    wast: 7200,
+    wat: 3600,
+    wemt: 7200,
+    west: 3600,
+    wet: 0,
+    wib: 25200,
+    wita: 28800,
+    wit: 32400,
+    wmt: 5040,
+    yddt: -25200,
+    ydt: -28800,
+    ypt: -28800,
+    yst: -32400,
+    ywt: -28800,
+    a: 3600,
+    b: 7200,
+    c: 10800,
+    d: 14400,
+    e: 18e3,
+    f: 21600,
+    g: 25200,
+    h: 28800,
+    i: 32400,
+    k: 36e3,
+    l: 39600,
+    m: 43200,
+    n: -3600,
+    o: -7200,
+    p: -10800,
+    q: -14400,
+    r: -18e3,
+    s: -21600,
+    t: -25200,
+    u: -28800,
+    v: -32400,
+    w: -36e3,
+    x: -39600,
+    y: -43200,
+    z: 0
+  };
+  var formats = {
+    yesterday: {
+      regex: /^yesterday/i,
+      name: "yesterday",
+      callback: function callback() {
+        this.rd -= 1;
+        return this.resetTime();
+      }
+    },
+    now: {
+      regex: /^now/i,
+      name: "now"
+      // do nothing
+    },
+    noon: {
+      regex: /^noon/i,
+      name: "noon",
+      callback: function callback() {
+        return this.resetTime() && this.time(12, 0, 0, 0);
+      }
+    },
+    midnightOrToday: {
+      regex: /^(midnight|today)/i,
+      name: "midnight | today",
+      callback: function callback() {
+        return this.resetTime();
+      }
+    },
+    tomorrow: {
+      regex: /^tomorrow/i,
+      name: "tomorrow",
+      callback: function callback() {
+        this.rd += 1;
+        return this.resetTime();
+      }
+    },
+    timestamp: {
+      regex: /^@(-?\d+)/i,
+      name: "timestamp",
+      callback: function callback(match, timestamp) {
+        this.rs += +timestamp;
+        this.y = 1970;
+        this.m = 0;
+        this.d = 1;
+        this.dates = 0;
+        return this.resetTime() && this.zone(0);
+      }
+    },
+    firstOrLastDay: {
+      regex: /^(first|last) day of/i,
+      name: "firstdayof | lastdayof",
+      callback: function callback(match, day) {
+        if (day.toLowerCase() === "first") {
+          this.firstOrLastDayOfMonth = 1;
+        } else {
+          this.firstOrLastDayOfMonth = -1;
+        }
+      }
+    },
+    backOrFrontOf: {
+      regex: RegExp("^(back|front) of " + reHour24 + reSpaceOpt + reMeridian + "?", "i"),
+      name: "backof | frontof",
+      callback: function callback(match, side, hours, meridian) {
+        var back = side.toLowerCase() === "back";
+        var hour = +hours;
+        var minute = 15;
+        if (!back) {
+          hour -= 1;
+          minute = 45;
+        }
+        hour = processMeridian(hour, meridian);
+        return this.resetTime() && this.time(hour, minute, 0, 0);
+      }
+    },
+    weekdayOf: {
+      regex: RegExp("^(" + reReltextnumber + "|" + reReltexttext + ")" + reSpace + "(" + reDayfull + "|" + reDayabbr + ")" + reSpace + "of", "i"),
+      name: "weekdayof"
+      // todo
+    },
+    mssqltime: {
+      regex: RegExp("^" + reHour12 + ":" + reMinutelz + ":" + reSecondlz + "[:.]([0-9]+)" + reMeridian, "i"),
+      name: "mssqltime",
+      callback: function callback(match, hour, minute, second, frac, meridian) {
+        return this.time(processMeridian(+hour, meridian), +minute, +second, +frac.substr(0, 3));
+      }
+    },
+    oracledate: {
+      regex: /^(\d{2})-([A-Z]{3})-(\d{2})$/i,
+      name: "d-M-y",
+      callback: function callback(match, day, monthText, year) {
+        var month = {
+          JAN: 0,
+          FEB: 1,
+          MAR: 2,
+          APR: 3,
+          MAY: 4,
+          JUN: 5,
+          JUL: 6,
+          AUG: 7,
+          SEP: 8,
+          OCT: 9,
+          NOV: 10,
+          DEC: 11
+        }[monthText.toUpperCase()];
+        return this.ymd(2e3 + parseInt(year, 10), month, parseInt(day, 10));
+      }
+    },
+    timeLong12: {
+      regex: RegExp("^" + reHour12 + "[:.]" + reMinute + "[:.]" + reSecondlz + reSpaceOpt + reMeridian, "i"),
+      name: "timelong12",
+      callback: function callback(match, hour, minute, second, meridian) {
+        return this.time(processMeridian(+hour, meridian), +minute, +second, 0);
+      }
+    },
+    timeShort12: {
+      regex: RegExp("^" + reHour12 + "[:.]" + reMinutelz + reSpaceOpt + reMeridian, "i"),
+      name: "timeshort12",
+      callback: function callback(match, hour, minute, meridian) {
+        return this.time(processMeridian(+hour, meridian), +minute, 0, 0);
+      }
+    },
+    timeTiny12: {
+      regex: RegExp("^" + reHour12 + reSpaceOpt + reMeridian, "i"),
+      name: "timetiny12",
+      callback: function callback(match, hour, meridian) {
+        return this.time(processMeridian(+hour, meridian), 0, 0, 0);
+      }
+    },
+    soap: {
+      regex: RegExp("^" + reYear4 + "-" + reMonthlz + "-" + reDaylz + "T" + reHour24lz + ":" + reMinutelz + ":" + reSecondlz + reFrac + reTzCorrection + "?", "i"),
+      name: "soap",
+      callback: function callback(match, year, month, day, hour, minute, second, frac, tzCorrection) {
+        return this.ymd(+year, month - 1, +day) && this.time(+hour, +minute, +second, +frac.substr(0, 3)) && this.zone(processTzCorrection(tzCorrection));
+      }
+    },
+    wddx: {
+      regex: RegExp("^" + reYear4 + "-" + reMonth + "-" + reDay + "T" + reHour24 + ":" + reMinute + ":" + reSecond),
+      name: "wddx",
+      callback: function callback(match, year, month, day, hour, minute, second) {
+        return this.ymd(+year, month - 1, +day) && this.time(+hour, +minute, +second, 0);
+      }
+    },
+    exif: {
+      regex: RegExp("^" + reYear4 + ":" + reMonthlz + ":" + reDaylz + " " + reHour24lz + ":" + reMinutelz + ":" + reSecondlz, "i"),
+      name: "exif",
+      callback: function callback(match, year, month, day, hour, minute, second) {
+        return this.ymd(+year, month - 1, +day) && this.time(+hour, +minute, +second, 0);
+      }
+    },
+    xmlRpc: {
+      regex: RegExp("^" + reYear4 + reMonthlz + reDaylz + "T" + reHour24 + ":" + reMinutelz + ":" + reSecondlz),
+      name: "xmlrpc",
+      callback: function callback(match, year, month, day, hour, minute, second) {
+        return this.ymd(+year, month - 1, +day) && this.time(+hour, +minute, +second, 0);
+      }
+    },
+    xmlRpcNoColon: {
+      regex: RegExp("^" + reYear4 + reMonthlz + reDaylz + "[Tt]" + reHour24 + reMinutelz + reSecondlz),
+      name: "xmlrpcnocolon",
+      callback: function callback(match, year, month, day, hour, minute, second) {
+        return this.ymd(+year, month - 1, +day) && this.time(+hour, +minute, +second, 0);
+      }
+    },
+    clf: {
+      regex: RegExp("^" + reDay + "/(" + reMonthAbbr + ")/" + reYear4 + ":" + reHour24lz + ":" + reMinutelz + ":" + reSecondlz + reSpace + reTzCorrection, "i"),
+      name: "clf",
+      callback: function callback(match, day, month, year, hour, minute, second, tzCorrection) {
+        return this.ymd(+year, lookupMonth(month), +day) && this.time(+hour, +minute, +second, 0) && this.zone(processTzCorrection(tzCorrection));
+      }
+    },
+    iso8601long: {
+      regex: RegExp("^t?" + reHour24 + "[:.]" + reMinute + "[:.]" + reSecond + reFrac, "i"),
+      name: "iso8601long",
+      callback: function callback(match, hour, minute, second, frac) {
+        return this.time(+hour, +minute, +second, +frac.substr(0, 3));
+      }
+    },
+    dateTextual: {
+      regex: RegExp("^" + reMonthText + "[ .\\t-]*" + reDay + "[,.stndrh\\t ]+" + reYear, "i"),
+      name: "datetextual",
+      callback: function callback(match, month, day, year) {
+        return this.ymd(processYear(year), lookupMonth(month), +day);
+      }
+    },
+    pointedDate4: {
+      regex: RegExp("^" + reDay + "[.\\t-]" + reMonth + "[.-]" + reYear4),
+      name: "pointeddate4",
+      callback: function callback(match, day, month, year) {
+        return this.ymd(+year, month - 1, +day);
+      }
+    },
+    pointedDate2: {
+      regex: RegExp("^" + reDay + "[.\\t]" + reMonth + "\\." + reYear2),
+      name: "pointeddate2",
+      callback: function callback(match, day, month, year) {
+        return this.ymd(processYear(year), month - 1, +day);
+      }
+    },
+    timeLong24: {
+      regex: RegExp("^t?" + reHour24 + "[:.]" + reMinute + "[:.]" + reSecond),
+      name: "timelong24",
+      callback: function callback(match, hour, minute, second) {
+        return this.time(+hour, +minute, +second, 0);
+      }
+    },
+    dateNoColon: {
+      regex: RegExp("^" + reYear4 + reMonthlz + reDaylz),
+      name: "datenocolon",
+      callback: function callback(match, year, month, day) {
+        return this.ymd(+year, month - 1, +day);
+      }
+    },
+    pgydotd: {
+      regex: RegExp("^" + reYear4 + "\\.?" + reDayOfYear),
+      name: "pgydotd",
+      callback: function callback(match, year, day) {
+        return this.ymd(+year, 0, +day);
+      }
+    },
+    timeShort24: {
+      regex: RegExp("^t?" + reHour24 + "[:.]" + reMinute, "i"),
+      name: "timeshort24",
+      callback: function callback(match, hour, minute) {
+        return this.time(+hour, +minute, 0, 0);
+      }
+    },
+    iso8601noColon: {
+      regex: RegExp("^t?" + reHour24lz + reMinutelz + reSecondlz, "i"),
+      name: "iso8601nocolon",
+      callback: function callback(match, hour, minute, second) {
+        return this.time(+hour, +minute, +second, 0);
+      }
+    },
+    iso8601dateSlash: {
+      // eventhough the trailing slash is optional in PHP
+      // here it's mandatory and inputs without the slash
+      // are handled by dateslash
+      regex: RegExp("^" + reYear4 + "/" + reMonthlz + "/" + reDaylz + "/"),
+      name: "iso8601dateslash",
+      callback: function callback(match, year, month, day) {
+        return this.ymd(+year, month - 1, +day);
+      }
+    },
+    dateSlash: {
+      regex: RegExp("^" + reYear4 + "/" + reMonth + "/" + reDay),
+      name: "dateslash",
+      callback: function callback(match, year, month, day) {
+        return this.ymd(+year, month - 1, +day);
+      }
+    },
+    american: {
+      regex: RegExp("^" + reMonth + "/" + reDay + "/" + reYear),
+      name: "american",
+      callback: function callback(match, month, day, year) {
+        return this.ymd(processYear(year), month - 1, +day);
+      }
+    },
+    americanShort: {
+      regex: RegExp("^" + reMonth + "/" + reDay),
+      name: "americanshort",
+      callback: function callback(match, month, day) {
+        return this.ymd(this.y, month - 1, +day);
+      }
+    },
+    gnuDateShortOrIso8601date2: {
+      // iso8601date2 is complete subset of gnudateshort
+      regex: RegExp("^" + reYear + "-" + reMonth + "-" + reDay),
+      name: "gnudateshort | iso8601date2",
+      callback: function callback(match, year, month, day) {
+        return this.ymd(processYear(year), month - 1, +day);
+      }
+    },
+    iso8601date4: {
+      regex: RegExp("^" + reYear4withSign + "-" + reMonthlz + "-" + reDaylz),
+      name: "iso8601date4",
+      callback: function callback(match, year, month, day) {
+        return this.ymd(+year, month - 1, +day);
+      }
+    },
+    gnuNoColon: {
+      regex: RegExp("^t?" + reHour24lz + reMinutelz, "i"),
+      name: "gnunocolon",
+      callback: function callback(match, hour, minute) {
+        switch (this.times) {
+          case 0:
+            return this.time(+hour, +minute, 0, this.f);
+          case 1:
+            this.y = hour * 100 + +minute;
+            this.times++;
+            return true;
+          default:
+            return false;
+        }
+      }
+    },
+    gnuDateShorter: {
+      regex: RegExp("^" + reYear4 + "-" + reMonth),
+      name: "gnudateshorter",
+      callback: function callback(match, year, month) {
+        return this.ymd(+year, month - 1, 1);
+      }
+    },
+    pgTextReverse: {
+      // note: allowed years are from 32-9999
+      // years below 32 should be treated as days in datefull
+      regex: RegExp("^(\\d{3,4}|[4-9]\\d|3[2-9])-(" + reMonthAbbr + ")-" + reDaylz, "i"),
+      name: "pgtextreverse",
+      callback: function callback(match, year, month, day) {
+        return this.ymd(processYear(year), lookupMonth(month), +day);
+      }
+    },
+    dateFull: {
+      regex: RegExp("^" + reDay + "[ \\t.-]*" + reMonthText + "[ \\t.-]*" + reYear, "i"),
+      name: "datefull",
+      callback: function callback(match, day, month, year) {
+        return this.ymd(processYear(year), lookupMonth(month), +day);
+      }
+    },
+    dateNoDay: {
+      regex: RegExp("^" + reMonthText + "[ .\\t-]*" + reYear4, "i"),
+      name: "datenoday",
+      callback: function callback(match, month, year) {
+        return this.ymd(+year, lookupMonth(month), 1);
+      }
+    },
+    dateNoDayRev: {
+      regex: RegExp("^" + reYear4 + "[ .\\t-]*" + reMonthText, "i"),
+      name: "datenodayrev",
+      callback: function callback(match, year, month) {
+        return this.ymd(+year, lookupMonth(month), 1);
+      }
+    },
+    pgTextShort: {
+      regex: RegExp("^(" + reMonthAbbr + ")-" + reDaylz + "-" + reYear, "i"),
+      name: "pgtextshort",
+      callback: function callback(match, month, day, year) {
+        return this.ymd(processYear(year), lookupMonth(month), +day);
+      }
+    },
+    dateNoYear: {
+      regex: RegExp("^" + reDateNoYear, "i"),
+      name: "datenoyear",
+      callback: function callback(match, month, day) {
+        return this.ymd(this.y, lookupMonth(month), +day);
+      }
+    },
+    dateNoYearRev: {
+      regex: RegExp("^" + reDay + "[ .\\t-]*" + reMonthText, "i"),
+      name: "datenoyearrev",
+      callback: function callback(match, day, month) {
+        return this.ymd(this.y, lookupMonth(month), +day);
+      }
+    },
+    isoWeekDay: {
+      regex: RegExp("^" + reYear4 + "-?W" + reWeekOfYear + "(?:-?([0-7]))?"),
+      name: "isoweekday | isoweek",
+      callback: function callback(match, year, week, day) {
+        day = day ? +day : 1;
+        if (!this.ymd(+year, 0, 1)) {
+          return false;
+        }
+        var dayOfWeek = new Date(this.y, this.m, this.d).getDay();
+        dayOfWeek = 0 - (dayOfWeek > 4 ? dayOfWeek - 7 : dayOfWeek);
+        this.rd += dayOfWeek + (week - 1) * 7 + day;
+      }
+    },
+    relativeText: {
+      regex: RegExp("^(" + reReltextnumber + "|" + reReltexttext + ")" + reSpace + "(" + reReltextunit + ")", "i"),
+      name: "relativetext",
+      callback: function callback(match, relValue, relUnit) {
+        var _lookupRelative = lookupRelative(relValue), amount = _lookupRelative.amount;
+        switch (relUnit.toLowerCase()) {
+          case "sec":
+          case "secs":
+          case "second":
+          case "seconds":
+            this.rs += amount;
+            break;
+          case "min":
+          case "mins":
+          case "minute":
+          case "minutes":
+            this.ri += amount;
+            break;
+          case "hour":
+          case "hours":
+            this.rh += amount;
+            break;
+          case "day":
+          case "days":
+            this.rd += amount;
+            break;
+          case "fortnight":
+          case "fortnights":
+          case "forthnight":
+          case "forthnights":
+            this.rd += amount * 14;
+            break;
+          case "week":
+          case "weeks":
+            this.rd += amount * 7;
+            break;
+          case "month":
+          case "months":
+            this.rm += amount;
+            break;
+          case "year":
+          case "years":
+            this.ry += amount;
+            break;
+          case "mon":
+          case "monday":
+          case "tue":
+          case "tuesday":
+          case "wed":
+          case "wednesday":
+          case "thu":
+          case "thursday":
+          case "fri":
+          case "friday":
+          case "sat":
+          case "saturday":
+          case "sun":
+          case "sunday":
+            this.resetTime();
+            this.weekday = lookupWeekday(relUnit, 7);
+            this.weekdayBehavior = 1;
+            this.rd += (amount > 0 ? amount - 1 : amount) * 7;
+            break;
+        }
+      }
+    },
+    relative: {
+      regex: RegExp("^([+-]*)[ \\t]*(\\d+)" + reSpaceOpt + "(" + reReltextunit + "|week)", "i"),
+      name: "relative",
+      callback: function callback(match, signs, relValue, relUnit) {
+        var minuses = signs.replace(/[^-]/g, "").length;
+        var amount = +relValue * Math.pow(-1, minuses);
+        switch (relUnit.toLowerCase()) {
+          case "sec":
+          case "secs":
+          case "second":
+          case "seconds":
+            this.rs += amount;
+            break;
+          case "min":
+          case "mins":
+          case "minute":
+          case "minutes":
+            this.ri += amount;
+            break;
+          case "hour":
+          case "hours":
+            this.rh += amount;
+            break;
+          case "day":
+          case "days":
+            this.rd += amount;
+            break;
+          case "fortnight":
+          case "fortnights":
+          case "forthnight":
+          case "forthnights":
+            this.rd += amount * 14;
+            break;
+          case "week":
+          case "weeks":
+            this.rd += amount * 7;
+            break;
+          case "month":
+          case "months":
+            this.rm += amount;
+            break;
+          case "year":
+          case "years":
+            this.ry += amount;
+            break;
+          case "mon":
+          case "monday":
+          case "tue":
+          case "tuesday":
+          case "wed":
+          case "wednesday":
+          case "thu":
+          case "thursday":
+          case "fri":
+          case "friday":
+          case "sat":
+          case "saturday":
+          case "sun":
+          case "sunday":
+            this.resetTime();
+            this.weekday = lookupWeekday(relUnit, 7);
+            this.weekdayBehavior = 1;
+            this.rd += (amount > 0 ? amount - 1 : amount) * 7;
+            break;
+        }
+      }
+    },
+    dayText: {
+      regex: RegExp("^(" + reDaytext + ")", "i"),
+      name: "daytext",
+      callback: function callback(match, dayText) {
+        this.resetTime();
+        this.weekday = lookupWeekday(dayText, 0);
+        if (this.weekdayBehavior !== 2) {
+          this.weekdayBehavior = 1;
+        }
+      }
+    },
+    relativeTextWeek: {
+      regex: RegExp("^(" + reReltexttext + ")" + reSpace + "week", "i"),
+      name: "relativetextweek",
+      callback: function callback(match, relText) {
+        this.weekdayBehavior = 2;
+        switch (relText.toLowerCase()) {
+          case "this":
+            this.rd += 0;
+            break;
+          case "next":
+            this.rd += 7;
+            break;
+          case "last":
+          case "previous":
+            this.rd -= 7;
+            break;
+        }
+        if (isNaN(this.weekday)) {
+          this.weekday = 1;
+        }
+      }
+    },
+    monthFullOrMonthAbbr: {
+      regex: RegExp("^(" + reMonthFull + "|" + reMonthAbbr + ")", "i"),
+      name: "monthfull | monthabbr",
+      callback: function callback(match, month) {
+        return this.ymd(this.y, lookupMonth(month), this.d);
+      }
+    },
+    tzCorrection: {
+      regex: RegExp("^" + reTzCorrection, "i"),
+      name: "tzcorrection",
+      callback: function callback(tzCorrection) {
+        return this.zone(processTzCorrection(tzCorrection));
+      }
+    },
+    tzAbbr: {
+      regex: RegExp("^" + reTzAbbr),
+      name: "tzabbr",
+      callback: function callback(match, abbr) {
+        var offset2 = tzAbbrOffsets[abbr.toLowerCase()];
+        if (isNaN(offset2)) {
+          return false;
+        }
+        return this.zone(offset2);
+      }
+    },
+    ago: {
+      regex: /^ago/i,
+      name: "ago",
+      callback: function callback() {
+        this.ry = -this.ry;
+        this.rm = -this.rm;
+        this.rd = -this.rd;
+        this.rh = -this.rh;
+        this.ri = -this.ri;
+        this.rs = -this.rs;
+        this.rf = -this.rf;
+      }
+    },
+    year4: {
+      regex: RegExp("^" + reYear4),
+      name: "year4",
+      callback: function callback(match, year) {
+        this.y = +year;
+        return true;
+      }
+    },
+    whitespace: {
+      regex: /^[ .,\t]+/,
+      name: "whitespace"
+      // do nothing
+    },
+    dateShortWithTimeLong: {
+      regex: RegExp("^" + reDateNoYear + "t?" + reHour24 + "[:.]" + reMinute + "[:.]" + reSecond, "i"),
+      name: "dateshortwithtimelong",
+      callback: function callback(match, month, day, hour, minute, second) {
+        return this.ymd(this.y, lookupMonth(month), +day) && this.time(+hour, +minute, +second, 0);
+      }
+    },
+    dateShortWithTimeLong12: {
+      regex: RegExp("^" + reDateNoYear + reHour12 + "[:.]" + reMinute + "[:.]" + reSecondlz + reSpaceOpt + reMeridian, "i"),
+      name: "dateshortwithtimelong12",
+      callback: function callback(match, month, day, hour, minute, second, meridian) {
+        return this.ymd(this.y, lookupMonth(month), +day) && this.time(processMeridian(+hour, meridian), +minute, +second, 0);
+      }
+    },
+    dateShortWithTimeShort: {
+      regex: RegExp("^" + reDateNoYear + "t?" + reHour24 + "[:.]" + reMinute, "i"),
+      name: "dateshortwithtimeshort",
+      callback: function callback(match, month, day, hour, minute) {
+        return this.ymd(this.y, lookupMonth(month), +day) && this.time(+hour, +minute, 0, 0);
+      }
+    },
+    dateShortWithTimeShort12: {
+      regex: RegExp("^" + reDateNoYear + reHour12 + "[:.]" + reMinutelz + reSpaceOpt + reMeridian, "i"),
+      name: "dateshortwithtimeshort12",
+      callback: function callback(match, month, day, hour, minute, meridian) {
+        return this.ymd(this.y, lookupMonth(month), +day) && this.time(processMeridian(+hour, meridian), +minute, 0, 0);
+      }
+    }
+  };
+  var resultProto = {
+    // date
+    y: NaN,
+    m: NaN,
+    d: NaN,
+    // time
+    h: NaN,
+    i: NaN,
+    s: NaN,
+    f: NaN,
+    // relative shifts
+    ry: 0,
+    rm: 0,
+    rd: 0,
+    rh: 0,
+    ri: 0,
+    rs: 0,
+    rf: 0,
+    // weekday related shifts
+    weekday: NaN,
+    weekdayBehavior: 0,
+    // first or last day of month
+    // 0 none, 1 first, -1 last
+    firstOrLastDayOfMonth: 0,
+    // timezone correction in minutes
+    z: NaN,
+    // counters
+    dates: 0,
+    times: 0,
+    zones: 0,
+    // helper functions
+    ymd: function ymd(y, m, d) {
+      if (this.dates > 0) {
+        return false;
+      }
+      this.dates++;
+      this.y = y;
+      this.m = m;
+      this.d = d;
+      return true;
+    },
+    time: function time(h, i, s, f) {
+      if (this.times > 0) {
+        return false;
+      }
+      this.times++;
+      this.h = h;
+      this.i = i;
+      this.s = s;
+      this.f = f;
+      return true;
+    },
+    resetTime: function resetTime() {
+      this.h = 0;
+      this.i = 0;
+      this.s = 0;
+      this.f = 0;
+      this.times = 0;
+      return true;
+    },
+    zone: function zone(minutes) {
+      if (this.zones <= 1) {
+        this.zones++;
+        this.z = minutes;
+        return true;
+      }
+      return false;
+    },
+    toDate: function toDate(relativeTo) {
+      if (this.dates && !this.times) {
+        this.h = this.i = this.s = this.f = 0;
+      }
+      if (isNaN(this.y)) {
+        this.y = relativeTo.getFullYear();
+      }
+      if (isNaN(this.m)) {
+        this.m = relativeTo.getMonth();
+      }
+      if (isNaN(this.d)) {
+        this.d = relativeTo.getDate();
+      }
+      if (isNaN(this.h)) {
+        this.h = relativeTo.getHours();
+      }
+      if (isNaN(this.i)) {
+        this.i = relativeTo.getMinutes();
+      }
+      if (isNaN(this.s)) {
+        this.s = relativeTo.getSeconds();
+      }
+      if (isNaN(this.f)) {
+        this.f = relativeTo.getMilliseconds();
+      }
+      switch (this.firstOrLastDayOfMonth) {
+        case 1:
+          this.d = 1;
+          break;
+        case -1:
+          this.d = 0;
+          this.m += 1;
+          break;
+      }
+      if (!isNaN(this.weekday)) {
+        var date2 = new Date(relativeTo.getTime());
+        date2.setFullYear(this.y, this.m, this.d);
+        date2.setHours(this.h, this.i, this.s, this.f);
+        var dow = date2.getDay();
+        if (this.weekdayBehavior === 2) {
+          if (dow === 0 && this.weekday !== 0) {
+            this.weekday = -6;
+          }
+          if (this.weekday === 0 && dow !== 0) {
+            this.weekday = 7;
+          }
+          this.d -= dow;
+          this.d += this.weekday;
+        } else {
+          var diff = this.weekday - dow;
+          if (this.rd < 0 && diff < 0 || this.rd >= 0 && diff <= -this.weekdayBehavior) {
+            diff += 7;
+          }
+          if (this.weekday >= 0) {
+            this.d += diff;
+          } else {
+            this.d -= 7 - (Math.abs(this.weekday) - dow);
+          }
+          this.weekday = NaN;
+        }
+      }
+      this.y += this.ry;
+      this.m += this.rm;
+      this.d += this.rd;
+      this.h += this.rh;
+      this.i += this.ri;
+      this.s += this.rs;
+      this.f += this.rf;
+      this.ry = this.rm = this.rd = 0;
+      this.rh = this.ri = this.rs = this.rf = 0;
+      var result = new Date(relativeTo.getTime());
+      result.setFullYear(this.y, this.m, this.d);
+      result.setHours(this.h, this.i, this.s, this.f);
+      switch (this.firstOrLastDayOfMonth) {
+        case 1:
+          result.setDate(1);
+          break;
+        case -1:
+          result.setMonth(result.getMonth() + 1, 0);
+          break;
+      }
+      if (!isNaN(this.z) && result.getTimezoneOffset() !== this.z) {
+        result.setUTCFullYear(result.getFullYear(), result.getMonth(), result.getDate());
+        result.setUTCHours(result.getHours(), result.getMinutes(), result.getSeconds() - this.z, result.getMilliseconds());
+      }
+      return result;
+    }
+  };
+  strtotime = function strtotime2(str, now) {
+    if (now == null) {
+      now = Math.floor(Date.now() / 1e3);
+    }
+    var rules = [
+      formats.yesterday,
+      formats.now,
+      formats.noon,
+      formats.midnightOrToday,
+      formats.tomorrow,
+      formats.timestamp,
+      formats.firstOrLastDay,
+      formats.backOrFrontOf,
+      // formats.weekdayOf, // not yet implemented
+      formats.timeTiny12,
+      formats.timeShort12,
+      formats.timeLong12,
+      formats.mssqltime,
+      formats.oracledate,
+      formats.timeShort24,
+      formats.timeLong24,
+      formats.iso8601long,
+      formats.gnuNoColon,
+      formats.iso8601noColon,
+      formats.americanShort,
+      formats.american,
+      formats.iso8601date4,
+      formats.iso8601dateSlash,
+      formats.dateSlash,
+      formats.gnuDateShortOrIso8601date2,
+      formats.gnuDateShorter,
+      formats.dateFull,
+      formats.pointedDate4,
+      formats.pointedDate2,
+      formats.dateNoDay,
+      formats.dateNoDayRev,
+      formats.dateTextual,
+      formats.dateNoYear,
+      formats.dateNoYearRev,
+      formats.dateNoColon,
+      formats.xmlRpc,
+      formats.xmlRpcNoColon,
+      formats.soap,
+      formats.wddx,
+      formats.exif,
+      formats.pgydotd,
+      formats.isoWeekDay,
+      formats.pgTextShort,
+      formats.pgTextReverse,
+      formats.clf,
+      formats.year4,
+      formats.ago,
+      formats.dayText,
+      formats.relativeTextWeek,
+      formats.relativeText,
+      formats.monthFullOrMonthAbbr,
+      formats.tzCorrection,
+      formats.tzAbbr,
+      formats.dateShortWithTimeShort12,
+      formats.dateShortWithTimeLong12,
+      formats.dateShortWithTimeShort,
+      formats.dateShortWithTimeLong,
+      formats.relative,
+      formats.whitespace
+    ];
+    var result = Object.create(resultProto);
+    while (str.length) {
+      var longestMatch = null;
+      var finalRule = null;
+      for (var i = 0, l = rules.length; i < l; i++) {
+        var format = rules[i];
+        var match = str.match(format.regex);
+        if (match) {
+          if (!longestMatch || match[0].length > longestMatch[0].length) {
+            longestMatch = match;
+            finalRule = format;
+          }
+        }
+      }
+      if (!finalRule || finalRule.callback && finalRule.callback.apply(result, longestMatch) === false) {
+        return false;
+      }
+      str = str.substr(longestMatch[0].length);
+      finalRule = null;
+      longestMatch = null;
+    }
+    return Math.floor(result.toDate(new Date(now * 1e3)) / 1e3);
+  };
+  return strtotime;
+}
+var date;
+var hasRequiredDate;
+function requireDate() {
+  if (hasRequiredDate) return date;
+  hasRequiredDate = 1;
+  date = function date2(format, timestamp) {
+    var jsdate = void 0, f = void 0;
+    var txtWords = ["Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var formatChr = /\\?(.?)/gi;
+    var formatChrCb = function formatChrCb2(t, s) {
+      return f[t] ? f[t]() : s;
+    };
+    var _pad = function _pad2(n, c) {
+      n = String(n);
+      while (n.length < c) {
+        n = "0" + n;
+      }
+      return n;
+    };
+    f = {
+      // Day
+      d: function d() {
+        return _pad(f.j(), 2);
+      },
+      D: function D() {
+        return f.l().slice(0, 3);
+      },
+      j: function j() {
+        return jsdate.getDate();
+      },
+      l: function l() {
+        return txtWords[f.w()] + "day";
+      },
+      N: function N() {
+        return f.w() || 7;
+      },
+      S: function S() {
+        var j = f.j();
+        var i = j % 10;
+        if (i <= 3 && parseInt(j % 100 / 10, 10) === 1) {
+          i = 0;
+        }
+        return ["st", "nd", "rd"][i - 1] || "th";
+      },
+      w: function w() {
+        return jsdate.getDay();
+      },
+      z: function z() {
+        var a = new Date(f.Y(), f.n() - 1, f.j());
+        var b = new Date(f.Y(), 0, 1);
+        return Math.round((a - b) / 864e5);
+      },
+      // Week
+      W: function W() {
+        var a = new Date(f.Y(), f.n() - 1, f.j() - f.N() + 3);
+        var b = new Date(a.getFullYear(), 0, 4);
+        return _pad(1 + Math.round((a - b) / 864e5 / 7), 2);
+      },
+      // Month
+      F: function F() {
+        return txtWords[6 + f.n()];
+      },
+      m: function m() {
+        return _pad(f.n(), 2);
+      },
+      M: function M() {
+        return f.F().slice(0, 3);
+      },
+      n: function n() {
+        return jsdate.getMonth() + 1;
+      },
+      t: function t() {
+        return new Date(f.Y(), f.n(), 0).getDate();
+      },
+      // Year
+      L: function L() {
+        var j = f.Y();
+        return j % 4 === 0 & j % 100 !== 0 | j % 400 === 0;
+      },
+      o: function o() {
+        var n = f.n();
+        var W = f.W();
+        var Y = f.Y();
+        return Y + (n === 12 && W < 9 ? 1 : n === 1 && W > 9 ? -1 : 0);
+      },
+      Y: function Y() {
+        return jsdate.getFullYear();
+      },
+      y: function y() {
+        return f.Y().toString().slice(-2);
+      },
+      // Time
+      a: function a() {
+        return jsdate.getHours() > 11 ? "pm" : "am";
+      },
+      A: function A() {
+        return f.a().toUpperCase();
+      },
+      B: function B() {
+        var H = jsdate.getUTCHours() * 3600;
+        var i = jsdate.getUTCMinutes() * 60;
+        var s = jsdate.getUTCSeconds();
+        return _pad(Math.floor((H + i + s + 3600) / 86.4) % 1e3, 3);
+      },
+      g: function g() {
+        return f.G() % 12 || 12;
+      },
+      G: function G() {
+        return jsdate.getHours();
+      },
+      h: function h() {
+        return _pad(f.g(), 2);
+      },
+      H: function H() {
+        return _pad(f.G(), 2);
+      },
+      i: function i() {
+        return _pad(jsdate.getMinutes(), 2);
+      },
+      s: function s() {
+        return _pad(jsdate.getSeconds(), 2);
+      },
+      u: function u() {
+        return _pad(jsdate.getMilliseconds() * 1e3, 6);
+      },
+      // Timezone
+      e: function e() {
+        var msg = "Not supported (see source code of date() for timezone on how to add support)";
+        throw new Error(msg);
+      },
+      I: function I() {
+        var a = new Date(f.Y(), 0);
+        var c = Date.UTC(f.Y(), 0);
+        var b = new Date(f.Y(), 6);
+        var d = Date.UTC(f.Y(), 6);
+        return a - c !== b - d ? 1 : 0;
+      },
+      O: function O() {
+        var tzo = jsdate.getTimezoneOffset();
+        var a = Math.abs(tzo);
+        return (tzo > 0 ? "-" : "+") + _pad(Math.floor(a / 60) * 100 + a % 60, 4);
+      },
+      P: function P() {
+        var O = f.O();
+        return O.substr(0, 3) + ":" + O.substr(3, 2);
+      },
+      T: function T() {
+        return "UTC";
+      },
+      Z: function Z() {
+        return -jsdate.getTimezoneOffset() * 60;
+      },
+      // Full Date/Time
+      c: function c() {
+        return "Y-m-d\\TH:i:sP".replace(formatChr, formatChrCb);
+      },
+      r: function r() {
+        return "D, d M Y H:i:s O".replace(formatChr, formatChrCb);
+      },
+      U: function U() {
+        return jsdate / 1e3 | 0;
+      }
+    };
+    var _date = function _date2(format2, timestamp2) {
+      jsdate = timestamp2 === void 0 ? /* @__PURE__ */ new Date() : timestamp2 instanceof Date ? new Date(timestamp2) : new Date(timestamp2 * 1e3);
+      return format2.replace(formatChr, formatChrCb);
+    };
+    return _date(format, timestamp);
+  };
+  return date;
+}
+var boolval;
+var hasRequiredBoolval;
+function requireBoolval() {
+  if (hasRequiredBoolval) return boolval;
+  hasRequiredBoolval = 1;
+  boolval = function boolval2(mixedVar) {
+    if (mixedVar === false) {
+      return false;
+    }
+    if (mixedVar === 0 || mixedVar === 0) {
+      return false;
+    }
+    if (mixedVar === "" || mixedVar === "0") {
+      return false;
+    }
+    if (Array.isArray(mixedVar) && mixedVar.length === 0) {
+      return false;
+    }
+    if (mixedVar === null || mixedVar === void 0) {
+      return false;
+    }
+    return true;
+  };
+  return boolval;
+}
+var twig_lib;
+var hasRequiredTwig_lib;
+function requireTwig_lib() {
+  if (hasRequiredTwig_lib) return twig_lib;
+  hasRequiredTwig_lib = 1;
+  twig_lib = function(Twig2) {
+    Twig2.lib = {};
+    Twig2.lib.sprintf = requireSprintf();
+    Twig2.lib.vsprintf = requireVsprintf();
+    Twig2.lib.round = requireRound();
+    Twig2.lib.max = requireMax();
+    Twig2.lib.min = requireMin();
+    Twig2.lib.stripTags = requireStrip_tags();
+    Twig2.lib.strtotime = requireStrtotime();
+    Twig2.lib.date = requireDate();
+    Twig2.lib.boolval = requireBoolval();
+    Twig2.lib.is = function(type, obj) {
+      if (typeof obj === "undefined" || obj === null) {
+        return false;
+      }
+      switch (type) {
+        case "Array":
+          return Array.isArray(obj);
+        case "Date":
+          return obj instanceof Date;
+        case "String":
+          return typeof obj === "string" || obj instanceof String;
+        case "Number":
+          return typeof obj === "number" || obj instanceof Number;
+        case "Function":
+          return typeof obj === "function";
+        case "Object":
+          return obj instanceof Object;
+        default:
+          return false;
+      }
+    };
+    Twig2.lib.replaceAll = function(string, search, replace) {
+      const stringToChange = typeof string === "string" ? string : string.toString();
+      const searchEscaped = search.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      return stringToChange.replace(new RegExp(searchEscaped, "g"), replace);
+    };
+    Twig2.lib.chunkArray = function(arr, size) {
+      const returnVal = [];
+      let x = 0;
+      const len = arr.length;
+      if (size < 1 || !Array.isArray(arr)) {
+        return [];
+      }
+      while (x < len) {
+        returnVal.push(arr.slice(x, x += size));
+      }
+      return returnVal;
+    };
+    return Twig2;
+  };
+  return twig_lib;
+}
+var twig_loader_ajax;
+var hasRequiredTwig_loader_ajax;
+function requireTwig_loader_ajax() {
+  if (hasRequiredTwig_loader_ajax) return twig_loader_ajax;
+  hasRequiredTwig_loader_ajax = 1;
+  twig_loader_ajax = function(Twig2) {
+    Twig2.Templates.registerLoader("ajax", function(location, params, callback, errorCallback) {
+      let template;
+      const { precompiled } = params;
+      const parser = this.parsers[params.parser] || this.parser.twig;
+      if (typeof XMLHttpRequest === "undefined") {
+        throw new Twig2.Error('Unsupported platform: Unable to do ajax requests because there is no "XMLHTTPRequest" implementation');
+      }
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        let data = null;
+        if (xmlhttp.readyState === 4) {
+          if (xmlhttp.status === 200 || window.cordova && xmlhttp.status === 0) {
+            Twig2.log.debug("Got template ", xmlhttp.responseText);
+            if (precompiled === true) {
+              data = JSON.parse(xmlhttp.responseText);
+            } else {
+              data = xmlhttp.responseText;
+            }
+            params.url = location;
+            params.data = data;
+            template = parser.call(this, params);
+            if (typeof callback === "function") {
+              callback(template);
+            }
+          } else if (typeof errorCallback === "function") {
+            errorCallback(xmlhttp);
+          }
+        }
+      };
+      xmlhttp.open("GET", location, Boolean(params.async));
+      xmlhttp.overrideMimeType("text/plain");
+      xmlhttp.send();
+      if (params.async) {
+        return true;
+      }
+      return template;
+    });
+  };
+  return twig_loader_ajax;
+}
+const __viteBrowserExternal = {};
+const __viteBrowserExternal$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: __viteBrowserExternal
+}, Symbol.toStringTag, { value: "Module" }));
+const require$$0 = /* @__PURE__ */ getAugmentedNamespace(__viteBrowserExternal$1);
+var twig_loader_fs;
+var hasRequiredTwig_loader_fs;
+function requireTwig_loader_fs() {
+  if (hasRequiredTwig_loader_fs) return twig_loader_fs;
+  hasRequiredTwig_loader_fs = 1;
+  twig_loader_fs = function(Twig2) {
+    let fs;
+    let path;
+    try {
+      fs = require$$0;
+      path = require$$0;
+    } catch (error) {
+      console.warn("Missing fs and path modules. " + error);
+    }
+    Twig2.Templates.registerLoader("fs", function(location, params, callback, errorCallback) {
+      let template;
+      let data = null;
+      const { precompiled } = params;
+      const parser = this.parsers[params.parser] || this.parser.twig;
+      if (!fs || !path) {
+        throw new Twig2.Error('Unsupported platform: Unable to load from file because there is no "fs" or "path" implementation');
+      }
+      const loadTemplateFn = function(err, data2) {
+        if (err) {
+          if (typeof errorCallback === "function") {
+            errorCallback(err);
+          }
+          return;
+        }
+        if (precompiled === true) {
+          data2 = JSON.parse(data2);
+        }
+        params.data = data2;
+        params.path = params.path || location;
+        template = parser.call(this, params);
+        if (typeof callback === "function") {
+          callback(template);
+        }
+      };
+      params.path = params.path || location;
+      if (params.async) {
+        fs.stat(params.path, (err, stats) => {
+          if (err || !stats.isFile()) {
+            if (typeof errorCallback === "function") {
+              errorCallback(new Twig2.Error("Unable to find template file " + params.path));
+            }
+            return;
+          }
+          fs.readFile(params.path, "utf8", loadTemplateFn);
+        });
+        return true;
+      }
+      try {
+        if (!fs.statSync(params.path).isFile()) {
+          throw new Twig2.Error("Unable to find template file " + params.path);
+        }
+      } catch (error) {
+        throw new Twig2.Error("Unable to find template file " + params.path + ". " + error);
+      }
+      data = fs.readFileSync(params.path, "utf8");
+      loadTemplateFn(void 0, data);
+      return template;
+    });
+  };
+  return twig_loader_fs;
+}
+var twig_logic;
+var hasRequiredTwig_logic;
+function requireTwig_logic() {
+  if (hasRequiredTwig_logic) return twig_logic;
+  hasRequiredTwig_logic = 1;
+  twig_logic = function(Twig2) {
+    Twig2.logic = {};
+    Twig2.logic.type = {
+      if_: "Twig.logic.type.if",
+      endif: "Twig.logic.type.endif",
+      for_: "Twig.logic.type.for",
+      endfor: "Twig.logic.type.endfor",
+      else_: "Twig.logic.type.else",
+      elseif: "Twig.logic.type.elseif",
+      set: "Twig.logic.type.set",
+      setcapture: "Twig.logic.type.setcapture",
+      endset: "Twig.logic.type.endset",
+      filter: "Twig.logic.type.filter",
+      endfilter: "Twig.logic.type.endfilter",
+      apply: "Twig.logic.type.apply",
+      endapply: "Twig.logic.type.endapply",
+      do: "Twig.logic.type.do",
+      shortblock: "Twig.logic.type.shortblock",
+      block: "Twig.logic.type.block",
+      endblock: "Twig.logic.type.endblock",
+      extends_: "Twig.logic.type.extends",
+      use: "Twig.logic.type.use",
+      include: "Twig.logic.type.include",
+      spaceless: "Twig.logic.type.spaceless",
+      endspaceless: "Twig.logic.type.endspaceless",
+      macro: "Twig.logic.type.macro",
+      endmacro: "Twig.logic.type.endmacro",
+      import_: "Twig.logic.type.import",
+      from: "Twig.logic.type.from",
+      embed: "Twig.logic.type.embed",
+      endembed: "Twig.logic.type.endembed",
+      with: "Twig.logic.type.with",
+      endwith: "Twig.logic.type.endwith",
+      deprecated: "Twig.logic.type.deprecated"
+    };
+    Twig2.logic.definitions = [
+      {
+        /**
+         * If type logic tokens.
+         *
+         *  Format: {% if expression %}
+         */
+        type: Twig2.logic.type.if_,
+        regex: /^if\s?([\s\S]+)$/,
+        next: [
+          Twig2.logic.type.else_,
+          Twig2.logic.type.elseif,
+          Twig2.logic.type.endif
+        ],
+        open: true,
+        compile(token) {
+          const expression = token.match[1];
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          return Twig2.expression.parseAsync.call(state, token.stack, context).then((result) => {
+            chain = true;
+            if (Twig2.lib.boolval(result)) {
+              chain = false;
+              return state.parseAsync(token.output, context);
+            }
+            return "";
+          }).then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Else if type logic tokens.
+         *
+         *  Format: {% elseif expression %}
+         */
+        type: Twig2.logic.type.elseif,
+        regex: /^elseif\s*([^\s].*)$/,
+        next: [
+          Twig2.logic.type.else_,
+          Twig2.logic.type.elseif,
+          Twig2.logic.type.endif
+        ],
+        open: false,
+        compile(token) {
+          const expression = token.match[1];
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          return Twig2.expression.parseAsync.call(state, token.stack, context).then((result) => {
+            if (chain && Twig2.lib.boolval(result)) {
+              chain = false;
+              return state.parseAsync(token.output, context);
+            }
+            return "";
+          }).then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Else type logic tokens.
+         *
+         *  Format: {% else %}
+         */
+        type: Twig2.logic.type.else_,
+        regex: /^else$/,
+        next: [
+          Twig2.logic.type.endif,
+          Twig2.logic.type.endfor
+        ],
+        open: false,
+        parse(token, context, chain) {
+          let promise = Twig2.Promise.resolve("");
+          const state = this;
+          if (chain) {
+            promise = state.parseAsync(token.output, context);
+          }
+          return promise.then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        /**
+         * End if type logic tokens.
+         *
+         *  Format: {% endif %}
+         */
+        type: Twig2.logic.type.endif,
+        regex: /^endif$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * For type logic tokens.
+         *
+         *  Format: {% for expression %}
+         */
+        type: Twig2.logic.type.for_,
+        regex: /^for\s+([a-zA-Z0-9_,\s]+)\s+in\s+([\S\s]+?)(?:\s+if\s+([^\s].*))?$/,
+        next: [
+          Twig2.logic.type.else_,
+          Twig2.logic.type.endfor
+        ],
+        open: true,
+        compile(token) {
+          const keyValue = token.match[1];
+          const expression = token.match[2];
+          const conditional = token.match[3];
+          let kvSplit = null;
+          token.keyVar = null;
+          token.valueVar = null;
+          if (keyValue.includes(",")) {
+            kvSplit = keyValue.split(",");
+            if (kvSplit.length === 2) {
+              token.keyVar = kvSplit[0].trim();
+              token.valueVar = kvSplit[1].trim();
+            } else {
+              throw new Twig2.Error("Invalid expression in for loop: " + keyValue);
+            }
+          } else {
+            token.valueVar = keyValue.trim();
+          }
+          token.expression = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          if (conditional) {
+            token.conditional = Twig2.expression.compile.call(this, {
+              type: Twig2.expression.type.expression,
+              value: conditional
+            }).stack;
+          }
+          delete token.match;
+          return token;
+        },
+        parse(token, context, continueChain) {
+          const output2 = [];
+          let len;
+          let index2 = 0;
+          let keyset;
+          const state = this;
+          const { conditional } = token;
+          const buildLoop = function(index3, len2) {
+            const isConditional = conditional !== void 0;
+            return {
+              index: index3 + 1,
+              index0: index3,
+              revindex: isConditional ? void 0 : len2 - index3,
+              revindex0: isConditional ? void 0 : len2 - index3 - 1,
+              first: index3 === 0,
+              last: isConditional ? void 0 : index3 === len2 - 1,
+              length: isConditional ? void 0 : len2,
+              parent: context
+            };
+          };
+          const loop = function(key2, value) {
+            const innerContext = { ...context };
+            innerContext[token.valueVar] = value;
+            if (token.keyVar) {
+              innerContext[token.keyVar] = key2;
+            }
+            innerContext.loop = buildLoop(index2, len);
+            const promise = conditional === void 0 ? Twig2.Promise.resolve(true) : Twig2.expression.parseAsync.call(state, conditional, innerContext);
+            return promise.then((condition) => {
+              if (!condition) {
+                return;
+              }
+              return state.parseAsync(token.output, innerContext).then((tokenOutput) => {
+                output2.push(tokenOutput);
+                index2 += 1;
+              });
+            }).then(() => {
+              delete innerContext.loop;
+              delete innerContext[token.valueVar];
+              delete innerContext[token.keyVar];
+              Twig2.merge(context, innerContext, true);
+            });
+          };
+          return Twig2.expression.parseAsync.call(state, token.expression, context).then((result) => {
+            if (Array.isArray(result)) {
+              len = result.length;
+              return Twig2.async.forEach(result, (value) => {
+                const key2 = index2;
+                return loop(key2, value);
+              });
+            }
+            if (Twig2.lib.is("Object", result)) {
+              if (result._keys === void 0) {
+                keyset = Object.keys(result);
+              } else {
+                keyset = result._keys;
+              }
+              len = keyset.length;
+              return Twig2.async.forEach(keyset, (key2) => {
+                if (key2 === "_keys") {
+                  return;
+                }
+                return loop(key2, result[key2]);
+              });
+            }
+          }).then(() => {
+            continueChain = output2.length === 0;
+            return {
+              chain: continueChain,
+              context,
+              output: Twig2.output.call(state.template, output2)
+            };
+          });
+        }
+      },
+      {
+        /**
+         * End for type logic tokens.
+         *
+         *  Format: {% endfor %}
+         */
+        type: Twig2.logic.type.endfor,
+        regex: /^endfor$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Set type logic tokens.
+         *
+         *  Format: {% set key = expression %}
+         */
+        type: Twig2.logic.type.set,
+        regex: /^set\s+([a-zA-Z0-9_,\s]+)\s*=\s*([\s\S]+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const key2 = token.match[1].trim();
+          const expression = token.match[2];
+          const expressionStack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          token.key = key2;
+          token.expression = expressionStack;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, continueChain) {
+          const { key: key2 } = token;
+          const state = this;
+          return Twig2.expression.parseAsync.call(state, token.expression, context).then((value) => {
+            if (value === context) {
+              value = { ...value };
+            }
+            context[key2] = value;
+            return {
+              chain: continueChain,
+              context
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Set capture type logic tokens.
+         *
+         *  Format: {% set key %}
+         */
+        type: Twig2.logic.type.setcapture,
+        regex: /^set\s+([a-zA-Z0-9_,\s]+)$/,
+        next: [
+          Twig2.logic.type.endset
+        ],
+        open: true,
+        compile(token) {
+          const key2 = token.match[1].trim();
+          token.key = key2;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, continueChain) {
+          const state = this;
+          const { key: key2 } = token;
+          return state.parseAsync(token.output, context).then((output2) => {
+            state.context[key2] = output2;
+            context[key2] = output2;
+            return {
+              chain: continueChain,
+              context
+            };
+          });
+        }
+      },
+      {
+        /**
+         * End set type block logic tokens.
+         *
+         *  Format: {% endset %}
+         */
+        type: Twig2.logic.type.endset,
+        regex: /^endset$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Filter logic tokens.
+         *
+         *  Format: {% filter upper %} or {% filter lower|escape %}
+         */
+        type: Twig2.logic.type.filter,
+        regex: /^filter\s+(.+)$/,
+        next: [
+          Twig2.logic.type.endfilter
+        ],
+        open: true,
+        compile(token) {
+          const expression = "|" + token.match[1].trim();
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          return state.parseAsync(token.output, context).then((output2) => {
+            const stack = [{
+              type: Twig2.expression.type.string,
+              value: output2
+            }].concat(token.stack);
+            return Twig2.expression.parseAsync.call(state, stack, context);
+          }).then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        /**
+         * End filter logic tokens.
+         *
+         *  Format: {% endfilter %}
+         */
+        type: Twig2.logic.type.endfilter,
+        regex: /^endfilter$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Apply logic tokens.
+         *
+         *  Format: {% apply upper %} or {% apply lower|escape %}
+         */
+        type: Twig2.logic.type.apply,
+        regex: /^apply\s+(.+)$/,
+        next: [
+          Twig2.logic.type.endapply
+        ],
+        open: true,
+        compile(token) {
+          const expression = "|" + token.match[1].trim();
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          return state.parseAsync(token.output, context).then((output2) => {
+            const stack = [{
+              type: Twig2.expression.type.string,
+              value: output2
+            }].concat(token.stack);
+            return Twig2.expression.parseAsync.call(state, stack, context);
+          }).then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        /**
+         * End apply logic tokens.
+         *
+         *  Format: {% endapply %}
+         */
+        type: Twig2.logic.type.endapply,
+        regex: /^endapply$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Set type logic tokens.
+         *
+         *  Format: {% do expression %}
+         */
+        type: Twig2.logic.type.do,
+        regex: /^do\s+([\S\s]+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const expression = token.match[1];
+          const expressionStack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          token.expression = expressionStack;
+          delete token.match;
+          return token;
+        },
+        parse(token, context, continueChain) {
+          const state = this;
+          return Twig2.expression.parseAsync.call(state, token.expression, context).then(() => {
+            return {
+              chain: continueChain,
+              context
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Block logic tokens.
+         *
+         *  Format: {% block title %}
+         */
+        type: Twig2.logic.type.block,
+        regex: /^block\s+(\w+)$/,
+        next: [
+          Twig2.logic.type.endblock
+        ],
+        open: true,
+        compile(token) {
+          token.blockName = token.match[1].trim();
+          delete token.match;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          let promise = Twig2.Promise.resolve();
+          state.template.blocks.defined[token.blockName] = new Twig2.Block(state.template, token);
+          if (state.template.parentTemplate === null || state.template.parentTemplate instanceof Twig2.Template) {
+            promise = state.getBlock(token.blockName).render(state, context);
+          }
+          return promise.then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Block shorthand logic tokens.
+         *
+         *  Format: {% block title expression %}
+         */
+        type: Twig2.logic.type.shortblock,
+        regex: /^block\s+(\w+)\s+(.+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const template = this;
+          token.expression = token.match[2].trim();
+          token.output = Twig2.expression.compile({
+            type: Twig2.expression.type.expression,
+            value: token.expression
+          }).stack;
+          return Twig2.logic.handler[Twig2.logic.type.block].compile.apply(template, [token]);
+        },
+        parse(...args) {
+          const state = this;
+          return Twig2.logic.handler[Twig2.logic.type.block].parse.apply(state, args);
+        }
+      },
+      {
+        /**
+         * End block logic tokens.
+         *
+         *  Format: {% endblock %}
+         */
+        type: Twig2.logic.type.endblock,
+        regex: /^endblock(?:\s+(\w+))?$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Block logic tokens.
+         *
+         *  Format: {% extends "template.twig" %}
+         */
+        type: Twig2.logic.type.extends_,
+        regex: /^extends\s+(.+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const expression = token.match[1].trim();
+          delete token.match;
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          return Twig2.expression.parseAsync.call(state, token.stack, context).then((fileName) => {
+            if (Array.isArray(fileName)) {
+              const result = fileName.reverse().reduce((acc, file) => {
+                try {
+                  return {
+                    render: state.template.importFile(file),
+                    fileName: file
+                  };
+                } catch (error) {
+                  return acc;
+                }
+              }, {
+                render: null,
+                fileName: null
+              });
+              if (result.fileName !== null) {
+                state.template.parentTemplate = result.fileName;
+              }
+            } else {
+              state.template.parentTemplate = fileName;
+            }
+            return {
+              chain,
+              output: ""
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Block logic tokens.
+         *
+         *  Format: {% use "template.twig" %}
+         */
+        type: Twig2.logic.type.use,
+        regex: /^use\s+(.+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const expression = token.match[1].trim();
+          delete token.match;
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          return Twig2.expression.parseAsync.call(state, token.stack, context).then((filePath) => {
+            const useTemplate = state.template.importFile(filePath);
+            const useState = new Twig2.ParseState(useTemplate);
+            return useState.parseAsync(useTemplate.tokens).then(() => {
+              state.template.blocks.imported = {
+                ...state.template.blocks.imported,
+                ...useState.getBlocks()
+              };
+            });
+          }).then(() => {
+            return {
+              chain,
+              output: ""
+            };
+          });
+        }
+      },
+      {
+        /**
+         * Block logic tokens.
+         *
+         *  Format: {% includes "template.twig" [with {some: 'values'} only] %}
+         */
+        type: Twig2.logic.type.include,
+        regex: /^include\s+(.+?)(?:\s|$)(ignore missing(?:\s|$))?(?:with\s+([\S\s]+?))?(?:\s|$)(only)?$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const { match } = token;
+          const expression = match[1].trim();
+          const ignoreMissing = match[2] !== void 0;
+          const withContext = match[3];
+          const only = match[4] !== void 0 && match[4].length;
+          delete token.match;
+          token.only = only;
+          token.ignoreMissing = ignoreMissing;
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          if (withContext !== void 0) {
+            token.withStack = Twig2.expression.compile.call(this, {
+              type: Twig2.expression.type.expression,
+              value: withContext.trim()
+            }).stack;
+          }
+          return token;
+        },
+        parse(token, context, chain) {
+          let innerContext = token.only ? {} : { ...context };
+          const { ignoreMissing } = token;
+          const state = this;
+          let promise = null;
+          const result = { chain, output: "" };
+          if (typeof token.withStack === "undefined") {
+            promise = Twig2.Promise.resolve();
+          } else {
+            promise = Twig2.expression.parseAsync.call(state, token.withStack, context).then((withContext) => {
+              innerContext = {
+                ...innerContext,
+                ...withContext
+              };
+            });
+          }
+          return promise.then(() => {
+            return Twig2.expression.parseAsync.call(state, token.stack, context);
+          }).then((file) => {
+            let files;
+            if (Array.isArray(file)) {
+              files = file;
+            } else {
+              files = [file];
+            }
+            const result2 = files.reduce((acc, file2) => {
+              if (acc.render === null) {
+                if (file2 instanceof Twig2.Template) {
+                  return {
+                    render: file2.renderAsync(
+                      innerContext,
+                      {
+                        isInclude: true
+                      }
+                    ),
+                    lastError: null
+                  };
+                }
+                try {
+                  return {
+                    render: state.template.importFile(file2).renderAsync(
+                      innerContext,
+                      {
+                        isInclude: true
+                      }
+                    ),
+                    lastError: null
+                  };
+                } catch (error) {
+                  return {
+                    render: null,
+                    lastError: error
+                  };
+                }
+              }
+              return acc;
+            }, { render: null, lastError: null });
+            if (result2.render !== null) {
+              return result2.render;
+            }
+            if (result2.render === null && ignoreMissing) {
+              return "";
+            }
+            throw result2.lastError;
+          }).then((output2) => {
+            if (output2 !== "") {
+              result.output = output2;
+            }
+            return result;
+          });
+        }
+      },
+      {
+        type: Twig2.logic.type.spaceless,
+        regex: /^spaceless$/,
+        next: [
+          Twig2.logic.type.endspaceless
+        ],
+        open: true,
+        // Parse the html and return it without any spaces between tags
+        parse(token, context, chain) {
+          const state = this;
+          return state.parseAsync(token.output, context).then((tokenOutput) => {
+            const rBetweenTagSpaces = />\s+</g;
+            let output2 = tokenOutput.replace(rBetweenTagSpaces, "><").trim();
+            output2 = new Twig2.Markup(output2);
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      // Add the {% endspaceless %} token
+      {
+        type: Twig2.logic.type.endspaceless,
+        regex: /^endspaceless$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Macro logic tokens.
+         *
+         * Format: {% macro input(name = default, value, type, size) %}
+         *
+         */
+        type: Twig2.logic.type.macro,
+        regex: /^macro\s+(\w+)\s*\(\s*((?:\w+(?:\s*=\s*([\s\S]+))?(?:,\s*)?)*)\s*\)$/,
+        next: [
+          Twig2.logic.type.endmacro
+        ],
+        open: true,
+        compile(token) {
+          const macroName = token.match[1];
+          const rawParameters = token.match[2].split(/\s*,\s*/);
+          const parameters = rawParameters.map((rawParameter) => {
+            return rawParameter.split(/\s*=\s*/)[0];
+          });
+          const parametersCount = parameters.length;
+          if (parametersCount > 1) {
+            const uniq = {};
+            for (let i = 0; i < parametersCount; i++) {
+              const parameter = parameters[i];
+              if (uniq[parameter]) {
+                throw new Twig2.Error("Duplicate arguments for parameter: " + parameter);
+              } else {
+                uniq[parameter] = 1;
+              }
+            }
+          }
+          token.macroName = macroName;
+          token.parameters = parameters;
+          token.defaults = rawParameters.reduce(function(defaults2, rawParameter) {
+            const pair = rawParameter.split(/\s*=\s*/);
+            const key2 = pair[0];
+            const expression = pair[1];
+            if (expression) {
+              defaults2[key2] = Twig2.expression.compile.call(this, {
+                type: Twig2.expression.type.expression,
+                value: expression
+              }).stack;
+            } else {
+              defaults2[key2] = void 0;
+            }
+            return defaults2;
+          }, {});
+          delete token.match;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          state.macros[token.macroName] = function(...args) {
+            const macroContext = {
+              // Use current state context because state context includes current loop variables as well
+              ...state.context,
+              _self: state.macros
+            };
+            return Twig2.async.forEach(token.parameters, function(prop, i) {
+              if (typeof args[i] !== "undefined") {
+                macroContext[prop] = args[i];
+                return true;
+              }
+              if (typeof token.defaults[prop] !== "undefined") {
+                return Twig2.expression.parseAsync.call(this, token.defaults[prop], context).then((value) => {
+                  macroContext[prop] = value;
+                  return Twig2.Promise.resolve();
+                });
+              }
+              macroContext[prop] = void 0;
+              return true;
+            }).then(() => {
+              return state.parseAsync(token.output, macroContext);
+            });
+          };
+          return {
+            chain,
+            output: ""
+          };
+        }
+      },
+      {
+        /**
+         * End macro logic tokens.
+         *
+         * Format: {% endmacro %}
+         */
+        type: Twig2.logic.type.endmacro,
+        regex: /^endmacro$/,
+        next: [],
+        open: false
+      },
+      {
+        /*
+        * Import logic tokens.
+        *
+        * Format: {% import "template.twig" as form %}
+        */
+        type: Twig2.logic.type.import_,
+        regex: /^import\s+(.+)\s+as\s+(\w+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const expression = token.match[1].trim();
+          const contextName = token.match[2].trim();
+          delete token.match;
+          token.expression = expression;
+          token.contextName = contextName;
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          const output2 = {
+            chain,
+            output: ""
+          };
+          if (token.expression === "_self") {
+            context[token.contextName] = state.macros;
+            return output2;
+          }
+          return Twig2.expression.parseAsync.call(state, token.stack, context).then((filePath) => {
+            return state.template.importFile(filePath || token.expression);
+          }).then((importTemplate) => {
+            const importState = new Twig2.ParseState(importTemplate);
+            return importState.parseAsync(importTemplate.tokens).then(() => {
+              context[token.contextName] = importState.macros;
+              return output2;
+            });
+          });
+        }
+      },
+      {
+        /*
+        * From logic tokens.
+        *
+        * Format: {% from "template.twig" import func as form %}
+        */
+        type: Twig2.logic.type.from,
+        regex: /^from\s+(.+)\s+import\s+([a-zA-Z0-9_, ]+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          const expression = token.match[1].trim();
+          const macroExpressions = token.match[2].trim().split(/\s*,\s*/);
+          const macroNames = {};
+          for (const res of macroExpressions) {
+            const macroMatch = res.match(/^(\w+)\s+as\s+(\w+)$/);
+            if (macroMatch) {
+              macroNames[macroMatch[1].trim()] = macroMatch[2].trim();
+            } else if (res.match(/^(\w+)$/)) {
+              macroNames[res] = res;
+            } else ;
+          }
+          delete token.match;
+          token.expression = expression;
+          token.macroNames = macroNames;
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          return token;
+        },
+        parse(token, context, chain) {
+          const state = this;
+          let promise;
+          if (token.expression === "_self") {
+            promise = Twig2.Promise.resolve(state.macros);
+          } else {
+            promise = Twig2.expression.parseAsync.call(state, token.stack, context).then((filePath) => {
+              return state.template.importFile(filePath || token.expression);
+            }).then((importTemplate) => {
+              const importState = new Twig2.ParseState(importTemplate);
+              return importState.parseAsync(importTemplate.tokens).then(() => {
+                return importState.macros;
+              });
+            });
+          }
+          return promise.then((macros) => {
+            for (const macroName in token.macroNames) {
+              if (macros[macroName] !== void 0) {
+                context[token.macroNames[macroName]] = macros[macroName];
+              }
+            }
+            return {
+              chain,
+              output: ""
+            };
+          });
+        }
+      },
+      {
+        /**
+         * The embed tag combines the behaviour of include and extends.
+         * It allows you to include another template's contents, just like include does.
+         *
+         *  Format: {% embed "template.twig" [with {some: 'values'} only] %}
+         */
+        type: Twig2.logic.type.embed,
+        regex: /^embed\s+(.+?)(?:\s+(ignore missing))?(?:\s+with\s+([\S\s]+?))?(?:\s+(only))?$/,
+        next: [
+          Twig2.logic.type.endembed
+        ],
+        open: true,
+        compile(token) {
+          const { match } = token;
+          const expression = match[1].trim();
+          const ignoreMissing = match[2] !== void 0;
+          const withContext = match[3];
+          const only = match[4] !== void 0 && match[4].length;
+          delete token.match;
+          token.only = only;
+          token.ignoreMissing = ignoreMissing;
+          token.stack = Twig2.expression.compile.call(this, {
+            type: Twig2.expression.type.expression,
+            value: expression
+          }).stack;
+          if (withContext !== void 0) {
+            token.withStack = Twig2.expression.compile.call(this, {
+              type: Twig2.expression.type.expression,
+              value: withContext.trim()
+            }).stack;
+          }
+          return token;
+        },
+        parse(token, context, chain) {
+          let embedContext = {};
+          let promise = Twig2.Promise.resolve();
+          let state = this;
+          if (!token.only) {
+            embedContext = { ...context };
+          }
+          if (token.withStack !== void 0) {
+            promise = Twig2.expression.parseAsync.call(state, token.withStack, context).then((withContext) => {
+              embedContext = { ...embedContext, ...withContext };
+            });
+          }
+          return promise.then(() => {
+            return Twig2.expression.parseAsync.call(state, token.stack, embedContext);
+          }).then((fileName) => {
+            const embedOverrideTemplate = new Twig2.Template({
+              data: token.output,
+              base: state.template.base,
+              path: state.template.path,
+              url: state.template.url,
+              name: state.template.name,
+              method: state.template.method,
+              options: state.template.options
+            });
+            try {
+              embedOverrideTemplate.importFile(fileName);
+            } catch (error) {
+              if (token.ignoreMissing) {
+                return "";
+              }
+              state = null;
+              throw error;
+            }
+            embedOverrideTemplate.parentTemplate = fileName;
+            return embedOverrideTemplate.renderAsync(
+              embedContext,
+              {
+                isInclude: true
+              }
+            );
+          }).then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      /* Add the {% endembed %} token
+       *
+       */
+      {
+        type: Twig2.logic.type.endembed,
+        regex: /^endembed$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Block logic tokens.
+         *
+         *  Format: {% with {some: 'values'} [only] %}
+         */
+        type: Twig2.logic.type.with,
+        regex: /^(?:with(?:\s+([\S\s]+?))?)(?:\s|$)(only)?$/,
+        next: [
+          Twig2.logic.type.endwith
+        ],
+        open: true,
+        compile(token) {
+          const { match } = token;
+          const withContext = match[1];
+          const only = match[2] !== void 0 && match[2].length;
+          delete token.match;
+          token.only = only;
+          if (withContext !== void 0) {
+            token.withStack = Twig2.expression.compile.call(this, {
+              type: Twig2.expression.type.expression,
+              value: withContext.trim()
+            }).stack;
+          }
+          return token;
+        },
+        parse(token, context, chain) {
+          let innerContext = {};
+          let i;
+          const state = this;
+          let promise = Twig2.Promise.resolve();
+          if (!token.only) {
+            innerContext = { ...context };
+          }
+          if (token.withStack !== void 0) {
+            promise = Twig2.expression.parseAsync.call(state, token.withStack, context).then((withContext) => {
+              for (i in withContext) {
+                if (Object.hasOwnProperty.call(withContext, i)) {
+                  innerContext[i] = withContext[i];
+                }
+              }
+            });
+          }
+          const isolatedState = new Twig2.ParseState(state.template, void 0, innerContext);
+          return promise.then(() => {
+            return isolatedState.parseAsync(token.output);
+          }).then((output2) => {
+            return {
+              chain,
+              output: output2
+            };
+          });
+        }
+      },
+      {
+        type: Twig2.logic.type.endwith,
+        regex: /^endwith$/,
+        next: [],
+        open: false
+      },
+      {
+        /**
+         * Deprecated type logic tokens.
+         *
+         *  Format: {% deprecated 'Description' %}
+         */
+        type: Twig2.logic.type.deprecated,
+        regex: /^deprecated\s+(.+)$/,
+        next: [],
+        open: true,
+        compile(token) {
+          console.warn("Deprecation notice: " + token.match[1]);
+          return token;
+        },
+        parse() {
+          return {};
+        }
+      }
+    ];
+    Twig2.logic.handler = {};
+    Twig2.logic.extendType = function(type, value) {
+      value = value || "Twig.logic.type" + type;
+      Twig2.logic.type[type] = value;
+    };
+    Twig2.logic.extend = function(definition) {
+      if (definition.type) {
+        Twig2.logic.extendType(definition.type);
+      } else {
+        throw new Twig2.Error("Unable to extend logic definition. No type provided for " + definition);
+      }
+      Twig2.logic.handler[definition.type] = definition;
+    };
+    while (Twig2.logic.definitions.length > 0) {
+      Twig2.logic.extend(Twig2.logic.definitions.shift());
+    }
+    Twig2.logic.compile = function(rawToken) {
+      const expression = rawToken.value.trim();
+      let token = Twig2.logic.tokenize.call(this, expression);
+      const tokenTemplate = Twig2.logic.handler[token.type];
+      if (tokenTemplate.compile) {
+        token = tokenTemplate.compile.call(this, token);
+        Twig2.log.trace("Twig.logic.compile: ", "Compiled logic token to ", token);
+      }
+      return token;
+    };
+    Twig2.logic.tokenize = function(expression) {
+      let tokenTemplateType = null;
+      let tokenType = null;
+      let tokenRegex = null;
+      let regexArray = null;
+      let regexLen = null;
+      let regexI = null;
+      let match = null;
+      expression = expression.trim();
+      for (tokenTemplateType in Twig2.logic.handler) {
+        if (Object.hasOwnProperty.call(Twig2.logic.handler, tokenTemplateType)) {
+          tokenType = Twig2.logic.handler[tokenTemplateType].type;
+          tokenRegex = Twig2.logic.handler[tokenTemplateType].regex;
+          regexArray = tokenRegex;
+          if (!Array.isArray(tokenRegex)) {
+            regexArray = [tokenRegex];
+          }
+          regexLen = regexArray.length;
+          for (regexI = 0; regexI < regexLen; regexI++) {
+            match = regexArray[regexI].exec(expression);
+            if (match !== null) {
+              Twig2.log.trace("Twig.logic.tokenize: ", "Matched a ", tokenType, " regular expression of ", match);
+              return {
+                type: tokenType,
+                match
+              };
+            }
+          }
+        }
+      }
+      throw new Twig2.Error("Unable to parse '" + expression.trim() + "'");
+    };
+    Twig2.logic.parse = function(token, context, chain, allowAsync) {
+      return Twig2.async.potentiallyAsync(this, allowAsync, function() {
+        Twig2.log.debug("Twig.logic.parse: ", "Parsing logic token ", token);
+        const tokenTemplate = Twig2.logic.handler[token.type];
+        let result;
+        const state = this;
+        if (!tokenTemplate.parse) {
+          return "";
+        }
+        state.nestingStack.unshift(token);
+        result = tokenTemplate.parse.call(state, token, context || {}, chain);
+        if (Twig2.isPromise(result)) {
+          result = result.then((result2) => {
+            state.nestingStack.shift();
+            return result2;
+          });
+        } else {
+          state.nestingStack.shift();
+        }
+        return result;
+      });
+    };
+    return Twig2;
+  };
+  return twig_logic;
+}
+var twig_parser_source;
+var hasRequiredTwig_parser_source;
+function requireTwig_parser_source() {
+  if (hasRequiredTwig_parser_source) return twig_parser_source;
+  hasRequiredTwig_parser_source = 1;
+  twig_parser_source = function(Twig2) {
+    Twig2.Templates.registerParser("source", (params) => {
+      return params.data || "";
+    });
+  };
+  return twig_parser_source;
+}
+var twig_parser_twig;
+var hasRequiredTwig_parser_twig;
+function requireTwig_parser_twig() {
+  if (hasRequiredTwig_parser_twig) return twig_parser_twig;
+  hasRequiredTwig_parser_twig = 1;
+  twig_parser_twig = function(Twig2) {
+    Twig2.Templates.registerParser("twig", (params) => {
+      return new Twig2.Template(params);
+    });
+  };
+  return twig_parser_twig;
+}
+var twig_path;
+var hasRequiredTwig_path;
+function requireTwig_path() {
+  if (hasRequiredTwig_path) return twig_path;
+  hasRequiredTwig_path = 1;
+  twig_path = function(Twig2) {
+    Twig2.path = {};
+    Twig2.path.expandNamespace = function(namespaces, path) {
+      const namespaceIdentifiers = Object.keys(namespaces);
+      const pattern = new RegExp(`^(?:@(${namespaceIdentifiers.join("|")})/|(${namespaceIdentifiers.join("|")})::)`);
+      return path.replace(pattern, (wholeMatch, atNamespace, colonNamespace) => {
+        const namespaceIdentifier = atNamespace === void 0 ? colonNamespace : atNamespace;
+        return `${namespaces[namespaceIdentifier]}/`;
+      });
+    };
+    Twig2.path.parsePath = function(template, _file) {
+      const { namespaces } = template.options;
+      const file = _file || "";
+      const hasNamespaces = namespaces && typeof namespaces === "object";
+      let path = hasNamespaces ? Twig2.path.expandNamespace(namespaces, file) : file;
+      if (path === file) {
+        path = Twig2.path.relativePath(template, file);
+      }
+      return path;
+    };
+    Twig2.path.relativePath = function(template, _file) {
+      let base;
+      let basePath;
+      let sepChr = "/";
+      const newPath = [];
+      let file = _file || "";
+      let val;
+      if (template.url) {
+        if (typeof template.base === "undefined") {
+          base = template.url;
+        } else {
+          base = template.base.replace(/([^/])$/, "$1/");
+        }
+      } else if (template.path) {
+        const path = require$$0;
+        const sep = path.sep || sepChr;
+        const relative = new RegExp("^\\.{1,2}" + sep.replace("\\", "\\\\"));
+        file = file.replace(/\//g, sep);
+        if (template.base !== void 0 && file.match(relative) === null) {
+          file = file.replace(template.base, "");
+          base = template.base + sep;
+        } else {
+          base = path.normalize(template.path);
+        }
+        base = base.replace(sep + sep, sep);
+        sepChr = sep;
+      } else if ((template.name || template.id) && template.method && template.method !== "fs" && template.method !== "ajax") {
+        base = template.base || template.name || template.id;
+      } else {
+        throw new Twig2.Error("Cannot extend an inline template.");
+      }
+      basePath = base.split(sepChr);
+      basePath.pop();
+      basePath = basePath.concat(file.split(sepChr));
+      while (basePath.length > 0) {
+        val = basePath.shift();
+        if (val === ".") ;
+        else if (val === ".." && newPath.length > 0 && newPath[newPath.length - 1] !== "..") {
+          newPath.pop();
+        } else {
+          newPath.push(val);
+        }
+      }
+      return newPath.join(sepChr);
+    };
+    return Twig2;
+  };
+  return twig_path;
+}
+var twig_tests;
+var hasRequiredTwig_tests;
+function requireTwig_tests() {
+  if (hasRequiredTwig_tests) return twig_tests;
+  hasRequiredTwig_tests = 1;
+  twig_tests = function(Twig2) {
+    Twig2.tests = {
+      empty(value) {
+        if (value === true) {
+          return false;
+        }
+        if (value === null || value === void 0) {
+          return true;
+        }
+        if (typeof value === "number") {
+          return false;
+        }
+        if (value.length > 0) {
+          return false;
+        }
+        for (const key2 in value) {
+          if (Object.hasOwnProperty.call(value, key2)) {
+            return false;
+          }
+        }
+        return true;
+      },
+      odd(value) {
+        return value % 2 === 1;
+      },
+      even(value) {
+        return value % 2 === 0;
+      },
+      "divisible by"(value, params) {
+        return value % params[0] === 0;
+      },
+      divisibleby(value, params) {
+        console.warn("`divisibleby` is deprecated use `divisible by`");
+        return Twig2.tests["divisible by"](value, params);
+      },
+      defined(value) {
+        return value !== void 0;
+      },
+      none(value) {
+        return value === null;
+      },
+      null(value) {
+        return this.none(value);
+      },
+      "same as"(value, params) {
+        return value === params[0];
+      },
+      sameas(value, params) {
+        console.warn("`sameas` is deprecated use `same as`");
+        return Twig2.tests["same as"](value, params);
+      },
+      iterable(value) {
+        return value && (Twig2.lib.is("Array", value) || Twig2.lib.is("Object", value));
+      }
+      /*
+      Constant ?
+       */
+    };
+    Twig2.test = function(test, value, params) {
+      if (!Twig2.tests[test]) {
+        throw Twig2.Error("Test " + test + " is not defined.");
+      }
+      return Twig2.tests[test](value, params);
+    };
+    Twig2.test.extend = function(test, definition) {
+      Twig2.tests[test] = definition;
+    };
+    return Twig2;
+  };
+  return twig_tests;
+}
+var twig_async;
+var hasRequiredTwig_async;
+function requireTwig_async() {
+  if (hasRequiredTwig_async) return twig_async;
+  hasRequiredTwig_async = 1;
+  twig_async = function(Twig2) {
+    const STATE_UNKNOWN = 0;
+    const STATE_RESOLVED = 1;
+    const STATE_REJECTED = 2;
+    Twig2.ParseState.prototype.parseAsync = function(tokens, context) {
+      return this.parse(tokens, context, true);
+    };
+    Twig2.expression.parseAsync = function(tokens, context, tokensAreParameters) {
+      const state = this;
+      return Twig2.expression.parse.call(state, tokens, context, tokensAreParameters, true);
+    };
+    Twig2.logic.parseAsync = function(token, context, chain) {
+      const state = this;
+      return Twig2.logic.parse.call(state, token, context, chain, true);
+    };
+    Twig2.Template.prototype.renderAsync = function(context, params) {
+      return this.render(context, params, true);
+    };
+    Twig2.async = {};
+    Twig2.isPromise = function(obj) {
+      return obj && obj.then && typeof obj.then === "function";
+    };
+    function potentiallyAsyncSlow(that, allowAsync, action) {
+      let result = action.call(that);
+      let err = null;
+      let isAsync = true;
+      if (!Twig2.isPromise(result)) {
+        return result;
+      }
+      result.then((res) => {
+        result = res;
+        isAsync = false;
+      }).catch((error) => {
+        err = error;
+      });
+      if (err !== null) {
+        throw err;
+      }
+      if (isAsync) {
+        throw new Twig2.Error("You are using Twig.js in sync mode in combination with async extensions.");
+      }
+      return result;
+    }
+    Twig2.async.potentiallyAsync = function(that, allowAsync, action) {
+      if (allowAsync) {
+        return Twig2.Promise.resolve(action.call(that));
+      }
+      return potentiallyAsyncSlow(that, allowAsync, action);
+    };
+    function run(fn, resolve2, reject) {
+      try {
+        fn(resolve2, reject);
+      } catch (error) {
+        reject(error);
+      }
+    }
+    function pending(handlers, onResolved, onRejected) {
+      const h = [onResolved, onRejected, -2];
+      if (!handlers) {
+        handlers = h;
+      } else if (handlers[2] === -2) {
+        handlers = [handlers, h];
+      } else {
+        handlers.push(h);
+      }
+      return handlers;
+    }
+    Twig2.Thenable = function(then, value, state) {
+      this.then = then;
+      this._value = state ? value : null;
+      this._state = state || STATE_UNKNOWN;
+    };
+    Twig2.Thenable.prototype.catch = function(onRejected) {
+      if (this._state === STATE_RESOLVED) {
+        return this;
+      }
+      return this.then(null, onRejected);
+    };
+    Twig2.Thenable.resolvedThen = function(onResolved) {
+      try {
+        return Twig2.Promise.resolve(onResolved(this._value));
+      } catch (error) {
+        return Twig2.Promise.reject(error);
+      }
+    };
+    Twig2.Thenable.rejectedThen = function(onResolved, onRejected) {
+      if (!onRejected || typeof onRejected !== "function") {
+        return this;
+      }
+      const value = this._value;
+      let result;
+      try {
+        result = onRejected(value);
+      } catch (error) {
+        result = Twig2.Promise.reject(error);
+      }
+      return Twig2.Promise.resolve(result);
+    };
+    Twig2.Promise = function(executor) {
+      let state = STATE_UNKNOWN;
+      let value = null;
+      let changeState = function(nextState, nextValue) {
+        state = nextState;
+        value = nextValue;
+      };
+      function onReady(v) {
+        changeState(STATE_RESOLVED, v);
+      }
+      function onReject(e) {
+        changeState(STATE_REJECTED, e);
+      }
+      run(executor, onReady, onReject);
+      if (state === STATE_RESOLVED) {
+        return Twig2.Promise.resolve(value);
+      }
+      if (state === STATE_REJECTED) {
+        return Twig2.Promise.reject(value);
+      }
+      changeState = new Twig2.FullPromise();
+      return changeState.promise;
+    };
+    Twig2.FullPromise = function() {
+      let handlers = null;
+      function resolved(onResolved) {
+        onResolved(p._value);
+      }
+      function rejected(onResolved, onRejected) {
+        onRejected(p._value);
+      }
+      let append = function(onResolved, onRejected) {
+        handlers = pending(handlers, onResolved, onRejected);
+      };
+      function changeState(newState, v) {
+        if (p._state) {
+          return;
+        }
+        p._value = v;
+        p._state = newState;
+        append = newState === STATE_RESOLVED ? resolved : rejected;
+        if (!handlers) {
+          return;
+        }
+        if (handlers[2] === -2) {
+          append(handlers[0], handlers[1]);
+          handlers = null;
+          return;
+        }
+        handlers.forEach((h) => {
+          append(h[0], h[1]);
+        });
+        handlers = null;
+      }
+      const p = new Twig2.Thenable((onResolved, onRejected) => {
+        const hasResolved = typeof onResolved === "function";
+        if (p._state === STATE_RESOLVED && !hasResolved) {
+          return Twig2.Promise.resolve(p._value);
+        }
+        if (p._state === STATE_RESOLVED) {
+          try {
+            return Twig2.Promise.resolve(onResolved(p._value));
+          } catch (error) {
+            return Twig2.Promise.reject(error);
+          }
+        }
+        const hasRejected = typeof onRejected === "function";
+        return new Twig2.Promise((resolve2, reject) => {
+          append(
+            hasResolved ? (result) => {
+              try {
+                resolve2(onResolved(result));
+              } catch (error) {
+                reject(error);
+              }
+            } : resolve2,
+            hasRejected ? (err) => {
+              try {
+                resolve2(onRejected(err));
+              } catch (error) {
+                reject(error);
+              }
+            } : reject
+          );
+        });
+      });
+      changeState.promise = p;
+      return changeState;
+    };
+    Twig2.Promise.defaultResolved = new Twig2.Thenable(Twig2.Thenable.resolvedThen, void 0, STATE_RESOLVED);
+    Twig2.Promise.emptyStringResolved = new Twig2.Thenable(Twig2.Thenable.resolvedThen, "", STATE_RESOLVED);
+    Twig2.Promise.resolve = function(value) {
+      if (arguments.length === 0 || typeof value === "undefined") {
+        return Twig2.Promise.defaultResolved;
+      }
+      if (Twig2.isPromise(value)) {
+        return value;
+      }
+      if (value === "") {
+        return Twig2.Promise.emptyStringResolved;
+      }
+      return new Twig2.Thenable(Twig2.Thenable.resolvedThen, value, STATE_RESOLVED);
+    };
+    Twig2.Promise.reject = function(e) {
+      return new Twig2.Thenable(Twig2.Thenable.rejectedThen, e, STATE_REJECTED);
+    };
+    Twig2.Promise.all = function(promises) {
+      const results = new Array(promises.length);
+      return Twig2.async.forEach(promises, (p, index2) => {
+        if (!Twig2.isPromise(p)) {
+          results[index2] = p;
+          return;
+        }
+        if (p._state === STATE_RESOLVED) {
+          results[index2] = p._value;
+          return;
+        }
+        return p.then((v) => {
+          results[index2] = v;
+        });
+      }).then(() => {
+        return results;
+      });
+    };
+    Twig2.async.forEach = function(arr, callback) {
+      const len = arr ? arr.length : 0;
+      let index2 = 0;
+      function next() {
+        let resp = null;
+        do {
+          if (index2 === len) {
+            return Twig2.Promise.resolve();
+          }
+          resp = callback(arr[index2], index2);
+          index2++;
+        } while (!resp || !Twig2.isPromise(resp) || resp._state === STATE_RESOLVED);
+        return resp.then(next);
+      }
+      return next();
+    };
+    return Twig2;
+  };
+  return twig_async;
+}
+var twig_exports;
+var hasRequiredTwig_exports;
+function requireTwig_exports() {
+  if (hasRequiredTwig_exports) return twig_exports;
+  hasRequiredTwig_exports = 1;
+  twig_exports = function(Twig2) {
+    Twig2.exports = {
+      VERSION: Twig2.VERSION
+    };
+    Twig2.exports.twig = function(params) {
+      const { id: id2 } = params;
+      const options = {
+        strictVariables: params.strict_variables || false,
+        // TODO: turn autoscape on in the next major version
+        autoescape: params.autoescape !== null && params.autoescape || false,
+        allowInlineIncludes: params.allowInlineIncludes || false,
+        rethrow: params.rethrow || false,
+        namespaces: params.namespaces
+      };
+      if (Twig2.cache && id2) {
+        Twig2.validateId(id2);
+      }
+      if (params.debug !== void 0) {
+        Twig2.debug = params.debug;
+      }
+      if (params.trace !== void 0) {
+        Twig2.trace = params.trace;
+      }
+      if (params.data !== void 0) {
+        return Twig2.Templates.parsers.twig({
+          data: params.data,
+          path: Object.hasOwnProperty.call(params, "path") ? params.path : void 0,
+          module: params.module,
+          id: id2,
+          options
+        });
+      }
+      if (params.ref !== void 0) {
+        if (params.id !== void 0) {
+          throw new Twig2.Error("Both ref and id cannot be set on a twig.js template.");
+        }
+        return Twig2.Templates.load(params.ref);
+      }
+      if (params.method !== void 0) {
+        if (!Twig2.Templates.isRegisteredLoader(params.method)) {
+          throw new Twig2.Error('Loader for "' + params.method + '" is not defined.');
+        }
+        return Twig2.Templates.loadRemote(params.name || params.href || params.path || id2 || void 0, {
+          id: id2,
+          method: params.method,
+          parser: params.parser || "twig",
+          base: params.base,
+          module: params.module,
+          precompiled: params.precompiled,
+          async: params.async,
+          options
+        }, params.load, params.error);
+      }
+      if (params.href !== void 0) {
+        return Twig2.Templates.loadRemote(params.href, {
+          id: id2,
+          method: "ajax",
+          parser: params.parser || "twig",
+          base: params.base,
+          module: params.module,
+          precompiled: params.precompiled,
+          async: params.async,
+          options
+        }, params.load, params.error);
+      }
+      if (params.path !== void 0) {
+        return Twig2.Templates.loadRemote(params.path, {
+          id: id2,
+          method: "fs",
+          parser: params.parser || "twig",
+          base: params.base,
+          module: params.module,
+          precompiled: params.precompiled,
+          async: params.async,
+          options
+        }, params.load, params.error);
+      }
+    };
+    Twig2.exports.extendFilter = function(filter, definition) {
+      Twig2.filter.extend(filter, definition);
+    };
+    Twig2.exports.extendFunction = function(fn, definition) {
+      Twig2._function.extend(fn, definition);
+    };
+    Twig2.exports.extendTest = function(test, definition) {
+      Twig2.test.extend(test, definition);
+    };
+    Twig2.exports.extendTag = function(definition) {
+      Twig2.logic.extend(definition);
+    };
+    Twig2.exports.extend = function(fn) {
+      fn(Twig2);
+    };
+    Twig2.exports.compile = function(markup, options) {
+      const id2 = options.filename;
+      const path = options.filename;
+      const template = new Twig2.Template({
+        data: markup,
+        path,
+        id: id2,
+        options: options.settings["twig options"]
+      });
+      return function(context) {
+        return template.render(context);
+      };
+    };
+    Twig2.exports.renderFile = function(path, options, fn) {
+      if (typeof options === "function") {
+        fn = options;
+        options = {};
+      }
+      options = options || {};
+      const settings2 = options.settings || {};
+      const viewOptions = settings2["twig options"];
+      const params = {
+        path,
+        base: settings2.views,
+        load(template) {
+          if (!viewOptions || !viewOptions.allowAsync) {
+            fn(null, String(template.render(options)));
+            return;
+          }
+          template.renderAsync(options).then((out) => fn(null, out), fn);
+        },
+        error(err) {
+          fn(err);
+        }
+      };
+      if (viewOptions) {
+        for (const option in viewOptions) {
+          if (Object.hasOwnProperty.call(viewOptions, option)) {
+            params[option] = viewOptions[option];
+          }
+        }
+      }
+      Twig2.exports.twig(params);
+    };
+    Twig2.exports.__express = Twig2.exports.renderFile;
+    Twig2.exports.cache = function(cache) {
+      Twig2.cache = cache;
+    };
+    Twig2.exports.path = Twig2.path;
+    Twig2.exports.filters = Twig2.filters;
+    Twig2.exports.tests = Twig2.tests;
+    Twig2.exports.functions = Twig2.functions;
+    Twig2.exports.Promise = Twig2.Promise;
+    return Twig2;
+  };
+  return twig_exports;
+}
+var twig_factory = function factory() {
+  const Twig2 = {
+    VERSION: "1.17.1"
+  };
+  requireTwig_core()(Twig2);
+  requireTwig_compiler()(Twig2);
+  requireTwig_expression()(Twig2);
+  requireTwig_filters()(Twig2);
+  requireTwig_functions()(Twig2);
+  requireTwig_lib()(Twig2);
+  requireTwig_loader_ajax()(Twig2);
+  requireTwig_loader_fs()(Twig2);
+  requireTwig_logic()(Twig2);
+  requireTwig_parser_source()(Twig2);
+  requireTwig_parser_twig()(Twig2);
+  requireTwig_path()(Twig2);
+  requireTwig_tests()(Twig2);
+  requireTwig_async()(Twig2);
+  requireTwig_exports()(Twig2);
+  Twig2.exports.factory = factory;
+  return Twig2.exports;
+};
+/**
+ * Twig.js
+ *
+ * @copyright 2011-2020 John Roepke and the Twig.js Contributors
+ * @license   Available under the BSD 2-Clause License
+ * @link      https://github.com/twigjs/twig.js
+ */
+var twig = twig_factory();
+const Twig = /* @__PURE__ */ getDefaultExportFromCjs(twig);
+const attrs = {
+  init: "data-live-demo-init",
+  context: "data-live-demo",
+  options: "data-live-demo-options"
+};
+const attrSelector = (key2) => `[${attrs[key2]}]`;
+const attrSelectorInitial = (key2) => `${attrSelector(key2)}:not([${attrs.init}])`;
+const queryAllInitial = (key2) => document.querySelectorAll(attrSelectorInitial(key2));
+const debugLog = (...msgs) => console.log("Live Demo:", ...msgs);
+const defaults = {
+  display: "[data-live-demo-display]",
+  form: "[data-live-demo-form]"
+};
+function init() {
+  setup();
+}
+function setup() {
+  queryAllInitial("context").forEach((context) => {
+    const optionsScript = context.querySelector(attrSelector("options"));
+    if (!optionsScript) {
+      console.error("Missing options", context);
+      return;
+    }
+    const options = JSON.parse(optionsScript.innerHTML);
+    context.setAttribute(attrs.init, "");
+    setupInstance({ context, ...options });
+  });
+}
+function setupInstance(userOptions) {
+  const options = Object.assign({}, defaults, userOptions);
+  const { context, debug } = options;
+  if (debug) {
+    debugLog("options:", options);
+  }
+  const form = getElement(options.form, context);
+  const display = getElement(options.display, context);
+  if (!form || !display) {
+    throw new Error("Unable to locate form or display for live demo", options);
+  }
+  const twigTemplate = Twig.twig({
+    data: options.template
+  });
+  if (debug) {
+    debugLog("twigTemplate", twigTemplate);
+  }
+  render();
+  form.addEventListener("change", update);
+  function update() {
+    render();
+    dispatch("pageModified", context);
+  }
+  function render() {
+    const formData = new FormData(form);
+    const values = {};
+    formData.forEach((value, key2) => {
+      values[key2] = value;
+    });
+    const markup = twigTemplate.render(values);
+    if (debug) {
+      debugLog("Data Passed by Form to template:", values);
+      debugLog("Markup from rendering template:", markup);
+    }
+    display.innerHTML = markup;
+  }
+}
 window.Ulu = ulu;
 configureIcons();
-init$h();
+init$i();
+init$e();
 init$d();
 init$c();
-init$b();
-init$9();
-init$f();
+init$a();
 init$g();
+init$h();
+init$9();
 init$8();
 init$7();
 init$6();
 init$5();
+init$b();
+init$f();
 init$4();
-init$a();
-init$e();
 init$3();
-init$2();
 setConfig({
   onChange(container2, value) {
     const isList = value === "list";
@@ -16062,6 +23199,7 @@ setConfig({
     }
   }
 });
+init$1();
 init();
 {
   __vitePreload(() => import("./chunks/modulepreload-polyfill.DaKOjhqt.js"), true ? [] : void 0, import.meta.url);

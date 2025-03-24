@@ -38,13 +38,14 @@ Module Settings
 ``` scss
 $config: (
   "background-color" : white,
-  "background-color-hover" : "link",
+  "background-color-hover" : #F7F8F7,
   "border-radius" : "border-radius",
   "box-shadow" : true,
   "box-shadow-hover" : true,
   "color" : "type",
   "color-hover" : "type",
   "icon-color": gray,
+  "icon-color-hover": null,
   "icon-font-size" : 1.25rem,
   "line-height" : 1.2,
   "margin" : 1em,
@@ -55,6 +56,10 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
+  "left-cap" : true,
+  "left-cap-color" : "link",
+  "left-cap-color-hover" : "link-hover",
+  "left-cap-width" : 0.5rem
 );
 ```
   
@@ -66,8 +71,8 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 29-48
-- **Lines (code):** 50-69
+- **Lines (comments):** 30-54
+- **Lines (code):** 56-80
 
 </details>
 
@@ -86,6 +91,7 @@ $config: (
 |color|String|type|Text color for the button.|
 |color-hover|String|type|Text color for the button when hovered or focused.|
 |icon-color|Color|gray|Color for button icons.|
+|icon-color-hover|Color|null|Optional color for icon when hovered|
 |icon-font-size|Dimension|1.25rem|Font size for the button.|
 |line-height|Number|1.2|Line height for button text.|
 |margin|Dimension|1em|Margin for the button.|
@@ -96,6 +102,10 @@ $config: (
 |title-color|String|link|Color of the title of the button.|
 |title-color-hover|String|link-hover|Color of the title of the button when hovered or focused.|
 |title-margin|Dimension|0.5em|Margin for the button's title.|
+|left-cap|Boolean|false|Enable left cap style|
+|left-cap-color|Color|"link"|The color for the left cap|
+|left-cap-color-hover|color|"link-hover"|The color for the left cap when the button is hovered|
+|left-cap-color-hover|Number|0.5rem|Width of the cap|
 
     
   
@@ -128,8 +138,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 71-74
-- **Lines (code):** 76-78
+- **Lines (comments):** 82-85
+- **Lines (code):** 87-89
 
 </details>
 
@@ -187,8 +197,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 90-92
-- **Lines (code):** 94-142
+- **Lines (comments):** 101-109
+- **Lines (code):** 111-187
 
 </details>
 
@@ -205,6 +215,33 @@ Prints component styles
   
 
 
+
+      
+
+Basic Example      
+
+
+``` html
+<a href="#" class="button-verbose">
+  <strong class="button-verbose__title">Example Link</strong>
+  This is the body
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+</a>
+```
+  
+
+
+##### Preview
+
+<div>
+<a href="#" class="button-verbose">
+  <strong class="button-verbose__title">Example Link</strong>
+  This is the body
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+</a>
+</div>
+
+    
 
       
 
@@ -242,8 +279,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 80-83
-- **Lines (code):** 85-88
+- **Lines (comments):** 91-94
+- **Lines (code):** 96-99
 
 </details>
 

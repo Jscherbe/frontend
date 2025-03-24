@@ -9,6 +9,7 @@
 @use "../utils";
 @use "../color";
 @use "../element";
+@use "../selector";
 
 // Used for function fallback
 $-fallbacks: (
@@ -36,6 +37,7 @@ $-fallbacks: (
 /// @prop {String} color [type] Text color for the button.
 /// @prop {String} color-hover [type] Text color for the button when hovered or focused.
 /// @prop {Color} icon-color [gray] Color for button icons.
+/// @prop {Color} icon-color-hover [null] Optional color for icon when hovered
 /// @prop {Dimension} icon-font-size [1.25rem] Font size for the button.
 /// @prop {Number} line-height [1.2] Line height for button text.
 /// @prop {Dimension} margin [1em] Margin for the button.
@@ -46,16 +48,21 @@ $-fallbacks: (
 /// @prop {String} title-color [link] Color of the title of the button.
 /// @prop {String} title-color-hover [link-hover] Color of the title of the button when hovered or focused.
 /// @prop {Dimension} title-margin [0.5em] Margin for the button's title.
+/// @prop {Boolean} left-cap [false] Enable left cap style 
+/// @prop {Color} left-cap-color ["link"] The color for the left cap
+/// @prop {color} left-cap-color-hover ["link-hover"] The color for the left cap when the button is hovered
+/// @prop {Number} left-cap-color-hover [0.5rem] Width of the cap
 
 $config: (
   "background-color" : white,
-  "background-color-hover" : "link",
+  "background-color-hover" : #F7F8F7,
   "border-radius" : "border-radius",
   "box-shadow" : true,
   "box-shadow-hover" : true,
   "color" : "type",
   "color-hover" : "type",
   "icon-color": gray,
+  "icon-color-hover": null,
   "icon-font-size" : 1.25rem,
   "line-height" : 1.2,
   "margin" : 1em,
@@ -66,6 +73,10 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
+  "left-cap" : true,
+  "left-cap-color" : "link",
+  "left-cap-color-hover" : "link-hover",
+  "left-cap-width" : 0.5rem
 ) !default;
 
 /// Change modules $config
@@ -89,10 +100,18 @@ $config: (
 
 /// Prints component styles
 /// @example scss
-///  @include ulu.component-button-verbose-styles();
+///   @include ulu.component-button-verbose-styles();
+/// @example html {preview} - Basic Example
+///   <a href="#" class="button-verbose">
+///     <strong class="button-verbose__title">Example Link</strong>
+///     This is the body
+///     <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+///   </a>
 
 @mixin styles {
-  .button-verbose {
+  $prefix: selector.class("button-verbose");
+  
+  #{ $prefix } {
     text-decoration: none;
     border-radius: element.get(get("border-radius"));
     box-shadow: get("box-shadow");
@@ -107,21 +126,47 @@ $config: (
     padding-right: (get("padding-x") * 2) + 1em;
     color: color.get(get("color"));
     text-align: left;
+    // Add border like cap
+    @if get("left-cap") {
+      padding-left: calc(get("padding-x") + get("left-cap-width"));
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: get("left-cap-width");
+        background-color: color.get(get("left-cap-color"));
+      }
+    }
     &:hover {
       color: color.get(get("color-hover"));
       background-color: color.get(get("background-color-hover"));
       box-shadow: get("box-shadow-hover");
-      .button-verbose__title  {
-        color: color.get(get("title-color-hover"));
+      @if get("title-color-hover") {
+        #{ $prefix }__title  {
+          color: color.get(get("title-color-hover"));
+        }
+      }
+      @if get("icon-color-hover") {
+        #{ $prefix }__icon  {
+          color: color.get(get("icon-color-hover"));
+        }
+      }
+      @if (get("left-cap") and get("left-cap-color-hover")) {
+        &::after {
+          background-color: color.get(get("left-cap-color-hover"));
+        }
       }
     }
   }
-  .button-verbose__title {
+  #{ $prefix }__title {
     display: block;
     margin-bottom: get("title-margin");
     color: color.get(get("title-color"));
   }
-  .button-verbose__icon {
+  #{ $prefix }__icon {
     position: absolute;
     top: 50%;
     right: get("padding-x");
@@ -129,14 +174,14 @@ $config: (
     font-size: get("icon-font-size");
     color: color.get(get("icon-color"));
   }
-  .button-verbose--inline {
+  #{ $prefix }--inline {
     display: inline-block;
     margin-right: get("margin-inline");
     &:last-child {
       margin-right: 0;
     }
   }
-  .button-verbose--full-width {
+  #{ $prefix }--full-width {
     width: 100%;
   }
 }
