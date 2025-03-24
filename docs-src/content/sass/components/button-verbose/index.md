@@ -198,7 +198,7 @@ Prints component styles
 - **Group:** button-verbose
 - **Type:** mixin
 - **Lines (comments):** 101-109
-- **Lines (code):** 111-187
+- **Lines (code):** 111-192
 
 </details>
 
@@ -224,7 +224,7 @@ Basic Example
 ``` html
 <a href="#" class="button-verbose">
   <strong class="button-verbose__title">Example Link</strong>
-  This is the body
+  <span class="button-verbose__body">This is the body</span>
   <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
 </a>
 ```
@@ -236,7 +236,7 @@ Basic Example
 <div>
 <a href="#" class="button-verbose">
   <strong class="button-verbose__title">Example Link</strong>
-  This is the body
+  <span class="button-verbose__body">This is the body</span>
   <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
 </a>
 </div>

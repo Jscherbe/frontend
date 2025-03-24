@@ -38,7 +38,8 @@ Module Settings
 ``` scss
 $config: (
   "arrow-size"                   : 16px,
-  "arrow-mask-overlap"           : 4px,
+  "arrow-box-shadow"             : true,
+  "arrow-box-shadow-extent"      : null,
   "background-color"             : white,
   "border-radius"                : 6px,
   "color"                        : inherit,
@@ -77,8 +78,8 @@ $config: (
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** variable
-- **Lines (comments):** 30-60
-- **Lines (code):** 62-92
+- **Lines (comments):** 30-61
+- **Lines (code):** 63-94
 
 </details>
 
@@ -90,7 +91,8 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |arrow-size|Dimension|16px|Size of the dropdown arrow.|
-|arrow-mask-overlap|Dimension|4px|Size that the mask extends beyond the arrow size (which covers up the arrow box shadow inside the popover content). This should be adjusted based on the size of the box-shadow being used)|
+|arrow-box-shadow|Boolean|true|When true the arrow will get the popover's box shadow. Note if the box shadow is not a list (for example custom property), the mask won't be calculated from the box-shadow (use arrow-box-shadow-extent to specify manually)|
+|arrow-box-shadow-extent|Number|null|If set will determine the amount of overlap added to the arrow mask, else it's calculated automatically by the box-shadow option (can be used if box-shadow is custom property)|
 |background-color|Color|white|Background color of the popover.|
 |border-radius|Dimension|6px|Border radius of the popover.|
 |color|Color|inherit|Text color of the popover.|
@@ -150,8 +152,8 @@ Change modules $config
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 94-97
-- **Lines (code):** 99-101
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-103
 
 </details>
 
@@ -209,8 +211,8 @@ Prints component styles
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** mixin
-- **Lines (comments):** 113-115
-- **Lines (code):** 117-232
+- **Lines (comments):** 115-117
+- **Lines (code):** 119-234
 
 </details>
 
@@ -264,8 +266,8 @@ Get a config option
 - **File:** _popover.scss
 - **Group:** popover
 - **Type:** function
-- **Lines (comments):** 103-106
-- **Lines (code):** 108-111
+- **Lines (comments):** 105-108
+- **Lines (code):** 110-113
 
 </details>
 

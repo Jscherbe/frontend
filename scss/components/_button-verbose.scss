@@ -104,7 +104,7 @@ $config: (
 /// @example html {preview} - Basic Example
 ///   <a href="#" class="button-verbose">
 ///     <strong class="button-verbose__title">Example Link</strong>
-///     This is the body
+///     <span class="button-verbose__body">This is the body</span>
 ///     <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
 ///   </a>
 
@@ -161,9 +161,14 @@ $config: (
       }
     }
   }
-  #{ $prefix }__title {
+  #{ $prefix }__title,
+  #{ $prefix }__body {
     display: block;
-    margin-bottom: get("title-margin");
+    &:first-child {
+      margin-bottom: get("title-margin");
+    }
+  }
+  #{ $prefix }__title {
     color: color.get(get("title-color"));
   }
   #{ $prefix }__icon {

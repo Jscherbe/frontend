@@ -1,4 +1,6 @@
 JS Todos:
+  ☐ Prefix breakpoint custom property
+    * Check CSS var breakpoint declare too
   ☐ Maybe we should go back to classes as the base for the instances
     * Not make it so tightly coupled like old framework but within each module
     * Something like new UluInstance that can be extended as needed

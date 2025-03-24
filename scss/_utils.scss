@@ -511,3 +511,123 @@ $config: (
 @function hypotenuse($width, $height) {
   @return math.sqrt(math.pow($width, 2) + math.pow($height, 2));
 }
+
+/// Get's the info about a box shadow 
+/// @param {List} $shadow The box shadow property (ie. 0 0 4px red)
+/// @return {Map} Map with info about the shadow with the following keys (inset, offset-x, offset-y, blur, spread, color)
+/// @throw When shadow is not type list
+
+@function box-shadow-info($shadow) {
+  @if (meta.type-of($shadow) != "list") {
+    @error "Box shadow passed is not correct type (list)";
+  }
+  $result: (
+    "inset": false,
+    "offset-x": 0,
+    "offset-y": 0,
+    "blur": 0,
+    "spread": 0,
+    "color": null,
+  );
+
+  $number-keys: ("offset-x", "offset-y", "blur", "spread");
+  $number-index: 1;
+
+  @each $value in $shadow {
+    $type: meta.type-of($value);
+    @if $type == "color" {
+      $result: map.merge($result, ("color": $value));
+    } @else if $type == "string" and $value == inset {
+      $result: map.merge($result, ("inset": true));
+    } @else if $type == "number" and $number-index <= 4 {
+      // Add each back in by key in the order they appear
+      // if not found it's the default
+      $result: map.merge($result, (nth($number-keys, $number-index): $value));
+      $number-index: $number-index + 1;
+    }
+  }
+
+  @return $result;
+}
+
+/// Get's the extent (how far the shadow extends past the box's edge)
+/// - This will only work on box-shadows that have matching units for the numbers
+/// @param {List} $shadow The box shadow property (ie. 0 0 4px red)
+/// @param {String} $side Optionally pass the side of box to get extend for, if not specified offsets are ignored and just the extent of the shadow is passed
+/// @return {Number} The size the shadow extends past it's box
+
+@function box-shadow-extent($shadow, $side: null) {
+  $info: box-shadow-info($shadow);
+  $extent: map.get($info, "spread") + map.get($info, "blur");
+  $offset-x: map.get($info, "offset-x");
+  $offset-y: map.get($info, "offset-y");
+  @if (not $side) {
+    @return $extent;
+  } @else {
+    @if ($side == "top") {
+      @return $extent - $offset-y;
+    } @else if ($side == "bottom") {
+      @return $extent + $offset-y;
+    } @else if ($side == "left") {
+      @return $extent - $offset-x;
+    } @else if ($side == "right") {
+      @return $extent + $offset-x;
+    }
+  }
+}
+
+/// Determines if value passed is a list
+/// @param {*} $value Value to check
+/// @return {Boolean} Whether the item was type list
+
+@function is-list($value) {
+  @return meta.type-of($value) == "list";
+}
+
+/// Determines if value passed is a map
+/// @param {*} $value Value to check
+/// @return {Boolean} Whether the item was type map
+
+@function is-map($value) {
+  @return meta.type-of($value) == "map";
+}
+
+/// Determines if value passed is a number
+/// @param {*} $value Value to check
+/// @return {Boolean} Whether the item was type number
+
+@function is-number($value) {
+  @return meta.type-of($value) == "number";
+}
+
+/// Determines if value passed is a string
+/// @param {*} $value Value to check
+/// @return {Boolean} Whether the item was type string
+
+@function is-string($value) {
+  @return meta.type-of($value) == "string";
+}
+
+/// Determines if value passed is a color
+/// @param {*} $value Value to check
+/// @return {Boolean} Whether the item was type color
+
+@function is-color($value) {
+  @return meta.type-of($value) == "color";
+}
+
+// /// Determines if value passed is a bool
+// /// @param {*} $value Value to check
+// /// @return {Boolean} Whether the item was type bool
+
+// @function is-bool($value) {
+//   @return meta.type-of($value) == "bool";
+// }
+
+// /// Determines if value passed is a null
+// /// @param {*} $value Value to check
+// /// @return {Boolean} Whether the item was type null
+
+// @function is-null($value) {
+//   @return meta.type-of($value) == "null";
+// }

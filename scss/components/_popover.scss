@@ -30,7 +30,8 @@ $-fallbacks: (
 /// Module Settings
 /// @type Map
 /// @prop {Dimension} arrow-size [16px] Size of the dropdown arrow.
-/// @prop {Dimension} arrow-mask-overlap [4px] Size that the mask extends beyond the arrow size (which covers up the arrow box shadow inside the popover content). This should be adjusted based on the size of the box-shadow being used)
+/// @prop {Boolean} arrow-box-shadow [true] When true the arrow will get the popover's box shadow. Note if the box shadow is not a list (for example custom property), the mask won't be calculated from the box-shadow (use arrow-box-shadow-extent to specify manually)
+/// @prop {Number} arrow-box-shadow-extent [null] If set will determine the amount of overlap added to the arrow mask, else it's calculated automatically by the box-shadow option (can be used if box-shadow is custom property)
 /// @prop {Color} background-color [white] Background color of the popover.
 /// @prop {Dimension} border-radius [6px] Border radius of the popover.
 /// @prop {Color} color [inherit] Text color of the popover.
@@ -61,7 +62,8 @@ $-fallbacks: (
 
 $config: (
   "arrow-size"                   : 16px,
-  "arrow-mask-overlap"           : 4px,
+  "arrow-box-shadow"             : true,
+  "arrow-box-shadow-extent"      : null,
   "background-color"             : white,
   "border-radius"                : 6px,
   "color"                        : inherit,
@@ -232,7 +234,62 @@ $config: (
 }
 
 @mixin -arrow-styles() {
+  @if get("arrow-box-shadow") {
+    @include -arrow-styles-with-box-shadow();
+  } @else {
+    @include -arrow-styles-simple();
+  }
+}
+
+// Internal mixin for original arrow styles without box-shadow
+@mixin -arrow-styles-simple() {
   $prefix: selector.class("popover");
+  $size: get("arrow-size");
+  $half: math.div($size, 2);
+
+  #{ $prefix }__arrow {
+    visibility: hidden;
+    z-index: 1;
+    &,
+    &:before {
+      display: block;
+      position: absolute;
+      width: $size;
+      height: $size;
+      background: inherit;
+    }
+    &:before {
+      visibility: visible;
+      content: '';
+      transform: rotate(45deg);
+    }
+    [data-placement^="top"] > & {
+      bottom: -($half);
+    }
+    [data-placement^="bottom"] > & {
+      top: -($half);
+    }
+    [data-placement^="left"] > & {
+      right: -($half);
+    }
+    [data-placement^="right"] > & {
+      left: -($half);
+    }
+  }
+  // Account for footer and change arrow color when positioned next to it
+  #{ $prefix }__footer ~ #{ $prefix }__arrow {
+    [data-placement^="top"] > & {
+      &:before {
+        background-color: get("footer-background-color");
+      }
+    }
+  }
+}
+
+// Internal mixin for arrow styles when using the mask (extra pseudo element)
+@mixin -arrow-styles-with-box-shadow() {
+  $prefix: selector.class("popover");
+  $box-shadow: get("box-shadow");
   $size: get("arrow-size");
   $half: math.div($size, 2);
   $size-info: utils.number-info($size);
@@ -240,10 +297,16 @@ $config: (
   $unit: map.get($size-info, "unit");
   $hypotenuse: utils.hypotenuse($unitless, $unitless);
   $hypotenuse-half: math.div($hypotenuse, 2);
-  $overlap: utils.strip-unit(get("arrow-mask-overlap"));
+  $manual-extent: get("arrow-box-shadow-extent");
+  $shadow-extent: if(
+    $manual-extent,
+    $manual-extent,
+    if(utils.is-list($box-shadow), utils.box-shadow-extent($box-shadow), 5px)
+  );
+  $overlap: utils.strip-unit($shadow-extent);
   $mask-height: utils.add-unit($hypotenuse-half + $overlap, $unit);
   $mask-width: utils.add-unit($hypotenuse + $overlap, $unit);
-
+  
   #{ $prefix }__arrow {
     visibility: hidden;
     z-index: 1;
