@@ -1733,5 +1733,361 @@ Calculates the hypotenuse of a triangle
 |Number|Hypotenuse of a triangle|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  box-shadow-info() {#function-box-shadow-info}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Get's the info about a box shadow 
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 515-518
+- **Lines (code):** 520-551
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$shadow|`List`|The box shadow property (ie. 0 0 4px red)|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Map|Map with info about the shadow with the following keys (inset, offset-x, offset-y, blur, spread, color)|
+
+    
+
+#### Throw
+
+- Box shadow passed is not correct type (list)
+    
+
+
+<div class="sassdoc-item-header">
+
+###  box-shadow-extent() {#function-box-shadow-extent}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Get's the extent (how far the shadow extends past the box's edge)
+- This will only work on box-shadows that have matching units for the numbers
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 553-557
+- **Lines (code):** 559-577
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$shadow|`List`|The box shadow property (ie. 0 0 4px red)|
+|$side|`String`|Optionally pass the side of box to get extend for, if not specified offsets are ignored and just the extent of the shadow is passed|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Number|The size the shadow extends past it's box|
+
+    
+
+#### Require
+
+- [box-shadow-info()](/sass/core/utils/#function-box-shadow-info)
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  is-list() {#function-is-list}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Determines if value passed is a list
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 579-581
+- **Lines (code):** 583-585
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`*`|Value to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the item was type list|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  is-map() {#function-is-map}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Determines if value passed is a map
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 587-589
+- **Lines (code):** 591-593
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`*`|Value to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the item was type map|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  is-number() {#function-is-number}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Determines if value passed is a number
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 595-597
+- **Lines (code):** 599-601
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`*`|Value to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the item was type number|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  is-string() {#function-is-string}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Determines if value passed is a string
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 603-605
+- **Lines (code):** 607-609
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`*`|Value to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the item was type string|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  is-color() {#function-is-color}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Determines if value passed is a color
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 611-613
+- **Lines (code):** 615-617
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$value|`*`|Value to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the item was type color|
+
+    
   
   

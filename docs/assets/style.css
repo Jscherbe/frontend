@@ -12393,15 +12393,29 @@ component:button
   padding-right: 2.3em;
   color: var(--site-color-type);
   text-align: left;
+  padding-left: calc(0.65em + 0.5rem);
+}
+.button-verbose::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0.5rem;
+  background-color: var(--site-color-link);
 }
 .button-verbose:hover {
   color: var(--site-color-type);
-  background-color: var(--site-color-link);
+  background-color: #F7F8F7;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 .button-verbose:hover .button-verbose__title {
   color: var(--site-color-link-hover);
+}
+.button-verbose:hover::after {
+  background-color: var(--site-color-link-hover);
 }
 
 .button-verbose__title {
@@ -17723,7 +17737,7 @@ button.captioned-figure:focus {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  background-color: 'ulu.cssvar-use("color-control-background")';
+  background-color: var(--site-color-control-background);
   padding: 0.3em;
 }
 
@@ -17778,41 +17792,25 @@ button.captioned-figure:focus {
         flex-basis: 10rem;
   }
 }
-@media screen and (min-width: 43.5em) {
-  .card-grid--one-column .card--horizontal-w-columns .card__body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-  }
-}
-.card-grid--one-column .card--horizontal-w-columns .card__content {
-  margin-top: 0;
-}
-@media screen and (min-width: 43.5em) {
-  .card-grid--one-column .card--horizontal-w-columns .card__content {
-    border-left: 1px solid var(--site-color-rule-light);
-    padding-left: 1em;
-  }
-}
 
-.interactive-demo {
+.live-demo {
   background-color: #f6f6f6;
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid #e5e5e5;
 }
 @media screen and (min-width: 72.875em) {
-  .interactive-demo {
+  .live-demo {
     display: grid;
     grid-template-columns: 1fr 12rem;
   }
 }
 
-.interactive-demo__display {
+.live-demo__display {
   padding: 0.75rem;
 }
 
-.interactive-demo__form {
+.live-demo__form {
   background-color: #e5e5e5;
   padding: 0.5rem;
 }

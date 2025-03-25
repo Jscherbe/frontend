@@ -1,13 +1,27 @@
 # Change Log
 
-## Version 0.1.0-beta.29 (unreleased)
+## Version 0.1.0-beta.30 (released)
 
+- scss/components/button-verbose
+  - Add button-verbose__body element
+  - Allow title-margin to work if body is before title
+- scss/component/popover
+  - Change new config property "arrow-mask" to "arrow-box-shadow", remove "arrow-mask-" properties as they are no longer needed. When "arrow-box-shadow" is enabled the popovers box-shadow will be used on the arrow along with a mask that has an overlap based on the box-shadow's size.
+- scss/utils
+  - Add (is-list, is-map, is-number, is-string, is-color) functions to reduce logic based on type (ie. `if(utils.is-list($value), $something, $something-else))`
+  - 
+
+## Version 0.1.0-beta.29
+
+- scss/components/button-verbose
+  - Setup optional selector changing (class base name)
+  - Add end cap option
+  - Adjust default options
+  - Make inline modifier remove margin right if last child
 - scss/components/card
   - Add cursor pointer to card__title-link and move default title hover styles from card__title to card__title-link
   - Change default size of icon image max-width (from 30rem to 8rem)
   - Remove transparent on card__image--icon (will have normal default background for image area now)
-- scss/components/button-verbose
-  - Make inline modifier remove margin right if last child
 - scss/components/form-theme
   - Add "description-line-height" option defaulting to typography line-height dense
 

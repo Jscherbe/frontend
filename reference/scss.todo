@@ -1,4 +1,10 @@
 SCSS Todos:
+  ☐ Bundle Size Reduction
+    ☐ Make left cap styles an element mixin (so they can be compressed)
+    ☐ Apply the absolute-fill mixin
+  ☐ Popover - Make setting to disable the masked box-shadow arrow
+    * Incase it's not needed
+    ☐ Or/and make the mask size calculated from box-shadow width
   ☐ Button verbose (remove margins if last-child)
     * Think about adding another width property (min(100%, get("width))) so that it doesn't overflow in flexbox situations
   ☐ See about using the extra :after element on popover arrow to create the border/shadow needed (since the :before is overlapping) @minor

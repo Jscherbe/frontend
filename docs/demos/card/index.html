@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Card
+    Card New
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -200,6 +200,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/button-verbose/">
+          
+    
+    <span class="nav-tree__text">
+      Button Verbose
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/callout/">
           
     
@@ -228,13 +243,13 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/card/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
           
     
     <span class="nav-tree__text">
-      Card
+      Card Grid
     </span>
   
         </a>
@@ -243,13 +258,13 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/card/" aria-current="page">
           
     
     <span class="nav-tree__text">
-      Card Grid
+      Card New
     </span>
   
         </a>
@@ -2671,6 +2686,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/button-verbose/">
+          
+    
+    <span class="nav-tree__text">
+      Button Verbose
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/callout/">
           
     
@@ -2699,13 +2729,13 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/card/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
           
     
     <span class="nav-tree__text">
-      Card
+      Card Grid
     </span>
   
         </a>
@@ -2714,13 +2744,13 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/card/" aria-current="page">
           
     
     <span class="nav-tree__text">
-      Card Grid
+      Card New
     </span>
   
         </a>
@@ -5023,7 +5053,7 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Card</h1>
+    <h1 class="page__title h1">Card New</h1>
 
   <p class="type-large type-light">
     Cards are...
@@ -5032,153 +5062,70 @@
 
   <hr class="rule rule--light rule--margin-large">
 
-    <h2 class="h2">Interactive Card Demo</h2>
-<div id="icd" class="interactive-demo">
-  <div id="icd-display" class="interactive-demo__display">
+    <div class="live-demo" data-live-demo="">
+  <div class="live-demo__display" data-live-demo-display="">
   </div>
-  <form id="icdForm" class="interactive-demo__form form-theme">
-    <fieldset>
-      <legend>Elements Visible</legend>
-      <div class="form-theme__item">
-        <input type="checkbox" id="fieldBody" name="fieldBody" checked="">
-        <label for="fieldBody">Body</label>
-      </div>
-      <div class="form-theme__item">
-        <input type="checkbox" id="fieldTitle" name="fieldTitle" checked="">
-        <label for="fieldTitle">Title</label>
-      </div>
-      <div class="form-theme__item">
-        <input type="checkbox" id="fieldContent" name="fieldContent" checked="">
-        <label for="fieldContent">Content</label>
-      </div>
-      <div class="form-theme__item">
-        <input type="checkbox" id="fieldFooter" name="fieldFooter" checked="">
-        <label for="fieldFooter">Footer</label>
-      </div>
-    </fieldset>
-    <div class="form-theme__item form-theme__item--select">
-      <label for="fieldAction">
-        Action
-        <span class="fas fa-info-circle" data-ulu-tooltip="Proxy click only works when title is present"></span>
-      </label>
-      <select id="fieldAction" name="fieldAction">
-        <option value="">None</option>
-        <option value="link">Card is Link</option>
-        <option value="proxy" selected="">Proxy Click</option>
-      </select>
-    </div>
-    <div class="form-theme__item form-theme__item--select">
-      <label for="fieldMedia">
-        Media
-      </label>
-      <select id="fieldMedia" name="fieldMedia">
-        <option value="icon">Icon</option>
-        <option value="image" selected="">Image</option>
-        <option value="imageFit">Image (fit)</option>
-        <option value="none">No Image</option>
-      </select>
-    </div>
-    <div class="form-theme__item form-theme__item--select">
-      <label for="fieldLayout">
-        Layout
-        <span class="fas fa-info-circle" data-ulu-tooltip="Overlay is not compatible with 'Icon' and 'No Image' options"></span>
-      </label>
-      <select id="fieldLayout" name="fieldLayout">
-        <option value="" selected="">Default</option>
-        <option value="horizontal">Horizontal</option>
-        <option value="overlay">Overlay</option>
-      </select>
-    </div>
-    <!-- <div class="form-theme__actions">
-      <button type="button" id="icdSubmit" class="button button--small">Update</button>
-    </div> -->
-  </form>
+  <form class="live-demo__form form-theme" data-live-demo-form="">
+<fieldset>
+  <legend>Elements Visible</legend>
+  <div>
+<div class="form-theme__item form-theme__item--checkbox">
+  <input type="checkbox" id="live-demo-id-1" name="title" checked="">
+<label for="live-demo-id-1">
+  Title
+</label>  
 </div>
-<script>
-  (() => {
-    const display = document.getElementById("icd-display");
-    const submit = document.getElementById("icdSubmit");
-    const form = document.getElementById("icdForm");
-  
-    // Run initially and watch for changes
-    render();
-    form.addEventListener("change", update);
-
-    function update() {
-      render();
-      document.dispatchEvent(new CustomEvent("ulu:pageModified", { bubbles: true }));
-    }
-
-    function render() {
-      const formData = new FormData(form);
-      const values = {};
-      formData.forEach((value, key) => { values[key] = value });
-      display.innerHTML = cardTemplate(values);
-    }
-
-    function cardTemplate(options) {
-      const when = (cond, whenTrue, whenFalse = "") => cond ? whenTrue : whenFalse;
-      const imageType = options.fieldMedia;
-      const hasProxy = options.fieldAction == "proxy";
-      const isLink = options.fieldAction == "link";
-      const hasImage = imageType === "image" || imageType === "imageFit";
-      const element = isLink ? "a" : "article";
-      const classes = [
-        "card",
-        options.fieldLayout ? `card--${ options.fieldLayout }` : "",
-        options.fieldMedia === "imageFit" ? `card--image-fit` : "",
-      ];
-
-      return `
-        <${ element } 
-          class="${ classes.filter(v => v).join(' ') }"
-          ${ when(hasProxy, "data-ulu-proxy-click") }
-          ${ when(isLink, "href='https://www.google.com'") }
-        >
-          ${ when(options.fieldBody, `
-            <div class="card__body">
-              ${ when(options.fieldTitle, `
-                <h5 class="card__title">
-                  ${ when(isLink, "Card Title", `
-                    <a 
-                      class="card__title-link" 
-                      href="https://www.google.com" 
-                      ${ when(hasProxy, "data-ulu-proxy-click-source") }
-                    >
-                      Card Title
-                    </a>
-                  `) }
-                </h5>
-              `) }
-              ${ when(options.fieldContent, `
-                <div>
-                  This is the card content. It can contain around 2-3 sentences.
-                </div>
-              `) }
-            </div>
-          `)}
-          ${ when(hasImage, `
-            <div class="card__image">
-              <img src="/frontend/assets/placeholder/image-1.jpg">
-            </div>
-          `) }
-          ${ when(imageType === "icon", `
-            <div class="card__image card__image--icon">
-              <img src="/frontend/assets/placeholder/icon-calendar.svg" width="150" height="150">
-            </div>
-          `) }
-          ${ when(options.fieldFooter, `
-            <div class="card__footer">
-              ${ when(isLink, "Card Footer Text", `
-                <a class="button button--small" href="https://www.yahoo.com/">Footer</a>
-              `) }
-            </div>
-          `) }
-        </${ element }>
-      `;
-    }
-  })();
-</script>
+<div class="form-theme__item form-theme__item--checkbox">
+  <input type="checkbox" id="live-demo-id-2" name="body" checked="">
+<label for="live-demo-id-2">
+  Body
+</label>  
+</div>
+<div class="form-theme__item form-theme__item--checkbox">
+  <input type="checkbox" id="live-demo-id-3" name="content" checked="">
+<label for="live-demo-id-3">
+  Content
+</label>  
+</div>
+<div class="form-theme__item form-theme__item--checkbox">
+  <input type="checkbox" id="live-demo-id-4" name="footer" checked="">
+<label for="live-demo-id-4">
+  Footer
+</label>  
+</div>
+  </div>
+</fieldset>
+<div class="form-theme__item form-theme__item--select">
+<label for="live-demo-id-5">
+  Action
+  <span class="fas fa-info-circle" data-ulu-tooltip="Proxy click only works when title is present"></span>
+</label>  
+  <select id="live-demo-id-5" name="action">
+    <option value="">None</option>,<option value="link">Card is Link</option>,<option value="proxy">Proxy Click</option>
+  </select>
+</div>
+<div class="form-theme__item form-theme__item--select">
+<label for="live-demo-id-6">
+  Media
+</label>  
+  <select id="live-demo-id-6" name="media">
+    <option value="icon">Icon</option>,<option value="image">Image</option>,<option value="imageFit">Image (fit)</option>,<option value="none">No Image</option>
+  </select>
+</div>
+<div class="form-theme__item form-theme__item--select">
+<label for="live-demo-id-7">
+  Layout
+  <span class="fas fa-info-circle" data-ulu-tooltip="Overlay is not compatible with 'Icon' and 'No Image' options"></span>
+</label>  
+  <select id="live-demo-id-7" name="layout">
+    <option value="">Default</option>,<option value="horizontal">Horizontal</option>,<option value="overlay">Overlay</option>
+  </select>
+</div>
+  </form>
+  <script type="application/json" data-live-demo-options="">
+    {"debug":false,"template":"{% set hasProxy = action == \"proxy\" %}\n{% set isLink = action == \"link\" %}\n{% set hasImage = media == \"image\" or media == \"imageFit\" %}\n{% set element = isLink ? \"a\" : \"article\" %}\n{% set classes = [\n  \"card\",\n  layout ? \"card--\" ~ layout : \"\",\n  media == \"imageFit\" ? \"card--image-fit\" : \"\"\n] %}\n\n<{{ element }} \n  class=\"{{ classes|join(' ') }}\"\n  {{ hasProxy ? \"data-ulu-proxy-click\" }}\n  {{ isLink ? \"href='https://www.google.com'\" }}\n>\n  {% if body %}\n    <div class=\"card__body\">\n      {% if title %}\n        <h5 class=\"card__title\">\n          {# If link don't nest link (no link title) #}\n          {% if isLink %}\n            Card Title\n          {% else %}\n            <a \n              class=\"card__title-link\" \n              href=\"https://www.google.com\" \n              {{ hasProxy ? \"data-ulu-proxy-click-source\" }}\n            >\n              Card Title\n            </a>\n          {% endif %}\n        </h5>\n      {% endif %}\n      {% if content %}\n        <div>\n          This is the card content. It can contain around 2-3 sentences.\n        </div>\n      {% endif %}\n    </div>\n  {% endif %}\n\n  {% if hasImage %}\n    <div class=\"card__image\">\n      <img src=\"/frontend/assets/placeholder/image-1.jpg\">\n    </div>\n  {% endif %}\n\n  {% if media == \"icon\" %}\n    <div class=\"card__image card__image--icon\">\n      <img src=\"/frontend/assets/placeholder/icon-calendar.svg\" width=\"150\" height=\"150\">\n    </div>\n  {% endif %}\n\n  {% if footer %}\n    <div class=\"card__footer\">\n      {# If link don't nest link (no link title) #}\n      {% if isLink %}\n        Card Footer Text\n      {% else %}\n        <a class=\"button button--small\" href=\"https://www.yahoo.com/\">Footer</a>\n      {% endif %}\n    </div>\n  {% endif %}\n</{{ element }}>"}
+  </script>
+</div>
 
   </div>
 

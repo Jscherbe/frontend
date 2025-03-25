@@ -78,10 +78,17 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "content-background-color" : ulu.cssvar-use("color-background"),
 ));
 
+// :root {
+//   --test-box-shadow: 0 0 5px red;
+// }
+
 @include ulu.component-popover-set((
+  // "arrow-box-shadow" : false,
+  // "box-shadow" : var(--test-box-shadow),
+  // "arrow-box-shadow-extent" : 5px,
   "background-color": ulu.cssvar-use("color-background"),
   "footer-background-color"      : ulu.cssvar-use("color-header-background"),
-  "box-shadow"                   : 0 0 4px ulu.color-get("box-shadow"),
+  // "box-shadow"                   : 0 0 1px ulu.color-get("box-shadow"),
   "tooltip-background-color": ulu.cssvar-use("color-background")
 ));
 

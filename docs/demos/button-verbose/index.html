@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    ui/overflow-scroller-pager
+    Button Verbose
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -132,8 +132,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -198,9 +198,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/button-verbose/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/button-verbose/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -2045,8 +2045,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -2065,9 +2065,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -2230,9 +2230,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-overflow-scroller-pager/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-overflow-scroller-pager/">
           
     
     <span class="nav-tree__text">
@@ -2618,8 +2618,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -2684,9 +2684,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/button-verbose/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/button-verbose/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -4531,8 +4531,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -4551,9 +4551,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -4716,9 +4716,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-overflow-scroller-pager/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-overflow-scroller-pager/">
           
     
     <span class="nav-tree__text">
@@ -5048,7 +5048,13 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#ui%2Foverflow-scroller-pager.createpager()-%E2%87%92-function">ui/overflow-scroller-pager.createPager() ⇒ function</a>
+                    <li><a href="#default-example">Default Example</a>
+            		</li>
+
+                    <li><a href="#inline-example">Inline Example</a>
+            		</li>
+
+                    <li><a href="#full-width-example">Full Width Example</a>
             		</li>
                 </ol>
             </div>
@@ -5059,21 +5065,35 @@
 			
 			
 			
-  <div class="page__body-top container api-docs">
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Button Verbose</h1>
+
+
+  <hr class="rule rule--light rule--margin-large">
+
     <div class="wysiwyg">
-      <p><a name="module_ui/overflow-scroller-pager"></a></p>
-<h1 id="ui%2Foverflow-scroller-pager" tabindex="-1">ui/overflow-scroller-pager</h1>
-<p><a name="module_ui/overflow-scroller-pager.createPager"></a></p>
-<h2 id="ui%2Foverflow-scroller-pager.createpager()-%E2%87%92-function" tabindex="-1">ui/overflow-scroller-pager.createPager() ⇒ <code>function</code></h2>
-<p>Function to be used in overflow scrollers &quot;amount&quot; option. This function will
-determine how many items can fit in the viewport, taking into account scroll padding left,
-and will set the scroll amount to paginate between items. Items size can be anything
-(ie. one per screen vs 3.5 per screen will both work). This seperated from the plugin
-for tree shaking incase it's unneeded. Currently this is only setup for horizontal scrolling</p>
-<p>Note: This is setup to return the function, incase configuration is needed in the future
-it can be passed to the create function</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/overflow-scroller-pager"><code>ui/overflow-scroller-pager</code></a><br>
-<strong>Returns</strong>: <code>function</code> - A function to be used in overflow scrollers &quot;amount&quot; configuration property</p>
+      <h2 id="default-example" tabindex="-1">Default Example</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. </p>
+<a href="#" class="button-verbose">
+  <strong class="button-verbose__title">Example Link</strong>
+  This is the body
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+</a>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. </p>
+<h2 id="inline-example" tabindex="-1">Inline Example</h2>
+<p class="type-center">
+  <a href="#" class="button-verbose button-verbose--inline">
+    <strong class="button-verbose__title">Example Link</strong>
+    This is the body
+    <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+  </a>
+</p>
+<h2 id="full-width-example" tabindex="-1">Full Width Example</h2>
+<a href="#" class="button-verbose button-verbose--full-width">
+  <strong class="button-verbose__title">Example Link</strong>
+  This is the body
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+</a>
 
     </div>
   </div>
