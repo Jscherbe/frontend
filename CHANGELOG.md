@@ -9,7 +9,7 @@
   - Change new config property "arrow-mask" to "arrow-box-shadow", remove "arrow-mask-" properties as they are no longer needed. When "arrow-box-shadow" is enabled the popovers box-shadow will be used on the arrow along with a mask that has an overlap based on the box-shadow's size.
 - scss/utils
   - Add (is-list, is-map, is-number, is-string, is-color) functions to reduce logic based on type (ie. `if(utils.is-list($value), $something, $something-else))`
-  - 
+  - Add is-even, and is-odd functions
 
 ## Version 0.1.0-beta.29
 

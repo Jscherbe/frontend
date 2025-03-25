@@ -215,10 +215,7 @@ $containers: (
   $breakpoints: map.get($container, "breakpoints");
   
   $width: map.get($container, "width");
-  // @debug $specific-breakpoint;
-  // @if $specific-breakpoint {
-  //   @debug $container;
-  // }
+
   @if ($width == null) {
     $width: 100%;
   }

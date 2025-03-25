@@ -5159,6 +5159,33 @@
 
                     <li><a href="#function-hypotenuse">hypotenuse()</a>
             		</li>
+
+                    <li><a href="#function-box-shadow-info">box-shadow-info()</a>
+            		</li>
+
+                    <li><a href="#function-box-shadow-extent">box-shadow-extent()</a>
+            		</li>
+
+                    <li><a href="#function-is-list">is-list()</a>
+            		</li>
+
+                    <li><a href="#function-is-map">is-map()</a>
+            		</li>
+
+                    <li><a href="#function-is-number">is-number()</a>
+            		</li>
+
+                    <li><a href="#function-is-string">is-string()</a>
+            		</li>
+
+                    <li><a href="#function-is-color">is-color()</a>
+            		</li>
+
+                    <li><a href="#function-is-even">is-even()</a>
+            		</li>
+
+                    <li><a href="#function-is-odd">is-odd()</a>
+            		</li>
                 </ol>
             		</li>
                 </ol>
@@ -5433,8 +5460,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 491-494</li>
-<li><strong>Lines (code):</strong> 496-503</li>
+<li><strong>Lines (comments):</strong> 499-502</li>
+<li><strong>Lines (code):</strong> 504-511</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -6643,12 +6670,20 @@
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
 <li><strong>Lines (comments):</strong> 463-465</li>
-<li><strong>Lines (code):</strong> 467-469</li>
+<li><strong>Lines (code):</strong> 467-477</li>
 </ul>
 </details>
+<h4 id="throw-6" tabindex="-1">Throw</h4>
+<ul>
+<li>Expected number, got #{ $value }</li>
+</ul>
 <h4 id="related-links" tabindex="-1">Related Links</h4>
 <ul>
 <li><a href="https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841">Original source (Miriam Suzanne)</a></li>
+</ul>
+<h4 id="require-15" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-is-number">is-number()</a></li>
 </ul>
 <div class="sassdoc-item-header">
 <h3 id="function-ratio-scale-size" tabindex="-1">ratio-scale-size()</h3>
@@ -6663,8 +6698,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 471-476</li>
-<li><strong>Lines (code):</strong> 478-480</li>
+<li><strong>Lines (comments):</strong> 479-484</li>
+<li><strong>Lines (code):</strong> 486-488</li>
 </ul>
 </details>
 <h4 id="parameters-24" tabindex="-1">Parameters</h4>
@@ -6712,7 +6747,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-15" tabindex="-1">Require</h4>
+<h4 id="require-16" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
 </ul>
@@ -6729,8 +6764,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 482-485</li>
-<li><strong>Lines (code):</strong> 487-489</li>
+<li><strong>Lines (comments):</strong> 490-493</li>
+<li><strong>Lines (code):</strong> 495-497</li>
 </ul>
 </details>
 <h4 id="parameters-25" tabindex="-1">Parameters</h4>
@@ -6786,8 +6821,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 505-509</li>
-<li><strong>Lines (code):</strong> 511-513</li>
+<li><strong>Lines (comments):</strong> 513-517</li>
+<li><strong>Lines (code):</strong> 519-521</li>
 </ul>
 </details>
 <h4 id="parameters-26" tabindex="-1">Parameters</h4>
@@ -6827,6 +6862,480 @@
 </tr>
 </tbody>
 </table>
+<div class="sassdoc-item-header">
+<h3 id="function-box-shadow-info" tabindex="-1">box-shadow-info()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get's the info about a box shadow</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 523-526</li>
+<li><strong>Lines (code):</strong> 528-559</li>
+</ul>
+</details>
+<h4 id="parameters-27" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$shadow</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The box shadow property (ie. 0 0 4px red)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-18" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">Map with info about the shadow with the following keys (inset, offset-x, offset-y, blur, spread, color)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-7" tabindex="-1">Throw</h4>
+<ul>
+<li>Box shadow passed is not correct type (list)</li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-box-shadow-extent" tabindex="-1">box-shadow-extent()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get's the extent (how far the shadow extends past the box's edge)</p>
+<ul>
+<li>This will only work on box-shadows that have matching units for the numbers</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 561-565</li>
+<li><strong>Lines (code):</strong> 567-585</li>
+</ul>
+</details>
+<h4 id="parameters-28" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$shadow</td>
+<td style="text-align:left"><code>List</code></td>
+<td style="text-align:left">The box shadow property (ie. 0 0 4px red)</td>
+</tr>
+<tr>
+<td style="text-align:left">$side</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Optionally pass the side of box to get extend for, if not specified offsets are ignored and just the extent of the shadow is passed</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-19" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">The size the shadow extends past it's box</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-17" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-box-shadow-info">box-shadow-info()</a></li>
+<li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-is-list" tabindex="-1">is-list()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a list</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 587-589</li>
+<li><strong>Lines (code):</strong> 591-593</li>
+</ul>
+</details>
+<h4 id="parameters-29" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-20" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type list</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-map" tabindex="-1">is-map()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a map</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 595-597</li>
+<li><strong>Lines (code):</strong> 599-601</li>
+</ul>
+</details>
+<h4 id="parameters-30" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-21" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type map</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-number" tabindex="-1">is-number()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a number</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 603-605</li>
+<li><strong>Lines (code):</strong> 607-609</li>
+</ul>
+</details>
+<h4 id="parameters-31" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-22" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type number</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-string" tabindex="-1">is-string()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a string</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 611-613</li>
+<li><strong>Lines (code):</strong> 615-617</li>
+</ul>
+</details>
+<h4 id="parameters-32" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-23" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type string</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-color" tabindex="-1">is-color()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a color</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 619-621</li>
+<li><strong>Lines (code):</strong> 623-625</li>
+</ul>
+</details>
+<h4 id="parameters-33" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-24" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type color</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-even" tabindex="-1">is-even()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Returns true if number passed is even</p>
+<ul>
+<li>Allows unit and unitless numbers</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 645-648</li>
+<li><strong>Lines (code):</strong> 650-656</li>
+</ul>
+</details>
+<h4 id="parameters-34" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$number</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The number to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-25" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether or not it is an even number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-8" tabindex="-1">Throw</h4>
+<ul>
+<li>Expected Number, got #{ $number }</li>
+</ul>
+<h4 id="require-18" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-is-number">is-number()</a></li>
+<li><a href="/frontend/sass/core/utils/#function-strip-unit">strip-unit()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-is-odd" tabindex="-1">is-odd()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Returns true if number passed is odd</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 658-660</li>
+<li><strong>Lines (code):</strong> 662-664</li>
+</ul>
+</details>
+<h4 id="parameters-35" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$number</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The number to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-26" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether or not it is an odd number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-19" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-is-even">is-even()</a></li>
+</ul>
 
     </div>
   </div>

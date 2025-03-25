@@ -5101,7 +5101,8 @@
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"arrow-size"</span>                   <span class="pjs-token pjs-punctuation">:</span> 16px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"arrow-mask-overlap"</span>           <span class="pjs-token pjs-punctuation">:</span> 4px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"arrow-box-shadow"</span>             <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"arrow-box-shadow-extent"</span>      <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"background-color"</span>             <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius"</span>                <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color"</span>                        <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
@@ -5136,8 +5137,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 30-60</li>
-<li><strong>Lines (code):</strong> 62-92</li>
+<li><strong>Lines (comments):</strong> 30-61</li>
+<li><strong>Lines (code):</strong> 63-94</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5158,10 +5159,16 @@
 <td style="text-align:left">Size of the dropdown arrow.</td>
 </tr>
 <tr>
-<td style="text-align:left">arrow-mask-overlap</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">4px</td>
-<td style="text-align:left">Size that the mask extends beyond the arrow size (which covers up the arrow box shadow inside the popover content). This should be adjusted based on the size of the box-shadow being used)</td>
+<td style="text-align:left">arrow-box-shadow</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">When true the arrow will get the popover's box shadow. Note if the box shadow is not a list (for example custom property), the mask won't be calculated from the box-shadow (use arrow-box-shadow-extent to specify manually)</td>
+</tr>
+<tr>
+<td style="text-align:left">arrow-box-shadow-extent</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">If set will determine the amount of overlap added to the arrow mask, else it's calculated automatically by the box-shadow option (can be used if box-shadow is custom property)</td>
 </tr>
 <tr>
 <td style="text-align:left">background-color</td>
@@ -5341,8 +5348,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 94-97</li>
-<li><strong>Lines (code):</strong> 99-101</li>
+<li><strong>Lines (comments):</strong> 96-99</li>
+<li><strong>Lines (code):</strong> 101-103</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5381,8 +5388,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 113-115</li>
-<li><strong>Lines (code):</strong> 117-232</li>
+<li><strong>Lines (comments):</strong> 115-117</li>
+<li><strong>Lines (code):</strong> 119-234</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5405,8 +5412,8 @@
 <li><strong>File:</strong> _popover.scss</li>
 <li><strong>Group:</strong> popover</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 103-106</li>
-<li><strong>Lines (code):</strong> 108-111</li>
+<li><strong>Lines (comments):</strong> 105-108</li>
+<li><strong>Lines (code):</strong> 110-113</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>

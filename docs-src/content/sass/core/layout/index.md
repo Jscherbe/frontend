@@ -395,7 +395,7 @@ Print all container styles for a given container
 - **Group:** layout
 - **Type:** mixin
 - **Lines (comments):** 209-211
-- **Lines (code):** 213-241
+- **Lines (code):** 213-238
 
 </details>
 
@@ -442,8 +442,8 @@ Prints clearfix styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 243-243
-- **Lines (code):** 245-256
+- **Lines (comments):** 240-240
+- **Lines (code):** 242-253
 
 </details>
 
@@ -473,8 +473,8 @@ Removes scrollbar with CSS
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 258-258
-- **Lines (code):** 259-265
+- **Lines (comments):** 255-255
+- **Lines (code):** 256-262
 
 </details>
 
@@ -506,8 +506,8 @@ Layout utility for absolute (zero on all sides)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 267-269
-- **Lines (code):** 270-281
+- **Lines (comments):** 264-266
+- **Lines (code):** 267-278
 
 </details>
 

@@ -5048,7 +5048,10 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#version-0.1.0-beta.29-(unreleased)">Version 0.1.0-beta.29 (unreleased)</a>
+                    <li><a href="#version-0.1.0-beta.30-(released)">Version 0.1.0-beta.30 (released)</a>
+            		</li>
+
+                    <li><a href="#version-0.1.0-beta.29">Version 0.1.0-beta.29</a>
             		</li>
 
                     <li><a href="#version-0.1.0-beta.28">Version 0.1.0-beta.28</a>
@@ -5192,7 +5195,27 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
-<h2 id="version-0.1.0-beta.29-(unreleased)" tabindex="-1">Version 0.1.0-beta.29 (unreleased)</h2>
+<h2 id="version-0.1.0-beta.30-(released)" tabindex="-1">Version 0.1.0-beta.30 (released)</h2>
+<ul>
+<li>scss/components/button-verbose
+<ul>
+<li>Add button-verbose__body element</li>
+<li>Allow title-margin to work if body is before title</li>
+</ul>
+</li>
+<li>scss/component/popover
+<ul>
+<li>Change new config property &quot;arrow-mask&quot; to &quot;arrow-box-shadow&quot;, remove &quot;arrow-mask-&quot; properties as they are no longer needed. When &quot;arrow-box-shadow&quot; is enabled the popovers box-shadow will be used on the arrow along with a mask that has an overlap based on the box-shadow's size.</li>
+</ul>
+</li>
+<li>scss/utils
+<ul>
+<li>Add (is-list, is-map, is-number, is-string, is-color) functions to reduce logic based on type (ie. <code>if(utils.is-list($value), $something, $something-else))</code></li>
+<li>Add is-even, and is-odd functions</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0.1.0-beta.29" tabindex="-1">Version 0.1.0-beta.29</h2>
 <ul>
 <li>scss/components/button-verbose
 <ul>

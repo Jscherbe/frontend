@@ -465,7 +465,15 @@ $config: (
 /// @link https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841 Original source (Miriam Suzanne)
 
 @function strip-unit($value) {
-  @return math.div($value, ($value * 0 + 1));
+  @if (is-number($value)) {
+    @if (math.is-unitless($value)) {
+      @return $value;
+    } @else {
+      @return math.div($value, ($value * 0 + 1));
+    }
+  } @else {
+    @error "Expected number, got #{ $value }";
+  }
 }
 
 /// Calculate the size of something at a given scale (percentage/exponential)
@@ -542,11 +550,11 @@ $config: (
     } @else if $type == "number" and $number-index <= 4 {
       // Add each back in by key in the order they appear
       // if not found it's the default
-      $result: map.merge($result, (nth($number-keys, $number-index): $value));
+      $result: map.merge($result, (list.nth($number-keys, $number-index): $value));
       $number-index: $number-index + 1;
     }
   }
-
+  
   @return $result;
 }
 
@@ -616,6 +624,8 @@ $config: (
   @return meta.type-of($value) == "color";
 }
 
+
+
 // /// Determines if value passed is a bool
 // /// @param {*} $value Value to check
 // /// @return {Boolean} Whether the item was type bool
@@ -631,3 +641,24 @@ $config: (
 // @function is-null($value) {
 //   @return meta.type-of($value) == "null";
 // }
+
+/// Returns true if number passed is even
+/// - Allows unit and unitless numbers
+/// @param {Number} $number The number to check
+/// @return {Boolean} Whether or not it is an even number
+
+@function is-even($number) {
+  @if (is-number($number)) {
+    @return strip-unit($number) % 2 == 0;
+  } @else {
+    @error "Expected Number, got #{ $number }";
+  }
+}
+
+/// Returns true if number passed is odd
+/// @param {Number} $number The number to check
+/// @return {Boolean} Whether or not it is an odd number
+
+@function is-odd($number) {
+  @return not is-even($number);
+}

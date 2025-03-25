@@ -291,8 +291,8 @@ Provides user with a fallback for a calc that's just an enhancement
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 491-494
-- **Lines (code):** 496-503
+- **Lines (comments):** 499-502
+- **Lines (code):** 504-511
 
 </details>
 
@@ -1564,10 +1564,15 @@ Strips the unit from the number
 - **Group:** utils
 - **Type:** function
 - **Lines (comments):** 463-465
-- **Lines (code):** 467-469
+- **Lines (code):** 467-477
 
 </details>
 
+    
+
+#### Throw
+
+- Expected number, got #\{ $value }
     
 
 #### Related Links
@@ -1575,6 +1580,11 @@ Strips the unit from the number
 - [Original source (Miriam Suzanne)](https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841)
 
     
+
+#### Require
+
+- [is-number()](/sass/core/utils/#function-is-number)
+  
 
 
 <div class="sassdoc-item-header">
@@ -1600,8 +1610,8 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 471-476
-- **Lines (code):** 478-480
+- **Lines (comments):** 479-484
+- **Lines (code):** 486-488
 
 </details>
 
@@ -1657,8 +1667,8 @@ Convert from pixel to em
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 482-485
-- **Lines (code):** 487-489
+- **Lines (comments):** 490-493
+- **Lines (code):** 495-497
 
 </details>
 
@@ -1708,8 +1718,8 @@ Calculates the hypotenuse of a triangle
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 505-509
-- **Lines (code):** 511-513
+- **Lines (comments):** 513-517
+- **Lines (code):** 519-521
 
 </details>
 
@@ -1758,8 +1768,8 @@ Get's the info about a box shadow
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 515-518
-- **Lines (code):** 520-551
+- **Lines (comments):** 523-526
+- **Lines (code):** 528-559
 
 </details>
 
@@ -1813,8 +1823,8 @@ Get's the extent (how far the shadow extends past the box's edge)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 553-557
-- **Lines (code):** 559-577
+- **Lines (comments):** 561-565
+- **Lines (code):** 567-585
 
 </details>
 
@@ -1869,8 +1879,8 @@ Determines if value passed is a list
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 579-581
-- **Lines (code):** 583-585
+- **Lines (comments):** 587-589
+- **Lines (code):** 591-593
 
 </details>
 
@@ -1918,8 +1928,8 @@ Determines if value passed is a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 587-589
-- **Lines (code):** 591-593
+- **Lines (comments):** 595-597
+- **Lines (code):** 599-601
 
 </details>
 
@@ -1967,8 +1977,8 @@ Determines if value passed is a number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 595-597
-- **Lines (code):** 599-601
+- **Lines (comments):** 603-605
+- **Lines (code):** 607-609
 
 </details>
 
@@ -2016,8 +2026,8 @@ Determines if value passed is a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 603-605
-- **Lines (code):** 607-609
+- **Lines (comments):** 611-613
+- **Lines (code):** 615-617
 
 </details>
 
@@ -2065,8 +2075,8 @@ Determines if value passed is a color
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 611-613
-- **Lines (code):** 615-617
+- **Lines (comments):** 619-621
+- **Lines (code):** 623-625
 
 </details>
 
@@ -2089,5 +2099,120 @@ Determines if value passed is a color
 |Boolean|Whether the item was type color|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  is-even() {#function-is-even}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Returns true if number passed is even
+- Allows unit and unitless numbers
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 645-648
+- **Lines (code):** 650-656
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$number|`Number`|The number to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether or not it is an even number|
+
+    
+
+#### Throw
+
+- Expected Number, got #\{ $number }
+    
+
+#### Require
+
+- [is-number()](/sass/core/utils/#function-is-number)
+- [strip-unit()](/sass/core/utils/#function-strip-unit)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  is-odd() {#function-is-odd}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Returns true if number passed is odd
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 658-660
+- **Lines (code):** 662-664
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$number|`Number`|The number to check|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether or not it is an odd number|
+
+    
+
+#### Require
+
+- [is-even()](/sass/core/utils/#function-is-even)
+  
   
   
