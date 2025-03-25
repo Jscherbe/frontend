@@ -50,8 +50,8 @@ $config: (
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** variable
-- **Lines (comments):** 12-15
-- **Lines (code):** 17-20
+- **Lines (comments):** 13-16
+- **Lines (code):** 18-21
 
 </details>
 
@@ -96,8 +96,8 @@ Change modules $config
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 22-25
-- **Lines (code):** 27-29
+- **Lines (comments):** 23-26
+- **Lines (code):** 28-30
 
 </details>
 
@@ -155,8 +155,8 @@ Output component stylesheet
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** mixin
-- **Lines (comments):** 40-42
-- **Lines (code):** 44-66
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-63
 
 </details>
 
@@ -210,8 +210,8 @@ Get a config option
 - **File:** _vignette.scss
 - **Group:** vignette
 - **Type:** function
-- **Lines (comments):** 31-34
-- **Lines (code):** 36-38
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
 
 </details>
 

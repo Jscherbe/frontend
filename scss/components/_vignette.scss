@@ -8,6 +8,7 @@
 @use "sass:map";
 @use "../utils";
 @use "../selector";
+@use "../layout";
 
 /// Module Settings
 /// @type Map
@@ -49,11 +50,7 @@ $config: (
     &::after {
       content: "";
       display: block;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      @include layout.absolute-fill();
       background: linear-gradient(0deg,color.change(get("background-color"), $alpha: 0.8),color.change(get("background-color"), $alpha: 0) 45%);
       pointer-events: none;
     }

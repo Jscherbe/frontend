@@ -10,6 +10,7 @@
 @use "../utils";
 @use "../selector";
 @use "../color";
+@use "../layout";
 
 // todo
 // sass color adjust for smooth transition. Add a comment for this if we can’t get to this
@@ -210,12 +211,8 @@ $config: (
 
     // Border is on pseudo so that it's on top of image/etc
     &::after {
-      position: absolute;
+      @include layout.absolute-fill();
       content: if(get("border"), "", null);
-      top: 0; 
-      bottom: 0; 
-      right: 0; 
-      left: 0;
       border: get("border");
       border-radius: get("border-radius");
       z-index: 4;
@@ -293,11 +290,7 @@ $config: (
   }
   #{ $prefix }__image img,
   #{ $prefix}__image-media {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include layout.absolute-fill(true);
     border: 0;
     object-fit: cover;
     transform-origin: center center;
@@ -407,11 +400,7 @@ $config: (
       color: color.get(get("color-overlay"));
     }
     #{ $prefix }__image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
+      @include layout.absolute-fill();
       overflow: hidden;
       padding-top: 0;
       background-color: color.get(rgb(255, 255, 255));
@@ -425,12 +414,8 @@ $config: (
         border: 0;
         object-fit: cover;
         &::before {
-          position: absolute;
+          @include layout.absolute-fill(true);
           display: block;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
           background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
         }
       }

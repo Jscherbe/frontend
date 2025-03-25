@@ -59,8 +59,8 @@ $config: (
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** variable
-- **Lines (comments):** 15-25
-- **Lines (code):** 27-40
+- **Lines (comments):** 16-26
+- **Lines (code):** 28-41
 
 </details>
 
@@ -112,8 +112,8 @@ Change modules $config
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 42-45
-- **Lines (code):** 47-49
+- **Lines (comments):** 43-46
+- **Lines (code):** 48-50
 
 </details>
 
@@ -171,8 +171,8 @@ Prints component styles
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** mixin
-- **Lines (comments):** 60-62
-- **Lines (code):** 64-192
+- **Lines (comments):** 61-63
+- **Lines (code):** 65-185
 
 </details>
 
@@ -226,8 +226,8 @@ Get a config option
 - **File:** _hero.scss
 - **Group:** hero
 - **Type:** function
-- **Lines (comments):** 51-54
-- **Lines (code):** 56-58
+- **Lines (comments):** 52-55
+- **Lines (code):** 57-59
 
 </details>
 

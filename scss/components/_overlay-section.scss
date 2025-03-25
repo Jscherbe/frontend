@@ -9,6 +9,7 @@
 @use "../utils";
 @use "../breakpoint";
 @use "../color";
+@use "../layout";
 
 /// Module Settings
 /// @type Map
@@ -81,11 +82,7 @@ $config: (
     }
   }
   .overlay-section__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    @include layout.absolute-fill();
     img, 
     video {
       object-fit: cover;

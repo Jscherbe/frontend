@@ -1,4 +1,5 @@
 SCSS Todos:
+  ☐ Consider exposing a utility mixin in list-lines for manually printing the styles when needed (compression, used in places we can't add classes)
   ☐ Update pseudo selectors to new double color syntax
     * We don't support any browsers that still use the original syntax
     * update to modern before and after psuedo element for colons (switch to double colons)
@@ -6,6 +7,15 @@ SCSS Todos:
     ☐ Make left cap styles an element mixin (so they can be compressed)
     ☐ Apply the absolute-fill mixin
       * check all uses of position absolute to see if they are using these styles. If so, we can replace that with this mixin.
+      * not site-modal. doesn't have bottom or 100% 
+      list:
+        ✔ card.scss @done
+          * multiple
+        ✔ ratio-box @done
+        ✔ hero @done
+          * multiple
+        ✔ overlay-section @done
+        ☐ vignette
   ✔ Popover - Make setting to disable the masked box-shadow arrow @done
     * Incase it's not needed
     ✔ Or/and make the mask size calculated from box-shadow width @done

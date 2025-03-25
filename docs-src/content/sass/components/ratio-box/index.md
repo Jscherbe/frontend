@@ -54,8 +54,8 @@ $config: (
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** variable
-- **Lines (comments):** 9-12
-- **Lines (code):** 14-21
+- **Lines (comments):** 10-13
+- **Lines (code):** 15-22
 
 </details>
 
@@ -100,8 +100,8 @@ Change modules $config
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** mixin
-- **Lines (comments):** 23-26
-- **Lines (code):** 28-30
+- **Lines (comments):** 24-27
+- **Lines (code):** 29-31
 
 </details>
 
@@ -159,8 +159,8 @@ Prints component styles
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** mixin
-- **Lines (comments):** 41-43
-- **Lines (code):** 45-64
+- **Lines (comments):** 42-44
+- **Lines (code):** 46-61
 
 </details>
 
@@ -214,8 +214,8 @@ Get a config option
 - **File:** _ratio-box.scss
 - **Group:** ratio-box
 - **Type:** function
-- **Lines (comments):** 32-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 33-36
+- **Lines (code):** 38-40
 
 </details>
 
