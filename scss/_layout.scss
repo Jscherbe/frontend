@@ -240,7 +240,7 @@ $containers: (
 /// Prints clearfix styles
 
 @mixin clearfix() {
-  &:before,
+  &::before,
   &:after {
     content: "";
     display: table;

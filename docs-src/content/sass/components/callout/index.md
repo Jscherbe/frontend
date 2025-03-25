@@ -217,8 +217,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 113-115
-- **Lines (code):** 117-164
+- **Lines (comments):** 102-104
+- **Lines (code):** 106-152
 
 </details>
 

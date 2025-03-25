@@ -99,17 +99,6 @@ $styles: (
   $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
 
-@mixin -left-cap($color: get("left-cap-color")) {
-  $left-padding: get-spacing-left(get("padding"));
-  position: relative; 
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: get("left-cap-width") + $left-padding;
-  &::before {
-    content: "";
-  }
-}
-
 /// Output component stylesheet
 /// @example scss
 ///  @include ulu.component-callout-styles();
@@ -137,12 +126,10 @@ $styles: (
     }
     @if get("left-cap") {
       @include -left-cap();
-      &::before {
-        content: "";
-      }
     }
   }
   @each $name, $style in $styles {
+    $left-cap-color: map.get($style, "left-cap-color");
     #{ $prefix }--#{ $name } {
       background-color: color.get(map.get($style, "background-color")); 
       color: color.get(map.get($style, "color")); 
@@ -151,14 +138,26 @@ $styles: (
       border-color: color.get(map.get($style, "border-color")); 
       box-shadow: map.get($style, "box-shadow"); 
       padding: map.get($style, "padding"); 
-      &::before {
-        background-color: color.get(map.get($style, "left-cap-color"));
-      }
-      @if map.get($style, "left-cap") {
-        @if not get("left-cap") {
-          @include -left-cap();
+      @if $left-cap-color {
+        &::before {
+          background-color: color.get($left-cap-color);
         }
       }
+      @if map.get($style, "left-cap") and not get("left-cap") {
+        // if current style has left cap and the global callout does not. This prevents duplicate styles printing.
+        @include -left-cap();
+      }
     }
+  }
+}
+
+@mixin -left-cap() {
+  $left-padding: get-spacing-left(get("padding"));
+  position: relative; 
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: get("left-cap-width") + $left-padding;
+  &::before {
+    content: "";
   }
 }

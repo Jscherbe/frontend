@@ -124,7 +124,7 @@ $config: (
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     // Icons that share pseudos for strokes
-    &:before,
+    &::before,
     &:after {
       // content: "";
       display: block;
@@ -188,7 +188,7 @@ $config: (
   
   .css-icon--circle-info,
   .css-icon--circle-question {
-    &:before {
+    &::before {
       content: "i";
       text-align: center;
       font-size: get("text-size");
@@ -208,7 +208,7 @@ $config: (
     }
   }
   .css-icon--circle-question { 
-    &:before {
+    &::before {
       content: "?";
     }
   }
@@ -229,7 +229,7 @@ $config: (
     clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
   }
   [class*="css-icon--arrow"] {
-    &:before {
+    &::before {
       content: "";
       width: 70%;
       left: 0;
@@ -246,7 +246,7 @@ $config: (
   }
   [class*="css-icon--angle"] {
     transform: rotate(135deg);
-    &:before,
+    &::before,
     &:after {
       content: "";
       top: 30%;
@@ -285,7 +285,7 @@ $config: (
 
   .css-icon--plus,
   .css-icon--plus-to-minus {
-    &:before {
+    &::before {
       transform: translateX(-50%) rotate(90deg);
     }
     &:after {
@@ -293,7 +293,7 @@ $config: (
     }
   }
   .css-icon--minus {
-    &:before {
+    &::before {
       content: none;
     }
     &:after {
@@ -301,7 +301,7 @@ $config: (
     }
   }
   .css-icon--close {
-    &:before {
+    &::before {
       transform: translate(-50%) rotate(45deg);
     }
     &:after {
@@ -429,7 +429,7 @@ $config: (
         transition: none;
         transform: translate(-50%) rotate(-45deg);
       }
-      &:before {
+      &::before {
         box-shadow: none;
         transform: translate(-50%) rotate(45deg);
       }

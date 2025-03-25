@@ -83,7 +83,7 @@ $config: (
   #{ $prefix }__body {
     line-height: get("body-line-height");
     @if (get("quote-mark-enabled")) {
-      &:before {
+      &::before {
         display: block;
         position: relative;
         // content: open-quote;

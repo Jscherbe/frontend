@@ -251,14 +251,14 @@ $config: (
     visibility: hidden;
     z-index: 1;
     &,
-    &:before {
+    &::before {
       display: block;
       position: absolute;
       width: $size;
       height: $size;
       background: inherit;
     }
-    &:before {
+    &::before {
       visibility: visible;
       content: '';
       transform: rotate(45deg);
@@ -279,7 +279,7 @@ $config: (
   // Account for footer and change arrow color when positioned next to it
   #{ $prefix }__footer ~ #{ $prefix }__arrow {
     [data-placement^="top"] > & {
-      &:before {
+      &::before {
         background-color: get("footer-background-color");
       }
     }
@@ -311,7 +311,7 @@ $config: (
     visibility: hidden;
     z-index: 1;
     &,
-    &:before,
+    &::before,
     &:after {
       display: block;
       position: absolute;
@@ -319,12 +319,12 @@ $config: (
       height: $size;
       background: inherit;
     }
-    &:before,
+    &::before,
     &:after {
       visibility: visible;
       content: '';
     }
-    &:before {
+    &::before {
       box-shadow: get("box-shadow");
       transform: rotate(45deg);
     }
@@ -355,7 +355,7 @@ $config: (
   // Account for footer and change arrow color when positioned next to it
   #{ $prefix }__footer ~ #{ $prefix }__arrow {
     [data-placement^="top"] > & {
-      &:before,
+      &::before,
       &:after {
         background-color: get("footer-background-color");
       }

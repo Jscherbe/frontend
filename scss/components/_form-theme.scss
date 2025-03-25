@@ -355,7 +355,7 @@ $config: (
     transition: background-color 220ms ease-in-out;
     flex: 0 0 $input-touch-size; // When used in flex container
     // Box / Circle (centered absolute)
-    &:before {
+    &::before {
       content: '';
       display: block;
       position: absolute;
@@ -386,7 +386,7 @@ $config: (
     }
     &:focus {
       background-color: color.get(get("check-input-touch-color-focus"));
-      &:before {
+      &::before {
         border-color: color.get(get("check-input-border-color-focus"));
         outline: get("check-input-outline-focus");
       }
@@ -396,7 +396,7 @@ $config: (
     }
     &:hover {
       background-color: color.get(get("check-input-touch-color-hover"));
-      &:before {
+      &::before {
         outline: get("check-input-outline-hover");
         background-color: color.get(get("check-input-background-color-hover"));
         border-color: color.get(get("check-input-border-color-hover"));
@@ -406,7 +406,7 @@ $config: (
       }
     }
     &:checked {
-      &:before {
+      &::before {
         background-color: color.get(get("check-input-background-color-checked"));
         border-color: color.get(get("check-input-border-color-checked"));
         outline: get("check-input-outline-checked");
@@ -427,7 +427,7 @@ $config: (
     }
   }
   [type="checkbox"] {
-    &:before {
+    &::before {
       border-radius: -fallback("check-input-border-radius", "input-border-radius");
     }
     &:after {
@@ -443,7 +443,7 @@ $config: (
     }
     &:indeterminate,
     &[aria-checked=mixed] {
-      &:before {
+      &::before {
         background-color: color.get(get("check-input-background-color-indeterminate"));
         border-color: color.get(get("check-input-border-color-indeterminate"));
       }

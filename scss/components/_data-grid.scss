@@ -155,7 +155,7 @@ $config: (
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
   $select-item: '[#{ $attribute-item }]';
-  $select-rule-col: ":before";
+  $select-rule-col: "::before";
   $select-rule-row: ":after";
   $select-container: "[#{ $container-attribute }]";
   // These through off syntax highlighting when inside interpolation

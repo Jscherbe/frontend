@@ -220,7 +220,7 @@ $sizes: (
 /// - Breakpoints always min-width (upwards) for javascript setup
 
 @mixin embed-for-scripts() {
-  &:before {
+  &::before {
     display: none;
     content: get("null-name");
     @each $size, $breakpoint in $sizes {

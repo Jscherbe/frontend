@@ -165,66 +165,66 @@ $config: (
 |item-border-radius|Dimension|null|Border radius for __item.|
 |item-highlight-width|Dimension|6px|Width of the item box highlight.|
 |required-color|Color|"danger"|Color for required text.|
-|text-input-margin-bottom|Dimension|0.5em||
-|text-input-margin-top|Dimension|1em||
-|warning-color|Color|"warning"||
-|warning-highlight-color|Color|rgb(255, 249, 237)||
-|warning-selector|String|".is-warning"||
-|check-input-color|Color|currentColor||
-|check-input-size|Dimension|1.15em||
-|check-input-touch-size|Dimension|2em||
-|check-input-background-color|Color|white||
-|check-input-background-color-checked|Color|white||
-|check-input-background-color-hover|Color|white||
-|check-input-background-color-indeterminate|Color|white||
+|text-input-margin-bottom|Dimension|0.5em|Bottom margin for the label.|
+|text-input-margin-top|Dimension|1em|Top margin for the label.|
+|warning-color|Color|"warning"|The warning text color.|
+|warning-highlight-color|Color|rgb(255, 249, 237)|Outline color of the warning.|
+|warning-selector|String|".is-warning"|Selector for adding warning styles.|
+|check-input-color|Color|currentColor|@joe-check unused|
+|check-input-size|Dimension|1.15em|Size of input box.|
+|check-input-touch-size|Dimension|2em|Touchable size of the input box.|
+|check-input-background-color|Color|white|Background color for the check input.|
+|check-input-background-color-checked|Color|white|Background color for the check input when checked.|
+|check-input-background-color-hover|Color|white|Background color for the check input when hovered or focused.|
+|check-input-background-color-indeterminate|Color|white|Background color for the indeterminate check input.|
 |check-input-border|Map|null|@joe-check check how this is called with a fallback in the styles mixin|
-|check-input-border-color-hover|Color|null||
-|check-input-border-color-checked|Color|null||
-|check-input-border-color-indeterminate|Color|null||
-|check-input-border-color-focus|Color|null||
-|check-input-outline|Map|null||
-|check-input-outline-hover|Map|null||
-|check-input-outline-checked|Map|null||
-|check-input-outline-focus|Map|1px solid white||
-|check-input-touch-color-hover|Map|#e8e8e8||
-|check-input-touch-color-focus|Map|null||
-|check-input-radio-size|Map|0.3em||
-|check-input-checkmark-width|Map|0.38em||
-|check-input-checkmark-height|Map|0.68em||
-|check-input-checkmark-offset-y|Map|-0.2em||
-|check-input-checkmark-stroke-size|Map|0.18em||
-|check-input-mark-color|Map|currentColor||
-|check-input-mark-color-hover|Map|null||
-|check-input-mark-color-focus|Map|null||
-|check-input-mark-color-checked|Map|null||
-|check-input-mark-color-indeterminate|Map|null||
-|check-input-disabled-opacity|Map|0.6||
-|check-input-border-radius|Map|null||
-|description-color|Map|false||
-|description-margin|Map|(0.25em 0)||
-|description-max-width|Map|25em||
+|check-input-border-color-hover|Color|null|Check input border color.|
+|check-input-border-color-checked|Color|null|Check input border color when checked.|
+|check-input-border-color-indeterminate|Color|null|Indeterminate check input border color.|
+|check-input-border-color-focus|Color|null|Check input border color when hovered or focused.|
+|check-input-outline|CssValue|null|Check input outline.|
+|check-input-outline-hover|CssValue|null||
+|check-input-outline-checked|CssValue|null||
+|check-input-outline-focus|CssValue|1px solid white||
+|check-input-touch-color-hover|Color|#e8e8e8||
+|check-input-touch-color-focus|Color|null||
+|check-input-radio-size|Dimension|0.3em||
+|check-input-checkmark-width|Dimension|0.38em||
+|check-input-checkmark-height|Dimension|0.68em||
+|check-input-checkmark-offset-y|Dimension|-0.2em||
+|check-input-checkmark-stroke-size|Dimension|0.18em||
+|check-input-mark-color|Color|currentColor||
+|check-input-mark-color-hover|Color|null||
+|check-input-mark-color-focus|Color|null||
+|check-input-mark-color-checked|Color|null||
+|check-input-mark-color-indeterminate|Color|null||
+|check-input-disabled-opacity|Number|0.6||
+|check-input-border-radius|Dimension|null||
+|description-color|Color|false||
+|description-margin|CssValue|(0.25em 0)||
+|description-max-width|Dimension|25em||
 |description-line-height|Number|true|Line height for description element, defaults to typograpahy line-height-dense|
-|fieldset-background|Map|transparent||
-|fieldset-border|Map|none||
-|fieldset-margin-bottom|Map|1rem||
-|fieldset-margin-top|Map|1rem||
-|fieldset-padding|Map|0||
-|fieldset-margin-compact|Map|0||
-|fieldset-border-bottom|Map|0||
-|fieldset-border-radius|Map|0||
-|fieldset-legend-color|Map|inherit||
-|fieldset-legend-border-bottom|Map|null||
-|fieldset-legend-padding-bottom|Map|null||
-|select-border-radius|Map|4px||
-|select-background-color|Map|null||
-|select-border|Map|null||
-|select-padding-x|Map|null||
-|select-padding-y|Map|null||
-|select-image|Map|null||
-|select-image-size|Map|0.9em||
-|select-image-offset|Map|0.7em||
-|select-image-margin|Map|0.65em||
-|inline-gap|Unit|1em|Gap between items that are inline like checkboxes|
+|fieldset-background|Color|transparent||
+|fieldset-border|CssValue|none||
+|fieldset-margin-bottom|Dimension|1rem||
+|fieldset-margin-top|Dimension|1rem||
+|fieldset-padding|Dimension|0||
+|fieldset-margin-compact|Dimension|0||
+|fieldset-border-bottom|Dimension|0||
+|fieldset-border-radius|Dimension|0||
+|fieldset-legend-color|Color|inherit||
+|fieldset-legend-border-bottom|Dimension|null||
+|fieldset-legend-padding-bottom|Dimension|null||
+|select-border-radius|Dimension|4px||
+|select-background-color|Color|null||
+|select-border|CssValue|null||
+|select-padding-x|Dimension|null||
+|select-padding-y|Dimension|null||
+|select-image|CssValue|null||
+|select-image-size|Dimension|0.9em||
+|select-image-offset|Dimension|0.7em||
+|select-image-margin|Dimension|0.65em||
+|inline-gap|Dimension|1em|Gap between items that are inline like checkboxes|
 
     
   
