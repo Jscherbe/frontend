@@ -121,7 +121,7 @@ $config: (
     justify-content: center;
     text-align: center;
     font-family: arial;
-    &:after {
+    &::after {
       display: inline-block;
       margin-top: 0.1em;
       content: "\002B";
@@ -145,7 +145,7 @@ $config: (
       }
     }
     &[open] > summary .site-details__icon {
-      &:after {
+      &::after {
         // @include icon.content(icon.$fa-var-minus);
         content: "\2212"; // Minus
       }

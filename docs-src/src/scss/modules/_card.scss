@@ -51,7 +51,7 @@ $config: (
     max-width: get("max-width");
     // Hover states only possible with click proxy
     @if (get("border") or get("border-hover") or get("overlay-background-color-hover")) {
-      &:after {
+      &::after {
         position: absolute;
         content: if(get("border"), "", false);
         top: 0; 
@@ -71,7 +71,7 @@ $config: (
         color: get("color-hover");
         box-shadow: get("box-shadow-hover");
         @if (get("border-hover") or get("overlay-background-color-hover")) {
-          &:after {
+          &::after {
             content: "";
             border: get("border-hover");
             background-color: get("overlay-background-color-hover")

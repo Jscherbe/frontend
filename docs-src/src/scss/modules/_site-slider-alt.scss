@@ -96,7 +96,7 @@ $config: (
       width: 1.8rem;
       height: 1.8rem;
       padding: 4px;
-      &:before {
+      &::before {
         content: '';
         display: block;
         position: absolute;
@@ -112,7 +112,7 @@ $config: (
       &:hover {
         background-color: black;
       }
-      // &:after {
+      // &::after {
       //   width: 0.5rem;
       //   height: 0.5rem;
       //   background-color: white;
@@ -121,7 +121,7 @@ $config: (
     }
     .Slider__nav-button--active {
       background-color: black;
-      &:before {
+      &::before {
         border-color: white;
         background-color: ulu.color-get("selected");
       }

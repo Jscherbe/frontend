@@ -166,7 +166,7 @@ $config: (
       transition: background-color 220ms ease-in-out;
       flex: 0 0 $input-touch-size; // When used in flex container
       // Box / Circle (centered absolute)
-      &:before {
+      &::before {
         content: '';
         display: block;
         position: absolute;
@@ -184,7 +184,7 @@ $config: (
         transform: translate(-50%, -50%);
       }
       // Checkmark/ radio
-      &:after {
+      &::after {
         content: '';
         display: block;
         position: relative;
@@ -197,32 +197,32 @@ $config: (
       }
       &:focus {
         background-color: get("check-input-touch-color-focus");
-        &:before {
+        &::before {
           border-color: get("check-input-border-color-focus");
           outline: get("check-input-outline-focus");
         }
-        &:after {
+        &::after {
           border-color: get("check-input-mark-color-focus");
         }
       }
       &:hover {
         background-color: get("check-input-touch-color-hover");
-        &:before {
+        &::before {
           outline: get("check-input-outline-hover");
           background-color: get("check-input-background-color-hover");
           border-color: get("check-input-border-color-hover");
         }
-        &:after {
+        &::after {
           border-color: get("check-input-mark-color-hover");
         }
       }
       &:checked {
-        &:before {
+        &::before {
           background-color: get("check-input-background-color-checked");
           border-color: get("check-input-border-color-checked");
           outline: get("check-input-outline-checked");
         }
-        &:after {
+        &::after {
           opacity: 1;
           border-color: get("check-input-mark-color-checked");
         }
@@ -238,10 +238,10 @@ $config: (
       }
     }
     [type="checkbox"] {
-      &:before {
+      &::before {
         border-radius: -fallback("check-input-border-radius", "input-border-radius");
       }
-      &:after {
+      &::after {
         border-radius: 0;
         width: get("check-input-checkmark-width");
         height: get("check-input-checkmark-height");
@@ -254,11 +254,11 @@ $config: (
       }
       &:indeterminate,
       &[aria-checked=mixed] {
-        &:before {
+        &::before {
           background-color: get("check-input-background-color-indeterminate");
           border-color: get("check-input-border-color-indeterminate");
         }
-        &:after {
+        &::after {
           border-right: none;
           transform: translatey(50%);
           opacity: 1;

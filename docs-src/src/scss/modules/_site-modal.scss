@@ -149,7 +149,7 @@ $config: (
       color: get("close-color-hover");
     }
     // @if get("close-icon") {
-    //   &:before {
+    //   &::before {
     //     @include icon.solid(get("close-icon"));
     //   }
     // }
@@ -171,7 +171,7 @@ $config: (
     transition-delay: 100ms; 
     color: get("resizer-color");
     // @if get("resizer-icon") {
-    //   &:before {
+    //   &::before {
     //     @include icon.solid(get("resizer-icon"));
     //   }
     // }

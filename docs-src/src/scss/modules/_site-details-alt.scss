@@ -75,7 +75,7 @@ $config: (
       list-style: none; // Remove the default arrow (old safari?)
       cursor: pointer;
       // Focus / hover since summary is transparent style
-      &:after {
+      &::after {
         content: "";
         position: absolute;
         display: block;
@@ -87,12 +87,12 @@ $config: (
         transition: 200ms background-color ease-in;
       }
       &:hover {
-        &:after {
+        &::after {
           background-color: get("hover-border-color");
         }
       }
       &:focus {
-        &:after {
+        &::after {
           transition: none;
           background-color: get("focus-border-color");
         }
@@ -131,7 +131,7 @@ $config: (
     justify-content: center;
     text-align: center;
     font-family: arial;
-    &:after {
+    &::after {
       display: inline-block;
       margin-top: 0.1em;
       content: "\002B";
@@ -155,7 +155,7 @@ $config: (
       }
     }
     &[open] > summary .site-details__icon {
-      &:after {
+      &::after {
         // @include icon.content(icon.$fa-var-minus);
         content: "\2212"; // Minus
       }
@@ -172,7 +172,7 @@ $config: (
       margin: 0;
       &:hover,
       &:focus {
-        &:after {
+        &::after {
           content: none;
         }
       }
@@ -182,7 +182,7 @@ $config: (
       > summary {
         margin-bottom: 0.5em;
       }
-      &:after {
+      &::after {
         content: none;
       } 
     }
