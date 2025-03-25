@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Update pseudo selectors to new double color syntax
+    * We don't support any browsers that still use the original syntax
   ☐ Bundle Size Reduction
     ☐ Make left cap styles an element mixin (so they can be compressed)
     ☐ Apply the absolute-fill mixin
