@@ -156,7 +156,7 @@ $config: (
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
   $select-item: '[#{ $attribute-item }]';
   $select-rule-col: "::before";
-  $select-rule-row: ":after";
+  $select-rule-row: "::after";
   $select-container: "[#{ $container-attribute }]";
   // These through off syntax highlighting when inside interpolation
   $position-class-column-first: get("position-class-column-first");

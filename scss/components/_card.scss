@@ -209,7 +209,7 @@ $config: (
     overflow: hidden; 
 
     // Border is on pseudo so that it's on top of image/etc
-    &:after {
+    &::after {
       position: absolute;
       content: if(get("border"), "", null);
       top: 0; 
@@ -229,7 +229,7 @@ $config: (
     box-shadow: get("box-shadow-hover");
     
     @if (get("border-hover") or get("overlay-background-color-hover")) {
-      &:after {
+      &::after {
         content: "";
         border: get("border-hover");
         background-color: color.get(get("overlay-background-color-hover"));

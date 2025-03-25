@@ -241,13 +241,13 @@ $containers: (
 
 @mixin clearfix() {
   &::before,
-  &:after {
+  &::after {
     content: "";
     display: table;
     flex-basis: 0; // Flexbox, clear fix for pseudo elements in Safari
     order: 1;
   }
-  &:after { 
+  &::after { 
     clear: both; 
   }
 }

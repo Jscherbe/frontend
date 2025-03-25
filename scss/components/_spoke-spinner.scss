@@ -96,7 +96,7 @@ $styles: () !default;
     transform-origin: $sizeHalf $sizeHalf;
     animation: UluFadeOut get("duration") linear infinite;
   }
-  #{ $prefix }__spinner div:after {
+  #{ $prefix }__spinner div::after {
     content: " ";
     display: block;
     position: absolute;
@@ -181,7 +181,7 @@ $styles: () !default;
         transform-origin: $sizeHalf $sizeHalf;
         animation-duration: map.get($merged, "duration");
       }
-      #{ $prefix }__spinner div:after {
+      #{ $prefix }__spinner div::after {
         left: $sizeHalf - $spoke-widthHalf;
         width: $spoke-width;
         height: map.get($merged, "spoke-height");

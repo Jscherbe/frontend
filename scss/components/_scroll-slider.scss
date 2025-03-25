@@ -124,7 +124,7 @@ $config: (
     @include layout.match-container-margin("scroll-padding-left", get("container"));
     // padding: 1rem;
     // Add space to end of list
-    // &:after {
+    // &::after {
     //   content: "\00a0";
     //   display: block;
     //   width: 1rem;

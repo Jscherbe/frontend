@@ -373,7 +373,7 @@ $config: (
       transform: translate(-50%, -50%);
     }
     // Checkmark/ radio
-    &:after {
+    &::after {
       content: '';
       display: block;
       position: relative;
@@ -390,7 +390,7 @@ $config: (
         border-color: color.get(get("check-input-border-color-focus"));
         outline: get("check-input-outline-focus");
       }
-      &:after {
+      &::after {
         border-color: color.get(get("check-input-mark-color-focus"));
       }
     }
@@ -401,7 +401,7 @@ $config: (
         background-color: color.get(get("check-input-background-color-hover"));
         border-color: color.get(get("check-input-border-color-hover"));
       }
-      &:after {
+      &::after {
         border-color: color.get(get("check-input-mark-color-hover"));
       }
     }
@@ -411,7 +411,7 @@ $config: (
         border-color: color.get(get("check-input-border-color-checked"));
         outline: get("check-input-outline-checked");
       }
-      &:after {
+      &::after {
         opacity: 1;
         border-color: color.get(get("check-input-mark-color-checked"));
       }
@@ -430,7 +430,7 @@ $config: (
     &::before {
       border-radius: -fallback("check-input-border-radius", "input-border-radius");
     }
-    &:after {
+    &::after {
       border-radius: 0;
       width: get("check-input-checkmark-width");
       height: get("check-input-checkmark-height");
@@ -447,7 +447,7 @@ $config: (
         background-color: color.get(get("check-input-background-color-indeterminate"));
         border-color: color.get(get("check-input-border-color-indeterminate"));
       }
-      &:after {
+      &::after {
         border-right: none;
         transform: translatey(50%);
         opacity: 1;

@@ -198,7 +198,7 @@ $config: (
       color: color.get(get("title-color-image"));
       @if(get("bottom-shadow")) {
         // bottom position includes padding so that the shadow 
-        &:after {
+        &::after {
           content: '';
           display: block;
           position: absolute;

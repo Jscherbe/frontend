@@ -125,7 +125,7 @@ $config: (
     -webkit-font-smoothing: antialiased;
     // Icons that share pseudos for strokes
     &::before,
-    &:after {
+    &::after {
       // content: "";
       display: block;
       position: absolute;
@@ -235,7 +235,7 @@ $config: (
       left: 0;
     }
     // Note triangle clip-path is defined above with the solid triangle
-    &:after {
+    &::after {
       content: "";
       border-radius: 0;
       height: 100%;
@@ -247,7 +247,7 @@ $config: (
   [class*="css-icon--angle"] {
     transform: rotate(135deg);
     &::before,
-    &:after {
+    &::after {
       content: "";
       top: 30%;
       left: 30%;
@@ -255,14 +255,14 @@ $config: (
       transform: none;
       margin-top: 0;
     }
-    &:after {
+    &::after {
       width: $stroke-width;
       height: 70%;
     }
   }
   @include for-each-stroke() using ($alt-width, $alt-border-radius) {
     &[class*="css-icon--angle"] {
-      &:after {
+      &::after {
         width: $alt-width;
       }
     }
@@ -288,7 +288,7 @@ $config: (
     &::before {
       transform: translateX(-50%) rotate(90deg);
     }
-    &:after {
+    &::after {
       transform: translateX(-50%);
     }
   }
@@ -296,7 +296,7 @@ $config: (
     &::before {
       content: none;
     }
-    &:after {
+    &::after {
       transform: translateX(-50%);
     }
   }
@@ -304,7 +304,7 @@ $config: (
     &::before {
       transform: translate(-50%) rotate(45deg);
     }
-    &:after {
+    &::after {
       transform: translate(-50%) rotate(-45deg);
     }
   }

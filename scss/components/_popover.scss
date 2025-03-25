@@ -312,7 +312,7 @@ $config: (
     z-index: 1;
     &,
     &::before,
-    &:after {
+    &::after {
       display: block;
       position: absolute;
       width: $size;
@@ -320,7 +320,7 @@ $config: (
       background: inherit;
     }
     &::before,
-    &:after {
+    &::after {
       visibility: visible;
       content: '';
     }
@@ -329,7 +329,7 @@ $config: (
       transform: rotate(45deg);
     }
     // Masking shape
-    &:after {
+    &::after {
       top: 50%;
       left: 50%;
       transform: translateX(-50%);
@@ -356,7 +356,7 @@ $config: (
   #{ $prefix }__footer ~ #{ $prefix }__arrow {
     [data-placement^="top"] > & {
       &::before,
-      &:after {
+      &::after {
         background-color: get("footer-background-color");
       }
     }
