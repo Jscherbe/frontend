@@ -117,7 +117,7 @@ $styles: (
       margin-top: 0;
     }
     @if get("left-cap") {
-      padding-left: calc(get("left-cap-width") + get-spacing-left(get("padding")));
+      padding-left: calc(get("left-cap-width") + utils.get-spacing-left(get("padding")));
       @include layout.left-cap(
         $cap-color: get("left-cap-color"), 
         $cap-width: get("left-cap-width"),
@@ -144,7 +144,7 @@ $styles: (
         // Uses default options if the style does not have unique options
         $cap-width: if(map.get($style, "left-cap-width"), map.get($style, "left-cap-width"), get("left-cap-width"));
         $offset: if(map.get($style, "border-width"), map.get($style, "border-width"), get("border-width"));
-        padding-left: calc(get("left-cap-width") + get-spacing-left(get("padding")));
+        padding-left: calc(get("left-cap-width") + utils.get-spacing-left(get("padding")));
         // if current style has left cap and the global callout does not. This prevents duplicate styles printing.
         @include layout.left-cap($cap-color: $left-cap-color, $cap-width: $cap-width, $offset: $offset);
       }
