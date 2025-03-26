@@ -125,11 +125,13 @@ $styles: (
       background-color: color.get(get("left-cap-color"));
     }
     @if get("left-cap") {
-      @include -left-cap();
+      @include left-cap($offset: get-spacing-left(get("padding")));
     }
   }
   @each $name, $style in $styles {
-    $left-cap-color: map.get($style, "left-cap-color");
+    $default-left-cap-color: get("left-cap-color");
+    $new-left-cap-color: map.get($style, "left-cap-color");
+    $left-cap-color: if($new-left-cap-color, $new-left-cap-color, $default-left-cap-color);
     #{ $prefix }--#{ $name } {
       background-color: color.get(map.get($style, "background-color")); 
       color: color.get(map.get($style, "color")); 
@@ -145,7 +147,7 @@ $styles: (
       }
       @if map.get($style, "left-cap") and not get("left-cap") {
         // if current style has left cap and the global callout does not. This prevents duplicate styles printing.
-        @include -left-cap();
+        @include left-cap();
       }
     }
   }
@@ -161,3 +163,14 @@ $styles: (
     content: "";
   }
 }
+
+@mixin left-cap($cap-color: red, $cap-width: 5px, $offset: 1px) {
+  position: relative; 
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: $cap-width + $offset;
+  &::before {
+    background-color: color.get($cap-color);
+    content: "";
+  }
+};
