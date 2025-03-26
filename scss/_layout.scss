@@ -7,6 +7,7 @@
 @use "sass:meta";
 @use "utils";
 @use "breakpoint";
+@use "color";
 
 /// Module Settings
 /// @type Map
@@ -276,3 +277,27 @@ $containers: (
     height: 100%;
   }
 }
+
+// Layout utility to add a left-cap to an element.
+@mixin left-cap(
+  $cap-color: red, 
+  $cap-width: 5px, 
+  $offset: 1px, 
+  $match-radius: null
+) {
+  position: relative; 
+  &::before {
+    position: absolute;
+    display: block;
+    left: 0 - $offset;
+    top: 0 - $offset;
+    bottom: 0 - $offset;
+    width: $cap-width;
+    background-color: color.get($cap-color);
+    content: "";
+    @if $match-radius {
+      border-top-left-radius: $match-radius;
+      border-bottom-left-radius: $match-radius;
+    }
+  }
+};

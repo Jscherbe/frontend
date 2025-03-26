@@ -42,7 +42,7 @@ $config: (
   "border-radius" :  true,
   "border-width" : 1px,
   "box-shadow" : none,
-  "left-cap" : true,
+  "left-cap" : false,
   "left-cap-color" : rgb(160, 160, 160),
   "left-cap-width" : 0.5rem,
   "margin" : 2rem,
@@ -58,8 +58,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 23-34
-- **Lines (code):** 36-47
+- **Lines (comments):** 24-35
+- **Lines (code):** 37-48
 
 </details>
 
@@ -112,8 +112,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 75-78
-- **Lines (code):** 80-82
+- **Lines (comments):** 76-79
+- **Lines (code):** 81-83
 
 </details>
 
@@ -171,8 +171,8 @@ Set callout style variations
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 94-96
-- **Lines (code):** 98-100
+- **Lines (comments):** 95-97
+- **Lines (code):** 99-101
 
 </details>
 
@@ -217,8 +217,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 102-104
-- **Lines (code):** 106-154
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-153
 
 </details>
 
@@ -273,8 +273,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 84-87
-- **Lines (code):** 89-92
+- **Lines (comments):** 85-88
+- **Lines (code):** 90-93
 
 </details>
 

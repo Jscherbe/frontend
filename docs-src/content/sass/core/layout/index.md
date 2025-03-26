@@ -53,8 +53,8 @@ $config: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 11-17
-- **Lines (code):** 19-25
+- **Lines (comments):** 12-18
+- **Lines (code):** 20-26
 
 </details>
 
@@ -111,8 +111,8 @@ $containers: (
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** variable
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-55
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-56
 
 </details>
 
@@ -147,8 +147,8 @@ Change modules $config
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 27-29
-- **Lines (code):** 31-33
+- **Lines (comments):** 28-30
+- **Lines (code):** 32-34
 
 </details>
 
@@ -194,8 +194,8 @@ Set layout containers
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 57-60
-- **Lines (code):** 62-64
+- **Lines (comments):** 58-61
+- **Lines (code):** 63-65
 
 </details>
 
@@ -242,8 +242,8 @@ ie. \{ top: $containers-padding; }
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 98-102
-- **Lines (code):** 104-116
+- **Lines (comments):** 99-103
+- **Lines (code):** 105-117
 
 </details>
 
@@ -295,8 +295,8 @@ side (x) + the padding. This accounts for the containers max-width to give an ab
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 118-125
-- **Lines (code):** 127-142
+- **Lines (comments):** 119-126
+- **Lines (code):** 128-143
 
 </details>
 
@@ -344,8 +344,8 @@ Print the containers padding properties
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 160-163
-- **Lines (code):** 165-191
+- **Lines (comments):** 161-164
+- **Lines (code):** 166-192
 
 </details>
 
@@ -394,8 +394,8 @@ Print all container styles for a given container
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 209-211
-- **Lines (code):** 213-238
+- **Lines (comments):** 210-212
+- **Lines (code):** 214-239
 
 </details>
 
@@ -442,8 +442,8 @@ Prints clearfix styles
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 240-240
-- **Lines (code):** 242-253
+- **Lines (comments):** 241-241
+- **Lines (code):** 243-254
 
 </details>
 
@@ -473,8 +473,8 @@ Removes scrollbar with CSS
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 255-255
-- **Lines (code):** 256-262
+- **Lines (comments):** 256-256
+- **Lines (code):** 257-263
 
 </details>
 
@@ -506,8 +506,8 @@ Layout utility for absolute (zero on all sides)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 264-266
-- **Lines (code):** 267-278
+- **Lines (comments):** 265-267
+- **Lines (code):** 268-279
 
 </details>
 
@@ -542,8 +542,8 @@ Get a config option
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 35-37
-- **Lines (code):** 38-40
+- **Lines (comments):** 36-38
+- **Lines (code):** 39-41
 
 </details>
 
@@ -589,8 +589,8 @@ Get a container map
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-96
+- **Lines (comments):** 67-69
+- **Lines (code):** 71-97
 
 </details>
 
@@ -642,8 +642,8 @@ Get a containers padding value
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 144-147
-- **Lines (code):** 149-158
+- **Lines (comments):** 145-148
+- **Lines (code):** 150-159
 
 </details>
 
@@ -690,8 +690,8 @@ Get containers padding X value (side)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 193-195
-- **Lines (code):** 197-199
+- **Lines (comments):** 194-196
+- **Lines (code):** 198-200
 
 </details>
 
@@ -736,8 +736,8 @@ Get containers padding Y value (ends)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** function
-- **Lines (comments):** 201-203
-- **Lines (code):** 205-207
+- **Lines (comments):** 202-204
+- **Lines (code):** 206-208
 
 </details>
 

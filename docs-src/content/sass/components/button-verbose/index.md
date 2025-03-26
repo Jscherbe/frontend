@@ -56,7 +56,7 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
-  "left-cap" : false,
+  "left-cap" : true,
   "left-cap-color" : "link",
   "left-cap-color-hover" : "link-hover",
   "left-cap-width" : 0.5rem,
@@ -72,8 +72,8 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 30-55
-- **Lines (code):** 57-82
+- **Lines (comments):** 31-56
+- **Lines (code):** 58-83
 
 </details>
 
@@ -140,8 +140,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 84-87
-- **Lines (code):** 89-91
+- **Lines (comments):** 85-88
+- **Lines (code):** 90-92
 
 </details>
 
@@ -199,8 +199,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 103-111
-- **Lines (code):** 113-198
+- **Lines (comments):** 104-112
+- **Lines (code):** 114-191
 
 </details>
 
@@ -281,8 +281,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 93-96
-- **Lines (code):** 98-101
+- **Lines (comments):** 94-97
+- **Lines (code):** 99-102
 
 </details>
 

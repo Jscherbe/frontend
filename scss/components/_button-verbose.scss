@@ -10,6 +10,7 @@
 @use "../color";
 @use "../element";
 @use "../selector";
+@use "../layout";
 
 // Used for function fallback
 $-fallbacks: (
@@ -74,7 +75,7 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
-  "left-cap" : false,
+  "left-cap" : true,
   "left-cap-color" : "link",
   "left-cap-color-hover" : "link-hover",
   "left-cap-width" : 0.5rem,
@@ -131,20 +132,12 @@ $config: (
     // Add border like cap
     @if get("left-cap") {
       padding-left: calc(get("padding-x") + get("left-cap-width"));
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: get("left-cap-width");
-        background-color: color.get(get("left-cap-color"));
-        @if get("left-cap-match-radius") {
-          border-top-left-radius: get("border-radius");
-          border-bottom-left-radius: get("border-radius");
-        }
-      }
+      @include layout.left-cap(
+        $cap-color: get("left-cap-color"), 
+        $cap-width: get("left-cap-width"), 
+        $offset: 0, 
+        $match-radius: get("border-radius")
+      )
     }
     &:hover {
       color: color.get(get("color-hover"));
@@ -161,7 +154,7 @@ $config: (
         }
       }
       @if (get("left-cap") and get("left-cap-color-hover")) {
-        &::after {
+        &::before {
           background-color: color.get(get("left-cap-color-hover"));
         }
       }
