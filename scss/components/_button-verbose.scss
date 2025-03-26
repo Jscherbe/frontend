@@ -52,11 +52,12 @@ $-fallbacks: (
 /// @prop {Color} left-cap-color ["link"] The color for the left cap
 /// @prop {color} left-cap-color-hover ["link-hover"] The color for the left cap when the button is hovered
 /// @prop {Number} left-cap-color-hover [0.5rem] Width of the cap
+/// @prop {Number} left-cap-match-radius [true] The cap should have be rounded to match the parent's border radius
 
 $config: (
   "background-color" : white,
   "background-color-hover" : #F7F8F7,
-  "border-radius" : "border-radius",
+  "border-radius" : true,
   "box-shadow" : true,
   "box-shadow-hover" : true,
   "color" : "type",
@@ -73,10 +74,11 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
-  "left-cap" : true,
+  "left-cap" : false,
   "left-cap-color" : "link",
   "left-cap-color-hover" : "link-hover",
-  "left-cap-width" : 0.5rem
+  "left-cap-width" : 0.5rem,
+  "left-cap-match-radius" : true
 ) !default;
 
 /// Change modules $config
@@ -113,7 +115,7 @@ $config: (
   
   #{ $prefix } {
     text-decoration: none;
-    border-radius: element.get(get("border-radius"));
+    border-radius: get("border-radius");
     box-shadow: get("box-shadow");
     line-height: get("line-height");
     position: relative;
@@ -138,6 +140,10 @@ $config: (
         left: 0;
         width: get("left-cap-width");
         background-color: color.get(get("left-cap-color"));
+        @if get("left-cap-match-radius") {
+          border-top-left-radius: get("border-radius");
+          border-bottom-left-radius: get("border-radius");
+        }
       }
     }
     &:hover {

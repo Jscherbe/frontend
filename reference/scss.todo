@@ -1,4 +1,7 @@
 SCSS Todos:
+  ☐ Button-verbose
+    ☐ Should have border option
+    ☐ Should consider grabbing default border from button
   ☐ Consider exposing a utility mixin in list-lines for manually printing the styles when needed (compression, used in places we can't add classes)
   ✔ Update pseudo selectors to new double color syntax @done
     * We don't support any browsers that still use the original syntax

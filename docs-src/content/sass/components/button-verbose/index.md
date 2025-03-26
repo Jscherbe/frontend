@@ -39,7 +39,7 @@ Module Settings
 $config: (
   "background-color" : white,
   "background-color-hover" : #F7F8F7,
-  "border-radius" : "border-radius",
+  "border-radius" : true,
   "box-shadow" : true,
   "box-shadow-hover" : true,
   "color" : "type",
@@ -56,10 +56,11 @@ $config: (
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
-  "left-cap" : true,
+  "left-cap" : false,
   "left-cap-color" : "link",
   "left-cap-color-hover" : "link-hover",
-  "left-cap-width" : 0.5rem
+  "left-cap-width" : 0.5rem,
+  "left-cap-match-radius" : true
 );
 ```
   
@@ -71,8 +72,8 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 30-54
-- **Lines (code):** 56-80
+- **Lines (comments):** 30-55
+- **Lines (code):** 57-82
 
 </details>
 
@@ -106,6 +107,7 @@ $config: (
 |left-cap-color|Color|"link"|The color for the left cap|
 |left-cap-color-hover|color|"link-hover"|The color for the left cap when the button is hovered|
 |left-cap-color-hover|Number|0.5rem|Width of the cap|
+|left-cap-match-radius|Number|true|The cap should have be rounded to match the parent's border radius|
 
     
   
@@ -138,8 +140,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 82-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 84-87
+- **Lines (code):** 89-91
 
 </details>
 
@@ -197,8 +199,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 101-109
-- **Lines (code):** 111-192
+- **Lines (comments):** 103-111
+- **Lines (code):** 113-198
 
 </details>
 
@@ -279,8 +281,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 91-94
-- **Lines (code):** 96-99
+- **Lines (comments):** 93-96
+- **Lines (code):** 98-101
 
 </details>
 
