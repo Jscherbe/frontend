@@ -12,11 +12,6 @@ layout: default
   This is the body
   <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
 </a>
-<a href="#" class="button-verbose">
-  <strong class="button-verbose__title">Example Link</strong>
-  This is the body
-  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
-</a>
 
 {{ placeholder.paragraphSmall }}
 
