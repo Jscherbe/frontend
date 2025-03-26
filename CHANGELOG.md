@@ -1,6 +1,11 @@
 # Change Log
 
-## Version 0.1.0-beta.30 (released)
+## Version 0.1.0-beta.31
+
+- scss/components/button-verbose
+  - Change left-cap default to false off (like it was before the change in 0.1.0-beta.29)
+
+## Version 0.1.0-beta.30
 
 - scss/components/button-verbose
   - Add button-verbose__body element

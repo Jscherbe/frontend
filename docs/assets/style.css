@@ -12393,17 +12393,6 @@ component:button
   padding-right: 2.3em;
   color: var(--site-color-type);
   text-align: left;
-  padding-left: calc(0.65em + 0.5rem);
-}
-.button-verbose::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 0.5rem;
-  background-color: var(--site-color-link);
 }
 .button-verbose:hover {
   color: var(--site-color-type);
@@ -12413,9 +12402,6 @@ component:button
 }
 .button-verbose:hover .button-verbose__title {
   color: var(--site-color-link-hover);
-}
-.button-verbose:hover::after {
-  background-color: var(--site-color-link-hover);
 }
 
 .button-verbose__title,
