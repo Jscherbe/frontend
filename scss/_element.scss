@@ -69,6 +69,8 @@ $config: (
   "ul-list-style-type":               disc,
   "ul-list-style-type-2":             circle,
   "ul-list-style-type-3":             square,
+  "cap-color" :                       "accent",
+  "cap-size" :                        5px
 ) !default;
 
 /// Rule style map, redefine defaults or add to
@@ -289,5 +291,94 @@ $rule-margins: (
     position: static;
     white-space: normal;
     width: auto;
+  }
+}
+
+
+/// Layout utility to add a colored bar (cap) to an element's edge, positioned over the element and its border
+/// - You need to set position (relative, fixed) on parent
+/// @param {String} $side The side to place the cap (top, bottom, left, right)
+/// @param {Map} $options Options for the appearance of the cap
+/// @param {Color} $options.color [$config.cap-color] The color for the end cap
+/// @param {Number} $options.size [$config.cap-size] The width/height of the cap
+/// @param {Number} $options.offset [0] A positive number of the amount the cap should extend outside the box (to account for border-width) 
+/// @param {Number} $options.border-radius [null] An optional border-radius to apply to the outward-facing edges of the cap (used to match parent)
+/// @param {Boolean} $before [true] Whether or not to use the ::before element (if not uses :after)
+
+@mixin cap(
+  $side,
+  $options: (),
+  $before: true,
+) {
+  $defaults: (
+    "color" : get("cap-color"), 
+    "size" : get("cap-size"), 
+    "offset" : 0, 
+    "color-hover" : null,
+    "border-radius" : null,
+    "padding-adjust" : null,
+  );
+  $config: map.merge($defaults, $options);
+  $element: if($before, "::before", "::after");
+
+  &#{ $element } {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+
+  @include cap-appearance($side, $config, $before);
+}
+
+
+
+/// Provides the appearance styles for a given cap
+/// - If an option is not provided it won't be output
+/// - This is used to update the caps styling (states, modifiers, etc)
+/// @param {String} $side The side to place the cap (top, bottom, left, right)
+/// @param {Map} $options Options for the appearance of the cap (see options from element.cap)
+/// @param {Boolean} $before Whether or not to use the ::before element (if not uses :after)
+
+@mixin cap-appearance(
+  $side,
+  $options: (),
+  $before: true
+) {
+  $element: if($before, "::before", "::after");
+  $size: map.get($options, "size");
+  $offset: map.get($options, "offset");
+  $border-radius: map.get($options, "border-radius");
+  $padding-adjust: map.get($options, "padding-adjust");
+  
+  $end: $side == "top" or $side == "bottom";
+  $position: if($offset, 0 - $offset, null);
+
+  @if ($padding-adjust and $size) {
+    padding-#{ $side }: calc($padding-adjust + $size);
+  }
+
+  &#{ $element } {
+    background-color: color.get(map.get($options, "color"));
+    #{ $side }: $position;
+
+    @if $end {
+      left: $position;
+      right: $position;
+      height: $size;
+    } @else {
+      top: $position;
+      bottom: $position;
+      width: $size;
+    }
+    
+    @if $border-radius {
+      @if $end {
+        border-#{ $side }-left-radius: $border-radius;
+        border-#{ $side }-right-radius: $border-radius;
+      } @else {
+        border-top-#{ $side }-radius: $border-radius;
+        border-bottom-#{ $side }-radius: $border-radius;
+      }
+    }
   }
 }

@@ -39,12 +39,17 @@ Module Settings
 $config: (
   "background-color" : rgb(240, 240, 240),
   "border-color" : "rule-light",
-  "border-radius" :  true,
+  "border-radius" :  6px,
   "border-width" : 1px,
   "box-shadow" : none,
-  "left-cap" : false,
-  "left-cap-color" : rgb(160, 160, 160),
-  "left-cap-width" : 0.5rem,
+  "cap" : false,
+  "caps-disabled" : false,
+  "cap-side" : "left",
+  "cap-match-radius" : false,
+  "cap-options" : (
+    "color" : rgb(160, 160, 160),
+    "width" : 0.5rem,
+  ),
   "margin" : 2rem,
   "padding" : 1.5rem,
 );
@@ -58,8 +63,8 @@ $config: (
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** variable
-- **Lines (comments):** 24-35
-- **Lines (code):** 37-48
+- **Lines (comments):** 23-36
+- **Lines (code):** 38-54
 
 </details>
 
@@ -75,11 +80,66 @@ $config: (
 |border-radius|Boolean|true|The border radius of the Callout.|
 |border-width|Dimension|1px|The border width of the Callout.|
 |box-shadow|CssValue|none|The box-shadow of the Callout.|
-|left-cap|Boolean|false|Toggles the use of left caps in styled callouts.|
-|left-cap-color|Color|green|Color of the left cap.|
-|left-cap-width|Dimension|0.5rem|Width of the left cap.|
+|caps-disabled|Boolean|false|If set will not output any cap styles for both base and styles|
+|cap|Boolean|false|Toggles the use of caps on default callout|
+|cap-side|Boolean|"left"|The side that gets the cap|
+|cap-match-radius|Number|true|The cap should have be rounded to match the parent's border radius|
+|cap-options|Map||The options for cap (see element.cap for options)|
 |margin|Dimension|2rem|Bottom margin of the Callout.|
 |padding|Dimension|1.5rem|Padding of the Callout.|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $styles {#variable-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Styles Map (for unique variations/modifiers)
+- Adjust this with set-styles
+    
+    
+
+``` scss
+$styles: (
+  "outline" : (
+    "background-color": transparent
+  ),
+  "info" : (
+    "background-color" : "info-background",
+  ),
+  "warning" : (
+    "background-color" : "info-background",
+  ),
+  "success" : (
+    "background-color" : "success-background",
+  ),
+  "danger" : (
+    "background-color" : "danger-background",
+  ),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _callout.scss
+- **Group:** callout
+- **Type:** variable
+- **Lines (comments):** 56-58
+- **Lines (code):** 60-76
+
+</details>
 
     
   
@@ -112,8 +172,8 @@ Change modules $config
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 76-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 78-81
+- **Lines (code):** 83-85
 
 </details>
 
@@ -171,8 +231,8 @@ Set callout style variations
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 95-97
-- **Lines (code):** 99-101
+- **Lines (comments):** 97-99
+- **Lines (code):** 101-103
 
 </details>
 
@@ -183,14 +243,14 @@ Set callout style variations
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$changes|`Map`|Map of changes (options for style include [background-color, color, border, border-radius, border-color, box-shadow, padding, left-cap, left-cap-width, left-cap-color]|
+|$changes|`Map`|Map of changes (options for style include [background-color, color, border-color, border-radius, border-width, box-shadow, padding, cap, cap-options]|
 |$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
 
     
 
 #### Require
 
-- $styles
+- [$styles](/sass/components/callout/#variable-styles)
   
 
 
@@ -217,8 +277,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 103-105
-- **Lines (code):** 107-153
+- **Lines (comments):** 105-107
+- **Lines (code):** 109-147
 
 </details>
 
@@ -241,7 +301,6 @@ Output component stylesheet
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
-- $styles
   
   
 
@@ -273,8 +332,8 @@ Get a config option
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** function
-- **Lines (comments):** 85-88
-- **Lines (code):** 90-93
+- **Lines (comments):** 87-90
+- **Lines (code):** 92-95
 
 </details>
 

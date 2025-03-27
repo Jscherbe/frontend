@@ -66,6 +66,8 @@ $config: (
   "ul-list-style-type":               disc,
   "ul-list-style-type-2":             circle,
   "ul-list-style-type-3":             square,
+  "cap-color" :                       "accent",
+  "cap-size" :                        5px
 );
 ```
   
@@ -78,7 +80,7 @@ $config: (
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 10-40
-- **Lines (code):** 42-72
+- **Lines (code):** 42-74
 
 </details>
 
@@ -153,8 +155,8 @@ $rule-styles: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 74-75
-- **Lines (code):** 77-80
+- **Lines (comments):** 76-77
+- **Lines (code):** 79-82
 
 </details>
 
@@ -194,8 +196,8 @@ $rule-margins: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 82-83
-- **Lines (code):** 85-90
+- **Lines (comments):** 84-85
+- **Lines (code):** 87-92
 
 </details>
 
@@ -230,8 +232,8 @@ Change modules $config
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-98
+- **Lines (comments):** 94-96
+- **Lines (code):** 98-100
 
 </details>
 
@@ -276,8 +278,8 @@ Sets rule styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 108-109
-- **Lines (code):** 111-113
+- **Lines (comments):** 110-111
+- **Lines (code):** 113-115
 
 </details>
 
@@ -321,8 +323,8 @@ Sets rule margins
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 115-116
-- **Lines (code):** 118-120
+- **Lines (comments):** 117-118
+- **Lines (code):** 120-122
 
 </details>
 
@@ -366,8 +368,8 @@ Get full rule CSS (style and margin)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 136-137
-- **Lines (code):** 139-145
+- **Lines (comments):** 138-139
+- **Lines (code):** 141-147
 
 </details>
 
@@ -412,8 +414,8 @@ Output CSS for a rule's style (not margins
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 147-148
-- **Lines (code):** 150-152
+- **Lines (comments):** 149-150
+- **Lines (code):** 152-154
 
 </details>
 
@@ -457,8 +459,8 @@ Output CSS for a rule's margin
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 154-155
-- **Lines (code):** 157-161
+- **Lines (comments):** 156-157
+- **Lines (code):** 159-163
 
 </details>
 
@@ -507,8 +509,8 @@ Print the default link styling (no hover and focus styles)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 163-169
-- **Lines (code):** 171-184
+- **Lines (comments):** 165-171
+- **Lines (code):** 173-186
 
 </details>
 
@@ -553,8 +555,8 @@ Output link CSS styles (this is the full link styling when used in content/text)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 186-188
-- **Lines (code):** 190-212
+- **Lines (comments):** 188-190
+- **Lines (code):** 192-214
 
 </details>
 
@@ -599,8 +601,8 @@ Print the ordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 214-215
-- **Lines (code):** 217-241
+- **Lines (comments):** 216-217
+- **Lines (code):** 219-243
 
 </details>
 
@@ -644,8 +646,8 @@ Print the unordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 243-244
-- **Lines (code):** 246-266
+- **Lines (comments):** 245-246
+- **Lines (code):** 248-268
 
 </details>
 
@@ -689,8 +691,8 @@ Hide text for assistive devices
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 268-273
-- **Lines (code):** 275-293
+- **Lines (comments):** 270-275
+- **Lines (code):** 277-295
 
 </details>
 
@@ -720,6 +722,109 @@ Hide text for assistive devices
 |$hidden|`Boolean`|Defaults to true, pass false to override the hidden css (ie. on focus)|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  cap() {#mixin-cap}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Layout utility to add a colored bar (cap) to an element's edge, positioned over the element and its border
+- You need to set position (relative, fixed) on parent
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comments):** 298-306
+- **Lines (code):** 308-331
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|$side|`String`|The side to place the cap (top, bottom, left, right)||
+|$options|`Map`|Options for the appearance of the cap||
+|$options.color|`Color`|The color for the end cap|$config.cap-color|
+|$options.size|`Number`|The width/height of the cap|$config.cap-size|
+|$options.offset|`Number`|A positive number of the amount the cap should extend outside the box (to account for border-width)|0|
+|$options.border-radius|`Number`|An optional border-radius to apply to the outward-facing edges of the cap (used to match parent)|null|
+|$before|`Boolean`|Whether or not to use the ::before element (if not uses :after)|true|
+
+    
+
+#### Require
+
+- [cap-appearance()](/sass/core/element/#mixin-cap-appearance)
+- [get()](/sass/core/breakpoint/#function-get)
+- [$config](/sass/core/breakpoint/#variable-config)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  cap-appearance() {#mixin-cap-appearance}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Provides the appearance styles for a given cap
+- If an option is not provided it won't be output
+- This is used to update the caps styling (states, modifiers, etc)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comments):** 335-340
+- **Lines (code):** 342-384
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$side|`String`|The side to place the cap (top, bottom, left, right)|
+|$options|`Map`|Options for the appearance of the cap (see options from element.cap)|
+|$before|`Boolean`|Whether or not to use the ::before element (if not uses :after)|
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+  
   
 
 ## Functions
@@ -750,8 +855,8 @@ Get a config option
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 100-102
-- **Lines (code):** 104-106
+- **Lines (comments):** 102-104
+- **Lines (code):** 106-108
 
 </details>
 
@@ -797,8 +902,8 @@ Get a rule style
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 122-123
-- **Lines (code):** 125-127
+- **Lines (comments):** 124-125
+- **Lines (code):** 127-129
 
 </details>
 
@@ -843,8 +948,8 @@ Sets rule margin
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 129-130
-- **Lines (code):** 132-134
+- **Lines (comments):** 131-132
+- **Lines (code):** 134-136
 
 </details>
 

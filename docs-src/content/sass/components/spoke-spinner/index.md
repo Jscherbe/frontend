@@ -204,7 +204,7 @@ Set tag styles
 
 #### Require
 
-- [$styles](/sass/components/spoke-spinner/#variable-styles)
+- [$styles](/sass/components/callout/#variable-styles)
   
 
 
@@ -282,7 +282,7 @@ Example markup
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
-- [$styles](/sass/components/spoke-spinner/#variable-styles)
+- [$styles](/sass/components/callout/#variable-styles)
   
   
 

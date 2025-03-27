@@ -51,16 +51,21 @@ $config: (
   "margin" : 1em,
   "margin-inline" : 0.75em,
   "min-width": 20rem,
-  "padding-x": 0.65em,
+  "padding-x": 0.75em,
   "padding-y": 1em,
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
-  "left-cap" : false,
-  "left-cap-color" : "link",
-  "left-cap-color-hover" : "link-hover",
-  "left-cap-width" : 0.5rem,
-  "left-cap-match-radius" : true
+  "cap" : false,
+  "cap-side" : "left",
+  "cap-match-radius" : true,
+  "cap-options" : (
+    "color" : "link",
+    "size" : 0.5rem,
+  ),
+  "cap-options-hover" : (
+    "color" : "link-hover"
+  ),
 );
 ```
   
@@ -72,8 +77,8 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 31-56
-- **Lines (code):** 58-83
+- **Lines (comments):** 30-55
+- **Lines (code):** 57-87
 
 </details>
 
@@ -103,11 +108,11 @@ $config: (
 |title-color|String|link|Color of the title of the button.|
 |title-color-hover|String|link-hover|Color of the title of the button when hovered or focused.|
 |title-margin|Dimension|0.5em|Margin for the button's title.|
-|left-cap|Boolean|false|Enable left cap style|
-|left-cap-color|Color|"link"|The color for the left cap|
-|left-cap-color-hover|color|"link-hover"|The color for the left cap when the button is hovered|
-|left-cap-color-hover|Number|0.5rem|Width of the cap|
-|left-cap-match-radius|Number|true|The cap should have be rounded to match the parent's border radius|
+|cap|Boolean|false|Enable left cap style|
+|cap-side|Color|"left"|The side that gets the cap|
+|cap-match-radius|Number|true|The cap should have be rounded to match the parent's border radius|
+|cap-options|Map||The options for cap (see element.cap for options)|
+|cap-options-hover|Map||The options for cap when hovered|
 
     
   
@@ -140,8 +145,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 85-88
-- **Lines (code):** 90-92
+- **Lines (comments):** 89-92
+- **Lines (code):** 94-96
 
 </details>
 
@@ -199,8 +204,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 104-112
-- **Lines (code):** 114-191
+- **Lines (comments):** 108-116
+- **Lines (code):** 118-202
 
 </details>
 
@@ -281,8 +286,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 94-97
-- **Lines (code):** 99-102
+- **Lines (comments):** 98-101
+- **Lines (code):** 103-106
 
 </details>
 

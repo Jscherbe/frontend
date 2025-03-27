@@ -1,5 +1,35 @@
 # Change Log
 
+## Version 0.1.0-beta.34 (unreleased)
+
+- scss/element
+  - Add mixins for element.cap() and element.cap-appearance() which are used internally but can be used by users to add end caps to an element
+- scss/components/callout 
+  - **Minor visual breaking change for those using cap**
+  - Update how left-cap works (all properties have changed) now accepts common cap settings (see config)
+  - Caps can be set on any side now
+  - Callout styles map (for variations/modifiers of callout) will no longer output "border" configuration
+    - Use "border-width" or "border-color" to affect border appearance
+- scss/button-verbose
+  - **Minor visual breaking change for those using cap**
+  - left cap has changed to cap and accepts common cap options (see config)
+- scss/utils
+  - Add ensure-map() and units-match() functions
+
+## Version 0.1.0-beta.33
+
+- scss
+  - Add layout.absolute-fill throughout components/styles so that CSS is printed the same way for compression
+  - Add layout.absolute-fill throughout components/styles so that CSS is printed the same way for compression
+- scss/components/callout
+- scss/components/button-verbose
+  - Add left-cap-match-radius to have the left cap style match the border radius of the parent container
+  - 
+## Version 0.1.0-beta.32
+
+- scss/components/button-verbose
+  - Add left-cap-match-radius to have the left cap style match the border radius of the parent container
+
 ## Version 0.1.0-beta.31
 
 - scss/components/button-verbose

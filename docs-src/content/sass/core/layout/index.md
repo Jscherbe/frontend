@@ -506,10 +506,19 @@ Layout utility for absolute (zero on all sides)
 - **File:** _layout.scss
 - **Group:** layout
 - **Type:** mixin
-- **Lines (comments):** 265-267
-- **Lines (code):** 268-279
+- **Lines (comments):** 265-268
+- **Lines (code):** 269-280
 
 </details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|$set-size|`Boolean`|false|Whether or not to use sizes to fill the space (height/width 100%) versus setting bottom and right to 0)|
 
     
   

@@ -161,6 +161,16 @@ $config: (
   @return $number + string.unquote($unit);
 }
 
+/// Checks if two numbers are the same unit
+/// @param {Number} $number 
+/// @param {String} $other-number 
+/// @return {Boolean} Whether they have the same unit type
+// Could be made into multiple arguments in future if needed 
+
+@function units-match($number, $other-number) {
+  @return math.unit($number) == math.unit($other-number);
+}
+
 /// Reusable merge method 
 /// @param {Map} $original Source map 
 /// @param {Map} $changes Changes to merge into source map
@@ -661,4 +671,12 @@ $config: (
 
 @function is-odd($number) {
   @return not is-even($number);
+}
+
+/// Always returns a map
+/// @param {*} $value The value to check if is map
+/// @return {Map} The $value if it was a map, else empty map
+
+@function ensure-map($value) {
+  @return if(is-map($value), $value, ());
 }

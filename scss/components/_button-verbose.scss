@@ -10,7 +10,6 @@
 @use "../color";
 @use "../element";
 @use "../selector";
-@use "../layout";
 
 // Used for function fallback
 $-fallbacks: (
@@ -49,11 +48,11 @@ $-fallbacks: (
 /// @prop {String} title-color [link] Color of the title of the button.
 /// @prop {String} title-color-hover [link-hover] Color of the title of the button when hovered or focused.
 /// @prop {Dimension} title-margin [0.5em] Margin for the button's title.
-/// @prop {Boolean} left-cap [false] Enable left cap style 
-/// @prop {Color} left-cap-color ["link"] The color for the left cap
-/// @prop {color} left-cap-color-hover ["link-hover"] The color for the left cap when the button is hovered
-/// @prop {Number} left-cap-color-hover [0.5rem] Width of the cap
-/// @prop {Number} left-cap-match-radius [true] The cap should have be rounded to match the parent's border radius
+/// @prop {Boolean} cap [false] Enable left cap style 
+/// @prop {Color} cap-side ["left"] The side that gets the cap
+/// @prop {Number} cap-match-radius [true] The cap should have be rounded to match the parent's border radius
+/// @prop {Map} cap-options The options for cap (see element.cap for options)
+/// @prop {Map} cap-options-hover The options for cap when hovered
 
 $config: (
   "background-color" : white,
@@ -70,16 +69,21 @@ $config: (
   "margin" : 1em,
   "margin-inline" : 0.75em,
   "min-width": 20rem,
-  "padding-x": 0.65em,
+  "padding-x": 0.75em,
   "padding-y": 1em,
   "title-color": "link",
   "title-margin" : 0.5em,
   "title-color-hover" : "link-hover",
-  "left-cap" : false,
-  "left-cap-color" : "link",
-  "left-cap-color-hover" : "link-hover",
-  "left-cap-width" : 0.5rem,
-  "left-cap-match-radius" : true
+  "cap" : false,
+  "cap-side" : "left",
+  "cap-match-radius" : true,
+  "cap-options" : (
+    "color" : "link",
+    "size" : 0.5rem,
+  ),
+  "cap-options-hover" : (
+    "color" : "link-hover"
+  ),
 ) !default;
 
 /// Change modules $config
@@ -113,32 +117,29 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("button-verbose");
+  $padding-x: get("padding-x");
+  $padding-y: get("padding-y");
+  $padding-right: ($padding-x * 2) + 1em;
+  $cap-defaults: (
+    "border-radius" : if(get("cap-match-radius"), get("border-radius"), 0),
+    "padding-adjust" : $padding-x
+  );
   
   #{ $prefix } {
     text-decoration: none;
     border-radius: get("border-radius");
     box-shadow: get("box-shadow");
     line-height: get("line-height");
-    position: relative;
+    position: relative; // For cap and icon
     display: block;
     margin-bottom: get("margin");
     max-width: 100%;
     width: get("min-width");
     background-color: color.get(get("background-color"));
-    padding: get("padding-y") get("padding-x");
-    padding-right: (get("padding-x") * 2) + 1em;
+    padding: $padding-y $padding-right $padding-y $padding-x;
     color: color.get(get("color"));
     text-align: left;
-    // Add border like cap
-    @if get("left-cap") {
-      padding-left: calc(get("padding-x") + get("left-cap-width"));
-      @include layout.left-cap(
-        $cap-color: get("left-cap-color"), 
-        $cap-width: get("left-cap-width"), 
-        $offset: 0, 
-        $match-radius: get("border-radius")
-      )
-    }
+
     &:hover {
       color: color.get(get("color-hover"));
       background-color: color.get(get("background-color-hover"));
@@ -153,9 +154,19 @@ $config: (
           color: color.get(get("icon-color-hover"));
         }
       }
-      @if (get("left-cap") and get("left-cap-color-hover")) {
-        &::before {
-          background-color: color.get(get("left-cap-color-hover"));
+    }
+    @if get("cap") {
+      @include element.cap(
+        $side: get("cap-side"),
+        $options: map.merge($cap-defaults, get("cap-options"))
+      );
+      @if get("cap-options-hover") {
+        &:hover,
+        &:focus {
+          @include element.cap-appearance(
+            $side: get("cap-side"),
+            $options: get("cap-options-hover")
+          );
         }
       }
     }
@@ -173,7 +184,7 @@ $config: (
   #{ $prefix }__icon {
     position: absolute;
     top: 50%;
-    right: get("padding-x");
+    right: $padding-x;
     transform: translateY(-50%);
     font-size: get("icon-font-size");
     color: color.get(get("icon-color"));

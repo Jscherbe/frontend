@@ -247,7 +247,7 @@ Set tag styles
 
 #### Require
 
-- [$styles](/sass/components/spoke-spinner/#variable-styles)
+- [$styles](/sass/components/callout/#variable-styles)
   
 
 
@@ -298,7 +298,7 @@ Output component stylesheet
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
-- [$styles](/sass/components/spoke-spinner/#variable-styles)
+- [$styles](/sass/components/callout/#variable-styles)
   
   
 

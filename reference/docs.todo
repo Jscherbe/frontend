@@ -1,4 +1,5 @@
 Todos:
+  ☐ Utils should be organized somehow, print out in order of definition, maybe these should be rearranged so similar functions are grouped on page/menu
   ☐ Create js module for managing interactive demos and use something like handlebars for templating
   ☐ Need to setup form-theme for dark/light modes
 Future Ideas:

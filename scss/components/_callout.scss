@@ -11,7 +11,6 @@
 @use "../selector";
 @use "../element";
 @use "../color";
-@use "../layout";
 
 // Used for function fallback
 $-fallbacks: (
@@ -28,24 +27,35 @@ $-fallbacks: (
 /// @prop {Boolean} border-radius [true] The border radius of the Callout.
 /// @prop {Dimension} border-width [1px] The border width of the Callout.
 /// @prop {CssValue} box-shadow [none] The box-shadow of the Callout.
-/// @prop {Boolean} left-cap [false] Toggles the use of left caps in styled callouts.
-/// @prop {Color} left-cap-color [green] Color of the left cap.
-/// @prop {Dimension} left-cap-width [0.5rem] Width of the left cap.
+/// @prop {Boolean} caps-disabled [false] If set will not output any cap styles for both base and styles
+/// @prop {Boolean} cap [false] Toggles the use of caps on default callout
+/// @prop {Boolean} cap-side ["left"] The side that gets the cap
+/// @prop {Number} cap-match-radius [true] The cap should have be rounded to match the parent's border radius
+/// @prop {Map} cap-options The options for cap (see element.cap for options)
 /// @prop {Dimension} margin [2rem] Bottom margin of the Callout.
 /// @prop {Dimension} padding [1.5rem] Padding of the Callout.
 
 $config: (
   "background-color" : rgb(240, 240, 240),
   "border-color" : "rule-light",
-  "border-radius" :  true,
+  "border-radius" :  6px,
   "border-width" : 1px,
   "box-shadow" : none,
-  "left-cap" : false,
-  "left-cap-color" : rgb(160, 160, 160),
-  "left-cap-width" : 0.5rem,
+  "cap" : false,
+  "caps-disabled" : false,
+  "cap-side" : "left",
+  "cap-match-radius" : false,
+  "cap-options" : (
+    "color" : rgb(160, 160, 160),
+    "width" : 0.5rem,
+  ),
   "margin" : 2rem,
   "padding" : 1.5rem,
 ) !default;
+
+/// Styles Map (for unique variations/modifiers)
+/// - Adjust this with set-styles
+/// @type Map
 
 $styles: (
   "outline" : (
@@ -53,23 +63,15 @@ $styles: (
   ),
   "info" : (
     "background-color" : "info-background",
-    "left-cap-color" : "info",
-    "left-cap" : true,
   ),
   "warning" : (
     "background-color" : "info-background",
-    "left-cap-color" : "info",
-    "left-cap" : true,
   ),
   "success" : (
     "background-color" : "success-background",
-    "left-cap-color" : "success",
-    "left-cap" : true,
   ),
   "danger" : (
     "background-color" : "danger-background",
-    "left-cap-color" : "danger",
-    "left-cap" : true,
   ),
 ) !default;
 
@@ -93,7 +95,7 @@ $styles: (
 }
 
 /// Set callout style variations
-/// @param {Map} $changes Map of changes (options for style include [background-color, color, border, border-radius, border-color, box-shadow, padding, left-cap, left-cap-width, left-cap-color]
+/// @param {Map} $changes Map of changes (options for style include [background-color, color, border-color, border-radius, border-width, box-shadow, padding, cap, cap-options]
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
 @mixin set-styles($changes, $merge-mode: null) {
@@ -106,7 +108,9 @@ $styles: (
 
 @mixin styles {
   $prefix: selector.class("callout");  
+
   #{ $prefix } {
+    position: relative; // For cap
     background-color: color.get(get("background-color"));
     padding: get("padding");
     border: get("border-width") solid color.get(get("border-color"));
@@ -116,37 +120,78 @@ $styles: (
     & >:first-child {
       margin-top: 0;
     }
-    @if get("left-cap") {
-      padding-left: calc(get("left-cap-width") + utils.get-spacing-left(get("padding")));
-      @include layout.left-cap(
-        $cap-color: get("left-cap-color"), 
-        $cap-width: get("left-cap-width"),
-        $offset: get("border-width"),
+
+    // If we have left cap on default we reuse this for all
+    // Else we will print it out manually for each unique style
+    @if (not get("caps-disabled")) {
+      $cap-defaults: (
+        "offset" : get("border-width"),
+        "border-radius" : if(get("cap-match-radius"), get("border-radius"), null)
+      );
+      @include element.cap(
+        $side: get("cap-side"),
+        $options: map.merge($cap-defaults, get("cap-options"))
       );
     }
-  }
-  @each $name, $style in $styles {
-    $left-cap-color: if(map.get($style, "left-cap-color"), map.get($style, "left-cap-color"), get("left-cap-color"));
-    #{ $prefix }--#{ $name } {
-      background-color: color.get(map.get($style, "background-color")); 
-      color: color.get(map.get($style, "color")); 
-      border: map.get($style, "border"); 
-      border-radius: map.get($style, "border-radius"); 
-      border-color: color.get(map.get($style, "border-color")); 
-      box-shadow: map.get($style, "box-shadow"); 
-      padding: map.get($style, "padding"); 
-      @if $left-cap-color {
-        &::before {
-          background-color: color.get($left-cap-color);
-        }
+      
+    // If the left cap is disabled we still include it's CSS but we hide it
+    // so that other styles of callouts can use it
+    @if (not get("cap")) {
+      &::before {
+        content: none;
       }
-      @if map.get($style, "left-cap") and not get("left-cap") {
-        // Uses default options if the style does not have unique options
-        $cap-width: if(map.get($style, "left-cap-width"), map.get($style, "left-cap-width"), get("left-cap-width"));
-        $offset: if(map.get($style, "border-width"), map.get($style, "border-width"), get("border-width"));
-        padding-left: calc(get("left-cap-width") + utils.get-spacing-left(get("padding")));
-        // if current style has left cap and the global callout does not. This prevents duplicate styles printing.
-        @include layout.left-cap($cap-color: $left-cap-color, $cap-width: $cap-width, $offset: $offset);
+    }
+  }
+
+  @include -output-style-modifiers();
+}
+
+// Output Each Style Modifier
+// - Note if cap is not disabled this will just update appearance values of cap styling
+@mixin -output-style-modifiers() {
+  $prefix: selector.class("callout");  
+
+  @each $name, $style in $styles {
+    $cap: map.get($style, "cap");
+    $padding: map.get($style, "padding");
+    $border-radius: map.get($style, "border-radius");
+    $background-color: map.get($style, "background-color");
+    $color: map.get($style, "color");
+    $border-color: map.get($style, "border-color");
+    $border-width: map.get($style, "border-width");
+    $box-shadow: map.get($style, "box-shadow");
+
+    #{ $prefix }--#{ $name } {
+      background-color: color.get($background-color); 
+      color: color.get($color); 
+      border-radius: $border-radius; 
+      border-color: color.get($border-color); 
+      border-width: $border-width; 
+      box-shadow: $box-shadow; 
+      padding: $padding; 
+
+      @if ($cap and not get("caps-disabled")) {
+        // Padding adjust always has to be set (since size could change or padding)
+        $padding-adjust: utils.get-spacing-left(if($padding, $padding, get("padding")));
+        $cap-radius: utils.if-type("number", $border-radius, get("border-radius"));
+        $cap-options: utils.ensure-map(map.get($style, "cap-options"));
+        $cap-defaults: (
+          "size" : map.get(get("cap-options"), "size"),
+          "padding-adjust" : $padding-adjust,
+          "offset" : $border-width,
+          "border-radius" : if(get("cap-match-radius"), $cap-radius, null)
+        );
+
+        @include element.cap-appearance(
+          $side: get("cap-side"),
+          $options: map.merge($cap-defaults, $cap-options),
+          $before: true
+        );
+
+        // Because the main callout's cap may not be visible
+        &::before {
+          content: "";
+        }
       }
     }
   }
