@@ -1,4 +1,5 @@
 JS Todos:
+  ☐ Tooltips are duplicating in card demo (maybe elsewhere)? @important
   ☐ Prefix breakpoint custom property
     * Check CSS var breakpoint declare too
   ☐ Maybe we should go back to classes as the base for the instances
