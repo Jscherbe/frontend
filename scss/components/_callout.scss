@@ -109,7 +109,9 @@ $styles: (
 @mixin styles {
   $prefix: selector.class("callout");  
   $padding: get("padding");
-  
+  $padding-info: utils.get-spacing($padding);
+  $cap-options: get("cap-options");
+  $cap-size: map.get($cap-options, "size");
 
   #{ $prefix } {
     position: relative; // For cap
@@ -127,15 +129,15 @@ $styles: (
     // Else we will print it out manually for each unique style
     @if (not get("caps-disabled")) {
       $cap-side: get("cap-side");
-      $padding-info: utils.get-spacing($padding);
+      
       $cap-defaults: (
         "offset" : get("border-width"),
         "border-radius" : if(get("cap-match-radius"), get("border-radius"), null),
-        "padding-adjust" : map.get($padding-info, $cap-side)
+        // "padding-adjust" : map.get($padding-info, $cap-side)
       );
       @include element.cap(
         $side: $cap-side,
-        $options: map.merge($cap-defaults, get("cap-options"))
+        $options: map.merge($cap-defaults, $cap-options)
       );
     }
       
@@ -145,6 +147,10 @@ $styles: (
       &::before {
         content: none;
       }
+    // Since this is hidden and reused we need to not use padding adjust unless it
+    // was visible
+    } @else if ($cap-size) {
+      padding-#{ $cap-side }: calc(map.get($padding-info, $cap-side) + $cap-size);
     }
   }
 
