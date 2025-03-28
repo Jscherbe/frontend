@@ -1,4 +1,10 @@
 SCSS Todos:
+  ✔ Callout caps @done
+    ✔ Match radius to work per style, but inherit global config @done
+    ✔ If cap is false on a style, it should hide the cap and set the default padding if it's not setting it's own padding @done
+    ✔ Think about how cap: true/false of undefined works with the styles (definelty need false) @done
+  ☐ Should we allow linear gradients to pass through colors?
+    ☐ We would have to adjust background-color to background properties throughout the UI
   ☐ Button-verbose
     ☐ Should have border option
     ☐ Should consider grabbing default border from button

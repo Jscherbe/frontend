@@ -15,6 +15,8 @@
   - left cap has changed to cap and accepts common cap options (see config)
 - scss/utils
   - Add ensure-map(), units-match(), is-end(), is-side() functions
+- js/ui/tooltip
+  - Fix missing init attribute
 
 ## Version 0.1.0-beta.33
 

@@ -41,8 +41,8 @@ $config: (
   "border-radius" :  6px,
   "border-width" : 1px,
   "box-shadow" : none,
-  "cap" : false,
   "caps-disabled" : false,
+  "cap" : false,
   "cap-side" : "left",
   "cap-match-radius" : false,
   "cap-options" : (
@@ -95,6 +95,7 @@ $styles: (
 }
 
 /// Set callout style variations
+/// - Styles that modify padding when using mix-match caps on/off should be included last
 /// @param {Map} $changes Map of changes (options for style include [background-color, color, border-color, border-radius, border-width, box-shadow, padding, cap, cap-options]
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
@@ -160,6 +161,8 @@ $styles: (
 // - Note if cap is not disabled this will just update appearance values of cap styling
 @mixin -output-style-modifiers() {
   $prefix: selector.class("callout");  
+  $caps-enabled: not get("caps-disabled");
+  $cap-side: get("cap-side");
 
   @each $name, $style in $styles {
     $cap: map.get($style, "cap");
@@ -170,6 +173,7 @@ $styles: (
     $border-color: map.get($style, "border-color");
     $border-width: map.get($style, "border-width");
     $box-shadow: map.get($style, "box-shadow");
+    $cap-match-radius: map.get($style, "cap-match-radius");
 
     #{ $prefix }--#{ $name } {
       background-color: color.get($background-color); 
@@ -180,8 +184,8 @@ $styles: (
       box-shadow: $box-shadow; 
       padding: $padding; 
 
-      @if ($cap and not get("caps-disabled")) {
-        $cap-side: get("cap-side");
+      @if ($cap and $caps-enabled) {
+        $match-radius: utils.if-type("bool", $cap-match-radius, get("cap-match-radius"));
         // Padding adjust always has to be set (since size could change or padding)
         $padding-info: utils.get-spacing(if($padding, $padding, get("padding")));
         $cap-radius: utils.if-type("number", $border-radius, get("border-radius"));
@@ -190,7 +194,7 @@ $styles: (
           "size" : map.get(get("cap-options"), "size"),
           "padding-adjust" : map.get($padding-info, $cap-side),
           "offset" : $border-width,
-          "border-radius" : if(get("cap-match-radius"), $cap-radius, null)
+          "border-radius" : if($match-radius, $cap-radius, null)
         );
 
         @include element.cap-appearance(
@@ -202,6 +206,16 @@ $styles: (
         // Because the main callout's cap may not be visible
         &::before {
           content: "";
+        }
+      // If set to false remove the cap (if enabled) and reset default cap padding adjust
+      } @else if ($cap == false and $caps-enabled) {
+        // if this style doesn't set padding
+        @if (not $padding) {
+          $padding-info: utils.get-spacing($padding);
+          padding-#{ $cap-side }: map.get($padding-info, $cap-side);
+        }
+        &::before {
+          content: none;
         }
       }
     }

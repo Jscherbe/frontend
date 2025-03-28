@@ -11,7 +11,7 @@ import { newId, ensureId } from "../utils/id.js";
 
 const attrs = {
   trigger: "data-ulu-tooltip",
-  init: "data-ulu-init",
+  init: "data-ulu-tooltip-init",
   body: "data-ulu-tooltip-display-body",
   arrow: "data-ulu-tooltip-arrow"
 };
@@ -41,6 +41,7 @@ export function setupTrigger(trigger) {
   if (typeof passed === "string") {
     options.content = passed;
   }
+  trigger.setAttribute(attrs.init, "");
   return new Tooltip({ trigger }, options);
 }
 

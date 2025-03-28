@@ -1,7 +1,5 @@
 ---
-title: Card New
-intro: Cards are...
-
+title: Card
 ---
 
 {% liveDemo demoConfig %}

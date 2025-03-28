@@ -42,8 +42,8 @@ $config: (
   "border-radius" :  6px,
   "border-width" : 1px,
   "box-shadow" : none,
-  "cap" : false,
   "caps-disabled" : false,
+  "cap" : false,
   "cap-side" : "left",
   "cap-match-radius" : false,
   "cap-options" : (
@@ -221,6 +221,7 @@ Change modules $config
   
 
 Set callout style variations
+- Styles that modify padding when using mix-match caps on/off should be included last
     
     
 
@@ -231,8 +232,8 @@ Set callout style variations
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 97-99
-- **Lines (code):** 101-103
+- **Lines (comments):** 97-100
+- **Lines (code):** 102-104
 
 </details>
 
@@ -277,8 +278,8 @@ Output component stylesheet
 - **File:** _callout.scss
 - **Group:** callout
 - **Type:** mixin
-- **Lines (comments):** 105-107
-- **Lines (code):** 109-157
+- **Lines (comments):** 106-108
+- **Lines (code):** 110-158
 
 </details>
 
