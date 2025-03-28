@@ -11781,6 +11781,7 @@ readers do not read off random characters that represent icons */
   --site-color-link-visited: goldenrod;
   --site-color-control-background: white;
   --site-color-control-background-hover: rgb(228, 223, 236);
+  --site-color-background-live-demo: rgb(27.2, 23.8, 31.45);
   --site-color-background-details: rgb(87.75, 84.75, 91.5);
   --site-color-table-header-background: #683894;
   --site-color-table-cell-background: rgb(32, 28, 37);
@@ -11831,6 +11832,7 @@ readers do not read off random characters that represent icons */
   --site-color-link-visited: #870ACF;
   --site-color-control-background: #8c52c3;
   --site-color-control-background-hover: #683894;
+  --site-color-background-live-demo: #f6f6f6;
   --site-color-background-details: rgb(238, 236.5, 241.5);
   --site-color-table-header-background: #eeeeee;
   --site-color-table-cell-background: white;
@@ -12389,8 +12391,7 @@ component:button
   max-width: 100%;
   width: 20rem;
   background-color: white;
-  padding: 1em 0.65em;
-  padding-right: 2.3em;
+  padding: 1em 2.5em 1em 0.75em;
   color: var(--site-color-type);
   text-align: left;
 }
@@ -12420,7 +12421,7 @@ component:button
 .button-verbose__icon {
   position: absolute;
   top: 50%;
-  right: 0.65em;
+  right: 0.75em;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -12610,31 +12611,32 @@ component:button
 }
 
 .callout {
-  background-color: var(--site-color-background-details);
+  position: relative;
+  background-color: rgb(240, 240, 240);
   padding: 1.5rem;
   border: 1px solid var(--site-color-rule-light);
   margin-bottom: 2rem;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-radius: 5px;
-  position: relative;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  padding-left: 0.5remget-spacing-left(1.5rem);
+  border-radius: 6px;
 }
 .callout > :first-child {
   margin-top: 0;
 }
 .callout::before {
+  content: "";
   position: absolute;
+  display: block;
+}
+.callout::before {
+  background-color: green;
   left: -1px;
   top: -1px;
   bottom: -1px;
-  width: 0.5rem;
-  background-color: rgb(160, 160, 160);
+  width: 3rem;
 }
 .callout::before {
-  content: "";
+  content: none;
 }
 
 .callout--outline {
@@ -12644,29 +12646,17 @@ component:button
 .callout--info {
   background-color: #e7f6f8;
 }
-.callout--info::before {
-  background-color: #00bde3;
-}
 
 .callout--warning {
   background-color: #e7f6f8;
-}
-.callout--warning::before {
-  background-color: #00bde3;
 }
 
 .callout--success {
   background-color: #ecf3ec;
 }
-.callout--success::before {
-  background-color: #00a91c;
-}
 
 .callout--danger {
   background-color: #f4e3db;
-}
-.callout--danger::before {
-  background-color: #d54309;
 }
 
 .card {
@@ -17785,10 +17775,9 @@ button.captioned-figure:focus {
 }
 
 .live-demo {
-  background-color: #f6f6f6;
+  background-color: var(--site-color-background-live-demo);
   border-radius: 5px;
   overflow: hidden;
-  border: 1px solid #e5e5e5;
 }
 @media screen and (min-width: 72.875em) {
   .live-demo {
