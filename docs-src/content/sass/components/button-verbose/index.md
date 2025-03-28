@@ -205,7 +205,7 @@ Prints component styles
 - **Group:** button-verbose
 - **Type:** mixin
 - **Lines (comments):** 108-116
-- **Lines (code):** 118-202
+- **Lines (code):** 118-203
 
 </details>
 

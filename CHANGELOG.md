@@ -14,7 +14,7 @@
   - **Minor visual breaking change for those using cap**
   - left cap has changed to cap and accepts common cap options (see config)
 - scss/utils
-  - Add ensure-map() and units-match() functions
+  - Add ensure-map(), units-match(), is-end(), is-side() functions
 
 ## Version 0.1.0-beta.33
 

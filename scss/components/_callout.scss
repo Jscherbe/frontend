@@ -108,11 +108,13 @@ $styles: (
 
 @mixin styles {
   $prefix: selector.class("callout");  
+  $padding: get("padding");
+  
 
   #{ $prefix } {
     position: relative; // For cap
     background-color: color.get(get("background-color"));
-    padding: get("padding");
+    padding: $padding;
     border: get("border-width") solid color.get(get("border-color"));
     margin-bottom: get("margin");
     box-shadow: get("box-shadow");
@@ -124,12 +126,15 @@ $styles: (
     // If we have left cap on default we reuse this for all
     // Else we will print it out manually for each unique style
     @if (not get("caps-disabled")) {
+      $cap-side: get("cap-side");
+      $padding-info: utils.get-spacing($padding);
       $cap-defaults: (
         "offset" : get("border-width"),
-        "border-radius" : if(get("cap-match-radius"), get("border-radius"), null)
+        "border-radius" : if(get("cap-match-radius"), get("border-radius"), null),
+        "padding-adjust" : map.get($padding-info, $cap-side)
       );
       @include element.cap(
-        $side: get("cap-side"),
+        $side: $cap-side,
         $options: map.merge($cap-defaults, get("cap-options"))
       );
     }
@@ -171,19 +176,20 @@ $styles: (
       padding: $padding; 
 
       @if ($cap and not get("caps-disabled")) {
+        $cap-side: get("cap-side");
         // Padding adjust always has to be set (since size could change or padding)
-        $padding-adjust: utils.get-spacing-left(if($padding, $padding, get("padding")));
+        $padding-info: utils.get-spacing(if($padding, $padding, get("padding")));
         $cap-radius: utils.if-type("number", $border-radius, get("border-radius"));
         $cap-options: utils.ensure-map(map.get($style, "cap-options"));
         $cap-defaults: (
           "size" : map.get(get("cap-options"), "size"),
-          "padding-adjust" : $padding-adjust,
+          "padding-adjust" : map.get($padding-info, $cap-side),
           "offset" : $border-width,
           "border-radius" : if(get("cap-match-radius"), $cap-radius, null)
         );
 
         @include element.cap-appearance(
-          $side: get("cap-side"),
+          $side: $cap-side,
           $options: map.merge($cap-defaults, $cap-options),
           $before: true
         );
