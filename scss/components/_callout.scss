@@ -112,6 +112,7 @@ $styles: (
   $padding-info: utils.get-spacing($padding);
   $cap-options: get("cap-options");
   $cap-size: map.get($cap-options, "size");
+  $cap-side: get("cap-side");
 
   #{ $prefix } {
     position: relative; // For cap
@@ -127,9 +128,7 @@ $styles: (
 
     // If we have left cap on default we reuse this for all
     // Else we will print it out manually for each unique style
-    @if (not get("caps-disabled")) {
-      $cap-side: get("cap-side");
-      
+    @if (not get("caps-disabled")) {   
       $cap-defaults: (
         "offset" : get("border-width"),
         "border-radius" : if(get("cap-match-radius"), get("border-radius"), null),
