@@ -48,7 +48,7 @@ $config: (
   "cap-match-radius" : false,
   "cap-options" : (
     "color" : rgb(160, 160, 160),
-    "width" : 0.5rem,
+    "size" : 0.5rem,
   ),
   "margin" : 2rem,
   "padding" : 1.5rem,
