@@ -101,6 +101,10 @@ $theme-colors: (
   //   "light" : ulu.color-tint($color-violet-dark, 90%),
   //   "dark": red
   // ),
+  "color-background-live-demo" :(
+    "light" :#f6f6f6,
+    "dark": ulu.color-shade($color-gray-dark, 15%)
+  ),
   "color-background-details" :(
     "light" : ulu.color-tint($color-rule-light, 50%),
     "dark": ulu.color-tint($color-gray-dark, 25%)

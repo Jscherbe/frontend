@@ -11,7 +11,7 @@ export default function(config) {
 <div class="live-demo" data-live-demo>
   <div class="live-demo__display" data-live-demo-display>
   </div>
-  <form class="live-demo__form form-theme" data-live-demo-form>
+  <form class="live-demo__form form-theme theme-light" data-live-demo-form>
     ${ form(fields) }
   </form>
   <script type="application/json" data-live-demo-options>
