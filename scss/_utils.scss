@@ -680,3 +680,27 @@ $config: (
 @function ensure-map($value) {
   @return if(is-map($value), $value, ());
 }
+
+/// Returns true if edge passed is an end (top/bottom)
+/// @param {String} $edge The edge string to test
+/// @return {Boolean} Whether the edge was an end (versus side/x-axis)
+/// @throw If $edge is not a valid value (not top/bottom/left/right)
+
+@function is-end($edge) {
+  @if ($edge == "top" or $edge == "bottom") {
+    @return true;
+  } @else if ($edge == "left" or $edge == "right") {
+    @return false;
+  } @else {
+    @error "Expected side to be top/bottom/left/right, got #{ $edge }";
+  }
+}
+
+/// Returns true if edge passed is an side (left/right)
+/// @param {String} $edge The edge string to test
+/// @return {Boolean} Whether the edge was an side (versus end/y-axis)
+/// @throw If $edge is not a valid value (not top/bottom/left/right)
+
+@function is-side($edge) {
+  @return not is-end($edge);
+}

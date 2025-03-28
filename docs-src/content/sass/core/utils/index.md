@@ -2268,6 +2268,119 @@ Always returns a map
 
 - [is-map()](/sass/core/utils/#function-is-map)
   
+
+
+<div class="sassdoc-item-header">
+
+###  is-end() {#function-is-end}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Returns true if edge passed is an end (top/bottom)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 684-687
+- **Lines (code):** 689-697
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$edge|`String`|The edge string to test|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the edge was an end (versus side/x-axis)|
+
+    
+
+#### Throw
+
+- Expected side to be top/bottom/left/right, got #\{ $edge }
+    
+
+
+<div class="sassdoc-item-header">
+
+###  is-side() {#function-is-side}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Returns true if edge passed is an side (left/right)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 699-702
+- **Lines (code):** 704-706
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$edge|`String`|The edge string to test|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether the edge was an side (versus end/y-axis)|
+
+    
+
+#### Throw
+
+- If $edge is not a valid value (not top/bottom/left/right)
+    
+
+#### Require
+
+- [is-end()](/sass/core/utils/#function-is-end)
+  
   
 
 ## CSS
@@ -2310,7 +2423,7 @@ Checks if two numbers are the same unit
 - **Group:** utils
 - **Type:** css
 - **Lines (comments):** 164-167
-- **Lines (code):** 170-682
+- **Lines (code):** 170-706
 
 </details>
 

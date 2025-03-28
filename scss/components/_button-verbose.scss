@@ -120,9 +120,10 @@ $config: (
   $padding-x: get("padding-x");
   $padding-y: get("padding-y");
   $padding-right: ($padding-x * 2) + 1em;
+  $cap-side: get("cap-side");
   $cap-defaults: (
     "border-radius" : if(get("cap-match-radius"), get("border-radius"), 0),
-    "padding-adjust" : $padding-x
+    "padding-adjust" : if(utils.is-side($cap-side), $padding-x, $padding-y)
   );
   
   #{ $prefix } {
@@ -157,14 +158,14 @@ $config: (
     }
     @if get("cap") {
       @include element.cap(
-        $side: get("cap-side"),
+        $side: $cap-side,
         $options: map.merge($cap-defaults, get("cap-options"))
       );
       @if get("cap-options-hover") {
         &:hover,
         &:focus {
           @include element.cap-appearance(
-            $side: get("cap-side"),
+            $side: $cap-side,
             $options: get("cap-options-hover")
           );
         }
