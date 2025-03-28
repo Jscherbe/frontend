@@ -42,86 +42,86 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 ));
 
 @include ulu.component-callout-set((
-  "background-color": ulu.cssvar-use("color-background-details"),
-  "cap": false, // disabling this still preserves the padding of the cap size
-  "caps-disabled" : false,
-  "cap-side" : "left",
-  "cap-match-radius" : false,
+//   "background-color": ulu.cssvar-use("color-background-details"),
+//   "cap": false, // disabling this still preserves the padding of the cap size
+//   "caps-disabled" : false,
+//   "cap-side" : "left",
+//   "cap-match-radius" : false,
   "cap-options" : (
     "color" : green,
     "size" : 3rem,
   ),
 ));
 @include ulu.component-callout-set-styles((
-  "rainbow" : (
-    "cap-options" : (
-      "color" : yellow
-    ),
-    // Linear gradients don't work with color.get
-    //   "color" : linear-gradient(
-    //     90deg,
-    //     rgba(255, 0, 0, 1) 0%,
-    //     rgba(255, 154, 0, 1) 10%,
-    //     rgba(208, 222, 33, 1) 20%,
-    //     rgba(79, 220, 74, 1) 30%,
-    //     rgba(63, 218, 216, 1) 40%,
-    //     rgba(47, 201, 226, 1) 50%,
-    //     rgba(28, 127, 238, 1) 60%,
-    //     rgba(95, 21, 242, 1) 70%,
-    //     rgba(186, 12, 248, 1) 80%,
-    //     rgba(251, 7, 217, 1) 90%,
-    //     rgba(255, 0, 0, 1) 100%
-    // ),
-  ),
-  "info" : (
-    "background-color" : "info-background",
-    "cap-options" : (
-      "color" : blue,
-      "size" : 3rem,
-    ),
-    "cap" : true,
-  ),
-  // Cap side can only be adjusted in the default callout config
-  "warning" : (
-    "background-color" : "info-background",
-    "cap" : true,
-    "cap-side" : "top", //***
-    "cap-options" : (
-      "color" : rgb(160, 160, 160),
-      "size" : 0.5rem,
-    ),
-  ),
-  // example of caps-disable doing nothing in individual styles
-  "success" : (
-    "background-color" : "success-background",
-    "cap" : true,
-    "caps-disabled" : true, //***
-    "cap-options" : (
-      "color" : green,
-      "size" : 5rem,
-    ),
-  ),
-// example of cap-match radius only being usable as a default
-  "danger" : (
-    "background-color" : "danger-background",
-    "cap" : true,
-    "cap-match-radius" : true, //***
-    "cap-options" : (
-      "color" : red,
-      "size" : 0.5rem,
-    ),
-  ),
-// example of 
-  "test" : (
-    "cap" : true,
-    "caps-disabled" : false,
-    "cap-side" : "left",
-    "cap-match-radius" : false,
-    "cap-options" : (
-      "color" : purple,
-      "size" : 0.5rem,
-    ),
-  ),
+//   "rainbow" : (
+//     "cap-options" : (
+//       "color" : yellow
+//     ),
+//     // Linear gradients don't work with color.get
+//     //   "color" : linear-gradient(
+//     //     90deg,
+//     //     rgba(255, 0, 0, 1) 0%,
+//     //     rgba(255, 154, 0, 1) 10%,
+//     //     rgba(208, 222, 33, 1) 20%,
+//     //     rgba(79, 220, 74, 1) 30%,
+//     //     rgba(63, 218, 216, 1) 40%,
+//     //     rgba(47, 201, 226, 1) 50%,
+//     //     rgba(28, 127, 238, 1) 60%,
+//     //     rgba(95, 21, 242, 1) 70%,
+//     //     rgba(186, 12, 248, 1) 80%,
+//     //     rgba(251, 7, 217, 1) 90%,
+//     //     rgba(255, 0, 0, 1) 100%
+//     // ),
+//   ),
+//   "info" : (
+//     "background-color" : "info-background",
+//     "cap-options" : (
+//       "color" : blue,
+//       "size" : 3rem,
+//     ),
+//     "cap" : true,
+//   ),
+//   // Cap side can only be adjusted in the default callout config
+//   "warning" : (
+//     "background-color" : "info-background",
+//     "cap" : true,
+//     "cap-side" : "top", //***
+//     "cap-options" : (
+//       "color" : rgb(160, 160, 160),
+//       "size" : 0.5rem,
+//     ),
+//   ),
+//   // example of caps-disable doing nothing in individual styles
+//   "success" : (
+//     "background-color" : "success-background",
+//     "cap" : true,
+//     "caps-disabled" : true, //***
+//     "cap-options" : (
+//       "color" : green,
+//       "size" : 5rem,
+//     ),
+//   ),
+// // example of cap-match radius only being usable as a default
+//   "danger" : (
+//     "background-color" : "danger-background",
+//     "cap" : true,
+//     "cap-match-radius" : true, //***
+//     "cap-options" : (
+//       "color" : red,
+//       "size" : 0.5rem,
+//     ),
+//   ),
+// // example of 
+//   "test" : (
+//     "cap" : true,
+//     "caps-disabled" : false,
+//     "cap-side" : "left",
+//     "cap-match-radius" : false,
+//     "cap-options" : (
+//       "color" : purple,
+//       "size" : 0.5rem,
+//     ),
+//   ),
 ));
 
 @include ulu.component-captioned-figure-set((

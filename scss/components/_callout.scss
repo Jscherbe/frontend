@@ -211,7 +211,7 @@ $styles: (
       } @else if ($cap == false and $caps-enabled) {
         // if this style doesn't set padding
         @if (not $padding) {
-          $padding-info: utils.get-spacing($padding);
+          $padding-info: utils.get-spacing(get("padding"));
           padding-#{ $cap-side }: map.get($padding-info, $cap-side);
         }
         &::before {
