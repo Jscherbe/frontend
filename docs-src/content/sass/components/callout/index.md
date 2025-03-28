@@ -278,7 +278,7 @@ Output component stylesheet
 - **Group:** callout
 - **Type:** mixin
 - **Lines (comments):** 105-107
-- **Lines (code):** 109-158
+- **Lines (code):** 109-157
 
 </details>
 

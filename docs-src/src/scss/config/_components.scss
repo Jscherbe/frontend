@@ -43,33 +43,14 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 
 @include ulu.component-callout-set((
   "background-color": ulu.cssvar-use("color-background-details"),
-  "cap": false,
+  "cap": false, // disabling this still preserves the padding of the cap size
   "caps-disabled" : false,
   "cap-side" : "left",
   "cap-match-radius" : false,
-  // example of the cap going over the text. Only in default config
   "cap-options" : (
     "color" : green,
     "size" : 3rem,
   ),
-  // example of the linear-gradient not working
-  // "cap-options" : (
-  //   "color" : linear-gradient(
-    //     90deg,
-    //     rgba(255, 0, 0, 1) 0%,
-    //     rgba(255, 154, 0, 1) 10%,
-    //     rgba(208, 222, 33, 1) 20%,
-    //     rgba(79, 220, 74, 1) 30%,
-    //     rgba(63, 218, 216, 1) 40%,
-    //     rgba(47, 201, 226, 1) 50%,
-    //     rgba(28, 127, 238, 1) 60%,
-    //     rgba(95, 21, 242, 1) 70%,
-    //     rgba(186, 12, 248, 1) 80%,
-    //     rgba(251, 7, 217, 1) 90%,
-    //     rgba(255, 0, 0, 1) 100%
-    // ),
-  //   "size" : 3rem,
-  // ),
 ));
 @include ulu.component-callout-set-styles((
   "rainbow" : (
