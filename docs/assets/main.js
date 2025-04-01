@@ -3089,7 +3089,7 @@ const popover = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
 }, Symbol.toStringTag, { value: "Module" }));
 const attrs$a = {
   trigger: "data-ulu-tooltip",
-  init: "data-ulu-init",
+  init: "data-ulu-tooltip-init",
   body: "data-ulu-tooltip-display-body",
   arrow: "data-ulu-tooltip-arrow"
 };
@@ -3109,6 +3109,7 @@ function setupTrigger$1(trigger) {
   if (typeof passed === "string") {
     options.content = passed;
   }
+  trigger.setAttribute(attrs$a.init, "");
   return new Tooltip({ trigger }, options);
 }
 const _Tooltip = class _Tooltip {

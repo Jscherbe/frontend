@@ -245,11 +245,11 @@
 
         <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
+        <a class="nav-tree__link  " href="/frontend/demos/card/">
           
     
     <span class="nav-tree__text">
-      Card Grid
+      Card
     </span>
   
         </a>
@@ -260,11 +260,11 @@
 
         <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/card/">
+        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
           
     
     <span class="nav-tree__text">
-      Card New
+      Card Grid
     </span>
   
         </a>
@@ -2731,11 +2731,11 @@
 
         <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
+        <a class="nav-tree__link  " href="/frontend/demos/card/">
           
     
     <span class="nav-tree__text">
-      Card Grid
+      Card
     </span>
   
         </a>
@@ -2746,11 +2746,11 @@
 
         <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/card/">
+        <a class="nav-tree__link  " href="/frontend/demos/card-grid/">
           
     
     <span class="nav-tree__text">
-      Card New
+      Card Grid
     </span>
   
         </a>
@@ -5054,6 +5054,9 @@
                     
                     <li><a href="#variable-config">$config</a>
             		</li>
+
+                    <li><a href="#variable-styles">$styles</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -5106,12 +5109,17 @@
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">,</span> 240<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule-light"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span>  6px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-width"</span> <span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-cap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-cap-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>160<span class="pjs-token pjs-punctuation">,</span> 160<span class="pjs-token pjs-punctuation">,</span> 160<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"left-cap-width"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"caps-disabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"cap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"cap-side"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"cap-match-radius"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"cap-options"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>160<span class="pjs-token pjs-punctuation">,</span> 160<span class="pjs-token pjs-punctuation">,</span> 160<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"size"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5rem<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
@@ -5121,8 +5129,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 23-34</li>
-<li><strong>Lines (code):</strong> 36-47</li>
+<li><strong>Lines (comments):</strong> 23-36</li>
+<li><strong>Lines (code):</strong> 38-54</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5167,22 +5175,34 @@
 <td style="text-align:left">The box-shadow of the Callout.</td>
 </tr>
 <tr>
-<td style="text-align:left">left-cap</td>
+<td style="text-align:left">caps-disabled</td>
 <td style="text-align:left">Boolean</td>
 <td style="text-align:left">false</td>
-<td style="text-align:left">Toggles the use of left caps in styled callouts.</td>
+<td style="text-align:left">If set will not output any cap styles for both base and styles</td>
 </tr>
 <tr>
-<td style="text-align:left">left-cap-color</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">green</td>
-<td style="text-align:left">Color of the left cap.</td>
+<td style="text-align:left">cap</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Toggles the use of caps on default callout</td>
 </tr>
 <tr>
-<td style="text-align:left">left-cap-width</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.5rem</td>
-<td style="text-align:left">Width of the left cap.</td>
+<td style="text-align:left">cap-side</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">&quot;left&quot;</td>
+<td style="text-align:left">The side that gets the cap</td>
+</tr>
+<tr>
+<td style="text-align:left">cap-match-radius</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">The cap should have be rounded to match the parent's border radius</td>
+</tr>
+<tr>
+<td style="text-align:left">cap-options</td>
+<td style="text-align:left">Map</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">The options for cap (see element.cap for options)</td>
 </tr>
 <tr>
 <td style="text-align:left">margin</td>
@@ -5198,6 +5218,43 @@
 </tr>
 </tbody>
 </table>
+<div class="sassdoc-item-header">
+<h3 id="variable-styles" tabindex="-1">$styles</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Styles Map (for unique variations/modifiers)</p>
+<ul>
+<li>Adjust this with set-styles</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$styles</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"outline"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span> transparent
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"info"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"info-background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"warning"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"info-background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"success"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"success-background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"danger"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"danger-background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _callout.scss</li>
+<li><strong>Group:</strong> callout</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 56-58</li>
+<li><strong>Lines (code):</strong> 60-76</li>
+</ul>
+</details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5212,8 +5269,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 75-78</li>
-<li><strong>Lines (code):</strong> 80-82</li>
+<li><strong>Lines (comments):</strong> 78-81</li>
+<li><strong>Lines (code):</strong> 83-85</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5246,14 +5303,17 @@
   </div>
 </div>
 <p>Set callout style variations</p>
+<ul>
+<li>Styles that modify padding when using mix-match caps on/off should be included last</li>
+</ul>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 94-96</li>
-<li><strong>Lines (code):</strong> 98-100</li>
+<li><strong>Lines (comments):</strong> 97-100</li>
+<li><strong>Lines (code):</strong> 102-104</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5269,7 +5329,7 @@
 <tr>
 <td style="text-align:left">$changes</td>
 <td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes (options for style include [background-color, color, border, border-radius, border-color, box-shadow, padding, left-cap, left-cap-width, left-cap-color]</td>
+<td style="text-align:left">Map of changes (options for style include [background-color, color, border-color, border-radius, border-width, box-shadow, padding, cap, cap-options]</td>
 </tr>
 <tr>
 <td style="text-align:left">$merge-mode</td>
@@ -5280,7 +5340,7 @@
 </table>
 <h4 id="require-1" tabindex="-1">Require</h4>
 <ul>
-<li>$styles</li>
+<li><a href="/frontend/sass/components/callout/#variable-styles">$styles</a></li>
 </ul>
 <div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
@@ -5295,8 +5355,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 102-104</li>
-<li><strong>Lines (code):</strong> 106-152</li>
+<li><strong>Lines (comments):</strong> 106-108</li>
+<li><strong>Lines (code):</strong> 110-158</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5304,7 +5364,6 @@
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
-<li>$styles</li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item-header">
@@ -5320,8 +5379,8 @@
 <li><strong>File:</strong> _callout.scss</li>
 <li><strong>Group:</strong> callout</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 84-87</li>
-<li><strong>Lines (code):</strong> 89-92</li>
+<li><strong>Lines (comments):</strong> 87-90</li>
+<li><strong>Lines (code):</strong> 92-95</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
