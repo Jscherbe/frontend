@@ -64,34 +64,33 @@ $-fallbacks: (
 /// @prop {Color} check-input-border-color-indeterminate [null] Indeterminate check input border color.
 /// @prop {Color} check-input-border-color-focus [null] Check input border color when hovered or focused.
 /// @prop {CssValue} check-input-outline [null] Check input outline.
-/// @prop {CssValue} check-input-outline-hover [null]
-/// @prop {CssValue} check-input-outline-checked [null]
-/// @prop {CssValue} check-input-outline-focus [1px solid white]
-/// @prop {Color} check-input-touch-color-hover [#e8e8e8]
-/// @prop {Color} check-input-touch-color-focus [null]
-/// @prop {Dimension} check-input-radio-size [0.3em]
-/// @prop {Dimension} check-input-checkmark-width [0.38em]
-/// @prop {Dimension} check-input-checkmark-height [0.68em]
-/// @prop {Dimension} check-input-checkmark-offset-y [-0.2em]
-/// @prop {Dimension} check-input-checkmark-stroke-size [0.18em]
-/// @prop {Color} check-input-mark-color [currentColor]
-/// @prop {Color} check-input-mark-color-hover [null]
-/// @prop {Color} check-input-mark-color-focus [null]
-/// @prop {Color} check-input-mark-color-checked [null]
-/// @prop {Color} check-input-mark-color-indeterminate [null]
-/// @prop {Number} check-input-disabled-opacity [0.6]
-/// @prop {Dimension} check-input-border-radius [null]
-/// @prop {Color} description-color [false]
-/// @prop {CssValue} description-margin [(0.25em 0)]
-/// @prop {Dimension} description-max-width [25em]
-/// @prop {Number} description-line-height [true] Line height for description element, defaults to typograpahy line-height-dense
-/// @prop {Color} fieldset-background [transparent]
-/// @prop {CssValue} fieldset-border [none]
+/// @prop {CssValue} check-input-outline-hover [null] Check input outline when hovered.
+/// @prop {CssValue} check-input-outline-checked [null] Check input outline when checked.
+/// @prop {CssValue} check-input-outline-focus [1px solid white] Check input outline when focused.
+/// @prop {Color} check-input-touch-color-hover [#e8e8e8] Check input background color when hovered.
+/// @prop {Color} check-input-touch-color-focus [null] Check input background color when focused.
+/// @prop {Dimension} check-input-radio-size [0.3em] Radio border size.
+/// @prop {Dimension} check-input-checkmark-width [0.38em] Width of checkmark.
+/// @prop {Dimension} check-input-checkmark-height [0.68em] Height of checkmark.
+/// @prop {Dimension} check-input-checkmark-offset-y [-0.2em] vertical offset of checkmark.
+/// @prop {Dimension} check-input-checkmark-stroke-size [0.18em] stroke size of checkmark.
+/// @prop {Color} check-input-mark-color [currentColor] Check input color.
+/// @prop {Color} check-input-mark-color-hover [null] Check input color when hovered.
+/// @prop {Color} check-input-mark-color-focus [null] Check input color when focused.
+/// @prop {Color} check-input-mark-color-checked [null] Check input color when checked.
+/// @prop {Color} check-input-mark-color-indeterminate [null] Check input color when indeterminate.
+/// @prop {Number} check-input-disabled-opacity [0.6] Opacity of the check input when disabled.
+/// @prop {Dimension} check-input-border-radius [null] Checkbox input border radius.
+/// @prop {Color} description-color [false] Color of help text.
+/// @prop {CssValue} description-margin [(0.25em 0)] Margin for help text.
+/// @prop {Dimension} description-max-width [25em] Max width of help text.
+/// @prop {Number} description-line-height [true] Line height for description element, defaults to typography line-height-dense
+/// @prop {Color} fieldset-background [transparent] Background color of fieldset.
+/// @prop {CssValue} fieldset-border [none] Border for fieldset
 /// @prop {Dimension} fieldset-margin-bottom [1rem]
 /// @prop {Dimension} fieldset-margin-top [1rem]
 /// @prop {Dimension} fieldset-padding [0]
-/// @prop {Dimension} fieldset-margin-compact [0]
-/// @prop {Dimension} fieldset-border-bottom [0]
+/// @prop {Dimension} fieldset-margin-compact [0] @joe-check unused
 /// @prop {Dimension} fieldset-border-radius [0]
 /// @prop {Color} fieldset-legend-color [inherit]
 /// @prop {Dimension} fieldset-legend-border-bottom [null]
