@@ -1,5 +1,9 @@
 JS Todos:
-  ☐ Tooltips are duplicating in card demo (maybe elsewhere)? @important
+  ☐ Create ComponentInstance class
+    * As way to consistently manage/create components
+    * With dedicated destroy methods (ways to register handlers to be removed, etc)
+    * Possibly a way to emit an event from the component (through the events system)
+  ✔ Tooltips are duplicating in card demo (maybe elsewhere)? @important @done
   ☐ Prefix breakpoint custom property
     * Check CSS var breakpoint declare too
   ☐ Maybe we should go back to classes as the base for the instances
@@ -25,6 +29,7 @@ JS Todos:
           return instanceManager;
         }    
       * Con Maybe: What about issues with references (ie destroy and garbage collection)?
+      * May need to change name to ComponentInstanceManager
   ✔ Setup config module @done
     ✔ Setup but issue with settings being set before changes can occur @done
   ☐ Need to double check the theme toggle

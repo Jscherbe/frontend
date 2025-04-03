@@ -7,6 +7,7 @@ title: utils/dom
 # utils/dom
 
 * [utils/dom](#module_utils/dom)
+    * [.dataAttributeToDatasetKey(dataAttribute)](#module_utils/dom.dataAttributeToDatasetKey) ⇒ <code>string</code>
     * [.getDatasetJson(element, key)](#module_utils/dom.getDatasetJson) ⇒ <code>Object</code>
     * [.getDatasetOptionalJson(element, key)](#module_utils/dom.getDatasetOptionalJson) ⇒ <code>Object</code> \| <code>String</code>
     * [.wasClickOutside()](#module_utils/dom.wasClickOutside)
@@ -15,6 +16,18 @@ title: utils/dom
     * [.getElements(target, context)](#module_utils/dom.getElements) ⇒ <code>Array</code>
     * [.resolveClasses(input)](#module_utils/dom.resolveClasses) ⇒ <code>Array.&lt;string&gt;</code>
     * [.addScrollbarProperty(element, container, propName)](#module_utils/dom.addScrollbarProperty)
+
+<a name="module_utils/dom.dataAttributeToDatasetKey"></a>
+
+## utils/dom.dataAttributeToDatasetKey(dataAttribute) ⇒ <code>string</code>
+Converts a data attribute name to its corresponding dataset property name.
+
+**Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
+**Returns**: <code>string</code> - - The dataset property name (e.g., "uluDialog").  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| dataAttribute | <code>string</code> | The data attribute name (e.g., "data-ulu-dialog"). |
 
 <a name="module_utils/dom.getDatasetJson"></a>
 
