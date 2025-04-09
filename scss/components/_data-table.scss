@@ -33,6 +33,7 @@ $-fallbacks: (
 /// @prop {Color} footer-background-color [#f3f3f3] Background color of table footer.
 /// @prop {Color} color ["type-secondary"] Font color of the table.
 /// @prop {Color} header-color ["headline"] Font color for the table header.
+/// @prop {Color} footer-color [null] Font color for the table footer.
 /// @prop {Number} line-height [true] Line height for the table.
 /// @prop {Dimension} column-min-width [6em] Min-width of the th element.
 /// @prop {Dimension} first-column-large-min-width [15em] When using "--large-first" style, the min width of the first th element.
@@ -63,6 +64,7 @@ $config: (
   "footer-background-color" : #f3f3f3,
   "color" : "type-secondary",
   "header-color" : "headline",
+  "footer-color" : null,
   "line-height" : true,
   "column-min-width" : 6em,
   "first-column-large-min-width" : 15em,
@@ -175,6 +177,7 @@ $config: (
     }
     tfoot tr {
       background-color: color.get(get("footer-background-color"));
+      color: color.get(get("footer-color"));
     }
     th,
     td {

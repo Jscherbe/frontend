@@ -131,8 +131,8 @@ $config: (
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** variable
-- **Lines (comments):** 25-108
-- **Lines (code):** 110-194
+- **Lines (comments):** 25-107
+- **Lines (code):** 109-193
 
 </details>
 
@@ -183,34 +183,33 @@ $config: (
 |check-input-border-color-indeterminate|Color|null|Indeterminate check input border color.|
 |check-input-border-color-focus|Color|null|Check input border color when hovered or focused.|
 |check-input-outline|CssValue|null|Check input outline.|
-|check-input-outline-hover|CssValue|null||
-|check-input-outline-checked|CssValue|null||
-|check-input-outline-focus|CssValue|1px solid white||
-|check-input-touch-color-hover|Color|#e8e8e8||
-|check-input-touch-color-focus|Color|null||
-|check-input-radio-size|Dimension|0.3em||
-|check-input-checkmark-width|Dimension|0.38em||
-|check-input-checkmark-height|Dimension|0.68em||
-|check-input-checkmark-offset-y|Dimension|-0.2em||
-|check-input-checkmark-stroke-size|Dimension|0.18em||
-|check-input-mark-color|Color|currentColor||
-|check-input-mark-color-hover|Color|null||
-|check-input-mark-color-focus|Color|null||
-|check-input-mark-color-checked|Color|null||
-|check-input-mark-color-indeterminate|Color|null||
-|check-input-disabled-opacity|Number|0.6||
-|check-input-border-radius|Dimension|null||
-|description-color|Color|false||
-|description-margin|CssValue|(0.25em 0)||
-|description-max-width|Dimension|25em||
-|description-line-height|Number|true|Line height for description element, defaults to typograpahy line-height-dense|
-|fieldset-background|Color|transparent||
-|fieldset-border|CssValue|none||
+|check-input-outline-hover|CssValue|null|Check input outline when hovered.|
+|check-input-outline-checked|CssValue|null|Check input outline when checked.|
+|check-input-outline-focus|CssValue|1px solid white|Check input outline when focused.|
+|check-input-touch-color-hover|Color|#e8e8e8|Check input background color when hovered.|
+|check-input-touch-color-focus|Color|null|Check input background color when focused.|
+|check-input-radio-size|Dimension|0.3em|Radio border size.|
+|check-input-checkmark-width|Dimension|0.38em|Width of checkmark.|
+|check-input-checkmark-height|Dimension|0.68em|Height of checkmark.|
+|check-input-checkmark-offset-y|Dimension|-0.2em|vertical offset of checkmark.|
+|check-input-checkmark-stroke-size|Dimension|0.18em|stroke size of checkmark.|
+|check-input-mark-color|Color|currentColor|Check input color.|
+|check-input-mark-color-hover|Color|null|Check input color when hovered.|
+|check-input-mark-color-focus|Color|null|Check input color when focused.|
+|check-input-mark-color-checked|Color|null|Check input color when checked.|
+|check-input-mark-color-indeterminate|Color|null|Check input color when indeterminate.|
+|check-input-disabled-opacity|Number|0.6|Opacity of the check input when disabled.|
+|check-input-border-radius|Dimension|null|Checkbox input border radius.|
+|description-color|Color|false|Color of help text.|
+|description-margin|CssValue|(0.25em 0)|Margin for help text.|
+|description-max-width|Dimension|25em|Max width of help text.|
+|description-line-height|Number|true|Line height for description element, defaults to typography line-height-dense|
+|fieldset-background|Color|transparent|Background color of fieldset.|
+|fieldset-border|CssValue|none|Border for fieldset|
 |fieldset-margin-bottom|Dimension|1rem||
 |fieldset-margin-top|Dimension|1rem||
 |fieldset-padding|Dimension|0||
-|fieldset-margin-compact|Dimension|0||
-|fieldset-border-bottom|Dimension|0||
+|fieldset-margin-compact|Dimension|0|@joe-check unused|
 |fieldset-border-radius|Dimension|0||
 |fieldset-legend-color|Color|inherit||
 |fieldset-legend-border-bottom|Dimension|null||
@@ -257,8 +256,8 @@ Change modules $config
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 196-199
-- **Lines (code):** 201-203
+- **Lines (comments):** 195-198
+- **Lines (code):** 200-202
 
 </details>
 
@@ -316,8 +315,8 @@ Output component stylesheet
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 219-221
-- **Lines (code):** 223-260
+- **Lines (comments):** 218-220
+- **Lines (code):** 222-259
 
 </details>
 
@@ -368,8 +367,8 @@ Required Character styles (ie. "*")
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 499-499
-- **Lines (code):** 500-507
+- **Lines (comments):** 498-498
+- **Lines (code):** 499-506
 
 </details>
 
@@ -404,8 +403,8 @@ Help text / Description
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 509-509
-- **Lines (code):** 510-517
+- **Lines (comments):** 508-508
+- **Lines (code):** 509-516
 
 </details>
 
@@ -440,8 +439,8 @@ Styles for form item that should have label as block and text input
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 519-519
-- **Lines (code):** 520-531
+- **Lines (comments):** 518-518
+- **Lines (code):** 519-530
 
 </details>
 
@@ -476,8 +475,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 533-533
-- **Lines (code):** 534-537
+- **Lines (comments):** 532-532
+- **Lines (code):** 533-536
 
 </details>
 
@@ -507,8 +506,8 @@ Footer of form (with button for example)
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 539-539
-- **Lines (code):** 540-542
+- **Lines (comments):** 538-538
+- **Lines (code):** 539-541
 
 </details>
 
@@ -538,8 +537,8 @@ Layout styling for static/app sites
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 544-544
-- **Lines (code):** 545-598
+- **Lines (comments):** 543-543
+- **Lines (code):** 544-597
 
 </details>
 
@@ -579,8 +578,8 @@ Layout styles but using drupal form structures
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** mixin
-- **Lines (comments):** 600-600
-- **Lines (code):** 601-629
+- **Lines (comments):** 599-599
+- **Lines (code):** 600-628
 
 </details>
 
@@ -624,8 +623,8 @@ Get a config option
 - **File:** _form-theme.scss
 - **Group:** form-theme
 - **Type:** function
-- **Lines (comments):** 205-208
-- **Lines (code):** 210-213
+- **Lines (comments):** 204-207
+- **Lines (code):** 209-212
 
 </details>
 

@@ -46,6 +46,7 @@ $config: (
   "footer-background-color" : #f3f3f3,
   "color" : "type-secondary",
   "header-color" : "headline",
+  "footer-color" : null,
   "line-height" : true,
   "column-min-width" : 6em,
   "first-column-large-min-width" : 15em,
@@ -76,8 +77,8 @@ $config: (
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** variable
-- **Lines (comments):** 25-54
-- **Lines (code):** 56-85
+- **Lines (comments):** 25-55
+- **Lines (code):** 57-87
 
 </details>
 
@@ -97,6 +98,7 @@ $config: (
 |footer-background-color|Color|#f3f3f3|Background color of table footer.|
 |color|Color|"type-secondary"|Font color of the table.|
 |header-color|Color|"headline"|Font color for the table header.|
+|footer-color|Color|null|Font color for the table footer.|
 |line-height|Number|true|Line height for the table.|
 |column-min-width|Dimension|6em|Min-width of the th element.|
 |first-column-large-min-width|Dimension|15em|When using "--large-first" style, the min width of the first th element.|
@@ -148,8 +150,8 @@ Change modules $config
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 87-90
-- **Lines (code):** 92-94
+- **Lines (comments):** 89-92
+- **Lines (code):** 94-96
 
 </details>
 
@@ -207,8 +209,8 @@ Output component stylesheet
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** mixin
-- **Lines (comments):** 106-108
-- **Lines (code):** 110-217
+- **Lines (comments):** 108-110
+- **Lines (code):** 112-220
 
 </details>
 
@@ -262,8 +264,8 @@ Get a config option
 - **File:** _data-table.scss
 - **Group:** data-table
 - **Type:** function
-- **Lines (comments):** 96-99
-- **Lines (code):** 101-104
+- **Lines (comments):** 98-101
+- **Lines (code):** 103-106
 
 </details>
 

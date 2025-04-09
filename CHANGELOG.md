@@ -2,6 +2,8 @@
 
 ## Version 0.1.0-beta.34 (unreleased)
 
+- scss/data-grid
+  - add config option "footer-color" to enable users to customize footer text color. Footer still defaults to "color" config option.
 - scss/element
   - Add mixins for element.cap() and element.cap-appearance() which are used internally but can be used by users to add end caps to an element
 - scss/components/callout 
