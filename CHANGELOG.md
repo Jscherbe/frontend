@@ -19,6 +19,8 @@
   - Add ensure-map(), units-match(), is-end(), is-side() functions
 - js/ui/tooltip
   - Fix missing init attribute
+- scss/components/accordion
+  - remove static margin-bottom added to "--no-borders" modifier (was 4rem)
 
 ## Version 0.1.0-beta.33
 

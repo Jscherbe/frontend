@@ -208,7 +208,6 @@ $config: (
   }
   #{ $prefix }--no-borders {
     border: none;
-    margin-bottom: 4rem;
     &[open] > .accordion__summary {
       border-bottom: none;
     }
