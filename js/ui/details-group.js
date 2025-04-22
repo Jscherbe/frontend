@@ -3,20 +3,18 @@
  * @description Manages groups of details (ie. onlyOneOpen at a time)
  */
 
-import { getName } from "../events/index.js";
-import { getDatasetOptionalJson } from "../utils/dom.js";
+import { ComponentInitializer } from "../utils/system.js";
 
-export const attrs = {
-  init: "data-ulu-details-group-init",
-  childInit: "data-ulu-details-group-child-init",
-  group: "data-ulu-details-group",
-};
+/**
+ * Dialog Component Initializer
+ */
+export const initializer = new ComponentInitializer({ 
+  type: "details-group", 
+  baseAttribute: "data-ulu-details-group" 
+});
 
-// Utils for selecting things based on attributes
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-
-const defaults  = {
+const childInitAttr = initializer.getAttribute("child-init");
+const defaults = {
   onlyOneOpen: true,
   childSelector: ":scope > details"
 };
@@ -26,24 +24,14 @@ const defaults  = {
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), () => setup());
-  setup();
-}
-
-/**
- * Setup all dialog groups within context
- * @param {HTMLElement} context [document] Element to query within
- * @returns {Array} Array matching the groups queried with their return objects from setupGroup() [used for destroy/etc]
- */
-export function setup(context = document) {
-  // Added try because we are using querySelectorAll with :scope by default
-  // which will not work in Internet Explorer or early edge (some alt. browsers too)
-  try {
-    const elements = context.querySelectorAll(attrSelectorInitial("group"));
-    return [...elements].map(setupGroup);
-  } catch(error) {
-    console.error(error);
-  }
+  initializer.init({
+    withData: true,
+    onPageModified: true,
+    setup({ element, data, initialize }) {
+      setupGroup(element, data);
+      initialize();
+    }
+  });
 }
 
 /**
@@ -56,14 +44,19 @@ export function setup(context = document) {
 /**
  * Sets up a single group of details elements to manage their behavior.
  * @param {HTMLElement} element - The parent element containing the details elements.
+ * @param {Object} options - The options for this group
  * @returns {DetailsGroupInstance}      
  */
-export function setupGroup(element) {
-  const elementOptions = getDatasetOptionalJson(element, "uluDetailsGroup");
-  const options = Object.assign({}, defaults, elementOptions);
-  
-  element.setAttribute(attrs.t, "");
-  setupChildren();
+export function setupGroup(element, userOptions) {
+  const options = Object.assign({}, defaults, userOptions);
+
+  // Added try because we are using querySelectorAll with :scope by default
+  // which will not work in Internet Explorer or early edge (some alt. browsers too)
+  try {
+    setupChildren();
+  } catch(error) {
+    console.error(error);
+  }
 
   /**
    * Queries all current children in element
@@ -78,13 +71,11 @@ export function setupGroup(element) {
    */
   function setupChildren() {
     queryChildren().forEach(child => {
-      if (child.hasAttribute(attrs.childInit)) {
+      if (child.hasAttribute(childInitAttr)) {
         return;
       } else {
-        child.setAttribute(attrs.childInit, "");
+        child.setAttribute(childInitAttr, "");
       }
-      console.log(child);
-      
       child.addEventListener("toggle", toggleHandler);  
     });
   }
@@ -112,9 +103,9 @@ export function setupGroup(element) {
   function destroy() {
     queryChildren().forEach(child => {
       child.removeEventListener("toggle", toggleHandler);
-      child.removeAttribute(attrs.childInit);
+      child.removeAttribute(childInitAttr);
     });
-    element.removeAttribute(attrs.init);
+    element.removeAttribute(initializer.getAttribute("init"));
   }
 
   return { destroy, element, setupChildren };

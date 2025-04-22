@@ -2,18 +2,14 @@
  * @module ui/print
  */
 
-import { getName } from "../events/index.js";
-import { getDatasetOptionalJson, getElement } from "../utils/dom.js";
+import { ComponentInitializer } from "../utils/system.js";
+import { getElement } from "../utils/dom.js";
 import { printElement } from "@ulu/utils/browser/print.js";
 
-export const attrs = {
-  trigger: "data-ulu-print",
-  init: "data-ulu-print-init",
-};
-
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+const initializer = new ComponentInitializer({
+  type: "print",
+  baseAttribute: "data-ulu-print"
+});
 
 /**
  * Default options
@@ -30,27 +26,22 @@ const defaults = {
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
-}
-
-/**
- * Setup all triggers currently on the page
- */
-function setup() {
-  const triggers = queryAllInitial("trigger");
-  triggers.forEach(trigger => {
-    const options = getDatasetOptionalJson(trigger, "uluPrint");
-    setupTrigger(trigger, options);
+  initializer.init({
+    onPageModified: true,
+    withData: true,
+    setup({ element, data, initialize }) {
+      setupTrigger(element, data);
+      initialize();
+    }
   });
 }
 
 /**
  * Setup a single trigger (can be used manually without attr if needed)
  */
-function setupTrigger(trigger, options) {
-  const config = Object.assign({}, defaults, options);
-  trigger.addEventListener("click", (event) => {
+function setupTrigger(trigger, userOptions) {
+  const config = Object.assign({}, defaults, userOptions);
+  trigger.addEventListener("click", () => {
     // Option to print a specific element
     if (config.element) {
       const element = getElement(config.element);

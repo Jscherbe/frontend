@@ -15,12 +15,16 @@
 - scss/button-verbose
   - **Minor visual breaking change for those using cap**
   - left cap has changed to cap and accepts common cap options (see config)
-- scss/utils
-  - Add ensure-map(), units-match(), is-end(), is-side() functions
-- js/ui/tooltip
-  - Fix missing init attribute
 - scss/components/accordion
   - remove static margin-bottom added to "--no-borders" modifier (was 4rem)
+- scss/utils
+  - Add ensure-map(), units-match(), is-end(), is-side() functions
+- js/
+  - ui/ (remove setup functions, using component initializer class now)
+  - ui/dialog
+    - Added option preventScroll (defaults to true), used only for modal dialogs (ignored if nonModal)
+  - ui/tooltip
+    - Fix missing init attribute
 
 ## Version 0.1.0-beta.33
 

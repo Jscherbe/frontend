@@ -9,22 +9,18 @@ Core classes and mechanisms that define how UI components are created and manage
 
 
 * [utils/system](#module_utils/system)
-    * _static_
-        * [.ComponentInitializer](#module_utils/system.ComponentInitializer)
-            * [new exports.ComponentInitializer(options)](#new_module_utils/system.ComponentInitializer_new)
-            * [.defaults](#module_utils/system.ComponentInitializer+defaults)
-            * [.getAttribute(key)](#module_utils/system.ComponentInitializer+getAttribute) ⇒ <code>String</code>
-            * [.attributeSelector(key)](#module_utils/system.ComponentInitializer+attributeSelector)
-            * [.attributeSelectorInitial()](#module_utils/system.ComponentInitializer+attributeSelectorInitial) ⇒ <code>String</code>
-            * [.queryAllInitial(context)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array</code>
-            * [.queryAllInitialWithData(context)](#module_utils/system.ComponentInitializer+queryAllInitialWithData) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
-            * [.initializeElement(element)](#module_utils/system.ComponentInitializer+initializeElement)
-            * [.getData()](#module_utils/system.ComponentInitializer+getData) ⇒ <code>\*</code>
-            * [.debug()](#module_utils/system.ComponentInitializer+debug)
-        * [.ComponentInstance](#module_utils/system.ComponentInstance)
-    * _inner_
-        * [~type](#module_utils/system..type)
-        * [~baseAttribute](#module_utils/system..baseAttribute)
+    * [.ComponentInitializer](#module_utils/system.ComponentInitializer)
+        * [new exports.ComponentInitializer(options)](#new_module_utils/system.ComponentInitializer_new)
+        * [.init(config)](#module_utils/system.ComponentInitializer+init)
+        * [.setupElements(config)](#module_utils/system.ComponentInitializer+setupElements)
+        * [.getAttribute(key)](#module_utils/system.ComponentInitializer+getAttribute) ⇒ <code>String</code>
+        * [.attributeSelector(key)](#module_utils/system.ComponentInitializer+attributeSelector)
+        * [.attributeSelectorInitial()](#module_utils/system.ComponentInitializer+attributeSelectorInitial) ⇒ <code>String</code>
+        * [.queryAllInitial(context, withData)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
+        * [.initializeElement(element)](#module_utils/system.ComponentInitializer+initializeElement)
+        * [.getData()](#module_utils/system.ComponentInitializer+getData) ⇒ <code>\*</code>
+        * [.log()](#module_utils/system.ComponentInitializer+log)
+    * [.ComponentInstance](#module_utils/system.ComponentInstance)
 
 <a name="module_utils/system.ComponentInitializer"></a>
 
@@ -35,15 +31,15 @@ Class serves as a utility for UI modules, handling the selection of elements and
 
 * [.ComponentInitializer](#module_utils/system.ComponentInitializer)
     * [new exports.ComponentInitializer(options)](#new_module_utils/system.ComponentInitializer_new)
-    * [.defaults](#module_utils/system.ComponentInitializer+defaults)
+    * [.init(config)](#module_utils/system.ComponentInitializer+init)
+    * [.setupElements(config)](#module_utils/system.ComponentInitializer+setupElements)
     * [.getAttribute(key)](#module_utils/system.ComponentInitializer+getAttribute) ⇒ <code>String</code>
     * [.attributeSelector(key)](#module_utils/system.ComponentInitializer+attributeSelector)
     * [.attributeSelectorInitial()](#module_utils/system.ComponentInitializer+attributeSelectorInitial) ⇒ <code>String</code>
-    * [.queryAllInitial(context)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array</code>
-    * [.queryAllInitialWithData(context)](#module_utils/system.ComponentInitializer+queryAllInitialWithData) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
+    * [.queryAllInitial(context, withData)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
     * [.initializeElement(element)](#module_utils/system.ComponentInitializer+initializeElement)
     * [.getData()](#module_utils/system.ComponentInitializer+getData) ⇒ <code>\*</code>
-    * [.debug()](#module_utils/system.ComponentInitializer+debug)
+    * [.log()](#module_utils/system.ComponentInitializer+log)
 
 <a name="new_module_utils/system.ComponentInitializer_new"></a>
 
@@ -53,14 +49,42 @@ Create a new instance of ComponentInitializer
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | <code>Object</code> | Options (see defaults) |
+| options | <code>Object</code> | Options for configuring the component initializer. |
+| options.type | <code>String</code> | Type of component (used for logs). |
+| options.baseAttribute | <code>String</code> | Prefix and base attribute name (used for base attribute and further element attribute names). |
 
-<a name="module_utils/system.ComponentInitializer+defaults"></a>
+<a name="module_utils/system.ComponentInitializer+init"></a>
 
-### componentInitializer.defaults
-Default Options
+### componentInitializer.init(config)
+Initializes the component based on the provided configuration.
 
-**Kind**: instance property of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
+**Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>object</code> | The initialization configuration. |
+| config.setup | <code>function</code> | The setup function to call for each element. |
+| config.key | <code>string</code> | The optional key to use with attribute selector. |
+| config.withData | <code>boolean</code> | [false] Whether to retrieve element data. |
+| config.onPageModified | <code>boolean</code> | [true] Whether to bind event listener for page modifications. |
+| config.context | <code>HTMLElement</code> | [document] The context to query within. |
+
+<a name="module_utils/system.ComponentInitializer+setupElements"></a>
+
+### componentInitializer.setupElements(config)
+Processes the elements based on the provided configuration.
+
+**Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| config | <code>object</code> | The initialization configuration. |
+| config.setup | <code>function</code> | The setup function to call for each element. |
+| config.key | <code>string</code> | The optional key to use with attribute selector. |
+| config.withData | <code>boolean</code> | [false] Whether to retrieve element data. |
+| config.onPageModified | <code>boolean</code> | [true] Whether to bind event listener for page modifications. |
+| config.context | <code>HTMLElement</code> | [document] The context to query within. |
+
 <a name="module_utils/system.ComponentInitializer+getAttribute"></a>
 
 ### componentInitializer.getAttribute(key) ⇒ <code>String</code>
@@ -92,19 +116,7 @@ Create an attribute selector for initial
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
 <a name="module_utils/system.ComponentInitializer+queryAllInitial"></a>
 
-### componentInitializer.queryAllInitial(context) ⇒ <code>Array</code>
-Queries all main elements of a component that have not been initialized.
-
-**Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
-**Returns**: <code>Array</code> - Array of uninitialized main elements.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| context | <code>HTMLElement</code> | The context to query within. |
-
-<a name="module_utils/system.ComponentInitializer+queryAllInitialWithData"></a>
-
-### componentInitializer.queryAllInitialWithData(context) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
+### componentInitializer.queryAllInitial(context, withData) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
 Queries all main elements of a component that have not been initialized and extracts their data attributes.
 
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
@@ -113,6 +125,7 @@ Queries all main elements of a component that have not been initialized and extr
 | Param | Type | Description |
 | --- | --- | --- |
 | context | <code>HTMLElement</code> | The context to query within. |
+| withData | <code>Boolean</code> | Include dataset from element |
 
 <a name="module_utils/system.ComponentInitializer+initializeElement"></a>
 
@@ -132,9 +145,9 @@ Get an elements dataset value as JSON or other value
 
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
 **Returns**: <code>\*</code> - The value of the dataset, if JSON will return object else will return string value or undefined  
-<a name="module_utils/system.ComponentInitializer+debug"></a>
+<a name="module_utils/system.ComponentInitializer+log"></a>
 
-### componentInitializer.debug()
+### componentInitializer.log()
 Will output namespaced console logs for the given initializer
 
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
@@ -144,17 +157,5 @@ Will output namespaced console logs for the given initializer
 Class serves as a base for representing individual occurrences of a UI component, providing a consistent structure for each
 
 **Kind**: static class of [<code>utils/system</code>](#module_utils/system)  
-<a name="module_utils/system..type"></a>
-
-## utils/system~type
-Type of component (for logs)
-
-**Kind**: inner property of [<code>utils/system</code>](#module_utils/system)  
-<a name="module_utils/system..baseAttribute"></a>
-
-## utils/system~baseAttribute
-Prefix and base attribute name (used for base attribute and further element attribute names)
-
-**Kind**: inner property of [<code>utils/system</code>](#module_utils/system)  
 
   

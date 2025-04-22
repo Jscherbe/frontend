@@ -1,4 +1,5 @@
 Todos:
+  ☐ Need to explain that button, rule and link components inherit from core module settings
   ☐ Need to explain proxy-click to users in the card demo (only makes sense to us currently)
     ☐ Also need form-theme to stay light theme
   ☐ Utils should be organized somehow, print out in order of definition, maybe these should be rearranged so similar functions are grouped on page/menu
