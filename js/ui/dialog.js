@@ -67,7 +67,7 @@ export function setDefaults(options) {
 export function init() {
   // Initialize all the dialogs
   initializer.init({
-    onPageModified: true,
+    events: ["pageModified"],
     withData: true,
     setup({ element, initialize, data }) {
       setupDialog(element, data);
@@ -78,7 +78,7 @@ export function init() {
   // Initialize all triggers (things that trigger opening a dialog)
   initializer.init({
     key: "trigger",
-    onPageModified: true,
+    events: ["pageModified"],
     withData: true,
     setup({ element, initialize, data: dialogId }) {
       setupTrigger(element, dialogId);

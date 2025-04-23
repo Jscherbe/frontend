@@ -26,7 +26,7 @@ const defaults = {
 export function init() {
   initializer.init({
     withData: true,
-    onPageModified: true,
+    events: ["pageModified"],
     setup({ element, data, initialize }) {
       setupGroup(element, data);
       initialize();

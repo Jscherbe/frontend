@@ -36,6 +36,7 @@ export class ComponentInitializer {
       );
     }
     this.options = Object.assign({}, ComponentInitializer.defaults, options);
+    this.logTitle = `ULU: ${ this.options.type }:\n`;
   }
   /**
    * Initializes the component based on the provided configuration.
@@ -43,7 +44,8 @@ export class ComponentInitializer {
    * @param {Function} config.setup The setup function to call for each element.
    * @param {String} config.key [null] The optional key to use with attribute selector.
    * @param {Boolean} config.withData [null] Whether to retrieve element data.
-   * @param {Boolean} config.onPageModified [null] Whether to bind event listener for page modifications.
+   * @param {Array} config.events [null] Ulu events that should call setup when dispatched (ie. pageModified, pageResized)
+   * @param {Boolean} config.onPageResized [null] Whether to bind event listener for page resize end
    * @param {HTMLElement} config.context [document] The context to query within.
    */
   init(config) {
@@ -51,8 +53,10 @@ export class ComponentInitializer {
     // Attach Handler to reinitialize if page is updated
     // Specifically checking entire document incase element that dispatched 
     // event made alterations  outside of itself
-    if (config.onPageModified) {
-      document.addEventListener(getName("pageModified"), () => this.setupElements(config));
+    if (config.events?.length) {
+      config.events.forEach(name => {
+        document.addEventListener(getName(name), () => this.setupElements(config));
+      });
     }
   }
   /**
@@ -126,7 +130,19 @@ export class ComponentInitializer {
    * Will output namespaced console logs for the given initializer
    */
   log(...msgs) {
-    console.log(`ULU: ${ this.options.type }:\n`, ...msgs);
+    console.log(this.logTitle, ...msgs);
+  }
+  /**
+   * Will output namespaced console warnings for the given initializer
+   */
+  warn(...msgs) {
+    console.warn(this.logTitle, ...msgs);
+  }
+  /**
+   * Will output namespaced console error for the given initializer
+   */
+  logError(...msgs) {
+    console.error(this.logTitle, ...msgs);
   }
 }
 

@@ -25,6 +25,8 @@
     - Added option preventScroll (defaults to true), used only for modal dialogs (ignored if nonModal)
   - ui/tooltip
     - Fix missing init attribute
+  - ui/flipcard
+    - Fix typo in method name "setVisiblity" to "setVisibility"
 
 ## Version 0.1.0-beta.33
 

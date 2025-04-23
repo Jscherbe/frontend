@@ -2,24 +2,27 @@
  * @module ui/popover
  */
 
-import { getName } from "../events/index.js";
+import { ComponentInitializer } from "../utils/system.js";
 import { createFloatingUi } from "../utils/floating-ui.js";
 import { Collapsible } from "./collapsible.js";
+
+/**
+ * Popover Component Initializer
+ */
+export const initializer = new ComponentInitializer({ 
+  type: "popover", 
+  baseAttribute: "data-ulu-popover"
+});
+
+const attrSelectorAnchor = initializer.attributeSelector("trigger-anchor");
+const attrSelectorArrow = initializer.attributeSelector("arrow");
+const attrContent = initializer.getAttribute("content");
+const attrSelectorContent = initializer.attributeSelector("content");
 
 /**
  * Array of current instances
  */
 export const instances = new WeakMap;
-
-const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
-
-const attrs = {
-  trigger: "data-ulu-popover-trigger",
-  content: "data-ulu-popover-content",
-  arrow: "data-ulu-popover-arrow",
-  anchor: "data-ulu-popover-trigger-anchor",
-};
-const attrSelector = key => `[${ attrs[key] }]`;
 
 // This modules collapsible defaults
 const collapsibleDefaults = {
@@ -31,47 +34,44 @@ const collapsibleDefaults = {
  * Initialize default popover
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
-}
+  initializer.init({
+    key: "trigger",
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      if (instances.has(element)) return;
+      const resolved = resolve(element, data);
 
-/**
- * Query all popovers on current page and set them up
- * - Use this manually if needed
- * - Won't setup a popover more than once
- */
-export function setup() {
-  const triggers = document.querySelectorAll(attrSelector("trigger"));
-  // Only triggers we don't have instances for
-  const resolved = Array.from(triggers)
-    .filter(trigger => !instances.has(trigger))
-    .map(resolve)
-    .filter(v => v);
+      if (!resolved) {
+        initializer.warn("Unable to resolve popover elements for trigger.", element);
+        return;
+      }
 
-  resolved.forEach(({ elements, options, floatingOptions  }) => {
-    instances.set(elements.trigger, new Popover(elements, options, floatingOptions));
-  });
+      const { elements, options, floatingOptions } = resolved;
+      instances.set(elements, new Popover(elements, options, floatingOptions));
+      initialize();
+    }
+  })
 }
 
 /**
  * Find the popover's elements
  */
-export function resolve(trigger) {
-  const raw = trigger.dataset.uluPopoverTrigger;
-  const options = raw?.length ? JSON.parse(raw) : {};
+export function resolve(trigger, userOptions) {
+  const options = Object.assign({}, userOptions);
   const content = getContentByTrigger(trigger);
   const elements = {
     trigger,
     content,
-    anchor: trigger.querySelector(attrSelector("anchor")) || trigger,
-    contentArrow: content.querySelector(attrSelector("arrow"))
+    anchor: trigger.querySelector(attrSelectorAnchor) || trigger,
+    contentArrow: content.querySelector(attrSelectorArrow)
   };
   const floatingOptions = options.floating || {};
   delete options.floating;
   if (content) {
     return { elements, options, floatingOptions };
   } else {
-    logError("Unable to make popover for", trigger);
+    initializer.logError("Unable to make popover for", trigger);
     return false;
   }
 }
@@ -85,17 +85,17 @@ export function getContentByTrigger(trigger) {
 
   if (ariaControls) {
     content = document.getElementById(ariaControls);
-  } else if (trigger?.nextElementSibling?.hasAttribute(attrs.content)) {
+  } else if (trigger?.nextElementSibling?.hasAttribute(attrContent)) {
     content = trigger.nextElementSibling;  
   // @todo - Consider removing this (non standard, users like this should be using aria-controls)
   } else {
     const children = Array.from(trigger.parentNode.children);
     const triggerIndex = children.findIndex(c => c === trigger);
     const childrenAfter = children.slice(triggerIndex);
-    content = childrenAfter.find(child => child.matches(attrSelector("content")));
+    content = childrenAfter.find(child => child.matches(attrSelectorContent));
   }
   if (!content) {
-    logError("Unable to resolve 'content' element for popover", trigger);
+    initializer.logError("Unable to resolve 'content' element for popover", trigger);
   }
   return content;
 }
@@ -123,8 +123,7 @@ export class Popover extends Collapsible {
   }
   createFloatingInstance() {
     const { content, anchor, contentArrow } = this.elements;
-    const floatingElements = { trigger: anchor, contentArrow, content };    
-    console.log("this.floatingOptions:\n", this.floatingOptions);
+    const floatingElements = { trigger: anchor, contentArrow, content };   
     this.floatingCleanup = createFloatingUi(floatingElements, this.floatingOptions);
   }
   destroyFloatingInstance() {

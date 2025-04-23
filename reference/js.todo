@@ -1,4 +1,17 @@
 JS Todos:
+  ☐ Refactoring to component initializer still needed
+    ☐ Scrollpoint @up-next
+    ☐ Slider
+    ☐ Tabs
+    ☐ Theme Toggle
+    ☐ Tooltip
+    ☐ When Finished
+      ☐ Double check all init calls (semicolons, events, etc)
+  ☐ Should we make component initializer init async/promise so we can initialize if success, or add callbacks.
+    * Currently things get initialize if they were setup regardless of if success or not
+  ☐ Need to think about instance management,
+    * Removed instances from flipcard but it has the class collecting instances
+    * Need something uniform for all ui component instances so they are stored and managed (destroyed/etc) the same way. Not needed currently but will eventually be needed.
   ☐ Need to set init attribute in print @important
   ☐ Refactor class-logger into Logger and extend all classes
     * Maybe this could be used independently too

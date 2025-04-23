@@ -27,8 +27,8 @@ const defaults = {
  */
 export function init() {
   initializer.init({
-    onPageModified: true,
     withData: true,
+    events: ["pageModified"],
     setup({ element, data, initialize }) {
       setupTrigger(element, data);
       initialize();

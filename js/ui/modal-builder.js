@@ -107,7 +107,7 @@ export function setDefaults(options) {
 export function init() {
   initializer.init({
     withData: true,
-    onPageModified: true,
+    events: ["pageModified"],
     setup({ element, data }) {
       buildModal(element, data);
     }
