@@ -5,15 +5,16 @@ title: ui/scrollpoint
 <a name="module_ui/scrollpoint"></a>
 
 # ui/scrollpoint
+Module that uses intersection observer to add scrollpoint like behavior.
+
 
 * [ui/scrollpoint](#module_ui/scrollpoint)
     * _static_
         * [.Scrollpoint](#module_ui/scrollpoint.Scrollpoint)
             * [new exports.Scrollpoint(element, config)](#new_module_ui/scrollpoint.Scrollpoint_new)
             * [.onObserve()](#module_ui/scrollpoint.Scrollpoint+onObserve)
-        * [.attrs](#module_ui/scrollpoint.attrs)
+        * [.initializer](#module_ui/scrollpoint.initializer)
         * [.init()](#module_ui/scrollpoint.init)
-        * [.setup()](#module_ui/scrollpoint.setup)
     * _inner_
         * [~root](#module_ui/scrollpoint..root)
         * [~rootSelector](#module_ui/scrollpoint..rootSelector)
@@ -69,10 +70,10 @@ IntersectionObserver Callback
 - Should set the state
 
 **Kind**: instance method of [<code>Scrollpoint</code>](#module_ui/scrollpoint.Scrollpoint)  
-<a name="module_ui/scrollpoint.attrs"></a>
+<a name="module_ui/scrollpoint.initializer"></a>
 
-## ui/scrollpoint.attrs
-Default data attributes
+## ui/scrollpoint.initializer
+Scrollpoint Component Initializer
 
 **Kind**: static constant of [<code>ui/scrollpoint</code>](#module_ui/scrollpoint)  
 <a name="module_ui/scrollpoint.init"></a>
@@ -80,12 +81,6 @@ Default data attributes
 ## ui/scrollpoint.init()
 Initialize everything in document
 - This will only initialize elements once, it is safe to call on page changes
-
-**Kind**: static method of [<code>ui/scrollpoint</code>](#module_ui/scrollpoint)  
-<a name="module_ui/scrollpoint.setup"></a>
-
-## ui/scrollpoint.setup()
-Setup all points and groups
 
 **Kind**: static method of [<code>ui/scrollpoint</code>](#module_ui/scrollpoint)  
 <a name="module_ui/scrollpoint..root"></a>

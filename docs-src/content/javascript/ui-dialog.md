@@ -8,22 +8,35 @@ title: ui/dialog
 
 * [ui/dialog](#module_ui/dialog)
     * _static_
-        * [.attrs](#module_ui/dialog.attrs)
+        * [.baseAttribute](#module_ui/dialog.baseAttribute)
+        * [.initializer](#module_ui/dialog.initializer)
+        * [.closeAttribute](#module_ui/dialog.closeAttribute)
         * [.defaults](#module_ui/dialog.defaults)
         * [.setDefaults(options)](#module_ui/dialog.setDefaults)
         * [.init()](#module_ui/dialog.init)
-        * [.setup()](#module_ui/dialog.setup)
-        * [.setupTrigger(trigger)](#module_ui/dialog.setupTrigger)
+        * [.setupTrigger(trigger, dialogId)](#module_ui/dialog.setupTrigger)
         * [.setupDialog(dialog)](#module_ui/dialog.setupDialog)
         * [.getDialogOptions(dialog)](#module_ui/dialog.getDialogOptions) ⇒ <code>Object</code>
     * _inner_
         * [~prepVideos()](#module_ui/dialog..prepVideos)
         * [~pauseVideos()](#module_ui/dialog..pauseVideos)
 
-<a name="module_ui/dialog.attrs"></a>
+<a name="module_ui/dialog.baseAttribute"></a>
 
-## ui/dialog.attrs
-Default data attributes
+## ui/dialog.baseAttribute
+Base attribute for a dialog
+
+**Kind**: static constant of [<code>ui/dialog</code>](#module_ui/dialog)  
+<a name="module_ui/dialog.initializer"></a>
+
+## ui/dialog.initializer
+Dialog Component Initializer
+
+**Kind**: static constant of [<code>ui/dialog</code>](#module_ui/dialog)  
+<a name="module_ui/dialog.closeAttribute"></a>
+
+## ui/dialog.closeAttribute
+Attribute for close buttons within a dialog
 
 **Kind**: static constant of [<code>ui/dialog</code>](#module_ui/dialog)  
 <a name="module_ui/dialog.defaults"></a>
@@ -40,7 +53,7 @@ Dialog Defaults
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | <code>Object</code> | Change options used as default for dialogs, can then be overriden by data attribute settings on element |
+| options | <code>Object</code> | Change options used as default for dialogs, can then be overridden by data attribute settings on element |
 
 <a name="module_ui/dialog.init"></a>
 
@@ -49,22 +62,17 @@ Initialize everything in document
 - This will only initialize elements once, it is safe to call on page changes
 
 **Kind**: static method of [<code>ui/dialog</code>](#module_ui/dialog)  
-<a name="module_ui/dialog.setup"></a>
-
-## ui/dialog.setup()
-Setup dialogs and triggers
-
-**Kind**: static method of [<code>ui/dialog</code>](#module_ui/dialog)  
 <a name="module_ui/dialog.setupTrigger"></a>
 
-## ui/dialog.setupTrigger(trigger)
+## ui/dialog.setupTrigger(trigger, dialogId)
 Setup click handlers on a trigger
 
 **Kind**: static method of [<code>ui/dialog</code>](#module_ui/dialog)  
 
-| Param | Type |
-| --- | --- |
-| trigger | <code>Node</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| trigger | <code>Node</code> | Trigger button element |
+| dialogId | <code>String</code> | The dialog's id to open |
 
 <a name="module_ui/dialog.setupDialog"></a>
 

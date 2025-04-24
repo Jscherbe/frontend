@@ -12,7 +12,6 @@ title: ui/print
     * _inner_
         * [~defaults](#module_ui/print..defaults)
             * [.element](#module_ui/print..defaults.element)
-        * [~setup()](#module_ui/print..setup)
         * [~setupTrigger()](#module_ui/print..setupTrigger)
 
 <a name="module_ui/print.init"></a>
@@ -34,12 +33,6 @@ Default options
 Print element/selector
 
 **Kind**: static property of [<code>defaults</code>](#module_ui/print..defaults)  
-<a name="module_ui/print..setup"></a>
-
-## ui/print~setup()
-Setup all triggers currently on the page
-
-**Kind**: inner method of [<code>ui/print</code>](#module_ui/print)  
 <a name="module_ui/print..setupTrigger"></a>
 
 ## ui/print~setupTrigger()

@@ -5,19 +5,20 @@
 // Slider
 // =============================================================================
 
-// Version:                   1.0.10
+// Version:                   1.0.11
 
 // Changes:   
+//                            1.0.11 | Updates for ComponentInitializer
 //                            1.0.10 | Fix bug when two and going in reverse
-//                            1.0.9 | Fix bug when there are only 2 slides (not sliding correctly [revesers because of switchSlide])
-//                                    this is addressed now and should slide infinitly between two slides
-//                            1.0.8 | Change API, to elements object (from individaul arguments),
+//                            1.0.9 | Fix bug when there are only 2 slides (not sliding correctly [reverse because of switchSlide])
+//                                    this is addressed now and should slide infinity between two slides
+//                            1.0.8 | Change API, to elements object (from individual arguments),
 //                                    Add the ability to specify the element to append controls within
 //                            1.0.6 | Add transition class for changes during transition, 
 //                                    add will-change to the transition
-//                            1.0.5 | Fix transtion event difference on windows, convert all 
+//                            1.0.5 | Fix transition event difference on windows, convert all 
 //                                    async stuff to promises and simplify
-//                            1.0.4 | Remove live region annoucement (only used if auto rotate)
+//                            1.0.4 | Remove live region announcement (only used if auto rotate)
 
 // Reference:                 https://www.w3.org/WAI/tutorials/carousels/working-example/
 //                            https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html#
@@ -27,17 +28,28 @@
 //                            https://dev.opera.com/articles/css-will-change-property/
 //                              * Will Change use
 
+import { ComponentInitializer } from "../utils/system.js";
 import { wrapSettingString } from "../settings.js";
 import maintain from 'ally.js/maintain/_maintain';
 import { hasRequiredProps } from '@ulu/utils/object.js';
 import { trimWhitespace } from "@ulu/utils/string.js";
 import { debounce } from "@ulu/utils/performance.js";
 import { log, logError, logWarning } from "../utils/class-logger.js";
-import { getDatasetOptionalJson } from "../utils/dom.js";
-import { createPager } from "./overflow-scroller-pager.js";
-import { getName } from "../events/index.js";
 
-const debugMode = false; // Global dev debug
+/**
+ * Slider Component Initializer
+ */
+export const initializer = new ComponentInitializer({ 
+  type: "slider", 
+  baseAttribute: "data-ulu-slider"
+});
+
+const attrSelectorTrack = initializer.attributeSelector("track");
+const attrSelectorTrackContainer = initializer.attributeSelector("track-container");
+const attrSelectorControlContext = initializer.attributeSelector("control-context");
+const attrSelectorSlide = initializer.attributeSelector("slide");
+
+const instances = [];
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const eventOnce = { once: true };
 const cssDuration = d => `${ d }ms`;
@@ -57,52 +69,34 @@ const requiredElements = [
 ];
 
 /**
- * Default data attributes
+ * Initialize all sliders based on data attribute selectors
  */
-export const attrs = {
-  init: "data-ulu-slider-init",
-  slider: "data-ulu-slider",
-  track: "data-ulu-slider-track",
-  trackContainer: "data-ulu-slider-track-container",
-  controls: "data-ulu-slider-control-context"
-};
-
-// Utils for selecting things based on attributes
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-
-const defaults = {
-  amount: createPager()
-};
-
-const instances = [];
-
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
+  initializer.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupSlider(element, data);
+      initialize();
+    }
+  });
 }
 
-export function setup() {
-  const builders = document.querySelectorAll(attrSelectorInitial("slider"));
-  builders.forEach(setupSlider);
-}
-
-export function setupSlider(container) {
-  container.setAttribute(attrs.init, "");
-  const options = getDatasetOptionalJson(container, "uluScrollSlider");
-  const config = Object.assign({}, defaults, options);
+/**
+ * Setup single slider instance from querying via data attribute selectors
+ * @param {Node} container The slide container to query children from
+ * @param {Object} options Options for slider class
+ */
+export function setupSlider(container, options) {
+  const config = Object.assign({}, options);
   const elements = {
     container,
-    track: container.querySelector("[data-ulu-slider-track]"),
-    trackContainer: container.querySelector("[data-ulu-slider-track-container]"),
-    controlContext: container.querySelector("[data-ulu-slider-control-context]"),
-    slides: container.querySelectorAll("[data-ulu-slider-slide]")
+    track: container.querySelector(attrSelectorTrack),
+    trackContainer: container.querySelector(attrSelectorTrackContainer),
+    controlContext: container.querySelector(attrSelectorControlContext),
+    slides: container.querySelectorAll(attrSelectorSlide)
   };
-  // Add in any global settings
-  // Object.assign(config, {
-  //   callbacks: {}
-  // });
-  // /
+
   // This was added because there was an issue on the new windows, need to test this
   // config.transitionFade = true;
   if (elements.slides.length) {
@@ -110,8 +104,14 @@ export function setupSlider(container) {
   }
 }
 
+/**
+ * Class that controls slider
+ */
 export class Slider {
   static instances = [];
+  /**
+   * Default options for slider
+   */
   static defaults = {
     classAccessiblyHidden: "hidden-visually",
     namespace: "Slider",
@@ -126,10 +126,8 @@ export class Slider {
     iconClassNext: wrapSettingString("iconClassNext"),
     // transition: true
   }
-  // constructor(container, title, trackContainer, track, slides, config, debug = false) {
-  constructor(elements, config, debug = false) {
+  constructor(elements, config) {
     const options = Object.assign({}, Slider.defaults, config);
-    this.debug = debugMode || debug;
     this.options = options;
     this.slide = null;
     this.index = null;

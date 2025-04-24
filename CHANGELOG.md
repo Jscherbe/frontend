@@ -27,6 +27,9 @@
     - Fix missing init attribute
   - ui/flipcard
     - Fix typo in method name "setVisiblity" to "setVisibility"
+  - ui/tabs
+    - Fix issue with initial click of a tab when using "openWithUrlHash" option
+      - Equal height checking was setting hidden attribute but aria-tablist library explicitly checks for hidden="hidden"
 
 ## Version 0.1.0-beta.33
 

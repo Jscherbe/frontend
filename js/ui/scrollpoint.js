@@ -1,80 +1,44 @@
 /**
  * @module ui/scrollpoint 
+ * @description Module that uses intersection observer to add scrollpoint like behavior.
  */
 
-// Module that uses intersection observer to add scrollpoint like behavior.
-/**
- * TODO:
- *  - Included a group option or attribute (on container)
-//    for things like anchor menus (one active in group at a time).
- * 
- * How to link elements of group
- * <div group={ groupName: test }>
- *   <div point={ groupName: test, mirror: ["#menu-link-1"] }>
- * or
- * <div group={ groupName: test, children: [".selector"] }>
- *   <div class=".selector">
- */
-import { getName } from "../events/index.js";
-import { getDatasetOptionalJson, getElement } from "../utils/dom.js";
+import { ComponentInitializer } from "../utils/system.js";
 import { logError } from "../utils/class-logger.js";
 
-/**
- * Default data attributes
- */
-export const attrs = {
-  init: "data-ulu-scrollpoint-init",
-  /**
-   * Individual scrollpoint
-   */
-  point: "data-ulu-scrollpoint",
-  group: "data-ulu-scrollpoint-group",
-  groupAnchors: "data-ulu-scrollpoint-anchors"
-  // Goes on container for all items
-  // group: "data-ulu-scrollpoint-group"
-};
+// TODO:
+//  - Included a group option or attribute (on container), for things like anchor menus (one active in group at a time).
+// 
+// How to link elements of group
+// <div group={ groupName: test }>
+//   <div point={ groupName: test, mirror: ["#menu-link-1"] }>
+// or
+// <div group={ groupName: test, children: [".selector"] }>
+//   <div class=".selector">
 
-// Utils for selecting things based on attributes
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+/**
+ * Scrollpoint Component Initializer
+ */
+export const initializer = new ComponentInitializer({ 
+  type: "scrollpoint", 
+  baseAttribute: "data-ulu-scrollpoint"
+});
 
 /**
  * Initialize everything in document
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
-}
-
-/**
- * Setup all points and groups
- */
-export function setup() {
-  const elements = queryAllInitial("point");
-  // const points = Array.from(elements).map(resolve);
-  // const groups = points
-  //   .filter(({ config }) => config.groupName)
-  //   .reduce((acc, point) => {
-  //     const { groupName } = point.config;
-  //     if (acc.has(groupName)) {
-  //       acc.get(groupName).push(point);
-  //     } else {
-  //       acc.set(groupName, [point]);
-  //     }
-  //   }, new Map());
-  // const singles = points.filter(({ config }) => !config.groupName);
-  // groups.forEach(setupGroup);
-  elements.forEach(element => {
-    const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
-    const config = Object.assign({}, elOptions);
-    element.setAttribute(attrs.init, "");
-    new Scrollpoint(element, config);
+  initializer.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      const config = Object.assign({}, data);
+      (new Scrollpoint(element, config));
+      initialize();
+    }
   });
 }
-
-
 
 /**
  * Single scrollpoint

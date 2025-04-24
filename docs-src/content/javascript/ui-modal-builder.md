@@ -5,18 +5,25 @@ title: ui/modal-builder
 <a name="module_ui/modal-builder"></a>
 
 # ui/modal-builder
+Note this module needs to be initialized before dialogs!
+
 
 * [ui/modal-builder](#module_ui/modal-builder)
     * _static_
+        * [.initializer](#module_ui/modal-builder.initializer)
         * [.defaults](#module_ui/modal-builder.defaults)
         * [.setDefaults(options)](#module_ui/modal-builder.setDefaults)
         * [.init()](#module_ui/modal-builder.init)
-        * [.setup()](#module_ui/modal-builder.setup)
-        * [.setupBuilder(element)](#module_ui/modal-builder.setupBuilder)
         * [.buildModal(content, options)](#module_ui/modal-builder.buildModal)
     * _inner_
         * [~separateDialogOptions(config)](#module_ui/modal-builder..separateDialogOptions) ⇒ <code>Object</code>
 
+<a name="module_ui/modal-builder.initializer"></a>
+
+## ui/modal-builder.initializer
+Modal Builder Component Initializer
+
+**Kind**: static constant of [<code>ui/modal-builder</code>](#module_ui/modal-builder)  
 <a name="module_ui/modal-builder.defaults"></a>
 
 ## ui/modal-builder.defaults
@@ -42,23 +49,6 @@ Initialize everything in document
 - This will only initialize elements once, it is safe to call on page changes
 
 **Kind**: static method of [<code>ui/modal-builder</code>](#module_ui/modal-builder)  
-<a name="module_ui/modal-builder.setup"></a>
-
-## ui/modal-builder.setup()
-Query and setup all builder
-
-**Kind**: static method of [<code>ui/modal-builder</code>](#module_ui/modal-builder)  
-<a name="module_ui/modal-builder.setupBuilder"></a>
-
-## ui/modal-builder.setupBuilder(element)
-Build a dialog for the given content
-
-**Kind**: static method of [<code>ui/modal-builder</code>](#module_ui/modal-builder)  
-
-| Param | Type |
-| --- | --- |
-| element | <code>Node</code> | 
-
 <a name="module_ui/modal-builder.buildModal"></a>
 
 ## ui/modal-builder.buildModal(content, options)

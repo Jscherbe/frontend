@@ -16,10 +16,12 @@ Core classes and mechanisms that define how UI components are created and manage
         * [.getAttribute(key)](#module_utils/system.ComponentInitializer+getAttribute) ⇒ <code>String</code>
         * [.attributeSelector(key)](#module_utils/system.ComponentInitializer+attributeSelector)
         * [.attributeSelectorInitial()](#module_utils/system.ComponentInitializer+attributeSelectorInitial) ⇒ <code>String</code>
-        * [.queryAllInitial(context, withData)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
+        * [.queryAllInitial(context, withData, context)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code>
         * [.initializeElement(element)](#module_utils/system.ComponentInitializer+initializeElement)
         * [.getData()](#module_utils/system.ComponentInitializer+getData) ⇒ <code>\*</code>
         * [.log()](#module_utils/system.ComponentInitializer+log)
+        * [.warn()](#module_utils/system.ComponentInitializer+warn)
+        * [.logError()](#module_utils/system.ComponentInitializer+logError)
     * [.ComponentInstance](#module_utils/system.ComponentInstance)
 
 <a name="module_utils/system.ComponentInitializer"></a>
@@ -36,10 +38,12 @@ Class serves as a utility for UI modules, handling the selection of elements and
     * [.getAttribute(key)](#module_utils/system.ComponentInitializer+getAttribute) ⇒ <code>String</code>
     * [.attributeSelector(key)](#module_utils/system.ComponentInitializer+attributeSelector)
     * [.attributeSelectorInitial()](#module_utils/system.ComponentInitializer+attributeSelectorInitial) ⇒ <code>String</code>
-    * [.queryAllInitial(context, withData)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
+    * [.queryAllInitial(context, withData, context)](#module_utils/system.ComponentInitializer+queryAllInitial) ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code>
     * [.initializeElement(element)](#module_utils/system.ComponentInitializer+initializeElement)
     * [.getData()](#module_utils/system.ComponentInitializer+getData) ⇒ <code>\*</code>
     * [.log()](#module_utils/system.ComponentInitializer+log)
+    * [.warn()](#module_utils/system.ComponentInitializer+warn)
+    * [.logError()](#module_utils/system.ComponentInitializer+logError)
 
 <a name="new_module_utils/system.ComponentInitializer_new"></a>
 
@@ -62,11 +66,12 @@ Initializes the component based on the provided configuration.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| config | <code>object</code> | The initialization configuration. |
+| config | <code>Object</code> | The initialization configuration. |
 | config.setup | <code>function</code> | The setup function to call for each element. |
-| config.key | <code>string</code> | The optional key to use with attribute selector. |
-| config.withData | <code>boolean</code> | [false] Whether to retrieve element data. |
-| config.onPageModified | <code>boolean</code> | [true] Whether to bind event listener for page modifications. |
+| config.key | <code>String</code> | [null] The optional key to use with attribute selector. |
+| config.withData | <code>Boolean</code> | [null] Whether to retrieve element data. |
+| config.events | <code>Array</code> | [null] Ulu events that should call setup when dispatched (ie. pageModified, pageResized) |
+| config.onPageResized | <code>Boolean</code> | [null] Whether to bind event listener for page resize end |
 | config.context | <code>HTMLElement</code> | [document] The context to query within. |
 
 <a name="module_utils/system.ComponentInitializer+setupElements"></a>
@@ -116,16 +121,17 @@ Create an attribute selector for initial
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
 <a name="module_utils/system.ComponentInitializer+queryAllInitial"></a>
 
-### componentInitializer.queryAllInitial(context, withData) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code>
+### componentInitializer.queryAllInitial(context, withData, context) ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code>
 Queries all main elements of a component that have not been initialized and extracts their data attributes.
 
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
-**Returns**: <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code> - An array of objects containing the elements and their data.  
+**Returns**: <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code> - An array of objects containing the elements, their data, and convenience function initialize() which when called will set the init attribute on the element  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | context | <code>HTMLElement</code> | The context to query within. |
-| withData | <code>Boolean</code> | Include dataset from element |
+| withData | <code>Boolean</code> | Include dataset from element (as optional JSON) |
+| context | <code>Node</code> | Element to query elements from |
 
 <a name="module_utils/system.ComponentInitializer+initializeElement"></a>
 
@@ -149,6 +155,18 @@ Get an elements dataset value as JSON or other value
 
 ### componentInitializer.log()
 Will output namespaced console logs for the given initializer
+
+**Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
+<a name="module_utils/system.ComponentInitializer+warn"></a>
+
+### componentInitializer.warn()
+Will output namespaced console warnings for the given initializer
+
+**Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
+<a name="module_utils/system.ComponentInitializer+logError"></a>
+
+### componentInitializer.logError()
+Will output namespaced console error for the given initializer
 
 **Kind**: instance method of [<code>ComponentInitializer</code>](#module_utils/system.ComponentInitializer)  
 <a name="module_utils/system.ComponentInstance"></a>
