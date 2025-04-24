@@ -51,7 +51,7 @@ export function init() {
       instances.set(elements, new Popover(elements, options, floatingOptions));
       initialize();
     }
-  })
+  });
 }
 
 /**
