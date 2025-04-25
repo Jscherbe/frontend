@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.35
+
+- js/ui/scroll-slider
+  - Fix typo that introduced error in last update controls-context to control-context
+
 ## Version 0.1.0-beta.34
 
 - **scss/**
