@@ -1,4 +1,7 @@
 SCSS Todos:
+  ☐ Modal - Add fullscreen modifier 
+    * Shouldn't have border radiuses, user will be responsible for inner layout
+  ☐ Accordion margin-between has static -1px (used for borders), should be based on border width
   ✔ Callout caps @done
     ✔ Match radius to work per style, but inherit global config @done
     ✔ If cap is false on a style, it should hide the cap and set the default padding if it's not setting it's own padding @done

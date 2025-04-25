@@ -2,23 +2,24 @@
  * @module ui/dialog
  */
 
-import { getName } from "../events/index.js";
-import { getDatasetJson, wasClickOutside } from "../utils/dom.js";
+import { ComponentInitializer } from "../utils/system.js";
+import { wasClickOutside } from "../utils/dom.js";
 import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
-/**
- * Default data attributes
- */
-export const attrs = {
-  init: "data-ulu-dialog-init",
-  dialog: "data-ulu-dialog",
-  trigger: "data-ulu-dialog-trigger",
-  close: "data-ulu-dialog-close",
-};
 
-// Utils for selecting things based on attributes
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+/**
+ * Base attribute for a dialog
+ */
+export const baseAttribute = "data-ulu-dialog"; // Exposed for modal builder
+
+/**
+ * Dialog Component Initializer
+ */
+export const initializer = new ComponentInitializer({ type: "dialog", baseAttribute });
+
+/**
+ * Attribute for close buttons within a dialog
+ */
+export const closeAttribute = initializer.getAttribute("close"); // Exposed for modal builder
 
 /**
  * Dialog Defaults 
@@ -42,6 +43,10 @@ export const defaults = {
    * Whether or not to pause videos when dialog closes (currently just youtube and native)
    */
   pauseVideos: true,
+  /**
+   * When open and not non-modal, the body is prevented from scrolling (defaults to true).
+   */
+  preventScroll: true,
 };
 
 
@@ -49,7 +54,7 @@ export const defaults = {
 let currentDefaults = { ...defaults };
 
 /**
- * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ * @param {Object} options Change options used as default for dialogs, can then be overridden by data attribute settings on element
  */
 export function setDefaults(options) {
   currentDefaults = Object.assign({}, currentDefaults, options);
@@ -60,35 +65,40 @@ export function setDefaults(options) {
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
-}
+  // Initialize all the dialogs
+  initializer.init({
+    events: ["pageModified"],
+    withData: true,
+    setup({ element, initialize, data }) {
+      setupDialog(element, data);
+      initialize();
+    }
+  });
 
-/**
- * Setup dialogs and triggers
- */
-export function setup() {
-  // Then setup all dialogs (including those that were built)
-  const dialogs = queryAllInitial("dialog");
-  dialogs.forEach(setupDialog);
-
-  const triggers = queryAllInitial("trigger");
-  triggers.forEach(setupTrigger);
+  // Initialize all triggers (things that trigger opening a dialog)
+  initializer.init({
+    key: "trigger",
+    events: ["pageModified"],
+    withData: true,
+    setup({ element, initialize, data: dialogId }) {
+      setupTrigger(element, dialogId);
+      initialize();
+    }
+  });
 }
 
 /**
  * Setup click handlers on a trigger
- * @param {Node} trigger 
+ * @param {Node} trigger Trigger button element
+ * @param {String} dialogId The dialog's id to open
  */
-export function setupTrigger(trigger) {
+export function setupTrigger(trigger, dialogId) {
   trigger.addEventListener("click", handleTrigger);
-  trigger.setAttribute(attrs.init, "");
 
   function handleTrigger() {
-    const id = trigger.dataset.uluDialogTrigger;
-    const dialog = document.getElementById(id);
+    const dialog = document.getElementById(dialogId);
     if (!dialog) {
-      console.error("Could not locate dialog (id)", id);
+      console.error("Could not locate dialog (id)", dialogId);
       return;
     }
     if (dialog?.tagName?.toLowerCase() !== "dialog") {
@@ -104,20 +114,33 @@ export function setupTrigger(trigger) {
  * Setup click handlers for a dialog
  * @param {Node} dialog 
  */
-export function setupDialog(dialog) {
-  const options = getDialogOptions(dialog);
+export function setupDialog(dialog, userOptions) {
+  const options = Object.assign({}, currentDefaults, userOptions);
+  const body = document.body;
+  
   dialog.addEventListener("click", handleClicks);
-  dialog.setAttribute(attrs.init, "");
+
   if (options.documentEnd) {
-    document.body.appendChild(dialog);
+    body.appendChild(dialog);
   }
   if (options.pauseVideos) {
     prepVideos(dialog);
   }
 
+  // Allow preventScroll if it is a modal dialog
+  // Caching value of overflow before setting so we don't assume what it's initial value is
+  if (!options.nonModal && options.preventScroll) {
+    let overflowValue = body.style.overflow;
+    dialog.addEventListener("toggle", (event) => {
+      const isOpen = event.newState === "open";
+      if (isOpen) overflowValue = body.style.overflow;
+      body.style.overflow = isOpen ? "hidden" : overflowValue;
+    });
+  }
+
   function handleClicks(event) {
     const { target } = event;
-    const closeFromButton = target.closest("[data-ulu-dialog-close]");
+    const closeFromButton = target.closest(initializer.attributeSelector("close"));
     let closeFromOutside = options.clickOutsideCloses && 
                            target === dialog && 
                            wasClickOutside(dialog, event);
@@ -136,8 +159,7 @@ export function setupDialog(dialog) {
  * @returns {Object}
  */
 export function getDialogOptions(dialog) {
-  const options = getDatasetJson(dialog, "uluDialog");
-  return Object.assign({}, currentDefaults, options);
+  return Object.assign({}, currentDefaults, initializer.getData(dialog));
 }
 
 /**
@@ -146,6 +168,7 @@ export function getDialogOptions(dialog) {
 function prepVideos(dialog) {
   prepYoutubeVideos(dialog);
 }
+
 /**
  * Prep videos to be paused for a given dialog
  */

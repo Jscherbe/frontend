@@ -111,3 +111,42 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     </div>
   </div>
 </div>
+
+
+<h2 class="h2">Open URL Hash Test</h2>
+
+<div class="tabs">
+  <div class="tabs__tablist" data-ulu-tablist='{ 
+    "equalHeights" : true,
+    "openByUrlHash" : true
+  }'>
+    <button type="button" id="tabs-4-1">
+      Tab Label 1
+    </button>
+    <button type="button" id="tabs-4-2">
+      Tab Label 2
+    </button>
+    <button type="button" id="tabs-4-3">
+      Tab Label 3
+    </button>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-4-1">
+    <div class="tabs__tabpanel-container">
+      <p>1</p>
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-4-2">
+    <div class="tabs__tabpanel-container">
+      <p>2</p>
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-4-3">
+    <div class="tabs__tabpanel-container">
+      <p>3</p>
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+</div>

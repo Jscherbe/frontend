@@ -15,16 +15,25 @@
 - scss/button-verbose
   - **Minor visual breaking change for those using cap**
   - left cap has changed to cap and accepts common cap options (see config)
-- scss/utils
-  - Add ensure-map(), units-match(), is-end(), is-side() functions
-- js/ui/tooltip
-  - Fix missing init attribute
 - scss/components/accordion
   - remove static margin-bottom added to "--no-borders" modifier (was 4rem)
+- scss/utils
+  - Add ensure-map(), units-match(), is-end(), is-side() functions
 - scss/components/slider
   - remove unused config options "button-background-color" and "button-background-color-hover"
-- js/ui/slider
-  - update createNavButton function to pass whole slide rather than just slide number. Update getNavContent to still print slide number as accessibility text by default.
+- js/
+  - ui/ (remove setup functions, using component initializer class now)
+  - ui/slider
+    - update createNavButton function to pass whole slide rather than just slide number. Update getNavContent to still print slide number as accessibility text by default.
+  - ui/dialog
+    - Added option preventScroll (defaults to true), used only for modal dialogs (ignored if nonModal)
+  - ui/tooltip
+    - Fix missing init attribute
+  - ui/flipcard
+    - Fix typo in method name "setVisiblity" to "setVisibility"
+  - ui/tabs
+    - Fix issue with initial click of a tab when using "openWithUrlHash" option
+      - Equal height checking was setting hidden attribute but aria-tablist library explicitly checks for hidden="hidden"
 
 ## Version 0.1.0-beta.33
 

@@ -1,23 +1,22 @@
 /**
  * @module ui/modal-builder
+ * @description Note this module needs to be initialized before dialogs!
  */
 
-// Note this needs to be run before dialogs are initialized!
-
+import { ComponentInitializer } from "../utils/system.js";
 import { wrapSettingString } from "../settings.js";
 import { getName } from "../events/index.js";
 import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "./resizer.js";
-import { getDatasetJson } from "../utils/dom.js";
-import { defaults as dialogDefaults, attrs as dialogAttrs } from "./dialog.js";
+import { baseAttribute, closeAttribute, defaults as dialogDefaults } from "./dialog.js";
 
-const attrs = {
-  builder: "data-ulu-modal-builder",
-  body: "data-ulu-modal-builder-body",
-  resizer: "data-ulu-modal-builder-resizer"
-};
-
-const attrSelector = key => `[${ attrs[key] }]`;
+/**
+ * Modal Builder Component Initializer
+ */
+export const initializer = new ComponentInitializer({ 
+  type: "modal-builder", 
+  baseAttribute: "data-ulu-modal-builder"
+});
 
 /**
  * Default builder options (extends dialog defaults, watch name collisions)
@@ -75,14 +74,14 @@ export const defaults = {
               }
               <span class="modal__title-text">${ config.title }</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${ dialogAttrs.close } autofocus>
+            <button class="modal__close" aria-label="Close modal" ${ closeAttribute } autofocus>
               ${ config.templateCloseIcon(config) }
             </button>
           </header>
         ` : "" }
-        <div class="modal__body" ${ attrs.body }></div>
+        <div class="modal__body" ${ initializer.getAttribute("body") }></div>
         ${ config.hasResizer ? 
-          `<div class="modal__resizer" ${ attrs.resizer }>
+          `<div class="modal__resizer" ${ initializer.getAttribute("resizer") }>
             ${ config.templateResizerIcon(config) }
           </div>` : "" 
         }
@@ -106,26 +105,13 @@ export function setDefaults(options) {
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
-}
-
-/**
- * Query and setup all builder
- */
-export function setup() {
-  const builders = document.querySelectorAll(attrSelector("builder"));
-  builders.forEach(setupBuilder);
-}
-
-/**
- * Build a dialog for the given content
- * @param {Node} element 
- */
-export function setupBuilder(element) {
-  const options = getDatasetJson(element, "uluModalBuilder");
-  element.removeAttribute(attrs.builder);
-  buildModal(element, options);
+  initializer.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data }) {
+      buildModal(element, data);
+    }
+  });
 }
 
 /**
@@ -149,7 +135,7 @@ export function buildModal(content, options) {
   
   const markup = config.template(content.id, config);
   const modal = createElementFromHtml(markup.trim());
-  const selectChild = key => modal.querySelector(attrSelector(key));
+  const selectChild = key => modal.querySelector(initializer.attributeSelector(key));
   const body = selectChild("body");
   const resizer = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config);
@@ -157,12 +143,12 @@ export function buildModal(content, options) {
   // Replace content with new dialog, and then insert the content into the new dialogs body
   content.removeAttribute("id");
   content.removeAttribute("hidden");
-  content.removeAttribute(attrs.builder);
+  content.removeAttribute(initializer.getAttribute());
   content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
 
   // Add dialog options for other scripts
-  modal.setAttribute(dialogAttrs.dialog, JSON.stringify(dialogOptions));
+  modal.setAttribute(baseAttribute, JSON.stringify(dialogOptions));
 
   if (config.hasResizer) {
     new Resizer(modal, resizer, {

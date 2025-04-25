@@ -2,47 +2,41 @@
  * @module ui/tooltip
  */
 
+import { ComponentInitializer } from "../utils/system.js";
 import { getName as getEventName } from "../events/index.js";
 import { createFloatingUi } from "../utils/floating-ui.js";
 import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { logError } from "../utils/class-logger.js";
-import { getDatasetOptionalJson } from "../utils/dom.js";
 import { newId, ensureId } from "../utils/id.js";
 
-const attrs = {
-  trigger: "data-ulu-tooltip",
-  init: "data-ulu-tooltip-init",
-  body: "data-ulu-tooltip-display-body",
-  arrow: "data-ulu-tooltip-arrow"
-};
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+/**
+ * Tooltip Component Initializer
+ */
+export const initializer = new ComponentInitializer({ 
+  type: "tooltip", 
+  baseAttribute: "data-ulu-tooltip"
+});
+
+const attrBody = initializer.getAttribute("body");
+const attrSelectorBody = initializer.attributeSelector("body");
+const attrSelectorArrow = initializer.attributeSelector("arrow");
+
 /**
  * Initialize default popover
  */
 export function init() {
-  document.addEventListener(getEventName("pageModified"), setup);
-  setup();
-}
-
-/**
- * Query all popovers on current page and set them up
- * - Use this manually if needed
- * - Won't setup a popover more than once
- */
-export function setup() {
-  const triggers = document.querySelectorAll(attrSelectorInitial("trigger"));
-  triggers.forEach(setupTrigger);
-}
-
-export function setupTrigger(trigger) {
-  const passed = getDatasetOptionalJson(trigger, "uluTooltip");
-  const options = typeof passed === "object" ? passed : {};
-  if (typeof passed === "string") {
-    options.content = passed;
-  }
-  trigger.setAttribute(attrs.init, "");
-  return new Tooltip({ trigger }, options);
+  initializer.init({
+    events: ["pageModified"],
+    withData: true,
+    setup({ element: trigger, data, initialize }) {
+      const options = typeof data === "object" ? data : {};
+      if (typeof data === "string") {
+        options.content = data;
+      }
+      initialize();
+      (new Tooltip({ trigger }, options));
+    }
+  });
 }
 
 /**
@@ -104,7 +98,7 @@ export class Tooltip {
     template(_config) {
       return `
         <div class="popover popover--tooltip">
-          <div class="popover__inner" ${ attrs.body }>
+          <div class="popover__inner" ${ attrBody }>
           </div>
           <span class="popover__arrow" data-ulu-tooltip-arrow></span>
         </div>
@@ -178,7 +172,7 @@ export class Tooltip {
   createContentElement() {
     const { options } = this;
     const content = createElementFromHtml(options.template(options));
-    const body = content.querySelector(attrSelector("body"));
+    const body = content.querySelector(attrSelectorBody);
     const innerContent = this.getInnerContent();
     if (options.isHtml) {
       body.innerHTML = innerContent;
@@ -191,7 +185,7 @@ export class Tooltip {
     }
     
     this.elements.content = content;
-    this.elements.contentArrow = content.querySelector(attrSelector("arrow"));
+    this.elements.contentArrow = content.querySelector(attrSelectorArrow);
     document.body.appendChild(content);
   }
   attachHandlers() {

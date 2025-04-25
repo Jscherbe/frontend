@@ -1,0 +1,4513 @@
+// ---- START File: ui/overflow-scroller.js
+/**
+ * @module ui/overflow-scroller
+ */
+/**
+ * @todo - Need to have scroll handler check scroll position
+ * @todo - Determine if controls should be visible
+ * @todo - Make the amount the scroll controls move forward or backward based on amount or function
+ *         the user can use this to increment by a certain number of items
+ * @todo - Provide accessible names to buttons but don't worry about hiding these from screenreaders
+ * @todo - Document that user could use something like [https://github.com/LachlanArthur/scroll-snap-api/tree/master/src] to have it go between items
+ * 
+ */
+import { wrapSettingString } from "../settings.js";
+import { hasRequiredProps } from '@ulu/utils/object.js';
+import { logError } from "../utils/class-logger.js";
+const requiredElements = [
+  "track", 
+  "controls"
+];
+export class OverflowScroller {
+  static instances = [];
+  static defaults = {
+    namespace: "OverflowScroller",
+    events: {},
+    horizontal: true,
+    offsetStart: 100,
+    offsetEnd: 100,
+    amount: "auto",
+    buttonClasses: ["button", "button--icon"],
+    iconClassPrevious: wrapSettingString("iconClassPrevious"),
+    iconClassNext: wrapSettingString("iconClassNext"),
+  }
+  constructor(elements, config) {
+    this.options = Object.assign({}, OverflowScroller.defaults, config);
+    if (!hasRequiredProps(requiredElements)) {
+      logError(this, 'Missing a required Element');
+    }
+    this.elements = {
+      ...elements,
+      ...this.createControls(elements.controls)
+    };
+    this.nextEnabled = true;
+    this.previousEnabled = true;
+    this.scrollHandler = (e) => this.onScroll(e);
+    this.elements.track.addEventListener("scroll", this.scrollHandler, { passive: true });
+    this.checkOverflow();
+    this.onScroll();
+  }
+  checkOverflow() {
+    const { track } = this.elements;
+    this.hasOverflow = track.scrollWidth > track.clientWidth;
+  }
+  createControls(context) {
+    const controls = document.createElement('ul');
+    const previousItem = document.createElement("li");
+    const nextItem = document.createElement("li");
+    const previous = this.createControlButton("previous");
+    const next = this.createControlButton("next");
+    const itemClass = this.getClass("controls-item");
+    nextItem.classList.add(itemClass);
+    nextItem.classList.add(itemClass + "--next");
+    previousItem.classList.add(itemClass);
+    previousItem.classList.add(itemClass + "--previous");
+    controls.classList.add(this.getClass("controls"));
+    previousItem.appendChild(previous);
+    nextItem.appendChild(next);
+    controls.appendChild(previousItem);
+    controls.appendChild(nextItem);
+    previous.addEventListener('click', this.previous.bind(this));
+    next.addEventListener('click', this.next.bind(this));
+    context.appendChild(controls);
+
+    return {
+      controls,
+      previousItem,
+      nextItem,
+      previous,
+      next
+    };
+  }
+  createControlButton(action) {
+    const button = document.createElement("button");
+    button.classList.add(this.getClass("control-button"));
+    button.classList.add(this.getClass(`control-button--${ action }`));
+    button.classList.add(...this.options.buttonClasses);
+    button.setAttribute("type", "button");
+    button.innerHTML = this.getControlContent(action);
+    return button;
+  }
+  getControlContent(action) {
+    const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
+    return `
+      <span class="hidden-visually">${ action }</span>
+      <span class="${ classes }" aria-hidden="true"></span>
+    `;
+  }
+  onScroll(event) {
+    if (!this.hasOverflow) return;
+    this.onScrollHorizontal();
+  }
+  onScrollHorizontal() {
+    const { nextEnabled, previousEnabled } = this;
+    const { track } = this.elements;
+    const { offsetStart, offsetEnd } = this.options;
+    const { scrollWidth, clientWidth, scrollLeft } = track;
+    const atStart = scrollLeft <= offsetStart;
+    const atEnd = scrollWidth - scrollLeft - offsetEnd <= clientWidth;
+    if (atStart && previousEnabled) {
+      this.setControlState("previous", false);
+    } else if (!atStart && !previousEnabled) {
+      this.setControlState("previous", true);
+    }
+    if (atEnd && nextEnabled) {
+      this.setControlState("next", false);
+    } else if (!atEnd && !nextEnabled) {
+      this.setControlState("next", true);
+    }
+  }
+  setControlState(dir, enabled) {
+    const isNext = dir === "next";
+    const { next, nextItem, previous, previousItem } = this.elements;
+    const item = isNext ? nextItem : previousItem; 
+    const button = isNext ? next : previous;
+    const classlistMethod = enabled ? 'remove' : 'add';
+    
+    item.classList[classlistMethod](this.getClass("controls-item--disabled"));
+    button.classList[enabled ? 'remove' : 'add'](this.getClass("control--disabled"));
+    if (enabled) {
+      button.removeAttribute("disabled");
+    } else {
+      button.setAttribute("disabled", "");
+    }
+    this[isNext ? 'nextEnabled' : 'previousEnabled'] = enabled;
+  }
+  resolveAmount(dir) {
+    const isNext = dir === "next";
+    const { amount } = this.options;
+    const { scrollLeft, offsetWidth } = this.elements.track;
+    if (amount === "auto") {
+      return isNext ? scrollLeft + offsetWidth : scrollLeft - offsetWidth;
+    } else if (typeof amount === "function") {
+      return amount(this, dir);
+    } else if (typeof amount === "number") {
+      return isNext ? scrollLeft + amount : scrollLeft - amount;
+    }
+    logError("Unable to resolve amount for scroll");
+    return 500;
+  }
+  next() {
+    this.elements.track.scrollTo({
+      top: 0,
+      left: this.resolveAmount("next"),
+      behavior: "smooth"
+    });
+  }
+  previous() {
+    this.elements.track.scrollTo({
+      top: 0,
+      left: this.resolveAmount("previous"),
+      behavior: "smooth"
+    });
+  }
+  getClass(child) {
+    const { namespace } = this.options;
+    return `${ namespace }__${ child }`;
+  }
+}
+// ---- END FILE: ui/overflow-scroller.js
+
+// ---- START File: ui/collapsible.js
+/**
+ * @module ui/collapsible
+ */
+
+import { getName as getEventName } from "../events/index.js";
+import { log, logError } from "../utils/class-logger.js";
+import { ensureId } from "../utils/id.js";
+
+/**
+ * Class for accessible hide/show components
+ */
+export class Collapsible {
+  static defaults = {
+    clickOutsideCloses: false,
+    // oneOpenPerContext: false, // This should be another module that manages instances within a context (accordions)
+    // clickWithinCloses: false, // Not sure how this was used but seems like it should be separate
+    focusoutCloses: false,
+    escapeCloses: false,
+    /**
+     * The module won't attach the handlers (you need to do it yourself)
+     */
+    selfManaged: false,
+    
+    /**
+     * This collapsible starts in open state
+     */
+    startOpen: false,
+    /**
+     * Open/active state class
+     */
+    openClass: "is-active",
+    /**
+     * Output debug info
+     */
+    debug: true,
+    onChange(_ctx) {
+      // do something
+    }
+  };
+  /**
+   * @param {Object} elements Elements object 
+   * @param {Node} elements.trigger Trigger button/element that opens/closes collapsible
+   * @param {Node} elements.content The content element that the trigger reveals
+   * @param {Object} config Configuration options (see defaults)
+   * @returns {Object} Collapsible instance
+   */
+  constructor(elements, config) {
+    const { trigger, content } = elements;
+    if (!trigger || !content) {
+      logError(this, "missing required elements (trigger or content)");
+      return;
+    }
+    const options = Object.assign({}, Collapsible.defaults, config);
+    this.elements = elements;
+    this.options = options;
+    this.isOpen = false;
+    this.handlers = {}; // Spot to cache event handlers
+    ensureId(trigger);
+    ensureId(content);
+    this.debugLog(this, this);
+    if (!options.selfManaged) {
+      this.attachHandlers();
+    }
+    this.setup();
+  }
+  attachHandlers() {
+    const { trigger, content } = this.elements;
+    const { focusoutCloses } = this.options;
+    this.clickHandler = event => {
+      this.onClick(event);
+    }
+    this.focusoutHandler = (event) => {
+      if (focusoutCloses) {
+        this.close(event);
+      }
+    };
+    trigger.addEventListener("click", this.clickHandler);
+    content.addEventListener("focusout", this.focusoutHandler);
+  }
+  removeHandlers() {
+    const { trigger, content } = this.elements;
+    trigger.removeEventListener("click", this.clickHandler);
+    content.removeEventListener("focusout", this.focusoutHandler);
+  }
+  onClick(event) {
+    this.toggle(event);
+  }
+  destroy() {
+    this.removeHandlers();
+    this.destroyTemporaryHandlers();
+  }
+  debugLog(...msgs) {
+    if (this.options.debug) {
+      log(this, ...msgs);
+    }
+  }
+  setup() {
+    const { trigger, content } = this.elements;
+    const { startOpen } = this.options;
+    trigger.setAttribute("role", "button");
+    trigger.setAttribute("aria-controls", content.id);
+    content.setAttribute("aria-labelledby", trigger.id);
+    this.setState(startOpen);
+  }
+  createEvent(name, detail) {
+    return new CustomEvent(getEventName("collapsible:" + name), { detail });
+  }
+  setState(isOpen, event) {
+    const ctx = { 
+      collapsible: this, 
+      isOpen, 
+      event 
+    };
+    this.debugLog(this, "Set state", ctx);
+    const { trigger, content } = this.elements;
+    const { openClass } = this.options;
+    const setClass = el => el.classList[isOpen ? "add" : "remove"](openClass);
+    trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    setClass(trigger);
+    setClass(content);
+    this.isOpen = isOpen;
+    this.options.onChange(ctx);
+    trigger.dispatchEvent(this.createEvent("change", ctx));
+    if (isOpen) {
+      this.setupTemporaryHandlers();
+    } else {
+      this.destroyTemporaryHandlers();
+    }
+  }
+  /**
+   * Setup handlers needed for closing once open
+   */
+  setupTemporaryHandlers() {
+    const { content, trigger } = this.elements;
+    const { clickOutsideCloses, escapeCloses } = this.options;
+    const onDocumentClick = (event) => {
+      const { target } = event;
+      const inTrigger = trigger.contains(target);
+      const inContent = content.contains(target);
+      if (clickOutsideCloses && !inTrigger && !inContent) {
+        this.close(event);
+      }
+    };
+    const onDocumentKeydown = (event) => {
+      if (escapeCloses && event.key === "Escape") {
+        this.close(event);
+      }
+    };
+    document.addEventListener("click", onDocumentClick);
+    document.addEventListener("keydown", onDocumentKeydown);
+    this.handlers.onDocumentClick = onDocumentClick;
+    this.handlers.onDocumentKeydown = onDocumentKeydown;
+  }
+  /**
+   * Destroy handlers attached for closing once open
+   */
+  destroyTemporaryHandlers() {
+    const { onDocumentClick, onDocumentKeydown } = this.handlers;
+    if (onDocumentClick) {
+      document.removeEventListener("click", onDocumentClick);
+    }
+    if (onDocumentClick) {
+      document.removeEventListener("keydown", onDocumentKeydown);
+    }
+  }
+  open(event) {
+    this.setState(true, event);
+  }
+  close(event) {
+    this.setState(false, event);
+  }
+  toggle(event) {
+    this.setState(!this.isOpen, event);
+  }
+
+  // This is removed because I think it's not useful, users should keep references
+  // Static Methods for managing instances of this class
+  // static instances = [];
+  // /**
+  //  * Get collapsible instance by trigger element
+  //  * @param {Node|String} trigger Trigger node or trigger ID
+  //  */
+  // static getInstance(trigger) {
+  //   return Collapsible.instances.find(c => typeof trigger === "string" ? 
+  //     c.elements.trigger.id === trigger : 
+  //     c.elements.trigger === trigger
+  //   );
+  // }
+  // static removeInstance(instance) {
+  //   const index = Collapsible.instances.findIndex(c => c === instance);
+  //   if (index > -1) {
+  //     Collapsible.instances.splice(index, 1);
+  //   }
+  // }
+}
+// ---- END FILE: ui/collapsible.js
+
+// ---- START File: ui/tooltip.js
+/**
+ * @module ui/tooltip
+ */
+
+import { getName as getEventName } from "../events/index.js";
+import { createFloatingUi } from "../utils/floating-ui.js";
+import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
+import { logError } from "../utils/class-logger.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+import { newId, ensureId } from "../utils/id.js";
+
+const attrs = {
+  trigger: "data-ulu-tooltip",
+  init: "data-ulu-tooltip-init",
+  body: "data-ulu-tooltip-display-body",
+  arrow: "data-ulu-tooltip-arrow"
+};
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+/**
+ * Initialize default popover
+ */
+export function init() {
+  document.addEventListener(getEventName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Query all popovers on current page and set them up
+ * - Use this manually if needed
+ * - Won't setup a popover more than once
+ */
+export function setup() {
+  const triggers = document.querySelectorAll(attrSelectorInitial("trigger"));
+  triggers.forEach(setupTrigger);
+}
+
+export function setupTrigger(trigger) {
+  const passed = getDatasetOptionalJson(trigger, "uluTooltip");
+  const options = typeof passed === "object" ? passed : {};
+  if (typeof passed === "string") {
+    options.content = passed;
+  }
+  trigger.setAttribute(attrs.init, "");
+  return new Tooltip({ trigger }, options);
+}
+
+/**
+ * Tooltip
+ * - Provides basic tooltip functionality
+ * - Uses floating UI for positioning
+ */
+export class Tooltip {
+  /**
+   * Defaults options
+   */
+  static defaults = {
+    /**
+     * Should the tooltip and content be linked accessibly
+     * - Note tooltips can only apply to interactive elements! (ie button, input, role="...", etc)
+     * @type {Boolean}
+     */
+    accessible: true,
+    /**
+     * String/markup to insert into tooltip display
+     * @type {String}
+     */
+    content: null,
+    openClass: "is-active",
+    contentClass: "",
+    isHtml: false,
+    /**
+     * Pull content from pre-existing content on page 
+     * @type {String|Node}
+     */
+    fromElement: null,
+    /**
+     * If used on a link that is an anchor link it will display the content of the anchor like fromElement
+     */
+    fromAnchor: false,
+    /**
+     * Move the content to the bottom of the document
+     * @type {Boolean}
+     */
+    endOfDocument: true,
+    /**
+     * Events to show tooltip on
+     * @type {Array.<String>}
+     */    
+    showEvents: ["pointerenter", "focus"],
+    /**
+     * Events to hide tooltip on
+     * @type {Array.<String>}
+     */
+    hideEvents: ["pointerleave", "blur"],
+    /**
+     * Delay when using the directive
+     * @type {Number}
+     */
+    delay: 500,
+    /**
+     * Template for the content display
+     */
+    template(_config) {
+      return `
+        <div class="popover popover--tooltip">
+          <div class="popover__inner" ${ attrs.body }>
+          </div>
+          <span class="popover__arrow" data-ulu-tooltip-arrow></span>
+        </div>
+      `;
+    },
+    /**
+     * Callback when tooltip is shown or hidden
+     * @type {Function}
+     */
+    onChange(_ctx) {
+      // do something
+    }
+  };
+  static defaultFloatingOptions = {
+    // strategy: "fixed"
+  };
+  constructor(elements, userOptions, floatingOptions) {
+    const { trigger } = elements;
+    if (!trigger) {
+      logError(this, "missing required trigger");
+      return;
+    }
+    this.options = Object.assign({}, Tooltip.defaults, userOptions);
+    this.floatingOptions = Object.assign({}, Tooltip.defaultFloatingOptions, floatingOptions);
+    this.elements = { ...elements };
+    this.handlers = {};
+    this.isOpen = false;
+    ensureId(trigger);
+    this.setup();
+  }
+  setup() {
+    this.createContentElement();
+    this.attachHandlers();
+    this.setupAccessibility();
+  }
+  setupAccessibility() {
+    const { trigger, content } = this.elements;
+    const { accessible } = this.options;
+    if (!accessible) return;
+    trigger.setAttribute("aria-describedby", content.id);
+  }
+  destroy() {
+    this.destroyHandlers();
+    this.destroyDisplay();
+  }
+  getInnerContent() {
+    const { fromElement, content, isHtml, fromAnchor } = this.options;
+    if (content) {
+      return content;
+    } else if (fromElement || fromAnchor) {
+      const element = fromAnchor ? this.getAnchorElement() : document.querySelector(fromElement);
+      if (element) {
+        return isHtml ? element.innerHTML : element.innerText;
+      } else {
+        return "";
+      }
+    } else {
+      logError(this, "Could not resolve inner content");
+    }
+  }
+  getAnchorElement() {
+    const { trigger } = this.elements;
+    const { href } = trigger;
+    const id = href ? href.split("#")[1] : null;
+    const element = id ? document.getElementById(id) : null;
+    if (!element) {
+      console.error("Unable to get 'fromAnchor' element", trigger);
+    }
+    return element;
+  }
+  createContentElement() {
+    const { options } = this;
+    const content = createElementFromHtml(options.template(options));
+    const body = content.querySelector(attrSelector("body"));
+    const innerContent = this.getInnerContent();
+    if (options.isHtml) {
+      body.innerHTML = innerContent;
+    } else {
+      body.textContent = innerContent;
+    }
+    content.id = newId();
+    if (options.contentClass) {
+      content.classList.add(options.contentClass);
+    }
+    
+    this.elements.content = content;
+    this.elements.contentArrow = content.querySelector(attrSelector("arrow"));
+    document.body.appendChild(content);
+  }
+  attachHandlers() {
+    const { trigger } = this.elements;
+    const { showEvents, hideEvents, delay } = this.options;
+    let tid = null;
+  
+    const onShow = (event) => { 
+      if (tid) return;
+      tid = setTimeout(() => {
+        this.show(event);
+        clearTimeout(tid);
+      }, delay);
+    };
+
+    const onHide = (event) => { 
+      if (tid) {
+        clearTimeout(tid);
+        tid = null;
+      }
+      this.hide(event);
+    };
+    const onDocumentKeydown = (event) => {
+      if (event.key === "Escape") {
+        this.hide(event);
+      }
+    };
+    showEvents.forEach(name => {
+      trigger.addEventListener(name, onShow);
+    });
+    hideEvents.forEach(name => {
+      trigger.addEventListener(name, onHide);
+    });
+    document.addEventListener("keydown", onDocumentKeydown);
+    this.handlers = { onShow, onHide, onDocumentKeydown };
+  }
+  destroyHandlers() {
+    const { trigger } = this;
+    const { onShow, onHide, onDocumentKeydown } = this.handlers;
+    const { showEvents, hideEvents } = this.options;
+    if (onShow) {
+      showEvents.forEach(name => {
+        trigger.removeEventListener(name, onShow);
+      });
+    }
+    if (onHide) {
+      hideEvents.forEach(name => {
+        trigger.removeEventListener(name, onHide);
+      });
+    }
+    if (onDocumentKeydown) {
+      document.removeEventListener("keydown", onDocumentKeydown);
+    }
+  }
+  setState(isOpen, event) {
+    const ctx = { 
+      instance: this, 
+      isOpen, 
+      event 
+    };
+    const { trigger, content } = this.elements;
+    const { openClass } = this.options;
+    const setClass = el => el.classList[isOpen ? "add" : "remove"](openClass);
+    // trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    setClass(trigger);
+    setClass(content);
+    this.isOpen = isOpen;
+    this.options.onChange(ctx);
+    trigger.dispatchEvent(this.createEvent("change", ctx));
+    this.destroyFloatingInstance();
+    if (isOpen) {
+      this.createFloatingInstance();
+    }
+  }
+  createEvent(name, detail) {
+    return new CustomEvent(getEventName("tooltip:" + name), { detail });
+  }
+  createFloatingInstance() {
+    this.floatingCleanup = createFloatingUi(this.elements, this.floatingOptions);
+  }
+  destroyFloatingInstance() {
+    if (this.floatingCleanup) {
+      this.floatingCleanup(); 
+      this.floatingCleanup = null;
+    }
+  }
+  show(event) {
+    this.setState(true, event);
+  }
+  hide(event) {
+    this.setState(false, event);
+  }
+}
+// ---- END FILE: ui/tooltip.js
+
+// ---- START File: ui/page.js
+/**
+ * General/Document Related 
+ * - Add custom properties for scrollbar
+ * @module ui/page
+ */
+
+import { addScrollbarProperty } from "../utils/dom";
+
+/**
+ * Initialize page module
+ */
+export function init() {
+  addScrollbarProperty();
+}
+// ---- END FILE: ui/page.js
+
+// ---- START File: ui/flipcard.js
+/**
+ * @module ui/flipcard
+ */
+
+import { trimWhitespace } from "@ulu/utils/string.js";
+import { log, logError } from "../utils/class-logger.js";
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+const debugMode = false; // Global dev debug
+
+export class Flipcard {
+  static instances = [];
+  static defaults = {
+    namespace: "Flipcard",
+    proxyClick: {
+      allowSelection: true, // Don't proxy click if the user has more than the minmimum selected
+      selectionMin:  10, // Minimum length that qualifies as a selection
+      exclude:  "a, input, textarea, button"  // Selectors to avoid closing a flipcard onProxyclick 
+    },
+  };
+  constructor(container, front, back, config, debug = false) {
+    if (!container, !front, !back) {
+      logError(this, 'Missing an element (container, front, back)');
+    }
+    this.options = Object.assign({}, Flipcard.defaults, config);
+    const { namespace } = this.options;
+    Flipcard.instances.push(this);
+
+    this.debug = debugMode || debug;
+    this.elements = { container, front, back };
+    this.isOpen = false;
+    this.uid = `${ namespace }-id-${ Flipcard.instances.length }`;
+    this.stateAttr = `data-${ namespace }-state`.toLowerCase();
+    this.setup();
+    this.setVisiblity(false);
+    log(this, this);
+  }
+  toggle() {
+    this.setVisiblity(!this.isOpen);
+  }
+  setup() {
+    const { uid } = this;
+    const { namespace, proxyClick } = this.options;
+    const { container, front, back } = this.elements;
+    const control = this.elements.control = document.createElement("button");
+
+    // Styling and markup
+    control.classList.add(this.getClass("control-button"));
+    control.setAttribute("type", "button");
+    control.innerHTML = this.createControlContent();
+    control.style.gridArea = namespace;
+    control.style.zIndex = "-1"; // Behind everything only used for focus
+    control.addEventListener('focusin', () => {
+      control.style.zIndex = "20"; // above the back
+    });
+    control.addEventListener('focusout', () => {
+      control.style.zIndex = "-1"
+    });
+    control.addEventListener("click", this.toggle.bind(this));
+    back.parentNode.insertBefore(control, back);
+  
+    container.classList.add(this.options.namespace);
+    container.setAttribute("style", trimWhitespace(this.containerCss()));
+    if (proxyClick) {
+      container.addEventListener("click", this.onProxyClick.bind(this));
+    }
+
+    front.style.gridArea = namespace;
+    back.style.gridArea = namespace;
+
+    // Accessibility
+    control.id = `${ uid }-control`;
+    control.setAttribute("aria-controls", back.id);
+    control.setAttribute("aria-expanded", "false");
+    back.id = `${ uid }-back`;
+    back.setAttribute('aria-labelledby', control.id)
+    back.setAttribute('aria-hidden', "true");
+  }
+  /**
+   * Click handler on everything on container
+   * - Determines if click was something that should be ignored (link, etc)
+   */
+  onProxyClick({ target }) {
+    const { exclude, allowSelection, selectionMin } = this.options.proxyClick; 
+    const selection = window.getSelection();
+    if (exclude && !target.matches(exclude)) {
+      if (!allowSelection || selection.toString().length < selectionMin) {
+        this.toggle();
+      }
+    }
+  }
+  getClass(child) {
+    const { namespace } = this.options;
+    return child ? `${ namespace }__${ child }` : namespace;
+  }
+  createControlContent() {
+    return `
+      <span class="hidden-visually">Show More Information</span>
+    `;
+  }
+  setVisiblity(visible) {
+    const { back, container, control } = this.elements;
+    const state = visible ? "open" : "closed";
+    back.style.zIndex = visible ? "10" : "1";
+    back.style.visibility = visible ? "visible" : "hidden";
+    container.setAttribute(this.stateAttr, state);
+    back.setAttribute('aria-hidden', visible ? "false" : "true");
+    control.setAttribute('aria-expanded', visible ? "true" : "false");
+    this.isOpen = visible;
+  }
+  containerCss() {
+    return `
+      display: -ms-grid;
+      display: grid;
+      position: relative; 
+      -ms-grid-columns: 1fr; 
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+      grid-template-areas: "${ this.options.namespace }";
+      cursor: pointer;
+    `;
+  }
+  panelCss(zIndex = 1) {
+    return `
+      grid-area: ${ this.options.namespace };
+      z-index: ${ zIndex }
+    `;
+  }
+}
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-flipcard-init",
+  flipcard: "data-ulu-flipcard",
+  front: "data-ulu-flipcard-front",
+  back: "data-ulu-flipcard-back",
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+
+// const containers = document.querySelectorAll('[data-ulu-flipcard]');
+const instances = [];
+
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+export function setup() {
+  const builders = document.querySelectorAll(attrSelectorInitial("flipcard"));
+  builders.forEach(setupFlipcard);
+}
+
+// containers.forEach(init);
+
+function setupFlipcard(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluFlipcard");
+  const config = Object.assign({},  options);
+  const front = container.querySelector(attrSelectorInitial("front"));
+  const back = container.querySelector(attrSelectorInitial("back"));
+  instances.push(new Flipcard(container, front, back, config));
+}
+
+// getDatasetOptionalJson
+function setupSlider(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluFlipcard");
+  const config = Object.assign({},  options);
+  const elements = {
+    track: container.querySelector(attrSelector("track")),
+    controls: container.querySelector(attrSelector("controls"))
+  };
+  // replace with OverflowScroller when finished removing sitescrollslider
+  instances.push(new SiteScrollSlider(elements, config));
+}
+
+/**
+ * Preliminary Notes:
+ *   Considerations for Accessiblity:
+ *   - https://webaim.org/standards/wcag/checklist
+ *   - https://www.w3.org/TR/WCAG21/#on-focus
+ *   - https://a11y-style-guide.com/style-guide/section-cards.html
+ *   - Reduced Motion
+ *   - Percievable (interactive)
+ *   - Final Descision
+ *     - Use a buttons
+ *     - Why?
+ *       - Can't use whole card surface as click 
+ *         * Selections
+ *         * Other interactions
+ *         * How to make that make sense to SR
+ *         * Keyboard focuses and then clicks
+ *         * Accidental flipping on zoom
+ *       - Can't use hover
+ *   
+ *   - BRAINSTORM START:
+ *     - Don't use hover or focus (motor control issues)
+ *       - Needs to use click
+ *     - Run through screenreader expierence
+ *       - Hits button (reads title, click to reveal)
+ *       - Focuses the content button (reads content, backside, click to unreveal)
+ *       - NO BUTTONS CAN"T HAVE CONTENT, BUTTONS NEED TO STATE THEIR INTENT
+ *     - Try Again, Run through screenreader expierence
+ *       - Screen reader encounters flipcard
+ *       - Headline is read
+ *       - Button is read (reveal description)
+ *       - Button is clicked
+ *       - Content is shown and focused
+ *       - Button to flip back
+ *     - For Keybaord users
+ *       - The accessible buttons can be used or a click handler can be attached to the 
+ *         flipcard and given
+ *     - Why not always show the content to screenreaders?
+ *       - How to hide controls from them? (controls can't be hidden)
+ *       - How to not have events interfere click
+ *       - Maybe use a single control and make it say "jumpto definition"
+ *         - Kind of lame
+ *       - What about going back to focus and then attaching a click handler?
+ *         - Visual users will see the content on keyboard or mouse or touch
+ *         - We can reduce the motion with query
+ *         - Note: WCAG AAA - 1.4.13 Content on Hover or Focus
+ *           - Need to bind escape
+ *         - Mouse users and touch will need to click
+ *         - How does it focus and work on a screenreader?
+ *       - Cannot use FOCUS!
+ *         - https://www.w3.org/WAI/WCAG21/Understanding/on-focus.html
+ *         - What if the user was zoomed? They may never see the title/front
+ *     - I think it MUST use buttons or a button to flip
+ *       - Because users need to be able to scroll, interact and select text in a back
+ *     @example html
+ *        <div class="flipcard">
+ *          <h3 class="flipcard__front">
+ *            Term Name
+ *            <button class="flipcard__toggle">
+ *              <span class="hidden-visually">Show Definition</span>
+ *            </button>
+ *          </h3>
+ *          <div class="flipcard__back">
+ *            Some definiton example lorem ipsum et depsi anu olor.
+ *            <button class="flipcard__toggle">
+ *              <span class="hidden-visually">Hide Definition</span>
+ *            </button>
+ *          </div>
+ *        </div>
+ */    
+// ---- END FILE: ui/flipcard.js
+
+// ---- START File: ui/grid.js
+/**
+ * @module ui/grid
+ */
+
+import { setPositionClasses } from "../utils/dom.js";
+import { getName } from "../events/index.js";
+
+/**
+ * Sets up document for grid position classes
+ * @param {String} selector The selector for the parent element
+ * @param {Object} classes Classes (optional) @see setPositionClasses
+ */
+export function init(selector = "[data-grid]", classes) {
+  document.addEventListener(getName("pageModified"), () => setup(selector, classes));
+  document.addEventListener(getName("pageResized"), () => setup(selector, classes));
+  setup(selector, classes);
+}
+
+/**
+ * Goes through document and finds elements that need to have positioning classes
+ * @param {String} selector The selector for the parent element
+ * @param {Object} classes Classes (optional) @see setPositionClasses
+ */
+export function setup(selector, classes) {
+  document.querySelectorAll(selector).forEach(element => setPositionClasses(element, classes || undefined));
+}
+// ---- END FILE: ui/grid.js
+
+// ---- START File: ui/print-details.js
+/**
+ * @module ui/print-details
+ */
+
+import { getName } from "../events/index.js";
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  opened: "data-ulu-print-details-opened",
+};
+
+const attrSelector = key => `[${ attrs[key] }]`;
+
+const defaults = {
+  selector: "details:not([open])"
+};
+
+/**
+ * Initialize details print 
+ * - will open details before print
+ * - will return to previous state after
+ */
+export function init(options) {
+  const config = Object.assign({}, defaults, options);
+  
+  // Add flag and open each details that's closed
+  document.addEventListener(getName("beforePrint"), () => {
+    document.querySelectorAll(config.selector).forEach(details => {
+      if (!details.open) {
+        details.setAttribute(attrs.opened, true);
+        details.open = true;
+      }
+    });
+  });
+  // When print ends find all flagged and close
+  document.addEventListener(getName("afterPrint"), () => {
+    document.querySelectorAll(attrSelector("opened")).forEach(details => {
+      details.removeAttribute(attrs.opened);
+      details.open = false;
+    });
+  });
+}
+// ---- END FILE: ui/print-details.js
+
+// ---- START File: ui/scrollpoint.js
+/**
+ * @module ui/scrollpoint 
+ */
+
+// Module that uses intersection observer to add scrollpoint like behavior.
+/**
+ * TODO:
+ *  - Included a group option or attribute (on container)
+//    for things like anchor menus (one active in group at a time).
+ * 
+ * How to link elements of group
+ * <div group={ groupName: test }>
+ *   <div point={ groupName: test, mirror: ["#menu-link-1"] }>
+ * or
+ * <div group={ groupName: test, children: [".selector"] }>
+ *   <div class=".selector">
+ */
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson, getElement } from "../utils/dom.js";
+import { logError } from "../utils/class-logger.js";
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-scrollpoint-init",
+  /**
+   * Individual scrollpoint
+   */
+  point: "data-ulu-scrollpoint",
+  group: "data-ulu-scrollpoint-group",
+  groupAnchors: "data-ulu-scrollpoint-anchors"
+  // Goes on container for all items
+  // group: "data-ulu-scrollpoint-group"
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Setup all points and groups
+ */
+export function setup() {
+  const elements = queryAllInitial("point");
+  // const points = Array.from(elements).map(resolve);
+  // const groups = points
+  //   .filter(({ config }) => config.groupName)
+  //   .reduce((acc, point) => {
+  //     const { groupName } = point.config;
+  //     if (acc.has(groupName)) {
+  //       acc.get(groupName).push(point);
+  //     } else {
+  //       acc.set(groupName, [point]);
+  //     }
+  //   }, new Map());
+  // const singles = points.filter(({ config }) => !config.groupName);
+  // groups.forEach(setupGroup);
+  elements.forEach(element => {
+    const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
+    const config = Object.assign({}, elOptions);
+    element.setAttribute(attrs.init, "");
+    new Scrollpoint(element, config);
+  });
+}
+
+
+
+/**
+ * Single scrollpoint
+ * - Note "forward" and "reverse" refer to scroll directions
+ *   - forward = vertical below / horizontal right
+ *   - reverse = vertical above / horizontal left
+ * @todo Convert margin to offset 
+ * @todo This only goes one direction
+ */
+export class Scrollpoint {
+  static defaults = {
+    /**
+     * Default observer root element
+     */
+    root: null,
+    /**
+     * Use a selector to select the observer root element
+     */
+    rootSelector: null,
+    /**
+     * Log debug info to console
+     */
+    debug: false,
+    /**
+     * Change scroll orientation to horizontal
+     */
+    horizontal: false,
+    /**
+     * Margin for observer top or left (depending on orientation)
+     */
+    marginStart: "-25%",
+    /**
+     * Margin for observer bottom or right (depending on orientation)
+     */
+    marginEnd: "-55%",
+    /**
+     * Threshold for observer
+     */
+    threshold: [0,1],
+    /**
+     * The point can exited (else persists)
+     */
+    exit: true,
+    /**
+     * The point can exit from the end
+     */
+    exitForward: true,
+    /**
+     * The point can exit from the start
+     */
+    exitReverse: true,
+    /**
+     * Set state classes
+     */
+    setClasses: false,
+    /**
+     * Prefix for classes
+     */
+    classPrefix: "scrollpoint",
+    /**
+     * Set attribute for state (less verbose same info as classes)
+     */
+    setAttribute: true,
+    /**
+     * Attribute name to set state info in
+     */
+    attributeName: "data-scrollpoint-state",
+    /**
+     * Group multiple points, one active at a time (scroll menus)
+     */
+    // groupName: null,
+    /**
+     * Elements that should also get active state info (classes or attributes)
+     */
+    syncElements: [],
+    /**
+     * Callback called when state changes
+     */
+    onChange(_ctx) {
+      // do something
+    }
+  };
+  /**
+   * Setup a new scrollpoint
+   * @param {Node} element The element to create the scrollpoint for
+   * @param {Object} config Options to configure the scrollpoint see Scrollpoint.defaults for more information on settings
+   */
+  constructor(element, config) {
+    const options = Object.assign({}, Scrollpoint.defaults, config);
+    if (!element) {
+      logError(this, "Missing required element");
+      return;
+    }
+    if (options.rootSelector) {
+      options.root = document.querySelector(options.rootSelector);
+      delete options.rootSelector;
+    }
+    this.options = options;
+    this.observer = null;
+    this.lastPosition = null;
+    this.isActive = false;
+    this.element = element;
+    this.syncedElements = [
+      element, 
+      ...options.syncElements.map(target => getElement(target))
+    ];
+    this.classes = {
+      enter:          this.getClassname("enter"),
+      enterForward: this.getClassname("enter--from-forward"),
+      enterReverse: this.getClassname("enter--from-reverse"),
+      exit:          this.getClassname("exit"),
+      exitForward: this.getClassname("exit--from-forward"),
+      exitReverse: this.getClassname("exit--from-reverse"),
+    };
+    this.setupObserver();
+    if (options.debug) {
+      console.log("Scrollpoint", this);
+    }
+  }
+  getClassname(suffix) {
+    return this.options.classPrefix + "-" + suffix;
+  }
+  getObserverOptions() {
+    const { root, marginStart, marginEnd, threshold, horizontal } = this.options;
+    const rootMargin = horizontal 
+      ? `0px ${ marginStart } 0px ${ marginEnd }` 
+      : `${ marginStart } 0px ${ marginEnd } 0px`;
+    return { root, rootMargin, threshold };
+  }
+  /**
+   * IntersectionObserver Callback
+   * - Should set the state
+   */
+  onObserve(entries) {
+    const y = this.getScrollY();
+    const { lastPosition, isActive, options } = this;
+    const isForward = lastPosition === null ? null : lastPosition < y;
+    entries.forEach(entry => {
+      const { isIntersecting } = entry;
+      // Entering for first time
+      if (isIntersecting && !isActive) {
+        this.setState(true, isForward);
+      // Exiting
+      } else if (!isIntersecting && isActive && options.exit) {
+        // Call if allowed in either direction
+        if (isForward && options.exitForward || !isForward && options.exitReverse) {
+          this.setState(false, isForward);
+        }
+      }
+    });
+    this.lastPosition = y;
+  }
+  setupObserver() {
+    const handler = entries => {
+      this.onObserve(entries);
+    };
+    const config = this.getObserverOptions();
+    if (this.options.debug) {
+      console.log("Scrollpoint (IntersectionObserver)", config);
+    }
+    this.observer = new IntersectionObserver(handler, config);
+    this.observer.observe(this.element);
+  }
+  getScrollY() {
+    const { root } = this.options;
+    return root === null || root === document ? window.scrollY : root.scrollTop;
+  }
+  setState(isActive, isForward) {
+    const { element } = this;
+    const ctx = { isActive, isForward, element, instance: this };
+    const { setClasses, setAttribute, onChange } = this.options;
+    if (setClasses) {
+      this.updateClasses(isActive, isForward);
+    }
+    if (setAttribute) {
+      this.updateStateAttribute(isActive, isForward);
+    }
+    if (onChange) {
+      onChange(ctx);
+    }
+    this.isActive = isActive;
+  }
+  getAllClasses() {
+    return Object.values(this.classes);
+  }
+  updateClasses(isActive, isForward) {
+    const { classes } = this;
+    const all = this.getAllClasses();
+    const classesEnter = [
+      classes.enter,
+      isForward ? classes.enterForward : classes.enterReverse
+    ];
+    const classesExit = [
+      classes.exit, 
+      isForward ? classes.exitForward : classes.exitReverse
+    ];
+    this.syncedElements.forEach(element => {
+      element.classList.remove(...all);
+      if (isActive) {
+        element.classList.add(...classesEnter);
+      } else {
+        element.classList.add(...classesExit);
+      }
+    });
+  }
+  updateStateAttribute(isActive, isForward) {
+    const activeTerm = isActive ? "enter" : "exit";
+    const side = isForward ? "forward" : "reverse";
+    this.syncedElements.forEach(element => {
+      element.setAttribute(this.options.attributeName, `${ activeTerm }-${ side }`);
+    });
+  }
+  destroy() {
+    this.observer.disconnect();
+    this.observer = null;
+    if (this.options.setClasses) {
+      this.element.classList.remove(...this.getAllClasses());
+    }
+    if (this.options.setAttribute) {
+      this.element.removeAttribute(this.options.attributeName)
+    }
+  } 
+}
+
+// ---- END FILE: ui/scrollpoint.js
+
+// ---- START File: ui/dialog.js
+/**
+ * @module ui/dialog
+ */
+
+import { getName } from "../events/index.js";
+import { getDatasetJson, wasClickOutside } from "../utils/dom.js";
+import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-dialog-init",
+  dialog: "data-ulu-dialog",
+  trigger: "data-ulu-dialog-trigger",
+  close: "data-ulu-dialog-close",
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+
+/**
+ * Dialog Defaults 
+ * - Can be overridden using data-attributes
+ */
+export const defaults = {
+  /**
+   * Use non-modal interface for dialog
+   */
+  nonModal: false,
+  /**
+   * Move the dialog to the document end (hoist out of content)
+   * - helpful if dialogs are within editor body, etc
+   */
+  documentEnd: false,
+  /**
+   * Requires styling that reduces any padding/border on dialog
+   */
+  clickOutsideCloses: true,
+  /**
+   * Whether or not to pause videos when dialog closes (currently just youtube and native)
+   */
+  pauseVideos: true,
+};
+
+
+// Current default objects (user can override these)
+let currentDefaults = { ...defaults };
+
+/**
+ * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ */
+export function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Setup dialogs and triggers
+ */
+export function setup() {
+  // Then setup all dialogs (including those that were built)
+  const dialogs = queryAllInitial("dialog");
+  dialogs.forEach(setupDialog);
+
+  const triggers = queryAllInitial("trigger");
+  triggers.forEach(setupTrigger);
+}
+
+/**
+ * Setup click handlers on a trigger
+ * @param {Node} trigger 
+ */
+export function setupTrigger(trigger) {
+  trigger.addEventListener("click", handleTrigger);
+  trigger.setAttribute(attrs.init, "");
+
+  function handleTrigger() {
+    const id = trigger.dataset.uluDialogTrigger;
+    const dialog = document.getElementById(id);
+    if (!dialog) {
+      console.error("Could not locate dialog (id)", id);
+      return;
+    }
+    if (dialog?.tagName?.toLowerCase() !== "dialog") {
+      console.error("Attempted to trigger non <dialog> element. Did you mean to use modal builder?" );
+      return;
+    }
+    const options = getDialogOptions(dialog);
+    dialog[options.nonModal ? "show" : "showModal"]();
+  }
+}
+
+/**
+ * Setup click handlers for a dialog
+ * @param {Node} dialog 
+ */
+export function setupDialog(dialog) {
+  const options = getDialogOptions(dialog);
+  dialog.addEventListener("click", handleClicks);
+  dialog.setAttribute(attrs.init, "");
+  if (options.documentEnd) {
+    document.body.appendChild(dialog);
+  }
+  if (options.pauseVideos) {
+    prepVideos(dialog);
+  }
+
+  function handleClicks(event) {
+    const { target } = event;
+    const closeFromButton = target.closest("[data-ulu-dialog-close]");
+    let closeFromOutside = options.clickOutsideCloses && 
+                           target === dialog && 
+                           wasClickOutside(dialog, event);
+    if (closeFromOutside || closeFromButton) {
+      if (options.pauseVideos) {
+        pauseVideos(dialog);
+      }
+      dialog.close();
+    }
+  }
+} 
+
+/**
+ * For a given dialog, get it's options (from data attribute)
+ * @param {Node} dialog 
+ * @returns {Object}
+ */
+export function getDialogOptions(dialog) {
+  const options = getDatasetJson(dialog, "uluDialog");
+  return Object.assign({}, currentDefaults, options);
+}
+
+/**
+ * Pause native and youtube videos for a given dialog
+ */
+function prepVideos(dialog) {
+  prepYoutubeVideos(dialog);
+}
+/**
+ * Prep videos to be paused for a given dialog
+ */
+function pauseVideos(dialog) {
+  pauseYoutubeVideos(dialog);
+  const nativeVideos = dialog.querySelectorAll("video");
+  nativeVideos.forEach(video => video.pause());
+}
+
+
+// ---- END FILE: ui/dialog.js
+
+// ---- START File: ui/tabs.js
+/**
+ * @module ui/tabs
+ */
+
+// TODO:
+// - For Vertical tabs we should be updating the orientation when on mobile. 
+//   Currently using all arrows so that the interface works in both 
+//   orientations when vertical. Leaving that behavior for now but maybe consider
+//   setting this up to destroy tab interface when ui layout changes?
+
+import AriaTablist from "aria-tablist";
+
+const initAttr = "data-ulu-tablist-init";
+const errorHeader = "[data-ulu-tablist] error:";
+
+/**
+ * Array of current tab instances (exported if you need to interact with them)
+ * @type {Array} 
+ */
+export const instances = [];
+
+/**
+ * Init all instances currently in document
+ * @param {Object} options Options to serve as defaults
+ */
+export function init(options = {}) {
+  const initial = () => {
+    initWithin(document, options);
+    // Run this on page load, optionally exported for use when page is running
+    instances.forEach(openByCurrentHash);
+  };
+  
+  if (document.readyState === "complete") {
+    initial();
+  } else {
+    window.addEventListener("load", initial);
+  }
+  // Initialize when page updates/changes
+  document.addEventListener("pageModified", e => initWithin(e.target, options));
+}
+
+/**
+ * Init all tabs within a certain context
+ * @param {Node} context Element to init within
+ * @param {Object} options Options to serve as defaults
+ */
+export function initWithin(context, options = {}) {
+  if (!context) {
+    console.warn("Missing context to initWithin, skipping init of tabs");
+    return;
+  }
+  const tablists = context.querySelectorAll(`[data-ulu-tablist]:not([${ initAttr }])`);
+  tablists.forEach(element => setup(element, options));
+}
+
+/**
+ * 
+ * @param {Node} element Tablist Element
+ * @param {Node} options Options to set as defaults (can be overridden by element dataset options)
+ * @return {Object} Instance object
+ */
+export function setup(element, options = {}) {
+  let elementOptions = {};
+  
+  if (element.dataset.uluTablist) {
+    try {
+      elementOptions = JSON.parse(element.dataset.uluTablist);
+    } catch(e) {
+      console.error(errorHeader, "(JSON Parse for options)", element);
+    }
+  }
+
+  const config = Object.assign({}, options, elementOptions);
+
+  if (config.vertical) {
+    config.allArrows = true;
+  }
+
+  // Need to render the markup before checking height
+  //  - used to wait until images had loaded
+  const instance = { element, options };
+  instance.ariaTablist = AriaTablist(element, {
+    onOpen(...args) {
+      args.unshift(instance);
+      handleOpen.apply(null, args);
+    },
+    ...config
+  });
+  instances.push(instance);
+
+  if (config.equalHeights) {
+    setHeights(element);
+  }
+
+  element.setAttribute(initAttr, "");
+  
+  return instance;
+}
+
+/**
+ * Opens the a tabpanel if it matches current hash (used in initial init)
+ */
+function openByCurrentHash({ options, ariaTablist }) {
+  if (options.openByUrlHash) {
+    const { hash } = window.location;
+    if (hash && hash.length > 1) {
+      const possibleId = hash.substring(1);
+      ariaTablist.tabs.forEach(tab => {
+        if (possibleId === tab.id) {
+          ariaTablist.open(tab);
+        }
+      });
+    }
+  }
+}
+
+/**
+ * Responsible for setting hash on open if option is set
+ */
+function handleOpen({ options }, panel, tab) {
+  if (options.openByUrlHash && window.history) {
+    window.history.replaceState(null, "", `#${ tab.id }`);
+  }
+}
+
+/**
+ * Responsible for creating equal height tab panels
+ */
+function setHeights(element) {
+  const tabs = [ ...element.children];
+  const panels = tabs.map(n => document.querySelector(`[aria-labelledby="${ n.id }"]`)); 
+  const parent = panels[0].parentElement;
+  const images = [ ...parent.querySelectorAll("img") ];
+  const imagePromises = images.map(image => imagePromise(image));
+  function imagePromise(image) {
+    return new Promise((resolve) => {
+      if (image.complete) {
+        resolve(image);
+      } else {
+        image.onload = resolve;
+        // Errors should also resolve so that height matching continues
+        image.onerror = resolve; 
+      }
+    });
+  }
+  // Run after images are loaded, or if no images it will resolve and run
+  Promise.all(imagePromises).then(() => {
+    const heights = panels.map(panel => {
+      let panelHeight = panel.offsetHeight;
+      if (panel.hidden) {
+        panel.hidden = false;
+        panelHeight = panel.offsetHeight;
+        panel.hidden = true;
+      }
+      return panelHeight;
+    });
+    const max = Math.max(...heights);
+    panels.forEach(panel => panel.style.minHeight = `${ max }px`);
+  });
+}
+
+// ---- END FILE: ui/tabs.js
+
+// ---- START File: ui/index.js
+export * as page from "./page.js";
+export * as breakpoints from "./breakpoints.js";
+export * as collapsible from "./collapsible.js";
+export * as modalBuilder from "./modal-builder.js";
+export * as dialog from "./dialog.js";
+export * as flipcard from "./flipcard.js";
+export * as grid from "./grid.js";
+export * as index from "./index.js";
+export * as overflowScrollerPager from "./overflow-scroller-pager.js";
+export * as overflowScroller from "./overflow-scroller.js";
+export * as popover from "./popover.js";
+export * as tooltip from "./tooltip.js";
+export * as resizer from "./resizer.js";
+export * as slider from "./slider.js";
+export * as tabs from "./tabs.js";
+export * as proxyClick from "./proxy-click.js";
+export * as scrollpoint from "./scrollpoint.js";
+export * as print from "./print.js";
+export * as printDetails from "./print-details.js";
+export * as scrollSlider from "./scroll-slider.js";
+export * as themeToggle from "./theme-toggle.js";
+export * as detailsGroup from "./details-group.js";
+
+// ---- END FILE: ui/index.js
+
+// ---- START File: ui/proxy-click.js
+/**
+ * @module ui/proxy-click
+ */
+
+
+// Used for cards and things that look like they should be clickable even 
+// though the link in their content is the only clickable element. This way the 
+// entire cards content doesn't need to be in a link (which isn't accessible)
+// - The script allows only for clicks with a duration of 250ms to avoid 
+//   conflict with a user selecting text.
+// - Works with either links or buttons because it just uses the elements .click()
+// - Uses data-attributes for selection
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+
+const attrs = {
+  trigger: "data-ulu-proxy-click",
+  init: "data-ulu-proxy-click-init",
+};
+
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+
+export const defaults = {
+  selector: "[data-ulu-proxy-click-source]",
+  selectorPreventBase: "input, select, textarea, button, a, [tabindex='-1']",
+  selectorPrevent: "",
+  mousedownDurationPrevent: 250,
+};
+
+// Current default objects (user can override these)
+let currentDefaults = { ...defaults };
+
+/**
+ * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ */
+export function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), () => setup());
+  setup();
+}
+
+export function setup(context = document) {
+  const proxies = context.querySelectorAll(attrSelectorInitial("trigger"));
+  proxies.forEach(proxy => {
+    const elOptions = getDatasetOptionalJson(proxy, "siteProxyClick");
+    const options = Object.assign({}, currentDefaults, elOptions);
+    const child = proxy.querySelector(options.selector);
+    if (child) {
+      attachHandlers(proxy, child, options);
+      proxy.setAttribute(attrs.init, "");
+    } else {
+      console.error("Unable to locate proxy click source", options.selector);
+    }
+  });
+}
+export function attachHandlers(proxy, child, options) {
+  const { selectorPreventBase: spb, selectorPrevent: sp } = options;
+  const selectorPrevent = `${ spb }${ sp ? `, ${ sp }` : "" }`;
+  let start, shouldProxy;
+  proxy.addEventListener("mousedown", ({ target, timeStamp }) => {
+    shouldProxy = false;
+    if (!target.matches(selectorPrevent)) {
+      shouldProxy = true;
+      start = timeStamp;
+    }
+  });
+  proxy.addEventListener("mouseup", ({ timeStamp }) => {
+    if (shouldProxy && timeStamp - start < options.mousedownDurationPrevent) {
+      child.click();
+    }
+  });
+  proxy.style.cursor = "pointer";
+}
+
+// ---- END FILE: ui/proxy-click.js
+
+// ---- START File: ui/scroll-slider.js
+/**
+ * @module ui/scroll-slider
+ */
+
+import { OverflowScroller } from "./overflow-scroller.js";
+import { createPager } from "./overflow-scroller-pager.js";
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-scroll-slider-init",
+  slider: "data-ulu-scroll-slider",
+  track: "data-ulu-scroll-slider-track",
+  controls: "data-ulu-scroll-slider-control-context"
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+
+
+const instances = [];
+
+const defaults = {
+  amount: createPager()
+};
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+export function setup() {
+  const builders = document.querySelectorAll(attrSelectorInitial("slider"));
+  builders.forEach(setupSlider);
+}
+
+// getDatasetOptionalJson
+function setupSlider(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluScrollSlider");
+  const config = Object.assign({}, defaults, options);
+  const elements = {
+    track: container.querySelector(attrSelector("track")),
+    controls: container.querySelector(attrSelector("controls"))
+  };
+  instances.push(new OverflowScroller(elements, config));
+}
+// ---- END FILE: ui/scroll-slider.js
+
+// ---- START File: ui/dialog.todo
+Styling:
+  ‚úî Animations? @done
+  ‚òê Check styling on left right
+  ‚òê Setup fullscreen option / modifier
+  ‚òê Setup programmatic modal with new system
+  ‚òê Resizing
+    ‚úî Work out how this can work with native and click outside @done
+    ‚úî Figure out how to setup icon for the resizer for all sites @done
+      * Fontawesome, or should this just be CSS so we don't need any icons for it
+      * Same for close button should we just use CSS and omit any FA requirements
+      * Or make it super easy to implement the icon only in the template (like default icon classses)
+        * Then user can choose to implement their own (via class) or use the styles that come with it
+  ‚òê Prevent Browser Scroll
+  ‚úî How should height work? Should a centered modal expand to it's content's height (up to the viewport height) or always be cropped and scroll (static height)? @done
+Todos:
+  ‚úî How should the relationship between a dialog and it's trigger work @done
+    * Think there should be no relationship? Just triggers are triggers just attach a handler to open DOM centric way (add errors when the dialog doesn't exist)
+    * For the dialogs they should just have handlers attached for close
+      * Init should find all one's that need to be built and build them, then it should initialize them the same way as non-built dialogs
+  ‚úî Support both modal and non-modal dialogs (rename)? @done
+  ‚úò Divide into 4 modules @cancelled
+    1. Initializer (data-attributes)
+    2. Templater (for Drupal projects and standard modals)
+    3. Open/Close Behaviors
+    4. Programmatic Modal
+      * This is tough because its opionated towards our system in Drupal (jQuery)
+  ‚úî How should this all be structured @done
+    * JS template dialogs?
+      * Pros
+        * Many users create the modals in content in CMS we don't want to make that difficult or get stuck with structure
+      * Cons
+        * Templating is in JS so dialogs don't make much sense on their own
+          * Could continue the div to dialog conversion (so modal content is inline unless JS running). Don't want to optimize too much for no js anymore anyways
+        * writing the dialog by hand makes sense for non defualt modal styles or users that have another structure but need the scripting part
+      * Solution
+        * Breakup module into two parts the underlying modal scripting (open close trigger) and (conversion modal templating [w. resizer] and as <div>)
+          * Then we can have both without any extra code and seperation
+// ---- END FILE: ui/dialog.todo
+
+// ---- START File: ui/popover.js
+/**
+ * @module ui/popover
+ */
+
+import { getName } from "../events/index.js";
+import { createFloatingUi } from "../utils/floating-ui.js";
+import { Collapsible } from "./collapsible.js";
+
+/**
+ * Array of current instances
+ */
+export const instances = new WeakMap;
+
+const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
+
+const attrs = {
+  trigger: "data-ulu-popover-trigger",
+  content: "data-ulu-popover-content",
+  arrow: "data-ulu-popover-arrow",
+  anchor: "data-ulu-popover-trigger-anchor",
+};
+const attrSelector = key => `[${ attrs[key] }]`;
+
+// This modules collapsible defaults
+const collapsibleDefaults = {
+  clickOutsideCloses: true,
+  escapeCloses: true
+};
+
+/**
+ * Initialize default popover
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Query all popovers on current page and set them up
+ * - Use this manually if needed
+ * - Won't setup a popover more than once
+ */
+export function setup() {
+  const triggers = document.querySelectorAll(attrSelector("trigger"));
+  // Only triggers we don't have instances for
+  const resolved = Array.from(triggers)
+    .filter(trigger => !instances.has(trigger))
+    .map(resolve)
+    .filter(v => v);
+
+  resolved.forEach(({ elements, options, floatingOptions  }) => {
+    instances.set(elements.trigger, new Popover(elements, options, floatingOptions));
+  });
+}
+
+/**
+ * Find the popover's elements
+ */
+export function resolve(trigger) {
+  const raw = trigger.dataset.uluPopoverTrigger;
+  const options = raw?.length ? JSON.parse(raw) : {};
+  const content = getContentByTrigger(trigger);
+  const elements = {
+    trigger,
+    content,
+    anchor: trigger.querySelector(attrSelector("anchor")) || trigger,
+    contentArrow: content.querySelector(attrSelector("arrow"))
+  };
+  const floatingOptions = options.floating || {};
+  delete options.floating;
+  if (content) {
+    return { elements, options, floatingOptions };
+  } else {
+    logError("Unable to make popover for", trigger);
+    return false;
+  }
+}
+
+// - grab from aria-controls (optional) 
+// - or from direct sibling
+// - lastly check the parent container for any children that have the attribute
+export function getContentByTrigger(trigger) {
+  let content;
+  const ariaControls = trigger.getAttribute("aria-controls");
+
+  if (ariaControls) {
+    content = document.getElementById(ariaControls);
+  } else if (trigger?.nextElementSibling?.hasAttribute(attrs.content)) {
+    content = trigger.nextElementSibling;  
+  // @todo - Consider removing this (non standard, users like this should be using aria-controls)
+  } else {
+    const children = Array.from(trigger.parentNode.children);
+    const triggerIndex = children.findIndex(c => c === trigger);
+    const childrenAfter = children.slice(triggerIndex);
+    content = childrenAfter.find(child => child.matches(attrSelector("content")));
+  }
+  if (!content) {
+    logError("Unable to resolve 'content' element for popover", trigger);
+  }
+  return content;
+}
+
+
+/**
+ * Class that extends Collapsible adding floating-ui for popover behavior
+ */
+export class Popover extends Collapsible {
+  constructor(elements, config, floatingOptions) {
+    const options = Object.assign({}, collapsibleDefaults, config);
+    super(elements, options);
+    this.floatingOptions = floatingOptions || {};
+  }
+  setState(isOpen, event) {
+    super.setState(isOpen, event);
+    this.destroyFloatingInstance();
+    if (isOpen) {
+      this.createFloatingInstance();
+    }
+  }
+  destroy() {
+    super.destroy();
+    this.destroyFloatingInstance();
+  }
+  createFloatingInstance() {
+    const { content, anchor, contentArrow } = this.elements;
+    const floatingElements = { trigger: anchor, contentArrow, content };    
+    console.log("this.floatingOptions:\n", this.floatingOptions);
+    this.floatingCleanup = createFloatingUi(floatingElements, this.floatingOptions);
+  }
+  destroyFloatingInstance() {
+    if (this.floatingCleanup) {
+      this.floatingCleanup(); 
+      this.floatingCleanup = null;
+    }
+  }
+}
+// ---- END FILE: ui/popover.js
+
+// ---- START File: ui/overflow-scroller-pager.js
+/**
+ * @module ui/overflow-scroller-pager
+ */
+/**
+ * Function to be used in overflow scrollers "amount" option. This function will
+ * determine how many items can fit in the viewport, taking into account scroll padding left, 
+ * and will set the scroll amount to paginate between items. Items size can be anything 
+ * (ie. one per screen vs 3.5 per screen will both work). This seperated from the plugin 
+ * for tree shaking incase it's unneeded. Currently this is only setup for horizontal scrolling
+ * 
+ * Note: This is setup to return the function, incase configuration is needed in the future 
+ * it can be passed to the create function
+ * 
+ * @return {Function} A function to be used in overflow scrollers "amount" configuration property
+ */
+
+export function createPager() {
+  return function pager(instance, dir) {
+    const isNext = dir === "next";
+    const { track } = instance.elements;
+    if (!track.children) return 400;
+    const trackStyle = window.getComputedStyle(track);
+    // Note we are banking on the scroll padding string to be in "px", not doing any conversions here
+    const scrollPaddingRaw = trackStyle.getPropertyValue( 'scroll-padding-left' ).replace( 'auto', '0px' );
+    const scrollPadding = parseInt(scrollPaddingRaw, 10);
+
+    const { scrollLeft, offsetWidth } = track;
+    const right = scrollLeft + offsetWidth;
+    // Get all slide positions into an array
+    const slides = [ ...track.children ].map(element => {
+      const { offsetLeft, offsetWidth } = element;
+      return { 
+        element, 
+        offsetLeft, 
+        offsetRight: offsetLeft + offsetWidth 
+      };
+    });
+    // Test edges to see what can fit, slide found will be the slide to scroll to
+    let slideFound;
+    if (isNext) {
+      // Find the first item that didn't make it
+      slideFound = slides.find(slide => slide.offsetRight >= right);
+    } else {
+      let slideBeforeIndex = slides.findLastIndex(slide => slide.offsetLeft <= scrollLeft);
+      // Find the slides before this slide that can fit, including the slide before
+      if (slideBeforeIndex) {
+        let slideBefore = slides[slideBeforeIndex];
+        let slidesBefore = slides.slice(0, slideBeforeIndex + 1);
+        slideFound = slidesBefore.find(slide => {
+          const rightEdge = slide.offsetLeft + scrollPadding + offsetWidth;
+          return rightEdge >= slideBefore.offsetRight;
+        });
+      }
+    }
+    if (slideFound) {
+      return isNext ? slideFound.offsetLeft : slideFound.offsetLeft + scrollPadding;
+    } else {
+      return 400;
+    }
+  }
+}
+
+// ---- END FILE: ui/overflow-scroller-pager.js
+
+// ---- START File: ui/breakpoints.js
+/**
+ * @module ui/breakpoints
+ */
+
+// Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints
+import { removeArrayElement } from "@ulu/utils/array.js";
+import { getName } from "../events/index.js";
+import { log, logError } from "../utils/class-logger.js";
+
+
+// Resize Handler to update breakpoints for all instances (Called after resize finished)
+window.addEventListener(getName("pageResized"), () => {
+  BreakpointManager.instances.forEach(i => i.update());
+});
+
+/**
+ * @class
+ * Class that provides method for retrieving and acting on breakpoints passed
+ * from CSS (using element psuedo content prop)
+ */
+export class BreakpointManager {
+  static instances = [];
+  static defaults = {
+    element: document?.documentElement,
+    valueFromPsuedo: false,
+    customProperty: "--breakpoint",
+    psuedoSelector: ':before',
+    order: ["none", "small", "medium", "large"],
+    debug: false
+  }
+  /**
+   * @param {Object} config Configruation object
+   * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
+   * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
+   * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
+   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
+   * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
+   */
+  constructor(config) {
+    Object.assign(this, BreakpointManager.defaults, config);
+    this.active = null;
+    this.previous = null;
+    this.activeIndex = null;
+    this.resizeDirection = null;
+    this.previousIndex = null;
+    this.breakpoints = {};
+    this.onChangeCallbacks = [];
+    this.order.forEach(n => this.breakpoints[n] = new Breakpoint(n, this));
+    log(this, this);
+    this.update(); // Run for the first time, then whenever browser resizes
+    BreakpointManager.instances.push(this);
+  }
+  /**
+   * Add a callback for everytime a breakpoint changes
+   * - Not recommended, possibly use to watch for changes, etc
+   * - For more control use intance.at(name) with breakpoint methods
+   * @param {Function} callback Function to call, passed one argument current instance which can be used to get information about breakpoints
+   */
+  onChange(callback) {
+    this.onChangeCallbacks.push(callback);
+  }
+  /**
+   * Remove change callback
+   * @param {Function} callback Function to remove
+   */
+  removeOnChange(callback) {
+    removeArrayElement(this.onChangeCallbacks, callback);
+  }
+  /**
+   * Get breakpoint from a psuedo element
+   */
+  getBreakpointInPsuedo() {
+    return window.getComputedStyle(this.element, this.psuedoSelector).content.replace(/^"|"$/g, '');
+  }
+  /**
+   * Get breakpoint from a custom property
+   */
+  getBreakpointInProperty() {
+    return getComputedStyle(this.element).getPropertyValue(this.customProperty).trim();
+  }
+  /**
+   * Get breakpoint from element (design note: user could override prototype)
+   */
+  getBreakpoint() {
+    if (this.valueFromPsuedo) {
+      return this.getBreakpointInPsuedo();
+    } else {
+      return this.getBreakpointInProperty();
+    }
+  }
+  /**
+   * Updates the active breakpoint by checking the element and executes handlers on change
+   */
+  update() {
+    const name = this.getBreakpoint();
+    if (!name) {
+      logError(this, 'Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!');
+      return;
+    }
+    // console.log('name:\n', name);
+    if (name === this.active) return;
+    // this.log(`current breakpoint: ${ name }`);
+    // Update active and cache last
+    this.previous = this.active;
+    this.previousIndex = this.activeIndex;
+
+    const index = this.order.indexOf(name);
+    this.active = name;
+    this.activeIndex = index;
+    const activeBreakpoint = this.at(this.active);
+    // Get arrays of breakpoints based on the order array
+    const mapBreakpoints = n => this.at(n);
+    // From breakpoint to end (highest)
+    const max = this.order.slice(index).map(mapBreakpoints);
+    const notMax = this.order.slice(0, index).map(mapBreakpoints);
+    // From start up to this breakpoint
+    const min = this.order.slice(0, index + 1).map(mapBreakpoints);
+    const notMin = this.order.slice(index + 1).map(mapBreakpoints);
+    const notOnly = this.order.slice().map(mapBreakpoints);
+    notOnly.splice(index, 1);
+    
+    log(this, 'max:', max.map(b => b.name).join());
+    log(this, 'min:', min.map(b => b.name).join());
+    
+    max.forEach(b => b._setDirection('max', true));
+    min.forEach(b => b._setDirection('min', true));
+    activeBreakpoint._setDirection('only', true);
+
+    notMax.forEach(b => b._setDirection('max', false));
+    notMin.forEach(b => b._setDirection('min', false));
+    notOnly.forEach(b => b._setDirection('only', false));
+
+    // Set direction (extra info if needed)
+    if (this.previousIndex !== null) {
+      this.resizeDirection = this.previousIndex < index ? "up" : "down";
+    }
+
+    this.onChangeCallbacks.forEach(cb => cb(this));
+  }
+  /**
+   * Get a breakpoint by key
+   * @param {String} name The name of the breakpoint to get
+   * @return {Breakpoint} Breakpoint to act on (see Breakpoint class)
+   */
+  at(name) {
+    const bp = this.breakpoints[name];
+    if (!name) {
+      logError(this, 'Unable to find breakpoint for:', bp);
+    }
+    return bp;
+  }
+}
+/**
+ * @class
+ * Used to handle a breakpoints direction's handler and state
+ */
+class BreakpointDirection {
+  constructor(direction, breakpoint) {
+    this.direction = direction; // String name (logging)
+    this.active = false;
+    this.on = [];
+    this.off = []; // Triggered when direction has been set to active and then set to inactive (not on initial inactive)
+    this.breakpoint = breakpoint; // Reference to parent
+  }
+  /**
+   * Change the state of the direction
+   */
+  change(to) {
+    if (this.active !== to) {
+      if (to) this._call(true);
+      else if (this.active) this._call(false); // Going from active to inactive
+      this.active = to;
+    }
+  }
+  /**
+   * Calls all functions in handlers or
+   */
+  _call(forActive) {
+    const handlers = forActive ? this.on : this.off;
+    handlers.forEach(handler => handler());
+    log(this.breakpoint._manager, `Handlers called (${ forActive ? 'on' : 'off' }): ${ this.direction }`);
+  }
+  /**
+   * Returns handlers in normalized object format on/off
+   */
+  getHandlers(handler) {
+    return typeof handler !== "object" ? { on: handler } : handler;
+  }
+  /**
+   * Adds a handler for the direction, optionally use object to add off state handler
+   * @param {Function|Object} handler Function to be executed when direction is active, read object description for on/off
+   * @param {Function|Object} handler.on Function to be executed when direction is active
+   * @param {Function|Object} handler.off Function to be executed when direction was active and is now changed to inactive
+   */
+  add(handler) {
+    const handlers = this.getHandlers(handler);
+    if (handlers.on) {
+      this.on.push(handlers.on);
+    }
+    if (handlers.off) {
+      this.off.push(handlers.off);
+    }
+    // Already active when handler was added, fire now
+    if (this.active && handlers.on) {
+      handlers.on();
+      log(this.breakpoint._manager, `Handler called immediately: ${ this.direction }`, handlers.on);
+    }
+  }
+  /**
+   * Removes a handler
+   */
+  remove(handler) {
+    const handlers = this.getHandlers(handler);
+    if (handlers.on) {
+      removeArrayElement(this.on, handlers.on);
+    }
+    if (handlers.off) {
+      removeArrayElement(this.off, handlers.off);
+    }
+  }
+}
+/**
+ * @class
+ * Single breakpoint management
+ */
+class Breakpoint {
+  constructor(name, manager) {
+    this.directions = {
+      max: new BreakpointDirection('max', this),
+      min: new BreakpointDirection('min', this),
+      only: new BreakpointDirection('only', this)
+    };
+    this._manager = manager; // Ref to parent class
+    this.name = name;
+  }
+  /**
+   * Private method used inrternally for managing direction activation
+   * - Each direction manages it's own state and handlers
+   * @param {String} direction The directional key
+   * @param {Boolean} active State of that direction to set
+   */
+  _setDirection(direction, active) {
+    this.directions[direction].change(active);
+  }
+  /**
+   * Attach handler to be executed from the breakpoint and to all breakpoints below.
+   * - If the browser resizes from a breakpoint below this breakpoint, 
+   *   and above the breakpoint name specified, this handler will fire
+   * @param {Function} handler Handler to be executed
+   */    
+  max(handler) {
+    this.directions.max.add(handler);
+  }
+  /**
+   * Attach handler to be executed from the breakpoint and to all breakpoints below.
+   * - If the browser resizes from a breakpoint above this breakpoint, 
+   *   and below the breakpoint name specified, this handler will fire
+   * @param {Function} handler Handler to be executed
+   */  
+  min(handler) {
+    this.directions.min.add(handler);
+  }
+  /**
+   * Attach a handler to fire when the breakpoint is within the key
+   * @param {Function} handler Handler to be executed
+   */    
+  only(handler) {
+    this.directions.only.add(handler);
+  }
+  /**
+   * Remove handler
+   * @param {Function} handler Handler to be removed, extended on/off object style can be used
+   * @param {String} direction Remove handler only from specified direction, else search all directions
+   */      
+  remove(handler, direction) {
+    const directions = direction ? [ direction ] : ['max', 'min', 'only'];
+    directions.forEach(d => d.remove(handler));
+  }
+  
+  log(...msg) {
+    msg.unshift(`Breakpoint (${ this.name }):`);
+    this._manager.log.apply(this._manager, msg);
+  }
+}
+// ---- END FILE: ui/breakpoints.js
+
+// ---- START File: ui/modal-builder.js
+/**
+ * @module ui/modal-builder
+ */
+
+// Note this needs to be run before dialogs are initialized!
+
+import { wrapSettingString } from "../settings.js";
+import { getName } from "../events/index.js";
+import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
+import { Resizer } from "./resizer.js";
+import { getDatasetJson } from "../utils/dom.js";
+import { defaults as dialogDefaults, attrs as dialogAttrs } from "./dialog.js";
+
+const attrs = {
+  builder: "data-ulu-modal-builder",
+  body: "data-ulu-modal-builder-body",
+  resizer: "data-ulu-modal-builder-resizer"
+};
+
+const attrSelector = key => `[${ attrs[key] }]`;
+
+/**
+ * Default builder options (extends dialog defaults, watch name collisions)
+ * - Decided to extend defaults so the interface in HTML is singular
+ *   - This is sometimes easier to template (merging and serializing options 
+ *     in twig for example)
+ */
+export const defaults = {
+  title: null,
+  titleIcon: null,
+  nonModal: false,
+  documentEnd: true,
+  allowResize: false,
+  position: "center",
+  bodyFills: false,
+  noBackdrop: false,
+  size: "default",
+  print: false,
+  noMinHeight: false,
+  class: "",
+  classCloseIcon: wrapSettingString("iconClassClose"),
+  classResizerIcon: wrapSettingString("iconClassDragX"),
+  debug: false,
+  templateCloseIcon(config) {
+    return `<span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true"></span>`;
+  },
+  templateResizerIcon(config) {
+    return `<span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>`;
+  },
+  /**
+   * Default modal template
+   * @param {String} id ID for new modal
+   * @param {Object} config Resolved options
+   * @returns {String} Markup for modal
+   */
+  template(id, config) {
+    const classes = [
+      "modal",
+      `modal--${ config.position }`,
+      `modal--${ config.size }`,
+      `modal--${ config.allowResize ? "resize" : "no-resize" }`,
+      ...(!config.title ? ["modal--no-header"] : []),
+      ...(config.bodyFills ? ["modal--body-fills"] : []), 
+      ...(config.noBackdrop ? ["modal--no-backdrop"] : []), 
+      ...(config.noMinHeight ? ["modal--no-min-height"] : [] ),
+      ...(config.class ? [config.class] : []), 
+    ];
+    return `
+      <dialog id="${ id }" class="${ classes.join(" ") }">
+        ${ config.title ? `
+          <header class="modal__header">
+            <h2 class="modal__title">
+              ${ config.titleIcon ? 
+                `<span class="modal__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
+              }
+              <span class="modal__title-text">${ config.title }</span>
+            </h2>
+            <button class="modal__close" aria-label="Close modal" ${ dialogAttrs.close } autofocus>
+              ${ config.templateCloseIcon(config) }
+            </button>
+          </header>
+        ` : "" }
+        <div class="modal__body" ${ attrs.body }></div>
+        ${ config.hasResizer ? 
+          `<div class="modal__resizer" ${ attrs.resizer }>
+            ${ config.templateResizerIcon(config) }
+          </div>` : "" 
+        }
+      </div>
+    `;
+  }
+};
+
+// Current default objects (user can override these)
+let currentDefaults = { ...defaults };
+
+/**
+ * @param {Object} options Change options used as default for dialogs, can then be overridden by data attribute settings on element
+ */
+export function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Query and setup all builder
+ */
+export function setup() {
+  const builders = document.querySelectorAll(attrSelector("builder"));
+  builders.forEach(setupBuilder);
+}
+
+/**
+ * Build a dialog for the given content
+ * @param {Node} element 
+ */
+export function setupBuilder(element) {
+  const options = getDatasetJson(element, "uluModalBuilder");
+  element.removeAttribute(attrs.builder);
+  buildModal(element, options);
+}
+
+/**
+ * 
+ * @param {Node} content Content element of the dialog (what is inserted into the body)
+ * @param {Object} options Options for built dialog (see defaults)
+ */
+export function buildModal(content, options) {
+
+  const config = Object.assign({}, currentDefaults, options);
+
+  if (config.position !== "center" && config.allowResize) {
+    config.hasResizer = true;
+  }
+  if (config.debug) {
+    console.log(config, content);
+  }
+  if (!content.id) {
+    throw new Error("Missing ID on modal");
+  }
+  
+  const markup = config.template(content.id, config);
+  const modal = createElementFromHtml(markup.trim());
+  const selectChild = key => modal.querySelector(attrSelector(key));
+  const body = selectChild("body");
+  const resizer = selectChild("resizer");
+  const dialogOptions = separateDialogOptions(config);
+
+  // Replace content with new dialog, and then insert the content into the new dialogs body
+  content.removeAttribute("id");
+  content.removeAttribute("hidden");
+  content.removeAttribute(attrs.builder);
+  content.parentNode.replaceChild(modal, content);
+  body.appendChild(content);
+
+  // Add dialog options for other scripts
+  modal.setAttribute(dialogAttrs.dialog, JSON.stringify(dialogOptions));
+
+  if (config.hasResizer) {
+    new Resizer(modal, resizer, {
+      fromLeft: config.position === "right"
+    });
+  }
+
+  if (config.print) {
+    let printClone;
+    document.addEventListener(getName("beforePrint"), () => {
+      printClone = content.cloneNode(true);
+      modal.after(printClone);
+    });
+    document.addEventListener(getName("afterPrint"), () => {
+      printClone.remove();
+    });
+  }
+  return { modal };
+}
+
+/**
+ * Returns JSON string to embed in data-ulu-dialog for dialog handling
+ * @param {Object} config Config object to pull dialog specific settings from
+ * @returns {Object}
+ */
+function separateDialogOptions(config) {
+  return Object.keys(dialogDefaults).reduce((acc, key) => {
+    if (key in config) {
+      acc[key] = config[key];
+    }
+    return acc;
+  }, {});
+}
+
+// ---- END FILE: ui/modal-builder.js
+
+// ---- START File: ui/details-group.js
+/**
+ * @module ui/details-group
+ * @description Manages groups of details (ie. onlyOneOpen at a time)
+ */
+
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+
+export const attrs = {
+  init: "data-ulu-details-group-init",
+  childInit: "data-ulu-details-group-child-init",
+  group: "data-ulu-details-group",
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+
+const defaults  = {
+  onlyOneOpen: true,
+  childSelector: ":scope > details"
+};
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), () => setup());
+  setup();
+}
+
+/**
+ * Setup all dialog groups within context
+ * @param {HTMLElement} context [document] Element to query within
+ * @returns {Array} Array matching the groups queried with their return objects from setupGroup() [used for destroy/etc]
+ */
+export function setup(context = document) {
+  // Added try because we are using querySelectorAll with :scope by default
+  // which will not work in Internet Explorer or early edge (some alt. browsers too)
+  try {
+    const elements = context.querySelectorAll(attrSelectorInitial("group"));
+    return [...elements].map(setupGroup);
+  } catch(error) {
+    console.error(error);
+  }
+}
+
+/**
+ * @typedef {Object} DetailsGroupInstance
+ * @property {Function} destroy A function to remove event listeners and attributes.
+ * @property {HTMLElement} element The parent element.
+ * @property {Function} setupChildren A function to initialize the child details elements.
+ */
+
+/**
+ * Sets up a single group of details elements to manage their behavior.
+ * @param {HTMLElement} element - The parent element containing the details elements.
+ * @returns {DetailsGroupInstance}      
+ */
+export function setupGroup(element) {
+  const elementOptions = getDatasetOptionalJson(element, "uluDetailsGroup");
+  const options = Object.assign({}, defaults, elementOptions);
+  
+  element.setAttribute(attrs.t, "");
+  setupChildren();
+
+  /**
+   * Queries all current children in element
+   * @ignore
+   */
+  function queryChildren() {
+    return element.querySelectorAll(options.childSelector);
+  }
+
+  /**
+   * Sets up any children not already setup in group
+   */
+  function setupChildren() {
+    queryChildren().forEach(child => {
+      if (child.hasAttribute(attrs.childInit)) {
+        return;
+      } else {
+        child.setAttribute(attrs.childInit, "");
+      }
+      console.log(child);
+      
+      child.addEventListener("toggle", toggleHandler);  
+    });
+  }
+  
+  /**
+   * Toggle handler for child details element
+   * - For things like one open at a time
+   * @ignore
+   */
+  function toggleHandler({ target }) {
+    if (options.onlyOneOpen) {
+      if (target.open) {
+        queryChildren().forEach(child => {
+          if (child !== target && child.open) {
+            child.open = false;
+          }
+        });
+      }
+    }
+  }
+
+  /**
+   * Function removes all handlers and init attributes
+   */
+  function destroy() {
+    queryChildren().forEach(child => {
+      child.removeEventListener("toggle", toggleHandler);
+      child.removeAttribute(attrs.childInit);
+    });
+    element.removeAttribute(attrs.init);
+  }
+
+  return { destroy, element, setupChildren };
+}
+// ---- END FILE: ui/details-group.js
+
+// ---- START File: ui/slider.js
+/**
+ * @module ui/slider
+ */
+// =============================================================================
+// Slider
+// =============================================================================
+
+// Version:                   1.0.10
+
+// Changes:   
+//                            1.0.10 | Fix bug when two and going in reverse
+//                            1.0.9 | Fix bug when there are only 2 slides (not sliding correctly [revesers because of switchSlide])
+//                                    this is addressed now and should slide infinitly between two slides
+//                            1.0.8 | Change API, to elements object (from individaul arguments),
+//                                    Add the ability to specify the element to append controls within
+//                            1.0.6 | Add transition class for changes during transition, 
+//                                    add will-change to the transition
+//                            1.0.5 | Fix transtion event difference on windows, convert all 
+//                                    async stuff to promises and simplify
+//                            1.0.4 | Remove live region annoucement (only used if auto rotate)
+
+// Reference:                 https://www.w3.org/WAI/tutorials/carousels/working-example/
+//                            https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html#
+//                            https://www.w3.org/TR/wai-aria-practices-1.1/examples/carousel/carousel-1.html
+//                            https://www.accessibilityoz.com/
+//                            https://www.sitepoint.com/unbearable-accessible-slideshow/
+//                            https://dev.opera.com/articles/css-will-change-property/
+//                              * Will Change use
+
+import { wrapSettingString } from "../settings.js";
+import maintain from 'ally.js/maintain/_maintain';
+import { hasRequiredProps } from '@ulu/utils/object.js';
+import { trimWhitespace } from "@ulu/utils/string.js";
+import { debounce } from "@ulu/utils/performance.js";
+import { log, logError, logWarning } from "../utils/class-logger.js";
+import { getDatasetOptionalJson } from "../utils/dom.js";
+import { createPager } from "./overflow-scroller-pager.js";
+import { getName } from "../events/index.js";
+
+const debugMode = false; // Global dev debug
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const eventOnce = { once: true };
+const cssDuration = d => `${ d }ms`;
+
+// Resize handlers for all slider instances, Load event to avoid triggering
+addEventListener('load', () => {
+  addEventListener('resize', debounce(() => {
+    Slider.instances.forEach(i => i.handleResize());
+  }, 250));
+});
+
+const requiredElements = [
+  "container", 
+  "trackContainer", 
+  "track", 
+  "slides"
+];
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-slider-init",
+  slider: "data-ulu-slider",
+  track: "data-ulu-slider-track",
+  trackContainer: "data-ulu-slider-track-container",
+  controls: "data-ulu-slider-control-context"
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+
+const defaults = {
+  amount: createPager()
+};
+
+const instances = [];
+
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+export function setup() {
+  const builders = document.querySelectorAll(attrSelectorInitial("slider"));
+  builders.forEach(setupSlider);
+}
+
+export function setupSlider(container) {
+  container.setAttribute(attrs.init, "");
+  const options = getDatasetOptionalJson(container, "uluScrollSlider");
+  const config = Object.assign({}, defaults, options);
+  const elements = {
+    container,
+    track: container.querySelector("[data-ulu-slider-track]"),
+    trackContainer: container.querySelector("[data-ulu-slider-track-container]"),
+    controlContext: container.querySelector("[data-ulu-slider-control-context]"),
+    slides: container.querySelectorAll("[data-ulu-slider-slide]")
+  };
+  // Add in any global settings
+  // Object.assign(config, {
+  //   callbacks: {}
+  // });
+  // /
+  // This was added because there was an issue on the new windows, need to test this
+  // config.transitionFade = true;
+  if (elements.slides.length) {
+    instances.push(new Slider(elements, config, false));
+  }
+}
+
+export class Slider {
+  static instances = [];
+  static defaults = {
+    classAccessiblyHidden: "hidden-visually",
+    namespace: "Slider",
+    events: {},
+    transition: true,
+    transitionFade: false,
+    transitionDuration: 700,
+    transitionDurationExit: 400,
+    transitionTimingFunction: "ease-in-out",
+    buttonClasses: ["button", "button--icon"],
+    iconClassPrevious: wrapSettingString("iconClassPrevious"),
+    iconClassNext: wrapSettingString("iconClassNext"),
+    // transition: true
+  }
+  // constructor(container, title, trackContainer, track, slides, config, debug = false) {
+  constructor(elements, config, debug = false) {
+    const options = Object.assign({}, Slider.defaults, config);
+    this.debug = debugMode || debug;
+    this.options = options;
+    this.slide = null;
+    this.index = null;
+    this.transitioning = false;
+
+    if (!hasRequiredProps(requiredElements)) {
+      logError(this, 'Missing a required Element');
+    }
+    if (!elements.slides.length) {
+      logError(this, "Missing slides");
+    }
+    this.slides = [ ...elements.slides ].map((element, index) => {
+      return {
+        element,
+        index,
+        number: index + 1
+      }
+    });
+    this.elements = {
+      ...elements,
+      ...this.createControls(elements.controlContext || elements.container),
+      ...this.createNav(elements.navContext || elements.container)
+    };
+    // Choose the appropriate transition method
+    this.transition =  options.transition ? options.transitionFade || reduceMotion 
+                          ? this.fadeTransition : this.slideTransition :  this.noTransition;
+    this.setup();
+    this.goto(0, null, "init");
+    log(this, "Slider Instance Created", this);
+    Slider.instances.push(this);
+  }
+  /**
+   * Sliding mechanism needs translate updated on resize
+   */
+  handleResize() {
+    const { slide, transition, slideTransition} = this;
+    if (transition === slideTransition && slide) {
+      this.translateTo(slide.element.offsetLeft, 0);
+    }
+  }
+  /**
+   * Goto to the previous slide
+   */     
+  previous(event) {
+    const { index: lastIndex, slides } = this;
+    const last = slides.length - 1;
+    const prev = lastIndex - 1;
+    const index = prev < 0 ? last : prev;
+    this.emit("previous", [event, index]);
+    this.goto(index, event, "previous");
+  }
+  /**
+   * Goto to the next slide
+   */   
+  next(event) {
+    const { index: lastIndex, slides } = this;
+    const next = lastIndex + 1;
+    const index = next > slides.length - 1 ? 0 : next;
+    this.emit("next", [event, index]);
+    this.goto(index, event, "next");
+  }
+  /**
+   *  Makes sure that no matter what the callback is called if transition event
+   * doesn't start or fails to finish/cancel
+   * @param {number} element
+   * @param {number} duration Duration to wait for complete 
+   * @param {Function} beginTransition Css changes to begin/start transtion 
+   */
+  ensureTransitionEnds(element, duration, beginTransition) {
+    return new Promise(resolve => {
+      const tid = {};
+      // If the transition has started remove the fallback for start
+      // and set one for the end
+      const onStart = () => {
+        clearTimeout(tid.start);
+        tid.end = setTimeout(onComplete, duration + 500);
+      };
+      // The transition has completed, cleanup and resolve
+      const onComplete = () => {
+        clearTimeout(tid.start);
+        clearTimeout(tid.end);
+        element.removeEventListener("transitionrun", onStart, eventOnce);
+        element.removeEventListener('transitionend', onComplete, eventOnce);
+        element.removeEventListener('transitioncancel', onComplete, eventOnce);
+        resolve();
+      };
+      // Wait for animation to start, also set a timer to ensure that
+      // if this event never fires for any reason, the promise will resolve
+      element.addEventListener("transitionrun", onStart, eventOnce);
+      // If it has started it will be waiting for the end
+      // If it never ends for any reason, the promise will resolve
+      element.addEventListener('transitionend', onComplete, eventOnce);
+      element.addEventListener('transitioncancel', onComplete, eventOnce);
+      tid.start = setTimeout(onComplete, duration + 500);
+      // Apply users css changes
+      element.style.transitionDuration = cssDuration(duration);
+      beginTransition();
+      // Bypass events if no duration or 0
+      if (!duration) {
+        onComplete();
+      }
+    });
+  }
+  /**
+   * Translate the track to X
+   */    
+  translateTo(x, duration) {
+    const { track } = this.elements;
+    const set = () => track.style.transform = `translateX(-${ x }px)`;
+    // tell brwoser we're about to animate
+    track.style.willChange =  "transform";
+    return this.ensureTransitionEnds(track, duration, set).then(() => {
+      // Remove to avoid any issues with optimization
+      track.style.willChange =  "auto";
+    });
+  }
+  /**
+   * Show's a specifc slide and hides others, except when passing true to show all
+   * then all slides will visible
+   */
+  setVisibility(activeSlide, showAll) {
+    if (!showAll) {
+      activeSlide.element.style.visibility = "visible";
+    }
+    this.slides.forEach(slide => {
+      if (slide !== activeSlide) {
+        slide.element.style.visibility = showAll ? "visible" : "hidden";
+      }
+    });
+  }
+  /**
+   * Perform a fade on a single slide
+   */
+  fadeSlide(slide, visible) {
+    const { options } = this;
+    const { element } = slide;
+    const duration = visible ? options.transitionDuration : options.transitionDurationExit;
+    return this.ensureTransitionEnds(element, duration, () => {
+      element.style.opacity = visible ? "1" : "0";
+    });
+  }
+  /**
+   * Handler for the entire slide transtion
+   */
+  async slideTransition({ slide, index, old, oldIndex, triggerType }) {
+    const count = this.slides.length;
+    const reverse = triggerType === "previous";
+    const lastIndex = count - 1;
+    const lastToFirst = index === 0 && oldIndex === lastIndex;
+    const firstToLast = index === lastIndex && oldIndex === 0;
+    let switchSlide;
+    let duration = this.options.transitionDuration;
+    
+    // Set duration based on how many slides to traverse
+    // First to last or the opposite are single slide animations
+    if (oldIndex && !lastToFirst && !firstToLast) {
+      duration = duration * Math.abs(oldIndex - index);
+    }
+    // If first to last or last to first we switch the order of the slides so that
+    // They are right next to each other at the front of the list
+    // Then perform the animation, Then put them back in their natural place without transitioning
+    // so it doesn't move for the user. Note count affects this differently
+    
+    if (count < 3) { 
+      if (lastToFirst && !reverse) {
+        switchSlide = old;
+      } else if (firstToLast) {
+        switchSlide = reverse ? slide : old;
+      }
+    } else {
+      if (lastToFirst) {
+        switchSlide = old;
+      } else if (firstToLast) {
+        switchSlide = slide;
+      }
+    }
+
+    // Set all slides to visible during the animation 
+    this.setVisibility(null, true);
+
+    // Put the last item at the front of the list and reset the
+    // tracks (or the opposite for first to last)
+    if (switchSlide) {
+      switchSlide.element.style.order = "-1";
+      await this.translateTo(lastToFirst ? 0 : old.element.offsetLeft, 0);
+    }
+    // Perform the main sliding animation
+    await this.translateTo(slide.element.offsetLeft, duration);
+    // Set the order back to normal in the end
+    // Don't transtion so the slider seems like it doesn't jump/move
+    if (switchSlide) {
+      switchSlide.element.style.order = "0";
+      await this.translateTo(slide.element.offsetLeft, 0);
+    }
+
+    this.setVisibility(slide, false);
+  }
+  /**
+   * Handler for the entire fade transtion
+   */  
+  async fadeTransition({ slide, old }) {
+    this.setVisibility(null, true);
+    // Uses order trick to move the current slide
+    if (old) {
+      await this.fadeSlide(old, false);
+      old.element.style.order = "0";
+    } 
+    slide.element.style.order = "-1";
+    await this.fadeSlide(slide, true); 
+    this.setVisibility(slide, false);
+  }
+  /**
+   * Handler for the entire NO transtion
+   */
+  noTransition({ slide, old }) {
+    this.setVisibility(slide, false);
+    if (old) {
+      old.element.style.order = "0";
+    }
+    slide.element.style.order = "-1";
+    return Promise.resolve();
+  }
+  goto(index, event, triggerType) {
+    const { 
+      slide: old, 
+      index: 
+      oldIndex, 
+      slides, 
+      elements
+    } = this;
+    const isInit = triggerType === "init";
+    const slide = slides[index];
+    const activeClass = this.getClass("nav-button--active");
+    const transitionClass = this.getClass("transition", true);
+    const to = { slide, index, old, oldIndex, triggerType };
+
+    if (index === oldIndex) {
+      logWarning(this, "Could not goto slide, still performing transition");
+      return;
+    }
+    if (this.transitioning) {
+      logWarning(this, "Cancel goto(), same slide index as current slide");
+      return;
+    }
+
+    // Make all slide interactive elements inert
+    const lockInteractives = maintain.disabled({ context: this.elements.track  });
+    this.transitioning = true;
+    // Set classes first just feels better
+    if (old) old.navButton.classList.remove(activeClass);
+    slide.navButton.classList.add(activeClass);
+    elements.container.classList.add(transitionClass);
+    // Perform transition and then set state
+    this.transition(to).then(() => {
+      this.index = index;
+      this.slide = slide;
+      this.transitioning = false;
+      elements.container.classList.remove(transitionClass);
+      lockInteractives.disengage();
+      if (!isInit) {
+        slide.element.focus();
+        this.emit("goto", [event, index, slide]);
+      }
+    });
+  }
+  setup() {
+    const { container, track, trackContainer } = this.elements;
+    const trackCss = trimWhitespace(this.trackCss());
+    const trackContainerStyles = trimWhitespace(this.trackContainerStyles());
+    const slideCss = trimWhitespace(this.slideCss());
+    track.setAttribute("style", trackCss);
+    trackContainer.setAttribute("style", trackContainerStyles);
+    this.slides.forEach(slide => {
+      slide.element.setAttribute("style", slideCss);
+      slide.element.setAttribute('tabindex', '-1');
+    });
+    container.classList.add(this.getClass());
+  }
+  trackContainerStyles() {
+    // Crop translated track
+    return `
+      overflow: hidden;
+    `;
+  }
+  transitionCss(property) {
+    const { transitionTimingFunction, transitionDuration } = this.options;
+    return `
+      transition-property: ${ property };
+      transition-duration: ${ cssDuration(transitionDuration) };
+      transition-timing-function: ${ transitionTimingFunction };
+    `;
+  }
+  trackCss() {
+    // Add in sliding transtion properties when not fade
+    return `
+      display: flex;
+      position: relative;
+      list-style: none;
+      ${ this.transition === this.slideTransition ? this.transitionCss("transform") : "" }
+    `;
+  }
+  slideCss() {
+    const fadingTransition = this.transition === this.fadeTransition;
+    // Add in fading transtion properties when not slide (which is on the track)
+    return `
+      width: 100%;
+      flex: 0 0 100%;
+      ${ fadingTransition ? this.transitionCss("opacity") : "" }
+      opacity: ${ fadingTransition ? "0" : "1" }
+    `;
+  }
+  getClass(child, modifier) {
+    const { namespace } = this.options;
+    if (modifier) {
+      return `${ namespace }--${ child }`;
+    } else if (child) {
+      return `${ namespace }__${ child }`;
+    } else {
+      return namespace;
+    }
+  }
+  createControlButton(action) {
+    const button = document.createElement("button");
+    button.classList.add(this.getClass("control-button"));
+    button.classList.add(this.getClass(`control-button--${ action }`));
+    
+    button.classList.add(...this.options.buttonClasses);
+    button.setAttribute("data-slider-control", action);
+    button.setAttribute("type", "button");
+    button.innerHTML = this.getControlContent(action);
+    return button;
+  }
+  createControls(context) {
+    const controls = document.createElement('ul');
+    const previousItem = document.createElement("li");
+    const nextItem = document.createElement("li");
+    const previous = this.createControlButton("previous");
+    const next = this.createControlButton("next");
+
+    controls.classList.add(this.getClass("controls"));
+
+    previousItem.appendChild(previous);
+    nextItem.appendChild(next);
+    controls.appendChild(previousItem);
+    controls.appendChild(nextItem);
+    previous.addEventListener('click', this.previous.bind(this));
+    next.addEventListener('click', this.next.bind(this));
+    context.appendChild(controls);
+
+    return {
+      controls,
+      previousItem,
+      nextItem,
+      previous,
+      next
+    };
+  }
+  createNav(container) {
+    const nav = document.createElement("ul");
+    const navButtons = this.slides.map(this.createNavButton.bind(this));
+    const navItems = navButtons.map(button => {
+      const item = document.createElement("li");
+      item.appendChild(button);
+      // item.setAttribute('tabindex', "-1"); // WHY?
+      nav.appendChild(item);
+      return item;
+    });
+
+    nav.classList.add(this.getClass("nav"));
+    container.appendChild(nav);
+
+    return {
+      nav,
+      navButtons,
+      navItems
+    };
+  }
+  createNavButton(slide, index) {
+    const button = document.createElement("button");
+    button.classList.add(this.getClass("nav-button"));
+    button.setAttribute("type", "button");
+    button.innerHTML = this.getNavContent(slide.number);
+    slide.navButton = button; // Add reference to slide object
+    button.addEventListener("click", this.goto.bind(this, index));
+    return button;
+  }
+  getControlContent(action) {
+    const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
+    return `
+      <span class="hidden-visually">${ action }</span>
+      <span class="${ this.getClass("control-icon") } ${ classes }" aria-hidden="true"></span>
+    `;
+  }
+  getNavContent(number) {
+    return `<span class="hidden-visually">Item ${ number }</span>`;
+  }
+  emit(name, args) {
+    if (this.options.events[name]) {
+      this.options.events[name].apply(this, args);
+    }
+  }
+}
+// ---- END FILE: ui/slider.js
+
+// ---- START File: ui/programmatic-modal.js
+/**
+ * @module ui/programmatic-modal
+ */
+
+
+import { getName, dispatch } from "../events/index.js";
+import { newId } from "../utils/id.js";
+import { getElement } from "../utils/dom.js";
+import { buildModal } from "./modal-builder.js";
+
+export class ProgrammaticModalManager {
+  static defaults = {
+    triggerSelector: "[data-ulu-programmatic-modal-trigger]",
+    triggerInitAttr: "data-ulu-programmatic-modal-init"
+  };
+  constructor(passedOptions) {
+    const options = Object.assign({}, ProgrammaticModalManager.defaults, passedOptions);
+    this.options = options;
+    this.triggers = null;
+    this.cachedTrigger = null;
+    this.triggerListener;
+    this.onTriggerClick = (event) => {
+      const trigger = event.target.closest(options.triggerSelector);
+      if (trigger) this.cachedTrigger = trigger;
+    };
+    this.onPageModified = () => {
+      this.setupTriggers();
+    };
+    document.addEventListener(getName("pageModified"), this.onPageModified);
+    this.setupTriggers();
+  }
+  setupTriggers() {
+    const { triggerSelector, triggerInitAttr } = this.options;
+    const triggers = document.querySelectorAll(`${ triggerSelector }:not([${ triggerInitAttr }])`);
+    triggers.forEach(trigger => {
+      trigger.addEventListener("click", this.onTriggerClick);
+    });
+  }
+  destroy() {
+    const { triggerSelector } = this.options;
+    const triggers = document.querySelectorAll(triggerSelector);
+    triggers.forEach(trigger => {
+      trigger.removeEventListener("click", this.onTriggerClick);
+    });
+  }
+  createAndOpen(config, afterCreate) {
+    const { noClickTrigger, removeOnClose, element, classes } = config;
+    const content = getElement(element);
+    if (!content.id) {
+      content.id = newId();
+    }
+
+    // Added to match original jquery module api
+    if (classes) {
+      content.classList.add(...classes);
+    }
+
+    let trigger;
+    if (!noClickTrigger) {
+      trigger = this.cachedTrigger;
+      // Remove cached trigger (since it no longer applies)
+      this.cachedTrigger = null;
+    }
+
+    if (!content) {
+      console.error("No element found from config.element. ", config);
+      return;
+    }
+    const { modal } = buildModal(content, config.modal);
+    const ctx = { trigger, modal, config };
+    if (afterCreate) {
+      afterCreate(ctx);
+    }
+    const onModalClose = () => {
+      if (removeOnClose) {
+        modal.remove();
+      }
+      if (trigger) {
+        trigger.focus();
+      }
+    };
+    // Add close event (to refocus the element that triggered)
+    modal.addEventListener("close", onModalClose, { once: true });
+
+    // Setup trigger to show this modal again and not do it's old behavior (if ajax link)
+    if (!removeOnClose && trigger) {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        modal.showModal();
+      });
+    }
+    dispatch("pageModified", modal);
+    // Open the new modal for the first time
+    modal.showModal();
+    return ctx;
+  }
+}
+
+
+// ---- END FILE: ui/programmatic-modal.js
+
+// ---- START File: ui/theme-toggle.js
+/**
+ * @module ui/theme-toggle
+ */
+
+import { getName } from "../events/index.js";
+import { getDatasetJson, getElements, resolveClasses } from "../utils/dom.js";
+import { hasRequiredProps } from "@ulu/utils/object.js";
+
+/**
+ * Default data attributes
+ */
+export const attrs = {
+  init: "data-ulu-theme-toggle-init",
+  toggle: "data-ulu-theme-toggle",
+  toggleIcon: "data-ulu-theme-toggle-icon",
+  toggleLabel: "data-ulu-theme-toggle-label",
+  toggleRemote: "data-ulu-theme-toggle-remote",
+  state: "data-ulu-theme-toggle-state",
+};
+
+// Utils for selecting things based on attributes
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+const queryRemotes = group => document.querySelectorAll(
+  `[${ attrs.toggleRemote }="${ group }"]`
+);
+const queryRemotesInitial = group => document.querySelectorAll(
+  `[${ attrs.toggleRemote }="${ group }"]:not([${ attrs.init }])`
+);
+const debugLog = (...msgs) => console.log("Theme Toggle:", ...msgs);
+const requiredToggleProps = ["target"];
+const checkToggleProps = hasRequiredProps(requiredToggleProps);
+const when = (cond, fn) => cond ? fn() : null; // Consider adding as util 
+
+/**
+ * Default Options 
+ * - Can be overridden using data-attributes
+ */
+export const defaults = {
+  /**
+   * Object of each theme that should be toggle/cycled through
+   */
+  themes: {
+    light: {
+      label: "Light",
+      value: "light",
+      iconClass: "fas fa-moon",
+      targetClass: "theme-light",
+      mediaQuery: "(prefers-color-scheme: light)"
+    },
+    dark: {
+      label: "Dark",
+      iconClass: "fas fa-sun",
+      targetClass: "theme-dark",
+      mediaQuery: "(prefers-color-scheme: dark)"
+    }
+  },
+  /**
+   * Required this is the element(s) that should be changed by a specific toggle
+   * - The element should have data-ulu-theme-toggle-target="SOME_IDENTIFIER"
+   */
+  target: "body",
+  /**
+   * Optional group to link remote toggles (toggles that follow the main one and can toggle too)
+   */
+  group: null,
+  /**
+   * Optional callback to do something when the state changes
+   */
+  onChange(_ctx) {},
+  /**
+   * The initial state for this component
+   * - May be overridden by saved preference or media query if options are enabled
+   */
+  initialState: "light",
+  /**
+   * Check the OS systems user preference via 'preferenceQuery' option
+   */
+  checkMediaQuery: false,
+  /**
+   * Will store the preference in local storage so it persists between page loads
+   */
+  savePreference: false,
+  /**
+   * The key that will be used to store the preference in local storage
+   * - This will be used as prefix in combination with group if defined
+   */
+  storagePrefix: "ulu-theme-",
+  /**
+   * Output information to console for debugging
+   */
+  debug: false
+};
+
+
+// Current default objects (user can override these)
+let currentDefaults = { ...defaults };
+
+/**
+ * @param {Object} options Change options used as default for dialogs, can then be overridden by data attribute settings on element
+ */
+export function setDefaults(options) {
+  currentDefaults = Object.assign({}, currentDefaults, options);
+}
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Query and setup all 
+ */
+export function setup() {
+  queryAllInitial("toggle").forEach(setupToggle);
+}
+
+/**
+ * Sets up a single toggle
+ * @param {HTMLElement} toggle A toggle to be setup
+ */
+export function setupToggle(toggle, passedOptions) {
+  const elementOptions = getDatasetJson(toggle, "uluThemeToggle");
+  const options = Object.assign({}, defaults, passedOptions, elementOptions);
+
+  if (!checkToggleProps(options)) {
+    console.error(`Missing a required option: ${ requiredToggleProps.join(", ") }`);
+    return;
+  }
+
+  const group = options.group;
+  const ctx = { toggle, options };
+  const initialKey = resolveInitial(options);
+
+  if (!initialKey) {
+    console.error("Unable to resolve initial key");
+    return;
+  }
+  
+  setState(initialKey, ctx);
+
+  toggle.addEventListener("click", onToggleClick);
+  toggle.setAttribute(attrs.init, "");
+
+  // Remotes listeners are attached initially and then we also 
+  // update them vs toggles which would be updated by the main pageModified 
+  // event in init
+  attachRemotes();
+  document.addEventListener(getName("pageModified"), attachRemotes);
+
+  /**
+   * Instance function to get the next theme in cycle
+   */
+  function toggleState(event) {
+    const targets = getElements(options.target);
+    const lastKey = targets[0].dataset.uluThemeToggleState;
+    const key = getNextThemeKey(lastKey, options);
+    if (!key) {
+      console.error("Issue getting next theme key");
+      return;
+    } 
+    setState(key, { ...ctx, event });
+  }
+
+  /**
+   * Handler for click for both toggle and remote toggles
+   */
+  function onToggleClick(event) {
+    toggleState(event);
+  }
+
+  /**
+   * Utility to attach remote handlers
+   * - Used initially and when page is modified
+   */
+  function attachRemotes() {
+    if (!group) return;
+    const remotes = queryRemotesInitial(group);
+    remotes.forEach(remote => {
+      remote.addEventListener("click", onToggleClick);
+      remote.setAttribute(attrs.init, "");
+    });
+  }
+
+  /**
+   * This only cleans up remotes that are still in DOM
+   * - For ones that have been removed we don't store any references to them 
+   */
+  function cleanupRemotes() {
+    if (!group) return;
+    const remotes = queryRemotesInitial(group);
+    remotes.forEach(remote => {
+      remote.removeEventListener("click", onToggleClick);
+      remote.removeAttribute(attrs.init, "");
+    });
+  }
+
+  /**
+   * Function to cleanup listeners and remove init attributes
+   */
+  function destroy() {
+    toggle.removeEventListener("click", onToggleClick);
+    toggle.removeAttribute(attrs.init, "");
+    cleanupRemotes();
+    document.removeEventListener(getName("pageModified"), attachRemotes);
+  }
+
+  return { 
+    destroy, 
+    toggle, 
+    options, 
+    toggleState,
+    setState(themeKey) {
+      setState(themeKey, ctx);
+    }
+  };
+}
+
+
+
+/**
+ * Change the state of target/toggle
+ */
+function setState(key, ctx) {
+  if (!key) {
+    console.error("Missing key");
+    return;
+  }
+
+  const { toggle, options } = ctx;
+  const { themes, group } = options;
+  const elements = {
+    targets: getElements(options.target),
+    toggles: [toggle, ...(group ? queryRemotes(group) : [])]
+  };
+
+  if (!elements.targets.length || !elements.toggles.length) {
+    console.error("Issue setting state, couldn't find needed elements", elements);
+    return;
+  }
+
+  const theme = themes[key];
+  const otherThemes = getOtherThemes(key, themes);
+  const stateCtx = { 
+    ...ctx, 
+    key,
+    elements, 
+    theme, 
+    otherThemes 
+  };
+
+  if (options.debug) {
+    debugLog("set state context", stateCtx);
+  }
+  
+  // Prepare classes to remove
+  const otherTargetClasses = concatThemeClasses(otherThemes, "targetClass");
+  const otherIconClasses = concatThemeClasses(otherThemes, "iconClass"); 
+
+  // Update all targets
+  elements.targets.forEach(element => {
+    element.setAttribute(attrs.state, key);
+    element.classList.remove(...otherTargetClasses);
+    element.classList.add(...resolveClasses(theme.targetClass));
+  });
+
+  // Update all toggles and inner children
+  elements.toggles.forEach(element => {
+    const label = element.querySelector(attrSelector("toggleLabel"));
+    const icon = element.querySelector(attrSelector("toggleIcon"));
+    if (label) {
+      label.textContent = theme.label;
+    }
+    if (icon) {
+      icon.classList.remove(...otherIconClasses);
+      icon.classList.add(...resolveClasses(theme.iconClass));
+    }
+    element.setAttribute(attrs.state, key);
+  });
+
+  // Optional callback if user want to set other things (ie. data-theme or something)
+  if (options.onChange) {
+    options.onChange(stateCtx);
+  }
+
+  if (options.savePreference) {
+    localStorage.setItem(getStorageKey(options), key);
+  }
+}
+
+/**
+ * Function determines what the initial state is
+ * - Check OS preference, saved preference, or initialState depending on options
+ * @return {String} The resolved initial theme's key
+ */
+function resolveInitial(options) {
+  const { savePreference, checkMediaQuery, themes, initialState } = options;
+  const storageKey = getStorageKey(options);
+  const saved = when(savePreference, () => localStorage.getItem(storageKey));
+  const mediaQueryPreference = when(checkMediaQuery, () => getMatchingThemeQuery(themes));
+  const resolved = saved || mediaQueryPreference || initialState;
+
+  if (options.debug) {
+    debugLog("Preference Saved:", saved);
+    debugLog("Media Query Preference:", mediaQueryPreference);
+    debugLog("Initial State:", initialState);
+  }
+
+  if (!resolved) {
+    console.error("Failed to resolve initial theme (pass 'initialState' to options)");
+  }
+  
+  return resolved;
+}
+
+/**
+ * Check each theme for a matching media query
+ * @return {String} Matching theme key
+ */
+function getMatchingThemeQuery(themes) {
+  const found = Object.entries(themes).find(([_key, theme]) => {
+    if (theme.mediaQuery) {
+      return window.matchMedia(theme.mediaQuery).matches;
+    }
+  });
+  // Return just the key
+  return found ? found[0] : null;
+}
+
+/**
+ * Get the next key in the themes based on the currentKey
+ */
+function getNextThemeKey(activeKey, options) {
+  const { themes } = options;
+  const keys = Object.keys(themes);
+  const index = keys.findIndex(theme => theme === activeKey);
+  // If not found return first, else calculate next index (wrapping)
+  const nextIndex = index === -1 ? 0 : (index + 1) % keys.length;
+  return keys[nextIndex];
+}
+
+/**
+ * Get all other theme object except the current
+ */
+function getOtherThemes(currentKey, themes) {
+  const all = Object.entries(themes);
+  return all.filter(([key]) => key !== currentKey).map(([_key, value]) => value);
+}
+
+/**
+ * Concatenates multiple class properties into one array
+ */
+function concatThemeClasses(themes, property) {
+  return themes.reduce((acc, theme) => {
+    return acc.concat(resolveClasses(theme[property]));
+  }, []);
+}
+
+/**
+ * Creates the storage key (either prefix or prefix with group name)
+ */
+function getStorageKey(options) {
+  const { storagePrefix, group } = options;
+  return group ? `${ storagePrefix }${ group }` : storagePrefix;
+}
+// ---- END FILE: ui/theme-toggle.js
+
+// ---- START File: ui/print.js
+/**
+ * @module ui/print
+ */
+
+import { getName } from "../events/index.js";
+import { getDatasetOptionalJson, getElement } from "../utils/dom.js";
+import { printElement } from "@ulu/utils/browser/print.js";
+
+export const attrs = {
+  trigger: "data-ulu-print",
+  init: "data-ulu-print-init",
+};
+
+const attrSelector = key => `[${ attrs[key] }]`;
+const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
+const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
+
+/**
+ * Default options
+ */
+const defaults = {
+  /**
+   * Print element/selector
+   */
+  element: null,
+};
+
+/**
+ * Initialize everything in document
+ * - This will only initialize elements once, it is safe to call on page changes
+ */
+export function init() {
+  document.addEventListener(getName("pageModified"), setup);
+  setup();
+}
+
+/**
+ * Setup all triggers currently on the page
+ */
+function setup() {
+  const triggers = queryAllInitial("trigger");
+  triggers.forEach(trigger => {
+    const options = getDatasetOptionalJson(trigger, "uluPrint");
+    setupTrigger(trigger, options);
+  });
+}
+
+/**
+ * Setup a single trigger (can be used manually without attr if needed)
+ */
+function setupTrigger(trigger, options) {
+  const config = Object.assign({}, defaults, options);
+  trigger.addEventListener("click", (event) => {
+    // Option to print a specific element
+    if (config.element) {
+      const element = getElement(config.element);
+      if (element) {
+        printElement(element);
+      } else {
+        console.error("Unable to find element to print", trigger, config);
+      }
+    // Default behavior print window
+    } else {
+      window.print();
+    }
+  });
+}
+
+// ---- END FILE: ui/print.js
+
+// ---- START File: ui/resizer.js
+/**
+ * @module ui/resizer
+ */
+// =============================================================================
+// Element Resizer
+// =============================================================================
+
+// Version:         1.0.1
+
+// Description:     Adds resizing ability to an element (only horizontal currently)
+
+// Reference:       - http://jsfiddle.net/3jMQD/614/
+
+import { logError } from "../utils/class-logger.js";
+
+export class Resizer {
+  static defaults = {
+    debug: false,
+    overrideMaxWidth: false, 
+    fromLeft: false
+  };
+  /**
+   * 
+   * @param {Node} container Container to be resize   
+   * @param {Node} control Resize handle element 
+   * @param {Object} options Defualt can be changed on class
+   * @param {Boolean} options.debug Enable non-essential debugging logs
+   * @param {Boolean} options.overrideMaxWidth When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)
+   * @param {Boolean} options.fromLeft The script should assume the handle is on the left side of the element
+   */
+  constructor(container, control, options) {
+    if (!control || !container) {
+      logError(this, "Missing required elements 'control' or 'container'");
+    }
+    this.options = Object.assign({}, Resizer.defaults, options);
+    this.container = container;
+    this.control = control;
+    this.handlerMousedown = this.onMousedown.bind(this);
+    this.control.addEventListener('mousedown', this.handlerMousedown);
+  }
+  destroy() {
+    this.control.removeEventListener('mousedown', this.handlerMousedown);
+  }
+  onMousedown(e) {
+    const { overrideMaxWidth, fromLeft } = this.options;
+    const doc = document.documentElement;
+    const win = document.defaultView;
+    const x = e.clientX;
+    const width = parseInt(win.getComputedStyle(this.container).width, 10);
+    if (overrideMaxWidth) {
+      this.container.style.maxWidth = 'none';
+    }
+    const mousemove = event => {
+      const polarity = fromLeft ? -1 : 1;
+      this.container.style.width = `${ width + ((event.clientX - x) * polarity) }px`;
+    };
+    const cleanup = () => {
+      doc.removeEventListener('mousemove', mousemove, false);    
+    };
+    doc.addEventListener('mousemove', mousemove, false);
+    doc.addEventListener('mouseup', cleanup, { capture: true, once: true });
+  }
+}
+// ---- END FILE: ui/resizer.js
+
+// ---- START File: .DS_Store
+   Bud1                                                                      t sbwspblob                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @      Ä                                        @      Ä                                          @      Ä                                          @                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  e v e n t sbwspblob   πbplist00÷]ShowStatusBar[ShowToolbar[ShowTabView_ContainerShowSidebar\WindowBounds[ShowSidebar		_{{-1420, 16}, {920, 464}}	#/;R_klmnoã                            å    e v e n t slg1Scomp          e v e n t smoDDblob   Ò’…7∆A    e v e n t smodDblob   Ò’…7∆A    e v e n t sph1Scomp      0     e v e n t svSrnlong       u ibwspblob   ∏bplist00÷]ShowStatusBar[ShowToolbar[ShowTabView_ContainerShowSidebar\WindowBounds[ShowSidebar		_{{412, 621}, {920, 464}}	#/;R_klmnoä                            ã    u ilg1Scomp     h÷    u imoDDblob   'ñf…R∆A    u imodDblob   'ñf…R∆A    u iph1Scomp           u ivSrnlong       u t i l sbwspblob   ∏bplist00÷]ShowStatusBar[ShowToolbar[ShowTabView_ContainerShowSidebar\WindowBounds[ShowSidebar		_{{301, 556}, {920, 464}}	#/;R_klmnoä                            ã    u t i l slg1Scomp      $«    u t i l smoDDblob   Hûf…R∆A    u t i l smodDblob   Hûf…R∆A    u t i l sph1Scomp      `     u t i l svSrnlong     Ä                                        @      Ä                                          @      Ä                                          @                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   E                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         DSDB                                 `          Ä                                        @      Ä                                          @      Ä                                          @                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+// ---- END FILE: .DS_Store
+
+// ---- START File: index.js
+// Main Library Import
+// - Allow users to access commonly needed items with at one point/file
+// - This is the entry for the pre-built version
+// - Could allow changing of the ulu/js file structure if needed
+// - Will not include things that aren't used in every site (those would need to 
+//   imported manually
+
+export * as settings from "./settings.js";
+export * as events from "./events/index.js";
+export * as ui from "./ui/index.js";
+export * as utils from "./utils/index.js";
+// ---- END FILE: index.js
+
+// ---- START File: utils/file-save.js
+/**
+ * @module utils/file-save
+ */
+
+/**
+ * Options
+ * @typedef {Object} FileSaveOptions
+ * @property {String} filename Filename for blob when creating a link (ie createLink) [default "filesave-file.txt"]
+ * @property {String} type Filename for blob when creating a link (ie createLink) [default "text/plain;charset=utf-8"]
+ */
+  
+
+/**
+ * Simple script that is useful for testing
+ * - Make a file 
+ * - Create a URL to it
+ * - Gives utility function to create a link to the file (for front end)
+ * - Gives method to destroy the file when no longer needed
+ * - User can redefine the program by passing options object matching props.     
+ * Limited to new browsers that support Blob(), also user preferences or type of browser may limit access to Blob functionality                        
+ */
+export class FileSave {
+  static defaults = {
+    filename: "filesave-file.txt",
+    type: "text/plain;charset=utf-8"
+  }
+  /**
+   * @param {*} data Data to put in blob file
+   * @param {FileSaveOptions} options Options for file, see defaults (ie. type, filename)
+   */
+  constructor(data, options) {
+    this.options = Object.assign({}, FileSave.defaults, options);
+    this.data = data;
+    this.blob = new Blob([data], { type: this.options.type });
+    this.url = URL.createObjectURL(this.blob);
+  }
+  /**
+   * Remove the blob url 
+   */
+  destroy() {
+    return URL.revokeObjectURL(this.url);
+  }
+  /**
+   * Get the blob url
+   */
+  getUrl() {
+    return this.url;
+  }
+  /**
+   * Create link element with blob as href
+   * @param {String} text The text to put in the link
+   */
+  createLink(text) {
+    const link = document.createElement('a');
+    const textNode = document.createTextNode(text);
+    link.setAttribute('download', this.options.filename);
+    link.setAttribute('href', this.url);
+    link.appendChild(textNode);
+    return link;
+  }
+  /**
+   * Check for Compatibility (optional, implement on user side)
+   */
+  static isBrowserSupported() {
+    return "FileReader" in window;
+  }
+}
+
+// ---- END FILE: utils/file-save.js
+
+// ---- START File: utils/font-awesome.js
+/**
+ * @module settings
+ * @description Utility module for setting up Font Awesome
+ */
+
+import { updateSettings } from "../settings.js";
+
+/**
+ * Sets icon settings to Font Awesome icons
+ */
+export function configureIcons() {
+  updateSettings({
+    iconClassClose: "fas fa-xmark",
+    iconClassDragX: "fas fa-solid fa-grip-lines-vertical",
+    iconClassPrevious: "fas fa-solid fa-chevron-left",
+    iconClassNext: "fas fa-solid fa-chevron-right"
+  });
+}
+// ---- END FILE: utils/font-awesome.js
+
+// ---- START File: utils/index.js
+export * as classLogger from "./class-logger.js";
+export * as dom from "./dom.js";
+export * as floatingUi from "./floating-ui.js";
+export * as id from "./id.js";
+export * as index from "./index.js";
+export * as pauseYoutubeVideo from "./pause-youtube-video.js";
+export * as fileSave from "./file-save.js";
+export * as fontAwesome from "./font-awesome.js";
+// ---- END FILE: utils/index.js
+
+// ---- START File: utils/id.js
+/**
+ * @module utils/id
+ */
+
+let idCount = 0;
+
+/**
+ * Create new uid
+ */
+export function newId() {
+  return `ulu-uid-${ ++idCount }`;
+}
+
+/**
+ * Sets an ID if element doesn't have one vie newUid
+ * @param {Node} element Element to make sure has an id
+ */
+export function ensureId(element) {
+  if (!element.id) {
+    element.id = newId();
+  }
+}
+// ---- END FILE: utils/id.js
+
+// ---- START File: utils/dom.js
+/**
+ * @module utils/dom
+ */
+
+
+export const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
+
+/**
+ * Get an elements JSON dataset value
+ * @param {Node} element 
+ * @param {String} key key in dataset object for element
+ * @returns {Object} Empty object or JSON object from dataset
+ */
+export function getDatasetJson(element, key) {
+  const passed = element.dataset[key];
+  try {
+    return JSON.parse(passed);
+  } catch (error) {
+    console.error(`Error getting JSON from dataset (${ key }) -- "${ passed }"\n`, element, error);
+    return {};
+  }
+}
+
+/**
+ * Get an elements JSON dataset value that could potentially just be a single string
+ * - If JSON it will return the object else it will return the value directly
+ * @param {Node} element 
+ * @param {String} key key in dataset object for element
+ * @returns {Object|String} JSON object or current dataset value (string or empty string if no value)
+ */
+export function getDatasetOptionalJson(element, key) {
+  const passed = element.dataset[key];
+  if (passed && regexJsonString.test(passed.trim())) {
+    return getDatasetJson(element, key);
+  } else {
+    return passed;
+  }
+}
+
+/**
+ * Check if a pointer event x/y was outside an elements bounding box
+ */
+export function wasClickOutside(element, event) {
+  const rect = element.getBoundingClientRect();
+  return (event.clientY < rect.top || // above
+    event.clientY > rect.top + rect.height || // below
+    event.clientX < rect.left || // left side
+    event.clientX > rect.left + rect.width); // right side
+}
+
+
+/**
+ *   Sets up the positional classes that would come from the equal
+ *   height module. Needs to be rerun by user when layout changes
+ *   or new instances are added to the screen
+ *   - Used for gutter crops
+ *   - Used for rule placement
+ *   - **Devs** Remember that default classes should match sass defaults
+ *   @param {Node} parent  The grid parent <data-grid="">
+ *   @param {Object} classes Override the default equal heights classes
+ */
+export function setPositionClasses(parent, classes = { 
+  columnFirst: 'position-column-first', 
+  columnLast: 'position-column-last', 
+  rowFirst: 'position-row-first', 
+  rowLast: 'position-row-last' 
+}) {  
+  const children = [...parent.children];
+  const rows = [];
+  let lastY;
+  // Check element against last
+  // If they don't match it's a new row create a new array
+  // Then push into the last array in the rows array
+  children.forEach((child) => {
+    const y = child.getBoundingClientRect().y;
+    if (lastY !== y) rows.push([]);
+    rows[rows.length - 1].push(child);
+    lastY = y;
+    child.classList.remove(...Object.values(classes)); // Remove previously set classes
+  });
+  // Apply Classes
+  rows.forEach((row, index) => {
+    if (index === 0) 
+      row.forEach(child => child.classList.add(classes.rowFirst));
+    if (index == rows.length - 1) 
+      row.forEach(child => child.classList.add(classes.rowLast));
+
+    row.forEach((child, childIndex) => {
+      if (childIndex === 0) 
+        child.classList.add(classes.columnFirst);
+      if (childIndex == row.length - 1) 
+        child.classList.add(classes.columnLast);
+    });
+  });
+}
+
+/**
+ * Resolve a target to Element
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ * @return {HTMLElement} The element or null if not found
+ */
+export function getElement(target, context = document) {
+  if (typeof target === "string") {
+    return context.querySelector(target);
+  } else if (target instanceof Element) {
+    return target;
+  } else {
+    console.warn("getElement: Invalid target type (expected String/Node)", target);
+    return null;
+  }
+} 
+
+/**
+ * Resolve a target to Elements
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ * @return {Array} The elements or null if not found
+ */
+export function getElements(target, context = document) {
+  if (typeof target === "string") {
+    return [...context.querySelectorAll(target)];
+  } else if (target instanceof Element) {
+    return [target];
+  } else if (Array.isArray(target) || target instanceof NodeList) {
+    return [...target];
+  } else {
+    console.warn("getElement: Invalid target type (expected String/Node/Array/Node List)", target);
+    return null;
+  }
+} 
+
+/**
+ * Resolves a class input (string or array) into a consistent array of class names.
+ * @param {string|string[]} input - The class input, which can be a string, an array of strings, or any other value.
+ * @returns {string[]} An array of class names. Returns an empty array for invalid or falsy input.
+ * @example
+ * resolveClassArray("fas fa-check  my-class"); // Returns ["fas", "fa-check", "my-class"]
+ * resolveClassArray(["another-class", "yet-another-class"]); // Returns ["another-class", "yet-another-class"]
+ * resolveClassArray("single-class"); // Returns ["single-class"]
+ */
+export function resolveClasses(classes) {
+  if (typeof classes === "string") {
+    return classes.split(" ").filter(c => c !== ""); // Split and remove empty strings
+  } else if (Array.isArray(classes)) {
+    return classes;
+  } else if (!classes) {
+      return [];
+  } else {
+    console.warn("resolveClassArray: Invalid class input type.", classes);
+    return [];
+  }
+}
+
+/**
+ * Sets a CSS custom property equal to the scrollbar width
+ * @param {Node} element The element that is the child of a scrollabel container
+ * @param {Node} container The container that can be scrolled
+ * @param {Stirng} propName Custom property to set
+ */
+export function addScrollbarProperty(element = document.body, container = window, propName = "--ulu-scrollbar-width") {
+  const scrollbarWidth = container.innerWidth - element.clientWidth;
+  element.style.setProperty(propName, `${ scrollbarWidth }px`);
+}
+// ---- END FILE: utils/dom.js
+
+// ---- START File: utils/pause-youtube-video.js
+/**
+ * @module utils/pause-youtube-video
+ */
+
+// Version:         1.0.4
+// Description:     Pauses youtube using js api (iframe post message)
+
+const selectors = [
+  '.youtube-embedded-video',
+  'iframe[title*="YouTube video player"]',
+  'iframe[src*="youtube.com/embed"]'
+];
+/**
+ * Somewhat hacky way to pause the video
+ * - https://www.digitalredpanther.com/blog/play-pause-stop-youtube-embed
+ * - Actual JS API documentation (Didn't follow this for now) (https://developers.google.com/youtube/iframe_api_reference)
+ * @param {Element|Node} context The DOM element to search for and pause videos within
+ */
+export function pauseVideos(context = document) {
+  const videos = getVideos(context);
+  videos.forEach(video => {
+    try {
+      video.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+    } catch (error) {
+      console.error(error);
+    }
+  });
+}
+/**
+ * Prep videos to be paused
+ * - Add query parameters for js API
+ * - Removes all other query parameters from iframe.src
+ */
+export function prepVideos(context = document) {
+  const videos = getVideos(context);
+  videos.forEach(video => {
+    const { src } = video;
+    if (src) {
+      video.src = src.split("?")[0] + "?rel=0&enablejsapi=1";
+    }
+  })
+}
+
+function getVideos(context) {
+  return context.querySelectorAll(selectors.join(", "));
+}
+// ---- END FILE: utils/pause-youtube-video.js
+
+// ---- START File: utils/class-logger.js
+/**
+ * @module utils/class-logger
+ */
+
+// Goal: minimzing console conditions for nessasary production log statements
+
+/**
+ * Configuration Object
+ */
+const config = {
+  debug: false,
+  warningsAlways: true,
+  errorsAlways: true,
+  outputContext: false
+};
+
+const hasConsole = "console" in window;
+
+// If no context output only if config (global) debug is enabled
+function allow(context) {
+  return hasConsole && config.debug && (context?.debug || context == null);
+}
+function getName(context) {
+  return typeof context === "object" && context?.constructor?.name;
+}
+function output(method, context, messages) {
+  const label = getName(context) || "Logger";
+  console[method](label, ...messages);
+  if (config.outputContext) {
+    console.log("Context:\n", context);
+  }
+}
+
+/**
+ * Changes to make to configuration
+ * @param {Object} changes 
+ */
+export function set(changes) {
+  Object.assign(config, changes);
+}
+
+/**
+ * Proxy Console.log
+ * @param {Object} context Class instance (optional), will rely on classes (debug) property for output
+ * @param  {...any} messages 
+ */
+export function log(context, ...messages) {
+  if (allow(context)) {
+    output("log", context, messages);
+  }
+}
+
+/**
+ * Proxy Console.warn
+ * @param {Object} context Class instance (optional), will rely on classes (debug) property for output
+ * @param  {...any} messages 
+ */
+export function logWarning(context, ...messages) {
+  if (config.warningsAlways || allow(context)) {
+    output("warn", context, messages);
+  }
+}
+
+/**
+ * Proxy Console.error
+ * @param {Object} context Class instance (optional), will rely on classes (debug) property for output
+ * @param  {...any} messages 
+ */
+export function logError(context, ...messages) {
+  if (config.errorsAlways || allow(context)) {
+    output("error", context, messages);
+  }
+}
+
+// ---- END FILE: utils/class-logger.js
+
+// ---- START File: utils/floating-ui.js
+/**
+ * @module utils/floating-ui
+ */
+
+import { 
+  computePosition,
+  autoUpdate,
+  offset,
+  inline,
+  flip,
+  shift,
+  arrow,
+} from "@floating-ui/dom";
+
+export const defaults = {
+  strategy: "absolute",
+  placement: "bottom",
+  inline: false,
+  offset: {
+    mainAxis: 16
+  },
+  shift: true,
+  flip: true,
+  arrow: true, // Options for arrow (not element)
+};
+
+/**
+ * 
+ * @param {Object} elements Elements (trigger, content, and optionally contentArrow)
+ * @param {*} options Configuration options for floatingUi
+ * @returns {Function} floating cleanup function call when no longer needed
+ */
+export function createFloatingUi(elements, config) {
+  const options = Object.assign({}, defaults, config);
+  const { placement, strategy } = options;
+  const { trigger, content, contentArrow } = elements;
+  
+  return autoUpdate(trigger, content, () => {
+    computePosition(trigger, content, {
+      placement,
+      strategy,
+      middleware: [
+        ...addPlugin(inline, options.inline),
+        ...addPlugin(offset, options.offset),
+        ...addPlugin(flip, options.flip),
+        ...addPlugin(shift, options.shift),
+        ...addPlugin(arrow, contentArrow && options.arrow, { element: contentArrow }),
+      ]
+    }).then(data => {
+      const { x, y, middlewareData, placement } = data;
+      const arrowPos = middlewareData.arrow;
+
+      // Update computed styles for the content (popover container)
+      Object.assign(content.style, { 
+        left: `${ x }px`, 
+        top: `${ y }px` 
+      });
+
+      // Update placement attribute (used by arrow for theming)
+      content.setAttribute("data-placement", placement);
+
+      // If arrow was enabled, add it's computed styles
+      if (arrowPos) {
+        Object.assign(contentArrow.style, {
+          // position: "absolute",
+          left: arrowPos?.x != null ? `${ arrowPos.x }px` : "",
+          top: arrowPos?.y != null ? `${ arrowPos.y }px` : "",
+        });
+      }
+    });
+  });
+}
+
+function addPlugin(plugin, option, overrides = {}) {
+  if (!option) {
+    return [];
+  // If object add it as options, else just enable without options
+  } else if (typeof option === "object") {
+    return [plugin({ ...option,  ...overrides })];
+  } else {
+    return [plugin(overrides)];
+  }
+}
+// ---- END FILE: utils/floating-ui.js
+
+// ---- START File: events/index.js
+/**
+ * @module events
+ */
+
+import { debounce } from "@ulu/utils/performance.js";
+import { isBrowser } from "@ulu/utils/browser/dom.js";
+
+// Setup global document events
+if (isBrowser()) {
+  initResize();
+  initPrint();
+}
+
+/**
+ * Event object - called on dispatch
+ */
+const events = {
+  /**
+   * Event is dispatched when DOM in the page has changed, triggers updates from
+   * all modules listening for the change (init instances, etc)
+   * - Is triggered by modules that were responsible for modifying the page
+   */
+  pageModified(context) {
+    context.dispatchEvent(new CustomEvent(getName("pageModified"), { bubbles: true }));
+  },
+  /**
+   * Event called when page is resized
+   */
+  pageResized(context) {
+    context.dispatchEvent(new CustomEvent(getName("pageResized"), { bubbles: true }));
+  },
+  /**
+   * Event dispatched before page print begins (teardown/restructure/hide things)
+   */
+  beforePrint(context) {
+    context.dispatchEvent(new CustomEvent(getName("beforePrint"), { bubbles: true }));
+  },
+  /**
+   * Event dispatched after page print (cleanup)
+   */
+  afterPrint(context) {
+    context.dispatchEvent(new CustomEvent(getName("afterPrint"), { bubbles: true }));
+  }
+};
+
+/**
+ * Triggers one of our custom events
+ * @param {String} type Type of event to dispatch
+ * @param {Node} context Element to trigger the event from
+ * @example
+ *   if (updatedMarkup) {
+ *     dispatch("pageModified", modalElement);
+ *   }
+ */
+export function dispatch(type, context) {
+  if (events[type]) {
+    events[type](context);
+  } else {
+    console.warn(`Unable to dispatch site event: ${ type } in context:`, context);
+  }
+}
+
+/**
+ * Namespaced event
+ * @param {String} type Type of event to get the actual event name for
+ * @returns {String}
+ */
+export function getName(type) {
+  return "ulu:" + type;
+}
+
+/**
+ * Setup resize handler/dispatch
+ */
+function initResize() {
+  window.addEventListener("resize", debounce(() => dispatch("pageResized", document), 250));
+}
+
+/**
+ * Setup print listeners
+ * - Note: Tested with matchMedia but these events are more consistent
+ *         Experimented with normalizing both events but they fired
+ *         strangely, using any delay won't work (ie setTimeout / RAF)
+ *         chrome pauses immediately javascript after the initial event.
+ *         Reverting to a straightforward method for now. If this ends up
+ *         needing something more robust we can work that out on this side
+ *         and it won't change how the custom events file.
+ */
+function initPrint() {
+  window.addEventListener("beforeprint", () => {
+    dispatch("beforePrint", document);
+  });
+  window.addEventListener("afterprint", () => {
+    dispatch("afterPrint", document);
+  }); 
+}
+// ---- END FILE: events/index.js
+
+// ---- START File: settings.js
+/**
+ * @module settings
+ * @description Manages shared configuration for the library.
+ */
+
+// Default configuration settings
+const defaults = {
+  iconClassClose: "css-icon css-icon--close",
+  iconClassDragX: "css-icon css-icon--drag-x",
+  iconClassPrevious: "css-icon  css-icon--angle-left",
+  iconClassNext: "css-icon  css-icon--angle-right"
+};
+
+// Current configuration, initialized with defaults
+let currentSettings = { ...defaults };
+
+/**
+ * Retrieves a copy of the default settings.
+ * @returns {object} A copy of the default settings object.
+ */
+export function getDefaultSettings() {
+  return { ...defaults };
+}
+
+/**
+ * Updates multiple configuration settings.
+ * @param {object} changes An object containing the settings to update.
+ */
+export function updateSettings(changes) {
+  Object.assign(currentSettings, changes);
+}
+
+/**
+ * Retrieves a copy of the current configuration settings.
+ * @returns {object} A copy of the current settings object.
+ */
+export function getSettings() {
+  return { ...currentSettings };
+}
+
+/**
+ * Retrieves a specific configuration setting by key.
+ * @param {string} key The key of the setting to retrieve.
+ * @returns {*} The value of the setting, or undefined if not found.
+ */
+export function getSetting(key) {
+  if (!currentSettings.hasOwnProperty(key)) {
+    console.warn(`Attempted to access non-existent setting: ${key}`);
+    return undefined;
+  }
+  return currentSettings[key];
+}
+
+/**
+ * Updates a specific configuration setting.
+ * @param {string} key The key of the setting to update.
+ * @param {*} value The new value for the setting.
+ */
+export function updateSetting(key, value) {
+  currentSettings[key] = value;
+}
+
+/**
+ * Creates a wrapped string representation of a configuration setting.
+ * This function returns an object with a `toString()` method that, when called,
+ * retrieves the current value of the specified setting. This allows the setting
+ * to be used as a string literal, dynamically retrieving its value.
+ *
+ * @param {string} key The key of the setting to wrap.
+ * @returns {object} An object with a `toString()` method that returns the setting value.
+ */
+export function wrapSettingString(key) {
+  return {
+    toString() {
+      return getSetting(key);
+    }
+  };
+}
+// ---- END FILE: settings.js
+

@@ -2,31 +2,31 @@
  * @module ui/theme-toggle
  */
 
+import { ComponentInitializer } from "../utils/system.js";
 import { getName } from "../events/index.js";
-import { getDatasetJson, getElements, resolveClasses } from "../utils/dom.js";
+import { getElements, resolveClasses } from "../utils/dom.js";
 import { hasRequiredProps } from "@ulu/utils/object.js";
 
 /**
- * Default data attributes
+ * Theme Toggle Component Initializer
  */
-export const attrs = {
-  init: "data-ulu-theme-toggle-init",
-  toggle: "data-ulu-theme-toggle",
-  toggleIcon: "data-ulu-theme-toggle-icon",
-  toggleLabel: "data-ulu-theme-toggle-label",
-  toggleRemote: "data-ulu-theme-toggle-remote",
-  state: "data-ulu-theme-toggle-state",
-};
+export const initializer = new ComponentInitializer({ 
+  type: "theme-toggle", 
+  baseAttribute: "data-ulu-theme-toggle"
+});
+
+const attrSelectorLabel = initializer.attributeSelector("label");
+const attrSelectorIcon = initializer.attributeSelector("icon");
+const attrRemote = initializer.getAttribute("remote");
+const attrInit = initializer.getAttribute("init");
+const attrState = initializer.getAttribute("state");
 
 // Utils for selecting things based on attributes
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-const queryAllInitial = key => document.querySelectorAll(attrSelectorInitial(key));
 const queryRemotes = group => document.querySelectorAll(
-  `[${ attrs.toggleRemote }="${ group }"]`
+  `[${ attrRemote }="${ group }"]`
 );
 const queryRemotesInitial = group => document.querySelectorAll(
-  `[${ attrs.toggleRemote }="${ group }"]:not([${ attrs.init }])`
+  `[${ attrRemote }="${ group }"]:not([${ attrInit }])`
 );
 const debugLog = (...msgs) => console.log("Theme Toggle:", ...msgs);
 const requiredToggleProps = ["target"];
@@ -109,24 +109,22 @@ export function setDefaults(options) {
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
-}
-
-/**
- * Query and setup all 
- */
-export function setup() {
-  queryAllInitial("toggle").forEach(setupToggle);
+  initializer.init({
+    events: ["pageModified"],
+    withData: true,
+    setup({ element, data, initialize }) {
+      setupToggle(element, data);
+      initialize();
+    }
+  });
 }
 
 /**
  * Sets up a single toggle
  * @param {HTMLElement} toggle A toggle to be setup
  */
-export function setupToggle(toggle, passedOptions) {
-  const elementOptions = getDatasetJson(toggle, "uluThemeToggle");
-  const options = Object.assign({}, defaults, passedOptions, elementOptions);
+export function setupToggle(toggle, userOptions) {
+  const options = Object.assign({}, defaults, userOptions);
 
   if (!checkToggleProps(options)) {
     console.error(`Missing a required option: ${ requiredToggleProps.join(", ") }`);
@@ -145,7 +143,6 @@ export function setupToggle(toggle, passedOptions) {
   setState(initialKey, ctx);
 
   toggle.addEventListener("click", onToggleClick);
-  toggle.setAttribute(attrs.init, "");
 
   // Remotes listeners are attached initially and then we also 
   // update them vs toggles which would be updated by the main pageModified 
@@ -183,7 +180,7 @@ export function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach(remote => {
       remote.addEventListener("click", onToggleClick);
-      remote.setAttribute(attrs.init, "");
+      initializer.initializeElement(remote);
     });
   }
 
@@ -196,7 +193,7 @@ export function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach(remote => {
       remote.removeEventListener("click", onToggleClick);
-      remote.removeAttribute(attrs.init, "");
+      remote.removeAttribute(attrInit, "");
     });
   }
 
@@ -205,7 +202,7 @@ export function setupToggle(toggle, passedOptions) {
    */
   function destroy() {
     toggle.removeEventListener("click", onToggleClick);
-    toggle.removeAttribute(attrs.init, "");
+    toggle.removeAttribute(attrInit, "");
     cleanupRemotes();
     document.removeEventListener(getName("pageModified"), attachRemotes);
   }
@@ -264,15 +261,15 @@ function setState(key, ctx) {
 
   // Update all targets
   elements.targets.forEach(element => {
-    element.setAttribute(attrs.state, key);
+    element.setAttribute(attrState, key);
     element.classList.remove(...otherTargetClasses);
     element.classList.add(...resolveClasses(theme.targetClass));
   });
 
   // Update all toggles and inner children
   elements.toggles.forEach(element => {
-    const label = element.querySelector(attrSelector("toggleLabel"));
-    const icon = element.querySelector(attrSelector("toggleIcon"));
+    const label = element.querySelector(attrSelectorLabel);
+    const icon = element.querySelector(attrSelectorIcon);
     if (label) {
       label.textContent = theme.label;
     }
@@ -280,7 +277,7 @@ function setState(key, ctx) {
       icon.classList.remove(...otherIconClasses);
       icon.classList.add(...resolveClasses(theme.iconClass));
     }
-    element.setAttribute(attrs.state, key);
+    element.setAttribute(attrState, key);
   });
 
   // Optional callback if user want to set other things (ie. data-theme or something)

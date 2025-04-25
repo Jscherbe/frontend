@@ -9,9 +9,7 @@
 //   setting this up to destroy tab interface when ui layout changes?
 
 import AriaTablist from "aria-tablist";
-
-const initAttr = "data-ulu-tablist-init";
-const errorHeader = "[data-ulu-tablist] error:";
+import { ComponentInitializer } from "../utils/system.js";
 
 /**
  * Array of current tab instances (exported if you need to interact with them)
@@ -20,12 +18,27 @@ const errorHeader = "[data-ulu-tablist] error:";
 export const instances = [];
 
 /**
- * Init all instances currently in document
- * @param {Object} options Options to serve as defaults
+ * Tabs Component Initializer
  */
-export function init(options = {}) {
+export const initializer = new ComponentInitializer({ 
+  type: "tabs", 
+  baseAttribute: "data-ulu-tablist"
+});
+
+/**
+ * Init all instances currently in document
+ */
+export function init() {
   const initial = () => {
-    initWithin(document, options);
+    initializer.init({
+      events: ["pageModified"],
+      withData: true,
+      setup({ element, data, initialize }) {
+        setup(element, data);
+        initialize();
+      }
+    });
+    
     // Run this on page load, optionally exported for use when page is running
     instances.forEach(openByCurrentHash);
   };
@@ -35,22 +48,6 @@ export function init(options = {}) {
   } else {
     window.addEventListener("load", initial);
   }
-  // Initialize when page updates/changes
-  document.addEventListener("pageModified", e => initWithin(e.target, options));
-}
-
-/**
- * Init all tabs within a certain context
- * @param {Node} context Element to init within
- * @param {Object} options Options to serve as defaults
- */
-export function initWithin(context, options = {}) {
-  if (!context) {
-    console.warn("Missing context to initWithin, skipping init of tabs");
-    return;
-  }
-  const tablists = context.querySelectorAll(`[data-ulu-tablist]:not([${ initAttr }])`);
-  tablists.forEach(element => setup(element, options));
 }
 
 /**
@@ -60,17 +57,7 @@ export function initWithin(context, options = {}) {
  * @return {Object} Instance object
  */
 export function setup(element, options = {}) {
-  let elementOptions = {};
-  
-  if (element.dataset.uluTablist) {
-    try {
-      elementOptions = JSON.parse(element.dataset.uluTablist);
-    } catch(e) {
-      console.error(errorHeader, "(JSON Parse for options)", element);
-    }
-  }
-
-  const config = Object.assign({}, options, elementOptions);
+  const config = Object.assign({}, options);
 
   if (config.vertical) {
     config.allArrows = true;
@@ -91,8 +78,6 @@ export function setup(element, options = {}) {
   if (config.equalHeights) {
     setHeights(element);
   }
-
-  element.setAttribute(initAttr, "");
   
   return instance;
 }
@@ -150,7 +135,9 @@ function setHeights(element) {
       if (panel.hidden) {
         panel.hidden = false;
         panelHeight = panel.offsetHeight;
-        panel.hidden = true;
+        // This explicity needs "hidden" for aria-tablist (it checks this string value)
+        // Will break the initial window push state when using openWithUrlHash
+        panel.setAttribute("hidden", "hidden"); 
       }
       return panelHeight;
     });

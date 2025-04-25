@@ -2,29 +2,21 @@
  * @module ui/scroll-slider
  */
 
+import { ComponentInitializer } from "../utils/system.js";
 import { OverflowScroller } from "./overflow-scroller.js";
 import { createPager } from "./overflow-scroller-pager.js";
-import { getName } from "../events/index.js";
-import { getDatasetOptionalJson } from "../utils/dom.js";
-
 
 /**
- * Default data attributes
+ * Scroll Slider Component Initializer
  */
-export const attrs = {
-  init: "data-ulu-scroll-slider-init",
-  slider: "data-ulu-scroll-slider",
-  track: "data-ulu-scroll-slider-track",
-  controls: "data-ulu-scroll-slider-control-context"
-};
+export const initializer = new ComponentInitializer({ 
+  type: "scroll-slider", 
+  baseAttribute: "data-ulu-scroll-slider"
+});
 
-// Utils for selecting things based on attributes
-const attrSelector = key => `[${ attrs[key] }]`;
-const attrSelectorInitial = key => `${ attrSelector(key) }:not([${ attrs.init }])`;
-
-
+const attrSelectorTrack = initializer.attributeSelector("track");
+const attrSelectorControls = initializer.attributeSelector("controls");
 const instances = [];
-
 const defaults = {
   amount: createPager()
 };
@@ -34,23 +26,25 @@ const defaults = {
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init() {
-  document.addEventListener(getName("pageModified"), setup);
-  setup();
+  initializer.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupSlider(element, data);
+      initialize();
+    }
+  });
 }
 
-export function setup() {
-  const builders = document.querySelectorAll(attrSelectorInitial("slider"));
-  builders.forEach(setupSlider);
-}
-
-// getDatasetOptionalJson
-function setupSlider(container) {
-  container.setAttribute(attrs.init, "");
-  const options = getDatasetOptionalJson(container, "uluScrollSlider");
-  const config = Object.assign({}, defaults, options);
+/**
+ * Setup instance of scroll slider based on data-attributes
+ * @param {Node} container The scroll slider container
+ */
+function setupSlider(container, userOptions) {
+  const config = Object.assign({}, defaults, userOptions);
   const elements = {
-    track: container.querySelector(attrSelector("track")),
-    controls: container.querySelector(attrSelector("controls"))
+    track: container.querySelector(attrSelectorTrack),
+    controls: container.querySelector(attrSelectorControls)
   };
   instances.push(new OverflowScroller(elements, config));
 }
