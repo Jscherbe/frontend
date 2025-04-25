@@ -22,8 +22,6 @@
 /// @prop {Dimension} padding-bottom  [0]
 /// @prop {Dimension} padding-top  [0]
 /// @prop {String} prefix ["scroll-slide"]
-/// @prop {Color} button-background-color  [white]
-/// @prop {Color} button-background-color-hover  [white]
 /// @prop {CssValue} button-border  [2px solid white]
 /// @prop {Color} button-border-color-hover  [white]
 /// @prop {Dimension} button-border-radius  [50%]
@@ -46,8 +44,6 @@ $config: (
   "padding-bottom" : 0,
   "padding-top" : 0,
   "prefix": "scroll-slider",
-  "button-background-color" : white,
-  "button-background-color-hover" : white,
   "button-border" : 2px solid white,
   "button-border-color-hover" : white,
   "button-border-radius" : 50%,

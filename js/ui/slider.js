@@ -511,7 +511,7 @@ export class Slider {
     const button = document.createElement("button");
     button.classList.add(this.getClass("nav-button"));
     button.setAttribute("type", "button");
-    button.innerHTML = this.getNavContent(slide.number);
+    button.innerHTML = this.getNavContent(slide);
     slide.navButton = button; // Add reference to slide object
     button.addEventListener("click", this.goto.bind(this, index));
     return button;
@@ -523,8 +523,8 @@ export class Slider {
       <span class="${ this.getClass("control-icon") } ${ classes }" aria-hidden="true"></span>
     `;
   }
-  getNavContent(number) {
-    return `<span class="hidden-visually">Item ${ number }</span>`;
+  getNavContent(slide) {
+    return `<span class="hidden-visually">Item ${ slide.number }</span>`;
   }
   emit(name, args) {
     if (this.options.events[name]) {

@@ -45,8 +45,6 @@ $config: (
   "padding-bottom" : 0,
   "padding-top" : 0,
   "prefix": "scroll-slider",
-  "button-background-color" : white,
-  "button-background-color-hover" : white,
   "button-border" : 2px solid white,
   "button-border-color-hover" : white,
   "button-border-radius" : 50%,
@@ -70,8 +68,8 @@ $config: (
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** variable
-- **Lines (comments):** 15-38
-- **Lines (code):** 40-63
+- **Lines (comments):** 15-36
+- **Lines (code):** 38-59
 
 </details>
 
@@ -90,8 +88,6 @@ $config: (
 |padding-bottom|Dimension|0|
 |padding-top|Dimension|0|
 |prefix|String|"scroll-slide"|
-|button-background-color|Color|white|
-|button-background-color-hover|Color|white|
 |button-border|CssValue|2px solid white|
 |button-border-color-hover|Color|white|
 |button-border-radius|Dimension|50%|
@@ -136,8 +132,8 @@ Change modules $config
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
-- **Lines (comments):** 65-68
-- **Lines (code):** 70-72
+- **Lines (comments):** 61-64
+- **Lines (code):** 66-68
 
 </details>
 
@@ -195,8 +191,8 @@ Output component stylesheet
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** mixin
-- **Lines (comments):** 83-85
-- **Lines (code):** 87-204
+- **Lines (comments):** 79-81
+- **Lines (code):** 83-200
 
 </details>
 
@@ -250,8 +246,8 @@ Get a config option
 - **File:** _scroll-slider.scss
 - **Group:** scroll-slider
 - **Type:** function
-- **Lines (comments):** 74-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 70-73
+- **Lines (code):** 75-77
 
 </details>
 

@@ -21,6 +21,10 @@
   - Fix missing init attribute
 - scss/components/accordion
   - remove static margin-bottom added to "--no-borders" modifier (was 4rem)
+- scss/components/slider
+  - remove unused config options "button-background-color" and "button-background-color-hover"
+- js/ui/slider
+  - update createNavButton function to pass whole slide rather than just slide number. Update getNavContent to still print slide number as accessibility text by default.
 
 ## Version 0.1.0-beta.33
 
