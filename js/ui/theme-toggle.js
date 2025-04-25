@@ -28,7 +28,6 @@ const queryRemotes = group => document.querySelectorAll(
 const queryRemotesInitial = group => document.querySelectorAll(
   `[${ attrRemote }="${ group }"]:not([${ attrInit }])`
 );
-const debugLog = (...msgs) => console.log("Theme Toggle:", ...msgs);
 const requiredToggleProps = ["target"];
 const checkToggleProps = hasRequiredProps(requiredToggleProps);
 const when = (cond, fn) => cond ? fn() : null; // Consider adding as util 
@@ -252,7 +251,7 @@ function setState(key, ctx) {
   };
 
   if (options.debug) {
-    debugLog("set state context", stateCtx);
+    initializer.log("Set state context", stateCtx);
   }
   
   // Prepare classes to remove
@@ -303,13 +302,13 @@ function resolveInitial(options) {
   const resolved = saved || mediaQueryPreference || initialState;
 
   if (options.debug) {
-    debugLog("Preference Saved:", saved);
-    debugLog("Media Query Preference:", mediaQueryPreference);
-    debugLog("Initial State:", initialState);
+    initializer.log("Preference Saved", saved);
+    initializer.log("Media Query Preference", mediaQueryPreference);
+    initializer.log("Initial State:", initialState);
   }
 
   if (!resolved) {
-    console.error("Failed to resolve initial theme (pass 'initialState' to options)");
+    initializer.logError("Failed to resolve initial theme (pass 'initialState' to options)");
   }
   
   return resolved;

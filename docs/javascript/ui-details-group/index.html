@@ -2529,6 +2529,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5015,6 +5030,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5048,13 +5078,13 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#ui%2Fdetails-group.initializer">ui/details-group.initializer</a>
+            		</li>
+
                     <li><a href="#ui%2Fdetails-group.init()">ui/details-group.init()</a>
             		</li>
 
-                    <li><a href="#ui%2Fdetails-group.setup(context)-%E2%87%92-array">ui/details-group.setup(context) ⇒ Array</a>
-            		</li>
-
-                    <li><a href="#ui%2Fdetails-group.setupgroup(element)-%E2%87%92-detailsgroupinstance">ui/details-group.setupGroup(element) ⇒ DetailsGroupInstance</a>
+                    <li><a href="#ui%2Fdetails-group.setupgroup(element%2C-options)-%E2%87%92-detailsgroupinstance">ui/details-group.setupGroup(element, options) ⇒ DetailsGroupInstance</a>
             
                 <ol>
                     
@@ -5087,9 +5117,9 @@
 <ul>
 <li><em>static</em>
 <ul>
+<li><a href="#module_ui/details-group.initializer">.initializer</a></li>
 <li><a href="#module_ui/details-group.init">.init()</a></li>
-<li><a href="#module_ui/details-group.setup">.setup(context)</a> ⇒ <code>Array</code></li>
-<li><a href="#module_ui/details-group.setupGroup">.setupGroup(element)</a> ⇒ <code>DetailsGroupInstance</code>
+<li><a href="#module_ui/details-group.setupGroup">.setupGroup(element, options)</a> ⇒ <code>DetailsGroupInstance</code>
 <ul>
 <li><a href="#module_ui/details-group.setupGroup..setupChildren">~setupChildren()</a></li>
 <li><a href="#module_ui/details-group.setupGroup..destroy">~destroy()</a></li>
@@ -5105,36 +5135,19 @@
 </ul>
 </li>
 </ul>
-<p><a name="module_ui/details-group.init"></a></p>
+<p><a name="module_ui/details-group.initializer"></a></p>
+<h2 id="ui%2Fdetails-group.initializer" tabindex="-1">ui/details-group.initializer</h2>
+<p>Dialog Component Initializer</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/details-group"><code>ui/details-group</code></a><br>
+<a name="module_ui/details-group.init"></a></p>
 <h2 id="ui%2Fdetails-group.init()" tabindex="-1">ui/details-group.init()</h2>
 <p>Initialize everything in document</p>
 <ul>
 <li>This will only initialize elements once, it is safe to call on page changes</li>
 </ul>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/details-group"><code>ui/details-group</code></a><br>
-<a name="module_ui/details-group.setup"></a></p>
-<h2 id="ui%2Fdetails-group.setup(context)-%E2%87%92-array" tabindex="-1">ui/details-group.setup(context) ⇒ <code>Array</code></h2>
-<p>Setup all dialog groups within context</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/details-group"><code>ui/details-group</code></a><br>
-<strong>Returns</strong>: <code>Array</code> - Array matching the groups queried with their return objects from setupGroup() [used for destroy/etc]</p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>context</td>
-<td><code>HTMLElement</code></td>
-<td>[document] Element to query within</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_ui/details-group.setupGroup"></a></p>
-<h2 id="ui%2Fdetails-group.setupgroup(element)-%E2%87%92-detailsgroupinstance" tabindex="-1">ui/details-group.setupGroup(element) ⇒ <code>DetailsGroupInstance</code></h2>
+<a name="module_ui/details-group.setupGroup"></a></p>
+<h2 id="ui%2Fdetails-group.setupgroup(element%2C-options)-%E2%87%92-detailsgroupinstance" tabindex="-1">ui/details-group.setupGroup(element, options) ⇒ <code>DetailsGroupInstance</code></h2>
 <p>Sets up a single group of details elements to manage their behavior.</p>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/details-group"><code>ui/details-group</code></a></p>
 <table>
@@ -5151,10 +5164,15 @@
 <td><code>HTMLElement</code></td>
 <td>The parent element containing the details elements.</td>
 </tr>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>The options for this group</td>
+</tr>
 </tbody>
 </table>
 <ul>
-<li><a href="#module_ui/details-group.setupGroup">.setupGroup(element)</a> ⇒ <code>DetailsGroupInstance</code>
+<li><a href="#module_ui/details-group.setupGroup">.setupGroup(element, options)</a> ⇒ <code>DetailsGroupInstance</code>
 <ul>
 <li><a href="#module_ui/details-group.setupGroup..setupChildren">~setupChildren()</a></li>
 <li><a href="#module_ui/details-group.setupGroup..destroy">~destroy()</a></li>

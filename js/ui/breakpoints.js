@@ -97,9 +97,8 @@ export class BreakpointManager {
       logError(this, 'Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!');
       return;
     }
-    // console.log('name:\n', name);
     if (name === this.active) return;
-    // this.log(`current breakpoint: ${ name }`);
+    
     // Update active and cache last
     this.previous = this.active;
     this.previousIndex = this.activeIndex;

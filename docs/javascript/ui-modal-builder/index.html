@@ -2529,6 +2529,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5015,6 +5030,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5048,6 +5078,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#ui%2Fmodal-builder.initializer">ui/modal-builder.initializer</a>
+            		</li>
+
                     <li><a href="#ui%2Fmodal-builder.defaults">ui/modal-builder.defaults</a>
             		</li>
 
@@ -5055,12 +5088,6 @@
             		</li>
 
                     <li><a href="#ui%2Fmodal-builder.init()">ui/modal-builder.init()</a>
-            		</li>
-
-                    <li><a href="#ui%2Fmodal-builder.setup()">ui/modal-builder.setup()</a>
-            		</li>
-
-                    <li><a href="#ui%2Fmodal-builder.setupbuilder(element)">ui/modal-builder.setupBuilder(element)</a>
             		</li>
 
                     <li><a href="#ui%2Fmodal-builder.buildmodal(content%2C-options)">ui/modal-builder.buildModal(content, options)</a>
@@ -5081,16 +5108,16 @@
     <div class="wysiwyg">
       <p><a name="module_ui/modal-builder"></a></p>
 <h1 id="ui%2Fmodal-builder" tabindex="-1">ui/modal-builder</h1>
+<p>Note this module needs to be initialized before dialogs!</p>
 <ul>
 <li><a href="#module_ui/modal-builder">ui/modal-builder</a>
 <ul>
 <li><em>static</em>
 <ul>
+<li><a href="#module_ui/modal-builder.initializer">.initializer</a></li>
 <li><a href="#module_ui/modal-builder.defaults">.defaults</a></li>
 <li><a href="#module_ui/modal-builder.setDefaults">.setDefaults(options)</a></li>
 <li><a href="#module_ui/modal-builder.init">.init()</a></li>
-<li><a href="#module_ui/modal-builder.setup">.setup()</a></li>
-<li><a href="#module_ui/modal-builder.setupBuilder">.setupBuilder(element)</a></li>
 <li><a href="#module_ui/modal-builder.buildModal">.buildModal(content, options)</a></li>
 </ul>
 </li>
@@ -5102,7 +5129,11 @@
 </ul>
 </li>
 </ul>
-<p><a name="module_ui/modal-builder.defaults"></a></p>
+<p><a name="module_ui/modal-builder.initializer"></a></p>
+<h2 id="ui%2Fmodal-builder.initializer" tabindex="-1">ui/modal-builder.initializer</h2>
+<p>Modal Builder Component Initializer</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a><br>
+<a name="module_ui/modal-builder.defaults"></a></p>
 <h2 id="ui%2Fmodal-builder.defaults" tabindex="-1">ui/modal-builder.defaults</h2>
 <p>Default builder options (extends dialog defaults, watch name collisions)</p>
 <ul>
@@ -5140,29 +5171,7 @@ in twig for example)</li>
 <li>This will only initialize elements once, it is safe to call on page changes</li>
 </ul>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a><br>
-<a name="module_ui/modal-builder.setup"></a></p>
-<h2 id="ui%2Fmodal-builder.setup()" tabindex="-1">ui/modal-builder.setup()</h2>
-<p>Query and setup all builder</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a><br>
-<a name="module_ui/modal-builder.setupBuilder"></a></p>
-<h2 id="ui%2Fmodal-builder.setupbuilder(element)" tabindex="-1">ui/modal-builder.setupBuilder(element)</h2>
-<p>Build a dialog for the given content</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>element</td>
-<td><code>Node</code></td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_ui/modal-builder.buildModal"></a></p>
+<a name="module_ui/modal-builder.buildModal"></a></p>
 <h2 id="ui%2Fmodal-builder.buildmodal(content%2C-options)" tabindex="-1">ui/modal-builder.buildModal(content, options)</h2>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a></p>
 <table>

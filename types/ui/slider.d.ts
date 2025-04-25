@@ -1,15 +1,25 @@
+/**
+ * Initialize all sliders based on data attribute selectors
+ */
 export function init(): void;
-export function setup(): void;
-export function setupSlider(container: any): void;
-export namespace attrs {
-    let init: string;
-    let slider: string;
-    let track: string;
-    let trackContainer: string;
-    let controls: string;
-}
+/**
+ * Setup single slider instance from querying via data attribute selectors
+ * @param {Node} container The slide container to query children from
+ * @param {Object} options Options for slider class
+ */
+export function setupSlider(container: Node, options: any): void;
+/**
+ * Slider Component Initializer
+ */
+export const initializer: ComponentInitializer;
+/**
+ * Class that controls slider
+ */
 export class Slider {
     static instances: any[];
+    /**
+     * Default options for slider
+     */
     static defaults: {
         classAccessiblyHidden: string;
         namespace: string;
@@ -23,8 +33,7 @@ export class Slider {
         iconClassPrevious: any;
         iconClassNext: any;
     };
-    constructor(elements: any, config: any, debug?: boolean);
-    debug: boolean;
+    constructor(elements: any, config: any);
     options: any;
     slide: {
         element: any;
@@ -122,7 +131,8 @@ export class Slider {
     };
     createNavButton(slide: any, index: any): HTMLButtonElement;
     getControlContent(action: any): string;
-    getNavContent(number: any): string;
+    getNavContent(slide: any): string;
     emit(name: any, args: any): void;
 }
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=slider.d.ts.map

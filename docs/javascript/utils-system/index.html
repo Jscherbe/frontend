@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Sticky List
+    utils/system
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -132,8 +132,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -618,9 +618,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/sticky-list/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/sticky-list/">
           
     
     <span class="nav-tree__text">
@@ -2045,8 +2045,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -2065,9 +2065,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active-trail ">
           
-        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -2530,9 +2530,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/utils-system/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -2633,8 +2633,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -3119,9 +3119,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/sticky-list/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/sticky-list/">
           
     
     <span class="nav-tree__text">
@@ -4546,8 +4546,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -4566,9 +4566,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active-trail ">
           
-        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -5031,9 +5031,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/utils-system/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -5074,7 +5074,56 @@
 </header>
 		
 			<div class="page__toc page-toc">
-				
+				<h2>Jump To:</h2>
+<div class="toc">
+                <ol>
+                    
+                    <li><a href="#utils%2Fsystem.componentinitializer">utils/system.ComponentInitializer</a>
+            
+                <ol>
+                    
+                    <li><a href="#new-exports.componentinitializer(options)">new exports.ComponentInitializer(options)</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.init(config)">componentInitializer.init(config)</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.setupelements(config)">componentInitializer.setupElements(config)</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.getattribute(key)-%E2%87%92-string">componentInitializer.getAttribute(key) ⇒ String</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.attributeselector(key)">componentInitializer.attributeSelector(key)</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.attributeselectorinitial()-%E2%87%92-string">componentInitializer.attributeSelectorInitial() ⇒ String</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.queryallinitial(context%2C-withdata%2C-context)-%E2%87%92-array.%3C%7Belement%3A-htmlelement%2C-data%3A-object%2C-initialize%3A-function()%7D%3E">componentInitializer.queryAllInitial(context, withData, context) ⇒ Array.<{element: HTMLElement, data: object, initialize: function()}></a>
+            		</li>
+
+                    <li><a href="#componentinitializer.initializeelement(element)">componentInitializer.initializeElement(element)</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.getdata()-%E2%87%92-*">componentInitializer.getData() ⇒ *</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.log()">componentInitializer.log()</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.warn()">componentInitializer.warn()</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.logerror()">componentInitializer.logError()</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#utils%2Fsystem.componentinstance">utils/system.ComponentInstance</a>
+            		</li>
+                </ol>
+            </div>
 			</div>
 		
 		<main id="main" class="page__body">
@@ -5082,44 +5131,299 @@
 			
 			
 			
-  <div class="page__body-top container ">
-    <h1 class="page__title h1">Sticky List</h1>
+  <div class="page__body-top container api-docs">
+    <div class="wysiwyg">
+      <p><a name="module_utils/system"></a></p>
+<h1 id="utils%2Fsystem" tabindex="-1">utils/system</h1>
+<p>Core classes and mechanisms that define how UI components are created and managed within the library</p>
+<ul>
+<li><a href="#module_utils/system">utils/system</a>
+<ul>
+<li><a href="#module_utils/system.ComponentInitializer">.ComponentInitializer</a>
+<ul>
+<li><a href="#new_module_utils/system.ComponentInitializer_new">new exports.ComponentInitializer(options)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+init">.init(config)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+setupElements">.setupElements(config)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+getAttribute">.getAttribute(key)</a> ⇒ <code>String</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+attributeSelector">.attributeSelector(key)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+attributeSelectorInitial">.attributeSelectorInitial()</a> ⇒ <code>String</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+queryAllInitial">.queryAllInitial(context, withData, context)</a> ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+initializeElement">.initializeElement(element)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+getData">.getData()</a> ⇒ <code>*</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+log">.log()</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+warn">.warn()</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+logError">.logError()</a></li>
+</ul>
+</li>
+<li><a href="#module_utils/system.ComponentInstance">.ComponentInstance</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_utils/system.ComponentInitializer"></a></p>
+<h2 id="utils%2Fsystem.componentinitializer" tabindex="-1">utils/system.ComponentInitializer</h2>
+<p>Class serves as a utility for UI modules, handling the selection of elements and the initialization of corresponding component instances, ensuring consistent setup within the module</p>
+<p><strong>Kind</strong>: static class of <a href="#module_utils/system"><code>utils/system</code></a></p>
+<ul>
+<li><a href="#module_utils/system.ComponentInitializer">.ComponentInitializer</a>
+<ul>
+<li><a href="#new_module_utils/system.ComponentInitializer_new">new exports.ComponentInitializer(options)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+init">.init(config)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+setupElements">.setupElements(config)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+getAttribute">.getAttribute(key)</a> ⇒ <code>String</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+attributeSelector">.attributeSelector(key)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+attributeSelectorInitial">.attributeSelectorInitial()</a> ⇒ <code>String</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+queryAllInitial">.queryAllInitial(context, withData, context)</a> ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+initializeElement">.initializeElement(element)</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+getData">.getData()</a> ⇒ <code>*</code></li>
+<li><a href="#module_utils/system.ComponentInitializer+log">.log()</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+warn">.warn()</a></li>
+<li><a href="#module_utils/system.ComponentInitializer+logError">.logError()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_module_utils/system.ComponentInitializer_new"></a></p>
+<h3 id="new-exports.componentinitializer(options)" tabindex="-1">new exports.ComponentInitializer(options)</h3>
+<p>Create a new instance of ComponentInitializer</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Options for configuring the component initializer.</td>
+</tr>
+<tr>
+<td>options.type</td>
+<td><code>String</code></td>
+<td>Type of component (used for logs).</td>
+</tr>
+<tr>
+<td>options.baseAttribute</td>
+<td><code>String</code></td>
+<td>Prefix and base attribute name (used for base attribute and further element attribute names).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+init"></a></p>
+<h3 id="componentinitializer.init(config)" tabindex="-1">componentInitializer.init(config)</h3>
+<p>Initializes the component based on the provided configuration.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>Object</code></td>
+<td>The initialization configuration.</td>
+</tr>
+<tr>
+<td>config.setup</td>
+<td><code>function</code></td>
+<td>The setup function to call for each element.</td>
+</tr>
+<tr>
+<td>config.key</td>
+<td><code>String</code></td>
+<td>[null] The optional key to use with attribute selector.</td>
+</tr>
+<tr>
+<td>config.withData</td>
+<td><code>Boolean</code></td>
+<td>[null] Whether to retrieve element data.</td>
+</tr>
+<tr>
+<td>config.events</td>
+<td><code>Array</code></td>
+<td>[null] Ulu events that should call setup when dispatched (ie. pageModified, pageResized)</td>
+</tr>
+<tr>
+<td>config.onPageResized</td>
+<td><code>Boolean</code></td>
+<td>[null] Whether to bind event listener for page resize end</td>
+</tr>
+<tr>
+<td>config.context</td>
+<td><code>HTMLElement</code></td>
+<td>[document] The context to query within.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+setupElements"></a></p>
+<h3 id="componentinitializer.setupelements(config)" tabindex="-1">componentInitializer.setupElements(config)</h3>
+<p>Processes the elements based on the provided configuration.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>object</code></td>
+<td>The initialization configuration.</td>
+</tr>
+<tr>
+<td>config.setup</td>
+<td><code>function</code></td>
+<td>The setup function to call for each element.</td>
+</tr>
+<tr>
+<td>config.key</td>
+<td><code>string</code></td>
+<td>The optional key to use with attribute selector.</td>
+</tr>
+<tr>
+<td>config.withData</td>
+<td><code>boolean</code></td>
+<td>[false] Whether to retrieve element data.</td>
+</tr>
+<tr>
+<td>config.onPageModified</td>
+<td><code>boolean</code></td>
+<td>[true] Whether to bind event listener for page modifications.</td>
+</tr>
+<tr>
+<td>config.context</td>
+<td><code>HTMLElement</code></td>
+<td>[document] The context to query within.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+getAttribute"></a></p>
+<h3 id="componentinitializer.getattribute(key)-%E2%87%92-string" tabindex="-1">componentInitializer.getAttribute(key) ⇒ <code>String</code></h3>
+<p>Get an attribute name</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<strong>Returns</strong>: <code>String</code> - String like data-ulu-dialog or data-ulu-dialog-element</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>String</code></td>
+<td>Optional key, if no key will return baseAttribute if key will return key added to base</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+attributeSelector"></a></p>
+<h3 id="componentinitializer.attributeselector(key)" tabindex="-1">componentInitializer.attributeSelector(key)</h3>
+<p>Create an attribute selector</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>String</code></td>
+<td>Optional key (see getAttribute)</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+attributeSelectorInitial"></a></p>
+<h3 id="componentinitializer.attributeselectorinitial()-%E2%87%92-string" tabindex="-1">componentInitializer.attributeSelectorInitial() ⇒ <code>String</code></h3>
+<p>Create an attribute selector for initial</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<a name="module_utils/system.ComponentInitializer+queryAllInitial"></a></p>
+<h3 id="componentinitializer.queryallinitial(context%2C-withdata%2C-context)-%E2%87%92-array.%3C%7Belement%3A-htmlelement%2C-data%3A-object%2C-initialize%3A-function()%7D%3E" tabindex="-1">componentInitializer.queryAllInitial(context, withData, context) ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code></h3>
+<p>Queries all main elements of a component that have not been initialized and extracts their data attributes.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<strong>Returns</strong>: <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code> - An array of objects containing the elements, their data, and convenience function initialize() which when called will set the init attribute on the element</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context</td>
+<td><code>HTMLElement</code></td>
+<td>The context to query within.</td>
+</tr>
+<tr>
+<td>withData</td>
+<td><code>Boolean</code></td>
+<td>Include dataset from element (as optional JSON)</td>
+</tr>
+<tr>
+<td>context</td>
+<td><code>Node</code></td>
+<td>Element to query elements from</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+initializeElement"></a></p>
+<h3 id="componentinitializer.initializeelement(element)" tabindex="-1">componentInitializer.initializeElement(element)</h3>
+<p>Sets the init attribute on an element, marking it as initialized.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element</td>
+<td><code>HTMLElement</code></td>
+<td>The element to initialize.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/system.ComponentInitializer+getData"></a></p>
+<h3 id="componentinitializer.getdata()-%E2%87%92-*" tabindex="-1">componentInitializer.getData() ⇒ <code>*</code></h3>
+<p>Get an elements dataset value as JSON or other value</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<strong>Returns</strong>: <code>*</code> - The value of the dataset, if JSON will return object else will return string value or undefined<br>
+<a name="module_utils/system.ComponentInitializer+log"></a></p>
+<h3 id="componentinitializer.log()" tabindex="-1">componentInitializer.log()</h3>
+<p>Will output namespaced console logs for the given initializer</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<a name="module_utils/system.ComponentInitializer+warn"></a></p>
+<h3 id="componentinitializer.warn()" tabindex="-1">componentInitializer.warn()</h3>
+<p>Will output namespaced console warnings for the given initializer</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<a name="module_utils/system.ComponentInitializer+logError"></a></p>
+<h3 id="componentinitializer.logerror()" tabindex="-1">componentInitializer.logError()</h3>
+<p>Will output namespaced console error for the given initializer</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_utils/system.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<a name="module_utils/system.ComponentInstance"></a></p>
+<h2 id="utils%2Fsystem.componentinstance" tabindex="-1">utils/system.ComponentInstance</h2>
+<p>Class serves as a base for representing individual occurrences of a UI component, providing a consistent structure for each</p>
+<p><strong>Kind</strong>: static class of <a href="#module_utils/system"><code>utils/system</code></a></p>
 
-  <p class="type-large type-light">
-    Basic CSS only sticky list
-  </p>
-
-
-  <hr class="rule rule--light rule--margin-large">
-
-    <h2 class="h2">Default Example</h2>
-<div class="background-light theme-light">
-  <div class="sticky-list">
-    <h3 class="sticky-list__title h3">
-      Title for list
-    </h3>
-    <ul>
-      <li>Vivamus placerat est sit amet est mollis</li>
-      <li>Aliquam eros lorem, tristique quis nulla nec, scelerisque varius velit</li>
-      <li>Phasellus placerat viverra condimentum
-      </li>
-    </ul>
-  </div>
-</div>
-<h2 class="h2">Dark Background Example</h2>
-<div class="background-dark theme-dark">
-  <div class="sticky-list">
-    <h3 class="sticky-list__title h3">
-      Title for list
-    </h3>
-    <ul>
-      <li>Vivamus placerat est sit amet est mollis</li>
-      <li>Aliquam eros lorem, tristique quis nulla nec, scelerisque varius velit</li>
-      <li>Phasellus placerat viverra condimentum
-      </li>
-    </ul>
-  </div>
-</div>
+    </div>
   </div>
 
 		</main>

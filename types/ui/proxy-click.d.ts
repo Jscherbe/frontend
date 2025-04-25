@@ -1,5 +1,5 @@
 /**
- * @param {Object} options Change options used as default for dialogs, can then be overriden by data attribute settings on element
+ * @param {Object} options Change options used as default for dialogs, can then be overridden by data attribute settings on element
  */
 export function setDefaults(options: any): void;
 /**
@@ -7,12 +7,28 @@ export function setDefaults(options: any): void;
  * - This will only initialize elements once, it is safe to call on page changes
  */
 export function init(): void;
-export function setup(context?: Document): void;
-export function attachHandlers(proxy: any, child: any, options: any): void;
+/**
+ * Setup a single proxy click
+ * @param {Node} proxy The container who's click should proxy the click of inner element with options.selector (defaults to [data-ulu-proxy-click-source])
+ * @param {Object} userOptions Options to override defaults
+ */
+export function setupProxy(proxy: Node, userOptions: any): void;
+/**
+ * Main function for attaching behaviors that enable proxy click
+ * @param {Node} proxy The container who's click should proxy the click of inner element with options.selector (defaults to [data-ulu-proxy-click-source])
+ * @param {Node} child The element who is being proxied and will get clicked if the proxy is clicked (as long as not an interactive element within proxy)
+ * @param {Object} config Merged/final options object
+ */
+export function attachHandlers(proxy: Node, child: Node, config: any): void;
+/**
+ * Proxy Click Component Initializer
+ */
+export const initializer: ComponentInitializer;
 export namespace defaults {
     let selector: string;
     let selectorPreventBase: string;
     let selectorPrevent: string;
     let mousedownDurationPrevent: number;
 }
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=proxy-click.d.ts.map

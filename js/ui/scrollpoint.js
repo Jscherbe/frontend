@@ -155,7 +155,7 @@ export class Scrollpoint {
     };
     this.setupObserver();
     if (options.debug) {
-      console.log("Scrollpoint", this);
+      initializer.log(this);
     }
   }
   getClassname(suffix) {
@@ -197,7 +197,7 @@ export class Scrollpoint {
     };
     const config = this.getObserverOptions();
     if (this.options.debug) {
-      console.log("Scrollpoint (IntersectionObserver)", config);
+      initializer.log("IntersectionObserver (options)", config);
     }
     this.observer = new IntersectionObserver(handler, config);
     this.observer.observe(this.element);

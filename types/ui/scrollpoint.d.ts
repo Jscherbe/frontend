@@ -4,15 +4,9 @@
  */
 export function init(): void;
 /**
- * Setup all points and groups
+ * Scrollpoint Component Initializer
  */
-export function setup(): void;
-export namespace attrs {
-    let init: string;
-    let point: string;
-    let group: string;
-    let groupAnchors: string;
-}
+export const initializer: ComponentInitializer;
 /**
  * Single scrollpoint
  * - Note "forward" and "reverse" refer to scroll directions
@@ -130,4 +124,5 @@ export class Scrollpoint {
     updateStateAttribute(isActive: any, isForward: any): void;
     destroy(): void;
 }
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=scrollpoint.d.ts.map

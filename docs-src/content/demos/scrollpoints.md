@@ -21,7 +21,7 @@ intro: Utility for scroll based active classes, anchor menus, etc in traditional
   class="demo-scrollpoint" 
   data-ulu-scrollpoint='{ 
     "marginStart" : "-10%", 
-    "marginEnd" : "-10%" 
+    "marginEnd" : "-10%"
   }'
   style="height: 200vh;"
 >

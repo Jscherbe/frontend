@@ -8,15 +8,6 @@ export function setDefaults(options: any): void;
  */
 export function init(): void;
 /**
- * Query and setup all builder
- */
-export function setup(): void;
-/**
- * Build a dialog for the given content
- * @param {Node} element
- */
-export function setupBuilder(element: Node): void;
-/**
  *
  * @param {Node} content Content element of the dialog (what is inserted into the body)
  * @param {Object} options Options for built dialog (see defaults)
@@ -24,6 +15,10 @@ export function setupBuilder(element: Node): void;
 export function buildModal(content: Node, options: any): {
     modal: Element;
 };
+/**
+ * Modal Builder Component Initializer
+ */
+export const initializer: ComponentInitializer;
 export namespace defaults {
     export let title: any;
     export let titleIcon: any;
@@ -51,4 +46,5 @@ export namespace defaults {
      */
     export function template(id: string, config: any): string;
 }
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=modal-builder.d.ts.map

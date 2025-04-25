@@ -8,28 +8,20 @@ export function setDefaults(options: any): void;
  */
 export function init(): void;
 /**
- * Query and setup all
- */
-export function setup(): void;
-/**
  * Sets up a single toggle
  * @param {HTMLElement} toggle A toggle to be setup
  */
-export function setupToggle(toggle: HTMLElement, passedOptions: any): {
+export function setupToggle(toggle: HTMLElement, userOptions: any): {
     destroy: () => void;
     toggle: HTMLElement;
     options: any;
     toggleState: (event: any) => void;
     setState(themeKey: any): void;
 };
-export namespace attrs {
-    let init: string;
-    let toggle: string;
-    let toggleIcon: string;
-    let toggleLabel: string;
-    let toggleRemote: string;
-    let state: string;
-}
+/**
+ * Theme Toggle Component Initializer
+ */
+export const initializer: ComponentInitializer;
 export namespace defaults {
     namespace themes {
         namespace light {
@@ -62,4 +54,5 @@ export namespace defaults {
     let storagePrefix: string;
     let debug: boolean;
 }
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=theme-toggle.d.ts.map

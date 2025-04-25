@@ -8,11 +8,10 @@ title: ui/theme-toggle
 
 * [ui/theme-toggle](#module_ui/theme-toggle)
     * _static_
-        * [.attrs](#module_ui/theme-toggle.attrs)
+        * [.initializer](#module_ui/theme-toggle.initializer)
         * [.defaults](#module_ui/theme-toggle.defaults)
         * [.setDefaults(options)](#module_ui/theme-toggle.setDefaults)
         * [.init()](#module_ui/theme-toggle.init)
-        * [.setup()](#module_ui/theme-toggle.setup)
         * [.setupToggle(toggle)](#module_ui/theme-toggle.setupToggle)
             * [~toggleState()](#module_ui/theme-toggle.setupToggle..toggleState)
             * [~onToggleClick()](#module_ui/theme-toggle.setupToggle..onToggleClick)
@@ -28,10 +27,10 @@ title: ui/theme-toggle
         * [~concatThemeClasses()](#module_ui/theme-toggle..concatThemeClasses)
         * [~getStorageKey()](#module_ui/theme-toggle..getStorageKey)
 
-<a name="module_ui/theme-toggle.attrs"></a>
+<a name="module_ui/theme-toggle.initializer"></a>
 
-## ui/theme-toggle.attrs
-Default data attributes
+## ui/theme-toggle.initializer
+Theme Toggle Component Initializer
 
 **Kind**: static constant of [<code>ui/theme-toggle</code>](#module_ui/theme-toggle)  
 <a name="module_ui/theme-toggle.defaults"></a>
@@ -55,12 +54,6 @@ Default Options
 ## ui/theme-toggle.init()
 Initialize everything in document
 - This will only initialize elements once, it is safe to call on page changes
-
-**Kind**: static method of [<code>ui/theme-toggle</code>](#module_ui/theme-toggle)  
-<a name="module_ui/theme-toggle.setup"></a>
-
-## ui/theme-toggle.setup()
-Query and setup all
 
 **Kind**: static method of [<code>ui/theme-toggle</code>](#module_ui/theme-toggle)  
 <a name="module_ui/theme-toggle.setupToggle"></a>

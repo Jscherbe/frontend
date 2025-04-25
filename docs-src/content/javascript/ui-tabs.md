@@ -9,8 +9,8 @@ title: ui/tabs
 * [ui/tabs](#module_ui/tabs)
     * _static_
         * [.instances](#module_ui/tabs.instances) : <code>Array</code>
-        * [.init(options)](#module_ui/tabs.init)
-        * [.initWithin(context, options)](#module_ui/tabs.initWithin)
+        * [.initializer](#module_ui/tabs.initializer)
+        * [.init()](#module_ui/tabs.init)
         * [.setup(element, options)](#module_ui/tabs.setup) ⇒ <code>Object</code>
     * _inner_
         * [~openByCurrentHash()](#module_ui/tabs..openByCurrentHash)
@@ -23,29 +23,18 @@ title: ui/tabs
 Array of current tab instances (exported if you need to interact with them)
 
 **Kind**: static constant of [<code>ui/tabs</code>](#module_ui/tabs)  
+<a name="module_ui/tabs.initializer"></a>
+
+## ui/tabs.initializer
+Tabs Component Initializer
+
+**Kind**: static constant of [<code>ui/tabs</code>](#module_ui/tabs)  
 <a name="module_ui/tabs.init"></a>
 
-## ui/tabs.init(options)
+## ui/tabs.init()
 Init all instances currently in document
 
 **Kind**: static method of [<code>ui/tabs</code>](#module_ui/tabs)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| options | <code>Object</code> | Options to serve as defaults |
-
-<a name="module_ui/tabs.initWithin"></a>
-
-## ui/tabs.initWithin(context, options)
-Init all tabs within a certain context
-
-**Kind**: static method of [<code>ui/tabs</code>](#module_ui/tabs)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| context | <code>Node</code> | Element to init within |
-| options | <code>Object</code> | Options to serve as defaults |
-
 <a name="module_ui/tabs.setup"></a>
 
 ## ui/tabs.setup(element, options) ⇒ <code>Object</code>

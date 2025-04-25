@@ -2529,6 +2529,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5015,6 +5030,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5048,7 +5078,13 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#ui%2Fdialog.attrs">ui/dialog.attrs</a>
+                    <li><a href="#ui%2Fdialog.baseattribute">ui/dialog.baseAttribute</a>
+            		</li>
+
+                    <li><a href="#ui%2Fdialog.initializer">ui/dialog.initializer</a>
+            		</li>
+
+                    <li><a href="#ui%2Fdialog.closeattribute">ui/dialog.closeAttribute</a>
             		</li>
 
                     <li><a href="#ui%2Fdialog.defaults">ui/dialog.defaults</a>
@@ -5060,10 +5096,7 @@
                     <li><a href="#ui%2Fdialog.init()">ui/dialog.init()</a>
             		</li>
 
-                    <li><a href="#ui%2Fdialog.setup()">ui/dialog.setup()</a>
-            		</li>
-
-                    <li><a href="#ui%2Fdialog.setuptrigger(trigger)">ui/dialog.setupTrigger(trigger)</a>
+                    <li><a href="#ui%2Fdialog.setuptrigger(trigger%2C-dialogid)">ui/dialog.setupTrigger(trigger, dialogId)</a>
             		</li>
 
                     <li><a href="#ui%2Fdialog.setupdialog(dialog)">ui/dialog.setupDialog(dialog)</a>
@@ -5095,12 +5128,13 @@
 <ul>
 <li><em>static</em>
 <ul>
-<li><a href="#module_ui/dialog.attrs">.attrs</a></li>
+<li><a href="#module_ui/dialog.baseAttribute">.baseAttribute</a></li>
+<li><a href="#module_ui/dialog.initializer">.initializer</a></li>
+<li><a href="#module_ui/dialog.closeAttribute">.closeAttribute</a></li>
 <li><a href="#module_ui/dialog.defaults">.defaults</a></li>
 <li><a href="#module_ui/dialog.setDefaults">.setDefaults(options)</a></li>
 <li><a href="#module_ui/dialog.init">.init()</a></li>
-<li><a href="#module_ui/dialog.setup">.setup()</a></li>
-<li><a href="#module_ui/dialog.setupTrigger">.setupTrigger(trigger)</a></li>
+<li><a href="#module_ui/dialog.setupTrigger">.setupTrigger(trigger, dialogId)</a></li>
 <li><a href="#module_ui/dialog.setupDialog">.setupDialog(dialog)</a></li>
 <li><a href="#module_ui/dialog.getDialogOptions">.getDialogOptions(dialog)</a> ⇒ <code>Object</code></li>
 </ul>
@@ -5114,9 +5148,17 @@
 </ul>
 </li>
 </ul>
-<p><a name="module_ui/dialog.attrs"></a></p>
-<h2 id="ui%2Fdialog.attrs" tabindex="-1">ui/dialog.attrs</h2>
-<p>Default data attributes</p>
+<p><a name="module_ui/dialog.baseAttribute"></a></p>
+<h2 id="ui%2Fdialog.baseattribute" tabindex="-1">ui/dialog.baseAttribute</h2>
+<p>Base attribute for a dialog</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/dialog"><code>ui/dialog</code></a><br>
+<a name="module_ui/dialog.initializer"></a></p>
+<h2 id="ui%2Fdialog.initializer" tabindex="-1">ui/dialog.initializer</h2>
+<p>Dialog Component Initializer</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/dialog"><code>ui/dialog</code></a><br>
+<a name="module_ui/dialog.closeAttribute"></a></p>
+<h2 id="ui%2Fdialog.closeattribute" tabindex="-1">ui/dialog.closeAttribute</h2>
+<p>Attribute for close buttons within a dialog</p>
 <p><strong>Kind</strong>: static constant of <a href="#module_ui/dialog"><code>ui/dialog</code></a><br>
 <a name="module_ui/dialog.defaults"></a></p>
 <h2 id="ui%2Fdialog.defaults" tabindex="-1">ui/dialog.defaults</h2>
@@ -5140,7 +5182,7 @@
 <tr>
 <td>options</td>
 <td><code>Object</code></td>
-<td>Change options used as default for dialogs, can then be overriden by data attribute settings on element</td>
+<td>Change options used as default for dialogs, can then be overridden by data attribute settings on element</td>
 </tr>
 </tbody>
 </table>
@@ -5151,12 +5193,8 @@
 <li>This will only initialize elements once, it is safe to call on page changes</li>
 </ul>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/dialog"><code>ui/dialog</code></a><br>
-<a name="module_ui/dialog.setup"></a></p>
-<h2 id="ui%2Fdialog.setup()" tabindex="-1">ui/dialog.setup()</h2>
-<p>Setup dialogs and triggers</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/dialog"><code>ui/dialog</code></a><br>
 <a name="module_ui/dialog.setupTrigger"></a></p>
-<h2 id="ui%2Fdialog.setuptrigger(trigger)" tabindex="-1">ui/dialog.setupTrigger(trigger)</h2>
+<h2 id="ui%2Fdialog.setuptrigger(trigger%2C-dialogid)" tabindex="-1">ui/dialog.setupTrigger(trigger, dialogId)</h2>
 <p>Setup click handlers on a trigger</p>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/dialog"><code>ui/dialog</code></a></p>
 <table>
@@ -5164,12 +5202,19 @@
 <tr>
 <th>Param</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>trigger</td>
 <td><code>Node</code></td>
+<td>Trigger button element</td>
+</tr>
+<tr>
+<td>dialogId</td>
+<td><code>String</code></td>
+<td>The dialog's id to open</td>
 </tr>
 </tbody>
 </table>

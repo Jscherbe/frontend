@@ -11971,7 +11971,6 @@ components:
 
 .accordion--no-borders {
   border: none;
-  margin-bottom: 4rem;
 }
 .accordion--no-borders[open] > .accordion__summary {
   border-bottom: none;
@@ -12612,13 +12611,14 @@ component:button
 
 .callout {
   position: relative;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--site-color-background-details);
   padding: 1.5rem;
   border: 1px solid var(--site-color-rule-light);
   margin-bottom: 2rem;
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: 6px;
+  padding-left: 4.5rem;
 }
 .callout > :first-child {
   margin-top: 0;
@@ -12629,14 +12629,11 @@ component:button
   display: block;
 }
 .callout::before {
-  background-color: green;
+  background-color: var(--site-color-accent);
   left: -1px;
   top: -1px;
   bottom: -1px;
   width: 3rem;
-}
-.callout::before {
-  content: none;
 }
 
 .callout--outline {
@@ -12645,18 +12642,48 @@ component:button
 
 .callout--info {
   background-color: #e7f6f8;
+  padding-left: 4.5rem;
+}
+.callout--info::before {
+  background-color: blue;
+  width: 3rem;
+}
+.callout--info::before {
+  content: "";
 }
 
 .callout--warning {
-  background-color: #e7f6f8;
+  background-color: #faf3d1;
+  padding-left: 2rem;
+}
+.callout--warning::before {
+  background-color: yellow;
+  width: 0.5rem;
+}
+.callout--warning::before {
+  content: "";
 }
 
 .callout--success {
   background-color: #ecf3ec;
+  padding-left: 1.5rem;
+}
+.callout--success::before {
+  content: none;
 }
 
 .callout--danger {
   background-color: #f4e3db;
+  padding-left: 2rem;
+}
+.callout--danger::before {
+  background-color: red;
+  width: 0.5rem;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.callout--danger::before {
+  content: "";
 }
 
 .card {

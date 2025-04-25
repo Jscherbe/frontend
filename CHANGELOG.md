@@ -1,37 +1,41 @@
 # Change Log
 
-## Version 0.1.0-beta.34 (unreleased)
+## Version 0.1.0-beta.34
 
-- scss/data-grid
-  - add config option "footer-color" to enable users to customize footer text color. Footer still defaults to "color" config option.
-- scss/element
-  - Add mixins for element.cap() and element.cap-appearance() which are used internally but can be used by users to add end caps to an element
-- scss/components/callout 
-  - **Minor visual breaking change for those using cap**
-  - Update how left-cap works (all properties have changed) now accepts common cap settings (see config)
-  - Caps can be set on any side now
-  - Callout styles map (for variations/modifiers of callout) will no longer output "border" configuration
-    - Use "border-width" or "border-color" to affect border appearance
-- scss/button-verbose
-  - **Minor visual breaking change for those using cap**
-  - left cap has changed to cap and accepts common cap options (see config)
-- scss/components/accordion
-  - remove static margin-bottom added to "--no-borders" modifier (was 4rem)
-- scss/utils
-  - Add ensure-map(), units-match(), is-end(), is-side() functions
-- scss/components/slider
-  - remove unused config options "button-background-color" and "button-background-color-hover"
-- js/
-  - ui/ (remove setup functions, using component initializer class now)
-  - ui/slider
+- **scss/**
+  - **element**
+    - Add mixins for element.cap() and element.cap-appearance() which are used internally but can be used by users to add end caps to an element
+  - **utils**
+    - Add ensure-map(), units-match(), is-end(), is-side() functions
+  - **components/callout**
+    - Minor visual breaking change for those using cap
+    - Update how left-cap works (all properties have changed) now accepts common cap settings (see config)
+    - Caps can be set on any side now
+    - Callout styles map (for variations/modifiers of callout) will no longer output "border" configuration
+      - Use "border-width" or "border-color" to affect border appearance
+  - **components/button-verbose**
+    - Minor visual breaking change for those using cap
+    - left cap has changed to cap and accepts common cap options (see config)
+  - **components/accordion**
+    - remove static margin-bottom added to "--no-borders" modifier (was 4rem)
+    - Fix calc for accordion + accordion to be based on border-width setting (was static 1px)
+  - **components/slider**
+    - remove unused config options "button-background-color" and "button-background-color-hover"
+  - **components/accordion**
+    - Remove margin-bottom
+  - **components/data-table**
+    - Add config option "footer-color" to enable users to customize footer text color. Footer still defaults to "color" config option.
+- **js/**
+  - **ui** (remove setup functions, using component initializer class now)
+  - **ui/slider**
     - update createNavButton function to pass whole slide rather than just slide number. Update getNavContent to still print slide number as accessibility text by default.
-  - ui/dialog
+  - **ui/dialog**
     - Added option preventScroll (defaults to true), used only for modal dialogs (ignored if nonModal)
-  - ui/tooltip
+  - **ui/tooltip**
     - Fix missing init attribute
-  - ui/flipcard
+  - **ui/flipcard**
     - Fix typo in method name "setVisiblity" to "setVisibility"
-  - ui/tabs
+  - **ui/tabs**
     - Fix issue with initial click of a tab when using "openWithUrlHash" option
       - Equal height checking was setting hidden attribute but aria-tablist library explicitly checks for hidden="hidden"
 

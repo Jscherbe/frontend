@@ -2529,6 +2529,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5015,6 +5030,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5048,7 +5078,52 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#ui%2Fslider.attrs">ui/slider.attrs</a>
+                    <li><a href="#ui%2Fslider.slider">ui/slider.Slider</a>
+            
+                <ol>
+                    
+                    <li><a href="#slider.defaults">slider.defaults</a>
+            		</li>
+
+                    <li><a href="#slider.handleresize()">slider.handleResize()</a>
+            		</li>
+
+                    <li><a href="#slider.previous()">slider.previous()</a>
+            		</li>
+
+                    <li><a href="#slider.next()">slider.next()</a>
+            		</li>
+
+                    <li><a href="#slider.ensuretransitionends(element%2C-duration%2C-begintransition)">slider.ensureTransitionEnds(element, duration, beginTransition)</a>
+            		</li>
+
+                    <li><a href="#slider.translateto()">slider.translateTo()</a>
+            		</li>
+
+                    <li><a href="#slider.setvisibility()">slider.setVisibility()</a>
+            		</li>
+
+                    <li><a href="#slider.fadeslide()">slider.fadeSlide()</a>
+            		</li>
+
+                    <li><a href="#slider.slidetransition()">slider.slideTransition()</a>
+            		</li>
+
+                    <li><a href="#slider.fadetransition()">slider.fadeTransition()</a>
+            		</li>
+
+                    <li><a href="#slider.notransition()">slider.noTransition()</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#ui%2Fslider.initializer">ui/slider.initializer</a>
+            		</li>
+
+                    <li><a href="#ui%2Fslider.init()">ui/slider.init()</a>
+            		</li>
+
+                    <li><a href="#ui%2Fslider.setupslider(container%2C-options)">ui/slider.setupSlider(container, options)</a>
             		</li>
                 </ol>
             </div>
@@ -5063,10 +5138,156 @@
     <div class="wysiwyg">
       <p><a name="module_ui/slider"></a></p>
 <h1 id="ui%2Fslider" tabindex="-1">ui/slider</h1>
-<p><a name="module_ui/slider.attrs"></a></p>
-<h2 id="ui%2Fslider.attrs" tabindex="-1">ui/slider.attrs</h2>
-<p>Default data attributes</p>
-<p><strong>Kind</strong>: static constant of <a href="#module_ui/slider"><code>ui/slider</code></a></p>
+<ul>
+<li><a href="#module_ui/slider">ui/slider</a>
+<ul>
+<li><a href="#module_ui/slider.Slider">.Slider</a>
+<ul>
+<li><a href="#module_ui/slider.Slider+defaults">.defaults</a></li>
+<li><a href="#module_ui/slider.Slider+handleResize">.handleResize()</a></li>
+<li><a href="#module_ui/slider.Slider+previous">.previous()</a></li>
+<li><a href="#module_ui/slider.Slider+next">.next()</a></li>
+<li><a href="#module_ui/slider.Slider+ensureTransitionEnds">.ensureTransitionEnds(element, duration, beginTransition)</a></li>
+<li><a href="#module_ui/slider.Slider+translateTo">.translateTo()</a></li>
+<li><a href="#module_ui/slider.Slider+setVisibility">.setVisibility()</a></li>
+<li><a href="#module_ui/slider.Slider+fadeSlide">.fadeSlide()</a></li>
+<li><a href="#module_ui/slider.Slider+slideTransition">.slideTransition()</a></li>
+<li><a href="#module_ui/slider.Slider+fadeTransition">.fadeTransition()</a></li>
+<li><a href="#module_ui/slider.Slider+noTransition">.noTransition()</a></li>
+</ul>
+</li>
+<li><a href="#module_ui/slider.initializer">.initializer</a></li>
+<li><a href="#module_ui/slider.init">.init()</a></li>
+<li><a href="#module_ui/slider.setupSlider">.setupSlider(container, options)</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_ui/slider.Slider"></a></p>
+<h2 id="ui%2Fslider.slider" tabindex="-1">ui/slider.Slider</h2>
+<p>Class that controls slider</p>
+<p><strong>Kind</strong>: static class of <a href="#module_ui/slider"><code>ui/slider</code></a></p>
+<ul>
+<li><a href="#module_ui/slider.Slider">.Slider</a>
+<ul>
+<li><a href="#module_ui/slider.Slider+defaults">.defaults</a></li>
+<li><a href="#module_ui/slider.Slider+handleResize">.handleResize()</a></li>
+<li><a href="#module_ui/slider.Slider+previous">.previous()</a></li>
+<li><a href="#module_ui/slider.Slider+next">.next()</a></li>
+<li><a href="#module_ui/slider.Slider+ensureTransitionEnds">.ensureTransitionEnds(element, duration, beginTransition)</a></li>
+<li><a href="#module_ui/slider.Slider+translateTo">.translateTo()</a></li>
+<li><a href="#module_ui/slider.Slider+setVisibility">.setVisibility()</a></li>
+<li><a href="#module_ui/slider.Slider+fadeSlide">.fadeSlide()</a></li>
+<li><a href="#module_ui/slider.Slider+slideTransition">.slideTransition()</a></li>
+<li><a href="#module_ui/slider.Slider+fadeTransition">.fadeTransition()</a></li>
+<li><a href="#module_ui/slider.Slider+noTransition">.noTransition()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="module_ui/slider.Slider+defaults"></a></p>
+<h3 id="slider.defaults" tabindex="-1">slider.defaults</h3>
+<p>Default options for slider</p>
+<p><strong>Kind</strong>: instance property of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+handleResize"></a></p>
+<h3 id="slider.handleresize()" tabindex="-1">slider.handleResize()</h3>
+<p>Sliding mechanism needs translate updated on resize</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+previous"></a></p>
+<h3 id="slider.previous()" tabindex="-1">slider.previous()</h3>
+<p>Goto to the previous slide</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+next"></a></p>
+<h3 id="slider.next()" tabindex="-1">slider.next()</h3>
+<p>Goto to the next slide</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+ensureTransitionEnds"></a></p>
+<h3 id="slider.ensuretransitionends(element%2C-duration%2C-begintransition)" tabindex="-1">slider.ensureTransitionEnds(element, duration, beginTransition)</h3>
+<p>Makes sure that no matter what the callback is called if transition event
+doesn't start or fails to finish/cancel</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>element</td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td>duration</td>
+<td><code>number</code></td>
+<td>Duration to wait for complete</td>
+</tr>
+<tr>
+<td>beginTransition</td>
+<td><code>function</code></td>
+<td>Css changes to begin/start transtion</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/slider.Slider+translateTo"></a></p>
+<h3 id="slider.translateto()" tabindex="-1">slider.translateTo()</h3>
+<p>Translate the track to X</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+setVisibility"></a></p>
+<h3 id="slider.setvisibility()" tabindex="-1">slider.setVisibility()</h3>
+<p>Show's a specifc slide and hides others, except when passing true to show all
+then all slides will visible</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+fadeSlide"></a></p>
+<h3 id="slider.fadeslide()" tabindex="-1">slider.fadeSlide()</h3>
+<p>Perform a fade on a single slide</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+slideTransition"></a></p>
+<h3 id="slider.slidetransition()" tabindex="-1">slider.slideTransition()</h3>
+<p>Handler for the entire slide transtion</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+fadeTransition"></a></p>
+<h3 id="slider.fadetransition()" tabindex="-1">slider.fadeTransition()</h3>
+<p>Handler for the entire fade transtion</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.Slider+noTransition"></a></p>
+<h3 id="slider.notransition()" tabindex="-1">slider.noTransition()</h3>
+<p>Handler for the entire NO transtion</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/slider.Slider"><code>Slider</code></a><br>
+<a name="module_ui/slider.initializer"></a></p>
+<h2 id="ui%2Fslider.initializer" tabindex="-1">ui/slider.initializer</h2>
+<p>Slider Component Initializer</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/slider"><code>ui/slider</code></a><br>
+<a name="module_ui/slider.init"></a></p>
+<h2 id="ui%2Fslider.init()" tabindex="-1">ui/slider.init()</h2>
+<p>Initialize all sliders based on data attribute selectors</p>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/slider"><code>ui/slider</code></a><br>
+<a name="module_ui/slider.setupSlider"></a></p>
+<h2 id="ui%2Fslider.setupslider(container%2C-options)" tabindex="-1">ui/slider.setupSlider(container, options)</h2>
+<p>Setup single slider instance from querying via data attribute selectors</p>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/slider"><code>ui/slider</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>container</td>
+<td><code>Node</code></td>
+<td>The slide container to query children from</td>
+</tr>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>Options for slider class</td>
+</tr>
+</tbody>
+</table>
 
     </div>
   </div>

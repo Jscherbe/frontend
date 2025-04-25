@@ -127,7 +127,7 @@ export function buildModal(content, options) {
     config.hasResizer = true;
   }
   if (config.debug) {
-    console.log(config, content);
+    initializer.log(config, content);
   }
   if (!content.id) {
     throw new Error("Missing ID on modal");

@@ -1,4 +1,10 @@
 /**
+ * Converts a data attribute name to its corresponding dataset property name.
+ * @param {string} dataAttribute - The data attribute name (e.g., "data-ulu-dialog").
+ * @returns {string} - The dataset property name (e.g., "uluDialog").
+ */
+export function dataAttributeToDatasetKey(attribute: any): string;
+/**
  * Get an elements JSON dataset value
  * @param {Node} element
  * @param {String} key key in dataset object for element

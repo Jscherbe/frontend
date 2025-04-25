@@ -3,12 +3,9 @@
  */
 export function init(): void;
 /**
- * Query all popovers on current page and set them up
- * - Use this manually if needed
- * - Won't setup a popover more than once
+ * Tooltip Component Initializer
  */
-export function setup(): void;
-export function setupTrigger(trigger: any): Tooltip;
+export const initializer: ComponentInitializer;
 /**
  * Tooltip
  * - Provides basic tooltip functionality
@@ -95,4 +92,5 @@ export class Tooltip {
     show(event: any): void;
     hide(event: any): void;
 }
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=tooltip.d.ts.map

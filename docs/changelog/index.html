@@ -2529,6 +2529,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5015,6 +5030,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5048,7 +5078,7 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#version-0.1.0-beta.34-(unreleased)">Version 0.1.0-beta.34 (unreleased)</a>
+                    <li><a href="#version-0.1.0-beta.34">Version 0.1.0-beta.34</a>
             		</li>
 
                     <li><a href="#version-0.1.0-beta.33">Version 0.1.0-beta.33</a>
@@ -5207,16 +5237,23 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
-<h2 id="version-0.1.0-beta.34-(unreleased)" tabindex="-1">Version 0.1.0-beta.34 (unreleased)</h2>
+<h2 id="version-0.1.0-beta.34" tabindex="-1">Version 0.1.0-beta.34</h2>
 <ul>
-<li>scss/element
+<li><strong>scss/</strong>
+<ul>
+<li><strong>element</strong>
 <ul>
 <li>Add mixins for element.cap() and element.cap-appearance() which are used internally but can be used by users to add end caps to an element</li>
 </ul>
 </li>
-<li>scss/components/callout
+<li><strong>utils</strong>
 <ul>
-<li><strong>Minor visual breaking change for those using cap</strong></li>
+<li>Add ensure-map(), units-match(), is-end(), is-side() functions</li>
+</ul>
+</li>
+<li><strong>components/callout</strong>
+<ul>
+<li>Minor visual breaking change for those using cap</li>
 <li>Update how left-cap works (all properties have changed) now accepts common cap settings (see config)</li>
 <li>Caps can be set on any side now</li>
 <li>Callout styles map (for variations/modifiers of callout) will no longer output &quot;border&quot; configuration
@@ -5226,20 +5263,67 @@
 </li>
 </ul>
 </li>
-<li>scss/button-verbose
+<li><strong>components/button-verbose</strong>
 <ul>
-<li><strong>Minor visual breaking change for those using cap</strong></li>
+<li>Minor visual breaking change for those using cap</li>
 <li>left cap has changed to cap and accepts common cap options (see config)</li>
 </ul>
 </li>
-<li>scss/utils
+<li><strong>components/accordion</strong>
 <ul>
-<li>Add ensure-map(), units-match(), is-end(), is-side() functions</li>
+<li>remove static margin-bottom added to &quot;--no-borders&quot; modifier (was 4rem)</li>
+<li>Fix calc for accordion + accordion to be based on border-width setting (was static 1px)</li>
 </ul>
 </li>
-<li>js/ui/tooltip
+<li><strong>components/slider</strong>
+<ul>
+<li>remove unused config options &quot;button-background-color&quot; and &quot;button-background-color-hover&quot;</li>
+</ul>
+</li>
+<li><strong>components/accordion</strong>
+<ul>
+<li>Remove margin-bottom</li>
+</ul>
+</li>
+<li><strong>components/data-table</strong>
+<ul>
+<li>Add config option &quot;footer-color&quot; to enable users to customize footer text color. Footer still defaults to &quot;color&quot; config option.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>js/</strong>
+<ul>
+<li><strong>ui</strong> (remove setup functions, using component initializer class now)</li>
+<li><strong>ui/slider</strong>
+<ul>
+<li>update createNavButton function to pass whole slide rather than just slide number. Update getNavContent to still print slide number as accessibility text by default.</li>
+</ul>
+</li>
+<li><strong>ui/dialog</strong>
+<ul>
+<li>Added option preventScroll (defaults to true), used only for modal dialogs (ignored if nonModal)</li>
+</ul>
+</li>
+<li><strong>ui/tooltip</strong>
 <ul>
 <li>Fix missing init attribute</li>
+</ul>
+</li>
+<li><strong>ui/flipcard</strong>
+<ul>
+<li>Fix typo in method name &quot;setVisiblity&quot; to &quot;setVisibility&quot;</li>
+</ul>
+</li>
+<li><strong>ui/tabs</strong>
+<ul>
+<li>Fix issue with initial click of a tab when using &quot;openWithUrlHash&quot; option
+<ul>
+<li>Equal height checking was setting hidden attribute but aria-tablist library explicitly checks for hidden=&quot;hidden&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

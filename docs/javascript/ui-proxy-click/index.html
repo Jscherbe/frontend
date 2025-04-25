@@ -2529,6 +2529,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5015,6 +5030,21 @@
           
         </li>
       
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-system/">
+          
+    
+    <span class="nav-tree__text">
+      utils/system
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
       </ul>
     
           </details>
@@ -5048,10 +5078,22 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#ui%2Fproxy-click.initializer">ui/proxy-click.initializer</a>
+            		</li>
+
+                    <li><a href="#ui%2Fproxy-click.defaults">ui/proxy-click.defaults</a>
+            		</li>
+
                     <li><a href="#ui%2Fproxy-click.setdefaults(options)">ui/proxy-click.setDefaults(options)</a>
             		</li>
 
                     <li><a href="#ui%2Fproxy-click.init()">ui/proxy-click.init()</a>
+            		</li>
+
+                    <li><a href="#ui%2Fproxy-click.setupproxy(proxy%2C-useroptions)">ui/proxy-click.setupProxy(proxy, userOptions)</a>
+            		</li>
+
+                    <li><a href="#ui%2Fproxy-click.attachhandlers(proxy%2C-child%2C-config)">ui/proxy-click.attachHandlers(proxy, child, config)</a>
             		</li>
                 </ol>
             </div>
@@ -5066,15 +5108,33 @@
     <div class="wysiwyg">
       <p><a name="module_ui/proxy-click"></a></p>
 <h1 id="ui%2Fproxy-click" tabindex="-1">ui/proxy-click</h1>
+<p>Used for cards and things that look like they should be clickable
+even though the link in their content is the only clickable element. This way
+the entire cards content doesn't need to be in a link (which isn't accessible).</p>
+<p>The script allows only for clicks with a duration of 250ms to avoid conflict
+with a user selecting text. Works with either links or buttons because it just
+uses the elements .click(). Uses data-attributes for selection by default.</p>
 <ul>
 <li><a href="#module_ui/proxy-click">ui/proxy-click</a>
 <ul>
+<li><a href="#module_ui/proxy-click.initializer">.initializer</a></li>
+<li><a href="#module_ui/proxy-click.defaults">.defaults</a></li>
 <li><a href="#module_ui/proxy-click.setDefaults">.setDefaults(options)</a></li>
 <li><a href="#module_ui/proxy-click.init">.init()</a></li>
+<li><a href="#module_ui/proxy-click.setupProxy">.setupProxy(proxy, userOptions)</a></li>
+<li><a href="#module_ui/proxy-click.attachHandlers">.attachHandlers(proxy, child, config)</a></li>
 </ul>
 </li>
 </ul>
-<p><a name="module_ui/proxy-click.setDefaults"></a></p>
+<p><a name="module_ui/proxy-click.initializer"></a></p>
+<h2 id="ui%2Fproxy-click.initializer" tabindex="-1">ui/proxy-click.initializer</h2>
+<p>Proxy Click Component Initializer</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/proxy-click"><code>ui/proxy-click</code></a><br>
+<a name="module_ui/proxy-click.defaults"></a></p>
+<h2 id="ui%2Fproxy-click.defaults" tabindex="-1">ui/proxy-click.defaults</h2>
+<p>Default options</p>
+<p><strong>Kind</strong>: static constant of <a href="#module_ui/proxy-click"><code>ui/proxy-click</code></a><br>
+<a name="module_ui/proxy-click.setDefaults"></a></p>
 <h2 id="ui%2Fproxy-click.setdefaults(options)" tabindex="-1">ui/proxy-click.setDefaults(options)</h2>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/proxy-click"><code>ui/proxy-click</code></a></p>
 <table>
@@ -5089,7 +5149,7 @@
 <tr>
 <td>options</td>
 <td><code>Object</code></td>
-<td>Change options used as default for dialogs, can then be overriden by data attribute settings on element</td>
+<td>Change options used as default for dialogs, can then be overridden by data attribute settings on element</td>
 </tr>
 </tbody>
 </table>
@@ -5099,7 +5159,62 @@
 <ul>
 <li>This will only initialize elements once, it is safe to call on page changes</li>
 </ul>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/proxy-click"><code>ui/proxy-click</code></a><br>
+<a name="module_ui/proxy-click.setupProxy"></a></p>
+<h2 id="ui%2Fproxy-click.setupproxy(proxy%2C-useroptions)" tabindex="-1">ui/proxy-click.setupProxy(proxy, userOptions)</h2>
+<p>Setup a single proxy click</p>
 <p><strong>Kind</strong>: static method of <a href="#module_ui/proxy-click"><code>ui/proxy-click</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proxy</td>
+<td><code>Node</code></td>
+<td>The container who's click should proxy the click of inner element with options.selector (defaults to [data-ulu-proxy-click-source])</td>
+</tr>
+<tr>
+<td>userOptions</td>
+<td><code>Object</code></td>
+<td>Options to override defaults</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/proxy-click.attachHandlers"></a></p>
+<h2 id="ui%2Fproxy-click.attachhandlers(proxy%2C-child%2C-config)" tabindex="-1">ui/proxy-click.attachHandlers(proxy, child, config)</h2>
+<p>Main function for attaching behaviors that enable proxy click</p>
+<p><strong>Kind</strong>: static method of <a href="#module_ui/proxy-click"><code>ui/proxy-click</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>proxy</td>
+<td><code>Node</code></td>
+<td>The container who's click should proxy the click of inner element with options.selector (defaults to [data-ulu-proxy-click-source])</td>
+</tr>
+<tr>
+<td>child</td>
+<td><code>Node</code></td>
+<td>The element who is being proxied and will get clicked if the proxy is clicked (as long as not an interactive element within proxy)</td>
+</tr>
+<tr>
+<td>config</td>
+<td><code>Object</code></td>
+<td>Merged/final options object</td>
+</tr>
+</tbody>
+</table>
 
     </div>
   </div>

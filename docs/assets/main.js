@@ -73,15 +73,15 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
-const defaults$c = {
+const defaults$b = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
   iconClassPrevious: "css-icon  css-icon--angle-left",
   iconClassNext: "css-icon  css-icon--angle-right"
 };
-let currentSettings = { ...defaults$c };
+let currentSettings = { ...defaults$b };
 function getDefaultSettings() {
-  return { ...defaults$c };
+  return { ...defaults$b };
 }
 function updateSettings(changes) {
   Object.assign(currentSettings, changes);
@@ -194,6 +194,9 @@ const index$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   getName: getName$1
 }, Symbol.toStringTag, { value: "Module" }));
 const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
+function dataAttributeToDatasetKey(attribute) {
+  return attribute.replace(/^data-/, "").replace(/-([a-z])/g, (_match, letter) => letter.toUpperCase());
+}
 function getDatasetJson(element, key2) {
   const passed = element.dataset[key2];
   try {
@@ -248,7 +251,7 @@ function setPositionClasses(parent, classes = {
     });
   });
 }
-function getElement(target, context = document) {
+function getElement$1(target, context = document) {
   if (typeof target === "string") {
     return context.querySelector(target);
   } else if (target instanceof Element) {
@@ -289,9 +292,10 @@ function addScrollbarProperty(element = document.body, container2 = window, prop
 const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   addScrollbarProperty,
+  dataAttributeToDatasetKey,
   getDatasetJson,
   getDatasetOptionalJson,
-  getElement,
+  getElement: getElement$1,
   getElements,
   regexJsonString,
   resolveClasses,
@@ -345,7 +349,7 @@ function logWarning(context, ...messages) {
     output("warn", context, messages);
   }
 }
-function logError$1(context, ...messages) {
+function logError(context, ...messages) {
   if (config$1.errorsAlways || allow(context)) {
     output("error", context, messages);
   }
@@ -353,7 +357,7 @@ function logError$1(context, ...messages) {
 const classLogger = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   log,
-  logError: logError$1,
+  logError,
   logWarning,
   set
 }, Symbol.toStringTag, { value: "Module" }));
@@ -427,7 +431,7 @@ const _BreakpointManager = class _BreakpointManager {
   update() {
     const name = this.getBreakpoint();
     if (!name) {
-      logError$1(this, "Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!");
+      logError(this, "Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!");
       return;
     }
     if (name === this.active) return;
@@ -465,7 +469,7 @@ const _BreakpointManager = class _BreakpointManager {
   at(name) {
     const bp = this.breakpoints[name];
     if (!name) {
-      logError$1(this, "Unable to find breakpoint for:", bp);
+      logError(this, "Unable to find breakpoint for:", bp);
     }
     return bp;
   }
@@ -631,7 +635,7 @@ const _Collapsible = class _Collapsible {
   constructor(elements, config2) {
     const { trigger, content } = elements;
     if (!trigger || !content) {
-      logError$1(this, "missing required elements (trigger or content)");
+      logError(this, "missing required elements (trigger or content)");
       return;
     }
     const options = Object.assign({}, _Collapsible.defaults, config2);
@@ -806,6 +810,147 @@ const collapsible = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   __proto__: null,
   Collapsible
 }, Symbol.toStringTag, { value: "Module" }));
+function hasRequiredProps(required) {
+  return (obj) => {
+    return required.every((prop) => {
+      return Object.prototype.hasOwnProperty.call(obj, prop);
+    });
+  };
+}
+const _ComponentInitializer = class _ComponentInitializer {
+  /**
+   * Create a new instance of ComponentInitializer
+   * @param {Object} options Options for configuring the component initializer.
+   * @param {String} options.type Type of component (used for logs).
+   * @param {String} options.baseAttribute Prefix and base attribute name (used for base attribute and further element attribute names).
+   */
+  constructor(options) {
+    if (!_ComponentInitializer.hasRequiredOptions(options)) {
+      throw new Error(
+        `Missing a required options: ${_ComponentInitializer.requiredOptions.join(", ")}`
+      );
+    }
+    this.options = Object.assign({}, _ComponentInitializer.defaults, options);
+    this.logTitle = `ULU: ${this.options.type}:
+`;
+  }
+  /**
+   * Initializes the component based on the provided configuration.
+   * @param {Object} config The initialization configuration.
+   * @param {Function} config.setup The setup function to call for each element.
+   * @param {String} config.key [null] The optional key to use with attribute selector.
+   * @param {Boolean} config.withData [null] Whether to retrieve element data.
+   * @param {Array} config.events [null] Ulu events that should call setup when dispatched (ie. pageModified, pageResized)
+   * @param {Boolean} config.onPageResized [null] Whether to bind event listener for page resize end
+   * @param {HTMLElement} config.context [document] The context to query within.
+   */
+  init(config2) {
+    var _a;
+    this.setupElements(config2);
+    if ((_a = config2.events) == null ? void 0 : _a.length) {
+      config2.events.forEach((name) => {
+        document.addEventListener(getName$1(name), () => this.setupElements(config2));
+      });
+    }
+  }
+  /**
+   * Processes the elements based on the provided configuration.
+   * @param {object} config The initialization configuration.
+   * @param {function} config.setup The setup function to call for each element.
+   * @param {string} config.key The optional key to use with attribute selector.
+   * @param {boolean} config.withData [false] Whether to retrieve element data.
+   * @param {boolean} config.onPageModified [true] Whether to bind event listener for page modifications.
+   * @param {HTMLElement} config.context [document] The context to query within.
+   */
+  setupElements(config2) {
+    const { setup: setup2, key: key2, withData, context } = config2;
+    const elementsWithData = this.queryAllInitial(key2, withData, context);
+    elementsWithData.forEach((elementWithData) => setup2(elementWithData, this));
+  }
+  /**
+   * Get an attribute name
+   * @param {String} key Optional key, if no key will return baseAttribute if key will return key added to base
+   * @returns {String} String like data-ulu-dialog or data-ulu-dialog-element
+   */
+  getAttribute(key2) {
+    const { baseAttribute: baseAttribute2 } = this.options;
+    return key2 ? `${baseAttribute2}-${key2}` : `${baseAttribute2}`;
+  }
+  /**
+   * Create an attribute selector
+   * @param {String} key Optional key (see getAttribute)
+   */
+  attributeSelector(key2) {
+    return `[${this.getAttribute(key2)}]`;
+  }
+  /**
+   * Create an attribute selector for initial
+   * @return {String}
+   */
+  attributeSelectorInitial(key2) {
+    return `${this.attributeSelector(key2)}:not([${this.getAttribute("init")}])`;
+  }
+  /**
+   * Queries all main elements of a component that have not been initialized and extracts their data attributes.
+   * @param {HTMLElement} context The context to query within.
+   * @param {Boolean} withData Include dataset from element (as optional JSON)
+   * @param {Node} context Element to query elements from
+   * @returns {Array<{element: HTMLElement, data: object, initialize: Function}>} An array of objects containing the elements, their data, and convenience function initialize() which when called will set the init attribute on the element
+   */
+  queryAllInitial(key2, withData, context = document) {
+    const elements = [...context.querySelectorAll(this.attributeSelectorInitial(key2))];
+    return elements.map((element) => ({
+      element,
+      data: withData ? this.getData(element, key2) : null,
+      initialize: () => this.initializeElement(element)
+    }));
+  }
+  /**
+   * Sets the init attribute on an element, marking it as initialized.
+   * @param {HTMLElement} element The element to initialize.
+   */
+  initializeElement(element) {
+    element.setAttribute(this.getAttribute("init"), "");
+  }
+  /**
+   * Get an elements dataset value as JSON or other value
+   * @return {*} The value of the dataset, if JSON will return object else will return string value or undefined
+   */
+  getData(element, key2) {
+    const datasetKey = dataAttributeToDatasetKey(this.getAttribute(key2));
+    return getDatasetOptionalJson(element, datasetKey);
+  }
+  /**
+   * Will output namespaced console logs for the given initializer
+   */
+  log(...msgs) {
+    console.log(this.logTitle, ...msgs);
+  }
+  /**
+   * Will output namespaced console warnings for the given initializer
+   */
+  warn(...msgs) {
+    console.warn(this.logTitle, ...msgs);
+  }
+  /**
+   * Will output namespaced console error for the given initializer
+   */
+  logError(...msgs) {
+    console.error(this.logTitle, ...msgs);
+  }
+};
+__publicField(_ComponentInitializer, "defaults", {
+  type: null,
+  baseAttribute: null
+});
+__publicField(_ComponentInitializer, "requiredOptions", [
+  "type",
+  "baseAttribute"
+]);
+__publicField(_ComponentInitializer, "hasRequiredOptions", hasRequiredProps(
+  _ComponentInitializer.requiredOptions
+));
+let ComponentInitializer = _ComponentInitializer;
 const _Resizer = class _Resizer {
   /**
    * 
@@ -818,7 +963,7 @@ const _Resizer = class _Resizer {
    */
   constructor(container2, control, options) {
     if (!control || !container2) {
-      logError$1(this, "Missing required elements 'control' or 'container'");
+      logError(this, "Missing required elements 'control' or 'container'");
     }
     this.options = Object.assign({}, _Resizer.defaults, options);
     this.container = container2;
@@ -891,16 +1036,10 @@ const pauseYoutubeVideo = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.d
   pauseVideos: pauseVideos$1,
   prepVideos: prepVideos$1
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$e = {
-  init: "data-ulu-dialog-init",
-  dialog: "data-ulu-dialog",
-  trigger: "data-ulu-dialog-trigger",
-  close: "data-ulu-dialog-close"
-};
-const attrSelector$e = (key2) => `[${attrs$e[key2]}]`;
-const attrSelectorInitial$a = (key2) => `${attrSelector$e(key2)}:not([${attrs$e.init}])`;
-const queryAllInitial$4 = (key2) => document.querySelectorAll(attrSelectorInitial$a(key2));
-const defaults$b = {
+const baseAttribute = "data-ulu-dialog";
+const initializer$d = new ComponentInitializer({ type: "dialog", baseAttribute });
+const closeAttribute = initializer$d.getAttribute("close");
+const defaults$a = {
   /**
    * Use non-modal interface for dialog
    */
@@ -917,31 +1056,42 @@ const defaults$b = {
   /**
    * Whether or not to pause videos when dialog closes (currently just youtube and native)
    */
-  pauseVideos: true
+  pauseVideos: true,
+  /**
+   * When open and not non-modal, the body is prevented from scrolling (defaults to true).
+   */
+  preventScroll: true
 };
-let currentDefaults$3 = { ...defaults$b };
+let currentDefaults$3 = { ...defaults$a };
 function setDefaults$3(options) {
   currentDefaults$3 = Object.assign({}, currentDefaults$3, options);
 }
 function init$h() {
-  document.addEventListener(getName$1("pageModified"), setup$e);
-  setup$e();
+  initializer$d.init({
+    events: ["pageModified"],
+    withData: true,
+    setup({ element, initialize, data }) {
+      setupDialog(element, data);
+      initialize();
+    }
+  });
+  initializer$d.init({
+    key: "trigger",
+    events: ["pageModified"],
+    withData: true,
+    setup({ element, initialize, data: dialogId }) {
+      setupTrigger$1(element, dialogId);
+      initialize();
+    }
+  });
 }
-function setup$e() {
-  const dialogs = queryAllInitial$4("dialog");
-  dialogs.forEach(setupDialog);
-  const triggers = queryAllInitial$4("trigger");
-  triggers.forEach(setupTrigger$2);
-}
-function setupTrigger$2(trigger) {
+function setupTrigger$1(trigger, dialogId) {
   trigger.addEventListener("click", handleTrigger);
-  trigger.setAttribute(attrs$e.init, "");
   function handleTrigger() {
     var _a;
-    const id2 = trigger.dataset.uluDialogTrigger;
-    const dialog2 = document.getElementById(id2);
+    const dialog2 = document.getElementById(dialogId);
     if (!dialog2) {
-      console.error("Could not locate dialog (id)", id2);
+      console.error("Could not locate dialog (id)", dialogId);
       return;
     }
     if (((_a = dialog2 == null ? void 0 : dialog2.tagName) == null ? void 0 : _a.toLowerCase()) !== "dialog") {
@@ -952,19 +1102,27 @@ function setupTrigger$2(trigger) {
     dialog2[options.nonModal ? "show" : "showModal"]();
   }
 }
-function setupDialog(dialog2) {
-  const options = getDialogOptions(dialog2);
+function setupDialog(dialog2, userOptions) {
+  const options = Object.assign({}, currentDefaults$3, userOptions);
+  const body = document.body;
   dialog2.addEventListener("click", handleClicks);
-  dialog2.setAttribute(attrs$e.init, "");
   if (options.documentEnd) {
-    document.body.appendChild(dialog2);
+    body.appendChild(dialog2);
   }
   if (options.pauseVideos) {
     prepVideos(dialog2);
   }
+  if (!options.nonModal && options.preventScroll) {
+    let overflowValue = body.style.overflow;
+    dialog2.addEventListener("toggle", (event) => {
+      const isOpen = event.newState === "open";
+      if (isOpen) overflowValue = body.style.overflow;
+      body.style.overflow = isOpen ? "hidden" : overflowValue;
+    });
+  }
   function handleClicks(event) {
     const { target } = event;
-    const closeFromButton = target.closest("[data-ulu-dialog-close]");
+    const closeFromButton = target.closest(initializer$d.attributeSelector("close"));
     let closeFromOutside = options.clickOutsideCloses && target === dialog2 && wasClickOutside(dialog2, event);
     if (closeFromOutside || closeFromButton) {
       if (options.pauseVideos) {
@@ -975,8 +1133,7 @@ function setupDialog(dialog2) {
   }
 }
 function getDialogOptions(dialog2) {
-  const options = getDatasetJson(dialog2, "uluDialog");
-  return Object.assign({}, currentDefaults$3, options);
+  return Object.assign({}, currentDefaults$3, initializer$d.getData(dialog2));
 }
 function prepVideos(dialog2) {
   prepVideos$1(dialog2);
@@ -988,22 +1145,21 @@ function pauseVideos(dialog2) {
 }
 const dialog = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$e,
-  defaults: defaults$b,
+  baseAttribute,
+  closeAttribute,
+  defaults: defaults$a,
   getDialogOptions,
   init: init$h,
+  initializer: initializer$d,
   setDefaults: setDefaults$3,
-  setup: setup$e,
   setupDialog,
-  setupTrigger: setupTrigger$2
+  setupTrigger: setupTrigger$1
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$d = {
-  builder: "data-ulu-modal-builder",
-  body: "data-ulu-modal-builder-body",
-  resizer: "data-ulu-modal-builder-resizer"
-};
-const attrSelector$d = (key2) => `[${attrs$d[key2]}]`;
-const defaults$a = {
+const initializer$c = new ComponentInitializer({
+  type: "modal-builder",
+  baseAttribute: "data-ulu-modal-builder"
+});
+const defaults$9 = {
   title: null,
   titleIcon: null,
   nonModal: false,
@@ -1051,35 +1207,31 @@ const defaults$a = {
               ${config2.titleIcon ? `<span class="modal__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="modal__title-text">${config2.title}</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${attrs$e.close} autofocus>
+            <button class="modal__close" aria-label="Close modal" ${closeAttribute} autofocus>
               ${config2.templateCloseIcon(config2)}
             </button>
           </header>
         ` : ""}
-        <div class="modal__body" ${attrs$d.body}></div>
-        ${config2.hasResizer ? `<div class="modal__resizer" ${attrs$d.resizer}>
+        <div class="modal__body" ${initializer$c.getAttribute("body")}></div>
+        ${config2.hasResizer ? `<div class="modal__resizer" ${initializer$c.getAttribute("resizer")}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
       </div>
     `;
   }
 };
-let currentDefaults$2 = { ...defaults$a };
+let currentDefaults$2 = { ...defaults$9 };
 function setDefaults$2(options) {
   currentDefaults$2 = Object.assign({}, currentDefaults$2, options);
 }
 function init$g() {
-  document.addEventListener(getName$1("pageModified"), setup$d);
-  setup$d();
-}
-function setup$d() {
-  const builders = document.querySelectorAll(attrSelector$d("builder"));
-  builders.forEach(setupBuilder);
-}
-function setupBuilder(element) {
-  const options = getDatasetJson(element, "uluModalBuilder");
-  element.removeAttribute(attrs$d.builder);
-  buildModal(element, options);
+  initializer$c.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data }) {
+      buildModal(element, data);
+    }
+  });
 }
 function buildModal(content, options) {
   const config2 = Object.assign({}, currentDefaults$2, options);
@@ -1087,23 +1239,23 @@ function buildModal(content, options) {
     config2.hasResizer = true;
   }
   if (config2.debug) {
-    console.log(config2, content);
+    initializer$c.log(config2, content);
   }
   if (!content.id) {
     throw new Error("Missing ID on modal");
   }
   const markup = config2.template(content.id, config2);
   const modal = createElementFromHtml(markup.trim());
-  const selectChild = (key2) => modal.querySelector(attrSelector$d(key2));
+  const selectChild = (key2) => modal.querySelector(initializer$c.attributeSelector(key2));
   const body = selectChild("body");
   const resizer2 = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config2);
   content.removeAttribute("id");
   content.removeAttribute("hidden");
-  content.removeAttribute(attrs$d.builder);
+  content.removeAttribute(initializer$c.getAttribute());
   content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
-  modal.setAttribute(attrs$e.dialog, JSON.stringify(dialogOptions));
+  modal.setAttribute(baseAttribute, JSON.stringify(dialogOptions));
   if (config2.hasResizer) {
     new Resizer(modal, resizer2, {
       fromLeft: config2.position === "right"
@@ -1122,7 +1274,7 @@ function buildModal(content, options) {
   return { modal };
 }
 function separateDialogOptions(config2) {
-  return Object.keys(defaults$b).reduce((acc, key2) => {
+  return Object.keys(defaults$a).reduce((acc, key2) => {
     if (key2 in config2) {
       acc[key2] = config2[key2];
     }
@@ -1132,36 +1284,51 @@ function separateDialogOptions(config2) {
 const modalBuilder = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   buildModal,
-  defaults: defaults$a,
+  defaults: defaults$9,
   init: init$g,
-  setDefaults: setDefaults$2,
-  setup: setup$d,
-  setupBuilder
+  initializer: initializer$c,
+  setDefaults: setDefaults$2
 }, Symbol.toStringTag, { value: "Module" }));
 const linebreaks = /(\r\n|\n|\r)/gm;
 const multiSpace = /\s+/g;
 function trimWhitespace(string) {
   return string.replace(linebreaks, "").replace(multiSpace, " ").trim();
 }
+const initializer$b = new ComponentInitializer({
+  type: "flipcard",
+  baseAttribute: "data-ulu-flipcard"
+});
+function init$f() {
+  initializer$b.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      const options = Object.assign({}, data);
+      const front = element.querySelector(initializer$b.attributeSelector("front"));
+      const back = element.querySelector(initializer$b.attributeSelector("back"));
+      new Flipcard(element, front, back, options);
+      initialize();
+    }
+  });
+}
 const _Flipcard = class _Flipcard {
-  constructor(container2, front, back, config2, debug = false) {
+  constructor(container2, front, back, config2) {
     if (!back) {
-      logError$1(this, "Missing an element (container, front, back)");
+      logError(this, "Missing an element (container, front, back)");
     }
     this.options = Object.assign({}, _Flipcard.defaults, config2);
     const { namespace } = this.options;
     _Flipcard.instances.push(this);
-    this.debug = debug;
     this.elements = { container: container2, front, back };
     this.isOpen = false;
     this.uid = `${namespace}-id-${_Flipcard.instances.length}`;
     this.stateAttr = `data-${namespace}-state`.toLowerCase();
     this.setup();
-    this.setVisiblity(false);
+    this.setVisibility(false);
     log(this, this);
   }
   toggle() {
-    this.setVisiblity(!this.isOpen);
+    this.setVisibility(!this.isOpen);
   }
   setup() {
     const { uid } = this;
@@ -1217,7 +1384,7 @@ const _Flipcard = class _Flipcard {
       <span class="hidden-visually">Show More Information</span>
     `;
   }
-  setVisiblity(visible2) {
+  setVisibility(visible2) {
     const { back, container: container2, control } = this.elements;
     const state = visible2 ? "open" : "closed";
     back.style.zIndex = visible2 ? "10" : "1";
@@ -1247,6 +1414,9 @@ const _Flipcard = class _Flipcard {
   }
 };
 __publicField(_Flipcard, "instances", []);
+/**
+ * Default options for Flipcard
+ */
 __publicField(_Flipcard, "defaults", {
   namespace: "Flipcard",
   proxyClick: {
@@ -1259,50 +1429,29 @@ __publicField(_Flipcard, "defaults", {
   }
 });
 let Flipcard = _Flipcard;
-const attrs$c = {
-  init: "data-ulu-flipcard-init",
-  flipcard: "data-ulu-flipcard",
-  front: "data-ulu-flipcard-front",
-  back: "data-ulu-flipcard-back"
-};
-const attrSelector$c = (key2) => `[${attrs$c[key2]}]`;
-const attrSelectorInitial$9 = (key2) => `${attrSelector$c(key2)}:not([${attrs$c.init}])`;
-const instances$4 = [];
-function init$f() {
-  document.addEventListener(getName$1("pageModified"), setup$c);
-  setup$c();
-}
-function setup$c() {
-  const builders = document.querySelectorAll(attrSelectorInitial$9("flipcard"));
-  builders.forEach(setupFlipcard);
-}
-function setupFlipcard(container2) {
-  container2.setAttribute(attrs$c.init, "");
-  const options = getDatasetOptionalJson(container2, "uluFlipcard");
-  const config2 = Object.assign({}, options);
-  const front = container2.querySelector(attrSelectorInitial$9("front"));
-  const back = container2.querySelector(attrSelectorInitial$9("back"));
-  instances$4.push(new Flipcard(container2, front, back, config2));
-}
 const flipcard = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Flipcard,
-  attrs: attrs$c,
   init: init$f,
-  setup: setup$c
+  initializer: initializer$b
 }, Symbol.toStringTag, { value: "Module" }));
-function init$e(selector = "[data-grid]", classes) {
-  document.addEventListener(getName$1("pageModified"), () => setup$b(selector, classes));
-  document.addEventListener(getName$1("pageResized"), () => setup$b(selector, classes));
-  setup$b(selector, classes);
-}
-function setup$b(selector, classes) {
-  document.querySelectorAll(selector).forEach((element) => setPositionClasses(element, classes || void 0));
+const initializer$a = new ComponentInitializer({
+  type: "grid",
+  baseAttribute: "data-grid"
+});
+function init$e(classes) {
+  initializer$a.init({
+    events: ["pageModified", "pageResized"],
+    setup({ element, initialize }) {
+      setPositionClasses(element, classes);
+      initialize();
+    }
+  });
 }
 const grid = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   init: init$e,
-  setup: setup$b
+  initializer: initializer$a
 }, Symbol.toStringTag, { value: "Module" }));
 function createPager() {
   return function pager(instance, dir) {
@@ -1347,13 +1496,6 @@ const overflowScrollerPager = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Obje
   __proto__: null,
   createPager
 }, Symbol.toStringTag, { value: "Module" }));
-function hasRequiredProps(required) {
-  return (obj) => {
-    return required.every((prop) => {
-      return Object.prototype.hasOwnProperty.call(obj, prop);
-    });
-  };
-}
 const requiredElements$1 = [
   "track",
   "controls"
@@ -1362,7 +1504,7 @@ const _OverflowScroller = class _OverflowScroller {
   constructor(elements, config2) {
     this.options = Object.assign({}, _OverflowScroller.defaults, config2);
     if (!hasRequiredProps(requiredElements$1)) {
-      logError$1(this, "Missing a required Element");
+      logError(this, "Missing a required Element");
     }
     this.elements = {
       ...elements,
@@ -1470,7 +1612,7 @@ const _OverflowScroller = class _OverflowScroller {
     } else if (typeof amount === "number") {
       return isNext ? scrollLeft + amount : scrollLeft - amount;
     }
-    logError$1("Unable to resolve amount for scroll");
+    logError("Unable to resolve amount for scroll");
     return 500;
   }
   next() {
@@ -2927,7 +3069,7 @@ const computePosition = (reference, floating, options) => {
     platform: platformWithCache
   });
 };
-const defaults$9 = {
+const defaults$8 = {
   strategy: "absolute",
   placement: "bottom",
   inline: false,
@@ -2940,7 +3082,7 @@ const defaults$9 = {
   // Options for arrow (not element)
 };
 function createFloatingUi(elements, config2) {
-  const options = Object.assign({}, defaults$9, config2);
+  const options = Object.assign({}, defaults$8, config2);
   const { placement, strategy } = options;
   const { trigger, content, contentArrow } = elements;
   return autoUpdate(trigger, content, () => {
@@ -2984,48 +3126,54 @@ function addPlugin(plugin, option, overrides = {}) {
 const floatingUi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   createFloatingUi,
-  defaults: defaults$9
+  defaults: defaults$8
 }, Symbol.toStringTag, { value: "Module" }));
+const initializer$9 = new ComponentInitializer({
+  type: "popover",
+  baseAttribute: "data-ulu-popover"
+});
+const attrSelectorAnchor = initializer$9.attributeSelector("trigger-anchor");
+const attrSelectorArrow$1 = initializer$9.attributeSelector("arrow");
+const attrContent = initializer$9.getAttribute("content");
+const attrSelectorContent = initializer$9.attributeSelector("content");
 const instances$3 = /* @__PURE__ */ new WeakMap();
-const logError = (...msgs) => console.error("@ulu (popovers):", ...msgs);
-const attrs$b = {
-  trigger: "data-ulu-popover-trigger",
-  content: "data-ulu-popover-content",
-  arrow: "data-ulu-popover-arrow",
-  anchor: "data-ulu-popover-trigger-anchor"
-};
-const attrSelector$b = (key2) => `[${attrs$b[key2]}]`;
 const collapsibleDefaults = {
   clickOutsideCloses: true,
   escapeCloses: true
 };
 function init$d() {
-  document.addEventListener(getName$1("pageModified"), setup$a);
-  setup$a();
-}
-function setup$a() {
-  const triggers = document.querySelectorAll(attrSelector$b("trigger"));
-  const resolved = Array.from(triggers).filter((trigger) => !instances$3.has(trigger)).map(resolve).filter((v) => v);
-  resolved.forEach(({ elements, options, floatingOptions }) => {
-    instances$3.set(elements.trigger, new Popover(elements, options, floatingOptions));
+  initializer$9.init({
+    key: "trigger",
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      if (instances$3.has(element)) return;
+      const resolved = resolve(element, data);
+      if (!resolved) {
+        initializer$9.warn("Unable to resolve popover elements for trigger.", element);
+        return;
+      }
+      const { elements, options, floatingOptions } = resolved;
+      instances$3.set(elements, new Popover(elements, options, floatingOptions));
+      initialize();
+    }
   });
 }
-function resolve(trigger) {
-  const raw = trigger.dataset.uluPopoverTrigger;
-  const options = (raw == null ? void 0 : raw.length) ? JSON.parse(raw) : {};
+function resolve(trigger, userOptions) {
+  const options = Object.assign({}, userOptions);
   const content = getContentByTrigger(trigger);
   const elements = {
     trigger,
     content,
-    anchor: trigger.querySelector(attrSelector$b("anchor")) || trigger,
-    contentArrow: content.querySelector(attrSelector$b("arrow"))
+    anchor: trigger.querySelector(attrSelectorAnchor) || trigger,
+    contentArrow: content.querySelector(attrSelectorArrow$1)
   };
   const floatingOptions = options.floating || {};
   delete options.floating;
   if (content) {
     return { elements, options, floatingOptions };
   } else {
-    logError("Unable to make popover for", trigger);
+    initializer$9.logError("Unable to make popover for", trigger);
     return false;
   }
 }
@@ -3035,16 +3183,16 @@ function getContentByTrigger(trigger) {
   const ariaControls = trigger.getAttribute("aria-controls");
   if (ariaControls) {
     content = document.getElementById(ariaControls);
-  } else if ((_a = trigger == null ? void 0 : trigger.nextElementSibling) == null ? void 0 : _a.hasAttribute(attrs$b.content)) {
+  } else if ((_a = trigger == null ? void 0 : trigger.nextElementSibling) == null ? void 0 : _a.hasAttribute(attrContent)) {
     content = trigger.nextElementSibling;
   } else {
     const children = Array.from(trigger.parentNode.children);
     const triggerIndex = children.findIndex((c) => c === trigger);
     const childrenAfter = children.slice(triggerIndex);
-    content = childrenAfter.find((child) => child.matches(attrSelector$b("content")));
+    content = childrenAfter.find((child) => child.matches(attrSelectorContent));
   }
   if (!content) {
-    logError("Unable to resolve 'content' element for popover", trigger);
+    initializer$9.logError("Unable to resolve 'content' element for popover", trigger);
   }
   return content;
 }
@@ -3068,7 +3216,6 @@ class Popover extends Collapsible {
   createFloatingInstance() {
     const { content, anchor, contentArrow } = this.elements;
     const floatingElements = { trigger: anchor, contentArrow, content };
-    console.log("this.floatingOptions:\n", this.floatingOptions);
     this.floatingCleanup = createFloatingUi(floatingElements, this.floatingOptions);
   }
   destroyFloatingInstance() {
@@ -3083,40 +3230,36 @@ const popover = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   Popover,
   getContentByTrigger,
   init: init$d,
+  initializer: initializer$9,
   instances: instances$3,
-  resolve,
-  setup: setup$a
+  resolve
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$a = {
-  trigger: "data-ulu-tooltip",
-  init: "data-ulu-tooltip-init",
-  body: "data-ulu-tooltip-display-body",
-  arrow: "data-ulu-tooltip-arrow"
-};
-const attrSelector$a = (key2) => `[${attrs$a[key2]}]`;
-const attrSelectorInitial$8 = (key2) => `${attrSelector$a(key2)}:not([${attrs$a.init}])`;
+const initializer$8 = new ComponentInitializer({
+  type: "tooltip",
+  baseAttribute: "data-ulu-tooltip"
+});
+const attrBody = initializer$8.getAttribute("body");
+const attrSelectorBody = initializer$8.attributeSelector("body");
+const attrSelectorArrow = initializer$8.attributeSelector("arrow");
 function init$c() {
-  document.addEventListener(getName$1("pageModified"), setup$9);
-  setup$9();
-}
-function setup$9() {
-  const triggers = document.querySelectorAll(attrSelectorInitial$8("trigger"));
-  triggers.forEach(setupTrigger$1);
-}
-function setupTrigger$1(trigger) {
-  const passed = getDatasetOptionalJson(trigger, "uluTooltip");
-  const options = typeof passed === "object" ? passed : {};
-  if (typeof passed === "string") {
-    options.content = passed;
-  }
-  trigger.setAttribute(attrs$a.init, "");
-  return new Tooltip({ trigger }, options);
+  initializer$8.init({
+    events: ["pageModified"],
+    withData: true,
+    setup({ element: trigger, data, initialize }) {
+      const options = typeof data === "object" ? data : {};
+      if (typeof data === "string") {
+        options.content = data;
+      }
+      initialize();
+      new Tooltip({ trigger }, options);
+    }
+  });
 }
 const _Tooltip = class _Tooltip {
   constructor(elements, userOptions, floatingOptions) {
     const { trigger } = elements;
     if (!trigger) {
-      logError$1(this, "missing required trigger");
+      logError(this, "missing required trigger");
       return;
     }
     this.options = Object.assign({}, _Tooltip.defaults, userOptions);
@@ -3154,7 +3297,7 @@ const _Tooltip = class _Tooltip {
         return "";
       }
     } else {
-      logError$1(this, "Could not resolve inner content");
+      logError(this, "Could not resolve inner content");
     }
   }
   getAnchorElement() {
@@ -3170,7 +3313,7 @@ const _Tooltip = class _Tooltip {
   createContentElement() {
     const { options } = this;
     const content = createElementFromHtml(options.template(options));
-    const body = content.querySelector(attrSelector$a("body"));
+    const body = content.querySelector(attrSelectorBody);
     const innerContent = this.getInnerContent();
     if (options.isHtml) {
       body.innerHTML = innerContent;
@@ -3182,7 +3325,7 @@ const _Tooltip = class _Tooltip {
       content.classList.add(options.contentClass);
     }
     this.elements.content = content;
-    this.elements.contentArrow = content.querySelector(attrSelector$a("arrow"));
+    this.elements.contentArrow = content.querySelector(attrSelectorArrow);
     document.body.appendChild(content);
   }
   attachHandlers() {
@@ -3326,7 +3469,7 @@ __publicField(_Tooltip, "defaults", {
   template(_config) {
     return `
         <div class="popover popover--tooltip">
-          <div class="popover__inner" ${attrs$a.body}>
+          <div class="popover__inner" ${attrBody}>
           </div>
           <span class="popover__arrow" data-ulu-tooltip-arrow></span>
         </div>
@@ -3347,8 +3490,7 @@ const tooltip = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   __proto__: null,
   Tooltip,
   init: init$c,
-  setup: setup$9,
-  setupTrigger: setupTrigger$1
+  initializer: initializer$8
 }, Symbol.toStringTag, { value: "Module" }));
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 function getDefaultExportFromCjs(x) {
@@ -8230,6 +8372,15 @@ var tabFocusExports = tabFocus.exports;
 })(_maintain, _maintain.exports);
 var _maintainExports = _maintain.exports;
 const maintain = /* @__PURE__ */ getDefaultExportFromCjs(_maintainExports);
+const initializer$7 = new ComponentInitializer({
+  type: "slider",
+  baseAttribute: "data-ulu-slider"
+});
+const attrSelectorTrack$1 = initializer$7.attributeSelector("track");
+const attrSelectorTrackContainer = initializer$7.attributeSelector("track-container");
+const attrSelectorControlContext = initializer$7.attributeSelector("control-context");
+const attrSelectorSlide = initializer$7.attributeSelector("slide");
+const instances$2 = [];
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const eventOnce = { once: true };
 const cssDuration = (d) => `${d}ms`;
@@ -8244,56 +8395,41 @@ const requiredElements = [
   "track",
   "slides"
 ];
-const attrs$9 = {
-  init: "data-ulu-slider-init",
-  slider: "data-ulu-slider",
-  track: "data-ulu-slider-track",
-  trackContainer: "data-ulu-slider-track-container",
-  controls: "data-ulu-slider-control-context"
-};
-const attrSelector$9 = (key2) => `[${attrs$9[key2]}]`;
-const attrSelectorInitial$7 = (key2) => `${attrSelector$9(key2)}:not([${attrs$9.init}])`;
-const defaults$8 = {
-  amount: createPager()
-};
-const instances$2 = [];
 function init$b() {
-  document.addEventListener(getName$1("pageModified"), setup$8);
-  setup$8();
+  initializer$7.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupSlider$1(element, data);
+      initialize();
+    }
+  });
 }
-function setup$8() {
-  const builders = document.querySelectorAll(attrSelectorInitial$7("slider"));
-  builders.forEach(setupSlider$1);
-}
-function setupSlider$1(container2) {
-  container2.setAttribute(attrs$9.init, "");
-  const options = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$8, options);
+function setupSlider$1(container2, options) {
+  const config2 = Object.assign({}, options);
   const elements = {
     container: container2,
-    track: container2.querySelector("[data-ulu-slider-track]"),
-    trackContainer: container2.querySelector("[data-ulu-slider-track-container]"),
-    controlContext: container2.querySelector("[data-ulu-slider-control-context]"),
-    slides: container2.querySelectorAll("[data-ulu-slider-slide]")
+    track: container2.querySelector(attrSelectorTrack$1),
+    trackContainer: container2.querySelector(attrSelectorTrackContainer),
+    controlContext: container2.querySelector(attrSelectorControlContext),
+    slides: container2.querySelectorAll(attrSelectorSlide)
   };
   if (elements.slides.length) {
     instances$2.push(new Slider(elements, config2, false));
   }
 }
 const _Slider = class _Slider {
-  // constructor(container, title, trackContainer, track, slides, config, debug = false) {
-  constructor(elements, config2, debug = false) {
+  constructor(elements, config2) {
     const options = Object.assign({}, _Slider.defaults, config2);
-    this.debug = debug;
     this.options = options;
     this.slide = null;
     this.index = null;
     this.transitioning = false;
     if (!hasRequiredProps(requiredElements)) {
-      logError$1(this, "Missing a required Element");
+      logError(this, "Missing a required Element");
     }
     if (!elements.slides.length) {
-      logError$1(this, "Missing slides");
+      logError(this, "Missing slides");
     }
     this.slides = [...elements.slides].map((element, index2) => {
       return {
@@ -8618,7 +8754,7 @@ const _Slider = class _Slider {
     const button = document.createElement("button");
     button.classList.add(this.getClass("nav-button"));
     button.setAttribute("type", "button");
-    button.innerHTML = this.getNavContent(slide.number);
+    button.innerHTML = this.getNavContent(slide);
     slide.navButton = button;
     button.addEventListener("click", this.goto.bind(this, index2));
     return button;
@@ -8630,8 +8766,8 @@ const _Slider = class _Slider {
       <span class="${this.getClass("control-icon")} ${classes}" aria-hidden="true"></span>
     `;
   }
-  getNavContent(number) {
-    return `<span class="hidden-visually">Item ${number}</span>`;
+  getNavContent(slide) {
+    return `<span class="hidden-visually">Item ${slide.number}</span>`;
   }
   emit(name, args) {
     if (this.options.events[name]) {
@@ -8640,6 +8776,9 @@ const _Slider = class _Slider {
   }
 };
 __publicField(_Slider, "instances", []);
+/**
+ * Default options for slider
+ */
 __publicField(_Slider, "defaults", {
   classAccessiblyHidden: "hidden-visually",
   namespace: "Slider",
@@ -8658,9 +8797,8 @@ let Slider = _Slider;
 const slider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Slider,
-  attrs: attrs$9,
   init: init$b,
-  setup: setup$8,
+  initializer: initializer$7,
   setupSlider: setupSlider$1
 }, Symbol.toStringTag, { value: "Module" }));
 var ariaTablist_min = { exports: {} };
@@ -8906,12 +9044,21 @@ var ariaTablist_min = { exports: {} };
 })(ariaTablist_min);
 var ariaTablist_minExports = ariaTablist_min.exports;
 const AriaTablist = /* @__PURE__ */ getDefaultExportFromCjs(ariaTablist_minExports);
-const initAttr = "data-ulu-tablist-init";
-const errorHeader = "[data-ulu-tablist] error:";
 const instances$1 = [];
-function init$a(options = {}) {
+const initializer$6 = new ComponentInitializer({
+  type: "tabs",
+  baseAttribute: "data-ulu-tablist"
+});
+function init$a() {
   const initial = () => {
-    initWithin(document, options);
+    initializer$6.init({
+      events: ["pageModified"],
+      withData: true,
+      setup({ element, data, initialize }) {
+        setup$1(element, data);
+        initialize();
+      }
+    });
     instances$1.forEach(openByCurrentHash);
   };
   if (document.readyState === "complete") {
@@ -8919,26 +9066,9 @@ function init$a(options = {}) {
   } else {
     window.addEventListener("load", initial);
   }
-  document.addEventListener("pageModified", (e) => initWithin(e.target, options));
 }
-function initWithin(context, options = {}) {
-  if (!context) {
-    console.warn("Missing context to initWithin, skipping init of tabs");
-    return;
-  }
-  const tablists = context.querySelectorAll(`[data-ulu-tablist]:not([${initAttr}])`);
-  tablists.forEach((element) => setup$7(element, options));
-}
-function setup$7(element, options = {}) {
-  let elementOptions = {};
-  if (element.dataset.uluTablist) {
-    try {
-      elementOptions = JSON.parse(element.dataset.uluTablist);
-    } catch (e) {
-      console.error(errorHeader, "(JSON Parse for options)", element);
-    }
-  }
-  const config2 = Object.assign({}, options, elementOptions);
+function setup$1(element, options = {}) {
+  const config2 = Object.assign({}, options);
   if (config2.vertical) {
     config2.allArrows = true;
   }
@@ -8954,7 +9084,6 @@ function setup$7(element, options = {}) {
   if (config2.equalHeights) {
     setHeights(element);
   }
-  element.setAttribute(initAttr, "");
   return instance;
 }
 function openByCurrentHash({ options, ariaTablist }) {
@@ -8997,7 +9126,7 @@ function setHeights(element) {
       if (panel.hidden) {
         panel.hidden = false;
         panelHeight = panel.offsetHeight;
-        panel.hidden = true;
+        panel.setAttribute("hidden", "hidden");
       }
       return panelHeight;
     });
@@ -9008,16 +9137,14 @@ function setHeights(element) {
 const tabs = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   init: init$a,
-  initWithin,
+  initializer: initializer$6,
   instances: instances$1,
-  setup: setup$7
+  setup: setup$1
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$8 = {
-  trigger: "data-ulu-proxy-click",
-  init: "data-ulu-proxy-click-init"
-};
-const attrSelector$8 = (key2) => `[${attrs$8[key2]}]`;
-const attrSelectorInitial$6 = (key2) => `${attrSelector$8(key2)}:not([${attrs$8.init}])`;
+const initializer$5 = new ComponentInitializer({
+  type: "proxy-click",
+  baseAttribute: "data-ulu-proxy-click"
+});
 const defaults$7 = {
   selector: "[data-ulu-proxy-click-source]",
   selectorPreventBase: "input, select, textarea, button, a, [tabindex='-1']",
@@ -9029,25 +9156,26 @@ function setDefaults$1(options) {
   currentDefaults$1 = Object.assign({}, currentDefaults$1, options);
 }
 function init$9() {
-  document.addEventListener(getName$1("pageModified"), () => setup$6());
-  setup$6();
-}
-function setup$6(context = document) {
-  const proxies = context.querySelectorAll(attrSelectorInitial$6("trigger"));
-  proxies.forEach((proxy) => {
-    const elOptions = getDatasetOptionalJson(proxy, "siteProxyClick");
-    const options = Object.assign({}, currentDefaults$1, elOptions);
-    const child = proxy.querySelector(options.selector);
-    if (child) {
-      attachHandlers(proxy, child, options);
-      proxy.setAttribute(attrs$8.init, "");
-    } else {
-      console.error("Unable to locate proxy click source", options.selector);
+  initializer$5.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupProxy(element, data);
+      initialize();
     }
   });
 }
-function attachHandlers(proxy, child, options) {
-  const { selectorPreventBase: spb, selectorPrevent: sp } = options;
+function setupProxy(proxy, userOptions) {
+  const options = Object.assign({}, currentDefaults$1, userOptions);
+  const child = proxy.querySelector(options.selector);
+  if (child) {
+    attachHandlers(proxy, child, options);
+  } else {
+    console.error("Unable to locate proxy click source", options.selector);
+  }
+}
+function attachHandlers(proxy, child, config2) {
+  const { selectorPreventBase: spb, selectorPrevent: sp } = config2;
   const selectorPrevent = `${spb}${sp ? `, ${sp}` : ""}`;
   let start, shouldProxy;
   proxy.addEventListener("mousedown", ({ target, timeStamp }) => {
@@ -9058,7 +9186,7 @@ function attachHandlers(proxy, child, options) {
     }
   });
   proxy.addEventListener("mouseup", ({ timeStamp }) => {
-    if (shouldProxy && timeStamp - start < options.mousedownDurationPrevent) {
+    if (shouldProxy && timeStamp - start < config2.mousedownDurationPrevent) {
       child.click();
     }
   });
@@ -9069,34 +9197,23 @@ const proxyClick = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   attachHandlers,
   defaults: defaults$7,
   init: init$9,
+  initializer: initializer$5,
   setDefaults: setDefaults$1,
-  setup: setup$6
+  setupProxy
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$7 = {
-  init: "data-ulu-scrollpoint-init",
-  /**
-   * Individual scrollpoint
-   */
-  point: "data-ulu-scrollpoint",
-  group: "data-ulu-scrollpoint-group",
-  groupAnchors: "data-ulu-scrollpoint-anchors"
-  // Goes on container for all items
-  // group: "data-ulu-scrollpoint-group"
-};
-const attrSelector$7 = (key2) => `[${attrs$7[key2]}]`;
-const attrSelectorInitial$5 = (key2) => `${attrSelector$7(key2)}:not([${attrs$7.init}])`;
-const queryAllInitial$3 = (key2) => document.querySelectorAll(attrSelectorInitial$5(key2));
+const initializer$4 = new ComponentInitializer({
+  type: "scrollpoint",
+  baseAttribute: "data-ulu-scrollpoint"
+});
 function init$8() {
-  document.addEventListener(getName$1("pageModified"), setup$5);
-  setup$5();
-}
-function setup$5() {
-  const elements = queryAllInitial$3("point");
-  elements.forEach((element) => {
-    const elOptions = getDatasetOptionalJson(element, "uluScrollpoint");
-    const config2 = Object.assign({}, elOptions);
-    element.setAttribute(attrs$7.init, "");
-    new Scrollpoint(element, config2);
+  initializer$4.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      const config2 = Object.assign({}, data);
+      new Scrollpoint(element, config2);
+      initialize();
+    }
   });
 }
 const _Scrollpoint = class _Scrollpoint {
@@ -9108,7 +9225,7 @@ const _Scrollpoint = class _Scrollpoint {
   constructor(element, config2) {
     const options = Object.assign({}, _Scrollpoint.defaults, config2);
     if (!element) {
-      logError$1(this, "Missing required element");
+      logError(this, "Missing required element");
       return;
     }
     if (options.rootSelector) {
@@ -9134,7 +9251,7 @@ const _Scrollpoint = class _Scrollpoint {
     };
     this.setupObserver();
     if (options.debug) {
-      console.log("Scrollpoint", this);
+      initializer$4.log(this);
     }
   }
   getClassname(suffix) {
@@ -9171,7 +9288,7 @@ const _Scrollpoint = class _Scrollpoint {
     };
     const config2 = this.getObserverOptions();
     if (this.options.debug) {
-      console.log("Scrollpoint (IntersectionObserver)", config2);
+      initializer$4.log("IntersectionObserver (options)", config2);
     }
     this.observer = new IntersectionObserver(handler, config2);
     this.observer.observe(this.element);
@@ -9311,9 +9428,8 @@ let Scrollpoint = _Scrollpoint;
 const scrollpoint = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   Scrollpoint,
-  attrs: attrs$7,
   init: init$8,
-  setup: setup$5
+  initializer: initializer$4
 }, Symbol.toStringTag, { value: "Module" }));
 function printOnly(content) {
   const w = window.open();
@@ -9325,13 +9441,10 @@ function printElement(element) {
   var content = element.innerHTML;
   printOnly(content);
 }
-const attrs$6 = {
-  trigger: "data-ulu-print",
-  init: "data-ulu-print-init"
-};
-const attrSelector$6 = (key2) => `[${attrs$6[key2]}]`;
-const attrSelectorInitial$4 = (key2) => `${attrSelector$6(key2)}:not([${attrs$6.init}])`;
-const queryAllInitial$2 = (key2) => document.querySelectorAll(attrSelectorInitial$4(key2));
+const initializer$3 = new ComponentInitializer({
+  type: "print",
+  baseAttribute: "data-ulu-print"
+});
 const defaults$6 = {
   /**
    * Print element/selector
@@ -9339,21 +9452,20 @@ const defaults$6 = {
   element: null
 };
 function init$7() {
-  document.addEventListener(getName$1("pageModified"), setup$4);
-  setup$4();
-}
-function setup$4() {
-  const triggers = queryAllInitial$2("trigger");
-  triggers.forEach((trigger) => {
-    const options = getDatasetOptionalJson(trigger, "uluPrint");
-    setupTrigger(trigger, options);
+  initializer$3.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupTrigger(element, data);
+      initialize();
+    }
   });
 }
-function setupTrigger(trigger, options) {
-  const config2 = Object.assign({}, defaults$6, options);
-  trigger.addEventListener("click", (event) => {
+function setupTrigger(trigger, userOptions) {
+  const config2 = Object.assign({}, defaults$6, userOptions);
+  trigger.addEventListener("click", () => {
     if (config2.element) {
-      const element = getElement(config2.element);
+      const element = getElement$1(config2.element);
       if (element) {
         printElement(element);
       } else {
@@ -9366,13 +9478,12 @@ function setupTrigger(trigger, options) {
 }
 const print = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$6,
   init: init$7
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$5 = {
+const attrs$2 = {
   opened: "data-ulu-print-details-opened"
 };
-const attrSelector$5 = (key2) => `[${attrs$5[key2]}]`;
+const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
 const defaults$5 = {
   selector: "details:not([open])"
 };
@@ -9381,77 +9492,71 @@ function init$6(options) {
   document.addEventListener(getName$1("beforePrint"), () => {
     document.querySelectorAll(config2.selector).forEach((details) => {
       if (!details.open) {
-        details.setAttribute(attrs$5.opened, true);
+        details.setAttribute(attrs$2.opened, true);
         details.open = true;
       }
     });
   });
   document.addEventListener(getName$1("afterPrint"), () => {
-    document.querySelectorAll(attrSelector$5("opened")).forEach((details) => {
-      details.removeAttribute(attrs$5.opened);
+    document.querySelectorAll(attrSelector$2("opened")).forEach((details) => {
+      details.removeAttribute(attrs$2.opened);
       details.open = false;
     });
   });
 }
 const printDetails = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$5,
+  attrs: attrs$2,
   init: init$6
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$4 = {
-  init: "data-ulu-scroll-slider-init",
-  slider: "data-ulu-scroll-slider",
-  track: "data-ulu-scroll-slider-track",
-  controls: "data-ulu-scroll-slider-control-context"
-};
-const attrSelector$4 = (key2) => `[${attrs$4[key2]}]`;
-const attrSelectorInitial$3 = (key2) => `${attrSelector$4(key2)}:not([${attrs$4.init}])`;
+const initializer$2 = new ComponentInitializer({
+  type: "scroll-slider",
+  baseAttribute: "data-ulu-scroll-slider"
+});
+const attrSelectorTrack = initializer$2.attributeSelector("track");
+const attrSelectorControls = initializer$2.attributeSelector("controls");
 const instances = [];
 const defaults$4 = {
   amount: createPager()
 };
 function init$5() {
-  document.addEventListener(getName$1("pageModified"), setup$3);
-  setup$3();
+  initializer$2.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupSlider(element, data);
+      initialize();
+    }
+  });
 }
-function setup$3() {
-  const builders = document.querySelectorAll(attrSelectorInitial$3("slider"));
-  builders.forEach(setupSlider);
-}
-function setupSlider(container2) {
-  container2.setAttribute(attrs$4.init, "");
-  const options = getDatasetOptionalJson(container2, "uluScrollSlider");
-  const config2 = Object.assign({}, defaults$4, options);
+function setupSlider(container2, userOptions) {
+  const config2 = Object.assign({}, defaults$4, userOptions);
   const elements = {
-    track: container2.querySelector(attrSelector$4("track")),
-    controls: container2.querySelector(attrSelector$4("controls"))
+    track: container2.querySelector(attrSelectorTrack),
+    controls: container2.querySelector(attrSelectorControls)
   };
   instances.push(new OverflowScroller(elements, config2));
 }
 const scrollSlider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$4,
   init: init$5,
-  setup: setup$3
+  initializer: initializer$2
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$3 = {
-  init: "data-ulu-theme-toggle-init",
-  toggle: "data-ulu-theme-toggle",
-  toggleIcon: "data-ulu-theme-toggle-icon",
-  toggleLabel: "data-ulu-theme-toggle-label",
-  toggleRemote: "data-ulu-theme-toggle-remote",
-  state: "data-ulu-theme-toggle-state"
-};
-const attrSelector$3 = (key2) => `[${attrs$3[key2]}]`;
-const attrSelectorInitial$2 = (key2) => `${attrSelector$3(key2)}:not([${attrs$3.init}])`;
-const queryAllInitial$1 = (key2) => document.querySelectorAll(attrSelectorInitial$2(key2));
+const initializer$1 = new ComponentInitializer({
+  type: "theme-toggle",
+  baseAttribute: "data-ulu-theme-toggle"
+});
+const attrSelectorLabel = initializer$1.attributeSelector("label");
+const attrSelectorIcon = initializer$1.attributeSelector("icon");
+const attrRemote = initializer$1.getAttribute("remote");
+const attrInit = initializer$1.getAttribute("init");
+const attrState = initializer$1.getAttribute("state");
 const queryRemotes = (group) => document.querySelectorAll(
-  `[${attrs$3.toggleRemote}="${group}"]`
+  `[${attrRemote}="${group}"]`
 );
 const queryRemotesInitial = (group) => document.querySelectorAll(
-  `[${attrs$3.toggleRemote}="${group}"]:not([${attrs$3.init}])`
+  `[${attrRemote}="${group}"]:not([${attrInit}])`
 );
-const debugLog$1 = (...msgs) => console.log("Theme Toggle:", ...msgs);
 const requiredToggleProps = ["target"];
 const checkToggleProps = hasRequiredProps(requiredToggleProps);
 const when = (cond, fn) => cond ? fn() : null;
@@ -9516,15 +9621,17 @@ function setDefaults(options) {
   currentDefaults = Object.assign({}, currentDefaults, options);
 }
 function init$4() {
-  document.addEventListener(getName$1("pageModified"), setup$2);
-  setup$2();
+  initializer$1.init({
+    events: ["pageModified"],
+    withData: true,
+    setup({ element, data, initialize }) {
+      setupToggle(element, data);
+      initialize();
+    }
+  });
 }
-function setup$2() {
-  queryAllInitial$1("toggle").forEach(setupToggle);
-}
-function setupToggle(toggle, passedOptions) {
-  const elementOptions = getDatasetJson(toggle, "uluThemeToggle");
-  const options = Object.assign({}, defaults$3, passedOptions, elementOptions);
+function setupToggle(toggle, userOptions) {
+  const options = Object.assign({}, defaults$3, userOptions);
   if (!checkToggleProps(options)) {
     console.error(`Missing a required option: ${requiredToggleProps.join(", ")}`);
     return;
@@ -9538,7 +9645,6 @@ function setupToggle(toggle, passedOptions) {
   }
   setState$1(initialKey, ctx);
   toggle.addEventListener("click", onToggleClick);
-  toggle.setAttribute(attrs$3.init, "");
   attachRemotes();
   document.addEventListener(getName$1("pageModified"), attachRemotes);
   function toggleState(event) {
@@ -9559,7 +9665,7 @@ function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach((remote) => {
       remote.addEventListener("click", onToggleClick);
-      remote.setAttribute(attrs$3.init, "");
+      initializer$1.initializeElement(remote);
     });
   }
   function cleanupRemotes() {
@@ -9567,12 +9673,12 @@ function setupToggle(toggle, passedOptions) {
     const remotes = queryRemotesInitial(group);
     remotes.forEach((remote) => {
       remote.removeEventListener("click", onToggleClick);
-      remote.removeAttribute(attrs$3.init, "");
+      remote.removeAttribute(attrInit, "");
     });
   }
   function destroy() {
     toggle.removeEventListener("click", onToggleClick);
-    toggle.removeAttribute(attrs$3.init, "");
+    toggle.removeAttribute(attrInit, "");
     cleanupRemotes();
     document.removeEventListener(getName$1("pageModified"), attachRemotes);
   }
@@ -9611,18 +9717,18 @@ function setState$1(key2, ctx) {
     otherThemes
   };
   if (options.debug) {
-    debugLog$1("set state context", stateCtx);
+    initializer$1.log("Set state context", stateCtx);
   }
   const otherTargetClasses = concatThemeClasses(otherThemes, "targetClass");
   const otherIconClasses = concatThemeClasses(otherThemes, "iconClass");
   elements.targets.forEach((element) => {
-    element.setAttribute(attrs$3.state, key2);
+    element.setAttribute(attrState, key2);
     element.classList.remove(...otherTargetClasses);
     element.classList.add(...resolveClasses(theme.targetClass));
   });
   elements.toggles.forEach((element) => {
-    const label = element.querySelector(attrSelector$3("toggleLabel"));
-    const icon = element.querySelector(attrSelector$3("toggleIcon"));
+    const label = element.querySelector(attrSelectorLabel);
+    const icon = element.querySelector(attrSelectorIcon);
     if (label) {
       label.textContent = theme.label;
     }
@@ -9630,7 +9736,7 @@ function setState$1(key2, ctx) {
       icon.classList.remove(...otherIconClasses);
       icon.classList.add(...resolveClasses(theme.iconClass));
     }
-    element.setAttribute(attrs$3.state, key2);
+    element.setAttribute(attrState, key2);
   });
   if (options.onChange) {
     options.onChange(stateCtx);
@@ -9646,12 +9752,12 @@ function resolveInitial(options) {
   const mediaQueryPreference = when(checkMediaQuery, () => getMatchingThemeQuery(themes));
   const resolved = saved || mediaQueryPreference || initialState;
   if (options.debug) {
-    debugLog$1("Preference Saved:", saved);
-    debugLog$1("Media Query Preference:", mediaQueryPreference);
-    debugLog$1("Initial State:", initialState);
+    initializer$1.log("Preference Saved", saved);
+    initializer$1.log("Media Query Preference", mediaQueryPreference);
+    initializer$1.log("Initial State:", initialState);
   }
   if (!resolved) {
-    console.error("Failed to resolve initial theme (pass 'initialState' to options)");
+    initializer$1.logError("Failed to resolve initial theme (pass 'initialState' to options)");
   }
   return resolved;
 }
@@ -9685,52 +9791,48 @@ function getStorageKey(options) {
 }
 const themeToggle = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$3,
   defaults: defaults$3,
   init: init$4,
+  initializer: initializer$1,
   setDefaults,
-  setup: setup$2,
   setupToggle
 }, Symbol.toStringTag, { value: "Module" }));
-const attrs$2 = {
-  init: "data-ulu-details-group-init",
-  childInit: "data-ulu-details-group-child-init",
-  group: "data-ulu-details-group"
-};
-const attrSelector$2 = (key2) => `[${attrs$2[key2]}]`;
-const attrSelectorInitial$1 = (key2) => `${attrSelector$2(key2)}:not([${attrs$2.init}])`;
+const initializer = new ComponentInitializer({
+  type: "details-group",
+  baseAttribute: "data-ulu-details-group"
+});
+const childInitAttr = initializer.getAttribute("child-init");
 const defaults$2 = {
   onlyOneOpen: true,
   childSelector: ":scope > details"
 };
 function init$3() {
-  document.addEventListener(getName$1("pageModified"), () => setup$1());
-  setup$1();
+  initializer.init({
+    withData: true,
+    events: ["pageModified"],
+    setup({ element, data, initialize }) {
+      setupGroup(element, data);
+      initialize();
+    }
+  });
 }
-function setup$1(context = document) {
+function setupGroup(element, userOptions) {
+  const options = Object.assign({}, defaults$2, userOptions);
   try {
-    const elements = context.querySelectorAll(attrSelectorInitial$1("group"));
-    return [...elements].map(setupGroup);
+    setupChildren();
   } catch (error) {
     console.error(error);
   }
-}
-function setupGroup(element) {
-  const elementOptions = getDatasetOptionalJson(element, "uluDetailsGroup");
-  const options = Object.assign({}, defaults$2, elementOptions);
-  element.setAttribute(attrs$2.t, "");
-  setupChildren();
   function queryChildren() {
     return element.querySelectorAll(options.childSelector);
   }
   function setupChildren() {
     queryChildren().forEach((child) => {
-      if (child.hasAttribute(attrs$2.childInit)) {
+      if (child.hasAttribute(childInitAttr)) {
         return;
       } else {
-        child.setAttribute(attrs$2.childInit, "");
+        child.setAttribute(childInitAttr, "");
       }
-      console.log(child);
       child.addEventListener("toggle", toggleHandler);
     });
   }
@@ -9748,17 +9850,16 @@ function setupGroup(element) {
   function destroy() {
     queryChildren().forEach((child) => {
       child.removeEventListener("toggle", toggleHandler);
-      child.removeAttribute(attrs$2.childInit);
+      child.removeAttribute(childInitAttr);
     });
-    element.removeAttribute(attrs$2.init);
+    element.removeAttribute(initializer.getAttribute("init"));
   }
   return { destroy, element, setupChildren };
 }
 const detailsGroup = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  attrs: attrs$2,
   init: init$3,
-  setup: setup$1,
+  initializer,
   setupGroup
 }, Symbol.toStringTag, { value: "Module" }));
 const index$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -23136,8 +23237,8 @@ function setupInstance(userOptions) {
   if (debug) {
     debugLog("options:", options);
   }
-  const form = getElement(options.form, context);
-  const display = getElement(options.display, context);
+  const form = getElement$1(options.form, context);
+  const display = getElement$1(options.display, context);
   if (!form || !display) {
     throw new Error("Unable to locate form or display for live demo", options);
   }

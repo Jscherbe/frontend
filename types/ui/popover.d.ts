@@ -3,15 +3,9 @@
  */
 export function init(): void;
 /**
- * Query all popovers on current page and set them up
- * - Use this manually if needed
- * - Won't setup a popover more than once
- */
-export function setup(): void;
-/**
  * Find the popover's elements
  */
-export function resolve(trigger: any): false | {
+export function resolve(trigger: any, userOptions: any): false | {
     elements: {
         trigger: any;
         content: any;
@@ -22,6 +16,10 @@ export function resolve(trigger: any): false | {
     floatingOptions: any;
 };
 export function getContentByTrigger(trigger: any): any;
+/**
+ * Popover Component Initializer
+ */
+export const initializer: ComponentInitializer;
 /**
  * Array of current instances
  */
@@ -36,5 +34,6 @@ export class Popover extends Collapsible {
     floatingCleanup: Function;
     destroyFloatingInstance(): void;
 }
+import { ComponentInitializer } from "../utils/system.js";
 import { Collapsible } from "./collapsible.js";
 //# sourceMappingURL=popover.d.ts.map

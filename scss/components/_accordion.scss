@@ -120,7 +120,7 @@ $config: (
     & + & {
       $gap: -(get("margin") - get("margin-between"));
       margin-top: $gap;
-      margin-top: calc($gap - 1px);
+      margin-top: calc($gap - get("border-width"));
     }
     &[open], 
     &.is-active  {

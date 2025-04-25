@@ -1,7 +1,19 @@
+/**
+ * Initialize flipcards using data-ulu-flipcard attribute
+ */
 export function init(): void;
-export function setup(): void;
+/**
+ * Flipcard Component Initializer
+ */
+export const initializer: ComponentInitializer;
+/**
+ * Flipcard class (creates flipcard instance and behaviors)
+ */
 export class Flipcard {
     static instances: any[];
+    /**
+     * Default options for Flipcard
+     */
     static defaults: {
         namespace: string;
         proxyClick: {
@@ -10,9 +22,8 @@ export class Flipcard {
             exclude: string;
         };
     };
-    constructor(container: any, front: any, back: any, config: any, debug?: boolean);
+    constructor(container: any, front: any, back: any, config: any);
     options: any;
-    debug: boolean;
     elements: {
         container: any;
         front: any;
@@ -32,14 +43,9 @@ export class Flipcard {
     }): void;
     getClass(child: any): any;
     createControlContent(): string;
-    setVisiblity(visible: any): void;
+    setVisibility(visible: any): void;
     containerCss(): string;
     panelCss(zIndex?: number): string;
 }
-export namespace attrs {
-    let init: string;
-    let flipcard: string;
-    let front: string;
-    let back: string;
-}
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=flipcard.d.ts.map

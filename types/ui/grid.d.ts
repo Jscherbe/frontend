@@ -1,13 +1,11 @@
 /**
  * Sets up document for grid position classes
- * @param {String} selector The selector for the parent element
  * @param {Object} classes Classes (optional) @see setPositionClasses
  */
-export function init(selector: string, classes: any): void;
+export function init(classes: any): void;
 /**
- * Goes through document and finds elements that need to have positioning classes
- * @param {String} selector The selector for the parent element
- * @param {Object} classes Classes (optional) @see setPositionClasses
+ * Dialog Component Initializer
  */
-export function setup(selector: string, classes: any): void;
+export const initializer: ComponentInitializer;
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=grid.d.ts.map

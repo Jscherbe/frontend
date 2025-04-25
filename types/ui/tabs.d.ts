@@ -1,14 +1,7 @@
 /**
  * Init all instances currently in document
- * @param {Object} options Options to serve as defaults
  */
-export function init(options?: any): void;
-/**
- * Init all tabs within a certain context
- * @param {Node} context Element to init within
- * @param {Object} options Options to serve as defaults
- */
-export function initWithin(context: Node, options?: any): void;
+export function init(): void;
 /**
  *
  * @param {Node} element Tablist Element
@@ -21,4 +14,9 @@ export function setup(element: Node, options?: Node): any;
  * @type {Array}
  */
 export const instances: any[];
+/**
+ * Tabs Component Initializer
+ */
+export const initializer: ComponentInitializer;
+import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=tabs.d.ts.map

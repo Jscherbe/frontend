@@ -10,8 +10,8 @@ title: ui/tooltip
     * _static_
         * [.Tooltip](#module_ui/tooltip.Tooltip)
             * [.defaults](#module_ui/tooltip.Tooltip+defaults)
+        * [.initializer](#module_ui/tooltip.initializer)
         * [.init()](#module_ui/tooltip.init)
-        * [.setup()](#module_ui/tooltip.setup)
     * _inner_
         * [~accessible](#module_ui/tooltip..accessible) : <code>Boolean</code>
         * [~content](#module_ui/tooltip..content) : <code>String</code>
@@ -38,18 +38,16 @@ Tooltip
 Defaults options
 
 **Kind**: instance property of [<code>Tooltip</code>](#module_ui/tooltip.Tooltip)  
+<a name="module_ui/tooltip.initializer"></a>
+
+## ui/tooltip.initializer
+Tooltip Component Initializer
+
+**Kind**: static constant of [<code>ui/tooltip</code>](#module_ui/tooltip)  
 <a name="module_ui/tooltip.init"></a>
 
 ## ui/tooltip.init()
 Initialize default popover
-
-**Kind**: static method of [<code>ui/tooltip</code>](#module_ui/tooltip)  
-<a name="module_ui/tooltip.setup"></a>
-
-## ui/tooltip.setup()
-Query all popovers on current page and set them up
-- Use this manually if needed
-- Won't setup a popover more than once
 
 **Kind**: static method of [<code>ui/tooltip</code>](#module_ui/tooltip)  
 <a name="module_ui/tooltip..accessible"></a>
