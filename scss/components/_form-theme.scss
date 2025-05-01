@@ -85,25 +85,25 @@ $-fallbacks: (
 /// @prop {CssValue} description-margin [(0.25em 0)] Margin for help text.
 /// @prop {Dimension} description-max-width [25em] Max width of help text.
 /// @prop {Number} description-line-height [true] Line height for description element, defaults to typography line-height-dense
-/// @prop {Color} fieldset-background [transparent] Background color of fieldset.
+/// @prop {Color} fieldset-background [transparent] Background color of fieldset element.
 /// @prop {CssValue} fieldset-border [none] Border for fieldset
-/// @prop {Dimension} fieldset-margin-bottom [1rem]
-/// @prop {Dimension} fieldset-margin-top [1rem]
-/// @prop {Dimension} fieldset-padding [0]
+/// @prop {Dimension} fieldset-margin-bottom [1rem] Bottom margin for the fieldset element.
+/// @prop {Dimension} fieldset-margin-top [1rem] Bottom margin for the fieldset element.
+/// @prop {Dimension} fieldset-padding [0] Padding for the fieldset element.
 /// @prop {Dimension} fieldset-margin-compact [0] @joe-check unused
-/// @prop {Dimension} fieldset-border-radius [0]
-/// @prop {Color} fieldset-legend-color [inherit]
-/// @prop {Dimension} fieldset-legend-border-bottom [null]
-/// @prop {Dimension} fieldset-legend-padding-bottom [null]
-/// @prop {Dimension} select-border-radius [4px]
-/// @prop {Color} select-background-color [null]
-/// @prop {CssValue} select-border [null]
-/// @prop {Dimension} select-padding-x [null]
-/// @prop {Dimension} select-padding-y [null]
-/// @prop {CssValue} select-image [null] 
-/// @prop {Dimension} select-image-size [0.9em]
-/// @prop {Dimension} select-image-offset [0.7em]
-/// @prop {Dimension} select-image-margin [0.65em]
+/// @prop {Dimension} fieldset-border-radius [0] Border radius of the fieldset element.
+/// @prop {Color} fieldset-legend-color [inherit] Text color for the fieldset's label.
+/// @prop {Dimension} fieldset-legend-border-bottom [null] Bottom border color for the fieldset's label
+/// @prop {Dimension} fieldset-legend-padding-bottom [null] Bottom padding for the fieldset's label
+/// @prop {Dimension} select-border-radius [4px] Border radius for the select element.
+/// @prop {Color} select-background-color [null] Background color for the select element.
+/// @prop {CssValue} select-border [null] The border for the select element. Fallback to input border.
+/// @prop {Dimension} select-padding-x [null] Horizontal padding for the select element. Fallback to input-padding-x.
+/// @prop {Dimension} select-padding-y [null] Vertical padding for the select element. Fallback to input-padding-y.
+/// @prop {CssValue} select-image [null] Url for select element's background image.
+/// @prop {Dimension} select-image-size [0.9em] Background size for the select image.
+/// @prop {Dimension} select-image-offset [0.7em] Offset for the select image.
+/// @prop {Dimension} select-image-margin [0.65em] select image margin.
 /// @prop {Dimension} inline-gap [1em] Gap between items that are inline like checkboxes
 
 $config: (
