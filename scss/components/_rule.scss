@@ -82,6 +82,7 @@ $config: (
       width: $short-width;
       max-width: 100%;
       border-bottom-width: get("short-border-width");
+      display: inline-block;
     }
     @if get("short-modifiers") {
       @each $mod, $opts in get("short-modifiers") {

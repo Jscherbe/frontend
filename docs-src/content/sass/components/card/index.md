@@ -91,6 +91,12 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
+  // new below
+  "toggle-aside-rule" : true,
+  "aside-rule-width" : 6px,
+  "aside-background-color" : rgb(197, 197, 197),
+  "aside-rule-color": green,
+
 );
 ```
   
@@ -103,7 +109,7 @@ $config: (
 - **Group:** card
 - **Type:** variable
 - **Lines (comments):** 18-68
-- **Lines (code):** 70-125
+- **Lines (code):** 70-131
 
 </details>
 
@@ -195,8 +201,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 127-130
-- **Lines (code):** 132-134
+- **Lines (comments):** 133-136
+- **Lines (code):** 138-140
 
 </details>
 
@@ -254,8 +260,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 145-149
-- **Lines (code):** 151-181
+- **Lines (comments):** 151-155
+- **Lines (code):** 157-187
 
 </details>
 
@@ -314,8 +320,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 188-192
-- **Lines (code):** 194-453
+- **Lines (comments):** 194-198
+- **Lines (code):** 200-482
 
 </details>
 
@@ -395,8 +401,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 136-139
-- **Lines (code):** 141-143
+- **Lines (comments):** 142-145
+- **Lines (code):** 147-149
 
 </details>
 

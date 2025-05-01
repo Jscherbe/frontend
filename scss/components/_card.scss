@@ -122,6 +122,12 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
+  // new below
+  "toggle-aside-rule" : true,
+  "aside-rule-width" : 6px,
+  "aside-background-color" : rgb(197, 197, 197),
+  "aside-rule-color": green,
+
 ) !default;
   
   /// Change modules $config
@@ -309,9 +315,15 @@ $config: (
       }
     }
   }
-  #{ $prefix }__body,
-  #{ $prefix }__footer,
-  #{ $prefix }__image--icon {
+
+  #{ $prefix }__footer {
+    padding: get("padding");
+  }
+  #{ $prefix }__main {
+    padding: get("padding");
+  }
+  #{ $prefix }__aside {
+    position: relative;
     padding: get("padding");
   }
 
@@ -335,8 +347,24 @@ $config: (
     z-index: 2; // Above image
   }
   #{ $prefix }__body {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     min-height: get("body-min-height");
+  }
+  @if(get("toggle-aside-rule")) {
+    #{ $prefix }__aside {
+      background-color: color.get(get("aside-background-color"));
+    }
+    #{ $prefix }__aside::after {
+      content: "";
+      position: absolute;
+      top: calc(0rem - get("aside-rule-width") / 2);
+      left: get("padding");
+      right: get("padding");
+      height: get("aside-rule-width");
+      background-color: color.get(get("aside-rule-color"));
+    }
   }
   // For actions/messages
   // - Layout as flex with min height to support buttons 
@@ -475,10 +503,30 @@ $config: (
       grid-column: 2 / 3;
     }
     #{ $prefix }__body {
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      flex-direction: row;
       justify-content: center;
       max-width: get("horizontal-body-max-width");
+    }
+    @if(get("toggle-aside-rule")) {
+      #{ $prefix }__main {
+        flex: 1 1 60%;
+      }
+      #{ $prefix }__aside {
+        flex: 1 1 40%;
+        height: 100%;
+        // flex-basis: 40%;
+        // min-width: 40%;
+      }
+      #{ $prefix }__aside::after {
+        content: "";
+        position: absolute;
+        top: get("padding");
+        left: calc(0rem - get("aside-rule-width") / 2);
+        height: calc(100% - get("padding") - get("padding"));
+        width: get("aside-rule-width");
+        background-color: get("aside-rule-color");
+      }
     }
 
     // For modern browsers

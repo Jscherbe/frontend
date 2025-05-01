@@ -53,16 +53,27 @@ Use config/element.scss to set rule parameters.
 
 
 ### Examples
-
+<div>
 Base rule
+</div>
 <div class="rule"></div>
+<div>
 Short rule
+</div>
 <div class="rule rule--short"></div>
+<div>
 Large Rule
+</div>
 <div class="rule rule--large"></div>
+<div>
 Small Margin Rule
+</div>
 <div class="rule rule--margin-small"></div>
+<div>
 Large Margin Rule
+</div>
 <div class="rule rule--margin-large"></div>
+<div>
 Light Rule
+</div>
 <div class="rule rule--light"></div>

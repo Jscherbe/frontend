@@ -15,25 +15,32 @@
 >
   {% if body %}
     <div class="card__body">
-      {% if title %}
-        <h5 class="card__title">
-          {# If link don't nest link (no link title) #}
-          {% if isLink %}
-            Card Title
-          {% else %}
-            <a 
-              class="card__title-link" 
-              href="https://www.google.com" 
-              {{ hasProxy ? "data-ulu-proxy-click-source" }}
-            >
+      <div class="card__main">
+        {% if title %}
+          <h5 class="card__title">
+            {# If link don't nest link (no link title) #}
+            {% if isLink %}
               Card Title
-            </a>
-          {% endif %}
-        </h5>
-      {% endif %}
-      {% if content %}
-        <div>
-          This is the card content. It can contain around 2-3 sentences.
+            {% else %}
+              <a 
+                class="card__title-link" 
+                href="https://www.google.com" 
+                {{ hasProxy ? "data-ulu-proxy-click-source" }}
+              >
+                Card Title
+              </a>
+            {% endif %}
+          </h5>
+        {% endif %}
+        {% if content %}
+          <div>
+            This is the card content. It can contain around 2-3 sentences.
+          </div>
+        {% endif %}
+      </div>
+      {% if aside %}
+        <div class="card__aside">
+          This is the aside. attach the rule to this element.
         </div>
       {% endif %}
     </div>
@@ -62,3 +69,4 @@
     </div>
   {% endif %}
 </{{ element }}>
+

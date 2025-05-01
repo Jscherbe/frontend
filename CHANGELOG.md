@@ -1,5 +1,22 @@
 # Change Log
 
+## Version 0.1.0-beta.35
+
+- **scss/**
+  - **components/card**
+    - add *card__aside* styling to enable sidebars
+      - added *card__main* wrapper to *card__title* and *card__content* to separate it from the *card__aside*
+      - added config options for *card__aside*
+        - toggle-aside-rule : toggles rule separating aside from main,
+        - aside-rule-width
+        - aside-background-color
+        - aside-rule-color
+    - remove padding from *card__image--icon*
+      - This was adding additional space on bottom of horizontal card. Most noticeably when using an aside background color and no footer.
+  - **elements/rule**
+    - Added "display: inline-block;" to short rule
+      - Note: user can use the old style by adding utility class "display-block"
+
 ## Version 0.1.0-beta.34
 
 - **scss/**

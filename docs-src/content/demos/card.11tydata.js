@@ -29,6 +29,12 @@ export default {
           },
           {
             type: "checkbox",
+            name: "aside",
+            label: "Aside",
+            checked: true
+          },
+          {
+            type: "checkbox",
             name: "footer",
             label: "Footer",
             checked: true
