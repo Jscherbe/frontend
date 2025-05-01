@@ -1,7 +1,6 @@
 # Change Log
 
 ## Version 0.1.0-beta.35
-
 - **scss/**
   - **components/card**
     - add *card__aside* styling to enable sidebars
@@ -16,6 +15,9 @@
   - **elements/rule**
     - Added "display: inline-block;" to short rule
       - Note: user can use the old style by adding utility class "display-block"
+- **js/**
+  - ui/scroll-slider
+    - Fix typo that introduced error in last update controls-context to control-context
 
 ## Version 0.1.0-beta.34
 

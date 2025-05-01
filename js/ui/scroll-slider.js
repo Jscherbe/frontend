@@ -15,7 +15,7 @@ export const initializer = new ComponentInitializer({
 });
 
 const attrSelectorTrack = initializer.attributeSelector("track");
-const attrSelectorControls = initializer.attributeSelector("controls");
+const attrSelectorControls = initializer.attributeSelector("control-context");
 const instances = [];
 const defaults = {
   amount: createPager()
