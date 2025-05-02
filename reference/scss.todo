@@ -1,4 +1,5 @@
 SCSS Todos:
+  ☐ Popover add hide scrollbar
   ☐ Modal - Add fullscreen modifier 
     * Shouldn't have border radiuses, user will be responsible for inner layout
   ☐ Accordion margin-between has static -1px (used for borders), should be based on border width
