@@ -13,11 +13,13 @@ intro: Card Grids are...
   <li class="card-grid__item">
     <article class="card" data-ulu-proxy-click="">
       <div class="card__body">
-        <h5 class="card__title">
-          <a class="card__title-link" href="https://www.google.com" data-ulu-proxy-click-source="">Card 1</a>
-        </h5>
-        <div>
-          This is a card with an upper image using a containing div with the "card__image" class.
+        <div class="card__main">
+          <h5 class="card__title">
+            <a class="card__title-link" href="https://www.google.com" data-ulu-proxy-click-source="">Card 1</a>
+          </h5>
+          <div>
+            This is a card with an upper image using a containing div with the "card__image" class.
+          </div>
         </div>
       </div>
       <div class="card__image">
@@ -41,10 +43,11 @@ intro: Card Grids are...
   </li>
 </ul>
 ```
-
-## Card Grid Compact
+<h2 class="h2">Card Grid Compact</h2>
 
 {% demoCardGrid 3 'card-grid--compact' %}
+
+<h2 class="h2">Horizontal Card Grid</h2>
 
 {% demoCardGrid 3 '' 'card--w-image card--image-fit card--horizontal' %}
 

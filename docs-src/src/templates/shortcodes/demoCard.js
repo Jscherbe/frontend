@@ -49,7 +49,9 @@ export default function(
   `.trim();
 
   // Condensed to not create <p> elements
-  let bodyMarkup = `<div class="card__body">${ title ? titleMarkup : "" }${ content ? contentMarkup : "" }</div>`;
+  let asideMarkup =`<div class="card__aside">This is the aside content</div>`
+  let bodyMarkup = `<div class="card__body"><div class="card__main">${ title ? titleMarkup : "" }${ content ? contentMarkup : "" }</div>${ asideMarkup }</div>`;
+
 
   // Condensed to not create <p> elements
   return `<article class="card ${ modifiers.join(' ') }" ${ title ? "data-ulu-proxy-click" : "" }>${ body ? bodyMarkup : "" }${ image ? imageMarkup : "" }${ footer ? footerMarkup : "" }</article>`;
