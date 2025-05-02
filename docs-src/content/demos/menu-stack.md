@@ -20,6 +20,23 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
   </ul>
 </div>
 
+<h2 class="h2">Compact Example</h2>
+
+<div class="menu-stack menu-stack--compact">
+  <h3 class="menu-stack__label">Example Label</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >This is Example Menu Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#">This is Example Menu Item with a really long title. It even has another sentence for checking line wrapping</a>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">This is Example Menu Item</a>
+    </li>
+  </ul>
+</div>
+
 <h2 class="h2">Hanging with aria-current test</h2>
 
 <div class="menu-stack menu-stack--hanging">

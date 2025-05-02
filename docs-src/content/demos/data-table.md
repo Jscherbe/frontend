@@ -47,4 +47,11 @@ intro: A table for displaying tabular data in native html tables
 
 <h2 class="h2">Complex Table</h2>
 
-{% demoDataTable %}
+<h2 class="h2">Striped Table</h2>
+{% demoDataTable 'striped' %}
+<h2 class="h2">Large-first Table</h2>
+{% demoDataTable 'large-first' %}
+<h2 class="h2">Large-header Table</h2>
+{% demoDataTable 'large-header' %}
+<h2 class="h2">No-border Table</h2>
+{% demoDataTable 'no-border' %}

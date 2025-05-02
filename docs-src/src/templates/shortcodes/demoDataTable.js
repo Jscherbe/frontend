@@ -1,12 +1,18 @@
 let counter = 0;
 
 
-export default function demoDataTable() {
+export default function demoDataTable(
+  modifier= null,
+) {
   const idPrefix = `dt-${ ++counter }`;
   const id = name => `${ idPrefix }-${ name }`;
   const headers = (...names) => names.map(id).join(" ");
+  let tableClass = "data-table"
+  if (modifier) {
+    tableClass += ` data-table--${ modifier }`
+  }
   return `
-<table class="data-table" id="${ idPrefix }">
+<table class="${ tableClass }" id="${ idPrefix }">
   <caption>
     This Is The Table's Caption
   </caption>

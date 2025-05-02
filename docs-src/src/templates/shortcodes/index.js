@@ -12,6 +12,7 @@ import fullscreenIntertitle from "./fullscreenIntertitle.js";
 import headline from "./headline.js";
 import demoCardGrid from "./demoCardGrid.js";
 import demoAccordion from "./demoAccordion.js";
+import demoOverlaySection from "./demoOverlaySection.js";
 import liveDemo from "./liveDemo.js";
 import svgBoxes from "./svgBoxes.js";
 
@@ -29,7 +30,8 @@ export const shortcodes = {
   headline,
   demoCardGrid,
   svgBoxes,
-  liveDemo
+  liveDemo,
+  demoOverlaySection
 };
 
 export const pairedShortcodes = {
