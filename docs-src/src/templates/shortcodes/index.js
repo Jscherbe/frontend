@@ -13,8 +13,10 @@ import headline from "./headline.js";
 import demoCardGrid from "./demoCardGrid.js";
 import demoAccordion from "./demoAccordion.js";
 import demoOverlaySection from "./demoOverlaySection.js";
+import popover from "./demoPopover.js";
 import liveDemo from "./liveDemo.js";
 import svgBoxes from "./svgBoxes.js";
+import demoPopover from "./demoPopover.js";
 
 export const shortcodes = {
   popoverGridItem,
@@ -31,7 +33,8 @@ export const shortcodes = {
   demoCardGrid,
   svgBoxes,
   liveDemo,
-  demoOverlaySection
+  demoOverlaySection,
+  demoPopover
 };
 
 export const pairedShortcodes = {
