@@ -1,4 +1,6 @@
 SCSS Todos:
+  ☐ Add fullscreen modal modifier
+    * Remove border radius, width/height 100%
   ☐ Popover add hide scrollbar
   ☐ Modal - Add fullscreen modifier 
     * Shouldn't have border radiuses, user will be responsible for inner layout
