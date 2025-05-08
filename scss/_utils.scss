@@ -34,8 +34,12 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss - General example
-///   @include ulu.utils-get("property");
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test-em-to-pixel {
+///     width: ulu.utils-get("pixel-em-base");
+///   }
 
 @function get($name) {
   @return require-map-get($config, $name, 'utils');
@@ -47,6 +51,13 @@ $config: (
 /// @param {String} $key The key in the map to get value from
 /// @param {String} $context The context of using this function for debugging help
 /// @return {*} The value from the map
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test-require-map {
+///     $test-map: ("test-font-size": 12px);
+///     font-size: ulu.utils-require-map-get($test-map, "test-font-size");
+///   }
 
 @function require-map-get($map, $key, $context: "unknown") {
   // $value: map.get($map, $key);
@@ -473,6 +484,12 @@ $config: (
 /// Strips the unit from the number
 /// - Normally this shouldn't be needed
 /// @link https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841 Original source (Miriam Suzanne)
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test {
+///     line-height: ulu.utils-strip-unit(4rem);
+///   }
 
 @function strip-unit($value) {
   @if (is-number($value)) {

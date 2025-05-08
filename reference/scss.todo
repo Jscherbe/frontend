@@ -177,6 +177,9 @@ SCSS Todos:
   ☐ WYSIWYG (excludes) - This should be refacotred to dedicated mixins to push exlcudes
     ☐ Then remove list lines and add it to its's own module and call mixin
   ☐ Update flipcard to use utils mixin that pulls specific padding. This will allow users to pass different formats of padding (ie: (x), (x,y) (x,y,z,) (w,x,y,z))
+  ☐ Look at the scss for card. When using the icon styling, the padding and and grid-row property
+    - How to reproduce
+    - comment in line 335 in _card.scss.
 
   Documentation:
     - setup config documentation for the following components

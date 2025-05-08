@@ -6,6 +6,7 @@ Content:
     ☐ Setup theme switcher script
       * Use it in this site 
 Todos:
+  ☐ check function breakpoint.get-sizes() to see why documentation is not working correctly
   ✔ add demo in front of card and cardGrid setup @done
   ✔ add @done
     ✔ buttons in footer @done

@@ -158,7 +158,7 @@ Output styles
 - **Group:** rule
 - **Type:** mixin
 - **Lines (comments):** 40-42
-- **Lines (code):** 44-95
+- **Lines (code):** 44-96
 
 </details>
 

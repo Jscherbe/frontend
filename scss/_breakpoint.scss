@@ -4,6 +4,7 @@
 ////
 
 @use "sass:map";
+@use "sass:list";
 @use "utils";
 
 /// Module Settings
@@ -30,8 +31,12 @@ $config: (
 }
 
 /// Get a config option
-/// @example scss Get default breakpoint name
-///   $default: ulu.breakpoint-get("default");
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test-get {
+///     font-size: ulu.breakpoint-get("base");
+///   }
 /// @param {Map} $name Name of property
 /// @return {*} Property Value
 
@@ -66,6 +71,13 @@ $sizes: (
 
 /// Get all breakpoint sizes
 /// @return {Map} Map of breakpoints (equivalent to $sizes)
+/// @compiler
+///   @use "breakpoint" as breakpoint;
+/// @example scss {compile} Example usage
+///   .test-get {
+///     $sizes: breakpoint.get-sizes();
+///     height: map.get($sizes, "medium");
+///   }
 
 @function get-sizes() {
   @return $sizes;

@@ -204,25 +204,25 @@ $config: (
 |description-margin|CssValue|(0.25em 0)|Margin for help text.|
 |description-max-width|Dimension|25em|Max width of help text.|
 |description-line-height|Number|true|Line height for description element, defaults to typography line-height-dense|
-|fieldset-background|Color|transparent|Background color of fieldset.|
+|fieldset-background|Color|transparent|Background color of fieldset element.|
 |fieldset-border|CssValue|none|Border for fieldset|
-|fieldset-margin-bottom|Dimension|1rem||
-|fieldset-margin-top|Dimension|1rem||
-|fieldset-padding|Dimension|0||
+|fieldset-margin-bottom|Dimension|1rem|Bottom margin for the fieldset element.|
+|fieldset-margin-top|Dimension|1rem|Bottom margin for the fieldset element.|
+|fieldset-padding|Dimension|0|Padding for the fieldset element.|
 |fieldset-margin-compact|Dimension|0|@joe-check unused|
-|fieldset-border-radius|Dimension|0||
-|fieldset-legend-color|Color|inherit||
-|fieldset-legend-border-bottom|Dimension|null||
-|fieldset-legend-padding-bottom|Dimension|null||
-|select-border-radius|Dimension|4px||
-|select-background-color|Color|null||
-|select-border|CssValue|null||
-|select-padding-x|Dimension|null||
-|select-padding-y|Dimension|null||
-|select-image|CssValue|null||
-|select-image-size|Dimension|0.9em||
-|select-image-offset|Dimension|0.7em||
-|select-image-margin|Dimension|0.65em||
+|fieldset-border-radius|Dimension|0|Border radius of the fieldset element.|
+|fieldset-legend-color|Color|inherit|Text color for the fieldset's label.|
+|fieldset-legend-border-bottom|Dimension|null|Bottom border color for the fieldset's label|
+|fieldset-legend-padding-bottom|Dimension|null|Bottom padding for the fieldset's label|
+|select-border-radius|Dimension|4px|Border radius for the select element.|
+|select-background-color|Color|null|Background color for the select element.|
+|select-border|CssValue|null|The border for the select element. Fallback to input border.|
+|select-padding-x|Dimension|null|Horizontal padding for the select element. Fallback to input-padding-x.|
+|select-padding-y|Dimension|null|Vertical padding for the select element. Fallback to input-padding-y.|
+|select-image|CssValue|null|Url for select element's background image.|
+|select-image-size|Dimension|0.9em|Background size for the select image.|
+|select-image-offset|Dimension|0.7em|Offset for the select image.|
+|select-image-margin|Dimension|0.65em|select image margin.|
 |inline-gap|Dimension|1em|Gap between items that are inline like checkboxes|
 
     
