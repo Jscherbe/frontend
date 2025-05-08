@@ -1,4 +1,8 @@
 SCSS Todos:
+  ☐ Think about moving container to components and out of base/layout
+  ☐ Add fullscreen modal modifier
+    * Remove border radius, width/height 100%
+  ☐ Popover add hide scrollbar
   ☐ Modal - Add fullscreen modifier 
     * Shouldn't have border radiuses, user will be responsible for inner layout
   ☐ Accordion margin-between has static -1px (used for borders), should be based on border width

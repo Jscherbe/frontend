@@ -1,4 +1,6 @@
 Todos:
+  ☐ Need to clean up package.json devDependencies
+    * still has old dependencies and some that were added for current version but aren't being used
   ☐ Need to explain that button, rule and link components inherit from core module settings
   ☐ Need to explain proxy-click to users in the card demo (only makes sense to us currently)
     ☐ Also need form-theme to stay light theme
