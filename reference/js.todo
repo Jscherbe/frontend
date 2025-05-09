@@ -1,4 +1,7 @@
 JS Todos:
+  ☐ Fix collapsible focus out handler, should probably be
+    * If (content.contains(document.activeElement)) (don't close)
+    * This was the original intention, I don't see any value in closing on all focus out events within
   ☐ Setup list-grid switcher script
   ☐ Refactoring to component initializer still needed
     ☐ Scrollpoint @up-next
