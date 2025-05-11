@@ -39,6 +39,7 @@ Module Settings
 $config: (
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
+  "attribute-init":      "data-grid-init",
   "breakpoint":          false,                   // Fallback to default
   "columns":             12,
   "gutter":              14px,
@@ -50,6 +51,7 @@ $config: (
   "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "rule-color" : "rule",
   "rule-size" : 1px,
+  "rule-fade-duration" : 400ms,
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -81,7 +83,7 @@ $config: (
 - **Group:** data-grid
 - **Type:** variable
 - **Lines (comments):** 20-36
-- **Lines (code):** 38-71
+- **Lines (code):** 38-73
 
 </details>
 
@@ -139,8 +141,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 74-77
-- **Lines (code):** 79-81
+- **Lines (comments):** 76-79
+- **Lines (code):** 81-83
 
 </details>
 
@@ -198,8 +200,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 117-120
-- **Lines (code):** 122-124
+- **Lines (comments):** 119-122
+- **Lines (code):** 124-126
 
 </details>
 
@@ -262,8 +264,8 @@ Output data grid styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 126-136
-- **Lines (code):** 138-583
+- **Lines (comments):** 128-139
+- **Lines (code):** 141-612
 
 </details>
 
@@ -283,6 +285,7 @@ Output data grid styles
 |$extra-rule-styles|`Map`|Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))|
 |$extra-gutter-scales|`String`|A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`|
 |$attribute|`Map`|Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")|
+|$rule-fade-duration|`CssDuration`|The amount of time for rules to fade in (after init, script positioning), set to falsey value to disable rule fade in (rules will always be shown)|
 
     
 
@@ -320,8 +323,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 83-86
-- **Lines (code):** 88-90
+- **Lines (comments):** 85-88
+- **Lines (code):** 90-92
 
 </details>
 
@@ -379,8 +382,8 @@ Output component stylesheet
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 92-94
-- **Lines (code):** 96-104
+- **Lines (comments):** 94-96
+- **Lines (code):** 98-106
 
 </details>
 
@@ -429,8 +432,8 @@ Get the default breakpoint for the grid (when it starts to be a grid (vs stacked
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 106-106
-- **Lines (code):** 108-115
+- **Lines (comments):** 108-108
+- **Lines (code):** 110-117
 
 </details>
 

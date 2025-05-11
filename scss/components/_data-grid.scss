@@ -38,6 +38,7 @@
 $config: (
   "attribute":           "data-grid",
   "attribute-container": "data-grid-container",
+  "attribute-init":      "data-grid-init",
   "breakpoint":          false,                   // Fallback to default
   "columns":             12,
   "gutter":              14px,
@@ -49,6 +50,7 @@ $config: (
   "sticky-top":                  var(--ulu-sticky-top-offset, 0),
   "rule-color" : "rule",
   "rule-size" : 1px,
+  "rule-fade-duration" : 400ms,
   "extra-breakpoints":   (
     "medium" : (
       "breakpoint": "medium",
@@ -134,6 +136,7 @@ $config: (
 /// @param {Map} $extra-rule-styles Map of other rule styles to add (map of maps of size, and color), key is the styles name ("name": ("size" : 4px, "color" : "color name" || color))
 /// @param {String} $extra-gutter-scales A map of gutter scales used like `data-grid="gutter-scale: large`, configuration map property becomes scale name and value is the amount (multiplier) to apply to the grid's gutter ie `( "large" : 2.25 )`
 /// @param {Map} $attribute Attribute to use for selecting grid and children. Children attribute get's "-item" as a suffix ("ie. data-grid, data-grid-item")
+/// @param {CssDuration} $rule-fade-duration The amount of time for rules to fade in (after init, script positioning), set to falsey value to disable rule fade in (rules will always be shown)
 
 @mixin create(
   $columns: get("columns"),
@@ -146,14 +149,17 @@ $config: (
   $extra-rule-styles: get("extra-rule-styles"),
   $extra-gutter-scales: get("extra-gutter-scales"),
   $attribute: get("attribute"),
+  $attribute-init: get("attribute-init"),
   $include-container: true,
   $container-attribute: get("attribute-container"),
   $container-gutter-scales: true,
   $sticky-top: get("sticky-top"),
-  $sticky-bottom: get("sticky-bottom")
+  $sticky-bottom: get("sticky-bottom"),
+  $rule-fade-duration: get("rule-fade-duration")
 ) {
   $attribute-item: "#{ $attribute }-item";
   $select-grid: '[#{ $attribute }*="columns: #{ $columns }"]';
+  $select-grid-not-init: '[#{ $attribute }]:not([#{ $attribute-init }])';
   $select-item: '[#{ $attribute-item }]';
   $select-rule-col: "::before";
   $select-rule-row: "::after";
@@ -215,6 +221,20 @@ $config: (
         }
       }
     }
+    // Rules: Applies to both column and row
+    &#{'[#{ $attribute }*="rules"]'} { 
+      > #{ $select-item } {
+        position: relative;
+        @if ($rule-fade-duration) {
+          &#{ $select-rule-col },
+          &#{ $select-rule-row } {
+            // For when grid init fades them in
+            opacity: 1;
+            transition: opacity $rule-fade-duration ease-in; 
+          }
+        }
+      }
+    }
     // Rules: Row
     &#{'[#{ $attribute }*="rules-row:"]'} { 
       > #{ $select-item } {
@@ -225,12 +245,6 @@ $config: (
           height: $rule-size;
           background: color.get($rule-color);
         }
-      }
-    }
-    // Rules: Applies to both column and row
-    &#{'[#{ $attribute }*="rules"]'} { 
-      > #{ $select-item } {
-        position: relative;
       }
     }
     // Rules: Column
@@ -576,6 +590,21 @@ $config: (
             $select-rule-row: $select-rule-row, 
             $between: true
           );
+        }
+      }
+    }
+  }
+
+  // Disable grid rules until init attribute it present (from positioning script)
+  // - In order to keep the rules for this compact it will only hide them if the init
+  //   is not present
+  
+  @if ($rule-fade-duration) {
+    #{ $select-grid-not-init } {
+      > #{ $select-item } {
+        &#{ $select-rule-col },
+        &#{ $select-rule-row } {
+          opacity: 0 !important;
         }
       }
     }

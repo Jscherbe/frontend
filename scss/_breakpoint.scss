@@ -72,10 +72,11 @@ $sizes: (
 /// Get all breakpoint sizes
 /// @return {Map} Map of breakpoints (equivalent to $sizes)
 /// @compiler
-///   @use "breakpoint" as breakpoint;
+///   @use "index" as ulu;
+///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get {
-///     $sizes: breakpoint.get-sizes();
+///     $sizes: ulu.breakpoint-get-sizes();
 ///     height: map.get($sizes, "medium");
 ///   }
 

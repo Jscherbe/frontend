@@ -18,6 +18,7 @@ import { shortcodes, pairedShortcodes } from "./docs-src/src/templates/shortcode
 const { NO_DOC_GEN, IS_PRODUCTION } = process.env;
 
 export default async function(eleventyConfig) {
+  eleventyConfig.setQuietMode(true); // Reduce logs
   eleventyConfig.setServerOptions({ 
     port: 8080, // Needed for asset server
     domDiff: false, // Messes up asset server (removes vite embedded styles from head)
