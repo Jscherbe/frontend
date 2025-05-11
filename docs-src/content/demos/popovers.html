@@ -95,3 +95,39 @@ layout: unformatted
   <div class="popover__footer">Popover Footer</div>
   <span class="popover__arrow" data-ulu-popover-arrow></span>
 </div>
+
+<h2 class="h2">Close With Focusout Test</h2>
+
+<p>The following should close when clicking on the anchor link within</p>
+
+<button class="button" type="button" data-ulu-popover-trigger='{ "focusoutCloses" : true }'>
+  <span>Show Focusout Test</span>
+  <span class="button__icon">
+    <span data-feather="fas fa-chevron-down"></span>
+  </span>
+</button> 
+<div class="popover" data-ulu-popover-content>
+  <div class="popover__inner wysiwyg">
+    <ul>
+      <li>
+        <button type="button">Focusing this button should keep focus</button>
+      </li>
+      <li>
+        <a href="#focusout-test-anchor">Goto headline below</a>
+      </li>
+      <li>
+        <button type="button">Focusing this button should keep focus</button>
+      </li>
+    </ul>
+  </div>
+  <span class="popover__arrow" data-ulu-popover-arrow></span>
+</div>
+
+<div class="callout">
+
+  <h3 class="h3" id="focusout-test-anchor" tabindex="0">This headline is to be focused</h3>
+
+  <p>The above the headline will be focused by the anchor link in the popover above to test if focusout option for collapsibles works correctly</p>
+
+</div>
+

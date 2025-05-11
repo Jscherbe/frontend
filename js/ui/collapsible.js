@@ -71,7 +71,14 @@ export class Collapsible {
     }
     this.focusoutHandler = (event) => {
       if (focusoutCloses) {
-        this.close(event);
+        // If closing on focus out we attach one-time event to 
+        // see which element is focused next (in between focusout and focusin 
+        // it's the body) so doing the logic in focusout won't work
+        document.addEventListener('focusin', () => {
+          if (!content.contains(document.activeElement)) {
+            this.close(event);
+          }
+        }, { once: true });
       }
     };
     trigger.addEventListener("click", this.clickHandler);
