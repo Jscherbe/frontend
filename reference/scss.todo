@@ -1,6 +1,6 @@
 SCSS Todos:
   ☐ Think about moving container to components and out of base/layout
-  ☐ Add fullscreen modal modifier
+  ✔ Add fullscreen modal modifier @done
     * Remove border radius, width/height 100%
   ☐ Popover add hide scrollbar
   ☐ Modal - Add fullscreen modifier 

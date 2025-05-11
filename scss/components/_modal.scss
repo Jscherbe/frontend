@@ -260,6 +260,12 @@ $config: (
       width: $size-width;
     }
   }
+
+  #{ $prefix }--fullscreen {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
   #{ $prefix }--right,
   #{ $prefix }--left {
     border-radius: 0;

@@ -3,6 +3,8 @@
 ## Version 0.1.0-beta.36 (unrealized)
 
 - **scss/**
+  - **components/modal**
+    - Add fullscreen size modifier 
   - **components/data-grid**
     - Create option "rule-fade-duration" which when enabled (can be disabled by passing false) will hide the rules for the grid until the grid's initialization script has finished (which gives positioning information about the column arrangement so the appropriate rules can be shown per column/row). 
 - **js**

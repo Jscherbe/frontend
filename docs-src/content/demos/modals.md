@@ -25,6 +25,33 @@ This is the default modal, being created from markup in the body on page load by
   This is the modal body <button data-ulu-dialog-close>Close</button>
 </div>
 
+
+<h3 class="h3">Fullscreen Size</h3>
+
+The modal will fill the window
+
+<button class="button" data-ulu-dialog-trigger="modal-id-fullscreen">Open Modal</button>
+
+<div 
+  id="modal-id-fullscreen" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Test Fullscreen",
+    "size" : "fullscreen"
+  }' 
+  hidden
+>
+  <div class="container">
+    This is the modal body should be fullscreen content added to test overflow.
+
+    {% for i in (1..20) %}
+      <h3 class="h2">Test Paragraph {{ i }}</h3>
+
+      {{ placeholder.paragraph }}
+    {% endfor %}
+  </div>
+</div>
+
 <h3 class="h3">Youtube Videos Automatically Pause</h3>
 
 If option for modal builder pauseYoutubeVideos is true (default true)
