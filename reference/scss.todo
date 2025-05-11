@@ -1,20 +1,18 @@
 SCSS Todos:
   ☐ Think about moving container to components and out of base/layout
   ✔ Add fullscreen modal modifier @done
-    * Remove border radius, width/height 100%
-  ☐ Popover add hide scrollbar
-  ☐ Modal - Add fullscreen modifier 
-    * Shouldn't have border radiuses, user will be responsible for inner layout
-  ☐ Accordion margin-between has static -1px (used for borders), should be based on border width
+  ✘ Popover add hide scrollbar @cancelled
+     * This is tricky not all popovers should have scrollbars hidden, probably semi-ok for popovers that are menus (since everything is focusable, tabbing on keyboard would allow you to move through items without focus on scrollbar component)
+  ✔ Accordion margin-between has static -1px (used for borders), should be based on border width @done
   ✔ Callout caps @done
     ✔ Match radius to work per style, but inherit global config @done
     ✔ If cap is false on a style, it should hide the cap and set the default padding if it's not setting it's own padding @done
     ✔ Think about how cap: true/false of undefined works with the styles (definelty need false) @done
   ☐ Should we allow linear gradients to pass through colors?
     ☐ We would have to adjust background-color to background properties throughout the UI
-  ☐ Button-verbose
-    ☐ Should have border option
-    ☐ Should consider grabbing default border from button
+  ✔ Button-verbose @done
+    ✔ Should have border option @done
+    ✔ Should consider grabbing default border from button @done
   ☐ Consider exposing a utility mixin in list-lines for manually printing the styles when needed (compression, used in places we can't add classes)
   ✔ Update pseudo selectors to new double color syntax @done
     * We don't support any browsers that still use the original syntax

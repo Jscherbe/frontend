@@ -40,6 +40,8 @@ $config: (
   "background-color" : white,
   "background-color-hover" : #F7F8F7,
   "border-radius" : true,
+  "border-color" : null,
+  "border-width" : null,
   "box-shadow" : true,
   "box-shadow-hover" : true,
   "color" : "type",
@@ -77,8 +79,8 @@ $config: (
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** variable
-- **Lines (comments):** 30-55
-- **Lines (code):** 57-87
+- **Lines (comments):** 39-66
+- **Lines (code):** 68-100
 
 </details>
 
@@ -92,6 +94,8 @@ $config: (
 |background-color|Color|white|Background color for the button.|
 |background-color-hover|Color|link|Background color for the button when hovered or focused.|
 |border-radius|String|border-radius|Border radius of the button.|
+|border-width|String|null|Border width (or set to true to inherit button border width default)|
+|border-color|String|null|Border color (or set to true to inherit button border width default)|
 |box-shadow|CssValue|true|Box shadow for the button. If set to true, uses default box-shadow.|
 |box-shadow-hover|CssValue|true|Box shadow for the button when hovered or focused. If set to true, uses default box-shadow-hover.|
 |color|String|type|Text color for the button.|
@@ -145,8 +149,8 @@ Change modules $config
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 89-92
-- **Lines (code):** 94-96
+- **Lines (comments):** 102-105
+- **Lines (code):** 107-109
 
 </details>
 
@@ -204,8 +208,8 @@ Prints component styles
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** mixin
-- **Lines (comments):** 108-116
-- **Lines (code):** 118-203
+- **Lines (comments):** 121-129
+- **Lines (code):** 131-220
 
 </details>
 
@@ -286,8 +290,8 @@ Get a config option
 - **File:** _button-verbose.scss
 - **Group:** button-verbose
 - **Type:** function
-- **Lines (comments):** 98-101
-- **Lines (code):** 103-106
+- **Lines (comments):** 111-114
+- **Lines (code):** 116-119
 
 </details>
 

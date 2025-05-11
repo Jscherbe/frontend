@@ -3,6 +3,8 @@
 ## Version 0.1.0-beta.36 (unrealized)
 
 - **scss/**
+  - **components/button-verbose**
+    - Add "border-width" and "border-color" options with ability to fallback to button defaults for each. No borders are added by default. Options descriptions added to sass api docs.
   - **components/modal**
     - Add fullscreen size modifier 
   - **components/data-grid**

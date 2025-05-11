@@ -10,6 +10,7 @@
 @use "../color";
 @use "../element";
 @use "../selector";
+@use "../button";
 
 // Used for function fallback
 $-fallbacks: (
@@ -24,6 +25,14 @@ $-fallbacks: (
   "box-shadow-hover" : (
     "function" : meta.get-function("get", false, "element"),
     "property" : "box-shadow-hover"
+  ),
+  "border-color" : (
+    "function" : meta.get-function("get", false, "button"),
+    "property" : "border-color"
+  ),
+  "border-width" : (
+    "function" : meta.get-function("get", false, "button"),
+    "property" : "border-width"
   )
 );
 
@@ -32,6 +41,8 @@ $-fallbacks: (
 /// @prop {Color} background-color [white] Background color for the button.
 /// @prop {Color} background-color-hover [link] Background color for the button when hovered or focused.
 /// @prop {String} border-radius [border-radius] Border radius of the button.
+/// @prop {String} border-width [null] Border width (or set to true to inherit button border width default)
+/// @prop {String} border-color [null] Border color (or set to true to inherit button border width default)
 /// @prop {CssValue} box-shadow [true] Box shadow for the button. If set to true, uses default box-shadow.
 /// @prop {CssValue} box-shadow-hover [true] Box shadow for the button when hovered or focused. If set to true, uses default box-shadow-hover.
 /// @prop {String} color [type] Text color for the button.
@@ -58,6 +69,8 @@ $config: (
   "background-color" : white,
   "background-color-hover" : #F7F8F7,
   "border-radius" : true,
+  "border-color" : null,
+  "border-width" : null,
   "box-shadow" : true,
   "box-shadow-hover" : true,
   "color" : "type",
@@ -122,17 +135,21 @@ $config: (
   $padding-right: ($padding-x * 2) + 1em;
   $cap-side: get("cap-side");
   $cap-defaults: (
+    "offset" : utils.if-type("number", get("border-width"), 0),
     "border-radius" : if(get("cap-match-radius"), get("border-radius"), 0),
     "padding-adjust" : if(utils.is-side($cap-side), $padding-x, $padding-y)
   );
   
   #{ $prefix } {
-    text-decoration: none;
-    border-radius: get("border-radius");
-    box-shadow: get("box-shadow");
-    line-height: get("line-height");
     position: relative; // For cap and icon
     display: block;
+    text-decoration: none;
+    border-radius: get("border-radius");
+    @if (get("border-width")) {
+      border: get("border-width") solid color.get(get("border-color"));
+    }
+    box-shadow: get("box-shadow");
+    line-height: get("line-height");
     margin-bottom: get("margin");
     max-width: 100%;
     width: get("min-width");
