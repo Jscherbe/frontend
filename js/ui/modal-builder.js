@@ -37,14 +37,17 @@ export const defaults = {
   print: false,
   noMinHeight: false,
   class: "",
+  baseClass: "modal",
   classCloseIcon: wrapSettingString("iconClassClose"),
   classResizerIcon: wrapSettingString("iconClassDragX"),
   debug: false,
   templateCloseIcon(config) {
-    return `<span class="modal__close-icon ${ config.classCloseIcon }" aria-hidden="true"></span>`;
+    const { baseClass, classCloseIcon } = config;
+    return `<span class="${ baseClass }__close-icon ${ classCloseIcon }" aria-hidden="true"></span>`;
   },
   templateResizerIcon(config) {
-    return `<span class="modal__resizer-icon ${ config.classResizerIcon }" aria-hidden="true"></span>`;
+    const { baseClass, classResizerIcon } = config;
+    return `<span class="${ baseClass }__resizer-icon ${ classResizerIcon }" aria-hidden="true"></span>`;
   },
   /**
    * Default modal template
@@ -53,35 +56,36 @@ export const defaults = {
    * @returns {String} Markup for modal
    */
   template(id, config) {
+    const { baseClass } = config;
     const classes = [
-      "modal",
-      `modal--${ config.position }`,
-      `modal--${ config.size }`,
-      `modal--${ config.allowResize ? "resize" : "no-resize" }`,
-      ...(!config.title ? ["modal--no-header"] : []),
-      ...(config.bodyFills ? ["modal--body-fills"] : []), 
-      ...(config.noBackdrop ? ["modal--no-backdrop"] : []), 
-      ...(config.noMinHeight ? ["modal--no-min-height"] : [] ),
+      baseClass,
+      `${ baseClass }--${ config.position }`,
+      `${ baseClass }--${ config.size }`,
+      `${ baseClass }--${ config.allowResize ? "resize" : "no-resize" }`,
+      ...(!config.title ? [`${ baseClass }--no-header`] : []),
+      ...(config.bodyFills ? [`${ baseClass }--body-fills`] : []), 
+      ...(config.noBackdrop ? [`${ baseClass }--no-backdrop`] : []), 
+      ...(config.noMinHeight ? [`${ baseClass }--no-min-height`] : [] ),
       ...(config.class ? [config.class] : []), 
     ];
     return `
       <dialog id="${ id }" class="${ classes.join(" ") }">
         ${ config.title ? `
-          <header class="modal__header">
-            <h2 class="modal__title">
+          <header class="${ baseClass }__header">
+            <h2 class="${ baseClass }__title">
               ${ config.titleIcon ? 
-                `<span class="modal__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
+                `<span class="${ baseClass }__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
               }
-              <span class="modal__title-text">${ config.title }</span>
+              <span class="${ baseClass }__title-text">${ config.title }</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${ closeAttribute } autofocus>
+            <button class="${ baseClass }__close" aria-label="Close modal" ${ closeAttribute } autofocus>
               ${ config.templateCloseIcon(config) }
             </button>
           </header>
         ` : "" }
-        <div class="modal__body" ${ initializer.getAttribute("body") }></div>
+        <div class="${ baseClass }__body" ${ initializer.getAttribute("body") }></div>
         ${ config.hasResizer ? 
-          `<div class="modal__resizer" ${ initializer.getAttribute("resizer") }>
+          `<div class="${ baseClass }__resizer" ${ initializer.getAttribute("resizer") }>
             ${ config.templateResizerIcon(config) }
           </div>` : "" 
         }

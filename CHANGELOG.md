@@ -5,6 +5,9 @@
 - **scss/**
   - **components/data-grid**
     - Create option "rule-fade-duration" which when enabled (can be disabled by passing false) will hide the rules for the grid until the grid's initialization script has finished (which gives positioning information about the column arrangement so the appropriate rules can be shown per column/row). 
+- **js**
+  - **ui/modal-builder**
+    - Update all templates options (templateCloseIcon, templateResizerIcon, template) to include new option for "baseClass" so that base BEM selector can easily be changed (ie. .namespace-modal for example)
 
 ## Version 0.1.0-beta.35
 
