@@ -1,22 +1,22 @@
 JS Todos:
-  ☐ Fix collapsible focus out handler, should probably be
+  ✔ Fix collapsible focus out handler, should probably be @done
     * If (content.contains(document.activeElement)) (don't close)
     * This was the original intention, I don't see any value in closing on all focus out events within
   ☐ Setup list-grid switcher script
-  ☐ Refactoring to component initializer still needed
-    ☐ Scrollpoint @up-next
-    ☐ Slider
-    ☐ Tabs
-    ☐ Theme Toggle
-    ☐ Tooltip
-    ☐ When Finished
-      ☐ Double check all init calls (semicolons, events, etc)
+  ✔ Refactoring to component initializer still needed @done
+    ✔ Scrollpoint @up-next @done
+    ✔ Slider @done
+    ✔ Tabs @done
+    ✔ Theme Toggle @done
+    ✔ Tooltip @done
+    ✔ When Finished @done
+      ✔ Double check all init calls (semicolons, events, etc) @done
   ☐ Should we make component initializer init async/promise so we can initialize if success, or add callbacks.
     * Currently things get initialize if they were setup regardless of if success or not
   ☐ Need to think about instance management,
     * Removed instances from flipcard but it has the class collecting instances
     * Need something uniform for all ui component instances so they are stored and managed (destroyed/etc) the same way. Not needed currently but will eventually be needed.
-  ☐ Need to set init attribute in print @important
+  ✔ Need to set init attribute in print @important @done
   ☐ Refactor class-logger into Logger and extend all classes
     * Maybe this could be used independently too
     * One challenge is should debug flag or level etc, something have it on options others as properties on the class itself instance.options.debug vs instance.debug
