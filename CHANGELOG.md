@@ -10,10 +10,19 @@
   - **components/data-grid**
     - Create option "rule-fade-duration" which when enabled (can be disabled by passing false) will hide the rules for the grid until the grid's initialization script has finished (which gives positioning information about the column arrangement so the appropriate rules can be shown per column/row). 
 - **js**
+  - **settings**
+    - Update "wrapSettingString" function to have second argument for "transform" allowing default settings strings that can also be transformed. This was used in breakpoint module so user can match "cssvarPrefix" to create a default value of "--PREFIX-breakpoint" for example, where PREFIX is dynamic at time of string is used
+    - Add "cssvarPrefix" to match scss cssvar module's prefix value
+  - **ui/breakpoint**
+    - Fix all typos (options and methods) of "psuedo" to "pseudo" (valueFromPseudo, pseudoSelector)
+    - Bring in new setting (from settings.js) for "cssvarPrefix" for the breakpoint customProperty default value
+    - Create test for this in demos
   - **ui/collapsibles**
     - Fix bug with "focusoutCloses" check collapsible content for focus before closing (so only close if focusout led outside the content) which is the intended behavior. Note this is mechanism used to control popover's so it fixes the bug there as well
   - **ui/modal-builder**
     - Update all templates options (templateCloseIcon, templateResizerIcon, template) to include new option for "baseClass" so that base BEM selector can easily be changed (ie. .namespace-modal for example)
+  - **utils/css.js**
+    - Add new module to hold utility functions related to CSS, currently just new function getCustomProperty which is used in ui/breakpoints module
 
 ## Version 0.1.0-beta.35
 

@@ -3,12 +3,25 @@
  * @description Manages shared configuration for the library.
  */
 
-// Default configuration settings
+/**
+ * Default settings
+ * @typedef {object} Defaults
+ * @property {string} iconClassClose - The CSS class string for the close icon
+ * @property {string} iconClassDragX - The CSS class string for the drag X icon
+ * @property {string} iconClassPrevious - The CSS class string for the previous icon
+ * @property {string} iconClassNext - The CSS class string for the next icon
+ * @property {string} cssvarPrefix - The prefix to use for CSS custom properties
+ */
+
+/**
+ * @type {Defaults}
+ */
 const defaults = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
   iconClassPrevious: "css-icon  css-icon--angle-left",
-  iconClassNext: "css-icon  css-icon--angle-right"
+  iconClassNext: "css-icon  css-icon--angle-right",
+  cssvarPrefix: "",
 };
 
 // Current configuration, initialized with defaults
@@ -66,13 +79,17 @@ export function updateSetting(key, value) {
  * retrieves the current value of the specified setting. This allows the setting
  * to be used as a string literal, dynamically retrieving its value.
  *
- * @param {string} key The key of the setting to wrap.
- * @returns {object} An object with a `toString()` method that returns the setting value.
+ * @param {String} key The key of the setting to wrap.
+ * @param {Function} transform Optional function to transform the setting's
+ * value when its string representation is requested.
+ * @returns {Object} An object with a `toString()` method that returns the
+ * (optionally transformed) setting value as a string.
  */
-export function wrapSettingString(key) {
+export function wrapSettingString(key, transform) {
   return {
     toString() {
-      return getSetting(key);
+      const value = getSetting(key);
+      return transform ? transform(value) : value;
     }
   };
 }

@@ -12,7 +12,7 @@ title: ui/breakpoints
             * [new exports.BreakpointManager(config)](#new_module_ui/breakpoints.BreakpointManager_new)
             * [.onChange(callback)](#module_ui/breakpoints.BreakpointManager+onChange)
             * [.removeOnChange(callback)](#module_ui/breakpoints.BreakpointManager+removeOnChange)
-            * [.getBreakpointInPsuedo()](#module_ui/breakpoints.BreakpointManager+getBreakpointInPsuedo)
+            * [.getBreakpointInPseudo()](#module_ui/breakpoints.BreakpointManager+getBreakpointInPseudo)
             * [.getBreakpointInProperty()](#module_ui/breakpoints.BreakpointManager+getBreakpointInProperty)
             * [.getBreakpoint()](#module_ui/breakpoints.BreakpointManager+getBreakpoint)
             * [.update()](#module_ui/breakpoints.BreakpointManager+update)
@@ -35,7 +35,7 @@ title: ui/breakpoints
 
 ## ui/breakpoints.BreakpointManager
 Class that provides method for retrieving and acting on breakpoints passed
-from CSS (using element psuedo content prop)
+from CSS (using element pseudo content prop)
 
 **Kind**: static class of [<code>ui/breakpoints</code>](#module_ui/breakpoints)  
 
@@ -43,7 +43,7 @@ from CSS (using element psuedo content prop)
     * [new exports.BreakpointManager(config)](#new_module_ui/breakpoints.BreakpointManager_new)
     * [.onChange(callback)](#module_ui/breakpoints.BreakpointManager+onChange)
     * [.removeOnChange(callback)](#module_ui/breakpoints.BreakpointManager+removeOnChange)
-    * [.getBreakpointInPsuedo()](#module_ui/breakpoints.BreakpointManager+getBreakpointInPsuedo)
+    * [.getBreakpointInPseudo()](#module_ui/breakpoints.BreakpointManager+getBreakpointInPseudo)
     * [.getBreakpointInProperty()](#module_ui/breakpoints.BreakpointManager+getBreakpointInProperty)
     * [.getBreakpoint()](#module_ui/breakpoints.BreakpointManager+getBreakpoint)
     * [.update()](#module_ui/breakpoints.BreakpointManager+update)
@@ -55,19 +55,19 @@ from CSS (using element psuedo content prop)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| config | <code>Object</code> | Configruation object |
+| config | <code>Object</code> | Configuration object |
 | config.order | <code>Array</code> | Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large] |
 | config.customProperty | <code>Array</code> | Property to grab breakpoint from (default is --breakpoint) |
-| config.valueFromPsuedo | <code>Array</code> | Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property |
-| config.element | <code>Node</code> | The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body |
-| config.psuedoSelector | <code>String</code> | Change psuedo selector used to get the breakpoint from the psuedo's content property |
+| config.valueFromPseudo | <code>Array</code> | Use the legacy method of grabbing breakpoint from pseudo element, default uses custom property |
+| config.element | <code>Node</code> | The element to retrieve active breakpoint from stylesheet. (default is html) For using the old pseudo method, adjust this to document.body |
+| config.pseudoSelector | <code>String</code> | Change pseudo selector used to get the breakpoint from the pseudo's content property |
 
 <a name="module_ui/breakpoints.BreakpointManager+onChange"></a>
 
 ### breakpointManager.onChange(callback)
-Add a callback for everytime a breakpoint changes
+Add a callback for every time a breakpoint changes
 - Not recommended, possibly use to watch for changes, etc
-- For more control use intance.at(name) with breakpoint methods
+- For more control use instance.at(name) with breakpoint methods
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_ui/breakpoints.BreakpointManager)  
 
@@ -86,10 +86,10 @@ Remove change callback
 | --- | --- | --- |
 | callback | <code>function</code> | Function to remove |
 
-<a name="module_ui/breakpoints.BreakpointManager+getBreakpointInPsuedo"></a>
+<a name="module_ui/breakpoints.BreakpointManager+getBreakpointInPseudo"></a>
 
-### breakpointManager.getBreakpointInPsuedo()
-Get breakpoint from a psuedo element
+### breakpointManager.getBreakpointInPseudo()
+Get breakpoint from a pseudo element
 
 **Kind**: instance method of [<code>BreakpointManager</code>](#module_ui/breakpoints.BreakpointManager)  
 <a name="module_ui/breakpoints.BreakpointManager+getBreakpointInProperty"></a>

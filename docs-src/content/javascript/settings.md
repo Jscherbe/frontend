@@ -9,13 +9,17 @@ Manages shared configuration for the library.
 
 
 * [settings](#module_settings)
-    * [.getDefaultSettings()](#module_settings.getDefaultSettings) ⇒ <code>object</code>
-    * [.updateSettings(changes)](#module_settings.updateSettings)
-    * [.getSettings()](#module_settings.getSettings) ⇒ <code>object</code>
-    * [.getSetting(key)](#module_settings.getSetting) ⇒ <code>\*</code>
-    * [.updateSetting(key, value)](#module_settings.updateSetting)
-    * [.wrapSettingString(key)](#module_settings.wrapSettingString) ⇒ <code>object</code>
-    * [.configureIcons()](#module_settings.configureIcons)
+    * _static_
+        * [.getDefaultSettings()](#module_settings.getDefaultSettings) ⇒ <code>object</code>
+        * [.updateSettings(changes)](#module_settings.updateSettings)
+        * [.getSettings()](#module_settings.getSettings) ⇒ <code>object</code>
+        * [.getSetting(key)](#module_settings.getSetting) ⇒ <code>\*</code>
+        * [.updateSetting(key, value)](#module_settings.updateSetting)
+        * [.wrapSettingString(key, transform)](#module_settings.wrapSettingString) ⇒ <code>Object</code>
+        * [.configureIcons()](#module_settings.configureIcons)
+    * _inner_
+        * [~defaults](#module_settings..defaults) : <code>Defaults</code>
+        * [~Defaults](#module_settings..Defaults) : <code>object</code>
 
 <a name="module_settings.getDefaultSettings"></a>
 
@@ -68,18 +72,20 @@ Updates a specific configuration setting.
 
 <a name="module_settings.wrapSettingString"></a>
 
-## settings.wrapSettingString(key) ⇒ <code>object</code>
+## settings.wrapSettingString(key, transform) ⇒ <code>Object</code>
 Creates a wrapped string representation of a configuration setting.
 This function returns an object with a `toString()` method that, when called,
 retrieves the current value of the specified setting. This allows the setting
 to be used as a string literal, dynamically retrieving its value.
 
 **Kind**: static method of [<code>settings</code>](#module_settings)  
-**Returns**: <code>object</code> - An object with a `toString()` method that returns the setting value.  
+**Returns**: <code>Object</code> - An object with a `toString()` method that returns the
+(optionally transformed) setting value as a string.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | The key of the setting to wrap. |
+| key | <code>String</code> | The key of the setting to wrap. |
+| transform | <code>function</code> | Optional function to transform the setting's value when its string representation is requested. |
 
 <a name="module_settings.configureIcons"></a>
 
@@ -87,5 +93,25 @@ to be used as a string literal, dynamically retrieving its value.
 Sets icon settings to Font Awesome icons
 
 **Kind**: static method of [<code>settings</code>](#module_settings)  
+<a name="module_settings..defaults"></a>
+
+## settings~defaults : <code>Defaults</code>
+**Kind**: inner constant of [<code>settings</code>](#module_settings)  
+<a name="module_settings..Defaults"></a>
+
+## settings~Defaults : <code>object</code>
+Default settings
+
+**Kind**: inner typedef of [<code>settings</code>](#module_settings)  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| iconClassClose | <code>string</code> | The CSS class string for the close icon |
+| iconClassDragX | <code>string</code> | The CSS class string for the drag X icon |
+| iconClassPrevious | <code>string</code> | The CSS class string for the previous icon |
+| iconClassNext | <code>string</code> | The CSS class string for the next icon |
+| cssvarPrefix | <code>string</code> | The prefix to use for CSS custom properties |
+
 
   

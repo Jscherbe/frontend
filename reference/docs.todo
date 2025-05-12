@@ -1,4 +1,5 @@
 Todos:
+  ☐ Guide on how to use CSS Variables for colors
   ☐ Need to clean up package.json devDependencies
     * still has old dependencies and some that were added for current version but aren't being used
   ☐ Need to explain that button, rule and link components inherit from core module settings

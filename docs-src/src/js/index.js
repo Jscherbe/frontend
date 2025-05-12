@@ -5,6 +5,8 @@ import { init as initLiveDemo } from "./live-demo.js";
 
 window.Ulu = ulu;
 
+ulu.settings.updateSetting("cssvarPrefix", "site");
+
 ulu.utils.fontAwesome.configureIcons();
 
 ulu.ui.page.init();

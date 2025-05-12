@@ -5,8 +5,11 @@
 // Pass breakpoints from CSS to stylesheet, use this to attach behaviors on breakpoints
 import { removeArrayElement } from "@ulu/utils/array.js";
 import { getName } from "../events/index.js";
+import { wrapSettingString } from "../settings.js";
+import { getCustomProperty } from "../utils/css.js";
 import { log, logError } from "../utils/class-logger.js";
 
+const getDefaultCustomProperty = prefix => getCustomProperty(prefix, "breakpoint");
 
 // Resize Handler to update breakpoints for all instances (Called after resize finished)
 window.addEventListener(getName("pageResized"), () => {
@@ -16,25 +19,26 @@ window.addEventListener(getName("pageResized"), () => {
 /**
  * @class
  * Class that provides method for retrieving and acting on breakpoints passed
- * from CSS (using element psuedo content prop)
+ * from CSS (using element pseudo content prop)
  */
 export class BreakpointManager {
   static instances = [];
   static defaults = {
     element: document?.documentElement,
-    valueFromPsuedo: false,
+    valueFromPseudo: false,
     customProperty: "--breakpoint",
-    psuedoSelector: ':before',
+    customProperty: wrapSettingString("cssvarPrefix", getDefaultCustomProperty),
+    pseudoSelector: ':before',
     order: ["none", "small", "medium", "large"],
     debug: false
   }
   /**
-   * @param {Object} config Configruation object
+   * @param {Object} config Configuration object
    * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
    * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
-   * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
-   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
-   * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
+   * @param {Array} config.valueFromPseudo Use the legacy method of grabbing breakpoint from pseudo element, default uses custom property
+   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old pseudo method, adjust this to document.body
+   * @param {String} config.pseudoSelector Change pseudo selector used to get the breakpoint from the pseudo's content property
    */
   constructor(config) {
     Object.assign(this, BreakpointManager.defaults, config);
@@ -51,9 +55,9 @@ export class BreakpointManager {
     BreakpointManager.instances.push(this);
   }
   /**
-   * Add a callback for everytime a breakpoint changes
+   * Add a callback for every time a breakpoint changes
    * - Not recommended, possibly use to watch for changes, etc
-   * - For more control use intance.at(name) with breakpoint methods
+   * - For more control use instance.at(name) with breakpoint methods
    * @param {Function} callback Function to call, passed one argument current instance which can be used to get information about breakpoints
    */
   onChange(callback) {
@@ -67,10 +71,10 @@ export class BreakpointManager {
     removeArrayElement(this.onChangeCallbacks, callback);
   }
   /**
-   * Get breakpoint from a psuedo element
+   * Get breakpoint from a pseudo element
    */
-  getBreakpointInPsuedo() {
-    return window.getComputedStyle(this.element, this.psuedoSelector).content.replace(/^"|"$/g, '');
+  getBreakpointInPseudo() {
+    return window.getComputedStyle(this.element, this.pseudoSelector).content.replace(/^"|"$/g, '');
   }
   /**
    * Get breakpoint from a custom property
@@ -82,8 +86,8 @@ export class BreakpointManager {
    * Get breakpoint from element (design note: user could override prototype)
    */
   getBreakpoint() {
-    if (this.valueFromPsuedo) {
-      return this.getBreakpointInPsuedo();
+    if (this.valueFromPseudo) {
+      return this.getBreakpointInPseudo();
     } else {
       return this.getBreakpointInProperty();
     }
