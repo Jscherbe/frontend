@@ -1,4 +1,8 @@
 JS Todos:
+  ☐ Tooltip make sure template can be easily setup with baseClass
+  ☐ Tooltip add method to update content option
+    * Sometimes this changes (ie. copy button feedback)
+    * Or maybe this is just advanced and user manages the content element
   ☐ Setup list-grid switcher script
   ☐ Should we make component initializer init async/promise so we can initialize if success, or add callbacks.
     * Currently things get initialize if they were setup regardless of if success or not
