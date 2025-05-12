@@ -33,6 +33,7 @@ export namespace defaults {
     export let noMinHeight: boolean;
     let _class: string;
     export { _class as class };
+    export let baseClass: string;
     export let classCloseIcon: any;
     export let classResizerIcon: any;
     export let debug: boolean;

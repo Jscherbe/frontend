@@ -185,6 +185,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -2447,6 +2462,21 @@
     
     <span class="nav-tree__text">
       utils/class-logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
     </span>
   
         </a>
@@ -2686,6 +2716,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -4958,6 +5003,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -5114,42 +5174,48 @@
 </label>  
 </div>
 <div class="form-theme__item form-theme__item--checkbox">
-  <input type="checkbox" id="live-demo-id-4" name="footer" checked="">
+  <input type="checkbox" id="live-demo-id-4" name="aside" checked="">
 <label for="live-demo-id-4">
+  Aside
+</label>  
+</div>
+<div class="form-theme__item form-theme__item--checkbox">
+  <input type="checkbox" id="live-demo-id-5" name="footer" checked="">
+<label for="live-demo-id-5">
   Footer
 </label>  
 </div>
   </div>
 </fieldset>
 <div class="form-theme__item form-theme__item--select">
-<label for="live-demo-id-5">
+<label for="live-demo-id-6">
   Action
   <span class="fas fa-info-circle" data-ulu-tooltip="Proxy click only works when title is present"></span>
 </label>  
-  <select id="live-demo-id-5" name="action">
+  <select id="live-demo-id-6" name="action">
     <option value="">None</option>,<option value="link">Card is Link</option>,<option value="proxy">Proxy Click</option>
   </select>
 </div>
 <div class="form-theme__item form-theme__item--select">
-<label for="live-demo-id-6">
+<label for="live-demo-id-7">
   Media
 </label>  
-  <select id="live-demo-id-6" name="media">
+  <select id="live-demo-id-7" name="media">
     <option value="icon">Icon</option>,<option value="image">Image</option>,<option value="imageFit">Image (fit)</option>,<option value="none">No Image</option>
   </select>
 </div>
 <div class="form-theme__item form-theme__item--select">
-<label for="live-demo-id-7">
+<label for="live-demo-id-8">
   Layout
   <span class="fas fa-info-circle" data-ulu-tooltip="Overlay is not compatible with 'Icon' and 'No Image' options"></span>
 </label>  
-  <select id="live-demo-id-7" name="layout">
+  <select id="live-demo-id-8" name="layout">
     <option value="">Default</option>,<option value="horizontal">Horizontal</option>,<option value="overlay">Overlay</option>
   </select>
 </div>
   </form>
   <script type="application/json" data-live-demo-options="">
-    {"debug":false,"template":"{% set hasProxy = action == \"proxy\" %}\n{% set isLink = action == \"link\" %}\n{% set hasImage = media == \"image\" or media == \"imageFit\" %}\n{% set element = isLink ? \"a\" : \"article\" %}\n{% set classes = [\n  \"card\",\n  layout ? \"card--\" ~ layout : \"\",\n  media == \"imageFit\" ? \"card--image-fit\" : \"\"\n] %}\n\n<{{ element }} \n  class=\"{{ classes|join(' ') }}\"\n  {{ hasProxy ? \"data-ulu-proxy-click\" }}\n  {{ isLink ? \"href='https://www.google.com'\" }}\n>\n  {% if body %}\n    <div class=\"card__body\">\n      {% if title %}\n        <h5 class=\"card__title\">\n          {# If link don't nest link (no link title) #}\n          {% if isLink %}\n            Card Title\n          {% else %}\n            <a \n              class=\"card__title-link\" \n              href=\"https://www.google.com\" \n              {{ hasProxy ? \"data-ulu-proxy-click-source\" }}\n            >\n              Card Title\n            </a>\n          {% endif %}\n        </h5>\n      {% endif %}\n      {% if content %}\n        <div>\n          This is the card content. It can contain around 2-3 sentences.\n        </div>\n      {% endif %}\n    </div>\n  {% endif %}\n\n  {% if hasImage %}\n    <div class=\"card__image\">\n      <img src=\"/frontend/assets/placeholder/image-1.jpg\">\n    </div>\n  {% endif %}\n\n  {% if media == \"icon\" %}\n    <div class=\"card__image card__image--icon\">\n      <img src=\"/frontend/assets/placeholder/icon-calendar.svg\" width=\"150\" height=\"150\">\n    </div>\n  {% endif %}\n\n  {% if footer %}\n    <div class=\"card__footer\">\n      {# If link don't nest link (no link title) #}\n      {% if isLink %}\n        Card Footer Text\n      {% else %}\n        <a class=\"button button--small\" href=\"https://www.yahoo.com/\">Footer</a>\n      {% endif %}\n    </div>\n  {% endif %}\n</{{ element }}>"}
+    {"debug":false,"template":"{% set hasProxy = action == \"proxy\" %}\n{% set isLink = action == \"link\" %}\n{% set hasImage = media == \"image\" or media == \"imageFit\" %}\n{% set element = isLink ? \"a\" : \"article\" %}\n{% set classes = [\n  \"card\",\n  layout ? \"card--\" ~ layout : \"\",\n  media == \"imageFit\" ? \"card--image-fit\" : \"\"\n] %}\n\n<{{ element }} \n  class=\"{{ classes|join(' ') }}\"\n  {{ hasProxy ? \"data-ulu-proxy-click\" }}\n  {{ isLink ? \"href='https://www.google.com'\" }}\n>\n  {% if body %}\n    <div class=\"card__body\">\n      <div class=\"card__main\">\n        {% if title %}\n          <h5 class=\"card__title\">\n            {# If link don't nest link (no link title) #}\n            {% if isLink %}\n              Card Title\n            {% else %}\n              <a \n                class=\"card__title-link\" \n                href=\"https://www.google.com\" \n                {{ hasProxy ? \"data-ulu-proxy-click-source\" }}\n              >\n                Card Title\n              </a>\n            {% endif %}\n          </h5>\n        {% endif %}\n        {% if content %}\n          <div>\n            This is the card content. It can contain around 2-3 sentences.\n          </div>\n        {% endif %}\n      </div>\n      {% if aside %}\n        <div class=\"card__aside\">\n          This is the aside. attach the rule to this element.\n        </div>\n      {% endif %}\n    </div>\n  {% endif %}\n\n  {% if hasImage %}\n    <div class=\"card__image\">\n      <img src=\"/frontend/assets/placeholder/image-1.jpg\">\n    </div>\n  {% endif %}\n\n  {% if media == \"icon\" %}\n    <div class=\"card__image card__image--icon\">\n      <img src=\"/frontend/assets/placeholder/icon-calendar.svg\" width=\"150\" height=\"150\">\n    </div>\n  {% endif %}\n\n  {% if footer %}\n    <div class=\"card__footer\">\n      {# If link don't nest link (no link title) #}\n      {% if isLink %}\n        Card Footer Text\n      {% else %}\n        <a class=\"button button--small\" href=\"https://www.yahoo.com/\">Footer</a>\n      {% endif %}\n    </div>\n  {% endif %}\n</{{ element }}>\n\n"}
   </script>
 </div>
 

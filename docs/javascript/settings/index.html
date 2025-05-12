@@ -185,6 +185,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -2447,6 +2462,21 @@
     
     <span class="nav-tree__text">
       utils/class-logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
     </span>
   
         </a>
@@ -2686,6 +2716,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -4958,6 +5003,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -5093,10 +5153,16 @@
                     <li><a href="#settings.updatesetting(key%2C-value)">settings.updateSetting(key, value)</a>
             		</li>
 
-                    <li><a href="#settings.wrapsettingstring(key)-%E2%87%92-object">settings.wrapSettingString(key) ⇒ object</a>
+                    <li><a href="#settings.wrapsettingstring(key%2C-transform)-%E2%87%92-object">settings.wrapSettingString(key, transform) ⇒ Object</a>
             		</li>
 
                     <li><a href="#settings.configureicons()">settings.configureIcons()</a>
+            		</li>
+
+                    <li><a href="#settings~defaults-%3A-defaults">settings~defaults : Defaults</a>
+            		</li>
+
+                    <li><a href="#settings~defaults-%3A-object">settings~Defaults : object</a>
             		</li>
                 </ol>
             </div>
@@ -5115,13 +5181,23 @@
 <ul>
 <li><a href="#module_settings">settings</a>
 <ul>
+<li><em>static</em>
+<ul>
 <li><a href="#module_settings.getDefaultSettings">.getDefaultSettings()</a> ⇒ <code>object</code></li>
 <li><a href="#module_settings.updateSettings">.updateSettings(changes)</a></li>
 <li><a href="#module_settings.getSettings">.getSettings()</a> ⇒ <code>object</code></li>
 <li><a href="#module_settings.getSetting">.getSetting(key)</a> ⇒ <code>*</code></li>
 <li><a href="#module_settings.updateSetting">.updateSetting(key, value)</a></li>
-<li><a href="#module_settings.wrapSettingString">.wrapSettingString(key)</a> ⇒ <code>object</code></li>
+<li><a href="#module_settings.wrapSettingString">.wrapSettingString(key, transform)</a> ⇒ <code>Object</code></li>
 <li><a href="#module_settings.configureIcons">.configureIcons()</a></li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_settings..defaults">~defaults</a> : <code>Defaults</code></li>
+<li><a href="#module_settings..Defaults">~Defaults</a> : <code>object</code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -5202,13 +5278,14 @@
 </tbody>
 </table>
 <p><a name="module_settings.wrapSettingString"></a></p>
-<h2 id="settings.wrapsettingstring(key)-%E2%87%92-object" tabindex="-1">settings.wrapSettingString(key) ⇒ <code>object</code></h2>
+<h2 id="settings.wrapsettingstring(key%2C-transform)-%E2%87%92-object" tabindex="-1">settings.wrapSettingString(key, transform) ⇒ <code>Object</code></h2>
 <p>Creates a wrapped string representation of a configuration setting.
 This function returns an object with a <code>toString()</code> method that, when called,
 retrieves the current value of the specified setting. This allows the setting
 to be used as a string literal, dynamically retrieving its value.</p>
 <p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a><br>
-<strong>Returns</strong>: <code>object</code> - An object with a <code>toString()</code> method that returns the setting value.</p>
+<strong>Returns</strong>: <code>Object</code> - An object with a <code>toString()</code> method that returns the
+(optionally transformed) setting value as a string.</p>
 <table>
 <thead>
 <tr>
@@ -5220,15 +5297,64 @@ to be used as a string literal, dynamically retrieving its value.</p>
 <tbody>
 <tr>
 <td>key</td>
-<td><code>string</code></td>
+<td><code>String</code></td>
 <td>The key of the setting to wrap.</td>
+</tr>
+<tr>
+<td>transform</td>
+<td><code>function</code></td>
+<td>Optional function to transform the setting's value when its string representation is requested.</td>
 </tr>
 </tbody>
 </table>
 <p><a name="module_settings.configureIcons"></a></p>
 <h2 id="settings.configureicons()" tabindex="-1">settings.configureIcons()</h2>
 <p>Sets icon settings to Font Awesome icons</p>
-<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a></p>
+<p><strong>Kind</strong>: static method of <a href="#module_settings"><code>settings</code></a><br>
+<a name="module_settings..defaults"></a></p>
+<h2 id="settings~defaults-%3A-defaults" tabindex="-1">settings~defaults : <code>Defaults</code></h2>
+<p><strong>Kind</strong>: inner constant of <a href="#module_settings"><code>settings</code></a><br>
+<a name="module_settings..Defaults"></a></p>
+<h2 id="settings~defaults-%3A-object" tabindex="-1">settings~Defaults : <code>object</code></h2>
+<p>Default settings</p>
+<p><strong>Kind</strong>: inner typedef of <a href="#module_settings"><code>settings</code></a><br>
+<strong>Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>iconClassClose</td>
+<td><code>string</code></td>
+<td>The CSS class string for the close icon</td>
+</tr>
+<tr>
+<td>iconClassDragX</td>
+<td><code>string</code></td>
+<td>The CSS class string for the drag X icon</td>
+</tr>
+<tr>
+<td>iconClassPrevious</td>
+<td><code>string</code></td>
+<td>The CSS class string for the previous icon</td>
+</tr>
+<tr>
+<td>iconClassNext</td>
+<td><code>string</code></td>
+<td>The CSS class string for the next icon</td>
+</tr>
+<tr>
+<td>cssvarPrefix</td>
+<td><code>string</code></td>
+<td>The prefix to use for CSS custom properties</td>
+</tr>
+</tbody>
+</table>
 
     </div>
   </div>

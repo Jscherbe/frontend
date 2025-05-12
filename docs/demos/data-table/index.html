@@ -185,6 +185,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -2447,6 +2462,21 @@
     
     <span class="nav-tree__text">
       utils/class-logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
     </span>
   
         </a>
@@ -2686,6 +2716,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -4958,6 +5003,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -5133,7 +5193,8 @@
   </tfoot>
 </table>
 <h2 class="h2">Complex Table</h2>
-<table class="data-table" id="dt-1">
+<h2 class="h2">Striped Table</h2>
+<table class="data-table data-table--striped" id="dt-1">
   <caption>
     This Is The Table's Caption
   </caption>
@@ -5173,6 +5234,138 @@
       <td headers="dt-1-details dt-1-before dt-1-r1">Lorem Ipsum</td>
       <td headers="dt-1-details dt-1-after dt-1-r1">Lorem Ipsum</td>
       <td headers="dt-1-id">OL-53-GHSLE</td>
+    </tr>
+  </tbody>
+</table>
+<h2 class="h2">Large-first Table</h2>
+<table class="data-table data-table--large-first" id="dt-2">
+  <caption>
+    This Is The Table's Caption
+  </caption>
+  <thead>
+    <tr>
+      <th id="dt-2-type" rowspan="2">Type</th>
+      <th id="dt-2-group" colspan="2">Group</th>
+      <th id="dt-2-details" colspan="2">Details</th>
+      <th id="dt-2-id" rowspan="2">Id</th>
+    </tr>
+    <tr>
+      <th headers="dt-2-group" id="dt-2-primary">Primary</th>
+      <th headers="dt-2-group" id="dt-2-secondary">Secondary</th>
+      <th headers="dt-2-details" id="dt-2-before">Before Task</th>
+      <th headers="dt-2-details" id="dt-2-after">After Task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" headers="dt-2-type dt-2-r1" id="dt-2-r1">Default</th>
+      <td headers="dt-2-group dt-2-primary dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-group dt-2-secondary dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-details dt-2-before dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-details dt-2-after dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-id">OL-53-GHSLE</td>
+    </tr>
+    <tr>
+      <td headers="dt-2-group dt-2-primary dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-group dt-2-secondary dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-details dt-2-before dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-details dt-2-after dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-id">OL-53-GHSLE</td>
+    </tr>
+    <tr>
+      <td headers="dt-2-group dt-2-primary dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-group dt-2-secondary dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-details dt-2-before dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-details dt-2-after dt-2-r1">Lorem Ipsum</td>
+      <td headers="dt-2-id">OL-53-GHSLE</td>
+    </tr>
+  </tbody>
+</table>
+<h2 class="h2">Large-header Table</h2>
+<table class="data-table data-table--large-header" id="dt-3">
+  <caption>
+    This Is The Table's Caption
+  </caption>
+  <thead>
+    <tr>
+      <th id="dt-3-type" rowspan="2">Type</th>
+      <th id="dt-3-group" colspan="2">Group</th>
+      <th id="dt-3-details" colspan="2">Details</th>
+      <th id="dt-3-id" rowspan="2">Id</th>
+    </tr>
+    <tr>
+      <th headers="dt-3-group" id="dt-3-primary">Primary</th>
+      <th headers="dt-3-group" id="dt-3-secondary">Secondary</th>
+      <th headers="dt-3-details" id="dt-3-before">Before Task</th>
+      <th headers="dt-3-details" id="dt-3-after">After Task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" headers="dt-3-type dt-3-r1" id="dt-3-r1">Default</th>
+      <td headers="dt-3-group dt-3-primary dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-group dt-3-secondary dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-details dt-3-before dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-details dt-3-after dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-id">OL-53-GHSLE</td>
+    </tr>
+    <tr>
+      <td headers="dt-3-group dt-3-primary dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-group dt-3-secondary dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-details dt-3-before dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-details dt-3-after dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-id">OL-53-GHSLE</td>
+    </tr>
+    <tr>
+      <td headers="dt-3-group dt-3-primary dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-group dt-3-secondary dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-details dt-3-before dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-details dt-3-after dt-3-r1">Lorem Ipsum</td>
+      <td headers="dt-3-id">OL-53-GHSLE</td>
+    </tr>
+  </tbody>
+</table>
+<h2 class="h2">No-border Table</h2>
+<table class="data-table data-table--no-border" id="dt-4">
+  <caption>
+    This Is The Table's Caption
+  </caption>
+  <thead>
+    <tr>
+      <th id="dt-4-type" rowspan="2">Type</th>
+      <th id="dt-4-group" colspan="2">Group</th>
+      <th id="dt-4-details" colspan="2">Details</th>
+      <th id="dt-4-id" rowspan="2">Id</th>
+    </tr>
+    <tr>
+      <th headers="dt-4-group" id="dt-4-primary">Primary</th>
+      <th headers="dt-4-group" id="dt-4-secondary">Secondary</th>
+      <th headers="dt-4-details" id="dt-4-before">Before Task</th>
+      <th headers="dt-4-details" id="dt-4-after">After Task</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" headers="dt-4-type dt-4-r1" id="dt-4-r1">Default</th>
+      <td headers="dt-4-group dt-4-primary dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-group dt-4-secondary dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-details dt-4-before dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-details dt-4-after dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-id">OL-53-GHSLE</td>
+    </tr>
+    <tr>
+      <td headers="dt-4-group dt-4-primary dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-group dt-4-secondary dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-details dt-4-before dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-details dt-4-after dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-id">OL-53-GHSLE</td>
+    </tr>
+    <tr>
+      <td headers="dt-4-group dt-4-primary dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-group dt-4-secondary dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-details dt-4-before dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-details dt-4-after dt-4-r1">Lorem Ipsum</td>
+      <td headers="dt-4-id">OL-53-GHSLE</td>
     </tr>
   </tbody>
 </table>

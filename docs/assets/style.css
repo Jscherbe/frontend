@@ -12379,13 +12379,13 @@ component:button
 }
 
 .button-verbose {
+  position: relative;
+  display: block;
   text-decoration: none;
   border-radius: 5px;
   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.349);
           box-shadow: 0 1px 5px rgba(0, 0, 0, 0.349);
   line-height: 1.2;
-  position: relative;
-  display: block;
   margin-bottom: 1em;
   max-width: 100%;
   width: 20rem;
@@ -12803,9 +12803,16 @@ button.card:focus-within::after,
   transition-property: transform, filter, -webkit-transform, -webkit-filter;
 }
 
-.card__body,
-.card__footer,
-.card__image--icon {
+.card__footer {
+  padding: 2rem;
+}
+
+.card__main {
+  padding: 2rem;
+}
+
+.card__aside {
+  position: relative;
   padding: 2rem;
 }
 
@@ -12836,10 +12843,31 @@ button.card:focus-within::after,
 }
 
 .card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   min-height: 10rem;
+}
+
+.card__aside {
+  background-color: rgb(197, 197, 197);
+}
+
+.card__aside::after {
+  content: "";
+  position: absolute;
+  top: calc(0rem - 3px);
+  left: 2rem;
+  right: 2rem;
+  height: 6px;
+  background-color: green;
 }
 
 .card__footer {
@@ -12974,17 +13002,34 @@ button.card:focus-within::after,
     grid-column: 2/3;
   }
   .card--horizontal .card__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     max-width: 80rem;
+  }
+  .card--horizontal .card__main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 60%;
+            flex: 1 1 60%;
+  }
+  .card--horizontal .card__aside {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 40%;
+            flex: 1 1 40%;
+    height: 100%;
+  }
+  .card--horizontal .card__aside::after {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: calc(0rem - 3px);
+    height: calc(100% - 2rem - 2rem);
+    width: 6px;
+    background-color: green;
   }
   .card--horizontal:not(:has(.card__image)) {
     grid-template-columns: 1fr;
@@ -13423,15 +13468,20 @@ details[open] > summary .css-icon--menu-to-close::before, .css-icon--menu-to-clo
   margin-top: -8.4px;
   margin-bottom: -8.4px;
 }
+[data-grid*="columns: 12"][data-grid*=rules] > [data-grid-item] {
+  position: relative;
+}
+[data-grid*="columns: 12"][data-grid*=rules] > [data-grid-item]::before, [data-grid*="columns: 12"][data-grid*=rules] > [data-grid-item]::after {
+  opacity: 1;
+  -webkit-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+}
 [data-grid*="columns: 12"][data-grid*="rules-row:"] > [data-grid-item]::after {
   position: absolute;
   left: 0;
   right: 0;
   height: 1px;
   background: var(--site-color-rule);
-}
-[data-grid*="columns: 12"][data-grid*=rules] > [data-grid-item] {
-  position: relative;
 }
 [data-grid*="columns: 12"][data-grid*="rules-column:"] > [data-grid-item]::before {
   position: absolute;
@@ -14044,6 +14094,10 @@ details[open] > summary .css-icon--menu-to-close::before, .css-icon--menu-to-clo
 [data-grid*="columns: 12"][data-grid*="rules-row-style: demo"][data-grid*="rules-row: between"] > [data-grid-item]::after {
   content: "";
   bottom: -1px;
+}
+
+[data-grid]:not([data-grid-init]) > [data-grid-item]::before, [data-grid]:not([data-grid-init]) > [data-grid-item]::after {
+  opacity: 0 !important;
 }
 
 .data-table table, table.data-table, .wysiwyg table {
@@ -15329,6 +15383,12 @@ ul.list-inline,
   width: 80rem;
 }
 
+.modal--fullscreen {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
 .modal--right,
 .modal--left {
   border-radius: 0;
@@ -16318,6 +16378,7 @@ ul.list-inline,
   width: 2.75rem;
   max-width: 100%;
   border-bottom-width: 4px;
+  display: inline-block;
 }
 
 .scroll-slider {

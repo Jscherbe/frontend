@@ -185,6 +185,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -2447,6 +2462,21 @@
     
     <span class="nav-tree__text">
       utils/class-logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
     </span>
   
         </a>
@@ -2686,6 +2716,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -4958,6 +5003,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -5091,7 +5151,7 @@
                     <li><a href="#breakpointmanager.removeonchange(callback)">breakpointManager.removeOnChange(callback)</a>
             		</li>
 
-                    <li><a href="#breakpointmanager.getbreakpointinpsuedo()">breakpointManager.getBreakpointInPsuedo()</a>
+                    <li><a href="#breakpointmanager.getbreakpointinpseudo()">breakpointManager.getBreakpointInPseudo()</a>
             		</li>
 
                     <li><a href="#breakpointmanager.getbreakpointinproperty()">breakpointManager.getBreakpointInProperty()</a>
@@ -5172,7 +5232,7 @@
 <li><a href="#new_module_ui/breakpoints.BreakpointManager_new">new exports.BreakpointManager(config)</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+onChange">.onChange(callback)</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+removeOnChange">.removeOnChange(callback)</a></li>
-<li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpointInPsuedo">.getBreakpointInPsuedo()</a></li>
+<li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpointInPseudo">.getBreakpointInPseudo()</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpointInProperty">.getBreakpointInProperty()</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpoint">.getBreakpoint()</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+update">.update()</a></li>
@@ -5209,7 +5269,7 @@
 <p><a name="module_ui/breakpoints.BreakpointManager"></a></p>
 <h2 id="ui%2Fbreakpoints.breakpointmanager" tabindex="-1">ui/breakpoints.BreakpointManager</h2>
 <p>Class that provides method for retrieving and acting on breakpoints passed
-from CSS (using element psuedo content prop)</p>
+from CSS (using element pseudo content prop)</p>
 <p><strong>Kind</strong>: static class of <a href="#module_ui/breakpoints"><code>ui/breakpoints</code></a></p>
 <ul>
 <li><a href="#module_ui/breakpoints.BreakpointManager">.BreakpointManager</a>
@@ -5217,7 +5277,7 @@ from CSS (using element psuedo content prop)</p>
 <li><a href="#new_module_ui/breakpoints.BreakpointManager_new">new exports.BreakpointManager(config)</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+onChange">.onChange(callback)</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+removeOnChange">.removeOnChange(callback)</a></li>
-<li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpointInPsuedo">.getBreakpointInPsuedo()</a></li>
+<li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpointInPseudo">.getBreakpointInPseudo()</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpointInProperty">.getBreakpointInProperty()</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+getBreakpoint">.getBreakpoint()</a></li>
 <li><a href="#module_ui/breakpoints.BreakpointManager+update">.update()</a></li>
@@ -5239,7 +5299,7 @@ from CSS (using element psuedo content prop)</p>
 <tr>
 <td>config</td>
 <td><code>Object</code></td>
-<td>Configruation object</td>
+<td>Configuration object</td>
 </tr>
 <tr>
 <td>config.order</td>
@@ -5252,28 +5312,28 @@ from CSS (using element psuedo content prop)</p>
 <td>Property to grab breakpoint from (default is --breakpoint)</td>
 </tr>
 <tr>
-<td>config.valueFromPsuedo</td>
+<td>config.valueFromPseudo</td>
 <td><code>Array</code></td>
-<td>Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property</td>
+<td>Use the legacy method of grabbing breakpoint from pseudo element, default uses custom property</td>
 </tr>
 <tr>
 <td>config.element</td>
 <td><code>Node</code></td>
-<td>The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body</td>
+<td>The element to retrieve active breakpoint from stylesheet. (default is html) For using the old pseudo method, adjust this to document.body</td>
 </tr>
 <tr>
-<td>config.psuedoSelector</td>
+<td>config.pseudoSelector</td>
 <td><code>String</code></td>
-<td>Change psuedo selector used to get the breakpoint from the psuedo's content property</td>
+<td>Change pseudo selector used to get the breakpoint from the pseudo's content property</td>
 </tr>
 </tbody>
 </table>
 <p><a name="module_ui/breakpoints.BreakpointManager+onChange"></a></p>
 <h3 id="breakpointmanager.onchange(callback)" tabindex="-1">breakpointManager.onChange(callback)</h3>
-<p>Add a callback for everytime a breakpoint changes</p>
+<p>Add a callback for every time a breakpoint changes</p>
 <ul>
 <li>Not recommended, possibly use to watch for changes, etc</li>
-<li>For more control use intance.at(name) with breakpoint methods</li>
+<li>For more control use instance.at(name) with breakpoint methods</li>
 </ul>
 <p><strong>Kind</strong>: instance method of <a href="#module_ui/breakpoints.BreakpointManager"><code>BreakpointManager</code></a></p>
 <table>
@@ -5312,9 +5372,9 @@ from CSS (using element psuedo content prop)</p>
 </tr>
 </tbody>
 </table>
-<p><a name="module_ui/breakpoints.BreakpointManager+getBreakpointInPsuedo"></a></p>
-<h3 id="breakpointmanager.getbreakpointinpsuedo()" tabindex="-1">breakpointManager.getBreakpointInPsuedo()</h3>
-<p>Get breakpoint from a psuedo element</p>
+<p><a name="module_ui/breakpoints.BreakpointManager+getBreakpointInPseudo"></a></p>
+<h3 id="breakpointmanager.getbreakpointinpseudo()" tabindex="-1">breakpointManager.getBreakpointInPseudo()</h3>
+<p>Get breakpoint from a pseudo element</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_ui/breakpoints.BreakpointManager"><code>BreakpointManager</code></a><br>
 <a name="module_ui/breakpoints.BreakpointManager+getBreakpointInProperty"></a></p>
 <h3 id="breakpointmanager.getbreakpointinproperty()" tabindex="-1">breakpointManager.getBreakpointInProperty()</h3>

@@ -1,32 +1,32 @@
 /**
  * @class
  * Class that provides method for retrieving and acting on breakpoints passed
- * from CSS (using element psuedo content prop)
+ * from CSS (using element pseudo content prop)
  */
 export class BreakpointManager {
     static instances: any[];
     static defaults: {
         element: HTMLElement;
-        valueFromPsuedo: boolean;
-        customProperty: string;
-        psuedoSelector: string;
+        valueFromPseudo: boolean;
+        customProperty: any;
+        pseudoSelector: string;
         order: string[];
         debug: boolean;
     };
     /**
-     * @param {Object} config Configruation object
+     * @param {Object} config Configuration object
      * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
      * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
-     * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
-     * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
-     * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
+     * @param {Array} config.valueFromPseudo Use the legacy method of grabbing breakpoint from pseudo element, default uses custom property
+     * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old pseudo method, adjust this to document.body
+     * @param {String} config.pseudoSelector Change pseudo selector used to get the breakpoint from the pseudo's content property
      */
     constructor(config: {
         order: any[];
         customProperty: any[];
-        valueFromPsuedo: any[];
+        valueFromPseudo: any[];
         element: Node;
-        psuedoSelector: string;
+        pseudoSelector: string;
     });
     active: any;
     previous: any;
@@ -36,9 +36,9 @@ export class BreakpointManager {
     breakpoints: {};
     onChangeCallbacks: any[];
     /**
-     * Add a callback for everytime a breakpoint changes
+     * Add a callback for every time a breakpoint changes
      * - Not recommended, possibly use to watch for changes, etc
-     * - For more control use intance.at(name) with breakpoint methods
+     * - For more control use instance.at(name) with breakpoint methods
      * @param {Function} callback Function to call, passed one argument current instance which can be used to get information about breakpoints
      */
     onChange(callback: Function): void;
@@ -48,9 +48,9 @@ export class BreakpointManager {
      */
     removeOnChange(callback: Function): void;
     /**
-     * Get breakpoint from a psuedo element
+     * Get breakpoint from a pseudo element
      */
-    getBreakpointInPsuedo(): string;
+    getBreakpointInPseudo(): string;
     /**
      * Get breakpoint from a custom property
      */

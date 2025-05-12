@@ -185,6 +185,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -2447,6 +2462,21 @@
     
     <span class="nav-tree__text">
       utils/class-logger
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
     </span>
   
         </a>
@@ -2686,6 +2716,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/breakpoints-manager/">
+          
+    
+    <span class="nav-tree__text">
+      Breakpoint Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/button/">
           
     
@@ -4958,6 +5003,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-css/">
+          
+    
+    <span class="nav-tree__text">
+      utils/css
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -5078,6 +5138,12 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#version-0.1.0-beta.36-(unrealized)">Version 0.1.0-beta.36 (unrealized)</a>
+            		</li>
+
+                    <li><a href="#version-0.1.0-beta.35">Version 0.1.0-beta.35</a>
+            		</li>
+
                     <li><a href="#version-0.1.0-beta.34">Version 0.1.0-beta.34</a>
             		</li>
 
@@ -5237,6 +5303,107 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="version-0.1.0-beta.36-(unrealized)" tabindex="-1">Version 0.1.0-beta.36 (unrealized)</h2>
+<ul>
+<li><strong>scss/</strong>
+<ul>
+<li><strong>components/button-verbose</strong>
+<ul>
+<li>Add &quot;border-width&quot; and &quot;border-color&quot; options with ability to fallback to button defaults for each. No borders are added by default. Options descriptions added to sass api docs.</li>
+</ul>
+</li>
+<li><strong>components/modal</strong>
+<ul>
+<li>Add fullscreen size modifier</li>
+</ul>
+</li>
+<li><strong>components/data-grid</strong>
+<ul>
+<li>Create option &quot;rule-fade-duration&quot; which when enabled (can be disabled by passing false) will hide the rules for the grid until the grid's initialization script has finished (which gives positioning information about the column arrangement so the appropriate rules can be shown per column/row).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>js</strong>
+<ul>
+<li><strong>settings</strong>
+<ul>
+<li>Update &quot;wrapSettingString&quot; function to have second argument for &quot;transform&quot; allowing default settings strings that can also be transformed. This was used in breakpoint module so user can match &quot;cssvarPrefix&quot; to create a default value of &quot;--PREFIX-breakpoint&quot; for example, where PREFIX is dynamic at time of string is used</li>
+<li>Add &quot;cssvarPrefix&quot; to match scss cssvar module's prefix value</li>
+</ul>
+</li>
+<li><strong>ui/breakpoint</strong>
+<ul>
+<li>Fix all typos (options and methods) of &quot;psuedo&quot; to &quot;pseudo&quot; (valueFromPseudo, pseudoSelector)</li>
+<li>Bring in new setting (from settings.js) for &quot;cssvarPrefix&quot; for the breakpoint customProperty default value</li>
+<li>Create test for this in demos</li>
+</ul>
+</li>
+<li><strong>ui/collapsibles</strong>
+<ul>
+<li>Fix bug with &quot;focusoutCloses&quot; check collapsible content for focus before closing (so only close if focusout led outside the content) which is the intended behavior. Note this is mechanism used to control popover's so it fixes the bug there as well</li>
+</ul>
+</li>
+<li><strong>ui/modal-builder</strong>
+<ul>
+<li>Update all templates options (templateCloseIcon, templateResizerIcon, template) to include new option for &quot;baseClass&quot; so that base BEM selector can easily be changed (ie. .namespace-modal for example)</li>
+</ul>
+</li>
+<li><strong>utils/css.js</strong>
+<ul>
+<li>Add new module to hold utility functions related to CSS, currently just new function getCustomProperty which is used in ui/breakpoints module</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="version-0.1.0-beta.35" tabindex="-1">Version 0.1.0-beta.35</h2>
+<ul>
+<li><strong>scss/</strong>
+<ul>
+<li><strong>components/card</strong>
+<ul>
+<li>add <em>card__aside</em> styling to enable sidebars
+<ul>
+<li>added <em>card__main</em> wrapper to <em>card__title</em> and <em>card__content</em> to separate it from the <em>card__aside</em></li>
+<li>added config options for <em>card__aside</em>
+<ul>
+<li>toggle-aside-rule : toggles rule separating aside from main,</li>
+<li>aside-rule-width</li>
+<li>aside-background-color</li>
+<li>aside-rule-color</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>remove padding from <em>card__image--icon</em>
+<ul>
+<li>This was adding additional space on bottom of horizontal card. Most noticeably when using an aside background color and no footer.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>elements/rule</strong>
+<ul>
+<li>Added &quot;display: inline-block;&quot; to short rule
+<ul>
+<li>Note: user can use the old style by adding utility class &quot;display-block&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>js/</strong>
+<ul>
+<li>ui/scroll-slider
+<ul>
+<li>Fix typo that introduced error in last update controls-context to control-context</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="version-0.1.0-beta.34" tabindex="-1">Version 0.1.0-beta.34</h2>
 <ul>
 <li><strong>scss/</strong>

@@ -77,7 +77,8 @@ const defaults$b = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
   iconClassPrevious: "css-icon  css-icon--angle-left",
-  iconClassNext: "css-icon  css-icon--angle-right"
+  iconClassNext: "css-icon  css-icon--angle-right",
+  cssvarPrefix: ""
 };
 let currentSettings = { ...defaults$b };
 function getDefaultSettings() {
@@ -99,10 +100,11 @@ function getSetting(key2) {
 function updateSetting(key2, value) {
   currentSettings[key2] = value;
 }
-function wrapSettingString(key2) {
+function wrapSettingString(key2, transform) {
   return {
     toString() {
-      return getSetting(key2);
+      const value = getSetting(key2);
+      return transform ? transform(value) : value;
     }
   };
 }
@@ -315,6 +317,9 @@ function removeArrayElement(array, element) {
     array.splice(index2, 1);
   }
 }
+function getCustomProperty(prefix, propertyName) {
+  return `--${prefix}-${propertyName}`;
+}
 const config$1 = {
   debug: false,
   warningsAlways: true,
@@ -361,17 +366,18 @@ const classLogger = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   logWarning,
   set
 }, Symbol.toStringTag, { value: "Module" }));
+const getDefaultCustomProperty = (prefix) => getCustomProperty(prefix, "breakpoint");
 window.addEventListener(getName$1("pageResized"), () => {
   BreakpointManager.instances.forEach((i) => i.update());
 });
 const _BreakpointManager = class _BreakpointManager {
   /**
-   * @param {Object} config Configruation object
+   * @param {Object} config Configuration object
    * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
    * @param {Array} config.customProperty Property to grab breakpoint from (default is --breakpoint)
-   * @param {Array} config.valueFromPsuedo Use the legacy method of grabbing breakpoint from psuedo element, default uses custom property
-   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old psuedo method, adjust this to document.body
-   * @param {String} config.psuedoSelector Change psuedo selector used to get the breakpoint from the psuedo's content property
+   * @param {Array} config.valueFromPseudo Use the legacy method of grabbing breakpoint from pseudo element, default uses custom property
+   * @param {Node} config.element The element to retrieve active breakpoint from stylesheet. (default is html) For using the old pseudo method, adjust this to document.body
+   * @param {String} config.pseudoSelector Change pseudo selector used to get the breakpoint from the pseudo's content property
    */
   constructor(config2) {
     Object.assign(this, _BreakpointManager.defaults, config2);
@@ -388,9 +394,9 @@ const _BreakpointManager = class _BreakpointManager {
     _BreakpointManager.instances.push(this);
   }
   /**
-   * Add a callback for everytime a breakpoint changes
+   * Add a callback for every time a breakpoint changes
    * - Not recommended, possibly use to watch for changes, etc
-   * - For more control use intance.at(name) with breakpoint methods
+   * - For more control use instance.at(name) with breakpoint methods
    * @param {Function} callback Function to call, passed one argument current instance which can be used to get information about breakpoints
    */
   onChange(callback) {
@@ -404,10 +410,10 @@ const _BreakpointManager = class _BreakpointManager {
     removeArrayElement(this.onChangeCallbacks, callback);
   }
   /**
-   * Get breakpoint from a psuedo element
+   * Get breakpoint from a pseudo element
    */
-  getBreakpointInPsuedo() {
-    return window.getComputedStyle(this.element, this.psuedoSelector).content.replace(/^"|"$/g, "");
+  getBreakpointInPseudo() {
+    return window.getComputedStyle(this.element, this.pseudoSelector).content.replace(/^"|"$/g, "");
   }
   /**
    * Get breakpoint from a custom property
@@ -419,8 +425,8 @@ const _BreakpointManager = class _BreakpointManager {
    * Get breakpoint from element (design note: user could override prototype)
    */
   getBreakpoint() {
-    if (this.valueFromPsuedo) {
-      return this.getBreakpointInPsuedo();
+    if (this.valueFromPseudo) {
+      return this.getBreakpointInPseudo();
     } else {
       return this.getBreakpointInProperty();
     }
@@ -477,9 +483,10 @@ const _BreakpointManager = class _BreakpointManager {
 __publicField(_BreakpointManager, "instances", []);
 __publicField(_BreakpointManager, "defaults", {
   element: document == null ? void 0 : document.documentElement,
-  valueFromPsuedo: false,
+  valueFromPseudo: false,
   customProperty: "--breakpoint",
-  psuedoSelector: ":before",
+  customProperty: wrapSettingString("cssvarPrefix", getDefaultCustomProperty),
+  pseudoSelector: ":before",
   order: ["none", "small", "medium", "large"],
   debug: false
 });
@@ -659,7 +666,11 @@ const _Collapsible = class _Collapsible {
     };
     this.focusoutHandler = (event) => {
       if (focusoutCloses) {
-        this.close(event);
+        document.addEventListener("focusin", () => {
+          if (!content.contains(document.activeElement)) {
+            this.close(event);
+          }
+        }, { once: true });
       }
     };
     trigger.addEventListener("click", this.clickHandler);
@@ -1172,14 +1183,17 @@ const defaults$9 = {
   print: false,
   noMinHeight: false,
   class: "",
+  baseClass: "modal",
   classCloseIcon: wrapSettingString("iconClassClose"),
   classResizerIcon: wrapSettingString("iconClassDragX"),
   debug: false,
   templateCloseIcon(config2) {
-    return `<span class="modal__close-icon ${config2.classCloseIcon}" aria-hidden="true"></span>`;
+    const { baseClass, classCloseIcon } = config2;
+    return `<span class="${baseClass}__close-icon ${classCloseIcon}" aria-hidden="true"></span>`;
   },
   templateResizerIcon(config2) {
-    return `<span class="modal__resizer-icon ${config2.classResizerIcon}" aria-hidden="true"></span>`;
+    const { baseClass, classResizerIcon } = config2;
+    return `<span class="${baseClass}__resizer-icon ${classResizerIcon}" aria-hidden="true"></span>`;
   },
   /**
    * Default modal template
@@ -1188,32 +1202,33 @@ const defaults$9 = {
    * @returns {String} Markup for modal
    */
   template(id2, config2) {
+    const { baseClass } = config2;
     const classes = [
-      "modal",
-      `modal--${config2.position}`,
-      `modal--${config2.size}`,
-      `modal--${config2.allowResize ? "resize" : "no-resize"}`,
-      ...!config2.title ? ["modal--no-header"] : [],
-      ...config2.bodyFills ? ["modal--body-fills"] : [],
-      ...config2.noBackdrop ? ["modal--no-backdrop"] : [],
-      ...config2.noMinHeight ? ["modal--no-min-height"] : [],
+      baseClass,
+      `${baseClass}--${config2.position}`,
+      `${baseClass}--${config2.size}`,
+      `${baseClass}--${config2.allowResize ? "resize" : "no-resize"}`,
+      ...!config2.title ? [`${baseClass}--no-header`] : [],
+      ...config2.bodyFills ? [`${baseClass}--body-fills`] : [],
+      ...config2.noBackdrop ? [`${baseClass}--no-backdrop`] : [],
+      ...config2.noMinHeight ? [`${baseClass}--no-min-height`] : [],
       ...config2.class ? [config2.class] : []
     ];
     return `
       <dialog id="${id2}" class="${classes.join(" ")}">
         ${config2.title ? `
-          <header class="modal__header">
-            <h2 class="modal__title">
-              ${config2.titleIcon ? `<span class="modal__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
-              <span class="modal__title-text">${config2.title}</span>
+          <header class="${baseClass}__header">
+            <h2 class="${baseClass}__title">
+              ${config2.titleIcon ? `<span class="${baseClass}__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
+              <span class="${baseClass}__title-text">${config2.title}</span>
             </h2>
-            <button class="modal__close" aria-label="Close modal" ${closeAttribute} autofocus>
+            <button class="${baseClass}__close" aria-label="Close modal" ${closeAttribute} autofocus>
               ${config2.templateCloseIcon(config2)}
             </button>
           </header>
         ` : ""}
-        <div class="modal__body" ${initializer$c.getAttribute("body")}></div>
-        ${config2.hasResizer ? `<div class="modal__resizer" ${initializer$c.getAttribute("resizer")}>
+        <div class="${baseClass}__body" ${initializer$c.getAttribute("body")}></div>
+        ${config2.hasResizer ? `<div class="${baseClass}__resizer" ${initializer$c.getAttribute("resizer")}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
       </div>
@@ -1506,6 +1521,7 @@ const _OverflowScroller = class _OverflowScroller {
     if (!hasRequiredProps(requiredElements$1)) {
       logError(this, "Missing a required Element");
     }
+    console.log(elements);
     this.elements = {
       ...elements,
       ...this.createControls(elements.controls)
@@ -9514,7 +9530,7 @@ const initializer$2 = new ComponentInitializer({
   baseAttribute: "data-ulu-scroll-slider"
 });
 const attrSelectorTrack = initializer$2.attributeSelector("track");
-const attrSelectorControls = initializer$2.attributeSelector("controls");
+const attrSelectorControls = initializer$2.attributeSelector("control-context");
 const instances = [];
 const defaults$4 = {
   amount: createPager()
@@ -23269,6 +23285,7 @@ function setupInstance(userOptions) {
   }
 }
 window.Ulu = ulu;
+updateSetting("cssvarPrefix", "site");
 configureIcons();
 init$i();
 init$e();
