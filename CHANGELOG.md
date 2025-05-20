@@ -21,6 +21,8 @@
     - Fix bug with "focusoutCloses" check collapsible content for focus before closing (so only close if focusout led outside the content) which is the intended behavior. Note this is mechanism used to control popover's so it fixes the bug there as well
   - **ui/modal-builder**
     - Update all templates options (templateCloseIcon, templateResizerIcon, template) to include new option for "baseClass" so that base BEM selector can easily be changed (ie. .namespace-modal for example)
+  - **ui/slider.js**
+    - Implement classAccessiblyHidden option to allow users to customize its styling. Will still default to "hidden-visually." 
   - **utils/css.js**
     - Add new module to hold utility functions related to CSS, currently just new function getCustomProperty which is used in ui/breakpoints module
 

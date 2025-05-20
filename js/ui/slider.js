@@ -517,12 +517,12 @@ export class Slider {
   getControlContent(action) {
     const classes = this.options[action === "next" ? "iconClassNext" : "iconClassPrevious"];
     return `
-      <span class="hidden-visually">${ action }</span>
+      <span class="${ this.options.classAccessiblyHidden }">${ action }</span>
       <span class="${ this.getClass("control-icon") } ${ classes }" aria-hidden="true"></span>
     `;
   }
   getNavContent(slide) {
-    return `<span class="hidden-visually">Item ${ slide.number }</span>`;
+    return `<span class="${ this.options.classAccessiblyHidden }">Item ${ slide.number }</span>`;
   }
   emit(name, args) {
     if (this.options.events[name]) {
