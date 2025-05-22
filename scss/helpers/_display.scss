@@ -20,49 +20,50 @@
 
   @include utils.file-header('helpers', 'display');
 
-  $hiddenVisuallyPrefix: selector.class("hidden-visually");
-  $displayPrefix: selector.class("display");
+  $prefix-hidden-visually: selector.class("hidden-visually");
+  $prefix-display: selector.class("display");
+  $prefix-hidden: selector.class("hidden");
 
-  #{ $hiddenVisuallyPrefix } {
+  #{ $prefix-hidden-visually } {
     @include element.hidden-visually();
   }
-  #{ $hiddenVisuallyPrefix }-focusable {
+  #{ $prefix-hidden-visually }-focusable {
     &:not(:active):not(:focus) {
       @include element.hidden-visually();
     }
   }
-  #{ $displayPrefix }-block {
+  #{ $prefix-display }-block {
     display: block;
   }
-  #{ $displayPrefix }-flex {
+  #{ $prefix-display }-flex {
     display: flex;
   }
-  #{ $displayPrefix }-inline-flex {
+  #{ $prefix-display }-inline-flex {
     display: inline-flex;
   }
-  #{ $displayPrefix }-inline {
+  #{ $prefix-display }-inline {
     display: inline;
   }
-  #{ $displayPrefix }-inline-all * {
+  #{ $prefix-display }-inline-all * {
     display: inline;
   }
-  #{ $displayPrefix }-inline-block {
+  #{ $prefix-display }-inline-block {
     display: inline-block;
   }
-  #{ selector.class("hidden") },
-  #{ $displayPrefix }-none {
+  #{ $prefix-hidden },
+  #{ $prefix-display }-none {
     display: none !important;
   }
 
   // Display none per breakpoint
   @each $name in map.keys(breakpoint.$sizes) {
     @include breakpoint.min($name) {
-      .hidden-min-#{ $name } {
+      #{ $prefix-hidden }-min-#{ $name } {
         display: none !important;
       }
     }
     @include breakpoint.max($name) {
-      .hidden-max-#{ $name } {
+      #{ $prefix-hidden }-max-#{ $name } {
         display: none !important;
       }
     }

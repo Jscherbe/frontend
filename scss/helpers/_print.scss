@@ -11,17 +11,20 @@
 @use "../selector";
 
 @mixin styles {
-  $print: selector.class("print");
-  #{ $print }-exact {
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
-  }
-  #{ selector.class("no-print") } {
+  $prefix-print: selector.class("print");
+  $prefix-no-print: selector.class("no-print");
+  
+  #{ $prefix-no-print } {
     @media print {
       display: none !important;
     }
   }
-  #{ $print }-only {
+
+  #{ $prefix-print }-exact {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  #{ $prefix-print }-only {
     @media screen {
       display: none !important;
     }
@@ -29,7 +32,7 @@
   // Utility for making dark backgrounds print "ok"
   // - Grayscale added because colors are flipped
   // - Rotating colors doesn't really work
-  #{ $print }-invert {
+  #{ $prefix-print }-invert {
     @media print {
       filter: invert(1) saturate(0);
     }

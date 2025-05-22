@@ -14,22 +14,22 @@
 
 @mixin styles {
 
-  $no-scroll: selector.class("no-scroll");
-  $image: selector.class("image");
-  $margin: selector.class("margin");
-  $no-margin: selector.class("no-margin");
-  $crop-margins: selector.class("crop-margins");
-  $no-padding: selector.class("no-padding");
-  $align-self: selector.class("align-self");
+  $prefix-no-scroll: selector.class("no-scroll");
+  $prefix-image: selector.class("image");
+  $prefix-margin: selector.class("margin");
+  $prefix-no-margin: selector.class("no-margin");
+  $prefix-crop-margins: selector.class("crop-margins");
+  $prefix-no-padding: selector.class("no-padding");
+  $prefix-align-self: selector.class("align-self");
 
 
   @include utils.file-header('helpers', 'utilities');
   
   // Consider removing
-  #{ $no-scroll }-y { 
+  #{ $prefix-no-scroll }-y { 
     overflow-y: hidden; 
   }
-  #{ $no-scroll }-x { 
+  #{ $prefix-no-scroll }-x { 
     overflow-x: hidden; 
   }
   #{ selector.class("full-height") } {
@@ -44,75 +44,75 @@
   #{ selector.class("full-min-height") } {
     min-height: 100%;
   }
-  #{ $image }-fill {
+  #{ $prefix-image }-fill {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  #{ $image }-full-width img,
-  #{ $image }-full-width {
+  #{ $prefix-image }-full-width img,
+  #{ $prefix-image }-full-width {
     width: 100%;
     height: auto;
   }
-  #{ $margin }-auto,
+  #{ $prefix-margin }-auto,
   #{ selector.class("center") } {
     margin-left: auto;
     margin-right: auto;
   }
-  #{ $margin }-left-auto {
+  #{ $prefix-margin }-left-auto {
         margin-left: auto;
   }
-  #{ $margin }-right-auto {
+  #{ $prefix-margin }-right-auto {
     margin-right: auto;
   }
-  #{ $no-margin } {
+  #{ $prefix-no-margin } {
     margin: 0;
   }
-  #{ $no-margin }-top {
+  #{ $prefix-no-margin }-top {
     margin-top: 0;
   }
-  #{ $no-margin }-bottom {
+  #{ $prefix-no-margin }-bottom {
     margin-bottom: 0;
   }
-  #{ $no-margin }-left {
+  #{ $prefix-no-margin }-left {
     margin-left: 0;
   }
-  #{ $no-margin }-right {
+  #{ $prefix-no-margin }-right {
     margin-right: 0;
   }
-  #{ $crop-margins } {
-    &:not( #{ $crop-margins }--last) >:first-child {
+  #{ $prefix-crop-margins } {
+    &:not( #{ $prefix-crop-margins }--last) >:first-child {
       margin-top: 0;
     }
-    &:not( #{ $crop-margins }--first) >:last-child {
+    &:not( #{ $prefix-crop-margins }--first) >:last-child {
       margin-bottom: 0;
     }
   }
-  #{ $no-padding } {
+  #{ $prefix-no-padding } {
     padding: 0;
   }
-  #{ $no-padding }-top {
+  #{ $prefix-no-padding }-top {
     padding-top: 0;
   }
-  #{ $no-padding }-bottom {
+  #{ $prefix-no-padding }-bottom {
     padding-bottom: 0;
   }
-  #{ $no-padding }-left {
+  #{ $prefix-no-padding }-left {
     padding-left: 0;
   }
-  #{ $no-padding }-right {
+  #{ $prefix-no-padding }-right {
     padding-right: 0;
   }
-  #{ $align-self }-start {
+  #{ $prefix-align-self }-start {
     align-self: start;
   }
-  #{ $align-self }-center {
+  #{ $prefix-align-self }-center {
     align-self: center;
   }
-  #{ $align-self }-end {
+  #{ $prefix-align-self }-end {
     align-self: end;
   }
-  #{ $align-self }-baseline {
+  #{ $prefix-align-self }-baseline {
     align-self: baseline;
   }
   #{ selector.class("overflow-hidden") } {

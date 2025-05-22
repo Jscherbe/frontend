@@ -44,7 +44,7 @@ Print utilities helper styles
 - **Group:** utilities
 - **Type:** mixin
 - **Lines (comments):** 10-13
-- **Lines (code):** 15-121
+- **Lines (code):** 15-124
 
 </details>
 

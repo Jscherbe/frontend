@@ -350,9 +350,17 @@ Get a config option
 Example usage      
 
 
+
 ``` scss
 .test-em-to-pixel {
   width: ulu.utils-get("pixel-em-base");
+}
+```
+  
+
+``` css
+.test-em-to-pixel {
+  width: 16px;
 }
 ```
   
@@ -413,10 +421,18 @@ Get a required value from a map, throw an error if not found
 Example usage      
 
 
+
 ``` scss
 .test-require-map {
   $test-map: ("test-font-size": 12px);
   font-size: ulu.utils-require-map-get($test-map, "test-font-size");
+}
+```
+  
+
+``` css
+.test-require-map {
+  font-size: 12px;
 }
 ```
   
@@ -1594,9 +1610,17 @@ Strips the unit from the number
 Example usage      
 
 
+
 ``` scss
 .test {
   line-height: ulu.utils-strip-unit(4rem);
+}
+```
+  
+
+``` css
+.test {
+  line-height: 4;
 }
 ```
   
