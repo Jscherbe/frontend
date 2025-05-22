@@ -21,6 +21,7 @@
   @include utils.file-header('helpers', 'display');
 
   $hiddenVisuallyPrefix: selector.class("hidden-visually");
+  $displayPrefix: selector.class("display");
 
   #{ $hiddenVisuallyPrefix } {
     @include element.hidden-visually();

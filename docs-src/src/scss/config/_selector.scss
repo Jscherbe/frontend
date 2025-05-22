@@ -2,5 +2,6 @@
 @use "scss" as ulu;
 
 @include ulu.selector-set-class-overrides((
-  "color-context" : "background"
+  "color-context" : "background",
+  "margin-*" : "daniel"
 ));

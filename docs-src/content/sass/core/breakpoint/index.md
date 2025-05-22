@@ -691,17 +691,9 @@ Get a config option
 Example usage      
 
 
-
 ``` scss
 .test-get {
   font-size: ulu.breakpoint-get("base");
-}
-```
-  
-
-``` css
-.test-get {
-  font-size: 16px;
 }
 ```
   
@@ -770,18 +762,10 @@ Get all breakpoint sizes
 Example usage      
 
 
-
 ``` scss
 .test-get {
   $sizes: ulu.breakpoint-get-sizes();
   height: map.get($sizes, "medium");
-}
-```
-  
-
-``` css
-.test-get {
-  height: 76em;
 }
 ```
   

@@ -43,8 +43,8 @@ Print utilities helper styles
 - **File:** _utilities.scss
 - **Group:** utilities
 - **Type:** mixin
-- **Lines (comments):** 9-12
-- **Lines (code):** 14-114
+- **Lines (comments):** 10-13
+- **Lines (code):** 15-121
 
 </details>
 
