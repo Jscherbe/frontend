@@ -105,7 +105,7 @@ export class Scrollpoint {
     /**
      * Attribute name to set state info in
      */
-    attributeName: "data-scrollpoint-state",
+    attributeName: "data-ulu-scrollpoint-state",
     /**
      * Group multiple points, one active at a time (scroll menus)
      */

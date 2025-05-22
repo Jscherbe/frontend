@@ -9425,7 +9425,7 @@ __publicField(_Scrollpoint, "defaults", {
   /**
    * Attribute name to set state info in
    */
-  attributeName: "data-scrollpoint-state",
+  attributeName: "data-ulu-scrollpoint-state",
   /**
    * Group multiple points, one active at a time (scroll menus)
    */

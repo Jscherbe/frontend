@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.39
+
+- **js/ui/scrollpoint.js**
+  - Fix attribute name for state to have ulu prefix (ie. data-scrollpoint-state is now data-ulu-scrollpoint-state)
+  
 ## Version 0.1.0-beta.38
 
 - **scss/**
