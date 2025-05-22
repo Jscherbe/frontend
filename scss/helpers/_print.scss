@@ -8,18 +8,20 @@
 /// @example scss
 ///  @include ulu.helper-print-styles();
 
+@use "../selector";
+
 @mixin styles {
-  
-  .print-exact {
+  $print: selector.class("print");
+  #{ $print }-exact {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
-  .no-print {
+  #{ selector.class("no-print") } {
     @media print {
       display: none !important;
     }
   }
-  .print-only {
+  #{ $print }-only {
     @media screen {
       display: none !important;
     }
@@ -27,7 +29,7 @@
   // Utility for making dark backgrounds print "ok"
   // - Grayscale added because colors are flipped
   // - Rotating colors doesn't really work
-  .print-invert {
+  #{ $print }-invert {
     @media print {
       filter: invert(1) saturate(0);
     }

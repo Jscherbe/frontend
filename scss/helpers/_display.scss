@@ -31,31 +31,26 @@
       @include element.hidden-visually();
     }
   }
-  // Consider removing
-  .clearfix,
-  .cf { 
-    @include layout.clearfix();
-  }
-  .display-block {
+  #{ $displayPrefix }-block {
     display: block;
   }
-  .display-flex {
+  #{ $displayPrefix }-flex {
     display: flex;
   }
-  .display-inline-flex {
+  #{ $displayPrefix }-inline-flex {
     display: inline-flex;
   }
-  .display-inline {
+  #{ $displayPrefix }-inline {
     display: inline;
   }
-  .display-inline-all * {
+  #{ $displayPrefix }-inline-all * {
     display: inline;
   }
-  .display-inline-block {
+  #{ $displayPrefix }-inline-block {
     display: inline-block;
   }
-  .hidden,
-  .display-none {
+  #{ selector.class("hidden") },
+  #{ $displayPrefix }-none {
     display: none !important;
   }
 

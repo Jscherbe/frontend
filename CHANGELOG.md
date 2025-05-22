@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.37 (unrealized)
+
+- **scss/**
+  - **helpers/display**
+    - remove clearfix class styling
+
 ## Version 0.1.0-beta.36 (unrealized)
 
 - **scss/**
