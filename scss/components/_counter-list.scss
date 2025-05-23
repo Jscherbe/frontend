@@ -17,6 +17,7 @@ $config: (
   "ol-margin" : 2rem 0,
   "li-margin-bottom" : 1rem,
   // "li-padding-top" : 0.5rem,
+  "li-align-items" : baseline, 
   "counter-start" : 0,
   "counter-size" : 3rem,
   "counter-gap" : 1rem,
@@ -60,7 +61,7 @@ $config: (
     & > li,
     & > .counter-list__item {
       display: flex;
-      align-items: baseline;
+      align-items: get("li-align-items");
       margin-bottom: get("li-margin-bottom");
       min-height: get("counter-size");
       gap: get("counter-gap");
