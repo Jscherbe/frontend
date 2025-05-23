@@ -46,6 +46,7 @@ $all-includes: (
   "callout",
   "card",
   "card-grid",
+  "counter-list",
   "css-icon",
   "data-grid",
   "data-table",
@@ -95,8 +96,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 105-106
-- **Lines (code):** 108-156
+- **Lines (comments):** 107-108
+- **Lines (code):** 110-159
 
 </details>
 
@@ -131,8 +132,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 158-159
-- **Lines (code):** 161-161
+- **Lines (comments):** 161-162
+- **Lines (code):** 164-164
 
 </details>
 
@@ -168,8 +169,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 163-165
-- **Lines (code):** 167-170
+- **Lines (comments):** 166-168
+- **Lines (code):** 170-173
 
 </details>
 
@@ -214,8 +215,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 172-173
-- **Lines (code):** 175-177
+- **Lines (comments):** 175-176
+- **Lines (code):** 178-180
 
 </details>
 
@@ -259,8 +260,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 179-183
-- **Lines (code):** 185-331
+- **Lines (comments):** 182-186
+- **Lines (code):** 188-337
 
 </details>
 

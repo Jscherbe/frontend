@@ -12,6 +12,7 @@
 @forward "callout" as callout-*;
 @forward "card" as card-*;
 @forward "card-grid" as card-grid-*;
+@forward "counter-list" as counter-list-*;
 @forward "css-icon" as css-icon-*;
 @forward "data-grid" as data-grid-*;
 @forward "data-table" as data-table-*;
@@ -63,6 +64,7 @@
 @use "callout";
 @use "card";
 @use "card-grid";
+@use "counter-list";
 @use "css-icon";
 @use "data-grid";
 @use "data-table";
@@ -115,6 +117,7 @@ $all-includes: (
   "callout",
   "card",
   "card-grid",
+  "counter-list",
   "css-icon",
   "data-grid",
   "data-table",
@@ -219,6 +222,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "card-grid")) {
     @include card-grid.styles;
+  }
+  @if (list.index($includes, "counter-list")) {
+    @include counter-list.styles;
   }
   @if (list.index($includes, "css-icon")) {
     @include css-icon.styles;

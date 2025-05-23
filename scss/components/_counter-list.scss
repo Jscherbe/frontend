@@ -1,0 +1,137 @@
+////
+/// @group counter-list
+/// Outputs badge component stylesheet
+////
+
+@use "sass:map";
+@use "../utils";
+@use "../selector";
+@use "../color";
+@use "../breakpoint";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  // config for number
+  "ol-margin" : 2rem 0,
+  "li-margin-bottom" : 1rem,
+  // "li-padding-top" : 0.5rem,
+  "counter-start" : 0,
+  "counter-size" : 3rem,
+  "counter-gap" : 1rem,
+  "counter-list-style" : numeric,
+  "counter-border-radius" : 50%,
+  "counter-font-size" : 20px,
+  "counter-color" : white,
+  "counter-background-color" : "accent",
+
+  "counter-mobile-toggle" : true,
+  "counter-gap-mobile": 2rem,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-counter-list-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-counter-list-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "counter-list [config]");
+}
+
+/// Output counter-list component styles
+/// needs built
+
+@mixin styles {
+  $prefix: selector.class("counter-list");
+  // add list numbers via before psuedoelement
+  #{ $prefix } {
+    margin: get("ol-margin");
+    counter-reset: ulu-counter-list get("counter-start");
+    & > li,
+    & > .counter-list__item {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: get("li-margin-bottom");
+      min-height: get("counter-size");
+      gap: get("counter-gap");
+      &::before {
+        flex: 0 0 get("counter-size");
+        counter-increment: ulu-counter-list;
+        content: counter(ulu-counter-list, get("counter-list-style"));
+        font-size: get("counter-font-size");
+        color: color.get(get("counter-color"));
+        background-color: color.get(get("counter-background-color"));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: get("counter-size");
+        height: get("counter-size");
+        border-radius: get("counter-border-radius");
+      }
+      @if ( get("counter-mobile-toggle") ) {
+        @include breakpoint.max("small") {
+          padding-left: 0;
+          padding-top: calc(get("counter-size") + get("counter-gap-mobile"));
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+  #{ $prefix }--alphabetical {
+    & > li::before,
+    & > .counter-list__item::before {
+      content: counter(ulu-counter-list, upper-alpha);
+    }
+  }
+  #{ $prefix }--numeric {
+    & > li::before,
+    & > .counter-list__item::before {
+      content: counter(ulu-counter-list, numeric);
+    }
+  }
+}
+
+    // & > li,
+    // & > .counter-list__item {
+    //   position: relative;
+    //   margin-bottom: get("li-margin-bottom");
+    //   min-height: get("counter-size");
+    //   padding-left: calc(get("counter-size") + get("counter-gap"));
+    //   padding-top: get("li-padding-top");
+    //   &::before {
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     counter-increment: ulu-counter-list;
+    //     content: counter(ulu-counter-list, get("counter-list-style"));
+    //     font-size: get("counter-font-size");
+    //     color: color.get(get("counter-color"));
+    //     background-color: color.get(get("counter-background-color"));
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     width: get("counter-size");
+    //     height: get("counter-size");
+    //     border-radius: get("counter-border-radius");
+    //   }
+    //   @if ( get("counter-mobile-toggle") ) {
+    //     @include breakpoint.max("small") {
+    //       padding-left: 0;
+    //       padding-top: calc(get("counter-size") + get("counter-gap-mobile"));
+    //       &::before {
+    //         left: calc(50% - get("counter-size") / 2);
+    //       }
+    //     }
+    //   }
+    // }
