@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.41
+
+- **js/utils/dom**
+  - **addScrollbarProperty** - Change arguments to object, Add argument for "propertyElement" and make this function add property to html element by default (so it can be used with other custom properties in CSS :root selector)
+
 ## Version 0.1.0-beta.40
 
 - **scss/components/counter-list**

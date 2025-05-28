@@ -15,7 +15,7 @@ title: utils/dom
     * [.getElement(target, context)](#module_utils/dom.getElement) ⇒ <code>HTMLElement</code>
     * [.getElements(target, context)](#module_utils/dom.getElements) ⇒ <code>Array</code>
     * [.resolveClasses(input)](#module_utils/dom.resolveClasses) ⇒ <code>Array.&lt;string&gt;</code>
-    * [.addScrollbarProperty([element], [container], propName)](#module_utils/dom.addScrollbarProperty)
+    * [.addScrollbarProperty(options)](#module_utils/dom.addScrollbarProperty)
     * [.getScrollbarWidth([element], [container])](#module_utils/dom.getScrollbarWidth) ⇒ <code>number</code>
 
 <a name="module_utils/dom.dataAttributeToDatasetKey"></a>
@@ -126,16 +126,18 @@ resolveClassArray("single-class"); // Returns ["single-class"]
 ```
 <a name="module_utils/dom.addScrollbarProperty"></a>
 
-## utils/dom.addScrollbarProperty([element], [container], propName)
-Sets a CSS custom property equal to the scrollbar width
+## utils/dom.addScrollbarProperty(options)
+Sets a CSS custom property equal to the scrollbar width.
 
 **Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| [element] | <code>HTMLElement</code> | <code>document.body</code> | The element that is the child of a scrollable container |
-| [container] | <code>Window</code> \| <code>HTMLElement</code> | <code>window</code> | The container that can be scrolled |
-| propName | <code>Stirng</code> |  | Custom property to set |
+| options | <code>object</code> |  | Configuration options. |
+| [options.scrollableChild] | <code>HTMLElement</code> | <code>document.body</code> | An element that is a child of a scrollable container (used for width calculation). |
+| [options.container] | <code>Window</code> \| <code>HTMLElement</code> | <code>window</code> | The container that can be scrolled (used for width calculation). |
+| [options.propertyElement] | <code>HTMLElement</code> | <code>document.documentElement</code> | The element to which the custom property will be added. Defaults to document.documentElement for :root access. |
+| [options.propName] | <code>string</code> | <code>&quot;\&quot;--ulu-scrollbar-width\&quot;&quot;</code> | The name of the custom property to set. |
 
 <a name="module_utils/dom.getScrollbarWidth"></a>
 

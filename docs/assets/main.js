@@ -287,9 +287,17 @@ function resolveClasses(classes) {
     return [];
   }
 }
-function addScrollbarProperty(element = document.body, container2 = window, propName = "--ulu-scrollbar-width") {
-  const scrollbarWidth = getScrollbarWidth(element, container2);
-  element.style.setProperty(propName, `${scrollbarWidth}px`);
+function addScrollbarProperty(options) {
+  const defaults2 = {
+    scrollableChild: document.body,
+    container: window,
+    propertyElement: document.documentElement,
+    propName: "--ulu-scrollbar-width"
+  };
+  const config2 = { ...defaults2, ...options };
+  const { scrollableChild, container: container2, propertyElement, propName } = config2;
+  const scrollbarWidth = getScrollbarWidth(scrollableChild, container2);
+  propertyElement.style.setProperty(propName, `${scrollbarWidth}px`);
 }
 function getScrollbarWidth(element = document.body, container2 = window) {
   return container2.innerWidth - element.clientWidth;

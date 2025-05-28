@@ -5192,7 +5192,7 @@
                     <li><a href="#utils%2Fdom.resolveclasses(input)-%E2%87%92-array.%3Cstring%3E">utils/dom.resolveClasses(input) ⇒ Array.<string></string></a>
             		</li>
 
-                    <li><a href="#utils%2Fdom.addscrollbarproperty(%5Belement%5D%2C-%5Bcontainer%5D%2C-propname)">utils/dom.addScrollbarProperty([element], [container], propName)</a>
+                    <li><a href="#utils%2Fdom.addscrollbarproperty(options)">utils/dom.addScrollbarProperty(options)</a>
             		</li>
 
                     <li><a href="#utils%2Fdom.getscrollbarwidth(%5Belement%5D%2C-%5Bcontainer%5D)-%E2%87%92-number">utils/dom.getScrollbarWidth([element], [container]) ⇒ number</a>
@@ -5221,7 +5221,7 @@
 <li><a href="#module_utils/dom.getElement">.getElement(target, context)</a> ⇒ <code>HTMLElement</code></li>
 <li><a href="#module_utils/dom.getElements">.getElements(target, context)</a> ⇒ <code>Array</code></li>
 <li><a href="#module_utils/dom.resolveClasses">.resolveClasses(input)</a> ⇒ <code>Array.&lt;string&gt;</code></li>
-<li><a href="#module_utils/dom.addScrollbarProperty">.addScrollbarProperty([element], [container], propName)</a></li>
+<li><a href="#module_utils/dom.addScrollbarProperty">.addScrollbarProperty(options)</a></li>
 <li><a href="#module_utils/dom.getScrollbarWidth">.getScrollbarWidth([element], [container])</a> ⇒ <code>number</code></li>
 </ul>
 </li>
@@ -5416,8 +5416,8 @@ or new instances are added to the screen</p>
 <span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">[</span><span class="pjs-token pjs-string">"another-class"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"yet-another-class"</span><span class="pjs-token pjs-punctuation">]</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["another-class", "yet-another-class"]</span>
 <span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"single-class"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["single-class"]</span></code></pre>
 <p><a name="module_utils/dom.addScrollbarProperty"></a></p>
-<h2 id="utils%2Fdom.addscrollbarproperty(%5Belement%5D%2C-%5Bcontainer%5D%2C-propname)" tabindex="-1">utils/dom.addScrollbarProperty([element], [container], propName)</h2>
-<p>Sets a CSS custom property equal to the scrollbar width</p>
+<h2 id="utils%2Fdom.addscrollbarproperty(options)" tabindex="-1">utils/dom.addScrollbarProperty(options)</h2>
+<p>Sets a CSS custom property equal to the scrollbar width.</p>
 <p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a></p>
 <table>
 <thead>
@@ -5430,22 +5430,34 @@ or new instances are added to the screen</p>
 </thead>
 <tbody>
 <tr>
-<td>[element]</td>
+<td>options</td>
+<td><code>object</code></td>
+<td></td>
+<td>Configuration options.</td>
+</tr>
+<tr>
+<td>[options.scrollableChild]</td>
 <td><code>HTMLElement</code></td>
 <td><code>document.body</code></td>
-<td>The element that is the child of a scrollable container</td>
+<td>An element that is a child of a scrollable container (used for width calculation).</td>
 </tr>
 <tr>
-<td>[container]</td>
+<td>[options.container]</td>
 <td><code>Window</code> | <code>HTMLElement</code></td>
 <td><code>window</code></td>
-<td>The container that can be scrolled</td>
+<td>The container that can be scrolled (used for width calculation).</td>
 </tr>
 <tr>
-<td>propName</td>
-<td><code>Stirng</code></td>
-<td></td>
-<td>Custom property to set</td>
+<td>[options.propertyElement]</td>
+<td><code>HTMLElement</code></td>
+<td><code>document.documentElement</code></td>
+<td>The element to which the custom property will be added. Defaults to document.documentElement for :root access.</td>
+</tr>
+<tr>
+<td>[options.propName]</td>
+<td><code>string</code></td>
+<td><code>&quot;&amp;quot;--ulu-scrollbar-width&amp;quot;&quot;</code></td>
+<td>The name of the custom property to set.</td>
 </tr>
 </tbody>
 </table>
