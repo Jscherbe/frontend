@@ -60,11 +60,19 @@ export function getElements(target: string | Node, context?: any): any[];
 export function resolveClasses(classes: any): string[];
 /**
  * Sets a CSS custom property equal to the scrollbar width
- * @param {Node} element The element that is the child of a scrollabel container
- * @param {Node} container The container that can be scrolled
+ * @param {HTMLElement} [element=document.body] -The element that is the child of a scrollable container
+ * @param {Window|HTMLElement} [container=window] - The container that can be scrolled
  * @param {Stirng} propName Custom property to set
  */
-export function addScrollbarProperty(element?: Node, container?: Node, propName?: Stirng): void;
+export function addScrollbarProperty(element?: HTMLElement, container?: Window | HTMLElement, propName?: Stirng): void;
+/**
+ * Calculates the width of the scrollbar.
+ *
+ * @param {HTMLElement} [element=document.body] -The element that is the child of a scrollable container
+ * @param {Window|HTMLElement} [container=window] - The container that can be scrolled
+ * @returns {number} The width of the scrollbar in pixels.
+ */
+export function getScrollbarWidth(element?: HTMLElement, container?: Window | HTMLElement): number;
 /**
  * @module utils/dom
  */

@@ -115,7 +115,7 @@ Prints default grid styles, if you want to customize further please use the crea
 
 
 
-<a class="button" href="/demos/data-grid#align">Our Demo</a>
+<a class="button" href="/demos/data-grid#align">View</a>
 
 </div>
 

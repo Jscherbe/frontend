@@ -288,8 +288,11 @@ function resolveClasses(classes) {
   }
 }
 function addScrollbarProperty(element = document.body, container2 = window, propName = "--ulu-scrollbar-width") {
-  const scrollbarWidth = container2.innerWidth - element.clientWidth;
+  const scrollbarWidth = getScrollbarWidth(element, container2);
   element.style.setProperty(propName, `${scrollbarWidth}px`);
+}
+function getScrollbarWidth(element = document.body, container2 = window) {
+  return container2.innerWidth - element.clientWidth;
 }
 const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -299,6 +302,7 @@ const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   getDatasetOptionalJson,
   getElement: getElement$1,
   getElements,
+  getScrollbarWidth,
   regexJsonString,
   resolveClasses,
   setPositionClasses,
@@ -1071,7 +1075,12 @@ const defaults$a = {
   /**
    * When open and not non-modal, the body is prevented from scrolling (defaults to true).
    */
-  preventScroll: true
+  preventScroll: true,
+  /**
+   * Compensate for layout shift when preventing scroll. Which adds padding equal to scrollbars 
+   * width while dialog is open
+   */
+  preventScrollShift: true
 };
 let currentDefaults$3 = { ...defaults$a };
 function setDefaults$3(options) {
@@ -1098,8 +1107,12 @@ function init$h() {
 }
 function setupTrigger$1(trigger, dialogId) {
   trigger.addEventListener("click", handleTrigger);
-  function handleTrigger() {
+  function handleTrigger(event) {
     var _a;
+    const closestLink = event.target.closest("a");
+    if (closestLink) {
+      event.preventDefault();
+    }
     const dialog2 = document.getElementById(dialogId);
     if (!dialog2) {
       console.error("Could not locate dialog (id)", dialogId);
@@ -1125,9 +1138,16 @@ function setupDialog(dialog2, userOptions) {
   }
   if (!options.nonModal && options.preventScroll) {
     let overflowValue = body.style.overflow;
+    let paddingRightValue = body.style.paddingRight;
     dialog2.addEventListener("toggle", (event) => {
       const isOpen = event.newState === "open";
-      if (isOpen) overflowValue = body.style.overflow;
+      if (isOpen) {
+        overflowValue = body.style.overflow;
+        paddingRightValue = body.style.paddingRight;
+      }
+      if (options.preventScrollShift) {
+        body.style.paddingRight = isOpen ? `${getScrollbarWidth()}px` : paddingRightValue;
+      }
       body.style.overflow = isOpen ? "hidden" : overflowValue;
     });
   }

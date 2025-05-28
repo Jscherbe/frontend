@@ -290,6 +290,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -1329,6 +1344,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -2806,6 +2836,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -3845,6 +3890,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -5132,7 +5192,10 @@
                     <li><a href="#utils%2Fdom.resolveclasses(input)-%E2%87%92-array.%3Cstring%3E">utils/dom.resolveClasses(input) ⇒ Array.<string></string></a>
             		</li>
 
-                    <li><a href="#utils%2Fdom.addscrollbarproperty(element%2C-container%2C-propname)">utils/dom.addScrollbarProperty(element, container, propName)</a>
+                    <li><a href="#utils%2Fdom.addscrollbarproperty(%5Belement%5D%2C-%5Bcontainer%5D%2C-propname)">utils/dom.addScrollbarProperty([element], [container], propName)</a>
+            		</li>
+
+                    <li><a href="#utils%2Fdom.getscrollbarwidth(%5Belement%5D%2C-%5Bcontainer%5D)-%E2%87%92-number">utils/dom.getScrollbarWidth([element], [container]) ⇒ number</a>
             		</li>
                 </ol>
             </div>
@@ -5158,7 +5221,8 @@
 <li><a href="#module_utils/dom.getElement">.getElement(target, context)</a> ⇒ <code>HTMLElement</code></li>
 <li><a href="#module_utils/dom.getElements">.getElements(target, context)</a> ⇒ <code>Array</code></li>
 <li><a href="#module_utils/dom.resolveClasses">.resolveClasses(input)</a> ⇒ <code>Array.&lt;string&gt;</code></li>
-<li><a href="#module_utils/dom.addScrollbarProperty">.addScrollbarProperty(element, container, propName)</a></li>
+<li><a href="#module_utils/dom.addScrollbarProperty">.addScrollbarProperty([element], [container], propName)</a></li>
+<li><a href="#module_utils/dom.getScrollbarWidth">.getScrollbarWidth([element], [container])</a> ⇒ <code>number</code></li>
 </ul>
 </li>
 </ul>
@@ -5352,7 +5416,7 @@ or new instances are added to the screen</p>
 <span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">[</span><span class="pjs-token pjs-string">"another-class"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"yet-another-class"</span><span class="pjs-token pjs-punctuation">]</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["another-class", "yet-another-class"]</span>
 <span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"single-class"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["single-class"]</span></code></pre>
 <p><a name="module_utils/dom.addScrollbarProperty"></a></p>
-<h2 id="utils%2Fdom.addscrollbarproperty(element%2C-container%2C-propname)" tabindex="-1">utils/dom.addScrollbarProperty(element, container, propName)</h2>
+<h2 id="utils%2Fdom.addscrollbarproperty(%5Belement%5D%2C-%5Bcontainer%5D%2C-propname)" tabindex="-1">utils/dom.addScrollbarProperty([element], [container], propName)</h2>
 <p>Sets a CSS custom property equal to the scrollbar width</p>
 <p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a></p>
 <table>
@@ -5360,24 +5424,57 @@ or new instances are added to the screen</p>
 <tr>
 <th>Param</th>
 <th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>element</td>
-<td><code>Node</code></td>
-<td>The element that is the child of a scrollabel container</td>
+<td>[element]</td>
+<td><code>HTMLElement</code></td>
+<td><code>document.body</code></td>
+<td>The element that is the child of a scrollable container</td>
 </tr>
 <tr>
-<td>container</td>
-<td><code>Node</code></td>
+<td>[container]</td>
+<td><code>Window</code> | <code>HTMLElement</code></td>
+<td><code>window</code></td>
 <td>The container that can be scrolled</td>
 </tr>
 <tr>
 <td>propName</td>
 <td><code>Stirng</code></td>
+<td></td>
 <td>Custom property to set</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/dom.getScrollbarWidth"></a></p>
+<h2 id="utils%2Fdom.getscrollbarwidth(%5Belement%5D%2C-%5Bcontainer%5D)-%E2%87%92-number" tabindex="-1">utils/dom.getScrollbarWidth([element], [container]) ⇒ <code>number</code></h2>
+<p>Calculates the width of the scrollbar.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
+<strong>Returns</strong>: <code>number</code> - The width of the scrollbar in pixels.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[element]</td>
+<td><code>HTMLElement</code></td>
+<td><code>document.body</code></td>
+<td>The element that is the child of a scrollable container</td>
+</tr>
+<tr>
+<td>[container]</td>
+<td><code>Window</code> | <code>HTMLElement</code></td>
+<td><code>window</code></td>
+<td>The container that can be scrolled</td>
 </tr>
 </tbody>
 </table>

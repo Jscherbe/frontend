@@ -161,7 +161,7 @@ Prints component styles
 
 
 
-<a class="button" href="/demos/sticky-list">Our Demo</a>
+<a class="button" href="/demos/sticky-list">View</a>
 
 </div>
 

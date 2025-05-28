@@ -115,7 +115,7 @@ Prints component styles
 
 
 
-<a class="button" href="/demos/accordion">Our Demo</a>
+<a class="button" href="/demos/accordion">View</a>
 
 </div>
 

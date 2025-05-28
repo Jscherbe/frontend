@@ -115,7 +115,7 @@ Output counter-list component styles
 
 
 
-<a class="button" href="/demos/counter-list">Our Demo</a>
+<a class="button" href="/demos/counter-list">View</a>
 
 </div>
 

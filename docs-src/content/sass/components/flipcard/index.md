@@ -161,7 +161,7 @@ Prints component styles
 
 
 
-<a class="button" href="/demos/flipcard">Our Demo</a>
+<a class="button" href="/demos/flipcard">View</a>
 
 </div>
 

@@ -290,6 +290,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -1329,6 +1344,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -2806,6 +2836,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -3845,6 +3890,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -5108,15 +5168,6 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
-
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5137,6 +5188,15 @@
             		</li>
                 </ol>
             		</li>
+
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
                 </ol>
             </div>
 			</div>
@@ -5154,6 +5214,111 @@
 different pages or sections of a website. The active link, indicating the
 current page or section, is visually emphasized with an underline.</p>
 </div>
+<h2 id="mixins" tabindex="-1">Mixins</h2>
+<div class="sassdoc-item-header">
+<h3 id="mixin-set" tabindex="-1">set()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Change modules $config</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _nav-strip.scss</li>
+<li><strong>Group:</strong> nav-strip</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 55-58</li>
+<li><strong>Lines (code):</strong> 60-62</li>
+</ul>
+</details>
+<h4 id="examples" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-nav-strip-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="parameters" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="mixin-styles" tabindex="-1">styles()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Prints component styles</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _nav-strip.scss</li>
+<li><strong>Group:</strong> nav-strip</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 73-75</li>
+<li><strong>Lines (code):</strong> 77-157</li>
+</ul>
+</details>
+<h4 id="examples-1" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-nav-strip-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="require-1" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
+</ul>
+<h2 id="functions" tabindex="-1">Functions</h2>
+<div class="sassdoc-item-header">
+<h3 id="function-get" tabindex="-1">get()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a config option</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _nav-strip.scss</li>
+<li><strong>Group:</strong> nav-strip</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 64-67</li>
+<li><strong>Lines (code):</strong> 69-71</li>
+</ul>
+</details>
+<h4 id="examples-2" tabindex="-1">Examples</h4>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-nav-strip-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<h4 id="parameters-1" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Name of property</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
+</ul>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
@@ -5299,111 +5464,6 @@ current page or section, is visually emphasized with an underline.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="mixins" tabindex="-1">Mixins</h2>
-<div class="sassdoc-item-header">
-<h3 id="mixin-set" tabindex="-1">set()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Change modules $config</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _nav-strip.scss</li>
-<li><strong>Group:</strong> nav-strip</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 55-58</li>
-<li><strong>Lines (code):</strong> 60-62</li>
-</ul>
-</details>
-<h4 id="examples" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-nav-strip-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span> <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> value <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="parameters" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$changes</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Map of changes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="mixin-styles" tabindex="-1">styles()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Mixin</strong></span>
-  </div>
-</div>
-<p>Prints component styles</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _nav-strip.scss</li>
-<li><strong>Group:</strong> nav-strip</li>
-<li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 73-75</li>
-<li><strong>Lines (code):</strong> 77-157</li>
-</ul>
-</details>
-<h4 id="examples-1" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-nav-strip-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-1" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
-</ul>
-<h2 id="functions" tabindex="-1">Functions</h2>
-<div class="sassdoc-item-header">
-<h3 id="function-get" tabindex="-1">get()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a config option</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _nav-strip.scss</li>
-<li><strong>Group:</strong> nav-strip</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 64-67</li>
-<li><strong>Lines (code):</strong> 69-71</li>
-</ul>
-</details>
-<h4 id="examples-2" tabindex="-1">Examples</h4>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-nav-strip-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="parameters-1" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$name</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Name of property</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-2" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
-</ul>
 
     </div>
   </div>

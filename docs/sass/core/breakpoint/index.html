@@ -290,6 +290,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -1329,6 +1344,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -2806,6 +2836,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -3845,6 +3890,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -5108,18 +5168,6 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-
-                    <li><a href="#variable-sizes">$sizes</a>
-            		</li>
-                </ol>
-            		</li>
-
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5170,6 +5218,18 @@
             		</li>
                 </ol>
             		</li>
+
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+
+                    <li><a href="#variable-sizes">$sizes</a>
+            		</li>
+                </ol>
+            		</li>
                 </ol>
             </div>
 			</div>
@@ -5185,94 +5245,6 @@
 <div class="type-large">
 <p>Utilities for working with breakpoints</p>
 </div>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">:</span>      16px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"default"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"gap"</span><span class="pjs-token pjs-punctuation">:</span>       0.01em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"null-name"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"none"</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _breakpoint.scss</li>
-<li><strong>Group:</strong> breakpoint</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 10-15</li>
-<li><strong>Lines (code):</strong> 17-22</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Default</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">base</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">16px</td>
-<td style="text-align:left">Assumed pixel base, can change based on users font settings so this is just to get us in the ballpark. Note this is not the base font size but the user agent's or user's browser preference. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)</td>
-</tr>
-<tr>
-<td style="text-align:left">gap</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">0.01em</td>
-<td style="text-align:left">The amount to offset min from max media queries incase you are using both (prevent overlap)</td>
-</tr>
-<tr>
-<td style="text-align:left">null-name</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;none&quot;</td>
-<td style="text-align:left">The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property (see breakpoint.embed-for-scripts() or cssvar.declare-breakpoint-sizes()) to pass breakpoints to JS. The js ui/breakpoints.js module provides methods for interacting with breakpoints in JS.</td>
-</tr>
-<tr>
-<td style="text-align:left">default</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;small&quot;</td>
-<td style="text-align:left">The name of the breakpoint that is considered the major change (ie desktop to mobile) used by other modules/components</td>
-</tr>
-</tbody>
-</table>
-<div class="sassdoc-item-header">
-<h3 id="variable-sizes" tabindex="-1">$sizes</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>The default breakpoint sizes</p>
-<ul>
-<li>Map of breakpoints</li>
-<li>Each property is the breakpoints name</li>
-<li>Each value is that breakpoints point (set in em by default)</li>
-</ul>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$sizes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"small"</span>  <span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">pixel-to-em</span><span class="pjs-token pjs-punctuation">(</span>680px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"medium"</span> <span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">pixel-to-em</span><span class="pjs-token pjs-punctuation">(</span>1200px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"large"</span>  <span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">pixel-to-em</span><span class="pjs-token pjs-punctuation">(</span>1500px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _breakpoint.scss</li>
-<li><strong>Group:</strong> breakpoint</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 47-51</li>
-<li><strong>Lines (code):</strong> 53-57</li>
-</ul>
-</details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5921,6 +5893,94 @@
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 <li><a href="/frontend/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
 </ul>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">:</span>      16px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"default"</span> <span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-string">"small"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"gap"</span><span class="pjs-token pjs-punctuation">:</span>       0.01em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"null-name"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"none"</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _breakpoint.scss</li>
+<li><strong>Group:</strong> breakpoint</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 10-15</li>
+<li><strong>Lines (code):</strong> 17-22</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">base</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">16px</td>
+<td style="text-align:left">Assumed pixel base, can change based on users font settings so this is just to get us in the ballpark. Note this is not the base font size but the user agent's or user's browser preference. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)</td>
+</tr>
+<tr>
+<td style="text-align:left">gap</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">0.01em</td>
+<td style="text-align:left">The amount to offset min from max media queries incase you are using both (prevent overlap)</td>
+</tr>
+<tr>
+<td style="text-align:left">null-name</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;none&quot;</td>
+<td style="text-align:left">The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property (see breakpoint.embed-for-scripts() or cssvar.declare-breakpoint-sizes()) to pass breakpoints to JS. The js ui/breakpoints.js module provides methods for interacting with breakpoints in JS.</td>
+</tr>
+<tr>
+<td style="text-align:left">default</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;small&quot;</td>
+<td style="text-align:left">The name of the breakpoint that is considered the major change (ie desktop to mobile) used by other modules/components</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="variable-sizes" tabindex="-1">$sizes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>The default breakpoint sizes</p>
+<ul>
+<li>Map of breakpoints</li>
+<li>Each property is the breakpoints name</li>
+<li>Each value is that breakpoints point (set in em by default)</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$sizes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"small"</span>  <span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">pixel-to-em</span><span class="pjs-token pjs-punctuation">(</span>680px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"medium"</span> <span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">pixel-to-em</span><span class="pjs-token pjs-punctuation">(</span>1200px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"large"</span>  <span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">pixel-to-em</span><span class="pjs-token pjs-punctuation">(</span>1500px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _breakpoint.scss</li>
+<li><strong>Group:</strong> breakpoint</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 47-51</li>
+<li><strong>Lines (code):</strong> 53-57</li>
+</ul>
+</details>
 
     </div>
   </div>

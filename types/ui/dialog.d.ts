@@ -42,6 +42,7 @@ export namespace defaults {
     let clickOutsideCloses: boolean;
     let pauseVideos: boolean;
     let preventScroll: boolean;
+    let preventScrollShift: boolean;
 }
 import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=dialog.d.ts.map

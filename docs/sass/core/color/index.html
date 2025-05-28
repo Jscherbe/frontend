@@ -290,6 +290,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -1329,6 +1344,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -2806,6 +2836,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter List
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/css-icons/">
           
     
@@ -3845,6 +3890,21 @@
     
     <span class="nav-tree__text">
       Card-grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/counter-list/">
+          
+    
+    <span class="nav-tree__text">
+      Counter-list
     </span>
   
         </a>
@@ -5108,21 +5168,6 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-palette">$palette</a>
-            		</li>
-
-                    <li><a href="#variable-contexts">$contexts</a>
-            		</li>
-
-                    <li><a href="#variable-color-classes">$color-classes</a>
-            		</li>
-                </ol>
-            		</li>
-
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5170,6 +5215,21 @@
             		</li>
                 </ol>
             		</li>
+
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-palette">$palette</a>
+            		</li>
+
+                    <li><a href="#variable-contexts">$contexts</a>
+            		</li>
+
+                    <li><a href="#variable-color-classes">$color-classes</a>
+            		</li>
+                </ol>
+            		</li>
                 </ol>
             </div>
 			</div>
@@ -5184,148 +5244,6 @@
       <h1 id="color" tabindex="-1">Color</h1>
 <div class="type-large">
 </div>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-palette" tabindex="-1">$palette</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
-  </div>
-</div>
-<p>The color palette map, can be extended or modified with set() and accessed with get()</p>
-<ul>
-<li>Note do not use names that start with &quot;var(&quot; which are reserved for custom properties. Also do not use &quot;inherit&quot; or &quot;transparent&quot; as those are reserved.</li>
-<li>The default palette color names are used throughout the system</li>
-</ul>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$palette</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"black"</span>                   <span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"white"</span>                   <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"type"</span>                    <span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"type-secondary"</span>          <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>82<span class="pjs-token pjs-punctuation">,</span> 82<span class="pjs-token pjs-punctuation">,</span> 82<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"type-tertiary"</span>           <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>157<span class="pjs-token pjs-punctuation">,</span> 157<span class="pjs-token pjs-punctuation">,</span> 157<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"headline"</span>                <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background"</span>              <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-gray"</span>         <span class="pjs-token pjs-punctuation">:</span> #F7F8F7<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"focus"</span>                   <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"accent"</span>                  <span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"info"</span>                    <span class="pjs-token pjs-punctuation">:</span> #00bde3<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"success"</span>                 <span class="pjs-token pjs-punctuation">:</span> #00a91c<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"warning"</span>                 <span class="pjs-token pjs-punctuation">:</span> #ffbe2e<span class="pjs-token pjs-punctuation">,</span>  
-  <span class="pjs-token pjs-string">"danger"</span>                  <span class="pjs-token pjs-punctuation">:</span> #d54309<span class="pjs-token pjs-punctuation">,</span>  
-  <span class="pjs-token pjs-string">"info-background"</span>         <span class="pjs-token pjs-punctuation">:</span> #e7f6f8<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"success-background"</span>      <span class="pjs-token pjs-punctuation">:</span> #ecf3ec<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"warning-background"</span>      <span class="pjs-token pjs-punctuation">:</span> #faf3d1<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"danger-background"</span>       <span class="pjs-token pjs-punctuation">:</span> #f4e3db<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"selected"</span>                <span class="pjs-token pjs-punctuation">:</span> green<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow"</span>              <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0.349<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow-hover"</span>        <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0.5<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"rule"</span>                    <span class="pjs-token pjs-punctuation">:</span> gray<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"rule-light"</span>              <span class="pjs-token pjs-punctuation">:</span> lightgray<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link"</span>                    <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-hover"</span>              <span class="pjs-token pjs-punctuation">:</span> darkblue<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-active"</span>             <span class="pjs-token pjs-punctuation">:</span> darkblue<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"link-visited"</span>            <span class="pjs-token pjs-punctuation">:</span> purple<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"bullet"</span>                  <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control"</span>                 <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-hover"</span>           <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-active"</span>           <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-border"</span>          <span class="pjs-token pjs-punctuation">:</span> purple<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-border-hover"</span>       <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-border-active"</span>       <span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-background"</span>      <span class="pjs-token pjs-punctuation">:</span> purple<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-background-hover"</span><span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"control-background-active"</span><span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _color.scss</li>
-<li><strong>Group:</strong> color</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 13-16</li>
-<li><strong>Lines (code):</strong> 18-56</li>
-</ul>
-</details>
-<div class="sassdoc-item-header">
-<h3 id="variable-contexts" tabindex="-1">$contexts</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
-  </div>
-</div>
-<p>Pairs of background-color and color definitions</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$contexts</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"dark"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"black"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"base-class"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"light"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"black"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"base-class"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _color.scss</li>
-<li><strong>Group:</strong> color</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 58-62</li>
-<li><strong>Lines (code):</strong> 64-75</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$contexts.name.background-color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">String</td>
-</tr>
-<tr>
-<td style="text-align:left">$contexts.name.color</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">String</td>
-</tr>
-<tr>
-<td style="text-align:left">$contexts.name.base-class</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Print this value in the base module as a class (if base prints)</td>
-</tr>
-</tbody>
-</table>
-<div class="sassdoc-item-header">
-<h3 id="variable-color-classes" tabindex="-1">$color-classes</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-</div>
-<p>Palette entries that are output as classes when using all-color-class-styles</p>
-<ul>
-<li>Use set-color-classes mixin to alter this map</li>
-</ul>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$color-classes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"black"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"white"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _color.scss</li>
-<li><strong>Group:</strong> color</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 77-78</li>
-<li><strong>Lines (code):</strong> 79-83</li>
-</ul>
-</details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5898,6 +5816,148 @@
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-palette" tabindex="-1">$palette</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+</div>
+<p>The color palette map, can be extended or modified with set() and accessed with get()</p>
+<ul>
+<li>Note do not use names that start with &quot;var(&quot; which are reserved for custom properties. Also do not use &quot;inherit&quot; or &quot;transparent&quot; as those are reserved.</li>
+<li>The default palette color names are used throughout the system</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$palette</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"black"</span>                   <span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"white"</span>                   <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"type"</span>                    <span class="pjs-token pjs-punctuation">:</span> black<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"type-secondary"</span>          <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>82<span class="pjs-token pjs-punctuation">,</span> 82<span class="pjs-token pjs-punctuation">,</span> 82<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"type-tertiary"</span>           <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>157<span class="pjs-token pjs-punctuation">,</span> 157<span class="pjs-token pjs-punctuation">,</span> 157<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"headline"</span>                <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background"</span>              <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-gray"</span>         <span class="pjs-token pjs-punctuation">:</span> #F7F8F7<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"focus"</span>                   <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"accent"</span>                  <span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"info"</span>                    <span class="pjs-token pjs-punctuation">:</span> #00bde3<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"success"</span>                 <span class="pjs-token pjs-punctuation">:</span> #00a91c<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"warning"</span>                 <span class="pjs-token pjs-punctuation">:</span> #ffbe2e<span class="pjs-token pjs-punctuation">,</span>  
+  <span class="pjs-token pjs-string">"danger"</span>                  <span class="pjs-token pjs-punctuation">:</span> #d54309<span class="pjs-token pjs-punctuation">,</span>  
+  <span class="pjs-token pjs-string">"info-background"</span>         <span class="pjs-token pjs-punctuation">:</span> #e7f6f8<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"success-background"</span>      <span class="pjs-token pjs-punctuation">:</span> #ecf3ec<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"warning-background"</span>      <span class="pjs-token pjs-punctuation">:</span> #faf3d1<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"danger-background"</span>       <span class="pjs-token pjs-punctuation">:</span> #f4e3db<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"selected"</span>                <span class="pjs-token pjs-punctuation">:</span> green<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow"</span>              <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0.349<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow-hover"</span>        <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgba</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> 0.5<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"rule"</span>                    <span class="pjs-token pjs-punctuation">:</span> gray<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"rule-light"</span>              <span class="pjs-token pjs-punctuation">:</span> lightgray<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link"</span>                    <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-hover"</span>              <span class="pjs-token pjs-punctuation">:</span> darkblue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-active"</span>             <span class="pjs-token pjs-punctuation">:</span> darkblue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"link-visited"</span>            <span class="pjs-token pjs-punctuation">:</span> purple<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"bullet"</span>                  <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control"</span>                 <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-hover"</span>           <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-active"</span>           <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-border"</span>          <span class="pjs-token pjs-punctuation">:</span> purple<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-border-hover"</span>       <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-border-active"</span>       <span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-background"</span>      <span class="pjs-token pjs-punctuation">:</span> purple<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-background-hover"</span><span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"control-background-active"</span><span class="pjs-token pjs-punctuation">:</span> orange<span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 13-16</li>
+<li><strong>Lines (code):</strong> 18-56</li>
+</ul>
+</details>
+<div class="sassdoc-item-header">
+<h3 id="variable-contexts" tabindex="-1">$contexts</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+</div>
+<p>Pairs of background-color and color definitions</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$contexts</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"dark"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"black"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"base-class"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"light"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"black"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"base-class"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 58-62</li>
+<li><strong>Lines (code):</strong> 64-75</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$contexts.name.background-color</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">String</td>
+</tr>
+<tr>
+<td style="text-align:left">$contexts.name.color</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">String</td>
+</tr>
+<tr>
+<td style="text-align:left">$contexts.name.base-class</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Print this value in the base module as a class (if base prints)</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="variable-color-classes" tabindex="-1">$color-classes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+</div>
+<p>Palette entries that are output as classes when using all-color-class-styles</p>
+<ul>
+<li>Use set-color-classes mixin to alter this map</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$color-classes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"black"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"white"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _color.scss</li>
+<li><strong>Group:</strong> color</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 77-78</li>
+<li><strong>Lines (code):</strong> 79-83</li>
+</ul>
+</details>
 
     </div>
   </div>
