@@ -14,60 +14,6 @@ Create a vignette effect around image/video/etc
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "background-color" : rgb(0,0,0),
-  "image-filter" : saturate(85%)
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _vignette.scss
-- **Group:** vignette
-- **Type:** variable
-- **Lines (comments):** 13-16
-- **Lines (code):** 18-21
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|background-color|Color|rgb(0,0,0)|Color used for the fade-in of the vignette. Must be actual color not color module palette name|
-|image-filter|CssValue|saturate(85%)|Filter value placed over image.|
-
-    
-  
-
 ## Mixins
 
 
@@ -244,5 +190,59 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "background-color" : rgb(0,0,0),
+  "image-filter" : saturate(85%)
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _vignette.scss
+- **Group:** vignette
+- **Type:** variable
+- **Lines (comments):** 13-16
+- **Lines (code):** 18-21
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|background-color|Color|rgb(0,0,0)|Color used for the fade-in of the vignette. Must be actual color not color module palette name|
+|image-filter|CssValue|saturate(85%)|Filter value placed over image.|
+
+    
   
   

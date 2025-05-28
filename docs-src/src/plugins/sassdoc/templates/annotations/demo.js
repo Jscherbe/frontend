@@ -11,7 +11,7 @@ ${ headline("Demo", headlineLevel) }
 
 ${ demo.content ? demo.content : "" }
 
-<a class="button" href="/demos/${ demo.link }">Our Demo</a>
+<a class="button" href="/demos/${ demo.link }">View</a>
 
 </div>
 

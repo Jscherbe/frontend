@@ -240,3 +240,20 @@ Remove the backdrop by passing  `{ "noBackdrop" : true }` to the builder
 >
   Test
 </div>
+
+<h2 class="h2">Test usage with link (not recommended)</h2>
+
+Testing behavior when the trigger is a link/anchor element. Which is not recommended for accessibility, use button. In situations where this the only option use role button, aria-haspopup dialog and empty hash for href.
+
+
+<a href="#" role="button" aria-haspopup="dialog" class="link" data-ulu-dialog-trigger="modal-id-trigger-by-link">Test Trigger Link</button>
+
+<div 
+  id="modal-id-trigger-by-link" 
+  data-ulu-modal-builder='{ 
+    "title" : "Triggered by a link"
+  }' 
+  hidden
+>
+  Test
+</div>

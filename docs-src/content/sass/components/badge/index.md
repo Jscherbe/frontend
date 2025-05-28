@@ -14,75 +14,6 @@ Outputs badge component stylesheet
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "background-color":    gray,
-  "border-radius":       50%,
-  "color":               black,
-  "font-size":           1.3rem,
-  "font-weight":         bold,
-  "width":               10rem,
-  "sizes" : (
-    "large" : (
-      "font-size" : 2.75rem,
-      "width" :  6rem
-    )
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _badge.scss
-- **Group:** badge
-- **Type:** variable
-- **Lines (comments):** 11-19
-- **Lines (code):** 21-34
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|background-color|Number|gray|Background color (if no image)|
-|border-radius|Number|50%|Border radius of badge|
-|color|Number|black|Type color|
-|font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
-|font-weight|Number|bold|Font weight|
-|sizes|List|Object|List of other sizes (large by default), each size is a map of (width, font-size)|
-|width|Number|10rem|Width of badge (default size)|
-
-    
-  
-
 ## Mixins
 
 
@@ -298,5 +229,74 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "background-color":    gray,
+  "border-radius":       50%,
+  "color":               black,
+  "font-size":           1.3rem,
+  "font-weight":         bold,
+  "width":               10rem,
+  "sizes" : (
+    "large" : (
+      "font-size" : 2.75rem,
+      "width" :  6rem
+    )
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _badge.scss
+- **Group:** badge
+- **Type:** variable
+- **Lines (comments):** 11-19
+- **Lines (code):** 21-34
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|background-color|Number|gray|Background color (if no image)|
+|border-radius|Number|50%|Border radius of badge|
+|color|Number|black|Type color|
+|font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
+|font-weight|Number|bold|Font weight|
+|sizes|List|Object|List of other sizes (large by default), each size is a map of (width, font-size)|
+|width|Number|10rem|Width of badge (default size)|
+
+    
   
   

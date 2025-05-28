@@ -48,7 +48,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "cap-side" : "left",
   "cap-match-radius" : false,
   "cap-options" : (
-    "size" : 3rem,
+    "size" : 0.75rem,
   ),
 ));
 @include ulu.component-callout-set-styles((

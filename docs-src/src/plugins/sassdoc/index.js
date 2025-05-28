@@ -47,6 +47,14 @@ const commonConfig = {
     "see",
     "require"
   ],
+  byTypeOrder: [
+    "body",
+    "mixins",
+    "functions",
+    "variables",
+    "placeholders",
+    "CSS"
+  ],
   hidePrivate: true,
   hidePrivateKeepGroup: true
 };

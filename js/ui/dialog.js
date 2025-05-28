@@ -3,7 +3,7 @@
  */
 
 import { ComponentInitializer } from "../utils/system.js";
-import { wasClickOutside } from "../utils/dom.js";
+import { wasClickOutside, getScrollbarWidth } from "../utils/dom.js";
 import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
 
 /**
@@ -47,6 +47,11 @@ export const defaults = {
    * When open and not non-modal, the body is prevented from scrolling (defaults to true).
    */
   preventScroll: true,
+  /**
+   * Compensate for layout shift when preventing scroll. Which adds padding equal to scrollbars 
+   * width while dialog is open
+   */
+  preventScrollShift: true,
 };
 
 
@@ -95,7 +100,15 @@ export function init() {
 export function setupTrigger(trigger, dialogId) {
   trigger.addEventListener("click", handleTrigger);
 
-  function handleTrigger() {
+  function handleTrigger(event) {
+    
+    // If a link is used (not recommended) we need to prevent 
+    // the page from scrolling
+    const closestLink = event.target.closest("a");
+    if (closestLink) {
+      event.preventDefault();
+    }
+    
     const dialog = document.getElementById(dialogId);
     if (!dialog) {
       console.error("Could not locate dialog (id)", dialogId);
@@ -130,10 +143,22 @@ export function setupDialog(dialog, userOptions) {
   // Allow preventScroll if it is a modal dialog
   // Caching value of overflow before setting so we don't assume what it's initial value is
   if (!options.nonModal && options.preventScroll) {
+    
     let overflowValue = body.style.overflow;
+    let paddingRightValue = body.style.paddingRight;
+    
     dialog.addEventListener("toggle", (event) => {
       const isOpen = event.newState === "open";
-      if (isOpen) overflowValue = body.style.overflow;
+      if (isOpen) {
+        overflowValue = body.style.overflow;
+        paddingRightValue = body.style.paddingRight;
+      }
+      
+      // This will compensate for scrollbar jump (if user has it enabled)
+      if (options.preventScrollShift) {
+        body.style.paddingRight = isOpen ? `${ getScrollbarWidth() }px` : paddingRightValue;
+      }
+
       body.style.overflow = isOpen ? "hidden" : overflowValue;
     });
   }

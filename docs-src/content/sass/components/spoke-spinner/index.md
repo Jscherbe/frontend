@@ -14,90 +14,6 @@ A spoke style spinner/loader icon, requires ulu.base-keyframes
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "size" : 48px,
-  "spoke-width" : 3px,
-  "spoke-height" : 12px,
-  "color" : "accent",
-  "border-radius" : 2px,
-  "duration" :  1.2s
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _spoke-spinner.scss
-- **Group:** spoke-spinner
-- **Type:** variable
-- **Lines (comments):** 13-14
-- **Lines (code):** 16-23
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $styles {#variable-styles}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-
-</div>
-
-  
-
-Map of other sizes (use as modifiers), same properties as config/defaults
-    
-    
-
-``` scss
-$styles: ();
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _spoke-spinner.scss
-- **Group:** spoke-spinner
-- **Type:** variable
-- **Lines (comments):** 25-25
-- **Lines (code):** 26-26
-
-</details>
-
-    
-  
-
 ## Mixins
 
 
@@ -348,5 +264,89 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "size" : 48px,
+  "spoke-width" : 3px,
+  "spoke-height" : 12px,
+  "color" : "accent",
+  "border-radius" : 2px,
+  "duration" :  1.2s
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _spoke-spinner.scss
+- **Group:** spoke-spinner
+- **Type:** variable
+- **Lines (comments):** 13-14
+- **Lines (code):** 16-23
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $styles {#variable-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+Map of other sizes (use as modifiers), same properties as config/defaults
+    
+    
+
+``` scss
+$styles: ();
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _spoke-spinner.scss
+- **Group:** spoke-spinner
+- **Type:** variable
+- **Lines (comments):** 25-25
+- **Lines (code):** 26-26
+
+</details>
+
+    
   
   

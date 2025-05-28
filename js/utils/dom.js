@@ -166,11 +166,22 @@ export function resolveClasses(classes) {
 
 /**
  * Sets a CSS custom property equal to the scrollbar width
- * @param {Node} element The element that is the child of a scrollabel container
- * @param {Node} container The container that can be scrolled
+ * @param {HTMLElement} [element=document.body] -The element that is the child of a scrollable container
+ * @param {Window|HTMLElement} [container=window] - The container that can be scrolled
  * @param {Stirng} propName Custom property to set
  */
 export function addScrollbarProperty(element = document.body, container = window, propName = "--ulu-scrollbar-width") {
-  const scrollbarWidth = container.innerWidth - element.clientWidth;
+  const scrollbarWidth = getScrollbarWidth(element, container);
   element.style.setProperty(propName, `${ scrollbarWidth }px`);
+}
+
+/**
+ * Calculates the width of the scrollbar.
+ *
+ * @param {HTMLElement} [element=document.body] -The element that is the child of a scrollable container
+ * @param {Window|HTMLElement} [container=window] - The container that can be scrolled
+ * @returns {number} The width of the scrollbar in pixels.
+ */
+export function getScrollbarWidth(element = document.body, container = window) {
+  return container.innerWidth - element.clientWidth;
 }

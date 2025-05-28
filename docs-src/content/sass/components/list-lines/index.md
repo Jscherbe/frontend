@@ -14,72 +14,6 @@ sassdocGroupName: list-lines
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-
-</div>
-
-  
-
-Module Config
-    
-    
-
-``` scss
-$config: (
-  "border-first" : true,
-  "border-last" : true,
-  "margin-bottom": 1em,
-  "margin-top": 0,
-  "rule-style" : "light",
-  "padding-between" : 1em,
-  "dense-padding-between" : 0.65em,
-  "dense-line-height" : true
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _list-lines.scss
-- **Group:** list-lines
-- **Type:** variable
-- **Lines (comments):** 21-29
-- **Lines (code):** 31-40
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|border-first|Boolean|true|If enabled, adds a top border to the first item in list-lines.|
-|border-last|Boolean|true|If enabled, adds a bottom border to the last item in list-lines.|
-|rule-style|String|"light"|Name of element > rule style to use for divider/border|
-|margin-bottom|Dimension|1em|Bottom margin of list.|
-|margin-top|Dimension|0|Top margin of list.|
-|padding-between|Dimension|1em|Padding between items in list.|
-|padding-between|Dimension|1em|Padding between items in list when using dense modifier|
-|line-height-dense|Dimension|true|Line height when list lines has dense modifier (defaults to typography line-height-dense)|
-
-    
-  
-
 ## Mixins
 
 
@@ -256,5 +190,71 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+Module Config
+    
+    
+
+``` scss
+$config: (
+  "border-first" : true,
+  "border-last" : true,
+  "margin-bottom": 1em,
+  "margin-top": 0,
+  "rule-style" : "light",
+  "padding-between" : 1em,
+  "dense-padding-between" : 0.65em,
+  "dense-line-height" : true
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _list-lines.scss
+- **Group:** list-lines
+- **Type:** variable
+- **Lines (comments):** 21-29
+- **Lines (code):** 31-40
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|border-first|Boolean|true|If enabled, adds a top border to the first item in list-lines.|
+|border-last|Boolean|true|If enabled, adds a bottom border to the last item in list-lines.|
+|rule-style|String|"light"|Name of element > rule style to use for divider/border|
+|margin-bottom|Dimension|1em|Bottom margin of list.|
+|margin-top|Dimension|0|Top margin of list.|
+|padding-between|Dimension|1em|Padding between items in list.|
+|padding-between|Dimension|1em|Padding between items in list when using dense modifier|
+|line-height-dense|Dimension|true|Line height when list lines has dense modifier (defaults to typography line-height-dense)|
+
+    
   
   

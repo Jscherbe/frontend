@@ -1,7 +1,6 @@
 ////
 /// @group counter-list
-/// Outputs badge component stylesheet
-////
+/// Outputs a styled list with counters
 
 @use "sass:map";
 @use "../utils";
@@ -11,24 +10,30 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {List} margin [(2rem 0)] The top and bottom margin of the list.
+/// @prop {List} item-margin [(0, 0, 1rem, 0)] The margin applied to each list item.
+/// @prop {Keyword} align-items [baseline] How to align the counter (flexbox align-items values)
+/// @prop {Length} counter-width [2.4em] The width and height (if height is falsy)
+/// @prop {Length} counter-height [null] The height (optional)
+/// @prop {Length} counter-gap [1em] The gap between the counter and the list item content.
+/// @prop {String} counter-style [numeric] The list-style-type used for the counter.
+/// @prop {Keyword|Percentage} counter-border-radius [50%] The border-radius of the counter element.
+/// @prop {Length} counter-font-size [1.2em] The font-size of the counter text.
+/// @prop {String} counter-color [white] The text color of the counter. Accepts color names or hex codes.
+/// @prop {String} counter-background-color ["accent"] The background color of the counter. Refers to a color in the color module.
 
 $config: (
-  // config for number
-  "ol-margin" : 2rem 0,
-  "li-margin-bottom" : 1rem,
-  // "li-padding-top" : 0.5rem,
-  "li-align-items" : baseline, 
-  "counter-start" : 0,
-  "counter-size" : 3rem,
-  "counter-gap" : 1rem,
-  "counter-list-style" : numeric,
+  "margin" : (2rem 0),
+  "item-margin" : (0, 0, 1rem, 0),
+  "align-items" : baseline, 
+  "counter-width" : 2.4em,
+  "counter-height" : null,
+  "counter-gap" : 1em,
+  "counter-style" : numeric,
   "counter-border-radius" : 50%,
-  "counter-font-size" : 20px,
+  "counter-font-size" : 1.2em,
   "counter-color" : white,
   "counter-background-color" : "accent",
-
-  "counter-mobile-toggle" : true,
-  "counter-gap-mobile": 2rem,
 ) !default;
 
 /// Change modules $config
@@ -50,89 +55,79 @@ $config: (
 }
 
 /// Output counter-list component styles
-/// needs built
+/// @demo counter-list
+/// @example html {preview}
+///   <ol class="counter-list">
+///     <li class="counter-list__item">This is a item that will get counted</li>
+///     <li class="counter-list__item">Another item that has more content to show line wrapping. Lorem ipsum et depsi anu. Dolor et anu.</li>
+///     <li class="counter-list__item">Small Amount of Text</li>
+///   </ol>
 
 @mixin styles {
   $prefix: selector.class("counter-list");
-  // add list numbers via before psuedoelement
+  $width: get("counter-width");
+  $height: utils.fallback(get("counter-height"), $width);
+
   #{ $prefix } {
-    margin: get("ol-margin");
-    counter-reset: ulu-counter-list get("counter-start");
+    margin: get("margin");
+    counter-reset: ulu-counter-list;
+
     & > li,
-    & > .counter-list__item {
+    & > #{ $prefix }__item {
       display: flex;
-      align-items: get("li-align-items");
-      margin-bottom: get("li-margin-bottom");
-      min-height: get("counter-size");
       gap: get("counter-gap");
+      align-items: get("align-items");
+      margin: get("item-margin");
+      min-height: $height;
       &::before {
-        flex: 0 0 get("counter-size");
-        counter-increment: ulu-counter-list;
-        content: counter(ulu-counter-list, get("counter-list-style"));
-        font-size: get("counter-font-size");
-        color: color.get(get("counter-color"));
-        background-color: color.get(get("counter-background-color"));
         display: flex;
         align-items: center;
         justify-content: center;
-        width: get("counter-size");
-        height: get("counter-size");
+        width: $width;
+        height: $height;
+        flex: 0 0 $width;
+        counter-increment: ulu-counter-list;
+        content: counter(ulu-counter-list, get("counter-style"));
+        font-size: get("counter-font-size");
+        color: color.get(get("counter-color"));
+        background-color: color.get(get("counter-background-color"));
         border-radius: get("counter-border-radius");
       }
-      @if ( get("counter-mobile-toggle") ) {
-        @include breakpoint.max("small") {
-          padding-left: 0;
-          padding-top: calc(get("counter-size") + get("counter-gap-mobile"));
-          flex-direction: column;
-          align-items: center;
-        }
-      }
+
+      // Keeping this could be useful
+      // but we need to think about how its setup
+      // - Probably should be a modifier (choice)
+      // - May need either option for how align-items is set (flex-start vs center)
+      // - This could be useful when used in grid
+      // - May need to be pervasive and not linked to a breakpoint (alternate style)
+      // - It's also just useful to know you could override the layout like this 
+      //   to get useful variations (maybe we don't need to include it but users 
+      //   can do specific)
+      // @if ( get("counter-mobile-toggle") ) {
+      //   @include breakpoint.max("small") {
+      //     padding-left: 0;
+      //     padding-top: calc(get("counter-width") + get("counter-gap-mobile"));
+      //     flex-direction: column;
+      //     align-items: center;
+      //   }
+      // }
     }
   }
+
+  // Modifiers
   #{ $prefix }--alphabetical {
     & > li::before,
-    & > .counter-list__item::before {
+    & > #{ $prefix }__item::before {
       content: counter(ulu-counter-list, upper-alpha);
     }
   }
   #{ $prefix }--numeric {
     & > li::before,
-    & > .counter-list__item::before {
+    & > #{ $prefix }__item::before {
       content: counter(ulu-counter-list, numeric);
     }
   }
+  #{ $prefix }--no-reset {
+    counter-reset: none;
+  }
 }
-
-    // & > li,
-    // & > .counter-list__item {
-    //   position: relative;
-    //   margin-bottom: get("li-margin-bottom");
-    //   min-height: get("counter-size");
-    //   padding-left: calc(get("counter-size") + get("counter-gap"));
-    //   padding-top: get("li-padding-top");
-    //   &::before {
-    //     position: absolute;
-    //     left: 0;
-    //     top: 0;
-    //     counter-increment: ulu-counter-list;
-    //     content: counter(ulu-counter-list, get("counter-list-style"));
-    //     font-size: get("counter-font-size");
-    //     color: color.get(get("counter-color"));
-    //     background-color: color.get(get("counter-background-color"));
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     width: get("counter-size");
-    //     height: get("counter-size");
-    //     border-radius: get("counter-border-radius");
-    //   }
-    //   @if ( get("counter-mobile-toggle") ) {
-    //     @include breakpoint.max("small") {
-    //       padding-left: 0;
-    //       padding-top: calc(get("counter-size") + get("counter-gap-mobile"));
-    //       &::before {
-    //         left: calc(50% - get("counter-size") / 2);
-    //       }
-    //     }
-    //   }
-    // }

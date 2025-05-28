@@ -14,196 +14,6 @@ sassdocGroupName: element
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "backdrop-blur":                    4px,
-  "backdrop-color":                   rgba(73, 73, 73, 0.459),
-  "list-item-indent" :                1.5em,
-  "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
-  "border-radius":                    6px,
-  "border-radius-small":              3px,
-  "border-radius-large":              12px,
-  "box-shadow":                       0 1px 5px color.get('box-shadow'),
-  "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
-  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
-  "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
-  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
-  "link-text-decoration":             underline,
-  "link-text-decoration-color":       initial,
-  "link-text-decoration-color-hover": false,
-  "link-text-decoration-default":     none,
-  "link-text-underline-offset" :     auto,
-  "link-text-decoration-style":       dotted,
-  "link-text-decoration-style-hover": solid,
-  "link-text-decoration-thickness":   0.1em,
-  "margin":                           1em,
-  "margin-small":                     0.65em,
-  "margin-large":                     2em,
-  "ol-list-style-type":               decimal,
-  "ol-list-style-type-2":             lower-alpha,
-  "ol-list-style-type-3":             lower-roman,
-  "ul-list-style-type":               disc,
-  "ul-list-style-type-2":             circle,
-  "ul-list-style-type-3":             square,
-  "cap-color" :                       "accent",
-  "cap-size" :                        5px
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _element.scss
-- **Group:** element
-- **Type:** variable
-- **Lines (comments):** 10-40
-- **Lines (code):** 42-74
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Description|Default|
-|:--|:--|:--|:--|
-|backdrop-blur|Number|Backdrop blur amount used on elements/components||
-|backdrop-color|Color|Backdrop color (modal overlays, etc)||
-|list-item-indent|Dimension||1.5em|
-|text-shadow|List|Common text shadow||
-|border-radius|Number|Common element border radius||
-|border-radius-large|Number|Common element border radius (large)||
-|border-radius-small|Number|Common element border radius (small)||
-|box-shadow|List|Box-shadow definition for elements that are on top of page||
-|box-shadow-above|List|Box-shadow definition for elements that are above the page (fixed items, etc)||
-|box-shadow-hover|CssValue||0 1px 5px color.get('box-shadow-hover')|
-|box-shadow-inset|CssValue||0 1px 5px color.get('box-shadow')|
-|box-shadow-raised|List|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)||
-|link-text-decoration|String|||
-|link-text-decoration-color|Color|||
-|link-text-decoration-default|String|Whether links use underline, remember that removing underline will create an accessibility issue (not relying on color)||
-|link-text-decoration-color-hover|Color|||
-|link-text-underline-offset|Number|||
-|link-text-decoration-style|String|||
-|link-text-decoration-style-hover|String|||
-|link-text-decoration-thickness|Number|||
-|margin|Number|Common element margin||
-|margin-large|Number|Common element margin (large)||
-|margin-small|Number|Common element margin (small) (default for lists)||
-|ol-list-style-type|String|Ordered list type (level 1)||
-|ol-list-style-type-2|String|Ordered list type (level 2)||
-|ol-list-style-type-3|String|Ordered list type (level 3)||
-|ul-list-style-type|String|||
-|ul-list-style-type-2|String|||
-|ul-list-style-type-3|String|||
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $rule-styles {#variable-rule-styles}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Rule style map, redefine defaults or add to
-    
-    
-
-``` scss
-$rule-styles: (
-  "default": 1px solid color.get("rule"),
-  "light":   1px solid color.get("rule-light"),
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _element.scss
-- **Group:** element
-- **Type:** variable
-- **Lines (comments):** 76-77
-- **Lines (code):** 79-82
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $rule-margins {#variable-rule-margins}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Common rule margins (space between rule and type)
-    
-    
-
-``` scss
-$rule-margins: (
-  "smallest": 0.5rem,
-  "small":    1rem,
-  "medium":   2rem,
-  "large":    3rem
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _element.scss
-- **Group:** element
-- **Type:** variable
-- **Lines (comments):** 84-85
-- **Lines (code):** 87-92
-
-</details>
-
-    
-  
-
 ## Mixins
 
 
@@ -969,5 +779,195 @@ Sets rule margin
 - require-map-get()
 - [$rule-margins](/sass/core/element/#variable-rule-margins)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "backdrop-blur":                    4px,
+  "backdrop-color":                   rgba(73, 73, 73, 0.459),
+  "list-item-indent" :                1.5em,
+  "text-shadow":                      0 1px 4px rgba(0,0,0,0.3),
+  "border-radius":                    6px,
+  "border-radius-small":              3px,
+  "border-radius-large":              12px,
+  "box-shadow":                       0 1px 5px color.get('box-shadow'),
+  "box-shadow-above":                 0 1px 20px color.get('box-shadow'),
+  "box-shadow-hover":                 0 1px 5px color.get('box-shadow-hover'),
+  "box-shadow-inset":                 0 1px 5px color.get('box-shadow'),
+  "box-shadow-raised":                0 1px 12px color.get('box-shadow'),
+  "link-text-decoration":             underline,
+  "link-text-decoration-color":       initial,
+  "link-text-decoration-color-hover": false,
+  "link-text-decoration-default":     none,
+  "link-text-underline-offset" :     auto,
+  "link-text-decoration-style":       dotted,
+  "link-text-decoration-style-hover": solid,
+  "link-text-decoration-thickness":   0.1em,
+  "margin":                           1em,
+  "margin-small":                     0.65em,
+  "margin-large":                     2em,
+  "ol-list-style-type":               decimal,
+  "ol-list-style-type-2":             lower-alpha,
+  "ol-list-style-type-3":             lower-roman,
+  "ul-list-style-type":               disc,
+  "ul-list-style-type-2":             circle,
+  "ul-list-style-type-3":             square,
+  "cap-color" :                       "accent",
+  "cap-size" :                        5px
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** variable
+- **Lines (comments):** 10-40
+- **Lines (code):** 42-74
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Description|Default|
+|:--|:--|:--|:--|
+|backdrop-blur|Number|Backdrop blur amount used on elements/components||
+|backdrop-color|Color|Backdrop color (modal overlays, etc)||
+|list-item-indent|Dimension||1.5em|
+|text-shadow|List|Common text shadow||
+|border-radius|Number|Common element border radius||
+|border-radius-large|Number|Common element border radius (large)||
+|border-radius-small|Number|Common element border radius (small)||
+|box-shadow|List|Box-shadow definition for elements that are on top of page||
+|box-shadow-above|List|Box-shadow definition for elements that are above the page (fixed items, etc)||
+|box-shadow-hover|CssValue||0 1px 5px color.get('box-shadow-hover')|
+|box-shadow-inset|CssValue||0 1px 5px color.get('box-shadow')|
+|box-shadow-raised|List|Box-shadow definition for elements that are raised off of the page (dropdowns, etc)||
+|link-text-decoration|String|||
+|link-text-decoration-color|Color|||
+|link-text-decoration-default|String|Whether links use underline, remember that removing underline will create an accessibility issue (not relying on color)||
+|link-text-decoration-color-hover|Color|||
+|link-text-underline-offset|Number|||
+|link-text-decoration-style|String|||
+|link-text-decoration-style-hover|String|||
+|link-text-decoration-thickness|Number|||
+|margin|Number|Common element margin||
+|margin-large|Number|Common element margin (large)||
+|margin-small|Number|Common element margin (small) (default for lists)||
+|ol-list-style-type|String|Ordered list type (level 1)||
+|ol-list-style-type-2|String|Ordered list type (level 2)||
+|ol-list-style-type-3|String|Ordered list type (level 3)||
+|ul-list-style-type|String|||
+|ul-list-style-type-2|String|||
+|ul-list-style-type-3|String|||
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $rule-styles {#variable-rule-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Rule style map, redefine defaults or add to
+    
+    
+
+``` scss
+$rule-styles: (
+  "default": 1px solid color.get("rule"),
+  "light":   1px solid color.get("rule-light"),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** variable
+- **Lines (comments):** 76-77
+- **Lines (code):** 79-82
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $rule-margins {#variable-rule-margins}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Common rule margins (space between rule and type)
+    
+    
+
+``` scss
+$rule-margins: (
+  "smallest": 0.5rem,
+  "small":    1rem,
+  "medium":   2rem,
+  "large":    3rem
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** variable
+- **Lines (comments):** 84-85
+- **Lines (code):** 87-92
+
+</details>
+
+    
   
   

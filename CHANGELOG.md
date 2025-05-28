@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0-beta.40
+
+- **scss/components/counter-list**
+  - Add counter-list component and demo page
+- **js/ui/dialog**
+  - Add option for triggers (preventScrollShift) which will add padding to the body when dialog with preventScroll is opened (so layout doesn't shift). Note this will not fix fixed position elements relative to the viewport jumping.
+
 ## Version 0.1.0-beta.39
 
 - **js/ui/scrollpoint.js**

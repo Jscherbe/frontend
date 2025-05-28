@@ -15,7 +15,8 @@ title: utils/dom
     * [.getElement(target, context)](#module_utils/dom.getElement) ⇒ <code>HTMLElement</code>
     * [.getElements(target, context)](#module_utils/dom.getElements) ⇒ <code>Array</code>
     * [.resolveClasses(input)](#module_utils/dom.resolveClasses) ⇒ <code>Array.&lt;string&gt;</code>
-    * [.addScrollbarProperty(element, container, propName)](#module_utils/dom.addScrollbarProperty)
+    * [.addScrollbarProperty([element], [container], propName)](#module_utils/dom.addScrollbarProperty)
+    * [.getScrollbarWidth([element], [container])](#module_utils/dom.getScrollbarWidth) ⇒ <code>number</code>
 
 <a name="module_utils/dom.dataAttributeToDatasetKey"></a>
 
@@ -125,16 +126,29 @@ resolveClassArray("single-class"); // Returns ["single-class"]
 ```
 <a name="module_utils/dom.addScrollbarProperty"></a>
 
-## utils/dom.addScrollbarProperty(element, container, propName)
+## utils/dom.addScrollbarProperty([element], [container], propName)
 Sets a CSS custom property equal to the scrollbar width
 
 **Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| element | <code>Node</code> | The element that is the child of a scrollabel container |
-| container | <code>Node</code> | The container that can be scrolled |
-| propName | <code>Stirng</code> | Custom property to set |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [element] | <code>HTMLElement</code> | <code>document.body</code> | The element that is the child of a scrollable container |
+| [container] | <code>Window</code> \| <code>HTMLElement</code> | <code>window</code> | The container that can be scrolled |
+| propName | <code>Stirng</code> |  | Custom property to set |
+
+<a name="module_utils/dom.getScrollbarWidth"></a>
+
+## utils/dom.getScrollbarWidth([element], [container]) ⇒ <code>number</code>
+Calculates the width of the scrollbar.
+
+**Kind**: static method of [<code>utils/dom</code>](#module_utils/dom)  
+**Returns**: <code>number</code> - The width of the scrollbar in pixels.  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [element] | <code>HTMLElement</code> | <code>document.body</code> | The element that is the child of a scrollable container |
+| [container] | <code>Window</code> \| <code>HTMLElement</code> | <code>window</code> | The container that can be scrolled |
 
 
   

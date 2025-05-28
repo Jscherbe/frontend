@@ -14,107 +14,6 @@ Utilities for working with breakpoints
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "base":      16px,
-  "default" :  "small",
-  "gap":       0.01em,
-  "null-name": "none",
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _breakpoint.scss
-- **Group:** breakpoint
-- **Type:** variable
-- **Lines (comments):** 10-15
-- **Lines (code):** 17-22
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|base|Number|16px|Assumed pixel base, can change based on users font settings so this is just to get us in the ballpark. Note this is not the base font size but the user agent's or user's browser preference. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)|
-|gap|Number|0.01em|The amount to offset min from max media queries incase you are using both (prevent overlap)|
-|null-name|String|"none"|The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property (see breakpoint.embed-for-scripts() or cssvar.declare-breakpoint-sizes()) to pass breakpoints to JS. The js ui/breakpoints.js module provides methods for interacting with breakpoints in JS.|
-|default|String|"small"|The name of the breakpoint that is considered the major change (ie desktop to mobile) used by other modules/components|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $sizes {#variable-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-The default breakpoint sizes
-- Map of breakpoints
-- Each property is the breakpoints name
-- Each value is that breakpoints point (set in em by default)
-    
-    
-
-``` scss
-$sizes: (
-  "small"  : utils.pixel-to-em(680px, get("base")),
-  "medium" : utils.pixel-to-em(1200px, get("base")),
-  "large"  : utils.pixel-to-em(1500px, get("base"))
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _breakpoint.scss
-- **Group:** breakpoint
-- **Type:** variable
-- **Lines (comments):** 47-51
-- **Lines (code):** 53-57
-
-</details>
-
-    
-  
-
 ## Mixins
 
 
@@ -968,5 +867,106 @@ Check if a specific size exist
 - [get()](/sass/core/breakpoint/#function-get)
 - [$sizes](/sass/core/breakpoint/#variable-sizes)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "base":      16px,
+  "default" :  "small",
+  "gap":       0.01em,
+  "null-name": "none",
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _breakpoint.scss
+- **Group:** breakpoint
+- **Type:** variable
+- **Lines (comments):** 10-15
+- **Lines (code):** 17-22
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|base|Number|16px|Assumed pixel base, can change based on users font settings so this is just to get us in the ballpark. Note this is not the base font size but the user agent's or user's browser preference. This number is just being used for calculating estimated em sizes from average base. Since pixels are easier to understand but since we allow the user to set their font size. All of our css is relative to that, including most of the layout (rems, other relative units)|
+|gap|Number|0.01em|The amount to offset min from max media queries incase you are using both (prevent overlap)|
+|null-name|String|"none"|The name of the space from 0 to the first breakpoint (doesn't really matter) used when passing breakpoints to JS via content property (see breakpoint.embed-for-scripts() or cssvar.declare-breakpoint-sizes()) to pass breakpoints to JS. The js ui/breakpoints.js module provides methods for interacting with breakpoints in JS.|
+|default|String|"small"|The name of the breakpoint that is considered the major change (ie desktop to mobile) used by other modules/components|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+The default breakpoint sizes
+- Map of breakpoints
+- Each property is the breakpoints name
+- Each value is that breakpoints point (set in em by default)
+    
+    
+
+``` scss
+$sizes: (
+  "small"  : utils.pixel-to-em(680px, get("base")),
+  "medium" : utils.pixel-to-em(1200px, get("base")),
+  "large"  : utils.pixel-to-em(1500px, get("base"))
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _breakpoint.scss
+- **Group:** breakpoint
+- **Type:** variable
+- **Lines (comments):** 47-51
+- **Lines (code):** 53-57
+
+</details>
+
+    
   
   

@@ -14,64 +14,6 @@ Outputs general HTML element styles (body, a, etc)
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "details-animation" : (UluFadeInDown 350ms ease-in-out),
-  "link" : true,
-  "link-hover" : true,
-  "link-visited" : false,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _elements.scss
-- **Group:** elements
-- **Type:** variable
-- **Lines (comments):** 16-21
-- **Lines (code):** 23-28
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|details-animation|CssValue|(UluFadeInDown 350ms ease-in-out)|Animation for the details element when toggled.|
-|link|Boolean|true|Enables link styling.|
-|link-hover|Boolean|true|Enables link hover and focus styling.|
-|link-visited|Boolean|true|Enables visited link styling.|
-
-    
-  
-
 ## Mixins
 
 
@@ -248,5 +190,63 @@ General example
 
 - [$config](/sass/base/elements/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "details-animation" : (UluFadeInDown 350ms ease-in-out),
+  "link" : true,
+  "link-hover" : true,
+  "link-visited" : false,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _elements.scss
+- **Group:** elements
+- **Type:** variable
+- **Lines (comments):** 16-21
+- **Lines (code):** 23-28
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|details-animation|CssValue|(UluFadeInDown 350ms ease-in-out)|Animation for the details element when toggled.|
+|link|Boolean|true|Enables link styling.|
+|link-hover|Boolean|true|Enables link hover and focus styling.|
+|link-visited|Boolean|true|Enables visited link styling.|
+
+    
   
   
