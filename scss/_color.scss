@@ -178,7 +178,7 @@ $color-classes: (
   color: get-context-value($name, "color");
 }
 
-/// Lighten a color using the default white by a percentage
+/// Tint (add white) a color using the default white by a percentage
 /// @param {Color, String} $color Color/palette color name to apply to tint
 /// @param {Number} $percentage Percentage
 /// @return {Color}
@@ -189,7 +189,17 @@ $color-classes: (
   @return color.mix(get("white"), get($color), $percentage);
 }
 
-/// Darken a color with the default black by a percentage
+/// Tint (add white) a color using the default white by a percentage (Using color-mix)
+/// - This only works in modern browsers (as of June 2025)
+/// @param {Color, String} $color Color or custom property to apply mix to
+/// @param {Number} $percentage Percentage
+/// @return {Color}
+
+@function css-tint($color, $percentage) {
+  @return color-mix(in srgb, white $percentage, $color calc(100% - $percentage));
+}
+
+/// Shade (add black) a color with the default black by a percentage
 /// @param {Color, String} $color Color/palette color name to shade
 /// @param {Number} $percentage Percentage to shade
 /// @return {Color}
@@ -198,6 +208,16 @@ $color-classes: (
 
 @function shade($color, $percentage) {
   @return color.mix(get("black"), get($color), $percentage);
+}
+
+/// Shade (add black) a color using the default white by a percentage (Using color-mix)
+/// - This only works in modern browsers (as of June 2025)
+/// @param {Color, String} $color Color or custom property to apply mix to
+/// @param {Number} $percentage Percentage
+/// @return {Color}
+
+@function css-shade($color, $percentage) {
+  @return color-mix(in srgb, get("black") $percentage, $color calc(100% - $percentage));
 }
 
 /// Prints all context styles 

@@ -443,8 +443,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 203-210
-- **Lines (code):** 212-221
+- **Lines (comments):** 223-230
+- **Lines (code):** 232-241
 
 </details>
 
@@ -528,8 +528,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 223-227
-- **Lines (code):** 229-238
+- **Lines (comments):** 243-247
+- **Lines (code):** 249-258
 
 </details>
 
@@ -796,7 +796,7 @@ Get a context's value'
 
   
 
-Lighten a color using the default white by a percentage
+Tint (add white) a color using the default white by a percentage
     
     
 
@@ -848,7 +848,7 @@ Lighten a color using the default white by a percentage
 
 <div class="sassdoc-item-header">
 
-###  shade() {#function-shade}
+###  css-tint() {#function-css-tint}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
@@ -858,7 +858,8 @@ Lighten a color using the default white by a percentage
 
   
 
-Darken a color with the default black by a percentage
+Tint (add white) a color using the default white by a percentage (Using color-mix)
+- This only works in modern browsers (as of June 2025)
     
     
 
@@ -869,8 +870,58 @@ Darken a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 192-197
-- **Lines (code):** 199-201
+- **Lines (comments):** 192-196
+- **Lines (code):** 198-200
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$color|`Color, String`|Color or custom property to apply mix to|
+|$percentage|`Number`|Percentage|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Color|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  shade() {#function-shade}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Shade (add black) a color with the default black by a percentage
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comments):** 202-207
+- **Lines (code):** 209-211
 - **Author:** Kitty Giraudel
 
 </details>
@@ -899,6 +950,62 @@ Darken a color with the default black by a percentage
 #### Related Links
 
 - [Modified from source (CSS Tricks, Kitty Giraudel)](https://css-tricks.com/snippets/sass/tint-shade-functions/)
+
+    
+
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  css-shade() {#function-css-shade}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Shade (add black) a color using the default white by a percentage (Using color-mix)
+- This only works in modern browsers (as of June 2025)
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _color.scss
+- **Group:** color
+- **Type:** function
+- **Lines (comments):** 213-217
+- **Lines (code):** 219-221
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$color|`Color, String`|Color or custom property to apply mix to|
+|$percentage|`Number`|Percentage|
+
+    
+
+#### Returns
+
+
+|Type|
+|:--|
+|Color|
 
     
 
