@@ -5279,11 +5279,10 @@
   <span class="pjs-token pjs-string">"overlay-shading"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"overlay-body-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-comment">// new below</span>
-  <span class="pjs-token pjs-string">"toggle-aside-rule"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"aside-rule-width"</span> <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"aside-rule"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"aside-rule-width"</span> <span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"aside-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"aside-rule-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule"</span><span class="pjs-token pjs-punctuation">,</span>
-
+  <span class="pjs-token pjs-string">"aside-rule-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule-light"</span><span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -5291,8 +5290,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 18-68</li>
-<li><strong>Lines (code):</strong> 70-131</li>
+<li><strong>Lines (comments):</strong> 18-72</li>
+<li><strong>Lines (code):</strong> 74-134</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5600,6 +5599,30 @@
 <td style="text-align:left">80rem</td>
 <td style="text-align:left">The max-width of body when horizontal</td>
 </tr>
+<tr>
+<td style="text-align:left">aside-rule</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Whether or not to have a rule separating body and aside</td>
+</tr>
+<tr>
+<td style="text-align:left">aside-rule-width</td>
+<td style="text-align:left">CssUnit</td>
+<td style="text-align:left">1px</td>
+<td style="text-align:left">Size of rule</td>
+</tr>
+<tr>
+<td style="text-align:left">aside-rule-color</td>
+<td style="text-align:left">CssUnit</td>
+<td style="text-align:left">&quot;rule-light&quot;</td>
+<td style="text-align:left">Color of rule</td>
+</tr>
+<tr>
+<td style="text-align:left">aside-rule-background-color</td>
+<td style="text-align:left">CssUnit</td>
+<td style="text-align:left">transparent</td>
+<td style="text-align:left">Color of aside background color</td>
+</tr>
 </tbody>
 </table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5616,8 +5639,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 133-136</li>
-<li><strong>Lines (code):</strong> 138-140</li>
+<li><strong>Lines (comments):</strong> 136-139</li>
+<li><strong>Lines (code):</strong> 141-143</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5656,8 +5679,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 151-155</li>
-<li><strong>Lines (code):</strong> 157-187</li>
+<li><strong>Lines (comments):</strong> 154-158</li>
+<li><strong>Lines (code):</strong> 160-190</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5704,8 +5727,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 194-198</li>
-<li><strong>Lines (code):</strong> 200-482</li>
+<li><strong>Lines (comments):</strong> 197-201</li>
+<li><strong>Lines (code):</strong> 203-485</li>
 </ul>
 </details>
 <div class="callout callout--demo crop-margins">
@@ -5734,8 +5757,8 @@
 <li><strong>File:</strong> _card.scss</li>
 <li><strong>Group:</strong> card</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 142-145</li>
-<li><strong>Lines (code):</strong> 147-149</li>
+<li><strong>Lines (comments):</strong> 145-148</li>
+<li><strong>Lines (code):</strong> 150-152</li>
 </ul>
 </details>
 <h4 id="examples-3" tabindex="-1">Examples</h4>

@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.43
+
+- **scss/components/card**
+  - Document all new aside configuration properties change toggle-aside-rule to aside-rule
+
 ## Version 0.1.0-beta.42
 
 - **scss/components/card**

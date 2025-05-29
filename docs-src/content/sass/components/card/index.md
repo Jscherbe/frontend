@@ -92,11 +92,10 @@ $config: (
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
   // new below
-  "toggle-aside-rule" : true,
-  "aside-rule-width" : 6px,
+  "aside-rule" : false,
+  "aside-rule-width" : 1px,
   "aside-background-color" : transparent,
-  "aside-rule-color": "rule",
-
+  "aside-rule-color": "rule-light",
 );
 ```
   
@@ -108,8 +107,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 18-68
-- **Lines (code):** 70-131
+- **Lines (comments):** 18-72
+- **Lines (code):** 74-134
 
 </details>
 
@@ -169,6 +168,10 @@ $config: (
 |horizontal-min-height|Unit|10rem|Minimum height when horizontal|
 |horizontal-max-width|Unit|40rem|Maximum width when horizontal|
 |horizontal-body-max-width|Unit|80rem|The max-width of body when horizontal|
+|aside-rule|Boolean|false|Whether or not to have a rule separating body and aside|
+|aside-rule-width|CssUnit|1px|Size of rule|
+|aside-rule-color|CssUnit|"rule-light"|Color of rule|
+|aside-rule-background-color|CssUnit|transparent|Color of aside background color|
 
     
   
@@ -201,8 +204,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 133-136
-- **Lines (code):** 138-140
+- **Lines (comments):** 136-139
+- **Lines (code):** 141-143
 
 </details>
 
@@ -260,8 +263,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 151-155
-- **Lines (code):** 157-187
+- **Lines (comments):** 154-158
+- **Lines (code):** 160-190
 
 </details>
 
@@ -320,8 +323,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 194-198
-- **Lines (code):** 200-482
+- **Lines (comments):** 197-201
+- **Lines (code):** 203-485
 
 </details>
 
@@ -401,8 +404,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 142-145
-- **Lines (code):** 147-149
+- **Lines (comments):** 145-148
+- **Lines (code):** 150-152
 
 </details>
 

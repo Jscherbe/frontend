@@ -66,6 +66,10 @@
 /// @prop {Unit} horizontal-min-height [10rem] Minimum height when horizontal
 /// @prop {Unit} horizontal-max-width [40rem] Maximum width when horizontal
 /// @prop {Unit} horizontal-body-max-width [80rem] The max-width of body when horizontal
+/// @prop {Boolean} aside-rule [false] Whether or not to have a rule separating body and aside
+/// @prop {CssUnit} aside-rule-width [1px] Size of rule
+/// @prop {CssUnit} aside-rule-color ["rule-light"] Color of rule
+/// @prop {CssUnit} aside-rule-background-color [transparent] Color of aside background color
 
 $config: (
   "background-color" : white,
@@ -123,11 +127,10 @@ $config: (
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
   // new below
-  "toggle-aside-rule" : true,
-  "aside-rule-width" : 6px,
+  "aside-rule" : false,
+  "aside-rule-width" : 1px,
   "aside-background-color" : transparent,
-  "aside-rule-color": "rule",
-
+  "aside-rule-color": "rule-light",
 ) !default;
   
   /// Change modules $config
@@ -353,7 +356,7 @@ $config: (
     flex-grow: 1;
     min-height: get("body-min-height");
   }
-  @if(get("toggle-aside-rule")) {
+  @if(get("aside-rule")) {
     #{ $prefix }__aside {
       background-color: color.get(get("aside-background-color"));
     }
@@ -509,7 +512,7 @@ $config: (
       justify-content: center;
       max-width: get("horizontal-body-max-width");
     }
-    @if(get("toggle-aside-rule")) {
+    @if(get("aside-rule")) {
       #{ $prefix }__main {
         flex: 1 1 60%;
       }

@@ -12856,20 +12856,6 @@ button.card:focus-within::after,
   min-height: 10rem;
 }
 
-.card__aside {
-  background-color: transparent;
-}
-
-.card__aside::after {
-  content: "";
-  position: absolute;
-  top: calc(0rem - 3px);
-  left: 2rem;
-  right: 2rem;
-  height: 6px;
-  background-color: var(--site-color-rule);
-}
-
 .card__footer {
   -webkit-box-flex: 0;
       -ms-flex: 0;
@@ -13010,26 +12996,6 @@ button.card:focus-within::after,
         -ms-flex-pack: center;
             justify-content: center;
     max-width: 80rem;
-  }
-  .card--horizontal .card__main {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 60%;
-            flex: 1 1 60%;
-  }
-  .card--horizontal .card__aside {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 40%;
-            flex: 1 1 40%;
-    height: 100%;
-  }
-  .card--horizontal .card__aside::after {
-    content: "";
-    position: absolute;
-    top: 2rem;
-    left: calc(0rem - 3px);
-    height: calc(100% - 2rem - 2rem);
-    width: 6px;
-    background-color: "rule";
   }
   .card--horizontal:not(:has(.card__image)) {
     grid-template-columns: 1fr;
