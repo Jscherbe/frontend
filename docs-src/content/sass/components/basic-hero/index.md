@@ -14,6 +14,66 @@ Basic styling for a hero
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "background-color" : "background-gray",
+  "padding-top": 3rem,
+  "padding-bottom" : 2rem,
+  "gap" : (4rem 2rem),
+  "main-max-width" : true,
+  "main-min-width" : true,
+  "media-max-width" : 20rem,
+  "media-vertical-align" : center
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _basic-hero.scss
+- **Group:** basic-hero
+- **Type:** variable
+- **Lines (comments):** 29-32
+- **Lines (code):** 34-43
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|text-align|CssValue|center|Alignment of text within hero.|
+|background-color|Color|"color-hero-background"|Background color of the hero|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,65 +250,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "background-color" : "background-gray",
-  "padding-top": 3rem,
-  "padding-bottom" : 2rem,
-  "gap" : (4rem 2rem),
-  "main-max-width" : true,
-  "main-min-width" : true,
-  "media-max-width" : 20rem,
-  "media-vertical-align" : center
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _basic-hero.scss
-- **Group:** basic-hero
-- **Type:** variable
-- **Lines (comments):** 29-32
-- **Lines (code):** 34-43
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|text-align|CssValue|center|Alignment of text within hero.|
-|background-color|Color|"color-hero-background"|Background color of the hero|
-
-    
   
   

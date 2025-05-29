@@ -14,6 +14,64 @@ Uses padding trick to keep ratio. Defaults to 4:3 (standard). Used for responsiv
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "size" : 75%,
+  "sizes" : (
+    "16x9" : 56.25%,
+    "9x16" : 177.77%,
+    "3x4" : 133.33%
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _ratio-box.scss
+- **Group:** ratio-box
+- **Type:** variable
+- **Lines (comments):** 10-13
+- **Lines (code):** 15-22
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|size|Number|75%|Default height ratio (of width 100%)|
+|sizes|Map|Map|Other ratios to add (apply with modifier class)|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,63 +248,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "size" : 75%,
-  "sizes" : (
-    "16x9" : 56.25%,
-    "9x16" : 177.77%,
-    "3x4" : 133.33%
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _ratio-box.scss
-- **Group:** ratio-box
-- **Type:** variable
-- **Lines (comments):** 10-13
-- **Lines (code):** 15-22
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|size|Number|75%|Default height ratio (of width 100%)|
-|sizes|Map|Map|Other ratios to add (apply with modifier class)|
-
-    
   
   

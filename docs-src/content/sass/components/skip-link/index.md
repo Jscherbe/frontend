@@ -14,6 +14,53 @@ Accessible skip link component (works in combination with .hidden-visually-focus
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "padding" : (1em 2em),
+  "background-color" : white,
+  "box-shadow" : true,
+  "border-radius" : true,
+  "z-index" : true
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _skip-link.scss
+- **Group:** skip-link
+- **Type:** variable
+- **Lines (comments):** 31-32
+- **Lines (code):** 34-40
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -211,52 +258,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "padding" : (1em 2em),
-  "background-color" : white,
-  "box-shadow" : true,
-  "border-radius" : true,
-  "z-index" : true
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _skip-link.scss
-- **Group:** skip-link
-- **Type:** variable
-- **Lines (comments):** 31-32
-- **Lines (code):** 34-40
-
-</details>
-
-    
   
   

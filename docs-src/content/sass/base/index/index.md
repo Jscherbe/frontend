@@ -14,6 +14,93 @@ Output all base styles
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $all-includes {#variable-all-includes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
+  </div>
+
+</div>
+
+  
+
+Default includes, all modules
+    
+    
+
+``` scss
+$all-includes: (
+  "normalize",
+  "root"
+  "elements," 
+  "print", 
+  "elements", 
+  "keyframes", 
+  "typography",
+  "color",
+  "layout"
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _index.scss
+- **Group:** index
+- **Type:** variable
+- **Lines (comments):** 27-28
+- **Lines (code):** 30-40
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $current-includes {#variable-current-includes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
+  </div>
+
+</div>
+
+  
+
+Current included modules (for output when using styles), defaults to all
+    
+    
+
+``` scss
+$current-includes: $all-includes;
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _index.scss
+- **Group:** index
+- **Type:** variable
+- **Lines (comments):** 42-43
+- **Lines (code):** 45-45
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -168,92 +255,5 @@ Prints all Base styles
 
 - [$all-includes](/sass/base/index/#variable-all-includes)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $all-includes {#variable-all-includes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
-  </div>
-
-</div>
-
-  
-
-Default includes, all modules
-    
-    
-
-``` scss
-$all-includes: (
-  "normalize",
-  "root"
-  "elements," 
-  "print", 
-  "elements", 
-  "keyframes", 
-  "typography",
-  "color",
-  "layout"
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _index.scss
-- **Group:** index
-- **Type:** variable
-- **Lines (comments):** 27-28
-- **Lines (code):** 30-40
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $current-includes {#variable-current-includes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
-  </div>
-
-</div>
-
-  
-
-Current included modules (for output when using styles), defaults to all
-    
-    
-
-``` scss
-$current-includes: $all-includes;
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _index.scss
-- **Group:** index
-- **Type:** variable
-- **Lines (comments):** 42-43
-- **Lines (code):** 45-45
-
-</details>
-
-    
   
   

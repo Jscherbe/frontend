@@ -14,6 +14,169 @@ Creates a CSS grid with items that have matching aspect ratios. Reflows to fit a
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "aspect-ratio" : list.slash(4, 3),
+  "gap" : 1rem,
+  "width" : 10em,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tile-grid.scss
+- **Group:** tile-grid
+- **Type:** variable
+- **Lines (comments):** 14-18
+- **Lines (code):** 20-24
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|aspect-ratio|CssValue|list.slash(4, 3)||
+|gap|Number|1rem|The gap for the tile grid.|
+|width|Number|10em||
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Alternate Sizes for reflowable grid
+- Map of preferred width for columns and optional aspect-ratio for item
+    
+    
+
+``` scss
+$sizes: (
+  "large" : (
+    "width" : 20em,
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tile-grid.scss
+- **Group:** tile-grid
+- **Type:** variable
+- **Lines (comments):** 26-28
+- **Lines (code):** 30-34
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $static-sizes {#variable-static-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Static grid width styles
+    
+    
+
+``` scss
+$static-sizes: (
+  "static" : (
+    "default" : (
+      "columns" : 1,
+      "gap" : null,
+      "aspect-ratio" : list.slash(4, 3)
+    ),
+    "small" : (
+      "direction" : "min",
+      "columns" : 2,
+      "gap" : null,
+    ),
+    "medium" : (
+      "direction" : "min",
+      "columns" : 3,
+      "gap" : null,
+    ),
+  ),
+  "static-wide" : (
+    "default" : (
+      "columns" : 1,
+      "gap" : null,
+      "aspect-ratio" : list.slash(4, 3)
+    ),
+    "small" : (
+      "direction" : "min",
+      "columns" : 2,
+      "gap" : null,
+    ),
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tile-grid.scss
+- **Group:** tile-grid
+- **Type:** variable
+- **Lines (comments):** 36-37
+- **Lines (code):** 39-69
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -284,168 +447,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "aspect-ratio" : list.slash(4, 3),
-  "gap" : 1rem,
-  "width" : 10em,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tile-grid.scss
-- **Group:** tile-grid
-- **Type:** variable
-- **Lines (comments):** 14-18
-- **Lines (code):** 20-24
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|aspect-ratio|CssValue|list.slash(4, 3)||
-|gap|Number|1rem|The gap for the tile grid.|
-|width|Number|10em||
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $sizes {#variable-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Alternate Sizes for reflowable grid
-- Map of preferred width for columns and optional aspect-ratio for item
-    
-    
-
-``` scss
-$sizes: (
-  "large" : (
-    "width" : 20em,
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tile-grid.scss
-- **Group:** tile-grid
-- **Type:** variable
-- **Lines (comments):** 26-28
-- **Lines (code):** 30-34
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $static-sizes {#variable-static-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Static grid width styles
-    
-    
-
-``` scss
-$static-sizes: (
-  "static" : (
-    "default" : (
-      "columns" : 1,
-      "gap" : null,
-      "aspect-ratio" : list.slash(4, 3)
-    ),
-    "small" : (
-      "direction" : "min",
-      "columns" : 2,
-      "gap" : null,
-    ),
-    "medium" : (
-      "direction" : "min",
-      "columns" : 3,
-      "gap" : null,
-    ),
-  ),
-  "static-wide" : (
-    "default" : (
-      "columns" : 1,
-      "gap" : null,
-      "aspect-ratio" : list.slash(4, 3)
-    ),
-    "small" : (
-      "direction" : "min",
-      "columns" : 2,
-      "gap" : null,
-    ),
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tile-grid.scss
-- **Group:** tile-grid
-- **Type:** variable
-- **Lines (comments):** 36-37
-- **Lines (code):** 39-69
-
-</details>
-
-    
   
   

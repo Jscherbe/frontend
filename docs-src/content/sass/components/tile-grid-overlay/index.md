@@ -14,6 +14,56 @@ Provides styles to use tile-grid over the top of image
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "button-background-color": #ce97e6dc,
+  "button-background-color-hover": #b882cf,
+  "button-background-color-striped": #b397e6cc,
+  "button-background-color-active": #868dece4,
+  "background-image-filter" : (grayscale(1) contrast(0.6) brightness(1.5)),
+  "breakpoint-even-columns-min" : "small",
+  "breakpoint-even-columns-max" : "medium",
+  "wide-breakpoint-even-columns-min" : "small"
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tile-grid-overlay.scss
+- **Group:** tile-grid-overlay
+- **Type:** variable
+- **Lines (comments):** 15-16
+- **Lines (code):** 18-27
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -190,55 +240,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "button-background-color": #ce97e6dc,
-  "button-background-color-hover": #b882cf,
-  "button-background-color-striped": #b397e6cc,
-  "button-background-color-active": #868dece4,
-  "background-image-filter" : (grayscale(1) contrast(0.6) brightness(1.5)),
-  "breakpoint-even-columns-min" : "small",
-  "breakpoint-even-columns-max" : "medium",
-  "wide-breakpoint-even-columns-min" : "small"
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tile-grid-overlay.scss
-- **Group:** tile-grid-overlay
-- **Type:** variable
-- **Lines (comments):** 15-16
-- **Lines (code):** 18-27
-
-</details>
-
-    
   
   

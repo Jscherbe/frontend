@@ -14,6 +14,64 @@ Lightweight CSS Grid setup for card components
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "gap" : 2rem,
+  "template-columns" : 1fr 1fr,
+  "compact-gap" : 1rem,
+  "compact-template-columns" : 1fr 1fr 1fr,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _card-grid.scss
+- **Group:** card-grid
+- **Type:** variable
+- **Lines (comments):** 12-17
+- **Lines (code):** 19-24
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|compact-template-columns|CssValue|1fr 1fr 1fr|The template-columns of the card-grid--compact.|
+|compact-gap|Dimension|1rem|The grid gap of the card-grid--compact.|
+|gap|Dimension|2rem|The grid gap of the card-grid.|
+|template-columns|CssValue|1fr 1fr|The template-columns of the card-grid.|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,63 +248,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "gap" : 2rem,
-  "template-columns" : 1fr 1fr,
-  "compact-gap" : 1rem,
-  "compact-template-columns" : 1fr 1fr 1fr,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _card-grid.scss
-- **Group:** card-grid
-- **Type:** variable
-- **Lines (comments):** 12-17
-- **Lines (code):** 19-24
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|compact-template-columns|CssValue|1fr 1fr 1fr|The template-columns of the card-grid--compact.|
-|compact-gap|Dimension|1rem|The grid gap of the card-grid--compact.|
-|gap|Dimension|2rem|The grid gap of the card-grid.|
-|template-columns|CssValue|1fr 1fr|The template-columns of the card-grid.|
-
-    
   
   

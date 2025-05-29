@@ -14,6 +14,132 @@ Outputs all component stylesheets, optionally choose to set includes or excludes
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $all-includes {#variable-all-includes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
+  </div>
+
+</div>
+
+  
+
+Default includes, all modules
+    
+    
+
+``` scss
+$all-includes: (
+  "accordion",
+  "adaptive-spacing",
+  "badge",
+  "basic-hero",
+  "button",
+  "button-verbose",
+  "callout",
+  "card",
+  "card-grid",
+  "counter-list",
+  "css-icon",
+  "data-grid",
+  "data-table",
+  "fill-context",
+  "flipcard",
+  "flipcard-grid",
+  "form-theme",
+  "horizontal-rule",
+  "image-grid",
+  "links",
+  "list-lines",
+  "list-inline",
+  "list-ordered",
+  "list-unordered",
+  "menu-stack",
+  "modal",
+  "nav-strip",
+  "overlay-section",
+  "pager",
+  "popover",
+  "ratio-box",
+  "rule",
+  "scroll-slider",
+  "skip-link",
+  "sticky-list",
+  "slider",
+  "hero",
+  "tabs",
+  "tag",
+  "tile-grid",
+  "tile-button",
+  "tile-grid-overlay",
+  "placeholder-block",
+  "pull-quote",
+  "vignette",
+  "captioned-figure",
+  "spoke-spinner",
+  "wysiwyg",
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _index.scss
+- **Group:** index
+- **Type:** variable
+- **Lines (comments):** 107-108
+- **Lines (code):** 110-159
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $current-includes {#variable-current-includes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
+  </div>
+
+</div>
+
+  
+
+Current included modules (for output when using styles), defaults to all
+    
+    
+
+``` scss
+$current-includes: $all-includes;
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _index.scss
+- **Group:** index
+- **Type:** variable
+- **Lines (comments):** 161-162
+- **Lines (code):** 164-164
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -168,131 +294,5 @@ Prints all Components styles
 
 - [$all-includes](/sass/components/index/#variable-all-includes)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $all-includes {#variable-all-includes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
-  </div>
-
-</div>
-
-  
-
-Default includes, all modules
-    
-    
-
-``` scss
-$all-includes: (
-  "accordion",
-  "adaptive-spacing",
-  "badge",
-  "basic-hero",
-  "button",
-  "button-verbose",
-  "callout",
-  "card",
-  "card-grid",
-  "counter-list",
-  "css-icon",
-  "data-grid",
-  "data-table",
-  "fill-context",
-  "flipcard",
-  "flipcard-grid",
-  "form-theme",
-  "horizontal-rule",
-  "image-grid",
-  "links",
-  "list-lines",
-  "list-inline",
-  "list-ordered",
-  "list-unordered",
-  "menu-stack",
-  "modal",
-  "nav-strip",
-  "overlay-section",
-  "pager",
-  "popover",
-  "ratio-box",
-  "rule",
-  "scroll-slider",
-  "skip-link",
-  "sticky-list",
-  "slider",
-  "hero",
-  "tabs",
-  "tag",
-  "tile-grid",
-  "tile-button",
-  "tile-grid-overlay",
-  "placeholder-block",
-  "pull-quote",
-  "vignette",
-  "captioned-figure",
-  "spoke-spinner",
-  "wysiwyg",
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _index.scss
-- **Group:** index
-- **Type:** variable
-- **Lines (comments):** 107-108
-- **Lines (code):** 110-159
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $current-includes {#variable-current-includes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: List</span>
-  </div>
-
-</div>
-
-  
-
-Current included modules (for output when using styles), defaults to all
-    
-    
-
-``` scss
-$current-includes: $all-includes;
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _index.scss
-- **Group:** index
-- **Type:** variable
-- **Lines (comments):** 161-162
-- **Lines (code):** 164-164
-
-</details>
-
-    
   
   

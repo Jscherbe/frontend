@@ -4,6 +4,8 @@
 
 - **js/utils/dom**
   - **addScrollbarProperty** - Change arguments to object, Add argument for "propertyElement" and make this function add property to html element by default (so it can be used with other custom properties in CSS :root selector)
+- **scss/components/card.scss**
+  - card aside defaults changed ("aside-background-color" : transparent, "aside-rule-color": "rule",)
 
 ## Version 0.1.0-beta.40
 

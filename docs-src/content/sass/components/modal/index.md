@@ -14,6 +14,130 @@ sassdocGroupName: modal
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "backdrop-color" :                true,
+  "backdrop-blur" :                 4px,
+  "background-color":              white,
+  "body-padding":                   1rem,
+  "border-radius" :                 true,
+  "box-shadow" :                    true,         
+  "height":                         340px,
+  "height-no-header":               100px,
+  "width":                          60rem,
+  "width-left-right" :              30rem,
+  "animation-duration" :            300ms,
+  "animation-duration-exit" :       150ms,
+  "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
+  "close-background-color":         white,
+  "close-background-color-hover":   blue,
+  "close-color":                    black,
+  "close-color-hover":              black,
+  "close-font-size":                1.2rem,
+  "close-margin":                   0.5rem,
+  "close-size":                     2.5rem,
+  "header-background-color":        black,
+  "header-border-bottom":           none,
+  "header-color":                   white,
+  "header-padding":                 1rem,
+  "resizer-background-color":       rgb(221, 221, 221),
+  "resizer-background-color-hover": rgb(192, 192, 192),
+  "resizer-color":                  rgb(99, 99, 99),
+  "resizer-color-hover":            black,
+  "resizer-width":                  1.25rem,
+  "title-color":                    white,
+  "title-font-weight":              bold,
+  "title-font-family" :             null,
+  "title-icon-margin" :             0.5em,
+  "title-size" :                    "large",
+  "title-text-transform" :          null,
+  "sizes" : (
+    "small" : 30rem,
+    "large" : 80rem
+  ),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _modal.scss
+- **Group:** modal
+- **Type:** variable
+- **Lines (comments):** 31-67
+- **Lines (code):** 69-109
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|backdrop-blur|CssValue|4px|Determines the blur of the backdrop.|
+|backdrop-color|Color|true|The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.|
+|background-color|Color|white|The background color of the modal.|
+|body-padding|Dimension|1rem|The padding of the body content.|
+|border-radius|CssValue|true|The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.|
+|box-shadow|CssValue|true|Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.|
+|height|Dimension|340px|The min-height of the modal.|
+|height-no-header|Dimension|100px|The min-height of the modal.|
+|width|Dimension|60rem|The width of the Modal|
+|animation-duration|Time|300ms|Animation duration for the modal opening.|
+|animation-duration-exit|Time|150ms|Animation duration for the modal closing.|
+|animation-timing-function|CssValue|cubic-bezier(0, 0, .2, 1)|The animation timing menu of the modal.|
+|close-background-color|Color|white|Background color for the modal close icon.|
+|close-background-color-hover|Close|blue|Background color for the modal close icon when hovered or focused.|
+|close-color|Color|black|Type color for the modal close icon.|
+|close-color-hover|Color|black|Type color for the modal close icon when hovered or focused.|
+|close-font-size|Dimension|1.2rem|Font-siz of of the modal close icon font size.|
+|close-margin|Dimension|0.5rem|The margin for the modal close icon.|
+|close-size|Dimension|2.5rem|Size of the modal close icon.|
+|header-background-color|Color|black|Background color for the header.|
+|header-border-bottom|CssValue|none|Bottom-border on the modal header.|
+|header-color|Color|white|Type color of the header.|
+|header-padding|Dimension|1rem|The padding of the modal header.|
+|resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
+|resizer-background-color-hover|Color|rgb(192, 192, 192)|The background color of the resizer when hovered or focused.|
+|resizer-color|Color|rgb(99, 99, 99)|The type color of the resizer.|
+|resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
+|resizer-width|Dimension|1rem|The width of the resizer.|
+|title-color|Color|white|Type color of the title.|
+|title-font-weight|CssValue|bold|Font weight of the title.|
+|title-font-family|CssValue|null|Font family for title|
+|title-icon-margin|Dimension|0.5em|The margin of the title icon|
+|title-size|String|large|The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
+|title-text-transform|CssValue|null|Transform option for the title.|
+|sizes|Map|Map|Size options to enable unique stylings.|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,129 +314,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "backdrop-color" :                true,
-  "backdrop-blur" :                 4px,
-  "background-color":              white,
-  "body-padding":                   1rem,
-  "border-radius" :                 true,
-  "box-shadow" :                    true,         
-  "height":                         340px,
-  "height-no-header":               100px,
-  "width":                          60rem,
-  "width-left-right" :              30rem,
-  "animation-duration" :            300ms,
-  "animation-duration-exit" :       150ms,
-  "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
-  "close-background-color":         white,
-  "close-background-color-hover":   blue,
-  "close-color":                    black,
-  "close-color-hover":              black,
-  "close-font-size":                1.2rem,
-  "close-margin":                   0.5rem,
-  "close-size":                     2.5rem,
-  "header-background-color":        black,
-  "header-border-bottom":           none,
-  "header-color":                   white,
-  "header-padding":                 1rem,
-  "resizer-background-color":       rgb(221, 221, 221),
-  "resizer-background-color-hover": rgb(192, 192, 192),
-  "resizer-color":                  rgb(99, 99, 99),
-  "resizer-color-hover":            black,
-  "resizer-width":                  1.25rem,
-  "title-color":                    white,
-  "title-font-weight":              bold,
-  "title-font-family" :             null,
-  "title-icon-margin" :             0.5em,
-  "title-size" :                    "large",
-  "title-text-transform" :          null,
-  "sizes" : (
-    "small" : 30rem,
-    "large" : 80rem
-  ),
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _modal.scss
-- **Group:** modal
-- **Type:** variable
-- **Lines (comments):** 31-67
-- **Lines (code):** 69-109
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|backdrop-blur|CssValue|4px|Determines the blur of the backdrop.|
-|backdrop-color|Color|true|The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.|
-|background-color|Color|white|The background color of the modal.|
-|body-padding|Dimension|1rem|The padding of the body content.|
-|border-radius|CssValue|true|The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.|
-|box-shadow|CssValue|true|Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.|
-|height|Dimension|340px|The min-height of the modal.|
-|height-no-header|Dimension|100px|The min-height of the modal.|
-|width|Dimension|60rem|The width of the Modal|
-|animation-duration|Time|300ms|Animation duration for the modal opening.|
-|animation-duration-exit|Time|150ms|Animation duration for the modal closing.|
-|animation-timing-function|CssValue|cubic-bezier(0, 0, .2, 1)|The animation timing menu of the modal.|
-|close-background-color|Color|white|Background color for the modal close icon.|
-|close-background-color-hover|Close|blue|Background color for the modal close icon when hovered or focused.|
-|close-color|Color|black|Type color for the modal close icon.|
-|close-color-hover|Color|black|Type color for the modal close icon when hovered or focused.|
-|close-font-size|Dimension|1.2rem|Font-siz of of the modal close icon font size.|
-|close-margin|Dimension|0.5rem|The margin for the modal close icon.|
-|close-size|Dimension|2.5rem|Size of the modal close icon.|
-|header-background-color|Color|black|Background color for the header.|
-|header-border-bottom|CssValue|none|Bottom-border on the modal header.|
-|header-color|Color|white|Type color of the header.|
-|header-padding|Dimension|1rem|The padding of the modal header.|
-|resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
-|resizer-background-color-hover|Color|rgb(192, 192, 192)|The background color of the resizer when hovered or focused.|
-|resizer-color|Color|rgb(99, 99, 99)|The type color of the resizer.|
-|resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
-|resizer-width|Dimension|1rem|The width of the resizer.|
-|title-color|Color|white|Type color of the title.|
-|title-font-weight|CssValue|bold|Font weight of the title.|
-|title-font-family|CssValue|null|Font family for title|
-|title-icon-margin|Dimension|0.5em|The margin of the title icon|
-|title-size|String|large|The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
-|title-text-transform|CssValue|null|Transform option for the title.|
-|sizes|Map|Map|Size options to enable unique stylings.|
-
-    
   
   

@@ -14,6 +14,78 @@ Outputs a styled list with counters
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "margin" : (2rem 0),
+  "item-margin" : (0, 0, 1rem, 0),
+  "align-items" : baseline, 
+  "counter-width" : 2.4em,
+  "counter-height" : null,
+  "counter-gap" : 1em,
+  "counter-style" : numeric,
+  "counter-border-radius" : 50%,
+  "counter-font-size" : 1.2em,
+  "counter-color" : white,
+  "counter-background-color" : "accent",
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _counter-list.scss
+- **Group:** counter-list
+- **Type:** variable
+- **Lines (comments):** 11-23
+- **Lines (code):** 25-37
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|margin|List|(2rem 0)|The top and bottom margin of the list.|
+|item-margin|List|(0, 0, 1rem, 0)|The margin applied to each list item.|
+|align-items|Keyword|baseline|How to align the counter (flexbox align-items values)|
+|counter-width|Length|2.4em|The width and height (if height is falsy)|
+|counter-height|Length|null|The height (optional)|
+|counter-gap|Length|1em|The gap between the counter and the list item content.|
+|counter-style|String|numeric|The list-style-type used for the counter.|
+|counter-border-radius|Keyword|Percentage|50%|The border-radius of the counter element.|
+|counter-font-size|Length|1.2em|The font-size of the counter text.|
+|counter-color|String|white|The text color of the counter. Accepts color names or hex codes.|
+|counter-background-color|String|"accent"|The background color of the counter. Refers to a color in the color module.|
+
+    
+  
+
 ## Mixins
 
 
@@ -218,77 +290,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "margin" : (2rem 0),
-  "item-margin" : (0, 0, 1rem, 0),
-  "align-items" : baseline, 
-  "counter-width" : 2.4em,
-  "counter-height" : null,
-  "counter-gap" : 1em,
-  "counter-style" : numeric,
-  "counter-border-radius" : 50%,
-  "counter-font-size" : 1.2em,
-  "counter-color" : white,
-  "counter-background-color" : "accent",
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _counter-list.scss
-- **Group:** counter-list
-- **Type:** variable
-- **Lines (comments):** 11-23
-- **Lines (code):** 25-37
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|margin|List|(2rem 0)|The top and bottom margin of the list.|
-|item-margin|List|(0, 0, 1rem, 0)|The margin applied to each list item.|
-|align-items|Keyword|baseline|How to align the counter (flexbox align-items values)|
-|counter-width|Length|2.4em|The width and height (if height is falsy)|
-|counter-height|Length|null|The height (optional)|
-|counter-gap|Length|1em|The gap between the counter and the list item content.|
-|counter-style|String|numeric|The list-style-type used for the counter.|
-|counter-border-radius|Keyword|Percentage|50%|The border-radius of the counter element.|
-|counter-font-size|Length|1.2em|The font-size of the counter text.|
-|counter-color|String|white|The text color of the counter. Accepts color names or hex codes.|
-|counter-background-color|String|"accent"|The background color of the counter. Refers to a color in the color module.|
-
-    
   
   

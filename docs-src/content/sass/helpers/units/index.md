@@ -14,6 +14,58 @@ Output unit helper stylesheet
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "sides": ("top", "bottom", "left", "right")
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _units.scss
+- **Group:** units
+- **Type:** variable
+- **Lines (comments):** 12-14
+- **Lines (code):** 16-18
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$config.sides|Number|Sides to print for helper classes (ie. reduce output of unneeded sides)|
+
+    
+  
+
 ## Mixins
 
 
@@ -214,57 +266,5 @@ General example
 
 - [$config](/sass/helpers/units/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "sides": ("top", "bottom", "left", "right")
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _units.scss
-- **Group:** units
-- **Type:** variable
-- **Lines (comments):** 12-14
-- **Lines (code):** 16-18
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Description|
-|:--|:--|:--|
-|$config.sides|Number|Sides to print for helper classes (ie. reduce output of unneeded sides)|
-
-    
   
   

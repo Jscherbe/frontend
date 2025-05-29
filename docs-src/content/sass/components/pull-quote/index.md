@@ -14,6 +14,81 @@ Layout for a pull quote, relies on badge component for image
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "body-line-height" : true,
+  "image-margin-bottom" : 1rem,
+  "image-margin-top" : 2.5rem,
+  "name-margin-bottom" : 1rem,
+  "padding-y" : 2em,
+  "title-font-style" : italic,
+
+  "quote-mark-character" : "\201c",
+  "quote-mark-color" : null,
+  "quote-mark-font-family" : "Georgia",
+  "quote-mark-font-size" : 3.75em,
+  "quote-mark-enabled" : true,
+  "quote-mark-line-height" : 0.35,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _pull-quote.scss
+- **Group:** pull-quote
+- **Type:** variable
+- **Lines (comments):** 22-35
+- **Lines (code):** 37-51
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|
+|:--|:--|:--|
+|body-line-height|Number|true|
+|image-margin-bottom|Dimension|1rem|
+|image-margin-top|Dimension|2.5rem|
+|name-margin-bottom|Dimension|1rem|
+|padding-y|Dimension|2em|
+|title-font-style|CssValue|italic|
+|quote-mark-character|String|"\201c"|
+|quote-mark-color|Color|null|
+|quote-mark-font-family|String|"Georgia"|
+|quote-mark-font-size|Dimension|3.75em|
+|quote-mark-enabled|Boolean|true|
+|quote-mark-line-height|Number|0.35|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,80 +265,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "body-line-height" : true,
-  "image-margin-bottom" : 1rem,
-  "image-margin-top" : 2.5rem,
-  "name-margin-bottom" : 1rem,
-  "padding-y" : 2em,
-  "title-font-style" : italic,
-
-  "quote-mark-character" : "\201c",
-  "quote-mark-color" : null,
-  "quote-mark-font-family" : "Georgia",
-  "quote-mark-font-size" : 3.75em,
-  "quote-mark-enabled" : true,
-  "quote-mark-line-height" : 0.35,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _pull-quote.scss
-- **Group:** pull-quote
-- **Type:** variable
-- **Lines (comments):** 22-35
-- **Lines (code):** 37-51
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|
-|:--|:--|:--|
-|body-line-height|Number|true|
-|image-margin-bottom|Dimension|1rem|
-|image-margin-top|Dimension|2.5rem|
-|name-margin-bottom|Dimension|1rem|
-|padding-y|Dimension|2em|
-|title-font-style|CssValue|italic|
-|quote-mark-character|String|"\201c"|
-|quote-mark-color|Color|null|
-|quote-mark-font-family|String|"Georgia"|
-|quote-mark-font-size|Dimension|3.75em|
-|quote-mark-enabled|Boolean|true|
-|quote-mark-line-height|Number|0.35|
-
-    
   
   

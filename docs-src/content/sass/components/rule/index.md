@@ -14,6 +14,62 @@ sassdocGroupName: rule
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "short-border-width" : 4px,
+  "short-modifiers" : false,
+  "short-width" : 2.75rem,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _rule.scss
+- **Group:** rule
+- **Type:** variable
+- **Lines (comments):** 10-14
+- **Lines (code):** 16-20
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|short-border-width|Dimension|4px|Short rule width of border|
+|short-modifiers|Object|false|Objects to adjust the styles of different short rule styles.|
+|short-width|Dimension|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,61 +246,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "short-border-width" : 4px,
-  "short-modifiers" : false,
-  "short-width" : 2.75rem,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _rule.scss
-- **Group:** rule
-- **Type:** variable
-- **Lines (comments):** 10-14
-- **Lines (code):** 16-20
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|short-border-width|Dimension|4px|Short rule width of border|
-|short-modifiers|Object|false|Objects to adjust the styles of different short rule styles.|
-|short-width|Dimension|2.75rem|Short rule width (like an inline rule, normally used above headings), Setting this to false will disable output|
-
-    
   
   

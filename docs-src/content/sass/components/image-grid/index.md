@@ -14,6 +14,62 @@ sassdocGroupName: image-grid
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "breakpoint": "small",
+  "gap":        3px,
+  "min-width":  math.div(100%, 3)
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _image-grid.scss
+- **Group:** image-grid
+- **Type:** variable
+- **Lines (comments):** 13-17
+- **Lines (code):** 19-23
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|breakpoint|String|"small"|Sets the min breakpoint for the grid to print. This uses breakpoint.scss, so the value of this option should be a breakpoint variable from breakpoint.scss.|
+|gap|Dimension|3px|The gap between images in the grid.|
+|min-width|Dimension|math.div(100%, 3)|The min-width of the images in the grid.|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,61 +246,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "breakpoint": "small",
-  "gap":        3px,
-  "min-width":  math.div(100%, 3)
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _image-grid.scss
-- **Group:** image-grid
-- **Type:** variable
-- **Lines (comments):** 13-17
-- **Lines (code):** 19-23
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|breakpoint|String|"small"|Sets the min breakpoint for the grid to print. This uses breakpoint.scss, so the value of this option should be a breakpoint variable from breakpoint.scss.|
-|gap|Dimension|3px|The gap between images in the grid.|
-|min-width|Dimension|math.div(100%, 3)|The min-width of the images in the grid.|
-
-    
   
   

@@ -14,6 +14,228 @@ sassdocGroupName: button
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "active-selector":         "&.is-active",
+  "box-shadow":              true,
+  "line-height":             1.1,
+  "letter-spacing":          0.02em,
+  "margin":                  (0.45em 0.5em 0.45em 0),
+  "min-width":               9rem,
+  "padding":                 (0.75em 1.5em),
+  "white-space":             nowrap,
+  "border-color":            "control-border",
+  "border-color-active":     "control-border-active",
+  "border-color-hover":      "control-border-hover",
+  "border-radius":           2rem,
+  "border-width":            1px,
+  "background-color":        "control-background",
+  "background-color-hover":  "control-background-hover",
+  "background-color-active": "control-background-active",
+  "color":                   "control",
+  "color-hover":             "control-hover",
+  "color-active":            "control-active",
+  "font-family":             inherit,
+  "font-weight":             bold,
+  "font-size":               "base",
+  "icon-size":               2.5rem,
+  "icon-font-size":          1.38rem,
+  "icon-border-radius":      50%,
+  "text-shadow":             none,
+  "text-transform":          none,
+  "text-decoration":         none,
+  "transition-enabled":      true,
+  "transition-duration":     200ms,
+  "transition-properties":   (border-color, background-color, color, box-shadow),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _button.scss
+- **Group:** button
+- **Type:** variable
+- **Lines (comments):** 21-53
+- **Lines (code):** 55-87
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|active-selector|String|"&.is-active"|The selector that determines if a button is active|
+|box-shadow|CssValue|true|Specify box shadow for default button. Default true will fallback to element "box-shadow"|
+|line-height|Number|1.1|Line height for button|
+|letter-spacing|Dimension|0.02em||
+|margin|Dimension|(0.45em 0.5em 0.45em 0)|Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline|
+|min-width|Dimension|9rem|The smallest width for all buttons|
+|padding|Dimension|(0.75em 1.5em)|Button inner padding value, pass space separated list|
+|white-space|CssValue|nowrap|Adjust button line wrapping, by default line's are not wrapped|
+|border-color|String|"control-border"|The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.|
+|border-color-hover|String|"control-border-hover"|Color of border when button is hovered|
+|border-color-active|String|"control-border-active"|Color of border when a button has active class|
+|border-radius|Dimension|2rem|Border Radius for button|
+|border-width|Dimension|1px|Width of button border|
+|background-color|String|"control-background"|Background color of button|
+|background-color-hover|String|"control-background-hover"|Background color of button when hovered|
+|background-color-active|String|"control-background-active"|Background color of button when active|
+|color|String|"control"|Text color of button|
+|color-hover|String|"control-hover"|Text color of button when hovered|
+|color-active|String|"control-active"|Text color of button when active|
+|font-family|CssValue|inherit|Font family for button|
+|font-weight|CssValue|bold|Font weight for button|
+|font-size|String|"base"|Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes|
+|icon-size|Dimension|2.5rem|The size of a button when used with an icon|
+|icon-font-size|Dimension|1.38rem|The font size for the icon when a button is an icon button|
+|icon-border-radius|Dimension|50%|The border radius of a icon button (defaults to 50% circle)|
+|text-shadow|CssValue|none|Text shadow for button|
+|text-transform|CssValue|none|Text transform for button|
+|text-decoration|CssValue|none|Text decoration of button|
+|transition-enabled|Boolean|true|Whether or not to enable transitions on button properties like background-color, color, border color as they change state|
+|transition-duration|Time|200ms|The duration of the button's transition if enabled|
+|transition-properties|List|(border-color, background-color, color, box-shadow)|The properties to transition if `transition-enabled`|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Button sizes
+- A map that holds to the sizes for buttons in the theme
+- Use set-sizes() to adjust the sizes for the theme
+- Don't edit sizes variable directly
+    
+    
+
+``` scss
+$sizes: (
+  "small" : (
+    "padding":        (0.35em 1.5em),
+    "min-width":      0,
+    "icon-size":      2rem,
+    "icon-font-size": 1rem
+  ),
+  "large" : (
+    "padding":   (1em 2em),
+    "min-width": 11rem,
+    "icon-size": 3.5rem
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _button.scss
+- **Group:** button
+- **Type:** variable
+- **Lines (comments):** 89-93
+- **Lines (code):** 94-107
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $styles {#variable-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Button styles
+- A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles
+- Don't edit styles variable directly
+    
+    
+
+``` scss
+$styles: (
+  "transparent" : (
+    "background-color" : transparent,
+    "color" : "type",
+    "border-color" : transparent,
+    "box-shadow" : none,
+    "hover" : (
+      "background-color" : "white",
+      "color" : inherit,
+      "border-color" : transparent,
+    )
+  ),
+  "outline" : (
+    "background-color" : transparent,
+    "color" : "type",
+    "border-color" : "rule-light",
+    "box-shadow" : none,
+    "hover" : (
+      "background-color" : "white",
+    )
+  ),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _button.scss
+- **Group:** button
+- **Type:** variable
+- **Lines (comments):** 109-112
+- **Lines (code):** 114-135
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -652,227 +874,5 @@ Get a value from a button style
 - [get()](/sass/core/breakpoint/#function-get)
 - [$styles](/sass/core/button/#variable-styles)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "active-selector":         "&.is-active",
-  "box-shadow":              true,
-  "line-height":             1.1,
-  "letter-spacing":          0.02em,
-  "margin":                  (0.45em 0.5em 0.45em 0),
-  "min-width":               9rem,
-  "padding":                 (0.75em 1.5em),
-  "white-space":             nowrap,
-  "border-color":            "control-border",
-  "border-color-active":     "control-border-active",
-  "border-color-hover":      "control-border-hover",
-  "border-radius":           2rem,
-  "border-width":            1px,
-  "background-color":        "control-background",
-  "background-color-hover":  "control-background-hover",
-  "background-color-active": "control-background-active",
-  "color":                   "control",
-  "color-hover":             "control-hover",
-  "color-active":            "control-active",
-  "font-family":             inherit,
-  "font-weight":             bold,
-  "font-size":               "base",
-  "icon-size":               2.5rem,
-  "icon-font-size":          1.38rem,
-  "icon-border-radius":      50%,
-  "text-shadow":             none,
-  "text-transform":          none,
-  "text-decoration":         none,
-  "transition-enabled":      true,
-  "transition-duration":     200ms,
-  "transition-properties":   (border-color, background-color, color, box-shadow),
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _button.scss
-- **Group:** button
-- **Type:** variable
-- **Lines (comments):** 21-53
-- **Lines (code):** 55-87
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|active-selector|String|"&.is-active"|The selector that determines if a button is active|
-|box-shadow|CssValue|true|Specify box shadow for default button. Default true will fallback to element "box-shadow"|
-|line-height|Number|1.1|Line height for button|
-|letter-spacing|Dimension|0.02em||
-|margin|Dimension|(0.45em 0.5em 0.45em 0)|Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline|
-|min-width|Dimension|9rem|The smallest width for all buttons|
-|padding|Dimension|(0.75em 1.5em)|Button inner padding value, pass space separated list|
-|white-space|CssValue|nowrap|Adjust button line wrapping, by default line's are not wrapped|
-|border-color|String|"control-border"|The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.|
-|border-color-hover|String|"control-border-hover"|Color of border when button is hovered|
-|border-color-active|String|"control-border-active"|Color of border when a button has active class|
-|border-radius|Dimension|2rem|Border Radius for button|
-|border-width|Dimension|1px|Width of button border|
-|background-color|String|"control-background"|Background color of button|
-|background-color-hover|String|"control-background-hover"|Background color of button when hovered|
-|background-color-active|String|"control-background-active"|Background color of button when active|
-|color|String|"control"|Text color of button|
-|color-hover|String|"control-hover"|Text color of button when hovered|
-|color-active|String|"control-active"|Text color of button when active|
-|font-family|CssValue|inherit|Font family for button|
-|font-weight|CssValue|bold|Font weight for button|
-|font-size|String|"base"|Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes|
-|icon-size|Dimension|2.5rem|The size of a button when used with an icon|
-|icon-font-size|Dimension|1.38rem|The font size for the icon when a button is an icon button|
-|icon-border-radius|Dimension|50%|The border radius of a icon button (defaults to 50% circle)|
-|text-shadow|CssValue|none|Text shadow for button|
-|text-transform|CssValue|none|Text transform for button|
-|text-decoration|CssValue|none|Text decoration of button|
-|transition-enabled|Boolean|true|Whether or not to enable transitions on button properties like background-color, color, border color as they change state|
-|transition-duration|Time|200ms|The duration of the button's transition if enabled|
-|transition-properties|List|(border-color, background-color, color, box-shadow)|The properties to transition if `transition-enabled`|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $sizes {#variable-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Button sizes
-- A map that holds to the sizes for buttons in the theme
-- Use set-sizes() to adjust the sizes for the theme
-- Don't edit sizes variable directly
-    
-    
-
-``` scss
-$sizes: (
-  "small" : (
-    "padding":        (0.35em 1.5em),
-    "min-width":      0,
-    "icon-size":      2rem,
-    "icon-font-size": 1rem
-  ),
-  "large" : (
-    "padding":   (1em 2em),
-    "min-width": 11rem,
-    "icon-size": 3.5rem
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _button.scss
-- **Group:** button
-- **Type:** variable
-- **Lines (comments):** 89-93
-- **Lines (code):** 94-107
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $styles {#variable-styles}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Button styles
-- A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles
-- Don't edit styles variable directly
-    
-    
-
-``` scss
-$styles: (
-  "transparent" : (
-    "background-color" : transparent,
-    "color" : "type",
-    "border-color" : transparent,
-    "box-shadow" : none,
-    "hover" : (
-      "background-color" : "white",
-      "color" : inherit,
-      "border-color" : transparent,
-    )
-  ),
-  "outline" : (
-    "background-color" : transparent,
-    "color" : "type",
-    "border-color" : "rule-light",
-    "box-shadow" : none,
-    "hover" : (
-      "background-color" : "white",
-    )
-  ),
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _button.scss
-- **Group:** button
-- **Type:** variable
-- **Lines (comments):** 109-112
-- **Lines (code):** 114-135
-
-</details>
-
-    
   
   
