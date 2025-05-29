@@ -5168,6 +5168,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5188,15 +5197,6 @@
             		</li>
                 </ol>
             		</li>
-
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
                 </ol>
             </div>
 			</div>
@@ -5211,6 +5211,74 @@
       <h1 id="list-inline" tabindex="-1">List-inline</h1>
 <div class="type-large">
 </div>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+</div>
+<p>Module Config</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-top"</span><span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin-bottom"</span><span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"space-between"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"space-between-large"</span> <span class="pjs-token pjs-punctuation">:</span> 2em
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _list-inline.scss</li>
+<li><strong>Group:</strong> list-inline</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 11-16</li>
+<li><strong>Lines (code):</strong> 18-24</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">rule-style</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;light&quot;</td>
+<td style="text-align:left">Name of element &gt; rule style to use for divider/border</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">Top margin of list.</td>
+</tr>
+<tr>
+<td style="text-align:left">margin-bottom</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1em</td>
+<td style="text-align:left">Bottom margin of list.</td>
+</tr>
+<tr>
+<td style="text-align:left">space-between</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1em</td>
+<td style="text-align:left">Gap between item and dividers</td>
+</tr>
+<tr>
+<td style="text-align:left">space-between-large</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1em</td>
+<td style="text-align:left">Gap between item and dividers when using large-gap modifier</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5316,74 +5384,6 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-</div>
-<p>Module Config</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-top"</span><span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin-bottom"</span><span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"space-between"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"space-between-large"</span> <span class="pjs-token pjs-punctuation">:</span> 2em
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _list-inline.scss</li>
-<li><strong>Group:</strong> list-inline</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 11-16</li>
-<li><strong>Lines (code):</strong> 18-24</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Default</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">rule-style</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;light&quot;</td>
-<td style="text-align:left">Name of element &gt; rule style to use for divider/border</td>
-</tr>
-<tr>
-<td style="text-align:left">margin-top</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0</td>
-<td style="text-align:left">Top margin of list.</td>
-</tr>
-<tr>
-<td style="text-align:left">margin-bottom</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1em</td>
-<td style="text-align:left">Bottom margin of list.</td>
-</tr>
-<tr>
-<td style="text-align:left">space-between</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1em</td>
-<td style="text-align:left">Gap between item and dividers</td>
-</tr>
-<tr>
-<td style="text-align:left">space-between-large</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1em</td>
-<td style="text-align:left">Gap between item and dividers when using large-gap modifier</td>
-</tr>
-</tbody>
-</table>
 
     </div>
   </div>

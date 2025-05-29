@@ -14,6 +14,80 @@ sassdocGroupName: overlay-section
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "content-background-color" : white,
+  "content-border" : 1px solid rgb(227, 227, 227),
+  "content-padding" : 2.5rem,
+  "content-width" : 34rem,
+  "min-height" : 75vh,
+  "padding" : 6rem,
+  "breakpoints" : (
+    "medium" : (
+      "direction" : "down",
+      "padding" : 4rem,
+    ),
+    "small" : (
+      "direction" : "down",
+      "padding" : 2rem,
+      "content-padding" : 1.5rem
+    )
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _overlay-section.scss
+- **Group:** overlay-section
+- **Type:** variable
+- **Lines (comments):** 14-22
+- **Lines (code):** 24-42
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|content-background-color|Color|white|The background color of the content.|
+|content-border|CssValue|1px solid rgb(227, 227, 227)|The border of the content|
+|content-padding|Dimension|2.5rem|The padding of the content.|
+|content-width|Dimension|34rem|The width of the content.|
+|min-height|Dimension|75vh|the min-height of the section.|
+|padding|Dimension|6rem|The padding of the container.|
+|breakpoints|Map|Map|The breakpoints of the section.|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,79 +264,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "content-background-color" : white,
-  "content-border" : 1px solid rgb(227, 227, 227),
-  "content-padding" : 2.5rem,
-  "content-width" : 34rem,
-  "min-height" : 75vh,
-  "padding" : 6rem,
-  "breakpoints" : (
-    "medium" : (
-      "direction" : "down",
-      "padding" : 4rem,
-    ),
-    "small" : (
-      "direction" : "down",
-      "padding" : 2rem,
-      "content-padding" : 1.5rem
-    )
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _overlay-section.scss
-- **Group:** overlay-section
-- **Type:** variable
-- **Lines (comments):** 14-22
-- **Lines (code):** 24-42
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|content-background-color|Color|white|The background color of the content.|
-|content-border|CssValue|1px solid rgb(227, 227, 227)|The border of the content|
-|content-padding|Dimension|2.5rem|The padding of the content.|
-|content-width|Dimension|34rem|The width of the content.|
-|min-height|Dimension|75vh|the min-height of the section.|
-|padding|Dimension|6rem|The padding of the container.|
-|breakpoints|Map|Map|The breakpoints of the section.|
-
-    
   
   

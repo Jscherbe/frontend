@@ -14,6 +14,58 @@ This module is used to alter selectors for components
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "prefix" : ""
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _selector.scss
+- **Group:** selector
+- **Type:** variable
+- **Lines (comments):** 10-12
+- **Lines (code):** 14-16
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|prefix|String|""|Global prefix for selectors (would be used for classname prefix for example)|
+
+    
+  
+
 ## Mixins
 
 
@@ -245,57 +297,5 @@ Change a class used in the system (ie. like a component for example)
 
 - [get()](/sass/core/breakpoint/#function-get)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "prefix" : ""
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _selector.scss
-- **Group:** selector
-- **Type:** variable
-- **Lines (comments):** 10-12
-- **Lines (code):** 14-16
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|prefix|String|""|Global prefix for selectors (would be used for classname prefix for example)|
-
-    
   
   

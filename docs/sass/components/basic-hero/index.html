@@ -5168,6 +5168,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5188,15 +5197,6 @@
             		</li>
                 </ol>
             		</li>
-
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
                 </ol>
             </div>
 			</div>
@@ -5212,6 +5212,59 @@
 <div class="type-large">
 <p>Basic styling for a hero</p>
 </div>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"background-gray"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-top"</span><span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"gap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>4rem 2rem<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"main-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"main-min-width"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"media-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 20rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"media-vertical-align"</span> <span class="pjs-token pjs-punctuation">:</span> center
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _basic-hero.scss</li>
+<li><strong>Group:</strong> basic-hero</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 29-32</li>
+<li><strong>Lines (code):</strong> 34-43</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">text-align</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">center</td>
+<td style="text-align:left">Alignment of text within hero.</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">&quot;color-hero-background&quot;</td>
+<td style="text-align:left">Background color of the hero</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5317,59 +5370,6 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"background-gray"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-top"</span><span class="pjs-token pjs-punctuation">:</span> 3rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> 2rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"gap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>4rem 2rem<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"main-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"main-min-width"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"media-max-width"</span> <span class="pjs-token pjs-punctuation">:</span> 20rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"media-vertical-align"</span> <span class="pjs-token pjs-punctuation">:</span> center
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _basic-hero.scss</li>
-<li><strong>Group:</strong> basic-hero</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 29-32</li>
-<li><strong>Lines (code):</strong> 34-43</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Default</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">text-align</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">center</td>
-<td style="text-align:left">Alignment of text within hero.</td>
-</tr>
-<tr>
-<td style="text-align:left">background-color</td>
-<td style="text-align:left">Color</td>
-<td style="text-align:left">&quot;color-hero-background&quot;</td>
-<td style="text-align:left">Background color of the hero</td>
-</tr>
-</tbody>
-</table>
 
     </div>
   </div>

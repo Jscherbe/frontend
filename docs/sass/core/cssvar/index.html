@@ -5168,6 +5168,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5215,15 +5224,6 @@
             		</li>
                 </ol>
             		</li>
-
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
                 </ol>
             </div>
 			</div>
@@ -5239,6 +5239,46 @@
 <div class="type-large">
 <p>Provides support for custom-properties implementations</p>
 </div>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"prefix"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">""</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 14-16</li>
+<li><strong>Lines (code):</strong> 18-20</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">prefix</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;&quot;</td>
+<td style="text-align:left">Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5936,46 +5976,6 @@
 <ul>
 <li><a href="/frontend/sass/core/cssvar/#function-join">join()</a></li>
 </ul>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"prefix"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">""</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _cssvar.scss</li>
-<li><strong>Group:</strong> cssvar</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 14-16</li>
-<li><strong>Lines (code):</strong> 18-20</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Default</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">prefix</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;&quot;</td>
-<td style="text-align:left">Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable</td>
-</tr>
-</tbody>
-</table>
 
     </div>
   </div>

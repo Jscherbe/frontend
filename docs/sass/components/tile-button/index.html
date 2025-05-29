@@ -5168,6 +5168,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5188,15 +5197,6 @@
             		</li>
                 </ol>
             		</li>
-
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-                </ol>
-            		</li>
                 </ol>
             </div>
 			</div>
@@ -5212,6 +5212,98 @@
 <div class="type-large">
 <p>Button to be used within tile-grid. Used in combination with button component classes.</p>
 </div>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"description-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small-x"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"line-height"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em 0.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"row-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"icon-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"icon-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"icon-opacity"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _tile-button.scss</li>
+<li><strong>Group:</strong> tile-button</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 38-47</li>
+<li><strong>Lines (code):</strong> 49-61</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">The border radius of the tile button. If set to true, will use the element.scss property for &quot;border-radius&quot;.</td>
+</tr>
+<tr>
+<td style="text-align:left">description-size</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">small-x</td>
+<td style="text-align:left">The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.</td>
+</tr>
+<tr>
+<td style="text-align:left">line-height</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">The line-height of the tile-button. If set to true, will use the typography.scss property for &quot;line-height-densest&quot;.</td>
+</tr>
+<tr>
+<td style="text-align:left">padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(1em 0.5em)</td>
+<td style="text-align:left">The padding of the tile button</td>
+</tr>
+<tr>
+<td style="text-align:left">row-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.5em</td>
+<td style="text-align:left">The margin between rows.</td>
+</tr>
+<tr>
+<td style="text-align:left">icon-font-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1.5em</td>
+<td style="text-align:left">The font size of the icon.</td>
+</tr>
+<tr>
+<td style="text-align:left">icon-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1em</td>
+<td style="text-align:left">The margin for the icon.</td>
+</tr>
+<tr>
+<td style="text-align:left">icon-opacity</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">0.5</td>
+<td style="text-align:left">The opacity of the icon.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5317,98 +5409,6 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"description-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small-x"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"line-height"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em 0.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"row-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"icon-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.5em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"icon-margin"</span> <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"icon-opacity"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-enabled"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-properties"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _tile-button.scss</li>
-<li><strong>Group:</strong> tile-button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 38-47</li>
-<li><strong>Lines (code):</strong> 49-61</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Default</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">border-radius</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">The border radius of the tile button. If set to true, will use the element.scss property for &quot;border-radius&quot;.</td>
-</tr>
-<tr>
-<td style="text-align:left">description-size</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">small-x</td>
-<td style="text-align:left">The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.</td>
-</tr>
-<tr>
-<td style="text-align:left">line-height</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">The line-height of the tile-button. If set to true, will use the typography.scss property for &quot;line-height-densest&quot;.</td>
-</tr>
-<tr>
-<td style="text-align:left">padding</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">(1em 0.5em)</td>
-<td style="text-align:left">The padding of the tile button</td>
-</tr>
-<tr>
-<td style="text-align:left">row-margin</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.5em</td>
-<td style="text-align:left">The margin between rows.</td>
-</tr>
-<tr>
-<td style="text-align:left">icon-font-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1.5em</td>
-<td style="text-align:left">The font size of the icon.</td>
-</tr>
-<tr>
-<td style="text-align:left">icon-margin</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1em</td>
-<td style="text-align:left">The margin for the icon.</td>
-</tr>
-<tr>
-<td style="text-align:left">icon-opacity</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">0.5</td>
-<td style="text-align:left">The opacity of the icon.</td>
-</tr>
-</tbody>
-</table>
 
     </div>
   </div>

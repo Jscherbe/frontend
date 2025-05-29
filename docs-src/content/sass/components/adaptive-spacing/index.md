@@ -14,6 +14,123 @@ Creates adaptive (changing at breakpoints) in between items (vertical/horizontal
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "outputMargin": false,
+  "outputPadding": true,
+  "outputX": true,
+  "outputY": true,
+  "selectorX": "sides",
+  "selectorY": "ends"
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _adaptive-spacing.scss
+- **Group:** adaptive-spacing
+- **Type:** variable
+- **Lines (comments):** 12-19
+- **Lines (code):** 21-29
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|outputMargin|Boolean|false|Toggles the output of margin classes.|
+|outputPadding|Boolean|true|This is the background color of the accordion before it is expanded.|
+|outputX|Boolean|true|This is the background color of the accordion before it is expanded.|
+|outputY|Boolean|true|This is the background color of the accordion before it is expanded.|
+|selectorX|Boolean|"sides"|This is the background color of the accordion before it is expanded.|
+|selectorY|Boolean|"ends"|This is the background color of the accordion before it is expanded.|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Sizes Map
+    
+    
+
+``` scss
+$sizes: (
+  "small" : (
+    "initial" : (
+      "size" : 2rem
+    ),
+    "medium" : (
+      "direction" : "min",
+      "size": 4rem
+    )
+  ),
+  "large" : (
+    "initial" : (
+      "size" : 4rem
+    ),
+    "medium" : (
+      "direction" : "min",
+      "size" : 8rem
+    ),
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _adaptive-spacing.scss
+- **Group:** adaptive-spacing
+- **Type:** variable
+- **Lines (comments):** 31-32
+- **Lines (code):** 34-53
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -238,122 +355,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "outputMargin": false,
-  "outputPadding": true,
-  "outputX": true,
-  "outputY": true,
-  "selectorX": "sides",
-  "selectorY": "ends"
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _adaptive-spacing.scss
-- **Group:** adaptive-spacing
-- **Type:** variable
-- **Lines (comments):** 12-19
-- **Lines (code):** 21-29
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|outputMargin|Boolean|false|Toggles the output of margin classes.|
-|outputPadding|Boolean|true|This is the background color of the accordion before it is expanded.|
-|outputX|Boolean|true|This is the background color of the accordion before it is expanded.|
-|outputY|Boolean|true|This is the background color of the accordion before it is expanded.|
-|selectorX|Boolean|"sides"|This is the background color of the accordion before it is expanded.|
-|selectorY|Boolean|"ends"|This is the background color of the accordion before it is expanded.|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $sizes {#variable-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Sizes Map
-    
-    
-
-``` scss
-$sizes: (
-  "small" : (
-    "initial" : (
-      "size" : 2rem
-    ),
-    "medium" : (
-      "direction" : "min",
-      "size": 4rem
-    )
-  ),
-  "large" : (
-    "initial" : (
-      "size" : 4rem
-    ),
-    "medium" : (
-      "direction" : "min",
-      "size" : 8rem
-    ),
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _adaptive-spacing.scss
-- **Group:** adaptive-spacing
-- **Type:** variable
-- **Lines (comments):** 31-32
-- **Lines (code):** 34-53
-
-</details>
-
-    
   
   

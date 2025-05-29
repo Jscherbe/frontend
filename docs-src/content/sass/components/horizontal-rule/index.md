@@ -14,6 +14,60 @@ sassdocGroupName: horizontal-rule
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "margin": 1em,
+  "min-height": 1em,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _horizontal-rule.scss
+- **Group:** horizontal-rule
+- **Type:** variable
+- **Lines (comments):** 9-12
+- **Lines (code):** 14-17
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|min-height|Dimension|1em|Min height for rule.|
+|margin|Dimension|1em|Top and bottom margin for rule.|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,59 +244,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "margin": 1em,
-  "min-height": 1em,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _horizontal-rule.scss
-- **Group:** horizontal-rule
-- **Type:** variable
-- **Lines (comments):** 9-12
-- **Lines (code):** 14-17
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|min-height|Dimension|1em|Min height for rule.|
-|margin|Dimension|1em|Top and bottom margin for rule.|
-
-    
   
   

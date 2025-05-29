@@ -14,6 +14,75 @@ Button to be used within tile-grid. Used in combination with button component cl
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "border-radius" : true,
+  "description-size" : "small-x",
+  "line-height" : true,
+  "padding" : (1em 0.5em),
+  "row-margin" : 0.5em,
+  "icon-font-size" : 1.5em,
+  "icon-margin" : 1em,
+  "icon-opacity" : 0.5,
+  "transition-enabled" : true,
+  "transition-duration" : true,
+  "transition-properties" : true
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tile-button.scss
+- **Group:** tile-button
+- **Type:** variable
+- **Lines (comments):** 38-47
+- **Lines (code):** 49-61
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|border-radius|Dimension|true|The border radius of the tile button. If set to true, will use the element.scss property for "border-radius".|
+|description-size|String|small-x|The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
+|line-height|Dimension|true|The line-height of the tile-button. If set to true, will use the typography.scss property for "line-height-densest".|
+|padding|Dimension|(1em 0.5em)|The padding of the tile button|
+|row-margin|Dimension|0.5em|The margin between rows.|
+|icon-font-size|Dimension|1.5em|The font size of the icon.|
+|icon-margin|Dimension|1em|The margin for the icon.|
+|icon-opacity|Number|0.5|The opacity of the icon.|
+
+    
+  
+
 ## Mixins
 
 
@@ -190,74 +259,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "border-radius" : true,
-  "description-size" : "small-x",
-  "line-height" : true,
-  "padding" : (1em 0.5em),
-  "row-margin" : 0.5em,
-  "icon-font-size" : 1.5em,
-  "icon-margin" : 1em,
-  "icon-opacity" : 0.5,
-  "transition-enabled" : true,
-  "transition-duration" : true,
-  "transition-properties" : true
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tile-button.scss
-- **Group:** tile-button
-- **Type:** variable
-- **Lines (comments):** 38-47
-- **Lines (code):** 49-61
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|border-radius|Dimension|true|The border radius of the tile button. If set to true, will use the element.scss property for "border-radius".|
-|description-size|String|small-x|The type size of the description. This uses typography.scss, so the value of this options should be a variable from typography.scss.|
-|line-height|Dimension|true|The line-height of the tile-button. If set to true, will use the typography.scss property for "line-height-densest".|
-|padding|Dimension|(1em 0.5em)|The padding of the tile button|
-|row-margin|Dimension|0.5em|The margin between rows.|
-|icon-font-size|Dimension|1.5em|The font size of the icon.|
-|icon-margin|Dimension|1em|The margin for the icon.|
-|icon-opacity|Number|0.5|The opacity of the icon.|
-
-    
   
   

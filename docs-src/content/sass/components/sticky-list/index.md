@@ -14,6 +14,89 @@ Sticky first column, sticky elements inside adjacent columns to first. (Sticky l
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "margin" : true,
+  "mask-offset-bottom" : 55vh,
+  "mask-offset-top" : 5rem,
+  "sticky-top" : 45vh,
+  "breakpoint" : "medium",
+  "type-size" : "large",
+  "title-width" : 40%,
+  "title-min-width" : 8em,
+  "title-text-align" : right,
+  "item-padding-x" : 0,
+  "gap" : 2rem,
+  "background-color" : white,
+  "background-contexts" : (
+    (
+      "selector" : ".background-dark",
+      "background-color" : black,
+      "item-padding-x" : 1em
+    ),
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _sticky-list.scss
+- **Group:** sticky-list
+- **Type:** variable
+- **Lines (comments):** 26-41
+- **Lines (code):** 43-63
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|background-color|Color|transparent|Background color for the entire slider section.|
+|margin|Number|true|Margin on ends of component (defaults to element margin)|
+|mask-offset-bottom|Number|55vh|The offset for the mask (on bottom)|
+|mask-offset-top|Number|5rem|The offset for the mask (on top)|
+|sticky-top|Number|45vh|When to stick|
+|breakpoint|String|"medium"|The upward breakpoint that this is allowed to be sticky|
+|type-size|String|"medium"|The typography size to use for title|
+|title-width|Number|40%|The width of the title when this is displayed in columns|
+|title-min-width|Number|8em|The min width for title when displayed in columns|
+|title-text-align|CssValue|right|Text alignment for title when displayed in columns|
+|item-padding-x|Number|0|Optional padding on the left/right for items|
+|gap|Number|2rem|The gap between title and items when displayed in columns|
+|background-color|Color|white|The background color used for the mask|
+|background-contexts|List||Adjust the background mask color by contextual selectors. Pass List of Maps with ("selector" [parent/contextual selector], "background-color", "item-padding-x" [optional])|
+
+    
+  
+
 ## Mixins
 
 
@@ -352,88 +435,5 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "margin" : true,
-  "mask-offset-bottom" : 55vh,
-  "mask-offset-top" : 5rem,
-  "sticky-top" : 45vh,
-  "breakpoint" : "medium",
-  "type-size" : "large",
-  "title-width" : 40%,
-  "title-min-width" : 8em,
-  "title-text-align" : right,
-  "item-padding-x" : 0,
-  "gap" : 2rem,
-  "background-color" : white,
-  "background-contexts" : (
-    (
-      "selector" : ".background-dark",
-      "background-color" : black,
-      "item-padding-x" : 1em
-    ),
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _sticky-list.scss
-- **Group:** sticky-list
-- **Type:** variable
-- **Lines (comments):** 26-41
-- **Lines (code):** 43-63
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|background-color|Color|transparent|Background color for the entire slider section.|
-|margin|Number|true|Margin on ends of component (defaults to element margin)|
-|mask-offset-bottom|Number|55vh|The offset for the mask (on bottom)|
-|mask-offset-top|Number|5rem|The offset for the mask (on top)|
-|sticky-top|Number|45vh|When to stick|
-|breakpoint|String|"medium"|The upward breakpoint that this is allowed to be sticky|
-|type-size|String|"medium"|The typography size to use for title|
-|title-width|Number|40%|The width of the title when this is displayed in columns|
-|title-min-width|Number|8em|The min width for title when displayed in columns|
-|title-text-align|CssValue|right|Text alignment for title when displayed in columns|
-|item-padding-x|Number|0|Optional padding on the left/right for items|
-|gap|Number|2rem|The gap between title and items when displayed in columns|
-|background-color|Color|white|The background color used for the mask|
-|background-contexts|List||Adjust the background mask color by contextual selectors. Pass List of Maps with ("selector" [parent/contextual selector], "background-color", "item-padding-x" [optional])|
-
-    
   
   

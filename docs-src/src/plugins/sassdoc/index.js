@@ -49,11 +49,11 @@ const commonConfig = {
   ],
   byTypeOrder: [
     "body",
+    "variables", // So configs are near top
     "mixins",
     "functions",
-    "variables",
+    "CSS",
     "placeholders",
-    "CSS"
   ],
   hidePrivate: true,
   hidePrivateKeepGroup: true

@@ -5168,6 +5168,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#variables">Variables</a>
+            
+                <ol>
+                    
+                    <li><a href="#variable-config">$config</a>
+            		</li>
+
+                    <li><a href="#variable-sizes">$sizes</a>
+            		</li>
+
+                    <li><a href="#variable-styles">$styles</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#mixins">Mixins</a>
             
                 <ol>
@@ -5215,21 +5230,6 @@
             		</li>
                 </ol>
             		</li>
-
-                    <li><a href="#variables">Variables</a>
-            
-                <ol>
-                    
-                    <li><a href="#variable-config">$config</a>
-            		</li>
-
-                    <li><a href="#variable-sizes">$sizes</a>
-            		</li>
-
-                    <li><a href="#variable-styles">$styles</a>
-            		</li>
-                </ol>
-            		</li>
                 </ol>
             </div>
 			</div>
@@ -5244,6 +5244,334 @@
       <h1 id="button" tabindex="-1">Button</h1>
 <div class="type-large">
 </div>
+<h2 id="variables" tabindex="-1">Variables</h2>
+<div class="sassdoc-item-header">
+<h3 id="variable-config" tabindex="-1">$config</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Module Settings</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"active-selector"</span><span class="pjs-token pjs-punctuation">:</span>         <span class="pjs-token pjs-string">"&amp;.is-active"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">:</span>              <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"line-height"</span><span class="pjs-token pjs-punctuation">:</span>             1.1<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"letter-spacing"</span><span class="pjs-token pjs-punctuation">:</span>          0.02em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"margin"</span><span class="pjs-token pjs-punctuation">:</span>                  <span class="pjs-token pjs-punctuation">(</span>0.45em 0.5em 0.45em 0<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span>               9rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>                 <span class="pjs-token pjs-punctuation">(</span>0.75em 1.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"white-space"</span><span class="pjs-token pjs-punctuation">:</span>             nowrap<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-border"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color-active"</span><span class="pjs-token pjs-punctuation">:</span>     <span class="pjs-token pjs-string">"control-border-active"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-string">"control-border-hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-radius"</span><span class="pjs-token pjs-punctuation">:</span>           2rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"border-width"</span><span class="pjs-token pjs-punctuation">:</span>            1px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-string">"control-background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-string">"control-background-hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color-active"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"control-background-active"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span>                   <span class="pjs-token pjs-string">"control"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-hover"</span><span class="pjs-token pjs-punctuation">:</span>             <span class="pjs-token pjs-string">"control-hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-active"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-active"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-family"</span><span class="pjs-token pjs-punctuation">:</span>             inherit<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-weight"</span><span class="pjs-token pjs-punctuation">:</span>             bold<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span>               <span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span>               2.5rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"icon-font-size"</span><span class="pjs-token pjs-punctuation">:</span>          1.38rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"icon-border-radius"</span><span class="pjs-token pjs-punctuation">:</span>      50%<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"text-shadow"</span><span class="pjs-token pjs-punctuation">:</span>             none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"text-transform"</span><span class="pjs-token pjs-punctuation">:</span>          none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"text-decoration"</span><span class="pjs-token pjs-punctuation">:</span>         none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-enabled"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-duration"</span><span class="pjs-token pjs-punctuation">:</span>     200ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"transition-properties"</span><span class="pjs-token pjs-punctuation">:</span>   <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _button.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 21-53</li>
+<li><strong>Lines (code):</strong> 55-87</li>
+</ul>
+</details>
+<h4 id="map-properties" tabindex="-1">Map Properties</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">active-selector</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;&amp;.is-active&quot;</td>
+<td style="text-align:left">The selector that determines if a button is active</td>
+</tr>
+<tr>
+<td style="text-align:left">box-shadow</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Specify box shadow for default button. Default true will fallback to element &quot;box-shadow&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">line-height</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">1.1</td>
+<td style="text-align:left">Line height for button</td>
+</tr>
+<tr>
+<td style="text-align:left">letter-spacing</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.02em</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(0.45em 0.5em 0.45em 0)</td>
+<td style="text-align:left">Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline</td>
+</tr>
+<tr>
+<td style="text-align:left">min-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">9rem</td>
+<td style="text-align:left">The smallest width for all buttons</td>
+</tr>
+<tr>
+<td style="text-align:left">padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(0.75em 1.5em)</td>
+<td style="text-align:left">Button inner padding value, pass space separated list</td>
+</tr>
+<tr>
+<td style="text-align:left">white-space</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">nowrap</td>
+<td style="text-align:left">Adjust button line wrapping, by default line's are not wrapped</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-border&quot;</td>
+<td style="text-align:left">The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-border-hover&quot;</td>
+<td style="text-align:left">Color of border when button is hovered</td>
+</tr>
+<tr>
+<td style="text-align:left">border-color-active</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-border-active&quot;</td>
+<td style="text-align:left">Color of border when a button has active class</td>
+</tr>
+<tr>
+<td style="text-align:left">border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2rem</td>
+<td style="text-align:left">Border Radius for button</td>
+</tr>
+<tr>
+<td style="text-align:left">border-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1px</td>
+<td style="text-align:left">Width of button border</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-background&quot;</td>
+<td style="text-align:left">Background color of button</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-background-hover&quot;</td>
+<td style="text-align:left">Background color of button when hovered</td>
+</tr>
+<tr>
+<td style="text-align:left">background-color-active</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-background-active&quot;</td>
+<td style="text-align:left">Background color of button when active</td>
+</tr>
+<tr>
+<td style="text-align:left">color</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control&quot;</td>
+<td style="text-align:left">Text color of button</td>
+</tr>
+<tr>
+<td style="text-align:left">color-hover</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-hover&quot;</td>
+<td style="text-align:left">Text color of button when hovered</td>
+</tr>
+<tr>
+<td style="text-align:left">color-active</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;control-active&quot;</td>
+<td style="text-align:left">Text color of button when active</td>
+</tr>
+<tr>
+<td style="text-align:left">font-family</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">inherit</td>
+<td style="text-align:left">Font family for button</td>
+</tr>
+<tr>
+<td style="text-align:left">font-weight</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left">Font weight for button</td>
+</tr>
+<tr>
+<td style="text-align:left">font-size</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&quot;base&quot;</td>
+<td style="text-align:left">Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes</td>
+</tr>
+<tr>
+<td style="text-align:left">icon-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2.5rem</td>
+<td style="text-align:left">The size of a button when used with an icon</td>
+</tr>
+<tr>
+<td style="text-align:left">icon-font-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">1.38rem</td>
+<td style="text-align:left">The font size for the icon when a button is an icon button</td>
+</tr>
+<tr>
+<td style="text-align:left">icon-border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">50%</td>
+<td style="text-align:left">The border radius of a icon button (defaults to 50% circle)</td>
+</tr>
+<tr>
+<td style="text-align:left">text-shadow</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Text shadow for button</td>
+</tr>
+<tr>
+<td style="text-align:left">text-transform</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Text transform for button</td>
+</tr>
+<tr>
+<td style="text-align:left">text-decoration</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Text decoration of button</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-enabled</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Whether or not to enable transitions on button properties like background-color, color, border color as they change state</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-duration</td>
+<td style="text-align:left">Time</td>
+<td style="text-align:left">200ms</td>
+<td style="text-align:left">The duration of the button's transition if enabled</td>
+</tr>
+<tr>
+<td style="text-align:left">transition-properties</td>
+<td style="text-align:left">List</td>
+<td style="text-align:left">(border-color, background-color, color, box-shadow)</td>
+<td style="text-align:left">The properties to transition if <code>transition-enabled</code></td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="variable-sizes" tabindex="-1">$sizes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Button sizes</p>
+<ul>
+<li>A map that holds to the sizes for buttons in the theme</li>
+<li>Use set-sizes() to adjust the sizes for the theme</li>
+<li>Don't edit sizes variable directly</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$sizes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-punctuation">(</span>0.35em 1.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span>      0<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span>      2rem<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"icon-font-size"</span><span class="pjs-token pjs-punctuation">:</span> 1rem
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"large"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>   <span class="pjs-token pjs-punctuation">(</span>1em 2em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span> 11rem<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span> 3.5rem
+  <span class="pjs-token pjs-punctuation">)</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _button.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 89-93</li>
+<li><strong>Lines (code):</strong> 94-107</li>
+</ul>
+</details>
+<div class="sassdoc-item-header">
+<h3 id="variable-styles" tabindex="-1">$styles</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+</div>
+<p>Button styles</p>
+<ul>
+<li>A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles</li>
+<li>Don't edit styles variable directly</li>
+</ul>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$styles</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"transparent"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+      <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
+      <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
+      <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-punctuation">)</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"outline"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule-light"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+      <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-punctuation">)</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _button.scss</li>
+<li><strong>Group:</strong> button</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 109-112</li>
+<li><strong>Lines (code):</strong> 114-135</li>
+</ul>
+</details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
 <div class="sassdoc-item-header">
 <h3 id="mixin-set" tabindex="-1">set()</h3>
@@ -5773,334 +6101,6 @@ or other areas that apply automatic links styling for example. (param below to o
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 <li><a href="/frontend/sass/core/button/#variable-styles">$styles</a></li>
 </ul>
-<h2 id="variables" tabindex="-1">Variables</h2>
-<div class="sassdoc-item-header">
-<h3 id="variable-config" tabindex="-1">$config</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Module Settings</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"active-selector"</span><span class="pjs-token pjs-punctuation">:</span>         <span class="pjs-token pjs-string">"&amp;.is-active"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"box-shadow"</span><span class="pjs-token pjs-punctuation">:</span>              <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"line-height"</span><span class="pjs-token pjs-punctuation">:</span>             1.1<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"letter-spacing"</span><span class="pjs-token pjs-punctuation">:</span>          0.02em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"margin"</span><span class="pjs-token pjs-punctuation">:</span>                  <span class="pjs-token pjs-punctuation">(</span>0.45em 0.5em 0.45em 0<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span>               9rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>                 <span class="pjs-token pjs-punctuation">(</span>0.75em 1.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"white-space"</span><span class="pjs-token pjs-punctuation">:</span>             nowrap<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-color"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-border"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-color-active"</span><span class="pjs-token pjs-punctuation">:</span>     <span class="pjs-token pjs-string">"control-border-active"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-string">"control-border-hover"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-radius"</span><span class="pjs-token pjs-punctuation">:</span>           2rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"border-width"</span><span class="pjs-token pjs-punctuation">:</span>            1px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-string">"control-background"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>  <span class="pjs-token pjs-string">"control-background-hover"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color-active"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"control-background-active"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span>                   <span class="pjs-token pjs-string">"control"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color-hover"</span><span class="pjs-token pjs-punctuation">:</span>             <span class="pjs-token pjs-string">"control-hover"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color-active"</span><span class="pjs-token pjs-punctuation">:</span>            <span class="pjs-token pjs-string">"control-active"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-family"</span><span class="pjs-token pjs-punctuation">:</span>             inherit<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-weight"</span><span class="pjs-token pjs-punctuation">:</span>             bold<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"font-size"</span><span class="pjs-token pjs-punctuation">:</span>               <span class="pjs-token pjs-string">"base"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span>               2.5rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"icon-font-size"</span><span class="pjs-token pjs-punctuation">:</span>          1.38rem<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"icon-border-radius"</span><span class="pjs-token pjs-punctuation">:</span>      50%<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"text-shadow"</span><span class="pjs-token pjs-punctuation">:</span>             none<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"text-transform"</span><span class="pjs-token pjs-punctuation">:</span>          none<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"text-decoration"</span><span class="pjs-token pjs-punctuation">:</span>         none<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-enabled"</span><span class="pjs-token pjs-punctuation">:</span>      <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-duration"</span><span class="pjs-token pjs-punctuation">:</span>     200ms<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"transition-properties"</span><span class="pjs-token pjs-punctuation">:</span>   <span class="pjs-token pjs-punctuation">(</span>border-color<span class="pjs-token pjs-punctuation">,</span> background-color<span class="pjs-token pjs-punctuation">,</span> color<span class="pjs-token pjs-punctuation">,</span> box-shadow<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 21-53</li>
-<li><strong>Lines (code):</strong> 55-87</li>
-</ul>
-</details>
-<h4 id="map-properties" tabindex="-1">Map Properties</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Default</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">active-selector</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;&amp;.is-active&quot;</td>
-<td style="text-align:left">The selector that determines if a button is active</td>
-</tr>
-<tr>
-<td style="text-align:left">box-shadow</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">Specify box shadow for default button. Default true will fallback to element &quot;box-shadow&quot;</td>
-</tr>
-<tr>
-<td style="text-align:left">line-height</td>
-<td style="text-align:left">Number</td>
-<td style="text-align:left">1.1</td>
-<td style="text-align:left">Line height for button</td>
-</tr>
-<tr>
-<td style="text-align:left">letter-spacing</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.02em</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">margin</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">(0.45em 0.5em 0.45em 0)</td>
-<td style="text-align:left">Margin for buttons, usually left margin is omitted so buttons can flow inline and make space between them and the next element inline</td>
-</tr>
-<tr>
-<td style="text-align:left">min-width</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">9rem</td>
-<td style="text-align:left">The smallest width for all buttons</td>
-</tr>
-<tr>
-<td style="text-align:left">padding</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">(0.75em 1.5em)</td>
-<td style="text-align:left">Button inner padding value, pass space separated list</td>
-</tr>
-<tr>
-<td style="text-align:left">white-space</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">nowrap</td>
-<td style="text-align:left">Adjust button line wrapping, by default line's are not wrapped</td>
-</tr>
-<tr>
-<td style="text-align:left">border-color</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-border&quot;</td>
-<td style="text-align:left">The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.</td>
-</tr>
-<tr>
-<td style="text-align:left">border-color-hover</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-border-hover&quot;</td>
-<td style="text-align:left">Color of border when button is hovered</td>
-</tr>
-<tr>
-<td style="text-align:left">border-color-active</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-border-active&quot;</td>
-<td style="text-align:left">Color of border when a button has active class</td>
-</tr>
-<tr>
-<td style="text-align:left">border-radius</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">2rem</td>
-<td style="text-align:left">Border Radius for button</td>
-</tr>
-<tr>
-<td style="text-align:left">border-width</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1px</td>
-<td style="text-align:left">Width of button border</td>
-</tr>
-<tr>
-<td style="text-align:left">background-color</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-background&quot;</td>
-<td style="text-align:left">Background color of button</td>
-</tr>
-<tr>
-<td style="text-align:left">background-color-hover</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-background-hover&quot;</td>
-<td style="text-align:left">Background color of button when hovered</td>
-</tr>
-<tr>
-<td style="text-align:left">background-color-active</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-background-active&quot;</td>
-<td style="text-align:left">Background color of button when active</td>
-</tr>
-<tr>
-<td style="text-align:left">color</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control&quot;</td>
-<td style="text-align:left">Text color of button</td>
-</tr>
-<tr>
-<td style="text-align:left">color-hover</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-hover&quot;</td>
-<td style="text-align:left">Text color of button when hovered</td>
-</tr>
-<tr>
-<td style="text-align:left">color-active</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;control-active&quot;</td>
-<td style="text-align:left">Text color of button when active</td>
-</tr>
-<tr>
-<td style="text-align:left">font-family</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">inherit</td>
-<td style="text-align:left">Font family for button</td>
-</tr>
-<tr>
-<td style="text-align:left">font-weight</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">bold</td>
-<td style="text-align:left">Font weight for button</td>
-</tr>
-<tr>
-<td style="text-align:left">font-size</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&quot;base&quot;</td>
-<td style="text-align:left">Font size for button, can be omitted if it should inherit, sizes can also work with utility type size classes</td>
-</tr>
-<tr>
-<td style="text-align:left">icon-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">2.5rem</td>
-<td style="text-align:left">The size of a button when used with an icon</td>
-</tr>
-<tr>
-<td style="text-align:left">icon-font-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1.38rem</td>
-<td style="text-align:left">The font size for the icon when a button is an icon button</td>
-</tr>
-<tr>
-<td style="text-align:left">icon-border-radius</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">50%</td>
-<td style="text-align:left">The border radius of a icon button (defaults to 50% circle)</td>
-</tr>
-<tr>
-<td style="text-align:left">text-shadow</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">none</td>
-<td style="text-align:left">Text shadow for button</td>
-</tr>
-<tr>
-<td style="text-align:left">text-transform</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">none</td>
-<td style="text-align:left">Text transform for button</td>
-</tr>
-<tr>
-<td style="text-align:left">text-decoration</td>
-<td style="text-align:left">CssValue</td>
-<td style="text-align:left">none</td>
-<td style="text-align:left">Text decoration of button</td>
-</tr>
-<tr>
-<td style="text-align:left">transition-enabled</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">true</td>
-<td style="text-align:left">Whether or not to enable transitions on button properties like background-color, color, border color as they change state</td>
-</tr>
-<tr>
-<td style="text-align:left">transition-duration</td>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">200ms</td>
-<td style="text-align:left">The duration of the button's transition if enabled</td>
-</tr>
-<tr>
-<td style="text-align:left">transition-properties</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">(border-color, background-color, color, box-shadow)</td>
-<td style="text-align:left">The properties to transition if <code>transition-enabled</code></td>
-</tr>
-</tbody>
-</table>
-<div class="sassdoc-item-header">
-<h3 id="variable-sizes" tabindex="-1">$sizes</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Button sizes</p>
-<ul>
-<li>A map that holds to the sizes for buttons in the theme</li>
-<li>Use set-sizes() to adjust the sizes for the theme</li>
-<li>Don't edit sizes variable directly</li>
-</ul>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$sizes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>        <span class="pjs-token pjs-punctuation">(</span>0.35em 1.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span>      0<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span>      2rem<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"icon-font-size"</span><span class="pjs-token pjs-punctuation">:</span> 1rem
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"large"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"padding"</span><span class="pjs-token pjs-punctuation">:</span>   <span class="pjs-token pjs-punctuation">(</span>1em 2em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"min-width"</span><span class="pjs-token pjs-punctuation">:</span> 11rem<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"icon-size"</span><span class="pjs-token pjs-punctuation">:</span> 3.5rem
-  <span class="pjs-token pjs-punctuation">)</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 89-93</li>
-<li><strong>Lines (code):</strong> 94-107</li>
-</ul>
-</details>
-<div class="sassdoc-item-header">
-<h3 id="variable-styles" tabindex="-1">$styles</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-</div>
-<p>Button styles</p>
-<ul>
-<li>A map of styles for each button in the theme. Us set-styles() to overwrite or merge into these styles</li>
-<li>Don't edit styles variable directly</li>
-</ul>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$styles</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"transparent"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-      <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
-      <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> inherit<span class="pjs-token pjs-punctuation">,</span>
-      <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-punctuation">)</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"outline"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"rule-light"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> none<span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-      <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"white"</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-punctuation">)</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _button.scss</li>
-<li><strong>Group:</strong> button</li>
-<li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 109-112</li>
-<li><strong>Lines (code):</strong> 114-135</li>
-</ul>
-</details>
 
     </div>
   </div>

@@ -14,6 +14,51 @@ sassdocGroupName: path
 
 
 
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $aliases {#variable-aliases}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map
+- Important: alias could be used for directory or file so omit trailing slash for directories
+- All aliases must start with "#"</span>
+  </div>
+
+</div>
+
+  
+
+Aliases 
+    
+    
+
+``` scss
+$aliases: (
+  "#Images" : "/images",
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _path.scss
+- **Group:** path
+- **Type:** variable
+- **Lines (comments):** 9-12
+- **Lines (code):** 14-16
+
+</details>
+
+    
+  
+
 ## Mixins
 
 
@@ -168,50 +213,5 @@ Resolves a Path
 
 - [get-alias()](/sass/core/path/#function-get-alias)
   
-  
-
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $aliases {#variable-aliases}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map
-- Important: alias could be used for directory or file so omit trailing slash for directories
-- All aliases must start with "#"</span>
-  </div>
-
-</div>
-
-  
-
-Aliases 
-    
-    
-
-``` scss
-$aliases: (
-  "#Images" : "/images",
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _path.scss
-- **Group:** path
-- **Type:** variable
-- **Lines (comments):** 9-12
-- **Lines (code):** 14-16
-
-</details>
-
-    
   
   
