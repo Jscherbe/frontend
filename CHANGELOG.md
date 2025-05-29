@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.47
+
+- **scss/components/card**
+  - Add card--fill modifier (expands to fit whatever element it's within). This was intended for use with data-grid but could be used this way for many layouts.
+
 ## Version 0.1.0-beta.46
 
 - **scss/color**

@@ -476,6 +476,11 @@ $config: (
       }
     }
   }
+  #{ $prefix }--fill {
+    max-width: none;
+    height: 100%;
+    margin: 0;
+  }
 
   @if (get("horizontal-breakpoint")) {
     @include breakpoint.min(get("horizontal-breakpoint")) {
