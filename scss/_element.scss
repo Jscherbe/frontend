@@ -116,9 +116,10 @@ $rule-margins: (
 
 /// Sets rule margins
 /// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 
-@mixin set-rule-margins($changes) {
-  $rule-margins: map.merge($rule-margins, $changes) !global;
+@mixin set-rule-margins($changes, $merge-mode: null) {
+  $rule-margins: utils.map-merge($rule-margins, $changes, $merge-mode) !global;
 }
 
 /// Get a rule style

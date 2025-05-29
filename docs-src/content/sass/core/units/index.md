@@ -104,8 +104,8 @@ Update the units config
 - **File:** _units.scss
 - **Group:** units
 - **Type:** mixin
-- **Lines (comments):** 28-33
-- **Lines (code):** 35-37
+- **Lines (comments):** 28-34
+- **Lines (code):** 36-38
 
 </details>
 
@@ -133,11 +133,13 @@ Setting the error and type color
 |Name|Type|Description|
 |:--|:--|:--|
 |$changes|`Map`|A map to merge into the color palette|
+|$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
 
     
 
 #### Require
 
+- map-merge()
 - [$config](/sass/core/breakpoint/#variable-config)
   
   
@@ -170,8 +172,8 @@ Get a unit by name (preset) or number (multiplier of base)
 - **File:** _units.scss
 - **Group:** units
 - **Type:** function
-- **Lines (comments):** 39-41
-- **Lines (code):** 43-48
+- **Lines (comments):** 40-42
+- **Lines (code):** 44-49
 
 </details>
 

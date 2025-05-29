@@ -27,13 +27,14 @@ $config: (
 
 /// Update the units config
 /// @param {Map} $changes A map to merge into the color palette
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 /// @example scss Setting the error and type color
 ///   @include ulu.units-set((
 ///     "default" : 1.5em
 ///   ));
 
-@mixin set($changes) {
-  $config: map.merge($config, $changes) !global;
+@mixin set($changes, $merge-mode: null) {
+  $config: utils.map-merge($config, $changes, $merge-mode) !global;
 }
 
 /// Get a unit by name (preset) or number (multiplier of base)

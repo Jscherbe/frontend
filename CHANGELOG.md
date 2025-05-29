@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0-beta.45
+
+- **scss/units > set()**
+  - Adjust to use map-merge so you can configure how the map is merged (ie. overwrite for example)
+- **scss/element > set-rule-margins()**
+  - Adjust to use map-merge so you can configure how the map is merged (ie. overwrite for example)
+
 ## Version 0.1.0-beta.44
 
 - **scss/components/card**
