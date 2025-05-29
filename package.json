@@ -46,7 +46,10 @@
     "modules",
     "javascript",
     "framework",
-    "mixin"
+    "mixin",
+    "components",
+    "HTML",
+    "frontend framework"
   ],
   "authors": {
     "name": "Joe Scherben, Informatics Studio",
