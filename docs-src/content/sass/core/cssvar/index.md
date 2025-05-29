@@ -14,58 +14,6 @@ Provides support for custom-properties implementations
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "prefix" : ""
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _cssvar.scss
-- **Group:** cssvar
-- **Type:** variable
-- **Lines (comments):** 14-16
-- **Lines (code):** 18-20
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|prefix|String|""|Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable|
-
-    
-  
-
 ## Mixins
 
 
@@ -834,5 +782,57 @@ For any names passed will join them with "-" and wrap in calc
 
 - [join()](/sass/core/cssvar/#function-join)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "prefix" : ""
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _cssvar.scss
+- **Group:** cssvar
+- **Type:** variable
+- **Lines (comments):** 14-16
+- **Lines (code):** 18-20
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|prefix|String|""|Default prefix, will be added to all custom properties when using mixin or functions, unless overridden, set to empty quotes to disable|
+
+    
   
   

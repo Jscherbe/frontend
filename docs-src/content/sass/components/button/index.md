@@ -14,58 +14,6 @@ Output core button styles and sizes
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "icon-margin" : 0.5em
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _button.scss
-- **Group:** button
-- **Type:** variable
-- **Lines (comments):** 13-15
-- **Lines (code):** 17-19
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|icon-margin|Dimension|1em|List of other sizes (large by default), each size is a map of (width, font-size)|
-
-    
-  
-
 ## Mixins
 
 
@@ -263,5 +211,57 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "icon-margin" : 0.5em
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _button.scss
+- **Group:** button
+- **Type:** variable
+- **Lines (comments):** 13-15
+- **Lines (code):** 17-19
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|icon-margin|Dimension|1em|List of other sizes (large by default), each size is a map of (width, font-size)|
+
+    
   
   

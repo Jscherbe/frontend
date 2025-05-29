@@ -12857,7 +12857,7 @@ button.card:focus-within::after,
 }
 
 .card__aside {
-  background-color: rgb(197, 197, 197);
+  background-color: transparent;
 }
 
 .card__aside::after {
@@ -12867,7 +12867,7 @@ button.card:focus-within::after,
   left: 2rem;
   right: 2rem;
   height: 6px;
-  background-color: green;
+  background-color: var(--site-color-rule);
 }
 
 .card__footer {
@@ -13029,7 +13029,7 @@ button.card:focus-within::after,
     left: calc(0rem - 3px);
     height: calc(100% - 2rem - 2rem);
     width: 6px;
-    background-color: green;
+    background-color: "rule";
   }
   .card--horizontal:not(:has(.card__image)) {
     grid-template-columns: 1fr;

@@ -14,68 +14,6 @@ Manages common spacing values (used by utility classes like margin/padding)
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "default":  1rem,
-  "large":    1rem * 2,
-  "large-x":  1rem * 3,
-  "large-xx": 1rem * 4,
-  "small":    1rem * 0.75,
-  "small-x":  1rem * 0.5,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _units.scss
-- **Group:** units
-- **Type:** variable
-- **Lines (comments):** 10-17
-- **Lines (code):** 19-26
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|default|Number|1rem|Base unit of measure|
-|large|Number|1rem * 2||
-|large-x|Number|1rem * 3||
-|large-xx|Number|1rem * 4||
-|small|Number|1rem * 0.75||
-|small-x|Number|1rem * 0.5||
-
-    
-  
-
 ## Mixins
 
 
@@ -200,5 +138,67 @@ Get a unit by name (preset) or number (multiplier of base)
 - require-map-get()
 - [$config](/sass/core/breakpoint/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "default":  1rem,
+  "large":    1rem * 2,
+  "large-x":  1rem * 3,
+  "large-xx": 1rem * 4,
+  "small":    1rem * 0.75,
+  "small-x":  1rem * 0.5,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _units.scss
+- **Group:** units
+- **Type:** variable
+- **Lines (comments):** 10-17
+- **Lines (code):** 19-26
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|default|Number|1rem|Base unit of measure|
+|large|Number|1rem * 2||
+|large-x|Number|1rem * 3||
+|large-xx|Number|1rem * 4||
+|small|Number|1rem * 0.75||
+|small-x|Number|1rem * 0.5||
+
+    
   
   

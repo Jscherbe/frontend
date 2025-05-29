@@ -14,105 +14,6 @@ A page grid layout component that uses data attribute instead of class names, fo
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "attribute":           "data-grid",
-  "attribute-container": "data-grid-container",
-  "attribute-init":      "data-grid-init",
-  "breakpoint":          false,                   // Fallback to default
-  "columns":             12,
-  "gutter":              14px,
-  "position-class-column-first": "position-column-first",
-  "position-class-column-last":  "position-column-last",
-  "position-class-row-first":    "position-row-first",
-  "position-class-row-last":     "position-row-last",
-  "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
-  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
-  "rule-color" : "rule",
-  "rule-size" : 1px,
-  "rule-fade-duration" : 400ms,
-  "extra-breakpoints":   (
-    "medium" : (
-      "breakpoint": "medium",
-      "gutter":     15px
-    ),
-    "large" : (
-      "breakpoint": "large",
-      "gutter":     20px
-    )
-  ),
-  "extra-gutter-scales" : (
-    "small": 0.6
-  ),
-  "extra-rule-styles" : (
-    "light" : (
-      "size" : 1px,
-      "color": "rule-light"
-    )
-  ),
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _data-grid.scss
-- **Group:** data-grid
-- **Type:** variable
-- **Lines (comments):** 20-36
-- **Lines (code):** 38-73
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|attribute|String|data-grid|Default attribute to use for grid mixin.|
-|attribute-container|String|data-grid-container|Default attribute to use for grid's container.|
-|columns|Number|12|Default for grid mixin.|
-|gutter|Number|14px|Default gutter for grid mixin.|
-|position-class-column-first|String|position-column-first|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
-|position-class-column-last|String|position-column-last|See definition above|
-|position-class-row-first|String|position-row-first|See definition above|
-|position-class-row-last|String|position-row-last|See definition above|
-|sticky-bottom|Dimension|var(--ulu-sticky-bottom-offset, 0)|When a column is sticky bottom this is the value for the sticky offset, set to --ulu-sticky-bottom-offset by default|
-|sticky-top|Dimension|var(--ulu-sticky-top-offset, 0)|When a column is sticky top this is the value for the sticky offset, set to --ulu-sticky-top-offset by default|
-|rule-color|String|"rule"|The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.|
-|rule-size|Dimension|1px|The width of the rule|
-|extra-breakpoints|Map|Map|Default extra breakpoints for grid mixin|
-|extra-gutter-scales|Map|Map|Extra options for gutter scales.|
-|extra-rule-styles|Map|Map|Extra options for rule styles.|
-
-    
-  
-
 ## Mixins
 
 
@@ -443,5 +344,104 @@ Get the default breakpoint for the grid (when it starts to be a grid (vs stacked
 
 - [get()](/sass/components/accordion/#function-get)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "attribute":           "data-grid",
+  "attribute-container": "data-grid-container",
+  "attribute-init":      "data-grid-init",
+  "breakpoint":          false,                   // Fallback to default
+  "columns":             12,
+  "gutter":              14px,
+  "position-class-column-first": "position-column-first",
+  "position-class-column-last":  "position-column-last",
+  "position-class-row-first":    "position-row-first",
+  "position-class-row-last":     "position-row-last",
+  "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
+  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
+  "rule-color" : "rule",
+  "rule-size" : 1px,
+  "rule-fade-duration" : 400ms,
+  "extra-breakpoints":   (
+    "medium" : (
+      "breakpoint": "medium",
+      "gutter":     15px
+    ),
+    "large" : (
+      "breakpoint": "large",
+      "gutter":     20px
+    )
+  ),
+  "extra-gutter-scales" : (
+    "small": 0.6
+  ),
+  "extra-rule-styles" : (
+    "light" : (
+      "size" : 1px,
+      "color": "rule-light"
+    )
+  ),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _data-grid.scss
+- **Group:** data-grid
+- **Type:** variable
+- **Lines (comments):** 20-36
+- **Lines (code):** 38-73
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|attribute|String|data-grid|Default attribute to use for grid mixin.|
+|attribute-container|String|data-grid-container|Default attribute to use for grid's container.|
+|columns|Number|12|Default for grid mixin.|
+|gutter|Number|14px|Default gutter for grid mixin.|
+|position-class-column-first|String|position-column-first|Classname for position system (JS) grid uses to display rules (layout can flow, script will update classes)|
+|position-class-column-last|String|position-column-last|See definition above|
+|position-class-row-first|String|position-row-first|See definition above|
+|position-class-row-last|String|position-row-last|See definition above|
+|sticky-bottom|Dimension|var(--ulu-sticky-bottom-offset, 0)|When a column is sticky bottom this is the value for the sticky offset, set to --ulu-sticky-bottom-offset by default|
+|sticky-top|Dimension|var(--ulu-sticky-top-offset, 0)|When a column is sticky top this is the value for the sticky offset, set to --ulu-sticky-top-offset by default|
+|rule-color|String|"rule"|The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.|
+|rule-size|Dimension|1px|The width of the rule|
+|extra-breakpoints|Map|Map|Default extra breakpoints for grid mixin|
+|extra-gutter-scales|Map|Map|Extra options for gutter scales.|
+|extra-rule-styles|Map|Map|Extra options for rule styles.|
+
+    
   
   

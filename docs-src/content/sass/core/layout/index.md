@@ -14,111 +14,6 @@ sassdocGroupName: layout
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "margin":            2rem,
-  "max-width":         90rem,
-  "z-index-above":     450,
-  "z-index-fixed":     1000,
-  "z-index-sticky":    100,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _layout.scss
-- **Group:** layout
-- **Type:** variable
-- **Lines (comments):** 12-18
-- **Lines (code):** 20-26
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|margin|Number|2rem|Common margin for site|
-|max-width|Number|90rem|Common max-width for site|
-|z-index-above|Number|1000|Common z-index, below sticky|
-|z-index-fixed|Number|100|Common z-index, above everything|
-|z-index-sticky|Number|450|Common z-index for sticky or stuck items|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $containers {#variable-containers}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Containers Lookup (use set-containers)
-    
-    
-
-``` scss
-$containers: (
-  "container" : (
-    "width" : 100%,
-    "max-width" : get("max-width"),
-    "padding" : (get("margin") get("margin")),
-    "breakpoints" : null,
-    "responsive" : false,
-    "responsive-amount" : 3vw
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _layout.scss
-- **Group:** layout
-- **Type:** variable
-- **Lines (comments):** 43-45
-- **Lines (code):** 47-56
-
-</details>
-
-    
-  
-
 ## Mixins
 
 
@@ -766,5 +661,110 @@ Get containers padding Y value (ends)
 
 - [get-container-padding()](/sass/core/layout/#function-get-container-padding)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "margin":            2rem,
+  "max-width":         90rem,
+  "z-index-above":     450,
+  "z-index-fixed":     1000,
+  "z-index-sticky":    100,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _layout.scss
+- **Group:** layout
+- **Type:** variable
+- **Lines (comments):** 12-18
+- **Lines (code):** 20-26
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|margin|Number|2rem|Common margin for site|
+|max-width|Number|90rem|Common max-width for site|
+|z-index-above|Number|1000|Common z-index, below sticky|
+|z-index-fixed|Number|100|Common z-index, above everything|
+|z-index-sticky|Number|450|Common z-index for sticky or stuck items|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $containers {#variable-containers}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Containers Lookup (use set-containers)
+    
+    
+
+``` scss
+$containers: (
+  "container" : (
+    "width" : 100%,
+    "max-width" : get("max-width"),
+    "padding" : (get("margin") get("margin")),
+    "breakpoints" : null,
+    "responsive" : false,
+    "responsive-amount" : 3vw
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _layout.scss
+- **Group:** layout
+- **Type:** variable
+- **Lines (comments):** 43-45
+- **Lines (code):** 47-56
+
+</details>
+
+    
   
   

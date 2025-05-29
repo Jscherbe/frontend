@@ -14,186 +14,6 @@ sassdocGroupName: color
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $palette {#variable-palette}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
-  </div>
-
-</div>
-
-  
-
-The color palette map, can be extended or modified with set() and accessed with get()
-- Note do not use names that start with "var(" which are reserved for custom properties. Also do not use "inherit" or "transparent" as those are reserved.
-- The default palette color names are used throughout the system
-    
-    
-
-``` scss
-$palette: (
-  "black"                   : black,
-  "white"                   : white,
-  "type"                    : black,
-  "type-secondary"          : rgb(82, 82, 82),
-  "type-tertiary"           : rgb(157, 157, 157),
-  "headline"                : inherit,
-  "background"              : white,
-  "background-gray"         : #F7F8F7,
-  "focus"                   : blue,
-  "accent"                  : orange,
-  "info"                    : #00bde3,
-  "success"                 : #00a91c,
-  "warning"                 : #ffbe2e,  
-  "danger"                  : #d54309,  
-  "info-background"         : #e7f6f8,
-  "success-background"      : #ecf3ec,
-  "warning-background"      : #faf3d1,
-  "danger-background"       : #f4e3db,
-  "selected"                : green,
-  "box-shadow"              : rgba(0, 0, 0, 0.349),
-  "box-shadow-hover"        : rgba(0, 0, 0, 0.5),
-  "rule"                    : gray,
-  "rule-light"              : lightgray,
-  "link"                    : blue,
-  "link-hover"              : darkblue,
-  "link-active"             : darkblue,
-  "link-visited"            : purple,
-  "bullet"                  : inherit,
-  "control"                 : white,
-  "control-hover"           : white,
-  "control-active"           : white,
-  "control-border"          : purple,
-  "control-border-hover"       : blue,
-  "control-border-active"       : orange,
-  "control-background"      : purple,
-  "control-background-hover": blue,
-  "control-background-active": orange,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _color.scss
-- **Group:** color
-- **Type:** variable
-- **Lines (comments):** 13-16
-- **Lines (code):** 18-56
-
-</details>
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $contexts {#variable-contexts}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
-  </div>
-
-</div>
-
-  
-
-Pairs of background-color and color definitions
-    
-    
-
-``` scss
-$contexts: (
-  "dark" : (
-    "background-color" : "black",
-    "color" : "white",
-    "base-class" : true
-  ),
-  "light" : (
-    "background-color" : "white",
-    "color" : "black",
-    "base-class" : true
-  ),
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _color.scss
-- **Group:** color
-- **Type:** variable
-- **Lines (comments):** 58-62
-- **Lines (code):** 64-75
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Description|
-|:--|:--|:--|
-|$contexts.name.background-color|Number|String|Color value or name of color in $palette|
-|$contexts.name.color|Number|String|Color value or name of color in $palette|
-|$contexts.name.base-class|Boolean|Print this value in the base module as a class (if base prints)|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $color-classes {#variable-color-classes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-
-</div>
-
-  
-
-Palette entries that are output as classes when using all-color-class-styles
-- Use set-color-classes mixin to alter this map
-    
-    
-
-``` scss
-$color-classes: (
-  "black" : true,
-  "white" : true,
-  "type": true
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _color.scss
-- **Group:** color
-- **Type:** variable
-- **Lines (comments):** 77-78
-- **Lines (code):** 79-83
-
-</details>
-
-    
-  
-
 ## Mixins
 
 
@@ -906,5 +726,185 @@ Darken a color with the default black by a percentage
 
 - [get()](/sass/core/breakpoint/#function-get)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $palette {#variable-palette}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+
+</div>
+
+  
+
+The color palette map, can be extended or modified with set() and accessed with get()
+- Note do not use names that start with "var(" which are reserved for custom properties. Also do not use "inherit" or "transparent" as those are reserved.
+- The default palette color names are used throughout the system
+    
+    
+
+``` scss
+$palette: (
+  "black"                   : black,
+  "white"                   : white,
+  "type"                    : black,
+  "type-secondary"          : rgb(82, 82, 82),
+  "type-tertiary"           : rgb(157, 157, 157),
+  "headline"                : inherit,
+  "background"              : white,
+  "background-gray"         : #F7F8F7,
+  "focus"                   : blue,
+  "accent"                  : orange,
+  "info"                    : #00bde3,
+  "success"                 : #00a91c,
+  "warning"                 : #ffbe2e,  
+  "danger"                  : #d54309,  
+  "info-background"         : #e7f6f8,
+  "success-background"      : #ecf3ec,
+  "warning-background"      : #faf3d1,
+  "danger-background"       : #f4e3db,
+  "selected"                : green,
+  "box-shadow"              : rgba(0, 0, 0, 0.349),
+  "box-shadow-hover"        : rgba(0, 0, 0, 0.5),
+  "rule"                    : gray,
+  "rule-light"              : lightgray,
+  "link"                    : blue,
+  "link-hover"              : darkblue,
+  "link-active"             : darkblue,
+  "link-visited"            : purple,
+  "bullet"                  : inherit,
+  "control"                 : white,
+  "control-hover"           : white,
+  "control-active"           : white,
+  "control-border"          : purple,
+  "control-border-hover"       : blue,
+  "control-border-active"       : orange,
+  "control-background"      : purple,
+  "control-background-hover": blue,
+  "control-background-active": orange,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _color.scss
+- **Group:** color
+- **Type:** variable
+- **Lines (comments):** 13-16
+- **Lines (code):** 18-56
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $contexts {#variable-contexts}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: map</span>
+  </div>
+
+</div>
+
+  
+
+Pairs of background-color and color definitions
+    
+    
+
+``` scss
+$contexts: (
+  "dark" : (
+    "background-color" : "black",
+    "color" : "white",
+    "base-class" : true
+  ),
+  "light" : (
+    "background-color" : "white",
+    "color" : "black",
+    "base-class" : true
+  ),
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _color.scss
+- **Group:** color
+- **Type:** variable
+- **Lines (comments):** 58-62
+- **Lines (code):** 64-75
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$contexts.name.background-color|Number|String|Color value or name of color in $palette|
+|$contexts.name.color|Number|String|Color value or name of color in $palette|
+|$contexts.name.base-class|Boolean|Print this value in the base module as a class (if base prints)|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $color-classes {#variable-color-classes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+Palette entries that are output as classes when using all-color-class-styles
+- Use set-color-classes mixin to alter this map
+    
+    
+
+``` scss
+$color-classes: (
+  "black" : true,
+  "white" : true,
+  "type": true
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _color.scss
+- **Group:** color
+- **Type:** variable
+- **Lines (comments):** 77-78
+- **Lines (code):** 79-83
+
+</details>
+
+    
   
   

@@ -14,61 +14,6 @@ Creates adaptive (changing at breakpoints)n between items (vertical/horizontal l
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "gutter" : 1rem,
-  "grid-template-columns" : 1fr 1fr,
-  "breakpoint" : "small"
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _flipcard-grid.scss
-- **Group:** flipcard-grid
-- **Type:** variable
-- **Lines (comments):** 12-15
-- **Lines (code):** 17-22
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|gutter|Dimension|1rem|The gutter between grid items.|
-|grid-template-columns|CssValue|1fr 1fr|The size ratio of items in the grid.|
-
-    
-  
-
 ## Mixins
 
 
@@ -245,5 +190,60 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "gutter" : 1rem,
+  "grid-template-columns" : 1fr 1fr,
+  "breakpoint" : "small"
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _flipcard-grid.scss
+- **Group:** flipcard-grid
+- **Type:** variable
+- **Lines (comments):** 12-15
+- **Lines (code):** 17-22
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|gutter|Dimension|1rem|The gutter between grid items.|
+|grid-template-columns|CssValue|1fr 1fr|The size ratio of items in the grid.|
+
+    
   
   

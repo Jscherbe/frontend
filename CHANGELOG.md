@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.42
+
+- **scss/components/card**
+  - Adjusted defaults for new aside element (rule and background color) to match standard defaults (initial testing values were there before)
+
 ## Version 0.1.0-beta.41
 
 - **js/utils/dom**

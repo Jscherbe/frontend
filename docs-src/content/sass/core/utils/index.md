@@ -14,64 +14,6 @@ Basic utility functions/mixins used throughout system
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "debug-maps": true,
-  "file-header-comments": true,
-  "responsive-change": 0.5vw,
-  "pixel-em-base" : 16px,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _utils.scss
-- **Group:** utils
-- **Type:** variable
-- **Lines (comments):** 12-17
-- **Lines (code):** 19-24
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|debug-maps|Boolean|true|Enable or disable debug map output|
-|file-header-comments|Boolean|true|Enable or disable module/file header comments|
-|responsive-change|Number|0.5vw|Default responsive amount to modify items using responsive-property mixin|
-|pixel-em-base|Number|16px|Default base pixel font size for pixel-to-em|
-
-    
-  
-
 ## Mixins
 
 
@@ -2440,6 +2382,64 @@ Returns true if edge passed is an side (left/right)
 
 - [is-end()](/sass/core/utils/#function-is-end)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "debug-maps": true,
+  "file-header-comments": true,
+  "responsive-change": 0.5vw,
+  "pixel-em-base" : 16px,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** variable
+- **Lines (comments):** 12-17
+- **Lines (code):** 19-24
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|debug-maps|Boolean|true|Enable or disable debug map output|
+|file-header-comments|Boolean|true|Enable or disable module/file header comments|
+|responsive-change|Number|0.5vw|Default responsive amount to modify items using responsive-property mixin|
+|pixel-em-base|Number|16px|Default base pixel font size for pixel-to-em|
+
+    
   
 
 ## CSS

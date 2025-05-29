@@ -14,133 +14,6 @@ A small, lightweight label used to categorize, classify, or identify items withi
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "font-weight" : normal,
-  "font-family" : true,
-  "box-shadow" : none,
-  "padding" : (0.4em 0.75em),
-  "vertical-align" : baseline,
-  "margin-between" : 0.5em,
-  "margin-between-tags" : 0,
-  "line-height" : 1,
-  "type-size" : "small",
-  "background-color" : #eaeaea,
-  "border-radius" : 1.25em,
-  "border-color" : transparent,
-  "border-width" : 1px,
-  "color": "type-tertiary",
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tag.scss
-- **Group:** tag
-- **Type:** variable
-- **Lines (comments):** 24-39
-- **Lines (code):** 41-56
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|font-weight|CssValue|normal|Font weight for the tag text.|
-|font-family|String|true|Font family for the tag text.|
-|box-shadow|CssValue|none|Box shadow for the tag.|
-|padding|Dimension|(0.4em 0.75em)|Inner padding for the tag.|
-|vertical-align|CssValue|baseline|Vertical alignment of tag text.|
-|margin-between|Dimension|0.5em|Margin between tag and other elements.|
-|margin-between-tags|Dimension|0|Margin between tag and other tags.|
-|line-height|Number|1|Line height for the tag text.|
-|type-size|String|"small"|Font size for the tag text.|
-|background-color|Color|#eaeaea|Background color of the tag.|
-|border-radius|Dimension|1.25em|Border radius of the tag.|
-|border-color|Color|transparent|Border color for the tag.|
-|border-width|Dimension|1px|Border width of the tag.|
-|color|String|"type-tertiary"|Color of the tag text.|
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $styles {#variable-styles}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span>
-  </div>
-
-</div>
-
-  
-
-Style Map (alternate tag styles)
-    
-    
-
-``` scss
-$styles: (
-  "success" : (
-    "color" : rgb(37, 73, 37),
-    "background-color" : rgb(190, 220, 190),
-  ),
-  "danger" : (
-    "color" : rgb(78, 24, 24),
-    "background-color" : rgb(235, 179, 179),
-  ),
-  "outline" : (
-    "background-color" : transparent,
-    "border-color" : #ccc
-  )
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _tag.scss
-- **Group:** tag
-- **Type:** variable
-- **Lines (comments):** 58-58
-- **Lines (code):** 60-73
-
-</details>
-
-    
-  
-
 ## Mixins
 
 
@@ -364,5 +237,132 @@ Get a config option
 
 - [$config](/sass/components/accordion/#variable-config)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "font-weight" : normal,
+  "font-family" : true,
+  "box-shadow" : none,
+  "padding" : (0.4em 0.75em),
+  "vertical-align" : baseline,
+  "margin-between" : 0.5em,
+  "margin-between-tags" : 0,
+  "line-height" : 1,
+  "type-size" : "small",
+  "background-color" : #eaeaea,
+  "border-radius" : 1.25em,
+  "border-color" : transparent,
+  "border-width" : 1px,
+  "color": "type-tertiary",
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tag.scss
+- **Group:** tag
+- **Type:** variable
+- **Lines (comments):** 24-39
+- **Lines (code):** 41-56
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|font-weight|CssValue|normal|Font weight for the tag text.|
+|font-family|String|true|Font family for the tag text.|
+|box-shadow|CssValue|none|Box shadow for the tag.|
+|padding|Dimension|(0.4em 0.75em)|Inner padding for the tag.|
+|vertical-align|CssValue|baseline|Vertical alignment of tag text.|
+|margin-between|Dimension|0.5em|Margin between tag and other elements.|
+|margin-between-tags|Dimension|0|Margin between tag and other tags.|
+|line-height|Number|1|Line height for the tag text.|
+|type-size|String|"small"|Font size for the tag text.|
+|background-color|Color|#eaeaea|Background color of the tag.|
+|border-radius|Dimension|1.25em|Border radius of the tag.|
+|border-color|Color|transparent|Border color for the tag.|
+|border-width|Dimension|1px|Border width of the tag.|
+|color|String|"type-tertiary"|Color of the tag text.|
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $styles {#variable-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+Style Map (alternate tag styles)
+    
+    
+
+``` scss
+$styles: (
+  "success" : (
+    "color" : rgb(37, 73, 37),
+    "background-color" : rgb(190, 220, 190),
+  ),
+  "danger" : (
+    "color" : rgb(78, 24, 24),
+    "background-color" : rgb(235, 179, 179),
+  ),
+  "outline" : (
+    "background-color" : transparent,
+    "border-color" : #ccc
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tag.scss
+- **Group:** tag
+- **Type:** variable
+- **Lines (comments):** 58-58
+- **Lines (code):** 60-73
+
+</details>
+
+    
   
   

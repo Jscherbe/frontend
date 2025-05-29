@@ -14,153 +14,6 @@ Manages typography settings, sizes and provides typography related utilities
 
 
 
-## Variables
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  $config {#variable-config}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Module Settings
-    
-    
-
-``` scss
-$config: (
-  "letter-spacing-uppercase": 0.04em,
-  "margin-bottom":            1em,
-  "margin-top":               null,
-  "responsive-change":        0.05vw,
-  "scale-steps":              5,
-  "size-ratio":               1.8,
-  "size-line-height-ratio":   0.97,
-  "font-family":              (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
-  "font-family-monospace":    (Menlo, Consolas, Monaco, monospace),
-  "font-family-sans":         (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
-  "font-family-serif":        (Cambria, Georgia, serif),
-  "font-size":                16px,
-  "font-weight":              inherit,
-  "font-weight-bold":         bold,
-  "font-weight-light":        300,
-  "font-weight-normal":       normal,
-  "font-weight-semibold":     600,
-  "line-height":              1.5,
-  "line-height-dense":        1.3,
-  "line-height-densest":      1.1,
-  "line-height-spaced":       1.75,
-  "max-width":                60em,
-  "max-width-large":          75em,
-  "max-width-small":          45em,
-);
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _typography.scss
-- **Group:** typography
-- **Type:** variable
-- **Lines (comments):** 15-37
-- **Lines (code):** 39-64
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Default|Description|
-|:--|:--|:--|:--|
-|letter-spacing-uppercase|Dimension|0.04em||
-|margin-bottom|Number|1em|Default margin for typography (like paragraphs)|
-|margin-top|Number|null|Default margin for typography (like paragraphs)|
-|responsive-change|Number|0.05vw|Amount to scale typography by browser's width (use viewport units)|
-|scale-steps|Number|5||
-|size-ratio|Number|1.8|Font size scale when using preset sizes, ratio mixin)|
-|size-line-height-ratio|Number|0.97|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desirable|
-|font-family|Number|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)|Default font family|
-|font-family-monospace|Number|(Menlo, Consolas, Monaco, monospace)|Base font-family for monospace|
-|font-family-sans|CssValue|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)||
-|font-family-serif|CssValue|(Cambria, Georgia, serif||
-|font-size|Number|16px|Default font size (use pixels, converted, is used for rem base)|
-|font-weight|CssValue|inherit||
-|font-weight-bold|CssValue|bold||
-|font-weight-light|CssValue|300||
-|font-weight-normal|CssValue|normal||
-|font-weight-semibold|CssValue|600||
-|line-height|Number|1.5|Default line height|
-|line-height-dense|Number|1.3|Default dense line height|
-|line-height-densest|Number|1.1||
-|line-height-spaced|Number|1.75||
-
-    
-
-
-<div class="sassdoc-item-header">
-
-###  $sizes {#variable-sizes}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
-  </div>
-
-</div>
-
-  
-
-Default size presets
-    
-    
-
-``` scss
-$sizes: get-default-sizes();
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _typography.scss
-- **Group:** typography
-- **Type:** variable
-- **Lines (comments):** 181-190
-- **Lines (code):** 192-192
-
-</details>
-
-    
-
-#### Map Properties
-
-
-|Name|Type|Description|
-|:--|:--|:--|
-|$size.name|Number|Name of size|
-|$size.name.font-size|Number|Font size in rems or pixels|
-|$size.name.line-height|Number|Line height (unitless)|
-|$size.name.responsive|Number|Apply responsive sizes|
-|$size.name.breakpoints|Number|Map of breakpoints where each key is breakpoint with map of changes (ie. font-size, etc)|
-|$size.name.breakpoints.breakpoint.direction|Number|Direction the breakpoint should be applied to (ie. min/max)|
-|$size.name.base-class|Boolean|This style should be included in the base (top can be overridden)|
-|$size.name.helper-class|Boolean|This style should be included in the helpers (overrides)|
-
-    
-  
-
 ## Mixins
 
 
@@ -1048,5 +901,152 @@ Get a sizes property value that doesn't need conversion
 
 - [get()](/sass/core/breakpoint/#function-get)
   
+  
+
+## Variables
+
+
+
+
+<div class="sassdoc-item-header">
+
+###  $config {#variable-config}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Module Settings
+    
+    
+
+``` scss
+$config: (
+  "letter-spacing-uppercase": 0.04em,
+  "margin-bottom":            1em,
+  "margin-top":               null,
+  "responsive-change":        0.05vw,
+  "scale-steps":              5,
+  "size-ratio":               1.8,
+  "size-line-height-ratio":   0.97,
+  "font-family":              (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-monospace":    (Menlo, Consolas, Monaco, monospace),
+  "font-family-sans":         (ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif),
+  "font-family-serif":        (Cambria, Georgia, serif),
+  "font-size":                16px,
+  "font-weight":              inherit,
+  "font-weight-bold":         bold,
+  "font-weight-light":        300,
+  "font-weight-normal":       normal,
+  "font-weight-semibold":     600,
+  "line-height":              1.5,
+  "line-height-dense":        1.3,
+  "line-height-densest":      1.1,
+  "line-height-spaced":       1.75,
+  "max-width":                60em,
+  "max-width-large":          75em,
+  "max-width-small":          45em,
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _typography.scss
+- **Group:** typography
+- **Type:** variable
+- **Lines (comments):** 15-37
+- **Lines (code):** 39-64
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|letter-spacing-uppercase|Dimension|0.04em||
+|margin-bottom|Number|1em|Default margin for typography (like paragraphs)|
+|margin-top|Number|null|Default margin for typography (like paragraphs)|
+|responsive-change|Number|0.05vw|Amount to scale typography by browser's width (use viewport units)|
+|scale-steps|Number|5||
+|size-ratio|Number|1.8|Font size scale when using preset sizes, ratio mixin)|
+|size-line-height-ratio|Number|0.97|Default line height scaling (when using preset sizes, ratio mixin). Can shrink line-height as size increase if desirable|
+|font-family|Number|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)|Default font family|
+|font-family-monospace|Number|(Menlo, Consolas, Monaco, monospace)|Base font-family for monospace|
+|font-family-sans|CssValue|(ui-sans-serif, "Open Sans", Helvetica, Arial, sans-serif)||
+|font-family-serif|CssValue|(Cambria, Georgia, serif||
+|font-size|Number|16px|Default font size (use pixels, converted, is used for rem base)|
+|font-weight|CssValue|inherit||
+|font-weight-bold|CssValue|bold||
+|font-weight-light|CssValue|300||
+|font-weight-normal|CssValue|normal||
+|font-weight-semibold|CssValue|600||
+|line-height|Number|1.5|Default line height|
+|line-height-dense|Number|1.3|Default dense line height|
+|line-height-densest|Number|1.1||
+|line-height-spaced|Number|1.75||
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+  </div>
+
+</div>
+
+  
+
+Default size presets
+    
+    
+
+``` scss
+$sizes: get-default-sizes();
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _typography.scss
+- **Group:** typography
+- **Type:** variable
+- **Lines (comments):** 181-190
+- **Lines (code):** 192-192
+
+</details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$size.name|Number|Name of size|
+|$size.name.font-size|Number|Font size in rems or pixels|
+|$size.name.line-height|Number|Line height (unitless)|
+|$size.name.responsive|Number|Apply responsive sizes|
+|$size.name.breakpoints|Number|Map of breakpoints where each key is breakpoint with map of changes (ie. font-size, etc)|
+|$size.name.breakpoints.breakpoint.direction|Number|Direction the breakpoint should be applied to (ie. min/max)|
+|$size.name.base-class|Boolean|This style should be included in the base (top can be overridden)|
+|$size.name.helper-class|Boolean|This style should be included in the helpers (overrides)|
+
+    
   
   
