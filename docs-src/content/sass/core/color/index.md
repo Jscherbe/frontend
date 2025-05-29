@@ -443,8 +443,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 223-230
-- **Lines (code):** 232-241
+- **Lines (comments):** 225-232
+- **Lines (code):** 234-243
 
 </details>
 
@@ -528,8 +528,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 243-247
-- **Lines (code):** 249-258
+- **Lines (comments):** 245-249
+- **Lines (code):** 251-260
 
 </details>
 
@@ -860,6 +860,7 @@ Tint (add white) a color using the default white by a percentage
 
 Tint (add white) a color using the default white by a percentage (Using color-mix)
 - This only works in modern browsers (as of June 2025)
+- These match ulu.color-tint() and are designed to accept the same arguments with the same results
     
     
 
@@ -870,8 +871,8 @@ Tint (add white) a color using the default white by a percentage (Using color-mi
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 192-196
-- **Lines (code):** 198-200
+- **Lines (comments):** 192-197
+- **Lines (code):** 199-201
 
 </details>
 
@@ -920,8 +921,8 @@ Shade (add black) a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 202-207
-- **Lines (code):** 209-211
+- **Lines (comments):** 203-208
+- **Lines (code):** 210-212
 - **Author:** Kitty Giraudel
 
 </details>
@@ -973,6 +974,7 @@ Shade (add black) a color with the default black by a percentage
 
 Shade (add black) a color using the default white by a percentage (Using color-mix)
 - This only works in modern browsers (as of June 2025)
+- These match ulu.color-shade() and are designed to accept the same arguments with the same results
     
     
 
@@ -983,8 +985,8 @@ Shade (add black) a color using the default white by a percentage (Using color-m
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 213-217
-- **Lines (code):** 219-221
+- **Lines (comments):** 214-219
+- **Lines (code):** 221-223
 
 </details>
 

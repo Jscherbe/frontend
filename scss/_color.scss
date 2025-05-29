@@ -191,6 +191,7 @@ $color-classes: (
 
 /// Tint (add white) a color using the default white by a percentage (Using color-mix)
 /// - This only works in modern browsers (as of June 2025)
+/// - These match ulu.color-tint() and are designed to accept the same arguments with the same results
 /// @param {Color, String} $color Color or custom property to apply mix to
 /// @param {Number} $percentage Percentage
 /// @return {Color}
@@ -212,6 +213,7 @@ $color-classes: (
 
 /// Shade (add black) a color using the default white by a percentage (Using color-mix)
 /// - This only works in modern browsers (as of June 2025)
+/// - These match ulu.color-shade() and are designed to accept the same arguments with the same results
 /// @param {Color, String} $color Color or custom property to apply mix to
 /// @param {Number} $percentage Percentage
 /// @return {Color}

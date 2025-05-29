@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.46
+
+- **scss/color**
+  - **css-tint, css-shade** Add two new functions for tinting/shading in the browser (to support custom properties). In the future these may replace sass only tint/shade functions once they are more widely supported.
+
 ## Version 0.1.0-beta.45
 
 - **scss/units > set()**
