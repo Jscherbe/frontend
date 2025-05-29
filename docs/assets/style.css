@@ -12968,6 +12968,12 @@ button.card:focus-within::after,
           filter: drop-shadow(0 0px 8px rgba(0, 0, 0, 0.3));
 }
 
+.card--fill {
+  max-width: none;
+  height: 100%;
+  margin: 0;
+}
+
 @media screen and (min-width: 43.5em) {
   .card--horizontal {
     display: grid;
