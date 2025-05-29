@@ -54,9 +54,9 @@ $config: (
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
-  "horizontal-body-max-width" : 80rem,
-  "horizontal-min-height" : 10rem,
-  "horizontal-max-width" : 40rem,
+  "horizontal-body-max-width" : 40rem,
+  "horizontal-min-height" : 20rem,
+  "horizontal-max-width" : 80rem,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
@@ -324,7 +324,7 @@ Prints component styles
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 197-201
-- **Lines (code):** 203-485
+- **Lines (code):** 203-487
 
 </details>
 

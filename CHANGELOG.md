@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.44
+
+- **scss/components/card**
+  - Fix card body from shrinking when max-width is larger than body content
+  - Add card--horizontal-center modifier to center body of card
+
 ## Version 0.1.0-beta.43
 
 - **scss/components/card**

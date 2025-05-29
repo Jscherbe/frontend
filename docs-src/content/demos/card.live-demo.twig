@@ -2,9 +2,17 @@
 {% set isLink = action == "link" %}
 {% set hasImage = media == "image" or media == "imageFit" %}
 {% set element = isLink ? "a" : "article" %}
+
+{% set layoutClass = "" %}
+{% if layout == "horizontalCenter" %}
+  {% set layoutClass = "card--horizontal card--horizontal-center" %}
+{% elseif layout %}
+  {% set layoutClass = "card--" ~ layout %}
+{% endif %}
+
 {% set classes = [
   "card",
-  layout ? "card--" ~ layout : "",
+  layoutClass,
   media == "imageFit" ? "card--image-fit" : ""
 ] %}
 

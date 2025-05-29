@@ -89,9 +89,9 @@ $config: (
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
-  "horizontal-body-max-width" : 80rem,
-  "horizontal-min-height" : 10rem,
-  "horizontal-max-width" : 40rem,
+  "horizontal-body-max-width" : 40rem,
+  "horizontal-min-height" : 20rem,
+  "horizontal-max-width" : 80rem,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
@@ -398,10 +398,12 @@ $config: (
       min-height: 0;
       padding-top: get("overlay-body-padding-y");
       padding-bottom: get("overlay-body-padding-y");
+      
       &:not(:has(~ #{ $prefix }__footer)) {
         border-bottom-left-radius: get("border-radius");
         border-bottom-right-radius: get("border-radius");
       }
+
       @if (get("overlay-shading")) {
         margin-top: 4rem;
         &::before {
@@ -495,6 +497,11 @@ $config: (
     grid-template-rows: auto auto;
     min-height: get("horizontal-min-height");
     max-width: get("horizontal-max-width");
+
+    // When no footer remove extra row
+    &:not(:has(> #{ $prefix }__footer)) {
+      grid-template-rows: auto;
+    }
     #{ $prefix }__image {
       grid-column: 1 / 2;
       grid-row: 1 / -1;
@@ -507,11 +514,10 @@ $config: (
       grid-column: 2 / 3;
     }
     #{ $prefix }__body {
-      // display: flex;
       flex-direction: row;
-      justify-content: center;
       max-width: get("horizontal-body-max-width");
     }
+    
     @if(get("aside-rule")) {
       #{ $prefix }__main {
         flex: 1 1 60%;
@@ -540,6 +546,11 @@ $config: (
     }
     &#{ $prefix }--no-image {
       @include -card-horizontal-no-image-styles();
+    }
+  }
+  #{ $prefix }--horizontal-center {
+    #{ $prefix }__body {
+      align-self: center;
     }
   }
 }

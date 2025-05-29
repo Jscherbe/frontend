@@ -100,6 +100,10 @@ export default {
             text: "Horizontal"
           },
           {
+            value: "horizontalCenter",
+            text: "Horizontal Center"
+          },
+          {
             value: "overlay",
             text: "Overlay"
           },

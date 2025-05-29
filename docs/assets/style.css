@@ -12973,8 +12973,11 @@ button.card:focus-within::after,
     display: grid;
     grid-template-columns: min(33%, 20rem) 1fr;
     grid-template-rows: auto auto;
-    min-height: 10rem;
-    max-width: 40rem;
+    min-height: 20rem;
+    max-width: 80rem;
+  }
+  .card--horizontal:not(:has(> .card__footer)) {
+    grid-template-rows: auto;
   }
   .card--horizontal .card__image {
     grid-column: 1/2;
@@ -12992,10 +12995,7 @@ button.card:focus-within::after,
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    max-width: 80rem;
+    max-width: 40rem;
   }
   .card--horizontal:not(:has(.card__image)) {
     grid-template-columns: 1fr;
@@ -13010,6 +13010,10 @@ button.card:focus-within::after,
   .card--horizontal.card--no-image .card__body,
   .card--horizontal.card--no-image .card__footer {
     grid-column: 1/2;
+  }
+  .card--horizontal-center .card__body {
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 }
 .card-grid {
