@@ -16630,9 +16630,8 @@ ul.list-inline,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-.Slider__nav li {
-  margin: 0.5rem 0.15rem;
+  margin: 0.5rem 0;
+  gap: 0.2rem;
 }
 
 .Slider__nav-button {

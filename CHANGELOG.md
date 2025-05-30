@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.51
+
+- **scss/components/slider**
+  - Add "dot-gap" and "nav-margin" options
+
 ## Version 0.1.0-beta.50
 
 - **scss/components/slider**

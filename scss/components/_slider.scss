@@ -20,6 +20,7 @@
 /// @prop {Dimension} button-icon-offset-y [false] Offsets the control options down by adding a margin. 
 /// @prop {Dimension} button-margin [0.75rem] The margin between the controls and the slide content when using .slider__slide-gap-for-controls
 /// @prop {Dimension} button-size [3rem] Size of the button. Likely antiquated and replaced with button-width and button-height
+/// @prop {Color} nav-margin [(0.5rem 0)] Margin for nav (dots)
 /// @prop {Color} dot-background-color [transparent] The color of the dot when unselected.
 /// @prop {Color} dot-background-color-hover [color.get("link")] The color of the dot when hovered.
 /// @prop {Color} dot-background-color-selected [color.get("link")] The color of the dot when selected.
@@ -29,6 +30,7 @@
 /// @prop {Color} dot-border-color-selected [color.get("link")] The border color of the dot when selected.
 /// @prop {Dimension} dot-border-width [2px] The border width of the dot.
 /// @prop {Dimension} dot-size  [1rem] The height and width of the dot.
+/// @prop {Dimension} dot-gap  [0.2rem] Gap between dots
 /// @prop {Dimension} button-height  [1rem] The height of the button.
 /// @prop {Dimension} button-width  [1rem] The width of the button.
 
@@ -49,8 +51,10 @@ $config: (
   "dot-border-color-hover" : "link",
   "dot-border-color-selected" : "link",
   "dot-border-radius" : 50%,
+  "dot-gap" : 0.2rem,
   "dot-border-width" : 2px,
   "dot-size" :  1rem,
+  "nav-margin" : (0.5rem 0),
   "padding-bottom" : 0,
   "padding-top" : 0,
   ) !default;
@@ -102,9 +106,8 @@ $config: (
   #{ $prefix-plugin }__nav {
     display: flex;
     justify-content: center;
-    li {
-      margin: 0.5rem 0.15rem;
-    }
+    margin: get("nav-margin");
+    gap: get("dot-gap");
   }
   #{ $prefix-plugin }__nav-button {
     display: block;
