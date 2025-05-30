@@ -115,6 +115,7 @@ $config: (
     border-radius: get("dot-border-radius");
     &:hover {
       background-color: color.get(get("dot-background-color-hover"));
+      border-color: color.get(get("dot-border-color-hover"));
     }
   }
   #{ $prefix-plugin }__nav-button--active,

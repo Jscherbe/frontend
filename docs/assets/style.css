@@ -16645,6 +16645,7 @@ ul.list-inline,
 }
 .Slider__nav-button:hover {
   background-color: var(--site-color-link);
+  border-color: var(--site-color-link);
 }
 
 .Slider__nav-button--active,

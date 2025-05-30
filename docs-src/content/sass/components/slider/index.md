@@ -192,7 +192,7 @@ Output component stylesheet
 - **Group:** slider
 - **Type:** mixin
 - **Lines (comments):** 76-78
-- **Lines (code):** 80-184
+- **Lines (code):** 80-185
 
 </details>
 

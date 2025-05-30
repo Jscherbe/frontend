@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.50
+
+- **scss/components/slider**
+  - Fix "dot-border-color-hover" not setup in styles
+
 ## Version 0.1.0-beta.49
 
 - **scss/color**
