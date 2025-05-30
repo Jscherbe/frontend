@@ -6,4 +6,4 @@ hideIndexInMenu: true
 iconClass: fas fa-vial
 ---
 
-This is a test page 1
+This section contains demos and tests for the various components and features in the SCSS and JS libraries.

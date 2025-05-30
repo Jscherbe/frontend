@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0-beta.52
+
+- **scss/components/slider**
+  - Remove "button-size" option (was never hooked up)
+  - Change "dot-" prefixed options to "nav-" so it's not describing it visually
+  - Change "margin-bottom" and "margin-top" to singular margin rule
+
 ## Version 0.1.0-beta.51
 
 - **scss/components/slider**

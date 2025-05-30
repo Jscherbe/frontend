@@ -12,51 +12,47 @@
 /// Module Settings
 /// @type Map
 /// @prop {Color} background-color [transparent] Background color for the entire slider section.
-/// @prop {Dimension} margin-bottom [3rem] Bottom margin color for the entire slider section.
-/// @prop {Dimension} margin-top [1rem] Top margin color for the entire slider section.
-/// @prop {Dimension} padding-bottom [0] Bottom padding for individual slides.
+/// @prop {Dimension} margin [(1rem 0 3rem 0)] Margin for slider container
 /// @prop {Dimension} padding-top [0] Top padding for individual slides.
 /// @prop {Dimension} button-icon-offset-x [false] Offsets the control icons in from their respective sides.
 /// @prop {Dimension} button-icon-offset-y [false] Offsets the control options down by adding a margin. 
 /// @prop {Dimension} button-margin [0.75rem] The margin between the controls and the slide content when using .slider__slide-gap-for-controls
-/// @prop {Dimension} button-size [3rem] Size of the button. Likely antiquated and replaced with button-width and button-height
 /// @prop {Color} nav-margin [(0.5rem 0)] Margin for nav (dots)
-/// @prop {Color} dot-background-color [transparent] The color of the dot when unselected.
-/// @prop {Color} dot-background-color-hover [color.get("link")] The color of the dot when hovered.
-/// @prop {Color} dot-background-color-selected [color.get("link")] The color of the dot when selected.
-/// @prop {Dimension} dot-border-radius [50%] The border-radius of the dot.
-/// @prop {Color} dot-border-color [color.get("link")] The border color of the dot.
-/// @prop {Color} dot-border-color-hover [color.get("link")] The border color of the dot when hovered.
-/// @prop {Color} dot-border-color-selected [color.get("link")] The border color of the dot when selected.
-/// @prop {Dimension} dot-border-width [2px] The border width of the dot.
-/// @prop {Dimension} dot-size  [1rem] The height and width of the dot.
-/// @prop {Dimension} dot-gap  [0.2rem] Gap between dots
+/// @prop {Color} nav-background-color [transparent] The color of the dot when unselected.
+/// @prop {Color} nav-background-color-hover [color.get("link")] The color of the dot when hovered.
+/// @prop {Color} nav-background-color-selected [color.get("link")] The color of the dot when selected.
+/// @prop {Dimension} nav-border-radius [50%] The border-radius of the dot.
+/// @prop {Color} nav-border-color [color.get("link")] The border color of the dot.
+/// @prop {Color} nav-border-color-hover [color.get("link")] The border color of the dot when hovered.
+/// @prop {Color} nav-border-color-selected [color.get("link")] The border color of the dot when selected.
+/// @prop {Dimension} nav-border-width [2px] The border width of the dot.
+/// @prop {Dimension} nav-size  [1rem] The height and width of the dot.
+/// @prop {Dimension} nav-gap  [0.2rem] Gap between dots
 /// @prop {Dimension} button-height  [1rem] The height of the button.
 /// @prop {Dimension} button-width  [1rem] The width of the button.
 
 $config: (
   "background-color" : transparent,
-  "margin-bottom" : 3rem,
-  "margin-top" : 1rem,
+  "margin" : (1rem 0 3rem 0),
+  "padding-bottom" : 0,
+  "padding-top" : 0,
   "button-icon-offset-x" : 2rem,
   "button-icon-offset-y" : null,
   "button-margin" : 2rem,
-  "button-size" : 3rem,
   "button-height": 2.5rem,
   "button-width": 2.5rem,
-  "dot-background-color" : transparent,
-  "dot-background-color-hover" : "link",
-  "dot-background-color-selected" : "link",
-  "dot-border-color" : "link",
-  "dot-border-color-hover" : "link",
-  "dot-border-color-selected" : "link",
-  "dot-border-radius" : 50%,
-  "dot-gap" : 0.2rem,
-  "dot-border-width" : 2px,
-  "dot-size" :  1rem,
+  "nav-background-color" : transparent,
+  "nav-background-color-hover" : "link",
+  "nav-background-color-selected" : "link",
+  "nav-border-color" : "link",
+  "nav-border-color-hover" : "link",
+  "nav-border-color-selected" : "link",
+  "nav-border-radius" : 50%,
+  "nav-gap" : 0.2rem,
+  "nav-border-width" : 2px,
+  "nav-size" :  1rem,
   "nav-margin" : (0.5rem 0),
-  "padding-bottom" : 0,
-  "padding-top" : 0,
+  
   ) !default;
   
 /// Change modules $config
@@ -88,7 +84,7 @@ $config: (
   #{ $prefix } {
     position: relative; // for controls
     background-color: color.get(get("background-color"));
-    margin: get("margin-top") 0 get("margin-bottom") 0;
+    margin: get("margin");
   }
   #{ $prefix }__track,
   #{ $prefix-plugin }__controls,
@@ -107,24 +103,24 @@ $config: (
     display: flex;
     justify-content: center;
     margin: get("nav-margin");
-    gap: get("dot-gap");
+    gap: get("nav-gap");
   }
   #{ $prefix-plugin }__nav-button {
     display: block;
-    width: get("dot-size");
-    height: get("dot-size");
-    background-color: color.get(get("dot-background-color"));
-    border: get("dot-border-width") solid color.get(get("dot-border-color"));
-    border-radius: get("dot-border-radius");
+    width: get("nav-size");
+    height: get("nav-size");
+    background-color: color.get(get("nav-background-color"));
+    border: get("nav-border-width") solid color.get(get("nav-border-color"));
+    border-radius: get("nav-border-radius");
     &:hover {
-      background-color: color.get(get("dot-background-color-hover"));
-      border-color: color.get(get("dot-border-color-hover"));
+      background-color: color.get(get("nav-background-color-hover"));
+      border-color: color.get(get("nav-border-color-hover"));
     }
   }
   #{ $prefix-plugin }__nav-button--active,
   #{ $prefix-plugin }__nav-button--active:hover {
-    background-color: color.get(get("dot-background-color-selected"));
-    border-color: color.get(get("dot-border-color-selected"));
+    background-color: color.get(get("nav-background-color-selected"));
+    border-color: color.get(get("nav-border-color-selected"));
   }
   #{ $prefix-plugin }__control-button,
   #{ $prefix-plugin }__nav-button {
