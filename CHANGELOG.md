@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.48
+
+- **scss/color**
+  - **css-tint, css-shade** Make sure colors (base white/black) use color.get()
+
 ## Version 0.1.0-beta.47
 
 - **scss/components/card**

@@ -197,7 +197,7 @@ $color-classes: (
 /// @return {Color}
 
 @function css-tint($color, $percentage) {
-  @return color-mix(in srgb, white $percentage, $color calc(100% - $percentage));
+  @return color-mix(in srgb, get("white") $percentage, get($color) calc(100% - $percentage));
 }
 
 /// Shade (add black) a color with the default black by a percentage
@@ -219,7 +219,7 @@ $color-classes: (
 /// @return {Color}
 
 @function css-shade($color, $percentage) {
-  @return color-mix(in srgb, get("black") $percentage, $color calc(100% - $percentage));
+  @return color-mix(in srgb, get("black") $percentage, get($color) calc(100% - $percentage));
 }
 
 /// Prints all context styles 

@@ -897,6 +897,11 @@ Tint (add white) a color using the default white by a percentage (Using color-mi
 
     
 
+#### Require
+
+- [get()](/sass/core/breakpoint/#function-get)
+  
+
 
 <div class="sassdoc-item-header">
 
