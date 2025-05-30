@@ -16694,25 +16694,21 @@ ul.list-inline,
 
 .Slider__control-button--previous {
   left: 0;
-  margin-left: 2rem;
 }
 
 .Slider__control-button--next {
   right: 0;
-  margin-right: 2rem;
 }
 
 .slider--inset-controls .slider__slide-gap-for-controls {
-  padding-left: 6.5rem;
-  padding-right: 6.5rem;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
 }
 .slider--inset-controls .Slider__control-button--previous {
   left: 0;
-  margin-left: 2rem;
 }
 .slider--inset-controls .Slider__control-button--next {
   right: 0;
-  margin-right: 2rem;
 }
 
 /* 

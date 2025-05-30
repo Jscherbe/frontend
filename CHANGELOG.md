@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.53
+
+- **scss/components/slider**
+  - Remove "button-height" option not setup in styles
+  - Change "button-icon-offset-x/y" to "button-offset-x/y" since it only controls the button offsets not related to an icon
+
 ## Version 0.1.0-beta.52
 
 - **scss/components/slider**
@@ -15,7 +21,7 @@
 ## Version 0.1.0-beta.50
 
 - **scss/components/slider**
-  - Fix "dot-border-color-hover" not setup in styles
+  - Remove "dot-border-color-hover" option not setup in styles
 
 ## Version 0.1.0-beta.49
 

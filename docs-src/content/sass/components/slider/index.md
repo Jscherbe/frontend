@@ -41,10 +41,9 @@ $config: (
   "margin" : (1rem 0 3rem 0),
   "padding-bottom" : 0,
   "padding-top" : 0,
-  "button-icon-offset-x" : 2rem,
-  "button-icon-offset-y" : null,
+  "button-offset-x" : null,
+  "button-offset-y" : null,
   "button-margin" : 2rem,
-  "button-height": 2.5rem,
   "button-width": 2.5rem,
   "nav-background-color" : transparent,
   "nav-background-color-hover" : "link",
@@ -69,8 +68,8 @@ $config: (
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** variable
-- **Lines (comments):** 12-32
-- **Lines (code):** 34-56
+- **Lines (comments):** 12-31
+- **Lines (code):** 33-54
 
 </details>
 
@@ -84,8 +83,8 @@ $config: (
 |background-color|Color|transparent|Background color for the entire slider section.|
 |margin|Dimension|(1rem 0 3rem 0)|Margin for slider container|
 |padding-top|Dimension|0|Top padding for individual slides.|
-|button-icon-offset-x|Dimension|false|Offsets the control icons in from their respective sides.|
-|button-icon-offset-y|Dimension|false|Offsets the control options down by adding a margin.|
+|button-offset-x|Dimension|null|Offsets the control button in from their respective sides.|
+|button-offset-y|Dimension|null|Offsets the control button y|
 |button-margin|Dimension|0.75rem|The margin between the controls and the slide content when using .slider__slide-gap-for-controls|
 |nav-margin|Color|(0.5rem 0)|Margin for nav (dots)|
 |nav-background-color|Color|transparent|The color of the dot when unselected.|
@@ -97,8 +96,7 @@ $config: (
 |nav-border-color-selected|Color|color.get("link")|The border color of the dot when selected.|
 |nav-border-width|Dimension|2px|The border width of the dot.|
 |nav-size|Dimension|1rem|The height and width of the dot.|
-|nav-gap|Dimension|0.2rem|Gap between dots|
-|button-height|Dimension|1rem|The height of the button.|
+|nav-gap|Dimension|0.2rem|Gap between nav items|
 |button-width|Dimension|1rem|The width of the button.|
 
     
@@ -132,8 +130,8 @@ Change modules $config
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 58-61
-- **Lines (code):** 63-65
+- **Lines (comments):** 56-59
+- **Lines (code):** 61-63
 
 </details>
 
@@ -191,8 +189,8 @@ Output component stylesheet
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** mixin
-- **Lines (comments):** 76-78
-- **Lines (code):** 80-184
+- **Lines (comments):** 74-76
+- **Lines (code):** 78-182
 
 </details>
 
@@ -246,8 +244,8 @@ Get a config option
 - **File:** _slider.scss
 - **Group:** slider
 - **Type:** function
-- **Lines (comments):** 67-70
-- **Lines (code):** 72-74
+- **Lines (comments):** 65-68
+- **Lines (code):** 70-72
 
 </details>
 

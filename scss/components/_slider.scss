@@ -14,8 +14,8 @@
 /// @prop {Color} background-color [transparent] Background color for the entire slider section.
 /// @prop {Dimension} margin [(1rem 0 3rem 0)] Margin for slider container
 /// @prop {Dimension} padding-top [0] Top padding for individual slides.
-/// @prop {Dimension} button-icon-offset-x [false] Offsets the control icons in from their respective sides.
-/// @prop {Dimension} button-icon-offset-y [false] Offsets the control options down by adding a margin. 
+/// @prop {Dimension} button-offset-x [null] Offsets the control button in from their respective sides.
+/// @prop {Dimension} button-offset-y [null] Offsets the control button y
 /// @prop {Dimension} button-margin [0.75rem] The margin between the controls and the slide content when using .slider__slide-gap-for-controls
 /// @prop {Color} nav-margin [(0.5rem 0)] Margin for nav (dots)
 /// @prop {Color} nav-background-color [transparent] The color of the dot when unselected.
@@ -27,8 +27,7 @@
 /// @prop {Color} nav-border-color-selected [color.get("link")] The border color of the dot when selected.
 /// @prop {Dimension} nav-border-width [2px] The border width of the dot.
 /// @prop {Dimension} nav-size  [1rem] The height and width of the dot.
-/// @prop {Dimension} nav-gap  [0.2rem] Gap between dots
-/// @prop {Dimension} button-height  [1rem] The height of the button.
+/// @prop {Dimension} nav-gap  [0.2rem] Gap between nav items
 /// @prop {Dimension} button-width  [1rem] The width of the button.
 
 $config: (
@@ -36,10 +35,9 @@ $config: (
   "margin" : (1rem 0 3rem 0),
   "padding-bottom" : 0,
   "padding-top" : 0,
-  "button-icon-offset-x" : 2rem,
-  "button-icon-offset-y" : null,
+  "button-offset-x" : null,
+  "button-offset-y" : null,
   "button-margin" : 2rem,
-  "button-height": 2.5rem,
   "button-width": 2.5rem,
   "nav-background-color" : transparent,
   "nav-background-color-hover" : "link",
@@ -97,7 +95,7 @@ $config: (
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    margin-top: get("button-icon-offset-y");
+    margin-top: get("button-offset-y");
   }
   #{ $prefix-plugin }__nav {
     display: flex;
@@ -160,25 +158,25 @@ $config: (
   }
   #{ $prefix-plugin }__control-button--previous {
     left: 0;
-    margin-left: get("button-icon-offset-x");
+    margin-left: get("button-offset-x");
   }
   #{ $prefix-plugin }__control-button--next {
     right: 0;
-    margin-right: get("button-icon-offset-x");
+    margin-right: get("button-offset-x");
   }
   #{ $prefix }--inset-controls {
     #{ $prefix }__slide-gap-for-controls {
-      $padding: get("button-width") + get("button-margin") + get("button-icon-offset-x");
+      $padding: get("button-width") + get("button-margin") + get("button-offset-x");
       padding-left: $padding;
       padding-right: $padding;
     }
     #{ $prefix-plugin }__control-button--previous {
       left: 0;
-      margin-left: get("button-icon-offset-x");
+      margin-left: get("button-offset-x");
     }
     #{ $prefix-plugin }__control-button--next {
       right: 0;
-      margin-right: get("button-icon-offset-x");
+      margin-right: get("button-offset-x");
     }
   }
 }
