@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.49
+
+- **scss/color**
+  - Allow color.get() to passthrough colors that are "color-mix()"
+  
 ## Version 0.1.0-beta.48
 
 - **scss/color**

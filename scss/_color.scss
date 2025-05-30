@@ -101,8 +101,11 @@ $color-classes: (
 @function get($name) {
   // Allow non lookup if the value is already a color (helps with code flow)
   @if (meta.type-of($name) == "string") {
+    $is-keyword: $name == "inherit" or $name == "transparent" or $name == "currentColor";
+    $is-cssvar: string.index($name, "var(") == 1;
+    $is-color-mix: string.index($name, "color-mix(") == 1;
     // Allow custom-properties and keyword inherit/transparent to pass through
-    @if ($name == "inherit" or $name == "transparent" or $name == "currentColor" or string.index($name, "var(") == 1) {
+    @if ($is-keyword or $is-cssvar or $is-color-mix) {
       @return $name;
     // Else look up the color from the palette
     } @else {
