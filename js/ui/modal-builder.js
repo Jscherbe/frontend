@@ -21,12 +21,41 @@ export const initializer = new ComponentInitializer({
 /**
  * Default builder options (extends dialog defaults, watch name collisions)
  * - Decided to extend defaults so the interface in HTML is singular
- *   - This is sometimes easier to template (merging and serializing options 
- *     in twig for example)
+ * - This is sometimes easier to template (merging and serializing options
+ * in twig for example)
+ * @typedef {object} DefaultModalOptions
+ * @property {string|null} title - The title of the modal. Defaults to `null`.
+ * @property {string|null} titleIcon - The class name for an icon to display in the title. Defaults to `null`.
+ * @property {string} titleClass - Extra class/classes to add to title
+ * @property {boolean} nonModal - If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`.
+ * @property {boolean} documentEnd - If `true`, the modal will be appended to the end of the `document.body`. Defaults to `true`.
+ * @property {boolean} allowResize - If `true`, the modal will be resizable. Defaults to `false`.
+ * @property {"center"|"top-left"|"top-center"|"top-right"|"bottom-left"|"bottom-center"|"bottom-right"} position - The initial position of the modal. Defaults to `"center"`.
+ * @property {boolean} bodyFills - If `true`, the modal body will fill the available space. Defaults to `false`.
+ * @property {boolean} noBackdrop - If `true`, no backdrop will be displayed behind the modal. Defaults to `false`.
+ * @property {"default"|"small"|"large"|"fullscreen"} size - The size of the modal. Defaults to `"default"`.
+ * @property {boolean} print - If `true`, the modal content will be optimized for printing. Defaults to `false`.
+ * @property {boolean} noMinHeight - If `true`, the modal will not have a minimum height. Defaults to `false`.
+ * @property {string} class - Additional CSS class(es) to add to the modal. Defaults to `""`.
+ * @property {string} baseClass - The base CSS class for the modal elements. Defaults to `"modal"`.
+ * @property {string} classCloseIcon - The class name for the close icon. Uses the wrapped setting string.
+ * @property {string} classResizerIcon - The class name for the resizer icon. Uses the wrapped setting string.
+ * @property {boolean} debug - Enables debug logging. Defaults to `false`.
+ * @property {function(object): string} templateCloseIcon - A function that returns the HTML for the close icon.
+ * @property {function(object): string} templateCloseIcon.config - The resolved modal configuration object.
+ * @returns {string} The HTML string for the close icon.
+ * @property {function(object): string} templateResizerIcon - A function that returns the HTML for the resizer icon.
+ * @property {function(object): string} templateResizerIcon.config - The resolved modal configuration object.
+ * @returns {string} The HTML string for the resizer icon.
+ * @property {function(string, DefaultModalOptions): string} template - The default modal template function.
+ * @param {string} template.id - The ID for the new modal.
+ * @param {DefaultModalOptions} template.config - The resolved modal options.
+ * @returns {string} Markup for the modal.
  */
 export const defaults = {
   title: null,
   titleIcon: null,
+  titleClass: "",
   nonModal: false,
   documentEnd: true,
   allowResize: false,
@@ -72,7 +101,7 @@ export const defaults = {
       <dialog id="${ id }" class="${ classes.join(" ") }">
         ${ config.title ? `
           <header class="${ baseClass }__header">
-            <h2 class="${ baseClass }__title">
+            <h2 class="${ baseClass }__title ${ config.titleClass }">
               ${ config.titleIcon ? 
                 `<span class="${ baseClass }__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
               }

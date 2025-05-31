@@ -1201,6 +1201,7 @@ const initializer$c = new ComponentInitializer({
 const defaults$9 = {
   title: null,
   titleIcon: null,
+  titleClass: "",
   nonModal: false,
   documentEnd: true,
   allowResize: false,
@@ -1246,7 +1247,7 @@ const defaults$9 = {
       <dialog id="${id2}" class="${classes.join(" ")}">
         ${config2.title ? `
           <header class="${baseClass}__header">
-            <h2 class="${baseClass}__title">
+            <h2 class="${baseClass}__title ${config2.titleClass}">
               ${config2.titleIcon ? `<span class="${baseClass}__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="${baseClass}__title-text">${config2.title}</span>
             </h2>

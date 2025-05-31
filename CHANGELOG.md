@@ -1,5 +1,11 @@
 # Change Log
 
+## Version 0.1.0-beta.54
+
+- **js/ui/modal-builder**
+  - Add option for titleClass
+  - Fill in jsdoc documentation for defaults 
+
 ## Version 0.1.0-beta.53
 
 - **scss/components/slider**

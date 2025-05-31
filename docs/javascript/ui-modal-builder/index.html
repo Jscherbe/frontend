@@ -5171,9 +5171,6 @@
                     <li><a href="#ui%2Fmodal-builder.initializer">ui/modal-builder.initializer</a>
             		</li>
 
-                    <li><a href="#ui%2Fmodal-builder.defaults">ui/modal-builder.defaults</a>
-            		</li>
-
                     <li><a href="#ui%2Fmodal-builder.setdefaults(options)">ui/modal-builder.setDefaults(options)</a>
             		</li>
 
@@ -5184,6 +5181,9 @@
             		</li>
 
                     <li><a href="#ui%2Fmodal-builder~separatedialogoptions(config)-%E2%87%92-object">ui/modal-builder~separateDialogOptions(config) ⇒ Object</a>
+            		</li>
+
+                    <li><a href="#ui%2Fmodal-builder~defaultmodaloptions-%E2%87%92-string-%7C-string-%7C-string">ui/modal-builder~DefaultModalOptions ⇒ string | string | string</a>
             		</li>
                 </ol>
             </div>
@@ -5205,7 +5205,6 @@
 <li><em>static</em>
 <ul>
 <li><a href="#module_ui/modal-builder.initializer">.initializer</a></li>
-<li><a href="#module_ui/modal-builder.defaults">.defaults</a></li>
 <li><a href="#module_ui/modal-builder.setDefaults">.setDefaults(options)</a></li>
 <li><a href="#module_ui/modal-builder.init">.init()</a></li>
 <li><a href="#module_ui/modal-builder.buildModal">.buildModal(content, options)</a></li>
@@ -5214,6 +5213,7 @@
 <li><em>inner</em>
 <ul>
 <li><a href="#module_ui/modal-builder..separateDialogOptions">~separateDialogOptions(config)</a> ⇒ <code>Object</code></li>
+<li><a href="#module_ui/modal-builder..DefaultModalOptions">~DefaultModalOptions</a> ⇒ <code>string</code> | <code>string</code> | <code>string</code></li>
 </ul>
 </li>
 </ul>
@@ -5222,18 +5222,6 @@
 <p><a name="module_ui/modal-builder.initializer"></a></p>
 <h2 id="ui%2Fmodal-builder.initializer" tabindex="-1">ui/modal-builder.initializer</h2>
 <p>Modal Builder Component Initializer</p>
-<p><strong>Kind</strong>: static constant of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a><br>
-<a name="module_ui/modal-builder.defaults"></a></p>
-<h2 id="ui%2Fmodal-builder.defaults" tabindex="-1">ui/modal-builder.defaults</h2>
-<p>Default builder options (extends dialog defaults, watch name collisions)</p>
-<ul>
-<li>Decided to extend defaults so the interface in HTML is singular
-<ul>
-<li>This is sometimes easier to template (merging and serializing options
-in twig for example)</li>
-</ul>
-</li>
-</ul>
 <p><strong>Kind</strong>: static constant of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a><br>
 <a name="module_ui/modal-builder.setDefaults"></a></p>
 <h2 id="ui%2Fmodal-builder.setdefaults(options)" tabindex="-1">ui/modal-builder.setDefaults(options)</h2>
@@ -5302,6 +5290,159 @@ in twig for example)</li>
 <td>config</td>
 <td><code>Object</code></td>
 <td>Config object to pull dialog specific settings from</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/modal-builder..DefaultModalOptions"></a></p>
+<h2 id="ui%2Fmodal-builder~defaultmodaloptions-%E2%87%92-string-%7C-string-%7C-string" tabindex="-1">ui/modal-builder~DefaultModalOptions ⇒ <code>string</code> | <code>string</code> | <code>string</code></h2>
+<p>Default builder options (extends dialog defaults, watch name collisions)</p>
+<ul>
+<li>Decided to extend defaults so the interface in HTML is singular</li>
+<li>This is sometimes easier to template (merging and serializing options
+in twig for example)</li>
+</ul>
+<p><strong>Kind</strong>: inner typedef of <a href="#module_ui/modal-builder"><code>ui/modal-builder</code></a><br>
+<strong>Returns</strong>: <code>string</code> - The HTML string for the close icon.<code>string</code> - The HTML string for the resizer icon.<code>string</code> - Markup for the modal.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>template.id</td>
+<td><code>string</code></td>
+<td>The ID for the new modal.</td>
+</tr>
+<tr>
+<td>template.config</td>
+<td><code>DefaultModalOptions</code></td>
+<td>The resolved modal options.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td><code>string</code> | <code>null</code></td>
+<td>The title of the modal. Defaults to <code>null</code>.</td>
+</tr>
+<tr>
+<td>titleIcon</td>
+<td><code>string</code> | <code>null</code></td>
+<td>The class name for an icon to display in the title. Defaults to <code>null</code>.</td>
+</tr>
+<tr>
+<td>titleClass</td>
+<td><code>string</code></td>
+<td>Extra class/classes to add to title</td>
+</tr>
+<tr>
+<td>nonModal</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, the modal will not prevent interaction with elements behind it. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>documentEnd</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, the modal will be appended to the end of the <code>document.body</code>. Defaults to <code>true</code>.</td>
+</tr>
+<tr>
+<td>allowResize</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, the modal will be resizable. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>position</td>
+<td><code>&quot;center&quot;</code> | <code>&quot;top-left&quot;</code> | <code>&quot;top-center&quot;</code> | <code>&quot;top-right&quot;</code> | <code>&quot;bottom-left&quot;</code> | <code>&quot;bottom-center&quot;</code> | <code>&quot;bottom-right&quot;</code></td>
+<td>The initial position of the modal. Defaults to <code>&quot;center&quot;</code>.</td>
+</tr>
+<tr>
+<td>bodyFills</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, the modal body will fill the available space. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>noBackdrop</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, no backdrop will be displayed behind the modal. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>size</td>
+<td><code>&quot;default&quot;</code> | <code>&quot;small&quot;</code> | <code>&quot;large&quot;</code> | <code>&quot;fullscreen&quot;</code></td>
+<td>The size of the modal. Defaults to <code>&quot;default&quot;</code>.</td>
+</tr>
+<tr>
+<td>print</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, the modal content will be optimized for printing. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>noMinHeight</td>
+<td><code>boolean</code></td>
+<td>If <code>true</code>, the modal will not have a minimum height. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>class</td>
+<td><code>string</code></td>
+<td>Additional CSS class(es) to add to the modal. Defaults to <code>&quot;&quot;</code>.</td>
+</tr>
+<tr>
+<td>baseClass</td>
+<td><code>string</code></td>
+<td>The base CSS class for the modal elements. Defaults to <code>&quot;modal&quot;</code>.</td>
+</tr>
+<tr>
+<td>classCloseIcon</td>
+<td><code>string</code></td>
+<td>The class name for the close icon. Uses the wrapped setting string.</td>
+</tr>
+<tr>
+<td>classResizerIcon</td>
+<td><code>string</code></td>
+<td>The class name for the resizer icon. Uses the wrapped setting string.</td>
+</tr>
+<tr>
+<td>debug</td>
+<td><code>boolean</code></td>
+<td>Enables debug logging. Defaults to <code>false</code>.</td>
+</tr>
+<tr>
+<td>templateCloseIcon</td>
+<td><code>function</code></td>
+<td>A function that returns the HTML for the close icon.</td>
+</tr>
+<tr>
+<td>templateCloseIcon.config</td>
+<td><code>function</code></td>
+<td>The resolved modal configuration object.</td>
+</tr>
+<tr>
+<td>templateResizerIcon</td>
+<td><code>function</code></td>
+<td>A function that returns the HTML for the resizer icon.</td>
+</tr>
+<tr>
+<td>templateResizerIcon.config</td>
+<td><code>function</code></td>
+<td>The resolved modal configuration object.</td>
+</tr>
+<tr>
+<td>template</td>
+<td><code>function</code></td>
+<td>The default modal template function.</td>
 </tr>
 </tbody>
 </table>
