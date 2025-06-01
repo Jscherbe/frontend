@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.56
+
+- **scss/components/counter-list**
+  - Add counter (font-family, font-weight)
+
 ## Version 0.1.0-beta.55
 
 - **scss/components/counter-list**

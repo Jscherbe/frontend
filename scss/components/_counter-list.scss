@@ -32,6 +32,8 @@ $config: (
   "counter-style" : numeric,
   "counter-border-radius" : 50%,
   "counter-font-size" : 1.2em,
+  "counter-font-weight" : null,
+  "counter-font-family" : null,
   "counter-color" : white,
   "counter-background-color" : "accent",
 ) !default;
@@ -90,6 +92,8 @@ $config: (
       counter-increment: ulu-counter-list;
       content: counter(ulu-counter-list, get("counter-style"));
       font-size: get("counter-font-size");
+      font-family: get("counter-font-family");
+      font-weight: get("counter-font-weight");
       color: color.get(get("counter-color"));
       background-color: color.get(get("counter-background-color"));
       border-radius: get("counter-border-radius");

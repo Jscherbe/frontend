@@ -46,6 +46,8 @@ $config: (
   "counter-style" : numeric,
   "counter-border-radius" : 50%,
   "counter-font-size" : 1.2em,
+  "counter-font-weight" : null,
+  "counter-font-family" : null,
   "counter-color" : white,
   "counter-background-color" : "accent",
 );
@@ -60,7 +62,7 @@ $config: (
 - **Group:** counter-list
 - **Type:** variable
 - **Lines (comments):** 11-23
-- **Lines (code):** 25-37
+- **Lines (code):** 25-39
 
 </details>
 
@@ -114,8 +116,8 @@ Change modules $config
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 39-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 41-44
+- **Lines (code):** 46-48
 
 </details>
 
@@ -173,8 +175,8 @@ Output counter-list component styles
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 57-64
-- **Lines (code):** 66-133
+- **Lines (comments):** 59-66
+- **Lines (code):** 68-137
 
 </details>
 
@@ -256,8 +258,8 @@ Get a config option
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** function
-- **Lines (comments):** 48-51
-- **Lines (code):** 53-55
+- **Lines (comments):** 50-53
+- **Lines (code):** 55-57
 
 </details>
 
