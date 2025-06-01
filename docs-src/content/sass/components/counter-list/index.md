@@ -71,17 +71,17 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|margin|List|(2rem 0)|The top and bottom margin of the list.|
-|item-margin|List|(0, 0, 1rem, 0)|The margin applied to each list item.|
+|margin|List|CssUnit|(2rem 0)|The top and bottom margin of the list.|
+|item-margin|List|CssUnit|(0, 0, 1rem, 0)|The margin applied to each list item.|
 |align-items|Keyword|baseline|How to align the counter (flexbox align-items values)|
-|counter-width|Length|2.4em|The width and height (if height is falsy)|
-|counter-height|Length|null|The height (optional)|
-|counter-gap|Length|1em|The gap between the counter and the list item content.|
+|counter-width|CssUnit|2.4em|The width and height (if height is falsy)|
+|counter-height|CssUnit|null|The height (optional)|
+|counter-gap|CssUnit|1em|The gap between the counter and the list item content.|
 |counter-style|String|numeric|The list-style-type used for the counter.|
 |counter-border-radius|Keyword|Percentage|50%|The border-radius of the counter element.|
-|counter-font-size|Length|1.2em|The font-size of the counter text.|
-|counter-color|String|white|The text color of the counter. Accepts color names or hex codes.|
-|counter-background-color|String|"accent"|The background color of the counter. Refers to a color in the color module.|
+|counter-font-size|CssUnit|1.2em|The font-size of the counter text.|
+|counter-color|Color|String|white|The text color of the counter. Accepts color names or hex codes.|
+|counter-background-color|Color|String|"accent"|The background color of the counter. Refers to a color in the color module.|
 
     
   

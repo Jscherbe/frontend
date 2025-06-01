@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.55
+
+- **scss/components/counter-list**
+  - Fix selector (was nested if using .counter-list__item), Updates for API for $config
+
 ## Version 0.1.0-beta.54
 
 - **js/ui/modal-builder**

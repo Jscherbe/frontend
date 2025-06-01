@@ -10,17 +10,17 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {List} margin [(2rem 0)] The top and bottom margin of the list.
-/// @prop {List} item-margin [(0, 0, 1rem, 0)] The margin applied to each list item.
+/// @prop {List|CssUnit} margin [(2rem 0)] The top and bottom margin of the list.
+/// @prop {List|CssUnit} item-margin [(0, 0, 1rem, 0)] The margin applied to each list item.
 /// @prop {Keyword} align-items [baseline] How to align the counter (flexbox align-items values)
-/// @prop {Length} counter-width [2.4em] The width and height (if height is falsy)
-/// @prop {Length} counter-height [null] The height (optional)
-/// @prop {Length} counter-gap [1em] The gap between the counter and the list item content.
+/// @prop {CssUnit} counter-width [2.4em] The width and height (if height is falsy)
+/// @prop {CssUnit} counter-height [null] The height (optional)
+/// @prop {CssUnit} counter-gap [1em] The gap between the counter and the list item content.
 /// @prop {String} counter-style [numeric] The list-style-type used for the counter.
 /// @prop {Keyword|Percentage} counter-border-radius [50%] The border-radius of the counter element.
-/// @prop {Length} counter-font-size [1.2em] The font-size of the counter text.
-/// @prop {String} counter-color [white] The text color of the counter. Accepts color names or hex codes.
-/// @prop {String} counter-background-color ["accent"] The background color of the counter. Refers to a color in the color module.
+/// @prop {CssUnit} counter-font-size [1.2em] The font-size of the counter text.
+/// @prop {Color|String} counter-color [white] The text color of the counter. Accepts color names or hex codes.
+/// @prop {Color|String} counter-background-color ["accent"] The background color of the counter. Refers to a color in the color module.
 
 $config: (
   "margin" : (2rem 0),
@@ -71,47 +71,47 @@ $config: (
   #{ $prefix } {
     margin: get("margin");
     counter-reset: ulu-counter-list;
+  }
 
-    & > li,
-    & > #{ $prefix }__item {
+  #{ $prefix } > li,
+  #{ $prefix }__item {
+    display: flex;
+    gap: get("counter-gap");
+    align-items: get("align-items");
+    margin: get("item-margin");
+    min-height: $height;
+    &::before {
       display: flex;
-      gap: get("counter-gap");
-      align-items: get("align-items");
-      margin: get("item-margin");
-      min-height: $height;
-      &::before {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: $width;
-        height: $height;
-        flex: 0 0 $width;
-        counter-increment: ulu-counter-list;
-        content: counter(ulu-counter-list, get("counter-style"));
-        font-size: get("counter-font-size");
-        color: color.get(get("counter-color"));
-        background-color: color.get(get("counter-background-color"));
-        border-radius: get("counter-border-radius");
-      }
-
-      // Keeping this could be useful
-      // but we need to think about how its setup
-      // - Probably should be a modifier (choice)
-      // - May need either option for how align-items is set (flex-start vs center)
-      // - This could be useful when used in grid
-      // - May need to be pervasive and not linked to a breakpoint (alternate style)
-      // - It's also just useful to know you could override the layout like this 
-      //   to get useful variations (maybe we don't need to include it but users 
-      //   can do specific)
-      // @if ( get("counter-mobile-toggle") ) {
-      //   @include breakpoint.max("small") {
-      //     padding-left: 0;
-      //     padding-top: calc(get("counter-width") + get("counter-gap-mobile"));
-      //     flex-direction: column;
-      //     align-items: center;
-      //   }
-      // }
+      align-items: center;
+      justify-content: center;
+      width: $width;
+      height: $height;
+      flex: 0 0 $width;
+      counter-increment: ulu-counter-list;
+      content: counter(ulu-counter-list, get("counter-style"));
+      font-size: get("counter-font-size");
+      color: color.get(get("counter-color"));
+      background-color: color.get(get("counter-background-color"));
+      border-radius: get("counter-border-radius");
     }
+
+    // Keeping this could be useful
+    // but we need to think about how its setup
+    // - Probably should be a modifier (choice)
+    // - May need either option for how align-items is set (flex-start vs center)
+    // - This could be useful when used in grid
+    // - May need to be pervasive and not linked to a breakpoint (alternate style)
+    // - It's also just useful to know you could override the layout like this 
+    //   to get useful variations (maybe we don't need to include it but users 
+    //   can do specific)
+    // @if ( get("counter-mobile-toggle") ) {
+    //   @include breakpoint.max("small") {
+    //     padding-left: 0;
+    //     padding-top: calc(get("counter-width") + get("counter-gap-mobile"));
+    //     flex-direction: column;
+    //     align-items: center;
+    //   }
+    // }
   }
 
   // Modifiers
