@@ -8781,18 +8781,18 @@ const _Slider = class _Slider {
     }
   }
   setupSwipe() {
-    const { track } = this.elements;
     const images = this.elements.track.querySelectorAll("img");
-    this.swipeInstance = setupSwipeListener(track, {
-      preventScroll: true
-    });
     this.swipeListener = (event) => {
       this.onSwipe(event);
     };
     this.swipeImageListener = (event) => {
       event.preventDefault();
     };
-    track.addEventListener("swipe", this.swipeListener);
+    this.slides.forEach((slide) => {
+      const { element } = slide;
+      slide.swipeInstance = setupSwipeListener(element);
+      element.addEventListener("swipe", this.swipeListener);
+    });
     images.forEach((image) => {
       image.addEventListener("dragstart", this.swipeImageListener);
     });
