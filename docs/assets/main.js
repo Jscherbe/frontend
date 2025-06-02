@@ -8790,7 +8790,7 @@ const _Slider = class _Slider {
     };
     this.slides.forEach((slide) => {
       const { element } = slide;
-      slide.swipeInstance = setupSwipeListener(element);
+      slide.swipeInstance = setupSwipeListener(element, this.options.swipeOptions);
       element.addEventListener("swipe", this.swipeListener);
     });
     images.forEach((image) => {
@@ -8934,8 +8934,10 @@ __publicField(_Slider, "defaults", {
   buttonClasses: ["button", "button--icon"],
   iconClassPrevious: wrapSettingString("iconClassPrevious"),
   iconClassNext: wrapSettingString("iconClassNext"),
-  swipeEnabled: true
-  // transition: true
+  swipeEnabled: true,
+  swipeOptions: {
+    preventScroll: true
+  }
 });
 let Slider = _Slider;
 const slider = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({

@@ -1,5 +1,12 @@
 # Change Log
 
+## Version 0.1.0-beta.58
+
+- **js/ui/slider**
+  - Change slider swipe to be on slides
+  - Add options for swipeOptions to configure ["swipe-listener"](https://www.npmjs.com/package/swipe-listener) library (see it's documentation for options)
+    - Adding preventScroll by default
+
 ## Version 0.1.0-beta.57
 
 - **js/ui/slider**

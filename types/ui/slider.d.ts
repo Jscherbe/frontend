@@ -33,6 +33,9 @@ export class Slider {
         iconClassPrevious: any;
         iconClassNext: any;
         swipeEnabled: boolean;
+        swipeOptions: {
+            preventScroll: boolean;
+        };
     };
     constructor(elements: any, config: any);
     options: any;

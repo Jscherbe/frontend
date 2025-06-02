@@ -128,8 +128,9 @@ export class Slider {
     iconClassPrevious: wrapSettingString("iconClassPrevious"),
     iconClassNext: wrapSettingString("iconClassNext"),
     swipeEnabled: true,
-    
-    // transition: true
+    swipeOptions: {
+      preventScroll: true
+    }
   }
   constructor(elements, config) {
     const options = Object.assign({}, Slider.defaults, config);
@@ -436,7 +437,7 @@ export class Slider {
     };
     this.slides.forEach(slide => {
       const { element } = slide;
-      slide.swipeInstance = setupSwipeListener(element);
+      slide.swipeInstance = setupSwipeListener(element, this.options.swipeOptions);
       element.addEventListener("swipe", this.swipeListener);
     });
     
