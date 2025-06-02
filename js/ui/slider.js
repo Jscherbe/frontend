@@ -20,6 +20,8 @@
 //                                    async stuff to promises and simplify
 //                            1.0.4 | Remove live region announcement (only used if auto rotate)
 
+// Todo:                      - Create destroy method to cleanup listeners
+
 // Reference:                 https://www.w3.org/WAI/tutorials/carousels/working-example/
 //                            https://www.w3.org/TR/wai-aria-practices/examples/carousel/carousel-1.html#
 //                            https://www.w3.org/TR/wai-aria-practices-1.1/examples/carousel/carousel-1.html
@@ -35,6 +37,7 @@ import { hasRequiredProps } from '@ulu/utils/object.js';
 import { trimWhitespace } from "@ulu/utils/string.js";
 import { debounce } from "@ulu/utils/performance.js";
 import { log, logError, logWarning } from "../utils/class-logger.js";
+import setupSwipeListener from "swipe-listener";
 
 /**
  * Slider Component Initializer
@@ -124,6 +127,8 @@ export class Slider {
     buttonClasses: ["button", "button--icon"],
     iconClassPrevious: wrapSettingString("iconClassPrevious"),
     iconClassNext: wrapSettingString("iconClassNext"),
+    swipeEnabled: true,
+    
     // transition: true
   }
   constructor(elements, config) {
@@ -131,6 +136,9 @@ export class Slider {
     this.options = options;
     this.slide = null;
     this.index = null;
+    this.swipeInstance = null;
+    this.swipeListener = null;
+    this.swipeImageListener = null;
     this.transitioning = false;
 
     if (!hasRequiredProps(requiredElements)) {
@@ -398,13 +406,46 @@ export class Slider {
     const trackCss = trimWhitespace(this.trackCss());
     const trackContainerStyles = trimWhitespace(this.trackContainerStyles());
     const slideCss = trimWhitespace(this.slideCss());
+
     track.setAttribute("style", trackCss);
     trackContainer.setAttribute("style", trackContainerStyles);
+
     this.slides.forEach(slide => {
       slide.element.setAttribute("style", slideCss);
       slide.element.setAttribute('tabindex', '-1');
     });
+    
     container.classList.add(this.getClass());
+
+    if (this.options.swipeEnabled) {
+      this.setupSwipe();
+    }
+  }
+  setupSwipe() {
+    const { track } = this.elements;
+    const images = this.elements.track.querySelectorAll("img");
+    
+    // Cache for future destroy
+    this.swipeInstance = setupSwipeListener(track);
+    this.swipeListener = (event) => {
+      this.onSwipe(event);
+    }
+    this.swipeImageListener = (event) => {
+      event.preventDefault(); // Allow swiping on images
+    };
+
+    track.addEventListener("swipe", this.swipeListener);
+    
+    images.forEach(image => {
+      image.addEventListener('dragstart', this.swipeImageListener);
+    });
+  }
+  onSwipe(event) {
+    const { directions } = event.detail;
+    const method = directions.left ? "next" : directions.right ? "previous" : null;
+    if (method) {
+      this[method](event);
+    }
   }
   trackContainerStyles() {
     // Crop translated track

@@ -1,5 +1,10 @@
 # Change Log
 
+## Version 0.1.0-beta.57
+
+- **js/ui/slider**
+  - Setup swipe listener and add option for swipeEnabled (true by default)
+
 ## Version 0.1.0-beta.56
 
 - **scss/components/counter-list**
