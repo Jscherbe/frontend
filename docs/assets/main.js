@@ -8783,7 +8783,9 @@ const _Slider = class _Slider {
   setupSwipe() {
     const { track } = this.elements;
     const images = this.elements.track.querySelectorAll("img");
-    this.swipeInstance = setupSwipeListener(track);
+    this.swipeInstance = setupSwipeListener(track, {
+      preventScroll: true
+    });
     this.swipeListener = (event) => {
       this.onSwipe(event);
     };

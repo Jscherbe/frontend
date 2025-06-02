@@ -426,7 +426,9 @@ export class Slider {
     const images = this.elements.track.querySelectorAll("img");
     
     // Cache for future destroy
-    this.swipeInstance = setupSwipeListener(track);
+    this.swipeInstance = setupSwipeListener(track, {
+      preventScroll: true
+    });
     this.swipeListener = (event) => {
       this.onSwipe(event);
     }
