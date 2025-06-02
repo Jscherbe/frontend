@@ -8417,6 +8417,74 @@ var tabFocusExports = tabFocus.exports;
 })(_maintain, _maintain.exports);
 var _maintainExports = _maintain.exports;
 const maintain = /* @__PURE__ */ getDefaultExportFromCjs(_maintainExports);
+var swipeListener_min = { exports: {} };
+(function(module) {
+  var _extends = Object.assign || function(a) {
+    for (var b, c = 1; c < arguments.length; c++) for (var d in b = arguments[c], b) Object.prototype.hasOwnProperty.call(b, d) && (a[d] = b[d]);
+    return a;
+  }, SwipeListener = function(a, b) {
+    if (a) {
+      "undefined" != typeof window && function() {
+        function a2(a3, b2) {
+          b2 = b2 || { bubbles: false, cancelable: false, detail: void 0 };
+          var c2 = document.createEvent("CustomEvent");
+          return c2.initCustomEvent(a3, b2.bubbles, b2.cancelable, b2.detail), c2;
+        }
+        return "function" != typeof window.CustomEvent && void (a2.prototype = window.Event.prototype, window.CustomEvent = a2);
+      }();
+      b || (b = {}), b = _extends({}, { minHorizontal: 10, minVertical: 10, deltaHorizontal: 3, deltaVertical: 5, preventScroll: false, lockAxis: true, touch: true, mouse: true }, b);
+      var c = [], d = false, e = function() {
+        d = true;
+      }, f = function(a2) {
+        d = false, h(a2);
+      }, g = function(a2) {
+        d && (a2.changedTouches = [{ clientX: a2.clientX, clientY: a2.clientY }], i(a2));
+      };
+      b.mouse && (a.addEventListener("mousedown", e), a.addEventListener("mouseup", f), a.addEventListener("mousemove", g));
+      var h = function(d2) {
+        var e2 = Math.abs, f2 = Math.max, g2 = Math.min;
+        if (c.length) {
+          for (var h2 = "function" == typeof TouchEvent && d2 instanceof TouchEvent, j2 = [], k2 = [], l = { top: false, right: false, bottom: false, left: false }, m = 0; m < c.length; m++) j2.push(c[m].x), k2.push(c[m].y);
+          var i2 = j2[0], n = j2[j2.length - 1], o = k2[0], p = k2[k2.length - 1], q = { x: [i2, n], y: [o, p] };
+          if (1 < c.length) {
+            var r = { detail: _extends({ touch: h2, target: d2.target }, q) }, s = new CustomEvent("swiperelease", r);
+            a.dispatchEvent(s);
+          }
+          var t = j2[0] - j2[j2.length - 1], u = "none";
+          u = 0 < t ? "left" : "right";
+          var v, w = g2.apply(Math, j2), x = f2.apply(Math, j2);
+          if (e2(t) >= b.minHorizontal && ("left" == u ? (v = e2(w - j2[j2.length - 1]), v <= b.deltaHorizontal && (l.left = true)) : "right" == u ? (v = e2(x - j2[j2.length - 1]), v <= b.deltaHorizontal && (l.right = true)) : void 0), t = k2[0] - k2[k2.length - 1], u = "none", u = 0 < t ? "top" : "bottom", w = g2.apply(Math, k2), x = f2.apply(Math, k2), e2(t) >= b.minVertical && ("top" == u ? (v = e2(w - k2[k2.length - 1]), v <= b.deltaVertical && (l.top = true)) : "bottom" == u ? (v = e2(x - k2[k2.length - 1]), v <= b.deltaVertical && (l.bottom = true)) : void 0), c = [], l.top || l.right || l.bottom || l.left) {
+            b.lockAxis && ((l.left || l.right) && e2(i2 - n) > e2(o - p) ? l.top = l.bottom = false : (l.top || l.bottom) && e2(i2 - n) < e2(o - p) && (l.left = l.right = false));
+            var y = { detail: _extends({ directions: l, touch: h2, target: d2.target }, q) }, z = new CustomEvent("swipe", y);
+            a.dispatchEvent(z);
+          } else {
+            var A = new CustomEvent("swipecancel", { detail: _extends({ touch: h2, target: d2.target }, q) });
+            a.dispatchEvent(A);
+          }
+        }
+      }, i = function(d2) {
+        var e2 = d2.changedTouches[0];
+        if (c.push({ x: e2.clientX, y: e2.clientY }), 1 < c.length) {
+          var f2 = c[0].x, g2 = c[c.length - 1].x, h2 = c[0].y, i2 = c[c.length - 1].y, j2 = { detail: { x: [f2, g2], y: [h2, i2], touch: "function" == typeof TouchEvent && d2 instanceof TouchEvent, target: d2.target } }, k2 = new CustomEvent("swiping", j2), l = true === b.preventScroll || "function" == typeof b.preventScroll && b.preventScroll(k2);
+          l && d2.preventDefault(), a.dispatchEvent(k2);
+        }
+      }, j = false;
+      try {
+        var k = Object.defineProperty({}, "passive", { get: function() {
+          j = { passive: !b.preventScroll };
+        } });
+        window.addEventListener("testPassive", null, k), window.removeEventListener("testPassive", null, k);
+      } catch (a2) {
+      }
+      return b.touch && (a.addEventListener("touchmove", i, j), a.addEventListener("touchend", h)), { off: function() {
+        a.removeEventListener("touchmove", i, j), a.removeEventListener("touchend", h), a.removeEventListener("mousedown", e), a.removeEventListener("mouseup", f), a.removeEventListener("mousemove", g);
+      } };
+    }
+  };
+  module.exports = SwipeListener, module.exports.default = SwipeListener;
+})(swipeListener_min);
+var swipeListener_minExports = swipeListener_min.exports;
+const setupSwipeListener = /* @__PURE__ */ getDefaultExportFromCjs(swipeListener_minExports);
 const initializer$7 = new ComponentInitializer({
   type: "slider",
   baseAttribute: "data-ulu-slider"
@@ -8469,6 +8537,9 @@ const _Slider = class _Slider {
     this.options = options;
     this.slide = null;
     this.index = null;
+    this.swipeInstance = null;
+    this.swipeListener = null;
+    this.swipeImageListener = null;
     this.transitioning = false;
     if (!hasRequiredProps(requiredElements)) {
       logError(this, "Missing a required Element");
@@ -8705,6 +8776,31 @@ const _Slider = class _Slider {
       slide.element.setAttribute("tabindex", "-1");
     });
     container2.classList.add(this.getClass());
+    if (this.options.swipeEnabled) {
+      this.setupSwipe();
+    }
+  }
+  setupSwipe() {
+    const { track } = this.elements;
+    const images = this.elements.track.querySelectorAll("img");
+    this.swipeInstance = setupSwipeListener(track);
+    this.swipeListener = (event) => {
+      this.onSwipe(event);
+    };
+    this.swipeImageListener = (event) => {
+      event.preventDefault();
+    };
+    track.addEventListener("swipe", this.swipeListener);
+    images.forEach((image) => {
+      image.addEventListener("dragstart", this.swipeImageListener);
+    });
+  }
+  onSwipe(event) {
+    const { directions } = event.detail;
+    const method = directions.left ? "next" : directions.right ? "previous" : null;
+    if (method) {
+      this[method](event);
+    }
   }
   trackContainerStyles() {
     return `
@@ -8835,7 +8931,8 @@ __publicField(_Slider, "defaults", {
   transitionTimingFunction: "ease-in-out",
   buttonClasses: ["button", "button--icon"],
   iconClassPrevious: wrapSettingString("iconClassPrevious"),
-  iconClassNext: wrapSettingString("iconClassNext")
+  iconClassNext: wrapSettingString("iconClassNext"),
+  swipeEnabled: true
   // transition: true
 });
 let Slider = _Slider;

@@ -32,6 +32,7 @@ export class Slider {
         buttonClasses: string[];
         iconClassPrevious: any;
         iconClassNext: any;
+        swipeEnabled: boolean;
     };
     constructor(elements: any, config: any);
     options: any;
@@ -41,6 +42,9 @@ export class Slider {
         number: number;
     };
     index: any;
+    swipeInstance: any;
+    swipeListener: (event: any) => void;
+    swipeImageListener: (event: any) => void;
     transitioning: boolean;
     slides: {
         element: any;
@@ -111,6 +115,8 @@ export class Slider {
     }): any;
     goto(index: any, event: any, triggerType: any): void;
     setup(): void;
+    setupSwipe(): void;
+    onSwipe(event: any): void;
     trackContainerStyles(): string;
     transitionCss(property: any): string;
     trackCss(): string;
