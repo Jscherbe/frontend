@@ -6,5 +6,5 @@ export * as index from "./index.js";
 export * as pauseYoutubeVideo from "./pause-youtube-video.js";
 export * as fileSave from "./file-save.js";
 export * as fontAwesome from "./font-awesome.js";
-declare namespace ___Users_joe_Projects_Personal_Github_frontend_js_utils_index_ { }
+declare namespace ___Users_joescherben_Personal_Projects_ULU_frontend_js_utils_index_ { }
 //# sourceMappingURL=index.d.ts.map
