@@ -1,6 +1,6 @@
 # Change Log
 
-## Version 0.1.0-beta.59
+## Versions 0.1.0-beta.59, 0.1.0-beta.60
 
 - Update @ulu/utils dependency to latest
 
