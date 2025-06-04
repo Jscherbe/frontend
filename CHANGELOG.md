@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.0-beta.59
+
+- Update @ulu/utils dependency to latest
+
 ## Version 0.1.0-beta.58
 
 - **js/ui/slider**
