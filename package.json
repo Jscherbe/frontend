@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.1.0-beta.61",
+  "version": "0.1.0-beta.62",
   "description": "Modular Sass Theming Library",
   "browser": "js/index.js",
   "main": "index.js",
@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.5",
-    "@ulu/utils": "^0.0.23",
+    "@ulu/utils": "^0.0.24",
     "ally.js": "^1.4.1",
     "aria-tablist": "^1.2.2",
     "swipe-listener" : "^1.3.0"
