@@ -253,7 +253,7 @@ function setPositionClasses(parent, classes = {
     });
   });
 }
-function getElement$1(target, context = document) {
+function getElement(target, context = document) {
   if (typeof target === "string") {
     return context.querySelector(target);
   } else if (target instanceof Element) {
@@ -308,7 +308,7 @@ const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty(
   dataAttributeToDatasetKey,
   getDatasetJson,
   getDatasetOptionalJson,
-  getElement: getElement$1,
+  getElement,
   getElements,
   getScrollbarWidth,
   regexJsonString,
@@ -9611,7 +9611,7 @@ function setupTrigger(trigger, userOptions) {
   const config2 = Object.assign({}, defaults$6, userOptions);
   trigger.addEventListener("click", () => {
     if (config2.element) {
-      const element = getElement$1(config2.element);
+      const element = getElement(config2.element);
       if (element) {
         printElement(element);
       } else {
@@ -23383,8 +23383,8 @@ function setupInstance(userOptions) {
   if (debug) {
     debugLog("options:", options);
   }
-  const form = getElement$1(options.form, context);
-  const display = getElement$1(options.display, context);
+  const form = getElement(options.form, context);
+  const display = getElement(options.display, context);
   if (!form || !display) {
     throw new Error("Unable to locate form or display for live demo", options);
   }
