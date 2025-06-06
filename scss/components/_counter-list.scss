@@ -11,7 +11,7 @@
 /// Module Settings
 /// @type Map
 /// @prop {List|CssUnit} margin [(2rem 0)] The top and bottom margin of the list.
-/// @prop {List|CssUnit} item-margin [(0, 0, 1rem, 0)] The margin applied to each list item.
+/// @prop {List|CssUnit} item-margin [((0 0 1rem 0))] The margin applied to each list item.
 /// @prop {Keyword} align-items [baseline] How to align the counter (flexbox align-items values)
 /// @prop {CssUnit} counter-width [2.4em] The width and height (if height is falsy)
 /// @prop {CssUnit} counter-height [null] The height (optional)
@@ -24,7 +24,7 @@
 
 $config: (
   "margin" : (2rem 0),
-  "item-margin" : (0, 0, 1rem, 0),
+  "item-margin" : (0 0 1rem 0),
   "align-items" : baseline, 
   "counter-width" : 2.4em,
   "counter-height" : null,

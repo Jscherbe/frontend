@@ -38,7 +38,7 @@ Module Settings
 ``` scss
 $config: (
   "margin" : (2rem 0),
-  "item-margin" : (0, 0, 1rem, 0),
+  "item-margin" : (0 0 1rem 0),
   "align-items" : baseline, 
   "counter-width" : 2.4em,
   "counter-height" : null,
@@ -74,7 +74,7 @@ $config: (
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
 |margin|List|CssUnit|(2rem 0)|The top and bottom margin of the list.|
-|item-margin|List|CssUnit|(0, 0, 1rem, 0)|The margin applied to each list item.|
+|item-margin|List|CssUnit|((0 0 1rem 0))|The margin applied to each list item.|
 |align-items|Keyword|baseline|How to align the counter (flexbox align-items values)|
 |counter-width|CssUnit|2.4em|The width and height (if height is falsy)|
 |counter-height|CssUnit|null|The height (optional)|

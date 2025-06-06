@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0-beta.64
+
+- **scss/components/counter-list**
+  - Fix mistake in "item-margin" property default value 
+    - (should be space separated list or single number was comma separated)
+
 ## 0.1.0-beta.63
 
 - **js/ui/scrollpoints** 
