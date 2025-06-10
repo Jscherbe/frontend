@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.65
+
+- **scss/element**
+  - Add backdrop-filter-blur mixin
+  
 ## 0.1.0-beta.64
 
 - **scss/components/counter-list**

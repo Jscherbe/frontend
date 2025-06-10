@@ -827,6 +827,46 @@ Provides the appearance styles for a given cap
 
 - [get()](/sass/core/breakpoint/#function-get)
   
+
+
+<div class="sassdoc-item-header">
+
+###  backdrop-filter-blur() {#mixin-backdrop-filter-blur}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Add backdrop-filter blur
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comments):** 387-389
+- **Lines (code):** 390-392
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|$amount|`CssUnit`|get("backdrop-blur")|Amount to blur|
+
+    
   
 
 ## Functions

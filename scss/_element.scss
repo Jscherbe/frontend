@@ -383,3 +383,10 @@ $rule-margins: (
     }
   }
 }
+
+/// Add backdrop-filter blur
+/// @param {CssUnit} $amount [get("backdrop-blur")] Amount to blur
+/// 
+@mixin backdrop-filter-blur($amount: get("backdrop-blur")) {
+  backdrop-filter: blur($amount);
+}
