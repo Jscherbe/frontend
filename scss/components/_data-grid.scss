@@ -664,6 +664,23 @@ $config: (
         }
       }
 
+      &#{'[#{ $attribute }*="gutters-row:"]'} { 
+        > #{ $select-item } {
+          padding-top:  $gutter;
+          padding-bottom: $gutter;
+        }
+        @if $extra-gutter-scales {
+          @each $scale, $amount in $extra-gutter-scales {
+            &#{'[#{ $attribute }*="gutter-scale: #{ $scale }"]'} { 
+              > #{ $select-item } {
+                padding-top:  $gutter * $amount;
+                padding-bottom: $gutter * $amount;
+              }
+            }
+          }
+        }
+      }
+
       @include -create-column-widths(
         $columns: $columns,
         $attribute-item: $attribute-item,
