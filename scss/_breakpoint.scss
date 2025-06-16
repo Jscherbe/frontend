@@ -75,7 +75,7 @@ $sizes: (
 ///   @use "index" as ulu;
 ///   @use "sass:map";
 /// @example scss {compile} Example usage
-///   .test-get {
+///   .test-get-sizes {
 ///     $sizes: ulu.breakpoint-get-sizes();
 ///     height: map.get($sizes, "medium");
 ///   }
@@ -87,7 +87,14 @@ $sizes: (
 /// Get a specific breakpoint's raw value/size
 /// @param {String} $size The name of the size to get
 /// @return {Number} The sizes value
- 
+/// @compiler
+///   @use "index" as ulu;
+///   @use "sass:map";
+/// @example scss {compile} Example usage
+///   .test-get-size {
+///     height: ulu.breakpoint-get-size("medium");
+///   }
+
 @function get-size($size) {
   @return utils.require-map-get($sizes, $size, "breakpoint size");
 }
@@ -95,6 +102,14 @@ $sizes: (
 /// Get a specific breakpoint's size's value and optionally specify max to get the ending/max value for a breakpoint
 /// @param {Boolean} $max [false] Get the max value
 /// @return {Number} The value for the given size
+/// @compiler
+///   @use "index" as ulu;
+///   @use "sass:map";
+/// @example scss {compile} Example usage
+///   .test-get-size-value {
+///     height: ulu.breakpoint-get-size-value("medium", true);
+///     max-height: ulu.breakpoint-get-size-value("medium");
+///   }
 
 @function get-size-value($size, $max: false) {
   @if ($max) {
@@ -107,6 +122,22 @@ $sizes: (
 /// Check if a specific size exist
 /// @param {String} $name The breakpoint size to check if exists
 /// @return {Boolean} 
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test-exists {
+///     @if(ulu.breakpoint-exists("medium")) {
+///       @include ulu.breakpoint-min("medium") {
+///         padding: 2rem;
+///       }
+///     }
+///     // The below content doesn't print because the size doesn't exist.
+///     @if(ulu.breakpoint-exists("too-large")) {
+///       @include ulu.breakpoint-min("too-large") {
+///         padding: 20000rem;
+///       }
+///     }
+///   }
 
 @function exists($name) {
   $size: map.get($sizes, $name);
