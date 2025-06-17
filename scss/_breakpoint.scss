@@ -79,6 +79,7 @@ $sizes: (
 ///     $sizes: ulu.breakpoint-get-sizes();
 ///     height: map.get($sizes, "medium");
 ///   }
+/// @return {Dimension}
 
 @function get-sizes() {
   @return $sizes;
@@ -94,6 +95,7 @@ $sizes: (
 ///   .test-get-size {
 ///     height: ulu.breakpoint-get-size("medium");
 ///   }
+/// @return {Dimension}
 
 @function get-size($size) {
   @return utils.require-map-get($sizes, $size, "breakpoint size");
@@ -110,6 +112,7 @@ $sizes: (
 ///     height: ulu.breakpoint-get-size-value("medium", true);
 ///     max-height: ulu.breakpoint-get-size-value("medium");
 ///   }
+/// @return {Dimension}
 
 @function get-size-value($size, $max: false) {
   @if ($max) {

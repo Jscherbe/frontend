@@ -159,8 +159,8 @@ Ensure a value is present in the list, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 74-78
-- **Lines (code):** 80-90
+- **Lines (comments):** 76-80
+- **Lines (code):** 82-92
 
 </details>
 
@@ -202,8 +202,8 @@ Require that the list only is only made up of allowed items
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 92-96
-- **Lines (code):** 98-102
+- **Lines (comments):** 94-98
+- **Lines (code):** 100-104
 
 </details>
 
@@ -250,8 +250,8 @@ Returns true if we should include something (used for output checking)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 113-115
-- **Lines (code):** 117-125
+- **Lines (comments):** 133-135
+- **Lines (code):** 137-145
 
 </details>
 
@@ -291,8 +291,8 @@ Provides user with a fallback for a calc that's just an enhancement
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 526-529
-- **Lines (code):** 531-538
+- **Lines (comments):** 603-606
+- **Lines (code):** 608-615
 
 </details>
 
@@ -338,8 +338,8 @@ Get a config option
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 35-42
-- **Lines (code):** 44-46
+- **Lines (comments):** 35-43
+- **Lines (code):** 45-47
 
 </details>
 
@@ -378,6 +378,15 @@ Example usage
 
     
 
+#### Returns
+
+
+|Type|
+|:--|
+|Dimension|
+
+    
+
 #### Require
 
 - [require-map-get()](/sass/core/utils/#function-require-map-get)
@@ -409,8 +418,8 @@ Get a required value from a map, throw an error if not found
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 48-60
-- **Lines (code):** 62-72
+- **Lines (comments):** 49-62
+- **Lines (code):** 64-74
 
 </details>
 
@@ -495,12 +504,47 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 104-106
-- **Lines (code):** 108-111
+- **Lines (comments):** 106-126
+- **Lines (code):** 128-131
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+
+``` scss
+$include-styles : (
+  "h2" : true,
+  "h3" : false
+);
+@if(ulu.utils-included("h2", $include-styles)) {
+  h2 {
+    font-size: 24px;
+  }
+}
+@if(ulu.utils-included("h3", $include-styles)) {
+  h3 {
+    font-size: 18px;
+  }
+}
+```
+  
+
+``` css
+h2 {
+  font-size: 24px;
+}
+```
+  
+
+
+
+      
 
 #### Parameters
 
@@ -537,12 +581,46 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 128-130
-- **Lines (code):** 132-138
+- **Lines (comments):** 148-163
+- **Lines (code):** 165-171
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+
+``` scss
+$user-accent-color: #FE5F55;
+$user-error-color: "##C6ECAE";
+$default-color: #777DA7;
+.accent-color {
+  background-color: ulu.utils-if-type("color", $user-accent-color, $default-color);
+}
+.error-color {
+  background-color: ulu.utils-if-type("color", $user-error-color, $default-color);
+}
+```
+  
+
+``` css
+.accent-color {
+  background-color: #FE5F55;
+}
+
+.error-color {
+  background-color: #777DA7;
+}
+```
+  
+
+
+
+      
 
 #### Parameters
 
@@ -552,6 +630,15 @@ Returns true if we should include something (map of booleans)
 |$type|`String`|type of value it should be|
 |$value|`String`|the value to provide if it is that type|
 |$fallback|`String`|the fallback value|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|CssValue|Returns the value or the fallback.|
 
     
 
@@ -575,12 +662,38 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 141-142
-- **Lines (code):** 144-164
+- **Lines (comments):** 174-193
+- **Lines (code):** 195-216
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+``` scss
+$size-info: ulu.utils-number-info(24px);
+$unitless: map.get($size-info, "value");
+$unit: map.get($size-info, "unit");
+$hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
+$hypotenuse-half: math.div($hypotenuse, 2);
+$overlap: 6;
+$mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
+$mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
+.arrow {
+  height: $mask-height;
+  width: $mask-width;
+}
+@return {Map}
+```
+  
+
+
+
+      
 
 #### Parameters
 
@@ -634,12 +747,38 @@ Adds unit to unitless number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 166-169
-- **Lines (code):** 171-173
+- **Lines (comments):** 218-239
+- **Lines (code):** 241-243
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+``` scss
+$size-info: ulu.utils-number-info(24px);
+$unitless: map.get($size-info, "value");
+$unit: map.get($size-info, "unit");
+$hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
+$hypotenuse-half: math.div($hypotenuse, 2);
+$overlap: 6;
+$mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
+$mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
+.arrow {
+  height: $mask-height;
+  width: $mask-width;
+}
+@return {Number}
+```
+  
+
+
+
+      
 
 #### Parameters
 
@@ -684,8 +823,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 185-189
-- **Lines (code):** 191-199
+- **Lines (comments):** 262-266
+- **Lines (code):** 268-276
 
 </details>
 
@@ -735,8 +874,8 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 201-204
-- **Lines (code):** 206-211
+- **Lines (comments):** 278-281
+- **Lines (code):** 283-288
 
 </details>
 
@@ -800,8 +939,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 213-214
-- **Lines (code):** 216-224
+- **Lines (comments):** 290-291
+- **Lines (code):** 293-301
 
 </details>
 
@@ -836,8 +975,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 226-227
-- **Lines (code):** 229-236
+- **Lines (comments):** 303-304
+- **Lines (code):** 306-313
 
 </details>
 
@@ -876,8 +1015,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 238-238
-- **Lines (code):** 239-247
+- **Lines (comments):** 315-315
+- **Lines (code):** 316-324
 
 </details>
 
@@ -912,8 +1051,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 250-254
-- **Lines (code):** 255-274
+- **Lines (comments):** 327-331
+- **Lines (code):** 332-351
 
 </details>
 
@@ -966,8 +1105,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 276-280
-- **Lines (code):** 282-308
+- **Lines (comments):** 353-357
+- **Lines (code):** 359-385
 
 </details>
 
@@ -1027,8 +1166,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 310-314
-- **Lines (code):** 316-332
+- **Lines (comments):** 387-391
+- **Lines (code):** 393-409
 
 </details>
 
@@ -1071,8 +1210,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 334-338
-- **Lines (code):** 340-348
+- **Lines (comments):** 411-415
+- **Lines (code):** 417-425
 
 </details>
 
@@ -1122,8 +1261,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 350-354
-- **Lines (code):** 356-364
+- **Lines (comments):** 427-431
+- **Lines (code):** 433-441
 
 </details>
 
@@ -1172,8 +1311,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 366-370
-- **Lines (code):** 372-387
+- **Lines (comments):** 443-447
+- **Lines (code):** 449-464
 
 </details>
 
@@ -1226,8 +1365,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 389-404
-- **Lines (code):** 406-422
+- **Lines (comments):** 466-481
+- **Lines (code):** 483-499
 
 </details>
 
@@ -1301,8 +1440,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 424-433
-- **Lines (code):** 435-437
+- **Lines (comments):** 501-510
+- **Lines (code):** 512-514
 
 </details>
 
@@ -1375,8 +1514,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 439-448
-- **Lines (code):** 450-452
+- **Lines (comments):** 516-525
+- **Lines (code):** 527-529
 
 </details>
 
@@ -1449,8 +1588,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 454-463
-- **Lines (code):** 465-467
+- **Lines (comments):** 531-540
+- **Lines (code):** 542-544
 
 </details>
 
@@ -1523,8 +1662,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 469-478
-- **Lines (code):** 480-482
+- **Lines (comments):** 546-555
+- **Lines (code):** 557-559
 
 </details>
 
@@ -1598,8 +1737,8 @@ Strips the unit from the number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 484-492
-- **Lines (code):** 494-504
+- **Lines (comments):** 561-569
+- **Lines (code):** 571-581
 
 </details>
 
@@ -1669,8 +1808,8 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 506-511
-- **Lines (code):** 513-515
+- **Lines (comments):** 583-588
+- **Lines (code):** 590-592
 
 </details>
 
@@ -1726,8 +1865,8 @@ Convert from pixel to em
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 517-520
-- **Lines (code):** 522-524
+- **Lines (comments):** 594-597
+- **Lines (code):** 599-601
 
 </details>
 
@@ -1777,8 +1916,8 @@ Calculates the hypotenuse of a triangle
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 540-544
-- **Lines (code):** 546-548
+- **Lines (comments):** 617-621
+- **Lines (code):** 623-625
 
 </details>
 
@@ -1827,8 +1966,8 @@ Get's the info about a box shadow
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 550-553
-- **Lines (code):** 555-586
+- **Lines (comments):** 627-630
+- **Lines (code):** 632-663
 
 </details>
 
@@ -1882,8 +2021,8 @@ Get's the extent (how far the shadow extends past the box's edge)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 588-592
-- **Lines (code):** 594-612
+- **Lines (comments):** 665-669
+- **Lines (code):** 671-689
 
 </details>
 
@@ -1938,8 +2077,8 @@ Determines if value passed is a list
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 614-616
-- **Lines (code):** 618-620
+- **Lines (comments):** 691-693
+- **Lines (code):** 695-697
 
 </details>
 
@@ -1987,8 +2126,8 @@ Determines if value passed is a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 622-624
-- **Lines (code):** 626-628
+- **Lines (comments):** 699-701
+- **Lines (code):** 703-705
 
 </details>
 
@@ -2036,8 +2175,8 @@ Determines if value passed is a number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 630-632
-- **Lines (code):** 634-636
+- **Lines (comments):** 707-709
+- **Lines (code):** 711-713
 
 </details>
 
@@ -2085,8 +2224,8 @@ Determines if value passed is a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 638-640
-- **Lines (code):** 642-644
+- **Lines (comments):** 715-717
+- **Lines (code):** 719-721
 
 </details>
 
@@ -2134,8 +2273,8 @@ Determines if value passed is a color
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 646-648
-- **Lines (code):** 650-652
+- **Lines (comments):** 723-725
+- **Lines (code):** 727-729
 
 </details>
 
@@ -2184,8 +2323,8 @@ Returns true if number passed is even
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 672-675
-- **Lines (code):** 677-683
+- **Lines (comments):** 749-752
+- **Lines (code):** 754-760
 
 </details>
 
@@ -2244,8 +2383,8 @@ Returns true if number passed is odd
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 685-687
-- **Lines (code):** 689-691
+- **Lines (comments):** 762-764
+- **Lines (code):** 766-768
 
 </details>
 
@@ -2298,8 +2437,8 @@ Always returns a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 693-695
-- **Lines (code):** 697-699
+- **Lines (comments):** 770-772
+- **Lines (code):** 774-776
 
 </details>
 
@@ -2352,8 +2491,8 @@ Returns true if edge passed is an end (top/bottom)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 701-704
-- **Lines (code):** 706-714
+- **Lines (comments):** 778-781
+- **Lines (code):** 783-791
 
 </details>
 
@@ -2406,8 +2545,8 @@ Returns true if edge passed is an side (left/right)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 716-719
-- **Lines (code):** 721-723
+- **Lines (comments):** 793-796
+- **Lines (code):** 798-800
 
 </details>
 
@@ -2481,11 +2620,27 @@ Checks if two numbers are the same unit
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** css
-- **Lines (comments):** 175-178
-- **Lines (code):** 181-723
+- **Lines (comments):** 245-255
+- **Lines (code):** 258-800
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+``` scss
+.test-exists {
+  
+}
+```
+  
+
+
+
+      
   
   

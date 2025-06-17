@@ -40,6 +40,7 @@ $config: (
 ///   .test-em-to-pixel {
 ///     width: ulu.utils-get("pixel-em-base");
 ///   }
+/// @return {Dimension} 
 
 @function get($name) {
   @return require-map-get($config, $name, 'utils');
@@ -58,6 +59,7 @@ $config: (
 ///     $test-map: ("test-font-size": 12px);
 ///     font-size: ulu.utils-require-map-get($test-map, "test-font-size");
 ///   }
+/// @return {CssValue}
 
 @function require-map-get($map, $key, $context: "unknown") {
   // $value: map.get($map, $key);
@@ -104,6 +106,24 @@ $config: (
 /// Returns true if we should include something (map of booleans)
 /// @param {String} $name Name of item to see if it's included
 /// @param {Map} $includes Map of includes
+/// @compiler
+///   @use "index" as ulu;
+///   @use "sass:map";
+/// @example scss {compile} Example usage
+///   $include-styles : (
+///     "h2" : true,
+///     "h3" : false
+///   );
+///   @if(ulu.utils-included("h2", $include-styles)) {
+///     h2 {
+///       font-size: 24px;
+///     }
+///   }
+///   @if(ulu.utils-included("h3", $include-styles)) {
+///     h3 {
+///       font-size: 18px;
+///     }
+///   }
 
 @function included($name, $includes) {
   $value: map.get($includes, $name);
@@ -128,6 +148,19 @@ $config: (
 /// @param {String} $type type of value it should be
 /// @param {String} $value the value to provide if it is that type
 /// @param {String} $fallback the fallback value
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   $user-accent-color: #FE5F55;
+///   $user-error-color: "##C6ECAE";
+///   $default-color: #777DA7;
+///   .accent-color {
+///     background-color: ulu.utils-if-type("color", $user-accent-color, $default-color);
+///   }
+///   .error-color {
+///     background-color: ulu.utils-if-type("color", $user-error-color, $default-color);
+///   }
+/// @return {CssValue} Returns the value or the fallback.
 
 @function if-type($type, $value, $fallback) {
   @if meta.type-of($value) == $type {
@@ -140,6 +173,25 @@ $config: (
 // Returns number unit info, and strips the unit
 /// @param {String} $number Number to get meta info for
 /// @return {Map} With properties (unit, value, invalid [true/false if not number])
+/// @compiler
+///   @use "index" as ulu;
+///   @use "sass:map";
+///   @use "sass:math";
+/// @example scss {compile} Example usage
+///   $size-info: ulu.utils-number-info(24px);
+///   $unitless: map.get($size-info, "value");
+///   $unit: map.get($size-info, "unit");
+///   $hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
+///   $hypotenuse-half: math.div($hypotenuse, 2);
+///   $overlap: 6;
+///   $mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
+///   $mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
+///   .arrow {
+///     height: $mask-height;
+///     width: $mask-width;
+///   }
+///   @return {Map}
+
 
 @function number-info($number, $errors: false) {
 
@@ -167,6 +219,24 @@ $config: (
 /// @param {Number} $number The unitless number to add unit to
 /// @param {String} $unit The unit to add to number
 /// @return {String} Number with unit attached (can't be used in maths)
+/// @compiler
+///   @use "index" as ulu;
+///   @use "sass:map";
+///   @use "sass:math";
+/// @example scss {compile} Example usage
+///   $size-info: ulu.utils-number-info(24px);
+///   $unitless: map.get($size-info, "value");
+///   $unit: map.get($size-info, "unit");
+///   $hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
+///   $hypotenuse-half: math.div($hypotenuse, 2);
+///   $overlap: 6;
+///   $mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
+///   $mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
+///   .arrow {
+///     height: $mask-height;
+///     width: $mask-width;
+///   }
+///   @return {Number}
 
 @function add-unit($number, $unit) {
   @return $number + string.unquote($unit);
@@ -176,6 +246,13 @@ $config: (
 /// @param {Number} $number 
 /// @param {String} $other-number 
 /// @return {Boolean} Whether they have the same unit type
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test-exists {
+///     
+///   }
+/// @return {Boolean}
 // Could be made into multiple arguments in future if needed 
 
 @function units-match($number, $other-number) {
