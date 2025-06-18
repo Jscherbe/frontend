@@ -70,7 +70,6 @@ $sizes: (
 }
 
 /// Get all breakpoint sizes
-/// @return {Map} Map of breakpoints (equivalent to $sizes)
 /// @compiler
 ///   @use "index" as ulu;
 ///   @use "sass:map";
@@ -79,7 +78,7 @@ $sizes: (
 ///     $sizes: ulu.breakpoint-get-sizes();
 ///     height: map.get($sizes, "medium");
 ///   }
-/// @return {Dimension}
+/// @return {Map} Map of breakpoints (equivalent to $sizes)
 
 @function get-sizes() {
   @return $sizes;
@@ -87,7 +86,6 @@ $sizes: (
 
 /// Get a specific breakpoint's raw value/size
 /// @param {String} $size The name of the size to get
-/// @return {Number} The sizes value
 /// @compiler
 ///   @use "index" as ulu;
 ///   @use "sass:map";
@@ -95,7 +93,7 @@ $sizes: (
 ///   .test-get-size {
 ///     height: ulu.breakpoint-get-size("medium");
 ///   }
-/// @return {Dimension}
+/// @return {Number} The sizes value
 
 @function get-size($size) {
   @return utils.require-map-get($sizes, $size, "breakpoint size");
@@ -103,7 +101,6 @@ $sizes: (
 
 /// Get a specific breakpoint's size's value and optionally specify max to get the ending/max value for a breakpoint
 /// @param {Boolean} $max [false] Get the max value
-/// @return {Number} The value for the given size
 /// @compiler
 ///   @use "index" as ulu;
 ///   @use "sass:map";
@@ -112,7 +109,7 @@ $sizes: (
 ///     height: ulu.breakpoint-get-size-value("medium", true);
 ///     max-height: ulu.breakpoint-get-size-value("medium");
 ///   }
-/// @return {Dimension}
+/// @return {Number} The value for the given size
 
 @function get-size-value($size, $max: false) {
   @if ($max) {

@@ -51,7 +51,6 @@ $config: (
 /// @param {Map} $map The map to get the value from
 /// @param {String} $key The key in the map to get value from
 /// @param {String} $context The context of using this function for debugging help
-/// @return {*} The value from the map
 /// @compiler
 ///   @use "index" as ulu;
 /// @example scss {compile} Example usage
@@ -59,7 +58,7 @@ $config: (
 ///     $test-map: ("test-font-size": 12px);
 ///     font-size: ulu.utils-require-map-get($test-map, "test-font-size");
 ///   }
-/// @return {CssValue}
+/// @return {*} The value from the map
 
 @function require-map-get($map, $key, $context: "unknown") {
   // $value: map.get($map, $key);
@@ -190,8 +189,7 @@ $config: (
 ///     height: $mask-height;
 ///     width: $mask-width;
 ///   }
-///   @return {Map}
-
+///
 
 @function number-info($number, $errors: false) {
 
@@ -236,7 +234,7 @@ $config: (
 ///     height: $mask-height;
 ///     width: $mask-width;
 ///   }
-///   @return {Number}
+///
 
 @function add-unit($number, $unit) {
   @return $number + string.unquote($unit);
@@ -245,14 +243,13 @@ $config: (
 /// Checks if two numbers are the same unit
 /// @param {Number} $number 
 /// @param {String} $other-number 
-/// @return {Boolean} Whether they have the same unit type
 /// @compiler
 ///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-exists {
 ///     
 ///   }
-/// @return {Boolean}
+/// @return {Boolean} Whether they have the same unit type
 // Could be made into multiple arguments in future if needed 
 
 @function units-match($number, $other-number) {
@@ -263,7 +260,13 @@ $config: (
 /// @param {Map} $original Source map 
 /// @param {Map} $changes Changes to merge into source map
 /// @param {String} $mode How to merge changes (merge [defualt], deep, or overwrite)
-/// @return {Map} New map with changes
+/// @compiler
+///   @use "index" as ulu;
+/// @example scss {compile} Example usage
+///   .test-exists {
+///     
+///   }
+///
 
 @function map-merge($original, $changes, $mode: null) {
   @if ($mode == "deep") {
