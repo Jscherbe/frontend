@@ -31,8 +31,6 @@ $config: (
 }
 
 /// Get a config option
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-get {
 ///     font-size: ulu.breakpoint-get("base");
@@ -71,7 +69,6 @@ $sizes: (
 
 /// Get all breakpoint sizes
 /// @compiler
-///   @use "index" as ulu;
 ///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get-sizes {
@@ -87,7 +84,6 @@ $sizes: (
 /// Get a specific breakpoint's raw value/size
 /// @param {String} $size The name of the size to get
 /// @compiler
-///   @use "index" as ulu;
 ///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get-size {
@@ -102,7 +98,6 @@ $sizes: (
 /// Get a specific breakpoint's size's value and optionally specify max to get the ending/max value for a breakpoint
 /// @param {Boolean} $max [false] Get the max value
 /// @compiler
-///   @use "index" as ulu;
 ///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get-size-value {
@@ -122,8 +117,6 @@ $sizes: (
 /// Check if a specific size exist
 /// @param {String} $name The breakpoint size to check if exists
 /// @return {Boolean} 
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-exists {
 ///     @if(ulu.breakpoint-exists("medium")) {

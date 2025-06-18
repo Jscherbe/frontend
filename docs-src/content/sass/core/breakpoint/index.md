@@ -107,8 +107,8 @@ $sizes: (
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** variable
-- **Lines (comments):** 47-51
-- **Lines (code):** 53-57
+- **Lines (comments):** 45-49
+- **Lines (code):** 51-55
 
 </details>
 
@@ -202,8 +202,8 @@ Update the breakpoint sizes map
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 59-66
-- **Lines (code):** 68-70
+- **Lines (comments):** 57-64
+- **Lines (code):** 66-68
 
 </details>
 
@@ -266,8 +266,8 @@ Create a media query that matches the min-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 147-156
-- **Lines (code):** 158-164
+- **Lines (comments):** 140-149
+- **Lines (code):** 151-157
 
 </details>
 
@@ -341,8 +341,8 @@ Create a media query that matches the max-width for a given size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 166-175
-- **Lines (code):** 177-183
+- **Lines (comments):** 159-168
+- **Lines (code):** 170-176
 
 </details>
 
@@ -416,8 +416,8 @@ Create a media query that matches between two breakpoint sizes
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 185-195
-- **Lines (code):** 197-204
+- **Lines (comments):** 178-188
+- **Lines (code):** 190-197
 
 </details>
 
@@ -494,8 +494,8 @@ Create a media query from a specific size in either direction
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 206-216
-- **Lines (code):** 218-230
+- **Lines (comments):** 199-209
+- **Lines (code):** 211-223
 
 </details>
 
@@ -564,8 +564,8 @@ Utility Method for iterating over a map of breakpoints and apply styles
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 232-239
-- **Lines (code):** 241-259
+- **Lines (comments):** 225-232
+- **Lines (code):** 234-252
 
 </details>
 
@@ -636,8 +636,8 @@ Attaches breakpoints to an element pseudo content for access via script
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** mixin
-- **Lines (comments):** 261-264
-- **Lines (code):** 266-276
+- **Lines (comments):** 254-257
+- **Lines (code):** 259-269
 
 </details>
 
@@ -679,8 +679,8 @@ Get a config option
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 33-41
-- **Lines (code):** 43-45
+- **Lines (comments):** 33-39
+- **Lines (code):** 41-43
 
 </details>
 
@@ -691,9 +691,17 @@ Get a config option
 Example usage      
 
 
+
 ``` scss
 .test-get {
   font-size: ulu.breakpoint-get("base");
+}
+```
+  
+
+``` css
+.test-get {
+  font-size: 16px;
 }
 ```
   
@@ -750,8 +758,8 @@ Get all breakpoint sizes
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 72-81
-- **Lines (code):** 83-85
+- **Lines (comments):** 70-78
+- **Lines (code):** 80-82
 
 </details>
 
@@ -762,10 +770,18 @@ Get all breakpoint sizes
 Example usage      
 
 
+
 ``` scss
 .test-get-sizes {
   $sizes: ulu.breakpoint-get-sizes();
   height: map.get($sizes, "medium");
+}
+```
+  
+
+``` css
+.test-get-sizes {
+  height: 76em;
 }
 ```
   
@@ -812,8 +828,8 @@ Get a specific breakpoint's raw value/size
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 87-96
-- **Lines (code):** 98-100
+- **Lines (comments):** 84-92
+- **Lines (code):** 94-96
 
 </details>
 
@@ -824,9 +840,17 @@ Get a specific breakpoint's raw value/size
 Example usage      
 
 
+
 ``` scss
 .test-get-size {
   height: ulu.breakpoint-get-size("medium");
+}
+```
+  
+
+``` css
+.test-get-size {
+  height: 76em;
 }
 ```
   
@@ -883,8 +907,8 @@ Get a specific breakpoint's size's value and optionally specify max to get the e
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 102-112
-- **Lines (code):** 114-120
+- **Lines (comments):** 98-107
+- **Lines (code):** 109-115
 
 </details>
 
@@ -895,10 +919,19 @@ Get a specific breakpoint's size's value and optionally specify max to get the e
 Example usage      
 
 
+
 ``` scss
 .test-get-size-value {
   height: ulu.breakpoint-get-size-value("medium", true);
   max-height: ulu.breakpoint-get-size-value("medium");
+}
+```
+  
+
+``` css
+.test-get-size-value {
+  height: 75.99em;
+  max-height: 76em;
 }
 ```
   
@@ -955,8 +988,8 @@ Check if a specific size exist
 - **File:** _breakpoint.scss
 - **Group:** breakpoint
 - **Type:** function
-- **Lines (comments):** 122-140
-- **Lines (code):** 142-145
+- **Lines (comments):** 117-133
+- **Lines (code):** 135-138
 
 </details>
 
@@ -965,6 +998,7 @@ Check if a specific size exist
 #### Examples
 
 Example usage      
+
 
 
 ``` scss
@@ -979,6 +1013,15 @@ Example usage
     @include ulu.breakpoint-min("too-large") {
       padding: 20000rem;
     }
+  }
+}
+```
+  
+
+``` css
+@media screen and (min-width: 76em) {
+  .test-exists {
+    padding: 2rem;
   }
 }
 ```

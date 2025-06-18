@@ -34,8 +34,6 @@ $config: (
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-em-to-pixel {
 ///     width: ulu.utils-get("pixel-em-base");
@@ -51,8 +49,6 @@ $config: (
 /// @param {Map} $map The map to get the value from
 /// @param {String} $key The key in the map to get value from
 /// @param {String} $context The context of using this function for debugging help
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-require-map {
 ///     $test-map: ("test-font-size": 12px);
@@ -106,7 +102,6 @@ $config: (
 /// @param {String} $name Name of item to see if it's included
 /// @param {Map} $includes Map of includes
 /// @compiler
-///   @use "index" as ulu;
 ///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   $include-styles : (
@@ -147,8 +142,6 @@ $config: (
 /// @param {String} $type type of value it should be
 /// @param {String} $value the value to provide if it is that type
 /// @param {String} $fallback the fallback value
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   $user-accent-color: #FE5F55;
 ///   $user-error-color: "##C6ECAE";
@@ -173,7 +166,6 @@ $config: (
 /// @param {String} $number Number to get meta info for
 /// @return {Map} With properties (unit, value, invalid [true/false if not number])
 /// @compiler
-///   @use "index" as ulu;
 ///   @use "sass:map";
 ///   @use "sass:math";
 /// @example scss {compile} Example usage
@@ -218,7 +210,6 @@ $config: (
 /// @param {String} $unit The unit to add to number
 /// @return {String} Number with unit attached (can't be used in maths)
 /// @compiler
-///   @use "index" as ulu;
 ///   @use "sass:map";
 ///   @use "sass:math";
 /// @example scss {compile} Example usage
@@ -243,8 +234,6 @@ $config: (
 /// Checks if two numbers are the same unit
 /// @param {Number} $number 
 /// @param {String} $other-number 
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-exists {
 ///     
@@ -260,8 +249,6 @@ $config: (
 /// @param {Map} $original Source map 
 /// @param {Map} $changes Changes to merge into source map
 /// @param {String} $mode How to merge changes (merge [defualt], deep, or overwrite)
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test-exists {
 ///     
@@ -564,8 +551,6 @@ $config: (
 /// Strips the unit from the number
 /// - Normally this shouldn't be needed
 /// @link https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841 Original source (Miriam Suzanne)
-/// @compiler
-///   @use "index" as ulu;
 /// @example scss {compile} Example usage
 ///   .test {
 ///     line-height: ulu.utils-strip-unit(4rem);
