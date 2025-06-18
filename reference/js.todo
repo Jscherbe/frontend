@@ -1,4 +1,5 @@
 JS Todos:
+  ☐ Fix duplicate fas, fa-solid selector in js/utils/font-awesome.js
   ☐ Tooltip make sure template can be easily setup with baseClass
   ☐ Tooltip add method to update content option
     * Sometimes this changes (ie. copy button feedback)

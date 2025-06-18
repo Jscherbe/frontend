@@ -691,17 +691,9 @@ Get a config option
 Example usage      
 
 
-
 ``` scss
 .test-get {
   font-size: ulu.breakpoint-get("base");
-}
-```
-  
-
-``` css
-.test-get {
-  font-size: 16px;
 }
 ```
   
@@ -770,18 +762,10 @@ Get all breakpoint sizes
 Example usage      
 
 
-
 ``` scss
 .test-get-sizes {
   $sizes: ulu.breakpoint-get-sizes();
   height: map.get($sizes, "medium");
-}
-```
-  
-
-``` css
-.test-get-sizes {
-  height: 76em;
 }
 ```
   
@@ -840,17 +824,9 @@ Get a specific breakpoint's raw value/size
 Example usage      
 
 
-
 ``` scss
 .test-get-size {
   height: ulu.breakpoint-get-size("medium");
-}
-```
-  
-
-``` css
-.test-get-size {
-  height: 76em;
 }
 ```
   
@@ -919,19 +895,10 @@ Get a specific breakpoint's size's value and optionally specify max to get the e
 Example usage      
 
 
-
 ``` scss
 .test-get-size-value {
   height: ulu.breakpoint-get-size-value("medium", true);
   max-height: ulu.breakpoint-get-size-value("medium");
-}
-```
-  
-
-``` css
-.test-get-size-value {
-  height: 75.99em;
-  max-height: 76em;
 }
 ```
   
@@ -1000,7 +967,6 @@ Check if a specific size exist
 Example usage      
 
 
-
 ``` scss
 .test-exists {
   @if(ulu.breakpoint-exists("medium")) {
@@ -1013,15 +979,6 @@ Example usage
     @include ulu.breakpoint-min("too-large") {
       padding: 20000rem;
     }
-  }
-}
-```
-  
-
-``` css
-@media screen and (min-width: 76em) {
-  .test-exists {
-    padding: 2rem;
   }
 }
 ```

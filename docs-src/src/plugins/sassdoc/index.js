@@ -13,6 +13,7 @@ const isSubdir = (parent, dir) => {
 
 let running = false;
 
+const cwd = path.resolve(".");
 const src = path.resolve(".", "scss/");
 const dist = path.resolve(__dirname, "../../../content/");
 const commonConfig = {
@@ -56,7 +57,16 @@ const commonConfig = {
     "placeholders",
   ],
   hidePrivate: true,
-  hidePrivateKeepGroup: true
+  hidePrivateKeepGroup: true,
+  compilerOptions: {
+    additionalData: '@use "scss/index" as ulu;',
+    sassOptions: {
+      loadPaths: [
+        cwd,
+        src
+      ]
+    }
+  }
 };
 
 const createConfig = (base, options) => ({
