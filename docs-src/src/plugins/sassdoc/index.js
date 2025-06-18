@@ -60,7 +60,7 @@ const commonConfig = {
   hidePrivateKeepGroup: true,
   compilerOptions: {
     // Add import for library pervasive
-    additionalData: '@use "scss/index" as ulu;',
+    additionalData: '@use "scss/index" as ulu; @use "sass:map"; @use "sass:math"; @use "sass:meta";',
     // Add cwd and scss folder for resolving paths
     // - Need cwd for the @use above to work and not match any nested scss/**/_index files
     sassOptions: {

@@ -102,7 +102,6 @@ $config: (
 /// @param {String} $name Name of item to see if it's included
 /// @param {Map} $includes Map of includes
 /// @compiler
-///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   $include-styles : (
 ///     "h2" : true,
@@ -138,7 +137,7 @@ $config: (
   }
 }
 
-// Provide a default when value type is not correct
+/// Provide a default when value type is not correct
 /// @param {String} $type type of value it should be
 /// @param {String} $value the value to provide if it is that type
 /// @param {String} $fallback the fallback value
@@ -162,24 +161,17 @@ $config: (
   }
 }
 
-// Returns number unit info, and strips the unit
+/// Returns number unit info, and strips the unit
 /// @param {String} $number Number to get meta info for
 /// @return {Map} With properties (unit, value, invalid [true/false if not number])
-/// @compiler
-///   @use "sass:map";
-///   @use "sass:math";
 /// @example scss {compile} Example usage
 ///   $size-info: ulu.utils-number-info(24px);
-///   $unitless: map.get($size-info, "value");
-///   $unit: map.get($size-info, "unit");
-///   $hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
-///   $hypotenuse-half: math.div($hypotenuse, 2);
-///   $overlap: 6;
-///   $mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
-///   $mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
-///   .arrow {
-///     height: $mask-height;
-///     width: $mask-width;
+///   $size-info-invalid: ulu.utils-number-info("Twenty Four Pixels");
+///   .number-info-result {
+///     content: meta.inspect($size-info);
+///   }
+///   .number-info-invalid-result {
+///     content: meta.inspect($size-info-invalid);
 ///   }
 ///
 
@@ -210,20 +202,12 @@ $config: (
 /// @param {String} $unit The unit to add to number
 /// @return {String} Number with unit attached (can't be used in maths)
 /// @compiler
-///   @use "sass:map";
-///   @use "sass:math";
 /// @example scss {compile} Example usage
-///   $size-info: ulu.utils-number-info(24px);
-///   $unitless: map.get($size-info, "value");
-///   $unit: map.get($size-info, "unit");
-///   $hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
-///   $hypotenuse-half: math.div($hypotenuse, 2);
-///   $overlap: 6;
-///   $mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
-///   $mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
-///   .arrow {
-///     height: $mask-height;
-///     width: $mask-width;
+///   $number: 12;
+///   $unit: "px";
+///   $number-with-unit: ulu.utils-add-unit($number, $unit);
+///   .add-unit-result {
+///     content: $number-with-unit;
 ///   }
 ///
 
@@ -234,12 +218,19 @@ $config: (
 /// Checks if two numbers are the same unit
 /// @param {Number} $number 
 /// @param {String} $other-number 
-/// @example scss {compile} Example usage
-///   .test-exists {
-///     
-///   }
 /// @return {Boolean} Whether they have the same unit type
-// Could be made into multiple arguments in future if needed 
+/// Could be made into multiple arguments in future if needed 
+/// @example scss {compile} Example usage
+///   $number-1: 12px;
+///   $number-2: 12px;
+///   $number-3: 12rem;
+///   .positive-result {
+///     content: ulu.utils-units-match($number-1, $number-2);
+///   }
+///   .negative-result {
+///     content: ulu.utils-units-match($number-1, $number-3);
+///   }
+///
 
 @function units-match($number, $other-number) {
   @return math.unit($number) == math.unit($other-number);
@@ -250,8 +241,31 @@ $config: (
 /// @param {Map} $changes Changes to merge into source map
 /// @param {String} $mode How to merge changes (merge [defualt], deep, or overwrite)
 /// @example scss {compile} Example usage
-///   .test-exists {
-///     
+///   $map-1: (
+///     "inner-map" : (
+///       "color" : "green",
+///       "secondary-color" : "green"
+///     ),
+///     "color" : "green",
+///     "secondary-color" : "green"
+///   );
+///   $map-2: (
+///     "inner-map" : (
+///       "color" : "red"
+///     ),
+///     "color" : "red",
+///   );
+///   .result-default {
+///     $merged-map: ulu.utils-map-merge($map-1, $map-2);
+///     content: meta.inspect($merged-map);
+///   }
+///   .result-deep {
+///     $merged-map-deep: ulu.utils-map-merge($map-1, $map-2, "deep");
+///     content: meta.inspect($merged-map-deep);
+///   }
+///   .result-overwrite {
+///     $merged-map-overwrite: ulu.utils-map-merge($map-1, $map-2, "overwrite");
+///     content: meta.inspect($merged-map-overwrite);
 ///   }
 ///
 
@@ -269,6 +283,20 @@ $config: (
 /// @param {Map} $map Source map 
 /// @param {String} $key Property to check for
 /// @return {Boolean}
+/// @example scss {compile} Example usage
+///   $map-1 : (
+///     "has-key" : true
+///   );
+///   $map-2 : (
+///     "missing-key" : true
+///   );
+///   .map-1 {
+///     content: ulu.utils-map-has($map-1, "has-key");
+///   }
+///   .map-2 {
+///     content: ulu.utils-map-has($map-2, "has-key");
+///   }
+///
 
 @function map-has($map, $key) {
   @if (meta.type-of($map) != "map") {
@@ -292,6 +320,17 @@ $config: (
 
 /// Utility for providing fallbacks, the first truthy value (non false or null) will be returned
 /// @return {*} The first truthy value
+/// @example scss {compile} Example usage
+///   $fallback-text: "No input received";
+///   .user-name:after {
+///     $user-name: "Johnny";
+///     content: ulu.utils-fallback($user-name, $fallback-text);
+///   }
+///   .user-birthdate:after {
+///     $user-birthdate: null;
+///     content: ulu.utils-fallback($user-birthdate, $fallback-text);
+///   }
+///
 
 @function fallback($args...) {
   @each $arg in $args {

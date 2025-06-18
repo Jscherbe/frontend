@@ -69,7 +69,6 @@ $sizes: (
 
 /// Get all breakpoint sizes
 /// @compiler
-///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get-sizes {
 ///     $sizes: ulu.breakpoint-get-sizes();
@@ -84,7 +83,6 @@ $sizes: (
 /// Get a specific breakpoint's raw value/size
 /// @param {String} $size The name of the size to get
 /// @compiler
-///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get-size {
 ///     height: ulu.breakpoint-get-size("medium");
@@ -98,7 +96,6 @@ $sizes: (
 /// Get a specific breakpoint's size's value and optionally specify max to get the ending/max value for a breakpoint
 /// @param {Boolean} $max [false] Get the max value
 /// @compiler
-///   @use "sass:map";
 /// @example scss {compile} Example usage
 ///   .test-get-size-value {
 ///     height: ulu.breakpoint-get-size-value("medium", true);

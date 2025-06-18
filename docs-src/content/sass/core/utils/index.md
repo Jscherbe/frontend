@@ -250,8 +250,8 @@ Returns true if we should include something (used for output checking)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 127-129
-- **Lines (code):** 131-139
+- **Lines (comments):** 126-128
+- **Lines (code):** 130-138
 
 </details>
 
@@ -291,8 +291,8 @@ Provides user with a fallback for a calc that's just an enhancement
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 591-594
-- **Lines (code):** 596-603
+- **Lines (comments):** 630-633
+- **Lines (code):** 635-642
 
 </details>
 
@@ -504,8 +504,8 @@ Returns true if we should include something (map of booleans)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 101-120
-- **Lines (code):** 122-125
+- **Lines (comments):** 101-119
+- **Lines (code):** 121-124
 
 </details>
 
@@ -574,6 +574,10 @@ h2 {
 
   
 
+Provide a default when value type is not correct
+    
+    
+
 
 <details>
   <summary>File Information</summary>
@@ -581,8 +585,8 @@ h2 {
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 142-155
-- **Lines (code):** 157-163
+- **Lines (comments):** 140-154
+- **Lines (code):** 156-162
 
 </details>
 
@@ -655,6 +659,10 @@ $default-color: #777DA7;
 
   
 
+Returns number unit info, and strips the unit
+    
+    
+
 
 <details>
   <summary>File Information</summary>
@@ -662,8 +670,8 @@ $default-color: #777DA7;
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 166-184
-- **Lines (code):** 186-206
+- **Lines (comments):** 164-176
+- **Lines (code):** 178-198
 
 </details>
 
@@ -677,24 +685,23 @@ Example usage
 
 ``` scss
 $size-info: ulu.utils-number-info(24px);
-$unitless: map.get($size-info, "value");
-$unit: map.get($size-info, "unit");
-$hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
-$hypotenuse-half: math.div($hypotenuse, 2);
-$overlap: 6;
-$mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
-$mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
-.arrow {
-  height: $mask-height;
-  width: $mask-width;
+$size-info-invalid: ulu.utils-number-info("Twenty Four Pixels");
+.number-info-result {
+  content: meta.inspect($size-info);
+}
+.number-info-invalid-result {
+  content: meta.inspect($size-info-invalid);
 }
 ```
   
 
 ``` css
-.arrow {
-  height: 22.9705627485px;
-  width: 39.941125497px;
+.number-info-result {
+  content: ("unit": "px", "value": 24, "invalid": false);
+}
+
+.number-info-invalid-result {
+  content: ("unit": null, "value": "Twenty Four Pixels", "invalid": true);
 }
 ```
   
@@ -755,8 +762,8 @@ Adds unit to unitless number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 208-228
-- **Lines (code):** 230-232
+- **Lines (comments):** 200-212
+- **Lines (code):** 214-216
 
 </details>
 
@@ -769,25 +776,18 @@ Example usage
 
 
 ``` scss
-$size-info: ulu.utils-number-info(24px);
-$unitless: map.get($size-info, "value");
-$unit: map.get($size-info, "unit");
-$hypotenuse: ulu.utils-hypotenuse($unitless, $unitless);
-$hypotenuse-half: math.div($hypotenuse, 2);
-$overlap: 6;
-$mask-height: ulu.utils-add-unit($hypotenuse-half + $overlap, $unit);
-$mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
-.arrow {
-  height: $mask-height;
-  width: $mask-width;
+$number: 12;
+$unit: "px";
+$number-with-unit: ulu.utils-add-unit($number, $unit);
+.add-unit-result {
+  content: $number-with-unit;
 }
 ```
   
 
 ``` css
-.arrow {
-  height: 22.9705627485px;
-  width: 39.941125497px;
+.add-unit-result {
+  content: 12px;
 }
 ```
   
@@ -818,6 +818,91 @@ $mask-width: ulu.utils-add-unit($hypotenuse + $overlap, $unit);
 
 <div class="sassdoc-item-header">
 
+###  units-match() {#function-units-match}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Checks if two numbers are the same unit
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 218-233
+- **Lines (code):** 235-237
+
+</details>
+
+    
+
+#### Examples
+
+Example usage      
+
+
+
+``` scss
+$number-1: 12px;
+$number-2: 12px;
+$number-3: 12rem;
+.positive-result {
+  content: ulu.utils-units-match($number-1, $number-2);
+}
+.negative-result {
+  content: ulu.utils-units-match($number-1, $number-3);
+}
+```
+  
+
+``` css
+.positive-result {
+  content: true;
+}
+
+.negative-result {
+  content: false;
+}
+```
+  
+
+
+
+      
+
+#### Parameters
+
+
+|Name|Type|
+|:--|:--|
+|$number|`Number`|
+|$other-number|`String`|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|Boolean|Whether they have the same unit type
+Could be made into multiple arguments in future if needed|
+
+    
+
+
+<div class="sassdoc-item-header">
+
 ###  map-merge() {#function-map-merge}
 
   <div class="sassdoc-item-header__labels">
@@ -839,8 +924,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 248-256
-- **Lines (code):** 258-266
+- **Lines (comments):** 239-270
+- **Lines (code):** 272-280
 
 </details>
 
@@ -851,9 +936,48 @@ Reusable merge method
 Example usage      
 
 
+
 ``` scss
-.test-exists {
+$map-1: (
+  "inner-map" : (
+    "color" : "green",
+    "secondary-color" : "green"
+  ),
+  "color" : "green",
+  "secondary-color" : "green"
+);
+$map-2: (
+  "inner-map" : (
+    "color" : "red"
+  ),
+  "color" : "red",
+);
+.result-default {
+  $merged-map: ulu.utils-map-merge($map-1, $map-2);
+  content: meta.inspect($merged-map);
+}
+.result-deep {
+  $merged-map-deep: ulu.utils-map-merge($map-1, $map-2, "deep");
+  content: meta.inspect($merged-map-deep);
+}
+.result-overwrite {
+  $merged-map-overwrite: ulu.utils-map-merge($map-1, $map-2, "overwrite");
+  content: meta.inspect($merged-map-overwrite);
+}
+```
   
+
+``` css
+.result-default {
+  content: ("inner-map": ("color": "red"), "color": "red", "secondary-color": "green");
+}
+
+.result-deep {
+  content: ("inner-map": ("color": "red", "secondary-color": "green"), "color": "red", "secondary-color": "green");
+}
+
+.result-overwrite {
+  content: ("inner-map": ("color": "red"), "color": "red");
 }
 ```
   
@@ -897,12 +1021,49 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 268-271
-- **Lines (code):** 273-278
+- **Lines (comments):** 282-299
+- **Lines (code):** 301-306
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+
+``` scss
+$map-1 : (
+  "has-key" : true
+);
+$map-2 : (
+  "missing-key" : true
+);
+.map-1 {
+  content: ulu.utils-map-has($map-1, "has-key");
+}
+.map-2 {
+  content: ulu.utils-map-has($map-2, "has-key");
+}
+```
+  
+
+``` css
+.map-1 {
+  content: true;
+}
+
+.map-2 {
+  content: false;
+}
+```
+  
+
+
+
+      
 
 #### Parameters
 
@@ -962,8 +1123,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 280-281
-- **Lines (code):** 283-291
+- **Lines (comments):** 308-309
+- **Lines (code):** 311-319
 
 </details>
 
@@ -998,12 +1159,46 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 293-294
-- **Lines (code):** 296-303
+- **Lines (comments):** 321-333
+- **Lines (code):** 335-342
 
 </details>
 
     
+
+#### Examples
+
+Example usage      
+
+
+
+``` scss
+$fallback-text: "No input received";
+.user-name:after {
+  $user-name: "Johnny";
+  content: ulu.utils-fallback($user-name, $fallback-text);
+}
+.user-birthdate:after {
+  $user-birthdate: null;
+  content: ulu.utils-fallback($user-birthdate, $fallback-text);
+}
+```
+  
+
+``` css
+.user-name:after {
+  content: "Johnny";
+}
+
+.user-birthdate:after {
+  content: "No input received";
+}
+```
+  
+
+
+
+      
 
 #### Returns
 
@@ -1038,8 +1233,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 305-305
-- **Lines (code):** 306-314
+- **Lines (comments):** 344-344
+- **Lines (code):** 345-353
 
 </details>
 
@@ -1074,8 +1269,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 317-321
-- **Lines (code):** 322-341
+- **Lines (comments):** 356-360
+- **Lines (code):** 361-380
 
 </details>
 
@@ -1128,8 +1323,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 343-347
-- **Lines (code):** 349-375
+- **Lines (comments):** 382-386
+- **Lines (code):** 388-414
 
 </details>
 
@@ -1189,8 +1384,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 377-381
-- **Lines (code):** 383-399
+- **Lines (comments):** 416-420
+- **Lines (code):** 422-438
 
 </details>
 
@@ -1233,8 +1428,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 401-405
-- **Lines (code):** 407-415
+- **Lines (comments):** 440-444
+- **Lines (code):** 446-454
 
 </details>
 
@@ -1284,8 +1479,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 417-421
-- **Lines (code):** 423-431
+- **Lines (comments):** 456-460
+- **Lines (code):** 462-470
 
 </details>
 
@@ -1334,8 +1529,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 433-437
-- **Lines (code):** 439-454
+- **Lines (comments):** 472-476
+- **Lines (code):** 478-493
 
 </details>
 
@@ -1388,8 +1583,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 456-471
-- **Lines (code):** 473-489
+- **Lines (comments):** 495-510
+- **Lines (code):** 512-528
 
 </details>
 
@@ -1463,8 +1658,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 491-500
-- **Lines (code):** 502-504
+- **Lines (comments):** 530-539
+- **Lines (code):** 541-543
 
 </details>
 
@@ -1537,8 +1732,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 506-515
-- **Lines (code):** 517-519
+- **Lines (comments):** 545-554
+- **Lines (code):** 556-558
 
 </details>
 
@@ -1611,8 +1806,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 521-530
-- **Lines (code):** 532-534
+- **Lines (comments):** 560-569
+- **Lines (code):** 571-573
 
 </details>
 
@@ -1685,8 +1880,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 536-545
-- **Lines (code):** 547-549
+- **Lines (comments):** 575-584
+- **Lines (code):** 586-588
 
 </details>
 
@@ -1760,8 +1955,8 @@ Strips the unit from the number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 551-557
-- **Lines (code):** 559-569
+- **Lines (comments):** 590-596
+- **Lines (code):** 598-608
 
 </details>
 
@@ -1831,8 +2026,8 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 571-576
-- **Lines (code):** 578-580
+- **Lines (comments):** 610-615
+- **Lines (code):** 617-619
 
 </details>
 
@@ -1888,8 +2083,8 @@ Convert from pixel to em
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 582-585
-- **Lines (code):** 587-589
+- **Lines (comments):** 621-624
+- **Lines (code):** 626-628
 
 </details>
 
@@ -1939,8 +2134,8 @@ Calculates the hypotenuse of a triangle
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 605-609
-- **Lines (code):** 611-613
+- **Lines (comments):** 644-648
+- **Lines (code):** 650-652
 
 </details>
 
@@ -1989,8 +2184,8 @@ Get's the info about a box shadow
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 615-618
-- **Lines (code):** 620-651
+- **Lines (comments):** 654-657
+- **Lines (code):** 659-690
 
 </details>
 
@@ -2044,8 +2239,8 @@ Get's the extent (how far the shadow extends past the box's edge)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 653-657
-- **Lines (code):** 659-677
+- **Lines (comments):** 692-696
+- **Lines (code):** 698-716
 
 </details>
 
@@ -2100,8 +2295,8 @@ Determines if value passed is a list
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 679-681
-- **Lines (code):** 683-685
+- **Lines (comments):** 718-720
+- **Lines (code):** 722-724
 
 </details>
 
@@ -2149,8 +2344,8 @@ Determines if value passed is a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 687-689
-- **Lines (code):** 691-693
+- **Lines (comments):** 726-728
+- **Lines (code):** 730-732
 
 </details>
 
@@ -2198,8 +2393,8 @@ Determines if value passed is a number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 695-697
-- **Lines (code):** 699-701
+- **Lines (comments):** 734-736
+- **Lines (code):** 738-740
 
 </details>
 
@@ -2247,8 +2442,8 @@ Determines if value passed is a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 703-705
-- **Lines (code):** 707-709
+- **Lines (comments):** 742-744
+- **Lines (code):** 746-748
 
 </details>
 
@@ -2296,8 +2491,8 @@ Determines if value passed is a color
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 711-713
-- **Lines (code):** 715-717
+- **Lines (comments):** 750-752
+- **Lines (code):** 754-756
 
 </details>
 
@@ -2346,8 +2541,8 @@ Returns true if number passed is even
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 737-740
-- **Lines (code):** 742-748
+- **Lines (comments):** 776-779
+- **Lines (code):** 781-787
 
 </details>
 
@@ -2406,8 +2601,8 @@ Returns true if number passed is odd
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 750-752
-- **Lines (code):** 754-756
+- **Lines (comments):** 789-791
+- **Lines (code):** 793-795
 
 </details>
 
@@ -2460,8 +2655,8 @@ Always returns a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 758-760
-- **Lines (code):** 762-764
+- **Lines (comments):** 797-799
+- **Lines (code):** 801-803
 
 </details>
 
@@ -2514,8 +2709,8 @@ Returns true if edge passed is an end (top/bottom)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 766-769
-- **Lines (code):** 771-779
+- **Lines (comments):** 805-808
+- **Lines (code):** 810-818
 
 </details>
 
@@ -2568,8 +2763,8 @@ Returns true if edge passed is an side (left/right)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 781-784
-- **Lines (code):** 786-788
+- **Lines (comments):** 820-823
+- **Lines (code):** 825-827
 
 </details>
 
@@ -2602,68 +2797,5 @@ Returns true if edge passed is an side (left/right)
 
 - [is-end()](/sass/core/utils/#function-is-end)
   
-  
-
-## CSS
-
-
-
-
-<div class="sassdoc-item-header">
-
-###  // Could be made into multiple arguments in future if needed 
-
-@function units-match($number, $other-number) {#css-// Could be made into multiple arguments in future if needed 
-
-@function units-match($number, $other-number)}
-
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Css</strong></span>
-  </div>
-
-</div>
-
-  
-
-Checks if two numbers are the same unit
-    
-    
-
-``` scss
-{
-  @return math.unit($number) == math.unit($other-number);
- }
-```
-  
-
-
-<details>
-  <summary>File Information</summary>
-  
-- **File:** _utils.scss
-- **Group:** utils
-- **Type:** css
-- **Lines (comments):** 234-241
-- **Lines (code):** 244-788
-
-</details>
-
-    
-
-#### Examples
-
-Example usage      
-
-
-``` scss
-.test-exists {
-  
-}
-```
-  
-
-
-
-      
   
   
