@@ -358,6 +358,18 @@ $config: (
 /// @param {List} $keys The list of keys to check for
 /// @param {List} $options Options for how this behaves
 /// @param {List} $options.with-value Requires that at least one of the map entries from the list has a value other than null
+/// @example scss {compile} Example usage
+///   $map : (
+///     "has-key" : true
+///   );
+///   $keys : (
+///     "has-key",
+///     "needs-key",
+///   );
+///   .map-contains-any-result {
+///     content: ulu.utils-map-contains-any($map, $keys);
+///   }
+///
 @function map-contains-any($map, $keys, $options: ()) {
   @if (meta.type-of($map) != "map") {
     @error "map-contains-any(): Incorrect type for $map (should be map)";
