@@ -18,6 +18,10 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "headline-sizes" :  map.merge($wysiwyg-headings, ("h1" : "h1"))
 ));
 
+@include ulu.component-counter-list-set((
+  "extra-selector" : ".counter-list-auto ol:not(.counter-list-ignore)"
+));
+
 @include ulu.component-data-grid-set((
   "extra-rule-styles" : (
     "light" : (

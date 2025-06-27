@@ -50,7 +50,7 @@ $config: (
   "counter-font-family" : null,
   "counter-color" : white,
   "counter-background-color" : "accent",
-  "extra-selector" : ".counter-list-auto ol:not(.footnotes > ol, .list-grid)"
+  "extra-selector" : null
 );
 ```
   
@@ -176,8 +176,8 @@ Output counter-list component styles
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 106-113
-- **Lines (code):** 115-160
+- **Lines (comments):** 62-69
+- **Lines (code):** 71-156
 
 </details>
 
