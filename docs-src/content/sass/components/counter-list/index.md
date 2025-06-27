@@ -50,6 +50,7 @@ $config: (
   "counter-font-family" : null,
   "counter-color" : white,
   "counter-background-color" : "accent",
+  "extra-selector" : ".counter-list-auto ol:not(.footnotes > ol, .list-grid)"
 );
 ```
   
@@ -61,8 +62,8 @@ $config: (
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** variable
-- **Lines (comments):** 11-23
-- **Lines (code):** 25-39
+- **Lines (comments):** 13-25
+- **Lines (code):** 27-42
 
 </details>
 
@@ -116,8 +117,8 @@ Change modules $config
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 41-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 44-47
+- **Lines (code):** 49-51
 
 </details>
 
@@ -175,8 +176,8 @@ Output counter-list component styles
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 59-66
-- **Lines (code):** 68-137
+- **Lines (comments):** 106-113
+- **Lines (code):** 115-160
 
 </details>
 
@@ -258,8 +259,8 @@ Get a config option
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** function
-- **Lines (comments):** 50-53
-- **Lines (code):** 55-57
+- **Lines (comments):** 53-56
+- **Lines (code):** 58-60
 
 </details>
 

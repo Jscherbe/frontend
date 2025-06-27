@@ -3,6 +3,8 @@
 /// Outputs a styled list with counters
 
 @use "sass:map";
+@use "sass:selector" as sassSelector;
+
 @use "../utils";
 @use "../selector";
 @use "../color";
@@ -36,6 +38,7 @@ $config: (
   "counter-font-family" : null,
   "counter-color" : white,
   "counter-background-color" : "accent",
+  "extra-selector" : ".counter-list-auto ol:not(.footnotes > ol, .list-grid)"
 ) !default;
 
 /// Change modules $config
@@ -56,28 +59,10 @@ $config: (
   @return utils.require-map-get($config, $name, "counter-list [config]");
 }
 
-/// Output counter-list component styles
-/// @demo counter-list
-/// @example html {preview}
-///   <ol class="counter-list">
-///     <li class="counter-list__item">This is a item that will get counted</li>
-///     <li class="counter-list__item">Another item that has more content to show line wrapping. Lorem ipsum et depsi anu. Dolor et anu.</li>
-///     <li class="counter-list__item">Small Amount of Text</li>
-///   </ol>
-
-@mixin styles {
-  $prefix: selector.class("counter-list");
+@mixin counter-list-item-styles{
   $width: get("counter-width");
   $height: utils.fallback(get("counter-height"), $width);
-
-  #{ $prefix } {
-    margin: get("margin");
-    counter-reset: ulu-counter-list;
-  }
-
-  #{ $prefix } > li,
-  #{ $prefix }__item {
-    display: flex;
+  display: flex;
     gap: get("counter-gap");
     align-items: get("align-items");
     margin: get("item-margin");
@@ -116,22 +101,60 @@ $config: (
     //     align-items: center;
     //   }
     // }
+}
+
+/// Output counter-list component styles
+/// @demo counter-list
+/// @example html {preview}
+///   <ol class="counter-list">
+///     <li class="counter-list__item">This is a item that will get counted</li>
+///     <li class="counter-list__item">Another item that has more content to show line wrapping. Lorem ipsum et depsi anu. Dolor et anu.</li>
+///     <li class="counter-list__item">Small Amount of Text</li>
+///   </ol>
+
+@mixin styles {
+  $prefix: selector.class("counter-list");
+  $prefix-item: sassSelector.parse("#{ $prefix }__item");
+  $extra-selector: get("extra-selector");
+
+  $selector: $prefix;
+  $selector-alphabetical: sassSelector.parse("#{ $prefix }--alphabetical");
+  $selector-numeric: sassSelector.parse("#{ $prefix }--numeric");
+  $selector-no-reset: sassSelector.parse("#{ $prefix }--no-reset");
+
+  @if ($extra-selector) {
+    $selector: sassSelector.parse("#{ $prefix }, #{ $extra-selector }");
+    $selector-alphabetical: sassSelector.parse("#{ $selector-alphabetical }, #{ $extra-selector }--alphabetical");
+    $selector-numeric: sassSelector.parse("#{ $selector-numeric }, #{ $extra-selector }--numeric");
+    $selector-no-reset: sassSelector.parse("#{ $selector-no-reset }, #{ $extra-selector }--no-reset");
+  }
+
+  #{ $selector } {
+    margin: get("margin");
+    counter-reset: ulu-counter-list;
+    & > li {
+      @include counter-list-item-styles;
+    }
+  }
+
+  #{ $prefix-item } {
+    @include counter-list-item-styles;
   }
 
   // Modifiers
-  #{ $prefix }--alphabetical {
+  #{ $selector-alphabetical } {
     & > li::before,
-    & > #{ $prefix }__item::before {
+    & > #{ $prefix-item }::before {
       content: counter(ulu-counter-list, upper-alpha);
     }
   }
-  #{ $prefix }--numeric {
+  #{ $selector-numeric } {
     & > li::before,
-    & > #{ $prefix }__item::before {
+    & > #{ $prefix-item }::before {
       content: counter(ulu-counter-list, numeric);
     }
   }
-  #{ $prefix }--no-reset {
+  #{ $selector-no-reset } {
     counter-reset: none;
   }
 }

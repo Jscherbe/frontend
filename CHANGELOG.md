@@ -1,6 +1,10 @@
 # Change Log
 
 ## 0.1.0-beta.66
+- **scss/components/counter-list**
+  - Add extra-selector option to allow class wrapper which styles all ol's inside container.
+
+## 0.1.0-beta.66
 
 - **scss/components/data-grid**
   - Add missing row gutter breakpoint modifiers (so row gutters use breakpoint sizes)

@@ -8,9 +8,9 @@
 
 ## Docs
 
-## Updatiing SCSS
+## Updating SCSS
 
-- Udpate sassdocs markdown by `npm run docs:update:scss`
+- Update sassdocs markdown by `npm run docs:update:scss`
 
 ## Updating JS Docs
 

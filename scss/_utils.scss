@@ -101,7 +101,6 @@ $config: (
 /// Returns true if we should include something (map of booleans)
 /// @param {String} $name Name of item to see if it's included
 /// @param {Map} $includes Map of includes
-/// @compiler
 /// @example scss {compile} Example usage
 ///   $include-styles : (
 ///     "h2" : true,
@@ -201,7 +200,6 @@ $config: (
 /// @param {Number} $number The unitless number to add unit to
 /// @param {String} $unit The unit to add to number
 /// @return {String} Number with unit attached (can't be used in maths)
-/// @compiler
 /// @example scss {compile} Example usage
 ///   $number: 12;
 ///   $unit: "px";
@@ -342,6 +340,19 @@ $config: (
 }
 
 /// Provides fallback values from the same map
+/// @return {*} 
+/// @example scss {compile} Example usage
+///   $map: (
+///     "name": doug,
+///     "gpa": "3",
+///     "grade": "B",
+///   );
+///   .fallback-map {
+///     // iterates through properties until it finds one that is a key in the map. 
+///     content: ulu.utils-map-fallback($map, "gpa", "grade", "average");
+///   }
+///
+
 @function map-fallback($map, $properties...) {
   @each $prop in $properties {
     $value: map.get($map, $prop);
@@ -396,6 +407,19 @@ $config: (
 /// @param {*} $value The value that may need the fallback
 /// @param {Map} $lookup Map of properties to functions (use sass:meta > meta.get-function to populate)
 /// @return {*} The user's original value, or if the value is true get the default value from the provided function
+/// @example scss {compile} Example usage
+///   $fallback: (
+///     "color" : ulu.color-get("link"),
+/// 
+///   );
+///   $keys : (
+///     "has-key",
+///     "needs-key",
+///   );
+///   .map-contains-any-result {
+///     content: ulu.utils-map-contains-any($map, $keys);
+///   }
+///
 
 @function function-fallback($prop, $value, $lookup) {
   $arguments: null;

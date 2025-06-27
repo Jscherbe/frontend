@@ -10,6 +10,17 @@ title: Counter List
   <li>{{ placeholder.paragraphSmall }}</li>
 </ol>
 
+<h2 class="h2">Counter List using counter-list-auto</h2>
+
+<div class="counter-list-auto">
+  <ol>
+    <li>{{ placeholder.paragraphSmall }}</li>
+    <li>{{ placeholder.paragraph }}</li>
+    <li>{{ placeholder.paragraphSmall }}</li>
+    <li>{{ placeholder.paragraphSmall }}</li>
+  </ol>
+</div>
+
 <h2 class="h2">Alphabetical Counter List</h2>
 
 <ol class="counter-list counter-list--alphabetical">
