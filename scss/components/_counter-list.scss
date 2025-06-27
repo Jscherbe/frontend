@@ -75,16 +75,10 @@ $config: (
 
   $selector: $prefix;
   $selector-item: sassSelector.parse("#{ $prefix } > li, #{ $prefix-item }");
-  $selector-alphabetical: sassSelector.parse("#{ $prefix }--alphabetical");
-  $selector-numeric: sassSelector.parse("#{ $prefix }--numeric");
-  $selector-no-reset: sassSelector.parse("#{ $prefix }--no-reset");
 
   @if ($extra-selector) {
     $selector: sassSelector.parse("#{ $prefix }, #{ $extra-selector }");
     $selector-item: sassSelector.parse("#{ $selector-item }, #{ $extra-selector } > li");
-    $selector-alphabetical: sassSelector.parse("#{ $selector-alphabetical }, #{ $extra-selector }--alphabetical");
-    $selector-numeric: sassSelector.parse("#{ $selector-numeric }, #{ $extra-selector }--numeric");
-    $selector-no-reset: sassSelector.parse("#{ $selector-no-reset }, #{ $extra-selector }--no-reset");
   }
 
   #{ $selector } {
@@ -138,19 +132,19 @@ $config: (
   }
 
   // Modifiers
-  #{ $selector-alphabetical } {
+  #{ $prefix }--alphabetical {
     & > li::before,
     & > #{ $prefix-item }::before {
       content: counter(ulu-counter-list, upper-alpha);
     }
   }
-  #{ $selector-numeric } {
+  #{ $prefix }--numeric {
     & > li::before,
     & > #{ $prefix-item }::before {
       content: counter(ulu-counter-list, numeric);
     }
   }
-  #{ $selector-no-reset } {
+  #{ $prefix }--no-reset {
     counter-reset: none;
   }
 }

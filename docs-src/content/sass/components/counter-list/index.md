@@ -177,7 +177,7 @@ Output counter-list component styles
 - **Group:** counter-list
 - **Type:** mixin
 - **Lines (comments):** 62-69
-- **Lines (code):** 71-156
+- **Lines (code):** 71-150
 
 </details>
 

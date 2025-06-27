@@ -408,17 +408,6 @@ $config: (
 /// @param {Map} $lookup Map of properties to functions (use sass:meta > meta.get-function to populate)
 /// @return {*} The user's original value, or if the value is true get the default value from the provided function
 /// @example scss {compile} Example usage
-///   $fallback: (
-///     "color" : ulu.color-get("link"),
-/// 
-///   );
-///   $keys : (
-///     "has-key",
-///     "needs-key",
-///   );
-///   .map-contains-any-result {
-///     content: ulu.utils-map-contains-any($map, $keys);
-///   }
 ///
 
 @function function-fallback($prop, $value, $lookup) {
