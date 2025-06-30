@@ -1,6 +1,7 @@
 # Change Log
 
-## 0.1.0-beta.66
+## 0.1.0-beta.67
+
 - **scss/components/counter-list**
   - Add extra-selector option to allow class wrapper which styles all ol's inside container.
 

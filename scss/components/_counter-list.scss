@@ -23,6 +23,7 @@
 /// @prop {CssUnit} counter-font-size [1.2em] The font-size of the counter text.
 /// @prop {Color|String} counter-color [white] The text color of the counter. Accepts color names or hex codes.
 /// @prop {Color|String} counter-background-color ["accent"] The background color of the counter. Refers to a color in the color module.
+/// @prop {String} extra-selector [null] Additional selectors to include table styling.
 
 $config: (
   "margin" : (2rem 0),
