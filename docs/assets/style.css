@@ -13047,13 +13047,12 @@ button.card:focus-within::after,
     grid-template-columns: 1fr;
   }
 }
-.counter-list {
+.counter-list, .counter-list-auto ol:not(.counter-list-ignore) {
   margin: 2rem 0;
   counter-reset: ulu-counter-list;
 }
 
-.counter-list > li,
-.counter-list__item {
+.counter-list > li, .counter-list__item, .counter-list-auto ol:not(.counter-list-ignore) > li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13064,8 +13063,7 @@ button.card:focus-within::after,
   margin: 0 0 1rem 0;
   min-height: 2.4em;
 }
-.counter-list > li::before,
-.counter-list__item::before {
+.counter-list > li::before, .counter-list__item::before, .counter-list-auto ol:not(.counter-list-ignore) > li::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

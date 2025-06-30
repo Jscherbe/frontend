@@ -5220,6 +5220,9 @@
                     <li><a href="#function-add-unit">add-unit()</a>
             		</li>
 
+                    <li><a href="#function-units-match">units-match()</a>
+            		</li>
+
                     <li><a href="#function-map-merge">map-merge()</a>
             		</li>
 
@@ -5314,15 +5317,6 @@
             		</li>
 
                     <li><a href="#function-is-side">is-side()</a>
-            		</li>
-                </ol>
-            		</li>
-
-                    <li><a href="#css">CSS</a>
-            
-                <ol>
-                    
-                    <li><a href="#%2F%2F-could-be-made-into-multiple-arguments-in-future-if-needed">// Could be made into multiple arguments in future if needed</a>
             		</li>
                 </ol>
             		</li>
@@ -5457,8 +5451,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 74-78</li>
-<li><strong>Lines (code):</strong> 80-90</li>
+<li><strong>Lines (comments):</strong> 71-75</li>
+<li><strong>Lines (code):</strong> 77-87</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5506,8 +5500,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 92-96</li>
-<li><strong>Lines (code):</strong> 98-102</li>
+<li><strong>Lines (comments):</strong> 89-93</li>
+<li><strong>Lines (code):</strong> 95-99</li>
 </ul>
 </details>
 <h4 id="parameters-2" tabindex="-1">Parameters</h4>
@@ -5559,8 +5553,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 113-115</li>
-<li><strong>Lines (code):</strong> 117-125</li>
+<li><strong>Lines (comments):</strong> 125-127</li>
+<li><strong>Lines (code):</strong> 129-137</li>
 </ul>
 </details>
 <h4 id="parameters-3" tabindex="-1">Parameters</h4>
@@ -5598,8 +5592,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 526-529</li>
-<li><strong>Lines (code):</strong> 531-538</li>
+<li><strong>Lines (comments):</strong> 655-658</li>
+<li><strong>Lines (code):</strong> 660-667</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -5643,8 +5637,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 35-42</li>
-<li><strong>Lines (code):</strong> 44-46</li>
+<li><strong>Lines (comments):</strong> 35-41</li>
+<li><strong>Lines (code):</strong> 43-45</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5672,6 +5666,19 @@
 </tr>
 </tbody>
 </table>
+<h4 id="returns" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Dimension</td>
+</tr>
+</tbody>
+</table>
 <h4 id="require-2" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-require-map-get">require-map-get()</a></li>
@@ -5693,8 +5700,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 48-60</li>
-<li><strong>Lines (code):</strong> 62-72</li>
+<li><strong>Lines (comments):</strong> 47-57</li>
+<li><strong>Lines (code):</strong> 59-69</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -5733,7 +5740,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns" tabindex="-1">Returns</h4>
+<h4 id="returns-1" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5769,10 +5776,29 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 104-106</li>
-<li><strong>Lines (code):</strong> 108-111</li>
+<li><strong>Lines (comments):</strong> 101-118</li>
+<li><strong>Lines (code):</strong> 120-123</li>
 </ul>
 </details>
+<h4 id="examples-3" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$include-styles</span></span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"h2"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"h3"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-keyword">@if</span><span class="pjs-token pjs-punctuation">(</span>ulu.<span class="pjs-token pjs-function">utils-included</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"h2"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$include-styles</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-selector">h2 </span><span class="pjs-token pjs-punctuation">{</span>
+    <span class="pjs-token pjs-property">font-size</span><span class="pjs-token pjs-punctuation">:</span> 24px<span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-keyword">@if</span><span class="pjs-token pjs-punctuation">(</span>ulu.<span class="pjs-token pjs-function">utils-included</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"h3"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$include-styles</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-selector">h3 </span><span class="pjs-token pjs-punctuation">{</span>
+    <span class="pjs-token pjs-property">font-size</span><span class="pjs-token pjs-punctuation">:</span> 18px<span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">h2</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">font-size</span><span class="pjs-token pjs-punctuation">:</span> 24px<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-7" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5805,16 +5831,35 @@
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
+<p>Provide a default when value type is not correct</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 128-130</li>
-<li><strong>Lines (code):</strong> 132-138</li>
+<li><strong>Lines (comments):</strong> 139-153</li>
+<li><strong>Lines (code):</strong> 155-161</li>
 </ul>
 </details>
+<h4 id="examples-4" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-accent-color</span></span><span class="pjs-token pjs-punctuation">:</span> #FE5F55<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-error-color</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"##C6ECAE"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$default-color</span></span><span class="pjs-token pjs-punctuation">:</span> #777DA7<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.accent-color </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">background-color</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-if-type</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$user-accent-color</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$default-color</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.error-color </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">background-color</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-if-type</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$user-error-color</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$default-color</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.accent-color</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">background-color</span><span class="pjs-token pjs-punctuation">:</span> #FE5F55<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.error-color</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">background-color</span><span class="pjs-token pjs-punctuation">:</span> #777DA7<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-8" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5842,22 +5887,55 @@
 </tr>
 </tbody>
 </table>
+<h4 id="returns-2" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">Returns the value or the fallback.</td>
+</tr>
+</tbody>
+</table>
 <div class="sassdoc-item-header">
 <h3 id="function-number-info" tabindex="-1">number-info()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
+<p>Returns number unit info, and strips the unit</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 141-142</li>
-<li><strong>Lines (code):</strong> 144-164</li>
+<li><strong>Lines (comments):</strong> 163-175</li>
+<li><strong>Lines (code):</strong> 177-197</li>
 </ul>
 </details>
+<h4 id="examples-5" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$size-info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-number-info</span><span class="pjs-token pjs-punctuation">(</span>24px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$size-info-invalid</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-number-info</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"Twenty Four Pixels"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.number-info-result </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$size-info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.number-info-invalid-result </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$size-info-invalid</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.number-info-result</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"unit"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"px"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"value"</span><span class="pjs-token pjs-punctuation">:</span> 24<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"invalid"</span><span class="pjs-token pjs-punctuation">:</span> false<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.number-info-invalid-result</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"unit"</span><span class="pjs-token pjs-punctuation">:</span> null<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"value"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"Twenty Four Pixels"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"invalid"</span><span class="pjs-token pjs-punctuation">:</span> true<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5875,7 +5953,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-1" tabindex="-1">Returns</h4>
+<h4 id="returns-3" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5911,10 +5989,21 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 166-169</li>
-<li><strong>Lines (code):</strong> 171-173</li>
+<li><strong>Lines (comments):</strong> 199-210</li>
+<li><strong>Lines (code):</strong> 212-214</li>
 </ul>
 </details>
+<h4 id="examples-6" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$number</span></span><span class="pjs-token pjs-punctuation">:</span> 12<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$unit</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"px"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$number-with-unit</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-add-unit</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$number</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$unit</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.add-unit-result </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-variable">$number-with-unit</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.add-unit-result</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> 12px<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-10" tabindex="-1">Parameters</h4>
 <table>
 <thead>
@@ -5937,7 +6026,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-2" tabindex="-1">Returns</h4>
+<h4 id="returns-4" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -5949,6 +6038,79 @@
 <tr>
 <td style="text-align:left">String</td>
 <td style="text-align:left">Number with unit attached (can't be used in maths)</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-units-match" tabindex="-1">units-match()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Checks if two numbers are the same unit</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 216-231</li>
+<li><strong>Lines (code):</strong> 233-235</li>
+</ul>
+</details>
+<h4 id="examples-7" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$number-1</span></span><span class="pjs-token pjs-punctuation">:</span> 12px<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$number-2</span></span><span class="pjs-token pjs-punctuation">:</span> 12px<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$number-3</span></span><span class="pjs-token pjs-punctuation">:</span> 12rem<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.positive-result </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-units-match</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$number-1</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$number-2</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.negative-result </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-units-match</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$number-1</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$number-3</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.positive-result</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> true<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.negative-result</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> false<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$number</td>
+<td style="text-align:left"><code>Number</code></td>
+</tr>
+<tr>
+<td style="text-align:left">$other-number</td>
+<td style="text-align:left"><code>String</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-5" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether they have the same unit type</td>
+</tr>
+<tr>
+<td style="text-align:left">Could be made into multiple arguments in future if needed</td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -5965,11 +6127,50 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 185-189</li>
-<li><strong>Lines (code):</strong> 191-199</li>
+<li><strong>Lines (comments):</strong> 237-268</li>
+<li><strong>Lines (code):</strong> 270-278</li>
 </ul>
 </details>
-<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<h4 id="examples-8" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$map-1</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"inner-map"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"secondary-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"secondary-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$map-2</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"inner-map"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span>
+  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.result-default </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$merged-map</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-merge</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map-1</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$map-2</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$merged-map</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.result-deep </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$merged-map-deep</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-merge</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map-1</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$map-2</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"deep"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$merged-map-deep</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.result-overwrite </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$merged-map-overwrite</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-merge</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map-1</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$map-2</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"overwrite"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$merged-map-overwrite</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.result-default</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"inner-map"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"secondary-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.result-deep</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"inner-map"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"secondary-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"secondary-color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"green"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.result-overwrite</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"inner-map"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"red"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5996,21 +6197,6 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-3" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Map</td>
-<td style="text-align:left">New map with changes</td>
-</tr>
-</tbody>
-</table>
 <div class="sassdoc-item-header">
 <h3 id="function-map-has" tabindex="-1">map-has()</h3>
   <div class="sassdoc-item-header__labels">
@@ -6024,11 +6210,32 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 201-204</li>
-<li><strong>Lines (code):</strong> 206-211</li>
+<li><strong>Lines (comments):</strong> 280-297</li>
+<li><strong>Lines (code):</strong> 299-304</li>
 </ul>
 </details>
-<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<h4 id="examples-9" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$map-1</span></span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"has-key"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$map-2</span></span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"missing-key"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.map-1 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-has</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map-1</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"has-key"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.map-2 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-has</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map-2</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"has-key"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.map-1</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> true<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.map-2</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> false<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6050,7 +6257,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-4" tabindex="-1">Returns</h4>
+<h4 id="returns-6" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6086,8 +6293,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 213-214</li>
-<li><strong>Lines (code):</strong> 216-224</li>
+<li><strong>Lines (comments):</strong> 306-307</li>
+<li><strong>Lines (code):</strong> 309-317</li>
 </ul>
 </details>
 <h4 id="require-7" tabindex="-1">Require</h4>
@@ -6107,11 +6314,29 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 226-227</li>
-<li><strong>Lines (code):</strong> 229-236</li>
+<li><strong>Lines (comments):</strong> 319-331</li>
+<li><strong>Lines (code):</strong> 333-340</li>
 </ul>
 </details>
-<h4 id="returns-5" tabindex="-1">Returns</h4>
+<h4 id="examples-10" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$fallback-text</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"No input received"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.user-name:after </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-name</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"Johnny"</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-fallback</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-name</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$fallback-text</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.user-birthdate:after </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-birthdate</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-fallback</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-birthdate</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$fallback-text</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.user-name:after</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"Johnny"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.user-birthdate:after</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"No input received"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="returns-7" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6139,10 +6364,37 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 238-238</li>
-<li><strong>Lines (code):</strong> 239-247</li>
+<li><strong>Lines (comments):</strong> 342-354</li>
+<li><strong>Lines (code):</strong> 356-364</li>
 </ul>
 </details>
+<h4 id="examples-11" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$map</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"name"</span><span class="pjs-token pjs-punctuation">:</span> doug<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"gpa"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"3"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"grade"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"B"</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.fallback-map </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-comment">// iterates through properties until it finds one that is a key in the map. </span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-fallback</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"gpa"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"grade"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"average"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.fallback-map</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"3"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="returns-8" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">*</td>
+</tr>
+</tbody>
+</table>
 <h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6160,11 +6412,26 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 250-254</li>
-<li><strong>Lines (code):</strong> 255-274</li>
+<li><strong>Lines (comments):</strong> 367-383</li>
+<li><strong>Lines (code):</strong> 384-403</li>
 </ul>
 </details>
-<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<h4 id="examples-12" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$map</span></span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"has-key"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$keys</span></span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"has-key"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"needs-key"</span><span class="pjs-token pjs-punctuation">,</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-selector">.map-contains-any-result </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-map-contains-any</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$map</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$keys</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.map-contains-any-result</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> true<span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-14" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6218,11 +6485,14 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 276-280</li>
-<li><strong>Lines (code):</strong> 282-308</li>
+<li><strong>Lines (comments):</strong> 405-411</li>
+<li><strong>Lines (code):</strong> 413-439</li>
 </ul>
 </details>
-<h4 id="parameters-14" tabindex="-1">Parameters</h4>
+<h4 id="examples-13" tabindex="-1">Examples</h4>
+<p>Example usage</p>
+<pre class="language-scss"><code class="language-scss"></code></pre>
+<h4 id="parameters-15" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6249,7 +6519,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-6" tabindex="-1">Returns</h4>
+<h4 id="returns-9" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6285,11 +6555,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 310-314</li>
-<li><strong>Lines (code):</strong> 316-332</li>
+<li><strong>Lines (comments):</strong> 441-445</li>
+<li><strong>Lines (code):</strong> 447-463</li>
 </ul>
 </details>
-<h4 id="parameters-15" tabindex="-1">Parameters</h4>
+<h4 id="parameters-16" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6337,11 +6607,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 334-338</li>
-<li><strong>Lines (code):</strong> 340-348</li>
+<li><strong>Lines (comments):</strong> 465-469</li>
+<li><strong>Lines (code):</strong> 471-479</li>
 </ul>
 </details>
-<h4 id="parameters-16" tabindex="-1">Parameters</h4>
+<h4 id="parameters-17" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6363,7 +6633,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-7" tabindex="-1">Returns</h4>
+<h4 id="returns-10" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6394,11 +6664,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 350-354</li>
-<li><strong>Lines (code):</strong> 356-364</li>
+<li><strong>Lines (comments):</strong> 481-485</li>
+<li><strong>Lines (code):</strong> 487-495</li>
 </ul>
 </details>
-<h4 id="parameters-17" tabindex="-1">Parameters</h4>
+<h4 id="parameters-18" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6420,7 +6690,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-8" tabindex="-1">Returns</h4>
+<h4 id="returns-11" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6448,11 +6718,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 366-370</li>
-<li><strong>Lines (code):</strong> 372-387</li>
+<li><strong>Lines (comments):</strong> 497-501</li>
+<li><strong>Lines (code):</strong> 503-518</li>
 </ul>
 </details>
-<h4 id="parameters-18" tabindex="-1">Parameters</h4>
+<h4 id="parameters-19" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6483,7 +6753,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-9" tabindex="-1">Returns</h4>
+<h4 id="returns-12" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6515,11 +6785,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 389-404</li>
-<li><strong>Lines (code):</strong> 406-422</li>
+<li><strong>Lines (comments):</strong> 520-535</li>
+<li><strong>Lines (code):</strong> 537-553</li>
 </ul>
 </details>
-<h4 id="examples-3" tabindex="-1">Examples</h4>
+<h4 id="examples-14" tabindex="-1">Examples</h4>
 <p>Example of getting left value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$spacing</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
@@ -6529,7 +6799,7 @@
   <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> map.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$spacing</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// left = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-19" tabindex="-1">Parameters</h4>
+<h4 id="parameters-20" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6546,7 +6816,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-10" tabindex="-1">Returns</h4>
+<h4 id="returns-13" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6578,11 +6848,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 424-433</li>
-<li><strong>Lines (code):</strong> 435-437</li>
+<li><strong>Lines (comments):</strong> 555-564</li>
+<li><strong>Lines (code):</strong> 566-568</li>
 </ul>
 </details>
-<h4 id="examples-4" tabindex="-1">Examples</h4>
+<h4 id="examples-15" tabindex="-1">Examples</h4>
 <p>Example of getting top value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
@@ -6590,7 +6860,7 @@
   <span class="pjs-token pjs-property">top</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-top</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// top = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-20" tabindex="-1">Parameters</h4>
+<h4 id="parameters-21" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6607,7 +6877,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-11" tabindex="-1">Returns</h4>
+<h4 id="returns-14" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6638,11 +6908,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 439-448</li>
-<li><strong>Lines (code):</strong> 450-452</li>
+<li><strong>Lines (comments):</strong> 570-579</li>
+<li><strong>Lines (code):</strong> 581-583</li>
 </ul>
 </details>
-<h4 id="examples-5" tabindex="-1">Examples</h4>
+<h4 id="examples-16" tabindex="-1">Examples</h4>
 <p>Example of getting right value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
@@ -6650,7 +6920,7 @@
   <span class="pjs-token pjs-property">right</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-right</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// right = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-21" tabindex="-1">Parameters</h4>
+<h4 id="parameters-22" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6667,7 +6937,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-12" tabindex="-1">Returns</h4>
+<h4 id="returns-15" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6698,11 +6968,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 454-463</li>
-<li><strong>Lines (code):</strong> 465-467</li>
+<li><strong>Lines (comments):</strong> 585-594</li>
+<li><strong>Lines (code):</strong> 596-598</li>
 </ul>
 </details>
-<h4 id="examples-6" tabindex="-1">Examples</h4>
+<h4 id="examples-17" tabindex="-1">Examples</h4>
 <p>Example of getting bottom value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
@@ -6710,7 +6980,7 @@
   <span class="pjs-token pjs-property">bottom</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-bottom</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// bottom = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-22" tabindex="-1">Parameters</h4>
+<h4 id="parameters-23" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6727,7 +6997,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-13" tabindex="-1">Returns</h4>
+<h4 id="returns-16" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6758,11 +7028,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 469-478</li>
-<li><strong>Lines (code):</strong> 480-482</li>
+<li><strong>Lines (comments):</strong> 600-609</li>
+<li><strong>Lines (code):</strong> 611-613</li>
 </ul>
 </details>
-<h4 id="examples-7" tabindex="-1">Examples</h4>
+<h4 id="examples-18" tabindex="-1">Examples</h4>
 <p>Example of getting left value</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
@@ -6770,7 +7040,7 @@
   <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing-left</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
   <span class="pjs-token pjs-comment">// left = 2em</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h4 id="parameters-23" tabindex="-1">Parameters</h4>
+<h4 id="parameters-24" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6787,7 +7057,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-14" tabindex="-1">Returns</h4>
+<h4 id="returns-17" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6821,11 +7091,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 484-492</li>
-<li><strong>Lines (code):</strong> 494-504</li>
+<li><strong>Lines (comments):</strong> 615-621</li>
+<li><strong>Lines (code):</strong> 623-633</li>
 </ul>
 </details>
-<h4 id="examples-8" tabindex="-1">Examples</h4>
+<h4 id="examples-19" tabindex="-1">Examples</h4>
 <p>Example usage</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-selector">.test </span><span class="pjs-token pjs-punctuation">{</span>
   <span class="pjs-token pjs-property">line-height</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-strip-unit</span><span class="pjs-token pjs-punctuation">(</span>4rem<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
@@ -6858,11 +7128,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 506-511</li>
-<li><strong>Lines (code):</strong> 513-515</li>
+<li><strong>Lines (comments):</strong> 635-640</li>
+<li><strong>Lines (code):</strong> 642-644</li>
 </ul>
 </details>
-<h4 id="parameters-24" tabindex="-1">Parameters</h4>
+<h4 id="parameters-25" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6894,7 +7164,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-15" tabindex="-1">Returns</h4>
+<h4 id="returns-18" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6924,11 +7194,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 517-520</li>
-<li><strong>Lines (code):</strong> 522-524</li>
+<li><strong>Lines (comments):</strong> 646-649</li>
+<li><strong>Lines (code):</strong> 651-653</li>
 </ul>
 </details>
-<h4 id="parameters-25" tabindex="-1">Parameters</h4>
+<h4 id="parameters-26" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6950,7 +7220,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-16" tabindex="-1">Returns</h4>
+<h4 id="returns-19" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -6981,11 +7251,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 540-544</li>
-<li><strong>Lines (code):</strong> 546-548</li>
+<li><strong>Lines (comments):</strong> 669-673</li>
+<li><strong>Lines (code):</strong> 675-677</li>
 </ul>
 </details>
-<h4 id="parameters-26" tabindex="-1">Parameters</h4>
+<h4 id="parameters-27" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7007,7 +7277,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-17" tabindex="-1">Returns</h4>
+<h4 id="returns-20" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7035,11 +7305,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 550-553</li>
-<li><strong>Lines (code):</strong> 555-586</li>
+<li><strong>Lines (comments):</strong> 679-682</li>
+<li><strong>Lines (code):</strong> 684-715</li>
 </ul>
 </details>
-<h4 id="parameters-27" tabindex="-1">Parameters</h4>
+<h4 id="parameters-28" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7056,7 +7326,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-18" tabindex="-1">Returns</h4>
+<h4 id="returns-21" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7091,11 +7361,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 588-592</li>
-<li><strong>Lines (code):</strong> 594-612</li>
+<li><strong>Lines (comments):</strong> 717-721</li>
+<li><strong>Lines (code):</strong> 723-741</li>
 </ul>
 </details>
-<h4 id="parameters-28" tabindex="-1">Parameters</h4>
+<h4 id="parameters-29" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7117,7 +7387,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-19" tabindex="-1">Returns</h4>
+<h4 id="returns-22" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7150,158 +7420,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 614-616</li>
-<li><strong>Lines (code):</strong> 618-620</li>
-</ul>
-</details>
-<h4 id="parameters-29" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$value</td>
-<td style="text-align:left"><code>*</code></td>
-<td style="text-align:left">Value to check</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-20" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type list</td>
-</tr>
-</tbody>
-</table>
-<div class="sassdoc-item-header">
-<h3 id="function-is-map" tabindex="-1">is-map()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Determines if value passed is a map</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 622-624</li>
-<li><strong>Lines (code):</strong> 626-628</li>
+<li><strong>Lines (comments):</strong> 743-745</li>
+<li><strong>Lines (code):</strong> 747-749</li>
 </ul>
 </details>
 <h4 id="parameters-30" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$value</td>
-<td style="text-align:left"><code>*</code></td>
-<td style="text-align:left">Value to check</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-21" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type map</td>
-</tr>
-</tbody>
-</table>
-<div class="sassdoc-item-header">
-<h3 id="function-is-number" tabindex="-1">is-number()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Determines if value passed is a number</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 630-632</li>
-<li><strong>Lines (code):</strong> 634-636</li>
-</ul>
-</details>
-<h4 id="parameters-31" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$value</td>
-<td style="text-align:left"><code>*</code></td>
-<td style="text-align:left">Value to check</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-22" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type number</td>
-</tr>
-</tbody>
-</table>
-<div class="sassdoc-item-header">
-<h3 id="function-is-string" tabindex="-1">is-string()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Determines if value passed is a string</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 638-640</li>
-<li><strong>Lines (code):</strong> 642-644</li>
-</ul>
-</details>
-<h4 id="parameters-32" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7329,25 +7452,123 @@
 <tbody>
 <tr>
 <td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type string</td>
+<td style="text-align:left">Whether the item was type list</td>
 </tr>
 </tbody>
 </table>
 <div class="sassdoc-item-header">
-<h3 id="function-is-color" tabindex="-1">is-color()</h3>
+<h3 id="function-is-map" tabindex="-1">is-map()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Determines if value passed is a color</p>
+<p>Determines if value passed is a map</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 646-648</li>
-<li><strong>Lines (code):</strong> 650-652</li>
+<li><strong>Lines (comments):</strong> 751-753</li>
+<li><strong>Lines (code):</strong> 755-757</li>
+</ul>
+</details>
+<h4 id="parameters-31" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-24" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type map</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-number" tabindex="-1">is-number()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a number</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 759-761</li>
+<li><strong>Lines (code):</strong> 763-765</li>
+</ul>
+</details>
+<h4 id="parameters-32" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-25" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type number</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-string" tabindex="-1">is-string()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a string</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 767-769</li>
+<li><strong>Lines (code):</strong> 771-773</li>
 </ul>
 </details>
 <h4 id="parameters-33" tabindex="-1">Parameters</h4>
@@ -7367,7 +7588,56 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-24" tabindex="-1">Returns</h4>
+<h4 id="returns-26" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type string</td>
+</tr>
+</tbody>
+</table>
+<div class="sassdoc-item-header">
+<h3 id="function-is-color" tabindex="-1">is-color()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a color</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 775-777</li>
+<li><strong>Lines (code):</strong> 779-781</li>
+</ul>
+</details>
+<h4 id="parameters-34" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-27" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7398,11 +7668,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 672-675</li>
-<li><strong>Lines (code):</strong> 677-683</li>
+<li><strong>Lines (comments):</strong> 801-804</li>
+<li><strong>Lines (code):</strong> 806-812</li>
 </ul>
 </details>
-<h4 id="parameters-34" tabindex="-1">Parameters</h4>
+<h4 id="parameters-35" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7419,7 +7689,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-25" tabindex="-1">Returns</h4>
+<h4 id="returns-28" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7456,11 +7726,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 685-687</li>
-<li><strong>Lines (code):</strong> 689-691</li>
+<li><strong>Lines (comments):</strong> 814-816</li>
+<li><strong>Lines (code):</strong> 818-820</li>
 </ul>
 </details>
-<h4 id="parameters-35" tabindex="-1">Parameters</h4>
+<h4 id="parameters-36" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7477,7 +7747,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-26" tabindex="-1">Returns</h4>
+<h4 id="returns-29" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7509,11 +7779,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 693-695</li>
-<li><strong>Lines (code):</strong> 697-699</li>
+<li><strong>Lines (comments):</strong> 822-824</li>
+<li><strong>Lines (code):</strong> 826-828</li>
 </ul>
 </details>
-<h4 id="parameters-36" tabindex="-1">Parameters</h4>
+<h4 id="parameters-37" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7530,7 +7800,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-27" tabindex="-1">Returns</h4>
+<h4 id="returns-30" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7562,11 +7832,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 701-704</li>
-<li><strong>Lines (code):</strong> 706-714</li>
+<li><strong>Lines (comments):</strong> 830-833</li>
+<li><strong>Lines (code):</strong> 835-843</li>
 </ul>
 </details>
-<h4 id="parameters-37" tabindex="-1">Parameters</h4>
+<h4 id="parameters-38" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7583,7 +7853,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-28" tabindex="-1">Returns</h4>
+<h4 id="returns-31" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7615,11 +7885,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 716-719</li>
-<li><strong>Lines (code):</strong> 721-723</li>
+<li><strong>Lines (comments):</strong> 845-848</li>
+<li><strong>Lines (code):</strong> 850-852</li>
 </ul>
 </details>
-<h4 id="parameters-38" tabindex="-1">Parameters</h4>
+<h4 id="parameters-39" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -7636,7 +7906,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-29" tabindex="-1">Returns</h4>
+<h4 id="returns-32" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -7659,29 +7929,6 @@
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-is-end">is-end()</a></li>
 </ul>
-<h2 id="css" tabindex="-1">CSS</h2>
-<div class="sassdoc-item-header">
-<h3 id="%2F%2F-could-be-made-into-multiple-arguments-in-future-if-needed" tabindex="-1">// Could be made into multiple arguments in future if needed</h3>
-<p>@function units-match($number, $other-number) {#css-// Could be made into multiple arguments in future if needed</p>
-<p>@function units-match($number, $other-number)}</p>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Css</strong></span>
-  </div>
-</div>
-<p>Checks if two numbers are the same unit</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-keyword">@return</span> math.<span class="pjs-token pjs-function">unit</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$number</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-operator">==</span> math.<span class="pjs-token pjs-function">unit</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$other-number</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
- <span class="pjs-token pjs-punctuation">}</span></code></pre>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> css</li>
-<li><strong>Lines (comments):</strong> 175-178</li>
-<li><strong>Lines (code):</strong> 181-723</li>
-</ul>
-</details>
 
     </div>
   </div>

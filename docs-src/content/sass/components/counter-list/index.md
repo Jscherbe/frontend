@@ -62,8 +62,8 @@ $config: (
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** variable
-- **Lines (comments):** 13-25
-- **Lines (code):** 27-42
+- **Lines (comments):** 13-26
+- **Lines (code):** 28-43
 
 </details>
 
@@ -85,6 +85,7 @@ $config: (
 |counter-font-size|CssUnit|1.2em|The font-size of the counter text.|
 |counter-color|Color|String|white|The text color of the counter. Accepts color names or hex codes.|
 |counter-background-color|Color|String|"accent"|The background color of the counter. Refers to a color in the color module.|
+|extra-selector|String|null|Additional selectors to include table styling.|
 
     
   
@@ -117,8 +118,8 @@ Change modules $config
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 44-47
-- **Lines (code):** 49-51
+- **Lines (comments):** 45-48
+- **Lines (code):** 50-52
 
 </details>
 
@@ -176,8 +177,8 @@ Output counter-list component styles
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** mixin
-- **Lines (comments):** 62-69
-- **Lines (code):** 71-150
+- **Lines (comments):** 63-70
+- **Lines (code):** 72-151
 
 </details>
 
@@ -259,8 +260,8 @@ Get a config option
 - **File:** _counter-list.scss
 - **Group:** counter-list
 - **Type:** function
-- **Lines (comments):** 53-56
-- **Lines (code):** 58-60
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-61
 
 </details>
 
