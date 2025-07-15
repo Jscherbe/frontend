@@ -1,4 +1,5 @@
 SCSS Todos:
+  ☐ Fix badge defaults (default 10rem large is smaller)
   ☐ Card aside layout is still unresolved (needs static aside width)
     * Currently it's width set by the amount of content which we don't want
   ☐ Think about moving container to components and out of base/layout

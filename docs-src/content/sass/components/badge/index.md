@@ -40,13 +40,18 @@ $config: (
   "background-color":    gray,
   "border-radius":       50%,
   "color":               black,
-  "font-size":           1.3rem,
+  "font-size":           1.5rem,
   "font-weight":         bold,
-  "width":               10rem,
+  "font-family":         true,
+  "width":               7rem,
   "sizes" : (
+    "small" : (
+      "font-size" : 1.2rem,
+      "width" :  5rem
+    ),
     "large" : (
       "font-size" : 2.75rem,
-      "width" :  6rem
+      "width" :  9rem
     )
   )
 );
@@ -60,8 +65,8 @@ $config: (
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** variable
-- **Lines (comments):** 11-19
-- **Lines (code):** 21-34
+- **Lines (comments):** 21-30
+- **Lines (code):** 32-50
 
 </details>
 
@@ -77,6 +82,7 @@ $config: (
 |color|Number|black|Type color|
 |font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
 |font-weight|Number|bold|Font weight|
+|font-family|Number|true|Specify font family, defaults to typography font-family-sans|
 |sizes|List|Object|List of other sizes (large by default), each size is a map of (width, font-size)|
 |width|Number|10rem|Width of badge (default size)|
 
@@ -111,8 +117,8 @@ Change modules $config
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 36-39
-- **Lines (code):** 41-43
+- **Lines (comments):** 52-55
+- **Lines (code):** 57-59
 
 </details>
 
@@ -170,8 +176,8 @@ Output badge component styles
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 54-68
-- **Lines (code):** 70-130
+- **Lines (comments):** 71-85
+- **Lines (code):** 87-149
 
 </details>
 
@@ -264,8 +270,8 @@ Get a config option
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
-- **Lines (comments):** 45-48
-- **Lines (code):** 50-52
+- **Lines (comments):** 61-64
+- **Lines (code):** 66-69
 
 </details>
 

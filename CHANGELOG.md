@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.68
+
+- **scss/components/badge**
+  - Fix default config (so that default size is smaller than large)
+  - Add default sizes (small and large)
+  - Add font family option
+
 ## 0.1.0-beta.67
 
 - **scss/components/counter-list**

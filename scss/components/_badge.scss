@@ -3,10 +3,20 @@
 /// Outputs badge component stylesheet
 ////
 
+@use "sass:meta";
 @use "sass:map";
 @use "../utils";
 @use "../selector";
+@use "../typography";
 @use "../color";
+
+// Used for function fallback
+$-fallbacks: (
+  "font-family" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "font-family-sans"
+  )
+);
 
 /// Module Settings
 /// @type Map
@@ -15,6 +25,7 @@
 /// @prop {Number} color [black] Type color
 /// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
 /// @prop {Number} font-weight [bold] Font weight
+/// @prop {Number} font-family [true] Specify font family, defaults to typography font-family-sans
 /// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
 /// @prop {Number} width [10rem] Width of badge (default size)
 
@@ -22,13 +33,18 @@ $config: (
   "background-color":    gray,
   "border-radius":       50%,
   "color":               black,
-  "font-size":           1.3rem,
+  "font-size":           1.5rem,
   "font-weight":         bold,
-  "width":               10rem,
+  "font-family":         true,
+  "width":               7rem,
   "sizes" : (
+    "small" : (
+      "font-size" : 1.2rem,
+      "width" :  5rem
+    ),
     "large" : (
       "font-size" : 2.75rem,
-      "width" :  6rem
+      "width" :  9rem
     )
   )
 ) !default;
@@ -48,7 +64,8 @@ $config: (
 ///   @include ulu.component-badge-get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "badge [config]");
+  $value: utils.require-map-get($config, $name, "badge [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Output badge component styles
@@ -77,6 +94,7 @@ $config: (
     flex: 0 0 get("width");
     font-size: get("font-size");
     font-weight: get("font-weight");
+    font-family: get("font-family");
   }
   #{ $prefix }__inner {
     display: block;
@@ -118,6 +136,7 @@ $config: (
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin: 0 !important;
   }
 
   @each $name, $props in get("sizes") {
