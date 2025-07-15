@@ -1,7 +1,7 @@
 {
   "name": "@ulu/frontend",
   "version": "0.1.0-beta.68",
-  "description": "Modular Sass Theming Library",
+  "description": "A versatile SCSS and JavaScript component library offering configurable, accessible components and flexible integration into any project, with SCSS modules suitable for modern JS frameworks.",
   "browser": "js/index.js",
   "main": "index.js",
   "exports": {
@@ -49,7 +49,15 @@
     "mixin",
     "components",
     "HTML",
-    "frontend framework"
+    "frontend framework",
+    "css",
+    "utilities",
+    "design system",
+    "toolkit",
+    "accessibility",
+    "ui",
+    "user interface",
+    "responsive design"
   ],
   "authors": {
     "name": "Joe Scherben, Informatics Studio",
