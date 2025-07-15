@@ -12442,13 +12442,14 @@ component:button
 
 .badge {
   display: block;
-  width: 10rem;
+  width: 7rem;
   max-width: 100%;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 10rem;
-          flex: 0 0 10rem;
-  font-size: 1.3rem;
+      -ms-flex: 0 0 7rem;
+          flex: 0 0 7rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  font-family: "Inter", sans-serif;
 }
 
 .badge__inner {
@@ -12493,13 +12494,21 @@ component:button
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin: 0 !important;
+}
+
+.badge--small {
+  width: 5rem;
+  font-size: 1.2rem;
+  -ms-flex-preferred-size: 5rem;
+      flex-basis: 5rem;
 }
 
 .badge--large {
-  width: 6rem;
+  width: 9rem;
   font-size: 2.75rem;
-  -ms-flex-preferred-size: 6rem;
-      flex-basis: 6rem;
+  -ms-flex-preferred-size: 9rem;
+      flex-basis: 9rem;
 }
 
 .basic-hero {

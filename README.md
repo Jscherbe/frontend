@@ -6,11 +6,4 @@ Front end development library (SCSS, JS)
 - [Change Log](CHANGELOG.md)
 - [Development Notes](README.dev.md)
 
-## API documentation
-
-### scss
-
-#### Workaround for syntax highlighting bug
-- If the syntax highlighting isn't working properly after an example, add an empty line with "///" to workaround that bug
-
 

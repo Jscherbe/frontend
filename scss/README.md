@@ -41,6 +41,10 @@
 - Should be written from the user's point of view
   - Use prefixes @see "Module Prefixes" in member names. This will avoid confusion about normal use case. For advanced user importing specific parts would already be familiar with this pattern. 
 
+#### Workaround for syntax highlighting bug
+
+If the syntax highlighting isn't working properly after an example, add an empty line with `///` to workaround that bug
+
 ### Ideas
 
 - How to solve the inability to use standard vars (avoid with)
