@@ -75,8 +75,8 @@ $config: (
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** variable
-- **Lines (comments):** 14-41
-- **Lines (code):** 43-71
+- **Lines (comments):** 16-43
+- **Lines (code):** 45-73
 
 </details>
 
@@ -145,8 +145,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 73-76
-- **Lines (code):** 78-80
+- **Lines (comments):** 75-78
+- **Lines (code):** 80-82
 
 </details>
 
@@ -204,8 +204,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 91-94
-- **Lines (code):** 96-215
+- **Lines (comments):** 93-96
+- **Lines (code):** 98-219
 
 </details>
 
@@ -272,8 +272,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 82-85
-- **Lines (code):** 87-89
+- **Lines (comments):** 84-87
+- **Lines (code):** 89-91
 
 </details>
 
