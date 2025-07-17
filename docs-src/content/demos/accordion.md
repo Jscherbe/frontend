@@ -170,7 +170,6 @@ Without an icon in the summary will fallback to browser default
 
 ## Examples with No borders
 
-
 <details class="accordion accordion--no-borders">
   <summary class="accordion__summary">
     This is an example title with long content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere sem ac neque rhoncus lacinia. Suspendisse ornare enim in ultrices egestas.
@@ -195,4 +194,3 @@ Without an icon in the summary will fallback to browser default
     {{ placeholder.paragraph }}
   </div>
 </details>
-

@@ -148,10 +148,11 @@ $config: (
     vertical-align: top;
     font-weight: bold;
     cursor: pointer;
-    display: flex; // For icon
     align-items: center;
-    width: calc(100% + $padding-x-double);
+    width: calc(100% + $padding-x-double); // To fix if using <button>
+ 
     &:has(#{ $prefix }__icon) {
+      display: flex;
       list-style: none; // Remove the default arrow (old safari?)
       &::-webkit-details-marker,
       &::marker {
@@ -197,6 +198,7 @@ $config: (
     > #{ $prefix }__summary {
       margin-left: -(get("transparent-padding-x"));
       margin-right: -(get("transparent-padding-x"));
+      width: 100%;
       padding: get("transparent-padding-y") get("transparent-padding-x");
       background-color: transparent;
       border: none;
@@ -212,8 +214,11 @@ $config: (
   }
   #{ $prefix }--no-borders {
     border: none;
-    &[open] > .accordion__summary {
-      border-bottom: none;
+    &[open],
+    &.is-active {
+      & > .accordion__summary {
+        border-bottom: none;
+      }
     }
   }
 }

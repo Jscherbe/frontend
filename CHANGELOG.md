@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0-beta.69
+
+- **scss/components/accordion**
+  - Set width on .accordion__summary so it works when using button element (when not details)
+  - Fixed minor things (missing selectors, etc)
+
 ## 0.1.0-beta.68
 
 - **scss/components/badge**

@@ -1,4 +1,7 @@
 SCSS Todos:
+  ☐ Why do we have accordion--no-borders (how is this useful)? 
+    * consider removing or making a demo reflect use case, not sure about this seems not useful
+    ☐ Check with Daniel to see if there was a use for this
   ☐ Fix badge defaults (default 10rem large is smaller)
   ☐ Card aside layout is still unresolved (needs static aside width)
     * Currently it's width set by the amount of content which we don't want
