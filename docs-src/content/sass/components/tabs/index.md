@@ -201,7 +201,7 @@ Output component stylesheet
 - **Group:** tabs
 - **Type:** mixin
 - **Lines (comments):** 107-109
-- **Lines (code):** 111-265
+- **Lines (code):** 111-263
 
 </details>
 

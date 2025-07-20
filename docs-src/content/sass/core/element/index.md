@@ -871,7 +871,7 @@ Add backdrop-filter blur
 
 <div class="sassdoc-item-header">
 
-###  hide-focus-ring() {#mixin-hide-focus-ring}
+###  focus-ring-required-only() {#mixin-focus-ring-required-only}
 
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>

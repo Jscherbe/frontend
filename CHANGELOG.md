@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.72
+
+- **scss/element**
+  - Change new mixin name "focus-ring-required-only"
+
 ## 0.1.0-beta.71
 
 - **scss/element**

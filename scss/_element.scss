@@ -392,7 +392,7 @@ $rule-margins: (
 }
 
 /// Accessibly hide focus ring while keeping it when it's required
-@mixin hide-focus-ring() {
+@mixin focus-ring-required-only() {
   &:focus:not(:focus-visible) {
     outline: none;
   }

@@ -16804,7 +16804,7 @@ component:tabs
 .tabs [role=tab]:hover {
   color: var(--site-color-accent);
 }
-.tabs [role=tab]:focus:focus:not(:focus-visible) {
+.tabs [role=tab]:focus, .tabs [role=tab][aria-selected=true] {
   outline: none;
 }
 .tabs [role=tab]:focus::after, .tabs [role=tab][aria-selected=true]::after {
