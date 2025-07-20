@@ -1,10 +1,11 @@
 SCSS Todos:
-  ☐ Why do we have accordion--no-borders (how is this useful)? 
+  ✔ Why do we have accordion--no-borders (how is this useful)? @done
     * consider removing or making a demo reflect use case, not sure about this seems not useful
-    ☐ Check with Daniel to see if there was a use for this
-  ☐ Fix badge defaults (default 10rem large is smaller)
+    ✔ Check with Daniel to see if there was a use for this @done
+  ✔ Fix badge defaults (default 10rem large is smaller) @done
   ☐ Card aside layout is still unresolved (needs static aside width)
     * Currently it's width set by the amount of content which we don't want
+    ☐ Check with Daniel to see if this is finished, I think it is
   ☐ Think about moving container to components and out of base/layout
   ✔ Add fullscreen modal modifier @done
   ✘ Popover add hide scrollbar @cancelled
