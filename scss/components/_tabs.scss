@@ -156,6 +156,9 @@ $config: (
       &:hover {
         color: color.get(get("tab-color-hover"));
       }
+      &:focus {
+        @include element.hide-focus-ring();
+      }
       // Add focus so as user clicks item it starts the active state styling
       &:focus,
       &[aria-selected="true"] {

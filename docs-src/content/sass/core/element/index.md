@@ -867,6 +867,37 @@ Add backdrop-filter blur
 |$amount|`CssUnit`|get("backdrop-blur")|Amount to blur|
 
     
+
+
+<div class="sassdoc-item-header">
+
+###  hide-focus-ring() {#mixin-hide-focus-ring}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Accessibly hide focus ring while keeping it when it's required
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _element.scss
+- **Group:** element
+- **Type:** mixin
+- **Lines (comments):** 394-394
+- **Lines (code):** 395-399
+
+</details>
+
+    
   
 
 ## Functions

@@ -390,3 +390,10 @@ $rule-margins: (
 @mixin backdrop-filter-blur($amount: get("backdrop-blur")) {
   backdrop-filter: blur($amount);
 }
+
+/// Accessibly hide focus ring while keeping it when it's required
+@mixin hide-focus-ring() {
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}

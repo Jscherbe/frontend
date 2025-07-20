@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.71
+
+- **scss/element**
+  - Add mixin "hide-focus-ring" which implements hidden focus ring unless it's needed (via :focus-visible)
+- **scss/components/tabs**
+  - Hide focus ring on tabs when clicking
+
 ## 0.1.0-beta.70
 
 - **scss/components/accordion**
