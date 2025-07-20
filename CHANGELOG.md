@@ -2,6 +2,10 @@
 
 ## 0.1.0-beta.70
 
+- **scss/components/accordion**
+  - Change defaults (add background color to summary) so that demo shows how no-border modifier is used
+  - Add borderless-margin-between 
+  - Change modifier "no-border" to "borderless"
 - **scss/components/tabs**
   - Tweak defaults so that tab color hover matches "selected" color
   - Add transitions to the indicator bar, and add setting to adjust it

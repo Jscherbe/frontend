@@ -38,8 +38,8 @@ Module Settings
 ``` scss
 $config: (
   "background-color":            "background",
-  "background-color-open":       "background-gray",
-  "border-color":                "rule",
+  "background-color-open":       white,
+  "border-color":                "rule-light",
   "border-radius":               0,
   "border-width":                1px,
   "box-shadow":                  none,
@@ -55,7 +55,7 @@ $config: (
   "icon-font-size":              1.5rem,
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
-  "summary-background-color":    "white",
+  "summary-background-color":    #f6f6f6,
   "summary-color":               null,
   "summary-background-color-hover": null,
   "summary-color-hover":         null,
@@ -64,6 +64,7 @@ $config: (
   "summary-type-size":           false,
   "transparent-padding-x":       0,
   "transparent-padding-y":       1em,
+  "borderless-margin-between" :  0.5rem
 );
 ```
   
@@ -75,8 +76,8 @@ $config: (
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** variable
-- **Lines (comments):** 16-43
-- **Lines (code):** 45-73
+- **Lines (comments):** 16-44
+- **Lines (code):** 46-75
 
 </details>
 
@@ -113,6 +114,7 @@ $config: (
 |summary-type-size|Dimension|false|The size of the text in the accordion summary.|
 |transparent-padding-y|Dimension|1em|The upper and lower padding of the transparent summary.|
 |transparent-padding-x|Dimension|0|The upper and lower padding of the transparent summary.|
+|borderless-margin-between|Dimension|0.5rem|Margin between accordions when using no-border modiifier|
 
     
   
@@ -145,8 +147,8 @@ Change modules $config
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 75-78
-- **Lines (code):** 80-82
+- **Lines (comments):** 77-80
+- **Lines (code):** 82-84
 
 </details>
 
@@ -204,8 +206,8 @@ Prints component styles
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** mixin
-- **Lines (comments):** 93-96
-- **Lines (code):** 98-224
+- **Lines (comments):** 95-98
+- **Lines (code):** 100-231
 
 </details>
 
@@ -272,8 +274,8 @@ Get a config option
 - **File:** _accordion.scss
 - **Group:** accordion
 - **Type:** function
-- **Lines (comments):** 84-87
-- **Lines (code):** 89-91
+- **Lines (comments):** 86-89
+- **Lines (code):** 91-93
 
 </details>
 

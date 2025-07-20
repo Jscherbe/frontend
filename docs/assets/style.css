@@ -11866,8 +11866,8 @@ components:
   padding-right: 1.5em;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  border: 1px solid var(--site-color-rule);
-  background-color: var(--site-color-header-background);
+  border: 1px solid var(--site-color-rule-light);
+  background-color: var(--site-color-background);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -11884,7 +11884,7 @@ components:
   margin-top: calc(-3rem - 1px);
 }
 .accordion[open], .accordion.is-active {
-  background-color: var(--site-color-header-background);
+  background-color: white;
   padding-bottom: 1.5em;
   z-index: 2;
 }
@@ -11892,11 +11892,11 @@ components:
   margin-bottom: 1.5em;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: 1px solid var(--site-color-rule);
+  border-bottom: 1px solid var(--site-color-rule-light);
 }
 
 .accordion__summary {
-  background-color: var(--site-color-background);
+  background-color: #f6f6f6;
   margin-left: -1.5em;
   margin-right: -1.5em;
   padding: 1rem 1.5em;
@@ -11971,10 +11971,14 @@ components:
   margin-bottom: 0;
 }
 
-.accordion--no-borders {
+.accordion--borderless {
   border: none;
 }
-.accordion--no-borders[open] > .accordion__summary, .accordion--no-borders.is-active > .accordion__summary {
+.accordion--borderless + .accordion--borderless {
+  margin-top: -2.5rem;
+  margin-top: calc(-2.5rem - 1px);
+}
+.accordion--borderless[open] > .accordion__summary, .accordion--borderless.is-active > .accordion__summary {
   border-bottom: none;
 }
 
@@ -12514,7 +12518,7 @@ component:button
 }
 
 .basic-hero {
-  background-color: #F7F8F7;
+  background-color: #fafafa;
 }
 
 .basic-hero__content {

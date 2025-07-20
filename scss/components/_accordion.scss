@@ -41,11 +41,12 @@
 /// @prop {Dimension} summary-type-size  [false] The size of the text in the accordion summary. 
 /// @prop {Dimension} transparent-padding-y  [1em] The upper and lower padding of the transparent summary.
 /// @prop {Dimension} transparent-padding-x  [0] The upper and lower padding of the transparent summary.
+/// @prop {Dimension} borderless-margin-between  [0.5rem] Margin between accordions when using no-border modiifier
 
 $config: (
   "background-color":            "background",
-  "background-color-open":       "background-gray",
-  "border-color":                "rule",
+  "background-color-open":       white,
+  "border-color":                "rule-light",
   "border-radius":               0,
   "border-width":                1px,
   "box-shadow":                  none,
@@ -61,7 +62,7 @@ $config: (
   "icon-font-size":              1.5rem,
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
-  "summary-background-color":    "white",
+  "summary-background-color":    #f6f6f6,
   "summary-color":               null,
   "summary-background-color-hover": null,
   "summary-color-hover":         null,
@@ -70,6 +71,7 @@ $config: (
   "summary-type-size":           false,
   "transparent-padding-x":       0,
   "transparent-padding-y":       1em,
+  "borderless-margin-between" :  0.5rem
 ) !default;
 
 /// Change modules $config
@@ -212,8 +214,13 @@ $config: (
       }
     }
   }
-  #{ $prefix }--no-borders {
+  #{ $prefix }--borderless {
     border: none;
+    & + & {
+      $gap: -(get("margin") - get("borderless-margin-between"));
+      margin-top: $gap;
+      margin-top: calc($gap - get("border-width"));
+    }
     &[open],
     &.is-active {
       & > .accordion__summary {
