@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0-beta.70
+
+- **scss/components/tabs**
+  - Tweak defaults so that tab color hover matches "selected" color
+  - Add transitions to the indicator bar, and add setting to adjust it
+
 ## 0.1.0-beta.69
 
 - **scss/components/accordion**

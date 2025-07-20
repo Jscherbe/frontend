@@ -5257,8 +5257,11 @@
   <span class="pjs-token pjs-string">"tablist-divider-width"</span> <span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"indicator-size"</span> <span class="pjs-token pjs-punctuation">:</span> 3px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"indicator-color"</span> <span class="pjs-token pjs-punctuation">:</span> currentColor<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"indicator-transition-duration"</span> <span class="pjs-token pjs-punctuation">:</span> 200ms<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"indicator-transition-timing"</span> <span class="pjs-token pjs-punctuation">:</span> ease-out<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"indicator-scale-start"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tab-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type-tertiary"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"tab-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"link-hover"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"tab-color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"selected"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tab-color-selected"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"selected"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tab-background-color-selected"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"tab-font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5280,8 +5283,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 33-56</li>
-<li><strong>Lines (code):</strong> 58-81</li>
+<li><strong>Lines (comments):</strong> 33-58</li>
+<li><strong>Lines (code):</strong> 60-86</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5342,6 +5345,18 @@
 <td style="text-align:left">Color</td>
 <td style="text-align:left">currentColor</td>
 <td style="text-align:left">The color of the indicator</td>
+</tr>
+<tr>
+<td style="text-align:left">indicator-transition-duration</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">200ms</td>
+<td style="text-align:left">The transition duration for indicator</td>
+</tr>
+<tr>
+<td style="text-align:left">indicator-scale-start</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">The starting scale for the indicator (set to 1 to disable expanding on click)</td>
 </tr>
 <tr>
 <td style="text-align:left">tab-color</td>
@@ -5443,8 +5458,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 83-86</li>
-<li><strong>Lines (code):</strong> 88-90</li>
+<li><strong>Lines (comments):</strong> 88-91</li>
+<li><strong>Lines (code):</strong> 93-95</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5483,8 +5498,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 102-104</li>
-<li><strong>Lines (code):</strong> 106-247</li>
+<li><strong>Lines (comments):</strong> 107-109</li>
+<li><strong>Lines (code):</strong> 111-262</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5507,8 +5522,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 92-95</li>
-<li><strong>Lines (code):</strong> 97-100</li>
+<li><strong>Lines (comments):</strong> 97-100</li>
+<li><strong>Lines (code):</strong> 102-105</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>

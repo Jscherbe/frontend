@@ -11903,14 +11903,15 @@ components:
   vertical-align: top;
   font-weight: bold;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: calc(100% + 3em);
 }
 .accordion__summary:has(.accordion__icon) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
 }
 .accordion__summary:has(.accordion__icon)::-webkit-details-marker, .accordion__summary:has(.accordion__icon)::marker {
@@ -11957,6 +11958,7 @@ components:
 .accordion--transparent > .accordion__summary {
   margin-left: 0;
   margin-right: 0;
+  width: 100%;
   padding: 1em 0;
   background-color: transparent;
   border: none;
@@ -11972,7 +11974,7 @@ components:
 .accordion--no-borders {
   border: none;
 }
-.accordion--no-borders[open] > .accordion__summary {
+.accordion--no-borders[open] > .accordion__summary, .accordion--no-borders.is-active > .accordion__summary {
   border-bottom: none;
 }
 
@@ -16780,15 +16782,32 @@ component:tabs
   left: 0;
   right: 0;
   height: 3px;
+  -webkit-transition-property: opacity, background-color, -webkit-transform;
+  transition-property: opacity, background-color, -webkit-transform;
+  transition-property: opacity, background-color, transform;
+  transition-property: opacity, background-color, transform, -webkit-transform;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 .tabs [role=tab]:hover {
-  color: var(--site-color-link-hover);
+  color: var(--site-color-accent);
+}
+.tabs [role=tab]:focus::after, .tabs [role=tab][aria-selected=true]::after {
+  opacity: 1;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
 }
 .tabs [role=tab][aria-selected=true] {
   color: var(--site-color-accent);
-}
-.tabs [role=tab][aria-selected=true]::after {
-  opacity: 1;
 }
 .tabs [role=tabpanel] {
   position: relative;

@@ -43,8 +43,11 @@ $config: (
   "tablist-divider-width" : 1px,
   "indicator-size" : 3px,
   "indicator-color" : currentColor,
+  "indicator-transition-duration" : 200ms,
+  "indicator-transition-timing" : ease-out,
+  "indicator-scale-start" : 0,
   "tab-color" : "type-tertiary",
-  "tab-color-hover" : "link-hover",
+  "tab-color-hover" : "selected",
   "tab-color-selected" : "selected",
   "tab-background-color-selected" : null,
   "tab-font-weight" : true,
@@ -70,8 +73,8 @@ $config: (
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** variable
-- **Lines (comments):** 33-56
-- **Lines (code):** 58-81
+- **Lines (comments):** 33-58
+- **Lines (code):** 60-86
 
 </details>
 
@@ -90,6 +93,8 @@ $config: (
 |tabpanel-padding|Dimension|(2rem,)|Padding for the tabpanel|
 |indicator-size|Dimension|0.25em|The size of the tab's active border/indicator|
 |indicator-color|Color|currentColor|The color of the indicator|
+|indicator-transition-duration|Color|200ms|The transition duration for indicator|
+|indicator-scale-start|Color|0|The starting scale for the indicator (set to 1 to disable expanding on click)|
 |tab-color|Color|link|The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-hover|Color|link-hover|The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.|
 |tab-color-selected|Color|selected|The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.|
@@ -136,8 +141,8 @@ Change modules $config
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 83-86
-- **Lines (code):** 88-90
+- **Lines (comments):** 88-91
+- **Lines (code):** 93-95
 
 </details>
 
@@ -195,8 +200,8 @@ Output component stylesheet
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** mixin
-- **Lines (comments):** 102-104
-- **Lines (code):** 106-247
+- **Lines (comments):** 107-109
+- **Lines (code):** 111-262
 
 </details>
 
@@ -250,8 +255,8 @@ Get a config option
 - **File:** _tabs.scss
 - **Group:** tabs
 - **Type:** function
-- **Lines (comments):** 92-95
-- **Lines (code):** 97-100
+- **Lines (comments):** 97-100
+- **Lines (code):** 102-105
 
 </details>
 

@@ -40,6 +40,8 @@ $-fallbacks: (
 /// @prop {Dimension} tabpanel-padding [(2rem,)] Padding for the tabpanel
 /// @prop {Dimension} indicator-size [0.25em] The size of the tab's active border/indicator
 /// @prop {Color} indicator-color [currentColor] The color of the indicator
+/// @prop {Color} indicator-transition-duration [200ms] The transition duration for indicator
+/// @prop {Color} indicator-scale-start [0] The starting scale for the indicator (set to 1 to disable expanding on click)
 /// @prop {Color} tab-color [link] The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.
 /// @prop {Color} tab-color-hover [link-hover] The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.
 /// @prop {Color} tab-color-selected [selected] The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.
@@ -62,8 +64,11 @@ $config: (
   "tablist-divider-width" : 1px,
   "indicator-size" : 3px,
   "indicator-color" : currentColor,
+  "indicator-transition-duration" : 200ms,
+  "indicator-transition-timing" : ease-out,
+  "indicator-scale-start" : 0,
   "tab-color" : "type-tertiary",
-  "tab-color-hover" : "link-hover",
+  "tab-color-hover" : "selected",
   "tab-color-selected" : "selected",
   "tab-background-color-selected" : null,
   "tab-font-weight" : true,
@@ -142,16 +147,26 @@ $config: (
         left: 0;
         right: 0;
         height: get("indicator-size");
+        transition-property: opacity, background-color, transform;
+        transition-duration: get("indicator-transition-duration");
+        transition-timing-function: get("indicator-transition-timing");
+        transform: scaleX(get("indicator-scale-start"));
+        transform-origin: center;
       }
       &:hover {
         color: color.get(get("tab-color-hover"));
       }
+      // Add focus so as user clicks item it starts the active state styling
+      &:focus,
+      &[aria-selected="true"] {
+        &::after {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
       &[aria-selected="true"] {
         color: color.get(get("tab-color-selected"));
         background-color: color.get(get("tab-background-color-selected"));
-        &::after {
-          opacity: 1;
-        }
       }
     }
     [role="tabpanel"] {
