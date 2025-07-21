@@ -15426,13 +15426,6 @@ ul.list-inline,
   right: 0;
 }
 
-.modal__content {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.8);
-}
-
 .modal--small {
   width: 30rem;
 }

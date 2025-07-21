@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.75
+
+- **scss/components/modal.scss** | Remove unused selector `.modal__content`
+
 ## 0.1.0-beta.74
 
 - **js/ui/modal-builder.js**
