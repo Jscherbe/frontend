@@ -1260,7 +1260,7 @@ const defaults$9 = {
         ${config2.hasResizer ? `<div class="${baseClass}__resizer" ${initializer$c.getAttribute("resizer")}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
-      </div>
+      </dialog>
     `;
   }
 };

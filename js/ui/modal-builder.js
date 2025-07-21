@@ -118,7 +118,7 @@ export const defaults = {
             ${ config.templateResizerIcon(config) }
           </div>` : "" 
         }
-      </div>
+      </dialog>
     `;
   }
 };

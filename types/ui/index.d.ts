@@ -20,5 +20,5 @@ export * as printDetails from "./print-details.js";
 export * as scrollSlider from "./scroll-slider.js";
 export * as themeToggle from "./theme-toggle.js";
 export * as detailsGroup from "./details-group.js";
-declare namespace ___Users_joe_Projects_Personal_Github_frontend_js_ui_index_ { }
+declare namespace ___Users_joescherben_Personal_Projects_ULU_frontend_js_ui_index_ { }
 //# sourceMappingURL=index.d.ts.map
