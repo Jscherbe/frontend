@@ -257,3 +257,25 @@ Testing behavior when the trigger is a link/anchor element. Which is not recomme
 >
   Test
 </div>
+
+<h2 class="h2">Test Setting Specific labelledby/describedby</h2>
+
+You can set these properties for custom title implementations and to add optional description information for screen readers, etc.
+
+<button class="button" data-ulu-dialog-trigger="modal-id-aria-attrs">View Modal</button>
+
+<div 
+  id="modal-id-aria-attrs" 
+  class="crop-margins"
+  data-ulu-modal-builder='{ 
+    "labelledby": "my-custom-title",
+    "describedby": "my-custom-description"
+  }' 
+  hidden
+>
+  <h2 class="h5" id="my-custom-title">This is a custom title</h2>
+  <p id="my-custom-description">
+    This modal test whether passing labelledby/describedby works
+  </p>
+  <button class="button" data-ulu-dialog-close>Close</button>
+</div>

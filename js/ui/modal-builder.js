@@ -10,6 +10,7 @@ import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "./resizer.js";
 import { baseAttribute, closeAttribute, defaults as dialogDefaults } from "./dialog.js";
 
+
 /**
  * Modal Builder Component Initializer
  */
@@ -27,6 +28,7 @@ export const initializer = new ComponentInitializer({
  * @property {string|null} title - The title of the modal. Defaults to `null`.
  * @property {string|null} titleIcon - The class name for an icon to display in the title. Defaults to `null`.
  * @property {string} titleClass - Extra class/classes to add to title
+ * @property {string} titleId - Set the title id (to tie to a custom title implementation, if using built in title this will be set automatically)
  * @property {boolean} nonModal - If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`.
  * @property {boolean} documentEnd - If `true`, the modal will be appended to the end of the `document.body`. Defaults to `true`.
  * @property {boolean} allowResize - If `true`, the modal will be resizable. Defaults to `false`.
@@ -56,6 +58,8 @@ export const defaults = {
   title: null,
   titleIcon: null,
   titleClass: "",
+  labelledby: null,
+  describedby: null,
   nonModal: false,
   documentEnd: true,
   allowResize: false,
@@ -85,7 +89,7 @@ export const defaults = {
    * @returns {String} Markup for modal
    */
   template(id, config) {
-    const { baseClass } = config;
+    const { baseClass, describedby } = config;
     const classes = [
       baseClass,
       `${ baseClass }--${ config.position }`,
@@ -97,11 +101,17 @@ export const defaults = {
       ...(config.noMinHeight ? [`${ baseClass }--no-min-height`] : [] ),
       ...(config.class ? [config.class] : []), 
     ];
+    const labelledby = config.title ? `${ id }--title` : config.labelledby;
     return `
-      <dialog id="${ id }" class="${ classes.join(" ") }">
+      <dialog 
+        id="${ id }" 
+        class="${ classes.join(" ") }" 
+        ${ labelledby ? `aria-labelledby="${ labelledby }"` : "" }
+        ${ describedby ? `aria-describedby="${ describedby }"` : "" }
+      >
         ${ config.title ? `
           <header class="${ baseClass }__header">
-            <h2 class="${ baseClass }__title ${ config.titleClass }">
+            <h2 id="${ labelledby }" class="${ baseClass }__title ${ config.titleClass }">
               ${ config.titleIcon ? 
                 `<span class="${ baseClass }__title-icon ${ config.titleIcon }" aria-hidden="true"></span>` : "" 
               }

@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.74
+
+- **js/ui/modal-builder.js**
+  - Add options for `labelledby`, `describedby` (pass id's)
+    - `labelledby` will be filled in automatically if using title option
+    - `describedby` is to mark optional description element
+
 ## 0.1.0-beta.73
 
 - **js/ui/modal-builder.js** | Fix missing end tag in options.template 

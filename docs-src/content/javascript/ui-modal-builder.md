@@ -84,6 +84,7 @@ in twig for example)
 | title | <code>string</code> \| <code>null</code> | The title of the modal. Defaults to `null`. |
 | titleIcon | <code>string</code> \| <code>null</code> | The class name for an icon to display in the title. Defaults to `null`. |
 | titleClass | <code>string</code> | Extra class/classes to add to title |
+| titleId | <code>string</code> | Set the title id (to tie to a custom title implementation, if using built in title this will be set automatically) |
 | nonModal | <code>boolean</code> | If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`. |
 | documentEnd | <code>boolean</code> | If `true`, the modal will be appended to the end of the `document.body`. Defaults to `true`. |
 | allowResize | <code>boolean</code> | If `true`, the modal will be resizable. Defaults to `false`. |
