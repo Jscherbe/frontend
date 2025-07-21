@@ -1202,6 +1202,8 @@ const defaults$9 = {
   title: null,
   titleIcon: null,
   titleClass: "",
+  labelledby: null,
+  describedby: null,
   nonModal: false,
   documentEnd: true,
   allowResize: false,
@@ -1231,7 +1233,7 @@ const defaults$9 = {
    * @returns {String} Markup for modal
    */
   template(id2, config2) {
-    const { baseClass } = config2;
+    const { baseClass, describedby } = config2;
     const classes = [
       baseClass,
       `${baseClass}--${config2.position}`,
@@ -1243,11 +1245,17 @@ const defaults$9 = {
       ...config2.noMinHeight ? [`${baseClass}--no-min-height`] : [],
       ...config2.class ? [config2.class] : []
     ];
+    const labelledby = config2.title ? `${id2}--title` : config2.labelledby;
     return `
-      <dialog id="${id2}" class="${classes.join(" ")}">
+      <dialog 
+        id="${id2}" 
+        class="${classes.join(" ")}" 
+        ${labelledby ? `aria-labelledby="${labelledby}"` : ""}
+        ${describedby ? `aria-describedby="${describedby}"` : ""}
+      >
         ${config2.title ? `
           <header class="${baseClass}__header">
-            <h2 class="${baseClass}__title ${config2.titleClass}">
+            <h2 id="${labelledby}" class="${baseClass}__title ${config2.titleClass}">
               ${config2.titleIcon ? `<span class="${baseClass}__title-icon ${config2.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="${baseClass}__title-text">${config2.title}</span>
             </h2>

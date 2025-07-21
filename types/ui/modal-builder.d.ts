@@ -23,6 +23,8 @@ export namespace defaults {
     export let title: any;
     export let titleIcon: any;
     export let titleClass: string;
+    export let labelledby: any;
+    export let describedby: any;
     export let nonModal: boolean;
     export let documentEnd: boolean;
     export let allowResize: boolean;
@@ -67,6 +69,10 @@ export type DefaultModalOptions = {
      * - Extra class/classes to add to title
      */
     titleClass: string;
+    /**
+     * - Set the title id (to tie to a custom title implementation, if using built in title this will be set automatically)
+     */
+    titleId: string;
     /**
      * - If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`.
      */
