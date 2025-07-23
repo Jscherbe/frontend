@@ -5198,13 +5198,19 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#sizes">Sizes</a>
+            		</li>
+
                     <li><a href="#active-state">Active State</a>
             		</li>
 
-                    <li><a href="#transparent-button">Transparent Button</a>
+                    <li><a href="#with-icon">With Icon</a>
             		</li>
 
-                    <li><a href="#outline-button">Outline Button</a>
+                    <li><a href="#icon-only">Icon Only</a>
+            		</li>
+
+                    <li><a href="#other-preset-styles">Other Preset Styles</a>
             		</li>
                 </ol>
             </div>
@@ -5222,13 +5228,38 @@
   <hr class="rule rule--light rule--margin-large">
 
     <div class="wysiwyg">
-      <h2 id="active-state" tabindex="-1">Active State</h2>
+      <h2 id="sizes" tabindex="-1">Sizes</h2>
+<p>Sizes can be configured this just shows the default sizes</p>
+<p><a href="#" class="button button--small">Small Button</a>
+<a href="#" class="button">Default Button</a>
+<a href="#" class="button button--large">Large Button</a></p>
+<h2 id="active-state" tabindex="-1">Active State</h2>
+<p>Adding the <code>is-active</code> class to enable active state.</p>
 <p><a href="#" class="button">Default Button</a>
 <a href="#" class="button is-active">Active Button</a></p>
-<h2 id="transparent-button" tabindex="-1">Transparent Button</h2>
-<p><a href="#" class="button button--transparent">Transparent Button</a></p>
-<h2 id="outline-button" tabindex="-1">Outline Button</h2>
-<p><a href="#" class="button button--outline">Outline Button</a></p>
+<h2 id="with-icon" tabindex="-1">With Icon</h2>
+<a href="#" class="button">
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+  <span>Icon Before</span>
+</a>
+<a href="#" class="button">
+  <span>Icon After</span>
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+</a>
+<h2 id="icon-only" tabindex="-1">Icon Only</h2>
+<a href="#" class="button button--icon button--small">
+  <span class="fas fa-gear" aria-hidden="true"></span>
+</a>
+<a href="#" class="button button--icon">
+  <span class="fas fa-gear" aria-hidden="true"></span>
+</a>
+<a href="#" class="button button--icon button--large">
+  <span class="fas fa-gear" aria-hidden="true"></span>
+</a>
+<h2 id="other-preset-styles" tabindex="-1">Other Preset Styles</h2>
+<p>These can be configured, so these are just the defaults</p>
+<p><a href="#" class="button button--transparent">Transparent Button</a>
+<a href="#" class="button button--outline">Outline Button</a></p>
 
     </div>
   </div>
