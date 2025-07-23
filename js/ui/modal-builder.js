@@ -11,7 +11,6 @@ import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "./resizer.js";
 import { baseAttribute, closeAttribute, defaults as dialogDefaults } from "./dialog.js";
 
-
 /**
  * Modal Builder Component Initializer
  */
@@ -43,6 +42,8 @@ export const initializer = new ComponentInitializer({
  * @property {string} baseClass - The base CSS class for the modal elements. Defaults to `"modal"`.
  * @property {string} classCloseIcon - The class name for the close icon. Uses the wrapped setting string.
  * @property {string} classResizerIcon - The class name for the resizer icon. Uses the wrapped setting string.
+ * @property {string|Node} footerElement - Element or selector to use as the footer (will be moved to dialog on creation, used for DOM API)
+ * @property {string|Node} footerHtml - Markup to use in the footer
  * @property {boolean} debug - Enables debug logging. Defaults to `false`.
  * @property {function(object): string} templateCloseIcon - A function that returns the HTML for the close icon.
  * @property {function(object): string} templateCloseIcon.config - The resolved modal configuration object.
@@ -127,11 +128,7 @@ export const defaults = {
           </header>
         ` : "" }
         <div class="${ baseClass }__body" ${ initializer.getAttribute("body") }></div>
-        ${ hasFooter ? 
-          `
-            <div class="${ baseClass }__footer" ${ initializer.getAttribute("footer") }></div>
-          `: "" 
-        }
+        ${ footerHtml ? `<div class="${ baseClass }__footer">${ footerHtml }</div>`: "" }
         ${ config.hasResizer ? 
           `<div class="${ baseClass }__resizer" ${ initializer.getAttribute("resizer") }>
             ${ config.templateResizerIcon(config) }
@@ -204,17 +201,13 @@ export function buildModal(content, options) {
   // Add dialog options for other scripts
   modal.setAttribute(baseAttribute, JSON.stringify(dialogOptions));
 
-  const footer = selectChild("footer");
-
-  // Determine if it has an additional footer
-  if (footer && (footerHtml || footerElement)) {
-    if (footerHtml) {
-      footer.innerHTML = footerHtml;
-    } else {
-      const resolvedFooterElement = getElement(footerElement);
-      if (resolvedFooterElement) {
-        footer.appendChild(resolvedFooterElement);
-      }
+  // If they passed a footer element we need to move it in and
+  // make sure it has the class
+  if (config.footerElement) {
+    const footerElement = getElement(config.footerElement);
+    if (footerElement) {
+      footerElement.classList.add(`${ config.baseClass }__footer`);
+      body.after(footerElement);
     }
   }
 

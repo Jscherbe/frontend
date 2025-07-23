@@ -91,8 +91,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 31-67
-- **Lines (code):** 69-113
+- **Lines (comments):** 31-71
+- **Lines (code):** 73-117
 
 </details>
 
@@ -126,6 +126,10 @@ $config: (
 |header-border-bottom|CssValue|none|Bottom-border on the modal header.|
 |header-color|Color|white|Type color of the header.|
 |header-padding|Dimension|1rem|The padding of the modal header.|
+|footer-padding|Dimension|(0.5rem 1rem)|The padding of the modal footer.|
+|footer-background-color|Color|(0.5rem 1rem)|The background color of the footer|
+|footer-border-top|Color|(0.5rem 1rem)|The border between body and footer|
+|footer-text-align|CssValue|right|Text alignment for footer|
 |resizer-background-color|Color|rgb(221, 221, 221)|The background color of the resizer.|
 |resizer-background-color-hover|Color|rgb(192, 192, 192)|The background color of the resizer when hovered or focused.|
 |resizer-color|Color|rgb(99, 99, 99)|The type color of the resizer.|
@@ -170,8 +174,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 115-118
-- **Lines (code):** 120-122
+- **Lines (comments):** 119-122
+- **Lines (code):** 124-126
 
 </details>
 
@@ -229,8 +233,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 134-136
-- **Lines (code):** 138-507
+- **Lines (comments):** 138-140
+- **Lines (code):** 142-500
 
 </details>
 
@@ -284,8 +288,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 124-127
-- **Lines (code):** 129-132
+- **Lines (comments):** 128-131
+- **Lines (code):** 133-136
 
 </details>
 

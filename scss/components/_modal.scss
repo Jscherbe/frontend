@@ -53,6 +53,10 @@ $-fallbacks: (
 /// @prop {CssValue} header-border-bottom [none] Bottom-border on the modal header.
 /// @prop {Color} header-color [white] Type color of the header.
 /// @prop {Dimension} header-padding [1rem] The padding of the modal header.
+/// @prop {Dimension} footer-padding [(0.5rem 1rem)] The padding of the modal footer.
+/// @prop {Color} footer-background-color [(0.5rem 1rem)] The background color of the footer
+/// @prop {Color} footer-border-top [(0.5rem 1rem)] The border between body and footer
+/// @prop {CssValue} footer-text-align [right] Text alignment for footer
 /// @prop {Color} resizer-background-color [rgb(221, 221, 221)] The background color of the resizer.
 /// @prop {Color} resizer-background-color-hover [rgb(192, 192, 192)] The background color of the resizer when hovered or focused.
 /// @prop {Color} resizer-color [rgb(99, 99, 99)] The type color of the resizer.
@@ -200,11 +204,6 @@ $config: (
     background-color: color.get(get("footer-background-color"));
     border-top: get("footer-border-top");
     text-align: get("footer-text-align");
-    opacity: 0;
-    transition: opacity get("animation-duration") (get("animation-duration") * 2) get("animation-timing-function");
-    [open] & {
-      opacity: 1;
-    }
   }
   #{ $prefix }__title {
     display: flex;

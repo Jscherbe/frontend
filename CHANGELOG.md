@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.0-beta.76
+
+- **scss/components/modal.scss** 
+  - Add `.modal__footer` element and configuration for styling it
+  - Fix modal animations temporarily setting display block instead of flex 
+- **js/ui/modal-builder.js**
+  - Add options for `footerElement` which will select the element and move it into the modal on creation (when working in DOM with data-attributes)
+    - Add option for `footerHtml` which will insert the markup provided into the footer
+  - Output footer element if either setting is set
+
 ## 0.1.0-beta.75
 
 - **scss/components/modal.scss** | Remove unused selector `.modal__content`

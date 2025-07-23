@@ -25,11 +25,11 @@ This is the default modal, being created from markup in the body on page load by
   This is the modal body <button data-ulu-dialog-close>Close</button>
 </div>
 
-<h3 class="h3">With Footer</h3>
+<h3 class="h3">With Footer Element</h3>
 
-Footer content (when using modal builder script) can be added via 'footerElement' or 'footer' (which will be added raw string/html) 
+Footer can be added with "footerElement" option which can be selector or an element. It will be moved into the dialog on creation. This is for dom data-attribute API usage. For inserting text or html see 'footerHtml' example below.
 
-<button class="button" data-ulu-dialog-trigger="modal-id-footer">Modal with Footer</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-footer">With Footer Element</button>
 
 <div 
   id="modal-id-footer" 
@@ -37,7 +37,7 @@ Footer content (when using modal builder script) can be added via 'footerElement
   data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "print" : true,
-    "documentEnd" : false,
+    "documentEnd" : true,
     "footerElement" : "#modal-id-footer-content"
   }' 
   hidden
@@ -46,7 +46,26 @@ Footer content (when using modal builder script) can be added via 'footerElement
 </div>
 <div id="modal-id-footer-content">
   <button class="button button--outline" data-ulu-dialog-close>Cancel</button>
-  <button class="button" data-ulu-dialog-close>Sumbit</button>
+  <button class="button" data-ulu-dialog-close>Submit</button>
+</div>
+
+<h3 class="h3">With Footer HTML</h3>
+
+Footer can be added with "footerHTML" option which will populate the innerHTML of the footer element on creation.
+
+<button class="button" data-ulu-dialog-trigger="modal-id-footer-html">With Footer HTML</button>
+
+<div 
+  id="modal-id-footer-html" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "documentEnd" : true,
+    "footerHtml" : "This works!"
+  }' 
+  hidden
+>
+  This is the modal body <button data-ulu-dialog-close>Close</button>
 </div>
 
 

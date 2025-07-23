@@ -98,6 +98,8 @@ in twig for example)
 | baseClass | <code>string</code> | The base CSS class for the modal elements. Defaults to `"modal"`. |
 | classCloseIcon | <code>string</code> | The class name for the close icon. Uses the wrapped setting string. |
 | classResizerIcon | <code>string</code> | The class name for the resizer icon. Uses the wrapped setting string. |
+| footerElement | <code>string</code> \| <code>Node</code> | Element or selector to use as the footer (will be moved to dialog on creation, used for DOM API) |
+| footerHtml | <code>string</code> \| <code>Node</code> | Markup to use in the footer |
 | debug | <code>boolean</code> | Enables debug logging. Defaults to `false`. |
 | templateCloseIcon | <code>function</code> | A function that returns the HTML for the close icon. |
 | templateCloseIcon.config | <code>function</code> | The resolved modal configuration object. |
