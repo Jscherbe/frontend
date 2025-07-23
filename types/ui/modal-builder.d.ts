@@ -37,6 +37,8 @@ export namespace defaults {
     let _class: string;
     export { _class as class };
     export let baseClass: string;
+    export let footerElement: any;
+    export let footerHtml: any;
     export let classCloseIcon: any;
     export let classResizerIcon: any;
     export let debug: boolean;
@@ -125,6 +127,14 @@ export type DefaultModalOptions = {
      * - The class name for the resizer icon. Uses the wrapped setting string.
      */
     classResizerIcon: string;
+    /**
+     * - Element or selector to use as the footer (will be moved to dialog on creation, used for DOM API)
+     */
+    footerElement: string | Node;
+    /**
+     * - Markup to use in the footer
+     */
+    footerHtml: string | Node;
     /**
      * - Enables debug logging. Defaults to `false`.
      */

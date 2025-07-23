@@ -5198,6 +5198,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.1.0-beta.76">0.1.0-beta.76</a>
+            		</li>
+
                     <li><a href="#0.1.0-beta.75">0.1.0-beta.75</a>
             		</li>
 
@@ -5471,6 +5474,25 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.1.0-beta.76" tabindex="-1">0.1.0-beta.76</h2>
+<ul>
+<li><strong>scss/components/modal.scss</strong>
+<ul>
+<li>Add <code>.modal__footer</code> element and configuration for styling it</li>
+<li>Fix modal animations temporarily setting display block instead of flex</li>
+</ul>
+</li>
+<li><strong>js/ui/modal-builder.js</strong>
+<ul>
+<li>Add options for <code>footerElement</code> which will select the element and move it into the modal on creation (when working in DOM with data-attributes)
+<ul>
+<li>Add option for <code>footerHtml</code> which will insert the markup provided into the footer</li>
+</ul>
+</li>
+<li>Output footer element if either setting is set</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.1.0-beta.75" tabindex="-1">0.1.0-beta.75</h2>
 <ul>
 <li><strong>scss/components/modal.scss</strong> | Remove unused selector <code>.modal__content</code></li>

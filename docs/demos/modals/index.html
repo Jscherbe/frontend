@@ -5230,6 +5230,31 @@
   }' hidden="">
   This is the modal body <button data-ulu-dialog-close="">Close</button>
 </div>
+<h3 class="h3">With Footer Element</h3>
+<p>Footer can be added with &quot;footerElement&quot; option which can be selector or an element. It will be moved into the dialog on creation. This is for dom data-attribute API usage. For inserting text or html see 'footerHtml' example below.</p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-footer">With Footer Element</button></p>
+<div id="modal-id-footer" class="wysiwyg" data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "print" : true,
+    "documentEnd" : true,
+    "footerElement" : "#modal-id-footer-content"
+  }' hidden="">
+  This is the modal body <button data-ulu-dialog-close="">Close</button>
+</div>
+<div id="modal-id-footer-content">
+  <button class="button button--outline" data-ulu-dialog-close="">Cancel</button>
+  <button class="button" data-ulu-dialog-close="">Submit</button>
+</div>
+<h3 class="h3">With Footer HTML</h3>
+<p>Footer can be added with &quot;footerHTML&quot; option which will populate the innerHTML of the footer element on creation.</p>
+<p><button class="button" data-ulu-dialog-trigger="modal-id-footer-html">With Footer HTML</button></p>
+<div id="modal-id-footer-html" class="wysiwyg" data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "documentEnd" : true,
+    "footerHtml" : "This works!"
+  }' hidden="">
+  This is the modal body <button data-ulu-dialog-close="">Close</button>
+</div>
 <h3 class="h3">Fullscreen Size</h3>
 <p>The modal will fill the window</p>
 <p><button class="button" data-ulu-dialog-trigger="modal-id-fullscreen">Open Modal</button></p>

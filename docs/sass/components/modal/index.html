@@ -5252,8 +5252,8 @@
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"backdrop-color"</span> <span class="pjs-token pjs-punctuation">:</span>                <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"backdrop-blur"</span> <span class="pjs-token pjs-punctuation">:</span>                 4px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"background-color"</span><span class="pjs-token pjs-punctuation">:</span>              white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"body-padding"</span><span class="pjs-token pjs-punctuation">:</span>                   1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"background-color"</span> <span class="pjs-token pjs-punctuation">:</span>             white<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"body-padding"</span> <span class="pjs-token pjs-punctuation">:</span>                  1rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-radius"</span> <span class="pjs-token pjs-punctuation">:</span>                 <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span>                    <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>         
   <span class="pjs-token pjs-string">"height"</span><span class="pjs-token pjs-punctuation">:</span>                         340px<span class="pjs-token pjs-punctuation">,</span>
@@ -5274,6 +5274,10 @@
   <span class="pjs-token pjs-string">"header-border-bottom"</span><span class="pjs-token pjs-punctuation">:</span>           none<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-color"</span><span class="pjs-token pjs-punctuation">:</span>                   white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-padding"</span><span class="pjs-token pjs-punctuation">:</span>                 1rem<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-padding"</span> <span class="pjs-token pjs-punctuation">:</span>                <span class="pjs-token pjs-punctuation">(</span>0.5rem 1rem<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-background-color"</span> <span class="pjs-token pjs-punctuation">:</span>       #f6f6f6<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-border-top"</span> <span class="pjs-token pjs-punctuation">:</span>             none<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"footer-text-align"</span> <span class="pjs-token pjs-punctuation">:</span>             right<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"resizer-background-color"</span><span class="pjs-token pjs-punctuation">:</span>       <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>221<span class="pjs-token pjs-punctuation">,</span> 221<span class="pjs-token pjs-punctuation">,</span> 221<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"resizer-background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>192<span class="pjs-token pjs-punctuation">,</span> 192<span class="pjs-token pjs-punctuation">,</span> 192<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"resizer-color"</span><span class="pjs-token pjs-punctuation">:</span>                  <span class="pjs-token pjs-function">rgb</span><span class="pjs-token pjs-punctuation">(</span>99<span class="pjs-token pjs-punctuation">,</span> 99<span class="pjs-token pjs-punctuation">,</span> 99<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
@@ -5296,8 +5300,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 31-67</li>
-<li><strong>Lines (code):</strong> 69-109</li>
+<li><strong>Lines (comments):</strong> 31-71</li>
+<li><strong>Lines (code):</strong> 73-117</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5450,6 +5454,30 @@
 <td style="text-align:left">The padding of the modal header.</td>
 </tr>
 <tr>
+<td style="text-align:left">footer-padding</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">(0.5rem 1rem)</td>
+<td style="text-align:left">The padding of the modal footer.</td>
+</tr>
+<tr>
+<td style="text-align:left">footer-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">(0.5rem 1rem)</td>
+<td style="text-align:left">The background color of the footer</td>
+</tr>
+<tr>
+<td style="text-align:left">footer-border-top</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">(0.5rem 1rem)</td>
+<td style="text-align:left">The border between body and footer</td>
+</tr>
+<tr>
+<td style="text-align:left">footer-text-align</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">right</td>
+<td style="text-align:left">Text alignment for footer</td>
+</tr>
+<tr>
 <td style="text-align:left">resizer-background-color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">rgb(221, 221, 221)</td>
@@ -5537,8 +5565,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 111-114</li>
-<li><strong>Lines (code):</strong> 116-118</li>
+<li><strong>Lines (comments):</strong> 119-122</li>
+<li><strong>Lines (code):</strong> 124-126</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5577,8 +5605,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 130-132</li>
-<li><strong>Lines (code):</strong> 134-485</li>
+<li><strong>Lines (comments):</strong> 138-140</li>
+<li><strong>Lines (code):</strong> 142-500</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -5601,8 +5629,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 120-123</li>
-<li><strong>Lines (code):</strong> 125-128</li>
+<li><strong>Lines (comments):</strong> 128-131</li>
+<li><strong>Lines (code):</strong> 133-136</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>

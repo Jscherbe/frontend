@@ -1215,6 +1215,8 @@ const defaults$9 = {
   noMinHeight: false,
   class: "",
   baseClass: "modal",
+  footerElement: null,
+  footerHtml: null,
   classCloseIcon: wrapSettingString("iconClassClose"),
   classResizerIcon: wrapSettingString("iconClassDragX"),
   debug: false,
@@ -1233,7 +1235,7 @@ const defaults$9 = {
    * @returns {String} Markup for modal
    */
   template(id2, config2) {
-    const { baseClass, describedby } = config2;
+    const { baseClass, describedby, footerElement, footerHtml } = config2;
     const classes = [
       baseClass,
       `${baseClass}--${config2.position}`,
@@ -1265,6 +1267,7 @@ const defaults$9 = {
           </header>
         ` : ""}
         <div class="${baseClass}__body" ${initializer$c.getAttribute("body")}></div>
+        ${footerHtml ? `<div class="${baseClass}__footer">${footerHtml}</div>` : ""}
         ${config2.hasResizer ? `<div class="${baseClass}__resizer" ${initializer$c.getAttribute("resizer")}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
@@ -1308,6 +1311,13 @@ function buildModal(content, options) {
   content.parentNode.replaceChild(modal, content);
   body.appendChild(content);
   modal.setAttribute(baseAttribute, JSON.stringify(dialogOptions));
+  if (config2.footerElement) {
+    const footerElement = getElement(config2.footerElement);
+    if (footerElement) {
+      footerElement.classList.add(`${config2.baseClass}__footer`);
+      body.after(footerElement);
+    }
+  }
   if (config2.hasResizer) {
     new Resizer(modal, resizer2, {
       fromLeft: config2.position === "right"
