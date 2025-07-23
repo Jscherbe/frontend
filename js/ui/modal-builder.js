@@ -4,6 +4,7 @@
  */
 
 import { ComponentInitializer } from "../utils/system.js";
+import { getElement } from "../utils/dom.js";
 import { wrapSettingString } from "../settings.js";
 import { getName } from "../events/index.js";
 import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
@@ -71,6 +72,8 @@ export const defaults = {
   noMinHeight: false,
   class: "",
   baseClass: "modal",
+  footerElement: null,
+  footerHtml: null,
   classCloseIcon: wrapSettingString("iconClassClose"),
   classResizerIcon: wrapSettingString("iconClassDragX"),
   debug: false,
@@ -89,7 +92,7 @@ export const defaults = {
    * @returns {String} Markup for modal
    */
   template(id, config) {
-    const { baseClass, describedby } = config;
+    const { baseClass, describedby, footerElement, footerHtml } = config;
     const classes = [
       baseClass,
       `${ baseClass }--${ config.position }`,
@@ -102,6 +105,7 @@ export const defaults = {
       ...(config.class ? [config.class] : []), 
     ];
     const labelledby = config.title ? `${ id }--title` : config.labelledby;
+    const hasFooter = footerElement || footerHtml;
     return `
       <dialog 
         id="${ id }" 
@@ -123,6 +127,11 @@ export const defaults = {
           </header>
         ` : "" }
         <div class="${ baseClass }__body" ${ initializer.getAttribute("body") }></div>
+        ${ hasFooter ? 
+          `
+            <div class="${ baseClass }__footer" ${ initializer.getAttribute("footer") }></div>
+          `: "" 
+        }
         ${ config.hasResizer ? 
           `<div class="${ baseClass }__resizer" ${ initializer.getAttribute("resizer") }>
             ${ config.templateResizerIcon(config) }
@@ -175,6 +184,8 @@ export function buildModal(content, options) {
   if (!content.id) {
     throw new Error("Missing ID on modal");
   }
+
+  const { footerHtml, footerElement } = config;
   
   const markup = config.template(content.id, config);
   const modal = createElementFromHtml(markup.trim());
@@ -192,6 +203,20 @@ export function buildModal(content, options) {
 
   // Add dialog options for other scripts
   modal.setAttribute(baseAttribute, JSON.stringify(dialogOptions));
+
+  const footer = selectChild("footer");
+
+  // Determine if it has an additional footer
+  if (footer && (footerHtml || footerElement)) {
+    if (footerHtml) {
+      footer.innerHTML = footerHtml;
+    } else {
+      const resolvedFooterElement = getElement(footerElement);
+      if (resolvedFooterElement) {
+        footer.appendChild(resolvedFooterElement);
+      }
+    }
+  }
 
   if (config.hasResizer) {
     new Resizer(modal, resizer, {

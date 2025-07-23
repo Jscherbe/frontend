@@ -25,6 +25,30 @@ This is the default modal, being created from markup in the body on page load by
   This is the modal body <button data-ulu-dialog-close>Close</button>
 </div>
 
+<h3 class="h3">With Footer</h3>
+
+Footer content (when using modal builder script) can be added via 'footerElement' or 'footer' (which will be added raw string/html) 
+
+<button class="button" data-ulu-dialog-trigger="modal-id-footer">Modal with Footer</button>
+
+<div 
+  id="modal-id-footer" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "print" : true,
+    "documentEnd" : false,
+    "footerElement" : "#modal-id-footer-content"
+  }' 
+  hidden
+>
+  This is the modal body <button data-ulu-dialog-close>Close</button>
+</div>
+<div id="modal-id-footer-content">
+  <button class="button button--outline" data-ulu-dialog-close>Cancel</button>
+  <button class="button" data-ulu-dialog-close>Sumbit</button>
+</div>
+
 
 <h3 class="h3">Fullscreen Size</h3>
 

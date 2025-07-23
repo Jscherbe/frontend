@@ -69,8 +69,8 @@ $-fallbacks: (
 $config: (
   "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
-  "background-color":              white,
-  "body-padding":                   1rem,
+  "background-color" :             white,
+  "body-padding" :                  1rem,
   "border-radius" :                 true,
   "box-shadow" :                    true,         
   "height":                         340px,
@@ -91,6 +91,10 @@ $config: (
   "header-border-bottom":           none,
   "header-color":                   white,
   "header-padding":                 1rem,
+  "footer-padding" :                (0.5rem 1rem),
+  "footer-background-color" :       #f6f6f6,
+  "footer-border-top" :             none,
+  "footer-text-align" :             right,
   "resizer-background-color":       rgb(221, 221, 221),
   "resizer-background-color-hover": rgb(192, 192, 192),
   "resizer-color":                  rgb(99, 99, 99),
@@ -142,6 +146,7 @@ $config: (
   #{ $prefix } {
     // Required for click outside
     position: fixed;
+    flex-direction: column;
     // Important: If you use the margin layout system (ie. auto) on dialogs they 
     // can't animate out correctly (thinking it jumps from dialog display system 
     // to normal block and doesn't work. This ALSO affects the z-index (seems to move from top-layer to normal layer). Z-index is for close
@@ -165,9 +170,8 @@ $config: (
     box-sizing: border-box;
     animation: uluModalCenterOut get("animation-duration-exit") get("animation-timing-function");
     &[open] {
-      animation: uluModalCenterIn get("animation-duration") get("animation-timing-function");
       display: flex;
-      flex-direction: column;
+      animation: uluModalCenterIn get("animation-duration") get("animation-timing-function");
     }
     &::backdrop {
       background: color.get(get("backdrop-color"));
@@ -189,6 +193,18 @@ $config: (
     flex: 1;
     overflow: auto;
     padding: get("body-padding");
+  }
+  #{ $prefix }__footer {
+    flex: 0;
+    padding: get("footer-padding");
+    background-color: color.get(get("footer-background-color"));
+    border-top: get("footer-border-top");
+    text-align: get("footer-text-align");
+    opacity: 0;
+    transition: opacity get("animation-duration") (get("animation-duration") * 2) get("animation-timing-function");
+    [open] & {
+      opacity: 1;
+    }
   }
   #{ $prefix }__title {
     display: flex;
@@ -371,13 +387,13 @@ $config: (
     to { 
       opacity: 1; 
       transform: translate(-50%, -50%);
-      display: block;
+      display: flex;
     }
   }
   @keyframes uluModalCenterOut {
     from { 
       opacity: 1; 
-      display: block;
+      display: flex;
       transform: translate(-50%, -50%);
     }
     to { 
@@ -395,13 +411,13 @@ $config: (
     to { 
       opacity: 1; 
       transform: translate(-50%, 0);
-      display: block;
+      display: flex;
     }
   }
   @keyframes uluModalTopOut {
     from { 
       opacity: 1; 
-      display: block;
+      display: flex;
       transform: translate(-50%, 0);
     }
     to { 
@@ -419,13 +435,13 @@ $config: (
     to { 
       opacity: 1; 
       transform: translate(-50%, 0);
-      display: block;
+      display: flex;
     }
   }
   @keyframes uluModalBottomOut {
     from { 
       opacity: 1; 
-      display: block;
+      display: flex;
       transform: translate(-50%, 0);
     }
     to { 
@@ -443,13 +459,13 @@ $config: (
     to { 
       opacity: 1; 
       transform: translateX(0);
-      display: block;
+      display: flex;
     }
   }
   @keyframes uluModalLeftOut {
     from { 
       opacity: 1; 
-      display: block;
+      display: flex;
       transform: translateX(0);
     }
     to { 
@@ -467,13 +483,13 @@ $config: (
     to { 
       opacity: 1; 
       transform: translateX(0);
-      display: block;
+      display: flex;
     }
   }
   @keyframes uluModalRightOut {
     from { 
       opacity: 1; 
-      display: block;
+      display: flex;
       transform: translateX(0);
     }
     to { 

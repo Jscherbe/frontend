@@ -39,8 +39,8 @@ Module Settings
 $config: (
   "backdrop-color" :                true,
   "backdrop-blur" :                 4px,
-  "background-color":              white,
-  "body-padding":                   1rem,
+  "background-color" :             white,
+  "body-padding" :                  1rem,
   "border-radius" :                 true,
   "box-shadow" :                    true,         
   "height":                         340px,
@@ -61,6 +61,10 @@ $config: (
   "header-border-bottom":           none,
   "header-color":                   white,
   "header-padding":                 1rem,
+  "footer-padding" :                (0.5rem 1rem),
+  "footer-background-color" :       #f6f6f6,
+  "footer-border-top" :             none,
+  "footer-text-align" :             right,
   "resizer-background-color":       rgb(221, 221, 221),
   "resizer-background-color-hover": rgb(192, 192, 192),
   "resizer-color":                  rgb(99, 99, 99),
@@ -88,7 +92,7 @@ $config: (
 - **Group:** modal
 - **Type:** variable
 - **Lines (comments):** 31-67
-- **Lines (code):** 69-109
+- **Lines (code):** 69-113
 
 </details>
 
@@ -166,8 +170,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 111-114
-- **Lines (code):** 116-118
+- **Lines (comments):** 115-118
+- **Lines (code):** 120-122
 
 </details>
 
@@ -225,8 +229,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 130-132
-- **Lines (code):** 134-485
+- **Lines (comments):** 134-136
+- **Lines (code):** 138-507
 
 </details>
 
@@ -280,8 +284,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 120-123
-- **Lines (code):** 125-128
+- **Lines (comments):** 124-127
+- **Lines (code):** 129-132
 
 </details>
 
