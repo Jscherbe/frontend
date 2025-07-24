@@ -106,7 +106,6 @@ export const defaults = {
       ...(config.class ? [config.class] : []), 
     ];
     const labelledby = config.title ? `${ id }--title` : config.labelledby;
-    const hasFooter = footerElement || footerHtml;
     return `
       <dialog 
         id="${ id }" 
