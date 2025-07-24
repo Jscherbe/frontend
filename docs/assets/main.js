@@ -130,12 +130,86 @@ function debounce(callback, wait, immediate, valueThis) {
     timeout = setTimeout(later, wait);
   };
 }
+const linebreaks = /(\r\n|\n|\r)/gm;
+const multiSpace = /\s+/g;
+const jsonString = /^[{\[][\s\S]*[}\]]$/;
+function safeParse(jsonString2, defaultValue = {}, onError = null) {
+  try {
+    return JSON.parse(jsonString2);
+  } catch (error) {
+    if (typeof onError === "function") {
+      onError(error, jsonString2);
+    } else {
+      console.warn("safeParse: Failed to parse JSON string:", jsonString2, "Error:", error);
+    }
+    return defaultValue;
+  }
+}
 function isBrowser() {
   return typeof window !== "undefined" && typeof window.document !== "undefined";
 }
 function createElementFromHtml(markup) {
   const doc = new DOMParser().parseFromString(markup, "text/html");
   return doc.body.firstElementChild;
+}
+function getDatasetJson(element, key2, defaultValue = {}) {
+  const passed = element.dataset[key2];
+  return safeParse(passed, defaultValue, (error) => {
+    console.error(`Error getting JSON from dataset (${key2}) -- "${passed}"
+`, element, error);
+  });
+}
+function getDatasetOptionalJson(element, key2) {
+  const passed = element.dataset[key2];
+  if (passed && jsonString.test(passed.trim())) {
+    return getDatasetJson(element, key2);
+  } else {
+    return passed;
+  }
+}
+function wasClickOutside(element, event) {
+  const rect = element.getBoundingClientRect();
+  return event.clientY < rect.top || // above
+  event.clientY > rect.top + rect.height || // below
+  event.clientX < rect.left || // left side
+  event.clientX > rect.left + rect.width;
+}
+function getElement(target, context = document) {
+  if (typeof target === "string") {
+    return context.querySelector(target);
+  } else if (target instanceof Element) {
+    return target;
+  } else {
+    console.warn("getElement: Invalid target type (expected String/Node)", target);
+    return null;
+  }
+}
+function getElements(target, context = document) {
+  if (typeof target === "string") {
+    return [...context.querySelectorAll(target)];
+  } else if (target instanceof Element) {
+    return [target];
+  } else if (Array.isArray(target) || target instanceof NodeList) {
+    return [...target];
+  } else {
+    console.warn("getElement: Invalid target type (expected String/Node/Array/Node List)", target);
+    return null;
+  }
+}
+function addScrollbarCustomProperty(options) {
+  const defaults2 = {
+    scrollableChild: document.body,
+    container: window,
+    propertyElement: document.documentElement,
+    propertyName: "--ulu-scrollbar-width"
+  };
+  const config2 = { ...defaults2, ...options };
+  const { scrollableChild, container: container2, propertyElement, propertyName } = config2;
+  const scrollbarWidth = getScrollbarWidth(scrollableChild, container2);
+  propertyElement.style.setProperty(propertyName, `${scrollbarWidth}px`);
+}
+function getScrollbarWidth(element = document.body, container2 = window) {
+  return container2.innerWidth - element.clientWidth;
 }
 if (isBrowser()) {
   initResize();
@@ -195,129 +269,8 @@ const index$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   dispatch,
   getName: getName$1
 }, Symbol.toStringTag, { value: "Module" }));
-const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
-function dataAttributeToDatasetKey(attribute) {
-  return attribute.replace(/^data-/, "").replace(/-([a-z])/g, (_match, letter) => letter.toUpperCase());
-}
-function getDatasetJson(element, key2) {
-  const passed = element.dataset[key2];
-  try {
-    return JSON.parse(passed);
-  } catch (error) {
-    console.error(`Error getting JSON from dataset (${key2}) -- "${passed}"
-`, element, error);
-    return {};
-  }
-}
-function getDatasetOptionalJson(element, key2) {
-  const passed = element.dataset[key2];
-  if (passed && regexJsonString.test(passed.trim())) {
-    return getDatasetJson(element, key2);
-  } else {
-    return passed;
-  }
-}
-function wasClickOutside(element, event) {
-  const rect = element.getBoundingClientRect();
-  return event.clientY < rect.top || // above
-  event.clientY > rect.top + rect.height || // below
-  event.clientX < rect.left || // left side
-  event.clientX > rect.left + rect.width;
-}
-function setPositionClasses(parent, classes = {
-  columnFirst: "position-column-first",
-  columnLast: "position-column-last",
-  rowFirst: "position-row-first",
-  rowLast: "position-row-last"
-}) {
-  const children = [...parent.children];
-  const rows = [];
-  let lastY;
-  children.forEach((child) => {
-    const y = child.getBoundingClientRect().y;
-    if (lastY !== y) rows.push([]);
-    rows[rows.length - 1].push(child);
-    lastY = y;
-    child.classList.remove(...Object.values(classes));
-  });
-  rows.forEach((row, index2) => {
-    if (index2 === 0)
-      row.forEach((child) => child.classList.add(classes.rowFirst));
-    if (index2 == rows.length - 1)
-      row.forEach((child) => child.classList.add(classes.rowLast));
-    row.forEach((child, childIndex) => {
-      if (childIndex === 0)
-        child.classList.add(classes.columnFirst);
-      if (childIndex == row.length - 1)
-        child.classList.add(classes.columnLast);
-    });
-  });
-}
-function getElement(target, context = document) {
-  if (typeof target === "string") {
-    return context.querySelector(target);
-  } else if (target instanceof Element) {
-    return target;
-  } else {
-    console.warn("getElement: Invalid target type (expected String/Node)", target);
-    return null;
-  }
-}
-function getElements(target, context = document) {
-  if (typeof target === "string") {
-    return [...context.querySelectorAll(target)];
-  } else if (target instanceof Element) {
-    return [target];
-  } else if (Array.isArray(target) || target instanceof NodeList) {
-    return [...target];
-  } else {
-    console.warn("getElement: Invalid target type (expected String/Node/Array/Node List)", target);
-    return null;
-  }
-}
-function resolveClasses(classes) {
-  if (typeof classes === "string") {
-    return classes.split(" ").filter((c) => c !== "");
-  } else if (Array.isArray(classes)) {
-    return classes;
-  } else if (!classes) {
-    return [];
-  } else {
-    console.warn("resolveClassArray: Invalid class input type.", classes);
-    return [];
-  }
-}
-function addScrollbarProperty(options) {
-  const defaults2 = {
-    scrollableChild: document.body,
-    container: window,
-    propertyElement: document.documentElement,
-    propName: "--ulu-scrollbar-width"
-  };
-  const config2 = { ...defaults2, ...options };
-  const { scrollableChild, container: container2, propertyElement, propName } = config2;
-  const scrollbarWidth = getScrollbarWidth(scrollableChild, container2);
-  propertyElement.style.setProperty(propName, `${scrollbarWidth}px`);
-}
-function getScrollbarWidth(element = document.body, container2 = window) {
-  return container2.innerWidth - element.clientWidth;
-}
-const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
-  __proto__: null,
-  addScrollbarProperty,
-  dataAttributeToDatasetKey,
-  getDatasetJson,
-  getDatasetOptionalJson,
-  getElement,
-  getElements,
-  getScrollbarWidth,
-  regexJsonString,
-  resolveClasses,
-  setPositionClasses,
-  wasClickOutside
-}, Symbol.toStringTag, { value: "Module" }));
 function init$i() {
-  addScrollbarProperty();
+  addScrollbarCustomProperty();
 }
 const page = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
@@ -840,6 +793,62 @@ function hasRequiredProps(required) {
     });
   };
 }
+function trimWhitespace(string) {
+  return string.replace(linebreaks, "").replace(multiSpace, " ").trim();
+}
+function kebabToCamel(string) {
+  return string.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+}
+function dataAttributeToDatasetKey(attribute) {
+  return kebabToCamel(attribute.replace(/^data-/, ""));
+}
+function setPositionClasses(parent, classes = {
+  columnFirst: "position-column-first",
+  columnLast: "position-column-last",
+  rowFirst: "position-row-first",
+  rowLast: "position-row-last"
+}) {
+  const children = [...parent.children];
+  const rows = [];
+  let lastY;
+  children.forEach((child) => {
+    const y = child.getBoundingClientRect().y;
+    if (lastY !== y) rows.push([]);
+    rows[rows.length - 1].push(child);
+    lastY = y;
+    child.classList.remove(...Object.values(classes));
+  });
+  rows.forEach((row, index2) => {
+    if (index2 === 0)
+      row.forEach((child) => child.classList.add(classes.rowFirst));
+    if (index2 == rows.length - 1)
+      row.forEach((child) => child.classList.add(classes.rowLast));
+    row.forEach((child, childIndex) => {
+      if (childIndex === 0)
+        child.classList.add(classes.columnFirst);
+      if (childIndex == row.length - 1)
+        child.classList.add(classes.columnLast);
+    });
+  });
+}
+function resolveClasses(classes) {
+  if (typeof classes === "string") {
+    return classes.split(" ").filter((c) => c !== "");
+  } else if (Array.isArray(classes)) {
+    return classes;
+  } else if (!classes) {
+    return [];
+  } else {
+    console.warn("resolveClassArray: Invalid class input type.", classes);
+    return [];
+  }
+}
+const dom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  dataAttributeToDatasetKey,
+  resolveClasses,
+  setPositionClasses
+}, Symbol.toStringTag, { value: "Module" }));
 const _ComponentInitializer = class _ComponentInitializer {
   /**
    * Create a new instance of ComponentInitializer
@@ -1351,11 +1360,6 @@ const modalBuilder = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.define
   initializer: initializer$c,
   setDefaults: setDefaults$2
 }, Symbol.toStringTag, { value: "Module" }));
-const linebreaks = /(\r\n|\n|\r)/gm;
-const multiSpace = /\s+/g;
-function trimWhitespace(string) {
-  return string.replace(linebreaks, "").replace(multiSpace, " ").trim();
-}
 const initializer$b = new ComponentInitializer({
   type: "flipcard",
   baseAttribute: "data-ulu-flipcard"

@@ -5201,31 +5201,10 @@
                     <li><a href="#utils%2Fdom.dataattributetodatasetkey(dataattribute)-%E2%87%92-string">utils/dom.dataAttributeToDatasetKey(dataAttribute) ⇒ string</a>
             		</li>
 
-                    <li><a href="#utils%2Fdom.getdatasetjson(element%2C-key)-%E2%87%92-object">utils/dom.getDatasetJson(element, key) ⇒ Object</a>
-            		</li>
-
-                    <li><a href="#utils%2Fdom.getdatasetoptionaljson(element%2C-key)-%E2%87%92-object-%7C-string">utils/dom.getDatasetOptionalJson(element, key) ⇒ Object | String</a>
-            		</li>
-
-                    <li><a href="#utils%2Fdom.wasclickoutside()">utils/dom.wasClickOutside()</a>
-            		</li>
-
                     <li><a href="#utils%2Fdom.setpositionclasses(parent%2C-classes)">utils/dom.setPositionClasses(parent, classes)</a>
             		</li>
 
-                    <li><a href="#utils%2Fdom.getelement(target%2C-context)-%E2%87%92-htmlelement">utils/dom.getElement(target, context) ⇒ HTMLElement</a>
-            		</li>
-
-                    <li><a href="#utils%2Fdom.getelements(target%2C-context)-%E2%87%92-array">utils/dom.getElements(target, context) ⇒ Array</a>
-            		</li>
-
                     <li><a href="#utils%2Fdom.resolveclasses(input)-%E2%87%92-array.%3Cstring%3E">utils/dom.resolveClasses(input) ⇒ Array.<string></string></a>
-            		</li>
-
-                    <li><a href="#utils%2Fdom.addscrollbarproperty(options)">utils/dom.addScrollbarProperty(options)</a>
-            		</li>
-
-                    <li><a href="#utils%2Fdom.getscrollbarwidth(%5Belement%5D%2C-%5Bcontainer%5D)-%E2%87%92-number">utils/dom.getScrollbarWidth([element], [container]) ⇒ number</a>
             		</li>
                 </ol>
             </div>
@@ -5244,15 +5223,8 @@
 <li><a href="#module_utils/dom">utils/dom</a>
 <ul>
 <li><a href="#module_utils/dom.dataAttributeToDatasetKey">.dataAttributeToDatasetKey(dataAttribute)</a> ⇒ <code>string</code></li>
-<li><a href="#module_utils/dom.getDatasetJson">.getDatasetJson(element, key)</a> ⇒ <code>Object</code></li>
-<li><a href="#module_utils/dom.getDatasetOptionalJson">.getDatasetOptionalJson(element, key)</a> ⇒ <code>Object</code> | <code>String</code></li>
-<li><a href="#module_utils/dom.wasClickOutside">.wasClickOutside()</a></li>
 <li><a href="#module_utils/dom.setPositionClasses">.setPositionClasses(parent, classes)</a></li>
-<li><a href="#module_utils/dom.getElement">.getElement(target, context)</a> ⇒ <code>HTMLElement</code></li>
-<li><a href="#module_utils/dom.getElements">.getElements(target, context)</a> ⇒ <code>Array</code></li>
 <li><a href="#module_utils/dom.resolveClasses">.resolveClasses(input)</a> ⇒ <code>Array.&lt;string&gt;</code></li>
-<li><a href="#module_utils/dom.addScrollbarProperty">.addScrollbarProperty(options)</a></li>
-<li><a href="#module_utils/dom.getScrollbarWidth">.getScrollbarWidth([element], [container])</a> ⇒ <code>number</code></li>
 </ul>
 </li>
 </ul>
@@ -5277,66 +5249,7 @@
 </tr>
 </tbody>
 </table>
-<p><a name="module_utils/dom.getDatasetJson"></a></p>
-<h2 id="utils%2Fdom.getdatasetjson(element%2C-key)-%E2%87%92-object" tabindex="-1">utils/dom.getDatasetJson(element, key) ⇒ <code>Object</code></h2>
-<p>Get an elements JSON dataset value</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
-<strong>Returns</strong>: <code>Object</code> - Empty object or JSON object from dataset</p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>element</td>
-<td><code>Node</code></td>
-<td></td>
-</tr>
-<tr>
-<td>key</td>
-<td><code>String</code></td>
-<td>key in dataset object for element</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/dom.getDatasetOptionalJson"></a></p>
-<h2 id="utils%2Fdom.getdatasetoptionaljson(element%2C-key)-%E2%87%92-object-%7C-string" tabindex="-1">utils/dom.getDatasetOptionalJson(element, key) ⇒ <code>Object</code> | <code>String</code></h2>
-<p>Get an elements JSON dataset value that could potentially just be a single string</p>
-<ul>
-<li>If JSON it will return the object else it will return the value directly</li>
-</ul>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
-<strong>Returns</strong>: <code>Object</code> | <code>String</code> - JSON object or current dataset value (string or empty string if no value)</p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>element</td>
-<td><code>Node</code></td>
-<td></td>
-</tr>
-<tr>
-<td>key</td>
-<td><code>String</code></td>
-<td>key in dataset object for element</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/dom.wasClickOutside"></a></p>
-<h2 id="utils%2Fdom.wasclickoutside()" tabindex="-1">utils/dom.wasClickOutside()</h2>
-<p>Check if a pointer event x/y was outside an elements bounding box</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
-<a name="module_utils/dom.setPositionClasses"></a></p>
+<p><a name="module_utils/dom.setPositionClasses"></a></p>
 <h2 id="utils%2Fdom.setpositionclasses(parent%2C-classes)" tabindex="-1">utils/dom.setPositionClasses(parent, classes)</h2>
 <p>Sets up the positional classes that would come from the equal
 height module. Needs to be rerun by user when layout changes
@@ -5368,58 +5281,6 @@ or new instances are added to the screen</p>
 </tr>
 </tbody>
 </table>
-<p><a name="module_utils/dom.getElement"></a></p>
-<h2 id="utils%2Fdom.getelement(target%2C-context)-%E2%87%92-htmlelement" tabindex="-1">utils/dom.getElement(target, context) ⇒ <code>HTMLElement</code></h2>
-<p>Resolve a target to Element</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
-<strong>Returns</strong>: <code>HTMLElement</code> - The element or null if not found</p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>target</td>
-<td><code>String</code> | <code>Node</code></td>
-<td>The selector or node/element</td>
-</tr>
-<tr>
-<td>context</td>
-<td><code>Object</code></td>
-<td>[document] The context to query possible selectors from</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/dom.getElements"></a></p>
-<h2 id="utils%2Fdom.getelements(target%2C-context)-%E2%87%92-array" tabindex="-1">utils/dom.getElements(target, context) ⇒ <code>Array</code></h2>
-<p>Resolve a target to Elements</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
-<strong>Returns</strong>: <code>Array</code> - The elements or null if not found</p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>target</td>
-<td><code>String</code> | <code>Node</code></td>
-<td>The selector or node/element</td>
-</tr>
-<tr>
-<td>context</td>
-<td><code>Object</code></td>
-<td>[document] The context to query possible selectors from</td>
-</tr>
-</tbody>
-</table>
 <p><a name="module_utils/dom.resolveClasses"></a></p>
 <h2 id="utils%2Fdom.resolveclasses(input)-%E2%87%92-array.%3Cstring%3E" tabindex="-1">utils/dom.resolveClasses(input) ⇒ <code>Array.&lt;string&gt;</code></h2>
 <p>Resolves a class input (string or array) into a consistent array of class names.</p>
@@ -5445,81 +5306,6 @@ or new instances are added to the screen</p>
 <pre class="language-js"><code class="language-js"><span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"fas fa-check  my-class"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["fas", "fa-check", "my-class"]</span>
 <span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">[</span><span class="pjs-token pjs-string">"another-class"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"yet-another-class"</span><span class="pjs-token pjs-punctuation">]</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["another-class", "yet-another-class"]</span>
 <span class="pjs-token pjs-function">resolveClassArray</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"single-class"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-comment">// Returns ["single-class"]</span></code></pre>
-<p><a name="module_utils/dom.addScrollbarProperty"></a></p>
-<h2 id="utils%2Fdom.addscrollbarproperty(options)" tabindex="-1">utils/dom.addScrollbarProperty(options)</h2>
-<p>Sets a CSS custom property equal to the scrollbar width.</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a></p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>options</td>
-<td><code>object</code></td>
-<td></td>
-<td>Configuration options.</td>
-</tr>
-<tr>
-<td>[options.scrollableChild]</td>
-<td><code>HTMLElement</code></td>
-<td><code>document.body</code></td>
-<td>An element that is a child of a scrollable container (used for width calculation).</td>
-</tr>
-<tr>
-<td>[options.container]</td>
-<td><code>Window</code> | <code>HTMLElement</code></td>
-<td><code>window</code></td>
-<td>The container that can be scrolled (used for width calculation).</td>
-</tr>
-<tr>
-<td>[options.propertyElement]</td>
-<td><code>HTMLElement</code></td>
-<td><code>document.documentElement</code></td>
-<td>The element to which the custom property will be added. Defaults to document.documentElement for :root access.</td>
-</tr>
-<tr>
-<td>[options.propName]</td>
-<td><code>string</code></td>
-<td><code>&quot;&amp;quot;--ulu-scrollbar-width&amp;quot;&quot;</code></td>
-<td>The name of the custom property to set.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="module_utils/dom.getScrollbarWidth"></a></p>
-<h2 id="utils%2Fdom.getscrollbarwidth(%5Belement%5D%2C-%5Bcontainer%5D)-%E2%87%92-number" tabindex="-1">utils/dom.getScrollbarWidth([element], [container]) ⇒ <code>number</code></h2>
-<p>Calculates the width of the scrollbar.</p>
-<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
-<strong>Returns</strong>: <code>number</code> - The width of the scrollbar in pixels.</p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[element]</td>
-<td><code>HTMLElement</code></td>
-<td><code>document.body</code></td>
-<td>The element that is the child of a scrollable container</td>
-</tr>
-<tr>
-<td>[container]</td>
-<td><code>Window</code> | <code>HTMLElement</code></td>
-<td><code>window</code></td>
-<td>The container that can be scrolled</td>
-</tr>
-</tbody>
-</table>
 
     </div>
   </div>

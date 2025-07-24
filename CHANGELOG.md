@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.77
+
+- **js** 
+  - Move dom utils that were reusable to utils library
+- **docs** 
+  - Fix popover fixed demo for fixed strategy
+
 ## 0.1.0-beta.76
 
 - **scss/components/modal.scss** 
