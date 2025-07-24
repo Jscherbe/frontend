@@ -5,9 +5,15 @@ export default function(
   let mainClass = "popover"
   modifiers.forEach((modifier) => {
     mainClass += ` popover--${ modifier }`
-  })
+  });
+  const options = {};
+  // quick fix to add needed configuration for floating ui
+  if (modifiers.includes("fixed")) {
+    options.floating = { strategy: "fixed" };
+  }
+  const jsonOptions = JSON.stringify(options);
   return `
-  <button class="button" type="button" data-ulu-popover-trigger>
+  <button class="button" type="button" data-ulu-popover-trigger='${ jsonOptions }'>
     <span>Show ${ title } Popover</span>
     <span class="button__icon">
       <span data-feather="fas fa-chevron-down"></span>

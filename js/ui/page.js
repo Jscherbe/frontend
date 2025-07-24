@@ -4,11 +4,11 @@
  * @module ui/page
  */
 
-import { addScrollbarProperty } from "../utils/dom";
+import { addScrollbarCustomProperty } from "@ulu/utils/browser/dom.js";
 
 /**
  * Initialize page module
  */
 export function init() {
-  addScrollbarProperty();
+  addScrollbarCustomProperty();
 }

@@ -3,7 +3,7 @@
  */
 
 import { ComponentInitializer } from "../utils/system.js";
-import { getElement } from "../utils/dom.js";
+import { getElement } from "@ulu/utils/browser/dom.js";
 import { printElement } from "@ulu/utils/browser/print.js";
 
 const initializer = new ComponentInitializer({

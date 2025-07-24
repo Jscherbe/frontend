@@ -3,7 +3,7 @@
  */
 
 import { ComponentInitializer } from "../utils/system.js";
-import { wasClickOutside, getScrollbarWidth } from "../utils/dom.js";
+import { wasClickOutside, getScrollbarWidth } from "@ulu/utils/browser/dom.js";
 import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
 
 /**

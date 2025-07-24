@@ -6,7 +6,7 @@
 
 import Twig from "twig";
 import { dispatch } from "../../../js/events/index.js";
-import { getElement } from "../../../js/utils/dom.js";
+import { getElement } from "@ulu/utils/browser/dom.js";
 
 /**
  * Default data attributes

@@ -5,7 +5,7 @@
 
 import { ComponentInitializer } from "../utils/system.js";
 import { logError } from "../utils/class-logger.js";
-import { getElement } from "../utils/dom.js";
+import { getElement } from "@ulu/utils/browser/dom.js";
 
 // TODO:
 //  - Included a group option or attribute (on container), for things like anchor menus (one active in group at a time).

@@ -4,8 +4,9 @@
 
 import { ComponentInitializer } from "../utils/system.js";
 import { getName } from "../events/index.js";
-import { getElements, resolveClasses } from "../utils/dom.js";
+import { resolveClasses } from "../utils/dom.js";
 import { hasRequiredProps } from "@ulu/utils/object.js";
+import { getElements } from "@ulu/utils/browser/dom.js";
 
 /**
  * Theme Toggle Component Initializer

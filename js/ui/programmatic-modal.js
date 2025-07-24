@@ -5,8 +5,8 @@
 
 import { getName, dispatch } from "../events/index.js";
 import { newId } from "../utils/id.js";
-import { getElement } from "../utils/dom.js";
 import { buildModal } from "./modal-builder.js";
+import { getElement } from "@ulu/utils/browser/dom.js";
 
 export class ProgrammaticModalManager {
   static defaults = {

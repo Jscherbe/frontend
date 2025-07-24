@@ -2,8 +2,7 @@
  * @module utils/dom
  */
 
-
-export const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
+import { kebabToCamel } from "@ulu/utils/string.js";
 
 /**
  * Converts a data attribute name to its corresponding dataset property name.
@@ -11,55 +10,8 @@ export const regexJsonString = /^[{\[][\s\S]*[}\]]$/;
  * @returns {string} - The dataset property name (e.g., "uluDialog").
  */
 export function dataAttributeToDatasetKey(attribute) {
-  // Remove "data-" prefix then convert kebab-case to camelCase
-  return attribute
-    .replace(/^data-/, "")
-    .replace(/-([a-z])/g, (_match, letter) => letter.toUpperCase());
+  return kebabToCamel(attribute.replace(/^data-/, ""));
 }
-
-/**
- * Get an elements JSON dataset value
- * @param {Node} element 
- * @param {String} key key in dataset object for element
- * @returns {Object} Empty object or JSON object from dataset
- */
-export function getDatasetJson(element, key) {
-  const passed = element.dataset[key];
-  try {
-    return JSON.parse(passed);
-  } catch (error) {
-    console.error(`Error getting JSON from dataset (${ key }) -- "${ passed }"\n`, element, error);
-    return {};
-  }
-}
-
-/**
- * Get an elements JSON dataset value that could potentially just be a single string
- * - If JSON it will return the object else it will return the value directly
- * @param {Node} element 
- * @param {String} key key in dataset object for element
- * @returns {Object|String} JSON object or current dataset value (string or empty string if no value)
- */
-export function getDatasetOptionalJson(element, key) {
-  const passed = element.dataset[key];
-  if (passed && regexJsonString.test(passed.trim())) {
-    return getDatasetJson(element, key);
-  } else {
-    return passed;
-  }
-}
-
-/**
- * Check if a pointer event x/y was outside an elements bounding box
- */
-export function wasClickOutside(element, event) {
-  const rect = element.getBoundingClientRect();
-  return (event.clientY < rect.top || // above
-    event.clientY > rect.top + rect.height || // below
-    event.clientX < rect.left || // left side
-    event.clientX > rect.left + rect.width); // right side
-}
-
 
 /**
  *   Sets up the positional classes that would come from the equal
@@ -107,42 +59,6 @@ export function setPositionClasses(parent, classes = {
 }
 
 /**
- * Resolve a target to Element
- * @param {String|Node} target The selector or node/element
- * @param {Object} context [document] The context to query possible selectors from
- * @return {HTMLElement} The element or null if not found
- */
-export function getElement(target, context = document) {
-  if (typeof target === "string") {
-    return context.querySelector(target);
-  } else if (target instanceof Element) {
-    return target;
-  } else {
-    console.warn("getElement: Invalid target type (expected String/Node)", target);
-    return null;
-  }
-} 
-
-/**
- * Resolve a target to Elements
- * @param {String|Node} target The selector or node/element
- * @param {Object} context [document] The context to query possible selectors from
- * @return {Array} The elements or null if not found
- */
-export function getElements(target, context = document) {
-  if (typeof target === "string") {
-    return [...context.querySelectorAll(target)];
-  } else if (target instanceof Element) {
-    return [target];
-  } else if (Array.isArray(target) || target instanceof NodeList) {
-    return [...target];
-  } else {
-    console.warn("getElement: Invalid target type (expected String/Node/Array/Node List)", target);
-    return null;
-  }
-} 
-
-/**
  * Resolves a class input (string or array) into a consistent array of class names.
  * @param {string|string[]} input - The class input, which can be a string, an array of strings, or any other value.
  * @returns {string[]} An array of class names. Returns an empty array for invalid or falsy input.
@@ -162,38 +78,4 @@ export function resolveClasses(classes) {
     console.warn("resolveClassArray: Invalid class input type.", classes);
     return [];
   }
-}
-
-/**
- * Sets a CSS custom property equal to the scrollbar width.
- * @param {object} options - Configuration options.
- * @param {HTMLElement} [options.scrollableChild=document.body] - An element that is a child of a scrollable container (used for width calculation).
- * @param {Window|HTMLElement} [options.container=window] - The container that can be scrolled (used for width calculation).
- * @param {HTMLElement} [options.propertyElement=document.documentElement] - The element to which the custom property will be added. Defaults to document.documentElement for :root access.
- * @param {string} [options.propName="--ulu-scrollbar-width"] - The name of the custom property to set.
- */
-export function addScrollbarProperty(options) {
-  const defaults = {
-    scrollableChild: document.body,
-    container: window,
-    propertyElement: document.documentElement,
-    propName: "--ulu-scrollbar-width",
-  };
-
-  const config = { ...defaults, ...options };
-  const { scrollableChild, container, propertyElement, propName } = config;
-
-  const scrollbarWidth = getScrollbarWidth(scrollableChild, container);
-  propertyElement.style.setProperty(propName, `${ scrollbarWidth }px`);
-}
-
-/**
- * Calculates the width of the scrollbar.
- *
- * @param {HTMLElement} [element=document.body] -The element that is the child of a scrollable container
- * @param {Window|HTMLElement} [container=window] - The container that can be scrolled
- * @returns {number} The width of the scrollbar in pixels.
- */
-export function getScrollbarWidth(element = document.body, container = window) {
-  return container.innerWidth - element.clientWidth;
 }

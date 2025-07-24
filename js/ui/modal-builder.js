@@ -4,12 +4,12 @@
  */
 
 import { ComponentInitializer } from "../utils/system.js";
-import { getElement } from "../utils/dom.js";
 import { wrapSettingString } from "../settings.js";
 import { getName } from "../events/index.js";
-import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 import { Resizer } from "./resizer.js";
 import { baseAttribute, closeAttribute, defaults as dialogDefaults } from "./dialog.js";
+import { getElement } from "@ulu/utils/browser/dom.js";
+import { createElementFromHtml } from "@ulu/utils/browser/dom.js";
 
 /**
  * Modal Builder Component Initializer

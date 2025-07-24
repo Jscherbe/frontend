@@ -4,7 +4,8 @@
  */
 
 import { hasRequiredProps } from "@ulu/utils/object.js";
-import { getDatasetOptionalJson, dataAttributeToDatasetKey } from "./dom.js";
+import { getDatasetOptionalJson } from "@ulu/utils/browser/dom.js";
+import { dataAttributeToDatasetKey } from "./dom.js";
 import { getName } from "../events/index.js";
 
 /**
