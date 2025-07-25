@@ -98,7 +98,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.5",
-    "@ulu/utils": "^0.0.29",
+    "@ulu/utils": "^0.0.30",
     "ally.js": "^1.4.1",
     "aria-tablist": "^1.2.2",
     "swipe-listener" : "^1.3.0"
