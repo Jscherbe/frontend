@@ -1244,7 +1244,7 @@ const defaults$9 = {
    * @returns {String} Markup for modal
    */
   template(id2, config2) {
-    const { baseClass, describedby, footerElement, footerHtml } = config2;
+    const { baseClass, describedby, footerHtml } = config2;
     const classes = [
       baseClass,
       `${baseClass}--${config2.position}`,

@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.78
+
+- **js/ui/modal-builder.js**
+  - Fix unused documented config property `titleId`
+  - Document `labeledby`and `describedby``
+  - Code cleanup
+
 ## 0.1.0-beta.77
 
 - **js** 

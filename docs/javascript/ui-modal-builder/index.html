@@ -5380,9 +5380,14 @@ in twig for example)</li>
 <td>Extra class/classes to add to title</td>
 </tr>
 <tr>
-<td>titleId</td>
+<td>labelledby</td>
 <td><code>string</code></td>
-<td>Set the title id (to tie to a custom title implementation, if using built in title this will be set automatically)</td>
+<td>Set the aria-labelledby attribute to a specific title within the modal, to connect to a custom title implementation, if using built in title this will be set automatically</td>
+</tr>
+<tr>
+<td>describedby</td>
+<td><code>string</code></td>
+<td>Set the aria-describedby on the dialog, elements id, to tie a specific part of the content to be the accessible description</td>
 </tr>
 <tr>
 <td>nonModal</td>

@@ -72,9 +72,13 @@ export type DefaultModalOptions = {
      */
     titleClass: string;
     /**
-     * - Set the title id (to tie to a custom title implementation, if using built in title this will be set automatically)
+     * - Set the aria-labelledby attribute to a specific title within the modal, to connect to a custom title implementation, if using built in title this will be set automatically
      */
-    titleId: string;
+    labelledby: string;
+    /**
+     * - Set the aria-describedby on the dialog, elements id, to tie a specific part of the content to be the accessible description
+     */
+    describedby: string;
     /**
      * - If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`.
      */

@@ -28,7 +28,8 @@ export const initializer = new ComponentInitializer({
  * @property {string|null} title - The title of the modal. Defaults to `null`.
  * @property {string|null} titleIcon - The class name for an icon to display in the title. Defaults to `null`.
  * @property {string} titleClass - Extra class/classes to add to title
- * @property {string} titleId - Set the title id (to tie to a custom title implementation, if using built in title this will be set automatically)
+ * @property {string} labelledby - Set the aria-labelledby attribute to a specific title within the modal, to connect to a custom title implementation, if using built in title this will be set automatically
+ * @property {string} describedby - Set the aria-describedby on the dialog, elements id, to tie a specific part of the content to be the accessible description
  * @property {boolean} nonModal - If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`.
  * @property {boolean} documentEnd - If `true`, the modal will be appended to the end of the `document.body`. Defaults to `true`.
  * @property {boolean} allowResize - If `true`, the modal will be resizable. Defaults to `false`.
@@ -93,7 +94,7 @@ export const defaults = {
    * @returns {String} Markup for modal
    */
   template(id, config) {
-    const { baseClass, describedby, footerElement, footerHtml } = config;
+    const { baseClass, describedby, footerHtml } = config;
     const classes = [
       baseClass,
       `${ baseClass }--${ config.position }`,
@@ -180,8 +181,6 @@ export function buildModal(content, options) {
   if (!content.id) {
     throw new Error("Missing ID on modal");
   }
-
-  const { footerHtml, footerElement } = config;
   
   const markup = config.template(content.id, config);
   const modal = createElementFromHtml(markup.trim());
