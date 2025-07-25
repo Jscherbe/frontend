@@ -4,6 +4,7 @@
 
 import { ComponentInitializer } from "../utils/system.js";
 import { wasClickOutside, preventScroll as setupPreventScroll } from "@ulu/utils/browser/dom.js";
+import { debounce } from "@ulu/utils/performance.js";
 import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
 
 /**
@@ -131,8 +132,36 @@ export function setupDialog(dialog, userOptions) {
   const options = Object.assign({}, currentDefaults, userOptions);
   const body = document.body;
   const { preventScrollShift: preventShift } = options;
+  let isPointerDown = false;
+  let isResizing = false;
+
+  
+  // This was added to provide a simple flag for "isPointerDown" so that 
+  // we can disable click outside if it was a click that originated inside the dialog, probable from 
+  // native resize handle. If this causes issues in the future we can explore tracking the pointer
+  // with setPointerCapture but I'm worried about it affecting inner elements with their own pointer events
+  // This seems like it will be ok we just don't allow outside closing if there was pointerdown from within the modal
+  dialog.addEventListener("pointerdown", handlePointerdown);
 
   dialog.addEventListener("click", handleClicks);
+
+  // Watching for resizes to avoid closing outside during resizes
+  // - There is no resize event for css resize (so this uses pointerdown and resize observer)
+  const handleResizeEnd = debounce(() => {
+    if (isResizing && !isPointerDown) {
+      isResizing = false;
+    }
+  }, 500);
+
+  const resizeObserver = new ResizeObserver(() => {
+    if (isPointerDown) {
+      if (!isResizing) {
+        isResizing = true;
+      }
+      handleResizeEnd();
+    }
+  });
+  resizeObserver.observe(dialog);
 
   if (options.documentEnd) {
     body.appendChild(dialog);
@@ -158,12 +187,27 @@ export function setupDialog(dialog, userOptions) {
     });
   }
 
+  function handlePointerdown() {
+    if (isPointerDown) return;
+    isPointerDown = true;
+
+    const done = () => {
+      // After event queue (click) - so after click handler for outside is called
+      setTimeout(() => {
+        isPointerDown = false;
+        isResizing = false;
+      }, 0);
+    };
+    document.addEventListener("pointerup", done, { once: true });
+    document.addEventListener("pointercancel", done, { once: true });
+  }
+
   function handleClicks(event) {
     const { target } = event;
+    const targetIsDialog = target === dialog;
     const closeFromButton = target.closest(initializer.attributeSelector("close"));
-    let closeFromOutside = options.clickOutsideCloses && 
-                           target === dialog && 
-                           wasClickOutside(dialog, event);
+    const allowCloseOutside = !isResizing && options.clickOutsideCloses;
+    const closeFromOutside = allowCloseOutside && targetIsDialog && wasClickOutside(dialog, event);
     if (closeFromOutside || closeFromButton) {
       if (options.pauseVideos) {
         pauseVideos(dialog);
