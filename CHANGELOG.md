@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.80
+
+- Update @ulu/utils
+
 ## 0.1.0-beta.79
 
 - **js/ui/dialog.js**
