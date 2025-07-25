@@ -211,6 +211,22 @@ function addScrollbarCustomProperty(options) {
 function getScrollbarWidth(element = document.body, container2 = window) {
   return container2.innerWidth - element.clientWidth;
 }
+function preventScroll({ preventShift = false, container: container2 = document.body }) {
+  const cacheOverflow = container2.style.overflow;
+  const cachePaddingRight = container2.style.paddingRight;
+  container2.style.overflow = "hidden";
+  if (preventShift) {
+    const scrollbarWidth = getScrollbarWidth();
+    if (scrollbarWidth > 0) {
+      const paddingRightValue = parseInt(cachePaddingRight || "0px", 10);
+      container2.style.paddingRight = `${paddingRightValue + scrollbarWidth}px`;
+    }
+  }
+  return () => {
+    container2.style.overflow = cacheOverflow;
+    container2.style.paddingRight = cachePaddingRight;
+  };
+}
 if (isBrowser()) {
   initResize();
   initPrint();
@@ -1146,6 +1162,7 @@ function setupTrigger$1(trigger, dialogId) {
 function setupDialog(dialog2, userOptions) {
   const options = Object.assign({}, currentDefaults$3, userOptions);
   const body = document.body;
+  const { preventScrollShift: preventShift } = options;
   dialog2.addEventListener("click", handleClicks);
   if (options.documentEnd) {
     body.appendChild(dialog2);
@@ -1154,18 +1171,14 @@ function setupDialog(dialog2, userOptions) {
     prepVideos(dialog2);
   }
   if (!options.nonModal && options.preventScroll) {
-    let overflowValue = body.style.overflow;
-    let paddingRightValue = body.style.paddingRight;
+    let restoreScroll;
     dialog2.addEventListener("toggle", (event) => {
       const isOpen = event.newState === "open";
       if (isOpen) {
-        overflowValue = body.style.overflow;
-        paddingRightValue = body.style.paddingRight;
+        restoreScroll = preventScroll({ preventShift });
+      } else if (restoreScroll) {
+        restoreScroll();
       }
-      if (options.preventScrollShift) {
-        body.style.paddingRight = isOpen ? `${getScrollbarWidth()}px` : paddingRightValue;
-      }
-      body.style.overflow = isOpen ? "hidden" : overflowValue;
     });
   }
   function handleClicks(event) {

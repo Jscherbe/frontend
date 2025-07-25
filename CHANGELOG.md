@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.79
+
+- **js/ui/dialog.js**
+  - Move preventScroll logic to utils library, refactor (no api changes)
+
 ## 0.1.0-beta.78
 
 - **js/ui/modal-builder.js**

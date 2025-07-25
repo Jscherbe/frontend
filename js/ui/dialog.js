@@ -3,7 +3,7 @@
  */
 
 import { ComponentInitializer } from "../utils/system.js";
-import { wasClickOutside, getScrollbarWidth } from "@ulu/utils/browser/dom.js";
+import { wasClickOutside, preventScroll as setupPreventScroll } from "@ulu/utils/browser/dom.js";
 import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
 
 /**
@@ -130,7 +130,8 @@ export function setupTrigger(trigger, dialogId) {
 export function setupDialog(dialog, userOptions) {
   const options = Object.assign({}, currentDefaults, userOptions);
   const body = document.body;
-  
+  const { preventScrollShift: preventShift } = options;
+
   dialog.addEventListener("click", handleClicks);
 
   if (options.documentEnd) {
@@ -143,23 +144,17 @@ export function setupDialog(dialog, userOptions) {
   // Allow preventScroll if it is a modal dialog
   // Caching value of overflow before setting so we don't assume what it's initial value is
   if (!options.nonModal && options.preventScroll) {
-    
-    let overflowValue = body.style.overflow;
-    let paddingRightValue = body.style.paddingRight;
-    
+    // Cache restore function
+    let restoreScroll; 
+
+    // Toggle prevent scroll
     dialog.addEventListener("toggle", (event) => {
       const isOpen = event.newState === "open";
       if (isOpen) {
-        overflowValue = body.style.overflow;
-        paddingRightValue = body.style.paddingRight;
+        restoreScroll = setupPreventScroll({ preventShift });
+      } else if (restoreScroll) {
+        restoreScroll();
       }
-      
-      // This will compensate for scrollbar jump (if user has it enabled)
-      if (options.preventScrollShift) {
-        body.style.paddingRight = isOpen ? `${ getScrollbarWidth() }px` : paddingRightValue;
-      }
-
-      body.style.overflow = isOpen ? "hidden" : overflowValue;
     });
   }
 
