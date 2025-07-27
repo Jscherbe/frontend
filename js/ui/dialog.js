@@ -2,9 +2,9 @@
  * @module ui/dialog
  */
 
+import { getName } from "../events/index.js";
 import { ComponentInitializer } from "../utils/system.js";
 import { wasClickOutside, preventScroll as setupPreventScroll } from "@ulu/utils/browser/dom.js";
-import { debounce } from "@ulu/utils/performance.js";
 import { pauseVideos as pauseYoutubeVideos, prepVideos as prepYoutubeVideos } from "../utils/pause-youtube-video.js";
 
 /**
@@ -132,36 +132,14 @@ export function setupDialog(dialog, userOptions) {
   const options = Object.assign({}, currentDefaults, userOptions);
   const body = document.body;
   const { preventScrollShift: preventShift } = options;
-  let isPointerDown = false;
-  let isResizing = false;
 
-  
-  // This was added to provide a simple flag for "isPointerDown" so that 
-  // we can disable click outside if it was a click that originated inside the dialog, probable from 
-  // native resize handle. If this causes issues in the future we can explore tracking the pointer
-  // with setPointerCapture but I'm worried about it affecting inner elements with their own pointer events
-  // This seems like it will be ok we just don't allow outside closing if there was pointerdown from within the modal
-  dialog.addEventListener("pointerdown", handlePointerdown);
+  // Stores active pointerId for resizer until after the whole pointer event series 
+  // is finished which is after the click is complete
+  let activeResizePointer;
 
+  dialog.addEventListener(getName("resizer:start"), handleResizeStart);
+  dialog.addEventListener(getName("resizer:end"), handleResizeEnd);
   dialog.addEventListener("click", handleClicks);
-
-  // Watching for resizes to avoid closing outside during resizes
-  // - There is no resize event for css resize (so this uses pointerdown and resize observer)
-  const handleResizeEnd = debounce(() => {
-    if (isResizing && !isPointerDown) {
-      isResizing = false;
-    }
-  }, 500);
-
-  const resizeObserver = new ResizeObserver(() => {
-    if (isPointerDown) {
-      if (!isResizing) {
-        isResizing = true;
-      }
-      handleResizeEnd();
-    }
-  });
-  resizeObserver.observe(dialog);
 
   if (options.documentEnd) {
     body.appendChild(dialog);
@@ -187,32 +165,26 @@ export function setupDialog(dialog, userOptions) {
     });
   }
 
-  function handlePointerdown() {
-    if (isPointerDown) return;
-    isPointerDown = true;
-
-    const done = () => {
-      // After event queue (click) - so after click handler for outside is called
-      setTimeout(() => {
-        isPointerDown = false;
-        isResizing = false;
-      }, 0);
-    };
-    document.addEventListener("pointerup", done, { once: true });
-    document.addEventListener("pointercancel", done, { once: true });
-  }
-
   function handleClicks(event) {
     const { target } = event;
     const targetIsDialog = target === dialog;
     const closeFromButton = target.closest(initializer.attributeSelector("close"));
-    const allowCloseOutside = !isResizing && options.clickOutsideCloses;
+    const allowCloseOutside = !activeResizePointer && options.clickOutsideCloses;
     const closeFromOutside = allowCloseOutside && targetIsDialog && wasClickOutside(dialog, event);
     if (closeFromOutside || closeFromButton) {
       if (options.pauseVideos) {
         pauseVideos(dialog);
       }
       dialog.close();
+    }
+  }
+  function handleResizeStart(event) {
+    activeResizePointer = event.pointerId;
+  }
+  function handleResizeEnd(event) {
+    if (activeResizePointer === event.pointerId) {
+      // next event cycle (after click/pointer events finish in current)
+      setTimeout(() => { activeResizePointer = null;}, 0);
     }
   }
 } 

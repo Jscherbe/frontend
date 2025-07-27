@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.82
+
+- **js/utils/dialog.js**
+  - Remove native resize detection (resizeObserver, etc) since all resizing is done by resizer now
+    - Backed up this idea to reference/ideas/removed-idea-on-how-to-detect-native-resizing-has-no-event.js incase it's needed in the future
+  - Add flag internally to ensure that click outside is prevented if the pointer event originated from a resizer event
+
 ## 0.1.0-beta.81
 
 - **scss/components/css-icons.scss** 
