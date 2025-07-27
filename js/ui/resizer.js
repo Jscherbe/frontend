@@ -5,6 +5,9 @@
 import { createEvent } from "../events/index.js";
 import { logError, log } from "../utils/class-logger.js"; // Assuming this utility exists
 
+/**
+ * Class for creating/controlling a container size with a handle/control
+ */
 export class Resizer {
   static defaults = {
     debug: false,
