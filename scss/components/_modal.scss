@@ -271,7 +271,6 @@ $config: (
       top: auto;
       height: get("resizer-center-size");
       width: get("resizer-center-size");
-      border-top-left-radius: get("resizer-center-size");
       background-color: transparent;
       cursor: nwse-resize;
     }

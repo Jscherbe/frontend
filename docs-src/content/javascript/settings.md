@@ -109,6 +109,7 @@ Default settings
 | --- | --- | --- |
 | iconClassClose | <code>string</code> | The CSS class string for the close icon |
 | iconClassDragX | <code>string</code> | The CSS class string for the drag X icon |
+| iconClassDragBoth | <code>string</code> | The CSS class string for the dragging in both directions |
 | iconClassPrevious | <code>string</code> | The CSS class string for the previous icon |
 | iconClassNext | <code>string</code> | The CSS class string for the next icon |
 | cssvarPrefix | <code>string</code> | The prefix to use for CSS custom properties |

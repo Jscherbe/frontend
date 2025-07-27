@@ -1,6 +1,5 @@
 /**
  * @module ui/resizer
- * Adds resizing ability to an element from specified edges.
  */
 
 import { createEvent } from "../events/index.js";
@@ -33,14 +32,17 @@ export class Resizer {
     fromY: null 
   };
 
+  // Declare any runtime populated private fields
+  #handlerPointerdown;
+
   /**
    * @param {Node} container Container to be resized
    * @param {Node} control Resize handle element
    * @param {Object} options Options to configure the resizer.
    * @param {Boolean} options.debug Enable non-essential debugging logs.
    * @param {Boolean} options.overrideMaxDimensions When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them (default false).
-   * @param {"left"|"right"|null} [options.fromX="right"] Horizontal resizing direction.
-   * @param {"top"|"bottom"|null} [options.fromY="bottom"] Vertical resizing direction.
+   * @param {"left"|"right"|null} [options.fromX=null] Horizontal resizing direction.
+   * @param {"top"|"bottom"|null} [options.fromY=null] Vertical resizing direction.
    */
   constructor(container, control, options) {
     if (!control || !container) {
@@ -79,24 +81,25 @@ export class Resizer {
     this.resizeVertical = this.options.fromY !== null;
 
     // Bind event handlers
-    this.handlerPointerdown = this.onPointerdown.bind(this);
+    this.#handlerPointerdown = this.#onPointerdown.bind(this);
 
     // Attach event listener
-    this.control.addEventListener("pointerdown", this.handlerPointerdown);
+    this.control.addEventListener("pointerdown", this.#handlerPointerdown);
   }
 
   /**
    * Cleans up event listeners to prevent memory leaks.
    */
   destroy() {
-    this.control.removeEventListener("pointerdown", this.handlerPointerdown);
+    this.control.removeEventListener("pointerdown", this.#handlerPointerdown);
   }
 
   /**
    * Handles the pointerdown event on the resize control.
    * @param {PointerEvent} e The pointerdown event.
+   * @private
    */
-  onPointerdown(e) {
+  #onPointerdown(e) {
     e.preventDefault(); // Prevent default browser drag behavior
 
     const { overrideMaxDimensions, fromX, fromY, multiplier } = this.options; // Destructure fromX, fromY

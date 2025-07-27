@@ -1,4 +1,12 @@
 JS Todos:
+  ☐ Javascript classes need to reduce output of public properties/methods to only what users need
+    * Not a priority but to make things clear
+  ✘ Add a module (global) that will expose public in use @cancelled @see(reference/ideas/how-to-handle-public-api.md)
+    * Have thought about this in detail, will not be something we have, should be on user side 
+      * Reason: Only the user knows what they are using and what would be needed/exposed
+      * Any solution (other than like vite plugin [which is still tricky]) will result in breaking
+        tree shaking. Even local registration by modules themselves would lead to the bundler
+        thinking that it all needs to be exposed
   ✔ Add x/y resizer and replace native on modal @done
     ✔ Then remove the attempt to track native resizer @done
     ✔ Use events to communicate? @done

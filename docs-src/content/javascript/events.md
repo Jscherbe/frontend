@@ -10,6 +10,7 @@ title: events
     * _static_
         * [.dispatch(type, context)](#module_events.dispatch)
         * [.getName(type)](#module_events.getName) ⇒ <code>String</code>
+        * [.createEvent(type, data, options)](#module_events.createEvent)
     * _inner_
         * [~events](#module_events..events)
             * [.pageModified()](#module_events..events.pageModified)
@@ -22,7 +23,8 @@ title: events
 <a name="module_events.dispatch"></a>
 
 ## events.dispatch(type, context)
-Triggers one of our custom events
+Triggers one of our custom events (page/document level events)
+- UI components may dispatch their own events, this is just used for system wide events
 
 **Kind**: static method of [<code>events</code>](#module_events)  
 
@@ -41,12 +43,26 @@ if (updatedMarkup) {
 
 ## events.getName(type) ⇒ <code>String</code>
 Namespaced event
+- Should be used for all ulu script/component events
 
 **Kind**: static method of [<code>events</code>](#module_events)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | type | <code>String</code> | Type of event to get the actual event name for |
+
+<a name="module_events.createEvent"></a>
+
+## events.createEvent(type, data, options)
+Create ulu namespaced custom event
+
+**Kind**: static method of [<code>events</code>](#module_events)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| type | <code>String</code> | Event base name (not prefixed) |
+| data | <code>any</code> | Custom data to pass with the event (will be available as `event.detail`) |
+| options | <code>Object</code> | CustomEvent options default `{ bubbles: true }`. If `detail` is also provided, it will be merged with this options object and will override the 'data' argument for this function |
 
 <a name="module_events..events"></a>
 

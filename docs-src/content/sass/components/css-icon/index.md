@@ -223,7 +223,7 @@ Output CSS icon component stylesheet
 - **Group:** css-icon
 - **Type:** mixin
 - **Lines (comments):** 101-103
-- **Lines (code):** 105-438
+- **Lines (code):** 105-448
 
 </details>
 

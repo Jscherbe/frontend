@@ -70,6 +70,7 @@ $config: (
   "resizer-color":                  rgb(99, 99, 99),
   "resizer-color-hover":            black,
   "resizer-width":                  1.25rem,
+  "resizer-center-size" :           1.65rem,
   "title-color":                    white,
   "title-font-weight":              bold,
   "title-font-family" :             null,
@@ -91,8 +92,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 31-71
-- **Lines (code):** 73-117
+- **Lines (comments):** 31-72
+- **Lines (code):** 74-119
 
 </details>
 
@@ -135,6 +136,7 @@ $config: (
 |resizer-color|Color|rgb(99, 99, 99)|The type color of the resizer.|
 |resizer-color-hover|Color|black|The type color of the resizer when hovered or focused.|
 |resizer-width|Dimension|1rem|The width of the resizer.|
+|resizer-center-size|Dimension|1.65rem|The width/height of the resizer (in bottom right corner) used when position center with resize enabled|
 |title-color|Color|white|Type color of the title.|
 |title-font-weight|CssValue|bold|Font weight of the title.|
 |title-font-family|CssValue|null|Font family for title|
@@ -174,8 +176,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 119-122
-- **Lines (code):** 124-126
+- **Lines (comments):** 121-124
+- **Lines (code):** 126-128
 
 </details>
 
@@ -233,8 +235,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 138-140
-- **Lines (code):** 142-500
+- **Lines (comments):** 140-142
+- **Lines (code):** 144-513
 
 </details>
 
@@ -288,8 +290,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 128-131
-- **Lines (code):** 133-136
+- **Lines (comments):** 130-133
+- **Lines (code):** 135-138
 
 </details>
 
