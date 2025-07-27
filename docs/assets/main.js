@@ -1,6 +1,15 @@
 var __defProp = Object.defineProperty;
+var __typeError = (msg) => {
+  throw TypeError(msg);
+};
 var __defNormalProp = (obj, key2, value) => key2 in obj ? __defProp(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField = (obj, key2, value) => __defNormalProp(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
+var __accessCheck = (obj, member, msg) => member.has(obj) || __typeError("Cannot " + msg);
+var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read from private field"), getter ? getter.call(obj) : member.get(obj));
+var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
+var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
+var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
+var _handlerPointerdown, _Resizer_instances, onPointerdown_fn;
 const scriptRel = "modulepreload";
 const assetsURL = function(dep, importerUrl) {
   return new URL(dep, importerUrl).href;
@@ -76,6 +85,7 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
 const defaults$b = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
+  iconClassDragBoth: "css-icon css-icon--drag-both",
   iconClassPrevious: "css-icon  css-icon--angle-left",
   iconClassNext: "css-icon  css-icon--angle-right",
   cssvarPrefix: ""
@@ -238,25 +248,25 @@ const events = {
    * - Is triggered by modules that were responsible for modifying the page
    */
   pageModified(context) {
-    context.dispatchEvent(new CustomEvent(getName$1("pageModified"), { bubbles: true }));
+    context.dispatchEvent(createEvent("pageModified"));
   },
   /**
    * Event called when page is resized
    */
   pageResized(context) {
-    context.dispatchEvent(new CustomEvent(getName$1("pageResized"), { bubbles: true }));
+    context.dispatchEvent(createEvent("pageResized"));
   },
   /**
    * Event dispatched before page print begins (teardown/restructure/hide things)
    */
   beforePrint(context) {
-    context.dispatchEvent(new CustomEvent(getName$1("beforePrint"), { bubbles: true }));
+    context.dispatchEvent(createEvent("beforePrint"));
   },
   /**
    * Event dispatched after page print (cleanup)
    */
   afterPrint(context) {
-    context.dispatchEvent(new CustomEvent(getName$1("afterPrint"), { bubbles: true }));
+    context.dispatchEvent(createEvent("afterPrint"));
   }
 };
 function dispatch(type, context) {
@@ -268,6 +278,9 @@ function dispatch(type, context) {
 }
 function getName$1(type) {
   return "ulu:" + type;
+}
+function createEvent(type, data = null, options = { bubbles: true }) {
+  return new CustomEvent(getName$1(type), { detail: data, ...options });
 }
 function initResize() {
   window.addEventListener("resize", debounce(() => dispatch("pageResized", document), 250));
@@ -282,6 +295,7 @@ function initPrint() {
 }
 const index$2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
+  createEvent,
   dispatch,
   getName: getName$1
 }, Symbol.toStringTag, { value: "Module" }));
@@ -309,7 +323,8 @@ const config$1 = {
 };
 const hasConsole = "console" in window;
 function allow(context) {
-  return hasConsole && config$1.debug && ((context == null ? void 0 : context.debug) || context == null);
+  var _a;
+  return hasConsole && config$1.debug && ((context == null ? void 0 : context.debug) || ((_a = context == null ? void 0 : context.options) == null ? void 0 : _a.debug) || context == null);
 }
 function getName(context) {
   var _a;
@@ -1001,51 +1016,163 @@ __publicField(_ComponentInitializer, "hasRequiredOptions", hasRequiredProps(
 let ComponentInitializer = _ComponentInitializer;
 const _Resizer = class _Resizer {
   /**
-   * 
-   * @param {Node} container Container to be resize   
-   * @param {Node} control Resize handle element 
-   * @param {Object} options Defualt can be changed on class
-   * @param {Boolean} options.debug Enable non-essential debugging logs
-   * @param {Boolean} options.overrideMaxWidth When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)
-   * @param {Boolean} options.fromLeft The script should assume the handle is on the left side of the element
+   * @param {Node} container Container to be resized
+   * @param {Node} control Resize handle element
+   * @param {Object} options Options to configure the resizer.
+   * @param {Boolean} options.debug Enable non-essential debugging logs.
+   * @param {Boolean} options.overrideMaxDimensions When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them (default false).
+   * @param {"left"|"right"|null} [options.fromX=null] Horizontal resizing direction.
+   * @param {"top"|"bottom"|null} [options.fromY=null] Vertical resizing direction.
    */
   constructor(container2, control, options) {
+    __privateAdd(this, _Resizer_instances);
+    // Declare any runtime populated private fields
+    __privateAdd(this, _handlerPointerdown);
     if (!control || !container2) {
-      logError(this, "Missing required elements 'control' or 'container'");
+      logError(this, "Missing required elements: control, container");
+      return;
     }
     this.options = Object.assign({}, _Resizer.defaults, options);
+    log(this, "Resolved options", this.options);
     this.container = container2;
     this.control = control;
-    this.handlerMousedown = this.onMousedown.bind(this);
-    this.control.addEventListener("mousedown", this.handlerMousedown);
+    this.debug = this.options.debug;
+    const validX = ["left", "right"];
+    const validY = ["top", "bottom"];
+    const { fromX, fromY } = this.options;
+    if (!validX.includes(fromX) && fromX !== null) {
+      logError(this, `Invalid fromX: ${fromX} (left|right|null)`);
+      return;
+    }
+    if (!validY.includes(fromY) && fromY !== null) {
+      logError(this, `Invalid fromY: ${fromY} (top|bottom|null)`);
+      return;
+    }
+    if (!fromX && !fromY) {
+      logError(this, "Invalid fromX/fromY, failed to setup resizer");
+      return;
+    }
+    this.resizeHorizontal = this.options.fromX !== null;
+    this.resizeVertical = this.options.fromY !== null;
+    __privateSet(this, _handlerPointerdown, __privateMethod(this, _Resizer_instances, onPointerdown_fn).bind(this));
+    this.control.addEventListener("pointerdown", __privateGet(this, _handlerPointerdown));
   }
+  /**
+   * Cleans up event listeners to prevent memory leaks.
+   */
   destroy() {
-    this.control.removeEventListener("mousedown", this.handlerMousedown);
+    this.control.removeEventListener("pointerdown", __privateGet(this, _handlerPointerdown));
   }
-  onMousedown(e) {
-    const { overrideMaxWidth, fromLeft } = this.options;
-    const doc = document.documentElement;
-    const win = document.defaultView;
-    const x = e.clientX;
-    const width = parseInt(win.getComputedStyle(this.container).width, 10);
-    if (overrideMaxWidth) {
+  dispatchEvent(type, data) {
+    this.container.dispatchEvent(createEvent(type, data));
+  }
+};
+_handlerPointerdown = new WeakMap();
+_Resizer_instances = new WeakSet();
+/**
+ * Handles the pointerdown event on the resize control.
+ * @param {PointerEvent} e The pointerdown event.
+ * @private
+ */
+onPointerdown_fn = function(e) {
+  e.preventDefault();
+  const { overrideMaxDimensions, fromX, fromY, multiplier } = this.options;
+  const doc = document.documentElement;
+  const win = document.defaultView;
+  const containerStyle = win.getComputedStyle(this.container);
+  const startX = e.clientX;
+  const startY = e.clientY;
+  const initialWidth = parseInt(containerStyle.width, 10);
+  const initialHeight = parseInt(containerStyle.height, 10);
+  this.control.setPointerCapture(e.pointerId);
+  if (overrideMaxDimensions) {
+    if (this.resizeHorizontal) {
       this.container.style.maxWidth = "none";
     }
-    const mousemove = (event) => {
-      const polarity = fromLeft ? -1 : 1;
-      this.container.style.width = `${width + (event.clientX - x) * polarity}px`;
-    };
-    const cleanup = () => {
-      doc.removeEventListener("mousemove", mousemove, false);
-    };
-    doc.addEventListener("mousemove", mousemove, false);
-    doc.addEventListener("mouseup", cleanup, { capture: true, once: true });
+    if (this.resizeVertical) {
+      this.container.style.maxHeight = "none";
+    }
   }
+  const initialInfo = {
+    event: e,
+    startX,
+    startY,
+    initialWidth,
+    initialHeight,
+    fromX,
+    // Log fromX and fromY separately
+    fromY,
+    pointerId: e.pointerId
+  };
+  this.dispatchEvent("resizer:start", initialInfo);
+  log(this, "Pointerdown initiated/captured.", initialInfo);
+  const pointermove = (event) => {
+    let newWidth = initialWidth;
+    let newHeight = initialHeight;
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+    if (this.resizeHorizontal) {
+      if (fromX === "right") {
+        newWidth = initialWidth + deltaX * multiplier;
+      } else if (fromX === "left") {
+        newWidth = initialWidth - deltaX * multiplier;
+      }
+      this.container.style.width = `${Math.max(0, newWidth)}px`;
+    }
+    if (this.resizeVertical) {
+      if (fromY === "bottom") {
+        newHeight = initialHeight + deltaY * multiplier;
+      } else if (fromY === "top") {
+        newHeight = initialHeight - deltaY * multiplier;
+      }
+      this.container.style.height = `${Math.max(0, newHeight)}px`;
+    }
+    const updateInfo = {
+      clientX: event.clientX,
+      clientY: event.clientY,
+      newWidth,
+      newHeight,
+      event
+    };
+    this.dispatchEvent("resizer:update", updateInfo);
+    log(this, "Pointermove.", updateInfo);
+  };
+  const cleanup = (event) => {
+    doc.removeEventListener("pointermove", pointermove, false);
+    doc.removeEventListener("pointerup", cleanup, { capture: true, once: true });
+    this.control.releasePointerCapture(event.pointerId);
+    this.dispatchEvent("resizer:end");
+    log(this, "Pointerup cleanup complete. Pointer released.", {
+      pointerId: event.pointerId
+    });
+  };
+  doc.addEventListener("pointermove", pointermove, false);
+  doc.addEventListener("pointerup", cleanup, { capture: true, once: true });
 };
 __publicField(_Resizer, "defaults", {
   debug: false,
-  overrideMaxWidth: false,
-  fromLeft: false
+  /**
+   * Amount to increase size by (ie. pointer movement * multiplier)
+   */
+  multiplier: 1,
+  /**
+   * Remove max-width, max-height
+   */
+  overrideMaxDimensions: false,
+  /**
+   * @type {"left"|"right"|null}
+   * Specifies the horizontal edge from which resizing occurs.
+   * `null` means no horizontal resizing.
+   * - Default null
+   */
+  fromX: null,
+  /**
+   * @type {"top"|"bottom"|null}
+   * Specifies the vertical edge from which resizing occurs.
+   * - `null` means no vertical resizing.
+   * - Default null
+   */
+  fromY: null
 });
 let Resizer = _Resizer;
 const resizer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -1163,7 +1290,24 @@ function setupDialog(dialog2, userOptions) {
   const options = Object.assign({}, currentDefaults$3, userOptions);
   const body = document.body;
   const { preventScrollShift: preventShift } = options;
+  let isPointerDown = false;
+  let isResizing = false;
+  dialog2.addEventListener("pointerdown", handlePointerdown);
   dialog2.addEventListener("click", handleClicks);
+  const handleResizeEnd = debounce(() => {
+    if (isResizing && !isPointerDown) {
+      isResizing = false;
+    }
+  }, 500);
+  const resizeObserver = new ResizeObserver(() => {
+    if (isPointerDown) {
+      if (!isResizing) {
+        isResizing = true;
+      }
+      handleResizeEnd();
+    }
+  });
+  resizeObserver.observe(dialog2);
   if (options.documentEnd) {
     body.appendChild(dialog2);
   }
@@ -1181,10 +1325,24 @@ function setupDialog(dialog2, userOptions) {
       }
     });
   }
+  function handlePointerdown() {
+    if (isPointerDown) return;
+    isPointerDown = true;
+    const done = () => {
+      setTimeout(() => {
+        isPointerDown = false;
+        isResizing = false;
+      }, 0);
+    };
+    document.addEventListener("pointerup", done, { once: true });
+    document.addEventListener("pointercancel", done, { once: true });
+  }
   function handleClicks(event) {
     const { target } = event;
+    const targetIsDialog = target === dialog2;
     const closeFromButton = target.closest(initializer$d.attributeSelector("close"));
-    let closeFromOutside = options.clickOutsideCloses && target === dialog2 && wasClickOutside(dialog2, event);
+    const allowCloseOutside = !isResizing && options.clickOutsideCloses;
+    const closeFromOutside = allowCloseOutside && targetIsDialog && wasClickOutside(dialog2, event);
     if (closeFromOutside || closeFromButton) {
       if (options.pauseVideos) {
         pauseVideos(dialog2);
@@ -1241,14 +1399,16 @@ const defaults$9 = {
   footerHtml: null,
   classCloseIcon: wrapSettingString("iconClassClose"),
   classResizerIcon: wrapSettingString("iconClassDragX"),
+  classResizerIconBoth: wrapSettingString("iconClassDragBoth"),
   debug: false,
   templateCloseIcon(config2) {
     const { baseClass, classCloseIcon } = config2;
     return `<span class="${baseClass}__close-icon ${classCloseIcon}" aria-hidden="true"></span>`;
   },
   templateResizerIcon(config2) {
-    const { baseClass, classResizerIcon } = config2;
-    return `<span class="${baseClass}__resizer-icon ${classResizerIcon}" aria-hidden="true"></span>`;
+    const { baseClass, classResizerIcon, classResizerIconBoth } = config2;
+    const iconClass = config2.position === "center" ? classResizerIconBoth : classResizerIcon;
+    return `<span class="${baseClass}__resizer-icon ${iconClass}" aria-hidden="true"></span>`;
   },
   /**
    * Default modal template
@@ -1290,7 +1450,7 @@ const defaults$9 = {
         ` : ""}
         <div class="${baseClass}__body" ${initializer$c.getAttribute("body")}></div>
         ${footerHtml ? `<div class="${baseClass}__footer">${footerHtml}</div>` : ""}
-        ${config2.hasResizer ? `<div class="${baseClass}__resizer" ${initializer$c.getAttribute("resizer")}>
+        ${config2.allowResize ? `<div class="${baseClass}__resizer" ${initializer$c.getAttribute("resizer")}>
             ${config2.templateResizerIcon(config2)}
           </div>` : ""}
       </dialog>
@@ -1312,9 +1472,7 @@ function init$g() {
 }
 function buildModal(content, options) {
   const config2 = Object.assign({}, currentDefaults$2, options);
-  if (config2.position !== "center" && config2.allowResize) {
-    config2.hasResizer = true;
-  }
+  const { position } = config2;
   if (config2.debug) {
     initializer$c.log(config2, content);
   }
@@ -1325,7 +1483,7 @@ function buildModal(content, options) {
   const modal = createElementFromHtml(markup.trim());
   const selectChild = (key2) => modal.querySelector(initializer$c.attributeSelector(key2));
   const body = selectChild("body");
-  const resizer2 = selectChild("resizer");
+  const resizerElement = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config2);
   content.removeAttribute("id");
   content.removeAttribute("hidden");
@@ -1340,10 +1498,17 @@ function buildModal(content, options) {
       body.after(footerElement);
     }
   }
-  if (config2.hasResizer) {
-    new Resizer(modal, resizer2, {
-      fromLeft: config2.position === "right"
-    });
+  let resizer2;
+  const resizablePositions = ["left", "right", "center"];
+  const isCenter = position === "center";
+  const isRight = position === "right";
+  if (config2.allowResize) {
+    if (resizablePositions.includes(position)) {
+      const resizerOptions = isCenter ? { fromX: "right", fromY: "bottom", multiplier: 2 } : { fromX: isRight ? "left" : "right" };
+      resizer2 = new Resizer(modal, resizerElement, resizerOptions);
+    } else {
+      console.warn(`${position} is not supported for resizing`);
+    }
   }
   if (config2.print) {
     let printClone;
@@ -1355,7 +1520,7 @@ function buildModal(content, options) {
       printClone.remove();
     });
   }
-  return { modal };
+  return { modal, resizer: resizer2 };
 }
 function separateDialogOptions(config2) {
   return Object.keys(defaults$a).reduce((acc, key2) => {
@@ -10125,6 +10290,8 @@ function configureIcons() {
   updateSettings({
     iconClassClose: "fas fa-xmark",
     iconClassDragX: "fas fa-solid fa-grip-lines-vertical",
+    iconClassDragBoth: "fas fa-solid fa-grip",
+    // Not really any good icons for this (no diagonal arrows, etc)
     iconClassPrevious: "fas fa-solid fa-chevron-left",
     iconClassNext: "fas fa-solid fa-chevron-right"
   });
@@ -23450,6 +23617,7 @@ function setupInstance(userOptions) {
   }
 }
 window.Ulu = ulu;
+set({ debug: true });
 updateSetting("cssvarPrefix", "site");
 configureIcons();
 init$i();

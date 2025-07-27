@@ -5204,6 +5204,9 @@
                     <li><a href="#events.getname(type)-%E2%87%92-string">events.getName(type) ⇒ String</a>
             		</li>
 
+                    <li><a href="#events.createevent(type%2C-data%2C-options)">events.createEvent(type, data, options)</a>
+            		</li>
+
                     <li><a href="#events~events">events~events</a>
             
                 <ol>
@@ -5247,6 +5250,7 @@
 <ul>
 <li><a href="#module_events.dispatch">.dispatch(type, context)</a></li>
 <li><a href="#module_events.getName">.getName(type)</a> ⇒ <code>String</code></li>
+<li><a href="#module_events.createEvent">.createEvent(type, data, options)</a></li>
 </ul>
 </li>
 <li><em>inner</em>
@@ -5268,7 +5272,10 @@
 </ul>
 <p><a name="module_events.dispatch"></a></p>
 <h2 id="events.dispatch(type%2C-context)" tabindex="-1">events.dispatch(type, context)</h2>
-<p>Triggers one of our custom events</p>
+<p>Triggers one of our custom events (page/document level events)</p>
+<ul>
+<li>UI components may dispatch their own events, this is just used for system wide events</li>
+</ul>
 <p><strong>Kind</strong>: static method of <a href="#module_events"><code>events</code></a></p>
 <table>
 <thead>
@@ -5298,6 +5305,9 @@
 <p><a name="module_events.getName"></a></p>
 <h2 id="events.getname(type)-%E2%87%92-string" tabindex="-1">events.getName(type) ⇒ <code>String</code></h2>
 <p>Namespaced event</p>
+<ul>
+<li>Should be used for all ulu script/component events</li>
+</ul>
 <p><strong>Kind</strong>: static method of <a href="#module_events"><code>events</code></a></p>
 <table>
 <thead>
@@ -5312,6 +5322,36 @@
 <td>type</td>
 <td><code>String</code></td>
 <td>Type of event to get the actual event name for</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_events.createEvent"></a></p>
+<h2 id="events.createevent(type%2C-data%2C-options)" tabindex="-1">events.createEvent(type, data, options)</h2>
+<p>Create ulu namespaced custom event</p>
+<p><strong>Kind</strong>: static method of <a href="#module_events"><code>events</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><code>String</code></td>
+<td>Event base name (not prefixed)</td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>any</code></td>
+<td>Custom data to pass with the event (will be available as <code>event.detail</code>)</td>
+</tr>
+<tr>
+<td>options</td>
+<td><code>Object</code></td>
+<td>CustomEvent options default <code>{ bubbles: true }</code>. If <code>detail</code> is also provided, it will be merged with this options object and will override the 'data' argument for this function</td>
 </tr>
 </tbody>
 </table>

@@ -5204,7 +5204,22 @@
                     
                     <li><a href="#new-exports.resizer(container%2C-control%2C-options)">new exports.Resizer(container, control, options)</a>
             		</li>
+
+                    <li><a href="#resizer.destroy()">resizer.destroy()</a>
+            		</li>
                 </ol>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~multiplier">ui/resizer~multiplier</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~overridemaxdimensions">ui/resizer~overrideMaxDimensions</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~fromx-%3A-%22left%22-%7C-%22right%22-%7C-null">ui/resizer~fromX : "left" | "right" | null</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~fromy-%3A-%22top%22-%7C-%22bottom%22-%7C-null">ui/resizer~fromY : "top" | "bottom" | null</a>
             		</li>
                 </ol>
             </div>
@@ -5222,9 +5237,22 @@
 <ul>
 <li><a href="#module_ui/resizer">ui/resizer</a>
 <ul>
+<li><em>static</em>
+<ul>
 <li><a href="#module_ui/resizer.Resizer">.Resizer</a>
 <ul>
 <li><a href="#new_module_ui/resizer.Resizer_new">new exports.Resizer(container, control, options)</a></li>
+<li><a href="#module_ui/resizer.Resizer+destroy">.destroy()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><em>inner</em>
+<ul>
+<li><a href="#module_ui/resizer..multiplier">~multiplier</a></li>
+<li><a href="#module_ui/resizer..overrideMaxDimensions">~overrideMaxDimensions</a></li>
+<li><a href="#module_ui/resizer..fromX">~fromX</a> : <code>&quot;left&quot;</code> | <code>&quot;right&quot;</code> | <code>null</code></li>
+<li><a href="#module_ui/resizer..fromY">~fromY</a> : <code>&quot;top&quot;</code> | <code>&quot;bottom&quot;</code> | <code>null</code></li>
 </ul>
 </li>
 </ul>
@@ -5232,14 +5260,23 @@
 </ul>
 <p><a name="module_ui/resizer.Resizer"></a></p>
 <h2 id="ui%2Fresizer.resizer" tabindex="-1">ui/resizer.Resizer</h2>
-<p><strong>Kind</strong>: static class of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
-<a name="new_module_ui/resizer.Resizer_new"></a></p>
+<p><strong>Kind</strong>: static class of <a href="#module_ui/resizer"><code>ui/resizer</code></a></p>
+<ul>
+<li><a href="#module_ui/resizer.Resizer">.Resizer</a>
+<ul>
+<li><a href="#new_module_ui/resizer.Resizer_new">new exports.Resizer(container, control, options)</a></li>
+<li><a href="#module_ui/resizer.Resizer+destroy">.destroy()</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_module_ui/resizer.Resizer_new"></a></p>
 <h3 id="new-exports.resizer(container%2C-control%2C-options)" tabindex="-1">new exports.Resizer(container, control, options)</h3>
 <table>
 <thead>
 <tr>
 <th>Param</th>
 <th>Type</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -5247,35 +5284,67 @@
 <tr>
 <td>container</td>
 <td><code>Node</code></td>
-<td>Container to be resize</td>
+<td></td>
+<td>Container to be resized</td>
 </tr>
 <tr>
 <td>control</td>
 <td><code>Node</code></td>
+<td></td>
 <td>Resize handle element</td>
 </tr>
 <tr>
 <td>options</td>
 <td><code>Object</code></td>
-<td>Defualt can be changed on class</td>
+<td></td>
+<td>Options to configure the resizer.</td>
 </tr>
 <tr>
 <td>options.debug</td>
 <td><code>Boolean</code></td>
-<td>Enable non-essential debugging logs</td>
+<td></td>
+<td>Enable non-essential debugging logs.</td>
 </tr>
 <tr>
-<td>options.overrideMaxWidth</td>
+<td>options.overrideMaxDimensions</td>
 <td><code>Boolean</code></td>
-<td>When script is activated by handle remove the elements max-width and allow the width of the resize to exceed the max (default false)</td>
+<td></td>
+<td>When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them (default false).</td>
 </tr>
 <tr>
-<td>options.fromLeft</td>
-<td><code>Boolean</code></td>
-<td>The script should assume the handle is on the left side of the element</td>
+<td>[options.fromX]</td>
+<td><code>&quot;left&quot;</code> | <code>&quot;right&quot;</code> | <code>null</code></td>
+<td><code></code></td>
+<td>Horizontal resizing direction.</td>
+</tr>
+<tr>
+<td>[options.fromY]</td>
+<td><code>&quot;top&quot;</code> | <code>&quot;bottom&quot;</code> | <code>null</code></td>
+<td><code></code></td>
+<td>Vertical resizing direction.</td>
 </tr>
 </tbody>
 </table>
+<p><a name="module_ui/resizer.Resizer+destroy"></a></p>
+<h3 id="resizer.destroy()" tabindex="-1">resizer.destroy()</h3>
+<p>Cleans up event listeners to prevent memory leaks.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/resizer.Resizer"><code>Resizer</code></a><br>
+<a name="module_ui/resizer..multiplier"></a></p>
+<h2 id="ui%2Fresizer~multiplier" tabindex="-1">ui/resizer~multiplier</h2>
+<p>Amount to increase size by (ie. pointer movement * multiplier)</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..overrideMaxDimensions"></a></p>
+<h2 id="ui%2Fresizer~overridemaxdimensions" tabindex="-1">ui/resizer~overrideMaxDimensions</h2>
+<p>Remove max-width, max-height</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..fromX"></a></p>
+<h2 id="ui%2Fresizer~fromx-%3A-%22left%22-%7C-%22right%22-%7C-null" tabindex="-1">ui/resizer~fromX : <code>&quot;left&quot;</code> | <code>&quot;right&quot;</code> | <code>null</code></h2>
+<p>Specifies the horizontal edge from which resizing occurs.<code>null</code> means no horizontal resizing.- Default null</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..fromY"></a></p>
+<h2 id="ui%2Fresizer~fromy-%3A-%22top%22-%7C-%22bottom%22-%7C-null" tabindex="-1">ui/resizer~fromY : <code>&quot;top&quot;</code> | <code>&quot;bottom&quot;</code> | <code>null</code></h2>
+<p>Specifies the vertical edge from which resizing occurs.- <code>null</code> means no vertical resizing.- Default null</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a></p>
 
     </div>
   </div>

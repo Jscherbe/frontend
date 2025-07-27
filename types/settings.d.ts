@@ -51,6 +51,10 @@ export type Defaults = {
      */
     iconClassDragX: string;
     /**
+     * - The CSS class string for the dragging in both directions
+     */
+    iconClassDragBoth: string;
+    /**
      * - The CSS class string for the previous icon
      */
     iconClassPrevious: string;

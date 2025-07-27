@@ -5369,7 +5369,8 @@
 <h2 class="h2">Resizing</h2>
 <p>The modals setup with the builder allow resizing. Center, top and bottom modals will use the native resize handle (resize in all directions). The left/right sidebar type modals will be given a drag handle and only able to extend their width (since they already span the full screen height). To enable this behavior pass <code>{ &quot;allowResize&quot; : true }</code> in builder options (data attribute)</p>
 <p><button class="button" data-ulu-dialog-trigger="modal-id-center-resize">Center Resizable</button>
-<button class="button" data-ulu-dialog-trigger="modal-id-right-resize">Right Resizable</button></p>
+<button class="button" data-ulu-dialog-trigger="modal-id-right-resize">Right Resizable</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-left-resize">Left Resizable</button></p>
 <div id="modal-id-center-resize" class="wysiwyg" data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "allowResize" : true
@@ -5379,6 +5380,13 @@
 <div id="modal-id-right-resize" class="wysiwyg" data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "position" : "right",
+    "allowResize" : true
+  }' hidden="">
+  Test
+</div>
+<div id="modal-id-left-resize" class="wysiwyg" data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "position" : "left",
     "allowResize" : true
   }' hidden="">
   Test

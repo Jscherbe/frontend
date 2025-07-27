@@ -5198,6 +5198,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.1.0-beta.81">0.1.0-beta.81</a>
+            		</li>
+
                     <li><a href="#0.1.0-beta.80">0.1.0-beta.80</a>
             		</li>
 
@@ -5486,6 +5489,36 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.1.0-beta.81" tabindex="-1">0.1.0-beta.81</h2>
+<ul>
+<li><strong>scss/components/css-icons.scss</strong>
+<ul>
+<li>Add icon for <code>.css-icon--drag-both</code></li>
+</ul>
+</li>
+<li><strong>scss/components/modal.scss</strong>
+<ul>
+<li>Remove 'resize' native resizing for 'center' position, and use new resizer for both axes</li>
+</ul>
+</li>
+<li><strong>js/utils/modal-builder.js</strong>
+<ul>
+<li>Update resizer to create resizer handle for &quot;center&quot; so we can remove CSS resize in modals.scss</li>
+</ul>
+</li>
+<li><strong>js/utils/resizer.js</strong>
+<ul>
+<li>Refactor API to be fromX, and fromY (instead of fromLeft) to support both axes</li>
+<li>Add events dispatched from resizer's container for user</li>
+<li>Make all events pointer events instead of mouse</li>
+</ul>
+</li>
+<li><strong>js/utils/class-logger.js</strong>
+<ul>
+<li>Add check in allow() for class instance options.debug property</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.1.0-beta.80" tabindex="-1">0.1.0-beta.80</h2>
 <ul>
 <li>Update @ulu/utils</li>

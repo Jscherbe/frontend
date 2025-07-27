@@ -13402,6 +13402,23 @@ button.card:focus-within::after,
           transform: rotate(90deg);
 }
 
+.css-icon--drag-both {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.css-icon--drag-both::before {
+  -webkit-transform: translateX(-50%) scale(0.8);
+      -ms-transform: translateX(-50%) scale(0.8);
+          transform: translateX(-50%) scale(0.8);
+  margin-top: -3px;
+}
+.css-icon--drag-both::after {
+  -webkit-transform: translateX(-50%) scaleX(0.5) scaleY(0.8);
+      -ms-transform: translateX(-50%) scaleX(0.5) scaleY(0.8);
+          transform: translateX(-50%) scaleX(0.5) scaleY(0.8);
+}
+
 .css-icon--plus-to-minus, .css-icon--plus-to-minus::before, .css-icon--plus-to-minus::after {
   -webkit-transition: 200ms ease-in;
   transition: 200ms ease-in;
@@ -15403,6 +15420,7 @@ ul.list-inline,
 
 .modal__resizer {
   position: absolute;
+  overflow: hidden;
   top: 0;
   bottom: 0;
   left: 0;
@@ -15434,6 +15452,16 @@ ul.list-inline,
 .modal--left .modal__resizer {
   left: auto;
   right: 0;
+}
+.modal--center .modal__resizer {
+  left: auto;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  height: 1.65rem;
+  width: 1.65rem;
+  background-color: transparent;
+  cursor: nwse-resize;
 }
 
 .modal--small {
@@ -15526,9 +15554,6 @@ ul.list-inline,
   display: none;
 }
 
-.modal--resize.modal--center {
-  resize: both;
-}
 .modal--resize.modal--right {
   padding-left: 1.25rem;
 }

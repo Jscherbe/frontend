@@ -14,6 +14,7 @@ export function init(): void;
  */
 export function buildModal(content: Node, options: any): {
     modal: Element;
+    resizer: Resizer;
 };
 /**
  * Modal Builder Component Initializer
@@ -41,6 +42,7 @@ export namespace defaults {
     export let footerHtml: any;
     export let classCloseIcon: any;
     export let classResizerIcon: any;
+    export let classResizerIconBoth: any;
     export let debug: boolean;
     export function templateCloseIcon(config: any): string;
     export function templateResizerIcon(config: any): string;
@@ -152,5 +154,6 @@ export type DefaultModalOptions = {
      */
     config: (arg0: object) => string;
 };
+import { Resizer } from "./resizer.js";
 import { ComponentInitializer } from "../utils/system.js";
 //# sourceMappingURL=modal-builder.d.ts.map
