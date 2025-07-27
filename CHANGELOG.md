@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.1.0-beta.81
+
+- **scss/components/css-icons.scss** 
+  - Add icon for `.css-icon--drag-both`
+- **scss/components/modal.scss** 
+  - Remove 'resize' native resizing for 'center' position, and use new resizer for both axes
+- **js/utils/modal-builder.js**
+  - Update resizer to create resizer handle for "center" so we can remove CSS resize in modals.scss
+- **js/utils/resizer.js**
+  - Refactor API to be fromX, and fromY (instead of fromLeft) to support both axes 
+  - Add events dispatched from resizer's container for user 
+  - Make all events pointer events instead of mouse
+- **js/utils/class-logger.js**
+  - Add check in allow() for class instance options.debug property
+
 ## 0.1.0-beta.80
 
 - Update @ulu/utils

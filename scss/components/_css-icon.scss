@@ -377,6 +377,16 @@ $config: (
   .css-icon--arrow-down {
     transform: rotate(90deg);
   }
+  .css-icon--drag-both {
+    transform: rotate(-45deg);
+    &::before {
+      transform: translateX(-50%) scale(0.8);
+      margin-top: -($stroke-width);
+    }
+    &::after {
+      transform: translateX(-50%) scaleX(0.5) scaleY(0.8);
+    }
+  }
 
   // Active icons
   .css-icon--plus-to-minus {

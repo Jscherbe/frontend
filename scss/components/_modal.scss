@@ -62,6 +62,7 @@ $-fallbacks: (
 /// @prop {Color} resizer-color [rgb(99, 99, 99)] The type color of the resizer.
 /// @prop {Color} resizer-color-hover [black] The type color of the resizer when hovered or focused.
 /// @prop {Dimension} resizer-width [1rem] The width of the resizer.
+/// @prop {Dimension} resizer-center-size [1.65rem] The width/height of the resizer (in bottom right corner) used when position center with resize enabled
 /// @prop {Color} title-color [white] Type color of the title.
 /// @prop {CssValue} title-font-weight [bold] Font weight of the title.
 /// @prop {CssValue} title-font-family [null] Font family for title
@@ -104,6 +105,7 @@ $config: (
   "resizer-color":                  rgb(99, 99, 99),
   "resizer-color-hover":            black,
   "resizer-width":                  1.25rem,
+  "resizer-center-size" :           1.65rem,
   "title-color":                    white,
   "title-font-weight":              bold,
   "title-font-family" :             null,
@@ -239,6 +241,7 @@ $config: (
   }
   #{ $prefix }__resizer {
     position: absolute;
+    overflow: hidden;
     top: 0;
     bottom: 0;
     left: 0;
@@ -260,6 +263,17 @@ $config: (
     #{ $prefix }--left & {
       left: auto;
       right: 0;
+    }
+    #{ $prefix }--center & {
+      left: auto;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      height: get("resizer-center-size");
+      width: get("resizer-center-size");
+      border-top-left-radius: get("resizer-center-size");
+      background-color: transparent;
+      cursor: nwse-resize;
     }
   }
 
@@ -329,15 +343,15 @@ $config: (
     }
   }
   #{ $prefix }--resize {
-    &#{ $prefix }--center  {
-      resize: both;  
-    }
     &#{ $prefix }--right  {
       padding-left: get("resizer-width");  
     }
     &#{ $prefix }--left  {
       padding-right: get("resizer-width");  
     }
+    // &#{ $prefix }--center  {
+    //   resize: both;  
+    // }
   }
   #{ $prefix }--body-fills {
     #{ $prefix }__header {

@@ -78,14 +78,16 @@ export const defaults = {
   footerHtml: null,
   classCloseIcon: wrapSettingString("iconClassClose"),
   classResizerIcon: wrapSettingString("iconClassDragX"),
+  classResizerIconBoth: wrapSettingString("iconClassDragBoth"),
   debug: false,
   templateCloseIcon(config) {
     const { baseClass, classCloseIcon } = config;
     return `<span class="${ baseClass }__close-icon ${ classCloseIcon }" aria-hidden="true"></span>`;
   },
   templateResizerIcon(config) {
-    const { baseClass, classResizerIcon } = config;
-    return `<span class="${ baseClass }__resizer-icon ${ classResizerIcon }" aria-hidden="true"></span>`;
+    const { baseClass, classResizerIcon, classResizerIconBoth } = config;
+    const iconClass = config.position === "center" ? classResizerIconBoth : classResizerIcon;
+    return `<span class="${ baseClass }__resizer-icon ${ iconClass }" aria-hidden="true"></span>`;
   },
   /**
    * Default modal template
@@ -129,7 +131,7 @@ export const defaults = {
         ` : "" }
         <div class="${ baseClass }__body" ${ initializer.getAttribute("body") }></div>
         ${ footerHtml ? `<div class="${ baseClass }__footer">${ footerHtml }</div>`: "" }
-        ${ config.hasResizer ? 
+        ${ config.allowResize ? 
           `<div class="${ baseClass }__resizer" ${ initializer.getAttribute("resizer") }>
             ${ config.templateResizerIcon(config) }
           </div>` : "" 
@@ -172,9 +174,8 @@ export function buildModal(content, options) {
 
   const config = Object.assign({}, currentDefaults, options);
 
-  if (config.position !== "center" && config.allowResize) {
-    config.hasResizer = true;
-  }
+  const { position } = config;
+
   if (config.debug) {
     initializer.log(config, content);
   }
@@ -186,7 +187,7 @@ export function buildModal(content, options) {
   const modal = createElementFromHtml(markup.trim());
   const selectChild = key => modal.querySelector(initializer.attributeSelector(key));
   const body = selectChild("body");
-  const resizer = selectChild("resizer");
+  const resizerElement = selectChild("resizer");
   const dialogOptions = separateDialogOptions(config);
 
   // Replace content with new dialog, and then insert the content into the new dialogs body
@@ -209,10 +210,20 @@ export function buildModal(content, options) {
     }
   }
 
-  if (config.hasResizer) {
-    new Resizer(modal, resizer, {
-      fromLeft: config.position === "right"
-    });
+  let resizer;
+  const resizablePositions = ["left", "right", "center"];
+  const isCenter = position === "center";
+  const isRight = position === "right";
+
+  if (config.allowResize) {
+    if (resizablePositions.includes(position)) {
+      const resizerOptions = isCenter ? 
+        { fromX: "right", fromY: "bottom", multiplier: 2 } : 
+        { fromX: isRight ? "left" : "right" };
+      resizer = new Resizer(modal, resizerElement, resizerOptions);
+    } else {
+      console.warn(`${ position } is not supported for resizing`);
+    }
   }
 
   if (config.print) {
@@ -225,7 +236,7 @@ export function buildModal(content, options) {
       printClone.remove();
     });
   }
-  return { modal };
+  return { modal, resizer };
 }
 
 /**

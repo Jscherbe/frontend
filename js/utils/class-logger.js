@@ -2,10 +2,10 @@
  * @module utils/class-logger
  */
 
-// Goal: minimzing console conditions for nessasary production log statements
+// Goal: minimizing console conditions for nessasary production log statements
 
 /**
- * Configuration Object
+ * Global Configuration Object
  */
 const config = {
   debug: false,
@@ -18,7 +18,7 @@ const hasConsole = "console" in window;
 
 // If no context output only if config (global) debug is enabled
 function allow(context) {
-  return hasConsole && config.debug && (context?.debug || context == null);
+  return hasConsole && config.debug && (context?.debug || context?.options?.debug || context == null);
 }
 function getName(context) {
   return typeof context === "object" && context?.constructor?.name;

@@ -11,6 +11,7 @@ export default {
     "square-outline",
     "drag-x",
     "drag-y",
+    "drag-both",
     "triangle-right",
     "triangle-left",
     "triangle-up",

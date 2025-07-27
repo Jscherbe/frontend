@@ -21,30 +21,31 @@ const events = {
    * - Is triggered by modules that were responsible for modifying the page
    */
   pageModified(context) {
-    context.dispatchEvent(new CustomEvent(getName("pageModified"), { bubbles: true }));
+    context.dispatchEvent(createEvent("pageModified"));
   },
   /**
    * Event called when page is resized
    */
   pageResized(context) {
-    context.dispatchEvent(new CustomEvent(getName("pageResized"), { bubbles: true }));
+    context.dispatchEvent(createEvent("pageResized"));
   },
   /**
    * Event dispatched before page print begins (teardown/restructure/hide things)
    */
   beforePrint(context) {
-    context.dispatchEvent(new CustomEvent(getName("beforePrint"), { bubbles: true }));
+    context.dispatchEvent(createEvent("beforePrint"));
   },
   /**
    * Event dispatched after page print (cleanup)
    */
   afterPrint(context) {
-    context.dispatchEvent(new CustomEvent(getName("afterPrint"), { bubbles: true }));
+    context.dispatchEvent(createEvent("afterPrint"));
   }
 };
 
 /**
- * Triggers one of our custom events
+ * Triggers one of our custom events (page/document level events)
+ * - UI components may dispatch their own events, this is just used for system wide events
  * @param {String} type Type of event to dispatch
  * @param {Node} context Element to trigger the event from
  * @example
@@ -62,11 +63,22 @@ export function dispatch(type, context) {
 
 /**
  * Namespaced event
+ * - Should be used for all ulu script/component events
  * @param {String} type Type of event to get the actual event name for
  * @returns {String}
  */
 export function getName(type) {
   return "ulu:" + type;
+}
+
+/**
+ * Create ulu namespaced custom event
+ * @param {String} type Event base name (not prefixed)
+ * @param {any} data Custom data to pass with the event (will be available as `event.detail`)
+ * @param {Object} options CustomEvent options default `{ bubbles: true }`. If `detail` is also provided, it will be merged with this options object and will override the 'data' argument for this function
+ */
+export function createEvent(type, data = null, options = { bubbles: true }) {
+  return new CustomEvent(getName(type), { detail: data, ...options });
 }
 
 /**

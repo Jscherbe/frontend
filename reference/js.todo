@@ -1,4 +1,8 @@
 JS Todos:
+  ✔ Add x/y resizer and replace native on modal @done
+    ✔ Then remove the attempt to track native resizer @done
+    ✔ Use events to communicate? @done
+      ✔ When adjusting vue component version this can be built in @done
   ☐ Tooltip make sure template can be easily setup with baseClass
   ☐ Tooltip add method to update content option
     * Sometimes this changes (ie. copy button feedback)

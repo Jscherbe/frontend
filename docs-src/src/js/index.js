@@ -3,10 +3,12 @@ import "./search.js";
 import { init as initListGrid, setConfig as setConfigListGrid } from "./list-grid-switcher.js";
 import { init as initLiveDemo } from "./live-demo.js";
 
+// Use global API (so we test it, since we mostly import manually)
 window.Ulu = ulu;
 
+// Set options
+ulu.utils.classLogger.set({ debug: true });
 ulu.settings.updateSetting("cssvarPrefix", "site");
-
 ulu.utils.fontAwesome.configureIcons();
 
 ulu.ui.page.init();

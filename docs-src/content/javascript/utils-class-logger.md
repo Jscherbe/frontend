@@ -65,7 +65,7 @@ Proxy Console.error
 <a name="module_utils/class-logger..config"></a>
 
 ## utils/class-logger~config
-Configuration Object
+Global Configuration Object
 
 **Kind**: inner constant of [<code>utils/class-logger</code>](#module_utils/class-logger)  
 

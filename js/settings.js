@@ -8,6 +8,7 @@
  * @typedef {object} Defaults
  * @property {string} iconClassClose - The CSS class string for the close icon
  * @property {string} iconClassDragX - The CSS class string for the drag X icon
+ * @property {string} iconClassDragBoth - The CSS class string for the dragging in both directions
  * @property {string} iconClassPrevious - The CSS class string for the previous icon
  * @property {string} iconClassNext - The CSS class string for the next icon
  * @property {string} cssvarPrefix - The prefix to use for CSS custom properties
@@ -19,6 +20,7 @@
 const defaults = {
   iconClassClose: "css-icon css-icon--close",
   iconClassDragX: "css-icon css-icon--drag-x",
+  iconClassDragBoth: "css-icon css-icon--drag-both",
   iconClassPrevious: "css-icon  css-icon--angle-left",
   iconClassNext: "css-icon  css-icon--angle-right",
   cssvarPrefix: "",

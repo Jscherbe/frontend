@@ -201,6 +201,7 @@ The modals setup with the builder allow resizing. Center, top and bottom modals 
 
 <button class="button" data-ulu-dialog-trigger="modal-id-center-resize">Center Resizable</button>
 <button class="button" data-ulu-dialog-trigger="modal-id-right-resize">Right Resizable</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-left-resize">Left Resizable</button>
 
 <div 
   id="modal-id-center-resize" 
@@ -219,6 +220,18 @@ The modals setup with the builder allow resizing. Center, top and bottom modals 
   data-ulu-modal-builder='{ 
     "title" : "Test Title",
     "position" : "right",
+    "allowResize" : true
+  }' 
+  hidden
+>
+  Test
+</div>
+<div 
+  id="modal-id-left-resize" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Test Title",
+    "position" : "left",
     "allowResize" : true
   }' 
   hidden
