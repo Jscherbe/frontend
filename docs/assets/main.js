@@ -9,7 +9,7 @@ var __privateGet = (obj, member, getter) => (__accessCheck(obj, member, "read fr
 var __privateAdd = (obj, member, value) => member.has(obj) ? __typeError("Cannot add the same private member more than once") : member instanceof WeakSet ? member.add(obj) : member.set(obj, value);
 var __privateSet = (obj, member, value, setter) => (__accessCheck(obj, member, "write to private field"), setter ? setter.call(obj, value) : member.set(obj, value), value);
 var __privateMethod = (obj, member, method) => (__accessCheck(obj, member, "access private method"), method);
-var _handlerPointerdown, _Resizer_instances, onPointerdown_fn;
+var _handlerPointerdownInternal, _handlerKeydownInternal, _keyboardResizeTimeout, _initialContainerDimensions, _accumulatedKeyboardDeltaX, _accumulatedKeyboardDeltaY, _isResizingActive, _pointerStartX, _pointerStartY, _Resizer_instances, resetInternalState_fn, startResize_fn, endResize_fn, updateSize_fn;
 const scriptRel = "modulepreload";
 const assetsURL = function(dep, importerUrl) {
   return new URL(dep, importerUrl).href;
@@ -1017,29 +1017,44 @@ let ComponentInitializer = _ComponentInitializer;
 const _Resizer = class _Resizer {
   /**
    * @param {Node} container Container to be resized
-   * @param {Node} control Resize handle element
-   * @param {Object} options Options to configure the resizer.
-   * @param {Boolean} options.debug Enable non-essential debugging logs.
-   * @param {Boolean} options.overrideMaxDimensions When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them (default false).
-   * @param {"left"|"right"|null} [options.fromX=null] Horizontal resizing direction.
-   * @param {"top"|"bottom"|null} [options.fromY=null] Vertical resizing direction.
+   * @param {HTMLElement} control Resize handle element (should be focusable like a button)
+   * @param {Object} config Options to configure the resizer.
+   * @param {Boolean} [config.debug=false] Enable non-essential debugging logs.
+   * @param {Boolean} [config.multiplier=1] Amount to increase size by (ie. pointer movement * multiplier).
+   * @param {Boolean} [config.overrideMaxDimensions=false] When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them.
+   * @param {"left"|"right"|null} [config.fromX=null] Horizontal resizing direction.
+   * @param {"top"|"bottom"|null} [config.fromY=null] Vertical resizing direction.
+   * @param {number} [config.keyboardStep=10] The step in pixels for keyboard resizing.
+   * @param {number} [config.keyboardDebounceTime=200] Debounce time for keyboard resize end.
+   * @param {boolean} [config.manageEvents=true] If true, the Resizer will automatically bind its own events.
+   * @param {boolean} [config.manageAriaLabel=false] If true, the Resizer will manage the control's aria-label.
+   * @param {boolean} [config.enablePointerResizing=true] If true, pointer events will enable resizing.
+   * @param {boolean} [config.enableKeyboardResizing=true] If true, keyboard events will enable resizing.
    */
-  constructor(container2, control, options) {
+  constructor(container2, control, config2) {
     __privateAdd(this, _Resizer_instances);
-    // Declare any runtime populated private fields
-    __privateAdd(this, _handlerPointerdown);
+    // Declare private fields without initial assignments
+    __privateAdd(this, _handlerPointerdownInternal);
+    __privateAdd(this, _handlerKeydownInternal);
+    __privateAdd(this, _keyboardResizeTimeout);
+    __privateAdd(this, _initialContainerDimensions);
+    __privateAdd(this, _accumulatedKeyboardDeltaX);
+    __privateAdd(this, _accumulatedKeyboardDeltaY);
+    __privateAdd(this, _isResizingActive);
+    __privateAdd(this, _pointerStartX);
+    __privateAdd(this, _pointerStartY);
     if (!control || !container2) {
       logError(this, "Missing required elements: control, container");
       return;
     }
-    this.options = Object.assign({}, _Resizer.defaults, options);
-    log(this, "Resolved options", this.options);
+    const options = Object.assign({}, _Resizer.defaults, config2);
+    this.options = options;
     this.container = container2;
     this.control = control;
-    this.debug = this.options.debug;
+    this.debug = options.debug;
     const validX = ["left", "right"];
     const validY = ["top", "bottom"];
-    const { fromX, fromY } = this.options;
+    const { fromX, fromY } = options;
     if (!validX.includes(fromX) && fromX !== null) {
       logError(this, `Invalid fromX: ${fromX} (left|right|null)`);
       return;
@@ -1049,105 +1064,270 @@ const _Resizer = class _Resizer {
       return;
     }
     if (!fromX && !fromY) {
-      logError(this, "Invalid fromX/fromY, failed to setup resizer");
+      logError(this, "Invalid fromX/fromY, failed to setup resizer (at least one of fromX or fromY must be set)");
       return;
     }
-    this.resizeHorizontal = this.options.fromX !== null;
-    this.resizeVertical = this.options.fromY !== null;
-    __privateSet(this, _handlerPointerdown, __privateMethod(this, _Resizer_instances, onPointerdown_fn).bind(this));
-    this.control.addEventListener("pointerdown", __privateGet(this, _handlerPointerdown));
+    this.resizeHorizontal = options.fromX !== null;
+    this.resizeVertical = options.fromY !== null;
+    if (options.manageEvents) {
+      __privateSet(this, _handlerPointerdownInternal, this.onPointerdown.bind(this));
+      __privateSet(this, _handlerKeydownInternal, this.onKeydown.bind(this));
+      if (options.enablePointerResizing) {
+        control.addEventListener("pointerdown", __privateGet(this, _handlerPointerdownInternal));
+      }
+      if (options.enableKeyboardResizing) {
+        control.addEventListener("keydown", __privateGet(this, _handlerKeydownInternal));
+      }
+    }
+    __privateMethod(this, _Resizer_instances, resetInternalState_fn).call(this);
+    if (options.manageAriaLabel) {
+      control.setAttribute("aria-label", this.getAriaLabel());
+    }
   }
   /**
-   * Cleans up event listeners to prevent memory leaks.
+   * Cleans up event listeners and internal state to prevent memory leaks.
    */
   destroy() {
-    this.control.removeEventListener("pointerdown", __privateGet(this, _handlerPointerdown));
+    const { control, options } = this;
+    if (options.manageEvents) {
+      if (options.enablePointerResizing) {
+        control.removeEventListener("pointerdown", __privateGet(this, _handlerPointerdownInternal));
+      }
+      if (options.enableKeyboardResizing) {
+        control.removeEventListener("keydown", __privateGet(this, _handlerKeydownInternal));
+      }
+    }
+    if (__privateGet(this, _keyboardResizeTimeout)) {
+      clearTimeout(__privateGet(this, _keyboardResizeTimeout));
+    }
+    __privateMethod(this, _Resizer_instances, resetInternalState_fn).call(this);
+    if (options.manageAriaLabel) {
+      control.removeAttribute("aria-label");
+    }
+    log(this, "Resizer destroyed.");
   }
-  dispatchEvent(type, data) {
+  /**
+   * Public handler for pointerdown events. Call this method from your own event listeners
+   * if `manageEvents` is false. Its logic will only execute if `enablePointerResizing` is true.
+   * @param {PointerEvent} e The pointerdown event.
+   */
+  onPointerdown(e) {
+    if (!this.options.enablePointerResizing) {
+      log(this, "Pointer resizing disabled. Ignoring pointerdown event.");
+      return;
+    }
+    e.preventDefault();
+    const doc = document.documentElement;
+    __privateSet(this, _pointerStartX, e.clientX);
+    __privateSet(this, _pointerStartY, e.clientY);
+    __privateMethod(this, _Resizer_instances, startResize_fn).call(this, {
+      inputType: "pointer",
+      startX: e.clientX,
+      startY: e.clientY,
+      pointerId: e.pointerId
+    });
+    this.control.setPointerCapture(e.pointerId);
+    const pointermove = (event) => {
+      const totalDeltaX = event.clientX - __privateGet(this, _pointerStartX);
+      const totalDeltaY = event.clientY - __privateGet(this, _pointerStartY);
+      __privateMethod(this, _Resizer_instances, updateSize_fn).call(this, totalDeltaX, totalDeltaY, event);
+    };
+    const cleanup = (event) => {
+      doc.removeEventListener("pointermove", pointermove, false);
+      doc.removeEventListener("pointerup", cleanup, { capture: true, once: true });
+      if (this.control.hasPointerCapture(event.pointerId)) {
+        this.control.releasePointerCapture(event.pointerId);
+      }
+      __privateMethod(this, _Resizer_instances, endResize_fn).call(this);
+    };
+    doc.addEventListener("pointermove", pointermove, false);
+    doc.addEventListener("pointerup", cleanup, { capture: true, once: true });
+  }
+  /**
+   * Public handler for keydown events. Call this method from your own event listeners
+   * if `manageEvents` is false. Its logic will only execute if `enableKeyboardResizing` is true.
+   * @param {KeyboardEvent} e The keydown event.
+   */
+  onKeydown(e) {
+    if (!this.options.enableKeyboardResizing) {
+      log(this, "Keyboard resizing disabled. Ignoring keydown event.");
+      return;
+    }
+    const { key: key2 } = e;
+    const { keyboardStep, keyboardDebounceTime } = this.options;
+    let stepDeltaX = 0;
+    let stepDeltaY = 0;
+    let isResizeKey = false;
+    if (this.resizeHorizontal) {
+      if (key2 === "ArrowLeft") {
+        stepDeltaX = -keyboardStep;
+        isResizeKey = true;
+      } else if (key2 === "ArrowRight") {
+        stepDeltaX = keyboardStep;
+        isResizeKey = true;
+      }
+    }
+    if (this.resizeVertical) {
+      if (key2 === "ArrowUp") {
+        stepDeltaY = -keyboardStep;
+        isResizeKey = true;
+      } else if (key2 === "ArrowDown") {
+        stepDeltaY = keyboardStep;
+        isResizeKey = true;
+      }
+    }
+    if (isResizeKey) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (!__privateGet(this, _isResizingActive) || __privateGet(this, _keyboardResizeTimeout) === null) {
+        __privateMethod(this, _Resizer_instances, startResize_fn).call(this, { inputType: "keyboard", keyboardKey: key2 });
+      }
+      __privateSet(this, _accumulatedKeyboardDeltaX, __privateGet(this, _accumulatedKeyboardDeltaX) + stepDeltaX);
+      __privateSet(this, _accumulatedKeyboardDeltaY, __privateGet(this, _accumulatedKeyboardDeltaY) + stepDeltaY);
+      __privateMethod(this, _Resizer_instances, updateSize_fn).call(this, __privateGet(this, _accumulatedKeyboardDeltaX), __privateGet(this, _accumulatedKeyboardDeltaY), e);
+      if (__privateGet(this, _keyboardResizeTimeout)) {
+        clearTimeout(__privateGet(this, _keyboardResizeTimeout));
+      }
+      __privateSet(this, _keyboardResizeTimeout, setTimeout(() => {
+        __privateMethod(this, _Resizer_instances, endResize_fn).call(this);
+        __privateSet(this, _keyboardResizeTimeout, null);
+      }, keyboardDebounceTime));
+    }
+  }
+  /**
+   * Generates an accessible label for the resize control based on its configuration.
+   * This is a convenience function that can be used by the consumer if `manageAriaLabel` is false.
+   * @returns {string} The suggested aria-label for the control.
+   */
+  getAriaLabel() {
+    const { fromY, fromX } = this.options;
+    const directions = [fromY, fromX].filter((v) => v);
+    if (directions.length === 0) {
+      return "Resize control";
+    }
+    return `Resize from ${directions.join(" ")} edge`;
+  }
+  /**
+   * Dispatches a custom event on the container element.
+   * @param {string} type The event type (e.g., "resizer:start", "resizer:update", "resizer:end").
+   * @param {Object} [data={}] Optional data to attach to the event's detail property.
+   */
+  dispatchEvent(type, data = {}) {
     this.container.dispatchEvent(createEvent(type, data));
   }
 };
-_handlerPointerdown = new WeakMap();
+_handlerPointerdownInternal = new WeakMap();
+_handlerKeydownInternal = new WeakMap();
+_keyboardResizeTimeout = new WeakMap();
+_initialContainerDimensions = new WeakMap();
+_accumulatedKeyboardDeltaX = new WeakMap();
+_accumulatedKeyboardDeltaY = new WeakMap();
+_isResizingActive = new WeakMap();
+_pointerStartX = new WeakMap();
+_pointerStartY = new WeakMap();
 _Resizer_instances = new WeakSet();
 /**
- * Handles the pointerdown event on the resize control.
- * @param {PointerEvent} e The pointerdown event.
+ * Resets all internal state properties to their default/inactive values.
+ * This centralizes state cleanup and initial setup.
  * @private
  */
-onPointerdown_fn = function(e) {
-  e.preventDefault();
-  const { overrideMaxDimensions, fromX, fromY, multiplier } = this.options;
-  const doc = document.documentElement;
+resetInternalState_fn = function() {
+  __privateSet(this, _keyboardResizeTimeout, null);
+  __privateSet(this, _initialContainerDimensions, { width: 0, height: 0 });
+  __privateSet(this, _accumulatedKeyboardDeltaX, 0);
+  __privateSet(this, _accumulatedKeyboardDeltaY, 0);
+  __privateSet(this, _isResizingActive, false);
+  __privateSet(this, _pointerStartX, 0);
+  __privateSet(this, _pointerStartY, 0);
+};
+/**
+ * Initiates a resize operation.
+ * This sets initial dimensions and dispatches the 'resizer:start' event.
+ * @param {Object} eventDetails Additional details about the initiating event.
+ * @private
+ */
+startResize_fn = function(eventDetails) {
+  const { container: container2, options } = this;
+  if (__privateGet(this, _isResizingActive)) {
+    if (options.overrideMaxDimensions) {
+      if (this.resizeHorizontal) {
+        container2.style.maxWidth = "none";
+      }
+      if (this.resizeVertical) {
+        container2.style.maxHeight = "none";
+      }
+    }
+    return;
+  }
   const win = document.defaultView;
-  const containerStyle = win.getComputedStyle(this.container);
-  const startX = e.clientX;
-  const startY = e.clientY;
-  const initialWidth = parseInt(containerStyle.width, 10);
-  const initialHeight = parseInt(containerStyle.height, 10);
-  this.control.setPointerCapture(e.pointerId);
-  if (overrideMaxDimensions) {
+  const containerStyle = win.getComputedStyle(container2);
+  __privateGet(this, _initialContainerDimensions).width = parseInt(containerStyle.width, 10);
+  __privateGet(this, _initialContainerDimensions).height = parseInt(containerStyle.height, 10);
+  if (options.overrideMaxDimensions) {
     if (this.resizeHorizontal) {
-      this.container.style.maxWidth = "none";
+      container2.style.maxWidth = "none";
     }
     if (this.resizeVertical) {
-      this.container.style.maxHeight = "none";
+      container2.style.maxHeight = "none";
     }
   }
-  const initialInfo = {
-    event: e,
-    startX,
-    startY,
-    initialWidth,
-    initialHeight,
-    fromX,
-    // Log fromX and fromY separately
-    fromY,
-    pointerId: e.pointerId
-  };
-  this.dispatchEvent("resizer:start", initialInfo);
-  log(this, "Pointerdown initiated/captured.", initialInfo);
-  const pointermove = (event) => {
-    let newWidth = initialWidth;
-    let newHeight = initialHeight;
-    const deltaX = event.clientX - startX;
-    const deltaY = event.clientY - startY;
-    if (this.resizeHorizontal) {
-      if (fromX === "right") {
-        newWidth = initialWidth + deltaX * multiplier;
-      } else if (fromX === "left") {
-        newWidth = initialWidth - deltaX * multiplier;
-      }
-      this.container.style.width = `${Math.max(0, newWidth)}px`;
+  __privateSet(this, _isResizingActive, true);
+  this.dispatchEvent("resizer:start", eventDetails);
+  log(this, "Resize started.", {
+    initialWidth: __privateGet(this, _initialContainerDimensions).width,
+    initialHeight: __privateGet(this, _initialContainerDimensions).height,
+    ...eventDetails
+  });
+};
+/**
+ * Ends a resize operation.
+ * Dispatches 'resizer:end' event and resets internal state.
+ * @private
+ */
+endResize_fn = function() {
+  if (!__privateGet(this, _isResizingActive)) return;
+  this.dispatchEvent("resizer:end");
+  __privateMethod(this, _Resizer_instances, resetInternalState_fn).call(this);
+  log(this, "Resize ended.");
+};
+/**
+ * Core logic for calculating and applying the new size of the container.
+ * This method is called by both pointer and keyboard event handlers.
+ *
+ * @param {number} totalDeltaX The total horizontal displacement from the start of the resize.
+ * @param {number} totalDeltaY The total vertical displacement from the start of the resize.
+ * @param {Event} originalEvent The original DOM event (PointerEvent or KeyboardEvent) that triggered the update.
+ * @private
+ */
+updateSize_fn = function(totalDeltaX, totalDeltaY, originalEvent) {
+  let newWidth = __privateGet(this, _initialContainerDimensions).width;
+  let newHeight = __privateGet(this, _initialContainerDimensions).height;
+  const { fromX, fromY, multiplier } = this.options;
+  if (this.resizeHorizontal) {
+    if (fromX === "right") {
+      newWidth = __privateGet(this, _initialContainerDimensions).width + totalDeltaX * multiplier;
+    } else if (fromX === "left") {
+      newWidth = __privateGet(this, _initialContainerDimensions).width - totalDeltaX * multiplier;
     }
-    if (this.resizeVertical) {
-      if (fromY === "bottom") {
-        newHeight = initialHeight + deltaY * multiplier;
-      } else if (fromY === "top") {
-        newHeight = initialHeight - deltaY * multiplier;
-      }
-      this.container.style.height = `${Math.max(0, newHeight)}px`;
+    this.container.style.width = `${Math.max(0, newWidth)}px`;
+  }
+  if (this.resizeVertical) {
+    if (fromY === "bottom") {
+      newHeight = __privateGet(this, _initialContainerDimensions).height + totalDeltaY * multiplier;
+    } else if (fromY === "top") {
+      newHeight = __privateGet(this, _initialContainerDimensions).height - totalDeltaY * multiplier;
     }
-    const updateInfo = {
-      clientX: event.clientX,
-      clientY: event.clientY,
-      newWidth,
-      newHeight,
-      event
-    };
-    this.dispatchEvent("resizer:update", updateInfo);
-    log(this, "Pointermove.", updateInfo);
+    this.container.style.height = `${Math.max(0, newHeight)}px`;
+  }
+  const updateInfo = {
+    newWidth,
+    newHeight,
+    totalDeltaX,
+    totalDeltaY,
+    event: originalEvent
   };
-  const cleanup = (event) => {
-    doc.removeEventListener("pointermove", pointermove, false);
-    doc.removeEventListener("pointerup", cleanup, { capture: true, once: true });
-    this.control.releasePointerCapture(event.pointerId);
-    this.dispatchEvent("resizer:end");
-    log(this, "Pointerup cleanup complete. Pointer released.", {
-      pointerId: event.pointerId
-    });
-  };
-  doc.addEventListener("pointermove", pointermove, false);
-  doc.addEventListener("pointerup", cleanup, { capture: true, once: true });
+  this.dispatchEvent("resizer:update", updateInfo);
+  log(this, "Resizing update.", updateInfo);
 };
 __publicField(_Resizer, "defaults", {
   debug: false,
@@ -1172,7 +1352,40 @@ __publicField(_Resizer, "defaults", {
    * - `null` means no vertical resizing.
    * - Default null
    */
-  fromY: null
+  fromY: null,
+  /**
+   * The step in pixels for keyboard resizing with arrow keys.
+   */
+  keyboardStep: 10,
+  /**
+   * Debounce time in milliseconds for ending a keyboard resize.
+   */
+  keyboardDebounceTime: 200,
+  /**
+   * If true, the Resizer instance will automatically bind its own DOM event listeners
+   * (pointerdown, keydown) to the control element. If `false`, the user is
+   * responsible for calling `resizerInstance.onPointerdown(event)` and
+   * `resizerInstance.onKeydown(event)` from their own listeners.
+   * Default: true
+   */
+  manageEvents: true,
+  /**
+   * If true, the Resizer instance will automatically manage the `aria-label`
+   * attribute of the control element. If `false`, the user is responsible
+   * for setting this attribute.
+   * Default: false
+   */
+  manageAriaLabel: false,
+  /**
+   * If true, pointer events (mouse/touch) will enable resizing.
+   * Default: true
+   */
+  enablePointerResizing: true,
+  /**
+   * If true, keyboard events (arrow keys) will enable resizing.
+   * Default: true
+   */
+  enableKeyboardResizing: true
 });
 let Resizer = _Resizer;
 const resizer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
@@ -1290,24 +1503,10 @@ function setupDialog(dialog2, userOptions) {
   const options = Object.assign({}, currentDefaults$3, userOptions);
   const body = document.body;
   const { preventScrollShift: preventShift } = options;
-  let isPointerDown = false;
-  let isResizing = false;
-  dialog2.addEventListener("pointerdown", handlePointerdown);
+  let activeResizePointer;
+  dialog2.addEventListener(getName$1("resizer:start"), handleResizeStart);
+  dialog2.addEventListener(getName$1("resizer:end"), handleResizeEnd);
   dialog2.addEventListener("click", handleClicks);
-  const handleResizeEnd = debounce(() => {
-    if (isResizing && !isPointerDown) {
-      isResizing = false;
-    }
-  }, 500);
-  const resizeObserver = new ResizeObserver(() => {
-    if (isPointerDown) {
-      if (!isResizing) {
-        isResizing = true;
-      }
-      handleResizeEnd();
-    }
-  });
-  resizeObserver.observe(dialog2);
   if (options.documentEnd) {
     body.appendChild(dialog2);
   }
@@ -1325,29 +1524,27 @@ function setupDialog(dialog2, userOptions) {
       }
     });
   }
-  function handlePointerdown() {
-    if (isPointerDown) return;
-    isPointerDown = true;
-    const done = () => {
-      setTimeout(() => {
-        isPointerDown = false;
-        isResizing = false;
-      }, 0);
-    };
-    document.addEventListener("pointerup", done, { once: true });
-    document.addEventListener("pointercancel", done, { once: true });
-  }
   function handleClicks(event) {
     const { target } = event;
     const targetIsDialog = target === dialog2;
     const closeFromButton = target.closest(initializer$d.attributeSelector("close"));
-    const allowCloseOutside = !isResizing && options.clickOutsideCloses;
+    const allowCloseOutside = !activeResizePointer && options.clickOutsideCloses;
     const closeFromOutside = allowCloseOutside && targetIsDialog && wasClickOutside(dialog2, event);
     if (closeFromOutside || closeFromButton) {
       if (options.pauseVideos) {
         pauseVideos(dialog2);
       }
       dialog2.close();
+    }
+  }
+  function handleResizeStart(event) {
+    activeResizePointer = event.pointerId;
+  }
+  function handleResizeEnd(event) {
+    if (activeResizePointer === event.pointerId) {
+      setTimeout(() => {
+        activeResizePointer = null;
+      }, 0);
     }
   }
 }
@@ -1450,9 +1647,9 @@ const defaults$9 = {
         ` : ""}
         <div class="${baseClass}__body" ${initializer$c.getAttribute("body")}></div>
         ${footerHtml ? `<div class="${baseClass}__footer">${footerHtml}</div>` : ""}
-        ${config2.allowResize ? `<div class="${baseClass}__resizer" ${initializer$c.getAttribute("resizer")}>
+        ${config2.allowResize ? `<button class="${baseClass}__resizer" type="button" ${initializer$c.getAttribute("resizer")}>
             ${config2.templateResizerIcon(config2)}
-          </div>` : ""}
+          </button>` : ""}
       </dialog>
     `;
   }
@@ -10290,8 +10487,7 @@ function configureIcons() {
   updateSettings({
     iconClassClose: "fas fa-xmark",
     iconClassDragX: "fas fa-solid fa-grip-lines-vertical",
-    iconClassDragBoth: "fas fa-solid fa-grip",
-    // Not really any good icons for this (no diagonal arrows, etc)
+    // iconClassDragBoth: "fas fa-solid fa-grip", // Not really any good icons for this (no diagonal arrows, etc)
     iconClassPrevious: "fas fa-solid fa-chevron-left",
     iconClassNext: "fas fa-solid fa-chevron-right"
   });

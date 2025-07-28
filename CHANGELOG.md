@@ -1,8 +1,17 @@
 # Change Log
 
+## 0.1.0-beta.83
+
+- **js/ui/resizer.js**
+  - Add keyboard events
+  - Add selfManagedEvents and selfManagedAriaLabel
+    - So we can use this in other libraries/etc
+- **js/ui/modal-builder.js**
+  - Update default modal template option to have a button for resizer to work with updated resizer script
+
 ## 0.1.0-beta.82
 
-- **js/utils/dialog.js**
+- **js/ui/dialog.js**
   - Remove native resize detection (resizeObserver, etc) since all resizing is done by resizer now
     - Backed up this idea to reference/ideas/removed-idea-on-how-to-detect-native-resizing-has-no-event.js incase it's needed in the future
   - Add flag internally to ensure that click outside is prevented if the pointer event originated from a resizer event
@@ -13,9 +22,9 @@
   - Add icon for `.css-icon--drag-both`
 - **scss/components/modal.scss** 
   - Remove 'resize' native resizing for 'center' position, and use new resizer for both axes
-- **js/utils/modal-builder.js**
+- **js/ui/modal-builder.js**
   - Update resizer to create resizer handle for "center" so we can remove CSS resize in modals.scss
-- **js/utils/resizer.js**
+- **js/ui/resizer.js**
   - Refactor API to be fromX, and fromY (instead of fromLeft) to support both axes 
   - Add events dispatched from resizer's container for user 
   - Make all events pointer events instead of mouse

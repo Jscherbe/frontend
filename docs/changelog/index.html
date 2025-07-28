@@ -5198,6 +5198,12 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.1.0-beta.83">0.1.0-beta.83</a>
+            		</li>
+
+                    <li><a href="#0.1.0-beta.82">0.1.0-beta.82</a>
+            		</li>
+
                     <li><a href="#0.1.0-beta.81">0.1.0-beta.81</a>
             		</li>
 
@@ -5489,6 +5495,37 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.1.0-beta.83" tabindex="-1">0.1.0-beta.83</h2>
+<ul>
+<li><strong>js/ui/resizer.js</strong>
+<ul>
+<li>Add keyboard events</li>
+<li>Add selfManagedEvents and selfManagedAriaLabel
+<ul>
+<li>So we can use this in other libraries/etc</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>js/ui/modal-builder.js</strong>
+<ul>
+<li>Update default modal template option to have a button for resizer to work with updated resizer script</li>
+</ul>
+</li>
+</ul>
+<h2 id="0.1.0-beta.82" tabindex="-1">0.1.0-beta.82</h2>
+<ul>
+<li><strong>js/ui/dialog.js</strong>
+<ul>
+<li>Remove native resize detection (resizeObserver, etc) since all resizing is done by resizer now
+<ul>
+<li>Backed up this idea to reference/ideas/removed-idea-on-how-to-detect-native-resizing-has-no-event.js incase it's needed in the future</li>
+</ul>
+</li>
+<li>Add flag internally to ensure that click outside is prevented if the pointer event originated from a resizer event</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.1.0-beta.81" tabindex="-1">0.1.0-beta.81</h2>
 <ul>
 <li><strong>scss/components/css-icons.scss</strong>
@@ -5501,12 +5538,12 @@
 <li>Remove 'resize' native resizing for 'center' position, and use new resizer for both axes</li>
 </ul>
 </li>
-<li><strong>js/utils/modal-builder.js</strong>
+<li><strong>js/ui/modal-builder.js</strong>
 <ul>
 <li>Update resizer to create resizer handle for &quot;center&quot; so we can remove CSS resize in modals.scss</li>
 </ul>
 </li>
-<li><strong>js/utils/resizer.js</strong>
+<li><strong>js/ui/resizer.js</strong>
 <ul>
 <li>Refactor API to be fromX, and fromY (instead of fromLeft) to support both axes</li>
 <li>Add events dispatched from resizer's container for user</li>

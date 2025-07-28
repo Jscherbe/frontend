@@ -5202,10 +5202,22 @@
             
                 <ol>
                     
-                    <li><a href="#new-exports.resizer(container%2C-control%2C-options)">new exports.Resizer(container, control, options)</a>
+                    <li><a href="#new-exports.resizer(container%2C-control%2C-config)">new exports.Resizer(container, control, config)</a>
             		</li>
 
                     <li><a href="#resizer.destroy()">resizer.destroy()</a>
+            		</li>
+
+                    <li><a href="#resizer.onpointerdown(e)">resizer.onPointerdown(e)</a>
+            		</li>
+
+                    <li><a href="#resizer.onkeydown(e)">resizer.onKeydown(e)</a>
+            		</li>
+
+                    <li><a href="#resizer.getarialabel()-%E2%87%92-string">resizer.getAriaLabel() ⇒ string</a>
+            		</li>
+
+                    <li><a href="#resizer.dispatchevent(type%2C-%5Bdata%5D)">resizer.dispatchEvent(type, [data])</a>
             		</li>
                 </ol>
             		</li>
@@ -5220,6 +5232,24 @@
             		</li>
 
                     <li><a href="#ui%2Fresizer~fromy-%3A-%22top%22-%7C-%22bottom%22-%7C-null">ui/resizer~fromY : "top" | "bottom" | null</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~keyboardstep">ui/resizer~keyboardStep</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~keyboarddebouncetime">ui/resizer~keyboardDebounceTime</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~manageevents">ui/resizer~manageEvents</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~managearialabel">ui/resizer~manageAriaLabel</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~enablepointerresizing">ui/resizer~enablePointerResizing</a>
+            		</li>
+
+                    <li><a href="#ui%2Fresizer~enablekeyboardresizing">ui/resizer~enableKeyboardResizing</a>
             		</li>
                 </ol>
             </div>
@@ -5241,8 +5271,12 @@
 <ul>
 <li><a href="#module_ui/resizer.Resizer">.Resizer</a>
 <ul>
-<li><a href="#new_module_ui/resizer.Resizer_new">new exports.Resizer(container, control, options)</a></li>
+<li><a href="#new_module_ui/resizer.Resizer_new">new exports.Resizer(container, control, config)</a></li>
 <li><a href="#module_ui/resizer.Resizer+destroy">.destroy()</a></li>
+<li><a href="#module_ui/resizer.Resizer+onPointerdown">.onPointerdown(e)</a></li>
+<li><a href="#module_ui/resizer.Resizer+onKeydown">.onKeydown(e)</a></li>
+<li><a href="#module_ui/resizer.Resizer+getAriaLabel">.getAriaLabel()</a> ⇒ <code>string</code></li>
+<li><a href="#module_ui/resizer.Resizer+dispatchEvent">.dispatchEvent(type, [data])</a></li>
 </ul>
 </li>
 </ul>
@@ -5253,6 +5287,12 @@
 <li><a href="#module_ui/resizer..overrideMaxDimensions">~overrideMaxDimensions</a></li>
 <li><a href="#module_ui/resizer..fromX">~fromX</a> : <code>&quot;left&quot;</code> | <code>&quot;right&quot;</code> | <code>null</code></li>
 <li><a href="#module_ui/resizer..fromY">~fromY</a> : <code>&quot;top&quot;</code> | <code>&quot;bottom&quot;</code> | <code>null</code></li>
+<li><a href="#module_ui/resizer..keyboardStep">~keyboardStep</a></li>
+<li><a href="#module_ui/resizer..keyboardDebounceTime">~keyboardDebounceTime</a></li>
+<li><a href="#module_ui/resizer..manageEvents">~manageEvents</a></li>
+<li><a href="#module_ui/resizer..manageAriaLabel">~manageAriaLabel</a></li>
+<li><a href="#module_ui/resizer..enablePointerResizing">~enablePointerResizing</a></li>
+<li><a href="#module_ui/resizer..enableKeyboardResizing">~enableKeyboardResizing</a></li>
 </ul>
 </li>
 </ul>
@@ -5260,17 +5300,22 @@
 </ul>
 <p><a name="module_ui/resizer.Resizer"></a></p>
 <h2 id="ui%2Fresizer.resizer" tabindex="-1">ui/resizer.Resizer</h2>
+<p>Class for creating/controlling a container size with a handle/control</p>
 <p><strong>Kind</strong>: static class of <a href="#module_ui/resizer"><code>ui/resizer</code></a></p>
 <ul>
 <li><a href="#module_ui/resizer.Resizer">.Resizer</a>
 <ul>
-<li><a href="#new_module_ui/resizer.Resizer_new">new exports.Resizer(container, control, options)</a></li>
+<li><a href="#new_module_ui/resizer.Resizer_new">new exports.Resizer(container, control, config)</a></li>
 <li><a href="#module_ui/resizer.Resizer+destroy">.destroy()</a></li>
+<li><a href="#module_ui/resizer.Resizer+onPointerdown">.onPointerdown(e)</a></li>
+<li><a href="#module_ui/resizer.Resizer+onKeydown">.onKeydown(e)</a></li>
+<li><a href="#module_ui/resizer.Resizer+getAriaLabel">.getAriaLabel()</a> ⇒ <code>string</code></li>
+<li><a href="#module_ui/resizer.Resizer+dispatchEvent">.dispatchEvent(type, [data])</a></li>
 </ul>
 </li>
 </ul>
 <p><a name="new_module_ui/resizer.Resizer_new"></a></p>
-<h3 id="new-exports.resizer(container%2C-control%2C-options)" tabindex="-1">new exports.Resizer(container, control, options)</h3>
+<h3 id="new-exports.resizer(container%2C-control%2C-config)" tabindex="-1">new exports.Resizer(container, control, config)</h3>
 <table>
 <thead>
 <tr>
@@ -5289,47 +5334,165 @@
 </tr>
 <tr>
 <td>control</td>
-<td><code>Node</code></td>
+<td><code>HTMLElement</code></td>
 <td></td>
-<td>Resize handle element</td>
+<td>Resize handle element (should be focusable like a button)</td>
 </tr>
 <tr>
-<td>options</td>
+<td>config</td>
 <td><code>Object</code></td>
 <td></td>
 <td>Options to configure the resizer.</td>
 </tr>
 <tr>
-<td>options.debug</td>
+<td>[config.debug]</td>
 <td><code>Boolean</code></td>
-<td></td>
+<td><code>false</code></td>
 <td>Enable non-essential debugging logs.</td>
 </tr>
 <tr>
-<td>options.overrideMaxDimensions</td>
+<td>[config.multiplier]</td>
 <td><code>Boolean</code></td>
-<td></td>
-<td>When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them (default false).</td>
+<td><code>1</code></td>
+<td>Amount to increase size by (ie. pointer movement * multiplier).</td>
 </tr>
 <tr>
-<td>[options.fromX]</td>
+<td>[config.overrideMaxDimensions]</td>
+<td><code>Boolean</code></td>
+<td><code>false</code></td>
+<td>When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them.</td>
+</tr>
+<tr>
+<td>[config.fromX]</td>
 <td><code>&quot;left&quot;</code> | <code>&quot;right&quot;</code> | <code>null</code></td>
 <td><code></code></td>
 <td>Horizontal resizing direction.</td>
 </tr>
 <tr>
-<td>[options.fromY]</td>
+<td>[config.fromY]</td>
 <td><code>&quot;top&quot;</code> | <code>&quot;bottom&quot;</code> | <code>null</code></td>
 <td><code></code></td>
 <td>Vertical resizing direction.</td>
+</tr>
+<tr>
+<td>[config.keyboardStep]</td>
+<td><code>number</code></td>
+<td><code>10</code></td>
+<td>The step in pixels for keyboard resizing.</td>
+</tr>
+<tr>
+<td>[config.keyboardDebounceTime]</td>
+<td><code>number</code></td>
+<td><code>200</code></td>
+<td>Debounce time for keyboard resize end.</td>
+</tr>
+<tr>
+<td>[config.manageEvents]</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>If true, the Resizer will automatically bind its own events.</td>
+</tr>
+<tr>
+<td>[config.manageAriaLabel]</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>If true, the Resizer will manage the control's aria-label.</td>
+</tr>
+<tr>
+<td>[config.enablePointerResizing]</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>If true, pointer events will enable resizing.</td>
+</tr>
+<tr>
+<td>[config.enableKeyboardResizing]</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>If true, keyboard events will enable resizing.</td>
 </tr>
 </tbody>
 </table>
 <p><a name="module_ui/resizer.Resizer+destroy"></a></p>
 <h3 id="resizer.destroy()" tabindex="-1">resizer.destroy()</h3>
-<p>Cleans up event listeners to prevent memory leaks.</p>
+<p>Cleans up event listeners and internal state to prevent memory leaks.</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_ui/resizer.Resizer"><code>Resizer</code></a><br>
-<a name="module_ui/resizer..multiplier"></a></p>
+<a name="module_ui/resizer.Resizer+onPointerdown"></a></p>
+<h3 id="resizer.onpointerdown(e)" tabindex="-1">resizer.onPointerdown(e)</h3>
+<p>Public handler for pointerdown events. Call this method from your own event listeners
+if <code>manageEvents</code> is false. Its logic will only execute if <code>enablePointerResizing</code> is true.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/resizer.Resizer"><code>Resizer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>e</td>
+<td><code>PointerEvent</code></td>
+<td>The pointerdown event.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/resizer.Resizer+onKeydown"></a></p>
+<h3 id="resizer.onkeydown(e)" tabindex="-1">resizer.onKeydown(e)</h3>
+<p>Public handler for keydown events. Call this method from your own event listeners
+if <code>manageEvents</code> is false. Its logic will only execute if <code>enableKeyboardResizing</code> is true.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/resizer.Resizer"><code>Resizer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>e</td>
+<td><code>KeyboardEvent</code></td>
+<td>The keydown event.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/resizer.Resizer+getAriaLabel"></a></p>
+<h3 id="resizer.getarialabel()-%E2%87%92-string" tabindex="-1">resizer.getAriaLabel() ⇒ <code>string</code></h3>
+<p>Generates an accessible label for the resize control based on its configuration.
+This is a convenience function that can be used by the consumer if <code>manageAriaLabel</code> is false.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/resizer.Resizer"><code>Resizer</code></a><br>
+<strong>Returns</strong>: <code>string</code> - The suggested aria-label for the control.<br>
+<a name="module_ui/resizer.Resizer+dispatchEvent"></a></p>
+<h3 id="resizer.dispatchevent(type%2C-%5Bdata%5D)" tabindex="-1">resizer.dispatchEvent(type, [data])</h3>
+<p>Dispatches a custom event on the container element.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_ui/resizer.Resizer"><code>Resizer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><code>string</code></td>
+<td></td>
+<td>The event type (e.g., &quot;resizer:start&quot;, &quot;resizer:update&quot;, &quot;resizer:end&quot;).</td>
+</tr>
+<tr>
+<td>[data]</td>
+<td><code>Object</code></td>
+<td><code>{}</code></td>
+<td>Optional data to attach to the event's detail property.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_ui/resizer..multiplier"></a></p>
 <h2 id="ui%2Fresizer~multiplier" tabindex="-1">ui/resizer~multiplier</h2>
 <p>Amount to increase size by (ie. pointer movement * multiplier)</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
@@ -5344,6 +5507,39 @@
 <a name="module_ui/resizer..fromY"></a></p>
 <h2 id="ui%2Fresizer~fromy-%3A-%22top%22-%7C-%22bottom%22-%7C-null" tabindex="-1">ui/resizer~fromY : <code>&quot;top&quot;</code> | <code>&quot;bottom&quot;</code> | <code>null</code></h2>
 <p>Specifies the vertical edge from which resizing occurs.- <code>null</code> means no vertical resizing.- Default null</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..keyboardStep"></a></p>
+<h2 id="ui%2Fresizer~keyboardstep" tabindex="-1">ui/resizer~keyboardStep</h2>
+<p>The step in pixels for keyboard resizing with arrow keys.</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..keyboardDebounceTime"></a></p>
+<h2 id="ui%2Fresizer~keyboarddebouncetime" tabindex="-1">ui/resizer~keyboardDebounceTime</h2>
+<p>Debounce time in milliseconds for ending a keyboard resize.</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..manageEvents"></a></p>
+<h2 id="ui%2Fresizer~manageevents" tabindex="-1">ui/resizer~manageEvents</h2>
+<p>If true, the Resizer instance will automatically bind its own DOM event listeners
+(pointerdown, keydown) to the control element. If <code>false</code>, the user is
+responsible for calling <code>resizerInstance.onPointerdown(event)</code> and
+<code>resizerInstance.onKeydown(event)</code> from their own listeners.
+Default: true</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..manageAriaLabel"></a></p>
+<h2 id="ui%2Fresizer~managearialabel" tabindex="-1">ui/resizer~manageAriaLabel</h2>
+<p>If true, the Resizer instance will automatically manage the <code>aria-label</code>
+attribute of the control element. If <code>false</code>, the user is responsible
+for setting this attribute.
+Default: false</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..enablePointerResizing"></a></p>
+<h2 id="ui%2Fresizer~enablepointerresizing" tabindex="-1">ui/resizer~enablePointerResizing</h2>
+<p>If true, pointer events (mouse/touch) will enable resizing.
+Default: true</p>
+<p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a><br>
+<a name="module_ui/resizer..enableKeyboardResizing"></a></p>
+<h2 id="ui%2Fresizer~enablekeyboardresizing" tabindex="-1">ui/resizer~enableKeyboardResizing</h2>
+<p>If true, keyboard events (arrow keys) will enable resizing.
+Default: true</p>
 <p><strong>Kind</strong>: inner property of <a href="#module_ui/resizer"><code>ui/resizer</code></a></p>
 
     </div>
