@@ -2,6 +2,9 @@
  * @module ui/resizer
  */
 
+// Note: Gzip Test = 1.6kb (7-28-25), which seems appropriate  
+// based on how many options/events it handles
+
 import { createEvent } from "../events/index.js";
 import { logError, log } from "../utils/class-logger.js";
 
@@ -255,7 +258,7 @@ export class Resizer {
    * @param {Event} originalEvent The original DOM event (PointerEvent or KeyboardEvent) that triggered the update.
    * @private
    */
-  #calculateAndApplySize(totalDeltaX, totalDeltaY, originalEvent) {
+  #updateSize(totalDeltaX, totalDeltaY, originalEvent) {
     let newWidth = this.#initialContainerDimensions.width;
     let newHeight = this.#initialContainerDimensions.height;
     const { fromX, fromY, multiplier } = this.options;
@@ -319,7 +322,7 @@ export class Resizer {
     const pointermove = (event) => {
       const totalDeltaX = event.clientX - this.#pointerStartX;
       const totalDeltaY = event.clientY - this.#pointerStartY;
-      this.#calculateAndApplySize(totalDeltaX, totalDeltaY, event);
+      this.#updateSize(totalDeltaX, totalDeltaY, event);
     };
 
     const cleanup = (event) => {
@@ -385,7 +388,7 @@ export class Resizer {
       this.#accumulatedKeyboardDeltaX += stepDeltaX;
       this.#accumulatedKeyboardDeltaY += stepDeltaY;
 
-      this.#calculateAndApplySize(this.#accumulatedKeyboardDeltaX, this.#accumulatedKeyboardDeltaY, e);
+      this.#updateSize(this.#accumulatedKeyboardDeltaX, this.#accumulatedKeyboardDeltaY, e);
 
       if (this.#keyboardResizeTimeout) {
         clearTimeout(this.#keyboardResizeTimeout);
