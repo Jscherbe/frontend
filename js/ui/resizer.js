@@ -351,7 +351,7 @@ export class Resizer {
     }
 
     const { key } = e;
-    const { keyboardStep, fromX, fromY, keyboardDebounceTime } = this.options;
+    const { keyboardStep, keyboardDebounceTime } = this.options;
 
     let stepDeltaX = 0;
     let stepDeltaY = 0;
@@ -359,20 +359,24 @@ export class Resizer {
 
     if (this.resizeHorizontal) {
       if (key === "ArrowLeft") {
-        stepDeltaX = (fromX === "left") ? keyboardStep : -keyboardStep;
+        // ArrowLeft should always move the active horizontal edge to the left
+        stepDeltaX = -keyboardStep;
         isResizeKey = true;
       } else if (key === "ArrowRight") {
-        stepDeltaX = (fromX === "left") ? -keyboardStep : keyboardStep;
+        // ArrowRight should always move the active horizontal edge to the right
+        stepDeltaX = keyboardStep;
         isResizeKey = true;
       }
     }
 
     if (this.resizeVertical) {
       if (key === "ArrowUp") {
-        stepDeltaY = (fromY === "top") ? keyboardStep : -keyboardStep;
+        // ArrowUp should always move the active vertical edge up
+        stepDeltaY = -keyboardStep;
         isResizeKey = true;
       } else if (key === "ArrowDown") {
-        stepDeltaY = (fromY === "top") ? -keyboardStep : keyboardStep;
+        // ArrowDown should always move the active vertical edge down
+        stepDeltaY = keyboardStep;
         isResizeKey = true;
       }
     }
@@ -408,6 +412,12 @@ export class Resizer {
   getAriaLabel() {
     const { fromY, fromX } = this.options;
     const directions = [fromY, fromX].filter(v => v);
+
+    if (directions.length === 0) {
+      return "Resize control"; // Fallback for invalid configuration (should be caught by constructor)
+    }
+
+    // Join all directions with a space and append " edge".
     return `Resize from ${directions.join(' ')} edge`;
   }
 
