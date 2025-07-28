@@ -132,9 +132,9 @@ export const defaults = {
         <div class="${ baseClass }__body" ${ initializer.getAttribute("body") }></div>
         ${ footerHtml ? `<div class="${ baseClass }__footer">${ footerHtml }</div>`: "" }
         ${ config.allowResize ? 
-          `<div class="${ baseClass }__resizer" ${ initializer.getAttribute("resizer") }>
+          `<button class="${ baseClass }__resizer" type="button" ${ initializer.getAttribute("resizer") }>
             ${ config.templateResizerIcon(config) }
-          </div>` : "" 
+          </button>` : "" 
         }
       </dialog>
     `;
