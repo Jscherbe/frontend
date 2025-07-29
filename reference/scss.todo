@@ -1,4 +1,9 @@
 SCSS Todos:
+  ☐ Add icon-header or a component that can handle layouts like that
+    * Would be nice if it was reusable (icon) [Text] [control]
+    * So maybe don't call it icon header
+  ☐ Then add headline-label (might just be a utility) but I think component that sets a typography size
+    * Look at other implementations
   ✔ Why do we have accordion--no-borders (how is this useful)? @done
     * consider removing or making a demo reflect use case, not sure about this seems not useful
     ✔ Check with Daniel to see if there was a use for this @done

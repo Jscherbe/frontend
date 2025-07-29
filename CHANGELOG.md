@@ -2,10 +2,12 @@
 
 ## 0.1.0-beta.84
 
-- **scss/panel.scss**
+- **scss/components/panel.scss**
   - Add new panel component, this is to replace custom callout layouts/etc
   - A panel is a box with child rows (such as header, body, footer) or anything like that (think structured callouts, sidebar menus, anything that needs this type of layout)
   - User defines how it looks and what modifiers are present (unless using defaults)
+- **scss/element.scss**
+  - Add new function `get-optional-rule-style($value)` which will test the input passed, if it's a string and not 'none'/none it will return a rule-style, if it's another type of value (null, css border value, etc) it will pass it through. So that we easily have config values in components etc, that can leverage rule styles but allow user values if that's not what's desired
 - **scss/utils.scss**
   - Add utils.default() for inline defaults to handle pattern similiar to function-fallback works, for local values (not for configuration fallbacks)
   - Use like `color: ulu.utils-default($user-value, red)` (if user value is anything other than `true`) return it, else return default value (like how all config defaults work)
