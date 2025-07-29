@@ -21,37 +21,16 @@ $-fallbacks: (
     "function" : meta.get-function("get", false, "element"),
     "property" : "border-radius"
   ),
-  "separator" : (
-    "function" : meta.get-function("get-rule-style", false, "element"),
-    "arguments" : ("default",)
-  ),
-  "header-border-bottom" : (
-    "function" : meta.get-function("get-rule-style", false, "element"),
-    "arguments" : ("default",)
-  ),
-  "footer-border-top" : (
-    "function" : meta.get-function("get-rule-style", false, "element"),
-    "arguments" : ("default",)
-  )
 );
 
 /// Module Settings
 /// @type Map
-/// @prop {Color} background-color [rgb(255, 255, 255)] The background color of the Panel container.
-/// @prop {Color} border-color ["rule-default"] The border color of the Panel container.
-/// @prop {Dimension} border-width [1px] The border width of the Panel container.
-/// @prop {Dimension} border-radius [6px] The border radius of the Panel container.
-/// @prop {CssValue} box-shadow [none] The box-shadow of the Panel container.
-/// @prop {Dimension} margin-bottom [1.5rem] The bottom margin of the Panel.
-/// @prop {Dimension} header-padding [1.5rem] Default padding for the header section.
-/// @prop {Color} header-background-color [rgb(245, 245, 245)] Default background color for the header section.
-/// @prop {Color} header-color [null] Default text color for the header section.
-/// @prop {Dimension} body-padding [1.5rem] Default padding for the body section.
-/// @prop {Color} body-background-color [rgb(255, 255, 255)] Default background color for the body section.
-/// @prop {Color} body-color [null] Default text color for the body section.
-/// @prop {Dimension} footer-padding [1.5rem] Default padding for the footer section.
-/// @prop {Color} footer-background-color [rgb(240, 240, 240)] Default background color for the footer section.
-/// @prop {Color} footer-color [null] Default text color for the footer section.
+/// @prop {Color} background-color [rgb(255, 255, 255)] The background color of the panel
+/// @prop {Color} border [null] Set border to panel
+/// @prop {Dimension} border-radius [element.$config.border-radius] The border radius of the panel
+/// @prop {CssValue} box-shadow [element.$config.box-shadow] The box-shadow of the panel
+/// @prop {Dimension} margin-bottom [1.5rem] The bottom margin of the panel
+/// @prop {CssValue} overflow [null] Value for overflow, not included by default as it interferes with position sticky, but could be useful for cropping if that's needed (can be set on rows too)
 
 $config: (
   "background-color" : rgb(255, 255, 255),
@@ -59,46 +38,59 @@ $config: (
   "border-radius" : true,
   "box-shadow" : true,
   "margin-bottom" : 1.5em,
-  "padding" : 1em,
-  "separator" : true,
-  
-
-  "header-padding" : (0.5em 1em),
-  "header-background-color" : rgb(245, 245, 245),
-  "header-border-bottom" : true,
-  "body-padding" : 1em,
-  "body-background-color" : rgb(255, 255, 255),
-  "footer-padding" : (0.5em 1em),
-  "footer-background-color" : rgb(240, 240, 240),
-  "footer-border-top" : true,
+  "overflow" : null,
 ) !default;
 
 /// Styles Map (for unique variations/modifiers)
-/// - Use this map to define distinct visual styles for the panel.
+/// - Use this map to define distinct visual styles for the panel
+/// - This map is two levels the first level is the name of the modifier (see default below). 
+///   This will become the modifier for the pane; so ("transparent" : (...)) = .panel--transparent.
+///   The second level is that modifier row modifiers (ie. panel__row--header) (see row options below)
+/// - Keyword "default" means without modifier for both parent and row configs
+///   - For example "default" as panel container modifier name will mean
+///     styles for this without any modifiers
+///   - In a panels row config (second level) "default" will refer to the non-modified row (ie .panel__row)
+/// - Order matters, default should be first
+/// - Row Options
+///   - Each row can have the following options:
+///       overflow: Set overflow property if needed,
+///       aspect-ratio,
+///       height,
+///       min-height,
+///       padding,
+///       margin: Can be used to create gap between container and row
+///       background-color,
+///       font-weight,
+///       font-family,
+///       color,
+///       box-shadow,
+///       grow: Default the panel will grow to fill the containers height, passing false disables this
+///       border-top: If a string is passed it will resolved as an element rule style
+///       border-bottom: If a string is passed it will resolved as an element rule style
 /// @type Map
 
 $styles: (
   "default" : (
     "default" : (
-      "padding" : (0.25em 1em)
+      "padding": (0.25em 1em)
     ),
     "header" : (
       "padding" : (0.5em 1em),
       "background-color" : #eeeeee,
-      "border-bottom" : 2px solid black,
+      "border-bottom" : "default",
       "grow" : false
     ),
     "footer" : (
       "padding" : (0.5em 1em),
       "background-color" : #f4f4f4,
-      "separator-top" : 1px solid black,
+      "border-top" : "default",
       "grow" : false
     ),
     "separator-top" : (
-      "separator-top" : true,
+      "border-top" : "light",
     ),
     "separator-bottom" : (
-      "separator-top" : true,
+      "border-bottom" : "light",
     )
   ),
   "transparent" : (
@@ -149,19 +141,24 @@ $styles: (
   @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
-/// Set panel style variations
+/// Set style variations
+/// - See $styles for more information on map properties/structure
 /// @param {Map} $changes Map of changes (options for style include all config properties)
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 @mixin set-styles($changes, $merge-mode: null) {
   $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
 
+/// Output component styles
+/// @example scss
+///  @include ulu.component-panel-styles();
 @mixin styles {
   $prefix: selector.class("panel");
 
   #{ $prefix } {
     display: flex;
     flex-direction: column;
+    overflow: get("overflow");
     background-color: get("background-color");
     box-shadow: get("box-shadow");
     border: get("border");
@@ -180,7 +177,6 @@ $styles: (
 
   @each $modifier, $rows in $styles {
     @if ($modifier == "default") {
-      
       @each $row-name, $props in $rows {
         @if ($row-name == "default") {
           #{ $prefix }__row {
@@ -213,12 +209,18 @@ $styles: (
 /// Create row styles
 /// @param {Map} $props - Row Options
 @mixin create-row-style($props) {
+  overflow: map.get($props, "overflow");
+  aspect-ratio: map.get($props, "aspect-ratio");
+  height: map.get($props, "height");
+  min-height: map.get($props, "min-height");
   padding: map.get($props, "padding");
   margin: map.get($props, "margin");
-  background-color: map.get($props, "background-color");
-  border-top: map.get($props, "border-top");
-  border-bottom: map.get($props, "border-bottom");
+  background-color: color.get(map.get($props, "background-color"));
+  font-weight: map.get($props, "font-weight");
+  font-family: map.get($props, "font-family");
+  color: color.get(map.get($props, "color"));
+  box-shadow: map.get($props, "box-shadow");
   flex-grow: if(map.get($props, "grow") == false, 0, 1); // Default is grow
-  border-top: utils.default(map.get($props, "separator-top"), get("separator"));
-  border-bottom: utils.default(map.get($props, "separator-bottom"), get("separator"));
+  border-top: element.get-optional-rule-style(map.get($props, "border-top"));
+  border-bottom: element.get-optional-rule-style(map.get($props, "border-bottom"));
 }

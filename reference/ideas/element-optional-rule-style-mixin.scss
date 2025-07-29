@@ -1,0 +1,14 @@
+/// Get an optional rule style (which is a border)
+/// - If the value is a string we return the rule style, else we return the value
+/// - Used for things where configuration for say a border can be a user defined border or a string (they want an existing rule-style)
+/// - Except when passing "none"/none this will return as-is (since it's a border property)
+/// @param {*} $value The value to check
+/// @return {*} Rule style if string, else value
+
+@function get-optional-rule-style($value) {
+  @if (meta.type-of($value) == "string") {
+    @return get-rule-style($value);
+  } @else {
+    @return $value;
+  }
+}
