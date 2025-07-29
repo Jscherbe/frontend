@@ -32,6 +32,7 @@
 @forward "nav-strip" as nav-strip-*;
 @forward "overlay-section" as overlay-section-*;
 @forward "pager" as pager-*;
+@forward "panel" as panel-*;
 @forward "placeholder-block" as placeholder-block-*;
 @forward "pull-quote" as pull-quote-*;
 @forward "popover" as popover-*;
@@ -84,6 +85,7 @@
 @use "nav-strip";
 @use "overlay-section";
 @use "pager";
+@use "panel";
 @use "placeholder-block";
 @use "popover";
 @use "pull-quote";
@@ -137,6 +139,7 @@ $all-includes: (
   "nav-strip",
   "overlay-section",
   "pager",
+  "panel",
   "popover",
   "ratio-box",
   "rule",
@@ -282,6 +285,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "pager")) {
     @include pager.styles;
+  }
+  @if (list.index($includes, "panel")) {
+    @include panel.styles;
   }
   @if (list.index($includes, "placeholder-block")) {
     @include placeholder-block.styles;

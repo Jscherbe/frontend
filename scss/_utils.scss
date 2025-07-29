@@ -438,6 +438,13 @@ $config: (
   @return $value;
 }
 
+/// If the value passed is equal to true use the default, else return the value
+/// @param {*} $value The value to check
+/// @param {*} $default The value to return when true
+@function default($value, $default) {
+  @return if($value == true, $default, $value);
+}
+
 /// Replaces all or one occurrence of a string within a string
 /// @param {String} $string String to operate on
 /// @param {String} $find String to find within string
