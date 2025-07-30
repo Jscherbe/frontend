@@ -73,6 +73,7 @@
 @use "flipcard";
 @use "flipcard-grid";
 @use "form-theme";
+@use "headline-label";
 @use "horizontal-rule";
 @use "image-grid";
 @use "list-lines";
@@ -127,6 +128,7 @@ $all-includes: (
   "flipcard",
   "flipcard-grid",
   "form-theme",
+  "headline-label",
   "horizontal-rule",
   "image-grid",
   "links",
@@ -249,6 +251,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "form-theme")) {
     @include form-theme.styles;
+  }
+  @if (list.index($includes, "headline-label")) {
+    @include headline-label.styles;
   }
   @if (list.index($includes, "horizontal-rule")) {
     @include horizontal-rule.styles;

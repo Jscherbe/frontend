@@ -1,0 +1,83 @@
+////
+/// @group headline-label
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "../utils";
+@use "../color";
+@use "../typography";
+
+// Used for function fallback
+$-fallbacks: (
+  "font-weight" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "font-weight-bold"
+  ),
+  "font-family" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "font-family-sans"
+  ),
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {Color} color [ulu.cssvar-use("color-accent")] The text color of the headline label.
+/// @prop {Dimension} margin-bottom [0.2em] The bottom margin of the headline label.
+/// @prop {String} font-weight [typography.get("font-weight-bold")] The font weight of the headline label.
+/// @prop {String} font-family [typography.get("font-family-sans")] The font family of the headline label.
+/// @prop {Dimension|Number} line-height [typography.get("line-height-dense")] The font family of the headline label.
+/// @prop {String} text-transform [null] The font family of the headline label.
+/// @prop {String} type-size ["small"] The typography size preset to use for the headline label (e.g., "small", "medium", "large"), Only uses the font-size value for size
+
+$config: (
+  "color": "accent",
+  "margin-bottom": 0.2em,
+  "font-weight": true,
+  "font-family": true,
+  "line-height": true,
+  "text-transform" : null,
+  "type-size": "small"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-headline-label-set(( "color" : red ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+/// @example scss
+///   @include ulu.component-headline-label-get("color");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "headline-label [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-headline-label-styles();
+
+@mixin styles {
+  .headline-label {
+    display: block;
+    margin-bottom: get("margin-bottom");
+    font-weight: get("font-weight");
+    font-family: get("font-family");
+    line-height: get("line-height");
+    text-transform: get("text-transform");
+    color: color.get(get("color"));
+    @if (get("type-size")) {
+      @include typography.size(get("type-size"), $only-font-size: true);
+    }
+  }
+}

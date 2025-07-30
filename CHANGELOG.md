@@ -2,6 +2,8 @@
 
 ## 0.1.0-beta.84
 
+- **scss/components/headline-label.scss**
+  - Add new component "headline-label" for small label above headlines
 - **scss/components/panel.scss**
   - Add new panel component, this is to replace custom callout layouts/etc
   - A panel is a box with child rows (such as header, body, footer) or anything like that (think structured callouts, sidebar menus, anything that needs this type of layout)
