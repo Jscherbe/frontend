@@ -4,12 +4,14 @@
 ////
 
 @use "sass:map";
+@use "sass:list";
 @use "sass:meta";
 
 @use "../utils";
 @use "../selector";
 @use "../color";
 @use "../element";
+@use "../breakpoint";
 
 // Used for function fallback
 $-fallbacks: (
@@ -72,13 +74,20 @@ $config: (
 $styles: (
   "default" : (
     "default" : (
-      "padding": (0.25em 1em)
+      "padding": 1em,
     ),
     "header" : (
-      "padding" : (0.5em 1em),
-      "background-color" : #eeeeee,
+      "padding" : (0.75em 1em),
+      "background-color" : #e7e7e7,
       "border-bottom" : "default",
-      "grow" : false
+      "font-weight" : bold,
+      "grow" : false,
+      "breakpoints" : (
+        "small" : (
+          "direction" : "max",
+          "padding" : (0.25em 0.5em)
+        )
+      )
     ),
     "footer" : (
       "padding" : (0.5em 1em),
@@ -223,4 +232,15 @@ $styles: (
   flex-grow: if(map.get($props, "grow") == false, 0, 1); // Default is grow
   border-top: element.get-optional-rule-style(map.get($props, "border-top"));
   border-bottom: element.get-optional-rule-style(map.get($props, "border-bottom"));
+  
+
+  // Allow passing breakpoint maps
+  $breakpoints: map.get($props, "breakpoints");
+  $b-options: ( "directionRequired" : true );
+
+  @if ($breakpoints and list.length($breakpoints)) {
+    @include breakpoint.from-each($breakpoints, $b-options) using ($b-props) {
+      @include create-row-style($b-props);
+    }
+  }
 }

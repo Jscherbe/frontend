@@ -592,7 +592,7 @@ Utility Method for iterating over a map of breakpoints and apply styles
 
 |Name|Type|Description|
 |:--|:--|:--|
-|$breakpoints|`String`|A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the code|
+|$breakpoints|`String`|A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing no breakpoint will wrap the code (as convention we call the default non-breakpoint direction "default")|
 |$options|`String`|A map with options to change the behavior|
 |$options.directionRequired|`Boolean`|Require direction throw error if missing direction|
 

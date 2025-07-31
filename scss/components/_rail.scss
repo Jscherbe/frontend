@@ -1,0 +1,112 @@
+////
+/// @group rail
+////
+/// A horizontal, flexible container for arranging diverse inline elements.
+/// It provides a consistent layout for icons, labels, buttons, or other
+/// modular components, aligning content to either end or centering it.
+
+@use "sass:map";
+
+@use "../utils";
+@use "../color";
+@use "../selector";
+@use "../layout";
+@use "../typography"; // Included for potential future use or consistency, though not strictly needed for basic layout
+
+/// Module Settings
+/// @type Map
+/// @prop {Dimension} gap [1em] The space between items in the rail.
+/// @prop {CssValue} align-items [center] Vertical alignment of items within the rail (e.g., flex-start, center, flex-end).
+/// @prop {Boolean} nowrap [true] Disables wrapping of items to the next line.
+/// @prop {Dimension} padding-x [0] Horizontal padding for the rail container.
+/// @prop {Dimension} padding-y [0] Vertical padding for the rail container.
+
+$config: (
+  "gap" : 1em,
+  "align-items" : center,
+  "nowrap" : true,
+  "padding-x" : 0,
+  "padding-y" : 0,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-rail-set(( "gap" : 1.5em ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-rail-get("gap");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "rail [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///   @include ulu.component-rail-styles();
+
+@mixin styles {
+  $prefix: selector.class("rail"); // This will resolve to '.rail'
+  #{ $prefix } {
+    display: flex;
+    align-items: get("align-items");
+    gap: get("gap");
+    padding: get("padding-y") get("padding-x");
+    max-width: 100%; // Ensure it doesn't overflow parent
+    @if (get("nowrap")) {
+      flex-wrap: nowrap;
+      overflow-x: auto; // Allow horizontal scrolling if items exceed width
+      @include layout.remove-scrollbar(); // Hide default scrollbar
+    }
+  }
+
+  // Modifiers for justify-content (horizontal alignment of rail items)
+  // These apply to the rail container itself
+  #{ $prefix }--start {
+    justify-content: flex-start;
+  }
+
+  #{ $prefix }--end {
+    justify-content: flex-end;
+  }
+
+  #{ $prefix }--center {
+    justify-content: center;
+  }
+
+  #{ $prefix }--space-around {
+    justify-content: space-around;
+  }
+
+  #{ $prefix }--space-between {
+    justify-content: space-between;
+  }
+
+  // Stretches items to fill available space
+  #{ $prefix }--fill {
+    // Corrected to target .rail__item specifically
+    #{ $prefix }__item {
+      flex: 1; // Allows children to grow and shrink
+    }
+  }
+
+  // Modifiers for vertical alignment override
+  #{ $prefix }--align-start {
+    align-items: flex-start;
+  }
+  #{ $prefix }--align-center {
+    align-items: center;
+  }
+  #{ $prefix }--align-end {
+    align-items: flex-end;
+  }
+  #{ $prefix }--align-baseline {
+    align-items: baseline;
+  }
+}

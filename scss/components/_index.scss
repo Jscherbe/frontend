@@ -20,6 +20,7 @@
 @forward "flipcard" as flipcard-*;
 @forward "flipcard-grid" as flipcard-grid-*;
 @forward "form-theme" as form-theme-*;
+@forward "headline-label" as headline-label-*;
 @forward "horizontal-rule" as horizontal-rule-*;
 @forward "image-grid" as image-grid-*;
 @forward "links" as links-*;
@@ -36,6 +37,7 @@
 @forward "placeholder-block" as placeholder-block-*;
 @forward "pull-quote" as pull-quote-*;
 @forward "popover" as popover-*;
+@forward "rail" as rail-*;
 @forward "ratio-box" as ratio-box-*;
 @forward "rule" as rule-*;
 @forward "scroll-slider" as scroll-slider-*;
@@ -90,6 +92,7 @@
 @use "placeholder-block";
 @use "popover";
 @use "pull-quote";
+@use "rail";
 @use "ratio-box";
 @use "rule";
 @use "scroll-slider";
@@ -143,6 +146,7 @@ $all-includes: (
   "pager",
   "panel",
   "popover",
+  "rail",
   "ratio-box",
   "rule",
   "scroll-slider",
@@ -302,6 +306,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "pull-quote")) {
     @include pull-quote.styles;
+  }
+  @if (list.index($includes, "rail")) {
+    @include rail.styles;
   }
   @if (list.index($includes, "ratio-box")) {
     @include ratio-box.styles;

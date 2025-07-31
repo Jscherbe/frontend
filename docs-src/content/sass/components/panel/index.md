@@ -54,8 +54,8 @@ $config: (
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** variable
-- **Lines (comments):** 26-33
-- **Lines (code):** 35-42
+- **Lines (comments):** 28-35
+- **Lines (code):** 37-44
 
 </details>
 
@@ -121,13 +121,20 @@ Styles Map (for unique variations/modifiers)
 $styles: (
   "default" : (
     "default" : (
-      "padding": (0.25em 1em)
+      "padding": 1em,
     ),
     "header" : (
-      "padding" : (0.5em 1em),
-      "background-color" : #eeeeee,
+      "padding" : (0.75em 1em),
+      "background-color" : #e7e7e7,
       "border-bottom" : "default",
-      "grow" : false
+      "font-weight" : bold,
+      "grow" : false,
+      "breakpoints" : (
+        "small" : (
+          "direction" : "max",
+          "padding" : (0.25em 0.5em)
+        )
+      )
     ),
     "footer" : (
       "padding" : (0.5em 1em),
@@ -182,8 +189,8 @@ $styles: (
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** variable
-- **Lines (comments):** 44-70
-- **Lines (code):** 72-125
+- **Lines (comments):** 46-72
+- **Lines (code):** 74-134
 
 </details>
 
@@ -218,8 +225,8 @@ Change modules $config
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** mixin
-- **Lines (comments):** 127-130
-- **Lines (code):** 131-133
+- **Lines (comments):** 136-139
+- **Lines (code):** 140-142
 
 </details>
 
@@ -278,8 +285,8 @@ Set style variations
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** mixin
-- **Lines (comments):** 144-147
-- **Lines (code):** 148-150
+- **Lines (comments):** 153-156
+- **Lines (code):** 157-159
 
 </details>
 
@@ -324,8 +331,8 @@ Output component styles
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** mixin
-- **Lines (comments):** 152-154
-- **Lines (code):** 155-207
+- **Lines (comments):** 161-163
+- **Lines (code):** 164-216
 
 </details>
 
@@ -376,8 +383,8 @@ Create row styles
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** mixin
-- **Lines (comments):** 209-210
-- **Lines (code):** 211-226
+- **Lines (comments):** 218-219
+- **Lines (code):** 220-246
 
 </details>
 
@@ -426,8 +433,8 @@ Get a config option
 - **File:** _panel.scss
 - **Group:** panel
 - **Type:** function
-- **Lines (comments):** 135-138
-- **Lines (code):** 139-142
+- **Lines (comments):** 144-147
+- **Lines (code):** 148-151
 
 </details>
 

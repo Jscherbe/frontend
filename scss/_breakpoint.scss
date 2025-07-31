@@ -224,7 +224,7 @@ $sizes: (
 ///   @include breakpoints.fromEach($breakpoints) using ($props) {
 ///     width: map.get($props, "width");
 ///   }
-/// @param {String} $breakpoints A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing and no breakpoint will wrap the code
+/// @param {String} $breakpoints A map with breakpoints direction will be pulled from each items "direction" property, if direction is missing no breakpoint will wrap the code (as convention we call the default non-breakpoint direction "default")
 /// @param {String} $options A map with options to change the behavior
 /// @param {Boolean} $options.directionRequired Require direction throw error if missing direction
 

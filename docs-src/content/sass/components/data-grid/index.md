@@ -82,8 +82,8 @@ $config: (
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** variable
-- **Lines (comments):** 20-36
-- **Lines (code):** 38-73
+- **Lines (comments):** 17-33
+- **Lines (code):** 35-70
 
 </details>
 
@@ -141,8 +141,8 @@ Change modules $config
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 76-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 73-76
+- **Lines (code):** 78-80
 
 </details>
 
@@ -200,8 +200,8 @@ Prints default grid styles, if you want to customize further please use the crea
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 119-122
-- **Lines (code):** 124-126
+- **Lines (comments):** 116-119
+- **Lines (code):** 121-123
 
 </details>
 
@@ -264,8 +264,8 @@ Output data grid styles
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** mixin
-- **Lines (comments):** 128-139
-- **Lines (code):** 141-612
+- **Lines (comments):** 125-136
+- **Lines (code):** 138-609
 
 </details>
 
@@ -323,8 +323,8 @@ Get a config option
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 85-88
-- **Lines (code):** 90-92
+- **Lines (comments):** 82-85
+- **Lines (code):** 87-89
 
 </details>
 
@@ -382,8 +382,8 @@ Output component stylesheet
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 94-96
-- **Lines (code):** 98-106
+- **Lines (comments):** 91-93
+- **Lines (code):** 95-103
 
 </details>
 
@@ -432,8 +432,8 @@ Get the default breakpoint for the grid (when it starts to be a grid (vs stacked
 - **File:** _data-grid.scss
 - **Group:** data-grid
 - **Type:** function
-- **Lines (comments):** 108-108
-- **Lines (code):** 110-117
+- **Lines (comments):** 105-105
+- **Lines (code):** 107-114
 
 </details>
 
