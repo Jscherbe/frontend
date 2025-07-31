@@ -148,7 +148,7 @@ Button sizes
 ``` scss
 $sizes: (
   "small" : (
-    "padding":        (0.35em 1.5em),
+    "padding":        (0.35em 1em),
     "min-width":      0,
     "icon-size":      2rem,
     "icon-font-size": 1rem
@@ -203,9 +203,9 @@ $styles: (
     "border-color" : transparent,
     "box-shadow" : none,
     "hover" : (
-      "background-color" : "white",
-      "color" : inherit,
-      "border-color" : transparent,
+      "background-color" : "control-background",
+      "color" : "control",
+      "border-color" : "control-border",
     )
   ),
   "outline" : (
@@ -214,7 +214,9 @@ $styles: (
     "border-color" : "rule-light",
     "box-shadow" : none,
     "hover" : (
-      "background-color" : "white",
+      "background-color" : "control-background",
+      "color" : "control",
+      "border-color" : "control-border",
     )
   ),
 );
@@ -229,7 +231,7 @@ $styles: (
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 109-112
-- **Lines (code):** 114-135
+- **Lines (code):** 114-137
 
 </details>
 
@@ -264,8 +266,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 137-140
-- **Lines (code):** 142-144
+- **Lines (comments):** 139-142
+- **Lines (code):** 144-146
 
 </details>
 
@@ -324,8 +326,8 @@ Set button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 156-159
-- **Lines (code):** 161-163
+- **Lines (comments):** 158-161
+- **Lines (code):** 163-165
 
 </details>
 
@@ -372,8 +374,8 @@ Set Button Sizes
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 165-168
-- **Lines (code):** 170-172
+- **Lines (comments):** 167-170
+- **Lines (code):** 172-174
 
 </details>
 
@@ -419,8 +421,8 @@ Reset CSS for button (to change browser defaults for button styling)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 174-174
-- **Lines (code):** 176-187
+- **Lines (comments):** 176-176
+- **Lines (code):** 178-189
 
 </details>
 
@@ -450,8 +452,8 @@ Output the default button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 189-190
-- **Lines (code):** 192-249
+- **Lines (comments):** 191-192
+- **Lines (code):** 194-251
 
 </details>
 
@@ -498,8 +500,8 @@ Mixin to wrap in active selectors
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 251-259
-- **Lines (code):** 261-265
+- **Lines (comments):** 253-261
+- **Lines (code):** 263-267
 
 </details>
 
@@ -553,8 +555,8 @@ Print button size styles for a specific size
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 267-270
-- **Lines (code):** 272-282
+- **Lines (comments):** 269-272
+- **Lines (code):** 274-284
 
 </details>
 
@@ -608,8 +610,8 @@ Print a button style's base styles (not hover)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 314-319
-- **Lines (code):** 321-332
+- **Lines (comments):** 316-321
+- **Lines (code):** 323-334
 
 </details>
 
@@ -661,8 +663,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 334-339
-- **Lines (code):** 341-347
+- **Lines (comments):** 336-341
+- **Lines (code):** 343-349
 
 </details>
 
@@ -717,8 +719,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 357-366
-- **Lines (code):** 368-384
+- **Lines (comments):** 359-368
+- **Lines (code):** 370-386
 
 </details>
 
@@ -776,8 +778,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 146-149
-- **Lines (code):** 151-154
+- **Lines (comments):** 148-151
+- **Lines (code):** 153-156
 
 </details>
 
@@ -837,8 +839,8 @@ Get a value from a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 284-288
-- **Lines (code):** 290-312
+- **Lines (comments):** 286-290
+- **Lines (code):** 292-314
 
 </details>
 

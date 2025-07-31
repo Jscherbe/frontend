@@ -2,6 +2,10 @@
 
 ## 0.1.0-beta.84
 
+- **scss/components/rail.scss**
+  - Add new component for common strip-rail layouts
+- **scss/components/button-group.scss**
+  - Add new component for grouping buttons and joining them
 - **scss/components/headline-label.scss**
   - Add new component "headline-label" for small label above headlines
 - **scss/components/panel.scss**

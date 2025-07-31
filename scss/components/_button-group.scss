@@ -1,0 +1,90 @@
+////
+/// @group button-group
+/// Groups a set of buttons
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../button";
+
+/// Module Settings
+/// @type Map
+/// @prop {Dimension}  gap  [0.45em] Gap between buttons
+/// @prop {Boolean}  no-min-width  [true] Buttons within the button group should have no min width
+
+$config: (
+  "gap": 0.45em,
+  "no-min-width" : true
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-button-group-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-button-group-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "button-group [config]");
+}
+
+/// Prints component styles
+/// @demo button-group
+/// @example scss
+///  @include ulu.component-button-group-styles();
+
+@mixin styles {
+  $prefix: selector.class("button-group");
+  $prefix-button: selector.class("button");
+
+  $button-radius: button.get("border-radius");
+  
+  #{ $prefix } {
+    display: flex;
+    flex-wrap: wrap;
+    gap: get("gap");
+    #{ $prefix-button } {
+      margin: 0;
+    }
+  }
+  #{ $prefix }--joined {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0;
+    // border-radius: button.get("border-radius");
+    #{ $prefix-button } {
+      position: relative; // To move to front when hover/active
+      border-radius: 0;
+      min-width: 0;
+      margin-left: -(button.get("border-width"));
+      &:first-child {
+        border-top-left-radius: $button-radius;
+        border-bottom-left-radius: $button-radius;
+        margin-left: 0;
+      }
+      &:last-child {
+        border-top-right-radius: $button-radius;
+        border-bottom-right-radius: $button-radius;
+      }
+      #{ button.get("active-selector") } {
+        z-index: 2;
+      }
+      &:hover,
+      &:focus {
+        z-index: 2;
+      }
+      
+    }
+  }
+}

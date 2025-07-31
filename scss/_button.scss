@@ -94,7 +94,7 @@ $config: (
   
 $sizes: (
   "small" : (
-    "padding":        (0.35em 1.5em),
+    "padding":        (0.35em 1em),
     "min-width":      0,
     "icon-size":      2rem,
     "icon-font-size": 1rem
@@ -118,9 +118,9 @@ $styles: (
     "border-color" : transparent,
     "box-shadow" : none,
     "hover" : (
-      "background-color" : "white",
-      "color" : inherit,
-      "border-color" : transparent,
+      "background-color" : "control-background",
+      "color" : "control",
+      "border-color" : "control-border",
     )
   ),
   "outline" : (
@@ -129,7 +129,9 @@ $styles: (
     "border-color" : "rule-light",
     "box-shadow" : none,
     "hover" : (
-      "background-color" : "white",
+      "background-color" : "control-background",
+      "color" : "control",
+      "border-color" : "control-border",
     )
   ),
 ) !default;

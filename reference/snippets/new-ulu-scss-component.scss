@@ -1,0 +1,50 @@
+////
+/// @group button-group
+/// Groups a set of buttons
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+
+/// Module Settings
+/// @type Map
+/// @prop {Color}  example  [default value] Test
+
+$config: (
+  "example":            "background",
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-button-group-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-button-group-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "button-group [config]");
+}
+
+/// Prints component styles
+/// @demo button-group
+/// @example scss
+///  @include ulu.component-button-group-styles();
+
+@mixin styles {
+  $prefix: selector.class("button-group");
+  
+  #{ $prefix } {
+    
+  }
+}

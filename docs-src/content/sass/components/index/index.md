@@ -42,6 +42,7 @@ $all-includes: (
   "badge",
   "basic-hero",
   "button",
+  "button-group",
   "button-verbose",
   "callout",
   "card",
@@ -99,8 +100,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 113-114
-- **Lines (code):** 116-168
+- **Lines (comments):** 115-116
+- **Lines (code):** 118-171
 
 </details>
 
@@ -135,8 +136,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 170-171
-- **Lines (code):** 173-173
+- **Lines (comments):** 173-174
+- **Lines (code):** 176-176
 
 </details>
 
@@ -172,8 +173,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 175-177
-- **Lines (code):** 179-182
+- **Lines (comments):** 178-180
+- **Lines (code):** 182-185
 
 </details>
 
@@ -218,8 +219,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 184-185
-- **Lines (code):** 187-189
+- **Lines (comments):** 187-188
+- **Lines (code):** 190-192
 
 </details>
 
@@ -263,8 +264,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 191-195
-- **Lines (code):** 197-355
+- **Lines (comments):** 194-198
+- **Lines (code):** 200-361
 
 </details>
 

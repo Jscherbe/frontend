@@ -6,66 +6,94 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
 
 <h2 class="h2">Default Rail (Items aligned start, vertically centered)</h2>
 <div class="rail">
-  <span class="rail__item fas fa-book" aria-hidden="true"></span>
-  <h3 class="rail__item">Title of Item</h3>
+  <div class="rail__item">
+    <h3 class="h3 no-margin">
+      <span class="color-accent fas fa-book" aria-hidden="true"></span>
+      Title of Item
+    </h3>
+  </div>
+  <div class="rail__item rail__item--pull-end">
+    <button class="button button--transparent button--icon" aria-label="Open Menu">
+      <span class="button__icon fas fa-ellipsis" aria-hidden="true"></span>
+    </button>
+  </div>
 </div>
+<div class="rule no-margin-top"></div>
+{{ placeholder.paragraph }}
 
-<h2 class="h2">Justify Content: Start</h2>
-<div class="rail rail--start">
-  <div class="rail__item">Item 1</div>
-  <div class="rail__item">Item 2</div>
-  <div class="rail__item">Item 3</div>
+<h2 class="h2">Another Example</h2>
+<div class="rail rail--justify">
+  <div class="rail__item form-theme">
+    <label for="test-input" class="type-bold">Label</label>
+    <input type="text" id="test-input">
+  </div>
+  <div class="rail__item">
+    <div class="button-group">
+      <button class="button button--small">
+        <span class="button__icon fas fa-plus" aria-hidden="true"></span>
+        <span>Add</span>
+      </button>
+      <button class="button button--small">
+        <span class="button__icon fas fa-plus" aria-hidden="true"></span>
+        <span>Add</span>
+      </button>
+      <button class="button button--small">
+        <span class="button__icon fas fa-plus" aria-hidden="true"></span>
+        <span>Add</span>
+      </button>
+    </div>
+    <!-- <div class="horizontal-rule"></div>
+    <div class="button-group">
+      <button class="button button--small">
+        <span class="button__icon fas fa-plus" aria-hidden="true"></span>
+        <span>Add
+      </button>
+    </div> -->
+  </div>
 </div>
+<div class="rule"></div>
+{{ placeholder.paragraph }}
 
-<h2 class="h2">Justify Content: End</h2>
-<div class="rail rail--end">
-  <div class="rail__item">Item A</div>
-  <div class="rail__item">Item B</div>
-  <div class="rail__item">Item C</div>
-</div>
-
-<h2 class="h2">Justify Content: Center</h2>
-<div class="rail rail--center">
+<h2 class="h2">Test No Gap</h2>
+<div class="rail">
   <div class="rail__item">One</div>
-  <div class="rail__item">Two</div>
+  <div class="rail__item rail__item--gap-none">No Gap</div>
   <div class="rail__item">Three</div>
 </div>
 
-<h2 class="h2">Justify Content: Space Around</h2>
-<div class="rail rail--space-around">
-  <div class="rail__item">First</div>
-  <div class="rail__item">Second</div>
-  <div class="rail__item">Third</div>
+<h2 class="h2">Test Gap Modifiers (larger than default)</h2>
+<div class="rail">
+  <div class="rail__item">One</div>
+  <div class="rail__item rail__item--gap-large">Large Gap</div>
+  <div class="rail__item">Three</div>
 </div>
 
-<h2 class="h2">Justify Content: Space Between</h2>
-<div class="rail rail--space-between">
-  <div class="rail__item">Alpha</div>
-  <div class="rail__item">Beta</div>
-  <div class="rail__item">Gamma</div>
+<h2 class="h2">Test Gap Modifiers (smaller than default)</h2>
+<div class="rail">
+  <div class="rail__item">One</div>
+  <div class="rail__item rail__item--gap-small">Small Gap</div>
+  <div class="rail__item">Three</div>
 </div>
 
-<h2 class="h2">Fill Items</h2>
-<div class="rail rail--fill">
-  <div class="rail__item">Small</div>
-  <div class="rail__item">Medium Length Item</div>
-  <div class="rail__item">A Very Long Item That Will Fill Space</div>
+<h2 class="h2">Test Separator</h2>
+<div class="rail">
+  <div class="rail__item">One</div>
+  <div class="rail__item rail__item--separator">Small Gap</div>
+  <div class="rail__item">Three</div>
 </div>
 
-<h2 class="h2">Align Items: Start (Vertical Alignment)</h2>
-<div class="rail rail--align-start">
-  <div class="rail__item">Tall</div>
-  <div class="rail__item">Normal</div>
-  <div class="rail__item ">Short</div>
-  <div class="rail__item">Taller</div>
+<h2 class="h2">Test Separator (with modifier for gap larger than default)</h2>
+<div class="rail">
+  <div class="rail__item">One</div>
+  <div class="rail__item rail__item--gap-large rail__item--separator">Small Gap</div>
+  <div class="rail__item">Three</div>
 </div>
 
-<h2 class="h2">Align Items: End (Vertical Alignment)</h2>
-<div class="rail rail--align-end">
-  <div class="rail__item">Tall</div>
-  <div class="rail__item">Normal</div>
-  <div class="rail__item ">Short</div>
-  <div class="rail__item">Taller</div>
+<h2 class="h2">Test Separator (with modifier for gap smaller than default)</h2>
+<div class="rail">
+  <div class="rail__item">One</div>
+  <div class="rail__item rail__item--gap-small rail__item--separator">Small Gap</div>
+  <div class="rail__item">Three</div>
 </div>
 
 <h2 class="h2">Align Items: Baseline (Vertical Alignment)</h2>
@@ -74,4 +102,17 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
   <div class="rail__item">Normal Item</div>
   <div class="rail__item type-small">Short Item</div>
   <div class="rail__item type-large-x">Taller Item</div>
+</div>
+
+<h2 class="h2">No Wrap</h2>
+<div class="rail rail--nowrap">
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
+  <div class="rail__item">Item</div>
 </div>

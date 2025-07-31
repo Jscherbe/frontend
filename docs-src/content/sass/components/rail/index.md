@@ -11,6 +11,7 @@ sassdocGroupName: rail
 A horizontal, flexible container for arranging diverse inline elements.
 It provides a consistent layout for icons, labels, buttons, or other
 modular components, aligning content to either end or centering it.
+Item spacing is controlled via margins, allowing for individual item gap adjustments.
 
 </div>
 
@@ -40,10 +41,13 @@ Module Settings
 ``` scss
 $config: (
   "gap" : 1em,
-  "align-items" : center,
-  "nowrap" : true,
-  "padding-x" : 0,
-  "padding-y" : 0,
+  "margin-bottom" : 1em,
+  "separator" : true,
+  "gap-modifiers": (
+    "small" : 0.5em,
+    "none" : 0,
+    "large" : 2em
+  ),
 );
 ```
   
@@ -55,8 +59,8 @@ $config: (
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** variable
-- **Lines (comments):** 16-22
-- **Lines (code):** 24-30
+- **Lines (comments):** 28-33
+- **Lines (code):** 35-44
 
 </details>
 
@@ -67,11 +71,10 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|gap|Dimension|1em|The space between items in the rail.|
-|align-items|CssValue|center|Vertical alignment of items within the rail (e.g., flex-start, center, flex-end).|
-|nowrap|Boolean|true|Disables wrapping of items to the next line.|
-|padding-x|Dimension|0|Horizontal padding for the rail container.|
-|padding-y|Dimension|0|Vertical padding for the rail container.|
+|gap|Dimension|1em|The default space between items in the rail|
+|gap-modifiers|Map|("small" : 0.5em, "large" : 2em )|Alternate gaps (use child modifiers .rail__item--gap-[name], these apply gap changes between the item and the item before it|
+|margin-bottom|Dimension|1em|The default space after rail|
+|separator|CssValue|true|Pass border property for separator, defaults to element rule style light|
 
     
   
@@ -104,8 +107,8 @@ Change modules $config
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** mixin
-- **Lines (comments):** 32-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 46-49
+- **Lines (code):** 51-53
 
 </details>
 
@@ -163,8 +166,8 @@ Prints component styles
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** mixin
-- **Lines (comments):** 50-52
-- **Lines (code):** 54-112
+- **Lines (comments):** 65-67
+- **Lines (code):** 69-120
 
 </details>
 
@@ -218,8 +221,8 @@ Get a config option
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** function
-- **Lines (comments):** 41-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 55-58
+- **Lines (code):** 60-63
 
 </details>
 

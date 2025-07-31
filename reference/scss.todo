@@ -1,4 +1,11 @@
 SCSS Todos:
+  ☐ Consider making buttons and other components use logical margin/padding vs physical
+    * To support writing-mode
+    * To easily use vertical writing for buttons
+    ☐ Challenge, we allow defining properties for margin/padding as shorthand (1em 2em 3em), but the new logical properties don't map to this (margin-inline, margin-block for example).
+      * We would want to handle this internally so configuration doesn't need to be refactored.
+      * We have utilities to destructure these types of shorthand into physical sides (utils.spacing-info) so we could make a utility to convert spacing to logical using that and mapping it to margin-inline-start, etc
+      * For that reason putting this in todos as it will be nice to implement in future but there isn't an immediate need
   ☐ Add icon-header or a component that can handle layouts like that
     * Would be nice if it was reusable (icon) [Text] [control]
     * So maybe don't call it icon header
