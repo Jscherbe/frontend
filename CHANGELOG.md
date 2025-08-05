@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.85
+
+- **scss/components/table-sticky.scss**
+  - New component module for vue table sticky component (not output by default when calling components-styles)
+
 ## 0.1.0-beta.84
 
 - **scss/components/rail.scss**

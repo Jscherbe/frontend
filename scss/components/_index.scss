@@ -48,6 +48,7 @@
 @forward "hero" as hero-*;
 @forward "tabs" as tabs-*;
 @forward "tag" as tag-*;
+@forward "table-sticky" as table-sticky-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
 @forward "tile-grid-overlay" as tile-grid-overlay-*;
@@ -105,6 +106,7 @@
 @use "tabs";
 @use "tag";
 @use "tile-grid";
+@use "table-sticky";
 @use "tile-button";
 @use "tile-grid-overlay";
 @use "vignette";
@@ -159,6 +161,7 @@ $all-includes: (
   "hero",
   "tabs",
   "tag",
+  // "table-sticky", // Has to be included (for vue plugin)
   "tile-grid",
   "tile-button",
   "tile-grid-overlay",
@@ -336,6 +339,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "tabs")) {
     @include tabs.styles;
+  }
+  @if (list.index($includes, "table-sticky")) {
+    @include table-sticky.styles;
   }
   @if (list.index($includes, "tile-grid")) {
     @include tile-grid.styles;
