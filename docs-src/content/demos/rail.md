@@ -12,7 +12,7 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
       Title of Item
     </h3>
   </div>
-  <div class="rail__item rail__item--pull-end">
+  <div class="rail__item rail__item--pull">
     <button class="button button--transparent button--icon" aria-label="Open Menu">
       <span class="button__icon fas fa-ellipsis" aria-hidden="true"></span>
     </button>
@@ -22,7 +22,7 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
 {{ placeholder.paragraph }}
 
 <h2 class="h2">Another Example</h2>
-<div class="rail rail--justify">
+<div class="rail rail--justified">
   <div class="rail__item form-theme">
     <label for="test-input" class="type-bold">Label</label>
     <input type="text" id="test-input">
