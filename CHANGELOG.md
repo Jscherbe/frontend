@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.86
+
+- **scss/components/wysiwyg.scss**
+  - Add option for "exclude-selector" (.wysiwyg__exclude), that is applied to all selectors now
+    - Remove it from "ul-excluded-selectors" and "img-excluded-selectors" as it will always included by "exclude-selector" now
+  - Move margins for <ul>/<ol> will apply only if not excluded (so if excluded it will not have any styles applied)
+
 ## 0.1.0-beta.85
 
 - **scss/components/table-sticky.scss**

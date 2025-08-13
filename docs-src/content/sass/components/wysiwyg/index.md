@@ -37,8 +37,10 @@ Module Settings
 
 ``` scss
 $config: (
-  "img-excluded-selectors" : (".wysiwyg__exclude",),
-  "ul-excluded-selectors" : (".list-lines", ".wysiwyg__exclude"),
+  "exclude-selector" : ".wysiwyg__exclude",
+  "img-excluded-selectors" : (),
+  "ul-excluded-selectors" : (".list-lines",),
+  "link-excluded-selectors" : ("[class]",),
   "headline-sizes" : (
     "h2" : "h2",
     "h3" : "h3",
@@ -57,8 +59,8 @@ $config: (
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** variable
-- **Lines (comments):** 14-18
-- **Lines (code):** 20-30
+- **Lines (comments):** 14-20
+- **Lines (code):** 22-34
 
 </details>
 
@@ -67,11 +69,13 @@ $config: (
 #### Map Properties
 
 
-|Name|Type|Default|
-|:--|:--|:--|
-|img-excluded-selectors|List|(".wysiwyg__exclude",)|
-|ul-excluded-selectors|List|(".list-lines", ".wysiwyg__exclude")|
-|headline-sizes|Map|Map|
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|exclude-selector|String|".wysiwyg__exclude"|Applied to all selectors|
+|img-excluded-selectors|List|()|Extra selectors to prevent <img> styling|
+|ul-excluded-selectors|List|(".list-lines",)|Extra selectors to prevent <ul> styling|
+|link-excluded-selectors|List|("[class|",)] Extra selectors to prevent <a> styling|
+|headline-sizes|Map|Map|Headlines from typography sizes (ElementName : TypographySizeName, ...)|
 
     
   
@@ -104,8 +108,8 @@ Change modules $config
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
-- **Lines (comments):** 32-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 36-39
+- **Lines (code):** 41-43
 
 </details>
 
@@ -164,8 +168,8 @@ Output component stylesheet
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** mixin
-- **Lines (comments):** 50-55
-- **Lines (code):** 57-65
+- **Lines (comments):** 54-59
+- **Lines (code):** 61-69
 
 </details>
 
@@ -216,8 +220,8 @@ Get a config option
 - **File:** _wysiwyg.scss
 - **Group:** wysiwyg
 - **Type:** function
-- **Lines (comments):** 41-44
-- **Lines (code):** 46-48
+- **Lines (comments):** 45-48
+- **Lines (code):** 50-52
 
 </details>
 

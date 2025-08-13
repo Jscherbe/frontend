@@ -13,13 +13,17 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {List} img-excluded-selectors [(".wysiwyg__exclude",)]
-/// @prop {List} ul-excluded-selectors [(".list-lines", ".wysiwyg__exclude")]
-/// @prop {Map} headline-sizes [Map]
+/// @prop {String} exclude-selector [".wysiwyg__exclude"] Applied to all selectors
+/// @prop {List} img-excluded-selectors [()] Extra selectors to prevent <img> styling
+/// @prop {List} ul-excluded-selectors [(".list-lines",)] Extra selectors to prevent <ul> styling
+/// @prop {List} link-excluded-selectors [("[class]",)] Extra selectors to prevent <a> styling
+/// @prop {Map} headline-sizes [Map] Headlines from typography sizes (ElementName : TypographySizeName, ...)
 
 $config: (
-  "img-excluded-selectors" : (".wysiwyg__exclude",),
-  "ul-excluded-selectors" : (".list-lines", ".wysiwyg__exclude"),
+  "exclude-selector" : ".wysiwyg__exclude",
+  "img-excluded-selectors" : (),
+  "ul-excluded-selectors" : (".list-lines",),
+  "link-excluded-selectors" : ("[class]",),
   "headline-sizes" : (
     "h2" : "h2",
     "h3" : "h3",
@@ -66,24 +70,28 @@ $config: (
 
 // Internal mixin
 @mixin _styles() {
-  $ul-excludes: list.join(get("ul-excluded-selectors"), (), $separator: comma);
-  $img-excludes: list.join(get("img-excluded-selectors"), (), $separator: comma);
+  $exclude-selector: get("exclude-selector");
+  $ul-excludes: list.join(get("ul-excluded-selectors"), ($exclude-selector), $separator: comma);
+  $img-excludes: list.join(get("img-excluded-selectors"), ($exclude-selector), $separator: comma);
+  $link-excludes: list.join(get("link-excluded-selectors"), ($exclude-selector), $separator: comma);
 
-  a:not([class]) {
+  a:not(#{ $link-excludes }) {
     @include element.link($visited: true, $active: true);
   }
   ul:not(#{ $ul-excludes }) {
     @include element.styles-unordered-list();
-  }
-  ol {
-    @include element.styles-ordered-list(inherit);
-  }
-  ul,
-  ol {
     margin-bottom: element.get("margin");
   }
+  ol:not(#{ $exclude-selector }) {
+    @include element.styles-ordered-list(inherit);
+    margin-bottom: element.get("margin");
+  }
+  // ul,
+  // ol {
+  //   margin-bottom: element.get("margin");
+  // }
   @each $element, $size in get("headline-sizes") {
-    #{ $element } {
+    #{ $element }:not(#{ $exclude-selector }) {
       @include typography.size($size);
     }
   }
