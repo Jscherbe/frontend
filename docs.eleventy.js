@@ -24,6 +24,7 @@ export default async function(eleventyConfig) {
     domDiff: false, // Messes up asset server (removes vite embedded styles from head)
   }); 
   eleventyConfig.addPassthroughCopy("src");
+  eleventyConfig.addPassthroughCopy("docs-src/content/.nojekyll"); 
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
   eleventyConfig.addWatchTarget("docs-src/content/**/*.twig");
 
