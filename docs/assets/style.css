@@ -17604,7 +17604,7 @@ button.captioned-figure:focus {
           animation-delay: 0s;
 }
 
-.wysiwyg a:not([class]) {
+.wysiwyg a:not([class], .wysiwyg__exclude) {
   color: var(--site-color-link);
   text-decoration: underline;
   text-decoration-style: solid;
@@ -17612,19 +17612,20 @@ button.captioned-figure:focus {
   text-decoration-thickness: 1px;
   text-underline-offset: auto;
 }
-.wysiwyg a:not([class]):hover {
+.wysiwyg a:not([class], .wysiwyg__exclude):hover {
   color: var(--site-color-link-hover);
   text-decoration-style: solid;
   text-decoration-color: false;
 }
-.wysiwyg a:not([class]):visited {
+.wysiwyg a:not([class], .wysiwyg__exclude):visited {
   color: var(--site-color-link-visited);
 }
-.wysiwyg a:not([class]):active {
+.wysiwyg a:not([class], .wysiwyg__exclude):active {
   color: var(--site-color-link-active);
 }
 .wysiwyg ul:not(.list-lines, .wysiwyg__exclude) {
   list-style: disc outside;
+  margin-bottom: 1em;
 }
 .wysiwyg ul:not(.list-lines, .wysiwyg__exclude) li {
   margin-left: 1.5em;
@@ -17644,33 +17645,30 @@ button.captioned-figure:focus {
   margin-top: 0.65em;
   margin-bottom: 0.65em;
 }
-.wysiwyg ol {
+.wysiwyg ol:not(.wysiwyg__exclude) {
   margin-bottom: 1em;
   list-style: decimal outside;
+  margin-bottom: 1em;
 }
-.wysiwyg ol li {
+.wysiwyg ol:not(.wysiwyg__exclude) li {
   margin-bottom: 0.65em;
   margin-left: 1.5em;
 }
-.wysiwyg ol > li::marker {
+.wysiwyg ol:not(.wysiwyg__exclude) > li::marker {
   color: inherit;
 }
-.wysiwyg ol ol {
+.wysiwyg ol:not(.wysiwyg__exclude) ol {
   list-style-type: lower-alpha;
 }
-.wysiwyg ol ol ol {
+.wysiwyg ol:not(.wysiwyg__exclude) ol ol {
   list-style-type: lower-roman;
 }
-.wysiwyg ol ul,
-.wysiwyg ol ol {
+.wysiwyg ol:not(.wysiwyg__exclude) ul,
+.wysiwyg ol:not(.wysiwyg__exclude) ol {
   margin-top: 0.65em;
   margin-bottom: 0.65em;
 }
-.wysiwyg ul,
-.wysiwyg ol {
-  margin-bottom: 1em;
-}
-.wysiwyg h2 {
+.wysiwyg h2:not(.wysiwyg__exclude) {
   font-size: 2.375rem;
   font-size: calc(2.375rem + 0.05vw);
   font-weight: bold;
@@ -17679,7 +17677,7 @@ button.captioned-figure:focus {
   margin-bottom: 1em;
   color: var(--site-color-accent);
 }
-.wysiwyg h3 {
+.wysiwyg h3:not(.wysiwyg__exclude) {
   font-size: 1.600361165rem;
   font-size: calc(1.600361165rem + 0.05vw);
   font-weight: bold;
@@ -17687,7 +17685,7 @@ button.captioned-figure:focus {
   margin-bottom: 1em;
   color: var(--site-color-type-secondary);
 }
-.wysiwyg h4 {
+.wysiwyg h4:not(.wysiwyg__exclude) {
   font-size: 1.4228643659rem;
   font-size: calc(1.4228643659rem + 0.05vw);
   font-weight: bold;
@@ -17695,7 +17693,7 @@ button.captioned-figure:focus {
   margin-bottom: 1em;
   color: var(--site-color-type-secondary);
 }
-.wysiwyg h5 {
+.wysiwyg h5:not(.wysiwyg__exclude) {
   font-size: 1.265053819rem;
   font-size: calc(1.265053819rem + 0.05vw);
   font-weight: bold;
@@ -17703,7 +17701,7 @@ button.captioned-figure:focus {
   margin-bottom: 1em;
   color: var(--site-color-type-secondary);
 }
-.wysiwyg h6 {
+.wysiwyg h6:not(.wysiwyg__exclude) {
   font-size: 1.1247461131rem;
   font-size: calc(1.1247461131rem + 0.05vw);
   font-weight: bold;
@@ -17711,7 +17709,7 @@ button.captioned-figure:focus {
   margin-bottom: 1em;
   color: var(--site-color-type-secondary);
 }
-.wysiwyg h1 {
+.wysiwyg h1:not(.wysiwyg__exclude) {
   font-size: 3.125rem;
   font-size: calc(3.125rem + 0.05vw);
   font-weight: bold;
