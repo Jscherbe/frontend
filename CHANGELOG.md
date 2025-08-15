@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.87
+
+- Remove **scss/components/table-sticky.scss** from components
+  - This stylesheet/module will be available in the "frontend-vue" library with it's dedicated Vue component. This library will be released/ready in the near future.
+
 ## 0.1.0-beta.86
 
 - **scss/components/wysiwyg.scss**

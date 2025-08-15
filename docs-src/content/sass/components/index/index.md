@@ -80,7 +80,6 @@ $all-includes: (
   "hero",
   "tabs",
   "tag",
-  // "table-sticky", // Has to be included (for vue plugin)
   "tile-grid",
   "tile-button",
   "tile-grid-overlay",
@@ -101,8 +100,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 117-118
-- **Lines (code):** 120-174
+- **Lines (comments):** 115-116
+- **Lines (code):** 118-171
 
 </details>
 
@@ -137,8 +136,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 176-177
-- **Lines (code):** 179-179
+- **Lines (comments):** 173-174
+- **Lines (code):** 176-176
 
 </details>
 
@@ -174,8 +173,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 181-183
-- **Lines (code):** 185-188
+- **Lines (comments):** 178-180
+- **Lines (code):** 182-185
 
 </details>
 
@@ -220,8 +219,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 190-191
-- **Lines (code):** 193-195
+- **Lines (comments):** 187-188
+- **Lines (code):** 190-192
 
 </details>
 
@@ -265,8 +264,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 197-201
-- **Lines (code):** 203-367
+- **Lines (comments):** 194-198
+- **Lines (code):** 200-361
 
 </details>
 
