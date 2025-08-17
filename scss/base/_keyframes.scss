@@ -174,4 +174,14 @@
       transform: scale(1);
     }
   }
+  @keyframes UluWiggle {
+    0% { transform: rotate(0deg); }
+    84% { transform: rotate(0deg); }
+    88% { transform: rotate(2deg); }
+    90% { transform: rotate(-2deg); }
+    92% { transform: rotate(0deg); }
+    94% { transform: rotate(2deg); }
+    96% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+  }
 }

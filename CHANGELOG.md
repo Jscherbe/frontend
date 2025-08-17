@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.88
+
+- **scss/base/_keyframes.scss** - Add UluWiggle (used in toast frontend-vue)
+
 ## 0.1.0-beta.87
 
 - Remove **scss/components/table-sticky.scss** from components
