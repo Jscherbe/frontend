@@ -1,4 +1,6 @@
 Todos:
+  ☐ Need to take the docs system and separate it into modules so we can use it in the frontend-vue library
+    ☐ Although may consider just using the sassdoc-to-markdown library in there for sass @uncertain
   ☐ Guide on how to use CSS Variables for colors
   ☐ Need to clean up package.json devDependencies
     * still has old dependencies and some that were added for current version but aren't being used
