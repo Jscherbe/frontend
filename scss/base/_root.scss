@@ -6,6 +6,7 @@
 @use "sass:map";
 
 @use "../utils";
+@use "../cssvar";
 
 /// Output custom properties in :root for base stylesheet
 /// @example scss
@@ -16,6 +17,7 @@
   // Core/default css-vars
   :root {
     @include custom-properties();
+    @include cssvar.declare-breakpoint();
   }
 }
 

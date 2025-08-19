@@ -65,7 +65,6 @@ $config: (
   }
   body {
     @include styles-body();
-    @include breakpoint.embed-for-scripts();
   }
   h1, 
   h2, 

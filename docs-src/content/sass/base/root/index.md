@@ -42,8 +42,8 @@ Output custom properties in :root for base stylesheet
 - **File:** _root.scss
 - **Group:** root
 - **Type:** mixin
-- **Lines (comments):** 10-12
-- **Lines (code):** 14-20
+- **Lines (comments):** 11-13
+- **Lines (code):** 15-22
 
 </details>
 
@@ -92,8 +92,8 @@ Output custom properties for ulu
 - **File:** _root.scss
 - **Group:** root
 - **Type:** mixin
-- **Lines (comments):** 22-22
-- **Lines (code):** 24-28
+- **Lines (comments):** 24-24
+- **Lines (code):** 26-30
 
 </details>
 

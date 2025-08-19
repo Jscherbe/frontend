@@ -206,25 +206,6 @@ body {
   font-size: calc(1rem + 0.05vw);
   line-height: 1.5;
 }
-body::before {
-  display: none;
-  content: "none";
-}
-@media screen and (min-width: 43.5em) {
-  body::before {
-    content: "small";
-  }
-}
-@media screen and (min-width: 72.875em) {
-  body::before {
-    content: "medium";
-  }
-}
-@media screen and (min-width: 82.25em) {
-  body::before {
-    content: "large";
-  }
-}
 
 h1,
 h2,
@@ -1201,25 +1182,9 @@ base:color
   --site-sticky-offset-top: calc(var(--site-header-height) + var(--site-sticky-margin));
   --site-fullscreen-height: calc(100vh - var(--site-header-height));
   --ulu-sticky-top-offset: var(--site-sticky-offset-top);
-  --site-breakpoint: none;
 }
 :root.fullscreen-layout {
   --site-header-height: 3.75rem;
-}
-@media screen and (min-width: 43.5em) {
-  :root {
-    --site-breakpoint: small;
-  }
-}
-@media screen and (min-width: 72.875em) {
-  :root {
-    --site-breakpoint: medium;
-  }
-}
-@media screen and (min-width: 82.25em) {
-  :root {
-    --site-breakpoint: large;
-  }
 }
 
 html {

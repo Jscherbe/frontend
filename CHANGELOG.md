@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.89
+
+- **scss/base/elements** - Remove old breakpoints.embed-for-scripts (puts active breakpoint on body hidden pseudo)
+- **scss/base/root** - Add cssvar.declare-breakpoint() so that site's using base will have breakpoints by default
+
 ## 0.1.0-beta.88
 
 - **scss/base/_keyframes.scss** - Add UluWiggle (used in toast frontend-vue)
