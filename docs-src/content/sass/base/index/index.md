@@ -38,7 +38,7 @@ Default includes, all modules
 ``` scss
 $all-includes: (
   "normalize",
-  "root"
+  "root",
   "elements," 
   "print", 
   "elements", 

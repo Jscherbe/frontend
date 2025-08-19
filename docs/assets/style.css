@@ -179,6 +179,33 @@ summary {
 
 /* 
 =============================================================================
+base:root
+============================================================================= 
+*/
+:root {
+  --ulu-sticky-top-offset: 0px;
+  --ulu-sticky-bottom-offset: 0px;
+  --ulu-scrollbar-width: 0px;
+  --site-breakpoint: none;
+}
+@media screen and (min-width: 43.5em) {
+  :root {
+    --site-breakpoint: small;
+  }
+}
+@media screen and (min-width: 72.875em) {
+  :root {
+    --site-breakpoint: medium;
+  }
+}
+@media screen and (min-width: 82.25em) {
+  :root {
+    --site-breakpoint: large;
+  }
+}
+
+/* 
+=============================================================================
 base:elements
 ============================================================================= 
 */

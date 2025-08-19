@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.91
+
+- Fix mistake in $includes in base scss module
+
 ## 0.1.0-beta.90
 
 - Fix missing file-header comments in base scss modules
