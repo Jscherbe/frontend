@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.90
+
+- Fix missing file-header comments in base scss modules
+
 ## 0.1.0-beta.89
 
 - **scss/base/elements** - Remove old breakpoints.embed-for-scripts (puts active breakpoint on body hidden pseudo)

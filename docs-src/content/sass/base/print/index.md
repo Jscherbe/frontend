@@ -45,7 +45,7 @@ Printed Media Stylesheet
 - **Group:** print
 - **Type:** mixin
 - **Lines (comments):** 6-10
-- **Lines (code):** 12-49
+- **Lines (code):** 12-51
 
 </details>
 
