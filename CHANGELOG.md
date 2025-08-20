@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.93
+
+- **scss/component/card** - Change default $config "color" from null to "type" as it should always have a color set so that when used as a link this color is used vs link color
+
 ## 0.1.0-beta.92
 
 - **scss/component/badge** - Add button/a in selector list for clickable styles (still includes badge--clickable modifier but if using button/a these styles will be used also)
