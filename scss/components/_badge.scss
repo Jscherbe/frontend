@@ -26,8 +26,9 @@ $-fallbacks: (
 /// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
 /// @prop {Number} font-weight [bold] Font weight
 /// @prop {Number} font-family [true] Specify font family, defaults to typography font-family-sans
-/// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
 /// @prop {Number} width [10rem] Width of badge (default size)
+/// @prop {Number} hover-scale [1.2] Scale of badge (if clickable) on hover (enlarges badge)
+/// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
 
 $config: (
   "background-color":    gray,
@@ -37,6 +38,7 @@ $config: (
   "font-weight":         bold,
   "font-family":         true,
   "width":               7rem,
+  "hover-scale":         1.2,
   "sizes" : (
     "small" : (
       "font-size" : 1.2rem,
@@ -117,11 +119,13 @@ $config: (
       color: color.get(get("color"));
     }
   }
-  #{ $prefix }--clickable {
+  #{ $prefix }--clickable,
+  button#{ $prefix },
+  a#{ $prefix } {
     &:hover,
     &:focus {
       #{ $prefix }__inner {
-        transform: scale(1.2);
+        transform: scale(get("hover-scale"));
       }
     }
   }

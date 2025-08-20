@@ -1,0 +1,84 @@
+////
+/// @group badge-stack
+/// Stacks badges
+////
+
+@use "sass:map";
+@use "../utils";
+@use "../selector";
+@use "../color";
+@use "badge";
+
+/// Module Settings
+/// @type Map
+/// @prop {Dimension} width [10rem] Width of the badge stack
+/// @prop {Dimension} overlap [-5px] Right margin for stacked items
+/// @prop {Dimension} border-width [3px] Border width for stacked items
+
+$config: (
+  "width": 10rem,
+  "overlap": -5px,
+  "border-width": 3px,
+  "border-color" : "accent"
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-badge-stack-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-badge-stack-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "badge-stack [config]");
+}
+
+/// Prints component styles
+/// @demo badge-stack
+/// @example scss
+///  @include ulu.component-badge-stack-styles();
+
+@mixin styles {
+  $prefix: selector.class("badge-stack");
+  $prefix-badge: selector.class("badge");
+
+  #{ $prefix } {
+    width: get("width");
+    display: flex;
+  }
+  #{ $prefix }__item {
+    flex: 0 1 min-content;
+    margin-right: get("overlap");
+
+    #{ $prefix-badge }__inner {
+      // box-shadow: ulu.element-get("box-shadow");
+      position: relative;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+        border-radius: badge.get("border-radius");
+        border: get("border-width") solid color.get(get("border-color"));
+      }
+    }
+    #{ $prefix-badge } {
+      &:focus,
+      &:hover {
+        #{ $prefix-badge }__inner {
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

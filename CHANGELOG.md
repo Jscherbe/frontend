@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.92
+
+- **scss/component/badge** - Add button/a in selector list for clickable styles (still includes badge--clickable modifier but if using button/a these styles will be used also)
+- **scss/component/badge-stack** - Add new component for badge lists
+
 ## 0.1.0-beta.91
 
 - Fix mistake in $includes in base scss module

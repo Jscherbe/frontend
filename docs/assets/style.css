@@ -12584,7 +12584,11 @@ component:button
   color: black;
 }
 
-.badge--clickable:hover .badge__inner, .badge--clickable:focus .badge__inner {
+.badge--clickable:hover .badge__inner, .badge--clickable:focus .badge__inner,
+button.badge:hover .badge__inner,
+button.badge:focus .badge__inner,
+a.badge:hover .badge__inner,
+a.badge:focus .badge__inner {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -12620,6 +12624,37 @@ component:button
   font-size: 2.75rem;
   -ms-flex-preferred-size: 9rem;
       flex-basis: 9rem;
+}
+
+.badge-stack {
+  width: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.badge-stack__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 min-content;
+          flex: 0 1 min-content;
+  margin-right: -5px;
+}
+.badge-stack__item .badge__inner {
+  position: relative;
+}
+.badge-stack__item .badge__inner:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  border-radius: 50%;
+  border: 3px solid var(--site-color-accent);
+}
+.badge-stack__item .badge:focus .badge__inner, .badge-stack__item .badge:hover .badge__inner {
+  z-index: 2;
 }
 
 .basic-hero {

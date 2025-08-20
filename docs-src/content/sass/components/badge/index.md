@@ -44,6 +44,7 @@ $config: (
   "font-weight":         bold,
   "font-family":         true,
   "width":               7rem,
+  "hover-scale":         1.2,
   "sizes" : (
     "small" : (
       "font-size" : 1.2rem,
@@ -65,8 +66,8 @@ $config: (
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** variable
-- **Lines (comments):** 21-30
-- **Lines (code):** 32-50
+- **Lines (comments):** 21-31
+- **Lines (code):** 33-52
 
 </details>
 
@@ -83,8 +84,9 @@ $config: (
 |font-size|Number|1.3rem|Font size (basic ie. 1.3rem) for badge|
 |font-weight|Number|bold|Font weight|
 |font-family|Number|true|Specify font family, defaults to typography font-family-sans|
-|sizes|List|Object|List of other sizes (large by default), each size is a map of (width, font-size)|
 |width|Number|10rem|Width of badge (default size)|
+|hover-scale|Number|1.2|Scale of badge (if clickable) on hover (enlarges badge)|
+|sizes|List|Object|List of other sizes (large by default), each size is a map of (width, font-size)|
 
     
   
@@ -117,8 +119,8 @@ Change modules $config
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 52-55
-- **Lines (code):** 57-59
+- **Lines (comments):** 54-57
+- **Lines (code):** 59-61
 
 </details>
 
@@ -176,8 +178,8 @@ Output badge component styles
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** mixin
-- **Lines (comments):** 71-85
-- **Lines (code):** 87-149
+- **Lines (comments):** 73-87
+- **Lines (code):** 89-153
 
 </details>
 
@@ -270,8 +272,8 @@ Get a config option
 - **File:** _badge.scss
 - **Group:** badge
 - **Type:** function
-- **Lines (comments):** 61-64
-- **Lines (code):** 66-69
+- **Lines (comments):** 63-66
+- **Lines (code):** 68-71
 
 </details>
 
