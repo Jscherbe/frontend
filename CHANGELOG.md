@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.94
+
+- **scss/component/rail** - Add "rail--rule" modifier (adds rule below rail)
+
 ## 0.1.0-beta.93
 
 - **scss/component/card** - Change default $config "color" from null to "type" as it should always have a color set so that when used as a link this color is used vs link color

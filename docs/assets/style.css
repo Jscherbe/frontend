@@ -16680,8 +16680,13 @@ ul.list-inline,
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   max-width: 100%;
+}
+
+.rail--rule {
+  border-bottom: 1px solid var(--site-color-rule);
+  padding-bottom: 1em;
 }
 
 .rail--justified {

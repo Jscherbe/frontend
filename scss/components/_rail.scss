@@ -34,13 +34,16 @@ $-fallbacks: (
 
 $config: (
   "gap" : 1em,
-  "margin-bottom" : 1em,
+  "margin-bottom" : 1.5em,
   "separator" : true,
   "gap-modifiers": (
     "small" : 0.5em,
     "none" : 0,
     "large" : 2em
   ),
+  "rule-size" : 1px,
+  "rule-color" : "rule",
+  "rule-margin" : 1em
 ) !default;
 
 /// Change modules $config
@@ -77,6 +80,10 @@ $config: (
     gap: $gap;
     margin-bottom: get("margin-bottom");
     max-width: 100%;
+  }
+  #{ $prefix }--rule {
+    border-bottom: get("rule-size") solid color.get(get("rule-color"));
+    padding-bottom: get("rule-margin");
   }
 
   // Modifiers

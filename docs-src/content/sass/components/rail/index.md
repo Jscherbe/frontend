@@ -41,13 +41,16 @@ Module Settings
 ``` scss
 $config: (
   "gap" : 1em,
-  "margin-bottom" : 1em,
+  "margin-bottom" : 1.5em,
   "separator" : true,
   "gap-modifiers": (
     "small" : 0.5em,
     "none" : 0,
     "large" : 2em
   ),
+  "rule-size" : 1px,
+  "rule-color" : "rule",
+  "rule-margin" : 1em
 );
 ```
   
@@ -60,7 +63,7 @@ $config: (
 - **Group:** rail
 - **Type:** variable
 - **Lines (comments):** 28-33
-- **Lines (code):** 35-44
+- **Lines (code):** 35-47
 
 </details>
 
@@ -107,8 +110,8 @@ Change modules $config
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** mixin
-- **Lines (comments):** 46-49
-- **Lines (code):** 51-53
+- **Lines (comments):** 49-52
+- **Lines (code):** 54-56
 
 </details>
 
@@ -166,8 +169,8 @@ Prints component styles
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** mixin
-- **Lines (comments):** 65-67
-- **Lines (code):** 69-120
+- **Lines (comments):** 68-70
+- **Lines (code):** 72-127
 
 </details>
 
@@ -221,8 +224,8 @@ Get a config option
 - **File:** _rail.scss
 - **Group:** rail
 - **Type:** function
-- **Lines (comments):** 55-58
-- **Lines (code):** 60-63
+- **Lines (comments):** 58-61
+- **Lines (code):** 63-66
 
 </details>
 

@@ -43,7 +43,7 @@ $palette: (
   "white"                   : white,
   "type"                    : black,
   "type-secondary"          : rgb(82, 82, 82),
-  "type-tertiary"           : rgb(157, 157, 157),
+  "type-tertiary"           : rgb(125, 125, 125),
   "headline"                : inherit,
   "background"              : white,
   "background-gray"         : #fafafa,
