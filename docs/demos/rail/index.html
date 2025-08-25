@@ -5543,11 +5543,25 @@
   <hr class="rule rule--light rule--margin-large">
 
     <h2 class="h2">Default Rail (Items aligned start, vertically centered)</h2>
-<div class="rail rail--rule">
+<div class="rail rail--rule rail--nowrap">
   <div class="rail__item">
-    <h3 class="h3 no-margin">
-      <span class="color-accent fas fa-book" aria-hidden="true"></span>
-      Title of Item
+    <h3 class="h3 no-margin type-max-width-small layout-flex-baseline">
+      <span class="color-accent fas fa-book margin-right-small" aria-hidden="true"></span>
+      <span>Title of Item</span>
+    </h3>
+  </div>
+  <div class="rail__item rail__item--pull">
+    <button class="button button--transparent button--icon no-margin" aria-label="Open Menu">
+      <span class="button__icon fas fa-ellipsis" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+<div class="rail rail--rule rail--nowrap">
+  <div class="rail__item">
+    <h3 class="h3 no-margin type-max-width-small layout-flex-baseline">
+      <span class="color-accent fas fa-book margin-right-small" aria-hidden="true"></span>
+      <span> This is testing a long title to see how we might need to handle max width</span>
     </h3>
   </div>
   <div class="rail__item rail__item--pull">

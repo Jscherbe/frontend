@@ -5,11 +5,11 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
 ---
 
 <h2 class="h2">Default Rail (Items aligned start, vertically centered)</h2>
-<div class="rail rail--rule">
+<div class="rail rail--rule rail--nowrap">
   <div class="rail__item">
-    <h3 class="h3 no-margin">
-      <span class="color-accent fas fa-book" aria-hidden="true"></span>
-      Title of Item
+    <h3 class="h3 no-margin type-max-width-small layout-flex-baseline">
+      <span class="color-accent fas fa-book margin-right-small" aria-hidden="true"></span>
+      <span>Title of Item</span>
     </h3>
   </div>
   <div class="rail__item rail__item--pull">
@@ -18,9 +18,27 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
     </button>
   </div>
 </div>
+
+{{ placeholder.paragraph }}
+
+<div class="rail rail--rule rail--nowrap">
+  <div class="rail__item">
+    <h3 class="h3 no-margin type-max-width-small layout-flex-baseline">
+      <span class="color-accent fas fa-book margin-right-small" aria-hidden="true"></span>
+      <span> This is testing a long title to see how we might need to handle max width</span>
+    </h3>
+  </div>
+  <div class="rail__item rail__item--pull">
+    <button class="button button--transparent button--icon no-margin" aria-label="Open Menu">
+      <span class="button__icon fas fa-ellipsis" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
 {{ placeholder.paragraph }}
 
 <h2 class="h2">Another Example</h2>
+
 <div class="rail rail--justified rail--rule">
   <div class="rail__item form-theme">
     <label for="test-input" class="type-bold">Label</label>
