@@ -1,10 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.96
+
+- **scss/components/skeleton** - Change alt background color default
+
 ## 0.1.0-beta.95
 
 - **scss/components/skeleton** - Add new skeleton component and demo page (`docs-src/content/demos/skeleton.html`)
-
-
 
 ## 0.1.0-beta.94
 
