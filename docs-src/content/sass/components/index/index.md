@@ -75,6 +75,7 @@ $all-includes: (
   "ratio-box",
   "rule",
   "scroll-slider",
+  "skeleton",
   "skip-link",
   "sticky-list",
   "slider",
@@ -101,8 +102,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 117-118
-- **Lines (code):** 120-174
+- **Lines (comments):** 119-120
+- **Lines (code):** 122-177
 
 </details>
 
@@ -137,8 +138,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 176-177
-- **Lines (code):** 179-179
+- **Lines (comments):** 179-180
+- **Lines (code):** 182-182
 
 </details>
 
@@ -174,8 +175,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 181-183
-- **Lines (code):** 185-188
+- **Lines (comments):** 184-186
+- **Lines (code):** 188-191
 
 </details>
 
@@ -220,8 +221,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 190-191
-- **Lines (code):** 193-195
+- **Lines (comments):** 193-194
+- **Lines (code):** 196-198
 
 </details>
 
@@ -265,8 +266,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 197-201
-- **Lines (code):** 203-367
+- **Lines (comments):** 200-204
+- **Lines (code):** 206-373
 
 </details>
 

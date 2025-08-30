@@ -184,4 +184,9 @@
     96% { transform: rotate(-2deg); }
     100% { transform: rotate(0deg); }
   }
+  @keyframes UluPulse {
+    50% {
+      opacity: 0.5;
+    }
+  }
 }

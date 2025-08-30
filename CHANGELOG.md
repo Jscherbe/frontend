@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0-beta.95
+
+- **scss/components/skeleton** - Add new skeleton component and demo page (`docs-src/content/demos/skeleton.html`)
+
+
+
 ## 0.1.0-beta.94
 
 - **scss/component/rail** - Add "rail--rule" modifier (adds rule below rail)

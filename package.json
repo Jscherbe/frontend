@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.1.0-beta.94",
+  "version": "0.1.0-beta.95",
   "description": "A versatile SCSS and JavaScript component library offering configurable, accessible components and flexible integration into any project, with SCSS modules suitable for modern JS frameworks.",
   "browser": "js/index.js",
   "main": "index.js",

@@ -43,6 +43,7 @@
 @forward "ratio-box" as ratio-box-*;
 @forward "rule" as rule-*;
 @forward "scroll-slider" as scroll-slider-*;
+@forward "skeleton" as skeleton-*;
 @forward "skip-link" as skip-link-*;
 @forward "sticky-list" as sticky-list-*;
 @forward "slider" as slider-*;
@@ -100,6 +101,7 @@
 @use "ratio-box";
 @use "rule";
 @use "scroll-slider";
+@use "skeleton";
 @use "skip-link";
 @use "sticky-list";
 @use "slider";
@@ -156,6 +158,7 @@ $all-includes: (
   "ratio-box",
   "rule",
   "scroll-slider",
+  "skeleton",
   "skip-link",
   "sticky-list",
   "slider",
@@ -330,6 +333,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "scroll-slider")) {
     @include scroll-slider.styles;
+  }
+  @if (list.index($includes, "skeleton")) {
+    @include skeleton.styles;
   }
   @if (list.index($includes, "skip-link")) {
     @include skip-link.styles;

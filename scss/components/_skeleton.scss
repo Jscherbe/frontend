@@ -1,0 +1,117 @@
+////
+/// @group skeleton
+/// Placeholder component for skeleton (ie. loading state
+////
+
+@use "sass:map";
+@use "sass:list";
+@use "sass:math";
+@use "sass:meta";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../element";
+
+
+// Used for function fallback
+$-fallbacks: (
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {CssValue} animation [pulse 2s cubic-bezier(0.4,0,0.6,1) infinite] The animation applied to skeleton elements.
+/// @prop {Color} color [type-disabled] The base color for skeleton elements.
+/// @prop {Color} background-color [#cbcbcb] The primary background color for skeleton elements.
+/// @prop {Color} background-color-alt [#aeaeae] An alternative background color for skeleton elements, used for variations.
+/// @prop {Dimension} border-radius [true] The border-radius for skeleton blocks and text. If set to true, uses the element.scss property for "border-radius".
+/// @prop {Dimension} inline-margin [0.35em] The margin between inline skeleton text elements.
+/// @prop {Number} media-ratio [(4/3)] The aspect ratio for skeleton media blocks (width/height).
+/// @prop {Dimension} text-border-radius [3em] The border-radius for skeleton text lines.
+/// @prop {Map} text-sizes [Map] A map defining various width percentages for skeleton text lines.
+$config: (
+  "animation" : UluPulse 2s cubic-bezier(0.4,0,0.6,1) infinite,
+  "color" : "type-disabled",
+  "background-color" : #e2e2e2,
+  "background-color-alt" : #cecece,
+  "border-radius": true,
+  "inline-margin" : 0.35em,
+  "media-ratio" : list.slash(4, 3),
+  "text-border-radius" : 3em,
+  "text-sizes": (
+    "small-xxx" : 10%,
+    "small-xx" : 20%,
+    "small-x" : 30%,
+    "small" : 40%,
+    "large" : 70%,
+    "large-x" : 85%,
+    "large-xx" : 100%
+  ),
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-skeleton-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-skeleton-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "skeleton [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo skeleton
+/// @example scss
+///  @include ulu.component-skeleton-styles();
+
+@mixin styles {
+  $prefix: selector.class("skeleton");
+
+  #{ $prefix } {
+    animation: get("animation") ;
+    color: color.get(get("color"));
+  }
+  #{ $prefix }__background-color {
+    background-color: color.get(get("background-color")) !important;
+  }
+  #{ $prefix }__block,
+  #{ $prefix }__text {
+    background-color: color.get(get("background-color")) !important;
+    border-radius: get("border-radius");
+  }
+  #{ $prefix }__alt {
+    background-color: color.get(get("background-color-alt"));
+  }
+  #{ $prefix }__block--media {
+    aspect-ratio: 4/3;
+  }
+  #{ $prefix }__text {
+    height: 1em;
+    width: 60%;
+    border-radius: get("text-border-radius");
+  }
+  #{ $prefix }__text--inline {
+    display: inline-block;
+    & + & {
+      margin-left: get("inline-margin");
+    }
+  }
+  @each $name, $value in get("text-sizes") {
+    #{ $prefix }__text--#{ $name } {
+      width: $value;
+    }
+  }
+}
