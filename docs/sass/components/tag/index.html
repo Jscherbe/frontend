@@ -5597,6 +5597,9 @@
 
                     <li><a href="#variable-styles">$styles</a>
             		</li>
+
+                    <li><a href="#variable-sizes">$sizes</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -5608,6 +5611,9 @@
             		</li>
 
                     <li><a href="#mixin-set-styles">set-styles()</a>
+            		</li>
+
+                    <li><a href="#mixin-set-sizes">set-sizes()</a>
             		</li>
 
                     <li><a href="#mixin-styles">styles()</a>
@@ -5661,6 +5667,9 @@
   <span class="pjs-token pjs-string">"border-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"border-width"</span> <span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type-tertiary"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"counter-size"</span> <span class="pjs-token pjs-punctuation">:</span> 1.75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"counter-border-radius"</span> <span class="pjs-token pjs-punctuation">:</span> 20px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"counter-padding-sides"</span> <span class="pjs-token pjs-punctuation">:</span> 0.26em
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -5668,8 +5677,8 @@
 <li><strong>File:</strong> _tag.scss</li>
 <li><strong>Group:</strong> tag</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 24-39</li>
-<li><strong>Lines (code):</strong> 41-56</li>
+<li><strong>Lines (comments):</strong> 24-42</li>
+<li><strong>Lines (code):</strong> 44-62</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -5767,6 +5776,24 @@
 <td style="text-align:left">&quot;type-tertiary&quot;</td>
 <td style="text-align:left">Color of the tag text.</td>
 </tr>
+<tr>
+<td style="text-align:left">counter-size</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">1.5em</td>
+<td style="text-align:left">Size when used as a counter (for numbers), will be this size by default and expand horizontally as needed (ie. circle/rounded rectangle or square/rectangle if without border radius)</td>
+</tr>
+<tr>
+<td style="text-align:left">counter-border-radius</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">20px</td>
+<td style="text-align:left">May need to be adjusted or can be set to 0 for square/rectangle</td>
+</tr>
+<tr>
+<td style="text-align:left">counter-padding-sides</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">0.26em</td>
+<td style="text-align:left">Counter left/right padding (this is the space/margin on the inside when the number can't fit in the circle/square</td>
+</tr>
 </tbody>
 </table>
 <div class="sassdoc-item-header">
@@ -5796,8 +5823,31 @@
 <li><strong>File:</strong> _tag.scss</li>
 <li><strong>Group:</strong> tag</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 58-58</li>
-<li><strong>Lines (code):</strong> 60-73</li>
+<li><strong>Lines (comments):</strong> 64-64</li>
+<li><strong>Lines (code):</strong> 66-79</li>
+</ul>
+</details>
+<div class="sassdoc-item-header">
+<h3 id="variable-sizes" tabindex="-1">$sizes</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+</div>
+<p>Map of alternate sizes</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$sizes</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"small"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>0.25em 0.5em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"type-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"small-x"</span>
+  <span class="pjs-token pjs-punctuation">)</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _tag.scss</li>
+<li><strong>Group:</strong> tag</li>
+<li><strong>Type:</strong> variable</li>
+<li><strong>Lines (comments):</strong> 81-81</li>
+<li><strong>Lines (code):</strong> 82-87</li>
 </ul>
 </details>
 <h2 id="mixins" tabindex="-1">Mixins</h2>
@@ -5814,8 +5864,8 @@
 <li><strong>File:</strong> _tag.scss</li>
 <li><strong>Group:</strong> tag</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 76-79</li>
-<li><strong>Lines (code):</strong> 81-83</li>
+<li><strong>Lines (comments):</strong> 89-92</li>
+<li><strong>Lines (code):</strong> 94-96</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -5854,8 +5904,8 @@
 <li><strong>File:</strong> _tag.scss</li>
 <li><strong>Group:</strong> tag</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 85-87</li>
-<li><strong>Lines (code):</strong> 89-91</li>
+<li><strong>Lines (comments):</strong> 98-100</li>
+<li><strong>Lines (code):</strong> 102-104</li>
 </ul>
 </details>
 <h4 id="parameters-1" tabindex="-1">Parameters</h4>
@@ -5885,6 +5935,49 @@
 <li><a href="/frontend/sass/components/callout/#variable-styles">$styles</a></li>
 </ul>
 <div class="sassdoc-item-header">
+<h3 id="mixin-set-sizes" tabindex="-1">set-sizes()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Set tag sizes</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _tag.scss</li>
+<li><strong>Group:</strong> tag</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 106-108</li>
+<li><strong>Lines (code):</strong> 110-112</li>
+</ul>
+</details>
+<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$changes</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Map of changes</td>
+</tr>
+<tr>
+<td style="text-align:left">$merge-mode</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">Merge mode see utils.map-merge() [null</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/components/adaptive-spacing/#variable-sizes">$sizes</a></li>
+</ul>
+<div class="sassdoc-item-header">
 <h3 id="mixin-styles" tabindex="-1">styles()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -5897,15 +5990,16 @@
 <li><strong>File:</strong> _tag.scss</li>
 <li><strong>Group:</strong> tag</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 103-105</li>
-<li><strong>Lines (code):</strong> 107-156</li>
+<li><strong>Lines (comments):</strong> 124-126</li>
+<li><strong>Lines (code):</strong> 128-198</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-tag-styles</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/accordion/#function-get">get()</a></li>
+<li><a href="/frontend/sass/components/adaptive-spacing/#variable-sizes">$sizes</a></li>
 <li><a href="/frontend/sass/components/callout/#variable-styles">$styles</a></li>
 </ul>
 <h2 id="functions" tabindex="-1">Functions</h2>
@@ -5922,13 +6016,13 @@
 <li><strong>File:</strong> _tag.scss</li>
 <li><strong>Group:</strong> tag</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 93-96</li>
-<li><strong>Lines (code):</strong> 98-101</li>
+<li><strong>Lines (comments):</strong> 114-117</li>
+<li><strong>Lines (code):</strong> 119-122</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">component-tag-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"property"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
-<h4 id="parameters-2" tabindex="-1">Parameters</h4>
+<h4 id="parameters-3" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -5945,7 +6039,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-4" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>

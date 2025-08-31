@@ -12740,9 +12740,9 @@ a.badge:focus .badge__inner {
   background-color: var(--site-color-table-header-background);
   color: var(--site-color-type-tertiary);
   font-family: "Inter", sans-serif;
+  line-height: 1;
   font-size: 0.8890895361rem;
   font-size: calc(0.8890895361rem + 0.05vw);
-  line-height: 1;
 }
 .tag:not(:last-child) {
   margin-right: 0.5em;
@@ -12752,6 +12752,28 @@ a.badge:focus .badge__inner {
 }
 .tag + .tag {
   margin-left: 0;
+}
+
+.tag--small {
+  padding: 0.25em 0.5em;
+  font-size: 0.7904802033rem;
+  font-size: calc(0.7904802033rem + 0.05vw);
+}
+
+.tag--counter {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 1.75em;
+  height: 1.75em;
+  border-radius: 20px;
+  padding: 0 0.26em;
 }
 
 .tag--success {
