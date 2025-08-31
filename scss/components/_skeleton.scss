@@ -79,9 +79,19 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("skeleton");
-
-  #{ $prefix }-background-color {
+  #{ $prefix },
+  #{ $prefix }-background,
+  #{ $prefix }-block,
+  #{ $prefix }-text {
+    animation: get("animation");
+    color: color.get(get("color"));
+  }
+  #{ $prefix }-background {
+    animation: get("animation");
     background-color: color.get(get("background-color")) !important;
+  }
+  #{ $prefix }-background--alt {
+    background-color: color.get(get("background-color-alt"));
   }
   #{ $prefix }-block,
   #{ $prefix }-text {
@@ -89,9 +99,6 @@ $config: (
     color: color.get(get("color"));
     background-color: color.get(get("background-color")) !important;
     border-radius: get("border-radius");
-  }
-  #{ $prefix }-alt {
-    background-color: color.get(get("background-color-alt"));
   }
   #{ $prefix }-block--media {
     aspect-ratio: 4/3;

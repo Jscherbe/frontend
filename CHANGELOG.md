@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.99
+
+- **scss/components/skeleton** - Fix some selectors from last change (background)
+
 ## 0.1.0-beta.98
 
 - **scss/components/skeleton** - Make all child components (ie. .skeleton__text) to independent related components (.skeleton-text)

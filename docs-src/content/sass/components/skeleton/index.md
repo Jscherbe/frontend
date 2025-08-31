@@ -178,7 +178,7 @@ Prints component styles
 - **Group:** skeleton
 - **Type:** mixin
 - **Lines (comments):** 75-78
-- **Lines (code):** 80-115
+- **Lines (code):** 80-122
 
 </details>
 
