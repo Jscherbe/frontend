@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0-beta.101
+
+- **scss/components/tag (Minor Breaking Config Change)**
+  - $styles (set by set-styles() mixin) will now not include props (padding, type-size, line-height)
+  - New $sizes (set by set-sizes() mixin) can be used to setup different sizes of tags with props (padding, type-size, line-height)
+
 ## 0.1.0-beta.100
 
 - **scss/components/skeleton** - Made selectors for skeleton all build off one base class "skeleton" so "skeleton__text or skeleton-text" went to "skeleton--text"

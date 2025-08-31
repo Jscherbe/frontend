@@ -51,6 +51,9 @@ $config: (
   "border-color" : transparent,
   "border-width" : 1px,
   "color": "type-tertiary",
+  "counter-size" : 1.75em,
+  "counter-border-radius" : 20px,
+  "counter-padding-sides" : 0.26em
 );
 ```
   
@@ -62,8 +65,8 @@ $config: (
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** variable
-- **Lines (comments):** 24-39
-- **Lines (code):** 41-56
+- **Lines (comments):** 24-42
+- **Lines (code):** 44-62
 
 </details>
 
@@ -88,6 +91,9 @@ $config: (
 |border-color|Color|transparent|Border color for the tag.|
 |border-width|Dimension|1px|Border width of the tag.|
 |color|String|"type-tertiary"|Color of the tag text.|
+|counter-size|String|1.5em|Size when used as a counter (for numbers), will be this size by default and expand horizontally as needed (ie. circle/rounded rectangle or square/rectangle if without border radius)|
+|counter-border-radius|String|20px|May need to be adjusted or can be set to 0 for square/rectangle|
+|counter-padding-sides|String|0.26em|Counter left/right padding (this is the space/margin on the inside when the number can't fit in the circle/square|
 
     
 
@@ -133,8 +139,49 @@ $styles: (
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** variable
-- **Lines (comments):** 58-58
-- **Lines (code):** 60-73
+- **Lines (comments):** 64-64
+- **Lines (code):** 66-79
+
+</details>
+
+    
+
+
+<div class="sassdoc-item-header">
+
+###  $sizes {#variable-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Variable</strong></span>
+  </div>
+
+</div>
+
+  
+
+Map of alternate sizes
+    
+    
+
+``` scss
+$sizes: (
+  "small" : (
+    "padding" : (0.25em 0.5em),
+    "type-size" : "small-x"
+  )
+);
+```
+  
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tag.scss
+- **Group:** tag
+- **Type:** variable
+- **Lines (comments):** 81-81
+- **Lines (code):** 82-87
 
 </details>
 
@@ -169,8 +216,8 @@ Change modules $config
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 76-79
-- **Lines (code):** 81-83
+- **Lines (comments):** 89-92
+- **Lines (code):** 94-96
 
 </details>
 
@@ -228,8 +275,8 @@ Set tag styles
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 85-87
-- **Lines (code):** 89-91
+- **Lines (comments):** 98-100
+- **Lines (code):** 102-104
 
 </details>
 
@@ -248,6 +295,52 @@ Set tag styles
 #### Require
 
 - [$styles](/sass/components/callout/#variable-styles)
+  
+
+
+<div class="sassdoc-item-header">
+
+###  set-sizes() {#mixin-set-sizes}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Set tag sizes 
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _tag.scss
+- **Group:** tag
+- **Type:** mixin
+- **Lines (comments):** 106-108
+- **Lines (code):** 110-112
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
+|$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
+
+    
+
+#### Require
+
+- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
   
 
 
@@ -274,8 +367,8 @@ Output component stylesheet
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** mixin
-- **Lines (comments):** 103-105
-- **Lines (code):** 107-156
+- **Lines (comments):** 124-126
+- **Lines (code):** 128-198
 
 </details>
 
@@ -298,6 +391,7 @@ Output component stylesheet
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
+- [$sizes](/sass/components/adaptive-spacing/#variable-sizes)
 - [$styles](/sass/components/callout/#variable-styles)
   
   
@@ -330,8 +424,8 @@ Get a config option
 - **File:** _tag.scss
 - **Group:** tag
 - **Type:** function
-- **Lines (comments):** 93-96
-- **Lines (code):** 98-101
+- **Lines (comments):** 114-117
+- **Lines (code):** 119-122
 
 </details>
 

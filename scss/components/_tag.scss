@@ -37,6 +37,9 @@ $-fallbacks: (
 /// @prop {Color} border-color [transparent] Border color for the tag.
 /// @prop {Dimension} border-width [1px] Border width of the tag.
 /// @prop {String} color ["type-tertiary"] Color of the tag text.
+/// @prop {String} counter-size [1.5em] Size when used as a counter (for numbers), will be this size by default and expand horizontally as needed (ie. circle/rounded rectangle or square/rectangle if without border radius)
+/// @prop {String} counter-border-radius [20px] May need to be adjusted or can be set to 0 for square/rectangle
+/// @prop {String} counter-padding-sides [0.26em] Counter left/right padding (this is the space/margin on the inside when the number can't fit in the circle/square
 
 $config: (
   "font-weight" : normal,
@@ -53,6 +56,9 @@ $config: (
   "border-color" : transparent,
   "border-width" : 1px,
   "color": "type-tertiary",
+  "counter-size" : 1.75em,
+  "counter-border-radius" : 20px,
+  "counter-padding-sides" : 0.26em
 ) !default;
 
 /// Style Map (alternate tag styles)
@@ -72,6 +78,13 @@ $styles: (
   )
 ) !default;
 
+/// Map of alternate sizes
+$sizes: (
+  "small" : (
+    "padding" : (0.25em 0.5em),
+    "type-size" : "small-x"
+  )
+) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
@@ -88,6 +101,14 @@ $styles: (
 
 @mixin set-styles($changes, $merge-mode: null) {
   $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
+}
+
+/// Set tag sizes 
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
 }
 
 /// Get a config option
@@ -121,10 +142,10 @@ $styles: (
     background-color: color.get(get("background-color"));
     color: color.get(get("color"));
     font-family: get("font-family");
+    line-height: get("line-height");
     @if (typography.has-size(get("type-size"))) {
       @include typography.size(get("type-size"), $only-font-size: true);
     }
-    line-height: get("line-height");
     &:not(:last-child) {
       margin-right: get("margin-between");
     }
@@ -136,8 +157,32 @@ $styles: (
     }
   }
 
+  
+
+  @each $name, $size in $sizes {
+    $type-size: map.get($size, "type-size");
+
+    #{ $prefix }--#{ $name } {
+      padding: map.get($size, "padding");  
+      line-height: map.get($size, "line-height");
+      @if (typography.has-size($type-size)) {
+        @include typography.size($type-size, $only-font-size: true);
+      }
+    }
+  }
+
+  // Order Reason: Needs to inherit from sizes but not styles
+  #{ $prefix }--counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: get("counter-size");
+    height: get("counter-size");
+    border-radius: get("counter-border-radius");
+    padding: 0 get("counter-padding-sides");
+  }
+
   @each $name, $style in $styles {
-    $type-size: map.get($style, "type-size");
     #{ $prefix }--#{ $name } {
       background-color: color.get(map.get($style, "background-color")); 
       color: color.get(map.get($style, "color")); 
@@ -146,11 +191,8 @@ $styles: (
       border-color: color.get(map.get($style, "border-color")); 
       border-width: map.get($style, "border-width"); 
       box-shadow: map.get($style, "box-shadow"); 
-      padding: map.get($style, "padding");  
-      @if (typography.has-size($type-size)) {
-        @include typography.size($type-size, $only-font-size: true);
-      }
-      line-height: map.get($style, "line-height");
     }
   }
+
+
 }
