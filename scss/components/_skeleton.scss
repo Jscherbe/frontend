@@ -80,37 +80,35 @@ $config: (
 @mixin styles {
   $prefix: selector.class("skeleton");
 
-  #{ $prefix } {
-    animation: get("animation") ;
-    color: color.get(get("color"));
-  }
-  #{ $prefix }__background-color {
+  #{ $prefix }-background-color {
     background-color: color.get(get("background-color")) !important;
   }
-  #{ $prefix }__block,
-  #{ $prefix }__text {
+  #{ $prefix }-block,
+  #{ $prefix }-text {
+    animation: get("animation");
+    color: color.get(get("color"));
     background-color: color.get(get("background-color")) !important;
     border-radius: get("border-radius");
   }
-  #{ $prefix }__alt {
+  #{ $prefix }-alt {
     background-color: color.get(get("background-color-alt"));
   }
-  #{ $prefix }__block--media {
+  #{ $prefix }-block--media {
     aspect-ratio: 4/3;
   }
-  #{ $prefix }__text {
+  #{ $prefix }-text {
     height: 1em;
     width: 60%;
     border-radius: get("text-border-radius");
   }
-  #{ $prefix }__text--inline {
+  #{ $prefix }-text--inline {
     display: inline-block;
   }
-  #{ $prefix }__text--inline + #{ $prefix }__text--inline {
+  #{ $prefix }-text--inline + #{ $prefix }-text--inline {
     margin-left: get("inline-margin");
   }
   @each $name, $value in get("text-sizes") {
-    #{ $prefix }__text--#{ $name } {
+    #{ $prefix }-text--#{ $name } {
       width: $value;
     }
   }
