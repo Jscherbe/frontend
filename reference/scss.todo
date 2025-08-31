@@ -1,4 +1,10 @@
 SCSS Todos:
+  ☐ Finish card grid layout with list grid switcher, need to resolve how the body/main layout works @important
+    * May be better to use css grid
+      * Currently doesn't work if the body doesn't have content (like a skeleton)
+      * Need to decide if body should expand if aside isn't there, I think so but this would not be the case if the cards were in a grid (want uniform layout)
+        * This might need to be a special modifier to keep a rigid layout even if no aside [YES]
+      * Need to have card grid when horizontal is full width, have body have max width and still have aside flush right
   ☐ Consider making buttons and other components use logical margin/padding vs physical
     * To support writing-mode
     * To easily use vertical writing for buttons
