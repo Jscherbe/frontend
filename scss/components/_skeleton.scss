@@ -105,9 +105,9 @@ $config: (
   }
   #{ $prefix }__text--inline {
     display: inline-block;
-    & + & {
-      margin-left: get("inline-margin");
-    }
+  }
+  #{ $prefix }__text--inline + #{ $prefix }__text--inline {
+    margin-left: get("inline-margin");
   }
   @each $name, $value in get("text-sizes") {
     #{ $prefix }__text--#{ $name } {

@@ -16976,6 +16976,7 @@ ul.list-inline,
 .skeleton__text--inline {
   display: inline-block;
 }
+
 .skeleton__text--inline + .skeleton__text--inline {
   margin-left: 0.35em;
 }

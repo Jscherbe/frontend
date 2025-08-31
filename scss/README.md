@@ -35,6 +35,11 @@
 - Modules use simple variable, mixins and function names relative to their module
 - Forwards will make namespacing in the overall ulu packaged module
 - **Module Prefixes:** Modules all get prefixed by parent module ie lib will transform color.set() to color-set(), adding the modules namespace for users that are importing the whole library. It also matches the core modules `map-get()` and when @used `map.get()`
+- Try to avoid "&" selector when possible?
+  - For example with 
+    - .user-scope-selector { .component-example + .component-example { // This can be wrapped externally } }
+    - .user-scope-selector { .component-example { & + & {} } } // This will incorrectly inherit the users outer selector. 
+  - Not crucial (we won't specifically design this way) but we may want to refactor in the future (at least components) so that we write selectors in a more static way so that scoping doesn't interfere
 
 ### Writing Docs
 

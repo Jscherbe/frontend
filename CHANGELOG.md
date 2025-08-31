@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.97
+
+- **scss/components/skeleton** - Tweak how selectors are formed (no change really)
+
 ## 0.1.0-beta.96
 
 - **scss/components/skeleton** - Change alt background color default
