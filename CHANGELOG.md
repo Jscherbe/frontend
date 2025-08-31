@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.1.0-beta.99
+## 0.1.0-beta.100
 
 - **scss/components/skeleton** - Made selectors for skeleton all build off one base class "skeleton" so "skeleton__text or skeleton-text" went to "skeleton--text"
 
