@@ -61,6 +61,7 @@ $config: (
   "max-width":                60em,
   "max-width-large":          75em,
   "max-width-small":          45em,
+  "space-size":               0.38em
 );
 ```
   
@@ -72,8 +73,8 @@ $config: (
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 15-37
-- **Lines (code):** 39-64
+- **Lines (comments):** 15-38
+- **Lines (code):** 40-66
 
 </details>
 
@@ -105,6 +106,7 @@ $config: (
 |line-height-dense|Number|1.3|Default dense line height|
 |line-height-densest|Number|1.1||
 |line-height-spaced|Number|1.75||
+|space-size|CssUnit|0.38em|The size of a space for the site's typography (used when creating faux spaces, like for .flow-inline utility)|
 
     
 
@@ -137,8 +139,8 @@ $sizes: get-default-sizes();
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 181-190
-- **Lines (code):** 192-192
+- **Lines (comments):** 183-192
+- **Lines (code):** 194-194
 
 </details>
 
@@ -189,8 +191,8 @@ Change modules $config
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 66-68
-- **Lines (code):** 70-72
+- **Lines (comments):** 68-70
+- **Lines (code):** 72-74
 
 </details>
 
@@ -235,8 +237,8 @@ Output CSS Break word strategy
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 125-126
-- **Lines (code):** 128-132
+- **Lines (comments):** 127-128
+- **Lines (code):** 130-134
 
 </details>
 
@@ -275,8 +277,8 @@ Configure the typography sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 194-211
-- **Lines (code):** 213-215
+- **Lines (comments):** 196-213
+- **Lines (code):** 215-217
 
 </details>
 
@@ -349,8 +351,8 @@ Print's the responsive type formula
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 299-301
-- **Lines (code):** 303-305
+- **Lines (comments):** 301-303
+- **Lines (code):** 305-307
 
 </details>
 
@@ -390,8 +392,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 307-310
-- **Lines (code):** 312-353
+- **Lines (comments):** 309-312
+- **Lines (code):** 314-355
 
 </details>
 
@@ -446,8 +448,8 @@ Get a config option
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 74-76
-- **Lines (code):** 78-80
+- **Lines (comments):** 76-78
+- **Lines (code):** 80-82
 
 </details>
 
@@ -493,8 +495,8 @@ Get scale of the base font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 82-84
-- **Lines (code):** 86-88
+- **Lines (comments):** 84-86
+- **Lines (code):** 88-90
 
 </details>
 
@@ -548,8 +550,8 @@ Get scale of the line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 90-93
-- **Lines (code):** 95-97
+- **Lines (comments):** 92-95
+- **Lines (code):** 97-99
 
 </details>
 
@@ -608,8 +610,8 @@ Convert pixel value to rem value based on typography $font-size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 99-101
-- **Lines (code):** 103-109
+- **Lines (comments):** 101-103
+- **Lines (code):** 105-111
 
 </details>
 
@@ -662,8 +664,8 @@ Changes pixels to em
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 111-114
-- **Lines (code):** 116-123
+- **Lines (comments):** 113-116
+- **Lines (code):** 118-125
 
 </details>
 
@@ -720,8 +722,8 @@ Creates a size map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 134-140
-- **Lines (code):** 142-156
+- **Lines (comments):** 136-142
+- **Lines (code):** 144-158
 
 </details>
 
@@ -769,8 +771,8 @@ Function that returns default sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 158-161
-- **Lines (code):** 163-179
+- **Lines (comments):** 160-163
+- **Lines (code):** 165-181
 
 </details>
 
@@ -816,8 +818,8 @@ Get a specific size's settings map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 217-219
-- **Lines (code):** 221-223
+- **Lines (comments):** 219-221
+- **Lines (code):** 223-225
 
 </details>
 
@@ -871,8 +873,8 @@ Check if a typography size exists
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 225-227
-- **Lines (code):** 229-231
+- **Lines (comments):** 227-229
+- **Lines (code):** 231-233
 
 </details>
 
@@ -926,8 +928,8 @@ Forces conversion to unitless line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 233-235
-- **Lines (code):** 237-251
+- **Lines (comments):** 235-237
+- **Lines (code):** 239-253
 
 </details>
 
@@ -978,8 +980,8 @@ Print a value from the size and convert it (to appropriate unit for framework)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 253-255
-- **Lines (code):** 257-283
+- **Lines (comments):** 255-257
+- **Lines (code):** 259-285
 
 </details>
 
@@ -1027,8 +1029,8 @@ Get a sizes property value that doesn't need conversion
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 285-288
-- **Lines (code):** 290-297
+- **Lines (comments):** 287-290
+- **Lines (code):** 292-299
 
 </details>
 

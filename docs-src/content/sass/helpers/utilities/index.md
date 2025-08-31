@@ -43,8 +43,8 @@ Print utilities helper styles
 - **File:** _utilities.scss
 - **Group:** utilities
 - **Type:** mixin
-- **Lines (comments):** 10-13
-- **Lines (code):** 15-124
+- **Lines (comments):** 11-14
+- **Lines (code):** 16-130
 
 </details>
 
@@ -63,5 +63,10 @@ Print utilities helper styles
 
 
       
+
+#### Require
+
+- [get()](/sass/helpers/units/#function-get)
+  
   
   

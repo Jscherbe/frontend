@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.102
+
+- **scss/helpers/utilities** - Add utility for making faux spacing like text (for icons inline, etc) called `.flow-inline`
+
 ## 0.1.0-beta.101
 
 - **scss/components/tag (Minor Breaking Config Change)**

@@ -19118,6 +19118,13 @@ helpers:utilities
   overflow: hidden;
 }
 
+.flow-inline:not(:first-child) {
+  margin-left: 0.38em;
+}
+.flow-inline:not(:last-child) {
+  margin-right: 0.38em;
+}
+
 @media print {
   .no-print {
     display: none !important;
