@@ -25,15 +25,31 @@ export default function(
   if (!image) {
     modifiers.push("card--no-image");
   }
+
+  const cardNumber = parseInt(number, 10);
+  const titles = [
+    'Lorem Ipsum',
+    'Lorem ipsum dolor sit amet',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  ];
+  const contents = [
+    'This is the card content. It can contain around 2-3 sentences.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  ];
+  const titleText = titles[cardNumber % titles.length];
+  const contentText = contents[cardNumber % contents.length];
+
   // create markup snippets to conditionally render
   let titleMarkup = `
     <h5 class="card__title">
-      <a class="card__title-link" href="https://www.google.com" data-ulu-proxy-click-source="">Card ${number} Title</a>
+      <a class="card__title-link" href="https://www.google.com" data-ulu-proxy-click-source="">${ titleText }</a>
     </h5>
   `.trim();
   let contentMarkup = `
     <div>
-      This is the card content. It can contain around 2-3 sentences.
+      ${ contentText }
     </div>
   `.trim();
   
