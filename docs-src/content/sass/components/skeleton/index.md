@@ -44,8 +44,9 @@ $config: (
   "border-radius": true,
   "inline-margin" : 0.35em,
   "media-ratio" : list.slash(4, 3),
+  "media-font-size" : 2rem,
   "text-border-radius" : 3em,
-  "text-sizes": (
+  "widths": (
     "small-xxx" : 10%,
     "small-xx" : 20%,
     "small-x" : 30%,
@@ -66,7 +67,7 @@ $config: (
 - **Group:** skeleton
 - **Type:** variable
 - **Lines (comments):** 25-35
-- **Lines (code):** 36-54
+- **Lines (code):** 37-56
 
 </details>
 
@@ -85,7 +86,7 @@ $config: (
 |inline-margin|Dimension|0.35em|The margin between inline skeleton text elements.|
 |media-ratio|Number|(4/3)|The aspect ratio for skeleton media blocks (width/height).|
 |text-border-radius|Dimension|3em|The border-radius for skeleton text lines.|
-|text-sizes|Map|Map|A map defining various width percentages for skeleton text lines.|
+|widths|Map|Map|A map defining various width percentages for skeleton text lines (or used to size blocks/etc)|
 
     
   
@@ -118,8 +119,8 @@ Change modules $config
 - **File:** _skeleton.scss
 - **Group:** skeleton
 - **Type:** mixin
-- **Lines (comments):** 56-59
-- **Lines (code):** 61-63
+- **Lines (comments):** 58-61
+- **Lines (code):** 63-65
 
 </details>
 
@@ -177,8 +178,8 @@ Prints component styles
 - **File:** _skeleton.scss
 - **Group:** skeleton
 - **Type:** mixin
-- **Lines (comments):** 75-78
-- **Lines (code):** 80-122
+- **Lines (comments):** 77-80
+- **Lines (code):** 82-126
 
 </details>
 
@@ -245,8 +246,8 @@ Get a config option
 - **File:** _skeleton.scss
 - **Group:** skeleton
 - **Type:** function
-- **Lines (comments):** 65-68
-- **Lines (code):** 70-73
+- **Lines (comments):** 67-70
+- **Lines (code):** 72-75
 
 </details>
 

@@ -32,7 +32,8 @@ $-fallbacks: (
 /// @prop {Dimension} inline-margin [0.35em] The margin between inline skeleton text elements.
 /// @prop {Number} media-ratio [(4/3)] The aspect ratio for skeleton media blocks (width/height).
 /// @prop {Dimension} text-border-radius [3em] The border-radius for skeleton text lines.
-/// @prop {Map} text-sizes [Map] A map defining various width percentages for skeleton text lines.
+/// @prop {Map} widths [Map] A map defining various width percentages for skeleton text lines (or used to size blocks/etc)
+
 $config: (
   "animation" : UluPulse 2s cubic-bezier(0.4,0,0.6,1) infinite,
   "color" : "type-disabled",
@@ -41,8 +42,9 @@ $config: (
   "border-radius": true,
   "inline-margin" : 0.35em,
   "media-ratio" : list.slash(4, 3),
+  "media-font-size" : 2rem,
   "text-border-radius" : 3em,
-  "text-sizes": (
+  "widths": (
     "small-xxx" : 10%,
     "small-xx" : 20%,
     "small-x" : 30%,
@@ -79,43 +81,45 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("skeleton");
-  #{ $prefix },
-  #{ $prefix }-background,
-  #{ $prefix }-block,
-  #{ $prefix }-text {
+
+  #{ $prefix } {
     animation: get("animation");
     color: color.get(get("color"));
   }
-  #{ $prefix }-background {
-    animation: get("animation");
+  #{ $prefix }--background {
     background-color: color.get(get("background-color")) !important;
   }
-  #{ $prefix }-background--alt {
-    background-color: color.get(get("background-color-alt"));
-  }
-  #{ $prefix }-block,
-  #{ $prefix }-text {
+  #{ $prefix }--block,
+  #{ $prefix }--text,
+  #{ $prefix }--media {
     animation: get("animation");
     color: color.get(get("color"));
     background-color: color.get(get("background-color")) !important;
     border-radius: get("border-radius");
   }
-  #{ $prefix }-block--media {
-    aspect-ratio: 4/3;
+  #{ $prefix }--media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: get("media-ratio");
+    font-size: get("media-font-size");
   }
-  #{ $prefix }-text {
+  #{ $prefix }--text {
     height: 1em;
     width: 60%;
     border-radius: get("text-border-radius");
   }
-  #{ $prefix }-text--inline {
+  #{ $prefix }--inline {
     display: inline-block;
   }
-  #{ $prefix }-text--inline + #{ $prefix }-text--inline {
+  #{ $prefix }--inline + #{ $prefix }--inline {
     margin-left: get("inline-margin");
   }
-  @each $name, $value in get("text-sizes") {
-    #{ $prefix }-text--#{ $name } {
+  #{ $prefix }--background-alt {
+    background-color: color.get(get("background-color-alt")) !important;
+  }
+  @each $name, $value in get("widths") {
+    #{ $prefix }--width-#{ $name } {
       width: $value;
     }
   }

@@ -16943,27 +16943,19 @@ ul.list-inline,
     right: 0.5rem;
   }
 }
-.skeleton,
-.skeleton-background,
-.skeleton-block,
-.skeleton-text {
+.skeleton {
   -webkit-animation: UluPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
           animation: UluPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   color: var(--site-color-type-disabled);
 }
 
-.skeleton-background {
-  -webkit-animation: UluPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: UluPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.skeleton--background {
   background-color: #e2e2e2 !important;
 }
 
-.skeleton-background--alt {
-  background-color: #bababa;
-}
-
-.skeleton-block,
-.skeleton-text {
+.skeleton--block,
+.skeleton--text,
+.skeleton--media {
   -webkit-animation: UluPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
           animation: UluPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   color: var(--site-color-type-disabled);
@@ -16971,49 +16963,63 @@ ul.list-inline,
   border-radius: 5px;
 }
 
-.skeleton-block--media {
-  aspect-ratio: 4/3;
+.skeleton--media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  aspect-ratio: 4 / 3;
+  font-size: 2rem;
 }
 
-.skeleton-text {
+.skeleton--text {
   height: 1em;
   width: 60%;
   border-radius: 3em;
 }
 
-.skeleton-text--inline {
+.skeleton--inline {
   display: inline-block;
 }
 
-.skeleton-text--inline + .skeleton-text--inline {
+.skeleton--inline + .skeleton--inline {
   margin-left: 0.35em;
 }
 
-.skeleton-text--small-xxx {
+.skeleton--background-alt {
+  background-color: #bababa !important;
+}
+
+.skeleton--width-small-xxx {
   width: 10%;
 }
 
-.skeleton-text--small-xx {
+.skeleton--width-small-xx {
   width: 20%;
 }
 
-.skeleton-text--small-x {
+.skeleton--width-small-x {
   width: 30%;
 }
 
-.skeleton-text--small {
+.skeleton--width-small {
   width: 40%;
 }
 
-.skeleton-text--large {
+.skeleton--width-large {
   width: 70%;
 }
 
-.skeleton-text--large-x {
+.skeleton--width-large-x {
   width: 85%;
 }
 
-.skeleton-text--large-xx {
+.skeleton--width-large-xx {
   width: 100%;
 }
 
