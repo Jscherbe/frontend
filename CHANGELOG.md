@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.103
+
+- **scss/components/breadcrumb** - Add new breadcrumb layout component
+
 ## 0.1.0-beta.102
 
 - **scss/helpers/utilities** - Add utility for making faux spacing like text (for icons inline, etc) called `.flow-inline`

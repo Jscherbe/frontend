@@ -1,0 +1,110 @@
+////
+/// @group breadcrumb
+/// Breadcrumb trail list layout
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../typography";
+
+
+// Used for function fallback
+$-fallbacks: (
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-densest"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {List} margin [(0 0 1.25em 0)] Margin for component
+/// @prop {CssUnit} row-gap [0.35em] Gap when breadcrumbs wrap
+/// @prop {Color} color ["type-tertiary"] Base color (links inherit this)
+/// @prop {Color} color-hover ["link-hover"] Color for link hover
+/// @prop {CssUnit} line-height [true] Line height, defaults to typography line-height-densest
+/// @prop {CssUnit} item-max-width [15em] Max length of item text
+/// @prop {Color} separator-color [null] Optional color to apply to separator
+/// @prop {Number} separator-opacity [0.7] Optional opacity for separator
+/// @prop {List} separator-margin [(0 0.5em)] Separator margin
+
+$config: (
+  "row-gap":              0.5em,
+  "margin" :              (0 0 1.25em 0),
+  "color":                 "type-tertiary",
+  "color-hover":           "link-hover",
+  "line-height":           true,
+  "item-max-width":        15em,
+  "separator-margin":      (0 0.5em),
+  "separator-color":       null,
+  "separator-opacity":     0.7,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-breadcrumb-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-breadcrumb-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "breadcrumb [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo breadcrumb
+/// @example scss
+///  @include ulu.component-breadcrumb-styles();
+
+@mixin styles {
+  $prefix: selector.class("breadcrumb");
+  
+  #{ $prefix } {
+    color: color.get(get("color"));
+    margin: get("margin");
+    line-height: get("line-height");
+  }
+  #{ $prefix }__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: get("row-gap") 0;
+  }
+  #{ $prefix }__item {
+    display: flex;
+    align-items: center;
+  }
+  #{ $prefix }__link,
+  #{ $prefix }__text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: get("item-max-width");
+    text-overflow: ellipsis;
+  }
+  #{ $prefix }__link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: color.get(get("color-hover"));
+    }
+  }
+  #{ $prefix }__separator {
+    margin: get("separator-margin");
+    color: color.get(get("separator-color"));
+    opacity: get("separator-opacity");
+  }
+}

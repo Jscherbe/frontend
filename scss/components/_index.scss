@@ -11,6 +11,7 @@
 @forward "button" as button-*;
 @forward "button-group" as button-group-*;
 @forward "button-verbose" as button-verbose-*;
+@forward "breadcrumb" as breadcrumb-*;
 @forward "callout" as callout-*;
 @forward "card" as card-*;
 @forward "card-grid" as card-grid-*;
@@ -69,6 +70,7 @@
 @use "button";
 @use "button-group";
 @use "button-verbose";
+@use "breadcrumb";
 @use "callout";
 @use "card";
 @use "card-grid";
@@ -128,6 +130,7 @@ $all-includes: (
   "button",
   "button-group",
   "button-verbose",
+  "breadcrumb",
   "callout",
   "card",
   "card-grid",
@@ -225,6 +228,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "button-verbose")) {
     @include button-verbose.styles;
+  }
+  @if (list.index($includes, "breadcrumb")) {
+    @include breadcrumb.styles;
   }
   @if (list.index($includes, "badge")) {
     @include badge.styles;

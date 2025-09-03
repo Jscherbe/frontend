@@ -45,6 +45,7 @@ $all-includes: (
   "button",
   "button-group",
   "button-verbose",
+  "breadcrumb",
   "callout",
   "card",
   "card-grid",
@@ -102,8 +103,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 119-120
-- **Lines (code):** 122-177
+- **Lines (comments):** 121-122
+- **Lines (code):** 124-180
 
 </details>
 
@@ -138,8 +139,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 179-180
-- **Lines (code):** 182-182
+- **Lines (comments):** 182-183
+- **Lines (code):** 185-185
 
 </details>
 
@@ -175,8 +176,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 184-186
-- **Lines (code):** 188-191
+- **Lines (comments):** 187-189
+- **Lines (code):** 191-194
 
 </details>
 
@@ -221,8 +222,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 193-194
-- **Lines (code):** 196-198
+- **Lines (comments):** 196-197
+- **Lines (code):** 199-201
 
 </details>
 
@@ -266,8 +267,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 200-204
-- **Lines (code):** 206-373
+- **Lines (comments):** 203-207
+- **Lines (code):** 209-379
 
 </details>
 
