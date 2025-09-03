@@ -12584,8 +12584,7 @@ component:button
 }
 
 .breadcrumb__link,
-.breadcrumb__text {
-  display: inline-block;
+.breadcrumb__current {
   white-space: nowrap;
   overflow: hidden;
   max-width: 15em;
@@ -12596,7 +12595,7 @@ component:button
   color: inherit;
   text-decoration: none;
 }
-.breadcrumb__link:hover {
+.breadcrumb__link:hover, .breadcrumb__link:focus {
   color: var(--site-color-link-hover);
 }
 
