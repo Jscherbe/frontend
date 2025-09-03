@@ -89,7 +89,6 @@ $config: (
   }
   #{ $prefix }__link,
   #{ $prefix }__text {
-    display: inline-block;
     white-space: nowrap;
     overflow: hidden;
     max-width: get("item-max-width");
@@ -98,7 +97,8 @@ $config: (
   #{ $prefix }__link {
     color: inherit;
     text-decoration: none;
-    &:hover {
+    &:hover,
+    &:focus {
       color: color.get(get("color-hover"));
     }
   }
