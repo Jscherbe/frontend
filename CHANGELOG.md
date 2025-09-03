@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.104
+
+- **scss/components/breadcrumb** - Change child selector `.breadcrumb__text` to `.breadcrumb__current` for clarity
+
 ## 0.1.0-beta.103
 
 - **scss/components/breadcrumb** - Add new breadcrumb layout component
