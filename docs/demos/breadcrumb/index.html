@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Card
+    Breadcrumb
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -213,9 +213,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/breadcrumb/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/breadcrumb/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -318,9 +318,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/card/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/card/">
           
     
     <span class="nav-tree__text">
@@ -2999,9 +2999,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/breadcrumb/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/breadcrumb/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -3104,9 +3104,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/card/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/demos/card/">
           
     
     <span class="nav-tree__text">
@@ -5653,82 +5653,90 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Card</h1>
+    <h1 class="page__title h1">Breadcrumb</h1>
 
 
   <hr class="rule rule--light rule--margin-large">
 
-    <div class="live-demo" data-live-demo="">
-  <div class="live-demo__display" data-live-demo-display="">
-  </div>
-  <form class="live-demo__form form-theme theme-light" data-live-demo-form="">
-<fieldset>
-  <legend>Elements Visible</legend>
-  <div>
-<div class="form-theme__item form-theme__item--checkbox">
-  <input type="checkbox" id="live-demo-id-1" name="title" checked="">
-<label for="live-demo-id-1">
-  Title
-</label>  
-</div>
-<div class="form-theme__item form-theme__item--checkbox">
-  <input type="checkbox" id="live-demo-id-2" name="body" checked="">
-<label for="live-demo-id-2">
-  Body
-</label>  
-</div>
-<div class="form-theme__item form-theme__item--checkbox">
-  <input type="checkbox" id="live-demo-id-3" name="content" checked="">
-<label for="live-demo-id-3">
-  Content
-</label>  
-</div>
-<div class="form-theme__item form-theme__item--checkbox">
-  <input type="checkbox" id="live-demo-id-4" name="aside" checked="">
-<label for="live-demo-id-4">
-  Aside
-</label>  
-</div>
-<div class="form-theme__item form-theme__item--checkbox">
-  <input type="checkbox" id="live-demo-id-5" name="footer" checked="">
-<label for="live-demo-id-5">
-  Footer
-</label>  
-</div>
-  </div>
-</fieldset>
-<div class="form-theme__item form-theme__item--select">
-<label for="live-demo-id-6">
-  Action
-  <span class="fas fa-info-circle" data-ulu-tooltip="Proxy click only works when title is present"></span>
-</label>  
-  <select id="live-demo-id-6" name="action">
-    <option value="">None</option>,<option value="link">Card is Link</option>,<option value="proxy">Proxy Click</option>
-  </select>
-</div>
-<div class="form-theme__item form-theme__item--select">
-<label for="live-demo-id-7">
-  Media
-</label>  
-  <select id="live-demo-id-7" name="media">
-    <option value="icon">Icon</option>,<option value="image">Image</option>,<option value="imageFit">Image (fit)</option>,<option value="none">No Image</option>
-  </select>
-</div>
-<div class="form-theme__item form-theme__item--select">
-<label for="live-demo-id-8">
-  Layout
-  <span class="fas fa-info-circle" data-ulu-tooltip="Overlay is not compatible with 'Icon' and 'No Image' options"></span>
-</label>  
-  <select id="live-demo-id-8" name="layout">
-    <option value="">Default</option>,<option value="horizontal">Horizontal</option>,<option value="horizontalCenter">Horizontal Center</option>,<option value="overlay">Overlay</option>
-  </select>
-</div>
-  </form>
-  <script type="application/json" data-live-demo-options="">
-    {"debug":false,"template":"{% set hasProxy = action == \"proxy\" %}\n{% set isLink = action == \"link\" %}\n{% set hasImage = media == \"image\" or media == \"imageFit\" %}\n{% set element = isLink ? \"a\" : \"article\" %}\n\n{% set layoutClass = \"\" %}\n{% if layout == \"horizontalCenter\" %}\n  {% set layoutClass = \"card--horizontal card--horizontal-center\" %}\n{% elseif layout %}\n  {% set layoutClass = \"card--\" ~ layout %}\n{% endif %}\n\n{% set classes = [\n  \"card\",\n  layoutClass,\n  media == \"imageFit\" ? \"card--image-fit\" : \"\"\n] %}\n\n<{{ element }} \n  class=\"{{ classes|join(' ') }}\"\n  {{ hasProxy ? \"data-ulu-proxy-click\" }}\n  {{ isLink ? \"href='https://www.google.com'\" }}\n>\n  {% if body %}\n    <div class=\"card__body\">\n      <div class=\"card__main\">\n        {% if title %}\n          <h5 class=\"card__title\">\n            {# If link don't nest link (no link title) #}\n            {% if isLink %}\n              Card Title\n            {% else %}\n              <a \n                class=\"card__title-link\" \n                href=\"https://www.google.com\" \n                {{ hasProxy ? \"data-ulu-proxy-click-source\" }}\n              >\n                Card Title\n              </a>\n            {% endif %}\n          </h5>\n        {% endif %}\n        {% if content %}\n          <div>\n            This is the card content. It can contain around 2-3 sentences.\n          </div>\n        {% endif %}\n      </div>\n      {% if aside %}\n        <div class=\"card__aside\">\n          This is the aside. attach the rule to this element.\n        </div>\n      {% endif %}\n    </div>\n  {% endif %}\n\n  {% if hasImage %}\n    <div class=\"card__image\">\n      <img src=\"/frontend/assets/placeholder/image-1.jpg\">\n    </div>\n  {% endif %}\n\n  {% if media == \"icon\" %}\n    <div class=\"card__image card__image--icon\">\n      <img src=\"/frontend/assets/placeholder/icon-calendar.svg\" width=\"150\" height=\"150\">\n    </div>\n  {% endif %}\n\n  {% if footer %}\n    <div class=\"card__footer\">\n      {# If link don't nest link (no link title) #}\n      {% if isLink %}\n        Card Footer Text\n      {% else %}\n        <a class=\"button button--small\" href=\"https://www.yahoo.com/\">Footer</a>\n      {% endif %}\n    </div>\n  {% endif %}\n</{{ element }}>\n\n"}
-  </script>
-</div>
+    
+<h2 class="h2">Simple Example</h2>
 
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="/frontend/" class="router-link-active router-link-exact-active breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item" aria-current="page">
+      <span class="breadcrumb__text">Current Page</span>
+    </li>
+  </ol>
+</nav>
+
+<h2 class="h2">With Long Title</h2>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="/frontend/" class="router-link-active router-link-exact-active breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">This Item Has a Really Long Title That Will Be Truncated</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Just Another This Item Has a Really Long Title That Will Be Truncated
+      </a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item" aria-current="page">
+      <span class="breadcrumb__text">Current Page</span>
+    </li>
+  </ol>
+</nav>
+
+<h2 class="h2">Many Items</h2>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="/frontend/" class="router-link-active router-link-exact-active breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/frontend/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item" aria-current="page">
+      <span class="breadcrumb__text">Current Page</span>
+    </li>
+  </ol>
+</nav>
   </div>
 
 		</main>
