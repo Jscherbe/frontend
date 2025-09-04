@@ -774,14 +774,14 @@ Example usage
 ``` scss
 .test-get-sizes {
   $sizes: ulu.breakpoint-get-sizes();
-  height: map.get($sizes, "medium");
+  content: map.get($sizes, "medium");
 }
 ```
   
 
 ``` css
 .test-get-sizes {
-  height: 76em;
+  content: 76em;
 }
 ```
   
@@ -843,14 +843,14 @@ Example usage
 
 ``` scss
 .test-get-size {
-  height: ulu.breakpoint-get-size("medium");
+  content: ulu.breakpoint-get-size("medium");
 }
 ```
   
 
 ``` css
 .test-get-size {
-  height: 76em;
+  content: 76em;
 }
 ```
   
@@ -922,16 +922,16 @@ Example usage
 
 ``` scss
 .test-get-size-value {
-  height: ulu.breakpoint-get-size-value("medium", true);
-  max-height: ulu.breakpoint-get-size-value("medium");
+  content: ulu.breakpoint-get-size-value("medium", true);
+  content: ulu.breakpoint-get-size-value("medium");
 }
 ```
   
 
 ``` css
 .test-get-size-value {
-  height: 75.99em;
-  max-height: 76em;
+  content: 75.99em;
+  content: 76em;
 }
 ```
   

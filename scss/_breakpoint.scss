@@ -72,7 +72,7 @@ $sizes: (
 /// @example scss {compile} Example usage
 ///   .test-get-sizes {
 ///     $sizes: ulu.breakpoint-get-sizes();
-///     height: map.get($sizes, "medium");
+///     content: map.get($sizes, "medium");
 ///   }
 /// @return {Map} Map of breakpoints (equivalent to $sizes)
 
@@ -85,7 +85,7 @@ $sizes: (
 /// @compiler
 /// @example scss {compile} Example usage
 ///   .test-get-size {
-///     height: ulu.breakpoint-get-size("medium");
+///     content: ulu.breakpoint-get-size("medium");
 ///   }
 /// @return {Number} The sizes value
 
@@ -98,8 +98,8 @@ $sizes: (
 /// @compiler
 /// @example scss {compile} Example usage
 ///   .test-get-size-value {
-///     height: ulu.breakpoint-get-size-value("medium", true);
-///     max-height: ulu.breakpoint-get-size-value("medium");
+///     content: ulu.breakpoint-get-size-value("medium", true);
+///     content: ulu.breakpoint-get-size-value("medium");
 ///   }
 /// @return {Number} The value for the given size
 
