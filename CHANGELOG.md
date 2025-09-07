@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.105
+
+- **scss/components/menu-stack** 
+  - Reduced active selector list to what is applicable per child type (link vs toggle vs selectable)
+  - Add hide-inputs option
+  - Style selectable active state based on inner checked input
+
 ## 0.1.0-beta.104
 
 - **scss/components/breadcrumb** - Change child selector `.breadcrumb__text` to `.breadcrumb__current` for clarity

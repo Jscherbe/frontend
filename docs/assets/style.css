@@ -15430,26 +15430,17 @@ ul.list-inline,
   color: var(--site-color-link-hover);
   background-color: var(--site-color-button-background-hover);
 }
-.menu-stack__link.is-active, .menu-stack__link.is-active:hover,
-.menu-stack__selectable.is-active,
-.menu-stack__selectable.is-active:hover,
-.menu-stack__toggle.is-active,
-.menu-stack__toggle.is-active:hover {
-  color: black;
-  background-color: rgb(219, 219, 219);
-}
-.menu-stack__link[aria-current=page], .menu-stack__link[aria-current=page]:hover,
-.menu-stack__selectable[aria-current=page],
-.menu-stack__selectable[aria-current=page]:hover,
-.menu-stack__toggle[aria-current=page],
-.menu-stack__toggle[aria-current=page]:hover {
-  color: black;
-  background-color: rgb(219, 219, 219);
-}
 
 .menu-stack__selectable {
   padding: 0;
   position: relative;
+}
+
+.menu-stack__link.is-active, .menu-stack__link.is-active:hover, .menu-stack__toggle.is-active, .menu-stack__toggle.is-active:hover, .menu-stack__selectable:has(> [type=checkbox]:checked), .menu-stack__selectable:has(> [type=checkbox]:checked):hover, .menu-stack__selectable:has(> [type=radio]:checked), .menu-stack__selectable:has(> [type=radio]:checked):hover,
+.menu-stack__link[aria-current=page],
+.menu-stack__link[aria-current=page]:hover {
+  color: black;
+  background-color: rgb(219, 219, 219);
 }
 
 .menu-stack__selectable [type=checkbox],
@@ -15506,6 +15497,22 @@ ul.list-inline,
   border-radius: 0;
   margin: 0;
   padding: 0.25em 0.75em;
+}
+
+.menu-stack--hide-inputs .menu-stack__selectable-input,
+.menu-stack--hide-inputs .menu-stack__selectable [type=checkbox],
+.menu-stack--hide-inputs .menu-stack__selectable [type=radio] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.menu-stack--hide-inputs .menu-stack__selectable label,
+.menu-stack--hide-inputs .menu-stack__selectable-label {
+  padding-left: 1.25em;
 }
 
 [data-ulu-modal-builder] {

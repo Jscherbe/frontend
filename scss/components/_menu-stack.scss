@@ -75,7 +75,7 @@ $config: (
   "label-line-height" : true,
   "link-separated-margin" : false,
   "link-separated-rule-style" : false,
-  "link-active-selectors" : (".is-active", '[aria-current="page"]'),
+  "link-active-selectors" : (".is-active",),
   "link-background-color" : transparent,
   "link-background-color-active" : rgb(219, 219, 219),
   "link-background-color-hover" : rgb(240, 240, 240),
@@ -181,19 +181,26 @@ $config: (
       color: color.get(get("link-color-hover"));
       background-color: color.get(get("link-background-color-hover"));
     }
-    @each $active-selector in get("link-active-selectors") {
-      &#{ $active-selector } {
-        &,
-        &:hover {
-          color: color.get(get("link-color-active"));
-          background-color: color.get(get("link-background-color-active"));
-        }
-      }
-    }
   }
   #{ $prefix }__selectable {
     padding: 0;
     position: relative;
+  }
+
+  // Combine all active selectors using sass:selector functions
+  $base-selectors: #{ $prefix }__link, #{ $prefix }__toggle;
+  $active-from-config: get("link-active-selectors");
+  $traditional-active: sassSelector.append($base-selectors, $active-from-config);
+
+  $checked-active: sassSelector.parse("#{ $prefix }__selectable:has(> [type='checkbox']:checked), #{ $prefix }__selectable:has(> [type='radio']:checked)");
+
+  #{ $traditional-active, $checked-active },
+  #{ $prefix }__link[aria-current="page"] {
+    &,
+    &:hover {
+      color: color.get(get("link-color-active"));
+      background-color: color.get(get("link-background-color-active"));
+    }
   }
   #{ $prefix }__selectable [type="checkbox"],
   #{ $prefix }__selectable [type="radio"],
@@ -256,6 +263,19 @@ $config: (
       border-radius: 0;
       margin: 0;
       padding: get("compact-link-padding-y") get("compact-link-padding-x");
+    }
+  }
+
+  #{ $prefix }--hide-inputs {
+    #{ $prefix }__selectable-input,
+    #{ $prefix }__selectable [type="checkbox"],
+    #{ $prefix }__selectable [type="radio"] {
+      @include element.hidden-visually();
+    }
+
+    #{ $prefix }__selectable label,
+    #{ $prefix }__selectable-label {
+      padding-left: get("link-padding-x");
     }
   }
 }

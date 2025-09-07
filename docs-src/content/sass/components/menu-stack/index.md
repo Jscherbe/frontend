@@ -49,7 +49,7 @@ $config: (
   "label-line-height" : true,
   "link-separated-margin" : false,
   "link-separated-rule-style" : false,
-  "link-active-selectors" : (".is-active", '[aria-current="page"]'),
+  "link-active-selectors" : (".is-active",),
   "link-background-color" : transparent,
   "link-background-color-active" : rgb(219, 219, 219),
   "link-background-color-hover" : rgb(240, 240, 240),
@@ -210,7 +210,7 @@ Prints component styles
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 122-126
-- **Lines (code):** 128-261
+- **Lines (code):** 128-281
 
 </details>
 
