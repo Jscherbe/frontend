@@ -16717,6 +16717,172 @@ ul.list-inline,
   }
 }
 
+.progress-bar {
+  max-width: 20rem;
+  line-height: 1.3;
+  margin: 0 0 0.5em 0;
+}
+
+.progress-bar__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.progress-bar__icon {
+  margin-left: auto;
+  padding-left: 0.25em;
+  color: var(--site-color-type-tertiary);
+}
+
+.progress-bar__track {
+  position: relative;
+  margin: 0.1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+.progress-bar__bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-transition: width 200ms ease;
+  transition: width 200ms ease;
+}
+.progress-bar__bar:before {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: rgb(80, 80, 171);
+  -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-animation: ulu-progress-bar 500ms forwards ease-in;
+          animation: ulu-progress-bar 500ms forwards ease-in;
+}
+
+.progress-bar--deficit .progress-bar__icon {
+  color: #d54309;
+}
+
+.progress-bar__bar--deficit {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: auto;
+  background-color: #d54309;
+}
+
+.progress-bar__values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 300;
+  color: var(--site-color-type-tertiary);
+}
+
+.progress-bar__value {
+  margin-right: 0.5em;
+}
+
+.progress-bar__value--deficit {
+  margin-left: auto;
+  margin-right: 0.3em;
+  color: #d54309;
+}
+.progress-bar__value--deficit + .progress-bar__value--total {
+  margin-left: 0;
+}
+
+.progress-bar__value--total {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.progress-bar--positive .progress-bar__bar:before {
+  background-color: #00a91c;
+}
+.progress-bar--positive .progress-bar__icon {
+  color: #00a91c;
+}
+
+.progress-bar--negative .progress-bar__bar:before {
+  background-color: #d54309;
+}
+.progress-bar--negative .progress-bar__icon {
+  color: #d54309;
+}
+
+.progress-bar--small .progress-bar__track {
+  height: 8px;
+}
+.progress-bar--loader .progress-bar__track {
+  height: 4px;
+}
+.progress-bar--loader .progress-bar__track {
+  background-color: transparent;
+}
+.progress-bar--indeterminate .progress-bar__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  -webkit-animation: ulu-progress-bar-indeterminate 2.5s linear infinite;
+          animation: ulu-progress-bar-indeterminate 2.5s linear infinite;
+}
+
+@-webkit-keyframes ulu-progress-bar {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes ulu-progress-bar {
+  from {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+  to {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+@-webkit-keyframes ulu-progress-bar-indeterminate {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+@keyframes ulu-progress-bar-indeterminate {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
 .pull-quote {
   padding: 2em 0;
   text-align: center;
@@ -19069,6 +19235,17 @@ helpers:utilities
 .flex-basis-full {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+}
+
+.flex-grow {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.flex-shrink {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
 .full-min-height {

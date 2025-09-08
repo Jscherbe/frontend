@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.106
+
+- **scss/components/progress-bar** - Added progress bar component and examples 
+
 ## 0.1.0-beta.105
 
 - **scss/components/menu-stack** 

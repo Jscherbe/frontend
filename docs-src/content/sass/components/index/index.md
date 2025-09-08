@@ -72,6 +72,7 @@ $all-includes: (
   "pager",
   "panel",
   "popover",
+  "progress-bar",
   "rail",
   "ratio-box",
   "rule",
@@ -103,8 +104,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 121-122
-- **Lines (code):** 124-180
+- **Lines (comments):** 123-124
+- **Lines (code):** 126-183
 
 </details>
 
@@ -139,8 +140,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 182-183
-- **Lines (code):** 185-185
+- **Lines (comments):** 185-186
+- **Lines (code):** 188-188
 
 </details>
 
@@ -176,8 +177,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 187-189
-- **Lines (code):** 191-194
+- **Lines (comments):** 190-192
+- **Lines (code):** 194-197
 
 </details>
 
@@ -222,8 +223,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 196-197
-- **Lines (code):** 199-201
+- **Lines (comments):** 199-200
+- **Lines (code):** 202-204
 
 </details>
 
@@ -267,8 +268,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 203-207
-- **Lines (code):** 209-379
+- **Lines (comments):** 206-210
+- **Lines (code):** 212-385
 
 </details>
 
