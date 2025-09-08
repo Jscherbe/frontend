@@ -40,6 +40,7 @@
 @forward "placeholder-block" as placeholder-block-*;
 @forward "pull-quote" as pull-quote-*;
 @forward "popover" as popover-*;
+@forward "progress-bar" as progress-bar-*;
 @forward "rail" as rail-*;
 @forward "ratio-box" as ratio-box-*;
 @forward "rule" as rule-*;
@@ -98,6 +99,7 @@
 @use "panel";
 @use "placeholder-block";
 @use "popover";
+@use "progress-bar";
 @use "pull-quote";
 @use "rail";
 @use "ratio-box";
@@ -157,6 +159,7 @@ $all-includes: (
   "pager",
   "panel",
   "popover",
+  "progress-bar",
   "rail",
   "ratio-box",
   "rule",
@@ -324,6 +327,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "popover")) {
     @include popover.styles;
+  }
+  @if (list.index($includes, "progress-bar")) {
+    @include progress-bar.styles;
   }
   @if (list.index($includes, "pull-quote")) {
     @include pull-quote.styles;

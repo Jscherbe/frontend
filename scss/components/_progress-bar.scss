@@ -1,0 +1,237 @@
+////
+/// @group progress-bar
+/// Groups a set of buttons
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../typography";
+
+
+// Used for function fallback
+$-fallbacks: (
+  "line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense"
+  ),
+  "value-font-weight" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "font-weight-light"
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {Color}  example  [default value] Test
+
+$config: (
+  "max-width" : 20rem,
+  "margin" : (0 0 0.5em 0),
+  "line-height" : true,
+  "value-color" : "type-tertiary",
+  "value-margin" : 0.5em,
+  "value-font-weight" : true,
+  "value-margin-deficit" : 0.3em,
+  "value-color-deficit" : "danger",
+  "bar-height" : 12px,
+  "bar-color" : rgb(80, 80, 171),
+  "bar-color-deficit" : "danger",
+  "icon-margin" : 0.25em,
+  "icon-color" : "type-tertiary",
+  "icon-color-deficit" : "danger",
+  "track-color" : #ccc,
+  "track-margin" : (0.1em 0),
+  "animation-duration" : 200ms,
+  "animation-timing" : ease,
+  "animation-initial-duration" : 500ms,
+  "animation-initial-timing" : ease-in,
+  "animation-indeterminate-duration" : 2.5s
+) !default;
+
+/// @type Map
+/// This is the map of styles (variations in progress bar types)
+/// - Each style becomes the modifier and accepts ("bar-color", "bar-height", "track-color")
+/// - Use this to match whatever progress system(s) your creating
+$styles: (
+  "positive" : (
+    "bar-color" : "success",
+    "icon-color" : "success"
+  ),
+  "negative" : (
+    "bar-color" : "danger",
+    "icon-color" : "danger"
+  ),
+  "small" : (
+    "bar-height" : 8px
+  ),
+  "loader" : (
+    "bar-height" : 4px,
+    "track-color" : transparent
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-progress-bar-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-progress-bar-set-styles(( "small" : ( "bar-height" : 8px ) ));
+
+@mixin set-styles($changes) {
+  $styles: map.merge($styles, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-progress-bar-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "progress-bar [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo progress-bar
+/// @example scss
+///  @include ulu.component-progress-bar-styles();
+
+@mixin styles {
+  $prefix: selector.class("progress-bar");
+  
+  #{ $prefix } {
+    max-width: get("max-width");
+    line-height: get("line-height");
+    margin: get("margin");
+  }
+  #{ $prefix }__header {
+    display: flex;
+    align-items: flex-end;
+  }
+  #{ $prefix }__icon {
+    margin-left: auto;
+    padding-left: get("icon-margin");
+    color: color.get(get("icon-color"));
+  }
+  #{ $prefix }__track {
+    position: relative; // For indeterminate animation
+    margin: get("track-margin");
+    display: flex;
+    width: 100%;
+    height: get("bar-height");
+    overflow: hidden;
+    background-color: color.get(get("track-color"));
+  }
+  #{ $prefix }__bar {
+    display: flex;
+    height: 100%;
+    // This is the animation when the component is living in the page
+    transition: width get("animation-duration") get("animation-timing"); 
+    // This is the initial animation of the bar within itself (ie. filling up)
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      background-color: color.get(get("bar-color"));
+      transform-origin: left center;
+      animation: ulu-progress-bar get("animation-initial-duration") forwards get("animation-initial-timing");
+    }
+  }
+  #{ $prefix }--deficit {
+    #{ $prefix }__icon {
+      color: color.get(get("icon-color-deficit"));
+    }
+  }
+  #{ $prefix }__bar--deficit {
+    align-items: flex-end;
+    margin-left: auto;
+    background-color: color.get(get("bar-color-deficit"));
+  }
+  #{ $prefix }__values {
+    display: flex;
+    font-weight: get("value-font-weight");
+    color: color.get(get("value-color"));
+  }
+  #{ $prefix }__value {
+    margin-right: get("value-margin");
+  }
+  #{ $prefix }__value--deficit {
+    margin-left: auto;
+    margin-right: get("value-margin-deficit");
+    color: color.get(get("value-color-deficit"));
+    & + #{ $prefix }__value--total {
+      margin-left: 0;
+    }
+  }
+  #{ $prefix }__value--total {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  @each $name, $props in $styles {
+    #{ $prefix }--#{ $name } {
+      #{ $prefix }__track {
+        height: map.get($props, "bar-height");
+      }
+      #{ $prefix }__bar:before {
+        background-color: color.get(map.get($props, "bar-color"));
+      }
+      #{ $prefix }__track {
+        background-color: color.get(map.get($props, "track-color"));
+      }
+      #{ $prefix }__icon {
+        color: color.get(map.get($props, "icon-color"));
+      }
+    }
+  }
+
+
+  // For Site Loading (Async Content, not charting/visualization)
+  #{ $prefix }--indeterminate {
+    #{ $prefix }__bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      animation: ulu-progress-bar-indeterminate get("animation-indeterminate-duration") linear infinite;
+    }
+    // &#{ $prefix }--loaded {
+    //   #{ $prefix }__bar {
+    //     display: none;
+    //   }
+    // }
+  }
+
+  @keyframes ulu-progress-bar {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes ulu-progress-bar-indeterminate {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+}

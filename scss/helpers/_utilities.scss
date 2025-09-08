@@ -42,6 +42,12 @@
   #{ selector.class("flex-basis-full") } {
     flex-basis: 100%;
   }
+  #{ selector.class("flex-grow") } {
+    flex-grow: 1;
+  }
+  #{ selector.class("flex-shrink") } {
+    flex-shrink: 1;
+  }
   #{ selector.class("full-min-height") } {
     min-height: 100%;
   }

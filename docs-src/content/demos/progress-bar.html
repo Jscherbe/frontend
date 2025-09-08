@@ -1,0 +1,179 @@
+---
+title: Progress Bar
+layout: unformatted
+---
+
+<h2 class="h2">Basic Example</h2>
+<p>The default progress bar has no modifiers.</p>
+<div class="progress-bar">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Label that is long test</strong>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 40%;"></div>
+  </div>
+  <div class="progress-bar__values">
+    <div class="progress-bar__value progress-bar__value--amount"><strong class="hidden-visually">Amount:</strong>
+      200</div>
+    <div class="progress-bar__value progress-bar__value--total"><strong class="hidden-visually">Total:</strong> 500
+    </div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Indeterminate Modifier</h2>
+<p>Uses the <code>.progress-bar--indeterminate</code> modifier for an animated loading state when the progress is unknown.</p>
+<div class="progress-bar progress-bar--loader progress-bar--indeterminate">
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar"></div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Loader Style</h2>
+<p>Uses the <code>.progress-bar--loader</code> modifier for a thin loading bar.</p>
+<div class="progress-bar progress-bar--loader">
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 65%;"></div>
+  </div>
+</div>
+
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Completed Example</h2>
+<p>An example of a completed progress bar with an icon.</p>
+<div class="progress-bar">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Progress</strong>
+    <div class="progress-bar__icon">
+      <span class="fas fa-check" aria-hidden="true"></span>
+      <span class="hidden-visually">Item Completed</span>
+    </div>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 100%;"></div>
+  </div>
+  <div class="progress-bar__values">
+    <div class="progress-bar__value progress-bar__value--amount"><strong class="hidden-visually">Amount:</strong>
+      500</div>
+    <div class="progress-bar__value progress-bar__value--total"><strong class="hidden-visually">Total:</strong> 500
+    </div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Deficit Example</h2>
+<p>An example of a progress bar with a deficit.</p>
+<div class="progress-bar">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Progress</strong>
+    <div class="progress-bar__icon"><span class="fas fa-triangle-exclamation" aria-hidden="true"></span><span class="hidden-visually">Item Has Deficit</span></div>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 60%;"></div>
+    <div class="progress-bar__bar progress-bar__bar--deficit" style="width: 20%;"></div>
+  </div>
+  <div class="progress-bar__values">
+    <div class="progress-bar__value progress-bar__value--amount"><strong class="hidden-visually">Amount:</strong>
+      300</div>
+    <div class="progress-bar__value progress-bar__value--deficit color-status is-danger"><strong
+        class="hidden-visually">Deficit: </strong> -100</div>
+    <div class="progress-bar__value progress-bar__value--total"><strong class="hidden-visually">Total:</strong> 500
+    </div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Positive Style</h2>
+<p>Uses the <code>.progress-bar--positive</code> modifier.</p>
+<div class="progress-bar progress-bar--positive">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Positive</strong></div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 75%;"></div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Negative Style</h2>
+<p>Uses the <code>.progress-bar--negative</code> modifier.</p>
+<div class="progress-bar progress-bar--negative">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Negative</strong></div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 30%;"></div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Small Modifier</h2>
+<p>Uses the <code>.progress-bar--small</code> modifier. Font sizing is controlled by the parent element.</p>
+<div class="progress-bar progress-bar--small progress-bar--positive type-small">
+  <div class="progress-bar__header"><strong class="progress-bar__label type-normal">Progress</strong>
+    <div class="progress-bar__icon">
+      <span class="fas fa-check" aria-hidden="true"></span>
+      <span class="hidden-visually">Item Completed</span>
+    </div>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 100%;"></div>
+  </div>
+  <div class="progress-bar__values">
+    <div class="progress-bar__value progress-bar__value--amount"><strong class="hidden-visually">Amount:</strong>
+      500</div>
+    <div class="progress-bar__value progress-bar__value--total"><strong class="hidden-visually">Total:</strong> 500
+    </div>
+  </div>
+</div>
+
+<div class="progress-bar progress-bar--small progress-bar--deficit type-small">
+  <div class="progress-bar__header"><strong class="progress-bar__label type-normal">Progress</strong>
+    <div class="progress-bar__icon"><span class="fas fa-triangle-exclamation" aria-hidden="true"></span><span class="hidden-visually">Item Has Deficit</span></div>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 60%;"></div>
+    <div class="progress-bar__bar progress-bar__bar--deficit" style="width: 20%;"></div>
+  </div>
+  <div class="progress-bar__values">
+    <div class="progress-bar__value progress-bar__value--amount"><strong class="hidden-visually">Amount:</strong>
+      300</div>
+    <div class="progress-bar__value progress-bar__value--deficit color-status is-danger"><strong
+        class="hidden-visually">Deficit: </strong> -100</div>
+    <div class="progress-bar__value progress-bar__value--total"><strong class="hidden-visually">Total:</strong> 500
+    </div>
+  </div>
+</div>
+
+<div class="rule rule--light"></div>
+
+<h2 class="h2">Icon left with rail</h2>
+<p>Combining with rail component for icon on left</p>
+
+<div class="progress-bar progress-bar--positive">
+  <div class="rail">
+    <div class="rail__item">
+      <div class="progress-bar__icon type-large">
+        <span class="fas fa-check" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="rail__item flex-grow">
+      <div class="progress-bar__header">
+        <strong class="progress-bar__label">Progress</strong>
+      </div>
+      <div class="progress-bar__track">
+        <div class="progress-bar__bar" style="width: 100%;"></div>
+      </div>
+      <div class="progress-bar__values">
+        <div class="progress-bar__value progress-bar__value--amount"><strong class="hidden-visually">Amount:</strong>
+          300</div>
+        <div class="progress-bar__value progress-bar__value--deficit color-status is-danger"><strong
+            class="hidden-visually">Deficit: </strong> -100</div>
+        <div class="progress-bar__value progress-bar__value--total"><strong class="hidden-visually">Total:</strong> 500
+      </div>
+    </div>
+  </div>
+</div>
+
+
