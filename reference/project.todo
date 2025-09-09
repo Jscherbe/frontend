@@ -1,5 +1,6 @@
 Overall:
-☐
+  ☐ Would be nice to setup (or start collecting) eleventy shortcodes 
+    * Load them in the docs site, but also export them for user use?
   ☐ Need to setup shortcode/partial to template demos (ie. write code, show code and result)
   ☐ Need to finish accordion styling
   ☐ Need to add form module
@@ -48,6 +49,11 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Go through and make common CSS rulesets mixins so they are identical for compression
+    * Things like this for example
+      * display: flex;
+      * flex-direction: column;
+      * align-items: center;
   ☐ Make more things mixins with styles as applied mixins with selectors, that way you can make some of these components youself? Using different selectors?
     * For example the details styling, sometimes it's best to have it restrained to a selector while others it may be global for all details (override browser defaults), or it may be a need to style a details element differently
   ☐ Reconsider that components needs:

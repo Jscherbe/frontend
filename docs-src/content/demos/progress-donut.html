@@ -1,0 +1,59 @@
+---
+title: Progress Donut
+layout: unformatted
+vars:
+  basic: 
+    percentage: 65
+  small: 
+    percentage: 65
+    small: true
+  outside:
+    percentage: 65
+    small: true
+    outside: true
+  outsideBelow:
+    percentage: 65
+    small: true
+    outsideBelow: true
+  neutral:
+    percentage: 65
+    neutral: true
+  statusLow:
+    percentage: 25
+  statusIncomplete:
+    percentage: 75
+  statusComplete:
+    percentage: 100
+---
+
+<h2 class="h2">Basic Example</h2>
+<p>The default appearance of the donut chart.</p>
+{% progressDonut vars.basic %}
+
+<h2 class="h2">Small</h2>
+<p>Testing user defined size modifier</p>
+{% progressDonut vars.small %}
+
+<h2 class="h2">Outside</h2>
+<p>A version of the chart where the value is displayed to the right of the chart.</p>
+{% progressDonut vars.outside %}
+
+<h2 class="h2">Outside Below</h2>
+<p>A version of the chart where the value is displayed to the below of the chart.</p>
+{% progressDonut vars.outsideBelow %}
+
+<h2 class="h2">Neutral Color</h2>
+<p>The chart can be displayed in a neutral color scheme.</p>
+{% progressDonut vars.neutral %}
+
+<h2 class="h2">Status Colors</h2>
+<p>The chart color will change based on the percentage value to indicate status (low, incomplete, complete).</p>
+
+<h3>Low (less than 30%)</h3>
+{% progressDonut vars.statusLow %}
+
+<h3>Incomplete (between 30% and 99%)</h3>
+{% progressDonut vars.statusIncomplete %}
+
+<h3>Complete (100%)</h3>
+{% progressDonut vars.statusComplete %}

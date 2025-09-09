@@ -1,0 +1,142 @@
+////
+/// @group progress-donut
+/// A circular progress indicator.
+////
+
+@use "sass:map";
+@use "sass:math";
+@use "../selector";
+@use "../utils";
+@use "../color";
+
+/// Module Settings
+/// @type Map
+/// @prop {Dimension} size [100px] The width and height of the donut chart.
+/// @prop {Number} viewbox-size [32] The size of the SVG viewbox. Used to calculate mask radius.
+/// @prop {Number} stroke-width [32] The width of the progress circle's stroke.
+/// @prop {Color} color-track ["placeholder-background-alt"] The color of the inactive track. Can be a theme color name or a CSS variable.
+/// @prop {Color} color-progress ["indicator"] The color of the progress stroke in a neutral state. Can be a theme color name or a CSS variable.
+/// @prop {Color} color-mask [white] The color of the center mask that creates the donut hole. Can be a theme color name or a CSS variable.
+/// @prop {Color} value-color ["type"] The theme color name for the percentage text inside the donut.
+/// @prop {Color} value-color-outside ["type-tertiary"] The theme color name for the percentage text when displayed outside the donut.
+/// @prop {Dimension | List} value-margin-outside [(0.1em 0.35em)] The margin for the outside value text.
+/// @prop {Time} animation-duration [300ms] The duration for the stroke transition animation.
+/// @prop {Map} status-colors A map of status names to their corresponding colors (e.g., "low": "warning").
+/// @prop {Map} sizes A map of size variations. Each key is a modifier name (e.g., "small") and the value is a map with `size` and `stroke-width` properties.
+
+$config: (
+  "size": 100px,
+  "viewbox-size": 32,
+  "stroke-width": 10,
+  "color-track": "placeholder-background-alt",
+  "color-progress": "indicator",
+  "color-mask": white,
+  "value-color": "type",
+  "value-color-outside": "type-tertiary",
+  "value-margin-outside" : (0.1em 0.35em),
+  "animation-duration" : 300ms,
+  "status-colors": (
+    "low": "danger",
+    "incomplete": "warning",
+    "complete": "success",
+  ),
+  "sizes": (
+    "small" : (
+      "size": 40px,
+      "stroke-width": 13,
+    )
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+@function get($name) {
+  @return utils.require-map-get($config, $name, "progress-donut [config]");
+}
+
+/// Prints component styles
+/// @demo progress-donut
+@mixin styles {
+  $prefix: selector.class("progress-donut");
+
+  #{ $prefix } {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    --ulu-progress-donut-stroke-width: #{ get("stroke-width") };
+  }
+  #{ $prefix }__chart {
+    position: relative;
+    line-height: 1;
+  }
+  #{ $prefix }__chart-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: color.get(get("value-color"));
+    text-shadow: none;
+  }
+  #{ $prefix }__chart-svg {
+    width: get("size");
+    height: get("size");
+    transform: rotate(-90deg);
+    border-radius: 50%;
+  }
+  #{ $prefix }__chart-track {
+    fill: transparent;
+    stroke: color.get(get("color-track"));
+    stroke-width: var(--ulu-progress-donut-stroke-width);
+  }
+  #{ $prefix }__chart-pie {
+    fill: transparent;
+    stroke: color.get(get("color-progress"));
+    stroke-width: var(--ulu-progress-donut-stroke-width);
+    stroke-dasharray: 0 100;
+    will-change: stroke-dasharray;
+    transition: stroke get("animation-duration"); // If value is changing
+  }
+  #{ $prefix }__chart-mask {
+    fill: color.get(get("color-mask"));
+    r: calc( (get("viewbox-size") / 2) - (var(--ulu-progress-donut-stroke-width) / 2) );
+  }
+  #{ $prefix }__value {
+    color: color.get(get("value-color-outside"));
+    margin: get("value-margin-outside");
+    font-weight: normal;
+    line-height: 1;
+  }
+
+  #{ $prefix }--outside {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #{ $prefix }--outside-below {
+    display: block;
+  }
+
+  @each $name, $props in get("sizes") {
+    #{ $prefix }--#{ $name } {
+      --ulu-progress-donut-stroke-width: #{map.get($props, "stroke-width")};
+      #{ $prefix }__chart-svg {
+        width: map.get($props, "size");
+        height: map.get($props, "size");
+      }
+    }
+  }
+  @each $name, $color in get("status-colors") {
+    #{ $prefix }--#{ $name } {
+      #{ $prefix }__chart-pie {
+        stroke: color.get($color);
+      }
+    }
+  }
+}

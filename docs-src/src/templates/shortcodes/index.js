@@ -17,6 +17,7 @@ import popover from "./demoPopover.js";
 import liveDemo from "./liveDemo.js";
 import svgBoxes from "./svgBoxes.js";
 import demoPopover from "./demoPopover.js";
+import progressDonut from "./progressDonut.js";
 
 export const shortcodes = {
   popoverGridItem,
@@ -34,7 +35,8 @@ export const shortcodes = {
   svgBoxes,
   liveDemo,
   demoOverlaySection,
-  demoPopover
+  demoPopover,
+  progressDonut
 };
 
 export const pairedShortcodes = {

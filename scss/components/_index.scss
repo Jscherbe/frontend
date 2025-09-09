@@ -41,6 +41,7 @@
 @forward "pull-quote" as pull-quote-*;
 @forward "popover" as popover-*;
 @forward "progress-bar" as progress-bar-*;
+@forward "progress-donut" as progress-donut-*;
 @forward "rail" as rail-*;
 @forward "ratio-box" as ratio-box-*;
 @forward "rule" as rule-*;
@@ -100,6 +101,7 @@
 @use "placeholder-block";
 @use "popover";
 @use "progress-bar";
+@use "progress-donut";
 @use "pull-quote";
 @use "rail";
 @use "ratio-box";
@@ -160,6 +162,8 @@ $all-includes: (
   "panel",
   "popover",
   "progress-bar",
+  "progress-donut",
+  "pull-quote",
   "rail",
   "ratio-box",
   "rule",
@@ -330,6 +334,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "progress-bar")) {
     @include progress-bar.styles;
+  }
+  @if (list.index($includes, "progress-donut")) {
+    @include progress-donut.styles;
   }
   @if (list.index($includes, "pull-quote")) {
     @include pull-quote.styles;
