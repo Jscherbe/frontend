@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.109
+
+- **scss/components/accordion** - Adjusted selectors from & + & to print out selectors incase this mixin is called when scoped .accordion + .accordion vs .scope .accordion + .scope .accordion which is incorrect
+  
 ## 0.1.0-beta.108
 
 - **scss/components/progress-bar** - Remove max-width option from new component

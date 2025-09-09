@@ -122,7 +122,7 @@ $config: (
       border-bottom-left-radius: get("border-radius");
       border-bottom-right-radius: get("border-radius");
     }
-    & + & {
+    & + #{ $prefix } {
       $gap: -(get("margin") - get("margin-between"));
       margin-top: $gap;
       margin-top: calc($gap - get("border-width"));
@@ -216,7 +216,7 @@ $config: (
   }
   #{ $prefix }--borderless {
     border: none;
-    & + & {
+    & + #{ $prefix }--borderless {
       $gap: -(get("margin") - get("borderless-margin-between"));
       margin-top: $gap;
       margin-top: calc($gap - get("border-width"));
