@@ -1,5 +1,5 @@
 ---
-title: Progress Donut
+title: Progress Circle
 layout: unformatted
 vars:
   basic: 
@@ -41,49 +41,49 @@ vars:
 ---
 
 <p>
-  You'll need to either build a template the svg structure (if static site or cms) or use the Vue component (form vue library) for this. If building a template it's pretty simple (see shortcode in 'frontend/docs-src/src/templates/shortcodes/progressDonut.js')
+  You'll need to either build a template the svg structure (if static site or cms) or use the Vue component (form vue library) for this. If building a template it's pretty simple (see shortcode in 'frontend/docs-src/src/templates/shortcodes/progressCircle.js')
 </p>
 
 <h2 class="h2">Basic Example</h2>
 <p>The default appearance of the donut chart.</p>
-{% progressDonut vars.basic %}
+{% progressCircle vars.basic %}
 
 <h2 class="h2">Small</h2>
 <p>Testing user defined size modifier</p>
-{% progressDonut vars.small %}
+{% progressCircle vars.small %}
 
 <h2 class="h2">Outside</h2>
 <p>A version of the chart where the value is displayed to the right of the chart.</p>
-{% progressDonut vars.outside %}
+{% progressCircle vars.outside %}
 
 <h2 class="h2">Outside Below</h2>
 <p>A version of the chart where the value is displayed to the below of the chart.</p>
-{% progressDonut vars.outsideBelow %}
+{% progressCircle vars.outsideBelow %}
 
 <h2 class="h2">Neutral Color</h2>
 <p>The chart can be displayed in a neutral color scheme.</p>
-{% progressDonut vars.neutral %}
+{% progressCircle vars.neutral %}
 
 <h2 class="h2">Pie Style</h2>
 <p>The donut can also be rendered as a solid pie chart.</p>
-{% progressDonut vars.pie %}
+{% progressCircle vars.pie %}
 
 <h2 class="h2">Pie Style (outside, small)</h2>
 <p>The donut can also be rendered as a solid pie chart.</p>
-{% progressDonut vars.pieOutside %}
+{% progressCircle vars.pieOutside %}
 
 <h2 class="h2">Pie Style (outside, small, no mask)</h2>
 <p>The donut can also be rendered as a solid pie chart.</p>
-{% progressDonut vars.pieOutsideNoMask %}
+{% progressCircle vars.pieOutsideNoMask %}
 
 <h2 class="h2">Status Colors</h2>
 <p>The chart color will change based on the percentage value to indicate status (low, incomplete, complete).</p>
 
 <h3>Low (less than 30%)</h3>
-{% progressDonut vars.statusLow %}
+{% progressCircle vars.statusLow %}
 
 <h3>Incomplete (between 30% and 99%)</h3>
-{% progressDonut vars.statusIncomplete %}
+{% progressCircle vars.statusIncomplete %}
 
 <h3>Complete (100%)</h3>
-{% progressDonut vars.statusComplete %}
+{% progressCircle vars.statusComplete %}

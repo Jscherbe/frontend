@@ -16747,7 +16747,7 @@ ul.list-inline,
   width: 100%;
   height: 12px;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #bababa;
 }
 
 .progress-bar__bar {
@@ -16762,7 +16762,7 @@ ul.list-inline,
   content: "";
   display: block;
   width: 100%;
-  background-color: rgb(80, 80, 171);
+  background-color: #5050ab;
   -webkit-transform-origin: left center;
       -ms-transform-origin: left center;
           transform-origin: left center;
@@ -16883,6 +16883,130 @@ ul.list-inline,
     left: -100%;
   }
 }
+.progress-circle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  --ulu-progress-circle-stroke-width: 10;
+}
+
+.progress-circle__chart {
+  position: relative;
+  line-height: 1;
+}
+
+.progress-circle__chart-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: var(--site-color-type);
+  text-shadow: none;
+}
+
+.progress-circle__chart-svg {
+  width: 100px;
+  height: 100px;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-radius: 50%;
+}
+
+.progress-circle__chart-track {
+  fill: transparent;
+  stroke: #bababa;
+  stroke-width: var(--ulu-progress-circle-stroke-width);
+}
+
+.progress-circle__chart-pie {
+  fill: transparent;
+  stroke: #5050ab;
+  stroke-width: var(--ulu-progress-circle-stroke-width);
+  stroke-dasharray: 0 100;
+  will-change: stroke-dasharray;
+  -webkit-transition: stroke 300ms;
+  transition: stroke 300ms;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+.progress-circle__chart-mask {
+  fill: white;
+  r: calc(16 - var(--ulu-progress-circle-stroke-width) / 2);
+}
+
+.progress-circle__value {
+  color: var(--site-color-type-tertiary);
+  margin: 0.1em 0.35em;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.progress-circle--outside {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.progress-circle--outside-below {
+  display: block;
+}
+
+.progress-circle--pie .progress-circle__chart-pie {
+  stroke-width: 32;
+}
+.progress-circle--pie .progress-circle__chart-track {
+  fill: #bababa;
+}
+.progress-circle--pie .progress-circle__chart-mask {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+.progress-circle--no-mask .progress-circle__chart-mask {
+  display: none;
+}
+
+.progress-circle--small {
+  --ulu-progress-circle-stroke-width: 13;
+}
+.progress-circle--small .progress-circle__chart-svg {
+  width: 40px;
+  height: 40px;
+}
+
+.progress-circle--low .progress-circle__chart-pie {
+  stroke: #d54309;
+}
+
+.progress-circle--incomplete .progress-circle__chart-pie {
+  stroke: #ffbe2e;
+}
+
+.progress-circle--complete .progress-circle__chart-pie {
+  stroke: #00a91c;
+}
+
 .pull-quote {
   padding: 2em 0;
   text-align: center;

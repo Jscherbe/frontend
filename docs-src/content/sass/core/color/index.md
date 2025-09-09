@@ -39,44 +39,49 @@ The color palette map, can be extended or modified with set() and accessed with 
 
 ``` scss
 $palette: (
-  "black"                   : black,
-  "white"                   : white,
-  "type"                    : black,
-  "type-secondary"          : rgb(82, 82, 82),
-  "type-tertiary"           : rgb(125, 125, 125),
-  "type-disabled"           : rgb(160, 160, 160),
-  "headline"                : inherit,
-  "background"              : white,
-  "background-gray"         : #fafafa,
-  "focus"                   : blue,
-  "accent"                  : orange,
-  "info"                    : #00bde3,
-  "success"                 : #00a91c,
-  "warning"                 : #ffbe2e,  
-  "danger"                  : #d54309,  
-  "info-background"         : #e7f6f8,
-  "success-background"      : #ecf3ec,
-  "warning-background"      : #faf3d1,
-  "danger-background"       : #f4e3db,
-  "selected"                : green,
-  "box-shadow"              : rgba(0, 0, 0, 0.349),
-  "box-shadow-hover"        : rgba(0, 0, 0, 0.5),
-  "rule"                    : gray,
-  "rule-light"              : lightgray,
-  "link"                    : blue,
-  "link-hover"              : darkblue,
-  "link-active"             : darkblue,
-  "link-visited"            : purple,
-  "bullet"                  : inherit,
-  "control"                 : white,
-  "control-hover"           : white,
-  "control-active"          : white,
-  "control-border"          : purple,
-  "control-border-hover"    : blue,
-  "control-border-active"   : orange,
-  "control-background"      : purple,
-  "control-background-hover": blue,
-  "control-background-active": orange,
+  "black":                      black,
+  "white":                      white,
+  "type":                       black,
+  "type-secondary":             rgb(82, 82, 82),
+  "type-tertiary":              rgb(125, 125, 125),
+  "type-disabled":              rgb(160, 160, 160),
+  "headline":                   inherit,
+  "background":                 white,
+  "background-gray":            #fafafa,
+  "focus":                      blue,
+  "accent":                     orange,
+  "info":                       #00bde3,
+  "success":                    #00a91c,
+  "warning":                    #ffbe2e,
+  "danger":                     #d54309,
+  "info-background":            #e7f6f8,
+  "success-background":         #ecf3ec,
+  "warning-background":         #faf3d1,
+  "danger-background":          #f4e3db,
+  // Used for background of elements that are placeholder or that have no value (think charts)
+  "placeholder-background":     #e2e2e2,
+  "placeholder-background-alt": #bababa,
+  "selected":                   green,
+  "box-shadow":                 rgba(0, 0, 0, 0.349),
+  "box-shadow-hover":           rgba(0, 0, 0, 0.5),
+  "rule":                       gray,
+  "rule-light":                 lightgray,
+  "link":                       blue,
+  "link-hover":                 darkblue,
+  "link-active":                darkblue,
+  "link-visited":               purple,
+  "bullet":                     inherit,
+  "control":                    white,
+  "control-hover":              white,
+  "control-active":             white,
+  "control-border":             purple,
+  "control-border-hover":       blue,
+  "control-border-active":      orange,
+  "control-background":         purple,
+  "control-background-hover":   blue,
+  "control-background-active":  orange,
+  // Like accent indicator like things in ui (progress, etc)
+  "indicator" :                 #5050ab, 
 );
 ```
   
@@ -89,7 +94,7 @@ $palette: (
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 13-16
-- **Lines (code):** 18-57
+- **Lines (code):** 18-62
 
 </details>
 
@@ -135,8 +140,8 @@ $contexts: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 59-63
-- **Lines (code):** 65-76
+- **Lines (comments):** 64-68
+- **Lines (code):** 70-81
 
 </details>
 
@@ -187,8 +192,8 @@ $color-classes: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 78-79
-- **Lines (code):** 80-84
+- **Lines (comments):** 83-84
+- **Lines (code):** 85-89
 
 </details>
 
@@ -223,8 +228,8 @@ Used to override or extend the color palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 86-92
-- **Lines (code):** 94-96
+- **Lines (comments):** 91-97
+- **Lines (code):** 99-101
 
 </details>
 
@@ -285,8 +290,8 @@ Set output classes for all-color-class-styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 121-122
-- **Lines (code):** 124-126
+- **Lines (comments):** 126-127
+- **Lines (code):** 129-131
 
 </details>
 
@@ -330,8 +335,8 @@ Set color contexts
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 135-145
-- **Lines (code):** 147-149
+- **Lines (comments):** 140-150
+- **Lines (code):** 152-154
 
 </details>
 
@@ -397,8 +402,8 @@ Prints contexts styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 174-175
-- **Lines (code):** 177-183
+- **Lines (comments):** 179-180
+- **Lines (code):** 182-188
 
 </details>
 
@@ -444,8 +449,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 229-236
-- **Lines (code):** 238-247
+- **Lines (comments):** 234-241
+- **Lines (code):** 243-252
 
 </details>
 
@@ -529,8 +534,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 249-253
-- **Lines (code):** 255-264
+- **Lines (comments):** 254-258
+- **Lines (code):** 260-269
 
 </details>
 
@@ -605,8 +610,8 @@ Get a color from the palette by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 98-100
-- **Lines (code):** 102-119
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-124
 
 </details>
 
@@ -660,8 +665,8 @@ Check if a color is set in the palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 128-128
-- **Lines (code):** 130-133
+- **Lines (comments):** 133-133
+- **Lines (code):** 135-138
 
 </details>
 
@@ -697,8 +702,8 @@ Get a context by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 151-153
-- **Lines (code):** 155-157
+- **Lines (comments):** 156-158
+- **Lines (code):** 160-162
 
 </details>
 
@@ -752,8 +757,8 @@ Get a context's value'
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 159-162
-- **Lines (code):** 164-172
+- **Lines (comments):** 164-167
+- **Lines (code):** 169-177
 
 </details>
 
@@ -808,8 +813,8 @@ Tint (add white) a color using the default white by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 185-190
-- **Lines (code):** 192-194
+- **Lines (comments):** 190-195
+- **Lines (code):** 197-199
 - **Author:** 
 
 </details>
@@ -872,8 +877,8 @@ Tint (add white) a color using the default white by a percentage (Using color-mi
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 196-201
-- **Lines (code):** 203-205
+- **Lines (comments):** 201-206
+- **Lines (code):** 208-210
 
 </details>
 
@@ -927,8 +932,8 @@ Shade (add black) a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 207-212
-- **Lines (code):** 214-216
+- **Lines (comments):** 212-217
+- **Lines (code):** 219-221
 - **Author:** Kitty Giraudel
 
 </details>
@@ -991,8 +996,8 @@ Shade (add black) a color using the default white by a percentage (Using color-m
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 218-223
-- **Lines (code):** 225-227
+- **Lines (comments):** 223-228
+- **Lines (code):** 230-232
 
 </details>
 

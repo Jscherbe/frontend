@@ -1,8 +1,8 @@
 # Change Log
 
-## 0.1.0-beta.106
+## 0.1.0-beta.107
 
-- **scss/components/progress-donut** - Added progress donut component and demo
+- **scss/components/progress-circle** - Added progress pie/donut component and demo
 
 ## 0.1.0-beta.106
 

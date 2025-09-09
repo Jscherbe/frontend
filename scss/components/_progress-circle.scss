@@ -1,5 +1,5 @@
 ////
-/// @group progress-donut
+/// @group progress-circle
 /// A circular progress indicator.
 ////
 
@@ -11,15 +11,15 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} size [100px] The width and height of the donut chart.
+/// @prop {Dimension} size [100px] The width and height of the chart.
 /// @prop {Number} viewbox-size [32] The size of the SVG viewbox. Used to calculate mask radius.
 /// @prop {Number} stroke-width [10] The width of the progress circle's stroke.
 /// @prop {Color} color-track ["placeholder-background-alt"] The color of the inactive track. Can be a theme color name or a CSS variable.
 /// @prop {Color} color-progress ["indicator"] The color of the progress stroke in a neutral state. Can be a theme color name or a CSS variable.
 /// @prop {Color} color-mask [white] The color of the center mask that creates the donut hole. Can be a theme color name or a CSS variable.
 /// @prop {Color} color-mask-pie [rgba(255, 255, 255, 0.5)] The mask color when using the pie style modifier.
-/// @prop {Color} value-color ["type"] The theme color name for the percentage text inside the donut.
-/// @prop {Color} value-color-outside ["type-tertiary"] The theme color name for the percentage text when displayed outside the donut.
+/// @prop {Color} value-color ["type"] The theme color name for the percentage text inside the circle.
+/// @prop {Color} value-color-outside ["type-tertiary"] The theme color name for the percentage text when displayed outside the circle.
 /// @prop {Dimension | List} value-margin-outside [(0.1em 0.35em)] The margin for the outside value text.
 /// @prop {Time} transition-duration [300ms] The duration for the stroke transition animation (when the component is updating already in the page)
 /// @prop {Time} animation-duration [1s] The duration for the stroke animation (relies on template having a custom build animation per pie based on dash array). This is used for initial animations
@@ -65,20 +65,20 @@ $config: (
 /// Get a config option
 /// @param {String} $name Name of property
 @function get($name) {
-  @return utils.require-map-get($config, $name, "progress-donut [config]");
+  @return utils.require-map-get($config, $name, "progress-circle [config]");
 }
 
 /// Prints component styles
-/// @demo progress-donut
+/// @demo progress-circle
 @mixin styles {
-  $prefix: selector.class("progress-donut");
+  $prefix: selector.class("progress-circle");
 
   #{ $prefix } {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    --ulu-progress-donut-stroke-width: #{ get("stroke-width") };
+    --ulu-progress-circle-stroke-width: #{ get("stroke-width") };
   }
   #{ $prefix }__chart {
     position: relative;
@@ -101,12 +101,12 @@ $config: (
   #{ $prefix }__chart-track {
     fill: transparent;
     stroke: color.get(get("color-track"));
-    stroke-width: var(--ulu-progress-donut-stroke-width);
+    stroke-width: var(--ulu-progress-circle-stroke-width);
   }
   #{ $prefix }__chart-pie {
     fill: transparent;
     stroke: color.get(get("color-progress"));
-    stroke-width: var(--ulu-progress-donut-stroke-width);
+    stroke-width: var(--ulu-progress-circle-stroke-width);
     stroke-dasharray: 0 100;
     will-change: stroke-dasharray;
     // If value is changing
@@ -118,7 +118,7 @@ $config: (
   }
   #{ $prefix }__chart-mask {
     fill: color.get(get("color-mask"));
-    r: calc( (get("viewbox-size") / 2) - (var(--ulu-progress-donut-stroke-width) / 2) );
+    r: calc( (get("viewbox-size") / 2) - (var(--ulu-progress-circle-stroke-width) / 2) );
   }
   #{ $prefix }__value {
     color: color.get(get("value-color-outside"));
@@ -156,7 +156,7 @@ $config: (
 
   @each $name, $props in get("sizes") {
     #{ $prefix }--#{ $name } {
-      --ulu-progress-donut-stroke-width: #{map.get($props, "stroke-width")};
+      --ulu-progress-circle-stroke-width: #{map.get($props, "stroke-width")};
       #{ $prefix }__chart-svg {
         width: map.get($props, "size");
         height: map.get($props, "size");
