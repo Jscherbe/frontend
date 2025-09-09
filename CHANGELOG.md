@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.108
+
+- **scss/components/progress-bar** - Remove max-width option from new component
+
 ## 0.1.0-beta.107
 
 - **scss/components/progress-circle** - Added progress pie/donut component and demo

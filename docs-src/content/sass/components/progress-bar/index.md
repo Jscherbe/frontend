@@ -37,7 +37,6 @@ Module Settings
 
 ``` scss
 $config: (
-  "max-width" : 20rem,
   "margin" : (0 0 0.5em 0),
   "line-height" : true,
   "value-color" : "type-tertiary",
@@ -69,8 +68,8 @@ $config: (
 - **File:** _progress-bar.scss
 - **Group:** progress-bar
 - **Type:** variable
-- **Lines (comments):** 28-50
-- **Lines (code):** 52-74
+- **Lines (comments):** 28-49
+- **Lines (code):** 51-72
 
 </details>
 
@@ -81,7 +80,6 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|max-width|Dimension|20rem|Max-width of the progress bar.|
 |margin|List|(0 0 0.5em 0)|Margin for the progress bar.|
 |line-height|Boolean|true|Line height for the progress bar. If true, falls back to typography's `line-height-dense`.|
 |value-color|Color|"type-tertiary"|Color of the value text.|
@@ -149,8 +147,8 @@ $styles: (
 - **File:** _progress-bar.scss
 - **Group:** progress-bar
 - **Type:** variable
-- **Lines (comments):** 76-79
-- **Lines (code):** 80-96
+- **Lines (comments):** 74-77
+- **Lines (code):** 78-94
 
 </details>
 
@@ -185,8 +183,8 @@ Change modules $config
 - **File:** _progress-bar.scss
 - **Group:** progress-bar
 - **Type:** mixin
-- **Lines (comments):** 98-101
-- **Lines (code):** 103-105
+- **Lines (comments):** 96-99
+- **Lines (code):** 101-103
 
 </details>
 
@@ -244,8 +242,8 @@ Change modules $config
 - **File:** _progress-bar.scss
 - **Group:** progress-bar
 - **Type:** mixin
-- **Lines (comments):** 107-110
-- **Lines (code):** 112-114
+- **Lines (comments):** 105-108
+- **Lines (code):** 110-112
 
 </details>
 
@@ -303,8 +301,8 @@ Prints component styles
 - **File:** _progress-bar.scss
 - **Group:** progress-bar
 - **Type:** mixin
-- **Lines (comments):** 126-129
-- **Lines (code):** 131-257
+- **Lines (comments):** 124-127
+- **Lines (code):** 129-254
 
 </details>
 
@@ -372,8 +370,8 @@ Get a config option
 - **File:** _progress-bar.scss
 - **Group:** progress-bar
 - **Type:** function
-- **Lines (comments):** 116-119
-- **Lines (code):** 121-124
+- **Lines (comments):** 114-117
+- **Lines (code):** 119-122
 
 </details>
 

@@ -27,7 +27,6 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} max-width [20rem] Max-width of the progress bar.
 /// @prop {List} margin [(0 0 0.5em 0)] Margin for the progress bar.
 /// @prop {Boolean} line-height [true] Line height for the progress bar. If true, falls back to typography's `line-height-dense`.
 /// @prop {Color} value-color ["type-tertiary"] Color of the value text.
@@ -50,7 +49,6 @@ $-fallbacks: (
 /// @prop {Time} animation-indeterminate-duration [2.5s] Duration of the indeterminate loading animation.
 
 $config: (
-  "max-width" : 20rem,
   "margin" : (0 0 0.5em 0),
   "line-height" : true,
   "value-color" : "type-tertiary",
@@ -132,7 +130,6 @@ $styles: (
   $prefix: selector.class("progress-bar");
   
   #{ $prefix } {
-    max-width: get("max-width");
     line-height: get("line-height");
     margin: get("margin");
   }
