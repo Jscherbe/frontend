@@ -18,6 +18,20 @@ vars:
   neutral:
     percentage: 65
     neutral: true
+  pie: 
+    percentage: 65
+    pieStyle: true
+  pieOutside: 
+    percentage: 65
+    pieStyle: true
+    small: true
+    outside: true
+  pieOutsideNoMask: 
+    percentage: 65
+    pieStyle: true
+    small: true
+    outside: true
+    noMask: true
   statusLow:
     percentage: 25
   statusIncomplete:
@@ -25,6 +39,10 @@ vars:
   statusComplete:
     percentage: 100
 ---
+
+<p>
+  You'll need to either build a template the svg structure (if static site or cms) or use the Vue component (form vue library) for this. If building a template it's pretty simple (see shortcode in 'frontend/docs-src/src/templates/shortcodes/progressDonut.js')
+</p>
 
 <h2 class="h2">Basic Example</h2>
 <p>The default appearance of the donut chart.</p>
@@ -45,6 +63,18 @@ vars:
 <h2 class="h2">Neutral Color</h2>
 <p>The chart can be displayed in a neutral color scheme.</p>
 {% progressDonut vars.neutral %}
+
+<h2 class="h2">Pie Style</h2>
+<p>The donut can also be rendered as a solid pie chart.</p>
+{% progressDonut vars.pie %}
+
+<h2 class="h2">Pie Style (outside, small)</h2>
+<p>The donut can also be rendered as a solid pie chart.</p>
+{% progressDonut vars.pieOutside %}
+
+<h2 class="h2">Pie Style (outside, small, no mask)</h2>
+<p>The donut can also be rendered as a solid pie chart.</p>
+{% progressDonut vars.pieOutsideNoMask %}
 
 <h2 class="h2">Status Colors</h2>
 <p>The chart color will change based on the percentage value to indicate status (low, incomplete, complete).</p>

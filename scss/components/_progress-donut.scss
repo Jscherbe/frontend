@@ -13,14 +13,18 @@
 /// @type Map
 /// @prop {Dimension} size [100px] The width and height of the donut chart.
 /// @prop {Number} viewbox-size [32] The size of the SVG viewbox. Used to calculate mask radius.
-/// @prop {Number} stroke-width [32] The width of the progress circle's stroke.
+/// @prop {Number} stroke-width [10] The width of the progress circle's stroke.
 /// @prop {Color} color-track ["placeholder-background-alt"] The color of the inactive track. Can be a theme color name or a CSS variable.
 /// @prop {Color} color-progress ["indicator"] The color of the progress stroke in a neutral state. Can be a theme color name or a CSS variable.
 /// @prop {Color} color-mask [white] The color of the center mask that creates the donut hole. Can be a theme color name or a CSS variable.
+/// @prop {Color} color-mask-pie [rgba(255, 255, 255, 0.5)] The mask color when using the pie style modifier.
 /// @prop {Color} value-color ["type"] The theme color name for the percentage text inside the donut.
 /// @prop {Color} value-color-outside ["type-tertiary"] The theme color name for the percentage text when displayed outside the donut.
 /// @prop {Dimension | List} value-margin-outside [(0.1em 0.35em)] The margin for the outside value text.
-/// @prop {Time} animation-duration [300ms] The duration for the stroke transition animation.
+/// @prop {Time} transition-duration [300ms] The duration for the stroke transition animation (when the component is updating already in the page)
+/// @prop {Time} animation-duration [1s] The duration for the stroke animation (relies on template having a custom build animation per pie based on dash array). This is used for initial animations
+/// @prop {Time} animation-delay [2s] The delay for the animation
+/// @prop {Time} animation-timing [ease-in] Timing function for animation
 /// @prop {Map} status-colors A map of status names to their corresponding colors (e.g., "low": "warning").
 /// @prop {Map} sizes A map of size variations. Each key is a modifier name (e.g., "small") and the value is a map with `size` and `stroke-width` properties.
 
@@ -31,10 +35,14 @@ $config: (
   "color-track": "placeholder-background-alt",
   "color-progress": "indicator",
   "color-mask": white,
+  "color-mask-pie": rgba(255, 255, 255, 0.4),
   "value-color": "type",
   "value-color-outside": "type-tertiary",
   "value-margin-outside" : (0.1em 0.35em),
-  "animation-duration" : 300ms,
+  "transition-duration" : 300ms,
+  "animation-duration" : 1s,
+  "animation-delay" : 2s,
+  "animation-timing" : ease-in,
   "status-colors": (
     "low": "danger",
     "incomplete": "warning",
@@ -101,7 +109,12 @@ $config: (
     stroke-width: var(--ulu-progress-donut-stroke-width);
     stroke-dasharray: 0 100;
     will-change: stroke-dasharray;
-    transition: stroke get("animation-duration"); // If value is changing
+    // If value is changing
+    transition: stroke get("transition-duration"); 
+    // For in template composed initial animation
+    animation-duration: get("animation-duration"); 
+    animation-delay: get("animation-delay"); 
+    animation-timing-function: get("animation-timing");
   }
   #{ $prefix }__chart-mask {
     fill: color.get(get("color-mask"));
@@ -122,6 +135,24 @@ $config: (
   #{ $prefix }--outside-below {
     display: block;
   }
+  #{ $prefix }--pie {
+    // Note do not adjust the custom property for this since we want the mask to still be sized correctly
+    #{ $prefix }__chart-pie {
+      stroke-width: get("viewbox-size"); // As large as the svg (so it fills the circle)
+    }
+    #{ $prefix }__chart-track {
+      fill: color.get(get("color-track"));
+    }
+    #{ $prefix }__chart-mask {
+      fill: color.get(get("color-mask-pie"));
+    }
+  }
+  #{ $prefix }--no-mask {
+    #{ $prefix }__chart-mask {
+      display: none;
+    }
+  }
+
 
   @each $name, $props in get("sizes") {
     #{ $prefix }--#{ $name } {
@@ -139,4 +170,6 @@ $config: (
       }
     }
   }
+
+  
 }

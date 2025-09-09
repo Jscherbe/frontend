@@ -2,6 +2,10 @@
 
 ## 0.1.0-beta.106
 
+- **scss/components/progress-donut** - Added progress donut component and demo
+
+## 0.1.0-beta.106
+
 - **scss/components/progress-bar** - Added progress bar component and examples 
 
 ## 0.1.0-beta.105
