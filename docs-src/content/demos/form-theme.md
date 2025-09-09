@@ -22,9 +22,9 @@ Styles given to the \<form> element and all of it's child elements.
     <label for="email">Enter your email: </label>
     <input type="email" name="email" id="email" required />
   </div>
-  <div class="form-theme__item form-theme__item--select">
-    <label for="checkbox">Check this box: </label>
+  <div class="form-theme__item form-theme__item--align-top">
     <input type="checkbox" value="checkbox" name="checkbox" />
+    <label for="checkbox">Check this box lorem ipsum et depsi anu. Dolor anu depsi anu! </label>
   </div>
   <div class="form-theme__item form-theme__item--select">
     <label for="name">Pick your color:</label>
@@ -104,7 +104,7 @@ Styles given to the \<form> element and all of it's child elements.
     <label for="email">Enter your email: </label>
     <input type="email" name="email" id="email" required />
   </div>
-  <div class="form-theme__item form-theme__item--select">
+  <div class="form-theme__item">
     <label for="checkbox">Check this box: </label>
     <input type="checkbox" value="checkbox" name="checkbox" />
   </div>
