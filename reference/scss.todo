@@ -1,4 +1,7 @@
 SCSS Todos:
+  ☐ horizontal card
+    ☐ bring over idc horizontal card styling. Specifically, the way that the body/aside widths stay the same. Add config options
+    * note: the aside should have a set size and the body can grow if it's not present. In layouts like a card grid, we will be outputting the aside regardless of if there is values so it should always match that way. Then if your using a horizontal card on it's own and you omit the aside the body fills but for layouts with multiple cards you output the same structure (so they all have asides)
   ☐ Finish card grid layout with list grid switcher, need to resolve how the body/main layout works @important
     * May be better to use css grid
       * Currently doesn't work if the body doesn't have content (like a skeleton)
