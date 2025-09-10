@@ -306,6 +306,19 @@ $sizes: get-default-sizes() !default;
   font-size: calc(#{ $font-size } + #{ $amount });
 }
 
+
+/// Output an optional typography size
+/// - If $name is not a string (ie. null, etc) no size will be output
+/// - If the size is not defined no size will be output
+/// @param {*} $name Size name
+/// @param {*} $args... All args are passed as-is to size() mixin
+
+@mixin optional-size($name, $changes: false, $only-font-size: null) {
+  @if (meta.type-of($name) == "string" and has-size($name)) {
+    @include size($name, $changes, $only-font-size);
+  }
+}
+
 /// Print a typography size (font-size, line-height)
 /// @param {String} $nameOrMap Name to retrieve from sizes map or a unique size map that follows the API
 /// @param {Map} $changes Modifications to be merged into size before output

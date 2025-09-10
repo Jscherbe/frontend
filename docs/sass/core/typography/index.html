@@ -5796,6 +5796,9 @@
                     <li><a href="#mixin-font-size-responsive">font-size-responsive()</a>
             		</li>
 
+                    <li><a href="#mixin-optional-size">optional-size()</a>
+            		</li>
+
                     <li><a href="#mixin-size">size()</a>
             		</li>
                 </ol>
@@ -6298,6 +6301,54 @@
 </tbody>
 </table>
 <div class="sassdoc-item-header">
+<h3 id="mixin-optional-size" tabindex="-1">optional-size()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Output an optional typography size</p>
+<ul>
+<li>If $name is not a string (ie. null, etc) no size will be output</li>
+<li>If the size is not defined no size will be output</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 310-314</li>
+<li><strong>Lines (code):</strong> 316-320</li>
+</ul>
+</details>
+<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$name</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Size name</td>
+</tr>
+<tr>
+<td style="text-align:left">$args...</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">All args are passed as-is to size() mixin</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-2" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/button/#mixin-size">size()</a></li>
+<li><a href="/frontend/sass/core/typography/#function-has-size">has-size()</a></li>
+</ul>
+<div class="sassdoc-item-header">
 <h3 id="mixin-size" tabindex="-1">size()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Mixin</strong></span>
@@ -6310,11 +6361,11 @@
 <li><strong>File:</strong> _typography.scss</li>
 <li><strong>Group:</strong> typography</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 309-312</li>
-<li><strong>Lines (code):</strong> 314-355</li>
+<li><strong>Lines (comments):</strong> 322-325</li>
+<li><strong>Lines (code):</strong> 327-368</li>
 </ul>
 </details>
-<h4 id="parameters-4" tabindex="-1">Parameters</h4>
+<h4 id="parameters-5" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6341,7 +6392,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-2" tabindex="-1">Require</h4>
+<h4 id="require-3" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/typography/#mixin-font-size-responsive">font-size-responsive()</a></li>
 <li><a href="/frontend/sass/core/breakpoint/#function-get-size">get-size()</a></li>
@@ -6367,7 +6418,7 @@
 <li><strong>Lines (code):</strong> 80-82</li>
 </ul>
 </details>
-<h4 id="parameters-5" tabindex="-1">Parameters</h4>
+<h4 id="parameters-6" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6389,7 +6440,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-3" tabindex="-1">Require</h4>
+<h4 id="require-4" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/frontend/sass/core/breakpoint/#variable-config">$config</a></li>
@@ -6411,7 +6462,7 @@
 <li><strong>Lines (code):</strong> 88-90</li>
 </ul>
 </details>
-<h4 id="parameters-6" tabindex="-1">Parameters</h4>
+<h4 id="parameters-7" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6443,7 +6494,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-4" tabindex="-1">Require</h4>
+<h4 id="require-5" tabindex="-1">Require</h4>
 <ul>
 <li>ratio-scale-size()</li>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6465,7 +6516,7 @@
 <li><strong>Lines (code):</strong> 97-99</li>
 </ul>
 </details>
-<h4 id="parameters-7" tabindex="-1">Parameters</h4>
+<h4 id="parameters-8" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6501,7 +6552,7 @@
 <ul>
 <li>Setup breakpoints</li>
 </ul>
-<h4 id="require-5" tabindex="-1">Require</h4>
+<h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li>ratio-scale-size()</li>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
@@ -6523,7 +6574,7 @@
 <li><strong>Lines (code):</strong> 105-111</li>
 </ul>
 </details>
-<h4 id="parameters-8" tabindex="-1">Parameters</h4>
+<h4 id="parameters-9" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6555,7 +6606,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6576,7 +6627,7 @@
 <li><strong>Lines (code):</strong> 118-125</li>
 </ul>
 </details>
-<h4 id="parameters-9" tabindex="-1">Parameters</h4>
+<h4 id="parameters-10" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6613,7 +6664,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-7" tabindex="-1">Require</h4>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6639,7 +6690,7 @@
 <li><strong>Lines (code):</strong> 144-158</li>
 </ul>
 </details>
-<h4 id="parameters-10" tabindex="-1">Parameters</h4>
+<h4 id="parameters-11" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6666,7 +6717,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-8" tabindex="-1">Require</h4>
+<h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
@@ -6706,7 +6757,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-9" tabindex="-1">Require</h4>
+<h4 id="require-10" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/typography/#function-new-size">new-size()</a></li>
 <li><a href="/frontend/sass/core/typography/#function-scale">scale()</a></li>
@@ -6729,7 +6780,7 @@
 <li><strong>Lines (code):</strong> 223-225</li>
 </ul>
 </details>
-<h4 id="parameters-11" tabindex="-1">Parameters</h4>
+<h4 id="parameters-12" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6759,7 +6810,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-10" tabindex="-1">Require</h4>
+<h4 id="require-11" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/frontend/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
@@ -6781,7 +6832,7 @@
 <li><strong>Lines (code):</strong> 231-233</li>
 </ul>
 </details>
-<h4 id="parameters-12" tabindex="-1">Parameters</h4>
+<h4 id="parameters-13" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6811,7 +6862,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-11" tabindex="-1">Require</h4>
+<h4 id="require-12" tabindex="-1">Require</h4>
 <ul>
 <li>map-has()</li>
 <li><a href="/frontend/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
@@ -6833,7 +6884,7 @@
 <li><strong>Lines (code):</strong> 239-253</li>
 </ul>
 </details>
-<h4 id="parameters-13" tabindex="-1">Parameters</h4>
+<h4 id="parameters-14" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -6859,7 +6910,7 @@
 <ul>
 <li>ULU: Unable to convert to unitless line-height for: #{ $line-height }</li>
 </ul>
-<h4 id="require-12" tabindex="-1">Require</h4>
+<h4 id="require-13" tabindex="-1">Require</h4>
 <ul>
 <li>strip-unit()</li>
 <li><a href="/frontend/sass/core/typography/#function-rem">rem()</a></li>
@@ -6879,54 +6930,6 @@
 <li><strong>Type:</strong> function</li>
 <li><strong>Lines (comments):</strong> 255-257</li>
 <li><strong>Lines (code):</strong> 259-285</li>
-</ul>
-</details>
-<h4 id="parameters-14" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$size</td>
-<td style="text-align:left"><code>Map</code></td>
-<td style="text-align:left">Size's map</td>
-</tr>
-<tr>
-<td style="text-align:left">$props</td>
-<td style="text-align:left"><code>String</code></td>
-<td style="text-align:left">The property to get</td>
-</tr>
-</tbody>
-</table>
-<h4 id="require-13" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
-<li><a href="/frontend/sass/core/typography/#function-unitless-line-height">unitless-line-height()</a></li>
-<li><a href="/frontend/sass/core/typography/#function-rem">rem()</a></li>
-</ul>
-<div class="sassdoc-item-header">
-<h3 id="function-get-size-value" tabindex="-1">get-size-value()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Get a sizes property value that doesn't need conversion</p>
-<ul>
-<li>Reason: Will map to default if user set's size prop to true</li>
-</ul>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _typography.scss</li>
-<li><strong>Group:</strong> typography</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 287-290</li>
-<li><strong>Lines (code):</strong> 292-299</li>
 </ul>
 </details>
 <h4 id="parameters-15" tabindex="-1">Parameters</h4>
@@ -6952,6 +6955,54 @@
 </tbody>
 </table>
 <h4 id="require-14" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
+<li><a href="/frontend/sass/core/typography/#function-unitless-line-height">unitless-line-height()</a></li>
+<li><a href="/frontend/sass/core/typography/#function-rem">rem()</a></li>
+</ul>
+<div class="sassdoc-item-header">
+<h3 id="function-get-size-value" tabindex="-1">get-size-value()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get a sizes property value that doesn't need conversion</p>
+<ul>
+<li>Reason: Will map to default if user set's size prop to true</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _typography.scss</li>
+<li><strong>Group:</strong> typography</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 287-290</li>
+<li><strong>Lines (code):</strong> 292-299</li>
+</ul>
+</details>
+<h4 id="parameters-16" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$size</td>
+<td style="text-align:left"><code>Map</code></td>
+<td style="text-align:left">Size's map</td>
+</tr>
+<tr>
+<td style="text-align:left">$props</td>
+<td style="text-align:left"><code>String</code></td>
+<td style="text-align:left">The property to get</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-15" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
