@@ -124,6 +124,7 @@ $config: (
 
   // When not one of our custom classed details components
   #{ $prefix } {
+    position: relative; // For pushing to the top when in accordion groups
     padding: 0;
     margin: get("margin");
     border: $border;
@@ -161,15 +162,26 @@ $config: (
       > #{ $prefix }__summary {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; 
+
         @if (get("summary-border-enabled")) {
-          border-bottom: get("summary-border-width") solid color.get(get("summary-border-color"));
+          &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: get("summary-border-width");
+            background-color: color.get(get("summary-border-color"));
+          }
         }
       }
     }
   }
   #{ $prefix }__summary {
+    position: relative; // For pseudo border (done this way for animations)
     display: flex;
     list-style: none; // Remove the default arrow (old safari?)
+    width: 100%; // For <button>
     background-color: color.get(get("summary-background-color"));
     color: color.get(get("summary-color"));
     line-height: get("summary-line-height");
