@@ -371,6 +371,55 @@ Print's the responsive type formula
 
 <div class="sassdoc-item-header">
 
+###  optional-size() {#mixin-optional-size}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Output an optional typography size
+- If $name is not a string (ie. null, etc) no size will be output
+- If the size is not defined no size will be output
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _typography.scss
+- **Group:** typography
+- **Type:** mixin
+- **Lines (comments):** 310-314
+- **Lines (code):** 316-320
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$name|`*`|Size name|
+|$args...|`*`|All args are passed as-is to size() mixin|
+
+    
+
+#### Require
+
+- [size()](/sass/core/button/#mixin-size)
+- [has-size()](/sass/core/typography/#function-has-size)
+  
+
+
+<div class="sassdoc-item-header">
+
 ###  size() {#mixin-size}
 
   <div class="sassdoc-item-header__labels">
@@ -392,8 +441,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 309-312
-- **Lines (code):** 314-355
+- **Lines (comments):** 322-325
+- **Lines (code):** 327-368
 
 </details>
 

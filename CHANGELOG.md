@@ -2,11 +2,13 @@
 
 ## 0.1.0-beta.110
 
-- **scss/typography** - Add `optional-size` mixin
+- **scss/typography** 
+  - Add `optional-size` mixin
 - **scss/components/accordion** 
   - Refactored to not work for plain details elements. The component used to allow no container around the content. Content container is now required
   - Does not support default details marker anymore (when icon is omitted), you must supply a icon in the correct structure
-  - Config, `margin` now is list form, configuration defaults adjusted slightly (from rem to em)
+  - Config, `margin` now is list form, configuration defaults adjusted slightly (from rem to em), remove transparent-padding- properties, add transparent-content-padding
+  - General refactor to remove things that are unnecessary, reduce code
 
 ## 0.1.0-beta.109
 

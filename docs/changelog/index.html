@@ -5768,6 +5768,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.1.0-beta.110">0.1.0-beta.110</a>
+            		</li>
+
                     <li><a href="#0.1.0-beta.109">0.1.0-beta.109</a>
             		</li>
 
@@ -6143,6 +6146,22 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.1.0-beta.110" tabindex="-1">0.1.0-beta.110</h2>
+<ul>
+<li><strong>scss/typography</strong>
+<ul>
+<li>Add <code>optional-size</code> mixin</li>
+</ul>
+</li>
+<li><strong>scss/components/accordion</strong>
+<ul>
+<li>Refactored to not work for plain details elements. The component used to allow no container around the content. Content container is now required</li>
+<li>Does not support default details marker anymore (when icon is omitted), you must supply a icon in the correct structure</li>
+<li>Config, <code>margin</code> now is list form, configuration defaults adjusted slightly (from rem to em), remove transparent-padding- properties, add transparent-content-padding</li>
+<li>General refactor to remove things that are unnecessary, reduce code</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.1.0-beta.109" tabindex="-1">0.1.0-beta.109</h2>
 <ul>
 <li><strong>scss/components/accordion</strong> - Adjusted selectors from &amp; + &amp; to print out selectors incase this mixin is called when scoped .accordion + .accordion vs .scope .accordion + .scope .accordion which is incorrect</li>

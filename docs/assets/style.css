@@ -11930,82 +11930,61 @@ components:
 ============================================================================= 
 */
 .accordion {
-  position: relative;
-  border-radius: 0;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding: 0;
+  margin: 1.5em 0;
   border: 1px solid var(--site-color-rule-light);
   background-color: var(--site-color-background);
   -webkit-box-shadow: none;
           box-shadow: none;
-}
-.accordion:first-of-type {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.accordion:last-of-type {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 5px;
 }
 .accordion + .accordion {
-  margin-top: -3rem;
-  margin-top: calc(-3rem - 1px);
+  margin-top: 0;
+}
+.accordion:has(+ .accordion) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+.accordion + .accordion {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: -1px;
 }
 .accordion[open], .accordion.is-active {
   background-color: white;
-  padding-bottom: 1.5em;
   z-index: 2;
 }
 .accordion[open] > .accordion__summary, .accordion.is-active > .accordion__summary {
-  margin-bottom: 1.5em;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: 1px solid var(--site-color-rule-light);
 }
 
 .accordion__summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
   background-color: #f6f6f6;
-  margin-left: -1.5em;
-  margin-right: -1.5em;
-  padding: 1rem 1.5em;
-  vertical-align: top;
+  padding: 1em 1.25em;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: calc(100% + 3em);
 }
-.accordion__summary:has(.accordion__icon) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-}
-.accordion__summary:has(.accordion__icon)::-webkit-details-marker, .accordion__summary:has(.accordion__icon)::marker {
+.accordion__summary::-webkit-details-marker, .accordion__summary::marker {
   display: none;
   content: "";
 }
-.accordion__summary:hover .accordion__icon {
+.accordion__summary:hover .accordion__icon, .accordion__summary:focus .accordion__icon {
   background-color: transparent;
   color: var(--site-color-link-hover);
 }
 
 .accordion__icon {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
-  color: var(--site-color-link);
-  margin-left: auto;
-  padding-left: 0.5em;
-  background-color: transparent;
-  border-radius: 50%;
-  width: auto;
-  height: auto;
-  font-size: 1.5rem;
-  line-height: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12015,40 +11994,55 @@ components:
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  text-align: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  color: var(--site-color-link);
+  margin-left: auto;
+  padding-left: 1em;
+  background-color: transparent;
+  border-radius: 50%;
+  width: auto;
+  height: auto;
+  font-size: 1em;
+  line-height: 1;
+}
+
+.accordion__content {
+  padding: 1.25em 1.25em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .accordion--transparent {
   border-left: none;
   border-right: none;
   background-color: transparent;
+  border-radius: 0;
+}
+.accordion--transparent > .accordion__summary,
+.accordion--transparent > .accordion__content {
   padding-left: 0;
   padding-right: 0;
-}
-.accordion--transparent > .accordion__summary {
-  margin-left: 0;
-  margin-right: 0;
-  width: 100%;
-  padding: 1em 0;
   background-color: transparent;
-  border: none;
+  border: none !important;
+  border-radius: 0 !important;
 }
-.accordion--transparent[open], .accordion--transparent.is-active {
-  background-color: transparent;
-}
-.accordion--transparent[open] > .accordion__summary, .accordion--transparent.is-active > .accordion__summary {
-  border-bottom: none;
-  margin-bottom: 0;
+.accordion--transparent > .accordion__content {
+  padding: 0.25em 0;
 }
 
 .accordion--borderless {
   border: none;
 }
+.accordion--borderless:has(+ .accordion) {
+  margin-bottom: 0;
+}
 .accordion--borderless + .accordion--borderless {
-  margin-top: -2.5rem;
-  margin-top: calc(-2.5rem - 1px);
+  margin-top: calc(0.5em - 1px);
 }
 .accordion--borderless[open] > .accordion__summary, .accordion--borderless.is-active > .accordion__summary {
+  border-radius: 5px;
   border-bottom: none;
 }
 
