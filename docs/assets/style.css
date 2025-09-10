@@ -11930,6 +11930,7 @@ components:
 ============================================================================= 
 */
 .accordion {
+  position: relative;
   padding: 0;
   margin: 1.5em 0;
   border: 1px solid var(--site-color-rule-light);
@@ -11958,14 +11959,24 @@ components:
 .accordion[open] > .accordion__summary, .accordion.is-active > .accordion__summary {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: 1px solid var(--site-color-rule-light);
+}
+.accordion[open] > .accordion__summary::after, .accordion.is-active > .accordion__summary::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--site-color-rule-light);
 }
 
 .accordion__summary {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  width: 100%;
   background-color: #f6f6f6;
   padding: 1em 1.25em;
   border-radius: 5px;
@@ -13225,7 +13236,21 @@ button.card:focus-within::after,
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card--horizontal .card__main {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     max-width: 40rem;
+  }
+  .card--horizontal .card__aside {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+    height: 100%;
   }
   .card--horizontal:not(:has(.card__image)) {
     grid-template-columns: 1fr;

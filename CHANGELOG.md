@@ -2,6 +2,9 @@
 
 ## 0.1.0-beta.111
 
+- **scss/components/accordion** 
+  - Add back in summary width 100% (for button usage)
+  - adjust how the border for summary open works so it doesn't affect animations
 - **scss/components/card.scss** 
   - Remove horizontal-body-max-width config option
   - Add horizontal-main-max-width config option
