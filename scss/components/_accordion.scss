@@ -6,12 +6,23 @@
 // Internal note: We don't require the content to be wrapped, this is so that this can be used on details elements outside of our control. So we use negative margins
 
 @use "sass:map";
+@use "sass:meta";
 @use "sass:math";
 
 @use "../selector";
 @use "../utils";
 @use "../color";
 @use "../typography";
+@use "../element";
+
+
+// Used for function fallback
+$-fallbacks: (
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  ),
+);
 
 /// Module Settings
 /// @type Map
@@ -41,16 +52,16 @@
 /// @prop {Dimension} summary-type-size  [false] The size of the text in the accordion summary. 
 /// @prop {Dimension} transparent-padding-y  [1em] The upper and lower padding of the transparent summary.
 /// @prop {Dimension} transparent-padding-x  [0] The upper and lower padding of the transparent summary.
-/// @prop {Dimension} borderless-margin-between  [0.5rem] Margin between accordions when using no-border modiifier
+/// @prop {Dimension} borderless-margin-between  [0.5rem] Margin between accordions when using no-border modifier
 
 $config: (
   "background-color":            "background",
   "background-color-open":       white,
   "border-color":                "rule-light",
-  "border-radius":               0,
+  "border-radius":               true,
   "border-width":                1px,
   "box-shadow":                  none,
-  "margin":                      3rem,
+  "margin":                      (1.5em 0),
   "margin-between":              0,
   "padding-x":                   1.5em,
   "padding-y":                   1.5em,
@@ -59,7 +70,8 @@ $config: (
   "icon-border-radius":          50%,
   "icon-color":                  "link",
   "icon-color-hover":            "link-hover",
-  "icon-font-size":              1.5rem,
+  "icon-font-size":              1em,
+  "icon-margin":                 1em,
   "icon-size":                   auto,
   "icon-stroke-width":           0.15em,
   "summary-background-color":    #f6f6f6,
@@ -67,11 +79,16 @@ $config: (
   "summary-background-color-hover": null,
   "summary-color-hover":         null,
   "summary-line-height":         null,
-  "summary-padding-y":           1rem,
-  "summary-type-size":           false,
-  "transparent-padding-x":       0,
-  "transparent-padding-y":       1em,
-  "borderless-margin-between" :  0.5rem
+  "summary-padding-y":           1em,
+  "summary-type-size":           "large",
+  "summary-border-enabled":      true,
+  "summary-border-color":   "rule-light",
+  "summary-border-width":        1px,
+  "transparent-content-padding" : (0.25em 0),
+  // "transparent-padding-x":       0,
+  // "transparent-padding-y":       1em,
+  "borderless-margin-between" :  0.5em,
+  "active-selector" :            ".is-active"
 ) !default;
 
 /// Change modules $config
@@ -89,7 +106,8 @@ $config: (
 ///   @include ulu.component-accordion-get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "accordion [config]");
+  $value: utils.require-map-get($config, $name, "accordion [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
 }
 
 /// Prints component styles
@@ -99,6 +117,7 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("accordion");
+  $active-selector: get("active-selector");
   $padding-x: get("padding-x");
   $padding-x-double: get("padding-x") * 2;
   $border: get("border-width") solid color.get(get("border-color"));
@@ -107,66 +126,71 @@ $config: (
   #{ $prefix } {
     position: relative; // For active border
     border-radius: 0;
-    padding-left: $padding-x;
-    padding-right: $padding-x;
-    margin-top: get("margin");
-    margin-bottom: get("margin");
+    padding: 0;
+    margin: get("margin");
     border: $border;
     background-color: color.get(get("background-color"));
     box-shadow: get("box-shadow");
-    &:first-of-type {
-      border-top-left-radius: get("border-radius");
-      border-top-right-radius: get("border-radius");
-    }
-    &:last-of-type {
-      border-bottom-left-radius: get("border-radius");
-      border-bottom-right-radius: get("border-radius");
-    }
+    border-radius: get("border-radius");
+
+    // First sibling sets the gap
     & + #{ $prefix } {
-      $gap: -(get("margin") - get("margin-between"));
-      margin-top: $gap;
-      margin-top: calc($gap - get("border-width"));
+      margin-top: 0;
     }
+
+    // If no space get rid of border radiuses
+    @if (get("margin-between") == 0) {
+      &:has(+ #{ $prefix }) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-bottom: 0;
+      }
+      & + #{ $prefix } {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: -(get("border-width")); // Pull border over top
+      }
+    } @else {
+      &:has(+ #{ $prefix }) {
+        margin-bottom: get("margin-between");
+      }
+    }
+    
     &[open], 
-    &.is-active  {
+    &#{ $active-selector }  {
       background-color: color.get(get("background-color-open"));
-      padding-bottom: get("padding-y");
-      z-index: 2; // Above child details
+      z-index: 2; // Above other details/accordions
       > #{ $prefix }__summary {
-        margin-bottom: get("padding-y");
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; 
-        border-bottom: $border;
+        @if (get("summary-border-enabled")) {
+          border-bottom: get("summary-border-width") solid color.get(get("summary-border-color"));
+        }
       }
     }
   }
   #{ $prefix }__summary {
+    display: flex;
+    list-style: none; // Remove the default arrow (old safari?)
     background-color: color.get(get("summary-background-color"));
     color: color.get(get("summary-color"));
-    margin-left: -($padding-x);
-    margin-right: -($padding-x);
     line-height: get("summary-line-height");
     padding: get("summary-padding-y") $padding-x;
+    border-radius: get("border-radius");
     vertical-align: top;
     font-weight: bold;
     cursor: pointer;
     align-items: center;
-    width: calc(100% + $padding-x-double); // To fix if using <button>
- 
-    &:has(#{ $prefix }__icon) {
-      display: flex;
-      list-style: none; // Remove the default arrow (old safari?)
-      &::-webkit-details-marker,
-      &::marker {
-        display: none;
-        content: "";
-      }
+
+    @include typography.optional-size(get("summary-type-size"), $only-font-size: true);
+
+    &::-webkit-details-marker,
+    &::marker {
+      display: none;
+      content: "";
     }
-    
-    @if (get("summary-type-size")) {
-      @include typography.size(get("summary-type-size"));
-    }
-    &:hover {
+    &:hover
+    &:focus {
       background-color: color.get(get("summary-background-color-hover"));
       color: color.get(get("summary-color-hover"));
       #{ $prefix }__icon {
@@ -176,54 +200,65 @@ $config: (
     }
   }
   #{ $prefix }__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     flex: 0 0 get("icon-size");
     color: color.get(get("icon-color"));
     margin-left: auto;
-    padding-left: 0.5em;
+    padding-left: get("icon-margin");
     background-color: color.get(get("icon-background-color"));
     border-radius: get("icon-border-radius");
     width: get("icon-size");
     height: get("icon-size");
     font-size: get("icon-font-size");
     line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  }
+  #{ $prefix }__content {
+    padding: $padding-x get("padding-y");
+    border-bottom-left-radius: get("border-radius");
+    border-bottom-right-radius: get("border-radius");
   }
   #{ $prefix }--transparent {
     border-left: none;
     border-right: none;
     background-color: transparent;
-    padding-left: get("transparent-padding-x");
-    padding-right: get("transparent-padding-x");
-    > #{ $prefix }__summary {
-      margin-left: -(get("transparent-padding-x"));
-      margin-right: -(get("transparent-padding-x"));
-      width: 100%;
-      padding: get("transparent-padding-y") get("transparent-padding-x");
-      background-color: transparent;
-      border: none;
-    }
-    &[open], 
-    &.is-active {
-      background-color: transparent;
-      > #{ $prefix }__summary{
-        border-bottom: none;
+    border-radius: 0;
+
+    // Transparent always collapses space
+    @if (get("margin-between") != 0) {
+      &:has(+ #{ $prefix }) {
         margin-bottom: 0;
       }
+      & + #{ $prefix } {
+        margin-top: -(get("border-width")); // Pull border over top
+      }
+    }
+    > #{ $prefix }__summary,
+    > #{ $prefix }__content {
+      padding-left: 0;
+      padding-right: 0;
+      background-color: transparent;
+      border: none !important;
+      border-radius: 0 !important;
+    }
+    > #{ $prefix }__content {
+      padding: get("transparent-content-padding");
     }
   }
   #{ $prefix }--borderless {
     border: none;
+    &:has(+ #{ $prefix }) {
+      margin-bottom: 0;
+    }
     & + #{ $prefix }--borderless {
-      $gap: -(get("margin") - get("borderless-margin-between"));
-      margin-top: $gap;
-      margin-top: calc($gap - get("border-width"));
+      margin-top: calc(get("borderless-margin-between") - get("border-width"));
     }
     &[open],
-    &.is-active {
-      & > .accordion__summary {
+    &#{ $active-selector } {
+      & > #{ $prefix }__summary {
+        border-radius: get("border-radius");
         border-bottom: none;
       }
     }

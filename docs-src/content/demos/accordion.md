@@ -4,22 +4,8 @@ layout: default
 intro: An accordion disclosure element is a user interface component that allows users to expand and collapse sections of content. 
 ---
 
-## Basic Setup
 
-Without an icon in the summary will fallback to browser default 
-
-<details class="accordion">
-  <summary class="accordion__summary">
-    This is an example Title
-  </summary>
-  <div class="accordion__content">
-    {{ placeholder.paragraph }}
-    {{ placeholder.paragraph }}
-  </div>
-</details>
-
-
-## Examples with plus icon
+## Basic Example
 
 ```html
 <details class="accordion">
@@ -170,7 +156,7 @@ Without an icon in the summary will fallback to browser default
 
 ## Examples with No borders
 
-<details class="accordion accordion--no-borders">
+<details class="accordion accordion--borderless">
   <summary class="accordion__summary">
     This is an example title with long content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere sem ac neque rhoncus lacinia. Suspendisse ornare enim in ultrices egestas.
     <span class="accordion__icon" aria-hidden="true">
@@ -182,7 +168,7 @@ Without an icon in the summary will fallback to browser default
     {{ placeholder.paragraph }}
   </div>
 </details>
-<details class="accordion accordion--no-borders">
+<details class="accordion accordion--borderless">
   <summary class="accordion__summary">
     This is an example Title
     <span class="accordion__icon" aria-hidden="true">

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.0-beta.110
+
+- **scss/typography** - Add `optional-size` mixin
+- **scss/components/accordion** 
+  - Refactored to not work for plain details elements. The component used to allow no container around the content. Content container is now required
+  - Does not support default details marker anymore (when icon is omitted), you must supply a icon in the correct structure
+  - Config, `margin` now is list form, configuration defaults adjusted slightly (from rem to em)
+
 ## 0.1.0-beta.109
 
 - **scss/components/accordion** - Adjusted selectors from & + & to print out selectors incase this mixin is called when scoped .accordion + .accordion vs .scope .accordion + .scope .accordion which is incorrect
