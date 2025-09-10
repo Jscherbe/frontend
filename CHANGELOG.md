@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.0-beta.109
+
+- **scss/components/card.scss** 
+  - Remove horizontal-body-max-width config option
+  - Add horizontal-main-max-width config option
+  - Add horizontal-aside-width config option
+  - styles using new config options to keep horizontal cards aside element at a specified size and alignment.
+
 ## 0.1.0-beta.108
 
 - **scss/components/progress-bar** - Remove max-width option from new component

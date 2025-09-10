@@ -89,9 +89,10 @@ $config: (
   "footer-min-height" : 2.5rem,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
-  "horizontal-body-max-width" : 40rem,
   "horizontal-min-height" : 20rem,
   "horizontal-max-width" : 80rem,
+  "horizontal-main-max-width" : 40rem,
+  "horizontal-aside-width" : 40%,
   "header-margin" : 0.75em,
   "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
@@ -126,7 +127,6 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
-  // new below
   "aside-rule" : false,
   "aside-rule-width" : 1px,
   "aside-background-color" : transparent,
@@ -520,19 +520,17 @@ $config: (
     }
     #{ $prefix }__body {
       flex-direction: row;
-      max-width: get("horizontal-body-max-width");
+      justify-content: space-between;
     }
-    
+    #{ $prefix }__main {
+      flex-grow: 1;
+      max-width: get("horizontal-main-max-width");
+    }
+    #{ $prefix }__aside {
+      flex: 0 0 get("horizontal-aside-width");
+      height: 100%;
+    }
     @if(get("aside-rule")) {
-      #{ $prefix }__main {
-        flex: 1 1 60%;
-      }
-      #{ $prefix }__aside {
-        flex: 1 1 40%;
-        height: 100%;
-        // flex-basis: 40%;
-        // min-width: 40%;
-      }
       #{ $prefix }__aside::after {
         content: "";
         position: absolute;
