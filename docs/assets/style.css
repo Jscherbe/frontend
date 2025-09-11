@@ -16750,10 +16750,19 @@ ul.list-inline,
           align-items: flex-end;
 }
 
+.progress-bar__value {
+  font-weight: 300;
+  color: var(--site-color-type-tertiary);
+}
+
 .progress-bar__icon {
+  color: var(--site-color-type-tertiary);
+}
+
+.progress-bar__icon,
+.progress-bar__header .progress-bar__value {
   margin-left: auto;
   padding-left: 0.25em;
-  color: var(--site-color-type-tertiary);
 }
 
 .progress-bar__track {
@@ -16804,11 +16813,9 @@ ul.list-inline,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-weight: 300;
-  color: var(--site-color-type-tertiary);
 }
 
-.progress-bar__value {
+.progress-bar__values .progress-bar__value:not(:last-child) {
   margin-right: 0.5em;
 }
 

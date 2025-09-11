@@ -38,6 +38,7 @@ Module Settings
 ``` scss
 $config: (
   "margin" : (0 0 0.5em 0),
+  "header-gap" : 0.25em,
   "line-height" : true,
   "value-color" : "type-tertiary",
   "value-margin" : 0.5em,
@@ -47,7 +48,6 @@ $config: (
   "bar-height" : 12px,
   "bar-color" : "indicator",
   "bar-color-deficit" : "danger",
-  "icon-margin" : 0.25em,
   "icon-color" : "type-tertiary",
   "icon-color-deficit" : "danger",
   "track-color" : "placeholder-background-alt",
@@ -80,6 +80,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
+|header-gap|Dimension|0.25em|Margin/gap for the icon/value|
 |margin|List|(0 0 0.5em 0)|Margin for the progress bar.|
 |line-height|Boolean|true|Line height for the progress bar. If true, falls back to typography's `line-height-dense`.|
 |value-color|Color|"type-tertiary"|Color of the value text.|
@@ -90,7 +91,6 @@ $config: (
 |bar-height|Dimension|12px|Height of the progress bar.|
 |bar-color|Color|rgb(80, 80, 171)|Color of the progress bar.|
 |bar-color-deficit|Color|"danger"|Color of the deficit portion of the progress bar.|
-|icon-margin|Dimension|0.25em|Margin for the icon.|
 |icon-color|Color|"type-tertiary"|Color of the icon.|
 |icon-color-deficit|Color|"danger"|Color of the icon in a deficit state.|
 |track-color|Color|#ccc|Color of the progress bar track.|
@@ -302,7 +302,7 @@ Prints component styles
 - **Group:** progress-bar
 - **Type:** mixin
 - **Lines (comments):** 124-127
-- **Lines (code):** 129-254
+- **Lines (code):** 129-260
 
 </details>
 

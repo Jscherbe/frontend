@@ -27,6 +27,7 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} header-gap [0.25em] Margin/gap for the icon/value
 /// @prop {List} margin [(0 0 0.5em 0)] Margin for the progress bar.
 /// @prop {Boolean} line-height [true] Line height for the progress bar. If true, falls back to typography's `line-height-dense`.
 /// @prop {Color} value-color ["type-tertiary"] Color of the value text.
@@ -37,7 +38,6 @@ $-fallbacks: (
 /// @prop {Dimension} bar-height [12px] Height of the progress bar.
 /// @prop {Color} bar-color [rgb(80, 80, 171)] Color of the progress bar.
 /// @prop {Color} bar-color-deficit ["danger"] Color of the deficit portion of the progress bar.
-/// @prop {Dimension} icon-margin [0.25em] Margin for the icon.
 /// @prop {Color} icon-color ["type-tertiary"] Color of the icon.
 /// @prop {Color} icon-color-deficit ["danger"] Color of the icon in a deficit state.
 /// @prop {Color} track-color [#ccc] Color of the progress bar track.
@@ -50,6 +50,7 @@ $-fallbacks: (
 
 $config: (
   "margin" : (0 0 0.5em 0),
+  "header-gap" : 0.25em,
   "line-height" : true,
   "value-color" : "type-tertiary",
   "value-margin" : 0.5em,
@@ -59,7 +60,6 @@ $config: (
   "bar-height" : 12px,
   "bar-color" : "indicator",
   "bar-color-deficit" : "danger",
-  "icon-margin" : 0.25em,
   "icon-color" : "type-tertiary",
   "icon-color-deficit" : "danger",
   "track-color" : "placeholder-background-alt",
@@ -137,11 +137,19 @@ $styles: (
     display: flex;
     align-items: flex-end;
   }
+  #{ $prefix }__value {
+    font-weight: get("value-font-weight");
+    color: color.get(get("value-color"));
+  }
   #{ $prefix }__icon {
-    margin-left: auto;
-    padding-left: get("icon-margin");
     color: color.get(get("icon-color"));
   }
+  #{ $prefix }__icon,
+  #{ $prefix }__header #{ $prefix }__value {
+    margin-left: auto;
+    padding-left: get("header-gap");
+  }
+  
   #{ $prefix }__track {
     position: relative; // For indeterminate animation
     margin: get("track-margin");
@@ -178,10 +186,8 @@ $styles: (
   }
   #{ $prefix }__values {
     display: flex;
-    font-weight: get("value-font-weight");
-    color: color.get(get("value-color"));
   }
-  #{ $prefix }__value {
+  #{ $prefix }__values #{ $prefix }__value:not(:last-child) {
     margin-right: get("value-margin");
   }
   #{ $prefix }__value--deficit {

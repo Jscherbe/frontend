@@ -5781,6 +5781,7 @@
     
 <h2 class="h2">Basic Example</h2>
 <p>The default progress bar has no modifiers.</p>
+
 <div class="progress-bar">
   <div class="progress-bar__header"><strong class="progress-bar__label">Label that is long test</strong>
   </div>
@@ -5795,7 +5796,19 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
+
+<h2 class="h2">Simple Example</h2>
+
+<div class="progress-bar">
+  <div class="progress-bar__header">
+    <strong class="progress-bar__label">Label that is long test</strong>
+    <span class="progress-bar__value">40%</span>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 40%;"></div>
+  </div>
+</div>
+
 
 <h2 class="h2">Indeterminate Modifier</h2>
 <p>Uses the <code>.progress-bar--indeterminate</code> modifier for an animated loading state when the progress is unknown.</p>
@@ -5805,7 +5818,6 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Loader Style</h2>
 <p>Uses the <code>.progress-bar--loader</code> modifier for a thin loading bar.</p>
@@ -5816,7 +5828,6 @@
 </div>
 
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Completed Example</h2>
 <p>An example of a completed progress bar with an icon.</p>
@@ -5838,7 +5849,6 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Deficit Example</h2>
 <p>An example of a progress bar with a deficit.</p>
@@ -5859,7 +5869,6 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Positive Style</h2>
 <p>Uses the <code>.progress-bar--positive</code> modifier.</p>
@@ -5870,7 +5879,6 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Negative Style</h2>
 <p>Uses the <code>.progress-bar--negative</code> modifier.</p>
@@ -5881,7 +5889,6 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Small Modifier</h2>
 <p>Uses the <code>.progress-bar--small</code> modifier. Font sizing is controlled by the parent element.</p>
@@ -5920,7 +5927,6 @@
   </div>
 </div>
 
-<div class="rule rule--light"></div>
 
 <h2 class="h2">Icon left with rail</h2>
 <p>Combining with rail component for icon on left</p>

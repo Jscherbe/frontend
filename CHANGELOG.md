@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.112
+
+- **scss/components/progress-bar** - Add demo for using value in header, adjust styles slightly for this
+
 ## 0.1.0-beta.111
 
 - **scss/components/accordion** 
