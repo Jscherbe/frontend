@@ -39,11 +39,17 @@
   #{ selector.class("full-width") } {
     width: 100%;
   }
+  #{ selector.class("no-min-width") } {
+    min-width: 0;
+  }
   #{ selector.class("flex-basis-full") } {
     flex-basis: 100%;
   }
   #{ selector.class("flex-grow") } {
     flex-grow: 1;
+  }
+  #{ selector.class("flex-wrap") } {
+    flex-wrap: wrap;
   }
   #{ selector.class("flex-shrink") } {
     flex-shrink: 1;

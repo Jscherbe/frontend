@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.114
+
+- `scss/helpers/_utilities.scss` - add flex-wrap (use with layout-flex, etc), and no-min-width (when needed for buttons)
+
+
 ## 0.1.0-beta.113
 
 - **scss/components/menu-stack** 

@@ -19396,6 +19396,10 @@ helpers:utilities
   width: 100%;
 }
 
+.no-min-width {
+  min-width: 0;
+}
+
 .flex-basis-full {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -19405,6 +19409,11 @@ helpers:utilities
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-shrink {
