@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.113
+
+- **scss/components/menu-stack** 
+  - Make sure `.menu-stack__selectable` is included in `.menu-stack--compact` modifier
+  - Adjust and add new props for better control since this is base on typography and what form styling your using 
+    - Config changes/additions: compact-selectable-input-width, compact-selectable-input-top, compact-selectable-input-font-size, selectable-input-width, selectable-input-top, selectable-input-font-size
+
 ## 0.1.0-beta.112
 
 - **scss/components/progress-bar** - Add demo for using value in header, adjust styles slightly for this

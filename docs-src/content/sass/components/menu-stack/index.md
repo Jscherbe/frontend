@@ -37,7 +37,6 @@ Module Settings
 
 ``` scss
 $config: (
-  "selectable-input-width" : 3em,
   "nested-indent" : 0.5em,
   "rule-style" : "light",
   "rule-margin" : 0.5em,
@@ -66,6 +65,12 @@ $config: (
   "link-padding-y": 0.5em,
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
+  "compact-selectable-input-width": 2.2em,
+  "compact-selectable-input-top" : 0.5em,
+  "compact-selectable-input-font-size": 0.8em,
+  "selectable-input-width" : 3em,
+  "selectable-input-top" : 0.73em,
+  "selectable-input-font-size" : null
 );
 ```
   
@@ -77,8 +82,8 @@ $config: (
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** variable
-- **Lines (comments):** 33-63
-- **Lines (code):** 65-95
+- **Lines (comments):** 33-68
+- **Lines (code):** 70-106
 
 </details>
 
@@ -89,7 +94,6 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|selectable-input-width|Dimension|3em|The width of the checkbox/radio input|
 |link-separated-margin|Boolean|false|Enables a margin between the items in the menu-stack.|
 |link-separated-rule-style|Boolean|false|Enables a rule between the items in the menu-stack.|
 |nested-indent|Dimension|0.5em|The indentation of child lists within the menu-stack.|
@@ -98,6 +102,9 @@ $config: (
 |toggle-icon-rotate|Number|false|Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)|
 |compact-link-padding-x|Dimension|0.75em|The links horizontal padding when using the compact option.|
 |compact-link-padding-y|Dimension|0.25em|The links vertical padding when using the compact option.|
+|compact-selectable-input-width|Dimension|2em|The width of the checkbox/radio input (when compact modifier)|
+|compact-selectable-input-font-size|Dimension|null|Optional compact input font-size|
+|compact-selectable-input-top|Dimension|null|Optional y/top for input|
 |label-color|Color|null|The type color of the label.|
 |label-margin|Dimension|0.5em|The margin of the label.|
 |label-text-transform|CssValue|uppercase|Transforms the label text.|
@@ -118,6 +125,9 @@ $config: (
 |link-margin|Dimension|0.2em|Margin for the menu-stack toggle.|
 |link-padding-x|Dimension|1em|Horizontal padding for menu-stack toggle.|
 |link-padding-y|Dimension|0.35em|Vertical padding for menu-stack toggle.|
+|selectable-input-width|Dimension|3em|The width of the checkbox/radio input|
+|selectable-input-top|Dimension|0.73em|To fine tune the y/top value for absolutely positioned input, if you pass null/falsey it will use the padding which isn't always perfect since this is setup to not be centered when wrapping lines in label|
+|selectable-input-font-size|Dimension|null|Optional to set a specific font-size on the input|
 
     
   
@@ -150,8 +160,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 98-101
-- **Lines (code):** 103-105
+- **Lines (comments):** 109-112
+- **Lines (code):** 114-116
 
 </details>
 
@@ -209,8 +219,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 122-126
-- **Lines (code):** 128-281
+- **Lines (comments):** 133-137
+- **Lines (code):** 139-311
 
 </details>
 
@@ -270,8 +280,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 107-110
-- **Lines (code):** 112-115
+- **Lines (comments):** 118-121
+- **Lines (code):** 123-126
 
 </details>
 

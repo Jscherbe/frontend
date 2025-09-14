@@ -15466,7 +15466,7 @@ ul.list-inline,
 .menu-stack__selectable [type=radio],
 .menu-stack__selectable-input {
   position: absolute;
-  top: 0.7em;
+  top: 0.73em;
   left: 1.25em;
 }
 
@@ -15512,10 +15512,25 @@ ul.list-inline,
   width: calc(100% + 2.5em);
 }
 
+.menu-stack--compact .menu-stack__selectable,
 .menu-stack--compact .menu-stack__link {
   border-radius: 0;
   margin: 0;
+}
+.menu-stack--compact .menu-stack__link {
   padding: 0.25em 0.75em;
+}
+.menu-stack--compact .menu-stack__selectable label,
+.menu-stack--compact .menu-stack__selectable-label {
+  padding: 0.25em 0.75em 0.25em 2.2em;
+}
+.menu-stack--compact .menu-stack__selectable [type=checkbox],
+.menu-stack--compact .menu-stack__selectable [type=radio],
+.menu-stack--compact .menu-stack__selectable-input {
+  position: absolute;
+  top: 0.5em;
+  left: 0.75em;
+  font-size: 0.8em;
 }
 
 .menu-stack--hide-inputs .menu-stack__selectable-input,

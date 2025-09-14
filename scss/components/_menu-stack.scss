@@ -32,7 +32,6 @@ $-fallbacks: (
     
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} selectable-input-width [3em] The width of the checkbox/radio input
 /// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
 /// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
 /// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
@@ -41,6 +40,9 @@ $-fallbacks: (
 /// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
 /// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
 /// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
+/// @prop {Dimension} compact-selectable-input-width [2em] The width of the checkbox/radio input (when compact modifier)
+/// @prop {Dimension} compact-selectable-input-font-size [null] Optional compact input font-size
+/// @prop {Dimension} compact-selectable-input-top [null] Optional y/top for input
 /// @prop {Color} label-color [null] The type color of the label.
 /// @prop {Dimension} label-margin [0.5em] The margin of the label.
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
@@ -61,9 +63,12 @@ $-fallbacks: (
 /// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
 /// @prop {Dimension} link-padding-x [1em] Horizontal padding for menu-stack toggle.
 /// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
+/// @prop {Dimension} selectable-input-width [3em] The width of the checkbox/radio input
+/// @prop {Dimension} selectable-input-top [0.73em] To fine tune the y/top value for absolutely positioned input, if you pass null/falsey it will use the padding which isn't always perfect since this is setup to not be centered when wrapping lines in label
+/// @prop {Dimension} selectable-input-font-size [null] Optional to set a specific font-size on the input
+
 
 $config: (
-  "selectable-input-width" : 3em,
   "nested-indent" : 0.5em,
   "rule-style" : "light",
   "rule-margin" : 0.5em,
@@ -92,6 +97,12 @@ $config: (
   "link-padding-y": 0.5em,
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
+  "compact-selectable-input-width": 2.2em,
+  "compact-selectable-input-top" : 0.5em,
+  "compact-selectable-input-font-size": 0.8em,
+  "selectable-input-width" : 3em,
+  "selectable-input-top" : 0.73em,
+  "selectable-input-font-size" : null
 ) !default;
 
 
@@ -206,8 +217,9 @@ $config: (
   #{ $prefix }__selectable [type="radio"],
   #{ $prefix }__selectable-input {
     position: absolute;
-    top: $selectable-y;
+    top: utils.fallback(get("selectable-input-top"), $selectable-y);
     left: get("link-padding-x");
+    font-size: get("selectable-input-font-size");
   }
   #{ $prefix }__selectable label,
   #{ $prefix }__selectable-label {
@@ -259,10 +271,28 @@ $config: (
     // }
   }
   #{ $prefix }--compact {
+    $compact-y: get("compact-link-padding-y");
+    $compact-x: get("compact-link-padding-x");
+
+    #{ $prefix }__selectable,
     #{ $prefix }__link {
       border-radius: 0;
       margin: 0;
-      padding: get("compact-link-padding-y") get("compact-link-padding-x");
+    }
+    #{ $prefix }__link {
+      padding: $compact-y $compact-x;
+    }
+    #{ $prefix }__selectable label,
+    #{ $prefix }__selectable-label {
+      padding: $compact-y $compact-x $compact-y get("compact-selectable-input-width");
+    }
+    #{ $prefix }__selectable [type="checkbox"],
+    #{ $prefix }__selectable [type="radio"],
+    #{ $prefix }__selectable-input {
+      position: absolute;
+      top: utils.fallback(get("compact-selectable-input-top"), $compact-y);
+      left: $compact-x;
+      font-size: get("compact-selectable-input-font-size");
     }
   }
 
