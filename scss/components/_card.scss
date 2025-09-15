@@ -50,6 +50,7 @@
 /// @prop {String} clickable-card-interact-selector [&:hover, &:focus-within] The selectors for the cards being interacted with.
 /// @prop {Dimension} footer-padding-y [0.25rem] The top and bottom padding for the footer.
 /// @prop {Dimension} footer-min-height [2.5rem] The min height for the footer
+/// @prop {Dimension} footer-justify [flex-end] Flex alignment of footer items (on end by default)
 /// @prop {String} prefix [card] The class name used to add card styling.
 /// @prop {Boolean} transition-enabled [true] Enable or disable transition for card.
 /// @prop {CssValue} transition-timing-function [ease-in-out] The timing function for the card animation.
@@ -87,6 +88,7 @@ $config: (
   "color-hover" : null,
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
+  "footer-justify" : flex-end,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
   "horizontal-min-height" : 20rem,
@@ -337,7 +339,7 @@ $config: (
     min-height: get("footer-min-height");
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: get("footer-justify");
   }
   // body + footer {
   // means body keeps before pseudo element while footer loses it

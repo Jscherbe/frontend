@@ -52,6 +52,7 @@ $config: (
   "color-hover" : null,
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
+  "footer-justify" : flex-end,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
   "horizontal-min-height" : 20rem,
@@ -107,8 +108,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 18-72
-- **Lines (code):** 74-134
+- **Lines (comments):** 18-73
+- **Lines (code):** 75-136
 
 </details>
 
@@ -152,6 +153,7 @@ $config: (
 |clickable-card-interact-selector|String|&:hover, &:focus-within|The selectors for the cards being interacted with.|
 |footer-padding-y|Dimension|0.25rem|The top and bottom padding for the footer.|
 |footer-min-height|Dimension|2.5rem|The min height for the footer|
+|footer-justify|Dimension|flex-end|Flex alignment of footer items (on end by default)|
 |prefix|String|card|The class name used to add card styling.|
 |transition-enabled|Boolean|true|Enable or disable transition for card.|
 |transition-timing-function|CssValue|ease-in-out|The timing function for the card animation.|
@@ -204,8 +206,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 136-139
-- **Lines (code):** 141-143
+- **Lines (comments):** 138-141
+- **Lines (code):** 143-145
 
 </details>
 
@@ -263,8 +265,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 154-158
-- **Lines (code):** 160-448
+- **Lines (comments):** 156-160
+- **Lines (code):** 162-450
 
 </details>
 
@@ -339,8 +341,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 518-522
-- **Lines (code):** 524-554
+- **Lines (comments):** 520-524
+- **Lines (code):** 526-556
 
 </details>
 
@@ -404,8 +406,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 145-148
-- **Lines (code):** 150-152
+- **Lines (comments):** 147-150
+- **Lines (code):** 152-154
 
 </details>
 

@@ -1,6 +1,10 @@
 # Change Log
 
-## 0.1.0-beta.1199
+## 0.1.0-beta.120
+
+- **scss/components/card** Add option for "footer-justify"
+  
+## 0.1.0-beta.119
 
 - **scss/components/card** Remove overflow hidden (not needed and gets in the way)
   - Example popovers inside cards need no overflow hidden for absolute strategy
