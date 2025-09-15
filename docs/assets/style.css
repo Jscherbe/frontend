@@ -13294,6 +13294,10 @@ button.card:focus-within::after,
   grid-template-columns: 1fr;
 }
 
+.card-grid--rows-fit {
+  grid-auto-rows: auto;
+}
+
 @media screen and (max-width: 43.49em) {
   .card-grid {
     grid-template-columns: 1fr;

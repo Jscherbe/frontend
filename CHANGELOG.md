@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.122
+
+- **scss/components/card-grid** Add modifier `card-grid--rows-fit` for auto row height (based on each rows columns height vs the default equal height)
+
 ## 0.1.0-beta.121
 
 - **scss/components/card-grid** Add one-column modifier, adjust defaults for gap to be slightly smaller

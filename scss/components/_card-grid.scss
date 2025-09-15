@@ -70,6 +70,9 @@ $config: (
   #{ $prefix }--one-column {
     grid-template-columns: 1fr;
   }
+  #{ $prefix }--rows-fit {
+    grid-auto-rows: auto;
+  }
   @include breakpoint.max("small") {
     #{ $prefix } {
       grid-template-columns: 1fr;
