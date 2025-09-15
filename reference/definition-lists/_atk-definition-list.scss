@@ -1,0 +1,50 @@
+@use "vars";
+@use "ulu";
+
+$breakpoint: "medium";
+$border: ulu.element-get-rule-style("light");
+
+.atk-definition-list {
+  font-family: ulu.typography-get("font-family-sans");
+  line-height: ulu.typography-get("line-height-dense");
+  > div {
+    margin-top: 0.75em;
+    &:not(:first-child) { 
+      border-top: $border;
+      // border-top-style: dotted;
+      border-top-width: 2px;
+      padding-top: 0.75em;
+    }
+  }
+  dt {
+    // font-family: ulu.typography-get("font-family-sans");
+    font-weight: ulu.typography-get("font-weight-bold");
+    // font-size: 1.2em;
+    // text-transform: capitalize;
+  }
+  dd {
+    margin: 0;
+    
+  }
+  p {
+    margin-bottom: 0.5em;
+  }
+  ul, ol {
+    margin-bottom: 0.5em;
+    margin-top: 0;
+  }
+  li {
+    padding-bottom: 0.5em;
+  }
+}
+
+.atk-definition-list--table {
+  border-top: 3px solid vars.$color-rand-black;
+  > div {
+    @include ulu.breakpoint-min($breakpoint) {
+      display: grid;
+      grid-template-columns: 25% 75%;
+      gap: 1rem;
+    }
+  }
+}

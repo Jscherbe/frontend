@@ -14494,6 +14494,66 @@ table.data-table--no-border {
   border: none;
 }
 
+.definition-list {
+  line-height: 1.3;
+  margin: 0 0 1.5em 0;
+}
+.definition-list > div {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+}
+.definition-list dt,
+.definition-list dd {
+  display: block;
+  margin: 0;
+  font-weight: normal;
+}
+.definition-list dt {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 72.875em) {
+  .definition-list--table > div {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    gap: 1rem;
+  }
+}
+
+.definition-list--inline dd,
+.definition-list--inline-all dd {
+  display: inline;
+}
+.definition-list--inline dd + dd::before,
+.definition-list--inline-all dd + dd::before {
+  content: ",";
+  margin-left: -0.2em;
+  margin-right: 0.2em;
+}
+
+.definition-list--inline-all dt {
+  display: inline;
+}
+
+.definition-list--separated > div:not(:first-child),
+.definition-list--separated-first > div:first-child {
+  border-top: 1px solid var(--site-color-rule-light);
+}
+
+.definition-list--separated-last > div:last-child {
+  border-bottom: 1px solid var(--site-color-rule-light);
+  padding-bottom: 0.5em;
+}
+
+.definition-list--compact > div {
+  margin-top: 0.25em;
+  padding-top: 0.25em;
+}
+
+.definition-list--compact.definition-list--separated-last > div:last-child {
+  padding-bottom: 0.25em;
+}
+
 .fill-context {
   position: relative;
 }

@@ -1,0 +1,156 @@
+////
+/// @group definition-list
+/// Definition list styles
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../typography";
+@use "../breakpoint";
+@use "../element";
+
+// Used for function fallback
+$-fallbacks: (
+  "term-font-weight": (
+    "function": meta.get-function("get", false, "typography"),
+    "property": "font-weight-bold"
+  ),
+  "line-height": (
+    "function": meta.get-function("get", false, "typography"),
+    "property": "line-height-dense"
+  ),
+  "separator-border": (
+    "function": meta.get-function("get-rule-style", false, "element"),
+    "arguments": ("light",)
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {String} term-font-weight [true] The font-weight of the dt element.
+/// @prop {Dimension} line-height [true] The line-height of the definition list.
+/// @prop {CssUnit} item-margin [0.75em] The spacing for each item.
+/// @prop {Boolean} separator [true] Whether to show a separator between items.
+/// @prop {Border} separator-border [true] The border style for the separator.
+/// @prop {Dimension} separator-padding [0.75em] The padding for the separator.
+/// @prop {String} table-breakpoint [medium] The breakpoint for the table layout.
+/// @prop {String} table-template-columns [(25% 75%)] The grid-template-columns for the table layout.
+/// @prop {Dimension} table-gap [1rem] The gap for the table layout.
+/// @prop {String} inline-dd-separator [","] The separator for multiple dd elements in inline layout.
+
+$config: (
+  "margin" : (0 0 1.5em 0),
+  "term-font-weight": true,
+  "line-height": true,
+  "item-margin" : 1em,
+  "separator": true,
+  "separator-border": true,
+  "table-breakpoint": "medium",
+  "table-template-columns": (25% 75%),
+  "table-gap": 1rem,
+  "inline-dd-separator": ",",
+  "compact-item-margin" : 0.5em
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-definition-list-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-definition-list-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "definition-list [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo definition-list
+/// @example scss
+///  @include ulu.component-definition-list-styles();
+
+@mixin styles {
+  $prefix: selector.class("definition-list");
+  $item-margin-half: math.div(get("item-margin"), 2);
+  $compact-item-margin-half: math.div(get("compact-item-margin"), 2);
+
+  #{ $prefix } {
+    line-height: get("line-height");
+    margin: get("margin");
+
+    > div {
+      margin-top: $item-margin-half;
+      padding-top: $item-margin-half;
+    }
+    dt,
+    dd {
+      display: block;
+      margin: 0;
+      font-weight: normal;
+    }
+    dt {
+      font-weight: get("term-font-weight");
+    }
+  }
+
+  // Modifiers
+  #{ $prefix }--table {
+    @include breakpoint.min(get("table-breakpoint")) {
+      > div {
+        display: grid;
+        grid-template-columns: get("table-template-columns");
+        gap: get("table-gap");
+      }
+    }
+  }
+
+  #{ $prefix }--inline,
+  #{ $prefix }--inline-all {
+    dd {
+      display: inline;
+    }
+    dd + dd {
+      &::before {
+        content: get("inline-dd-separator");
+        margin-left: -0.2em;
+        margin-right: 0.2em;
+      }
+    }
+  }
+  #{ $prefix }--inline-all {
+    dt {
+      display: inline;
+    }
+  }
+
+  #{ $prefix }--separated > div:not(:first-child),
+  #{ $prefix }--separated-first > div:first-child {
+    border-top: get("separator-border");
+  }
+  #{ $prefix }--separated-last > div:last-child {
+    border-bottom: get("separator-border");
+    padding-bottom: $item-margin-half;
+  }
+
+  #{ $prefix }--compact {
+    > div {
+      margin-top: $compact-item-margin-half;
+      padding-top: $compact-item-margin-half;
+    }
+  }
+  #{ $prefix }--compact#{ $prefix }--separated-last > div:last-child {
+    padding-bottom: $compact-item-margin-half;
+  }
+}

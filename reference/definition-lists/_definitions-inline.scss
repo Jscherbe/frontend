@@ -1,0 +1,55 @@
+@use "vars";
+@use "ulu";
+@use "sass:map";
+
+$padding-values: ulu.utils-get-spacing(ulu.component-callout-get("padding"));
+$padding-left: map.get($padding-values, "left");
+$padding-top: map.get($padding-values, "top");
+$padding-between: 1em;
+
+.definitions-inline {
+  line-height: 1.35;
+  dt {
+    display: block;
+  }
+  dd {
+    display: inline;
+    margin: 0;
+  }
+  dd + dd {
+    &:before {
+      content: ",";
+      margin-left: -0.2em;
+    }
+  }
+  dd + dt {
+    margin-top: 0.5em;
+  }
+  .theme-dark & {
+    dd {
+      color: ulu.cssvar-use("color-accent");
+    }
+  }
+}
+.definitions-inline--compact {
+  dt {
+    display: inline;
+  }
+  > div {
+    margin-bottom: 0.25em;
+  }
+}
+
+.definitions-inline--separated {
+  .definitions-inline__item {
+    border-top: ulu.element-get-rule-style("light");
+    border-top-style: dotted;
+    border-top-width: 2px;
+    padding: $padding-between 0;
+  }
+  &.definitions-callout__list {
+    .definitions-inline__item { 
+      padding: $padding-between $padding-left;
+    }
+  }
+}

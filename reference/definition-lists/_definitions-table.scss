@@ -1,0 +1,41 @@
+@use "ulu";
+@use "vars";
+
+.definitions-table {
+  line-height: 1.35;
+  margin: 1.5rem 0;
+  & + & {
+    margin-top: -1.5rem;
+  }
+  > div {
+    border-top: 1px dotted ulu.color-get("rule");
+    padding: 0.75em 0 1em 0;
+  }
+  dt {
+    font-weight: bold;
+  }
+  @include ulu.breakpoint-min("small") {
+    > div {
+      display: flex;
+      align-items: flex-start;
+    }
+    dt {
+      flex: 0 0 50%;
+    }
+    dd,
+    // Multiple dd's
+    > div > div  {
+      flex: 0 0 50%;
+      padding-left: 1.5rem;
+      margin-left: 0;
+    }
+  }
+}
+.definitions-table--stacked {
+  > div {
+    display: block;
+  }
+  dd {
+    padding-left: 0;
+  }
+}

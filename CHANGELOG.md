@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.116
+
+- **scss/components/definition-list** Added new definition list component with modifiers for (inline, inline-all, table, compact, separated, separated-first, separated-last)
+
 ## 0.1.0-beta.115
 
 - **scss/components/accordion** Make sure transparent modifier doesn't allow background color when open, Change transparent content padding default (increased top/bottom)

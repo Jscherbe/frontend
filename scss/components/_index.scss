@@ -19,6 +19,7 @@
 @forward "css-icon" as css-icon-*;
 @forward "data-grid" as data-grid-*;
 @forward "data-table" as data-table-*;
+@forward "definition-list" as definition-list-*;
 @forward "fill-context" as fill-context-*;
 @forward "flipcard" as flipcard-*;
 @forward "flipcard-grid" as flipcard-grid-*;
@@ -80,6 +81,7 @@
 @use "css-icon";
 @use "data-grid";
 @use "data-table";
+@use "definition-list";
 @use "fill-context";
 @use "flipcard";
 @use "flipcard-grid";
@@ -142,6 +144,7 @@ $all-includes: (
   "css-icon",
   "data-grid",
   "data-table",
+  "definition-list",
   "fill-context",
   "flipcard",
   "flipcard-grid",
@@ -271,6 +274,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "data-table")) {
     @include data-table.styles;
+  }
+  @if (list.index($includes, "definition-list")) {
+    @include definition-list.styles;
   }
   @if (list.index($includes, "fill-context")) {
     @include fill-context.styles;

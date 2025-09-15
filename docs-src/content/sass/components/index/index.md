@@ -53,6 +53,7 @@ $all-includes: (
   "css-icon",
   "data-grid",
   "data-table",
+  "definition-list",
   "fill-context",
   "flipcard",
   "flipcard-grid",
@@ -106,8 +107,8 @@ $all-includes: (
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 125-126
-- **Lines (code):** 128-187
+- **Lines (comments):** 127-128
+- **Lines (code):** 130-190
 
 </details>
 
@@ -142,8 +143,8 @@ $current-includes: $all-includes;
 - **File:** _index.scss
 - **Group:** index
 - **Type:** variable
-- **Lines (comments):** 189-190
-- **Lines (code):** 192-192
+- **Lines (comments):** 192-193
+- **Lines (code):** 195-195
 
 </details>
 
@@ -179,8 +180,8 @@ Change default includes (when user prints modules)
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 194-196
-- **Lines (code):** 198-201
+- **Lines (comments):** 197-199
+- **Lines (code):** 201-204
 
 </details>
 
@@ -225,8 +226,8 @@ Exclude certain items from includes
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 203-204
-- **Lines (code):** 206-208
+- **Lines (comments):** 206-207
+- **Lines (code):** 209-211
 
 </details>
 
@@ -270,8 +271,8 @@ Prints all Components styles
 - **File:** _index.scss
 - **Group:** index
 - **Type:** mixin
-- **Lines (comments):** 210-214
-- **Lines (code):** 216-392
+- **Lines (comments):** 213-217
+- **Lines (code):** 219-398
 
 </details>
 
