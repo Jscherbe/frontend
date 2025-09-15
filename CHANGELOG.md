@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.118
+
+- **scss/components/definition-list** Remove margin on first element (unless it has separator)
+
 ## 0.1.0-beta.117
 
 - **scss/components/definition-list** Come up with better solution for whitespace when inline and using separators

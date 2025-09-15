@@ -14566,6 +14566,11 @@ table.data-table--no-border {
   padding-bottom: 0.25em;
 }
 
+.definition-list:not(.definition-list--separated-first) > div:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 .fill-context {
   position: relative;
 }

@@ -167,4 +167,12 @@ $config: (
   #{ $prefix }--compact#{ $prefix }--separated-last > div:last-child {
     padding-bottom: $compact-item-margin-half;
   }
+
+  // Clip margin of first
+  #{ $prefix }:not(#{ $prefix }--separated-first) {
+    > div:first-child {
+      padding-top: 0;
+      margin-top: 0;
+    }
+  }
 }

@@ -175,7 +175,7 @@ Prints component styles
 - **Group:** definition-list
 - **Type:** mixin
 - **Lines (comments):** 81-84
-- **Lines (code):** 86-170
+- **Lines (code):** 86-178
 
 </details>
 
