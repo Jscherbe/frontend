@@ -46,7 +46,8 @@ $config: (
   "table-breakpoint": "medium",
   "table-template-columns": (25% 75%),
   "table-gap": 1rem,
-  "inline-dd-separator": ",",
+  "inline-description-separator": ",",
+  "inline-term-separator": ":",
   "compact-item-margin" : 0.5em
 );
 ```
@@ -59,8 +60,8 @@ $config: (
 - **File:** _definition-list.scss
 - **Group:** definition-list
 - **Type:** variable
-- **Lines (comments):** 33-44
-- **Lines (code):** 46-58
+- **Lines (comments):** 33-45
+- **Lines (code):** 47-60
 
 </details>
 
@@ -80,7 +81,8 @@ $config: (
 |table-breakpoint|String|medium|The breakpoint for the table layout.|
 |table-template-columns|String|(25% 75%)|The grid-template-columns for the table layout.|
 |table-gap|Dimension|1rem|The gap for the table layout.|
-|inline-dd-separator|String|","|The separator for multiple dd elements in inline layout.|
+|inline-description-separator|String|","|The separator for multiple dd elements in inline layout.|
+|inline-term-separator|String|":"|The separator for dt elements in inline layout.|
 
     
   
@@ -113,8 +115,8 @@ Change modules $config
 - **File:** _definition-list.scss
 - **Group:** definition-list
 - **Type:** mixin
-- **Lines (comments):** 60-63
-- **Lines (code):** 65-67
+- **Lines (comments):** 62-65
+- **Lines (code):** 67-69
 
 </details>
 
@@ -172,8 +174,8 @@ Prints component styles
 - **File:** _definition-list.scss
 - **Group:** definition-list
 - **Type:** mixin
-- **Lines (comments):** 79-82
-- **Lines (code):** 84-156
+- **Lines (comments):** 81-84
+- **Lines (code):** 86-170
 
 </details>
 
@@ -240,8 +242,8 @@ Get a config option
 - **File:** _definition-list.scss
 - **Group:** definition-list
 - **Type:** function
-- **Lines (comments):** 69-72
-- **Lines (code):** 74-77
+- **Lines (comments):** 71-74
+- **Lines (code):** 76-79
 
 </details>
 

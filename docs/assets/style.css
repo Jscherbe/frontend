@@ -14520,19 +14520,31 @@ table.data-table--no-border {
   }
 }
 
-.definition-list--inline dd,
-.definition-list--inline-all dd {
-  display: inline;
+.definition-list--inline > div,
+.definition-list--inline-all > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 .definition-list--inline dd + dd::before,
 .definition-list--inline-all dd + dd::before {
   content: ",";
-  margin-left: -0.2em;
   margin-right: 0.2em;
 }
 
-.definition-list--inline-all dt {
-  display: inline;
+.definition-list--inline dt {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.definition-list--inline-all dt::after {
+  content: ":";
+  margin-right: 0.2em;
 }
 
 .definition-list--separated > div:not(:first-child),

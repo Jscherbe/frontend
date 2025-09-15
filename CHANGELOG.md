@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.117
+
+- **scss/components/definition-list** Come up with better solution for whitespace when inline and using separators
+
 ## 0.1.0-beta.116
 
 - **scss/components/definition-list** Added new definition list component with modifiers for (inline, inline-all, table, compact, separated, separated-first, separated-last)
@@ -11,7 +15,6 @@
 ## 0.1.0-beta.114
 
 - `scss/helpers/_utilities.scss` - add flex-wrap (use with layout-flex, etc), and no-min-width (when needed for buttons)
-
 
 ## 0.1.0-beta.113
 

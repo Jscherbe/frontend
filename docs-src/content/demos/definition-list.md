@@ -129,14 +129,28 @@ parent: Demos
 
 <dl class="definition-list definition-list--inline-all">
   <div>
-    <dt>Term:</dt>
+    <dt>Term</dt>
     <dd>Definition 1</dd>
     <dd>Definition 1.1</dd>
     <dd>This is a much longer definition to see how it wraps when inline.</dd>
   </div>
   <div>
-    <dt>A Longer Term:</dt>
+    <dt>A Longer Term</dt>
     <dd>Definition 2</dd>
+  </div>
+</dl>
+
+<h2 class="h2">Inline All (no whitespace test)</h2>
+<p>
+  The <code>--inline-all</code> modifier displays both the definition term (<code>&lt;dt&gt;</code>) and its descriptions (<code>&lt;dd&gt;</code>) on the same line.
+</p>
+
+<dl class="definition-list definition-list--inline-all">
+  <div>
+    <dt>Term</dt><dd>Definition 1</dd><dd>Definition 1.1</dd><dd>This is a much longer definition to see how it wraps when inline.</dd>
+  </div>
+  <div>
+    <dt>A Longer Term</dt><dd>Definition 2</dd>
   </div>
 </dl>
 
@@ -147,11 +161,11 @@ parent: Demos
 
 <dl class="definition-list definition-list--inline-all definition-list--compact">
   <div>
-    <dt>Term 1:</dt>
+    <dt>Term 1</dt>
     <dd>This is a longer definition to demonstrate how text wraps in the compact inline layout.</dd>
   </div>
   <div>
-    <dt>A Longer Term:</dt>
+    <dt>A Longer Term</dt>
     <dd>Definition 2</dd>
   </div>
 </dl>
@@ -163,11 +177,11 @@ parent: Demos
 
 <dl class="definition-list definition-list--separated definition-list--separated-first definition-list--separated-last definition-list--compact">
   <div>
-    <dt>Term 1:</dt>
+    <dt>Term 1</dt>
     <dd>This is a longer definition to demonstrate how text wraps in the compact inline layout.</dd>
   </div>
   <div>
-    <dt>A Longer Term:</dt>
+    <dt>A Longer Term</dt>
     <dd>Definition 2</dd>
   </div>
 </dl>
