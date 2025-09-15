@@ -66,7 +66,7 @@ $config: (
   "summary-border-enabled":         true,
   "summary-border-color":           "rule-light",
   "summary-border-width":           1px,
-  "transparent-content-padding":    (0.25em 0),
+  "transparent-content-padding":    (1em 0),
   "borderless-margin-between":      0.5em,
   "active-selector":                ".is-active"
 );

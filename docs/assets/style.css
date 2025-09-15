@@ -12028,7 +12028,7 @@ components:
 .accordion--transparent {
   border-left: none;
   border-right: none;
-  background-color: transparent;
+  background-color: transparent !important;
   border-radius: 0;
 }
 .accordion--transparent > .accordion__summary,
@@ -12040,7 +12040,7 @@ components:
   border-radius: 0 !important;
 }
 .accordion--transparent > .accordion__content {
-  padding: 0.25em 0;
+  padding: 1em 0;
 }
 
 .accordion--borderless {

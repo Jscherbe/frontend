@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.115
+
+- **scss/components/accordion** Make sure transparent modifier doesn't allow background color when open, Change transparent content padding default (increased top/bottom)
+
 ## 0.1.0-beta.114
 
 - `scss/helpers/_utilities.scss` - add flex-wrap (use with layout-flex, etc), and no-min-width (when needed for buttons)
