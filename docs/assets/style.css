@@ -12939,7 +12939,6 @@ a.badge:focus .badge__inner {
       -ms-flex-pack: end;
           justify-content: flex-end;
   max-width: 28rem;
-  overflow: hidden;
 }
 .card::after {
   position: absolute;

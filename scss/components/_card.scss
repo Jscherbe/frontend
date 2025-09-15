@@ -151,49 +151,6 @@ $config: (
   @return utils.require-map-get($config, $name, "card [config]");
 }
 
-/// Mixin styles for card when it has proxy click enabled and is being interacted with (hover/focus)
-/// @param {Boolean} $hover [false] Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
-/// Prints component styles
-/// @example scss
-///  @include ulu.component-card-styles();
-
-@mixin when-clickable($hover: false) {
-  $prefix: selector.class("card");
-  // When proxy click enabled
-  @if (get("clickable-card-enabled") and get("clickable-card-selector")) {
-    #{ $prefix }#{ get("clickable-card-selector") },
-    a#{ $prefix },
-    button#{ $prefix },
-    #{ $prefix }--clickable {
-      @if ($hover) {
-        #{ get("clickable-card-interact-selector") } {
-          @content;
-        }
-      } @else {
-        @content;
-      }
-    }
-  // Without proxy click (only if interactive)
-  } @else {
-    a#{ $prefix },
-    button#{ $prefix },
-    #{ $prefix }--clickable {
-      @if ($hover) {
-        #{ get("clickable-card-interact-selector") } {
-          @content;
-        }
-      } @else {
-        @content;
-      }
-    }
-  } 
-}
-
-
-@mixin shared-transition-styles() {
-  transition-duration: get("transition-duration");
-  transition-timing-function: get("transition-timing-function");
-}
 /// Prints component styles
 /// @demo card
 /// @example scss
@@ -215,8 +172,6 @@ $config: (
     flex-direction: column;
     justify-content: flex-end;
     max-width: get("max-width");
-    // Not absolutely necessary, incase we want to remove in future
-    overflow: hidden; 
 
     // Border is on pseudo so that it's on top of image/etc
     &::after {
@@ -249,7 +204,8 @@ $config: (
     #{ $prefix },
     #{ $prefix }::after,
     #{ $prefix }__title {
-      @include shared-transition-styles();
+      transition-duration: get("transition-duration");
+      transition-timing-function: get("transition-timing-function");
       transition-property: get("transition-properties");
     }
   } 
@@ -558,6 +514,47 @@ $config: (
   }
 }
 
+
+/// Mixin styles for card when it has proxy click enabled and is being interacted with (hover/focus)
+/// @param {Boolean} $hover [false] Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-card-styles();
+
+@mixin when-clickable($hover: false) {
+  $prefix: selector.class("card");
+  // When proxy click enabled
+  @if (get("clickable-card-enabled") and get("clickable-card-selector")) {
+    #{ $prefix }#{ get("clickable-card-selector") },
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable {
+      @if ($hover) {
+        #{ get("clickable-card-interact-selector") } {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  // Without proxy click (only if interactive)
+  } @else {
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable {
+      @if ($hover) {
+        #{ get("clickable-card-interact-selector") } {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  } 
+}
+
+
+// Internal mixin for DRY
 @mixin -card-horizontal-no-image-styles() {
   $prefix: selector.class("card");
   grid-template-columns: 1fr;
@@ -566,29 +563,3 @@ $config: (
     grid-column: 1 / 2;
   }
 }
-
-// OLD CSS FOR HORIZONTAL
-  // #{ $prefix }--horizontal {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: center;
-  //   align-items: center;
-  //   #{ $prefix }__image {
-  //     align-self: stretch;
-  //     border-top-right-radius: 0;
-  //     border-bottom-left-radius: get("border-radius");
-  //     width: get("horizontal-image-width");
-  //     flex: 0 0 get("horizontal-image-width");
-  //     // max-width: 30rem;
-  //     // min-height: 28rem;
-  //     // padding-top: 0;
-  //   }
-  //   #{ $prefix }__body {
-  //     display: flex;
-  //     flex: 1;
-  //     flex-direction: column;
-  //     justify-content: center;
-  //     max-width: get("horizontal-body-max-width");
-  //   }
-  // }
-

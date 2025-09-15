@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.0-beta.1199
+
+- **scss/components/card** Remove overflow hidden (not needed and gets in the way)
+  - Example popovers inside cards need no overflow hidden for absolute strategy
+
 ## 0.1.0-beta.118
 
 - **scss/components/definition-list** Remove margin on first element (unless it has separator)
