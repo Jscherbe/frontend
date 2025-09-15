@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.1.0-beta.121
+
+- **scss/components/card-grid** Add one-column modifier, adjust defaults for gap to be slightly smaller
+
 ## 0.1.0-beta.120
 
 - **scss/components/card** Add option for "footer-justify"

@@ -37,9 +37,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "gap" : 2rem,
+  "gap" : 1.5rem,
   "template-columns" : 1fr 1fr,
-  "compact-gap" : 1rem,
+  "compact-gap" : 0.75rem,
   "compact-template-columns" : 1fr 1fr 1fr,
 );
 ```
@@ -160,7 +160,7 @@ Prints component styles
 - **Group:** card-grid
 - **Type:** mixin
 - **Lines (comments):** 44-46
-- **Lines (code):** 48-75
+- **Lines (code):** 48-78
 
 </details>
 

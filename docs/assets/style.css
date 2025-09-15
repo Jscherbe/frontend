@@ -13274,8 +13274,8 @@ button.card:focus-within::after,
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-rows: 1fr;
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
 }
 .card-grid .card {
   max-width: none;
@@ -13287,7 +13287,11 @@ button.card:focus-within::after,
 
 .card-grid--compact {
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
+}
+
+.card-grid--one-column {
+  grid-template-columns: 1fr;
 }
 
 @media screen and (max-width: 43.49em) {

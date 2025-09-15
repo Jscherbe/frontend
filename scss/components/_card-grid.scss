@@ -17,9 +17,9 @@
 /// @prop {CssValue} template-columns [1fr 1fr] The template-columns of the card-grid.
 
 $config: (
-  "gap" : 2rem,
+  "gap" : 1.5rem,
   "template-columns" : 1fr 1fr,
-  "compact-gap" : 1rem,
+  "compact-gap" : 0.75rem,
   "compact-template-columns" : 1fr 1fr 1fr,
 ) !default;
 
@@ -66,6 +66,9 @@ $config: (
   #{ $prefix }--compact {
     grid-template-columns: get("compact-template-columns");
     gap: get("compact-gap");
+  }
+  #{ $prefix }--one-column {
+    grid-template-columns: 1fr;
   }
   @include breakpoint.max("small") {
     #{ $prefix } {
