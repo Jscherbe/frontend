@@ -7,6 +7,30 @@ todo:
   
 ---
 
+
+<p>
+  -------
+</p>
+
+<div class="multi-column-block" data-grid="columns: 12, columns: 12, rules-column: right, rules-row: between, rules-row-persist: true, gutters: true, gutters-row: true, gutter-scale: default, justify: left" data-grid-init="">
+  <div data-grid-item="width: 6" class="position-row-first position-column-first position-column-last">
+    <div>
+      <h2 class="text-align-center h3">618 Data Collection Calendar</h2>
+      <p class="text-align-center">This tool helps states plan for and submit the 618 data collections on time and accurately. Each collection report includes a due date with corresponding timelines for tasks and activities.</p>
+    </div>
+  </div>
+  <div data-grid-item="width: 6" class="position-row-last position-column-first position-column-last">
+    <div>
+      <h2 class="text-align-center h3">2024 Quick References for IDEA Part B</h2>
+      <p class="text-align-center">This quick reference guide brings essential information about IDEA data requirements together in one place. These references may be useful for new and experienced state staff who work with IDEA data and who need an easy way to reference key information.</p>
+    </div>
+  </div>
+</div>
+
+<p>
+  -------
+</p>
+
 The grid is for page layout, it provides different column sizes at each of the configured breakpoints.
 
 On the smallest size the grid columns will span 100%. The grid is setup using two attributes, data-grid="" for the parent grid container and data-grid-item="" for each grid column. The grid uses a script to set position classes, which are used for rule placement since the grid and reflow at different breakpoints.
