@@ -181,7 +181,12 @@ $config: (
       content: if(get("border"), "", null);
       border: get("border");
       border-radius: get("border-radius");
-      z-index: 4;
+      // Below body and footer but above the image
+      // - Note: Starting at 3 instead of 2 so that content can move to 
+      //   layer 2 on overlay modifier
+      // - General style doesn't need bleeding for content so this allows 
+      //   popovers/etc to not be affected by this pseudo hover border
+      z-index: 3; 
       pointer-events: none;
     }
   }
@@ -277,15 +282,13 @@ $config: (
     }
   }
 
-  #{ $prefix }__footer {
-    padding: get("padding");
-  }
-  #{ $prefix }__main {
+  #{ $prefix }__footer,
+  #{ $prefix }__main,
+  #{ $prefix }__aside {
     padding: get("padding");
   }
   #{ $prefix }__aside {
     position: relative;
-    padding: get("padding");
   }
 
   #{ $prefix }__image--icon {
@@ -306,7 +309,8 @@ $config: (
   #{ $prefix }__body,
   #{ $prefix }__footer { 
     position: relative;
-    z-index: 2; // Above image
+    // Above image and pseudo (in case we have popovers/etc)
+    z-index: 4; 
   }
   #{ $prefix }__body {
     display: flex;
@@ -333,7 +337,6 @@ $config: (
   //   and text without relying so much on padding
   #{ $prefix }__footer {
     flex: 0;
-    z-index: 4;
     padding-top: get("footer-padding-y");
     padding-bottom: get("footer-padding-y");
     min-height: get("footer-min-height");
@@ -347,10 +350,18 @@ $config: (
     // overflow: hidden;
     aspect-ratio: get("overlay-aspect-ratio");
     height: min-content;
+    
+    // On overlay putting the body/footer above the image and below the hover pseudo
+    // - If we have popovers in overlay this would need to be set above the pseudo
+    // - The trade off would be that the gradients background would be above the hover border, keeping them above will preserve the look / feel since popovers are probably not needed for this style
+    #{ $prefix }__body,
+    #{ $prefix }__footer {
+      z-index: 2;
+    }
     #{ $prefix }__body {
       position: relative;
       flex-grow: 0;
-      z-index: 2;
+     
       color: color.get(get("color-overlay"));
       background-color: color.get(get("overlay-background-color"));
       min-height: 0;

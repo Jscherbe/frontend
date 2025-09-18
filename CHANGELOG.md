@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.123
+
+- **scss/components/card** Adjust z-index's of elements so that
+  - Content is on top of pseudo hover/focus border so that it's not on top of positioned elements within the card (ie. popover)
+    - This should be ok as the card content doesn't bleed to the edge (except image which is below the hover pseudo border)
+    - The exception is `.card--overlay` which will move the content above the hover pseudo border, since popovers aren't normally something needed with that style/modifier. This allows the gradient to sit below the hover pseudo border
+
 ## 0.1.0-beta.122
 
 - **scss/components/card-grid** Add modifier `card-grid--rows-fit` for auto row height (based on each rows columns height vs the default equal height)

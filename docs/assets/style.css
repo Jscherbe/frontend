@@ -12949,7 +12949,7 @@ a.badge:focus .badge__inner {
   content: "";
   border: 1px solid #ccc;
   border-radius: 5px;
-  z-index: 4;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -13037,17 +13037,14 @@ button.card:focus-within::after,
   transition-property: transform, filter, -webkit-transform, -webkit-filter;
 }
 
-.card__footer {
-  padding: 2rem;
-}
-
-.card__main {
+.card__footer,
+.card__main,
+.card__aside {
   padding: 2rem;
 }
 
 .card__aside {
   position: relative;
-  padding: 2rem;
 }
 
 .card__image--icon {
@@ -13073,7 +13070,7 @@ button.card:focus-within::after,
 .card__body,
 .card__footer {
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 .card__body {
@@ -13094,7 +13091,6 @@ button.card:focus-within::after,
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  z-index: 4;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   min-height: 2.5rem;
@@ -13115,12 +13111,15 @@ button.card:focus-within::after,
   height: -moz-min-content;
   height: min-content;
 }
+.card--overlay .card__body,
+.card--overlay .card__footer {
+  z-index: 2;
+}
 .card--overlay .card__body {
   position: relative;
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  z-index: 2;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 0;

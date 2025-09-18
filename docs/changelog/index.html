@@ -5828,6 +5828,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.1.0-beta.123">0.1.0-beta.123</a>
+            		</li>
+
                     <li><a href="#0.1.0-beta.122">0.1.0-beta.122</a>
             		</li>
 
@@ -6242,6 +6245,19 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.1.0-beta.123" tabindex="-1">0.1.0-beta.123</h2>
+<ul>
+<li><strong>scss/components/card</strong> Adjust z-index's of elements so that
+<ul>
+<li>Content is on top of pseudo hover/focus border so that it's not on top of positioned elements within the card (ie. popover)
+<ul>
+<li>This should be ok as the card content doesn't bleed to the edge (except image which is below the hover pseudo border)</li>
+<li>The exception is <code>.card--overlay</code> which will move the content above the hover pseudo border, since popovers aren't normally something needed with that style/modifier. This allows the gradient to sit below the hover pseudo border</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.1.0-beta.122" tabindex="-1">0.1.0-beta.122</h2>
 <ul>
 <li><strong>scss/components/card-grid</strong> Add modifier <code>card-grid--rows-fit</code> for auto row height (based on each rows columns height vs the default equal height)</li>
