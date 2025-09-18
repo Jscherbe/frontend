@@ -3,6 +3,8 @@ title: Menu Stack
 intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popover menus, etc
 ---
 
+{% demoMenuTree %}
+
 <h2 class="h2">Basic Example</h2>
 
 <div class="menu-stack">

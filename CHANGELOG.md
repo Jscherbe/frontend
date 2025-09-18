@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.0-beta.123
+
+- **scss/components/menu-stack** added allowance for parent links to have matching or specific stylings
+  - created two new classes
+    - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"
+    - "menu-stack__link--parent" matches stylings of "menu-stack__link" but is able to be uniquely styled separately from the other links
+
 ## 0.1.0-beta.122
 
 - **scss/components/card-grid** Add modifier `card-grid--rows-fit` for auto row height (based on each rows columns height vs the default equal height)

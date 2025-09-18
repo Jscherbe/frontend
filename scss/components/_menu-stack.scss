@@ -169,11 +169,17 @@ $config: (
       padding-left: get("nested-indent");
     }
   }
+  
+  #{ $prefix }__parent {
+    padding-left: get("nested-indent");
+  }
+
   // By default the link hangs outside the container so that 
   // the icons/text align to the text (above/below)
   // - Use the modifier "site-menu--contained" to keep the links within 
   //   the parent container (no optical alignment), should be within something that contains it
   #{ $prefix }__link,
+  #{ $prefix }__link--parent,
   #{ $prefix }__selectable,
   #{ $prefix }__toggle {
     width: 100%;
@@ -309,3 +315,4 @@ $config: (
     }
   }
 }
+
