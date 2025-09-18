@@ -11,6 +11,12 @@ Overall:
         * Or the attr grid could just rely on the default gutter and then user multiplier to reduce (ie small = default gutter * 0.5). could have gutter screen scaling setting in layout? (ie small = default gutter * (gutterScaleMultiplier * breakpointDepth[1, 2, 3]))
     ☐ Remove grid module in core (other grids can pull from layout)
 JS Updates:
+  ☐ Need to move to popover API now
+    * Browser support is 4 years with polyfills (2 years since the last major vendor included it, firefox)
+    * Should be ready now, pros it works like dialogs (top layer) no more aria management
+      * Make sure to test popover in modal
+    * Keep the old ui script but rename move to deprecated
+    * Should be the same classes and everything this will just replace some of the interactions in the script. Vue library can move that way too after testing here
   ☐ Change "delete obj.prop" to "obj.prop = null" for better GC? If this is used anywhere  
   ☐ Create utilities for initialization and attributes in scripts so we don't have to repeat this pattern
   ☐ Finish collapsible
