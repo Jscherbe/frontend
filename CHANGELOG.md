@@ -1,11 +1,18 @@
 # Change Log
 
-## 0.1.0-beta.123
+## 0.1.0-beta.124
 
 - **scss/components/menu-stack** added allowance for parent links to have matching or specific stylings
   - created two new classes
     - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"
     - "menu-stack__link--parent" matches stylings of "menu-stack__link" but is able to be uniquely styled separately from the other links
+
+## 0.1.0-beta.123
+
+- **scss/components/card** Adjust z-index's of elements so that
+  - Content is on top of pseudo hover/focus border so that it's not on top of positioned elements within the card (ie. popover)
+    - This should be ok as the card content doesn't bleed to the edge (except image which is below the hover pseudo border)
+    - The exception is `.card--overlay` which will move the content above the hover pseudo border, since popovers aren't normally something needed with that style/modifier. This allows the gradient to sit below the hover pseudo border
 
 ## 0.1.0-beta.122
 
