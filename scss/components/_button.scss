@@ -13,7 +13,7 @@
 @use "../element";
 
 $-fallbacks: (
-  "button-icon-offset": meta.get-function("get", false, "element")
+  "icon-centered-vertical-offset": meta.get-function("get", false, "element")
 );
 
 /// Module Settings
@@ -22,7 +22,7 @@ $-fallbacks: (
 
 $config: (
   "icon-margin" : 0.5em,
-  "button-icon-offset": 0
+  "icon-centered-vertical-offset": 0
 ) !default;
 
 /// Change modules $config
@@ -94,7 +94,7 @@ $config: (
     font-size: button.get("icon-font-size");
     width: button.get("icon-size");
     height: button.get("icon-size");
-    padding: get("button-icon-offset") 0 0 0 !important;
+    padding: get("icon-centered-vertical-offset") 0 0 0 !important;
   }
 
   @each $size, $values in button.$sizes {
