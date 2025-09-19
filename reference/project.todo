@@ -62,6 +62,15 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Card
+    ☐ Need to refactor, consider custom properties (below) to make horizontal (optional modiefier for horizontal)
+    ☐ Footer has all kinds of problems in different situations
+    ☐ Change footer to flex: none instead of flex: 0; (so that if in a parent CSS grid it doesn't restrict it from growing to it's content's height)
+      * Grid does this because of align-items: stretch (default) on grid
+        * Causes issues with the flexbox child with flex-grow: 0 and no flex-basis
+    ☐ Card could benefit from custom properties over resets
+      * This way we could have breakpoint for horizontal and none without duplication
+        * Say for resetting border radiuses we could just set custom properties in/out of media queries and have styles match
   ☐ Probably revert card z-indexes, this still won't solve the problem
     * I guess this works for standalone cards
   ☐ Go through and make common CSS rulesets mixins so they are identical for compression
