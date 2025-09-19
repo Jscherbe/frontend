@@ -17,6 +17,13 @@ JS Updates:
       * Make sure to test popover in modal
     * Keep the old ui script but rename move to deprecated
     * Should be the same classes and everything this will just replace some of the interactions in the script. Vue library can move that way too after testing here
+    ☐ Look into support in detail
+      * Would have the bug no close click outside on ios which we would need to fix internally for now (not too big of deal since we do this already)
+      * Would need polyfill for supporting older browsers
+      * May introduce bugs (could just be an enhancement option) usePopoverApi
+        * Then replace completely once the API is stable
+      ☐ Go forward with this approach, make it optional not progressive enhancement so it can be selectively disabled (since there are bugs and stuff, even if the API exists a user may not want it)
+        ☐ Fallback to old implementation if popover API is not present for now, but respect the option to enable/disable this feature
   ☐ Change "delete obj.prop" to "obj.prop = null" for better GC? If this is used anywhere  
   ☐ Create utilities for initialization and attributes in scripts so we don't have to repeat this pattern
   ☐ Finish collapsible
@@ -55,12 +62,14 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Probably revert card z-indexes, this still won't solve the problem
+    * I guess this works for standalone cards
   ☐ Go through and make common CSS rulesets mixins so they are identical for compression
     * Things like this for example
       * display: flex;
       * flex-direction: column;
       * align-items: center;
-  ☐ Make more things mixins with styles as applied mixins with selectors, that way you can make some of these components youself? Using different selectors?
+  ☐ Make more things mixins with styles as applied mixins with selectors, that way you can make some of these components yourself? Using different selectors?
     * For example the details styling, sometimes it's best to have it restrained to a selector while others it may be global for all details (override browser defaults), or it may be a need to style a details element differently
   ☐ Reconsider that components needs:
     ☐ Should component modules be so simple or should we have more mixins so that the user can decide how styles are used
