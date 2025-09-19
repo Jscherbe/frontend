@@ -266,7 +266,7 @@ Prints component styles
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 156-160
-- **Lines (code):** 162-461
+- **Lines (code):** 162-459
 
 </details>
 
@@ -341,8 +341,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 531-535
-- **Lines (code):** 537-567
+- **Lines (comments):** 529-533
+- **Lines (code):** 535-565
 
 </details>
 
