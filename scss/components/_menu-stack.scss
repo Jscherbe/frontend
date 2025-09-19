@@ -102,7 +102,20 @@ $config: (
   "compact-selectable-input-font-size": 0.8em,
   "selectable-input-width" : 3em,
   "selectable-input-top" : 0.73em,
-  "selectable-input-font-size" : null
+  "selectable-input-font-size" : null,
+  // new configs
+  "parent-font-weight" : bold,
+  "parent-separator-enabled": true,
+  "parent-separator-color" : "rule",
+  "parent-rule-style" : "light",
+  "parent-separated-margin" : false,
+
+  "anchor-style-link-padding-y" : 0,
+  "anchor-style-link-margin" : 0.2em,
+  "anchor-style-link-font-weight": null,
+  "anchor-style-link-line-height": true,
+  "anchor-style-link-color": "link",
+  "anchor-style-link-color-hover": "link-hover",
 ) !default;
 
 
@@ -154,6 +167,10 @@ $config: (
       @include typography.size(get("label-type-size"), $only-font-size: true);
     }
   }
+  // new
+  #{ $prefix }__item {
+    display: flow-root;
+  }
   #{ $prefix }__item--separator-before {
     border-top: element.get-rule-style(-fallback("link-separated-rule-style", "rule-style"));
     margin-top: -fallback("link-separated-margin", "link-padding-y");
@@ -169,17 +186,27 @@ $config: (
       padding-left: get("nested-indent");
     }
   }
+
+  // new
+  @if get("parent-separator-enabled") {
+    #{ $prefix }__item--parent {
+      border-bottom: element.get-rule-style(-fallback("parent-rule-style", "rule-style"));
+      margin-bottom: -fallback("parent-separated-margin", "link-padding-y");
+      padding-bottom: -fallback("parent-separated-margin", "link-padding-y");
+    }
+  }
   
-  #{ $prefix }__parent {
-    padding-left: get("nested-indent");
+  #{ $prefix }__link--parent {
+    font-weight: get("parent-font-weight");
   }
 
   // By default the link hangs outside the container so that 
   // the icons/text align to the text (above/below)
   // - Use the modifier "site-menu--contained" to keep the links within 
   //   the parent container (no optical alignment), should be within something that contains it
+
+  // add __toggle to these styles
   #{ $prefix }__link,
-  #{ $prefix }__link--parent,
   #{ $prefix }__selectable,
   #{ $prefix }__toggle {
     width: 100%;
@@ -281,10 +308,12 @@ $config: (
     $compact-x: get("compact-link-padding-x");
 
     #{ $prefix }__selectable,
+    #{ $prefix }__toggle,
     #{ $prefix }__link {
       border-radius: 0;
       margin: 0;
     }
+    #{ $prefix }__toggle,
     #{ $prefix }__link {
       padding: $compact-y $compact-x;
     }
@@ -314,5 +343,25 @@ $config: (
       padding-left: get("link-padding-x");
     }
   }
-}
 
+  // new
+  #{ $prefix }--anchor-style {
+    #{ $prefix }__link,
+    #{ $prefix }__selectable,
+    #{ $prefix }__toggle {
+      // should all of these styles use fallbacks instead of having defaults match the regular link styles? Padding-y is an exception since that needs a different styling.
+      padding: get("anchor-style-link-padding-y") 0;
+      margin: get("anchor-style-link-margin") 0;
+      border-radius: 0;
+      font-weight: get("anchor-style-link-font-weight");
+      line-height: get("anchor-style-link-line-height");
+      color: color.get(get("anchor-style-link-color"));
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        color: color.get(get("anchor-style-link-color-hover"));
+        background-color: transparent;
+      }
+    }
+    }
+}

@@ -3,7 +3,8 @@ title: Menu Stack
 intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popover menus, etc
 ---
 
-{% demoMenuTree %}
+
+
 
 <h2 class="h2">Basic Example</h2>
 
@@ -282,3 +283,264 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
     </li>
   </ul>
 </div>
+
+<!-- begin tests move to the bottom at the end -->
+<!-- modifiers
+--separated ✔
+--hanging ✔
+--compact ✔
+--hide-inputs 
+ -->
+
+
+<h2 class="h2">Div Parent List Structure Testing</h2>
+
+<section class="menu-stack">
+  <h3 class="menu-stack__label">Menu Stack Example Label for Testing</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Menu Stack Parent Item of Collapsible</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div>
+          <div class="menu-stack__list menu-stack__list-pseudo">
+          <!-- if the parent link receives different styling, should it have a fully unique class name? -->
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Link of the Parent Item</a></div>
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">First Child of Parent Item</a>
+            </div>
+            <div class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+              <summary class="menu-stack__toggle">
+                <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Second Child that is a Nested Parent Item</span></span>
+                <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+              </summary>
+              <div>
+                <div class="menu-stack__list menu-stack__list-pseudo">
+                  <div class="menu-stack__item"><a class="menu-stack__link menu-stack__link--parent" href="#">Link to the Nested Parent Item</a></div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">First Child of the Nested Parent Item</a>
+                  </div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">Second Child of the Nested Parent Item with a longer amount of text. Everything written from this point on is to allow the text to wrap and make sure the styling doesn't break when the wrapping occurs.</a>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </div>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+  </ul>
+</section>
+
+<h3 class="h3 margin-top">Separated Menu Stack with Div Structure</h3>
+
+<section class="menu-stack menu-stack--separated">
+  <h4 class="menu-stack__label">Separated Menu Stack Example Label for Testing</h4>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Menu Stack Parent Item of Collapsible</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div>
+          <div class="menu-stack__list menu-stack__list-pseudo">
+          <!-- if the parent link receives different styling, should it have a fully unique class name? -->
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Link of the Parent Item</a></div>
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">First Child of Parent Item</a>
+            </div>
+            <div class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+              <summary class="menu-stack__toggle">
+                <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Second Child that is a Nested Parent Item</span></span>
+                <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+              </summary>
+              <div>
+                <div class="menu-stack__list menu-stack__list-pseudo">
+                  <div class="menu-stack__item"><a class="menu-stack__link menu-stack__link--parent" href="#">Link to the Nested Parent Item</a></div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">First Child of the Nested Parent Item</a>
+                  </div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">Second Child of the Nested Parent Item with a longer amount of text. Everything written from this point on is to allow the text to wrap and make sure the styling doesn't break when the wrapping occurs.</a>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </div>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+  </ul>
+</section>
+
+<h3 class="h3 margin-top">Hanging Menu Stack with Div Structure</h3>
+
+<section class="menu-stack menu-stack--hanging">
+  <h4 class="menu-stack__label">Hanging Menu Stack Example Label for Testing</h4>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Menu Stack Parent Item of Collapsible</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div>
+          <div class="menu-stack__list menu-stack__list-pseudo">
+          <!-- if the parent link receives different styling, should it have a fully unique class name? -->
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Link of the Parent Item</a></div>
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">First Child of Parent Item</a>
+            </div>
+            <div class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+              <summary class="menu-stack__toggle">
+                <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Second Child that is a Nested Parent Item</span></span>
+                <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+              </summary>
+              <div>
+                <div class="menu-stack__list menu-stack__list-pseudo">
+                  <div class="menu-stack__item"><a class="menu-stack__link menu-stack__link--parent" href="#">Link to the Nested Parent Item</a></div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">First Child of the Nested Parent Item</a>
+                  </div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">Second Child of the Nested Parent Item with a longer amount of text. Everything written from this point on is to allow the text to wrap and make sure the styling doesn't break when the wrapping occurs.</a>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </div>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+  </ul>
+</section>
+
+<h3 class="h3 margin-top">Compact Menu Stack with Div Structure</h3>
+
+<section class="menu-stack menu-stack--compact">
+  <h4 class="menu-stack__label">Compact Menu Stack Example Label for Testing</h4>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Menu Stack Parent Item of Collapsible</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div>
+          <div class="menu-stack__list menu-stack__list-pseudo">
+          <!-- if the parent link receives different styling, should it have a fully unique class name? -->
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Link of the Parent Item</a></div>
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">First Child of Parent Item</a>
+            </div>
+            <div class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+              <summary class="menu-stack__toggle">
+                <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Second Child that is a Nested Parent Item</span></span>
+                <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+              </summary>
+              <div>
+                <div class="menu-stack__list menu-stack__list-pseudo">
+                  <div class="menu-stack__item"><a class="menu-stack__link menu-stack__link--parent" href="#">Link to the Nested Parent Item</a></div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">First Child of the Nested Parent Item</a>
+                  </div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">Second Child of the Nested Parent Item with a longer amount of text. Everything written from this point on is to allow the text to wrap and make sure the styling doesn't break when the wrapping occurs.</a>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </div>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+  </ul>
+</section>
+
+<h3 class="h3 margin-top">Anchor Style Menu Stack with Div Structure</h3>
+
+<section class="menu-stack menu-stack--anchor-style">
+  <h4 class="menu-stack__label">Compact Menu Stack Example Label for Testing</h4>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Menu Stack Parent Item of Collapsible</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div>
+          <div class="menu-stack__list menu-stack__list-pseudo">
+          <!-- if the parent link receives different styling, should it have a fully unique class name? -->
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Link of the Parent Item</a></div>
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">First Child of Parent Item</a>
+            </div>
+            <div class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+              <summary class="menu-stack__toggle">
+                <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Second Child that is a Nested Parent Item</span></span>
+                <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+              </summary>
+              <div>
+                <div class="menu-stack__list menu-stack__list-pseudo">
+                  <div class="menu-stack__item"><a class="menu-stack__link menu-stack__link--parent" href="#">Link to the Nested Parent Item</a></div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">First Child of the Nested Parent Item</a>
+                  </div>
+                  <div class="menu-stack__item">
+                    <a class="menu-stack__link" href="#">Second Child of the Nested Parent Item with a longer amount of text. Everything written from this point on is to allow the text to wrap and make sure the styling doesn't break when the wrapping occurs.</a>
+                  </div>
+                </div>
+              </div>
+            </details>
+            </div>
+          </div>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">List item that is not collapsible. This is a second sentence to test wrapping at smaller screens</a>
+    </li>
+  </ul>
+</section>
+
+<!-- end tests -->

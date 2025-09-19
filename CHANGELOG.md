@@ -6,6 +6,9 @@
   - created two new classes
     - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"
     - "menu-stack__link--parent" matches stylings of "menu-stack__link" but is able to be uniquely styled separately from the other links
+    - add "menu-stack__toggle" to compact styles when using modifier
+    - add "menu-stack--anchor-style" for when the list will appear as links rather than pseudo-buttons
+    - add new config options for anchor-style and parent 
 
 ## 0.1.0-beta.123
 

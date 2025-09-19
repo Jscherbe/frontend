@@ -70,7 +70,20 @@ $config: (
   "compact-selectable-input-font-size": 0.8em,
   "selectable-input-width" : 3em,
   "selectable-input-top" : 0.73em,
-  "selectable-input-font-size" : null
+  "selectable-input-font-size" : null,
+  // new configs
+  "parent-font-weight" : bold,
+  "parent-separator-enabled": true,
+  "parent-separator-color" : "rule",
+  "parent-rule-style" : "light",
+  "parent-separated-margin" : false,
+
+  "anchor-style-link-padding-y" : 0,
+  "anchor-style-link-margin" : 0.2em,
+  "anchor-style-link-font-weight": null,
+  "anchor-style-link-line-height": true,
+  "anchor-style-link-color": "link",
+  "anchor-style-link-color-hover": "link-hover",
 );
 ```
   
@@ -83,7 +96,7 @@ $config: (
 - **Group:** menu-stack
 - **Type:** variable
 - **Lines (comments):** 33-68
-- **Lines (code):** 70-106
+- **Lines (code):** 70-119
 
 </details>
 
@@ -160,8 +173,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 109-112
-- **Lines (code):** 114-116
+- **Lines (comments):** 122-125
+- **Lines (code):** 127-129
 
 </details>
 
@@ -219,8 +232,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 133-137
-- **Lines (code):** 139-317
+- **Lines (comments):** 146-150
+- **Lines (code):** 152-367
 
 </details>
 
@@ -280,8 +293,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 118-121
-- **Lines (code):** 123-126
+- **Lines (comments):** 131-134
+- **Lines (code):** 136-139
 
 </details>
 
