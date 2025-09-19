@@ -109,7 +109,22 @@ export default {
           },
         ]
       },
+      {
+        type: "select",
+        name: "footerLayout",
+        label: "Footer Layout",
+        // tooltip: "Currently this option (footer inline) is only available when using horizontal layouts",
+        options: [
+          {
+            value: "",
+            text: "None"
+          },
+          {
+            value: "footerInline",
+            text: "Footer Inline"
+          },
+        ]
+      },
     ]
   },
-  
 }

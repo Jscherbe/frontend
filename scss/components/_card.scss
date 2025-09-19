@@ -318,7 +318,7 @@ $config: (
     flex-grow: 1;
     min-height: get("body-min-height");
   }
-  @if(get("aside-rule")) {
+  @if (get("aside-rule")) {
     #{ $prefix }__aside {
       background-color: color.get(get("aside-background-color"));
     }
@@ -344,10 +344,8 @@ $config: (
     align-items: center;
     justify-content: get("footer-justify");
   }
-  // body + footer {
-  // means body keeps before pseudo element while footer loses it
+
   #{ $prefix }--overlay {
-    // overflow: hidden;
     aspect-ratio: get("overlay-aspect-ratio");
     height: min-content;
     
