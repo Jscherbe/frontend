@@ -84,6 +84,7 @@ $config: (
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
+  "button-icon-offset":      true,
 ) !default;
   
 /// Button sizes

@@ -68,6 +68,7 @@ $config: (
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
+  "button-icon-offset":      true,
 );
 ```
   
@@ -80,7 +81,7 @@ $config: (
 - **Group:** button
 - **Type:** variable
 - **Lines (comments):** 21-53
-- **Lines (code):** 55-87
+- **Lines (code):** 55-88
 
 </details>
 
@@ -169,8 +170,8 @@ $sizes: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 89-93
-- **Lines (code):** 94-107
+- **Lines (comments):** 90-94
+- **Lines (code):** 95-108
 
 </details>
 
@@ -230,8 +231,8 @@ $styles: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 109-112
-- **Lines (code):** 114-137
+- **Lines (comments):** 110-113
+- **Lines (code):** 115-138
 
 </details>
 
@@ -266,8 +267,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 139-142
-- **Lines (code):** 144-146
+- **Lines (comments):** 140-143
+- **Lines (code):** 145-147
 
 </details>
 
@@ -326,8 +327,8 @@ Set button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 158-161
-- **Lines (code):** 163-165
+- **Lines (comments):** 159-162
+- **Lines (code):** 164-166
 
 </details>
 
@@ -374,8 +375,8 @@ Set Button Sizes
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 167-170
-- **Lines (code):** 172-174
+- **Lines (comments):** 168-171
+- **Lines (code):** 173-175
 
 </details>
 
@@ -421,8 +422,8 @@ Reset CSS for button (to change browser defaults for button styling)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 176-176
-- **Lines (code):** 178-189
+- **Lines (comments):** 177-177
+- **Lines (code):** 179-190
 
 </details>
 
@@ -452,8 +453,8 @@ Output the default button styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 191-192
-- **Lines (code):** 194-251
+- **Lines (comments):** 192-193
+- **Lines (code):** 195-252
 
 </details>
 
@@ -500,8 +501,8 @@ Mixin to wrap in active selectors
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 253-261
-- **Lines (code):** 263-267
+- **Lines (comments):** 254-262
+- **Lines (code):** 264-268
 
 </details>
 
@@ -555,8 +556,8 @@ Print button size styles for a specific size
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 269-272
-- **Lines (code):** 274-284
+- **Lines (comments):** 270-273
+- **Lines (code):** 275-285
 
 </details>
 
@@ -610,8 +611,8 @@ Print a button style's base styles (not hover)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 316-321
-- **Lines (code):** 323-334
+- **Lines (comments):** 317-322
+- **Lines (code):** 324-335
 
 </details>
 
@@ -663,8 +664,8 @@ Print a button style's base styles (hover styles only)
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 336-341
-- **Lines (code):** 343-349
+- **Lines (comments):** 337-342
+- **Lines (code):** 344-350
 
 </details>
 
@@ -719,8 +720,8 @@ Print a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 359-368
-- **Lines (code):** 370-386
+- **Lines (comments):** 360-369
+- **Lines (code):** 371-387
 
 </details>
 
@@ -778,8 +779,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 148-151
-- **Lines (code):** 153-156
+- **Lines (comments):** 149-152
+- **Lines (code):** 154-157
 
 </details>
 
@@ -839,8 +840,8 @@ Get a value from a button style
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 286-290
-- **Lines (code):** 292-314
+- **Lines (comments):** 287-291
+- **Lines (code):** 293-315
 
 </details>
 

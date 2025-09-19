@@ -37,7 +37,8 @@ Module Settings
 
 ``` scss
 $config: (
-  "icon-margin" : 0.5em
+  "icon-margin" : 0.5em,
+  "button-icon-offset": 0
 );
 ```
   
@@ -49,8 +50,8 @@ $config: (
 - **File:** _button.scss
 - **Group:** button
 - **Type:** variable
-- **Lines (comments):** 13-15
-- **Lines (code):** 17-19
+- **Lines (comments):** 19-21
+- **Lines (code):** 23-26
 
 </details>
 
@@ -94,8 +95,8 @@ Change modules $config
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 21-24
-- **Lines (code):** 26-28
+- **Lines (comments):** 28-31
+- **Lines (code):** 33-35
 
 </details>
 
@@ -153,8 +154,8 @@ Output button component styles
 - **File:** _button.scss
 - **Group:** button
 - **Type:** mixin
-- **Lines (comments):** 39-43
-- **Lines (code):** 45-102
+- **Lines (comments):** 47-51
+- **Lines (code):** 53-111
 
 </details>
 
@@ -229,8 +230,8 @@ Get a config option
 - **File:** _button.scss
 - **Group:** button
 - **Type:** function
-- **Lines (comments):** 30-33
-- **Lines (code):** 35-37
+- **Lines (comments):** 37-40
+- **Lines (code):** 42-45
 
 </details>
 

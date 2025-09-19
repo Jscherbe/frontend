@@ -67,7 +67,8 @@ $config: (
   "ul-list-style-type-2":             circle,
   "ul-list-style-type-3":             square,
   "cap-color" :                       "accent",
-  "cap-size" :                        5px
+  "cap-size" :                        5px,
+  "button-icon-offset" : 0.1em,
 );
 ```
   
@@ -80,7 +81,7 @@ $config: (
 - **Group:** element
 - **Type:** variable
 - **Lines (comments):** 10-40
-- **Lines (code):** 42-74
+- **Lines (code):** 42-75
 
 </details>
 
@@ -155,8 +156,8 @@ $rule-styles: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 76-77
-- **Lines (code):** 79-82
+- **Lines (comments):** 77-78
+- **Lines (code):** 80-83
 
 </details>
 
@@ -196,8 +197,8 @@ $rule-margins: (
 - **File:** _element.scss
 - **Group:** element
 - **Type:** variable
-- **Lines (comments):** 84-85
-- **Lines (code):** 87-92
+- **Lines (comments):** 85-86
+- **Lines (code):** 88-93
 
 </details>
 
@@ -232,8 +233,8 @@ Change modules $config
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 94-96
-- **Lines (code):** 98-100
+- **Lines (comments):** 95-97
+- **Lines (code):** 99-101
 
 </details>
 
@@ -278,8 +279,8 @@ Sets rule styles
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 110-111
-- **Lines (code):** 113-115
+- **Lines (comments):** 111-112
+- **Lines (code):** 114-116
 
 </details>
 
@@ -323,8 +324,8 @@ Sets rule margins
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 117-119
-- **Lines (code):** 121-123
+- **Lines (comments):** 118-120
+- **Lines (code):** 122-124
 
 </details>
 
@@ -370,8 +371,8 @@ Get full rule CSS (style and margin)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 155-156
-- **Lines (code):** 158-164
+- **Lines (comments):** 156-157
+- **Lines (code):** 159-165
 
 </details>
 
@@ -416,8 +417,8 @@ Output CSS for a rule's style (not margins
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 166-167
-- **Lines (code):** 169-171
+- **Lines (comments):** 167-168
+- **Lines (code):** 170-172
 
 </details>
 
@@ -461,8 +462,8 @@ Output CSS for a rule's margin
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 173-174
-- **Lines (code):** 176-180
+- **Lines (comments):** 174-175
+- **Lines (code):** 177-181
 
 </details>
 
@@ -511,8 +512,8 @@ Print the default link styling (no hover and focus styles)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 182-188
-- **Lines (code):** 190-203
+- **Lines (comments):** 183-189
+- **Lines (code):** 191-204
 
 </details>
 
@@ -557,8 +558,8 @@ Output link CSS styles (this is the full link styling when used in content/text)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 205-207
-- **Lines (code):** 209-231
+- **Lines (comments):** 206-208
+- **Lines (code):** 210-232
 
 </details>
 
@@ -603,8 +604,8 @@ Print the ordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 233-234
-- **Lines (code):** 236-260
+- **Lines (comments):** 234-235
+- **Lines (code):** 237-261
 
 </details>
 
@@ -648,8 +649,8 @@ Print the unordered list items styling
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 262-263
-- **Lines (code):** 265-285
+- **Lines (comments):** 263-264
+- **Lines (code):** 266-286
 
 </details>
 
@@ -693,8 +694,8 @@ Hide text for assistive devices
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 287-292
-- **Lines (code):** 294-312
+- **Lines (comments):** 288-293
+- **Lines (code):** 295-313
 
 </details>
 
@@ -750,8 +751,8 @@ Layout utility to add a colored bar (cap) to an element's edge, positioned over 
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 315-323
-- **Lines (code):** 325-348
+- **Lines (comments):** 316-324
+- **Lines (code):** 326-349
 
 </details>
 
@@ -805,8 +806,8 @@ Provides the appearance styles for a given cap
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 352-357
-- **Lines (code):** 359-401
+- **Lines (comments):** 353-358
+- **Lines (code):** 360-402
 
 </details>
 
@@ -852,8 +853,8 @@ Add backdrop-filter blur
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 403-405
-- **Lines (code):** 406-408
+- **Lines (comments):** 404-406
+- **Lines (code):** 407-409
 
 </details>
 
@@ -892,8 +893,8 @@ Accessibly hide focus ring while keeping it when it's required
 - **File:** _element.scss
 - **Group:** element
 - **Type:** mixin
-- **Lines (comments):** 410-410
-- **Lines (code):** 411-415
+- **Lines (comments):** 411-411
+- **Lines (code):** 412-416
 
 </details>
 
@@ -928,8 +929,8 @@ Get a config option
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 102-104
-- **Lines (code):** 106-108
+- **Lines (comments):** 103-105
+- **Lines (code):** 107-109
 
 </details>
 
@@ -975,8 +976,8 @@ Get a rule style
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 125-127
-- **Lines (code):** 129-131
+- **Lines (comments):** 126-128
+- **Lines (code):** 130-132
 
 </details>
 
@@ -1033,8 +1034,8 @@ Get an optional rule style (which is a border)
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 133-138
-- **Lines (code):** 140-146
+- **Lines (comments):** 134-139
+- **Lines (code):** 141-147
 
 </details>
 
@@ -1087,8 +1088,8 @@ Sets rule margin
 - **File:** _element.scss
 - **Group:** element
 - **Type:** function
-- **Lines (comments):** 148-149
-- **Lines (code):** 151-153
+- **Lines (comments):** 149-150
+- **Lines (code):** 152-154
 
 </details>
 

@@ -25,7 +25,8 @@ $-fallbacks: (
   "border-radius" : (
     "function" : meta.get-function("get", false, "element"),
     "property" : "border-radius-large",
-  )
+  ),
+  "button-icon-offset": meta.get-function("get", false, "element"),
 );
 
 /// Module Settings
@@ -91,7 +92,7 @@ $config: (
   "close-color-hover":              black,
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
-  "close-vertical-offset" :         0.1em,
+  "button-icon-offset" :            true,
   "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
@@ -240,11 +241,11 @@ $config: (
       color: color.get(get("close-color-hover"));
     }
   }
-  @if get("close-vertical-offset") {
-    #{ $prefix }__close-icon {
-      margin-top: get("close-vertical-offset");
-    }
+
+  #{ $prefix }__close-icon {
+    margin-top: get("button-icon-offset");
   }
+
   #{ $prefix }__resizer {
     position: absolute;
     overflow: hidden;
