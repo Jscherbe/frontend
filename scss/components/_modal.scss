@@ -91,6 +91,7 @@ $config: (
   "close-color-hover":              black,
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
+  "close-vertical-offset" :         0.1em,
   "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
@@ -237,6 +238,11 @@ $config: (
     &:hover {
       background-color: color.get(get("close-background-color-hover"));
       color: color.get(get("close-color-hover"));
+    }
+  }
+  @if get("close-vertical-offset") {
+    #{ $prefix }__close-icon {
+      margin-top: get("close-vertical-offset");
     }
   }
   #{ $prefix }__resizer {
