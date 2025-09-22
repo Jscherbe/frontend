@@ -38,7 +38,7 @@ Module Settings
 ``` scss
 $config: (
   "icon-margin" : 0.5em,
-  "button-icon-offset": 0
+  "icon-centered-vertical-offset": 0
 );
 ```
   
@@ -155,7 +155,7 @@ Output button component styles
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 47-51
-- **Lines (code):** 53-111
+- **Lines (code):** 53-112
 
 </details>
 

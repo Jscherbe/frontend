@@ -7,6 +7,7 @@
 @use "../layout";
 @use "../selector";
 @use "../typography";
+@use "../element";
 
 /// Print utilities helper styles
 /// - Includes classes like (.crop-margins, .no-scroll-y, .image-full-width, etc)
@@ -138,5 +139,8 @@
     &:not(:last-child) {
       margin-right: typography.get("space-size");
     }
+  }
+  .icon-vert-translate {
+    @include element.icon-vert-translate();
   }
 }

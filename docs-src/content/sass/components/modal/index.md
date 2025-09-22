@@ -56,7 +56,7 @@ $config: (
   "close-color-hover":              black,
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
-  "button-icon-offset" :            true,
+  "close-icon-vertical-offset" : true,
   "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
@@ -93,8 +93,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 32-73
-- **Lines (code):** 75-121
+- **Lines (comments):** 35-76
+- **Lines (code):** 78-124
 
 </details>
 
@@ -177,8 +177,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 123-126
-- **Lines (code):** 128-130
+- **Lines (comments):** 126-129
+- **Lines (code):** 131-133
 
 </details>
 
@@ -236,8 +236,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 142-144
-- **Lines (code):** 146-520
+- **Lines (comments):** 145-147
+- **Lines (code):** 149-523
 
 </details>
 
@@ -291,8 +291,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 132-135
-- **Lines (code):** 137-140
+- **Lines (comments):** 135-138
+- **Lines (code):** 140-143
 
 </details>
 

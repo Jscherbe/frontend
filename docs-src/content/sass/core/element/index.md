@@ -68,7 +68,7 @@ $config: (
   "ul-list-style-type-3":             square,
   "cap-color" :                       "accent",
   "cap-size" :                        5px,
-  "button-icon-offset" : 0.1em,
+  "icon-centered-vertical-offset" :   0.05em,
 );
 ```
   

@@ -63,6 +63,7 @@ $config: (
     @include button.default();
   }
   #{ $prefix }__icon {
+    @include element.icon-vert-translate(get("icon-centered-vertical-offset"));
     &:first-child {
       margin-right: get("icon-margin");
     }
@@ -94,7 +95,7 @@ $config: (
     font-size: button.get("icon-font-size");
     width: button.get("icon-size");
     height: button.get("icon-size");
-    padding: get("icon-centered-vertical-offset") 0 0 0 !important;
+    padding: 0 !important;
   }
 
   @each $size, $values in button.$sizes {

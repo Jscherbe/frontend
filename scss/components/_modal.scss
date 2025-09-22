@@ -26,7 +26,10 @@ $-fallbacks: (
     "function" : meta.get-function("get", false, "element"),
     "property" : "border-radius-large",
   ),
-  "icon-centered-vertical-offset": meta.get-function("get", false, "element"),
+  "close-icon-vertical-offset": (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "icon-centered-vertical-offset",
+  ),
 );
 
 /// Module Settings
@@ -92,7 +95,7 @@ $config: (
   "close-color-hover":              black,
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
-  "icon-centered-vertical-offset" : true,
+  "close-icon-vertical-offset" : true,
   "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
@@ -243,7 +246,7 @@ $config: (
   }
 
   #{ $prefix }__close-icon {
-    margin-top: get("icon-centered-vertical-offset");
+    @include element.icon-vert-translate(get("close-icon-vertical-offset"));
   }
 
   #{ $prefix }__resizer {
