@@ -56,7 +56,7 @@ $config: (
   "close-color-hover":              black,
   "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
-  "button-icon-offset" :            true,
+  "icon-centered-vertical-offset" : true,
   "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
