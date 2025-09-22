@@ -35,13 +35,13 @@ Adding the `is-active` class to enable active state.
 ## Icon Only
 
 <a href="#" class="button button--icon button--small">
-  <span class="fas fa-gear" aria-hidden="true"></span>
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
 </a>
 <a href="#" class="button button--icon">
-  <span class="fas fa-gear" aria-hidden="true"></span>
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
 </a>
 <a href="#" class="button button--icon button--large">
-  <span class="fas fa-gear" aria-hidden="true"></span>
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
 </a>
 
 ## Other Preset Styles
