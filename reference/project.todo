@@ -64,7 +64,9 @@ JS Updates:
 SCSS Updates:
   ☐ Definition list, move inline separators to after elements so they stick with the item they belong to @important
   ☐ Form Theme @important
-    ☐ "input border radius" settings is affecting checkboxes when it should only afffect text inputs
+    ☐ "input border radius" settings is affecting checkboxes when it should only affect text inputs
+    ☐ Check to see if there is a modifier to get form items label before input vs above it
+      * I think this exists but should be documented and see how it would fit with frontend-vue (ie. do we need prop for this)
   ☐ Card
     ☐ Create footer-inline modifier (so its flex to the end vs below)
     ☐ Create breakpoint modifier for aside 
