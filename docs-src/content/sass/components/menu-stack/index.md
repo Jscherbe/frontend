@@ -78,12 +78,12 @@ $config: (
   "parent-rule-style" : "light",
   "parent-separated-margin" : false,
 
-  "anchor-style-link-padding-y" : 0,
-  "anchor-style-link-margin" : 0.2em,
-  "anchor-style-link-font-weight": null,
-  "anchor-style-link-line-height": true,
-  "anchor-style-link-color": "link",
-  "anchor-style-link-color-hover": "link-hover",
+  "plain-link-padding-y" : 0,
+  "plain-link-margin" : 0.2em,
+  "plain-link-font-weight": null,
+  "plain-link-line-height": null,
+  "plain-link-color": "link",
+  "plain-link-color-hover": "link-hover",
 );
 ```
   
@@ -233,7 +233,7 @@ Prints component styles
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 146-150
-- **Lines (code):** 152-367
+- **Lines (code):** 152-370
 
 </details>
 

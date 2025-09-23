@@ -110,12 +110,12 @@ $config: (
   "parent-rule-style" : "light",
   "parent-separated-margin" : false,
 
-  "anchor-style-link-padding-y" : 0,
-  "anchor-style-link-margin" : 0.2em,
-  "anchor-style-link-font-weight": null,
-  "anchor-style-link-line-height": true,
-  "anchor-style-link-color": "link",
-  "anchor-style-link-color-hover": "link-hover",
+  "plain-link-padding-y" : 0,
+  "plain-link-margin" : 0.2em,
+  "plain-link-font-weight": null,
+  "plain-link-line-height": null,
+  "plain-link-color": "link",
+  "plain-link-color-hover": "link-hover",
 ) !default;
 
 
@@ -292,7 +292,7 @@ $config: (
     // padding-right: get("link-padding-x");
     > #{ $prefix }__list > #{ $prefix }__item {
       > #{ $prefix }__link, 
-      >#{ $prefix }__collapsible > #{ $prefix }__toggle {
+      >#{ $prefix }__collapsible {
         margin-left: -(get("link-padding-x"));
         margin-right: -(get("link-padding-x"));
         width: calc(100% + (get("link-padding-x") * 2));
@@ -303,6 +303,28 @@ $config: (
     //   width: auto;
     // }
   }
+
+  // new
+  #{ $prefix }--plain {
+    #{ $prefix }__link,
+    #{ $prefix }__selectable,
+    #{ $prefix }__toggle {
+      // should all of these styles use fallbacks instead of having defaults match the regular link styles? Padding-y is an exception since that needs a different styling.
+      padding: get("plain-link-padding-y") 0;
+      margin: get("plain-link-margin") 0;
+      border-radius: 0;
+      font-weight: get("plain-link-font-weight");
+      line-height: -fallback("plain-link-line-height", "link-line-height");
+      color: color.get(get("plain-link-color"));
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        color: color.get(get("plain-link-color-hover"));
+        background-color: transparent;
+      }
+    }
+  }
+
   #{ $prefix }--compact {
     $compact-y: get("compact-link-padding-y");
     $compact-x: get("compact-link-padding-x");
@@ -344,24 +366,5 @@ $config: (
     }
   }
 
-  // new
-  #{ $prefix }--anchor-style {
-    #{ $prefix }__link,
-    #{ $prefix }__selectable,
-    #{ $prefix }__toggle {
-      // should all of these styles use fallbacks instead of having defaults match the regular link styles? Padding-y is an exception since that needs a different styling.
-      padding: get("anchor-style-link-padding-y") 0;
-      margin: get("anchor-style-link-margin") 0;
-      border-radius: 0;
-      font-weight: get("anchor-style-link-font-weight");
-      line-height: get("anchor-style-link-line-height");
-      color: color.get(get("anchor-style-link-color"));
-      background-color: transparent;
-      &:hover,
-      &:focus {
-        color: color.get(get("anchor-style-link-color-hover"));
-        background-color: transparent;
-      }
-    }
-    }
+  
 }
