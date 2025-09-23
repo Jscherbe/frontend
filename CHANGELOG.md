@@ -7,8 +7,8 @@
     - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"
     - "menu-stack__link--parent" matches stylings of "menu-stack__link" but is able to be uniquely styled separately from the other links
     - add "menu-stack__toggle" to compact styles when using modifier
-    - add "menu-stack--anchor-style" for when the list will appear as links rather than pseudo-buttons
-    - add new config options for anchor-style and parent 
+    - add "menu-stack--plain" for when the list will appear as links rather than pseudo-buttons
+    - add new config options for plain modifier and parent 
 
 - **scss/element** add base option to vertically offset close icon to properly center font awesome icons
 
