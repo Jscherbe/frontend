@@ -471,8 +471,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--pseudo">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+          <div class="menu-stack__list menu-stack__list--parent">
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
@@ -485,8 +485,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--pseudo">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+                  <div class="menu-stack__list menu-stack__list--parent">
+                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Chapter 1.B.i : A First Look at a Nested Item </a></li>
@@ -522,8 +522,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--pseudo">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+          <div class="menu-stack__list menu-stack__list--parent">
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
@@ -536,8 +536,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--pseudo">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+                  <div class="menu-stack__list menu-stack__list--parent">
+                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Chapter 1.B.i : A First Look at a Nested Item </a></li>
@@ -573,8 +573,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--pseudo">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+          <div class="menu-stack__list menu-stack__list--parent">
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
@@ -587,8 +587,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--pseudo">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+                  <div class="menu-stack__list menu-stack__list--parent">
+                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Chapter 1.B.i : A First Look at a Nested Item </a></li>
@@ -624,8 +624,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--pseudo">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+          <div class="menu-stack__list menu-stack__list--parent">
+            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
@@ -638,8 +638,8 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--pseudo">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link menu-stack__link--parent" href="#">Overview</a></div>
+                  <div class="menu-stack__list menu-stack__list--parent">
+                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Overview</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Chapter 1.B.i : A First Look at a Nested Item </a></li>

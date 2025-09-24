@@ -187,18 +187,17 @@ $config: (
     }
   }
 
-  // new
   @if get("parent-separator-enabled") {
     #{ $prefix }__item--parent {
       border-bottom: element.get-rule-style(-fallback("parent-rule-style", "rule-style"));
       margin-bottom: -fallback("parent-separated-margin", "link-padding-y");
       padding-bottom: -fallback("parent-separated-margin", "link-padding-y");
+      #{ $prefix }__link {
+        font-weight: get("parent-font-weight");
+      }
     }
   }
   
-  #{ $prefix }__link--parent {
-    font-weight: get("parent-font-weight");
-  }
 
   // By default the link hangs outside the container so that 
   // the icons/text align to the text (above/below)
