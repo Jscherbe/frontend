@@ -62,6 +62,7 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Button default state needs box-shadow-hover (styles already support this)
   ☐ Definition list, move inline separators to after elements so they stick with the item they belong to @important
   ☐ Form Theme @important
     ☐ "input border radius" settings is affecting checkboxes when it should only affect text inputs
