@@ -62,10 +62,25 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
-  ☐ Form Theme
-    ☐ "input border radius" settings is affecting checkboxes when it should only afffect text inputs
+  ☐ Button default state needs box-shadow-hover (styles already support this)
+  ☐ Definition list, move inline separators to after elements so they stick with the item they belong to @important
+  ☐ Form Theme @important
+    ☐ "input border radius" settings is affecting checkboxes when it should only affect text inputs
+    ☐ Check to see if there is a modifier to get form items label before input vs above it
+      * I think this exists but should be documented and see how it would fit with frontend-vue (ie. do we need prop for this)
   ☐ Card
-    ☐ Need to refactor, consider custom properties (below) to make horizontal (optional modiefier for horizontal)
+    ☐ Create footer-inline modifier (so its flex to the end vs below)
+    ☐ Create breakpoint modifier for aside 
+      ☐ Then supports both non breakpoint aside?
+      ☐ Could use component specific custom properties to avoid duplicating CSS
+      ☐ Should we ever have aside without breakpoint?
+        * Think this might be better for the footer-inline
+        * A persistent aside is normally actions (can't think of any reason aside content would be displayed next to main on mobile), think this was an old thought for acctions on the right
+    ☐ Adjust so that hover/focus ring either: @important
+      * Uses border (make sure this works with image being pulled over the border)
+      * Uses outline (this is for focus so it makes sense, outline supports border radius now)
+      * Use multiple box shadows toggle with custom properties
+    ☐ Need to refactor, consider custom properties (below) to make horizontal (optional modifier for horizontal)
     ☐ Footer has all kinds of problems in different situations
     ☐ Change footer to flex: none instead of flex: 0; (so that if in a parent CSS grid it doesn't restrict it from growing to it's content's height)
       * Grid does this because of align-items: stretch (default) on grid
