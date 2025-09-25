@@ -84,6 +84,8 @@ $config: (
   "plain-link-line-height": null,
   "plain-link-color": "link",
   "plain-link-color-hover": "link-hover",
+
+  "multi-column-gap" : 2rem,
 );
 ```
   
@@ -96,7 +98,7 @@ $config: (
 - **Group:** menu-stack
 - **Type:** variable
 - **Lines (comments):** 33-68
-- **Lines (code):** 70-119
+- **Lines (code):** 70-121
 
 </details>
 
@@ -173,8 +175,8 @@ Change modules $config
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 122-125
-- **Lines (code):** 127-129
+- **Lines (comments):** 130-133
+- **Lines (code):** 135-137
 
 </details>
 
@@ -211,6 +213,52 @@ Change modules $config
 
 <div class="sassdoc-item-header">
 
+###  set-styles() {#mixin-set-styles}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+
+</div>
+
+  
+
+Set tag styles 
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _menu-stack.scss
+- **Group:** menu-stack
+- **Type:** mixin
+- **Lines (comments):** 139-141
+- **Lines (code):** 143-145
+
+</details>
+
+    
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$changes|`Map`|Map of changes|
+|$merge-mode|`String`|Merge mode see utils.map-merge() [null|"deep"|"overwrite"]|
+
+    
+
+#### Require
+
+- [$styles](/sass/components/callout/#variable-styles)
+  
+
+
+<div class="sassdoc-item-header">
+
 ###  styles() {#mixin-styles}
 
   <div class="sassdoc-item-header__labels">
@@ -232,8 +280,8 @@ Prints component styles
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** mixin
-- **Lines (comments):** 146-150
-- **Lines (code):** 152-369
+- **Lines (comments):** 162-166
+- **Lines (code):** 168-414
 
 </details>
 
@@ -262,6 +310,7 @@ Prints component styles
 #### Require
 
 - [get()](/sass/components/accordion/#function-get)
+- [$styles](/sass/components/callout/#variable-styles)
   
   
 
@@ -293,8 +342,8 @@ Get a config option
 - **File:** _menu-stack.scss
 - **Group:** menu-stack
 - **Type:** function
-- **Lines (comments):** 131-134
-- **Lines (code):** 136-139
+- **Lines (comments):** 147-150
+- **Lines (code):** 152-155
 
 </details>
 

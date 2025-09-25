@@ -5,6 +5,51 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 
 <h2 class="h2">Basic Example</h2>
 
+<div class="menu-stack menu-stack--test">
+  <h3 class="menu-stack__label">Table of Contents</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >Chapter 1 : The Menu-Stack Item</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Chapter 2 : How to use a nested component.</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Chapter 1.A : A Visual of a Link</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Chapter 2.B : How to Use Menu-Stacks with More than 2 Levels.</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Chapter 2.B.i : A First Look at a Nested Item </a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Chapter 2.B.ii : How does Menu-Stack's Wrapping Affect the Layout of Each Individual Item as Well as the Menu-Stack as a Whole? A Visual Guide with Examples of Use Cases</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">Chapter 3 : Using the 'separator-before' Modifier</a>
+    </li>
+  </ul>
+</div>
+
+<h2 class="h2">Basic Example</h2>
+
 <div class="menu-stack">
   <h3 class="menu-stack__label">Table of Contents</h3>
   <ul class="menu-stack__list">
@@ -458,6 +503,56 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
 </div>
 
 <!-- begin tests move to the bottom at the end -->
+
+<h2 class="h2">Multi-column Menu Stack for Testing</h2>
+
+<section class="menu-stack menu-stack--multi-column">
+  <h3 class="menu-stack__label">Menu Stack Example Label for Testing</h3>
+  <div class="menu-stack__list">
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Chapter 1</a></div>
+      </div>
+        <ul class="menu-stack__list">
+          <li class="menu-stack__item">
+            <a class="menu-stack__link" href="#">Chapter 1.A : A Visual of a Link</a>
+          </li>
+          <li class="menu-stack__item">
+            <a class="menu-stack__link" href="#">Chapter 1.B : A guide to 1.B</a>
+          </li>
+          <li class="menu-stack__item">
+            <a class="menu-stack__link" href="#">Chapter 1.C : A Visual of a Link</a>
+          </li>
+        </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Chapter 2</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Chapter 2.A : A Visual of a Link</a>
+        </li>
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Chapter 2.B : A guide to 2.B</a>
+        </li>
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Chapter 2.C : A Visual of a Link</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent">
+          <a class="menu-stack__link" href="#">Glossary</a>
+        </div>
+        <div class="menu-stack__item menu-stack__item--parent">
+          <a class="menu-stack__link" href="#">Appendix</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <h2 class="h2">Div Parent List Structure Testing</h2>
 

@@ -116,6 +116,14 @@ $config: (
   "plain-link-line-height": null,
   "plain-link-color": "link",
   "plain-link-color-hover": "link-hover",
+
+  "multi-column-gap" : 2rem,
+) !default;
+
+$styles: (
+  "test" : (
+    // "link-margin" : 4rem,
+  ),
 ) !default;
 
 
@@ -126,6 +134,14 @@ $config: (
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
+}
+
+/// Set tag styles 
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-styles($changes, $merge-mode: null) {
+  $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
 
 /// Get a config option
@@ -167,7 +183,6 @@ $config: (
       @include typography.size(get("label-type-size"), $only-font-size: true);
     }
   }
-  // new
   #{ $prefix }__item {
     display: flow-root;
   }
@@ -365,5 +380,35 @@ $config: (
     }
   }
 
-  
+  #{ $prefix }--multi-column {
+    > #{ $prefix }__list {
+      display: grid;
+      grid-auto-flow: column;
+      gap: get("multi-column-gap");
+    }
+  }
+
+  @each $name, $style in $styles {
+    #{ $prefix }--#{ $name } {
+      #{ $prefix }__link,
+      #{ $prefix }__selectable,
+      #{ $prefix }__toggle {
+        padding: map.get($style, "link-padding-y") map.get($style, "link-padding-x");
+        border-radius: map.get($style, "link-border-radius");
+        font-weight: map.get($style, "link-font-weight");
+        line-height: map.get($style, "link-line-height");
+        color: color.get(map.get($style, "link-color"));
+        background-color: color.get(map.get($style, "link-background-color"));
+        @if map.get($style, "link-margin") {
+          margin: map.get($style, "link-margin") 0;
+        }
+        &:hover,
+        &:focus {
+          color: color.get(map.get($style, "link-color-hover"));
+          background-color: color.get(map.get($style, "link-background-color-hover"));
+        }
+      }
+    }
+  }
+
 }
