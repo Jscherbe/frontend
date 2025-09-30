@@ -62,6 +62,8 @@ JS Updates:
     * - tooltip
     *   - floating
 SCSS Updates:
+  ☐ Should color-get() work for palette names assigned to other palette names
+    * Currently if you add another string as a value of another palette entry it won't resolve to it, since it checks, determines it's a string and then looks it up in the palette, there is no check if that value itself was a string (if so repeat the lookup process). This could be called recursively allowing properties to rely on another palette entry (this might be helpful for a few edge cases and seems like the behavior I would expect when using it)
   ☐ Button default state needs box-shadow-hover (styles already support this)
   ☐ Definition list, move inline separators to after elements so they stick with the item they belong to @important
   ☐ Form Theme @important
@@ -69,13 +71,22 @@ SCSS Updates:
     ☐ Check to see if there is a modifier to get form items label before input vs above it
       * I think this exists but should be documented and see how it would fit with frontend-vue (ie. do we need prop for this)
   ☐ Card
+    ☐ Mayvbe whole card should just use css grid
+    ☐ Make sure to reset inner element background colors back to null 
+    ☐ Need to figure out how the aside rule needs to align
+      ☐ Most likely to the inner gutter but then sometimes do we want it as a border
+        * Check old card setup, since we don't want to break sites using this
+    ☐ Inner elements when they have background colors need border-radiuses on the edges that abut the edge of the card
+    ☐ Make sure all image selectors are the same (for compression)
+      ☐ Consider adding selector variable for these
+    ☐ Make overlay CSS optional
     ☐ Create footer-inline modifier (so its flex to the end vs below)
     ☐ Create breakpoint modifier for aside 
       ☐ Then supports both non breakpoint aside?
       ☐ Could use component specific custom properties to avoid duplicating CSS
       ☐ Should we ever have aside without breakpoint?
         * Think this might be better for the footer-inline
-        * A persistent aside is normally actions (can't think of any reason aside content would be displayed next to main on mobile), think this was an old thought for acctions on the right
+        * A persistent aside is normally actions (can't think of any reason aside content would be displayed next to main on mobile), think this was an old thought for actions on the right
     ☐ Adjust so that hover/focus ring either: @important
       * Uses border (make sure this works with image being pulled over the border)
       * Uses outline (this is for focus so it makes sense, outline supports border radius now)

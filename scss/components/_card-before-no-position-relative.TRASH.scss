@@ -17,7 +17,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} padding [2rem] The common padding
+/// @prop {Dimension} padding [2rem] The padding for the image icon
 /// @prop {Dimension} margin-y [3rem] Top and bottom margin for the card.
 /// @prop {Dimension} border-radius [5rem] The border radius of the card.
 /// @prop {CssValue} box-shadow [null] The box-shadow for the card.
@@ -33,12 +33,12 @@
 /// @prop {Dimension} body-min-height [8rem] the min-height of the card body.
 /// @prop {CssValue} border [1px solid #ccc] The card border.
 /// @prop {CssValue} border-hover [2px solid #278cca] The card border when hovered or focused.
-/// @prop {CssValue|Boolean} border-hover-offset [-1px] Offset for outline
 /// @prop {Dimension} header-margin [0.75em] The margin for the card header.
 /// @prop {Color} title-color [null] The type color of the title.
 /// @prop {Color} title-color-hover [null] The type color of the title (if link/button) when hovered or focused
 /// @prop {Dimension} title-margin [0] The margin for the title.
 /// @prop {CssValue} title-font-weight [bold] The font weight for the title.
+/// @prop {Number} image-ratio [56.25%] The image ratio for the card image.
 /// @prop {Color} image-background-color [rgb(197, 197, 197)] The background color behind the image.
 /// @prop {Dimension} image-margin [null] The margin for the image.
 /// @prop {Dimension} image-border [null] // For when you have a margin, the border for the image.
@@ -76,11 +76,8 @@ $config: (
   "background-color" : white,
   "background-color-hover" : rgb(242, 244, 246),
   "body-min-height" : 10rem,
-  "border-width" : 1px,
-  "border-color" : #ccc,
-  "border-hover-width" : 2px,
-  "border-hover-color" : #278cca,
-  "border-hover-offset" : -1px,
+  "border" : 1px solid #ccc,
+  "border-hover" : 2px solid #278cca,
   "border-radius" : 5px,
   "box-shadow" : null,
   "box-shadow-hover" : null,
@@ -92,9 +89,6 @@ $config: (
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "footer-justify" : flex-end,
-  "footer-inline-padding" : 0.5rem,
-  "footer-inline-align" : start,
-  "footer-background-color" : #dedede,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
   "horizontal-min-height" : 20rem,
@@ -102,7 +96,7 @@ $config: (
   "horizontal-main-max-width" : 40rem,
   "horizontal-aside-width" : 40%,
   "header-margin" : 0.75em,
-  "image-within-border" : true,
+  "image-ratio" : 56.25%,
   "image-aspect-ratio": list.slash(5, 3),
   "image-background-color" : rgb(238, 238, 238),
   "image-border" : null, // For when you have a margin
@@ -127,7 +121,7 @@ $config: (
   "transition-enabled":      true,
   "transition-timing-function" : ease-in-out,
   "transition-duration" :    200ms,
-  "transition-properties" :  (border-color, background-color, color, box-shadow, transform, outline-color, outline-width),
+  "transition-properties" :  (border-color, background-color, color, box-shadow, transform),
   "overlay-aspect-ratio": list.slash(4, 3),
   "overlay-background-color-hover" : null,
   "color-overlay" : white,
@@ -135,9 +129,9 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
-  "aside-rule" : true,
+  "aside-rule" : false,
   "aside-rule-width" : 1px,
-  "aside-background-color" : #f1f1f1,
+  "aside-background-color" : transparent,
   "aside-rule-color": "rule-light",
 ) !default;
   
@@ -167,32 +161,33 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("card");
-  $border-width-negative: -(get("border-width"));
 
   #{ $prefix } {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: get("max-width");
-    margin-top: get("margin-y");
-    margin-bottom: get("margin-y");
     color: color.get(get("color"));
     background-color: color.get(get("background-color"));
     border-radius: get("border-radius");
-    border: get("border-width") solid get("border-color");
     box-shadow: get("box-shadow");
-    
-    // position: relative;
-    // display: flex; // Reorder image
-    // flex-direction: column;
-    // justify-content: flex-end;
-    
-    outline: get("border-hover-width") solid transparent;
-    outline-offset: $border-width-negative;
-    transition-duration: get("transition-duration");
-    transition-timing-function: get("transition-timing-function");
-    transition-property: get("transition-properties");
-    @if (get("aside-rule")) {
-      --ulu-card-aside-rule: #{ get("aside-rule-width") } solid #{ color.get(get("aside-rule-color")) };
+    margin-top: get("margin-y");
+    margin-bottom: get("margin-y");
+    position: relative;
+    display: flex; // Reorder image
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: get("max-width");
+
+    // Border is on pseudo so that it's on top of image/etc
+    &::after {
+      @include layout.absolute-fill();
+      content: if(get("border"), "", null);
+      border: get("border");
+      border-radius: get("border-radius");
+      // Below body and footer but above the image
+      // - Note: Starting at 3 instead of 2 so that content can move to 
+      //   layer 2 on overlay modifier
+      // - General style doesn't need bleeding for content so this allows 
+      //   popovers/etc to not be affected by this pseudo hover border
+      z-index: 3; 
+      pointer-events: none;
     }
   }
 
@@ -200,94 +195,44 @@ $config: (
     background-color: color.get(get("background-color-hover"));
     color: color.get(get("color-hover"));
     box-shadow: get("box-shadow-hover");
-    outline: get("border-hover-width") solid color.get(get("border-hover-color"));
-    // outline-offset: get("border-hover-offset");
-  }
-
-  #{ $prefix }__footer,
-  #{ $prefix }__main,
-  #{ $prefix }__aside {
-    padding: get("padding");
-  }
-  #{ $prefix }__body {
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    min-height: get("body-min-height");
-  }
-  #{ $prefix }__footer {
-    grid-column: 1;
-    display: flex;
-    align-items: center;
-    flex: 0;
-    padding-top: get("footer-padding-y");
-    padding-bottom: get("footer-padding-y");
-    min-height: get("footer-min-height");
-    justify-content: get("footer-justify");
-    background-color: color.get(get("footer-background-color"));
-  }
-  #{ $prefix }__aside {
-    background-color: color.get(get("aside-background-color"));
-    // Makes it look like border inside aside padding 
-    // without relying on position relative and pseudo technique
-    // which affects popovers/etc or other absolute elements inside card
-
-    @if (get("aside-rule")) {
-      $aside-rule-color: color.get(get("aside-rule-color"));
-      $aside-padding-double: get("padding") * 2;
-
-      background-image: linear-gradient($aside-rule-color, $aside-rule-color);
-      background-size: calc(100% - $aside-padding-double) get("aside-rule-width");
-      background-position: center top;
-      background-repeat: no-repeat;
-    }
-  }
-
-  #{ $prefix }__header + #{ $prefix }__content {
-    margin-top: get("header-margin");
-  }
-
-  #{ $prefix }__image {
-    order: -1;
-    grid-column: 1 / -1;
-    // position: relative;
-    // z-index: 2;
-    overflow: hidden; // For image corners with border-radius
-    @if (not get("image-within-border")) {
-      margin: $border-width-negative $border-width-negative 0 $border-width-negative;
-    }
     
-    // margin: get("image-margin");
-    border: get("image-border");
-    background-color: color.get(get("image-background-color"));
-    border-top-right-radius: get("border-radius");
-    border-top-left-radius: get("border-radius");
-    aspect-ratio: get("image-aspect-ratio");
-  }
-
-  // Inner Element Styles
-  #{ $prefix }__title {
-    display: block;
-    color: color.get(get("title-color"));
-    margin-bottom: get("title-margin");
-    font-weight: get("title-font-weight");
-    transition-duration: get("transition-duration");
-    transition-timing-function: get("transition-timing-function");
-    transition-property: color;
-  }
-  // Only the inner link gets hover state
-  #{ $prefix }__title-link {
-    all: unset;
-    cursor: pointer;
-    @if get("title-color-hover") {
-      &:hover,
-      &:focus {
-        color: color.get(get("title-color-hover"));
+    @if (get("border-hover") or get("overlay-background-color-hover")) {
+      &::after {
+        content: "";
+        border: get("border-hover");
+        background-color: color.get(get("overlay-background-color-hover"));
       }
     }
   }
-  // Unless within a clickable card (below)
+
+  // Setting transitions regardless of clickable card selector
+  // This shouldn't interfere since styles aren't changed if not clickable (ie. .card [border-color, etc])
+  @if get("transition-enabled") {
+    #{ $prefix },
+    #{ $prefix }::after,
+    #{ $prefix }__title {
+      transition-duration: get("transition-duration");
+      transition-timing-function: get("transition-timing-function");
+      transition-property: get("transition-properties");
+    }
+  } 
+
+  #{ $prefix }__title {
+    color: color.get(get("title-color"));
+    margin-bottom: get("title-margin");
+    display: block;
+    font-weight: get("title-font-weight");
+    #{ $prefix }__title-link {
+      all: unset;
+      cursor: pointer;
+      @if get("title-color-hover") {
+        &:hover,
+        &:focus {
+          color: color.get(get("title-color-hover"));
+        }
+      }
+    }
+  }
   @if get("title-color-hover") {
     @include when-clickable($hover: true) {
       #{ $prefix }__title {
@@ -295,15 +240,36 @@ $config: (
       }
     }
   }
+
+  #{ $prefix }__header + #{ $prefix }__content {
+    margin-top: get("header-margin");
+  }
+  
+  // Fix since sometimes these have nested markup sometimes just raw text
+  #{ $prefix }__image {
+    order: -1;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    // padding-top: get("image-ratio"); // 9:16
+    margin: get("image-margin");
+    border: get("image-border");
+    background-color: color.get(get("image-background-color"));
+    border-top-right-radius: get("border-radius");
+    border-top-left-radius: get("border-radius");
+    aspect-ratio: get("image-aspect-ratio");
+    width: 100%;
+  }
   #{ $prefix }__image img,
   #{ $prefix}__image-media {
-    width: 100%;
-    height: 100%;
+    @include layout.absolute-fill(true);
+    border: 0;
     object-fit: cover;
+    transform-origin: center center;
     @if (get("image-transition-enabled")) {
       transition-duration: get("image-transition-duration");
       transition-timing-function: get("image-transition-timing-function");
-      transition-property: transform, filter, background-color;
+      transition-property: get("image-transition-properties");
     }
   }
   @if (get("image-transform-hover") or get("image-filter-hover")) {
@@ -316,95 +282,69 @@ $config: (
     }
   }
 
-  
-
-
-
-
-  // --- Modifiers ---
-
-  // Allows card to fill space (ie. in grid/etc) 
-  #{ $prefix }--fill {
-    max-width: none;
-    height: 100%;
-    margin: 0;
+  #{ $prefix }__footer,
+  #{ $prefix }__main,
+  #{ $prefix }__aside {
+    padding: get("padding");
+  }
+  #{ $prefix }__aside {
+    position: relative;
   }
 
-  #{ $prefix }--footer-inline {
-    // The second column (footer) collapses if unused
-    grid-template-columns: 1fr auto;
-    #{ $prefix }__footer {
-      grid-column: 2;
-      padding: get("footer-inline-padding");
-      align-items: get("footer-inline-align");
-    }
-  }
-
-  // Makes image centered with max-width for displaying site icon images
   #{ $prefix }__image--icon {
+    // background-color: transparent; 
     display: flex;
     align-items: center;
     justify-content: center;
-    img,
-    #{ $prefix}__image-media {
+    // padding: 2rem;
+    img {
+      position: static;
       display: block;
       max-width: get("image-icon-max-width");
       height: auto;
+      top: auto;
+      left: auto;
     }
   }
-
-  // Makes image fit naturally instead of bleed/cover
-  #{ $prefix }--image-fit {
-    #{ $prefix }__image {
-      img,
-      #{ $prefix}__image-media {
-        object-fit: contain;
-        object-position: top center;
-        padding: get("image-fit-padding");
-        filter: get("image-fit-filter");
-      }
+  #{ $prefix }__body,
+  #{ $prefix }__footer { 
+    position: relative;
+    // Above image and pseudo (in case we have popovers/etc)
+    z-index: 4; 
+  }
+  #{ $prefix }__body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: get("body-min-height");
+  }
+  @if (get("aside-rule")) {
+    #{ $prefix }__aside {
+      background-color: color.get(get("aside-background-color"));
+    }
+    #{ $prefix }__aside::after {
+      content: "";
+      position: absolute;
+      top: calc(0rem - get("aside-rule-width") / 2);
+      left: get("padding");
+      right: get("padding");
+      height: get("aside-rule-width");
+      background-color: color.get(get("aside-rule-color"));
     }
   }
-  
-  // In case this modifier is being used to hide the image
-  // not just to tell the component how to layout without image
-  // - Use case is hiding image when you can't control the output 
-  //   of the inside of the card (printed no matter what). We had
-  //   this happen in HHRC, including this extra CSS for that
-  #{ $prefix }--no-image {
-    #{ $prefix }__image {
-      display: none;
-    }
+  // For actions/messages
+  // - Layout as flex with min height to support buttons 
+  //   and text without relying so much on padding
+  #{ $prefix }__footer {
+    flex: 0;
+    padding-top: get("footer-padding-y");
+    padding-bottom: get("footer-padding-y");
+    min-height: get("footer-min-height");
+    display: flex;
+    align-items: center;
+    justify-content: get("footer-justify");
   }
 
-  // Horizontal layout
-
-  @if (get("horizontal-breakpoint")) {
-    @include breakpoint.min(get("horizontal-breakpoint")) {
-      #{ $prefix }--horizontal {
-        @include -horizontal-styles();
-      }
-      #{ $prefix }--horizontal-center {
-        @include -horizontal-center-styles();
-      }
-      #{ $prefix }--horizontal#{ $prefix }--footer-inline {
-        @include -horizontal-footer-inline-styles();
-      }
-    }
-  }
-  // Note: Relying on GZIP and identical code for the duplication below
-  // there's really no way to avoid duplication vs complexity for this
-  #{ $prefix }--horizontal-persist {
-    @include -horizontal-styles();
-  }
-  #{ $prefix }--horizontal-persist#{ $prefix }--horizontal-center {
-    @include -horizontal-center-styles();
-  }
-  #{ $prefix }--horizontal-persist#{ $prefix }--footer-inline {
-    @include -horizontal-footer-inline-styles();
-  }
-
-  // Overlay layout (image under content)
   #{ $prefix }--overlay {
     aspect-ratio: get("overlay-aspect-ratio");
     height: min-content;
@@ -467,8 +407,7 @@ $config: (
       background-color: color.get(rgb(255, 255, 255));
       border-radius: get("border-radius");
       aspect-ratio: auto;
-      img,
-      #{ $prefix}__image-media {      
+      img {      
         z-index: 1;
         position: relative;
         width: 100%;
@@ -484,91 +423,105 @@ $config: (
     }
   }
 
-  
-  
-
-  
-}
-
-@mixin -horizontal-styles() {
-  $prefix: selector.class("card");
-
-  grid-template-columns: get("horizontal-image-width") 1fr;
-  grid-template-rows: 1fr auto; // Footer is native height first row fills
-  min-height: get("horizontal-min-height");
-  max-width: get("horizontal-max-width");
-
-  // When no footer remove extra row
-  &:not(:has(> #{ $prefix }__footer)) {
-    grid-template-rows: auto;
+  // Incase this modifier is being used to hide the image
+  // not just to tell the component how to layout without image
+  // - Use case is hiding image when you can't control the output 
+  //   of the inside of the card (printed no matter what). We had
+  //   this happen in HHRC, including this extra CSS for that
+  #{ $prefix }--no-image {
+    #{ $prefix }__image {
+      display: none;
+    }
   }
-  #{ $prefix }__image {
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-    aspect-ratio: auto;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: get("border-radius");
+  #{ $prefix }--image-fit {
+    #{ $prefix }__image {
+      img {
+        padding: get("image-fit-padding");
+        object-fit: contain;
+        object-position: top center;
+        filter: get("image-fit-filter");
+      }
+    }
   }
-  #{ $prefix }__body,
-  #{ $prefix }__footer {
-    grid-column: 2 / 3;
-  }
-  #{ $prefix }__body {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #{ $prefix }__main {
-    flex-grow: 1;
-    max-width: get("horizontal-main-max-width");
-  }
-  #{ $prefix }__aside {
-    flex: 0 0 get("horizontal-aside-width");
+  #{ $prefix }--fill {
+    max-width: none;
     height: 100%;
+    margin: 0;
+  }
+
+  @if (get("horizontal-breakpoint")) {
+    @include breakpoint.min(get("horizontal-breakpoint")) {
+      @include -horizontal-card-styles();
+    }
+  } @else {
+    @include -horizontal-card-styles();
+  }
+}
+
+@mixin -horizontal-card-styles() {
+  $prefix: selector.class("card");
+
+  #{ $prefix }--horizontal {
+    display: grid;
+    grid-template-columns: get("horizontal-image-width") 1fr;
+    // Creating the two rows (body and footer), if one is missing it's height will be 0
+    // Cannot use gap with the grid as it will create space when a row isn't needed
+    grid-template-rows: auto auto;
+    min-height: get("horizontal-min-height");
+    max-width: get("horizontal-max-width");
+
+    // When no footer remove extra row
+    &:not(:has(> #{ $prefix }__footer)) {
+      grid-template-rows: auto;
+    }
+    #{ $prefix }__image {
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+      aspect-ratio: auto;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: get("border-radius");
+    }
+    #{ $prefix }__body,
+    #{ $prefix }__footer {
+      grid-column: 2 / 3;
+    }
+    #{ $prefix }__body {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    #{ $prefix }__main {
+      flex-grow: 1;
+      max-width: get("horizontal-main-max-width");
+    }
+    #{ $prefix }__aside {
+      flex: 0 0 get("horizontal-aside-width");
+      height: 100%;
+    }
     @if(get("aside-rule")) {
-      $aside-padding-double: get("padding") * 2;
-      background-size: get("aside-rule-width") calc(100% - $aside-padding-double);
-      background-position: left center;
+      #{ $prefix }__aside::after {
+        content: "";
+        position: absolute;
+        top: get("padding");
+        left: calc(0rem - get("aside-rule-width") / 2);
+        height: calc(100% - get("padding") - get("padding"));
+        width: get("aside-rule-width");
+        background-color: get("aside-rule-color");
+      }
+    }
+
+    // For modern browsers
+    // Optionally use no-image modifier for older browser support
+    &:not(:has(#{ $prefix }__image)) {
+      @include -card-horizontal-no-image-styles();
+    }
+    &#{ $prefix }--no-image {
+      @include -card-horizontal-no-image-styles();
     }
   }
-  @if(get("aside-rule")) {
-    #{ $prefix }__aside::after {
-      content: "";
-      position: absolute;
-      top: get("padding");
-      left: calc(0rem - get("aside-rule-width") / 2);
-      height: calc(100% - get("padding") - get("padding"));
-      width: get("aside-rule-width");
-      background-color: get("aside-rule-color");
+  #{ $prefix }--horizontal-center {
+    #{ $prefix }__body {
+      align-self: center;
     }
-  }
-
-  // For modern browsers
-  // Optionally use no-image modifier for older browser support
-  &:not(:has(#{ $prefix }__image)) {
-    @include -card-horizontal-no-image-styles();
-  }
-  &#{ $prefix }--no-image {
-    @include -card-horizontal-no-image-styles();
-  }
-  
-}
-
-@mixin -horizontal-center-styles() {
-  $prefix: selector.class("card");
-
-  #{ $prefix }__body {
-    align-self: center;
-  }
-}
-
-@mixin -horizontal-footer-inline-styles() {
-  $prefix: selector.class("card");
-
-  grid-template-columns: get("horizontal-image-width") 1fr auto;
-  grid-template-rows: 1fr; // Footer is native height first row fills
-  #{ $prefix }__footer {
-    grid-column: 3;
-    
   }
 }
 
@@ -581,19 +534,34 @@ $config: (
 
 @mixin when-clickable($hover: false) {
   $prefix: selector.class("card");
-
-  #{ $prefix }#{ get("clickable-card-selector") },
-  a#{ $prefix },
-  button#{ $prefix },
-  #{ $prefix }--clickable {
-    @if ($hover) {
-      #{ get("clickable-card-interact-selector") } {
+  // When proxy click enabled
+  @if (get("clickable-card-enabled") and get("clickable-card-selector")) {
+    #{ $prefix }#{ get("clickable-card-selector") },
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable {
+      @if ($hover) {
+        #{ get("clickable-card-interact-selector") } {
+          @content;
+        }
+      } @else {
         @content;
       }
-    } @else {
-      @content;
     }
-  }
+  // Without proxy click (only if interactive)
+  } @else {
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable {
+      @if ($hover) {
+        #{ get("clickable-card-interact-selector") } {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  } 
 }
 
 

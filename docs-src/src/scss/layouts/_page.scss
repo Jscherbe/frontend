@@ -19,6 +19,14 @@
     display: block;
   }
 }
+.page--toc-inline {
+  grid-template-areas: "header toc" "header body";
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  .page__toc {
+    height: auto;
+    position: static;
+  }
+}
 .page__header,
 .page__toc {
   height: 100vh;
@@ -64,6 +72,9 @@
 
 .page__body-top {
   padding-top: 6rem;
+  .page--toc-inline & {
+    padding-top: 3rem;
+  }
   @include ulu.breakpoint-max("small") {
     padding-top: 3rem;
   }

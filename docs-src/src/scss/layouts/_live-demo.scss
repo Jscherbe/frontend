@@ -1,20 +1,36 @@
 @use "vars";
 @use "ulu";
 
+$border-color: #e5e5e5;
+
 .live-demo {
   background-color: ulu.cssvar-use("color-background-live-demo");
-  border-radius: ulu.element-get("border-radius");
+  border-top-right-radius: ulu.element-get("border-radius-large");
+  border-top-left-radius: ulu.element-get("border-radius-large");
   overflow: hidden;
-  @include ulu.breakpoint-min("medium") {
-    display: grid;
-    grid-template-columns: 1fr 12rem;
-  }
+  // @include ulu.breakpoint-min("medium") {
+  //   display: grid;
+  //   grid-template-columns: 1fr 12rem;
+  // }
 }
 
 .live-demo__display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.75rem;
+  border: 1px solid $border-color;
+  border-bottom-width: 0;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.12);
 }
 .live-demo__form {
-  background-color: #e5e5e5;
-  padding: 0.5rem;
+  background-color: $border-color;
+  padding: 1px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1px;
+}
+.live-demo__form-field {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0 0.5rem;
 }

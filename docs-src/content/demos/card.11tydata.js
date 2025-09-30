@@ -101,7 +101,15 @@ export default {
           },
           {
             value: "horizontalCenter",
-            text: "Horizontal Center"
+            text: "Horizontal (center)"
+          },
+          {
+            value: "horizontalPersist",
+            text: "Horizontal Persist"
+          },
+          {
+            value: "horizontalPersistCenter",
+            text: "Horizontal Persist (center)"
           },
           {
             value: "overlay",

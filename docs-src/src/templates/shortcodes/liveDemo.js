@@ -30,9 +30,15 @@ const formFieldTypes = {
 
 // Could be a shortcode in future if needed
 function form(fields) {
-  return formFields(fields);
+  return fields
+    .map(formField)
+    .map(markup => `<div class="live-demo__form-field">${ markup }</div>`)
+    .join("\n");
 }
 
+/**
+ * For inner form fields not top level (ie. fieldset checkboxes for example)
+ */
 function formFields(fields) {
   if (!Array.isArray(fields)) {
     throw new Error("Fields setup incorrectly");

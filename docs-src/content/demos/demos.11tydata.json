@@ -1,3 +1,4 @@
 {
-  "layout" : "unformatted"
+  "layout" : "unformatted",
+  "tocInline": true
 }

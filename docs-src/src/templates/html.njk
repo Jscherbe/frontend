@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 	{% include "partials/head.njk" %}
-	<body class="page theme-light">
+	<body class="page {% if tocInline %}page--toc-inline{% else %}page--toc-sidebar{% endif %} theme-light">
 		{% include "partials/header.njk" %}
 		{% if toc !== false %}
-			<div class="page__toc page-toc">
+			<div class="page__toc page-toc {% if tocInline %}page-toc--inline container{% endif %}">
 				{{ content | toc | safe }}
 			</div>
 		{% endif %}

@@ -2,10 +2,15 @@
 {% set isLink = action == "link" %}
 {% set hasImage = media == "image" or media == "imageFit" %}
 {% set element = isLink ? "a" : "article" %}
+{% set isFooterInline = footerLayout == "footerInline" %}
 
 {% set layoutClass = "" %}
 {% if layout == "horizontalCenter" %}
   {% set layoutClass = "card--horizontal card--horizontal-center" %}
+{% elseif layout == "horizontalPersist" %}
+  {% set layoutClass = "card--horizontal-persist card--horizontal-center" %}
+{% elseif layout == "horizontalPersistCenter" %}
+  {% set layoutClass = "card--horizontal-persist card--horizontal-center" %}
 {% elseif layout %}
   {% set layoutClass = "card--" ~ layout %}
 {% endif %}
@@ -13,7 +18,7 @@
 {% set classes = [
   "card",
   layoutClass,
-  footerLayout == "footerInline" ? "card--footer-inline" : "",
+  isFooterInline ? "card--footer-inline" : "",
   media == "imageFit" ? "card--image-fit" : ""
 ] %}
 
@@ -24,7 +29,7 @@
 >
   {% if body %}
     <div class="card__body">
-      <div class="card__main">
+      <div class="card__main crop-margins">
         {% if title %}
           <h5 class="card__title">
             {# If link don't nest link (no link title) #}
@@ -42,9 +47,9 @@
           </h5>
         {% endif %}
         {% if content %}
-          <div>
-            This is the card content. It can contain around 2-3 sentences.
-          </div>
+          <p>
+            This is the cards main content area. 
+          </p>
         {% endif %}
       </div>
       {% if aside %}
@@ -72,6 +77,10 @@
       {# If link don't nest link (no link title) #}
       {% if isLink %}
         Card Footer Text
+      {% elseif isFooterInline %}
+        <button class="button button--small button--icon" aria-label="favorite">
+          <span class="fas fa-star" aria-hidden="true">
+        </button>
       {% else %}
         <a class="button button--small" href="https://www.yahoo.com/">Footer</a>
       {% endif %}
