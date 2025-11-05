@@ -1,4 +1,9 @@
 JS Todos:
+  ☐ Breakpoint manager has a bug(s)
+    ☐ The edges of min/max don't match scss (big issue, this will need version update for breaking change when updated)
+      * For example min small, and max small aren't the same edge like scss instead they are gapped. It's easy to workaround but a major issue in terms of how it's supposed to work
+    ☐ The remove function on class breakpoint is not correct 
+       * See -> reference/ulu-breakpoint-manager-fix-needed.md
   ☐ Javascript classes need to reduce output of public properties/methods to only what users need
     * Not a priority but to make things clear
   ✘ Add a module (global) that will expose public in use @cancelled @see(reference/ideas/how-to-handle-public-api.md)

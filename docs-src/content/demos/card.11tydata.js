@@ -119,6 +119,29 @@ export default {
       },
       {
         type: "select",
+        name: "footerAlign",
+        label: "Footer Align",
+        options: [
+          {
+            value: "",
+            text: "Default"
+          },
+          {
+            value: "start",
+            text: "Start"
+          },
+          {
+            value: "center",
+            text: "Center"
+          },
+          {
+            value: "end",
+            text: "End"
+          },
+        ]
+      },
+      {
+        type: "select",
         name: "footerLayout",
         label: "Footer Layout",
         // tooltip: "Currently this option (footer inline) is only available when using horizontal layouts",

@@ -24,8 +24,8 @@
 /// @prop {CssValue} box-shadow-hover [null] The box-shadow for the card when hovered or focused.
 /// @prop {Color} color [null] The type color of the card.
 /// @prop {Color} color-hover [null] The type color of the card when hovered or focused.
-/// @prop {Color} color-overlay [white] The type color of the card when using card--overlay.
-/// @prop {Color} color-overlay-hover [null] The type color of the card when hovered or focused and when using card--overlay.
+/// @prop {Color} overlay-color [white] The type color of the card when using card--overlay.
+/// @prop {Color} overlay-color-hover [null] The type color of the card when hovered or focused and when using card--overlay.
 /// @prop {Color} overlay-background-color [rgba(0, 0, 0, 0.6)] The background color for the text box when using card--overlay.
 /// @prop {Color} background-color [white] The background color of the card.
 /// @prop {Color} background-color-hover [rgb(242, 244, 246)] The background color of the card when hovered or focused.
@@ -130,10 +130,13 @@ $config: (
   "transition-properties" :  (border-color, background-color, color, box-shadow, transform, outline-color, outline-width),
   "overlay-aspect-ratio": list.slash(4, 3),
   "overlay-background-color-hover" : null,
-  "color-overlay" : white,
-  "color-overlay-hover" : null,
+  "overlay-color" : white,
+  "overlay-title-color" : null,
+  "overlay-title-color-hover" : rgb(79, 175, 230),
   "overlay-background-color": rgba(0, 0, 0, 0.6),
+  "overlay-footer-background-color": null,
   "overlay-shading": true,
+  "overlay-shading-height": 4rem,
   "overlay-body-padding-y": 1rem,
   "aside-rule" : true,
   "aside-rule-width" : 1px,
@@ -180,12 +183,6 @@ $config: (
     border-radius: get("border-radius");
     border: get("border-width") solid get("border-color");
     box-shadow: get("box-shadow");
-    
-    // position: relative;
-    // display: flex; // Reorder image
-    // flex-direction: column;
-    // justify-content: flex-end;
-    
     outline: get("border-hover-width") solid transparent;
     outline-offset: $border-width-negative;
     transition-duration: get("transition-duration");
@@ -229,11 +226,11 @@ $config: (
   }
   #{ $prefix }__aside {
     background-color: color.get(get("aside-background-color"));
-    // Makes it look like border inside aside padding 
-    // without relying on position relative and pseudo technique
-    // which affects popovers/etc or other absolute elements inside card
 
     @if (get("aside-rule")) {
+      // Makes it look like border inside aside padding 
+      // without relying on position relative and pseudo technique
+      // which affects popovers/etc or other absolute elements inside card
       $aside-rule-color: color.get(get("aside-rule-color"));
       $aside-padding-double: get("padding") * 2;
 
@@ -251,8 +248,6 @@ $config: (
   #{ $prefix }__image {
     order: -1;
     grid-column: 1 / -1;
-    // position: relative;
-    // z-index: 2;
     overflow: hidden; // For image corners with border-radius
     @if (not get("image-within-border")) {
       margin: $border-width-negative $border-width-negative 0 $border-width-negative;
@@ -316,11 +311,6 @@ $config: (
     }
   }
 
-  
-
-
-
-
   // --- Modifiers ---
 
   // Allows card to fill space (ie. in grid/etc) 
@@ -329,16 +319,31 @@ $config: (
     height: 100%;
     margin: 0;
   }
-
+  
   #{ $prefix }--footer-inline {
+    #{ $prefix }__footer {
+      
+      padding: get("footer-inline-padding");
+      flex-direction: column;
+    }
+  }
+  #{ $prefix }--footer-inline:not(#{ $prefix }--overlay) {
     // The second column (footer) collapses if unused
     grid-template-columns: 1fr auto;
     #{ $prefix }__footer {
       grid-column: 2;
-      padding: get("footer-inline-padding");
-      align-items: get("footer-inline-align");
     }
   }
+  #{ $prefix }--footer-start #{ $prefix }__footer {
+    justify-content: start;
+  }
+  #{ $prefix }--footer-center #{ $prefix }__footer {
+    justify-content: center;
+  }
+  #{ $prefix }--footer-end #{ $prefix }__footer {
+    justify-content: end;
+  }
+  
 
   // Makes image centered with max-width for displaying site icon images
   #{ $prefix }__image--icon {
@@ -378,7 +383,6 @@ $config: (
   }
 
   // Horizontal layout
-
   @if (get("horizontal-breakpoint")) {
     @include breakpoint.min(get("horizontal-breakpoint")) {
       #{ $prefix }--horizontal {
@@ -406,88 +410,91 @@ $config: (
 
   // Overlay layout (image under content)
   #{ $prefix }--overlay {
+    // Explanation of aspect-ratio combined with grid-template-rows:
+    // - Solves the box growing if needed
+    // - First use aspect ration (which grid is based on) but allow the first row 
+    // - to grow to min-content if needed (which makes it so the card grows instead 
+    // - of overflowing (ie. if you were using "auto auto" or "1fr auto"
+    grid-template-rows: minmax(min-content, 1fr) auto;
     aspect-ratio: get("overlay-aspect-ratio");
-    height: min-content;
-    
-    // On overlay putting the body/footer above the image and below the hover pseudo
-    // - If we have popovers in overlay this would need to be set above the pseudo
-    // - The trade off would be that the gradients background would be above the hover border, keeping them above will preserve the look / feel since popovers are probably not needed for this style
-    #{ $prefix }__body,
-    #{ $prefix }__footer {
-      z-index: 2;
-    }
+
     #{ $prefix }__body {
-      position: relative;
-      flex-grow: 0;
-     
-      color: color.get(get("color-overlay"));
-      background-color: color.get(get("overlay-background-color"));
+      grid-row: 1 / 2;
+      align-self: end;
       min-height: 0;
+      color: color.get(get("overlay-color"));
+      background-color: color.get(get("overlay-background-color"));
       padding-top: get("overlay-body-padding-y");
       padding-bottom: get("overlay-body-padding-y");
       
+      @if (get("overlay-shading")) {
+        padding-top: calc(get("overlay-body-padding-y") + get("overlay-shading-height"));
+        background: linear-gradient(
+          to bottom, 
+          transparent 0%, 
+          get("overlay-background-color") get("overlay-shading-height"), 
+          get("overlay-background-color") 100%
+        );
+      }
       &:not(:has(~ #{ $prefix }__footer)) {
         border-bottom-left-radius: get("border-radius");
         border-bottom-right-radius: get("border-radius");
       }
-
-      @if (get("overlay-shading")) {
-        margin-top: 4rem;
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          left: 0;
-          right: 0;
-          height: 4rem;
-          background: linear-gradient(to top, get("overlay-background-color") 0%, rgba(0, 0, 0, 0));
-        }
-      }
+    }
+    #{ $prefix }__aside { 
+      background-color: transparent;
     }
     #{ $prefix }__footer {
-      background-color: color.get(get("overlay-background-color"));
-      color: color.get(get("color-overlay"));
-      border-bottom-left-radius: get("border-radius");
-      border-bottom-right-radius: get("border-radius");
+      grid-row: 2 / 3;
+      background-color: color.get(
+        utils.fallback(
+          get("overlay-footer-background-color"), 
+          get("overlay-background-color")
+        )
+      );
     }
     #{ $prefix }__body,
     #{ $prefix }__footer {
+      color: color.get(get("overlay-color"));
       &:last-child {
         border-bottom-left-radius: get("border-radius");
         border-bottom-right-radius: get("border-radius");
       }
     }
     #{ $prefix }__title {
-      color: color.get(get("color-overlay"));
+      color: color.get(
+        utils.fallback(get("overlay-title-color"), get("overlay-color"))
+      );
     }
-    #{ $prefix }__image {
-      @include layout.absolute-fill();
-      overflow: hidden;
-      padding-top: 0;
-      background-color: color.get(rgb(255, 255, 255));
-      border-radius: get("border-radius");
-      aspect-ratio: auto;
-      img,
-      #{ $prefix}__image-media {      
-        z-index: 1;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        object-fit: cover;
-        &::before {
-          @include layout.absolute-fill(true);
-          display: block;
-          background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.9));
+    @if (get("overlay-title-color-hover")) {
+      #{ $prefix }__title-link {
+        &:hover,
+        &:focus {
+          color: color.get(get("overlay-title-color-hover"));
         }
       }
     }
+    #{ $prefix }__image {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      border-radius: get("border-radius");
+      aspect-ratio: auto;
+      img,
+      #{ $prefix}__image-media {
+        height: 100%;
+        object-fit: cover;
+        border: 0;
+      }
+    }
   }
-
-  
-  
-
-  
+  #{ $prefix }--overlay#{ $prefix }--footer-inline {
+    grid-template-columns: 1fr auto;
+    #{ $prefix }__footer {
+      grid-column: 2;
+      grid-row: 1 / -1;
+      border-radius: 0 get("border-radius") get("border-radius")  0;
+    }
+  }
 }
 
 @mixin -horizontal-styles() {

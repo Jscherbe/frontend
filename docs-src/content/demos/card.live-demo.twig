@@ -8,7 +8,7 @@
 {% if layout == "horizontalCenter" %}
   {% set layoutClass = "card--horizontal card--horizontal-center" %}
 {% elseif layout == "horizontalPersist" %}
-  {% set layoutClass = "card--horizontal-persist card--horizontal-center" %}
+  {% set layoutClass = "card--horizontal-persist" %}
 {% elseif layout == "horizontalPersistCenter" %}
   {% set layoutClass = "card--horizontal-persist card--horizontal-center" %}
 {% elseif layout %}
@@ -18,6 +18,7 @@
 {% set classes = [
   "card",
   layoutClass,
+  footerAlign ? ("card--footer-" ~ footerAlign) : "",
   isFooterInline ? "card--footer-inline" : "",
   media == "imageFit" ? "card--image-fit" : ""
 ] %}

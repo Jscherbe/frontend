@@ -1,7 +1,26 @@
 # Change Log
 
-## 0.1.0-beta.124
+## 0.1.1-beta.1
 
+- **scss/color.scss**
+  - Removed default palette entry "background-gray", which was used in basic-hero
+- **scss/components/basic-hero.scss**
+  - Changed config value for "background-color" from "background-gray" (removed palette entry) and added the gray background color (static) instead. Only affects you if you were using the removed color palette entry "background-gray"
+- **scss/components/card.scss**
+  - This is updated version has some **Breaking Changes** which are minor but you should double check the areas that use card to make sure it looks correct.
+  - Overall added styles to make card more flexible (via modifiers)
+    - New CSS is larger now, options have been added to omit code for larger modifiers if not needed
+      - While CSS is larger (old 6kb, new 9kb, it's designed to be gzipped, gzip size is identical to original CSS 2kb for all layouts)
+  - Config properties have been renamed/removed/added
+  - New layout system (still same markup/structure)
+  - Demo is updated with new options
+  - Tries to avoid creating layer stack context (so children in body can be  positioned above it)
+  - New modifiers for horizontal card to persist (not to goto vertical on breakpoint like original)
+  - Simplified overlay layout
+  - New Footer Modifiers
+    - New "footer-inline" modifier that moves the footer to the right of the content
+    - Setup to work on all layouts
+    - Add alignment modifiers for footer to override your default (start, center, end)
 - **scss/components/menu-stack** added allowance for parent links to have matching or specific stylings
   - created two new classes
     - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"

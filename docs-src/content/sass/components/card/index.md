@@ -215,6 +215,9 @@ $config: (
   "footer-padding-y" : 0.25rem,
   "footer-min-height" : 2.5rem,
   "footer-justify" : flex-end,
+  "footer-inline-padding" : 0.5rem,
+  "footer-inline-align" : start,
+  "footer-background-color" : #dedede,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
   "horizontal-min-height" : 20rem,
@@ -255,9 +258,9 @@ $config: (
   "overlay-background-color": rgba(0, 0, 0, 0.6),
   "overlay-shading": true,
   "overlay-body-padding-y": 1rem,
-  "aside-rule" : false,
+  "aside-rule" : true,
   "aside-rule-width" : 1px,
-  "aside-background-color" : transparent,
+  "aside-background-color" : #f1f1f1,
   "aside-rule-color": "rule-light",
 );
 ```
@@ -271,7 +274,7 @@ $config: (
 - **Group:** card
 - **Type:** variable
 - **Lines (comments):** 18-73
-- **Lines (code):** 75-139
+- **Lines (code):** 75-142
 
 </details>
 
@@ -282,7 +285,7 @@ $config: (
 
 |Name|Type|Default|Description|
 |:--|:--|:--|:--|
-|padding|Dimension|2rem|The padding for the image icon|
+|padding|Dimension|2rem|The common padding|
 |margin-y|Dimension|3rem|Top and bottom margin for the card.|
 |border-radius|Dimension|5rem|The border radius of the card.|
 |box-shadow|CssValue|null|The box-shadow for the card.|
@@ -563,8 +566,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 141-144
-- **Lines (code):** 146-148
+- **Lines (comments):** 144-147
+- **Lines (code):** 149-151
 
 </details>
 
@@ -622,8 +625,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 159-163
-- **Lines (code):** 165-443
+- **Lines (comments):** 162-166
+- **Lines (code):** 168-491
 
 </details>
 
@@ -698,8 +701,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 513-517
-- **Lines (code):** 519-534
+- **Lines (comments):** 576-580
+- **Lines (code):** 582-597
 
 </details>
 
@@ -822,8 +825,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 150-153
-- **Lines (code):** 155-157
+- **Lines (comments):** 153-156
+- **Lines (code):** 158-160
 
 </details>
 
