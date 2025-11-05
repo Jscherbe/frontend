@@ -37,7 +37,7 @@ Module Settings
 
 ``` scss
 $config: (
-  "background-color" : "background-gray",
+  "background-color" : #fafafa,
   "padding-top": 3rem,
   "padding-bottom" : 2rem,
   "gap" : (4rem 2rem),

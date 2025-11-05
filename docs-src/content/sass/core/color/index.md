@@ -47,7 +47,6 @@ $palette: (
   "type-disabled":              rgb(160, 160, 160),
   "headline":                   inherit,
   "background":                 white,
-  "background-gray":            #fafafa,
   "focus":                      blue,
   "accent":                     orange,
   "info":                       #00bde3,
@@ -94,7 +93,7 @@ $palette: (
 - **Group:** color
 - **Type:** variable
 - **Lines (comments):** 13-16
-- **Lines (code):** 18-62
+- **Lines (code):** 18-61
 
 </details>
 
@@ -140,8 +139,8 @@ $contexts: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 64-68
-- **Lines (code):** 70-81
+- **Lines (comments):** 63-67
+- **Lines (code):** 69-80
 
 </details>
 
@@ -192,8 +191,8 @@ $color-classes: (
 - **File:** _color.scss
 - **Group:** color
 - **Type:** variable
-- **Lines (comments):** 83-84
-- **Lines (code):** 85-89
+- **Lines (comments):** 82-83
+- **Lines (code):** 84-88
 
 </details>
 
@@ -228,8 +227,8 @@ Used to override or extend the color palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 91-97
-- **Lines (code):** 99-101
+- **Lines (comments):** 90-96
+- **Lines (code):** 98-100
 
 </details>
 
@@ -290,8 +289,8 @@ Set output classes for all-color-class-styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 126-127
-- **Lines (code):** 129-131
+- **Lines (comments):** 125-126
+- **Lines (code):** 128-130
 
 </details>
 
@@ -335,8 +334,8 @@ Set color contexts
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 140-150
-- **Lines (code):** 152-154
+- **Lines (comments):** 139-149
+- **Lines (code):** 151-153
 
 </details>
 
@@ -402,8 +401,8 @@ Prints contexts styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 179-180
-- **Lines (code):** 182-188
+- **Lines (comments):** 178-179
+- **Lines (code):** 181-187
 
 </details>
 
@@ -449,8 +448,8 @@ Prints all context styles
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 234-241
-- **Lines (code):** 243-252
+- **Lines (comments):** 233-240
+- **Lines (code):** 242-251
 
 </details>
 
@@ -534,8 +533,8 @@ Outputs all color classes
 - **File:** _color.scss
 - **Group:** color
 - **Type:** mixin
-- **Lines (comments):** 254-258
-- **Lines (code):** 260-269
+- **Lines (comments):** 253-257
+- **Lines (code):** 259-268
 
 </details>
 
@@ -610,8 +609,8 @@ Get a color from the palette by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 103-105
-- **Lines (code):** 107-124
+- **Lines (comments):** 102-104
+- **Lines (code):** 106-123
 
 </details>
 
@@ -665,8 +664,8 @@ Check if a color is set in the palette
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 133-133
-- **Lines (code):** 135-138
+- **Lines (comments):** 132-132
+- **Lines (code):** 134-137
 
 </details>
 
@@ -702,8 +701,8 @@ Get a context by name
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 156-158
-- **Lines (code):** 160-162
+- **Lines (comments):** 155-157
+- **Lines (code):** 159-161
 
 </details>
 
@@ -757,8 +756,8 @@ Get a context's value'
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 164-167
-- **Lines (code):** 169-177
+- **Lines (comments):** 163-166
+- **Lines (code):** 168-176
 
 </details>
 
@@ -813,8 +812,8 @@ Tint (add white) a color using the default white by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 190-195
-- **Lines (code):** 197-199
+- **Lines (comments):** 189-194
+- **Lines (code):** 196-198
 - **Author:** 
 
 </details>
@@ -877,8 +876,8 @@ Tint (add white) a color using the default white by a percentage (Using color-mi
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 201-206
-- **Lines (code):** 208-210
+- **Lines (comments):** 200-205
+- **Lines (code):** 207-209
 
 </details>
 
@@ -932,8 +931,8 @@ Shade (add black) a color with the default black by a percentage
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 212-217
-- **Lines (code):** 219-221
+- **Lines (comments):** 211-216
+- **Lines (code):** 218-220
 - **Author:** Kitty Giraudel
 
 </details>
@@ -996,8 +995,8 @@ Shade (add black) a color using the default white by a percentage (Using color-m
 - **File:** _color.scss
 - **Group:** color
 - **Type:** function
-- **Lines (comments):** 223-228
-- **Lines (code):** 230-232
+- **Lines (comments):** 222-227
+- **Lines (code):** 229-231
 
 </details>
 

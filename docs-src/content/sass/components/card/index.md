@@ -253,10 +253,13 @@ $config: (
   "transition-properties" :  (border-color, background-color, color, box-shadow, transform, outline-color, outline-width),
   "overlay-aspect-ratio": list.slash(4, 3),
   "overlay-background-color-hover" : null,
-  "color-overlay" : white,
-  "color-overlay-hover" : null,
+  "overlay-color" : white,
+  "overlay-title-color" : null,
+  "overlay-title-color-hover" : rgb(79, 175, 230),
   "overlay-background-color": rgba(0, 0, 0, 0.6),
+  "overlay-footer-background-color": null,
   "overlay-shading": true,
+  "overlay-shading-height": 4rem,
   "overlay-body-padding-y": 1rem,
   "aside-rule" : true,
   "aside-rule-width" : 1px,
@@ -273,8 +276,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 18-73
-- **Lines (code):** 75-142
+- **Lines (comments):** 21-76
+- **Lines (code):** 78-148
 
 </details>
 
@@ -292,8 +295,8 @@ $config: (
 |box-shadow-hover|CssValue|null|The box-shadow for the card when hovered or focused.|
 |color|Color|null|The type color of the card.|
 |color-hover|Color|null|The type color of the card when hovered or focused.|
-|color-overlay|Color|white|The type color of the card when using card--overlay.|
-|color-overlay-hover|Color|null|The type color of the card when hovered or focused and when using card--overlay.|
+|overlay-color|Color|white|The type color of the card when using card--overlay.|
+|overlay-color-hover|Color|null|The type color of the card when hovered or focused and when using card--overlay.|
 |overlay-background-color|Color|rgba(0, 0, 0, 0.6)|The background color for the text box when using card--overlay.|
 |background-color|Color|white|The background color of the card.|
 |background-color-hover|Color|rgb(242, 244, 246)|The background color of the card when hovered or focused.|
@@ -566,8 +569,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 144-147
-- **Lines (code):** 149-151
+- **Lines (comments):** 150-153
+- **Lines (code):** 155-157
 
 </details>
 
@@ -625,8 +628,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 162-166
-- **Lines (code):** 168-491
+- **Lines (comments):** 168-172
+- **Lines (code):** 174-501
 
 </details>
 
@@ -701,8 +704,8 @@ Mixin styles for card when it has proxy click enabled and is being interacted wi
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 576-580
-- **Lines (code):** 582-597
+- **Lines (comments):** 586-590
+- **Lines (code):** 592-607
 
 </details>
 
@@ -825,8 +828,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 153-156
-- **Lines (code):** 158-160
+- **Lines (comments):** 159-162
+- **Lines (code):** 164-166
 
 </details>
 
