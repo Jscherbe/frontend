@@ -15,7 +15,9 @@
 // TODO 
 // - Check that all $config values are used and documented correctly
 // - Double check code
+// - Make overlay and horizontal modifiers optional to output
 // - Work on card grid and make sure everything is working correctly
+// - Make sure all colors go through color.get
 // - @todo [CHECK]
 
 /// Module Settings
@@ -36,19 +38,17 @@
 /// @prop {Dimension} body-min-height [8rem] the min-height of the card body.
 /// @prop {CssValue} border [1px solid #ccc] The card border.
 /// @prop {CssValue} border-hover [2px solid #278cca] The card border when hovered or focused.
-/// @prop {CssValue|Boolean} border-hover-offset [-1px] Offset for outline
 /// @prop {Dimension} header-margin [0.75em] The margin for the card header.
 /// @prop {Color} title-color [null] The type color of the title.
 /// @prop {Color} title-color-hover [null] The type color of the title (if link/button) when hovered or focused
 /// @prop {Dimension} title-margin [0] The margin for the title.
 /// @prop {CssValue} title-font-weight [bold] The font weight for the title.
 /// @prop {Color} image-background-color [rgb(197, 197, 197)] The background color behind the image.
-/// @prop {Dimension} image-margin [null] The margin for the image.
-/// @prop {Dimension} image-border [null] // For when you have a margin, the border for the image.
+/// @prop {Dimension} image-margin [null] The margin for the image
+/// @prop {Dimension} image-border [null] Optional border for the image.
 /// @prop {CssValue} image-transform-hover [null] Animation for the image when hovered or focused.
 /// @prop {CssValue} image-filter-hover [null] Filter for the image when hovered or focused.
 /// @prop {Color} overlay-background-color-hover [null] The color of the pseudo-element when using proxy click.
-/// @prop {Boolean} clickable-card-enabled [true] Enable or disable proxy click.
 /// @prop {String} clickable-card-selector [data-ulu-proxy-click-init] The selector for proxy-click.js to find the card and implement the clickable card script.
 /// @prop {String} clickable-card-interact-selector [&:hover, &:focus-within] The selectors for the cards being interacted with.
 /// @prop {Dimension} footer-padding-y [0.25rem] The top and bottom padding for the footer.
@@ -62,14 +62,14 @@
 /// @prop {Boolean} image-transition-enabled [true] Enable or disable the image transition.
 /// @prop {Time} image-transition-duration [350ms] The duration of the image transition.
 /// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
+/// @prop {List} image-transition-properties [(transform, filter, background-color)] The properties for the image transitions.
 /// @prop {Number} image-fit-padding [1rem] Padding on inside of image when using image fit modifier
 /// @prop {CssValue} image-fit-filter [drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2))] Filter to use on image when using image fit modifier
 /// @prop {List} image-icon-max-width [10rem] Max width for image when using the modifier on the .card__image--icon
-/// @prop {List} image-transition-properties [(transform, filter)] The properties for the image transitions.
+
 /// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
 /// @prop {Unit} horizontal-min-height [10rem] Minimum height when horizontal
 /// @prop {Unit} horizontal-max-width [40rem] Maximum width when horizontal
-/// @prop {Unit} horizontal-body-max-width [80rem] The max-width of body when horizontal
 /// @prop {Boolean} aside-rule [false] Whether or not to have a rule separating body and aside
 /// @prop {CssUnit} aside-rule-width [1px] Size of rule
 /// @prop {CssUnit} aside-rule-color ["rule-light"] Color of rule
@@ -83,11 +83,9 @@ $config: (
   "border-color" : #ccc,
   "border-hover-width" : 2px,
   "border-hover-color" : #278cca,
-  "border-hover-offset" : -1px,
   "border-radius" : 5px,
   "box-shadow" : null,
   "box-shadow-hover" : null,
-  "clickable-card-enabled" : true,
   "clickable-card-selector" : "[data-ulu-proxy-click-init]",
   "clickable-card-interact-selector" : "&:hover, &:focus-within",
   "color" : "type",
@@ -96,7 +94,6 @@ $config: (
   "footer-min-height" : 2.5rem,
   "footer-justify" : flex-end,
   "footer-inline-padding" : 0.5rem,
-  "footer-inline-align" : start,
   "footer-background-color" : #dedede,
   "horizontal-breakpoint" : "small",
   "horizontal-image-width" : min(33%, 20rem),
@@ -115,7 +112,7 @@ $config: (
   "image-transform-hover" : null,
   "image-transition-duration" :    350ms,
   "image-transition-enabled" : true,
-  "image-transition-properties" : (transform, filter),
+  "image-transition-properties" : (transform, filter, background-color),
   "image-transition-timing-function" : ease-in-out,
   "image-fit-padding" : 1rem,
   "image-fit-filter" : drop-shadow(0 0px 8px rgba(0, 0, 0, 0.3)),
@@ -124,7 +121,6 @@ $config: (
   "padding" : 2rem,
   "title-color" : null,
   "title-color-hover" : null,
-  "title-color-card-hover" : null,
   "title-margin" : 1rem,
   "title-font-weight" : bold,
   "transition-enabled":      true,
@@ -132,18 +128,18 @@ $config: (
   "transition-duration" :    200ms,
   "transition-properties" :  (border-color, background-color, color, box-shadow, transform, outline-color, outline-width),
   "overlay-aspect-ratio": list.slash(4, 3),
-  "overlay-background-color-hover" : null,
   "overlay-color" : white,
   "overlay-title-color" : null,
   "overlay-title-color-hover" : rgb(79, 175, 230),
   "overlay-background-color": rgba(0, 0, 0, 0.6),
+  "overlay-background-color-hover" : red,
   "overlay-footer-background-color": null,
   "overlay-shading": true,
   "overlay-shading-height": 4rem,
   "overlay-body-padding-y": 1rem,
   "aside-rule" : true,
   "aside-rule-width" : 1px,
-  "aside-background-color" : #f1f1f1,
+  "aside-background-color" : null,
   "aside-rule-color": "rule-light",
 ) !default;
   
@@ -188,11 +184,17 @@ $config: (
     box-shadow: get("box-shadow");
     outline: get("border-hover-width") solid transparent;
     outline-offset: $border-width-negative;
-    transition-duration: get("transition-duration");
-    transition-timing-function: get("transition-timing-function");
-    transition-property: get("transition-properties");
     @if (get("aside-rule")) {
       --ulu-card-aside-rule: #{ get("aside-rule-width") } solid #{ color.get(get("aside-rule-color")) };
+    }
+  }
+
+  @if (get("transition-enabled")) {
+    #{ $prefix },
+    #{ $prefix }__title {
+      transition-duration: get("transition-duration");
+      transition-timing-function: get("transition-timing-function");
+      transition-property: get("transition-properties");
     }
   }
 
@@ -201,7 +203,6 @@ $config: (
     color: color.get(get("color-hover"));
     box-shadow: get("box-shadow-hover");
     outline: get("border-hover-width") solid color.get(get("border-hover-color"));
-    // outline-offset: get("border-hover-offset");
   }
 
   #{ $prefix }__footer,
@@ -259,12 +260,15 @@ $config: (
       margin: $border-width-negative $border-width-negative 0 $border-width-negative;
     }
     
-    // margin: get("image-margin");
-    border: get("image-border");
     background-color: color.get(get("image-background-color"));
-    border-top-right-radius: get("border-radius");
-    border-top-left-radius: get("border-radius");
+    border: get("image-border");
     aspect-ratio: get("image-aspect-ratio");
+    @if (get("image-margin")) {
+      margin: get("image-margin");
+    } @else {
+      border-top-right-radius: get("border-radius");
+      border-top-left-radius: get("border-radius");
+    }
   }
 
   // Inner Element Styles
@@ -273,9 +277,6 @@ $config: (
     color: color.get(get("title-color"));
     margin-bottom: get("title-margin");
     font-weight: get("title-font-weight");
-    transition-duration: get("transition-duration");
-    transition-timing-function: get("transition-timing-function");
-    transition-property: color;
   }
   // Only the inner link gets hover state
   #{ $prefix }__title-link {
@@ -304,7 +305,7 @@ $config: (
     @if (get("image-transition-enabled")) {
       transition-duration: get("image-transition-duration");
       transition-timing-function: get("image-transition-timing-function");
-      transition-property: transform, filter, background-color;
+      transition-property: get("image-transition-properties");
     }
   }
   @if (get("image-transform-hover") or get("image-filter-hover")) {
@@ -435,11 +436,8 @@ $config: (
       
       @if (get("overlay-shading")) {
         padding-top: calc(get("overlay-body-padding-y") + get("overlay-shading-height"));
-        background: linear-gradient(
-          to bottom, 
-          transparent 0%, 
-          get("overlay-background-color") get("overlay-shading-height"), 
-          get("overlay-background-color") 100%
+        @include -overlay-shading-gradient(
+          color.get(get("overlay-background-color"))
         );
       }
       &:not(:has(~ #{ $prefix }__footer)) {
@@ -492,6 +490,20 @@ $config: (
         border: 0;
       }
     }
+    
+  }
+  @include when-clickable($hover: true, $extra-selector: "#{ $prefix }--overlay") {
+    #{ $prefix }__body,
+    #{ $prefix }__footer {
+      background-color: color.get(get("overlay-background-color-hover"));
+    }
+    @if (get("overlay-shading")) {
+      #{ $prefix }__body {
+        @include -overlay-shading-gradient(
+          color.get(get("overlay-background-color-hover"))
+        );
+      }
+    }
   }
   #{ $prefix }--overlay#{ $prefix }--footer-inline {
     grid-template-columns: 1fr auto;
@@ -531,7 +543,6 @@ $config: (
     justify-content: space-between;
   }
   #{ $prefix }__main {
-    flex-grow: 1;
     max-width: get("horizontal-main-max-width");
   }
   #{ $prefix }__aside {
@@ -589,16 +600,25 @@ $config: (
 /// Mixin styles for card when it has proxy click enabled and is being interacted with (hover/focus)
 /// @param {Boolean} $hover [false] Apply styles when the card is being hover/focused within, else applies styles to rest state of a clickable card (one who has a proxy click setup)
 /// Prints component styles
+/// @param {String} $extra-selector Selector to be appended to the list
 /// @example scss
 ///  @include ulu.component-card-styles();
 
-@mixin when-clickable($hover: false) {
-  $prefix: selector.class("card");
 
-  #{ $prefix }#{ get("clickable-card-selector") },
-  a#{ $prefix },
-  button#{ $prefix },
-  #{ $prefix }--clickable {
+@mixin when-clickable($hover: false, $extra-selector: null) {
+  $prefix: selector.class("card");
+  $selectors: (
+    #{ $prefix }#{ get("clickable-card-selector") },
+    a#{ $prefix },
+    button#{ $prefix },
+    #{ $prefix }--clickable
+  );
+
+  @if $extra-selector {
+    $selectors: list.append($selectors, $extra-selector, $separator: comma);
+  }
+
+  #{$selectors} {
     @if ($hover) {
       #{ get("clickable-card-interact-selector") } {
         @content;
@@ -609,7 +629,6 @@ $config: (
   }
 }
 
-
 // Internal mixin for DRY
 @mixin -card-horizontal-no-image-styles() {
   $prefix: selector.class("card");
@@ -618,4 +637,13 @@ $config: (
   #{ $prefix }__footer {
     grid-column: 1 / 2;
   }
+}
+
+@mixin -overlay-shading-gradient($background-color) {
+  background: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    $background-color get("overlay-shading-height"), 
+    $background-color 100%
+  );
 }
