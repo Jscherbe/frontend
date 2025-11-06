@@ -203,9 +203,8 @@ Private method used inrternally for managing direction activation
 <a name="module_ui/breakpoints..Breakpoint+max"></a>
 
 ### breakpoint.max(handler)
-Attach handler to be executed from the breakpoint and to all breakpoints below.
-- If the browser resizes from a breakpoint below this breakpoint, 
-  and above the breakpoint name specified, this handler will fire
+Attach handler to be executed from the breakpoint and to all breakpoints below (inclusive).
+This corresponds to a `max-width` media query in SCSS.
 
 **Kind**: instance method of [<code>Breakpoint</code>](#module_ui/breakpoints..Breakpoint)  
 
@@ -216,9 +215,8 @@ Attach handler to be executed from the breakpoint and to all breakpoints below.
 <a name="module_ui/breakpoints..Breakpoint+min"></a>
 
 ### breakpoint.min(handler)
-Attach handler to be executed from the breakpoint and to all breakpoints below.
-- If the browser resizes from a breakpoint above this breakpoint, 
-  and below the breakpoint name specified, this handler will fire
+Attach handler to be executed from the breakpoint and to all breakpoints above (inclusive).
+This corresponds to a `min-width` media query in SCSS.
 
 **Kind**: instance method of [<code>Breakpoint</code>](#module_ui/breakpoints..Breakpoint)  
 

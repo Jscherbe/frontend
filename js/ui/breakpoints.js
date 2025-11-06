@@ -114,11 +114,11 @@ export class BreakpointManager {
     // Get arrays of breakpoints based on the order array
     const mapBreakpoints = n => this.at(n);
     // From breakpoint to end (highest)
-    const max = this.order.slice(index).map(mapBreakpoints);
-    const notMax = this.order.slice(0, index).map(mapBreakpoints);
+    const min = this.order.slice(index).map(mapBreakpoints);
+    const notMin = this.order.slice(0, index).map(mapBreakpoints);
     // From start up to this breakpoint
-    const min = this.order.slice(0, index + 1).map(mapBreakpoints);
-    const notMin = this.order.slice(index + 1).map(mapBreakpoints);
+    const max = this.order.slice(0, index + 1).map(mapBreakpoints);
+    const notMax = this.order.slice(index + 1).map(mapBreakpoints);
     const notOnly = this.order.slice().map(mapBreakpoints);
     notOnly.splice(index, 1);
     
@@ -246,18 +246,16 @@ class Breakpoint {
     this.directions[direction].change(active);
   }
   /**
-   * Attach handler to be executed from the breakpoint and to all breakpoints below.
-   * - If the browser resizes from a breakpoint below this breakpoint, 
-   *   and above the breakpoint name specified, this handler will fire
+   * Attach handler to be executed from the breakpoint and to all breakpoints below (inclusive).
+   * This corresponds to a `max-width` media query in SCSS.
    * @param {Function} handler Handler to be executed
    */    
   max(handler) {
     this.directions.max.add(handler);
   }
   /**
-   * Attach handler to be executed from the breakpoint and to all breakpoints below.
-   * - If the browser resizes from a breakpoint above this breakpoint, 
-   *   and below the breakpoint name specified, this handler will fire
+   * Attach handler to be executed from the breakpoint and to all breakpoints above (inclusive).
+   * This corresponds to a `min-width` media query in SCSS.
    * @param {Function} handler Handler to be executed
    */  
   min(handler) {

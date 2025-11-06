@@ -3,13 +3,15 @@
 ## 0.1.1-beta.1
 
 - **js/ui/breakpoints.js**
+  - **BREAKING:** There was a mistake in the script that reversed the min/max methods (not corresponding with SCSS breakpoints min/max)
+    - This is corrected now but if you are using this you should double check the breakpoints are working correctly
   - Fix mistake in Breakpoint.remove method that was preventing it from working correctly
 - **scss/color.scss**
   - Removed default palette entry "background-gray", which was used in basic-hero
 - **scss/components/basic-hero.scss**
   - Changed config value for "background-color" from "background-gray" (removed palette entry) and added the gray background color (static) instead. Only affects you if you were using the removed color palette entry "background-gray"
 - **scss/components/card.scss**
-  - This is updated version has some **Breaking Changes** which are minor but you should double check the areas that use card to make sure it looks correct.
+  - **BREAKING:** This is updated version has some changes which are minor but you should double check the areas that use card to make sure it looks correct.
   - Overall added styles to make card more flexible (via modifiers)
     - New CSS is larger now, options have been added to omit code for larger modifiers if not needed
       - While CSS is larger (old 6kb, new 9kb, it's designed to be gzipped, gzip size is identical to original CSS 2kb for all layouts)

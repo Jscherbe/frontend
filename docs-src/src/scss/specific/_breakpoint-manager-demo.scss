@@ -1,0 +1,25 @@
+@use "vars";
+@use "ulu";
+
+
+.breakpoint-manager-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  height: 100px;
+  color: white;
+  background-color: #eee;
+}
+.breakpoint-manager-box--css-test {
+  background-color: red;
+  &:after {
+    content: "I should be blue max small (below small), and gree min medium (from medium and above)"
+  }
+  @include ulu.breakpoint-max("small") {
+    background-color: blue;
+  }
+  @include ulu.breakpoint-min("medium") {
+    background-color: green;
+  }
+}
