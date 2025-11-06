@@ -284,8 +284,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 15-89
-- **Lines (code):** 91-169
+- **Lines (comments):** 15-81
+- **Lines (code):** 83-161
 
 </details>
 
@@ -317,7 +317,6 @@ $config: (
 |transition-properties|List|(border-color, background-color, color, box-shadow, transform, outline-color, outline-width)|The properties for the card animation.|
 |clickable-card-selector|String|data-ulu-proxy-click-init|The selector for proxy-click.js to find the card and implement the clickable card script.|
 |clickable-card-interact-selector|String|&:hover, &:focus-within|The selectors for the cards being interacted with.|
-|header-margin|Dimension|0.75em|The margin for the card header.|
 |title-color|Color|null|The type color of the title.|
 |title-color-hover|Color|null|The type color of the title (if link/button) when hovered or focused|
 |title-margin|Dimension|1rem|The margin for the title.|
@@ -588,8 +587,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 171-174
-- **Lines (code):** 176-178
+- **Lines (comments):** 163-166
+- **Lines (code):** 168-170
 
 </details>
 
@@ -647,8 +646,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 189-192
-- **Lines (code):** 194-537
+- **Lines (comments):** 181-184
+- **Lines (code):** 186-529
 
 </details>
 
@@ -711,8 +710,8 @@ Applies styles to cards that are designated as 'clickable'. This can be for the 
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 610-616
-- **Lines (code):** 618-641
+- **Lines (comments):** 602-608
+- **Lines (code):** 610-633
 
 </details>
 
@@ -837,8 +836,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 180-183
-- **Lines (code):** 185-187
+- **Lines (comments):** 172-175
+- **Lines (code):** 177-179
 
 </details>
 

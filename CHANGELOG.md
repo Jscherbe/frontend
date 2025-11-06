@@ -21,6 +21,7 @@
     - New "footer-inline" modifier that moves the footer to the right of the content
     - Setup to work on all layouts
     - Add alignment modifiers for footer to override your default (start, center, end)
+  - Remove config "header-margin" and related selectors, this isn't standard part of card markup but was used in some sites that had specific card main element styles (main is divided into header/content siblings)
 - **scss/components/menu-stack** added allowance for parent links to have matching or specific stylings
   - created two new classes
     - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"
