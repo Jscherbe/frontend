@@ -12,16 +12,9 @@
 @use "../color";
 @use "../layout";
 
-// TODO 
-// - Check that all $config values are used and documented correctly
-// - Double check code
-// - Make overlay and horizontal modifiers optional to output
-// - Work on card grid and make sure everything is working correctly
-// - Make sure all colors go through color.get
-// - @todo [CHECK]
-
 /// Module Settings
 /// @type Map
+///
 /// @prop {Dimension} padding [2rem] The common padding
 /// @prop {Dimension} margin-y [3rem] Top and bottom margin for the card.
 /// @prop {Dimension} max-width [28rem] The max-width of the card.
@@ -37,11 +30,21 @@
 /// @prop {Color} border-hover-color [#278cca] The card border color when hovered or focused.
 /// @prop {CssValue} box-shadow [null] The box-shadow for the card.
 /// @prop {CssValue} box-shadow-hover [null] The box-shadow for the card when hovered or focused.
+///
+/// @prop {Boolean} transition-enabled [true] Enable or disable transition for card.
+/// @prop {Time} transition-duration [200ms] The animation duration for the card animation.
+/// @prop {CssValue} transition-timing-function [ease-in-out] The timing function for the card animation.
+/// @prop {List} transition-properties [(border-color, background-color, color, box-shadow, transform)] The properties for the card animation.
+/// @prop {String} clickable-card-selector [data-ulu-proxy-click-init] The selector for proxy-click.js to find the card and implement the clickable card script.
+/// @prop {String} clickable-card-interact-selector [&:hover, &:focus-within] The selectors for the cards being interacted with.
+///
 /// @prop {Dimension} header-margin [0.75em] The margin for the card header.
+///
 /// @prop {Color} title-color [null] The type color of the title.
 /// @prop {Color} title-color-hover [null] The type color of the title (if link/button) when hovered or focused
 /// @prop {Dimension} title-margin [0] The margin for the title.
 /// @prop {CssValue} title-font-weight [bold] The font weight for the title.
+///
 /// @prop {Boolean} image-within-border [true] If false, the image will bleed to the edges of the card, sitting under the border.
 /// @prop {Number} image-aspect-ratio [5/3] The aspect ratio of the image.
 /// @prop {Color} image-background-color [rgb(197, 197, 197)] The background color behind the image.
@@ -49,24 +52,20 @@
 /// @prop {Dimension} image-border [null] Optional border for the image.
 /// @prop {CssValue} image-transform-hover [null] Animation for the image when hovered or focused.
 /// @prop {CssValue} image-filter-hover [null] Filter for the image when hovered or focused.
+/// @prop {Boolean} image-transition-enabled [true] Enable or disable the image transition.
+/// @prop {Time} image-transition-duration [350ms] The duration of the image transition.
+/// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
+/// @prop {List} image-transition-properties [(transform, filter, background-color)] The properties for the image transitions.
 /// @prop {Number} image-fit-padding [1rem] Padding on inside of image when using image fit modifier
 /// @prop {CssValue} image-fit-filter [drop-shadow(0 0px 8px rgba(0, 0, 0, 0.2))] Filter to use on image when using image fit modifier
 /// @prop {List} image-icon-max-width [10rem] Max width for image when using the modifier on the .card__image--icon
+///
 /// @prop {Dimension} footer-padding-y [0.25rem] The top and bottom padding for the footer.
 /// @prop {Dimension} footer-min-height [2.5rem] The min height for the footer
 /// @prop {Dimension} footer-justify [flex-end] Flex alignment of footer items (on end by default)
 /// @prop {Dimension} footer-inline-padding [0.5rem] The padding for the footer when using the 'footer-inline' modifier.
 /// @prop {Color} footer-background-color [#dedede] The background color of the footer.
-/// @prop {String} clickable-card-selector [data-ulu-proxy-click-init] The selector for proxy-click.js to find the card and implement the clickable card script.
-/// @prop {String} clickable-card-interact-selector [&:hover, &:focus-within] The selectors for the cards being interacted with.
-/// @prop {Boolean} transition-enabled [true] Enable or disable transition for card.
-/// @prop {CssValue} transition-timing-function [ease-in-out] The timing function for the card animation.
-/// @prop {Time} transition-duration [200ms] The animation duration for the card animation.
-/// @prop {List} transition-properties [(border-color, background-color, color, box-shadow, transform)] The properties for the card animation.
-/// @prop {Boolean} image-transition-enabled [true] Enable or disable the image transition.
-/// @prop {Time} image-transition-duration [350ms] The duration of the image transition.
-/// @prop {CssValue} image-transition-timing-function [ease-in-out] The timing function for the image transition.
-/// @prop {List} image-transition-properties [(transform, filter, background-color)] The properties for the image transitions.
+///
 /// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
 /// @prop {Unit} horizontal-min-height [10rem] Minimum height when horizontal
 /// @prop {Unit} horizontal-max-width [40rem] Maximum width when horizontal
@@ -77,6 +76,7 @@
 /// @prop {CssUnit} aside-rule-width [1px] Size of rule
 /// @prop {CssUnit} aside-rule-color ["rule-light"] Color of rule
 /// @prop {CssUnit} aside-background-color [transparent] Color of aside background color
+///
 /// @prop {Number} overlay-aspect-ratio [4/3] The aspect ratio of the card when using the 'overlay' modifier.
 /// @prop {Color} overlay-color [white] The type color of the card when using card--overlay.
 /// @prop {Color} overlay-title-color [null] The color of the title when using the 'overlay' modifier.
@@ -88,80 +88,87 @@
 /// @prop {Dimension} overlay-shading-height [4rem] The height of the gradient shading on the overlay.
 /// @prop {Dimension} overlay-body-padding-y [1rem] The top and bottom padding of the body content when using the 'overlay' modifier.
 
-/// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
-/// @prop {Unit} horizontal-min-height [10rem] Minimum height when horizontal
-/// @prop {Unit} horizontal-max-width [40rem] Maximum width when horizontal
-/// @prop {Boolean} aside-rule [false] Whether or not to have a rule separating body and aside
-/// @prop {CssUnit} aside-rule-width [1px] Size of rule
-/// @prop {CssUnit} aside-rule-color ["rule-light"] Color of rule
-/// @prop {CssUnit} aside-background-color [transparent] Color of aside background color
-
 $config: (
-  "background-color" : white,
-  "background-color-hover" : rgb(242, 244, 246),
-  "body-min-height" : 10rem,
-  "border-width" : 1px,
-  "border-color" : #ccc,
-  "border-hover-width" : 2px,
-  "border-hover-color" : #278cca,
-  "border-radius" : 5px,
-  "box-shadow" : null,
-  "box-shadow-hover" : null,
-  "clickable-card-selector" : "[data-ulu-proxy-click-init]",
-  "clickable-card-interact-selector" : "&:hover, &:focus-within",
-  "color" : "type",
-  "color-hover" : null,
-  "footer-padding-y" : 0.25rem,
-  "footer-min-height" : 2.5rem,
-  "footer-justify" : flex-end,
-  "footer-inline-padding" : 0.5rem,
-  "footer-background-color" : #dedede,
-  "horizontal-breakpoint" : "small",
-  "horizontal-image-width" : min(33%, 20rem),
-  "horizontal-min-height" : 20rem,
-  "horizontal-max-width" : 80rem,
-  "horizontal-main-max-width" : 40rem,
-  "horizontal-aside-width" : 40%,
-  "header-margin" : 0.75em,
-  "image-within-border" : true,
+  // General
+  "padding": 2rem,
+  "margin-y": 3rem,
+  "max-width": 28rem,
+  "body-min-height": 10rem,
+  "color": "type",
+  "color-hover": null,
+  "background-color": white,
+  "background-color-hover": rgb(242, 244, 246),
+  "border-radius": 5px,
+  "border-width": 1px,
+  "border-color": #ccc,
+  "border-hover-width": 2px,
+  "border-hover-color": #278cca,
+  "box-shadow": null,
+  "box-shadow-hover": null,
+
+  // Transitions & Interactivity
+  "transition-enabled": true,
+  "transition-duration": 200ms,
+  "transition-timing-function": ease-in-out,
+  "transition-properties": (border-color, background-color, color, box-shadow, transform, outline-color, outline-width),
+  "clickable-card-selector": "[data-ulu-proxy-click-init]",
+  "clickable-card-interact-selector": "&:hover, &:focus-within",
+
+  // Header
+  "header-margin": 0.75em,
+
+  // Title
+  "title-color": null,
+  "title-color-hover": null,
+  "title-margin": 1rem,
+  "title-font-weight": bold,
+
+  // Image
+  "image-within-border": true,
   "image-aspect-ratio": list.slash(5, 3),
-  "image-background-color" : rgb(238, 238, 238),
-  "image-border" : null, // For when you have a margin
-  "image-filter-hover" : null,
-  "image-margin" : null,
-  "image-icon-max-width" : 8rem,
-  "image-transform-hover" : null,
-  "image-transition-duration" :    350ms,
-  "image-transition-enabled" : true,
-  "image-transition-properties" : (transform, filter, background-color),
-  "image-transition-timing-function" : ease-in-out,
-  "image-fit-padding" : 1rem,
-  "image-fit-filter" : drop-shadow(0 0px 8px rgba(0, 0, 0, 0.3)),
-  "margin-y" : 3rem,
-  "max-width" : 28rem,
-  "padding" : 2rem,
-  "title-color" : null,
-  "title-color-hover" : null,
-  "title-margin" : 1rem,
-  "title-font-weight" : bold,
-  "transition-enabled":      true,
-  "transition-timing-function" : ease-in-out,
-  "transition-duration" :    200ms,
-  "transition-properties" :  (border-color, background-color, color, box-shadow, transform, outline-color, outline-width),
+  "image-background-color": rgb(238, 238, 238),
+  "image-margin": null,
+  "image-border": null, // For when you have a margin
+  "image-transform-hover": null,
+  "image-filter-hover": null,
+  "image-transition-enabled": true,
+  "image-transition-duration": 350ms,
+  "image-transition-timing-function": ease-in-out,
+  "image-transition-properties": (transform, filter, background-color),
+  "image-fit-padding": 1rem,
+  "image-fit-filter": drop-shadow(0 0px 8px rgba(0, 0, 0, 0.3)),
+  "image-icon-max-width": 8rem,
+
+  // Footer
+  "footer-padding-y": 0.25rem,
+  "footer-min-height": 2.5rem,
+  "footer-justify": flex-end,
+  "footer-inline-padding": 0.5rem,
+  "footer-background-color": #dedede,
+
+  // Horizontal
+  "horizontal-breakpoint": "small",
+  "horizontal-min-height": 20rem,
+  "horizontal-max-width": 80rem,
+  "horizontal-image-width": min(33%, 20rem),
+  "horizontal-main-max-width": 40rem,
+  "horizontal-aside-width": 40%,
+  "aside-rule": true,
+  "aside-rule-width": 1px,
+  "aside-rule-color": "rule-light",
+  "aside-background-color": null,
+
+  // Overlay
   "overlay-aspect-ratio": list.slash(4, 3),
-  "overlay-color" : white,
-  "overlay-title-color" : null,
-  "overlay-title-color-hover" : rgb(79, 175, 230),
+  "overlay-color": white,
+  "overlay-title-color": null,
+  "overlay-title-color-hover": rgb(79, 175, 230),
   "overlay-background-color": rgba(0, 0, 0, 0.6),
-  "overlay-background-color-hover" : red,
+  "overlay-background-color-hover": red,
   "overlay-footer-background-color": null,
   "overlay-shading": true,
   "overlay-shading-height": 4rem,
-  "overlay-body-padding-y": 1rem,
-  "aside-rule" : true,
-  "aside-rule-width" : 1px,
-  "aside-background-color" : null,
-  "aside-rule-color": "rule-light",
+  "overlay-body-padding-y": 1rem
 ) !default;
   
   /// Change modules $config
@@ -569,21 +576,10 @@ $config: (
   #{ $prefix }__aside {
     flex: 0 0 get("horizontal-aside-width");
     height: 100%;
-    @if(get("aside-rule")) {
+    @if (get("aside-rule")) {
       $aside-padding-double: get("padding") * 2;
       background-size: get("aside-rule-width") calc(100% - $aside-padding-double);
       background-position: left center;
-    }
-  }
-  @if(get("aside-rule")) {
-    #{ $prefix }__aside::after {
-      content: "";
-      position: absolute;
-      top: get("padding");
-      left: calc(0rem - get("aside-rule-width") / 2);
-      height: calc(100% - get("padding") - get("padding"));
-      width: get("aside-rule-width");
-      background-color: get("aside-rule-color");
     }
   }
 
