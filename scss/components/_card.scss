@@ -216,6 +216,9 @@ $config: (
     flex-grow: 1;
     min-height: get("body-min-height");
   }
+  #{ $prefix }__main {
+    flex-grow: 1;
+  }
   #{ $prefix }__footer {
     grid-column: 1;
     display: flex;
