@@ -2,6 +2,8 @@
 
 ## 0.1.1-beta.1
 
+- **js/ui/breakpoints.js**
+  - Fix mistake in Breakpoint.remove method that was preventing it from working correctly
 - **scss/color.scss**
   - Removed default palette entry "background-gray", which was used in basic-hero
 - **scss/components/basic-hero.scss**
@@ -31,9 +33,7 @@
     - add new config options for plain modifier and parent 
 
 - **scss/element** add base option to vertically offset close icon to properly center font awesome icons
-
 - **scss/components/button** add option to vertically offset close icon to properly center font awesome icons with fallback to element
-
 - **scss/components/modal** add option to vertically offset close icon to properly center font awesome icons with fallback to element
 
 ## 0.1.0-beta.123

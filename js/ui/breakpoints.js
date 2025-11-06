@@ -277,7 +277,11 @@ class Breakpoint {
    */      
   remove(handler, direction) {
     const directions = direction ? [ direction ] : ['max', 'min', 'only'];
-    directions.forEach(d => d.remove(handler));
+    directions.forEach(d => {
+      if (this.directions[d]) {
+        this.directions[d].remove(handler);
+      }
+    });
   }
   
   log(...msg) {
