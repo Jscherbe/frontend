@@ -15,7 +15,7 @@ This demo showcases the features of the `BreakpointManager`. Resize your browser
 
 ### 1. `min` and `max` handlers
 
-This box will be green on "medium" and larger breakpoints (`medium.min`) and red on "small" and smaller (`small.max`).
+This box demonstrates using `min()` and `max()` on the same breakpoint. It will be **red** when the breakpoint is *below* "medium" (testing `medium.max()`) and **green** when it is "medium" *or larger* (testing `medium.min()`). This creates a single, clean switch at the "medium" breakpoint.
 
 <div id="test-box-1" class="breakpoint-manager-box"></div>
 
@@ -71,10 +71,10 @@ Below is the code used to create this demo, note it is accessing ulu and the und
     const box2 = document.getElementById("test-box-2");
     const box3 = document.getElementById("test-box-3");
     const box4 = document.getElementById("test-box-4");
+    const box5 = document.getElementById("test-box-5");
     const removeBtn = document.getElementById("remove-handler-btn");
 
     // --- Initialize text ---
-    infoBreakpoint.textContent = breakpoint.active;
     infoDirection.textContent = '...';
     box2.textContent = 'I am not "medium"';
     box3.textContent = '"large.only" is OFF';
@@ -82,22 +82,39 @@ Below is the code used to create this demo, note it is accessing ulu and the und
 
 
     // --- General Info ---
-    breakpoint.onChange(() => {
-      infoBreakpoint.textContent = breakpoint.active;
+    const updateGeneralInfo = () => {
+      const activeName = breakpoint.active;
+      const activeIndex = breakpoint.activeIndex;
+      const nextName = breakpoint.order[activeIndex + 1];
+
+      let rangeText = "";
+      if (activeName === 'none') {
+        rangeText = `(up to ${nextName})`;
+      } else if (nextName) {
+        rangeText = `(from ${activeName} up to ${nextName})`;
+      } else {
+        rangeText = `(${activeName} and up)`;
+      }
+
+      infoBreakpoint.innerHTML = `${activeName} <span style="font-weight: normal; color: #555;">${rangeText}</span>`;
       infoDirection.textContent = breakpoint.resizeDirection || '...';
-    });
+    };
+
+    breakpoint.onChange(updateGeneralInfo);
+    updateGeneralInfo(); // Set initial state
 
     // --- Test 1: min/max ---
+    // Using 'medium' for both handlers creates a clean switch.
+    breakpoint.at("medium").max({
+      on: () => {
+        box1.style.backgroundColor = "red";
+        box1.textContent = 'Breakpoint is below "medium".';
+      }
+    });
     breakpoint.at("medium").min({
       on: () => {
         box1.style.backgroundColor = "green";
         box1.textContent = 'Breakpoint is "medium" or larger.';
-      }
-    });
-    breakpoint.at("small").max({
-      on: () => {
-        box1.style.backgroundColor = "red";
-        box1.textContent = 'Breakpoint is "small" or smaller.';
       }
     });
 
@@ -145,6 +162,36 @@ Below is the code used to create this demo, note it is accessing ulu and the und
       box4.style.backgroundColor = '#eee';
       removeBtn.disabled = true;
     }, { once: true });
+
+    // --- Test 5: SCSS/JS Parity ---
+    // Set the default state, which applies to the 'small' breakpoint
+    box5.style.backgroundColor = 'red';
+    box5.textContent = 'JS: small';
+
+    // Handle the 'none' state by matching the SCSS `max("small")`
+    breakpoint.at("small").max({
+      on: () => {
+        box5.style.backgroundColor = 'blue';
+        box5.textContent = 'JS: none';
+      },
+      off: () => {
+        box5.style.backgroundColor = 'red';
+        box5.textContent = 'JS: small';
+      }
+    });
+
+    // Handle the 'medium' and up state by matching the SCSS `min("medium")`
+    breakpoint.at("medium").min({
+      on: () => {
+        box5.style.backgroundColor = 'green';
+        box5.textContent = 'JS: medium+';
+      },
+      off: () => {
+        // When turning off, the color should revert to red, as 'small' is the next state down.
+        box5.style.backgroundColor = 'red';
+        box5.textContent = 'JS: small';
+      }
+    });
   });
 
 </script>
@@ -158,6 +205,3 @@ Below is the code used to create this demo, note it is accessing ulu and the und
 ```
 
 {{ scriptContent }}
-
-
-

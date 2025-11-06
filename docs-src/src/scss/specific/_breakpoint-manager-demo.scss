@@ -10,6 +10,9 @@
   height: 100px;
   color: white;
   background-color: #eee;
+  & + & {
+    margin-top: 1rem;
+  }
 }
 .breakpoint-manager-box--css-test {
   background-color: red;

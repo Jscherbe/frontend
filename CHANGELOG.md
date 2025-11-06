@@ -3,7 +3,10 @@
 ## 0.1.1-beta.1
 
 - **js/ui/breakpoints.js**
-  - **BREAKING:** There was a mistake in the script that reversed the min/max methods (not corresponding with SCSS breakpoints min/max)
+  - **BREAKING:** There was a mistake in the script that made it's API not match the scss breakpoint API, these have been corrected 
+    - Reversed the min/max methods (not corresponding with SCSS breakpoints min/max)
+    - SCSS was on the lower edge of a breakpoint while javascript was using the top edge
+      - For example scss breakpoint-max("small") would be below small and breakpoint-min("small") would be from small and up. While in JS .max("small") would be from the small breakpoint and below which is incorrect. These now match, but if you are using this you likely have your breakpoints offset in the javascript side (so that it worked correctly) and will need to adjust to the correct breakpoint (which should match how you use breakpoints in SCSS)
     - This is corrected now but if you are using this you should double check the breakpoints are working correctly
   - Fix mistake in Breakpoint.remove method that was preventing it from working correctly
 - **scss/color.scss**

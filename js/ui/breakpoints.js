@@ -110,28 +110,23 @@ export class BreakpointManager {
     const index = this.order.indexOf(name);
     this.active = name;
     this.activeIndex = index;
-    const activeBreakpoint = this.at(this.active);
-    // Get arrays of breakpoints based on the order array
-    const mapBreakpoints = n => this.at(n);
-    // From breakpoint to end (highest)
-    const min = this.order.slice(index).map(mapBreakpoints);
-    const notMin = this.order.slice(0, index).map(mapBreakpoints);
-    // From start up to this breakpoint
-    const max = this.order.slice(0, index + 1).map(mapBreakpoints);
-    const notMax = this.order.slice(index + 1).map(mapBreakpoints);
-    const notOnly = this.order.slice().map(mapBreakpoints);
-    notOnly.splice(index, 1);
-    
-    log(this, 'max:', max.map(b => b.name).join());
-    log(this, 'min:', min.map(b => b.name).join());
-    
-    max.forEach(b => b._setDirection('max', true));
-    min.forEach(b => b._setDirection('min', true));
-    activeBreakpoint._setDirection('only', true);
+    // const activeBreakpoint = this.at(this.active);
 
-    notMax.forEach(b => b._setDirection('max', false));
-    notMin.forEach(b => b._setDirection('min', false));
-    notOnly.forEach(b => b._setDirection('only', false));
+    // For each breakpoint, set its directional status based on the active index.
+    // This ensures the JS methods match the SCSS mixin behavior.
+    this.order.forEach((bpName, bpIndex) => {
+      const bp = this.breakpoints[bpName];
+      const activeIndex = this.activeIndex;
+
+      // at(NAME).min() is active if active breakpoint is >= NAME.
+      bp._setDirection('min', bpIndex <= activeIndex);
+
+      // at(NAME).max() is active if active breakpoint is < NAME.
+      bp._setDirection('max', bpIndex > activeIndex);
+
+      // at(NAME).only() is active if active breakpoint is == NAME.
+      bp._setDirection('only', bpIndex === activeIndex);
+    });
 
     // Set direction (extra info if needed)
     if (this.previousIndex !== null) {
