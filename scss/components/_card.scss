@@ -14,7 +14,6 @@
 
 /// Module Settings
 /// @type Map
-///
 /// @prop {Dimension} padding [2rem] The common padding
 /// @prop {Dimension} margin-y [3rem] Top and bottom margin for the card.
 /// @prop {Dimension} max-width [28rem] The max-width of the card.
@@ -196,13 +195,10 @@ $config: (
     color: color.get(get("color"));
     background-color: color.get(get("background-color"));
     border-radius: get("border-radius");
-    border: get("border-width") solid get("border-color");
+    border: get("border-width") solid color.get(get("border-color"));
     box-shadow: get("box-shadow");
     outline: get("border-hover-width") solid transparent;
     outline-offset: $border-width-negative;
-    @if (get("aside-rule")) {
-      --ulu-card-aside-rule: #{ get("aside-rule-width") } solid #{ color.get(get("aside-rule-color")) };
-    }
   }
 
   @if (get("transition-enabled")) {
@@ -465,8 +461,8 @@ $config: (
       grid-row: 2 / 3;
       background-color: color.get(
         utils.fallback(
-          get("overlay-footer-background-color"), 
-          get("overlay-background-color")
+          color.get(get("overlay-footer-background-color")), 
+          color.get(get("overlay-background-color"))
         )
       );
     }
@@ -480,7 +476,7 @@ $config: (
     }
     #{ $prefix }__title {
       color: color.get(
-        utils.fallback(get("overlay-title-color"), get("overlay-color"))
+        utils.fallback(color.get(get("overlay-title-color")), color.get(get("overlay-color")))
       );
     }
     @if (get("overlay-title-color-hover")) {

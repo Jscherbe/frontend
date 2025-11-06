@@ -284,8 +284,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 15-81
-- **Lines (code):** 83-161
+- **Lines (comments):** 15-80
+- **Lines (code):** 82-160
 
 </details>
 
@@ -587,8 +587,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 163-166
-- **Lines (code):** 168-170
+- **Lines (comments):** 162-165
+- **Lines (code):** 167-169
 
 </details>
 
@@ -646,8 +646,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 181-184
-- **Lines (code):** 186-529
+- **Lines (comments):** 180-183
+- **Lines (code):** 185-525
 
 </details>
 
@@ -710,8 +710,8 @@ Applies styles to cards that are designated as 'clickable'. This can be for the 
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 602-608
-- **Lines (code):** 610-633
+- **Lines (comments):** 598-604
+- **Lines (code):** 606-629
 
 </details>
 
@@ -836,8 +836,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 172-175
-- **Lines (code):** 177-179
+- **Lines (comments):** 171-174
+- **Lines (code):** 176-178
 
 </details>
 
