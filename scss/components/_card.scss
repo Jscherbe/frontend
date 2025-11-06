@@ -114,9 +114,6 @@ $config: (
   "clickable-card-selector": "[data-ulu-proxy-click-init]",
   "clickable-card-interact-selector": "&:hover, &:focus-within",
 
-  // Header
-  "header-margin": 0.75em,
-
   // Title
   "title-color": null,
   "title-color-hover": null,
@@ -275,14 +272,11 @@ $config: (
     }
   }
 
-  #{ $prefix }__header + #{ $prefix }__content {
-    margin-top: get("header-margin");
-  }
-
   #{ $prefix }__image {
     order: -1;
     grid-column: 1 / -1;
     overflow: hidden; // For image corners with border-radius
+
     @if (not get("image-within-border")) {
       margin: $border-width-negative $border-width-negative 0 $border-width-negative;
     }

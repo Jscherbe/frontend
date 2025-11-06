@@ -221,9 +221,6 @@ $config: (
   "clickable-card-selector": "[data-ulu-proxy-click-init]",
   "clickable-card-interact-selector": "&:hover, &:focus-within",
 
-  // Header
-  "header-margin": 0.75em,
-
   // Title
   "title-color": null,
   "title-color-hover": null,
@@ -288,7 +285,7 @@ $config: (
 - **Group:** card
 - **Type:** variable
 - **Lines (comments):** 15-89
-- **Lines (code):** 91-172
+- **Lines (code):** 91-169
 
 </details>
 
@@ -591,8 +588,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 174-177
-- **Lines (code):** 179-181
+- **Lines (comments):** 171-174
+- **Lines (code):** 176-178
 
 </details>
 
@@ -650,8 +647,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 192-195
-- **Lines (code):** 197-543
+- **Lines (comments):** 189-192
+- **Lines (code):** 194-537
 
 </details>
 
@@ -714,8 +711,8 @@ Applies styles to cards that are designated as 'clickable'. This can be for the 
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 616-622
-- **Lines (code):** 624-647
+- **Lines (comments):** 610-616
+- **Lines (code):** 618-641
 
 </details>
 
@@ -840,8 +837,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 183-186
-- **Lines (code):** 188-190
+- **Lines (comments):** 180-183
+- **Lines (code):** 185-187
 
 </details>
 
