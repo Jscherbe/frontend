@@ -5,7 +5,6 @@ export * as modalBuilder from "./modal-builder.js";
 export * as dialog from "./dialog.js";
 export * as flipcard from "./flipcard.js";
 export * as grid from "./grid.js";
-export * as index from "./index.js";
 export * as overflowScrollerPager from "./overflow-scroller-pager.js";
 export * as overflowScroller from "./overflow-scroller.js";
 export * as popover from "./popover.js";

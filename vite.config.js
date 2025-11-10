@@ -7,17 +7,27 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   build: {
-    // target: "es2015",
-    // manifest: true,
-    minify: true,
-    cssMinify: true,
-    cssCodeSplit: false,
     outDir: "dist",
+    lib: {
+      entry: resolve(__dirname, 'js/index.js'),
+      name: 'ULU',
+      formats: ['es', 'umd'],
+      fileName: (format) => `ulu-frontend.${format}.js`,
+    },
     rollupOptions: {
-      input: "index.js",
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ['@floating-ui/dom', '@ulu/utils', 'ally.js', 'aria-tablist', 'swipe-listener'],
       output: {
-        entryFileNames: `ulu-frontend.min.js`,
-        assetFileNames: `ulu-frontend.min.[ext]`,
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          '@floating-ui/dom': 'FloatingUIDOM',
+          '@ulu/utils': 'ULUUtils',
+          'ally.js': 'ally',
+          'aria-tablist': 'AriaTablist',
+          'swipe-listener': 'SwipeListener'
+        },
       },
     },
   },

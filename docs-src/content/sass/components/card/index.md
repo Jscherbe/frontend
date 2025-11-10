@@ -251,6 +251,8 @@ $config: (
   "footer-background-color": #dedede,
 
   // Horizontal
+  "horizontal-enabled" : false,
+  "horizontal-persist-enabled" : false,
   "horizontal-breakpoint": "small",
   "horizontal-min-height": 20rem,
   "horizontal-max-width": 80rem,
@@ -263,6 +265,7 @@ $config: (
   "aside-background-color": null,
 
   // Overlay
+  "overlay-enabled" : false,
   "overlay-aspect-ratio": list.slash(4, 3),
   "overlay-color": white,
   "overlay-title-color": null,
@@ -284,8 +287,8 @@ $config: (
 - **File:** _card.scss
 - **Group:** card
 - **Type:** variable
-- **Lines (comments):** 15-80
-- **Lines (code):** 82-160
+- **Lines (comments):** 15-83
+- **Lines (code):** 85-166
 
 </details>
 
@@ -340,6 +343,8 @@ $config: (
 |footer-justify|CssValue|flex-end|Flex alignment of footer items (on end by default)|
 |footer-inline-padding|Dimension|0.5rem|The padding for the footer when using the 'footer-inline' modifier.|
 |footer-background-color|Color|#dedede|The background color of the footer.|
+|horizontal-enabled|String|false|Enable the output of horizontal related layout modifiers|
+|horizontal-persist-enabled|String|false|Enable the output of horizontal-persist related layout modifiers|
 |horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|
 |horizontal-min-height|Dimension|20rem|Minimum height when horizontal|
 |horizontal-max-width|Dimension|80rem|Maximum width when horizontal|
@@ -350,6 +355,7 @@ $config: (
 |aside-rule-width|Dimension|1px|Size of rule|
 |aside-rule-color|String|"rule-light"|Color of rule|
 |aside-background-color|Color|null|Color of aside background color|
+|overlay-enabled|Color|false|Enable the output of overlay modifier styles|
 |overlay-aspect-ratio|Number|4/3|The aspect ratio of the card when using the 'overlay' modifier.|
 |overlay-color|Color|white|The type color of the card when using card--overlay.|
 |overlay-title-color|Color|null|The color of the title when using the 'overlay' modifier.|
@@ -587,8 +593,8 @@ Change modules $config
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 162-165
-- **Lines (code):** 167-169
+- **Lines (comments):** 168-171
+- **Lines (code):** 173-175
 
 </details>
 
@@ -646,8 +652,8 @@ Prints component styles
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 180-183
-- **Lines (code):** 185-525
+- **Lines (comments):** 186-189
+- **Lines (code):** 191-535
 
 </details>
 
@@ -710,8 +716,8 @@ Applies styles to cards that are designated as 'clickable'. This can be for the 
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 598-604
-- **Lines (code):** 606-629
+- **Lines (comments):** 608-614
+- **Lines (code):** 616-638
 
 </details>
 
@@ -836,8 +842,8 @@ Get a config option
 - **File:** _card.scss
 - **Group:** card
 - **Type:** function
-- **Lines (comments):** 171-174
-- **Lines (code):** 176-178
+- **Lines (comments):** 177-180
+- **Lines (code):** 182-184
 
 </details>
 

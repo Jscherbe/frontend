@@ -35,7 +35,7 @@ export class OverflowScroller {
     if (!hasRequiredProps(requiredElements)) {
       logError(this, 'Missing a required Element');
     }
-    console.log(elements)
+    // console.log(elements)
     this.elements = {
       ...elements,
       ...this.createControls(elements.controls)

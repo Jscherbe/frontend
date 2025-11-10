@@ -1,0 +1,24 @@
+{
+  "include": ["./lib/**/*"],
+  "exclude" : [
+    "**/*.stories.js",
+    "**/tests/",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "rootDir": "./lib",
+    "skipLibCheck" : true,
+    "allowJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/types",
+    "declarationMap": true,
+    "jsx": "preserve",            
+    "module": "ESNext",           
+    "target": "ESNext",           
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,      
+    "isolatedModules": true,      
+    "strict": true                
+  }
+}

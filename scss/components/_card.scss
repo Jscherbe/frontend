@@ -58,6 +58,8 @@
 /// @prop {CssValue} footer-justify [flex-end] Flex alignment of footer items (on end by default)
 /// @prop {Dimension} footer-inline-padding [0.5rem] The padding for the footer when using the 'footer-inline' modifier.
 /// @prop {Color} footer-background-color [#dedede] The background color of the footer.
+/// @prop {String} horizontal-enabled [false] Enable the output of horizontal related layout modifiers
+/// @prop {String} horizontal-persist-enabled [false] Enable the output of horizontal-persist related layout modifiers
 /// @prop {String} horizontal-breakpoint [small] The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.
 /// @prop {Dimension} horizontal-min-height [20rem] Minimum height when horizontal
 /// @prop {Dimension} horizontal-max-width [80rem] Maximum width when horizontal
@@ -68,6 +70,7 @@
 /// @prop {Dimension} aside-rule-width [1px] Size of rule
 /// @prop {String} aside-rule-color ["rule-light"] Color of rule
 /// @prop {Color} aside-background-color [null] Color of aside background color
+/// @prop {Color} overlay-enabled [false] Enable the output of overlay modifier styles
 /// @prop {Number} overlay-aspect-ratio [4/3] The aspect ratio of the card when using the 'overlay' modifier.
 /// @prop {Color} overlay-color [white] The type color of the card when using card--overlay.
 /// @prop {Color} overlay-title-color [null] The color of the title when using the 'overlay' modifier.
@@ -135,6 +138,8 @@ $config: (
   "footer-background-color": #dedede,
 
   // Horizontal
+  "horizontal-enabled" : false,
+  "horizontal-persist-enabled" : false,
   "horizontal-breakpoint": "small",
   "horizontal-min-height": 20rem,
   "horizontal-max-width": 80rem,
@@ -147,6 +152,7 @@ $config: (
   "aside-background-color": null,
 
   // Overlay
+  "overlay-enabled" : false,
   "overlay-aspect-ratio": list.slash(4, 3),
   "overlay-color": white,
   "overlay-title-color": null,
@@ -399,7 +405,7 @@ $config: (
   }
 
   // Horizontal layout
-  @if (get("horizontal-breakpoint")) {
+  @if (get("horizontal-enabled")) {
     @include breakpoint.min(get("horizontal-breakpoint")) {
       #{ $prefix }--horizontal {
         @include -horizontal-styles();
@@ -412,114 +418,118 @@ $config: (
       }
     }
   }
+
   // Note: Relying on GZIP and identical code for the duplication below
   // there's really no way to avoid duplication vs complexity for this
-  #{ $prefix }--horizontal-persist {
-    @include -horizontal-styles();
-  }
-  #{ $prefix }--horizontal-persist#{ $prefix }--horizontal-center {
-    @include -horizontal-center-styles();
-  }
-  #{ $prefix }--horizontal-persist#{ $prefix }--footer-inline {
-    @include -horizontal-footer-inline-styles();
+  @if (get("horizontal-persist-enabled")) {
+    #{ $prefix }--horizontal-persist {
+      @include -horizontal-styles();
+    }
+    #{ $prefix }--horizontal-persist#{ $prefix }--horizontal-center {
+      @include -horizontal-center-styles();
+    }
+    #{ $prefix }--horizontal-persist#{ $prefix }--footer-inline {
+      @include -horizontal-footer-inline-styles();
+    }
   }
 
   // Overlay layout (image under content)
-  #{ $prefix }--overlay {
-    // Explanation of aspect-ratio combined with grid-template-rows:
-    // - Solves the box growing if needed
-    // - First use aspect ration (which grid is based on) but allow the first row 
-    // - to grow to min-content if needed (which makes it so the card grows instead 
-    // - of overflowing (ie. if you were using "auto auto" or "1fr auto"
-    grid-template-rows: minmax(min-content, 1fr) auto;
-    aspect-ratio: get("overlay-aspect-ratio");
+  @if (get("overlay-enabled")) {
+    #{ $prefix }--overlay {
+      // Explanation of aspect-ratio combined with grid-template-rows:
+      // - Solves the box growing if needed
+      // - First use aspect ration (which grid is based on) but allow the first row 
+      // - to grow to min-content if needed (which makes it so the card grows instead 
+      // - of overflowing (ie. if you were using "auto auto" or "1fr auto"
+      grid-template-rows: minmax(min-content, 1fr) auto;
+      aspect-ratio: get("overlay-aspect-ratio");
 
-    #{ $prefix }__body {
-      grid-row: 1 / 2;
-      align-self: end;
-      min-height: 0;
-      color: color.get(get("overlay-color"));
-      background-color: color.get(get("overlay-background-color"));
-      padding-top: get("overlay-body-padding-y");
-      padding-bottom: get("overlay-body-padding-y");
-      
-      @if (get("overlay-shading")) {
-        padding-top: calc(get("overlay-body-padding-y") + get("overlay-shading-height"));
-        @include -overlay-shading-gradient(
-          color.get(get("overlay-background-color"))
+      #{ $prefix }__body {
+        grid-row: 1 / 2;
+        align-self: end;
+        min-height: 0;
+        color: color.get(get("overlay-color"));
+        background-color: color.get(get("overlay-background-color"));
+        padding-top: get("overlay-body-padding-y");
+        padding-bottom: get("overlay-body-padding-y");
+        
+        @if (get("overlay-shading")) {
+          padding-top: calc(get("overlay-body-padding-y") + get("overlay-shading-height"));
+          @include -overlay-shading-gradient(
+            color.get(get("overlay-background-color"))
+          );
+        }
+        &:not(:has(~ #{ $prefix }__footer)) {
+          border-bottom-left-radius: get("border-radius");
+          border-bottom-right-radius: get("border-radius");
+        }
+      }
+      #{ $prefix }__aside { 
+        background-color: transparent;
+      }
+      #{ $prefix }__footer {
+        grid-row: 2 / 3;
+        background-color: color.get(
+          utils.fallback(
+            color.get(get("overlay-footer-background-color")), 
+            color.get(get("overlay-background-color"))
+          )
         );
       }
-      &:not(:has(~ #{ $prefix }__footer)) {
-        border-bottom-left-radius: get("border-radius");
-        border-bottom-right-radius: get("border-radius");
+      #{ $prefix }__body,
+      #{ $prefix }__footer {
+        color: color.get(get("overlay-color"));
+        &:last-child {
+          border-bottom-left-radius: get("border-radius");
+          border-bottom-right-radius: get("border-radius");
+        }
       }
-    }
-    #{ $prefix }__aside { 
-      background-color: transparent;
-    }
-    #{ $prefix }__footer {
-      grid-row: 2 / 3;
-      background-color: color.get(
-        utils.fallback(
-          color.get(get("overlay-footer-background-color")), 
-          color.get(get("overlay-background-color"))
-        )
-      );
-    }
-    #{ $prefix }__body,
-    #{ $prefix }__footer {
-      color: color.get(get("overlay-color"));
-      &:last-child {
-        border-bottom-left-radius: get("border-radius");
-        border-bottom-right-radius: get("border-radius");
+      #{ $prefix }__title {
+        color: color.get(
+          utils.fallback(color.get(get("overlay-title-color")), color.get(get("overlay-color")))
+        );
       }
-    }
-    #{ $prefix }__title {
-      color: color.get(
-        utils.fallback(color.get(get("overlay-title-color")), color.get(get("overlay-color")))
-      );
-    }
-    @if (get("overlay-title-color-hover")) {
-      #{ $prefix }__title-link {
-        &:hover,
-        &:focus {
-          color: color.get(get("overlay-title-color-hover"));
+      @if (get("overlay-title-color-hover")) {
+        #{ $prefix }__title-link {
+          &:hover,
+          &:focus {
+            color: color.get(get("overlay-title-color-hover"));
+          }
+        }
+      }
+      #{ $prefix }__image {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        border-radius: get("border-radius");
+        aspect-ratio: auto;
+        img,
+        #{ $prefix}__image-media {
+          height: 100%;
+          object-fit: cover;
+          border: 0;
         }
       }
     }
-    #{ $prefix }__image {
-      grid-column: 1 / -1;
-      grid-row: 1 / -1;
-      border-radius: get("border-radius");
-      aspect-ratio: auto;
-      img,
-      #{ $prefix}__image-media {
-        height: 100%;
-        object-fit: cover;
-        border: 0;
+    @include when-clickable($hover: true, $extra-selector: "#{ $prefix }--overlay") {
+      #{ $prefix }__body,
+      #{ $prefix }__footer {
+        background-color: color.get(get("overlay-background-color-hover"));
+      }
+      @if (get("overlay-shading")) {
+        #{ $prefix }__body {
+          @include -overlay-shading-gradient(
+            color.get(get("overlay-background-color-hover"))
+          );
+        }
       }
     }
-    
-  }
-  @include when-clickable($hover: true, $extra-selector: "#{ $prefix }--overlay") {
-    #{ $prefix }__body,
-    #{ $prefix }__footer {
-      background-color: color.get(get("overlay-background-color-hover"));
-    }
-    @if (get("overlay-shading")) {
-      #{ $prefix }__body {
-        @include -overlay-shading-gradient(
-          color.get(get("overlay-background-color-hover"))
-        );
+    #{ $prefix }--overlay#{ $prefix }--footer-inline {
+      grid-template-columns: 1fr auto;
+      #{ $prefix }__footer {
+        grid-column: 2;
+        grid-row: 1 / -1;
+        border-radius: 0 get("border-radius") get("border-radius")  0;
       }
-    }
-  }
-  #{ $prefix }--overlay#{ $prefix }--footer-inline {
-    grid-template-columns: 1fr auto;
-    #{ $prefix }__footer {
-      grid-column: 2;
-      grid-row: 1 / -1;
-      border-radius: 0 get("border-radius") get("border-radius")  0;
     }
   }
 }
@@ -603,7 +613,6 @@ $config: (
 ///     background-color: lightblue;
 ///   }
 
-
 @mixin when-clickable($hover: false, $extra-selector: null) {
   $prefix: selector.class("card");
   $selectors: (
@@ -628,7 +637,7 @@ $config: (
   }
 }
 
-// Internal mixin for DRY
+// Internal mixins
 @mixin -card-horizontal-no-image-styles() {
   $prefix: selector.class("card");
   grid-template-columns: 1fr;
@@ -637,7 +646,6 @@ $config: (
     grid-column: 1 / 2;
   }
 }
-
 @mixin -overlay-shading-gradient($background-color) {
   background: linear-gradient(
     to bottom, 

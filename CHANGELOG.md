@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.1.1-beta.1
+## 0.2.0-beta.1
 
 - **js/ui/breakpoints.js**
   - **BREAKING:** There was a mistake in the script that made it's API not match the scss breakpoint API, these have been corrected 
@@ -29,6 +29,7 @@
     - Setup to work on all layouts
     - Add alignment modifiers for footer to override your default (start, center, end)
   - Remove config "header-margin" and related selectors, this isn't standard part of card markup but was used in some sites that had specific card main element styles (main is divided into header/content siblings)
+  - **BREAKING** You need to enable special layouts (modifier classes) as needed using new $config properties ("horizontal-enabled", "horizontal-persist-enabled", "overlay-enabled")
 - **scss/components/menu-stack** added allowance for parent links to have matching or specific stylings
   - created two new classes
     - "menu-stack__parent" with stylings to match the left margin of "menu-stack__list"
@@ -36,7 +37,6 @@
     - add "menu-stack__toggle" to compact styles when using modifier
     - add "menu-stack--plain" for when the list will appear as links rather than pseudo-buttons
     - add new config options for plain modifier and parent 
-
 - **scss/element** add base option to vertically offset close icon to properly center font awesome icons
 - **scss/components/button** add option to vertically offset close icon to properly center font awesome icons with fallback to element
 - **scss/components/modal** add option to vertically offset close icon to properly center font awesome icons with fallback to element
