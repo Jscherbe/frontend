@@ -24,6 +24,13 @@ export default defineConfig((ctx) => {
     //   // path.resolve(__dirname, "docs-src/src/static/**/*")
     // ],
     alias: {
+      // For JS, to test the public API from the entry point
+      "@ulu/frontend" : path.resolve(__dirname, "lib/js/index.js"),
+
+      // For SCSS, to access the source files
+      "@ulu/scss" : path.resolve(__dirname, "lib/scss/"),
+
+      // Optional: A general alias for the docs source itself
       "@": path.resolve(__dirname, "docs-src/src/"),
     },
     preprocessorOptions: {
@@ -31,7 +38,7 @@ export default defineConfig((ctx) => {
         // Note dart sass uses loadPaths vs includePaths
         loadPaths: [
           path.resolve(__dirname, "./docs-src/src/scss/"),
-          path.resolve(__dirname)
+          path.resolve(__dirname, "./lib")
         ],
         quietDeps: true,
         api: "modern-compiler"

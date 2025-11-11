@@ -5,7 +5,7 @@
 
 
 import Twig from "twig";
-import { dispatch } from "../../../js/events/index.js";
+import { eventDispatch } from "@ulu/frontend";
 import { getElement } from "@ulu/utils/browser/dom.js";
 
 /**
@@ -87,7 +87,7 @@ export function setupInstance(userOptions) {
   
   function update() {
     render();
-    dispatch("pageModified", context);
+    eventDispatch("pageModified", context);
   }
 
   function render() {

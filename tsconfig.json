@@ -1,12 +1,16 @@
 {
-  "include": ["./js/**/*"],
-  "exclude" : ["js/deprecated"],
+  "include": ["./lib/js/**/*"],
+  "exclude" : ["lib/js/deprecated"],
   "compilerOptions": {
+    "rootDir": "lib",
     "skipLibCheck" : true,
     "allowJs": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "types",
-    "declarationMap": true
+    "outDir": "dist/types",
+    "declarationMap": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "bundler"
   }
 }

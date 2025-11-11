@@ -7,3 +7,9 @@ jsconfig.json
 /docs-src/.vitepress/cache
 /logs
 /docs-dev
+
+
+/local-only/*
+!/local-only/.gitkeep
+**/local-only/*
+!**/local-only/.gitkeep

@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     outDir: "dist",
     lib: {
-      entry: resolve(__dirname, 'js/index.js'),
+      entry: resolve(__dirname, 'lib/js/index.js'),
       name: 'ULU',
       formats: ['es', 'umd'],
       fileName: (format) => `ulu-frontend.${format}.js`,
@@ -41,7 +41,7 @@ export default defineConfig({
       scss: {
         // Note dart sass uses loadPaths vs includePaths
         loadPaths: [
-          resolve(__dirname, "./scss")
+          resolve(__dirname, "./lib/scss")
         ],
         quietDeps: true,
         api: "modern-compiler"

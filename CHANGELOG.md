@@ -2,6 +2,19 @@
 
 ## 0.2.0-beta.1
 
+- **BREAKING:** Javascript Entry Points
+  - This refactor modernizes the library's structure to be published as a single, bundled ES module instead of raw source files. All modules are now exposed through a flattened, tree-shakable API at the main @ulu/frontend entry point, with internal naming conflicts resolved via prefixes (e.g., dialogInit)
+  - This solves several key issues:
+    - Fixes Module Duplication: Prevents modern dev servers (like Vite) from creating duplicate instances of singleton modules (e.g., settings). The new single entry point removes the ambiguity that previously caused both raw and pre-bundled versions of a module to be served, which broke the singleton pattern of settings config
+    - Improves Developer Experience: Provides a single, clean import path for consumers. They no longer need to import from deep file paths or manually resolve naming conflicts
+    - Enables Effective Tree-Shaking: The new "flattened" API allows bundlers to reliably remove all unused code from the library, resulting in smaller production bundles for consumers
+    - Matches frontend-vue library
+  - The library has been refactored to allow for better tree-shaking and best practices for distribution
+  - The library now only exposes Vite bundled versions of it's JS modules, vs the last version which allowed you to import the js modules directly
+  - The exports for the main js entry have been flattened, please see the EXPORTS.md or exports map in docs site for import names
+  - Internal Notes
+    - `settings.js, events.js, and utils/system.js (ComponentInitializer)` moved to form new `core/` internally. Internal imports are all updated
+- **ComponentInitializer class** - Change config prop `events` to `coreEvents` for clarity 
 - **js/ui/breakpoints.js**
   - **BREAKING:** There was a mistake in the script that made it's API not match the scss breakpoint API, these have been corrected 
     - Reversed the min/max methods (not corresponding with SCSS breakpoints min/max)
