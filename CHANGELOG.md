@@ -2,18 +2,36 @@
 
 ## 0.2.0-beta.1
 
-- **BREAKING:** Javascript Entry Points
-  - This refactor modernizes the library's structure to be published as a single, bundled ES module instead of raw source files. All modules are now exposed through a flattened, tree-shakable API at the main @ulu/frontend entry point, with internal naming conflicts resolved via prefixes (e.g., dialogInit)
-  - This solves several key issues:
-    - Fixes Module Duplication: Prevents modern dev servers (like Vite) from creating duplicate instances of singleton modules (e.g., settings). The new single entry point removes the ambiguity that previously caused both raw and pre-bundled versions of a module to be served, which broke the singleton pattern of settings config
-    - Improves Developer Experience: Provides a single, clean import path for consumers. They no longer need to import from deep file paths or manually resolve naming conflicts
-    - Enables Effective Tree-Shaking: The new "flattened" API allows bundlers to reliably remove all unused code from the library, resulting in smaller production bundles for consumers
-    - Matches frontend-vue library
-  - The library has been refactored to allow for better tree-shaking and best practices for distribution
-  - The library now only exposes Vite bundled versions of it's JS modules, vs the last version which allowed you to import the js modules directly
-  - The exports for the main js entry have been flattened, please see the EXPORTS.md or exports map in docs site for import names
+- **BREAKING CHANGE: JavaScript Entry Points Unified**
+  - To improve reliability and reduce your final bundle size, all JavaScript modules are now exposed through a single, tree-shakable API at the main `@ulu/frontend` entry point.
+  - Please see the [Exports Map](lib/js/exports.md) or exports map in docs site for import names
+  - **How to Update Your Code**
+    - You will need to update your import paths from deep file paths to the main entry point. Function names have been prefixed to ensure they are unique.
+    - **Before (v0.1.x):**
+      ```javascript
+      // Old way, importing from specific files
+      import { init as dialogInit } from '@ulu/frontend/lib/js/ui/dialog.js';
+      import { init as tabsInit } from '@ulu/frontend/lib/js/ui/tabs.js';
+      ```
+    - **After (v0.2.0):**
+      ```javascript
+      // New way, importing from the main entry point
+      import { dialogInit, tabsInit } from '@ulu/frontend';
+      ```
+  - **Why We Made This Change**
+    - This was a necessary step to modernize the library and ensure it works reliably in all environments. The benefits include:
+      - **Increased Reliability:** Prevents bugs in modern dev servers (like Vite) where multiple copies of the library's settings could be created, causing unpredictable behavior.
+      - **Smaller Production Bundles:** The new structure allows your application's bundler to more effectively remove unused code ("tree-shaking").
+      - **A Simpler, More Discoverable API:** You now have one single place to import from, making it easier to discover and use all the features the library has to offer.
+  - **Events System Changes**
+    - For advanced use cases, the names have been adjusted to differentiate between core events and component/unique events
+    - `dispatchCoreEvent(name)`: Manually triggers a core library event (e.g., 'pageModified').
+    - `getCoreEventName(name)`: Safely gets the full name of a core event, preventing typos when adding listeners.
+    - `createUluEvent(name, data)`: A helper for creating your own custom, ULU-namespaced events.
+    - `getUluEventName(name)`: A helper to get a ULU-namespaced event name string.
   - Internal Notes
     - `settings.js, events.js, and utils/system.js (ComponentInitializer)` moved to form new `core/` internally. Internal imports are all updated
+    - The library now only exposes Vite bundled versions of it's JS modules, vs the last version which allowed you to import the js modules directly
 - **ComponentInitializer class** - Change config prop `events` to `coreEvents` for clarity 
 - **js/ui/breakpoints.js**
   - **BREAKING:** There was a mistake in the script that made it's API not match the scss breakpoint API, these have been corrected 
