@@ -38,7 +38,7 @@ addEventListener("DOMContentLoaded", () => {
   };
   elements.trigger.addEventListener("click", () => {
     if (!Ulu) return;
-    const { FileSave } = Ulu.utils.fileSave;
+    const { FileSave } = Ulu;
     const filename = elements.filename.value || "example.txt";
     const content = elements.content.value;
     const file = new FileSave(content, { filename });
@@ -62,7 +62,7 @@ addEventListener("DOMContentLoaded", () => {
     };
     elements.trigger.addEventListener("click", () => {
       if (!Ulu) return;
-      const { FileSave } = Ulu.utils.fileSave;
+      const { FileSave } = Ulu;
       const filename = elements.filename.value || "example.txt";
       const content = elements.content.value;
       const file = new FileSave(content, { filename });

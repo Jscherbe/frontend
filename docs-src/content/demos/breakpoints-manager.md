@@ -58,7 +58,7 @@ Below is the code used to create this demo, note it is accessing ulu and the und
 <script>
 
   addEventListener("DOMContentLoaded", () => {
-    const { BreakpointManager } = Ulu.ui.breakpoints;
+    const { BreakpointManager } = Ulu;
     const breakpoint = new BreakpointManager({
       order: ["none", "small", "medium", "large"], // Add more for testing
       debug: true

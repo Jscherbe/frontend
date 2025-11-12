@@ -6,8 +6,6 @@ import { init as initLiveDemo } from "./live-demo.js";
 // Add global (so we use it in demos)
 window.Ulu = ulu;
 
-console.log("ulu:\n", ulu);
-
 // Set options
 ulu.classLoggerSet({ debug: true });
 ulu.updateSetting("cssvarPrefix", "site");
