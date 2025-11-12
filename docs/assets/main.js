@@ -527,9 +527,9 @@ function logError(context, ...messages) {
   }
 }
 const getDefaultCustomProperty = (prefix) => getCustomProperty(prefix, "breakpoint");
-window.addEventListener(getCoreEventName("pageResized"), () => {
-  BreakpointManager.instances.forEach((i) => i.update());
-});
+if (isBrowser()) {
+  initResizeHandler();
+}
 const _BreakpointManager = class _BreakpointManager {
   /**
    * @param {Object} config Configuration object
@@ -765,6 +765,11 @@ class Breakpoint {
     msg.unshift(`Breakpoint (${this.name}):`);
     this._manager.log.apply(this._manager, msg);
   }
+}
+function initResizeHandler() {
+  window.addEventListener(getCoreEventName("pageResized"), () => {
+    BreakpointManager.instances.forEach((i) => i.update());
+  });
 }
 let idCount = 0;
 function newId() {

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0-beta.3
+
+- `js/ui/breakpoints.js` Adjust module so it doesn't access window unless in browser environment
+
 ## 0.2.0-beta.2
 
 - Update package config and tsconfig to fix types for main entry, and add correct peerDependencies
