@@ -4,7 +4,7 @@
 
 - **BREAKING CHANGE: JavaScript Entry Points Unified**
   - To improve reliability and reduce your final bundle size, all JavaScript modules are now exposed through a single, tree-shakable API at the main `@ulu/frontend` entry point.
-  - Please see the [Exports Map](lib/js/exports.md) or exports map in docs site for import names
+  - Please see the [Javascript API Introduction](https://jscherbe.github.io/frontend/javascript/) which has full list of exports and goes over how to import. Alternatively you can view the list in the repo at `lib/js/exports.md`.
   - **How to Update Your Code**
     - You will need to update your import paths from deep file paths to the main entry point. Function names have been prefixed to ensure they are unique.
     - **Before (v0.1.x):**
