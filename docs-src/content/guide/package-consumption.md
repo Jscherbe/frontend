@@ -50,6 +50,24 @@ To use the UMD bundle, include it in your HTML file. This will expose a global `
 </script>
 ```
 
+## Legacy Imports (Backward Compatibility)
+
+For a smoother transition, this version of ULU Frontend maintains backward compatibility with the previous import paths. If your project used to import modules directly from the `js/` directory, those imports will continue to work without changes.
+
+**Legacy Import Example:**
+```javascript
+import { Slider } from '@ulu/frontend/js/ui/slider.js';
+```
+
+This is achieved by mapping the old `js/*` paths to their new locations in the `lib/js/*` directory. Note you will still need to make updates if you were previously accessing things like settings or events modules which are in the `lib/js/core` now.
+
+**Recommendation:** While this bridge is in place to prevent breaking changes, we strongly encourage updating your code to use the primary, modern entry point for all new and refactored code. This will ensure better stability and alignment with future versions of the library.
+
+**Modern Import Example:**
+```javascript
+import { Slider } from '@ulu/frontend';
+```
+
 ## Peer Dependencies
 
 If you are creating a library or another package that uses `@ulu/frontend` as a dependency (e.g., a Vue component library based on ULU), it is **critical** to list `@ulu/frontend` as a `peerDependency` in your `package.json`.

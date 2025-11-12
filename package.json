@@ -19,7 +19,16 @@
     "./style.css": "./dist/style.css",
     "./scss/*.scss": "./lib/scss/*.scss",
     "./scss/*": "./lib/scss/*",
-    "./scss": "./lib/scss/index.scss"
+    "./scss": "./lib/scss/index.scss",
+    "./js/*": "./lib/js/*",
+    "./js/*.js": "./lib/js/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "js/*": [
+        "./dist/types/*"
+      ]
+    }
   },
   "scripts": {
     "clean": "rm -rf dist",
