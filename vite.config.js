@@ -10,6 +10,10 @@ const isUmd = process.env.BUILD_FORMAT === 'umd';
 export default defineConfig({
   build: {
     outDir: "dist",
+    // We are emptying the directory ourselves since this build runs twice:
+    // - Once for es build (different entry)
+    // - Once for umd (testing/cdn/includes styles) 
+    emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, isUmd ? "lib/index.js" : "lib/js/index.js"),
       name: "ULU",
@@ -33,6 +37,13 @@ export default defineConfig({
           "ally.js": "ally",
           "aria-tablist": "AriaTablist",
           "swipe-listener": "SwipeListener"
+        },
+        // Conditionally rename the CSS file for the UMD build
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css' && isUmd) {
+            return 'ulu-frontend.min.css';
+          }
+          return assetInfo.name;
         },
       },
     },

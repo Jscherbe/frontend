@@ -22,7 +22,8 @@
     "./scss": "./lib/scss/index.scss"
   },
   "scripts": {
-    "build": "npm run build:es && npm run build:umd",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && npm run build:es && npm run build:umd && npm run types",
     "build:es": "vite build",
     "build:umd": "BUILD_FORMAT=umd vite build",
     "types": "npx tsc",
@@ -34,7 +35,7 @@
     "docs:assets": "vite --config docs.vite.config.js --force",
     "docs:assets:build": "vite build --config docs.vite.config.js",
     "docs:assets:build:prod": "IS_PRODUCTION=true vite build --config docs.vite.config.js",
-    "deploy": "npm run build && npm run types && npm run docs:build:prod && npm run docs:assets:build:prod",
+    "deploy": "npm run build && npm run docs:build:prod && npm run docs:assets:build:prod",
     "deploy:docs": "npm run docs:build:prod && npm run docs:assets:build:prod"
   },
   "repository": {
