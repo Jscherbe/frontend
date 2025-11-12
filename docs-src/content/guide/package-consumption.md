@@ -41,6 +41,8 @@ To use the UMD bundle, include it in your HTML file. This will expose a global `
 
 ```html
 <script src="node_modules/@ulu/frontend/dist/ulu-frontend.umd.js"></script>
+<link rel="stylesheet" href="node_modules/@ulu/frontend/dist/style.css">
+
 <script>
   // Example: Configure a setting
   ULU.updateSetting('cssvarPrefix', 'my-app');

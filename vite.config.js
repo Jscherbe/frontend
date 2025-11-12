@@ -39,12 +39,13 @@ export default defineConfig({
           "swipe-listener": "SwipeListener"
         },
         // Conditionally rename the CSS file for the UMD build
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name === 'style.css' && isUmd) {
-            return 'ulu-frontend.min.css';
-          }
-          return assetInfo.name;
-        },
+        // - Removed went with standard style.css
+        // assetFileNames: (assetInfo) => {
+        //   if (assetInfo.name === 'style.css' && isUmd) {
+        //     return 'ulu-frontend.min.css';
+        //   }
+        //   return assetInfo.name;
+        // },
       },
     },
   },
