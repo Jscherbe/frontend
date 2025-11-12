@@ -14,7 +14,7 @@ const isSubdir = (parent, dir) => {
 let running = false;
 
 const cwd = path.resolve(".");
-const src = path.resolve(".", "scss/");
+const src = path.resolve(".", "lib/scss/");
 const dist = path.resolve(__dirname, "../../../content/");
 const commonConfig = {
   previewHead: `
@@ -60,7 +60,7 @@ const commonConfig = {
   hidePrivateKeepGroup: true,
   compilerOptions: {
     // Add import for library pervasive
-    additionalData: '@use "scss/index" as ulu; @use "sass:map"; @use "sass:math"; @use "sass:meta";',
+    additionalData: '@use "lib/scss/index" as ulu; @use "sass:map"; @use "sass:math"; @use "sass:meta";',
     // Add cwd and scss folder for resolving paths
     // - Need cwd for the @use above to work and not match any nested scss/**/_index files
     sassOptions: {
@@ -125,10 +125,10 @@ function cleanOutputDir(config) {
   const outputPath = path.join(config.dist, config.pathBase);
   if (fs.existsSync(outputPath)) {
     fs.readdirSync(outputPath).forEach(item => {
-      const fullpath = path.join(outputPath, item);
+      const fullPath = path.join(outputPath, item);
       // Delete if directory (was created by sassdoc plugin)
-      if (fs.lstatSync(fullpath).isDirectory()) {
-        fs.removeSync(fullpath);
+      if (fs.lstatSync(fullPath).isDirectory()) {
+        fs.removeSync(fullPath);
       }
     });
   }

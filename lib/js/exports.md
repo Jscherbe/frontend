@@ -1,13 +1,15 @@
-# JavaScript Exports Map
+# Exports Map
+
+## Example Import
 
 All JavaScript modules are exported from the main `@ulu/frontend` package entry point.
 
 **Example Usage:**
 ```javascript
-import { dialogInit, Slider, settingsUpdate } from '@ulu/frontend';
+import { dialogInit, Slider, updateSettings } from '@ulu/frontend';
 
 // Update a library setting
-settingsUpdate({ cssvarPrefix: "my-app" });
+updateSettings({ cssvarPrefix: "my-app" });
 
 // Initialize all dialogs
 dialogInit();
@@ -16,9 +18,9 @@ dialogInit();
 const slider = new Slider(...);
 ```
 
----
+## Exports Map
 
-## Core Modules
+### Core Modules
 
 These exports originate from the `lib/js/core/` directory and provide the foundational, cross-cutting logic for the library.
 
@@ -34,7 +36,7 @@ These exports originate from the `lib/js/core/` directory and provide the founda
 - `updateSettings`
 - `wrapSettingString`
 
-## UI Modules
+### UI Modules
 
 These exports originate from the `lib/js/ui/` directory.
 
@@ -103,7 +105,7 @@ These exports originate from the `lib/js/ui/` directory.
 - `tooltipInit`
 - `tooltipInitializer`
 
-## Utility Modules
+### Utility Modules
 
 These exports originate from the `lib/js/utils/` directory.
 
@@ -111,7 +113,7 @@ These exports originate from the `lib/js/utils/` directory.
 - `classLoggerLogError`
 - `classLoggerLogWarning`
 - `classLoggerSet`
-- `configureIcons`
+- `fontAwesomeConfigureIcons`
 - `createFloatingUi`
 - `dataAttributeToDatasetKey`
 - `ensureId`

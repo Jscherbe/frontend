@@ -21,6 +21,7 @@ $breakpoint: "medium";
   color: ulu.cssvar-use("color-type-inverse");
   position: sticky;
   top: 0;
+  z-index: 2;
   .fullscreen-layout & {
     padding-top: 0;
     padding-bottom: 0;

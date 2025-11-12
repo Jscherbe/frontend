@@ -5,28 +5,34 @@ import autoprefixer from "autoprefixer";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+const isUmd = process.env.BUILD_FORMAT === 'umd';
+
 export default defineConfig({
   build: {
     outDir: "dist",
     lib: {
-      entry: resolve(__dirname, 'lib/js/index.js'),
-      name: 'ULU',
-      formats: ['es', 'umd'],
+      entry: resolve(__dirname, isUmd ? "lib/index.js" : "lib/js/index.js"),
+      name: "ULU",
+      formats: [isUmd ? "umd" : "es"],
       fileName: (format) => `ulu-frontend.${format}.js`,
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ['@floating-ui/dom', '@ulu/utils', 'ally.js', 'aria-tablist', 'swipe-listener'],
+      // make sure to externalize deps that shouldn't be bundled into library
+      external: [
+        "@floating-ui/dom", 
+        "@ulu/utils", 
+        "ally.js", 
+        "aria-tablist", 
+        "swipe-listener"
+      ],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
+        // Provide global variables to use in the UMD build for externalized deps
         globals: {
-          '@floating-ui/dom': 'FloatingUIDOM',
-          '@ulu/utils': 'ULUUtils',
-          'ally.js': 'ally',
-          'aria-tablist': 'AriaTablist',
-          'swipe-listener': 'SwipeListener'
+          "@floating-ui/dom": "FloatingUIDOM",
+          "@ulu/utils": "ULUUtils",
+          "ally.js": "ally",
+          "aria-tablist": "AriaTablist",
+          "swipe-listener": "SwipeListener"
         },
       },
     },
@@ -39,7 +45,6 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        // Note dart sass uses loadPaths vs includePaths
         loadPaths: [
           resolve(__dirname, "./lib/scss")
         ],

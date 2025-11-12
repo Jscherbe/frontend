@@ -25,10 +25,10 @@ export default defineConfig((ctx) => {
     // ],
     alias: {
       // For JS, to test the public API from the entry point
-      "@ulu/frontend" : path.resolve(__dirname, "lib/js/index.js"),
+      // "@ulu/frontend" : path.resolve(__dirname, "lib/js/index.js"),
 
       // For SCSS, to access the source files
-      "@ulu/scss" : path.resolve(__dirname, "lib/scss/"),
+      // "@ulu/scss" : path.resolve(__dirname, "lib/scss/"),
 
       // Optional: A general alias for the docs source itself
       "@": path.resolve(__dirname, "docs-src/src/"),

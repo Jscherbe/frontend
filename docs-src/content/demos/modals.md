@@ -109,9 +109,20 @@ If option for modal builder pauseYoutubeVideos is true (default true)
     "bodyFills" : true,
     "documentEnd" : true
   }' 
+  class="ratio-box ratio-box--16x9"
   hidden
 >
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/y0sF5xhGreA?si=aRdiK0Xzf3zvHP_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe 
+    class="ratio-box__content" 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/y0sF5xhGreA?si=aRdiK0Xzf3zvHP_E" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen
+  ></iframe>
 </div>
 
 <button class="button" data-ulu-dialog-trigger="modal-id-native-video">Open Modal (native video)</button>

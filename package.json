@@ -22,7 +22,9 @@
     "./scss": "./lib/scss/index.scss"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "npm run build:es && npm run build:umd",
+    "build:es": "vite build",
+    "build:umd": "BUILD_FORMAT=umd vite build",
     "types": "npx tsc",
     "docs": "npx @11ty/eleventy --serve --config=docs.eleventy.js",
     "docs:incremental": "npx @11ty/eleventy --serve --incremental --config=docs.eleventy.js",

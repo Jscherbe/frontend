@@ -13,12 +13,16 @@ const isSubdir = (parent, dir) => {
   return relative && !relative.startsWith("..") && !path.isAbsolute(relative);
 };
 
-const src = path.resolve(".", "js/");
+const src = path.resolve(".", "lib/js/");
 const dist = path.resolve(__dirname, "../../../content/javascript/");
 
 function cleanOutputDir() {
   fs.readdirSync(dist)
-    .filter(file => file !== "index.md" && file.endsWith("md"))
+    .filter(file => {
+      // Files we setup manually
+      const exclude = ["index.md"];
+      return !exclude.includes(file) && file.endsWith("md")
+    })
     .forEach(file => {
       fs.removeSync(path.join(dist, file));
     });
@@ -28,7 +32,7 @@ function output() {
   cleanOutputDir();
   // get template data
   const templateData = jsdoc2md.getTemplateDataSync({ 
-    files: "js/**/*.js",
+    files: "lib/js/**/*.js",
     configure: "jsdoc.json"
   });
 

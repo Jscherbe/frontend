@@ -6,15 +6,36 @@ iconClass: fab fa-js
 layout: default
 ---
 
-Modules are broken into the following categories, they can be used individually or all together:
+All JavaScript modules are exported from a single, pre-bundled package entry point: `@ulu/frontend`. This modern approach guarantees module singletons (like settings) work correctly and allows for optimal tree-shaking in consumer applications.
 
-- **/js/index.js** - All modules combined
-- **/js/events/** - Events module 
-- **/js/ui/** - UI modules (a collection of javascript modules used for ui related needs). Some are useful in web app enviroments (ie. breakpoint) but most are for traditional web sites (not SPA). Use Vue library for versions of these designed for Vue SPA
-- **/js/utils/** - Utilities that are used internally but may be useful outside of core in custom code
+You no longer need to import from individual files. Instead, you can import any function or class directly from the main package:
+
+```javascript
+import { dialogInit, Slider, updateSettings } from '@ulu/frontend';
+```
+
+While you will only ever import from the main package, the modules are still organized logically into three categories, which is reflected in the navigation menu:
+
+- **Core:** Foundational, cross-cutting logic for the library.
+- **UI:** Components and scripts that create interactive user interface elements.
+- **Utils:** Helper functions that are used internally but are also exposed for your own custom code.
 
 <div class="callout crop-margins">
 
-The page/menu names reflect the directory organization/grouping
+The full list of available exports is detailed below.
 
 </div>
+
+<div class="export-map">
+
+{% renderFile "./lib/js/exports.md" %}
+
+</div>
+
+<style>
+  .export-map {
+    h1 {
+      display: none;
+    }
+  }
+</style>
