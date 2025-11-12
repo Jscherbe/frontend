@@ -9,13 +9,16 @@ import { autoUpdate as ea, computePosition as ta, inline as ra, offset as na, fl
 import oa from "swipe-listener";
 import la from "aria-tablist";
 function ii(r, e, t, n) {
-  var a;
-  return function() {
-    var o = this, s = arguments, l = function() {
+  let a;
+  const i = function() {
+    const o = this, s = arguments, l = function() {
       a = null, r.apply(o, s);
     };
     clearTimeout(a), a = setTimeout(l, e);
   };
+  return i.cancel = function() {
+    clearTimeout(a), a = null;
+  }, i;
 }
 const ua = /(\r\n|\n|\r)/gm, ca = /\s+/g, fa = /^[{\[][\s\S]*[}\]]$/;
 function da(r, e = {}, t = null) {

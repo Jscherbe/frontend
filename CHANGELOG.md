@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0-beta.2
+
+- Update package config and tsconfig to fix types for main entry, and add correct peerDependencies
+
 ## 0.2.0-beta.1
 
 - **BREAKING CHANGE: JavaScript Entry Points Unified**

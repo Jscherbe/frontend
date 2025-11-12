@@ -1,7 +1,7 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.2.0-beta.1",
-  "description": "A versatile SCSS and JavaScript component library offering configurable, accessible components and flexible integration into any project, with SCSS modules suitable for modern JS frameworks.",
+  "version": "0.2.0-beta.2",
+  "description": "A framework-agnostic frontend toolkit providing a modular, tree-shakable library of accessible components and utilities. Designed for seamless integration, it features a highly configurable SCSS system for any environment and vanilla JavaScript modules optimized for traditional websites and content management systems.",
   "type": "module",
   "files": [
     "dist",
@@ -20,14 +20,9 @@
     "./scss/*.scss": "./lib/scss/*.scss",
     "./scss/*": "./lib/scss/*",
     "./scss": "./lib/scss/index.scss",
-    "./js/*": "./lib/js/*",
-    "./js/*.js": "./lib/js/*.js"
-  },
-  "typesVersions": {
-    "*": {
-      "js/*": [
-        "./dist/types/*"
-      ]
+    "./js/*": {
+      "import": "./lib/js/*",
+      "types": "./dist/types/*"
     }
   },
   "scripts": {
@@ -52,28 +47,35 @@
     "url": "git+https://github.com/Jscherbe/frontend.git"
   },
   "keywords": [
-    "SCSS",
-    "sass",
-    "breakpoints",
-    "theme",
-    "modules",
-    "javascript",
-    "framework",
-    "mixin",
-    "components",
-    "HTML",
-    "frontend framework",
-    "css",
-    "utilities",
-    "design system",
-    "toolkit",
+    "a11y",
     "accessibility",
+    "breakpoints",
+    "cms",
+    "components",
+    "composable",
+    "css",
+    "design-system",
+    "framework-agnostic",
+    "frontend",
+    "frontend-framework",
+    "HTML",
+    "integration",
+    "javascript",
+    "modular",
+    "responsive-design",
+    "sass",
+    "scss",
+    "theme",
+    "theming",
+    "toolkit",
+    "tree-shaking",
     "ui",
-    "user interface",
-    "responsive design"
+    "user-interface",
+    "utilities",
+    "vanilla-js"
   ],
   "authors": {
-    "name": "Joe Scherben, Informatics Studio",
+    "name": "Joe Scherben",
     "email": "jscherbe@gmail.com"
   },
   "license": "MIT",
@@ -81,17 +83,28 @@
     "url": "https://github.com/Jscherbe/frontend/issues"
   },
   "homepage": "https://github.com/Jscherbe/frontend#readme",
+  "peerDependencies": {
+    "@floating-ui/dom": "^1.6.5",
+    "@ulu/utils": "^0.0.33",
+    "ally.js": "^1.4.1",
+    "aria-tablist": "^1.2.2",
+    "swipe-listener": "^1.3.0"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0-alpha.6",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "@floating-ui/dom": "^1.6.5",
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@ulu/markdown-output-utils": "^0.0.6",
     "@ulu/sassdoc-to-markdown": "^0.0.16",
+    "@ulu/utils": "^0.0.33",
     "@ulu/vite-config-cms-theme": "^0.0.10",
     "@ulu/vitepress-auto-menus": "^0.0.3",
     "@ulu/vitepress-sassdoc": "^0.0.9",
     "algoliasearch": "^4.23.3",
+    "ally.js": "^1.4.1",
+    "aria-tablist": "^1.2.2",
     "autoprefixer": "^10.4.16",
     "chokidar": "^3.6.0",
     "eleventy-plugin-nesting-toc": "^1.3.0",
@@ -105,15 +118,9 @@
     "sass-embedded": "^1.81.0",
     "sharp": "^0.33.4",
     "svgo": "^3.3.2",
+    "swipe-listener": "^1.3.0",
     "twig": "^1.17.1",
     "typescript": "^5.3.3",
     "vite": "^5.4.11"
-  },
-  "dependencies": {
-    "@floating-ui/dom": "^1.6.5",
-    "@ulu/utils": "^0.0.30",
-    "ally.js": "^1.4.1",
-    "aria-tablist": "^1.2.2",
-    "swipe-listener": "^1.3.0"
   }
 }

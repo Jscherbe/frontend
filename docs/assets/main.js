@@ -83,17 +83,24 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
   });
 };
 function debounce(callback, wait, immediate, valueThis) {
-  var timeout;
-  return function executedFunction() {
-    var context = this;
-    var args = arguments;
-    var later = function() {
+  let timeout;
+  const executedFunction = function() {
+    const context = this;
+    const args = arguments;
+    const later = function() {
       timeout = null;
-      callback.apply(context, args);
+      {
+        callback.apply(context, args);
+      }
     };
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
   };
+  executedFunction.cancel = function() {
+    clearTimeout(timeout);
+    timeout = null;
+  };
+  return executedFunction;
 }
 const linebreaks = /(\r\n|\n|\r)/gm;
 const multiSpace = /\s+/g;

@@ -2,7 +2,7 @@
   "include": ["./lib/js/**/*"],
   "exclude" : ["lib/js/deprecated"],
   "compilerOptions": {
-    "rootDir": "lib",
+    "rootDir": "lib/js",
     "skipLibCheck" : true,
     "allowJs": true,
     "declaration": true,
