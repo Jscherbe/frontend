@@ -51,7 +51,11 @@ The test below uses a div that has breakpoints in SCSS to change it's color. And
 
 ## Demo Code
 
-Below is the code used to create this demo, note it is accessing ulu and the underlying BreakpointManager class from a global variable "Ulu" which is just something we setup for this docs site. The library doesn't expose itself globally by default. Normally you would be importing the "@ulu/frontend/js/breakpoints" module directly
+Below is the code used to create this demo. Note it accesses the `BreakpointManager` class from a global `Ulu` variable, which is a setup specific to this documentation site. In your own project, you would import it directly from the main package:
+
+```javascript
+import { BreakpointManager } from '@ulu/frontend';
+```
 
 {% capture scriptContent %}
 

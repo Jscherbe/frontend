@@ -1,5 +1,6 @@
 ---
 title: Building a Stylesheet
+weight: 10
 ---
 
 *Coming Soon: Will have example scaffolding*
