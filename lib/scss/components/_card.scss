@@ -165,7 +165,7 @@ $config: (
   "overlay-body-padding-y": 1rem
 ) !default;
   
-  /// Change modules $config
+/// Change modules $config
 /// @param {Map} $changes Map of changes
 /// @example scss
 ///   @include ulu.component-card-set(( "property" : value ));

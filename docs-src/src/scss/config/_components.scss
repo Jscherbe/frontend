@@ -104,7 +104,10 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 ));
 
 @include ulu.component-card-set((
-  "color": vars.$color-type
+  "color": vars.$color-type,
+  "horizontal-enabled" : true,
+  "horizontal-persist-enabled" : true,
+  "overlay-enabled" : true
 ));
 
 @include ulu.component-data-table-set((
