@@ -13123,6 +13123,225 @@ a.badge:focus .badge__inner {
   display: none;
 }
 
+@media screen and (min-width: 43.5em) {
+  .card--horizontal {
+    grid-template-columns: min(33%, 20rem) 1fr;
+    grid-template-rows: 1fr auto;
+    min-height: 20rem;
+    max-width: 80rem;
+  }
+  .card--horizontal:not(:has(> .card__footer)) {
+    grid-template-rows: auto;
+  }
+  .card--horizontal .card__image {
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    aspect-ratio: auto;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+  }
+  .card--horizontal .card__body,
+  .card--horizontal .card__footer {
+    grid-column: 2/3;
+  }
+  .card--horizontal .card__body {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .card--horizontal .card__main {
+    max-width: 40rem;
+  }
+  .card--horizontal .card__aside {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+    height: 100%;
+    background-size: 1px calc(100% - 4rem);
+    background-position: left center;
+  }
+  .card--horizontal:not(:has(.card__image)) {
+    grid-template-columns: 1fr;
+  }
+  .card--horizontal:not(:has(.card__image)) .card__body,
+  .card--horizontal:not(:has(.card__image)) .card__footer {
+    grid-column: 1/2;
+  }
+  .card--horizontal.card--no-image {
+    grid-template-columns: 1fr;
+  }
+  .card--horizontal.card--no-image .card__body,
+  .card--horizontal.card--no-image .card__footer {
+    grid-column: 1/2;
+  }
+  .card--horizontal-center .card__body {
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+  .card--horizontal.card--footer-inline {
+    grid-template-columns: min(33%, 20rem) 1fr auto;
+    grid-template-rows: 1fr;
+  }
+  .card--horizontal.card--footer-inline .card__footer {
+    grid-column: 3;
+  }
+}
+.card--horizontal-persist {
+  grid-template-columns: min(33%, 20rem) 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: 20rem;
+  max-width: 80rem;
+}
+.card--horizontal-persist:not(:has(> .card__footer)) {
+  grid-template-rows: auto;
+}
+.card--horizontal-persist .card__image {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  aspect-ratio: auto;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+}
+.card--horizontal-persist .card__body,
+.card--horizontal-persist .card__footer {
+  grid-column: 2/3;
+}
+.card--horizontal-persist .card__body {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.card--horizontal-persist .card__main {
+  max-width: 40rem;
+}
+.card--horizontal-persist .card__aside {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 40%;
+          flex: 0 0 40%;
+  height: 100%;
+  background-size: 1px calc(100% - 4rem);
+  background-position: left center;
+}
+.card--horizontal-persist:not(:has(.card__image)) {
+  grid-template-columns: 1fr;
+}
+.card--horizontal-persist:not(:has(.card__image)) .card__body,
+.card--horizontal-persist:not(:has(.card__image)) .card__footer {
+  grid-column: 1/2;
+}
+.card--horizontal-persist.card--no-image {
+  grid-template-columns: 1fr;
+}
+.card--horizontal-persist.card--no-image .card__body,
+.card--horizontal-persist.card--no-image .card__footer {
+  grid-column: 1/2;
+}
+
+.card--horizontal-persist.card--horizontal-center .card__body {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.card--horizontal-persist.card--footer-inline {
+  grid-template-columns: min(33%, 20rem) 1fr auto;
+  grid-template-rows: 1fr;
+}
+.card--horizontal-persist.card--footer-inline .card__footer {
+  grid-column: 3;
+}
+
+.card--overlay {
+  grid-template-rows: minmax(-webkit-min-content, 1fr) auto;
+  grid-template-rows: minmax(min-content, 1fr) auto;
+  aspect-ratio: 4 / 3;
+}
+.card--overlay .card__body {
+  grid-row: 1/2;
+  align-self: end;
+  min-height: 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(4rem, rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6)));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 4rem, rgba(0, 0, 0, 0.6) 100%);
+}
+.card--overlay .card__body:not(:has(~ .card__footer)) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.card--overlay .card__aside {
+  background-color: transparent;
+}
+.card--overlay .card__footer {
+  grid-row: 2/3;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.card--overlay .card__body,
+.card--overlay .card__footer {
+  color: white;
+}
+.card--overlay .card__body:last-child,
+.card--overlay .card__footer:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.card--overlay .card__title {
+  color: white;
+}
+.card--overlay .card__title-link:hover, .card--overlay .card__title-link:focus {
+  color: rgb(79, 175, 230);
+}
+.card--overlay .card__image {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  border-radius: 5px;
+  aspect-ratio: auto;
+}
+.card--overlay .card__image img,
+.card--overlay .card__image .card__image-media {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 0;
+}
+
+.card[data-ulu-proxy-click-init]:hover .card__body,
+.card[data-ulu-proxy-click-init]:hover .card__footer, .card[data-ulu-proxy-click-init]:focus-within .card__body,
+.card[data-ulu-proxy-click-init]:focus-within .card__footer, a.card:hover .card__body,
+a.card:hover .card__footer, a.card:focus-within .card__body,
+a.card:focus-within .card__footer, button.card:hover .card__body,
+button.card:hover .card__footer, button.card:focus-within .card__body,
+button.card:focus-within .card__footer, .card--clickable:hover .card__body,
+.card--clickable:hover .card__footer, .card--clickable:focus-within .card__body,
+.card--clickable:focus-within .card__footer, .card--overlay:hover .card__body,
+.card--overlay:hover .card__footer, .card--overlay:focus-within .card__body,
+.card--overlay:focus-within .card__footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.card[data-ulu-proxy-click-init]:hover .card__body, .card[data-ulu-proxy-click-init]:focus-within .card__body, a.card:hover .card__body, a.card:focus-within .card__body, button.card:hover .card__body, button.card:focus-within .card__body, .card--clickable:hover .card__body, .card--clickable:focus-within .card__body, .card--overlay:hover .card__body, .card--overlay:focus-within .card__body {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(4rem, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 4rem, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.card--overlay.card--footer-inline {
+  grid-template-columns: 1fr auto;
+}
+.card--overlay.card--footer-inline .card__footer {
+  grid-column: 2;
+  grid-row: 1/-1;
+  border-radius: 0 5px 5px 0;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
