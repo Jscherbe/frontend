@@ -131,7 +131,7 @@ $config: (
   "image-icon-max-width": 8rem,
 
   // Footer
-  "footer-padding-y": 0.25rem,
+  "footer-padding-y": 0.5rem,
   "footer-min-height": 2.5rem,
   "footer-justify": flex-end,
   "footer-inline-padding": 0.5rem,
@@ -195,6 +195,7 @@ $config: (
   #{ $prefix } {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
     max-width: get("max-width");
     margin-top: get("margin-y");
     margin-bottom: get("margin-y");

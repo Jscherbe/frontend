@@ -1,6 +1,11 @@
 # Change Log
 
-## 0.2.0-beta.3
+
+## 0.2.0-beta.5
+
+- **scss/components/card** | Add grid-template-rows, change default footer padding
+
+## 0.2.0-beta.4
 
 - **scss/components/card** | Change $config `footer-background-color` to null (unset) 
 

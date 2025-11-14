@@ -85,7 +85,7 @@ $config: (
   "image-icon-max-width": 8rem,
 
   // Footer
-  "footer-padding-y": 0.25rem,
+  "footer-padding-y": 0.5rem,
   "footer-min-height": 2.5rem,
   "footer-justify": flex-end,
   "footer-inline-padding": 0.5rem,
@@ -299,7 +299,7 @@ Prints component styles
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 186-189
-- **Lines (code):** 191-535
+- **Lines (code):** 191-536
 
 </details>
 
@@ -362,8 +362,8 @@ Applies styles to cards that are designated as 'clickable'. This can be for the 
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 608-614
-- **Lines (code):** 616-638
+- **Lines (comments):** 609-615
+- **Lines (code):** 617-639
 
 </details>
 

@@ -12929,6 +12929,7 @@ a.badge:focus .badge__inner {
 .card {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   max-width: 28rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -12995,8 +12996,8 @@ a.badge:focus .badge__inner {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   min-height: 2.5rem;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
