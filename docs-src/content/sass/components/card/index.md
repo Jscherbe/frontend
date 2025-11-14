@@ -89,7 +89,7 @@ $config: (
   "footer-min-height": 2.5rem,
   "footer-justify": flex-end,
   "footer-inline-padding": 0.5rem,
-  "footer-background-color": #dedede,
+  "footer-background-color": null,
 
   // Horizontal
   "horizontal-enabled" : false,
@@ -183,7 +183,7 @@ $config: (
 |footer-min-height|Dimension|2.5rem|The min height for the footer|
 |footer-justify|CssValue|flex-end|Flex alignment of footer items (on end by default)|
 |footer-inline-padding|Dimension|0.5rem|The padding for the footer when using the 'footer-inline' modifier.|
-|footer-background-color|Color|#dedede|The background color of the footer.|
+|footer-background-color|Color|null|The background color of the footer.|
 |horizontal-enabled|String|false|Enable the output of horizontal related layout modifiers|
 |horizontal-persist-enabled|String|false|Enable the output of horizontal-persist related layout modifiers|
 |horizontal-breakpoint|String|small|The breakpoint used to change the card to vertical if using the card--horizontal styling. Uses ulu's breakpoint module.|

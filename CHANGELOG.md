@@ -2,6 +2,10 @@
 
 ## 0.2.0-beta.3
 
+- **scss/components/card** | Change $config `footer-background-color` to null (unset) 
+
+## 0.2.0-beta.3
+
 - `js/ui/breakpoints.js` Adjust module so it doesn't access window unless in browser environment
 
 ## 0.2.0-beta.2
