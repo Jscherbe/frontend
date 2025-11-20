@@ -51,7 +51,7 @@ $config: (
   "font-weight-textarea"                      : null,
   "font-weight-select"                        : null,
   "input-border"                              : element.get-rule-style(),
-  "input-border-radius"                       : 5px,
+  "input-border-radius"                       : 0,
   "item-margin-y"                            : 0.75em,
   "input-padding-x"                           : 0.5em,
   "input-padding-y"                           : 0.25em,
@@ -94,7 +94,7 @@ $config: (
   "check-input-mark-color-checked"            : null,
   "check-input-mark-color-indeterminate"      : null,
   "check-input-disabled-opacity"              : 0.6,
-  "check-input-border-radius"                 : null,
+  "check-input-border-radius"                 : 0,
   "description-color"                         : false,
   "description-margin"                        : (0.25em 0),
   "description-max-width"                     : 25em,
@@ -199,7 +199,7 @@ $config: (
 |check-input-mark-color-checked|Color|null|Check input color when checked.|
 |check-input-mark-color-indeterminate|Color|null|Check input color when indeterminate.|
 |check-input-disabled-opacity|Number|0.6|Opacity of the check input when disabled.|
-|check-input-border-radius|Dimension|null|Checkbox input border radius.|
+|check-input-border-radius|Dimension|0|Checkbox input border radius.|
 |description-color|Color|false|Color of help text.|
 |description-margin|CssValue|(0.25em 0)|Margin for help text.|
 |description-max-width|Dimension|25em|Max width of help text.|
