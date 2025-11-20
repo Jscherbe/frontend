@@ -233,7 +233,6 @@ $config: (
     grid-column: 1;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     min-height: get("body-min-height");
   }
   #{ $prefix }__main {
@@ -243,7 +242,6 @@ $config: (
     grid-column: 1;
     display: flex;
     align-items: center;
-    flex: 0;
     padding-top: get("footer-padding-y");
     padding-bottom: get("footer-padding-y");
     min-height: get("footer-min-height");

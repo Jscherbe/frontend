@@ -4,7 +4,7 @@ Overall:
   ☐ Need to setup shortcode/partial to template demos (ie. write code, show code and result)
   ☐ Need to finish accordion styling
   ☐ Need to add form module
-  ☐ Need to seperate grid component from main module
+  ☐ Need to separate grid component from main module
     ☐ Put grid gutter settings into layout
       * We can probably just have common settings for gutter gutter-medium gutter-small
         * Grids can decide how to use that information (whether its breakpoints or sizes used at any screen size?)
@@ -71,32 +71,32 @@ SCSS Updates:
     ☐ Check to see if there is a modifier to get form items label before input vs above it
       * I think this exists but should be documented and see how it would fit with frontend-vue (ie. do we need prop for this)
   ☐ Card
-    ☐ Mayvbe whole card should just use css grid
-    ☐ Make sure to reset inner element background colors back to null 
-    ☐ Need to figure out how the aside rule needs to align
-      ☐ Most likely to the inner gutter but then sometimes do we want it as a border
+    ✔ Maybe whole card should just use css grid @done
+    ✔ Make sure to reset inner element background colors back to null @done
+    ✔ Need to figure out how the aside rule needs to align @done
+      ✔ Most likely to the inner gutter but then sometimes do we want it as a border @done
         * Check old card setup, since we don't want to break sites using this
-    ☐ Inner elements when they have background colors need border-radiuses on the edges that abut the edge of the card
-    ☐ Make sure all image selectors are the same (for compression)
-      ☐ Consider adding selector variable for these
-    ☐ Make overlay CSS optional
-    ☐ Create footer-inline modifier (so its flex to the end vs below)
-    ☐ Create breakpoint modifier for aside 
-      ☐ Then supports both non breakpoint aside?
-      ☐ Could use component specific custom properties to avoid duplicating CSS
-      ☐ Should we ever have aside without breakpoint?
+    ✔ Inner elements when they have background colors need border-radiuses on the edges that abut the edge of the card @done
+    ✔ Make sure all image selectors are the same (for compression) @done
+      ✔ Consider adding selector variable for these @done
+    ✔ Make overlay CSS optional @done
+    ✔ Create footer-inline modifier (so its flex to the end vs below) @done
+    ✔ Create breakpoint modifier for aside @done
+      ✔ Then supports both non breakpoint aside? @done
+      ✔ Could use component specific custom properties to avoid duplicating CSS @done
+      ✔ Should we ever have aside without breakpoint? @done
         * Think this might be better for the footer-inline
         * A persistent aside is normally actions (can't think of any reason aside content would be displayed next to main on mobile), think this was an old thought for actions on the right
-    ☐ Adjust so that hover/focus ring either: @important
+    ✔ Adjust so that hover/focus ring either: @important @done
       * Uses border (make sure this works with image being pulled over the border)
       * Uses outline (this is for focus so it makes sense, outline supports border radius now)
       * Use multiple box shadows toggle with custom properties
-    ☐ Need to refactor, consider custom properties (below) to make horizontal (optional modifier for horizontal)
-    ☐ Footer has all kinds of problems in different situations
-    ☐ Change footer to flex: none instead of flex: 0; (so that if in a parent CSS grid it doesn't restrict it from growing to it's content's height)
-      * Grid does this because of align-items: stretch (default) on grid
-        * Causes issues with the flexbox child with flex-grow: 0 and no flex-basis
-    ☐ Card could benefit from custom properties over resets
+    ✔ Need to refactor, consider custom properties (below) to make horizontal (optional modifier for horizontal) @done
+    ✔ Footer has all kinds of problems in different situations @doesn't-apply-anymore @done
+      ✔ Change footer to flex: none instead of flex: 0; (so that if in a parent CSS grid it doesn't restrict it from growing to it's content's height) @done
+        * Grid does this because of align-items: stretch (default) on grid
+          * Causes issues with the flexbox child with flex-grow: 0 and no flex-basis
+    ✘ Card could benefit from custom properties over resets @cancelled
       * This way we could have breakpoint for horizontal and none without duplication
         * Say for resetting border radiuses we could just set custom properties in/out of media queries and have styles match
   ☐ Probably revert card z-indexes, this still won't solve the problem

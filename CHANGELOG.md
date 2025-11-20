@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0-beta.7
+
+- **scss/components/card** | Remove old flexbox properties on card children (body, footer) which aren't used in the new grid layout
+
 ## 0.2.0-beta.6
 
 - **scss/components/form-theme** | Remove checkbox border radius config fallback to `input-border-radius`. Doesn't work correctly, `checkbox-input-border-radius` needs to be set specifically
