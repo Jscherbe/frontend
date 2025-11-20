@@ -80,7 +80,7 @@ $-fallbacks: (
 /// @prop {Color} check-input-mark-color-checked [null] Check input color when checked.
 /// @prop {Color} check-input-mark-color-indeterminate [null] Check input color when indeterminate.
 /// @prop {Number} check-input-disabled-opacity [0.6] Opacity of the check input when disabled.
-/// @prop {Dimension} check-input-border-radius [null] Checkbox input border radius.
+/// @prop {Dimension} check-input-border-radius [0] Checkbox input border radius.
 /// @prop {Color} description-color [false] Color of help text.
 /// @prop {CssValue} description-margin [(0.25em 0)] Margin for help text.
 /// @prop {Dimension} description-max-width [25em] Max width of help text.
@@ -164,7 +164,7 @@ $config: (
   "check-input-mark-color-checked"            : null,
   "check-input-mark-color-indeterminate"      : null,
   "check-input-disabled-opacity"              : 0.6,
-  "check-input-border-radius"                 : null,
+  "check-input-border-radius"                 : 0,
   "description-color"                         : false,
   "description-margin"                        : (0.25em 0),
   "description-max-width"                     : 25em,
@@ -427,7 +427,7 @@ $config: (
   }
   [type="checkbox"] {
     &::before {
-      border-radius: -fallback("check-input-border-radius", "input-border-radius");
+      border-radius: get("check-input-border-radius");
     }
     &::after {
       border-radius: 0;

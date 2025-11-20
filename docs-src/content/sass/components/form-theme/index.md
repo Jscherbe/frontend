@@ -51,7 +51,7 @@ $config: (
   "font-weight-textarea"                      : null,
   "font-weight-select"                        : null,
   "input-border"                              : element.get-rule-style(),
-  "input-border-radius"                       : 0,
+  "input-border-radius"                       : 5px,
   "item-margin-y"                            : 0.75em,
   "input-padding-x"                           : 0.5em,
   "input-padding-y"                           : 0.25em,
