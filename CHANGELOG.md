@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0-beta.8
+
+- **scss/elements** | Add mixin for removing default summary arrow styles. Applied mixin to accordion and menu-stack components.
+
 ## 0.2.0-beta.7
 
 - **scss/components/card** | Remove old flexbox properties on card children (body, footer) which aren't used in the new grid layout

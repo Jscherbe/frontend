@@ -299,7 +299,7 @@ Prints component styles
 - **Group:** card
 - **Type:** mixin
 - **Lines (comments):** 186-189
-- **Lines (code):** 191-536
+- **Lines (code):** 191-534
 
 </details>
 
@@ -362,8 +362,8 @@ Applies styles to cards that are designated as 'clickable'. This can be for the 
 - **File:** _card.scss
 - **Group:** card
 - **Type:** mixin
-- **Lines (comments):** 609-615
-- **Lines (code):** 617-639
+- **Lines (comments):** 607-613
+- **Lines (code):** 615-637
 
 </details>
 

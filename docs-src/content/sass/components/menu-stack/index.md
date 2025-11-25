@@ -281,7 +281,7 @@ Prints component styles
 - **Group:** menu-stack
 - **Type:** mixin
 - **Lines (comments):** 162-166
-- **Lines (code):** 168-414
+- **Lines (code):** 168-420
 
 </details>
 

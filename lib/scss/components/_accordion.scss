@@ -180,7 +180,6 @@ $config: (
   #{ $prefix }__summary {
     position: relative; // For pseudo border (done this way for animations)
     display: flex;
-    list-style: none; // Remove the default arrow (old safari?)
     width: 100%; // For <button>
     background-color: color.get(get("summary-background-color"));
     color: color.get(get("summary-color"));
@@ -192,12 +191,7 @@ $config: (
     align-items: center;
 
     @include typography.optional-size(get("summary-type-size"), $only-font-size: true);
-
-    &::-webkit-details-marker,
-    &::marker {
-      display: none;
-      content: "";
-    }
+    @include element.summary-remove-arrow;
     &:hover,
     &:focus {
       background-color: color.get(get("summary-background-color-hover"));
