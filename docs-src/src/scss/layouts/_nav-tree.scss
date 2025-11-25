@@ -35,7 +35,7 @@ $item-margin-y: 3px;
 }
 .nav-tree__toggle {
   font-weight: bold;
-  @include ulu.element-summary-remove-arrow();
+  @include ulu.element-summary-remove-marker();
   & + .nav-tree {
     margin-top: $collapsible-inner-padding;
   }

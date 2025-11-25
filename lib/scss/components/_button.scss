@@ -63,7 +63,7 @@ $config: (
     @include button.default();
   }
   #{ $prefix }__icon {
-    @include element.icon-vert-translate(get("icon-centered-vertical-offset"));
+    margin-top: get("icon-centered-vertical-offset");
     &:first-child {
       margin-right: get("icon-margin");
     }

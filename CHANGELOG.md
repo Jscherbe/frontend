@@ -2,7 +2,7 @@
 
 ## 0.2.0-beta.8
 
-- **scss/elements** | Add mixin for removing default summary arrow styles. Applied mixin to accordion and menu-stack components.
+- **scss/elements** | Add mixin 'summary-remove-marker' for removing default summary marker styles. Applied mixin to accordion and menu-stack components.
 
 ## 0.2.0-beta.7
 

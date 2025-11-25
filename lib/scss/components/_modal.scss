@@ -246,7 +246,7 @@ $config: (
   }
 
   #{ $prefix }__close-icon {
-    @include element.icon-vert-translate(get("close-icon-vertical-offset"));
+  margin-top: get("close-icon-vertical-offset");
   }
 
   #{ $prefix }__resizer {

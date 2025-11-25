@@ -296,7 +296,7 @@ $styles: (
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    @include element.summary-remove-arrow;
+    @include element.summary-remove-marker;
   }
 
   // Modifiers

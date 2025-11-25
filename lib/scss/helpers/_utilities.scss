@@ -140,7 +140,4 @@
       margin-right: typography.get("space-size");
     }
   }
-  .icon-vert-translate {
-    @include element.icon-vert-translate();
-  }
 }

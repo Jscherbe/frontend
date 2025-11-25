@@ -415,12 +415,8 @@ $rule-margins: (
   }
 }
 
-@mixin icon-vert-translate($adjustment : get("icon-centered-vertical-offset")) {
-  transform: translateY($adjustment);
-}
-
 /// Remove default details arrow from the summary element
-@mixin summary-remove-arrow() {
+@mixin summary-remove-marker() {
   list-style: none; // Remove the default arrow (old safari?)
   &::-webkit-details-marker,
   &::marker {
