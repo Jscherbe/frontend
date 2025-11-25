@@ -1,11 +1,12 @@
 # Change Log
 
-## 0.2.0-beta.8
-
-- **scss/elements** | Add mixin 'summary-remove-marker' for removing default summary marker styles. Applied mixin to accordion and menu-stack components.
-
 ## 0.2.0-beta.7
 
+- **scss/elements** 
+  - Remove `icon-vert-translate` mixin as it was unneeded
+    - Apply property/CSS manually in each component using it
+  - Add mixin `summary-remove-marker` for removing default summary marker styles.    
+    - Applied mixin to `accordion` and `menu-stack` components.
 - **scss/components/card** | Remove old flexbox properties on card children (body, footer) which aren't used in the new grid layout
 
 ## 0.2.0-beta.6
