@@ -38,7 +38,7 @@ Module Settings
 ``` scss
 $config: (
   "icon-margin" : 0.5em,
-  "icon-centered-vertical-offset": 0
+  "icon-centered-vertical-offset": true
 );
 ```
   
