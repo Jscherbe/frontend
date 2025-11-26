@@ -52,12 +52,13 @@ $config: (
   "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
   "close-background-color":         white,
   "close-background-color-hover":   blue,
+  "close-border-color":             null,
+  "close-border-color-hover":       null,
+  "close-box-shadow":               none,
   "close-color":                    black,
   "close-color-hover":              black,
-  "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
   "close-icon-vertical-offset" : true,
-  "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
   "header-color":                   white,
@@ -93,8 +94,8 @@ $config: (
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** variable
-- **Lines (comments):** 35-76
-- **Lines (code):** 78-124
+- **Lines (comments):** 35-77
+- **Lines (code):** 79-126
 
 </details>
 
@@ -119,11 +120,12 @@ $config: (
 |animation-timing-function|CssValue|cubic-bezier(0, 0, .2, 1)|The animation timing menu of the modal.|
 |close-background-color|Color|white|Background color for the modal close icon.|
 |close-background-color-hover|Close|blue|Background color for the modal close icon when hovered or focused.|
+|close-border-color|Color|null|Border color of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color.|
+|close-border-color-hover|Color|null|Border color hover of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color-hover.|
+|close-box-shadow|Color|none|Box-shadow of the modal__close element. Overrides button border color if using button styling. Defaults to remove box-shadow styling.|
 |close-color|Color|black|Type color for the modal close icon.|
 |close-color-hover|Color|black|Type color for the modal close icon when hovered or focused.|
-|close-font-size|Dimension|1.2rem|Font-siz of of the modal close icon font size.|
 |close-margin|Dimension|0.5rem|The margin for the modal close icon.|
-|close-size|Dimension|2.5rem|Size of the modal close icon.|
 |header-background-color|Color|black|Background color for the header.|
 |header-border-bottom|CssValue|none|Bottom-border on the modal header.|
 |header-color|Color|white|Type color of the header.|
@@ -177,8 +179,8 @@ Change modules $config
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 126-129
-- **Lines (code):** 131-133
+- **Lines (comments):** 128-131
+- **Lines (code):** 133-135
 
 </details>
 
@@ -236,8 +238,8 @@ Prints modal component styles
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** mixin
-- **Lines (comments):** 145-147
-- **Lines (code):** 149-523
+- **Lines (comments):** 147-149
+- **Lines (code):** 151-523
 
 </details>
 
@@ -291,8 +293,8 @@ Get a config option
 - **File:** _modal.scss
 - **Group:** modal
 - **Type:** function
-- **Lines (comments):** 135-138
-- **Lines (code):** 140-143
+- **Lines (comments):** 137-140
+- **Lines (code):** 142-145
 
 </details>
 

@@ -210,6 +210,8 @@ SCSS Todos:
   ☐ Look at the scss for card. When using the icon styling, the padding and and grid-row property
     - How to reproduce
     - comment in line 335 in _card.scss.
+  ☐ Defaults for the whole library is font awesome
+    * demo is attempting to balance demoing both
 
   Documentation:
     - setup config documentation for the following components

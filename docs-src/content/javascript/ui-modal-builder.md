@@ -97,7 +97,8 @@ in twig for example)
 | noMinHeight | <code>boolean</code> | If `true`, the modal will not have a minimum height. Defaults to `false`. |
 | class | <code>string</code> | Additional CSS class(es) to add to the modal. Defaults to `""`. |
 | baseClass | <code>string</code> | The base CSS class for the modal elements. Defaults to `"modal"`. |
-| classCloseIcon | <code>string</code> | The class name for the close icon. Uses the wrapped setting string. |
+| classClose | <code>string</code> | The class name for the close button. Defaults to 'button button--icon' styling. |
+| classCloseIcon | <code>string</code> | The class name for the close icon. Defaults to 'button__icon' styling. Uses the wrapped setting string. |
 | classResizerIcon | <code>string</code> | The class name for the resizer icon. Uses the wrapped setting string. |
 | footerElement | <code>string</code> \| <code>Node</code> | Element or selector to use as the footer (will be moved to dialog on creation, used for DOM API) |
 | footerHtml | <code>string</code> \| <code>Node</code> | Markup to use in the footer |

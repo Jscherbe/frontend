@@ -8,6 +8,18 @@
   - Add mixin `summary-remove-marker` for removing default summary marker styles.    
     - Applied mixin to `accordion` and `menu-stack` components.
 - **scss/components/card** | Remove old flexbox properties on card children (body, footer) which aren't used in the new grid layout
+- **scss/components/button** | Remove first and last child margins in button--icon children since those only have one child.
+- **scss/components/modal** 
+  - `modal__close` Removed styling that duplicated button styling. See `modal-builder` updates below for more information
+  - `config.close-border-color` New Option. Changes border color when using the button styles on the `modal__close` element. Fallback to `config.close-background-color`.
+  - `config.close-border-color-hover` New Option. Changes hover border color when using the button styles on the `modal__close` element. Fallback to `config.close-background-color-hover`.
+  - `config.close-box-shadow` New Option. Allows box shadow styling of the `modal__close` element. By default, this option overrides the `button` class box-shadow if using button styling.
+  - removed unused options: `config.close-font-size`, `config.close-font-size`
+- **js/ui/modal-builder** 
+  - **BREAKING:** This version adds to the `button`, `button--icon`, and `button__icon` by default to the modal close element and its child. This may change affect the styling of the modal close element and can be disabled by updating the below config options
+  - `config.classClose` New config option that allows user-customized classes on the modal__close element. By default, has `button button--small` classes.
+  - `config.classCloseIcon` Updated default to include the `button__icon` class.
+
 
 ## 0.2.0-beta.6
 

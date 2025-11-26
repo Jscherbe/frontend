@@ -48,11 +48,12 @@ $-fallbacks: (
 /// @prop {CssValue} animation-timing-function [cubic-bezier(0, 0, .2, 1)] The animation timing menu of the modal.
 /// @prop {Color} close-background-color [white] Background color for the modal close icon.
 /// @prop {Close} close-background-color-hover [blue] Background color for the modal close icon when hovered or focused.
+/// @prop {Color} close-border-color [null] Border color of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color.
+/// @prop {Color} close-border-color-hover [null] Border color hover of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color-hover.
+/// @prop {Color} close-box-shadow [none] Box-shadow of the modal__close element. Overrides button border color if using button styling. Defaults to remove box-shadow styling.
 /// @prop {Color} close-color [black] Type color for the modal close icon.
 /// @prop {Color} close-color-hover [black] Type color for the modal close icon when hovered or focused.
-/// @prop {Dimension} close-font-size [1.2rem] Font-siz of of the modal close icon font size.
 /// @prop {Dimension} close-margin [0.5rem] The margin for the modal close icon.
-/// @prop {Dimension} close-size [2.5rem] Size of the modal close icon.
 /// @prop {Color} header-background-color [black] Background color for the header.
 /// @prop {CssValue} header-border-bottom [none] Bottom-border on the modal header.
 /// @prop {Color} header-color [white] Type color of the header.
@@ -91,12 +92,13 @@ $config: (
   "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
   "close-background-color":         white,
   "close-background-color-hover":   blue,
+  "close-border-color":             null,
+  "close-border-color-hover":       null,
+  "close-box-shadow":               none,
   "close-color":                    black,
   "close-color-hover":              black,
-  "close-font-size":                1.2rem,
   "close-margin":                   0.5rem,
   "close-icon-vertical-offset" : true,
-  "close-size":                     2.5rem,
   "header-background-color":        black,
   "header-border-bottom":           none,
   "header-color":                   white,
@@ -230,23 +232,21 @@ $config: (
   #{ $prefix }__close {
     margin: 0 0 0 get("close-margin");
     flex: 0 0 auto;
-    font-size: get("close-font-size");
-    width: get("close-size");
-    height: get("close-size");
     background-color: color.get(get("close-background-color"));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-color: color.get(utils.fallback(get("close-border-color"), get("close-background-color")));
     color: color.get(get("close-color"));
-    &:hover {
+    box-shadow: get("close-box-shadow");
+    &:hover,
+    &:focus {
       background-color: color.get(get("close-background-color-hover"));
       color: color.get(get("close-color-hover"));
+      border-color: color.get(utils.fallback(get("close-border-color-hover"), get("close-background-color-hover")));
+      // need border-color-hover use utils fallback
     }
   }
 
   #{ $prefix }__close-icon {
-  margin-top: get("close-icon-vertical-offset");
+  // transform: translatey(get("close-icon-vertical-offset"));
   }
 
   #{ $prefix }__resizer {

@@ -155,7 +155,7 @@ Output button component styles
 - **Group:** button
 - **Type:** mixin
 - **Lines (comments):** 47-51
-- **Lines (code):** 53-112
+- **Lines (code):** 53-121
 
 </details>
 
