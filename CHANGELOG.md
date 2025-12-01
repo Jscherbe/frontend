@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0-beta.8
+
+- Bundle config: Adjust "sideEffects" to point at dist files instead of lib
+
 ## 0.2.0-beta.7
 
 - **Bundle Update**

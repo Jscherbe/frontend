@@ -26,7 +26,8 @@
     }
   },
   "sideEffects": [
-    "lib/js/core/events.js"
+    "dist/es/core/events.js",
+    "dist/umd/ulu-frontend.umd.js"
   ],
   "scripts": {
     "build": "npm run build:es && npm run build:umd",
