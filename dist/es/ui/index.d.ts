@@ -1,5 +1,6 @@
 export { BreakpointManager } from './breakpoints.js';
 export { Collapsible } from './collapsible.js';
+export { ProgrammaticModalManager } from './programmatic-modal.js';
 export { OverflowScroller } from './overflow-scroller.js';
 export { createPager as overflowScrollerCreatePager } from './overflow-scroller-pager.js';
 export { init as pageInit } from './page.js';
