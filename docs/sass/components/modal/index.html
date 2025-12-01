@@ -6045,12 +6045,13 @@
   <span class="pjs-token pjs-string">"animation-timing-function"</span> <span class="pjs-token pjs-punctuation">:</span>     <span class="pjs-token pjs-function">cubic-bezier</span><span class="pjs-token pjs-punctuation">(</span>0<span class="pjs-token pjs-punctuation">,</span> 0<span class="pjs-token pjs-punctuation">,</span> .2<span class="pjs-token pjs-punctuation">,</span> 1<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"close-background-color"</span><span class="pjs-token pjs-punctuation">:</span>         white<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"close-background-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>   blue<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-border-color"</span><span class="pjs-token pjs-punctuation">:</span>             <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-border-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>       <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"close-box-shadow"</span><span class="pjs-token pjs-punctuation">:</span>               none<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"close-color"</span><span class="pjs-token pjs-punctuation">:</span>                    black<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"close-color-hover"</span><span class="pjs-token pjs-punctuation">:</span>              black<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"close-font-size"</span><span class="pjs-token pjs-punctuation">:</span>                1.2rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"close-margin"</span><span class="pjs-token pjs-punctuation">:</span>                   0.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"close-icon-vertical-offset"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"close-size"</span><span class="pjs-token pjs-punctuation">:</span>                     2.5rem<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-background-color"</span><span class="pjs-token pjs-punctuation">:</span>        black<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-border-bottom"</span><span class="pjs-token pjs-punctuation">:</span>           none<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-color"</span><span class="pjs-token pjs-punctuation">:</span>                   white<span class="pjs-token pjs-punctuation">,</span>
@@ -6082,8 +6083,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 35-76</li>
-<li><strong>Lines (code):</strong> 78-124</li>
+<li><strong>Lines (comments):</strong> 35-77</li>
+<li><strong>Lines (code):</strong> 79-126</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -6182,6 +6183,24 @@
 <td style="text-align:left">Background color for the modal close icon when hovered or focused.</td>
 </tr>
 <tr>
+<td style="text-align:left">close-border-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Border color of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-border-color-hover</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Border color hover of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color-hover.</td>
+</tr>
+<tr>
+<td style="text-align:left">close-box-shadow</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">none</td>
+<td style="text-align:left">Box-shadow of the modal__close element. Overrides button border color if using button styling. Defaults to remove box-shadow styling.</td>
+</tr>
+<tr>
 <td style="text-align:left">close-color</td>
 <td style="text-align:left">Color</td>
 <td style="text-align:left">black</td>
@@ -6194,22 +6213,10 @@
 <td style="text-align:left">Type color for the modal close icon when hovered or focused.</td>
 </tr>
 <tr>
-<td style="text-align:left">close-font-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">1.2rem</td>
-<td style="text-align:left">Font-siz of of the modal close icon font size.</td>
-</tr>
-<tr>
 <td style="text-align:left">close-margin</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">0.5rem</td>
 <td style="text-align:left">The margin for the modal close icon.</td>
-</tr>
-<tr>
-<td style="text-align:left">close-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">2.5rem</td>
-<td style="text-align:left">Size of the modal close icon.</td>
 </tr>
 <tr>
 <td style="text-align:left">header-background-color</td>
@@ -6353,8 +6360,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 126-129</li>
-<li><strong>Lines (code):</strong> 131-133</li>
+<li><strong>Lines (comments):</strong> 128-131</li>
+<li><strong>Lines (code):</strong> 133-135</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -6393,8 +6400,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 145-147</li>
-<li><strong>Lines (code):</strong> 149-523</li>
+<li><strong>Lines (comments):</strong> 147-149</li>
+<li><strong>Lines (code):</strong> 151-523</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -6417,8 +6424,8 @@
 <li><strong>File:</strong> _modal.scss</li>
 <li><strong>Group:</strong> modal</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 135-138</li>
-<li><strong>Lines (code):</strong> 140-143</li>
+<li><strong>Lines (comments):</strong> 137-140</li>
+<li><strong>Lines (code):</strong> 142-145</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>

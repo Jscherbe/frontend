@@ -5978,6 +5978,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.2.0-beta.7">0.2.0-beta.7</a>
+            		</li>
+
                     <li><a href="#0.2.0-beta.6">0.2.0-beta.6</a>
             		</li>
 
@@ -6413,6 +6416,60 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.2.0-beta.7" tabindex="-1">0.2.0-beta.7</h2>
+<ul>
+<li><strong>Bundle Update</strong>
+<ul>
+<li>The bundle that this package exposes (for javascript use) has been been updated to <code>preserveModules</code>
+<ul>
+<li>This is to allow viewing specific modules included in your bundle when using something like rollup bundle analyzer</li>
+<li>Add better tree shaking capabilities</li>
+<li>Dist directory is now split into two bundles ES and UMD (full package for testing in browser, etc. Not for bundling/Vite/Webpack usage)</li>
+<li>Exports are mapped to the new structure and old imports will work the same (no code updates needed on user side)</li>
+<li>Remove all side effects in JS modules
+<ul>
+<li>Only core/events has required side effects and can't be dropped when tree-shaking</li>
+<li>Slider, BreakpointManager have been refactored to only attach handlers if there inner classes are actually used</li>
+<li>All module (except core/events) can be dropped by bundler if unused</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>scss/elements</strong>
+<ul>
+<li>Remove <code>icon-vert-translate</code> mixin as it was unneeded
+<ul>
+<li>Apply property/CSS manually in each component using it</li>
+</ul>
+</li>
+<li>Add mixin <code>summary-remove-marker</code> for removing default summary marker styles.
+<ul>
+<li>Applied mixin to <code>accordion</code> and <code>menu-stack</code> components.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>scss/components/card</strong> | Remove old flexbox properties on card children (body, footer) which aren't used in the new grid layout</li>
+<li><strong>scss/components/button</strong> | Remove first and last child margins in button--icon children since those only have one child.</li>
+<li><strong>scss/components/modal</strong>
+<ul>
+<li><code>modal__close</code> Removed styling that duplicated button styling. See <code>modal-builder</code> updates below for more information</li>
+<li><code>config.close-border-color</code> New Option. Changes border color when using the button styles on the <code>modal__close</code> element. Fallback to <code>config.close-background-color</code>.</li>
+<li><code>config.close-border-color-hover</code> New Option. Changes hover border color when using the button styles on the <code>modal__close</code> element. Fallback to <code>config.close-background-color-hover</code>.</li>
+<li><code>config.close-box-shadow</code> New Option. Allows box shadow styling of the <code>modal__close</code> element. By default, this option overrides the <code>button</code> class box-shadow if using button styling.</li>
+<li>removed unused options: <code>config.close-font-size</code>, <code>config.close-font-size</code></li>
+</ul>
+</li>
+<li><strong>js/ui/modal-builder</strong>
+<ul>
+<li><strong>MINOR BREAKING CHANGE:</strong> This version adds to the <code>button</code>, <code>button--icon</code>, and <code>button__icon</code> by default to the modal close element and its child. This may change affect the styling of the modal close element and can be disabled by updating the below config options</li>
+<li><code>config.classClose</code> New config option that allows user-customized classes on the modal__close element. By default, has <code>button button--small</code> classes.</li>
+<li><code>config.classCloseIcon</code> Updated default to include the <code>button__icon</code> class.</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.2.0-beta.6" tabindex="-1">0.2.0-beta.6</h2>
 <ul>
 <li><strong>scss/components/form-theme</strong> | Remove checkbox border radius config fallback to <code>input-border-radius</code>. Doesn't work correctly, <code>checkbox-input-border-radius</code> needs to be set specifically</li>

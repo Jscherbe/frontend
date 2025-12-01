@@ -42,6 +42,7 @@ export namespace defaults {
     export let baseClass: string;
     export let footerElement: null;
     export let footerHtml: null;
+    export let classClose: string;
     export let classCloseIcon: Object;
     export let classResizerIcon: Object;
     export let classResizerIconBoth: Object;
@@ -128,7 +129,11 @@ export type DefaultModalOptions = {
      */
     baseClass: string;
     /**
-     * - The class name for the close icon. Uses the wrapped setting string.
+     * - The class name for the close button. Defaults to 'button button--icon' styling.
+     */
+    classClose: string;
+    /**
+     * - The class name for the close icon. Defaults to 'button__icon' styling. Uses the wrapped setting string.
      */
     classCloseIcon: string;
     /**

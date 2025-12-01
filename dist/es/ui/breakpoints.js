@@ -1,15 +1,18 @@
-var p = Object.defineProperty;
-var u = (i, t, e) => t in i ? p(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e;
-var h = (i, t, e) => u(i, typeof t != "symbol" ? t + "" : t, e);
-import { removeArrayElement as l } from "@ulu/utils/array.js";
+var u = Object.defineProperty;
+var p = (s, t, e) => t in s ? u(s, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : s[t] = e;
+var r = (s, t, e) => p(s, typeof t != "symbol" ? t + "" : t, e);
+import { removeArrayElement as c } from "@ulu/utils/array.js";
 import { isBrowser as g } from "@ulu/utils/browser/dom.js";
 import { getCoreEventName as v } from "../core/events.js";
-import { wrapSettingString as k } from "../core/settings.js";
-import { getCustomProperty as b } from "../utils/css.js";
-import { log as d, logError as m } from "../utils/class-logger.js";
-const y = (i) => b(i, "breakpoint");
-g() && C();
-const o = class o {
+import { wrapSettingString as b } from "../core/settings.js";
+import { getCustomProperty as k } from "../utils/css.js";
+import { log as d, logError as f } from "../utils/class-logger.js";
+const y = (s) => k(s, "breakpoint"), i = class i {
+  static _initializeGlobals() {
+    i.globalsInitialized || !g() || (window.addEventListener(v("pageResized"), () => {
+      i.instances.forEach((t) => t.update());
+    }), i.globalsInitialized = !0);
+  }
   /**
    * @param {Object} config Configuration object
    * @param {Array} config.order Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]
@@ -19,7 +22,7 @@ const o = class o {
    * @param {String} config.pseudoSelector Change pseudo selector used to get the breakpoint from the pseudo's content property
    */
   constructor(t) {
-    Object.assign(this, o.defaults, t), this.active = null, this.previous = null, this.activeIndex = null, this.resizeDirection = null, this.previousIndex = null, this.breakpoints = {}, this.onChangeCallbacks = [], this.order.forEach((e) => this.breakpoints[e] = new x(e, this)), d(this, this), this.update(), o.instances.push(this);
+    i._initializeGlobals(), Object.assign(this, i.defaults, t), this.active = null, this.previous = null, this.activeIndex = null, this.resizeDirection = null, this.previousIndex = null, this.breakpoints = {}, this.onChangeCallbacks = [], this.order.forEach((e) => this.breakpoints[e] = new x(e, this)), d(this, this), this.update(), i.instances.push(this);
   }
   /**
    * Add a callback for every time a breakpoint changes
@@ -35,7 +38,7 @@ const o = class o {
    * @param {Function} callback Function to remove
    */
   removeOnChange(t) {
-    l(this.onChangeCallbacks, t);
+    c(this.onChangeCallbacks, t);
   }
   /**
    * Get breakpoint from a pseudo element
@@ -61,16 +64,16 @@ const o = class o {
   update() {
     const t = this.getBreakpoint();
     if (!t) {
-      m(this, "Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!");
+      f(this, "Unable to get current breakpoint, maybe order is incorrect? Breakpoint check skipped!");
       return;
     }
     if (t === this.active) return;
     this.previous = this.active, this.previousIndex = this.activeIndex;
     const e = this.order.indexOf(t);
-    this.active = t, this.activeIndex = e, this.order.forEach((s, n) => {
-      const r = this.breakpoints[s], a = this.activeIndex;
-      r._setDirection("min", n <= a), r._setDirection("max", n > a), r._setDirection("only", n === a);
-    }), this.previousIndex !== null && (this.resizeDirection = this.previousIndex < e ? "up" : "down"), this.onChangeCallbacks.forEach((s) => s(this));
+    this.active = t, this.activeIndex = e, this.order.forEach((o, n) => {
+      const a = this.breakpoints[o], h = this.activeIndex;
+      a._setDirection("min", n <= h), a._setDirection("max", n > h), a._setDirection("only", n === h);
+    }), this.previousIndex !== null && (this.resizeDirection = this.previousIndex < e ? "up" : "down"), this.onChangeCallbacks.forEach((o) => o(this));
   }
   /**
    * Get a breakpoint by key
@@ -79,20 +82,20 @@ const o = class o {
    */
   at(t) {
     const e = this.breakpoints[t];
-    return t || m(this, "Unable to find breakpoint for:", e), e;
+    return t || f(this, "Unable to find breakpoint for:", e), e;
   }
 };
-h(o, "instances", []), h(o, "defaults", {
+r(i, "instances", []), r(i, "globalsInitialized", !1), r(i, "defaults", {
   element: document == null ? void 0 : document.documentElement,
   valueFromPseudo: !1,
   customProperty: "--breakpoint",
-  customProperty: k("cssvarPrefix", y),
+  customProperty: b("cssvarPrefix", y),
   pseudoSelector: ":before",
   order: ["none", "small", "medium", "large"],
   debug: !1
 });
-let f = o;
-class c {
+let m = i;
+class l {
   constructor(t, e) {
     this.direction = t, this.active = !1, this.on = [], this.off = [], this.breakpoint = e;
   }
@@ -106,7 +109,7 @@ class c {
    * Calls all functions in handlers or
    */
   _call(t) {
-    (t ? this.on : this.off).forEach((s) => s()), d(this.breakpoint._manager, `Handlers called (${t ? "on" : "off"}): ${this.direction}`);
+    (t ? this.on : this.off).forEach((o) => o()), d(this.breakpoint._manager, `Handlers called (${t ? "on" : "off"}): ${this.direction}`);
   }
   /**
    * Returns handlers in normalized object format on/off
@@ -129,15 +132,15 @@ class c {
    */
   remove(t) {
     const e = this.getHandlers(t);
-    e.on && l(this.on, e.on), e.off && l(this.off, e.off);
+    e.on && c(this.on, e.on), e.off && c(this.off, e.off);
   }
 }
 class x {
   constructor(t, e) {
     this.directions = {
-      max: new c("max", this),
-      min: new c("min", this),
-      only: new c("only", this)
+      max: new l("max", this),
+      min: new l("min", this),
+      only: new l("only", this)
     }, this._manager = e, this.name = t;
   }
   /**
@@ -186,11 +189,6 @@ class x {
     t.unshift(`Breakpoint (${this.name}):`), this._manager.log.apply(this._manager, t);
   }
 }
-function C() {
-  window.addEventListener(v("pageResized"), () => {
-    f.instances.forEach((i) => i.update());
-  });
-}
 export {
-  f as BreakpointManager
+  m as BreakpointManager
 };

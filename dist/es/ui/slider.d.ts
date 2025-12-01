@@ -18,6 +18,9 @@ export const initializer: ComponentInitializer;
  */
 export class Slider {
     static instances: any[];
+    static globalsInitialized: boolean;
+    static reduceMotion: boolean;
+    static _initializeGlobals(): void;
     /**
      * Default options for slider
      */

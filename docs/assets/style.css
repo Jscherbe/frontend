@@ -11975,7 +11975,6 @@ components:
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
   width: 100%;
   background-color: #f6f6f6;
   padding: 1em 1.25em;
@@ -11985,6 +11984,7 @@ components:
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  list-style: none;
 }
 .accordion__summary::-webkit-details-marker, .accordion__summary::marker {
   display: none;
@@ -12374,11 +12374,6 @@ component:button
   border-color: orange;
 }
 
-.button__icon {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-}
 .button__icon:first-child {
   margin-right: 0.5em;
 }
@@ -12451,6 +12446,17 @@ component:button
   width: 2.5rem;
   height: 2.5rem;
   padding: 0 !important;
+}
+.button--icon .button__icon {
+  -webkit-transform: translatey(0.02em);
+      -ms-transform: translatey(0.02em);
+          transform: translatey(0.02em);
+}
+.button--icon .button__icon:first-child {
+  margin-right: 0;
+}
+.button--icon .button__icon:last-child {
+  margin-left: 0;
 }
 
 .button--small.button--icon {
@@ -12973,9 +12979,6 @@ a.badge:focus .badge__inner {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   min-height: 10rem;
 }
 
@@ -12993,9 +12996,6 @@ a.badge:focus .badge__inner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   min-height: 2.5rem;
@@ -13542,7 +13542,8 @@ button.card:focus-within .card__footer, .card--clickable:hover .card__body,
 [class*=css-icon--triangle],
 [class*=css-icon--arrow]::after {
   background-color: currentColor;
-  clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
+  -webkit-clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
+          clip-path: polygon(10% 10%, 90% 50%, 10% 90%);
 }
 
 [class*=css-icon--arrow]::before {
@@ -13950,12 +13951,14 @@ details[open] > summary .css-icon--menu-to-close::before, .css-icon--menu-to-clo
     padding-right: 14px;
   }
   [data-grid*="columns: 12"] > [data-grid-item*="sticky: top"] {
+    position: -webkit-sticky;
     position: sticky;
     -ms-flex-item-align: start;
         align-self: start;
     top: var(--ulu-sticky-top-offset, 0);
   }
   [data-grid*="columns: 12"] > [data-grid-item*="sticky: bottom"] {
+    position: -webkit-sticky;
     position: sticky;
     -ms-flex-item-align: end;
         align-self: end;
@@ -15352,7 +15355,8 @@ table.data-table--no-border {
 
 .form-theme--hide-labels label {
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -15415,16 +15419,20 @@ table.data-table--no-border {
 .link:not(.link--no-visited) {
   color: var(--site-color-link);
   text-decoration: underline;
-  text-decoration-style: solid;
-  text-decoration-color: initial;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: initial;
+          text-decoration-color: initial;
   text-decoration-thickness: 1px;
   text-underline-offset: auto;
 }
 .links:not(.links--no-visited) a:hover,
 .link:not(.link--no-visited):hover {
   color: var(--site-color-link-hover);
-  text-decoration-style: solid;
-  text-decoration-color: false;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: false;
+          text-decoration-color: false;
 }
 .links:not(.links--no-visited) a:visited,
 .link:not(.link--no-visited):visited {
@@ -15439,16 +15447,20 @@ table.data-table--no-border {
 .link--no-visited {
   color: var(--site-color-link);
   text-decoration: underline;
-  text-decoration-style: solid;
-  text-decoration-color: initial;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: initial;
+          text-decoration-color: initial;
   text-decoration-thickness: 1px;
   text-underline-offset: auto;
 }
 .links--no-visited a:hover,
 .link--no-visited:hover {
   color: var(--site-color-link-hover);
-  text-decoration-style: solid;
-  text-decoration-color: false;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: false;
+          text-decoration-color: false;
 }
 
 .links.links--no-underline a,
@@ -15672,6 +15684,11 @@ ul.list-inline,
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  list-style: none;
+}
+.menu-stack__toggle::-webkit-details-marker, .menu-stack__toggle::marker {
+  display: none;
+  content: "";
 }
 
 .menu-stack--hanging > .menu-stack__list > .menu-stack__item > .menu-stack__link,
@@ -15727,7 +15744,8 @@ ul.list-inline,
 .menu-stack--hide-inputs .menu-stack__selectable [type=checkbox],
 .menu-stack--hide-inputs .menu-stack__selectable [type=radio] {
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -15860,31 +15878,16 @@ ul.list-inline,
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  font-size: 1.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
   background-color: var(--site-color-modal-close-background);
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  border-color: var(--site-color-modal-close-background);
   color: var(--site-color-modal-primary);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
-.modal__close:hover {
+.modal__close:hover, .modal__close:focus {
   background-color: var(--site-color-modal-close-background-hover);
   color: var(--site-color-modal-close-hover);
-}
-
-.modal__close-icon {
-  -webkit-transform: translateY(0.05em);
-      -ms-transform: translateY(0.05em);
-          transform: translateY(0.05em);
+  border-color: var(--site-color-modal-close-background-hover);
 }
 
 .modal__resizer {
@@ -17670,6 +17673,7 @@ ul.list-inline,
   .sticky-list__title,
   .sticky-list > :not(ul) {
     display: block;
+    position: -webkit-sticky;
     position: sticky;
     top: 45vh;
     -ms-flex-preferred-size: 40%;
@@ -17699,6 +17703,7 @@ ul.list-inline,
   .sticky-list__item,
   .sticky-list > ul > li {
     display: block;
+    position: -webkit-sticky;
     position: sticky;
     top: 45vh;
     margin: 0 !important;
@@ -18406,15 +18411,19 @@ button.captioned-figure:focus {
 .wysiwyg a:not([class], .wysiwyg__exclude) {
   color: var(--site-color-link);
   text-decoration: underline;
-  text-decoration-style: solid;
-  text-decoration-color: initial;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: initial;
+          text-decoration-color: initial;
   text-decoration-thickness: 1px;
   text-underline-offset: auto;
 }
 .wysiwyg a:not([class], .wysiwyg__exclude):hover {
   color: var(--site-color-link-hover);
-  text-decoration-style: solid;
-  text-decoration-color: false;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: false;
+          text-decoration-color: false;
 }
 .wysiwyg a:not([class], .wysiwyg__exclude):visited {
   color: var(--site-color-link-visited);
@@ -18580,6 +18589,7 @@ button.captioned-figure:focus {
 .page__header,
 .page__toc {
   height: 100vh;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   overflow-y: auto;
@@ -18661,6 +18671,7 @@ button.captioned-figure:focus {
   padding: 1rem;
   background-color: var(--site-color-accent);
   color: var(--site-color-type-inverse);
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -18739,9 +18750,11 @@ button.captioned-figure:focus {
 
 .nav-tree__toggle {
   font-weight: bold;
+  list-style: none;
 }
-.nav-tree__toggle::marker {
+.nav-tree__toggle::-webkit-details-marker, .nav-tree__toggle::marker {
   display: none;
+  content: "";
 }
 .nav-tree__toggle + .nav-tree {
   margin-top: 0.5em;
@@ -19550,7 +19563,8 @@ helpers:display
 */
 .hidden-visually {
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -19560,7 +19574,8 @@ helpers:display
 
 .hidden-visually-focusable:not(:active):not(:focus) {
   clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -19784,12 +19799,6 @@ helpers:utilities
 }
 .flow-inline:not(:last-child) {
   margin-right: 0.38em;
-}
-
-.icon-vert-translate {
-  -webkit-transform: translateY(0.05em);
-      -ms-transform: translateY(0.05em);
-          transform: translateY(0.05em);
 }
 
 @media print {

@@ -5,6 +5,8 @@
  */
 export class BreakpointManager {
     static instances: any[];
+    static globalsInitialized: boolean;
+    static _initializeGlobals(): void;
     static defaults: {
         element: HTMLElement;
         valueFromPseudo: boolean;

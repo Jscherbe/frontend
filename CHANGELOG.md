@@ -2,6 +2,16 @@
 
 ## 0.2.0-beta.7
 
+- **Bundle Update**
+  - The bundle that this package exposes (for javascript use) has been been updated to `preserveModules`
+    - This is to allow viewing specific modules included in your bundle when using something like rollup bundle analyzer  
+    - Add better tree shaking capabilities
+    - Dist directory is now split into two bundles ES and UMD (full package for testing in browser, etc. Not for bundling/Vite/Webpack usage)
+    - Exports are mapped to the new structure and old imports will work the same (no code updates needed on user side) 
+    - Remove all side effects in JS modules
+      - Only core/events has required side effects and can't be dropped when tree-shaking
+      - Slider, BreakpointManager have been refactored to only attach handlers if there inner classes are actually used
+      - All module (except core/events) can be dropped by bundler if unused
 - **scss/elements** 
   - Remove `icon-vert-translate` mixin as it was unneeded
     - Apply property/CSS manually in each component using it
@@ -16,10 +26,9 @@
   - `config.close-box-shadow` New Option. Allows box shadow styling of the `modal__close` element. By default, this option overrides the `button` class box-shadow if using button styling.
   - removed unused options: `config.close-font-size`, `config.close-font-size`
 - **js/ui/modal-builder** 
-  - **BREAKING:** This version adds to the `button`, `button--icon`, and `button__icon` by default to the modal close element and its child. This may change affect the styling of the modal close element and can be disabled by updating the below config options
+  - **MINOR BREAKING CHANGE:** This version adds to the `button`, `button--icon`, and `button__icon` by default to the modal close element and its child. This may change affect the styling of the modal close element and can be disabled by updating the below config options
   - `config.classClose` New config option that allows user-customized classes on the modal__close element. By default, has `button button--small` classes.
   - `config.classCloseIcon` Updated default to include the `button__icon` class.
-
 
 ## 0.2.0-beta.6
 

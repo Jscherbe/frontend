@@ -1,52 +1,54 @@
 var T = Object.defineProperty;
-var S = (r, t, s) => t in r ? T(r, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : r[t] = s;
-var v = (r, t, s) => S(r, typeof t != "symbol" ? t + "" : t, s);
-import { ComponentInitializer as x } from "../core/component.js";
+var x = (a, t, s) => t in a ? T(a, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : a[t] = s;
+var m = (a, t, s) => x(a, typeof t != "symbol" ? t + "" : t, s);
+import { ComponentInitializer as S } from "../core/component.js";
 import { wrapSettingString as b } from "../core/settings.js";
 import k from "ally.js/maintain/_maintain";
 import { hasRequiredProps as $ } from "@ulu/utils/object.js";
-import { trimWhitespace as g } from "@ulu/utils/string.js";
+import { trimWhitespace as v } from "@ulu/utils/string.js";
 import { debounce as I } from "@ulu/utils/performance.js";
 import { logError as y, log as A, logWarning as L } from "../utils/class-logger.js";
-import D from "swipe-listener";
-const m = new x({
+import z from "swipe-listener";
+const f = new S({
   type: "slider",
   baseAttribute: "data-ulu-slider"
-}), B = m.attributeSelector("track"), N = m.attributeSelector("track-container"), q = m.attributeSelector("control-context"), M = m.attributeSelector("slide"), P = [], V = matchMedia("(prefers-reduced-motion: reduce)").matches, d = { once: !0 }, E = (r) => `${r}ms`;
-addEventListener("load", () => {
-  addEventListener("resize", I(() => {
-    C.instances.forEach((r) => r.handleResize());
-  }, 250));
-});
-const z = [
+}), D = f.attributeSelector("track"), M = f.attributeSelector("track-container"), B = f.attributeSelector("control-context"), N = f.attributeSelector("slide"), q = [], h = { once: !0 }, E = (a) => `${a}ms`, P = [
   "container",
   "trackContainer",
   "track",
   "slides"
 ];
-function Q() {
-  m.init({
+function K() {
+  f.init({
     withData: !0,
     coreEvents: ["pageModified"],
-    setup({ element: r, data: t, initialize: s }) {
-      F(r, t), s();
+    setup({ element: a, data: t, initialize: s }) {
+      V(a, t), s();
     }
   });
 }
-function F(r, t) {
+function V(a, t) {
   const s = Object.assign({}, t), e = {
-    container: r,
-    track: r.querySelector(B),
-    trackContainer: r.querySelector(N),
-    controlContext: r.querySelector(q),
-    slides: r.querySelectorAll(M)
+    container: a,
+    track: a.querySelector(D),
+    trackContainer: a.querySelector(M),
+    controlContext: a.querySelector(B),
+    slides: a.querySelectorAll(N)
   };
-  e.slides.length && P.push(new C(e, s, !1));
+  e.slides.length && q.push(new g(e, s, !1));
 }
-const h = class h {
+const l = class l {
+  static _initializeGlobals() {
+    l.globalsInitialized || (addEventListener("load", () => {
+      addEventListener("resize", I(() => {
+        l.instances.forEach((t) => t.handleResize());
+      }, 250));
+    }), l.reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches, l.globalsInitialized = !0);
+  }
   constructor(t, s) {
-    const e = Object.assign({}, h.defaults, s);
-    this.options = e, this.slide = null, this.index = null, this.swipeInstance = null, this.swipeListener = null, this.swipeImageListener = null, this.transitioning = !1, $(z) || y(this, "Missing a required Element"), t.slides.length || y(this, "Missing slides"), this.slides = [...t.slides].map((i, n) => ({
+    l._initializeGlobals();
+    const e = Object.assign({}, l.defaults, s);
+    this.options = e, this.slide = null, this.index = null, this.swipeInstance = null, this.swipeListener = null, this.swipeImageListener = null, this.transitioning = !1, $(P) || y(this, "Missing a required Element"), t.slides.length || y(this, "Missing slides"), this.slides = [...t.slides].map((i, n) => ({
       element: i,
       index: n,
       number: n + 1
@@ -54,7 +56,7 @@ const h = class h {
       ...t,
       ...this.createControls(t.controlContext || t.container),
       ...this.createNav(t.navContext || t.container)
-    }, this.transition = e.transition ? e.transitionFade || V ? this.fadeTransition : this.slideTransition : this.noTransition, this.setup(), this.goto(0, null, "init"), A(this, "Slider Instance Created", this), h.instances.push(this);
+    }, this.transition = e.transition ? e.transitionFade || l.reduceMotion ? this.fadeTransition : this.slideTransition : this.noTransition, this.setup(), this.goto(0, null, "init"), A(this, "Slider Instance Created", this), l.instances.push(this);
   }
   /**
    * Sliding mechanism needs translate updated on resize
@@ -87,11 +89,11 @@ const h = class h {
   ensureTransitionEnds(t, s, e) {
     return new Promise((i) => {
       const n = {}, o = () => {
-        clearTimeout(n.start), n.end = setTimeout(a, s + 500);
-      }, a = () => {
-        clearTimeout(n.start), clearTimeout(n.end), t.removeEventListener("transitionrun", o, d), t.removeEventListener("transitionend", a, d), t.removeEventListener("transitioncancel", a, d), i();
+        clearTimeout(n.start), n.end = setTimeout(r, s + 500);
+      }, r = () => {
+        clearTimeout(n.start), clearTimeout(n.end), t.removeEventListener("transitionrun", o, h), t.removeEventListener("transitionend", r, h), t.removeEventListener("transitioncancel", r, h), i();
       };
-      t.addEventListener("transitionrun", o, d), t.addEventListener("transitionend", a, d), t.addEventListener("transitioncancel", a, d), n.start = setTimeout(a, s + 500), t.style.transitionDuration = E(s), e(), s || a();
+      t.addEventListener("transitionrun", o, h), t.addEventListener("transitionend", r, h), t.addEventListener("transitioncancel", r, h), n.start = setTimeout(r, s + 500), t.style.transitionDuration = E(s), e(), s || r();
     });
   }
   /**
@@ -125,9 +127,9 @@ const h = class h {
    * Handler for the entire slide transtion
    */
   async slideTransition({ slide: t, index: s, old: e, oldIndex: i, triggerType: n }) {
-    const o = this.slides.length, a = n === "previous", f = o - 1, c = s === 0 && i === f, u = s === f && i === 0;
-    let l, p = this.options.transitionDuration;
-    i && !c && !u && (p = p * Math.abs(i - s)), o < 3 ? c && !a ? l = e : u && (l = a ? t : e) : c ? l = e : u && (l = t), this.setVisibility(null, !0), l && (l.element.style.order = "-1", await this.translateTo(c ? 0 : e.element.offsetLeft, 0)), await this.translateTo(t.element.offsetLeft, p), l && (l.element.style.order = "0", await this.translateTo(t.element.offsetLeft, 0)), this.setVisibility(t, !1);
+    const o = this.slides.length, r = n === "previous", C = o - 1, u = s === 0 && i === C, d = s === C && i === 0;
+    let c, p = this.options.transitionDuration;
+    i && !u && !d && (p = p * Math.abs(i - s)), o < 3 ? u && !r ? c = e : d && (c = r ? t : e) : u ? c = e : d && (c = t), this.setVisibility(null, !0), c && (c.element.style.order = "-1", await this.translateTo(u ? 0 : e.element.offsetLeft, 0)), await this.translateTo(t.element.offsetLeft, p), c && (c.element.style.order = "0", await this.translateTo(t.element.offsetLeft, 0)), this.setVisibility(t, !1);
   }
   /**
    * Handler for the entire fade transtion
@@ -146,8 +148,8 @@ const h = class h {
       slide: i,
       index: n,
       slides: o,
-      elements: a
-    } = this, f = e === "init", c = o[t], u = this.getClass("nav-button--active"), l = this.getClass("transition", !0), p = { slide: c, index: t, old: i, oldIndex: n, triggerType: e };
+      elements: r
+    } = this, C = e === "init", u = o[t], d = this.getClass("nav-button--active"), c = this.getClass("transition", !0), p = { slide: u, index: t, old: i, oldIndex: n, triggerType: e };
     if (t === n) {
       L(this, "Could not goto slide, still performing transition");
       return;
@@ -157,14 +159,14 @@ const h = class h {
       return;
     }
     const w = k.disabled({ context: this.elements.track });
-    this.transitioning = !0, i && i.navButton.classList.remove(u), c.navButton.classList.add(u), a.container.classList.add(l), this.transition(p).then(() => {
-      this.index = t, this.slide = c, this.transitioning = !1, a.container.classList.remove(l), w.disengage(), f || (c.element.focus(), this.emit("goto", [s, t, c]));
+    this.transitioning = !0, i && i.navButton.classList.remove(d), u.navButton.classList.add(d), r.container.classList.add(c), this.transition(p).then(() => {
+      this.index = t, this.slide = u, this.transitioning = !1, r.container.classList.remove(c), w.disengage(), C || (u.element.focus(), this.emit("goto", [s, t, u]));
     });
   }
   setup() {
-    const { container: t, track: s, trackContainer: e } = this.elements, i = g(this.trackCss()), n = g(this.trackContainerStyles()), o = g(this.slideCss());
-    s.setAttribute("style", i), e.setAttribute("style", n), this.slides.forEach((a) => {
-      a.element.setAttribute("style", o), a.element.setAttribute("tabindex", "-1");
+    const { container: t, track: s, trackContainer: e } = this.elements, i = v(this.trackCss()), n = v(this.trackContainerStyles()), o = v(this.slideCss());
+    s.setAttribute("style", i), e.setAttribute("style", n), this.slides.forEach((r) => {
+      r.element.setAttribute("style", o), r.element.setAttribute("tabindex", "-1");
     }), t.classList.add(this.getClass()), this.options.swipeEnabled && this.setupSwipe();
   }
   setupSwipe() {
@@ -175,7 +177,7 @@ const h = class h {
       s.preventDefault();
     }, this.slides.forEach((s) => {
       const { element: e } = s;
-      s.swipeInstance = D(e, this.options.swipeOptions), e.addEventListener("swipe", this.swipeListener);
+      s.swipeInstance = z(e, this.options.swipeOptions), e.addEventListener("swipe", this.swipeListener);
     }), t.forEach((s) => {
       s.addEventListener("dragstart", this.swipeImageListener);
     });
@@ -261,10 +263,10 @@ const h = class h {
     this.options.events[t] && this.options.events[t].apply(this, s);
   }
 };
-v(h, "instances", []), /**
+m(l, "instances", []), m(l, "globalsInitialized", !1), m(l, "reduceMotion", !1), /**
  * Default options for slider
  */
-v(h, "defaults", {
+m(l, "defaults", {
   classAccessiblyHidden: "hidden-visually",
   namespace: "Slider",
   events: {},
@@ -281,10 +283,10 @@ v(h, "defaults", {
     preventScroll: !0
   }
 });
-let C = h;
+let g = l;
 export {
-  C as Slider,
-  Q as init,
-  m as initializer,
-  F as setupSlider
+  g as Slider,
+  K as init,
+  f as initializer,
+  V as setupSlider
 };
