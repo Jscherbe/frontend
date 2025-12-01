@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.2.0-beta.7",
+  "version": "0.2.0-beta.8",
   "description": "A framework-agnostic frontend toolkit providing a modular, tree-shakable library of accessible components and utilities. Designed for seamless integration, it features a highly configurable SCSS system for any environment and vanilla JavaScript modules optimized for traditional websites and content management systems.",
   "type": "module",
   "files": [
