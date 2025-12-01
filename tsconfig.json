@@ -2,7 +2,6 @@
   "include": ["./lib/js/**/*"],
   "exclude" : ["lib/js/deprecated"],
   "compilerOptions": {
-    "rootDir": "lib/js",
     "skipLibCheck" : true,
     "allowJs": true,
     "declaration": true,
@@ -11,6 +10,9 @@
     "declarationMap": true,
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,      
+    "isolatedModules": true,      
+    "strict": true  
   }
 }

@@ -1,0 +1,10 @@
+Todos:
+  ✔ Make sure to check peer deps @done
+  ✔ Account for creating UMD bundle! @done
+  ✔ Setup typescript for inline @done
+  ✔ Update exports @done
+  ☐ Setup side effects in package @in-progress
+    ☐ Need to revisit this @important
+      ☐ Need to redesign slider and breakpoints modules to be tree shakeable and to attach their listeners in the constructor (setting a flag so that it's only setup once if only needed at the parent/class level)
+        * See
+  ☐ Delete this after confirmation of tree shaking and visualizing
