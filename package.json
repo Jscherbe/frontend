@@ -26,9 +26,7 @@
     }
   },
   "sideEffects": [
-    "lib/js/core/events.js",
-    "lib/js/ui/breakpoints.js",
-    "lib/js/ui/slider.js"
+    "lib/js/core/events.js"
   ],
   "scripts": {
     "build": "npm run build:es && npm run build:umd",

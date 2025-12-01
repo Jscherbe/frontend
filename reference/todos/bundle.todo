@@ -8,3 +8,8 @@ Todos:
       ☐ Need to redesign slider and breakpoints modules to be tree shakeable and to attach their listeners in the constructor (setting a flag so that it's only setup once if only needed at the parent/class level)
         * See
   ☐ Delete this after confirmation of tree shaking and visualizing
+
+Changelog:
+  ☐ New bundle structure for tree shaking
+  ☐ Side effects
+    ☐ Slider 
