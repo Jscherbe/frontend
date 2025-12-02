@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.2.0-beta.11
+
+- Update `@ulu/utils` dependency
+
 ## 0.2.0-beta.10
 
 - `ui/slider.js`
