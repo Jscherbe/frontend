@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.0-beta.9
+
+- `ui/slider.js`
+  - Remove `ally.js` (maintain) dependency, as it's outdated and no longer maintained. Switching to the inert HTML attribute since browser support is widely available now
+
 ## 0.2.0-beta.8
 
 - Bundle config: Adjust "sideEffects" to point at dist files instead of lib

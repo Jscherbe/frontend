@@ -22,14 +22,12 @@ const umdDeps = {
   globals: {
     "@floating-ui/dom" : "FloatingUIDOM",
     "@ulu/utils" : "UluUtils",
-    "ally.js" : "ally",
     "aria-tablist" : "AriaTablist",
     "swipe-listener" : "SwipeListener"
   },
   external: [
     "@floating-ui/dom", 
     "@ulu/utils", 
-    "ally.js", 
     "aria-tablist", 
     "swipe-listener"
   ],

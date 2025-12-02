@@ -10,8 +10,13 @@ layout: fullpage
   {% for i in (1..4) -%}
     <li class="slider__slide" data-ulu-slider-slide>
       <figure class="pull-quote">
-        <blockquote class="pull-quote__body display-inline-all">
-          Important Quote #{{ i }}
+        <blockquote class="pull-quote__body">
+          <p>
+            <strong>Important Quote #{{ i }}</strong>
+          </p>
+          <p>
+            <a href="#">Focusable Test</a>
+          </p>
         </blockquote>
         <figcaption class="pull-quote__author">
         <strong class="pull-quote__author-name">

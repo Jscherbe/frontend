@@ -1,46 +1,45 @@
-var T = Object.defineProperty;
-var x = (a, t, s) => t in a ? T(a, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : a[t] = s;
-var m = (a, t, s) => x(a, typeof t != "symbol" ? t + "" : t, s);
-import { ComponentInitializer as S } from "../core/component.js";
+var w = Object.defineProperty;
+var T = (a, t, s) => t in a ? w(a, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : a[t] = s;
+var m = (a, t, s) => T(a, typeof t != "symbol" ? t + "" : t, s);
+import { ComponentInitializer as x } from "../core/component.js";
 import { wrapSettingString as b } from "../core/settings.js";
-import k from "ally.js/maintain/_maintain";
-import { hasRequiredProps as $ } from "@ulu/utils/object.js";
+import { hasRequiredProps as S } from "@ulu/utils/object.js";
 import { trimWhitespace as v } from "@ulu/utils/string.js";
-import { debounce as I } from "@ulu/utils/performance.js";
-import { logError as y, log as A, logWarning as L } from "../utils/class-logger.js";
-import z from "swipe-listener";
-const f = new S({
+import { debounce as k } from "@ulu/utils/performance.js";
+import { logError as y, log as $, logWarning as L } from "../utils/class-logger.js";
+import I from "swipe-listener";
+const f = new x({
   type: "slider",
   baseAttribute: "data-ulu-slider"
-}), D = f.attributeSelector("track"), M = f.attributeSelector("track-container"), B = f.attributeSelector("control-context"), N = f.attributeSelector("slide"), q = [], h = { once: !0 }, E = (a) => `${a}ms`, P = [
+}), A = f.attributeSelector("track"), z = f.attributeSelector("track-container"), D = f.attributeSelector("control-context"), M = f.attributeSelector("slide"), B = [], h = { once: !0 }, E = (a) => `${a}ms`, N = [
   "container",
   "trackContainer",
   "track",
   "slides"
 ];
-function K() {
+function W() {
   f.init({
     withData: !0,
     coreEvents: ["pageModified"],
     setup({ element: a, data: t, initialize: s }) {
-      V(a, t), s();
+      q(a, t), s();
     }
   });
 }
-function V(a, t) {
+function q(a, t) {
   const s = Object.assign({}, t), e = {
     container: a,
-    track: a.querySelector(D),
-    trackContainer: a.querySelector(M),
-    controlContext: a.querySelector(B),
-    slides: a.querySelectorAll(N)
+    track: a.querySelector(A),
+    trackContainer: a.querySelector(z),
+    controlContext: a.querySelector(D),
+    slides: a.querySelectorAll(M)
   };
-  e.slides.length && q.push(new g(e, s, !1));
+  e.slides.length && B.push(new g(e, s, !1));
 }
 const l = class l {
   static _initializeGlobals() {
     l.globalsInitialized || (addEventListener("load", () => {
-      addEventListener("resize", I(() => {
+      addEventListener("resize", k(() => {
         l.instances.forEach((t) => t.handleResize());
       }, 250));
     }), l.reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches, l.globalsInitialized = !0);
@@ -48,7 +47,7 @@ const l = class l {
   constructor(t, s) {
     l._initializeGlobals();
     const e = Object.assign({}, l.defaults, s);
-    this.options = e, this.slide = null, this.index = null, this.swipeInstance = null, this.swipeListener = null, this.swipeImageListener = null, this.transitioning = !1, $(P) || y(this, "Missing a required Element"), t.slides.length || y(this, "Missing slides"), this.slides = [...t.slides].map((i, n) => ({
+    this.options = e, this.slide = null, this.index = null, this.swipeInstance = null, this.swipeListener = null, this.swipeImageListener = null, this.transitioning = !1, S(N) || y(this, "Missing a required Element"), t.slides.length || y(this, "Missing slides"), this.slides = [...t.slides].map((i, n) => ({
       element: i,
       index: n,
       number: n + 1
@@ -56,7 +55,7 @@ const l = class l {
       ...t,
       ...this.createControls(t.controlContext || t.container),
       ...this.createNav(t.navContext || t.container)
-    }, this.transition = e.transition ? e.transitionFade || l.reduceMotion ? this.fadeTransition : this.slideTransition : this.noTransition, this.setup(), this.goto(0, null, "init"), A(this, "Slider Instance Created", this), l.instances.push(this);
+    }, this.transition = e.transition ? e.transitionFade || l.reduceMotion ? this.fadeTransition : this.slideTransition : this.noTransition, this.setup(), this.goto(0, null, "init"), $(this, "Slider Instance Created", this), l.instances.push(this);
   }
   /**
    * Sliding mechanism needs translate updated on resize
@@ -158,9 +157,8 @@ const l = class l {
       L(this, "Cancel goto(), same slide index as current slide");
       return;
     }
-    const w = k.disabled({ context: this.elements.track });
-    this.transitioning = !0, i && i.navButton.classList.remove(d), u.navButton.classList.add(d), r.container.classList.add(c), this.transition(p).then(() => {
-      this.index = t, this.slide = u, this.transitioning = !1, r.container.classList.remove(c), w.disengage(), C || (u.element.focus(), this.emit("goto", [s, t, u]));
+    this.elements.track.inert = !0, this.transitioning = !0, i && i.navButton.classList.remove(d), u.navButton.classList.add(d), r.container.classList.add(c), this.transition(p).then(() => {
+      this.index = t, this.slide = u, this.transitioning = !1, this.elements.track.inert = !1, r.container.classList.remove(c), C || (u.element.focus(), this.emit("goto", [s, t, u]));
     });
   }
   setup() {
@@ -177,7 +175,7 @@ const l = class l {
       s.preventDefault();
     }, this.slides.forEach((s) => {
       const { element: e } = s;
-      s.swipeInstance = z(e, this.options.swipeOptions), e.addEventListener("swipe", this.swipeListener);
+      s.swipeInstance = I(e, this.options.swipeOptions), e.addEventListener("swipe", this.swipeListener);
     }), t.forEach((s) => {
       s.addEventListener("dragstart", this.swipeImageListener);
     });
@@ -286,7 +284,7 @@ m(l, "defaults", {
 let g = l;
 export {
   g as Slider,
-  K as init,
+  W as init,
   f as initializer,
-  V as setupSlider
+  q as setupSlider
 };
