@@ -1,9 +1,13 @@
 # Change Log
 
-## 0.2.0-beta.9
+## 0.2.0-beta.10
 
 - `ui/slider.js`
   - Remove `ally.js` (maintain) dependency, as it's outdated and no longer maintained. Switching to the inert HTML attribute since browser support is widely available now
+
+## 0.2.0-beta.9
+
+- Add missing export for `ui/programmatic-modal.js` 
 
 ## 0.2.0-beta.8
 
