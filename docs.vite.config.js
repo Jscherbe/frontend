@@ -49,5 +49,10 @@ export default defineConfig((ctx) => {
   // Make paths relative for github pages
   config.base = "./";
 
+  // Disable tree shaking for docs site build
+  // - Since the package does tree shaking for everything it removes all code 
+  //   in docs build 
+  config.build.rollupOptions.treeshake = false;
+
   return config;
 });
