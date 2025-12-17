@@ -37,9 +37,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "position-x": -0.25em,
-  "position-y": -0.25em,
-  "transform":  translate(15%, -15%)
+  "position-x": 0,
+  "position-y": 0,
+  "transform":  translate(50%, -50%)
 );
 ```
   
