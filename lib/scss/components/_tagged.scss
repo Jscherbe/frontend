@@ -15,9 +15,9 @@
 /// @prop {CssValue} icon-opacity [null] Adds a transform styling to the tag.
 
 $config: (
-  "position-x" :      -0.75em,
-  "position-y" :      -0.75em,
-  "transform" :          null
+  "position-x": 0,
+  "position-y": 0,
+  "transform":  translate(50%, -50%)
 ) !default;
 
 /// Change modules $config
@@ -54,5 +54,6 @@ $config: (
     top: var(--ulu-tagged-y, get("position-y"));
     right: var(--ulu-tagged-x, get("position-x"));
     transform: var(--ulu-tagged-transform, get("transform"));
+    margin: 0; // So it doesn't interfere if present
   }
 }
