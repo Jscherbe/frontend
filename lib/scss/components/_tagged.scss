@@ -1,0 +1,59 @@
+////
+/// @group tagged
+/// Provides styles to use tile-grid over the top of image
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../layout";
+@use "../breakpoint";
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "tag-x-position" :      -0.75em,
+  "tag-y-position" :      -0.75em,
+  "tag-margin" :          0.25em
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-tagged-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-tagged-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "tagged [config]");
+}
+
+/// Output component styles
+/// @example scss
+///  @include ulu.component-tagged-styles();
+
+@mixin styles {
+
+  $prefix: selector.class("tagged");
+
+  #{ $prefix } {
+    position: relative;
+  }
+  #{ $prefix }__tag {
+    position: absolute;
+    top: get("tag-y-position");
+    right: get("tag-x-position");
+    margin: get("tag-margin");
+  }
+}

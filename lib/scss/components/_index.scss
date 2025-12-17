@@ -54,6 +54,7 @@
 @forward "hero" as hero-*;
 @forward "tabs" as tabs-*;
 @forward "tag" as tag-*;
+@forward "tagged" as tagged-*;
 @forward "tile-grid" as tile-grid-*;
 @forward "tile-button" as tile-button-*;
 @forward "tile-grid-overlay" as tile-grid-overlay-*;
@@ -116,6 +117,7 @@
 @use "hero";
 @use "tabs";
 @use "tag";
+@use "tagged";
 @use "tile-grid";
 @use "tile-button";
 @use "tile-grid-overlay";
@@ -178,6 +180,7 @@ $all-includes: (
   "hero",
   "tabs",
   "tag",
+  "tagged",
   "tile-grid",
   "tile-button",
   "tile-grid-overlay",
@@ -253,6 +256,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "tag")) {
     @include tag.styles;
+  }
+  @if (list.index($includes, "tagged")) {
+    @include tagged.styles;
   }
   @if (list.index($includes, "callout")) {
     @include callout.styles;

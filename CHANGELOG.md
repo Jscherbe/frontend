@@ -2,6 +2,11 @@
 
 ## 0.2.0-beta.11
 
+- **scss.components/tagged**
+  - New component adding relative/ absolute styling and positioning to `tag` elements and their related elements.
+    - `config.tag-x-position` This config option adjusts the absolute right positioning of the tag.
+    - `config.tag-y-position` This config option adjusts the absolute top positioning of the tag.
+    - `config.tag-margin` This config option adjust tag margin.
 - Update `@ulu/utils` dependency
 
 ## 0.2.0-beta.10
