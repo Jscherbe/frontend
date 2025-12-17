@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    ui/popover
+    Tagged
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.0.0">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="/frontend/assets/style.css">
   
 </head>
-	<body class="page page--toc-sidebar theme-light">
+	<body class="page page--toc-inline theme-light">
 		
 
 
@@ -147,8 +147,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -873,9 +873,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/tagged/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/tagged/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -2450,8 +2450,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -2470,9 +2470,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -2710,9 +2710,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-popover/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-popover/">
           
     
     <span class="nav-tree__text">
@@ -3128,8 +3128,8 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
-          <details class="nav-tree__collapsible">
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -3854,9 +3854,9 @@
         </li>
       
 
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/demos/tagged/">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/demos/tagged/" aria-current="page">
           
     
     <span class="nav-tree__text">
@@ -5431,8 +5431,8 @@
         </li>
       
 
-        <li class="nav-tree__item is-active-trail ">
-          <details class="nav-tree__collapsible" open="">
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
             <summary class="nav-tree__toggle">
               
     <span class="nav-tree__toggle-content">
@@ -5451,9 +5451,9 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        <li class="nav-tree__item is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/javascript/">
+        <a class="nav-tree__link nav-tree__link--index " href="/frontend/javascript/">
           
     
     <span class="nav-tree__text">
@@ -5691,9 +5691,9 @@
         </li>
       
 
-        <li class="nav-tree__item is-active is-active-trail ">
+        <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/javascript/ui-popover/" aria-current="page">
+        <a class="nav-tree__link  " href="/frontend/javascript/ui-popover/">
           
     
     <span class="nav-tree__text">
@@ -6033,24 +6033,18 @@
   </nav>
 </header>
 		
-			<div class="page__toc page-toc ">
+			<div class="page__toc page-toc page-toc--inline container">
 				<h2>Jump To:</h2>
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#ui%2Fpopover.popover">ui/popover.Popover</a>
+                    <li><a href="#basic-examples-on-different-button-sizes">Basic Examples on Different Button Sizes</a>
             		</li>
 
-                    <li><a href="#ui%2Fpopover.initializer">ui/popover.initializer</a>
+                    <li><a href="#testing-on-other-types-of-buttons">Testing on other types of buttons</a>
             		</li>
 
-                    <li><a href="#ui%2Fpopover.instances">ui/popover.instances</a>
-            		</li>
-
-                    <li><a href="#ui%2Fpopover.init()">ui/popover.init()</a>
-            		</li>
-
-                    <li><a href="#ui%2Fpopover.resolve()">ui/popover.resolve()</a>
+                    <li><a href="#testing-with-extremes">Testing with extremes</a>
             		</li>
                 </ol>
             </div>
@@ -6061,42 +6055,48 @@
 			
 			
 			
-  <div class="page__body-top container api-docs">
-    <div class="wysiwyg">
-      <p><a name="module_ui/popover"></a></p>
-<h1 id="ui%2Fpopover" tabindex="-1">ui/popover</h1>
-<ul>
-<li><a href="#module_ui/popover">ui/popover</a>
-<ul>
-<li><a href="#module_ui/popover.Popover">.Popover</a></li>
-<li><a href="#module_ui/popover.initializer">.initializer</a></li>
-<li><a href="#module_ui/popover.instances">.instances</a></li>
-<li><a href="#module_ui/popover.init">.init()</a></li>
-<li><a href="#module_ui/popover.resolve">.resolve()</a></li>
-</ul>
-</li>
-</ul>
-<p><a name="module_ui/popover.Popover"></a></p>
-<h2 id="ui%2Fpopover.popover" tabindex="-1">ui/popover.Popover</h2>
-<p>Class that extends Collapsible adding floating-ui for popover behavior</p>
-<p><strong>Kind</strong>: static class of <a href="#module_ui/popover"><code>ui/popover</code></a><br>
-<a name="module_ui/popover.initializer"></a></p>
-<h2 id="ui%2Fpopover.initializer" tabindex="-1">ui/popover.initializer</h2>
-<p>Popover Component Initializer</p>
-<p><strong>Kind</strong>: static constant of <a href="#module_ui/popover"><code>ui/popover</code></a><br>
-<a name="module_ui/popover.instances"></a></p>
-<h2 id="ui%2Fpopover.instances" tabindex="-1">ui/popover.instances</h2>
-<p>Array of current instances</p>
-<p><strong>Kind</strong>: static constant of <a href="#module_ui/popover"><code>ui/popover</code></a><br>
-<a name="module_ui/popover.init"></a></p>
-<h2 id="ui%2Fpopover.init()" tabindex="-1">ui/popover.init()</h2>
-<p>Initialize default popover</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/popover"><code>ui/popover</code></a><br>
-<a name="module_ui/popover.resolve"></a></p>
-<h2 id="ui%2Fpopover.resolve()" tabindex="-1">ui/popover.resolve()</h2>
-<p>Find the popover's elements</p>
-<p><strong>Kind</strong>: static method of <a href="#module_ui/popover"><code>ui/popover</code></a></p>
+  <div class="page__body-top container ">
+    <h1 class="page__title h1">Tagged</h1>
 
+
+  <hr class="rule rule--light rule--margin-large">
+
+    <div class="wysiwyg">
+      <h2 id="basic-examples-on-different-button-sizes" tabindex="-1">Basic Examples on Different Button Sizes</h2>
+<button class="button button--small button--icon tagged">
+  <span class="button__icon fas fa-bell" aria-hidden="true"></span>
+  <span class="hidden-visually">Notifications</span>
+  <span class="tagged__tag tag tag--danger tag--small tag--counter">3</span>
+</button>
+<button class="button button--icon tagged">
+  <span class="button__icon fas fa-bell" aria-hidden="true"></span>
+  <span class="hidden-visually">Notifications</span>
+  <span class="tagged__tag tag tag--danger tag--small tag--counter">3</span>
+</button>
+<button class="button button--icon button--large tagged">
+  <span class="button__icon fas fa-bell" aria-hidden="true"></span>
+  <span class="hidden-visually">Notifications</span>
+  <span class="tagged__tag tag tag--danger tag--counter">3</span>
+</button>
+<h2 id="testing-on-other-types-of-buttons" tabindex="-1">Testing on other types of buttons</h2>
+<button class="button tagged">
+  <span>Notifications</span>
+  <span class="tagged__tag tag tag--danger tag--counter">30</span>
+</button>
+<h2 id="testing-with-extremes" tabindex="-1">Testing with extremes</h2>
+<p>
+  <button class="button button--icon tagged">
+    <span class="button__icon fas fa-bell" aria-hidden="true"></span>
+    <span class="hidden-visually">Notifications</span>
+    <span class="tagged__tag tag tag--danger tag--small tag--counter">3,000</span>
+  </button>
+</p>
+<p>
+  <button class="button tagged">
+    <span>Notifications</span>
+    <span class="tagged__tag tag tag--danger tag--counter">30,000</span>
+  </button>
+</p>
     </div>
   </div>
 

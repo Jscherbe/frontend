@@ -1,12 +1,12 @@
 # Change Log
 
+## 0.2.0-beta.12
+
+- **scss/components/tagged**
+  - New component adding relative/ absolute styling and positioning to `tag` elements and their related elements. See API docs for configuration and demos for usage examples.
+
 ## 0.2.0-beta.11
 
-- **scss.components/tagged**
-  - New component adding relative/ absolute styling and positioning to `tag` elements and their related elements.
-    - `config.position-x` This config option adjusts the absolute right positioning of the tag.
-    - `config.position-y` This config option adjusts the absolute top positioning of the tag.
-    - `config.transform` This config option that allows transform styling.
 - Update `@ulu/utils` dependency
 
 ## 0.2.0-beta.10

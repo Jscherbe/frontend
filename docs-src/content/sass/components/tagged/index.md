@@ -157,8 +157,8 @@ Output component styles
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-56
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-59
 
 </details>
 
