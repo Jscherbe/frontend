@@ -37,9 +37,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "position-x" :      -0.75em,
-  "position-y" :      -0.75em,
-  "transform" :          null
+  "position-x": -0.25em,
+  "position-y": -0.25em,
+  "transform":  translate(15%, -15%)
 );
 ```
   
@@ -147,7 +147,7 @@ Output component styles
 - **Group:** tagged
 - **Type:** mixin
 - **Lines (comments):** 38-40
-- **Lines (code):** 42-55
+- **Lines (code):** 42-56
 
 </details>
 
