@@ -1,24 +1,20 @@
 ////
 /// @group tagged
-/// Provides styles to use tile-grid over the top of image
+/// Provides styles to tags that should appear as superscripts of their related content. Custom properties --ulu-tagged-y, --ulu-tagged-x, and --ulu-tagged-transform can be adjusted if needed (inline style, in a specific styling for something, etc)
 ////
 
 @use "sass:map";
-@use "sass:math";
 
 @use "../selector";
 @use "../utils";
-@use "../color";
-@use "../layout";
-@use "../breakpoint";
 
 /// Module Settings
 /// @type Map
 
 $config: (
-  "tag-x-position" :      -0.75em,
-  "tag-y-position" :      -0.75em,
-  "tag-margin" :          0.25em
+  "position-x" :      -0.75em,
+  "position-y" :      -0.75em,
+  "transform" :          null
 ) !default;
 
 /// Change modules $config
@@ -52,8 +48,8 @@ $config: (
   }
   #{ $prefix }__tag {
     position: absolute;
-    top: get("tag-y-position");
-    right: get("tag-x-position");
-    margin: get("tag-margin");
+    top: var(--ulu-tagged-y, get("position-y"));
+    right: var(--ulu-tagged-x, get("position-x"));
+    transform: var(--ulu-tagged-transform, get("transform"));
   }
 }

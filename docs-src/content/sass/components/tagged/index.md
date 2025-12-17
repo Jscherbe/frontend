@@ -8,7 +8,7 @@ sassdocGroupName: tagged
 
 <div class="type-large">
 
-Provides styles to use tile-grid over the top of image
+Provides styles to tags that should appear as superscripts of their related content. Custom properties --ulu-tagged-y, --ulu-tagged-x, and --ulu-tagged-transform can be adjusted if needed (inline style, in a specific styling for something, etc)
 
 </div>
 
@@ -37,9 +37,9 @@ Module Settings
 
 ``` scss
 $config: (
-  "tag-x-position" :      -0.75em,
-  "tag-y-position" :      -0.75em,
-  "tag-margin" :          0.25em
+  "position-x" :      -0.75em,
+  "position-y" :      -0.75em,
+  "transform" :          null
 );
 ```
   
@@ -51,8 +51,8 @@ $config: (
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** variable
-- **Lines (comments):** 15-16
-- **Lines (code):** 18-22
+- **Lines (comments):** 11-12
+- **Lines (code):** 14-18
 
 </details>
 
@@ -87,8 +87,8 @@ Change modules $config
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** mixin
-- **Lines (comments):** 24-27
-- **Lines (code):** 29-31
+- **Lines (comments):** 20-23
+- **Lines (code):** 25-27
 
 </details>
 
@@ -146,8 +146,8 @@ Output component styles
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** mixin
-- **Lines (comments):** 42-44
-- **Lines (code):** 46-59
+- **Lines (comments):** 38-40
+- **Lines (code):** 42-55
 
 </details>
 
@@ -201,8 +201,8 @@ Get a config option
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** function
-- **Lines (comments):** 33-36
-- **Lines (code):** 38-40
+- **Lines (comments):** 29-32
+- **Lines (code):** 34-36
 
 </details>
 
