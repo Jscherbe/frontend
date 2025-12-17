@@ -51,10 +51,21 @@ $config: (
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** variable
-- **Lines (comments):** 11-12
-- **Lines (code):** 14-18
+- **Lines (comments):** 11-15
+- **Lines (code):** 17-21
 
 </details>
+
+    
+
+#### Map Properties
+
+
+|Name|Type|Default|Description|
+|:--|:--|:--|:--|
+|position-x|Dimension|-0.75em|Horizontal absolute position of the tag.|
+|position-y|Dimension|-0.75em|Vertical absolute position of the tag.|
+|icon-opacity|CssValue|null|Adds a transform styling to the tag.|
 
     
   
@@ -87,8 +98,8 @@ Change modules $config
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** mixin
-- **Lines (comments):** 20-23
-- **Lines (code):** 25-27
+- **Lines (comments):** 23-26
+- **Lines (code):** 28-30
 
 </details>
 
@@ -146,8 +157,8 @@ Output component styles
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** mixin
-- **Lines (comments):** 38-40
-- **Lines (code):** 42-55
+- **Lines (comments):** 41-43
+- **Lines (code):** 45-58
 
 </details>
 
@@ -201,8 +212,8 @@ Get a config option
 - **File:** _tagged.scss
 - **Group:** tagged
 - **Type:** function
-- **Lines (comments):** 29-32
-- **Lines (code):** 34-36
+- **Lines (comments):** 32-35
+- **Lines (code):** 37-39
 
 </details>
 

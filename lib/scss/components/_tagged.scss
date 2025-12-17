@@ -10,6 +10,9 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} position-x [-0.75em] Horizontal absolute position of the tag.
+/// @prop {Dimension} position-y [-0.75em] Vertical absolute position of the tag.
+/// @prop {CssValue} icon-opacity [null] Adds a transform styling to the tag.
 
 $config: (
   "position-x" :      -0.75em,
