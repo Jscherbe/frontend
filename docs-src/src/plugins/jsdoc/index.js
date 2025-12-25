@@ -28,10 +28,10 @@ function cleanOutputDir() {
     });
 }
 
-function output() {
+async function output() {
   cleanOutputDir();
   // get template data
-  const templateData = jsdoc2md.getTemplateDataSync({ 
+  const templateData = await jsdoc2md.getTemplateData({ 
     files: "lib/js/**/*.js",
     configure: "jsdoc.json"
   });
@@ -50,7 +50,7 @@ function output() {
   for (const moduleName of moduleNames) {
     const template = `{{#module name="${ moduleName }"}}{{>docs}}{{/module}}`;
     // console.log(`rendering ${ moduleName}, template: ${ template }`);
-    const markdown = jsdoc2md.renderSync({ 
+    const markdown = await jsdoc2md.render({ 
       data: templateData, 
       template: template,
       "heading-depth" : 1
@@ -75,7 +75,7 @@ ${ content }
 
 
 export default async function plugin(eleventyConfig) {
-  output();
+  await output();
   eleventyConfig.addWatchTarget(src);
   eleventyConfig.on("eleventy.beforeWatch", async (changedFiles) => {
     const isWithin = changedFiles.some(filepath => isSubdir(src, filepath));
