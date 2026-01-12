@@ -1,13 +1,10 @@
 /.vscode
 /docs
-/docs-src
-/docs-js
 /reference
 notes.todo
 trash/
+site/
 
-docs.eleventy.js
-docs.vite.config.js
 jsdoc.json
 vite.config.js
 tsconfig.json
