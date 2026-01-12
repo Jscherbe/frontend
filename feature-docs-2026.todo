@@ -1,0 +1,15 @@
+Todos:
+  ✔ Summary of Action Plan: @done
+    ✔ 1. Rename docs-src -> site. @done
+    ✔ 2. Move contents of site/src/* up to site/. @done
+    ✔ 3. Remove empty site/src folder. @done
+    ✔ 4. Update site/eleventy.js to point to the new paths: @done
+       * Input: content (relative to site/)
+       * Includes: ../templates
+       * Data: ../data
+       * Output: .serve (for dev) / ../docs (for prod)
+    ✔ 5. Update site/vite.config.js to point to site/main.js and output to site/.serve/assets (for dev). @done
+    ✔ 6. Update package.json scripts to run from the new locations. @done
+  ☐ Test production version of docs build @important
+  ☐ Make documentation more concise (directories, etc)
+  ☐ Setup wrapper component for showing / rendering source code
