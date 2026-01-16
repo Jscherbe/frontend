@@ -4,6 +4,8 @@
 
 - **scss/components/tagged**
   - New component adding relative/ absolute styling and positioning to `tag` elements and their related elements. See API docs for configuration and demos for usage examples.
+- **scss/color**
+  - updated default `type-tertiary` to an accessible shade (From `rgb(125, 125, 125) to rgb(110, 110, 110)`).
 
 ## 0.2.0-beta.11
 
