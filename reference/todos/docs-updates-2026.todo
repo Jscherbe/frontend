@@ -13,5 +13,12 @@ Todos:
   ☐ Test production version of docs build @important
   ☐ Make documentation more concise (directories, etc)
   ☐ Setup wrapper component for showing / rendering source code
-  ☐ Update deps
-  ☐ See if we can get vite asset server in eleventy process (vs asset server)
+  ✔ Update deps @done
+  ☐ See if we can get vite asset server in eleventy process (vs asset server) @in-progress
+    ✔ Explore 11ty plugin vite @done
+    ✔ Try to see if we can just integrate 11ty into vite build/dev server @done
+    ☐ Setup Custom Plugin to run Eleventy in Vite (vs Vite in Eleventy) @in-progress
+      ☐ Move this out of this project once finished
+      ☐ Test Watchers
+      ☐ Test Production Build
+      ☐ Think about API in terms of being reusable

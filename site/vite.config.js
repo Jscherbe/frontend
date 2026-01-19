@@ -2,6 +2,7 @@ import path from "path";
 import { defineConfig } from "vite";
 import { getUrlDirname } from "@ulu/utils/node/path.js";
 import { createConfig } from "@ulu/vite-config-cms-theme";
+import eleventyPlugin from "./vite-plugin-eleventy.js";
 
 const { IS_PRODUCTION } = process.env;
 console.log("IS_PRODUCTION:\n", IS_PRODUCTION);
@@ -15,7 +16,7 @@ export default defineConfig((ctx) => {
     publicDir: "site/src/static",
     port: 5173, 
     localOptionsFile: false,
-    input: "site/main.js",
+    input: "site/src/main.js",
     outDir: IS_PRODUCTION ? "docs/assets" : "site/dist/assets",
     origin: "http://localhost:8080", 
     themePath: "/frontend",
@@ -57,6 +58,15 @@ export default defineConfig((ctx) => {
   // - Since the package does tree shaking for everything it removes all code 
   //   in docs build 
   config.build.rollupOptions.treeshake = false;
+
+  if (ctx.command === "serve") {
+    config.plugins = config.plugins || [];
+    config.plugins.push(eleventyPlugin({
+      configPath: path.resolve(__dirname, "eleventy.js"),
+      outDir: path.resolve(__dirname, "dist"),
+      pathPrefix: "/frontend/"
+    }));
+  }
 
   return config;
 });
