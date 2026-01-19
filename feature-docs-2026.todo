@@ -13,3 +13,5 @@ Todos:
   ☐ Test production version of docs build @important
   ☐ Make documentation more concise (directories, etc)
   ☐ Setup wrapper component for showing / rendering source code
+  ☐ Update deps
+  ☐ See if we can get vite asset server in eleventy process (vs asset server)
