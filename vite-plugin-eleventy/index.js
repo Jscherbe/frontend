@@ -1,10 +1,10 @@
 import path from "path";
 import fs from "fs";
-import mime from "mime-types";
 import Eleventy from "@11ty/eleventy";
 import chokidar from "chokidar";
 import { getCacheDir } from "./utils.js";
 import eleventyPluginLogic from "./eleventy.js";
+import { createEleventyMiddleware } from "./middleware.js";
 
 /**
  * Vite Plugin for Eleventy
@@ -70,6 +70,19 @@ export default function eleventyPlugin(options = {}) {
 
   return {
     name: "@ulu/vite-plugin-eleventy",
+    
+    // This hook allows us to modify the Vite config before it's resolved.
+    config(config, { command }) {
+      // The plugin's server modifications require a custom appType.
+      // We only set this in serve mode, as it primarily affects the dev server.
+      if (command === 'serve') {
+        return {
+          appType: 'custom'
+        };
+      }
+      return {};
+    },
+
     configResolved(config) {
       viteConfig = config;
     },
@@ -141,59 +154,12 @@ export default function eleventyPlugin(options = {}) {
       watcher.on("change", file => {
         if (file.endsWith(".html")) triggerReload();
       });
+      
+      const eleventyMiddleware = createEleventyMiddleware(devOutDir, log, options, viteConfig);
 
       // Middleware to serve HTML from cache
       return () => {
-        server.middlewares.use((req, res, next) => {
-          if (req.method !== "GET") return next();
-
-          let url = req.url.split("?")[0];
-
-          // Use viteConfig.base as default pathPrefix if not explicitly provided
-          const pathPrefix = options.pathPrefix || (viteConfig && viteConfig.base) || "/";
-
-          // Strip pathPrefix if present
-          if (pathPrefix !== "/" && url.startsWith(pathPrefix)) {
-            url = url.slice(pathPrefix.length - 1); // Keep the leading slash
-          }
-
-          let tryPath = path.join(devOutDir, url);
-
-          // Directory index handling
-          if (url.endsWith("/")) {
-            tryPath = path.join(devOutDir, url, "index.html");
-          } else if (!path.extname(url)) {
-            // clean url handling (e.g. /about -> /about.html or /about/index.html)
-            if (fs.existsSync(tryPath + ".html")) {
-              tryPath += ".html";
-            } else if (fs.existsSync(path.join(tryPath, "index.html"))) {
-              tryPath = path.join(tryPath, "index.html");
-            }
-          }
-
-          if (fs.existsSync(tryPath) && fs.statSync(tryPath).isFile()) {
-            const type = mime.lookup(tryPath) || "text/html";
-
-            res.setHeader("Content-Type", type);
-
-            if (type === "text/html") {
-              let html = fs.readFileSync(tryPath, "utf-8");
-
-              // Inject Vite Client
-              html = html.replace(
-                "</head>",
-                `<script type="module" src="/@vite/client"></script>\n</head>`
-              );
-
-              res.end(html);
-            } else {
-              const stream = fs.createReadStream(tryPath);
-              stream.pipe(res);
-            }
-          } else {
-            next();
-          }
-        });
+        server.middlewares.use(eleventyMiddleware);
       };
     },
   };
