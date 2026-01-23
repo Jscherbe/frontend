@@ -32,7 +32,5 @@
 
   {# Site Theme #}
   {# <link rel="stylesheet" href="/assets/stylesheet.css"> #}
-  {% if eleventy.env.runMode === "build" %}
-    <link rel="stylesheet" href="/assets/style.css">
-  {% endif %}
+  {% viteEntryStyles "site/src/main.js" %}
 </head>

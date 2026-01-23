@@ -22,3 +22,8 @@ Todos:
       ☐ Test Watchers
       ☐ Test Production Build
       ☐ Think about API in terms of being reusable
+      ☐ @important `BEFORE CONTINUING` 
+        ☐ Think about if we can convert everything to multi-page bundled by vite and drop the cms vite config for traditional sites. 
+          ☐ Revisit the two main vite plugins for eleventy
+            * I still don't think that they will work but lets explore further the challenges, maybe set this up as a test in the new package's repo or just locally? (or in reference in this project)
+          ☐ What is the main gotcha, is it how eleventy as an API works (we would have to use file system)

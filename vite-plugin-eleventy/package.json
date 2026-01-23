@@ -1,0 +1,16 @@
+{
+  "name": "@ulu/vite-plugin-eleventy",
+  "version": "0.0.1",
+  "description": "Vite plugin for Eleventy integration with HMR and Asset Hashing support",
+  "main": "index.js",
+  "type": "module",
+  "peerDependencies": {
+    "vite": "^5.0.0",
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "mime-types": "^2.1.35",
+    "fs-extra": "^11.2.0"
+  }
+}

@@ -77,10 +77,8 @@ export default async function(eleventyConfig) {
     .forEach(([name, fn]) => eleventyConfig.addPairedShortcode(name, fn));
   
   return {
-    pathPrefix: "/frontend/",
     dir: {
       input: "site/src/pages",
-      output: IS_PRODUCTION ? "docs" : "site/dist",
       includes: "../templates",
       layouts: "../templates/layouts",
       data: "../data",

@@ -1,8 +1,3 @@
-{# On dev/serve use vite for assets #}
-{% if eleventy.env.runMode === "serve" %}
-  <script src="/site/src/main.js" type="module"></script>
-{% else %}
-  {# On build just the main script (css is added in head) #}
-  <script src="/assets/main.js" type="module"></script>
-{% endif %}
+{# Uses the vite-plugin-eleventy filter to resolve the asset path #}
+{% viteEntry "site/src/main.js" %}
 {# <script>feather.replace();</script> #}

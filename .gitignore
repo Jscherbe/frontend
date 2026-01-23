@@ -12,3 +12,6 @@ jsconfig.json
 !/local-only/.gitkeep
 **/local-only/*
 !**/local-only/.gitkeep
+
+# Local development build artifact
+site/dist
