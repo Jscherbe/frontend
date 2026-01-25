@@ -133,7 +133,7 @@ $color-classes: (
 
 @function exists($name) {
   $color: map.get($palette, $name);
-  @return if($color != null, true, false);
+  @return utils.when($color != null, true, false);
 }
 
 /// Set color contexts

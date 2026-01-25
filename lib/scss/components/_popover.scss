@@ -8,9 +8,9 @@
 @use "sass:map";
 @use "sass:meta";
 
+@use "../utils";
 @use "../selector";
 @use "../typography";
-@use "../utils";
 @use "../color";
 @use "../layout";
 @use "../element";
@@ -298,11 +298,14 @@ $config: (
   $hypotenuse: utils.hypotenuse($unitless, $unitless);
   $hypotenuse-half: math.div($hypotenuse, 2);
   $manual-extent: get("arrow-box-shadow-extent");
-  $shadow-extent: if(
-    $manual-extent,
-    $manual-extent,
-    if(utils.is-list($box-shadow), utils.box-shadow-extent($box-shadow), 5px)
-  );
+  $shadow-extent: 5px;
+  
+  @if ($manual-extent) {
+    $shadow-extent: $manual-extent;
+  } @else if (utils.is-list($box-shadow)) {
+    $shadow-extent: utils.box-shadow-extent($box-shadow);
+  }
+
   $overlap: utils.strip-unit($shadow-extent);
   $mask-height: utils.add-unit($hypotenuse-half + $overlap, $unit);
   $mask-width: utils.add-unit($hypotenuse + $overlap, $unit);

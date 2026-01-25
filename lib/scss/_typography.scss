@@ -115,9 +115,8 @@ $config: (
 /// @param {Number} $base Conversion base (defaults to font-size)
 /// @return {Number} Rem value
 
-@function em($value, $base: null) {
+@function em($value, $base: get("font-size")) {
   @if (math.unit($value) == "px") {
-    $base: if($base, $base, get("font-size"));
     @return math.div($base, $value) * 1em;
   } @else  {
     @return $value;
@@ -128,7 +127,7 @@ $config: (
 /// @param {Boolean} $force Force words to break (will have unusual breaks)
 
 @mixin word-break($force: false) {
-  word-break: if($force, break-all, normal);
+  word-break: utils.when($force, break-all, normal);
   word-break: break-word;
   hyphens: auto;
 }
@@ -144,16 +143,16 @@ $config: (
 @function new-size($font-size, $line-height: true, $is-headline: false) {
   @return (
     "font-size": $font-size,
-    "font-weight" : if($is-headline, get("font-weight-bold"), null), 
+    "font-weight" : utils.when($is-headline, get("font-weight-bold"), null), 
     "line-height": $line-height,
-    "margin-bottom" : if($is-headline, get("margin-bottom"), null),
-    "margin-top" : if($is-headline, get("margin-top"), null),
+    "margin-bottom" : utils.when($is-headline, get("margin-bottom"), null),
+    "margin-top" : utils.when($is-headline, get("margin-top"), null),
     "responsive" : true,
-    "helper-class" : if($is-headline, false, true),
+    "helper-class" : utils.when($is-headline, false, true),
     "helper-class-prefixed" : true,
-    "base-class" : if($is-headline, true, false),
+    "base-class" : utils.when($is-headline, true, false),
     "base-class-prefixed" : false,
-    "color" : if($is-headline, color.get("headline"), null)
+    "color" : utils.when($is-headline, color.get("headline"), null)
   );
 }
 
@@ -353,7 +352,7 @@ $sizes: get-default-sizes() !default;
     line-height: get-size-converted-value($size, "line-height");
     margin-top: get-size-converted-value($size, "margin-top");
     margin-bottom: get-size-converted-value($size, "margin-bottom");
-    color: if($color, color.get($color), null);
+    color: utils.when($color, color.get($color), null);
   }
 
   // If they have breakpoints, process them

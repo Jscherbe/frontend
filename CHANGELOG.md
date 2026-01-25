@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.0-beta.13
+
+- **Scss**
+  - Adjust if() usage internally throughout library 
+    - [See](https://sass-lang.com/documentation/breaking-changes/if-function/)
+- **Docs**
+  - Docs source files reorganized (under /site/) and updated with a modern workflow
+
 ## 0.2.0-beta.12
 
 - **scss/components/tagged**

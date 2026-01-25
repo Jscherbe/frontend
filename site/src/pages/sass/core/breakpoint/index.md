@@ -1003,13 +1003,13 @@ Example usage
 
 ``` scss
 .test-exists {
-  @if(ulu.breakpoint-exists("medium")) {
+  @if (ulu.breakpoint-exists("medium")) {
     @include ulu.breakpoint-min("medium") {
       padding: 2rem;
     }
   }
   // The below content doesn't print because the size doesn't exist.
-  @if(ulu.breakpoint-exists("too-large")) {
+  @if (ulu.breakpoint-exists("too-large")) {
     @include ulu.breakpoint-min("too-large") {
       padding: 20000rem;
     }
@@ -1052,6 +1052,7 @@ Example usage
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
+- when()
 - [$sizes](/sass/core/breakpoint/#variable-sizes)
   
   

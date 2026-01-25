@@ -674,6 +674,7 @@ Check if a color is set in the palette
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
+- when()
 - [$palette](/sass/core/color/#variable-palette)
   
 

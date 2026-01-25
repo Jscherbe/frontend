@@ -6,13 +6,13 @@
 @use "sass:map";
 @use "sass:math";
 
+@use "../utils";
 @use "../breakpoint";
 @use "../color";
 @use "../element";
 @use "../layout";
 @use "../selector";
 @use "../typography";
-@use "../utils";
 
 /// Module Settings
 /// @type Map
@@ -96,7 +96,7 @@ $config: (
   @if (not $name) {
     @return get("gutter");
   } @else {
-    $map: if($custom-map, $custom-map, get("extra-breakpoints"));
+    $map: utils.fallback($custom-map, get("extra-breakpoints"));
     $settings: utils.require-map-get($map, $name, "grid [get-gutter]");
     @return map.get($settings, "gutter");
   }
@@ -138,7 +138,7 @@ $config: (
 @mixin create(
   $columns: get("columns"),
   $breakpoint: get-default-breakpoint(),
-  $extra-breakpoints: if(breakpoint.exists("large"), get("extra-breakpoints"), false),
+  $extra-breakpoints: utils.when(breakpoint.exists("large"), get("extra-breakpoints"), false),
   $gutter: get("gutter"),
   $include-rules: false,
   $rule-size: get("rule-size"),
@@ -513,7 +513,7 @@ $config: (
       @include -create-extra-breakpoint(
         $name: $name, 
         $breakpoint: map.get($options, "breakpoint"),
-        $gutter: if($g, $g, $gutter),
+        $gutter: utils.fallback($g, $gutter),
         $columns: $columns,
         $attribute: $attribute,
         $attribute-item: $attribute-item,
@@ -760,7 +760,7 @@ $config: (
   $select-rule-row, 
   $between: false
 ) {
-  $key: if($between, 'between', $position);
+  $key: utils.when($between, 'between', $position);
 
   &#{'[#{ $attribute }*="rules-row: #{ $key }"]'} {
     > #{ $select-item } {

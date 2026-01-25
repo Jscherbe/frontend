@@ -5,6 +5,7 @@
 
 @use "sass:string";
 @use "sass:map";
+
 @use "utils";
 
 /// Module Settings
@@ -67,7 +68,7 @@ $-class-wildcards: ();
   // Check if it's a wildcard
   $wildcard: -get-class-wildcard($class);
   $override: map.get($-class-overrides, $class);
-  $updated: if($override, $override, if($wildcard, $wildcard, $class));
+  $updated: utils.fallback($override, $wildcard, $class);
   $name: "#{ get("prefix") }#{ $updated }";
   @if $name-only {
     @return $name;

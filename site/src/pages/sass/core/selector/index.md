@@ -49,8 +49,8 @@ $config: (
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** variable
-- **Lines (comments):** 10-12
-- **Lines (code):** 14-16
+- **Lines (comments):** 11-13
+- **Lines (code):** 15-17
 
 </details>
 
@@ -94,8 +94,8 @@ Change modules $config
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
-- **Lines (comments):** 24-27
-- **Lines (code):** 28-30
+- **Lines (comments):** 25-28
+- **Lines (code):** 29-31
 
 </details>
 
@@ -154,8 +154,8 @@ Set the class selector overrides
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** mixin
-- **Lines (comments):** 41-48
-- **Lines (code):** 50-60
+- **Lines (comments):** 42-49
+- **Lines (code):** 51-61
 
 </details>
 
@@ -216,8 +216,8 @@ Get a config option
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
-- **Lines (comments):** 32-35
-- **Lines (code):** 37-39
+- **Lines (comments):** 33-36
+- **Lines (code):** 38-40
 
 </details>
 
@@ -277,8 +277,8 @@ Change a class used in the system (ie. like a component for example)
 - **File:** _selector.scss
 - **Group:** selector
 - **Type:** function
-- **Lines (comments):** 62-64
-- **Lines (code):** 66-77
+- **Lines (comments):** 63-65
+- **Lines (code):** 67-78
 
 </details>
 
@@ -296,6 +296,7 @@ Change a class used in the system (ie. like a component for example)
 #### Require
 
 - [get()](/sass/core/breakpoint/#function-get)
+- fallback()
   
   
   

@@ -139,8 +139,8 @@ $sizes: get-default-sizes();
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** variable
-- **Lines (comments):** 183-192
-- **Lines (code):** 194-194
+- **Lines (comments):** 182-191
+- **Lines (code):** 193-193
 
 </details>
 
@@ -237,8 +237,8 @@ Output CSS Break word strategy
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 127-128
-- **Lines (code):** 130-134
+- **Lines (comments):** 126-127
+- **Lines (code):** 129-133
 
 </details>
 
@@ -252,6 +252,11 @@ Output CSS Break word strategy
 |$force|`Boolean`|Force words to break (will have unusual breaks)|
 
     
+
+#### Require
+
+- when()
+  
 
 
 <div class="sassdoc-item-header">
@@ -277,8 +282,8 @@ Configure the typography sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 196-213
-- **Lines (code):** 215-217
+- **Lines (comments):** 195-212
+- **Lines (code):** 214-216
 
 </details>
 
@@ -351,8 +356,8 @@ Print's the responsive type formula
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 301-303
-- **Lines (code):** 305-307
+- **Lines (comments):** 300-302
+- **Lines (code):** 304-306
 
 </details>
 
@@ -394,8 +399,8 @@ Output an optional typography size
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 310-314
-- **Lines (code):** 316-320
+- **Lines (comments):** 309-313
+- **Lines (code):** 315-319
 
 </details>
 
@@ -441,8 +446,8 @@ Print a typography size (font-size, line-height)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** mixin
-- **Lines (comments):** 322-325
-- **Lines (code):** 327-368
+- **Lines (comments):** 321-324
+- **Lines (code):** 326-367
 
 </details>
 
@@ -466,6 +471,7 @@ Print a typography size (font-size, line-height)
 - [get-size-converted-value()](/sass/core/typography/#function-get-size-converted-value)
 - [get()](/sass/core/breakpoint/#function-get)
 - [get-size-value()](/sass/core/breakpoint/#function-get-size-value)
+- when()
   
   
 
@@ -714,7 +720,7 @@ Changes pixels to em
 - **Group:** typography
 - **Type:** function
 - **Lines (comments):** 113-116
-- **Lines (code):** 118-125
+- **Lines (code):** 118-124
 
 </details>
 
@@ -738,11 +744,6 @@ Changes pixels to em
 |Number|Rem value|
 
     
-
-#### Require
-
-- [get()](/sass/core/breakpoint/#function-get)
-  
 
 
 <div class="sassdoc-item-header">
@@ -771,8 +772,8 @@ Creates a size map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 136-142
-- **Lines (code):** 144-158
+- **Lines (comments):** 135-141
+- **Lines (code):** 143-157
 
 </details>
 
@@ -791,6 +792,7 @@ Creates a size map
 
 #### Require
 
+- when()
 - [get()](/sass/core/breakpoint/#function-get)
   
 
@@ -820,8 +822,8 @@ Function that returns default sizes
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 160-163
-- **Lines (code):** 165-181
+- **Lines (comments):** 159-162
+- **Lines (code):** 164-180
 
 </details>
 
@@ -867,8 +869,8 @@ Get a specific size's settings map
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 219-221
-- **Lines (code):** 223-225
+- **Lines (comments):** 218-220
+- **Lines (code):** 222-224
 
 </details>
 
@@ -922,8 +924,8 @@ Check if a typography size exists
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 227-229
-- **Lines (code):** 231-233
+- **Lines (comments):** 226-228
+- **Lines (code):** 230-232
 
 </details>
 
@@ -977,8 +979,8 @@ Forces conversion to unitless line-height
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 235-237
-- **Lines (code):** 239-253
+- **Lines (comments):** 234-236
+- **Lines (code):** 238-252
 
 </details>
 
@@ -1029,8 +1031,8 @@ Print a value from the size and convert it (to appropriate unit for framework)
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 255-257
-- **Lines (code):** 259-285
+- **Lines (comments):** 254-256
+- **Lines (code):** 258-284
 
 </details>
 
@@ -1078,8 +1080,8 @@ Get a sizes property value that doesn't need conversion
 - **File:** _typography.scss
 - **Group:** typography
 - **Type:** function
-- **Lines (comments):** 287-290
-- **Lines (code):** 292-299
+- **Lines (comments):** 286-289
+- **Lines (code):** 291-298
 
 </details>
 

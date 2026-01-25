@@ -875,6 +875,7 @@ Get a value from a button style
 
 - require-map-get()
 - [get()](/sass/core/breakpoint/#function-get)
+- when()
 - [$styles](/sass/core/button/#variable-styles)
   
   

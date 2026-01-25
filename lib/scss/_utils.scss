@@ -106,12 +106,12 @@ $config: (
 ///     "h2" : true,
 ///     "h3" : false
 ///   );
-///   @if(ulu.utils-included("h2", $include-styles)) {
+///   @if (ulu.utils-included("h2", $include-styles)) {
 ///     h2 {
 ///       font-size: 24px;
 ///     }
 ///   }
-///   @if(ulu.utils-included("h3", $include-styles)) {
+///   @if (ulu.utils-included("h3", $include-styles)) {
 ///     h3 {
 ///       font-size: 18px;
 ///     }
@@ -134,6 +134,26 @@ $config: (
 ============================================================================= 
 */
   }
+}
+
+/// Selects a value based on a condition (Ternary Function)
+/// - To replace SASS if() which is deprecated see
+/// - Eagerly evaluates arguments (use native @if or if(sass()... if you need lazy evaluation).
+/// @param {*} $condition The condition/value to test for truthiness
+/// @param {*} $true Value if true
+/// @param {*} $false Value if false
+/// @link https://sass-lang.com/documentation/breaking-changes/if-function/
+/// @example scss {compile} Example usage
+///   .test {
+///     color: ulu.utils-when(true, red, blue)
+///   }
+/// @return {*} Either true or false value based on conditions truthiness
+
+@function when($condition, $value-true, $value-false) {
+  @if $condition {
+    @return $value-true;
+  }
+  @return $value-false;
 }
 
 /// Provide a default when value type is not correct
@@ -177,13 +197,19 @@ $config: (
 @function number-info($number, $errors: false) {
 
   @if (meta.type-of($number) == 'number') {
-    $is-unitless: math.is-unitless($number);
-    @return (
-      "unit": if($is-unitless, null, math.unit($number)),
-      "value": if($is-unitless, $number, strip-unit($number)),
-      "invalid" : false
-    );
-
+    @if (math.is-unitless($number)) {
+      @return (
+        "unit": null,
+        "value": $number,
+        "invalid" : false
+      );
+    } @else {
+      @return (
+        "unit": math.unit($number),
+        "value": strip-unit($number),
+        "invalid" : false
+      );
+    }
   } @else {
     @if ($errors) {
       @error "Expected Number, got #{ meta.type-of($number) } for #{ $number }";
@@ -442,7 +468,7 @@ $config: (
 /// @param {*} $value The value to check
 /// @param {*} $default The value to return when true
 @function default($value, $default) {
-  @return if($value == true, $default, $value);
+  @return when($value == true, $default, $value);
 }
 
 /// Replaces all or one occurrence of a string within a string
@@ -456,7 +482,7 @@ $config: (
   $index: string.index($string, $find);
   
   @if ($index) {
-    $start: if($index == 1, "", string.slice($string, 1, string.length($find) - 1));
+    $start: when($index == 1, "", string.slice($string, 1, string.length($find) - 1));
     $end: string.slice($string, $index + string.length($find));
     $new: $start + $replace;
     @if ($all) {
@@ -542,10 +568,17 @@ $config: (
 /// @throw If the list length > 4 (incorrect syntax for shorthand)
 
 @function get-spacing($value) {
-  $is-list: meta.type-of($value) == "list";
-  $length: if($is-list, list.length($value), 1);
-  $single: $length == 1;
-  $top: if($is-list, list.nth($value, 1), $value);  // Top is always the same
+  @if (meta.type-of($value) != "list") {
+    @return (
+      "top" :    $value,
+      "right" :  $value,
+      "bottom" : $value,
+      "left" :   $value,
+    );
+  }
+
+  $length: list.length($value);
+  $top: list.nth($value, 1);  // Top is always the same
 
   @if ($length > 4) {
     @error "Spacing has more than 4 arguments (not correct shorthand)";
@@ -553,9 +586,9 @@ $config: (
 
   @return (
     "top" :    $top,
-    "right" :  if($single, $top, list.nth($value, 2)),
-    "bottom" : if($single, $top, list.nth($value, if($length >= 3, 3, 1))),
-    "left" :   if($single, $top, list.nth($value, if($length == 4, 4, 2)))
+    "right" :  list.nth($value, 1),
+    "bottom" : list.nth($value, when($length >= 3, 3, 1)),
+    "left" :   list.nth($value, when($length == 4, 4, 2))
   );
 }
 
@@ -831,7 +864,7 @@ $config: (
 /// @return {Map} The $value if it was a map, else empty map
 
 @function ensure-map($value) {
-  @return if(is-map($value), $value, ());
+  @return when(is-map($value), $value, ());
 }
 
 /// Returns true if edge passed is an end (top/bottom)

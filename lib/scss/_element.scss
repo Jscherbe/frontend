@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "sass:meta";
+
 @use "color";
 @use "utils";
 
@@ -175,7 +176,12 @@ $rule-margins: (
 /// @param {String} $name ["default"] name of rule style
 
 @mixin rule-margin($name:  null) {
-  $margin: if($name, get-rule-margin($name), get("margin"));
+  $margin: null;
+  @if ($name) {
+    $margin: get-rule-margin($name);
+  } @else {
+    $margin: get("margin");
+  }
   margin-top: $margin;
   margin-bottom: $margin;
 }
@@ -337,7 +343,7 @@ $rule-margins: (
     "padding-adjust" : null,
   );
   $config: map.merge($defaults, $options);
-  $element: if($before, "::before", "::after");
+  $element: utils.when($before, "::before", "::after");
 
   &#{ $element } {
     content: "";
@@ -362,14 +368,14 @@ $rule-margins: (
   $options: (),
   $before: true
 ) {
-  $element: if($before, "::before", "::after");
+  $element: utils.when($before, "::before", "::after");
   $size: map.get($options, "size");
   $offset: map.get($options, "offset");
   $border-radius: map.get($options, "border-radius");
   $padding-adjust: map.get($options, "padding-adjust");
   
   $end: $side == "top" or $side == "bottom";
-  $position: if($offset, 0 - $offset, null);
+  $position: utils.when($offset, 0 - $offset, null);
 
   @if ($padding-adjust and $size) {
     padding-#{ $side }: calc($padding-adjust + $size);

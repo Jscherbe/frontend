@@ -296,15 +296,15 @@ $styles: (
   // If a specific state [hover, active] grab that map
   @if ($state) {
     $state-style: map.get($style, $state);
-    $state-style: if($state-style, $state-style, ());
+    $state-style: utils.when($state-style, $state-style, ());
   }
   // From is the map to grab styles from
-  $from: if($state, $state-style, $style);
+  $from: utils.when($state, $state-style, $style);
   $value: map.get($from, $prop);
 
   // Fallback to parent (if hover)
   @if ($state == "hover") {
-    $value: if($value, $value, map.get($style, $prop)); 
+    $value: utils.when($value, $value, map.get($style, $prop)); 
   }
 
   @if (meta.type-of($value) == "string" and string.index($prop, "color")) {

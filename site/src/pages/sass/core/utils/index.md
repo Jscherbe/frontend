@@ -291,8 +291,8 @@ Provides user with a fallback for a calc that's just an enhancement
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** mixin
-- **Lines (comments):** 662-665
-- **Lines (code):** 667-674
+- **Lines (comments):** 695-698
+- **Lines (code):** 700-707
 
 </details>
 
@@ -522,12 +522,12 @@ $include-styles : (
   "h2" : true,
   "h3" : false
 );
-@if(ulu.utils-included("h2", $include-styles)) {
+@if (ulu.utils-included("h2", $include-styles)) {
   h2 {
     font-size: 24px;
   }
 }
-@if(ulu.utils-included("h3", $include-styles)) {
+@if (ulu.utils-included("h3", $include-styles)) {
   h3 {
     font-size: 18px;
   }
@@ -564,6 +564,89 @@ h2 {
 
 <div class="sassdoc-item-header">
 
+###  when() {#function-when}
+
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+
+</div>
+
+  
+
+Selects a value based on a condition (Ternary Function)
+- To replace SASS if() which is deprecated see
+- Eagerly evaluates arguments (use native @if or if(sass()... if you need lazy evaluation).
+    
+    
+
+
+<details>
+  <summary>File Information</summary>
+  
+- **File:** _utils.scss
+- **Group:** utils
+- **Type:** function
+- **Lines (comments):** 139-150
+- **Lines (code):** 152-157
+
+</details>
+
+    
+
+#### Examples
+
+Example usage      
+
+
+
+``` scss
+.test {
+  color: ulu.utils-when(true, red, blue)
+}
+```
+  
+
+``` css
+.test {
+  color: red;
+}
+```
+  
+
+
+
+      
+
+#### Parameters
+
+
+|Name|Type|Description|
+|:--|:--|:--|
+|$condition|`*`|The condition/value to test for truthiness|
+|$true|`*`|Value if true|
+|$false|`*`|Value if false|
+
+    
+
+#### Returns
+
+
+|Type|Description|
+|:--|:--|
+|*|Either true or false value based on conditions truthiness|
+
+    
+
+#### Related Links
+
+- [https://sass-lang.com/documentation/breaking-changes/if-function/](https://sass-lang.com/documentation/breaking-changes/if-function/)
+
+    
+
+
+<div class="sassdoc-item-header">
+
 ###  if-type() {#function-if-type}
 
   <div class="sassdoc-item-header__labels">
@@ -585,8 +668,8 @@ Provide a default when value type is not correct
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 139-153
-- **Lines (code):** 155-161
+- **Lines (comments):** 159-173
+- **Lines (code):** 175-181
 
 </details>
 
@@ -670,8 +753,8 @@ Returns number unit info, and strips the unit
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 163-175
-- **Lines (code):** 177-197
+- **Lines (comments):** 183-195
+- **Lines (code):** 197-223
 
 </details>
 
@@ -762,8 +845,8 @@ Adds unit to unitless number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 199-210
-- **Lines (code):** 212-214
+- **Lines (comments):** 225-236
+- **Lines (code):** 238-240
 
 </details>
 
@@ -839,8 +922,8 @@ Checks if two numbers are the same unit
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 216-231
-- **Lines (code):** 233-235
+- **Lines (comments):** 242-257
+- **Lines (code):** 259-261
 
 </details>
 
@@ -924,8 +1007,8 @@ Reusable merge method
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 237-268
-- **Lines (code):** 270-278
+- **Lines (comments):** 263-294
+- **Lines (code):** 296-304
 
 </details>
 
@@ -1021,8 +1104,8 @@ Returns true/false if map has property
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 280-297
-- **Lines (code):** 299-304
+- **Lines (comments):** 306-323
+- **Lines (code):** 325-330
 
 </details>
 
@@ -1123,8 +1206,8 @@ Left in for compatibility, will be removed, use map-merge with mode
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 306-307
-- **Lines (code):** 309-317
+- **Lines (comments):** 332-333
+- **Lines (code):** 335-343
 
 </details>
 
@@ -1159,8 +1242,8 @@ Utility for providing fallbacks, the first truthy value (non false or null) will
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 319-331
-- **Lines (code):** 333-340
+- **Lines (comments):** 345-357
+- **Lines (code):** 359-366
 
 </details>
 
@@ -1233,8 +1316,8 @@ Provides fallback values from the same map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 342-354
-- **Lines (code):** 356-364
+- **Lines (comments):** 368-380
+- **Lines (code):** 382-390
 
 </details>
 
@@ -1308,8 +1391,8 @@ Checks if a map contains one or more of the keys
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 367-383
-- **Lines (code):** 384-403
+- **Lines (comments):** 393-409
+- **Lines (code):** 410-429
 
 </details>
 
@@ -1393,8 +1476,8 @@ Helps in providing a dynamic fallback for modules whose defaults should come fro
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 405-411
-- **Lines (code):** 413-439
+- **Lines (comments):** 431-437
+- **Lines (code):** 439-465
 
 </details>
 
@@ -1468,8 +1551,8 @@ If the value passed is equal to true use the default, else return the value
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 441-443
-- **Lines (code):** 444-446
+- **Lines (comments):** 467-469
+- **Lines (code):** 470-472
 
 </details>
 
@@ -1484,6 +1567,11 @@ If the value passed is equal to true use the default, else return the value
 |$default|`*`|The value to return when true|
 
     
+
+#### Require
+
+- [when()](/sass/core/utils/#function-when)
+  
 
 
 <div class="sassdoc-item-header">
@@ -1509,8 +1597,8 @@ Replaces all or one occurrence of a string within a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 448-452
-- **Lines (code):** 454-470
+- **Lines (comments):** 474-478
+- **Lines (code):** 480-496
 
 </details>
 
@@ -1527,6 +1615,11 @@ Replaces all or one occurrence of a string within a string
 |$all|`Boolean`|Default true replace all matches, if false replace only first|
 
     
+
+#### Require
+
+- [when()](/sass/core/utils/#function-when)
+  
 
 
 <div class="sassdoc-item-header">
@@ -1553,8 +1646,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 472-476
-- **Lines (code):** 478-486
+- **Lines (comments):** 498-502
+- **Lines (code):** 504-512
 
 </details>
 
@@ -1604,8 +1697,8 @@ Remove an item from a list (not map)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 488-492
-- **Lines (code):** 494-502
+- **Lines (comments):** 514-518
+- **Lines (code):** 520-528
 
 </details>
 
@@ -1654,8 +1747,8 @@ Join a list with a separator
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 504-508
-- **Lines (code):** 510-525
+- **Lines (comments):** 530-534
+- **Lines (code):** 536-551
 
 </details>
 
@@ -1708,8 +1801,8 @@ Resolve spacing info (ie. margin/padding like arguments)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 527-542
-- **Lines (code):** 544-560
+- **Lines (comments):** 553-568
+- **Lines (code):** 570-593
 
 </details>
 
@@ -1759,6 +1852,11 @@ $spacing: get-spacing($user-padding);
 - Spacing has more than 4 arguments (not correct shorthand)
     
 
+#### Require
+
+- [when()](/sass/core/utils/#function-when)
+  
+
 
 <div class="sassdoc-item-header">
 
@@ -1783,8 +1881,8 @@ Resolve the top spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 562-571
-- **Lines (code):** 573-575
+- **Lines (comments):** 595-604
+- **Lines (code):** 606-608
 
 </details>
 
@@ -1857,8 +1955,8 @@ Resolve the right spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 577-586
-- **Lines (code):** 588-590
+- **Lines (comments):** 610-619
+- **Lines (code):** 621-623
 
 </details>
 
@@ -1931,8 +2029,8 @@ Resolve the bottom spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 592-601
-- **Lines (code):** 603-605
+- **Lines (comments):** 625-634
+- **Lines (code):** 636-638
 
 </details>
 
@@ -2005,8 +2103,8 @@ Resolve the left spacing value for margin/padding like arguments
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 607-616
-- **Lines (code):** 618-620
+- **Lines (comments):** 640-649
+- **Lines (code):** 651-653
 
 </details>
 
@@ -2080,8 +2178,8 @@ Strips the unit from the number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 622-628
-- **Lines (code):** 630-640
+- **Lines (comments):** 655-661
+- **Lines (code):** 663-673
 
 </details>
 
@@ -2151,8 +2249,8 @@ Calculate the size of something at a given scale (percentage/exponential)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 642-647
-- **Lines (code):** 649-651
+- **Lines (comments):** 675-680
+- **Lines (code):** 682-684
 
 </details>
 
@@ -2208,8 +2306,8 @@ Convert from pixel to em
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 653-656
-- **Lines (code):** 658-660
+- **Lines (comments):** 686-689
+- **Lines (code):** 691-693
 
 </details>
 
@@ -2259,8 +2357,8 @@ Calculates the hypotenuse of a triangle
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 676-680
-- **Lines (code):** 682-684
+- **Lines (comments):** 709-713
+- **Lines (code):** 715-717
 
 </details>
 
@@ -2309,8 +2407,8 @@ Get's the info about a box shadow
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 686-689
-- **Lines (code):** 691-722
+- **Lines (comments):** 719-722
+- **Lines (code):** 724-755
 
 </details>
 
@@ -2364,8 +2462,8 @@ Get's the extent (how far the shadow extends past the box's edge)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 724-728
-- **Lines (code):** 730-748
+- **Lines (comments):** 757-761
+- **Lines (code):** 763-781
 
 </details>
 
@@ -2420,8 +2518,8 @@ Determines if value passed is a list
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 750-752
-- **Lines (code):** 754-756
+- **Lines (comments):** 783-785
+- **Lines (code):** 787-789
 
 </details>
 
@@ -2469,8 +2567,8 @@ Determines if value passed is a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 758-760
-- **Lines (code):** 762-764
+- **Lines (comments):** 791-793
+- **Lines (code):** 795-797
 
 </details>
 
@@ -2518,8 +2616,8 @@ Determines if value passed is a number
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 766-768
-- **Lines (code):** 770-772
+- **Lines (comments):** 799-801
+- **Lines (code):** 803-805
 
 </details>
 
@@ -2567,8 +2665,8 @@ Determines if value passed is a string
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 774-776
-- **Lines (code):** 778-780
+- **Lines (comments):** 807-809
+- **Lines (code):** 811-813
 
 </details>
 
@@ -2616,8 +2714,8 @@ Determines if value passed is a color
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 782-784
-- **Lines (code):** 786-788
+- **Lines (comments):** 815-817
+- **Lines (code):** 819-821
 
 </details>
 
@@ -2666,8 +2764,8 @@ Returns true if number passed is even
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 808-811
-- **Lines (code):** 813-819
+- **Lines (comments):** 841-844
+- **Lines (code):** 846-852
 
 </details>
 
@@ -2726,8 +2824,8 @@ Returns true if number passed is odd
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 821-823
-- **Lines (code):** 825-827
+- **Lines (comments):** 854-856
+- **Lines (code):** 858-860
 
 </details>
 
@@ -2780,8 +2878,8 @@ Always returns a map
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 829-831
-- **Lines (code):** 833-835
+- **Lines (comments):** 862-864
+- **Lines (code):** 866-868
 
 </details>
 
@@ -2807,6 +2905,7 @@ Always returns a map
 
 #### Require
 
+- [when()](/sass/core/utils/#function-when)
 - [is-map()](/sass/core/utils/#function-is-map)
   
 
@@ -2834,8 +2933,8 @@ Returns true if edge passed is an end (top/bottom)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 837-840
-- **Lines (code):** 842-850
+- **Lines (comments):** 870-873
+- **Lines (code):** 875-883
 
 </details>
 
@@ -2888,8 +2987,8 @@ Returns true if edge passed is an side (left/right)
 - **File:** _utils.scss
 - **Group:** utils
 - **Type:** function
-- **Lines (comments):** 852-855
-- **Lines (code):** 857-859
+- **Lines (comments):** 885-888
+- **Lines (code):** 890-892
 
 </details>
 

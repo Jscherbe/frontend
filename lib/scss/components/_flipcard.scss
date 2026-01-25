@@ -5,8 +5,9 @@
 /// Flipcard (content revealed on backside of card after click)
 
 @use "sass:map";
-@use "../color";
+
 @use "../utils";
+@use "../color";
 @use "../selector";
 
 /// Module Settings
@@ -196,7 +197,7 @@ $config: (
     }
     #{ $prefix }__front-content {
       color: color.get(get("title-color-image"));
-      @if(get("bottom-shadow")) {
+      @if (get("bottom-shadow")) {
         // bottom position includes padding so that the shadow 
         &::after {
           content: '';

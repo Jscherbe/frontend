@@ -72,8 +72,8 @@ $config: (
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** variable
-- **Lines (comments):** 12-33
-- **Lines (code):** 35-60
+- **Lines (comments):** 13-34
+- **Lines (code):** 36-61
 
 </details>
 
@@ -136,8 +136,8 @@ Change modules $config
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 62-65
-- **Lines (code):** 67-69
+- **Lines (comments):** 63-66
+- **Lines (code):** 68-70
 
 </details>
 
@@ -195,8 +195,8 @@ Set sizes map
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 71-73
-- **Lines (code):** 75-77
+- **Lines (comments):** 72-74
+- **Lines (code):** 76-78
 
 </details>
 
@@ -241,8 +241,8 @@ Prints component styles
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** mixin
-- **Lines (comments):** 88-92
-- **Lines (code):** 94-310
+- **Lines (comments):** 89-93
+- **Lines (code):** 95-311
 
 </details>
 
@@ -321,8 +321,8 @@ Get a config option
 - **File:** _flipcard.scss
 - **Group:** flipcard
 - **Type:** function
-- **Lines (comments):** 79-82
-- **Lines (code):** 84-86
+- **Lines (comments):** 80-83
+- **Lines (code):** 85-87
 
 </details>
 

@@ -6,13 +6,13 @@
 @use "sass:map";
 @use "sass:meta";
 
+@use "../utils";
 @use "../color";
 @use "../selector";
 @use "../breakpoint";
 @use "../layout";
 @use "../typography";
 @use "../element";
-@use "../utils";
 
 // Used for function fallback
 $-fallbacks: (
@@ -209,8 +209,8 @@ $config: (
         white-space: normal;
         text-align: left;
         &::after {
-          left: if(get("vertical-indicator-left"), 0, auto);
-          right: if(not get("vertical-indicator-left"), 0, auto);;
+          left: utils.when(get("vertical-indicator-left"), 0, auto);
+          right: utils.when(not get("vertical-indicator-left"), 0, auto);
           bottom: 0;
           top: 0;
           width: get("indicator-size");

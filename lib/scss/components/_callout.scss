@@ -6,7 +6,6 @@
 @use "sass:map";
 @use "sass:meta";
 
-
 @use "../utils";
 @use "../selector";
 @use "../element";
@@ -132,7 +131,7 @@ $styles: (
     @if (not get("caps-disabled")) {   
       $cap-defaults: (
         "offset" : get("border-width"),
-        "border-radius" : if(get("cap-match-radius"), get("border-radius"), null),
+        "border-radius" : utils.when(get("cap-match-radius"), get("border-radius"), null),
         // "padding-adjust" : map.get($padding-info, $cap-side)
       );
       @include element.cap(
@@ -187,14 +186,14 @@ $styles: (
       @if ($cap and $caps-enabled) {
         $match-radius: utils.if-type("bool", $cap-match-radius, get("cap-match-radius"));
         // Padding adjust always has to be set (since size could change or padding)
-        $padding-info: utils.get-spacing(if($padding, $padding, get("padding")));
+        $padding-info: utils.get-spacing(utils.fallback($padding, get("padding")));
         $cap-radius: utils.if-type("number", $border-radius, get("border-radius"));
         $cap-options: utils.ensure-map(map.get($style, "cap-options"));
         $cap-defaults: (
           "size" : map.get(get("cap-options"), "size"),
           "padding-adjust" : map.get($padding-info, $cap-side),
           "offset" : $border-width,
-          "border-radius" : if($match-radius, $cap-radius, null)
+          "border-radius" : utils.when($match-radius, $cap-radius, null)
         );
 
         @include element.cap-appearance(
