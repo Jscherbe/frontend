@@ -1,0 +1,14 @@
+# The subdirectories below (javascript/, sass/) are partially built by plugins.
+# All generated files/subdirectories are ignored by default.
+# Assets, data and pages that are not built will need to be explicitly included.
+
+# Ignore generated content...
+javascript/*
+sass/*
+
+# ...but Keep the hand-written files
+!javascript/index.md
+!javascript/javascript.11tydata.js
+
+!sass/index.md
+!sass/sass.11tydata.js

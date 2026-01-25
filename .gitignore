@@ -5,7 +5,6 @@
 .DS_Store
 jsconfig.json
 /logs
-/docs-dev
 
 
 /local-only/*

@@ -3,8 +3,11 @@
 ## 0.2.0-beta.13
 
 - **Scss**
-  - Adjust if() usage internally throughout library 
+  - Adjust `if()` usage internally throughout library 
     - [See](https://sass-lang.com/documentation/breaking-changes/if-function/)
+    - Added `utils.when()` which has same signature as old sass if but doesn't work the same (no lazy evaluation)
+    - Any code that required lazy evaluation has been converted to @if/@else
+    - Did not use new syntax (CSS if() as it throws intellisense lint errors and syntax highlighting breaks), May consider moving to it in the future when it's integrated
 - **Docs**
   - Docs source files reorganized (under /site/) and updated with a modern workflow
 
