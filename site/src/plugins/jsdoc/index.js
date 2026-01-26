@@ -11,7 +11,7 @@ const isSubdir = (parent, dir) => {
 };
 
 const src = path.resolve("./lib/js/"); // cwd
-const dist = path.resolve("./site/src/pages/javascript/");
+const dist = path.resolve("./site/pages/javascript/");
 
 function cleanOutputDir() {
   fs.readdirSync(dist)

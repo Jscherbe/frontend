@@ -21,9 +21,9 @@ export default async function(eleventyConfig) {
     domDiff: false, // Messes up asset server (removes vite embedded styles from head)
   }); 
   // eleventyConfig.addPassthroughCopy("src");
-  eleventyConfig.addPassthroughCopy("site/src/pages/.nojekyll"); 
+  eleventyConfig.addPassthroughCopy("site/pages/.nojekyll"); 
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
-  eleventyConfig.addWatchTarget("site/src/pages/**/*.twig");
+  eleventyConfig.addWatchTarget("site/pages/**/*.twig");
 
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ["h2", "h3"],
@@ -78,10 +78,10 @@ export default async function(eleventyConfig) {
   
   return {
     dir: {
-      input: "site/src/pages",
-      includes: "../templates",
-      layouts: "../templates/layouts",
-      data: "../data",
+      input: "site/pages",
+      includes: "../src/templates",
+      layouts: "../src/templates/layouts",
+      data: "../src/data",
     }
   };
 }

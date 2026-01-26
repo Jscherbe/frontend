@@ -13,7 +13,7 @@ let running = false;
 
 const cwd = path.resolve(".");
 const src = path.resolve("./lib/scss/");
-const dist = path.resolve("./site/src/pages/");
+const dist = path.resolve("./site/pages/");
 
 const commonConfig = {
   previewHead: `
