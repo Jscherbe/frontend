@@ -1,4 +1,5 @@
 Todos:
+  ☐ Test deployed docs once Ulu updates are in place
   ✔ Summary of Action Plan: @done
     ✔ 1. Rename docs-src -> site. @done
     ✔ 2. Move contents of site/src/* up to site/. @done
@@ -10,20 +11,20 @@ Todos:
        * Output: .serve (for dev) / ../docs (for prod)
     ✔ 5. Update site/vite.config.js to point to site/main.js and output to site/.serve/assets (for dev). @done
     ✔ 6. Update package.json scripts to run from the new locations. @done
-  ☐ Test production version of docs build @important
+  ✔ Test production version of docs build @important @done
   ☐ Make documentation more concise (directories, etc)
   ☐ Setup wrapper component for showing / rendering source code
   ✔ Update deps @done
-  ☐ See if we can get vite asset server in eleventy process (vs asset server) @in-progress
+  ✔ See if we can get vite asset server in eleventy process (vs asset server) @in-progress @done
     ✔ Explore 11ty plugin vite @done
     ✔ Try to see if we can just integrate 11ty into vite build/dev server @done
-    ☐ Setup Custom Plugin to run Eleventy in Vite (vs Vite in Eleventy) @in-progress
-      ☐ Move this out of this project once finished
-      ☐ Test Watchers
-      ☐ Test Production Build
-      ☐ Think about API in terms of being reusable
-      ☐ @important `BEFORE CONTINUING` 
-        ☐ Think about if we can convert everything to multi-page bundled by vite and drop the cms vite config for traditional sites. 
-          ☐ Revisit the two main vite plugins for eleventy
+    ✔ Setup Custom Plugin to run Eleventy in Vite (vs Vite in Eleventy) @in-progress @done
+      ✔ Move this out of this project once finished @done
+      ✔ Test Watchers @done
+      ✔ Test Production Build @done
+      ✔ Think about API in terms of being reusable @done
+      ✔ @important `BEFORE CONTINUING` @done
+        ✔ Think about if we can convert everything to multi-page bundled by vite and drop the cms vite config for traditional sites. @done
+          ✔ Revisit the two main vite plugins for eleventy @done
             * I still don't think that they will work but lets explore further the challenges, maybe set this up as a test in the new package's repo or just locally? (or in reference in this project)
-          ☐ What is the main gotcha, is it how eleventy as an API works (we would have to use file system)
+          ✔ What is the main gotcha, is it how eleventy as an API works (we would have to use file system) @done
