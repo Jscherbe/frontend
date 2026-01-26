@@ -35,9 +35,7 @@
     "build:umd": "BUILD_FORMAT=umd vite build",
     "dev": "vite --config site/vite.config.js",
     "dev:nogen": "NO_DOC_GEN=true vite --config site/vite.config.js",
-    "docs:build": "npm run docs:build:html && npm run docs:build:assets",
-    "docs:build:html": "IS_PRODUCTION=true npx @11ty/eleventy --config=site/eleventy.js",
-    "docs:build:assets": "IS_PRODUCTION=true vite build --config site/vite.config.js",
+    "docs:build": "vite build --config site/vite.config.js",
     "deploy": "npm run build && npm run docs:build"
   },
   "repository": {

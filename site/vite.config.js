@@ -58,6 +58,7 @@ export default defineConfig(() => {
         pathPrefix: "/frontend/",
         // The base path for Vite's dev server middleware
         publicPath: "/",
+        debug: true,
       }),
     ],
   };

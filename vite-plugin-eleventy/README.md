@@ -83,7 +83,7 @@ Use the provided Shortcodes and Filters to reference your assets. They automatic
 
 ```html
 <!-- Output <script type="module" src="..."> -->
-{% viteEntry "src/main.js" %}
+{{ viteEntry("site/src/main.js") | safe }}
 ```
 
 **Styles (CSS):**
@@ -91,7 +91,7 @@ Use the provided Shortcodes and Filters to reference your assets. They automatic
 ```html
 <!-- In <head>: Output <link rel="stylesheet"> for any CSS associated with the entry -->
 <!-- Note: In Dev, Vite injects CSS via JS, so this outputs nothing. -->
-{% viteEntryStyles "src/main.js" %}
+{{ viteEntryStyles("site/src/main.js") | safe }}
 ```
 
 **Raw URL (Advanced):**
