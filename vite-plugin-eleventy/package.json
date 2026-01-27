@@ -1,16 +1,53 @@
 {
   "name": "@ulu/vite-plugin-eleventy",
   "version": "0.0.1",
-  "description": "Vite plugin for Eleventy integration with HMR and Asset Hashing support",
+  "description": "Integrates Eleventy into Vite, providing HMR for development and automatic asset hashing for production builds.",
   "main": "index.js",
   "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "eleventy.js",
+    "middleware.js",
+    "utils.js"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jscherbe/vite-plugin-eleventy.git"
+  },
+  "keywords": [
+    "vite",
+    "vitejs",
+    "vite-plugin",
+    "eleventy",
+    "11ty",
+    "eleventy-plugin",
+    "hmr",
+    "hot-reload",
+    "static-site-generator",
+    "ssg"
+  ],
+  "author": {
+    "name": "Joe Scherben",
+    "email": "jscherbe@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jscherbe/vite-plugin-eleventy/issues"
+  },
+  "homepage": "https://github.com/Jscherbe/vite-plugin-eleventy#readme",
   "peerDependencies": {
-    "vite": "^5.0.0",
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^2.0.0 || ^3.0.0",
+    "vite": "^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
-    "mime-types": "^2.1.35",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "mime-types": "^2.1.35"
   }
 }

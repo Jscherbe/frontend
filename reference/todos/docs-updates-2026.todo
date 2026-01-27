@@ -1,5 +1,6 @@
 Todos:
-  ☐ Merge branch into main @next
+  ☐ Finish the 2 plugins and swap them out in frontend then merge frontend and finish tabs  @next
+    ☐ Merge branch into main 
   After Merge:
     ☐ Test deployed
       ☐ Test docs once Ulu updates are in place on github

@@ -5,7 +5,7 @@ import tocPlugin from "eleventy-plugin-nesting-toc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import markdownItAttrs from "markdown-it-attrs";
 
-import navTreePlugin from "./src/plugins/nav-tree/index.js";
+import navTreePlugin from "../eleventy-plugin-nav-tree/index.js";
 // import sassPlugin from "./src/plugins/sass/index.js";
 import sassdocPlugin from "./src/plugins/sassdoc/index.js";
 import optionsTablePlugin from "./src/plugins/options-table/index.js";
