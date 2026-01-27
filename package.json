@@ -91,6 +91,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@floating-ui/dom": "^1.6.5",
     "@fortawesome/fontawesome-free": "^6.5.2",
+    "@ulu/eleventy-plugin-nav-tree": "^0.0.1",
     "@ulu/markdown-output-utils": "^0.0.6",
     "@ulu/sassdoc-to-markdown": "^0.0.16",
     "@ulu/utils": "^0.0.34",
