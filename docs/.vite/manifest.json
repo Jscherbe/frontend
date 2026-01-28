@@ -1,0 +1,20 @@
+{
+  "site/src/main.js": {
+    "file": "assets/main-BC5AZyvN.js",
+    "name": "main",
+    "src": "site/src/main.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "vite/modulepreload-polyfill.js"
+    ],
+    "css": [
+      "assets/main-BSmZN_CT.css"
+    ]
+  },
+  "vite/modulepreload-polyfill.js": {
+    "file": "assets/modulepreload-polyfill-B5Qt9EMX.js",
+    "name": "modulepreload-polyfill",
+    "src": "vite/modulepreload-polyfill.js",
+    "isDynamicEntry": true
+  }
+}
