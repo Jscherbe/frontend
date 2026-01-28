@@ -22,13 +22,11 @@ const umdDeps = {
   globals: {
     "@floating-ui/dom" : "FloatingUIDOM",
     "@ulu/utils" : "UluUtils",
-    "aria-tablist" : "AriaTablist",
     "swipe-listener" : "SwipeListener"
   },
   external: [
     "@floating-ui/dom", 
     "@ulu/utils", 
-    "aria-tablist", 
     "swipe-listener"
   ],
   check(type) {
@@ -60,6 +58,15 @@ export default defineConfig({
     // - Once for umd (used for testing/cdn/includes styles) 
     emptyOutDir: true,
     outDir: isUmd ? "dist/umd" : "dist/es",
+    // This is important vite doesn't transpile node_module deps by default
+    // - So you should ship code that works for most
+    // - Users can configure there vite to transpile this if needed
+    // - es2015 over es2020 just to be safe, looking at the old vite 4 bundle
+    //   it was transpiling pre-es2015 (no chaining ?. etc) so adding this  
+    //   so it will match what it was before the update
+    // - In the near future we can update this to es2020
+    // - This should be good for both es and umd builds
+    target: "es2015",
     lib: {
       ...when(isUmd, {
         // Use the full package entry

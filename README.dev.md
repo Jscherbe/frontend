@@ -21,3 +21,8 @@ The library is designed with a clear separation between styles (SCSS) and behavi
 5.  **State & Styling:** While the JavaScript itself is not tied to the SCSS styling, it does manage state by adding or removing state-based CSS classes (e.g., `.is-active`). The library's SCSS uses these classes to apply styles, and you can use them in your own stylesheets as well.
 
 In short, the SCSS defines what components and their different states *look like*, while the JavaScript is responsible for activating components and changing their states based on user interaction. This creates a flexible and efficient system.
+
+
+## Benchmark Notes
+
+- Vite 4 (no build.target) /dist/es 183kb (js, types, etc)

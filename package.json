@@ -1,6 +1,6 @@
 {
   "name": "@ulu/frontend",
-  "version": "0.2.0-beta.12",
+  "version": "0.2.1-beta.0",
   "description": "A framework-agnostic frontend toolkit providing a modular, tree-shakable library of accessible components and utilities. Designed for seamless integration, it features a highly configurable SCSS system for any environment and vanilla JavaScript modules optimized for traditional websites and content management systems.",
   "type": "module",
   "files": [
@@ -82,7 +82,6 @@
   "peerDependencies": {
     "@floating-ui/dom": "^1.6.5",
     "@ulu/utils": "^0.0.34",
-    "aria-tablist": "^1.2.2",
     "swipe-listener": "^1.3.0"
   },
   "devDependencies": {
@@ -97,7 +96,6 @@
     "@ulu/utils": "^0.0.34",
     "@ulu/vite-plugin-eleventy": "^0.0.1",
     "algoliasearch": "^4.23.3",
-    "aria-tablist": "^1.2.2",
     "autoprefixer": "^10.4.23",
     "chokidar": "^5.0.0",
     "eleventy-plugin-nesting-toc": "^1.3.0",
