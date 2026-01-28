@@ -8,6 +8,11 @@
     - Added `utils.when()` which has same signature as old sass if but doesn't work the same (no lazy evaluation)
     - Any code that required lazy evaluation has been converted to @if/@else
     - Did not use new syntax (CSS if() as it throws intellisense lint errors and syntax highlighting breaks), May consider moving to it in the future when it's integrated
+- **js**
+  - Add new minimal `TabManager` class to replace dependency (aria-tablist) for managing tab interfaces (aria)
+    - Can be used independently
+  - Updated tabs init to use new `TabManager` class
+  - Updated `newId()` util to check for id existence in DOM for safety / extra check
 - **Docs**
   - Docs source files reorganized (under /site/) and updated with a modern workflow
 
