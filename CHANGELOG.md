@@ -2,17 +2,20 @@
 
 ## 0.2.0-beta.13
 
-- **Scss**
-  - Adjust `if()` usage internally throughout library 
-    - [See](https://sass-lang.com/documentation/breaking-changes/if-function/)
+- **SCSS**
+  - **Native SASS if()**
+    - Adjust `if()` usage internally throughout library to keep inline with future sass breaking changes, [See](https://sass-lang.com/documentation/breaking-changes/if-function/)
     - Added `utils.when()` which has same signature as old sass if but doesn't work the same (no lazy evaluation)
     - Any code that required lazy evaluation has been converted to @if/@else
     - Did not use new syntax (CSS if() as it throws intellisense lint errors and syntax highlighting breaks), May consider moving to it in the future when it's integrated
-- **js**
-  - Add new minimal `TabManager` class to replace dependency (aria-tablist) for managing tab interfaces (aria)
+      - Also this would require new sass version to compile the library, doing it this way will allow the library to work in older versions of sass
+  - `components/tabs.scss`
+    - Add new properties for styling focus `tab-color-focus, tab-background-color-focus, tab-hide-native-focus`  (outline is hidden by default and relies on tab-background-color to indicate focus), you can enable native focus ring setting `tab-hide-native-focus` to false
+  - `color.scss` Add "selected-background" color to default palette (for selected background color with selected color on top)
+- **JS**
+  - Add **new** minimal `TabManager` class to replace dependency (aria-tablist) for managing tab interfaces (aria)
     - Can be used independently
-  - Updated tabs init to use new `TabManager` class
-  - Updated `newId()` util to check for id existence in DOM for safety / extra check
+  - Updated `tabs.js` init to use new `TabManager` class
 - **Docs**
   - Docs source files reorganized (under /site/) and updated with a modern workflow
 

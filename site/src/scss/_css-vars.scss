@@ -57,6 +57,10 @@ $theme-colors: (
     "light" : $color-violet-dark,
     "dark":  ulu.color-tint($color-violet-dark, 60%)
   ),
+  "color-accent-background" : (
+    "light" : ulu.color-tint($color-violet-dark, 90%),
+    "dark":  ulu.color-shade($color-violet-dark, 80%)
+  ),
   "color-accent-light" : (
     "light": ulu.color-tint( $color-violet-dark, 40%),
     "dark": goldenrod

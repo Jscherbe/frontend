@@ -1,12 +1,9 @@
 Todos:
-  ☐ Finish the 2 plugins and swap them out in frontend then merge frontend and finish tabs  @next
+  ✔ Finish the 2 plugins and swap them out in frontend then merge frontend and finish tabs  @next @done
     ☐ Merge branch into main 
   After Merge:
     ☐ Test deployed
       ☐ Test docs once Ulu updates are in place on github
       ☐ Test library build system since deps have been updated @important
-    ☐ Make documentation more concise (directories, etc)
-    ☐ Setup wrapper component for showing / rendering source code @later
-      * This one is easy and just has to be done, do ulu updates and then do this last since it's not crucial but publishing updates is
     ☐ Remove this file and collapse project level todos into single todo file
       * Scss/Js can remain separate

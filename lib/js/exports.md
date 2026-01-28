@@ -92,6 +92,7 @@ These exports originate from the `lib/js/ui/` directory.
 - `sliderInit`
 - `sliderInitializer`
 - `sliderSetupSlider`
+- `TabManager`
 - `tabsInit`
 - `tabsInitializer`
 - `tabsInstances`
