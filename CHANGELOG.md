@@ -16,8 +16,10 @@
   - Add **new** minimal `TabManager` class to replace dependency (aria-tablist) for managing tab interfaces (aria)
     - Can be used independently
   - Updated `tabs.js` init to use new `TabManager` class
-- **Docs**
+- **Docs / Project**
   - Docs source files reorganized (under /site/) and updated with a modern workflow
+  - Resources directory has been moved to reference as it wasn't maintained (had old Drupal macros)
+  - Simplified repo organization (reduce directories, simplify)
 
 ## 0.2.0-beta.12
 
