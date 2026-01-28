@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.2.1-beta.0
+## 0.2.1
 
 - **SCSS**
   - **Native SASS if()**
@@ -20,6 +20,8 @@
   - Docs source files reorganized (under /site/) and updated with a modern workflow
   - Resources directory has been moved to reference as it wasn't maintained (had old Drupal macros)
   - Simplified repo organization (reduce directories, simplify)
+- **package.json**
+  - Remove "-beta" tag from version, this was to indicate that things we're still being thoroughly tested but since NPM now enforces tags (was always the latest not actually pre-release) we are removing it as the 0 major version already implies that 
 
 ## 0.2.0-beta.12
 

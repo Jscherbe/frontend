@@ -6104,7 +6104,7 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#0.2.1-beta.0">0.2.1-beta.0</a>
+                    <li><a href="#0.2.1">0.2.1</a>
             		</li>
 
                     <li><a href="#0.2.0-beta.12">0.2.0-beta.12</a>
@@ -6560,7 +6560,7 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
-<h2 id="0.2.1-beta.0" tabindex="-1">0.2.1-beta.0</h2>
+<h2 id="0.2.1" tabindex="-1">0.2.1</h2>
 <ul>
 <li><strong>SCSS</strong>
 <ul>
@@ -6599,6 +6599,11 @@
 <li>Docs source files reorganized (under /site/) and updated with a modern workflow</li>
 <li>Resources directory has been moved to reference as it wasn't maintained (had old Drupal macros)</li>
 <li>Simplified repo organization (reduce directories, simplify)</li>
+</ul>
+</li>
+<li><strong>package.json</strong>
+<ul>
+<li>Remove &quot;-beta&quot; tag from version, this was to indicate that things we're still being thoroughly tested but since NPM now enforces tags (was always the latest not actually pre-release) we are removing it as the 0 major version already implies that</li>
 </ul>
 </li>
 </ul>
