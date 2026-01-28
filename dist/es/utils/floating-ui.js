@@ -1,5 +1,16 @@
-import { autoUpdate as d, computePosition as g, inline as y, offset as b, flip as h, shift as j, arrow as w } from "@floating-ui/dom";
-const $ = {
+var b = Object.defineProperty;
+var f = Object.getOwnPropertySymbols;
+var h = Object.prototype.hasOwnProperty, j = Object.prototype.propertyIsEnumerable;
+var c = (n, e, t) => e in n ? b(n, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : n[e] = t, o = (n, e) => {
+  for (var t in e || (e = {}))
+    h.call(e, t) && c(n, t, e[t]);
+  if (f)
+    for (var t of f(e))
+      j.call(e, t) && c(n, t, e[t]);
+  return n;
+};
+import { autoUpdate as w, computePosition as $, inline as A, offset as O, flip as U, shift as D, arrow as F } from "@floating-ui/dom";
+const k = {
   strategy: "absolute",
   placement: "bottom",
   inline: !1,
@@ -11,36 +22,36 @@ const $ = {
   arrow: !0
   // Options for arrow (not element)
 };
-function O(l, n) {
-  const t = Object.assign({}, $, n), { placement: r, strategy: f } = t, { trigger: o, content: s, contentArrow: a } = l;
-  return d(o, s, () => {
-    g(o, s, {
-      placement: r,
-      strategy: f,
+function B(n, e) {
+  const t = Object.assign({}, k, e), { placement: p, strategy: u } = t, { trigger: r, content: s, contentArrow: a } = n;
+  return w(r, s, () => {
+    $(r, s, {
+      placement: p,
+      strategy: u,
       middleware: [
-        ...i(y, t.inline),
-        ...i(b, t.offset),
-        ...i(h, t.flip),
-        ...i(j, t.shift),
-        ...i(w, a && t.arrow, { element: a })
+        ...l(A, t.inline),
+        ...l(O, t.offset),
+        ...l(U, t.flip),
+        ...l(D, t.shift),
+        ...l(F, a && t.arrow, { element: a })
       ]
-    }).then((c) => {
-      const { x: p, y: u, middlewareData: m, placement: x } = c, e = m.arrow;
+    }).then((m) => {
+      const { x, y: d, middlewareData: g, placement: y } = m, i = g.arrow;
       Object.assign(s.style, {
-        left: `${p}px`,
-        top: `${u}px`
-      }), s.setAttribute("data-placement", x), e && Object.assign(a.style, {
+        left: `${x}px`,
+        top: `${d}px`
+      }), s.setAttribute("data-placement", y), i && Object.assign(a.style, {
         // position: "absolute",
-        left: (e == null ? void 0 : e.x) != null ? `${e.x}px` : "",
-        top: (e == null ? void 0 : e.y) != null ? `${e.y}px` : ""
+        left: (i == null ? void 0 : i.x) != null ? `${i.x}px` : "",
+        top: (i == null ? void 0 : i.y) != null ? `${i.y}px` : ""
       });
     });
   });
 }
-function i(l, n, t = {}) {
-  return n ? typeof n == "object" ? [l({ ...n, ...t })] : [l(t)] : [];
+function l(n, e, t = {}) {
+  return e ? typeof e == "object" ? [n(o(o({}, e), t))] : [n(t)] : [];
 }
 export {
-  O as createFloatingUi,
-  $ as defaults
+  B as createFloatingUi,
+  k as defaults
 };

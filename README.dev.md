@@ -25,4 +25,21 @@ In short, the SCSS defines what components and their different states *look like
 
 ## Benchmark Notes
 
-- Vite 4 (no build.target) /dist/es 183kb (js, types, etc)
+### Javascript
+
+- Old Vite 4 
+  - No build.target
+  - /dist/es 183kb (js, types, etc)
+  - Included aria-tablist dep
+  - Wasn't minified
+- Current Build (Vite 7)
+  - Javascript Bundle
+    - Uncompressed: ~74.7 kB
+    - Gzip: ~30 kB (less when actually bundled with tree-shaking)
+    - About the size of jquery or a small image
+  - CSS Bundle
+    - Uncompressed: ~139 kB
+    - Gzip: ~21 kB (compresses well)
+    - In a real project not using every scss module
+      - Uncompressed: ~80-100 kB
+      - Gzip: ~13-16 kB

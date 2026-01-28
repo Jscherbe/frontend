@@ -1,7 +1,7 @@
 ---
 title: Modular Theming Library
 # layout: basic
-intro: Versatile, Standardized Configuration, Flexible
+intro: Lightweight, Versatile, Standardized Configuration, Flexible
 # highlights:
 #   - title: "Modular"
 #     description: "Choose only the components you need, or easily include everything in one step"
@@ -18,6 +18,15 @@ intro: Versatile, Standardized Configuration, Flexible
   # - title: "Accessible"
   #   description: "Built with accessibility standards in mind"
 ---
+
+## Lightweight & Efficient
+
+This library is designed with performance in mind. The core bundles are very small, ensuring a minimal impact on your site's load times.
+
+- **JavaScript (UMD):** ~20kb (gzipped)
+- **CSS (Full Bundle):** ~19kb (gzipped)
+
+Thanks to the modular architecture, the final footprint in your project can be even smaller. By importing only the SCSS and JavaScript modules you need, you can take advantage of tree-shaking to keep your application lean.
 
 ## Modular
 

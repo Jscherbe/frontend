@@ -6,6 +6,7 @@ export { createPager as overflowScrollerCreatePager } from './overflow-scroller-
 export { init as pageInit } from './page.js';
 export { init as printInit } from './print.js';
 export { Resizer } from './resizer.js';
+export { TabManager } from './tab-manager.js';
 export { init as detailsGroupInit, initializer as detailsGroupInitializer, setupGroup as detailsGroupSetupGroup } from './details-group.js';
 export { baseAttribute as dialogBaseAttribute, closeAttribute as dialogCloseAttribute, defaults as dialogDefaults, getDialogOptions as dialogGetDialogOptions, init as dialogInit, initializer as dialogInitializer, setDefaults as dialogSetDefaults, setupDialog as dialogSetupDialog, setupTrigger as dialogSetupTrigger } from './dialog.js';
 export { Flipcard, init as flipcardInit, initializer as flipcardInitializer } from './flipcard.js';

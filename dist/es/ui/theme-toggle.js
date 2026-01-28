@@ -1,16 +1,28 @@
-import { ComponentInitializer as M } from "../core/component.js";
-import { getCoreEventName as y } from "../core/events.js";
-import { resolveClasses as b } from "../utils/dom.js";
-import { hasRequiredProps as q } from "@ulu/utils/object.js";
-import { getElements as I } from "@ulu/utils/browser/dom.js";
-const c = new M({
+var j = Object.defineProperty, O = Object.defineProperties;
+var R = Object.getOwnPropertyDescriptors;
+var C = Object.getOwnPropertySymbols;
+var w = Object.prototype.hasOwnProperty, K = Object.prototype.propertyIsEnumerable;
+var E = (e, t, r) => t in e ? j(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : e[t] = r, h = (e, t) => {
+  for (var r in t || (t = {}))
+    w.call(t, r) && E(e, r, t[r]);
+  if (C)
+    for (var r of C(t))
+      K.call(t, r) && E(e, r, t[r]);
+  return e;
+}, b = (e, t) => O(e, R(t));
+import { ComponentInitializer as D } from "../core/component.js";
+import { getCoreEventName as k } from "../core/events.js";
+import { resolveClasses as y } from "../utils/dom.js";
+import { hasRequiredProps as z } from "@ulu/utils/object.js";
+import { getElements as A } from "@ulu/utils/browser/dom.js";
+const c = new D({
   type: "theme-toggle",
   baseAttribute: "data-ulu-theme-toggle"
-}), Q = c.attributeSelector("label"), $ = c.attributeSelector("icon"), L = c.getAttribute("remote"), v = c.getAttribute("init"), S = c.getAttribute("state"), j = (e) => document.querySelectorAll(
-  `[${L}="${e}"]`
-), C = (e) => document.querySelectorAll(
-  `[${L}="${e}"]:not([${v}])`
-), T = ["target"], O = q(T), E = (e, r) => e ? r() : null, P = {
+}), _ = c.attributeSelector("label"), N = c.attributeSelector("icon"), M = c.getAttribute("remote"), S = c.getAttribute("init"), x = c.getAttribute("state"), F = (e) => document.querySelectorAll(
+  `[${M}="${e}"]`
+), I = (e) => document.querySelectorAll(
+  `[${M}="${e}"]:not([${S}])`
+), q = ["target"], U = z(q), L = (e, t) => e ? t() : null, Q = {
   /**
    * Object of each theme that should be toggle/cycled through
    */
@@ -66,125 +78,124 @@ const c = new M({
    */
   debug: !1
 };
-let k = { ...P };
-function G(e) {
-  k = Object.assign({}, k, e);
+let T = h({}, Q);
+function re(e) {
+  T = Object.assign({}, T, e);
 }
-function H() {
+function oe() {
   c.init({
     coreEvents: ["pageModified"],
     withData: !0,
-    setup({ element: e, data: r, initialize: o }) {
-      R(e, r), o();
+    setup({ element: e, data: t, initialize: r }) {
+      B(e, t), r();
     }
   });
 }
-function R(e, r) {
-  const o = Object.assign({}, P, r);
-  if (!O(o)) {
-    console.error(`Missing a required option: ${T.join(", ")}`);
+function B(e, t) {
+  const r = Object.assign({}, Q, t);
+  if (!U(r)) {
+    console.error(`Missing a required option: ${q.join(", ")}`);
     return;
   }
-  const t = o.group, n = { toggle: e, options: o }, u = w(o);
+  const o = r.group, n = { toggle: e, options: r }, u = G(r);
   if (!u) {
     console.error("Unable to resolve initial key");
     return;
   }
-  p(u, n), e.addEventListener("click", a), l(), document.addEventListener(y("pageModified"), l);
+  v(u, n), e.addEventListener("click", a), l(), document.addEventListener(k("pageModified"), l);
   function s(g) {
-    const d = I(o.target)[0].dataset.uluThemeToggleState, f = D(d, o);
+    const d = A(r.target)[0].dataset.uluThemeToggleState, f = J(d, r);
     if (!f) {
       console.error("Issue getting next theme key");
       return;
     }
-    p(f, { ...n, event: g });
+    v(f, b(h({}, n), { event: g }));
   }
   function a(g) {
     s(g);
   }
   function l() {
-    if (!t) return;
-    C(t).forEach((i) => {
+    if (!o) return;
+    I(o).forEach((i) => {
       i.addEventListener("click", a), c.initializeElement(i);
     });
   }
   function m() {
-    if (!t) return;
-    C(t).forEach((i) => {
-      i.removeEventListener("click", a), i.removeAttribute(v, "");
+    if (!o) return;
+    I(o).forEach((i) => {
+      i.removeEventListener("click", a), i.removeAttribute(S, "");
     });
   }
-  function h() {
-    e.removeEventListener("click", a), e.removeAttribute(v, ""), m(), document.removeEventListener(y("pageModified"), l);
+  function p() {
+    e.removeEventListener("click", a), e.removeAttribute(S, ""), m(), document.removeEventListener(k("pageModified"), l);
   }
   return {
-    destroy: h,
+    destroy: p,
     toggle: e,
-    options: o,
+    options: r,
     toggleState: s,
     setState(g) {
-      p(g, n);
+      v(g, n);
     }
   };
 }
-function p(e, r) {
+function v(e, t) {
   if (!e) {
     console.error("Missing key");
     return;
   }
-  const { toggle: o, options: t } = r, { themes: n, group: u } = t, s = {
-    targets: I(t.target),
-    toggles: [o, ...u ? j(u) : []]
+  const { toggle: r, options: o } = t, { themes: n, group: u } = o, s = {
+    targets: A(o.target),
+    toggles: [r, ...u ? F(u) : []]
   };
   if (!s.targets.length || !s.toggles.length) {
     console.error("Issue setting state, couldn't find needed elements", s);
     return;
   }
-  const a = n[e], l = z(e, n), m = {
-    ...r,
+  const a = n[e], l = V(e, n), m = b(h({}, t), {
     key: e,
     elements: s,
     theme: a,
     otherThemes: l
-  };
-  t.debug && c.log("Set state context", m);
-  const h = x(l, "targetClass"), g = x(l, "iconClass");
+  });
+  o.debug && c.log("Set state context", m);
+  const p = P(l, "targetClass"), g = P(l, "iconClass");
   s.targets.forEach((i) => {
-    i.setAttribute(S, e), i.classList.remove(...h), i.classList.add(...b(a.targetClass));
+    i.setAttribute(x, e), i.classList.remove(...p), i.classList.add(...y(a.targetClass));
   }), s.toggles.forEach((i) => {
-    const d = i.querySelector(Q), f = i.querySelector($);
-    d && (d.textContent = a.label), f && (f.classList.remove(...g), f.classList.add(...b(a.iconClass))), i.setAttribute(S, e);
-  }), t.onChange && t.onChange(m), t.savePreference && localStorage.setItem(A(t), e);
+    const d = i.querySelector(_), f = i.querySelector(N);
+    d && (d.textContent = a.label), f && (f.classList.remove(...g), f.classList.add(...y(a.iconClass))), i.setAttribute(x, e);
+  }), o.onChange && o.onChange(m), o.savePreference && localStorage.setItem($(o), e);
 }
-function w(e) {
-  const { savePreference: r, checkMediaQuery: o, themes: t, initialState: n } = e, u = A(e), s = E(r, () => localStorage.getItem(u)), a = E(o, () => K(t)), l = s || a || n;
+function G(e) {
+  const { savePreference: t, checkMediaQuery: r, themes: o, initialState: n } = e, u = $(e), s = L(t, () => localStorage.getItem(u)), a = L(r, () => H(o)), l = s || a || n;
   return e.debug && (c.log("Preference Saved", s), c.log("Media Query Preference", a), c.log("Initial State:", n)), l || c.logError("Failed to resolve initial theme (pass 'initialState' to options)"), l;
 }
-function K(e) {
-  const r = Object.entries(e).find(([o, t]) => {
-    if (t.mediaQuery)
-      return window.matchMedia(t.mediaQuery).matches;
+function H(e) {
+  const t = Object.entries(e).find(([r, o]) => {
+    if (o.mediaQuery)
+      return window.matchMedia(o.mediaQuery).matches;
   });
-  return r ? r[0] : null;
+  return t ? t[0] : null;
 }
-function D(e, r) {
-  const { themes: o } = r, t = Object.keys(o), n = t.findIndex((s) => s === e), u = n === -1 ? 0 : (n + 1) % t.length;
-  return t[u];
+function J(e, t) {
+  const { themes: r } = t, o = Object.keys(r), n = o.findIndex((s) => s === e), u = n === -1 ? 0 : (n + 1) % o.length;
+  return o[u];
 }
-function z(e, r) {
-  return Object.entries(r).filter(([t]) => t !== e).map(([t, n]) => n);
+function V(e, t) {
+  return Object.entries(t).filter(([o]) => o !== e).map(([o, n]) => n);
 }
-function x(e, r) {
-  return e.reduce((o, t) => o.concat(b(t[r])), []);
+function P(e, t) {
+  return e.reduce((r, o) => r.concat(y(o[t])), []);
 }
-function A(e) {
-  const { storagePrefix: r, group: o } = e;
-  return o ? `${r}${o}` : r;
+function $(e) {
+  const { storagePrefix: t, group: r } = e;
+  return r ? `${t}${r}` : t;
 }
 export {
-  P as defaults,
-  H as init,
+  Q as defaults,
+  oe as init,
   c as initializer,
-  G as setDefaults,
-  R as setupToggle
+  re as setDefaults,
+  B as setupToggle
 };

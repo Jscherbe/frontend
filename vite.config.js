@@ -67,6 +67,15 @@ export default defineConfig({
     // - In the near future we can update this to es2020
     // - This should be good for both es and umd builds
     target: "es2015",
+    // Leaving this minification code for testing bundle size
+    // - This will remove comments and minify the es version to get a 
+    //   sense of the full file size
+    // minify: 'terser',
+    // terserOptions: {
+    //   format: {
+    //     comments: false, // This will remove all comments
+    //   },
+    // },
     lib: {
       ...when(isUmd, {
         // Use the full package entry

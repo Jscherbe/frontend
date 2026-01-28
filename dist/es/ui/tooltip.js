@@ -1,23 +1,32 @@
-var f = Object.defineProperty;
-var g = (l, t, e) => t in l ? f(l, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : l[t] = e;
-var u = (l, t, e) => g(l, typeof t != "symbol" ? t + "" : t, e);
-import { ComponentInitializer as v } from "../core/component.js";
-import { getUluEventName as E } from "../core/events.js";
-import { createFloatingUi as y } from "../utils/floating-ui.js";
-import { createElementFromHtml as C } from "@ulu/utils/browser/dom.js";
-import { logError as p } from "../utils/class-logger.js";
-import { ensureId as b, newId as w } from "../utils/id.js";
-const d = new v({
+var E = Object.defineProperty;
+var f = Object.getOwnPropertySymbols;
+var y = Object.prototype.hasOwnProperty, C = Object.prototype.propertyIsEnumerable;
+var u = (i, t, e) => t in i ? E(i, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : i[t] = e, g = (i, t) => {
+  for (var e in t || (t = {}))
+    y.call(t, e) && u(i, e, t[e]);
+  if (f)
+    for (var e of f(t))
+      C.call(t, e) && u(i, e, t[e]);
+  return i;
+};
+var m = (i, t, e) => u(i, typeof t != "symbol" ? t + "" : t, e);
+import { ComponentInitializer as b } from "../core/component.js";
+import { getUluEventName as w } from "../core/events.js";
+import { createFloatingUi as A } from "../utils/floating-ui.js";
+import { createElementFromHtml as H } from "@ulu/utils/browser/dom.js";
+import { logError as v } from "../utils/class-logger.js";
+import { ensureId as S, newId as I } from "../utils/id.js";
+const d = new b({
   type: "tooltip",
   baseAttribute: "data-ulu-tooltip"
-}), A = d.getAttribute("body"), H = d.attributeSelector("body"), S = d.attributeSelector("arrow");
-function j() {
+}), L = d.getAttribute("body"), F = d.attributeSelector("body"), O = d.attributeSelector("arrow");
+function T() {
   d.init({
     coreEvents: ["pageModified"],
     withData: !0,
-    setup({ element: l, data: t, initialize: e }) {
+    setup({ element: i, data: t, initialize: e }) {
       const n = typeof t == "object" ? t : {};
-      typeof t == "string" && (n.content = t), e(), new m({ trigger: l }, n);
+      typeof t == "string" && (n.content = t), e(), new p({ trigger: i }, n);
     }
   });
 }
@@ -25,10 +34,10 @@ const a = class a {
   constructor(t, e, n) {
     const { trigger: s } = t;
     if (!s) {
-      p(this, "missing required trigger");
+      v(this, "missing required trigger");
       return;
     }
-    this.options = Object.assign({}, a.defaults, e), this.floatingOptions = Object.assign({}, a.defaultFloatingOptions, n), this.elements = { ...t }, this.handlers = {}, this.isOpen = !1, b(s), this.setup();
+    this.options = Object.assign({}, a.defaults, e), this.floatingOptions = Object.assign({}, a.defaultFloatingOptions, n), this.elements = g({}, t), this.handlers = {}, this.isOpen = !1, S(s), this.setup();
   }
   setup() {
     this.createContentElement(), this.attachHandlers(), this.setupAccessibility();
@@ -48,40 +57,40 @@ const a = class a {
       const o = s ? this.getAnchorElement() : document.querySelector(t);
       return o ? n ? o.innerHTML : o.innerText : "";
     } else
-      p(this, "Could not resolve inner content");
+      v(this, "Could not resolve inner content");
   }
   getAnchorElement() {
     const { trigger: t } = this.elements, { href: e } = t, n = e ? e.split("#")[1] : null, s = n ? document.getElementById(n) : null;
     return s || console.error("Unable to get 'fromAnchor' element", t), s;
   }
   createContentElement() {
-    const { options: t } = this, e = C(t.template(t)), n = e.querySelector(H), s = this.getInnerContent();
-    t.isHtml ? n.innerHTML = s : n.textContent = s, e.id = w(), t.contentClass && e.classList.add(t.contentClass), this.elements.content = e, this.elements.contentArrow = e.querySelector(S), document.body.appendChild(e);
+    const { options: t } = this, e = H(t.template(t)), n = e.querySelector(F), s = this.getInnerContent();
+    t.isHtml ? n.innerHTML = s : n.textContent = s, e.id = I(), t.contentClass && e.classList.add(t.contentClass), this.elements.content = e, this.elements.contentArrow = e.querySelector(O), document.body.appendChild(e);
   }
   attachHandlers() {
     const { trigger: t } = this.elements, { showEvents: e, hideEvents: n, delay: s } = this.options;
     let o = null;
-    const c = (i) => {
+    const c = (r) => {
       o || (o = setTimeout(() => {
-        this.show(i), clearTimeout(o);
+        this.show(r), clearTimeout(o);
       }, s));
-    }, r = (i) => {
-      o && (clearTimeout(o), o = null), this.hide(i);
-    }, h = (i) => {
-      i.key === "Escape" && this.hide(i);
+    }, l = (r) => {
+      o && (clearTimeout(o), o = null), this.hide(r);
+    }, h = (r) => {
+      r.key === "Escape" && this.hide(r);
     };
-    e.forEach((i) => {
-      t.addEventListener(i, c);
-    }), n.forEach((i) => {
-      t.addEventListener(i, r);
-    }), document.addEventListener("keydown", h), this.handlers = { onShow: c, onHide: r, onDocumentKeydown: h };
+    e.forEach((r) => {
+      t.addEventListener(r, c);
+    }), n.forEach((r) => {
+      t.addEventListener(r, l);
+    }), document.addEventListener("keydown", h), this.handlers = { onShow: c, onHide: l, onDocumentKeydown: h };
   }
   destroyHandlers() {
     const { trigger: t } = this, { onShow: e, onHide: n, onDocumentKeydown: s } = this.handlers, { showEvents: o, hideEvents: c } = this.options;
-    e && o.forEach((r) => {
-      t.removeEventListener(r, e);
-    }), n && c.forEach((r) => {
-      t.removeEventListener(r, n);
+    e && o.forEach((l) => {
+      t.removeEventListener(l, e);
+    }), n && c.forEach((l) => {
+      t.removeEventListener(l, n);
     }), s && document.removeEventListener("keydown", s);
   }
   setState(t, e) {
@@ -89,14 +98,14 @@ const a = class a {
       instance: this,
       isOpen: t,
       event: e
-    }, { trigger: s, content: o } = this.elements, { openClass: c } = this.options, r = (h) => h.classList[t ? "add" : "remove"](c);
-    r(s), r(o), this.isOpen = t, this.options.onChange(n), s.dispatchEvent(this.createEvent("change", n)), this.destroyFloatingInstance(), t && this.createFloatingInstance();
+    }, { trigger: s, content: o } = this.elements, { openClass: c } = this.options, l = (h) => h.classList[t ? "add" : "remove"](c);
+    l(s), l(o), this.isOpen = t, this.options.onChange(n), s.dispatchEvent(this.createEvent("change", n)), this.destroyFloatingInstance(), t && this.createFloatingInstance();
   }
   createEvent(t, e) {
-    return new CustomEvent(E("tooltip:" + t), { detail: e });
+    return new CustomEvent(w("tooltip:" + t), { detail: e });
   }
   createFloatingInstance() {
-    this.floatingCleanup = y(this.elements, this.floatingOptions);
+    this.floatingCleanup = A(this.elements, this.floatingOptions);
   }
   destroyFloatingInstance() {
     this.floatingCleanup && (this.floatingCleanup(), this.floatingCleanup = null);
@@ -111,7 +120,7 @@ const a = class a {
 /**
  * Defaults options
  */
-u(a, "defaults", {
+m(a, "defaults", {
   /**
    * Should the tooltip and content be linked accessibly
    * - Note tooltips can only apply to interactive elements! (ie button, input, role="...", etc)
@@ -161,7 +170,7 @@ u(a, "defaults", {
   template(t) {
     return `
         <div class="popover popover--tooltip">
-          <div class="popover__inner" ${A}>
+          <div class="popover__inner" ${L}>
           </div>
           <span class="popover__arrow" data-ulu-tooltip-arrow></span>
         </div>
@@ -173,12 +182,12 @@ u(a, "defaults", {
    */
   onChange(t) {
   }
-}), u(a, "defaultFloatingOptions", {
+}), m(a, "defaultFloatingOptions", {
   // strategy: "fixed"
 });
-let m = a;
+let p = a;
 export {
-  m as Tooltip,
-  j as init,
+  p as Tooltip,
+  T as init,
   d as initializer
 };

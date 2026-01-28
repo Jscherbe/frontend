@@ -1,13 +1,24 @@
-import { ComponentInitializer as C } from "../core/component.js";
+var I = Object.defineProperty;
+var m = Object.getOwnPropertySymbols;
+var E = Object.prototype.hasOwnProperty, v = Object.prototype.propertyIsEnumerable;
+var p = (s, t, e) => t in s ? I(s, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : s[t] = e, $ = (s, t) => {
+  for (var e in t || (t = {}))
+    E.call(t, e) && p(s, e, t[e]);
+  if (m)
+    for (var e of m(t))
+      v.call(t, e) && p(s, e, t[e]);
+  return s;
+};
+import { ComponentInitializer as R } from "../core/component.js";
 import { wrapSettingString as d } from "../core/settings.js";
-import { getCoreEventName as m } from "../core/events.js";
-import { Resizer as _ } from "./resizer.js";
-import { closeAttribute as y, baseAttribute as I, defaults as E } from "./dialog.js";
-import { createElementFromHtml as v, getElement as R } from "@ulu/utils/browser/dom.js";
-const n = new C({
+import { getCoreEventName as f } from "../core/events.js";
+import { Resizer as w } from "./resizer.js";
+import { baseAttribute as A, closeAttribute as g, defaults as D } from "./dialog.js";
+import { createElementFromHtml as O, getElement as M } from "@ulu/utils/browser/dom.js";
+const n = new R({
   type: "modal-builder",
   baseAttribute: "data-ulu-modal-builder"
-}), w = {
+}), B = {
   title: null,
   titleIcon: null,
   titleClass: "",
@@ -70,7 +81,7 @@ const n = new C({
               ${t.titleIcon ? `<span class="${e}__title-icon ${t.titleIcon}" aria-hidden="true"></span>` : ""}
               <span class="${e}__title-text">${t.title}</span>
             </h2>
-            <button class="${e}__close ${t.classClose}" aria-label="Close modal" ${y} autofocus>
+            <button class="${e}__close ${t.classClose}" aria-label="Close modal" ${g} autofocus>
               ${t.templateCloseIcon(t)}
             </button>
           </header>
@@ -84,53 +95,53 @@ const n = new C({
     `;
   }
 };
-let c = { ...w };
-function j(s) {
+let c = $({}, B);
+function x(s) {
   c = Object.assign({}, c, s);
 }
-function N() {
+function q() {
   n.init({
     withData: !0,
     coreEvents: ["pageModified"],
     setup({ element: s, data: t }) {
-      A(s, t);
+      H(s, t);
     }
   });
 }
-function A(s, t) {
+function H(s, t) {
   const e = Object.assign({}, c, t), { position: i } = e;
   if (e.debug && n.log(e, s), !s.id)
     throw new Error("Missing ID on modal");
-  const r = e.template(s.id, e), o = v(r.trim()), a = (l) => o.querySelector(n.attributeSelector(l)), u = a("body"), p = a("resizer"), $ = g(e);
-  if (s.removeAttribute("id"), s.removeAttribute("hidden"), s.removeAttribute(n.getAttribute()), s.parentNode.replaceChild(o, s), u.appendChild(s), o.setAttribute(I, JSON.stringify($)), e.footerElement) {
-    const l = R(e.footerElement);
+  const r = e.template(s.id, e), o = O(r.trim()), a = (l) => o.querySelector(n.attributeSelector(l)), u = a("body"), h = a("resizer"), z = S(e);
+  if (s.removeAttribute("id"), s.removeAttribute("hidden"), s.removeAttribute(n.getAttribute()), s.parentNode.replaceChild(o, s), u.appendChild(s), o.setAttribute(A, JSON.stringify(z)), e.footerElement) {
+    const l = M(e.footerElement);
     l && (l.classList.add(`${e.baseClass}__footer`), u.after(l));
   }
   let b;
-  const f = ["left", "right", "center"], h = i === "center", z = i === "right";
+  const C = ["left", "right", "center"], _ = i === "center", y = i === "right";
   if (e.allowResize)
-    if (f.includes(i)) {
-      const l = h ? { fromX: "right", fromY: "bottom", multiplier: 2 } : { fromX: z ? "left" : "right" };
-      b = new _(o, p, l);
+    if (C.includes(i)) {
+      const l = _ ? { fromX: "right", fromY: "bottom", multiplier: 2 } : { fromX: y ? "left" : "right" };
+      b = new w(o, h, l);
     } else
       console.warn(`${i} is not supported for resizing`);
   if (e.print) {
     let l;
-    document.addEventListener(m("beforePrint"), () => {
+    document.addEventListener(f("beforePrint"), () => {
       l = s.cloneNode(!0), o.after(l);
-    }), document.addEventListener(m("afterPrint"), () => {
+    }), document.addEventListener(f("afterPrint"), () => {
       l.remove();
     });
   }
   return { modal: o, resizer: b };
 }
-function g(s) {
-  return Object.keys(E).reduce((t, e) => (e in s && (t[e] = s[e]), t), {});
+function S(s) {
+  return Object.keys(D).reduce((t, e) => (e in s && (t[e] = s[e]), t), {});
 }
 export {
-  A as buildModal,
-  w as defaults,
-  N as init,
+  H as buildModal,
+  B as defaults,
+  q as init,
   n as initializer,
-  j as setDefaults
+  x as setDefaults
 };

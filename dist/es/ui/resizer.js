@@ -1,13 +1,22 @@
-var S = Object.defineProperty;
-var P = (n) => {
+var V = Object.defineProperty;
+var k = Object.getOwnPropertySymbols;
+var C = Object.prototype.hasOwnProperty, W = Object.prototype.propertyIsEnumerable;
+var H = (n) => {
   throw TypeError(n);
 };
-var T = (n, t, e) => t in n ? S(n, t, { enumerable: !0, configurable: !0, writable: !0, value: e }) : n[t] = e;
-var k = (n, t, e) => T(n, typeof t != "symbol" ? t + "" : t, e), L = (n, t, e) => t.has(n) || P("Cannot " + e);
-var i = (n, t, e) => (L(n, t, "read from private field"), e ? e.call(n) : t.get(n)), u = (n, t, e) => t.has(n) ? P("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), a = (n, t, e, r) => (L(n, t, "write to private field"), r ? r.call(n, e) : t.set(n, e), e), p = (n, t, e) => (L(n, t, "access private method"), e);
-import { createUluEvent as M } from "../core/events.js";
+var L = (n, e, t) => e in n ? V(n, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : n[e] = t, S = (n, e) => {
+  for (var t in e || (e = {}))
+    C.call(e, t) && L(n, t, e[t]);
+  if (k)
+    for (var t of k(e))
+      W.call(e, t) && L(n, t, e[t]);
+  return n;
+};
+var T = (n, e, t) => L(n, typeof e != "symbol" ? e + "" : e, t), x = (n, e, t) => e.has(n) || H("Cannot " + t);
+var i = (n, e, t) => (x(n, e, "read from private field"), t ? t.call(n) : e.get(n)), u = (n, e, t) => e.has(n) ? H("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(n) : e.set(n, t), a = (n, e, t, r) => (x(n, e, "write to private field"), r ? r.call(n, t) : e.set(n, t), t), p = (n, e, t) => (x(n, e, "access private method"), t);
+import { createUluEvent as $ } from "../core/events.js";
 import { logError as I, log as b } from "../utils/class-logger.js";
-var z, v, f, d, y, w, g, E, R, l, X, x, A, D;
+var z, v, f, d, y, w, g, E, R, l, X, A, D, K;
 const Y = class Y {
   /**
    * @param {Node} container Container to be resized
@@ -25,7 +34,7 @@ const Y = class Y {
    * @param {boolean} [config.enablePointerResizing=true] If true, pointer events will enable resizing.
    * @param {boolean} [config.enableKeyboardResizing=true] If true, keyboard events will enable resizing.
    */
-  constructor(t, e, r) {
+  constructor(e, t, r) {
     u(this, l);
     // Declare private fields without initial assignments
     u(this, z);
@@ -37,12 +46,12 @@ const Y = class Y {
     u(this, g);
     u(this, E);
     u(this, R);
-    if (!e || !t) {
+    if (!t || !e) {
       I(this, "Missing required elements: control, container");
       return;
     }
     const s = Object.assign({}, Y.defaults, r);
-    this.options = s, this.container = t, this.control = e, this.debug = s.debug;
+    this.options = s, this.container = e, this.control = t, this.debug = s.debug;
     const o = ["left", "right"], c = ["top", "bottom"], { fromX: h, fromY: m } = s;
     if (!o.includes(h) && h !== null) {
       I(this, `Invalid fromX: ${h} (left|right|null)`);
@@ -56,55 +65,55 @@ const Y = class Y {
       I(this, "Invalid fromX/fromY, failed to setup resizer (at least one of fromX or fromY must be set)");
       return;
     }
-    this.resizeHorizontal = s.fromX !== null, this.resizeVertical = s.fromY !== null, s.manageEvents && (a(this, z, this.onPointerdown.bind(this)), a(this, v, this.onKeydown.bind(this)), s.enablePointerResizing && e.addEventListener("pointerdown", i(this, z)), s.enableKeyboardResizing && e.addEventListener("keydown", i(this, v))), p(this, l, X).call(this), s.manageAriaLabel && e.setAttribute("aria-label", this.getAriaLabel());
+    this.resizeHorizontal = s.fromX !== null, this.resizeVertical = s.fromY !== null, s.manageEvents && (a(this, z, this.onPointerdown.bind(this)), a(this, v, this.onKeydown.bind(this)), s.enablePointerResizing && t.addEventListener("pointerdown", i(this, z)), s.enableKeyboardResizing && t.addEventListener("keydown", i(this, v))), p(this, l, X).call(this), s.manageAriaLabel && t.setAttribute("aria-label", this.getAriaLabel());
   }
   /**
    * Cleans up event listeners and internal state to prevent memory leaks.
    */
   destroy() {
-    const { control: t, options: e } = this;
-    e.manageEvents && (e.enablePointerResizing && t.removeEventListener("pointerdown", i(this, z)), e.enableKeyboardResizing && t.removeEventListener("keydown", i(this, v))), i(this, f) && clearTimeout(i(this, f)), p(this, l, X).call(this), e.manageAriaLabel && t.removeAttribute("aria-label"), b(this, "Resizer destroyed.");
+    const { control: e, options: t } = this;
+    t.manageEvents && (t.enablePointerResizing && e.removeEventListener("pointerdown", i(this, z)), t.enableKeyboardResizing && e.removeEventListener("keydown", i(this, v))), i(this, f) && clearTimeout(i(this, f)), p(this, l, X).call(this), t.manageAriaLabel && e.removeAttribute("aria-label"), b(this, "Resizer destroyed.");
   }
   /**
    * Public handler for pointerdown events. Call this method from your own event listeners
    * if `manageEvents` is false. Its logic will only execute if `enablePointerResizing` is true.
    * @param {PointerEvent} e The pointerdown event.
    */
-  onPointerdown(t) {
+  onPointerdown(e) {
     if (!this.options.enablePointerResizing) {
       b(this, "Pointer resizing disabled. Ignoring pointerdown event.");
       return;
     }
-    t.preventDefault();
-    const e = document.documentElement;
-    a(this, E, t.clientX), a(this, R, t.clientY), p(this, l, x).call(this, {
+    e.preventDefault();
+    const t = document.documentElement;
+    a(this, E, e.clientX), a(this, R, e.clientY), p(this, l, A).call(this, {
       inputType: "pointer",
-      startX: t.clientX,
-      startY: t.clientY,
-      pointerId: t.pointerId
-    }), this.control.setPointerCapture(t.pointerId);
+      startX: e.clientX,
+      startY: e.clientY,
+      pointerId: e.pointerId
+    }), this.control.setPointerCapture(e.pointerId);
     const r = (o) => {
       const c = o.clientX - i(this, E), h = o.clientY - i(this, R);
-      p(this, l, D).call(this, c, h, o);
+      p(this, l, K).call(this, c, h, o);
     }, s = (o) => {
-      e.removeEventListener("pointermove", r, !1), e.removeEventListener("pointerup", s, { capture: !0, once: !0 }), this.control.hasPointerCapture(o.pointerId) && this.control.releasePointerCapture(o.pointerId), p(this, l, A).call(this);
+      t.removeEventListener("pointermove", r, !1), t.removeEventListener("pointerup", s, { capture: !0, once: !0 }), this.control.hasPointerCapture(o.pointerId) && this.control.releasePointerCapture(o.pointerId), p(this, l, D).call(this);
     };
-    e.addEventListener("pointermove", r, !1), e.addEventListener("pointerup", s, { capture: !0, once: !0 });
+    t.addEventListener("pointermove", r, !1), t.addEventListener("pointerup", s, { capture: !0, once: !0 });
   }
   /**
    * Public handler for keydown events. Call this method from your own event listeners
    * if `manageEvents` is false. Its logic will only execute if `enableKeyboardResizing` is true.
    * @param {KeyboardEvent} e The keydown event.
    */
-  onKeydown(t) {
+  onKeydown(e) {
     if (!this.options.enableKeyboardResizing) {
       b(this, "Keyboard resizing disabled. Ignoring keydown event.");
       return;
     }
-    const { key: e } = t, { keyboardStep: r, keyboardDebounceTime: s } = this.options;
+    const { key: t } = e, { keyboardStep: r, keyboardDebounceTime: s } = this.options;
     let o = 0, c = 0, h = !1;
-    this.resizeHorizontal && (e === "ArrowLeft" ? (o = -r, h = !0) : e === "ArrowRight" && (o = r, h = !0)), this.resizeVertical && (e === "ArrowUp" ? (c = -r, h = !0) : e === "ArrowDown" && (c = r, h = !0)), h && (t.preventDefault(), t.stopPropagation(), (!i(this, g) || i(this, f) === null) && p(this, l, x).call(this, { inputType: "keyboard", keyboardKey: e }), a(this, y, i(this, y) + o), a(this, w, i(this, w) + c), p(this, l, D).call(this, i(this, y), i(this, w), t), i(this, f) && clearTimeout(i(this, f)), a(this, f, setTimeout(() => {
-      p(this, l, A).call(this), a(this, f, null);
+    this.resizeHorizontal && (t === "ArrowLeft" ? (o = -r, h = !0) : t === "ArrowRight" && (o = r, h = !0)), this.resizeVertical && (t === "ArrowUp" ? (c = -r, h = !0) : t === "ArrowDown" && (c = r, h = !0)), h && (e.preventDefault(), e.stopPropagation(), (!i(this, g) || i(this, f) === null) && p(this, l, A).call(this, { inputType: "keyboard", keyboardKey: t }), a(this, y, i(this, y) + o), a(this, w, i(this, w) + c), p(this, l, K).call(this, i(this, y), i(this, w), e), i(this, f) && clearTimeout(i(this, f)), a(this, f, setTimeout(() => {
+      p(this, l, D).call(this), a(this, f, null);
     }, s)));
   }
   /**
@@ -113,7 +122,7 @@ const Y = class Y {
    * @returns {string} The suggested aria-label for the control.
    */
   getAriaLabel() {
-    const { fromY: t, fromX: e } = this.options, r = [t, e].filter((s) => s);
+    const { fromY: e, fromX: t } = this.options, r = [e, t].filter((s) => s);
     return r.length === 0 ? "Resize control" : `Resize from ${r.join(" ")} edge`;
   }
   /**
@@ -121,8 +130,8 @@ const Y = class Y {
    * @param {string} type The event type (e.g., "resizer:start", "resizer:update", "resizer:end").
    * @param {Object} [data={}] Optional data to attach to the event's detail property.
    */
-  dispatchEvent(t, e = {}) {
-    this.container.dispatchEvent(M(t, e));
+  dispatchEvent(e, t = {}) {
+    this.container.dispatchEvent($(e, t));
   }
 };
 z = new WeakMap(), v = new WeakMap(), f = new WeakMap(), d = new WeakMap(), y = new WeakMap(), w = new WeakMap(), g = new WeakMap(), E = new WeakMap(), R = new WeakMap(), l = new WeakSet(), /**
@@ -138,24 +147,23 @@ X = function() {
  * @param {Object} eventDetails Additional details about the initiating event.
  * @private
  */
-x = function(t) {
-  const { container: e, options: r } = this;
+A = function(e) {
+  const { container: t, options: r } = this;
   if (i(this, g)) {
-    r.overrideMaxDimensions && (this.resizeHorizontal && (e.style.maxWidth = "none"), this.resizeVertical && (e.style.maxHeight = "none"));
+    r.overrideMaxDimensions && (this.resizeHorizontal && (t.style.maxWidth = "none"), this.resizeVertical && (t.style.maxHeight = "none"));
     return;
   }
-  const o = document.defaultView.getComputedStyle(e);
-  i(this, d).width = parseInt(o.width, 10), i(this, d).height = parseInt(o.height, 10), r.overrideMaxDimensions && (this.resizeHorizontal && (e.style.maxWidth = "none"), this.resizeVertical && (e.style.maxHeight = "none")), a(this, g, !0), this.dispatchEvent("resizer:start", t), b(this, "Resize started.", {
+  const o = document.defaultView.getComputedStyle(t);
+  i(this, d).width = parseInt(o.width, 10), i(this, d).height = parseInt(o.height, 10), r.overrideMaxDimensions && (this.resizeHorizontal && (t.style.maxWidth = "none"), this.resizeVertical && (t.style.maxHeight = "none")), a(this, g, !0), this.dispatchEvent("resizer:start", e), b(this, "Resize started.", S({
     initialWidth: i(this, d).width,
-    initialHeight: i(this, d).height,
-    ...t
-  });
+    initialHeight: i(this, d).height
+  }, e));
 }, /**
  * Ends a resize operation.
  * Dispatches 'resizer:end' event and resets internal state.
  * @private
  */
-A = function() {
+D = function() {
   i(this, g) && (this.dispatchEvent("resizer:end"), p(this, l, X).call(this), b(this, "Resize ended."));
 }, /**
  * Core logic for calculating and applying the new size of the container.
@@ -166,19 +174,19 @@ A = function() {
  * @param {Event} originalEvent The original DOM event (PointerEvent or KeyboardEvent) that triggered the update.
  * @private
  */
-D = function(t, e, r) {
+K = function(e, t, r) {
   let s = i(this, d).width, o = i(this, d).height;
   const { fromX: c, fromY: h, multiplier: m } = this.options;
-  this.resizeHorizontal && (c === "right" ? s = i(this, d).width + t * m : c === "left" && (s = i(this, d).width - t * m), this.container.style.width = `${Math.max(0, s)}px`), this.resizeVertical && (h === "bottom" ? o = i(this, d).height + e * m : h === "top" && (o = i(this, d).height - e * m), this.container.style.height = `${Math.max(0, o)}px`);
-  const K = {
+  this.resizeHorizontal && (c === "right" ? s = i(this, d).width + e * m : c === "left" && (s = i(this, d).width - e * m), this.container.style.width = `${Math.max(0, s)}px`), this.resizeVertical && (h === "bottom" ? o = i(this, d).height + t * m : h === "top" && (o = i(this, d).height - t * m), this.container.style.height = `${Math.max(0, o)}px`);
+  const P = {
     newWidth: s,
     newHeight: o,
-    totalDeltaX: t,
-    totalDeltaY: e,
+    totalDeltaX: e,
+    totalDeltaY: t,
     event: r
   };
-  this.dispatchEvent("resizer:update", K), b(this, "Resizing update.", K);
-}, k(Y, "defaults", {
+  this.dispatchEvent("resizer:update", P), b(this, "Resizing update.", P);
+}, T(Y, "defaults", {
   debug: !1,
   /**
    * Amount to increase size by (ie. pointer movement * multiplier)
@@ -236,7 +244,7 @@ D = function(t, e, r) {
    */
   enableKeyboardResizing: !0
 });
-let H = Y;
+let M = Y;
 export {
-  H as Resizer
+  M as Resizer
 };

@@ -1,45 +1,56 @@
-import { debounce as s } from "@ulu/utils/performance.js";
-import { isBrowser as a } from "@ulu/utils/browser/dom.js";
-a() && (u(), f());
-const i = {
+var u = Object.defineProperty;
+var d = Object.getOwnPropertySymbols;
+var f = Object.prototype.hasOwnProperty, v = Object.prototype.propertyIsEnumerable;
+var s = (e, n, t) => n in e ? u(e, n, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[n] = t, a = (e, n) => {
+  for (var t in n || (n = {}))
+    f.call(n, t) && s(e, t, n[t]);
+  if (d)
+    for (var t of d(n))
+      v.call(n, t) && s(e, t, n[t]);
+  return e;
+};
+import { debounce as l } from "@ulu/utils/performance.js";
+import { isBrowser as p } from "@ulu/utils/browser/dom.js";
+p() && (b(), m());
+const r = {
   pageModified(e) {
-    e.dispatchEvent(n("pageModified"));
+    e.dispatchEvent(i("pageModified"));
   },
   pageResized(e) {
-    e.dispatchEvent(n("pageResized"));
+    e.dispatchEvent(i("pageResized"));
   },
   beforePrint(e) {
-    e.dispatchEvent(n("beforePrint"));
+    e.dispatchEvent(i("beforePrint"));
   },
   afterPrint(e) {
-    e.dispatchEvent(n("afterPrint"));
+    e.dispatchEvent(i("afterPrint"));
   }
-}, c = Object.keys(i);
-function r(e, t) {
-  i[e] ? i[e](t) : console.warn(`Unable to dispatch non-core event: ${e}`);
+}, E = Object.keys(r);
+function o(e, n) {
+  r[e] ? r[e](n) : console.warn(`Unable to dispatch non-core event: ${e}`);
 }
-function o(e) {
+function c(e) {
   return "ulu:" + e;
 }
-function p(e) {
-  return c.includes(e) ? o(e) : (console.warn(`'${e}' is not a valid core event type.`), null);
+function h(e) {
+  return E.includes(e) ? c(e) : (console.warn(`'${e}' is not a valid core event type.`), null);
 }
-function n(e, t = null, d = { bubbles: !0 }) {
-  return new CustomEvent(o(e), { detail: t, ...d });
+function i(e, n = null, t = { bubbles: !0 }) {
+  return new CustomEvent(c(e), a({ detail: n }, t));
 }
-function u() {
-  window.addEventListener("resize", s(() => r("pageResized", document), 250));
+function b() {
+  window.addEventListener("resize", l(() => o("pageResized", document), 250));
 }
-function f() {
+function m() {
   window.addEventListener("beforeprint", () => {
-    r("beforePrint", document);
+    o("beforePrint", document);
   }), window.addEventListener("afterprint", () => {
-    r("afterPrint", document);
+    o("afterPrint", document);
   });
 }
 export {
-  n as createUluEvent,
-  r as dispatchCoreEvent,
-  p as getCoreEventName,
-  o as getUluEventName
+  i as createUluEvent,
+  o as dispatchCoreEvent,
+  h as getCoreEventName,
+  c as getUluEventName
 };
