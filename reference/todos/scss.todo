@@ -1,3 +1,5 @@
+Important:
+  ☐ SCSS is introducing a breaking change (new if statement) @in-progress
 SCSS Todos:
   ☐ horizontal card
     ☐ bring over idc horizontal card styling. Specifically, the way that the body/aside widths stay the same. Add config options

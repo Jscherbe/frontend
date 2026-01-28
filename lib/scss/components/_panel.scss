@@ -229,7 +229,7 @@ $styles: (
   font-family: map.get($props, "font-family");
   color: color.get(map.get($props, "color"));
   box-shadow: map.get($props, "box-shadow");
-  flex-grow: if(map.get($props, "grow") == false, 0, 1); // Default is grow
+  flex-grow: utils.when(map.get($props, "grow") == false, 0, 1); // Default is grow
   border-top: element.get-optional-rule-style(map.get($props, "border-top"));
   border-bottom: element.get-optional-rule-style(map.get($props, "border-bottom"));
   

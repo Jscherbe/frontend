@@ -1,0 +1,52 @@
+@use "vars";
+@use "scss" as ulu;
+
+@include ulu.color-set((
+  "type" :                    ulu.cssvar-use("color-type"),
+  "headline" :                ulu.cssvar-use("color-type-secondary"),
+  "type-secondary" :          ulu.cssvar-use("color-type-secondary"),
+  "type-tertiary" :           ulu.cssvar-use("color-type-tertiary"),
+  "type-disabled" :           ulu.cssvar-use("color-type-disabled"),
+  "error" :                   ulu.cssvar-use("color-error"),
+  "box-shadow" :              ulu.cssvar-use("color-box-shadow"),
+  "background" :              ulu.cssvar-use("color-background"),
+  "accent" :                  ulu.cssvar-use("color-accent"),
+  "selected" :                ulu.cssvar-use("color-accent"),
+  "selected-background" :     ulu.cssvar-use("color-accent-background"),
+  "accent-light" :            ulu.cssvar-use("color-accent-light"),
+  "rule" :                    ulu.cssvar-use("color-rule"),
+  "rule-light" :              ulu.cssvar-use("color-rule-light"),
+  "link" :                    ulu.cssvar-use("color-link"),
+  "link-hover" :              ulu.cssvar-use("color-link-hover"),
+  "link-active" :             ulu.cssvar-use("color-link-active"),
+  "link-visited" :            ulu.cssvar-use("color-link-visited"),
+  "bullet" :                  inherit,
+  "control-background" :      ulu.cssvar-use("color-control-background"),
+  "control-background-hover" :ulu.cssvar-use("color-control-background-hover"),
+));
+
+
+// Using a internal module to manage colors and styling since it's a little
+// more complicated than just color
+@include ulu.color-set-contexts((
+
+  "dark" : (
+    "background-color" :      black,
+    "helper-class" :          true
+  ),
+  "light" : (
+    "background-color" :      white,
+    "helper-class" :          true
+  ),
+  "light-gray" : (
+    "background-color" :      vars.$color-gray-light-x,
+    "helper-class" :          true
+  ),
+), "overwrite");
+
+@include ulu.color-set-color-classes((
+  "accent": true,
+  "type" : true,
+  "type-secondary" : true,
+  "type-tertiary" : true,
+));

@@ -6,13 +6,13 @@
 @use "sass:map";
 @use "sass:meta";
 
+@use "../utils";
 @use "../color";
 @use "../selector";
 @use "../breakpoint";
 @use "../layout";
 @use "../typography";
 @use "../element";
-@use "../utils";
 
 // Used for function fallback
 $-fallbacks: (
@@ -43,7 +43,10 @@ $-fallbacks: (
 /// @prop {Color} indicator-transition-duration [200ms] The transition duration for indicator
 /// @prop {Color} indicator-scale-start [0] The starting scale for the indicator (set to 1 to disable expanding on click)
 /// @prop {Color} tab-color [link] The type color for the tabs. This uses color.scss, so the value of this options should be a variable from color.scss.
-/// @prop {Color} tab-color-hover [link-hover] The type color for the tabs when hovered or focused. This uses color.scss, so the value of this options should be a variable from color.scss.
+/// @prop {Color} tab-color-hover [link-hover] The type color for the tabs when hovered. This uses color.scss, so the value of this options should be a variable from color.scss.
+/// @prop {Color|null} tab-color-focus [null] The type color for a tab when it has keyboard focus.
+/// @prop {Color} tab-background-color-focus [#eeeeee] The background color for a tab when it has keyboard focus.
+/// @prop {Boolean} tab-hide-native-focus [true] Hides the default browser outline on focused tabs.
 /// @prop {Color} tab-color-selected [selected] The tab type color when selected. This uses color.scss, so the value of this options should be a variable from color.scss.
 /// @prop {Color} tab-background-color-selected [null] The tab background color when selected
 /// @prop {CssValue} tab-font-weight [true] The font weight for the tab, defaults to typography "font-weight-semibold"
@@ -69,6 +72,9 @@ $config: (
   "indicator-scale-start" : 0,
   "tab-color" : "type-tertiary",
   "tab-color-hover" : "selected",
+  "tab-color-focus": red,
+  "tab-background-color-focus": "selected-background",
+  "tab-hide-native-focus": true,
   "tab-color-selected" : "selected",
   "tab-background-color-selected" : null,
   "tab-font-weight" : true,
@@ -159,11 +165,20 @@ $config: (
       // Add focus so as user clicks item it starts the active state styling
       &:focus,
       &[aria-selected="true"] {
-        outline: none; // We are providing focus styling
+        @if get("tab-hide-native-focus") {
+          outline: none;
+        }
         &::after {
           opacity: 1;
           transform: scaleX(1);
         }
+      }
+      // Add new focus-specific colors
+      // Using :focus-visible so it only applies to keyboard focus
+      &:focus-visible,
+      &[aria-selected="true"]:focus-visible {
+        color: color.get(get("tab-color-focus"));
+        background-color: color.get(get("tab-background-color-focus"));
       }
       &[aria-selected="true"] {
         color: color.get(get("tab-color-selected"));
@@ -209,8 +224,8 @@ $config: (
         white-space: normal;
         text-align: left;
         &::after {
-          left: if(get("vertical-indicator-left"), 0, auto);
-          right: if(not get("vertical-indicator-left"), 0, auto);;
+          left: utils.when(get("vertical-indicator-left"), 0, auto);
+          right: utils.when(not get("vertical-indicator-left"), 0, auto);
           bottom: 0;
           top: 0;
           width: get("indicator-size");

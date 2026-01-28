@@ -81,7 +81,7 @@ $config: (
     padding-bottom: get("padding-bottom");
   }
   #{ $prefix }__content-main {
-    $min-width: if(get("main-min-width"), get("main-min-width"), get("main-max-width"));
+    $min-width: utils.fallback(get("main-min-width"), get("main-max-width"));
     // Using max/min-width so that we don't need to add selectors to change flex-basis
     // when centered. Using flex-basis: 0 to allow flexbox to decide the items width
     // allows it to expand/shrink within. min(100%... Never larger than parent

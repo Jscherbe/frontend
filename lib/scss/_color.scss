@@ -38,6 +38,7 @@ $palette: (
   "placeholder-background":     #e2e2e2,
   "placeholder-background-alt": #bababa,
   "selected":                   green,
+  "selected-background":        rgb(184, 202, 184),
   "box-shadow":                 rgba(0, 0, 0, 0.349),
   "box-shadow-hover":           rgba(0, 0, 0, 0.5),
   "rule":                       gray,
@@ -133,7 +134,7 @@ $color-classes: (
 
 @function exists($name) {
   $color: map.get($palette, $name);
-  @return if($color != null, true, false);
+  @return utils.when($color != null, true, false);
 }
 
 /// Set color contexts

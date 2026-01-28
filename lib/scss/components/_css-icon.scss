@@ -17,8 +17,8 @@
 
 @use "sass:map";
 @use "sass:math";
-@use "../color";
 
+@use "../color";
 @use "../utils";
 
 /// Module Settings
@@ -322,7 +322,7 @@ $config: (
 
   @include for-each-stroke() using ($alt-width, $alt-border-radius) {
     // $drag-gap-multiplier: map.get($props, "drag-gap-multiplier");
-    // $drag-gap-multiplier: if($drag-gap-multiplier, $drag-gap-multiplier, 0);
+    // $drag-gap-multiplier: utils.when($drag-gap-multiplier, $drag-gap-multiplier, 0);
     &[class*="css-icon--drag"] {
       &::before {
         margin-top: -(($alt-width + $alt-width) * get("drag-gap-multiplier"));

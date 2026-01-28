@@ -1,49 +1,54 @@
-Todos:
-  ☐ Need to take the docs system and separate it into modules so we can use it in the frontend-vue library
-    ☐ Although may consider just using the sassdoc-to-markdown library in there for sass @uncertain
-  ☐ Guide on how to use CSS Variables for colors
-  ☐ Need to clean up package.json devDependencies
-    * still has old dependencies and some that were added for current version but aren't being used
-  ☐ Need to explain that button, rule and link components inherit from core module settings
-  ☐ Need to explain proxy-click to users in the card demo (only makes sense to us currently)
-    ☐ Also need form-theme to stay light theme
-  ☐ Utils should be organized somehow, print out in order of definition, maybe these should be rearranged so similar functions are grouped on page/menu
-  ☐ Create js module for managing interactive demos and use something like handlebars for templating
-  ☐ Need to setup form-theme for dark/light modes
-Future Ideas:
-  ☐ We should have a shortcode to print out both demo and markup example
-    * So it's written in one place
-  ☐ We should maybe create our own heading parser so that our jump to links aren't dependent on markup parser (demos without markdown don't get jump to links)
-  ☐ Should sass api page names just be lower case?
-  ☐ Need to add dark / light mode
-  ☐ Allow configuring library in browser for demos and stuff?
-    * Sass is now supported compiling in browser see
-      * https://sass-lang.com/blog/sass-in-the-browser/
-SCSS Docs Checks:
-  ☐ Check Mixin Documentation
-    ☐ Core
-    ☐ Base
-    ☐ Components
-    ☐ Helpers
-Demos Needed:
-  ☐ Rule
-  ☐ Link
-  ☐ Data Grid
-  ☐ Container
-  ☐ Typography
-  ☐ Lists
-  ☐ Callout
-  ☐ Badge
-  ☐ Wysiwyg
-  ☐ Cards (card, card grid)
-    ☐ This one needs to be revisited with the current markup for overlay
-    ☐ Icon version should use the icon (ie FA) in the image space
-  ☐ Fill Context
-  ☐ Button Verbose
-  ☐ Nav strip
-  ☐ Ratio box
-  ☐ Tabs
-  ☐ Spacing (default units, adaptive spacing)
+Current:
+  ☐ Make documentation more concise (directories, etc)
+  ☐ Setup wrapper component for showing / rendering source code @later @important
+    * This one is easy and just has to be done, do ulu updates and then do this last since it's not crucial but publishing updates is
+Before 2026:
+  Todos:
+    ☐ Need to take the docs system and separate it into modules so we can use it in the frontend-vue library
+      ☐ Although may consider just using the sassdoc-to-markdown library in there for sass @uncertain
+    ☐ Guide on how to use CSS Variables for colors
+    ☐ Need to clean up package.json devDependencies
+      * still has old dependencies and some that were added for current version but aren't being used
+    ☐ Need to explain that button, rule and link components inherit from core module settings
+    ☐ Need to explain proxy-click to users in the card demo (only makes sense to us currently)
+      ☐ Also need form-theme to stay light theme
+    ☐ Utils should be organized somehow, print out in order of definition, maybe these should be rearranged so similar functions are grouped on page/menu
+    ☐ Create js module for managing interactive demos and use something like handlebars for templating
+    ☐ Need to setup form-theme for dark/light modes
+  Future Ideas:
+    ☐ We should have a shortcode to print out both demo and markup example
+      * So it's written in one place
+    ☐ We should maybe create our own heading parser so that our jump to links aren't dependent on markup parser (demos without markdown don't get jump to links)
+    ☐ Should sass api page names just be lower case?
+    ☐ Need to add dark / light mode
+    ☐ Allow configuring library in browser for demos and stuff?
+      * Sass is now supported compiling in browser see
+        * https://sass-lang.com/blog/sass-in-the-browser/
+  SCSS Docs Checks:
+    ☐ Check Mixin Documentation
+      ☐ Core
+      ☐ Base
+      ☐ Components
+      ☐ Helpers
+  Demos Needed:
+    ☐ Rule
+    ☐ Link
+    ☐ Data Grid
+    ☐ Container
+    ☐ Typography
+    ☐ Lists
+    ☐ Callout
+    ☐ Badge
+    ☐ Wysiwyg
+    ☐ Cards (card, card grid)
+      ☐ This one needs to be revisited with the current markup for overlay
+      ☐ Icon version should use the icon (ie FA) in the image space
+    ☐ Fill Context
+    ☐ Button Verbose
+    ☐ Nav strip
+    ☐ Ratio box
+    ☐ Tabs
+    ☐ Spacing (default units, adaptive spacing)
 
 
   

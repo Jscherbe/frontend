@@ -5,6 +5,7 @@
 @use "sass:map";
 @use "sass:list";
 @use "sass:meta";
+
 @use "utils";
 @use "breakpoint";
 @use "color";
@@ -128,14 +129,20 @@ $containers: (
 @mixin match-container-margin($property, $name: "container", $include-padding: true) {
   $container: get-container($name);
   $breakpoints: map.get($container, "breakpoints");
-  $padding: if($include-padding, get-container-padding($name, true), 0);
+  $padding: 0;
+  @if ($include-padding) {
+    $padding: get-container-padding($name, true);
+  }
   $max: map.get($container, "max-width");
   #{ $property }: max(((100vw - $max) / 2) + $padding, $padding);
   @if $breakpoints {
     @each $breakpoint, $props in $breakpoints {
       $direction: map.get($props, "direction");
       @include breakpoint.from($breakpoint, $direction) {
-        $pad: if($include-padding, get-container-padding($name, true, $breakpoint), 0);
+        $pad: 0;
+        @if ($include-padding) {
+          $pad: get-container-padding($name, true, $breakpoint);
+        }
         #{ $property }: max(((100vw - $max) / 2) + $pad, $pad);
       }
     }
@@ -154,7 +161,7 @@ $containers: (
   @if (not $is-list) {
     @return $padding;
   } @else {
-    @return list.nth($padding, if($sides, 2, 1));
+    @return list.nth($padding, utils.when($sides, 2, 1));
   }
 }
 
@@ -168,7 +175,7 @@ $containers: (
   $responsive: map.get($container, "responsive");
   $x: get-container-padding-x($name, $specific-breakpoint);
   $y: get-container-padding-y($name, $specific-breakpoint);
-  $resp-amount: if(meta.type-of($responsive) == number, $responsive, utils.get("responsive-change"));
+  $resp-amount: utils.when(meta.type-of($responsive) == number, $responsive, utils.get("responsive-change"));
   
   @if $responsive {
     @if $sides {

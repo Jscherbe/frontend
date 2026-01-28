@@ -136,8 +136,8 @@ $config: (
   $cap-side: get("cap-side");
   $cap-defaults: (
     "offset" : utils.if-type("number", get("border-width"), 0),
-    "border-radius" : if(get("cap-match-radius"), get("border-radius"), 0),
-    "padding-adjust" : if(utils.is-side($cap-side), $padding-x, $padding-y)
+    "border-radius" : utils.when(get("cap-match-radius"), get("border-radius"), 0),
+    "padding-adjust" : utils.when(utils.is-side($cap-side), $padding-x, $padding-y)
   );
   
   #{ $prefix } {
