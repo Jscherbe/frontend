@@ -101,10 +101,9 @@ function menuLinkFormatter({ node, options, isCollapsibleIndex }) {
 }
 function menuToggleFormatter({ node, options }) {
   const classname = options.class;
-  const { data } = node.entry;
   return `
     <span class="${ classname }__toggle-content">
-      ${ data.title }
+      ${ menuLinkFormatter({ node, options }) }
     </span>
     <span class="${ classname }__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
   `;
