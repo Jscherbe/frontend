@@ -4,23 +4,16 @@ import markdownItAnchor from "markdown-it-anchor";
 import tocPlugin from "eleventy-plugin-nesting-toc";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import markdownItAttrs from "markdown-it-attrs";
-
 import navTreePlugin from "@ulu/eleventy-plugin-nav-tree";
-// import sassPlugin from "./src/plugins/sass/index.js";
 import sassdocPlugin from "./src/plugins/sassdoc/index.js";
 import optionsTablePlugin from "./src/plugins/options-table/index.js";
 import jsdocPlugin from "./src/plugins/jsdoc/index.js";
 import { shortcodes, pairedShortcodes } from "./src/templates/shortcodes/index.js";
 
-const { NO_DOC_GEN, IS_PRODUCTION } = process.env;
+const { NO_DOC_GEN } = process.env;
 
 export default async function(eleventyConfig) {
   eleventyConfig.setQuietMode(true); // Reduce logs
-  eleventyConfig.setServerOptions({ 
-    port: 8080, // Needed for asset server
-    domDiff: false, // Messes up asset server (removes vite embedded styles from head)
-  }); 
-  // eleventyConfig.addPassthroughCopy("src");
   eleventyConfig.addPassthroughCopy("site/pages/.nojekyll"); 
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
   eleventyConfig.addWatchTarget("site/pages/**/*.twig");
@@ -30,6 +23,7 @@ export default async function(eleventyConfig) {
     wrapper: "div",
     headingText: "Jump To:"
   });
+
   eleventyConfig.addPlugin(syntaxHighlight, {
     async init({ Prism }) {
       await import("prismjs/plugins/custom-class/prism-custom-class.js")
@@ -43,23 +37,22 @@ export default async function(eleventyConfig) {
     md.use(markdownItAttrs);
     md.use(markdownItAnchor);
   });
-  // eleventyConfig.addPlugin(sassPlugin, {
-  //   addCwd: true,
-  //   sass: {
-  //     loadPaths: [ common.paths.sassTheme ],
-  //   }
-  // }); 
-  // eleventyConfig.addWatchTarget(common.paths.sassTheme);
+
   if (!NO_DOC_GEN) {
     eleventyConfig.addPlugin(jsdocPlugin);
     eleventyConfig.addPlugin(sassdocPlugin);
   }
   
+  // Adds table markup output from data
   eleventyConfig.addPlugin(optionsTablePlugin);
+
   // Overwrite asset paths like hugo
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);  
+
   // Allow importing MD from outside sources (ie. Changelog)
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+  // Builds Navigation
   eleventyConfig.addPlugin(navTreePlugin, {
     toHtml: {
       formatLink: menuLinkFormatter,
@@ -70,6 +63,7 @@ export default async function(eleventyConfig) {
       }
     }
   }); 
+
   // Register all site shortcodes
   Object.entries(shortcodes)
     .forEach(([name, fn]) => eleventyConfig.addShortcode(name, fn));
