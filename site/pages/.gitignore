@@ -4,11 +4,14 @@
 
 # Ignore generated content...
 javascript/*
-sass/*
+
+# Sass is only the inner folders
+sass/base/*
+sass/components/*
+sass/core/*
+sass/helpers/*
 
 # ...but Keep the hand-written files
 !javascript/index.md
 !javascript/javascript.11tydata.js
 
-!sass/index.md
-!sass/sass.11tydata.js

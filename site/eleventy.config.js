@@ -86,24 +86,25 @@ export default async function(eleventyConfig) {
   };
 }
 
-function menuLinkFormatter({ node, options, isIndex }) {
+function menuLinkFormatter({ node, options, isCollapsibleIndex }) {
   const { data } = node.entry;
   const classname = options.class;
   const icon = () => `
     <span class="${ classname }__icon ${ data.iconClass }" aria-hidden="true"></span>
   `;
   return `
-    ${ data.iconClass && !isIndex ? icon() : "" }
+    ${ data.iconClass && !isCollapsibleIndex ? icon() : "" }
     <span class="${ classname }__text">
-      ${ isIndex ? "Introduction" : data.title }
+      ${ isCollapsibleIndex ? "Introduction" : data.title }
     </span>
   `;
 }
 function menuToggleFormatter({ node, options }) {
   const classname = options.class;
+  const { data } = node.entry;
   return `
     <span class="${ classname }__toggle-content">
-      ${ menuLinkFormatter({ node, options }) }
+      ${ data.title }
     </span>
     <span class="${ classname }__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
   `;
