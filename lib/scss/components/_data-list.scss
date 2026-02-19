@@ -1,0 +1,161 @@
+////
+/// @group data-list
+/// A list that displays like a tabular layout on large screens, stacking on small
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../breakpoint";
+
+/// Module Settings
+/// @type Map
+/// @prop {String} grid-template-columns [auto 1fr 10rem 10rem auto] The master grid column definition for all columns.
+/// @prop {Dimension} row-gap [1px] The space between list items (rows).
+/// @prop {Dimension} column-gap [1rem] The space between columns.
+/// @prop {Map} column-sizes [("small": 5rem, "medium": 10rem)] Map of named sizes for columns.
+/// @prop {Color} background-color [transparent] The default background color for items.
+/// @prop {Color} background-color-even [null] The background color for even-numbered items (for striping). If null, not used.
+/// @prop {Color} background-color-hover [null] The background color for items on hover. If null, not used.
+
+$config: (
+  "grid-template-columns": auto 1fr 10rem 10rem auto,
+  "row-gap": 1px,
+  "column-gap": 1rem,
+  "column-sizes": (
+    "small": 5rem,
+    "medium": 10rem,
+  ),
+  "background-color": transparent,
+  "background-color-even": "black",
+  "background-color-hover": "black",
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-data-list-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-data-list-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "data-list [config]");
+}
+
+/// Prints component styles
+/// @demo data-list
+/// @example scss
+///  @include ulu.component-data-list-styles();
+
+@mixin styles {
+  @include utils.file-header('component', 'data-list');
+
+  $prefix: selector.class("data-list");
+  
+  // Modern `subgrid` implementation
+  #{ $prefix } {
+    display: grid;
+    gap: get("row-gap");
+    grid-template-columns: get("grid-template-columns");
+  }
+
+  #{ $prefix }__item {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    gap: get("column-gap");
+    padding: 1rem;
+    align-items: center;
+    background-color: color.get(get("background-color"));
+
+    @if (get("background-color-even")) {
+      &:nth-child(even) {
+        background-color: color.get(get("background-color-even"));
+      }
+    }
+
+    @if (get("background-color-hover")) {
+      &:hover {
+        background-color: color.get(get("background-color-hover"));
+      }
+    }
+  }
+
+  #{ $prefix }__column {
+    // A group is a column that contains other columns
+    &--group {
+      // The fluid group uses display: contents to promote its children
+      // into the parent subgrid layout.
+      &#{ $prefix }__column--fluid {
+        display: contents;
+      }
+    }
+  }
+  
+  // Positional placement for group columns
+  #{ $prefix }__item > #{ $prefix }__column--group:first-child {
+    grid-column: 1;
+  }
+  #{ $prefix }__item > #{ $prefix }__column--group:last-child {
+    grid-column: -1;
+    justify-self: end;
+  }
+
+  @each $name, $width in get("column-sizes") {
+    #{ $prefix }__column--#{$name} {
+      width: $width;
+      flex-basis: $width; // for flex fallback
+    }
+  }
+
+  // Fallback for older browsers
+  @supports not (grid-template-columns: subgrid) {
+    #{ $prefix } {
+      display: block;
+    }
+
+    #{ $prefix }__item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: get("column-gap");
+      
+      &:not(:last-child) {
+        margin-bottom: get("row-gap");
+      }
+    }
+
+    // In the fallback, the fluid group is a flex container that grows
+    #{ $prefix }__column--group {
+      &#{ $prefix }__column--fluid {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0;
+        gap: get("column-gap");
+      }
+
+      &:not(#{ $prefix }__column--fluid) {
+        flex-shrink: 0;
+      }
+
+      &:last-child:not(#{ $prefix }__column--fluid) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  @include breakpoint.min("medium") {
+    #{ $prefix }__item {
+      padding: 1rem 2rem;
+    }
+  }
+}
