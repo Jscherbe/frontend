@@ -31,6 +31,7 @@ $config: (
   "background-color": transparent,
   "background-color-even": #f9f9f9,
   "background-color-hover": #f0f0f0,
+  "background-color-clickable-hover": #e8e8e8, // Slightly darker for interactive indication
   "mobile-breakpoint": "small"
 ) !default;
 
@@ -59,10 +60,14 @@ $config: (
     display: grid;
     gap: get("row-gap");
     // Allows inline override via custom property, falls back to config default
-    grid-template-columns: var(--data-list-columns, get("grid-template-columns"));
+    grid-template-columns: var(--ulu-data-list-columns, get("grid-template-columns"));
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include breakpoint.max($mobile-bp) {
+      display: block; // Stack items on mobile
+    }
   }
 
   // 2. Row Item (Passes the grid down)
@@ -73,6 +78,12 @@ $config: (
     gap: get("column-gap");
     padding: 1rem;
     background-color: color.get(get("background-color"));
+
+    @include breakpoint.max($mobile-bp) {
+      display: flex; // Use flex for vertical stacking of top-level columns
+      flex-direction: column;
+      gap: 0.5rem; // Add gap between stacked top-level columns
+    }
 
     @if (get("background-color-even")) {
       &:nth-child(even) {
@@ -131,6 +142,17 @@ $config: (
 
   // --- Modifiers ---
 
+  // Interactive Rows (Proxy Click Support)
+  // Applied to parent to indicate all rows are interactable
+  #{ $prefix }--clickable {
+    #{ $prefix }__item {
+      cursor: pointer;
+      &:hover {
+        background-color: color.get(get("background-color-clickable-hover"));
+      }
+    }
+  }
+
   // Spanning (Required when a subgrid contains multiple child columns)
   @for $i from 2 through 12 {
     #{ $prefix }__column--span-#{$i} {
@@ -168,14 +190,15 @@ $config: (
   }
 
   // Mobile Overrides (Changes the default vertical stack to horizontal wrap/inline)
-  #{ $prefix }__column--wrap-small {
+  // Chained to ensure specificity beats the :has() selector above
+  #{ $prefix }__column#{ $prefix }__column--wrap-small {
     @include breakpoint.max($mobile-bp) {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
     }
   }
-  #{ $prefix }__column--inline-small {
+  #{ $prefix }__column#{ $prefix }__column--inline-small {
     @include breakpoint.max($mobile-bp) {
       flex-direction: row;
       flex-wrap: nowrap;

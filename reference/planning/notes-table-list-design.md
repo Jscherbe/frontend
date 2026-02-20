@@ -45,6 +45,24 @@ A fallback is provided within a `@supports not (grid-template-columns: subgrid) 
 - **How it works:** The `.data-list__item` becomes `display: flex`. The columns rely on their natural content width unless modified by `--fluid` or `--shrink`.
 - **The Result:** Users on older browsers still get a well-organized row layout, though they lose the pixel-perfect strict column alignment across multiple rows provided by `subgrid`.
 
-## 5. Future Considerations
+## 5. Headers & Accessibility
 
-- **The "Keep Side-by-Side" Mobile Scenario:** The `--inline-small` modifier exists to prevent mobile stacking, but highly complex side-by-side mobile layouts might require further refinement. We decided to keep the base structure clean for now and add explicit overrides only as they are proven necessary in real-world implementations.
+- **The "No Frankenstein Table" Rule:** We decided *not* to use `role="table"` or try to force this component to be a full table replacement. It is strictly a list.
+- **Header Rows:** An optional header row (`.data-list__header`) can be used for visual alignment on desktop.
+- **Accessibility Implementation:** 
+  - The header uses `aria-hidden="true"` or `role="presentation"` so it is ignored by screen readers, preventing confusion since it's just a visual label.
+  - On mobile, the header is hidden (`display: none`) because the column alignment breaks when stacked.
+  - Content must be self-explanatory (e.g., "Created: Jan 1") or labeled within the item itself, rather than relying solely on the column header for context.
+
+## 6. Interactivity (Proxy Click)
+
+- **The Pattern:** We use a "Proxy Click" pattern for interactive rows instead of wrapping the entire row in a button or link (unless it's a simple navigation list).
+- **Implementation:**
+  - **`data-ulu-proxy-click`**: Attribute on the row (`.data-list__item`) to initialize the JS behavior.
+  - **`data-ulu-proxy-click-source`**: Attribute on the primary interactive element (e.g., the Title link).
+  - **`.data-list--clickable`**: Modifier class on the parent list to apply `cursor: pointer` and hover styles to rows.
+  - **Visuals:** Added a `background-color-clickable-hover` config option to distinguish interactive rows from standard rows.
+
+## 7. Future Considerations
+
+- **The "Keep Side-by-Side" Mobile Scenario:** The `--inline-small` modifier exists to prevent mobile stacking, but highly complex side-by-side mobile layouts might require further refinement. We decided to keep the base structure clean for now.

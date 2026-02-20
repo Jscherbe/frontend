@@ -1,0 +1,398 @@
+---
+title: Data List
+layout: unformatted
+intro: A highly flexible list layout that uses CSS Subgrid to perfectly align columns on desktop, while gracefully stacking related data on smaller screens. 
+---
+
+<h2 class="h2 margin-top">1. Basic Document List</h2>
+<p>This example demonstrates the core functionality. The parent defines a grid with 4 tracks (<code>auto 1fr auto auto</code>). The middle column spans 2 tracks (<code>--span-2</code>) and acts as a Subgrid automatically because it contains other <code>.data-list__column</code> children. On mobile, the title and metadata will stack vertically.</p>
+
+<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto;">
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Annual Report 2024.pdf</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Jan 1, 2024</small>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Q3 Financials.xlsx</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Oct 14, 2023</small>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Project Alpha_Brief_v2_FINAL.docx</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Nov 02, 2023</small>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📊</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Marketing Assets.zip</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Dec 10, 2023</small>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📷</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Site Photos High Res.zip</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Jan 15, 2024</small>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h2 class="h2 margin-top">2. Directory with Visual Header</h2>
+<p>This example adds an optional header row. The header is purely visual (hidden from screen readers) to help alignment on desktop. On mobile, the header disappears (<code>display: none</code>) and the columns stack. We use <code>--hide-small</code> on non-critical columns ("Role", "Last Active") to keep the mobile view clean.</p>
+
+<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto auto;">
+  
+  <!-- Visual Header Row (Hidden from AT, disappears on mobile) -->
+  <li class="data-list__header" aria-hidden="true">
+    <div class="data-list__item">
+      <div class="data-list__column data-list__column--shrink"></div> <!-- Icon space -->
+      <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+        <div class="data-list__column">Name</div>
+        <div class="data-list__column data-list__column--hide-small">Role</div>
+      </div>
+      <div class="data-list__column data-list__column--hide-small">Last Active</div>
+      <div class="data-list__column data-list__column--shrink"></div> <!-- Action space -->
+    </div>
+  </li>
+
+  <!-- List Items -->
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>JD</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Jane Doe</strong>
+      </div>
+      <div class="data-list__column data-list__column--hide-small">
+        <span class="tag tag--outline tag--small">Admin</span>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--hide-small">
+      <small>Active 2h ago</small>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>BS</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Bob Smith</strong>
+      </div>
+      <div class="data-list__column data-list__column--hide-small">
+        <span class="tag tag--outline tag--small">Editor</span>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--hide-small">
+      <small>Active 1d ago</small>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>AJ</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Alice Johnson</strong>
+      </div>
+      <div class="data-list__column data-list__column--hide-small">
+        <span class="tag tag--outline tag--small">Viewer</span>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--hide-small">
+      <small>Active 5m ago</small>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>MK</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Mike K.</strong>
+      </div>
+      <div class="data-list__column data-list__column--hide-small">
+        <span class="tag tag--outline tag--small">Editor</span>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--hide-small">
+      <small>Active 3d ago</small>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>SL</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Sarah Lee</strong>
+      </div>
+      <div class="data-list__column data-list__column--hide-small">
+        <span class="tag tag--outline tag--small">Viewer</span>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--hide-small">
+      <small>Active 1w ago</small>
+    </div>
+    <div class="data-list__column data-list__column--shrink data-list__column--justify-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h2 class="h2 margin-top">3. Mobile Overrides (Wrap instead of Stack)</h2>
+<p>By default, nested columns stack vertically on mobile. Using <code>--wrap-small</code> overrides this, allowing nested items (like metadata tags) to flow naturally inline on small screens instead of creating a tall vertical stack.</p>
+
+<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto;">
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--align-start">
+      <strong>Task #1024</strong>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2 data-list__column--wrap-small">
+      <div class="data-list__column">
+        <span class="tag tag--small tag--danger">Urgent</span>
+      </div>
+      <div class="data-list__column">
+        <span class="tag tag--small">Frontend</span>
+      </div>
+      <div class="data-list__column">
+        <span class="tag tag--small">Bug</span>
+      </div>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--align-start">
+      <strong>#1025</strong>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2 data-list__column--wrap-small">
+      <div class="data-list__column">
+        <span class="tag tag--small tag--success">In Progress</span>
+      </div>
+      <div class="data-list__column">
+        <span class="tag tag--small">Design</span>
+      </div>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--align-start">
+      <strong>#1026</strong>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2 data-list__column--wrap-small">
+      <div class="data-list__column">
+        <span class="tag tag--small">Backlog</span>
+      </div>
+      <div class="data-list__column">
+        <span class="tag tag--small">Refactor</span>
+      </div>
+      <div class="data-list__column">
+        <span class="tag tag--small">Technical Debt</span>
+      </div>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--align-start">
+      <strong>#1027</strong>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2 data-list__column--wrap-small">
+      <div class="data-list__column">
+        <span class="tag tag--small tag--outline">Review</span>
+      </div>
+    </div>
+  </li>
+
+  <li class="data-list__item">
+    <div class="data-list__column data-list__column--align-start">
+      <strong>#1028</strong>
+    </div>
+    <div class="data-list__column data-list__column--fluid data-list__column--span-2 data-list__column--wrap-small">
+      <div class="data-list__column">
+        <span class="tag tag--small">Planned</span>
+      </div>
+      <div class="data-list__column">
+        <span class="tag tag--small">A11y</span>
+      </div>
+    </div>
+  </li>
+
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h2 class="h2 margin-top">4. Interactive Rows (Proxy Click)</h2>
+<p>This example demonstrates the "Clickable Row" pattern. We use the <code>.data-list--clickable</code> modifier for hover styles and the <code>data-ulu-proxy-click</code> attribute to initialize the JavaScript behavior. The click on the row is proxied to the element with <code>data-ulu-proxy-click-source</code> (the Title link).</p>
+
+<ul class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto;">
+  
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid">
+      <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 1')">Message Subject Line</a>
+      <div class="type-small type-type-tertiary">From: Jane Doe</div>
+    </div>
+    <div class="data-list__column">
+      <small>2 mins ago</small>
+    </div>
+  </li>
+
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid">
+      <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 2')">Weekly Newsletter</a>
+      <div class="type-small type-type-tertiary">From: Marketing Team</div>
+    </div>
+    <div class="data-list__column">
+      <small>1 hour ago</small>
+    </div>
+  </li>
+
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid">
+      <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 3')">Account Security Alert</a>
+      <div class="type-small type-type-tertiary">From: Security</div>
+    </div>
+    <div class="data-list__column">
+      <small>Yesterday</small>
+    </div>
+  </li>
+
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h2 class="h2 margin-top">5. Simple Link List (Anchor Rows)</h2>
+<p>For simple navigation lists where the entire row is a link, you can use <code>&lt;a&gt;</code> tags as the list items. The container uses a <code>&lt;div&gt;</code> instead of a <code>&lt;ul&gt;</code>, but the grid layout works exactly the same.</p>
+
+<div class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto;">
+  
+  <a href="#" class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid">
+      <strong>Documents</strong>
+    </div>
+    <div class="data-list__column">
+      <small class="type-type-tertiary">Folder</small>
+    </div>
+  </a>
+
+  <a href="#" class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid">
+      <strong>Images</strong>
+    </div>
+    <div class="data-list__column">
+      <small class="type-type-tertiary">Folder</small>
+    </div>
+  </a>
+
+  <a href="#" class="data-list__item">
+    <div class="data-list__column data-list__column--shrink">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--fluid">
+      <strong>Downloads</strong>
+    </div>
+    <div class="data-list__column">
+      <small class="type-type-tertiary">Folder</small>
+    </div>
+  </a>
+
+</div>
