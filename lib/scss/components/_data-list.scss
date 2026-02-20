@@ -1,6 +1,9 @@
 ////
 /// @group data-list
-/// A list that displays like a tabular layout on large screens, stacking on small
+/// A responsive data list for self-explanatory list-like content. Uses CSS Grid 
+/// and Subgrid to align columns on desktop, while gracefully stacking them 
+/// on smaller screens. Not intended for complex tabular data requiring 
+/// explicit column headers for context on mobile.
 ////
 
 @use "sass:map";
@@ -13,69 +16,62 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} grid-template-columns [auto 1fr 10rem 10rem auto] The master grid column definition for all columns.
+/// @prop {String} grid-template-columns [auto 1fr auto] The default master grid columns.
 /// @prop {Dimension} row-gap [1px] The space between list items (rows).
 /// @prop {Dimension} column-gap [1rem] The space between columns.
-/// @prop {Map} column-sizes [("small": 5rem, "medium": 10rem)] Map of named sizes for columns.
 /// @prop {Color} background-color [transparent] The default background color for items.
-/// @prop {Color} background-color-even [null] The background color for even-numbered items (for striping). If null, not used.
-/// @prop {Color} background-color-hover [null] The background color for items on hover. If null, not used.
+/// @prop {Color} background-color-even [null] The background color for even-numbered items (for striping).
+/// @prop {Color} background-color-hover [null] The background color for items on hover.
+/// @prop {String} mobile-breakpoint ["small"] The breakpoint below which groups stack.
 
 $config: (
-  "grid-template-columns": auto 1fr 10rem 10rem auto,
+  "grid-template-columns": auto 1fr auto,
   "row-gap": 1px,
   "column-gap": 1rem,
-  "column-sizes": (
-    "small": 5rem,
-    "medium": 10rem,
-  ),
   "background-color": transparent,
-  "background-color-even": "black",
-  "background-color-hover": "black",
+  "background-color-even": #f9f9f9,
+  "background-color-hover": #f0f0f0,
+  "mobile-breakpoint": "small"
 ) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
-/// @example scss
-///   @include ulu.component-data-list-set(( "property" : value ));
-
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {Map} $name Name of property
-/// @example scss
-///   @include ulu.component-data-list-get("property");
-
 @function get($name) {
   @return utils.require-map-get($config, $name, "data-list [config]");
 }
 
 /// Prints component styles
 /// @demo data-list
-/// @example scss
-///  @include ulu.component-data-list-styles();
-
 @mixin styles {
   @include utils.file-header('component', 'data-list');
 
   $prefix: selector.class("data-list");
+  $mobile-bp: get("mobile-breakpoint");
   
-  // Modern `subgrid` implementation
+  // 1. Container (Defines the master grid)
   #{ $prefix } {
     display: grid;
     gap: get("row-gap");
-    grid-template-columns: get("grid-template-columns");
+    // Allows inline override via custom property, falls back to config default
+    grid-template-columns: var(--data-list-columns, get("grid-template-columns"));
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
+  // 2. Row Item (Passes the grid down)
   #{ $prefix }__item {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
     gap: get("column-gap");
     padding: 1rem;
-    align-items: center;
     background-color: color.get(get("background-color"));
 
     @if (get("background-color-even")) {
@@ -91,37 +87,106 @@ $config: (
     }
   }
 
+  // 3. Columns (The cells / wrappers)
   #{ $prefix }__column {
-    // A group is a column that contains other columns
-    &--group {
-      // The fluid group uses display: contents to promote its children
-      // into the parent subgrid layout.
-      &#{ $prefix }__column--fluid {
-        display: contents;
+    display: flex;
+    align-items: center;
+    gap: get("column-gap");
+    min-width: 0; // Prevents flexbox truncation blowouts
+  }
+
+  // 4. Automatic Groups (Subgrid on desktop, stack on mobile)
+  #{ $prefix }__column:has(> #{ $prefix }__column) {
+    display: grid;
+    grid-template-columns: subgrid;
+    // Default span is 1, use modifiers below for larger spans
+    
+    @include breakpoint.max($mobile-bp) {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.25rem; // Tighter vertical gap when stacked
+    }
+  }
+
+  // 5. Header Row (Optional)
+  #{ $prefix }__header {
+    display: contents; // Removes wrapper so children participate in grid
+
+    // Hide headers on mobile since columns stack
+    @include breakpoint.max($mobile-bp) {
+      display: none;
+    }
+
+    #{ $prefix }__item {
+      font-weight: bold;
+      background-color: transparent;
+      border-bottom: 2px solid color.get("rule"); // Stronger separator
+      
+      &:hover {
+        background-color: transparent; // No hover effect on headers
       }
     }
   }
-  
-  // Positional placement for group columns
-  #{ $prefix }__item > #{ $prefix }__column--group:first-child {
-    grid-column: 1;
-  }
-  #{ $prefix }__item > #{ $prefix }__column--group:last-child {
-    grid-column: -1;
-    justify-self: end;
-  }
 
-  @each $name, $width in get("column-sizes") {
-    #{ $prefix }__column--#{$name} {
-      width: $width;
-      flex-basis: $width; // for flex fallback
+  // --- Modifiers ---
+
+  // Spanning (Required when a subgrid contains multiple child columns)
+  @for $i from 2 through 12 {
+    #{ $prefix }__column--span-#{$i} {
+      grid-column: span #{$i};
     }
   }
 
-  // Fallback for older browsers
+  // Sizing (Crucial for flex fallback, helpful semantically)
+  #{ $prefix }__column--fluid {
+    flex: 1 1 0%;
+  }
+  #{ $prefix }__column--shrink {
+    flex: 0 0 auto;
+  }
+
+  // Alignment
+  #{ $prefix }__column--align-start {
+    align-items: flex-start;
+  }
+  #{ $prefix }__column--align-end {
+    align-items: flex-end;
+  }
+  #{ $prefix }__column--justify-center {
+    justify-content: center;
+  }
+  #{ $prefix }__column--justify-end {
+    justify-content: flex-end;
+  }
+
+  // Responsive Visibility
+  #{ $prefix }__column--hide-small {
+    @include breakpoint.max($mobile-bp) {
+      display: none !important;
+    }
+  }
+
+  // Mobile Overrides (Changes the default vertical stack to horizontal wrap/inline)
+  #{ $prefix }__column--wrap-small {
+    @include breakpoint.max($mobile-bp) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  #{ $prefix }__column--inline-small {
+    @include breakpoint.max($mobile-bp) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+  }
+
+  // --- Fallback for Older Browsers ---
   @supports not (grid-template-columns: subgrid) {
     #{ $prefix } {
-      display: block;
+      display: block; // Drop main grid
     }
 
     #{ $prefix }__item {
@@ -134,25 +199,25 @@ $config: (
       }
     }
 
-    // In the fallback, the fluid group is a flex container that grows
-    #{ $prefix }__column--group {
-      &#{ $prefix }__column--fluid {
-        display: flex;
-        flex-grow: 1;
-        flex-basis: 0;
-        gap: get("column-gap");
-      }
+    #{ $prefix }__column:has(> #{ $prefix }__column) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: get("column-gap");
 
-      &:not(#{ $prefix }__column--fluid) {
-        flex-shrink: 0;
+      @include breakpoint.max($mobile-bp) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0.25rem;
       }
+    }
 
-      &:last-child:not(#{ $prefix }__column--fluid) {
-        margin-left: auto;
-      }
+    // Ensure fluid elements take up space in the fallback
+    #{ $prefix }__column--fluid {
+      flex-grow: 1;
     }
   }
 
+  // Desktop padding adjustment
   @include breakpoint.min("medium") {
     #{ $prefix }__item {
       padding: 1rem 2rem;
