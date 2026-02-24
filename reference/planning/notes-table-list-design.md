@@ -24,11 +24,8 @@ The magic of the component lies in how it handles nested columns:
 
 Instead of semantic names, developers use behavioral modifiers to control how columns act within the layout.
 
-- **Sizing (Primarily for Flex Fallback):**
-  - `--fluid`: Tells the fallback to `flex-grow: 1`.
-  - `--shrink`: Tells the fallback to `flex-shrink: 0`.
 - **Spanning:**
-  - `--span-X` (e.g., `--span-2`, `--span-3`): Required on parent columns that contain nested columns so the subgrid knows how many master tracks to consume.
+  - `--span-X` (e.g., `--span-2`, `--span-3`): Required on parent columns that contain nested columns so the subgrid knows how many master tracks to consume. Without this, nested wrapper elements would only occupy a single master track, causing their children to squash or stack unexpectedly.
 - **Alignment:**
   - `--align-start`, `--align-end`, `--justify-center`, `--justify-end`: Controls horizontal and vertical alignment within the cell track.
 - **Responsive Visibility:**
@@ -37,13 +34,14 @@ Instead of semantic names, developers use behavioral modifiers to control how co
   - `--wrap-small`: Overrides the automatic mobile stacking, forcing nested items (like tags or badges) to wrap inline instead.
   - `--inline-small`: Overrides the automatic mobile stacking, forcing items to stay perfectly side-by-side on a single line.
 
-## 4. The Flexbox Fallback
+## 4. The Fallback Strategy (Updated)
 
-A fallback is provided within a `@supports not (grid-template-columns: subgrid) { ... }` block for older browsers.
-
-- **The Fallback Strategy:** The component drops the master grid and uses Flexbox.
-- **How it works:** The `.data-list__item` becomes `display: flex`. The columns rely on their natural content width unless modified by `--fluid` or `--shrink`.
-- **The Result:** Users on older browsers still get a well-organized row layout, though they lose the pixel-perfect strict column alignment across multiple rows provided by `subgrid`.
+*Previous discussions involved a complex Flexbox fallback. This has been removed.*
+Given that Subgrid support is nearly universal by mid-2026, we have opted for a "zero-config" fallback path for older browsers:
+- If a browser does not understand `grid-template-columns: subgrid`, it simply ignores the declaration.
+- The row remains `display: grid`.
+- Because there is no column template defined within the row, it defaults to placing every child in a single vertical column (implicit rows).
+- **The Result:** The desktop view for older browsers gracefully degrades to look exactly like the stacked mobile view. It is 100% usable, readable, and requires zero extra fallback code (like `--shrink` or `--fluid` modifiers) from the developer.
 
 ## 5. Headers & Accessibility
 
@@ -66,3 +64,19 @@ A fallback is provided within a `@supports not (grid-template-columns: subgrid) 
 ## 7. Future Considerations
 
 - **The "Keep Side-by-Side" Mobile Scenario:** The `--inline-small` modifier exists to prevent mobile stacking, but highly complex side-by-side mobile layouts might require further refinement. We decided to keep the base structure clean for now.
+
+## 9. Defensive Layouts & Open Questions (Next Session Handoff)
+
+This section details technical decisions made to ensure layout stability and highlights areas that require further review in our next session.
+
+### The `min-width: 0` Necessity
+We discussed why individual columns (`.data-list__column`) require `display: flex;` and `min-width: 0;`.
+- **The Micro-Layout:** While CSS Grid handles the macro-alignment of the columns across rows, Flexbox is needed internally on the column wrapper to handle micro-alignment (specifically `align-items: center` to ensure icons and text align vertically, and `gap` to space elements that sit side-by-side inside a single cell without forming a subgrid).
+- **The Blowout Threat:** By default, Grid and Flexbox refuse to shrink columns smaller than their intrinsic content (e.g., an unbroken URL or a long filename). In a fluid `1fr` track, a long string can force the column to expand, breaking the layout and pushing content off-screen.
+- **The Solution:** Applying `min-width: 0` to the flex-container columns removes this rigid floor. It is a defensive maneuver that tells the browser it is safe to shrink the column, allowing standard CSS truncation (`text-overflow: ellipsis`) to function properly without blowing out the grid. We added explicit comments to the SCSS to warn developers not to remove this crucial protection.
+
+### Open Question: The Necessity of `--wrap-small`
+We remain uncertain about the value and necessity of the `--wrap-small` modifier.
+- **The Concept:** By default, nested columns (subgrids) drop to a vertical flex stack (`flex-direction: column`) on mobile to save horizontal space. The `--wrap-small` modifier was introduced to override this, forcing small elements (like tags or badges) to flow inline (`flex-wrap: wrap`) on mobile instead of creating a tall, disjointed vertical stack.
+- **The Doubt:** While we built a demo showing a use case (a task list with tags wrapping on mobile), we need to evaluate if this specific modifier provides enough systemic value to keep in the API, or if developers should just handle this kind of highly specific mobile grouping with custom CSS inside their project.
+- **Action Item for Next Session:** Determine if we should keep, kill, or refine `--wrap-small` and `--inline-small`.
