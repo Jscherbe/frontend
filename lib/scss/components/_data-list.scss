@@ -24,6 +24,7 @@
 /// @prop {Color} background-color-even [null] The background color for even-numbered items (for striping).
 /// @prop {Color} background-color-hover [null] The background color for items on hover.
 /// @prop {String} mobile-breakpoint ["small"] The breakpoint below which groups stack.
+/// @prop {Number} span-count [4] The number of span modifiers to create, increase if needed, (ie. data-list__column--span-2, --span-3, ...)
 
 $config: (
   "grid-template-columns": 1fr,
@@ -34,7 +35,8 @@ $config: (
   "background-color-even": #f9f9f9,
   "background-color-hover": #f0f0f0,
   "background-color-clickable-hover": #e8e8e8, // Slightly darker for interactive indication
-  "mobile-breakpoint": "small"
+  "mobile-breakpoint": "small",
+  "span-count" : 6,
 ) !default;
 
 /// Change modules $config
@@ -183,7 +185,7 @@ $config: (
   }
 
   // Spanning (Required when a subgrid contains multiple child columns)
-  @for $i from 2 through 12 {
+  @for $i from 2 through get("span-count") {
     #{ $prefix }__column--span-#{$i} {
       grid-column: span #{$i};
       
@@ -192,20 +194,6 @@ $config: (
         grid-column: auto;
       }
     }
-  }
-
-  // Alignment
-  #{ $prefix }__column--align-start {
-    align-items: flex-start;
-  }
-  #{ $prefix }__column--align-end {
-    align-items: flex-end;
-  }
-  #{ $prefix }__column--justify-center {
-    justify-content: center;
-  }
-  #{ $prefix }__column--justify-end {
-    justify-content: flex-end;
   }
 
   // Desktop padding adjustment

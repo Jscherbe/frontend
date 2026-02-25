@@ -23,7 +23,8 @@
   $prefix-crop-margins: selector.class("crop-margins");
   $prefix-no-padding: selector.class("no-padding");
   $prefix-align-self: selector.class("align-self");
-
+  $prefix-align-items: selector.class("align-items");
+  $prefix-justify-content: selector.class("justify-content");
 
   @include utils.file-header('helpers', 'utilities');
   
@@ -128,6 +129,27 @@
   }
   #{ $prefix-align-self }-baseline {
     align-self: baseline;
+  }
+  #{ $prefix-align-items }-start {
+    align-items: flex-start;
+  }
+  #{ $prefix-align-items }-center {
+    align-items: center;
+  }
+  #{ $prefix-align-items }-end {
+    align-items: flex-end;
+  }
+  #{ $prefix-justify-content }-start {
+    justify-content: flex-start;
+  }
+  #{ $prefix-justify-content }-center {
+    justify-content: center;
+  }
+  #{ $prefix-justify-content }-end {
+    justify-content: flex-end;
+  }
+  #{ $prefix-justify-content }-space-between {
+    justify-content: space-between;
   }
   #{ selector.class("overflow-hidden") } {
     overflow: hidden;

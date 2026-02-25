@@ -43,6 +43,7 @@ $-fallbacks: (
 /// @prop {Dimension} height [340px] The min-height of the modal.
 /// @prop {Dimension} height-no-header [100px] The min-height of the modal.
 /// @prop {Dimension} width [60rem] The width of the Modal
+/// @prop {Dimension} min-width [300px] The min-width of the Modal (for resizing, etc)
 /// @prop {Time} animation-duration [300ms] Animation duration for the modal opening.
 /// @prop {Time} animation-duration-exit [150ms] Animation duration for the modal closing.
 /// @prop {CssValue} animation-timing-function [cubic-bezier(0, 0, .2, 1)] The animation timing menu of the modal.
@@ -86,6 +87,7 @@ $config: (
   "height":                         340px,
   "height-no-header":               100px,
   "width":                          60rem,
+  "min-width":                      300px,
   "width-left-right" :              30rem,
   "animation-duration" :            300ms,
   "animation-duration-exit" :       150ms,
@@ -171,7 +173,7 @@ $config: (
     padding: 0;
     border: 0;
     width: get("width");
-    min-width: 200px; // For resizing minimum width
+    min-width: get("min-width"); // For resizing minimum width
     min-height: get("height");
     max-height: 100vh;
     max-width: 100%;
@@ -243,10 +245,6 @@ $config: (
       border-color: color.get(utils.fallback(get("close-border-color-hover"), get("close-background-color-hover")));
       // need border-color-hover use utils fallback
     }
-  }
-
-  #{ $prefix }__close-icon {
-  // transform: translatey(get("close-icon-vertical-offset"));
   }
 
   #{ $prefix }__resizer {

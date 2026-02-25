@@ -4,8 +4,100 @@ layout: unformatted
 intro: A highly flexible list layout that uses CSS Subgrid to perfectly align columns on desktop, while gracefully stacking related data on smaller screens. 
 ---
 
-<h2 class="h2 margin-top">1. Basic Document List</h2>
-<p>This example demonstrates the core functionality with varied content lengths to show how the defensive <code>min-width: 0</code> prevents grid blowouts. The parent defines a grid with 4 tracks (<code>auto 1fr auto auto</code>). The middle column spans 2 tracks (<code>--span-2</code>) and acts as a Subgrid automatically. On mobile, the title and metadata will gracefully stack vertically.</p>
+<h2 class="h2 margin-top">Basic Usage (Presets)</h2>
+<p>The easiest way to use the Data List is with the zero-config layout presets. These modifiers automatically handle the master grid and ensure the layout survives mobile breakpoints without requiring inline CSS variables or child sizing classes.</p>
+
+<h3 class="h3 margin-top">Default (Single Fluid Column)</h3>
+<p>Without any modifiers, the list defaults to a single, full-width <code>1fr</code> track. This is useful for simple lists of text.</p>
+
+<ul class="data-list">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Company Holidays 2024.pdf</strong>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Employee Handbook v3.pdf</strong>
+    </div>
+  </li>
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h3 class="h3 margin-top">Prefixed Layout</h3>
+<p>Adding the <code>.data-list--prefixed</code> modifier creates an <code>auto 1fr</code> layout. It is perfect for attaching a shrink-wrapped icon, avatar, or checkbox to the start of the main content.</p>
+
+<ul class="data-list data-list--prefixed">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Archived Projects</strong>
+      <div class="type-small type-type-tertiary">Contains 42 items</div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Brand Assets</strong>
+      <div class="type-small type-type-tertiary">Contains 12 items</div>
+    </div>
+  </li>
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h3 class="h3 margin-top">Suffixed Layout</h3>
+<p>Adding the <code>.data-list--suffixed</code> modifier creates a <code>1fr auto</code> layout. This is ideal for attaching an action button, date, or status badge to the end of the row.</p>
+
+<ul class="data-list data-list--suffixed">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Update billing information</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small">Resolve</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Verify email address</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Resend</button>
+    </div>
+  </li>
+</ul>
+
+<hr class="rule rule--margin-large">
+
+<h3 class="h3 margin-top">Flanked Layout (Prefixed + Suffixed)</h3>
+<p>Combining both modifiers creates a classic <code>auto 1fr auto</code> layout. The Icon and Button sit on the edges, while the text fluidly fills the center. This structure is maintained on mobile screens automatically.</p>
+
+<ul class="data-list data-list--prefixed data-list--suffixed">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Q3 Financial Report.xlsx</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+</ul>
+
+
+<h2 class="h2 margin-top-large">Advanced Layouts (Custom Grids)</h2>
+<p>If your layout requires more than three tracks, or complex internal grouping, you can define custom grids using the <code>--ulu-data-list-columns</code> inline variables. Note that complex groupings require the <code>--span-*</code> modifier to consume multiple master tracks.</p>
+
+<h3 class="h3 margin-top">Multi-Track Data List</h3>
+<p>This example defines a 4-track grid (<code>auto 1fr auto auto</code>). The middle column acts as a wrapper for the Title and Date, using <code>--span-2</code> to consume two master tracks. On mobile, this subgrid structure drops, and the Title and Date gracefully stack vertically.</p>
 
 <ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-mobile: auto 1fr auto;">
   <li class="data-list__item">
@@ -13,7 +105,7 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
       <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
     </div>
     <div class="data-list__column data-list__column--span-2">
-      <!-- Added inline truncation styles to demonstrate min-width: 0 protection -->
+      <!-- The min-width: 0 protection on the column allows text-overflow: ellipsis to work safely -->
       <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
         <strong>Annual_Report_2024_FINAL_v2_with_appendices_and_really_long_name_that_should_truncate_safely.pdf</strong>
       </div>
@@ -21,39 +113,23 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
         <small class="type-type-tertiary">Added: Jan 1, 2024</small>
       </div>
     </div>
-    <div class="data-list__column data-list__column--justify-end">
+    <div class="data-list__column justify-content-end">
       <button type="button" class="button button--small button--outline">Download</button>
     </div>
   </li>
   <li class="data-list__item">
     <div class="data-list__column">
-      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+      <div style="font-size: 1.5rem;" aria-hidden="true">📊</div>
     </div>
     <div class="data-list__column data-list__column--span-2">
       <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-        <strong>Q3 Financials.xlsx</strong>
+        <strong>Marketing Assets.zip</strong>
       </div>
       <div class="data-list__column">
-        <small class="type-type-tertiary">Added: Oct 14, 2023</small>
+        <small class="type-type-tertiary">Added: Dec 10, 2023</small>
       </div>
     </div>
-    <div class="data-list__column data-list__column--justify-end">
-      <button type="button" class="button button--small button--outline">Download</button>
-    </div>
-  </li>
-  <li class="data-list__item">
-    <div class="data-list__column">
-      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
-    </div>
-    <div class="data-list__column data-list__column--span-2">
-      <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-        <strong>Project Alpha_Brief_v2_FINAL.docx</strong>
-      </div>
-      <div class="data-list__column">
-        <small class="type-type-tertiary">Added: Nov 02, 2023</small>
-      </div>
-    </div>
-    <div class="data-list__column data-list__column--justify-end">
+    <div class="data-list__column justify-content-end">
       <button type="button" class="button button--small button--outline">Download</button>
     </div>
   </li>
@@ -61,12 +137,11 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
 
 <hr class="rule rule--margin-large">
 
-<h2 class="h2 margin-top">2. Directory with Visual Header</h2>
-<p>This example adds an optional header row. The header is purely visual (hidden from screen readers) to help alignment on desktop. On mobile, we use the <code>mobile-columns</code> variable to keep the layout persistent: the Avatar and Action buttons remain on the sides, while the Name and Role stack vertically in the middle.</p>
+<h3 class="h3 margin-top">Directory with Visual Header</h3>
+<p>An optional header row (<code>.data-list__header</code>) can be added for visual alignment on desktop. It is hidden from screen readers to maintain list semantics, and disappears on mobile where columns naturally stack. Global utility classes (like <code>hidden-max-small</code>) are used to prune non-critical columns on mobile devices.</p>
 
 <ul class="data-list data-list--striped" style="--ulu-data-list-columns: auto 1fr auto auto auto; --ulu-data-list-columns-mobile: auto 1fr auto;">
   
-  <!-- Visual Header Row (Hidden from AT, disappears on mobile) -->
   <li class="data-list__header" aria-hidden="true">
     <div class="data-list__item">
       <div class="data-list__column"></div> <!-- Icon space -->
@@ -79,7 +154,6 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
     </div>
   </li>
 
-  <!-- List Items -->
   <li class="data-list__item">
     <div class="data-list__column">
       <div class="badge badge--small">
@@ -91,13 +165,13 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
         <strong>Jane Doe</strong>
       </div>
       <div class="data-list__column hidden-max-small">
-        <span class="tag tag--outline tag--small">Administrator with extended privileges</span>
+        <span class="tag tag--outline tag--small">Administrator</span>
       </div>
     </div>
     <div class="data-list__column hidden-max-small">
       <small>Active 2h ago</small>
     </div>
-    <div class="data-list__column data-list__column--justify-end">
+    <div class="data-list__column justify-content-end">
       <button type="button" class="button button--small">Edit User</button>
     </div>
   </li>
@@ -119,97 +193,43 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
     <div class="data-list__column hidden-max-small">
       <small>Active 1d ago</small>
     </div>
-    <div class="data-list__column data-list__column--justify-end">
+    <div class="data-list__column justify-content-end">
       <button type="button" class="button button--small">Edit</button>
     </div>
   </li>
 </ul>
 
-<hr class="rule rule--margin-large">
 
-<h2 class="h2 margin-top">3. Grouping Inline Data</h2>
-<p>If you want small data points (like tags or statuses) to wrap inline next to each other rather than stacking vertically or using grid alignment, simply place them together inside a single column. The flexbox properties inherent to the column wrapper will naturally handle the spacing and wrapping.</p>
+<h2 class="h2 margin-top-large">Common Patterns</h2>
 
-<ul class="data-list data-list--prefixed">
-  <li class="data-list__item">
-    <div class="data-list__column data-list__column--align-start">
-      <strong>Feature #402</strong>
-    </div>
-    <div class="data-list__column">
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="tag tag--small tag--success">Shipped</span>
-        <span class="tag tag--small">High Priority</span>
-        <span class="tag tag--small">Frontend</span>
-      </div>
-    </div>
-  </li>
+<h3 class="h3 margin-top">Interactive Rows (Proxy Click)</h3>
+<p>For clickable rows, use the <code>.data-list--clickable</code> modifier to apply hover states and cursor styling. Combine this with the <code>data-ulu-proxy-click</code> attribute to route clicks anywhere on the row to the primary link inside it.</p>
 
-  <li class="data-list__item">
-    <div class="data-list__column data-list__column--align-start">
-      <strong>Bug #403</strong>
-    </div>
-    <div class="data-list__column">
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="tag tag--small tag--danger">Urgent</span>
-        <span class="tag tag--small">Frontend</span>
-      </div>
-    </div>
-  </li>
-  
-  <li class="data-list__item">
-    <div class="data-list__column data-list__column--align-start">
-      <strong>Task #404</strong>
-    </div>
-    <div class="data-list__column">
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <span class="tag tag--small tag--outline">Backlog</span>
-        <span class="tag tag--small">A11y</span>
-      </div>
-    </div>
-  </li>
-</ul>
-
-<hr class="rule rule--margin-large">
-
-<h2 class="h2 margin-top">4. Interactive Rows (Proxy Click)</h2>
-<p>This example demonstrates the "Clickable Row" pattern combined with the new zero-config <code>--prefixed</code> and <code>--suffixed</code> modifiers. The parent handles the layout perfectly without any child sizing classes.</p>
-
-<ul class="data-list data-list--clickable data-list--prefixed data-list--suffixed">
-  
+<ul class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-mobile: auto 1fr auto;">
   <li class="data-list__item" data-ulu-proxy-click>
     <div class="data-list__column">
       <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
     </div>
-    <div class="data-list__column">
-      <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 1')">Message Subject Line regarding the recent updates</a>
-      <div class="type-small type-type-tertiary">From: Jane Doe &lt;jane.doe@example.com&gt;</div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 1')">Message Subject Line regarding the recent updates</a>
+      </div>
+      <div class="data-list__column">
+        <div class="type-small type-type-tertiary">From: Jane Doe &lt;jane.doe@example.com&gt;</div>
+      </div>
     </div>
-    <div class="data-list__column">
+    <div class="data-list__column justify-content-end">
       <small>2 mins ago</small>
     </div>
   </li>
-
-  <li class="data-list__item" data-ulu-proxy-click>
-    <div class="data-list__column">
-      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
-    </div>
-    <div class="data-list__column">
-      <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 2')">Weekly Newsletter</a>
-      <div class="type-small type-type-tertiary">From: Marketing Team</div>
-    </div>
-    <div class="data-list__column">
-      <small>1 hour ago</small>
-    </div>
-  </li>
 </ul>
 
 <hr class="rule rule--margin-large">
 
-<h2 class="h2 margin-top">5. Simple Link List (Anchor Rows)</h2>
-<p>For simple navigation lists where the entire row is a link, you can use <code>&lt;a&gt;</code> tags as the list items. The container uses a <code>&lt;div&gt;</code> instead of a <code>&lt;ul&gt;</code>, but the zero-config prefixed layout works exactly the same.</p>
+<h3 class="h3 margin-top">Simple Link List (Anchor Rows)</h3>
+<p>For simple navigation lists where the entire row is a literal link, you can use <code>&lt;a&gt;</code> tags as the list items. The structural container uses a <code>&lt;div&gt;</code> instead of a <code>&lt;ul&gt;</code>, but the component works identically.</p>
 
 <div class="data-list data-list--clickable data-list--prefixed">
-  
   <a href="#" class="data-list__item">
     <div class="data-list__column">
       <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
@@ -219,14 +239,24 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
       <div class="type-small type-type-tertiary">Shared Drive</div>
     </div>
   </a>
-
-  <a href="#" class="data-list__item">
-    <div class="data-list__column">
-      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
-    </div>
-    <div class="data-list__column">
-      <strong>Images</strong>
-      <div class="type-small type-type-tertiary">Local Folder</div>
-    </div>
-  </a>
 </div>
+
+<hr class="rule rule--margin-large">
+
+<h3 class="h3 margin-top">Mixing Layout Strategies (Inline Wrapping)</h3>
+<p>Not everything needs to be perfectly aligned to a grid track. If you have a collection of small data points (like tags) that you want to flow naturally on all screen sizes, simply place them together in a single column and let standard HTML inline behavior handle the wrapping.</p>
+
+<ul class="data-list data-list--prefixed">
+  <li class="data-list__item">
+    <div class="data-list__column align-items-start">
+      <strong>Feature #402</strong>
+    </div>
+    <div class="data-list__column">
+      <div>
+        <span class="tag tag--small tag--success margin-right-small margin-bottom-small">Shipped</span>
+        <span class="tag tag--small margin-right-small margin-bottom-small">High Priority</span>
+        <span class="tag tag--small margin-bottom-small">Frontend</span>
+      </div>
+    </div>
+  </li>
+</ul>

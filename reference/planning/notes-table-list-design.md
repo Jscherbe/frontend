@@ -26,11 +26,6 @@ Instead of semantic names, developers use behavioral modifiers to control how co
 
 - **Spanning:**
   - `--span-X` (e.g., `--span-2`, `--span-3`): Required on parent columns that contain nested columns so the subgrid knows how many master tracks to consume. Without this, nested wrapper elements would only occupy a single master track, causing their children to squash or stack unexpectedly.
-- **Alignment:**
-  - `--align-start`, `--align-end`, `--justify-center`, `--justify-end`: Controls horizontal and vertical alignment within the cell track.
-- **Mobile Overrides:**
-  - `--wrap-small`: Overrides the automatic mobile stacking, forcing nested items (like tags or badges) to wrap inline instead.
-  - `--inline-small`: Overrides the automatic mobile stacking, forcing items to stay perfectly side-by-side on a single line.
 
 ## 4. The Fallback Strategy (Updated)
 
@@ -61,7 +56,7 @@ Given that Subgrid support is nearly universal by mid-2026, we have opted for a 
 
 ## 7. Future Considerations
 
-- **The "Keep Side-by-Side" Mobile Scenario:** The `--inline-small` modifier exists to prevent mobile stacking, but highly complex side-by-side mobile layouts might require further refinement. We decided to keep the base structure clean for now.
+*Currently, the API is stabilized and simplified. Future considerations will revolve around real-world usage feedback regarding the `--prefixed` and `--suffixed` preset patterns vs custom inline grids.*
 
 ## 8. API Simplification: Zero-Config Presets
 
@@ -92,9 +87,9 @@ To ensure the layouts created by `--prefixed` and `--suffixed` survive the mobil
 **Note on `--span-*`:**
 While standard flat lists (like basic Icon + Text rows) are now completely zero-config for children, complex layouts that group multiple items into a single track (like Example 1) still require the `--span-X` modifier on the grouping wrapper. This is a hard requirement of the CSS Grid specification, as the grouping wrapper needs to consume multiple master tracks in order for its internal subgrid to distribute children properly across them.
 
-## 9. Defensive Layouts & Open Questions (Next Session Handoff)
+## 9. Defensive Layouts & Component Pruning
 
-This section details technical decisions made to ensure layout stability and highlights areas that require further review in our next session.
+This section details technical decisions made to ensure layout stability and why we aggressively pruned the component API in favor of global utility classes.
 
 ### The `min-width: 0` Necessity
 We discussed why individual columns (`.data-list__column`) require `display: flex;` and `min-width: 0;`.
@@ -102,9 +97,8 @@ We discussed why individual columns (`.data-list__column`) require `display: fle
 - **The Blowout Threat:** By default, Grid and Flexbox refuse to shrink columns smaller than their intrinsic content (e.g., an unbroken URL or a long filename). In a fluid `1fr` track, a long string can force the column to expand, breaking the layout and pushing content off-screen.
 - **The Solution:** Applying `min-width: 0` to the flex-container columns removes this rigid floor. It is a defensive maneuver that tells the browser it is safe to shrink the column, allowing standard CSS truncation (`text-overflow: ellipsis`) to function properly without blowing out the grid. We added explicit comments to the SCSS to warn developers not to remove this crucial protection.
 
-### Decision: Removing Visibility Modifiers
-We decided to remove component-specific visibility modifiers (like `--hide-small`). These are unnecessary bloat since the project already has generic utility classes to handle showing/hiding content across breakpoints.
-
-### Decision: Removing Mobile Wrapping Overrides
-We decided to remove the `--wrap-small` and `--inline-small` modifiers. These were introduced to force nested columns to wrap inline on mobile instead of stacking vertically. 
-We realized these modifiers were solving a problem created by the over-use of subgrid. If developers want small data points (like tags) to wrap inline naturally on all screen sizes, they should simply group them inside a standard `<div>` with standard flex wrapping within a single column, rather than trying to force a complex subgrid to act like a basic flex container.
+### API Pruning: Removing Utility Overlap
+We aggressively removed modifiers from the component that overlapped with generic CSS layout concerns:
+- **Visibility:** Removed component-specific visibility modifiers (like `--hide-small`). Developers should use the global utility classes (e.g., `hidden-max-small`) to handle showing/hiding content across breakpoints.
+- **Alignment:** Removed component-specific alignment modifiers (like `--justify-end` and `--align-start`). Modifying flex alignment within a cell is a generic layout concern; developers should use global utility classes (e.g., `justify-content-end`, `align-items-start`).
+- **Mobile Overrides:** Removed the `--wrap-small` and `--inline-small` modifiers (originally meant to force subgrids to wrap inline on mobile). We realized these were solving a problem created by the over-use of subgrid. If developers want small data points (like tags) to wrap inline, they should group them inside a standard `<div>` using standard flex wrapping, rather than trying to force a complex subgrid to act like a basic flex container.

@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.2.2
+
+- **SCSS**
+  - `helpers/utilities.scss` 
+    - Add grid/flexbox utility classes that we didn't have
+  - `components/modal.scss` 
+    - Add config for "min-width" (previously hard-coded)
+  - `components/data-list.scss` 
+    - Add new component for self-explanatory lists that display similar to tables on desktop
+    - Add demo of different presets and ways it might be used
+
 ## 0.2.1
 
 - **SCSS**
