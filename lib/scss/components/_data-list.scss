@@ -114,6 +114,7 @@ $config: (
     @include breakpoint.max($mobile-bp) {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: stretch;
       gap: 0.25rem; // Tighter vertical gap when stacked
     }
@@ -144,12 +145,21 @@ $config: (
   // Structural Edge Modifiers (Decorating the default 1fr track)
   #{ $prefix }--prefixed {
     grid-template-columns: var(--ulu-data-list-columns, auto 1fr);
+    @include breakpoint.max($mobile-bp) {
+      grid-template-columns: var(--ulu-data-list-columns-mobile, auto 1fr);
+    }
   }
   #{ $prefix }--suffixed {
     grid-template-columns: var(--ulu-data-list-columns, 1fr auto);
+    @include breakpoint.max($mobile-bp) {
+      grid-template-columns: var(--ulu-data-list-columns-mobile, 1fr auto);
+    }
   }
   #{ $prefix }--prefixed#{ $prefix }--suffixed {
     grid-template-columns: var(--ulu-data-list-columns, auto 1fr auto);
+    @include breakpoint.max($mobile-bp) {
+      grid-template-columns: var(--ulu-data-list-columns-mobile, auto 1fr auto);
+    }
   }
 
   // Striped Rows
@@ -196,30 +206,6 @@ $config: (
   }
   #{ $prefix }__column--justify-end {
     justify-content: flex-end;
-  }
-
-  // Responsive Visibility
-  #{ $prefix }__column--hide-small {
-    @include breakpoint.max($mobile-bp) {
-      display: none !important;
-    }
-  }
-
-  // Mobile Overrides (Changes the default vertical stack to horizontal wrap/inline)
-  // Chained to ensure specificity beats the :has() selector above
-  #{ $prefix }__column#{ $prefix }__column--wrap-small {
-    @include breakpoint.max($mobile-bp) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-  }
-  #{ $prefix }__column#{ $prefix }__column--inline-small {
-    @include breakpoint.max($mobile-bp) {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-    }
   }
 
   // Desktop padding adjustment

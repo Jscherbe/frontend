@@ -7,7 +7,7 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
 <h2 class="h2 margin-top">1. Basic Document List</h2>
 <p>This example demonstrates the core functionality with varied content lengths to show how the defensive <code>min-width: 0</code> prevents grid blowouts. The parent defines a grid with 4 tracks (<code>auto 1fr auto auto</code>). The middle column spans 2 tracks (<code>--span-2</code>) and acts as a Subgrid automatically. On mobile, the title and metadata will gracefully stack vertically.</p>
 
-<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto;">
+<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-mobile: auto 1fr auto;">
   <li class="data-list__item">
     <div class="data-list__column">
       <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
@@ -72,9 +72,9 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
       <div class="data-list__column"></div> <!-- Icon space -->
       <div class="data-list__column data-list__column--span-2">
         <div class="data-list__column">Name</div>
-        <div class="data-list__column data-list__column--hide-small">Role</div>
+        <div class="data-list__column hidden-max-small">Role</div>
       </div>
-      <div class="data-list__column data-list__column--hide-small">Last Active</div>
+      <div class="data-list__column hidden-max-small">Last Active</div>
       <div class="data-list__column"></div> <!-- Action space -->
     </div>
   </li>
@@ -90,11 +90,11 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
       <div class="data-list__column">
         <strong>Jane Doe</strong>
       </div>
-      <div class="data-list__column data-list__column--hide-small">
+      <div class="data-list__column hidden-max-small">
         <span class="tag tag--outline tag--small">Administrator with extended privileges</span>
       </div>
     </div>
-    <div class="data-list__column data-list__column--hide-small">
+    <div class="data-list__column hidden-max-small">
       <small>Active 2h ago</small>
     </div>
     <div class="data-list__column data-list__column--justify-end">
@@ -112,11 +112,11 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
       <div class="data-list__column">
         <strong>Bob Smith</strong>
       </div>
-      <div class="data-list__column data-list__column--hide-small">
+      <div class="data-list__column hidden-max-small">
         <span class="tag tag--outline tag--small">Editor</span>
       </div>
     </div>
-    <div class="data-list__column data-list__column--hide-small">
+    <div class="data-list__column hidden-max-small">
       <small>Active 1d ago</small>
     </div>
     <div class="data-list__column data-list__column--justify-end">
@@ -127,48 +127,42 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
 
 <hr class="rule rule--margin-large">
 
-<h2 class="h2 margin-top">3. Mobile Overrides: Inline Wrapping Data</h2>
-<p>By default, nested columns stack vertically on mobile to save horizontal space. However, for small data points (like tags or statuses), a tall vertical stack can look disjointed. Using the <code>--wrap-small</code> modifier allows these nested items to flow inline side-by-side on small screens, while still snapping to the strict column grid on desktop.</p>
+<h2 class="h2 margin-top">3. Grouping Inline Data</h2>
+<p>If you want small data points (like tags or statuses) to wrap inline next to each other rather than stacking vertically or using grid alignment, simply place them together inside a single column. The flexbox properties inherent to the column wrapper will naturally handle the spacing and wrapping.</p>
 
-<ul class="data-list" style="--ulu-data-list-columns: 1fr auto auto;">
+<ul class="data-list data-list--prefixed">
   <li class="data-list__item">
-    <div class="data-list__column">
-      <strong>Feature #402: Implementation of the new user dashboard dashboard features</strong>
+    <div class="data-list__column data-list__column--align-start">
+      <strong>Feature #402</strong>
     </div>
-    <!-- The wrap-small modifier here forces the tags to sit side-by-side on mobile instead of stacking -->
-    <div class="data-list__column data-list__column--span-2 data-list__column--wrap-small">
-      <div class="data-list__column">
+    <div class="data-list__column">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         <span class="tag tag--small tag--success">Shipped</span>
-      </div>
-      <div class="data-list__column">
         <span class="tag tag--small">High Priority</span>
+        <span class="tag tag--small">Frontend</span>
       </div>
     </div>
   </li>
 
   <li class="data-list__item">
-    <div class="data-list__column">
-      <strong>Bug #403: Fix layout shift on mobile navigation</strong>
+    <div class="data-list__column data-list__column--align-start">
+      <strong>Bug #403</strong>
     </div>
-    <div class="data-list__column data-list__column--span-2 data-list__column--wrap-small">
-      <div class="data-list__column">
+    <div class="data-list__column">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         <span class="tag tag--small tag--danger">Urgent</span>
-      </div>
-      <div class="data-list__column">
         <span class="tag tag--small">Frontend</span>
       </div>
     </div>
   </li>
   
   <li class="data-list__item">
-    <div class="data-list__column">
-      <strong>Task #404: Audit accessibility compliance for forms</strong>
+    <div class="data-list__column data-list__column--align-start">
+      <strong>Task #404</strong>
     </div>
-    <div class="data-list__column data-list__column--span-2 data-list__column--wrap-small">
-      <div class="data-list__column">
+    <div class="data-list__column">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         <span class="tag tag--small tag--outline">Backlog</span>
-      </div>
-      <div class="data-list__column">
         <span class="tag tag--small">A11y</span>
       </div>
     </div>
@@ -180,7 +174,7 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
 <h2 class="h2 margin-top">4. Interactive Rows (Proxy Click)</h2>
 <p>This example demonstrates the "Clickable Row" pattern combined with the new zero-config <code>--prefixed</code> and <code>--suffixed</code> modifiers. The parent handles the layout perfectly without any child sizing classes.</p>
 
-<ul class="data-list data-list--clickable data-list--prefixed data-list--suffixed" style="--ulu-data-list-columns-mobile: auto 1fr auto;">
+<ul class="data-list data-list--clickable data-list--prefixed data-list--suffixed">
   
   <li class="data-list__item" data-ulu-proxy-click>
     <div class="data-list__column">
@@ -214,7 +208,7 @@ intro: A highly flexible list layout that uses CSS Subgrid to perfectly align co
 <h2 class="h2 margin-top">5. Simple Link List (Anchor Rows)</h2>
 <p>For simple navigation lists where the entire row is a link, you can use <code>&lt;a&gt;</code> tags as the list items. The container uses a <code>&lt;div&gt;</code> instead of a <code>&lt;ul&gt;</code>, but the zero-config prefixed layout works exactly the same.</p>
 
-<div class="data-list data-list--clickable data-list--prefixed" style="--ulu-data-list-columns-mobile: auto 1fr;">
+<div class="data-list data-list--clickable data-list--prefixed">
   
   <a href="#" class="data-list__item">
     <div class="data-list__column">
