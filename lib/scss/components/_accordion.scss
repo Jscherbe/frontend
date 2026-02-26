@@ -191,7 +191,7 @@ $config: (
     align-items: center;
 
     @include typography.optional-size(get("summary-type-size"), $only-font-size: true);
-    @include element.summary-remove-marker;
+    @include element.summary-remove-marker();
     &:hover,
     &:focus {
       background-color: color.get(get("summary-background-color-hover"));
