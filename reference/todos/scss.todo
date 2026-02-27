@@ -2,6 +2,7 @@ Important:
   ☐ SCSS is introducing a breaking change (new if statement) @in-progress
   ☐ Button group needs optional gap (instead of overlap)
   ☐ Card grid needs breakpoint configuration
+  ☐ Modal needs modifier for full screen on mobile
 SCSS Todos:
   ☐ horizontal card
     ☐ bring over idc horizontal card styling. Specifically, the way that the body/aside widths stay the same. Add config options
