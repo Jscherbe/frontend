@@ -180,6 +180,9 @@ $config: (
   blockquote {
     margin: 0;
   }
+  summary {
+    cursor: pointer;
+  }
   @if get("details-animation") {
     details {
       &[open] {

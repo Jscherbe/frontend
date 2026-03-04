@@ -3,13 +3,28 @@
 ## 0.2.2
 
 - **SCSS**
+  - `base/elements.scss` 
+    - Add cursor pointer to summary elements by default
   - `helpers/utilities.scss` 
     - Add grid/flexbox utility classes that we didn't have
+  - `components/button-group` 
+    - Add option for "gap-joined" if you have solid buttons (no border) and want a gap
   - `components/modal.scss` 
     - Add config for "min-width" (previously hard-coded)
+    - Add dvh units so that the bottom of modals doesn't change as URL bars adjust (ios, etc)
+    - Add new modifier that overrides the different layouts (eg left, right) to be fullscreen at mobile (modal--fullscreen-mobile)
+    - Update demos to have test for each
   - `components/data-list.scss` 
     - Add new component for self-explanatory lists that display similar to tables on desktop
     - Add demo of different presets and ways it might be used
+- ***JS**
+  - `ui/modal-builder.js`
+    - Add option for "fullscreenMobile"
+  - `ui/dialog.js`
+    - Move away from using "toggle" event for dialog behaviors (prevent scroll, etc). Older safari only has close event and doesn't support toggle. Replace with mutation observer on open attribute
+  - `utils/dialog.js`
+    - Add `observeDialogToggle` to be used as a workaround for lack of toggle event support in older Safari (ie. before 2024)
+      - This way this module can be removed in the future when this is
 
 ## 0.2.1
 

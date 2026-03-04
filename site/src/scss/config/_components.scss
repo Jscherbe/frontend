@@ -14,9 +14,14 @@
 
 // @include ulu.component-set-excludes("modal");
 $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
+
 @include ulu.component-wysiwyg-set((
   "headline-sizes" :  map.merge($wysiwyg-headings, ("h1" : "h1"))
 ));
+
+// @include ulu.component-button-group-set((
+//   "gap-joined" : 0, // Test gap-joined
+// ));
 
 @include ulu.component-counter-list-set((
   "extra-selector" : ".counter-list-auto ol:not(.counter-list-ignore)"

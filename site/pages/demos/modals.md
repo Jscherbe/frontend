@@ -87,6 +87,34 @@ The modal will fill the window
   <div class="container">
     This is the modal body should be fullscreen content added to test overflow.
 
+    {% for i in (1..5) %}
+      <h3 class="h2">Test Paragraph {{ i }}</h3>
+
+      {{ placeholder.paragraph }}
+    {% endfor %}
+  </div>
+</div>
+
+<h3 class="h3">Fullscreen Size (Overflow)</h3>
+
+The modal will fill the window and contains content that forces both vertical and horizontal overflow to test layout stability in browsers like Safari.
+
+<button class="button" data-ulu-dialog-trigger="modal-id-fullscreen-overflow">Open Overflow Modal</button>
+
+<div 
+  id="modal-id-fullscreen-overflow" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Test Fullscreen Overflow",
+    "size" : "fullscreen"
+  }' 
+  hidden
+>
+  <div class="container">
+    <div style="width: 2000px; padding: 1rem; background: #f0f0f0; margin-bottom: 2rem;">
+      <strong>Wide Content Block:</strong> This block is explicitly 2000px wide. It forces horizontal scrolling to ensure the fullscreen modal boundaries and internal flex layout do not break or bleed out of the viewport on tricky browsers.
+    </div>
+
     {% for i in (1..20) %}
       <h3 class="h2">Test Paragraph {{ i }}</h3>
 
@@ -94,6 +122,53 @@ The modal will fill the window
     {% endfor %}
   </div>
 </div>
+
+<h3 class="h3">Fullscreen Mobile</h3>
+
+Adding `modal--fullscreen-mobile` class to the modal (via the `class` builder option) will force the modal to become fullscreen only when the viewport is below the mobile breakpoint (small). This works regardless of the original position or size. Resize the browser to see it in action.
+
+<button class="button" data-ulu-dialog-trigger="modal-id-fullscreen-mobile-center">Center (Default)</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-fullscreen-mobile-right">Right Sidebar</button>
+<button class="button" data-ulu-dialog-trigger="modal-id-fullscreen-mobile-top">Top</button>
+
+<div 
+  id="modal-id-fullscreen-mobile-center" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Fullscreen Mobile (Center)",
+    "fullscreenMobile" : true
+  }' 
+  hidden
+>
+  This modal is centered on desktop but goes fullscreen on mobile.
+</div>
+
+<div 
+  id="modal-id-fullscreen-mobile-right" 
+  class="wysiwyg"
+  data-ulu-modal-builder='{ 
+    "title" : "Fullscreen Mobile (Right)",
+    "position": "right",
+    "fullscreenMobile" : true
+  }' 
+  hidden
+>
+  This modal is a right sidebar on desktop but goes fullscreen on mobile.
+</div>
+
+<div 
+  id="modal-id-fullscreen-mobile-top" 
+  class="wysiwyg crop-margins"
+  data-ulu-modal-builder='{ 
+    "title" : "Fullscreen Mobile (Top)",
+    "position": "top",
+    "fullscreenMobile" : true
+  }' 
+  hidden
+>
+  <p>This modal attaches to the top on desktop but goes fullscreen on mobile.</p>
+</div>
+
 
 <h3 class="h3">Youtube Videos Automatically Pause</h3>
 
@@ -313,7 +388,7 @@ Remove the backdrop by passing  `{ "noBackdrop" : true }` to the builder
 Testing behavior when the trigger is a link/anchor element. Which is not recommended for accessibility, use button. In situations where this the only option use role button, aria-haspopup dialog and empty hash for href.
 
 
-<a href="#" role="button" aria-haspopup="dialog" class="link" data-ulu-dialog-trigger="modal-id-trigger-by-link">Test Trigger Link</button>
+<a href="#" role="button" aria-haspopup="dialog" class="link" data-ulu-dialog-trigger="modal-id-trigger-by-link">Test Trigger Link</a>
 
 <div 
   id="modal-id-trigger-by-link" 
@@ -325,7 +400,7 @@ Testing behavior when the trigger is a link/anchor element. Which is not recomme
   Test
 </div>
 
-<h2 class="h2">Test Setting Specific labelledby/describedby</h2>
+<h2 class="h2">Test Setting Specific labelledby, describedby</h2>
 
 You can set these properties for custom title implementations and to add optional description information for screen readers, etc.
 

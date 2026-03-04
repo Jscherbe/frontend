@@ -7,6 +7,35 @@
   class: "nav-tree" 
 }) %}
 
+{% set externalLink -%}
+  <div class="button-group">
+    <button 
+      class="button button--small button--secondary button--icon button--icon-small" 
+      data-ulu-theme-toggle='{ 
+        "savePreference" : true,
+        "checkMediaQuery" : true,
+        "group" : "page"
+      }'
+    >
+      <span class="hidden-visually">Toggle Theme to <span data-ulu-theme-toggle-label>Dark</span></span>
+      <span class="fas fa-moon" data-ulu-theme-toggle-icon></span>
+    </button>
+    <a 
+      class="button button--small button--secondary button--icon button--icon-small" 
+      href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
+    >
+      <span class="fab fa-github" aria-hidden="true"></span>
+    </a>
+    <a 
+      class="button button--small button--secondary button--icon button--icon-small" 
+      href="https://www.npmjs.com/package/@ulu/frontend"
+    >
+      {# <span style="font-size: 70%">NPM</span> #}
+      <span class="fab fa-npm" aria-hidden="true"></span>
+    </a>
+  </div>
+{%- endset %}
+
 <header class="page__header header">
   <a href="#main" class="skip-link hidden-visually-focusable">
     Skip to main content
@@ -25,34 +54,11 @@
   </div>
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
-    <div class="header__nav-links">
-      <button 
-        class="button button--small button--icon button--icon-small" 
-        data-ulu-theme-toggle='{ 
-          "savePreference" : true,
-          "checkMediaQuery" : true,
-          "group" : "page"
-        }'
-      >
-        <span class="hidden-visually">Toggle Theme to <span data-ulu-theme-toggle-label>Dark</span></span>
-        <span class="fas fa-moon" data-ulu-theme-toggle-icon></span>
-      </button>
-      <a 
-        class="button button--small button--icon button--icon-small" 
-        href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github"
-      >
-        <span class="fab fa-github" aria-hidden="true"></span>
-      </a>
-      <a 
-        class="button button--small button--icon button--icon-small" 
-        href="https://www.npmjs.com/package/@ulu/frontend"
-      >
-        {# <span style="font-size: 70%">NPM</span> #}
-        <span class="fab fa-npm" aria-hidden="true"></span>
-      </a>
-    </div>
     <div class="header__nav-menu">
       {{ menu | safe }}
+    </div>
+    <div class="header__nav-links">
+      {{ externalLink | safe }}
     </div>
     <div 
       id="mobile-menu"
@@ -62,6 +68,9 @@
       }'
     >
       {{ menu | safe }}
+      <div class="margin-top">
+        {{ externalLink | safe }}
+      </div>
     </div>
   </nav>
 </header>

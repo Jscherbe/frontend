@@ -44,21 +44,29 @@ $breakpoint: "medium";
 }
 .header__nav {
   width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   @include ulu.breakpoint-max($breakpoint) {
     display: none;
   }
 }
-.header__nav-menu {
+.header__nav-menu,
+.header__nav-links {
   padding: $padding;
 }
 .header__nav-links {
+  margin-top: auto;
+  // border-top: ulu.element-get-rule-style("light");
+  padding-top: 0.6em;
+  // padding: $padding $padding 0 $padding;
   // padding: 0.1em $padding;
   // width: 100%;
   // margin-top: auto;
   // background-color: ulu.color-tint(vars.$color-gray-dark, 90%);
-  position: fixed;
-  top: 0.25rem;
-  right: 1rem;
+  // position: fixed;
+  // top: 0.25rem;
+  // right: 1rem;
 }
 // .header__nav {
 //   margin-left: auto;

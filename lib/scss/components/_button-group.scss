@@ -13,11 +13,13 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension}  gap  [0.45em] Gap between buttons
+/// @prop {Dimension} gap [0.45em] Gap between buttons
+/// @prop {Dimension} gap-joined [0] When using --joined modifier optional gap, if 0 the buttons borders will overlap, joined-gap is useful if your buttons don't have borders
 /// @prop {Boolean}  no-min-width  [true] Buttons within the button group should have no min width
 
 $config: (
   "gap": 0.45em,
+  "gap-joined" : 0,
   "no-min-width" : true
 ) !default;
 
@@ -61,13 +63,16 @@ $config: (
   #{ $prefix }--joined {
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 0;
+    gap: get("gap-joined");
     // border-radius: button.get("border-radius");
     #{ $prefix-button } {
       position: relative; // To move to front when hover/active
       border-radius: 0;
       min-width: 0;
-      margin-left: -(button.get("border-width"));
+      @if (get("gap-joined") == 0) {
+        margin-left: -(button.get("border-width"));
+      }
+      
       &:first-child {
         border-top-left-radius: $button-radius;
         border-bottom-left-radius: $button-radius;

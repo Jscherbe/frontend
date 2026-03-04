@@ -11,9 +11,14 @@
 @use "../typography";
 @use "../selector";
 @use "../utils";
+@use "../breakpoint";
 
 // Used for function fallback
 $-fallbacks: (
+  "breakpoint" : (
+    "function" : meta.get-function("get", false, "breakpoint"),
+    "property" : "default"
+  ),
   "backdrop-color" : (
     "function" : meta.get-function("get", false, "element"),
     "property" : "backdrop-color"
@@ -76,6 +81,7 @@ $-fallbacks: (
 /// @prop {String} title-size [large] The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
 /// @prop {Map} sizes [Map] Size options to enable unique stylings.
+/// @prop {String} breakpoint [true] Optional breakpoint for modals (used for adaptive things like fullscreen-mobile), if set to true will fallback to breakpoint default
 
 $config: (
   "backdrop-color" :                true,
@@ -121,6 +127,7 @@ $config: (
   "title-icon-margin" :             0.5em,
   "title-size" :                    "large",
   "title-text-transform" :          null,
+  "breakpoint" :                    true,
   "sizes" : (
     "small" : 30rem,
     "large" : 80rem
@@ -152,6 +159,7 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("modal");
+  $breakpoint: get("breakpoint");
 
   // // Before it's moved
   [data-ulu-modal-builder] {
@@ -176,6 +184,7 @@ $config: (
     min-width: get("min-width"); // For resizing minimum width
     min-height: get("height");
     max-height: 100vh;
+    max-height: 100dvh;
     max-width: 100%;
     overflow-y: hidden;
     box-sizing: border-box;
@@ -291,15 +300,17 @@ $config: (
     }
   }
 
-  #{ $prefix }--fullscreen {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
+  // Fullscreen and left and right defaults (width overridden below)
+  #{ $prefix }--fullscreen,
   #{ $prefix }--right,
   #{ $prefix }--left {
-    border-radius: 0;
-    height: 100vh;
+    @include -fullscreen-common-properties();
+  }
+  // Left/Right specific
+  // - Note these properties are all important even though they seem redundant
+  //   they are tested and solve quirks with dialog positioning/animation
+  #{ $prefix }--right,
+  #{ $prefix }--left {
     width: get("width-left-right");
     top: 0;
     bottom: 0;
@@ -356,9 +367,6 @@ $config: (
     &#{ $prefix }--left  {
       padding-right: get("resizer-width");  
     }
-    // &#{ $prefix }--center  {
-    //   resize: both;  
-    // }
   }
   #{ $prefix }--body-fills {
     #{ $prefix }__header {
@@ -368,10 +376,30 @@ $config: (
       padding: 0;
     }
   }
-
   #{ $prefix }--no-min-height {
     min-height: 0;
   }
+
+  @if breakpoint.exists($breakpoint) {
+    #{ $prefix }--fullscreen-mobile {
+      @include breakpoint.max($breakpoint) {
+        @include -fullscreen-common-properties();
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translate(-50%, -50%);
+        animation: uluModalCenterOut get("animation-duration-exit") get("animation-timing-function");
+        &[open] {
+          animation: uluModalCenterIn get("animation-duration") get("animation-timing-function");
+        }
+        #{ $prefix }__resizer {
+          display: none;
+        }
+      }
+    }
+  }
+
   // Will display as content when printing
   // NOTE: This will not work with native dialog
   // Printing works with modal printer by cloning mechanism
@@ -520,3 +548,11 @@ $config: (
   }
 }
 
+
+// Internal mixin to make sure this repeated CSS is identical for compression
+@mixin -fullscreen-common-properties() {
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  border-radius: 0;
+}

@@ -57,17 +57,20 @@ $item-margin-y: 3px;
     transform: rotate(180deg);
   }
 }
-.nav-tree__link {
-  &.is-active {
-    // background-color: vars.$color-violet-light-x;
-    color: ulu.color-get("accent");
-    // font-weight: bold;
-    background-color: ulu.cssvar-use("color-navtree-active");
-  }
+.nav-tree__link.is-active {
+  color: ulu.color-get("accent");
+  background-color: ulu.cssvar-use("color-navtree-active");
 }
 .nav-tree__collapsible {
   &[open] {
     padding-bottom: $collapsible-inner-padding;
+  }
+}
+.nav-tree__item.is-active-trail {
+  .nav-tree__collapsible[open]:has(.nav-tree__item.is-active) {
+    .nav-tree__toggle {
+      background-color: ulu.cssvar-use("color-navtree-active");
+    }
   }
 }
 .nav-tree__text {
