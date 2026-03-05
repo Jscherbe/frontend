@@ -5,6 +5,8 @@
  * - Passes code through eleventy prism plugin
  */
 
+import beautify from 'js-beautify';
+
 let count = 0;
 const newId = name => `code-preview-${ ++count }-${ name }`;
 
@@ -19,13 +21,15 @@ export default function(eleventyConfig) {
 
   function createPreview(content, language = "html") {
     const { highlight } = eleventyConfig?.javascript?.functions;
+
     if (highlight) {
-      // const markup = dedent(content);
-      const highlighted = highlight(language, content);
+      const markup = beautify.html(content, { indent_size: 2 });
+      const highlighted = highlight(language, markup);
       if (highlighted) {
-        return template(content, highlighted).trim();
+        return template(markup, highlighted).trim();
       }
     }
+
     console.warn("Code preview plugin: unable to highlight:", content);
     return content;
   }
@@ -37,6 +41,7 @@ export default function(eleventyConfig) {
  */
 function template(markup, code) {
   const scriptId = newId("json");
+
   return `
 <div class="demo-preview">
   <div class="demo-preview__rendered crop-margins">

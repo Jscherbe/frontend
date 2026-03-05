@@ -509,19 +509,23 @@ $config: (
         }
       }
     }
-    @include when-clickable($hover: true, $extra-selector: "#{ $prefix }--overlay") {
-      #{ $prefix }__body,
-      #{ $prefix }__footer {
-        background-color: color.get(get("overlay-background-color-hover"));
-      }
-      @if (get("overlay-shading")) {
-        #{ $prefix }__body {
-          @include -overlay-shading-gradient(
-            color.get(get("overlay-background-color-hover"))
-          );
+
+    @include when-clickable($hover: true) {
+      &#{ $prefix }--overlay {
+        #{ $prefix }__body,
+        #{ $prefix }__footer {
+          background-color: color.get(get("overlay-background-color-hover"));
+        }
+        @if (get("overlay-shading")) {
+          #{ $prefix }__body {
+            @include -overlay-shading-gradient(
+              color.get(get("overlay-background-color-hover"))
+            );
+          }
         }
       }
     }
+
     #{ $prefix }--overlay#{ $prefix }--footer-inline {
       grid-template-columns: 1fr auto;
       #{ $prefix }__footer {

@@ -7,6 +7,8 @@
     - Add cursor pointer to summary elements by default
   - `helpers/utilities.scss` 
     - Add grid/flexbox utility classes that we didn't have
+  - `components/card` 
+    - Fix issue with last major card update (overlay hover styles when not overlay modifier)
   - `components/button-group` 
     - Add option for "gap-joined" if you have solid buttons (no border) and want a gap
   - `components/modal.scss` 

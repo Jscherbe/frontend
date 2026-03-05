@@ -18,9 +18,9 @@
 
 $config: (
   "gap" : 1.5rem,
-  "min-width" : 20rem,
+  "template-columns" : 1fr 1fr,
   "compact-gap" : 0.75rem,
-  "compact-min-width" : 14rem,
+  "compact-template-columns" : 1fr 1fr 1fr,
 ) !default;
 
 /// Change modules $config
@@ -51,7 +51,7 @@ $config: (
   
   #{ $prefix } {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, get("min-width")), 1fr));
+    grid-template-columns: get("template-columns");
     grid-auto-rows: 1fr;
     gap: get("gap");
     margin: get("gap") 0;
@@ -64,7 +64,7 @@ $config: (
     }
   }
   #{ $prefix }--compact {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, get("compact-min-width")), 1fr));
+    grid-template-columns: get("compact-template-columns");
     gap: get("compact-gap");
   }
   #{ $prefix }--one-column {
@@ -72,5 +72,10 @@ $config: (
   }
   #{ $prefix }--rows-fit {
     grid-auto-rows: auto;
+  }
+  @include breakpoint.max("small") {
+    #{ $prefix } {
+      grid-template-columns: 1fr;
+    }
   }
 }
