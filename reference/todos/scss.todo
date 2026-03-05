@@ -1,13 +1,15 @@
 Important:
-  ☐ SCSS is introducing a breaking change (new if statement) @in-progress
-  ☐ Button group needs optional gap (instead of overlap)
-  ☐ Card grid needs breakpoint configuration
+  ✔ SCSS is introducing a breaking change (new if statement) @in-progress @done
+  ✔ Button group needs optional gap (instead of overlap) @done
+
+  ☐ Card grid needs breakpoint configuration @needed
   ☐ Modals
-    ☐ Update vue library with the observer method
-    ☐ Modal needs modifier for full screen on mobile
+    ✔ Update vue library with the observer method @done
+    ✔ Modal needs modifier for full screen on mobile @done
     ✔ Safari rendering bugs @done
-    ☐ Test iframes in modal (just to confirm we don't need any extra scripting/behaviors to handle things like this automatically)
-  ☐ Add table scroller utility
+    ☐ Test iframes in modal (just to confirm we don't need any extra scripting/behaviors to handle things like this automatically) @important @needed
+  ☐ Add table scroller utility @needed
+    ☐ Make sure to test with data-table @important 
     * Maybe just horizontal-scroller (something agnostic of tables)
     * But think about future if we have things wrapped like this
     * Could also be an extra parent selector provide by data-table but seems like it's useful by itself. Just need to decide if we want a rigid / semantic class for it (tied only to tables for future adjustments, knowing it's only being used on tables) or if it makes sense as more of a general purpose layout utility (could just be simple layout utility and then no inner selectors [no margin opionated, and user should remove there margins on inner elements and this is just overflow])

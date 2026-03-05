@@ -2,6 +2,7 @@ import * as ulu from "@Lib/js/index.js";
 // import "./search.js";
 import { init as initListGrid, setConfig as setConfigListGrid } from "./list-grid-switcher.js";
 import { init as initLiveDemo } from "./live-demo.js";
+import { init as initDataCopyContent } from "./data-copy-content.js";
 
 // Add global (so we use it in demos)
 window.Ulu = ulu;
@@ -47,3 +48,4 @@ setConfigListGrid({
 
 initListGrid();
 initLiveDemo();
+initDataCopyContent();

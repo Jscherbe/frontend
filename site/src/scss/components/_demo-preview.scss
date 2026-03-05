@@ -1,0 +1,26 @@
+@use "vars";
+@use "ulu";
+
+$border-radius: ulu.element-get("border-radius-large");
+
+.demo-preview {
+  box-shadow: ulu.element-get("box-shadow");
+  border-radius: $border-radius;
+}
+.demo-preview__rendered {
+  padding: 2rem;
+}
+.demo-preview__toolbar {
+  gap: 1em;
+  background-color: rgba(0,0,0,0.1);
+  padding: 0.1em 1em;
+}
+.demo-preview__code {
+  > * {
+    margin: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: $border-radius !important;
+    border-bottom-right-radius: $border-radius !important;
+  }
+}

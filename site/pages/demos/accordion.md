@@ -7,20 +7,7 @@ intro: An accordion disclosure element is a user interface component that allows
 
 ## Basic Example
 
-```html
-<details class="accordion">
-  <summary class="accordion__summary">
-    The summary is what is seen before opening the details
-    <!-- The span is the icon on the side that -->
-    <span class="accordion__icon" aria-hidden="true">
-      <span class="css-icon css-icon--plus-to-minus"></span>
-    </span>
-  </summary>
-  <div class="accordion__content">
-    The content is the information that is seen after you open the details
-  </div>
-</details>
-```
+{% CodePreview %}
 
 <details class="accordion">
   <summary class="accordion__summary">
@@ -58,9 +45,12 @@ intro: An accordion disclosure element is a user interface component that allows
     {{ placeholder.paragraph }}
   </div>
 </details>
+
+{% endCodePreview %}
 
 ## Transparent Modifier
 
+{% CodePreview %}
 
 <details class="accordion accordion--transparent">
   <summary class="accordion__summary">
@@ -99,7 +89,11 @@ intro: An accordion disclosure element is a user interface component that allows
   </div>
 </details>
 
+{% endCodePreview %}
+
 ## Examples with Rotating Angle Right/Down
+
+{% CodePreview %}
 
 <details class="accordion">
   <summary class="accordion__summary">
@@ -125,9 +119,12 @@ intro: An accordion disclosure element is a user interface component that allows
     {{ placeholder.paragraph }}
   </div>
 </details>
+
+{% endCodePreview %}
 
 ## Examples with Rotating Angle Down/Up
 
+{% CodePreview %}
 
 <details class="accordion">
   <summary class="accordion__summary">
@@ -153,9 +150,13 @@ intro: An accordion disclosure element is a user interface component that allows
     {{ placeholder.paragraph }}
   </div>
 </details>
+
+{% endCodePreview %}
 
 ## Examples with No borders
 
+{% CodePreview %}
+
 <details class="accordion accordion--borderless">
   <summary class="accordion__summary">
     This is an example title with long content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere sem ac neque rhoncus lacinia. Suspendisse ornare enim in ultrices egestas.
@@ -180,3 +181,5 @@ intro: An accordion disclosure element is a user interface component that allows
     {{ placeholder.paragraph }}
   </div>
 </details>
+
+{% endCodePreview %}

@@ -9,6 +9,7 @@ import sassdocPlugin from "./src/plugins/sassdoc/index.js";
 import optionsTablePlugin from "./src/plugins/options-table/index.js";
 import jsdocPlugin from "./src/plugins/jsdoc/index.js";
 import { shortcodes, pairedShortcodes } from "./src/templates/shortcodes/index.js";
+import pluginCodePreview from "./src/plugins/code-preview/index.js";
 
 const { NO_DOC_GEN } = process.env;
 
@@ -24,6 +25,8 @@ export default async function(eleventyConfig) {
     headingText: "Jump To:"
   });
 
+  // Syntax highlighting
+  // - We have a custom theme
   eleventyConfig.addPlugin(syntaxHighlight, {
     async init({ Prism }) {
       await import("prismjs/plugins/custom-class/prism-custom-class.js")
@@ -33,6 +36,10 @@ export default async function(eleventyConfig) {
       Prism.plugins.customClass.prefix("pjs-");
     }
   });
+  
+  // Internal plugin for code/preview
+  eleventyConfig.addPlugin(pluginCodePreview);
+
   eleventyConfig.amendLibrary("md", md => {
     md.use(markdownItAttrs);
     md.use(markdownItAnchor);
@@ -69,6 +76,9 @@ export default async function(eleventyConfig) {
     .forEach(([name, fn]) => eleventyConfig.addShortcode(name, fn));
   Object.entries(pairedShortcodes)
     .forEach(([name, fn]) => eleventyConfig.addPairedShortcode(name, fn));
+
+  // Create shortcode for demo markup
+
   
   return {
     dir: {

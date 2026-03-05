@@ -34,6 +34,7 @@
     "build:es": "BUILD_FORMAT=es vite build",
     "build:umd": "BUILD_FORMAT=umd vite build",
     "dev": "vite --config site/vite.config.js",
+    "dev:inspect": "node --inspect-brk node_modules/.bin/vite --config site/vite.config.js",
     "dev:host": "vite --config site/vite.config.js --host",
     "dev:nogen": "NO_DOC_GEN=true vite --config site/vite.config.js",
     "docs:build": "vite build --config site/vite.config.js",
