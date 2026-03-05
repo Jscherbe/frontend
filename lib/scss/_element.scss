@@ -430,3 +430,18 @@ $rule-margins: (
     content: "";
   }
 }
+
+/// Helper function to construct a border using the color module
+/// Returns null if the required parameters are missing or zero, preventing output
+/// @param {Dimension} $width The border width
+/// @param {String|Color} $color The color value/key to resolve through color.get()
+/// @param {String} $style [solid] The border style
+/// @return {List|Null} The combined border shorthand, or null
+
+@function optional-border($width, $color, $style: solid) {
+  // Not using () breaks syntax highlighting
+  @if $width and $width != 0 and $width != none and $color {
+    @return $width $style color.get($color);
+  }
+  @return null;
+}

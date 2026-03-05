@@ -140,7 +140,7 @@ $color-classes: (
 /// Set color contexts
 /// @param {Map} $changes A map to merge 
 /// @param {Map} $deep Use deep merge
-/// @param {Map} $overwrite Overwrite the completly (cannot be used with deep)
+/// @param {Map} $overwrite Overwrite the completely (cannot be used with deep)
 /// @example scss Overwriting contexts
 ///   @include ulu.color-set-contexts((
 ///     "dark" : (

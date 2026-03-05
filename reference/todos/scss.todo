@@ -1,4 +1,18 @@
 Important:
+  ☐ Should we have surfaces (background-color/background, color, border, border-radius)
+    * Something that contains visual properties that are pretty common, then we can begin using them like colors (by key)
+    * This would reduce the complexity of some of the configuration between components you would just define and use surfaces?
+    * Could be rolled out incrementally (maybe), could be something for future larger version change
+      * May be able to support old config API and the new surface API by passing overriding map with the old values if user hasn't updated?
+      * Might just want to move to this though and make it a major version change and finish other more pressing things before doing that
+      * But might be good to explore making things backwards compatible always as thats one of the reasons this is setup how it is\
+    * Might also consider that these can be output as utility/helper classes as-needed (we do not want to move towards unmaintainable atomic design but there are scenarios where that feature is useful so optional utilities would be good)
+    * This addresses the old merge framework (where everything was sass maps you merge and print out) which was useful, things inherit and are easy to pass around as values. But it's not a good pattern because it re-invents some of what CSS is designed to do, it relies on maps to work like rulesets which is a more LESS centric idea and I fear issues with that and sass, anyways it gets complex with breakpoints. 
+      * So maybe this can be more like limited maps like that with specific properties that are allowed and are mostly like visual swatches that are a little more than just a foreground/background
+    ☐ Then we might phase out the color contexts those aren't really used anymore and custom properties makes there user not as important
+      * More important to setup the theme module to handle custom property assignment
+  ☐ All modules create util for set method that ensures that the keys being set are valid to the $config
+    * If not just throw warning, and add option to configure this in utils module
   ✔ SCSS is introducing a breaking change (new if statement) @in-progress @done
   ✔ Button group needs optional gap (instead of overlap) @done
 
@@ -9,6 +23,10 @@ Important:
     ✔ Modal needs modifier for full screen on mobile @done
     ✔ Safari rendering bugs @done
     ☐ Test iframes in modal (just to confirm we don't need any extra scripting/behaviors to handle things like this automatically) @important @needed
+      * Tested we may need to create a script for this
+      ☐ We need to create a utility script for this, can be optional (we just use it in our themes and it lives in here) but if it's tiny it should probably just be a dialog module feature
+        * The script would create the ratio needed based on the content in the iframe (possibly removing any inline styles it has if needed)
+        * This would be an opt-in feature for modal builder and basic dialog handler/module
   ☐ Add table scroller utility @needed
     ☐ Make sure to test with data-table @important 
     * Maybe just horizontal-scroller (something agnostic of tables)

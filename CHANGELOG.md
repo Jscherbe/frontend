@@ -3,20 +3,28 @@
 ## 0.2.2
 
 - **SCSS**
-  - `base/elements.scss` 
+  - `element` 
+    - Add `optional-border()` function to reduce border creation logic internally
+  - `base/elements` 
     - Add cursor pointer to summary elements by default
-  - `helpers/utilities.scss` 
+  - `helpers/utilities` 
     - Add grid/flexbox utility classes that we didn't have
   - `components/card` 
     - Fix issue with last major card update (overlay hover styles when not overlay modifier)
+  - `components/badge` 
+    - Adjust defaults (small from 5rem to 4rem)
+  - `components/card-grid` 
+    - Simplify to use implicit grid. Remove config options that were related to explicit grid creation (which was going to require adaptive breakpoints and custom properties to work in different situations). 
+      - Options removed: template-columns, compact-template-columns
+      - New Options: min-width, compact-min-width
   - `components/button-group` 
     - Add option for "gap-joined" if you have solid buttons (no border) and want a gap
-  - `components/modal.scss` 
+  - `components/modal` 
     - Add config for "min-width" (previously hard-coded)
     - Add dvh units so that the bottom of modals doesn't change as URL bars adjust (ios, etc)
     - Add new modifier that overrides the different layouts (eg left, right) to be fullscreen at mobile (modal--fullscreen-mobile)
     - Update demos to have test for each
-  - `components/data-list.scss` 
+  - `components/data-list` 
     - Add new component for self-explanatory lists that display similar to tables on desktop
     - Add demo of different presets and ways it might be used
 - ***JS**

@@ -11,10 +11,10 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {CssValue} compact-template-columns [1fr 1fr 1fr] The template-columns of the card-grid--compact.
-/// @prop {Dimension} compact-gap [1rem] The grid gap of the card-grid--compact.
-/// @prop {Dimension} gap [2rem] The grid gap of the card-grid.
-/// @prop {CssValue} template-columns [1fr 1fr] The template-columns of the card-grid.
+/// @prop {Dimension} gap [1.5rem] The grid gap of the card-grid.
+/// @prop {Dimension} min-width [20rem] The min-width for the implicit grid columns.
+/// @prop {Dimension} compact-gap [0.75rem] The grid gap of the card-grid--compact.
+/// @prop {Dimension} compact-min-width [14rem] The min-width for the implicit grid columns of the card-grid--compact.
 
 $config: (
   "gap" : 1.5rem,

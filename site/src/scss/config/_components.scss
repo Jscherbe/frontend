@@ -122,6 +122,10 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "footer-background-color" : ulu.cssvar-use("color-table-footer-background"),
 ));
 
+@include ulu.component-data-list-set((
+  "stacked-breakpoint" : "medium"
+));
+
 @include ulu.component-menu-stack-set((
   "link-background-color-hover": ulu.cssvar-use("color-button-background-hover")
 ));

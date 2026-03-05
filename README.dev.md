@@ -22,6 +22,17 @@ The library is designed with a clear separation between styles (SCSS) and behavi
 
 In short, the SCSS defines what components and their different states *look like*, while the JavaScript is responsible for activating components and changing their states based on user interaction. This creates a flexible and efficient system.
 
+## SCSS Development Conventions
+
+When developing new SCSS components or maintaining existing ones, adhere to the following architectural patterns:
+
+1.  **Configuration Property Naming:** 
+    *   Modifier-specific properties must begin with the modifier name. 
+    *   *Correct:* `clickable-background-color-hover`
+    *   *Incorrect:* `background-color-clickable-hover`
+    *   Responsive state variables should describe the *behavior*, not a hardcoded viewport/breakpoint name if possible. Example a component that stacks when on smaller screens might refer to that breakpoint as `stacked-breakpoint`
+  
+TODO: This section should be added to... (sassdoc type naming, etc). Formatting...
 
 ## Benchmark Notes
 

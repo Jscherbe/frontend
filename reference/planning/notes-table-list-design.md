@@ -5,7 +5,7 @@ This document summarizes the design discussion and finalized architecture for th
 ## 1. Component Goal & Naming
 
 - **Name:** `data-list`
-- **Purpose:** To create a highly flexible, responsive list component that displays complex data. It should appear as a table with perfectly aligned columns on large screens and adapt gracefully to a compact, stacked view on smaller screens, without relying on rigid `<table>` markup.
+- **Purpose:** To create a highly flexible, responsive list component designed for displaying self-explanatory or loosely structured data without relying on rigid `<table>` markup. On large screens, it perfectly aligns item content into distinct columns using CSS Subgrid, while seamlessly adapting to a clean, stacked flex view on smaller devices. Because it is fundamentally a list and not a data table, content within should be comprehensible when stacked without relying on explicit column headers.
 
 ## 2. Core Architecture: Structural Groups vs Semantic Names
 
@@ -18,7 +18,7 @@ We decided to move away from rigid semantic class names (e.g., `lead`, `body`, `
 The magic of the component lies in how it handles nested columns:
 - If a `.data-list__column` contains other `.data-list__column` elements, the CSS automatically detects this using the `:has()` pseudo-class.
 - **On Desktop:** It automatically sets `display: grid; grid-template-columns: subgrid;`. This ensures that nested items align perfectly to the master grid defined on the parent `.data-list`.
-- **On Mobile:** It automatically drops the subgrid and becomes a standard flex container (`flex-direction: column`), allowing the nested items to stack neatly.
+- **On Stacked/Mobile:** It automatically drops the subgrid and becomes a standard flex container (`flex-direction: column`), allowing the nested items to stack neatly.
 
 ## 3. Behavioral Modifiers
 
@@ -29,8 +29,8 @@ Instead of semantic names, developers use behavioral modifiers to control how co
 
 ## 4. The Fallback Strategy (Updated)
 
-*Previous discussions involved a complex Flexbox fallback. This has been removed.*
-Given that Subgrid support is nearly universal by mid-2026, we have opted for a "zero-config" fallback path for older browsers:
+*Previous discussions involved a complex Flexbox fallback. This has been removed entirely.*
+Given that Subgrid support is nearly universal by mid-2026, we have opted for a purely native "zero-config" fallback path for older browsers:
 - If a browser does not understand `grid-template-columns: subgrid`, it simply ignores the declaration.
 - The row remains `display: grid`.
 - Because there is no column template defined within the row, it defaults to placing every child in a single vertical column (implicit rows).
@@ -42,7 +42,7 @@ Given that Subgrid support is nearly universal by mid-2026, we have opted for a 
 - **Header Rows:** An optional header row (`.data-list__header`) can be used for visual alignment on desktop.
 - **Accessibility Implementation:** 
   - The header uses `aria-hidden="true"` or `role="presentation"` so it is ignored by screen readers, preventing confusion since it's just a visual label.
-  - On mobile, the header is hidden (`display: none`) because the column alignment breaks when stacked.
+  - On mobile/stacked, the header is hidden (`display: none`) because the column alignment breaks when stacked.
   - Content must be self-explanatory (e.g., "Created: Jan 1") or labeled within the item itself, rather than relying solely on the column header for context.
 
 ## 6. Interactivity (Proxy Click)
@@ -52,7 +52,7 @@ Given that Subgrid support is nearly universal by mid-2026, we have opted for a 
   - **`data-ulu-proxy-click`**: Attribute on the row (`.data-list__item`) to initialize the JS behavior.
   - **`data-ulu-proxy-click-source`**: Attribute on the primary interactive element (e.g., the Title link).
   - **`.data-list--clickable`**: Modifier class on the parent list to apply `cursor: pointer` and hover styles to rows.
-  - **Visuals:** Added a `background-color-clickable-hover` config option to distinguish interactive rows from standard rows.
+  - **Visuals:** Hover and focus states automatically adjust the `z-index` to ensure that interactive border highlights sit cleanly above adjacent rows.
 
 ## 7. Future Considerations
 
@@ -81,8 +81,8 @@ The default state of a row is a single, fluid `1fr` column. We offer two specifi
 2. **It Doesn't Pretend to be a Grid API:** The words "prefix" and "suffix" clearly imply attaching a secondary, shrink-wrapped element to a primary block of content. It doesn't imply you can stack them endlessly or create complex internal grid divisions.
 3. **Fallback to Custom:** If a developer's structure doesn't fit this "primary content with optional edges" model, they simply don't use these modifiers and define `--ulu-data-list-columns` explicitly.
 
-**Decision: Presets Define Mobile Grids**
-To ensure the layouts created by `--prefixed` and `--suffixed` survive the mobile breakpoint, these presets explicitly define *both* `grid-template-columns` and their mobile equivalents. This ensures that an "Icon + Text" row doesn't suddenly stack into a single column on mobile, maintaining the layout intention out-of-the-box.
+**Decision: Presets Define Stacked Grids**
+To ensure the layouts created by `--prefixed` and `--suffixed` survive the stacking breakpoint, these presets explicitly define *both* `grid-template-columns` and their stacked equivalents (`--ulu-data-list-columns-stacked`). This ensures that an "Icon + Text" row doesn't suddenly stack into a single column on mobile, maintaining the layout intention out-of-the-box.
 
 **Note on `--span-*`:**
 While standard flat lists (like basic Icon + Text rows) are now completely zero-config for children, complex layouts that group multiple items into a single track (like Example 1) still require the `--span-X` modifier on the grouping wrapper. This is a hard requirement of the CSS Grid specification, as the grouping wrapper needs to consume multiple master tracks in order for its internal subgrid to distribute children properly across them.
@@ -97,8 +97,35 @@ We discussed why individual columns (`.data-list__column`) require `display: fle
 - **The Blowout Threat:** By default, Grid and Flexbox refuse to shrink columns smaller than their intrinsic content (e.g., an unbroken URL or a long filename). In a fluid `1fr` track, a long string can force the column to expand, breaking the layout and pushing content off-screen.
 - **The Solution:** Applying `min-width: 0` to the flex-container columns removes this rigid floor. It is a defensive maneuver that tells the browser it is safe to shrink the column, allowing standard CSS truncation (`text-overflow: ellipsis`) to function properly without blowing out the grid. We added explicit comments to the SCSS to warn developers not to remove this crucial protection.
 
+### Escaping Subgrid for Natural Wrapping
+When data points (like tags, dates, or sender info) need to wrap naturally based on available space rather than breaking abruptly at a media query, developers should break out of the rigid `subgrid` pattern.
+- **The Pattern:** Place multiple items inside a single `.data-list__column` and apply standard flex wrapping (`flex-wrap: wrap; flex-basis: 20ch;`) via inline styles or utility classes. 
+- **The Benefit:** This allows content to flow fluidly before the main structural breakpoint is reached, preventing awkward collisions (e.g., long titles crashing into adjacent columns) without relying on aggressive text truncation.
+
 ### API Pruning: Removing Utility Overlap
 We aggressively removed modifiers from the component that overlapped with generic CSS layout concerns:
 - **Visibility:** Removed component-specific visibility modifiers (like `--hide-small`). Developers should use the global utility classes (e.g., `hidden-max-small`) to handle showing/hiding content across breakpoints.
 - **Alignment:** Removed component-specific alignment modifiers (like `--justify-end` and `--align-start`). Modifying flex alignment within a cell is a generic layout concern; developers should use global utility classes (e.g., `justify-content-end`, `align-items-start`).
-- **Mobile Overrides:** Removed the `--wrap-small` and `--inline-small` modifiers (originally meant to force subgrids to wrap inline on mobile). We realized these were solving a problem created by the over-use of subgrid. If developers want small data points (like tags) to wrap inline, they should group them inside a standard `<div>` using standard flex wrapping, rather than trying to force a complex subgrid to act like a basic flex container.
+
+## 10. Refined Layout Customization (Updated 2026)
+
+**Semantic Naming: "Stacked" over "Mobile"**
+We explicitly renamed all `-mobile` references (both in SCSS configuration and CSS custom properties) to `-stacked`. This is a crucial semantic shift. The component changes its layout from a grid to a stacked flex list based on a breakpoint; calling this state "stacked" accurately describes the *behavior* regardless of what specific viewport size triggers it.
+
+**Dynamic Configurable Gaps**
+Developers can now control both row and column gaps entirely via CSS Custom properties without recompiling SCSS:
+- `--ulu-data-list-row-gap`
+- `--ulu-data-list-column-gap`
+- `--ulu-data-list-column-gap-stacked`
+- `--ulu-data-list-group-gap-stacked`
+
+**Overlapping Borders Strategy**
+By default, `data-list` is configured to behave like a standard tabular list with single, shared borders between rows.
+- **`overlap-borders: true`**: When enabled in the SCSS config, this forces the `row-gap` to `0` and applies a negative top margin (equal to the border width) to every `.data-list__item`.
+- **The Result:** Borders seamlessly overlap, preventing double-thick lines between rows.
+- **Interactive State Safety:** We added `z-index: 2` to hovered/focused rows and header rows to ensure that active borders pop to the top of the stacking context, rather than being hidden beneath the adjacent row's overlapping negative margin.
+
+**Abstracted Border Generation**
+To support late-evaluation of theme colors, `data-list` utilizes a new core element utility: `element.optional-border($width, $color-key)`. 
+- This automatically maps the string color key (e.g., `"rule-light"`) through `color.get()` within the actual styles mixin.
+- It returns `null` if the width or color is omitted, causing the Sass compiler to elegantly drop the border property entirely, keeping the final CSS clean and barebones when borders aren't desired.
