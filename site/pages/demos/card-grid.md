@@ -8,11 +8,11 @@ layout: fullpage
 
   <h2 class="h2">Card Grid Defaults</h2>
 
-  {% CodePreview %}
 
   {% demoCardGrid 5 %}
-
-  {% endCodePreview %}
+  {% demoCardGrid 4 %}
+  {% demoCardGrid 3 %}
+  {% demoCardGrid 2 %}
 
   <h2 class="h2">Card Grid Compact</h2>
 
@@ -57,5 +57,14 @@ layout: fullpage
 
     {% endCodePreview %}
   </section>
+
+  <h2 class="h2 margin-top">Constrained Container (1000px)</h2>
+  <div style="max-width: 1000px; margin: 0 auto; background: var(--color-background-offset, #f4f4f4); padding: 1rem;">
+    {% CodePreview %}
+
+    {% demoCardGrid 5 %}
+
+    {% endCodePreview %}
+  </div>
 
 </div>

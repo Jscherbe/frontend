@@ -51,12 +51,11 @@ $config: (
   
   #{ $prefix } {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, get("min-width")), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, get("min-width")), 1fr));
     grid-auto-rows: 1fr;
     gap: get("gap");
     margin: get("gap") 0;
     #{ $prefix-card } {
-      max-width: none;
       margin: 0;
       &:not(#{ $prefix-card }--overlay) {
         height: 100%;
@@ -64,7 +63,7 @@ $config: (
     }
   }
   #{ $prefix }--compact {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, get("compact-min-width")), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, get("compact-min-width")), 1fr));
     gap: get("compact-gap");
   }
   #{ $prefix }--one-column {

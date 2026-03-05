@@ -2,7 +2,8 @@ Important:
   ✔ SCSS is introducing a breaking change (new if statement) @in-progress @done
   ✔ Button group needs optional gap (instead of overlap) @done
 
-  ☐ Card grid needs breakpoint configuration @needed
+  ✔ Card grid needs breakpoint configuration @needed @done
+    * Went back to imp
   ☐ Modals
     ✔ Update vue library with the observer method @done
     ✔ Modal needs modifier for full screen on mobile @done

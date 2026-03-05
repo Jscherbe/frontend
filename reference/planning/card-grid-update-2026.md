@@ -16,13 +16,14 @@ We are rethinking the layout strategy for the `card-grid` component. The `card-g
 
 ## Current Experiment
 
-We are currently testing the **Implicit Grid** approach using `auto-fit` and `minmax()` to see how it behaves in practice, specifically focusing on the user's observation regarding the last row stretching behavior.
+We have refined the **Implicit Grid** approach. We moved from `auto-fit` to `auto-fill` to solve the stretching issue, and restored `max-width` and centering to the cards to ensure they look good even when column tracks stretch slightly.
 
-**Changes made for testing:**
-*   Updated `$config` to use `min-width` and `compact-min-width` instead of fixed `template-columns`.
-*   Modified `.card-grid` to use `grid-template-columns: repeat(auto-fit, minmax(min(100%, get("min-width")), 1fr))` instead of explicit columns.
+**Current Setup:**
+*   `grid-template-columns: repeat(auto-fill, minmax(min(100%, get("min-width")), 1fr))`
+*   Nested `.card` elements have `max-width` enabled (default inherited from card component) and `margin: 0 auto;`.
 
 ## Findings & Adjustments
 
-*   **No Unwanted Stretching:** The user noted that the implicit grid seems to be working perfectly and that cards are filling the grid without awkwardly growing to fill the last row out of proportion.
+*   **`auto-fit` Dilemma:** We initially tested `auto-fit`. While it nicely removes right-side gaps, it falls apart when a row is partially filled (e.g., 2 cards in a container wide enough for 4). The empty tracks collapse, and the 2 active columns stretch to fill the *entire* container. Even when we reapplied `max-width` to the cards and centered them, they floated awkwardly in the middle of massive invisible column tracks.
+*   **The `auto-fill` + Centering Solution:** Switching to `auto-fill` leaves the empty column tracks intact. This prevents the active columns from stretching endlessly across the container. By restoring the card's native `max-width` and applying `margin: 0 auto`, we found the perfect balance. The cards stretch slightly (`1fr`) until the container can fit another column track, but they never exceed their defined `max-width`, naturally centering themselves within their track when they hit that limit.
 *   **Media Queries Removed:** Because `minmax(min(100%, get("min-width")), 1fr)` gracefully handles shrinking down to single columns on small devices, we were able to entirely remove the `@include breakpoint.max("small")` fallback from `_card-grid.scss`. This significantly slims down the generated CSS and makes it a pure container-aware layout.
