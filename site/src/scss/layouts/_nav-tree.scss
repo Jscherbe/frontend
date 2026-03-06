@@ -3,8 +3,8 @@
 @use "sass:color";
 
 $link-padding-x: 0.75em;
-$link-padding-y: 0.35em;
-$link-indent: 1.5em;
+$link-padding-y: 0.4em;
+$link-indent: 0.85em;
 $collapsible-inner-padding: 0.5em;
 $item-margin-y: 3px;
 
@@ -24,6 +24,7 @@ $item-margin-y: 3px;
 .nav-tree__link,
 .nav-tree__toggle {
   display: flex;
+  line-height: 1.2;
   align-items: baseline;
   padding: $link-padding-y $link-padding-x;
   border-radius: ulu.element-get("border-radius");
@@ -67,8 +68,8 @@ $item-margin-y: 3px;
   }
 }
 .nav-tree__item.is-active-trail {
-  .nav-tree__collapsible[open]:has(.nav-tree__item.is-active) {
-    .nav-tree__toggle {
+  >.nav-tree__collapsible[open]:has(.nav-tree__item.is-active) {
+    >.nav-tree__toggle {
       background-color: ulu.cssvar-use("color-navtree-active");
     }
   }
