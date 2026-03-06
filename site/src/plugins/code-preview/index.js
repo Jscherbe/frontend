@@ -18,12 +18,24 @@ const newId = name => `code-preview-${ ++count }-${ name }`;
 export default function(eleventyConfig) {
 
   eleventyConfig.addPairedShortcode("CodePreview", createPreview);
+  // eleventyConfig.addPairedShortcode("CodePreviewRaw", createPreviewRaw);
 
-  function createPreview(content, language = "html") {
+  function createPreview(content, language = "html", options = {}) {
     const { highlight } = eleventyConfig?.javascript?.functions;
-
+    const defaults = {
+      beautify: true,
+      debug: false,
+      beautifyOptions: {
+        indent_size: 2,
+        wrap_attributes: "preserve"
+      }
+    };
+    const config = { ...defaults, ...options };
+    if (config.debug) {
+      debugger;
+    }
     if (highlight) {
-      const markup = beautify.html(content, { indent_size: 2 });
+      const markup = config.beautify ? beautify.html(content, config.beautifyOptions) : content;
       const highlighted = highlight(language, markup);
       if (highlighted) {
         return template(markup, highlighted).trim();
@@ -34,16 +46,21 @@ export default function(eleventyConfig) {
     return content;
   }
 
+  // // Shortcut / Alias
+  // function createPreviewRaw(content, language, options) {
+  //   return createPreview(content, language, { ...options, beautify: false });
+  // }
+
 }
 
 /**
  * Markup template for shortcode
  */
-function template(markup, code) {
+function template(markup, highlighted) {
   const scriptId = newId("json");
 
   return `
-<div class="demo-preview">
+<div class="demo-preview" markdown="0">
   <div class="demo-preview__rendered crop-margins">
     ${ markup }
   </div>
@@ -62,9 +79,7 @@ function template(markup, code) {
       </button>
     </div>
   </div>
-  <div class="demo-preview__code">
-    ${ code }
-  </div>
+  <div class="demo-preview__code">${ highlighted }</div>
   <script id="${ scriptId }" type="text/plain">
 ${ markup }
   </script>

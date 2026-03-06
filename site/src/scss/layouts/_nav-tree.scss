@@ -67,12 +67,15 @@ $item-margin-y: 3px;
     padding-bottom: $collapsible-inner-padding;
   }
 }
-.nav-tree__item.is-active-trail {
-  >.nav-tree__collapsible[open]:has(.nav-tree__item.is-active) {
-    >.nav-tree__toggle {
-      background-color: ulu.cssvar-use("color-navtree-active");
-    }
-  }
+// .nav-tree__item.is-active-trail {
+//   .nav-tree__collapsible[open]:has(.nav-tree__item.is-active) {
+//     .nav-tree__toggle {
+//       background-color: ulu.cssvar-use("color-navtree-active");
+//     }
+//   }
+// }
+.nav-tree__collapsible:has(.is-active) > .nav-tree__toggle {
+  background-color: ulu.cssvar-use("color-navtree-active");
 }
 .nav-tree__text {
   flex-grow: 1;

@@ -5,6 +5,9 @@
 - **SCSS**
   - `element` 
     - Add `optional-border()` function to reduce border creation logic internally
+  - `utils/normalize-aspect-ratio()` 
+    - New function accepts numbers and strings and returns unquoted aspect ratio 
+    - If an aspect ratio value is a percentage this will resolve it to the aspect ratio for legacy aspect ratios based on padding percentages (padding hack for responsive iframes/etc)
   - `base/elements` 
     - Add cursor pointer to summary elements by default
   - `helpers/utilities` 
@@ -13,6 +16,9 @@
     - Fix issue with last major card update (overlay hover styles when not overlay modifier)
   - `components/badge` 
     - Adjust defaults (small from 5rem to 4rem)
+  - `components/ratio-box` 
+    - Refactor to use modern aspect ratio (phase out padding hack), but still support legacy percentage values for aspect ratios
+    - This is becoming less needed with modern CSS, supporting it because it's tiny and legacy sites may be using this for iframes/etc
   - `components/card-grid` 
     - Simplify to use implicit grid. Remove config options that were related to explicit grid creation (which was going to require adaptive breakpoints and custom properties to work in different situations). 
       - Options removed: template-columns, compact-template-columns
@@ -24,14 +30,21 @@
     - Add dvh units so that the bottom of modals doesn't change as URL bars adjust (ios, etc)
     - Add new modifier that overrides the different layouts (eg left, right) to be fullscreen at mobile (modal--fullscreen-mobile)
     - Update demos to have test for each
+    - Add new modifier for iframes (modal--iframe-fill, modal--iframe-ratio) which when applied will change the layout of the modal so that iframes cause the layout to fill the height of the modal
+      - Note iframe ratio will require user to add aspect-ratio to iframe (unless using modal-builder where it now automatically adds this if an iframe is the sole content of the dialog)
   - `components/data-list` 
     - Add new component for self-explanatory lists that display similar to tables on desktop
     - Add demo of different presets and ways it might be used
 - ***JS**
   - `ui/modal-builder.js`
     - Add option for "fullscreenMobile"
+    - Add options for "iframeAutoLayout"
+      - This will apply logic to work with the new modal modifiers for iframe (listed above)
   - `ui/dialog.js`
     - Move away from using "toggle" event for dialog behaviors (prevent scroll, etc). Older safari only has close event and doesn't support toggle. Replace with mutation observer on open attribute
+  - `utils/iframe.js`
+    - Add new utility module
+    - Add new function for use in determining if an iframe is sole content of an element and if so will return data about the iframe (whether its an aspect ratio type iframe [videos, etc] or a embedded page who's height is dynamic [normally filling])
   - `utils/dialog.js`
     - Add `observeDialogToggle` to be used as a workaround for lack of toggle event support in older Safari (ie. before 2024)
       - This way this module can be removed in the future when this is

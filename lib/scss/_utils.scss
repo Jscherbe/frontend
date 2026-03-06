@@ -890,3 +890,25 @@ $config: (
 @function is-side($edge) {
   @return not is-end($edge);
 }
+
+/// For legacy aspect ratio conversion
+/// - For a given value if it's a percentage number convert to css aspect ratio like 16/9
+/// @param {String|Number} $value The ratio value to normalize.
+/// @return {String} Either the original value or a converted value depending on if it was a percentage number
+
+@function normalize-aspect-ratio($value) {
+  @if is-number($value) and not math.is-unitless($value) {
+    $info: number-info($value);
+    @if ($info) {
+      $u: map.get($info, "unit");
+      $v: map.get($info, "value");
+      @if $u == "%" {
+        @return string.unquote("100 / #{ $v }");
+      }
+    }
+  }
+  @if is-string($value) {
+    @return string.unquote($value);
+  }
+  @return $value;
+}

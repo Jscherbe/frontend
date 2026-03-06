@@ -380,6 +380,33 @@ $config: (
     min-height: 0;
   }
 
+  // Iframe automatic layout modifiers
+  // Both modes use absolute positioning to escape CMS wrappers (p, div, etc)
+  #{ $prefix }--iframe-ratio,
+  #{ $prefix }--iframe-fill {
+    #{ $prefix }__body {
+      position: relative;
+      padding: 0;
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  // Ratio-specific: disable minimum heights and flex-grow so it perfectly wraps the video
+  #{ $prefix }--iframe-ratio {
+    min-height: 0;
+    #{ $prefix }__body {
+      flex: none; 
+      // aspect-ratio is applied inline by JS
+    }
+  }
+
   @if breakpoint.exists($breakpoint) {
     #{ $prefix }--fullscreen-mobile {
       @include breakpoint.max($breakpoint) {

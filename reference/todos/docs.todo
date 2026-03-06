@@ -1,4 +1,5 @@
 Current:
+  ☐ Fix codePreview in markdown pages (if we can or change pages to html and forget markdown for demos)
   ☐ Make documentation more concise (directories, etc)
   ☐ Setup wrapper component for showing / rendering source code @later @important
     * This one is easy and just has to be done, do ulu updates and then do this last since it's not crucial but publishing updates is
