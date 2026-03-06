@@ -2,7 +2,6 @@
 title: Legacy & UMD Usage
 weight: 40
 ---
-
 While we recommend using the ESM bundle with a modern build tool, @ulu/frontend also provides a Universal Module Definition (UMD) bundle for legacy environments or direct browser usage.
 
 ## Available Bundles

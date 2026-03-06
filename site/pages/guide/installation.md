@@ -2,7 +2,6 @@
 title: Installation & Setup
 weight: 10
 ---
-
 @ulu/frontend is distributed as an NPM package and can be integrated into your project using modern build tools.
 
 ## NPM Installation
@@ -36,9 +35,9 @@ import "@ulu/frontend/dist/style.css";
 
 ### SCSS Import
 
-For advanced customization (theming), you will want to import the SCSS modules. This is covered in detail in the [SCSS System & Theming](./theming/) guide.
+For advanced customization (theming), you will want to import the SCSS modules. This is covered in detail in the [SCSS System & Theming](/guide/theming/) guide.
 
 ## Next Steps
 
--   Learn about the [JavaScript System](./javascript-system/) and how initialization works.
--   Dive into [Theming](./theming/) to customize colors, typography, and components.
+-   Learn about the [JavaScript System](/guide/javascript-system/) and how initialization works.
+-   Dive into [Theming](/guide/theming/) to customize colors, typography, and components.

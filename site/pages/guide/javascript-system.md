@@ -2,7 +2,6 @@
 title: JavaScript System
 weight: 20
 ---
-
 The JavaScript layer of @ulu/frontend is designed to be lightweight, modular, and—crucially—**styling-agnostic**. It separates behavior from presentation, allowing you to attach rich interactive functionality to elements regardless of how they are styled.
 
 ## Core Concepts

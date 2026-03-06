@@ -2,7 +2,6 @@
 title: Recommended Project Setup
 weight: 15
 ---
-
 While @ulu/frontend works out-of-the-box, we recommend a specific setup for projects that require deep customization. This "opinionated" approach simplifies imports and makes managing configuration much easier.
 
 ## SCSS Build Configuration
@@ -11,7 +10,7 @@ The library's SCSS system relies heavily on configuration modules. To make impor
 
 ### Why Configure `loadPaths`?
 
-By adding your project's SCSS source directory to the `loadPaths` (or `includePaths`), you can create "hub" files that act as central configuration points. This is essential for the [Theming workflow](./theming/).
+By adding your project's SCSS source directory to the `loadPaths` (or `includePaths`), you can create "hub" files that act as central configuration points. This is essential for the [Theming workflow](/guide/theming/).
 
 ### Vite Example
 

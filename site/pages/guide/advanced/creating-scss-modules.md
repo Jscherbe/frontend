@@ -2,7 +2,6 @@
 title: Creating SCSS Modules
 weight: 10
 ---
-
 To maintain consistency and configurability, new SCSS modules should follow the library's established patterns. This guide outlines the standard structure for a module, including how to define configuration, handle fallbacks, and output styles.
 
 ## Basic Module Structure

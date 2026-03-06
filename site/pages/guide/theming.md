@@ -2,7 +2,6 @@
 title: SCSS System & Theming
 weight: 30
 ---
-
 The SCSS architecture of @ulu/frontend relies on a **"Configuration Module"** pattern. Instead of overriding variables after the fact, you configure the library's modules *before* they generate any CSS. This results in a highly customized, efficient stylesheet.
 
 ## Consumption Methods
@@ -10,14 +9,14 @@ The SCSS architecture of @ulu/frontend relies on a **"Configuration Module"** pa
 There are three primary ways to consume the SCSS library, depending on your needs:
 
 ### 1. Pre-built Stylesheets (Quick Start)
-If you want to use the library with its default settings and minimal setup, you can import the pre-built stylesheet entry points.
+These modules are convenience wrappers that output specific sections of the library. You can use them to quickly import the library's styles without manually calling the output mixins.
 
 -   `@use "@ulu/frontend/scss/stylesheets/full";` - Imports everything (Base, Components, Helpers).
--   `@use "@ulu/frontend/scss/stylesheets/base-styles";` - Imports only base styles.
--   `@use "@ulu/frontend/scss/stylesheets/component-styles";` - Imports only components.
+-   `@use "@ulu/frontend/scss/stylesheets/base-styles";` - Imports base styles (Normalize, Typography, Elements).
+-   `@use "@ulu/frontend/scss/stylesheets/component-styles";` - Imports component styles.
+-   `@use "@ulu/frontend/scss/stylesheets/helper-styles";` - Imports helper classes.
 
-**Pros:** Fastest setup.
-**Cons:** Harder to configure deeply; you get all the default styles.
+**Usage:** These modules are fully compatible with configuration. You can configure the library (e.g., in your `_ulu.scss` hub file) and then `@use` these stylesheets to output the CSS with your settings applied.
 
 ### 2. Direct Module Usage
 You can import individual modules directly if you only need specific pieces.
@@ -37,7 +36,9 @@ You can import individual modules directly if you only need specific pieces.
 **Cons:** Tedious to manage imports; requires configuring each module individually if you want to change defaults.
 
 ### 3. The "Hub" Pattern (Recommended)
-This is the standard way to build a theme with @ulu/frontend. You create a single local file (e.g., `_ulu.scss`) that configures the library and then forwards it. This allows you to import your configured version of the library anywhere in your project using a single namespace.
+This is the standard way to build a theme with @ulu/frontend. The library's main entry point (`@ulu/frontend/scss`) acts as a "hub" that forwards all modules with a `ulu.` prefix.
+
+You can import this directly, or (as we recommend) create a local proxy file to simplify your imports.
 
 ## Understanding Namespacing
 
@@ -59,39 +60,40 @@ This means `color.get("primary")` becomes `ulu.color-get("primary")`. This flat 
 
 ## Recommended Project Structure
 
-To implement the **Hub Pattern**, we recommend the following directory structure. This setup allows you to have a single "Hub" file (`_ulu.scss`) that represents *your* configured version of the library.
+To fully utilize the Hub Pattern while keeping your configuration organized, we recommend creating a local "proxy" hub. This setup allows you to import your configured library anywhere in your project using a simple `@use "ulu"`.
 
-> **Note:** This structure works best when you have configured your SCSS load paths. See [Recommended Project Setup](./recommended-setup/) for build configuration details.
+> **Note:** This structure works best when you have configured your SCSS load paths. See [Recommended Project Setup](/guide/recommended-setup/) for build configuration details.
 
 ```text
 src/scss/
-├── _ulu.scss          # The "Hub": Configures and forwards the library
-├── styles.scss        # Main entry point for your site's CSS
+├── _ulu.scss          # Your Local Hub: Imports config, forwards library
+├── styles.scss        # Main entry point
 ├── config/            # Your custom configuration modules
 │   ├── _index.scss    # Imports all config partials
-│   ├── _color.scss    # Custom color palette
-│   ├── _type.scss     # Typography settings
-│   └── _...           # Configs for other components
+│   ├── _color.scss    # ulu.color-set(...)
+│   └── ...
 └── ...
 ```
 
-### 1. The Hub File (`_ulu.scss`)
+### 1. The Local Hub File (`_ulu.scss`)
 
-This file is the key to the pattern. It imports your configuration and then `@forward`s the library. By importing this file instead of `@ulu/frontend/scss` directly, any file in your project gets the *configured* version of the modules.
+Create a file named `_ulu.scss` in your SCSS root. This file serves two purposes:
+1.  **Loads Configuration:** It ensures your custom settings (`config/`) are loaded *before* the library is used elsewhere.
+2.  **Exposes the Library:** It forwards the library so any file importing `"ulu"` gets access to all mixins and functions.
 
 ```scss
 // src/scss/_ulu.scss
 
-// 1. Configure the library modules (by using your config partials)
-@use "config"; 
-
-// 2. Forward the library so it's available to importers
+// 1. Forward the library so it is available to importers
 @forward "@ulu/frontend/scss"; 
+
+// 2. Load your local configuration
+@use "config"; 
 ```
 
-### 2. A Configuration Partial (e.g., `config/_color.scss`)
+### 2. Configuration Partials (e.g., `config/_color.scss`)
 
-In your config files, you import the library and apply your settings. Note that inside config files, we import the library as `ulu` to access its helpers.
+In your config files, you import the library and apply your settings. Because we are inside the configuration phase (which `_ulu.scss` uses), we import the library directly here.
 
 ```scss
 // src/scss/config/_color.scss
@@ -101,29 +103,20 @@ In your config files, you import the library and apply your settings. Note that 
 @include ulu.color-set((
   "primary": #007bff,
   "secondary": #6c757d,
-  "success": #28a745,
-  // Mapping semantic names to palette colors
-  "brand": "primary",
-  "link": "primary"
 ));
 ```
 
 ### 3. The Main Stylesheet (`styles.scss`)
 
-Finally, your main stylesheet imports the "Hub" (`ulu`) and outputs the styles.
+Finally, your main stylesheet imports your local hub (`ulu`) and outputs the styles using the pre-built stylesheets (or manual mixins).
 
 ```scss
 // src/scss/styles.scss
-@use "ulu"; // Imports your local _ulu.scss
+@use "ulu"; // Imports your local src/scss/_ulu.scss
 
-// Output Base Styles (Normalize, Typography, Elements)
-@include ulu.base-styles();
-
-// Output Component Styles (Buttons, Cards, etc.)
-@include ulu.component-styles();
-
-// Output Helper Classes
-@include ulu.helper-styles();
+// Output Styles using the pre-built helpers
+// These will use the configuration loaded by "ulu"
+@use "@ulu/frontend/scss/stylesheets/full"; 
 ```
 
 ## Core Modules

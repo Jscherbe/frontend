@@ -2,7 +2,6 @@
 title: Creating JS Components
 weight: 20
 ---
-
 @ulu/frontend provides a standardized way to create UI components using the `ComponentInitializer` class. This utility handles the boilerplate of finding elements, parsing configuration, and managing the component lifecycle.
 
 ## The Component Initializer

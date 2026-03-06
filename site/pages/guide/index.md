@@ -3,7 +3,6 @@ title: Guide
 weight: 0
 iconClass: fas fa-book
 ---
-
 Welcome to **@ulu/frontend**, a versatile frontend toolkit designed for modern web development. Whether you are building a static site, a CMS-driven platform, or a complex application, this library provides a solid foundation of accessible, high-quality components and utilities.
 
 ## Core Principles
@@ -27,4 +26,4 @@ The library is built around three key design principles:
 
 ## Getting Started
 
-To start using @ulu/frontend in your project, head over to the [Installation & Setup](./installation/) guide.
+To start using @ulu/frontend in your project, head over to the [Installation & Setup](/guide/installation/) guide.

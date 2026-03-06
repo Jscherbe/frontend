@@ -2,7 +2,6 @@
 title: "Workflow: Using Components"
 weight: 40
 ---
-
 This guide walks through the end-to-step process of adding a component to your project using the **Dialog** component as an example.
 
 ## Step 1: HTML Structure
