@@ -1,5 +1,14 @@
 Current:
-  ☐ Fix codePreview in markdown pages (if we can or change pages to html and forget markdown for demos)
+  ☐ Maybe before refactoring the current unstructured demos should we:
+    ☐ Find a way to bring the sass API and demos together
+    ☐ Have live demos for everything and find ways to generate this easily
+    ☐ Have live stylesheet that can be adjusted in live demos / API
+    ☐ Or if above is too complex, at less maybe we break demos into pieces so they can be adjusted in the future 
+      * Not sure about this there are advantages to loose writing style if we are going to retain that method, this would maybe be overkill like demo per file or something (but does allow us to maybe keep demos isolated/structured)
+    ☐ Organization Improvements:
+      ☐ The demos/components need to be grouped into folders by type like frontend-vue @yes
+      ☐ Basic tests that just clutter the demo menu (accordion vs details group for example). In this example should we omit details group or maybe move it to tests (place for simply tests, still kind of documented but not meant to be consumed like documentation)
+  ✔ Fix codePreview in markdown pages (if we can or change pages to html and forget markdown for demos) @done
   ☐ Make documentation more concise (directories, etc)
   ☐ Setup wrapper component for showing / rendering source code @later @important
     * This one is easy and just has to be done, do ulu updates and then do this last since it's not crucial but publishing updates is
