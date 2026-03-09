@@ -2,16 +2,52 @@
 @use "ulu";
 @use "mixins";
 
+$padding: 1.5rem;
+$border: 2px solid ulu.color-get("rule-light");
+
+.sassdoc-item {
+  // box-shadow: ulu.element-get("box-shadow");
+  border-radius: ulu.element-get("border-radius-large");
+  border: $border;
+  padding: $padding;
+  overflow: hidden; // For negative margin hack
+  margin-bottom: 1.5em;
+  background-color: rgba(0,0,0,0.02);
+  & + & {
+    margin-top: calc(-1.5em - 2px);
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  &:has(+ &) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  table {
+    tr td:first-child {
+      font-weight: ulu.typography-get("font-weight-semibold");
+      white-space: nowrap;
+    }
+  }
+}
 .sassdoc-item-header {
   display: flex;
   align-items: center;
-  @include mixins.site-headline-rule();
-  margin: 4em 0 1em 0;
+  gap: 1em;
+  background-color: ulu.cssvar-use("color-background");
+  margin: (- $padding) (- $padding) 1em (- $padding);
+  padding: 0.75em;
+  border-bottom: $border;
   h3 {
-    margin: 0 1em 0 0;
-    border: none;
-    padding: 0;
+    margin: 0 !important;
   }
+  // h2 + & {
+  //   margin-top: 1em;
+  // }
+  // h3 {
+  //   margin: 0 1em 0 0 !important;
+  //   border: none;
+  //   padding: 0;
+  // }
 }
 .sassdoc-item-header__labels {
   margin-left: auto;

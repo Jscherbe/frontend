@@ -1,0 +1,63 @@
+////
+/// @group table-scroller
+/// Simple wrapper for tables to make them overflow-x, not to be confused with 
+/// sticky table plugin, this is for simple html tables
+/// - Note in situations where you can't use a wrapper you can sometimes get by with display block / max-content hack
+////
+
+@use "sass:map";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+
+/// Module Settings
+/// @type Map
+/// @prop {List|Number} margin  [(1em, 0)] Optional margin for this component
+
+$config: (
+  "margin" : (1em, 0),
+  // "example":            "background",
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-table-scroller-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-table-scroller-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "table-scroller [config]");
+}
+
+/// Prints component styles
+/// @demo table-scroller
+/// @example scss
+///  @include ulu.component-table-scroller-styles();
+
+@mixin styles {
+  $prefix: selector.class("table-scroller");
+  
+  #{ $prefix } {
+    width: 100%;
+    overflow-x: auto;
+    margin: get("margin");
+    > table {
+      min-width: 100%;
+      max-width: none;
+    }
+  }
+  #{ $prefix }--nowrap {
+    > table > thead th {
+      white-space: nowrap;
+    }
+  }
+}

@@ -56,9 +56,9 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "caps-disabled" : false,
   "cap-side" : "left",
   "cap-match-radius" : false,
-  "cap-options" : (
-    "size" : 0.75rem,
-  ),
+  // "cap-options" : (
+  //   "size" : 0.75rem,
+  // ),
 ));
 @include ulu.component-callout-set-styles((
   "rainbow" : (
@@ -70,7 +70,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
     "background-color" : "info-background",
     "cap-options" : (
       "color" : blue,
-      "size" : 3rem,
+      // "size" : 3rem,
     ),
     "cap" : true,
   ),
@@ -79,7 +79,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
     "cap" : false,
     "cap-options" : (
       "color" : green,
-      "size" : 5rem, 
+      // "size" : 5rem, 
     ),
   ),
   // Cap side can only be adjusted in the default callout config
@@ -89,7 +89,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
     "cap-side" : "top", //***
     "cap-options" : (
       "color" : yellow,
-      "size" : 0.5rem,
+      // "size" : 0.5rem,
     ),
   ),
   "danger" : (
@@ -98,7 +98,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
     "cap-match-radius" : true, 
     "cap-options" : (
       "color" : red,
-      "size" : 0.5rem,
+      // "size" : 0.5rem,
     ),
   ),
 ));
@@ -120,6 +120,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
   "header-background-color" : ulu.cssvar-use("color-table-header-background"),
   "body-background-color" : ulu.cssvar-use("color-table-cell-background"),
   "footer-background-color" : ulu.cssvar-use("color-table-footer-background"),
+  "border-color" : ulu.cssvar-use("color-table-border-color"),
 ));
 
 @include ulu.component-data-list-set((

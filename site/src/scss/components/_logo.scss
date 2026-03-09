@@ -5,18 +5,23 @@
   display: flex;
   align-items: baseline;
   line-height: 1;
+  &,
+  &:hover,
+  &:focus {
+    color: white;
+  }
 }
 .logo__main {
   font-weight: bold;
   text-transform: uppercase;
   margin-right: 0.5em;
   padding-right: 0.5em;
-  border-right: 1px solid ulu.cssvar-use("color-rule-logo");
+  border-right: 1px solid rgba(0,0,0,0.4);
   @include ulu.typography-size("large-x", $only-font-size: true);
   
 }
 .logo__subtitle {
-  opacity: 0.6;
+  opacity: 0.5;
   font-weight: ulu.typography-get("font-weight-light");
   @include ulu.typography-size("small", $only-font-size: true);
 }

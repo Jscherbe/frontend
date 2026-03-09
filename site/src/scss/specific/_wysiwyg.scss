@@ -4,8 +4,8 @@
 .wysiwyg {
   h1 {
     margin-bottom: 1em;
-    padding-bottom: 1em;
-    border-bottom: ulu.element-get-rule-style("light");
+    // padding-bottom: 1em;
+    // border-bottom: ulu.element-get-rule-style("light");
   }
   // Make MD table scroll without wrapper
   table {
@@ -16,26 +16,33 @@
     width: max-content;
     max-width: 100%;
     margin-bottom: 2.5em;
+    thead {
+      border-bottom: 1px solid ulu.color-get("rule-light");
+    }
   }
   details:not(.accordion) {
     margin-bottom: 1em;
     padding: 0.5em 1em;
     background-color: ulu.cssvar-use("color-background-details");
+    border-radius: 3px;
     @include ulu.typography-size("small", $only-font-size: true);
+    > summary::marker {
+      color: ulu.cssvar-use("color-type-tertiary");
+    }
     &[open] > summary {
       margin-bottom: 1em;
       
     }
   }
-  h2 {
-    &::after {
-      content: "";
-      display: block;
-      width: 1em;
-      height: 5px;
-      margin-top: 0.5em;
-      background-color: ulu.color-get("rule-light");
-    }
+  // h2 {
+  //   &::after {
+  //     content: "";
+  //     display: block;
+  //     width: 1em;
+  //     height: 5px;
+  //     margin-top: 0.5em;
+  //     background-color: ulu.color-get("rule-light");
+  //   }
     // border-bottom: 8px solid ulu.color-get("rule-light");
     // padding-bottom: 0.5em;
     // margin-bottom: 2em;
@@ -44,7 +51,7 @@
     // color: white;
     // padding: 1em;
     // text-transform: uppercase;
-  }
+  // }
   pre {
     margin-bottom: 2em;
   }

@@ -27,6 +27,7 @@ $-fallbacks: (
 /// @prop {Dimension} cell-padding [(0.5em,)] Padding of the th and td elements.
 /// @prop {CssValue} text-align [left] Text align of the table.
 /// @prop {String} type-size ["small"] Font size of the table.
+/// @prop {CssValue} vertical-align [top] Vertical align for td/th
 /// @prop {Color} background-color [white] Background color of table container.
 /// @prop {Color} header-background-color [#f5f4f4] Background color of the the table header.
 /// @prop {Color} body-background-color [white] Background color of table body.
@@ -58,6 +59,7 @@ $config: (
   "cell-padding" : (0.5em,),
   "text-align" : left,
   "type-size" : "small",
+  "vertical-align" : top,
   "background-color" : white,
   "header-background-color" : #f5f4f4,
   "body-background-color" : white,
@@ -148,9 +150,9 @@ $config: (
       border-bottom: get("caption-border-bottom");
     }
     th,
-    tr,
     td {
       text-align: get("text-align");
+      vertical-align: get("vertical-align");
     }
     th {
       min-width: get("column-min-width");

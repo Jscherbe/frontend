@@ -17,8 +17,7 @@ $breakpoint: "medium";
   align-items: center;
   padding: $padding;
   // border-bottom: ulu.element-get-rule-style("light");
-  background-color: ulu.cssvar-use("color-accent");
-  color: ulu.cssvar-use("color-type-inverse");
+  background-color: ulu.cssvar-use("color-header-main-background");
   position: sticky;
   top: 0;
   z-index: 2;
@@ -26,14 +25,6 @@ $breakpoint: "medium";
     padding-top: 0;
     padding-bottom: 0;
     height: 100%;
-  }
-}
-
-.header__logo {
-  &,
-  &:hover,
-  &:focus {
-    color: ulu.cssvar-use("color-type-inverse");
   }
 }
 .header__mobile-toggle {

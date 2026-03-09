@@ -163,7 +163,7 @@ $config: (
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; 
 
-        @if (get("summary-border-enabled")) {
+        @if (get("summary-border-enabled")) { 
           &::after {
             content: "";
             position: absolute;
@@ -262,6 +262,11 @@ $config: (
       & > #{ $prefix }__summary {
         border-radius: get("border-radius");
         border-bottom: none;
+        @if (get("summary-border-enabled")) { 
+          &::after {
+            content: none;
+          }
+        }
       }
     }
   }

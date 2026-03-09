@@ -4,6 +4,7 @@
 @include ulu.color-set((
   "type" :                    ulu.cssvar-use("color-type"),
   "headline" :                ulu.cssvar-use("color-type-secondary"),
+  "headline-primary" :        ulu.cssvar-use("color-headline-primary"),
   "type-secondary" :          ulu.cssvar-use("color-type-secondary"),
   "type-tertiary" :           ulu.cssvar-use("color-type-tertiary"),
   "type-disabled" :           ulu.cssvar-use("color-type-disabled"),

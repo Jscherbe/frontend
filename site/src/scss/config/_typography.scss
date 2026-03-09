@@ -17,17 +17,30 @@
 
 @include ulu.typography-set-sizes((
   "h1" : (
-    "color" : "accent",
-    // "font-weight" : normal,
+    "color" : "headline-primary",
     "font-size": 50px,
     "margin-top" : null,
     "margin-bottom" : 0.5em
   ),
   "h2" : (
     "font-size": 38px,
-    "color" : "accent",
-    "margin-top" : 2.5em,
-    "margin-bottom" : 1em,
+    "color" : "headline-primary",
+    "margin-top" : 1.5em,
+    "margin-bottom" : 0.5em,
+  ),
+  "h3" : (
+    "font-size": 29px,
+    "margin-top" : 1.5em,
+  ),
+  "h4" : (
+    "font-size": 21px,
+    "margin-top" : 1.5em,
+    "margin-bottom" : 0.5em
+  ),
+  "h5" : (
+    "font-size": 18px,
+    "margin-top" : 1.5em,
+    "margin-bottom" : 0.5em
   ),
 ), "deep");
                           

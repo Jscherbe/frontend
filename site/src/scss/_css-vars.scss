@@ -16,25 +16,33 @@ $theme-colors: (
     "light" : $color-gray-light-x,
     "dark" : ulu.color-shade($color-gray-dark, 20%)
   ),
+  "color-header-main-background" : (
+    "light" : $color-violet-dark,
+    "dark" : ulu.color-shade($color-violet-dark, 20%),
+  ),
   "color-type" : (
     "light" : $color-type,
-    "dark": white
+    "dark": ulu.color-tint($color-gray-dark, 80%)
   ),
-  "color-type-inverse" : (
+  "color-type-inverse" : (p
     "light" : white,
     "dark": $color-type
   ),
   "color-type-secondary" : (
     "light" : $color-type-secondary,
-    "dark": $color-gray-light-x
+    "dark": rgba(255,255,255,0.8)
   ),
   "color-type-tertiary" : (
     "light" : $color-type-tertiary,
-    "dark": $color-gray-light
+    "dark": rgba(255,255,255,0.6)
   ),
   "color-type-disabled" : (
     "light" : $color-type-disabled,
     "dark": goldenrod
+  ),
+  "color-headline-primary" : (
+    "light" : $color-violet-dark,
+    "dark": ulu.cssvar-use("color-type")
   ),
   "color-error" : (
     "light" :red,
@@ -46,13 +54,12 @@ $theme-colors: (
   ),
   "color-background" : (
     "light" :white,
-    "dark": $color-gray-dark
+    "dark": ulu.color-shade($color-gray-dark, 30%)
   ),
   "color-header-background" : (
     "light" :ulu.color-tint($color-gray-dark, 95%),
-    "dark": ulu.color-tint($color-gray-dark, 15%)
+    "dark": ulu.color-shade($color-gray-dark, 40%)
   ),
-
   "color-accent" : (
     "light" : $color-violet-dark,
     "dark":  ulu.color-tint($color-violet-dark, 60%)
@@ -67,11 +74,11 @@ $theme-colors: (
   ),
   "color-rule" : (
     "light" : $color-rule,
-    "dark": $color-gray-light-x
+    "dark": rgba(255,255,255,0.25)
   ),
   "color-rule-light" : (
     "light" : $color-rule-light,
-    "dark": $color-rule-light
+    "dark": rgba(255,255,255,0.1)
   ),
   "color-rule-logo" : (
     "light" : #0000006b,
@@ -110,12 +117,16 @@ $theme-colors: (
     "dark": ulu.color-shade($color-gray-dark, 15%)
   ),
   "color-background-details" :(
-    "light" : ulu.color-tint($color-rule-light, 50%),
-    "dark": ulu.color-tint($color-gray-dark, 25%)
+    "light" : ulu.color-tint($color-rule-light, 40%),
+    "dark": rgba(0,0,0,0.3)
+  ),
+  "color-table-border-color" : (
+    "light" : ulu.cssvar-use("color-rule-light"),
+    "dark": ulu.cssvar-use("color-rule-light")
   ),
   "color-table-header-background" : (
     "light" :#eeeeee,
-    "dark":  $color-violet-dark
+    "dark": ulu.color-shade($color-gray-dark, 40%)
   ),
   "color-table-cell-background" : (
     "light" :white,
@@ -171,7 +182,7 @@ $theme-colors: (
   ),
   "color-navtree-active" : (
     "light" : color.change($color-gray-dark, $alpha: 0.1),
-    "dark": color.change($color-gray-dark, $alpha: 0.4)
+    "dark": $color-gray-dark
   ),
   "color-navtree-hover" : (
     "light" : color.change($color-gray-dark, $alpha: 0.2),

@@ -53,6 +53,7 @@
 @forward "sticky-list" as sticky-list-*;
 @forward "slider" as slider-*;
 @forward "hero" as hero-*;
+@forward "table-scroller" as table-scroller-*;
 @forward "tabs" as tabs-*;
 @forward "tag" as tag-*;
 @forward "tagged" as tagged-*;
@@ -118,6 +119,7 @@
 @use "slider";
 @use "hero";
 @use "tabs";
+@use "table-scroller";
 @use "tag";
 @use "tagged";
 @use "tile-grid";
@@ -182,6 +184,7 @@ $all-includes: (
   "slider",
   "hero",
   "tabs",
+  "table-scroller",
   "tag",
   "tagged",
   "tile-grid",
@@ -385,6 +388,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "tabs")) {
     @include tabs.styles;
+  }
+  @if (list.index($includes, "table-scroller")) {
+    @include table-scroller.styles;
   }
   @if (list.index($includes, "tile-grid")) {
     @include tile-grid.styles;

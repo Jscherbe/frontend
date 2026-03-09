@@ -12,6 +12,8 @@
     - Add cursor pointer to summary elements by default
   - `helpers/utilities` 
     - Add grid/flexbox utility classes that we didn't have
+  - `components/accordion` 
+    - Remove summary active border (that shows up between content and summary when open) since this is meant to be borderless
   - `components/card` 
     - Fix issue with last major card update (overlay hover styles when not overlay modifier)
   - `components/badge` 
@@ -35,6 +37,8 @@
   - `components/data-list` 
     - Add new component for self-explanatory lists that display similar to tables on desktop
     - Add demo of different presets and ways it might be used
+  - `components/table-scroller`  (New component)
+    - Add new simple wrapper component for making tables that overflow (not related to sticky table plugins)
 - ***JS**
   - `ui/modal-builder.js`
     - Add option for "fullscreenMobile"

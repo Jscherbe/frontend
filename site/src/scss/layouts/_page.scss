@@ -5,7 +5,7 @@
 // $menu-width: 20rem;
 
 .page {
-  background-color: white;
+  background-color: ulu.cssvar-use("color-background");
   display: grid;
   grid-template-areas: "header body toc";
   grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr) minmax(0, 15rem);
@@ -39,17 +39,8 @@
   
 }
 .page__header {
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // width: $menu-width;
   grid-area: header;
   z-index: ulu.layout-get("z-index-above");
-  // height: 100%;
-  // z-index: $z-index; 
-  // background-color: white;
-  
-  // border-right: ulu.element-get-rule-style("light");
   @include ulu.breakpoint-max("medium") {
     height: auto;
   }
@@ -59,8 +50,6 @@
 }
 .page__body {
   grid-area: body;
-  background-color: ulu.cssvar-use("color-background");
-  // padding-left: $menu-width;
 }
 .page__toc {
   grid-area: toc;
@@ -69,7 +58,6 @@
     position: static;
   }
 }
-
 .page__body-top {
   padding-top: 6rem;
   .page--toc-inline & {
@@ -79,7 +67,6 @@
     padding-top: 3rem;
   }
 }
-
 .page__content-header {
   background-color: ulu.cssvar-use("color-content-header-background");
 }
