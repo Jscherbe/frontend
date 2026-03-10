@@ -28,6 +28,10 @@
   - `components/button-group` 
     - Add option for "gap-joined" if you have solid buttons (no border) and want a gap
   - `components/modal` 
+    - Fill in all flex properties that were shorthand on header/footer/body
+      - To avoid layout issues with safari using shorthand (Safari miscalculates the intrinsic content
+  size of flex items with a 0% basis)
+      - Also add min-height: 0 to body so it can collapse if needed (if the body is larger than the max height of parent 100vh)
     - Add config for "min-width" (previously hard-coded)
     - Add dvh units so that the bottom of modals doesn't change as URL bars adjust (ios, etc)
     - Add new modifier that overrides the different layouts (eg left, right) to be fullscreen at mobile (modal--fullscreen-mobile)

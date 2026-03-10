@@ -207,19 +207,20 @@ $config: (
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 0;
+    flex: 0 0 auto;
     padding: get("header-padding");
     border-bottom: get("header-border-bottom");
     background-color: color.get(get("header-background-color"));
     color: color.get(get("header-color"));
   }
   #{ $prefix }__body {
-    flex: 1;
+    flex: 1 1 auto;
+    min-height: 0; // to ensure the flex grow container can get smaller than it's content (and scroll) when needed
     overflow: auto;
     padding: get("body-padding");
   }
   #{ $prefix }__footer {
-    flex: 0;
+    flex: 0 0 auto;
     padding: get("footer-padding");
     background-color: color.get(get("footer-background-color"));
     border-top: get("footer-border-top");
