@@ -341,7 +341,8 @@ Because this iframe lacks static pixel dimensions, `autoIframe` will apply `.mod
   data-ulu-modal-builder='{ 
     "title" : "External Webpage",
     "size" : "large",
-    "documentEnd" : true
+    "documentEnd" : true,
+    "fullscreenMobile": true
   }' 
   hidden
 >
