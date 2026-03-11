@@ -1,6 +1,6 @@
 Important:
   ☐ Card
-    ☐ Remove flex grow on main (this is probably just for horizontal)
+    ✔ Remove flex grow on main (this is probably just for horizontal) @done
     ☐ Ensure card grid is working correctly with one-column for horizontal @important
   ✘ Should we have surfaces (background-color/background, color, border, border-radius) @cancelled
     * We think this may make it more complicated as there is too much tendency not to match/unify across different designs
