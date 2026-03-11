@@ -1,6 +1,9 @@
 Important:
-  ☐ Ensure card grid is working correctly with one-column for horizontal @important
-  ☐ Should we have surfaces (background-color/background, color, border, border-radius)
+  ☐ Card
+    ☐ Remove flex grow on main (this is probably just for horizontal)
+    ☐ Ensure card grid is working correctly with one-column for horizontal @important
+  ✘ Should we have surfaces (background-color/background, color, border, border-radius) @cancelled
+    * We think this may make it more complicated as there is too much tendency not to match/unify across different designs
     * Something that contains visual properties that are pretty common, then we can begin using them like colors (by key)
     * This would reduce the complexity of some of the configuration between components you would just define and use surfaces?
     * Could be rolled out incrementally (maybe), could be something for future larger version change

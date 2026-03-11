@@ -235,9 +235,6 @@ $config: (
     flex-direction: column;
     min-height: get("body-min-height");
   }
-  #{ $prefix }__main {
-    flex-grow: 1;
-  }
   #{ $prefix }__footer {
     grid-column: 1;
     display: flex;
@@ -565,6 +562,7 @@ $config: (
     justify-content: space-between;
   }
   #{ $prefix }__main {
+    flex-grow: 1;
     max-width: get("horizontal-main-max-width");
   }
   #{ $prefix }__aside {

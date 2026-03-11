@@ -21,6 +21,8 @@
   - `components/ratio-box` 
     - Refactor to use modern aspect ratio (phase out padding hack), but still support legacy percentage values for aspect ratios
     - This is becoming less needed with modern CSS, supporting it because it's tiny and legacy sites may be using this for iframes/etc
+  - `components/card` 
+    - Remove flex-grow on `.card__main` (keep for horizontal) so that cards aside stacks vertically naturally under it vs aligned at the bottom of the card in cards in a grid
   - `components/card-grid` 
     - Simplify to use implicit grid. Remove config options that were related to explicit grid creation (which was going to require adaptive breakpoints and custom properties to work in different situations). 
       - Options removed: template-columns, compact-template-columns
