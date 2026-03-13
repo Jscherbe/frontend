@@ -3,8 +3,8 @@ import { getDefaultSettings as l, getSetting as n, getSettings as p, updateSetti
 import { ComponentInitializer as m } from "./core/component.js";
 import { BreakpointManager as I } from "./ui/breakpoints.js";
 import { Collapsible as S } from "./ui/collapsible.js";
-import { init as D, initializer as C, setupGroup as v } from "./ui/details-group.js";
-import { baseAttribute as y, closeAttribute as T, defaults as B, getDialogOptions as P, init as h, initializer as A, setDefaults as L, setupDialog as k, setupTrigger as G } from "./ui/dialog.js";
+import { init as D, initializer as v, setupGroup as C } from "./ui/details-group.js";
+import { baseAttribute as T, closeAttribute as y, defaults as B, getDialogOptions as P, init as h, initializer as A, setDefaults as L, setupDialog as k, setupTrigger as G } from "./ui/dialog.js";
 import { Flipcard as M, init as w, initializer as U } from "./ui/flipcard.js";
 import { init as F, initializer as O } from "./ui/grid.js";
 import { buildModal as N, defaults as R, init as W, initializer as K, setDefaults as j } from "./ui/modal-builder.js";
@@ -17,8 +17,8 @@ import { attrs as ne, init as pe } from "./ui/print-details.js";
 import { init as ue } from "./ui/print.js";
 import { attachHandlers as de, defaults as me, init as xe, initializer as Ie, setDefaults as ce, setupProxy as Se } from "./ui/proxy-click.js";
 import { Resizer as De } from "./ui/resizer.js";
-import { init as ve, initializer as be } from "./ui/scroll-slider.js";
-import { Scrollpoint as Te, init as Be, initializer as Pe } from "./ui/scrollpoint.js";
+import { init as Ce, initializer as be } from "./ui/scroll-slider.js";
+import { Scrollpoint as ye, init as Be, initializer as Pe } from "./ui/scrollpoint.js";
 import { Slider as Ae, init as Le, initializer as ke, setupSlider as Ge } from "./ui/slider.js";
 import { TabManager as Me } from "./ui/tab-manager.js";
 import { init as Ue, initializer as Ve, instances as Fe, setup as Oe } from "./ui/tabs.js";
@@ -32,6 +32,7 @@ import { configureIcons as ut } from "./utils/font-awesome.js";
 import { ensureId as dt, newId as mt } from "./utils/id.js";
 import { pauseVideos as It, prepVideos as ct } from "./utils/pause-youtube-video.js";
 import { getSoleIframeLayout as zt } from "./utils/iframe.js";
+import { observeDialogToggle as vt } from "./utils/dialog.js";
 export {
   I as BreakpointManager,
   S as Collapsible,
@@ -42,7 +43,7 @@ export {
   te as Popover,
   J as ProgrammaticModalManager,
   De as Resizer,
-  Te as Scrollpoint,
+  ye as Scrollpoint,
   Ae as Slider,
   Me as TabManager,
   Je as Tooltip,
@@ -54,10 +55,10 @@ export {
   i as createUluEvent,
   it as dataAttributeToDatasetKey,
   D as detailsGroupInit,
-  C as detailsGroupInitializer,
-  v as detailsGroupSetupGroup,
-  y as dialogBaseAttribute,
-  T as dialogCloseAttribute,
+  v as detailsGroupInitializer,
+  C as detailsGroupSetupGroup,
+  T as dialogBaseAttribute,
+  y as dialogCloseAttribute,
   B as dialogDefaults,
   P as dialogGetDialogOptions,
   h as dialogInit,
@@ -85,6 +86,7 @@ export {
   K as modalBuilderInitializer,
   j as modalBuilderSetDefaults,
   mt as newId,
+  vt as observeDialogToggle,
   Z as overflowScrollerCreatePager,
   $ as pageInit,
   ie as popoverGetContentByTrigger,
@@ -102,7 +104,7 @@ export {
   ce as proxyClickSetDefaults,
   Se as proxyClickSetupProxy,
   rt as resolveClasses,
-  ve as scrollSliderInit,
+  Ce as scrollSliderInit,
   be as scrollSliderInitializer,
   Be as scrollpointInit,
   Pe as scrollpointInitializer,

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.2
+
+- Add missing export for util `observeDialogToggle` in js bundle
+
 ## 0.3.1
 
 - Add missing export for util `getSoleIframeLayout` in js bundle
