@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.1
+
+- Add missing export for util `getSoleIframeLayout` in js bundle
+
 ## 0.3.0
 
 - **Docs**

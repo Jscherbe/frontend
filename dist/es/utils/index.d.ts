@@ -1,5 +1,6 @@
 export { FileSave } from './file-save.js';
 export { configureIcons as fontAwesomeConfigureIcons } from './font-awesome.js';
+export { getSoleIframeLayout } from './iframe.js';
 export { set as classLoggerSet, log as classLoggerLog, logWarning as classLoggerLogWarning, logError as classLoggerLogError } from './class-logger.js';
 export { dataAttributeToDatasetKey, setPositionClasses, resolveClasses } from './dom.js';
 export { defaults as floatingUiDefaults, createFloatingUi } from './floating-ui.js';
