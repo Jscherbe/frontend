@@ -125,3 +125,4 @@ These exports originate from the `lib/js/utils/` directory.
 - `setPositionClasses`
 - `youtubePauseVideos`
 - `youtubePrepVideos`
+- `getSoleIframeLayout`
