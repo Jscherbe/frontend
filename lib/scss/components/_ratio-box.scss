@@ -6,6 +6,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "sass:meta";
+@use "sass:list";
 @use "../utils";
 @use "../layout";
 
@@ -15,11 +16,11 @@
 /// @prop {Map} sizes [Map] Other ratios to add (apply with modifier class)
 
 $config: (
-  "size" : "4/3",
+  "size" : list.slash(4, 3),
   "sizes" : (
-    "16x9" : "16/9",
-    "9x16" : "9/16",
-    "3x4" : "3/4"
+    "16x9" : list.slash(16, 9),
+    "9x16" : list.slash(9, 16),
+    "3x4" : list.slash(3, 4)
   )
 ) !default;
 

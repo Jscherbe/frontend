@@ -4,6 +4,7 @@
 
 @use "sass:map";
 @use "sass:meta";
+@use "sass:list";
 
 @use "../color";
 @use "../element";
@@ -82,6 +83,8 @@ $-fallbacks: (
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
 /// @prop {Map} sizes [Map] Size options to enable unique stylings.
 /// @prop {String} breakpoint [true] Optional breakpoint for modals (used for adaptive things like fullscreen-mobile), if set to true will fallback to breakpoint default
+/// @prop {String} frame-aspect-ratio [list.slash(16, 9)] Default aspect ratio for single embedded items in frame-ratio layout
+/// @prop {String} frame-fill-min-height [65vh] Default minimum height for single embedded items in frame-fill layout
 
 $config: (
   "backdrop-color" :                true,
@@ -128,6 +131,8 @@ $config: (
   "title-size" :                    "large",
   "title-text-transform" :          null,
   "breakpoint" :                    true,
+  "frame-aspect-ratio" :            list.slash(16, 9),
+  "frame-fill-min-height" :         65vh,
   "sizes" : (
     "small" : 30rem,
     "large" : 80rem
@@ -369,7 +374,10 @@ $config: (
       padding-right: get("resizer-width");  
     }
   }
-  #{ $prefix }--body-fills {
+  // Share body flush layout
+  #{ $prefix }--body-fills,
+  #{ $prefix }--frame-ratio,
+  #{ $prefix }--frame-fill {
     #{ $prefix }__header {
       border-bottom: none;
     }
@@ -381,15 +389,14 @@ $config: (
     min-height: 0;
   }
 
-  // Iframe automatic layout modifiers
-  // Both modes use absolute positioning to escape CMS wrappers (p, div, etc)
-  #{ $prefix }--iframe-ratio,
-  #{ $prefix }--iframe-fill {
+  // Frame layouts for absolute positioned single content (e.g. iframes)
+  // Both modes use absolute positioning to escape wrappers (p, div, etc)
+  #{ $prefix }--frame-ratio,
+  #{ $prefix }--frame-fill {
     #{ $prefix }__body {
       position: relative;
-      padding: 0;
     }
-    iframe {
+    #{ $prefix }__frame-content {
       position: absolute;
       top: 0;
       left: 0;
@@ -399,12 +406,21 @@ $config: (
     }
   }
 
-  // Ratio-specific: disable minimum heights and flex-grow so it perfectly wraps the video
-  #{ $prefix }--iframe-ratio {
+  // Ratio-specific: disable minimum heights and flex-grow so it perfectly wraps
+  #{ $prefix }--frame-ratio {
     min-height: 0;
     #{ $prefix }__body {
       flex: none; 
-      // aspect-ratio is applied inline by JS
+      // Default, can be overridden inline
+      aspect-ratio: utils.normalize-aspect-ratio(get("frame-aspect-ratio")); 
+    }
+  }
+
+  // Fill-specific: default height
+  #{ $prefix }--frame-fill {
+    #{ $prefix }__body {
+      // Default, can be overridden inline
+      min-height: get("frame-fill-min-height"); 
     }
   }
 

@@ -260,13 +260,13 @@ Adding `modal--fullscreen-mobile` class to the modal (via the `class` builder op
 
 <h2 class="h2">Iframes (Auto Layout)</h2>
 
-Modal Builder has an `autoIframe` feature (enabled by default) that intelligently styles iframes if they are the sole item within the dialog body. It removes padding to create a seamless embed experience.
+Modal Builder has an `autoIframe` feature (must be enabled explicitly with `"autoIframe": true`) that intelligently styles iframes if they are the sole item within the dialog body. It removes padding to create a seamless embed experience.
 *   **Media Iframes (Aspect Ratio):** If the iframe has static `width` and `height` attributes (like a standard YouTube embed), the modal automatically retains that aspect ratio responsively.
 *   **Document Iframes (Fill):** If the iframe has percentage dimensions or no dimensions (like embedding a map or full webpage), the modal forces the iframe to completely fill the available space.
 
 <h3 class="h3">Media Iframe (YouTube Aspect Ratio)</h3>
 
-Because this YouTube iframe includes standard width/height attributes, `autoIframe` will apply `.modal--iframe-ratio` and a dynamic inline `aspect-ratio`, ensuring the video scales perfectly without stretching or requiring wrapper divs.
+Because this YouTube iframe includes standard width/height attributes, `autoIframe` will apply `.modal--frame-ratio` and a dynamic inline `aspect-ratio`, ensuring the video scales perfectly without stretching or requiring wrapper divs.
 
 {% CodePreview %}
 
@@ -277,7 +277,8 @@ Because this YouTube iframe includes standard width/height attributes, `autoIfra
   data-ulu-modal-builder='{ 
     "title" : "YouTube (Auto Aspect Ratio)",
     "print" : true,
-    "documentEnd" : true
+    "documentEnd" : true,
+    "autoIframe": true
   }' 
   hidden
 >
@@ -308,7 +309,8 @@ Even if the CMS wraps the iframe in a paragraph or div tag, the `autoIframe` fea
   data-ulu-modal-builder='{ 
     "title" : "YouTube (Wrapped by CMS)",
     "print" : true,
-    "documentEnd" : true
+    "documentEnd" : true,
+    "autoIframe": true
   }' 
   hidden
 >
@@ -328,9 +330,40 @@ Even if the CMS wraps the iframe in a paragraph or div tag, the `autoIframe` fea
 
 {% endCodePreview %}
 
+<h3 class="h3">Media Iframe (No Header)</h3>
+
+Testing layout when no title/header is provided, meaning the iframe frame is perfectly flush to the top edge of the dialog.
+
+{% CodePreview %}
+
+<button class="button" data-ulu-dialog-trigger="modal-id-youtube-no-header">Open YouTube Modal (No Header)</button>
+
+<div 
+  id="modal-id-youtube-no-header" 
+  data-ulu-modal-builder='{ 
+    "print" : true,
+    "documentEnd" : true,
+    "autoIframe": true
+  }' 
+  hidden
+>
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/y0sF5xhGreA?si=aRdiK0Xzf3zvHP_E" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen
+  ></iframe>
+</div>
+
+{% endCodePreview %}
+
 <h3 class="h3">Document Iframe (Wikipedia Fill)</h3>
 
-Because this iframe lacks static pixel dimensions, `autoIframe` will apply `.modal--iframe-fill`, forcing it to edge-to-edge inside the large modal.
+Because this iframe lacks static pixel dimensions, `autoIframe` will apply `.modal--frame-fill`, forcing it to edge-to-edge inside the large modal.
 
 {% CodePreview %}
 
@@ -342,7 +375,8 @@ Because this iframe lacks static pixel dimensions, `autoIframe` will apply `.mod
     "title" : "External Webpage",
     "size" : "large",
     "documentEnd" : true,
-    "fullscreenMobile": true
+    "fullscreenMobile": true,
+    "autoIframe": true
   }' 
   hidden
 >
@@ -367,7 +401,8 @@ The same automatic filling behavior, but inside a modal set to `size: "fullscree
   data-ulu-modal-builder='{ 
     "title" : "External Webpage (Fullscreen)",
     "size" : "fullscreen",
-    "documentEnd" : true
+    "documentEnd" : true,
+    "autoIframe": true
   }' 
   hidden
 >
@@ -568,7 +603,7 @@ You can set these properties for custom title implementations and to add optiona
 
 <h3 class="h3">Youtube Embed (Manual Aspect Ratio)</h3>
 
-This is the legacy method for handling video aspect ratios using the `.ratio-box` wrapper. Note the use of `autoIframe: false` to prevent the modal from attempting to automatically format the inner iframe. `bodyFills` removes the padding.
+This is the legacy method for handling video aspect ratios using the `.ratio-box` wrapper. Note we no longer need to pass `autoIframe: false` because it is false by default. `bodyFills` removes the padding.
 
 {% CodePreview %}
 
@@ -580,8 +615,7 @@ This is the legacy method for handling video aspect ratios using the `.ratio-box
     "title" : "Test Title",
     "print" : true,
     "bodyFills" : true,
-    "documentEnd" : true,
-    "autoIframe": false
+    "documentEnd" : true
   }' 
   class="ratio-box ratio-box--16x9"
   hidden

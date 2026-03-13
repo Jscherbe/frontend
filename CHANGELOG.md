@@ -48,8 +48,9 @@
 - ***JS**
   - `ui/modal-builder.js`
     - Add option for "fullscreenMobile"
-    - Add options for "iframeAutoLayout"
+    - Add options for "autoIframe"
       - This will apply logic to work with the new modal modifiers for iframe (listed above)
+      - Has to be enabled, disabled by default
   - `ui/dialog.js`
     - Move away from using "toggle" event for dialog behaviors (prevent scroll, etc). Older safari only has close event and doesn't support toggle. Replace with mutation observer on open attribute
   - `utils/iframe.js`

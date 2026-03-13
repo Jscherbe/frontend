@@ -34,6 +34,11 @@ When developing new SCSS components or maintaining existing ones, adhere to the 
   
 TODO: This section should be added to... (sassdoc type naming, etc). Formatting...
 
+## Documentation
+
+-   `site/`: Contains the source code for the documentation website (Eleventy). **Edit files here.**
+-   `docs/`: The build output for GitHub Pages. **Do not edit files here directly.**
+
 ## Benchmark Notes
 
 ### Javascript

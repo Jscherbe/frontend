@@ -1,7 +1,14 @@
 Important:
-  ☐ Card
+  ☐ DX: warn about typos on property names
+    ☐ All modules create util for set method that ensures that the keys being set are valid to the $config
+    * If not just throw warning, and add option to configure this in utils module
+    ☐ Note this should be configurable (depending on how users have used maps they may want to disable if added unique properties)
+    ☐ Note we should have some configuration for this (like wildcards) so we can allow some keys which we have abused (see example below)
+      * element > box-shadow-[custom name]
+      * element > font-weight-[custom name]
+  ✔ Card @done
     ✔ Remove flex grow on main (this is probably just for horizontal) @done
-    ☐ Ensure card grid is working correctly with one-column for horizontal @important
+    ✔ Ensure card grid is working correctly with one-column for horizontal @important @done
   ✘ Should we have surfaces (background-color/background, color, border, border-radius) @cancelled
     * We think this may make it more complicated as there is too much tendency not to match/unify across different designs
     * Something that contains visual properties that are pretty common, then we can begin using them like colors (by key)
@@ -13,27 +20,25 @@ Important:
     * Might also consider that these can be output as utility/helper classes as-needed (we do not want to move towards unmaintainable atomic design but there are scenarios where that feature is useful so optional utilities would be good)
     * This addresses the old merge framework (where everything was sass maps you merge and print out) which was useful, things inherit and are easy to pass around as values. But it's not a good pattern because it re-invents some of what CSS is designed to do, it relies on maps to work like rulesets which is a more LESS centric idea and I fear issues with that and sass, anyways it gets complex with breakpoints. 
       * So maybe this can be more like limited maps like that with specific properties that are allowed and are mostly like visual swatches that are a little more than just a foreground/background
-    ☐ Then we might phase out the color contexts those aren't really used anymore and custom properties makes there user not as important
+    ✘ Then we might phase out the color contexts those aren't really used anymore and custom properties makes there user not as important @cancelled
       * More important to setup the theme module to handle custom property assignment
-  ☐ All modules create util for set method that ensures that the keys being set are valid to the $config
-    * If not just throw warning, and add option to configure this in utils module
   ✔ SCSS is introducing a breaking change (new if statement) @in-progress @done
   ✔ Button group needs optional gap (instead of overlap) @done
 
   ✔ Card grid needs breakpoint configuration @needed @done
     * Went back to imp
-  ☐ Modals
+  ✔ Modals @done
     ✔ Update vue library with the observer method @done
     ✔ Modal needs modifier for full screen on mobile @done
     ✔ Safari rendering bugs @done
-    ☐ Test iframes in modal (just to confirm we don't need any extra scripting/behaviors to handle things like this automatically) @important @needed
+    ✔ Test iframes in modal (just to confirm we don't need any extra scripting/behaviors to handle things like this automatically) @important @needed @done
       * Tested we may need to create a script for this
-      ☐ We need to create a utility script for this, can be optional (we just use it in our themes and it lives in here) but if it's tiny it should probably just be a dialog module feature
+      ✔ We need to create a utility script for this, can be optional (we just use it in our themes and it lives in here) but if it's tiny it should probably just be a dialog module feature @done
         * The script would create the ratio needed based on the content in the iframe (possibly removing any inline styles it has if needed)
         * This would be an opt-in feature for modal builder and basic dialog handler/module
-        ☐ iframeAutoLayout to be opt-in or opt-out?
-  ☐ Add table scroller utility @needed
-    ☐ Make sure to test with data-table @important 
+        ✔ iframeAutoLayout to be opt-in or opt-out? @done
+  ✔ Add table scroller utility @needed @done
+    ✔ Make sure to test with data-table @important @done
     * Maybe just horizontal-scroller (something agnostic of tables)
     * But think about future if we have things wrapped like this
     * Could also be an extra parent selector provide by data-table but seems like it's useful by itself. Just need to decide if we want a rigid / semantic class for it (tied only to tables for future adjustments, knowing it's only being used on tables) or if it makes sense as more of a general purpose layout utility (could just be simple layout utility and then no inner selectors [no margin opionated, and user should remove there margins on inner elements and this is just overflow])
