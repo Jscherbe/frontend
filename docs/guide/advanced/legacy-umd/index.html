@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Developing Ulu SCSS Module
+    Legacy &amp; UMD Usage
   </title>
   <meta name="description" content="Modular Sass Theming Library">
   <meta name="generator" content="Eleventy v3.1.2">
@@ -29,10 +29,12 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-BfxJ4ETk.css">
+  <link rel="stylesheet" href="/frontend/assets/main-Df2_JmYD.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
+
+
 
 
 <header class="page__header header">
@@ -52,23 +54,6 @@
   </div>
   <nav class="header__nav">
     <h2 class="hidden-visually">Main Menu</h2>
-    <div class="header__nav-links">
-      <button class="button button--small button--icon button--icon-small" data-ulu-theme-toggle='{ 
-          "savePreference" : true,
-          "checkMediaQuery" : true,
-          "group" : "page"
-        }'>
-        <span class="hidden-visually">Toggle Theme to <span data-ulu-theme-toggle-label="">Dark</span></span>
-        <span class="fas fa-moon" data-ulu-theme-toggle-icon=""></span>
-      </button>
-      <a class="button button--small button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github">
-        <span class="fab fa-github" aria-hidden="true"></span>
-      </a>
-      <a class="button button--small button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend">
-        
-        <span class="fab fa-npm" aria-hidden="true"></span>
-      </a>
-    </div>
     <div class="header__nav-menu">
       
       <ul class="nav-tree" data-menu-depth="1">
@@ -94,14 +79,28 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/guide/building-stylesheet/">
+        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/guide/">
           
     
     <span class="nav-tree__text">
-      Building a Stylesheet
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/installation/">
+          
+    
+    <span class="nav-tree__text">
+      Installation & Setup
     </span>
   
         </a>
@@ -112,11 +111,120 @@
 
         <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  " href="/frontend/guide/package-consumption/">
+        <a class="nav-tree__link  " href="/frontend/guide/recommended-setup/">
           
     
     <span class="nav-tree__text">
-      Package Consumption
+      Recommended Project Setup
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/javascript-system/">
+          
+    
+    <span class="nav-tree__text">
+      JavaScript System
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/theming/">
+          
+    
+    <span class="nav-tree__text">
+      SCSS System & Theming
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/using-components/">
+          
+    
+    <span class="nav-tree__text">
+      Workflow: Using Components
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Advanced
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/advanced/creating-scss-modules/">
+          
+    
+    <span class="nav-tree__text">
+      Creating SCSS Modules
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/advanced/creating-js-components/">
+          
+    
+    <span class="nav-tree__text">
+      Creating JS Components
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/advanced/developing-libraries/">
+          
+    
+    <span class="nav-tree__text">
+      Developing Dependent Libraries
     </span>
   
         </a>
@@ -127,16 +235,21 @@
 
         <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/guide/developing-ulu-scss-module/" aria-current="page">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/guide/advanced/legacy-umd/" aria-current="page">
           
     
     <span class="nav-tree__text">
-      Developing Ulu SCSS Module
+      Legacy & UMD Usage
     </span>
   
         </a>
       
           
+        </li>
+      
+      </ul>
+    
+          </details>
         </li>
       
       </ul>
@@ -398,6 +511,21 @@
     
     <span class="nav-tree__text">
       Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/data-list/">
+          
+    
+    <span class="nav-tree__text">
+      Data List
     </span>
   
         </a>
@@ -738,6 +866,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/ratio-box/">
+          
+    
+    <span class="nav-tree__text">
+      Ratio Box
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/rule/">
           
     
@@ -848,6 +991,21 @@
     
     <span class="nav-tree__text">
       Tab Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/table-scroller/">
+          
+    
+    <span class="nav-tree__text">
+      Table Scroller
     </span>
   
         </a>
@@ -1667,6 +1825,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/sass/components/data-list/">
+          
+    
+    <span class="nav-tree__text">
+      Data-list
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/sass/components/data-table/">
           
     
@@ -2197,6 +2370,21 @@
     
     <span class="nav-tree__text">
       Sticky-list
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/table-scroller/">
+          
+    
+    <span class="nav-tree__text">
+      Table-scroller
     </span>
   
         </a>
@@ -2965,6 +3153,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-dialog/">
+          
+    
+    <span class="nav-tree__text">
+      utils/dialog
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -3040,6 +3243,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-iframe/">
+          
+    
+    <span class="nav-tree__text">
+      utils/iframe
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-pause-youtube-video/">
           
     
@@ -3076,6 +3294,26 @@
       
       </ul>
     
+    </div>
+    <div class="header__nav-links">
+      
+  <div class="button-group">
+    <button class="button button--small button--secondary button--icon button--icon-small" data-ulu-theme-toggle='{ 
+        "savePreference" : true,
+        "checkMediaQuery" : true,
+        "group" : "page"
+      }'>
+      <span class="hidden-visually">Toggle Theme to <span data-ulu-theme-toggle-label="">Dark</span></span>
+      <span class="fas fa-moon" data-ulu-theme-toggle-icon=""></span>
+    </button>
+    <a class="button button--small button--secondary button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github">
+      <span class="fab fa-github" aria-hidden="true"></span>
+    </a>
+    <a class="button button--small button--secondary button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend">
+      
+      <span class="fab fa-npm" aria-hidden="true"></span>
+    </a>
+  </div>
     </div>
     <div id="mobile-menu" data-ulu-modal-builder='{
         "title" : "Menu",
@@ -3105,14 +3343,28 @@
             
       <ul class="nav-tree" data-menu-depth="2">
         
-        
-        <li class="nav-tree__item  ">
+        <li class="nav-tree__item is-active-trail ">
           
-        <a class="nav-tree__link  " href="/frontend/guide/building-stylesheet/">
+        <a class="nav-tree__link nav-tree__link--index is-active-trail" href="/frontend/guide/">
           
     
     <span class="nav-tree__text">
-      Building a Stylesheet
+      Introduction
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/installation/">
+          
+    
+    <span class="nav-tree__text">
+      Installation & Setup
     </span>
   
         </a>
@@ -3123,11 +3375,120 @@
 
         <li class="nav-tree__item  ">
           
-        <a class="nav-tree__link  " href="/frontend/guide/package-consumption/">
+        <a class="nav-tree__link  " href="/frontend/guide/recommended-setup/">
           
     
     <span class="nav-tree__text">
-      Package Consumption
+      Recommended Project Setup
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/javascript-system/">
+          
+    
+    <span class="nav-tree__text">
+      JavaScript System
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/theming/">
+          
+    
+    <span class="nav-tree__text">
+      SCSS System & Theming
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/using-components/">
+          
+    
+    <span class="nav-tree__text">
+      Workflow: Using Components
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item is-active-trail ">
+          <details class="nav-tree__collapsible" open="">
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__text">
+      Advanced
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="3">
+        
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/advanced/creating-scss-modules/">
+          
+    
+    <span class="nav-tree__text">
+      Creating SCSS Modules
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/advanced/creating-js-components/">
+          
+    
+    <span class="nav-tree__text">
+      Creating JS Components
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/guide/advanced/developing-libraries/">
+          
+    
+    <span class="nav-tree__text">
+      Developing Dependent Libraries
     </span>
   
         </a>
@@ -3138,16 +3499,21 @@
 
         <li class="nav-tree__item is-active is-active-trail ">
           
-        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/guide/developing-ulu-scss-module/" aria-current="page">
+        <a class="nav-tree__link  is-active is-active-trail" href="/frontend/guide/advanced/legacy-umd/" aria-current="page">
           
     
     <span class="nav-tree__text">
-      Developing Ulu SCSS Module
+      Legacy & UMD Usage
     </span>
   
         </a>
       
           
+        </li>
+      
+      </ul>
+    
+          </details>
         </li>
       
       </ul>
@@ -3409,6 +3775,21 @@
     
     <span class="nav-tree__text">
       Data grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/data-list/">
+          
+    
+    <span class="nav-tree__text">
+      Data List
     </span>
   
         </a>
@@ -3749,6 +4130,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/ratio-box/">
+          
+    
+    <span class="nav-tree__text">
+      Ratio Box
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/rule/">
           
     
@@ -3859,6 +4255,21 @@
     
     <span class="nav-tree__text">
       Tab Manager
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/table-scroller/">
+          
+    
+    <span class="nav-tree__text">
+      Table Scroller
     </span>
   
         </a>
@@ -4678,6 +5089,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/sass/components/data-list/">
+          
+    
+    <span class="nav-tree__text">
+      Data-list
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/sass/components/data-table/">
           
     
@@ -5208,6 +5634,21 @@
     
     <span class="nav-tree__text">
       Sticky-list
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/table-scroller/">
+          
+    
+    <span class="nav-tree__text">
+      Table-scroller
     </span>
   
         </a>
@@ -5976,6 +6417,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-dialog/">
+          
+    
+    <span class="nav-tree__text">
+      utils/dialog
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-dom/">
           
     
@@ -6051,6 +6507,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/javascript/utils-iframe/">
+          
+    
+    <span class="nav-tree__text">
+      utils/iframe
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/javascript/utils-pause-youtube-video/">
           
     
@@ -6087,6 +6558,26 @@
       
       </ul>
     
+      <div class="margin-top">
+        
+  <div class="button-group">
+    <button class="button button--small button--secondary button--icon button--icon-small" data-ulu-theme-toggle='{ 
+        "savePreference" : true,
+        "checkMediaQuery" : true,
+        "group" : "page"
+      }'>
+      <span class="hidden-visually">Toggle Theme to <span data-ulu-theme-toggle-label="">Dark</span></span>
+      <span class="fas fa-moon" data-ulu-theme-toggle-icon=""></span>
+    </button>
+    <a class="button button--small button--secondary button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend" aria-label="View on Github">
+      <span class="fab fa-github" aria-hidden="true"></span>
+    </a>
+    <a class="button button--small button--secondary button--icon button--icon-small" href="https://www.npmjs.com/package/@ulu/frontend">
+      
+      <span class="fab fa-npm" aria-hidden="true"></span>
+    </a>
+  </div>
+      </div>
     </div>
   </nav>
 </header>
@@ -6096,10 +6587,10 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#basic-setup">Basic Setup</a>
+                    <li><a href="#available-bundles">Available Bundles</a>
             		</li>
 
-                    <li><a href="#adding-config-fallbacks">Adding Config fallbacks</a>
+                    <li><a href="#using-the-umd-bundle">Using the UMD Bundle</a>
             		</li>
                 </ol>
             </div>
@@ -6111,122 +6602,43 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Developing Ulu SCSS Module</h1>
+    <h1 class="page__title h1">Legacy &amp; UMD Usage</h1>
 
 
   <hr class="rule rule--light rule--margin-large">
 
     <div class="wysiwyg">
-      <h2 id="basic-setup" tabindex="-1">Basic Setup</h2>
-<p>Below is the most common setup for most ulu modules. It identifies it's configuration properties, sets up get/set mixins and the common styles mixin. Everything else can be unique to the module.</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-comment">////</span>
-<span class="pjs-token pjs-comment">/// @group component-name</span>
-<span class="pjs-token pjs-comment">////</span>
+      <p>While we recommend using the ESM bundle with a modern build tool, @ulu/frontend also provides a Universal Module Definition (UMD) bundle for legacy environments or direct browser usage.</p>
+<h2 id="available-bundles" tabindex="-1">Available Bundles</h2>
+<p>The package provides two main entry points in the <code>dist/</code> directory:</p>
+<ol>
+<li><strong><code>ulu-frontend.es.js</code> (ESM):</strong>
+<ul>
+<li><strong>Format:</strong> ES Module.</li>
+<li><strong>Use Case:</strong> Modern bundlers (Vite, Webpack, Rollup).</li>
+<li><strong>Benefit:</strong> Supports tree-shaking, ensuring only the code you use ends up in your final bundle.</li>
+</ul>
+</li>
+<li><strong><code>ulu-frontend.umd.js</code> (UMD):</strong>
+<ul>
+<li><strong>Format:</strong> Universal Module Definition.</li>
+<li><strong>Use Case:</strong> Direct browser usage via <code>&lt;script&gt;</code> tag, legacy environments, or online editors like CodePen.</li>
+<li><strong>Global Variable:</strong> Exposes the library as <code>ULU</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="using-the-umd-bundle" tabindex="-1">Using the UMD Bundle</h2>
+<p>If you are not using a build step, you can include the UMD bundle directly in your HTML:</p>
+<pre class="language-html"><code class="language-html"><span class="pjs-token pjs-comment">&lt;!-- Load the CSS --></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>link</span> <span class="pjs-token pjs-attr-name">rel</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>stylesheet<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>node_modules/@ulu/frontend/dist/style.css<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
 
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"sass:map"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"sass:math"</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-comment">&lt;!-- Load the JS --></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>script</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>node_modules/@ulu/frontend/dist/ulu-frontend.umd.js<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-script"></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>script</span><span class="pjs-token pjs-punctuation">></span></span>
 
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"../selector"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"../utils"</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-comment">/// Module Settings</span>
-<span class="pjs-token pjs-comment">/// @type Map</span>
-
-<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-statement pjs-keyword">!default</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-comment">/// Change modules $config</span>
-<span class="pjs-token pjs-comment">/// @param {Map} $changes Map of changes</span>
-<span class="pjs-token pjs-comment">///   @include module-name.set(( "property" : value ));</span>
-
-<span class="pjs-token pjs-keyword">@mixin</span> <span class="pjs-token pjs-function">set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$changes</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> map.<span class="pjs-token pjs-function">merge</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$config</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$changes</span><span class="pjs-token pjs-punctuation">)</span> !global<span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-punctuation">}</span>
-
-<span class="pjs-token pjs-comment">/// Get a config option</span>
-<span class="pjs-token pjs-comment">/// @param {Map} $name Name of property</span>
-<span class="pjs-token pjs-comment">///   @include module-name.get("property");</span>
-
-<span class="pjs-token pjs-keyword">@function</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$name</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-keyword">@return</span> utils.<span class="pjs-token pjs-function">require-map-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$config</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$name</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"component-name [config]"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-punctuation">}</span>
-
-<span class="pjs-token pjs-comment">/// Prints component styles</span>
-<span class="pjs-token pjs-comment">/// @demo Check out our demo [accordion]</span>
-<span class="pjs-token pjs-comment">/// @example scss</span>
-<span class="pjs-token pjs-comment">///  @include ulu.component-example-styles();</span>
-
-<span class="pjs-token pjs-keyword">@mixin</span> <span class="pjs-token pjs-selector">styles </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$prefix</span></span><span class="pjs-token pjs-punctuation">:</span> selector.<span class="pjs-token pjs-function">class</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"component-name"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-
-  <span class="pjs-token pjs-selector">#</span><span class="pjs-token pjs-punctuation">{</span> <span class="pjs-token pjs-variable">$prefix</span> <span class="pjs-token pjs-punctuation">}</span> <span class="pjs-token pjs-punctuation">{</span>
-    <span class="pjs-token pjs-comment">// Your styles</span>
-  <span class="pjs-token pjs-punctuation">}</span>
-<span class="pjs-token pjs-punctuation">}</span></code></pre>
-<h2 id="adding-config-fallbacks" tabindex="-1">Adding Config fallbacks</h2>
-<p>Sometimes you want the value of a config property to inherit from another module (ie. core) at output time (after configuration has occurred). The module example below adds a private variable to hold fallback getters. If the value of the config property is <code>true</code> the fallback will be used if a value is provided that value is used.</p>
-<p>The only difference between this module and the basic one above is the <code>$-fallbacks</code> map and the get mixin has an extra line to insert the fallbacks if the property being requested is <code>true</code></p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-comment">////</span>
-<span class="pjs-token pjs-comment">/// @group component-name</span>
-<span class="pjs-token pjs-comment">////</span>
-
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"sass:map"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"sass:math"</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"../selector"</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"../utils"</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-comment">// Used for function fallback</span>
-<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$-fallbacks</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-comment">// Example mapping fallback to another modules config value</span>
-  <span class="pjs-token pjs-string">"content-box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"function"</span> <span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">get-function</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"get"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"element"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"property"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"box-shadow"</span>
-  <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-comment">// Example using arguments to function</span>
-  <span class="pjs-token pjs-string">"content-border-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-    <span class="pjs-token pjs-string">"function"</span> <span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">get-function</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"get-rule-style"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"element"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-    <span class="pjs-token pjs-string">"arguments"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">,</span><span class="pjs-token pjs-punctuation">)</span>
-  <span class="pjs-token pjs-punctuation">)</span>
-<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-comment">/// Module Settings</span>
-<span class="pjs-token pjs-comment">/// @type Map</span>
-
-<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"padding"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"content-box-shadow"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"content-border-bottom"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
-<span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-statement pjs-keyword">!default</span><span class="pjs-token pjs-punctuation">;</span>
-
-<span class="pjs-token pjs-comment">/// Change modules $config</span>
-<span class="pjs-token pjs-comment">/// @param {Map} $changes Map of changes</span>
-<span class="pjs-token pjs-comment">///   @include module-name.set(( "property" : value ));</span>
-
-<span class="pjs-token pjs-keyword">@mixin</span> <span class="pjs-token pjs-function">set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$changes</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> map.<span class="pjs-token pjs-function">merge</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$config</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$changes</span><span class="pjs-token pjs-punctuation">)</span> !global<span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-punctuation">}</span>
-
-<span class="pjs-token pjs-comment">/// Get a config option</span>
-<span class="pjs-token pjs-comment">/// @param {Map} $name Name of property</span>
-<span class="pjs-token pjs-comment">///   @include module-name.get("property");</span>
-
-<span class="pjs-token pjs-keyword">@function</span> <span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$name</span><span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$value</span></span><span class="pjs-token pjs-punctuation">:</span> utils.<span class="pjs-token pjs-function">require-map-get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$config</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$name</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"component-name [config]"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-  <span class="pjs-token pjs-keyword">@return</span> utils.<span class="pjs-token pjs-function">function-fallback</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$name</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$value</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-variable">$-fallbacks</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-punctuation">}</span>
-
-<span class="pjs-token pjs-comment">/// Prints component styles</span>
-<span class="pjs-token pjs-comment">/// @demo Check out our demo [accordion]</span>
-<span class="pjs-token pjs-comment">/// @example scss</span>
-<span class="pjs-token pjs-comment">///  @include ulu.component-example-styles();</span>
-
-<span class="pjs-token pjs-keyword">@mixin</span> <span class="pjs-token pjs-selector">styles </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$prefix</span></span><span class="pjs-token pjs-punctuation">:</span> selector.<span class="pjs-token pjs-function">class</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"component-name"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-
-  <span class="pjs-token pjs-selector">#</span><span class="pjs-token pjs-punctuation">{</span> <span class="pjs-token pjs-variable">$prefix</span> <span class="pjs-token pjs-punctuation">}</span> <span class="pjs-token pjs-punctuation">{</span>
-    <span class="pjs-token pjs-comment">// Your styles</span>
-  <span class="pjs-token pjs-punctuation">}</span>
-<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>script</span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-script"><span class="pjs-token pjs-language-javascript">
+  <span class="pjs-token pjs-comment">// The library is available as the global 'ULU' object</span>
+  <span class="pjs-token pjs-constant">ULU</span><span class="pjs-token pjs-punctuation">.</span><span class="pjs-token pjs-function">dialogInit</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>script</span><span class="pjs-token pjs-punctuation">></span></span></code></pre>
 
     </div>
   </div>
@@ -6234,7 +6646,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-68FvXH4x.js"></script>
+<script type="module" src="/frontend/assets/main-D7OciPxY.js"></script>
 
 		
 	</body>

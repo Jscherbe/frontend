@@ -18,7 +18,9 @@ export function setupTrigger(trigger: Node, dialogId: string): void;
  * Setup click handlers for a dialog
  * @param {Node} dialog
  */
-export function setupDialog(dialog: Node, userOptions: any): void;
+export function setupDialog(dialog: Node, userOptions: any): {
+    destroy: () => void;
+};
 /**
  * For a given dialog, get it's options (from data attribute)
  * @param {Node} dialog

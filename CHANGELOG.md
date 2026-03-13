@@ -1,7 +1,14 @@
 # Change Log
 
-## 0.2.2
+## 0.3.0
 
+- **Docs**
+  - Start working on a clearer guide section
+  - Add demos for any components/systems related to the updates below
+  - Enhance some demos that had unrealistic placeholder content to be more real-world scenarios of use cases
+  - Overall styling adjustments
+  - Setup better previews with code examples properly indented
+    - Will be considering more systematic approach to component documentation soon and will be grouping components into categories so it's easier to grasp what's available. Also will consider making docs site compile live sass so we can adjust configs in docs site to see there affect 
 - **SCSS**
   - `element` 
     - Add `optional-border()` function to reduce border creation logic internally

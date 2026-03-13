@@ -37,6 +37,7 @@ export namespace defaults {
     export let size: string;
     export let print: boolean;
     export let noMinHeight: boolean;
+    export let fullscreenMobile: boolean;
     let _class: string;
     export { _class as class };
     export let baseClass: string;
@@ -47,6 +48,7 @@ export namespace defaults {
     export let classResizerIcon: Object;
     export let classResizerIconBoth: Object;
     export let debug: boolean;
+    export let autoIframe: boolean;
     export function templateCloseIcon(config: any): string;
     export function templateResizerIcon(config: any): string;
     /**
@@ -152,6 +154,10 @@ export type DefaultModalOptions = {
      * - Enables debug logging. Defaults to `false`.
      */
     debug: boolean;
+    /**
+     * - Opt-in convenience behavior. If the modal body's sole content is an iframe, it automatically applies layout fixes. If the iframe has static width/height attributes (like YouTube), it retains that aspect ratio responsively. Otherwise, it forces the iframe to fill the modal. Defaults to `false`.
+     */
+    autoIframe: boolean;
     /**
      * - A function that returns the HTML for the close icon.
      */

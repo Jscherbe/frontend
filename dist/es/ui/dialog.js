@@ -1,19 +1,20 @@
-var O = Object.defineProperty;
-var f = Object.getOwnPropertySymbols;
-var S = Object.prototype.hasOwnProperty, b = Object.prototype.propertyIsEnumerable;
-var m = (e, o, t) => o in e ? O(e, o, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[o] = t, g = (e, o) => {
+var S = Object.defineProperty;
+var p = Object.getOwnPropertySymbols;
+var D = Object.prototype.hasOwnProperty, O = Object.prototype.propertyIsEnumerable;
+var f = (e, o, t) => o in e ? S(e, o, { enumerable: !0, configurable: !0, writable: !0, value: t }) : e[o] = t, m = (e, o) => {
   for (var t in o || (o = {}))
-    S.call(o, t) && m(e, t, o[t]);
-  if (f)
-    for (var t of f(o))
-      b.call(o, t) && m(e, t, o[t]);
+    D.call(o, t) && f(e, t, o[t]);
+  if (p)
+    for (var t of p(o))
+      O.call(o, t) && f(e, t, o[t]);
   return e;
 };
-import { getUluEventName as v } from "../core/events.js";
+import { getUluEventName as g } from "../core/events.js";
 import { ComponentInitializer as V } from "../core/component.js";
-import { preventScroll as w, wasClickOutside as C } from "@ulu/utils/browser/dom.js";
-import { prepVideos as D, pauseVideos as k } from "../utils/pause-youtube-video.js";
-const L = "data-ulu-dialog", i = new V({ type: "dialog", baseAttribute: L }), x = i.getAttribute("close"), y = {
+import { wasClickOutside as C, preventScroll as k } from "@ulu/utils/browser/dom.js";
+import { prepVideos as w, pauseVideos as y } from "../utils/pause-youtube-video.js";
+import { observeDialogToggle as z } from "../utils/dialog.js";
+const L = "data-ulu-dialog", r = new V({ type: "dialog", baseAttribute: L }), G = r.getAttribute("close"), M = {
   /**
    * Use non-modal interface for dialog
    */
@@ -41,31 +42,31 @@ const L = "data-ulu-dialog", i = new V({ type: "dialog", baseAttribute: L }), x 
    */
   preventScrollShift: !0
 };
-let a = g({}, y);
-function P(e) {
+let a = m({}, M);
+function H(e) {
   a = Object.assign({}, a, e);
 }
-function U() {
-  i.init({
+function J() {
+  r.init({
     coreEvents: ["pageModified"],
     withData: !0,
     setup({ element: e, initialize: o, data: t }) {
-      M(e, t), o();
+      I(e, t), o();
     }
-  }), i.init({
+  }), r.init({
     key: "trigger",
     coreEvents: ["pageModified"],
     withData: !0,
     setup({ element: e, initialize: o, data: t }) {
-      z(e, t), o();
+      A(e, t), o();
     }
   });
 }
-function z(e, o) {
+function A(e, o) {
   e.addEventListener("click", t);
-  function t(r) {
+  function t(l) {
     var c;
-    r.target.closest("a") && r.preventDefault();
+    l.target.closest("a") && l.preventDefault();
     const n = document.getElementById(o);
     if (!n) {
       console.error("Could not locate dialog (id)", o);
@@ -75,49 +76,54 @@ function z(e, o) {
       console.error("Attempted to trigger non <dialog> element. Did you mean to use modal builder?");
       return;
     }
-    const u = A(n);
-    n[u.nonModal ? "show" : "showModal"]();
+    const i = R(n);
+    n[i.nonModal ? "show" : "showModal"]();
   }
 }
-function M(e, o) {
-  const t = Object.assign({}, a, o), r = document.body, { preventScrollShift: d } = t;
-  let n;
-  if (e.addEventListener(v("resizer:start"), c), e.addEventListener(v("resizer:end"), h), e.addEventListener("click", u), t.documentEnd && r.appendChild(e), t.pauseVideos && I(e), !t.nonModal && t.preventScroll) {
+function I(e, o) {
+  const t = Object.assign({}, a, o), l = document.body, { preventScrollShift: d } = t;
+  let n = null, i;
+  if (e.addEventListener(g("resizer:start"), v), e.addEventListener(g("resizer:end"), b), e.addEventListener("click", c), t.documentEnd && l.appendChild(e), t.pauseVideos && T(e), !t.nonModal && t.preventScroll) {
     let s;
-    e.addEventListener("toggle", (l) => {
-      l.newState === "open" ? s = w({ preventShift: d }) : s && s();
+    n = z(e, (u) => {
+      u ? s = k({ preventShift: d }) : s && (s(), s = null);
     });
   }
-  function u(s) {
-    const { target: l } = s, p = l === e, E = l.closest(i.attributeSelector("close"));
-    (!n && t.clickOutsideCloses && p && C(e, s) || E) && (t.pauseVideos && j(e), e.close());
-  }
   function c(s) {
-    n = s.pointerId;
+    const { target: u } = s, h = u === e, E = u.closest(r.attributeSelector("close"));
+    (!i && t.clickOutsideCloses && h && C(e, s) || E) && (t.pauseVideos && j(e), e.close());
   }
-  function h(s) {
-    n === s.pointerId && setTimeout(() => {
-      n = null;
+  function v(s) {
+    i = s.pointerId;
+  }
+  function b(s) {
+    i === s.pointerId && setTimeout(() => {
+      i = null;
     }, 0);
   }
+  return {
+    destroy: () => {
+      n && n.destroy();
+    }
+  };
 }
-function A(e) {
-  return Object.assign({}, a, i.getData(e));
+function R(e) {
+  return Object.assign({}, a, r.getData(e));
 }
-function I(e) {
-  D(e);
+function T(e) {
+  w(e);
 }
 function j(e) {
-  k(e), e.querySelectorAll("video").forEach((t) => t.pause());
+  y(e), e.querySelectorAll("video").forEach((t) => t.pause());
 }
 export {
   L as baseAttribute,
-  x as closeAttribute,
-  y as defaults,
-  A as getDialogOptions,
-  U as init,
-  i as initializer,
-  P as setDefaults,
-  M as setupDialog,
-  z as setupTrigger
+  G as closeAttribute,
+  M as defaults,
+  R as getDialogOptions,
+  J as init,
+  r as initializer,
+  H as setDefaults,
+  I as setupDialog,
+  A as setupTrigger
 };
