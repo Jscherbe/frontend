@@ -1,6 +1,6 @@
 # Change Log
 
-## 0.3.2
+## 0.3.3
 
 - `js/ui/slider.js` | Add attributes linking controls and nav to track/slide. Add aria-polite control and carousal related roles
 - `scss/base/elements.scss` | Make picture element default to block

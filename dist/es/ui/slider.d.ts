@@ -46,6 +46,7 @@ export class Slider {
     slide: {
         element: any;
         index: number;
+        id: any;
         number: number;
     } | null;
     index: any;
@@ -53,9 +54,11 @@ export class Slider {
     swipeListener: ((event: any) => void) | null;
     swipeImageListener: ((event: any) => void) | null;
     transitioning: boolean;
+    trackId: any;
     slides: {
         element: any;
         index: number;
+        id: any;
         number: number;
     }[];
     elements: any;
@@ -80,7 +83,7 @@ export class Slider {
      * doesn't start or fails to finish/cancel
      * @param {number} element
      * @param {number} duration Duration to wait for complete
-     * @param {Function} beginTransition Css changes to begin/start transtion
+     * @param {Function} beginTransition Css changes to begin/start transition
      */
     ensureTransitionEnds(element: number, duration: number, beginTransition: Function): Promise<any>;
     /**
@@ -88,7 +91,7 @@ export class Slider {
      */
     translateTo(x: any, duration: any): Promise<void>;
     /**
-     * Show's a specifc slide and hides others, except when passing true to show all
+     * Show's a specific slide and hides others, except when passing true to show all
      * then all slides will visible
      */
     setVisibility(activeSlide: any, showAll: any): void;
@@ -97,7 +100,7 @@ export class Slider {
      */
     fadeSlide(slide: any, visible: any): Promise<any>;
     /**
-     * Handler for the entire slide transtion
+     * Handler for the entire slide transition
      */
     slideTransition({ slide, index, old, oldIndex, triggerType }: {
         slide: any;
@@ -107,14 +110,14 @@ export class Slider {
         triggerType: any;
     }): Promise<void>;
     /**
-     * Handler for the entire fade transtion
+     * Handler for the entire fade transition
      */
     fadeTransition({ slide, old }: {
         slide: any;
         old: any;
     }): Promise<void>;
     /**
-     * Handler for the entire NO transtion
+     * Handler for the entire NO transition
      */
     noTransition({ slide, old }: {
         slide: any;

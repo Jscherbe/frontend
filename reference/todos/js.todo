@@ -1,4 +1,6 @@
 JS Todos:
+  ☐ Need to work on jsdocs output, make it clearer
+  ☐ Need to add jsdoc comments to Slider
   ☐ Breakpoint Manager @medium-priority @nice-to-have-no-crucial
     ☐ Add convenience config option for customPropertyOrder that will be the order of the breakpoints passed by scss breakpoints so users no longer need to configure order (most common reason to have to do config). This will make it automated. 
       * And should be simply string.spit(",") and trim each. 
