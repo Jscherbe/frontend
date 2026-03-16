@@ -5,7 +5,7 @@ intro: An accordion disclosure element is a user interface component that allows
 ---
 
 <div class="callout callout--info">
-  <strong>Note:</strong> In the following examples, the accordions are wrapped in a container with the <code>data-ulu-details-group='{ "onlyOneOpen": true }'</code> attribute. This uses the library's details group UI module to ensure that only one accordion panel is open at a time. Like other interactive elements in ULU, it functions entirely off data attributes.
+  <strong>Note:</strong> In the following examples, the accordions are wrapped in a container with the <code>data-ulu-details-group='{ "onlyOneOpen": true }'</code> attribute. This uses the library's details group UI module to ensure that only one accordion panel is open at a time. Like other interactive elements in Ulu, it functions entirely off data attributes.
 </div>
 
 ## Basic Example

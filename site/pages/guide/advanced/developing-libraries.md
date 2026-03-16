@@ -2,7 +2,7 @@
 title: Developing Dependent Libraries
 weight: 30
 ---
-If you are creating a library or another package that uses `@ulu/frontend` as a dependency (e.g., a Vue component library based on ULU), it is **critical** to list `@ulu/frontend` as a `peerDependency` in your `package.json`.
+If you are creating a library or another package that uses `@ulu/frontend` as a dependency (e.g., a Vue component library based on Ulu), it is **critical** to list `@ulu/frontend` as a `peerDependency` in your `package.json`.
 
 ```json
 {
