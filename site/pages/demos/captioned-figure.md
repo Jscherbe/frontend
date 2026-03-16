@@ -23,7 +23,6 @@ title: Captioned Figure
 <figure class="captioned-figure captioned-figure--traditional">
   <img 
     src="/assets/placeholder/image-1.jpg" 
-    class="captioned-figure__media" 
     alt="Colorful cobblestone City Street"
   >
   <figcaption class="captioned-figure__caption">

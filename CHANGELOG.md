@@ -25,6 +25,7 @@
     - If an aspect ratio value is a percentage this will resolve it to the aspect ratio for legacy aspect ratios based on padding percentages (padding hack for responsive iframes/etc)
   - `base/elements` 
     - Add cursor pointer to summary elements by default
+    - Set picture to display block by default
   - `helpers/utilities` 
     - Add grid/flexbox utility classes that we didn't have
   - `components/accordion` 

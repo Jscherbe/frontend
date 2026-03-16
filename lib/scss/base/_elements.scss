@@ -113,7 +113,10 @@ $config: (
   form {
     width: 100%;
   }
-  video {
+  // Note in future picture can be display: contents
+  // - That value still has SR issues with removing content from accessibility tree
+  video,
+  picture {
     display: block;
   }
   code,
