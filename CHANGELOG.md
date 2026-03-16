@@ -2,6 +2,11 @@
 
 ## 0.3.2
 
+- `js/ui/slider.js` | Add attributes linking controls and nav to track/slide. Add aria-polite control and carousal related roles
+- `scss/base/elements.scss` | Make picture element default to block
+
+## 0.3.2
+
 - Add missing export for util `observeDialogToggle` in js bundle
 
 ## 0.3.1
