@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.4
+
+- `scss/components/_accordion.scss`
+  - Fix border radius on summary when margin = 0
+  - Add config for "summary-font-weight"
+
 ## 0.3.3
 
 - `js/ui/slider.js` | Add attributes linking controls and nav to track/slide. Add aria-polite control and carousal related roles
