@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.3.5
+
+- `scss/components/_progress-bar.scss`
+  - Add options for styles for margin and track-margin
+
 ## 0.3.4
 
 - `scss/components/_accordion.scss`

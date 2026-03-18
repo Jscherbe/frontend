@@ -88,8 +88,10 @@ $styles: (
     "bar-height" : 8px
   ),
   "loader" : (
+    "margin" : 0,
     "bar-height" : 4px,
-    "track-color" : transparent
+    "track-color" : transparent,
+    "track-margin" : 0,
   )
 ) !default;
 
@@ -205,8 +207,10 @@ $styles: (
   
   @each $name, $props in $styles {
     #{ $prefix }--#{ $name } {
+      margin: map.get($props, "margin");
       #{ $prefix }__track {
         height: map.get($props, "bar-height");
+        margin: map.get($props, "track-margin");
       }
       #{ $prefix }__bar:before {
         background-color: color.get(map.get($props, "bar-color"));
