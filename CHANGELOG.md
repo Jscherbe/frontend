@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.3.6
+
+- `scss/components/_progress-bar.scss`
+  - Add "rounded" modifier
+  - REmove track-margin and margin on loader style (can be applied by utility or override depending on where/how it's being used)
+  - If track doesn't have element before or after it, will remove margins top/bottom accordingly
+
 ## 0.3.5
 
 - `scss/components/_progress-bar.scss`

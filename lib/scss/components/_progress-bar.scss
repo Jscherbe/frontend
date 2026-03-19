@@ -42,6 +42,7 @@ $-fallbacks: (
 /// @prop {Color} icon-color-deficit ["danger"] Color of the icon in a deficit state.
 /// @prop {Color} track-color [#ccc] Color of the progress bar track.
 /// @prop {List} track-margin [(0.1em 0)] Margin for the progress bar track.
+/// @prop {CssValue} rounded-border-radius [100vmax] Border radius for the rounded modifier.
 /// @prop {Time} animation-duration [200ms] Duration of the width transition animation.
 /// @prop {CssValue} animation-timing [ease] Timing function for the width transition animation.
 /// @prop {Time} animation-initial-duration [500ms] Duration of the initial fill animation.
@@ -64,6 +65,7 @@ $config: (
   "icon-color-deficit" : "danger",
   "track-color" : "placeholder-background-alt",
   "track-margin" : (0.1em 0),
+  "rounded-border-radius" : 50px,
   "animation-duration" : 200ms,
   "animation-timing" : ease,
   "animation-initial-duration" : 500ms,
@@ -88,10 +90,8 @@ $styles: (
     "bar-height" : 8px
   ),
   "loader" : (
-    "margin" : 0,
     "bar-height" : 4px,
     "track-color" : transparent,
-    "track-margin" : 0,
   )
 ) !default;
 
@@ -160,6 +160,14 @@ $styles: (
     height: get("bar-height");
     overflow: hidden;
     background-color: color.get(get("track-color"));
+
+    // Remove margins if no children (values/header)
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   #{ $prefix }__bar {
     display: flex;
@@ -224,7 +232,11 @@ $styles: (
     }
   }
 
-
+  #{ $prefix }--rounded { 
+    #{ $prefix }__track {
+      border-radius: get("rounded-border-radius");
+    }
+  }
   // For Site Loading (Async Content, not charting/visualization)
   #{ $prefix }--indeterminate {
     #{ $prefix }__bar {

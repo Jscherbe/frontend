@@ -1,6 +1,6 @@
 {
   "site/src/main.js": {
-    "file": "assets/main-C78wBlgc.js",
+    "file": "assets/main-HfLTQSdq.js",
     "name": "main",
     "src": "site/src/main.js",
     "isEntry": true,
@@ -8,7 +8,7 @@
       "vite/modulepreload-polyfill.js"
     ],
     "css": [
-      "assets/main-BrURItz2.css"
+      "assets/main-wIS3eurC.css"
     ]
   },
   "vite/modulepreload-polyfill.js": {
