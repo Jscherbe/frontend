@@ -71,13 +71,13 @@ $config: (
   "animation-initial-duration" : 500ms,
   "animation-initial-timing" : ease-in,
   "animation-indeterminate-duration" : 2.5s
-  ) !default;
+) !default;
 
-  /// @type Map
-  /// This is the map of styles (variations in progress bar types)
-  /// - Each style becomes the modifier and accepts ("bar-color", "bar-height", "track-color")
-  /// - Use this to match whatever progress system(s) your creating
-  $styles: (
+/// @type Map
+/// This is the map of styles (variations in progress bar types)
+/// - Each style becomes the modifier and accepts ("bar-color", "bar-height", "track-color")
+/// - Use this to match whatever progress system(s) your creating
+$styles: (
   "success" : (
     "bar-color" : "success",
     "icon-color" : "success"
@@ -97,7 +97,7 @@ $config: (
     "bar-height" : 4px,
     "track-color" : transparent,
   )
-  ) !default;
+) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
