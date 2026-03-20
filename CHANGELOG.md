@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.1
+
+- `scss/color` | Tweak box-shadow colors (darker)
+
 ## 0.4.0
 
 Breaking changes for progress bar/circle (standardized modifier names to success/warning/danger instead of positive/negative/complete/incomplete). And then mostly just default color changes (which were initially loud/ugly/default intentionally, but are now moving towards colors that would work out of the box). 
