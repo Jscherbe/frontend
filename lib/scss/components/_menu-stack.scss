@@ -60,6 +60,7 @@ $-fallbacks: (
 /// @prop {CssValue} label-line-height [true] Adjust the link line-height, defaults to typography line-height-dense
 /// @prop {Dimension} link-icon-margin [0.65em] Adds a right margin to the icon.
 /// @prop {Dimension} link-icon-width [1em] The width of the icon.
+/// @prop {Dimension} link-icon-font-size [null] Set the font-size for the icon (not set by default)
 /// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
 /// @prop {Dimension} link-padding-x [1em] Horizontal padding for menu-stack toggle.
 /// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
@@ -92,6 +93,7 @@ $config: (
   "link-line-height" : true,
   "link-icon-margin" : 0.65em,
   "link-icon-width" : 1em,
+  "link-icon-font-size" : null,
   "link-margin" : 0.2em,
   "link-padding-x": 1.25em,
   "link-padding-y": 0.5em,
@@ -280,6 +282,7 @@ $styles: (
   #{ $prefix }__link-icon {
     margin-right: get("link-icon-margin");
     width: get("link-icon-width");
+    font-size: get("link-icon-font-size");
   }
   #{ $prefix }__collapsible {
     margin: 0;

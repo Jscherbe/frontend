@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.7
+
+- `scss/components/_menu-stack` | Add "link-icon-font-size" optional config 
+
 ## 0.3.6
 
 - `scss/components/_progress-bar.scss`
