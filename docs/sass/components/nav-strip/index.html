@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-C35NTnQo.css">
+  <link rel="stylesheet" href="/frontend/assets/main-D0n2xYnA.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6644,9 +6644,9 @@ current page or section, is visually emphasized with an underline.</p>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"activeSelector"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"&amp;.is-active, &amp;.has-active"</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color-active"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type-tertiary"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-active"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"color-hover"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"type"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"margin-between"</span> <span class="pjs-token pjs-punctuation">:</span> 2.25em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"padding-x"</span> <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
@@ -6690,26 +6690,26 @@ current page or section, is visually emphasized with an underline.</p>
 <tr>
 <td style="text-align:left">color</td>
 <td style="text-align:left">Color</td>
-<td style="text-align:left">null</td>
+<td style="text-align:left">&quot;type-tertiary&quot;</td>
 <td style="text-align:left">Type color for the nav-strip.</td>
 </tr>
 <tr>
 <td style="text-align:left">color-active</td>
 <td style="text-align:left">Color</td>
-<td style="text-align:left">null</td>
+<td style="text-align:left">&quot;type&quot;</td>
 <td style="text-align:left">Type color for the nav-strip when active.</td>
 </tr>
 <tr>
 <td style="text-align:left">color-hover</td>
 <td style="text-align:left">Color</td>
-<td style="text-align:left">null</td>
+<td style="text-align:left">&quot;type-hover&quot;</td>
 <td style="text-align:left">Type color for the nav-strip when hovered or focused.</td>
 </tr>
 <tr>
 <td style="text-align:left">font-weight</td>
 <td style="text-align:left">CssValue</td>
 <td style="text-align:left">null</td>
-<td style="text-align:left">Font weight of navstrip.</td>
+<td style="text-align:left">Font weight of nav-strip.</td>
 </tr>
 <tr>
 <td style="text-align:left">margin-between</td>
@@ -6744,7 +6744,7 @@ current page or section, is visually emphasized with an underline.</p>
 <tr>
 <td style="text-align:left">underline-color</td>
 <td style="text-align:left">Color</td>
-<td style="text-align:left">orange</td>
+<td style="text-align:left">&quot;selected&quot;</td>
 <td style="text-align:left">Underline color when link is active.</td>
 </tr>
 <tr>
@@ -6756,13 +6756,13 @@ current page or section, is visually emphasized with an underline.</p>
 <tr>
 <td style="text-align:left">underline-color-hover</td>
 <td style="text-align:left">Color</td>
-<td style="text-align:left">gray</td>
+<td style="text-align:left">&quot;rule&quot;</td>
 <td style="text-align:left">Color of the underline when hovered or focused.</td>
 </tr>
 <tr>
 <td style="text-align:left">rule-color</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">rule</td>
+<td style="text-align:left">&quot;rule-light&quot;</td>
 <td style="text-align:left">Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.</td>
 </tr>
 <tr>
@@ -6775,7 +6775,7 @@ current page or section, is visually emphasized with an underline.</p>
 <td style="text-align:left">rule-offset</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">-3px</td>
-<td style="text-align:left">Offset the rule for the navstrip.</td>
+<td style="text-align:left">Offset the rule for the nav-strip.</td>
 </tr>
 </tbody>
 </table>
@@ -6898,7 +6898,7 @@ current page or section, is visually emphasized with an underline.</p>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-DAhAkJuG.js"></script>
+<script type="module" src="/frontend/assets/main-CKC2Tsh_.js"></script>
 
 		
 	</body>

@@ -24,7 +24,7 @@ Details:
 - `scss/color`
   - Removed palette option for `indicator`.
   - Replaced placeholder default palette colors with a more modern and cohesive set of default colors.
-  - Adjusted `control` base, hover, and active colors to be more distinct and accessible.
+  - Adjusted `control` base, hover, and active colors to be more distinct
 - `scss/components/progress-bar`
   - Changed default `bar-color` from `indicator` to `accent`.
   - **BREAKING**: Replaced non-standard `positive` and `negative` style modifiers with standard semantic names `success`, `warning`, and `danger`.

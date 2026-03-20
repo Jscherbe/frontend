@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-C35NTnQo.css">
+  <link rel="stylesheet" href="/frontend/assets/main-D0n2xYnA.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6587,6 +6587,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.4.0">0.4.0</a>
+            		</li>
+
                     <li><a href="#0.3.8">0.3.8</a>
             		</li>
 
@@ -7061,7 +7064,7 @@
 			
 			
   <div class="page__body-top container ">
-    <h1 class="page__title h1">Changelog</h1>
+    <h1 class="page__title h1 no-margin-top">Changelog</h1>
 
   <p class="type-large type-light">
     Release notes and updates for each published version
@@ -7070,17 +7073,78 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.4.0" tabindex="-1">0.4.0</h2>
+<p>Breaking changes for progress bar/circle (standardized modifier names to success/warning/danger instead of positive/negative/complete/incomplete). And then mostly just default color changes (which were initially loud/ugly/default intentionally, but are now moving towards colors that would work out of the box).</p>
+<p>Planning to further adjust these once there's more time to focus on the defaults relating to style/color. Once the theme module is added and multiple colors can be associated for a given theme. So defaults may change in the future updates.</p>
+<p>Details:</p>
+<ul>
+<li><code>scss/typography.scss</code>
+<ul>
+<li>Add config options for headline-margin-top to be used if using the default sizes
+<ul>
+<li>If you provide your own sizes this isn't used for anything (currently just for defaults sizes)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>scss/components/flipcard</code>
+<ul>
+<li>Fix incorrect selector from plugin to Flipcard__control-button from flipcard__control-button (was breaking focus indicator)</li>
+<li>Change default colors</li>
+<li>Remove &quot;border&quot; and &quot;control-button-border-focus&quot; and add individual config options for color and border for both default and focus</li>
+</ul>
+</li>
+<li><code>scss/components/slider</code>
+<ul>
+<li>Change default colors</li>
+</ul>
+</li>
+<li><code>scss/components/nav-strip</code>
+<ul>
+<li>Change default colors</li>
+</ul>
+</li>
+<li><code>scss/components/tabs</code>
+<ul>
+<li>Change default colors</li>
+</ul>
+</li>
+<li><code>scss/color</code>
+<ul>
+<li>Removed palette option for <code>indicator</code>.</li>
+<li>Replaced placeholder default palette colors with a more modern and cohesive set of default colors.</li>
+<li>Adjusted <code>control</code> base, hover, and active colors to be more distinct</li>
+</ul>
+</li>
+<li><code>scss/components/progress-bar</code>
+<ul>
+<li>Changed default <code>bar-color</code> from <code>indicator</code> to <code>accent</code>.</li>
+<li><strong>BREAKING</strong>: Replaced non-standard <code>positive</code> and <code>negative</code> style modifiers with standard semantic names <code>success</code>, <code>warning</code>, and <code>danger</code>.</li>
+</ul>
+</li>
+<li><code>scss/components/progress-circle</code>
+<ul>
+<li>Changed default <code>color-progress</code> from <code>indicator</code> to <code>accent</code>.</li>
+<li><strong>BREAKING</strong>: Replaced non-standard status colors map keys (<code>low</code>, <code>incomplete</code>, <code>complete</code>) with standard semantic names (<code>danger</code>, <code>warning</code>, <code>success</code>).</li>
+</ul>
+</li>
+<li><code>site/src/templates/shortcodes/progressCircle.js</code>
+<ul>
+<li>Updated to output standard semantic modifier classes (<code>progress-circle--danger</code>, <code>progress-circle--warning</code>, <code>progress-circle--success</code>) based on percentage.</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.3.8" tabindex="-1">0.3.8</h2>
 <ul>
-<li><code>scss/components/_menu-stack</code> | Add flex rules to icon (to prevent expand/shrink)</li>
+<li><code>scss/components/menu-stack</code> | Add flex rules to icon (to prevent expand/shrink)</li>
 </ul>
 <h2 id="0.3.7" tabindex="-1">0.3.7</h2>
 <ul>
-<li><code>scss/components/_menu-stack</code> | Add &quot;link-icon-font-size&quot; optional config</li>
+<li><code>scss/components/menu-stack</code> | Add &quot;link-icon-font-size&quot; optional config</li>
 </ul>
 <h2 id="0.3.6" tabindex="-1">0.3.6</h2>
 <ul>
-<li><code>scss/components/_progress-bar.scss</code>
+<li><code>scss/components/progress-bar.scss</code>
 <ul>
 <li>Add &quot;rounded&quot; modifier</li>
 <li>REmove track-margin and margin on loader style (can be applied by utility or override depending on where/how it's being used)</li>
@@ -8937,7 +9001,7 @@ size of flex items with a 0% basis)</li>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-DAhAkJuG.js"></script>
+<script type="module" src="/frontend/assets/main-CKC2Tsh_.js"></script>
 
 		
 	</body>
