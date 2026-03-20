@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.8
+
+- `scss/components/_menu-stack` | Add flex rules to icon (to prevent expand/shrink)
+
 ## 0.3.7
 
 - `scss/components/_menu-stack` | Add "link-icon-font-size" optional config 

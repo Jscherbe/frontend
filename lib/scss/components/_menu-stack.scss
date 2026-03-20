@@ -281,7 +281,7 @@ $styles: (
   }
   #{ $prefix }__link-icon {
     margin-right: get("link-icon-margin");
-    width: get("link-icon-width");
+    flex: 0 0 get("link-icon-width");
     font-size: get("link-icon-font-size");
   }
   #{ $prefix }__collapsible {
