@@ -33,7 +33,7 @@ $config: (
   "viewbox-size": 32,
   "stroke-width": 10,
   "color-track": "placeholder-background-alt",
-  "color-progress": "indicator",
+  "color-progress": "accent",
   "color-mask": white,
   "color-mask-pie": rgba(255, 255, 255, 0.4),
   "value-color": "type",
@@ -44,9 +44,9 @@ $config: (
   "animation-delay" : 2s,
   "animation-timing" : ease-in,
   "status-colors": (
-    "low": "danger",
-    "incomplete": "warning",
-    "complete": "success",
+    "danger": "danger",
+    "warning": "warning",
+    "success": "success",
   ),
   "sizes": (
     "small" : (

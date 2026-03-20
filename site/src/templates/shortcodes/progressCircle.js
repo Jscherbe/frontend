@@ -13,9 +13,9 @@ export default function(options) {
 
   const getStatusClass = () => {
     if (neutral) return '';
-    if (percentage < 30) return 'progress-circle--low';
-    if (percentage >= 30 && percentage < 100) return 'progress-circle--incomplete';
-    if (percentage >= 100) return 'progress-circle--complete';
+    if (percentage < 30) return 'progress-circle--danger';
+    if (percentage >= 30 && percentage < 100) return 'progress-circle--warning';
+    if (percentage >= 100) return 'progress-circle--success';
     return '';
   };
   //  Added the 1% extra to 100% because sometimes it renders with a tiny gap

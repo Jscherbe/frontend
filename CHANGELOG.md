@@ -1,16 +1,50 @@
 # Change Log
 
+## 0.4.0
+
+Breaking changes for progress bar/circle (standardized modifier names to success/warning/danger instead of positive/negative/complete/incomplete). And then mostly just default color changes (which were initially loud/ugly/default intentionally, but are now moving towards colors that would work out of the box). 
+
+Planning to further adjust these once there's more time to focus on the defaults relating to style/color. Once the theme module is added and multiple colors can be associated for a given theme. So defaults may change in the future updates.
+
+Details:
+
+- `scss/typography.scss`
+  - Add config options for headline-margin-top to be used if using the default sizes
+    - If you provide your own sizes this isn't used for anything (currently just for defaults sizes)
+- `scss/components/flipcard`
+  - Fix incorrect selector from plugin to Flipcard__control-button from flipcard__control-button (was breaking focus indicator)
+  - Change default colors
+  - Remove "border" and "control-button-border-focus" and add individual config options for color and border for both default and focus
+- `scss/components/slider`
+  - Change default colors
+- `scss/components/nav-strip`
+  - Change default colors
+- `scss/components/tabs`
+  - Change default colors
+- `scss/color`
+  - Removed palette option for `indicator`.
+  - Replaced placeholder default palette colors with a more modern and cohesive set of default colors.
+  - Adjusted `control` base, hover, and active colors to be more distinct and accessible.
+- `scss/components/progress-bar`
+  - Changed default `bar-color` from `indicator` to `accent`.
+  - **BREAKING**: Replaced non-standard `positive` and `negative` style modifiers with standard semantic names `success`, `warning`, and `danger`.
+- `scss/components/progress-circle`
+  - Changed default `color-progress` from `indicator` to `accent`.
+  - **BREAKING**: Replaced non-standard status colors map keys (`low`, `incomplete`, `complete`) with standard semantic names (`danger`, `warning`, `success`).
+- `site/src/templates/shortcodes/progressCircle.js`
+  - Updated to output standard semantic modifier classes (`progress-circle--danger`, `progress-circle--warning`, `progress-circle--success`) based on percentage.
+
 ## 0.3.8
 
-- `scss/components/_menu-stack` | Add flex rules to icon (to prevent expand/shrink)
+- `scss/components/menu-stack` | Add flex rules to icon (to prevent expand/shrink)
 
 ## 0.3.7
 
-- `scss/components/_menu-stack` | Add "link-icon-font-size" optional config 
+- `scss/components/menu-stack` | Add "link-icon-font-size" optional config 
 
 ## 0.3.6
 
-- `scss/components/_progress-bar.scss`
+- `scss/components/progress-bar.scss`
   - Add "rounded" modifier
   - REmove track-margin and margin on loader style (can be applied by utility or override depending on where/how it's being used)
   - If track doesn't have element before or after it, will remove margins top/bottom accordingly

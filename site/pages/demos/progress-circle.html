@@ -32,11 +32,11 @@ vars:
     small: true
     outside: true
     noMask: true
-  statusLow:
+  statusDanger:
     percentage: 25
-  statusIncomplete:
+  statusWarning:
     percentage: 75
-  statusComplete:
+  statusSuccess:
     percentage: 100
 ---
 
@@ -77,13 +77,13 @@ vars:
 {% progressCircle vars.pieOutsideNoMask %}
 
 <h2 class="h2">Status Colors</h2>
-<p>The chart color will change based on the percentage value to indicate status (low, incomplete, complete).</p>
+<p>The chart color will change based on the percentage value to indicate status (danger, warning, success).</p>
 
-<h3>Low (less than 30%)</h3>
-{% progressCircle vars.statusLow %}
+<h3>Danger (less than 30%)</h3>
+{% progressCircle vars.statusDanger %}
 
-<h3>Incomplete (between 30% and 99%)</h3>
-{% progressCircle vars.statusIncomplete %}
+<h3>Warning (between 30% and 99%)</h3>
+{% progressCircle vars.statusWarning %}
 
-<h3>Complete (100%)</h3>
-{% progressCircle vars.statusComplete %}
+<h3>Success (100%)</h3>
+{% progressCircle vars.statusSuccess %}

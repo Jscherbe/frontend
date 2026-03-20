@@ -59,7 +59,7 @@ $config: (
   "value-margin-deficit" : 0.3em,
   "value-color-deficit" : "danger",
   "bar-height" : 12px,
-  "bar-color" : "indicator",
+  "bar-color" : "accent",
   "bar-color-deficit" : "danger",
   "icon-color" : "type-tertiary",
   "icon-color-deficit" : "danger",
@@ -71,18 +71,22 @@ $config: (
   "animation-initial-duration" : 500ms,
   "animation-initial-timing" : ease-in,
   "animation-indeterminate-duration" : 2.5s
-) !default;
+  ) !default;
 
-/// @type Map
-/// This is the map of styles (variations in progress bar types)
-/// - Each style becomes the modifier and accepts ("bar-color", "bar-height", "track-color")
-/// - Use this to match whatever progress system(s) your creating
-$styles: (
-  "positive" : (
+  /// @type Map
+  /// This is the map of styles (variations in progress bar types)
+  /// - Each style becomes the modifier and accepts ("bar-color", "bar-height", "track-color")
+  /// - Use this to match whatever progress system(s) your creating
+  $styles: (
+  "success" : (
     "bar-color" : "success",
     "icon-color" : "success"
   ),
-  "negative" : (
+  "warning" : (
+    "bar-color" : "warning",
+    "icon-color" : "warning"
+  ),
+  "danger" : (
     "bar-color" : "danger",
     "icon-color" : "danger"
   ),
@@ -93,7 +97,7 @@ $styles: (
     "bar-height" : 4px,
     "track-color" : transparent,
   )
-) !default;
+  ) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes

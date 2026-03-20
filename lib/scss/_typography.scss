@@ -17,6 +17,7 @@
 /// @prop {Dimension} letter-spacing-uppercase [0.04em]
 /// @prop {Number} margin-bottom [1em] Default margin for typography (like paragraphs)
 /// @prop {Number} margin-top [null] Default margin for typography (like paragraphs)
+/// @prop {Number} headline-margin-top [1.5em] Default margin for typography headlines in $sizes
 /// @prop {Number} responsive-change [0.05vw] Amount to scale typography by browser's width (use viewport units)
 /// @prop {Number} scale-steps [5]
 /// @prop {Number} size-ratio [1.8] Font size scale when using preset sizes, ratio mixin)
@@ -41,6 +42,7 @@ $config: (
   "letter-spacing-uppercase": 0.04em,
   "margin-bottom":            1em,
   "margin-top":               null,
+  "headline-margin-top":      1.5em,
   "responsive-change":        0.05vw,
   "scale-steps":              5,
   "size-ratio":               1.8,
@@ -146,13 +148,13 @@ $config: (
     "font-weight" : utils.when($is-headline, get("font-weight-bold"), null), 
     "line-height": $line-height,
     "margin-bottom" : utils.when($is-headline, get("margin-bottom"), null),
-    "margin-top" : utils.when($is-headline, get("margin-top"), null),
+    "margin-top" : utils.when($is-headline, get("headline-margin-top"), null),
     "responsive" : true,
     "helper-class" : utils.when($is-headline, false, true),
     "helper-class-prefixed" : true,
     "base-class" : utils.when($is-headline, true, false),
     "base-class-prefixed" : false,
-    "color" : utils.when($is-headline, color.get("headline"), null)
+    "color" : utils.when($is-headline, "headline", null)
   );
 }
 

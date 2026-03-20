@@ -42,7 +42,9 @@ layout: unformatted
 
 
 <h2 class="h2">Indeterminate Modifier</h2>
+
 <p>Uses the <code>.progress-bar--indeterminate</code> modifier for an animated loading state when the progress is unknown.</p>
+
 <div class="progress-bar progress-bar--loader progress-bar--indeterminate">
   <div class="progress-bar__track">
     <div class="progress-bar__bar"></div>
@@ -62,6 +64,7 @@ layout: unformatted
 
 <h2 class="h2">Completed Example</h2>
 <p>An example of a completed progress bar with an icon.</p>
+
 <div class="progress-bar">
   <div class="progress-bar__header"><strong class="progress-bar__label">Progress</strong>
     <div class="progress-bar__icon">
@@ -102,19 +105,29 @@ layout: unformatted
 </div>
 
 
-<h2 class="h2">Positive Style</h2>
-<p>Uses the <code>.progress-bar--positive</code> modifier.</p>
-<div class="progress-bar progress-bar--positive">
+<h2 class="h2">Success Style</h2>
+
+<p>Uses the <code>.progress-bar--success</code> modifier.</p>
+<div class="progress-bar progress-bar--success">
   <div class="progress-bar__header"><strong class="progress-bar__label">Positive</strong></div>
   <div class="progress-bar__track">
     <div class="progress-bar__bar" style="width: 75%;"></div>
   </div>
 </div>
 
+<h2 class="h2">Warning Style</h2>
 
-<h2 class="h2">Negative Style</h2>
-<p>Uses the <code>.progress-bar--negative</code> modifier.</p>
-<div class="progress-bar progress-bar--negative">
+<p>Uses the <code>.progress-bar--success</code> modifier.</p>
+<div class="progress-bar progress-bar--warning">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Positive</strong></div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 75%;"></div>
+  </div>
+</div>
+
+<h2 class="h2">Danger Style</h2>
+<p>Uses the <code>.progress-bar--danger</code> modifier.</p>
+<div class="progress-bar progress-bar--danger">
   <div class="progress-bar__header"><strong class="progress-bar__label">Negative</strong></div>
   <div class="progress-bar__track">
     <div class="progress-bar__bar" style="width: 30%;"></div>
@@ -124,7 +137,7 @@ layout: unformatted
 
 <h2 class="h2">Small Modifier</h2>
 <p>Uses the <code>.progress-bar--small</code> modifier. Font sizing is controlled by the parent element.</p>
-<div class="progress-bar progress-bar--small progress-bar--positive type-small">
+<div class="progress-bar progress-bar--small progress-bar--success type-small">
   <div class="progress-bar__header"><strong class="progress-bar__label type-normal">Progress</strong>
     <div class="progress-bar__icon">
       <span class="fas fa-check" aria-hidden="true"></span>
@@ -164,7 +177,7 @@ layout: unformatted
 <h2 class="h2">Icon left with rail</h2>
 <p>Combining with rail component for icon on left</p>
 
-<div class="progress-bar progress-bar--positive">
+<div class="progress-bar progress-bar--success">
   <div class="rail">
     <div class="rail__item">
       <div class="progress-bar__icon type-large">

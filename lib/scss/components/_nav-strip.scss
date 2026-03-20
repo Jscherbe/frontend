@@ -16,27 +16,27 @@
 /// Module Settings
 /// @type Map
 /// @prop {String} activeSelector [.is-active] Selector that portrays active status.
-/// @prop {Color} color [null] Type color for the nav-strip.
-/// @prop {Color} color-active [null] Type color for the nav-strip when active.
-/// @prop {Color} color-hover [null] Type color for the nav-strip when hovered or focused.
-/// @prop {CssValue} font-weight [null] Font weight of navstrip.
+/// @prop {Color} color ["type-tertiary"] Type color for the nav-strip.
+/// @prop {Color} color-active ["type"] Type color for the nav-strip when active.
+/// @prop {Color} color-hover ["type-hover"] Type color for the nav-strip when hovered or focused.
+/// @prop {CssValue} font-weight [null] Font weight of nav-strip.
 /// @prop {Dimension} margin-between [2.25em] Margin between nav-strip items.
 /// @prop {Boolean} nowrap [true] Disables the word wrap.
 /// @prop {Dimension} padding-x [0] Horizontal padding for the nav-strip links.
 /// @prop {Dimension} padding-y [0.3em] Vertical padding for the nav-strip links.
 /// @prop {Dimension} padding-y-ruled [null] Vertical padding for the nav-strip links when using nav-strip--rule.
-/// @prop {Color} underline-color [orange] Underline color when link is active.
+/// @prop {Color} underline-color ["selected"] Underline color when link is active.
 /// @prop {Dimension} underline-size [3px] Size of the underline.
-/// @prop {Color} underline-color-hover [gray] Color of the underline when hovered or focused.
-/// @prop {String} rule-color [rule] Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.
+/// @prop {Color} underline-color-hover ["rule"] Color of the underline when hovered or focused.
+/// @prop {String} rule-color ["rule-light"] Rule color. Uses rule.scss so the value of this options should be a variable from rule.scss.
 /// @prop {Dimension} rule-size [3px] Size of the nav-strip rule.
-/// @prop {Dimension} rule-offset [-3px] Offset the rule for the navstrip.
+/// @prop {Dimension} rule-offset [-3px] Offset the rule for the nav-strip.
 
 $config: (
   "activeSelector" : "&.is-active, &.has-active",
-  "color" : null,
-  "color-active" : null,
-  "color-hover" : null,
+  "color" : "type-tertiary",
+  "color-active" : "type",
+  "color-hover" : "type",
   "font-weight" : null,
   "margin-between" : 2.25em,
   "padding-x" : 0,
