@@ -19,11 +19,15 @@
 /// @prop {Dimension} border-width [1px] Flipcard border width
 /// @prop {Color} border-color ["rule-light"] Flipcard border color
 /// @prop {Dimension} border-radius [6px] Border radius for flipcard.
-/// @prop {Color} border-color-hover ["rule-dark"] border color when hovered.
+/// @prop {Color} border-color-hover ["rule"] border color when hovered.
 /// @prop {Dimension} border-width-focus [3px] Border width that shows when focused.
 /// @prop {Color} border-color-focus ["focus"] border color when focused
 /// @prop {Time} anim-duration [430ms] Animation duration.
 /// @prop {Time} anim-delay [200ms] Animation delay.
+/// @prop {String} anim-front-close ["FlipcardFrontClose"] Animation name for front close.
+/// @prop {String} anim-front-open ["FlipcardFrontOpen"] Animation name for front open.
+/// @prop {String} anim-back-open ["FlipcardBackOpen"] Animation name for back open.
+/// @prop {CssValue} anim-timing-function [ease-out] Animation timing function.
 /// @prop {Dimension} padding [1.5rem] Padding for the flipcard.
 /// @prop {Color} title-color ["type"] Color of the front page text.
 /// @prop {Color} title-color-hover ["link-hover"] Color of the front page text when hovered or focused.

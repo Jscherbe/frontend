@@ -13,8 +13,8 @@ Details:
     - If you provide your own sizes this isn't used for anything (currently just for defaults sizes)
 - `scss/components/flipcard`
   - Fix incorrect selector from plugin to Flipcard__control-button from flipcard__control-button (was breaking focus indicator)
-  - Change default colors
-  - Remove "border" and "control-button-border-focus" and add individual config options for color and border for both default and focus
+  - Change default colors to use semantic system palette colors.
+  - Refactored `border` and `control-button-border-focus` config options into separate width and color properties to allow dynamic color resolution.
 - `scss/components/slider`
   - Change default colors
 - `scss/components/nav-strip`
@@ -24,7 +24,8 @@ Details:
 - `scss/color`
   - Removed palette option for `indicator`.
   - Replaced placeholder default palette colors with a more modern and cohesive set of default colors.
-  - Adjusted `control` base, hover, and active colors to be more distinct
+  - Adjusted `control` base, hover, and active colors to be more distinct.
+  - Adjusted `selected` colors to use a blue theme instead of green.
 - `scss/components/progress-bar`
   - Changed default `bar-color` from `indicator` to `accent`.
   - **BREAKING**: Replaced non-standard `positive` and `negative` style modifiers with standard semantic names `success`, `warning`, and `danger`.
