@@ -1,6 +1,5 @@
 @use "vars";
 @use "ulu";
-@use "mixins";
 
 .changelog {
   line-height: ulu.typography-get("line-height-dense");
@@ -9,7 +8,10 @@
   }
   h2 {
     @include ulu.typography-size("h3");
-    @include mixins.site-headline-rule();
+    border-bottom: ulu.element-get-rule-style("light");
+    border-bottom-width: 3px;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
     margin-top: 1.5em;
   }
   ul {

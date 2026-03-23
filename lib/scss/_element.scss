@@ -294,9 +294,9 @@ $rule-margins: (
 /// Hide text for assistive devices
 /// @param {Boolean} $hidden Defaults to true, pass false to override the hidden css (ie. on focus)
 /// @example scss
-///   @include ulu.layout-hidden-visually()
+///   @include ulu.layout-hidden-visually();
 ///   // Reset styling
-///   @include ulu.layout-hidden-visually(false)
+///   @include ulu.layout-hidden-visually(false);
 
 @mixin hidden-visually($hidden: true) {
   @if $hidden {

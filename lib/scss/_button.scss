@@ -149,7 +149,8 @@ $styles: (
 /// Get a config option
 /// @param {Map} $name Name of property
 /// @example scss - General example
-///   @include ulu.button-get("property");
+///   $shadow: ulu.button-get("box-shadow");
+/// @return {*} Resolved value 
 
 @function get($name) {
   $value: utils.require-map-get($config, $name, "button [config]");

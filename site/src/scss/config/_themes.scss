@@ -3,9 +3,16 @@
 
 @use "sass:color";
 
-// @developers goldenrod is a placeholder color.
 
-$theme-colors: (
+
+@include ulu.themes-set((
+  "inverses": (
+    "light": "dark",
+    "dark": "light"
+  )
+));
+
+@include ulu.themes-set-tokens((
   "color-content-header-background" : (
     "light" : $color-gray-light-x,
     "dark" : ulu.color-shade($color-gray-dark, 20%)
@@ -32,7 +39,7 @@ $theme-colors: (
   ),
   "color-type-disabled" : (
     "light" : $color-type-disabled,
-    "dark": goldenrod
+    "dark": goldenrod // goldenrod is a placeholder color.
   ),
   "color-headline-primary" : (
     "light" : $color-violet-dark,
@@ -186,13 +193,4 @@ $theme-colors: (
     "light" : #ffa,
     "dark" : $color-violet-dark
   )
-);
-
-@include ulu.themes-set((
-  "inverses": (
-    "light": "dark",
-    "dark": "light"
-  )
 ));
-
-@include ulu.themes-set-themes($theme-colors);

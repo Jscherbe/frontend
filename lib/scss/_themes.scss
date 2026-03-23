@@ -11,6 +11,7 @@
 @use "sass:list";
 @use "sass:meta";
 @use "utils";
+@use "cssvar";
 
 /// Module Settings
 /// @type Map
@@ -24,12 +25,16 @@ $config: (
 ) !default;
 
 /// The themes map
-/// - Format: `("property-name": ("theme-name": value))`
+/// - Format: `("property-name": ("light": value, "dark": value))`
 /// @type Map
-$themes: () !default;
+
+$tokens: () !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.themes-set(( "default" : "dark" ));
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
@@ -37,37 +42,66 @@ $themes: () !default;
 /// Set the theme variations
 /// @param {Map} $changes Map of theme variations to merge
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
-@mixin set-themes($changes, $merge-mode: "deep") {
-  $themes: utils.map-merge($themes, $changes, $merge-mode) !global;
+/// @example scss
+///   @include ulu.themes-set-tokens((
+///     "color-background": (
+///       "light": white,
+///       "dark": black
+///     )
+///   ));
+
+@mixin set-tokens($changes, $merge-mode: "deep") {
+  $tokens: utils.map-merge($tokens, $changes, $merge-mode) !global;
 }
 
 /// Get a config option
 /// @param {String} $name Name of property
+/// @example scss {compile} Example usage
+///   .test {
+///     content: ulu.themes-get("default");
+///   }
+/// @return {*} Resolved value 
+
 @function get($name) {
   @return utils.require-map-get($config, $name, "themes [config]");
 }
 
 /// Helper function to safely get the color scheme
+/// @param {String} $theme-name The name of the theme to lookup
+/// @example scss {compile} Example usage
+///   .test {
+///     content: ulu.themes-get-color-scheme("dark");
+///   }
+/// @return {String|Null} The CSS color-scheme value or null
+
 @function get-color-scheme($theme-name) {
   $schemes: get("color-schemes");
   $mapped: map.get($schemes, $theme-name);
-  
+
   @if ($mapped) {
     @return $mapped;
   }
-  
+
   @if ($theme-name == "light" or $theme-name == "dark") {
     @return $theme-name;
   }
-  
+
   @warn "ULU Themes: No valid color-scheme mapped for theme '#{$theme-name}'. Please add it using `themes.set(( \"color-schemes\" : ( \"#{$theme-name}\": \"light|dark\" ) ))`. The `color-scheme` property will not be output for this theme.";
   @return null;
 }
 
 /// Helper function to get all unique theme keys (e.g., 'light', 'dark') from the $themes map
+/// @example scss {compile} Example usage
+///   // Assuming themes were set with 'light' and 'dark' keys
+///   .test {
+///     // Note: list serialization depends on context, but this demonstrates access
+///     content: list.length(ulu.themes-get-keys()); 
+///   }
+/// @return {List} A list of all unique theme string keys
+
 @function get-keys() {
   $keys: ();
-  @each $prop, $theme-map in $themes {
+  @each $prop, $theme-map in $tokens {
     @if meta.type-of($theme-map) == 'map' {
       @each $key, $val in $theme-map {
         @if not list.index($keys, $key) {
@@ -78,4 +112,30 @@ $themes: () !default;
   }
   @return $keys;
 }
+
+/// Outputs css vars for a specific type from a theme map
+/// @param {String} $key The key used to retrieve values from the map.
+/// @param {Map} $tokens [$tokens] The map containing the values. Defaults to the internal $tokens map.
+/// @param {String} $prefix The optional prefix for CSS variables.
+/// @example scss {compile} Example usage
+///   @include ulu.themes-set-tokens((
+///     "color-background": (
+///       "light": white,
+///       "dark": black
+///     )
+///   ));
+///   :root {
+///     @include ulu.themes-declare("light");
+///   }
+
+@mixin declare($key, $tokens: $tokens, $prefix: cssvar.get("prefix")) {
+  @each $name, $definition in $tokens {
+    $value: map.get($definition, $key);
+    @if ($value) {
+      @include cssvar.declare($name, $value, $prefix);
+    }
+  }
+}
+
+
 

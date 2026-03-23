@@ -1,13 +1,8 @@
-@use "vars" as *;
 @use "ulu";
-@use "sass:color";
 
-// @developers goldenrod is a placeholder color.
-
-$defaults: (
+@include ulu.base-root-set-cssvars((
   "header-height": 0px,
   "sticky-margin" : 3rem,
   "sticky-offset-top" : ulu.cssvar-add("header-height", "sticky-margin"),
   "fullscreen-height" : calc(100vh - #{ ulu.cssvar-use("header-height") })
-);
-
+));

@@ -1,8 +1,0 @@
-@use "ulu";
-@use "vars";
-@use "css-vars";
-@use "sass:map";
-
-:root {
-  @include ulu.cssvar-declare-all(css-vars.$defaults);
-}

@@ -1,6 +1,5 @@
 @use "vars";
 @use "ulu";
-@use "mixins";
 
 $padding: 1.5rem;
 $border: 2px solid ulu.color-get("rule-light");

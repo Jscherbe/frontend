@@ -1,9 +1,7 @@
 @use "ulu";
 @use "vars";
-@use "css-vars";
 
 :root {
-  @include ulu.cssvar-declare-all(css-vars.$defaults);
   --ulu-sticky-top-offset: #{ ulu.cssvar-use("sticky-offset-top") };
   &.fullscreen-layout {
     @include ulu.cssvar-declare("header-height", 3.75rem);
@@ -16,20 +14,3 @@ body {
   height: 100%;
   margin: 0;
 }
-[disabled],
-:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-button[disabled] {
-  pointer-events: none;
-}
-// dd, 
-// dt,
-// dl {
-//   margin: 0;
-// }
-// caption {
-//   text-align: left;
-//   margin: 1em 0;
-// }

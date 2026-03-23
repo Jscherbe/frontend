@@ -2,14 +2,20 @@
 
 ## 0.4.2
 
+- `scss/base/_root` 
+  - This module adds the --ulu root custom properties and is now extended to allow setting site specific custom properties which will be output in root and declared with the cssvar module (respecting prefix). use 
+    - `@include ulu.base-root-set-cssvars($map-of-cssvars);`
+  - Add $config with ability to change default system vars (sticky top, etc that are used internally)
 - `scss/themes` (New Module)
   - Introduce a dedicated `themes` module for orchestrating custom property variations (e.g., light/dark modes).
   - Uses a property-centric map structure for developer-friendly theme definitions.
   - Supports contextual inversion (`inverses` config) to allow static themes to intelligently flip their variables when their container theme changes.
   - Generates `:root` variables, `.theme-[name]` modifier classes, and a `.theme-[name]-fake` utility class using CSS filters.
+- `scss/cssvar`
+  - **DEPRECATED**: `cssvar.declare-theme-values()` has been deprecated. It has been moved to the new themes module as `themes.declare-values()`. Please update your implementations, as the old mixin will be removed in a future version.
 
 ## 0.4.1
-
+ 
 - `scss/color` | Tweak box-shadow colors (darker)
 
 ## 0.4.0

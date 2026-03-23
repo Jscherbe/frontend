@@ -8,6 +8,39 @@
 @use "../utils";
 @use "../cssvar";
 
+/// Module Settings
+/// @type Map
+/// @prop {Dimension} sticky-top-offset [0px]
+/// @prop {Dimension} sticky-bottom-offset [0px]
+
+$config: (
+  "sticky-top-offset": 0px,
+  "sticky-bottom-offset": 0px
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+@function get($name) {
+  @return utils.require-map-get($config, $name, "base root [config]");
+}
+
+/// Global root variables (CSS Custom Properties)
+/// @type Map
+$cssvars: () !default;
+
+/// Set global root variables
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+@mixin set-cssvars($changes, $merge-mode: null) {
+  $cssvars: utils.map-merge($cssvars, $changes, $merge-mode) !global;
+}
+
 /// Output custom properties in :root for base stylesheet
 /// @example scss
 ///  @include ulu.base-root-styles();
@@ -18,13 +51,14 @@
   :root {
     @include custom-properties();
     @include cssvar.declare-breakpoint();
+    @include cssvar.declare-all($cssvars);
   }
 }
 
 /// Output custom properties for ulu
 
 @mixin custom-properties() {
-  --ulu-sticky-top-offset: 0px; // Should be adjusted by user
-  --ulu-sticky-bottom-offset: 0px; // Should be adjusted by user
+  --ulu-sticky-top-offset: #{ get("sticky-top-offset") }; // Should be adjusted by user
+  --ulu-sticky-bottom-offset: #{ get("sticky-bottom-offset") }; // Should be adjusted by user
   --ulu-scrollbar-width: 0px; // Needs to be set by JS
 }

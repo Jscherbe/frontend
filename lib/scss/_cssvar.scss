@@ -145,29 +145,12 @@ $config: (
 }
 
 /// Outputs css vars for a specific type from a theme map
+/// @deprecated Moved to themes core module (`themes.declare-values()`). This will be removed in a future version.
 /// @param {Map} $theme The map containing the values. Example (
 /// @param {String} $key The key used to retrieve values from the map.
 /// @param {String} $prefix The optional prefix for CSS variables.
-/// @example scss - Example of theme map and usage
-///   // Defining a map to hold my color theme values
-///   $color-themes: (
-///     "color-button" : (
-///       "light" : blue,
-///       "dark" : red
-///     ), ...
-///   );
-/// 
-///   // Declaring default theme
-///   :root {
-///     @include ulu.cssvar-declare-theme-values($color-themes, "light");
-///   }
-///   
-///   // Creating class to use on body/other elements to switch to dark theme
-///   .theme-dark {
-///     @include ulu.cssvar-declare-theme-values($color-themes, "dark");
-///   }
-
 @mixin declare-theme-values($theme, $key, $prefix: get("prefix")) {
+  @warn "ulu.cssvar-declare-theme-values() is deprecated. Please use ulu.themes-declare-values() instead.";
   @each $name, $definition in $theme {
     $value: map.get($definition, $key);
     @if ($value) {

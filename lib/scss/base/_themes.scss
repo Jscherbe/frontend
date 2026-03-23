@@ -15,9 +15,11 @@
 /// @type Map
 /// @prop {Boolean} output-inverse [true] Whether to output the `.theme-inverse` utility and corresponding inverse variables
 /// @prop {Color} fake-dark-color [white] The fallback text color applied to elements using the `.theme-dark-fake` utility
+/// @prop {String} fake-dark-filter [invert(1) hue-rotate(180deg) saturate(0.7)] The filter applied to elements using the `.theme-dark-fake` utility
 $config: (
   "output-inverse": true,
-  "fake-dark-color": white
+  "fake-dark-color": white,
+  "fake-dark-filter": invert(1) hue-rotate(180deg) saturate(0.7)
 ) !default;
 
 /// Change modules $config
@@ -38,7 +40,7 @@ $config: (
 @mixin styles {
   @include utils.file-header('base', 'themes');
 
-  @if (list.length(themes.$themes) > 0) {
+  @if (list.length(themes.$tokens) > 0) {
     $keys: themes.get-keys();
     $default: themes.get("default");
     $prefix: selector.class("theme");
@@ -62,7 +64,7 @@ $config: (
         @if ($color-scheme) {
           color-scheme: #{ $color-scheme };
         }
-        @include cssvar.declare-theme-values(themes.$themes, $key);
+        @include themes.declare($key);
 
         // Optional Inverse Variables (Variable Swap Approach)
         // Can use @scope in the future but for now we suffix -"inverse"
@@ -74,7 +76,7 @@ $config: (
               --ulu-inverse-color-scheme: #{ $inv-scheme };
             }
             
-            @each $prop, $theme-map in themes.$themes {
+            @each $prop, $theme-map in themes.$tokens {
               @if (utils.is-map($theme-map)) {
                 $inv-value: map.get($theme-map, $inverse-key);
                 @if ($inv-value) {
@@ -88,7 +90,7 @@ $config: (
 
         // Contextual trigger for the fake dark utility
         @if ($color-scheme == "dark") {
-          --ulu-theme-fake-filter: invert(1) hue-rotate(180deg) saturate(0.7);
+          --ulu-theme-fake-filter: #{ get("fake-dark-filter") };
           --ulu-theme-fake-color: #{ get("fake-dark-color") };
         } @else {
           --ulu-theme-fake-filter: none;
@@ -115,7 +117,7 @@ $config: (
     @if ($output-inverse and list.length(map.keys($inverses)) > 0) {
       #{ $inverse-prefix } {
         color-scheme: var(--ulu-inverse-color-scheme, inherit);
-        @each $prop, $theme-map in themes.$themes {
+        @each $prop, $theme-map in themes.$tokens {
           @if (utils.is-map($theme-map)) {
             $inv-name: cssvar.name("inverse-" + $prop);
             // Swap them: --site-color-bg: var(--site-inverse-color-bg)

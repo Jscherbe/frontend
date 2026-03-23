@@ -8,18 +8,20 @@ Unlike other configuration modules that output structural styles, the `themes` m
 
 ## How it Works
 
-The system takes a single configuration map where the keys are the CSS custom property names, and the values are nested maps defining the variations.
+The system takes a single configuration map where the keys are the CSS custom property names, and the values are nested maps defining the variations. We refer to these entries as **Design Tokens**.
+
+A **Design Token** is a semantic name (like `color-background` or `spacing-layout`) that stores a raw value (like `#ffffff` or `16px`). In this system, a single token can hold multiple values, each corresponding to a different theme context (e.g., "light", "dark", "high-contrast").
 
 ### 1. Define the Variations
 
-In your project's configuration (e.g., `src/scss/config/_themes.scss`), define the map of variations and set it using `ulu.themes-set-themes()`. 
+In your project's configuration (e.g., `src/scss/config/_themes.scss`), define the map of tokens and set it using `ulu.themes-set-tokens()`. 
 
 The system uses a property-centric structure. This prevents you from having to redefine values that don't change between themes.
 
 ```scss
 @use "@ulu/frontend/scss" as ulu;
 
-$theme-colors: (
+$theme-tokens: (
   // Example: A value that changes between light and dark
   "color-background" : (
     "light" : white,
@@ -36,7 +38,7 @@ $theme-colors: (
   )
 );
 
-@include ulu.themes-set-themes($theme-colors);
+@include ulu.themes-set-tokens($theme-tokens);
 ```
 
 ### 2. Configure the Modules (Optional)
@@ -66,7 +68,8 @@ You can also configure the output of the base themes module:
 // In config/_base.scss
 @include ulu.base-themes-set((
   "output-inverse": true, // Whether to output the .theme-inverse utility
-  "fake-dark-color": white // The color reset for the .theme-dark-fake utility
+  "fake-dark-color": white, // The color reset for the .theme-dark-fake utility
+  "fake-dark-filter": invert(1) hue-rotate(180deg) saturate(0.7) // The filter used
 ));
 ```
 
