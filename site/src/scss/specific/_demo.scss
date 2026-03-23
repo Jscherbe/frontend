@@ -4,3 +4,21 @@
 .demo-width-small {
   max-width: 20rem;
 }
+
+.demo-theme-box {
+  padding: 2rem;
+  border-radius: ulu.element-get("border-radius");
+  background-color: ulu.cssvar-use("color-background");
+  color: ulu.cssvar-use("color-type");
+  border: 1px solid ulu.cssvar-use("color-rule");
+  margin-bottom: 2rem;
+}
+
+.demo-theme-fake-widget {
+  background: white;
+  color: black;
+  padding: 1.5rem;
+  border-radius: ulu.element-get("border-radius");
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

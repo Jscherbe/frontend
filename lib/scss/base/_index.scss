@@ -5,6 +5,7 @@
 
 @forward "root" as root-*;
 @forward "normalize" as normalize-*;
+@forward "themes" as themes-*;
 @forward "print" as print-*;
 @forward "color" as color-*;
 @forward "elements" as elements-*;
@@ -17,6 +18,7 @@
 @use "../utils";
 @use "normalize";
 @use "root";
+@use "themes";
 @use "elements";
 @use "print";
 @use "typography";
@@ -30,6 +32,7 @@
 $all-includes: (
   "normalize",
   "root",
+  "themes",
   "elements," 
   "print", 
   "elements", 
@@ -76,6 +79,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "root")) {
     @include root.styles;
+  }
+  @if (list.index($includes, "themes")) {
+    @include themes.styles;
   }
   @if (list.index($includes, "elements")) {
     @include elements.styles;

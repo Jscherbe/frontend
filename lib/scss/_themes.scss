@@ -1,0 +1,81 @@
+////
+/// @group themes
+/// Core configuration module for the themes system. 
+/// Used to orchestrate custom property variations (e.g., light/dark modes).
+/// - Note: This system is intended for switching context values like colors, box-shadows, and borders. 
+///   It is not recommended to use this for structural layout values like margins or padding. 
+///   For responsive or structural changes, rely on the layout/breakpoint modules or component modifiers.
+////
+
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+@use "utils";
+
+/// Module Settings
+/// @type Map
+/// @prop {String} default ["light"] The theme key output to :root
+/// @prop {Map} color-schemes [()] Maps theme names to their corresponding valid CSS color-scheme value (e.g. ("high-contrast": "dark")). Note: If a theme name is literally "light" or "dark", it does not need to be mapped here.
+/// @prop {Map} inverses [()] Maps theme names to their opposite theme name (e.g. ("light": "dark", "dark": "light")). Used to output the .theme-inverse utility.
+$config: (
+  "default" : "light",
+  "color-schemes" : (),
+  "inverses" : ()
+) !default;
+
+/// The themes map
+/// - Format: `("property-name": ("theme-name": value))`
+/// @type Map
+$themes: () !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Set the theme variations
+/// @param {Map} $changes Map of theme variations to merge
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+@mixin set-themes($changes, $merge-mode: "deep") {
+  $themes: utils.map-merge($themes, $changes, $merge-mode) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+@function get($name) {
+  @return utils.require-map-get($config, $name, "themes [config]");
+}
+
+/// Helper function to safely get the color scheme
+@function get-color-scheme($theme-name) {
+  $schemes: get("color-schemes");
+  $mapped: map.get($schemes, $theme-name);
+  
+  @if ($mapped) {
+    @return $mapped;
+  }
+  
+  @if ($theme-name == "light" or $theme-name == "dark") {
+    @return $theme-name;
+  }
+  
+  @warn "ULU Themes: No valid color-scheme mapped for theme '#{$theme-name}'. Please add it using `themes.set(( \"color-schemes\" : ( \"#{$theme-name}\": \"light|dark\" ) ))`. The `color-scheme` property will not be output for this theme.";
+  @return null;
+}
+
+/// Helper function to get all unique theme keys (e.g., 'light', 'dark') from the $themes map
+@function get-keys() {
+  $keys: ();
+  @each $prop, $theme-map in $themes {
+    @if meta.type-of($theme-map) == 'map' {
+      @each $key, $val in $theme-map {
+        @if not list.index($keys, $key) {
+          $keys: list.append($keys, $key);
+        }
+      }
+    }
+  }
+  @return $keys;
+}
+

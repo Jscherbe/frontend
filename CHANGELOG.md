@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.2
+
+- `scss/themes` (New Module)
+  - Introduce a dedicated `themes` module for orchestrating custom property variations (e.g., light/dark modes).
+  - Uses a property-centric map structure for developer-friendly theme definitions.
+  - Supports contextual inversion (`inverses` config) to allow static themes to intelligently flip their variables when their container theme changes.
+  - Generates `:root` variables, `.theme-[name]` modifier classes, and a `.theme-[name]-fake` utility class using CSS filters.
+
 ## 0.4.1
 
 - `scss/color` | Tweak box-shadow colors (darker)

@@ -1,0 +1,141 @@
+////
+/// @group themes
+/// Output base themes stylesheets
+////
+
+@use "sass:list";
+@use "sass:string";
+@use "sass:map";
+@use "../utils";
+@use "../themes";
+@use "../cssvar";
+@use "../selector";
+
+/// Module Settings
+/// @type Map
+/// @prop {Boolean} output-inverse [true] Whether to output the `.theme-inverse` utility and corresponding inverse variables
+/// @prop {Color} fake-dark-color [white] The fallback text color applied to elements using the `.theme-dark-fake` utility
+$config: (
+  "output-inverse": true,
+  "fake-dark-color": white
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+@function get($name) {
+  @return utils.require-map-get($config, $name, "base themes [config]");
+}
+
+/// Outputs base theme variables and classes
+/// @example scss
+///   @include ulu.base-themes-styles();
+@mixin styles {
+  @include utils.file-header('base', 'themes');
+
+  @if (list.length(themes.$themes) > 0) {
+    $keys: themes.get-keys();
+    $default: themes.get("default");
+    $prefix: selector.class("theme");
+    $dark-selectors: ();
+    $inverses: themes.get("inverses");
+    $inverse-prefix: selector.class("theme-inverse");
+    $output-inverse: get("output-inverse");
+    
+    // 1. Build Base Themes
+    @each $key in $keys {
+      $selectors: ();
+      $selectors: list.append($selectors, "#{ $prefix }-#{ $key }", comma);
+      
+      @if ($key == $default) {
+        $selectors: list.append($selectors, ":root", comma);
+      }
+
+      #{ $selectors } {
+        // Standard color-scheme and CSS vars
+        $color-scheme: themes.get-color-scheme($key);
+        @if ($color-scheme) {
+          color-scheme: #{ $color-scheme };
+        }
+        @include cssvar.declare-theme-values(themes.$themes, $key);
+
+        // Optional Inverse Variables (Variable Swap Approach)
+        // Can use @scope in the future but for now we suffix -"inverse"
+        @if ($output-inverse) {
+          $inverse-key: map.get($inverses, $key);
+          @if ($inverse-key) {
+            $inv-scheme: themes.get-color-scheme($inverse-key);
+            @if ($inv-scheme) {
+              --ulu-inverse-color-scheme: #{ $inv-scheme };
+            }
+            
+            @each $prop, $theme-map in themes.$themes {
+              @if (utils.is-map($theme-map)) {
+                $inv-value: map.get($theme-map, $inverse-key);
+                @if ($inv-value) {
+                  // Only output the inverse variable, not its fallback!
+                  @include cssvar.declare("inverse-#{$prop}", $inv-value);
+                }
+              }
+            }
+          }
+        }
+
+        // Contextual trigger for the fake dark utility
+        @if ($color-scheme == "dark") {
+          --ulu-theme-fake-filter: invert(1) hue-rotate(180deg) saturate(0.7);
+          --ulu-theme-fake-color: #{ get("fake-dark-color") };
+        } @else {
+          --ulu-theme-fake-filter: none;
+          --ulu-theme-fake-color: inherit;
+        }
+      }
+
+      // Collect dark themes for the fake utility
+      @if (themes.get-color-scheme($key) == "dark") {
+        $dark-selectors: list.append($dark-selectors, $selectors, comma);
+        // Ensure fake dark applies to inverted light themes
+        @each $current-theme, $inverse-target in $inverses {
+          @if ($inverse-target == $key) {
+             $dark-selectors: list.append($dark-selectors, "#{ $prefix }-#{ $current-theme } #{ $inverse-prefix }", comma);
+             @if ($current-theme == $default) {
+               $dark-selectors: list.append($dark-selectors, ":root #{ $inverse-prefix }", comma);
+             }
+          }
+        }
+      }
+    }
+
+    // 2. The Inverse Utility Class
+    @if ($output-inverse and list.length(map.keys($inverses)) > 0) {
+      #{ $inverse-prefix } {
+        color-scheme: var(--ulu-inverse-color-scheme, inherit);
+        @each $prop, $theme-map in themes.$themes {
+          @if (utils.is-map($theme-map)) {
+            $inv-name: cssvar.name("inverse-" + $prop);
+            // Swap them: --site-color-bg: var(--site-inverse-color-bg)
+            @include cssvar.declare($prop, var(#{ $inv-name }));
+          }
+        }
+      }
+    }
+
+    // 3. The Fake Dark Utility Class
+    /// Can be used on elements that need dark mode but that have colors that can't be updated (canvas charts for example)
+    /// It inverts the items color, and then inverts/spins the element colors so they match the hue before inversion
+    /// It also decreases the contrast slightly
+    @if (list.length($dark-selectors) > 0) {
+      #{ $dark-selectors } {
+        #{ $prefix }-dark-fake {
+          filter: var(--ulu-theme-fake-filter, none);
+          color: var(--ulu-theme-fake-color, inherit);
+        }
+      }
+    }
+  }
+}

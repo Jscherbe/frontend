@@ -1,4 +1,5 @@
 Important:
+  ☐ Enable docs configs again?
   ☐ After we add theme module create default light and dark, user can simply just output the light theme if they don't need dark (that way the docs site can be less configured for testing defaults)
   ☐ DX: warn about typos on property names
     ☐ All modules create util for set method that ensures that the keys being set are valid to the $config
