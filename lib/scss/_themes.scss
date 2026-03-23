@@ -91,12 +91,6 @@ $tokens: () !default;
 }
 
 /// Helper function to get all unique theme keys (e.g., 'light', 'dark') from the $themes map
-/// @example scss {compile} Example usage
-///   // Assuming themes were set with 'light' and 'dark' keys
-///   .test {
-///     // Note: list serialization depends on context, but this demonstrates access
-///     content: list.length(ulu.themes-get-keys()); 
-///   }
 /// @return {List} A list of all unique theme string keys
 
 @function get-keys() {
