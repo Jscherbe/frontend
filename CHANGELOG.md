@@ -2,6 +2,8 @@
 
 ## 0.4.2
 
+- `lib/js/ui/overflow-scroller-pager.js`
+  - Fixed a scroll target calculation in overflow-scroller-pager that caused backward navigation to fail on ultra-wide screens. The logic was corrected to properly subtract the CSS scroll padding when calculating the snap position, rather than adding it. Additionally, the viewport boundary checks were updated to account for sub-pixel rounding and the padded viewport, ensuring the slider reliably snaps to the correct previous slide. 
 - `scss/base/_root` 
   - This module adds the --ulu root custom properties and is now extended to allow setting site specific custom properties which will be output in root and declared with the cssvar module (respecting prefix). use 
     - `@include ulu.base-root-set-cssvars($map-of-cssvars);`

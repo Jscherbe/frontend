@@ -13,13 +13,13 @@ layout: fullpage
   </p>
 </div>
 
-<section class="container-fill" data-ulu-scroll-slider-init aria-labelledby="slider-title">
+<section class="container-fill" aria-labelledby="slider-title">
   <div class="container-fit">
     <h2 class="h2" id="slider-title">
       Slide Title
     </h2>
   </div>
-    <div class="scroll-slider scroll-slider--cards" data-ulu-scroll-slider="[]">
+    <div class="scroll-slider scroll-slider--cards" data-ulu-scroll-slider="{}">
       <div class="scroll-slider__control-context" data-ulu-scroll-slider-control-context>
         <div class="scroll-slider__track-crop">
           <ul class="scroll-slider__track" data-ulu-scroll-slider-track>

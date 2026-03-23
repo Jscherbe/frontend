@@ -1,4 +1,5 @@
 Current:
+  ☐ Make full screen X a back button instead so it makes sense and doesn't look like a modal
   ☐ Maybe before refactoring the current unstructured demos should we:
     ☐ Find a way to bring the sass API and demos together
     ☐ Have live demos for everything and find ways to generate this easily
