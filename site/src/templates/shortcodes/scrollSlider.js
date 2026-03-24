@@ -14,7 +14,7 @@ export default function(
   }
   return `
     <section class="container-fill" data-ulu-scroll-slider-init aria-labelledby="slider-title">
-      <div class="container-fit">
+      <div class="container no-padding-bottom">
         <h2 class="h2" id="slider-title">
           ${ title }
         </h2>

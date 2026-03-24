@@ -14,7 +14,7 @@ layout: fullpage
 </div>
 
 <section class="container-fill" aria-labelledby="slider-title">
-  <div class="container-fit">
+  <div class="container no-padding-bottom">
     <h2 class="h2" id="slider-title">
       Slide Title
     </h2>
