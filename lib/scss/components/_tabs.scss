@@ -59,6 +59,8 @@ $-fallbacks: (
 /// @prop {Boolean} vertical-indicator-left [true] The indicator for selected tab should be on the left when vertical (false will be on right/inside)
 /// @prop {Boolean} vertical-breakpoint [true] Set the breakpoint when the vertical tabs should switch to horizontal (defaults to breakpoint 'default')
 /// @prop {Boolean} horizontal-tab-wrap [false] Set to true to allow line wrapping when the tabs are in horizontal orientation, vertical is always allowed to wrap
+/// @prop {Color} full-width-tablist-background-color [null] Optional background color for full-width tabs tablist
+/// @prop {Color} full-width-tabpanel-background-color [transparent] Optional background color for full-width tabs tabpanel
 
 $config: (
   "margin" : (2rem 0),
@@ -88,7 +90,9 @@ $config: (
   "vertical-tab-gap" : 0.75em,
   "vertical-indicator-left" : true,
   "vertical-breakpoint" : true,
-  "horizontal-tab-wrap" : false
+  "horizontal-tab-wrap" : false,
+  "full-width-tablist-background-color" : null,
+  "full-width-tabpanel-background-color" : transparent,
 ) !default;
 
 /// Change modules $config
@@ -254,9 +258,10 @@ $config: (
   #{ $prefix }--full-width {
     > [role="tablist"] {
       justify-content: safe center;
+      background-color: color.get(get("full-width-tablist-background-color"));
     }
     >[role="tabpanel"] {
-      background-color: transparent;
+      background-color: color.get(get("full-width-tabpanel-background-color"));
       padding: 0;
     }
   }

@@ -61,18 +61,18 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     </button>
   </div>
   <div class="tabs__tabpanel" aria-labelledby="tabs-2-1">
-    <div class="tabs__tabpanel-container">
+    <div class="container-small">
       {{ placeholder.paragraph }}
     </div>
   </div>
   <div class="tabs__tabpanel" aria-labelledby="tabs-2-2">
-    <div class="tabs__tabpanel-container">
-      {{ placeholder.paragraph }}
+    <div class="container-small">
+      <p>Another full Width Example 2</p>
     </div>
   </div>
   <div class="tabs__tabpanel" aria-labelledby="tabs-2-3">
-    <div class="tabs__tabpanel-container">
-      {{ placeholder.paragraph }}
+    <div class="container-small">
+      <p>Another full Width Example 3</p>
     </div>
   </div>
 </div>

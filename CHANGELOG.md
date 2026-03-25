@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.4
+
+- `scss/component/_tabs.scss` | Add new optional config for "full-width-[tablist/tabpanel]-background-color"
+
 ## 0.4.3
 
 - `scss/_color.scss` | Darken default rule colors (changed in 0.4.0)
