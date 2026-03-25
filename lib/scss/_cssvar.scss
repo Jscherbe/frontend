@@ -179,7 +179,7 @@ $config: (
 /// @param {String} $key The key used to retrieve values from the map.
 /// @param {String} $prefix The optional prefix for CSS variables.
 @mixin declare-theme-values($theme, $key, $prefix: get("prefix")) {
-  @warn "ulu.cssvar-declare-theme-values() is deprecated. Please use ulu.themes-declare-values() instead.";
+  @warn "ulu.cssvar-declare-theme-values() is deprecated. Please use ulu.themes-declare() instead.";
   @each $name, $definition in $theme {
     $value: map.get($definition, $key);
     @if ($value) {
