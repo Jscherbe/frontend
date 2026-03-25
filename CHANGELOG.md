@@ -1,5 +1,29 @@
 # Change Log
 
+## 0.4.3
+
+- `scss/_color.scss` | Darken default rule colors (changed in 0.4.0)
+- `scss/cssvar.scss`
+  - Allow breakpoints in declare all maps (example below) following API from other breakpoint maps in various components
+  - Also adds this capability to `ulu.base-root-set-cssvars()` so you can have adaptive values
+
+**Example of cssvars with adaptive breakpoints map**
+
+```scss
+@include ulu.cssvar-declare-all((
+  "base-color" : red,
+  "responsive-color" : (
+    "value" : blue,
+    "breakpoints" : (
+      "medium" : (
+        "direction" : "up",
+        "value" : green
+      )
+    )
+  )
+));
+``` 
+
 ## 0.4.2
 
 - `lib/js/ui/overflow-scroller-pager.js`

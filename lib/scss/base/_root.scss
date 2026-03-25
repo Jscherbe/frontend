@@ -35,6 +35,20 @@ $config: (
 $cssvars: () !default;
 
 /// Set global root variables
+/// - Supports mapping values to breakpoints. Values can be literal or a configuration map with `value` and `breakpoints` keys.
+/// @example scss Example usage with breakpoints
+///   @include ulu.base-root-set-cssvars((
+///     "base-color": red,
+///     "responsive-size": (
+///       "value": 1rem,
+///       "breakpoints": (
+///         "medium": (
+///           "direction": "up",
+///           "value": 2rem
+///         )
+///       )
+///     )
+///   ));
 /// @param {Map} $changes Map of changes
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
 @mixin set-cssvars($changes, $merge-mode: null) {

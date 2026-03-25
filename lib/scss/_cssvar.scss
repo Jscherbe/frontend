@@ -84,17 +84,46 @@ $config: (
   #{ name($name, $prefix) } : #{ $value };
 }
 
-/// Outputs a map as custom properties
+/// Outputs a map as custom properties. Supports mapping values to breakpoints.
 /// @example scss Declare each property in a map as a custom property
 ///   :root {
-///     @include ulu.cssvar-declare($colors);
+///     @include ulu.cssvar-declare-all((
+///       "base-color" : red,
+///       "responsive-color" : (
+///         "value" : blue,
+///         "breakpoints" : (
+///           "medium" : (
+///             "direction" : "up",
+///             "value" : green
+///           )
+///         )
+///       )
+///     ));
 ///   }
-/// @param {Map} $props Properties to declare
+/// @param {Map} $props Properties to declare. Values can be literal or a configuration map with `value` and `breakpoints` keys.
 /// @param {String} $prefix [$config.prefix] Override default prefix
 
 @mixin declare-all($props, $prefix: get("prefix")) {
   @each $name, $value in $props {
-    @include declare($name, $value, $prefix);
+    @if meta.type-of($value) == "map" {
+      $base-value: map.get($value, "value");
+      $breakpoints: map.get($value, "breakpoints");
+      
+      @if $base-value != null {
+        @include declare($name, $base-value, $prefix);
+      }
+      
+      @if $breakpoints and meta.type-of($breakpoints) == "map" {
+        @include breakpoint.from-each($breakpoints) using ($b-props) {
+          $b-value: map.get($b-props, "value");
+          @if $b-value != null {
+            @include declare($name, $b-value, $prefix);
+          }
+        }
+      }
+    } @else {
+      @include declare($name, $value, $prefix);
+    }
   }
 }
 
