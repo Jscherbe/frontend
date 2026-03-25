@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-BqZFbLfs.css">
+  <link rel="stylesheet" href="/frontend/assets/main-CtgHdvoU.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6789,6 +6789,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.4.3">0.4.3</a>
+            		</li>
+
                     <li><a href="#0.4.2">0.4.2</a>
             		</li>
 
@@ -7281,6 +7284,29 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.4.3" tabindex="-1">0.4.3</h2>
+<ul>
+<li><code>scss/_color.scss</code> | Darken default rule colors (changed in 0.4.0)</li>
+<li><code>scss/cssvar.scss</code>
+<ul>
+<li>Allow breakpoints in declare all maps (example below) following API from other breakpoint maps in various components</li>
+<li>Also adds this capability to <code>ulu.base-root-set-cssvars()</code> so you can have adaptive values</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example of cssvars with adaptive breakpoints map</strong></p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">cssvar-declare-all</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
+  <span class="pjs-token pjs-string">"base-color"</span> <span class="pjs-token pjs-punctuation">:</span> red<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"responsive-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+    <span class="pjs-token pjs-string">"value"</span> <span class="pjs-token pjs-punctuation">:</span> blue<span class="pjs-token pjs-punctuation">,</span>
+    <span class="pjs-token pjs-string">"breakpoints"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+      <span class="pjs-token pjs-string">"medium"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+        <span class="pjs-token pjs-string">"direction"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"up"</span><span class="pjs-token pjs-punctuation">,</span>
+        <span class="pjs-token pjs-string">"value"</span> <span class="pjs-token pjs-punctuation">:</span> green
+      <span class="pjs-token pjs-punctuation">)</span>
+    <span class="pjs-token pjs-punctuation">)</span>
+  <span class="pjs-token pjs-punctuation">)</span>
+<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h2 id="0.4.2" tabindex="-1">0.4.2</h2>
 <ul>
 <li><code>lib/js/ui/overflow-scroller-pager.js</code>
@@ -9245,7 +9271,7 @@ size of flex items with a 0% basis)</li>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-s-5VA0ju.js"></script>
+<script type="module" src="/frontend/assets/main-BQzsCHlc.js"></script>
 
 		
 	</body>
