@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-57zK6wf8.css">
+  <link rel="stylesheet" href="/frontend/assets/main-BqZFbLfs.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -1156,6 +1156,47 @@
     
     <span class="nav-tree__text">
       WYSIWYG
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon fas fa-clipboard-list" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Tests
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/tests/scroll-slider/">
+          
+    
+    <span class="nav-tree__text">
+      Scroll Slider
     </span>
   
         </a>
@@ -4500,6 +4541,47 @@
     <span class="nav-tree__toggle-content">
       
     
+    <span class="nav-tree__icon fas fa-clipboard-list" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Tests
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/tests/scroll-slider/">
+          
+    
+    <span class="nav-tree__text">
+      Scroll Slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
     <span class="nav-tree__icon fab fa-sass" aria-hidden="true"></span>
   
     <span class="nav-tree__text">
@@ -7201,12 +7283,32 @@
 <h1 id="change-log" tabindex="-1">Change Log</h1>
 <h2 id="0.4.2" tabindex="-1">0.4.2</h2>
 <ul>
+<li><code>lib/js/ui/overflow-scroller-pager.js</code>
+<ul>
+<li>Fixed a scroll target calculation in overflow-scroller-pager that caused backward navigation to fail on ultra-wide screens. The logic was corrected to properly subtract the CSS scroll padding when calculating the snap position, rather than adding it. Additionally, the viewport boundary checks were updated to account for sub-pixel rounding and the padded viewport, ensuring the slider reliably snaps to the correct previous slide.</li>
+</ul>
+</li>
+<li><code>scss/base/_root</code>
+<ul>
+<li>This module adds the --ulu root custom properties and is now extended to allow setting site specific custom properties which will be output in root and declared with the cssvar module (respecting prefix). use
+<ul>
+<li><code>@include ulu.base-root-set-cssvars($map-of-cssvars);</code></li>
+</ul>
+</li>
+<li>Add $config with ability to change default system vars (sticky top, etc that are used internally)</li>
+</ul>
+</li>
 <li><code>scss/themes</code> (New Module)
 <ul>
 <li>Introduce a dedicated <code>themes</code> module for orchestrating custom property variations (e.g., light/dark modes).</li>
 <li>Uses a property-centric map structure for developer-friendly theme definitions.</li>
 <li>Supports contextual inversion (<code>inverses</code> config) to allow static themes to intelligently flip their variables when their container theme changes.</li>
 <li>Generates <code>:root</code> variables, <code>.theme-[name]</code> modifier classes, and a <code>.theme-[name]-fake</code> utility class using CSS filters.</li>
+</ul>
+</li>
+<li><code>scss/cssvar</code>
+<ul>
+<li><strong>DEPRECATED</strong>: <code>cssvar.declare-theme-values()</code> has been deprecated. It has been moved to the new themes module as <code>themes.declare-values()</code>. Please update your implementations, as the old mixin will be removed in a future version.</li>
 </ul>
 </li>
 </ul>
@@ -9143,7 +9245,7 @@ size of flex items with a 0% basis)</li>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-Dw2fnwUc.js"></script>
+<script type="module" src="/frontend/assets/main-s-5VA0ju.js"></script>
 
 		
 	</body>

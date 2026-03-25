@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-57zK6wf8.css">
+  <link rel="stylesheet" href="/frontend/assets/main-BqZFbLfs.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -1156,6 +1156,47 @@
     
     <span class="nav-tree__text">
       WYSIWYG
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
+    <span class="nav-tree__icon fas fa-clipboard-list" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Tests
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/tests/scroll-slider/">
+          
+    
+    <span class="nav-tree__text">
+      Scroll Slider
     </span>
   
         </a>
@@ -4500,6 +4541,47 @@
     <span class="nav-tree__toggle-content">
       
     
+    <span class="nav-tree__icon fas fa-clipboard-list" aria-hidden="true"></span>
+  
+    <span class="nav-tree__text">
+      Tests
+    </span>
+  
+    </span>
+    <span class="nav-tree__toggle-icon fas fa-chevron-down" aria-hidden="true"></span>
+  
+            </summary>
+            
+      <ul class="nav-tree" data-menu-depth="2">
+        
+        
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/tests/scroll-slider/">
+          
+    
+    <span class="nav-tree__text">
+      Scroll Slider
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+      </ul>
+    
+          </details>
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          <details class="nav-tree__collapsible">
+            <summary class="nav-tree__toggle">
+              
+    <span class="nav-tree__toggle-content">
+      
+    
     <span class="nav-tree__icon fab fa-sass" aria-hidden="true"></span>
   
     <span class="nav-tree__text">
@@ -6749,13 +6831,14 @@
       <p>The <code>@ulu/frontend</code> library includes a dedicated <code>themes</code> module designed to orchestrate custom property variations, most commonly used for implementing light and dark modes, or creating multiple distinct brand themes within a single project.</p>
 <p>Unlike other configuration modules that output structural styles, the <code>themes</code> module specifically manages the generation of CSS Custom Properties (<code>var(--...)</code>) scoped to <code>:root</code> or specific <code>.theme-[name]</code> classes.</p>
 <h2 id="how-it-works" tabindex="-1">How it Works</h2>
-<p>The system takes a single configuration map where the keys are the CSS custom property names, and the values are nested maps defining the variations.</p>
+<p>The system takes a single configuration map where the keys are the CSS custom property names, and the values are nested maps defining the variations. We refer to these entries as <strong>Design Tokens</strong>.</p>
+<p>A <strong>Design Token</strong> is a semantic name (like <code>color-background</code> or <code>spacing-layout</code>) that stores a raw value (like <code>#ffffff</code> or <code>16px</code>). In this system, a single token can hold multiple values, each corresponding to a different theme context (e.g., &quot;light&quot;, &quot;dark&quot;, &quot;high-contrast&quot;).</p>
 <h3 id="1.-define-the-variations" tabindex="-1">1. Define the Variations</h3>
-<p>In your project's configuration (e.g., <code>src/scss/config/_themes.scss</code>), define the map of variations and set it using <code>ulu.themes-set-themes()</code>.</p>
+<p>In your project's configuration (e.g., <code>src/scss/config/_themes.scss</code>), define the map of tokens and set it using <code>ulu.themes-set-tokens()</code>.</p>
 <p>The system uses a property-centric structure. This prevents you from having to redefine values that don't change between themes.</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-keyword">@use</span> <span class="pjs-token pjs-string">"@ulu/frontend/scss"</span> <span class="pjs-token pjs-module-modifier pjs-keyword">as</span> ulu<span class="pjs-token pjs-punctuation">;</span>
 
-<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$theme-colors</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
+<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$theme-tokens</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-comment">// Example: A value that changes between light and dark</span>
   <span class="pjs-token pjs-string">"color-background"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
     <span class="pjs-token pjs-string">"light"</span> <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
@@ -6772,7 +6855,7 @@
   <span class="pjs-token pjs-punctuation">)</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 
-<span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">themes-set-themes</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$theme-colors</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
+<span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">themes-set-tokens</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$theme-tokens</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h3 id="2.-configure-the-modules-(optional)" tabindex="-1">2. Configure the Modules (Optional)</h3>
 <p>By default, the core <code>themes</code> module assumes your default theme is named <code>&quot;light&quot;</code>. You can change this, map theme names to valid CSS <code>color-scheme</code> properties, and even map themes to their &quot;inverse&quot; counterparts for contextual flipping.</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-comment">// In config/_themes.scss</span>
@@ -6793,7 +6876,8 @@
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-comment">// In config/_base.scss</span>
 <span class="pjs-token pjs-keyword">@include</span> ulu.<span class="pjs-token pjs-function">base-themes-set</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"output-inverse"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-comment">// Whether to output the .theme-inverse utility</span>
-  <span class="pjs-token pjs-string">"fake-dark-color"</span><span class="pjs-token pjs-punctuation">:</span> white <span class="pjs-token pjs-comment">// The color reset for the .theme-dark-fake utility</span>
+  <span class="pjs-token pjs-string">"fake-dark-color"</span><span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-comment">// The color reset for the .theme-dark-fake utility</span>
+  <span class="pjs-token pjs-string">"fake-dark-filter"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">invert</span><span class="pjs-token pjs-punctuation">(</span>1<span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-function">hue-rotate</span><span class="pjs-token pjs-punctuation">(</span>180deg<span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-function">saturate</span><span class="pjs-token pjs-punctuation">(</span>0.7<span class="pjs-token pjs-punctuation">)</span> <span class="pjs-token pjs-comment">// The filter used</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <h3 id="3.-output-the-css" tabindex="-1">3. Output the CSS</h3>
 <p>To generate the CSS variables, ensure the <code>base</code> stylesheets are being output in your main <code>styles.scss</code> file. (If you are using <code>@use &quot;@ulu/frontend/scss/stylesheets/full&quot;;</code>, this happens automatically).</p>
@@ -6852,7 +6936,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-Dw2fnwUc.js"></script>
+<script type="module" src="/frontend/assets/main-s-5VA0ju.js"></script>
 
 		
 	</body>
