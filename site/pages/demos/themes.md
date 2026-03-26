@@ -44,24 +44,28 @@ intro: The themes module orchestrates custom property variations to easily imple
 </div>
 {% endCodePreview %}
 
-## Fake Dark Utility
+## Fake Inversion Utility
 
-<p>Sometimes you have elements (like iframes or canvas charts) that cannot accept CSS custom properties but still need to be inverted for a dark theme. The <code>.theme-dark-fake</code> utility class achieves this using CSS filters.</p>
-
-<p><em>Note: This utility only activates when placed inside a dark color scheme context.</em></p>
+<p>Sometimes you have elements (like iframes or canvas charts) that cannot accept CSS custom properties but still need to be "themed". The <code>.theme-fake-invert</code> utility class achieves this using CSS filters. It works by inverting the element's colors and then adjusting the hue to match the current theme's context.</p>
 
 {% CodePreview %}
 <div class="demo-theme-box theme-dark">
-  <h3>Standard vs Fake Dark</h3>
+  <h3>Dark Theme Context</h3>
   
-  <p>Below is a div with a hardcoded white background and black text (simulating an external widget).</p>
+  <p>Below is a div with hardcoded black text on a white background (simulating a light-only widget).</p>
   
-  <div class="demo-theme-fake-widget">
-    <strong>Standard Element:</strong> It remains blaring white even though it is inside a dark container.
+  <div class="demo-theme-fake-widget theme-fake-invert">
+    <strong>Inverted Widget:</strong> This widget is now dark to match its container.
   </div>
+</div>
 
-  <div class="demo-theme-fake-widget theme-dark-fake">
-    <strong>Fake Dark Element:</strong> By adding the <code>.theme-dark-fake</code> class, the colors are inverted to match the surrounding dark theme context, while hues are preserved.
+<div class="demo-theme-box theme-light">
+  <h3>Light Theme Context</h3>
+  
+  <p>Below is a div with hardcoded white text on a black background (simulating a dark-only widget).</p>
+  
+  <div class="demo-theme-fake-widget  demo-theme-fake-widget--dark theme-fake-invert">
+    <strong>Inverted Widget:</strong> This widget is now light to match its container.
   </div>
 </div>
 {% endCodePreview %}

@@ -14,12 +14,18 @@
 /// Module Settings
 /// @type Map
 /// @prop {Boolean} output-inverse [true] Whether to output the `.theme-inverse` utility and corresponding inverse variables
-/// @prop {Color} fake-dark-color [white] The fallback text color applied to elements using the `.theme-dark-fake` utility
-/// @prop {String} fake-dark-filter [invert(1) hue-rotate(180deg) saturate(0.7)] The filter applied to elements using the `.theme-dark-fake` utility
+/// @prop {Color} fake-invert-color [black] The fallback text color applied to elements using the fake inversion utilities. Note: This should be the color that, when inverted, results in the desired theme color.
+/// @prop {String} fake-invert-filter [invert(1) hue-rotate(180deg) saturate(0.7)] The filter applied to elements using the fake inversion utilities.
+/// @prop {String} token-color ["color-type"] The token name used for the `color` property on theme classes. 
+/// @prop {String} token-background-color [null] The token name used for the `background-color` property on theme classes. This is not included by default (normally we don't want to set a specific background color but if you do add the background-color token name from the theme)
+/// @prop {Boolean} token-warnings [true] Since this is an opinionated stylesheet we warn if you have "token-color" set but it's key is not found in the theme. If this is intentional
 $config: (
   "output-inverse": true,
-  "fake-dark-color": white,
-  "fake-dark-filter": invert(1) hue-rotate(180deg) saturate(0.7)
+  "fake-invert-color": black,
+  "fake-invert-filter": invert(1) hue-rotate(180deg) saturate(0.7),
+  "token-color": "color-type",
+  "token-background-color": null,
+  "token-warnings" : true,
 ) !default;
 
 /// Change modules $config
@@ -44,7 +50,7 @@ $config: (
     $keys: themes.get-keys();
     $default: themes.get("default");
     $prefix: selector.class("theme");
-    $dark-selectors: ();
+    $fake-selectors: ();
     $inverses: themes.get("inverses");
     $inverse-prefix: selector.class("theme-inverse");
     $output-inverse: get("output-inverse");
@@ -65,6 +71,20 @@ $config: (
           color-scheme: #{ $color-scheme };
         }
         @include themes.declare($key);
+
+        // Force color and background-color if tokens are set
+        $color-token: get("token-color");
+        $bg-token: get("token-background-color");
+
+        @include -token-warning("token-color", $key);
+        @include -token-warning("token-background-color", $key);
+
+        @if ($color-token) {
+          color: cssvar.use($color-token);
+        }
+        @if ($bg-token) {
+          background-color: cssvar.use($bg-token);
+        }
 
         // Optional Inverse Variables (Variable Swap Approach)
         // Can use @scope in the future but for now we suffix -"inverse"
@@ -88,26 +108,40 @@ $config: (
           }
         }
 
-        // Contextual trigger for the fake dark utility
-        @if ($color-scheme == "dark") {
-          --ulu-theme-fake-filter: #{ get("fake-dark-filter") };
-          --ulu-theme-fake-color: #{ get("fake-dark-color") };
-        } @else {
-          --ulu-theme-fake-filter: none;
-          --ulu-theme-fake-color: inherit;
-        }
-      }
+        // Contextual trigger for the fake inversion utility
+        --ulu-theme-fake-filter: #{ get("fake-invert-filter") };
+        
+        $fake-color: get("fake-invert-color");
+        $fake-bg: inherit;
+        $color-token: get("token-color");
+        $bg-token: get("token-background-color");
 
-      // Collect dark themes for the fake utility
-      @if (themes.get-color-scheme($key) == "dark") {
-        $dark-selectors: list.append($dark-selectors, $selectors, comma);
-        // Ensure fake dark applies to inverted light themes
-        @each $current-theme, $inverse-target in $inverses {
-          @if ($inverse-target == $key) {
-             $dark-selectors: list.append($dark-selectors, "#{ $prefix }-#{ $current-theme } #{ $inverse-prefix }", comma);
-             @if ($current-theme == $default) {
-               $dark-selectors: list.append($dark-selectors, ":root #{ $inverse-prefix }", comma);
-             }
+        @if ($output-inverse) {
+          $inverse-key: map.get($inverses, $key);
+          @if ($inverse-key) {
+            @if ($color-token) {
+              $fake-color: var(#{ cssvar.name("inverse-" + $color-token) }, #{ $fake-color });
+            }
+            @if ($bg-token) {
+              $fake-bg: var(#{ cssvar.name("inverse-" + $bg-token) }, white);
+            }
+          }
+        }
+
+        --ulu-theme-fake-color: #{ $fake-color };
+        --ulu-theme-fake-background-color: #{ $fake-bg };
+        
+        $fake-selectors: list.append($fake-selectors, $selectors, comma);
+
+        // Ensure fake utility applies to inverted themes
+        @if ($output-inverse) {
+          @each $current-theme, $inverse-target in $inverses {
+            @if ($inverse-target == $key) {
+               $fake-selectors: list.append($fake-selectors, "#{ $prefix }-#{ $current-theme } #{ $inverse-prefix }", comma);
+               @if ($current-theme == $default) {
+                 $fake-selectors: list.append($fake-selectors, ":root #{ $inverse-prefix }", comma);
+               }
+            }
           }
         }
       }
@@ -124,19 +158,43 @@ $config: (
             @include cssvar.declare($prop, var(#{ $inv-name }));
           }
         }
+        // Force color and background-color if tokens are set
+        $color-token: get("token-color");
+        $bg-token: get("token-background-color");
+        @if ($color-token) {
+          color: cssvar.use($color-token);
+        }
+        @if ($bg-token) {
+          background-color: cssvar.use($bg-token);
+        }
       }
     }
 
-    // 3. The Fake Dark Utility Class
-    /// Can be used on elements that need dark mode but that have colors that can't be updated (canvas charts for example)
+    // 3. The Fake Inversion Utility Class
+    /// Can be used on elements that need a theme but that have colors that can't be updated (canvas charts for example)
     /// It inverts the items color, and then inverts/spins the element colors so they match the hue before inversion
     /// It also decreases the contrast slightly
-    @if (list.length($dark-selectors) > 0) {
-      #{ $dark-selectors } {
-        #{ $prefix }-dark-fake {
+    @if (list.length($fake-selectors) > 0) {
+      #{ $fake-selectors } {
+        #{ $prefix }-fake-invert,
+        #{ $prefix }-dark-fake { // Legacy support
           filter: var(--ulu-theme-fake-filter, none);
           color: var(--ulu-theme-fake-color, inherit);
+          background-color: var(--ulu-theme-fake-background-color, transparent);
         }
+      }
+    }
+  }
+}
+
+/// Internal mixin for warnings (DRY) 
+@mixin -token-warning($token-property, $theme-key) {
+  @if (get("token-warnings")) {
+    $token: get($token-property);
+    @if ($token) {
+      $def: utils.ensure-map(map.get(themes.$tokens, $token));
+      @if (not utils.map-has($def, $theme-key)) {
+        @warn "ULU Themes: The token '#{ $token }' (#{ $token-property}) is missing a value for theme '#{ $theme-key }'. This may cause color inheritance issues.";
       }
     }
   }

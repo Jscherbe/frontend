@@ -323,8 +323,8 @@ $config: (
 ///
 
 @function map-has($map, $key) {
-  @if (meta.type-of($map) != "map") {
-    @error "map-has(): Incorrect type for $map (should be map)";
+  @if (not is-map($map)) {
+    @error "map-has(): Incorrect type for $map (should be map) got (#{ $type-passed })";
   }
   @return map.get($map, $key) != null;
 }
@@ -793,7 +793,12 @@ $config: (
 /// @return {Boolean} Whether the item was type map
 
 @function is-map($value) {
-  @return meta.type-of($value) == "map";
+  $type: meta.type-of($value);
+  @if ($type == "list") {
+    @return list.length($value) == 0;
+  } @else {
+    @return meta.type-of($value) == "map";
+  }
 }
 
 /// Determines if value passed is a number

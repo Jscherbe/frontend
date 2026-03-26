@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.5
+
+- `scss/base/_themes.scss`
+  - Add options for "token-color", "token-background-color" to set theses CSS properties on the themes (normally we want to only set the base color, so it looks for token "color-type" by default).
+  - Fixed fake-dark-color was white needed to be black
+  - Add warnings if the token isn't found to prevent unexpected results
+  - **Breaking** but probably wasn't used removed class for theme-fake-dark and added a system to create .theme-fake-invert instead so it works for either scenario (light / dark)
+  
 ## 0.4.4
 
 - `scss/component/_tabs.scss` | Add new optional config for "full-width-[tablist/tabpanel]-background-color"
