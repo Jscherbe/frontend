@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.4.6
+
+- Fix `base/_themes.scss` order (to bottom of base stylesheet) so color overrides properly override body/etc for color
+- Include `base/_print.scss` was not output earlier (just has common properties for some elements and standard page margin)
+
 ## 0.4.5
 
 - `scss/base/_root.scss`

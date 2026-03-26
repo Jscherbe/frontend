@@ -33,7 +33,6 @@ $all-includes: (
   "normalize",
   "root",
   "themes",
-  "elements," 
   "print", 
   "elements", 
   "keyframes", 
@@ -80,11 +79,11 @@ $current-includes: $all-includes;
   @if (list.index($includes, "root")) {
     @include root.styles;
   }
-  @if (list.index($includes, "themes")) {
-    @include themes.styles;
-  }
   @if (list.index($includes, "elements")) {
     @include elements.styles;
+  }
+  @if (list.index($includes, "themes")) {
+    @include themes.styles;
   }
   @if (list.index($includes, "keyframes")) {
     @include keyframes.styles;
@@ -99,7 +98,7 @@ $current-includes: $all-includes;
     @include layout.styles;
   }
   @if (list.index($includes, "print")) {
-    @include normalize.styles;
+    @include print.styles;
   }
 }
 

@@ -208,7 +208,7 @@ $config: (
 }
 
 @mixin styles-body() {
-  color: color.get('type');
+  color: color.get("type");
   background-color: color.get("background");
   font-family: typography.get("font-family");
   // Note we are using relative units here instead of setting a 
