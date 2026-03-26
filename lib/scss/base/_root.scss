@@ -63,10 +63,20 @@ $cssvars: () !default;
   @include utils.file-header('base', 'root');
   // Core/default css-vars
   :root {
-    @include custom-properties();
-    @include cssvar.declare-breakpoint();
-    @include cssvar.declare-all($cssvars);
+    @include declare();
   }
+}
+
+/// Declare custom properties for ulu (without selector)
+/// @example scss
+///  .cms-backend {
+///    @include ulu.base-root-declare();
+///  }
+
+@mixin declare() {
+  @include custom-properties();
+  @include cssvar.declare-breakpoint();
+  @include cssvar.declare-all($cssvars);
 }
 
 /// Output custom properties for ulu

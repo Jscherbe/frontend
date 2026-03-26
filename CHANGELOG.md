@@ -2,6 +2,8 @@
 
 ## 0.4.5
 
+- `scss/base/_root.scss`
+  - Add mixin `@include ulu.base-root-declare()` for outputting all custom-properties (cssvars), in situations where you need to apply them not to :root selector (which the `@include ulu.base-root-styles()` does by default)
 - `scss/base/_themes.scss`
   - Add options for "token-color", "token-background-color" to set theses CSS properties on the themes (normally we want to only set the base color, so it looks for token "color-type" by default).
   - Fixed fake-dark-color was white needed to be black
