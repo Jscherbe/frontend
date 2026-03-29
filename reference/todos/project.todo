@@ -1,4 +1,7 @@
 Overall:
+  ☐ Need to update to latest vite / sass-embedded
+    * It's built specifically for mac os 14+ now
+    * Test that everything is working/etc
   ☐ Would be nice to setup (or start collecting) eleventy shortcodes 
     * Load them in the docs site, but also export them for user use? Use them in small projects where we need to provide documentation / etc
   ☐ Need to setup shortcode/partial to template demos (ie. write code, show code and result)
