@@ -125,7 +125,7 @@ $tokens: () !default;
 @mixin declare($key, $tokens: $tokens, $prefix: cssvar.get("prefix")) {
   @each $name, $definition in $tokens {
     $value: map.get($definition, $key);
-    @if ($value) {
+    @if ($value != null) {
       @include cssvar.declare($name, $value, $prefix);
     }
   }

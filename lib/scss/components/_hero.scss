@@ -17,7 +17,7 @@
 /// @type Map
 /// @prop {Map} extra-split-ratios  [wide 70/30] A map where the name is the modifier and the value is a list with two percentages (the first percentage will be correspond with the graphic or content depending on selector [ie. .hero--split-graphic-[name] would apply the first percentage to the graphic while hero--split-content-[name] would apply the first percentage to the content]) 
 /// @prop {String} breakpoint ["medium"] At what breakpoint the hero goes to small screen styling.
-/// @prop {Dimension} height [100vh] Height of the hero.
+/// @prop {Dimension} height [var(--ulu-fullscreen-height)] Height of the hero.
 /// @prop {Dimension} height-compact [40vh] Height of the hero when using the "--compact" styling.
 /// @prop {Dimension} graphic-height-stacked [60vh] Height of the graphic.
 /// @prop {Dimension} content-max-width [40rem] Max width of the content.
@@ -28,7 +28,7 @@
 
 $config: (
   "breakpoint" : "medium",
-  "height" : 100vh,
+  "height" : var(--ulu-fullscreen-height),
   "height-compact" : 40vh,
   "graphic-height-stacked" : 60vh,
   "content-max-width" : 40rem,

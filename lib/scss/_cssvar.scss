@@ -77,11 +77,29 @@ $config: (
 ///     @include ulu.cssvar-declare("base-color", red);
 ///   }
 /// @param {String} $name Name of property
-/// @param {*} $value The properties value to declare
+/// @param {*} $value The properties value to declare. Can be a literal or a configuration map with `value` and `breakpoints` keys.
 /// @param {String} $prefix [$config.prefix] Override default prefix
 
 @mixin declare($name, $value, $prefix: get("prefix")) {
-  #{ name($name, $prefix) } : #{ $value };
+  @if meta.type-of($value) == "map" {
+    $base-value: map.get($value, "value");
+    $breakpoints: map.get($value, "breakpoints");
+    
+    @if $base-value != null {
+      #{ name($name, $prefix) } : #{ $base-value };
+    }
+    
+    @if $breakpoints and meta.type-of($breakpoints) == "map" {
+      @include breakpoint.from-each($breakpoints) using ($b-props) {
+        $b-value: map.get($b-props, "value");
+        @if $b-value != null {
+          #{ name($name, $prefix) } : #{ $b-value };
+        }
+      }
+    }
+  } @else {
+    #{ name($name, $prefix) } : #{ $value };
+  }
 }
 
 /// Outputs a map as custom properties. Supports mapping values to breakpoints.
@@ -105,23 +123,7 @@ $config: (
 
 @mixin declare-all($props, $prefix: get("prefix")) {
   @each $name, $value in $props {
-    @if meta.type-of($value) == "map" {
-      $base-value: map.get($value, "value");
-      $breakpoints: map.get($value, "breakpoints");
-      
-      @if $base-value != null {
-        @include declare($name, $base-value, $prefix);
-      }
-      
-      @if $breakpoints and meta.type-of($breakpoints) == "map" {
-        @include breakpoint.from-each($breakpoints) using ($b-props) {
-          $b-value: map.get($b-props, "value");
-          @if $b-value != null {
-            @include declare($name, $b-value, $prefix);
-          }
-        }
-      }
-    } @else {
+    @if $value != null {
       @include declare($name, $value, $prefix);
     }
   }

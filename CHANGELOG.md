@@ -1,5 +1,16 @@
 # Change Log
 
+
+## 0.4.7
+
+- `scss/_cssvar`
+  - Allow cssvar-declare to accept maps (like declare all) so that values can contain breakpoints
+- `scss/base/_root`
+  - Add new ulu custom properties that can be configured and will be used in components that have static values for 100vh
+    - `--ulu-header-height` [default to 0]
+    - `--ulu-fullscreen-height` [default to 100dvh - header-height ]
+    - `--ulu-fullscreen-height-sticky` [default to calc(100dvh - var(--ulu-sticky-top-offset) - var(--ulu-sticky-bottom-offset))])
+
 ## 0.4.6
 
 - Fix `base/_themes.scss` order (to bottom of base stylesheet) so color overrides properly override body/etc for color
