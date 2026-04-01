@@ -86,10 +86,8 @@ $cssvars: () !default;
 
 @mixin custom-properties() {
   $prefix: "ulu";
-  @include cssvar.declare("sticky-top-offset", get("sticky-top-offset"), $prefix); 
-  @include cssvar.declare("sticky-bottom-offset", get("sticky-bottom-offset"), $prefix);
-  @include cssvar.declare("header-height", get("header-height"), $prefix); 
-  @include cssvar.declare("fullscreen-height", get("fullscreen-height"), $prefix);
-  @include cssvar.declare("fullscreen-height-sticky", get("fullscreen-height-sticky"), $prefix);
+  // Just looping through $config for now (since all are root properties)
+  // This may need to be adjusted if config is used for something else
+  @include cssvar.declare-all($config, $prefix);
   @include cssvar.declare("scrollbar-width", 0px, $prefix); // Set by JS
 }

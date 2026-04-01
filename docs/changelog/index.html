@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-7iwg2LpL.css">
+  <link rel="stylesheet" href="/frontend/assets/main-wQK7Mwx0.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6789,6 +6789,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.4.7">0.4.7</a>
+            		</li>
+
                     <li><a href="#0.4.6">0.4.6</a>
             		</li>
 
@@ -7293,6 +7296,25 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.4.7" tabindex="-1">0.4.7</h2>
+<ul>
+<li><code>scss/_cssvar</code>
+<ul>
+<li>Allow cssvar-declare to accept maps (like declare all) so that values can contain breakpoints</li>
+</ul>
+</li>
+<li><code>scss/base/_root</code>
+<ul>
+<li>Add new ulu custom properties that can be configured and will be used in components that have static values for 100vh
+<ul>
+<li><code>--ulu-header-height</code> [default to 0]</li>
+<li><code>--ulu-fullscreen-height</code> [default to 100dvh - header-height ]</li>
+<li><code>--ulu-fullscreen-height-sticky</code> [default to calc(100dvh - var(--ulu-sticky-top-offset) - var(--ulu-sticky-bottom-offset))])</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.4.6" tabindex="-1">0.4.6</h2>
 <ul>
 <li>Fix <code>base/_themes.scss</code> order (to bottom of base stylesheet) so color overrides properly override body/etc for color</li>
@@ -9305,7 +9327,7 @@ size of flex items with a 0% basis)</li>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-BG5A3Ff1.js"></script>
+<script type="module" src="/frontend/assets/main-C2GmIASF.js"></script>
 
 		
 	</body>
