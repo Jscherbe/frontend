@@ -1,6 +1,10 @@
 # Change Log
 
 
+## 0.4.8
+
+- `js/utils/class-logger.js` | Remove hasConsole check (isn't needed anymore (modern browser, node has console, etc) and breaks SSR in vue/etc)
+
 ## 0.4.7
 
 - `scss/_cssvar`

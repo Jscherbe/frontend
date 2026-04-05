@@ -1,37 +1,37 @@
-const n = {
+const l = {
   debug: !1,
   warningsAlways: !0,
   errorsAlways: !0,
   outputContext: !1
-}, g = "console" in window;
-function s(r) {
-  var o;
-  return g && n.debug && ((r == null ? void 0 : r.debug) || ((o = r == null ? void 0 : r.options) == null ? void 0 : o.debug) || r == null);
+};
+function o(r) {
+  var u;
+  return l.debug && ((r == null ? void 0 : r.debug) || ((u = r == null ? void 0 : r.options) == null ? void 0 : u.debug) || r == null);
+}
+function i(r) {
+  var u;
+  return typeof r == "object" && ((u = r == null ? void 0 : r.constructor) == null ? void 0 : u.name);
+}
+function s(r, u, n) {
+  const g = i(u) || "Logger";
+  console[r](g, ...n), l.outputContext && console.log(`Context:
+`, u);
 }
 function a(r) {
-  var o;
-  return typeof r == "object" && ((o = r == null ? void 0 : r.constructor) == null ? void 0 : o.name);
+  Object.assign(l, r);
 }
-function u(r, o, l) {
-  const i = a(o) || "Logger";
-  console[r](i, ...l), n.outputContext && console.log(`Context:
-`, o);
+function f(r, ...u) {
+  o(r) && s("log", r, u);
 }
-function f(r) {
-  Object.assign(n, r);
+function e(r, ...u) {
+  (l.warningsAlways || o(r)) && s("warn", r, u);
 }
-function e(r, ...o) {
-  s(r) && u("log", r, o);
-}
-function w(r, ...o) {
-  (n.warningsAlways || s(r)) && u("warn", r, o);
-}
-function b(r, ...o) {
-  (n.errorsAlways || s(r)) && u("error", r, o);
+function w(r, ...u) {
+  (l.errorsAlways || o(r)) && s("error", r, u);
 }
 export {
-  e as log,
-  b as logError,
-  w as logWarning,
-  f as set
+  f as log,
+  w as logError,
+  e as logWarning,
+  a as set
 };
