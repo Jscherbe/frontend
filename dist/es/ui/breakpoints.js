@@ -22,7 +22,7 @@ const y = (s) => k(s, "breakpoint"), i = class i {
    * @param {String} config.pseudoSelector Change pseudo selector used to get the breakpoint from the pseudo's content property
    */
   constructor(t) {
-    i._initializeGlobals(), Object.assign(this, i.defaults, t), this.active = null, this.previous = null, this.activeIndex = null, this.resizeDirection = null, this.previousIndex = null, this.breakpoints = {}, this.onChangeCallbacks = [], this.order.forEach((e) => this.breakpoints[e] = new x(e, this)), d(this, this), this.update(), i.instances.push(this);
+    i._initializeGlobals(), Object.assign(this, i.defaults, t), !this.element && typeof document != "undefined" && (this.element = document.documentElement), this.active = null, this.previous = null, this.activeIndex = null, this.resizeDirection = null, this.previousIndex = null, this.breakpoints = {}, this.onChangeCallbacks = [], this.order.forEach((e) => this.breakpoints[e] = new x(e, this)), d(this, this), this.update(), i.instances.push(this);
   }
   /**
    * Add a callback for every time a breakpoint changes
@@ -70,10 +70,10 @@ const y = (s) => k(s, "breakpoint"), i = class i {
     if (t === this.active) return;
     this.previous = this.active, this.previousIndex = this.activeIndex;
     const e = this.order.indexOf(t);
-    this.active = t, this.activeIndex = e, this.order.forEach((o, n) => {
-      const a = this.breakpoints[o], h = this.activeIndex;
-      a._setDirection("min", n <= h), a._setDirection("max", n > h), a._setDirection("only", n === h);
-    }), this.previousIndex !== null && (this.resizeDirection = this.previousIndex < e ? "up" : "down"), this.onChangeCallbacks.forEach((o) => o(this));
+    this.active = t, this.activeIndex = e, this.order.forEach((n, o) => {
+      const a = this.breakpoints[n], h = this.activeIndex;
+      a._setDirection("min", o <= h), a._setDirection("max", o > h), a._setDirection("only", o === h);
+    }), this.previousIndex !== null && (this.resizeDirection = this.previousIndex < e ? "up" : "down"), this.onChangeCallbacks.forEach((n) => n(this));
   }
   /**
    * Get a breakpoint by key
@@ -86,7 +86,7 @@ const y = (s) => k(s, "breakpoint"), i = class i {
   }
 };
 r(i, "instances", []), r(i, "globalsInitialized", !1), r(i, "defaults", {
-  element: document == null ? void 0 : document.documentElement,
+  element: null,
   valueFromPseudo: !1,
   customProperty: "--breakpoint",
   customProperty: b("cssvarPrefix", y),
@@ -109,7 +109,7 @@ class l {
    * Calls all functions in handlers or
    */
   _call(t) {
-    (t ? this.on : this.off).forEach((o) => o()), d(this.breakpoint._manager, `Handlers called (${t ? "on" : "off"}): ${this.direction}`);
+    (t ? this.on : this.off).forEach((n) => n()), d(this.breakpoint._manager, `Handlers called (${t ? "on" : "off"}): ${this.direction}`);
   }
   /**
    * Returns handlers in normalized object format on/off
@@ -181,8 +181,8 @@ class x {
    * @param {String} direction Remove handler only from specified direction, else search all directions
    */
   remove(t, e) {
-    (e ? [e] : ["max", "min", "only"]).forEach((n) => {
-      this.directions[n] && this.directions[n].remove(t);
+    (e ? [e] : ["max", "min", "only"]).forEach((o) => {
+      this.directions[o] && this.directions[o].remove(t);
     });
   }
   log(...t) {

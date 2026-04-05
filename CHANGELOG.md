@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.4.9
+
+- `js/ui/breakpoints.js` | Remove default option for element and assign to default document.documentElement in constructor instead if not passed 
 
 ## 0.4.8
 

@@ -8,7 +8,7 @@ export class BreakpointManager {
     static globalsInitialized: boolean;
     static _initializeGlobals(): void;
     static defaults: {
-        element: HTMLElement;
+        element: null;
         valueFromPseudo: boolean;
         customProperty: Object;
         pseudoSelector: string;
@@ -30,6 +30,7 @@ export class BreakpointManager {
         element: Node;
         pseudoSelector: string;
     });
+    element: HTMLElement | undefined;
     active: any;
     previous: any;
     activeIndex: any;
