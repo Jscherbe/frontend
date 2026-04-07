@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.11
+
+- `js/utils/pause-youtube-video.js` | Adjust `prepVideos()` to only apply url queries for js API if not already present, this way if called multiple times on the same video it will only update the src once (so it doesn't reset the video each time it's called)
+
 ## 0.4.10
 
 - `js/utils/pause-youtube-video.js` | Change command for youtube API to pauseVideo instead of stopVideo. Now dialogs with pauseVideos will pause instead of stop for youtube videos (and native videos). May consider adding stopVideos option in the future for both types

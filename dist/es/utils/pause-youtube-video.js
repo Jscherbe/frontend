@@ -3,31 +3,31 @@ const n = [
   'iframe[title*="YouTube video player"]',
   'iframe[src*="youtube.com/embed"]'
 ];
-function a(o = document, t = "pauseVideo") {
-  c(o).forEach((e) => {
+function a(r = document, t = "pauseVideo") {
+  c(r).forEach((e) => {
     try {
-      const s = `{"event":"command","func":"${t}","args":""}`;
-      e.contentWindow.postMessage(s, "*");
-    } catch (s) {
-      console.error(s);
+      const o = `{"event":"command","func":"${t}","args":""}`;
+      e.contentWindow.postMessage(o, "*");
+    } catch (o) {
+      console.error(o);
     }
   });
 }
-function u(o = document) {
-  c(o).forEach((r) => {
-    if (r.src)
+function i(r = document) {
+  c(r).forEach((s) => {
+    if (s.src)
       try {
-        const e = new URL(r.src);
-        e.searchParams.set("enablejsapi", "1"), e.searchParams.set("rel", "0"), r.src = e.toString();
+        const e = new URL(s.src), o = "enablejsapi";
+        e.searchParams.get(o) !== "1" && (e.searchParams.set(o, "1"), e.searchParams.set("rel", "0"), s.src = e.toString());
       } catch (e) {
-        console.warn("Issue prepping youtube URL:", r.src);
+        console.warn("Issue prepping youtube URL:", s.src);
       }
   });
 }
-function c(o) {
-  return o.querySelectorAll(n.join(", "));
+function c(r) {
+  return r.querySelectorAll(n.join(", "));
 }
 export {
   a as pauseVideos,
-  u as prepVideos
+  i as prepVideos
 };
