@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.4.10
+
+- `js/utils/pause-youtube-video.js` | Change command for youtube API to pauseVideo instead of stopVideo. Now dialogs with pauseVideos will pause instead of stop for youtube videos (and native videos). May consider adding stopVideos option in the future for both types
+
 ## 0.4.9
 
 - `js/ui/breakpoints.js` | Remove default option for element and assign to default document.documentElement in constructor instead if not passed 

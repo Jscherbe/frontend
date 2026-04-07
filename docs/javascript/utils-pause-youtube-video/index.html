@@ -6789,7 +6789,7 @@
 <div class="toc">
                 <ol>
                     
-                    <li><a href="#utils%2Fpause-youtube-video.pausevideos(context)">utils/pause-youtube-video.pauseVideos(context)</a>
+                    <li><a href="#utils%2Fpause-youtube-video.pausevideos(context%2C-command)">utils/pause-youtube-video.pauseVideos(context, command)</a>
             		</li>
 
                     <li><a href="#utils%2Fpause-youtube-video.prepvideos()">utils/pause-youtube-video.prepVideos()</a>
@@ -6810,13 +6810,13 @@
 <ul>
 <li><a href="#module_utils/pause-youtube-video">utils/pause-youtube-video</a>
 <ul>
-<li><a href="#module_utils/pause-youtube-video.pauseVideos">.pauseVideos(context)</a></li>
+<li><a href="#module_utils/pause-youtube-video.pauseVideos">.pauseVideos(context, command)</a></li>
 <li><a href="#module_utils/pause-youtube-video.prepVideos">.prepVideos()</a></li>
 </ul>
 </li>
 </ul>
 <p><a name="module_utils/pause-youtube-video.pauseVideos"></a></p>
-<h2 id="utils%2Fpause-youtube-video.pausevideos(context)" tabindex="-1">utils/pause-youtube-video.pauseVideos(context)</h2>
+<h2 id="utils%2Fpause-youtube-video.pausevideos(context%2C-command)" tabindex="-1">utils/pause-youtube-video.pauseVideos(context, command)</h2>
 <p>Somewhat hacky way to pause the video</p>
 <ul>
 <li>https://www.digitalredpanther.com/blog/play-pause-stop-youtube-embed</li>
@@ -6837,6 +6837,11 @@
 <td><code>Element</code> | <code>Node</code></td>
 <td>The DOM element to search for and pause videos within</td>
 </tr>
+<tr>
+<td>command</td>
+<td><code>String</code></td>
+<td>The YouTube API command. Defaults to 'stopVideo' to preserve legacy behavior.</td>
+</tr>
 </tbody>
 </table>
 <p><a name="module_utils/pause-youtube-video.prepVideos"></a></p>
@@ -6854,7 +6859,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-B_teaEkv.js"></script>
+<script type="module" src="/frontend/assets/main-DGJC0b9t.js"></script>
 
 		
 	</body>

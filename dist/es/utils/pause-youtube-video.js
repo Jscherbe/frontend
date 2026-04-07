@@ -1,27 +1,33 @@
-const c = [
+const n = [
   ".youtube-embedded-video",
   'iframe[title*="YouTube video player"]',
   'iframe[src*="youtube.com/embed"]'
 ];
-function n(e = document) {
-  s(e).forEach((o) => {
+function a(o = document, t = "pauseVideo") {
+  c(o).forEach((e) => {
     try {
-      o.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', "*");
-    } catch (t) {
-      console.error(t);
+      const s = `{"event":"command","func":"${t}","args":""}`;
+      e.contentWindow.postMessage(s, "*");
+    } catch (s) {
+      console.error(s);
     }
   });
 }
-function i(e = document) {
-  s(e).forEach((o) => {
-    const { src: t } = o;
-    t && (o.src = t.split("?")[0] + "?rel=0&enablejsapi=1");
+function u(o = document) {
+  c(o).forEach((r) => {
+    if (r.src)
+      try {
+        const e = new URL(r.src);
+        e.searchParams.set("enablejsapi", "1"), e.searchParams.set("rel", "0"), r.src = e.toString();
+      } catch (e) {
+        console.warn("Issue prepping youtube URL:", r.src);
+      }
   });
 }
-function s(e) {
-  return e.querySelectorAll(c.join(", "));
+function c(o) {
+  return o.querySelectorAll(n.join(", "));
 }
 export {
-  n as pauseVideos,
-  i as prepVideos
+  a as pauseVideos,
+  u as prepVideos
 };
