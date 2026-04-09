@@ -1,25 +1,32 @@
 ////
-/// @group horizontal-rule
+/// @group rule-inline
+/// A rule for separating inline items (buttons, toolbars, etc )
 ////
 
 @use "sass:map";
 @use "../utils";
+@use "../color";
+@use "../selector";
 @use "../element";
 
 /// Module Settings
 /// @type Map
 /// @prop {Dimension} min-height [1em] Min height for rule.
 /// @prop {Dimension} margin [1em] Top and bottom margin for rule.
+/// @prop {Color} color ["rule"] Color for rule
+/// @prop {Color} width [1px] Width for rule
 
 $config: (
   "margin": 1em,
   "min-height": 1em,
+  "color" : "rule",
+  "width" : 1px
 ) !default;
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
 /// @example scss 
-///   @include ulu.component-horizontal-rule-set(( "property" : value ));
+///   @include ulu.component-rule-inline-rule-set(( "property" : value ));
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
@@ -28,22 +35,24 @@ $config: (
 /// Get a config option
 /// @param {Map} $name Name of property
 /// @example scss 
-///   @include ulu.component-horizontal-rule-get("property");
+///   @include ulu.component-rule-inline-rule-get("property");
 
 @function get($name) {
-  @return utils.require-map-get($config, $name, "horizontal-rule [config]");
+  @return utils.require-map-get($config, $name, "rule-inline [config]");
 }
 
 /// Prints adaptive spacing component styles
 /// @example scss
-///  @include ulu.component-horizontal-styles();
+///  @include ulu.component-rule-inline-styles();
 
 @mixin styles {
-  .horizontal-rule {
+  $prefix: selector.class("rule-inline");
+
+  #{ $prefix } {
     display: inline-block;
+    border-right: get("width") solid color.get(get("color"));
     min-height: get("min-height");
     vertical-align: middle;
-    border-right: element.get-rule-style();
     margin: 0 get("margin");
     flex-grow: 0;
     align-self: stretch;

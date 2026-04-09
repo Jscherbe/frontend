@@ -26,7 +26,7 @@
 @forward "flipcard-grid" as flipcard-grid-*;
 @forward "form-theme" as form-theme-*;
 @forward "headline-label" as headline-label-*;
-@forward "horizontal-rule" as horizontal-rule-*;
+@forward "rule-inline" as rule-inline-*;
 @forward "image-grid" as image-grid-*;
 @forward "links" as links-*;
 @forward "list-lines" as list-lines-*;
@@ -91,7 +91,7 @@
 @use "flipcard-grid";
 @use "form-theme";
 @use "headline-label";
-@use "horizontal-rule";
+@use "rule-inline";
 @use "image-grid";
 @use "list-lines";
 @use "list-inline";
@@ -157,7 +157,7 @@ $all-includes: (
   "flipcard-grid",
   "form-theme",
   "headline-label",
-  "horizontal-rule",
+  "rule-inline",
   "image-grid",
   "links",
   "list-lines",
@@ -308,8 +308,8 @@ $current-includes: $all-includes;
   @if (list.index($includes, "headline-label")) {
     @include headline-label.styles;
   }
-  @if (list.index($includes, "horizontal-rule")) {
-    @include horizontal-rule.styles;
+  @if (list.index($includes, "rule-inline")) {
+    @include rule-inline.styles;
   }
   @if (list.index($includes, "image-grid")) {
     @include image-grid.styles;

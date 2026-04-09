@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.0
+
+- `scss/components/_inline-rule.scss` **Breaking**
+  - Rename from incorrect "horizontal-rule" (can use selector module to keep old name but it's not correct, this is for divider/separators between things using the default "rule"
+  - Add "color" and "width" options
+
 ## 0.4.11
 
 - `js/utils/pause-youtube-video.js` | Adjust `prepVideos()` to only apply url queries for js API if not already present, this way if called multiple times on the same video it will only update the src once (so it doesn't reset the video each time it's called)
