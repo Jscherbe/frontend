@@ -29,14 +29,17 @@
     tab-size: 4;
   }
 
+  /**
+  For flexbox, grid, etc. We always need it 
+  */
+  body,
+  html {
+    min-height: 100%; 
+  }
+
   body {
     margin: 0;
   }
-
-  /*
-  Text-level semantics
-  ====================
-  */
 
   /**
   Add the correct text decoration in Chrome, Edge, and Safari.
