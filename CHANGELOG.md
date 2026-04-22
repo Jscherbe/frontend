@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.1
+
+- `scss/base/_normalize.scss` | Add html/body min-height 100% (remove from projects as it's always useful)
+
 ## 0.5.0
 
 - `scss/components/_inline-rule.scss` **Breaking**
