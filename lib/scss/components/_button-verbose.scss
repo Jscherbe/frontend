@@ -158,7 +158,8 @@ $config: (
     color: color.get(get("color"));
     text-align: left;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: color.get(get("color-hover"));
       background-color: color.get(get("background-color-hover"));
       box-shadow: get("box-shadow-hover");

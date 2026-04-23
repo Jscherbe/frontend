@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.5.2
+
+- `scss/components/_card.scss` | Add "box-shadow-interactive-only" config option
+- `scss/components/_button-verbose.scss` | Add focus selector to hover state
+
 ## 0.5.1
 
 - `scss/base/_normalize.scss` | Add html/body min-height 100% (remove from projects as it's always useful)
