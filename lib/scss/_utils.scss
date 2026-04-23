@@ -303,6 +303,43 @@ $config: (
   }
 }
 
+/// List merge utility aligned with map-merge, will merge lists (deduplication) or overwrite
+/// - Used for configuring lists (such as component-set-includes())
+/// @param {List} $original - The base list
+/// @param {List} $changes - The new values to add
+/// @param {String} $mode [null] - "overwrite" or "merge" (default null will merge)
+/// @example scss {compile} Example usage
+///   $list-1: ("a", "b", "c");
+///   $list-2:("a", "d", "e");
+/// 
+///   .result-default {
+///     $merged-map: ulu.utils-list-merge($list-1, $list-2);
+///     content: meta.inspect($merged-map);
+///   }
+///   .result-overwrite {
+///     $merged-map-deep: ulu.utils-map-merge($list-1, $list-2, "overwrite");
+///     content: meta.inspect($merged-map-deep);
+///   }
+///
+
+@function list-merge($original, $changes, $mode: null) {
+  @if ($mode == "overwrite") {
+    @return $changes;
+  // Unique Merge (Deduplicated)
+  } @else if ($mode == null or $mode == "merge") {
+    $result: $original;
+    @each $item in $changes {
+      @if not list.index($result, $item) {
+        $result: list.append($result, $item);
+      }
+    }
+    @return $result;
+  } @else {
+    @warn "Unknown list-merge mode: '#{ $mode }'. No changes applied. Please use 'overwrite' or 'merge' or null (default)";
+    @return $original;
+  }
+}
+
 /// Returns true/false if map has property
 /// @param {Map} $map Source map 
 /// @param {String} $key Property to check for

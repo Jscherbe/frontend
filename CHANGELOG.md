@@ -3,6 +3,9 @@
 ## 0.5.1
 
 - `scss/base/_normalize.scss` | Add html/body min-height 100% (remove from projects as it's always useful)
+- `scss/_utils.scss` | Add "list-merge" which mirrors API for map-merge (used for configuration of styles output modules) (ie. components/index, base/index)), so user can either merge or overwrite. Used in style output modules update below.
+- Update all style output modules `set-includes` mixins to allow either (overwrite or merge) defaulting to the current behavior overwrite. So in order to just add additional includes pass "merge" to $merge-mode argument
+  - Used in `scss/base/_index`, `scss/components/_index`, `scss/helpers/_index` 
 
 ## 0.5.0
 
