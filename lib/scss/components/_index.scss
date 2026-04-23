@@ -206,7 +206,7 @@ $current-includes: $all-includes;
 /// Change default includes (when user prints modules)
 /// - This available as configuration so that it can be configured (to allow easily copying configuration)
 /// @param {List} $includes List of modules by name to be included when styles are printed
-/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+/// @param {String} $merge-mode Merge mode see utils.list-merge() ["merge"|"overwrite"]
 
 @mixin set-includes($includes, $merge-mode: "overwrite") {
   @include utils.require-list-contains($all-includes, $includes, "components.set-includes", true);
