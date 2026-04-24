@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.3
+
+- `scss/components/_form-theme.scss` | Actions (footer of forms) add flex-wrap 
+
 ## 0.5.2
 
 - `scss/components/_card.scss` | Add "box-shadow-interactive-only" config option

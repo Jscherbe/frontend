@@ -532,6 +532,7 @@ $config: (
 /// Footer of form (with button for example)
 @mixin element-form-actions() {
   display: flex;
+  flex-wrap: wrap;
   margin: 1rem 0;
 }
 
