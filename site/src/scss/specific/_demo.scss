@@ -1,10 +1,37 @@
 @use "vars";
 @use "ulu";
 
+@use "sass:color";
+
+// A place to put any demo styles, please prefix selectors with "demo" 
+// (like .demo-grid, .demo-background, etc). These styles should be used to demonstrate 
+//something in the page. Such as adding background elements so the user can see how a 
+// layout works for example. An example of this would be the grid layout styling used 
+// here: http://inf-1601--code-kit.dev-informatics.com/less/grids/grid-data-attribute/
+
+// Note if the style is something used to display things in the documentation 
+// (like an example or demo), please create unique components for those in ../components.
+// These styles should be just for demonstrating something visually
+
+$demo-grid-color: ulu.color-tint(vars.$color-violet-light, 15%);
+
+.demo-grid-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px dashed color.change($demo-grid-color, $alpha: 0.5);
+}
+.demo-grid__content {
+  background-color: color.change($demo-grid-color, $alpha: 0.1);
+  padding: 2em 0;
+}
+.demo-grid-element-outside {
+  background-color: rgb(255, 211, 130);
+}
+
+
 .demo-width-small {
   max-width: 20rem;
 }
-
 .demo-theme-box {
   padding: 2rem;
   border-radius: ulu.element-get("border-radius");
@@ -12,7 +39,6 @@
   border: 1px solid ulu.cssvar-use("color-rule");
   margin-bottom: 2rem;
 }
-
 .demo-theme-fake-widget {
   background: white;
   color: black;
@@ -24,4 +50,26 @@
 .demo-theme-fake-widget--dark {
   background: black;
   color: white;
+}
+
+.demo-spacer {
+  background-color: rgba(0,0,0,0.05);
+  padding: 3rem 0;
+  text-align: center;
+  color: rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+.demo-spacer--large {
+  padding: 10rem 0;
+}
+
+.demo-scrollpoint {
+  padding: 1rem;
+  text-align: center;
+  background-color: ulu.cssvar-use("color-demo-scrollpoint");
+  transition: background-color 200ms ease;
+  &[data-ulu-scrollpoint-state*="enter"] {
+    background-color: rgb(23, 130, 112);
+  }
 }
