@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.6
+
+- `scss/components/_card.scss` | Add "line-height" option
+
 ## 0.5.5
 
 - `scss/components/_menu-stack.scss`

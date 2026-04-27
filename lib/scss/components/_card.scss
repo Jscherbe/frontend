@@ -17,6 +17,7 @@
 /// @prop {Dimension} padding [2rem] The common padding
 /// @prop {Dimension} margin-y [3rem] Top and bottom margin for the card.
 /// @prop {Dimension} max-width [28rem] The max-width of the card.
+/// @prop {Dimension} line-height [null] The line-height of the card.
 /// @prop {Dimension} body-min-height [10rem] the min-height of the card body.
 /// @prop {Color} color ["type"] The type color of the card.
 /// @prop {Color} color-hover [null] The type color of the card when hovered or focused.
@@ -88,6 +89,7 @@ $config: (
   "padding": 2rem,
   "margin-y": 3rem,
   "max-width": 28rem,
+  "line-height" : null,
   "body-min-height": 10rem,
   "color": "type",
   "color-hover": null,
@@ -199,6 +201,7 @@ $config: (
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     max-width: get("max-width");
+    line-height: get("line-height");
     margin-top: get("margin-y");
     margin-bottom: get("margin-y");
     color: color.get(get("color"));
