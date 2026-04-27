@@ -120,6 +120,7 @@ $config: (
   "plain-link-color-hover": "link-hover",
 
   "multi-column-gap" : 2rem,
+  "multi-column-min-width" : 18rem,
 ) !default;
 
 $styles: (
@@ -387,7 +388,7 @@ $styles: (
   #{ $prefix }--multi-column {
     > #{ $prefix }__list {
       display: grid;
-      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fit, minmax(get("multi-column-min-width"), 1fr));
       gap: get("multi-column-gap");
     }
   }

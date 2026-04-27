@@ -531,6 +531,74 @@ intro: Vertical menu list (with optional checkboxes). Used in sidebar nav, popov
   </div>
 </section>
 
+<h2 class="h2">Multi-column Menu Stack (Many Items)</h2>
+
+<section class="menu-stack menu-stack--multi-column">
+  <h3 class="menu-stack__label">Extended Department Directory</h3>
+  <div class="menu-stack__list">
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Engineering</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Frontend Development</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Backend Architecture</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">QA & Testing</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Marketing</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Social Media</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Content Strategy</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Brand Management</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Sales</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Inbound</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Outbound</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Partnerships</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Human Resources</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Recruitment</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Employee Relations</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Benefits</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Design</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">UX/UI</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Visual Design</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">User Research</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list menu-stack__list--parent">
+        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Finance</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Accounting</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Financial Planning</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Payroll</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <h2 class="h2">Div Parent List Structure Testing</h2>
 
 <div class="demo-width-small">

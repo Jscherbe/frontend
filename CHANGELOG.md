@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.5
+
+- `scss/components/_menu-stack.scss`
+  - Adjust "menu-stack--multi-column" grid (to template areas auto-fit)
+  - Add config option for "multi-column-min-width" (default 12rem)
+
 ## 0.5.4
 
 - `scss/base/_themes.scss` | Add parameter to styles() mixin $root-selector, so it can be changed for edge scenarios where the root selector is something other than ":root". Such as containing the theme properties to a ckeditor element (scoping, used for creating editor stylesheet).
