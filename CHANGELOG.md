@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.4
+
+- `scss/base/_themes.scss` | Add parameter to styles() mixin $root-selector, so it can be changed for edge scenarios where the root selector is something other than ":root". Such as containing the theme properties to a ckeditor element (scoping, used for creating editor stylesheet).
+
 ## 0.5.3
 
 - `scss/components/_form-theme.scss` | Actions (footer of forms) add flex-wrap 

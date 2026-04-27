@@ -19,6 +19,7 @@
 /// @prop {String} token-color ["color-type"] The token name used for the `color` property on theme classes. 
 /// @prop {String} token-background-color [null] The token name used for the `background-color` property on theme classes. This is not included by default (normally we don't want to set a specific background color but if you do add the background-color token name from the theme)
 /// @prop {Boolean} token-warnings [true] Since this is an opinionated stylesheet we warn if you have "token-color" set but it's key is not found in the theme. If this is intentional
+
 $config: (
   "output-inverse": true,
   "fake-invert-color": black,
@@ -30,20 +31,24 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {String} $name Name of property
+
 @function get($name) {
   @return utils.require-map-get($config, $name, "base themes [config]");
 }
 
 /// Outputs base theme variables and classes
+/// @param {String} $root-selector [:root] - Top-level selector for default theme, can be adjusted for things like building an editor stylesheet where these are wrapped
 /// @example scss
 ///   @include ulu.base-themes-styles();
-@mixin styles {
+
+@mixin styles($root-selector: ":root") {
   @include utils.file-header('base', 'themes');
 
   @if (list.length(themes.$tokens) > 0) {
@@ -61,7 +66,7 @@ $config: (
       $selectors: list.append($selectors, "#{ $prefix }-#{ $key }", comma);
       
       @if ($key == $default) {
-        $selectors: list.append($selectors, ":root", comma);
+        $selectors: list.append($selectors, $root-selector, comma);
       }
 
       #{ $selectors } {
@@ -139,7 +144,7 @@ $config: (
             @if ($inverse-target == $key) {
                $fake-selectors: list.append($fake-selectors, "#{ $prefix }-#{ $current-theme } #{ $inverse-prefix }", comma);
                @if ($current-theme == $default) {
-                 $fake-selectors: list.append($fake-selectors, ":root #{ $inverse-prefix }", comma);
+                 $fake-selectors: list.append($fake-selectors, "#{ $root-selector } #{ $inverse-prefix }", comma);
                }
             }
           }
@@ -171,9 +176,9 @@ $config: (
     }
 
     // 3. The Fake Inversion Utility Class
-    /// Can be used on elements that need a theme but that have colors that can't be updated (canvas charts for example)
-    /// It inverts the items color, and then inverts/spins the element colors so they match the hue before inversion
-    /// It also decreases the contrast slightly
+    // Can be used on elements that need a theme but that have colors that can't be updated (canvas charts for example)
+    // It inverts the items color, and then inverts/spins the element colors so they match the hue before inversion
+    // It also decreases the contrast slightly
     @if (list.length($fake-selectors) > 0) {
       #{ $fake-selectors } {
         #{ $prefix }-fake-invert,

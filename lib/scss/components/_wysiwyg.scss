@@ -53,6 +53,7 @@ $config: (
 
 /// Output component stylesheet
 /// - Note this is setup so that it can be used for separate stylesheets (ie. tinyMCE or ckeditor)
+/// @param {Boolean} $in-selector [true] - Whether to print with .wysiwyg selector or not, used when building like editor/ckeditor stylesheet where these aren't wrapped in selector and should just affect all elements in the editor
 /// @example scss
 ///   @include ulu.component-wysiwyg-styles(true);
 ///   // Output not in selector (for editor stylesheet/preview)

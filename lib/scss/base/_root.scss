@@ -23,18 +23,21 @@ $config: (
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
+
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
 }
 
 /// Get a config option
 /// @param {String} $name Name of property
+
 @function get($name) {
   @return utils.require-map-get($config, $name, "base root [config]");
 }
 
 /// Global root variables (CSS Custom Properties)
 /// @type Map
+
 $cssvars: () !default;
 
 /// Set global root variables
@@ -54,6 +57,7 @@ $cssvars: () !default;
 ///   ));
 /// @param {Map} $changes Map of changes
 /// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
 @mixin set-cssvars($changes, $merge-mode: null) {
   $cssvars: utils.map-merge($cssvars, $changes, $merge-mode) !global;
 }
