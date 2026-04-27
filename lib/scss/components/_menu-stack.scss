@@ -67,6 +67,10 @@ $-fallbacks: (
 /// @prop {Dimension} selectable-input-width [3em] The width of the checkbox/radio input
 /// @prop {Dimension} selectable-input-top [0.73em] To fine tune the y/top value for absolutely positioned input, if you pass null/falsey it will use the padding which isn't always perfect since this is setup to not be centered when wrapping lines in label
 /// @prop {Dimension} selectable-input-font-size [null] Optional to set a specific font-size on the input
+/// @prop {Dimension} multi-column-gap [2rem] The gap between columns in a multi-column menu stack.
+/// @prop {Dimension} multi-column-min-width [18rem] The minimum width of a column in a multi-column menu stack.
+/// @prop {Boolean} popover-styles-enabled [true] Outputs contextual styles when used within a popover.
+/// @prop {Dimension} popover-multi-column-max-width [60rem] The max-width of the popover when it contains a multi-column-fit menu stack.
 
 
 $config: (
@@ -121,6 +125,8 @@ $config: (
 
   "multi-column-gap" : 2rem,
   "multi-column-min-width" : 18rem,
+  "popover-styles-enabled" : true,
+  "popover-multi-column-max-width" : 60rem,
 ) !default;
 
 $styles: (
@@ -170,6 +176,7 @@ $styles: (
 
 @mixin styles {
   $prefix: selector.class("menu-stack");
+  $prefix-popover: selector.class("popover");
   $selectable-y: (get("link-padding-y") + get("link-margin"));
 
   #{ $prefix }--separated {
@@ -390,6 +397,21 @@ $styles: (
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(get("multi-column-min-width"), 1fr));
       gap: get("multi-column-gap");
+    }
+  }
+  #{ $prefix }--multi-column-fit {
+    > #{ $prefix }__list {
+      display: flex;
+      flex-wrap: wrap;
+      width: get("multi-column-min-width");
+      max-width: 100%;
+    }
+  }
+
+  @if get("popover-styles-enabled") {
+    #{ $prefix-popover }:has(#{ $prefix }--multi-column-fit) {
+      width: max-content;
+      max-width: get("popover-multi-column-max-width");
     }
   }
 
