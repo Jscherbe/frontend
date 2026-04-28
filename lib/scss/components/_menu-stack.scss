@@ -69,8 +69,6 @@ $-fallbacks: (
 /// @prop {Dimension} selectable-input-font-size [null] Optional to set a specific font-size on the input
 /// @prop {Dimension} multi-column-gap [2rem] The gap between columns in a multi-column menu stack.
 /// @prop {Dimension} multi-column-min-width [18rem] The minimum width of a column in a multi-column menu stack.
-/// @prop {Boolean} popover-styles-enabled [true] Outputs contextual styles when used within a popover.
-/// @prop {Dimension} popover-multi-column-max-width [60rem] The max-width of the popover when it contains a multi-column-fit menu stack.
 
 
 $config: (
@@ -116,25 +114,9 @@ $config: (
   "parent-rule-style" : "light",
   "parent-separated-margin" : false,
 
-  "plain-link-padding-y" : 0,
-  "plain-link-margin" : 0.2em,
-  "plain-link-font-weight": null,
-  "plain-link-line-height": null,
-  "plain-link-color": "link",
-  "plain-link-color-hover": "link-hover",
-
   "multi-column-gap" : 2rem,
   "multi-column-min-width" : 18rem,
-  "popover-styles-enabled" : true,
-  "popover-multi-column-max-width" : 60rem,
 ) !default;
-
-$styles: (
-  "test" : (
-    // "link-margin" : 4rem,
-  ),
-) !default;
-
 
 /// Change modules $config
 /// @param {Map} $changes Map of changes
@@ -143,14 +125,6 @@ $styles: (
 
 @mixin set($changes) {
   $config: map.merge($config, $changes) !global;
-}
-
-/// Set tag styles 
-/// @param {Map} $changes Map of changes
-/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
-
-@mixin set-styles($changes, $merge-mode: null) {
-  $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
 }
 
 /// Get a config option
@@ -193,9 +167,9 @@ $styles: (
       @include typography.size(get("label-type-size"), $only-font-size: true);
     }
   }
-  #{ $prefix }__item {
-    display: flow-root;
-  }
+  // #{ $prefix }__item {
+  //   display: flow-root; 
+  // }
   #{ $prefix }__item--separator-before {
     border-top: element.get-rule-style(-fallback("link-separated-rule-style", "rule-style"));
     margin-top: -fallback("link-separated-margin", "link-padding-y");
@@ -324,31 +298,6 @@ $styles: (
         width: calc(100% + (get("link-padding-x") * 2));
       }
     } 
-    
-    // #{ $prefix }__toggle { 
-    //   width: auto;
-    // }
-  }
-
-  // new
-  #{ $prefix }--plain {
-    #{ $prefix }__link,
-    #{ $prefix }__selectable,
-    #{ $prefix }__toggle {
-      // should all of these styles use fallbacks instead of having defaults match the regular link styles? Padding-y is an exception since that needs a different styling.
-      padding: get("plain-link-padding-y") 0;
-      margin: get("plain-link-margin") 0;
-      border-radius: 0;
-      font-weight: get("plain-link-font-weight");
-      line-height: -fallback("plain-link-line-height", "link-line-height");
-      color: color.get(get("plain-link-color"));
-      background-color: transparent;
-      &:hover,
-      &:focus {
-        color: color.get(get("plain-link-color-hover"));
-        background-color: transparent;
-      }
-    }
   }
 
   #{ $prefix }--compact {
@@ -399,43 +348,16 @@ $styles: (
       gap: get("multi-column-gap");
     }
   }
-  #{ $prefix }--multi-column-fit {
+  #{ $prefix }--multi-column-fluid {
     > #{ $prefix }__list {
       display: flex;
       flex-wrap: wrap;
-      width: get("multi-column-min-width");
       max-width: 100%;
-    }
-  }
-
-  @if get("popover-styles-enabled") {
-    #{ $prefix-popover }:has(#{ $prefix }--multi-column-fit) {
-      width: max-content;
-      max-width: get("popover-multi-column-max-width");
-    }
-  }
-
-  @each $name, $style in $styles {
-    #{ $prefix }--#{ $name } {
-      #{ $prefix }__link,
-      #{ $prefix }__selectable,
-      #{ $prefix }__toggle {
-        padding: map.get($style, "link-padding-y") map.get($style, "link-padding-x");
-        border-radius: map.get($style, "link-border-radius");
-        font-weight: map.get($style, "link-font-weight");
-        line-height: map.get($style, "link-line-height");
-        color: color.get(map.get($style, "link-color"));
-        background-color: color.get(map.get($style, "link-background-color"));
-        @if map.get($style, "link-margin") {
-          margin: map.get($style, "link-margin") 0;
-        }
-        &:hover,
-        &:focus {
-          color: color.get(map.get($style, "link-color-hover"));
-          background-color: color.get(map.get($style, "link-background-color-hover"));
-        }
+      gap: get("multi-column-gap");
+      > #{ $prefix }__item {
+        flex: 0 0 0;
+        min-width: get("multi-column-min-width");
       }
     }
   }
-
 }

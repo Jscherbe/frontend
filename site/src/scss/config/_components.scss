@@ -124,6 +124,7 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 ));
 
 @include ulu.component-menu-stack-set((
+  "popover-styles-enabled" : true,
   "link-background-color-hover": ulu.cssvar-use("color-button-background-hover")
 ));
 

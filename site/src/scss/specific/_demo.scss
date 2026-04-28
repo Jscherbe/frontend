@@ -32,7 +32,8 @@ $demo-grid-color: ulu.color-tint(vars.$color-violet-light, 15%);
 .demo-width-small {
   max-width: 20rem;
 }
-.demo-theme-box {
+.demo-theme-box,
+.demo-menu-stack {
   padding: 2rem;
   border-radius: ulu.element-get("border-radius");
   background-color: ulu.cssvar-use("color-background");
@@ -72,4 +73,9 @@ $demo-grid-color: ulu.color-tint(vars.$color-violet-light, 15%);
   &[data-ulu-scrollpoint-state*="enter"] {
     background-color: rgb(23, 130, 112);
   }
+}
+
+.demo-menu-stack:not(.menu-stack--multi-column) {
+  max-width: 30rem;
+  margin: 0 auto;
 }

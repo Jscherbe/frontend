@@ -59,6 +59,7 @@ $-fallbacks: (
 /// @prop {Dimension} width [15rem] Width of the popover.
 /// @prop {Dimension} width-large [30rem] Width of the popover if using "--large".
 /// @prop {Dimension} width-large-x [50rem] Width of the popover if using "--large-x".
+/// @prop {Dimension} fit-max-width [60rem] Width of the popover if using "--fit-content" modifier which grows to the intrinsic size (until max), also you can set --ulu-popover-fit-max property for custom max-width per element/etc.
 
 $config: (
   "arrow-size"                   : 16px,
@@ -91,6 +92,7 @@ $config: (
   "width"                        : 15rem,
   "width-large"                  : 30rem,
   "width-large-x"                : 50rem,
+  "fit-max-width"                : 60rem,
   ) !default;
   
 /// Change modules $config
@@ -130,7 +132,7 @@ $config: (
     background-color: color.get(get("background-color"));
     color: color.get(get("color"));
     width: get("width");
-    max-width: get("max-width");
+    max-width: var(--ulu-popover-max-width, get("max-width"));
     box-shadow: get("box-shadow");
     border-radius: get("border-radius");
     text-align: left;
@@ -197,6 +199,10 @@ $config: (
   // For fixed strategy
   #{ $prefix }--fixed {
     position: fixed;
+  }
+  #{ $prefix }--fit-content {
+    --ulu-popover-fit-max: #{ get("fit-max-width")};
+    width: max-content;
   }
   // If you want to do something custom (and have it touch the edges)
   #{ $prefix }--no-padding {

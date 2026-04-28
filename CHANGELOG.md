@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.7
+
+- `scss/components/_menu-stack.scss`
+  - Setup demo and styling for menu stacks (multi column) in popovers
+  - Remove "menu-stack--plain" modifier and related config options as it's not something needed currently
+    - If this is needed in the future we will add it along with demos and make sure it works with the full menu layout system
+  - Remove $styles (was setup for modifiers but not resolved)
+
 ## 0.5.6
 
 - `scss/components/_card.scss` | Add "line-height" option
