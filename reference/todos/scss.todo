@@ -4,6 +4,8 @@ Important:
     * Also there is a method to animate from display none to display block/flex/etc now but that would only be for manual collapsibles
   ☐ Menu Stack
     ☐ Remove anything that is unfinished/not useful/etc
+      ☐ Plain modifier (is this useful), I think that's just a different style of list
+      ☐ Support $styles, maybe but I'm not sure why, you could use custom properties if you need to theme it contextually  
     ☐ Update demos make a menu container so we make these more realistic
     ☐ Create a popover version
     ☐ Try to capture what changed in the CHANGELOG
