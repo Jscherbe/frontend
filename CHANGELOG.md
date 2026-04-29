@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.6.5
+
+- `scss/components/_menu-stack.scss` | 
+  - Add "compact-link-margin" (default to 0.2em)
+  - Change "compact-border-radius" to match other config option so "compact-link-border-radius"
+    - set to null instead by default so it inherits from button module defaults
+
 ## 0.6.4
 
 - `scss/components/_menu-stack.scss`

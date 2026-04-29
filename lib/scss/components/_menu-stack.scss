@@ -41,7 +41,8 @@ $-fallbacks: (
 /// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
 /// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
 /// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
-/// @prop {Dimension} compact-border-radius [3px] The border-radius for compact modifier (links)
+/// @prop {Dimension} compact-link-margin [0.2em] Margin between items when compact
+/// @prop {Dimension} compact-link-border-radius [null] Unless set will use the normal link border radius
 /// @prop {Dimension} compact-selectable-input-width [2em] The width of the checkbox/radio input (when compact modifier)
 /// @prop {Dimension} compact-selectable-input-font-size [null] Optional compact input font-size
 /// @prop {Dimension} compact-selectable-input-top [null] Optional y/top for input
@@ -115,7 +116,8 @@ $config: (
   "link-transition-properties": (border-color, background-color, color, box-shadow),
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
-  "compact-border-radius" : 3px,
+  "compact-link-margin" : 0.2em,
+  "compact-link-border-radius" : null,
   "compact-selectable-input-width": 2.2em,
   "compact-selectable-input-top" : 0.5em,
   "compact-selectable-input-font-size": 0.8em,
@@ -335,8 +337,8 @@ $config: (
     #{ $prefix }__selectable,
     #{ $prefix }__toggle,
     #{ $prefix }__link {
-      border-radius: get("compact-border-radius");
-      margin: 0;
+      border-radius: get("compact-link-border-radius");
+      margin: get("compact-link-margin") 0;
     }
     #{ $prefix }__toggle,
     #{ $prefix }__link {
