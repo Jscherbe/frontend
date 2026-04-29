@@ -159,6 +159,7 @@ $config: (
 
 @mixin styles {
   $prefix: selector.class("menu-stack");
+  $prefix-name-only: selector.class("menu-stack", $name-only: true);
   $prefix-popover: selector.class("popover");
   $selectable-y: (get("link-padding-y") + get("link-margin"));
 
@@ -302,14 +303,15 @@ $config: (
   #{ $prefix }--hanging {
     // padding-left: get("link-padding-x");
     // padding-right: get("link-padding-x");
-    > #{ $prefix }__list > #{ $prefix }__item {
+    &:not(#{ $prefix }--columns, #{ $prefix }--columns-fluid) > #{ $prefix }__list > #{ $prefix }__item,
+    &[class*="#{ $prefix-name-only }--columns"] > #{ $prefix }__list > #{ $prefix }__item > #{ $prefix }__list > #{ $prefix }__item {
       > #{ $prefix }__link, 
       > #{ $prefix }__collapsible {
         margin-left: -(get("link-padding-x"));
         margin-right: -(get("link-padding-x"));
         width: calc(100% + (get("link-padding-x") * 2));
       }
-    } 
+    }
   }
 
   #{ $prefix }--compact {

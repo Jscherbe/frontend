@@ -1,8 +1,13 @@
 # Change Log
 
+## 0.6.1
+
+- `scss/components/_menu-stack.scss`
+  - Add hanging styles for columns and columns-fluid modifiers
+
 ## 0.6.0
 
-**Breaking changes to custom properties listed below**
+**Breaking changes renaming of some ulu custom properties listed below**
 
 - `scss/components/_menu-stack.scss`
   - Setup demo and styling for menu stacks (multi column) in popovers
