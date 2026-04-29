@@ -1,14 +1,15 @@
 Important:
-  ☐ Accordion & Maybe Details Animation Update
-    * Maybe we should use the new animation technique for details-content pseudo element, which uses the new interpolate option to allow animations from 0 to auto. 
+  ☐ Accordion & Maybe Details Animation Update @hold-for-better-browser-support
+    * Maybe we should use the new animation technique for details-content pseudo element, which uses the new interpolate size option to allow animations from 0 to auto. 
+      * Note we will need to wait until this is introduced in browsers other than chrome
     * Also there is a method to animate from display none to display block/flex/etc now but that would only be for manual collapsibles
-  ☐ Menu Stack
-    ☐ Remove anything that is unfinished/not useful/etc
-      ☐ Plain modifier (is this useful), I think that's just a different style of list
-      ☐ Support $styles, maybe but I'm not sure why, you could use custom properties if you need to theme it contextually  
-    ☐ Update demos make a menu container so we make these more realistic
-    ☐ Create a popover version
-    ☐ Try to capture what changed in the CHANGELOG
+  ✔ Menu Stack @done
+    ✔ Remove anything that is unfinished/not useful/etc @done
+      ✔ Plain modifier (is this useful), I think that's just a different style of list @done
+      ✔ Support $styles, maybe but I'm not sure why, you could use custom properties if you need to theme it contextually @done
+    ✔ Update demos make a menu container so we make these more realistic @done
+    ✔ Create a popover version @done
+    ✔ Try to capture what changed in the CHANGELOG @done
   ☐ Panel
     ☐ margin-bottom not set
     ☐ Border should be broken into separate properties

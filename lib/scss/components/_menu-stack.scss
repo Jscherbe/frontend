@@ -47,6 +47,7 @@ $-fallbacks: (
 /// @prop {Dimension} label-margin [0.5em] The margin of the label.
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
 /// @prop {CssValue} label-type-size [false] Adjusts the type size of the label. Only uses font-size from type size.
+/// @prop {CssValue} label-font-weight [bold] Adjust label font weight
 /// @prop {CssValue} label-line-height [true] Adjust the label line-height, defaults to typography line-height-dense
 /// @prop {list} link-active-selectors [(.is-active, '[aria-current=page]')] Selectors to apply active styling.
 /// @prop {Color} link-background-color [transparent] The background color of the menu-stack toggle. 
@@ -57,7 +58,7 @@ $-fallbacks: (
 /// @prop {Color} link-color-active [black] The type color of the menu-stack toggle when active.
 /// @prop {String} link-color-hover [link-hover] The type color of the menu-stack toggle when hovered or focused.  This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {CssValue} link-font-weight [null] The font weight of the menu-stack toggle.
-/// @prop {CssValue} label-line-height [true] Adjust the link line-height, defaults to typography line-height-dense
+/// @prop {CssValue} link-line-height [true] Adjust the link line-height, defaults to typography line-height-dense
 /// @prop {Dimension} link-icon-margin [0.65em] Adds a right margin to the icon.
 /// @prop {Dimension} link-icon-width [1em] The width of the icon.
 /// @prop {Dimension} link-icon-font-size [null] Set the font-size for the icon (not set by default)
@@ -67,8 +68,15 @@ $-fallbacks: (
 /// @prop {Dimension} selectable-input-width [3em] The width of the checkbox/radio input
 /// @prop {Dimension} selectable-input-top [0.73em] To fine tune the y/top value for absolutely positioned input, if you pass null/falsey it will use the padding which isn't always perfect since this is setup to not be centered when wrapping lines in label
 /// @prop {Dimension} selectable-input-font-size [null] Optional to set a specific font-size on the input
-/// @prop {Dimension} multi-column-gap [2rem] The gap between columns in a multi-column menu stack.
-/// @prop {Dimension} multi-column-min-width [18rem] The minimum width of a column in a multi-column menu stack.
+/// @prop {Duration} link-transition-duration [200ms] The duration of the link state transition.
+/// @prop {List} link-transition-properties [(border-color, background-color, color, box-shadow)] The properties to transition on link state change.
+/// @prop {CssValue} title-font-weight [bold] The font weight for the title modifier.
+/// @prop {Boolean} title-separator-enabled [true] Enables a separator rule below the title item.
+/// @prop {Color} title-separator-color [rule] The color of the title separator rule.
+/// @prop {String} title-rule-style [light] The rule style to use for the title separator.
+/// @prop {Boolean} title-separated-margin [false] Use specific margin for title separated items.
+/// @prop {Dimension} columns-gap [2rem] The gap between columns in a columns menu stack.
+/// @prop {Dimension} columns-min-width [18rem] The minimum width of a column in a columns menu stack.
 
 
 $config: (
@@ -76,21 +84,22 @@ $config: (
   "rule-style" : "light",
   "rule-margin" : 0.5em,
   "toggle-icon-rotate" : false,
-  "label-color" : null,
+  "label-color" : "type-secondary",
   "label-margin" : 0.5em,
-  "label-text-transform" : uppercase,
+  "label-text-transform" : null,
   "label-type-size" : false,
+  "label-font-weight" : bold,
   "label-line-height" : true,
   "link-separated-margin" : false,
   "link-separated-rule-style" : false,
   "link-active-selectors" : (".is-active",),
   "link-background-color" : transparent,
-  "link-background-color-active" : rgb(219, 219, 219),
-  "link-background-color-hover" : rgb(240, 240, 240),
+  "link-background-color-active" : "control-background-active",
+  "link-background-color-hover" : rgba(0,0,0,0.2),
   "link-border-radius" : true,
-  "link-color" : "link",
-  "link-color-active" : black,
-  "link-color-hover" : "link-hover",
+  "link-color" : "type-secondary",
+  "link-color-active" : "control-active",
+  "link-color-hover" : "type",
   "link-font-weight" : null,
   "link-line-height" : true,
   "link-icon-margin" : 0.65em,
@@ -99,6 +108,8 @@ $config: (
   "link-margin" : 0.2em,
   "link-padding-x": 1.25em,
   "link-padding-y": 0.5em,
+  "link-transition-duration": 200ms,
+  "link-transition-properties": (border-color, background-color, color, box-shadow),
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
   "compact-selectable-input-width": 2.2em,
@@ -107,15 +118,13 @@ $config: (
   "selectable-input-width" : 3em,
   "selectable-input-top" : 0.73em,
   "selectable-input-font-size" : null,
-  // new configs
-  "parent-font-weight" : bold,
-  "parent-separator-enabled": true,
-  "parent-separator-color" : "rule",
-  "parent-rule-style" : "light",
-  "parent-separated-margin" : false,
-
-  "multi-column-gap" : 2rem,
-  "multi-column-min-width" : 18rem,
+  "title-font-weight" : bold,
+  "title-separator-enabled": true,
+  "title-separator-color" : "rule",
+  "title-rule-style" : "light",
+  "title-separated-margin" : false,
+  "columns-gap" : 2rem,
+  "columns-min-width" : 18rem,
 ) !default;
 
 /// Change modules $config
@@ -162,6 +171,7 @@ $config: (
     text-transform: get("label-text-transform");
     padding-bottom: get("label-margin");
     color: color.get(get("label-color"));
+    font-weight: get("label-font-weight");
     line-height: get("label-line-height");
     @if (get("label-type-size")) {
       @include typography.size(get("label-type-size"), $only-font-size: true);
@@ -186,13 +196,13 @@ $config: (
     }
   }
 
-  @if get("parent-separator-enabled") {
-    #{ $prefix }__item--parent {
-      border-bottom: element.get-rule-style(-fallback("parent-rule-style", "rule-style"));
-      margin-bottom: -fallback("parent-separated-margin", "link-padding-y");
-      padding-bottom: -fallback("parent-separated-margin", "link-padding-y");
+  @if get("title-separator-enabled") {
+    #{ $prefix }__item--title {
+      border-bottom: element.get-rule-style(-fallback("title-rule-style", "rule-style"));
+      margin-bottom: -fallback("title-separated-margin", "link-padding-y");
+      padding-bottom: -fallback("title-separated-margin", "link-padding-y");
       #{ $prefix }__link {
-        font-weight: get("parent-font-weight");
+        font-weight: get("title-font-weight");
       }
     }
   }
@@ -207,9 +217,10 @@ $config: (
   #{ $prefix }__link,
   #{ $prefix }__selectable,
   #{ $prefix }__toggle {
-    width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
+    width: 100%;
     padding: get("link-padding-y") get("link-padding-x");
     margin: get("link-margin") 0;
     border-radius: get("link-border-radius");
@@ -217,7 +228,8 @@ $config: (
     line-height: get("link-line-height");
     color: color.get(get("link-color"));
     background-color: color.get(get("link-background-color"));
-    box-sizing: border-box;
+    transition-duration: get("link-transition-duration");
+    transition-property: get("link-transition-properties");
     &:hover,
     &:focus {
       color: color.get(get("link-color-hover"));
@@ -292,7 +304,7 @@ $config: (
     // padding-right: get("link-padding-x");
     > #{ $prefix }__list > #{ $prefix }__item {
       > #{ $prefix }__link, 
-      >#{ $prefix }__collapsible {
+      > #{ $prefix }__collapsible {
         margin-left: -(get("link-padding-x"));
         margin-right: -(get("link-padding-x"));
         width: calc(100% + (get("link-padding-x") * 2));
@@ -341,22 +353,22 @@ $config: (
     }
   }
 
-  #{ $prefix }--multi-column {
+  #{ $prefix }--columns {
     > #{ $prefix }__list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(get("multi-column-min-width"), 1fr));
-      gap: get("multi-column-gap");
+      grid-template-columns: repeat(auto-fit, minmax(get("columns-min-width"), 1fr));
+      gap: get("columns-gap");
     }
   }
-  #{ $prefix }--multi-column-fluid {
+  #{ $prefix }--columns-fluid {
     > #{ $prefix }__list {
       display: flex;
       flex-wrap: wrap;
       max-width: 100%;
-      gap: get("multi-column-gap");
+      gap: get("columns-gap");
       > #{ $prefix }__item {
         flex: 0 0 0;
-        min-width: get("multi-column-min-width");
+        min-width: get("columns-min-width");
       }
     }
   }

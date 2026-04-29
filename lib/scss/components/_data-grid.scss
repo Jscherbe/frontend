@@ -24,8 +24,8 @@
 /// @prop {String} position-class-column-last [position-column-last] See definition above
 /// @prop {String} position-class-row-first [position-row-first] See definition above
 /// @prop {String} position-class-row-last [position-row-last] See definition above
-/// @prop {Dimension} sticky-bottom [var(--ulu-sticky-bottom-offset, 0)] When a column is sticky bottom this is the value for the sticky offset, set to --ulu-sticky-bottom-offset by default
-/// @prop {Dimension} sticky-top [var(--ulu-sticky-top-offset, 0)] When a column is sticky top this is the value for the sticky offset, set to --ulu-sticky-top-offset by default
+/// @prop {Dimension} sticky-bottom [var(--ulu-sticky-offset-bottom, 0)] When a column is sticky bottom this is the value for the sticky offset, set to --ulu-sticky-offset-bottom by default
+/// @prop {Dimension} sticky-top [var(--ulu-sticky-offset-top, 0)] When a column is sticky top this is the value for the sticky offset, set to --ulu-sticky-offset-top by default
 /// @prop {String} rule-color ["rule"] The color of the rule. This uses color.scss, so the value of this option should be a color variable from color.scss.
 /// @prop {Dimension} rule-size [1px] The width of the rule
 /// @prop {Map} extra-breakpoints [Map] Default extra breakpoints for grid mixin
@@ -43,8 +43,8 @@ $config: (
   "position-class-column-last":  "position-column-last",
   "position-class-row-first":    "position-row-first",
   "position-class-row-last":     "position-row-last",
-  "sticky-bottom":               var(--ulu-sticky-bottom-offset, 0),
-  "sticky-top":                  var(--ulu-sticky-top-offset, 0),
+  "sticky-bottom":               var(--ulu-sticky-offset-bottom, 0),
+  "sticky-top":                  var(--ulu-sticky-offset-top, 0),
   "rule-color" : "rule",
   "rule-size" : 1px,
   "rule-fade-duration" : 400ms,

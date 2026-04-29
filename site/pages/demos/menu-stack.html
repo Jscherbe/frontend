@@ -11,7 +11,7 @@ layout: unformatted
   <h3 class="menu-stack__label">User Settings</h3>
   <ul class="menu-stack__list">
     <li class="menu-stack__item">
-      <a class="menu-stack__link" href="#" >Profile Overview</a>
+      <a class="menu-stack__link is-active" href="#" >Profile Overview</a>
     </li>
     <li class="menu-stack__item">
       <details class="menu-stack__collapsible">
@@ -58,7 +58,7 @@ layout: unformatted
   <h3 class="menu-stack__label">Admin Navigation</h3>
   <ul class="menu-stack__list">
     <li class="menu-stack__item">
-      <a class="menu-stack__link" href="#" >Dashboard</a>
+      <a class="menu-stack__link" href="#" aria-current="page">Dashboard</a>
     </li>
     <li class="menu-stack__item">
       <details class="menu-stack__collapsible">
@@ -105,7 +105,7 @@ layout: unformatted
   <h3 class="menu-stack__label">Documentation</h3>
   <ul class="menu-stack__list">
     <li class="menu-stack__item">
-      <a class="menu-stack__link" href="#" >Getting Started</a>
+      <a class="menu-stack__link" href="#" aria-current="page">Getting Started</a>
     </li>
     <li class="menu-stack__item">
       <details class="menu-stack__collapsible">
@@ -157,27 +157,40 @@ layout: unformatted
 <h2 class="h2">Multiple labels/lists</h2>
 
 {% CodePreview %}
-<div class="menu-stack demo-menu-stack menu-stack--separated">
-  <h3 class="menu-stack__label">Categories</h3>
-  <ul class="menu-stack__list">
-    <li class="menu-stack__item">
-      <a class="menu-stack__link is-active" href="#" >Electronics</a>
-    </li>
-    <li class="menu-stack__item">
-      <a class="menu-stack__link" href="#">Home Appliances and Smart Devices for Modern Connected Living Spaces</a>
-    </li>
-  </ul>
-</div>
-<div class="menu-stack demo-menu-stack menu-stack--hanging menu-stack--separated">
-  <h3 class="menu-stack__label">Promotions</h3>
-  <ul class="menu-stack__list">
-    <li class="menu-stack__item">
-      <a class="menu-stack__link" href="#">Clearance Sale</a>
-    </li>
-    <li class="menu-stack__item">
-      <a class="menu-stack__link" href="#">Buy One Get One Free Offers Valid Only on Selected Items During Holiday Season</a>
-    </li>
-  </ul>
+<div class="demo-menu-stack">
+  <div class="menu-stack">
+    <h3 class="menu-stack__label">Categories</h3>
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item">
+        <a class="menu-stack__link is-active" href="#" >Electronics</a>
+      </li>
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Home Appliances and Smart Devices for Modern Connected Living Spaces</a>
+      </li>
+    </ul>
+  </div>
+  <div class="menu-stack menu-stack--separated">
+    <h3 class="menu-stack__label">Promotions</h3>
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Clearance Sale</a>
+      </li>
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Buy One Get One Free Offers Valid Only on Selected Items During Holiday Season</a>
+      </li>
+    </ul>
+  </div>
+  <div class="menu-stack menu-stack--separated">
+    <h3 class="menu-stack__label">Another Section</h3>
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Clearance Sale</a>
+      </li>
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Buy One Get One Free Offers Valid Only on Selected Items During Holiday Season</a>
+      </li>
+    </ul>
+  </div>
 </div>
 {% endCodePreview %}
 
@@ -370,8 +383,8 @@ layout: unformatted
   <h3 class="menu-stack__label">Sitemap Overview</h3>
   <div class="menu-stack__list">
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Products</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link is-active" href="#">Products</a></div>
       </div>
         <ul class="menu-stack__list">
           <li class="menu-stack__item">
@@ -386,8 +399,8 @@ layout: unformatted
         </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Services</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Services</a></div>
       </div>
       <ul class="menu-stack__list">
         <li class="menu-stack__item">
@@ -402,11 +415,11 @@ layout: unformatted
       </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title">
           <a class="menu-stack__link" href="#">Company Directory</a>
         </div>
-        <div class="menu-stack__item menu-stack__item--parent">
+        <div class="menu-stack__item menu-stack__item--title">
           <a class="menu-stack__link" href="#">Investor Relations</a>
         </div>
       </div>
@@ -422,18 +435,18 @@ layout: unformatted
   <h3 class="menu-stack__label">Extended Department Directory</h3>
   <div class="menu-stack__list">
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Engineering</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Engineering</a></div>
       </div>
       <ul class="menu-stack__list">
-        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Frontend Development</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#" aria-current="page">Frontend Development</a></li>
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">Backend Architecture</a></li>
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">QA & Testing</a></li>
       </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Marketing</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Marketing</a></div>
       </div>
       <ul class="menu-stack__list">
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">Social Media</a></li>
@@ -442,8 +455,8 @@ layout: unformatted
       </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Sales</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Sales</a></div>
       </div>
       <ul class="menu-stack__list">
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">Inbound</a></li>
@@ -452,8 +465,8 @@ layout: unformatted
       </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Human Resources</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Human Resources</a></div>
       </div>
       <ul class="menu-stack__list">
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">Recruitment</a></li>
@@ -462,8 +475,8 @@ layout: unformatted
       </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Design</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Design</a></div>
       </div>
       <ul class="menu-stack__list">
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">UX/UI</a></li>
@@ -472,8 +485,8 @@ layout: unformatted
       </ul>
     </div>
     <div class="menu-stack__item">
-      <div class="menu-stack__list menu-stack__list--parent">
-        <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Finance</a></div>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Finance</a></div>
       </div>
       <ul class="menu-stack__list">
         <li class="menu-stack__item"><a class="menu-stack__link" href="#">Accounting</a></li>
@@ -498,12 +511,12 @@ layout: unformatted
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--parent">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Regional Overview</a></div>
+          <div class="menu-stack__list">
+            <div class="menu-stack__item"><a class="menu-stack__link" href="#">Regional Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
-              <a class="menu-stack__link" href="#">United States Hub</a>
+              <a class="menu-stack__link is-active" href="#">United States Hub</a>
             </li>
             <li class="menu-stack__item">
               <details class="menu-stack__collapsible">
@@ -512,8 +525,8 @@ layout: unformatted
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--parent">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">National Hub</a></div>
+                  <div class="menu-stack__list">
+                    <div class="menu-stack__item"><a class="menu-stack__link" href="#">National Hub</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Toronto Data Center</a></li>
@@ -551,12 +564,12 @@ layout: unformatted
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--parent">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Regional Overview</a></div>
+          <div class="menu-stack__list">
+            <div class="menu-stack__item"><a class="menu-stack__link" href="#">Regional Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
-              <a class="menu-stack__link" href="#">United States Hub</a>
+              <a class="menu-stack__link" href="#" aria-current="page">United States Hub</a>
             </li>
             <li class="menu-stack__item">
               <details class="menu-stack__collapsible">
@@ -565,8 +578,8 @@ layout: unformatted
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--parent">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">National Hub</a></div>
+                  <div class="menu-stack__list">
+                    <div class="menu-stack__item"><a class="menu-stack__link" href="#">National Hub</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Toronto Data Center</a></li>
@@ -604,12 +617,12 @@ layout: unformatted
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
-          <div class="menu-stack__list menu-stack__list--parent">
-            <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Regional Overview</a></div>
+          <div class="menu-stack__list">
+            <div class="menu-stack__item"><a class="menu-stack__link" href="#">Regional Overview</a></div>
           </div>
           <ul class="menu-stack__list">
             <li class="menu-stack__item">
-              <a class="menu-stack__link" href="#">United States Hub</a>
+              <a class="menu-stack__link is-active" href="#">United States Hub</a>
             </li>
             <li class="menu-stack__item">
               <details class="menu-stack__collapsible">
@@ -618,8 +631,8 @@ layout: unformatted
                   <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
                 </summary>
                 <div class="menu-stack__collapsible-content">
-                  <div class="menu-stack__list menu-stack__list--parent">
-                    <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">National Hub</a></div>
+                  <div class="menu-stack__list">
+                    <div class="menu-stack__item"><a class="menu-stack__link" href="#">National Hub</a></div>
                   </div>
                   <ul class="menu-stack__list">
                     <li class="menu-stack__item"><a class="menu-stack__link" href="#">Toronto Data Center</a></li>
@@ -654,23 +667,23 @@ layout: unformatted
       <span class="css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
     </span>
   </button> 
-  <div class="popover popover--fit-content" data-ulu-popover-content>
+  <div class="popover popover--fit" data-ulu-popover-content style="--ulu-popover-max-width: 60rem;">
     <div class="popover__inner">
       <section class="menu-stack menu-stack--columns-fluid">
         <div class="menu-stack__list">
           <div class="menu-stack__item">
-            <div class="menu-stack__list menu-stack__list--parent">
-              <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Engineering</a></div>
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Engineering</a></div>
             </div>
             <ul class="menu-stack__list">
-              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Frontend Development</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link is-active" href="#">Frontend Development</a></li>
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">Backend Architecture</a></li>
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">QA & Testing</a></li>
             </ul>
           </div>
           <div class="menu-stack__item">
-            <div class="menu-stack__list menu-stack__list--parent">
-              <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Marketing</a></div>
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Marketing</a></div>
             </div>
             <ul class="menu-stack__list">
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">Social Media</a></li>
@@ -679,8 +692,8 @@ layout: unformatted
             </ul>
           </div>
           <div class="menu-stack__item">
-            <div class="menu-stack__list menu-stack__list--parent">
-              <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Sales</a></div>
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Sales</a></div>
             </div>
             <ul class="menu-stack__list">
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">Inbound</a></li>
@@ -689,8 +702,8 @@ layout: unformatted
             </ul>
           </div>
           <div class="menu-stack__item">
-            <div class="menu-stack__list menu-stack__list--parent">
-              <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Human Resources</a></div>
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Human Resources</a></div>
             </div>
             <ul class="menu-stack__list">
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">Recruitment</a></li>
@@ -699,8 +712,8 @@ layout: unformatted
             </ul>
           </div>
           <div class="menu-stack__item">
-            <div class="menu-stack__list menu-stack__list--parent">
-              <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Design</a></div>
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Design</a></div>
             </div>
             <ul class="menu-stack__list">
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">UX/UI</a></li>
@@ -709,8 +722,8 @@ layout: unformatted
             </ul>
           </div>
           <div class="menu-stack__item">
-            <div class="menu-stack__list menu-stack__list--parent">
-              <div class="menu-stack__item menu-stack__item--parent"><a class="menu-stack__link" href="#">Finance</a></div>
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Finance</a></div>
             </div>
             <ul class="menu-stack__list">
               <li class="menu-stack__item"><a class="menu-stack__link" href="#">Accounting</a></li>
@@ -723,5 +736,97 @@ layout: unformatted
     </div>
     <span class="popover__arrow" data-ulu-popover-arrow></span>
   </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">3 Levels Nesting (Collapsibles)</h2>
+
+{% CodePreview %}
+<div class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">Documentation (3 Levels)</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Introduction</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Getting Started</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Installation</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Configuration Setup</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Environment Variables</a>
+                    </li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link is-active" href="#">Database Connection and Optimization Strategies</a>
+                    </li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Caching Layers</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+  </ul>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">3 Levels Nesting (No Collapsibles)</h2>
+
+{% CodePreview %}
+<div class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">Categories (3 Levels)</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Home Page</a>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Electronics</a>
+        </div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Mobile Phones</a>
+        </li>
+        <li class="menu-stack__item">
+          <div class="menu-stack__list">
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Computers & Tablets</a>
+            </div>
+          </div>
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Laptops</a>
+            </li>
+            <li class="menu-stack__item">
+              <a class="menu-stack__link is-active" href="#">Desktop PCs and High Performance Workstations</a>
+            </li>
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Accessories</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
 {% endCodePreview %}

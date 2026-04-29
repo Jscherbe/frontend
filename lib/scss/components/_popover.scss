@@ -14,6 +14,7 @@
 @use "../color";
 @use "../layout";
 @use "../element";
+@use "../cssvar";
 
 // Used for function fallback
 $-fallbacks: (
@@ -59,7 +60,6 @@ $-fallbacks: (
 /// @prop {Dimension} width [15rem] Width of the popover.
 /// @prop {Dimension} width-large [30rem] Width of the popover if using "--large".
 /// @prop {Dimension} width-large-x [50rem] Width of the popover if using "--large-x".
-/// @prop {Dimension} fit-max-width [60rem] Width of the popover if using "--fit-content" modifier which grows to the intrinsic size (until max), also you can set --ulu-popover-fit-max property for custom max-width per element/etc.
 
 $config: (
   "arrow-size"                   : 16px,
@@ -91,8 +91,7 @@ $config: (
   "tooltip-width"                : auto,
   "width"                        : 15rem,
   "width-large"                  : 30rem,
-  "width-large-x"                : 50rem,
-  "fit-max-width"                : 60rem,
+  "width-large-x"                : 50rem
   ) !default;
   
 /// Change modules $config
@@ -131,8 +130,8 @@ $config: (
     z-index: get("z-index") + 1;
     background-color: color.get(get("background-color"));
     color: color.get(get("color"));
-    width: get("width");
-    max-width: var(--ulu-popover-max-width, get("max-width"));
+    width: cssvar.use-ulu("popover-width", get("width"));
+    max-width: min(cssvar.use-ulu("popover-max-width", 100vw), get("max-width"));
     box-shadow: get("box-shadow");
     border-radius: get("border-radius");
     text-align: left;
@@ -186,8 +185,8 @@ $config: (
 
   // Modifiers
   #{ $prefix }--tooltip {
-    width: get("tooltip-width");
-    max-width: min(get("max-width"), get("tooltip-max-width"));
+    @include cssvar.declare-ulu("popover-width", get("tooltip-width"));
+    @include cssvar.declare-ulu("popover-max-width", get("tooltip-max-width"));
     color: color.get(get("tooltip-color"));
     background-color: color.get(get("tooltip-background-color"));
     pointer-events: none;
@@ -200,9 +199,9 @@ $config: (
   #{ $prefix }--fixed {
     position: fixed;
   }
-  #{ $prefix }--fit-content {
-    --ulu-popover-fit-max: #{ get("fit-max-width")};
-    width: max-content;
+  // Allow popover to grow/shrink to content's size
+  #{ $prefix }--fit {
+    @include cssvar.declare-ulu("popover-width", max-content);
   }
   // If you want to do something custom (and have it touch the edges)
   #{ $prefix }--no-padding {
@@ -211,10 +210,10 @@ $config: (
     }
   }
   #{ $prefix }--large {
-    width: get("width-large");
+    @include cssvar.declare-ulu("popover-width", get("width-large"));
   }
   #{ $prefix }--large-x {
-    width: get("width-large-x");
+    @include cssvar.declare-ulu("popover-width", get("width-large-x"));
   }
   #{ $prefix }--large,
   #{ $prefix }--large-x {

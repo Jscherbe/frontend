@@ -192,15 +192,28 @@ $config: (
 
 /// Joins a list of cssvar names
 /// - Use to "+", "-" and then use in calc
-/// @param {List} $names list of names (string), like if using use
-/// @param {String} $separator Separator to use when joining custom property var statements
+/// - Accepts standard names (applies prefix) or raw "var(...)" / "calc(...)" strings
+/// - Accepts raw values (numbers like 100vh) so they can be used in calculations
+/// @param {List} $names list of names (string) or raw custom properties or calc (chaining support or custom math)
+/// @param {String} $separator Separator to use when joining (+, -)
 /// @return {String} For example if separator was "+" would result in "var(--some-prop) + var(--another-prop)"
 
 @function join($names, $separator) {
   $values: ();
+
   @each $name in $names {
-    $values: append($values, use($name));
+    // Passthrough with out prefix/use if already contains a raw CSS function
+    $is-already-var: utils.is-string($name) and (string.index($name, "var(") or string.index($name, "calc("));
+
+    // Passthrough as-is if already custom property or calc, or if it's a number
+    @if ($is-already-var or utils.is-number($name)) {
+      $values: list.append($values, $name);
+    // Else pass it through use so it has prefix/var
+    } @else {
+      $values: list.append($values, use($name));
+    }
   }
+
   @return utils.list-join($values, $separator);
 }
 
@@ -218,4 +231,25 @@ $config: (
 
 @function subtract($names...) {
   @return calc(join($names, "-"));
+}
+
+/// Convenience method that maps to "name" function, sets "ulu" as prefix. 
+/// - Used mostly internally
+
+@function name-ulu($name) {
+  @return name($name, "ulu");
+}
+
+/// Convenience method that maps to "use" function, sets "ulu" as prefix. 
+/// - Used mostly internally
+
+@function use-ulu($name, $default-value: null) {
+  @return use($name, $default-value, "ulu");
+}
+
+/// Convenience method that maps to "declare" mixin, sets "ulu" as prefix. 
+/// - Used mostly internally
+
+@mixin declare-ulu($name, $value) {
+  @include declare($name, $value, "ulu");
 }

@@ -1,12 +1,32 @@
 # Change Log
 
-## 0.5.7
+## 0.6.0
+
+**Breaking changes to custom properties listed below**
 
 - `scss/components/_menu-stack.scss`
   - Setup demo and styling for menu stacks (multi column) in popovers
   - Remove "menu-stack--plain" modifier and related config options as it's not something needed currently
     - If this is needed in the future we will add it along with demos and make sure it works with the full menu layout system
   - Remove $styles (was setup for modifiers but not resolved)
+- `scss/components/_popover.scss`
+  - Add custom properties for "--ulu-popover-width" and "--ulu-popover-max-width"
+  - Add modifier "popover--fit" which will adjust it's width the content's width
+    - Max width can be controlled by passing --ulu-popover-max-width
+  - Adjust all modifiers that changed width/max-width to pull from custom properties
+- `scss/_cssvar.scss`
+  - Add "name-ulu", "use-ulu", and "declare-ulu" (mixin/functions) as convenience methods for setting "ulu" prefixed custom properties (mostly for internal use)
+  - Update `cssvar.join` method to pass through anythings that starts with var( or calc( to allow custom properties other than users prefixed (for ulu prefixed core properties or other vendor properties)
+    - Also allow passthrough of raw values (number only) so they can be easily added to add/subtract
+- `scss/base/_root`
+  - Rename custom property "sticky-top-offset" and "sticky-bottom-offset" to "sticky-offset-top" and "sticky-offset-bottom"
+  - Add "sticky-margin"
+  - Update defaults for root config
+  - Add scroll-padding-top which uses sticky-offset-top
+- `scss/components/_data-grid.scss`
+  - Update custom properties for sticky to the updated names (ie --ulu-sticky-offset-top/bottom)
+- `scss/components/_definition-list.scss`
+  - Add config option for "term-color" (default to null)
 
 ## 0.5.6
 

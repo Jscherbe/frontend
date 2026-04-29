@@ -33,6 +33,7 @@ $-fallbacks: (
 /// Module Settings
 /// @type Map
 /// @prop {String} term-font-weight [true] The font-weight of the dt element.
+/// @prop {String} term-color [null] Set a color for the term
 /// @prop {Dimension} line-height [true] The line-height of the definition list.
 /// @prop {CssUnit} item-margin [0.75em] The spacing for each item.
 /// @prop {Boolean} separator [true] Whether to show a separator between items.
@@ -47,6 +48,7 @@ $-fallbacks: (
 $config: (
   "margin" : (0 0 1.5em 0),
   "term-font-weight": true,
+  "term-color" : null,
   "line-height": true,
   "item-margin" : 1em,
   "separator": true,
@@ -104,6 +106,7 @@ $config: (
     }
     dt {
       font-weight: get("term-font-weight");
+      font-weight: color.get(get("term-color"));
     }
   }
 

@@ -75,7 +75,7 @@ $demo-grid-color: ulu.color-tint(vars.$color-violet-light, 15%);
   }
 }
 
-.demo-menu-stack:not(.menu-stack--multi-column) {
+.demo-menu-stack:not(.menu-stack--columns, .menu-stack--columns-fluid) {
   max-width: 30rem;
   margin: 0 auto;
 }
