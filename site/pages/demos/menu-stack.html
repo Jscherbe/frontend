@@ -154,6 +154,62 @@ layout: unformatted
 </div>
 {% endCodePreview %}
 
+<h2 class="h2">Hanging Compact Example</h2>
+
+{% CodePreview %}
+<div class="menu-stack demo-menu-stack menu-stack--hanging menu-stack--compact">
+  <h3 class="menu-stack__label">Documentation</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-current="page">Getting Started</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Core Concepts</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Routing Architecture</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">State Management</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Local Component State</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Global Application State Using Context Providers and Reducers</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">API Reference</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Migration Guide</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Changelog</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Community Forums</a>
+    </li>
+  </ul>
+</div>
+{% endCodePreview %}
+
 <h2 class="h2">Multiple labels/lists</h2>
 
 {% CodePreview %}

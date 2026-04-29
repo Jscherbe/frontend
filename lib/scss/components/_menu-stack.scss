@@ -13,6 +13,7 @@
 @use "../selector";
 @use "../button";
 @use "../typography";
+@use "../cssvar";
 
 // Used for function fallback
 $-fallbacks: (
@@ -40,6 +41,7 @@ $-fallbacks: (
 /// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
 /// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
 /// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
+/// @prop {Dimension} compact-border-radius [3px] The border-radius for compact modifier (links)
 /// @prop {Dimension} compact-selectable-input-width [2em] The width of the checkbox/radio input (when compact modifier)
 /// @prop {Dimension} compact-selectable-input-font-size [null] Optional compact input font-size
 /// @prop {Dimension} compact-selectable-input-top [null] Optional y/top for input
@@ -107,12 +109,13 @@ $config: (
   "link-icon-width" : 1em,
   "link-icon-font-size" : null,
   "link-margin" : 0.2em,
-  "link-padding-x": 1.25em,
-  "link-padding-y": 0.5em,
+  "link-padding-x": 0.85em,
+  "link-padding-y": 0.4em,
   "link-transition-duration": 200ms,
   "link-transition-properties": (border-color, background-color, color, box-shadow),
   "compact-link-padding-x": 0.75em,
   "compact-link-padding-y": 0.25em,
+  "compact-border-radius" : 3px,
   "compact-selectable-input-width": 2.2em,
   "compact-selectable-input-top" : 0.5em,
   "compact-selectable-input-font-size": 0.8em,
@@ -164,6 +167,10 @@ $config: (
   $prefix-name-only: selector.class("menu-stack", $name-only: true);
   $prefix-popover: selector.class("popover");
   $selectable-y: (get("link-padding-y") + get("link-margin"));
+
+  #{ $prefix } {
+    @include cssvar.declare-ulu("menu-stack-link-padding-x", get("link-padding-x"));
+  }
 
   #{ $prefix }--separated {
     border-top: element.get-rule-style(get("rule-style"));
@@ -224,11 +231,12 @@ $config: (
   #{ $prefix }__link,
   #{ $prefix }__selectable,
   #{ $prefix }__toggle {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: get("link-padding-y") get("link-padding-x");
+    padding: get("link-padding-y") cssvar.use-ulu("menu-stack-link-padding-x");
     margin: get("link-margin") 0;
     border-radius: get("link-border-radius");
     font-weight: get("link-font-weight");
@@ -239,13 +247,13 @@ $config: (
     transition-property: get("link-transition-properties");
     &:hover,
     &:focus {
+      z-index: 2;
       color: color.get(get("link-color-hover"));
       background-color: color.get(get("link-background-color-hover"));
     }
   }
   #{ $prefix }__selectable {
     padding: 0;
-    position: relative;
   }
 
   // Combine all active selectors using sass:selector functions
@@ -268,13 +276,13 @@ $config: (
   #{ $prefix }__selectable-input {
     position: absolute;
     top: utils.fallback(get("selectable-input-top"), $selectable-y);
-    left: get("link-padding-x");
+    left: cssvar.use-ulu("menu-stack-link-padding-x");
     font-size: get("selectable-input-font-size");
   }
   #{ $prefix }__selectable label,
   #{ $prefix }__selectable-label {
     width: 100%;
-    padding: $selectable-y get("link-padding-x") $selectable-y get("selectable-input-width");
+    padding: $selectable-y cssvar.use-ulu("menu-stack-link-padding-x") $selectable-y get("selectable-input-width");
   }
   #{ $prefix }__link-text {
     display: block;
@@ -307,15 +315,13 @@ $config: (
 
   // Link buttons hang outside in margin so that text optically aligns
   #{ $prefix }--hanging {
-    // padding-left: get("link-padding-x");
-    // padding-right: get("link-padding-x");
     &:not(#{ $prefix }--columns, #{ $prefix }--columns-fluid) > #{ $prefix }__list > #{ $prefix }__item,
     &[class*="#{ $prefix-name-only }--columns"] > #{ $prefix }__list > #{ $prefix }__item > #{ $prefix }__list > #{ $prefix }__item {
       > #{ $prefix }__link, 
       > #{ $prefix }__collapsible {
-        margin-left: -(get("link-padding-x"));
-        margin-right: -(get("link-padding-x"));
-        width: calc(100% + (get("link-padding-x") * 2));
+        margin-left: calc(cssvar.use-ulu("menu-stack-link-padding-x") * -1);
+        margin-right: calc(cssvar.use-ulu("menu-stack-link-padding-x") * -1);
+        width: calc(100% + (cssvar.use-ulu("menu-stack-link-padding-x") * 2));
       }
     }
   }
@@ -323,27 +329,30 @@ $config: (
   #{ $prefix }--compact {
     $compact-y: get("compact-link-padding-y");
     $compact-x: get("compact-link-padding-x");
+    
+    @include cssvar.declare-ulu("menu-stack-link-padding-x", $compact-x);
 
     #{ $prefix }__selectable,
     #{ $prefix }__toggle,
     #{ $prefix }__link {
-      border-radius: 0;
+      border-radius: get("compact-border-radius");
       margin: 0;
     }
     #{ $prefix }__toggle,
     #{ $prefix }__link {
-      padding: $compact-y $compact-x;
+      padding-top: $compact-y;
+      padding-bottom: $compact-y;
     }
     #{ $prefix }__selectable label,
     #{ $prefix }__selectable-label {
-      padding: $compact-y $compact-x $compact-y get("compact-selectable-input-width");
+      padding-top: $compact-y;
+      padding-bottom: $compact-y;
+      padding-right: get("compact-selectable-input-width");
     }
     #{ $prefix }__selectable [type="checkbox"],
     #{ $prefix }__selectable [type="radio"],
     #{ $prefix }__selectable-input {
-      position: absolute;
       top: utils.fallback(get("compact-selectable-input-top"), $compact-y);
-      left: $compact-x;
       font-size: get("compact-selectable-input-font-size");
     }
   }

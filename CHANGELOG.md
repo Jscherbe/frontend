@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.4
+
+- `scss/components/_menu-stack.scss`
+  - Change link padding x to custom property
+    - This simplifies the CSS slightly
+    - Menu stack hanging works with compact and default now and can be easily updated to work for custom styling situations
+  - Add "compact-border-radius" option default to 3px
+  - Adjust default styles (spacing related changes)
+
 ## 0.6.3
 
 - `scss/components/_menu-stack.scss` | Fix indentation applying to first level list when using --columns and --columns-fluid modifiers
