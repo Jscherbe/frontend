@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-DqWkrCOb.css">
+  <link rel="stylesheet" href="/frontend/assets/main-B-eVrfyg.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6819,6 +6819,9 @@
 
                     <li><a href="#mixin-declare-theme-values">declare-theme-values()</a>
             		</li>
+
+                    <li><a href="#mixin-declare-ulu">declare-ulu()</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -6842,6 +6845,12 @@
             		</li>
 
                     <li><a href="#function-subtract">subtract()</a>
+            		</li>
+
+                    <li><a href="#function-name-ulu">name-ulu()</a>
+            		</li>
+
+                    <li><a href="#function-use-ulu">use-ulu()</a>
             		</li>
                 </ol>
             		</li>
@@ -7248,6 +7257,32 @@
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
 </div>
+<div class="sassdoc-item">
+<div class="sassdoc-item-header">
+<h3 id="mixin-declare-ulu" tabindex="-1">declare-ulu()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Mixin</strong></span>
+  </div>
+</div>
+<p>Convenience method that maps to &quot;declare&quot; mixin, sets &quot;ulu&quot; as prefix.</p>
+<ul>
+<li>Used mostly internally</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> mixin</li>
+<li><strong>Lines (comments):</strong> 250-251</li>
+<li><strong>Lines (code):</strong> 253-255</li>
+</ul>
+</details>
+<h4 id="require-6" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/cssvar/#mixin-declare">declare()</a></li>
+</ul>
+</div>
 <h2 id="functions" tabindex="-1">Functions</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7302,7 +7337,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-6" tabindex="-1">Require</h4>
+<h4 id="require-7" tabindex="-1">Require</h4>
 <ul>
 <li>require-map-get()</li>
 <li><a href="/frontend/sass/core/breakpoint/#variable-config">$config</a></li>
@@ -7439,7 +7474,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-7" tabindex="-1">Require</h4>
+<h4 id="require-8" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/cssvar/#function-name">name()</a></li>
 </ul>
@@ -7454,6 +7489,8 @@
 <p>Joins a list of cssvar names</p>
 <ul>
 <li>Use to &quot;+&quot;, &quot;-&quot; and then use in calc</li>
+<li>Accepts standard names (applies prefix) or raw &quot;var(...)&quot; / &quot;calc(...)&quot; strings</li>
+<li>Accepts raw values (numbers like 100vh) so they can be used in calculations</li>
 </ul>
 <details>
   <summary>File Information</summary>
@@ -7461,8 +7498,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 193-197</li>
-<li><strong>Lines (code):</strong> 199-205</li>
+<li><strong>Lines (comments):</strong> 193-199</li>
+<li><strong>Lines (code):</strong> 201-218</li>
 </ul>
 </details>
 <h4 id="parameters-9" tabindex="-1">Parameters</h4>
@@ -7478,12 +7515,12 @@
 <tr>
 <td style="text-align:left">$names</td>
 <td style="text-align:left"><code>List</code></td>
-<td style="text-align:left">list of names (string), like if using use</td>
+<td style="text-align:left">list of names (string) or raw custom properties or calc (chaining support or custom math)</td>
 </tr>
 <tr>
 <td style="text-align:left">$separator</td>
 <td style="text-align:left"><code>String</code></td>
-<td style="text-align:left">Separator to use when joining custom property var statements</td>
+<td style="text-align:left">Separator to use when joining (+, -)</td>
 </tr>
 </tbody>
 </table>
@@ -7502,8 +7539,10 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-8" tabindex="-1">Require</h4>
+<h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
+<li>is-string()</li>
+<li>is-number()</li>
 <li><a href="/frontend/sass/core/cssvar/#function-use">use()</a></li>
 <li>list-join()</li>
 </ul>
@@ -7522,8 +7561,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 207-209</li>
-<li><strong>Lines (code):</strong> 211-213</li>
+<li><strong>Lines (comments):</strong> 220-222</li>
+<li><strong>Lines (code):</strong> 224-226</li>
 </ul>
 </details>
 <h4 id="parameters-10" tabindex="-1">Parameters</h4>
@@ -7558,7 +7597,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-9" tabindex="-1">Require</h4>
+<h4 id="require-10" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/cssvar/#function-join">join()</a></li>
 </ul>
@@ -7577,8 +7616,8 @@
 <li><strong>File:</strong> _cssvar.scss</li>
 <li><strong>Group:</strong> cssvar</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 215-217</li>
-<li><strong>Lines (code):</strong> 219-221</li>
+<li><strong>Lines (comments):</strong> 228-230</li>
+<li><strong>Lines (code):</strong> 232-234</li>
 </ul>
 </details>
 <h4 id="parameters-11" tabindex="-1">Parameters</h4>
@@ -7613,9 +7652,61 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-10" tabindex="-1">Require</h4>
+<h4 id="require-11" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/cssvar/#function-join">join()</a></li>
+</ul>
+</div>
+<div class="sassdoc-item">
+<div class="sassdoc-item-header">
+<h3 id="function-name-ulu" tabindex="-1">name-ulu()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Convenience method that maps to &quot;name&quot; function, sets &quot;ulu&quot; as prefix.</p>
+<ul>
+<li>Used mostly internally</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 236-237</li>
+<li><strong>Lines (code):</strong> 239-241</li>
+</ul>
+</details>
+<h4 id="require-12" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/cssvar/#function-name">name()</a></li>
+</ul>
+</div>
+<div class="sassdoc-item">
+<div class="sassdoc-item-header">
+<h3 id="function-use-ulu" tabindex="-1">use-ulu()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Convenience method that maps to &quot;use&quot; function, sets &quot;ulu&quot; as prefix.</p>
+<ul>
+<li>Used mostly internally</li>
+</ul>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _cssvar.scss</li>
+<li><strong>Group:</strong> cssvar</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 243-244</li>
+<li><strong>Lines (code):</strong> 246-248</li>
+</ul>
+</details>
+<h4 id="require-13" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/cssvar/#function-use">use()</a></li>
 </ul>
 </div>
 
@@ -7625,7 +7716,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-BP1PTzBU.js"></script>
+<script type="module" src="/frontend/assets/main-x3pmSDes.js"></script>
 
 		
 	</body>
