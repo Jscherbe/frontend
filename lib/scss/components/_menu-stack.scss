@@ -70,6 +70,7 @@ $-fallbacks: (
 /// @prop {Dimension} selectable-input-font-size [null] Optional to set a specific font-size on the input
 /// @prop {Duration} link-transition-duration [200ms] The duration of the link state transition.
 /// @prop {List} link-transition-properties [(border-color, background-color, color, box-shadow)] The properties to transition on link state change.
+/// @prop {CssValue} title-color [null] Color to use for the title modifier
 /// @prop {CssValue} title-font-weight [bold] The font weight for the title modifier.
 /// @prop {Boolean} title-separator-enabled [true] Enables a separator rule below the title item.
 /// @prop {Color} title-separator-color [rule] The color of the title separator rule.
@@ -118,6 +119,7 @@ $config: (
   "selectable-input-width" : 3em,
   "selectable-input-top" : 0.73em,
   "selectable-input-font-size" : null,
+  "title-color" : null,
   "title-font-weight" : bold,
   "title-separator-enabled": true,
   "title-separator-color" : "rule",
@@ -178,9 +180,6 @@ $config: (
       @include typography.size(get("label-type-size"), $only-font-size: true);
     }
   }
-  // #{ $prefix }__item {
-  //   display: flow-root; 
-  // }
   #{ $prefix }__item--separator-before {
     border-top: element.get-rule-style(-fallback("link-separated-rule-style", "rule-style"));
     margin-top: -fallback("link-separated-margin", "link-padding-y");
@@ -197,14 +196,22 @@ $config: (
     }
   }
 
-  @if get("title-separator-enabled") {
-    #{ $prefix }__item--title {
+  // Special modifier for item to style as a title
+  // - Used in columns menus where first level isn't in a <ul> but is just above 
+  //   the <ul> and being styled as though it was to match the styling of the menu 
+  //   of children
+  // - Note: This is output above the link styling for specificity, so it will 
+  //   fallback to link colors for hover/active
+  #{ $prefix }__item--title {
+    @if get("title-separator-enabled") {
       border-bottom: element.get-rule-style(-fallback("title-rule-style", "rule-style"));
       margin-bottom: -fallback("title-separated-margin", "link-padding-y");
       padding-bottom: -fallback("title-separated-margin", "link-padding-y");
-      #{ $prefix }__link {
-        font-weight: get("title-font-weight");
-      }
+    }
+    &,
+    > #{ $prefix }__link {
+      color: color.get(get("title-color"));
+      font-weight: get("title-font-weight");
     }
   }
   
@@ -214,7 +221,6 @@ $config: (
   // - Use the modifier "site-menu--contained" to keep the links within 
   //   the parent container (no optical alignment), should be within something that contains it
 
-  // add __toggle to these styles
   #{ $prefix }__link,
   #{ $prefix }__selectable,
   #{ $prefix }__toggle {

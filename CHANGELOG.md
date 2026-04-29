@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.2
+
+- `scss/components/_menu-stack.scss`
+  - Add "title-color" for title modifier 
+  - Title - fix if statement for separator option preventing font-weight config from applying
+
 ## 0.6.1
 
 - `scss/components/_menu-stack.scss`
