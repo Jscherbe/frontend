@@ -380,4 +380,10 @@ $config: (
       }
     }
   }
+  // No indenting if we're using columns
+  [class*="#{ $prefix-name-only }--columns"] {
+    > #{ $prefix }__list > #{ $prefix }__item > #{ $prefix }__list {
+      padding-left: 0;
+    }
+  }
 }

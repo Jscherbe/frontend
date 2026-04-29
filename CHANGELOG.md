@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.6.3
+
+- `scss/components/_menu-stack.scss` | Fix indentation applying to first level list when using --columns and --columns-fluid modifiers
+
 ## 0.6.2
 
 - `scss/components/_menu-stack.scss`
