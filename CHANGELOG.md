@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.6
+
+- `scss/components/_form-theme.scss`
+  - Make default layout for form item align top and setup default form item styles for drupal version of stylesheet
+    - Add modifier for form item center in addition to the top that previously existed
+
 ## 0.6.5
 
 - `scss/components/_menu-stack.scss` | 

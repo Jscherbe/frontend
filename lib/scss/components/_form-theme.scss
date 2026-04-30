@@ -43,8 +43,10 @@ $-fallbacks: (
 /// @prop {Dimension} input-padding-y [0.25em] Vertical padding of the input.
 /// @prop {Dimension} input-min-width [10em] Min width of the input.
 /// @prop {Color} input-background-color [white] Background color of the input.
+/// @prop {CssValue} item-align-items [flex-start] Alignment for items inline.
 /// @prop {Dimension} item-border-radius [null] Border radius for __item.
 /// @prop {Dimension} item-highlight-width [6px] Width of the item box highlight.
+/// @prop {Dimension} item-margin-y [0.75em] Vertical margin for items.
 /// @prop {Color} required-color ["danger"] Color for required text.
 /// @prop {Dimension} text-input-margin-bottom [0.5em] Bottom margin for the label.
 /// @prop {Dimension} text-input-margin-top [1em] Top margin for the label.
@@ -122,13 +124,14 @@ $config: (
   "font-weight-select"                        : null,
   "input-border"                              : element.get-rule-style(),
   "input-border-radius"                       : 0,
-  "item-margin-y"                            : 0.75em,
+  "item-align-items"                          : flex-start,
+  "item-border-radius"                        : null,
+  "item-highlight-width"                      : 6px,
+  "item-margin-y"                             : 0.75em,
   "input-padding-x"                           : 0.5em,
   "input-padding-y"                           : 0.25em,
   "input-min-width"                           : 10em,
   "input-background-color"                    : white,
-  "item-border-radius"                        : null,
-  "item-highlight-width"                      : 6px,
   "required-color"                            : "danger",
   "text-input-margin-bottom"                  : 0.5em,
   "text-input-margin-top"                     : 1em,
@@ -515,6 +518,22 @@ $config: (
   color: color.get(get("description-color"));
 }
 
+/// Styles for form item container (like radio, checkbox)
+@mixin -element-form-item() {
+  $errorColor: color.get(get("error-color"));
+  $selectError: get("error-selector");
+  $warningColor: color.get(get("warning-color"));
+  $selectWarning: get("warning-selector");
+
+  display: flex;
+  align-items: get("item-align-items");
+  margin-bottom: get("item-margin-y");
+  border-radius: get("item-border-radius");
+  flex-shrink: 0; // Cannot be smaller than content within
+  @include -form-item-state($selectError, $errorColor, color.get(get("error-highlight-color")));
+  @include -form-item-state($selectWarning, $warningColor, color.get(get("warning-highlight-color")));
+}
+
 /// Styles for form item that should have label as block and text input
 @mixin element-form-item-block() {
   display: block;
@@ -556,16 +575,13 @@ $config: (
     @include element-help-text();
   }
   #{ $prefix }__item {
-    display: flex;
-    align-items: center;
-    margin-bottom: get("item-margin-y");
-    border-radius: get("item-border-radius");
-    flex-shrink: 0; // Cannot be smaller than content within
-    @include -form-item-state($selectError, $errorColor, color.get(get("error-highlight-color")));
-    @include -form-item-state($selectWarning, $warningColor, color.get(get("warning-highlight-color")));
+    @include -element-form-item();
   }
   #{ $prefix }__item--align-top {
     align-items: flex-start;
+  }
+  #{ $prefix }__item--align-center {
+    align-items: center;
   }
   #{ $prefix }__item--text,
   #{ $prefix }__item--file,
@@ -609,6 +625,10 @@ $config: (
     }
     .form-item:not(fieldset) {
       margin-bottom: 1rem;
+    }
+    [class*="form-type-checkbox"],
+    [class*="form-type-radio"] {
+      @include -element-form-item();
     }
     [class*="form-type-textarea"],
     [class*="form-type-password"],

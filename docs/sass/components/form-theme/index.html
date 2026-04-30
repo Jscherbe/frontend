@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-DceIVVdM.css">
+  <link rel="stylesheet" href="/frontend/assets/main-CutS6pSI.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6879,13 +6879,14 @@
   <span class="pjs-token pjs-string">"font-weight-select"</span>                        <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"input-border"</span>                              <span class="pjs-token pjs-punctuation">:</span> element.<span class="pjs-token pjs-function">get-rule-style</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"input-border-radius"</span>                       <span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"item-margin-y"</span>                            <span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"item-align-items"</span>                          <span class="pjs-token pjs-punctuation">:</span> flex-start<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"item-border-radius"</span>                        <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"item-highlight-width"</span>                      <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"item-margin-y"</span>                             <span class="pjs-token pjs-punctuation">:</span> 0.75em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"input-padding-x"</span>                           <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"input-padding-y"</span>                           <span class="pjs-token pjs-punctuation">:</span> 0.25em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"input-min-width"</span>                           <span class="pjs-token pjs-punctuation">:</span> 10em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"input-background-color"</span>                    <span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"item-border-radius"</span>                        <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"item-highlight-width"</span>                      <span class="pjs-token pjs-punctuation">:</span> 6px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"required-color"</span>                            <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"danger"</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-input-margin-bottom"</span>                  <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"text-input-margin-top"</span>                     <span class="pjs-token pjs-punctuation">:</span> 1em<span class="pjs-token pjs-punctuation">,</span>
@@ -6954,8 +6955,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 25-107</li>
-<li><strong>Lines (code):</strong> 109-193</li>
+<li><strong>Lines (comments):</strong> 25-109</li>
+<li><strong>Lines (code):</strong> 111-196</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -7084,6 +7085,12 @@
 <td style="text-align:left">Background color of the input.</td>
 </tr>
 <tr>
+<td style="text-align:left">item-align-items</td>
+<td style="text-align:left">CssValue</td>
+<td style="text-align:left">flex-start</td>
+<td style="text-align:left">Alignment for items inline.</td>
+</tr>
+<tr>
 <td style="text-align:left">item-border-radius</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">null</td>
@@ -7094,6 +7101,12 @@
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">6px</td>
 <td style="text-align:left">Width of the item box highlight.</td>
+</tr>
+<tr>
+<td style="text-align:left">item-margin-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.75em</td>
+<td style="text-align:left">Vertical margin for items.</td>
 </tr>
 <tr>
 <td style="text-align:left">required-color</td>
@@ -7473,8 +7486,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 195-198</li>
-<li><strong>Lines (code):</strong> 200-202</li>
+<li><strong>Lines (comments):</strong> 198-201</li>
+<li><strong>Lines (code):</strong> 203-205</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -7515,8 +7528,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 218-220</li>
-<li><strong>Lines (code):</strong> 222-259</li>
+<li><strong>Lines (comments):</strong> 221-223</li>
+<li><strong>Lines (code):</strong> 225-262</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -7542,8 +7555,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 498-498</li>
-<li><strong>Lines (code):</strong> 499-506</li>
+<li><strong>Lines (comments):</strong> 501-501</li>
+<li><strong>Lines (code):</strong> 502-509</li>
 </ul>
 </details>
 <h4 id="require-2" tabindex="-1">Require</h4>
@@ -7565,8 +7578,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 508-508</li>
-<li><strong>Lines (code):</strong> 509-516</li>
+<li><strong>Lines (comments):</strong> 511-511</li>
+<li><strong>Lines (code):</strong> 512-519</li>
 </ul>
 </details>
 <h4 id="require-3" tabindex="-1">Require</h4>
@@ -7588,8 +7601,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 518-518</li>
-<li><strong>Lines (code):</strong> 519-530</li>
+<li><strong>Lines (comments):</strong> 537-537</li>
+<li><strong>Lines (code):</strong> 538-549</li>
 </ul>
 </details>
 <h4 id="require-4" tabindex="-1">Require</h4>
@@ -7611,8 +7624,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 532-532</li>
-<li><strong>Lines (code):</strong> 533-537</li>
+<li><strong>Lines (comments):</strong> 551-551</li>
+<li><strong>Lines (code):</strong> 552-556</li>
 </ul>
 </details>
 </div>
@@ -7630,8 +7643,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 539-539</li>
-<li><strong>Lines (code):</strong> 540-542</li>
+<li><strong>Lines (comments):</strong> 558-558</li>
+<li><strong>Lines (code):</strong> 559-561</li>
 </ul>
 </details>
 </div>
@@ -7649,14 +7662,15 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 544-544</li>
-<li><strong>Lines (code):</strong> 545-598</li>
+<li><strong>Lines (comments):</strong> 563-563</li>
+<li><strong>Lines (code):</strong> 564-614</li>
 </ul>
 </details>
 <h4 id="require-5" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-required-char">element-required-char()</a></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-help-text">element-help-text()</a></li>
+<li><code>-element-form-item</code></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-form-item-block">element-form-item-block()</a></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-form-actions">element-form-actions()</a></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-form-actions-right">element-form-actions-right()</a></li>
@@ -7677,14 +7691,15 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 600-600</li>
-<li><strong>Lines (code):</strong> 601-629</li>
+<li><strong>Lines (comments):</strong> 616-616</li>
+<li><strong>Lines (code):</strong> 617-649</li>
 </ul>
 </details>
 <h4 id="require-6" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-required-char">element-required-char()</a></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-help-text">element-help-text()</a></li>
+<li><code>-element-form-item</code></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-form-item-block">element-form-item-block()</a></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-form-actions">element-form-actions()</a></li>
 <li><a href="/frontend/sass/components/form-theme/#mixin-element-form-actions-right">element-form-actions-right()</a></li>
@@ -7705,8 +7720,8 @@
 <li><strong>File:</strong> _form-theme.scss</li>
 <li><strong>Group:</strong> form-theme</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 204-207</li>
-<li><strong>Lines (code):</strong> 209-212</li>
+<li><strong>Lines (comments):</strong> 207-210</li>
+<li><strong>Lines (code):</strong> 212-215</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -7740,7 +7755,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-CermK3_W.js"></script>
+<script type="module" src="/frontend/assets/main-BG_p3CdX.js"></script>
 
 		
 	</body>
