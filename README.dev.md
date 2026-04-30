@@ -59,3 +59,8 @@ TODO: This section should be added to... (sassdoc type naming, etc). Formatting.
     - In a real project not using every scss module
       - Uncompressed: ~80-100 kB
       - Gzip: ~13-16 kB
+
+## Naming
+
+Config options, and class names, etc should follow a pattern like:
+"[subject]-[property]-[direction]"
