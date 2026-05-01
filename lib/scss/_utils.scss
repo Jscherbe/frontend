@@ -445,10 +445,10 @@ $config: (
 ///   }
 ///
 @function map-contains-any($map, $keys, $options: ()) {
-  @if (meta.type-of($map) != "map") {
+  @if (not is-map($map)) {
     @error "map-contains-any(): Incorrect type for $map (should be map)";
   }
-  @if (meta.type-of($keys) != "list") {
+  @if (not is-list($keys)) {
     @error "map-contains-any(): Incorrect type for $keys (should be list)";
   }
   @each $key in $keys {
@@ -592,20 +592,28 @@ $config: (
 /// - Used for programmatic things with single value config options for padding/margin
 /// 
 /// @param {Number|List} $value The value to resolve (usually a config option)
-/// @example scss Example of getting left value
-///   $user-padding: (1em, 2em, 4em);
-///   $spacing: get-spacing($user-padding);
-///   // $spacing ("top" : 1em, "right" : 2em, "bottom" : 4em, "left" : 2em);
-/// 
-///   .example {
-///     left: map.get($spacing, "left");
-///     // left = 2em
+/// @example scss {compile} Testing shorthands
+///   .test-spacing-1 {
+///     $info: ulu.utils-get-spacing(10px);
+///     content: meta.inspect($info);
+///   }
+///   .test-spacing-2 {
+///     $info: ulu.utils-get-spacing(10px 20px);
+///     content: meta.inspect($info);
+///   }
+///   .test-spacing-3 {
+///     $info: ulu.utils-get-spacing(10px 20px 30px);
+///     content: meta.inspect($info);
+///   }
+///   .test-spacing-4 {
+///     $info: ulu.utils-get-spacing(10px 20px 30px 40px);
+///     content: meta.inspect($info);
 ///   }
 /// @return {Map} Map with spacing info for each side (top, right, bottom, left)
 /// @throw If the list length > 4 (incorrect syntax for shorthand)
 
 @function get-spacing($value) {
-  @if (meta.type-of($value) != "list") {
+  @if (not is-list($value)) {
     @return (
       "top" :    $value,
       "right" :  $value,
@@ -623,9 +631,9 @@ $config: (
 
   @return (
     "top" :    $top,
-    "right" :  list.nth($value, 1),
+    "right" :  list.nth($value, when($length >= 2, 2, 1)),
     "bottom" : list.nth($value, when($length >= 3, 3, 1)),
-    "left" :   list.nth($value, when($length == 4, 4, 2))
+    "left" :   list.nth($value, when($length == 4, 4, when($length >= 2, 2, 1)))
   );
 }
 
@@ -687,6 +695,56 @@ $config: (
 
 @function get-spacing-left($value) {
   @return map.get(get-spacing($value), "left");
+}
+
+/// Get's the info about a border shorthand
+/// @param {List|String|Number} $border The border property (ie. 1px solid red)
+/// @example scss {compile} Testing shorthands and custom properties
+///   .test-border-1 {
+///     $info: ulu.utils-border-info(solid);
+///     content: meta.inspect($info);
+///   }
+///   .test-border-2 {
+///     $info: ulu.utils-border-info(1px solid);
+///     content: meta.inspect($info);
+///   }
+///   .test-border-3 {
+///     $info: ulu.utils-border-info(1px solid red);
+///     content: meta.inspect($info);
+///   }
+///   .test-border-var {
+///     $info: ulu.utils-border-info(1px solid var(--ulu-color-primary));
+///     content: meta.inspect($info);
+///   }
+/// @return {Map} Map with info about the border with the following keys (width, style, color)
+
+@function border-info($border) {
+  $width: 0;
+  $style: solid;
+  $color: null;
+
+  $items: when(is-list($border), $border, ($border,));
+  $length: list.length($items);
+
+  @if ($length == 1) {
+    // [style]
+    $style: list.nth($items, 1);
+  } @else if ($length == 2) {
+    // [width, style]
+    $width: list.nth($items, 1);
+    $style: list.nth($items, 2);
+  } @else if ($length >= 3) {
+    // Assume [width, style, color]
+    $width: list.nth($items, 1);
+    $style: list.nth($items, 2);
+    $color: list.nth($items, 3);
+  }
+
+  @return (
+    "width": $width,
+    "style": $style,
+    "color": $color,
+  );
 }
 
 /// Strips the unit from the number
@@ -759,7 +817,7 @@ $config: (
 /// @throw When shadow is not type list
 
 @function box-shadow-info($shadow) {
-  @if (meta.type-of($shadow) != "list") {
+  @if (not is-list($shadow)) {
     @error "Box shadow passed is not correct type (list)";
   }
   $result: (

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.7
+
+- `scss/components/_input-group.scss`
+  - Add new component (based on search-form layout but setup to be reusable)
+- `scss/_utils.scss`
+  - Add new `get-border-info()` (extracts border information from shorthand list)
+  - Corrected bug in `get-spacing()` and added tests for all combinations
+
 ## 0.6.6
 
 - `scss/components/_form-theme.scss`

@@ -1,0 +1,117 @@
+---
+title: Input Group
+layout: unformatted
+intro: A layout component for grouping form inputs with adjacent actions or information, such as search buttons or currency symbols.
+---
+
+<h2 class="h2">Standard Search (Joined)</h2>
+<p>The classic search layout with an appended button and shared borders.</p>
+
+{% CodePreview %}
+<div class="form-theme">
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--field">
+      <label for="search-input" class="hidden-visually">Search</label>
+      <input 
+        type="text" 
+        id="search-input" 
+        class="input-group__input"
+        placeholder="Search the site..."
+      >
+    </div>
+    <div class="input-group__item">
+      <button 
+        class="button button--primary input-group__button"
+        aria-label="Submit Search"
+      >
+        <span class="fas fa-magnifying-glass" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Newsletter Signup (Joined)</h2>
+<p>An input group using a text-based button.</p>
+
+{% CodePreview %}
+<div class="form-theme" style="max-width: 400px;">
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--field">
+      <label for="newsletter-email" class="hidden-visually">Email Address</label>
+      <input 
+        type="email" 
+        id="newsletter-email" 
+        class="input-group__input"
+        placeholder="your@email.com"
+      >
+    </div>
+    <div class="input-group__item">
+      <button class="button button--primary input-group__button">Subscribe</button>
+    </div>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Addon Text (Currency/Suffix)</h2>
+<p>Using <code>.input-group__item--text</code> for non-interactive information prefixes or suffixes.</p>
+
+{% CodePreview %}
+<div class="form-theme" style="max-width: 300px;">
+  <div class="input-group input-group--joined margin-bottom">
+    <div class="input-group__item input-group__item--text">$</div>
+    <div class="input-group__item input-group__item--field">
+      <label for="price-input" class="hidden-visually">Price</label>
+      <input type="number" id="price-input" class="input-group__input" placeholder="0.00">
+    </div>
+  </div>
+
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--field">
+      <label for="domain-input" class="hidden-visually">Domain</label>
+      <input type="text" id="domain-input" class="input-group__input" placeholder="username">
+    </div>
+    <div class="input-group__item input-group__item--text">@example.com</div>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Gapped Layout</h2>
+<p>When the items should be aligned but maintain their own distinct shapes (using default <code>gap: 0.5em</code>).</p>
+
+{% CodePreview %}
+<div class="form-theme" style="max-width: 400px;">
+  <div class="input-group">
+    <div class="input-group__item input-group__item--field">
+      <label for="promo-input" class="hidden-visually">Promo Code</label>
+      <input type="text" id="promo-input" class="input-group__input" placeholder="Enter code">
+    </div>
+    <div class="input-group__item">
+      <button class="button button--outline input-group__button">Apply</button>
+    </div>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Quantity Picker (Flanked)</h2>
+<p>An input group with actions on both sides. This demonstrates the component's ability to shrink correctly within tight containers.</p>
+
+{% CodePreview %}
+<div class="form-theme">
+  <div class="input-group input-group--joined" style="max-width: 300px;">
+    <div class="input-group__item">
+      <button class="button button--outline input-group__button" aria-label="Decrease quantity">
+        <span class="fas fa-minus" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="input-group__item input-group__item--field">
+      <input type="number" value="1" class="input-group__input type-center">
+    </div>
+    <div class="input-group__item">
+      <button class="button button--outline input-group__button" aria-label="Increase quantity">
+        <span class="fas fa-plus" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div>
+{% endCodePreview %}
