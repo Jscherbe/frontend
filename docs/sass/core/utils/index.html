@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-CutS6pSI.css">
+  <link rel="stylesheet" href="/frontend/assets/main-DG1miHZ-.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -676,6 +676,21 @@
     
     <span class="nav-tree__text">
       Image Grid
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/input-group/">
+          
+    
+    <span class="nav-tree__text">
+      Input Group
     </span>
   
         </a>
@@ -2081,6 +2096,21 @@
     
     <span class="nav-tree__text">
       Index
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/input-group/">
+          
+    
+    <span class="nav-tree__text">
+      Input-group
     </span>
   
         </a>
@@ -4051,6 +4081,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/input-group/">
+          
+    
+    <span class="nav-tree__text">
+      Input Group
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/list-inline/">
           
     
@@ -5446,6 +5491,21 @@
     
     <span class="nav-tree__text">
       Index
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/components/input-group/">
+          
+    
+    <span class="nav-tree__text">
+      Input-group
     </span>
   
         </a>
@@ -6901,6 +6961,9 @@
                     <li><a href="#function-get-spacing-left">get-spacing-left()</a>
             		</li>
 
+                    <li><a href="#function-border-info">border-info()</a>
+            		</li>
+
                     <li><a href="#function-strip-unit">strip-unit()</a>
             		</li>
 
@@ -7236,8 +7299,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 732-735</li>
-<li><strong>Lines (code):</strong> 737-744</li>
+<li><strong>Lines (comments):</strong> 790-793</li>
+<li><strong>Lines (code):</strong> 795-802</li>
 </ul>
 </details>
 <h4 id="parameters-4" tabindex="-1">Parameters</h4>
@@ -8291,6 +8354,8 @@
 </ul>
 <h4 id="require-9" tabindex="-1">Require</h4>
 <ul>
+<li><a href="/frontend/sass/core/utils/#function-is-map">is-map()</a></li>
+<li><a href="/frontend/sass/core/utils/#function-is-list">is-list()</a></li>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
 </ul>
 </div>
@@ -8667,19 +8732,42 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 590-605</li>
-<li><strong>Lines (code):</strong> 607-630</li>
+<li><strong>Lines (comments):</strong> 590-613</li>
+<li><strong>Lines (code):</strong> 615-638</li>
 </ul>
 </details>
 <h4 id="examples-16" tabindex="-1">Examples</h4>
-<p>Example of getting left value</p>
-<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$user-padding</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>1em<span class="pjs-token pjs-punctuation">,</span> 2em<span class="pjs-token pjs-punctuation">,</span> 4em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$spacing</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">get-spacing</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$user-padding</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-<span class="pjs-token pjs-comment">// $spacing ("top" : 1em, "right" : 2em, "bottom" : 4em, "left" : 2em);</span>
+<p>Testing shorthands</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-selector">.test-spacing-1 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-get-spacing</span><span class="pjs-token pjs-punctuation">(</span>10px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.test-spacing-2 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-get-spacing</span><span class="pjs-token pjs-punctuation">(</span>10px 20px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.test-spacing-3 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-get-spacing</span><span class="pjs-token pjs-punctuation">(</span>10px 20px 30px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.test-spacing-4 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-get-spacing</span><span class="pjs-token pjs-punctuation">(</span>10px 20px 30px 40px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.test-spacing-1</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"top"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"right"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"bottom"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
 
-<span class="pjs-token pjs-selector">.example </span><span class="pjs-token pjs-punctuation">{</span>
-  <span class="pjs-token pjs-property">left</span><span class="pjs-token pjs-punctuation">:</span> map.<span class="pjs-token pjs-function">get</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$spacing</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
-  <span class="pjs-token pjs-comment">// left = 2em</span>
+<span class="pjs-token pjs-selector">.test-spacing-2</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"top"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"right"</span><span class="pjs-token pjs-punctuation">:</span> 20px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"bottom"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">:</span> 20px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.test-spacing-3</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"top"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"right"</span><span class="pjs-token pjs-punctuation">:</span> 20px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"bottom"</span><span class="pjs-token pjs-punctuation">:</span> 30px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">:</span> 20px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.test-spacing-4</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"top"</span><span class="pjs-token pjs-punctuation">:</span> 10px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"right"</span><span class="pjs-token pjs-punctuation">:</span> 20px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"bottom"</span><span class="pjs-token pjs-punctuation">:</span> 30px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"left"</span><span class="pjs-token pjs-punctuation">:</span> 40px<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
 <span class="pjs-token pjs-punctuation">}</span></code></pre>
 <h4 id="parameters-23" tabindex="-1">Parameters</h4>
 <table>
@@ -8719,6 +8807,7 @@
 </ul>
 <h4 id="require-13" tabindex="-1">Require</h4>
 <ul>
+<li><a href="/frontend/sass/core/utils/#function-is-list">is-list()</a></li>
 <li><a href="/frontend/sass/core/utils/#function-when">when()</a></li>
 </ul>
 </div>
@@ -8736,8 +8825,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 632-641</li>
-<li><strong>Lines (code):</strong> 643-645</li>
+<li><strong>Lines (comments):</strong> 640-649</li>
+<li><strong>Lines (code):</strong> 651-653</li>
 </ul>
 </details>
 <h4 id="examples-17" tabindex="-1">Examples</h4>
@@ -8798,8 +8887,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 647-656</li>
-<li><strong>Lines (code):</strong> 658-660</li>
+<li><strong>Lines (comments):</strong> 655-664</li>
+<li><strong>Lines (code):</strong> 666-668</li>
 </ul>
 </details>
 <h4 id="examples-18" tabindex="-1">Examples</h4>
@@ -8860,8 +8949,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 662-671</li>
-<li><strong>Lines (code):</strong> 673-675</li>
+<li><strong>Lines (comments):</strong> 670-679</li>
+<li><strong>Lines (code):</strong> 681-683</li>
 </ul>
 </details>
 <h4 id="examples-19" tabindex="-1">Examples</h4>
@@ -8922,8 +9011,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 677-686</li>
-<li><strong>Lines (code):</strong> 688-690</li>
+<li><strong>Lines (comments):</strong> 685-694</li>
+<li><strong>Lines (code):</strong> 696-698</li>
 </ul>
 </details>
 <h4 id="examples-20" tabindex="-1">Examples</h4>
@@ -8972,6 +9061,95 @@
 </div>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
+<h3 id="function-border-info" tabindex="-1">border-info()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Get's the info about a border shorthand</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 700-719</li>
+<li><strong>Lines (code):</strong> 721-748</li>
+</ul>
+</details>
+<h4 id="examples-21" tabindex="-1">Examples</h4>
+<p>Testing shorthands and custom properties</p>
+<pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-selector">.test-border-1 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-border-info</span><span class="pjs-token pjs-punctuation">(</span>solid<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.test-border-2 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-border-info</span><span class="pjs-token pjs-punctuation">(</span>1px solid<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.test-border-3 </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-border-info</span><span class="pjs-token pjs-punctuation">(</span>1px solid red<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+<span class="pjs-token pjs-selector">.test-border-var </span><span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$info</span></span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-border-info</span><span class="pjs-token pjs-punctuation">(</span>1px solid <span class="pjs-token pjs-function">var</span><span class="pjs-token pjs-punctuation">(</span>--ulu-color-primary<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> meta.<span class="pjs-token pjs-function">inspect</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-variable">$info</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="pjs-token pjs-selector">.test-border-1</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span> 0<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"style"</span><span class="pjs-token pjs-punctuation">:</span> solid<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> null<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.test-border-2</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"style"</span><span class="pjs-token pjs-punctuation">:</span> solid<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> null<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.test-border-3</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"style"</span><span class="pjs-token pjs-punctuation">:</span> solid<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> red<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span>
+
+<span class="pjs-token pjs-selector">.test-border-var</span> <span class="pjs-token pjs-punctuation">{</span>
+  <span class="pjs-token pjs-property">content</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"width"</span><span class="pjs-token pjs-punctuation">:</span> 1px<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"style"</span><span class="pjs-token pjs-punctuation">:</span> solid<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"color"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">var</span><span class="pjs-token pjs-punctuation">(</span>--ulu-color-primary<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
+<span class="pjs-token pjs-punctuation">}</span></code></pre>
+<h4 id="parameters-28" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$border</td>
+<td style="text-align:left">`List</td>
+<td style="text-align:left">String</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-19" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Map</td>
+<td style="text-align:left">Map with info about the border with the following keys (width, style, color)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="require-18" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-when">when()</a></li>
+<li><a href="/frontend/sass/core/utils/#function-is-list">is-list()</a></li>
+</ul>
+</div>
+<div class="sassdoc-item">
+<div class="sassdoc-item-header">
 <h3 id="function-strip-unit" tabindex="-1">strip-unit()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
@@ -8987,11 +9165,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 692-698</li>
-<li><strong>Lines (code):</strong> 700-710</li>
+<li><strong>Lines (comments):</strong> 750-756</li>
+<li><strong>Lines (code):</strong> 758-768</li>
 </ul>
 </details>
-<h4 id="examples-21" tabindex="-1">Examples</h4>
+<h4 id="examples-22" tabindex="-1">Examples</h4>
 <p>Example usage</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-selector">.test </span><span class="pjs-token pjs-punctuation">{</span>
   <span class="pjs-token pjs-property">line-height</span><span class="pjs-token pjs-punctuation">:</span> ulu.<span class="pjs-token pjs-function">utils-strip-unit</span><span class="pjs-token pjs-punctuation">(</span>4rem<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span>
@@ -9007,7 +9185,7 @@
 <ul>
 <li><a href="https://stackoverflow.com/questions/12328259/how-do-you-strip-the-unit-from-any-number-in-sass/12335841#12335841">Original source (Miriam Suzanne)</a></li>
 </ul>
-<h4 id="require-18" tabindex="-1">Require</h4>
+<h4 id="require-19" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-is-number">is-number()</a></li>
 </ul>
@@ -9026,11 +9204,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 712-717</li>
-<li><strong>Lines (code):</strong> 719-721</li>
+<li><strong>Lines (comments):</strong> 770-775</li>
+<li><strong>Lines (code):</strong> 777-779</li>
 </ul>
 </details>
-<h4 id="parameters-28" tabindex="-1">Parameters</h4>
+<h4 id="parameters-29" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9062,7 +9240,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-19" tabindex="-1">Returns</h4>
+<h4 id="returns-20" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9075,7 +9253,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-19" tabindex="-1">Require</h4>
+<h4 id="require-20" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/breakpoint/#variable-sizes">$sizes</a></li>
 </ul>
@@ -9094,11 +9272,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 723-726</li>
-<li><strong>Lines (code):</strong> 728-730</li>
+<li><strong>Lines (comments):</strong> 781-784</li>
+<li><strong>Lines (code):</strong> 786-788</li>
 </ul>
 </details>
-<h4 id="parameters-29" tabindex="-1">Parameters</h4>
+<h4 id="parameters-30" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9120,7 +9298,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-20" tabindex="-1">Returns</h4>
+<h4 id="returns-21" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9153,11 +9331,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 746-750</li>
-<li><strong>Lines (code):</strong> 752-754</li>
+<li><strong>Lines (comments):</strong> 804-808</li>
+<li><strong>Lines (code):</strong> 810-812</li>
 </ul>
 </details>
-<h4 id="parameters-30" tabindex="-1">Parameters</h4>
+<h4 id="parameters-31" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9179,7 +9357,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-21" tabindex="-1">Returns</h4>
+<h4 id="returns-22" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9209,11 +9387,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 756-759</li>
-<li><strong>Lines (code):</strong> 761-792</li>
+<li><strong>Lines (comments):</strong> 814-817</li>
+<li><strong>Lines (code):</strong> 819-850</li>
 </ul>
 </details>
-<h4 id="parameters-31" tabindex="-1">Parameters</h4>
+<h4 id="parameters-32" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9230,7 +9408,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-22" tabindex="-1">Returns</h4>
+<h4 id="returns-23" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9248,6 +9426,10 @@
 <h4 id="throw-7" tabindex="-1">Throw</h4>
 <ul>
 <li>Box shadow passed is not correct type (list)</li>
+</ul>
+<h4 id="require-21" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-is-list">is-list()</a></li>
 </ul>
 </div>
 <div class="sassdoc-item">
@@ -9267,11 +9449,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 794-798</li>
-<li><strong>Lines (code):</strong> 800-818</li>
+<li><strong>Lines (comments):</strong> 852-856</li>
+<li><strong>Lines (code):</strong> 858-876</li>
 </ul>
 </details>
-<h4 id="parameters-32" tabindex="-1">Parameters</h4>
+<h4 id="parameters-33" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9293,7 +9475,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-23" tabindex="-1">Returns</h4>
+<h4 id="returns-24" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9308,7 +9490,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-20" tabindex="-1">Require</h4>
+<h4 id="require-22" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-box-shadow-info">box-shadow-info()</a></li>
 <li><a href="/frontend/sass/core/breakpoint/#function-get">get()</a></li>
@@ -9328,59 +9510,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 820-822</li>
-<li><strong>Lines (code):</strong> 824-826</li>
-</ul>
-</details>
-<h4 id="parameters-33" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$value</td>
-<td style="text-align:left"><code>*</code></td>
-<td style="text-align:left">Value to check</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-24" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type list</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sassdoc-item">
-<div class="sassdoc-item-header">
-<h3 id="function-is-map" tabindex="-1">is-map()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Determines if value passed is a map</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 828-830</li>
-<li><strong>Lines (code):</strong> 832-839</li>
+<li><strong>Lines (comments):</strong> 878-880</li>
+<li><strong>Lines (code):</strong> 882-884</li>
 </ul>
 </details>
 <h4 id="parameters-34" tabindex="-1">Parameters</h4>
@@ -9411,27 +9542,27 @@
 <tbody>
 <tr>
 <td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type map</td>
+<td style="text-align:left">Whether the item was type list</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
-<h3 id="function-is-number" tabindex="-1">is-number()</h3>
+<h3 id="function-is-map" tabindex="-1">is-map()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Determines if value passed is a number</p>
+<p>Determines if value passed is a map</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 841-843</li>
-<li><strong>Lines (code):</strong> 845-847</li>
+<li><strong>Lines (comments):</strong> 886-888</li>
+<li><strong>Lines (code):</strong> 890-897</li>
 </ul>
 </details>
 <h4 id="parameters-35" tabindex="-1">Parameters</h4>
@@ -9462,27 +9593,27 @@
 <tbody>
 <tr>
 <td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type number</td>
+<td style="text-align:left">Whether the item was type map</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
-<h3 id="function-is-string" tabindex="-1">is-string()</h3>
+<h3 id="function-is-number" tabindex="-1">is-number()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Determines if value passed is a string</p>
+<p>Determines if value passed is a number</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 849-851</li>
-<li><strong>Lines (code):</strong> 853-855</li>
+<li><strong>Lines (comments):</strong> 899-901</li>
+<li><strong>Lines (code):</strong> 903-905</li>
 </ul>
 </details>
 <h4 id="parameters-36" tabindex="-1">Parameters</h4>
@@ -9513,27 +9644,27 @@
 <tbody>
 <tr>
 <td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether the item was type string</td>
+<td style="text-align:left">Whether the item was type number</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
-<h3 id="function-is-color" tabindex="-1">is-color()</h3>
+<h3 id="function-is-string" tabindex="-1">is-string()</h3>
   <div class="sassdoc-item-header__labels">
     <span class="tag tag--primary"><strong>Function</strong></span>
   </div>
 </div>
-<p>Determines if value passed is a color</p>
+<p>Determines if value passed is a string</p>
 <details>
   <summary>File Information</summary>
 <ul>
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 857-859</li>
-<li><strong>Lines (code):</strong> 861-863</li>
+<li><strong>Lines (comments):</strong> 907-909</li>
+<li><strong>Lines (code):</strong> 911-913</li>
 </ul>
 </details>
 <h4 id="parameters-37" tabindex="-1">Parameters</h4>
@@ -9554,6 +9685,57 @@
 </tbody>
 </table>
 <h4 id="returns-28" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether the item was type string</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sassdoc-item">
+<div class="sassdoc-item-header">
+<h3 id="function-is-color" tabindex="-1">is-color()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Determines if value passed is a color</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 915-917</li>
+<li><strong>Lines (code):</strong> 919-921</li>
+</ul>
+</details>
+<h4 id="parameters-38" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$value</td>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">Value to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-29" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9586,68 +9768,8 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 883-886</li>
-<li><strong>Lines (code):</strong> 888-894</li>
-</ul>
-</details>
-<h4 id="parameters-38" tabindex="-1">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">$number</td>
-<td style="text-align:left"><code>Number</code></td>
-<td style="text-align:left">The number to check</td>
-</tr>
-</tbody>
-</table>
-<h4 id="returns-29" tabindex="-1">Returns</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">Whether or not it is an even number</td>
-</tr>
-</tbody>
-</table>
-<h4 id="throw-8" tabindex="-1">Throw</h4>
-<ul>
-<li>Expected Number, got #{ $number }</li>
-</ul>
-<h4 id="require-21" tabindex="-1">Require</h4>
-<ul>
-<li><a href="/frontend/sass/core/utils/#function-is-number">is-number()</a></li>
-<li><a href="/frontend/sass/core/utils/#function-strip-unit">strip-unit()</a></li>
-</ul>
-</div>
-<div class="sassdoc-item">
-<div class="sassdoc-item-header">
-<h3 id="function-is-odd" tabindex="-1">is-odd()</h3>
-  <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Function</strong></span>
-  </div>
-</div>
-<p>Returns true if number passed is odd</p>
-<details>
-  <summary>File Information</summary>
-<ul>
-<li><strong>File:</strong> _utils.scss</li>
-<li><strong>Group:</strong> utils</li>
-<li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 896-898</li>
-<li><strong>Lines (code):</strong> 900-902</li>
+<li><strong>Lines (comments):</strong> 941-944</li>
+<li><strong>Lines (code):</strong> 946-952</li>
 </ul>
 </details>
 <h4 id="parameters-39" tabindex="-1">Parameters</h4>
@@ -9678,11 +9800,71 @@
 <tbody>
 <tr>
 <td style="text-align:left">Boolean</td>
+<td style="text-align:left">Whether or not it is an even number</td>
+</tr>
+</tbody>
+</table>
+<h4 id="throw-8" tabindex="-1">Throw</h4>
+<ul>
+<li>Expected Number, got #{ $number }</li>
+</ul>
+<h4 id="require-23" tabindex="-1">Require</h4>
+<ul>
+<li><a href="/frontend/sass/core/utils/#function-is-number">is-number()</a></li>
+<li><a href="/frontend/sass/core/utils/#function-strip-unit">strip-unit()</a></li>
+</ul>
+</div>
+<div class="sassdoc-item">
+<div class="sassdoc-item-header">
+<h3 id="function-is-odd" tabindex="-1">is-odd()</h3>
+  <div class="sassdoc-item-header__labels">
+    <span class="tag tag--primary"><strong>Function</strong></span>
+  </div>
+</div>
+<p>Returns true if number passed is odd</p>
+<details>
+  <summary>File Information</summary>
+<ul>
+<li><strong>File:</strong> _utils.scss</li>
+<li><strong>Group:</strong> utils</li>
+<li><strong>Type:</strong> function</li>
+<li><strong>Lines (comments):</strong> 954-956</li>
+<li><strong>Lines (code):</strong> 958-960</li>
+</ul>
+</details>
+<h4 id="parameters-40" tabindex="-1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$number</td>
+<td style="text-align:left"><code>Number</code></td>
+<td style="text-align:left">The number to check</td>
+</tr>
+</tbody>
+</table>
+<h4 id="returns-31" tabindex="-1">Returns</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
 <td style="text-align:left">Whether or not it is an odd number</td>
 </tr>
 </tbody>
 </table>
-<h4 id="require-22" tabindex="-1">Require</h4>
+<h4 id="require-24" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-is-even">is-even()</a></li>
 </ul>
@@ -9701,11 +9883,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 904-906</li>
-<li><strong>Lines (code):</strong> 908-910</li>
+<li><strong>Lines (comments):</strong> 962-964</li>
+<li><strong>Lines (code):</strong> 966-968</li>
 </ul>
 </details>
-<h4 id="parameters-40" tabindex="-1">Parameters</h4>
+<h4 id="parameters-41" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9722,7 +9904,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-31" tabindex="-1">Returns</h4>
+<h4 id="returns-32" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9737,7 +9919,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-23" tabindex="-1">Require</h4>
+<h4 id="require-25" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-when">when()</a></li>
 <li><a href="/frontend/sass/core/utils/#function-is-map">is-map()</a></li>
@@ -9757,11 +9939,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 912-915</li>
-<li><strong>Lines (code):</strong> 917-925</li>
+<li><strong>Lines (comments):</strong> 970-973</li>
+<li><strong>Lines (code):</strong> 975-983</li>
 </ul>
 </details>
-<h4 id="parameters-41" tabindex="-1">Parameters</h4>
+<h4 id="parameters-42" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9778,7 +9960,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-32" tabindex="-1">Returns</h4>
+<h4 id="returns-33" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9812,11 +9994,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 927-930</li>
-<li><strong>Lines (code):</strong> 932-934</li>
+<li><strong>Lines (comments):</strong> 985-988</li>
+<li><strong>Lines (code):</strong> 990-992</li>
 </ul>
 </details>
-<h4 id="parameters-42" tabindex="-1">Parameters</h4>
+<h4 id="parameters-43" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9833,7 +10015,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-33" tabindex="-1">Returns</h4>
+<h4 id="returns-34" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9852,7 +10034,7 @@
 <ul>
 <li>If $edge is not a valid value (not top/bottom/left/right)</li>
 </ul>
-<h4 id="require-24" tabindex="-1">Require</h4>
+<h4 id="require-26" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-is-end">is-end()</a></li>
 </ul>
@@ -9874,11 +10056,11 @@
 <li><strong>File:</strong> _utils.scss</li>
 <li><strong>Group:</strong> utils</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 936-939</li>
-<li><strong>Lines (code):</strong> 941-956</li>
+<li><strong>Lines (comments):</strong> 994-997</li>
+<li><strong>Lines (code):</strong> 999-1014</li>
 </ul>
 </details>
-<h4 id="parameters-43" tabindex="-1">Parameters</h4>
+<h4 id="parameters-44" tabindex="-1">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -9895,7 +10077,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="returns-34" tabindex="-1">Returns</h4>
+<h4 id="returns-35" tabindex="-1">Returns</h4>
 <table>
 <thead>
 <tr>
@@ -9910,7 +10092,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="require-25" tabindex="-1">Require</h4>
+<h4 id="require-27" tabindex="-1">Require</h4>
 <ul>
 <li><a href="/frontend/sass/core/utils/#function-is-number">is-number()</a></li>
 <li><a href="/frontend/sass/core/utils/#function-number-info">number-info()</a></li>
@@ -9925,7 +10107,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-BG_p3CdX.js"></script>
+<script type="module" src="/frontend/assets/main-CDETsqsq.js"></script>
 
 		
 	</body>
