@@ -7,6 +7,8 @@
 - `scss/_utils.scss`
   - Add new `get-border-info()` (extracts border information from shorthand list)
   - Corrected bug in `get-spacing()` and added tests for all combinations
+- `scss/components/_form-theme.scss`
+  - Adjust input border radius (default to 3px)
 
 ## 0.6.6
 

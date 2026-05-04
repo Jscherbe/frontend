@@ -59,13 +59,6 @@ intro: A generic layout component for horizontal rail (icon headers, toolbars, e
         <span>Add</span>
       </button>
     </div>
-    <!-- <div class="rule-inline"></div>
-    <div class="button-group">
-      <button class="button button--small">
-        <span class="button__icon fas fa-plus" aria-hidden="true"></span>
-        <span>Add
-      </button>
-    </div> -->
   </div>
 </div>
 

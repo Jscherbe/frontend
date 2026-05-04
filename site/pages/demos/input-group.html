@@ -53,13 +53,13 @@ intro: A layout component for grouping form inputs with adjacent actions or info
 </div>
 {% endCodePreview %}
 
-<h2 class="h2">Addon Text (Currency/Suffix)</h2>
-<p>Using <code>.input-group__item--text</code> for non-interactive information prefixes or suffixes.</p>
+<h2 class="h2">Input Cue (Currency/Suffix)</h2>
+<p>Using <code>.input-group__item--cue</code> for non-interactive information prefixes or suffixes.</p>
 
 {% CodePreview %}
 <div class="form-theme" style="max-width: 400px;">
   <div class="input-group input-group--joined margin-bottom">
-    <div class="input-group__item input-group__item--text">$</div>
+    <div class="input-group__item input-group__item--cue">$</div>
     <div class="input-group__item input-group__item--field">
       <label for="price-input" class="hidden-visually">Price</label>
       <input type="number" id="price-input" class="input-group__input" placeholder="0.00">
@@ -71,7 +71,7 @@ intro: A layout component for grouping form inputs with adjacent actions or info
       <label for="domain-input" class="hidden-visually">Domain</label>
       <input type="text" id="domain-input" class="input-group__input" placeholder="username">
     </div>
-    <div class="input-group__item input-group__item--text">@example.com</div>
+    <div class="input-group__item input-group__item--cue">@example.com</div>
   </div>
 </div>
 {% endCodePreview %}

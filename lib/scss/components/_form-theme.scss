@@ -123,7 +123,7 @@ $config: (
   "font-weight-textarea"                      : null,
   "font-weight-select"                        : null,
   "input-border"                              : element.get-rule-style(),
-  "input-border-radius"                       : 0,
+  "input-border-radius"                       : 3px,
   "item-align-items"                          : flex-start,
   "item-border-radius"                        : null,
   "item-highlight-width"                      : 6px,

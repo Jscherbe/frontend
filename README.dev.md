@@ -31,6 +31,14 @@ When developing new SCSS components or maintaining existing ones, adhere to the 
     *   *Correct:* `clickable-background-color-hover`
     *   *Incorrect:* `background-color-clickable-hover`
     *   Responsive state variables should describe the *behavior*, not a hardcoded viewport/breakpoint name if possible. Example a component that stacks when on smaller screens might refer to that breakpoint as `stacked-breakpoint`
+
+2.  **No BEM Interpolation with the Parent Selector:**
+    *   Never use the SCSS parent selector `&` to concatenate or interpolate BEM classes (e.g., `&__element` or `&--modifier`).
+    *   The `&` character represents the parent *selector*, not a string. Treating it as a string for concatenation abuses SCSS and makes the codebase harder to search.
+    *   Always write out the full BEM selector or use the module's prefix variable (e.g., `#{ $prefix }__element`).
+    *   *Correct:* `#{ $prefix }__item:not(#{ $prefix }__item--cue)` (Spelling out the full class inside pseudo-classes)
+    *   *Correct:* `&#{ $prefix }__item--cue` (Selector chaining: compiles to `.parent.parent--cue`)
+    *   *Incorrect:* `&:not(&--cue)` or `&--cue` (String concatenation)
   
 TODO: This section should be added to... (sassdoc type naming, etc). Formatting...
 
