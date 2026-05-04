@@ -3,6 +3,9 @@
 /// A layout component for grouping form inputs with adjacent actions or information
 ////
 
+// TODOS:
+// - Should the modifier be --text or something less generic
+
 @use "sass:map";
 @use "sass:meta";
 @use "sass:math";
@@ -20,7 +23,7 @@
 /// @prop {Dimension} border-radius [null] Border radius for joined items. Defaults to form-theme input-border-radius
 /// @prop {Dimension} item-min-width [0] Minimum width for items (buttons, addons)
 /// @prop {Dimension} field-min-width [0] Minimum width for the field item
-/// @prop {Color} addon-background-color [#eee] Background color for text addons
+/// @prop {Color} text-background-color [#eee] Background color for text addons
 /// @prop {Dimension} item-padding-x [0.75em] Horizontal padding for text items
 /// @prop {Dimension} item-padding-y [null] Vertical padding for text items. Defaults to button vertical padding.
 /// @prop {Dimension} overlap-margin [null] Negative margin for joined items. Defaults to form-theme border width.
@@ -30,7 +33,7 @@ $config: (
   "border-radius" : null,
   "item-min-width" : 0,
   "field-min-width" : 0,
-  "addon-background-color" : #eee,
+  "text-background-color" : #eee,
   "item-padding-x" : 0.75em,
   "item-padding-y" : null,
   "overlap-margin" : null,
@@ -76,11 +79,6 @@ $config: (
     width: 100%;
     max-width: 100%;
     gap: get("gap");
-    box-sizing: border-box;
-
-    * {
-      box-sizing: border-box;
-    }
   }
 
   #{ $prefix }__item {
@@ -99,7 +97,7 @@ $config: (
   #{ $prefix }__item--text {
     padding: $padding-y $padding-x;
     align-items: center;
-    background-color: cssvar.use-ulu("input-group-addon-background", get("addon-background-color"));
+    background-color: cssvar.use-ulu("input-group-text-background", get("text-background-color"));
     border: form-theme.get("input-border");
     color: form-theme.get("color");
     line-height: typography.get("line-height-dense");
@@ -126,8 +124,6 @@ $config: (
       justify-content: center;
       min-width: 0; 
       max-width: none;
-      padding-left: $padding-x;
-      padding-right: $padding-x;
     }
     
     #{ $prefix-button } {
@@ -139,6 +135,12 @@ $config: (
   // Joined modifier: removes internal border-radii and overlaps borders
   #{ $prefix }--joined {
     gap: 0;
+
+    // Remove default button padding when joined only
+    #{ $prefix }__button { 
+      padding-left: $padding-x;
+      padding-right: $padding-x;
+    }
 
     #{ $prefix }__item {
       margin-left: -#{ $overlap }; // Use resolved overlap width
