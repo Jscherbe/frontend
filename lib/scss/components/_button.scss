@@ -62,12 +62,15 @@ $config: (
   #{ $prefix } {
     @include button.default();
   }
+  #{ $prefix }--fit {
+    min-width: 0;
+  }
   #{ $prefix }__icon {
-    &:first-child {
-      margin-right: get("icon-margin");
+    &:not(:first-child) { 
+      margin-inline-start: get("icon-margin"); 
     }
-    &:last-child {
-      margin-left: get("icon-margin");
+    &:not(:last-child) { 
+      margin-inline-end: get("icon-margin"); 
     }
   }
   
@@ -97,13 +100,8 @@ $config: (
     padding: 0 !important;
 
     #{ $prefix }__icon {
-      transform: translatey(get("icon-centered-vertical-offset"));
-      &:first-child {
-        margin-right: 0;
-      }
-      &:last-child {
-        margin-left: 0;
-      }
+      transform: translateY(get("icon-centered-vertical-offset"));
+      margin: 0;
     }
   }
 

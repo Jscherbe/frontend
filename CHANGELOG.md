@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.8
+
+- `scss/components/_button.scss`
+  - Adjust the `.button__icon` css for spacing to use not instead (so we account for only-child). So if a `button__icon` is the only child it won't have spacing margins.
+  - Add `button--fit` modifier that tells button to not have min-width so it "fits" it's content
+
 ## 0.6.7
 
 - `scss/components/_input-group.scss`
