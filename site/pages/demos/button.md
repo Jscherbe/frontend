@@ -38,12 +38,6 @@ Adding the `is-active` class to enable active state.
   <span class="button__icon fas fa-gear" aria-hidden="true"></span>
 </a>
 
-### Just icon but not button--icon modifier
-
-<a href="#" class="button button--fit">
-  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
-</a>
-
 ## Icon Only
 
 <a href="#" class="button button--icon button--small">
