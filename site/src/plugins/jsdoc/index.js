@@ -42,6 +42,11 @@ async function output() {
     return moduleNames;
   }, []);
 
+  if (process.env.BUILD_MCP) {
+    const outputPath = path.resolve("./site/mcp-data/mcp-jsdoc.json");
+    fs.outputFileSync(outputPath, JSON.stringify(templateData, null, 2));
+    console.log(`MCP JSDoc Data written to ${outputPath}`);
+  }
 
   // create a documentation file for each class
   for (const moduleName of moduleNames) {

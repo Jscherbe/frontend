@@ -1,0 +1,6672 @@
+[
+  {
+    "id": "module:core/component",
+    "longname": "module:core/component",
+    "name": "core/component",
+    "kind": "module",
+    "description": "Core classes and mechanisms that define how UI components are created and managed within the library",
+    "meta": {
+      "lineno": 1,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 0
+  },
+  {
+    "id": "module:core/events",
+    "longname": "module:core/events",
+    "name": "core/events",
+    "kind": "module",
+    "description": "Internal implementation of global event handling.",
+    "meta": {
+      "lineno": 1,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 14
+  },
+  {
+    "id": "module:core",
+    "longname": "module:core",
+    "name": "core",
+    "kind": "module",
+    "description": "Public API for the core modules.\n\nThis file re-exports the internal implementations from the `core` directory\nwith new names where appropriate, defining the public-facing API for the\nlibrary bundle.\n\nFor internal library usage, import directly from the specific file within\nthe `core` directory (e.g., `import { ... } from './settings.js'`).",
+    "meta": {
+      "lineno": 1,
+      "filename": "index.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 22
+  },
+  {
+    "id": "module:core/settings",
+    "longname": "module:core/settings",
+    "name": "core/settings",
+    "kind": "module",
+    "description": "Internal implementation for managing shared configuration.",
+    "meta": {
+      "lineno": 1,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 23
+  },
+  {
+    "id": "module:ui/breakpoints",
+    "longname": "module:ui/breakpoints",
+    "name": "ui/breakpoints",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 32
+  },
+  {
+    "id": "module:ui/collapsible",
+    "longname": "module:ui/collapsible",
+    "name": "ui/collapsible",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 54
+  },
+  {
+    "id": "module:ui/details-group",
+    "longname": "module:ui/details-group",
+    "name": "ui/details-group",
+    "kind": "module",
+    "description": "Manages groups of details (ie. onlyOneOpen at a time)",
+    "meta": {
+      "lineno": 1,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 63
+  },
+  {
+    "id": "module:ui/dialog",
+    "longname": "module:ui/dialog",
+    "name": "ui/dialog",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 72
+  },
+  {
+    "id": "module:ui/flipcard",
+    "longname": "module:ui/flipcard",
+    "name": "ui/flipcard",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "flipcard.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 90
+  },
+  {
+    "id": "module:ui/grid",
+    "longname": "module:ui/grid",
+    "name": "ui/grid",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "grid.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 96
+  },
+  {
+    "id": "module:ui",
+    "longname": "module:ui",
+    "name": "ui",
+    "kind": "module",
+    "description": "Public API for the UI modules.\n\nThis file re-exports the internal implementations from the `ui` directory\nwith new names where appropriate, defining the public-facing API for the\nlibrary bundle.\n\nFor internal library usage, import directly from the specific file within\nthe `ui` directory (e.g., `import { ... } from './dialog.js'`).",
+    "customTags": [
+      {
+        "tag": "internal",
+        "value": "How to Name Exports\n\nEach export is renamed with a prefix based on its source module's name\n(e.g., `init` from `dialog.js` becomes `dialogInit`). This is a critical\npart of the library's bundling strategy, which creates a single, \"flat\"\nmodule with uniquely named exports.\n\nThis approach:\n1. Prevents name collisions between modules that might use the same export\n   names (like `init` or `defaults`).\n2. Allows bundlers in consuming projects to perform dead-code elimination\n   (tree-shaking) with maximum effectiveness.\n\nHow To Add New Exports\n\nWhen adding a new export, follow the naming convention:\n`[moduleName][OriginalExportName]` (using camelCase).\n\nFor example, to export `myFunction` from `./foo.js`, you would add:\n`myFunction as fooMyFunction`\n\nPlease keep the exports within each block alphabetized."
+      }
+    ],
+    "meta": {
+      "lineno": 1,
+      "filename": "index.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 99
+  },
+  {
+    "id": "module:ui/modal-builder",
+    "longname": "module:ui/modal-builder",
+    "name": "ui/modal-builder",
+    "kind": "module",
+    "description": "Note this module needs to be initialized before dialogs!",
+    "meta": {
+      "lineno": 1,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 100
+  },
+  {
+    "id": "module:ui/overflow-scroller-pager",
+    "longname": "module:ui/overflow-scroller-pager",
+    "name": "ui/overflow-scroller-pager",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "overflow-scroller-pager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 108
+  },
+  {
+    "id": "module:ui/overflow-scroller",
+    "longname": "module:ui/overflow-scroller",
+    "name": "ui/overflow-scroller",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "overflow-scroller.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 110
+  },
+  {
+    "id": "module:ui/page",
+    "longname": "module:ui/page",
+    "name": "ui/page",
+    "kind": "module",
+    "description": "General/Document Related \n- Add custom properties for scrollbar",
+    "meta": {
+      "lineno": 1,
+      "filename": "page.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 111
+  },
+  {
+    "id": "module:ui/popover",
+    "longname": "module:ui/popover",
+    "name": "ui/popover",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "popover.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 113
+  },
+  {
+    "id": "module:ui/print-details",
+    "longname": "module:ui/print-details",
+    "name": "ui/print-details",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "print-details.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 119
+  },
+  {
+    "id": "module:ui/print",
+    "longname": "module:ui/print",
+    "name": "ui/print",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "print.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 122
+  },
+  {
+    "id": "module:ui/programmatic-modal",
+    "longname": "module:ui/programmatic-modal",
+    "name": "ui/programmatic-modal",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "programmatic-modal.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 127
+  },
+  {
+    "id": "module:ui/proxy-click",
+    "longname": "module:ui/proxy-click",
+    "name": "ui/proxy-click",
+    "kind": "module",
+    "description": "Used for cards and things that look like they should be clickable \neven though the link in their content is the only clickable element. This way \nthe entire cards content doesn't need to be in a link (which isn't accessible). \n\nThe script allows only for clicks with a duration of 250ms to avoid conflict \nwith a user selecting text. Works with either links or buttons because it just \nuses the elements .click(). Uses data-attributes for selection by default.",
+    "meta": {
+      "lineno": 1,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 128
+  },
+  {
+    "id": "module:ui/resizer",
+    "longname": "module:ui/resizer",
+    "name": "ui/resizer",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 135
+  },
+  {
+    "id": "module:ui/scroll-slider",
+    "longname": "module:ui/scroll-slider",
+    "name": "ui/scroll-slider",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "scroll-slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 157
+  },
+  {
+    "id": "module:ui/scrollpoint",
+    "longname": "module:ui/scrollpoint",
+    "name": "ui/scrollpoint",
+    "kind": "module",
+    "description": "Module that uses intersection observer to add scrollpoint like behavior.",
+    "meta": {
+      "lineno": 1,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 161
+  },
+  {
+    "id": "module:ui/slider",
+    "longname": "module:ui/slider",
+    "name": "ui/slider",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 183
+  },
+  {
+    "id": "module:ui/tab-manager",
+    "longname": "module:ui/tab-manager",
+    "name": "ui/tab-manager",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 199
+  },
+  {
+    "id": "module:ui/tabs",
+    "longname": "module:ui/tabs",
+    "name": "ui/tabs",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "tabs.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 212
+  },
+  {
+    "id": "module:ui/theme-toggle",
+    "longname": "module:ui/theme-toggle",
+    "name": "ui/theme-toggle",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 217
+  },
+  {
+    "id": "module:ui/tooltip",
+    "longname": "module:ui/tooltip",
+    "name": "ui/tooltip",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 244
+  },
+  {
+    "id": "module:utils/class-logger",
+    "longname": "module:utils/class-logger",
+    "name": "utils/class-logger",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "class-logger.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 259
+  },
+  {
+    "id": "module:utils/css",
+    "longname": "module:utils/css",
+    "name": "utils/css",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "css.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 265
+  },
+  {
+    "id": "module:utils/dialog",
+    "longname": "module:utils/dialog",
+    "name": "utils/dialog",
+    "kind": "module",
+    "description": "Utility functions for dialogs",
+    "meta": {
+      "lineno": 1,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 267
+  },
+  {
+    "id": "module:utils/dom",
+    "longname": "module:utils/dom",
+    "name": "utils/dom",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "dom.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 269
+  },
+  {
+    "id": "module:utils/file-save",
+    "longname": "module:utils/file-save",
+    "name": "utils/file-save",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 273
+  },
+  {
+    "id": "module:utils/floating-ui",
+    "longname": "module:utils/floating-ui",
+    "name": "utils/floating-ui",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "floating-ui.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 281
+  },
+  {
+    "id": "module:utils/font-awesome",
+    "longname": "module:utils/font-awesome",
+    "name": "utils/font-awesome",
+    "kind": "module",
+    "description": "Utility module for setting up Font Awesome",
+    "meta": {
+      "lineno": 1,
+      "filename": "font-awesome.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 283
+  },
+  {
+    "id": "module:utils/id",
+    "longname": "module:utils/id",
+    "name": "utils/id",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "id.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 285
+  },
+  {
+    "id": "module:utils/iframe",
+    "longname": "module:utils/iframe",
+    "name": "utils/iframe",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "iframe.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 288
+  },
+  {
+    "id": "module:utils",
+    "longname": "module:utils",
+    "name": "utils",
+    "kind": "module",
+    "description": "Public API for the utility modules.\n\nThis file re-exports the internal implementations from the `utils` directory\nwith new names where appropriate, defining the public-facing API for the\nlibrary bundle.\n\nFor internal library usage, import directly from the specific file within\nthe `utils` directory (e.g., `import { ... } from './dom.js'`).",
+    "customTags": [
+      {
+        "tag": "internal",
+        "value": "Naming Convention\nTo ensure tree-shaking works correctly while avoiding name collisions in the\nfinal library, the following naming convention is used for re-exporting:\n\n1. Generic Names: Functions with highly generic names (e.g., `log`, `set`, `defaults`)\n   MUST be prefixed with a name derived from their module to prevent conflicts.\n   Example: `export { log as classLoggerLog } from \"./class-logger.js\";`\n\n2. Descriptive Names: Functions with specific, descriptive names that are unlikely\n   to cause conflicts (e.g., `newId`, `createFloatingUi`, `configureIcons`)\n   can be re-exported directly without a prefix for better readability.\n   Example: `export { newId } from \"./id.js\";`"
+      }
+    ],
+    "meta": {
+      "lineno": 1,
+      "filename": "index.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 290
+  },
+  {
+    "id": "module:utils/pause-youtube-video",
+    "longname": "module:utils/pause-youtube-video",
+    "name": "utils/pause-youtube-video",
+    "kind": "module",
+    "meta": {
+      "lineno": 1,
+      "filename": "pause-youtube-video.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 291
+  },
+  {
+    "id": "module:core/component.ComponentInitializer()",
+    "longname": "module:core/component.ComponentInitializer",
+    "name": "exports.ComponentInitializer",
+    "kind": "constructor",
+    "description": "Create a new instance of ComponentInitializer",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Options for configuring the component initializer.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Type of component (used for logs).",
+        "name": "options.type"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Prefix and base attribute name (used for base attribute and further element attribute names).",
+        "name": "options.baseAttribute"
+      }
+    ],
+    "order": 2
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager()",
+    "longname": "module:ui/breakpoints.BreakpointManager",
+    "name": "exports.BreakpointManager",
+    "kind": "constructor",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Configuration object",
+        "name": "config"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "description": "Array of strings that correspond to the breakpoints setup in the styles, Breakpoints from smallest to largest, defaults to [small, medium, large]",
+        "name": "config.order"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "description": "Property to grab breakpoint from (default is --breakpoint)",
+        "name": "config.customProperty"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "description": "Use the legacy method of grabbing breakpoint from pseudo element, default uses custom property",
+        "name": "config.valueFromPseudo"
+      },
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The element to retrieve active breakpoint from stylesheet. (default is html) For using the old pseudo method, adjust this to document.body",
+        "name": "config.element"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Change pseudo selector used to get the breakpoint from the pseudo's content property",
+        "name": "config.pseudoSelector"
+      }
+    ],
+    "order": 34
+  },
+  {
+    "id": "module:ui/collapsible.Collapsible()",
+    "longname": "module:ui/collapsible.Collapsible",
+    "name": "exports.Collapsible",
+    "kind": "constructor",
+    "memberof": "module:ui/collapsible.Collapsible",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Elements object",
+        "name": "elements"
+      },
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Trigger button/element that opens/closes collapsible",
+        "name": "elements.trigger"
+      },
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The content element that the trigger reveals",
+        "name": "elements.content"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Configuration options (see defaults)",
+        "name": "config"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Collapsible instance"
+      }
+    ],
+    "order": 60
+  },
+  {
+    "id": "module:ui/resizer.Resizer()",
+    "longname": "module:ui/resizer.Resizer",
+    "name": "exports.Resizer",
+    "kind": "constructor",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Container to be resized",
+        "name": "container"
+      },
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "Resize handle element (should be focusable like a button)",
+        "name": "control"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Options to configure the resizer.",
+        "name": "config"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "Enable non-essential debugging logs.",
+        "name": "config.debug"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 1,
+        "description": "Amount to increase size by (ie. pointer movement * multiplier).",
+        "name": "config.multiplier"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "When script is activated by handle, remove the element's max-width/max-height and allow the resize to exceed them.",
+        "name": "config.overrideMaxDimensions"
+      },
+      {
+        "type": {
+          "names": [
+            "\"left\"",
+            "\"right\"",
+            "null"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": null,
+        "description": "Horizontal resizing direction.",
+        "name": "config.fromX"
+      },
+      {
+        "type": {
+          "names": [
+            "\"top\"",
+            "\"bottom\"",
+            "null"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": null,
+        "description": "Vertical resizing direction.",
+        "name": "config.fromY"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 10,
+        "description": "The step in pixels for keyboard resizing.",
+        "name": "config.keyboardStep"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 200,
+        "description": "Debounce time for keyboard resize end.",
+        "name": "config.keyboardDebounceTime"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "If true, the Resizer will automatically bind its own events.",
+        "name": "config.manageEvents"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "If true, the Resizer will manage the control's aria-label.",
+        "name": "config.manageAriaLabel"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "If true, pointer events will enable resizing.",
+        "name": "config.enablePointerResizing"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "If true, keyboard events will enable resizing.",
+        "name": "config.enableKeyboardResizing"
+      }
+    ],
+    "order": 147
+  },
+  {
+    "id": "module:ui/scrollpoint.Scrollpoint()",
+    "longname": "module:ui/scrollpoint.Scrollpoint",
+    "name": "exports.Scrollpoint",
+    "kind": "constructor",
+    "description": "Setup a new scrollpoint",
+    "memberof": "module:ui/scrollpoint.Scrollpoint",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The element to create the scrollpoint for",
+        "name": "element"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Options to configure the scrollpoint see Scrollpoint.defaults for more information on settings",
+        "name": "config"
+      }
+    ],
+    "order": 181
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager()",
+    "longname": "module:ui/tab-manager.TabManager",
+    "name": "exports.TabManager",
+    "kind": "constructor",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "The element with role=\"tablist\"",
+        "name": "tablistElement"
+      },
+      {
+        "type": {
+          "names": [
+            "Partial.<TabManagerOptions>"
+          ]
+        },
+        "optional": true,
+        "description": "Configuration options.",
+        "name": "options"
+      }
+    ],
+    "order": 203
+  },
+  {
+    "id": "module:utils/file-save.FileSave()",
+    "longname": "module:utils/file-save.FileSave",
+    "name": "exports.FileSave",
+    "kind": "constructor",
+    "memberof": "module:utils/file-save.FileSave",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "Data to put in blob file",
+        "name": "data"
+      },
+      {
+        "type": {
+          "names": [
+            "FileSaveOptions"
+          ]
+        },
+        "description": "Options for file, see defaults (ie. type, filename)",
+        "name": "options"
+      }
+    ],
+    "order": 276
+  },
+  {
+    "longname": "",
+    "name": "",
+    "kind": "function",
+    "description": "Resets all internal state properties to their default/inactive values.\nThis centralizes state cleanup and initial setup.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [],
+    "access": "private",
+    "meta": {
+      "lineno": 157,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 148
+  },
+  {
+    "longname": "",
+    "name": "",
+    "kind": "function",
+    "description": "Initiates a resize operation.\nThis sets initial dimensions and dispatches the 'resizer:start' event.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Additional details about the initiating event.",
+        "name": "eventDetails"
+      }
+    ],
+    "access": "private",
+    "meta": {
+      "lineno": 200,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 150
+  },
+  {
+    "longname": "",
+    "name": "",
+    "kind": "function",
+    "description": "Ends a resize operation.\nDispatches 'resizer:end' event and resets internal state.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [],
+    "access": "private",
+    "meta": {
+      "lineno": 244,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 151
+  },
+  {
+    "longname": "",
+    "name": "",
+    "kind": "function",
+    "description": "Core logic for calculating and applying the new size of the container.\nThis method is called by both pointer and keyboard event handlers.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "The total horizontal displacement from the start of the resize.",
+        "name": "totalDeltaX"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "The total vertical displacement from the start of the resize.",
+        "name": "totalDeltaY"
+      },
+      {
+        "type": {
+          "names": [
+            "Event"
+          ]
+        },
+        "description": "The original DOM event (PointerEvent or KeyboardEvent) that triggered the update.",
+        "name": "originalEvent"
+      }
+    ],
+    "access": "private",
+    "meta": {
+      "lineno": 261,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 152
+  },
+  {
+    "id": "module:ui/flipcard.Flipcard#defaults",
+    "longname": "module:ui/flipcard.Flipcard#defaults",
+    "name": "defaults",
+    "kind": "member",
+    "scope": "instance",
+    "description": "Default options for Flipcard",
+    "memberof": "module:ui/flipcard.Flipcard",
+    "meta": {
+      "lineno": 42,
+      "filename": "flipcard.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 93
+  },
+  {
+    "id": "module:ui/slider.Slider#defaults",
+    "longname": "module:ui/slider.Slider#defaults",
+    "name": "defaults",
+    "kind": "member",
+    "scope": "instance",
+    "description": "Default options for slider",
+    "memberof": "module:ui/slider.Slider",
+    "meta": {
+      "lineno": 126,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 187
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#defaults",
+    "longname": "module:ui/tab-manager.TabManager#defaults",
+    "name": "defaults",
+    "kind": "member",
+    "scope": "instance",
+    "description": "Default options for TabManager.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "type": {
+      "names": [
+        "TabManagerOptions"
+      ]
+    },
+    "meta": {
+      "lineno": 31,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 201
+  },
+  {
+    "id": "module:ui/tooltip.Tooltip#defaults",
+    "longname": "module:ui/tooltip.Tooltip#defaults",
+    "name": "defaults",
+    "kind": "member",
+    "scope": "instance",
+    "description": "Defaults options",
+    "memberof": "module:ui/tooltip.Tooltip",
+    "meta": {
+      "lineno": 51,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 247
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#init",
+    "longname": "module:core/component.ComponentInitializer#init",
+    "name": "init",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Initializes the component based on the provided configuration.",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "The initialization configuration.",
+        "name": "config"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "The setup function to call for each element.",
+        "name": "config.setup"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "[null] The optional key to use with attribute selector.",
+        "name": "config.key"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "description": "[null] Whether to retrieve element data.",
+        "name": "config.withData"
+      },
+      {
+        "type": {
+          "names": [
+            "Array"
+          ]
+        },
+        "description": "[null] An array of core event names (e.g., 'pageModified') that should trigger a re-initialization.",
+        "name": "config.coreEvents"
+      },
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "[document] The context to query within.",
+        "name": "config.context"
+      }
+    ],
+    "meta": {
+      "lineno": 51,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 3
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#setupElements",
+    "longname": "module:core/component.ComponentInitializer#setupElements",
+    "name": "setupElements",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Processes the elements based on the provided configuration.",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "The initialization configuration.",
+        "name": "config"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "The setup function to call for each element.",
+        "name": "config.setup"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The optional key to use with attribute selector.",
+        "name": "config.key"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "[false] Whether to retrieve element data.",
+        "name": "config.withData"
+      },
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "[document] The context to query within.",
+        "name": "config.context"
+      }
+    ],
+    "meta": {
+      "lineno": 73,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 4
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#getAttribute",
+    "longname": "module:core/component.ComponentInitializer#getAttribute",
+    "name": "getAttribute",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get an attribute name",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Optional key, if no key will return baseAttribute if key will return key added to base",
+        "name": "key"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "String like data-ulu-dialog or data-ulu-dialog-element"
+      }
+    ],
+    "meta": {
+      "lineno": 83,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 5
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#attributeSelector",
+    "longname": "module:core/component.ComponentInitializer#attributeSelector",
+    "name": "attributeSelector",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Create an attribute selector",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Optional key (see getAttribute)",
+        "name": "key"
+      }
+    ],
+    "meta": {
+      "lineno": 91,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 6
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#attributeSelectorInitial",
+    "longname": "module:core/component.ComponentInitializer#attributeSelectorInitial",
+    "name": "attributeSelectorInitial",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Create an attribute selector for initial",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "lineno": 98,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 7
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#queryAllInitial",
+    "longname": "module:core/component.ComponentInitializer#queryAllInitial",
+    "name": "queryAllInitial",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Queries all main elements of a component that have not been initialized and extracts their data attributes.",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "The context to query within.",
+        "name": "context"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "description": "Include dataset from element (as optional JSON)",
+        "name": "withData"
+      },
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Element to query elements from",
+        "name": "context"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Array.<{element: HTMLElement, data: object, initialize: function()}>"
+          ]
+        },
+        "description": "An array of objects containing the elements, their data, and convenience function initialize() which when called will set the init attribute on the element"
+      }
+    ],
+    "meta": {
+      "lineno": 108,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 8
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#initializeElement",
+    "longname": "module:core/component.ComponentInitializer#initializeElement",
+    "name": "initializeElement",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Sets the init attribute on an element, marking it as initialized.",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "The element to initialize.",
+        "name": "element"
+      }
+    ],
+    "meta": {
+      "lineno": 120,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 9
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#getData",
+    "longname": "module:core/component.ComponentInitializer#getData",
+    "name": "getData",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get an elements dataset value as JSON or other value",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "The value of the dataset, if JSON will return object else will return string value or undefined"
+      }
+    ],
+    "meta": {
+      "lineno": 127,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 10
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#log",
+    "longname": "module:core/component.ComponentInitializer#log",
+    "name": "log",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Will output namespaced console logs for the given initializer",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [],
+    "meta": {
+      "lineno": 134,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 11
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#warn",
+    "longname": "module:core/component.ComponentInitializer#warn",
+    "name": "warn",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Will output namespaced console warnings for the given initializer",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [],
+    "meta": {
+      "lineno": 140,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 12
+  },
+  {
+    "id": "module:core/component.ComponentInitializer#logError",
+    "longname": "module:core/component.ComponentInitializer#logError",
+    "name": "logError",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Will output namespaced console error for the given initializer",
+    "memberof": "module:core/component.ComponentInitializer",
+    "params": [],
+    "meta": {
+      "lineno": 146,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 13
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#onChange",
+    "longname": "module:ui/breakpoints.BreakpointManager#onChange",
+    "name": "onChange",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Add a callback for every time a breakpoint changes\n- Not recommended, possibly use to watch for changes, etc\n- For more control use instance.at(name) with breakpoint methods",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Function to call, passed one argument current instance which can be used to get information about breakpoints",
+        "name": "callback"
+      }
+    ],
+    "meta": {
+      "lineno": 75,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 35
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#removeOnChange",
+    "longname": "module:ui/breakpoints.BreakpointManager#removeOnChange",
+    "name": "removeOnChange",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Remove change callback",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Function to remove",
+        "name": "callback"
+      }
+    ],
+    "meta": {
+      "lineno": 82,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 36
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#getBreakpointInPseudo",
+    "longname": "module:ui/breakpoints.BreakpointManager#getBreakpointInPseudo",
+    "name": "getBreakpointInPseudo",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get breakpoint from a pseudo element",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [],
+    "meta": {
+      "lineno": 88,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 37
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#getBreakpointInProperty",
+    "longname": "module:ui/breakpoints.BreakpointManager#getBreakpointInProperty",
+    "name": "getBreakpointInProperty",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get breakpoint from a custom property",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [],
+    "meta": {
+      "lineno": 94,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 38
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#getBreakpoint",
+    "longname": "module:ui/breakpoints.BreakpointManager#getBreakpoint",
+    "name": "getBreakpoint",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get breakpoint from element (design note: user could override prototype)",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [],
+    "meta": {
+      "lineno": 100,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 39
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#update",
+    "longname": "module:ui/breakpoints.BreakpointManager#update",
+    "name": "update",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Updates the active breakpoint by checking the element and executes handlers on change",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [],
+    "meta": {
+      "lineno": 110,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 40
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager#at",
+    "longname": "module:ui/breakpoints.BreakpointManager#at",
+    "name": "at",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get a breakpoint by key",
+    "memberof": "module:ui/breakpoints.BreakpointManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The name of the breakpoint to get",
+        "name": "name"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Breakpoint"
+          ]
+        },
+        "description": "Breakpoint to act on (see Breakpoint class)"
+      }
+    ],
+    "meta": {
+      "lineno": 155,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 41
+  },
+  {
+    "id": "module:ui/breakpoints~BreakpointDirection#change",
+    "longname": "module:ui/breakpoints~BreakpointDirection#change",
+    "name": "change",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Change the state of the direction",
+    "memberof": "module:ui/breakpoints~BreakpointDirection",
+    "params": [],
+    "meta": {
+      "lineno": 178,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 43
+  },
+  {
+    "id": "module:ui/breakpoints~BreakpointDirection#_call",
+    "longname": "module:ui/breakpoints~BreakpointDirection#_call",
+    "name": "_call",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Calls all functions in handlers or",
+    "memberof": "module:ui/breakpoints~BreakpointDirection",
+    "params": [],
+    "meta": {
+      "lineno": 188,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 44
+  },
+  {
+    "id": "module:ui/breakpoints~BreakpointDirection#getHandlers",
+    "longname": "module:ui/breakpoints~BreakpointDirection#getHandlers",
+    "name": "getHandlers",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Returns handlers in normalized object format on/off",
+    "memberof": "module:ui/breakpoints~BreakpointDirection",
+    "params": [],
+    "meta": {
+      "lineno": 196,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 45
+  },
+  {
+    "id": "module:ui/breakpoints~BreakpointDirection#add",
+    "longname": "module:ui/breakpoints~BreakpointDirection#add",
+    "name": "add",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Adds a handler for the direction, optionally use object to add off state handler",
+    "memberof": "module:ui/breakpoints~BreakpointDirection",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function",
+            "Object"
+          ]
+        },
+        "description": "Function to be executed when direction is active, read object description for on/off",
+        "name": "handler"
+      },
+      {
+        "type": {
+          "names": [
+            "function",
+            "Object"
+          ]
+        },
+        "description": "Function to be executed when direction is active",
+        "name": "handler.on"
+      },
+      {
+        "type": {
+          "names": [
+            "function",
+            "Object"
+          ]
+        },
+        "description": "Function to be executed when direction was active and is now changed to inactive",
+        "name": "handler.off"
+      }
+    ],
+    "meta": {
+      "lineno": 205,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 46
+  },
+  {
+    "id": "module:ui/breakpoints~BreakpointDirection#remove",
+    "longname": "module:ui/breakpoints~BreakpointDirection#remove",
+    "name": "remove",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Removes a handler",
+    "memberof": "module:ui/breakpoints~BreakpointDirection",
+    "params": [],
+    "meta": {
+      "lineno": 222,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 47
+  },
+  {
+    "id": "module:ui/breakpoints~Breakpoint#_setDirection",
+    "longname": "module:ui/breakpoints~Breakpoint#_setDirection",
+    "name": "_setDirection",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Private method used inrternally for managing direction activation\n- Each direction manages it's own state and handlers",
+    "memberof": "module:ui/breakpoints~Breakpoint",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The directional key",
+        "name": "direction"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "description": "State of that direction to set",
+        "name": "active"
+      }
+    ],
+    "meta": {
+      "lineno": 252,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 49
+  },
+  {
+    "id": "module:ui/breakpoints~Breakpoint#max",
+    "longname": "module:ui/breakpoints~Breakpoint#max",
+    "name": "max",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Attach handler to be executed from the breakpoint and to all breakpoints below (inclusive).\nThis corresponds to a `max-width` media query in SCSS.",
+    "memberof": "module:ui/breakpoints~Breakpoint",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Handler to be executed",
+        "name": "handler"
+      }
+    ],
+    "meta": {
+      "lineno": 260,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 50
+  },
+  {
+    "id": "module:ui/breakpoints~Breakpoint#min",
+    "longname": "module:ui/breakpoints~Breakpoint#min",
+    "name": "min",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Attach handler to be executed from the breakpoint and to all breakpoints above (inclusive).\nThis corresponds to a `min-width` media query in SCSS.",
+    "memberof": "module:ui/breakpoints~Breakpoint",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Handler to be executed",
+        "name": "handler"
+      }
+    ],
+    "meta": {
+      "lineno": 268,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 51
+  },
+  {
+    "id": "module:ui/breakpoints~Breakpoint#only",
+    "longname": "module:ui/breakpoints~Breakpoint#only",
+    "name": "only",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Attach a handler to fire when the breakpoint is within the key",
+    "memberof": "module:ui/breakpoints~Breakpoint",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Handler to be executed",
+        "name": "handler"
+      }
+    ],
+    "meta": {
+      "lineno": 275,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 52
+  },
+  {
+    "id": "module:ui/breakpoints~Breakpoint#remove",
+    "longname": "module:ui/breakpoints~Breakpoint#remove",
+    "name": "remove",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Remove handler",
+    "memberof": "module:ui/breakpoints~Breakpoint",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Handler to be removed, extended on/off object style can be used",
+        "name": "handler"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Remove handler only from specified direction, else search all directions",
+        "name": "direction"
+      }
+    ],
+    "meta": {
+      "lineno": 283,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 53
+  },
+  {
+    "id": "module:ui/collapsible.Collapsible#setupTemporaryHandlers",
+    "longname": "module:ui/collapsible.Collapsible#setupTemporaryHandlers",
+    "name": "setupTemporaryHandlers",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Setup handlers needed for closing once open",
+    "memberof": "module:ui/collapsible.Collapsible",
+    "params": [],
+    "meta": {
+      "lineno": 140,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 61
+  },
+  {
+    "id": "module:ui/collapsible.Collapsible#destroyTemporaryHandlers",
+    "longname": "module:ui/collapsible.Collapsible#destroyTemporaryHandlers",
+    "name": "destroyTemporaryHandlers",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Destroy handlers attached for closing once open",
+    "memberof": "module:ui/collapsible.Collapsible",
+    "params": [],
+    "meta": {
+      "lineno": 164,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 62
+  },
+  {
+    "id": "module:ui/flipcard.Flipcard#onProxyClick",
+    "longname": "module:ui/flipcard.Flipcard#onProxyClick",
+    "name": "onProxyClick",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Click handler on everything on container\n- Determines if click was something that should be ignored (link, etc)",
+    "memberof": "module:ui/flipcard.Flipcard",
+    "params": [],
+    "meta": {
+      "lineno": 112,
+      "filename": "flipcard.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 95
+  },
+  {
+    "id": "module:ui/resizer.Resizer#destroy",
+    "longname": "module:ui/resizer.Resizer#destroy",
+    "name": "destroy",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Cleans up event listeners and internal state to prevent memory leaks.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [],
+    "meta": {
+      "lineno": 170,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 149
+  },
+  {
+    "id": "module:ui/resizer.Resizer#onPointerdown",
+    "longname": "module:ui/resizer.Resizer#onPointerdown",
+    "name": "onPointerdown",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Public handler for pointerdown events. Call this method from your own event listeners\nif `manageEvents` is false. Its logic will only execute if `enablePointerResizing` is true.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "PointerEvent"
+          ]
+        },
+        "description": "The pointerdown event.",
+        "name": "e"
+      }
+    ],
+    "meta": {
+      "lineno": 301,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 153
+  },
+  {
+    "id": "module:ui/resizer.Resizer#onKeydown",
+    "longname": "module:ui/resizer.Resizer#onKeydown",
+    "name": "onKeydown",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Public handler for keydown events. Call this method from your own event listeners\nif `manageEvents` is false. Its logic will only execute if `enableKeyboardResizing` is true.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "KeyboardEvent"
+          ]
+        },
+        "description": "The keydown event.",
+        "name": "e"
+      }
+    ],
+    "meta": {
+      "lineno": 347,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 154
+  },
+  {
+    "id": "module:ui/resizer.Resizer#getAriaLabel",
+    "longname": "module:ui/resizer.Resizer#getAriaLabel",
+    "name": "getAriaLabel",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Generates an accessible label for the resize control based on its configuration.\nThis is a convenience function that can be used by the consumer if `manageAriaLabel` is false.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The suggested aria-label for the control."
+      }
+    ],
+    "meta": {
+      "lineno": 412,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 155
+  },
+  {
+    "id": "module:ui/resizer.Resizer#dispatchEvent",
+    "longname": "module:ui/resizer.Resizer#dispatchEvent",
+    "name": "dispatchEvent",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Dispatches a custom event on the container element.",
+    "memberof": "module:ui/resizer.Resizer",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The event type (e.g., \"resizer:start\", \"resizer:update\", \"resizer:end\").",
+        "name": "type"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": "{}",
+        "description": "Optional data to attach to the event's detail property.",
+        "name": "data"
+      }
+    ],
+    "meta": {
+      "lineno": 429,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 156
+  },
+  {
+    "id": "module:ui/scrollpoint.Scrollpoint#onObserve",
+    "longname": "module:ui/scrollpoint.Scrollpoint#onObserve",
+    "name": "onObserve",
+    "kind": "function",
+    "scope": "instance",
+    "description": "IntersectionObserver Callback\n- Should set the state",
+    "memberof": "module:ui/scrollpoint.Scrollpoint",
+    "params": [],
+    "meta": {
+      "lineno": 176,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 182
+  },
+  {
+    "id": "module:ui/slider.Slider#handleResize",
+    "longname": "module:ui/slider.Slider#handleResize",
+    "name": "handleResize",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Sliding mechanism needs translate updated on resize",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 191,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 189
+  },
+  {
+    "id": "module:ui/slider.Slider#previous",
+    "longname": "module:ui/slider.Slider#previous",
+    "name": "previous",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Goto to the previous slide",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 200,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 190
+  },
+  {
+    "id": "module:ui/slider.Slider#next",
+    "longname": "module:ui/slider.Slider#next",
+    "name": "next",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Goto to the next slide",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 211,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 191
+  },
+  {
+    "id": "module:ui/slider.Slider#ensureTransitionEnds",
+    "longname": "module:ui/slider.Slider#ensureTransitionEnds",
+    "name": "ensureTransitionEnds",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Makes sure that no matter what the callback is called if transition event\ndoesn't start or fails to finish/cancel",
+    "memberof": "module:ui/slider.Slider",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "name": "element"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "Duration to wait for complete",
+        "name": "duration"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Css changes to begin/start transition",
+        "name": "beginTransition"
+      }
+    ],
+    "meta": {
+      "lineno": 225,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 192
+  },
+  {
+    "id": "module:ui/slider.Slider#translateTo",
+    "longname": "module:ui/slider.Slider#translateTo",
+    "name": "translateTo",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Translate the track to X",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 263,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 193
+  },
+  {
+    "id": "module:ui/slider.Slider#setVisibility",
+    "longname": "module:ui/slider.Slider#setVisibility",
+    "name": "setVisibility",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Show's a specific slide and hides others, except when passing true to show all\nthen all slides will visible",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 277,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 194
+  },
+  {
+    "id": "module:ui/slider.Slider#fadeSlide",
+    "longname": "module:ui/slider.Slider#fadeSlide",
+    "name": "fadeSlide",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Perform a fade on a single slide",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 290,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 195
+  },
+  {
+    "id": "module:ui/slider.Slider#slideTransition",
+    "longname": "module:ui/slider.Slider#slideTransition",
+    "name": "slideTransition",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Handler for the entire slide transition",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 301,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "async": true,
+    "order": 196
+  },
+  {
+    "id": "module:ui/slider.Slider#fadeTransition",
+    "longname": "module:ui/slider.Slider#fadeTransition",
+    "name": "fadeTransition",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Handler for the entire fade transition",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 357,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "async": true,
+    "order": 197
+  },
+  {
+    "id": "module:ui/slider.Slider#noTransition",
+    "longname": "module:ui/slider.Slider#noTransition",
+    "name": "noTransition",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Handler for the entire NO transition",
+    "memberof": "module:ui/slider.Slider",
+    "params": [],
+    "meta": {
+      "lineno": 371,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 198
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#setupAttributes",
+    "longname": "module:ui/tab-manager.TabManager#setupAttributes",
+    "name": "setupAttributes",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Sets the necessary ARIA attributes and initial states for tabs and panels.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [],
+    "access": "private",
+    "meta": {
+      "lineno": 103,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 204
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#attachListeners",
+    "longname": "module:ui/tab-manager.TabManager#attachListeners",
+    "name": "attachListeners",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Attaches click and keydown event listeners to each tab.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [],
+    "access": "private",
+    "meta": {
+      "lineno": 134,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 205
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#handleClick",
+    "longname": "module:ui/tab-manager.TabManager#handleClick",
+    "name": "handleClick",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Handles click events on tabs, activating the corresponding panel.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "MouseEvent"
+          ]
+        },
+        "description": "The click event.",
+        "name": "e"
+      }
+    ],
+    "access": "private",
+    "meta": {
+      "lineno": 146,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 206
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#handleKeydown",
+    "longname": "module:ui/tab-manager.TabManager#handleKeydown",
+    "name": "handleKeydown",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Handles keyboard navigation (arrows, Home, End) on the tab list.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "KeyboardEvent"
+          ]
+        },
+        "description": "The keydown event.",
+        "name": "e"
+      }
+    ],
+    "access": "private",
+    "meta": {
+      "lineno": 156,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 207
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#activate",
+    "longname": "module:ui/tab-manager.TabManager#activate",
+    "name": "activate",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Activates a tab. Can be called with an index or a tab ID string.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Number",
+            "String"
+          ]
+        },
+        "description": "The index or ID of the tab to activate.",
+        "name": "indexOrId"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": true,
+        "description": "If false, will not fire onChange or set URL hash.",
+        "name": "triggerActions"
+      }
+    ],
+    "meta": {
+      "lineno": 195,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 208
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#activateById",
+    "longname": "module:ui/tab-manager.TabManager#activateById",
+    "name": "activateById",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Public method to activate a tab by its ID.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The ID of the tab element to activate.",
+        "name": "id"
+      }
+    ],
+    "meta": {
+      "lineno": 245,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 209
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#updatePanelHeights",
+    "longname": "module:ui/tab-manager.TabManager#updatePanelHeights",
+    "name": "updatePanelHeights",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Calculates and applies equal heights to all panels.\nWaits for images within panels to load before calculating.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [],
+    "meta": {
+      "lineno": 253,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 210
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager#destroy",
+    "longname": "module:ui/tab-manager.TabManager#destroy",
+    "name": "destroy",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Removes event listeners, cleans up ARIA attributes, and resets the DOM to its pre-initialized state.",
+    "memberof": "module:ui/tab-manager.TabManager",
+    "params": [],
+    "meta": {
+      "lineno": 294,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 211
+  },
+  {
+    "id": "module:utils/file-save.FileSave#destroy",
+    "longname": "module:utils/file-save.FileSave#destroy",
+    "name": "destroy",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Remove the blob url",
+    "memberof": "module:utils/file-save.FileSave",
+    "params": [],
+    "meta": {
+      "lineno": 40,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 277
+  },
+  {
+    "id": "module:utils/file-save.FileSave#getUrl",
+    "longname": "module:utils/file-save.FileSave#getUrl",
+    "name": "getUrl",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Get the blob url",
+    "memberof": "module:utils/file-save.FileSave",
+    "params": [],
+    "meta": {
+      "lineno": 46,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 278
+  },
+  {
+    "id": "module:utils/file-save.FileSave#createLink",
+    "longname": "module:utils/file-save.FileSave#createLink",
+    "name": "createLink",
+    "kind": "function",
+    "scope": "instance",
+    "description": "Create link element with blob as href",
+    "memberof": "module:utils/file-save.FileSave",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The text to put in the link",
+        "name": "text"
+      }
+    ],
+    "meta": {
+      "lineno": 53,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 279
+  },
+  {
+    "id": "module:core/component.ComponentInitializer",
+    "longname": "module:core/component.ComponentInitializer",
+    "name": "ComponentInitializer",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class serves as a utility for UI modules, handling the selection of elements and the initialization of corresponding component instances, ensuring consistent setup within the module",
+    "memberof": "module:core/component",
+    "meta": {
+      "lineno": 14,
+      "filename": "component.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 1
+  },
+  {
+    "id": "module:ui/breakpoints.BreakpointManager",
+    "longname": "module:ui/breakpoints.BreakpointManager",
+    "name": "BreakpointManager",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class that provides method for retrieving and acting on breakpoints passed\nfrom CSS (using element pseudo content prop)",
+    "memberof": "module:ui/breakpoints",
+    "meta": {
+      "lineno": 20,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 33
+  },
+  {
+    "id": "module:ui/collapsible.Collapsible",
+    "longname": "module:ui/collapsible.Collapsible",
+    "name": "Collapsible",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class for accessible hide/show components",
+    "memberof": "module:ui/collapsible",
+    "meta": {
+      "lineno": 12,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 59
+  },
+  {
+    "id": "module:ui/flipcard.Flipcard",
+    "longname": "module:ui/flipcard.Flipcard",
+    "name": "Flipcard",
+    "kind": "class",
+    "scope": "static",
+    "description": "Flipcard class (creates flipcard instance and behaviors)",
+    "memberof": "module:ui/flipcard",
+    "meta": {
+      "lineno": 37,
+      "filename": "flipcard.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 94
+  },
+  {
+    "id": "module:ui/popover.Popover",
+    "longname": "module:ui/popover.Popover",
+    "name": "Popover",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class that extends Collapsible adding floating-ui for popover behavior",
+    "memberof": "module:ui/popover",
+    "meta": {
+      "lineno": 107,
+      "filename": "popover.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 118
+  },
+  {
+    "id": "module:ui/resizer.Resizer",
+    "longname": "module:ui/resizer.Resizer",
+    "name": "Resizer",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class for creating/controlling a container size with a handle/control",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 14,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 146
+  },
+  {
+    "id": "module:ui/scrollpoint.Scrollpoint",
+    "longname": "module:ui/scrollpoint.Scrollpoint",
+    "name": "Scrollpoint",
+    "kind": "class",
+    "scope": "static",
+    "description": "Single scrollpoint\n- Note \"forward\" and \"reverse\" refer to scroll directions\n  - forward = vertical below / horizontal right\n  - reverse = vertical above / horizontal left",
+    "memberof": "module:ui/scrollpoint",
+    "todoList": [
+      {
+        "done": false,
+        "task": "Convert margin to offset"
+      },
+      {
+        "done": false,
+        "task": "This only goes one direction"
+      }
+    ],
+    "meta": {
+      "lineno": 52,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 180
+  },
+  {
+    "id": "module:ui/slider.Slider",
+    "longname": "module:ui/slider.Slider",
+    "name": "Slider",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class that controls slider",
+    "memberof": "module:ui/slider",
+    "meta": {
+      "lineno": 105,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 188
+  },
+  {
+    "id": "module:ui/tab-manager.TabManager",
+    "longname": "module:ui/tab-manager.TabManager",
+    "name": "TabManager",
+    "kind": "class",
+    "scope": "static",
+    "description": "Class for managing  Aria tabs\n- Designed to be minimal and lightweight but cover all traditional needs\n- Designed for static / traditional webpages (not SPA)\n- Separated from tabs.js so it can be used by itself as needed (tree-shaking)",
+    "memberof": "module:ui/tab-manager",
+    "meta": {
+      "lineno": 26,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 202
+  },
+  {
+    "id": "module:ui/tooltip.Tooltip",
+    "longname": "module:ui/tooltip.Tooltip",
+    "name": "Tooltip",
+    "kind": "class",
+    "scope": "static",
+    "description": "Tooltip\n- Provides basic tooltip functionality\n- Uses floating UI for positioning",
+    "memberof": "module:ui/tooltip",
+    "meta": {
+      "lineno": 47,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 258
+  },
+  {
+    "id": "module:utils/file-save.FileSave",
+    "longname": "module:utils/file-save.FileSave",
+    "name": "FileSave",
+    "kind": "class",
+    "scope": "static",
+    "description": "Simple script that is useful for testing\n- Make a file \n- Create a URL to it\n- Gives utility function to create a link to the file (for front end)\n- Gives method to destroy the file when no longer needed\n- User can redefine the program by passing options object matching props.     \nLimited to new browsers that support Blob(), also user preferences or type of browser may limit access to Blob functionality",
+    "memberof": "module:utils/file-save",
+    "meta": {
+      "lineno": 22,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 275
+  },
+  {
+    "id": "module:ui/dialog~defaults.nonModal",
+    "longname": "module:ui/dialog~defaults.nonModal",
+    "name": "nonModal",
+    "kind": "member",
+    "scope": "static",
+    "description": "Use non-modal interface for dialog",
+    "memberof": "module:ui/dialog~defaults",
+    "meta": {
+      "lineno": 34,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 77
+  },
+  {
+    "id": "module:ui/dialog~defaults.documentEnd",
+    "longname": "module:ui/dialog~defaults.documentEnd",
+    "name": "documentEnd",
+    "kind": "member",
+    "scope": "static",
+    "description": "Move the dialog to the document end (hoist out of content)\n- helpful if dialogs are within editor body, etc",
+    "memberof": "module:ui/dialog~defaults",
+    "meta": {
+      "lineno": 39,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 78
+  },
+  {
+    "id": "module:ui/dialog~defaults.clickOutsideCloses",
+    "longname": "module:ui/dialog~defaults.clickOutsideCloses",
+    "name": "clickOutsideCloses",
+    "kind": "member",
+    "scope": "static",
+    "description": "Requires styling that reduces any padding/border on dialog",
+    "memberof": "module:ui/dialog~defaults",
+    "meta": {
+      "lineno": 43,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 79
+  },
+  {
+    "id": "module:ui/dialog~defaults.pauseVideos",
+    "longname": "module:ui/dialog~defaults.pauseVideos",
+    "name": "pauseVideos",
+    "kind": "member",
+    "scope": "static",
+    "description": "Whether or not to pause videos when dialog closes (currently just youtube and native)",
+    "memberof": "module:ui/dialog~defaults",
+    "meta": {
+      "lineno": 47,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 80
+  },
+  {
+    "id": "module:ui/dialog~defaults.preventScroll",
+    "longname": "module:ui/dialog~defaults.preventScroll",
+    "name": "preventScroll",
+    "kind": "member",
+    "scope": "static",
+    "description": "When open and not non-modal, the body is prevented from scrolling (defaults to true).",
+    "memberof": "module:ui/dialog~defaults",
+    "meta": {
+      "lineno": 51,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 81
+  },
+  {
+    "id": "module:ui/dialog~defaults.preventScrollShift",
+    "longname": "module:ui/dialog~defaults.preventScrollShift",
+    "name": "preventScrollShift",
+    "kind": "member",
+    "scope": "static",
+    "description": "Compensate for layout shift when preventing scroll. Which adds padding equal to scrollbars \nwidth while dialog is open",
+    "memberof": "module:ui/dialog~defaults",
+    "meta": {
+      "lineno": 56,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 82
+  },
+  {
+    "id": "module:ui/print~defaults.element",
+    "longname": "module:ui/print~defaults.element",
+    "name": "element",
+    "kind": "member",
+    "scope": "static",
+    "description": "Print element/selector",
+    "memberof": "module:ui/print~defaults",
+    "meta": {
+      "lineno": 21,
+      "filename": "print.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 124
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.themes",
+    "longname": "module:ui/theme-toggle~defaults.themes",
+    "name": "themes",
+    "kind": "member",
+    "scope": "static",
+    "description": "Object of each theme that should be toggle/cycled through",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 44,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 220
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.target",
+    "longname": "module:ui/theme-toggle~defaults.target",
+    "name": "target",
+    "kind": "member",
+    "scope": "static",
+    "description": "Required this is the element(s) that should be changed by a specific toggle\n- The element should have data-ulu-theme-toggle-target=\"SOME_IDENTIFIER\"",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 63,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 221
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.group",
+    "longname": "module:ui/theme-toggle~defaults.group",
+    "name": "group",
+    "kind": "member",
+    "scope": "static",
+    "description": "Optional group to link remote toggles (toggles that follow the main one and can toggle too)",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 67,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 222
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.initialState",
+    "longname": "module:ui/theme-toggle~defaults.initialState",
+    "name": "initialState",
+    "kind": "member",
+    "scope": "static",
+    "description": "The initial state for this component\n- May be overridden by saved preference or media query if options are enabled",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 76,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 224
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.checkMediaQuery",
+    "longname": "module:ui/theme-toggle~defaults.checkMediaQuery",
+    "name": "checkMediaQuery",
+    "kind": "member",
+    "scope": "static",
+    "description": "Check the OS systems user preference via 'preferenceQuery' option",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 80,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 225
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.savePreference",
+    "longname": "module:ui/theme-toggle~defaults.savePreference",
+    "name": "savePreference",
+    "kind": "member",
+    "scope": "static",
+    "description": "Will store the preference in local storage so it persists between page loads",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 84,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 226
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.storagePrefix",
+    "longname": "module:ui/theme-toggle~defaults.storagePrefix",
+    "name": "storagePrefix",
+    "kind": "member",
+    "scope": "static",
+    "description": "The key that will be used to store the preference in local storage\n- This will be used as prefix in combination with group if defined",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 89,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 227
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.debug",
+    "longname": "module:ui/theme-toggle~defaults.debug",
+    "name": "debug",
+    "kind": "member",
+    "scope": "static",
+    "description": "Output information to console for debugging",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 93,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 228
+  },
+  {
+    "id": "module:ui/details-group.initializer",
+    "longname": "module:ui/details-group.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Dialog Component Initializer",
+    "memberof": "module:ui/details-group",
+    "meta": {
+      "lineno": 11,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 64
+  },
+  {
+    "id": "module:ui/dialog.baseAttribute",
+    "longname": "module:ui/dialog.baseAttribute",
+    "name": "baseAttribute",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Base attribute for a dialog",
+    "memberof": "module:ui/dialog",
+    "meta": {
+      "lineno": 14,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 73
+  },
+  {
+    "id": "module:ui/dialog.initializer",
+    "longname": "module:ui/dialog.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Dialog Component Initializer",
+    "memberof": "module:ui/dialog",
+    "meta": {
+      "lineno": 19,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 74
+  },
+  {
+    "id": "module:ui/dialog.closeAttribute",
+    "longname": "module:ui/dialog.closeAttribute",
+    "name": "closeAttribute",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Attribute for close buttons within a dialog",
+    "memberof": "module:ui/dialog",
+    "meta": {
+      "lineno": 24,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 75
+  },
+  {
+    "id": "module:ui/dialog.defaults",
+    "longname": "module:ui/dialog.defaults",
+    "name": "defaults",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Dialog Defaults \n- Can be overridden using data-attributes",
+    "memberof": "module:ui/dialog",
+    "meta": {
+      "lineno": 30,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 76
+  },
+  {
+    "id": "module:ui/flipcard.initializer",
+    "longname": "module:ui/flipcard.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Flipcard Component Initializer",
+    "memberof": "module:ui/flipcard",
+    "meta": {
+      "lineno": 12,
+      "filename": "flipcard.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 91
+  },
+  {
+    "id": "module:ui/grid.initializer",
+    "longname": "module:ui/grid.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Dialog Component Initializer",
+    "memberof": "module:ui/grid",
+    "meta": {
+      "lineno": 11,
+      "filename": "grid.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 97
+  },
+  {
+    "id": "module:ui/modal-builder.initializer",
+    "longname": "module:ui/modal-builder.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Modal Builder Component Initializer",
+    "memberof": "module:ui/modal-builder",
+    "meta": {
+      "lineno": 18,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 101
+  },
+  {
+    "id": "module:ui/popover.initializer",
+    "longname": "module:ui/popover.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Popover Component Initializer",
+    "memberof": "module:ui/popover",
+    "meta": {
+      "lineno": 12,
+      "filename": "popover.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 114
+  },
+  {
+    "id": "module:ui/popover.instances",
+    "longname": "module:ui/popover.instances",
+    "name": "instances",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Array of current instances",
+    "memberof": "module:ui/popover",
+    "meta": {
+      "lineno": 25,
+      "filename": "popover.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 115
+  },
+  {
+    "id": "module:ui/print-details.attrs",
+    "longname": "module:ui/print-details.attrs",
+    "name": "attrs",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Default data attributes",
+    "memberof": "module:ui/print-details",
+    "meta": {
+      "lineno": 10,
+      "filename": "print-details.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 120
+  },
+  {
+    "id": "module:ui/proxy-click.initializer",
+    "longname": "module:ui/proxy-click.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Proxy Click Component Initializer",
+    "memberof": "module:ui/proxy-click",
+    "meta": {
+      "lineno": 17,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 129
+  },
+  {
+    "id": "module:ui/proxy-click.defaults",
+    "longname": "module:ui/proxy-click.defaults",
+    "name": "defaults",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Default options",
+    "memberof": "module:ui/proxy-click",
+    "meta": {
+      "lineno": 25,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 130
+  },
+  {
+    "id": "module:ui/scroll-slider.initializer",
+    "longname": "module:ui/scroll-slider.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Scroll Slider Component Initializer",
+    "memberof": "module:ui/scroll-slider",
+    "meta": {
+      "lineno": 12,
+      "filename": "scroll-slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 158
+  },
+  {
+    "id": "module:ui/scrollpoint.initializer",
+    "longname": "module:ui/scrollpoint.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Scrollpoint Component Initializer",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 23,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 162
+  },
+  {
+    "id": "module:ui/slider.initializer",
+    "longname": "module:ui/slider.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Slider Component Initializer",
+    "memberof": "module:ui/slider",
+    "meta": {
+      "lineno": 45,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 184
+  },
+  {
+    "id": "module:ui/tabs.instances",
+    "longname": "module:ui/tabs.instances",
+    "name": "instances",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Array of current tab instances (exported if you need to interact with them)",
+    "memberof": "module:ui/tabs",
+    "type": {
+      "names": [
+        "Array"
+      ]
+    },
+    "meta": {
+      "lineno": 13,
+      "filename": "tabs.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 213
+  },
+  {
+    "id": "module:ui/tabs.initializer",
+    "longname": "module:ui/tabs.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Tabs Component Initializer",
+    "memberof": "module:ui/tabs",
+    "meta": {
+      "lineno": 18,
+      "filename": "tabs.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 214
+  },
+  {
+    "id": "module:ui/theme-toggle.initializer",
+    "longname": "module:ui/theme-toggle.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Theme Toggle Component Initializer",
+    "memberof": "module:ui/theme-toggle",
+    "meta": {
+      "lineno": 14,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 218
+  },
+  {
+    "id": "module:ui/theme-toggle.defaults",
+    "longname": "module:ui/theme-toggle.defaults",
+    "name": "defaults",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Default Options \n- Can be overridden using data-attributes",
+    "memberof": "module:ui/theme-toggle",
+    "meta": {
+      "lineno": 40,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 219
+  },
+  {
+    "id": "module:ui/tooltip.initializer",
+    "longname": "module:ui/tooltip.initializer",
+    "name": "initializer",
+    "kind": "constant",
+    "scope": "static",
+    "description": "Tooltip Component Initializer",
+    "memberof": "module:ui/tooltip",
+    "meta": {
+      "lineno": 15,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 245
+  },
+  {
+    "id": "module:core/events.dispatchCoreEvent",
+    "longname": "module:core/events.dispatchCoreEvent",
+    "name": "dispatchCoreEvent",
+    "kind": "function",
+    "scope": "static",
+    "description": "Triggers one of the predefined core lifecycle events.",
+    "memberof": "module:core/events",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Type of core event to dispatch.",
+        "name": "type"
+      },
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Element to trigger the event from.",
+        "name": "context"
+      }
+    ],
+    "meta": {
+      "lineno": 40,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 16
+  },
+  {
+    "id": "module:core/events.getUluEventName",
+    "longname": "module:core/events.getUluEventName",
+    "name": "getUluEventName",
+    "kind": "function",
+    "scope": "static",
+    "description": "A general-purpose utility to get a ULU-namespaced event name.",
+    "memberof": "module:core/events",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The base name for the event.",
+        "name": "type"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The `ulu:` prefixed event name."
+      }
+    ],
+    "meta": {
+      "lineno": 53,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 17
+  },
+  {
+    "id": "module:core/events.getCoreEventName",
+    "longname": "module:core/events.getCoreEventName",
+    "name": "getCoreEventName",
+    "kind": "function",
+    "scope": "static",
+    "description": "Safely gets the full namespaced name for a predefined core event.",
+    "memberof": "module:core/events",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The base name of the core event (e.g., 'pageModified').",
+        "name": "type"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String",
+            "null"
+          ]
+        },
+        "description": "The full event name if valid, otherwise null."
+      }
+    ],
+    "meta": {
+      "lineno": 62,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 18
+  },
+  {
+    "id": "module:core/events.createUluEvent",
+    "longname": "module:core/events.createUluEvent",
+    "name": "createUluEvent",
+    "kind": "function",
+    "scope": "static",
+    "description": "A general-purpose utility to create a ULU-namespaced CustomEvent.",
+    "memberof": "module:core/events",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Event base name.",
+        "name": "type"
+      },
+      {
+        "type": {
+          "names": [
+            "any"
+          ]
+        },
+        "description": "Custom data to pass with the event.",
+        "name": "data"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "CustomEvent options.",
+        "name": "options"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "CustomEvent"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "lineno": 77,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 19
+  },
+  {
+    "id": "module:core/settings.getDefaultSettings",
+    "longname": "module:core/settings.getDefaultSettings",
+    "name": "getDefaultSettings",
+    "kind": "function",
+    "scope": "static",
+    "description": "Retrieves a copy of the default settings.",
+    "memberof": "module:core/settings",
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "A copy of the default settings object."
+      }
+    ],
+    "meta": {
+      "lineno": 36,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 26
+  },
+  {
+    "id": "module:core/settings.updateSettings",
+    "longname": "module:core/settings.updateSettings",
+    "name": "updateSettings",
+    "kind": "function",
+    "scope": "static",
+    "description": "Updates multiple configuration settings.",
+    "memberof": "module:core/settings",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "An object containing the settings to update.",
+        "name": "changes"
+      }
+    ],
+    "meta": {
+      "lineno": 44,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 27
+  },
+  {
+    "id": "module:core/settings.getSettings",
+    "longname": "module:core/settings.getSettings",
+    "name": "getSettings",
+    "kind": "function",
+    "scope": "static",
+    "description": "Retrieves a copy of the current configuration settings.",
+    "memberof": "module:core/settings",
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "A copy of the current settings object."
+      }
+    ],
+    "meta": {
+      "lineno": 52,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 28
+  },
+  {
+    "id": "module:core/settings.getSetting",
+    "longname": "module:core/settings.getSetting",
+    "name": "getSetting",
+    "kind": "function",
+    "scope": "static",
+    "description": "Retrieves a specific configuration setting by key.",
+    "memberof": "module:core/settings",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The key of the setting to retrieve.",
+        "name": "key"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "The value of the setting, or undefined if not found."
+      }
+    ],
+    "meta": {
+      "lineno": 61,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 29
+  },
+  {
+    "id": "module:core/settings.updateSetting",
+    "longname": "module:core/settings.updateSetting",
+    "name": "updateSetting",
+    "kind": "function",
+    "scope": "static",
+    "description": "Updates a specific configuration setting.",
+    "memberof": "module:core/settings",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The key of the setting to update.",
+        "name": "key"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "The new value for the setting.",
+        "name": "value"
+      }
+    ],
+    "meta": {
+      "lineno": 74,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 30
+  },
+  {
+    "id": "module:core/settings.wrapSettingString",
+    "longname": "module:core/settings.wrapSettingString",
+    "name": "wrapSettingString",
+    "kind": "function",
+    "scope": "static",
+    "description": "Creates a wrapped string representation of a configuration setting.\nThis function returns an object with a `toString()` method that, when called,\nretrieves the current value of the specified setting. This allows the setting\nto be used as a string literal, dynamically retrieving its value.",
+    "memberof": "module:core/settings",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The key of the setting to wrap.",
+        "name": "key"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Optional function to transform the setting's\nvalue when its string representation is requested.",
+        "name": "transform"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "An object with a `toString()` method that returns the\n(optionally transformed) setting value as a string."
+      }
+    ],
+    "meta": {
+      "lineno": 90,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 31
+  },
+  {
+    "id": "module:ui/details-group.init",
+    "longname": "module:ui/details-group.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/details-group",
+    "meta": {
+      "lineno": 26,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 65
+  },
+  {
+    "id": "module:ui/details-group.setupGroup",
+    "longname": "module:ui/details-group.setupGroup",
+    "name": "setupGroup",
+    "kind": "function",
+    "scope": "static",
+    "description": "Sets up a single group of details elements to manage their behavior.",
+    "memberof": "module:ui/details-group",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "The parent element containing the details elements.",
+        "name": "element"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "The options for this group",
+        "name": "options"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "DetailsGroupInstance"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "lineno": 50,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 67
+  },
+  {
+    "id": "module:ui/dialog.setDefaults",
+    "longname": "module:ui/dialog.setDefaults",
+    "name": "setDefaults",
+    "kind": "function",
+    "scope": "static",
+    "memberof": "module:ui/dialog",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Change options used as default for dialogs, can then be overridden by data attribute settings on element",
+        "name": "options"
+      }
+    ],
+    "meta": {
+      "lineno": 66,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 83
+  },
+  {
+    "id": "module:ui/dialog.init",
+    "longname": "module:ui/dialog.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/dialog",
+    "meta": {
+      "lineno": 74,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 84
+  },
+  {
+    "id": "module:ui/dialog.setupTrigger",
+    "longname": "module:ui/dialog.setupTrigger",
+    "name": "setupTrigger",
+    "kind": "function",
+    "scope": "static",
+    "description": "Setup click handlers on a trigger",
+    "memberof": "module:ui/dialog",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Trigger button element",
+        "name": "trigger"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The dialog's id to open",
+        "name": "dialogId"
+      }
+    ],
+    "meta": {
+      "lineno": 102,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 85
+  },
+  {
+    "id": "module:ui/dialog.setupDialog",
+    "longname": "module:ui/dialog.setupDialog",
+    "name": "setupDialog",
+    "kind": "function",
+    "scope": "static",
+    "description": "Setup click handlers for a dialog",
+    "memberof": "module:ui/dialog",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "name": "dialog"
+      }
+    ],
+    "meta": {
+      "lineno": 132,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 86
+  },
+  {
+    "id": "module:ui/dialog.getDialogOptions",
+    "longname": "module:ui/dialog.getDialogOptions",
+    "name": "getDialogOptions",
+    "kind": "function",
+    "scope": "static",
+    "description": "For a given dialog, get it's options (from data attribute)",
+    "memberof": "module:ui/dialog",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "name": "dialog"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "lineno": 217,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 87
+  },
+  {
+    "id": "module:ui/flipcard.init",
+    "longname": "module:ui/flipcard.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize flipcards using data-ulu-flipcard attribute",
+    "memberof": "module:ui/flipcard",
+    "meta": {
+      "lineno": 20,
+      "filename": "flipcard.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 92
+  },
+  {
+    "id": "module:ui/grid.init",
+    "longname": "module:ui/grid.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Sets up document for grid position classes",
+    "memberof": "module:ui/grid",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Classes (optional) @see setPositionClasses",
+        "name": "classes"
+      }
+    ],
+    "meta": {
+      "lineno": 20,
+      "filename": "grid.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 98
+  },
+  {
+    "id": "module:ui/modal-builder~defaults.template",
+    "longname": "module:ui/modal-builder~defaults.template",
+    "name": "template",
+    "kind": "function",
+    "scope": "static",
+    "description": "Default modal template",
+    "memberof": "module:ui/modal-builder~defaults",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "ID for new modal",
+        "name": "id"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Resolved options",
+        "name": "config"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Markup for modal"
+      }
+    ],
+    "meta": {
+      "lineno": 104,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 103
+  },
+  {
+    "id": "module:ui/modal-builder.setDefaults",
+    "longname": "module:ui/modal-builder.setDefaults",
+    "name": "setDefaults",
+    "kind": "function",
+    "scope": "static",
+    "memberof": "module:ui/modal-builder",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Change options used as default for dialogs, can then be overridden by data attribute settings on element",
+        "name": "options"
+      }
+    ],
+    "meta": {
+      "lineno": 157,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 104
+  },
+  {
+    "id": "module:ui/modal-builder.init",
+    "longname": "module:ui/modal-builder.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/modal-builder",
+    "meta": {
+      "lineno": 165,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 105
+  },
+  {
+    "id": "module:ui/modal-builder.buildModal",
+    "longname": "module:ui/modal-builder.buildModal",
+    "name": "buildModal",
+    "kind": "function",
+    "scope": "static",
+    "memberof": "module:ui/modal-builder",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Content element of the dialog (what is inserted into the body)",
+        "name": "content"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Options for built dialog (see defaults)",
+        "name": "options"
+      }
+    ],
+    "meta": {
+      "lineno": 180,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 106
+  },
+  {
+    "id": "module:ui/overflow-scroller-pager.createPager",
+    "longname": "module:ui/overflow-scroller-pager.createPager",
+    "name": "createPager",
+    "kind": "function",
+    "scope": "static",
+    "description": "Function to be used in overflow scrollers \"amount\" option. This function will\ndetermine how many items can fit in the viewport, taking into account scroll padding left, \nand will set the scroll amount to paginate between items. Items size can be anything \n(ie. one per screen vs 3.5 per screen will both work). This seperated from the plugin \nfor tree shaking incase it's unneeded. Currently this is only setup for horizontal scrolling\n\nNote: This is setup to return the function, incase configuration is needed in the future \nit can be passed to the create function",
+    "memberof": "module:ui/overflow-scroller-pager",
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "A function to be used in overflow scrollers \"amount\" configuration property"
+      }
+    ],
+    "meta": {
+      "lineno": 17,
+      "filename": "overflow-scroller-pager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 109
+  },
+  {
+    "id": "module:ui/page.init",
+    "longname": "module:ui/page.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize page module",
+    "memberof": "module:ui/page",
+    "meta": {
+      "lineno": 12,
+      "filename": "page.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 112
+  },
+  {
+    "id": "module:ui/popover.init",
+    "longname": "module:ui/popover.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize default popover",
+    "memberof": "module:ui/popover",
+    "meta": {
+      "lineno": 36,
+      "filename": "popover.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 116
+  },
+  {
+    "id": "module:ui/popover.resolve",
+    "longname": "module:ui/popover.resolve",
+    "name": "resolve",
+    "kind": "function",
+    "scope": "static",
+    "description": "Find the popover's elements",
+    "memberof": "module:ui/popover",
+    "meta": {
+      "lineno": 60,
+      "filename": "popover.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 117
+  },
+  {
+    "id": "module:ui/print-details.init",
+    "longname": "module:ui/print-details.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize details print \n- will open details before print\n- will return to previous state after",
+    "memberof": "module:ui/print-details",
+    "meta": {
+      "lineno": 25,
+      "filename": "print-details.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 121
+  },
+  {
+    "id": "module:ui/print.init",
+    "longname": "module:ui/print.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/print",
+    "meta": {
+      "lineno": 28,
+      "filename": "print.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 125
+  },
+  {
+    "id": "module:ui/proxy-click.setDefaults",
+    "longname": "module:ui/proxy-click.setDefaults",
+    "name": "setDefaults",
+    "kind": "function",
+    "scope": "static",
+    "memberof": "module:ui/proxy-click",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Change options used as default for dialogs, can then be overridden by data attribute settings on element",
+        "name": "options"
+      }
+    ],
+    "meta": {
+      "lineno": 38,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 131
+  },
+  {
+    "id": "module:ui/proxy-click.init",
+    "longname": "module:ui/proxy-click.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/proxy-click",
+    "meta": {
+      "lineno": 45,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 132
+  },
+  {
+    "id": "module:ui/proxy-click.setupProxy",
+    "longname": "module:ui/proxy-click.setupProxy",
+    "name": "setupProxy",
+    "kind": "function",
+    "scope": "static",
+    "description": "Setup a single proxy click",
+    "memberof": "module:ui/proxy-click",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The container who's click should proxy the click of inner element with options.selector (defaults to [data-ulu-proxy-click-source])",
+        "name": "proxy"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Options to override defaults",
+        "name": "userOptions"
+      }
+    ],
+    "meta": {
+      "lineno": 61,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 133
+  },
+  {
+    "id": "module:ui/proxy-click.attachHandlers",
+    "longname": "module:ui/proxy-click.attachHandlers",
+    "name": "attachHandlers",
+    "kind": "function",
+    "scope": "static",
+    "description": "Main function for attaching behaviors that enable proxy click",
+    "memberof": "module:ui/proxy-click",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The container who's click should proxy the click of inner element with options.selector (defaults to [data-ulu-proxy-click-source])",
+        "name": "proxy"
+      },
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The element who is being proxied and will get clicked if the proxy is clicked (as long as not an interactive element within proxy)",
+        "name": "child"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Merged/final options object",
+        "name": "config"
+      }
+    ],
+    "meta": {
+      "lineno": 77,
+      "filename": "proxy-click.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 134
+  },
+  {
+    "id": "module:ui/scroll-slider.init",
+    "longname": "module:ui/scroll-slider.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/scroll-slider",
+    "meta": {
+      "lineno": 28,
+      "filename": "scroll-slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 159
+  },
+  {
+    "id": "module:ui/scrollpoint.init",
+    "longname": "module:ui/scrollpoint.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 32,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 163
+  },
+  {
+    "id": "module:ui/slider.init",
+    "longname": "module:ui/slider.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize all sliders based on data attribute selectors",
+    "memberof": "module:ui/slider",
+    "meta": {
+      "lineno": 69,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 185
+  },
+  {
+    "id": "module:ui/slider.setupSlider",
+    "longname": "module:ui/slider.setupSlider",
+    "name": "setupSlider",
+    "kind": "function",
+    "scope": "static",
+    "description": "Setup single slider instance from querying via data attribute selectors",
+    "memberof": "module:ui/slider",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The slide container to query children from",
+        "name": "container"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Options for slider class",
+        "name": "options"
+      }
+    ],
+    "meta": {
+      "lineno": 85,
+      "filename": "slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 186
+  },
+  {
+    "id": "module:ui/tabs.init",
+    "longname": "module:ui/tabs.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Init all instances currently in document",
+    "memberof": "module:ui/tabs",
+    "meta": {
+      "lineno": 26,
+      "filename": "tabs.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 215
+  },
+  {
+    "id": "module:ui/tabs.setup",
+    "longname": "module:ui/tabs.setup",
+    "name": "setup",
+    "kind": "function",
+    "scope": "static",
+    "description": "Setup a new TabManager instance",
+    "memberof": "module:ui/tabs",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "Tablist Element",
+        "name": "element"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "Options to set as defaults",
+        "name": "options"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "Instance object"
+      }
+    ],
+    "meta": {
+      "lineno": 51,
+      "filename": "tabs.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 216
+  },
+  {
+    "id": "module:ui/theme-toggle~defaults.onChange",
+    "longname": "module:ui/theme-toggle~defaults.onChange",
+    "name": "onChange",
+    "kind": "function",
+    "scope": "static",
+    "description": "Optional callback to do something when the state changes",
+    "memberof": "module:ui/theme-toggle~defaults",
+    "meta": {
+      "lineno": 71,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 223
+  },
+  {
+    "id": "module:ui/theme-toggle.setDefaults",
+    "longname": "module:ui/theme-toggle.setDefaults",
+    "name": "setDefaults",
+    "kind": "function",
+    "scope": "static",
+    "memberof": "module:ui/theme-toggle",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Change options used as default for dialogs, can then be overridden by data attribute settings on element",
+        "name": "options"
+      }
+    ],
+    "meta": {
+      "lineno": 103,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 229
+  },
+  {
+    "id": "module:ui/theme-toggle.init",
+    "longname": "module:ui/theme-toggle.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize everything in document\n- This will only initialize elements once, it is safe to call on page changes",
+    "memberof": "module:ui/theme-toggle",
+    "meta": {
+      "lineno": 111,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 230
+  },
+  {
+    "id": "module:ui/theme-toggle.setupToggle",
+    "longname": "module:ui/theme-toggle.setupToggle",
+    "name": "setupToggle",
+    "kind": "function",
+    "scope": "static",
+    "description": "Sets up a single toggle",
+    "memberof": "module:ui/theme-toggle",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "A toggle to be setup",
+        "name": "toggle"
+      }
+    ],
+    "meta": {
+      "lineno": 126,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 231
+  },
+  {
+    "id": "module:ui/tooltip.init",
+    "longname": "module:ui/tooltip.init",
+    "name": "init",
+    "kind": "function",
+    "scope": "static",
+    "description": "Initialize default popover",
+    "memberof": "module:ui/tooltip",
+    "meta": {
+      "lineno": 27,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 246
+  },
+  {
+    "id": "module:utils/class-logger.set",
+    "longname": "module:utils/class-logger.set",
+    "name": "set",
+    "kind": "function",
+    "scope": "static",
+    "description": "Changes to make to configuration",
+    "memberof": "module:utils/class-logger",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "name": "changes"
+      }
+    ],
+    "meta": {
+      "lineno": 36,
+      "filename": "class-logger.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 261
+  },
+  {
+    "id": "module:utils/class-logger.log",
+    "longname": "module:utils/class-logger.log",
+    "name": "log",
+    "kind": "function",
+    "scope": "static",
+    "description": "Proxy Console.log",
+    "memberof": "module:utils/class-logger",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Class instance (optional), will rely on classes (debug) property for output",
+        "name": "context"
+      },
+      {
+        "type": {
+          "names": [
+            "any"
+          ]
+        },
+        "variable": true,
+        "name": "messages"
+      }
+    ],
+    "meta": {
+      "lineno": 45,
+      "filename": "class-logger.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 262
+  },
+  {
+    "id": "module:utils/class-logger.logWarning",
+    "longname": "module:utils/class-logger.logWarning",
+    "name": "logWarning",
+    "kind": "function",
+    "scope": "static",
+    "description": "Proxy Console.warn",
+    "memberof": "module:utils/class-logger",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Class instance (optional), will rely on classes (debug) property for output",
+        "name": "context"
+      },
+      {
+        "type": {
+          "names": [
+            "any"
+          ]
+        },
+        "variable": true,
+        "name": "messages"
+      }
+    ],
+    "meta": {
+      "lineno": 56,
+      "filename": "class-logger.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 263
+  },
+  {
+    "id": "module:utils/class-logger.logError",
+    "longname": "module:utils/class-logger.logError",
+    "name": "logError",
+    "kind": "function",
+    "scope": "static",
+    "description": "Proxy Console.error",
+    "memberof": "module:utils/class-logger",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Class instance (optional), will rely on classes (debug) property for output",
+        "name": "context"
+      },
+      {
+        "type": {
+          "names": [
+            "any"
+          ]
+        },
+        "variable": true,
+        "name": "messages"
+      }
+    ],
+    "meta": {
+      "lineno": 67,
+      "filename": "class-logger.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 264
+  },
+  {
+    "id": "module:utils/css.getCustomProperty",
+    "longname": "module:utils/css.getCustomProperty",
+    "name": "getCustomProperty",
+    "kind": "function",
+    "scope": "static",
+    "description": "Generates a CSS custom property name with a given prefix.",
+    "memberof": "module:utils/css",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The prefix to apply to the custom property name.",
+        "name": "prefix"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The base name of the custom property.",
+        "name": "propertyName"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The fully formed CSS custom property name (e.g., \"--prefix-propertyName\")."
+      }
+    ],
+    "meta": {
+      "lineno": 11,
+      "filename": "css.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 266
+  },
+  {
+    "id": "module:utils/dialog.observeDialogToggle",
+    "longname": "module:utils/dialog.observeDialogToggle",
+    "name": "observeDialogToggle",
+    "kind": "function",
+    "scope": "static",
+    "description": "Workaround for poor Safari support of the dialog 'toggle' event.\nWatches for changes to the 'open' attribute and fires a callback.",
+    "memberof": "module:utils/dialog",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLDialogElement"
+          ]
+        },
+        "description": "The dialog element to observe",
+        "name": "dialog"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Function to call when the open state changes. Receives boolean indicating open state.",
+        "name": "callback"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Object with a destroy method to disconnect the observer"
+      }
+    ],
+    "meta": {
+      "lineno": 14,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 268
+  },
+  {
+    "id": "module:utils/dom.dataAttributeToDatasetKey",
+    "longname": "module:utils/dom.dataAttributeToDatasetKey",
+    "name": "dataAttributeToDatasetKey",
+    "kind": "function",
+    "scope": "static",
+    "description": "Converts a data attribute name to its corresponding dataset property name.",
+    "memberof": "module:utils/dom",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The data attribute name (e.g., \"data-ulu-dialog\").",
+        "name": "dataAttribute"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "- The dataset property name (e.g., \"uluDialog\")."
+      }
+    ],
+    "meta": {
+      "lineno": 12,
+      "filename": "dom.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 270
+  },
+  {
+    "id": "module:utils/dom.setPositionClasses",
+    "longname": "module:utils/dom.setPositionClasses",
+    "name": "setPositionClasses",
+    "kind": "function",
+    "scope": "static",
+    "description": "Sets up the positional classes that would come from the equal\n  height module. Needs to be rerun by user when layout changes\n  or new instances are added to the screen\n  - Used for gutter crops\n  - Used for rule placement\n  - **Devs** Remember that default classes should match sass defaults",
+    "memberof": "module:utils/dom",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The grid parent <data-grid=\"\">",
+        "name": "parent"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Override the default equal heights classes",
+        "name": "classes"
+      }
+    ],
+    "meta": {
+      "lineno": 26,
+      "filename": "dom.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 271
+  },
+  {
+    "id": "module:utils/dom.resolveClasses",
+    "longname": "module:utils/dom.resolveClasses",
+    "name": "resolveClasses",
+    "kind": "function",
+    "scope": "static",
+    "description": "Resolves a class input (string or array) into a consistent array of class names.",
+    "memberof": "module:utils/dom",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "The class input, which can be a string, an array of strings, or any other value.",
+        "name": "input"
+      }
+    ],
+    "examples": [
+      "resolveClassArray(\"fas fa-check  my-class\"); // Returns [\"fas\", \"fa-check\", \"my-class\"]\nresolveClassArray([\"another-class\", \"yet-another-class\"]); // Returns [\"another-class\", \"yet-another-class\"]\nresolveClassArray(\"single-class\"); // Returns [\"single-class\"]"
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Array.<string>"
+          ]
+        },
+        "description": "An array of class names. Returns an empty array for invalid or falsy input."
+      }
+    ],
+    "meta": {
+      "lineno": 70,
+      "filename": "dom.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 272
+  },
+  {
+    "id": "module:utils/file-save.FileSave.isBrowserSupported",
+    "longname": "module:utils/file-save.FileSave.isBrowserSupported",
+    "name": "isBrowserSupported",
+    "kind": "function",
+    "scope": "static",
+    "description": "Check for Compatibility (optional, implement on user side)",
+    "memberof": "module:utils/file-save.FileSave",
+    "params": [],
+    "meta": {
+      "lineno": 64,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 280
+  },
+  {
+    "id": "module:utils/floating-ui.createFloatingUi",
+    "longname": "module:utils/floating-ui.createFloatingUi",
+    "name": "createFloatingUi",
+    "kind": "function",
+    "scope": "static",
+    "memberof": "module:utils/floating-ui",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Elements (trigger, content, and optionally contentArrow)",
+        "name": "elements"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "Configuration options for floatingUi",
+        "name": "options"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "floating cleanup function call when no longer needed"
+      }
+    ],
+    "meta": {
+      "lineno": 33,
+      "filename": "floating-ui.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 282
+  },
+  {
+    "id": "module:utils/font-awesome.configureIcons",
+    "longname": "module:utils/font-awesome.configureIcons",
+    "name": "configureIcons",
+    "kind": "function",
+    "scope": "static",
+    "description": "Sets icon settings to Font Awesome icons",
+    "memberof": "module:utils/font-awesome",
+    "meta": {
+      "lineno": 11,
+      "filename": "font-awesome.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 284
+  },
+  {
+    "id": "module:utils/id.newId",
+    "longname": "module:utils/id.newId",
+    "name": "newId",
+    "kind": "function",
+    "scope": "static",
+    "description": "Create new uid",
+    "memberof": "module:utils/id",
+    "meta": {
+      "lineno": 10,
+      "filename": "id.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 286
+  },
+  {
+    "id": "module:utils/id.ensureId",
+    "longname": "module:utils/id.ensureId",
+    "name": "ensureId",
+    "kind": "function",
+    "scope": "static",
+    "description": "Sets an ID if element doesn't have one vie newUid",
+    "memberof": "module:utils/id",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "Element to make sure has an id",
+        "name": "element"
+      }
+    ],
+    "meta": {
+      "lineno": 18,
+      "filename": "id.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 287
+  },
+  {
+    "id": "module:utils/iframe.getSoleIframeLayout",
+    "longname": "module:utils/iframe.getSoleIframeLayout",
+    "name": "getSoleIframeLayout",
+    "kind": "function",
+    "scope": "static",
+    "description": "Checks if an element's sole content is an iframe, and determines its layout type.\nUseful for determining if layout fixes should be applied to containers.",
+    "memberof": "module:utils/iframe",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "The container to check",
+        "name": "container"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object",
+            "null"
+          ]
+        },
+        "description": "Returns an object with iframe details, or null if not a sole iframe"
+      }
+    ],
+    "meta": {
+      "lineno": 15,
+      "filename": "iframe.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 289
+  },
+  {
+    "id": "module:utils/pause-youtube-video.pauseVideos",
+    "longname": "module:utils/pause-youtube-video.pauseVideos",
+    "name": "pauseVideos",
+    "kind": "function",
+    "scope": "static",
+    "description": "Somewhat hacky way to pause the video\n- https://www.digitalredpanther.com/blog/play-pause-stop-youtube-embed\n- Actual JS API documentation (Didn't follow this for now) (https://developers.google.com/youtube/iframe_api_reference)",
+    "memberof": "module:utils/pause-youtube-video",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Element",
+            "Node"
+          ]
+        },
+        "description": "The DOM element to search for and pause videos within",
+        "name": "context"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The YouTube API command. Defaults to 'stopVideo' to preserve legacy behavior.",
+        "name": "command"
+      }
+    ],
+    "meta": {
+      "lineno": 20,
+      "filename": "pause-youtube-video.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 292
+  },
+  {
+    "id": "module:utils/pause-youtube-video.prepVideos",
+    "longname": "module:utils/pause-youtube-video.prepVideos",
+    "name": "prepVideos",
+    "kind": "function",
+    "scope": "static",
+    "description": "Prep videos to be paused\n- Add query parameters for js API\n- Removes all other query parameters from iframe.src",
+    "memberof": "module:utils/pause-youtube-video",
+    "meta": {
+      "lineno": 36,
+      "filename": "pause-youtube-video.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 293
+  },
+  {
+    "id": "module:ui/breakpoints~BreakpointDirection",
+    "longname": "module:ui/breakpoints~BreakpointDirection",
+    "name": "BreakpointDirection",
+    "kind": "class",
+    "scope": "inner",
+    "description": "Used to handle a breakpoints direction's handler and state",
+    "memberof": "module:ui/breakpoints",
+    "meta": {
+      "lineno": 167,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 42
+  },
+  {
+    "id": "module:ui/breakpoints~Breakpoint",
+    "longname": "module:ui/breakpoints~Breakpoint",
+    "name": "Breakpoint",
+    "kind": "class",
+    "scope": "inner",
+    "description": "Single breakpoint management",
+    "memberof": "module:ui/breakpoints",
+    "meta": {
+      "lineno": 236,
+      "filename": "breakpoints.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 48
+  },
+  {
+    "id": "module:ui/collapsible~selfManaged",
+    "longname": "module:ui/collapsible~selfManaged",
+    "name": "selfManaged",
+    "kind": "member",
+    "scope": "inner",
+    "description": "The module won't attach the handlers (you need to do it yourself)",
+    "memberof": "module:ui/collapsible",
+    "meta": {
+      "lineno": 22,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 55
+  },
+  {
+    "id": "module:ui/collapsible~startOpen",
+    "longname": "module:ui/collapsible~startOpen",
+    "name": "startOpen",
+    "kind": "member",
+    "scope": "inner",
+    "description": "This collapsible starts in open state",
+    "memberof": "module:ui/collapsible",
+    "meta": {
+      "lineno": 27,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 56
+  },
+  {
+    "id": "module:ui/collapsible~openClass",
+    "longname": "module:ui/collapsible~openClass",
+    "name": "openClass",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Open/active state class",
+    "memberof": "module:ui/collapsible",
+    "meta": {
+      "lineno": 31,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 57
+  },
+  {
+    "id": "module:ui/collapsible~debug",
+    "longname": "module:ui/collapsible~debug",
+    "name": "debug",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Output debug info",
+    "memberof": "module:ui/collapsible",
+    "meta": {
+      "lineno": 35,
+      "filename": "collapsible.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 58
+  },
+  {
+    "id": "module:ui/resizer~multiplier",
+    "longname": "module:ui/resizer~multiplier",
+    "name": "multiplier",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Amount to increase size by (ie. pointer movement * multiplier)",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 20,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 136
+  },
+  {
+    "id": "module:ui/resizer~overrideMaxDimensions",
+    "longname": "module:ui/resizer~overrideMaxDimensions",
+    "name": "overrideMaxDimensions",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Remove max-width, max-height",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 24,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 137
+  },
+  {
+    "id": "module:ui/resizer~fromX",
+    "longname": "module:ui/resizer~fromX",
+    "name": "fromX",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Specifies the horizontal edge from which resizing occurs.`null` means no horizontal resizing.- Default null",
+    "memberof": "module:ui/resizer",
+    "type": {
+      "names": [
+        "\"left\"",
+        "\"right\"",
+        "null"
+      ]
+    },
+    "meta": {
+      "lineno": 31,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 138
+  },
+  {
+    "id": "module:ui/resizer~fromY",
+    "longname": "module:ui/resizer~fromY",
+    "name": "fromY",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Specifies the vertical edge from which resizing occurs.- `null` means no vertical resizing.- Default null",
+    "memberof": "module:ui/resizer",
+    "type": {
+      "names": [
+        "\"top\"",
+        "\"bottom\"",
+        "null"
+      ]
+    },
+    "meta": {
+      "lineno": 38,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 139
+  },
+  {
+    "id": "module:ui/resizer~keyboardStep",
+    "longname": "module:ui/resizer~keyboardStep",
+    "name": "keyboardStep",
+    "kind": "member",
+    "scope": "inner",
+    "description": "The step in pixels for keyboard resizing with arrow keys.",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 42,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 140
+  },
+  {
+    "id": "module:ui/resizer~keyboardDebounceTime",
+    "longname": "module:ui/resizer~keyboardDebounceTime",
+    "name": "keyboardDebounceTime",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Debounce time in milliseconds for ending a keyboard resize.",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 46,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 141
+  },
+  {
+    "id": "module:ui/resizer~manageEvents",
+    "longname": "module:ui/resizer~manageEvents",
+    "name": "manageEvents",
+    "kind": "member",
+    "scope": "inner",
+    "description": "If true, the Resizer instance will automatically bind its own DOM event listeners\n(pointerdown, keydown) to the control element. If `false`, the user is\nresponsible for calling `resizerInstance.onPointerdown(event)` and\n`resizerInstance.onKeydown(event)` from their own listeners.\nDefault: true",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 54,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 142
+  },
+  {
+    "id": "module:ui/resizer~manageAriaLabel",
+    "longname": "module:ui/resizer~manageAriaLabel",
+    "name": "manageAriaLabel",
+    "kind": "member",
+    "scope": "inner",
+    "description": "If true, the Resizer instance will automatically manage the `aria-label`\nattribute of the control element. If `false`, the user is responsible\nfor setting this attribute.\nDefault: false",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 61,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 143
+  },
+  {
+    "id": "module:ui/resizer~enablePointerResizing",
+    "longname": "module:ui/resizer~enablePointerResizing",
+    "name": "enablePointerResizing",
+    "kind": "member",
+    "scope": "inner",
+    "description": "If true, pointer events (mouse/touch) will enable resizing.\nDefault: true",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 66,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 144
+  },
+  {
+    "id": "module:ui/resizer~enableKeyboardResizing",
+    "longname": "module:ui/resizer~enableKeyboardResizing",
+    "name": "enableKeyboardResizing",
+    "kind": "member",
+    "scope": "inner",
+    "description": "If true, keyboard events (arrow keys) will enable resizing.\nDefault: true",
+    "memberof": "module:ui/resizer",
+    "meta": {
+      "lineno": 71,
+      "filename": "resizer.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 145
+  },
+  {
+    "id": "module:ui/scrollpoint~root",
+    "longname": "module:ui/scrollpoint~root",
+    "name": "root",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Default observer root element",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 57,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 164
+  },
+  {
+    "id": "module:ui/scrollpoint~rootSelector",
+    "longname": "module:ui/scrollpoint~rootSelector",
+    "name": "rootSelector",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Use a selector to select the observer root element",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 61,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 165
+  },
+  {
+    "id": "module:ui/scrollpoint~debug",
+    "longname": "module:ui/scrollpoint~debug",
+    "name": "debug",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Log debug info to console",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 65,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 166
+  },
+  {
+    "id": "module:ui/scrollpoint~horizontal",
+    "longname": "module:ui/scrollpoint~horizontal",
+    "name": "horizontal",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Change scroll orientation to horizontal",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 69,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 167
+  },
+  {
+    "id": "module:ui/scrollpoint~marginStart",
+    "longname": "module:ui/scrollpoint~marginStart",
+    "name": "marginStart",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Margin for observer top or left (depending on orientation)",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 73,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 168
+  },
+  {
+    "id": "module:ui/scrollpoint~marginEnd",
+    "longname": "module:ui/scrollpoint~marginEnd",
+    "name": "marginEnd",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Margin for observer bottom or right (depending on orientation)",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 77,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 169
+  },
+  {
+    "id": "module:ui/scrollpoint~threshold",
+    "longname": "module:ui/scrollpoint~threshold",
+    "name": "threshold",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Threshold for observer",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 81,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 170
+  },
+  {
+    "id": "module:ui/scrollpoint~exit",
+    "longname": "module:ui/scrollpoint~exit",
+    "name": "exit",
+    "kind": "member",
+    "scope": "inner",
+    "description": "The point can exited (else persists)",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 85,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 171
+  },
+  {
+    "id": "module:ui/scrollpoint~exitForward",
+    "longname": "module:ui/scrollpoint~exitForward",
+    "name": "exitForward",
+    "kind": "member",
+    "scope": "inner",
+    "description": "The point can exit from the end",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 89,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 172
+  },
+  {
+    "id": "module:ui/scrollpoint~exitReverse",
+    "longname": "module:ui/scrollpoint~exitReverse",
+    "name": "exitReverse",
+    "kind": "member",
+    "scope": "inner",
+    "description": "The point can exit from the start",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 93,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 173
+  },
+  {
+    "id": "module:ui/scrollpoint~setClasses",
+    "longname": "module:ui/scrollpoint~setClasses",
+    "name": "setClasses",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Set state classes",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 97,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 174
+  },
+  {
+    "id": "module:ui/scrollpoint~classPrefix",
+    "longname": "module:ui/scrollpoint~classPrefix",
+    "name": "classPrefix",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Prefix for classes",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 101,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 175
+  },
+  {
+    "id": "module:ui/scrollpoint~setAttribute",
+    "longname": "module:ui/scrollpoint~setAttribute",
+    "name": "setAttribute",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Set attribute for state (less verbose same info as classes)",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 105,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 176
+  },
+  {
+    "id": "module:ui/scrollpoint~attributeName",
+    "longname": "module:ui/scrollpoint~attributeName",
+    "name": "attributeName",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Attribute name to set state info in",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 109,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 177
+  },
+  {
+    "id": "module:ui/scrollpoint~syncElements",
+    "longname": "module:ui/scrollpoint~syncElements",
+    "name": "syncElements",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Elements that should also get active state info (classes or attributes)",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 117,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 178
+  },
+  {
+    "id": "module:ui/tooltip~accessible",
+    "longname": "module:ui/tooltip~accessible",
+    "name": "accessible",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Should the tooltip and content be linked accessibly\n- Note tooltips can only apply to interactive elements! (ie button, input, role=\"...\", etc)",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "Boolean"
+      ]
+    },
+    "meta": {
+      "lineno": 57,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 248
+  },
+  {
+    "id": "module:ui/tooltip~content",
+    "longname": "module:ui/tooltip~content",
+    "name": "content",
+    "kind": "member",
+    "scope": "inner",
+    "description": "String/markup to insert into tooltip display",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "String"
+      ]
+    },
+    "meta": {
+      "lineno": 62,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 249
+  },
+  {
+    "id": "module:ui/tooltip~fromElement",
+    "longname": "module:ui/tooltip~fromElement",
+    "name": "fromElement",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Pull content from pre-existing content on page",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "String",
+        "Node"
+      ]
+    },
+    "meta": {
+      "lineno": 70,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 250
+  },
+  {
+    "id": "module:ui/tooltip~fromAnchor",
+    "longname": "module:ui/tooltip~fromAnchor",
+    "name": "fromAnchor",
+    "kind": "member",
+    "scope": "inner",
+    "description": "If used on a link that is an anchor link it will display the content of the anchor like fromElement",
+    "memberof": "module:ui/tooltip",
+    "meta": {
+      "lineno": 74,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 251
+  },
+  {
+    "id": "module:ui/tooltip~endOfDocument",
+    "longname": "module:ui/tooltip~endOfDocument",
+    "name": "endOfDocument",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Move the content to the bottom of the document",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "Boolean"
+      ]
+    },
+    "meta": {
+      "lineno": 79,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 252
+  },
+  {
+    "id": "module:ui/tooltip~showEvents",
+    "longname": "module:ui/tooltip~showEvents",
+    "name": "showEvents",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Events to show tooltip on",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "Array.<String>"
+      ]
+    },
+    "meta": {
+      "lineno": 84,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 253
+  },
+  {
+    "id": "module:ui/tooltip~hideEvents",
+    "longname": "module:ui/tooltip~hideEvents",
+    "name": "hideEvents",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Events to hide tooltip on",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "Array.<String>"
+      ]
+    },
+    "meta": {
+      "lineno": 89,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 254
+  },
+  {
+    "id": "module:ui/tooltip~delay",
+    "longname": "module:ui/tooltip~delay",
+    "name": "delay",
+    "kind": "member",
+    "scope": "inner",
+    "description": "Delay when using the directive",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "Number"
+      ]
+    },
+    "meta": {
+      "lineno": 94,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 255
+  },
+  {
+    "id": "module:core/events~events",
+    "longname": "module:core/events~events",
+    "name": "events",
+    "kind": "constant",
+    "scope": "inner",
+    "description": "Event object - called on dispatch",
+    "memberof": "module:core/events",
+    "params": [],
+    "meta": {
+      "lineno": 18,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 15
+  },
+  {
+    "id": "module:core/settings~defaults",
+    "longname": "module:core/settings~defaults",
+    "name": "defaults",
+    "kind": "constant",
+    "scope": "inner",
+    "memberof": "module:core/settings",
+    "params": [],
+    "type": {
+      "names": [
+        "Defaults"
+      ]
+    },
+    "meta": {
+      "lineno": 20,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 25
+  },
+  {
+    "id": "module:ui/print~defaults",
+    "longname": "module:ui/print~defaults",
+    "name": "defaults",
+    "kind": "constant",
+    "scope": "inner",
+    "description": "Default options",
+    "memberof": "module:ui/print",
+    "params": [],
+    "meta": {
+      "lineno": 17,
+      "filename": "print.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 123
+  },
+  {
+    "id": "module:utils/class-logger~config",
+    "longname": "module:utils/class-logger~config",
+    "name": "config",
+    "kind": "constant",
+    "scope": "inner",
+    "description": "Global Configuration Object",
+    "memberof": "module:utils/class-logger",
+    "params": [],
+    "meta": {
+      "lineno": 10,
+      "filename": "class-logger.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 260
+  },
+  {
+    "id": "module:core/events~initResize",
+    "longname": "module:core/events~initResize",
+    "name": "initResize",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Setup resize handler/dispatch",
+    "memberof": "module:core/events",
+    "params": [],
+    "meta": {
+      "lineno": 84,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 20
+  },
+  {
+    "id": "module:core/events~initPrint",
+    "longname": "module:core/events~initPrint",
+    "name": "initPrint",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Setup print listeners",
+    "memberof": "module:core/events",
+    "params": [],
+    "meta": {
+      "lineno": 91,
+      "filename": "events.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 21
+  },
+  {
+    "id": "module:ui/details-group.setupGroup~queryChildren",
+    "longname": "module:ui/details-group.setupGroup~queryChildren",
+    "name": "queryChildren",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Queries all current children in element",
+    "memberof": "module:ui/details-group.setupGroup",
+    "params": [],
+    "ignore": true,
+    "meta": {
+      "lineno": 65,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 68
+  },
+  {
+    "id": "module:ui/details-group.setupGroup~setupChildren",
+    "longname": "module:ui/details-group.setupGroup~setupChildren",
+    "name": "setupChildren",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Sets up any children not already setup in group",
+    "memberof": "module:ui/details-group.setupGroup",
+    "params": [],
+    "meta": {
+      "lineno": 72,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 69
+  },
+  {
+    "id": "module:ui/details-group.setupGroup~toggleHandler",
+    "longname": "module:ui/details-group.setupGroup~toggleHandler",
+    "name": "toggleHandler",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Toggle handler for child details element\n- For things like one open at a time",
+    "memberof": "module:ui/details-group.setupGroup",
+    "params": [],
+    "ignore": true,
+    "meta": {
+      "lineno": 88,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 70
+  },
+  {
+    "id": "module:ui/details-group.setupGroup~destroy",
+    "longname": "module:ui/details-group.setupGroup~destroy",
+    "name": "destroy",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Function removes all handlers and init attributes",
+    "memberof": "module:ui/details-group.setupGroup",
+    "params": [],
+    "meta": {
+      "lineno": 103,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 71
+  },
+  {
+    "id": "module:ui/dialog~prepVideos",
+    "longname": "module:ui/dialog~prepVideos",
+    "name": "prepVideos",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Pause native and youtube videos for a given dialog",
+    "memberof": "module:ui/dialog",
+    "params": [],
+    "meta": {
+      "lineno": 224,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 88
+  },
+  {
+    "id": "module:ui/dialog~pauseVideos",
+    "longname": "module:ui/dialog~pauseVideos",
+    "name": "pauseVideos",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Prep videos to be paused for a given dialog",
+    "memberof": "module:ui/dialog",
+    "params": [],
+    "meta": {
+      "lineno": 231,
+      "filename": "dialog.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 89
+  },
+  {
+    "id": "module:ui/modal-builder~separateDialogOptions",
+    "longname": "module:ui/modal-builder~separateDialogOptions",
+    "name": "separateDialogOptions",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Returns JSON string to embed in data-ulu-dialog for dialog handling",
+    "memberof": "module:ui/modal-builder",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Config object to pull dialog specific settings from",
+        "name": "config"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        }
+      }
+    ],
+    "meta": {
+      "lineno": 270,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 107
+  },
+  {
+    "id": "module:ui/print~setupTrigger",
+    "longname": "module:ui/print~setupTrigger",
+    "name": "setupTrigger",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Setup a single trigger (can be used manually without attr if needed)",
+    "memberof": "module:ui/print",
+    "params": [],
+    "meta": {
+      "lineno": 42,
+      "filename": "print.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 126
+  },
+  {
+    "id": "module:ui/scroll-slider~setupSlider",
+    "longname": "module:ui/scroll-slider~setupSlider",
+    "name": "setupSlider",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Setup instance of scroll slider based on data-attributes",
+    "memberof": "module:ui/scroll-slider",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Node"
+          ]
+        },
+        "description": "The scroll slider container",
+        "name": "container"
+      }
+    ],
+    "meta": {
+      "lineno": 43,
+      "filename": "scroll-slider.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 160
+  },
+  {
+    "id": "module:ui/scrollpoint~onChange",
+    "longname": "module:ui/scrollpoint~onChange",
+    "name": "onChange",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Callback called when state changes",
+    "memberof": "module:ui/scrollpoint",
+    "meta": {
+      "lineno": 121,
+      "filename": "scrollpoint.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 179
+  },
+  {
+    "id": "module:ui/theme-toggle.setupToggle~toggleState",
+    "longname": "module:ui/theme-toggle.setupToggle~toggleState",
+    "name": "toggleState",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Instance function to get the next theme in cycle",
+    "memberof": "module:ui/theme-toggle.setupToggle",
+    "params": [],
+    "meta": {
+      "lineno": 156,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 232
+  },
+  {
+    "id": "module:ui/theme-toggle.setupToggle~onToggleClick",
+    "longname": "module:ui/theme-toggle.setupToggle~onToggleClick",
+    "name": "onToggleClick",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Handler for click for both toggle and remote toggles",
+    "memberof": "module:ui/theme-toggle.setupToggle",
+    "params": [],
+    "meta": {
+      "lineno": 170,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 233
+  },
+  {
+    "id": "module:ui/theme-toggle.setupToggle~attachRemotes",
+    "longname": "module:ui/theme-toggle.setupToggle~attachRemotes",
+    "name": "attachRemotes",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Utility to attach remote handlers\n- Used initially and when page is modified",
+    "memberof": "module:ui/theme-toggle.setupToggle",
+    "params": [],
+    "meta": {
+      "lineno": 178,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 234
+  },
+  {
+    "id": "module:ui/theme-toggle.setupToggle~cleanupRemotes",
+    "longname": "module:ui/theme-toggle.setupToggle~cleanupRemotes",
+    "name": "cleanupRemotes",
+    "kind": "function",
+    "scope": "inner",
+    "description": "This only cleans up remotes that are still in DOM\n- For ones that have been removed we don't store any references to them",
+    "memberof": "module:ui/theme-toggle.setupToggle",
+    "params": [],
+    "meta": {
+      "lineno": 191,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 235
+  },
+  {
+    "id": "module:ui/theme-toggle.setupToggle~destroy",
+    "longname": "module:ui/theme-toggle.setupToggle~destroy",
+    "name": "destroy",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Function to cleanup listeners and remove init attributes",
+    "memberof": "module:ui/theme-toggle.setupToggle",
+    "params": [],
+    "meta": {
+      "lineno": 203,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 236
+  },
+  {
+    "id": "module:ui/theme-toggle~setState",
+    "longname": "module:ui/theme-toggle~setState",
+    "name": "setState",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Change the state of target/toggle",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "meta": {
+      "lineno": 226,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 237
+  },
+  {
+    "id": "module:ui/theme-toggle~resolveInitial",
+    "longname": "module:ui/theme-toggle~resolveInitial",
+    "name": "resolveInitial",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Function determines what the initial state is\n- Check OS preference, saved preference, or initialState depending on options",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "The resolved initial theme's key"
+      }
+    ],
+    "meta": {
+      "lineno": 298,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 238
+  },
+  {
+    "id": "module:ui/theme-toggle~getMatchingThemeQuery",
+    "longname": "module:ui/theme-toggle~getMatchingThemeQuery",
+    "name": "getMatchingThemeQuery",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Check each theme for a matching media query",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Matching theme key"
+      }
+    ],
+    "meta": {
+      "lineno": 322,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 239
+  },
+  {
+    "id": "module:ui/theme-toggle~getNextThemeKey",
+    "longname": "module:ui/theme-toggle~getNextThemeKey",
+    "name": "getNextThemeKey",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Get the next key in the themes based on the currentKey",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "meta": {
+      "lineno": 335,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 240
+  },
+  {
+    "id": "module:ui/theme-toggle~getOtherThemes",
+    "longname": "module:ui/theme-toggle~getOtherThemes",
+    "name": "getOtherThemes",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Get all other theme object except the current",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "meta": {
+      "lineno": 347,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 241
+  },
+  {
+    "id": "module:ui/theme-toggle~concatThemeClasses",
+    "longname": "module:ui/theme-toggle~concatThemeClasses",
+    "name": "concatThemeClasses",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Concatenates multiple class properties into one array",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "meta": {
+      "lineno": 355,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 242
+  },
+  {
+    "id": "module:ui/theme-toggle~getStorageKey",
+    "longname": "module:ui/theme-toggle~getStorageKey",
+    "name": "getStorageKey",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Creates the storage key (either prefix or prefix with group name)",
+    "memberof": "module:ui/theme-toggle",
+    "params": [],
+    "meta": {
+      "lineno": 364,
+      "filename": "theme-toggle.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 243
+  },
+  {
+    "id": "module:ui/tooltip~template",
+    "longname": "module:ui/tooltip~template",
+    "name": "template",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Template for the content display",
+    "memberof": "module:ui/tooltip",
+    "meta": {
+      "lineno": 98,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 256
+  },
+  {
+    "id": "module:ui/tooltip~onChange",
+    "longname": "module:ui/tooltip~onChange",
+    "name": "onChange",
+    "kind": "function",
+    "scope": "inner",
+    "description": "Callback when tooltip is shown or hidden",
+    "memberof": "module:ui/tooltip",
+    "type": {
+      "names": [
+        "function"
+      ]
+    },
+    "meta": {
+      "lineno": 111,
+      "filename": "tooltip.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 257
+  },
+  {
+    "id": "module:core/settings~Defaults",
+    "longname": "module:core/settings~Defaults",
+    "name": "Defaults",
+    "kind": "typedef",
+    "scope": "inner",
+    "description": "Default settings",
+    "memberof": "module:core/settings",
+    "type": {
+      "names": [
+        "object"
+      ]
+    },
+    "properties": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The CSS class string for the close icon",
+        "name": "iconClassClose"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The CSS class string for the drag X icon",
+        "name": "iconClassDragX"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The CSS class string for the dragging in both directions",
+        "name": "iconClassDragBoth"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The CSS class string for the previous icon",
+        "name": "iconClassPrevious"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The CSS class string for the next icon",
+        "name": "iconClassNext"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The prefix to use for CSS custom properties",
+        "name": "cssvarPrefix"
+      }
+    ],
+    "meta": {
+      "lineno": 6,
+      "filename": "settings.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/core"
+    },
+    "order": 24
+  },
+  {
+    "id": "module:ui/details-group~DetailsGroupInstance",
+    "longname": "module:ui/details-group~DetailsGroupInstance",
+    "name": "DetailsGroupInstance",
+    "kind": "typedef",
+    "scope": "inner",
+    "memberof": "module:ui/details-group",
+    "type": {
+      "names": [
+        "Object"
+      ]
+    },
+    "properties": [
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "A function to remove event listeners and attributes.",
+        "name": "destroy"
+      },
+      {
+        "type": {
+          "names": [
+            "HTMLElement"
+          ]
+        },
+        "description": "The parent element.",
+        "name": "element"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "A function to initialize the child details elements.",
+        "name": "setupChildren"
+      }
+    ],
+    "meta": {
+      "lineno": 37,
+      "filename": "details-group.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 66
+  },
+  {
+    "id": "module:ui/modal-builder~DefaultModalOptions",
+    "longname": "module:ui/modal-builder~DefaultModalOptions",
+    "name": "DefaultModalOptions",
+    "kind": "typedef",
+    "scope": "inner",
+    "description": "Default builder options (extends dialog defaults, watch name collisions)\n- Decided to extend defaults so the interface in HTML is singular\n- This is sometimes easier to template (merging and serializing options\nin twig for example)",
+    "memberof": "module:ui/modal-builder",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The ID for the new modal.",
+        "name": "template.id"
+      },
+      {
+        "type": {
+          "names": [
+            "DefaultModalOptions"
+          ]
+        },
+        "description": "The resolved modal options.",
+        "name": "template.config"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The HTML string for the close icon."
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The HTML string for the resizer icon."
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Markup for the modal."
+      }
+    ],
+    "type": {
+      "names": [
+        "object"
+      ]
+    },
+    "properties": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "null"
+          ]
+        },
+        "description": "The title of the modal. Defaults to `null`.",
+        "name": "title"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "null"
+          ]
+        },
+        "description": "The class name for an icon to display in the title. Defaults to `null`.",
+        "name": "titleIcon"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Extra class/classes to add to title",
+        "name": "titleClass"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Set the aria-labelledby attribute to a specific title within the modal, to connect to a custom title implementation, if using built in title this will be set automatically",
+        "name": "labelledby"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Set the aria-describedby on the dialog, elements id, to tie a specific part of the content to be the accessible description",
+        "name": "describedby"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, the modal will not prevent interaction with elements behind it. Defaults to `false`.",
+        "name": "nonModal"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, the modal will be appended to the end of the `document.body`. Defaults to `true`.",
+        "name": "documentEnd"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, the modal will be resizable. Defaults to `false`.",
+        "name": "allowResize"
+      },
+      {
+        "type": {
+          "names": [
+            "\"center\"",
+            "\"top-left\"",
+            "\"top-center\"",
+            "\"top-right\"",
+            "\"bottom-left\"",
+            "\"bottom-center\"",
+            "\"bottom-right\""
+          ]
+        },
+        "description": "The initial position of the modal. Defaults to `\"center\"`.",
+        "name": "position"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, the modal body will fill the available space. Defaults to `false`.",
+        "name": "bodyFills"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, no backdrop will be displayed behind the modal. Defaults to `false`.",
+        "name": "noBackdrop"
+      },
+      {
+        "type": {
+          "names": [
+            "\"default\"",
+            "\"small\"",
+            "\"large\"",
+            "\"fullscreen\""
+          ]
+        },
+        "description": "The size of the modal. Defaults to `\"default\"`.",
+        "name": "size"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, the modal content will be optimized for printing. Defaults to `false`.",
+        "name": "print"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If `true`, the modal will not have a minimum height. Defaults to `false`.",
+        "name": "noMinHeight"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Additional CSS class(es) to add to the modal. Defaults to `\"\"`.",
+        "name": "class"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The base CSS class for the modal elements. Defaults to `\"modal\"`.",
+        "name": "baseClass"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The class name for the close button. Defaults to 'button button--icon' styling.",
+        "name": "classClose"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The class name for the close icon. Defaults to 'button__icon' styling. Uses the wrapped setting string.",
+        "name": "classCloseIcon"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The class name for the resizer icon. Uses the wrapped setting string.",
+        "name": "classResizerIcon"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "Node"
+          ]
+        },
+        "description": "Element or selector to use as the footer (will be moved to dialog on creation, used for DOM API)",
+        "name": "footerElement"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "Node"
+          ]
+        },
+        "description": "Markup to use in the footer",
+        "name": "footerHtml"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "Enables debug logging. Defaults to `false`.",
+        "name": "debug"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "Opt-in convenience behavior. If the modal body's sole content is an iframe, it automatically applies layout fixes. If the iframe has static width/height attributes (like YouTube), it retains that aspect ratio responsively. Otherwise, it forces the iframe to fill the modal. Defaults to `false`.",
+        "name": "autoIframe"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "A function that returns the HTML for the close icon.",
+        "name": "templateCloseIcon"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "The resolved modal configuration object.",
+        "name": "templateCloseIcon.config"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "A function that returns the HTML for the resizer icon.",
+        "name": "templateResizerIcon"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "The resolved modal configuration object.",
+        "name": "templateResizerIcon.config"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "The default modal template function.",
+        "name": "template"
+      }
+    ],
+    "meta": {
+      "lineno": 23,
+      "filename": "modal-builder.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 102
+  },
+  {
+    "id": "module:ui/tab-manager~TabManagerOptions",
+    "longname": "module:ui/tab-manager~TabManagerOptions",
+    "name": "TabManagerOptions",
+    "kind": "typedef",
+    "scope": "inner",
+    "memberof": "module:ui/tab-manager",
+    "type": {
+      "names": [
+        "Object"
+      ]
+    },
+    "properties": [
+      {
+        "type": {
+          "names": [
+            "String",
+            "null"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": null,
+        "description": "\"horizontal\"|\"vertical\", auto-detected if omitted.",
+        "name": "orientation"
+      },
+      {
+        "type": {
+          "names": [
+            "Number"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": 0,
+        "description": "Index to activate on load.",
+        "name": "initialIndex"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "Allow all arrow keys to navigate regardless of orientation.",
+        "name": "allArrows"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "Activate tab based on URL hash on initialization.",
+        "name": "openByUrlHash"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "Update URL hash when a new tab is activated.",
+        "name": "setUrlHash"
+      },
+      {
+        "type": {
+          "names": [
+            "Boolean"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": false,
+        "description": "Automatically match the height of all panels.",
+        "name": "equalHeights"
+      },
+      {
+        "type": {
+          "names": [
+            "function",
+            "null"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": null,
+        "description": "Callback fired after initialization: (instance) => {}",
+        "name": "onReady"
+      },
+      {
+        "type": {
+          "names": [
+            "function",
+            "null"
+          ]
+        },
+        "optional": true,
+        "defaultvalue": null,
+        "description": "Callback fired when tab changes: (active, previous) => {}",
+        "name": "onChange"
+      }
+    ],
+    "meta": {
+      "lineno": 8,
+      "filename": "tab-manager.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/ui"
+    },
+    "order": 200
+  },
+  {
+    "id": "module:utils/file-save~FileSaveOptions",
+    "longname": "module:utils/file-save~FileSaveOptions",
+    "name": "FileSaveOptions",
+    "kind": "typedef",
+    "scope": "inner",
+    "description": "Options",
+    "memberof": "module:utils/file-save",
+    "type": {
+      "names": [
+        "Object"
+      ]
+    },
+    "properties": [
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Filename for blob when creating a link (ie createLink) [default \"filesave-file.txt\"]",
+        "name": "filename"
+      },
+      {
+        "type": {
+          "names": [
+            "String"
+          ]
+        },
+        "description": "Filename for blob when creating a link (ie createLink) [default \"text/plain;charset=utf-8\"]",
+        "name": "type"
+      }
+    ],
+    "meta": {
+      "lineno": 5,
+      "filename": "file-save.js",
+      "path": "/Users/joe/Projects/Personal/Github/frontend/lib/js/utils"
+    },
+    "order": 274
+  }
+]
