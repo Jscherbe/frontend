@@ -1,0 +1,5 @@
+Todos:
+  ☐ For new colocated demos we need some to be displayed in a modal when in the docs site 
+    * Things that need the full page (hero, etc)
+  ☐ Need to go back and make sure the API structure is solid
+    * We have a good start but we need to think about how this will all work, and if entities is correct/future-proof
