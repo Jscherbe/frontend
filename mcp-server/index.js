@@ -7,9 +7,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const sassdocPath = path.resolve(__dirname, "../site/mcp-data/mcp-sassdoc.json");
 const jsdocPath = path.resolve(__dirname, "../site/mcp-data/mcp-jsdoc.json");
+const snippetsPath = path.resolve(__dirname, "../site/mcp-data/mcp-snippets.json");
 
 let sassData = {};
 let jsData = [];
+let snippetsData = {};
 
 try {
   if (fs.existsSync(sassdocPath)) {
@@ -27,6 +29,14 @@ try {
   console.error("Warning: Failed to load jsdoc data", e);
 }
 
+try {
+  if (fs.existsSync(snippetsPath)) {
+    snippetsData = JSON.parse(fs.readFileSync(snippetsPath, "utf-8"));
+  }
+} catch (e) {
+  console.error("Warning: Failed to load snippets data", e);
+}
+
 const definition = {
   meta: {
     name: "@ulu/frontend",
@@ -35,7 +45,8 @@ const definition = {
   },
   resources: [],
   entities: [],
-  tokens: []
+  tokens: [],
+  snippets: snippetsData // Pass the snippets data through to the definition
 };
 
 // Process Sassdoc
@@ -49,7 +60,10 @@ for (const [groupName, items] of Object.entries(sassData)) {
       name: context.name || item.title || "Unknown",
       description: item.description || "No description provided.",
       snippets: {
-        scss: context.code || context.value || ""
+        scss: context.code || context.value || "",
+        // If this sassdoc item matches a component snippet name, we could attach it here
+        // For example, if it's a mixin/file named "button" and snippetsData["button"] exists.
+        html: snippetsData[context.name] || []
       }
     });
   }

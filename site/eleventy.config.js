@@ -8,6 +8,7 @@ import navTreePlugin from "@ulu/eleventy-plugin-nav-tree";
 import sassdocPlugin from "./src/plugins/sassdoc/index.js";
 import optionsTablePlugin from "./src/plugins/options-table/index.js";
 import jsdocPlugin from "./src/plugins/jsdoc/index.js";
+import mcpSnippetsPlugin from "./src/plugins/mcp-snippets/index.js";
 import { shortcodes, pairedShortcodes } from "./src/templates/shortcodes/index.js";
 import pluginCodePreview from "./src/plugins/code-preview/index.js";
 
@@ -48,6 +49,7 @@ export default async function(eleventyConfig) {
   if (!NO_DOC_GEN) {
     eleventyConfig.addPlugin(jsdocPlugin);
     eleventyConfig.addPlugin(sassdocPlugin);
+    eleventyConfig.addPlugin(mcpSnippetsPlugin);
   }
   
   // Adds table markup output from data

@@ -1,0 +1,25 @@
+{
+  "button": [
+    {
+      "title": "Primary Button",
+      "description": "The default button style for main actions.",
+      "wrapperClass": "demo-theme-box demo-width-small",
+      "html": "<button class=\"button\">Primary Button</button>"
+    },
+    {
+      "title": "Secondary Button",
+      "description": "An alternative style for less important actions.",
+      "html": "<button class=\"button button--secondary\">Secondary Button</button>"
+    },
+    {
+      "title": "Small Button",
+      "description": "A smaller button variant.",
+      "html": "<button class=\"button button--small\">Small Button</button>"
+    },
+    {
+      "title": "Large Button",
+      "description": "A larger button variant.",
+      "html": "<button class=\"button button--large\">Large Button</button>"
+    }
+  ]
+}

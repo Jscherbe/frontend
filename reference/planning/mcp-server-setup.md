@@ -66,6 +66,38 @@ It will export:
 * **Server Implementation:** Created the base `KnowledgeBaseServer` using the new `McpServer` and `zod` APIs. Configured `mcp-server/index.js` to read from the generated `site/mcp-data/` artifacts and serve them dynamically. Tested successful initialization.
 
 ### Upcoming Planning
-1. **HTML Snippets:** We need to discuss and design a unified approach for extracting or generating clean HTML component snippets, keeping in mind how they are currently documented in `site/pages/demos/`.
-2. **Final Integration Strategy:** Determine how the server will be packaged and consumed by end-users.
-3. **Vue Integration:** Plan the strategy for setting up a similar knowledge base/MCP server for the companion `@ulu/frontend-vue` library, which consumes this library's SCSS and specific JS utilities.
+
+#### 1. HTML Snippets Extraction Strategy (Colocated Demos)
+To provide the MCP server (and eventually the Eleventy documentation) with clean, structured HTML snippets, we will adopt a **Colocated HTML Demo** architecture.
+
+**The Concept:**
+Instead of maintaining a separate, sprawling `site/pages/demos/` directory with Markdown files fighting HTML formatting, we will place a `.demo.html` file directly alongside the component's source `.scss` file (e.g., `lib/scss/components/_button.demo.html` next to `_button.scss`).
+
+**The Authoring Format:**
+We will use pure HTML files to ensure perfect editor support (syntax highlighting, Prettier formatting). To define multiple variations of a component and attach metadata (like titles or wrapper classes for the docs), we will use a specific JSON-in-HTML comment signature: `<!-- @ulu-demo { ... } -->`.
+
+*Example `_button.demo.html`:*
+```html
+<!-- @ulu-demo {
+  "title": "Primary",
+  "description": "The default button style for main actions.",
+  "wrapperClass": "demo-theme-box" 
+} -->
+<button class="button">Primary</button>
+
+<!-- @ulu-demo {
+  "title": "Secondary"
+} -->
+<button class="button button--secondary">Secondary</button>
+```
+
+**The Pipeline:**
+1.  **The Parser:** We will create a utility script that reads these `.demo.html` files, uses a Regular Expression (e.g., `/<!--\s*@ulu-demo\s*(\{[\s\S]*?\})\s*-->/g`) to extract the JSON metadata, and captures the raw HTML snippet that follows it.
+2.  **MCP Extraction:** During `npm run build:mcp-data`, this parser will compile all snippets into `site/mcp-data/mcp-snippets.json`. The MCP server will expose a tool to query these clean, un-wrapped snippets.
+3.  **Docs Integration (Future):** We will eventually create an Eleventy shortcode to dynamically pull these colocated snippets into the main documentation site, automatically applying any `wrapperClass` (like those defined in `_demo.scss`) for visual presentation without polluting the raw source code.
+
+#### 2. Final Integration Strategy
+Determine how the server will be packaged and consumed by end-users (e.g., exporting the server factory vs. a standalone CLI).
+
+#### 3. Vue Integration
+Plan the strategy for setting up a similar knowledge base/MCP server for the companion `@ulu/frontend-vue` library, which consumes this library's SCSS and specific JS utilities.
