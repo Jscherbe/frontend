@@ -90,6 +90,9 @@ const commonConfig = {
   buildEnd: (data) => {
     if (process.env.BUILD_MCP) {
       Object.assign(mcpDataAccumulator, getCleanMcpData(data.groups));
+    } else {
+      // Add eleventy layout 
+      data?.pages?.forEach(page => page.frontmatter.layout = "unformatted");
     }
   }
 };

@@ -1,0 +1,91 @@
+<!-- @ulu-demo
+  title: Standard Data Table
+  description: A native HTML table styled for data display, including headers, footers, and a caption.
+-->
+<table class="data-table">
+  <caption>Quarterly Performance Summary</caption>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Previous Q</th>
+      <th>Current Q</th>
+      <th>Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Product Sales</td>
+      <td>$45,000</td>
+      <td>$52,000</td>
+      <td style="color: green;">+15%</td>
+    </tr>
+    <tr>
+      <td>Service Fees</td>
+      <td>$12,000</td>
+      <td>$11,500</td>
+      <td style="color: red;">-4%</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td>$57,000</td>
+      <td>$63,500</td>
+      <td>+11%</td>
+    </tr>
+  </tfoot>
+</table>
+
+<!-- @ulu-demo
+  title: Striped Table
+  description: Using the `data-table--striped` modifier to alternate background colors for rows.
+-->
+<table class="data-table data-table--striped">
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th>Department</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jane Doe</td>
+      <td>Engineering</td>
+      <td>Active</td>
+    </tr>
+    <tr>
+      <td>John Smith</td>
+      <td>Marketing</td>
+      <td>On Leave</td>
+    </tr>
+    <tr>
+      <td>Alice Johnson</td>
+      <td>Product</td>
+      <td>Active</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- @ulu-demo
+  title: Large First Column
+  description: The `data-table--large-first` modifier ensures the first column has a larger minimum width, useful for row labels.
+-->
+<table class="data-table data-table--large-first">
+  <thead>
+    <tr>
+      <th>Specification Feature Description</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Memory (RAM)</td>
+      <td>32GB DDR5</td>
+    </tr>
+    <tr>
+      <td>Processor (CPU)</td>
+      <td>8-Core 4.2GHz</td>
+    </tr>
+  </tbody>
+</table>

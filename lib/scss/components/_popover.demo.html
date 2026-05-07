@@ -1,0 +1,48 @@
+<!-- @ulu-demo
+  title: Basic Popover
+  description: A standard popover that appears near a trigger element, including a pointer arrow.
+-->
+<div style="padding: 4rem 0;">
+  <button class="button" data-ulu-popover-trigger>Toggle Popover</button>
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      <p>This is the content of the popover. It can contain text, links, or other small UI elements.</p>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Popover with Footer
+  description: Using the `popover__footer` element to add actions or metadata at the bottom.
+-->
+<div style="padding: 4rem 0;">
+  <button class="button" data-ulu-popover-trigger>Open Menu</button>
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__header">Options</div>
+    <div class="popover__inner">
+      <ul class="list-lines list-lines--dense">
+        <li>Notification Settings</li>
+        <li>Privacy Controls</li>
+      </ul>
+    </div>
+    <div class="popover__footer">
+      <a href="#" class="type-small">Learn More</a>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Tooltip Modifier
+  description: The `popover--tooltip` modifier creates a smaller, non-interactive overlay typically used for labels.
+-->
+<div style="padding: 2rem 0;">
+  <button class="button" data-ulu-popover-trigger='{ "floating": { "placement": "top" }, "trigger": "hover" }'>Hover Me</button>
+  <div class="popover popover--tooltip" data-ulu-popover-content>
+    <div class="popover__inner">
+      Helpful hint about this action
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>

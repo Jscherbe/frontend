@@ -1,0 +1,49 @@
+<!-- @ulu-demo
+  title: Basic Card
+  description: A standard card with a title, body content, and a footer.
+-->
+<article class="card">
+  <div class="card__body">
+    <div class="card__main">
+      <h3 class="card__title">Card Title</h3>
+      <p>This is the main content of the card. It provides a brief summary or introduction to a more detailed resource.</p>
+    </div>
+  </div>
+  <div class="card__footer">
+    <a href="#" class="button button--small">Read More</a>
+  </div>
+</article>
+
+<!-- @ulu-demo
+  title: Card with Image
+  description: A card that includes a featured image at the top.
+-->
+<article class="card">
+  <div class="card__image">
+    <img src="https://picsum.photos/id/1035/600/400" alt="Card Image">
+  </div>
+  <div class="card__body">
+    <div class="card__main">
+      <h3 class="card__title">Featured Resource</h3>
+      <p>Discover interesting insights and helpful tips in our latest featured article.</p>
+    </div>
+  </div>
+</article>
+
+<!-- @ulu-demo
+  title: Clickable Card (Proxy Click)
+  description: A card where the entire area is clickable, using a proxy click pattern for accessibility.
+-->
+<article class="card" data-ulu-proxy-click>
+  <div class="card__image">
+    <img src="https://picsum.photos/id/1019/600/400" alt="Card Image">
+  </div>
+  <div class="card__body">
+    <div class="card__main">
+      <h3 class="card__title">
+        <a href="#" class="card__title-link" data-ulu-proxy-click-source>Entire Card is Clickable</a>
+      </h3>
+      <p>This pattern allows the whole card to act as a link while maintaining a single, accessible anchor point.</p>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,31 @@
+<!-- @ulu-demo
+  title: Standard Panel
+  description: A structured container with a distinct header, body, and footer.
+-->
+<div class="panel">
+  <div class="panel__row panel__row--header">
+    <h3 class="h4">Account Overview</h3>
+  </div>
+  <div class="panel__row">
+    <p>Your subscription is active and will renew on November 15th. You have 3 active projects and 12 collaborators.</p>
+  </div>
+  <div class="panel__row panel__row--footer">
+    <a href="#" class="button button--small">Manage Subscription</a>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Transparent Panel with Separators
+  description: Using the `panel--transparent` modifier for a seamless look, with `panel__row--separator-top` for visual division.
+-->
+<div class="panel panel--transparent">
+  <div class="panel__row panel__row--header">
+    <h3 class="h4">System Status</h3>
+  </div>
+  <div class="panel__row">
+    <p>All systems are operational. No active incidents reported in the last 24 hours.</p>
+  </div>
+  <div class="panel__row panel__row--separator-top">
+    <p class="type-small">Last checked: 5 minutes ago</p>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<!-- @ulu-demo
+  title: Image Slider
+  description: A standard carousel for cycling through images.
+-->
+<div class="slider" data-ulu-slider>
+  <div class="slider__control-context">
+    <ul class="slider__track" data-ulu-slider-track>
+      <li class="slider__slide" data-ulu-slider-slide>
+        <img src="https://picsum.photos/id/10/800/400" alt="Slide 1">
+      </li>
+      <li class="slider__slide" data-ulu-slider-slide>
+        <img src="https://picsum.photos/id/11/800/400" alt="Slide 2">
+      </li>
+      <li class="slider__slide" data-ulu-slider-slide>
+        <img src="https://picsum.photos/id/12/800/400" alt="Slide 3">
+      </li>
+    </ul>
+    <div class="Slider__controls">
+      <button class="button button--icon Slider__control-button Slider__control-button--previous" data-ulu-slider-previous aria-label="Previous Slide">
+        <span class="css-icon css-icon--angle-left"></span>
+      </button>
+      <button class="button button--icon Slider__control-button Slider__control-button--next" data-ulu-slider-next aria-label="Next Slide">
+        <span class="css-icon css-icon--angle-right"></span>
+      </button>
+    </div>
+  </div>
+  <div class="Slider__nav" data-ulu-slider-nav></div>
+</div>

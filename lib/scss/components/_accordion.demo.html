@@ -1,0 +1,89 @@
+<!-- @ulu-demo
+  title: Basic Accordion
+  description: A standard accordion stack with plus-to-minus icons and one-at-a-time behavior.
+-->
+<div data-ulu-details-group='{ "onlyOneOpen": true }'>
+  <details class="accordion">
+    <summary class="accordion__summary">
+      What is your return policy?
+      <span class="accordion__icon" aria-hidden="true">
+        <span class="css-icon css-icon--plus-to-minus"></span>
+      </span>
+    </summary>
+    <div class="accordion__content">
+      <p>You can return any unused item within 30 days of purchase for a full refund.</p>
+    </div>
+  </details>
+  <details class="accordion">
+    <summary class="accordion__summary">
+      Do you offer customer support?
+      <span class="accordion__icon" aria-hidden="true">
+        <span class="css-icon css-icon--plus-to-minus"></span>
+      </span>
+    </summary>
+    <div class="accordion__content">
+      <p>Yes, our customer support team is available 24/7 via email, live chat, or phone.</p>
+    </div>
+  </details>
+</div>
+
+<!-- @ulu-demo
+  title: Transparent Variant
+  description: The `accordion--transparent` modifier blends the component into the background.
+-->
+<div data-ulu-details-group='{ "onlyOneOpen": true }'>
+  <details class="accordion accordion--transparent">
+    <summary class="accordion__summary">
+      Product Features
+      <span class="accordion__icon" aria-hidden="true">
+        <span class="css-icon css-icon--angle-right-to-down"></span>
+      </span>
+    </summary>
+    <div class="accordion__content">
+      <ul>
+        <li>Water-resistant design</li>
+        <li>24-hour battery life</li>
+      </ul>
+    </div>
+  </details>
+  <details class="accordion accordion--transparent">
+    <summary class="accordion__summary">
+      Warranty Information
+      <span class="accordion__icon" aria-hidden="true">
+        <span class="css-icon css-icon--angle-right-to-down"></span>
+      </span>
+    </summary>
+    <div class="accordion__content">
+      <p>This product comes with a one-year limited warranty covering manufacturer defects.</p>
+    </div>
+  </details>
+</div>
+
+<!-- @ulu-demo
+  title: Borderless Variant
+  description: The `accordion--borderless` modifier removes external borders for an inline look.
+-->
+<div data-ulu-details-group='{ "onlyOneOpen": true }'>
+  <details class="accordion accordion--borderless">
+    <summary class="accordion__summary">
+      Privacy Settings
+      <span class="accordion__icon" aria-hidden="true">
+        <span class="css-icon css-icon--angle-down-to-up"></span>
+      </span>
+    </summary>
+    <div class="accordion__content">
+      <p>Manage who can see your profile and activity status.</p>
+    </div>
+  </details>
+  <details class="accordion accordion--borderless">
+    <summary class="accordion__summary">
+      Cookie Policy
+      <span class="accordion__icon" aria-hidden="true">
+        <span class="css-icon css-icon--angle-down-to-up"></span>
+      </span>
+    </summary>
+    <div class="accordion__content">
+      <p>We use cookies to improve your browsing experience.</p>
+    </div>
+  </details>
+</div>

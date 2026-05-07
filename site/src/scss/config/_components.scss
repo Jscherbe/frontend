@@ -16,7 +16,9 @@
 $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 
 @include ulu.component-wysiwyg-set((
-  "headline-sizes" :  map.merge($wysiwyg-headings, ("h1" : "h1"))
+  "headline-sizes" :  map.merge($wysiwyg-headings, ("h1" : "h1")),
+  "ul-excluded-selectors" : (".list-lines", ".demo-preview ul"),
+  "exclude-selector" : ".wysiwyg__exclude, .demo-preview ol",
 ));
 
 // @include ulu.component-button-group-set((

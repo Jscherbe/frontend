@@ -1,0 +1,36 @@
+<!-- @ulu-demo
+  title: Basic Nav Strip
+  description: A simple horizontal list of navigation links with an active state underline.
+-->
+<nav class="nav-strip">
+  <ul class="nav-strip__list">
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link">Overview</a></li>
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link is-active">Features</a></li>
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link">Pricing</a></li>
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link">Support</a></li>
+  </ul>
+</nav>
+
+<!-- @ulu-demo
+  title: Nav Strip with Base Rule
+  description: Using the `nav-strip--rule` modifier to add a continuous horizontal line beneath the navigation items.
+-->
+<nav class="nav-strip nav-strip--rule">
+  <ul class="nav-strip__list">
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link is-active">Dashboard</a></li>
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link">Settings</a></li>
+    <li class="nav-strip__item"><a href="#" class="nav-strip__link">Analytics</a></li>
+  </ul>
+</nav>
+
+<!-- @ulu-demo
+  title: Automatic (Markup Only) Nav Strip
+  description: The `nav-strip--auto` modifier applies styling to standard `ul/li/a` tags without requiring component-specific classes on every element.
+-->
+<div class="nav-strip nav-strip--auto">
+  <ul>
+    <li><a href="#" class="is-active">Recent</a></li>
+    <li><a href="#">Popular</a></li>
+    <li><a href="#">Trending</a></li>
+  </ul>
+</div>

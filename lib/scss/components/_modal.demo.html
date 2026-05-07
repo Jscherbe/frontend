@@ -1,0 +1,49 @@
+<!-- @ulu-demo
+  title: Basic Centered Modal
+  description: The default centered modal configuration, triggered by a button.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-center">Open Modal</button>
+
+<div id="modal-example-center" 
+     data-ulu-modal-builder='{ "title": "Information" }' 
+     hidden>
+  <p>This is a standard centered modal window. It can contain any HTML content, including text, images, or forms.</p>
+  <div class="button-group">
+    <button class="button" data-ulu-dialog-close>Confirm</button>
+    <button class="button button--outline" data-ulu-dialog-close>Cancel</button>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Right Sidebar Modal
+  description: "Using the position: 'right' option to create a sidebar-style modal."
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-sidebar">Open Sidebar</button>
+
+<div id="modal-example-sidebar" 
+     data-ulu-modal-builder='{ "title": "Settings", "position": "right" }' 
+     hidden>
+  <div class="menu-stack">
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Notification Settings</a></li>
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Security Options</a></li>
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Account Data</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Fullscreen Modal
+  description: A modal that fills the entire viewport, useful for immersive content or complex tasks.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-fullscreen">View Fullscreen</button>
+
+<div id="modal-example-fullscreen" 
+     data-ulu-modal-builder='{ "title": "Editor Mode", "size": "fullscreen" }' 
+     hidden>
+  <div class="container">
+    <h2 class="h2">Comprehensive Overview</h2>
+    <p>This view allows for focused interaction with complex data or large media assets without the distraction of the underlying page.</p>
+    <button class="button" data-ulu-dialog-close>Exit Fullscreen</button>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<!-- @ulu-demo
+  title: Basic 12-Column Grid
+  description: A standard 12-column grid layout using the `data-grid` and `data-grid-item` attributes.
+-->
+<div data-grid="columns: 12">
+  <div data-grid-item="width: 6">
+    <div style="background: #eee; padding: 1rem;">6 Columns (50%)</div>
+  </div>
+  <div data-grid-item="width: 6">
+    <div style="background: #eee; padding: 1rem;">6 Columns (50%)</div>
+  </div>
+  <div data-grid-item="width: 4">
+    <div style="background: #ddd; padding: 1rem;">4 Columns</div>
+  </div>
+  <div data-grid-item="width: 4">
+    <div style="background: #ddd; padding: 1rem;">4 Columns</div>
+  </div>
+  <div data-grid-item="width: 4">
+    <div style="background: #ddd; padding: 1rem;">4 Columns</div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Grid with Offsets
+  description: Using the `offset` property to create gaps in the grid layout.
+-->
+<div data-grid="columns: 12">
+  <div data-grid-item="width: 4">
+    <div style="background: #eee; padding: 1rem;">Width: 4</div>
+  </div>
+  <div data-grid-item="width: 4, offset: 4">
+    <div style="background: #eee; padding: 1rem;">Width: 4, Offset: 4</div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Responsive Column Widths
+  description: Defining different widths for different breakpoints (e.g., `width` for mobile, `width-large` for desktop).
+-->
+<div data-grid="columns: 12">
+  <div data-grid-item="width: 12, width-large: 8">
+    <div style="background: #eee; padding: 1rem;">8 Columns on Desktop, Full Width on Mobile</div>
+  </div>
+  <div data-grid-item="width: 12, width-large: 4">
+    <div style="background: #eee; padding: 1rem;">4 Columns on Desktop, Full Width on Mobile</div>
+  </div>
+</div>

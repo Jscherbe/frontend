@@ -1,0 +1,41 @@
+<!-- @ulu-demo
+  title: Horizontal Tabs
+  description: A standard tabbed interface with labels positioned horizontally above the content.
+-->
+<div class="tabs">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+    <button role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1">General Info</button>
+    <button role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2">Specifications</button>
+    <button role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3">Reviews</button>
+  </div>
+  <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+    <p>This is the general information about the product or service. It covers the core value propositions and high-level features.</p>
+  </div>
+  <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+    <p>Technical specifications and detailed measurements are listed here for professional review.</p>
+  </div>
+  <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+    <p>Customer feedback and ratings provide real-world insights from our community of users.</p>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Vertical Tabs
+  description: Using the `tabs--vertical` modifier to place tab labels in a sidebar layout on larger screens.
+-->
+<div class="tabs tabs--vertical">
+  <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": true }'>
+    <button role="tab" id="v-tab-1" aria-selected="true" aria-controls="v-panel-1">Account Profile</button>
+    <button role="tab" id="v-tab-2" aria-selected="false" aria-controls="v-panel-2">Privacy Settings</button>
+    <button role="tab" id="v-tab-3" aria-selected="false" aria-controls="v-panel-3">Notification Preferences</button>
+  </div>
+  <div role="tabpanel" id="v-panel-1" aria-labelledby="v-tab-1">
+    <p>Manage your personal information, profile picture, and contact details.</p>
+  </div>
+  <div role="tabpanel" id="v-panel-2" aria-labelledby="v-tab-2" hidden>
+    <p>Control who can see your activity and how your data is used across the platform.</p>
+  </div>
+  <div role="tabpanel" id="v-panel-3" aria-labelledby="v-tab-3" hidden>
+    <p>Customize which alerts you receive via email, push notification, or SMS.</p>
+  </div>
+</div>

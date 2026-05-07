@@ -40,7 +40,12 @@ When developing new SCSS components or maintaining existing ones, adhere to the 
     *   *Correct:* `&#{ $prefix }__item--cue` (Selector chaining: compiles to `.parent.parent--cue`)
     *   *Incorrect:* `&:not(&--cue)` or `&--cue` (String concatenation)
   
-TODO: This section should be added to... (sassdoc type naming, etc). Formatting...
+3.  **Colocated HTML Demos:**
+    *   Every component or significant stylesheet should have a colocated `.demo.html` file (e.g., `_button.scss` -> `_button.demo.html`).
+    *   These files serve as the "Single Source of Truth" for component markup, feeding both the AI Context (MCP server) and the live documentation site.
+    *   Use the `<!-- @ulu-demo ... -->` YAML annotation to define variations.
+    *   Demos should be succinct, high-quality examples of the component's API and states. Omit verbose or redundant examples.
+    *   Use the `wrapperClass` property in the YAML config for any documentation-only styles (e.g., `.demo-theme-box`).
 
 ## Documentation
 

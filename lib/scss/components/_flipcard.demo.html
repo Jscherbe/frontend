@@ -1,0 +1,40 @@
+<!-- @ulu-demo
+  title: Basic Flipcard
+  description: A text-only flipcard that reveals more information when clicked.
+-->
+<div class="flipcard" data-ulu-flipcard>
+  <div class="flipcard__front">
+    <div class="flipcard__front-content">
+      <h3 class="h4">Technical Strategy</h3>
+      <span class="flipcard__icon" aria-hidden="true">+</span>
+    </div>
+  </div>
+  <div class="flipcard__back">
+    <div class="flipcard__back-content">
+      <p>Our technical strategy focuses on modularity, performance, and accessibility across all platforms.</p>
+      <button class="button button--small" data-ulu-flipcard-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Flipcard with Image
+  description: A flipcard using the `flipcard--w-image` modifier to include a background image on the front.
+-->
+<div class="flipcard flipcard--w-image" data-ulu-flipcard>
+  <div class="flipcard__front">
+    <div class="flipcard__front-image">
+      <img src="https://picsum.photos/id/1025/400/400" alt="Front Image">
+    </div>
+    <div class="flipcard__front-content">
+      <h3 class="h4">Project Alpha</h3>
+      <span class="flipcard__icon" aria-hidden="true">+</span>
+    </div>
+  </div>
+  <div class="flipcard__back">
+    <div class="flipcard__back-content">
+      <p>Project Alpha is our flagship initiative to redefine the user experience for complex data dashboards.</p>
+      <button class="button button--small" data-ulu-flipcard-close>Close</button>
+    </div>
+  </div>
+</div>

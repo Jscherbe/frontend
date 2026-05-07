@@ -1,0 +1,67 @@
+<!-- @ulu-demo
+  title: Basic Data List
+  description: A standard list layout for simple items.
+-->
+<ul class="data-list">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Item One Title</strong>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Item Two Title</strong>
+    </div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Flanked Layout (Prefixed + Suffixed)
+  description: Automatically aligns an icon at the start and an action at the end.
+-->
+<ul class="data-list data-list--prefixed data-list--suffixed">
+  <li class="data-list__item">
+    <div class="data-list__column" aria-hidden="true">📄</div>
+    <div class="data-list__column"><strong>Report_Q1.pdf</strong></div>
+    <div class="data-list__column"><button class="button button--small">Download</button></div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column" aria-hidden="true">📊</div>
+    <div class="data-list__column"><strong>Analytics_Data.xlsx</strong></div>
+    <div class="data-list__column"><button class="button button--small">Download</button></div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Interactive Clickable Rows
+  description: Entire rows are interactive, using proxy-click logic to route to a primary link.
+-->
+<ul class="data-list data-list--clickable">
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column">
+      <a href="#" data-ulu-proxy-click-source><strong>Important Update: New Security Features</strong></a>
+    </div>
+    <div class="data-list__column type-small">2 hours ago</div>
+  </li>
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column">
+      <a href="#" data-ulu-proxy-click-source><strong>Your Weekly Activity Summary</strong></a>
+    </div>
+    <div class="data-list__column type-small">Yesterday</div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Custom Grid with Spanning
+  description: Advanced usage using inline variables and column spanning.
+-->
+<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto;">
+  <li class="data-list__item">
+    <div class="data-list__column">ID: 101</div>
+    <div class="data-list__column data-list__column--span-2">
+      <strong>Product Name A</strong>
+      <span class="type-small">In Stock</span>
+    </div>
+    <div class="data-list__column">$19.99</div>
+  </li>
+</ul>

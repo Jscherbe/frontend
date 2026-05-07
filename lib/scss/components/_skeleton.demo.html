@@ -1,0 +1,39 @@
+<!-- @ulu-demo
+  title: Skeleton Text
+  description: Placeholder lines for text content during loading.
+-->
+<div style="max-width: 400px;">
+  <div class="skeleton skeleton--text skeleton--width-large"></div>
+  <div class="skeleton skeleton--text"></div>
+  <div class="skeleton skeleton--text"></div>
+  <div class="skeleton skeleton--text skeleton--width-small"></div>
+</div>
+
+<!-- @ulu-demo
+  title: Skeleton Media
+  description: A placeholder for images or video assets.
+-->
+<div style="max-width: 300px;">
+  <div class="skeleton skeleton--media">
+    <span aria-hidden="true">🖼️</span>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Composite Skeleton (Card)
+  description: Combining different skeleton elements to represent a complex UI component.
+-->
+<article class="card" style="max-width: 300px;">
+  <div class="card__image">
+    <div class="skeleton skeleton--block" style="aspect-ratio: 16/9;"></div>
+  </div>
+  <div class="card__body">
+    <div class="card__title">
+      <div class="skeleton skeleton--text skeleton--width-large"></div>
+    </div>
+    <div class="card__main">
+      <div class="skeleton skeleton--text"></div>
+      <div class="skeleton skeleton--text skeleton--width-small"></div>
+    </div>
+  </div>
+</article>

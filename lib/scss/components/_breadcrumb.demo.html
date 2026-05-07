@@ -1,0 +1,39 @@
+<!-- @ulu-demo
+  title: Standard Breadcrumb
+  description: A typical breadcrumb trail for navigation.
+-->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">Products</a>
+      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+    </li>
+    <li class="breadcrumb__item" aria-current="page">
+      <span class="breadcrumb__current">Electronic Gadgets</span>
+    </li>
+  </ol>
+</nav>
+
+<!-- @ulu-demo
+  title: Truncated Breadcrumb
+  description: Items automatically truncate with an ellipsis if they exceed the `item-max-width`.
+-->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="#" class="breadcrumb__link">This is an extremely long page title that will be truncated by the breadcrumb component</a>
+      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+    </li>
+    <li class="breadcrumb__item" aria-current="page">
+      <span class="breadcrumb__current">Current Page</span>
+    </li>
+  </ol>
+</nav>

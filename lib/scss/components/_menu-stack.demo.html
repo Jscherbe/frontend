@@ -1,0 +1,69 @@
+<!-- @ulu-demo
+  title: Basic Navigation Menu
+  description: A standard vertical list of links, often used for sidebars or secondary navigation.
+-->
+<nav class="menu-stack">
+  <h3 class="menu-stack__label">Main Navigation</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a href="#" class="menu-stack__link is-active">Dashboard</a>
+    </li>
+    <li class="menu-stack__item">
+      <a href="#" class="menu-stack__link">Projects</a>
+    </li>
+    <li class="menu-stack__item">
+      <a href="#" class="menu-stack__link">Tasks</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- @ulu-demo
+  title: Collapsible Sub-Menu
+  description: Using `details` to create a collapsible group within the menu stack.
+-->
+<div class="menu-stack">
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__link-text">Organization</span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item"><a class="menu-stack__link" href="#">Team Members</a></li>
+            <li class="menu-stack__item"><a class="menu-stack__link" href="#">Permissions</a></li>
+          </ul>
+        </div>
+      </details>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Selectable (Checkbox) Menu
+  description: A menu containing checkboxes, useful for filtering or selection lists.
+-->
+<div class="menu-stack form-theme">
+  <h3 class="menu-stack__label">Filter by Status</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="status-1" checked>
+        <label for="status-1">Active</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="status-2">
+        <label for="status-2">Pending</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="status-3">
+        <label for="status-3">Completed</label>
+      </div>
+    </li>
+  </ul>
+</div>

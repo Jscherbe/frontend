@@ -1,0 +1,40 @@
+<!-- @ulu-demo
+  title: Basic Progress Bar
+  description: A standard progress bar with a label and percentage value.
+-->
+<div class="progress-bar">
+  <div class="progress-bar__header">
+    <strong class="progress-bar__label">System Update</strong>
+    <span class="progress-bar__value">65%</span>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 65%;"></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Indeterminate Loader
+  description: An animated bar for states where progress is unknown, using the `progress-bar--indeterminate` modifier.
+-->
+<div class="progress-bar progress-bar--loader progress-bar--indeterminate">
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar"></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Semantic Status Bars
+  description: Using status modifiers like `progress-bar--success` and `progress-bar--danger`.
+-->
+<div class="progress-bar progress-bar--success">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Setup Complete</strong></div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 100%;"></div>
+  </div>
+</div>
+<div class="progress-bar progress-bar--danger">
+  <div class="progress-bar__header"><strong class="progress-bar__label">Storage Low</strong></div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 92%;"></div>
+  </div>
+</div>

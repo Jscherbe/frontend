@@ -1,0 +1,41 @@
+<!-- @ulu-demo
+  title: Basic Rail
+  description: A flexible horizontal container with the last item pushed to the right using `rail__item--pull`.
+-->
+<div class="rail">
+  <div class="rail__item">
+    <h3 class="h4 no-margin">Section Title</h3>
+  </div>
+  <div class="rail__item"><span class="tag">Active</span></div>
+  <div class="rail__item rail__item--pull">
+    <button class="button button--small">Action</button>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Justified Toolbar
+  description: Using the `rail--justified` modifier to space items out across the full width.
+-->
+<div class="rail rail--justified">
+  <div class="rail__item">
+    <strong>Showing 1-10 of 124 results</strong>
+  </div>
+  <div class="rail__item">
+    <div class="button-group">
+      <button class="button button--small button--outline">Previous</button>
+      <button class="button button--small button--outline">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Rail with Separator
+  description: Using the `rail__item--separator` modifier to add a vertical divider before an item.
+-->
+<div class="rail">
+  <div class="rail__item">Account Settings</div>
+  <div class="rail__item">Security</div>
+  <div class="rail__item rail__item--separator">
+    <a href="#" class="color-danger">Log Out</a>
+  </div>
+</div>
