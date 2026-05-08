@@ -2,10 +2,10 @@
   title: Theme Switching
   description: Using the `theme-light` and `theme-dark` classes to change the visual context of a section.
 -->
-<div style="display: flex; flex-direction: column; gap: 1rem;">
+<div>
   <button class="button" data-ulu-theme-toggle='{ "target": "#theme-demo-box" }'>Toggle Theme</button>
   
-  <div id="theme-demo-box" class="theme-light" style="padding: 2rem; border: 1px solid #ccc;">
+  <div id="theme-demo-box" class="demo-theme-box theme-light padding">
     <h3 class="h3">Themed Content</h3>
     <p>This section changes its colors based on the applied theme class.</p>
     <button class="button">Themed Button</button>
@@ -16,9 +16,9 @@
   title: Theme Inversion
   description: The `theme-inverse` utility automatically applies the opposite theme (e.g., dark inside light) based on the current context.
 -->
-<div class="theme-light" style="padding: 2rem; border: 1px solid #ccc; background: white; color: black;">
+<div class="demo-theme-box theme-light">
   <h3 class="h3">Light Context</h3>
-  <div class="theme-inverse" style="padding: 1rem; margin-top: 1rem;">
+  <div class="demo-theme-box theme-inverse padding margin-top">
     <p>This box is automatically inverted to the dark theme because its parent is light.</p>
     <button class="button">Inverted Button</button>
   </div>

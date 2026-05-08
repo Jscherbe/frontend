@@ -37,54 +37,52 @@ try {
   console.error("Warning: Failed to load snippets data", e);
 }
 
-const definition = {
-  meta: {
-    name: "@ulu/frontend",
-    version: "1.0.0",
-    description: "MCP knowledge base for @ulu/frontend."
-  },
-  resources: [],
-  entities: [],
-  tokens: [],
-  snippets: snippetsData // Pass the snippets data through to the definition
-};
+const configurationData = {};
+const referenceData = {};
 
-// Process Sassdoc
+// Map SassDoc into agnostic tiers
 for (const [groupName, items] of Object.entries(sassData)) {
-  for (const item of items) {
-    const context = item.context || {};
-    const type = context.type ? `scss-${context.type}` : "scss-item";
-    
-    definition.entities.push({
-      type: type,
-      name: context.name || item.title || "Unknown",
-      description: item.description || "No description provided.",
-      snippets: {
-        scss: context.code || context.value || "",
-        // If this sassdoc item matches a component snippet name, we could attach it here
-        // For example, if it's a mixin/file named "button" and snippetsData["button"] exists.
-        html: snippetsData[context.name] || []
-      }
-    });
+  // Strip out circular references for the deep reference tier
+  referenceData[groupName] = items.map(item => {
+    const { $item, ...rest } = item;
+    return rest;
+  });
+  
+  // Extract $config variable for the Configuration tier
+  const configItems = items.filter(item => item.context && item.context.type === "variable" && item.context.name === "config");
+  if (configItems.length > 0) {
+    configurationData[groupName] = {
+      description: `SCSS Configuration for ${groupName}. To override these defaults, use the set mixin: \`@include ulu.component-${groupName}-set(( "property": "value" ));\``,
+      properties: configItems.flatMap(item => item.property || []).map(p => ({
+        name: p.name,
+        type: p.type,
+        description: p.description,
+        default: p.default
+      }))
+    };
   }
 }
 
-// Process JSDoc
+// Map JSDoc into reference tier
 for (const item of jsData) {
-  const type = item.kind ? `js-${item.kind}` : "js-item";
-  definition.entities.push({
-    type: type,
-    name: item.name || item.longname || "Unknown",
-    description: item.description || "No description provided.",
-    snippets: {
-      js: item.meta ? `// file: ${item.meta.filename}:${item.meta.lineno}` : ""
-    }
-  });
+  const group = item.memberof || item.name;
+  if (group) {
+    if (!referenceData[group]) referenceData[group] = [];
+    referenceData[group].push(item);
+  }
 }
 
+const frontendProvider = {
+  name: "@ulu/frontend",
+  prefix: "ulu",
+  snippets: snippetsData,       // Builder Tier
+  configuration: configurationData, // Styling Tier
+  reference: referenceData      // In-Depth Tier
+};
+
 const server = new KnowledgeBaseServer({
-  definition,
-  serverName: "ulu-frontend-mcp",
+  providers: [frontendProvider],
+  serverName: "mcp-knowledge-base-sandbox",
   serverVersion: "1.0.0"
 });
 

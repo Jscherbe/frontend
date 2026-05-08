@@ -38,8 +38,8 @@
     "dev:host": "vite --config site/vite.config.js --host",
     "dev:nogen": "NO_DOC_GEN=true vite --config site/vite.config.js",
     "docs:build": "vite build --config site/vite.config.js",
-    "build:mcp-data": "BUILD_MCP=true vite build --config site/vite.config.js",
-    "mcp": "node mcp-server/index.js",
+    "build:mcp-data": "BUILD_MCP=true vite build --config site/vite.config.js && node site/mcp/build-provider.js",
+    "mcp": "node mcp-server/sandbox.js",
     "deploy": "npm run build && npm run docs:build"
   },
   "repository": {

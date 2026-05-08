@@ -4,8 +4,8 @@ import { z } from "zod";
 
 export class KnowledgeBaseServer {
   constructor(options) {
-    this.definition = options.definition;
-    this.serverName = options.serverName || "knowledge-base-server";
+    this.providers = options.providers || [];
+    this.serverName = options.serverName || "mcp-knowledge-base-server";
     this.serverVersion = options.serverVersion || "1.0.0";
     
     this.server = new McpServer({
@@ -13,113 +13,91 @@ export class KnowledgeBaseServer {
       version: this.serverVersion
     });
 
-    this.setupHandlers();
+    this.setupProviderHandlers();
   }
 
-  addTool(tool) {
-    // Allows custom tools to be added
-    const schema = tool.inputSchema || {};
-    this.server.tool(
-      tool.name,
-      tool.description || "",
-      schema,
-      async (args) => {
-        return await tool.handler(args);
-      }
-    );
-  }
-
-  addResource(resource) {
-    this.server.resource(
-      resource.name || resource.uri,
-      resource.uri,
-      async (uri) => {
-        if (resource.handler) {
-          const res = await resource.handler({ params: { uri: uri.href } });
-          return res;
-        }
-        throw new Error("No handler for custom resource");
-      }
-    );
-  }
-
-  setupHandlers() {
-    // Setup default resources
-    const resources = this.definition.resources || [];
-    for (const r of resources) {
-      this.server.resource(
-        r.title,
-        `kb://resources/${r.id}`,
+  setupProviderHandlers() {
+    for (const provider of this.providers) {
+      const prefix = provider.prefix || "kb";
+      
+      // 1. Discovery Tool
+      this.server.tool(
+        `${prefix}_list_components`,
+        `[${provider.name}] Returns a list of all available component names that have snippets, configuration, or reference documentation.`,
+        {},
         async () => {
-          return {
-            contents: [{
-              uri: `kb://resources/${r.id}`,
-              mimeType: "text/markdown",
-              text: r.content
-            }]
-          };
+          const keys = new Set([
+            ...Object.keys(provider.snippets || {}),
+            ...Object.keys(provider.configuration || {}),
+            ...Object.keys(provider.reference || {})
+          ]);
+          return { content: [{ type: "text", text: JSON.stringify(Array.from(keys), null, 2) }] };
+        }
+      );
+
+      // 2. Builder API (Snippets)
+      this.server.tool(
+        `${prefix}_get_snippets`,
+        `[${provider.name}] (BUILDER TIER) Use this tool FIRST when you need to build UI or write templates. Returns copy-pasteable code variations for a component.`,
+        { component_name: z.string() },
+        async ({ component_name }) => {
+          const snippets = (provider.snippets || {})[component_name];
+          if (!snippets) {
+            return { content: [{ type: "text", text: `Error: No snippets found for '${component_name}'.` }], isError: true };
+          }
+          
+          let markdown = `# Snippets for ${component_name}\n\n`;
+          snippets.forEach(s => {
+            markdown += `## ${s.title || 'Variant'}\n`;
+            if (s.description) markdown += `${s.description}\n\n`;
+            // Purposely omitted wrapperClass as it's an internal docs presentation detail
+            markdown += `\`\`\`html\n${s.html || s.code}\n\`\`\`\n\n`;
+          });
+
+          return { content: [{ type: "text", text: markdown }] };
+        }
+      );
+
+      // 3. Configuration API (Styling/Props)
+      this.server.tool(
+        `${prefix}_get_configuration`,
+        `[${provider.name}] (CONFIG TIER) Returns the configuration variables, props, or settings for a specific component.`,
+        { component_name: z.string() },
+        async ({ component_name }) => {
+          const config = (provider.configuration || {})[component_name];
+          if (!config) {
+            return { content: [{ type: "text", text: `Error: No configuration found for '${component_name}'.` }], isError: true };
+          }
+          
+          let markdown = `# Configuration: ${component_name}\n\n`;
+          if (config.description) markdown += `${config.description}\n\n`;
+          
+          if (config.properties && config.properties.length > 0) {
+            config.properties.forEach(prop => {
+              markdown += `- **${prop.name}** (\`${prop.type}\`): ${prop.description || ''} (Default: \`${prop.default}\`)\n`;
+            });
+          } else {
+             markdown += JSON.stringify(config, null, 2);
+          }
+
+          return { content: [{ type: "text", text: markdown }] };
+        }
+      );
+
+      // 4. In-Depth API (Raw AST/Reference)
+      this.server.tool(
+        `${prefix}_get_reference`,
+        `[${provider.name}] (IN-DEPTH TIER) Returns the full, raw API documentation (AST, internal functions) for a component. Use only for deep debugging.`,
+        { component_name: z.string() },
+        async ({ component_name }) => {
+          const ref = (provider.reference || {})[component_name];
+          if (!ref) {
+            return { content: [{ type: "text", text: `Error: No reference found for '${component_name}'.` }], isError: true };
+          }
+          return { content: [{ type: "text", text: JSON.stringify(ref, null, 2) }] };
         }
       );
     }
-
-    // Setup default tools
-    this.server.tool(
-      "list_entity_types",
-      "Returns available entity types.",
-      {},
-      async () => {
-        const types = [...new Set((this.definition.entities || []).map(e => e.type))];
-        return { content: [{ type: "text", text: JSON.stringify(types, null, 2) }] };
-      }
-    );
-
-    this.server.tool(
-      "list_entities",
-      "Returns names and descriptions of entities for a specific type.",
-      { type: z.string() },
-      async ({ type }) => {
-        const entities = (this.definition.entities || [])
-          .filter(e => e.type === type)
-          .map(e => ({ name: e.name, description: e.description }));
-        return { content: [{ type: "text", text: JSON.stringify(entities, null, 2) }] };
-      }
-    );
-
-    this.server.tool(
-      "get_entity",
-      "Returns the full object for an entity.",
-      { name: z.string(), type: z.string() },
-      async ({ name, type }) => {
-        const entity = (this.definition.entities || []).find(e => e.name === name && e.type === type);
-        if (!entity) {
-          return { content: [{ type: "text", text: `Error: Entity not found: ${name} of type ${type}` }], isError: true };
-        }
-        return { content: [{ type: "text", text: JSON.stringify(entity, null, 2) }] };
-      }
-    );
-
-    this.server.tool(
-      "list_token_categories",
-      "Returns available token categories.",
-      {},
-      async () => {
-        const categories = (this.definition.tokens || []).map(t => t.category);
-        return { content: [{ type: "text", text: JSON.stringify(categories, null, 2) }] };
-      }
-    );
-
-    this.server.tool(
-      "get_tokens",
-      "Returns the tokens for a specific category.",
-      { category: z.string() },
-      async ({ category }) => {
-        const tokens = (this.definition.tokens || []).find(t => t.category === category);
-        if (!tokens) {
-          return { content: [{ type: "text", text: `Error: Token category not found: ${category}` }], isError: true };
-        }
-        return { content: [{ type: "text", text: JSON.stringify(tokens, null, 2) }] };
-      }
-    );
   }
 
   async start() {
