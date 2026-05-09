@@ -29,9 +29,39 @@ export class KnowledgeBaseServer {
           const keys = new Set([
             ...Object.keys(provider.snippets || {}),
             ...Object.keys(provider.configuration || {}),
-            ...Object.keys(provider.reference || {})
+            ...Object.keys(provider.reference || {}),
+            ...Object.keys(provider.guides || {})
           ]);
           return { content: [{ type: "text", text: JSON.stringify(Array.from(keys), null, 2) }] };
+        }
+      );
+
+      // 1b. Guides Tool (Conceptual Tier)
+      this.server.tool(
+        `${prefix}_get_guides`,
+        `[${provider.name}] (CONCEPTUAL TIER) Returns high-level guides, architectural concepts, installation instructions, and philosophy. If called without a guide_id, it returns a table of contents of available guides.`,
+        { guide_id: z.string().optional().describe("The ID of the guide to read. Omit to list all available guides.") },
+        async ({ guide_id }) => {
+          const guides = provider.guides || {};
+
+          if (!guide_id) {
+            if (Object.keys(guides).length === 0) {
+               return { content: [{ type: "text", text: `No guides available for ${provider.name}.` }] };
+            }
+            let toc = `# Guides for ${provider.name}\n\n`;
+            for (const [id, guide] of Object.entries(guides)) {
+              toc += `- **${id}**: ${guide.title} - ${guide.description || ''}\n`;
+            }
+            toc += `\nCall \`${prefix}_get_guides\` with one of the above IDs to read the full guide.`;
+            return { content: [{ type: "text", text: toc }] };
+          }
+
+          const guide = guides[guide_id];
+          if (!guide) {
+             return { content: [{ type: "text", text: `Error: Guide '${guide_id}' not found.` }], isError: true };
+          }
+
+          return { content: [{ type: "text", text: guide.content }] };
         }
       );
 

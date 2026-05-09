@@ -43,6 +43,48 @@ try {
 
 const configurationData = {};
 const referenceData = {};
+const guidesData = {};
+
+// Map Guides into conceptual tier
+const guideDir = path.resolve(__dirname, "../pages/guide");
+if (fs.existsSync(guideDir)) {
+  const extractGuides = (dir, prefix = '') => {
+    const entries = fs.readdirSync(dir);
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry);
+      const isDir = fs.lstatSync(fullPath).isDirectory();
+      if (isDir) {
+        extractGuides(fullPath, `${prefix}${entry}/`);
+      } else if (entry.endsWith('.md') || entry.endsWith('.mdx')) {
+        let content = fs.readFileSync(fullPath, "utf-8");
+        const id = `${prefix}${entry.replace(/\.mdx?$/, '')}`.replace(/\/index$/, '');
+        if (id === 'index') continue; // Optional: skip root index or handle differently
+
+        let title = id;
+        let description = `Guide for ${id}`;
+        
+        const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+        if (frontmatterMatch) {
+          const fm = frontmatterMatch[1];
+          const titleMatch = fm.match(/title:\s*(.*)/);
+          const descMatch = fm.match(/description:\s*(.*)/);
+          if (titleMatch) title = titleMatch[1].trim().replace(/^['"]|['"]$/g, '');
+          if (descMatch) description = descMatch[1].trim().replace(/^['"]|['"]$/g, '');
+          
+          // Remove frontmatter from content for cleaner reading
+          content = content.replace(frontmatterMatch[0], '').trim();
+        }
+
+        guidesData[id] = {
+          title,
+          description,
+          content
+        };
+      }
+    }
+  };
+  extractGuides(guideDir);
+}
 
 // Map SassDoc into agnostic tiers
 for (const [groupName, items] of Object.entries(sassData)) {
@@ -79,7 +121,8 @@ for (const item of jsData) {
 const providerData = {
   snippets: snippetsData,       // Builder Tier
   configuration: configurationData, // Styling Tier
-  reference: referenceData      // In-Depth Tier
+  reference: referenceData,     // In-Depth Tier
+  guides: guidesData            // Conceptual Tier
 };
 
 // Write the data JSON

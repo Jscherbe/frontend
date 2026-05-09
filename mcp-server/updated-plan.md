@@ -1,9 +1,13 @@
 # MCP Server Architecture & Integration Plan
 
 ## 1. Core Philosophy: Inversion of Control
-To prevent version mismatches and avoid a monolithic, brittle server, we are using a **Distributed Provider Model**.
-*   **The Engine (`@ulu/mcp-knowledge-base`):** A lightweight, agnostic MCP server shell. It defines strict tool schemas (Builder, Styling, In-Depth) and handles the standard `stdio` transport. It knows *nothing* about parsing SCSS or Vue.
-*   **The Providers (The Libraries):** Individual libraries (`@ulu/frontend`, `@ulu/frontend-vue`, `@ulu/utils`) run their own extraction scripts during their build step. They bundle this JSON data into their NPM package and export a standardized "Provider" object conforming to Agnostic Tiers.
+To prevent version mismatches and avoid a monolithic, brittle server, we are using a **Distributed Provider Model**. The architecture is split into specialized packages:
+
+*   **The Runtime Engine (`@ulu/mcp-knowledge-base`):** A lightweight, agnostic MCP server shell. It defines strict tool schemas (Builder, Styling, In-Depth) and handles the standard `stdio` transport. It knows *nothing* about parsing SCSS, JS, or Vue.
+*   **The Documentation Generators (e.g., `@ulu/docs-sass`, `@ulu/docs-js`):** Dedicated utility packages. Crucially, these are **dual-purpose**. They parse the AST once and can output both:
+    1. Markdown/MDX for static sites (Eleventy, Storybook).
+    2. The standardized Tiered JSON required by the MCP Engine.
+*   **The Providers (The Libraries):** Individual libraries (`@ulu/frontend`, `@ulu/frontend-vue`) use the doc generators during their build step. They bundle the MCP JSON data into their NPM package and export a standardized "Provider" object.
 *   **The Consumer (End User):** A developer installs the libraries and the Engine. They create a tiny initialization script that registers the locally installed Providers with the Engine. This guarantees the AI reads documentation that perfectly matches the installed version of the code.
 
 ## 2. The Tiered API Structure (Agnostic Schema)
@@ -30,15 +34,16 @@ When `@ulu/mcp-knowledge-base` is published, it should support a **Hybrid Approa
 2. **Auto-loaded (CLI + Config):** The package exposes an `npx ulu-mcp` CLI command. It looks for an `ulu-mcp.config.js` file at the project root. The user simply defines an array of library names (e.g., `providers: ['@ulu/frontend', '@ulu/frontend-vue']`). The CLI handles dynamic resolution and starts the server. 
 
 ## 4. Prototyping & Testing Roadmap
-To validate this architecture before publishing the core package, we will follow these phases:
+To validate this architecture before publishing the core packages, we will follow these phases:
 
 1. **Phase 1: Local Sandbox (Current Repo)**
    * Format the extracted `@ulu/frontend` data into the strict "Tiered" schema (Builder, Styling, In-Depth).
    * Update the local `mcp-server/src/server.js` to implement prefixed tools (e.g., `ulu_get_snippets`).
-   * Test locally using `gemini-cli` against this sandbox server.
+   * Test locally using `gemini-cli` against this sandbox server. *(Completed)*
 
 2. **Phase 2: Vue Integration Prototype**
-   * Write an instruction manual (`vue-mcp-setup-instructions.md`) detailing how to replicate this extraction workflow in the `@ulu/frontend-vue` repository (parsing Vue components/composables into the Tiered schema).
+   * Duplicate the JSDoc/AST extraction scripts temporarily into the `@ulu/frontend-vue` repository for speed.
+   * Parse Vue components/composables and JS utilities into the Tiered schema.
    * Generate the Vue dataset.
 
 3. **Phase 3: Unified Real-World Test**
@@ -46,6 +51,6 @@ To validate this architecture before publishing the core package, we will follow
    * Verify that the AI can seamlessly build UI using tools from both libraries simultaneously.
 
 4. **Phase 4: Package Extraction**
-   * Extract the core logic to the `@ulu/mcp-knowledge-base` NPM package.
-   * Add the CLI wrapper and config loader.
+   * Extract the agnostic server core to the `@ulu/mcp-knowledge-base` NPM package.
+   * Consolidate the proven, dual-purpose parsing logic (Markdown + MCP JSON) into dedicated documentation utility packages.
    * Setup standard `/mcp` exports in the respective library `package.json` files.
