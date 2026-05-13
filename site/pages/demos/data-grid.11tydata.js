@@ -107,7 +107,7 @@ export default {
     {
       name: "rules-column",
       values: "(left|right)",
-      description: "Sets rules (dividers) between columns. Left adds rules between columns using the left side of the column. Right adds rules between columns using the left side of the column",
+      description: "Sets rules (dividers) between columns. Left adds rules between columns using the left side of the column. Right adds rules between columns using the right side of the column",
       example: '<div data-grid="..., rules-column: left">...'
     },
     {
