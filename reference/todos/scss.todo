@@ -1,4 +1,6 @@
 Important:
+  ☐ Root module custom properties aren't ulu prefixed
+  ☐ Modal defaults for close color should be null (since we use button classes normally)
   ☐ Consider adding "sass" export for sass's node importer to resolve correctly
     * For users outside of vite's magic resolving
     * So you can do `@use "pkg:@ulu/frontend/scss" as ulu;`
