@@ -23,7 +23,8 @@
     "./js/*": {
       "import": "./dist/es/*",
       "types": "./dist/es/*"
-    }
+    },
+    "./ulu-mcp-provider": "./dist/mcp-data.json"
   },
   "sideEffects": [
     "dist/es/core/events.js",

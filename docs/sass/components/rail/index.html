@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#basic-rail">Basic Rail</a>
+            		</li>
+
+                    <li><a href="#justified-toolbar">Justified Toolbar</a>
+            		</li>
+
+                    <li><a href="#rail-with-separator">Rail with Separator</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,13 +6904,149 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="rail" tabindex="-1">Rail</h1>
-<div class="type-large">
+      <div class="type-large">
 <p>A horizontal, flexible container for arranging diverse inline elements.
 It provides a consistent layout for icons, labels, buttons, or other
 modular components, aligning content to either end or centering it.
 Item spacing is controlled via margins, allowing for individual item gap adjustments.</p>
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="basic-rail" tabindex="-1">Basic Rail</h3>
+<p>A flexible horizontal container with the last item pushed to the right using `rail__item--pull`.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="rail">
+  <div class="rail__item">
+    <h3 class="h4 no-margin">Section Title</h3>
+  </div>
+  <div class="rail__item"><span class="tag">Active</span></div>
+  <div class="rail__item rail__item--pull">
+    <button class="button button--small">Action</button>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-168-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>h3</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>h4 no-margin<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Section Title<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>h3</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>span</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tag<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Active<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>span</span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item rail__item--pull<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button button--small<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Action<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-168-json" type="text/plain">
+<div class="rail">
+  <div class="rail__item">
+    <h3 class="h4 no-margin">Section Title</h3>
+  </div>
+  <div class="rail__item"><span class="tag">Active</span></div>
+  <div class="rail__item rail__item--pull">
+    <button class="button button--small">Action</button>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="justified-toolbar" tabindex="-1">Justified Toolbar</h3>
+<p>Using the `rail--justified` modifier to space items out across the full width.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="rail rail--justified">
+  <div class="rail__item">
+    <strong>Showing 1-10 of 124 results</strong>
+  </div>
+  <div class="rail__item">
+    <div class="button-group">
+      <button class="button button--small button--outline">Previous</button>
+      <button class="button button--small button--outline">Next</button>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-169-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail rail--justified<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>strong</span><span class="pjs-token pjs-punctuation">></span></span>Showing 1-10 of 124 results<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>strong</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button-group<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button button--small button--outline<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Previous<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button button--small button--outline<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Next<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-169-json" type="text/plain">
+<div class="rail rail--justified">
+  <div class="rail__item">
+    <strong>Showing 1-10 of 124 results</strong>
+  </div>
+  <div class="rail__item">
+    <div class="button-group">
+      <button class="button button--small button--outline">Previous</button>
+      <button class="button button--small button--outline">Next</button>
+    </div>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="rail-with-separator" tabindex="-1">Rail with Separator</h3>
+<p>Using the `rail__item--separator` modifier to add a vertical divider before an item.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="rail">
+  <div class="rail__item">Account Settings</div>
+  <div class="rail__item">Security</div>
+  <div class="rail__item rail__item--separator">
+    <a href="#" class="color-danger">Log Out</a>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-170-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Account Settings<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Security<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>rail__item rail__item--separator<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>#<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>color-danger<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Log Out<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-170-json" type="text/plain">
+<div class="rail">
+  <div class="rail__item">Account Settings</div>
+  <div class="rail__item">Security</div>
+  <div class="rail__item rail__item--separator">
+    <a href="#" class="color-danger">Log Out</a>
+  </div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7076,6 +7227,7 @@ Item spacing is controlled via margins, allowing for individual item gap adjustm
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

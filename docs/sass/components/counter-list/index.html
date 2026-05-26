@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#numeric-counter-list">Numeric Counter List</a>
+            		</li>
+
+                    <li><a href="#alphabetical-counter-list">Alphabetical Counter List</a>
+            		</li>
+
+                    <li><a href="#non-list-counter-elements">Non-List Counter Elements</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,10 +6904,107 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="counter-list" tabindex="-1">Counter-list</h1>
-<div class="type-large">
+      <div class="type-large">
 <p>Outputs a styled list with counters</p>
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="numeric-counter-list" tabindex="-1">Numeric Counter List</h3>
+<p>A standard ordered list styled with custom counters.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <ol class="counter-list">
+  <li>First item in the list.</li>
+  <li>Second item with more content to demonstrate how the counter stays aligned.</li>
+  <li>Third item.</li>
+</ol>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-115-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>ol</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>counter-list<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>First item in the list.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Second item with more content to demonstrate how the counter stays aligned.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Third item.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>ol</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-115-json" type="text/plain">
+<ol class="counter-list">
+  <li>First item in the list.</li>
+  <li>Second item with more content to demonstrate how the counter stays aligned.</li>
+  <li>Third item.</li>
+</ol>
+  </script>
+</div>
+<h3 class="h3" id="alphabetical-counter-list" tabindex="-1">Alphabetical Counter List</h3>
+<p>Using the `counter-list--alphabetical` modifier to use letters instead of numbers.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <ol class="counter-list counter-list--alphabetical">
+  <li>Analyze the requirements.</li>
+  <li>Design the solution.</li>
+  <li>Implement the features.</li>
+</ol>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-116-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>ol</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>counter-list counter-list--alphabetical<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Analyze the requirements.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Design the solution.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Implement the features.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>ol</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-116-json" type="text/plain">
+<ol class="counter-list counter-list--alphabetical">
+  <li>Analyze the requirements.</li>
+  <li>Design the solution.</li>
+  <li>Implement the features.</li>
+</ol>
+  </script>
+</div>
+<h3 class="h3" id="non-list-counter-elements" tabindex="-1">Non-List Counter Elements</h3>
+<p>You can also use the `counter-list__item` class on non-list elements (like divs).</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="counter-list">
+  <div class="counter-list__item">This is a div acting as a counter item.</div>
+  <div class="counter-list__item">Another div in the counter flow.</div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-117-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>counter-list<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>counter-list__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>This is a div acting as a counter item.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>counter-list__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Another div in the counter flow.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-117-json" type="text/plain">
+<div class="counter-list">
+  <div class="counter-list__item">This is a div acting as a counter item.</div>
+  <div class="counter-list__item">Another div in the counter flow.</div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7140,6 +7252,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

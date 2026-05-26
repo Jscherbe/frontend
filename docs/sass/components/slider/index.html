@@ -6849,6 +6849,15 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#image-slider">Image Slider</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,10 +6898,101 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="slider" tabindex="-1">Slider</h1>
-<div class="type-large">
+      <div class="type-large">
 <p>Slider/Carousal component that works with the ui/slider.js script</p>
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="image-slider" tabindex="-1">Image Slider</h3>
+<p>A standard carousel for cycling through images.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="slider" data-ulu-slider="">
+  <div class="slider__control-context">
+    <ul class="slider__track" data-ulu-slider-track="">
+      <li class="slider__slide" data-ulu-slider-slide="">
+        <img src="https://picsum.photos/id/10/800/400" alt="Slide 1">
+      </li>
+      <li class="slider__slide" data-ulu-slider-slide="">
+        <img src="https://picsum.photos/id/11/800/400" alt="Slide 2">
+      </li>
+      <li class="slider__slide" data-ulu-slider-slide="">
+        <img src="https://picsum.photos/id/12/800/400" alt="Slide 3">
+      </li>
+    </ul>
+    <div class="Slider__controls">
+      <button class="button button--icon Slider__control-button Slider__control-button--previous" data-ulu-slider-previous="" aria-label="Previous Slide">
+        <span class="css-icon css-icon--angle-left"></span>
+      </button>
+      <button class="button button--icon Slider__control-button Slider__control-button--next" data-ulu-slider-next="" aria-label="Next Slide">
+        <span class="css-icon css-icon--angle-right"></span>
+      </button>
+    </div>
+  </div>
+  <div class="Slider__nav" data-ulu-slider-nav=""></div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-183-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>slider<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>slider__control-context<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>ul</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>slider__track<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-track</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>slider__slide<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-slide</span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>img</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>https://picsum.photos/id/10/800/400<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">alt</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Slide 1<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>slider__slide<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-slide</span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>img</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>https://picsum.photos/id/11/800/400<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">alt</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Slide 2<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>slider__slide<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-slide</span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>img</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>https://picsum.photos/id/12/800/400<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">alt</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Slide 3<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>ul</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Slider__controls<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button button--icon Slider__control-button Slider__control-button--previous<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-previous</span> <span class="pjs-token pjs-attr-name">aria-label</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Previous Slide<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>span</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>css-icon css-icon--angle-left<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>span</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button button--icon Slider__control-button Slider__control-button--next<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-next</span> <span class="pjs-token pjs-attr-name">aria-label</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Next Slide<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>span</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>css-icon css-icon--angle-right<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>span</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Slider__nav<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-slider-nav</span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-183-json" type="text/plain">
+<div class="slider" data-ulu-slider>
+  <div class="slider__control-context">
+    <ul class="slider__track" data-ulu-slider-track>
+      <li class="slider__slide" data-ulu-slider-slide>
+        <img src="https://picsum.photos/id/10/800/400" alt="Slide 1">
+      </li>
+      <li class="slider__slide" data-ulu-slider-slide>
+        <img src="https://picsum.photos/id/11/800/400" alt="Slide 2">
+      </li>
+      <li class="slider__slide" data-ulu-slider-slide>
+        <img src="https://picsum.photos/id/12/800/400" alt="Slide 3">
+      </li>
+    </ul>
+    <div class="Slider__controls">
+      <button class="button button--icon Slider__control-button Slider__control-button--previous" data-ulu-slider-previous aria-label="Previous Slide">
+        <span class="css-icon css-icon--angle-left"></span>
+      </button>
+      <button class="button button--icon Slider__control-button Slider__control-button--next" data-ulu-slider-next aria-label="Next Slide">
+        <span class="css-icon css-icon--angle-right"></span>
+      </button>
+    </div>
+  </div>
+  <div class="Slider__nav" data-ulu-slider-nav></div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7166,6 +7266,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

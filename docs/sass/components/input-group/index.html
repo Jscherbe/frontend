@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#search-input-(joined)">Search Input (Joined)</a>
+            		</li>
+
+                    <li><a href="#input-with-currency-cue">Input with Currency Cue</a>
+            		</li>
+
+                    <li><a href="#gapped-layout">Gapped Layout</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,10 +6904,149 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="input-group" tabindex="-1">Input-group</h1>
-<div class="type-large">
+      <div class="type-large">
 <p>A layout component for grouping form inputs with adjacent actions or information</p>
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="search-input-(joined)" tabindex="-1">Search Input (Joined)</h3>
+<p>A search bar where the input and button are visually connected with shared borders.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="form-theme">
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--field">
+      <input type="text" class="input-group__input" placeholder="Search...">
+    </div>
+    <div class="input-group__item">
+      <button class="button input-group__button">Search</button>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-142-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>form-theme<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group input-group--joined<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__item input-group__item--field<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>input</span> <span class="pjs-token pjs-attr-name">type</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>text<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__input<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">placeholder</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Search...<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button input-group__button<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Search<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-142-json" type="text/plain">
+<div class="form-theme">
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--field">
+      <input type="text" class="input-group__input" placeholder="Search...">
+    </div>
+    <div class="input-group__item">
+      <button class="button input-group__button">Search</button>
+    </div>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="input-with-currency-cue" tabindex="-1">Input with Currency Cue</h3>
+<p>Using a cue item to provide context, like a currency symbol.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="form-theme">
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--cue">$</div>
+    <div class="input-group__item input-group__item--field">
+      <input type="number" class="input-group__input" placeholder="0.00">
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-143-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>form-theme<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group input-group--joined<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__item input-group__item--cue<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>$<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__item input-group__item--field<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>input</span> <span class="pjs-token pjs-attr-name">type</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>number<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__input<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">placeholder</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>0.00<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-143-json" type="text/plain">
+<div class="form-theme">
+  <div class="input-group input-group--joined">
+    <div class="input-group__item input-group__item--cue">$</div>
+    <div class="input-group__item input-group__item--field">
+      <input type="number" class="input-group__input" placeholder="0.00">
+    </div>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="gapped-layout" tabindex="-1">Gapped Layout</h3>
+<p>The default layout with a small gap between the input and the action button.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="form-theme">
+  <div class="input-group">
+    <div class="input-group__item input-group__item--field">
+      <input type="text" class="input-group__input" placeholder="Enter coupon code">
+    </div>
+    <div class="input-group__item">
+      <button class="button button--outline input-group__button">Apply</button>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-144-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>form-theme<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__item input-group__item--field<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>input</span> <span class="pjs-token pjs-attr-name">type</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>text<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__input<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">placeholder</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Enter coupon code<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>input-group__item<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button button--outline input-group__button<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Apply<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-144-json" type="text/plain">
+<div class="form-theme">
+  <div class="input-group">
+    <div class="input-group__item input-group__item--field">
+      <input type="text" class="input-group__input" placeholder="Enter coupon code">
+    </div>
+    <div class="input-group__item">
+      <button class="button button--outline input-group__button">Apply</button>
+    </div>
+  </div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7105,6 +7259,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

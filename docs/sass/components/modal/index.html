@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#basic-centered-modal">Basic Centered Modal</a>
+            		</li>
+
+                    <li><a href="#right-sidebar-modal">Right Sidebar Modal</a>
+            		</li>
+
+                    <li><a href="#fullscreen-modal">Fullscreen Modal</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,9 +6904,157 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="modal" tabindex="-1">Modal</h1>
-<div class="type-large">
+      <div class="type-large">
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="basic-centered-modal" tabindex="-1">Basic Centered Modal</h3>
+<p>The default centered modal configuration, triggered by a button.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <button class="button" data-ulu-dialog-trigger="modal-example-center">Open Modal</button>
+<div id="modal-example-center" data-ulu-modal-builder='{ "title": "Information" }' hidden="">
+  <p>This is a standard centered modal window. It can contain any HTML content, including text, images, or forms.</p>
+  <div class="button-group">
+    <button class="button" data-ulu-dialog-close="">Confirm</button>
+    <button class="button button--outline" data-ulu-dialog-close="">Cancel</button>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-154-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-dialog-trigger</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>modal-example-center<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Open Modal<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+<p><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>modal-example-center<span class="pjs-token pjs-punctuation">&quot;</span></span>
+<span class="pjs-token pjs-attr-name">data-ulu-modal-builder</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">'</span>{ &quot;title&quot;: &quot;Information&quot; }<span class="pjs-token pjs-punctuation">'</span></span>
+<span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">&gt;</span></span>This is a standard centered modal window. It can contain any HTML content, including text, images, or forms.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>button-group<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>button<span class="pjs-token pjs-punctuation">&quot;</span></span> <span class="pjs-token pjs-attr-name">data-ulu-dialog-close</span><span class="pjs-token pjs-punctuation">&gt;</span></span>Confirm<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>button button--outline<span class="pjs-token pjs-punctuation">&quot;</span></span> <span class="pjs-token pjs-attr-name">data-ulu-dialog-close</span><span class="pjs-token pjs-punctuation">&gt;</span></span>Cancel<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">&gt;</span></span></p></code></pre></div><p></p>
+  <script id="code-preview-154-json" type="text/plain">
+<button class="button" data-ulu-dialog-trigger="modal-example-center">Open Modal</button>
+
+<div id="modal-example-center"
+  data-ulu-modal-builder='{ "title": "Information" }'
+  hidden>
+  <p>This is a standard centered modal window. It can contain any HTML content, including text, images, or forms.</p>
+  <div class="button-group">
+    <button class="button" data-ulu-dialog-close>Confirm</button>
+    <button class="button button--outline" data-ulu-dialog-close>Cancel</button>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="right-sidebar-modal" tabindex="-1">Right Sidebar Modal</h3>
+<p>Using the position: 'right' option to create a sidebar-style modal.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <button class="button" data-ulu-dialog-trigger="modal-example-sidebar">Open Sidebar</button>
+<div id="modal-example-sidebar" data-ulu-modal-builder='{ "title": "Settings", "position": "right" }' hidden="">
+  <div class="menu-stack">
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Notification Settings</a></li>
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Security Options</a></li>
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Account Data</a></li>
+    </ul>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-155-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-dialog-trigger</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>modal-example-sidebar<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Open Sidebar<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+<p><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>modal-example-sidebar<span class="pjs-token pjs-punctuation">&quot;</span></span>
+<span class="pjs-token pjs-attr-name">data-ulu-modal-builder</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">'</span>{ &quot;title&quot;: &quot;Settings&quot;, &quot;position&quot;: &quot;right&quot; }<span class="pjs-token pjs-punctuation">'</span></span>
+<span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>ul</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__list<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__item<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>#<span class="pjs-token pjs-punctuation">&quot;</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__link<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>Notification Settings<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">&gt;</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__item<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>#<span class="pjs-token pjs-punctuation">&quot;</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__link<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>Security Options<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">&gt;</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__item<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>#<span class="pjs-token pjs-punctuation">&quot;</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>menu-stack__link<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>Account Data<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">&gt;</span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>ul</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">&gt;</span></span></p></code></pre></div><p></p>
+  <script id="code-preview-155-json" type="text/plain">
+<button class="button" data-ulu-dialog-trigger="modal-example-sidebar">Open Sidebar</button>
+
+<div id="modal-example-sidebar"
+  data-ulu-modal-builder='{ "title": "Settings", "position": "right" }'
+  hidden>
+  <div class="menu-stack">
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Notification Settings</a></li>
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Security Options</a></li>
+      <li class="menu-stack__item"><a href="#" class="menu-stack__link">Account Data</a></li>
+    </ul>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="fullscreen-modal" tabindex="-1">Fullscreen Modal</h3>
+<p>A modal that fills the entire viewport, useful for immersive content or complex tasks.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <button class="button" data-ulu-dialog-trigger="modal-example-fullscreen">View Fullscreen</button>
+<div id="modal-example-fullscreen" data-ulu-modal-builder='{ "title": "Editor Mode", "size": "fullscreen" }' hidden="">
+  <div class="container">
+    <h2 class="h2">Comprehensive Overview</h2>
+    <p>This view allows for focused interaction with complex data or large media assets without the distraction of the underlying page.</p>
+    <button class="button" data-ulu-dialog-close="">Exit Fullscreen</button>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-156-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-dialog-trigger</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>modal-example-fullscreen<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>View Fullscreen<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+<p><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>modal-example-fullscreen<span class="pjs-token pjs-punctuation">&quot;</span></span>
+<span class="pjs-token pjs-attr-name">data-ulu-modal-builder</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">'</span>{ &quot;title&quot;: &quot;Editor Mode&quot;, &quot;size&quot;: &quot;fullscreen&quot; }<span class="pjs-token pjs-punctuation">'</span></span>
+<span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>container<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>h2</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>h2<span class="pjs-token pjs-punctuation">&quot;</span></span><span class="pjs-token pjs-punctuation">&gt;</span></span>Comprehensive Overview<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>h2</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">&gt;</span></span>This view allows for focused interaction with complex data or large media assets without the distraction of the underlying page.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">&quot;</span>button<span class="pjs-token pjs-punctuation">&quot;</span></span> <span class="pjs-token pjs-attr-name">data-ulu-dialog-close</span><span class="pjs-token pjs-punctuation">&gt;</span></span>Exit Fullscreen<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">&gt;</span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">&gt;</span></span></p></code></pre></div><p></p>
+  <script id="code-preview-156-json" type="text/plain">
+<button class="button" data-ulu-dialog-trigger="modal-example-fullscreen">View Fullscreen</button>
+
+<div id="modal-example-fullscreen"
+  data-ulu-modal-builder='{ "title": "Editor Mode", "size": "fullscreen" }'
+  hidden>
+  <div class="container">
+    <h2 class="h2">Comprehensive Overview</h2>
+    <p>This view allows for focused interaction with complex data or large media assets without the distraction of the underlying page.</p>
+    <button class="button" data-ulu-dialog-close>Exit Fullscreen</button>
+  </div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7357,6 +7520,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

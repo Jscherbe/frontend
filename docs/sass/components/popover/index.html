@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#basic-popover">Basic Popover</a>
+            		</li>
+
+                    <li><a href="#popover-with-footer">Popover with Footer</a>
+            		</li>
+
+                    <li><a href="#tooltip-modifier">Tooltip Modifier</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,9 +6904,166 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="popover" tabindex="-1">Popover</h1>
-<div class="type-large">
+      <div class="type-large">
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="basic-popover" tabindex="-1">Basic Popover</h3>
+<p>A standard popover that appears near a trigger element, including a pointer arrow.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div style="padding: 4rem 0;">
+  <button class="button" data-ulu-popover-trigger="">Toggle Popover</button>
+  <div class="popover" data-ulu-popover-content="">
+    <div class="popover__inner">
+      <p>This is the content of the popover. It can contain text, links, or other small UI elements.</p>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow=""></span>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-162-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">padding</span><span class="pjs-token pjs-punctuation">:</span> 4rem 0<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-trigger</span><span class="pjs-token pjs-punctuation">></span></span>Toggle Popover<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-content</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__inner<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>This is the content of the popover. It can contain text, links, or other small UI elements.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>span</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__arrow<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-arrow</span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>span</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-162-json" type="text/plain">
+<div style="padding: 4rem 0;">
+  <button class="button" data-ulu-popover-trigger>Toggle Popover</button>
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      <p>This is the content of the popover. It can contain text, links, or other small UI elements.</p>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="popover-with-footer" tabindex="-1">Popover with Footer</h3>
+<p>Using the `popover__footer` element to add actions or metadata at the bottom.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div style="padding: 4rem 0;">
+  <button class="button" data-ulu-popover-trigger="">Open Menu</button>
+  <div class="popover" data-ulu-popover-content="">
+    <div class="popover__header">Options</div>
+    <div class="popover__inner">
+      <ul class="list-lines list-lines--dense">
+        <li>Notification Settings</li>
+        <li>Privacy Controls</li>
+      </ul>
+    </div>
+    <div class="popover__footer">
+      <a href="#" class="type-small">Learn More</a>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow=""></span>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-163-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">padding</span><span class="pjs-token pjs-punctuation">:</span> 4rem 0<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-trigger</span><span class="pjs-token pjs-punctuation">></span></span>Open Menu<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-content</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__header<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Options<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__inner<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>ul</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>list-lines list-lines--dense<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Notification Settings<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+        <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>li</span><span class="pjs-token pjs-punctuation">></span></span>Privacy Controls<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>li</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>ul</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__footer<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>a</span> <span class="pjs-token pjs-attr-name">href</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>#<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>type-small<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Learn More<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>a</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>span</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__arrow<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-arrow</span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>span</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-163-json" type="text/plain">
+<div style="padding: 4rem 0;">
+  <button class="button" data-ulu-popover-trigger>Open Menu</button>
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__header">Options</div>
+    <div class="popover__inner">
+      <ul class="list-lines list-lines--dense">
+        <li>Notification Settings</li>
+        <li>Privacy Controls</li>
+      </ul>
+    </div>
+    <div class="popover__footer">
+      <a href="#" class="type-small">Learn More</a>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="tooltip-modifier" tabindex="-1">Tooltip Modifier</h3>
+<p>The `popover--tooltip` modifier creates a smaller, non-interactive overlay typically used for labels.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div style="padding: 2rem 0;">
+  <button class="button" data-ulu-popover-trigger='{ "floating": { "placement": "top" }, "trigger": "hover" }'>Hover Me</button>
+  <div class="popover popover--tooltip" data-ulu-popover-content="">
+    <div class="popover__inner">
+      Helpful hint about this action
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow=""></span>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-164-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">padding</span><span class="pjs-token pjs-punctuation">:</span> 2rem 0<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>button<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-trigger</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">'</span>{ "floating": { "placement": "top" }, "trigger": "hover" }<span class="pjs-token pjs-punctuation">'</span></span><span class="pjs-token pjs-punctuation">></span></span>Hover Me<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover popover--tooltip<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-content</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__inner<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      Helpful hint about this action
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>span</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>popover__arrow<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-popover-arrow</span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>span</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-164-json" type="text/plain">
+<div style="padding: 2rem 0;">
+  <button class="button" data-ulu-popover-trigger='{ "floating": { "placement": "top" }, "trigger": "hover" }'>Hover Me</button>
+  <div class="popover popover--tooltip" data-ulu-popover-content>
+    <div class="popover__inner">
+      Helpful hint about this action
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7247,6 +7419,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

@@ -4,11 +4,11 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const sassdocPath = path.resolve(__dirname, "../mcp-data/mcp-sassdoc.json");
-const jsdocPath = path.resolve(__dirname, "../mcp-data/mcp-jsdoc.json");
-const snippetsPath = path.resolve(__dirname, "../mcp-data/mcp-snippets.json");
+const sassdocPath = path.resolve(__dirname, "../mcp/data/sassdoc.json");
+const jsdocPath = path.resolve(__dirname, "../mcp/data/jsdoc.json");
+const snippetsPath = path.resolve(__dirname, "../mcp/data/snippets.json");
 
-const distDir = path.resolve(__dirname, "../../dist/mcp");
+const distDir = path.resolve(__dirname, "../../dist/");
 
 // Ensure dist directory exists
 fs.ensureDirSync(distDir);
@@ -119,6 +119,8 @@ for (const item of jsData) {
 }
 
 const providerData = {
+  name: "@ulu/frontend",
+  prefix: "ulu",
   snippets: snippetsData,       // Builder Tier
   configuration: configurationData, // Styling Tier
   reference: referenceData,     // In-Depth Tier
@@ -126,19 +128,6 @@ const providerData = {
 };
 
 // Write the data JSON
-const dataPath = path.join(distDir, "data.json");
+const dataPath = path.join(distDir, "mcp-data.json");
 fs.writeJsonSync(dataPath, providerData, { spaces: 2 });
 console.log(`Provider data written to ${dataPath}`);
-
-// Write the JS entry point
-const indexPath = path.join(distDir, "index.js");
-const indexContent = `import data from "./data.json" with { type: "json" };
-
-export default {
-  name: "@ulu/frontend",
-  prefix: "ulu",
-  ...data
-};
-`;
-fs.writeFileSync(indexPath, indexContent);
-console.log(`Provider index written to ${indexPath}`);

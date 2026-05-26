@@ -43,7 +43,7 @@ async function output() {
   }, []);
 
   if (process.env.BUILD_MCP) {
-    const outputPath = path.resolve("./site/mcp-data/mcp-jsdoc.json");
+    const outputPath = path.resolve("./site/mcp/data/jsdoc.json");
     fs.outputFileSync(outputPath, JSON.stringify(templateData, null, 2));
     console.log(`MCP JSDoc Data written to ${outputPath}`);
   }

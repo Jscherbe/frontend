@@ -8,7 +8,7 @@ export default async function plugin(eleventyConfig) {
     
     const snippetsData = getDemoSnippets();
 
-    const outputPath = path.resolve("./site/mcp-data/mcp-snippets.json");
+    const outputPath = path.resolve("./site/mcp/data/snippets.json");
     fs.outputFileSync(outputPath, JSON.stringify(snippetsData, null, 2));
     console.log(`MCP Snippets Data written to ${outputPath}`);
   });

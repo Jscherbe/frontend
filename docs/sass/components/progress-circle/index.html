@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#basic-donut-chart">Basic Donut Chart</a>
+            		</li>
+
+                    <li><a href="#pie-chart-variant">Pie Chart Variant</a>
+            		</li>
+
+                    <li><a href="#small-progress-circle">Small Progress Circle</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,10 +6904,155 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="progress-circle" tabindex="-1">Progress-circle</h1>
-<div class="type-large">
+      <div class="type-large">
 <p>A circular progress indicator.</p>
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="basic-donut-chart" tabindex="-1">Basic Donut Chart</h3>
+<p>A circular progress indicator using an SVG donut chart structure.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="progress-circle">
+  <div class="progress-circle__chart">
+    <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+      <circle class="progress-circle__chart-track" cx="16" cy="16" r="11"></circle>
+      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="11" style="stroke-dasharray: 65 100;"></circle>
+      <circle class="progress-circle__chart-mask" cx="16" cy="16"></circle>
+    </svg>
+    <strong class="progress-circle__chart-value">65%</strong>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-172-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>svg</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-svg<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">viewBox</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>0 0 32 32<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-track<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>11<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-pie<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>11<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">stroke-dasharray</span><span class="pjs-token pjs-punctuation">:</span> 65 100<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-mask<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>svg</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>strong</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-value<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>65%<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>strong</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-172-json" type="text/plain">
+<div class="progress-circle">
+  <div class="progress-circle__chart">
+    <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+      <circle class="progress-circle__chart-track" cx="16" cy="16" r="11"></circle>
+      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="11" style="stroke-dasharray: 65 100;"></circle>
+      <circle class="progress-circle__chart-mask" cx="16" cy="16"></circle>
+    </svg>
+    <strong class="progress-circle__chart-value">65%</strong>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="pie-chart-variant" tabindex="-1">Pie Chart Variant</h3>
+<p>Using the `progress-circle--pie` modifier to create a solid circular progress indicator.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="progress-circle progress-circle--pie">
+  <div class="progress-circle__chart">
+    <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+      <circle class="progress-circle__chart-track" cx="16" cy="16" r="16"></circle>
+      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="16" style="stroke-dasharray: 40 100;"></circle>
+      <circle class="progress-circle__chart-mask" cx="16" cy="16" r="16"></circle>
+    </svg>
+    <strong class="progress-circle__chart-value" style="color: white;">40%</strong>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-173-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle progress-circle--pie<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>svg</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-svg<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">viewBox</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>0 0 32 32<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-track<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-pie<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">stroke-dasharray</span><span class="pjs-token pjs-punctuation">:</span> 40 100<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-mask<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>svg</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>strong</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-value<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">color</span><span class="pjs-token pjs-punctuation">:</span> white<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span>40%<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>strong</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-173-json" type="text/plain">
+<div class="progress-circle progress-circle--pie">
+  <div class="progress-circle__chart">
+    <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+      <circle class="progress-circle__chart-track" cx="16" cy="16" r="16"></circle>
+      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="16" style="stroke-dasharray: 40 100;"></circle>
+      <circle class="progress-circle__chart-mask" cx="16" cy="16" r="16"></circle>
+    </svg>
+    <strong class="progress-circle__chart-value" style="color: white;">40%</strong>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="small-progress-circle" tabindex="-1">Small Progress Circle</h3>
+<p>Using the `progress-circle--small` modifier for space-constrained layouts.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="progress-circle progress-circle--small">
+  <div class="progress-circle__chart">
+    <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+      <circle class="progress-circle__chart-track" cx="16" cy="16" r="9.5"></circle>
+      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="9.5" style="stroke-dasharray: 85 100;"></circle>
+      <circle class="progress-circle__chart-mask" cx="16" cy="16"></circle>
+    </svg>
+  </div>
+  <div class="progress-circle__value">85% Complete</div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-174-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle progress-circle--small<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>svg</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-svg<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">viewBox</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>0 0 32 32<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-track<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>9.5<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-pie<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">r</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>9.5<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">stroke-dasharray</span><span class="pjs-token pjs-punctuation">:</span> 85 100<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+      <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>circle</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__chart-mask<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cx</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">cy</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>16<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>circle</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>svg</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>progress-circle__value<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>85% Complete<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-174-json" type="text/plain">
+<div class="progress-circle progress-circle--small">
+  <div class="progress-circle__chart">
+    <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+      <circle class="progress-circle__chart-track" cx="16" cy="16" r="9.5"></circle>
+      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="9.5" style="stroke-dasharray: 85 100;"></circle>
+      <circle class="progress-circle__chart-mask" cx="16" cy="16"></circle>
+    </svg>
+  </div>
+  <div class="progress-circle__value">85% Complete</div>
+</div>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7157,6 +7317,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

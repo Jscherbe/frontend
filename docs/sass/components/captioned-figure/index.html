@@ -6849,6 +6849,21 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#demos">Demos</a>
+            
+                <ol>
+                    
+                    <li><a href="#traditional-layout">Traditional Layout</a>
+            		</li>
+
+                    <li><a href="#bottom-right-overlay">Bottom-Right Overlay</a>
+            		</li>
+
+                    <li><a href="#bottom-center-overlay">Bottom-Center Overlay</a>
+            		</li>
+                </ol>
+            		</li>
+
                     <li><a href="#variables">Variables</a>
             
                 <ol>
@@ -6889,10 +6904,119 @@
 			
   <div class="page__body-top container api-docs">
     <div class="wysiwyg">
-      <h1 id="captioned-figure" tabindex="-1">Captioned-figure</h1>
-<div class="type-large">
+      <div class="type-large">
 <p>Figure with caption layout (to position caption)</p>
 </div>
+<h2 class="h2" id="demos" tabindex="-1">Demos</h2>
+<h3 class="h3" id="traditional-layout" tabindex="-1">Traditional Layout</h3>
+<p>A traditional figure layout with the caption appearing below the image.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <figure class="captioned-figure captioned-figure--traditional">
+  <img src="https://picsum.photos/id/1018/600/400" alt="Landscape photo">
+  <figcaption class="captioned-figure__caption">
+    A beautiful landscape captured during sunset.
+  </figcaption>
+</figure>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-107-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>figure</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>captioned-figure captioned-figure--traditional<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>img</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>https://picsum.photos/id/1018/600/400<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">alt</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Landscape photo<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>figcaption</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>captioned-figure__caption<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    A beautiful landscape captured during sunset.
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>figcaption</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>figure</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-107-json" type="text/plain">
+<figure class="captioned-figure captioned-figure--traditional">
+  <img src="https://picsum.photos/id/1018/600/400" alt="Landscape photo">
+  <figcaption class="captioned-figure__caption">
+    A beautiful landscape captured during sunset.
+  </figcaption>
+</figure>
+  </script>
+</div>
+<h3 class="h3" id="bottom-right-overlay" tabindex="-1">Bottom-Right Overlay</h3>
+<p>The caption is overlaid on the bottom-right of the image using absolute positioning.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <figure class="captioned-figure captioned-figure--bottom captioned-figure--right">
+  <img src="https://picsum.photos/id/1015/600/400" alt="Landscape photo">
+  <figcaption class="captioned-figure__caption">
+    Overlay Caption
+  </figcaption>
+</figure>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-108-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>figure</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>captioned-figure captioned-figure--bottom captioned-figure--right<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>img</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>https://picsum.photos/id/1015/600/400<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">alt</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Landscape photo<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>figcaption</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>captioned-figure__caption<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    Overlay Caption
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>figcaption</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>figure</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-108-json" type="text/plain">
+<figure class="captioned-figure captioned-figure--bottom captioned-figure--right">
+  <img src="https://picsum.photos/id/1015/600/400" alt="Landscape photo">
+  <figcaption class="captioned-figure__caption">
+    Overlay Caption
+  </figcaption>
+</figure>
+  </script>
+</div>
+<h3 class="h3" id="bottom-center-overlay" tabindex="-1">Bottom-Center Overlay</h3>
+<p>The caption is centered at the bottom of the image.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <figure class="captioned-figure captioned-figure--bottom captioned-figure--center">
+  <img src="https://picsum.photos/id/1016/600/400" alt="Landscape photo">
+  <figcaption class="captioned-figure__caption">
+    Centered Overlay
+  </figcaption>
+</figure>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-109-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>figure</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>captioned-figure captioned-figure--bottom captioned-figure--center<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>img</span> <span class="pjs-token pjs-attr-name">src</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>https://picsum.photos/id/1016/600/400<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">alt</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>Landscape photo<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>figcaption</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>captioned-figure__caption<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    Centered Overlay
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>figcaption</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>figure</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-109-json" type="text/plain">
+<figure class="captioned-figure captioned-figure--bottom captioned-figure--center">
+  <img src="https://picsum.photos/id/1016/600/400" alt="Landscape photo">
+  <figcaption class="captioned-figure__caption">
+    Centered Overlay
+  </figcaption>
+</figure>
+  </script>
+</div>
+<div class="wysiwyg">
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
@@ -7157,6 +7281,7 @@
 <ul>
 <li><a href="/frontend/sass/components/accordion/#variable-config">$config</a></li>
 </ul>
+</div>
 </div>
 
     </div>

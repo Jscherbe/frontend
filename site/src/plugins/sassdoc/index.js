@@ -143,7 +143,7 @@ async function output() {
     await Promise.all(configs.map(c => outputPages(c)));
     
     if (process.env.BUILD_MCP) {
-      const outputPath = path.resolve("./site/mcp-data/mcp-sassdoc.json");
+      const outputPath = path.resolve("./site/mcp/data/sassdoc.json");
       fs.outputFileSync(outputPath, JSON.stringify(mcpDataAccumulator, null, 2));
       console.log(`MCP SassDoc Data written to ${outputPath}`);
     }
