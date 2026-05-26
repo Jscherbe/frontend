@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-DWwHRMTi.css">
+  <link rel="stylesheet" href="/frontend/assets/main-CJ4dnny_.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6915,12 +6915,12 @@
 </div>
 <p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
-  <span class="pjs-token pjs-string">"sticky-offset-top"</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">add</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"header-height"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"sticky-margin"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"sticky-offset-top"</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">add</span><span class="pjs-token pjs-punctuation">(</span>cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"header-height"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"sticky-margin"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"sticky-offset-bottom"</span><span class="pjs-token pjs-punctuation">:</span> 0px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"sticky-margin"</span><span class="pjs-token pjs-punctuation">:</span> 0px<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"header-height"</span><span class="pjs-token pjs-punctuation">:</span> 0px<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"fullscreen-height"</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">subtract</span><span class="pjs-token pjs-punctuation">(</span>100dvh<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"header-height"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"fullscreen-height-sticky"</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">subtract</span><span class="pjs-token pjs-punctuation">(</span>100dvh<span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"sticky-offset-top"</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-string">"sticky-offset-bottom"</span><span class="pjs-token pjs-punctuation">)</span>
+  <span class="pjs-token pjs-string">"fullscreen-height"</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">subtract</span><span class="pjs-token pjs-punctuation">(</span>100dvh<span class="pjs-token pjs-punctuation">,</span> cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"header-height"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"fullscreen-height-sticky"</span><span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">subtract</span><span class="pjs-token pjs-punctuation">(</span>100dvh<span class="pjs-token pjs-punctuation">,</span> cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"sticky-offset-top"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"sticky-offset-bottom"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">)</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -6946,7 +6946,7 @@
 <tr>
 <td style="text-align:left">sticky-offset-top</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">cssvar.add(&quot;header-height&quot;, &quot;sticky-margin&quot;)</td>
+<td style="text-align:left">cssvar.add(cssvar.use-ulu(&quot;header-height&quot;), cssvar.use-ulu(&quot;sticky-margin&quot;))</td>
 <td style="text-align:left">Total top offset for sticky positioning. Accounts for the primary header and any required breathing room.</td>
 </tr>
 <tr>
@@ -6970,13 +6970,13 @@
 <tr>
 <td style="text-align:left">fullscreen-height</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">cssvar.subtract(100dvh, &quot;header-height&quot;)</td>
+<td style="text-align:left">cssvar.subtract(100dvh, cssvar.use-ulu(&quot;header-height&quot;))</td>
 <td style="text-align:left">Utility height representing the visible viewport space below the header.</td>
 </tr>
 <tr>
 <td style="text-align:left">fullscreen-height-sticky</td>
 <td style="text-align:left">String</td>
-<td style="text-align:left">cssvar.subtract(100dvh, &quot;sticky-offset-top&quot;, &quot;sticky-offset-bottom&quot;)</td>
+<td style="text-align:left">cssvar.subtract(100dvh, cssvar.use-ulu(&quot;sticky-offset-top&quot;), cssvar.use-ulu(&quot;sticky-offset-bottom&quot;))</td>
 <td style="text-align:left">Utility height representing the safe scrollable area between all sticky layout boundaries.</td>
 </tr>
 </tbody>
@@ -7230,7 +7230,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-BcXyBDAJ.js"></script>
+<script type="module" src="/frontend/assets/main-D67dr92q.js"></script>
 
 		
 	</body>
