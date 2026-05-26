@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.9
+
+- `scss/components/_card_.scss`
+  - Cards horizontal support any image aspect ratio correctly now. This fixed an issue with browser using the image's intrinsic height when calculating the row height of the card (card is grid layout) when the horizontal modifier is being used.
+- `packge.json`
+  - Add "sass" entry to exports for use with sass importer
+    - So you can do `@use "pkg:@ulu/frontend/scss" as ulu;`
+    - [See](https://sass-lang.com/documentation/at-rules/use/)
+
 ## 0.6.8
 
 - `scss/components/_button.scss`

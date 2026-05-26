@@ -1,13 +1,6 @@
 Important:
   ☐ Root module custom properties aren't ulu prefixed
   ☐ Modal defaults for close color should be null (since we use button classes normally)
-  ☐ Consider adding "sass" export for sass's node importer to resolve correctly
-    * For users outside of vite's magic resolving
-    * So you can do `@use "pkg:@ulu/frontend/scss" as ulu;`
-    * See https://sass-lang.com/documentation/at-rules/use/
-  ☐ Fix card horizontal 
-    * Test with different aspect ratios images
-    * CSS grid is using the images intrinsic size to figure out what grid-template-rows 1fr means (1fr means the contents min), instead in the -horizontal styles we need to test minmax(0, 1fr) to allow the browser to know it can collapse when doing the calculation for the row height (see reference/notes-card-hozizontal-image-affect-height.md)
   ☐ Accordion & Maybe Details Animation Update @hold-for-better-browser-support
     * Maybe we should use the new animation technique for details-content pseudo element, which uses the new interpolate size option to allow animations from 0 to auto. 
       * Note we will need to wait until this is introduced in browsers other than chrome
