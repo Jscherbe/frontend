@@ -551,20 +551,30 @@ $config: (
   $prefix: selector.class("card");
 
   grid-template-columns: get("horizontal-image-width") 1fr;
-  grid-template-rows: 1fr auto; // Footer is native height first row fills
+  // Fix: Use minmax(0, ...) to allow the row to shrink smaller than the image's height
+  grid-template-rows: minmax(0, 1fr) auto; // Footer is native height, first row fills
   min-height: get("horizontal-min-height");
   max-width: get("horizontal-max-width");
 
   // When no footer remove extra row
   &:not(:has(> #{ $prefix }__footer)) {
-    grid-template-rows: auto;
+    grid-template-rows: minmax(0, 1fr);
   }
   #{ $prefix }__image {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
     aspect-ratio: auto;
+    // Fix: Force the container to ignore the image's intrinsic height (height: 0)
+    // and instead stretch to fill the grid area (min-height: 100%).
+    height: 0;
+    min-height: 100%;
     border-top-right-radius: 0;
     border-bottom-left-radius: get("border-radius");
+  }
+  #{ $prefix }__image img,
+  #{ $prefix}__image-media {
+    // Fix: Ensure the image itself doesn't have a minimum size requirement
+    min-height: 0;
   }
   #{ $prefix }__body,
   #{ $prefix }__footer {
@@ -611,10 +621,10 @@ $config: (
   $prefix: selector.class("card");
 
   grid-template-columns: get("horizontal-image-width") 1fr auto;
-  grid-template-rows: 1fr; // Footer is native height first row fills
+  // Fix: Use minmax(0, ...) to allow the row to shrink smaller than the image's height
+  grid-template-rows: minmax(0, 1fr); 
   #{ $prefix }__footer {
     grid-column: 3;
-    
   }
 }
 
