@@ -1,0 +1,17 @@
+Todos:
+  ☐ Move mcp work out
+  ☐ Fix horizontal card, create tests for varying image sizes and confirm uniformity
+    ☐ After card fix and publish
+    ☐ Work on next minor release
+      * GOAL: Fix minor friction points
+      * - Components from the beginning that are mixed with core and base
+      * - Want this to be very systematized for mcp consumption
+      *   - Consider grabbing definitions of folders from colocated README's. etc so that less is loosely organized in docs pages
+      * Consider creating a default themes or creating a new package for this
+        * Need to bridge the gap between the raw config based modules (good for no opinion open ended, bad for ease of configuration, which is expected) and creating an easy to configure theme for the system as a whole or preset. Something where we have opinionated variables and design token names (ie themes module design tokens) that are mapped to all config for components/etc. The user can use this module, configure it, they may have to init() it so that things can be done in order in separate process (like how this core works but with an init method to set the final ulu frontend configurations)
+          * Need to decide if this is a separate package
+    ☐ Then consider moving components that are mixed with the base
+      * This can be a new 0.x.0 version (breaking changes)
+      * This will be better for future/scalability 
+      * Think about addressing the utility layout classes in base (eg. layout-flex-center vs just creating dedicated flex module and phasing those out?)
+  ☐ Make documentation better make sure there are examples of everything, the more examples the easier this can scale
