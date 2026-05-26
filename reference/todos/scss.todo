@@ -1,6 +1,4 @@
 Important:
-  ☐ Root module custom properties aren't ulu prefixed
-  ☐ Modal defaults for close color should be null (since we use button classes normally)
   ☐ Accordion & Maybe Details Animation Update @hold-for-better-browser-support
     * Maybe we should use the new animation technique for details-content pseudo element, which uses the new interpolate size option to allow animations from 0 to auto. 
       * Note we will need to wait until this is introduced in browsers other than chrome

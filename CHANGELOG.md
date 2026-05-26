@@ -1,10 +1,16 @@
 # Change Log
 
+## 0.6.10
+
+- `scss/base/_root.scss` | Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties
+- `scss/components/_modal.scss` | 
+  - Change defaults for "close-color", "close-color-hover", "close-background-color", and "close-background-color-hover" to null so they don't compete with .button styles which is the default for modal-builder 
+
 ## 0.6.9
 
-- `scss/components/_card_.scss`
+- `scss/components/_card.scss`
   - Cards horizontal support any image aspect ratio correctly now. This fixed an issue with browser using the image's intrinsic height when calculating the row height of the card (card is grid layout) when the horizontal modifier is being used.
-- `packge.json`
+- `package.json`
   - Add "sass" entry to exports for use with sass importer
     - So you can do `@use "pkg:@ulu/frontend/scss" as ulu;`
     - [See](https://sass-lang.com/documentation/at-rules/use/)

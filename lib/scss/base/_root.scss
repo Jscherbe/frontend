@@ -10,20 +10,20 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} sticky-offset-top [cssvar.add("header-height", "sticky-margin")] - Total top offset for sticky positioning. Accounts for the primary header and any required breathing room.
+/// @prop {String} sticky-offset-top [cssvar.add(cssvar.use-ulu("header-height"), cssvar.use-ulu("sticky-margin"))] - Total top offset for sticky positioning. Accounts for the primary header and any required breathing room.
 /// @prop {Dimension} sticky-offset-bottom [0px] - Bottom offset for sticky positioning. Useful when accounting for fixed footers or mobile navigation bars.
 /// @prop {Dimension} sticky-margin [0px] - Desired visual space between a sticky element and the bottom of the header.
 /// @prop {Dimension} header-height [0px] - The physical rendered height of the site's fixed/sticky header.
-/// @prop {String} fullscreen-height [cssvar.subtract(100dvh, "header-height")] - Utility height representing the visible viewport space below the header.
-/// @prop {String} fullscreen-height-sticky [cssvar.subtract(100dvh, "sticky-offset-top", "sticky-offset-bottom")] - Utility height representing the safe scrollable area between all sticky layout boundaries.
+/// @prop {String} fullscreen-height [cssvar.subtract(100dvh, cssvar.use-ulu("header-height"))] - Utility height representing the visible viewport space below the header.
+/// @prop {String} fullscreen-height-sticky [cssvar.subtract(100dvh, cssvar.use-ulu("sticky-offset-top"), cssvar.use-ulu("sticky-offset-bottom"))] - Utility height representing the safe scrollable area between all sticky layout boundaries.
 
 $config: (
-  "sticky-offset-top": cssvar.add("header-height", "sticky-margin"),
+  "sticky-offset-top": cssvar.add(cssvar.use-ulu("header-height"), cssvar.use-ulu("sticky-margin")),
   "sticky-offset-bottom": 0px,
   "sticky-margin": 0px,
   "header-height": 0px,
-  "fullscreen-height": cssvar.subtract(100dvh, "header-height"),
-  "fullscreen-height-sticky": cssvar.subtract(100dvh, "sticky-offset-top", "sticky-offset-bottom")
+  "fullscreen-height": cssvar.subtract(100dvh, cssvar.use-ulu("header-height")),
+  "fullscreen-height-sticky": cssvar.subtract(100dvh, cssvar.use-ulu("sticky-offset-top"), cssvar.use-ulu("sticky-offset-bottom"))
 ) !default;
 
 /// Change modules $config
