@@ -1,4 +1,8 @@
 Important:
+  ☐ Need to make a stacked or compact modifier for menu-stack
+    * This would be icon over text for compact sidebar navigation
+  ☐ Need to make a component for the icon-header system
+    * Look at past projects first
   ☐ Accordion & Maybe Details Animation Update @hold-for-better-browser-support
     * Maybe we should use the new animation technique for details-content pseudo element, which uses the new interpolate size option to allow animations from 0 to auto. 
       * Note we will need to wait until this is introduced in browsers other than chrome
