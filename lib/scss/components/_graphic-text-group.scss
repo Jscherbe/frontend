@@ -17,6 +17,10 @@ $-fallbacks: (
   "rule-border": (
     "function": meta.get-function("get-rule-style", false, "element"),
     "arguments": ("large",)
+  ),
+  "separator-border": (
+    "function": meta.get-function("get-rule-style", false, "element"),
+    "arguments": ("default",)
   )
 );
 
@@ -28,6 +32,8 @@ $-fallbacks: (
 /// @prop {Border} rule-border [true] The border style for the rules.
 /// @prop {CssUnit} rule-padding [1rem] The padding applied when using rules.
 /// @prop {String} wrap-breakpoint ["small"] The breakpoint name at which the layout wraps to a column.
+/// @prop {Border} separator-border [true] The border style for the separator between graphic and text.
+/// @prop {CssUnit} separator-gap [0.5rem] The gap when the separator modifier is used (typically smaller since there are two gaps around the separator).
 
 $config: (
   "gap" : 1rem,
@@ -36,6 +42,8 @@ $config: (
   "rule-border" : true,
   "rule-padding" : 1rem,
   "wrap-breakpoint" : "small",
+  "separator-border" : true,
+  "separator-gap" : 0.8rem,
 ) !default;
 
 /// Change modules $config
@@ -88,7 +96,26 @@ $config: (
   #{ $prefix }__text {
     flex-grow: 1;
     min-width: 0;
-    order: 2;
+    order: 3;
+  }
+
+  // Separator Modifier
+  #{ $prefix }--separator {
+    gap: get("separator-gap");
+    &::before {
+      content: "";
+      display: block;
+      order: 2;
+      align-self: stretch;
+      border-left: get("separator-border");
+    }
+    &#{ $prefix }--top,
+    &#{ $prefix }--bottom {
+      &::before {
+        border-left: none;
+        border-bottom: get("separator-border");
+      }
+    }
   }
 
   // Responsive Modifiers
@@ -96,6 +123,10 @@ $config: (
     @include breakpoint.max(get("wrap-breakpoint")) {
       flex-direction: column;
       align-items: flex-start;
+      &#{ $prefix }--separator::before {
+        border-left: none;
+        border-bottom: get("separator-border");
+      }
     }
   }
 
@@ -111,7 +142,7 @@ $config: (
   // Position Modifiers
   #{ $prefix }--right {
     > #{ $prefix }__graphic {
-      order: 2;
+      order: 3;
     }
     > #{ $prefix }__text {
       order: 1;
@@ -125,7 +156,7 @@ $config: (
   #{ $prefix }--bottom {
     flex-direction: column;
     > #{ $prefix }__graphic {
-      order: 2;
+      order: 3;
     }
     > #{ $prefix }__text {
       order: 1;

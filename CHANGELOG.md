@@ -2,7 +2,7 @@
 
 ## 0.6.11
 
-- `scss/component/_graphic-text-group.scss` (NEW)
+- `scss/component/_graphic-text-group.scss` (New)
   - Add new component for graphic + text lockup/layout
 - `scss/component/_menu-stack.scss`
   - Add modifier for "stacked" which will stack icon over the text for small compact sidebar menus (think app icon sidebar)

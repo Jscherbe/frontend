@@ -105,6 +105,38 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 </div>
 {% endCodePreview %}
 
+<h2 class="h2">Separator Modifiers</h2>
+
+<p>The <code>--separator</code> modifier adds a vertical (or horizontal) rule cleanly between the text and graphic using a flexible pseudo-element.</p>
+
+<h3 class="h3">Default with Separator</h3>
+
+{% CodePreview %}
+<div class="graphic-text-group graphic-text-group--separator type-max-width-small margin-auto">
+  <div class="graphic-text-group__graphic">
+    <img alt="" src="/assets/placeholder/graphic-icon-small-bulb.svg">
+  </div>
+  <div class="graphic-text-group__text crop-margins">
+    <h4 class="h4 no-margin-bottom">Example Headline</h4>
+    <p>The separator automatically spans the height of the container in this row layout.</p>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h3 class="h3">Top with Separator</h3>
+
+{% CodePreview %}
+<div class="graphic-text-group graphic-text-group--top graphic-text-group--separator type-max-width-small margin-auto">
+  <div class="graphic-text-group__graphic">
+    <img alt="" src="/assets/placeholder/graphic-icon-small-bulb.svg">
+  </div>
+  <div class="graphic-text-group__text crop-margins">
+    <h4 class="h4 no-margin-bottom">Example Headline</h4>
+    <p>The separator automatically switches to a horizontal border when in a column layout like <code>--top</code> or <code>--bottom</code>.</p>
+  </div>
+</div>
+{% endCodePreview %}
+
 <h2 class="h2">Rules Modifiers</h2>
 
 {% CodePreview %}
@@ -124,7 +156,7 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 <p>Use the <code>graphic-text-group--wrap</code> modifier to force the layout into a stacked column layout on smaller screens. This relies on the <code>wrap-breakpoint</code> configuration variable (defaults to <code>small</code>).</p>
 
 {% CodePreview %}
-<div class="graphic-text-group graphic-text-group--wrap type-max-width-small margin-auto">
+<div class="graphic-text-group graphic-text-group--wrap graphic-text-group--separator type-max-width-small margin-auto">
   <div class="graphic-text-group__graphic" style="width: 6rem">
     <div class="badge badge--large">
       <div class="badge__inner">
@@ -134,7 +166,7 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
   </div>
   <div class="graphic-text-group__text crop-margins">
     <h4 class="h4 no-margin-bottom">Wraps on Small Screens</h4>
-    <p>Shrink the browser window to see the graphic wrap to the top of the text block.</p>
+    <p>Shrink the browser window to see the graphic wrap to the top of the text block. Note how the separator properly changes from vertical to horizontal when it wraps!</p>
   </div>
 </div>
 {% endCodePreview %}
