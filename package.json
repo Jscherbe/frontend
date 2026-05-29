@@ -12,7 +12,7 @@
   "types": "./dist/es/index.d.ts",
   "exports": {
     ".": {
-      "sass" : "./lib/scss/index.scss",
+      "sass": "./lib/scss/index.scss",
       "types": "./dist/es/index.d.ts",
       "import": "./dist/es/index.js",
       "require": "./dist/umd/ulu-frontend.umd.js"
@@ -99,6 +99,7 @@
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@ulu/eleventy-plugin-nav-tree": "^0.0.1",
     "@ulu/markdown-output-utils": "^0.0.6",
+    "@ulu/mcp-context-server": "^0.0.3",
     "@ulu/sassdoc-to-markdown": "^0.0.16",
     "@ulu/utils": "^0.0.34",
     "@ulu/vite-plugin-eleventy": "^0.0.1",

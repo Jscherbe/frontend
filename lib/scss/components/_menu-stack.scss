@@ -28,6 +28,10 @@ $-fallbacks: (
   "link-line-height" : (
     "function" : meta.get-function("get", false, "typography"),
     "property" : "line-height-dense"
+  ),
+  "stacked-link-border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius-small"
   )
 );
     
@@ -46,6 +50,9 @@ $-fallbacks: (
 /// @prop {Dimension} compact-selectable-input-width [2em] The width of the checkbox/radio input (when compact modifier)
 /// @prop {Dimension} compact-selectable-input-font-size [null] Optional compact input font-size
 /// @prop {Dimension} compact-selectable-input-top [null] Optional y/top for input
+/// @prop {Dimension} stacked-link-padding-x [0.4em] The links horizontal padding when using the stacked option.
+/// @prop {Dimension} stacked-link-padding-y [0.4em] The links vertical padding when using the stacked option.
+/// @prop {Dimension} stacked-link-icon-margin [0.35em] Margin between icon and text when stacked.
 /// @prop {Color} label-color [null] The type color of the label.
 /// @prop {Dimension} label-margin [0.5em] The margin of the label.
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
@@ -121,6 +128,10 @@ $config: (
   "compact-selectable-input-width": 2.2em,
   "compact-selectable-input-top" : 0.5em,
   "compact-selectable-input-font-size": 0.8em,
+  "stacked-link-padding-x": 0.4em,
+  "stacked-link-padding-y": 0.4em,
+  "stacked-link-icon-margin": 0.35em,
+  "stacked-link-border-radius": true,
   "selectable-input-width" : 3em,
   "selectable-input-top" : 0.73em,
   "selectable-input-font-size" : null,
@@ -369,6 +380,28 @@ $config: (
     #{ $prefix }__selectable label,
     #{ $prefix }__selectable-label {
       padding-left: get("link-padding-x");
+    }
+  }
+
+  #{ $prefix }--stacked {
+    @include cssvar.declare-ulu("menu-stack-link-padding-x", get("stacked-link-padding-x"));
+
+    #{ $prefix }__link,
+    #{ $prefix }__toggle {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      border-radius: get("stacked-link-border-radius");
+      padding-top: get("stacked-link-padding-y");
+      padding-bottom: get("stacked-link-padding-y");
+    }
+    #{ $prefix }__link-icon {
+      margin-right: 0;
+      margin-bottom: get("stacked-link-icon-margin");
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 

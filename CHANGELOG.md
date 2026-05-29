@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.11
+
+- `scss/component/_graphic-text-group.scss` (NEW)
+  - Add new component for graphic + text lockup/layout
+- `scss/component/_menu-stack.scss`
+  - Add modifier for "stacked" which will stack icon over the text for small compact sidebar menus (think app icon sidebar)
+  - Add options to configure this style of the menu
+
 ## 0.6.10
 
 - `scss/base/_root.scss` | Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties

@@ -1,0 +1,151 @@
+////
+/// @group graphic-text-group
+/// Graphic Text Group layout component
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "../selector";
+@use "../utils";
+@use "../element";
+@use "../breakpoint";
+
+// Used for function fallback
+$-fallbacks: (
+  "rule-border": (
+    "function": meta.get-function("get-rule-style", false, "element"),
+    "arguments": ("large",)
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {CssUnit} gap [1rem] The gap between graphic and text.
+/// @prop {List} margin [2em 0] Margin applied to the group.
+/// @prop {CssUnit} graphic-width [3.5rem] The default safe width for the graphic.
+/// @prop {Border} rule-border [true] The border style for the rules.
+/// @prop {CssUnit} rule-padding [1rem] The padding applied when using rules.
+/// @prop {String} wrap-breakpoint ["small"] The breakpoint name at which the layout wraps to a column.
+
+$config: (
+  "gap" : 1rem,
+  "margin" : (2em 0),
+  "graphic-width" : 3.5rem,
+  "rule-border" : true,
+  "rule-padding" : 1rem,
+  "wrap-breakpoint" : "small",
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-graphic-text-group-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-graphic-text-group-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "graphic-text-group [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints component styles
+/// @demo graphic-text-group
+/// @example scss
+///  @include ulu.component-graphic-text-group-styles();
+
+@mixin styles {
+  $prefix: selector.class("graphic-text-group");
+
+  #{ $prefix } {
+    display: flex;
+    align-items: center;
+    gap: get("gap");
+    margin: get("margin");
+  }
+
+  #{ $prefix }__graphic {
+    flex-shrink: 0;
+    width: get("graphic-width");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 1;
+
+    img, svg {
+      margin: 0;
+    }
+  }
+
+  #{ $prefix }__text {
+    flex-grow: 1;
+    min-width: 0;
+    order: 2;
+  }
+
+  // Responsive Modifiers
+  #{ $prefix }--wrap {
+    @include breakpoint.max(get("wrap-breakpoint")) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  // Alignment Modifiers
+  #{ $prefix }--align-start {
+    align-items: flex-start;
+  }
+
+  #{ $prefix }--align-end {
+    align-items: flex-end;
+  }
+
+  // Position Modifiers
+  #{ $prefix }--right {
+    > #{ $prefix }__graphic {
+      order: 2;
+    }
+    > #{ $prefix }__text {
+      order: 1;
+    }
+  }
+
+  #{ $prefix }--top {
+    flex-direction: column;
+  }
+
+  #{ $prefix }--bottom {
+    flex-direction: column;
+    > #{ $prefix }__graphic {
+      order: 2;
+    }
+    > #{ $prefix }__text {
+      order: 1;
+    }
+  }
+
+  #{ $prefix }--center {
+    align-items: center;
+    text-align: center;
+  }
+
+  // Rule Modifiers
+  #{ $prefix }--rule-top {
+    border-top: get("rule-border");
+    padding-top: get("rule-padding");
+  }
+
+  #{ $prefix }--rule-bottom {
+    border-bottom: get("rule-border");
+    padding-bottom: get("rule-padding");
+  }
+}
+

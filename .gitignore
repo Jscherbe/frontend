@@ -11,3 +11,7 @@ jsconfig.json
 !/local-only/.gitkeep
 **/local-only/*
 !**/local-only/.gitkeep
+
+.gemini
+GEMINI.md
+.geminiignore
