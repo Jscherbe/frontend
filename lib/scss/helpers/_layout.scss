@@ -1,0 +1,36 @@
+////
+/// @group layout
+/// Output layout helper classes (widths, max-widths, etc)
+////
+
+@use "sass:map";
+
+@use "../layout";
+@use "../selector";
+@use "../utils";
+@use "../cssvar";
+
+/// Output Layout Helper Styles
+
+@mixin styles {
+  @include utils.file-header('helpers', 'layout');
+
+  $prefix-width: selector.class("width");
+  @each $name, $props in layout.$widths {
+    @if map.get($props, "helper-class") {
+      #{ $prefix-width }-#{ $name } {
+        width: cssvar.use-ulu("width-#{ $name }");
+        max-width: 100%;
+      }
+    }
+  }
+
+  $prefix-max-width: selector.class("max-width");
+  @each $name, $props in layout.$max-widths {
+    @if map.get($props, "helper-class") {
+      #{ $prefix-max-width }-#{ $name } {
+        max-width: cssvar.use-ulu("max-width-#{ $name }");
+      }
+    }
+  }
+}

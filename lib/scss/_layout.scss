@@ -41,9 +41,86 @@ $config: (
   @return utils.require-map-get($config, $name, "layout [config]");
 }
 
+/// System widths
+/// @type Map
+/// @prop {Map} [name] The width definition
+/// @prop {String|Number} [name].value The base width value
+/// @prop {Boolean} [name].helper-class Output a helper class for this width
+/// @prop {Map} [name].breakpoints Responsive breakpoints (optional)
+
+$widths: (
+  "small": (
+    "value": 20rem,
+    "helper-class": true
+  ),
+  "medium": (
+    "value": 40rem,
+    "helper-class": true
+  ),
+  "large": (
+    "value": 60rem,
+    "helper-class": true
+  )
+) !default;
+
+/// Change widths config
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-widths($changes, $merge-mode: null) {
+  $widths: utils.map-merge($widths, $changes, $merge-mode) !global;
+}
+
+/// Get a width config by name
+/// @param {String} $name Name of width
+/// @return {Map} The width configuration object
+
+@function get-width($name) {
+  @return utils.require-map-get($widths, $name, "layout [widths]");
+}
+
+/// System max-widths
+/// @type Map
+/// @prop {Map} [name] The max-width definition
+/// @prop {String|Number} [name].value The base max-width value
+/// @prop {Boolean} [name].helper-class Output a helper class for this max-width
+/// @prop {Map} [name].breakpoints Responsive breakpoints (optional)
+
+$max-widths: (
+  "small": (
+    "value": 20rem,
+    "helper-class": true
+  ),
+  "medium": (
+    "value": 40rem,
+    "helper-class": true
+  ),
+  "large": (
+    "value": 60rem,
+    "helper-class": true
+  )
+) !default;
+
+/// Change max-widths config
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-max-widths($changes, $merge-mode: null) {
+  $max-widths: utils.map-merge($max-widths, $changes, $merge-mode) !global;
+}
+
+/// Get a max-width config by name
+/// @param {String} $name Name of max-width
+/// @return {Map} The max-width configuration object
+
+@function get-max-width($name) {
+  @return utils.require-map-get($max-widths, $name, "layout [max-widths]");
+}
+
 /// Containers Lookup (use set-containers)
 /// @type Map
 /// @ignore This needs to be below the methods it uses!
+
 
 $containers: (
   "container" : (

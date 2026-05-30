@@ -9,6 +9,7 @@
 @forward "print"  as print-*;
 @forward "units"  as units-*;
 @forward "color"  as color-*;
+@forward "layout"  as layout-*;
 
 @use "sass:list";
 
@@ -19,6 +20,7 @@
 @use "units";
 @use "print";
 @use "color";
+@use "layout";
 
 /// Default includes, all modules
 /// @type List
@@ -29,7 +31,8 @@ $all-includes: (
   "display",
   "utilities", 
   "print",
-  "color"
+  "color",
+  "layout"
 );
 
 /// Current included modules (for output when using styles), defaults to all
@@ -71,6 +74,9 @@ $current-includes: $all-includes;
   @if (list.index($includes, "units")) {
     @include units.styles;
   }
+  @if (list.index($includes, "layout")) {
+    @include layout.styles;
+  }
   @if (list.index($includes, "display")) {
     @include display.styles;
   }
@@ -84,6 +90,7 @@ $current-includes: $all-includes;
     @include color.styles;
   }
 }
+
 
 
 

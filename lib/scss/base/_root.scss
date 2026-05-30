@@ -7,6 +7,7 @@
 
 @use "../utils";
 @use "../cssvar";
+@use "../layout";
 
 /// Module Settings
 /// @type Map
@@ -102,4 +103,12 @@ $cssvars: () !default;
   // This may need to be adjusted if config is used for something else
   @include cssvar.declare-all($config, $prefix);
   @include cssvar.declare("scrollbar-width", 0px, $prefix); // Set by JS
+
+  @each $name, $props in layout.$widths {
+    @include cssvar.declare("width-#{ $name }", $props, $prefix);
+  }
+
+  @each $name, $props in layout.$max-widths {
+    @include cssvar.declare("max-width-#{ $name }", $props, $prefix);
+  }
 }
