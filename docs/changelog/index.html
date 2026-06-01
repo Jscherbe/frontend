@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-CJ4dnny_.css">
+  <link rel="stylesheet" href="/frontend/assets/main-8cvRTTow.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -641,6 +641,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/graphic-text-group/">
+          
+    
+    <span class="nav-tree__text">
+      Graphic Text Group
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/headline-label/">
           
     
@@ -1156,6 +1171,21 @@
     
     <span class="nav-tree__text">
       Tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/widths/">
+          
+    
+    <span class="nav-tree__text">
+      Widths
     </span>
   
         </a>
@@ -2046,6 +2076,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/sass/components/graphic-text-group/">
+          
+    
+    <span class="nav-tree__text">
+      Graphic-text-group
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/sass/components/headline-label/">
           
     
@@ -2719,6 +2764,21 @@
     
     <span class="nav-tree__text">
       Index
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/helpers/layout/">
+          
+    
+    <span class="nav-tree__text">
+      Layout
     </span>
   
         </a>
@@ -4036,6 +4096,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/demos/graphic-text-group/">
+          
+    
+    <span class="nav-tree__text">
+      Graphic Text Group
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/demos/headline-label/">
           
     
@@ -4551,6 +4626,21 @@
     
     <span class="nav-tree__text">
       Tooltip
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/demos/widths/">
+          
+    
+    <span class="nav-tree__text">
+      Widths
     </span>
   
         </a>
@@ -5441,6 +5531,21 @@
 
         <li class="nav-tree__item  ">
           
+        <a class="nav-tree__link  " href="/frontend/sass/components/graphic-text-group/">
+          
+    
+    <span class="nav-tree__text">
+      Graphic-text-group
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
         <a class="nav-tree__link  " href="/frontend/sass/components/headline-label/">
           
     
@@ -6114,6 +6219,21 @@
     
     <span class="nav-tree__text">
       Index
+    </span>
+  
+        </a>
+      
+          
+        </li>
+      
+
+        <li class="nav-tree__item  ">
+          
+        <a class="nav-tree__link  " href="/frontend/sass/helpers/layout/">
+          
+    
+    <span class="nav-tree__text">
+      Layout
     </span>
   
         </a>
@@ -6849,6 +6969,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.6.11">0.6.11</a>
+            		</li>
+
                     <li><a href="#0.6.10">0.6.10</a>
             		</li>
 
@@ -7422,10 +7545,38 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.6.11" tabindex="-1">0.6.11</h2>
+<ul>
+<li><code>scss/_layout.scss</code>
+<ul>
+<li>Add new maps for $width and $max-widths which will also be output as utility classes in the new <code>scss/helpers/_layout.scss</code></li>
+</ul>
+</li>
+<li><code>scss/_element_.scss</code>
+<ul>
+<li>Add rule style &quot;large&quot; by default (default rule color at 3px wide), normally needed can be overwritten</li>
+</ul>
+</li>
+<li><code>scss/component/_graphic-text-group.scss</code> (New)
+<ul>
+<li>Add new component for graphic + text lockup/layout</li>
+</ul>
+</li>
+<li><code>scss/component/_menu-stack.scss</code>
+<ul>
+<li>Add modifier for &quot;stacked&quot; which will stack icon over the text for small compact sidebar menus (think app icon sidebar)</li>
+<li>Add options to configure this style of the menu</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.6.10" tabindex="-1">0.6.10</h2>
 <ul>
-<li><code>scss/base/_root.scss</code> | Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties</li>
-<li><code>scss/components/_modal.scss</code> |
+<li><code>scss/base/_root.scss</code>
+<ul>
+<li>Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties</li>
+</ul>
+</li>
+<li><code>scss/components/_modal.scss</code>
 <ul>
 <li>Change defaults for &quot;close-color&quot;, &quot;close-color-hover&quot;, &quot;close-background-color&quot;, and &quot;close-background-color-hover&quot; to null so they don't compete with .button styles which is the default for modal-builder</li>
 </ul>
@@ -9684,7 +9835,7 @@ size of flex items with a 0% basis)</li>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-D67dr92q.js"></script>
+<script type="module" src="/frontend/assets/main-V098xp0P.js"></script>
 
 		
 	</body>

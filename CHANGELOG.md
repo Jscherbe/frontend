@@ -2,6 +2,10 @@
 
 ## 0.6.11
 
+- `scss/_layout.scss` 
+  - Add new maps for $width and $max-widths which will also be output as utility classes in the new `scss/helpers/_layout.scss` 
+- `scss/_element_.scss` 
+  - Add rule style "large" by default (default rule color at 3px wide), normally needed can be overwritten
 - `scss/component/_graphic-text-group.scss` (New)
   - Add new component for graphic + text lockup/layout
 - `scss/component/_menu-stack.scss`
@@ -10,8 +14,9 @@
 
 ## 0.6.10
 
-- `scss/base/_root.scss` | Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties
-- `scss/components/_modal.scss` | 
+- `scss/base/_root.scss`
+  - Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties
+- `scss/components/_modal.scss`
   - Change defaults for "close-color", "close-color-hover", "close-background-color", and "close-background-color-hover" to null so they don't compete with .button styles which is the default for modal-builder 
 
 ## 0.6.9

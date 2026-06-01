@@ -20,7 +20,7 @@ $-fallbacks: (
   ),
   "separator-border": (
     "function": meta.get-function("get-rule-style", false, "element"),
-    "arguments": ("default",)
+    "arguments": ("light",)
   )
 );
 
