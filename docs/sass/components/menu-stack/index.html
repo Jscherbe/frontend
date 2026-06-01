@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-Blm_QktY.css">
+  <link rel="stylesheet" href="/frontend/assets/main-CiJaiBQA.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -7247,15 +7247,17 @@
   </script>
 </div>
 <div class="wysiwyg">
+<div class="sassdoc-item">
+<p>Module Settings</p>
+</div>
 <h2 id="variables" tabindex="-1">Variables</h2>
 <div class="sassdoc-item">
 <div class="sassdoc-item-header">
 <h3 id="variable-config" tabindex="-1">$config</h3>
   <div class="sassdoc-item-header__labels">
-    <span class="tag tag--primary"><strong>Variable</strong></span> <span class="tag"><strong>Type</strong>: Map</span>
+    <span class="tag tag--primary"><strong>Variable</strong></span>
   </div>
 </div>
-<p>Module Settings</p>
 <pre class="language-scss"><code class="language-scss"><span class="pjs-token pjs-property"><span class="pjs-token pjs-variable">$config</span></span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-punctuation">(</span>
   <span class="pjs-token pjs-string">"nested-indent"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"rule-style"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"light"</span><span class="pjs-token pjs-punctuation">,</span>
@@ -7295,9 +7297,11 @@
   <span class="pjs-token pjs-string">"compact-selectable-input-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0.5em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"compact-selectable-input-font-size"</span><span class="pjs-token pjs-punctuation">:</span> 0.8em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"stacked-link-padding-x"</span><span class="pjs-token pjs-punctuation">:</span> 0.4em<span class="pjs-token pjs-punctuation">,</span>
-  <span class="pjs-token pjs-string">"stacked-link-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 0.4em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"stacked-link-padding-y"</span><span class="pjs-token pjs-punctuation">:</span> 0.8em<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"stacked-link-margin"</span><span class="pjs-token pjs-punctuation">:</span> 0.4em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"stacked-link-icon-margin"</span><span class="pjs-token pjs-punctuation">:</span> 0.35em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"stacked-link-border-radius"</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">true</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"stacked-link-font-weight"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"selectable-input-width"</span> <span class="pjs-token pjs-punctuation">:</span> 3em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"selectable-input-top"</span> <span class="pjs-token pjs-punctuation">:</span> 0.73em<span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"selectable-input-font-size"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
@@ -7316,8 +7320,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 38-90</li>
-<li><strong>Lines (code):</strong> 92-146</li>
+<li><strong>Lines (comments):</strong> 41-93</li>
+<li><strong>Lines (code):</strong> 95-150</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -7331,18 +7335,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left">link-separated-margin</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">false</td>
-<td style="text-align:left">Enables a margin between the items in the menu-stack.</td>
-</tr>
-<tr>
-<td style="text-align:left">link-separated-rule-style</td>
-<td style="text-align:left">Boolean</td>
-<td style="text-align:left">false</td>
-<td style="text-align:left">Enables a rule between the items in the menu-stack.</td>
-</tr>
 <tr>
 <td style="text-align:left">nested-indent</td>
 <td style="text-align:left">Dimension</td>
@@ -7366,66 +7358,6 @@
 <td style="text-align:left">Number</td>
 <td style="text-align:left">false</td>
 <td style="text-align:left">Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-link-padding-x</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.75em</td>
-<td style="text-align:left">The links horizontal padding when using the compact option.</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-link-padding-y</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.25em</td>
-<td style="text-align:left">The links vertical padding when using the compact option.</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-link-margin</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.2em</td>
-<td style="text-align:left">Margin between items when compact</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-link-border-radius</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">Unless set will use the normal link border radius</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-selectable-input-width</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">2em</td>
-<td style="text-align:left">The width of the checkbox/radio input (when compact modifier)</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-selectable-input-font-size</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">Optional compact input font-size</td>
-</tr>
-<tr>
-<td style="text-align:left">compact-selectable-input-top</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">null</td>
-<td style="text-align:left">Optional y/top for input</td>
-</tr>
-<tr>
-<td style="text-align:left">stacked-link-padding-x</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.4em</td>
-<td style="text-align:left">The links horizontal padding when using the stacked option.</td>
-</tr>
-<tr>
-<td style="text-align:left">stacked-link-padding-y</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.4em</td>
-<td style="text-align:left">The links vertical padding when using the stacked option.</td>
-</tr>
-<tr>
-<td style="text-align:left">stacked-link-icon-margin</td>
-<td style="text-align:left">Dimension</td>
-<td style="text-align:left">0.35em</td>
-<td style="text-align:left">Margin between icon and text when stacked.</td>
 </tr>
 <tr>
 <td style="text-align:left">label-color</td>
@@ -7560,6 +7492,18 @@
 <td style="text-align:left">Vertical padding for menu-stack toggle.</td>
 </tr>
 <tr>
+<td style="text-align:left">link-separated-margin</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Enables a margin between the items in the menu-stack.</td>
+</tr>
+<tr>
+<td style="text-align:left">link-separated-rule-style</td>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">Enables a rule between the items in the menu-stack.</td>
+</tr>
+<tr>
 <td style="text-align:left">selectable-input-width</td>
 <td style="text-align:left">Dimension</td>
 <td style="text-align:left">3em</td>
@@ -7637,6 +7581,78 @@
 <td style="text-align:left">18rem</td>
 <td style="text-align:left">The minimum width of a column in a columns menu stack.</td>
 </tr>
+<tr>
+<td style="text-align:left">compact-link-padding-x</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.75em</td>
+<td style="text-align:left">The links horizontal padding when using the compact option.</td>
+</tr>
+<tr>
+<td style="text-align:left">compact-link-padding-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.25em</td>
+<td style="text-align:left">The links vertical padding when using the compact option.</td>
+</tr>
+<tr>
+<td style="text-align:left">compact-link-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.2em</td>
+<td style="text-align:left">Margin between items when compact</td>
+</tr>
+<tr>
+<td style="text-align:left">compact-link-border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Unless set will use the normal link border radius</td>
+</tr>
+<tr>
+<td style="text-align:left">compact-selectable-input-width</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">2em</td>
+<td style="text-align:left">The width of the checkbox/radio input (when compact modifier)</td>
+</tr>
+<tr>
+<td style="text-align:left">compact-selectable-input-font-size</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Optional compact input font-size</td>
+</tr>
+<tr>
+<td style="text-align:left">compact-selectable-input-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">Optional y/top for input</td>
+</tr>
+<tr>
+<td style="text-align:left">stacked-link-padding-x</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.4em</td>
+<td style="text-align:left">The links horizontal padding when using the stacked option.</td>
+</tr>
+<tr>
+<td style="text-align:left">stacked-link-padding-y</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.4em</td>
+<td style="text-align:left">The links vertical padding when using the stacked option.</td>
+</tr>
+<tr>
+<td style="text-align:left">stacked-link-icon-margin</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">0.35em</td>
+<td style="text-align:left">Margin between icon and text when stacked.</td>
+</tr>
+<tr>
+<td style="text-align:left">stacked-link-border-radius</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Border radius for stacked style of links, defaults to element &quot;border-radius-small&quot;</td>
+</tr>
+<tr>
+<td style="text-align:left">stacked-link-font-weight</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">Optional font-weight for stacked style</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -7655,8 +7671,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 148-151</li>
-<li><strong>Lines (code):</strong> 153-155</li>
+<li><strong>Lines (comments):</strong> 152-155</li>
+<li><strong>Lines (code):</strong> 157-159</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -7697,8 +7713,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 172-176</li>
-<li><strong>Lines (code):</strong> 178-433</li>
+<li><strong>Lines (comments):</strong> 176-180</li>
+<li><strong>Lines (code):</strong> 182-439</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -7728,8 +7744,8 @@
 <li><strong>File:</strong> _menu-stack.scss</li>
 <li><strong>Group:</strong> menu-stack</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 157-160</li>
-<li><strong>Lines (code):</strong> 162-165</li>
+<li><strong>Lines (comments):</strong> 161-164</li>
+<li><strong>Lines (code):</strong> 166-169</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -7764,7 +7780,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-DvWpgApR.js"></script>
+<script type="module" src="/frontend/assets/main-BDERmj4J.js"></script>
 
 		
 	</body>
