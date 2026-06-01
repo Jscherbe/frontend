@@ -1,28 +1,64 @@
 <!-- @ulu-demo
-  title: Numeric Counter List
-  description: A standard ordered list styled with custom counters.
+  title: Default Counter List
 -->
 <ol class="counter-list">
-  <li>First item in the list.</li>
-  <li>Second item with more content to demonstrate how the counter stays aligned.</li>
-  <li>Third item.</li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p></li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
 </ol>
 
 <!-- @ulu-demo
   title: Alphabetical Counter List
-  description: Using the `counter-list--alphabetical` modifier to use letters instead of numbers.
 -->
 <ol class="counter-list counter-list--alphabetical">
-  <li>Analyze the requirements.</li>
-  <li>Design the solution.</li>
-  <li>Implement the features.</li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p></li>
+  <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
 </ol>
 
 <!-- @ulu-demo
-  title: Non-List Counter Elements
-  description: You can also use the `counter-list__item` class on non-list elements (like divs).
+  title: Default Counter List built as divs
 -->
 <div class="counter-list">
-  <div class="counter-list__item">This is a div acting as a counter item.</div>
-  <div class="counter-list__item">Another div in the counter flow.</div>
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p></div>
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+</div>
+
+<!-- @ulu-demo
+  title: Testing no counter reset
+  description: Not recommending this but there are edge scenarios where this could be useful
+-->
+<div class="counter-list">
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p>
+
+<div class="counter-list counter-list--no-reset" style="counter-reset: none;">
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+  <div class="counter-list__item"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></div>
+</div>
+
+<!-- @ulu-demo
+  title: Counter List using extra-selector
+-->
+<div class="counter-list-auto">
+  <ol>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p></li>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+  </ol>
+  <h3 class="h3">Ordered list excluded by extra-selector</h3> 
+  <ol class="list-ordered counter-list-ignore">
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p></li>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+    <li><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris.</p></li>
+  </ol>
 </div>

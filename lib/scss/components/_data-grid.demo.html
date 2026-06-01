@@ -1,47 +1,315 @@
 <!-- @ulu-demo
-  title: Basic 12-Column Grid
-  description: A standard 12-column grid layout using the `data-grid` and `data-grid-item` attributes.
+  title: Default Grid
 -->
-<div data-grid="columns: 12">
-  <div data-grid-item="width: 6">
-    <div style="background: #eee; padding: 1rem;">6 Columns (50%)</div>
-  </div>
-  <div data-grid-item="width: 6">
-    <div style="background: #eee; padding: 1rem;">6 Columns (50%)</div>
-  </div>
-  <div data-grid-item="width: 4">
-    <div style="background: #ddd; padding: 1rem;">4 Columns</div>
-  </div>
-  <div data-grid-item="width: 4">
-    <div style="background: #ddd; padding: 1rem;">4 Columns</div>
-  </div>
-  <div data-grid-item="width: 4">
-    <div style="background: #ddd; padding: 1rem;">4 Columns</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
   </div>
 </div>
 
 <!-- @ulu-demo
-  title: Grid with Offsets
-  description: Using the `offset` property to create gaps in the grid layout.
+  title: Default (test sticky column top)
 -->
-<div data-grid="columns: 12">
-  <div data-grid-item="width: 4">
-    <div style="background: #eee; padding: 1rem;">Width: 4</div>
-  </div>
-  <div data-grid-item="width: 4, offset: 4">
-    <div style="background: #eee; padding: 1rem;">Width: 4, Offset: 4</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div class="demo-grid__cell" data-grid-item="width: 4, sticky: top">
+      <div class="demo-grid__content">
+        Stuck to top
+      </div>
+    </div>
+    <div class="demo-grid__cell" data-grid-item="width: 8">
+      <div class="demo-grid__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- @ulu-demo
-  title: Responsive Column Widths
-  description: Defining different widths for different breakpoints (e.g., `width` for mobile, `width-large` for desktop).
+  title: Default (test sticky column bottom)
 -->
-<div data-grid="columns: 12">
-  <div data-grid-item="width: 12, width-large: 8">
-    <div style="background: #eee; padding: 1rem;">8 Columns on Desktop, Full Width on Mobile</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div class="demo-grid__cell" data-grid-item="width: 4, sticky: bottom">
+      <div class="demo-grid__content">
+        Stuck to Bottom
+      </div>
+    </div>
+    <div class="demo-grid__cell" data-grid-item="width: 8">
+      <div class="demo-grid__content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.</p>
+      </div>
+    </div>
   </div>
-  <div data-grid-item="width: 12, width-large: 4">
-    <div style="background: #eee; padding: 1rem;">4 Columns on Desktop, Full Width on Mobile</div>
+</div>
+
+<!-- @ulu-demo
+  title: Justify Content Default (start)
+  description: Allows you to justify the columns (horizontal alignment). The default is start (left aligned).
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Justify Content Center
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, justify: center" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Justify Content End
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, justify: end" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Align Default (stretch start)
+  description: Allows you to align the columns (vertical alignment within row). The default is stretch start.
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+
+<!-- @ulu-demo
+  title: Align Center
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, align: center" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+
+<!-- @ulu-demo
+  title: Gutters Default
+  description: You can remove the gutters between columns by adding this setting. The grid shows the default gutters size by default.
+-->
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+<div class="demo-grid-element-outside">Element directly after grid</div>
+
+<!-- @ulu-demo
+  title: Gutters False
+-->
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, gutters: false" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+<div class="demo-grid-element-outside">Element directly after grid</div>
+
+<!-- @ulu-demo
+  title: Gutters Row True
+  description: Adds gutters between rows and to the top and bottom of the first/last grid row.
+-->
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, gutters-row: true" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+<div class="demo-grid-element-outside">Element directly after grid</div>
+
+<!-- @ulu-demo
+  title: Gutters Row Top
+-->
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, gutters-row: top" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+<div class="demo-grid-element-outside">Element directly after grid</div>
+
+<!-- @ulu-demo
+  title: Gutters Row Bottom
+-->
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, gutters-row: bottom" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+<div class="demo-grid-element-outside">Element directly after grid</div>
+
+<!-- @ulu-demo
+  title: Gutters Row Fit
+-->
+<div class="demo-grid-element-outside">Element directly before grid</div>
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, gutters-row: fit" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+<div class="demo-grid-element-outside">Element directly after grid</div>
+
+<!-- @ulu-demo
+  title: Rules Row Top
+  description: Sets rules (dividers) between rows. Top adds rules to the rows top edge. For demo purposes, the rules are set to 2px.
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, rules-row: top, rules-row-style: demo" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+
+<!-- @ulu-demo
+  title: Rules Row Bottom
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, rules-row: bottom, rules-row-style: demo" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+
+<!-- @ulu-demo
+  title: Rules Row Between
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, rules-row: between, rules-row-style: demo" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div> 
+
+<!-- @ulu-demo
+  title: Rules Row Align Gutter
+  description: The default will align to the outer edge of the grid item. If this is set to 'gutter' it will align to the grid columns gutters instead.
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, rules-row: top, rules-row-align: gutter, rules-row-style: demo" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Rules Column Right
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, rules-column: right, rules-column-style: demo" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Rules Column Between (Align Gutter)
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12, rules-column: right, rules-column-align: gutter, rules-column-style: demo" class="demo-grid">
+    <div data-grid-item="width: 6" class="demo-grid__cell"><div class="demo-grid__content">Width of 6</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3.</div></div>
+    <div data-grid-item="width: 3" class="demo-grid__cell"><div class="demo-grid__content">Width of 3</div></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Item Offset
+  description: Offsets the column by a certain number of columns
+-->
+<div class="demo-grid-container">
+  <div data-grid="columns: 12" class="demo-grid">
+    <div data-grid-item="width: 3" class="demo-grid__cell">
+    <div class="demo-grid__content">
+      Width of 6
+    </div>
+  </div>
+  <div data-grid-item="width: 3, offset: 1" class="demo-grid__cell">
+    <div class="demo-grid__content">
+      Width of 3. Offset of 1
+    </div>
+  </div>
+  <div data-grid-item="width: 3, offset: 2" class="demo-grid__cell">
+    <div class="demo-grid__content">
+      Width of 3. Offset of 2
+    </div>
+  </div>
   </div>
 </div>

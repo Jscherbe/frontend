@@ -1,0 +1,5 @@
+---
+title: Spoke Spinner
+---
+
+{% spokeSpinner %}

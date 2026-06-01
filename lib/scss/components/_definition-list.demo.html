@@ -1,59 +1,166 @@
 <!-- @ulu-demo
-  title: Basic Stacked Layout
-  description: The default layout, which stacks terms and their definitions vertically.
+  title: Default
+  description: The default definition list styles items as a simple stack.
 -->
 <dl class="definition-list">
   <div>
-    <dt>Application Version</dt>
-    <dd>v2.4.5 (Stable)</dd>
+    <dt>Short Term</dt>
+    <dd>This is a longer definition to demonstrate how text wraps in the default layout.</dd>
   </div>
   <div>
-    <dt>Release Date</dt>
-    <dd>October 12, 2024</dd>
+    <dt>A Much Longer Term That Might Wrap</dt>
+    <dd>A short definition.</dd>
   </div>
 </dl>
 
 <!-- @ulu-demo
-  title: Table Layout
-  description: Using the `definition-list--table` modifier to create a two-column grid on larger screens.
+  title: Separated
+  description: The `--separated` modifier adds a rule between each item.
 -->
-<dl class="definition-list definition-list--table">
+<dl class="definition-list definition-list--separated">
   <div>
-    <dt>Project Owner</dt>
-    <dd>Jane Doe</dd>
+    <dt>Short Term</dt>
+    <dd>This is a longer definition to demonstrate how text wraps.</dd>
   </div>
   <div>
-    <dt>Primary Language</dt>
-    <dd>TypeScript (with Sass for styling)</dd>
-  </div>
-</dl>
-
-<!-- @ulu-demo
-  title: Inline-All Layout
-  description: Using the `definition-list--inline-all` modifier to place terms and definitions on the same line.
--->
-<dl class="definition-list definition-list--inline-all">
-  <div>
-    <dt>Status</dt>
-    <dd>Connected</dd>
-  </div>
-  <div>
-    <dt>Uptime</dt>
-    <dd>99.9%</dd>
+    <dt>A Much Longer Term That Might Wrap</dt>
+    <dd>A short definition.</dd>
   </div>
 </dl>
 
 <!-- @ulu-demo
-  title: Separated Layout
-  description: Using the `definition-list--separated` and `definition-list--separated-first` modifiers to add borders between items.
+  title: Separated & Separated First
+  description: Using `--separated` and `--separated-first` together adds a rule to the top of the first item and between all subsequent items.
 -->
 <dl class="definition-list definition-list--separated definition-list--separated-first">
   <div>
-    <dt>Support Tier</dt>
-    <dd>Premium (24/7)</dd>
+    <dt>Short Term</dt>
+    <dd>This is a longer definition to demonstrate how text wraps.</dd>
   </div>
   <div>
-    <dt>Service SLA</dt>
-    <dd>99.99% Availability Guaranteed</dd>
+    <dt>A Much Longer Term That Might Wrap</dt>
+    <dd>A short definition.</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Separated & Separated First/Last
+  description: You can use all three separator modifiers (`--separated`, `--separated-first`, `--separated-last`) to enclose the entire list in borders.
+-->
+<dl class="definition-list definition-list--separated definition-list--separated-first definition-list--separated-last">
+  <div>
+    <dt>Short Term</dt>
+    <dd>This is a longer definition to demonstrate how text wraps.</dd>
+  </div>
+  <div>
+    <dt>A Much Longer Term That Might Wrap</dt>
+    <dd>A short definition.</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Table
+  description: The `--table` modifier displays the list in a two-column grid on larger screens.
+-->
+<dl class="definition-list definition-list--table">
+  <div>
+    <dt>Short Term</dt>
+    <dd>This is a longer definition to demonstrate how text wraps in the table layout.</dd>
+  </div>
+  <div>
+    <dt>A Much Longer Term That Might Wrap onto multiple lines</dt>
+    <dd>A short definition.</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Table & Separated
+  description: Modifiers can be combined. Here is an example of the `--table` and `--separated` modifiers used together, with `--separated-first` to add a top border.
+-->
+<dl class="definition-list definition-list--table definition-list--separated definition-list--separated-first">
+  <div>
+    <dt>Short Term</dt>
+    <dd>This is a longer definition to demonstrate how text wraps in the table layout.</dd>
+  </div>
+  <div>
+    <dt>A Much Longer Term That Might Wrap onto multiple lines</dt>
+    <dd>A short definition.</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Inline
+  description: The `--inline` modifier displays only the definition descriptions (`<dd>`) on the same line.
+-->
+<dl class="definition-list definition-list--inline">
+  <div>
+    <dt>Term 1</dt>
+    <dd>Definition 1</dd>
+    <dd>Definition 1.1</dd>
+    <dd>This is a much longer definition to see how it wraps when inline.</dd>
+  </div>
+  <div>
+    <dt>A Longer Term</dt>
+    <dd>Definition 2</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Inline All
+  description: The `--inline-all` modifier displays both the definition term (`<dt>`) and its descriptions (`<dd>`) on the same line.
+-->
+<dl class="definition-list definition-list--inline-all">
+  <div>
+    <dt>Term</dt>
+    <dd>Definition 1</dd>
+    <dd>Definition 1.1</dd>
+    <dd>This is a much longer definition to see how it wraps when inline.</dd>
+  </div>
+  <div>
+    <dt>A Longer Term</dt>
+    <dd>Definition 2</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Inline All (no whitespace test)
+  description: The `--inline-all` modifier displays both the definition term (`<dt>`) and its descriptions (`<dd>`) on the same line.
+-->
+<dl class="definition-list definition-list--inline-all">
+  <div>
+    <dt>Term</dt><dd>Definition 1</dd><dd>Definition 1.1</dd><dd>This is a much longer definition to see how it wraps when inline.</dd>
+  </div>
+  <div>
+    <dt>A Longer Term</dt><dd>Definition 2</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Inline All Compact
+  description: The `--compact` modifier reduces the margin between items. It can be combined with any other modifier, like `--inline-all`.
+-->
+<dl class="definition-list definition-list--inline-all definition-list--compact">
+  <div>
+    <dt>Term 1</dt>
+    <dd>This is a longer definition to demonstrate how text wraps in the compact inline layout.</dd>
+  </div>
+  <div>
+    <dt>A Longer Term</dt>
+    <dd>Definition 2</dd>
+  </div>
+</dl>
+
+<!-- @ulu-demo
+  title: Compact Separated
+  description: Here is an example combining the `--compact` spacing modifier with all of the separator modifiers.
+-->
+<dl class="definition-list definition-list--separated definition-list--separated-first definition-list--separated-last definition-list--compact">
+  <div>
+    <dt>Term 1</dt>
+    <dd>This is a longer definition to demonstrate how text wraps in the compact inline layout.</dd>
+  </div>
+  <div>
+    <dt>A Longer Term</dt>
+    <dd>Definition 2</dd>
   </div>
 </dl>

@@ -1,36 +1,77 @@
 <!-- @ulu-demo
-  title: Standard Breadcrumb
-  description: A typical breadcrumb trail for navigation.
+  title: Simple Example
 -->
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol class="breadcrumb__list">
     <li class="breadcrumb__item">
-      <a href="#" class="breadcrumb__link">Home</a>
-      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+      <a href="/" class="breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
     </li>
     <li class="breadcrumb__item">
-      <a href="#" class="breadcrumb__link">Products</a>
-      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
     </li>
     <li class="breadcrumb__item" aria-current="page">
-      <span class="breadcrumb__current">Electronic Gadgets</span>
+      <span class="breadcrumb__current">Current Page</span>
     </li>
   </ol>
 </nav>
 
 <!-- @ulu-demo
-  title: Truncated Breadcrumb
-  description: Items automatically truncate with an ellipsis if they exceed the `item-max-width`.
+  title: With Long Title
 -->
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ol class="breadcrumb__list">
     <li class="breadcrumb__item">
-      <a href="#" class="breadcrumb__link">Home</a>
-      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+      <a href="/" class="breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
     </li>
     <li class="breadcrumb__item">
-      <a href="#" class="breadcrumb__link">This is an extremely long page title that will be truncated by the breadcrumb component</a>
-      <span class="breadcrumb__separator" aria-hidden="true">/</span>
+      <a href="/parent" class="breadcrumb__link">This Item Has a Really Long Title That Will Be Truncated</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Just Another This Item Has a Really Long Title That Will Be Truncated</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item" aria-current="page">
+      <span class="breadcrumb__current">Current Page</span>
+    </li>
+  </ol>
+</nav>
+
+<!-- @ulu-demo
+  title: Many Items
+-->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb__list">
+    <li class="breadcrumb__item">
+      <a href="/" class="breadcrumb__link">Home</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
+    </li>
+    <li class="breadcrumb__item">
+      <a href="/parent" class="breadcrumb__link">Parent Page</a>
+      <span class="breadcrumb__separator fas fa-chevron-right" aria-hidden="true"></span>
     </li>
     <li class="breadcrumb__item" aria-current="page">
       <span class="breadcrumb__current">Current Page</span>

@@ -1,24 +1,53 @@
 <!-- @ulu-demo
-  title: Primary Button
-  description: The default button style for main actions.
-  wrapperClass: demo-theme-box demo-width-small 
+  title: Sizes
+  description: Sizes can be configured this just shows the default sizes
 -->
-<button class="button">Primary Button</button>
+<a href="#" class="button button--small">Small Button</a>
+<a href="#" class="button">Default Button</a>
+<a href="#" class="button button--large">Large Button</a>
 
 <!-- @ulu-demo
-  title: Secondary Button
-  description: An alternative style for less important actions.
+  title: Active State
+  description: Adding the `is-active` class to enable active state.
 -->
-<button class="button button--secondary">Secondary Button</button>
+<a href="#" class="button">Default Button</a>
+<a href="#" class="button is-active">Active Button</a>
 
 <!-- @ulu-demo
-  title: Small Button
-  description: A smaller button variant.
+  title: With Icon
 -->
-<button class="button button--small">Small Button</button>
+<a href="#" class="button">
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+  <span>Icon Before</span>
+</a>
+
+<a href="#" class="button">
+  <span>Icon After</span>
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+</a>
+
+<a href="#" class="button">
+  <span class="button__icon fas fa-search" aria-hidden="true"></span>
+  <span>Icon Before/After</span>
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+</a>
 
 <!-- @ulu-demo
-  title: Large Button
-  description: A larger button variant.
+  title: Icon Only
 -->
-<button class="button button--large">Large Button</button>
+<a href="#" class="button button--icon button--small">
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+</a>
+<a href="#" class="button button--icon">
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+</a>
+<a href="#" class="button button--icon button--large">
+  <span class="button__icon fas fa-gear" aria-hidden="true"></span>
+</a>
+
+<!-- @ulu-demo
+  title: Other Preset Styles
+  description: These can be configured, so these are just the defaults
+-->
+<a href="#" class="button button--transparent">Transparent Button</a>
+<a href="#" class="button button--outline">Outline Button</a>

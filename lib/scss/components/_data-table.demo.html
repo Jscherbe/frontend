@@ -1,91 +1,230 @@
 <!-- @ulu-demo
-  title: Standard Data Table
-  description: A native HTML table styled for data display, including headers, footers, and a caption.
+  title: Default Example
 -->
 <table class="data-table">
-  <caption>Quarterly Performance Summary</caption>
+  <caption>Monthly Revenue Report by Region</caption>
   <thead>
     <tr>
-      <th>Category</th>
-      <th>Previous Q</th>
-      <th>Current Q</th>
-      <th>Change</th>
+      <th>Region</th>
+      <th>Q1 Revenue</th>
+      <th>Q2 Revenue</th>
+      <th>Year-over-Year Growth</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Product Sales</td>
-      <td>$45,000</td>
-      <td>$52,000</td>
-      <td style="color: green;">+15%</td>
+      <td>North America</td>
+      <td>$1,250,000</td>
+      <td>$1,340,000</td>
+      <td>+12.5%</td>
     </tr>
     <tr>
-      <td>Service Fees</td>
-      <td>$12,000</td>
-      <td>$11,500</td>
-      <td style="color: red;">-4%</td>
+      <td>Europe</td>
+      <td>$850,000</td>
+      <td>$920,000</td>
+      <td>+8.2%</td>
+    </tr>
+    <tr>
+      <td>Asia Pacific</td>
+      <td>$620,000</td>
+      <td>$710,000</td>
+      <td>+14.5%</td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
       <td>Total</td>
-      <td>$57,000</td>
-      <td>$63,500</td>
-      <td>+11%</td>
+      <td>$2,720,000</td>
+      <td>$2,970,000</td>
+      <td>+11.8%</td>
     </tr>
   </tfoot>
 </table>
 
 <!-- @ulu-demo
   title: Striped Table
-  description: Using the `data-table--striped` modifier to alternate background colors for rows.
 -->
-<table class="data-table data-table--striped">
+<table class="data-table data-table--striped" id="dt-striped">
+  <caption>
+    Server Migration Task Status
+  </caption>
   <thead>
     <tr>
-      <th>Employee Name</th>
-      <th>Department</th>
-      <th>Status</th>
+      <th id="dt-striped-type" rowspan="2">Environment</th>
+      <th id="dt-striped-group" colspan="2">Server Roles</th>
+      <th id="dt-striped-details" colspan="2">Downtime Details</th>
+      <th id="dt-striped-id" rowspan="2">Ticket ID</th>
+    </tr>
+    <tr>
+      <th headers="dt-striped-group" id="dt-striped-primary">Primary</th>
+      <th headers="dt-striped-group" id="dt-striped-secondary">Secondary</th>
+      <th headers="dt-striped-details" id="dt-striped-before">Pre-checks</th>
+      <th headers="dt-striped-details" id="dt-striped-after">Post-checks</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Jane Doe</td>
-      <td>Engineering</td>
-      <td>Active</td>
+      <th rowspan="3" headers="dt-striped-type dt-striped-r1" id="dt-striped-r1">Production</th>
+      <td headers="dt-striped-group dt-striped-primary dt-striped-r1">Database cluster</td>
+      <td headers="dt-striped-group dt-striped-secondary dt-striped-r1">Cache server</td>
+      <td headers="dt-striped-details dt-striped-before dt-striped-r1">Passed</td>
+      <td headers="dt-striped-details dt-striped-after dt-striped-r1">Pending</td>
+      <td headers="dt-striped-id">IT-992-A</td>
     </tr>
     <tr>
-      <td>John Smith</td>
-      <td>Marketing</td>
-      <td>On Leave</td>
+      <td headers="dt-striped-group dt-striped-primary dt-striped-r1">Web frontend</td>
+      <td headers="dt-striped-group dt-striped-secondary dt-striped-r1">Load balancer</td>
+      <td headers="dt-striped-details dt-striped-before dt-striped-r1">Passed</td>
+      <td headers="dt-striped-details dt-striped-after dt-striped-r1">Passed</td>
+      <td headers="dt-striped-id">IT-993-B</td>
     </tr>
     <tr>
-      <td>Alice Johnson</td>
-      <td>Product</td>
-      <td>Active</td>
+      <td headers="dt-striped-group dt-striped-primary dt-striped-r1">Message queue</td>
+      <td headers="dt-striped-group dt-striped-secondary dt-striped-r1">Worker nodes</td>
+      <td headers="dt-striped-details dt-striped-before dt-striped-r1">Warning</td>
+      <td headers="dt-striped-details dt-striped-after dt-striped-r1">N/A</td>
+      <td headers="dt-striped-id">IT-994-C</td>
     </tr>
   </tbody>
 </table>
 
 <!-- @ulu-demo
-  title: Large First Column
-  description: The `data-table--large-first` modifier ensures the first column has a larger minimum width, useful for row labels.
+  title: Large-first Table
 -->
-<table class="data-table data-table--large-first">
+<table class="data-table data-table--large-first" id="dt-large-first">
+  <caption>
+    Server Migration Task Status
+  </caption>
   <thead>
     <tr>
-      <th>Specification Feature Description</th>
-      <th>Value</th>
+      <th id="dt-large-first-type" rowspan="2">Environment</th>
+      <th id="dt-large-first-group" colspan="2">Server Roles</th>
+      <th id="dt-large-first-details" colspan="2">Downtime Details</th>
+      <th id="dt-large-first-id" rowspan="2">Ticket ID</th>
+    </tr>
+    <tr>
+      <th headers="dt-large-first-group" id="dt-large-first-primary">Primary</th>
+      <th headers="dt-large-first-group" id="dt-large-first-secondary">Secondary</th>
+      <th headers="dt-large-first-details" id="dt-large-first-before">Pre-checks</th>
+      <th headers="dt-large-first-details" id="dt-large-first-after">Post-checks</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Memory (RAM)</td>
-      <td>32GB DDR5</td>
+      <th rowspan="3" headers="dt-large-first-type dt-large-first-r1" id="dt-large-first-r1">Production</th>
+      <td headers="dt-large-first-group dt-large-first-primary dt-large-first-r1">Database cluster</td>
+      <td headers="dt-large-first-group dt-large-first-secondary dt-large-first-r1">Cache server</td>
+      <td headers="dt-large-first-details dt-large-first-before dt-large-first-r1">Passed</td>
+      <td headers="dt-large-first-details dt-large-first-after dt-large-first-r1">Pending</td>
+      <td headers="dt-large-first-id">IT-992-A</td>
     </tr>
     <tr>
-      <td>Processor (CPU)</td>
-      <td>8-Core 4.2GHz</td>
+      <td headers="dt-large-first-group dt-large-first-primary dt-large-first-r1">Web frontend</td>
+      <td headers="dt-large-first-group dt-large-first-secondary dt-large-first-r1">Load balancer</td>
+      <td headers="dt-large-first-details dt-large-first-before dt-large-first-r1">Passed</td>
+      <td headers="dt-large-first-details dt-large-first-after dt-large-first-r1">Passed</td>
+      <td headers="dt-large-first-id">IT-993-B</td>
+    </tr>
+    <tr>
+      <td headers="dt-large-first-group dt-large-first-primary dt-large-first-r1">Message queue</td>
+      <td headers="dt-large-first-group dt-large-first-secondary dt-large-first-r1">Worker nodes</td>
+      <td headers="dt-large-first-details dt-large-first-before dt-large-first-r1">Warning</td>
+      <td headers="dt-large-first-details dt-large-first-after dt-large-first-r1">N/A</td>
+      <td headers="dt-large-first-id">IT-994-C</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- @ulu-demo
+  title: Large-header Table
+-->
+<table class="data-table data-table--large-header" id="dt-large-header">
+  <caption>
+    Server Migration Task Status
+  </caption>
+  <thead>
+    <tr>
+      <th id="dt-large-header-type" rowspan="2">Environment</th>
+      <th id="dt-large-header-group" colspan="2">Server Roles</th>
+      <th id="dt-large-header-details" colspan="2">Downtime Details</th>
+      <th id="dt-large-header-id" rowspan="2">Ticket ID</th>
+    </tr>
+    <tr>
+      <th headers="dt-large-header-group" id="dt-large-header-primary">Primary</th>
+      <th headers="dt-large-header-group" id="dt-large-header-secondary">Secondary</th>
+      <th headers="dt-large-header-details" id="dt-large-header-before">Pre-checks</th>
+      <th headers="dt-large-header-details" id="dt-large-header-after">Post-checks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" headers="dt-large-header-type dt-large-header-r1" id="dt-large-header-r1">Production</th>
+      <td headers="dt-large-header-group dt-large-header-primary dt-large-header-r1">Database cluster</td>
+      <td headers="dt-large-header-group dt-large-header-secondary dt-large-header-r1">Cache server</td>
+      <td headers="dt-large-header-details dt-large-header-before dt-large-header-r1">Passed</td>
+      <td headers="dt-large-header-details dt-large-header-after dt-large-header-r1">Pending</td>
+      <td headers="dt-large-header-id">IT-992-A</td>
+    </tr>
+    <tr>
+      <td headers="dt-large-header-group dt-large-header-primary dt-large-header-r1">Web frontend</td>
+      <td headers="dt-large-header-group dt-large-header-secondary dt-large-header-r1">Load balancer</td>
+      <td headers="dt-large-header-details dt-large-header-before dt-large-header-r1">Passed</td>
+      <td headers="dt-large-header-details dt-large-header-after dt-large-header-r1">Passed</td>
+      <td headers="dt-large-header-id">IT-993-B</td>
+    </tr>
+    <tr>
+      <td headers="dt-large-header-group dt-large-header-primary dt-large-header-r1">Message queue</td>
+      <td headers="dt-large-header-group dt-large-header-secondary dt-large-header-r1">Worker nodes</td>
+      <td headers="dt-large-header-details dt-large-header-before dt-large-header-r1">Warning</td>
+      <td headers="dt-large-header-details dt-large-header-after dt-large-header-r1">N/A</td>
+      <td headers="dt-large-header-id">IT-994-C</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- @ulu-demo
+  title: No-border Table
+-->
+<table class="data-table data-table--no-border" id="dt-no-border">
+  <caption>
+    Server Migration Task Status
+  </caption>
+  <thead>
+    <tr>
+      <th id="dt-no-border-type" rowspan="2">Environment</th>
+      <th id="dt-no-border-group" colspan="2">Server Roles</th>
+      <th id="dt-no-border-details" colspan="2">Downtime Details</th>
+      <th id="dt-no-border-id" rowspan="2">Ticket ID</th>
+    </tr>
+    <tr>
+      <th headers="dt-no-border-group" id="dt-no-border-primary">Primary</th>
+      <th headers="dt-no-border-group" id="dt-no-border-secondary">Secondary</th>
+      <th headers="dt-no-border-details" id="dt-no-border-before">Pre-checks</th>
+      <th headers="dt-no-border-details" id="dt-no-border-after">Post-checks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" headers="dt-no-border-type dt-no-border-r1" id="dt-no-border-r1">Production</th>
+      <td headers="dt-no-border-group dt-no-border-primary dt-no-border-r1">Database cluster</td>
+      <td headers="dt-no-border-group dt-no-border-secondary dt-no-border-r1">Cache server</td>
+      <td headers="dt-no-border-details dt-no-border-before dt-no-border-r1">Passed</td>
+      <td headers="dt-no-border-details dt-no-border-after dt-no-border-r1">Pending</td>
+      <td headers="dt-no-border-id">IT-992-A</td>
+    </tr>
+    <tr>
+      <td headers="dt-no-border-group dt-no-border-primary dt-no-border-r1">Web frontend</td>
+      <td headers="dt-no-border-group dt-no-border-secondary dt-no-border-r1">Load balancer</td>
+      <td headers="dt-no-border-details dt-no-border-before dt-no-border-r1">Passed</td>
+      <td headers="dt-no-border-details dt-no-border-after dt-no-border-r1">Passed</td>
+      <td headers="dt-no-border-id">IT-993-B</td>
+    </tr>
+    <tr>
+      <td headers="dt-no-border-group dt-no-border-primary dt-no-border-r1">Message queue</td>
+      <td headers="dt-no-border-group dt-no-border-secondary dt-no-border-r1">Worker nodes</td>
+      <td headers="dt-no-border-details dt-no-border-before dt-no-border-r1">Warning</td>
+      <td headers="dt-no-border-details dt-no-border-after dt-no-border-r1">N/A</td>
+      <td headers="dt-no-border-id">IT-994-C</td>
     </tr>
   </tbody>
 </table>

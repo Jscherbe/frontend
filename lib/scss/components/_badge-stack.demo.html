@@ -1,53 +1,61 @@
 <!-- @ulu-demo
-  title: Basic Badge Stack
-  description: Overlapping text-based badges.
+  title: Basic Example
+  description: The badge stack visually groups multiple badges together by partially overlapping them. This is often used in UIs to show "who is currently active" or "recent contributors".
 -->
 <ul class="badge-stack">
   <li class="badge-stack__item">
     <span class="badge badge--small">
-      <span class="badge__inner"><span>JD</span></span>
+      <span class="badge__inner">
+        <span>JD</span>
+      </span>
     </span>
   </li>
   <li class="badge-stack__item">
     <span class="badge badge--small">
-      <span class="badge__inner"><span>MS</span></span>
+      <span class="badge__inner">
+        <span>MS</span>
+      </span>
     </span>
   </li>
   <li class="badge-stack__item">
     <span class="badge badge--small">
-      <span class="badge__inner"><span>AJ</span></span>
+      <span class="badge__inner">
+        <span>AJ</span>
+      </span>
     </span>
   </li>
   <li class="badge-stack__item">
     <span class="badge badge--small">
-      <span class="badge__inner"><span>+3</span></span>
+      <span class="badge__inner">
+        <span>+3</span>
+      </span>
     </span>
   </li>
 </ul>
 
 <!-- @ulu-demo
-  title: Clickable Image Stack
-  description: A stack of clickable user profiles with images.
+  title: Clickable Badges
+  description: You can make individual badges within the stack clickable by using the `badge--clickable` modifier on an anchor tag.
 -->
 <ul class="badge-stack">
   <li class="badge-stack__item">
-    <a href="#" class="badge badge--small badge--clickable">
+    <a href="#" class="badge badge--small badge--clickable" aria-label="View profile for Jane Doe">
       <div class="badge__inner">
-        <img src="https://picsum.photos/id/64/100/100" alt="User 1">
+        <img src="https://picsum.photos/id/64/100/100" alt="Jane Doe">
       </div>
     </a>
   </li>
   <li class="badge-stack__item">
-    <a href="#" class="badge badge--small badge--clickable">
+    <a href="#" class="badge badge--small badge--clickable" aria-label="View profile for Michael Smith">
       <div class="badge__inner">
-        <img src="https://picsum.photos/id/65/100/100" alt="User 2">
+        <img src="https://picsum.photos/id/65/100/100" alt="Michael Smith">
       </div>
     </a>
   </li>
   <li class="badge-stack__item">
-    <a href="#" class="badge badge--small badge--clickable">
+    <a href="#" class="badge badge--small badge--clickable" aria-label="View profile for Alice Johnson">
       <div class="badge__inner">
-        <img src="https://picsum.photos/id/66/100/100" alt="User 3">
+        <img src="https://picsum.photos/id/66/100/100" alt="Alice Johnson">
       </div>
     </a>
   </li>

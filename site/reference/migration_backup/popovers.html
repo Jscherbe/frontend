@@ -1,0 +1,133 @@
+---
+title: Popovers
+intro: Popovers are clickable elements that show content relative to the toggle
+layout: unformatted
+---
+
+<h2 class="h2">Example with placements</h2>
+
+{% for placement in placements -%}
+
+  <button class="button" type="button" data-ulu-popover-trigger='{
+    "floating" : { "placement" : "{{ placement }}" }
+  }'>
+    <span>Placement ({{ placement }})</span>
+    <span class="button__icon">
+      <span data-feather="fas fa-chevron-down"></span>
+    </span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      <p>
+        This is the popover body area <a href="#">test link</a>
+      </p>
+      {{ placeholder.paragraph }}
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+
+{% endfor %}
+
+<h2 class="h2">With Footer</h2>
+
+<div>
+  <button class="button" type="button" data-ulu-popover-trigger>
+    <span>Show Popover</span>
+    <span class="button__icon">
+      <span data-feather="fas fa-chevron-down"></span>
+    </span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+    <div class="popover__footer">Popover Footer</div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+
+<h2 class="h2">No Arrow</h2>
+
+<div>
+  <button class="button" type="button" data-ulu-popover-trigger>
+    <span>Show Popover</span>
+    <span class="button__icon">
+      <span data-feather="fas fa-chevron-down"></span>
+    </span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+</div>
+
+<h2 class="h2">Modifiers</h2>
+
+{% demoPopover 'Fixed' 'fixed' %}
+
+{% demoPopover 'No-padding' 'no-padding' %}
+
+{% demoPopover 'Large' 'large' %}
+
+{% demoPopover 'Large-x' 'large-x' %}
+
+<h3 class="h3 margin-top">Prints Modifier</h3>
+
+<p>Note that the print modifier will show the hidden popover content when printing the page.</p>
+
+{% demoPopover 'Prints' 'prints' %}
+
+<button class="button" type="button" data-ulu-popover-trigger='{ "floating": { "strategy": "fixed" }}'>
+  <span>Show Fixed Popover</span>
+  <span class="button__icon">
+    <span data-feather="fas fa-chevron-down"></span>
+  </span>
+</button> 
+<div class="popover popover--fixed" data-ulu-popover-content>
+  <div class="popover__inner">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo felis nisi, nec pretium justo varius sit amet. Vestibulum vitae quam in velit scelerisque tincidunt et vitae mauris. Fusce aliquet, ipsum sit amet lacinia euismod, est risus rhoncus ligula, eget egestas urna ligula nec enim. Fusce vulputate ornare ligula ut tempus. Sed accumsan orci sed turpis iaculis, at aliquam nibh rhoncus. Maecenas porta lorem a sem tincidunt, sed tristique ex laoreet. Nullam accumsan metus at lobortis interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sagittis sem erat, quis fermentum lectus ultrices quis.
+  </div>
+  <div class="popover__footer">Popover Footer</div>
+  <span class="popover__arrow" data-ulu-popover-arrow></span>
+</div>
+
+<h2 class="h2">Close With Focusout Test</h2>
+
+<p>The following should close when clicking on the anchor link within</p>
+
+<button class="button" type="button" data-ulu-popover-trigger='{ "focusoutCloses" : true }'>
+  <span>Show Focusout Test</span>
+  <span class="button__icon">
+    <span data-feather="fas fa-chevron-down"></span>
+  </span>
+</button> 
+<div class="popover" data-ulu-popover-content>
+  <div class="popover__inner wysiwyg">
+    <ul>
+      <li>
+        <button type="button">Focusing this button should keep focus</button>
+      </li>
+      <li>
+        <a href="#focusout-test-anchor">Goto headline below</a>
+      </li>
+      <li>
+        <button type="button">Focusing this button should keep focus</button>
+      </li>
+    </ul>
+  </div>
+  <span class="popover__arrow" data-ulu-popover-arrow></span>
+</div>
+
+<div class="callout">
+
+  <h3 class="h3" id="focusout-test-anchor" tabindex="0">This headline is to be focused</h3>
+
+  <p>The above the headline will be focused by the anchor link in the popover above to test if focusout option for collapsibles works correctly</p>
+
+</div>
+

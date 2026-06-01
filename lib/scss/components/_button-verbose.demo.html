@@ -1,23 +1,37 @@
 <!-- @ulu-demo
-  title: Standard Verbose Button
-  description: A button that includes a title and body text, often used for important links or pagination.
+  title: Default Example
 -->
 <a href="#" class="button-verbose">
-  <strong class="button-verbose__title">Primary Action Title</strong>
-  <span class="button-verbose__body">Additional descriptive text that explains the consequence of this action.</span>
-  <span class="button-verbose__icon" aria-hidden="true">
-    <span class="css-icon css-icon--angle-right"></span>
-  </span>
+  <strong class="button-verbose__title">Example Link</strong>
+  This is the body
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
 </a>
 
 <!-- @ulu-demo
-  title: Full Width Verbose Button
-  description: The `button-verbose--full-width` modifier makes the button span the entire width of its container.
+  title: Inline Example
+-->
+<p class="type-center">
+  <a href="#" class="button-verbose button-verbose--inline">
+    <strong class="button-verbose__title">Example Link</strong>
+    <span class="button-verbose__body">This is the body</span>
+    <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+  </a>
+</p>
+
+<!-- @ulu-demo
+  title: Full Width Example
 -->
 <a href="#" class="button-verbose button-verbose--full-width">
-  <strong class="button-verbose__title">Next Chapter</strong>
-  <span class="button-verbose__body">Continue reading about the architecture of the system.</span>
-  <span class="button-verbose__icon" aria-hidden="true">
-    <span class="css-icon css-icon--angle-right"></span>
-  </span>
+  <strong class="button-verbose__title">Example Link</strong>
+  <span class="button-verbose__body">This is the body</span>
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
+</a>
+
+<!-- @ulu-demo
+  title: Title Not First
+-->
+<a href="#" class="button-verbose button-verbose--full-width">
+  <span class="button-verbose__body">This is the body</span>
+  <strong class="button-verbose__title">Example Link</strong>
+  <span class="button-verbose__icon fas fa-arrow-right" aria-hidden="true"></span>
 </a>

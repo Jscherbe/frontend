@@ -1,40 +1,153 @@
 <!-- @ulu-demo
-  title: Basic Flipcard
-  description: A text-only flipcard that reveals more information when clicked.
+  title: Flipcard Grid with Images (default)
 -->
-<div class="flipcard" data-ulu-flipcard>
-  <div class="flipcard__front">
-    <div class="flipcard__front-content">
-      <h3 class="h4">Technical Strategy</h3>
-      <span class="flipcard__icon" aria-hidden="true">+</span>
+<div class="flipcard-grid">
+  <div class="flipcard-grid__item">
+    <div class="flipcard flipcard--animation flipcard--w-image " data-ulu-flipcard>
+      <h3 class="flipcard__front" data-ulu-flipcard-front>
+        <span class="flipcard__front-image"><img src="/assets/placeholder/image-1.jpg" alt="" /></span>
+        <span class="flipcard__front-content type-large type-bold">
+        <div>This is the front of flipcard 1</div>
+        <div class="flipcard__icon-container">
+          <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+        </div>
+        </span>
+      </h3>
+      <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
+        <div class="flipcard__back-content">
+          <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+          <div class="flipcard__icon-container">
+        <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="flipcard__back">
-    <div class="flipcard__back-content">
-      <p>Our technical strategy focuses on modularity, performance, and accessibility across all platforms.</p>
-      <button class="button button--small" data-ulu-flipcard-close>Close</button>
+  <div class="flipcard-grid__item">
+    <div class="flipcard flipcard--animation flipcard--w-image " data-ulu-flipcard>
+      <h3 class="flipcard__front" data-ulu-flipcard-front>
+        <span class="flipcard__front-image"><img src="/assets/placeholder/image-1.jpg" alt="" /></span>
+        <span class="flipcard__front-content type-large type-bold">
+        <div>This is the front of flipcard 2</div>
+        <div class="flipcard__icon-container">
+          <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+        </div>
+        </span>
+      </h3>
+      <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
+        <div class="flipcard__back-content">
+          <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+          <div class="flipcard__icon-container">
+        <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- @ulu-demo
-  title: Flipcard with Image
-  description: A flipcard using the `flipcard--w-image` modifier to include a background image on the front.
+  title: Flipcard Grid with Images (bottom-title)
 -->
-<div class="flipcard flipcard--w-image" data-ulu-flipcard>
-  <div class="flipcard__front">
-    <div class="flipcard__front-image">
-      <img src="https://picsum.photos/id/1025/400/400" alt="Front Image">
-    </div>
-    <div class="flipcard__front-content">
-      <h3 class="h4">Project Alpha</h3>
-      <span class="flipcard__icon" aria-hidden="true">+</span>
+<div class="flipcard-grid">
+  <div class="flipcard-grid__item">
+    <div class="flipcard flipcard--animation flipcard--w-image flipcard--bottom-title" data-ulu-flipcard>
+      <h3 class="flipcard__front" data-ulu-flipcard-front>
+        <span class="flipcard__front-image"><img src="/assets/placeholder/image-1.jpg" alt="" /></span>
+        <span class="flipcard__front-content type-large type-bold">
+        <div>This is the front of flipcard 1</div>
+        <div class="flipcard__icon-container">
+          <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+        </div>
+        </span>
+      </h3>
+      <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
+        <div class="flipcard__back-content">
+          <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+          <div class="flipcard__icon-container">
+        <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="flipcard__back">
-    <div class="flipcard__back-content">
-      <p>Project Alpha is our flagship initiative to redefine the user experience for complex data dashboards.</p>
-      <button class="button button--small" data-ulu-flipcard-close>Close</button>
+</div>
+
+<!-- @ulu-demo
+  title: Flipcard Grid with Images (center-title)
+-->
+<div class="flipcard-grid">
+  <div class="flipcard-grid__item">
+    <div class="flipcard flipcard--animation flipcard--w-image flipcard--center-title" data-ulu-flipcard>
+      <h3 class="flipcard__front" data-ulu-flipcard-front>
+        <span class="flipcard__front-image"><img src="/assets/placeholder/image-1.jpg" alt="" /></span>
+        <span class="flipcard__front-content type-large type-bold">
+        <div>This is the front of flipcard 1</div>
+        <div class="flipcard__icon-container">
+          <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+        </div>
+        </span>
+      </h3>
+      <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
+        <div class="flipcard__back-content">
+          <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+          <div class="flipcard__icon-container">
+        <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Flipcard Grid Text Only with back-front__content (default)
+-->
+<div class="flipcard-grid">
+  <div class="flipcard-grid__item">
+    <div class="flipcard " data-ulu-flipcard>
+      <h3 class="flipcard__front" data-ulu-flipcard-front>
+        <span class="flipcard__front-content type-large type-bold">
+        <div>This is the Title of flipcard 1</div>
+        <div class="flipcard__icon-container">
+          <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+        </div>
+        </span>
+      </h3>
+      <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
+        <div class="flipcard__back-front-content type-large type-bold margin-bottom-small" aria-hidden="true">
+          <div>This is the Title of flipcard 1</div>
+        </div>
+        <div class="flipcard__back-content">
+          <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+          <div class="flipcard__icon-container">
+        <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flipcard-grid__item">
+    <div class="flipcard " data-ulu-flipcard>
+      <h3 class="flipcard__front" data-ulu-flipcard-front>
+        <span class="flipcard__front-content type-large type-bold">
+        <div>This is the Title of flipcard 2</div>
+        <div class="flipcard__icon-container">
+          <span class="flipcard__icon css-icon css-icon--plus" aria-hidden="true"></span>
+        </div>
+        </span>
+      </h3>
+      <div class="flipcard__back type-small-x" data-ulu-flipcard-back>
+        <div class="flipcard__back-front-content type-large type-bold margin-bottom-small" aria-hidden="true">
+          <div>This is the Title of flipcard 2</div>
+        </div>
+        <div class="flipcard__back-content">
+          <div>Lorem ipsum odor amet, consectetuer adipiscing elit. Pharetra curabitur ultricies litora bibendum metus nunc a habitant? Pretium dictumst odio ultrices luctus risus sapien aptent. Malesuada conubia potenti tellus eget pulvinar, praesent faucibus pharetra mattis. Primis quis sollicitudin lacinia inceptos amet. Aliquam potenti mollis placerat fusce elit suspendisse placerat hendrerit. Dignissim cras in viverra nibh ante libero interdum porttitor dui. Adipiscing pretium penatibus ornare gravida faucibus nisi odio. Mus et mattis senectus ultricies eu.</div>
+          <div class="flipcard__icon-container">
+        <span class="flipcard__icon css-icon css-icon--minus" aria-hidden="true"></span>
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

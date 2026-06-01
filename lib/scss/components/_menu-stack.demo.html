@@ -1,38 +1,848 @@
 <!-- @ulu-demo
-  title: Basic Navigation Menu
-  description: A standard vertical list of links, often used for sidebars or secondary navigation.
+  title: Basic Example
 -->
-<nav class="menu-stack">
-  <h3 class="menu-stack__label">Main Navigation</h3>
+<div class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">User Settings</h3>
   <ul class="menu-stack__list">
     <li class="menu-stack__item">
-      <a href="#" class="menu-stack__link is-active">Dashboard</a>
+      <a class="menu-stack__link is-active" href="#" >Profile Overview</a>
     </li>
-    <li class="menu-stack__item">
-      <a href="#" class="menu-stack__link">Projects</a>
-    </li>
-    <li class="menu-stack__item">
-      <a href="#" class="menu-stack__link">Tasks</a>
-    </li>
-  </ul>
-</nav>
-
-<!-- @ulu-demo
-  title: Collapsible Sub-Menu
-  description: Using `details` to create a collapsible group within the menu stack.
--->
-<div class="menu-stack">
-  <ul class="menu-stack__list">
     <li class="menu-stack__item">
       <details class="menu-stack__collapsible">
         <summary class="menu-stack__toggle">
-          <span class="menu-stack__link-text">Organization</span>
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Account Management</span></span>
           <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
         </summary>
         <div class="menu-stack__collapsible-content">
           <ul class="menu-stack__list">
-            <li class="menu-stack__item"><a class="menu-stack__link" href="#">Team Members</a></li>
-            <li class="menu-stack__item"><a class="menu-stack__link" href="#">Permissions</a></li>
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Email Preferences</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Security Settings</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Change Password</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Two-Factor Authentication (2FA) Setup and Backup Codes</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">Log Out</a>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Compact Example
+-->
+<div class="menu-stack demo-menu-stack menu-stack--compact">
+  <h3 class="menu-stack__label">Admin Navigation</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-current="page">Dashboard</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Content Types</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Pages</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Blog Posts</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Drafts</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Published Articles and Press Releases</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">System Settings</a>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Hanging with aria-current test
+-->
+<div class="menu-stack demo-menu-stack menu-stack--hanging">
+  <h3 class="menu-stack__label">Documentation</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-current="page">Getting Started</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Core Concepts</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Routing Architecture</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">State Management</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Local Component State</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Global Application State Using Context Providers and Reducers</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">API Reference</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Migration Guide</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Changelog</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Community Forums</a>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Hanging Compact Example
+-->
+<div class="menu-stack demo-menu-stack menu-stack--hanging menu-stack--compact">
+  <h3 class="menu-stack__label">Documentation</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-current="page">Getting Started</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Core Concepts</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Routing Architecture</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">State Management</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Local Component State</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Global Application State Using Context Providers and Reducers</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#">API Reference</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Migration Guide</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Changelog</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Community Forums</a>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Multiple labels/lists
+-->
+<div class="demo-menu-stack">
+  <div class="menu-stack">
+    <h3 class="menu-stack__label">Categories</h3>
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item">
+        <a class="menu-stack__link is-active" href="#" >Electronics</a>
+      </li>
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Home Appliances and Smart Devices for Modern Connected Living Spaces</a>
+      </li>
+    </ul>
+  </div>
+  <div class="menu-stack menu-stack--separated">
+    <h3 class="menu-stack__label">Promotions</h3>
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Clearance Sale</a>
+      </li>
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Buy One Get One Free Offers Valid Only on Selected Items During Holiday Season</a>
+      </li>
+    </ul>
+  </div>
+  <div class="menu-stack menu-stack--separated">
+    <h3 class="menu-stack__label">Another Section</h3>
+    <ul class="menu-stack__list">
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Clearance Sale</a>
+      </li>
+      <li class="menu-stack__item">
+        <a class="menu-stack__link" href="#">Buy One Get One Free Offers Valid Only on Selected Items During Holiday Season</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Checkbox Menu
+-->
+<div class="menu-stack demo-menu-stack form-theme">
+  <h3 class="menu-stack__label">Filter by Brand</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-1">
+        <label for="cb-1">Apple</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-2">
+        <label for="cb-2">Samsung</label>
+      </div>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-3">
+        <label for="cb-3">Sony</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-4">
+        <label for="cb-4">LG</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-5">
+        <label for="cb-5">Panasonic</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-6">
+        <label for="cb-6">Audio-Technica High-Fidelity Professional Studio Monitor Headphones and Equipment</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-8">
+        <label for="cb-8">Bose Noise Cancelling Over-Ear Wireless Headphones</label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Checkbox Menu (compact modifier)
+-->
+<div class="menu-stack demo-menu-stack menu-stack--compact form-theme">
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-1">
+        <label for="cb-c-1">Black</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-2">
+        <label for="cb-c-2">White</label>
+      </div>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-3">
+        <label for="cb-c-3">Silver</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-4">
+        <label for="cb-c-4">Space Gray</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-5">
+        <label for="cb-c-5">Midnight Green</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-6">
+        <label for="cb-c-6">Rose Gold with Matte Finish and Fingerprint Resistant Coating for Premium Feel</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-c-7">
+        <label for="cb-c-7">Pacific Blue Titanium Edition</label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Checkbox Menu (hide-inputs)
+-->
+<div class="menu-stack demo-menu-stack form-theme menu-stack--hide-inputs">
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-1">
+        <label for="cb-no-input-1">Small</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-2" checked>
+        <label for="cb-no-input-2">Medium</label>
+      </div>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-3">
+        <label for="cb-no-input-3">Large</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-4">
+        <label for="cb-no-input-4">Extra Large</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-5">
+        <label for="cb-no-input-5">XXL</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-6">
+        <label for="cb-no-input-6">One Size Fits All (Adjustable Band Included for Custom Fit on Most Body Types)</label>
+      </div>
+    </li>
+    <li class="menu-stack__item">
+      <div class="menu-stack__selectable">
+        <input type="checkbox" id="cb-no-input-7">
+        <label for="cb-no-input-7">Custom Tailored Fit</label>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: With Icons
+-->
+<div class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">User Profile</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >
+        <span class="menu-stack__link-icon fas fa-house" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" >
+        <span class="menu-stack__link-icon fas fa-user" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Account Information</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >
+        <span class="menu-stack__link-icon fas fa-music" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Audio Settings</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- @ulu-demo
+  title: Columns Menu Stack for Testing
+-->
+<section class="menu-stack menu-stack--columns demo-menu-stack">
+  <h3 class="menu-stack__label">Sitemap Overview</h3>
+  <div class="menu-stack__list">
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link is-active" href="#">Products</a></div>
+      </div>
+        <ul class="menu-stack__list">
+          <li class="menu-stack__item">
+            <a class="menu-stack__link" href="#">Enterprise Solutions</a>
+          </li>
+          <li class="menu-stack__item">
+            <a class="menu-stack__link" href="#">Small Business Packages</a>
+          </li>
+          <li class="menu-stack__item">
+            <a class="menu-stack__link" href="#">Individual Licenses</a>
+          </li>
+        </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Services</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Consulting</a>
+        </li>
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Implementation</a>
+        </li>
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Ongoing Support</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title">
+          <a class="menu-stack__link" href="#">Company Directory</a>
+        </div>
+        <div class="menu-stack__item menu-stack__item--title">
+          <a class="menu-stack__link" href="#">Investor Relations</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- @ulu-demo
+  title: Columns Menu Stack with Hanging
+-->
+<section class="menu-stack menu-stack--columns menu-stack--hanging demo-menu-stack">
+  <h3 class="menu-stack__label">Hanging Columns</h3>
+  <div class="menu-stack__list">
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Engineering</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#" aria-current="page">Frontend Development</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Backend Architecture</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">QA & Testing</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Marketing</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Content Strategy</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Social Media Management</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- @ulu-demo
+  title: Columns Menu Stack (Many Items)
+-->
+<section class="menu-stack menu-stack--columns demo-menu-stack">
+  <h3 class="menu-stack__label">Extended Department Directory</h3>
+  <div class="menu-stack__list">
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Engineering</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#" aria-current="page">Frontend Development</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Backend Architecture</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">QA & Testing</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Marketing</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Social Media</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Content Strategy</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Brand Management</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Sales</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Inbound</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Outbound</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Partnerships</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Human Resources</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Recruitment</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Employee Relations</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Benefits</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Design</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">UX/UI</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Visual Design</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">User Research</a></li>
+      </ul>
+    </div>
+    <div class="menu-stack__item">
+      <div class="menu-stack__list">
+        <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Finance</a></div>
+      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Accounting</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Financial Planning</a></li>
+        <li class="menu-stack__item"><a class="menu-stack__link" href="#">Payroll</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- @ulu-demo
+  title: Div Parent List Structure Testing
+-->
+<section class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">Global Regions</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">North America</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <div class="menu-stack__list">
+            <div class="menu-stack__item"><a class="menu-stack__link" href="#">Regional Overview</a></div>
+          </div>
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link is-active" href="#">United States Hub</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Canada Offices</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <div class="menu-stack__list">
+                    <div class="menu-stack__item"><a class="menu-stack__link" href="#">National Hub</a></div>
+                  </div>
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Toronto Data Center</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Vancouver Creative Studio and West Coast Operations Center</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">European Headquarters</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Asia Pacific Region</a>
+    </li>
+  </ul>
+</section>
+
+<!-- @ulu-demo
+  title: Div Parent List Structure Testing (Hanging)
+-->
+<section class="menu-stack demo-menu-stack menu-stack--hanging">
+  <h3 class="menu-stack__label">Global Regions</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">North America</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <div class="menu-stack__list">
+            <div class="menu-stack__item"><a class="menu-stack__link" href="#">Regional Overview</a></div>
+          </div>
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#" aria-current="page">United States Hub</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Canada Offices</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <div class="menu-stack__list">
+                    <div class="menu-stack__item"><a class="menu-stack__link" href="#">National Hub</a></div>
+                  </div>
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Toronto Data Center</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Vancouver Creative Studio and West Coast Operations Center</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">European Headquarters</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Asia Pacific Region</a>
+    </li>
+  </ul>
+</section>
+
+<!-- @ulu-demo
+  title: Div Parent List Structure Testing (Compact)
+-->
+<section class="menu-stack demo-menu-stack menu-stack--compact">
+  <h3 class="menu-stack__label">Global Regions</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">North America</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <div class="menu-stack__list">
+            <div class="menu-stack__item"><a class="menu-stack__link" href="#">Regional Overview</a></div>
+          </div>
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link is-active" href="#">United States Hub</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Canada Offices</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <div class="menu-stack__list">
+                    <div class="menu-stack__item"><a class="menu-stack__link" href="#">National Hub</a></div>
+                  </div>
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item"><a class="menu-stack__link" href="#">Toronto Data Center</a></li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Vancouver Creative Studio and West Coast Operations Center</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">European Headquarters</a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Asia Pacific Region</a>
+    </li>
+  </ul>
+</section>
+
+<!-- @ulu-demo
+  title: Columns Menu Stack inside Popover
+-->
+<div>
+  <button class="button" type="button" data-ulu-popover-trigger>
+    <span>Show Department Directory</span>
+    <span class="button__icon">
+      <span class="css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+    </span>
+  </button> 
+  <div class="popover popover--fit" data-ulu-popover-content style="--ulu-popover-max-width: 60rem;">
+    <div class="popover__inner">
+      <section class="menu-stack menu-stack--columns-fluid">
+        <div class="menu-stack__list">
+          <div class="menu-stack__item">
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Engineering</a></div>
+            </div>
+            <ul class="menu-stack__list">
+              <li class="menu-stack__item"><a class="menu-stack__link is-active" href="#">Frontend Development</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Backend Architecture</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">QA & Testing</a></li>
+            </ul>
+          </div>
+          <div class="menu-stack__item">
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Marketing</a></div>
+            </div>
+            <ul class="menu-stack__list">
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Social Media</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Content Strategy</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Brand Management</a></li>
+            </ul>
+          </div>
+          <div class="menu-stack__item">
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Sales</a></div>
+            </div>
+            <ul class="menu-stack__list">
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Inbound</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Outbound</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Partnerships</a></li>
+            </ul>
+          </div>
+          <div class="menu-stack__item">
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Human Resources</a></div>
+            </div>
+            <ul class="menu-stack__list">
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Recruitment</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Employee Relations</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Benefits</a></li>
+            </ul>
+          </div>
+          <div class="menu-stack__item">
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Design</a></div>
+            </div>
+            <ul class="menu-stack__list">
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">UX/UI</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Visual Design</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">User Research</a></li>
+            </ul>
+          </div>
+          <div class="menu-stack__item">
+            <div class="menu-stack__list">
+              <div class="menu-stack__item menu-stack__item--title"><a class="menu-stack__link" href="#">Finance</a></div>
+            </div>
+            <ul class="menu-stack__list">
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Accounting</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Financial Planning</a></li>
+              <li class="menu-stack__item"><a class="menu-stack__link" href="#">Payroll</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: 3 Levels Nesting (Collapsibles)
+-->
+<div class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">Documentation (3 Levels)</h3>
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#">Introduction</a>
+    </li>
+    <li class="menu-stack__item">
+      <details class="menu-stack__collapsible">
+        <summary class="menu-stack__toggle">
+          <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Getting Started</span></span>
+          <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+        </summary>
+        <div class="menu-stack__collapsible-content">
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Installation</a>
+            </li>
+            <li class="menu-stack__item">
+              <details class="menu-stack__collapsible">
+                <summary class="menu-stack__toggle">
+                  <span class="menu-stack__toggle-content"><span class="menu-stack__link-text">Configuration Setup</span></span>
+                  <span class="menu-stack__toggle-icon css-icon css-icon--angle-down-to-up" aria-hidden="true"></span>
+                </summary>
+                <div class="menu-stack__collapsible-content">
+                  <ul class="menu-stack__list">
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Environment Variables</a>
+                    </li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link is-active" href="#">Database Connection and Optimization Strategies</a>
+                    </li>
+                    <li class="menu-stack__item">
+                      <a class="menu-stack__link" href="#">Caching Layers</a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
           </ul>
         </div>
       </details>
@@ -41,29 +851,43 @@
 </div>
 
 <!-- @ulu-demo
-  title: Selectable (Checkbox) Menu
-  description: A menu containing checkboxes, useful for filtering or selection lists.
+  title: 3 Levels Nesting (No Collapsibles)
 -->
-<div class="menu-stack form-theme">
-  <h3 class="menu-stack__label">Filter by Status</h3>
+<div class="menu-stack demo-menu-stack">
+  <h3 class="menu-stack__label">Categories (3 Levels)</h3>
   <ul class="menu-stack__list">
     <li class="menu-stack__item">
-      <div class="menu-stack__selectable">
-        <input type="checkbox" id="status-1" checked>
-        <label for="status-1">Active</label>
-      </div>
+      <a class="menu-stack__link" href="#">Home Page</a>
     </li>
     <li class="menu-stack__item">
-      <div class="menu-stack__selectable">
-        <input type="checkbox" id="status-2">
-        <label for="status-2">Pending</label>
+      <div class="menu-stack__list">
+        <div class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Electronics</a>
+        </div>
       </div>
-    </li>
-    <li class="menu-stack__item">
-      <div class="menu-stack__selectable">
-        <input type="checkbox" id="status-3">
-        <label for="status-3">Completed</label>
-      </div>
+      <ul class="menu-stack__list">
+        <li class="menu-stack__item">
+          <a class="menu-stack__link" href="#">Mobile Phones</a>
+        </li>
+        <li class="menu-stack__item">
+          <div class="menu-stack__list">
+            <div class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Computers & Tablets</a>
+            </div>
+          </div>
+          <ul class="menu-stack__list">
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Laptops</a>
+            </li>
+            <li class="menu-stack__item">
+              <a class="menu-stack__link is-active" href="#">Desktop PCs and High Performance Workstations</a>
+            </li>
+            <li class="menu-stack__item">
+              <a class="menu-stack__link" href="#">Accessories</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

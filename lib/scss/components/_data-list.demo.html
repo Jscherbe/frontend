@@ -1,67 +1,508 @@
 <!-- @ulu-demo
-  title: Basic Data List
-  description: A standard list layout for simple items.
+  title: Default (Single Fluid Column)
+  description: The easiest way to use the Data List is with the zero-config layout presets. Without any modifiers, the list defaults to a single, full-width `1fr` track. This is useful for simple lists of text.
 -->
 <ul class="data-list">
   <li class="data-list__item">
     <div class="data-list__column">
-      <strong>Item One Title</strong>
+      <strong>Company Holidays 2024.pdf</strong>
     </div>
   </li>
   <li class="data-list__item">
     <div class="data-list__column">
-      <strong>Item Two Title</strong>
+      <strong>Employee Handbook v3.pdf</strong>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Benefits Enrollment Overview.pdf</strong>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Q3 Financial Report.xlsx</strong>
+    </div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Prefixed Layout
+  description: Adding the `.data-list--prefixed` modifier creates an `auto 1fr` layout. It is perfect for attaching a shrink-wrapped icon, avatar, or checkbox to the start of the main content.
+-->
+<ul class="data-list data-list--prefixed">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Archived Projects</strong>
+      <div class="type-small type-type-tertiary">Contains 42 items</div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Brand Assets</strong>
+      <div class="type-small type-type-tertiary">Contains 12 items</div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Marketing Materials</strong>
+      <div class="type-small type-type-tertiary">Contains 8 items</div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Legal Documents</strong>
+      <div class="type-small type-type-tertiary">Contains 3 items</div>
+    </div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Suffixed Layout
+  description: Adding the `.data-list--suffixed` modifier creates a `1fr auto` layout. This is ideal for attaching an action button, date, or status badge to the end of the row.
+-->
+<ul class="data-list data-list--suffixed">
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Update billing information</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small">Resolve</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Verify email address</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Resend</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Complete security training</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Start</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <strong>Review terms of service</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Review</button>
     </div>
   </li>
 </ul>
 
 <!-- @ulu-demo
   title: Flanked Layout (Prefixed + Suffixed)
-  description: Automatically aligns an icon at the start and an action at the end.
+  description: Combining both modifiers creates a classic `auto 1fr auto` layout. The Icon and Button sit on the edges, while the text fluidly fills the center. This structure is maintained when stacked automatically.
 -->
 <ul class="data-list data-list--prefixed data-list--suffixed">
   <li class="data-list__item">
-    <div class="data-list__column" aria-hidden="true">📄</div>
-    <div class="data-list__column"><strong>Report_Q1.pdf</strong></div>
-    <div class="data-list__column"><button class="button button--small">Download</button></div>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Q3 Financial Report.xlsx</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
   </li>
   <li class="data-list__item">
-    <div class="data-list__column" aria-hidden="true">📊</div>
-    <div class="data-list__column"><strong>Analytics_Data.xlsx</strong></div>
-    <div class="data-list__column"><button class="button button--small">Download</button></div>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Employee Handbook.pdf</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Brand Guidelines.pdf</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column">
+      <strong>Meeting Notes - Jan 14.docx</strong>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
   </li>
 </ul>
 
 <!-- @ulu-demo
-  title: Interactive Clickable Rows
-  description: Entire rows are interactive, using proxy-click logic to route to a primary link.
+  title: Multi-Track Data List
+  description: This example defines a 4-track grid (`auto 1fr auto auto`). The middle column acts as a wrapper for the Title and Date, using `--span-2` to consume two master tracks. When stacked, this subgrid structure drops, and the Title and Date gracefully stack vertically.
 -->
-<ul class="data-list data-list--clickable">
-  <li class="data-list__item" data-ulu-proxy-click>
-    <div class="data-list__column">
-      <a href="#" data-ulu-proxy-click-source><strong>Important Update: New Security Features</strong></a>
-    </div>
-    <div class="data-list__column type-small">2 hours ago</div>
-  </li>
-  <li class="data-list__item" data-ulu-proxy-click>
-    <div class="data-list__column">
-      <a href="#" data-ulu-proxy-click-source><strong>Your Weekly Activity Summary</strong></a>
-    </div>
-    <div class="data-list__column type-small">Yesterday</div>
-  </li>
-</ul>
-
-<!-- @ulu-demo
-  title: Custom Grid with Spanning
-  description: Advanced usage using inline variables and column spanning.
--->
-<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto;">
+<ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
   <li class="data-list__item">
-    <div class="data-list__column">ID: 101</div>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
     <div class="data-list__column data-list__column--span-2">
-      <strong>Product Name A</strong>
-      <span class="type-small">In Stock</span>
+      <!-- The min-width: 0 protection on the column allows text-overflow: ellipsis to work safely -->
+      <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        <strong>Annual_Report_2024_FINAL_v2_with_appendices_and_really_long_name_that_should_truncate_safely.pdf</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Jan 1, 2024</small>
+      </div>
     </div>
-    <div class="data-list__column">$19.99</div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📊</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        <strong>Marketing Assets.zip</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Dec 10, 2023</small>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📊</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        <strong>Sales Data Q4.csv</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Nov 15, 2023</small>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📄</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column" style="display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+        <strong>Project Proposal Draft.docx</strong>
+      </div>
+      <div class="data-list__column">
+        <small class="type-type-tertiary">Added: Oct 02, 2023</small>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small button--outline">Download</button>
+    </div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Directory with Visual Header
+  description: An optional header row (`.data-list__header`) can be added for visual alignment on desktop. It is hidden from screen readers to maintain list semantics, and disappears when columns naturally stack.
+-->
+<ul class="data-list data-list--striped" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
+  <li class="data-list__header" aria-hidden="true">
+    <div class="data-list__item">
+      <div class="data-list__column"></div> <!-- Icon space -->
+      <div class="data-list__column data-list__column--span-2">
+        <div class="data-list__column">Name</div>
+        <div class="data-list__column hidden-max-small">Role</div>
+      </div>
+      <div class="data-list__column"></div> <!-- Action space -->
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>JD</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Jane Doe</strong>
+      </div>
+      <div class="data-list__column hidden-max-small">
+        <span class="tag tag--outline tag--small">Administrator</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>BS</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Bob Smith</strong>
+      </div>
+      <div class="data-list__column hidden-max-small">
+        <span class="tag tag--outline tag--small">Editor</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>AJ</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Alice Jones</strong>
+      </div>
+      <div class="data-list__column hidden-max-small">
+        <span class="tag tag--outline tag--small">Viewer</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column">
+      <div class="badge badge--small">
+        <div class="badge__inner"><span>TR</span></div>
+      </div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Tom Richards</strong>
+      </div>
+      <div class="data-list__column hidden-max-small">
+        <span class="tag tag--outline tag--small">Editor</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <button type="button" class="button button--small">Edit</button>
+    </div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Interactive Rows (Proxy Click)
+  description: For clickable rows, use the `.data-list--clickable` modifier to apply hover states and cursor styling. Combine this with the `data-ulu-proxy-click` attribute to route clicks anywhere on the row to the primary link inside it.
+-->
+<ul class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column" style="flex-wrap: wrap; gap: 0.25rem 1rem;">
+      <div style="flex: 1 1 20ch;">
+        <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 1')">Message Subject Line regarding the recent updates</a>
+      </div>
+      <div style="flex: 1 1 20ch;" class="type-small type-type-tertiary">From: Jane Doe &lt;jane.doe@example.com&gt;</div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <small>2 mins ago</small>
+    </div>
+  </li>
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column" style="flex-wrap: wrap; gap: 0.25rem 1rem;">
+      <div style="flex: 1 1 20ch;">
+        <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 2')">Action Required: Invoice Payment</a>
+      </div>
+      <div style="flex: 1 1 20ch;" class="type-small type-type-tertiary">From: Billing Dept &lt;billing@example.com&gt;</div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <small>1 hour ago</small>
+    </div>
+  </li>
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column" style="flex-wrap: wrap; gap: 0.25rem 1rem;">
+      <div style="flex: 1 1 20ch;">
+        <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 3')">Meeting Rescheduled for Tomorrow</a>
+      </div>
+      <div style="flex: 1 1 20ch;" class="type-small type-type-tertiary">From: Bob Smith &lt;bob.smith@example.com&gt;</div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <small>Yesterday</small>
+    </div>
+  </li>
+  <li class="data-list__item" data-ulu-proxy-click>
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📩</div>
+    </div>
+    <div class="data-list__column" style="flex-wrap: wrap; gap: 0.25rem 1rem;">
+      <div style="flex: 1 1 20ch;">
+        <a href="#" data-ulu-proxy-click-source class="type-bold" onclick="alert('Clicked Message 4')">Welcome to the Platform!</a>
+      </div>
+      <div style="flex: 1 1 20ch;" class="type-small type-type-tertiary">From: Support Team &lt;support@example.com&gt;</div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <small>Last week</small>
+    </div>
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Simple Link List (Anchor Rows)
+  description: For simple navigation lists where the entire row is a literal link, you can use `<a>` tags as the list items. The structural container uses a `<div>` instead of a `<ul>`, but the component works identically.
+-->
+<div class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
+  <a href="#" class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Company Documents and Archives</strong>
+      </div>
+      <div class="data-list__column">
+        <span class="type-small type-type-tertiary">Shared Drive</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <span class="fa-solid fa-chevron-right type-type-tertiary" aria-hidden="true"></span>
+    </div>
+  </a>
+  <a href="#" class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Design Assets</strong>
+      </div>
+      <div class="data-list__column">
+        <span class="type-small type-type-tertiary">Logos and Branding</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <span class="fa-solid fa-chevron-right type-type-tertiary" aria-hidden="true"></span>
+    </div>
+  </a>
+  <a href="#" class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Meeting Transcripts</strong>
+      </div>
+      <div class="data-list__column">
+        <span class="type-small type-type-tertiary">2023-2024 Records</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <span class="fa-solid fa-chevron-right type-type-tertiary" aria-hidden="true"></span>
+    </div>
+  </a>
+  <a href="#" class="data-list__item">
+    <div class="data-list__column">
+      <div style="font-size: 1.5rem;" aria-hidden="true">📁</div>
+    </div>
+    <div class="data-list__column data-list__column--span-2">
+      <div class="data-list__column">
+        <strong>Software Licenses</strong>
+      </div>
+      <div class="data-list__column">
+        <span class="type-small type-type-tertiary">Keys and Receipts</span>
+      </div>
+    </div>
+    <div class="data-list__column justify-content-end">
+      <span class="fa-solid fa-chevron-right type-type-tertiary" aria-hidden="true"></span>
+    </div>
+  </a>
+</div>
+
+<!-- @ulu-demo
+  title: Mixing Layout Strategies (Inline Wrapping)
+  description: Not everything needs to be perfectly aligned to a grid track. If you have a collection of small data points (like tags) that you want to flow naturally on all screen sizes, simply place them together in a single column and let standard HTML inline behavior handle the wrapping.
+-->
+<ul class="data-list" style="--ulu-data-list-columns: 1fr auto; --ulu-data-list-columns-stacked: 100%;">
+  <li class="data-list__item">
+    <div class="data-list__column align-items-start">
+      <strong>Feature #402</strong>
+    </div>
+    <div class="data-list__column">
+      <div>
+        <span class="tag tag--small tag--success margin-right-small margin-bottom-small">Shipped</span>
+        <span class="tag tag--small margin-right-small margin-bottom-small">High Priority</span>
+        <span class="tag tag--small margin-bottom-small">Frontend</span>
+      </div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column align-items-start">
+      <strong>Bug Fix #405</strong>
+    </div>
+    <div class="data-list__column">
+      <div>
+        <span class="tag tag--small tag--danger margin-right-small margin-bottom-small">Blocked</span>
+        <span class="tag tag--small margin-right-small margin-bottom-small">Backend</span>
+        <span class="tag tag--small margin-bottom-small">Database</span>
+      </div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column align-items-start">
+      <strong>Feature #410</strong>
+    </div>
+    <div class="data-list__column">
+      <div>
+        <span class="tag tag--small margin-right-small margin-bottom-small">In Progress</span>
+        <span class="tag tag--small margin-right-small margin-bottom-small">Low Priority</span>
+        <span class="tag tag--small margin-bottom-small">Design</span>
+      </div>
+    </div>
+  </li>
+  <li class="data-list__item">
+    <div class="data-list__column align-items-start">
+      <strong>Bug Fix #412</strong>
+    </div>
+    <div class="data-list__column">
+      <div>
+        <span class="tag tag--small tag--success margin-right-small margin-bottom-small">Resolved</span>
+        <span class="tag tag--small margin-right-small margin-bottom-small">Security</span>
+      </div>
+    </div>
   </li>
 </ul>
