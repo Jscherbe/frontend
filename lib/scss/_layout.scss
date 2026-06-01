@@ -49,16 +49,20 @@ $config: (
 /// @prop {Map} [name].breakpoints Responsive breakpoints (optional)
 
 $widths: (
+  "small-x": (
+    "value": 6rem,
+    "helper-class": true
+  ),
   "small": (
-    "value": 20rem,
+    "value": 8rem,
     "helper-class": true
   ),
   "medium": (
-    "value": 40rem,
+    "value": 16rem,
     "helper-class": true
   ),
   "large": (
-    "value": 60rem,
+    "value": 32rem,
     "helper-class": true
   )
 ) !default;

@@ -10,21 +10,28 @@ intro: Helper classes for enforcing standardized widths and max-widths across la
 <p>These classes enforce a strict <code>width</code> property on an element. Use them carefully, as fixed widths can cause overflow issues on smaller screens if not properly managed.</p>
 
 {% CodePreview %}
+
+<div class="demo-grid-container margin-bottom">
+  <div class="demo-grid__content width-small-x">
+    <p class="text-center no-margin">small-x</p>
+  </div>
+</div>
+
 <div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content width-small">
-    <p class="text-center no-margin">.width-small</p>
+    <p class="text-center no-margin">small</p>
   </div>
 </div>
 
 <div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content width-medium">
-    <p class="text-center no-margin">.width-medium</p>
+    <p class="text-center no-margin">medium</p>
   </div>
 </div>
 
 <div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content width-large">
-    <p class="text-center no-margin">.width-large</p>
+    <p class="text-center no-margin">large</p>
   </div>
 </div>
 {% endCodePreview %}
@@ -35,19 +42,19 @@ intro: Helper classes for enforcing standardized widths and max-widths across la
 {% CodePreview %}
 <div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content max-width-small margin-auto">
-    <p class="text-center no-margin">.max-width-small (centered)</p>
+    <p class="text-center no-margin">width-small (centered)</p>
   </div>
 </div>
 
 <div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content max-width-medium margin-auto">
-    <p class="text-center no-margin">.max-width-medium (centered)</p>
+    <p class="text-center no-margin">width-medium (centered)</p>
   </div>
 </div>
 
 <div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content max-width-large margin-auto">
-    <p class="text-center no-margin">.max-width-large (centered)</p>
+    <p class="text-center no-margin">width-large (centered)</p>
   </div>
 </div>
 {% endCodePreview %}

@@ -6,7 +6,7 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 
 {% CodePreview %}
 <div class="graphic-text-group graphic-text-group--rule-bottom graphic-text-group--rule-top type-max-width-small margin-auto">
-  <div class="graphic-text-group__graphic" style="width: 8rem;">
+  <div class="graphic-text-group__graphic width-small">
     <img alt="" src="/assets/placeholder/graphic-icon-word.svg">
   </div>
   <div class="graphic-text-group__text crop-margins">
@@ -157,7 +157,7 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 
 {% CodePreview %}
 <div class="graphic-text-group graphic-text-group--wrap graphic-text-group--separator type-max-width-small margin-auto">
-  <div class="graphic-text-group__graphic" style="width: 6rem">
+  <div class="graphic-text-group__graphic width-small-x">
     <div class="badge badge--large">
       <div class="badge__inner">
         <span>02</span>
@@ -175,7 +175,7 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 
 {% CodePreview %}
 <div class="graphic-text-group  type-max-width-small margin-auto">
-  <div class="graphic-text-group__graphic" style="width: 6rem">
+  <div class="graphic-text-group__graphic width-small-x">
     <div class="badge badge--large">
       <div class="badge__inner">
         <span>02</span>
@@ -194,7 +194,7 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 {% CodePreview %}
 <div class="callout type-max-width-small margin-auto crop-margins">
   <div class="graphic-text-group">
-    <div class="graphic-text-group__graphic" style="width: 8rem;">
+    <div class="graphic-text-group__graphic width-small-x">
       <img alt="" src="/assets/placeholder/graphic-icon-word.svg">
     </div>
     <div class="graphic-text-group__text crop-margins">
