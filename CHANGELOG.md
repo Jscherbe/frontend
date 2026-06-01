@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.12
+
+- `scss/component/_menu-stack.scss`
+  - Add new options for stacked style, and adjust defaults for the new style
+
 ## 0.6.11
 
 - `scss/_layout.scss` 

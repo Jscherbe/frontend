@@ -37,22 +37,11 @@ $-fallbacks: (
     
 /// Module Settings
 /// @type Map
-/// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
-/// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
+
 /// @prop {Dimension} nested-indent [0.5em] The indentation of child lists within the menu-stack.
 /// @prop {Dimension} rule-margin [0.5em] Sets the padding and margin of the rule.
 /// @prop {String} rule-style [default] Determines the styling of the rule. Uses the rule.scss component.
 /// @prop {Number} toggle-icon-rotate [false] Set a value to rotate the collapsible item toggle icon rotation when open (ie. 90deg)
-/// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
-/// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
-/// @prop {Dimension} compact-link-margin [0.2em] Margin between items when compact
-/// @prop {Dimension} compact-link-border-radius [null] Unless set will use the normal link border radius
-/// @prop {Dimension} compact-selectable-input-width [2em] The width of the checkbox/radio input (when compact modifier)
-/// @prop {Dimension} compact-selectable-input-font-size [null] Optional compact input font-size
-/// @prop {Dimension} compact-selectable-input-top [null] Optional y/top for input
-/// @prop {Dimension} stacked-link-padding-x [0.4em] The links horizontal padding when using the stacked option.
-/// @prop {Dimension} stacked-link-padding-y [0.4em] The links vertical padding when using the stacked option.
-/// @prop {Dimension} stacked-link-icon-margin [0.35em] Margin between icon and text when stacked.
 /// @prop {Color} label-color [null] The type color of the label.
 /// @prop {Dimension} label-margin [0.5em] The margin of the label.
 /// @prop {CssValue} label-text-transform [uppercase] Transforms the label text.
@@ -75,6 +64,8 @@ $-fallbacks: (
 /// @prop {Dimension} link-margin [0.2em] Margin for the menu-stack toggle.
 /// @prop {Dimension} link-padding-x [1em] Horizontal padding for menu-stack toggle.
 /// @prop {Dimension} link-padding-y [0.35em] Vertical padding for menu-stack toggle.
+/// @prop {Boolean} link-separated-margin [false] Enables a margin between the items in the menu-stack.
+/// @prop {Boolean} link-separated-rule-style [false] Enables a rule between the items in the menu-stack.
 /// @prop {Dimension} selectable-input-width [3em] The width of the checkbox/radio input
 /// @prop {Dimension} selectable-input-top [0.73em] To fine tune the y/top value for absolutely positioned input, if you pass null/falsey it will use the padding which isn't always perfect since this is setup to not be centered when wrapping lines in label
 /// @prop {Dimension} selectable-input-font-size [null] Optional to set a specific font-size on the input
@@ -88,7 +79,18 @@ $-fallbacks: (
 /// @prop {Boolean} title-separated-margin [false] Use specific margin for title separated items.
 /// @prop {Dimension} columns-gap [2rem] The gap between columns in a columns menu stack.
 /// @prop {Dimension} columns-min-width [18rem] The minimum width of a column in a columns menu stack.
-
+/// @prop {Dimension} compact-link-padding-x [0.75em] The links horizontal padding when using the compact option.
+/// @prop {Dimension} compact-link-padding-y [0.25em] The links vertical padding when using the compact option.
+/// @prop {Dimension} compact-link-margin [0.2em] Margin between items when compact
+/// @prop {Dimension} compact-link-border-radius [null] Unless set will use the normal link border radius
+/// @prop {Dimension} compact-selectable-input-width [2em] The width of the checkbox/radio input (when compact modifier)
+/// @prop {Dimension} compact-selectable-input-font-size [null] Optional compact input font-size
+/// @prop {Dimension} compact-selectable-input-top [null] Optional y/top for input
+/// @prop {Dimension} stacked-link-padding-x [0.4em] The links horizontal padding when using the stacked option.
+/// @prop {Dimension} stacked-link-padding-y [0.4em] The links vertical padding when using the stacked option.
+/// @prop {Dimension} stacked-link-icon-margin [0.35em] Margin between icon and text when stacked.
+/// @prop {Dimension} stacked-link-border-radius [true] Border radius for stacked style of links, defaults to element "border-radius-small"
+/// @prop {Dimension} stacked-link-font-weight [true] Optional font-weight for stacked style
 
 $config: (
   "nested-indent" : 0.5em,
@@ -129,9 +131,11 @@ $config: (
   "compact-selectable-input-top" : 0.5em,
   "compact-selectable-input-font-size": 0.8em,
   "stacked-link-padding-x": 0.4em,
-  "stacked-link-padding-y": 0.4em,
+  "stacked-link-padding-y": 0.8em,
+  "stacked-link-margin": 0.4em,
   "stacked-link-icon-margin": 0.35em,
   "stacked-link-border-radius": true,
+  "stacked-link-font-weight" : null,
   "selectable-input-width" : 3em,
   "selectable-input-top" : 0.73em,
   "selectable-input-font-size" : null,
@@ -394,6 +398,8 @@ $config: (
       border-radius: get("stacked-link-border-radius");
       padding-top: get("stacked-link-padding-y");
       padding-bottom: get("stacked-link-padding-y");
+      margin: get("stacked-link-margin") 0;
+      font-weight: get("stacked-link-font-weight");
     }
     #{ $prefix }__link-icon {
       margin-right: 0;
