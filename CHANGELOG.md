@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.14
+
+- `scss/_badge_.scss`
+  - Add new optional options (default to null) for "background-color-hover", "color-hover", "box-shadow", "box-shadow-hover"
+  - Lighten "background-color" default gray
+
 ## 0.6.13
 
 - `scss/_button.scss`

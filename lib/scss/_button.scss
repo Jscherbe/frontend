@@ -28,6 +28,7 @@ $-fallbacks: (
 /// @prop {Dimension} min-width [9rem] The smallest width for all buttons
 /// @prop {Dimension} padding [(0.75em 1.5em)] Button inner padding value, pass space separated list
 /// @prop {CssValue} white-space [nowrap] Adjust button line wrapping, by default line's are not wrapped
+/// @prop {Dimension} gap [0.5em] Gap to use between items within the button
 /// @prop {String} border-color ["control-border"] The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.
 /// @prop {String} border-color-hover ["control-border-hover"] Color of border when button is hovered
 /// @prop {String} border-color-active ["control-border-active"] Color of border when a button has active class
