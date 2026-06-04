@@ -84,7 +84,7 @@ $config: (
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
-  "button-icon-offset":      true,
+  "gap":                     0.5em,
 ) !default;
   
 /// Button sizes
@@ -199,9 +199,11 @@ $styles: (
     @include reset();
   }
   appearance: none; // If used with select for example
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: get("gap");
   text-transform: get("text-transform");
-  text-align: center;
   text-shadow: get("text-shadow");
   vertical-align: middle;
   font-family: get("font-family");

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.6.13
+
+- `scss/_button.scss`
+  - Migrate from old inline-block to inline-flex for modern support (no fighting with line-height, etc)
+  - Add new option for "gap" which will control space between things in button (like icons)
+- `scss/components/_button.scss`
+  - Remove config option "icon-margin" (use gap in core "button" module, see above change)
+  - Add modifier for `button--left` modifier for buttons that are maybe full width or a static width
+
 ## 0.6.12
 
 - `scss/component/_menu-stack.scss`
