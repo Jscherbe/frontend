@@ -31,6 +31,7 @@ $-fallbacks: (
 /// @prop {Keyword} font-weight [bold] Font weight
 /// @prop {String} font-family [true] Specify font family, defaults to typography font-family-sans
 /// @prop {Number} width [10rem] Width of badge (default size)
+/// @prop {Time} transition-duration [110ms] Transition duration amount for transitioned properties
 /// @prop {Number} hover-scale [1.2] Scale of badge (if clickable) on hover (enlarges badge)
 /// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
 
@@ -47,6 +48,7 @@ $config: (
   "font-family":         true,
   "width":               7rem,
   "hover-scale":         1.2,
+  "transition-duration" : 110ms,
   "sizes" : (
     "small" : (
       "font-size" : 1.2rem,
@@ -117,7 +119,9 @@ $config: (
     background-position: center center;
     text-align: center;
     border-radius: get("border-radius");
-    transition: transform 100ms ease-in-out;
+    transition-property: transform, color, box-shadow, background-color;
+    transition-duration: get("transition-duration");
+    transition-timing-function: ease-in-out;
     box-shadow: get("box-shadow");
     // In case this is used as a link or router-link
     &,
