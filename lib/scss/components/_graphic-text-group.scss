@@ -76,6 +76,7 @@ $config: (
   #{ $prefix } {
     display: flex;
     align-items: center;
+    text-align: left;
     gap: get("gap");
     margin: get("margin");
   }

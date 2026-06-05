@@ -1,9 +1,11 @@
 # Change Log
 
-## 0.6.17 (upcoming)
+## 0.6.17
 
-- `scss/components/_callout_`
+- `scss/components/_callout.scss`
   - Fix default style for warning background color set to info-background to warning-background
+- `scss/component/_graphic-text-group.scss`
+  - Have this component set text-align left by default
 
 ## 0.6.16
 
