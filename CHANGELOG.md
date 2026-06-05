@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.17 (upcoming)
+
+- `scss/components/_callout_`
+  - Fix default style for warning background color set to info-background to warning-background
+
 ## 0.6.16
 
 - `scss/components/_popover.scss` | Fix specificity of no-padding modifier so it works with large width presets
