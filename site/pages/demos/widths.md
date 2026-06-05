@@ -12,6 +12,18 @@ intro: Helper classes for enforcing standardized widths and max-widths across la
 {% CodePreview %}
 
 <div class="demo-grid-container margin-bottom">
+  <div class="demo-grid__content width-icon">
+    <img alt="" src="/assets/placeholder/graphic-icon-small-bulb.svg">
+  </div>
+</div>
+
+<div class="demo-grid-container margin-bottom">
+  <div class="demo-grid__content width-icon">
+    <span class="fas fa-circle-info" aria-hidden="true"></span>
+  </div>
+</div>
+
+<div class="demo-grid-container margin-bottom">
   <div class="demo-grid__content width-small-x">
     <p class="text-center no-margin">small-x</p>
   </div>

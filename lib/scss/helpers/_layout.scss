@@ -19,8 +19,12 @@
   @each $name, $props in layout.$widths {
     @if map.get($props, "helper-class") {
       #{ $prefix-width }-#{ $name } {
-        width: cssvar.use-ulu("width-#{ $name }");
+        $var-name: "width-#{ $name }";
+        width: cssvar.use-ulu($var-name);
         max-width: 100%;
+        @if (map.get($props, "match-font-size")) {
+          font-size: cssvar.use-ulu($var-name);
+        }
       }
     }
   }

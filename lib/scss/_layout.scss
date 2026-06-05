@@ -46,6 +46,7 @@ $config: (
 /// @prop {Map} [name] The width definition
 /// @prop {String|Number} [name].value The base width value
 /// @prop {Boolean} [name].helper-class Output a helper class for this width
+/// @prop {Boolean} [name].match-font-size If enabled will set font size equal to width for font based icon fonts (only output with helper class)
 /// @prop {Map} [name].breakpoints Responsive breakpoints (optional)
 
 $widths: (

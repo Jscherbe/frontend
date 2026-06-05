@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.19
+
+- `scss/_layout.scss`
+  - Add options for widths (set-widths maps) for "match-font-size" which when enabled on a width item will set the font-size equal to the width when outputting as helper class (for font based icons)
+
 ## 0.6.18
 
 - `scss/component/_graphic-text-group.scss`

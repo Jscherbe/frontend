@@ -75,3 +75,11 @@ $margin-small:           2rem;
     $max-width: $max-width-large
   ),
 ));
+
+@include ulu.layout-set-widths((
+  "icon" : (
+    "value" : 4rem,
+    "match-font-size" : true,
+    "helper-class": true
+  ),
+));
