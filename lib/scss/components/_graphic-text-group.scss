@@ -27,6 +27,7 @@ $-fallbacks: (
 /// Module Settings
 /// @type Map
 /// @prop {CssUnit} gap [1rem] The gap between graphic and text.
+/// @prop {CssUnit} gap-compact [0.5rem] The smaller gap applied when the compact modifier is used.
 /// @prop {List} margin [2em 0] Margin applied to the group.
 /// @prop {CssUnit} graphic-width [3.5rem] The default safe width for the graphic.
 /// @prop {Border} rule-border [true] The border style for the rules.
@@ -37,6 +38,7 @@ $-fallbacks: (
 
 $config: (
   "gap" : 1rem,
+  "gap-compact" : 0.5rem,
   "margin" : (2em 0),
   "graphic-width" : 3.5rem,
   "rule-border" : true,
@@ -136,6 +138,10 @@ $config: (
     align-items: flex-start;
   }
 
+  #{ $prefix }--align-baseline {
+    align-items: baseline;
+  }
+
   #{ $prefix }--align-end {
     align-items: flex-end;
   }
@@ -179,5 +185,18 @@ $config: (
     border-bottom: get("rule-border");
     padding-bottom: get("rule-padding");
   }
+
+  // Spacing Modifiers
+  #{ $prefix }--compact {
+    gap: get("gap-compact");
+  }
+
+  // Graphic Modifiers
+  #{ $prefix }--auto {
+    > #{ $prefix }__graphic {
+      width: auto;
+    }
+  }
 }
+
 

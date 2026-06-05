@@ -47,6 +47,20 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
 </div>
 {% endCodePreview %}
 
+<h3 class="h3">Left / Baseline</h3>
+
+{% CodePreview %}
+<div class="graphic-text-group graphic-text-group--auto graphic-text-group--align-baseline graphic-text-group--compact type-max-width-small margin-auto">
+  <div class="graphic-text-group__graphic type-large-xx">
+    <span class="fas fa-circle-info" aria-hidden="true"></span>
+  </div>
+  <div class="graphic-text-group__text crop-margins">
+    <h4 class="h4 no-margin-bottom">Example Headline</h4>
+    <p>The graphic and text are aligned to the baseline of the typography using the <code>graphic-text-group--align-baseline</code> modifier.</p>
+  </div>
+</div>
+{% endCodePreview %}
+
 <h3 class="h3">Left / End</h3>
 
 {% CodePreview %}
@@ -147,6 +161,40 @@ intro: A component to layout a graphic (icon or image) alongside text with prese
   <div class="graphic-text-group__text crop-margins">
     <h3 class="h4 no-margin-bottom">Example Headline</h3>
     <p>Using the <code>graphic-text-group--rule-top</code> and <code>graphic-text-group--rule-bottom</code> modifiers to add padding and borders. Notice how the margins inside this block are cropped using the <code>crop-margins</code> utility.</p>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Spacing Modifiers</h2>
+
+<p>Use the <code>--compact</code> modifier to reduce the gap between the graphic and the text.</p>
+
+{% CodePreview %}
+<div class="graphic-text-group graphic-text-group--compact type-max-width-small margin-auto">
+  <div class="graphic-text-group__graphic">
+    <img alt="" src="/assets/placeholder/graphic-icon-small-bulb.svg">
+  </div>
+  <div class="graphic-text-group__text crop-margins">
+    <h3 class="h4 no-margin-bottom">Compact Gap</h3>
+    <p>This layout uses the <code>graphic-text-group--compact</code> modifier for tighter spacing.</p>
+  </div>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Graphic Size Modifiers</h2>
+
+<p>Use the <code>--auto</code> modifier when using a graphic that shouldn't be constrained by the preset width, such as an inline icon font or a naturally sized element.</p>
+
+{% CodePreview %}
+<div class="callout callout--warning type-max-width-small margin-auto crop-margins">
+  <div class="graphic-text-group graphic-text-group--auto graphic-text-group--compact graphic-text-group--align-baseline">
+    <div class="graphic-text-group__graphic">
+      <span aria-hidden="true" style="font-size: 1.5rem; line-height: 1;"><i class="fa-solid fa-circle-info"></i></span>
+    </div>
+    <div class="graphic-text-group__text crop-margins">
+      <h3 class="h4 no-margin-bottom">Auto Graphic Width</h3>
+      <p>The graphic container sizes to its contents using the <code>graphic-text-group--auto</code> modifier. This example also combines it with the <code>graphic-text-group--compact</code> modifier for a tighter, icon-based layout.</p>
+    </div>
   </div>
 </div>
 {% endCodePreview %}

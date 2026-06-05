@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.18
+
+- `scss/component/_graphic-text-group.scss`
+  - Add "--auto" modifier for auto width graphic
+  - Add config option for "compact-gap" and "--compact modifier"
+  - Update demos to show the different variations
+  - Add "--align-baseline" modifier to allow for baseline alignment between the pair
+
 ## 0.6.17
 
 - `scss/components/_callout.scss`

@@ -20,14 +20,6 @@ intro: A callout is an attention grabbing section using backgrounds to stand out
 </div>
 ```
 
-### Rainbow Callout
-
-<div class="callout callout--rainbow">
-  <div> 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper erat tincidunt tellus vestibulum dictum. 
-  </div>
-</div>
-
 ### Info Callout
 
 <div class="callout callout--info">
