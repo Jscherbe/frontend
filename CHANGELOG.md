@@ -1,8 +1,12 @@
 # Change Log
 
+## 0.6.16
+
+- `scss/components/_popover.scss` | Fix specificity of no-padding modifier so it works with large width presets
+
 ## 0.6.15
 
-- `scss/_badge_.scss`
+- `scss/components/_badge_.scss`
   - Add "transition-duration" config option
   - Add other properties (background-color, color and box-shadow) to transitioned properties
 
