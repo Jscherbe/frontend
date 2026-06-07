@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.22
+
+- `scss/components/_card.scss`
+  - Adjust selector setup for last card change so it's not interpolated modifier, minor just causes issues if outputting the component in wrapping selector
+
 ## 0.6.21
 
 - `scss/components/_card.scss`

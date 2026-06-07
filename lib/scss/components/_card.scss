@@ -201,10 +201,7 @@ $config: (
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     
-    &:not(:has(> #{ $prefix }__image)),
-    &--no-image {
-      grid-template-rows: 1fr auto;
-    }
+    
 
     max-width: get("max-width");
     line-height: get("line-height");
@@ -219,6 +216,13 @@ $config: (
     }
     outline: get("border-hover-width") solid transparent;
     outline-offset: $border-width-negative;
+  }
+
+  // Remove extra row when image is not present
+  // - So footer doesn't fall on the 1fr row
+  #{ $prefix }:not(:has(> #{ $prefix }__image)),
+  #{ $prefix }--no-image {
+    grid-template-rows: 1fr auto;
   }
 
   @if (get("box-shadow-interactive-only") and get("box-shadow")) {
