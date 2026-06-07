@@ -200,9 +200,6 @@ $config: (
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    
-    
-
     max-width: get("max-width");
     line-height: get("line-height");
     margin-top: get("margin-y");
