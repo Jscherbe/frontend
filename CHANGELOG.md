@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.20
+
+- `scss/components/_card.scss`
+  - Fix footer background-color on card (fix bleed issue)
+
 ## 0.6.19
 
 - `scss/_layout.scss`

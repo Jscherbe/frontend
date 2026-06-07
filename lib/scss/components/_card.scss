@@ -139,7 +139,7 @@ $config: (
   "footer-min-height": 2.5rem,
   "footer-justify": flex-end,
   "footer-inline-padding": 0.5rem,
-  "footer-background-color": null,
+  "footer-background-color": red,
 
   // Horizontal
   "horizontal-enabled" : false,
@@ -257,6 +257,8 @@ $config: (
     min-height: get("footer-min-height");
     justify-content: get("footer-justify");
     background-color: color.get(get("footer-background-color"));
+    border-bottom-left-radius: get("border-radius");
+    border-bottom-right-radius: get("border-radius");
   }
   #{ $prefix }__aside {
     background-color: color.get(get("aside-background-color"));
@@ -356,6 +358,8 @@ $config: (
       
       padding: get("footer-inline-padding");
       flex-direction: column;
+      border-top-right-radius: get("border-radius");
+      border-bottom-left-radius: 0;
     }
   }
   #{ $prefix }--footer-inline:not(#{ $prefix }--overlay) {
@@ -579,6 +583,9 @@ $config: (
   #{ $prefix }__body,
   #{ $prefix }__footer {
     grid-column: 2 / 3;
+  }
+  #{ $prefix }__footer {
+    border-bottom-left-radius: 0;
   }
   #{ $prefix }__body {
     flex-direction: row;
