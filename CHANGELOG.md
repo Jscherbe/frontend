@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.21
+
+- `scss/components/_card.scss`
+  - Grid template rows account for no image (so footer is auto not second row 1fr)
+
 ## 0.6.20
 
 - `scss/components/_card.scss`

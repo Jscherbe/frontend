@@ -139,7 +139,7 @@ $config: (
   "footer-min-height": 2.5rem,
   "footer-justify": flex-end,
   "footer-inline-padding": 0.5rem,
-  "footer-background-color": red,
+  "footer-background-color": null,
 
   // Horizontal
   "horizontal-enabled" : false,
@@ -200,6 +200,12 @@ $config: (
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
+    
+    &:not(:has(> #{ $prefix }__image)),
+    &--no-image {
+      grid-template-rows: 1fr auto;
+    }
+
     max-width: get("max-width");
     line-height: get("line-height");
     margin-top: get("margin-y");
