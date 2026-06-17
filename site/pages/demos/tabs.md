@@ -6,6 +6,8 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
 
 <h2 class="h2">Default</h2>
 
+{% CodePreview %}
+
 <div class="tabs tabs--print">
   <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : true }'>
     <button type="button" id="tabs-1-1">
@@ -46,7 +48,11 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
   </div>
 </div>
 
+{% endCodePreview %}
+
 <h2 class="h2">Full Width</h2>
+
+{% CodePreview %}
 
 <div class="tabs tabs--full-width">
   <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : true }'>
@@ -77,7 +83,11 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
   </div>
 </div>
 
+{% endCodePreview %}
+
 <h2 class="h2">Vertical</h2>
+
+{% CodePreview %}
 
 <div class="tabs tabs--vertical">
   <div class="tabs__tablist" data-ulu-tablist='{ 
@@ -112,8 +122,100 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
   </div>
 </div>
 
+{% endCodePreview %}
+
+<h2 class="h2">Sticky Horizontal</h2>
+
+{% CodePreview %}
+
+<div class="tabs tabs--sticky">
+  <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : false }'>
+    <button type="button" id="tabs-5-1">
+      Section 1
+    </button>
+    <button type="button" id="tabs-5-2">
+      Section 2
+    </button>
+    <button type="button" id="tabs-5-3">
+      Section 3
+    </button>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-5-1">
+    <div class="tabs__tabpanel-container">
+      <p>Scroll down to see the sticky behavior.</p>
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-5-2">
+    <div class="tabs__tabpanel-container">
+      <p>This is section 2 content.</p>
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-5-3">
+    <div class="tabs__tabpanel-container">
+      <p>This is section 3 content.</p>
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+</div>
+
+{% endCodePreview %}
+
+<h2 class="h2">Sticky Vertical</h2>
+
+{% CodePreview %}
+
+<div class="tabs tabs--vertical tabs--sticky">
+  <div class="tabs__tablist" data-ulu-tablist='{ 
+    "equalHeights" : false,
+    "vertical" : true
+  }'>
+    <button type="button" id="tabs-6-1">
+      Chapter 1
+    </button>
+    <button type="button" id="tabs-6-2">
+      Chapter 2
+    </button>
+    <button type="button" id="tabs-6-3">
+      Chapter 3
+    </button>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-6-1">
+    <div class="tabs__tabpanel-container">
+      <p>Scroll down to see the vertical tablist stick to the top.</p>
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-6-2">
+    <div class="tabs__tabpanel-container">
+      <p>This is chapter 2 content.</p>
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+  <div class="tabs__tabpanel" aria-labelledby="tabs-6-3">
+    <div class="tabs__tabpanel-container">
+      <p>This is chapter 3 content.</p>
+      {{ placeholder.paragraph }}
+    </div>
+  </div>
+</div>
+
+{% endCodePreview %}
 
 <h2 class="h2">Open URL Hash Test</h2>
+
+{% CodePreview %}
 
 <div class="tabs">
   <div class="tabs__tablist" data-ulu-tablist='{ 
@@ -150,3 +252,5 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     </div>
   </div>
 </div>
+
+{% endCodePreview %}

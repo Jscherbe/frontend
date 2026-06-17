@@ -39,3 +39,49 @@
     <p>Customize which alerts you receive via email, push notification, or SMS.</p>
   </div>
 </div>
+
+<!-- @ulu-demo
+  title: Sticky Horizontal Tabs
+  description: Using the `tabs--sticky` modifier to keep the horizontal tab labels visible at the top of the viewport when scrolling through long panel content.
+-->
+<div class="tabs tabs--sticky">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": false }'>
+    <button role="tab" id="sh-tab-1" aria-selected="true" aria-controls="sh-panel-1">Section 1</button>
+    <button role="tab" id="sh-tab-2" aria-selected="false" aria-controls="sh-panel-2">Section 2</button>
+    <button role="tab" id="sh-tab-3" aria-selected="false" aria-controls="sh-panel-3">Section 3</button>
+  </div>
+  <div role="tabpanel" id="sh-panel-1" aria-labelledby="sh-tab-1">
+    <p>Scroll down to see the sticky behavior.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sh-panel-2" aria-labelledby="sh-tab-2" hidden>
+    <p>This is section 2 content.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sh-panel-3" aria-labelledby="sh-tab-3" hidden>
+    <p>This is section 3 content.</p>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Sticky Vertical Tabs
+  description: Using both `tabs--vertical` and `tabs--sticky` modifiers. On large screens, the tab labels stick within their grid column as you scroll the adjacent panel. On smaller screens, they behave like sticky horizontal tabs.
+-->
+<div class="tabs tabs--vertical tabs--sticky">
+  <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": false }'>
+    <button role="tab" id="sv-tab-1" aria-selected="true" aria-controls="sv-panel-1">Chapter 1</button>
+    <button role="tab" id="sv-tab-2" aria-selected="false" aria-controls="sv-panel-2">Chapter 2</button>
+    <button role="tab" id="sv-tab-3" aria-selected="false" aria-controls="sv-panel-3">Chapter 3</button>
+  </div>
+  <div role="tabpanel" id="sv-panel-1" aria-labelledby="sv-tab-1">
+    <p>Scroll down to see the vertical tablist stick to the top.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sv-panel-2" aria-labelledby="sv-tab-2" hidden>
+    <p>This is chapter 2 content.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sv-panel-3" aria-labelledby="sv-tab-3" hidden>
+    <p>This is chapter 3 content.</p>
+  </div>
+</div>

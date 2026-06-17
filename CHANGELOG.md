@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.23
+
+- `scss/components/_tabs_.scss`
+  - Add sticky modifier and setup demos to show how it works
+- Adjust docs site so that header it works with ulu cssvar "sticky-offset-top" and "header-height"
+
 ## 0.6.22
 
 - `scss/components/_card.scss`

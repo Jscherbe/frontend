@@ -13,14 +13,20 @@ $breakpoint: "medium";
 }
 .header__main {
   width: 100%;
+  height: ulu.cssvar-use-ulu("header-height");
   display: flex;
   align-items: center;
-  padding: $padding;
+  padding: 0 $padding;
   // border-bottom: ulu.element-get-rule-style("light");
   background-color: ulu.cssvar-use("color-header-main-background");
   position: sticky;
   top: 0;
   z-index: 2;
+  // Not using header height on larger screens
+  @include ulu.breakpoint-min("medium") {
+    height: auto;
+    padding: $padding;
+  }
   .fullscreen-layout & {
     padding-top: 0;
     padding-bottom: 0;
