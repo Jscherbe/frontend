@@ -220,6 +220,15 @@ $config: (
     }
   }
 
+  #{ $prefix }--sticky {
+    [role="tablist"] {
+      position: sticky;
+      top: get("sticky-top");
+      z-index: get("sticky-z-index");
+      background-color: color.get(get("sticky-background-color"));
+    }
+  }
+
   @include breakpoint.min(get("vertical-breakpoint")) {
     #{ $prefix }--vertical {
       display: grid;
@@ -249,21 +258,11 @@ $config: (
         grid-column: 2; // needed for equalHeights in vertical
       }
     }
-  }
-  
-
-  #{ $prefix }--sticky {
-    [role="tablist"] {
-      position: sticky;
-      top: get("sticky-top");
-      z-index: get("sticky-z-index");
-      background-color: color.get(get("sticky-background-color"));
-    }
-  }
-  #{ $prefix }--sticky#{ $prefix }--vertical {
-    [role="tablist"] {
-      top: get("sticky-vertical-top");
-      align-self: start;
+    #{ $prefix }--sticky#{ $prefix }--vertical {
+      [role="tablist"] {
+        top: get("sticky-vertical-top");
+        align-self: start;
+      }
     }
   }
 

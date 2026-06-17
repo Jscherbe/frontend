@@ -1,8 +1,13 @@
 # Change Log
 
+## 0.6.24
+
+- `scss/components/_tabs.scss`
+  - Adjust the "sticky-vertical-top" so it only applies when the vertical tabs are laid out vertically (within the vertical breakpoint only)
+
 ## 0.6.23
 
-- `scss/components/_tabs_.scss`
+- `scss/components/_tabs.scss`
   - Add sticky modifier and setup demos to show how it works
 - Adjust docs site so that header it works with ulu cssvar "sticky-offset-top" and "header-height"
 
