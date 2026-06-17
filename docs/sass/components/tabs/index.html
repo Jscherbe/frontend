@@ -29,7 +29,7 @@
 
   
   
-  <link rel="stylesheet" href="/frontend/assets/main-BmD1rNEA.css">
+  <link rel="stylesheet" href="/frontend/assets/main-CX1pDyQt.css">
 </head>
 	<body class="page page--toc-sidebar theme-light">
 		
@@ -6978,6 +6978,12 @@
 
                     <li><a href="#vertical-tabs">Vertical Tabs</a>
             		</li>
+
+                    <li><a href="#sticky-horizontal-tabs">Sticky Horizontal Tabs</a>
+            		</li>
+
+                    <li><a href="#sticky-vertical-tabs">Sticky Vertical Tabs</a>
+            		</li>
                 </ol>
             		</li>
 
@@ -7051,7 +7057,7 @@
       <span class="fas fa-code" aria-hidden="true"></span> HTML
     </strong>
     <div class="demo-preview__toolbar-actions margin-left-auto">
-      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-210-json">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-216-json">
         <span class="fas fa-copy" aria-hidden="true"></span>
       </button>
     </div>
@@ -7072,7 +7078,7 @@
     <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>Customer feedback and ratings provide real-world insights from our community of users.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
   <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
 <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
-  <script id="code-preview-210-json" type="text/plain">
+  <script id="code-preview-216-json" type="text/plain">
 <div class="tabs">
   <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
     <button role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1">General Info</button>
@@ -7117,7 +7123,7 @@
       <span class="fas fa-code" aria-hidden="true"></span> HTML
     </strong>
     <div class="demo-preview__toolbar-actions margin-left-auto">
-      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-211-json">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-217-json">
         <span class="fas fa-copy" aria-hidden="true"></span>
       </button>
     </div>
@@ -7138,7 +7144,7 @@
     <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>Customize which alerts you receive via email, push notification, or SMS.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
   <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
 <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
-  <script id="code-preview-211-json" type="text/plain">
+  <script id="code-preview-217-json" type="text/plain">
 <div class="tabs tabs--vertical">
   <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": true }'>
     <button role="tab" id="v-tab-1" aria-selected="true" aria-controls="v-panel-1">Account Profile</button>
@@ -7153,6 +7159,150 @@
   </div>
   <div role="tabpanel" id="v-panel-3" aria-labelledby="v-tab-3" hidden>
     <p>Customize which alerts you receive via email, push notification, or SMS.</p>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="sticky-horizontal-tabs" tabindex="-1">Sticky Horizontal Tabs</h3>
+<p>Using the `tabs--sticky` modifier to keep the horizontal tab labels visible at the top of the viewport when scrolling through long panel content.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="tabs tabs--sticky">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": false }'>
+    <button role="tab" id="sh-tab-1" aria-selected="true" aria-controls="sh-panel-1">Section 1</button>
+    <button role="tab" id="sh-tab-2" aria-selected="false" aria-controls="sh-panel-2">Section 2</button>
+    <button role="tab" id="sh-tab-3" aria-selected="false" aria-controls="sh-panel-3">Section 3</button>
+  </div>
+  <div role="tabpanel" id="sh-panel-1" aria-labelledby="sh-tab-1">
+    <p>Scroll down to see the sticky behavior.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sh-panel-2" aria-labelledby="sh-tab-2" hidden="">
+    <p>This is section 2 content.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sh-panel-3" aria-labelledby="sh-tab-3" hidden="">
+    <p>This is section 3 content.</p>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-218-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabs tabs--sticky<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tablist<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-tablist</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">'</span>{ "equalHeights": false }<span class="pjs-token pjs-punctuation">'</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tab<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-tab-1<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-selected</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>true<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-controls</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-panel-1<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Section 1<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tab<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-tab-2<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-selected</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>false<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-controls</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-panel-2<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Section 2<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tab<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-tab-3<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-selected</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>false<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-controls</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-panel-3<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Section 3<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabpanel<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-panel-1<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-labelledby</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-tab-1<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>Scroll down to see the sticky behavior.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">height</span><span class="pjs-token pjs-punctuation">:</span> 400px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-image</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-position</span><span class="pjs-token pjs-punctuation">:</span> 0 0<span class="pjs-token pjs-punctuation">,</span> 10px 10px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-size</span><span class="pjs-token pjs-punctuation">:</span> 20px 20px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">opacity</span><span class="pjs-token pjs-punctuation">:</span> 0.1<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">margin-top</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabpanel<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-panel-2<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-labelledby</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-tab-2<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>This is section 2 content.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">height</span><span class="pjs-token pjs-punctuation">:</span> 400px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-image</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-position</span><span class="pjs-token pjs-punctuation">:</span> 0 0<span class="pjs-token pjs-punctuation">,</span> 10px 10px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-size</span><span class="pjs-token pjs-punctuation">:</span> 20px 20px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">opacity</span><span class="pjs-token pjs-punctuation">:</span> 0.1<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">margin-top</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabpanel<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-panel-3<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-labelledby</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sh-tab-3<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>This is section 3 content.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-218-json" type="text/plain">
+<div class="tabs tabs--sticky">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": false }'>
+    <button role="tab" id="sh-tab-1" aria-selected="true" aria-controls="sh-panel-1">Section 1</button>
+    <button role="tab" id="sh-tab-2" aria-selected="false" aria-controls="sh-panel-2">Section 2</button>
+    <button role="tab" id="sh-tab-3" aria-selected="false" aria-controls="sh-panel-3">Section 3</button>
+  </div>
+  <div role="tabpanel" id="sh-panel-1" aria-labelledby="sh-tab-1">
+    <p>Scroll down to see the sticky behavior.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sh-panel-2" aria-labelledby="sh-tab-2" hidden>
+    <p>This is section 2 content.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sh-panel-3" aria-labelledby="sh-tab-3" hidden>
+    <p>This is section 3 content.</p>
+  </div>
+</div>
+  </script>
+</div>
+<h3 class="h3" id="sticky-vertical-tabs" tabindex="-1">Sticky Vertical Tabs</h3>
+<p>Using both `tabs--vertical` and `tabs--sticky` modifiers. On large screens, the tab labels stick within their grid column as you scroll the adjacent panel. On smaller screens, they behave like sticky horizontal tabs.</p>
+<div class="demo-preview" markdown="0">
+  <div class="demo-preview__rendered crop-margins">
+    <div class="tabs tabs--vertical tabs--sticky">
+  <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": false }'>
+    <button role="tab" id="sv-tab-1" aria-selected="true" aria-controls="sv-panel-1">Chapter 1</button>
+    <button role="tab" id="sv-tab-2" aria-selected="false" aria-controls="sv-panel-2">Chapter 2</button>
+    <button role="tab" id="sv-tab-3" aria-selected="false" aria-controls="sv-panel-3">Chapter 3</button>
+  </div>
+  <div role="tabpanel" id="sv-panel-1" aria-labelledby="sv-tab-1">
+    <p>Scroll down to see the vertical tablist stick to the top.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sv-panel-2" aria-labelledby="sv-tab-2" hidden="">
+    <p>This is chapter 2 content.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sv-panel-3" aria-labelledby="sv-tab-3" hidden="">
+    <p>This is chapter 3 content.</p>
+  </div>
+</div>
+  </div>
+  <div class="demo-preview__toolbar layout-flex-center">
+    <strong class="demo-preview__toolbar-title">
+      <span class="fas fa-code" aria-hidden="true"></span> HTML
+    </strong>
+    <div class="demo-preview__toolbar-actions margin-left-auto">
+      <button class="button button--icon button--transparent button--small" type="button" aria-label="Copy HTML" data-copy-content="#code-preview-219-json">
+        <span class="fas fa-copy" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="demo-preview__code"><pre class="language-html"><code class="language-html"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">class</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabs tabs--vertical tabs--sticky<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tablist<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">data-ulu-tablist</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">'</span>{ "vertical": true, "equalHeights": false }<span class="pjs-token pjs-punctuation">'</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tab<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-tab-1<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-selected</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>true<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-controls</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-panel-1<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Chapter 1<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tab<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-tab-2<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-selected</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>false<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-controls</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-panel-2<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Chapter 2<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>button</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tab<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-tab-3<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-selected</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>false<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-controls</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-panel-3<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>Chapter 3<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>button</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabpanel<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-panel-1<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-labelledby</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-tab-1<span class="pjs-token pjs-punctuation">"</span></span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>Scroll down to see the vertical tablist stick to the top.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">height</span><span class="pjs-token pjs-punctuation">:</span> 400px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-image</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-position</span><span class="pjs-token pjs-punctuation">:</span> 0 0<span class="pjs-token pjs-punctuation">,</span> 10px 10px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-size</span><span class="pjs-token pjs-punctuation">:</span> 20px 20px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">opacity</span><span class="pjs-token pjs-punctuation">:</span> 0.1<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">margin-top</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabpanel<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-panel-2<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-labelledby</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-tab-2<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>This is chapter 2 content.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-special-attr"><span class="pjs-token pjs-attr-name">style</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span><span class="pjs-token pjs-value pjs-css pjs-language-css"><span class="pjs-token pjs-property">height</span><span class="pjs-token pjs-punctuation">:</span> 400px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-image</span><span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> <span class="pjs-token pjs-function">repeating-linear-gradient</span><span class="pjs-token pjs-punctuation">(</span>45deg<span class="pjs-token pjs-punctuation">,</span> #ccc 25%<span class="pjs-token pjs-punctuation">,</span> transparent 25%<span class="pjs-token pjs-punctuation">,</span> transparent 75%<span class="pjs-token pjs-punctuation">,</span> #ccc 75%<span class="pjs-token pjs-punctuation">,</span> #ccc<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-position</span><span class="pjs-token pjs-punctuation">:</span> 0 0<span class="pjs-token pjs-punctuation">,</span> 10px 10px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">background-size</span><span class="pjs-token pjs-punctuation">:</span> 20px 20px<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">opacity</span><span class="pjs-token pjs-punctuation">:</span> 0.1<span class="pjs-token pjs-punctuation">;</span> <span class="pjs-token pjs-property">margin-top</span><span class="pjs-token pjs-punctuation">:</span> 1rem<span class="pjs-token pjs-punctuation">;</span></span><span class="pjs-token pjs-punctuation">"</span></span></span><span class="pjs-token pjs-punctuation">></span></span><span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>div</span> <span class="pjs-token pjs-attr-name">role</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>tabpanel<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">id</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-panel-3<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">aria-labelledby</span><span class="pjs-token pjs-attr-value"><span class="pjs-token pjs-punctuation pjs-attr-equals">=</span><span class="pjs-token pjs-punctuation">"</span>sv-tab-3<span class="pjs-token pjs-punctuation">"</span></span> <span class="pjs-token pjs-attr-name">hidden</span><span class="pjs-token pjs-punctuation">></span></span>
+    <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;</span>p</span><span class="pjs-token pjs-punctuation">></span></span>This is chapter 3 content.<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>p</span><span class="pjs-token pjs-punctuation">></span></span>
+  <span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span>
+<span class="pjs-token pjs-tag"><span class="pjs-token pjs-tag"><span class="pjs-token pjs-punctuation">&lt;/</span>div</span><span class="pjs-token pjs-punctuation">></span></span></code></pre></div>
+  <script id="code-preview-219-json" type="text/plain">
+<div class="tabs tabs--vertical tabs--sticky">
+  <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": false }'>
+    <button role="tab" id="sv-tab-1" aria-selected="true" aria-controls="sv-panel-1">Chapter 1</button>
+    <button role="tab" id="sv-tab-2" aria-selected="false" aria-controls="sv-panel-2">Chapter 2</button>
+    <button role="tab" id="sv-tab-3" aria-selected="false" aria-controls="sv-panel-3">Chapter 3</button>
+  </div>
+  <div role="tabpanel" id="sv-panel-1" aria-labelledby="sv-tab-1">
+    <p>Scroll down to see the vertical tablist stick to the top.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sv-panel-2" aria-labelledby="sv-tab-2" hidden>
+    <p>This is chapter 2 content.</p>
+    <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
+  </div>
+  <div role="tabpanel" id="sv-panel-3" aria-labelledby="sv-tab-3" hidden>
+    <p>This is chapter 3 content.</p>
   </div>
 </div>
   </script>
@@ -7198,6 +7348,10 @@
   <span class="pjs-token pjs-string">"horizontal-tab-wrap"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-boolean">false</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"full-width-tablist-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-null pjs-keyword">null</span><span class="pjs-token pjs-punctuation">,</span>
   <span class="pjs-token pjs-string">"full-width-tabpanel-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> transparent<span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"sticky-top"</span> <span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"sticky-offset-top"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"sticky-vertical-top"</span> <span class="pjs-token pjs-punctuation">:</span> cssvar.<span class="pjs-token pjs-function">add</span><span class="pjs-token pjs-punctuation">(</span>cssvar.<span class="pjs-token pjs-function">use-ulu</span><span class="pjs-token pjs-punctuation">(</span><span class="pjs-token pjs-string">"sticky-offset-top"</span><span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span> 1em<span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"sticky-background-color"</span> <span class="pjs-token pjs-punctuation">:</span> <span class="pjs-token pjs-string">"background"</span><span class="pjs-token pjs-punctuation">,</span>
+  <span class="pjs-token pjs-string">"sticky-z-index"</span> <span class="pjs-token pjs-punctuation">:</span> 2<span class="pjs-token pjs-punctuation">,</span>
 <span class="pjs-token pjs-punctuation">)</span><span class="pjs-token pjs-punctuation">;</span></code></pre>
 <details>
   <summary>File Information</summary>
@@ -7205,8 +7359,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> variable</li>
-<li><strong>Lines (comments):</strong> 33-63</li>
-<li><strong>Lines (code):</strong> 65-96</li>
+<li><strong>Lines (comments):</strong> 34-68</li>
+<li><strong>Lines (code):</strong> 70-105</li>
 </ul>
 </details>
 <h4 id="map-properties" tabindex="-1">Map Properties</h4>
@@ -7394,6 +7548,30 @@
 <td style="text-align:left">transparent</td>
 <td style="text-align:left">Optional background color for full-width tabs tabpanel</td>
 </tr>
+<tr>
+<td style="text-align:left">sticky-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">cssvar.use-ulu(&quot;sticky-offset-top&quot;)</td>
+<td style="text-align:left">The top offset when the sticky modifier is applied</td>
+</tr>
+<tr>
+<td style="text-align:left">sticky-vertical-top</td>
+<td style="text-align:left">Dimension</td>
+<td style="text-align:left">cssvar.add(cssvar.use-ulu(&quot;sticky-offset-top&quot;), 1em)</td>
+<td style="text-align:left">The top offset when the sticky modifier is applied in vertical layout</td>
+</tr>
+<tr>
+<td style="text-align:left">sticky-background-color</td>
+<td style="text-align:left">Color</td>
+<td style="text-align:left">background</td>
+<td style="text-align:left">The background color for the tablist when sticky</td>
+</tr>
+<tr>
+<td style="text-align:left">sticky-z-index</td>
+<td style="text-align:left">Number</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">The z-index for the tablist when sticky</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -7412,8 +7590,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 98-101</li>
-<li><strong>Lines (code):</strong> 103-105</li>
+<li><strong>Lines (comments):</strong> 107-110</li>
+<li><strong>Lines (code):</strong> 112-114</li>
 </ul>
 </details>
 <h4 id="examples" tabindex="-1">Examples</h4>
@@ -7454,8 +7632,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> mixin</li>
-<li><strong>Lines (comments):</strong> 117-119</li>
-<li><strong>Lines (code):</strong> 121-283</li>
+<li><strong>Lines (comments):</strong> 126-128</li>
+<li><strong>Lines (code):</strong> 130-308</li>
 </ul>
 </details>
 <h4 id="examples-1" tabindex="-1">Examples</h4>
@@ -7480,8 +7658,8 @@
 <li><strong>File:</strong> _tabs.scss</li>
 <li><strong>Group:</strong> tabs</li>
 <li><strong>Type:</strong> function</li>
-<li><strong>Lines (comments):</strong> 107-110</li>
-<li><strong>Lines (code):</strong> 112-115</li>
+<li><strong>Lines (comments):</strong> 116-119</li>
+<li><strong>Lines (code):</strong> 121-124</li>
 </ul>
 </details>
 <h4 id="examples-2" tabindex="-1">Examples</h4>
@@ -7516,7 +7694,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-CqjKg7nR.js"></script>
+<script type="module" src="/frontend/assets/main-BMlhMIya.js"></script>
 
 		
 	</body>
