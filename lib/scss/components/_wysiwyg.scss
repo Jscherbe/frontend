@@ -30,7 +30,9 @@ $config: (
     "h4" : "h4",
     "h5" : "h5",
     "h6" : "h6",
-  )
+  ),
+  "unordered-list-marker-color" : "bullet",
+  "ordered-list-marker-color" : inherit,
 ) !default;
 
 /// Change modules $config
@@ -80,11 +82,11 @@ $config: (
     @include element.link($visited: true, $active: true);
   }
   ul:not(#{ $ul-excludes }) {
-    @include element.styles-unordered-list();
+    @include element.styles-unordered-list(get("unordered-list-marker-color"));
     margin-bottom: element.get("margin");
   }
   ol:not(#{ $exclude-selector }) {
-    @include element.styles-ordered-list(inherit);
+    @include element.styles-ordered-list(get("ordered-list-marker-color"));
     margin-bottom: element.get("margin");
   }
   // ul,

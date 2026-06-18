@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.25
+
+- `scss/components/_wysiwyg.scss`
+  - Add "unordered-list-marker-color", "ordered-list-marker-color" options to specify how the color for the markers when in wysiwyg
+
 ## 0.6.24
 
 - `scss/components/_tabs.scss`
