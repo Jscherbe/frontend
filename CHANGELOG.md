@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.6.26
+
+- `scss/components/_wysiwyg.scss`
+  - Change "unordered-list-marker-color" to "ul-marker-color" to match pre-existing option names
+  - Change "ordered-list-marker-color" to "ol-marker-color" to match pre-existing option names
+  - Add "ol-excluded-selectors" with default for .counter-list
+  
 ## 0.6.25
 
 - `scss/components/_wysiwyg.scss`

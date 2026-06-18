@@ -34,6 +34,15 @@ layout: default
   <li>This is a list item</li>
 </ul>
 
+## Test Counter List
+
+<ol class="counter-list">
+  <li>{{ placeholder.paragraphSmall }}</li>
+  <li>{{ placeholder.paragraph }}</li>
+  <li>{{ placeholder.paragraphSmall }}</li>
+  <li>{{ placeholder.paragraphSmall }}</li>
+</ol>
+
 ## Test Normal Link
 
 [Go to Google](https://www.google.com)
