@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.28
+
+- `scss/components/_counter-list.scss`
+  - Add custom property `--ulu-counter-list-start` for specifyng different start points for the list counter (css counters). So for example setting `style="--ulu-counter-list-start: -1"` would start at 0. Or it could be used to start at other arbitrary indexes
+
 ## 0.6.27
 
 - `scss/components/_card.scss`

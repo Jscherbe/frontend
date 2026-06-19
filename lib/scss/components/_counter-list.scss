@@ -84,10 +84,13 @@ $config: (
 
   #{ $selector } {
     margin: get("margin");
-    counter-reset: ulu-counter-list;
+    counter-reset: ulu-counter-list var(--ulu-counter-list-start, 0);
   }
 
   #{ $selector-item } {
+    // In case there are lists within (since we're using common var name)
+    --ulu-counter-list-start: 0;
+
     $width: get("counter-width");
     $height: utils.fallback(get("counter-height"), $width);
 
