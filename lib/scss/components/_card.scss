@@ -362,11 +362,17 @@ $config: (
   
   #{ $prefix }--footer-inline {
     #{ $prefix }__footer {
-      
       padding: get("footer-inline-padding");
       flex-direction: column;
-      border-top-right-radius: get("border-radius");
       border-bottom-left-radius: 0;
+    }
+  }
+  // Only add the top-right radius to the footer if there is no image.
+  // When an image is present, it occupies the top row, meaning the footer 
+  // sits below it and shouldn't be rounded on the top-right.
+  #{ $prefix }--footer-inline:not(:has(> #{ $prefix }__image)) {
+    #{ $prefix }__footer {
+      border-top-right-radius: get("border-radius");
     }
   }
   #{ $prefix }--footer-inline:not(#{ $prefix }--overlay) {

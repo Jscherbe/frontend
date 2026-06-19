@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.27
+
+- `scss/components/_card.scss`
+  - When using modifier `card--footer-inline` fix border radius being added to top right of footer when the card has an image
+
 ## 0.6.26
 
 - `scss/components/_wysiwyg.scss`
