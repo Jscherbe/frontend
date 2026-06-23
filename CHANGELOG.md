@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.29
+
+- `scss/components/_modal.scss`
+  - Add "title-line-height" option, defaulting to typography "line-height-densest"
+
 ## 0.6.28
 
 - `scss/components/_counter-list.scss`
