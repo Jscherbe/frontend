@@ -49,3 +49,36 @@ setConfigListGrid({
 initListGrid();
 initLiveDemo();
 initDataCopyContent();
+
+const handleHashJump = (hash) => {
+  if (!hash) {
+    return;
+  }
+  const id = hash.replace("#", "");
+  const target = document.getElementById(id);
+  if (!target) {
+    return;
+  }
+  const panel = target.closest("[role=\"tabpanel\"]");
+  if (panel) {
+    const tabButton = document.querySelector(`[aria-controls="${ panel.id }"]`);
+    if (tabButton && tabButton.getAttribute("aria-selected") !== "true") {
+      tabButton.click();
+    }
+  }
+};
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a");
+  if (link && link.hash) {
+    setTimeout(() => {
+      handleHashJump(link.hash);
+    }, 0);
+  }
+});
+
+if (window.location.hash) {
+  setTimeout(() => {
+    handleHashJump(window.location.hash);
+  }, 100);
+}

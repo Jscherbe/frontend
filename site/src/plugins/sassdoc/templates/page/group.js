@@ -7,35 +7,83 @@ let modalCount = 0;
 // Note using markdown for headlines (TOC)
 const renderDemo = (demo, groupName) => {
   const isFullscreen = demo.previewMode === "fullscreen" || demo.fullscreen;
+  const isNoContainer = demo.noContainer || demo.nocontainer;
   const modalId = `demo-modal-${ ++modalCount }`;
   const modalTitle = `${ demo.title || groupName } Demo`;
   const componentHtml = when(demo.wrapperClass, c => `<div class="${ c }">\n${ demo.html }\n</div>`, demo.html);
 
-  return `
-
+  const titleAndDesc = `
 ### ${ demo.title || "Example" }{.h3}
 
 ${ when(demo.description, d => `<p>${ d }</p>`) }
+  `;
 
-{% CodePreview %}
-
-${ when(isFullscreen, () => `
-<div>
-  <button class="button" data-ulu-dialog-trigger="${ modalId }">
-    <span class="button__icon fas fa-expand" aria-hidden="true"></span>
-    <span>View Fullscreen Demo</span>
-  </button>
+  if (isNoContainer) {
+    return `
+<div class="container">
+  ${ titleAndDesc }
 </div>
-`, componentHtml) }
 
-{% endCodePreview %}
+<!-- Live Preview (Unconstrained) -->
+<div class="margin-top-large margin-bottom-large">
+  ${ when(isFullscreen, () => `
+    <div class="container">
+      <button class="button" data-ulu-dialog-trigger="${ modalId }">
+        <span class="button__icon fas fa-expand" aria-hidden="true"></span>
+        <span>View Fullscreen Demo</span>
+      </button>
+    </div>
+  `, componentHtml) }
+</div>
+
+<!-- Code Block (Constrained) -->
+<div class="container">
+  <div class="demo-preview" markdown="0">
+    <div class="demo-preview__toolbar layout-flex-center">
+      <strong class="demo-preview__toolbar-title">
+        <span class="fas fa-code" aria-hidden="true"></span> HTML
+      </strong>
+    </div>
+    <div class="demo-preview__code">
+      {% highlight "html" %}
+      ${ componentHtml }
+      {% endhighlight %}
+    </div>
+  </div>
+</div>
 
 ${ when(isFullscreen, () => `
 <div id="${ modalId }" data-ulu-modal-builder='{ "title": "${ modalTitle }", "size": "fullscreen" }' hidden>
 ${ componentHtml }
 </div>
-`) }`;
+`) }
+    `;
+  }
 
+  return `
+<div class="container">
+  ${ titleAndDesc }
+
+  {% CodePreview %}
+
+  ${ when(isFullscreen, () => `
+  <div>
+    <button class="button" data-ulu-dialog-trigger="${ modalId }">
+      <span class="button__icon fas fa-expand" aria-hidden="true"></span>
+      <span>View Fullscreen Demo</span>
+    </button>
+  </div>
+  `, componentHtml) }
+
+  {% endCodePreview %}
+
+  ${ when(isFullscreen, () => `
+  <div id="${ modalId }" data-ulu-modal-builder='{ "title": "${ modalTitle }", "size": "fullscreen" }' hidden>
+  ${ componentHtml }
+  </div>
+  `) }
+</div>
+  `;
 };
 
 export default ({ title, info, groupName }, markup) => {
@@ -46,28 +94,87 @@ export default ({ title, info, groupName }, markup) => {
   const groupDescription = info?.groupDescriptions?.[groupName] || "";
   const demos = cachedSnippets[groupName] || [];
   
-  const demosMarkup = when(demos.length, () => `
+  if (demos.length > 0) {
+    const tabDemosId = `tab-${ groupName }-demos`;
+    const tabApiId = `tab-${ groupName }-api`;
+    const panelDemosId = `panel-${ groupName }-demos`;
+    const panelApiId = `panel-${ groupName }-api`;
 
-## Demos{.h2}
+    const demosMarkup = demos.map(d => renderDemo(d, groupName)).join("\n\n");
 
-${ demos.map(d => renderDemo(d, groupName)).join("\n\n") }
-
-`);
-
-  return `
-
-<div class="type-large">
-
-${ groupDescription }
-
+    return `
+<div class="container">
+  <div class="type-large">
+    ${ groupDescription }
+  </div>
 </div>
 
-${ demosMarkup }
+<div class="tabs tabs--full-width margin-top-large">
+  <div class="container">
+    <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+      <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
+      <button role="tab" id="${ tabApiId }" aria-selected="false" aria-controls="${ panelApiId }">SCSS API</button>
+    </div>
+  </div>
+  
+  <div role="tabpanel" id="${ panelDemosId }" aria-labelledby="${ tabDemosId }">
+    {% capture demosHtml %}
+      {% renderTemplate "njk,md" %}
+        ${ demosMarkup }
+      {% endrenderTemplate %}
+    {% endcapture %}
+    
+    <div class="container margin-top-large">
+      <div class="page-toc page-toc--inline margin-bottom-large">
+        {{ demosHtml | toc }}
+      </div>
+    </div>
+    
+    <div class="margin-top-large">
+      {{ demosHtml }}
+    </div>
+  </div>
+  
+  <div role="tabpanel" id="${ panelApiId }" aria-labelledby="${ tabApiId }" hidden>
+    {% capture apiHtml %}
+      {% renderTemplate "md" %}
+        ${ markup }
+      {% endrenderTemplate %}
+    {% endcapture %}
+    
+    <div class="container margin-top-large">
+      <div class="page-toc page-toc--inline margin-bottom-large">
+        {{ apiHtml | toc }}
+      </div>
+      
+      <div class="wysiwyg margin-top-large">
+        {{ apiHtml }}
+      </div>
+    </div>
+  </div>
+</div>
+    `;
+  }
 
-<div class="wysiwyg">
-
-${ markup }
-
+  return `
+<div class="container">
+  <div class="type-large">
+    ${ groupDescription }
+  </div>
+  
+  {% capture apiHtml %}
+    {% renderTemplate "md" %}
+      ${ markup }
+    {% endrenderTemplate %}
+  {% endcapture %}
+  
+  <div class="page-toc page-toc--inline margin-bottom-large">
+    {{ apiHtml | toc }}
+  </div>
+  
+  <div class="wysiwyg margin-top-large">
+    {{ apiHtml }}
+  </div>
 </div>
   `;
 }

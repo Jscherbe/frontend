@@ -1,0 +1,10 @@
+{# Layout for SassDoc pages where content is tabbed or full-width, header is in container #}
+{% extends "html.njk" %}
+{% block main %}
+  <div class="page__body-top">
+    <div class="container">
+      {% include "partials/page-header.njk" %}
+    </div>
+    {{ content | safe }}
+  </div>
+{% endblock %}

@@ -92,7 +92,11 @@ const commonConfig = {
       Object.assign(mcpDataAccumulator, getCleanMcpData(data.groups));
     } else {
       // Add eleventy layout 
-      data?.pages?.forEach(page => page.frontmatter.layout = "unformatted");
+      data?.pages?.forEach(page => {
+        page.frontmatter.layout = "sassdoc";
+        page.frontmatter.toc = false;
+        page.frontmatter.tocInline = true;
+      });
     }
   }
 };
