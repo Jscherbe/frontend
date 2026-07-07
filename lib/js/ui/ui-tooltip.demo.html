@@ -1,0 +1,46 @@
+<!-- @ulu-demo
+  title: Basic Tooltip
+  description: |
+    A standard tooltip triggered by a button hover/focus. Uses `data-ulu-tooltip="Text"`.
+-->
+<div class="wysiwyg">
+  <p>
+    Hover or focus on this info button 
+    <button class="link" data-ulu-tooltip="This is some simple tooltip helper information." aria-label="More Information">
+      <span class="fas fa-circle-info" aria-hidden="true"></span>
+    </button> 
+    to see the tooltip pop up inline.
+  </p>
+</div>
+
+<!-- @ulu-demo
+  title: Tooltip from Element (HTML)
+  description: |
+    Populates tooltip content dynamically using HTML from another DOM element by setting `"fromElement": "#id"` and `"isHtml": true`.
+-->
+<div class="wysiwyg">
+  <p>
+    This tooltip pulls its content from a hidden div element:
+    <button class="link" data-ulu-tooltip='{ "fromElement": "#tooltip-element-demo", "isHtml" : true }' aria-label="More Information">
+      <span class="fas fa-circle-info" aria-hidden="true"></span>
+    </button>
+  </p>
+  
+  <div hidden id="tooltip-element-demo">
+    My tooltip <em>has italic HTML</em> markup derived from a hidden DOM element!
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Parameter Config Tooltip
+  description: |
+    Uses a JSON options map to pass custom tooltip parameters, such as specifying custom string content.
+-->
+<div class="wysiwyg">
+  <p>
+    Tooltip configured using a parameter object:
+    <span class="link" data-ulu-tooltip='{ "content" : "Custom parsed string value via JSON configuration." }' tabindex="0" style="cursor: help;">
+      Hover over me <span class="fas fa-circle-info" aria-hidden="true"></span>
+    </span>
+  </p>
+</div>

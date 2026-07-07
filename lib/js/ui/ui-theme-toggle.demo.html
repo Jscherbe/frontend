@@ -1,0 +1,43 @@
+<!-- @ulu-demo
+  title: Contextual Theme Toggle
+  description: |
+    Demonstrates using `data-ulu-theme-toggle` to control the theme state of specific target elements independently.
+-->
+<div>
+  <button class="button" data-ulu-theme-toggle='{ 
+    "target" : ".theme-target-demo-1",
+    "group" : "group-1"
+  }'>
+    <span class="button__icon fas fa-moon" data-ulu-theme-toggle-icon></span>
+    <span>Toggle Theme</span>
+  </button>
+
+  <p class="margin-top">
+    Remote link control:
+    <button class="link" data-ulu-theme-toggle-remote="group-1">
+      Change Theme to <span data-ulu-theme-toggle-label>Dark</span>
+    </button>
+  </p>
+
+  <div class="theme-target-demo-1 padding-large margin-top theme-dark" style="border: 2px solid #ccc; border-radius: 4px; transition: background 0.3s;">
+    <p>This is a target block that starts in the dark theme state.</p>
+    <button class="button">Contextual Button</button>
+  </div>
+
+  <div class="theme-target-demo-1 padding-large margin-top theme-dark" style="border: 2px solid #ccc; border-radius: 4px; transition: background 0.3s;">
+    <p>A second target block tied to the same group instance.</p>
+    <button class="button">Another Button</button>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Global Site Theme Toggle
+  description: |
+    Uses `data-ulu-theme-toggle-remote="page"` to toggle the theme class of the entire page root html/body context globally.
+-->
+<div>
+  <button class="button" data-ulu-theme-toggle-remote="page">
+    <span class="button__icon fas fa-moon" data-ulu-theme-toggle-icon></span>
+    <span>Toggle Page Theme</span>
+  </button>
+</div>

@@ -1,0 +1,67 @@
+<!-- @ulu-demo
+  title: Exclusive Accordion (One Open)
+  description: |
+    Utilizes `data-ulu-details-group='{ "onlyOneOpen" : true }'` to automatically close any open details panels when a new details panel is expanded, creating an exclusive accordion behavior.
+-->
+<div data-ulu-details-group='{ "onlyOneOpen" : true }'>
+  <details class="accordion">
+    <summary class="accordion__summary">
+      First Accordion Row
+    </summary>
+    <div class="accordion__content">
+      <p>This is the first row. Clicking the second summary will expand its details and automatically collapse this one.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary class="accordion__summary">
+      Second Accordion Row
+    </summary>
+    <div class="accordion__content">
+      <p>This is the second row. Expanding another row will collapse this one in turn.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary class="accordion__summary">
+      Third Accordion Row
+    </summary>
+    <div class="accordion__content">
+      <p>This is the third row. Demonstrating consistent group-wide exclusive toggle behavior.</p>
+    </div>
+  </details>
+</div>
+
+<!-- @ulu-demo
+  title: Child Selector Exclusions
+  description: |
+    Customizes the matching details elements within a group using the `"childSelector"` parameter (e.g. to exclude specific items from the accordion toggle rule).
+-->
+<div data-ulu-details-group='{ "onlyOneOpen" : true, "childSelector" : ":scope > details:not(.exclude-from-group)" }'>
+  <details class="accordion">
+    <summary class="accordion__summary">
+      Group Member 1
+    </summary>
+    <div class="accordion__content">
+      <p>Belongs to the accordion group. Interacts with other group members.</p>
+    </div>
+  </details>
+
+  <details class="accordion">
+    <summary class="accordion__summary">
+      Group Member 2
+    </summary>
+    <div class="accordion__content">
+      <p>Belongs to the accordion group. Interacts with other group members.</p>
+    </div>
+  </details>
+
+  <details class="exclude-from-group" style="padding: 1rem; border: 1px solid #ddd; margin-top: 1rem; border-radius: 4px;">
+    <summary style="font-weight: bold; cursor: pointer;">
+      Excluded Row (Can open independently)
+    </summary>
+    <div style="margin-top: 0.5rem;">
+      <p>This details element is excluded from the group via the `childSelector` configuration query. It can remain open alongside other group members without auto-collapsing.</p>
+    </div>
+  </details>
+</div>

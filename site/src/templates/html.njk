@@ -3,6 +3,9 @@
 	{% include "partials/head.njk" %}
 	<body class="page {% if tocInline %}page--toc-inline{% else %}page--toc-sidebar{% endif %} theme-light">
 		{% include "partials/header.njk" %}
+		<button class="button button--icon button--secondary site-sidebar-toggle" id="site-sidebar-toggle" aria-label="Toggle Sidebar" title="Toggle Sidebar">
+			<span class="fas fa-chevron-left" id="site-sidebar-toggle-icon" aria-hidden="true"></span>
+		</button>
 		{% if toc !== false %}
 			<div class="page__toc page-toc {% if tocInline %}page-toc--inline container{% endif %}">
 				{{ content | toc | safe }}

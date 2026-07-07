@@ -4,6 +4,7 @@ import jsdoc2md from "jsdoc-to-markdown";
 import { urlize } from "@ulu/utils/string.js";
 import fs from "fs-extra";
 import path from "path";
+import { getDemoSnippets } from "../../utils/get-demo-snippets.js";
 
 const isSubdir = (parent, dir) => {
   const relative = path.relative(parent, dir);
@@ -12,6 +13,87 @@ const isSubdir = (parent, dir) => {
 
 const src = path.resolve("./lib/js/"); // cwd
 const dist = path.resolve("./site/pages/javascript/");
+
+let modalCount = 0;
+const renderDemo = (demo, title) => {
+  const isFullscreen = demo.previewMode === "fullscreen" || demo.fullscreen;
+  const isNoContainer = demo.noContainer || demo.nocontainer;
+  const modalId = `demo-modal-${ ++modalCount }`;
+  const modalTitle = `${ demo.title || title } Demo`;
+  const componentHtml = demo.wrapperClass ? `<div class="${ demo.wrapperClass }">\n${ demo.html }\n</div>` : demo.html;
+
+  const titleAndDesc = `
+<h3 class="h3" id="${ urlize(demo.title || "Example") }">${ demo.title || "Example" }</h3>
+${ demo.description ? `<p>${ demo.description }</p>` : "" }
+  `;
+
+  if (isNoContainer) {
+    return `
+<div class="container">
+  ${ titleAndDesc }
+</div>
+
+<!-- Live Preview (Unconstrained) -->
+<div class="margin-top-large margin-bottom-large">
+  ${ isFullscreen ? `
+    <div class="container">
+      <button class="button" data-ulu-dialog-trigger="${ modalId }">
+        <span class="button__icon fas fa-expand" aria-hidden="true"></span>
+        <span>View Fullscreen Demo</span>
+      </button>
+    </div>
+  ` : componentHtml }
+</div>
+
+<!-- Code Block (Constrained) -->
+<div class="container">
+  <div class="demo-preview" markdown="0">
+    <div class="demo-preview__toolbar layout-flex-center">
+      <strong class="demo-preview__toolbar-title">
+        <span class="fas fa-code" aria-hidden="true"></span> HTML
+      </strong>
+    </div>
+    <div class="demo-preview__code">
+      {% highlight "html" %}
+      ${ componentHtml }
+      {% endhighlight %}
+    </div>
+  </div>
+</div>
+
+${ isFullscreen ? `
+<div id="${ modalId }" data-ulu-modal-builder='{ "title": "${ modalTitle }", "size": "fullscreen" }' hidden>
+${ componentHtml }
+</div>
+` : "" }
+    `;
+  }
+
+  return `
+<div class="container">
+  ${ titleAndDesc }
+
+  {% CodePreview %}
+
+  ${ isFullscreen ? `
+  <div>
+    <button class="button" data-ulu-dialog-trigger="${ modalId }">
+      <span class="button__icon fas fa-expand" aria-hidden="true"></span>
+      <span>View Fullscreen Demo</span>
+    </button>
+  </div>
+  ` : componentHtml }
+
+  {% endCodePreview %}
+
+  ${ isFullscreen ? `
+  <div id="${ modalId }" data-ulu-modal-builder='{ "title": "${ modalTitle }", "size": "fullscreen" }' hidden>
+  ${ componentHtml }
+  </div>
+  ` : "" }
+</div>
+  `;
+};
 
 function cleanOutputDir() {
   fs.readdirSync(dist)
@@ -27,6 +109,8 @@ function cleanOutputDir() {
 
 async function output() {
   cleanOutputDir();
+  const cachedSnippets = getDemoSnippets();
+
   // get template data
   const templateData = await jsdoc2md.getTemplateData({ 
     files: "lib/js/**/*.js",
@@ -57,22 +141,111 @@ async function output() {
       template: template,
       "heading-depth" : 1
     });
-    const filename = `${ urlize(moduleName) }.md`;
+    
+    const key = urlize(moduleName);
+    const demos = cachedSnippets[key] || [];
+    
+    const filename = `${ key }.md`;
     const filepath = path.resolve(path.join(dist, filename));
-    const content = outputTemplate(moduleName, markdown);
+    const content = outputTemplate(moduleName, markdown, demos);
     fs.writeFileSync(filepath, content);
   }
 }
 
 
-function outputTemplate(title, content) {
+function outputTemplate(title, content, demos = []) {
+  const key = urlize(title);
+  const layout = "sassdoc";
+  const toc = false;
+  const tocInline = true;
+
+  if (demos.length > 0) {
+    const tabDemosId = `tab-${ key }-demos`;
+    const tabApiId = `tab-${ key }-api`;
+    const panelDemosId = `panel-${ key }-demos`;
+    const panelApiId = `panel-${ key }-api`;
+
+    const demosMarkup = demos.map(d => renderDemo(d, title)).join("\n\n");
+
+    return `\
+---
+title: ${ title }
+layout: ${ layout }
+toc: ${ toc }
+tocInline: ${ tocInline }
+---
+
+<div class="tabs tabs--full-width margin-top-large">
+  <div class="container">
+    <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+      <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
+      <button role="tab" id="${ tabApiId }" aria-selected="false" aria-controls="${ panelApiId }">JS API</button>
+    </div>
+  </div>
+  
+  <div role="tabpanel" id="${ panelDemosId }" aria-labelledby="${ tabDemosId }">
+{% capture demosHtml %}
+{% renderTemplate "njk" %}
+${ demosMarkup }
+{% endrenderTemplate %}
+{% endcapture %}
+    
+    <div class="container margin-top-large">
+      <div class="page-toc page-toc--inline margin-bottom-large">
+        {{ demosHtml | toc }}
+      </div>
+    </div>
+    
+    <div class="margin-top-large">
+      {{ demosHtml }}
+    </div>
+  </div>
+  
+  <div role="tabpanel" id="${ panelApiId }" aria-labelledby="${ tabApiId }" hidden>
+{% capture apiHtml %}
+{% renderTemplate "md" %}
+${ content }
+{% endrenderTemplate %}
+{% endcapture %}
+    
+    <div class="container margin-top-large">
+      <div class="page-toc page-toc--inline margin-bottom-large">
+        {{ apiHtml | toc }}
+      </div>
+      
+      <div class="wysiwyg margin-top-large api-docs">
+        {{ apiHtml }}
+      </div>
+    </div>
+  </div>
+</div>
+`;
+  }
+
   return `\
 ---
 title: ${ title }
+layout: ${ layout }
+toc: ${ toc }
+tocInline: ${ tocInline }
 ---
 
+<div class="container">
+{% capture apiHtml %}
+{% renderTemplate "md" %}
 ${ content }
-  `;
+{% endrenderTemplate %}
+{% endcapture %}
+  
+  <div class="page-toc page-toc--inline margin-bottom-large">
+    {{ apiHtml | toc }}
+  </div>
+  
+  <div class="wysiwyg margin-top-large api-docs">
+    {{ apiHtml }}
+  </div>
+</div>
+`;
 }
 
 

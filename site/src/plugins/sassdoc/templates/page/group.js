@@ -1,10 +1,11 @@
 import { getDemoSnippets } from "../../../../utils/get-demo-snippets.js";
+import { urlize } from "@ulu/utils/string.js";
 import { when } from "@ulu/utils/templating.js";
 
 let cachedSnippets = null;
 let modalCount = 0;
 
-// Note using markdown for headlines (TOC)
+// Note using standard HTML for headlines to prevent Markdown parsing
 const renderDemo = (demo, groupName) => {
   const isFullscreen = demo.previewMode === "fullscreen" || demo.fullscreen;
   const isNoContainer = demo.noContainer || demo.nocontainer;
@@ -13,8 +14,7 @@ const renderDemo = (demo, groupName) => {
   const componentHtml = when(demo.wrapperClass, c => `<div class="${ c }">\n${ demo.html }\n</div>`, demo.html);
 
   const titleAndDesc = `
-### ${ demo.title || "Example" }{.h3}
-
+<h3 class="h3" id="${ urlize(demo.title || "Example") }">${ demo.title || "Example" }</h3>
 ${ when(demo.description, d => `<p>${ d }</p>`) }
   `;
 
@@ -118,11 +118,11 @@ export default ({ title, info, groupName }, markup) => {
   </div>
   
   <div role="tabpanel" id="${ panelDemosId }" aria-labelledby="${ tabDemosId }">
-    {% capture demosHtml %}
-      {% renderTemplate "njk,md" %}
-        ${ demosMarkup }
-      {% endrenderTemplate %}
-    {% endcapture %}
+{% capture demosHtml %}
+{% renderTemplate "njk" %}
+${ demosMarkup }
+{% endrenderTemplate %}
+{% endcapture %}
     
     <div class="container margin-top-large">
       <div class="page-toc page-toc--inline margin-bottom-large">
@@ -136,11 +136,11 @@ export default ({ title, info, groupName }, markup) => {
   </div>
   
   <div role="tabpanel" id="${ panelApiId }" aria-labelledby="${ tabApiId }" hidden>
-    {% capture apiHtml %}
-      {% renderTemplate "md" %}
-        ${ markup }
-      {% endrenderTemplate %}
-    {% endcapture %}
+{% capture apiHtml %}
+{% renderTemplate "md" %}
+${ markup }
+{% endrenderTemplate %}
+{% endcapture %}
     
     <div class="container margin-top-large">
       <div class="page-toc page-toc--inline margin-bottom-large">
@@ -162,11 +162,11 @@ export default ({ title, info, groupName }, markup) => {
     ${ groupDescription }
   </div>
   
-  {% capture apiHtml %}
-    {% renderTemplate "md" %}
-      ${ markup }
-    {% endrenderTemplate %}
-  {% endcapture %}
+{% capture apiHtml %}
+{% renderTemplate "md" %}
+${ markup }
+{% endrenderTemplate %}
+{% endcapture %}
   
   <div class="page-toc page-toc--inline margin-bottom-large">
     {{ apiHtml | toc }}

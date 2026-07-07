@@ -2,13 +2,15 @@
 @use "ulu";
 
 // $z-index: ulu.layout-get("z-index-fixed") - 2; 
-// $menu-width: 20rem;
+$sidebar-width: 18rem;
 
 .page {
   background-color: ulu.cssvar-use("color-background");
   display: grid;
   grid-template-areas: "header body toc";
-  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr) minmax(0, 15rem);
+  grid-template-columns: $sidebar-width minmax(0, 1fr) minmax(0, 15rem);
+  transition: grid-template-columns 0.2s ease;
+  
   @media print {
     display: block !important;
   }
@@ -19,12 +21,36 @@
     display: block;
   }
 }
+
 .page--toc-inline {
   grid-template-areas: "header toc" "header body";
-  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
-  .page__toc {
-    height: auto;
-    position: static;
+  grid-template-columns: $sidebar-width minmax(0, 1fr);
+}
+
+.page--sidebar-collapsed {
+  grid-template-columns: 0px minmax(0, 1fr) minmax(0, 15rem);
+  .page__header {
+    visibility: hidden;
+    pointer-events: none;
+  }
+  &.page--toc-inline {
+    grid-template-columns: 0px minmax(0, 1fr);
+  }
+}
+
+.site-sidebar-toggle {
+  position: fixed;
+  top: 1rem;
+  left: calc(#{$sidebar-width} + 1.25rem);
+  z-index: 999;
+  transition: left 0.2s ease;
+  
+  .page--sidebar-collapsed & {
+    left: 1.25rem;
+  }
+  
+  @include ulu.breakpoint-max("medium") {
+    display: none;
   }
 }
 .page__header,

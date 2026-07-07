@@ -1,0 +1,56 @@
+<!-- @ulu-demo
+  title: Interactive File Creator
+  description: |
+    Enter custom text content and a filename, then click "Generate Download" to instantiate `FileSave` and dynamically output a download anchor link.
+-->
+<div>
+  <div class="form-theme form-theme--full-width" style="max-width: 400px; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+    <div class="form-theme__item">
+      <label for="file-save-filename" style="font-weight: bold; display: block; margin-bottom: 0.25rem;">Filename:</label>
+      <input 
+        type="text" 
+        id="file-save-filename" 
+        name="file-save-filename" 
+        placeholder="example.txt"
+        style="width: 100%;"
+      />
+    </div>
+    <div class="form-theme__item">
+      <label for="file-save-content" style="font-weight: bold; display: block; margin-bottom: 0.25rem;">Content:</label>
+      <textarea id="file-save-content" name="file-save-content" rows="4" style="width: 100%;">This is dynamically generated text content stored in the file.</textarea>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 1rem; align-items: center;">
+    <button class="button" id="file-save-trigger">
+      Generate Download Link
+    </button>
+    <div id="file-save-link-container"></div>
+  </div>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", () => {
+    const trigger = document.getElementById("file-save-trigger");
+    const filenameInput = document.getElementById("file-save-filename");
+    const contentInput = document.getElementById("file-save-content");
+    const linkContainer = document.getElementById("file-save-link-container");
+
+    trigger.addEventListener("click", () => {
+      // Access the exposed FileSave utility from the global window.Ulu object
+      const { FileSave } = window.Ulu || {};
+      if (!FileSave) return;
+
+      const filename = filenameInput.value || "example.txt";
+      const content = contentInput.value;
+      const file = new FileSave(content, { filename });
+      
+      if (file) {
+        const link = file.createLink("Download Generated File");
+        link.classList.add("button", "button--secondary");
+        linkContainer.innerHTML = "";
+        linkContainer.appendChild(link);
+      }
+    });
+  });
+</script>

@@ -2,7 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 import yaml from "yaml";
 
-const src = path.resolve("./lib/scss/");
+const src = path.resolve("./lib/");
 
 /**
  * Strips the minimum common indentation from a string

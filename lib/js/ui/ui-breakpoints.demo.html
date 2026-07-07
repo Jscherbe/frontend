@@ -1,0 +1,173 @@
+<!-- @ulu-demo
+  title: Breakpoint Manager Demo
+  description: |
+    Interactive demo showcasing how the `BreakpointManager` detects media query transitions in JavaScript, triggers callbacks, and synchronizes with SCSS media queries. Resize the browser to view the changes.
+  nocontainer: true
+-->
+<div class="container margin-bottom-large">
+  <div id="info" style="padding: 1.5rem; background-color: #f7f7f7; border: 1px solid #ddd; border-radius: 4px;">
+    Current Breakpoint: <strong id="current-breakpoint">...</strong><br>
+    Resize Direction: <strong id="resize-direction">...</strong>
+  </div>
+
+  <h4 class="h4">1. min and max handlers</h4>
+  <p>The box below will be <strong>red</strong> when the viewport is below "medium" (testing medium.max()), and <strong>green</strong> when it is "medium" or larger (testing medium.min()).</p>
+  <div id="test-box-1" class="breakpoint-manager-box" style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;"></div>
+
+  <h4 class="h4 margin-top-large">2. only handler</h4>
+  <p>This box will be <strong>blue</strong> only when the viewport is exactly at the "medium" breakpoint range.</p>
+  <div id="test-box-2" class="breakpoint-manager-box" style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white; background-color: #eee;"></div>
+
+  <h4 class="h4 margin-top-large">3. on and off handlers</h4>
+  <p>This box turns <strong>purple</strong> when the "large" breakpoint is active, and reverts to grey when it is not.</p>
+  <div id="test-box-3" style="height: 80px; padding: 1rem; background-color: #eee; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px;"></div>
+
+  <h4 class="h4 margin-top-large">4. Removing handlers dynamically</h4>
+  <p>This box initially turns yellow on "medium". Click the button to remove the handler.</p>
+  <div id="test-box-4" class="breakpoint-manager-box" style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; margin-bottom: 1rem;"></div>
+  <button id="remove-handler-btn" class="button">Remove handler for Box 4</button>
+
+  <h4 class="h4 margin-top-large">5. SCSS & JS Parity Check</h4>
+  <p>The box on the left uses SCSS media queries, while the box on the right uses JS listeners. They should change colors in sync: none = blue, small = red, medium+ = green.</p>
+  <div style="display: flex; gap: 1rem;">
+    <div class="breakpoint-manager-box breakpoint-manager-box--css-test" style="flex: 1; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">CSS Match</div>
+    <div id="test-box-5" class="breakpoint-manager-box" style="flex: 1; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">JS Match</div>
+  </div>
+</div>
+
+<script>
+  addEventListener("DOMContentLoaded", () => {
+    // Ulu global wrapper contains exposed components
+    const { BreakpointManager } = Ulu;
+    if (!BreakpointManager) return;
+
+    const breakpoint = new BreakpointManager({
+      order: ["none", "small", "medium", "large"],
+      debug: true
+    });
+
+    const infoBreakpoint = document.getElementById("current-breakpoint");
+    const infoDirection = document.getElementById("resize-direction");
+
+    const box1 = document.getElementById("test-box-1");
+    const box2 = document.getElementById("test-box-2");
+    const box3 = document.getElementById("test-box-3");
+    const box4 = document.getElementById("test-box-4");
+    const box5 = document.getElementById("test-box-5");
+    const removeBtn = document.getElementById("remove-handler-btn");
+
+    infoDirection.textContent = '...';
+    box2.textContent = 'I am not "medium"';
+    box3.textContent = '"large.only" is OFF';
+    box4.textContent = 'I will turn yellow on "medium"';
+
+    const updateGeneralInfo = () => {
+      const activeName = breakpoint.active;
+      const activeIndex = breakpoint.activeIndex;
+      const nextName = breakpoint.order[activeIndex + 1];
+
+      let rangeText = "";
+      if (activeName === 'none') {
+        rangeText = `(up to ${nextName})`;
+      } else if (nextName) {
+        rangeText = `(from ${activeName} up to ${nextName})`;
+      } else {
+        rangeText = `(${activeName} and up)`;
+      }
+
+      infoBreakpoint.innerHTML = `${activeName} <span style="font-weight: normal; color: #555;">${rangeText}</span>`;
+      infoDirection.textContent = breakpoint.resizeDirection || '...';
+    };
+
+    breakpoint.onChange(updateGeneralInfo);
+    updateGeneralInfo();
+
+    // Test 1
+    breakpoint.at("medium").max({
+      on: () => {
+        box1.style.backgroundColor = "red";
+        box1.textContent = 'Below "medium"';
+      }
+    });
+    breakpoint.at("medium").min({
+      on: () => {
+        box1.style.backgroundColor = "green";
+        box1.textContent = '"medium" or larger';
+      }
+    });
+
+    // Test 2
+    breakpoint.at("medium").only({
+      on: () => {
+        box2.style.backgroundColor = "blue";
+        box2.textContent = 'I am "medium"';
+      },
+      off: () => {
+        box2.style.backgroundColor = "#eee";
+        box2.textContent = 'I am not "medium"';
+      }
+    });
+
+    // Test 3
+    breakpoint.at("large").only({
+      on: () => {
+        box3.style.backgroundColor = "purple";
+        box3.style.color = "white";
+        box3.textContent = '"large.only" is ON';
+      },
+      off: () => {
+        box3.style.backgroundColor = "#eee";
+        box3.style.color = "black";
+        box3.textContent = '"large.only" is OFF';
+      }
+    });
+
+    // Test 4
+    const handlerForBox4 = {
+      on: () => {
+        box4.style.backgroundColor = "yellow";
+        box4.style.color = "black";
+        box4.textContent = 'I am "medium"';
+      },
+      off: () => {
+        box4.style.backgroundColor = "#eee";
+        box4.style.color = "black";
+        box4.textContent = 'I am not "medium"';
+      }
+    };
+    breakpoint.at("medium").only(handlerForBox4);
+
+    removeBtn.addEventListener("click", () => {
+      breakpoint.at("medium").remove(handlerForBox4, 'only');
+      box4.textContent = "Handler removed.";
+      box4.style.backgroundColor = '#eee';
+      removeBtn.disabled = true;
+    }, { once: true });
+
+    // Test 5
+    box5.style.backgroundColor = 'red';
+    box5.textContent = 'JS: small';
+
+    breakpoint.at("small").max({
+      on: () => {
+        box5.style.backgroundColor = 'blue';
+        box5.textContent = 'JS: none';
+      },
+      off: () => {
+        box5.style.backgroundColor = 'red';
+        box5.textContent = 'JS: small';
+      }
+    });
+
+    breakpoint.at("medium").min({
+      on: () => {
+        box5.style.backgroundColor = 'green';
+        box5.textContent = 'JS: medium+';
+      },
+      off: () => {
+        box5.style.backgroundColor = 'red';
+        box5.textContent = 'JS: small';
+      }
+    });
+  });
+</script>

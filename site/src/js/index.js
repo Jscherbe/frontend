@@ -82,3 +82,20 @@ if (window.location.hash) {
     handleHashJump(window.location.hash);
   }, 100);
 }
+
+// Toggle Sidebar Collapse
+const sidebarToggle = document.getElementById("site-sidebar-toggle");
+const pageElement = document.querySelector(".page");
+if (sidebarToggle && pageElement) {
+  const icon = document.getElementById("site-sidebar-toggle-icon");
+  sidebarToggle.addEventListener("click", () => {
+    const isCollapsed = pageElement.classList.toggle("page--sidebar-collapsed");
+    if (isCollapsed) {
+      icon.className = "fas fa-chevron-right";
+    } else {
+      icon.className = "fas fa-chevron-left";
+    }
+    // Dispatch page resized event so JS utilities (like slider, scroll-slider, tabs equal heights) re-measure
+    document.dispatchEvent(new CustomEvent("ulu:pageResized", { bubbles: true }));
+  });
+}
