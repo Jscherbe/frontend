@@ -215,6 +215,13 @@ $config: (
     outline-offset: $border-width-negative;
   }
 
+  // Remove extra row when image is not present
+  // - So footer doesn't fall on the 1fr row
+  #{ $prefix }:not(:has(> #{ $prefix }__image)),
+  #{ $prefix }--no-image {
+    grid-template-rows: 1fr auto;
+  }
+
   @if (get("box-shadow-interactive-only") and get("box-shadow")) {
     @include when-clickable() {
       box-shadow: get("box-shadow");
@@ -257,6 +264,8 @@ $config: (
     min-height: get("footer-min-height");
     justify-content: get("footer-justify");
     background-color: color.get(get("footer-background-color"));
+    border-bottom-left-radius: get("border-radius");
+    border-bottom-right-radius: get("border-radius");
   }
   #{ $prefix }__aside {
     background-color: color.get(get("aside-background-color"));
@@ -353,9 +362,17 @@ $config: (
   
   #{ $prefix }--footer-inline {
     #{ $prefix }__footer {
-      
       padding: get("footer-inline-padding");
       flex-direction: column;
+      border-bottom-left-radius: 0;
+    }
+  }
+  // Only add the top-right radius to the footer if there is no image.
+  // When an image is present, it occupies the top row, meaning the footer 
+  // sits below it and shouldn't be rounded on the top-right.
+  #{ $prefix }--footer-inline:not(:has(> #{ $prefix }__image)) {
+    #{ $prefix }__footer {
+      border-top-right-radius: get("border-radius");
     }
   }
   #{ $prefix }--footer-inline:not(#{ $prefix }--overlay) {
@@ -579,6 +596,9 @@ $config: (
   #{ $prefix }__body,
   #{ $prefix }__footer {
     grid-column: 2 / 3;
+  }
+  #{ $prefix }__footer {
+    border-bottom-left-radius: 0;
   }
   #{ $prefix }__body {
     flex-direction: row;

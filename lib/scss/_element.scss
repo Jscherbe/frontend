@@ -80,6 +80,7 @@ $config: (
 
 $rule-styles: (
   "default": 1px solid color.get("rule"),
+  "large": 2px solid color.get("rule"),
   "light":   1px solid color.get("rule-light"),
 ) !default;
 

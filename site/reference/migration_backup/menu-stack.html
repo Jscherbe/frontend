@@ -432,6 +432,79 @@ layout: unformatted
 </div>
 {% endCodePreview %}
 
+<h2 class="h2">Stacked Icons (App Sidebar)</h2>
+
+{% CodePreview %}
+<div class="menu-stack demo-menu-stack menu-stack--stacked menu-stack--compact" style="max-width: 160px;">
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >
+        <span class="menu-stack__link-icon fas fa-house" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Home</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" >
+        <span class="menu-stack__link-icon fas fa-search" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Search</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >
+        <span class="menu-stack__link-icon fas fa-bell" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Alerts</span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" >
+        <span class="menu-stack__link-icon fas fa-envelope" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Messages</span>
+      </a>
+    </li>
+    <li class="menu-stack__item menu-stack__item--separator-before">
+      <a class="menu-stack__link" href="#" >
+        <span class="menu-stack__link-icon fas fa-user" aria-hidden="true"></span>
+        <span class="menu-stack__link-text">Profile</span>
+      </a>
+    </li>
+  </ul>
+</div>
+{% endCodePreview %}
+
+<h2 class="h2">Stacked Icons (Icon Only)</h2>
+
+{% CodePreview %}
+<div class="menu-stack demo-menu-stack menu-stack--stacked" style="max-width: 120px;">
+  <ul class="menu-stack__list">
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-label="Home">
+        <span class="menu-stack__link-icon fas fa-house type-large" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link is-active" href="#" aria-label="Search">
+        <span class="menu-stack__link-icon fas fa-search type-large" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-label="Alerts">
+        <span class="menu-stack__link-icon fas fa-bell type-large" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-label="Messages">
+        <span class="menu-stack__link-icon fas fa-envelope type-large" aria-hidden="true"></span>
+      </a>
+    </li>
+    <li class="menu-stack__item">
+      <a class="menu-stack__link" href="#" aria-label="Profile">
+        <span class="menu-stack__link-icon fas fa-user type-large" aria-hidden="true"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+{% endCodePreview %}
+
 <h2 class="h2">Columns Menu Stack for Testing</h2>
 
 {% CodePreview %}

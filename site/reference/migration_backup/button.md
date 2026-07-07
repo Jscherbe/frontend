@@ -13,6 +13,15 @@ Sizes can be configured this just shows the default sizes
 <a href="#" class="button">Default Button</a>
 <a href="#" class="button button--large">Large Button</a>
 
+## Alignment
+
+For buttons that span a specific width, you can align their content to the left using the `--left` modifier.
+
+<div style="width: 250px; max-width: 100%;">
+  <a href="#" class="button button--left" style="width: 100%; margin-bottom: 1rem;">Left Aligned</a>
+  <a href="#" class="button" style="width: 100%;">Center Aligned (Default)</a>
+</div>
+
 ## Active State
 
 Adding the `is-active` class to enable active state.

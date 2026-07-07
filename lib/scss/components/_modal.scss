@@ -36,6 +36,10 @@ $-fallbacks: (
     "function" : meta.get-function("get", false, "element"),
     "property" : "icon-centered-vertical-offset",
   ),
+  "title-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense",
+  )
 );
 
 /// Module Settings
@@ -79,6 +83,7 @@ $-fallbacks: (
 /// @prop {CssValue} title-font-weight [bold] Font weight of the title.
 /// @prop {CssValue} title-font-family [null] Font family for title
 /// @prop {Dimension} title-icon-margin [0.5em] The margin of the title icon
+/// @prop {Boolean|CssValue} title-line-height [true] If true will default to typography "line-height-dense", or set your own value
 /// @prop {String} title-size [large] The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.
 /// @prop {CssValue} title-text-transform [null] Transform option for the title.
 /// @prop {Map} sizes [Map] Size options to enable unique stylings.
@@ -129,6 +134,7 @@ $config: (
   "title-font-family" :             null,
   "title-icon-margin" :             0.5em,
   "title-size" :                    "large",
+  "title-line-height" :             true,
   "title-text-transform" :          null,
   "breakpoint" :                    true,
   "frame-aspect-ratio" :            list.slash(16, 9),
@@ -239,6 +245,7 @@ $config: (
     font-weight: get("title-font-weight");
     font-family: get("title-font-family");
     text-transform: get("title-text-transform");
+    line-height: get("title-line-height");
     @if (get("title-size")) {
       @include typography.size(get("title-size"), $only-font-size: true);
     }

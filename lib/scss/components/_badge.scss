@@ -20,25 +20,35 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Number} background-color [gray] Background color (if no image)
+/// @prop {Color} background-color [gray] Background color (if no image)
+/// @prop {Color} background-color-hover [null] Optional background color for hover when using badge--clickable modifier
 /// @prop {Number} border-radius [50%] Border radius of badge
-/// @prop {Number} color [black] Type color
+/// @prop {Color} color [black] Type color
+/// @prop {Color} color-hover [null] Optional color for hover when using badge--clickable modifier
+/// @prop {CssValue} box-shadow [null] Optional box-shadow
+/// @prop {CssValue} box-shadow-hover [null] Optional box-shadow for hover when using badge--clickable modifier
 /// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
-/// @prop {Number} font-weight [bold] Font weight
-/// @prop {Number} font-family [true] Specify font family, defaults to typography font-family-sans
+/// @prop {Keyword} font-weight [bold] Font weight
+/// @prop {String} font-family [true] Specify font family, defaults to typography font-family-sans
 /// @prop {Number} width [10rem] Width of badge (default size)
+/// @prop {Time} transition-duration [110ms] Transition duration amount for transitioned properties
 /// @prop {Number} hover-scale [1.2] Scale of badge (if clickable) on hover (enlarges badge)
 /// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
 
 $config: (
-  "background-color":    gray,
+  "background-color":    rgb(205, 205, 205),
+  "background-color-hover": null,
   "border-radius":       50%,
   "color":               black,
+  "color-hover":         null,
+  "box-shadow" :         null,
+  "box-shadow-hover" :   null,
   "font-size":           1.5rem,
   "font-weight":         bold,
   "font-family":         true,
   "width":               7rem,
   "hover-scale":         1.2,
+  "transition-duration" : 110ms,
   "sizes" : (
     "small" : (
       "font-size" : 1.2rem,
@@ -109,8 +119,11 @@ $config: (
     background-position: center center;
     text-align: center;
     border-radius: get("border-radius");
-    transition: transform 100ms ease-in-out;
-    // Incase this is used as a link or router-link
+    transition-property: transform, color, box-shadow, background-color;
+    transition-duration: get("transition-duration");
+    transition-timing-function: ease-in-out;
+    box-shadow: get("box-shadow");
+    // In case this is used as a link or router-link
     &,
     &:hover,
     &:focus,
@@ -125,6 +138,9 @@ $config: (
     &:hover,
     &:focus {
       #{ $prefix }__inner {
+        color: color.get(get("color-hover"));
+        background-color: color.get(get("background-color-hover"));
+        box-shadow: get("box-shadow-hover");
         transform: scale(get("hover-scale"));
       }
     }

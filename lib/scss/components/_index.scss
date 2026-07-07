@@ -25,6 +25,7 @@
 @forward "flipcard" as flipcard-*;
 @forward "flipcard-grid" as flipcard-grid-*;
 @forward "form-theme" as form-theme-*;
+@forward "graphic-text-group" as graphic-text-group-*;
 @forward "headline-label" as headline-label-*;
 @forward "input-group" as input-group-*;
 @forward "rule-inline" as rule-inline-*;
@@ -91,6 +92,7 @@
 @use "flipcard";
 @use "flipcard-grid";
 @use "form-theme";
+@use "graphic-text-group";
 @use "headline-label";
 @use "input-group";
 @use "rule-inline";
@@ -158,6 +160,7 @@ $all-includes: (
   "flipcard",
   "flipcard-grid",
   "form-theme",
+  "graphic-text-group",
   "headline-label",
   "input-group",
   "rule-inline",
@@ -308,6 +311,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "form-theme")) {
     @include form-theme.styles;
+  }
+  @if (list.index($includes, "graphic-text-group")) {
+    @include graphic-text-group.styles;
   }
   @if (list.index($includes, "headline-label")) {
     @include headline-label.styles;

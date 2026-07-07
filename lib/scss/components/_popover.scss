@@ -203,12 +203,7 @@ $config: (
   #{ $prefix }--fit {
     @include cssvar.declare-ulu("popover-width", max-content);
   }
-  // If you want to do something custom (and have it touch the edges)
-  #{ $prefix }--no-padding {
-    #{ $prefix }__inner {
-      padding: 0;
-    }
-  }
+  
   #{ $prefix }--large {
     @include cssvar.declare-ulu("popover-width", get("width-large"));
   }
@@ -222,6 +217,12 @@ $config: (
     }
     #{ $prefix }__footer {
       padding: get("footer-padding-y-large") get("padding-large");
+    }
+  }
+  // If you want to do something custom (and have it touch the edges)
+  #{ $prefix }--no-padding {
+    #{ $prefix }__inner {
+      padding: 0;
     }
   }
   #{ $prefix }--prints {

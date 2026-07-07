@@ -1,9 +1,125 @@
 # Change Log
 
+## 0.6.29
+
+- `scss/components/_modal.scss`
+  - Add "title-line-height" option, defaulting to typography "line-height-densest"
+
+## 0.6.28
+
+- `scss/components/_counter-list.scss`
+  - Add custom property `--ulu-counter-list-start` for specifyng different start points for the list counter (css counters). So for example setting `style="--ulu-counter-list-start: -1"` would start at 0. Or it could be used to start at other arbitrary indexes
+
+## 0.6.27
+
+- `scss/components/_card.scss`
+  - When using modifier `card--footer-inline` fix border radius being added to top right of footer when the card has an image
+
+## 0.6.26
+
+- `scss/components/_wysiwyg.scss`
+  - Change "unordered-list-marker-color" to "ul-marker-color" to match pre-existing option names
+  - Change "ordered-list-marker-color" to "ol-marker-color" to match pre-existing option names
+  - Add "ol-excluded-selectors" with default for .counter-list
+  
+## 0.6.25
+
+- `scss/components/_wysiwyg.scss`
+  - Add "unordered-list-marker-color", "ordered-list-marker-color" options to specify how the color for the markers when in wysiwyg
+
+## 0.6.24
+
+- `scss/components/_tabs.scss`
+  - Adjust the "sticky-vertical-top" so it only applies when the vertical tabs are laid out vertically (within the vertical breakpoint only)
+
+## 0.6.23
+
+- `scss/components/_tabs.scss`
+  - Add sticky modifier and setup demos to show how it works
+- Adjust docs site so that header it works with ulu cssvar "sticky-offset-top" and "header-height"
+
+## 0.6.22
+
+- `scss/components/_card.scss`
+  - Adjust selector setup for last card change so it's not interpolated modifier, minor just causes issues if outputting the component in wrapping selector
+
+## 0.6.21
+
+- `scss/components/_card.scss`
+  - Grid template rows account for no image (so footer is auto not second row 1fr)
+
+## 0.6.20
+
+- `scss/components/_card.scss`
+  - Fix footer background-color on card (fix bleed issue)
+
+## 0.6.19
+
+- `scss/_layout.scss`
+  - Add options for widths (set-widths maps) for "match-font-size" which when enabled on a width item will set the font-size equal to the width when outputting as helper class (for font based icons)
+
+## 0.6.18
+
+- `scss/component/_graphic-text-group.scss`
+  - Add "--auto" modifier for auto width graphic
+  - Add config option for "compact-gap" and "--compact modifier"
+  - Update demos to show the different variations
+  - Add "--align-baseline" modifier to allow for baseline alignment between the pair
+
+## 0.6.17
+
+- `scss/components/_callout.scss`
+  - Fix default style for warning background color set to info-background to warning-background
+- `scss/component/_graphic-text-group.scss`
+  - Have this component set text-align left by default
+
+## 0.6.16
+
+- `scss/components/_popover.scss` | Fix specificity of no-padding modifier so it works with large width presets
+
+## 0.6.15
+
+- `scss/components/_badge_.scss`
+  - Add "transition-duration" config option
+  - Add other properties (background-color, color and box-shadow) to transitioned properties
+
+## 0.6.14
+
+- `scss/_badge_.scss`
+  - Add new optional options (default to null) for "background-color-hover", "color-hover", "box-shadow", "box-shadow-hover"
+  - Lighten "background-color" default gray
+
+## 0.6.13
+
+- `scss/_button.scss`
+  - Migrate from old inline-block to inline-flex for modern support (no fighting with line-height, etc)
+  - Add new option for "gap" which will control space between things in button (like icons)
+- `scss/components/_button.scss`
+  - Remove config option "icon-margin" (use gap in core "button" module, see above change)
+  - Add modifier for `button--left` modifier for buttons that are maybe full width or a static width
+
+## 0.6.12
+
+- `scss/component/_menu-stack.scss`
+  - Add new options for stacked style, and adjust defaults for the new style
+
+## 0.6.11
+
+- `scss/_layout.scss` 
+  - Add new maps for $width and $max-widths which will also be output as utility classes in the new `scss/helpers/_layout.scss` 
+- `scss/_element_.scss` 
+  - Add rule style "large" by default (default rule color at 3px wide), normally needed can be overwritten
+- `scss/component/_graphic-text-group.scss` (New)
+  - Add new component for graphic + text lockup/layout
+- `scss/component/_menu-stack.scss`
+  - Add modifier for "stacked" which will stack icon over the text for small compact sidebar menus (think app icon sidebar)
+  - Add options to configure this style of the menu
+
 ## 0.6.10
 
-- `scss/base/_root.scss` | Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties
-- `scss/components/_modal.scss` | 
+- `scss/base/_root.scss`
+  - Correct default properties (that used cssvar add/subtract) to properly prefix the ulu internal properties
+- `scss/components/_modal.scss`
   - Change defaults for "close-color", "close-color-hover", "close-background-color", and "close-background-color-hover" to null so they don't compete with .button styles which is the default for modal-builder 
 
 ## 0.6.9

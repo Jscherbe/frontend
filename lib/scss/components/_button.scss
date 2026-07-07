@@ -18,10 +18,8 @@ $-fallbacks: (
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} icon-margin [1em] List of other sizes (large by default), each size is a map of (width, font-size) 
 
 $config: (
-  "icon-margin" : 0.5em,
   "icon-centered-vertical-offset": true
 ) !default;
 
@@ -65,13 +63,9 @@ $config: (
   #{ $prefix }--fit {
     min-width: 0;
   }
-  #{ $prefix }__icon {
-    &:not(:first-child) { 
-      margin-inline-start: get("icon-margin"); 
-    }
-    &:not(:last-child) { 
-      margin-inline-end: get("icon-margin"); 
-    }
+  #{ $prefix }--left {
+    justify-content: flex-start;
+    text-align: left;
   }
   
   @each $size, $values in button.$sizes {
@@ -88,9 +82,6 @@ $config: (
   
   #{ $icon-selector } {
     
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     min-width: 0;
     max-width: none;
     border-radius: button.get("icon-border-radius");

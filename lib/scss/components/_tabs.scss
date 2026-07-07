@@ -7,6 +7,7 @@
 @use "sass:meta";
 
 @use "../utils";
+@use "../cssvar";
 @use "../color";
 @use "../selector";
 @use "../breakpoint";
@@ -61,6 +62,10 @@ $-fallbacks: (
 /// @prop {Boolean} horizontal-tab-wrap [false] Set to true to allow line wrapping when the tabs are in horizontal orientation, vertical is always allowed to wrap
 /// @prop {Color} full-width-tablist-background-color [null] Optional background color for full-width tabs tablist
 /// @prop {Color} full-width-tabpanel-background-color [transparent] Optional background color for full-width tabs tabpanel
+/// @prop {Dimension} sticky-top [cssvar.use-ulu("sticky-offset-top")] The top offset when the sticky modifier is applied
+/// @prop {Dimension} sticky-vertical-top [cssvar.add(cssvar.use-ulu("sticky-offset-top"), 1em)] The top offset when the sticky modifier is applied in vertical layout 
+/// @prop {Color} sticky-background-color [background] The background color for the tablist when sticky
+/// @prop {Number} sticky-z-index [2] The z-index for the tablist when sticky
 
 $config: (
   "margin" : (2rem 0),
@@ -93,6 +98,10 @@ $config: (
   "horizontal-tab-wrap" : false,
   "full-width-tablist-background-color" : null,
   "full-width-tabpanel-background-color" : transparent,
+  "sticky-top" : cssvar.use-ulu("sticky-offset-top"),
+  "sticky-vertical-top" : cssvar.add(cssvar.use-ulu("sticky-offset-top"), 1em),
+  "sticky-background-color" : "background",
+  "sticky-z-index" : 2,
 ) !default;
 
 /// Change modules $config
@@ -211,6 +220,15 @@ $config: (
     }
   }
 
+  #{ $prefix }--sticky {
+    [role="tablist"] {
+      position: sticky;
+      top: get("sticky-top");
+      z-index: get("sticky-z-index");
+      background-color: color.get(get("sticky-background-color"));
+    }
+  }
+
   @include breakpoint.min(get("vertical-breakpoint")) {
     #{ $prefix }--vertical {
       display: grid;
@@ -238,6 +256,12 @@ $config: (
       }
       [role="tabpanel"] {
         grid-column: 2; // needed for equalHeights in vertical
+      }
+    }
+    #{ $prefix }--sticky#{ $prefix }--vertical {
+      [role="tablist"] {
+        top: get("sticky-vertical-top");
+        align-self: start;
       }
     }
   }

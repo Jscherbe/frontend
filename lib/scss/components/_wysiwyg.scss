@@ -23,6 +23,7 @@ $config: (
   "exclude-selector" : ".wysiwyg__exclude",
   "img-excluded-selectors" : (),
   "ul-excluded-selectors" : (".list-lines",),
+  "ol-excluded-selectors" : (".counter-list",),
   "link-excluded-selectors" : ("[class]",),
   "headline-sizes" : (
     "h2" : "h2",
@@ -30,7 +31,9 @@ $config: (
     "h4" : "h4",
     "h5" : "h5",
     "h6" : "h6",
-  )
+  ),
+  "ul-marker-color" : "bullet",
+  "ol-marker-color" : inherit,
 ) !default;
 
 /// Change modules $config
@@ -73,6 +76,7 @@ $config: (
 @mixin _styles() {
   $exclude-selector: get("exclude-selector");
   $ul-excludes: list.join(get("ul-excluded-selectors"), ($exclude-selector), $separator: comma);
+  $ol-excludes: list.join(get("ol-excluded-selectors"), ($exclude-selector), $separator: comma);
   $img-excludes: list.join(get("img-excluded-selectors"), ($exclude-selector), $separator: comma);
   $link-excludes: list.join(get("link-excluded-selectors"), ($exclude-selector), $separator: comma);
 
@@ -80,11 +84,11 @@ $config: (
     @include element.link($visited: true, $active: true);
   }
   ul:not(#{ $ul-excludes }) {
-    @include element.styles-unordered-list();
+    @include element.styles-unordered-list(get("ul-marker-color"));
     margin-bottom: element.get("margin");
   }
-  ol:not(#{ $exclude-selector }) {
-    @include element.styles-ordered-list(inherit);
+  ol:not(#{ $ol-excludes }) {
+    @include element.styles-ordered-list(get("ol-marker-color"));
     margin-bottom: element.get("margin");
   }
   // ul,

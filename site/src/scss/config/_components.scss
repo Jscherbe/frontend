@@ -50,56 +50,51 @@ $wysiwyg-headings: ulu.component-wysiwyg-get("headline-sizes");
 
 @include ulu.component-callout-set((
   "background-color": ulu.cssvar-use("color-background-details"),
-  "cap": true, 
-  "caps-disabled" : false,
-  "cap-side" : "left",
-  "cap-match-radius" : false,
+  // "cap": true, 
+  // "caps-disabled" : false,
+  // "cap-side" : "left",
+  // "cap-match-radius" : false,
   // "cap-options" : (
   //   "size" : 0.75rem,
   // ),
 ));
-@include ulu.component-callout-set-styles((
-  "rainbow" : (
-    "cap-options" : (
-      "color" : yellow
-    ),
-  ),
-  "info" : (
-    "background-color" : "info-background",
-    "cap-options" : (
-      "color" : blue,
-      // "size" : 3rem,
-    ),
-    "cap" : true,
-  ),
-  "success" : (
-    "background-color" : "success-background",
-    "cap" : false,
-    "cap-options" : (
-      "color" : green,
-      // "size" : 5rem, 
-    ),
-  ),
-  // Cap side can only be adjusted in the default callout config
-  "warning" : (
-    "background-color" : "warning-background",
-    "cap" : true,
-    "cap-side" : "top", //***
-    "cap-options" : (
-      "color" : yellow,
-      // "size" : 0.5rem,
-    ),
-  ),
-  "danger" : (
-    "background-color" : "danger-background",
-    "cap" : true,
-    "cap-match-radius" : true, 
-    "cap-options" : (
-      "color" : red,
-      // "size" : 0.5rem,
-    ),
-  ),
-));
+// @include ulu.component-callout-set-styles((
+//   "info" : (
+//     "background-color" : "info-background",
+//     "cap-options" : (
+//       "color" : blue,
+//       // "size" : 3rem,
+//     ),
+//     "cap" : true,
+//   ),
+//   "success" : (
+//     "background-color" : "success-background",
+//     "cap" : false,
+//     "cap-options" : (
+//       "color" : green,
+//       // "size" : 5rem, 
+//     ),
+//   ),
+//   // Cap side can only be adjusted in the default callout config
+//   "warning" : (
+//     "background-color" : "warning-background",
+//     "cap" : true,
+//     "cap-side" : "top", //***
+//     "cap-options" : (
+//       "color" : yellow,
+//       // "size" : 0.5rem,
+//     ),
+//   ),
+//   "danger" : (
+//     "background-color" : "danger-background",
+//     "cap" : true,
+//     "cap-match-radius" : true, 
+//     "cap-options" : (
+//       "color" : red,
+//       // "size" : 0.5rem,
+//     ),
+//   ),
+// ));
 
 @include ulu.component-captioned-figure-set((
   "background-color": ulu.cssvar-use("color-background"),

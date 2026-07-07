@@ -28,6 +28,7 @@ $-fallbacks: (
 /// @prop {Dimension} min-width [9rem] The smallest width for all buttons
 /// @prop {Dimension} padding [(0.75em 1.5em)] Button inner padding value, pass space separated list
 /// @prop {CssValue} white-space [nowrap] Adjust button line wrapping, by default line's are not wrapped
+/// @prop {Dimension} gap [0.5em] Gap to use between items within the button
 /// @prop {String} border-color ["control-border"] The border color for the button, usually if there is no border we set this to match the background color so if a button with no borders is adjacent a style that has borders the heights will match.
 /// @prop {String} border-color-hover ["control-border-hover"] Color of border when button is hovered
 /// @prop {String} border-color-active ["control-border-active"] Color of border when a button has active class
@@ -84,7 +85,7 @@ $config: (
   "transition-enabled":      true,
   "transition-duration":     200ms,
   "transition-properties":   (border-color, background-color, color, box-shadow),
-  "button-icon-offset":      true,
+  "gap":                     0.5em,
 ) !default;
   
 /// Button sizes
@@ -199,9 +200,11 @@ $styles: (
     @include reset();
   }
   appearance: none; // If used with select for example
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: get("gap");
   text-transform: get("text-transform");
-  text-align: center;
   text-shadow: get("text-shadow");
   vertical-align: middle;
   font-family: get("font-family");
