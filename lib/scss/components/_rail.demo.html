@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Rail
-  description: A flexible horizontal container with the last item pushed to the right using `rail__item--pull`.
+  description: |
+    A flexible horizontal container with the last item pushed to the right using `rail__item--pull`.
 -->
 <div class="rail">
   <div class="rail__item">
@@ -13,10 +14,11 @@
 </div>
 
 <!-- @ulu-demo
-  title: Justified Toolbar
-  description: Using the `rail--justified` modifier to space items out across the full width.
+  title: Justified Toolbar & Rules
+  description: |
+    Using the `rail--justified` modifier to space items out across the full width, or `rail--rule` to add a bottom rule border.
 -->
-<div class="rail rail--justified">
+<div class="rail rail--justified rail--rule padding-bottom">
   <div class="rail__item">
     <strong>Showing 1-10 of 124 results</strong>
   </div>
@@ -29,13 +31,66 @@
 </div>
 
 <!-- @ulu-demo
-  title: Rail with Separator
-  description: Using the `rail__item--separator` modifier to add a vertical divider before an item.
+  title: Item Gaps and Separators
+  description: |
+    Customize column gaps with `.rail__item--gap-none`, `.rail__item--gap-small`, or `.rail__item--gap-large`, and add dividers using `.rail__item--separator`.
 -->
-<div class="rail">
-  <div class="rail__item">Account Settings</div>
-  <div class="rail__item">Security</div>
-  <div class="rail__item rail__item--separator">
-    <a href="#" class="color-danger">Log Out</a>
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+  <div class="rail">
+    <div class="rail__item">Item One</div>
+    <div class="rail__item rail__item--gap-none">No Gap</div>
+    <div class="rail__item">Item Three</div>
   </div>
+
+  <div class="rail">
+    <div class="rail__item">Item One</div>
+    <div class="rail__item rail__item--gap-small">Small Gap</div>
+    <div class="rail__item">Item Three</div>
+  </div>
+
+  <div class="rail">
+    <div class="rail__item">Item One</div>
+    <div class="rail__item rail__item--gap-large">Large Gap</div>
+    <div class="rail__item">Item Three</div>
+  </div>
+
+  <div class="rail">
+    <div class="rail__item">Item One</div>
+    <div class="rail__item rail__item--separator">Separator Item</div>
+    <div class="rail__item">Item Three</div>
+  </div>
+  
+  <div class="rail">
+    <div class="rail__item">Item One</div>
+    <div class="rail__item rail__item--gap-large rail__item--separator">Large Gap + Separator</div>
+    <div class="rail__item">Item Three</div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Vertical Alignment (Baseline)
+  description: |
+    Align rail items to their typographic baseline using the `rail--align-baseline` modifier.
+-->
+<div class="rail rail--align-baseline">
+  <div class="rail__item type-large">Tall Item</div>
+  <div class="rail__item">Normal Item</div>
+  <div class="rail__item type-small">Short Item</div>
+  <div class="rail__item type-large-x">Taller Item</div>
+</div>
+
+<!-- @ulu-demo
+  title: No Wrap
+  description: |
+    Enforce non-wrapping behaviour using the `rail--nowrap` modifier class.
+-->
+<div class="rail rail--nowrap" style="overflow-x: auto; white-space: nowrap;">
+  <div class="rail__item">Item One</div>
+  <div class="rail__item">Item Two</div>
+  <div class="rail__item">Item Three</div>
+  <div class="rail__item">Item Four</div>
+  <div class="rail__item">Item Five</div>
+  <div class="rail__item">Item Six</div>
+  <div class="rail__item">Item Seven</div>
+  <div class="rail__item">Item Eight</div>
 </div>

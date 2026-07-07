@@ -1,5 +1,0 @@
----
-title: Spoke Spinner
----
-
-{% spokeSpinner %}

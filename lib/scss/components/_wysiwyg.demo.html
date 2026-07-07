@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: WYSIWYG Content
-  description: Automatically applies standard styling to raw HTML elements (headings, lists, links) within a container.
+  description: |
+    Automatically applies standard styling to raw HTML elements (headings, lists, links) within a container.
 -->
 <div class="wysiwyg">
   <h2>Main Topic</h2>
@@ -11,4 +12,39 @@
   </ul>
   <h3>Sub-section</h3>
   <p>Headings are also automatically sized according to the typography configuration.</p>
+</div>
+
+<!-- @ulu-demo
+  title: Exclude Modifiers
+  description: |
+    Use the class `wysiwyg__exclude` (or custom styling classes like `.button` and `.list-lines`) to prevent WYSIWYG styles from overriding specific nested elements.
+-->
+<div class="wysiwyg">
+  <h2>This is a normal h2</h2>
+  <h2 class="h3 wysiwyg__exclude">This is h2 with class of h3 (excluded from WYSIWYG heading override)</h2>
+  
+  <h3>List Test (Default)</h3>
+  <ul>
+    <li>This is a list item</li>
+    <li>This is a list item</li>
+  </ul>
+  
+  <h3>List Test (With wysiwyg__exclude class)</h3>
+  <ul class="wysiwyg__exclude">
+    <li>This list is excluded</li>
+    <li>This list is excluded</li>
+  </ul>
+  
+  <h3>List Test (With component override list-lines)</h3>
+  <ul class="list-lines">
+    <li>This is a list-lines item</li>
+    <li>This is a list-lines item</li>
+  </ul>
+  
+  <h3>Links</h3>
+  <p>
+    Here is a <a href="#">normal WYSIWYG link</a>, compared to a
+    <a class="wysiwyg__exclude" href="#">link unstyled by wysiwyg</a>, and a
+    <a class="button" href="#">button link exclusion</a>.
+  </p>
 </div>

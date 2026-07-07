@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Horizontal Rule
-  description: A standard horizontal line used to separate sections of content.
+  description: |
+    A standard horizontal line used to separate sections of content.
 -->
 <p>Content above the rule.</p>
 <hr class="rule">
@@ -8,15 +9,43 @@
 
 <!-- @ulu-demo
   title: Short Accent Rule
-  description: Using the `rule--short` modifier to create a small, decorative line often used under headings.
+  description: |
+    Using the `rule--short` modifier to create a small, decorative line often used under headings.
 -->
 <h3 class="h3">Section Title</h3>
 <div class="rule rule--short"></div>
 <p>A brief introduction to the section follows the decorative short rule.</p>
 
 <!-- @ulu-demo
-  title: Large Margin Rule
-  description: A rule with increased vertical spacing using the `rule--margin-large` modifier.
+  title: Visual & Thickness Modifiers
+  description: |
+    Customize rule color and thickness using modifiers like `rule--large` or `rule--light`.
 -->
-<div class="rule rule--margin-large"></div>
-<p>This rule creates significant visual separation between major content blocks.</p>
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+  <div>
+    <p>Large Rule (thick border)</p>
+    <div class="rule rule--large"></div>
+  </div>
+  <div>
+    <p>Light Rule (muted color)</p>
+    <div class="rule rule--light"></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Margin Spacing Modifiers
+  description: |
+    Customize vertical spacing above and below the rule using margin modifiers like `rule--margin-small` or `rule--margin-large`.
+-->
+<div style="display: flex; flex-direction: column; gap: 1rem;">
+  <div>
+    <p>Content block 1</p>
+    <div class="rule rule--margin-small"></div>
+    <p>Content block 2 (small margin separation)</p>
+  </div>
+  <div>
+    <p>Content block 3</p>
+    <div class="rule rule--margin-large"></div>
+    <p>Content block 4 (large margin separation)</p>
+  </div>
+</div>

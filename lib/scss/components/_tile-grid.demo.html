@@ -1,22 +1,71 @@
 <!-- @ulu-demo
   title: Basic Tile Grid (Reflowable)
-  description: A grid of tiles that automatically reflows to fit as many items as possible based on a preferred minimum width.
+  description: |
+    A grid of tiles that automatically reflows to fit as many items as possible based on a preferred minimum width. Uses standard `tile-button` links.
 -->
-<div class="tile-grid">
-  <div class="tile-grid__item" style="background: #eee; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center;">Tile 1</div>
-  <div class="tile-grid__item" style="background: #eee; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center;">Tile 2</div>
-  <div class="tile-grid__item" style="background: #eee; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center;">Tile 3</div>
-  <div class="tile-grid__item" style="background: #eee; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center;">Tile 4</div>
-  <div class="tile-grid__item" style="background: #eee; border: 1px solid #ccc; display: flex; align-items: center; justify-content: center;">Tile 5</div>
-</div>
+<ul class="tile-grid">
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Standard Item</strong></span>
+      <span class="tile-button__row tile-button__row--description">Description about this tile.</span>
+    </a> 
+  </li>
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Another Item</strong></span>
+      <span class="tile-button__row tile-button__row--description">Description about this tile.</span>
+    </a> 
+  </li>
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Grid Item 3</strong></span>
+      <span class="tile-button__row tile-button__row--description">Description about this tile.</span>
+    </a> 
+  </li>
+</ul>
+
+<!-- @ulu-demo
+  title: Large Grid
+  description: |
+    Using the `tile-grid--large` modifier to increase spacing and cell sizes.
+-->
+<ul class="tile-grid tile-grid--large">
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Large Tile 1</strong></span>
+      <span class="tile-button__row tile-button__row--description">Spaced out layout.</span>
+    </a> 
+  </li>
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Large Tile 2</strong></span>
+      <span class="tile-button__row tile-button__row--description">Spaced out layout.</span>
+    </a> 
+  </li>
+</ul>
 
 <!-- @ulu-demo
   title: Static Column Grid
-  description: Using the `tile-grid--static` modifier to enforce a specific number of columns that adapt per breakpoint (e.g., 2 on small, 3 on medium).
+  description: |
+    Using the `tile-grid--static` modifier to enforce a specific number of columns that adapt per breakpoint (e.g., 2 on small, 3 on medium).
 -->
-<div class="tile-grid tile-grid--static">
-  <div class="tile-grid__item" style="background: #ddd; border: 1px solid #bbb; display: flex; align-items: center; justify-content: center;">Static 1</div>
-  <div class="tile-grid__item" style="background: #ddd; border: 1px solid #bbb; display: flex; align-items: center; justify-content: center;">Static 2</div>
-  <div class="tile-grid__item" style="background: #ddd; border: 1px solid #bbb; display: flex; align-items: center; justify-content: center;">Static 3</div>
-  <div class="tile-grid__item" style="background: #ddd; border: 1px solid #bbb; display: flex; align-items: center; justify-content: center;">Static 4</div>
-</div>
+<ul class="tile-grid tile-grid--static">
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Static Column 1</strong></span>
+      <span class="tile-button__row tile-button__row--description">Enforced breakpoint mapping.</span>
+    </a> 
+  </li>
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Static Column 2</strong></span>
+      <span class="tile-button__row tile-button__row--description">Enforced breakpoint mapping.</span>
+    </a> 
+  </li>
+  <li class="tile-grid__item">
+    <a class="tile-button button" href="#">
+      <span class="tile-button__row"><strong>Static Column 3</strong></span>
+      <span class="tile-button__row tile-button__row--description">Enforced breakpoint mapping.</span>
+    </a> 
+  </li>
+</ul>

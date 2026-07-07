@@ -1,20 +1,42 @@
 <!-- @ulu-demo
   title: Basic Tag
-  description: A small label for categorization or status identification.
+  description: |
+    A small label for categorization or status identification, which can also be used inline or in headings.
 -->
-<span class="tag">Standard Tag</span>
-<span class="tag tag--outline">Outline Tag</span>
+<div>
+  <h2 class="h3">Document Review <sup><span class="tag">New</span></sup></h2>
+  <p>This is a tag inline <span class="tag">Some Definition</span> explaining key terms.</p>
+</div>
 
 <!-- @ulu-demo
   title: Semantic Status Tags
-  description: Using status modifiers like `tag--success` and `tag--danger`.
+  description: |
+    Using status modifiers like `tag--success`, `tag--danger`, and styling overrides like `tag--outline`.
 -->
-<span class="tag tag--success">Verified</span>
-<span class="tag tag--danger">Action Required</span>
+<div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+  <span class="tag">Standard</span>
+  <span class="tag tag--outline">Outline</span>
+  <span class="tag tag--success">Verified</span>
+  <span class="tag tag--danger">Action Required</span>
+</div>
+
+<!-- @ulu-demo
+  title: Sizes
+  description: |
+    Modify tag dimensions using sizing classes like `tag--small`.
+-->
+<div style="display: flex; gap: 0.5rem; align-items: center;">
+  <span class="tag tag--small">Small Tag</span>
+  <span class="tag">Default Tag</span>
+</div>
 
 <!-- @ulu-demo
   title: Counter Tag
-  description: Using the `tag--counter` modifier to display numerical values, often for notifications or counts.
+  description: |
+    Using the `tag--counter` modifier to display numerical values, often for notifications or counts.
 -->
-<span class="tag tag--counter">5</span>
-<span class="tag tag--small tag--counter">124</span>
+<div style="display: flex; gap: 0.5rem; align-items: center;">
+  <span class="tag tag--counter">5</span>
+  <span class="tag tag--counter">30,000</span>
+  <span class="tag tag--small tag--counter">124</span>
+</div>

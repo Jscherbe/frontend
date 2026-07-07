@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Standard Panel
-  description: A structured container with a distinct header, body, and footer.
+  description: |
+    A structured container with a distinct header, body, and footer.
 -->
 <div class="panel">
   <div class="panel__row panel__row--header">
@@ -15,17 +16,58 @@
 </div>
 
 <!-- @ulu-demo
-  title: Transparent Panel with Separators
-  description: Using the `panel--transparent` modifier for a seamless look, with `panel__row--separator-top` for visual division.
+  title: Compact Panel
+  description: |
+    The `panel--compact` modifier reduces inner padding around panel rows.
 -->
-<div class="panel panel--transparent">
+<div class="panel panel--compact">
   <div class="panel__row panel__row--header">
-    <h3 class="h4">System Status</h3>
+    <h3 class="h4">Quick Info</h3>
   </div>
   <div class="panel__row">
-    <p>All systems are operational. No active incidents reported in the last 24 hours.</p>
+    <p>This is a compact panel row with smaller margin/padding sizing.</p>
   </div>
-  <div class="panel__row panel__row--separator-top">
-    <p class="type-small">Last checked: 5 minutes ago</p>
+  <div class="panel__row panel__row--footer">
+    <a href="#" class="button button--small">Actions</a>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Panel Separators
+  description: |
+    Use `.panel--separators` to automatically divide all panel rows, or apply `.panel__row--separator-top` / `.panel__row--separator-bottom` to separate specific rows.
+-->
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+  <div class="panel panel--separators">
+    <div class="panel__row panel__row--header">
+      <h3 class="h4">System Status</h3>
+    </div>
+    <div class="panel__row">
+      <p>All core systems operational.</p>
+    </div>
+    <div class="panel__row">
+      <p>External API integrations check completed.</p>
+    </div>
+    <div class="panel__row panel__row--footer">
+      <p class="type-small">Last checked: 5 minutes ago</p>
+    </div>
+  </div>
+
+  <div class="panel panel--transparent">
+    <div class="panel__row panel__row--header">
+      <h3 class="h4">Manual Separators</h3>
+    </div>
+    <div class="panel__row">
+      <p>This transparent panel has standard content.</p>
+    </div>
+    <div class="panel__row panel__row--separator-top">
+      <p>This row has a top separator border.</p>
+    </div>
+    <div class="panel__row">
+      <p>Standard row content below separator.</p>
+    </div>
+    <div class="panel__row panel__row--separator-bottom">
+      <p>This row has a bottom separator border.</p>
+    </div>
   </div>
 </div>

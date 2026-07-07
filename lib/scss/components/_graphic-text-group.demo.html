@@ -1,0 +1,114 @@
+<!-- @ulu-demo
+  title: Basic Graphic Text Group
+  description: |
+    The default layout positions the graphic to the left of the text content, with both elements vertically centered.
+-->
+<div class="graphic-text-group type-max-width-small">
+  <div class="graphic-text-group__graphic">
+    <img alt="Bulb Icon" src="https://picsum.photos/id/1084/100/100" style="width: 80px; height: 80px; border-radius: 50%;">
+  </div>
+  <div class="graphic-text-group__text crop-margins">
+    <h3 class="h4 no-margin-bottom">Default Layout</h3>
+    <p>This is the default layout where the graphic and text sit side-by-side.</p>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Positional Placements
+  description: |
+    Position the graphic to the right, top, or bottom relative to the text using the `--right`, `--top`, or `--bottom` modifiers.
+-->
+<div style="display: flex; flex-direction: column; gap: 2.5rem;">
+  <div class="graphic-text-group graphic-text-group--right type-max-width-small">
+    <div class="graphic-text-group__text crop-margins">
+      <h4 class="h4 no-margin-bottom">Right Aligned Graphic</h4>
+      <p>The graphic sits on the right. Note that the text appears first in the markup for screen reader accessibility.</p>
+    </div>
+    <div class="graphic-text-group__graphic">
+      <img alt="Icon" src="https://picsum.photos/id/1084/100/100" style="width: 80px; height: 80px; border-radius: 50%;">
+    </div>
+  </div>
+
+  <div class="graphic-text-group graphic-text-group--top graphic-text-group--center type-max-width-small">
+    <div class="graphic-text-group__graphic">
+      <img alt="Icon" src="https://picsum.photos/id/1084/100/100" style="width: 80px; height: 80px; border-radius: 50%;">
+    </div>
+    <div class="graphic-text-group__text crop-margins">
+      <h4 class="h4 no-margin-bottom">Top Graphic</h4>
+      <p>The graphic is positioned above the text content and centered.</p>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Vertical Alignments
+  description: |
+    Customize vertical alignment with `--align-start`, `--align-end`, or `--align-baseline`.
+-->
+<div style="display: flex; flex-direction: column; gap: 2.5rem;">
+  <div class="graphic-text-group graphic-text-group--align-start type-max-width-small">
+    <div class="graphic-text-group__graphic">
+      <img alt="Icon" src="https://picsum.photos/id/1084/100/100" style="width: 80px; height: 80px; border-radius: 50%;">
+    </div>
+    <div class="graphic-text-group__text crop-margins">
+      <h4 class="h4 no-margin-bottom">Align Start</h4>
+      <p>The graphic and text are aligned to the top. This is useful for longer description blocks where a centered icon would feel disconnected from the heading.</p>
+    </div>
+  </div>
+
+  <div class="graphic-text-group graphic-text-group--align-baseline graphic-text-group--auto graphic-text-group--compact type-max-width-small">
+    <div class="graphic-text-group__graphic type-large-xx">
+      <span class="fas fa-circle-info" aria-hidden="true" style="font-size: 1.5rem;"></span>
+    </div>
+    <div class="graphic-text-group__text crop-margins">
+      <h4 class="h4 no-margin-bottom">Align Baseline</h4>
+      <p>Aligned to the typographic baseline using the `--align-baseline` modifier, paired with `--auto` for natural graphic sizing.</p>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Separators & Borders
+  description: |
+    Add dividers between the graphic and text using `--separator`, or borders using `--rule-top` and `--rule-bottom`.
+-->
+<div style="display: flex; flex-direction: column; gap: 2.5rem;">
+  <div class="graphic-text-group graphic-text-group--separator type-max-width-small">
+    <div class="graphic-text-group__graphic">
+      <img alt="Icon" src="https://picsum.photos/id/1084/100/100" style="width: 80px; height: 80px; border-radius: 50%;">
+    </div>
+    <div class="graphic-text-group__text crop-margins">
+      <h4 class="h4 no-margin-bottom">Vertical Separator</h4>
+      <p>A thin separator line is dynamically added between the graphic and the text.</p>
+    </div>
+  </div>
+
+  <div class="graphic-text-group graphic-text-group--rule-top graphic-text-group--rule-bottom type-max-width-small">
+    <div class="graphic-text-group__graphic">
+      <img alt="Icon" src="https://picsum.photos/id/1084/100/100" style="width: 80px; height: 80px; border-radius: 50%;">
+    </div>
+    <div class="graphic-text-group__text crop-margins">
+      <h4 class="h4 no-margin-bottom">Rule Borders</h4>
+      <p>This layout adds spacing and borders above and below the block.</p>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Responsive Wrap
+  description: |
+    Use the `graphic-text-group--wrap` modifier to automatically stack the graphic on top of the text on smaller screens.
+-->
+<div class="graphic-text-group graphic-text-group--wrap graphic-text-group--separator type-max-width-small">
+  <div class="graphic-text-group__graphic">
+    <div class="badge badge--large">
+      <div class="badge__inner">
+        <span>02</span>
+      </div>
+    </div>
+  </div>
+  <div class="graphic-text-group__text crop-margins">
+    <h4 class="h4 no-margin-bottom">Adaptive Stacking</h4>
+    <p>On wider viewports, this renders side-by-side with a vertical separator. On smaller viewports, it wraps to a column layout, and the separator automatically becomes horizontal.</p>
+  </div>
+</div>

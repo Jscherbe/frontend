@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Progress Bar
-  description: A standard progress bar with a label and percentage value.
+  description: |
+    A standard progress bar with a label and percentage value.
 -->
 <div class="progress-bar">
   <div class="progress-bar__header">
@@ -13,8 +14,20 @@
 </div>
 
 <!-- @ulu-demo
+  title: Rounded Track
+  description: |
+    Use the `progress-bar--rounded` modifier to give the track and bar rounded corners.
+-->
+<div class="progress-bar progress-bar--rounded">
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 45%;"></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
   title: Indeterminate Loader
-  description: An animated bar for states where progress is unknown, using the `progress-bar--indeterminate` modifier.
+  description: |
+    An animated bar for states where progress is unknown, using the `progress-bar--indeterminate` modifier.
 -->
 <div class="progress-bar progress-bar--loader progress-bar--indeterminate">
   <div class="progress-bar__track">
@@ -23,18 +36,91 @@
 </div>
 
 <!-- @ulu-demo
-  title: Semantic Status Bars
-  description: Using status modifiers like `progress-bar--success` and `progress-bar--danger`.
+  title: Deficit & Status Icons
+  description: |
+    Progress bars can display multiple bars representing different properties, such as current amount and deficits.
 -->
-<div class="progress-bar progress-bar--success">
-  <div class="progress-bar__header"><strong class="progress-bar__label">Setup Complete</strong></div>
+<div class="progress-bar">
+  <div class="progress-bar__header">
+    <strong class="progress-bar__label">Budget Progress</strong>
+    <div class="progress-bar__icon">
+      <span class="fas fa-triangle-exclamation" aria-hidden="true"></span>
+      <span class="hidden-visually">Warning: Deficit Detected</span>
+    </div>
+  </div>
+  <div class="progress-bar__track">
+    <div class="progress-bar__bar" style="width: 60%;"></div>
+    <div class="progress-bar__bar progress-bar__bar--deficit" style="width: 20%;"></div>
+  </div>
+  <div class="progress-bar__values">
+    <div class="progress-bar__value progress-bar__value--amount">300 Spent</div>
+    <div class="progress-bar__value progress-bar__value--deficit color-status is-danger">-100 Overdraft</div>
+    <div class="progress-bar__value progress-bar__value--total">500 Limit</div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Semantic Status Bars
+  description: |
+    Using status modifiers like `progress-bar--success`, `progress-bar--warning`, and `progress-bar--danger`.
+-->
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+  <div class="progress-bar progress-bar--success">
+    <div class="progress-bar__header"><strong class="progress-bar__label">Setup Complete</strong></div>
+    <div class="progress-bar__track">
+      <div class="progress-bar__bar" style="width: 100%;"></div>
+    </div>
+  </div>
+  <div class="progress-bar progress-bar--warning">
+    <div class="progress-bar__header"><strong class="progress-bar__label">Disk Space Warning</strong></div>
+    <div class="progress-bar__track">
+      <div class="progress-bar__bar" style="width: 82%;"></div>
+    </div>
+  </div>
+  <div class="progress-bar progress-bar--danger">
+    <div class="progress-bar__header"><strong class="progress-bar__label">Critically Low Storage</strong></div>
+    <div class="progress-bar__track">
+      <div class="progress-bar__bar" style="width: 95%;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Small Size
+  description: |
+    Use the `progress-bar--small` modifier for compact environments. Typography size is controlled by parent sizing elements.
+-->
+<div class="progress-bar progress-bar--small progress-bar--success type-small">
+  <div class="progress-bar__header">
+    <strong class="progress-bar__label type-normal">Sync Status</strong>
+    <div class="progress-bar__icon">
+      <span class="fas fa-check" aria-hidden="true"></span>
+    </div>
+  </div>
   <div class="progress-bar__track">
     <div class="progress-bar__bar" style="width: 100%;"></div>
   </div>
 </div>
-<div class="progress-bar progress-bar--danger">
-  <div class="progress-bar__header"><strong class="progress-bar__label">Storage Low</strong></div>
-  <div class="progress-bar__track">
-    <div class="progress-bar__bar" style="width: 92%;"></div>
+
+<!-- @ulu-demo
+  title: Icon Left (Rail Layout)
+  description: |
+    Align progress bar labels or status icons to the left side of the track using the `rail` layout component.
+-->
+<div class="progress-bar progress-bar--success">
+  <div class="rail">
+    <div class="rail__item">
+      <div class="progress-bar__icon type-large">
+        <span class="fas fa-circle-check" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="rail__item flex-grow">
+      <div class="progress-bar__header">
+        <strong class="progress-bar__label">Processing Finished</strong>
+      </div>
+      <div class="progress-bar__track">
+        <div class="progress-bar__bar" style="width: 100%;"></div>
+      </div>
+    </div>
   </div>
 </div>

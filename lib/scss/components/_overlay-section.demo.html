@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Overlay Section
-  description: A section with a full-bleed background and centered content box.
+  description: |
+    A section with a full-bleed background and centered content box.
 -->
 <section class="overlay-section">
   <div class="overlay-section__background">
@@ -14,16 +15,54 @@
 </section>
 
 <!-- @ulu-demo
-  title: Right-Aligned Overlay
-  description: Using the `overlay-section--right` modifier to position the content box on the right side of the section.
+  title: Positional Alignments
+  description: |
+    Use positional modifiers like `overlay-section--top`, `overlay-section--bottom`, `overlay-section--left`, and `overlay-section--right` to align the content box relative to the background image bounds.
 -->
-<section class="overlay-section overlay-section--right">
-  <div class="overlay-section__background">
-    <img src="https://picsum.photos/id/104/1200/800" alt="Background Image">
-  </div>
-  <div class="overlay-section__content">
-    <h2 class="h2">Side Aligned</h2>
-    <p>Positioning content to the side can help prevent obscuring important details in the background image.</p>
-    <a href="#" class="button">Contact Us</a>
-  </div>
-</section>
+<div style="display: flex; flex-direction: column; gap: 2rem;">
+
+  <section class="overlay-section overlay-section--left">
+    <div class="overlay-section__background">
+      <img src="https://picsum.photos/id/104/1200/800" alt="Background Image">
+    </div>
+    <div class="overlay-section__content">
+      <h2 class="h2">Left Aligned</h2>
+      <p>Positioning content to the left side.</p>
+      <a href="#" class="button">Read More</a>
+    </div>
+  </section>
+
+  <section class="overlay-section overlay-section--right">
+    <div class="overlay-section__background">
+      <img src="https://picsum.photos/id/104/1200/800" alt="Background Image">
+    </div>
+    <div class="overlay-section__content">
+      <h2 class="h2">Right Aligned</h2>
+      <p>Positioning content to the right side.</p>
+      <a href="#" class="button">Read More</a>
+    </div>
+  </section>
+
+  <section class="overlay-section overlay-section--top">
+    <div class="overlay-section__background">
+      <img src="https://picsum.photos/id/104/1200/800" alt="Background Image">
+    </div>
+    <div class="overlay-section__content">
+      <h2 class="h2">Top Aligned</h2>
+      <p>Positioning content to the top side.</p>
+      <a href="#" class="button">Read More</a>
+    </div>
+  </section>
+
+  <section class="overlay-section overlay-section--bottom">
+    <div class="overlay-section__background">
+      <img src="https://picsum.photos/id/104/1200/800" alt="Background Image">
+    </div>
+    <div class="overlay-section__content">
+      <h2 class="h2">Bottom Aligned</h2>
+      <p>Positioning content to the bottom side.</p>
+      <a href="#" class="button">Read More</a>
+    </div>
+  </section>
+
+</div>

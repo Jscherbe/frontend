@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Default (Single Fluid Column)
-  description: The easiest way to use the Data List is with the zero-config layout presets. Without any modifiers, the list defaults to a single, full-width `1fr` track. This is useful for simple lists of text.
+  description: |
+    The easiest way to use the Data List is with the zero-config layout presets. Without any modifiers, the list defaults to a single, full-width `1fr` track. This is useful for simple lists of text.
 -->
 <ul class="data-list">
   <li class="data-list__item">
@@ -27,7 +28,8 @@
 
 <!-- @ulu-demo
   title: Prefixed Layout
-  description: Adding the `.data-list--prefixed` modifier creates an `auto 1fr` layout. It is perfect for attaching a shrink-wrapped icon, avatar, or checkbox to the start of the main content.
+  description: |
+    Adding the `.data-list--prefixed` modifier creates an `auto 1fr` layout. It is perfect for attaching a shrink-wrapped icon, avatar, or checkbox to the start of the main content.
 -->
 <ul class="data-list data-list--prefixed">
   <li class="data-list__item">
@@ -70,7 +72,8 @@
 
 <!-- @ulu-demo
   title: Suffixed Layout
-  description: Adding the `.data-list--suffixed` modifier creates a `1fr auto` layout. This is ideal for attaching an action button, date, or status badge to the end of the row.
+  description: |
+    Adding the `.data-list--suffixed` modifier creates a `1fr auto` layout. This is ideal for attaching an action button, date, or status badge to the end of the row.
 -->
 <ul class="data-list data-list--suffixed">
   <li class="data-list__item">
@@ -109,7 +112,8 @@
 
 <!-- @ulu-demo
   title: Flanked Layout (Prefixed + Suffixed)
-  description: Combining both modifiers creates a classic `auto 1fr auto` layout. The Icon and Button sit on the edges, while the text fluidly fills the center. This structure is maintained when stacked automatically.
+  description: |
+    Combining both modifiers creates a classic `auto 1fr auto` layout. The Icon and Button sit on the edges, while the text fluidly fills the center. This structure is maintained when stacked automatically.
 -->
 <ul class="data-list data-list--prefixed data-list--suffixed">
   <li class="data-list__item">
@@ -160,7 +164,8 @@
 
 <!-- @ulu-demo
   title: Multi-Track Data List
-  description: This example defines a 4-track grid (`auto 1fr auto auto`). The middle column acts as a wrapper for the Title and Date, using `--span-2` to consume two master tracks. When stacked, this subgrid structure drops, and the Title and Date gracefully stack vertically.
+  description: |
+    This example defines a 4-track grid (`auto 1fr auto auto`). The middle column acts as a wrapper for the Title and Date, using `--span-2` to consume two master tracks. When stacked, this subgrid structure drops, and the Title and Date gracefully stack vertically.
 -->
 <ul class="data-list" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
   <li class="data-list__item">
@@ -232,7 +237,8 @@
 
 <!-- @ulu-demo
   title: Directory with Visual Header
-  description: An optional header row (`.data-list__header`) can be added for visual alignment on desktop. It is hidden from screen readers to maintain list semantics, and disappears when columns naturally stack.
+  description: |
+    An optional header row (`.data-list__header`) can be added for visual alignment on desktop. It is hidden from screen readers to maintain list semantics, and disappears when columns naturally stack.
 -->
 <ul class="data-list data-list--striped" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
   <li class="data-list__header" aria-hidden="true">
@@ -321,7 +327,8 @@
 
 <!-- @ulu-demo
   title: Interactive Rows (Proxy Click)
-  description: For clickable rows, use the `.data-list--clickable` modifier to apply hover states and cursor styling. Combine this with the `data-ulu-proxy-click` attribute to route clicks anywhere on the row to the primary link inside it.
+  description: |
+    For clickable rows, use the `.data-list--clickable` modifier to apply hover states and cursor styling. Combine this with the `data-ulu-proxy-click` attribute to route clicks anywhere on the row to the primary link inside it.
 -->
 <ul class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
   <li class="data-list__item" data-ulu-proxy-click>
@@ -384,7 +391,8 @@
 
 <!-- @ulu-demo
   title: Simple Link List (Anchor Rows)
-  description: For simple navigation lists where the entire row is a literal link, you can use `<a>` tags as the list items. The structural container uses a `<div>` instead of a `<ul>`, but the component works identically.
+  description: |
+    For simple navigation lists where the entire row is a literal link, you can use `<a>` tags as the list items. The structural container uses a `<div>` instead of a `<ul>`, but the component works identically.
 -->
 <div class="data-list data-list--clickable" style="--ulu-data-list-columns: auto 1fr auto auto; --ulu-data-list-columns-stacked: auto 1fr auto;">
   <a href="#" class="data-list__item">
@@ -455,7 +463,8 @@
 
 <!-- @ulu-demo
   title: Mixing Layout Strategies (Inline Wrapping)
-  description: Not everything needs to be perfectly aligned to a grid track. If you have a collection of small data points (like tags) that you want to flow naturally on all screen sizes, simply place them together in a single column and let standard HTML inline behavior handle the wrapping.
+  description: |
+    Not everything needs to be perfectly aligned to a grid track. If you have a collection of small data points (like tags) that you want to flow naturally on all screen sizes, simply place them together in a single column and let standard HTML inline behavior handle the wrapping.
 -->
 <ul class="data-list" style="--ulu-data-list-columns: 1fr auto; --ulu-data-list-columns-stacked: 100%;">
   <li class="data-list__item">

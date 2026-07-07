@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Centered Modal
-  description: The default centered modal configuration, triggered by a button.
+  description: |
+    The default centered modal configuration, triggered by a button.
 -->
 <button class="button" data-ulu-dialog-trigger="modal-example-center">Open Modal</button>
 
@@ -15,10 +16,20 @@
 </div>
 
 <!-- @ulu-demo
-  title: Right Sidebar Modal
-  description: "Using the position: 'right' option to create a sidebar-style modal."
+  title: Positions
+  description: |
+    Modals can be attached to any edge of the viewport. Left and right positions create full-height sidebars.
 -->
-<button class="button" data-ulu-dialog-trigger="modal-example-sidebar">Open Sidebar</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-left">Left Sidebar</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-sidebar">Right Sidebar</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-top">Top Panel</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-bottom">Bottom Panel</button>
+
+<div id="modal-example-left" 
+     data-ulu-modal-builder='{ "title": "Navigation", "position": "left" }' 
+     hidden>
+  <p>This modal slides in from the left and spans the full height of the viewport.</p>
+</div>
 
 <div id="modal-example-sidebar" 
      data-ulu-modal-builder='{ "title": "Settings", "position": "right" }' 
@@ -32,11 +43,53 @@
   </div>
 </div>
 
+<div id="modal-example-top" 
+     data-ulu-modal-builder='{ "position": "top" }' 
+     class="crop-margins" 
+     hidden>
+  <p>This is a header-style panel at the top of the viewport, rendered without a title bar.</p>
+  <button class="button" data-ulu-dialog-close>Close</button>
+</div>
+
+<div id="modal-example-bottom" 
+     data-ulu-modal-builder='{ "position": "bottom" }' 
+     class="crop-margins" 
+     hidden>
+  <p>This is a footer-style panel at the bottom of the viewport, rendered without a title bar.</p>
+  <button class="button" data-ulu-dialog-close>Close</button>
+</div>
+
 <!-- @ulu-demo
-  title: Fullscreen Modal
-  description: A modal that fills the entire viewport, useful for immersive content or complex tasks.
+  title: Modals with Footers
+  description: |
+    Add a persistent footer area by pointing to an external element or passing HTML content.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-footer-element">Footer Element</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-footer-html">Footer HTML</button>
+
+<div id="modal-example-footer-element" 
+     data-ulu-modal-builder='{ "title": "Confirm Action", "footerElement": "#modal-example-footer-content" }' 
+     hidden>
+  <p>This modal body references an external element for its action buttons.</p>
+</div>
+<div id="modal-example-footer-content">
+  <button class="button button--outline" data-ulu-dialog-close>Cancel</button>
+  <button class="button" data-ulu-dialog-close>Submit</button>
+</div>
+
+<div id="modal-example-footer-html" 
+     data-ulu-modal-builder='{ "title": "Information", "footerHtml": "System ready." }' 
+     hidden>
+  <p>The footer text in this modal is populated dynamically from builder options.</p>
+</div>
+
+<!-- @ulu-demo
+  title: Fullscreen Modal & Overflow
+  description: |
+    Viewport-filling modals are ideal for immersive content or complex tasks.
 -->
 <button class="button" data-ulu-dialog-trigger="modal-example-fullscreen">View Fullscreen</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-fullscreen-overflow">View Fullscreen with Scroll</button>
 
 <div id="modal-example-fullscreen" 
      data-ulu-modal-builder='{ "title": "Editor Mode", "size": "fullscreen" }' 
@@ -46,4 +99,144 @@
     <p>This view allows for focused interaction with complex data or large media assets without the distraction of the underlying page.</p>
     <button class="button" data-ulu-dialog-close>Exit Fullscreen</button>
   </div>
+</div>
+
+<div id="modal-example-fullscreen-overflow" 
+     data-ulu-modal-builder='{ "title": "Scrollable Content Test", "size": "fullscreen" }' 
+     hidden>
+  <div class="container">
+    <div style="width: 2000px; padding: 1rem; background: #f0f0f0; margin-bottom: 2rem;">
+      <strong>Wide Content Block:</strong> This block is explicitly 2000px wide. It forces horizontal scrolling to ensure the fullscreen modal boundaries and internal flex layout do not break or bleed out of the viewport.
+    </div>
+    <h3 class="h3">Section 1</h3>
+    <p>This is a paragraph to test vertical scrolling and boundary limits inside the fullscreen modal.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+    <h3 class="h3">Section 2</h3>
+    <p>More text to expand the height of the modal body and trigger scrollbars.</p>
+    <p>Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+    <button class="button" data-ulu-dialog-close>Exit</button>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Fullscreen on Mobile
+  description: |
+    Use `fullscreenMobile: true` to display the modal normally on desktop but automatically switch it to fullscreen on small screens.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-fullscreen-mobile-center">Center (Default)</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-fullscreen-mobile-right">Right Sidebar</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-fullscreen-mobile-top">Top Panel</button>
+
+<div id="modal-example-fullscreen-mobile-center" 
+     data-ulu-modal-builder='{ "title": "Adaptive Center", "fullscreenMobile": true }' 
+     hidden>
+  <p>Centered on desktop screens; fills the screen on mobile devices.</p>
+</div>
+
+<div id="modal-example-fullscreen-mobile-right" 
+     data-ulu-modal-builder='{ "title": "Adaptive Sidebar", "position": "right", "fullscreenMobile": true }' 
+     hidden>
+  <p>Right sidebar layout on desktop screens; fills the screen on mobile devices.</p>
+</div>
+
+<div id="modal-example-fullscreen-mobile-top" 
+     data-ulu-modal-builder='{ "title": "Adaptive Top Panel", "position": "top", "fullscreenMobile": true }' 
+     hidden>
+  <p>Top panel on desktop screens; fills the screen on mobile devices.</p>
+</div>
+
+<!-- @ulu-demo
+  title: Embeddable Content (Auto Iframe Layout)
+  description: |
+    The `autoIframe` option automatically detects if an iframe is the single child of the dialog body. It eliminates body padding and handles scaling or full-height embeds.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-youtube">YouTube (Auto Aspect Ratio)</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-iframe-fill">Document Iframe (Wikipedia Fill)</button>
+
+<div id="modal-example-youtube" 
+     data-ulu-modal-builder='{ "title": "YouTube Embed (Auto Aspect Ratio)", "autoIframe": true }' 
+     hidden>
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/y0sF5xhGreA?si=aRdiK0Xzf3zvHP_E" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen
+  ></iframe>
+</div>
+
+<div id="modal-example-iframe-fill" 
+     data-ulu-modal-builder='{ "title": "External Page Embed", "size": "large", "autoIframe": true }' 
+     hidden>
+  <iframe 
+    src="https://en.wikipedia.org/wiki/IFrame" 
+    title="Wikipedia article on IFrames"
+  ></iframe>
+</div>
+
+<!-- @ulu-demo
+  title: Resizable Modals
+  description: |
+    Make dialogs resizable by setting `allowResize: true`. Sidebars can be dragged horizontally, while centered modals use the default diagonal resize handle.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-center-resize">Center Resizable</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-right-resize">Right Sidebar Resizable</button>
+
+<div id="modal-example-center-resize" 
+     data-ulu-modal-builder='{ "title": "Centered Resizing", "allowResize": true }' 
+     hidden>
+  <p>Drag the handle at the bottom-right corner of the modal box to resize it freely.</p>
+</div>
+
+<div id="modal-example-right-resize" 
+     data-ulu-modal-builder='{ "title": "Sidebar Resizing", "position": "right", "allowResize": true }' 
+     hidden>
+  <p>Drag the left edge of this sidebar panel to change its width.</p>
+</div>
+
+<!-- @ulu-demo
+  title: Click Behavior & Backdrops
+  description: |
+    Customize outside click rules, disable backdrops, or run the modal as a non-modal overlay.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-no-outside">No Outside Click Close</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-no-backdrop">No Backdrop</button>
+<button class="button" data-ulu-dialog-trigger="modal-example-nonmodal">Non-Modal Bottom Banner</button>
+
+<div id="modal-example-no-outside" 
+     data-ulu-modal-builder='{ "title": "Persistent Dialogue", "clickOutsideCloses": false }' 
+     hidden>
+  <p>Clicking outside the modal bounds will not close it. You must use the close button or ESC key.</p>
+  <button class="button" data-ulu-dialog-close>Close</button>
+</div>
+
+<div id="modal-example-no-backdrop" 
+     data-ulu-modal-builder='{ "title": "No Backdrop", "noBackdrop": true, "preventScroll": false }' 
+     hidden>
+  <p>This modal renders without an overlay backdrop. The rest of the page remains visible and accessible.</p>
+  <button class="button" data-ulu-dialog-close>Close</button>
+</div>
+
+<div id="modal-example-nonmodal" 
+     data-ulu-modal-builder='{ "title": "System Alert", "position": "bottom", "noBackdrop": true, "nonModal": true }' 
+     hidden>
+  <p>This is a non-modal bottom notification panel. It doesn't restrict keyboard navigation or block underlying clicks.</p>
+</div>
+
+<!-- @ulu-demo
+  title: Media Embeds (Video)
+  description: |
+    Render native video players styled to fit flush against the modal boundaries.
+-->
+<button class="button" data-ulu-dialog-trigger="modal-example-video">Open Video Modal</button>
+
+<div id="modal-example-video" 
+     data-ulu-modal-builder='{ "title": "Native Video Player", "bodyFills": true }' 
+     hidden>
+  <video controls class="full-width" style="display: block; width: 100%;">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+  </video>
 </div>

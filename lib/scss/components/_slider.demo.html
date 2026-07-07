@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Image Slider
-  description: A standard carousel for cycling through images.
+  description: |
+    A standard carousel for cycling through images.
 -->
 <div class="slider" data-ulu-slider>
   <div class="slider__control-context">
@@ -15,14 +16,55 @@
         <img src="https://picsum.photos/id/12/800/400" alt="Slide 3">
       </li>
     </ul>
-    <div class="Slider__controls">
-      <button class="button button--icon Slider__control-button Slider__control-button--previous" data-ulu-slider-previous aria-label="Previous Slide">
+    <div class="slider__controls">
+      <button class="button button--icon slider__control-button slider__control-button--previous" data-ulu-slider-previous aria-label="Previous Slide">
         <span class="css-icon css-icon--angle-left"></span>
       </button>
-      <button class="button button--icon Slider__control-button Slider__control-button--next" data-ulu-slider-next aria-label="Next Slide">
+      <button class="button button--icon slider__control-button slider__control-button--next" data-ulu-slider-next aria-label="Next Slide">
         <span class="css-icon css-icon--angle-right"></span>
       </button>
     </div>
   </div>
-  <div class="Slider__nav" data-ulu-slider-nav></div>
+  <div class="slider__nav" data-ulu-slider-nav></div>
+</div>
+
+<!-- @ulu-demo
+  title: Text Content Slider (Quotes)
+  description: |
+    A text carousel utilizing the `pull-quote` layout within slides.
+-->
+<div class="slider slider--small slider--inset-controls" data-ulu-slider='{"transitionFade":false}'>
+  <div class="slider__control-context" data-ulu-slider-control-context>
+    <div class="slider__track-crop" data-ulu-slider-track-container>
+      <ul class="slider__track" data-ulu-slider-track>
+        
+        <li class="slider__slide" data-ulu-slider-slide>
+          <figure class="pull-quote">
+            <blockquote class="pull-quote__body">
+              <p><strong>"The only limit to our realization of tomorrow will be our doubts of today."</strong></p>
+              <p><a href="#">Learn More</a></p>
+            </blockquote>
+            <figcaption class="pull-quote__author">
+              <strong class="pull-quote__author-name">Franklin D. Roosevelt</strong>
+              <span class="pull-quote__author-title">Former President</span>
+            </figcaption>
+          </figure>
+        </li>
+
+        <li class="slider__slide" data-ulu-slider-slide>
+          <figure class="pull-quote">
+            <blockquote class="pull-quote__body">
+              <p><strong>"Quality is not an act, it is a habit."</strong></p>
+              <p><a href="#">Learn More</a></p>
+            </blockquote>
+            <figcaption class="pull-quote__author">
+              <strong class="pull-quote__author-name">Aristotle</strong>
+              <span class="pull-quote__author-title">Philosopher</span>
+            </figcaption>
+          </figure>
+        </li>
+
+      </ul>
+    </div>
+  </div>
 </div>

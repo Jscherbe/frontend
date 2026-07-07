@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Card
-  description: A standard card with a title, body content, and a footer.
+  description: |
+    A standard card with a title, body content, and a footer.
 -->
 <article class="card">
   <div class="card__body">
@@ -16,7 +17,8 @@
 
 <!-- @ulu-demo
   title: Card with Image
-  description: A card that includes a featured image at the top.
+  description: |
+    A card that includes a featured image at the top.
 -->
 <article class="card">
   <div class="card__image">
@@ -32,7 +34,8 @@
 
 <!-- @ulu-demo
   title: Clickable Card (Proxy Click)
-  description: A card where the entire area is clickable, using a proxy click pattern for accessibility.
+  description: |
+    A card where the entire area is clickable, using a proxy click pattern for accessibility.
 -->
 <article class="card" data-ulu-proxy-click>
   <div class="card__image">
@@ -47,3 +50,76 @@
     </div>
   </div>
 </article>
+
+<!-- @ulu-demo
+  title: Horizontal Card
+  description: |
+    The `card--horizontal` class places the media (image/icon) side-by-side with the card content body.
+-->
+<article class="card card--horizontal">
+  <div class="card__image">
+    <img src="https://picsum.photos/id/1040/600/400" alt="Card Image">
+  </div>
+  <div class="card__body">
+    <div class="card__main">
+      <h3 class="card__title">Horizontal Layout</h3>
+      <p>Perfect for list-style feeds where you want a landscape image or an icon to sit next to the title and body text.</p>
+    </div>
+    <div class="card__footer">
+      <a href="#" class="button button--small">Read Article</a>
+    </div>
+  </div>
+</article>
+
+<!-- @ulu-demo
+  title: Overlay Card
+  description: |
+    The `card--overlay` class positions the card body and text directly on top of the featured background image.
+-->
+<article class="card card--overlay" style="min-height: 350px;">
+  <div class="card__image">
+    <img src="https://picsum.photos/id/1050/600/400" alt="Background Card Image">
+  </div>
+  <div class="card__body" style="background: rgba(0, 0, 0, 0.4); color: white;">
+    <div class="card__main">
+      <h3 class="card__title" style="color: white;">Overlay Layout</h3>
+      <p>The text content and body elements are layered on top of the background image, useful for high-contrast hero widgets.</p>
+    </div>
+    <div class="card__footer">
+      <a href="#" class="button button--small button--light">Read More</a>
+    </div>
+  </div>
+</article>
+
+<!-- @ulu-demo
+  title: Footer Alignment & Inline Layout
+  description: |
+    Use classes like `card--footer-end` to align actions or `card--footer-inline` for compact, horizontal footer actions.
+-->
+<div style="display: flex; flex-direction: column; gap: 1.5rem;">
+  <article class="card card--footer-end">
+    <div class="card__body">
+      <div class="card__main">
+        <h3 class="card__title">End-Aligned Footer</h3>
+        <p>This layout pushes the footer action buttons to the right-hand side.</p>
+      </div>
+    </div>
+    <div class="card__footer">
+      <a href="#" class="button button--small">Apply</a>
+    </div>
+  </article>
+
+  <article class="card card--footer-inline card--horizontal">
+    <div class="card__body">
+      <div class="card__main">
+        <h3 class="card__title">Inline Footer Elements</h3>
+        <p>This features a compact button inline with the card's details block.</p>
+      </div>
+      <div class="card__footer">
+        <button class="button button--small button--icon" aria-label="Favorite">
+          <span class="fas fa-star" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </article>
+</div>

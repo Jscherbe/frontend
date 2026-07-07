@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Basic Popover
-  description: A standard popover that appears near a trigger element, including a pointer arrow.
+  description: |
+    A standard popover that appears near a trigger element, including a pointer arrow.
 -->
 <div style="padding: 4rem 0;">
   <button class="button" data-ulu-popover-trigger>Toggle Popover</button>
@@ -14,7 +15,8 @@
 
 <!-- @ulu-demo
   title: Popover with Footer
-  description: Using the `popover__footer` element to add actions or metadata at the bottom.
+  description: |
+    Using the `popover__footer` element to add actions or metadata at the bottom.
 -->
 <div style="padding: 4rem 0;">
   <button class="button" data-ulu-popover-trigger>Open Menu</button>
@@ -34,8 +36,78 @@
 </div>
 
 <!-- @ulu-demo
+  title: Placement Options
+  description: |
+    Use the `placement` option under `floating` settings to position the popover relative to its trigger. Supported positions include `top`, `bottom`, `left`, and `right`.
+-->
+<div style="padding: 4rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger='{ "floating": { "placement": "top" } }'>
+      <span>Top Placement</span>
+    </button> 
+    <div class="popover" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>This popover is anchored to the top of its trigger.</p>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger='{ "floating": { "placement": "bottom" } }'>
+      <span>Bottom Placement</span>
+    </button> 
+    <div class="popover" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>This popover is anchored to the bottom of its trigger.</p>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger='{ "floating": { "placement": "left" } }'>
+      <span>Left Placement</span>
+    </button> 
+    <div class="popover" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>This popover is anchored to the left of its trigger.</p>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger='{ "floating": { "placement": "right" } }'>
+      <span>Right Placement</span>
+    </button> 
+    <div class="popover" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>This popover is anchored to the right of its trigger.</p>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Arrow-less Popovers
+  description: |
+    Remove the visual pointer arrow by simply omitting the `popover__arrow` element inside the container markup.
+-->
+<div style="padding: 2rem 0;">
+  <button class="button" type="button" data-ulu-popover-trigger>Toggle Popover (No Arrow)</button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner">
+      <p>This is a popover container without a pointer arrow pointing to the toggle button.</p>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
   title: Tooltip Modifier
-  description: The `popover--tooltip` modifier creates a smaller, non-interactive overlay typically used for labels.
+  description: |
+    The `popover--tooltip` modifier creates a smaller, non-interactive overlay typically used for labels.
 -->
 <div style="padding: 2rem 0;">
   <button class="button" data-ulu-popover-trigger='{ "floating": { "placement": "top" }, "trigger": "hover" }'>Hover Me</button>
@@ -45,4 +117,87 @@
     </div>
     <span class="popover__arrow" data-ulu-popover-arrow></span>
   </div>
+</div>
+
+<!-- @ulu-demo
+  title: Styling & Size Modifiers
+  description: |
+    Use modifier classes like `popover--no-padding` to remove padding, `popover--large`/`popover--large-x` for wider layouts, or `popover--prints` to keep the content visible when printing.
+-->
+<div style="padding: 2rem 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger='{"floating":{"strategy":"fixed"}}'>
+      <span>Fixed Placement</span>
+    </button> 
+    <div class="popover popover--fixed" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>Uses fixed positioning strategy for reliable rendering within constrained scroll containers.</p>
+      </div>
+      <div class="popover__footer">Fixed strategy</div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger>
+      <span>No Padding</span>
+    </button> 
+    <div class="popover popover--no-padding" data-ulu-popover-content>
+      <div class="popover__inner">
+        <div style="background-color: #333; padding: 1.5rem;">
+          <p style="margin: 0; color: white;">Edge-to-edge content block.</p>
+        </div>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger>
+      <span>Large Size</span>
+    </button> 
+    <div class="popover popover--large" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>This popover is wider, designed to accommodate larger quantities of content or detailed explanations.</p>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+
+  <div>
+    <button class="button" type="button" data-ulu-popover-trigger>
+      <span>Prints Option</span>
+    </button> 
+    <div class="popover popover--prints" data-ulu-popover-content>
+      <div class="popover__inner">
+        <p>This popover content remains visible in print media stylesheets.</p>
+      </div>
+      <span class="popover__arrow" data-ulu-popover-arrow></span>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Focusout Behavior
+  description: |
+    Use `"focusoutCloses": true` to automatically close the popover when focus moves out of the element tree (e.g. clicking links or buttons within).
+-->
+<div style="padding: 2rem 0;">
+  <button class="button" type="button" data-ulu-popover-trigger='{ "focusoutCloses" : true }'>
+    <span>Show Focusout Test</span>
+  </button> 
+  <div class="popover" data-ulu-popover-content>
+    <div class="popover__inner wysiwyg">
+      <ul class="list-lines list-lines--dense" style="margin: 0;">
+        <li><button class="button button--small" type="button">Focus inside stays open</button></li>
+        <li><a href="#focusout-demo-target" class="type-small">Goto target below (closes popover)</a></li>
+      </ul>
+    </div>
+    <span class="popover__arrow" data-ulu-popover-arrow></span>
+  </div>
+</div>
+
+<div class="callout margin-top" id="focusout-demo-target" tabindex="0">
+  <h4 class="h4">Target Anchor Section</h4>
+  <p>Clicking the link in the popover moves focus here and closes the popover.</p>
 </div>

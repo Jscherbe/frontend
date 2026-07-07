@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Horizontal Tabs
-  description: A standard tabbed interface with labels positioned horizontally above the content.
+  description: |
+    A standard tabbed interface with labels positioned horizontally above the content.
 -->
 <div class="tabs">
   <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
@@ -21,7 +22,8 @@
 
 <!-- @ulu-demo
   title: Vertical Tabs
-  description: Using the `tabs--vertical` modifier to place tab labels in a sidebar layout on larger screens.
+  description: |
+    Using the `tabs--vertical` modifier to place tab labels in a sidebar layout on larger screens.
 -->
 <div class="tabs tabs--vertical">
   <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": true }'>
@@ -41,8 +43,31 @@
 </div>
 
 <!-- @ulu-demo
+  title: Full Width Tabs
+  description: |
+    Use the `tabs--full-width` modifier to make the tab buttons span evenly across the entire width of their container.
+-->
+<div class="tabs tabs--full-width">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+    <button role="tab" id="fw-tab-1" aria-selected="true" aria-controls="fw-panel-1">Overview</button>
+    <button role="tab" id="fw-tab-2" aria-selected="false" aria-controls="fw-panel-2">Features</button>
+    <button role="tab" id="fw-tab-3" aria-selected="false" aria-controls="fw-panel-3">Pricing</button>
+  </div>
+  <div role="tabpanel" id="fw-panel-1" aria-labelledby="fw-tab-1">
+    <p>Get a high-level summary of what we offer, including a walkthrough of the core user interface.</p>
+  </div>
+  <div role="tabpanel" id="fw-panel-2" aria-labelledby="fw-tab-2" hidden>
+    <p>Explore our deep feature list, customization options, and third-party API integrations.</p>
+  </div>
+  <div role="tabpanel" id="fw-panel-3" aria-labelledby="fw-tab-3" hidden>
+    <p>Flexible pricing tiers for teams of all sizes. Pay monthly or yearly with no contracts.</p>
+  </div>
+</div>
+
+<!-- @ulu-demo
   title: Sticky Horizontal Tabs
-  description: Using the `tabs--sticky` modifier to keep the horizontal tab labels visible at the top of the viewport when scrolling through long panel content.
+  description: |
+    Using the `tabs--sticky` modifier to keep the horizontal tab labels visible at the top of the viewport when scrolling through long panel content.
 -->
 <div class="tabs tabs--sticky">
   <div role="tablist" data-ulu-tablist='{ "equalHeights": false }'>
@@ -65,7 +90,8 @@
 
 <!-- @ulu-demo
   title: Sticky Vertical Tabs
-  description: Using both `tabs--vertical` and `tabs--sticky` modifiers. On large screens, the tab labels stick within their grid column as you scroll the adjacent panel. On smaller screens, they behave like sticky horizontal tabs.
+  description: |
+    Using both `tabs--vertical` and `tabs--sticky` modifiers. On large screens, the tab labels stick within their grid column as you scroll the adjacent panel. On smaller screens, they behave like sticky horizontal tabs.
 -->
 <div class="tabs tabs--vertical tabs--sticky">
   <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": false }'>
@@ -83,5 +109,41 @@
   </div>
   <div role="tabpanel" id="sv-panel-3" aria-labelledby="sv-tab-3" hidden>
     <p>This is chapter 3 content.</p>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Print-Friendly Tabs
+  description: |
+    Use the `tabs--print` modifier to ensure all tab panels are rendered fully expanded in print stylesheets rather than hidden.
+-->
+<div class="tabs tabs--print">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+    <button role="tab" id="print-tab-1" aria-selected="true" aria-controls="print-panel-1">Tab 1</button>
+    <button role="tab" id="print-tab-2" aria-selected="false" aria-controls="print-panel-2">Tab 2</button>
+  </div>
+  <div role="tabpanel" id="print-panel-1" aria-labelledby="print-tab-1">
+    <p>This panel content, along with the adjacent panel's content, will be expanded and visible when the page is printed or converted to PDF.</p>
+  </div>
+  <div role="tabpanel" id="print-panel-2" aria-labelledby="print-tab-2" hidden>
+    <p>This is the second panel's print content. It will not be hidden when printing.</p>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: URL Hash Navigation
+  description: |
+    Setting `"openByUrlHash": true` allows tabs to synchronize their active state with the browser's URL hash, letting users deep-link directly to a specific tab.
+-->
+<div class="tabs">
+  <div role="tablist" data-ulu-tablist='{ "equalHeights": true, "openByUrlHash": true }'>
+    <button role="tab" id="hash-tab-1" aria-selected="true" aria-controls="hash-panel-1">Tab One</button>
+    <button role="tab" id="hash-tab-2" aria-selected="false" aria-controls="hash-panel-2">Tab Two</button>
+  </div>
+  <div role="tabpanel" id="hash-panel-1" aria-labelledby="hash-tab-1">
+    <p>Click the second tab to observe how the URL hash changes, or use the hash links to navigate directly.</p>
+  </div>
+  <div role="tabpanel" id="hash-panel-2" aria-labelledby="hash-tab-2" hidden>
+    <p>You have successfully deep-linked to the second tab panel using URL hash parameters.</p>
   </div>
 </div>

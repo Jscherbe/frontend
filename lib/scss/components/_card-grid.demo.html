@@ -1,6 +1,7 @@
 <!-- @ulu-demo
   title: Card Grid Defaults
-  description: The standard card grid uses CSS grid to distribute items evenly. It automatically wraps cards as the screen size changes.
+  description: |
+    The standard card grid uses CSS grid to distribute items evenly. It automatically wraps cards as the screen size changes.
 -->
 <ul class="card-grid">
   <li class="card-grid__item">
@@ -64,7 +65,8 @@
 
 <!-- @ulu-demo
   title: Compact Grid
-  description: The `card-grid--compact` modifier reduces the gap between items, which is useful for smaller cards or dense data displays.
+  description: |
+    The `card-grid--compact` modifier reduces the gap between items, which is useful for smaller cards or dense data displays.
 -->
 <ul class="card-grid card-grid--compact">
   <li class="card-grid__item">
@@ -111,7 +113,8 @@
 
 <!-- @ulu-demo
   title: Horizontal Card Layouts (Testing minmax Fix)
-  description: The following examples use tall images with minimal text to verify that the `minmax(0, 1fr)` fix prevents images from forcing the card height beyond the intended `horizontal-min-height`. This ensures consistent card heights regardless of image dimensions.
+  description: |
+    The following examples use tall images with minimal text to verify that the `minmax(0, 1fr)` fix prevents images from forcing the card height beyond the intended `horizontal-min-height`. This ensures consistent card heights regardless of image dimensions.
 -->
 <ul class="card-grid card-grid--one-column card-grid--rows-fit">
   <!-- 1. Standard Horizontal (Body + Footer) -->
@@ -190,6 +193,7 @@
 <!-- @ulu-demo
   title: Horizontal Card Layouts (Image Fit)
   description: |
+    |
     Using `card--image-fit` ensures that the images are contained within the image area (`object-fit: contain`), which is ideal for varying aspect ratios.
 -->
 <ul class="card-grid card-grid--one-column">
@@ -273,7 +277,8 @@
 
 <!-- @ulu-demo
   title: Constrained Container
-  description: Card grids are often placed within constrained containers to maintain readability and visual balance on larger screens.
+  description: |
+    Card grids are often placed within constrained containers to maintain readability and visual balance on larger screens.
 -->
 <ul class="card-grid">
   <li class="card-grid__item">

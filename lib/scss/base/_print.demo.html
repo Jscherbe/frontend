@@ -1,0 +1,19 @@
+<!-- @ulu-demo
+  title: Test Printing Page
+  description: |
+    Use the `data-ulu-print` attribute to trigger the native browser print dialogue for the current page.
+-->
+<button class="button" data-ulu-print>Print Page</button>
+
+<!-- @ulu-demo
+  title: Print Specific Element
+  description: |
+    Constrain printing to a specific element by passing its selector to the `data-ulu-print` options map.
+-->
+<div>
+  <button class="button" data-ulu-print='{ "element" : "#test-print-element" }'>Print Element</button>
+  
+  <div id="test-print-element" class="callout margin-top">
+    <strong>Print Targeted Box:</strong> This callout content should be the only thing visible when the print layout is activated.
+  </div>
+</div>

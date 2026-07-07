@@ -1,13 +1,15 @@
 <!-- @ulu-demo
   title: Basic Donut Chart
-  description: A circular progress indicator using an SVG donut chart structure.
+  description: |
+    A circular progress indicator using an SVG donut chart structure.
 -->
-<div class="progress-circle">
+<div class="progress-circle progress-circle--warning">
+  <strong class="hidden-visually">Course Progress</strong>
   <div class="progress-circle__chart">
     <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
-      <circle class="progress-circle__chart-track" cx="16" cy="16" r="11"></circle>
-      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="11" style="stroke-dasharray: 65 100;"></circle>
-      <circle class="progress-circle__chart-mask" cx="16" cy="16"></circle>
+      <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+      <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 65 100;" />
+      <circle class="progress-circle__chart-mask" cx="16" cy="16" />
     </svg>
     <strong class="progress-circle__chart-value">65%</strong>
   </div>
@@ -15,30 +17,113 @@
 
 <!-- @ulu-demo
   title: Pie Chart Variant
-  description: Using the `progress-circle--pie` modifier to create a solid circular progress indicator.
+  description: |
+    Using the `progress-circle--pie` modifier to create a solid circular progress indicator.
 -->
-<div class="progress-circle progress-circle--pie">
+<div class="progress-circle progress-circle--pie progress-circle--warning">
+  <strong class="hidden-visually">Course Progress</strong>
   <div class="progress-circle__chart">
     <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
-      <circle class="progress-circle__chart-track" cx="16" cy="16" r="16"></circle>
-      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="16" style="stroke-dasharray: 40 100;"></circle>
-      <circle class="progress-circle__chart-mask" cx="16" cy="16" r="16"></circle>
+      <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+      <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 65 100;" />
+      <circle class="progress-circle__chart-mask" cx="16" cy="16" />
     </svg>
-    <strong class="progress-circle__chart-value" style="color: white;">40%</strong>
+    <strong class="progress-circle__chart-value" style="color: white;">65%</strong>
   </div>
 </div>
 
 <!-- @ulu-demo
-  title: Small Progress Circle
-  description: Using the `progress-circle--small` modifier for space-constrained layouts.
+  title: Small Size & Outside Label
+  description: |
+    Using the `progress-circle--small` and `progress-circle--outside` modifiers to position the value text outside the circular chart.
 -->
-<div class="progress-circle progress-circle--small">
+<div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+  <div class="progress-circle progress-circle--small progress-circle--outside progress-circle--warning">
+    <strong class="hidden-visually">Course Progress</strong>
+    <div class="progress-circle__chart">
+      <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+        <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+        <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 65 100;" />
+        <circle class="progress-circle__chart-mask" cx="16" cy="16" />
+      </svg>
+    </div>
+    <strong class="progress-circle__value type-small-x">65%</strong>
+  </div>
+
+  <div class="progress-circle progress-circle--small progress-circle--outside progress-circle--outside-below progress-circle--warning">
+    <strong class="hidden-visually">Course Progress</strong>
+    <div class="progress-circle__chart">
+      <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+        <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+        <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 65 100;" />
+        <circle class="progress-circle__chart-mask" cx="16" cy="16" />
+      </svg>
+    </div>
+    <strong class="progress-circle__value type-small-x">65%</strong>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Status Colors
+  description: |
+    The progress chart colors can change dynamically based on status classes like `progress-circle--danger` (typically under 30%), `progress-circle--warning` (30% to 99%), and `progress-circle--success` (100%).
+-->
+<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+  <div>
+    <h4>Danger (25%)</h4>
+    <div class="progress-circle progress-circle--danger">
+      <div class="progress-circle__chart">
+        <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+          <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+          <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 25 100;" />
+          <circle class="progress-circle__chart-mask" cx="16" cy="16" />
+        </svg>
+        <strong class="progress-circle__chart-value">25%</strong>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4>Warning (75%)</h4>
+    <div class="progress-circle progress-circle--warning">
+      <div class="progress-circle__chart">
+        <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+          <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+          <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 75 100;" />
+          <circle class="progress-circle__chart-mask" cx="16" cy="16" />
+        </svg>
+        <strong class="progress-circle__chart-value">75%</strong>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h4>Success (100%)</h4>
+    <div class="progress-circle progress-circle--success">
+      <div class="progress-circle__chart">
+        <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
+          <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+          <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 101 100;" />
+          <circle class="progress-circle__chart-mask" cx="16" cy="16" />
+        </svg>
+        <strong class="progress-circle__chart-value">100%</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: No-Mask Variant
+  description: |
+    Use the `progress-circle--no-mask` class to prevent the central mask circle from rendering (especially useful in solid pie layouts).
+-->
+<div class="progress-circle progress-circle--pie progress-circle--small progress-circle--outside progress-circle--no-mask progress-circle--warning">
+  <strong class="hidden-visually">Course Progress</strong>
   <div class="progress-circle__chart">
     <svg class="progress-circle__chart-svg" viewBox="0 0 32 32">
-      <circle class="progress-circle__chart-track" cx="16" cy="16" r="9.5"></circle>
-      <circle class="progress-circle__chart-pie" cx="16" cy="16" r="9.5" style="stroke-dasharray: 85 100;"></circle>
-      <circle class="progress-circle__chart-mask" cx="16" cy="16"></circle>
+      <circle class="progress-circle__chart-track" r="16" cx="16" cy="16" />
+      <circle class="progress-circle__chart-pie" r="16" cx="16" cy="16" style="stroke-dasharray: 65 100;" />
     </svg>
   </div>
-  <div class="progress-circle__value">85% Complete</div>
+  <strong class="progress-circle__value type-small-x">65%</strong>
 </div>

@@ -1,11 +1,12 @@
 <!-- @ulu-demo
   title: Theme Switching
-  description: Using the `theme-light` and `theme-dark` classes to change the visual context of a section.
+  description: |
+    Using the `theme-light` and `theme-dark` classes to change the visual context of a section dynamically.
 -->
 <div>
   <button class="button" data-ulu-theme-toggle='{ "target": "#theme-demo-box" }'>Toggle Theme</button>
   
-  <div id="theme-demo-box" class="demo-theme-box theme-light padding">
+  <div id="theme-demo-box" class="demo-theme-box theme-light padding margin-top">
     <h3 class="h3">Themed Content</h3>
     <p>This section changes its colors based on the applied theme class.</p>
     <button class="button">Themed Button</button>
@@ -14,12 +15,48 @@
 
 <!-- @ulu-demo
   title: Theme Inversion
-  description: The `theme-inverse` utility automatically applies the opposite theme (e.g., dark inside light) based on the current context.
+  description: |
+    The `theme-inverse` utility automatically applies the opposite theme (e.g., dark inside light) based on the current parent context.
 -->
-<div class="demo-theme-box theme-light">
-  <h3 class="h3">Light Context</h3>
-  <div class="demo-theme-box theme-inverse padding margin-top">
-    <p>This box is automatically inverted to the dark theme because its parent is light.</p>
-    <button class="button">Inverted Button</button>
+<div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+  <div class="demo-theme-box theme-light padding" style="flex: 1; min-width: 250px;">
+    <h3 class="h3">Light Theme Context</h3>
+    <div class="demo-theme-box theme-inverse padding margin-top">
+      <h4 class="h4">Inverse Box (Dark)</h4>
+      <p>This box has `theme-inverse` applied, so it automatically becomes dark.</p>
+      <button class="button">Button</button>
+    </div>
+  </div>
+
+  <div class="demo-theme-box theme-dark padding" style="flex: 1; min-width: 250px;">
+    <h3 class="h3">Dark Theme Context</h3>
+    <div class="demo-theme-box theme-inverse padding margin-top">
+      <h4 class="h4">Inverse Box (Light)</h4>
+      <p>This box has `theme-inverse` applied, so it automatically becomes light.</p>
+      <button class="button">Button</button>
+    </div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Fake Inversion Utility
+  description: |
+    The `theme-fake-invert` utility class uses CSS filter inversion to flip elements (like iframes or canvas widgets) that cannot accept CSS custom properties but still need to match the theme context.
+-->
+<div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+  <div class="demo-theme-box theme-dark padding" style="flex: 1; min-width: 250px;">
+    <h3 class="h3">Dark Theme Context</h3>
+    <p>Below is a div with hardcoded dark text on a light background, but inverted using the class `theme-fake-invert`.</p>
+    <div class="demo-theme-fake-widget theme-fake-invert padding margin-top">
+      <strong>Inverted Widget:</strong> This widget is now dark to match its container.
+    </div>
+  </div>
+
+  <div class="demo-theme-box theme-light padding" style="flex: 1; min-width: 250px;">
+    <h3 class="h3">Light Theme Context</h3>
+    <p>Below is a div with hardcoded light text on a dark background, but inverted using the class `theme-fake-invert`.</p>
+    <div class="demo-theme-fake-widget demo-theme-fake-widget--dark theme-fake-invert padding margin-top">
+      <strong>Inverted Widget:</strong> This widget is now light to match its container.
+    </div>
   </div>
 </div>
