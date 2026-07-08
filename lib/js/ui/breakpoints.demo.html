@@ -2,36 +2,52 @@
   title: Breakpoint Manager Demo
   description: |
     Interactive demo showcasing how the `BreakpointManager` detects media query transitions in JavaScript, triggers callbacks, and synchronizes with SCSS media queries. Resize the browser to view the changes.
-  nocontainer: true
+  noContainer: true
 -->
 <div class="container margin-bottom-large">
   <div id="info" style="padding: 1.5rem; background-color: #f7f7f7; border: 1px solid #ddd; border-radius: 4px;">
-    Current Breakpoint: <strong id="current-breakpoint">...</strong> <span id="breakpoint-range" style="color: #555;"></span><br>
+    Current Breakpoint: <strong id="current-breakpoint">...</strong> <span id="breakpoint-range"
+      style="color: #555;"></span><br>
     Resize Direction: <strong id="resize-direction">...</strong>
   </div>
 
   <h4 class="h4">1. min and max handlers</h4>
-  <p>The box below will be <strong>red</strong> when the viewport is below "medium" (testing medium.max()), and <strong>green</strong> when it is "medium" or larger (testing medium.min()).</p>
-  <div id="test-box-1" class="breakpoint-manager-box" style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;"></div>
+  <p>The box below will be <strong>red</strong> when the viewport is below "medium" (testing medium.max()), and
+    <strong>green</strong> when it is "medium" or larger (testing medium.min()).</p>
+  <div id="test-box-1" class="breakpoint-manager-box"
+    style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">
+  </div>
 
   <h4 class="h4 margin-top-large">2. only handler</h4>
   <p>This box will be <strong>blue</strong> only when the viewport is exactly at the "medium" breakpoint range.</p>
-  <div id="test-box-2" class="breakpoint-manager-box" style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white; background-color: #eee;"></div>
+  <div id="test-box-2" class="breakpoint-manager-box"
+    style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white; background-color: #eee;">
+  </div>
 
   <h4 class="h4 margin-top-large">3. on and off handlers</h4>
-  <p>This box turns <strong>purple</strong> when the "large" breakpoint is active, and reverts to grey when it is not.</p>
-  <div id="test-box-3" style="height: 80px; padding: 1rem; background-color: #eee; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px;"></div>
+  <p>This box turns <strong>purple</strong> when the "large" breakpoint is active, and reverts to grey when it is not.
+  </p>
+  <div id="test-box-3"
+    style="height: 80px; padding: 1rem; background-color: #eee; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px;">
+  </div>
 
   <h4 class="h4 margin-top-large">4. Removing handlers dynamically</h4>
   <p>This box initially turns yellow on "medium". Click the button to remove the handler.</p>
-  <div id="test-box-4" class="breakpoint-manager-box" style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; margin-bottom: 1rem;"></div>
+  <div id="test-box-4" class="breakpoint-manager-box"
+    style="height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; margin-bottom: 1rem;">
+  </div>
   <button id="remove-handler-btn" class="button">Remove handler for Box 4</button>
 
   <h4 class="h4 margin-top-large">5. SCSS & JS Parity Check</h4>
-  <p>The box on the left uses SCSS media queries, while the box on the right uses JS listeners. They should change colors in sync: none = blue, small = red, medium+ = green.</p>
+  <p>The box on the left uses SCSS media queries, while the box on the right uses JS listeners. They should change
+    colors in sync: none = blue, small = red, medium+ = green.</p>
   <div style="display: flex; gap: 1rem;">
-    <div class="breakpoint-manager-box breakpoint-manager-box--css-test" style="flex: 1; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">CSS Match</div>
-    <div id="test-box-5" class="breakpoint-manager-box" style="flex: 1; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">JS Match</div>
+    <div class="breakpoint-manager-box breakpoint-manager-box--css-test"
+      style="flex: 1; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">
+      CSS Match</div>
+    <div id="test-box-5" class="breakpoint-manager-box"
+      style="flex: 1; height: 80px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; color: white;">
+      JS Match</div>
   </div>
 </div>
 

@@ -25,7 +25,7 @@ ${ when(demo.description, d => `<p>${ d }</p>`) }
 </div>
 
 <!-- Live Preview (Unconstrained) -->
-<div class="margin-top-large margin-bottom-large">
+<div>
   ${ when(isFullscreen, () => `
     <div class="container">
       <button class="button" data-ulu-dialog-trigger="${ modalId }">
@@ -109,7 +109,7 @@ export default ({ title, info, groupName }, markup) => {
   </div>
 </div>
 
-<div class="tabs tabs--full-width margin-top-large">
+<div class="tabs tabs--full-width">
   <div class="container">
     <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
       <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
@@ -124,13 +124,13 @@ ${ demosMarkup }
 {% endrenderTemplate %}
 {% endcapture %}
     
-    <div class="container margin-top-large">
+    <div class="container">
       <div class="page-toc page-toc--inline margin-bottom-large">
         {{ demosHtml | toc }}
       </div>
     </div>
     
-    <div class="margin-top-large">
+    <div>
       {{ demosHtml }}
     </div>
   </div>
@@ -142,12 +142,12 @@ ${ markup }
 {% endrenderTemplate %}
 {% endcapture %}
     
-    <div class="container margin-top-large">
+    <div class="container">
       <div class="page-toc page-toc--inline margin-bottom-large">
         {{ apiHtml | toc }}
       </div>
       
-      <div class="wysiwyg margin-top-large">
+      <div class="wysiwyg">
         {{ apiHtml }}
       </div>
     </div>
@@ -168,11 +168,11 @@ ${ markup }
 {% endrenderTemplate %}
 {% endcapture %}
   
-  <div class="page-toc page-toc--inline margin-bottom-large">
+  <div class="page-toc page-toc--inline">
     {{ apiHtml | toc }}
   </div>
   
-  <div class="wysiwyg margin-top-large">
+  <div class="wysiwyg">
     {{ apiHtml }}
   </div>
 </div>

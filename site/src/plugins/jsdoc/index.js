@@ -14,6 +14,10 @@ const isSubdir = (parent, dir) => {
 const src = path.resolve("./lib/js/"); // cwd
 const dist = path.resolve("./site/pages/javascript/");
 
+const formatTitle = (str) => {
+  return str.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+};
+
 let modalCount = 0;
 const renderDemo = (demo, title) => {
   const isFullscreen = demo.previewMode === "fullscreen" || demo.fullscreen;
@@ -34,7 +38,7 @@ ${ demo.description ? `<p>${ demo.description }</p>` : "" }
 </div>
 
 <!-- Live Preview (Unconstrained) -->
-<div class="margin-top-large margin-bottom-large">
+<div>
   ${ isFullscreen ? `
     <div class="container">
       <button class="button" data-ulu-dialog-trigger="${ modalId }">
@@ -96,14 +100,12 @@ ${ componentHtml }
 };
 
 function cleanOutputDir() {
+  if (!fs.existsSync(dist)) return;
   fs.readdirSync(dist)
-    .filter(file => {
+    .forEach(item => {
       // Files we setup manually
-      const exclude = ["index.md"];
-      return !exclude.includes(file) && file.endsWith("md")
-    })
-    .forEach(file => {
-      fs.removeSync(path.join(dist, file));
+      if (item === "index.md") return;
+      fs.removeSync(path.join(dist, item));
     });
 }
 
@@ -142,20 +144,28 @@ async function output() {
       "heading-depth" : 1
     });
     
-    const urlKey = urlize(moduleName);
-    const demoKey = path.basename(moduleName);
+    const parts = moduleName.split("/");
+    const dirPart = parts.slice(0, -1).join("/");
+    const filePart = parts[parts.length - 1];
+
+    const targetDir = path.join(dist, dirPart);
+    fs.ensureDirSync(targetDir);
+
+    const demoKey = filePart;
     const demos = cachedSnippets[demoKey] || [];
     
-    const filename = `${ urlKey }.md`;
-    const filepath = path.resolve(path.join(dist, filename));
-    const content = outputTemplate(moduleName, markdown, demos);
+    const filename = `${ urlize(filePart) }.md`;
+    const filepath = path.resolve(path.join(targetDir, filename));
+    
+    const formattedPageTitle = formatTitle(urlize(filePart));
+    const content = outputTemplate(moduleName, formattedPageTitle, markdown, demos);
     fs.writeFileSync(filepath, content);
   }
 }
 
 
-function outputTemplate(title, content, demos = []) {
-  const key = urlize(title);
+function outputTemplate(moduleName, pageTitle, content, demos = []) {
+  const key = urlize(moduleName);
   const layout = "sassdoc";
   const toc = false;
   const tocInline = true;
@@ -166,17 +176,17 @@ function outputTemplate(title, content, demos = []) {
     const panelDemosId = `panel-${ key }-demos`;
     const panelApiId = `panel-${ key }-api`;
 
-    const demosMarkup = demos.map(d => renderDemo(d, title)).join("\n\n");
+    const demosMarkup = demos.map(d => renderDemo(d, pageTitle)).join("\n\n");
 
     return `\
 ---
-title: ${ title }
+title: ${ pageTitle }
 layout: ${ layout }
 toc: ${ toc }
 tocInline: ${ tocInline }
 ---
 
-<div class="tabs tabs--full-width margin-top-large">
+<div class="tabs tabs--full-width">
   <div class="container">
     <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
       <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
@@ -191,13 +201,13 @@ ${ demosMarkup }
 {% endrenderTemplate %}
 {% endcapture %}
     
-    <div class="container margin-top-large">
+    <div class="container">
       <div class="page-toc page-toc--inline margin-bottom-large">
         {{ demosHtml | toc }}
       </div>
     </div>
     
-    <div class="margin-top-large">
+    <div>
       {{ demosHtml }}
     </div>
   </div>
@@ -209,12 +219,12 @@ ${ content }
 {% endrenderTemplate %}
 {% endcapture %}
     
-    <div class="container margin-top-large">
+    <div class="container">
       <div class="page-toc page-toc--inline margin-bottom-large">
         {{ apiHtml | toc }}
       </div>
       
-      <div class="wysiwyg margin-top-large api-docs">
+      <div class="wysiwyg api-docs">
         {{ apiHtml }}
       </div>
     </div>
@@ -225,7 +235,7 @@ ${ content }
 
   return `\
 ---
-title: ${ title }
+title: ${ pageTitle }
 layout: ${ layout }
 toc: ${ toc }
 tocInline: ${ tocInline }
@@ -238,11 +248,11 @@ ${ content }
 {% endrenderTemplate %}
 {% endcapture %}
   
-  <div class="page-toc page-toc--inline margin-bottom-large">
+  <div class="page-toc page-toc--inline">
     {{ apiHtml | toc }}
   </div>
   
-  <div class="wysiwyg margin-top-large api-docs">
+  <div class="wysiwyg api-docs">
     {{ apiHtml }}
   </div>
 </div>
