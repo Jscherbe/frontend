@@ -6,7 +6,7 @@
 -->
 <div class="container margin-bottom-large">
   <div id="info" style="padding: 1.5rem; background-color: #f7f7f7; border: 1px solid #ddd; border-radius: 4px;">
-    Current Breakpoint: <strong id="current-breakpoint">...</strong><br>
+    Current Breakpoint: <strong id="current-breakpoint">...</strong> <span id="breakpoint-range" style="color: #555;"></span><br>
     Resize Direction: <strong id="resize-direction">...</strong>
   </div>
 
@@ -47,6 +47,7 @@
     });
 
     const infoBreakpoint = document.getElementById("current-breakpoint");
+    const infoRange = document.getElementById("breakpoint-range");
     const infoDirection = document.getElementById("resize-direction");
 
     const box1 = document.getElementById("test-box-1");
@@ -75,7 +76,8 @@
         rangeText = `(${activeName} and up)`;
       }
 
-      infoBreakpoint.innerHTML = `${activeName} <span style="font-weight: normal; color: #555;">${rangeText}</span>`;
+      infoBreakpoint.textContent = activeName;
+      infoRange.textContent = rangeText;
       infoDirection.textContent = breakpoint.resizeDirection || '...';
     };
 

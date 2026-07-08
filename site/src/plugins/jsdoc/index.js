@@ -142,10 +142,11 @@ async function output() {
       "heading-depth" : 1
     });
     
-    const key = urlize(moduleName);
-    const demos = cachedSnippets[key] || [];
+    const urlKey = urlize(moduleName);
+    const demoKey = path.basename(moduleName);
+    const demos = cachedSnippets[demoKey] || [];
     
-    const filename = `${ key }.md`;
+    const filename = `${ urlKey }.md`;
     const filepath = path.resolve(path.join(dist, filename));
     const content = outputTemplate(moduleName, markdown, demos);
     fs.writeFileSync(filepath, content);
