@@ -23,11 +23,14 @@ export default function(eleventyConfig) {
   function createPreview(content, language = "html", options = {}) {
     const { highlight } = eleventyConfig?.javascript?.functions;
     const defaults = {
-      beautify: true,
+      beautify: false,
       debug: false,
+      preview: true,
       beautifyOptions: {
         indent_size: 2,
-        wrap_attributes: "preserve"
+        wrap_attributes: "preserve",
+        indent_inner_html: true,
+        indent_scripts: "normal"
       }
     };
     const config = { ...defaults, ...options };
@@ -38,7 +41,11 @@ export default function(eleventyConfig) {
       const markup = config.beautify ? beautify.html(content, config.beautifyOptions) : content;
       const highlighted = highlight(language, markup);
       if (highlighted) {
-        return template(markup, highlighted).trim();
+        const out = template(markup, highlighted, config).trim();
+        return out
+          .split("\n")
+          .filter(line => line.trim() !== "")
+          .join("\n");
       }
     }
 
@@ -56,14 +63,17 @@ export default function(eleventyConfig) {
 /**
  * Markup template for shortcode
  */
-function template(markup, highlighted) {
+function template(markup, highlighted, config = {}) {
   const scriptId = newId("json");
+  const showPreview = config.preview !== false;
 
   return `
 <div class="demo-preview" markdown="0">
+  ${ showPreview ? `
   <div class="demo-preview__rendered crop-margins">
     ${ markup }
   </div>
+  ` : "" }
   <div class="demo-preview__toolbar layout-flex-center">
     <strong class="demo-preview__toolbar-title">
       <span class="fas fa-code" aria-hidden="true"></span> HTML
@@ -86,29 +96,3 @@ ${ markup }
 </div>
   `;
 }
-
-// function templateTabs(markup, code) {
-//   const prefix = newId();
-//   const idPreview = `${ prefix }-preview`;
-//   const idCode = `${ prefix }-code`;
-//   return `
-// <div class="tabs tabs--demo">
-//   <div class="tabs__tablist" data-ulu-tablist>
-//     <button type="button" aria-controls="${ idPreview }">
-//       <span class="fas fa-eye" aria-hidden="true"></span>
-//       Preview
-//     </button>
-//     <button type="button" aria-controls="${ idCode }">
-//       <span class="fas fa-code" aria-hidden="true"></span>
-//       Code
-//     </button>
-//   </div>
-//   <div class="tabs__tabpanel" id="${ idPreview }">
-//     ${ markup }
-//   </div>
-//   <div class="tabs__tabpanel" id="${ idCode }">
-//     ${ code }
-//   </div>
-// </div>
-//   `;
-// }

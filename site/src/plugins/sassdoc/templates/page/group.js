@@ -38,18 +38,9 @@ ${ when(demo.description, d => `<p>${ d }</p>`) }
 
 <!-- Code Block (Constrained) -->
 <div class="container">
-  <div class="demo-preview" markdown="0">
-    <div class="demo-preview__toolbar layout-flex-center">
-      <strong class="demo-preview__toolbar-title">
-        <span class="fas fa-code" aria-hidden="true"></span> HTML
-      </strong>
-    </div>
-    <div class="demo-preview__code">
-      {% highlight "html" %}
-      ${ componentHtml }
-      {% endhighlight %}
-    </div>
-  </div>
+  {% CodePreview "html", { preview: false } %}
+  ${ componentHtml }
+  {% endCodePreview %}
 </div>
 
 ${ when(isFullscreen, () => `
