@@ -151,7 +151,7 @@ async function output() {
   // create a documentation file for each class
   for (const moduleName of moduleNames) {
     const template = `{{#module name="${ moduleName }"}}{{>docs}}{{/module}}`;
-    // console.log(`rendering ${ moduleName}, template: ${ template }`);
+    // console.log("rendering moduleName:", moduleName)
     const markdown = await jsdoc2md.render({ 
       data: templateData, 
       template: template,
@@ -202,45 +202,47 @@ toc: ${ toc }
 tocInline: ${ tocInline }
 ---
 
-<div class="tabs tabs--full-width">
-  <div class="container">
-    <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
-      <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
-      <button role="tab" id="${ tabApiId }" aria-selected="false" aria-controls="${ panelApiId }">JS API</button>
+<div class="api-docs">
+  <div class="api-docs__tabs tabs tabs--full-width">
+    <div class="container-fit">
+      <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+        <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
+        <button role="tab" id="${ tabApiId }" aria-selected="false" aria-controls="${ panelApiId }">JS API</button>
+      </div>
     </div>
-  </div>
-  
-  <div role="tabpanel" id="${ panelDemosId }" aria-labelledby="${ tabDemosId }">
+    
+    <div role="tabpanel" id="${ panelDemosId }" class="api-docs__tabpanel api-docs__tabpanel--demos" aria-labelledby="${ tabDemosId }">
 {% capture demosHtml %}
 {% renderTemplate "njk" %}
 ${ demosMarkup }
 {% endrenderTemplate %}
 {% endcapture %}
-    
-    <div class="container">
-      <div class="page-toc page-toc--inline margin-bottom-large">
-        {{ demosHtml | toc }}
+      
+      <div class="api-docs__toc container-fit">
+        <div class="page-toc page-toc--inline margin-bottom-large">
+          {{ demosHtml | toc }}
+        </div>
+      </div>
+      
+      <div class="api-docs__demos">
+        {{ demosHtml }}
       </div>
     </div>
     
-    <div>
-      {{ demosHtml }}
-    </div>
-  </div>
-  
-  <div role="tabpanel" id="${ panelApiId }" aria-labelledby="${ tabApiId }" hidden>
+    <div role="tabpanel" id="${ panelApiId }" class="api-docs__tabpanel api-docs__tabpanel--api" aria-labelledby="${ tabApiId }" hidden>
 {% capture apiHtml %}
 {% renderTemplate "md" %}
 ${ content }
 {% endrenderTemplate %}
 {% endcapture %}
-    
-    <div class="container">
-      <div class="page-toc page-toc--inline margin-bottom-large">
-        {{ apiHtml | toc }}
+      
+      <div class="api-docs__toc container-fit">
+        <div class="page-toc page-toc--inline margin-bottom-large">
+          {{ apiHtml | toc }}
+        </div>
       </div>
       
-      <div class="wysiwyg api-docs">
+      <div class="api-docs__content wysiwyg container-fit">
         {{ apiHtml }}
       </div>
     </div>
@@ -257,19 +259,23 @@ toc: ${ toc }
 tocInline: ${ tocInline }
 ---
 
-<div class="container">
+<div class="api-docs">
+  <div class="api-docs__no-tabs container-fit">
 {% capture apiHtml %}
 {% renderTemplate "md" %}
 ${ content }
 {% endrenderTemplate %}
 {% endcapture %}
-  
-  <div class="page-toc page-toc--inline">
-    {{ apiHtml | toc }}
-  </div>
-  
-  <div class="wysiwyg api-docs">
-    {{ apiHtml }}
+    
+    <div class="api-docs__toc">
+      <div class="page-toc page-toc--inline">
+        {{ apiHtml | toc }}
+      </div>
+    </div>
+    
+    <div class="api-docs__content wysiwyg">
+      {{ apiHtml }}
+    </div>
   </div>
 </div>
 `;

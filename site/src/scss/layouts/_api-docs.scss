@@ -1,0 +1,35 @@
+@use "ulu";
+
+.api-docs {
+  p:has(a[name]) {
+    display: none;
+  }
+}
+
+.api-docs__intro {
+  margin-bottom: 1.5rem;
+}
+
+.api-docs__tabs {
+  margin-top: 1rem;
+}
+
+.api-docs__tabpanel {
+  padding-top: 1.25rem;
+}
+
+.api-docs__toc {
+  margin-bottom: 1rem;
+}
+
+.api-docs__demos {
+  margin-top: 1rem;
+}
+
+.api-docs__content {
+  margin-top: 1.25rem;
+}
+
+.api-docs__no-tabs {
+  padding-top: 0.5rem;
+}
