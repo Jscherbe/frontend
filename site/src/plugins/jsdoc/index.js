@@ -15,7 +15,21 @@ const src = path.resolve("./lib/js/"); // cwd
 const dist = path.resolve("./site/pages/javascript/");
 
 const formatTitle = (str) => {
-  return str.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  const abbreviations = {
+    "ui": "UI",
+    "css": "CSS",
+    "js": "JS",
+    "api": "API",
+    "scss": "SCSS",
+    "iframe": "Iframe"
+  };
+  return str.split("-").map(word => {
+    const lower = word.toLowerCase();
+    if (abbreviations[lower]) {
+      return abbreviations[lower];
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }).join(" ");
 };
 
 let modalCount = 0;
@@ -144,20 +158,22 @@ async function output() {
       "heading-depth" : 1
     });
     
-    const parts = moduleName.split("/");
-    const dirPart = parts.slice(0, -1).join("/");
-    const filePart = parts[parts.length - 1];
+    let dirPart = "";
+    const moduleDoc = templateData.find(id => id.kind === "module" && id.name === moduleName);
+    if (moduleDoc && moduleDoc.meta) {
+      dirPart = path.relative(src, moduleDoc.meta.path);
+    }
 
     const targetDir = path.join(dist, dirPart);
     fs.ensureDirSync(targetDir);
 
-    const demoKey = filePart;
+    const demoKey = moduleName;
     const demos = cachedSnippets[demoKey] || [];
     
-    const filename = `${ urlize(filePart) }.md`;
+    const filename = `${ urlize(moduleName) }.md`;
     const filepath = path.resolve(path.join(targetDir, filename));
     
-    const formattedPageTitle = formatTitle(urlize(filePart));
+    const formattedPageTitle = formatTitle(urlize(moduleName));
     const content = outputTemplate(moduleName, formattedPageTitle, markdown, demos);
     fs.writeFileSync(filepath, content);
   }
