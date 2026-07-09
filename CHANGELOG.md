@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.6.30
+
+- `js/core/component.js`
+  - Add new init option for "update" to run functions on coreEvents passed on already initialized elements
+  - Add new method "queryAllInitialized" and "queryElements" (generic query method used in queryAllInitial and queryAllInitialized)
+- `js/ui/grid.js`
+  - Add update to component init so that position classes update correctly like before
+- `js/ui/overflow-scroller.js`
+  - Add update method to recalculate overflow, add listeners for pageModified and pageResized by default (calls update), minor improvements
+- `js/utils/dom.js`
+  - Add new helper function `getVisualRows` that returns a 2D array of grid elements sorted visually (using x/y coordinates) to support CSS visual order properties and filter out hidden (display: none) elements
+  - Refactor `setPositionClasses` to use `getVisualRows` and optimize class assignments
+
 ## 0.6.29
 
 - `scss/components/_modal.scss`
