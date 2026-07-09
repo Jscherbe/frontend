@@ -5,6 +5,13 @@
  */
 export function dataAttributeToDatasetKey(attribute: any): string;
 /**
+ * Groups a parent's children into rows based on their visual coordinates (top and left positions).
+ * Filters out hidden elements and sorts them visually to support CSS grid order properties.
+ * @param {HTMLElement} parent The grid/parent container
+ * @returns {HTMLElement[][]} A 2D array of rows, where each row is an array of elements in visual order.
+ */
+export function getVisualRows(parent: HTMLElement): HTMLElement[][];
+/**
  *   Sets up the positional classes that would come from the equal
  *   height module. Needs to be rerun by user when layout changes
  *   or new instances are added to the screen

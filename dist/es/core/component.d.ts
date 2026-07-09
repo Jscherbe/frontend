@@ -24,6 +24,7 @@ export class ComponentInitializer {
      * Initializes the component based on the provided configuration.
      * @param {Object} config The initialization configuration.
      * @param {Function} config.setup The setup function to call for each element.
+     * @param {Function} config.update The update function to call for already initialized elements on coreEvents.
      * @param {String} config.key [null] The optional key to use with attribute selector.
      * @param {Boolean} config.withData [null] Whether to retrieve element data.
      * @param {Array} config.coreEvents [null] An array of core event names (e.g., 'pageModified') that should trigger a re-initialization.
@@ -31,6 +32,7 @@ export class ComponentInitializer {
      */
     init(config: {
         setup: Function;
+        update: Function;
         key: string;
         withData: boolean;
         coreEvents: any[];
@@ -51,6 +53,20 @@ export class ComponentInitializer {
         context: HTMLElement;
     }): void;
     /**
+     * Processes the already initialized elements based on the provided configuration.
+     * @param {object} config The initialization configuration.
+     * @param {function} config.update The update function to call for each element.
+     * @param {string} config.key The optional key to use with attribute selector.
+     * @param {boolean} config.withData [false] Whether to retrieve element data.
+     * @param {HTMLElement} config.context [document] The context to query within.
+     */
+    updateElements(config: {
+        update: Function;
+        key: string;
+        withData: boolean;
+        context: HTMLElement;
+    }): void;
+    /**
      * Get an attribute name
      * @param {String} key Optional key, if no key will return baseAttribute if key will return key added to base
      * @returns {String} String like data-ulu-dialog or data-ulu-dialog-element
@@ -63,9 +79,21 @@ export class ComponentInitializer {
     attributeSelector(key: string): string;
     /**
      * Create an attribute selector for initial
+     * @param {String} key Optional key
      * @return {String}
      */
-    attributeSelectorInitial(key: any): string;
+    attributeSelectorInitial(key: string): string;
+    /**
+     * Create an attribute selector for initialized elements
+     * @param {String} key Optional key
+     * @return {String}
+     */
+    attributeSelectorInitialized(key: string): string;
+    /**
+     * Internal helper to query and map elements.
+     * @private
+     */
+    private queryElements;
     /**
      * Queries all main elements of a component that have not been initialized and extracts their data attributes.
      * @param {HTMLElement} context The context to query within.
@@ -77,6 +105,17 @@ export class ComponentInitializer {
         element: HTMLElement;
         data: object;
         initialize: Function;
+    }>;
+    /**
+     * Queries all main elements of a component that have already been initialized and extracts their data attributes.
+     * @param {HTMLElement} context The context to query within.
+     * @param {Boolean} withData Include dataset from element (as optional JSON)
+     * @param {Node} context Element to query elements from
+     * @returns {Array<{element: HTMLElement, data: object}>} An array of objects containing the elements and their data
+     */
+    queryAllInitialized(key: any, withData: boolean, context?: HTMLElement): Array<{
+        element: HTMLElement;
+        data: object;
     }>;
     /**
      * Sets the init attribute on an element, marking it as initialized.

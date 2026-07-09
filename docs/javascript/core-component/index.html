@@ -6982,16 +6982,25 @@
                     <li><a href="#componentinitializer.setupelements(config)">componentInitializer.setupElements(config)</a>
             		</li>
 
+                    <li><a href="#componentinitializer.updateelements(config)">componentInitializer.updateElements(config)</a>
+            		</li>
+
                     <li><a href="#componentinitializer.getattribute(key)-%E2%87%92-string">componentInitializer.getAttribute(key) ⇒ String</a>
             		</li>
 
                     <li><a href="#componentinitializer.attributeselector(key)">componentInitializer.attributeSelector(key)</a>
             		</li>
 
-                    <li><a href="#componentinitializer.attributeselectorinitial()-%E2%87%92-string">componentInitializer.attributeSelectorInitial() ⇒ String</a>
+                    <li><a href="#componentinitializer.attributeselectorinitial(key)-%E2%87%92-string">componentInitializer.attributeSelectorInitial(key) ⇒ String</a>
+            		</li>
+
+                    <li><a href="#componentinitializer.attributeselectorinitialized(key)-%E2%87%92-string">componentInitializer.attributeSelectorInitialized(key) ⇒ String</a>
             		</li>
 
                     <li><a href="#componentinitializer.queryallinitial(context%2C-withdata%2C-context)-%E2%87%92-array.%3C%7Belement%3A-htmlelement%2C-data%3A-object%2C-initialize%3A-function()%7D%3E">componentInitializer.queryAllInitial(context, withData, context) ⇒ Array.<{element: HTMLElement, data: object, initialize: function()}></a>
+            		</li>
+
+                    <li><a href="#componentinitializer.queryallinitialized(context%2C-withdata%2C-context)-%E2%87%92-array.%3C%7Belement%3A-htmlelement%2C-data%3A-object%7D%3E">componentInitializer.queryAllInitialized(context, withData, context) ⇒ Array.<{element: HTMLElement, data: object}></a>
             		</li>
 
                     <li><a href="#componentinitializer.initializeelement(element)">componentInitializer.initializeElement(element)</a>
@@ -7032,10 +7041,13 @@
 <li><a href="#new_module_core/component.ComponentInitializer_new">new exports.ComponentInitializer(options)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+init">.init(config)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+setupElements">.setupElements(config)</a></li>
+<li><a href="#module_core/component.ComponentInitializer+updateElements">.updateElements(config)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+getAttribute">.getAttribute(key)</a> ⇒ <code>String</code></li>
 <li><a href="#module_core/component.ComponentInitializer+attributeSelector">.attributeSelector(key)</a></li>
-<li><a href="#module_core/component.ComponentInitializer+attributeSelectorInitial">.attributeSelectorInitial()</a> ⇒ <code>String</code></li>
+<li><a href="#module_core/component.ComponentInitializer+attributeSelectorInitial">.attributeSelectorInitial(key)</a> ⇒ <code>String</code></li>
+<li><a href="#module_core/component.ComponentInitializer+attributeSelectorInitialized">.attributeSelectorInitialized(key)</a> ⇒ <code>String</code></li>
 <li><a href="#module_core/component.ComponentInitializer+queryAllInitial">.queryAllInitial(context, withData, context)</a> ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code></li>
+<li><a href="#module_core/component.ComponentInitializer+queryAllInitialized">.queryAllInitialized(context, withData, context)</a> ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code></li>
 <li><a href="#module_core/component.ComponentInitializer+initializeElement">.initializeElement(element)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+getData">.getData()</a> ⇒ <code>*</code></li>
 <li><a href="#module_core/component.ComponentInitializer+log">.log()</a></li>
@@ -7056,10 +7068,13 @@
 <li><a href="#new_module_core/component.ComponentInitializer_new">new exports.ComponentInitializer(options)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+init">.init(config)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+setupElements">.setupElements(config)</a></li>
+<li><a href="#module_core/component.ComponentInitializer+updateElements">.updateElements(config)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+getAttribute">.getAttribute(key)</a> ⇒ <code>String</code></li>
 <li><a href="#module_core/component.ComponentInitializer+attributeSelector">.attributeSelector(key)</a></li>
-<li><a href="#module_core/component.ComponentInitializer+attributeSelectorInitial">.attributeSelectorInitial()</a> ⇒ <code>String</code></li>
+<li><a href="#module_core/component.ComponentInitializer+attributeSelectorInitial">.attributeSelectorInitial(key)</a> ⇒ <code>String</code></li>
+<li><a href="#module_core/component.ComponentInitializer+attributeSelectorInitialized">.attributeSelectorInitialized(key)</a> ⇒ <code>String</code></li>
 <li><a href="#module_core/component.ComponentInitializer+queryAllInitial">.queryAllInitial(context, withData, context)</a> ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code></li>
+<li><a href="#module_core/component.ComponentInitializer+queryAllInitialized">.queryAllInitialized(context, withData, context)</a> ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code></li>
 <li><a href="#module_core/component.ComponentInitializer+initializeElement">.initializeElement(element)</a></li>
 <li><a href="#module_core/component.ComponentInitializer+getData">.getData()</a> ⇒ <code>*</code></li>
 <li><a href="#module_core/component.ComponentInitializer+log">.log()</a></li>
@@ -7119,6 +7134,11 @@
 <td>config.setup</td>
 <td><code>function</code></td>
 <td>The setup function to call for each element.</td>
+</tr>
+<tr>
+<td>config.update</td>
+<td><code>function</code></td>
+<td>The update function to call for already initialized elements on coreEvents.</td>
 </tr>
 <tr>
 <td>config.key</td>
@@ -7182,6 +7202,46 @@
 </tr>
 </tbody>
 </table>
+<p><a name="module_core/component.ComponentInitializer+updateElements"></a></p>
+<h3 id="componentinitializer.updateelements(config)" tabindex="-1">componentInitializer.updateElements(config)</h3>
+<p>Processes the already initialized elements based on the provided configuration.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_core/component.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>object</code></td>
+<td>The initialization configuration.</td>
+</tr>
+<tr>
+<td>config.update</td>
+<td><code>function</code></td>
+<td>The update function to call for each element.</td>
+</tr>
+<tr>
+<td>config.key</td>
+<td><code>string</code></td>
+<td>The optional key to use with attribute selector.</td>
+</tr>
+<tr>
+<td>config.withData</td>
+<td><code>boolean</code></td>
+<td>[false] Whether to retrieve element data.</td>
+</tr>
+<tr>
+<td>config.context</td>
+<td><code>HTMLElement</code></td>
+<td>[document] The context to query within.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="module_core/component.ComponentInitializer+getAttribute"></a></p>
 <h3 id="componentinitializer.getattribute(key)-%E2%87%92-string" tabindex="-1">componentInitializer.getAttribute(key) ⇒ <code>String</code></h3>
 <p>Get an attribute name</p>
@@ -7224,14 +7284,81 @@
 </tbody>
 </table>
 <p><a name="module_core/component.ComponentInitializer+attributeSelectorInitial"></a></p>
-<h3 id="componentinitializer.attributeselectorinitial()-%E2%87%92-string" tabindex="-1">componentInitializer.attributeSelectorInitial() ⇒ <code>String</code></h3>
+<h3 id="componentinitializer.attributeselectorinitial(key)-%E2%87%92-string" tabindex="-1">componentInitializer.attributeSelectorInitial(key) ⇒ <code>String</code></h3>
 <p>Create an attribute selector for initial</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_core/component.ComponentInitializer"><code>ComponentInitializer</code></a><br>
-<a name="module_core/component.ComponentInitializer+queryAllInitial"></a></p>
+<p><strong>Kind</strong>: instance method of <a href="#module_core/component.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>String</code></td>
+<td>Optional key</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_core/component.ComponentInitializer+attributeSelectorInitialized"></a></p>
+<h3 id="componentinitializer.attributeselectorinitialized(key)-%E2%87%92-string" tabindex="-1">componentInitializer.attributeSelectorInitialized(key) ⇒ <code>String</code></h3>
+<p>Create an attribute selector for initialized elements</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_core/component.ComponentInitializer"><code>ComponentInitializer</code></a></p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>String</code></td>
+<td>Optional key</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_core/component.ComponentInitializer+queryAllInitial"></a></p>
 <h3 id="componentinitializer.queryallinitial(context%2C-withdata%2C-context)-%E2%87%92-array.%3C%7Belement%3A-htmlelement%2C-data%3A-object%2C-initialize%3A-function()%7D%3E" tabindex="-1">componentInitializer.queryAllInitial(context, withData, context) ⇒ <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code></h3>
 <p>Queries all main elements of a component that have not been initialized and extracts their data attributes.</p>
 <p><strong>Kind</strong>: instance method of <a href="#module_core/component.ComponentInitializer"><code>ComponentInitializer</code></a><br>
 <strong>Returns</strong>: <code>Array.&lt;{element: HTMLElement, data: object, initialize: function()}&gt;</code> - An array of objects containing the elements, their data, and convenience function initialize() which when called will set the init attribute on the element</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>context</td>
+<td><code>HTMLElement</code></td>
+<td>The context to query within.</td>
+</tr>
+<tr>
+<td>withData</td>
+<td><code>Boolean</code></td>
+<td>Include dataset from element (as optional JSON)</td>
+</tr>
+<tr>
+<td>context</td>
+<td><code>Node</code></td>
+<td>Element to query elements from</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_core/component.ComponentInitializer+queryAllInitialized"></a></p>
+<h3 id="componentinitializer.queryallinitialized(context%2C-withdata%2C-context)-%E2%87%92-array.%3C%7Belement%3A-htmlelement%2C-data%3A-object%7D%3E" tabindex="-1">componentInitializer.queryAllInitialized(context, withData, context) ⇒ <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code></h3>
+<p>Queries all main elements of a component that have already been initialized and extracts their data attributes.</p>
+<p><strong>Kind</strong>: instance method of <a href="#module_core/component.ComponentInitializer"><code>ComponentInitializer</code></a><br>
+<strong>Returns</strong>: <code>Array.&lt;{element: HTMLElement, data: object}&gt;</code> - An array of objects containing the elements and their data</p>
 <table>
 <thead>
 <tr>
@@ -7302,7 +7429,7 @@
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-DZBGedww.js"></script>
+<script type="module" src="/frontend/assets/main-BxnZHnXl.js"></script>
 
 		
 	</body>

@@ -6969,6 +6969,9 @@
 <div class="toc">
                 <ol>
                     
+                    <li><a href="#0.6.30">0.6.30</a>
+            		</li>
+
                     <li><a href="#0.6.29">0.6.29</a>
             		</li>
 
@@ -7599,6 +7602,31 @@
 
     <div class="changelog">
 <h1 id="change-log" tabindex="-1">Change Log</h1>
+<h2 id="0.6.30" tabindex="-1">0.6.30</h2>
+<ul>
+<li><code>js/core/component.js</code>
+<ul>
+<li>Add new init option for &quot;update&quot; to run functions on coreEvents passed on already initialized elements</li>
+<li>Add new method &quot;queryAllInitialized&quot; and &quot;queryElements&quot; (generic query method used in queryAllInitial and queryAllInitialized)</li>
+</ul>
+</li>
+<li><code>js/ui/grid.js</code>
+<ul>
+<li>Add update to component init so that position classes update correctly like before</li>
+</ul>
+</li>
+<li><code>js/ui/overflow-scroller.js</code>
+<ul>
+<li>Add update method to recalculate overflow, add listeners for pageModified and pageResized by default (calls update), minor improvements</li>
+</ul>
+</li>
+<li><code>js/utils/dom.js</code>
+<ul>
+<li>Add new helper function <code>getVisualRows</code> that returns a 2D array of grid elements sorted visually (using x/y coordinates) to support CSS visual order properties and filter out hidden (display: none) elements</li>
+<li>Refactor <code>setPositionClasses</code> to use <code>getVisualRows</code> and optimize class assignments</li>
+</ul>
+</li>
+</ul>
 <h2 id="0.6.29" tabindex="-1">0.6.29</h2>
 <ul>
 <li><code>scss/components/_modal.scss</code>
@@ -10049,7 +10077,7 @@ size of flex items with a 0% basis)</li>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-DZBGedww.js"></script>
+<script type="module" src="/frontend/assets/main-BxnZHnXl.js"></script>
 
 		
 	</body>

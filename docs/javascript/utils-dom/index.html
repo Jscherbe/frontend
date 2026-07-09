@@ -6972,6 +6972,9 @@
                     <li><a href="#utils%2Fdom.dataattributetodatasetkey(dataattribute)-%E2%87%92-string">utils/dom.dataAttributeToDatasetKey(dataAttribute) ⇒ string</a>
             		</li>
 
+                    <li><a href="#utils%2Fdom.getvisualrows(parent)-%E2%87%92-array.%3Carray.%3Chtmlelement%3E%3E">utils/dom.getVisualRows(parent) ⇒ Array.<Array.<HTMLElement>></Array.<HTMLElement></a>
+            		</li>
+
                     <li><a href="#utils%2Fdom.setpositionclasses(parent%2C-classes)">utils/dom.setPositionClasses(parent, classes)</a>
             		</li>
 
@@ -6994,6 +6997,7 @@
 <li><a href="#module_utils/dom">utils/dom</a>
 <ul>
 <li><a href="#module_utils/dom.dataAttributeToDatasetKey">.dataAttributeToDatasetKey(dataAttribute)</a> ⇒ <code>string</code></li>
+<li><a href="#module_utils/dom.getVisualRows">.getVisualRows(parent)</a> ⇒ <code>Array.&lt;Array.&lt;HTMLElement&gt;&gt;</code></li>
 <li><a href="#module_utils/dom.setPositionClasses">.setPositionClasses(parent, classes)</a></li>
 <li><a href="#module_utils/dom.resolveClasses">.resolveClasses(input)</a> ⇒ <code>Array.&lt;string&gt;</code></li>
 </ul>
@@ -7017,6 +7021,28 @@
 <td>dataAttribute</td>
 <td><code>string</code></td>
 <td>The data attribute name (e.g., &quot;data-ulu-dialog&quot;).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="module_utils/dom.getVisualRows"></a></p>
+<h2 id="utils%2Fdom.getvisualrows(parent)-%E2%87%92-array.%3Carray.%3Chtmlelement%3E%3E" tabindex="-1">utils/dom.getVisualRows(parent) ⇒ <code>Array.&lt;Array.&lt;HTMLElement&gt;&gt;</code></h2>
+<p>Groups a parent's children into rows based on their visual coordinates (top and left positions).
+Filters out hidden elements and sorts them visually to support CSS grid order properties.</p>
+<p><strong>Kind</strong>: static method of <a href="#module_utils/dom"><code>utils/dom</code></a><br>
+<strong>Returns</strong>: <code>Array.&lt;Array.&lt;HTMLElement&gt;&gt;</code> - A 2D array of rows, where each row is an array of elements in visual order.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parent</td>
+<td><code>HTMLElement</code></td>
+<td>The grid/parent container</td>
 </tr>
 </tbody>
 </table>
@@ -7084,7 +7110,7 @@ or new instances are added to the screen</p>
 		</main>
 		<footer></footer>
 		
-<script type="module" src="/frontend/assets/main-DZBGedww.js"></script>
+<script type="module" src="/frontend/assets/main-BxnZHnXl.js"></script>
 
 		
 	</body>
