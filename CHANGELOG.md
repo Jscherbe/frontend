@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.31
+
+- `scss/_button.scss`
+  - Allow button styles to define border-radius (so a style doesn't have to match default), components/modules leveraging the button's border-radius won't account for these unique per-style border-radius
+
 ## 0.6.30
 
 - `js/core/component.js`
