@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.32
+
+- `scss/component/_form-theme.scss`
+  - Adjust defaults for the checkbox styling (improve checkmark size/alignment)
+
 ## 0.6.31
 
 - `scss/_button.scss`
