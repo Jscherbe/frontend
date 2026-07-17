@@ -1,4 +1,6 @@
 Important:
+  ☐ Should we support `<button>` element on card (layout issues from button element)?
+    * Normally we use proxy click to a title or inner button but sometimes this may be useful if we can account for the layout issues without overcomplicating the css (it's already complex grid layout)
   ☐ Need to make a stacked or compact modifier for menu-stack
     * This would be icon over text for compact sidebar navigation
   ☐ Need to make a component for the icon-header system
