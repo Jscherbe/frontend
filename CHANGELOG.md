@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.33
+
+- `scss/component/_basic-hero.scss`
+  - Add new option for "main-vertical-align"
+  - Add modifiers for main-align to override default vertical align
+
 ## 0.6.32
 
 - `scss/component/_form-theme.scss`
