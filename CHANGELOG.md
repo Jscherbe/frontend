@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.6.34
+
+- `scss/component/_card.scss`
+  - fix width issues when using a button element on cards (intrinsic width issue with buttons)
+
 ## 0.6.33
 
 - `scss/component/_basic-hero.scss`

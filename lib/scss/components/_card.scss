@@ -215,6 +215,12 @@ $config: (
     outline-offset: $border-width-negative;
   }
 
+  // Force button element cards to fill available container width (up to max-width)
+  // instead of shrink-wrapping to intrinsic content width
+  button#{ $prefix } {
+    width: 100%;
+  }
+
   // Remove extra row when image is not present
   // - So footer doesn't fall on the 1fr row
   #{ $prefix }:not(:has(> #{ $prefix }__image)),
