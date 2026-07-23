@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.7.0
+
+- `scss/component/_tabs.scss`
+  - **Breaking Change**: Migrated from nested ARIA role selectors (`[role="tablist"]`, `[role="tab"]`, `[role="tabpanel"]`) to flat BEM class selectors (`.tabs__tablist`, `.tabs__tab`, `.tabs__tabpanel`). Tab elements must now carry these classes for styling to apply.
+  - This solves selector interference and style leakage when nesting tabs with unique container classes.
+  - Modifier classes (`--sticky`, `--vertical`, `--transparent`, `--full-width`) now use direct child combinators (`>`) to keep modifier styles scoped to the current container.
+
 ## 0.6.34
 
 - `scss/component/_card.scss`

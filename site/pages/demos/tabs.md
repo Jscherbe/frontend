@@ -10,19 +10,19 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
 
 <div class="tabs tabs--print">
   <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : true }'>
-    <button type="button" id="tabs-1-1">
+    <button class="tabs__tab" type="button" id="tabs-1-1">
       Tab Label 1
     </button>
-    <button type="button" id="tabs-1-2">
+    <button class="tabs__tab" type="button" id="tabs-1-2">
       Tab Label 2
     </button>
-    <button type="button" id="tabs-1-3">
+    <button class="tabs__tab" type="button" id="tabs-1-3">
       Tab Label 3
     </button>
-    <button type="button" id="tabs-1-4">
+    <button class="tabs__tab" type="button" id="tabs-1-4">
       Tab Label 4
     </button>
-    <button type="button" id="tabs-1-5">
+    <button class="tabs__tab" type="button" id="tabs-1-5">
       Tab Label 5
     </button>
   </div>
@@ -56,13 +56,13 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
 
 <div class="tabs tabs--full-width">
   <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : true }'>
-    <button type="button" id="tabs-2-1">
+    <button class="tabs__tab" type="button" id="tabs-2-1">
       Tab Label 1
     </button>
-    <button type="button" id="tabs-2-2">
+    <button class="tabs__tab" type="button" id="tabs-2-2">
       Tab Label 2
     </button>
-    <button type="button" id="tabs-2-3">
+    <button class="tabs__tab" type="button" id="tabs-2-3">
       Tab Label 3
     </button>
   </div>
@@ -94,13 +94,13 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     "equalHeights" : true,
     "vertical" : true
   }'>
-    <button type="button" id="tabs-3-1">
+    <button class="tabs__tab" type="button" id="tabs-3-1">
       Tab Label 1
     </button>
-    <button type="button" id="tabs-3-2">
+    <button class="tabs__tab" type="button" id="tabs-3-2">
       Tab Label 2
     </button>
-    <button type="button" id="tabs-3-3">
+    <button class="tabs__tab" type="button" id="tabs-3-3">
       Tab Label 3
     </button>
   </div>
@@ -130,13 +130,13 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
 
 <div class="tabs tabs--sticky">
   <div class="tabs__tablist" data-ulu-tablist='{ "equalHeights" : false }'>
-    <button type="button" id="tabs-5-1">
+    <button class="tabs__tab" type="button" id="tabs-5-1">
       Section 1
     </button>
-    <button type="button" id="tabs-5-2">
+    <button class="tabs__tab" type="button" id="tabs-5-2">
       Section 2
     </button>
-    <button type="button" id="tabs-5-3">
+    <button class="tabs__tab" type="button" id="tabs-5-3">
       Section 3
     </button>
   </div>
@@ -176,13 +176,13 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     "equalHeights" : false,
     "vertical" : true
   }'>
-    <button type="button" id="tabs-6-1">
+    <button class="tabs__tab" type="button" id="tabs-6-1">
       Chapter 1
     </button>
-    <button type="button" id="tabs-6-2">
+    <button class="tabs__tab" type="button" id="tabs-6-2">
       Chapter 2
     </button>
-    <button type="button" id="tabs-6-3">
+    <button class="tabs__tab" type="button" id="tabs-6-3">
       Chapter 3
     </button>
   </div>
@@ -222,13 +222,13 @@ intro: Tabs are a user interface (UI) element that helps users switch between di
     "equalHeights" : true,
     "openByUrlHash" : true
   }'>
-    <button type="button" id="tabs-4-1">
+    <button class="tabs__tab" type="button" id="tabs-4-1">
       Tab Label 1
     </button>
-    <button type="button" id="tabs-4-2">
+    <button class="tabs__tab" type="button" id="tabs-4-2">
       Tab Label 2
     </button>
-    <button type="button" id="tabs-4-3">
+    <button class="tabs__tab" type="button" id="tabs-4-3">
       Tab Label 3
     </button>
   </div>

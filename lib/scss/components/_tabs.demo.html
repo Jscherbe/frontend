@@ -3,18 +3,18 @@
   description: A standard tabbed interface with labels positioned horizontally above the content.
 -->
 <div class="tabs">
-  <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
-    <button role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1">General Info</button>
-    <button role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2">Specifications</button>
-    <button role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3">Reviews</button>
+  <div class="tabs__tablist" role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+    <button class="tabs__tab" role="tab" id="tab-1" aria-selected="true" aria-controls="panel-1">General Info</button>
+    <button class="tabs__tab" role="tab" id="tab-2" aria-selected="false" aria-controls="panel-2">Specifications</button>
+    <button class="tabs__tab" role="tab" id="tab-3" aria-selected="false" aria-controls="panel-3">Reviews</button>
   </div>
-  <div role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+  <div class="tabs__tabpanel" id="panel-1" aria-labelledby="tab-1">
     <p>This is the general information about the product or service. It covers the core value propositions and high-level features.</p>
   </div>
-  <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+  <div class="tabs__tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
     <p>Technical specifications and detailed measurements are listed here for professional review.</p>
   </div>
-  <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+  <div class="tabs__tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
     <p>Customer feedback and ratings provide real-world insights from our community of users.</p>
   </div>
 </div>
@@ -24,18 +24,18 @@
   description: Using the `tabs--vertical` modifier to place tab labels in a sidebar layout on larger screens.
 -->
 <div class="tabs tabs--vertical">
-  <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": true }'>
-    <button role="tab" id="v-tab-1" aria-selected="true" aria-controls="v-panel-1">Account Profile</button>
-    <button role="tab" id="v-tab-2" aria-selected="false" aria-controls="v-panel-2">Privacy Settings</button>
-    <button role="tab" id="v-tab-3" aria-selected="false" aria-controls="v-panel-3">Notification Preferences</button>
+  <div class="tabs__tablist" role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": true }'>
+    <button class="tabs__tab" role="tab" id="v-tab-1" aria-selected="true" aria-controls="v-panel-1">Account Profile</button>
+    <button class="tabs__tab" role="tab" id="v-tab-2" aria-selected="false" aria-controls="v-panel-2">Privacy Settings</button>
+    <button class="tabs__tab" role="tab" id="v-tab-3" aria-selected="false" aria-controls="v-panel-3">Notification Preferences</button>
   </div>
-  <div role="tabpanel" id="v-panel-1" aria-labelledby="v-tab-1">
+  <div class="tabs__tabpanel" id="v-panel-1" aria-labelledby="v-tab-1">
     <p>Manage your personal information, profile picture, and contact details.</p>
   </div>
-  <div role="tabpanel" id="v-panel-2" aria-labelledby="v-tab-2" hidden>
+  <div class="tabs__tabpanel" id="v-panel-2" aria-labelledby="v-tab-2" hidden>
     <p>Control who can see your activity and how your data is used across the platform.</p>
   </div>
-  <div role="tabpanel" id="v-panel-3" aria-labelledby="v-tab-3" hidden>
+  <div class="tabs__tabpanel" id="v-panel-3" aria-labelledby="v-tab-3" hidden>
     <p>Customize which alerts you receive via email, push notification, or SMS.</p>
   </div>
 </div>
@@ -45,20 +45,20 @@
   description: Using the `tabs--sticky` modifier to keep the horizontal tab labels visible at the top of the viewport when scrolling through long panel content.
 -->
 <div class="tabs tabs--sticky">
-  <div role="tablist" data-ulu-tablist='{ "equalHeights": false }'>
-    <button role="tab" id="sh-tab-1" aria-selected="true" aria-controls="sh-panel-1">Section 1</button>
-    <button role="tab" id="sh-tab-2" aria-selected="false" aria-controls="sh-panel-2">Section 2</button>
-    <button role="tab" id="sh-tab-3" aria-selected="false" aria-controls="sh-panel-3">Section 3</button>
+  <div class="tabs__tablist" role="tablist" data-ulu-tablist='{ "equalHeights": false }'>
+    <button class="tabs__tab" role="tab" id="sh-tab-1" aria-selected="true" aria-controls="sh-panel-1">Section 1</button>
+    <button class="tabs__tab" role="tab" id="sh-tab-2" aria-selected="false" aria-controls="sh-panel-2">Section 2</button>
+    <button class="tabs__tab" role="tab" id="sh-tab-3" aria-selected="false" aria-controls="sh-panel-3">Section 3</button>
   </div>
-  <div role="tabpanel" id="sh-panel-1" aria-labelledby="sh-tab-1">
+  <div class="tabs__tabpanel" id="sh-panel-1" aria-labelledby="sh-tab-1">
     <p>Scroll down to see the sticky behavior.</p>
     <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
   </div>
-  <div role="tabpanel" id="sh-panel-2" aria-labelledby="sh-tab-2" hidden>
+  <div class="tabs__tabpanel" id="sh-panel-2" aria-labelledby="sh-tab-2" hidden>
     <p>This is section 2 content.</p>
     <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
   </div>
-  <div role="tabpanel" id="sh-panel-3" aria-labelledby="sh-tab-3" hidden>
+  <div class="tabs__tabpanel" id="sh-panel-3" aria-labelledby="sh-tab-3" hidden>
     <p>This is section 3 content.</p>
   </div>
 </div>
@@ -68,20 +68,20 @@
   description: Using both `tabs--vertical` and `tabs--sticky` modifiers. On large screens, the tab labels stick within their grid column as you scroll the adjacent panel. On smaller screens, they behave like sticky horizontal tabs.
 -->
 <div class="tabs tabs--vertical tabs--sticky">
-  <div role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": false }'>
-    <button role="tab" id="sv-tab-1" aria-selected="true" aria-controls="sv-panel-1">Chapter 1</button>
-    <button role="tab" id="sv-tab-2" aria-selected="false" aria-controls="sv-panel-2">Chapter 2</button>
-    <button role="tab" id="sv-tab-3" aria-selected="false" aria-controls="sv-panel-3">Chapter 3</button>
+  <div class="tabs__tablist" role="tablist" data-ulu-tablist='{ "vertical": true, "equalHeights": false }'>
+    <button class="tabs__tab" role="tab" id="sv-tab-1" aria-selected="true" aria-controls="sv-panel-1">Chapter 1</button>
+    <button class="tabs__tab" role="tab" id="sv-tab-2" aria-selected="false" aria-controls="sv-panel-2">Chapter 2</button>
+    <button class="tabs__tab" role="tab" id="sv-tab-3" aria-selected="false" aria-controls="sv-panel-3">Chapter 3</button>
   </div>
-  <div role="tabpanel" id="sv-panel-1" aria-labelledby="sv-tab-1">
+  <div class="tabs__tabpanel" id="sv-panel-1" aria-labelledby="sv-tab-1">
     <p>Scroll down to see the vertical tablist stick to the top.</p>
     <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
   </div>
-  <div role="tabpanel" id="sv-panel-2" aria-labelledby="sv-tab-2" hidden>
+  <div class="tabs__tabpanel" id="sv-panel-2" aria-labelledby="sv-tab-2" hidden>
     <p>This is chapter 2 content.</p>
     <div style="height: 400px; background-image: repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), repeating-linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc); background-position: 0 0, 10px 10px; background-size: 20px 20px; opacity: 0.1; margin-top: 1rem;"></div>
   </div>
-  <div role="tabpanel" id="sv-panel-3" aria-labelledby="sv-tab-3" hidden>
+  <div class="tabs__tabpanel" id="sv-panel-3" aria-labelledby="sv-tab-3" hidden>
     <p>This is chapter 3 content.</p>
   </div>
 </div>

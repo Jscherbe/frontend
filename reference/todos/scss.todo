@@ -1,5 +1,5 @@
 Important:
-  ☐ Should come up with stricter markup structure (BEM) for tabs scss component and get rid of nested role selectors
+  ✔ Should come up with stricter markup structure (BEM) for tabs scss component and get rid of nested role selectors @done
     * This causes issues with non .tab tablists within .tabs content
     * We only have the stylesheet this way because of using different tablist libraries in the past this is standardized now to internal script
     * We should probably add a container around the panels just for future flexibility in layout? Although there might be benefits without this (css grid height related [occupy same grid in vertical make sure to check that out])
