@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.7.1
+
+- `scss/component/_accordion.scss`
+  - Add "summary-font-family" option
+
 ## 0.7.0
 
 - `scss/component/_tabs.scss`

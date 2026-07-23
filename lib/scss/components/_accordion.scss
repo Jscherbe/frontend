@@ -50,6 +50,8 @@ $-fallbacks: (
 /// @prop {Dimension} summary-line-height  [null] Adjusts the line height of the summary element.
 /// @prop {Dimension} summary-padding-y  [1em] The vertical padding of the summary.
 /// @prop {String|Boolean} summary-type-size  ["large"] The typography size of the text in the accordion summary. Can be a boolean to disable.
+/// @prop {CssValue} summary-font-weight  [Bold] The font-weight for summary
+/// @prop {CssValue} summary-font-family  [Bold] The font-family for summary
 /// @prop {Boolean} summary-border-enabled [true] Whether the summary has a border when the accordion is open.
 /// @prop {Color} summary-border-color [rule-light] The color of the summary border.
 /// @prop {Dimension} summary-border-width [1px] The width of the summary border.
@@ -85,6 +87,7 @@ $config: (
   "summary-padding-y":              1em,
   "summary-type-size":              false,
   "summary-font-weight":            bold,
+  "summary-font-family":            null,
   "summary-border-enabled":         true,
   "summary-border-color":           "rule-light",
   "summary-border-width":           1px,
@@ -188,6 +191,7 @@ $config: (
     padding: get("summary-padding-y") $padding-x;
     border-radius: var(--ulu-accordion-radius-top) var(--ulu-accordion-radius-top) var(--ulu-accordion-radius-bottom) var(--ulu-accordion-radius-bottom);
     font-weight: get("summary-font-weight");
+    font-family: get("summary-font-family");
     cursor: pointer;
     align-items: center;
 
