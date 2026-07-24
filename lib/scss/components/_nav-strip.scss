@@ -15,7 +15,7 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {String} activeSelector [.is-active] Selector that portrays active status.
+/// @prop {String} active-selector [.is-active] Selector that portrays active status.
 /// @prop {Color} color ["type-tertiary"] Type color for the nav-strip.
 /// @prop {Color} color-active ["type"] Type color for the nav-strip when active.
 /// @prop {Color} color-hover ["type-hover"] Type color for the nav-strip when hovered or focused.
@@ -33,7 +33,7 @@
 /// @prop {Dimension} rule-offset [-3px] Offset the rule for the nav-strip.
 
 $config: (
-  "activeSelector" : "&.is-active, &.has-active",
+  "active-selector" : "&.is-active, &.has-active",
   "color" : "type-tertiary",
   "color-active" : "type",
   "color-hover" : "type",
@@ -115,7 +115,7 @@ $config: (
       border-bottom-color: color.get(get("underline-color-hover"));
       color: color.get(get("color-hover"));
     }
-    #{ get("activeSelector") } {
+    #{ get("active-selector") } {
       border-bottom-color: color.get(get("underline-color"));
       color: color.get(get("color-active"));
     }

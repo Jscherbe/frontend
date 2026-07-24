@@ -65,6 +65,7 @@
 @forward "vignette" as vignette-*;
 @forward "captioned-figure" as captioned-figure-*;
 @forward "spoke-spinner" as spoke-spinner-*;
+@forward "switch" as switch-*;
 @forward "wysiwyg" as wysiwyg-*;
 
 @use "sass:list";
@@ -132,6 +133,7 @@
 @use "vignette";
 @use "captioned-figure";
 @use "spoke-spinner";
+@use "switch";
 @use "wysiwyg";
 
 /// Default includes, all modules
@@ -188,6 +190,7 @@ $all-includes: (
   "skip-link",
   "sticky-list",
   "slider",
+  "switch",
   "hero",
   "tabs",
   "table-scroller",
@@ -398,6 +401,9 @@ $current-includes: $all-includes;
   }
   @if (list.index($includes, "slider")) {
     @include slider.styles;
+  }
+  @if (list.index($includes, "switch")) {
+    @include switch.styles;
   }
   @if (list.index($includes, "tabs")) {
     @include tabs.styles;

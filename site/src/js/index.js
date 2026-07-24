@@ -29,6 +29,7 @@ ulu.sliderInit();
 ulu.flipcardInit();
 ulu.themeToggleInit();
 ulu.detailsGroupInit();
+ulu.switchInit();
 
 setConfigListGrid({
   onChange(container, value) {

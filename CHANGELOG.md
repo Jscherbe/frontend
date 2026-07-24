@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.7.2
+
+- `scss/component/_nav-strip.scss` **Breaking**
+  - Fix incorrect casing on option "activeSelector" --> "active-selector"
+
 ## 0.7.1
 
 - `scss/component/_accordion.scss`

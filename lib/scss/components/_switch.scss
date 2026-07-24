@@ -1,0 +1,260 @@
+////
+/// @group switch
+/// Styling for the switch component (single toggle switches and segmented control groups)
+////
+
+@use "sass:list";
+@use "sass:map";
+@use "../selector";
+@use "../utils";
+@use "../color";
+@use "../element";
+
+/// Module Settings
+/// @type Map
+/// @prop {Dimension} track-width [2.75em] Width of the single switch track.
+/// @prop {Dimension} track-height [1.5em] Height of the single switch track.
+/// @prop {Dimension} track-border-radius [1.5em] Border radius of the track.
+/// @prop {String} track-background ["placeholder-background"] Background color name for the track.
+/// @prop {String} track-background-checked ["accent"] Background color name when checked.
+/// @prop {String} track-border-color ["rule-light"] Border color name.
+/// @prop {String} track-border-color-checked ["accent"] Border color name when checked.
+/// @prop {Dimension} track-border-width [1px] Width of the track border.
+/// @prop {Dimension} knob-size [1.125em] Diameter of the toggle knob.
+/// @prop {Color} knob-background [#ffffff] Background color of the knob.
+/// @prop {CssValue} knob-box-shadow [0 1px 3px rgba(0, 0, 0, 0.2)] Box shadow for the knob.
+/// @prop {Dimension} knob-offset [2px] Positioning offset of the knob within the track.
+/// @prop {String} group-background ["placeholder-background"] Background color name for the segmented container.
+/// @prop {Dimension} group-border-radius [2rem] Border radius for the segmented container.
+/// @prop {Dimension} group-padding [4px] Inner padding for the segmented container.
+/// @prop {Dimension} group-gap [2px] Gap between items in the segmented container.
+/// @prop {Dimension|List} item-padding [(0.5em 1.25em)] Padding for each segmented item.
+/// @prop {String} item-color ["type-secondary"] Text color name for segmented items.
+/// @prop {String} item-color-active ["type"] Text color name for active/checked items.
+/// @prop {CssValue} item-font-weight [bold] Font weight of segmented items.
+/// @prop {Color} indicator-background [#ffffff] Background color of the sliding indicator pill.
+/// @prop {Dimension} indicator-border-radius [2rem] Border radius of the sliding indicator.
+/// @prop {CssValue} indicator-box-shadow [0 1px 3px rgba(0, 0, 0, 0.15)] Box shadow for the sliding indicator.
+/// @prop {Time} transition-duration [220ms] Duration of sliding and state transitions.
+/// @prop {CssValue} transition-timing-function [cubic-bezier(0.4, 0, 0.2, 1)] Timing function for transitions.
+/// @prop {List} active-selectors [(".is-active", '[aria-pressed="true"]')] Active selectors for single switches.
+/// @prop {List} group-active-selectors [(".is-active", '[aria-pressed="true"]', '[aria-selected="true"]')] Active selectors for switch groups.
+$config: (
+  // Single Switch Config
+  "track-width": 2.75em,
+  "track-height": 1.5em,
+  "track-border-radius": 1.5em,
+  "track-background": "placeholder-background",
+  "track-background-checked": "accent",
+  "track-border-color": "rule-light",
+  "track-border-color-checked": "accent",
+  "track-border-width": 1px,
+  "knob-size": 1.125em, // 1.5em minus margins
+  "knob-background": #ffffff,
+  "knob-box-shadow": 0 1px 3px rgba(0, 0, 0, 0.2),
+  "knob-offset": 2px,
+  
+  // Group Switch (Segmented Control) Config
+  "group-background": "placeholder-background",
+  "group-border-radius": 2rem,
+  "group-padding": 4px,
+  "group-gap": 2px,
+  
+  // Group Item
+  "item-padding": (0.5em 1.25em),
+  "item-color": "type-secondary",
+  "item-color-active": "type",
+  "item-font-weight": bold,
+  
+  // Group Indicator
+  "indicator-background": #ffffff,
+  "indicator-border-radius": 2rem,
+  "indicator-box-shadow": 0 1px 3px rgba(0, 0, 0, 0.15),
+  
+  // Transition
+  "transition-duration": 220ms,
+  "transition-timing-function": cubic-bezier(0.4, 0, 0.2, 1),
+
+  // Configurable Active States
+  "active-selectors": (".is-active", '[aria-pressed="true"]'),
+  "group-active-selectors": (".is-active", '[aria-pressed="true"]', '[aria-selected="true"]')
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-switch-set(( "track-width" : 3em ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {String} $name Name of property
+/// @example scss
+///   $track-width: ulu.component-switch-get("track-width");
+@function get($name) {
+  @return utils.require-map-get($config, $name, "switch [config]");
+}
+
+/// Prints component styles
+/// @example scss
+///  @include ulu.component-switch-styles();
+@mixin styles {
+  $prefix: selector.class("switch");
+  
+  // Resolve active selectors lists
+  $active-selectors: get("active-selectors");
+  $group-active-selectors: get("group-active-selectors");
+  
+  // Build single switch container active selectors
+  $single-active-selectors: ();
+  @each $sel in $active-selectors {
+    $single-active-selectors: list.append($single-active-selectors, "#{ $prefix }#{ $sel } #{ $prefix }__control", comma);
+  }
+  
+  // Build group item active selectors
+  $group-item-active-selectors: ();
+  @each $sel in $group-active-selectors {
+    $group-item-active-selectors: list.append($group-item-active-selectors, "#{ $prefix }__item#{ $sel }", comma);
+  }
+  // Always include CSS :has fallback for checked radio/checkbox input
+  $group-item-active-selectors: list.append($group-item-active-selectors, "#{ $prefix }__item:has(#{ $prefix }__input:checked)", comma);
+
+  // Single switch styles
+  #{ $prefix } {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+  }
+
+  #{ $prefix }__input {
+    @include element.hidden-visually();
+  }
+
+  #{ $prefix }__control {
+    display: inline-block;
+    position: relative;
+    width: get("track-width");
+    height: get("track-height");
+    border-radius: get("track-border-radius");
+    background-color: color.get(get("track-background"));
+    border: get("track-border-width") solid color.get(get("track-border-color"));
+    transition-property: background-color, border-color;
+    transition-duration: get("transition-duration");
+    transition-timing-function: get("transition-timing-function");
+    vertical-align: middle;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: get("knob-offset");
+      left: get("knob-offset");
+      width: get("knob-size");
+      height: get("knob-size");
+      border-radius: 50%;
+      background-color: get("knob-background");
+      box-shadow: get("knob-box-shadow");
+      transition-property: transform;
+      transition-duration: get("transition-duration");
+      transition-timing-function: get("transition-timing-function");
+    }
+  }
+
+  #{ $prefix }__label {
+    margin-left: 0.5em;
+  }
+
+  // Active / Checked states for single switch
+  #{ $prefix }__input:checked + #{ $prefix }__control,
+  #{ $single-active-selectors } {
+    background-color: color.get(get("track-background-checked"));
+    border-color: color.get(get("track-border-color-checked"));
+    
+    &::after {
+      // Move knob across track minus knob size, offset, and borders
+      transform: translateX(calc(#{ get("track-width") } - #{ get("knob-size") } - (#{ get("knob-offset") } * 2) - (#{ get("track-border-width") } * 2)));
+    }
+  }
+
+  // Focus visible outline for keyboard navigation
+  #{ $prefix }__input:focus-visible + #{ $prefix }__control,
+  #{ $prefix }:focus-visible #{ $prefix }__control {
+    outline: 2px solid color.get("focus");
+    outline-offset: 2px;
+  }
+
+  // Segmented group container style
+  #{ $prefix }--group {
+    display: inline-flex;
+    position: relative;
+    background-color: color.get(get("group-background"));
+    border-radius: get("group-border-radius");
+    padding: get("group-padding");
+    gap: get("group-gap");
+    vertical-align: middle;
+  }
+
+  // Segmented item style
+  #{ $prefix }__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: get("item-padding");
+    color: color.get(get("item-color"));
+    font-weight: get("item-font-weight");
+    text-decoration: none;
+    border-radius: get("indicator-border-radius");
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+    transition-property: color;
+    transition-duration: get("transition-duration");
+    transition-timing-function: get("transition-timing-function");
+
+    // Keyboard focus state
+    &:focus-visible,
+    &:has(#{ $prefix }__input:focus-visible) {
+      outline: 2px solid color.get("focus");
+      outline-offset: 2px;
+    }
+  }
+
+  // Active items in group (static color styling)
+  #{ $group-item-active-selectors } {
+    color: color.get(get("item-color-active"));
+  }
+
+  // If there's NO indicator (pure CSS fallback), style the active items statically
+  #{ $prefix }--group:not(:has(#{ $prefix }__indicator)) {
+    #{ $group-item-active-selectors } {
+      background-color: get("indicator-background");
+      border-radius: get("indicator-border-radius");
+      box-shadow: get("indicator-box-shadow");
+    }
+  }
+
+  // The sliding background indicator pill
+  #{ $prefix }__indicator {
+    position: absolute;
+    z-index: 1;
+    background-color: get("indicator-background");
+    border-radius: get("indicator-border-radius");
+    box-shadow: get("indicator-box-shadow");
+    
+    top: 0;
+    left: 0;
+    width: var(--ulu-switch-indicator-width, 0);
+    height: var(--ulu-switch-indicator-height, 0);
+    opacity: var(--ulu-switch-indicator-opacity, 0);
+    transform: translate3d(var(--ulu-switch-indicator-left, 0), var(--ulu-switch-indicator-top, 0), 0);
+    transition-property: transform, width, height, opacity;
+    transition-duration: get("transition-duration");
+    transition-timing-function: get("transition-timing-function");
+    pointer-events: none;
+  }
+}

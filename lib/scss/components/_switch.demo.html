@@ -1,0 +1,95 @@
+<!-- @ulu-demo
+  title: Single Switch Toggle
+  description: A toggle switch using a checkbox or a single button.
+-->
+<div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
+  <label class="switch">
+    <input type="checkbox" class="switch__input">
+    <span class="switch__control"></span>
+    <span class="switch__label">Standard checkbox switch</span>
+  </label>
+
+  <label class="switch">
+    <input type="checkbox" class="switch__input" checked>
+    <span class="switch__control"></span>
+    <span class="switch__label">Checked checkbox switch</span>
+  </label>
+
+  <button class="switch" type="button" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); this.classList.toggle('is-active');">
+    <span class="switch__control"></span>
+    <span class="switch__label">Single button switch</span>
+  </button>
+</div>
+
+<!-- @ulu-demo
+  title: Switch Group
+  description: A segmented switch group using radios or buttons with a sliding indicator.
+-->
+<div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
+  <div class="switch--group" data-ulu-switch>
+    <label class="switch__item">
+      <input type="radio" name="switch-demo-group-1" class="switch__input" checked>
+      <span class="switch__label">Daily</span>
+    </label>
+    <label class="switch__item">
+      <input type="radio" name="switch-demo-group-1" class="switch__input">
+      <span class="switch__label">Weekly</span>
+    </label>
+    <label class="switch__item">
+      <input type="radio" name="switch-demo-group-1" class="switch__input">
+      <span class="switch__label">Monthly</span>
+    </label>
+    <div class="switch__indicator"></div>
+  </div>
+
+  <div class="switch--group" data-ulu-switch>
+    <button class="switch__item is-active" type="button">
+      <span>Yearly</span>
+    </button>
+    <button class="switch__item" type="button">
+      <span>Monthly</span>
+    </button>
+    <button class="switch__item" type="button">
+      <span>Weekly</span>
+    </button>
+    <div class="switch__indicator"></div>
+  </div>
+</div>
+
+<!-- @ulu-demo
+  title: Form Theme Integration
+  description: Testing single switches and switch groups when placed inside a form-theme container.
+-->
+<form class="form-theme" style="max-width: 450px;">
+  <div class="form-theme__item">
+    <label>Toggle Feature</label>
+    <div style="margin-top: 0.5em;">
+      <label class="switch">
+        <input type="checkbox" class="switch__input" checked>
+        <span class="switch__control"></span>
+        <span class="switch__label">Enable tracking cookies</span>
+      </label>
+    </div>
+  </div>
+  
+  <div class="form-theme__item">
+    <label>Frequency Selection</label>
+    <div style="margin-top: 0.5em;">
+      <div class="switch--group" data-ulu-switch>
+        <label class="switch__item">
+          <input type="radio" name="form-theme-switch-freq" class="switch__input" checked>
+          <span class="switch__label">Standard</span>
+        </label>
+        <label class="switch__item">
+          <input type="radio" name="form-theme-switch-freq" class="switch__input">
+          <span class="switch__label">Express</span>
+        </label>
+        <label class="switch__item">
+          <input type="radio" name="form-theme-switch-freq" class="switch__input">
+          <span class="switch__label">Overnight</span>
+        </label>
+        <div class="switch__indicator"></div>
+      </div>
+    </div>
+  </div>
+</form>
