@@ -118,7 +118,6 @@ A simple boolean toggle representing a checkbox. This is a pure-CSS template and
       :checked="modelValue" 
       @change="$emit('update:modelValue', $event.target.checked)"
     />
-    <span class="switch__control"></span>
     <span class="switch__label">
       <slot></slot>
     </span>

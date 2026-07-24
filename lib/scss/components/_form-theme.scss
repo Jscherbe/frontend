@@ -338,9 +338,40 @@ $config: (
       padding-right: get("select-image-offset") + get("select-image-size") + get("select-image-margin"); 
     }
   }
+  // Scoped wrapper selectors
+  $checkbox-wrappers: ("#{ $prefix }__item--checkbox", "#{ $prefix }__checkbox-wrapper");
+  $radio-wrappers: ("#{ $prefix }__item--radio", "#{ $prefix }__radio-wrapper");
+
+  @if (get("drupal")) {
+    $checkbox-wrappers: list.append($checkbox-wrappers, ".form-type-checkbox", comma);
+    $radio-wrappers: list.append($radio-wrappers, ".form-type-radio", comma);
+  }
+
+  // Direct element classes
+  $checkbox-classes: ("#{ $prefix }__checkbox", ".form-checkbox");
+  $radio-classes: ("#{ $prefix }__radio", ".form-radio");
+
+  // Compile selectors
+  $checkbox-selectors: ();
+  @each $wrap in $checkbox-wrappers {
+    $checkbox-selectors: list.append($checkbox-selectors, "#{$wrap} [type='checkbox']", comma);
+  }
+  @each $cls in $checkbox-classes {
+    $checkbox-selectors: list.append($checkbox-selectors, "#{$cls}", comma);
+  }
+
+  $radio-selectors: ();
+  @each $wrap in $radio-wrappers {
+    $radio-selectors: list.append($radio-selectors, "#{$wrap} [type='radio']", comma);
+  }
+  @each $cls in $radio-classes {
+    $radio-selectors: list.append($radio-selectors, "#{$cls}", comma);
+  }
+
+  $all-check-selectors: list.join($checkbox-selectors, $radio-selectors, comma);
+
   // Replace Native Inputs with CSS styled one
-  [type="checkbox"],
-  [type="radio"] {
+  #{ $all-check-selectors } {
     appearance: none;
     margin: 0;
     display: inline-block;
@@ -428,7 +459,7 @@ $config: (
       }
     }
   }
-  [type="checkbox"] {
+  #{ $checkbox-selectors } {
     &::before {
       border-radius: get("check-input-border-radius");
     }

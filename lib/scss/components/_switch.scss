@@ -1,6 +1,6 @@
 ////
 /// @group switch
-/// Styling for the switch component (single toggle switches and segmented control groups)
+/// Styling for the switch component (single toggle switches and switch groups)
 ////
 
 @use "sass:list";
@@ -12,33 +12,6 @@
 
 /// Module Settings
 /// @type Map
-/// @prop {Dimension} track-width [2.75em] Width of the single switch track.
-/// @prop {Dimension} track-height [1.5em] Height of the single switch track.
-/// @prop {Dimension} track-border-radius [1.5em] Border radius of the track.
-/// @prop {String} track-background ["placeholder-background"] Background color name for the track.
-/// @prop {String} track-background-checked ["accent"] Background color name when checked.
-/// @prop {String} track-border-color ["rule-light"] Border color name.
-/// @prop {String} track-border-color-checked ["accent"] Border color name when checked.
-/// @prop {Dimension} track-border-width [1px] Width of the track border.
-/// @prop {Dimension} knob-size [1.125em] Diameter of the toggle knob.
-/// @prop {Color} knob-background [#ffffff] Background color of the knob.
-/// @prop {CssValue} knob-box-shadow [0 1px 3px rgba(0, 0, 0, 0.2)] Box shadow for the knob.
-/// @prop {Dimension} knob-offset [2px] Positioning offset of the knob within the track.
-/// @prop {String} group-background ["placeholder-background"] Background color name for the segmented container.
-/// @prop {Dimension} group-border-radius [2rem] Border radius for the segmented container.
-/// @prop {Dimension} group-padding [4px] Inner padding for the segmented container.
-/// @prop {Dimension} group-gap [2px] Gap between items in the segmented container.
-/// @prop {Dimension|List} item-padding [(0.5em 1.25em)] Padding for each segmented item.
-/// @prop {String} item-color ["type-secondary"] Text color name for segmented items.
-/// @prop {String} item-color-active ["type"] Text color name for active/checked items.
-/// @prop {CssValue} item-font-weight [bold] Font weight of segmented items.
-/// @prop {Color} indicator-background [#ffffff] Background color of the sliding indicator pill.
-/// @prop {Dimension} indicator-border-radius [2rem] Border radius of the sliding indicator.
-/// @prop {CssValue} indicator-box-shadow [0 1px 3px rgba(0, 0, 0, 0.15)] Box shadow for the sliding indicator.
-/// @prop {Time} transition-duration [220ms] Duration of sliding and state transitions.
-/// @prop {CssValue} transition-timing-function [cubic-bezier(0.4, 0, 0.2, 1)] Timing function for transitions.
-/// @prop {List} active-selectors [(".is-active", '[aria-pressed="true"]')] Active selectors for single switches.
-/// @prop {List} group-active-selectors [(".is-active", '[aria-pressed="true"]', '[aria-selected="true"]')] Active selectors for switch groups.
 $config: (
   // Single Switch Config
   "track-width": 2.75em,
@@ -109,7 +82,7 @@ $config: (
   // Build single switch container active selectors
   $single-active-selectors: ();
   @each $sel in $active-selectors {
-    $single-active-selectors: list.append($single-active-selectors, "#{ $prefix }#{ $sel } #{ $prefix }__control", comma);
+    $single-active-selectors: list.append($single-active-selectors, "#{ $prefix }#{ $sel }", comma);
   }
   
   // Build group item active selectors
@@ -120,20 +93,9 @@ $config: (
   // Always include CSS :has fallback for checked radio/checkbox input
   $group-item-active-selectors: list.append($group-item-active-selectors, "#{ $prefix }__item:has(#{ $prefix }__input:checked)", comma);
 
-  // Single switch styles
+  // The switch control track (on input checkbox/radio or button)
   #{ $prefix } {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    user-select: none;
-    vertical-align: middle;
-  }
-
-  #{ $prefix }__input {
-    @include element.hidden-visually();
-  }
-
-  #{ $prefix }__control {
+    appearance: none;
     display: inline-block;
     position: relative;
     width: get("track-width");
@@ -145,6 +107,9 @@ $config: (
     transition-duration: get("transition-duration");
     transition-timing-function: get("transition-timing-function");
     vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
     
     &::after {
       content: "";
@@ -160,29 +125,37 @@ $config: (
       transition-duration: get("transition-duration");
       transition-timing-function: get("transition-timing-function");
     }
+
+    &:checked {
+      background-color: color.get(get("track-background-checked"));
+      border-color: color.get(get("track-border-color-checked"));
+      
+      &::after {
+        transform: translateX(calc(#{ get("track-width") } - #{ get("knob-size") } - (#{ get("knob-offset") } * 2) - (#{ get("track-border-width") } * 2)));
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid color.get("focus");
+      outline-offset: 2px;
+    }
   }
 
-  #{ $prefix }__label {
-    margin-left: 0.5em;
-  }
-
-  // Active / Checked states for single switch
-  #{ $prefix }__input:checked + #{ $prefix }__control,
+  // Active state styling for buttons/custom elements acting as single tracks
   #{ $single-active-selectors } {
     background-color: color.get(get("track-background-checked"));
     border-color: color.get(get("track-border-color-checked"));
     
     &::after {
-      // Move knob across track minus knob size, offset, and borders
       transform: translateX(calc(#{ get("track-width") } - #{ get("knob-size") } - (#{ get("knob-offset") } * 2) - (#{ get("track-border-width") } * 2)));
     }
   }
 
-  // Focus visible outline for keyboard navigation
-  #{ $prefix }__input:focus-visible + #{ $prefix }__control,
-  #{ $prefix }:focus-visible #{ $prefix }__control {
-    outline: 2px solid color.get("focus");
-    outline-offset: 2px;
+  // Spacing for labels adjacent to the track
+  #{ $prefix }__label {
+    margin-left: 0.5em;
+    user-select: none;
+    vertical-align: middle;
   }
 
   // Segmented group container style
@@ -194,6 +167,11 @@ $config: (
     padding: get("group-padding");
     gap: get("group-gap");
     vertical-align: middle;
+
+    // Inside switch groups, inputs are visually hidden (indicator slides instead)
+    #{ $prefix }__input {
+      @include element.hidden-visually();
+    }
   }
 
   // Segmented item style

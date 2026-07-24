@@ -8,29 +8,27 @@ intro: Test toggle switches and switch groups
 
 <p>A simple on/off switch using a native checkbox. Powered entirely by CSS (no JS required).</p>
 
-<label class="switch">
-  <input type="checkbox" class="switch__input">
-  <span class="switch__control"></span>
-  <span class="switch__label">Toggle feature status</span>
-</label>
+<div>
+  <input type="checkbox" class="switch" id="switch-site-demo-1">
+  <label class="switch__label" for="switch-site-demo-1">Toggle feature status</label>
+</div>
 
-<br><br>
+<br>
 
-<label class="switch">
-  <input type="checkbox" class="switch__input" checked>
-  <span class="switch__control"></span>
-  <span class="switch__label">Feature active by default</span>
-</label>
+<div>
+  <input type="checkbox" class="switch" id="switch-site-demo-2" checked>
+  <label class="switch__label" for="switch-site-demo-2">Feature active by default</label>
+</div>
 
 
 ## Single Toggle Switch (Button)
 
 <p>A single button behaving as a toggle. In a real-world app, minimal JS toggles <code>aria-pressed</code> and <code>is-active</code>.</p>
 
-<button class="switch" type="button" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); this.classList.toggle('is-active');">
-  <span class="switch__control"></span>
-  <span class="switch__label">Toggle setting</span>
-</button>
+<div>
+  <button class="switch" type="button" aria-pressed="false" id="switch-site-demo-3" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); this.classList.toggle('is-active');"></button>
+  <label class="switch__label" for="switch-site-demo-3">Toggle setting</label>
+</div>
 
 
 ## Switch Group (Radios - Pure CSS Static fallback)

@@ -3,22 +3,20 @@
   description: A toggle switch using a checkbox or a single button.
 -->
 <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
-  <label class="switch">
-    <input type="checkbox" class="switch__input">
-    <span class="switch__control"></span>
-    <span class="switch__label">Standard checkbox switch</span>
-  </label>
+  <div>
+    <input type="checkbox" class="switch" id="switch-demo-1">
+    <label class="switch__label" for="switch-demo-1">Standard checkbox switch</label>
+  </div>
 
-  <label class="switch">
-    <input type="checkbox" class="switch__input" checked>
-    <span class="switch__control"></span>
-    <span class="switch__label">Checked checkbox switch</span>
-  </label>
+  <div>
+    <input type="checkbox" class="switch" id="switch-demo-2" checked>
+    <label class="switch__label" for="switch-demo-2">Checked checkbox switch</label>
+  </div>
 
-  <button class="switch" type="button" aria-pressed="false" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); this.classList.toggle('is-active');">
-    <span class="switch__control"></span>
-    <span class="switch__label">Single button switch</span>
-  </button>
+  <div>
+    <button class="switch" type="button" aria-pressed="false" id="switch-demo-3" onclick="this.setAttribute('aria-pressed', this.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); this.classList.toggle('is-active');"></button>
+    <label class="switch__label" for="switch-demo-3">Single button switch</label>
+  </div>
 </div>
 
 <!-- @ulu-demo
@@ -61,35 +59,29 @@
   description: Testing single switches and switch groups when placed inside a form-theme container.
 -->
 <form class="form-theme" style="max-width: 450px;">
+  <!-- Sibling markup inside standard form-theme item -->
   <div class="form-theme__item">
-    <label>Toggle Feature</label>
-    <div style="margin-top: 0.5em;">
-      <label class="switch">
-        <input type="checkbox" class="switch__input" checked>
-        <span class="switch__control"></span>
-        <span class="switch__label">Enable tracking cookies</span>
-      </label>
-    </div>
+    <input type="checkbox" class="switch" id="switch-cookies" checked>
+    <label class="switch__label" for="switch-cookies">Enable tracking cookies</label>
   </div>
   
-  <div class="form-theme__item">
-    <label>Frequency Selection</label>
-    <div style="margin-top: 0.5em;">
-      <div class="switch--group" data-ulu-switch>
-        <label class="switch__item">
-          <input type="radio" name="form-theme-switch-freq" class="switch__input" checked>
-          <span class="switch__label">Standard</span>
-        </label>
-        <label class="switch__item">
-          <input type="radio" name="form-theme-switch-freq" class="switch__input">
-          <span class="switch__label">Express</span>
-        </label>
-        <label class="switch__item">
-          <input type="radio" name="form-theme-switch-freq" class="switch__input">
-          <span class="switch__label">Overnight</span>
-        </label>
-        <div class="switch__indicator"></div>
-      </div>
+  <!-- Group switch inside standard fieldset -->
+  <fieldset class="form-item">
+    <legend>Frequency Selection</legend>
+    <div class="switch--group" data-ulu-switch>
+      <label class="switch__item">
+        <input type="radio" name="form-theme-switch-freq" class="switch__input" checked>
+        <span class="switch__label">Standard</span>
+      </label>
+      <label class="switch__item">
+        <input type="radio" name="form-theme-switch-freq" class="switch__input">
+        <span class="switch__label">Express</span>
+      </label>
+      <label class="switch__item">
+        <input type="radio" name="form-theme-switch-freq" class="switch__input">
+        <span class="switch__label">Overnight</span>
+      </label>
+      <div class="switch__indicator"></div>
     </div>
-  </div>
+  </fieldset>
 </form>
