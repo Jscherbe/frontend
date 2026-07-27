@@ -1,0 +1,170 @@
+////
+/// @group badge
+/// Outputs badge component stylesheet
+////
+
+@use "sass:meta";
+@use "sass:map";
+@use "../../utils";
+@use "../../selector";
+@use "../../typography";
+@use "../../color";
+
+// Used for function fallback
+$-fallbacks: (
+  "font-family" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "font-family-sans"
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {Color} background-color [gray] Background color (if no image)
+/// @prop {Color} background-color-hover [null] Optional background color for hover when using badge--clickable modifier
+/// @prop {Number} border-radius [50%] Border radius of badge
+/// @prop {Color} color [black] Type color
+/// @prop {Color} color-hover [null] Optional color for hover when using badge--clickable modifier
+/// @prop {CssValue} box-shadow [null] Optional box-shadow
+/// @prop {CssValue} box-shadow-hover [null] Optional box-shadow for hover when using badge--clickable modifier
+/// @prop {Number} font-size [1.3rem] Font size (basic ie. 1.3rem) for badge
+/// @prop {Keyword} font-weight [bold] Font weight
+/// @prop {String} font-family [true] Specify font family, defaults to typography font-family-sans
+/// @prop {Number} width [10rem] Width of badge (default size)
+/// @prop {Time} transition-duration [110ms] Transition duration amount for transitioned properties
+/// @prop {Number} hover-scale [1.2] Scale of badge (if clickable) on hover (enlarges badge)
+/// @prop {List} sizes [Object] List of other sizes (large by default), each size is a map of (width, font-size) 
+
+$config: (
+  "background-color":    rgb(205, 205, 205),
+  "background-color-hover": null,
+  "border-radius":       50%,
+  "color":               black,
+  "color-hover":         null,
+  "box-shadow" :         null,
+  "box-shadow-hover" :   null,
+  "font-size":           1.5rem,
+  "font-weight":         bold,
+  "font-family":         true,
+  "width":               7rem,
+  "hover-scale":         1.2,
+  "transition-duration" : 110ms,
+  "sizes" : (
+    "small" : (
+      "font-size" : 1.2rem,
+      "width" :  4rem
+    ),
+    "large" : (
+      "font-size" : 2.75rem,
+      "width" :  9rem
+    )
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-badge-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-badge-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "badge [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Output badge component styles
+/// @example scss
+///  @include ulu.component-badge-styles();
+/// @example html {preview}
+///  <div class="badge">
+///    <div class="badge__inner">
+///      <img src="..." alt="...">
+///    </div>
+///  </div>
+/// 
+///  <div class="badge">
+///    <div class="badge__inner">
+///      <span>JS</span>
+///    </div>
+///  </div>
+
+@mixin styles {
+  $prefix: selector.class("badge");
+  // Badge content can be text, image, icon, or background-image
+  #{ $prefix } {
+    display: block;
+    width: get("width");
+    max-width: 100%;
+    flex: 0 0 get("width");
+    font-size: get("font-size");
+    font-weight: get("font-weight");
+    font-family: get("font-family");
+  }
+  #{ $prefix }__inner {
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    border-radius: get("border-radius");
+    transition-property: transform, color, box-shadow, background-color;
+    transition-duration: get("transition-duration");
+    transition-timing-function: ease-in-out;
+    box-shadow: get("box-shadow");
+    // In case this is used as a link or router-link
+    &,
+    &:hover,
+    &:focus,
+    &:visited {
+      background-color: color.get(get("background-color"));
+      color: color.get(get("color"));
+    }
+  }
+  #{ $prefix }--clickable,
+  button#{ $prefix },
+  a#{ $prefix } {
+    &:hover,
+    &:focus {
+      #{ $prefix }__inner {
+        color: color.get(get("color-hover"));
+        background-color: color.get(get("background-color-hover"));
+        box-shadow: get("box-shadow-hover");
+        transform: scale(get("hover-scale"));
+      }
+    }
+  }
+  #{ $prefix }__inner > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #{ $prefix }__inner > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 !important;
+  }
+
+  @each $name, $props in get("sizes") {
+    #{ $prefix }--#{ $name } {
+      width: map.get($props, "width");
+      font-size: map.get($props, "font-size");
+      flex-basis: map.get($props, "width");
+    }
+  }
+}
+

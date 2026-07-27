@@ -1,0 +1,10 @@
+////
+/// @group index
+/// Index of systems component styles.
+////
+
+@forward "skeleton" as skeleton-*;
+@forward "wysiwyg" as wysiwyg-*;
+
+@use "skeleton";
+@use "wysiwyg";

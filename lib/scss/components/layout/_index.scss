@@ -1,0 +1,32 @@
+////
+/// @group index
+/// Index of layout component styles.
+////
+
+@forward "adaptive-spacing" as adaptive-spacing-*;
+@forward "basic-hero" as basic-hero-*;
+@forward "captioned-figure" as captioned-figure-*;
+@forward "data-grid" as data-grid-*;
+@forward "fill-context" as fill-context-*;
+@forward "graphic-text-group" as graphic-text-group-*;
+@forward "hero" as hero-*;
+@forward "image-grid" as image-grid-*;
+@forward "overlay-section" as overlay-section-*;
+@forward "panel" as panel-*;
+@forward "rail" as rail-*;
+@forward "ratio-box" as ratio-box-*;
+@forward "table-scroller" as table-scroller-*;
+
+@use "adaptive-spacing";
+@use "basic-hero";
+@use "captioned-figure";
+@use "data-grid";
+@use "fill-context";
+@use "graphic-text-group";
+@use "hero";
+@use "image-grid";
+@use "overlay-section";
+@use "panel";
+@use "rail";
+@use "ratio-box";
+@use "table-scroller";

@@ -1,0 +1,609 @@
+////
+/// @group modal
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:list";
+
+@use "../../color";
+@use "../../element";
+@use "../../layout";
+@use "../../typography";
+@use "../../selector";
+@use "../../utils";
+@use "../../breakpoint";
+
+// Used for function fallback
+$-fallbacks: (
+  "breakpoint" : (
+    "function" : meta.get-function("get", false, "breakpoint"),
+    "property" : "default"
+  ),
+  "backdrop-color" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "backdrop-color"
+  ),
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow-above",
+  ),
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius-large",
+  ),
+  "close-icon-vertical-offset": (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "icon-centered-vertical-offset",
+  ),
+  "title-line-height" : (
+    "function" : meta.get-function("get", false, "typography"),
+    "property" : "line-height-dense",
+  )
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {CssValue} backdrop-blur [4px] Determines the blur of the backdrop.
+/// @prop {Color} backdrop-color [true] The unblurred background color outside the modal. If set to true, will use the element.scss property for backdrop-color.
+/// @prop {Color} background-color [white] The background color of the modal.
+/// @prop {Dimension} body-padding [1rem] The padding of the body content.
+/// @prop {CssValue} border-radius [true] The border radius of the modal. If set to true, will use the element.scss property for border-radius-large.
+/// @prop {CssValue} box-shadow [true] Determines the box-shadow of the modal. If set to true, will use the element.scss property for backdrop-color.
+/// @prop {Dimension} height [340px] The min-height of the modal.
+/// @prop {Dimension} height-no-header [100px] The min-height of the modal.
+/// @prop {Dimension} width [60rem] The width of the Modal
+/// @prop {Dimension} min-width [300px] The min-width of the Modal (for resizing, etc)
+/// @prop {Time} animation-duration [300ms] Animation duration for the modal opening.
+/// @prop {Time} animation-duration-exit [150ms] Animation duration for the modal closing.
+/// @prop {CssValue} animation-timing-function [cubic-bezier(0, 0, .2, 1)] The animation timing menu of the modal.
+/// @prop {Color} close-background-color [null] Background color for the modal close icon.
+/// @prop {Close} close-background-color-hover [null] Background color for the modal close icon when hovered or focused.
+/// @prop {Color} close-border-color [null] Border color of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color.
+/// @prop {Color} close-border-color-hover [null] Border color hover of the modal__close element. Overrides button border color if using button styling. Fallback to close-background-color-hover.
+/// @prop {Color} close-box-shadow [none] Box-shadow of the modal__close element. Overrides button border color if using button styling. Defaults to remove box-shadow styling.
+/// @prop {Color} close-color [null] Type color for the modal close icon.
+/// @prop {Color} close-color-hover [null] Type color for the modal close icon when hovered or focused.
+/// @prop {Dimension} close-margin [0.5rem] The margin for the modal close icon.
+/// @prop {Color} header-background-color [black] Background color for the header.
+/// @prop {CssValue} header-border-bottom [none] Bottom-border on the modal header.
+/// @prop {Color} header-color [white] Type color of the header.
+/// @prop {Dimension} header-padding [1rem] The padding of the modal header.
+/// @prop {Dimension} footer-padding [(0.5rem 1rem)] The padding of the modal footer.
+/// @prop {Color} footer-background-color [(0.5rem 1rem)] The background color of the footer
+/// @prop {Color} footer-border-top [(0.5rem 1rem)] The border between body and footer
+/// @prop {CssValue} footer-text-align [right] Text alignment for footer
+/// @prop {Color} resizer-background-color [rgb(221, 221, 221)] The background color of the resizer.
+/// @prop {Color} resizer-background-color-hover [rgb(192, 192, 192)] The background color of the resizer when hovered or focused.
+/// @prop {Color} resizer-color [rgb(99, 99, 99)] The type color of the resizer.
+/// @prop {Color} resizer-color-hover [black] The type color of the resizer when hovered or focused.
+/// @prop {Dimension} resizer-width [1rem] The width of the resizer.
+/// @prop {Dimension} resizer-center-size [1.65rem] The width/height of the resizer (in bottom right corner) used when position center with resize enabled
+/// @prop {Color} title-color [white] Type color of the title.
+/// @prop {CssValue} title-font-weight [bold] Font weight of the title.
+/// @prop {CssValue} title-font-family [null] Font family for title
+/// @prop {Dimension} title-icon-margin [0.5em] The margin of the title icon
+/// @prop {Boolean|CssValue} title-line-height [true] If true will default to typography "line-height-dense", or set your own value
+/// @prop {String} title-size [large] The font-size of the title. This uses typography.scss, so the value of this options should be a variable from typography.scss.
+/// @prop {CssValue} title-text-transform [null] Transform option for the title.
+/// @prop {Map} sizes [Map] Size options to enable unique stylings.
+/// @prop {String} breakpoint [true] Optional breakpoint for modals (used for adaptive things like fullscreen-mobile), if set to true will fallback to breakpoint default
+/// @prop {String} frame-aspect-ratio [list.slash(16, 9)] Default aspect ratio for single embedded items in frame-ratio layout
+/// @prop {String} frame-fill-min-height [65vh] Default minimum height for single embedded items in frame-fill layout
+
+$config: (
+  "backdrop-color" :                true,
+  "backdrop-blur" :                 4px,
+  "background-color" :             white,
+  "body-padding" :                  1rem,
+  "border-radius" :                 true,
+  "box-shadow" :                    true,         
+  "height":                         340px,
+  "height-no-header":               100px,
+  "width":                          60rem,
+  "min-width":                      300px,
+  "width-left-right" :              30rem,
+  "animation-duration" :            300ms,
+  "animation-duration-exit" :       150ms,
+  "animation-timing-function" :     cubic-bezier(0, 0, .2, 1),
+  "close-background-color":         null,
+  "close-background-color-hover":   null,
+  "close-border-color":             null,
+  "close-border-color-hover":       null,
+  "close-box-shadow":               none,
+  "close-color":                    null,
+  "close-color-hover":              null,
+  "close-margin":                   0.5rem,
+  "close-icon-vertical-offset" : true,
+  "header-background-color":        black,
+  "header-border-bottom":           none,
+  "header-color":                   white,
+  "header-padding":                 1rem,
+  "footer-padding" :                (0.5rem 1rem),
+  "footer-background-color" :       #f6f6f6,
+  "footer-border-top" :             none,
+  "footer-text-align" :             right,
+  "resizer-background-color":       rgb(221, 221, 221),
+  "resizer-background-color-hover": rgb(192, 192, 192),
+  "resizer-color":                  rgb(99, 99, 99),
+  "resizer-color-hover":            black,
+  "resizer-width":                  1.25rem,
+  "resizer-center-size" :           1.65rem,
+  "title-color":                    white,
+  "title-font-weight":              bold,
+  "title-font-family" :             null,
+  "title-icon-margin" :             0.5em,
+  "title-size" :                    "large",
+  "title-line-height" :             true,
+  "title-text-transform" :          null,
+  "breakpoint" :                    true,
+  "frame-aspect-ratio" :            list.slash(16, 9),
+  "frame-fill-min-height" :         65vh,
+  "sizes" : (
+    "small" : 30rem,
+    "large" : 80rem
+  ),
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss 
+///   @include ulu.component-modal-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-modal-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "component-modal [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Prints modal component styles
+/// @example scss
+///  @include ulu.component-modal-styles();
+
+@mixin styles {
+  $prefix: selector.class("modal");
+  $breakpoint: get("breakpoint");
+
+  // // Before it's moved
+  [data-ulu-modal-builder] {
+    display: none;
+  }
+  
+  #{ $prefix } {
+    // Required for click outside
+    position: fixed;
+    flex-direction: column;
+    // Important: If you use the margin layout system (ie. auto) on dialogs they 
+    // can't animate out correctly (thinking it jumps from dialog display system 
+    // to normal block and doesn't work. This ALSO affects the z-index (seems to move from top-layer to normal layer). Z-index is for close
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: layout.get("z-index-fixed") + 1;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: get("width");
+    min-width: get("min-width"); // For resizing minimum width
+    min-height: get("height");
+    max-height: 100vh;
+    max-height: 100dvh;
+    max-width: 100%;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    box-shadow: get("box-shadow");
+    border-radius: get("border-radius");
+    background-color: color.get(get("background-color"));
+    box-sizing: border-box;
+    animation: uluModalCenterOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      display: flex;
+      animation: uluModalCenterIn get("animation-duration") get("animation-timing-function");
+    }
+    &::backdrop {
+      background: color.get(get("backdrop-color"));
+      backdrop-filter: blur(get("backdrop-blur"));
+      animation: uluModalBackdropIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  #{ $prefix }__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+    padding: get("header-padding");
+    border-bottom: get("header-border-bottom");
+    background-color: color.get(get("header-background-color"));
+    color: color.get(get("header-color"));
+  }
+  #{ $prefix }__body {
+    flex: 1 1 auto;
+    min-height: 0; // to ensure the flex grow container can get smaller than it's content (and scroll) when needed
+    overflow: auto;
+    padding: get("body-padding");
+  }
+  #{ $prefix }__footer {
+    flex: 0 0 auto;
+    padding: get("footer-padding");
+    background-color: color.get(get("footer-background-color"));
+    border-top: get("footer-border-top");
+    text-align: get("footer-text-align");
+  }
+  #{ $prefix }__title {
+    display: flex;
+    align-items: baseline;
+    margin: 0;
+    color: color.get(get("title-color"));
+    font-weight: get("title-font-weight");
+    font-family: get("title-font-family");
+    text-transform: get("title-text-transform");
+    line-height: get("title-line-height");
+    @if (get("title-size")) {
+      @include typography.size(get("title-size"), $only-font-size: true);
+    }
+  }
+  #{ $prefix }__title-icon {
+    margin-right: get("title-icon-margin");
+  }
+  #{ $prefix }__close {
+    margin: 0 0 0 get("close-margin");
+    flex: 0 0 auto;
+    background-color: color.get(get("close-background-color"));
+    border-color: color.get(utils.fallback(get("close-border-color"), get("close-background-color")));
+    color: color.get(get("close-color"));
+    box-shadow: get("close-box-shadow");
+    &:hover,
+    &:focus {
+      background-color: color.get(get("close-background-color-hover"));
+      color: color.get(get("close-color-hover"));
+      border-color: color.get(utils.fallback(get("close-border-color-hover"), get("close-background-color-hover")));
+      // need border-color-hover use utils fallback
+    }
+  }
+
+  #{ $prefix }__resizer {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: get("resizer-width");
+    display: block;
+    cursor: col-resize;
+    background-color: color.get(get("resizer-background-color"));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color, color;
+    transition-duration: 300ms;
+    transition-delay: 100ms; 
+    color: color.get(get("resizer-color"));
+    &:hover {
+      color: color.get(get("resizer-color-hover"));
+      background-color: color.get(get("resizer-background-color-hover"));
+    }
+    #{ $prefix }--left & {
+      left: auto;
+      right: 0;
+    }
+    #{ $prefix }--center & {
+      left: auto;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      height: get("resizer-center-size");
+      width: get("resizer-center-size");
+      background-color: transparent;
+      cursor: nwse-resize;
+    }
+  }
+
+  // Modifiers
+  @each $name, $size-width in get("sizes") {
+    #{ $prefix }--#{ $name } {
+      width: $size-width;
+    }
+  }
+
+  // Fullscreen and left and right defaults (width overridden below)
+  #{ $prefix }--fullscreen,
+  #{ $prefix }--right,
+  #{ $prefix }--left {
+    @include -fullscreen-common-properties();
+  }
+  // Left/Right specific
+  // - Note these properties are all important even though they seem redundant
+  //   they are tested and solve quirks with dialog positioning/animation
+  #{ $prefix }--right,
+  #{ $prefix }--left {
+    width: get("width-left-right");
+    top: 0;
+    bottom: 0;
+    transform: none;
+  }
+  #{ $prefix }--top {
+    top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    transform: translateX(-50%);
+    animation: uluModalTopOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalTopIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  #{ $prefix }--bottom {
+    top: auto;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    animation: uluModalBottomOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalBottomIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  #{ $prefix }--right {
+    right: 0;
+    left: auto;
+    animation: uluModalRightOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalRightIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  #{ $prefix }--left {
+    left: 0;
+    animation: uluModalLeftOut get("animation-duration-exit") get("animation-timing-function");
+    &[open] {
+      animation: uluModalLeftIn get("animation-duration") get("animation-timing-function");
+    }
+  }
+  #{ $prefix }--no-header {
+    min-height: get("height-no-header");
+  }
+  #{ $prefix }--no-backdrop {
+    &::backdrop {
+      display: none;
+    }
+  }
+  #{ $prefix }--resize {
+    &#{ $prefix }--right  {
+      padding-left: get("resizer-width");  
+    }
+    &#{ $prefix }--left  {
+      padding-right: get("resizer-width");  
+    }
+  }
+  // Share body flush layout
+  #{ $prefix }--body-fills,
+  #{ $prefix }--frame-ratio,
+  #{ $prefix }--frame-fill {
+    #{ $prefix }__header {
+      border-bottom: none;
+    }
+    #{ $prefix }__body {
+      padding: 0;
+    }
+  }
+  #{ $prefix }--no-min-height {
+    min-height: 0;
+  }
+
+  // Frame layouts for absolute positioned single content (e.g. iframes)
+  // Both modes use absolute positioning to escape wrappers (p, div, etc)
+  #{ $prefix }--frame-ratio,
+  #{ $prefix }--frame-fill {
+    #{ $prefix }__body {
+      position: relative;
+    }
+    #{ $prefix }__frame-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  // Ratio-specific: disable minimum heights and flex-grow so it perfectly wraps
+  #{ $prefix }--frame-ratio {
+    min-height: 0;
+    #{ $prefix }__body {
+      flex: none; 
+      // Default, can be overridden inline
+      aspect-ratio: utils.normalize-aspect-ratio(get("frame-aspect-ratio")); 
+    }
+  }
+
+  // Fill-specific: default height
+  #{ $prefix }--frame-fill {
+    #{ $prefix }__body {
+      // Default, can be overridden inline
+      min-height: get("frame-fill-min-height"); 
+    }
+  }
+
+  @if breakpoint.exists($breakpoint) {
+    #{ $prefix }--fullscreen-mobile {
+      @include breakpoint.max($breakpoint) {
+        @include -fullscreen-common-properties();
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translate(-50%, -50%);
+        animation: uluModalCenterOut get("animation-duration-exit") get("animation-timing-function");
+        &[open] {
+          animation: uluModalCenterIn get("animation-duration") get("animation-timing-function");
+        }
+        #{ $prefix }__resizer {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // Will display as content when printing
+  // NOTE: This will not work with native dialog
+  // Printing works with modal printer by cloning mechanism
+  // .modal--print {
+  //   @media screen {
+  //     display: block !important;
+  //     position: static;
+  //     top: auto;
+  //     left: auto;
+  //     right: auto;
+  //     bottom: auto;
+  //     width: auto;
+  //     max-width: none;
+  //   }
+  // }
+
+  @keyframes uluModalBackdropIn {
+    0% {
+      background-color: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0);
+    }
+    100% {
+      background-color: color.get(get("backdrop-color"));
+      backdrop-filter: blur(get("backdrop-blur"));
+    }
+  }
+  @keyframes uluModalCenterIn {
+    from { 
+      opacity: 0; 
+      transform: translate(-50%, -40%);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translate(-50%, -50%);
+      display: flex;
+    }
+  }
+  @keyframes uluModalCenterOut {
+    from { 
+      opacity: 1; 
+      display: flex;
+      transform: translate(-50%, -50%);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translate(-50%, 40%);
+    }
+  }
+  @keyframes uluModalTopIn {
+    from { 
+      opacity: 0; 
+      transform: translate(-50%, -15%);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translate(-50%, 0);
+      display: flex;
+    }
+  }
+  @keyframes uluModalTopOut {
+    from { 
+      opacity: 1; 
+      display: flex;
+      transform: translate(-50%, 0);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translate(-50%, -15%);
+    }
+  }
+  @keyframes uluModalBottomIn {
+    from { 
+      opacity: 0; 
+      transform: translate(-50%, 15%);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translate(-50%, 0);
+      display: flex;
+    }
+  }
+  @keyframes uluModalBottomOut {
+    from { 
+      opacity: 1; 
+      display: flex;
+      transform: translate(-50%, 0);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translate(-50%, 15%);
+    }
+  }
+  @keyframes uluModalLeftIn {
+    from { 
+      opacity: 0; 
+      transform: translateX(-15%);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0);
+      display: flex;
+    }
+  }
+  @keyframes uluModalLeftOut {
+    from { 
+      opacity: 1; 
+      display: flex;
+      transform: translateX(0);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translateX(-15%);
+    }
+  }
+  @keyframes uluModalRightIn {
+    from { 
+      opacity: 0; 
+      transform: translateX(15%);
+      display: none;
+    }
+    to { 
+      opacity: 1; 
+      transform: translateX(0);
+      display: flex;
+    }
+  }
+  @keyframes uluModalRightOut {
+    from { 
+      opacity: 1; 
+      display: flex;
+      transform: translateX(0);
+    }
+    to { 
+      opacity: 0; 
+      display: none;
+      transform: translateX(15%);
+    }
+  }
+}
+
+
+// Internal mixin to make sure this repeated CSS is identical for compression
+@mixin -fullscreen-common-properties() {
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  border-radius: 0;
+}

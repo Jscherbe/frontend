@@ -96,6 +96,36 @@ const commonConfig = {
         page.frontmatter.layout = "sassdoc";
         page.frontmatter.toc = false;
         page.frontmatter.tocInline = true;
+        
+        const groupName = page.frontmatter.sassdocGroupName || page.groupName;
+        const groupItems = data.groups?.[groupName];
+        const firstItem = groupItems?.[0];
+        const firstItemFile = firstItem?.data?.file;
+        
+        if (firstItemFile) {
+          if (page.path.startsWith("/sass/components/")) {
+            const filePath = firstItemFile.path; // e.g. "collapsible/_accordion.scss"
+            const parts = filePath.split("/");
+            if (parts.length > 1) {
+              const subCategory = parts[0];
+              const originalPath = page.path; // e.g. "/sass/components/accordion/"
+              const basename = path.basename(originalPath);
+              const isIndex = basename === "index" || basename === subCategory;
+              const newGroupPath = isIndex
+                ? `/sass/components/${ subCategory }/`
+                : `/sass/components/${ subCategory }/${ basename }/`;
+              
+              page.path = newGroupPath;
+              page.frontmatter.sassdocCategory = subCategory;
+              
+              // Update item groupPath and path to preserve cross-reference links
+              groupItems.forEach(item => {
+                item.groupPath = newGroupPath;
+                item.path = `${ newGroupPath }#${ item.id }`;
+              });
+            }
+          }
+        }
       });
     }
   }

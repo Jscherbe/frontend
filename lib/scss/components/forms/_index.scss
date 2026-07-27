@@ -1,0 +1,10 @@
+////
+/// @group index
+/// Index of forms component styles.
+////
+
+@forward "form-theme" as form-theme-*;
+@forward "input-group" as input-group-*;
+
+@use "form-theme";
+@use "input-group";

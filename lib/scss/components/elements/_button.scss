@@ -1,0 +1,110 @@
+////
+/// @group button
+/// Output core button styles and sizes
+////
+
+@use "sass:map";
+@use "sass:meta";
+// @use "sass:selector" as sassSelector;
+@use "../../typography";
+@use "../../selector";
+@use "../../utils";
+@use "../../button";
+@use "../../element";
+
+$-fallbacks: (
+  "icon-centered-vertical-offset": meta.get-function("get", false, "element")
+);
+
+/// Module Settings
+/// @type Map
+
+$config: (
+  "icon-centered-vertical-offset": true
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-button-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-button-get("property");
+
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "component-button [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Output button component styles
+/// @example scss
+///  @include ulu.component-button-styles();
+/// @example html {preview}
+///  <a class="button" href="#">Button Default</a>
+
+@mixin styles {
+  @include utils.file-header('component', 'button');
+
+  $prefix: selector.class("button");
+  // $printContextual: get("contextual-classes");
+  // $classContextual: "#{ selector.class("button-inside") } ;
+  $icon-selector: "#{ $prefix }--icon";
+  $printDescendant: "#{ $prefix }--icon";
+
+  #{ $prefix } {
+    @include button.default();
+  }
+  #{ $prefix }--fit {
+    min-width: 0;
+  }
+  #{ $prefix }--left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  @each $size, $values in button.$sizes {
+    #{ $prefix }--#{$size} {
+      @include button.size($size);
+    }
+  }
+  
+  @each $style, $values in button.$styles {
+    #{ $prefix }--#{$style} {
+      @include button.style($style);
+    }
+  }
+  
+  #{ $icon-selector } {
+    
+    min-width: 0;
+    max-width: none;
+    border-radius: button.get("icon-border-radius");
+    font-size: button.get("icon-font-size");
+    width: button.get("icon-size");
+    height: button.get("icon-size");
+    padding: 0 !important;
+
+    #{ $prefix }__icon {
+      transform: translateY(get("icon-centered-vertical-offset"));
+      margin: 0;
+    }
+  }
+
+  @each $size, $values in button.$sizes {
+    $icon-size: map.get($values, "icon-size");
+    $icon-font-size: map.get($values, "icon-font-size");
+    @if ($icon-size or $icon-font-size) {
+      #{ $prefix }--#{$size}#{ $icon-selector } {
+        width: $icon-size;
+        height: $icon-size;
+        font-size: $icon-font-size;
+      }
+    }
+  }
+}

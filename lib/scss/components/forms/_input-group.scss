@@ -1,0 +1,165 @@
+////
+/// @group input-group
+/// A layout component for grouping form inputs with adjacent actions or information
+////
+
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "../../selector";
+@use "../../utils";
+@use "../../typography";
+@use "../../cssvar";
+@use "../../button";
+@use "form-theme";
+
+/// Module Settings
+/// @type Map
+/// @prop {Dimension} gap [0.5em] Gap between items when not joined
+/// @prop {Dimension} border-radius [null] Border radius for joined items (and cue when not joined). Defaults to form-theme input-border-radius
+/// @prop {Dimension} item-min-width [0] Minimum width for items (buttons, cues)
+/// @prop {Dimension} item-padding-x [0.75em] Horizontal padding for cue items
+/// @prop {Dimension} item-padding-y [null] Vertical padding for cue items. Defaults to button vertical padding.
+/// @prop {Dimension} overlap-margin [null] Negative margin for joined items. Defaults to form-theme border width.
+/// @prop {Dimension} field-min-width [0] Minimum width for the field item
+/// @prop {Color} cue-background-color [rgba(0,0,0,0.1)] Background color for cue items
+/// @prop {Color} joined-button-radius-match [true] Whether or not to use the 'border-radius' for input-group vs button's border-radius
+
+$config: (
+  "gap": 0.5em,
+  "border-radius" : null,
+  "item-min-width" : 0,
+  "item-padding-x" : 0.75em,
+  "item-padding-y" : null,
+  "overlap-margin" : null,
+  "field-min-width" : 0,
+  "cue-background-color" : rgba(0,0,0,0.1),
+  "joined-button-radius-match" : true,
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-input-group-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-input-group-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "input-group [config]");
+}
+
+/// Prints component stylesheets
+/// @demo input-group
+/// @example scss
+///  @include ulu.component-input-group-styles();
+
+@mixin styles {
+  $prefix: selector.class("input-group");
+  
+  $radius: get("border-radius") or form-theme.get("input-border-radius");
+  $border-info: utils.border-info(form-theme.get("input-border"));
+  $overlap: get("overlap-margin") or map.get($border-info, "width");
+  
+  $padding-y: get("item-padding-y") or utils.get-spacing-top(button.get("padding"));
+  $padding-x: get("item-padding-x");
+
+  #{ $prefix } {
+    display: flex;
+    align-items: stretch;
+    max-width: 100%;
+    gap: get("gap");
+  }
+
+  #{ $prefix }__item {
+    position: relative; // For z-index management
+    display: flex;
+    align-items: stretch;
+    flex: 0 1 auto; 
+    min-width: cssvar.use-ulu("input-group-item-min-width", get("item-min-width"));
+  }
+
+  #{ $prefix }__item--field {
+    flex: 1 1 auto; 
+    min-width: cssvar.use-ulu("input-group-field-min-width", get("field-min-width"));
+  }
+
+  #{ $prefix }__item--cue {
+    padding: $padding-y $padding-x;
+    align-items: center;
+    background-color: cssvar.use-ulu("input-group-cue-background", get("cue-background-color"));
+    border: form-theme.get("input-border");
+    border-radius: $radius;
+    color: form-theme.get("color");
+    line-height: typography.get("line-height-dense");
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Specificity overrides for internal elements
+  #{ $prefix } {
+    #{ $prefix }__input,
+    #{ $prefix }__button {
+      height: 100%;
+      margin: 0;
+      min-width: 0; 
+      max-width: none;
+    }
+    
+    #{ $prefix }__input {
+      width: 100%;
+    }
+  }
+
+  // Removes internal border-radius and overlaps borders
+  #{ $prefix }--joined {
+    gap: 0;
+
+    // Remove default button padding when joined only
+    #{ $prefix }__button { 
+      padding-left: $padding-x;
+      padding-right: $padding-x;
+      @if (get("joined-button-radius-match")) {
+        border-radius: $radius;
+      }
+    }
+
+    // Interactive items pop to front (cues do not have focus/hover states)
+    #{ $prefix }__item:not(#{ $prefix }__item--cue) {
+      &:hover,
+      &:focus-within {
+        z-index: 2;
+      }
+    }
+
+    // Strip left radius for items after the first
+    #{ $prefix }__item:not(:first-child) {
+      margin-left: -#{ $overlap }; // Use resolved overlap width
+
+      &#{ $prefix }__item--cue,
+      #{ $prefix }__input, 
+      #{ $prefix }__button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    // Strip right radius for items before the last
+    #{ $prefix }__item:not(:last-child) {
+      &#{ $prefix }__item--cue,
+      #{ $prefix }__input, 
+      #{ $prefix }__button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}

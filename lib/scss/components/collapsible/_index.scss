@@ -1,0 +1,22 @@
+////
+/// @group index
+/// Index of collapsible component styles.
+////
+
+@forward "accordion" as accordion-*;
+@forward "flipcard" as flipcard-*;
+@forward "flipcard-grid" as flipcard-grid-*;
+@forward "modal" as modal-*;
+@forward "popover" as popover-*;
+@forward "scroll-slider" as scroll-slider-*;
+@forward "slider" as slider-*;
+@forward "tabs" as tabs-*;
+
+@use "accordion";
+@use "flipcard";
+@use "flipcard-grid";
+@use "modal";
+@use "popover";
+@use "scroll-slider";
+@use "slider";
+@use "tabs";

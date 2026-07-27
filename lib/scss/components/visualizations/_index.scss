@@ -1,0 +1,10 @@
+////
+/// @group index
+/// Index of visualizations component styles.
+////
+
+@forward "progress-bar" as progress-bar-*;
+@forward "progress-circle" as progress-circle-*;
+
+@use "progress-bar";
+@use "progress-circle";

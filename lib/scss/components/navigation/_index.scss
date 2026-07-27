@@ -1,0 +1,16 @@
+////
+/// @group index
+/// Index of navigation component styles.
+////
+
+@forward "breadcrumb" as breadcrumb-*;
+@forward "menu-stack" as menu-stack-*;
+@forward "nav-strip" as nav-strip-*;
+@forward "pager" as pager-*;
+@forward "skip-link" as skip-link-*;
+
+@use "breadcrumb";
+@use "menu-stack";
+@use "nav-strip";
+@use "pager";
+@use "skip-link";

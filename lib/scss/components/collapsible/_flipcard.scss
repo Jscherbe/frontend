@@ -1,0 +1,325 @@
+
+////
+/// @group flipcard
+////
+/// Flipcard (content revealed on backside of card after click)
+
+@use "sass:map";
+
+@use "../../utils";
+@use "../../color";
+@use "../../selector";
+
+/// Module Settings
+/// @type Map
+/// @prop {Color} background-color ["background"] Background color of the text-only flipcard front.
+/// @prop {Color} background-color-image ["accent"] Background color of the image flipcard front.
+/// @prop {Number} image-opacity [0.7] Opacity of the image to allow shading from the background color.
+/// @prop {Color} background-color-back ["placeholder-background"] Background color on the back of the flipcard.
+/// @prop {Dimension} border-width [1px] Flipcard border width
+/// @prop {Color} border-color ["rule-light"] Flipcard border color
+/// @prop {Dimension} border-radius [6px] Border radius for flipcard.
+/// @prop {Color} border-color-hover ["rule"] border color when hovered.
+/// @prop {Dimension} border-width-focus [3px] Border width that shows when focused.
+/// @prop {Color} border-color-focus ["focus"] border color when focused
+/// @prop {Time} anim-duration [430ms] Animation duration.
+/// @prop {Time} anim-delay [200ms] Animation delay.
+/// @prop {String} anim-front-close ["FlipcardFrontClose"] Animation name for front close.
+/// @prop {String} anim-front-open ["FlipcardFrontOpen"] Animation name for front open.
+/// @prop {String} anim-back-open ["FlipcardBackOpen"] Animation name for back open.
+/// @prop {CssValue} anim-timing-function [ease-out] Animation timing function.
+/// @prop {Dimension} padding [1.5rem] Padding for the flipcard.
+/// @prop {Color} title-color ["type"] Color of the front page text.
+/// @prop {Color} title-color-hover ["link-hover"] Color of the front page text when hovered or focused.
+/// @prop {Color} icon-color ["type-secondary"] Color of the icon.
+/// @prop {Color} icon-color-hover ["link-hover"] Color of the icon when hovered or focused.
+/// @prop {Color} icon-color-image ["white"] Color of the icon when using an image.
+/// @prop {Color} icon-color-image-hover ["white"] Color of the icon when using an image and hovered or focused.
+/// @prop {Color} title-color-image ["white"] Color of the front page text when using an image.
+/// @prop {Color} title-color-image-hover ["white"] Color of the front page text when using an image and hovered or focused.
+/// @prop {Boolean} bottom-shadow [true] Boolean that enables a bottom shadow to the image flipcard.
+
+$config: (
+  "anim-delay" : 200ms,
+  "anim-duration" : 430ms,
+  "anim-front-close": "FlipcardFrontClose",
+  "anim-front-open": "FlipcardFrontOpen",
+  "anim-back-open": "FlipcardBackOpen",
+  "anim-timing-function": ease-out,
+  "background-color" : "background",
+  "background-color-image" : "accent",
+  "background-color-back" : "placeholder-background",
+  "bottom-shadow" : true,
+  "border-width" : 1px,
+  "border-width-focus" : 3px,
+  "border-color" : "rule-light",
+  "border-color-hover" : "rule",
+  "border-color-focus" : "focus",
+  "border-radius" : 6px,
+  "icon-color" : "type-secondary",
+  "icon-color-hover" : "link-hover",
+  "icon-color-image" : "white",
+  "icon-color-image-hover" : "white",
+  "image-opacity" : 0.7,
+  "padding" : 1.5rem,
+  "title-color" : "type",
+  "title-color-hover" : "link-hover",
+  "title-color-image" : "white",
+  "title-color-image-hover" : "white",
+);
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-flipcard-set(( "property" : value ));
+
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Set sizes map
+/// @param {Map} $changes Map of changes
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+
+@mixin set-sizes($changes, $merge-mode: null) {
+  $sizes: utils.map-merge($sizes, $changes, $merge-mode) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-flipcard-get("property");
+
+@function get($name) {
+  @return utils.require-map-get($config, $name, "flipcard [config]");
+}
+
+/// Prints component styles
+/// @demo flipcard
+/// @example scss
+/// @example
+///   @include ulu.component-flipcard-styles();
+
+@mixin styles {
+  $prefix: selector.class("flipcard");
+  $prefix-plugin: selector.class("Flipcard");
+
+  #{ $prefix } {
+    height: 100%;
+    background-color: color.get(get("background-color"));
+    line-height: 1.4;
+    overflow: hidden;
+    position: relative;
+    border-radius: get("border-radius");
+    @if (get("border-width")) {
+      border: get("border-width") solid color.get(get("border-color"));
+    }
+    
+    &#{ $prefix }:hover {
+      border-color: color.get(get("border-color-hover"));
+    }
+    @if (get("border-width-focus")) {
+      #{ $prefix-plugin }__control-button:focus {
+        border: get("border-width-focus") solid color.get(get("border-color-focus"));
+      }
+    }
+  }
+  #{ $prefix }__front,
+  #{ $prefix }__back {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  #{ $prefix }__front {
+    // To lay the image out on top of the text
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    grid-template-areas: "flipcard-front";
+    &:hover {
+      #{ $prefix }__front-image {
+        transition-duration: 8000ms;
+        transition-delay: 0;
+        transform: scale(1.15);
+      }
+      #{ $prefix }__front-content {
+        color: color.get(get("title-color-hover"));
+      }
+      #{ $prefix }__icon {
+        color: color.get(get("icon-color-hover"));
+      }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      [data-flipcard-state="open"] & {
+        opacity: 0;
+        animation: get("anim-front-close") get('anim-duration') get("anim-timing-function") forwards;
+      }
+      [data-flipcard-state="closed"] & {
+        animation: get("anim-front-open") get('anim-duration') get("anim-timing-function") forwards;
+      }
+    }
+  }
+  #{ $prefix }--w-image {
+    background-color: color.get(get("background-color-image"));
+
+    &:hover {
+      #{ $prefix }__front-content {
+        color: color.get(get("title-color-image-hover"));
+      }
+      #{ $prefix }__icon {
+        color: color.get(get("icon-color-image-hover"));
+      }
+    }
+  }
+  #{ $prefix }__front-image,
+  #{ $prefix }__front-content {
+    grid-area: flipcard-front / flipcard-front / flipcard-front / flipcard-front;
+  }
+  #{ $prefix }__front-image {
+    display: block;
+    @media (prefers-reduced-motion) {
+      transition: transform 1000ms 200ms get("anim-timing-function");
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: get("image-opacity");
+    }
+  }
+  #{ $prefix }__icon {
+    color: color.get(get('icon-color'));
+    display: block;
+    margin-top: 0.5rem;
+  }
+  #{ $prefix }__front-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: color.get(get("title-color"));
+    position: relative;
+    z-index: 2;
+    padding: get('padding');
+    align-self: end;
+    transition: transform 350ms get("anim-timing-function");    
+  }
+  #{ $prefix }--w-image {
+    #{ $prefix }__icon {
+      color: color.get(get("icon-color-image"));
+    }
+    #{ $prefix }__front-content {
+      color: color.get(get("title-color-image"));
+      @if (get("bottom-shadow")) {
+        // bottom position includes padding so that the shadow 
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: calc(0rem - get('padding'));
+          top: 0;
+          left: 0;
+          right: 0;
+          background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+          z-index: -1;
+        }
+      }
+    }
+  }
+  #{ $prefix }__back {
+    background-color: color.get(get("background-color-back"));
+    padding: get('padding');
+    justify-content: flex-end;
+    [data-flipcard-state="open"] & {
+      animation: get("anim-back-open") get('anim-duration') get("anim-timing-function") forwards;
+      @media (prefers-reduced-motion) {
+        animation: UluFadeIn 430ms get("anim-timing-function");
+      }
+    }
+  }
+  @keyframes FlipcardBackOpen {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    30% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes FlipcardFrontClose {
+    0% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes FlipcardFrontOpen {
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #{ $prefix }--center-title {
+    #{ $prefix }__front-content {
+      justify-content: center;
+      align-items: center;
+    }
+    #{ $prefix }__back-content {
+      #{ $prefix }__icon-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+  #{ $prefix }--bottom-title {
+    #{ $prefix }__front-content {
+      justify-content: flex-end;
+    }
+  }
+  #{ $prefix }:not(#{ $prefix }--bottom-title, #{ $prefix }--center-title) {
+    #{ $prefix }__front-content {
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-top: calc(get("padding") + 1.2rem);
+      padding-bottom: calc(get("padding") + 1.2rem);
+      #{ $prefix }__icon-container {
+        position: absolute;
+        bottom: get("padding");
+        right: get("padding");
+      }
+    }
+    #{ $prefix }__back {
+      position: relative;
+      padding-top: calc(get("padding") + 1.2rem);
+      padding-bottom: calc(get("padding") + 1.2rem);
+      #{ $prefix }__icon-container {
+        position: absolute;
+        bottom: get("padding");
+        right: get("padding");
+      }
+    }
+  }
+  // modifier for animations
+  #{ $prefix }--animation:hover {
+    #{ $prefix }__front-content {
+      transform: translateY(-(get('padding') * 0.5));
+    }
+  }
+}

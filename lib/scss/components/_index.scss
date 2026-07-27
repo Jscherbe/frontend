@@ -3,136 +3,24 @@
 /// Outputs all component stylesheets, optionally choose to set includes or excludes to narrow down components that are output.
 ////
 
-@forward "accordion" as accordion-*;
-@forward "adaptive-spacing" as adaptive-spacing-*;
-@forward "badge" as badge-*;
-@forward "badge-stack" as badge-stack-*;
-@forward "basic-hero" as basic-hero-*;
-@forward "button" as button-*;
-@forward "button-group" as button-group-*;
-@forward "button-verbose" as button-verbose-*;
-@forward "breadcrumb" as breadcrumb-*;
-@forward "callout" as callout-*;
-@forward "card" as card-*;
-@forward "card-grid" as card-grid-*;
-@forward "counter-list" as counter-list-*;
-@forward "css-icon" as css-icon-*;
-@forward "data-grid" as data-grid-*;
-@forward "data-table" as data-table-*;
-@forward "data-list" as data-list-*;
-@forward "definition-list" as definition-list-*;
-@forward "fill-context" as fill-context-*;
-@forward "flipcard" as flipcard-*;
-@forward "flipcard-grid" as flipcard-grid-*;
-@forward "form-theme" as form-theme-*;
-@forward "graphic-text-group" as graphic-text-group-*;
-@forward "headline-label" as headline-label-*;
-@forward "input-group" as input-group-*;
-@forward "rule-inline" as rule-inline-*;
-@forward "image-grid" as image-grid-*;
-@forward "links" as links-*;
-@forward "list-lines" as list-lines-*;
-@forward "list-inline" as list-inline-*;
-@forward "list-ordered" as list-ordered-*;
-@forward "list-unordered" as list-unordered-*;
-@forward "menu-stack" as menu-stack-*;
-@forward "modal" as modal-*;
-@forward "nav-strip" as nav-strip-*;
-@forward "overlay-section" as overlay-section-*;
-@forward "pager" as pager-*;
-@forward "panel" as panel-*;
-@forward "placeholder-block" as placeholder-block-*;
-@forward "pull-quote" as pull-quote-*;
-@forward "popover" as popover-*;
-@forward "progress-bar" as progress-bar-*;
-@forward "progress-circle" as progress-circle-*;
-@forward "rail" as rail-*;
-@forward "ratio-box" as ratio-box-*;
-@forward "rule" as rule-*;
-@forward "scroll-slider" as scroll-slider-*;
-@forward "skeleton" as skeleton-*;
-@forward "skip-link" as skip-link-*;
-@forward "sticky-list" as sticky-list-*;
-@forward "slider" as slider-*;
-@forward "hero" as hero-*;
-@forward "table-scroller" as table-scroller-*;
-@forward "tabs" as tabs-*;
-@forward "tag" as tag-*;
-@forward "tagged" as tagged-*;
-@forward "tile-grid" as tile-grid-*;
-@forward "tile-button" as tile-button-*;
-@forward "tile-grid-overlay" as tile-grid-overlay-*;
-@forward "vignette" as vignette-*;
-@forward "captioned-figure" as captioned-figure-*;
-@forward "spoke-spinner" as spoke-spinner-*;
-@forward "wysiwyg" as wysiwyg-*;
+@forward "collapsible";
+@forward "elements";
+@forward "forms";
+@forward "layout";
+@forward "navigation";
+@forward "systems";
+@forward "visualizations";
 
 @use "sass:list";
 
 @use "../utils";
-@use "adaptive-spacing";
-@use "accordion";
-@use "badge";
-@use "badge-stack";
-@use "basic-hero";
-@use "button";
-@use "button-group";
-@use "button-verbose";
-@use "breadcrumb";
-@use "callout";
-@use "card";
-@use "card-grid";
-@use "counter-list";
-@use "css-icon";
-@use "data-grid";
-@use "data-table";
-@use "data-list";
-@use "definition-list";
-@use "fill-context";
-@use "flipcard";
-@use "flipcard-grid";
-@use "form-theme";
-@use "graphic-text-group";
-@use "headline-label";
-@use "input-group";
-@use "rule-inline";
-@use "image-grid";
-@use "list-lines";
-@use "list-inline";
-@use "list-ordered";
-@use "list-unordered";
-@use "links";
-@use "menu-stack";
-@use "modal";
-@use "nav-strip";
-@use "overlay-section";
-@use "pager";
-@use "panel";
-@use "placeholder-block";
-@use "popover";
-@use "progress-bar";
-@use "progress-circle";
-@use "pull-quote";
-@use "rail";
-@use "ratio-box";
-@use "rule";
-@use "scroll-slider";
-@use "skeleton";
-@use "skip-link";
-@use "sticky-list";
-@use "slider";
-@use "hero";
-@use "tabs";
-@use "table-scroller";
-@use "tag";
-@use "tagged";
-@use "tile-grid";
-@use "tile-button";
-@use "tile-grid-overlay";
-@use "vignette";
-@use "captioned-figure";
-@use "spoke-spinner";
-@use "wysiwyg";
+@use "collapsible";
+@use "elements";
+@use "forms";
+@use "layout";
+@use "navigation";
+@use "systems";
+@use "visualizations";
 
 /// Default includes, all modules
 /// @type List
@@ -238,192 +126,192 @@ $current-includes: $all-includes;
   @include utils.require-list-contains($all-includes, $includes, "components.$includes", true);
   
   @if (list.index($includes, "accordion")) {
-    @include accordion.styles;
+    @include collapsible.accordion-styles;
   }
   @if (list.index($includes, "adaptive-spacing")) {
-    @include adaptive-spacing.styles;
+    @include layout.adaptive-spacing-styles;
   }
   @if (list.index($includes, "hero")) {
-    @include hero.styles;
+    @include layout.hero-styles;
   }
   @if (list.index($includes, "button")) {
-    @include button.styles;
+    @include elements.button-styles;
   }
   @if (list.index($includes, "button-group")) {
-    @include button-group.styles;
+    @include elements.button-group-styles;
   }
   @if (list.index($includes, "button-verbose")) {
-    @include button-verbose.styles;
+    @include elements.button-verbose-styles;
   }
   @if (list.index($includes, "breadcrumb")) {
-    @include breadcrumb.styles;
+    @include navigation.breadcrumb-styles;
   }
   @if (list.index($includes, "badge")) {
-    @include badge.styles;
+    @include elements.badge-styles;
   }
   @if (list.index($includes, "badge-stack")) {
-    @include badge-stack.styles;
+    @include elements.badge-stack-styles;
   }
   @if (list.index($includes, "basic-hero")) {
-    @include basic-hero.styles;
+    @include layout.basic-hero-styles;
   }
   @if (list.index($includes, "tag")) {
-    @include tag.styles;
+    @include elements.tag-styles;
   }
   @if (list.index($includes, "tagged")) {
-    @include tagged.styles;
+    @include elements.tagged-styles;
   }
   @if (list.index($includes, "callout")) {
-    @include callout.styles;
+    @include elements.callout-styles;
   }
   @if (list.index($includes, "card")) {
-    @include card.styles;
+    @include elements.card-styles;
   }
   @if (list.index($includes, "card-grid")) {
-    @include card-grid.styles;
+    @include elements.card-grid-styles;
   }
   @if (list.index($includes, "counter-list")) {
-    @include counter-list.styles;
+    @include elements.counter-list-styles;
   }
   @if (list.index($includes, "css-icon")) {
-    @include css-icon.styles;
+    @include elements.css-icon-styles;
   }
   @if (list.index($includes, "data-grid")) {
-    @include data-grid.styles;
+    @include layout.data-grid-styles;
   }
   @if (list.index($includes, "data-table")) {
-    @include data-table.styles;
+    @include elements.data-table-styles;
   }
   @if (list.index($includes, "data-list")) {
-    @include data-list.styles;
+    @include elements.data-list-styles;
   }
   @if (list.index($includes, "definition-list")) {
-    @include definition-list.styles;
+    @include elements.definition-list-styles;
   }
   @if (list.index($includes, "fill-context")) {
-    @include fill-context.styles;
+    @include layout.fill-context-styles;
   }
   @if (list.index($includes, "flipcard")) {
-    @include flipcard.styles;
+    @include collapsible.flipcard-styles;
   }
   @if (list.index($includes, "flipcard-grid")) {
-    @include flipcard-grid.styles;
+    @include collapsible.flipcard-grid-styles;
   }
   @if (list.index($includes, "form-theme")) {
-    @include form-theme.styles;
+    @include forms.form-theme-styles;
   }
   @if (list.index($includes, "graphic-text-group")) {
-    @include graphic-text-group.styles;
+    @include layout.graphic-text-group-styles;
   }
   @if (list.index($includes, "headline-label")) {
-    @include headline-label.styles;
+    @include elements.headline-label-styles;
   }
   @if (list.index($includes, "rule-inline")) {
-    @include rule-inline.styles;
+    @include elements.rule-inline-styles;
   }
   @if (list.index($includes, "image-grid")) {
-    @include image-grid.styles;
+    @include layout.image-grid-styles;
   }
   @if (list.index($includes, "input-group")) {
-    @include input-group.styles;
+    @include forms.input-group-styles;
   }
   @if (list.index($includes, "links")) {
-    @include links.styles;
+    @include elements.links-styles;
   }
   @if (list.index($includes, "list-lines")) {
-    @include list-lines.styles;
+    @include elements.list-lines-styles;
   }
   @if (list.index($includes, "list-inline")) {
-    @include list-inline.styles;
+    @include elements.list-inline-styles;
   }
   @if (list.index($includes, "list-unordered")) {
-    @include list-unordered.styles;
+    @include elements.list-unordered-styles;
   }
   @if (list.index($includes, "list-ordered")) {
-    @include list-ordered.styles;
+    @include elements.list-ordered-styles;
   }
   @if (list.index($includes, "menu-stack")) {
-    @include menu-stack.styles;
+    @include navigation.menu-stack-styles;
   }
   @if (list.index($includes, "modal")) {
-    @include modal.styles;
+    @include collapsible.modal-styles;
   }
   @if (list.index($includes, "nav-strip")) {
-    @include nav-strip.styles;
+    @include navigation.nav-strip-styles;
   }
   @if (list.index($includes, "overlay-section")) {
-    @include overlay-section.styles;
+    @include layout.overlay-section-styles;
   }
   @if (list.index($includes, "pager")) {
-    @include pager.styles;
+    @include navigation.pager-styles;
   }
   @if (list.index($includes, "panel")) {
-    @include panel.styles;
+    @include layout.panel-styles;
   }
   @if (list.index($includes, "placeholder-block")) {
-    @include placeholder-block.styles;
+    @include elements.placeholder-block-styles;
   }
   @if (list.index($includes, "popover")) {
-    @include popover.styles;
+    @include collapsible.popover-styles;
   }
   @if (list.index($includes, "progress-bar")) {
-    @include progress-bar.styles;
+    @include visualizations.progress-bar-styles;
   }
   @if (list.index($includes, "progress-circle")) {
-    @include progress-circle.styles;
+    @include visualizations.progress-circle-styles;
   }
   @if (list.index($includes, "pull-quote")) {
-    @include pull-quote.styles;
+    @include elements.pull-quote-styles;
   }
   @if (list.index($includes, "rail")) {
-    @include rail.styles;
+    @include layout.rail-styles;
   }
   @if (list.index($includes, "ratio-box")) {
-    @include ratio-box.styles;
+    @include layout.ratio-box-styles;
   }
   @if (list.index($includes, "rule")) {
-    @include rule.styles;
+    @include elements.rule-styles;
   }
   @if (list.index($includes, "scroll-slider")) {
-    @include scroll-slider.styles;
+    @include collapsible.scroll-slider-styles;
   }
   @if (list.index($includes, "skeleton")) {
-    @include skeleton.styles;
+    @include systems.skeleton-styles;
   }
   @if (list.index($includes, "skip-link")) {
-    @include skip-link.styles;
+    @include navigation.skip-link-styles;
   }
   @if (list.index($includes, "sticky-list")) {
-    @include sticky-list.styles;
+    @include elements.sticky-list-styles;
   }
   @if (list.index($includes, "slider")) {
-    @include slider.styles;
+    @include collapsible.slider-styles;
   }
   @if (list.index($includes, "tabs")) {
-    @include tabs.styles;
+    @include collapsible.tabs-styles;
   }
   @if (list.index($includes, "table-scroller")) {
-    @include table-scroller.styles;
+    @include layout.table-scroller-styles;
   }
   @if (list.index($includes, "tile-grid")) {
-    @include tile-grid.styles;
+    @include elements.tile-grid-styles;
   }
   @if (list.index($includes, "tile-button")) {
-    @include tile-button.styles;
+    @include elements.tile-button-styles;
   }
   @if (list.index($includes, "tile-grid-overlay")) {
-    @include tile-grid-overlay.styles;
+    @include elements.tile-grid-overlay-styles;
   }
   @if (list.index($includes, "vignette")) {
-    @include vignette.styles;
+    @include elements.vignette-styles;
   }
   @if (list.index($includes, "captioned-figure")) {
-    @include captioned-figure.styles;
+    @include layout.captioned-figure-styles;
   }
   @if (list.index($includes, "spoke-spinner")) {
-    @include spoke-spinner.styles;
+    @include elements.spoke-spinner-styles;
   }
   @if (list.index($includes, "wysiwyg")) {
-    @include wysiwyg.styles;
+    @include systems.wysiwyg-styles;
   }
 }

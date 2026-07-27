@@ -1,0 +1,246 @@
+////
+/// @group panel
+/// A structured container for content with distinct header, body, and footer sections that can bleed to the edges.
+////
+
+@use "sass:map";
+@use "sass:list";
+@use "sass:meta";
+
+@use "../../utils";
+@use "../../selector";
+@use "../../color";
+@use "../../element";
+@use "../../breakpoint";
+
+// Used for function fallback
+$-fallbacks: (
+  "box-shadow" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "box-shadow"
+  ),
+  "border-radius" : (
+    "function" : meta.get-function("get", false, "element"),
+    "property" : "border-radius"
+  ),
+);
+
+/// Module Settings
+/// @type Map
+/// @prop {Color} background-color [rgb(255, 255, 255)] The background color of the panel
+/// @prop {Color} border [null] Set border to panel
+/// @prop {Dimension} border-radius [element.$config.border-radius] The border radius of the panel
+/// @prop {CssValue} box-shadow [element.$config.box-shadow] The box-shadow of the panel
+/// @prop {Dimension} margin-bottom [1.5rem] The bottom margin of the panel
+/// @prop {CssValue} overflow [null] Value for overflow, not included by default as it interferes with position sticky, but could be useful for cropping if that's needed (can be set on rows too)
+
+$config: (
+  "background-color" : rgb(255, 255, 255),
+  "border" : null,
+  "border-radius" : true,
+  "box-shadow" : true,
+  "margin-bottom" : 1.5em,
+  "overflow" : null,
+) !default;
+
+/// Styles Map (for unique variations/modifiers)
+/// - Use this map to define distinct visual styles for the panel
+/// - This map is two levels the first level is the name of the modifier (see default below). 
+///   This will become the modifier for the pane; so ("transparent" : (...)) = .panel--transparent.
+///   The second level is that modifier row modifiers (ie. panel__row--header) (see row options below)
+/// - Keyword "default" means without modifier for both parent and row configs
+///   - For example "default" as panel container modifier name will mean
+///     styles for this without any modifiers
+///   - In a panels row config (second level) "default" will refer to the non-modified row (ie .panel__row)
+/// - Order matters, default should be first
+/// - Row Options
+///   - Each row can have the following options:
+///       overflow: Set overflow property if needed,
+///       aspect-ratio,
+///       height,
+///       min-height,
+///       padding,
+///       margin: Can be used to create gap between container and row
+///       background-color,
+///       font-weight,
+///       font-family,
+///       color,
+///       box-shadow,
+///       grow: Default the panel will grow to fill the containers height, passing false disables this
+///       border-top: If a string is passed it will resolved as an element rule style
+///       border-bottom: If a string is passed it will resolved as an element rule style
+/// @type Map
+
+$styles: (
+  "default" : (
+    "default" : (
+      "padding": 1em,
+    ),
+    "header" : (
+      "padding" : (0.75em 1em),
+      "background-color" : #e7e7e7,
+      "border-bottom" : "default",
+      "font-weight" : bold,
+      "grow" : false,
+      "breakpoints" : (
+        "small" : (
+          "direction" : "max",
+          "padding" : (0.25em 0.5em)
+        )
+      )
+    ),
+    "footer" : (
+      "padding" : (0.5em 1em),
+      "background-color" : #f4f4f4,
+      "border-top" : "default",
+      "grow" : false
+    ),
+    "separator-top" : (
+      "border-top" : "light",
+    ),
+    "separator-bottom" : (
+      "border-bottom" : "light",
+    )
+  ),
+  "transparent" : (
+    "default" : (
+      "padding" : (1em 0),
+      "margin" : (0 1em),
+    ),
+    "header" : (
+      "padding" : (1em 0),
+      "margin" : (0 1em),
+      "background-color" : transparent,
+      "grow" : false
+    ),
+    "footer" : (
+      "padding" : (1em 0),
+      "margin" : (0 1em),
+      "background-color" : transparent,
+      "grow" : false
+    )
+  ),
+  "compact" : (
+    "default" : (
+      "padding" : (0.25em 0.5em)
+    ),
+    "header" : (
+      "padding" : (0.25em 0.5em)
+    ),
+    "body" : (
+      "padding" : (0.5em 1em)
+    )
+  )
+) !default;
+
+/// Change modules $config
+/// @param {Map} $changes Map of changes
+/// @example scss
+///   @include ulu.component-panel-set(( "property" : value ));
+@mixin set($changes) {
+  $config: map.merge($config, $changes) !global;
+}
+
+/// Get a config option
+/// @param {Map} $name Name of property
+/// @example scss
+///   @include ulu.component-panel-get("property");
+@function get($name) {
+  $value: utils.require-map-get($config, $name, "panel [config]");
+  @return utils.function-fallback($name, $value, $-fallbacks);
+}
+
+/// Set style variations
+/// - See $styles for more information on map properties/structure
+/// @param {Map} $changes Map of changes (options for style include all config properties)
+/// @param {String} $merge-mode Merge mode see utils.map-merge() [null|"deep"|"overwrite"]
+@mixin set-styles($changes, $merge-mode: null) {
+  $styles: utils.map-merge($styles, $changes, $merge-mode) !global;
+}
+
+/// Output component styles
+/// @example scss
+///  @include ulu.component-panel-styles();
+@mixin styles {
+  $prefix: selector.class("panel");
+
+  #{ $prefix } {
+    display: flex;
+    flex-direction: column;
+    overflow: get("overflow");
+    background-color: get("background-color");
+    box-shadow: get("box-shadow");
+    border: get("border");
+    border-radius: get("border-radius");
+  }
+  #{ $prefix }__row {
+    &:first-child {
+      border-top-left-radius: get("border-radius");
+      border-top-right-radius: get("border-radius");
+    }
+    &:last-child {
+      border-bottom-left-radius: get("border-radius");
+      border-bottom-right-radius: get("border-radius");
+    }
+  }
+
+  @each $modifier, $rows in $styles {
+    @if ($modifier == "default") {
+      @each $row-name, $props in $rows {
+        @if ($row-name == "default") {
+          #{ $prefix }__row {
+            @include create-row-style($props);
+          }
+        } @else {
+          #{ $prefix }__row--#{ $row-name } {
+            @include create-row-style($props);
+          }
+        }
+      }
+    } @else {
+      #{ $prefix }--#{ $modifier } {
+        @each $row-name, $props in $rows {
+          @if ($row-name == "default") {
+            #{ $prefix }__row {
+              @include create-row-style($props);
+            }
+          } @else {
+            #{ $prefix }__row--#{ $row-name } {
+              @include create-row-style($props);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/// Create row styles
+/// @param {Map} $props - Row Options
+@mixin create-row-style($props) {
+  overflow: map.get($props, "overflow");
+  aspect-ratio: map.get($props, "aspect-ratio");
+  height: map.get($props, "height");
+  min-height: map.get($props, "min-height");
+  padding: map.get($props, "padding");
+  margin: map.get($props, "margin");
+  background-color: color.get(map.get($props, "background-color"));
+  font-weight: map.get($props, "font-weight");
+  font-family: map.get($props, "font-family");
+  color: color.get(map.get($props, "color"));
+  box-shadow: map.get($props, "box-shadow");
+  flex-grow: utils.when(map.get($props, "grow") == false, 0, 1); // Default is grow
+  border-top: element.get-optional-rule-style(map.get($props, "border-top"));
+  border-bottom: element.get-optional-rule-style(map.get($props, "border-bottom"));
+  
+
+  // Allow passing breakpoint maps
+  $breakpoints: map.get($props, "breakpoints");
+  $b-options: ( "directionRequired" : true );
+
+  @if ($breakpoints and list.length($breakpoints)) {
+    @include breakpoint.from-each($breakpoints, $b-options) using ($b-props) {
+      @include create-row-style($b-props);
+    }
+  }
+}
