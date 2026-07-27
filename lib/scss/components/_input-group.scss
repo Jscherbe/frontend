@@ -12,7 +12,7 @@
 @use "../typography";
 @use "../cssvar";
 @use "../button";
-@use "form-theme";
+@use "../form";
 
 /// Module Settings
 /// @type Map
@@ -64,8 +64,8 @@ $config: (
 @mixin styles {
   $prefix: selector.class("input-group");
   
-  $radius: get("border-radius") or form-theme.get("input-border-radius");
-  $border-info: utils.border-info(form-theme.get("input-border"));
+  $radius: get("border-radius") or form.get("input-border-radius");
+  $border-info: utils.border-info(form.get("input-border"));
   $overlap: get("overlap-margin") or map.get($border-info, "width");
   
   $padding-y: get("item-padding-y") or utils.get-spacing-top(button.get("padding"));
@@ -95,9 +95,9 @@ $config: (
     padding: $padding-y $padding-x;
     align-items: center;
     background-color: cssvar.use-ulu("input-group-cue-background", get("cue-background-color"));
-    border: form-theme.get("input-border");
+    border: form.get("input-border");
     border-radius: $radius;
-    color: form-theme.get("color");
+    color: form.get("color");
     line-height: typography.get("line-height-dense");
     white-space: nowrap;
     overflow: hidden;

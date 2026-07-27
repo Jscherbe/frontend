@@ -12,6 +12,33 @@
 
 /// Module Settings
 /// @type Map
+/// @prop {Dimension} track-width [2.75em] Width of the single switch track.
+/// @prop {Dimension} track-height [1.5em] Height of the single switch track.
+/// @prop {Dimension} track-border-radius [1.5em] Border radius of the single switch track.
+/// @prop {String} track-background ["placeholder-background"] Background color name for unchecked state.
+/// @prop {String} track-background-checked ["accent"] Background color name for checked state.
+/// @prop {String} track-border-color ["rule-light"] Border color name for unchecked state.
+/// @prop {String} track-border-color-checked ["accent"] Border color name for checked state.
+/// @prop {Dimension} track-border-width [1px] Border width of the track.
+/// @prop {Dimension} knob-size [1.125em] Size of the sliding knob.
+/// @prop {Color} knob-background [#ffffff] Color of the sliding knob.
+/// @prop {CssValue} knob-box-shadow [0 1px 3px rgba(0, 0, 0, 0.2)] Box shadow of the sliding knob.
+/// @prop {Dimension} knob-offset [2px] Offset of the knob inside the track (top/left).
+/// @prop {String} group-background ["placeholder-background"] Background color name for switch group container.
+/// @prop {Dimension} group-border-radius [2rem] Border radius of the switch group container.
+/// @prop {Dimension} group-padding [4px] Inner padding of the switch group container.
+/// @prop {Dimension} group-gap [2px] Gap between adjacent options in the group.
+/// @prop {List} item-padding [(0.5em 1.25em)] Sizing padding for individual option items.
+/// @prop {String} item-color ["type-secondary"] Text color name for inactive option items.
+/// @prop {String} item-color-active ["type"] Text color name for active option items.
+/// @prop {CssValue} item-font-weight [bold] Font weight of option items.
+/// @prop {Color} indicator-background [#ffffff] Color of the group's sliding background indicator.
+/// @prop {Dimension} indicator-border-radius [2rem] Border radius of the group's sliding background indicator.
+/// @prop {CssValue} indicator-box-shadow [0 1px 3px rgba(0, 0, 0, 0.15)] Box shadow of the sliding background indicator.
+/// @prop {Time} transition-duration [220ms] Animation speed for toggle changes.
+/// @prop {CssValue} transition-timing-function [cubic-bezier(0.4, 0, 0.2, 1)] Animation timing function for knob/indicator sliding.
+/// @prop {List} active-selectors [(".is-active", '[aria-pressed="true"]')] Selectors matching an active state for single switches.
+/// @prop {List} group-active-selectors [(".is-active", '[aria-pressed="true"]', '[aria-selected="true"]')] Selectors matching an active option in switch groups.
 $config: (
   // Single Switch Config
   "track-width": 2.75em,

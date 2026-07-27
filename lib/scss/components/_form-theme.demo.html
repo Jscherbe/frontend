@@ -1,0 +1,51 @@
+<!-- @ulu-demo
+  title: Standard Scoped Form Layout (Default)
+  description: Default form styling where checkbox/radio inputs must be scoped to item modifiers or helper classes.
+-->
+<form class="form-theme" style="max-width: 500px;">
+  <div class="form-theme__item form-theme__item--text">
+    <label for="name-input">Name</label>
+    <input type="text" id="name-input" placeholder="John Doe">
+  </div>
+
+  <!-- Checkbox scoped using item modifier -->
+  <div class="form-theme__item form-theme__item--checkbox">
+    <input type="checkbox" id="check-scoped-1">
+    <label for="check-scoped-1">Scoped via .form-theme__item--checkbox</label>
+  </div>
+
+  <!-- Radio scoped using item modifier -->
+  <div class="form-theme__item form-theme__item--radio">
+    <input type="radio" id="radio-scoped-1" checked>
+    <label for="radio-scoped-1">Scoped via .form-theme__item--radio</label>
+  </div>
+
+  <!-- Standalone Checkbox using direct helper class -->
+  <div style="margin: 1.5rem 0;">
+    <input type="checkbox" class="form-theme__checkbox" id="check-direct-1">
+    <label for="check-direct-1" class="form-theme__checkbox-label">Direct Class (.form-theme__checkbox)</label>
+  </div>
+
+  <!-- Custom switch component (untouched by default form-theme styles) -->
+  <div class="form-theme__item">
+    <input type="checkbox" class="switch" id="switch-in-form-theme" checked>
+    <label class="switch__label" for="switch-in-form-theme">Switch Component (No form-theme interference)</label>
+  </div>
+</form>
+
+<!-- @ulu-demo
+  title: Automatic Form Styling (Modifier)
+  description: Using the .form-theme--auto modifier on the form tag to automatically style all native checkboxes and radios.
+-->
+<form class="form-theme form-theme--auto" style="max-width: 500px;">
+  <!-- Styled automatically (no item modifier required) -->
+  <div class="form-theme__item">
+    <input type="checkbox" id="check-auto-1">
+    <label for="check-auto-1">Auto styled checkbox (no modifier class on item)</label>
+  </div>
+
+  <div class="form-theme__item">
+    <input type="radio" id="radio-auto-1" checked>
+    <label for="radio-auto-1">Auto styled radio (no modifier class on item)</label>
+  </div>
+</form>

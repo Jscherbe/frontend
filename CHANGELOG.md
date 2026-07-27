@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.8.0
+
+- Core Form Module (`scss/form`) **Breaking**
+  - **Breaking Change**: Separated visual control styling and configurations from `form-theme` into a new core module `scss/form`.
+  - Moved all element-level configurations (borders, padding, checkbox/radio dimensions, offsets, outlines) from `form-theme` to the `form` core module.
+  - Custom configurations should now be set via `@include ulu.form-set(...)` instead of `@include ulu.component-form-theme-set(...)` (legacy settings are automatically forwarded for compatibility).
+  - Exposed direct core mixins: `form.input-text()`, `form.select()`, `form.textarea()`, `form.checkbox()`, `form.radio()`, allowing standalone controls to be styled without `.form-theme` wrapper.
+  - To prevent style conflicts on custom checkbox elements (like `.switch`), default checkboxes/radios inside `.form-theme` are now scoped to wrapper classes (`.form-theme__item--checkbox` / `.form-theme__item--radio` / `.form-theme__checkbox-wrapper`) or direct classes (`.form-theme__checkbox`).
+  - Added `.form-theme--auto` modifier class to restore automatic, unscoped checkbox/radio styling container-wide.
+
+- Switch Component (`scss/component/_switch.scss`, `js/ui/switch.js`)
+  - **New Component**: Added independent switch toggle and segmented switch group component.
+
 ## 0.7.2
 
 - `scss/component/_nav-strip.scss` **Breaking**
