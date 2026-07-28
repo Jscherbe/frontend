@@ -176,6 +176,8 @@ async function output() {
     configs.forEach(c => cleanOutputDir(c));
     await Promise.all(configs.map(c => outputPages(c)));
     
+    writeCategoryIndexPages();
+    
     if (process.env.BUILD_MCP) {
       const outputPath = path.resolve("./site/mcp/data/sassdoc.json");
       fs.outputFileSync(outputPath, JSON.stringify(mcpDataAccumulator, null, 2));
@@ -186,6 +188,66 @@ async function output() {
   } catch (error) {
     console.log(error);
   }
+}
+
+const fallbackIntros = {
+  collapsible: "Interactive components for collapse, toggle, dropdown, modal, and tab behaviors.",
+  elements: "Primitive styled blocks and inline components (buttons, badges, icons, cards, lists, tags).",
+  forms: "Theme systems and wrapper layouts for inputs and form structures.",
+  layout: "Structural layout systems, alignments, grids, and rail alignments.",
+  navigation: "Structured navigation components (breadcrumbs, menu stacks, pager).",
+  systems: "Rich visual systems (WYSIWYG layout formatting, skeleton loading blocks).",
+  visualizations: "Visual status display and progression widgets (progress bar/circle)."
+};
+
+function getCategoryIntro(cat) {
+  const filepath = path.join(src, "components", cat, "_index.scss");
+  if (fs.existsSync(filepath)) {
+    const content = fs.readFileSync(filepath, "utf8");
+    const match = content.match(/\/\/\/\/\r?\n([\s\S]+?)\r?\n\/\/\/\//);
+    if (match) {
+      const commentLines = match[1].split(/\r?\n/);
+      const descriptionLines = [];
+      for (const line of commentLines) {
+        const trimmed = line.trim();
+        if (trimmed.startsWith("///")) {
+          const cleaned = trimmed.replace(/^\/\/\/\s*/, "");
+          if (!cleaned.startsWith("@")) {
+            descriptionLines.push(cleaned);
+          }
+        }
+      }
+      const parsed = descriptionLines.join("\n").trim();
+      if (parsed) return parsed;
+    }
+  }
+  return fallbackIntros[cat] || "";
+}
+
+function writeCategoryIndexPages() {
+  const categories = Object.keys(fallbackIntros);
+  categories.forEach(cat => {
+    const dir = path.join(dist, "sass/components", cat);
+    fs.ensureDirSync(dir);
+    const title = cat.charAt(0).toUpperCase() + cat.slice(1);
+    const intro = getCategoryIntro(cat);
+    const content = `---
+title: ${title}
+layout: sassdoc
+toc: false
+tocInline: true
+---
+
+<div class="api-docs">
+  <div class="api-docs__no-tabs container-fit">
+    <div class="type-large api-docs__intro">
+      ${intro}
+    </div>
+  </div>
+</div>
+`;
+    fs.writeFileSync(path.join(dir, "index.md"), content);
+  });
 }
 
 function cleanOutputDir(config) {
