@@ -192,47 +192,40 @@ layout: ${ layout }
 toc: ${ toc }
 tocInline: ${ tocInline }
 ---
-
 <div class="api-docs">
   <div class="api-docs__tabs tabs tabs--full-width">
     <div class="container-fit">
-      <div role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
-        <button role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
-        <button role="tab" id="${ tabApiId }" aria-selected="false" aria-controls="${ panelApiId }">JS API</button>
+      <div class="tabs__tablist" role="tablist" data-ulu-tablist='{ "equalHeights": true }'>
+        <button class="tabs__tab" role="tab" id="${ tabDemosId }" aria-selected="true" aria-controls="${ panelDemosId }">Demos</button>
+        <button class="tabs__tab" role="tab" id="${ tabApiId }" aria-selected="false" aria-controls="${ panelApiId }">JS API</button>
       </div>
     </div>
-    
-    <div role="tabpanel" id="${ panelDemosId }" class="api-docs__tabpanel api-docs__tabpanel--demos" aria-labelledby="${ tabDemosId }">
+    <div role="tabpanel" id="${ panelDemosId }" class="tabs__tabpanel api-docs__tabpanel api-docs__tabpanel--demos" aria-labelledby="${ tabDemosId }">
 {% capture demosHtml %}
 {% renderTemplate "njk" %}
 ${ demosMarkup }
 {% endrenderTemplate %}
 {% endcapture %}
-      
       <div class="api-docs__toc container-fit">
         <div class="page-toc page-toc--inline margin-bottom-large">
           {{ demosHtml | toc }}
         </div>
       </div>
-      
       <div class="api-docs__demos">
         {{ demosHtml }}
       </div>
     </div>
-    
-    <div role="tabpanel" id="${ panelApiId }" class="api-docs__tabpanel api-docs__tabpanel--api" aria-labelledby="${ tabApiId }" hidden>
+    <div role="tabpanel" id="${ panelApiId }" class="tabs__tabpanel api-docs__tabpanel api-docs__tabpanel--api" aria-labelledby="${ tabApiId }" hidden>
 {% capture apiHtml %}
 {% renderTemplate "md" %}
 ${ content }
 {% endrenderTemplate %}
 {% endcapture %}
-      
       <div class="api-docs__toc container-fit">
         <div class="page-toc page-toc--inline margin-bottom-large">
           {{ apiHtml | toc }}
         </div>
       </div>
-      
       <div class="api-docs__content wysiwyg container-fit">
         {{ apiHtml }}
       </div>
@@ -249,7 +242,6 @@ layout: ${ layout }
 toc: ${ toc }
 tocInline: ${ tocInline }
 ---
-
 <div class="api-docs">
   <div class="api-docs__no-tabs container-fit">
 {% capture apiHtml %}
@@ -257,13 +249,11 @@ tocInline: ${ tocInline }
 ${ content }
 {% endrenderTemplate %}
 {% endcapture %}
-    
     <div class="api-docs__toc">
       <div class="page-toc page-toc--inline">
         {{ apiHtml | toc }}
       </div>
     </div>
-    
     <div class="api-docs__content wysiwyg">
       {{ apiHtml }}
     </div>

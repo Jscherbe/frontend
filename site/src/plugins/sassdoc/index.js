@@ -143,10 +143,15 @@ const configs = [
   createConfig(false, {
     sassdocOptions: {
       exclude: [
+        "base/**/*",
         "base/*",
+        "components/**/*",
         "components/*",
+        "helpers/**/*",
         "helpers/*",
+        "packages/**/*",
         "packages/*",
+        "stylesheets/**/*",
         "stylesheets/*",
       ]
     }

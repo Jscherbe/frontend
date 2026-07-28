@@ -5,6 +5,8 @@
 
 @forward "form-theme" as form-theme-*;
 @forward "input-group" as input-group-*;
+@forward "switch" as switch-*;
 
 @use "form-theme";
 @use "input-group";
+@use "switch";

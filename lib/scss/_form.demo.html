@@ -1,0 +1,100 @@
+<!-- @ulu-demo
+  title: Standard Controls & States
+  description: Visual catalog of all baseline form controls and their various interactive/validation states.
+-->
+<div class="form-theme form-theme--auto" style="max-width: 600px;">
+  <!-- Text Input Types -->
+  <div class="form-theme__item form-theme__item--text">
+    <label for="demo-text">Text Input (Default)</label>
+    <input type="text" id="demo-text" placeholder="Default placeholder...">
+  </div>
+
+  <div class="form-theme__item form-theme__item--text">
+    <label for="demo-email">Email Input</label>
+    <input type="email" id="demo-email" value="developer@example.com">
+  </div>
+
+  <div class="form-theme__item form-theme__item--text">
+    <label for="demo-password">Password Input</label>
+    <input type="password" id="demo-password" value="mypassword123">
+  </div>
+
+  <div class="form-theme__item form-theme__item--select">
+    <label for="demo-date">Date Input</label>
+    <input type="date" id="demo-date">
+  </div>
+
+  <!-- Textarea & Select -->
+  <div class="form-theme__item form-theme__item--select">
+    <label for="demo-select">Select Menu</label>
+    <select id="demo-select">
+      <option value="1">Option One</option>
+      <option value="2">Option Two</option>
+      <option value="3">Option Three</option>
+    </select>
+  </div>
+
+  <div class="form-theme__item form-theme__item--textarea">
+    <label for="demo-textarea">Textarea</label>
+    <textarea id="demo-textarea" rows="4" placeholder="Type your story here..."></textarea>
+  </div>
+
+  <!-- Checkboxes & Radios -->
+  <fieldset>
+    <legend>Checkboxes</legend>
+    <div class="form-theme__items-inline">
+      <div class="form-theme__item">
+        <input type="checkbox" id="demo-check-unchecked">
+        <label for="demo-check-unchecked">Unchecked</label>
+      </div>
+      <div class="form-theme__item">
+        <input type="checkbox" id="demo-check-checked" checked>
+        <label for="demo-check-checked">Checked</label>
+      </div>
+      <div class="form-theme__item">
+        <!-- Indeterminate state will be initialized in JS or can just show default -->
+        <input type="checkbox" id="demo-check-indeterminate" checked>
+        <label for="demo-check-indeterminate">Indeterminate / Mixed</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Radio Buttons</legend>
+    <div class="form-theme__items-inline">
+      <div class="form-theme__item">
+        <input type="radio" id="demo-radio-1" name="demo-radios" value="1">
+        <label for="demo-radio-1">Option A</label>
+      </div>
+      <div class="form-theme__item">
+        <input type="radio" id="demo-radio-2" name="demo-radios" value="2" checked>
+        <label for="demo-radio-2">Option B (Checked)</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Validation States (Danger/Error) -->
+  <div class="form-theme__item form-theme__item--text is-danger">
+    <label for="demo-danger">Text Input (Error State)</label>
+    <input type="text" id="demo-danger" value="Invalid input value">
+    <span class="form-theme__error">Please enter a valid value.</span>
+  </div>
+
+  <!-- Validation States (Warning) -->
+  <div class="form-theme__item form-theme__item--text is-warning">
+    <label for="demo-warning">Text Input (Warning State)</label>
+    <input type="text" id="demo-warning" value="Weak password strength">
+    <span class="form-theme__warning">Password should include special characters.</span>
+  </div>
+
+  <!-- Disabled States -->
+  <div class="form-theme__item form-theme__item--text">
+    <label for="demo-disabled">Disabled Input</label>
+    <input type="text" id="demo-disabled" value="Cannot edit this value" disabled>
+  </div>
+
+  <div class="form-theme__item">
+    <input type="checkbox" id="demo-check-disabled" disabled checked>
+    <label for="demo-check-disabled">Disabled Checkbox</label>
+  </div>
+</div>

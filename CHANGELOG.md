@@ -1,5 +1,69 @@
 # Change Log
 
+## 0.8.0
+
+- Core Form Module (`scss/form`) **Breaking**
+  - **Breaking Change**: Separated visual control styling and configurations from `form-theme` into a new core module `scss/form`.
+  - Moved all element-level configurations (borders, padding, checkbox/radio dimensions, offsets, outlines) from `form-theme` to the `form` core module.
+  - Custom configurations should now be set via `@include ulu.form-set(...)` instead of `@include ulu.component-form-theme-set(...)` (legacy settings are automatically forwarded for compatibility).
+  - Exposed direct core mixins: `form.input-text()`, `form.select()`, `form.textarea()`, `form.checkbox()`, `form.radio()`, allowing standalone controls to be styled without `.form-theme` wrapper.
+  - To prevent style conflicts on custom checkbox elements (like `.switch`), default checkboxes/radios inside `.form-theme` are now scoped to wrapper classes (`.form-theme__item--checkbox` / `.form-theme__item--radio` / `.form-theme__checkbox-wrapper`) or direct classes (`.form-theme__checkbox`).
+  - Added `.form-theme--auto` modifier class to restore automatic, unscoped checkbox/radio styling container-wide.
+
+- Switch Component (`scss/component/_switch.scss`, `js/ui/switch.js`)
+  - **New Component**: Added independent switch toggle and segmented switch group component.
+
+## 0.7.2
+
+- `scss/component/_nav-strip.scss` **Breaking**
+  - Fix incorrect casing on option "activeSelector" --> "active-selector"
+
+## 0.7.1
+
+- `scss/component/_accordion.scss`
+  - Add "summary-font-family" option
+
+## 0.7.0
+
+- `scss/component/_tabs.scss`
+  - **Breaking Change**: Migrated from nested ARIA role selectors (`[role="tablist"]`, `[role="tab"]`, `[role="tabpanel"]`) to flat BEM class selectors (`.tabs__tablist`, `.tabs__tab`, `.tabs__tabpanel`). Tab elements must now carry these classes for styling to apply.
+  - This solves selector interference and style leakage when nesting tabs with unique container classes.
+  - Modifier classes (`--sticky`, `--vertical`, `--transparent`, `--full-width`) now use direct child combinators (`>`) to keep modifier styles scoped to the current container.
+
+## 0.6.34
+
+- `scss/component/_card.scss`
+  - fix width issues when using a button element on cards (intrinsic width issue with buttons)
+
+## 0.6.33
+
+- `scss/component/_basic-hero.scss`
+  - Add new option for "main-vertical-align"
+  - Add modifiers for main-align to override default vertical align
+
+## 0.6.32
+
+- `scss/component/_form-theme.scss`
+  - Adjust defaults for the checkbox styling (improve checkmark size/alignment)
+
+## 0.6.31
+
+- `scss/_button.scss`
+  - Allow button styles to define border-radius (so a style doesn't have to match default), components/modules leveraging the button's border-radius won't account for these unique per-style border-radius
+
+## 0.6.30
+
+- `js/core/component.js`
+  - Add new init option for "update" to run functions on coreEvents passed on already initialized elements
+  - Add new method "queryAllInitialized" and "queryElements" (generic query method used in queryAllInitial and queryAllInitialized)
+- `js/ui/grid.js`
+  - Add update to component init so that position classes update correctly like before
+- `js/ui/overflow-scroller.js`
+  - Add update method to recalculate overflow, add listeners for pageModified and pageResized by default (calls update), minor improvements
+- `js/utils/dom.js`
+  - Add new helper function `getVisualRows` that returns a 2D array of grid elements sorted visually (using x/y coordinates) to support CSS visual order properties and filter out hidden (display: none) elements
+  - Refactor `setPositionClasses` to use `getVisualRows` and optimize class assignments
+
 ## 0.6.29
 
 - `scss/components/_modal.scss`

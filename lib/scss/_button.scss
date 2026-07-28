@@ -333,6 +333,7 @@ $styles: (
   box-shadow: get-style-value($name, "box-shadow");
   text-decoration: get-style-value($name, "text-decoration");
   font-weight: get-style-value($name, "font-weight");
+  border-radius: get-style-value($name, "border-radius");
   @if get-style-value($name, "transition-duration") {
     transition-duration: get-style-value($name, "transition-duration");
   }

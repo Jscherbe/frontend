@@ -12,7 +12,7 @@ Styles given to the \<form> element and all of it's child elements.
 
 <h2 class="h2">Default Form</h2>
 
-<form action="" method="get" class="form-theme">
+<form action="" method="get" class="form-theme form-theme--auto">
   <div class="form-theme__item form-theme__item--text">
     <label for="name">Enter your name:<span class="form-theme__required-char">*</span> </label>
     <input type="text" name="name" id="name" required />
@@ -104,7 +104,7 @@ Styles given to the \<form> element and all of it's child elements.
     <label for="email">Enter your email: </label>
     <input type="email" name="email" id="email" required />
   </div>
-  <div class="form-theme__item">
+  <div class="form-theme__item form-theme__item--checkbox">
     <label for="checkbox">Check this box: </label>
     <input type="checkbox" value="checkbox" name="checkbox" />
   </div>

@@ -30,7 +30,7 @@ $-fallbacks: (
 /// @type Map
 /// @prop {CssValue} text-align [center] Alignment of text within hero.
 /// @prop {Color} background-color ["color-hero-background"] Background color of the hero
-
+/// @prop {CssValue} main-vertical-align [flex-start] Vertical alignment of the main content
 $config: (
   "background-color" : #fafafa,
   "padding-top": 3rem,
@@ -38,6 +38,7 @@ $config: (
   "gap" : (4rem 2rem),
   "main-max-width" : true,
   "main-min-width" : true,
+  "main-vertical-align" : flex-start, // Added setting
   "media-max-width" : 20rem,
   "media-vertical-align" : center
 ) !default;
@@ -82,6 +83,12 @@ $config: (
   }
   #{ $prefix }__content-main {
     $min-width: utils.fallback(get("main-min-width"), get("main-max-width"));
+
+    // Using display flex to allow control for vertical align
+    display: flex;
+    flex-direction: column;
+    justify-content: var(--ulu-basic-hero-main-align, get("main-vertical-align"));
+
     // Using max/min-width so that we don't need to add selectors to change flex-basis
     // when centered. Using flex-basis: 0 to allow flexbox to decide the items width
     // allows it to expand/shrink within. min(100%... Never larger than parent
@@ -108,5 +115,17 @@ $config: (
       text-align: center;
       align-items: center;
     }
+  }
+
+  #{ $prefix }--main-start {
+    --ulu-basic-hero-main-align: flex-start;
+  }
+
+  #{ $prefix }--main-center {
+    --ulu-basic-hero-main-align: center;
+  }
+  
+  #{ $prefix }--main-end {
+    --ulu-basic-hero-main-align: flex-end;
   }
 }

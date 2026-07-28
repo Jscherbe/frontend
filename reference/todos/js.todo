@@ -1,5 +1,5 @@
 JS Todos:
-  ☐ setPositionClasses needs to work on visual order for columns vs relying on child index in parent (doesn't work if using grid with order: -1 for example)
+  ✔ setPositionClasses needs to work on visual order for columns vs relying on child index in parent (doesn't work if using grid with order: -1 for example) @done
     * Low priority but would be nice to have and probably can just use x/y data to get left/right position
   ☐ Need to work on jsdocs output, make it clearer
   ☐ Need to add jsdoc comments to Slider

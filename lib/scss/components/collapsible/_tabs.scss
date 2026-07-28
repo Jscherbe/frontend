@@ -135,77 +135,81 @@ $config: (
 
   #{ $prefix } {
     margin: get("margin");
-    [role="tablist"] {
-      position: relative;
-      z-index: 2;
-      display: flex; 
-      gap: get("tab-gap");
-      overflow-x: auto;
-      border-bottom: get("tablist-divider");
-      border-bottom-width: get("tablist-divider-width");
-      @include layout.remove-scrollbar();
+  }
+
+  #{ $prefix }__tablist {
+    position: relative;
+    z-index: 2;
+    display: flex; 
+    gap: get("tab-gap");
+    overflow-x: auto;
+    border-bottom: get("tablist-divider");
+    border-bottom-width: get("tablist-divider-width");
+    @include layout.remove-scrollbar();
+  }
+
+  #{ $prefix }__tab {
+    display: block;
+    position: relative; 
+    cursor: pointer;
+    text-align: center;
+    padding: get("tab-padding");
+    color: color.get(get("tab-color"));
+    font-weight: get("tab-font-weight");
+    @if (not get("horizontal-tab-wrap")) {
+      white-space: nowrap;
     }
-    [role="tab"] {
-      display: block;
-      position: relative; 
-      cursor: pointer;
-      text-align: center;
-      padding: get("tab-padding");
-      color: color.get(get("tab-color"));
-      font-weight: get("tab-font-weight");
-      @if (not get("horizontal-tab-wrap")) {
-        white-space: nowrap;
+    // Indicator
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: color.get(get("indicator-color"));
+      opacity: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: get("indicator-size");
+      transition-property: opacity, background-color, transform;
+      transition-duration: get("indicator-transition-duration");
+      transition-timing-function: get("indicator-transition-timing");
+      transform: scaleX(get("indicator-scale-start"));
+      transform-origin: center;
+    }
+    &:hover {
+      color: color.get(get("tab-color-hover"));
+    }
+    // Add focus so as user clicks item it starts the active state styling
+    &:focus,
+    &[aria-selected="true"] {
+      @if get("tab-hide-native-focus") {
+        outline: none;
       }
-      // Indicator
       &::after {
-        content: "";
-        position: absolute;
-        background-color: color.get(get("indicator-color"));
-        opacity: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: get("indicator-size");
-        transition-property: opacity, background-color, transform;
-        transition-duration: get("indicator-transition-duration");
-        transition-timing-function: get("indicator-transition-timing");
-        transform: scaleX(get("indicator-scale-start"));
-        transform-origin: center;
-      }
-      &:hover {
-        color: color.get(get("tab-color-hover"));
-      }
-      // Add focus so as user clicks item it starts the active state styling
-      &:focus,
-      &[aria-selected="true"] {
-        @if get("tab-hide-native-focus") {
-          outline: none;
-        }
-        &::after {
-          opacity: 1;
-          transform: scaleX(1);
-        }
-      }
-      // Add new focus-specific colors
-      // Using :focus-visible so it only applies to keyboard focus
-      &:focus-visible,
-      &[aria-selected="true"]:focus-visible {
-        color: color.get(get("tab-color-focus"));
-        background-color: color.get(get("tab-background-color-focus"));
-      }
-      &[aria-selected="true"] {
-        color: color.get(get("tab-color-selected"));
-        background-color: color.get(get("tab-background-color-selected"));
+        opacity: 1;
+        transform: scaleX(1);
       }
     }
-    [role="tabpanel"] {
-      position: relative;
-      z-index: 1;
-      padding: get("tabpanel-padding");
-      overflow: hidden;
-      background-color: color.get(get("tabpanel-background-color"));
+    // Add new focus-specific colors
+    // Using :focus-visible so it only applies to keyboard focus
+    &:focus-visible,
+    &[aria-selected="true"]:focus-visible {
+      color: color.get(get("tab-color-focus"));
+      background-color: color.get(get("tab-background-color-focus"));
+    }
+    &[aria-selected="true"] {
+      color: color.get(get("tab-color-selected"));
+      background-color: color.get(get("tab-background-color-selected"));
     }
   }
+
+  #{ $prefix }__tabpanel {
+    position: relative;
+    z-index: 1;
+    padding: get("tabpanel-padding");
+    overflow: hidden;
+    background-color: color.get(get("tabpanel-background-color"));
+  }
+
   // For images, etc that should fill tabpanel
   #{ $prefix }__tabpanel-content-fill {
     margin-left: -(map.get($tabpanel-spacing, "left"));
@@ -221,7 +225,7 @@ $config: (
   }
 
   #{ $prefix }--sticky {
-    [role="tablist"] {
+    > #{ $prefix }__tablist {
       position: sticky;
       top: get("sticky-top");
       z-index: get("sticky-z-index");
@@ -233,7 +237,7 @@ $config: (
     #{ $prefix }--vertical {
       display: grid;
       grid-template-columns: get("vertical-tablist-width") auto; 
-      [role="tablist"] {
+      > #{ $prefix }__tablist {
         flex-direction: column;
         gap: get("vertical-tab-gap");
         border-right: get("tablist-divider");
@@ -241,7 +245,7 @@ $config: (
         border-bottom: none;
         grid-column: 1;
       }
-      [role="tab"] {
+      > #{ $prefix }__tablist > #{ $prefix }__tab {
         padding: get("vertical-tab-padding");
         white-space: normal;
         text-align: left;
@@ -254,12 +258,12 @@ $config: (
           height: auto;
         }
       }
-      [role="tabpanel"] {
+      > #{ $prefix }__tabpanel {
         grid-column: 2; // needed for equalHeights in vertical
       }
     }
     #{ $prefix }--sticky#{ $prefix }--vertical {
-      [role="tablist"] {
+      > #{ $prefix }__tablist {
         top: get("sticky-vertical-top");
         align-self: start;
       }
@@ -267,12 +271,12 @@ $config: (
   }
 
   #{ $prefix }--transparent {
-    [role="tablist"] {
+    > #{ $prefix }__tablist {
       background-color: transparent;
       padding-left: 0;
       padding-right: 0;
     }
-    [role="tabpanel"] {
+    > #{ $prefix }__tabpanel {
       background-color: transparent;
       padding-left: 0;
       padding-right: 0;
@@ -280,11 +284,11 @@ $config: (
   }
 
   #{ $prefix }--full-width {
-    > [role="tablist"] {
+    > #{ $prefix }__tablist {
       justify-content: safe center;
       background-color: color.get(get("full-width-tablist-background-color"));
     }
-    >[role="tabpanel"] {
+    > #{ $prefix }__tabpanel {
       background-color: color.get(get("full-width-tabpanel-background-color"));
       padding: 0;
     }
@@ -293,12 +297,12 @@ $config: (
   // Display all tabs during print
   #{ $prefix }--print {
     @media print {
-      [role="tablist"] {
+      #{ $prefix }__tablist {
         display: none;
       }
-      [role="tabpanel"] {
+      #{ $prefix }__tabpanel {
         display: block;
-        + [role="tabpanel"] {
+        + #{ $prefix }__tabpanel {
           margin-top: get("print-margin");
         }
       }

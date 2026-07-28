@@ -17,8 +17,10 @@ export class OverflowScroller {
     nextEnabled: boolean;
     previousEnabled: boolean;
     scrollHandler: (e: any) => void;
+    updateHandler: () => void;
     checkOverflow(): void;
     hasOverflow: boolean | undefined;
+    update(): void;
     createControls(context: any): {
         controls: HTMLUListElement;
         previousItem: HTMLLIElement;
@@ -35,5 +37,6 @@ export class OverflowScroller {
     next(): void;
     previous(): void;
     getClass(child: any): string;
+    destroy(): void;
 }
 //# sourceMappingURL=overflow-scroller.d.ts.map
