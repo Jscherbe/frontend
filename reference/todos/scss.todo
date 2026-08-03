@@ -1,4 +1,6 @@
 Important:
+  ☐ Need to add an option for select (and select option) color and background color in form-theme or new form module @important
+    * This is needed for Edge which uses native UI which is expected and sets the color but doesn't choose a dark color for color-scheme dark (when not on root element, like a section with dark background). Need this to work correctly by default and with cssvar's
   ☐ Setup list/grid switcher (mostly js component though)
   ☐ Setup switch component
     ☐ Should work with tabs, buttons, radios, checkboxes (singular and multi/group) @in-progress
