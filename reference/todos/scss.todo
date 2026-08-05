@@ -1,4 +1,5 @@
 Important:
+  ☐ Definition list should have margin options for controlling space between the dt/dd
   ☐ Button Verbose use gap instead of margins on inner layout (so no margin if one of the child elements is missing)
   ☐ Need to add an option for select (and select option) color and background color in form-theme or new form module @important
     * This is needed for Edge which uses native UI which is expected and sets the color but doesn't choose a dark color for color-scheme dark (when not on root element, like a section with dark background). Need this to work correctly by default and with cssvar's
