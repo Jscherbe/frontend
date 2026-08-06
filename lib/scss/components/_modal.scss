@@ -606,4 +606,5 @@ $config: (
   height: 100%;
   height: 100dvh;
   border-radius: 0;
+  padding: 0; // To remove padding for resizer
 }
