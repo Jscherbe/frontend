@@ -1,4 +1,6 @@
 Important:
+  ☐ List Inline needs to only select direct descendants?
+    * Since this can be a wrapper (for old legacy markup) we may need to get clever with selectors or just make the assumpution that ul.list-inline > li gets the specific selector when .list-inline ul li for the wrapper since adding direct descendant will have not effect (since every ul is ul > li)
   ☐ Table scroller margin is outputting as 1em, 0 (should be space list not comma separated)
   ☐ Definition list should have margin options for controlling space between the dt/dd
   ☐ Button Verbose use gap instead of margins on inner layout (so no margin if one of the child elements is missing)
