@@ -25,7 +25,7 @@ $-fallbacks: (
 /// @prop {Dimension} margin-bottom [1em] Bottom margin of list.
 /// @prop {Dimension} margin-top [0] Top margin of list.
 /// @prop {Dimension} padding-between [1em] Padding between items in list.
-/// @prop {Dimension} padding-between [1em] Padding between items in list when using dense modifier
+/// @prop {Dimension} dense-padding-between [1em] Padding between items in list when using dense modifier
 /// @prop {Dimension} line-height-dense [true] Line height when list lines has dense modifier (defaults to typography line-height-dense)
 
 $config: (
