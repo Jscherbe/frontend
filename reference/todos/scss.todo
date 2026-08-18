@@ -1,4 +1,5 @@
 Important:
+  ☐ Should core button.scss font-size default to null (inherit), normally want it that way
   ☐ Form theme label set to flex: 1 for checkbox and radio (maybe works for all though) @important
   ☐ List Inline needs to only select direct descendants?
     * Since this can be a wrapper (for old legacy markup) we may need to get clever with selectors or just make the assumpution that ul.list-inline > li gets the specific selector when .list-inline ul li for the wrapper since adding direct descendant will have not effect (since every ul is ul > li)
