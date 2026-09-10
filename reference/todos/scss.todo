@@ -1,4 +1,5 @@
 Important:
+  ☐ Sticky list needs updated background context defaults to .theme-dark class
   ☐ Button verbose needs icon position modifier for icon before/start/left
   ☐ Should core button.scss font-size default to null (inherit), normally want it that way
   ☐ Form theme label set to flex: 1 for checkbox and radio (maybe works for all though) @important
