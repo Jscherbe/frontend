@@ -1,4 +1,5 @@
 Important:
+  ☐ Consider adding break-inside: avoid; page-break-inside: avoid; to unordered and ordered lists? Maybe not page break but the break inside is useful when using css columns (ie. column-width: 30rem)
   ☐ Create a reusable data-box component based on `reference/code-todo/_date-box.scss`
   ☐ Sticky list needs updated background context defaults to .theme-dark class
   ☐ Button verbose needs icon position modifier for icon before/start/left
